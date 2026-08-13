@@ -1,0 +1,25 @@
+{
+  "slug": "final-chapter-mc",
+  "type": "organizaciones",
+  "title": "Final Chapter MC",
+  "description": "Club de motociclistas outlaw con base en el condado de Ambrosia, revelado en capturas oficiales de Rockstar junto al Trailer 2.",
+  "content": "Final Chapter MC es un club de motociclistas outlaw que opera principalmente en el condado de Ambrosia, revelado por Rockstar Games en las capturas oficiales publicadas junto al Trailer 2 (6 de mayo de 2025). Sus miembros visten chaquetas de cuero sin mangas con el logo del club: una calavera encapuchada abriendo un libro, con las letras 'MC' en su interior, y parches que indican el año de fundación (1982).\n\nSegún la descripción oficial de Rockstar, el club provee 'casi todo' lo que el condado industrial de Ambrosia necesita, salvo empleo legal, lo que sugiere una economía informal apoyada en actividad ilícita en una zona con fuerte presencia de refinerías.\n\nSe los ve circulando en grupo sobre distintos modelos de motocicleta en las tomas oficiales del condado.",
+  "status": "confirmado",
+  "tags": ["motociclistas", "ambrosia", "captura-oficial", "trailer-2"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, capturas oficiales publicadas junto al Trailer 2 (6 de mayo de 2025), condado de Ambrosia",
+    "secondarySource": "GTA Base y GTA Wiki (Fandom), que documentan el logo, los parches de 1982 y la ubicación; gta6intel, que reproduce la línea oficial de Rockstar sobre el rol económico del club en Ambrosia",
+    "note": "Auditoría total (13 ago 2026): nombre y presencia visual confirmados por captura oficial de Rockstar, corroborados por al menos dos coberturas especializadas independientes que coinciden en logo, ubicación y año de fundación. El detalle de actividad delictiva específica (más allá de la descripción oficial citada) no está confirmado y se documenta como interpretación editorial, no como hecho."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "ambrosia",
+      "relation": "located_in"
+    }
+  ]
+}
