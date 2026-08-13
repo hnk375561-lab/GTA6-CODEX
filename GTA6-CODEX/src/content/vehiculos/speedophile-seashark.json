@@ -1,0 +1,36 @@
+{
+  "slug": "speedophile-seashark",
+  "type": "vehiculos",
+  "title": "Speedophile Seashark",
+  "description": "Moto de agua clásica de la saga, vista junto a otra moto de agua sin identificar en una escena costera de Vice Beach.",
+  "content": "El Speedophile Seashark es una moto de agua heredada de GTA V y GTA Online que reaparece en el material de GTA VI, en una escena costera de Vice Beach donde se la ve junto a otra moto de agua de modelo distinto y aún sin identificar.\n\nLas fuentes consultadas coinciden en la existencia y la identificación del vehículo, pero DIVERGEN sobre el trailer exacto en el que aparece: algunas ubican la escena en el Trailer 1, otras en el Trailer 2. Ninguna fuente de tipo periodístico especializado de primer nivel fue encontrada para este vehículo en este bloque; toda la corroboración proviene de bases de datos y wikis comunitarias.",
+  "status": "confirmado",
+  "tags": ["moto-de-agua", "vice-beach", "identificacion-visual"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Speedophile",
+  "class": "moto-de-agua",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Alta",
+    "acceleration": "Alta",
+    "handling": "Alta",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "Rockstar Games, material oficial de GTA VI (escena costera de Vice Beach; el trailer exacto es objeto de discrepancia entre fuentes secundarias, ver nota)",
+    "secondarySource": "gta.fandom.com, gta6intel.com y gta6guru.com, que coinciden en la identificación del modelo pero no en el número de trailer",
+    "note": "Incorporación con discrepancia documentada (13 ago 2026, Bloque B3): gta6intel.com y gta.fandom.com ubican la escena en el Trailer 1 (junto a una moto de agua sin identificar, inspirada en el Sea-Doo RXT-X); gta6guru.com la ubica en el Trailer 2. No se pudo verificar de forma independiente cuál de las dos es correcta dentro de este bloque, por lo que se documenta la existencia e identificación del vehículo pero NO se afirma con precisión el número de trailer. Se clasifica como 'respaldado' (no 'oficial-visual') por tratarse exclusivamente de fuentes secundarias de tipo wiki/base de datos, sin corroboración de prensa especializada."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}
