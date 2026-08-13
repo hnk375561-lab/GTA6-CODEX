@@ -5,7 +5,12 @@
   "description": "Traficante de droga ligado a la región de los Cayos de Leonida, para quien Jason trabajó antes de los eventos centrales de GTA 6.",
   "content": "Brian Heder es uno de los nueve personajes destacados oficialmente por Rockstar Games en el material de presentación de GTA 6. Es descrito como un traficante de droga que opera en la región de los Cayos de Leonida (Leonida Keys), y para quien Jason trabajaba antes de conocer a Lucia.\n\nSu vínculo con Cal Hampton, asociado suyo, sugiere una red de contactos que se extiende más allá del trato directo con Jason, posiblemente vinculada al contrabando marítimo en la zona costera del estado.\n\nSu rol lo conecta con el pasado de Jason como trabajador ocasional del crimen organizado antes del inicio de la trama principal.",
   "status": "confirmado",
-  "tags": ["secundario", "confirmado-rockstar", "leonida-keys", "narcotrafico"],
+  "tags": [
+    "secundario",
+    "confirmado-rockstar",
+    "leonida-keys",
+    "narcotrafico"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -20,7 +25,7 @@
       "targetType": "personajes",
       "targetSlug": "cal-hampton",
       "relation": "works_for",
-      "direction": "bidirectional"
+      "direction": "from"
     },
     {
       "targetType": "personajes",
@@ -33,5 +38,11 @@
       "targetSlug": "vapid-caracara-4x4",
       "relation": "associated_with"
     }
-  ]
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, sitio oficial GTA VI y Trailer 1/2 (cita atribuida a Brian Heder en el sitio oficial)",
+    "secondarySource": "GTA Wiki (Fandom), que reproduce la bio oficial completa de Rockstar sobre Brian Heder",
+    "note": "Auditoria total (13 ago 2026): nombre, rol de traficante en los Cayos y vinculo laboral con Jason corroborados contra bio oficial de Rockstar. Backfill retroactivo de evidence."
+  }
 }

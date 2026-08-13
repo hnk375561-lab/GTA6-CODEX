@@ -24,7 +24,13 @@
     {
       "targetType": "negocios",
       "targetSlug": "only-raw-records",
-      "relation": "owns"
+      "relation": "invests_in"
     }
-  ]
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, bio oficial en el sitio de GTA VI (Trailer 2, 6 mayo 2025)",
+    "secondarySource": "GTA Wiki (Fandom) y gtaintel, que citan la bio oficial completa de Rockstar sobre su imperio (inmobiliaria, club Jack of Hearts, estudio de grabacion)",
+    "note": "Auditoria total (13 ago 2026): CORRECCION. La relacion 'owns' hacia only-raw-records sobre-representaba su rol: multiples fuentes que citan la bio oficial de Rockstar describen la relacion con Only Raw Records como sociedad/inversion junto a Dre'Quan Priest (quien la dirige), no propiedad exclusiva de Boobie. Se cambia la relacion a 'invests_in'. Backfill retroactivo de evidence."
+  }
 }

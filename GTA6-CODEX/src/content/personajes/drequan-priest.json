@@ -19,7 +19,7 @@
     {
       "targetType": "personajes",
       "targetSlug": "boobie-ike",
-      "relation": "works_for"
+      "relation": "partners_with"
     },
     {
       "targetType": "personajes",
@@ -31,5 +31,11 @@
       "targetSlug": "only-raw-records",
       "relation": "works_for"
     }
-  ]
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, bio oficial en el sitio de GTA VI (Trailer 2, 6 mayo 2025)",
+    "secondarySource": "The Games Wiki, que cita textualmente la descripcion oficial de Rockstar sobre Dre'Quan como CEO de Only Raw Records",
+    "note": "Auditoria total (13 ago 2026): CORRECCION. La relacion drequan-priest -> works_for -> boobie-ike sobre-representaba una relacion de empleo formal; las fuentes que citan la bio oficial describen una sociedad de negocios (Boobie invierte, Dre'Quan dirige como CEO), no una relacion jerarquica de Dre'Quan hacia Boobie. Se cambia la relacion a 'partners_with'. Backfill retroactivo de evidence."
+  }
 }
