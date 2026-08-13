@@ -60,6 +60,25 @@ export interface BaseEntity {
   seoTitle?: string // Sobrescribe title si está presente
   seoDescription?: string // Sobrescribe description si está presente
   featured?: boolean // Si debe aparecer en secciones destacadas
+
+  /**
+   * Trazabilidad de evidencia (opcional).
+   * Complementa a `status` con un nivel de certeza más granular,
+   * pensado inicialmente para entidades identificadas visualmente
+   * (ej. vehículos) donde "confirmado" puede significar cosas distintas:
+   * un nombre publicado oficialmente por Rockstar no es lo mismo que
+   * una identificación visual respaldada por fuentes especializadas.
+   */
+  evidence?: {
+    // Nivel de certeza de la identificación
+    level: 'oficial-nombrado' | 'oficial-visual' | 'respaldado' | 'especulativo'
+    // Fuente primaria: Rockstar Games, sitio oficial, trailer, comunicado, etc.
+    primarySource?: string
+    // Fuente secundaria usada para ayudar a identificar (nunca autoridad canónica)
+    secondarySource?: string
+    // Aclaración libre sobre qué está y qué no está confirmado
+    note?: string
+  }
 }
 
 /**
