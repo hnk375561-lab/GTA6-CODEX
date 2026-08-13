@@ -1,0 +1,30 @@
+{
+  "slug": "dodge-charger",
+  "type": "vehiculos",
+  "title": "Dodge Charger",
+  "description": "Muscle car clásico americano, uno de los vehículos icónicos vistos en los trailers de GTA 6 recorriendo las calles de Vice City.",
+  "content": "El Dodge Charger es uno de los vehículos más reconocibles mostrados en el material promocional de GTA 6. Representa la esencia del muscle car americano: motor potente, líneas agresivas y tracción trasera, ideal para persecuciones a alta velocidad por las calles de Leonida.\n\nEn los trailers se lo ve tanto en versiones clásicas como modernizadas, lo que sugiere que Rockstar mantendrá la tradición de ofrecer múltiples generaciones del mismo modelo dentro del juego, tal como ocurrió en entregas anteriores de la saga.\n\nSu presencia refuerza la ambientación de Vice City como una ciudad con fuerte cultura automotriz, donde los muscle cars conviven con superdeportivos y vehículos utilitarios.",
+  "status": "confirmado",
+  "tags": ["muscle-car", "trailer", "vice-city", "clasico"],
+  "featured": true,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Declasse",
+  "class": "muscle",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Alta",
+    "acceleration": "Alta",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

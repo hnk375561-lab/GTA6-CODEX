@@ -1,0 +1,30 @@
+{
+  "slug": "pcj-1000",
+  "type": "vehiculos",
+  "title": "PCJ-1000",
+  "description": "Moto deportiva ágil y veloz, un clásico de la saga que regresa como una de las opciones más rápidas para moverse por Vice City.",
+  "content": "La PCJ-1000 es una motocicleta deportiva histórica dentro del universo de Grand Theft Auto, presente desde entregas clásicas como Vice City. Se caracteriza por su gran velocidad punta y su manejo ágil, ideal para esquivar el tráfico denso de la ciudad.\n\nSu diseño ligero la convierte en una de las opciones preferidas para desplazamientos rápidos, aunque sacrifica estabilidad y protección frente a vehículos más pesados. Es habitual verla en manos de mensajeros, corredores callejeros y personajes que priorizan la velocidad sobre la seguridad.\n\nSu posible regreso en GTA 6 mantendría viva la tradición de motocicletas emblemáticas dentro de la saga.",
+  "status": "nuestro",
+  "tags": ["moto", "velocidad", "clasico", "vice-city"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Shitzu",
+  "class": "moto-deportiva",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Muy alta",
+    "acceleration": "Muy alta",
+    "handling": "Alta",
+    "braking": "Baja"
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

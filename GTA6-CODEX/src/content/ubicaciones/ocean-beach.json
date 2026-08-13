@@ -1,0 +1,24 @@
+{
+  "slug": "ocean-beach",
+  "type": "ubicaciones",
+  "title": "Ocean Beach",
+  "description": "Distrito costero de Vice City, inspirado en South Beach, Miami. Zona turística con playas, hoteles art déco y vida nocturna.",
+  "content": "Ocean Beach es uno de los distritos más icónicos de Vice City, tomando como referencia directa a South Beach en Miami. Se caracteriza por su arquitectura art déco, sus playas de arena blanca y una intensa actividad turística y nocturna.\n\nEs una de las zonas más visualmente vibrantes de la ciudad, con paseos costeros, bares, restaurantes y locales de moda que conviven con la actividad criminal característica de la saga. Su estética colorida contrasta con distritos más industriales o residenciales de Vice City.\n\nDado el peso que tuvo esta zona en Grand Theft Auto: Vice City original, se espera que Ocean Beach vuelva a ser un punto de referencia clave para misiones, actividades y encuentros con personajes en GTA 6.",
+  "status": "nuestro",
+  "tags": ["distrito", "playa", "vice-city", "turistico"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "district": "Ocean Beach",
+  "region": "Leonida",
+  "points_of_interest": [],
+  "missions": [],
+  "businesses": [],
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}
