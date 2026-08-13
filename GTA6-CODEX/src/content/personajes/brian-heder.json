@@ -1,0 +1,26 @@
+{
+  "slug": "brian-heder",
+  "type": "personajes",
+  "title": "Brian Heder",
+  "description": "Traficante de droga ligado a la región de los Cayos de Leonida, para quien Jason trabajó antes de los eventos centrales de GTA 6.",
+  "content": "Brian Heder es uno de los nueve personajes destacados oficialmente por Rockstar Games en el material de presentación de GTA 6. Es descrito como un traficante de droga que opera en la región de los Cayos de Leonida (Leonida Keys), y para quien Jason trabajaba antes de conocer a Lucia.\n\nSu vínculo con Cal Hampton, asociado suyo, sugiere una red de contactos que se extiende más allá del trato directo con Jason, posiblemente vinculada al contrabando marítimo en la zona costera del estado.\n\nSu rol lo conecta con el pasado de Jason como trabajador ocasional del crimen organizado antes del inicio de la trama principal.",
+  "status": "confirmado",
+  "tags": ["secundario", "confirmado-rockstar", "leonida-keys", "narcotrafico"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "faction": null,
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "leonida-keys",
+      "relation": "located_in"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "cal-hampton",
+      "relation": "works_for",
+      "direction": "bidirectional"
+    }
+  ]
+}
