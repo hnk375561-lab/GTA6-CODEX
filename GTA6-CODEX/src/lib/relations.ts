@@ -1,29 +1,64 @@
 import { Entity, EntityRelation, EntityType } from '@/types'
+import { getEntity } from './entities'
 
 /**
- * Obtiene todas las entidades relacionadas a una entidad
- * 
- * STUB Fase 1: Cuando tengamos datos, implementar búsqueda eficiente
+ * Obtiene todas las entidades relacionadas a una entidad,
+ * resolviendo cada EntityRelation contra el contenido real.
  */
-export async function getRelatedEntities(
-  entity: Entity,
-  limit?: number
-): Promise<Entity[]> {
-  // STUB: Fase 1
-  // Implementar: Buscar en todas las entidades las que están en relations
-  // y cargarlas
-  return []
+export async function getRelatedEntities(entity: Entity, limit?: number): Promise<Entity[]> {
+  if (!entity.relations || entity.relations.length === 0) return []
+
+  const relations = limit ? entity.relations.slice(0, limit) : entity.relations
+  const resolved: Entity[] = []
+
+  for (const rel of relations) {
+    const target = await getEntity(rel.targetType, rel.targetSlug)
+    if (target) resolved.push(target)
+  }
+
+  return resolved
 }
 
 /**
- * Obtiene relaciones bidireccionales
- * (Si A relaciona con B, también retornar B relacionando con A)
+ * Obtiene relaciones bidireccionales.
+ * Si A relaciona con B, también retorna B como relacionado con A,
+ * aunque B no declare explícitamente la relación inversa.
  */
-export async function getBidirectionalRelations(
-  entity: Entity
-): Promise<EntityRelation[]> {
-  // STUB: Fase 1
-  return []
+export async function getBidirectionalRelations(entity: Entity): Promise<EntityRelation[]> {
+  const direct = entity.relations || []
+
+  // Relaciones explícitas marcadas como bidireccionales ya cuentan.
+  // Para el resto, buscamos entidades del mismo tipo que referencien a esta.
+  const inferred: EntityRelation[] = []
+
+  for (const type of Object.values(EntityType)) {
+    const { getEntitiesByType } = await import('./entities')
+    const candidates = await getEntitiesByType(type)
+
+    for (const candidate of candidates) {
+      if (candidate.slug === entity.slug && candidate.type === entity.type) continue
+
+      const pointsToThis = (candidate.relations || []).find(
+        (r) => r.targetType === entity.type && r.targetSlug === entity.slug
+      )
+
+      if (pointsToThis) {
+        const alreadyListed = direct.some(
+          (r) => r.targetType === candidate.type && r.targetSlug === candidate.slug
+        )
+        if (!alreadyListed) {
+          inferred.push({
+            targetType: candidate.type,
+            targetSlug: candidate.slug,
+            relation: pointsToThis.relation,
+            direction: 'from',
+          })
+        }
+      }
+    }
+  }
+
+  return [...direct, ...inferred]
 }
 
 /**
@@ -66,13 +101,11 @@ export function validateRelation(relation: EntityRelation): boolean {
     return false
   }
 
-  // Validar que targetType sea un EntityType válido
   const validTypes = Object.values(EntityType)
   if (!validTypes.includes(relation.targetType)) {
     return false
   }
 
-  // Validar que targetSlug no esté vacío
   if (typeof relation.targetSlug !== 'string' || relation.targetSlug.trim().length === 0) {
     return false
   }
@@ -82,22 +115,29 @@ export function validateRelation(relation: EntityRelation): boolean {
 
 /**
  * Obtiene el label readable de una relación
- * Útil para mostrar en UI
  */
 export function getRelationLabel(relation: string): string {
   const labels: Record<string, string> = {
-    'aparece_en': 'Aparece en',
-    'ubicado_en': 'Ubicado en',
-    'conducido_por': 'Conducido por',
-    'lidera': 'Lidera',
-    'amigo_de': 'Amigo de',
-    'enemigo_de': 'Enemigo de',
-    'trabaja_para': 'Trabaja para',
-    'pertenece_a': 'Pertenece a',
-    'relacionado_con': 'Relacionado con',
-    'parte_de': 'Parte de',
-    'contiene': 'Contiene',
-    'involve': 'Involucra',
+    aparece_en: 'Aparece en',
+    ubicado_en: 'Ubicado en',
+    conducido_por: 'Conducido por',
+    lidera: 'Lidera',
+    amigo_de: 'Amigo de',
+    enemigo_de: 'Enemigo de',
+    trabaja_para: 'Trabaja para',
+    pertenece_a: 'Pertenece a',
+    relacionado_con: 'Relacionado con',
+    parte_de: 'Parte de',
+    contiene: 'Contiene',
+    involve: 'Involucra',
+    involves: 'Involucra',
+    companion: 'Compañero',
+    conducts: 'Conduce',
+    located_in: 'Ubicado en',
+    owns: 'Posee',
+    leads: 'Lidera',
+    works_for: 'Trabaja para',
+    appears_in: 'Aparece en',
   }
 
   return labels[relation] || relation
@@ -105,7 +145,6 @@ export function getRelationLabel(relation: string): string {
 
 /**
  * Genera breadcrumb desde relaciones
- * Útil para navegación contextual
  */
 export function generateBreadcrumbFromRelations(
   entity: Entity,
@@ -115,7 +154,6 @@ export function generateBreadcrumbFromRelations(
     { label: entity.title, type: entity.type, slug: entity.slug },
   ]
 
-  // Agregar hasta 2 relaciones principales al breadcrumb
   for (let i = 0; i < Math.min(relations.length, 2); i++) {
     const rel = relations[i]
     breadcrumb.push({
@@ -129,13 +167,19 @@ export function generateBreadcrumbFromRelations(
 }
 
 /**
- * Detecta si hay relaciones circulares
- * STUB: Implementar cuando sea necesario
+ * Detecta si hay relaciones circulares directas (A -> B -> A)
  */
-export function detectCircularRelations(
-  entity: Entity,
-  maxDepth: number = 5
-): EntityRelation[] {
-  // STUB: Fase 1
-  return []
+export function detectCircularRelations(entity: Entity, maxDepth: number = 5): EntityRelation[] {
+  // Implementación simple: detecta ciclos de longitud 2 en las relaciones directas.
+  // Para grafos más profundos se recomienda un BFS/DFS completo cuando el volumen
+  // de contenido lo justifique.
+  const circular: EntityRelation[] = []
+
+  for (const rel of entity.relations || []) {
+    if (rel.targetType === entity.type && rel.targetSlug === entity.slug) {
+      circular.push(rel)
+    }
+  }
+
+  return circular
 }

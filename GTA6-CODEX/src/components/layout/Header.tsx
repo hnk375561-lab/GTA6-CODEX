@@ -49,9 +49,15 @@ export function Header() {
           </Link>
         </nav>
 
-        {/* Placeholder para futuras acciones */}
+        {/* Búsqueda y futuras acciones */}
         <div className="flex items-center gap-2">
-          {/* Search, theme toggle, etc. irán aquí */}
+          <Link
+            href="/buscar"
+            aria-label="Buscar"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-gta-border text-gta-text-secondary transition-colors hover:border-gta-accent hover:text-gta-accent"
+          >
+            🔍
+          </Link>
         </div>
       </div>
     </header>

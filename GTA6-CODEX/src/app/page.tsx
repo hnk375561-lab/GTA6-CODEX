@@ -2,8 +2,14 @@ import Link from 'next/link'
 import { EntityType } from '@/types'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
+import { getEntityCount, getFeaturedEntities } from '@/lib/entities'
 
-export default function Home() {
+export default async function Home() {
+  const [entityCount, featured] = await Promise.all([
+    getEntityCount(),
+    getFeaturedEntities(3),
+  ])
+
   const categories = [
     {
       type: EntityType.CHARACTER,
@@ -67,12 +73,12 @@ export default function Home() {
               >
                 Explorar
               </Link>
-              <a
-                href="#categories"
+              <Link
+                href="/buscar"
                 className="inline-flex items-center justify-center rounded-lg border border-gta-accent px-8 py-3 font-semibold text-gta-accent transition-all hover:bg-gta-accent/10"
               >
-                Categorías
-              </a>
+                Buscar
+              </Link>
             </div>
           </div>
         </div>
@@ -83,7 +89,7 @@ export default function Home() {
         <div className="container-max">
           <div className="grid gap-8 sm:grid-cols-3">
             <div className="text-center">
-              <div className="mb-2 text-3xl font-bold text-gta-accent">0</div>
+              <div className="mb-2 text-3xl font-bold text-gta-accent">{entityCount}</div>
               <p className="text-sm text-gta-text-secondary">Entidades documentadas</p>
             </div>
             <div className="text-center">
@@ -97,6 +103,38 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Featured Section */}
+      {featured.length > 0 && (
+        <section className="bg-gta-dark py-16 sm:py-24">
+          <div className="container-max">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-4xl font-bold text-gta-text">Destacados</h2>
+              <p className="text-lg text-gta-text-secondary">Lo más relevante ahora mismo</p>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {featured.map((entity) => (
+                <Link key={`${entity.type}-${entity.slug}`} href={`/${entity.type}/${entity.slug}`} className="group">
+                  <Card hoverable className="h-full">
+                    <CardBody>
+                      <Badge variant="status" status={entity.status} className="mb-3">
+                        {entity.status}
+                      </Badge>
+                      <h3 className="mb-2 text-xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
+                        {entity.title}
+                      </h3>
+                      <p className="line-clamp-2 text-sm text-gta-text-secondary">
+                        {entity.description}
+                      </p>
+                    </CardBody>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Categories Section */}
       <section id="categories" className="bg-gta-dark py-16 sm:py-24">
