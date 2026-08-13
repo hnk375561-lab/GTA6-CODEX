@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables */
+:root {
+  --gutter-width: 1.5rem;
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter-width: 1rem;
+  }
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gta-dark text-gta-text antialiased;
+}
+
+/* Tipografía */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold;
+}
+
+h1 {
+  @apply text-4xl tracking-tight sm:text-5xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+h4 {
+  @apply text-xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
+h6 {
+  @apply text-base;
+}
+
+p {
+  @apply text-gta-text-secondary;
+}
+
+a {
+  @apply transition-colors;
+}
+
+/* Links */
+a:not(.no-style) {
+  @apply text-gta-accent hover:text-gta-accent-orange underline-offset-4;
+}
+
+/* Selection */
+::selection {
+  @apply bg-gta-accent text-gta-dark;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gta-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gta-border transition-colors hover:bg-gta-accent;
+}
+
+/* Focus visible */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-gta-accent;
+}
+
+/* Visibilidad solo para screen readers */
+.sr-only {
+  @apply absolute h-px w-px overflow-hidden whitespace-nowrap border-0 p-0;
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+/* Containers */
+.container-max {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.container-tight {
+  @apply mx-auto max-w-4xl px-4 sm:px-6 lg:px-8;
+}
+
+.container-narrow {
+  @apply mx-auto max-w-2xl px-4 sm:px-6 lg:px-8;
+}
+
+/* Grid y Layout */
+.grid-auto {
+  @apply grid auto-cols-max gap-4;
+}
+
+/* Animaciones */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-gta {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 300ms ease-in-out;
+}
+
+.animate-slide-in {
+  animation: slide-in 300ms ease-in-out;
+}
+
+.animate-pulse-gta {
+  animation: pulse-gta 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Utilities */
+.truncate-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.truncate-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+/* Print styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+
+  a {
+    @apply underline;
+  }
+}

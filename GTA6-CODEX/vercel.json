@@ -1,0 +1,9 @@
+{
+  "buildCommand": "next build",
+  "framework": "nextjs",
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": {
+      "description": "URL del sitio en producción"
+    }
+  }
+}
