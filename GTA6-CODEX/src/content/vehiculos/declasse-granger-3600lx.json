@@ -1,0 +1,36 @@
+{
+  "slug": "declasse-granger-3600lx",
+  "type": "vehiculos",
+  "title": "Declasse Granger 3600LX",
+  "description": "SUV grande de lujo, versión moderna del Granger clásico, vista pasando junto a una reunión de autos en Vice City en el Trailer 1.",
+  "content": "El Declasse Granger 3600LX es una SUV grande de gama alta introducida originalmente en GTA Online (actualización The Contract, diciembre de 2021) que reaparece en el Trailer 1 de GTA VI, en la escena donde el vehículo pasa junto a una reunión de autos callejera en Vice City.\n\nMúltiples coberturas especializadas identifican de forma independiente la misma escena y el mismo modelo, coincidiendo en que su diseño está inspirado en la Chevrolet Suburban de undécima generación (2015-2020).\n\nA diferencia de otras fichas de este bloque basadas en una sola fuente, este vehículo cuenta con corroboración cruzada entre varias coberturas especializadas independientes que describen la misma escena.",
+  "status": "confirmado",
+  "tags": ["suv", "trailer-1", "declasse", "identificacion-visual"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Declasse",
+  "class": "suv-lujo",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, GTA VI Trailer 1 (diciembre de 2023), escena de una reunión de autos en Vice City",
+    "secondarySource": "autoevolution.com, que identifica la escena y el modelo; corroborado de forma independiente por coberturas adicionales (gta6intel.com y bases de datos comunitarias) que coinciden en la misma escena y el mismo modelo base de GTA Online",
+    "note": "Auditoría e incorporación (13 ago 2026, Bloque B2 extendido): identificación respaldada por al menos una fuente periodística especializada (autoevolution) más corroboración independiente de fuentes secundarias adicionales sobre la misma escena. No hay confirmación textual de Rockstar sobre el nombre para GTA VI, por lo que se clasifica como 'oficial-visual' y no 'oficial-nombrado'."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "vapid-sandking-xl",
+  "type": "vehiculos",
+  "title": "Vapid Sandking XL",
+  "description": "Camioneta todoterreno elevada de gran porte, vista en una escena de persecución cerca de una estación de servicio en el Trailer 1.",
+  "content": "El Vapid Sandking XL es una camioneta 4x4 de gran porte, heredada de GTA V y GTA Online, que reaparece en el Trailer 1 de GTA VI en la escena donde un hombre corre desnudo frente a un oficial de policía cerca de una estación de servicio.\n\nEsta ficha reemplaza al placeholder especulativo 'Sandking' (genérico, sin escena ni fuente) que existía previamente en el catálogo: la investigación de este bloque encontró evidencia concreta de una escena específica para el Sandking XL, por lo que se retira el placeholder especulativo y se documenta el vehículo real con su evidencia correspondiente, evitando que ambas fichas coexistan como un duplicado de facto.",
+  "status": "confirmado",
+  "tags": ["camioneta", "4x4", "trailer-1", "vapid", "identificacion-visual"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Vapid",
+  "class": "todoterreno",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Media",
+    "handling": "Alta en terreno irregular",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "Rockstar Games, GTA VI Trailer 1 (diciembre de 2023), escena junto a una estación de servicio",
+    "secondarySource": "Coberturas comunitarias especializadas (gta-fandom.com y gta6intel.com) que coinciden de forma independiente en la escena; The Drive menciona en la misma cobertura del Trailer 2 'un Sandking antiguo o similar' con reservas, sin confirmar el modelo exacto",
+    "note": "Auditoría y reemplazo de placeholder (13 ago 2026, Bloque B2 extendido): se elimina la ficha especulativa 'Sandking' (status 'nuestro', sin evidencia) y se documenta en su lugar el Sandking XL con una escena concreta. Se clasifica como 'respaldado' y no 'oficial-visual' porque las fuentes que describen la escena con precisión son de tipo wiki/comunitario, no periodístico especializado de primer nivel; la única mención en prensa especializada (The Drive) es dubitativa sobre el modelo exacto."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

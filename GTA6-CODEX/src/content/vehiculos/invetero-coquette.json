@@ -1,0 +1,36 @@
+{
+  "slug": "invetero-coquette",
+  "type": "vehiculos",
+  "title": "Invetero Coquette",
+  "description": "Deportivo americano de techo duro, inspirado en el Corvette C7, visto circulando por una autopista de Vice City en el Trailer 2.",
+  "content": "El Invetero Coquette aparece en el Trailer 2 de GTA VI, en la secuencia de la autopista donde se ven varios vehículos circulando junto al de Jason, entre ellos una Declasse Granger 3600LX y una Bravado Bison.\n\nDos coberturas especializadas independientes (autoevolution.com y The Drive) identifican la misma escena y el mismo modelo, coincidiendo en que su diseño está inspirado en la Chevrolet Corvette C7 (Stingray).\n\nNota de desambiguación importante: existen coberturas de menor calidad que mencionan por separado una posible 'Coquette D10' (variante de motor central inspirada en la Corvette C8) en una escena distinta del Trailer 1, cerca de Ocean Drive. Esa identificación proviene de una única fuente secundaria y describe un vehículo visto solo de espaldas y a distancia, por lo que NO se incorpora como ficha propia en este bloque: el estándar de evidencia no está satisfecho todavía. Se documenta aquí únicamente el Coquette base (C7), que sí cuenta con corroboración cruzada.",
+  "status": "confirmado",
+  "tags": ["deportivo", "trailer-2", "invetero", "identificacion-visual"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Invetero",
+  "class": "deportivo",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Alta",
+    "acceleration": "Alta",
+    "handling": "Alta",
+    "braking": "Baja"
+  },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025), escena de autopista",
+    "secondarySource": "autoevolution.com y The Drive (thedrive.com), que identifican de forma independiente la misma escena y el mismo modelo (Corvette C7)",
+    "note": "Auditoría e incorporación (13 ago 2026, Bloque B2 extendido): dos fuentes periodísticas especializadas independientes coinciden en escena y modelo, lo que justifica 'oficial-visual'. Se descarta deliberadamente incorporar una ficha separada para la posible 'Coquette D10' del Trailer 1 por evidencia insuficiente (fuente única, vehículo visto de espaldas y a distancia)."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}
