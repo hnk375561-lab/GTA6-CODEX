@@ -21,6 +21,12 @@
       "targetSlug": "cal-hampton",
       "relation": "works_for",
       "direction": "bidirectional"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "lori-heder",
+      "relation": "spouse_of",
+      "direction": "bidirectional"
     }
   ]
 }

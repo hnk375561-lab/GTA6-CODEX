@@ -1,0 +1,20 @@
+{
+  "slug": "stefanie",
+  "type": "personajes",
+  "title": "Stefanie",
+  "description": "Trabajadora social del Departamento Correccional de Leonida. Es la primera voz que se escucha en GTA 6, hablando con Lucia al inicio del Trailer 1.",
+  "content": "Stefanie trabaja como trabajadora social en el \"Leonida Department of Corrections\", la prisión estatal donde Lucia Caminos estuvo recluida. Rockstar la presenta como la primera voz que se escucha en todo GTA 6, hablando en su oficina con Lucia mientras esta última se encontraba encarcelada.\n\nSu rol futuro en la historia no ha sido detallado por Rockstar más allá de esta primera aparición, pero su conexión inicial con Lucia en un momento clave (la salida de prisión) la convierte en una figura simbólica de apertura para la narrativa del juego.",
+  "status": "confirmado",
+  "tags": ["secundario", "confirmado-rockstar", "prision"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "faction": null,
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
+      "relation": "appears_with"
+    }
+  ]
+}

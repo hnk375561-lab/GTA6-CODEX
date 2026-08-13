@@ -29,6 +29,18 @@
       "targetType": "negocios",
       "targetSlug": "only-raw-records",
       "relation": "works_for"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "bae-luxe",
+      "relation": "member_of",
+      "direction": "from"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "roxy",
+      "relation": "member_of",
+      "direction": "from"
     }
   ]
 }

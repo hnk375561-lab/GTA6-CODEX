@@ -1,0 +1,26 @@
+{
+  "slug": "lori-heder",
+  "type": "personajes",
+  "title": "Lori Heder",
+  "description": "Tercera esposa de Brian Heder. Trabaja junto a él en el astillero de los Cayos de Leonida y se la ve manejando tanto un rifle de asalto como una pistola.",
+  "content": "Lori Heder es la tercera esposa de Brian Heder, presentada en el material oficial de Rockstar Games para GTA 6. Trabaja junto a Brian en el astillero (boat yard) que ambos operan en los Cayos de Leonida.\n\nRockstar la muestra manejando tanto un rifle de asalto como una pistola, lo que sugiere que está cómoda con armas de fuego y probablemente involucrada de forma directa en las operaciones de contrabando de la pareja, más allá de un rol pasivo.\n\nJason vive de forma gratuita en una de las propiedades de Brian a cambio de ayudar con extorsiones locales, y suele pasar por la casa de la pareja para la sangría de Lori.",
+  "status": "confirmado",
+  "tags": ["secundario", "confirmado-rockstar", "leonida-keys"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "faction": null,
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "brian-heder",
+      "relation": "spouse_of",
+      "direction": "bidirectional"
+    },
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "leonida-keys",
+      "relation": "located_in"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "phil",
+  "type": "personajes",
+  "title": "Phil",
+  "description": "Personaje que protagoniza un comercial de Ammu-Nation dentro del Trailer 2. Es una reinterpretación del clásico Phil Cassidy del universo 3D de GTA, más joven y con ambos brazos.",
+  "content": "Phil aparece en un comercial de Ammu-Nation mostrado dentro del Trailer 2 de GTA 6. Se trata de una reinterpretación del personaje Phil Cassidy, presente en los juegos del universo 3D de la saga (Vice City y su expansión), aunque con diferencias notables respecto a la versión original: en GTA 6 el personaje es más joven y conserva ambos brazos, a diferencia del Phil Cassidy clásico.\n\nSu aparición es puramente promocional dentro de la ficción del juego (un anuncio de televisión in-game) y no hay confirmación de un rol narrativo más allá de esto.",
+  "status": "confirmado",
+  "tags": ["secundario", "confirmado-rockstar", "ammu-nation", "referencia-3d-universe"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "faction": null,
+  "relations": []
+}

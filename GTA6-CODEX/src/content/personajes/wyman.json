@@ -1,0 +1,14 @@
+{
+  "slug": "wyman",
+  "type": "personajes",
+  "title": "Wyman",
+  "description": "Mecánico y coleccionista excéntrico que dirige Wyman's World Auto Salvage Co. Ofrece una encomienda especial exclusiva de la Ultimate Edition centrada en restaurar autos abandonados.",
+  "content": "Wyman es un mecánico y entusiasta de los autos que dirige Wyman's World Auto Salvage Co. Rockstar Games lo describe como un \"coleccionista excéntrico y arreglador local\" (eccentric collector and local fixer).\n\nEncarga al jugador rastrear una variedad de autos clásicos abandonados y vehículos en proceso de restauración para devolverlos a su antiguo esplendor, como parte de una encomienda especial exclusiva de la Ultimate Edition de GTA 6.",
+  "status": "confirmado",
+  "tags": ["secundario", "confirmado-rockstar", "mecanico", "ultimate-edition"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "faction": "Wyman's World Auto Salvage Co.",
+  "relations": []
+}
