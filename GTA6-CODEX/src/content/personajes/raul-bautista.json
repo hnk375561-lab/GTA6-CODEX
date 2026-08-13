@@ -5,10 +5,20 @@
   "description": "Asaltante de bancos experimentado, siempre en busca de talento dispuesto a asumir los riesgos que traen las mayores recompensas.",
   "content": "Raul Bautista es presentado por Rockstar como un profesional consumado en el complejo arte del atraco a bancos. Confianza, carisma y astucia lo definen, y su búsqueda constante es la de reclutar gente dispuesta a arriesgarse por los golpes de mayor recompensa.\n\nSu carácter arriesgado eleva la apuesta en cada trabajo que organiza, lo que sugiere un rol relevante en misiones de atraco dentro de la campaña principal de GTA 6.\n\nSu perfil lo posiciona como uno de los posibles empleadores o socios ocasionales de Jason y Lucia en trabajos de alto riesgo.",
   "status": "confirmado",
-  "tags": ["secundario", "confirmado-rockstar", "atracos"],
+  "tags": [
+    "secundario",
+    "confirmado-rockstar",
+    "atracos"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
   "faction": null,
-  "relations": []
+  "relations": [],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, bio oficial en el sitio de GTA VI y portada oficial del juego (Raul Bautista es uno de los personajes destacados en el cover art)",
+    "secondarySource": "Yahoo/tech.yahoo.com y Sportskeeda, que citan la bio oficial de Rockstar sobre su rol como asaltante de bancos",
+    "note": "Auditoria total (13 ago 2026): nombre y rol confirmados por bio oficial de Rockstar y presencia en la portada oficial del juego. Backfill retroactivo de evidence."
+  }
 }
