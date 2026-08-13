@@ -1,0 +1,36 @@
+{
+  "slug": "dinka-enduro",
+  "type": "vehiculos",
+  "title": "Dinka Enduro",
+  "description": "Motocicleta de la Ultimate Edition con acabado inspirado en uniformes militares, ubicada junto al refugio inicial de Jason.",
+  "content": "La Dinka Enduro es una motocicleta exclusiva de la Ultimate Edition de GTA 6, confirmada oficialmente por Rockstar Games. Según el comunicado oficial, se trata de una moto con acabado de estilo camuflado militar ('Army fatigue-tinged'), ubicada junto al refugio inicial (safehouse) de Jason.\n\nSu diseño está inspirado en motocicletas todo terreno clásicas japonesas, en línea con la marca ficticia Dinka (basada en Honda) dentro del universo de Grand Theft Auto.",
+  "status": "confirmado",
+  "tags": ["moto", "ultimate-edition", "dinka", "todoterreno"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Dinka",
+  "class": "moto-todoterreno",
+  "driven_by": ["jason-duval"],
+  "locations": [],
+  "customizable": true,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Alta",
+    "handling": "Alta en terreno irregular",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games / Take-Two, anuncio oficial de la Ultimate Edition de GTA 6 (25 de junio de 2026)",
+    "secondarySource": "gta6bible, gamingpromax citando el comunicado oficial",
+    "note": "Nombre y vínculo con el refugio inicial de Jason confirmados en el texto oficial de Rockstar."
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "conducts"
+    }
+  ]
+}

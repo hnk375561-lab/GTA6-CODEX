@@ -1,0 +1,36 @@
+{
+  "slug": "grotti-cheetah-95",
+  "type": "vehiculos",
+  "title": "'95 Grotti Cheetah",
+  "description": "Deportivo clásico de Grotti de mediados de los 90, contenido exclusivo de la Ultimate Edition de GTA 6, con librea minimalista retro-futurista.",
+  "content": "El '95 Grotti Cheetah es uno de los vehículos exclusivos de la Ultimate Edition de GTA 6, anunciado oficialmente por Rockstar Games junto a la apertura de reservas el 25 de junio de 2026. Rockstar lo describe como el deportivo clásico insignia de Grotti de mediados de los 90, un homenaje a Shore Drive, con una librea minimalista y retro-futurista.\n\nA diferencia de otros vehículos de este catálogo cuyo nombre en juego es una identificación comunitaria basada en material visual, el nombre '95 Grotti Cheetah proviene directamente del material de prensa oficial de Rockstar sobre el contenido de la Ultimate Edition, no de una inferencia externa.\n\nEl Cheetah es una de las líneas más longevas de la saga (desde GTA III), y esta versión está inspirada visualmente en el Ferrari Testarossa. Según Rockstar, el vehículo se desbloquea de forma progresiva durante la campaña, disponible para \"puntuar la acción en etapas avanzadas\" de la historia. Un ejemplar en color blanco también aparece brevemente estacionado en el Trailer 1, sobre la costanera de Vice City.",
+  "status": "confirmado",
+  "tags": ["deportivo", "ultimate-edition", "grotti", "clasico"],
+  "featured": true,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Grotti",
+  "class": "deportivo-clasico",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Alta",
+    "acceleration": "Alta",
+    "handling": "Alta",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games / Take-Two, anuncio oficial de la Ultimate Edition de GTA 6 (25 de junio de 2026)",
+    "secondarySource": "Cobertura de prensa especializada (AltChar, Top Gear, GTA Intel, RockstarINTEL) citando el comunicado oficial",
+    "note": "Nombre e inclusión confirmados directamente por Rockstar como bonus de la Ultimate Edition, no es una identificación visual inferida."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

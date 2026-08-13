@@ -1,0 +1,41 @@
+{
+  "slug": "vapid-stanier-55",
+  "type": "vehiculos",
+  "title": "Vapid Stanier '55",
+  "description": "Sedán clásico de los años 50 incluido en el Vintage Vice City Pack, el bono de reserva disponible en cualquier edición de GTA 6.",
+  "content": "El Vapid Stanier '55 es uno de los vehículos incluidos en el Vintage Vice City Pack, el paquete de bonificación por reserva anticipada que Rockstar Games confirmó junto a la apertura de pre-orders de GTA 6 el 25 de junio de 2026. A diferencia de los vehículos de la Ultimate Edition, este paquete está disponible con cualquier reserva de GTA 6, sin importar la edición elegida.\n\nSu diseño está inspirado en sedanes estadounidenses de mediados de los años 50, como el Oldsmobile 88 de 1955, y continúa la línea Stanier dentro de la marca ficticia Vapid, que en GTA 6 también incluye variantes modernas usadas por la policía de Vice City (Vapid Stanier LE).",
+  "status": "confirmado",
+  "tags": ["sedan", "clasico", "pre-order", "vapid", "vintage-vice-city-pack"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Vapid",
+  "class": "sedan-clasico",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Baja",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games / Take-Two, anuncio oficial de pre-orders y Vintage Vice City Pack de GTA 6 (25 de junio de 2026)",
+    "secondarySource": "GTA Base (listado de vehículos, categoría Pre-Order)",
+    "note": "Nombre confirmado por Rockstar como parte del bono de reserva universal, distinto de los vehículos exclusivos de la Ultimate Edition."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "vapid-stanier-le",
+      "relation": "related_line"
+    }
+  ]
+}

@@ -36,6 +36,21 @@
       "targetType": "vehiculos",
       "targetSlug": "bravado-gauntlet-hellfire",
       "relation": "conducts"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dinka-enduro",
+      "relation": "conducts"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "crest-kayak",
+      "relation": "conducts"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "vapid-ganado",
+      "relation": "conducts"
     }
   ]
 }

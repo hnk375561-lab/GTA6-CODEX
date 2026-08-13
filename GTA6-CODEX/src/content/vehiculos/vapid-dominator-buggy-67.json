@@ -1,0 +1,36 @@
+{
+  "slug": "vapid-dominator-buggy-67",
+  "type": "vehiculos",
+  "title": "'67 Vapid Dominator Buggy",
+  "description": "Todoterreno tipo 'Mud Club' de la Ultimate Edition, pensado para los pantanos de Mount Kalaga, guardado en el Paradise Garage de Watson Bay.",
+  "content": "El '67 Vapid Dominator Buggy es uno de los vehículos exclusivos anunciados oficialmente por Rockstar Games para la Ultimate Edition de GTA 6. Rockstar lo describe como un \"monstruo del Mud Club\" con un manejo todoterreno de alto rendimiento, pensado para recorrer los bosques y pantanos alrededor de Mount Kalaga.\n\nSegún el comunicado oficial, el vehículo se guarda en el Paradise Garage, ubicado en Watson Bay, un espacio que además incluye un armero y un lugar seguro para depositar objetos robados y venderlos (fence).\n\nSu base visual está inspirada en la primera generación del Ford Mustang, con una suspensión elevada de estilo buggy.",
+  "status": "confirmado",
+  "tags": ["todoterreno", "ultimate-edition", "vapid", "mud-club"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Vapid",
+  "class": "todoterreno",
+  "driven_by": [],
+  "locations": ["mount-kalaga"],
+  "customizable": true,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Media",
+    "handling": "Muy alta en terreno irregular",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games / Take-Two, anuncio oficial de la Ultimate Edition de GTA 6 (25 de junio de 2026)",
+    "secondarySource": "RockstarINTEL, vgtimes, gta6bible citando el comunicado oficial",
+    "note": "Nombre, descripción y ubicación de guardado (Paradise Garage, Watson Bay) provienen del texto oficial de Rockstar sobre el contenido de la Ultimate Edition."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "mount-kalaga",
+      "relation": "located_in"
+    }
+  ]
+}

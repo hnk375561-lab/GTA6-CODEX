@@ -1,0 +1,36 @@
+{
+  "slug": "vapid-ganado",
+  "type": "vehiculos",
+  "title": "Vapid Ganado",
+  "description": "Camioneta pickup de Jason, con una versión de reserva especial (Retro Build) exclusiva de la Ultimate Edition de GTA 6.",
+  "content": "El Vapid Ganado es una camioneta pickup confirmada oficialmente por Rockstar Games como parte del contenido de reserva de GTA 6, descrita en el material de prensa como la \"camioneta gastada de Jason\" (Jason's well-worn Vapid Ganado pickup). Su diseño está inspirado en el Ford Ranchero de quinta generación y el Mercury Cougar de 1969-1970.\n\nLos compradores de la Ultimate Edition reciben, además del vehículo base, el mod exclusivo 'Retro Build': una versión con altura rebajada, spoiler de cabina, antenas traseras y una librea especial, según confirmó Rockstar en el mismo comunicado.\n\nSu vínculo directo con Jason como vehículo personal lo distingue de otras pickups del catálogo que no tienen un conductor asociado confirmado.",
+  "status": "confirmado",
+  "tags": ["pickup", "vapid", "pre-order", "ultimate-edition"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Vapid",
+  "class": "pickup",
+  "driven_by": ["jason-duval"],
+  "locations": [],
+  "customizable": true,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games / Take-Two, anuncio oficial de pre-orders y Ultimate Edition de GTA 6 (25 de junio de 2026)",
+    "secondarySource": "gamingpromax, vgtimes citando el comunicado oficial",
+    "note": "Vehículo base y mod 'Retro Build' confirmados por Rockstar; el vehículo base está disponible fuera del contenido exclusivo, el mod es exclusivo de la Ultimate Edition."
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "conducts"
+    }
+  ]
+}
