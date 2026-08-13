@@ -5,7 +5,12 @@
   "description": "Más hustler que gángster: exvendedor callejero que ahora dirige Only Raw Records y sueña con dominar la escena musical de Vice City.",
   "content": "Dre'Quan Priest es presentado por Rockstar como alguien que siempre fue más un hustler que un criminal violento. Incluso mientras vendía droga en la calle para sobrevivir, su verdadero objetivo siempre fue entrar en la industria musical.\n\nTras firmar al dúo Real Dimez para Only Raw Records, el sello de Boobie Ike, sus días reservando actos para el club de striptease de Boobie podrían estar contados, ya que ahora apunta a la escena musical más amplia de Vice City.\n\nSu historia lo conecta directamente con Boobie Ike como socio y con Real Dimez como su principal apuesta artística.",
   "status": "confirmado",
-  "tags": ["secundario", "confirmado-rockstar", "vice-city", "musica"],
+  "tags": [
+    "secundario",
+    "confirmado-rockstar",
+    "vice-city",
+    "musica"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -20,6 +25,11 @@
       "targetType": "personajes",
       "targetSlug": "real-dimez",
       "relation": "involves"
+    },
+    {
+      "targetType": "negocios",
+      "targetSlug": "only-raw-records",
+      "relation": "works_for"
     }
   ]
 }

@@ -5,16 +5,29 @@
   "description": "Dúo musical formado por Bae-Luxe y Roxy, amigas desde el secundario que convirtieron sus rimas virales en un contrato con Only Raw Records.",
   "content": "Real Dimez es el nombre artístico del dúo formado por Bae-Luxe y Roxy, amigas desde la escuela secundaria. Rockstar las describe como chicas con el talento para convertir su tiempo presionando a dealers locales en dinero contante gracias a temas de rap picantes y una presencia constante en redes sociales.\n\nUn sencillo exitoso junto al rapero local DWNPLY las llevó a nuevas alturas, y tras cinco años y muchos problemas, finalmente firmaron con Only Raw Records, el sello de Boobie Ike gestionado por Dre'Quan Priest.\n\nSu ascenso las conecta directamente con la escena musical y nocturna de Vice City retratada en GTA 6.",
   "status": "confirmado",
-  "tags": ["secundario", "confirmado-rockstar", "musica", "duo"],
+  "tags": [
+    "secundario",
+    "confirmado-rockstar",
+    "musica",
+    "duo"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
-  "alias": ["Bae-Luxe", "Roxy"],
+  "alias": [
+    "Bae-Luxe",
+    "Roxy"
+  ],
   "faction": null,
   "relations": [
     {
       "targetType": "personajes",
       "targetSlug": "drequan-priest",
+      "relation": "works_for"
+    },
+    {
+      "targetType": "negocios",
+      "targetSlug": "only-raw-records",
       "relation": "works_for"
     }
   ]

@@ -5,7 +5,12 @@
   "description": "Leyenda de Vice City que transformó su pasado en las calles en un imperio legítimo: inmobiliaria, un club nocturno y un estudio de grabación.",
   "content": "Boobie Ike es descrito por Rockstar como uno de los pocos personajes que logró convertir su tiempo en las calles en un negocio legítimo, con intereses que abarcan bienes raíces, un club de striptease y un estudio de grabación, Only Raw Records.\n\nSu enfoque actual está puesto en impulsar a su nuevo mánager musical, Dre'Quan Priest, y al dúo Real Dimez. Es descrito como un hombre de sonrisa fácil hasta que llega el momento de hablar de negocios, sugiriendo un trasfondo más peligroso detrás de su fachada empresarial.\n\nSu perfil lo posiciona como una figura clave dentro de la escena musical y nocturna de Vice City en GTA 6.",
   "status": "confirmado",
-  "tags": ["secundario", "confirmado-rockstar", "vice-city", "musica"],
+  "tags": [
+    "secundario",
+    "confirmado-rockstar",
+    "vice-city",
+    "musica"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -15,6 +20,11 @@
       "targetType": "ubicaciones",
       "targetSlug": "vice-city",
       "relation": "located_in"
+    },
+    {
+      "targetType": "negocios",
+      "targetSlug": "only-raw-records",
+      "relation": "owns"
     }
   ]
 }

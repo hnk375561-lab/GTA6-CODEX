@@ -1,0 +1,37 @@
+{
+  "slug": "only-raw-records",
+  "type": "negocios",
+  "title": "Only Raw Records",
+  "description": "Sello discográfico de Vice City propiedad de Boobie Ike, dirigido por Dre'Quan Priest, con el dúo Real Dimez entre sus artistas firmados.",
+  "content": "Only Raw Records es el sello de grabación de Vice City fundado y controlado por Boobie Ike como parte de su imperio de negocios legítimos, que también incluye bienes raíces y un club de striptease. Rockstar lo presenta directamente en las bios oficiales de varios personajes de GTA 6.\n\nDre'Quan Priest, socio de Boobie, es quien gestiona el día a día del sello y quien logró fichar al dúo Real Dimez (Bae-Luxe y Roxy), su apuesta artística más reciente tras un sencillo exitoso junto al rapero local DWNPLY.\n\nEl sello funciona como punto de conexión narrativa entre varios personajes secundarios confirmados y sugiere que la escena musical de Vice City tendrá un rol relevante dentro de la trama de GTA 6.",
+  "status": "confirmado",
+  "tags": ["negocio", "musica", "vice-city", "confirmado-rockstar"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "boobie-ike",
+      "relation": "owns",
+      "direction": "from"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "drequan-priest",
+      "relation": "works_for",
+      "direction": "from"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "real-dimez",
+      "relation": "works_for",
+      "direction": "from"
+    },
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

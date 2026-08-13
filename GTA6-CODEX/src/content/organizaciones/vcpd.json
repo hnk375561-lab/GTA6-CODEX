@@ -1,0 +1,29 @@
+{
+  "slug": "vcpd",
+  "type": "organizaciones",
+  "title": "VCPD (Vice City Police Department)",
+  "description": "Departamento de policía de Vice City. Su sigla aparece pintada en los vehículos policiales visibles en el material oficial y en metraje de desarrollo confirmado como auténtico por Rockstar.",
+  "content": "El VCPD (Vice City Police Department) es la fuerza policial encargada de la seguridad en Vice City dentro de GTA 6. Su sigla se distingue claramente en los laterales de los vehículos policiales mostrados tanto en los trailers oficiales como en metraje de desarrollo filtrado en 2022, cuya autenticidad fue confirmada públicamente por Rockstar Games.\n\nCuenta con una flota diversa que incluye patrulleros estándar (Vapid Stanier LE), vehículos blindados antidisturbios (Brute Police Riot) y unidades aéreas, lo que sugiere un sistema de búsqueda policial más elaborado y con más niveles de respuesta que en entregas anteriores.\n\nSu presencia constante en las escenas de persecución y enfrentamiento confirma que seguirá siendo el principal antagonista institucional durante la actividad criminal del jugador.",
+  "status": "confirmado",
+  "tags": ["policia", "vice-city", "institucion", "confirmado-rockstar"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "brute-police-riot",
+      "relation": "owns"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "vapid-stanier-le",
+      "relation": "owns"
+    }
+  ]
+}
