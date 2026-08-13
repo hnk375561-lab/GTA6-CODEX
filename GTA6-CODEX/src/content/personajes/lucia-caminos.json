@@ -9,6 +9,12 @@
   "featured": true,
   "createdAt": "2024-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, sitio oficial de GTA VI (rockstargames.com/VI, seccion \"Only in Leonida\") y Trailer 1/2 (mayo de 2025)",
+    "secondarySource": "The Games Wiki, cobertura que fecha y atribuye la bio oficial de Lucia a la publicacion de Rockstar junto al Trailer 2",
+    "note": "Auditoria total (13 ago 2026, Bloque de auditoria completa): nombre completo, condicion de primera protagonista femenina principal de la saga y biografia corroborados contra la bio oficial de Rockstar (parafraseada en 'content'). Backfill retroactivo del campo evidence."
+  },
   "relations": [
     {
       "targetType": "personajes",

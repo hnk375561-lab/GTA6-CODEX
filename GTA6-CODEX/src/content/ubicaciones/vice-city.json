@@ -9,6 +9,12 @@
   "featured": true,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, Trailer 1 y 2, sitio oficial de GTA VI y comunicados de Newswire (nombre de la ciudad y del estado de Leonida confirmados repetidamente)",
+    "secondarySource": "Cobertura generalizada (ESPN, GosuGamers, GTA Boom) que corrobora la ambientación en Vice City/Leonida como escenario central",
+    "note": "Auditoría total (13 ago 2026): nombre y rol de ciudad principal son de los datos más solidamente confirmados de todo el proyecto (aparece explícitamente en ambos trailers y en todo el material oficial). Backfill retroactivo del campo evidence, ausente hasta ahora en toda la categoría ubicaciones."
+  },
   "region": "Leonida",
   "points_of_interest": [],
   "missions": [],

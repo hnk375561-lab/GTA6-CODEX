@@ -9,6 +9,12 @@
   "featured": true,
   "createdAt": "2024-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, sitio oficial de GTA VI (rockstargames.com/VI, seccion \"Only in Leonida\") y Trailer 1/2",
+    "secondarySource": "ESPN y GosuGamers, cobertura que reproduce la bio oficial publicada por Rockstar el 6 de mayo de 2025",
+    "note": "Auditoria total (13 ago 2026, Bloque de auditoria completa): nombre, rol de protagonista y biografia corroborados directamente contra la bio oficial de Rockstar (parafraseada en 'content', no citada textualmente). Backfill retroactivo del campo evidence, ausente hasta ahora en toda la categoria personajes."
+  },
   "relations": [
     {
       "targetType": "personajes",
