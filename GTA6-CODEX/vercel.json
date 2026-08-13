@@ -2,8 +2,6 @@
   "buildCommand": "next build",
   "framework": "nextjs",
   "env": {
-    "NEXT_PUBLIC_SITE_URL": {
-      "description": "URL del sitio en producción"
-    }
+    "NEXT_PUBLIC_SITE_URL": "https://gta-6-codex.vercel.app"
   }
 }
