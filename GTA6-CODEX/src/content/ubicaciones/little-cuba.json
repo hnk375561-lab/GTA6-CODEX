@@ -5,7 +5,12 @@
   "description": "Barrio de Vice City inspirado en Little Havana, Miami. Confirmado directamente por el texto oficial de Rockstar Games sobre la ciudad.",
   "content": "Little Cuba es uno de los dos barrios de Vice City nombrados explícitamente en la descripción oficial que Rockstar publicó junto al material del Trailer 2. El sitio oficial lo describe como una zona de panaderías (panaderías cubanas), reflejando la fuerte inspiración en Little Havana, el histórico barrio cubano-americano de Miami.\n\nSu inclusión, junto a Ocean Beach, confirma que Rockstar está construyendo una Vice City con identidad cultural diferenciada por barrio, en lugar de un mapa urbano genérico.\n\nSe espera que la zona tenga fuerte presencia de comercios, gastronomía y vida de calle propia de comunidades latinas en Florida.",
   "status": "confirmado",
-  "tags": ["barrio", "vice-city", "cultura-cubana", "confirmado-rockstar"],
+  "tags": [
+    "barrio",
+    "vice-city",
+    "cultura-cubana",
+    "confirmado-rockstar"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -20,5 +25,11 @@
       "targetSlug": "vice-city",
       "relation": "located_in"
     }
-  ]
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, comunicado oficial de pre-order/Ultimate Edition (25 de junio de 2026), que nombra explicitamente 'Little Cuba' junto a Ocean Beach, Tisha-Wocka y VC Port",
+    "secondarySource": "GTA Boss, cobertura que cita textualmente la copia oficial de Rockstar sobre estos cuatro barrios de Vice City",
+    "note": "Auditoria total (13 ago 2026): nombre de barrio confirmado oficialmente en el comunicado de Ultimate Edition, no solo por wikis comunitarias. Backfill retroactivo de evidence."
+  }
 }

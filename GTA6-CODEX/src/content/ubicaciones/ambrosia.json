@@ -5,7 +5,12 @@
   "description": "Condado rural e industrial junto al Lago Leonida, definido por refinerías de azúcar y presencia de bandas motociclistas.",
   "content": "Ambrosia es una de las seis regiones oficialmente confirmadas de Leonida, ubicada junto al Lago Leonida, el gran cuerpo de agua dulce en el centro del estado. Rockstar la describe como una zona industrial marcada por refinerías de azúcar y una fuerte cultura de bandas motociclistas.\n\nA diferencia de las regiones costeras, Ambrosia representa el interior agrícola e industrial de Leonida, con una identidad más rural y trabajadora que la de Vice City o Port Gellhorn.\n\nSu economía gira en torno a la industria azucarera, lo que la posiciona como un escenario propicio para tramas relacionadas con crimen organizado ligado a negocios legales que sirven de fachada.",
   "status": "confirmado",
-  "tags": ["region", "leonida", "industrial", "trailer-2"],
+  "tags": [
+    "region",
+    "leonida",
+    "industrial",
+    "trailer-2"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -13,5 +18,11 @@
   "points_of_interest": [],
   "missions": [],
   "businesses": [],
-  "relations": []
+  "relations": [],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, sitio oficial de GTA VI, seccion propia de Ambrosia (revelada junto al Trailer 2, 6 mayo 2025)",
+    "secondarySource": "Sportskeeda, que confirma que Ambrosia figura entre las regiones nombradas oficialmente en el sitio de Rockstar",
+    "note": "Auditoria total (13 ago 2026): nombre de condado confirmado oficialmente, con seccion propia en el sitio de Rockstar. Backfill retroactivo de evidence."
+  }
 }

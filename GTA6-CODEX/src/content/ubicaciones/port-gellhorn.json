@@ -5,7 +5,12 @@
   "description": "Ciudad portuaria e industrial en la costa oeste de Leonida, descrita por Rockstar como un antiguo destino turístico venido a menos.",
   "content": "Port Gellhorn es la segunda ciudad más importante del mapa de Leonida, confirmada oficialmente junto al Trailer 2 de GTA 6. Rockstar la describe como un antiguo destino vacacional hoy convertido en una zona decadente, con moteles baratos, centros comerciales abandonados y atracciones cerradas.\n\nLa ciudad está construida alrededor de un puerto de trabajo activo, con almacenes, puentes y muelles visibles en el trailer, lo que sugiere que el contrabando y el crimen marítimo tendrán un rol central en las actividades disponibles en esta zona.\n\nSu nombre circulaba en la comunidad de fans desde filtraciones anteriores a 2022, y fue confirmado de forma oficial recién con el segundo trailer.",
   "status": "confirmado",
-  "tags": ["region", "leonida", "puerto", "trailer-2"],
+  "tags": [
+    "region",
+    "leonida",
+    "puerto",
+    "trailer-2"
+  ],
   "featured": true,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -13,5 +18,11 @@
   "points_of_interest": [],
   "missions": [],
   "businesses": [],
-  "relations": []
+  "relations": [],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, sitio oficial de GTA VI, seccion propia de Port Gellhorn (revelada junto al Trailer 2, 6 mayo 2025)",
+    "secondarySource": "Sportskeeda, que confirma que Port Gellhorn figura entre las regiones nombradas oficialmente en el sitio de Rockstar",
+    "note": "Auditoria total (13 ago 2026): nombre de ciudad/region confirmado oficialmente, con seccion propia en el sitio de Rockstar. Backfill retroactivo de evidence."
+  }
 }

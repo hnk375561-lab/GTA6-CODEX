@@ -5,7 +5,12 @@
   "description": "Archipiélago tropical al sur del estado de Leonida, inspirado en los Cayos de Florida. Una de las seis regiones oficialmente confirmadas por Rockstar.",
   "content": "Leonida Keys es una cadena de pequeñas islas tropicales conectadas por carreteras y puentes, tal como ocurre con los Cayos de Florida reales. Rockstar la describe como un paraíso tropical, con aguas turquesas, zonas de buceo y una vida costera relajada que contrasta con el bullicio de Vice City.\n\nLa región ya apareció brevemente en el primer trailer de GTA 6, pero su nombre recién fue confirmado oficialmente junto al Trailer 2 y el material promocional publicado en el sitio web de Rockstar Games.\n\nSe espera que funcione como escenario para actividades de contrabando, pesca, buceo y navegación, dada la fuerte presencia de agua y embarcaciones en el material mostrado hasta ahora.",
   "status": "confirmado",
-  "tags": ["region", "leonida", "islas", "trailer-2"],
+  "tags": [
+    "region",
+    "leonida",
+    "islas",
+    "trailer-2"
+  ],
   "featured": true,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -13,5 +18,11 @@
   "points_of_interest": [],
   "missions": [],
   "businesses": [],
-  "relations": []
+  "relations": [],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, sitio oficial de GTA VI, seccion propia de Leonida Keys (revelada junto al Trailer 2, 6 mayo 2025)",
+    "secondarySource": "Sportskeeda, que confirma que Leonida Keys figura entre las regiones nombradas oficialmente en el sitio de Rockstar",
+    "note": "Auditoria total (13 ago 2026): nombre de region confirmado oficialmente; es ademas el escenario donde se ambienta buena parte de la historia de Jason. Backfill retroactivo de evidence."
+  }
 }

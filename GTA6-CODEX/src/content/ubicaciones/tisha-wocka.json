@@ -5,7 +5,12 @@
   "description": "Mercado de pulgas de Vice City especializado en marcas falsificadas ('bootleg'), mencionado en la descripción oficial de la ciudad publicada por Rockstar.",
   "content": "El Tisha-Wocka Flea Market es uno de los puntos de interés nombrados directamente en la descripción oficial de Vice City publicada por Rockstar junto al Trailer 2. El texto oficial lo describe como el lugar de las 'marcas bootleg' de la ciudad, es decir, un mercado de imitaciones y productos falsificados.\n\nEste tipo de locación encaja con la tradición de la saga de incluir comercios con humor satírico sobre el consumismo y la cultura de marcas, un sello distintivo del estilo narrativo de Rockstar.\n\nSu mención oficial, aunque breve, confirma que existirá al menos un mercado de este tipo dentro del mapa jugable de Vice City.",
   "status": "confirmado",
-  "tags": ["mercado", "vice-city", "confirmado-rockstar", "punto-de-interes"],
+  "tags": [
+    "mercado",
+    "vice-city",
+    "confirmado-rockstar",
+    "punto-de-interes"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -19,5 +24,11 @@
       "targetSlug": "vice-city",
       "relation": "located_in"
     }
-  ]
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, comunicado oficial de pre-order/Ultimate Edition (25 de junio de 2026), que nombra explicitamente el 'Tisha-Wocka flea market'",
+    "secondarySource": "GTA Boss, cobertura que cita textualmente la copia oficial de Rockstar sobre este mercado",
+    "note": "Auditoria total (13 ago 2026): nombre de mercado confirmado oficialmente en el comunicado de Ultimate Edition. Backfill retroactivo de evidence."
+  }
 }

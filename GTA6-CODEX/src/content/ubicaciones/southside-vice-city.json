@@ -5,7 +5,12 @@
   "description": "Zona sur de Vice City, mencionada directamente por Rockstar como territorio de una de las bandas más activas de la ciudad.",
   "content": "Southside Vice City es nombrada de forma explícita en material oficial de Rockstar relacionado con contenido de la Edición Ultimate, que describe una misión de asalto al escondite de 'una de las bandas más ruidosas y socialmente activas de Southside Vice City'.\n\nAunque el detalle proviene de la descripción de un beneficio de edición especial y no de la narrativa principal, la mención confirma la existencia de esta zona como territorio identificado de bandas dentro del mapa jugable.\n\nSu nombre sugiere que se ubica en el extremo sur del área metropolitana de Vice City, en contraste con las zonas más turísticas como Ocean Beach.",
   "status": "confirmado",
-  "tags": ["distrito", "vice-city", "bandas", "confirmado-rockstar"],
+  "tags": [
+    "distrito",
+    "vice-city",
+    "bandas",
+    "confirmado-rockstar"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -20,5 +25,11 @@
       "targetSlug": "vice-city",
       "relation": "located_in"
     }
-  ]
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, comunicado oficial de pre-order/Ultimate Edition (25 de junio de 2026), que menciona explicitamente 'Southside Vice City' al describir una banda local",
+    "secondarySource": "GTA Boss, cobertura que cita textualmente la copia oficial de Rockstar sobre este barrio",
+    "note": "Auditoria total (13 ago 2026): nombre de barrio confirmado oficialmente en el comunicado de Ultimate Edition. Backfill retroactivo de evidence."
+  }
 }
