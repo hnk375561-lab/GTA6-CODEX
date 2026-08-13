@@ -12,13 +12,13 @@
   "relations": [
     {
       "targetType": "personajes",
-      "targetSlug": "jason-michigander",
+      "targetSlug": "jason-duval",
       "relation": "involves",
       "direction": "to"
     },
     {
       "targetType": "personajes",
-      "targetSlug": "lucia-lopez",
+      "targetSlug": "lucia-caminos",
       "relation": "involves",
       "direction": "to"
     }

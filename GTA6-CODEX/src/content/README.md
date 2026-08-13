@@ -25,7 +25,7 @@ Cada archivo de contenido es un JSON con la siguiente estructura:
 
 ```json
 {
-  "slug": "jason-michigander",
+  "slug": "jason-duval",
   "type": "personajes",
   "title": "Jason Michigander",
   "description": "Protagonista principal de GTA 6",
@@ -38,7 +38,7 @@ Cada archivo de contenido es un JSON con la siguiente estructura:
   "relations": [
     {
       "targetType": "personajes",
-      "targetSlug": "lucia-lopez",
+      "targetSlug": "lucia-caminos",
       "relation": "companion"
     }
   ]
@@ -60,8 +60,8 @@ El slug debe ser:
 - En minúsculas
 
 ### Ejemplos válidos:
-- `jason-michigander`
-- `lucia-lopez`
+- `jason-duval`
+- `lucia-caminos`
 - `carcer-city`
 - `grand-theft-auto-6-main-story`
 
@@ -79,7 +79,7 @@ Las relaciones conectan entidades entre sí de forma consistente.
 "relations": [
   {
     "targetType": "personajes",
-    "targetSlug": "lucia-lopez",
+    "targetSlug": "lucia-caminos",
     "relation": "companion",
     "direction": "bidirectional"
   },
