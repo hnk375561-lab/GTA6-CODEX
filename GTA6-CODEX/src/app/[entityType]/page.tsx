@@ -8,7 +8,7 @@ import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 
 interface PageProps {
-  params: { entityType: string }
+  params: Promise<{ entityType: string }>
 }
 
 const VALID_TYPES = Object.values(EntityType) as string[]
@@ -38,15 +38,17 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  if (!VALID_TYPES.includes(params.entityType)) return {}
-  const entities = await getEntitiesByType(params.entityType as EntityType)
-  return generateListMetadata(params.entityType as EntityType, entities.length)
+  const { entityType } = await params
+  if (!VALID_TYPES.includes(entityType)) return {}
+  const entities = await getEntitiesByType(entityType as EntityType)
+  return generateListMetadata(entityType as EntityType, entities.length)
 }
 
 export default async function EntityTypePage({ params }: PageProps) {
-  if (!VALID_TYPES.includes(params.entityType)) notFound()
+  const { entityType } = await params
+  if (!VALID_TYPES.includes(entityType)) notFound()
 
-  const type = params.entityType as EntityType
+  const type = entityType as EntityType
   const entities = await getEntitiesByType(type)
 
   return (

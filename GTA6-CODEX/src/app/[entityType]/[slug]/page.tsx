@@ -9,7 +9,7 @@ import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 
 interface PageProps {
-  params: { entityType: string; slug: string }
+  params: Promise<{ entityType: string; slug: string }>
 }
 
 const VALID_TYPES = Object.values(EntityType) as string[]
@@ -48,19 +48,21 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  if (!VALID_TYPES.includes(params.entityType)) return {}
+  const { entityType, slug } = await params
+  if (!VALID_TYPES.includes(entityType)) return {}
 
-  const entity = await getEntity(params.entityType as EntityType, params.slug)
+  const entity = await getEntity(entityType as EntityType, slug)
   if (!entity) return {}
 
   return generateEntityMetadata(entity)
 }
 
 export default async function EntityPage({ params }: PageProps) {
-  if (!VALID_TYPES.includes(params.entityType)) notFound()
+  const { entityType, slug } = await params
+  if (!VALID_TYPES.includes(entityType)) notFound()
 
-  const type = params.entityType as EntityType
-  const entity = await getEntity(type, params.slug)
+  const type = entityType as EntityType
+  const entity = await getEntity(type, slug)
   if (!entity) notFound()
 
   const related = await getRelatedEntities(entity, 8)
