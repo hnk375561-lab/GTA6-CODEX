@@ -1,0 +1,36 @@
+{
+  "slug": "western-zombie-chopper",
+  "type": "vehiculos",
+  "title": "Western Zombie Chopper",
+  "description": "Moto chopper de estilo minimalista, vista en el fondo de una escena del Trailer 2 mientras Jason y Lucia conversan dentro de un auto.",
+  "content": "El Western Zombie Chopper es una motocicleta tipo chopper heredada de GTA IV y GTA Online (actualización Bikers), inspirada en la Harley-Davidson Iron 883. Aparece en el fondo del Trailer 2 de GTA VI durante una escena en la que Jason y Lucia conversan dentro de un vehículo, y también se la puede ver en una captura oficial del estudio de tatuajes Electric Fang asociada a la Ultimate Edition.\n\nA diferencia de otros candidatos de este bloque, este vehículo cuenta con corroboración cruzada entre tres fuentes secundarias independientes que coinciden tanto en el modelo como en la escena del Trailer 2.",
+  "status": "confirmado",
+  "tags": ["moto", "chopper", "trailer-2", "western", "identificacion-visual"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Western",
+  "class": "moto-chopper",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025, minuto 1:38 aprox., escena de Jason y Lucia conversando en un auto) y captura oficial de Electric Fang Tattoo",
+    "secondarySource": "gta6bible.com, gta.wiki y 6cheats.com, que coinciden de forma independiente en el modelo y en la escena del Trailer 2",
+    "note": "Incorporación (13 ago 2026, Bloque B4): tres fuentes secundarias independientes, todas de tipo wiki/base de datos (ninguna de prensa especializada de primer nivel), coinciden sin contradicción en modelo y escena. Se clasifica como 'respaldado' por el tipo de fuente, no por falta de consenso."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

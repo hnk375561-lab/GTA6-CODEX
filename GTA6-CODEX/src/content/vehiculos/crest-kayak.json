@@ -5,14 +5,23 @@
   "description": "Kayak de la Ultimate Edition, pensado para explorar las vías fluviales de Leonida, disponible cerca del refugio inicial de Jason.",
   "content": "El Crest Kayak es una embarcación exclusiva de la Ultimate Edition de GTA 6, confirmada oficialmente por Rockstar Games. Según el comunicado oficial, está disponible junto al refugio inicial de Jason y pensado para explorar las vías fluviales (waterways) del estado de Leonida.\n\nA diferencia de las lanchas motorizadas del catálogo, el Crest Kayak es una embarcación de propulsión manual, orientada a la exploración de zonas de agua poco profundas o de difícil acceso para embarcaciones más grandes, coherente con el terreno pantanoso y fluvial descrito para regiones como Grassrivers.",
   "status": "confirmado",
-  "tags": ["embarcacion", "ultimate-edition", "kayak", "exploracion"],
+  "tags": [
+    "embarcacion",
+    "ultimate-edition",
+    "kayak",
+    "exploracion"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
   "manufacturer": "Crest",
   "class": "embarcacion-manual",
-  "driven_by": ["jason-duval"],
-  "locations": ["grassrivers"],
+  "driven_by": [
+    "jason-duval"
+  ],
+  "locations": [
+    "grassrivers"
+  ],
   "customizable": false,
   "performance": {
     "speed": "Baja",
@@ -23,8 +32,8 @@
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games / Take-Two, anuncio oficial de la Ultimate Edition de GTA 6 (25 de junio de 2026)",
-    "secondarySource": "gamingpromax, vgtimes citando el comunicado oficial",
-    "note": "Nombre y propósito ('explorar las vías fluviales de Leonida') confirmados en el texto oficial de Rockstar."
+    "secondarySource": "gamingpromax, vgtimes citando el comunicado oficial; Video Games Chronicle (VGC), que reproduce el texto oficial completo de Rockstar sobre el contenido de la Ultimate Edition / Vintage Vice City Pack",
+    "note": "Nombre y propósito ('explorar las vías fluviales de Leonida') confirmados en el texto oficial de Rockstar. Auditoría de completitud UE (13 ago 2026, Bloque B4): corroborado contra el texto oficial de Rockstar citado íntegramente por VGC, agrupado junto al Dinka Enduro bajo 'Jason's Safehouse Vehicles'."
   },
   "relations": [
     {
