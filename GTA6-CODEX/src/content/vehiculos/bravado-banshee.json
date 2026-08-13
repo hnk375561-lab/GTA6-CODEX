@@ -20,6 +20,12 @@
     "handling": "Alta",
     "braking": "Media"
   },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025), fila de vehículos frente al Dominion Hotel",
+    "secondarySource": "PC Gamer y overtake.gg, coberturas independientes que coinciden en la escena y en la identificación del modelo",
+    "note": "Saneamiento retroactivo (13 ago 2026, Bloque B2): ficha con status 'confirmado' preexistente sin campo 'evidence'. Se agrega evidencia por coincidencia independiente de dos fuentes especializadas. El nombre 'Banshee' proviene de la continuidad histórica de la saga; Rockstar no publicó el nombre para GTA VI específicamente."
+  },
   "relations": [
     {
       "targetType": "ubicaciones",

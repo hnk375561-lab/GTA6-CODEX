@@ -20,6 +20,12 @@
     "handling": "Baja",
     "braking": "Media"
   },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025), secuencia de la explosión provocada por Lucia con lanzagranadas",
+    "secondarySource": "autoevolution.com, cobertura que describe la escena de forma coincidente con el contenido de esta ficha (el vehículo blindado apenas se ve afectado por la onda expansiva)",
+    "note": "Saneamiento retroactivo (13 ago 2026, Bloque B2): ficha con status 'confirmado' preexistente sin campo 'evidence'. La descripción de la escena coincide de forma precisa con una fuente especializada verificada; no se localizó una segunda fuente independiente adicional en esta revisión, por lo que se mantiene 'oficial-visual' con nota de fuente única confirmada."
+  },
   "relations": [
     {
       "targetType": "ubicaciones",

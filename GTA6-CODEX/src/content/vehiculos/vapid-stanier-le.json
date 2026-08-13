@@ -2,10 +2,10 @@
   "slug": "vapid-stanier-le",
   "type": "vehiculos",
   "title": "Vapid Stanier LE (Police Cruiser)",
-  "description": "Patrullero estándar de la policía de Vice City, con diseño inspirado en el Ford Crown Victoria Interceptor, identificado en escenas de persecución del Trailer 2.",
-  "content": "El Vapid Stanier LE es el patrullero base que lidera la mayoría de las persecuciones policiales mostradas en el Trailer 2 de GTA 6. Su diseño está inspirado en el clásico Ford Crown Victoria Police Interceptor, un vehículo icónico de las fuerzas policiales estadounidenses durante décadas.\n\nAparece de forma recurrente en distintas escenas de acción, incluyendo la secuencia de la explosión provocada por Lucia, donde se lo ve estacionado junto a un Brute Police Riot y un Bravado Buffalo STX.\n\nSu identificación como 'Stanier LE' sigue la nomenclatura utilizada por Vapid, la marca ficticia que tradicionalmente parodia a Ford dentro del universo de Grand Theft Auto.",
+  "description": "Patrullero estándar de la policía de Leonida, con diseño inspirado en el Ford Crown Victoria Interceptor, confirmado en la escena de persecución del Trailer 1.",
+  "content": "El Vapid Stanier LE es el patrullero base de la policía en GTA 6, confirmado en el Trailer 1 como parte de la flota de la Leonard County Sheriff's Office durante la persecución de Lucia y Jason. Su diseño está inspirado en el clásico Ford Crown Victoria Police Interceptor, un vehículo icónico de las fuerzas policiales estadounidenses durante décadas.\n\nSu identificación como 'Stanier LE' sigue la nomenclatura utilizada por Vapid, la marca ficticia que tradicionalmente parodia a Ford dentro del universo de Grand Theft Auto, y continúa la línea Stanier ya presente en GTA V y GTA Online.",
   "status": "confirmado",
-  "tags": ["policial", "vcpd", "trailer-2", "sedan"],
+  "tags": ["policial", "leonard-county-sheriff", "trailer-1", "sedan"],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -19,6 +19,12 @@
     "acceleration": "Media",
     "handling": "Media",
     "braking": "Media"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "Rockstar Games, GTA VI Trailer 1 (diciembre de 2023), persecución de Lucia y Jason por parte de la Leonard County Sheriff's Office",
+    "secondarySource": "GTA BOOM, cobertura que describe la reaparición oficial del Stanier LE en esa escena",
+    "note": "Corrección de canon (13 ago 2026, Bloque B2): la ficha original citaba como escena principal la explosión del Trailer 2 junto al Brute Police Riot y el Bravado Buffalo STX. No se pudo corroborar esa escena específica; la fuente consultada para esa explosión (autoevolution.com) identifica el vehículo policial acompañante como un Vapid tipo SUV inspirado en el Ford Explorer, no como un Stanier LE. Se corrige el contenido para citar la escena de persecución del Trailer 1, que sí está confirmada de forma independiente, y se baja el nivel a 'respaldado' por depender de una única fuente secundaria verificada."
   },
   "relations": [
     {

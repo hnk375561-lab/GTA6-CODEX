@@ -20,6 +20,12 @@
     "handling": "Media",
     "braking": "Media"
   },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025), secuencia de la explosión provocada por Lucia con lanzagranadas",
+    "secondarySource": "overtake.gg y autoevolution.com, coberturas independientes que coinciden en la escena y en la identificación del modelo",
+    "note": "Saneamiento retroactivo (13 ago 2026, Bloque B2): ficha con status 'confirmado' preexistente sin campo 'evidence'. Se agrega evidencia por coincidencia independiente de dos fuentes especializadas. El sufijo 'STX' proviene de la continuidad con GTA V/Online; Rockstar no publicó el nombre para GTA VI."
+  },
   "relations": [
     {
       "targetType": "ubicaciones",

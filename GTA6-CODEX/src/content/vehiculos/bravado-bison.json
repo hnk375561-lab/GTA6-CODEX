@@ -20,6 +20,12 @@
     "handling": "Media",
     "braking": "Media"
   },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025), secuencia de la autopista y escena homenaje a Fast & Furious",
+    "secondarySource": "autoevolution.com y DriveSpark, coberturas independientes que coinciden en la identificación del modelo en distintas escenas",
+    "note": "Saneamiento retroactivo (13 ago 2026, Bloque B2): ficha con status 'confirmado' preexistente sin campo 'evidence'. Se agrega evidencia por coincidencia independiente de dos fuentes especializadas. Rockstar no publicó el nombre 'Bison' para GTA VI; proviene de la continuidad con entregas anteriores de la saga."
+  },
   "relations": [
     {
       "targetType": "ubicaciones",

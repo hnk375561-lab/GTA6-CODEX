@@ -2,10 +2,10 @@
   "slug": "gallivanter-baller-st",
   "type": "vehiculos",
   "title": "Gallivanter Baller ST",
-  "description": "SUV de lujo inspirada en el Range Rover Sport de segunda generación, vista incendiada en una escena del Trailer 2.",
-  "content": "El Gallivanter Baller ST es una SUV de lujo que aparece, entre otras escenas, ardiendo en llamas junto a una camioneta Bravado durante uno de los momentos de acción del Trailer 2. Su diseño está inspirado en el Range Rover Sport de segunda generación.\n\nGallivanter es la marca ficticia que tradicionalmente parodia a Land Rover dentro del universo de Grand Theft Auto, y el Baller es una de sus SUV insignia desde entregas anteriores de la saga, ahora con la variante 'ST'.\n\nSu presencia confirma la continuidad de vehículos de lujo asociados a personajes adinerados o a la vida nocturna de Vice City.",
+  "description": "SUV de lujo de la línea Baller (segunda generación), inspirada en el Range Rover Sport, vista incendiada en el estacionamiento del Starlet Motel durante el Trailer 2.",
+  "content": "El Gallivanter Baller de segunda generación es una SUV de lujo que aparece destruida y en llamas en el estacionamiento del Starlet Motel durante el Trailer 2, además de mostrarse conduciendo en una autopista cerca de la Leonida Penitentiary al comienzo del Trailer 1. Su diseño está inspirado en el Range Rover Sport.\n\nGallivanter es la marca ficticia que tradicionalmente parodia a Land Rover dentro del universo de Grand Theft Auto, y el Baller es una de sus SUV insignia desde entregas anteriores de la saga.\n\nSu presencia confirma la continuidad de vehículos de lujo asociados a personajes adinerados o a la vida nocturna de Vice City.",
   "status": "confirmado",
-  "tags": ["suv", "lujo", "trailer-2", "gallivanter"],
+  "tags": ["suv", "lujo", "trailer-1", "trailer-2", "gallivanter"],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -19,6 +19,12 @@
     "acceleration": "Media",
     "handling": "Media",
     "braking": "Media"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "Rockstar Games, GTA VI Trailer 1 (diciembre de 2023, autopista cerca de Leonida Penitentiary) y Trailer 2 (mayo de 2025, estacionamiento del Starlet Motel)",
+    "secondarySource": "gta.wiki y autoevolution.com, que identifican el vehículo de ambas escenas como el Gallivanter Baller de segunda generación (base), no como la variante de rendimiento 'ST'",
+    "note": "Corrección de canon (13 ago 2026, Bloque B2): el título 'Baller ST' se mantiene por continuidad del slug, pero las fuentes consultadas identifican el vehículo de estas escenas específicamente como el Baller de segunda generación (base), sin elementos visuales que confirmen la variante de rendimiento 'ST'. Se baja el nivel de certeza de 'oficial-visual' a 'respaldado' hasta contar con evidencia que confirme el trim exacto."
   },
   "relations": [
     {
