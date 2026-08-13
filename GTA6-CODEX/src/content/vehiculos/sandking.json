@@ -1,0 +1,24 @@
+{
+  "slug": "sandking",
+  "type": "vehiculos",
+  "title": "Sandking",
+  "description": "Camioneta 4x4 robusta, pensada para terrenos difíciles y zonas rurales de Leonida, fuera del asfalto de Vice City.",
+  "content": "El Sandking es una camioneta todoterreno de gran porte, con suspensión reforzada y neumáticos preparados para superficies irregulares. Tradicionalmente asociada a zonas rurales y desérticas en la saga, encaja bien con los pantanos, campos y áreas menos urbanizadas que se anticipan para el estado ficticio de Leonida.\n\nA diferencia de los muscle cars o superdeportivos pensados para la ciudad, el Sandking prioriza la resistencia y la estabilidad por sobre la velocidad punta, siendo una opción práctica para misiones que se alejan del entorno urbano de Vice City.\n\nSu diseño imponente también la convierte en un vehículo popular para actividades como el atropello de obstáculos o carreras todoterreno.",
+  "status": "nuestro",
+  "tags": ["camioneta", "4x4", "todoterreno", "rural"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Vapid",
+  "class": "todoterreno",
+  "driven_by": [],
+  "locations": [],
+  "customizable": true,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Media",
+    "handling": "Alta en terreno irregular",
+    "braking": "Media"
+  },
+  "relations": []
+}

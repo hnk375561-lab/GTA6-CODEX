@@ -1,0 +1,24 @@
+{
+  "slug": "downtown-vice-city",
+  "type": "ubicaciones",
+  "title": "Downtown Vice City",
+  "description": "Distrito financiero y urbano de Vice City, con rascacielos, oficinas corporativas y una intensa actividad comercial.",
+  "content": "Downtown Vice City es el núcleo financiero y administrativo de la ciudad, caracterizado por sus rascacielos, edificios corporativos y una densidad urbana muy superior a la de los distritos costeros. Es la zona donde se concentran bancos, oficinas y sedes de negocios legales e ilegales por igual.\n\nA diferencia de Ocean Beach, con su estética turística y relajada, Downtown ofrece un contraste visual y narrativo más denso, propio del ajetreo de una gran ciudad. Suele ser escenario de misiones relacionadas con delitos financieros, atracos y conflictos entre organizaciones criminales que buscan controlar el poder económico de la ciudad.\n\nSu verticalidad también lo convierte en un desafío interesante a nivel de diseño de misiones y persecuciones, con azoteas, garajes subterráneos y calles congestionadas.",
+  "status": "nuestro",
+  "tags": ["distrito", "financiero", "vice-city", "urbano"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "district": "Downtown",
+  "region": "Leonida",
+  "points_of_interest": [],
+  "missions": [],
+  "businesses": [],
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

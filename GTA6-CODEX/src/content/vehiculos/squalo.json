@@ -1,0 +1,30 @@
+{
+  "slug": "squalo",
+  "type": "vehiculos",
+  "title": "Squalo",
+  "description": "Lancha rápida clásica de la saga, ideal para recorrer los canales y la costa de Vice City a alta velocidad.",
+  "content": "El Squalo es una embarcación deportiva ligera pensada para desplazamientos veloces por agua. Históricamente ha sido una de las lanchas más utilizadas en la saga para huidas rápidas, contrabando o simplemente para recorrer la costa de Vice City.\n\nDada la fuerte presencia de agua, canales y zonas costeras en Leonida, se espera que las embarcaciones cumplan un rol central en la movilidad de GTA 6, tanto para misiones como para exploración libre.\n\nSu manejo ágil y su velocidad la convierten en una opción popular frente a lanchas más grandes y lentas, aunque ofrece menor resistencia a los golpes.",
+  "status": "nuestro",
+  "tags": ["lancha", "agua", "velocidad", "vice-city"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Speeder",
+  "class": "embarcacion",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Alta",
+    "acceleration": "Alta",
+    "handling": "Alta",
+    "braking": "Media"
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}
