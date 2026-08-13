@@ -10,4 +10,5 @@ export type {
   EntityTypeConfig,
 } from './entity'
 
-export { EntityType, InformationStatus } from './entity'
+export { EntityType } from './entity'
+export type { InformationStatus } from './entity'

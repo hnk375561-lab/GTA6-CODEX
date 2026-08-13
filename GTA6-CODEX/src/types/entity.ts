@@ -83,7 +83,6 @@ export interface Character extends BaseEntity {
   // Propiedades específicas
   alias?: string[] // Alias o nombres alternativos
   faction?: string // Facción/organización principal
-  status?: 'alive' | 'dead' | 'unknown' | string
   voice_actor?: string
   appearance?: {
     age?: string
