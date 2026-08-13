@@ -1,0 +1,30 @@
+{
+  "slug": "gallivanter-baller-st",
+  "type": "vehiculos",
+  "title": "Gallivanter Baller ST",
+  "description": "SUV de lujo inspirada en el Range Rover Sport de segunda generación, vista incendiada en una escena del Trailer 2.",
+  "content": "El Gallivanter Baller ST es una SUV de lujo que aparece, entre otras escenas, ardiendo en llamas junto a una camioneta Bravado durante uno de los momentos de acción del Trailer 2. Su diseño está inspirado en el Range Rover Sport de segunda generación.\n\nGallivanter es la marca ficticia que tradicionalmente parodia a Land Rover dentro del universo de Grand Theft Auto, y el Baller es una de sus SUV insignia desde entregas anteriores de la saga, ahora con la variante 'ST'.\n\nSu presencia confirma la continuidad de vehículos de lujo asociados a personajes adinerados o a la vida nocturna de Vice City.",
+  "status": "confirmado",
+  "tags": ["suv", "lujo", "trailer-2", "gallivanter"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Gallivanter",
+  "class": "suv-lujo",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "slug": "bravado-gauntlet-hellfire",
+  "type": "vehiculos",
+  "title": "Bravado Gauntlet Hellfire",
+  "description": "Muscle car de alto rendimiento inspirado en el Dodge Challenger SRT Demon, conducido por Jason mientras dispara desde la ventanilla en el Trailer 2.",
+  "content": "El Bravado Gauntlet Hellfire aparece en una de las escenas más intensas del Trailer 2, cuando Jason dispara un arma desde la ventanilla mientras conduce a alta velocidad. Su diseño está inspirado principalmente en el Dodge Challenger SRT Demon, con influencias adicionales de otros muscle cars estadounidenses como el Camaro y el Mustang.\n\nEl sufijo 'Hellfire' recuerda al Dodge Hellcat, reforzando la asociación con la línea más agresiva y potente de muscle cars americanos dentro del universo ficticio de Bravado.\n\nSu aparición en una escena de acción directa lo posiciona como uno de los vehículos con mayor protagonismo narrativo mostrado hasta ahora.",
+  "status": "confirmado",
+  "tags": ["muscle-car", "trailer-2", "bravado", "accion"],
+  "featured": true,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Bravado",
+  "class": "muscle",
+  "driven_by": ["jason-duval"],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Muy alta",
+    "acceleration": "Muy alta",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "conducts"
+    },
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

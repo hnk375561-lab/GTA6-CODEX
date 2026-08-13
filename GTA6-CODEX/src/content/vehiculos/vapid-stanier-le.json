@@ -1,0 +1,30 @@
+{
+  "slug": "vapid-stanier-le",
+  "type": "vehiculos",
+  "title": "Vapid Stanier LE (Police Cruiser)",
+  "description": "Patrullero estándar de la policía de Vice City, con diseño inspirado en el Ford Crown Victoria Interceptor, identificado en escenas de persecución del Trailer 2.",
+  "content": "El Vapid Stanier LE es el patrullero base que lidera la mayoría de las persecuciones policiales mostradas en el Trailer 2 de GTA 6. Su diseño está inspirado en el clásico Ford Crown Victoria Police Interceptor, un vehículo icónico de las fuerzas policiales estadounidenses durante décadas.\n\nAparece de forma recurrente en distintas escenas de acción, incluyendo la secuencia de la explosión provocada por Lucia, donde se lo ve estacionado junto a un Brute Police Riot y un Bravado Buffalo STX.\n\nSu identificación como 'Stanier LE' sigue la nomenclatura utilizada por Vapid, la marca ficticia que tradicionalmente parodia a Ford dentro del universo de Grand Theft Auto.",
+  "status": "confirmado",
+  "tags": ["policial", "vcpd", "trailer-2", "sedan"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Vapid",
+  "class": "policial",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": false,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

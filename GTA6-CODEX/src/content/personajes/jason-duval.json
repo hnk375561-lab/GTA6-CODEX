@@ -1,20 +1,41 @@
 {
-  "slug": "jason-michigander",
+  "slug": "jason-duval",
   "type": "personajes",
-  "title": "Jason",
-  "description": "Uno de los dos protagonistas principales de GTA 6. Un criminal versátil con experiencia en múltiples ciudades y especialización en operaciones de alto riesgo.",
-  "content": "Jason es un personaje audaz y experimentado. Ha trabajado en diferentes ciudades antes de llegar a Carcer City, adquiriendo habilidades valiosas en criminalidad organizada. Su versatilidad y capacidad para adaptarse a diferentes situaciones lo hacen invaluable para la organización. Trabaja en estrecha colaboración con Lucia, su compañera de crímenes.\n\nSu pasado misterioso y su sed de venganza son motivaciones centrales en su viaje a través del juego.",
+  "title": "Jason Duval",
+  "description": "Protagonista masculino de GTA 6. Creció entre estafadores y delincuentes menores, pasó por el Ejército y terminó trabajando para narcotraficantes en los Cayos de Leonida.",
+  "content": "Jason Duval quiere una vida tranquila, pero las cosas se le complican cada vez más. Creció rodeado de estafadores y delincuentes, y tras un paso por el Ejército para dejar atrás una adolescencia problemática, terminó en los Cayos de Leonida haciendo lo que mejor sabe: trabajar para narcotraficantes locales, entre ellos Brian Heder.\n\nSu apellido, Duval, es un guiño directo a Duval Street, una calle real y emblemática de Key West, Florida, reforzando la inspiración geográfica de la región de los Cayos.\n\nSegún Rockstar, conocer a Lucia podría ser lo mejor o lo peor que le haya pasado en la vida. Jason sabe cómo le gustaría que terminara la historia, pero por ahora es difícil saberlo.",
   "status": "confirmado",
-  "tags": ["protagonista", "principal", "criminal", "versátil"],
+  "tags": ["protagonista", "principal", "confirmado-rockstar", "leonida-keys"],
   "featured": true,
   "createdAt": "2024-08-13T00:00:00Z",
-  "updatedAt": "2024-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
   "relations": [
     {
       "targetType": "personajes",
-      "targetSlug": "lucia-lopez",
+      "targetSlug": "lucia-caminos",
       "relation": "companion",
       "direction": "bidirectional"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "cal-hampton",
+      "relation": "companion",
+      "direction": "bidirectional"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "brian-heder",
+      "relation": "works_for"
+    },
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "leonida-keys",
+      "relation": "located_in"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bravado-gauntlet-hellfire",
+      "relation": "conducts"
     }
   ]
 }

@@ -1,0 +1,30 @@
+{
+  "slug": "brute-police-riot",
+  "type": "vehiculos",
+  "title": "Brute Police Riot",
+  "description": "Vehículo blindado antidisturbios de la policía de Vice City (VCPD), inspirado en el Lenco BearCat, visto resistiendo un ataque con lanzagranadas en el Trailer 2.",
+  "content": "El Brute Police Riot es un camión blindado antidisturbios que aparece en la secuencia del Trailer 2 donde Lucia ataca vehículos policiales con un lanzagranadas. A diferencia de los patrulleros convencionales, este vehículo apenas se ve afectado por la onda expansiva de la explosión, mostrando su blindaje reforzado.\n\nSu diseño está inspirado en el Lenco BearCat, un vehículo blindado real utilizado por unidades SWAT en Estados Unidos. Su identificación fue realizada de forma independiente por múltiples medios especializados en el spotting de vehículos de la saga a partir del material oficial.\n\nSu presencia sugiere niveles de búsqueda policial más elevados y agresivos que en entregas anteriores de GTA.",
+  "status": "confirmado",
+  "tags": ["policial", "vcpd", "blindado", "trailer-2"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Brute",
+  "class": "policial-blindado",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": false,
+  "performance": {
+    "speed": "Baja",
+    "acceleration": "Baja",
+    "handling": "Baja",
+    "braking": "Media"
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

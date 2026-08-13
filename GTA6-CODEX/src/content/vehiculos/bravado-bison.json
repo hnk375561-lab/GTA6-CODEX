@@ -1,0 +1,30 @@
+{
+  "slug": "bravado-bison",
+  "type": "vehiculos",
+  "title": "Bravado Bison",
+  "description": "Camioneta pickup de doble cabina inspirada en el RAM 1500 de quinta generación, vista en múltiples escenas del Trailer 2.",
+  "content": "El Bravado Bison es una camioneta pickup de doble cabina que aparece en varias escenas del Trailer 2, incluyendo una versión de los años 90 vista junto a un Gallivanter Baller incendiado. Su diseño está inspirado en el RAM 1500 de quinta generación.\n\nDentro de la escena que rinde homenaje a la saga Fast & Furious, una variante de camioneta Bravado inspirada en el RAM 3500 Dually aparece arrastrando una caja fuerte por la calle, mostrando la versatilidad de esta línea de vehículos utilitarios.\n\nSu presencia recurrente sugiere que el Bison será una de las pickups más comunes dentro del tráfico de Leonida, tanto en versiones civiles como policiales.",
+  "status": "confirmado",
+  "tags": ["camioneta", "pickup", "trailer-2", "bravado"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Bravado",
+  "class": "pickup",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}
