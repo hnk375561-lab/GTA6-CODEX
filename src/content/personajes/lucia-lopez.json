@@ -1,0 +1,20 @@
+{
+  "slug": "lucia-lopez",
+  "type": "personajes",
+  "title": "Lucia",
+  "description": "La segunda protagonista de GTA 6. Una criminal inteligente y estratégica con un pasado traumático que impulsa su búsqueda de venganza y libertad.",
+  "content": "Lucia es una criminal de élite con inteligencia estratégica excepcional. Su destreza en operaciones complejas, su carisma natural y su resolución inquebrantable la hacen una aliada invaluable. A diferencia de muchos criminales, Lucia posee una visión clara de lo que quiere lograr.\n\nSu pasado oscuro la ha moldeado en una persona determinada y peligrosa. Trabaja junto a Jason en múltiples operaciones que desafían a las instituciones más poderosas de la ciudad. Su relación con Jason es central para la narrativa del juego.\n\nA través de GTA 6, Lucia busca no solo sobrevivir, sino prosperar y finalmente liberarse de las cadenas que la mantuvieron atrapada.",
+  "status": "confirmado",
+  "tags": ["protagonista", "principal", "estratega", "inteligente"],
+  "featured": true,
+  "createdAt": "2024-08-13T00:00:00Z",
+  "updatedAt": "2024-08-13T00:00:00Z",
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-michigander",
+      "relation": "companion",
+      "direction": "bidirectional"
+    }
+  ]
+}
