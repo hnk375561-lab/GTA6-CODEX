@@ -1,0 +1,17 @@
+{
+  "slug": "mount-kalaga",
+  "type": "ubicaciones",
+  "title": "Mount Kalaga National Park",
+  "description": "Región de tierras altas boscosas en el norte de Leonida, un parque nacional pensado para la exploración todoterreno.",
+  "content": "Mount Kalaga National Park es la región más elevada y boscosa del mapa de Leonida, situada en el extremo norte del estado y confirmada oficialmente por Rockstar junto al Trailer 2 de GTA 6. Combina bosques, lagos y ríos en un entorno alejado de la vida urbana.\n\nSegún el material oficial, la zona atrae tanto a cazadores y pescadores como a comunidades rurales, y su ubicación fronteriza sugiere cercanía con otro estado ficticio aún no confirmado como jugable.\n\nSu terreno accidentado la perfila como un escenario ideal para vehículos todoterreno y actividades de exploración fuera de ruta.",
+  "status": "confirmado",
+  "tags": ["region", "leonida", "montana", "trailer-2"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "region": "Leonida",
+  "points_of_interest": [],
+  "missions": [],
+  "businesses": [],
+  "relations": []
+}
