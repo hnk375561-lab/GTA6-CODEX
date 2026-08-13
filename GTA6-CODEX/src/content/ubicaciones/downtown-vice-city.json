@@ -4,7 +4,7 @@
   "title": "Downtown Vice City",
   "description": "Distrito financiero y urbano de Vice City, con rascacielos, oficinas corporativas y una intensa actividad comercial.",
   "content": "Downtown Vice City es el núcleo financiero y administrativo de la ciudad, caracterizado por sus rascacielos, edificios corporativos y una densidad urbana muy superior a la de los distritos costeros. Es la zona donde se concentran bancos, oficinas y sedes de negocios legales e ilegales por igual.\n\nA diferencia de Ocean Beach, con su estética turística y relajada, Downtown ofrece un contraste visual y narrativo más denso, propio del ajetreo de una gran ciudad. Suele ser escenario de misiones relacionadas con delitos financieros, atracos y conflictos entre organizaciones criminales que buscan controlar el poder económico de la ciudad.\n\nSu verticalidad también lo convierte en un desafío interesante a nivel de diseño de misiones y persecuciones, con azoteas, garajes subterráneos y calles congestionadas.",
-  "status": "nuestro",
+  "status": "confirmado",
   "tags": ["distrito", "financiero", "vice-city", "urbano"],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
@@ -20,5 +20,11 @@
       "targetSlug": "vice-city",
       "relation": "located_in"
     }
-  ]
+  ],
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, tomas aereas del distrito financiero en el Trailer 2 de GTA VI (rascacielos y densidad urbana visibles)",
+    "secondarySource": "Cobertura especializada (driffle.com, gtamaps.io) que identifica la zona como nucleo financiero/'Downtown core' a partir de las mismas tomas del Trailer 2",
+    "note": "FASE G (13 ago 2026): CORRECCION. La ficha no tenia bloque evidence y estaba en status 'nuestro'. El distrito en si (rascacielos, densidad urbana, nucleo financiero) esta confirmado visualmente en tomas aereas del Trailer 2; lo que NO esta oficialmente confirmado es el nombre exacto 'Downtown Vice City', que es terminologia de la comunidad (Rockstar aun no publico nombres oficiales de barrios). Se sube a 'confirmado' con evidence_level 'oficial-visual' (visual si, nombre no oficial), siguiendo la misma convencion usada en otras fichas del dataset para contenido visualmente confirmado pero sin nombre oficial."
+  }
 }

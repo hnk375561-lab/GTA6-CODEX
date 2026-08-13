@@ -4,7 +4,7 @@
   "title": "Ocean Beach",
   "description": "Distrito costero de Vice City, inspirado en South Beach, Miami. Zona turística con playas, hoteles art déco y vida nocturna.",
   "content": "Ocean Beach es uno de los distritos más icónicos de Vice City, tomando como referencia directa a South Beach en Miami. Se caracteriza por su arquitectura art déco, sus playas de arena blanca y una intensa actividad turística y nocturna.\n\nEs una de las zonas más visualmente vibrantes de la ciudad, con paseos costeros, bares, restaurantes y locales de moda que conviven con la actividad criminal característica de la saga. Su estética colorida contrasta con distritos más industriales o residenciales de Vice City.\n\nDado el peso que tuvo esta zona en Grand Theft Auto: Vice City original, se espera que Ocean Beach vuelva a ser un punto de referencia clave para misiones, actividades y encuentros con personajes en GTA 6.",
-  "status": "nuestro",
+  "status": "confirmado",
   "tags": ["distrito", "playa", "vice-city", "turistico"],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
@@ -20,5 +20,11 @@
       "targetSlug": "vice-city",
       "relation": "located_in"
     }
-  ]
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, descripcion oficial de Vice City en el sitio de GTA VI (nombra a Ocean Beach explicitamente) y Trailer 1",
+    "secondarySource": "GTA Wiki (Fandom) y gtabase, que documentan la referencia oficial por nombre en el sitio promocional de Rockstar",
+    "note": "FASE G (13 ago 2026): CORRECCION. La ficha no tenia bloque evidence y estaba en status 'nuestro' (no oficial), pero la investigacion confirma que Rockstar nombra a Ocean Beach explicitamente en la descripcion oficial de Vice City en su sitio web, ademas de su aparicion visual en el Trailer 1. Se sube a 'confirmado' con evidence_level 'oficial-nombrado'."
+  }
 }
