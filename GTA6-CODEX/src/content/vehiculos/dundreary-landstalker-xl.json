@@ -1,0 +1,36 @@
+{
+  "slug": "dundreary-landstalker-xl",
+  "type": "vehiculos",
+  "title": "Dundreary Landstalker XL",
+  "description": "SUV de gran tamaño identificada visualmente en el Trailer 2, con un diseño que recuerda al Lincoln Navigator de cuarta generación.",
+  "content": "En el Trailer 2 de GTA 6 aparece una SUV de gran tamaño cuya carrocería fue identificada por coberturas especializadas (autoevolution, DriveSpark) como una variante 'XL' de la Dundreary Landstalker, línea presente en entregas anteriores de la saga.\n\nEl diseño combina rasgos del Lincoln Navigator de cuarta generación con detalles que también recuerdan al Chevrolet Tahoe y al Chevrolet Suburban, según el análisis de estas coberturas.\n\nRockstar no ha confirmado oficialmente el nombre de este vehículo para GTA VI; la identificación se basa en la comparación visual con la línea Landstalker de la saga.",
+  "status": "confirmado",
+  "tags": ["suv", "trailer-2", "dundreary", "identificacion-visual"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Dundreary",
+  "class": "suv",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025), secuencia de la autopista con múltiples vehículos",
+    "secondarySource": "autoevolution.com y DriveSpark, coberturas de identificación de vehículos del Trailer 2",
+    "note": "Existencia confirmada en material oficial; el nombre 'Landstalker XL' proviene de la comparación visual con la línea homónima de la saga, no de una publicación oficial de Rockstar para GTA VI."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

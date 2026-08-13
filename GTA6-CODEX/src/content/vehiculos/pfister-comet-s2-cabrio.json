@@ -1,0 +1,36 @@
+{
+  "slug": "pfister-comet-s2-cabrio",
+  "type": "vehiculos",
+  "title": "Pfister Comet S2 Cabrio",
+  "description": "Convertible deportivo de dos puertas identificado en el Trailer 1 por la forma característica de sus luces traseras.",
+  "content": "En el Trailer 1 de GTA 6 aparece un convertible deportivo de dos puertas cuyas luces traseras, especialmente estrechas, y su parrilla superior fueron señaladas por PC Gamer como rasgos distintivos que permiten identificarlo como una Pfister Comet S2 Cabrio, línea presente en entregas anteriores de la saga.\n\nRockstar no ha confirmado oficialmente el nombre de este vehículo para GTA VI; la identificación se apoya en la comparación visual con el modelo homónimo de la saga.",
+  "status": "confirmado",
+  "tags": ["deportivo", "convertible", "trailer-1", "pfister", "identificacion-visual"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Pfister",
+  "class": "deportivo-convertible",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Alta",
+    "acceleration": "Alta",
+    "handling": "Alta",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "Rockstar Games, GTA VI Trailer 1 (diciembre de 2023)",
+    "secondarySource": "PC Gamer, cobertura de identificación de vehículos de los trailers de GTA VI",
+    "note": "Existencia confirmada en material oficial; identificación basada en una única fuente especializada consultada hasta el momento, por lo que se documenta con nivel 'respaldado' en lugar de 'oficial-visual'."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

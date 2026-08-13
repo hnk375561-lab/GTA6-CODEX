@@ -1,0 +1,36 @@
+{
+  "slug": "declasse-tulip-m100",
+  "type": "vehiculos",
+  "title": "Declasse Tulip M-100",
+  "description": "Auto clásico de color magenta, identificado en el Trailer 1 por su llamativa pintura y su diseño inspirado en el Chevrolet Malibu de finales de los 70.",
+  "content": "En el Trailer 1 de GTA 6 aparece un auto clásico con un llamativo acabado en color magenta, identificado por PC Gamer como la Declasse Tulip M-100, vehículo que ya existía en Grand Theft Auto Online. Su diseño se inspira en el Chevrolet Malibu de finales de los años 70 y principios de los 80.\n\nSegún la misma cobertura, en la carrocería se distingue una calcomanía en la luneta trasera que haría referencia a llantas de mayor diámetro (27 pulgadas), consistente con el estilo lowrider/customizado de la línea Tulip.\n\nRockstar no ha confirmado oficialmente el nombre de este vehículo para GTA VI; la identificación se apoya en su parecido con el modelo homónimo ya existente en GTA Online.",
+  "status": "confirmado",
+  "tags": ["clasico", "trailer-1", "declasse", "identificacion-visual"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Declasse",
+  "class": "clasico-customizado",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "Rockstar Games, GTA VI Trailer 1 (diciembre de 2023)",
+    "secondarySource": "PC Gamer, cobertura de identificación de vehículos de los trailers de GTA VI",
+    "note": "Existencia confirmada en material oficial; identificación basada en una única fuente especializada consultada hasta el momento, por lo que se documenta con nivel 'respaldado' en lugar de 'oficial-visual'."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

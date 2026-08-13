@@ -27,6 +27,11 @@
       "targetSlug": "lori-heder",
       "relation": "spouse_of",
       "direction": "bidirectional"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "vapid-caracara-4x4",
+      "relation": "associated_with"
     }
   ]
 }
