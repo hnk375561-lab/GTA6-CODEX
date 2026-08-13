@@ -1,0 +1,36 @@
+{
+  "slug": "albany-buccaneer-custom",
+  "type": "vehiculos",
+  "title": "Albany Buccaneer Custom",
+  "description": "Auto clásico customizado, muy bajo de altura, identificado en material temprano de GTA VI entre otros vehículos de una misma toma.",
+  "content": "En material temprano de GTA 6 aparece, entre una fila de vehículos, un auto clásico customizado con una altura de suspensión extremadamente baja, identificado por PC Gamer como un Albany Buccaneer Custom, ubicado junto a otros modelos identificados de forma independiente (PMP y Tulip M-100) en la misma toma.\n\nRockstar no ha confirmado oficialmente el nombre de este vehículo para GTA VI; la identificación se apoya en la comparación visual con la línea Buccaneer de la saga.",
+  "status": "confirmado",
+  "tags": ["clasico", "customizado", "trailer-1", "albany", "identificacion-visual"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Albany",
+  "class": "clasico-customizado",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Media",
+    "acceleration": "Media",
+    "handling": "Baja",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "Rockstar Games, trailer de presentación de GTA VI (diciembre de 2023), toma con una fila de vehículos customizados",
+    "secondarySource": "PC Gamer, cobertura de identificación de vehículos de los trailers de GTA VI",
+    "note": "Existencia confirmada en material oficial; identificación basada en una única fuente especializada consultada hasta el momento. Se documenta con nivel 'respaldado' en lugar de 'oficial-visual'."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

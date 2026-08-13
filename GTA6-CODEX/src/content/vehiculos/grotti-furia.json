@@ -1,0 +1,36 @@
+{
+  "slug": "grotti-furia",
+  "type": "vehiculos",
+  "title": "Grotti Furia",
+  "description": "Auto deportivo identificado en el trailer de presentación por la forma distintiva de su luz trasera, en una toma parcialmente obstruida.",
+  "content": "En el trailer de presentación de GTA 6 aparece brevemente, y de forma parcialmente obstruida en primer plano, un auto deportivo que PC Gamer identificó como un Grotti Furia a partir de la forma distintiva de su luz trasera, pese a que la imagen está algo borrosa por el movimiento del vehículo.\n\nRockstar no ha confirmado oficialmente el nombre de este vehículo para GTA VI; la identificación se apoya en la comparación visual con el modelo homónimo de la saga, y la propia fuente reconoce que la toma es difícil de apreciar.",
+  "status": "confirmado",
+  "tags": ["deportivo", "trailer-1", "grotti", "identificacion-visual"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Grotti",
+  "class": "deportivo",
+  "driven_by": [],
+  "locations": ["vice-city"],
+  "customizable": true,
+  "performance": {
+    "speed": "Alta",
+    "acceleration": "Alta",
+    "handling": "Alta",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "Rockstar Games, trailer de presentación de GTA VI (diciembre de 2023)",
+    "secondarySource": "PC Gamer, cobertura de identificación de vehículos de los trailers de GTA VI",
+    "note": "Existencia confirmada en material oficial; identificación basada en una única fuente especializada, que reconoce explícitamente que la toma es borrosa y de fácil pérdida visual. Se documenta con nivel 'respaldado' y con menor certeza relativa dentro de esa categoría."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}
