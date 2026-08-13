@@ -9,7 +9,8 @@
     "pickup",
     "vapid",
     "pre-order",
-    "ultimate-edition"
+    "ultimate-edition",
+    "ex-creado"
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
@@ -31,7 +32,7 @@
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games / Take-Two, anuncio oficial de pre-orders y Ultimate Edition de GTA 6 (25 de junio de 2026)",
     "secondarySource": "gamingpromax, vgtimes citando el comunicado oficial; Video Games Chronicle (VGC), que reproduce el texto oficial completo de Rockstar sobre el contenido de la Ultimate Edition / Vintage Vice City Pack",
-    "note": "Vehículo base y mod 'Retro Build' confirmados por Rockstar; el vehículo base está disponible fuera del contenido exclusivo, el mod es exclusivo de la Ultimate Edition. Auditoría de completitud UE (13 ago 2026, Bloque B4): corroborado contra el texto oficial de Rockstar citado íntegramente por VGC: el modkit 'Ganado Retro Build' se aplica específicamente sobre la Vapid Ganado de Jason ('Jason's well-worn Vapid Ganado low-riding pickup')."
+    "note": "Vehículo base y mod 'Retro Build' confirmados por Rockstar; el vehículo base está disponible fuera del contenido exclusivo, el mod es exclusivo de la Ultimate Edition. Auditoría de completitud UE (13 ago 2026, Bloque B4): corroborado contra el texto oficial de Rockstar citado íntegramente por VGC: el modkit 'Ganado Retro Build' se aplica específicamente sobre la Vapid Ganado de Jason ('Jason's well-worn Vapid Ganado low-riding pickup'). Auditoría total (13 ago 2026): se detectó y resolvió un conflicto de nombre. Antes del anuncio de pre-order/Ultimate Edition (25 jun 2026), varias fuentes comunitarias (GTA Wiki, GTA Boom) llamaban a este mismo vehículo 'Vapid Creado', leyendo el badge del guardabarros en material promocional oficial. La descripción física coincide en ambos casos (coupé utility inspirado en Ford Ranchero 5ta gen. + Mercury Cougar 1969-1970), lo que confirma que se trata del mismo vehículo. El comunicado oficial de Rockstar de junio de 2026 zanjó el nombre como 'Ganado', no 'Creado'; esta ficha usa el nombre oficial posterior. Se documenta la variante 'Creado' aquí para que quede trazado el porqué de la corrección, no como nombre alternativo válido."
   },
   "relations": [
     {
