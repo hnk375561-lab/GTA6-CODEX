@@ -1,0 +1,23 @@
+{
+  "slug": "vice-city-port",
+  "type": "ubicaciones",
+  "title": "VC Port (Vice City Port)",
+  "description": "Puerto de cruceros de Vice City, descrito oficialmente por Rockstar como 'la capital mundial de los cruceros'.",
+  "content": "El VC Port, o Puerto de Vice City, es otro de los puntos nombrados directamente en la descripción oficial de la ciudad publicada por Rockstar Games. El texto oficial lo describe textualmente como 'la capital mundial de los cruceros', reflejando la enorme escala del negocio turístico marítimo de Miami en la vida real.\n\nDada la magnitud descrita, es probable que el puerto funcione como escenario de misiones relacionadas con contrabando, tráfico o infiltración, aprovechando el constante movimiento de cruceros y mercancía.\n\nSu presencia también refuerza la conexión narrativa entre Vice City y otras zonas costeras del mapa, como Port Gellhorn y Leonida Keys.",
+  "status": "confirmado",
+  "tags": ["puerto", "vice-city", "confirmado-rockstar", "cruceros"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "region": "Leonida",
+  "points_of_interest": [],
+  "missions": [],
+  "businesses": [],
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}
