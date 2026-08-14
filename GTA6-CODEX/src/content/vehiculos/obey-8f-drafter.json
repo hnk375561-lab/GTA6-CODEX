@@ -1,0 +1,43 @@
+{
+  "slug": "obey-8f-drafter",
+  "type": "vehiculos",
+  "title": "Obey 8F Drafter",
+  "description": "Cupé deportivo de dos puertas de Obey, identificado de forma distante en una captura oficial de Rockstar ambientada en Ambrosia.",
+  "content": "El Obey 8F Drafter es un cupé deportivo de dos puertas que ya formaba parte del catálogo de GTA Online (introducido con la actualización The Diamond Casino & Resort) y que reaparece en GTA VI. Su parte trasera es visible de forma distante en una captura oficial publicada por Rockstar Games ambientada en el condado de Ambrosia, circulando por una vía principal.\n\nEl diseño del 8F Drafter está inspirado en cupés deportivos como el Audi RS5, con líneas afiladas y un perfil agresivo propio de la marca ficticia Obey, asociada dentro del lore de la saga a fabricantes europeos de alto rendimiento.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "cupe",
+    "obey",
+    "ambrosia"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Obey",
+  "class": "deportivo",
+  "driven_by": [],
+  "locations": [
+    "ambrosia"
+  ],
+  "customizable": true,
+  "performance": {
+    "speed": "Alta",
+    "acceleration": "Alta",
+    "handling": "Alta",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, captura oficial in-game ambientada en el condado de Ambrosia (rockstargames.com)",
+    "secondarySource": "GTA Wiki (gta.fandom.com/wiki/8F_Drafter) y gta6intel.com, que identifican de forma independiente el mismo vehículo en la misma captura oficial de Ambrosia",
+    "note": "DESCUBRIMIENTO (13 ago 2026, ronda de expansión masiva): candidato nuevo, no presente previamente en el repo. Corroborado por dos fuentes secundarias independientes (GTA Wiki y gta6intel.com) que citan la misma captura oficial de Rockstar como fuente primaria — no se trata de una cadena circular de citas, ambas describen la escena de forma consistente pero con redacción propia. El modelo ya existía en GTA Online; su continuidad en GTA VI está confirmada visualmente, no solo asumida por precedente de la saga."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "ambrosia",
+      "relation": "located_in"
+    }
+  ]
+}
