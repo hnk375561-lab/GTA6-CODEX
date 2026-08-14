@@ -16,6 +16,8 @@ import { EntitySectionHeading } from '@/components/entities/EntitySectionHeading
 import { EntityImage } from '@/components/entities/EntityImage'
 import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
 import { MagicCard } from '@/components/ui/MagicCard'
+import { SceneSection } from '@/components/webgl/SceneSection'
+import { EntityAtmosphereBridge } from '@/components/webgl/EntityAtmosphereBridge'
 
 interface PageProps {
   params: Promise<{ entityType: string; slug: string }>
@@ -174,13 +176,20 @@ export default async function EntityPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
+      {/* Publica categoría/estado/featured de esta ficha al motor WebGL.
+          No renderiza nada — ver EntityAtmosphereBridge. */}
+      <EntityAtmosphereBridge category={type} status={entity.status} featured={Boolean(entity.featured)} />
+
       {/* Header — el fondo ambiental por categoría (EntityHeaderBackground) se
           mantiene siempre: es identidad visual de bajo costo (CSS/SVG, sin JS).
           El orb interactivo que sigue al cursor (MagicCard) queda reservado a
           entidades `featured`, que es exactamente lo que el comentario del
           componente ya decía pero el código no respetaba — el resto usa un
           contenedor estático, sin efecto de seguimiento de puntero. */}
-      <section className="relative overflow-hidden border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-10 sm:py-14">
+      <SceneSection
+        sceneId="entity-header"
+        className="relative overflow-hidden border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-10 sm:py-14"
+      >
         <EntityHeaderBackground type={type} />
         <div className="container-max relative">
           <span
@@ -209,10 +218,10 @@ export default async function EntityPage({ params }: PageProps) {
             </div>
           )}
         </div>
-      </section>
+      </SceneSection>
 
       {/* Content */}
-      <section className="py-12 sm:py-16">
+      <SceneSection sceneId="entity-content" className="py-12 sm:py-16">
         <div className="container-max grid gap-8 lg:grid-cols-3">
           <div className="space-y-6 lg:col-span-2">
             {entity.content ? (
@@ -304,7 +313,7 @@ export default async function EntityPage({ params }: PageProps) {
             </Reveal>
           </aside>
         </div>
-      </section>
+      </SceneSection>
     </>
   )
 }

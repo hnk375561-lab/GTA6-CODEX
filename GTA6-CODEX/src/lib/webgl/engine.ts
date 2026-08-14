@@ -6,7 +6,7 @@ import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js'
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js'
 import { FXAAPass } from 'three/examples/jsm/postprocessing/FXAAPass.js'
 import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js'
-import { webglSceneBus, type SceneFocus } from './scene-bus'
+import { webglSceneBus, type SceneFocus, type EntityAtmosphere } from './scene-bus'
 
 /**
  * GTA6CodexWebGLEngine — v4 "una sola escena, no un catálogo de efectos"
@@ -263,6 +263,11 @@ function smootherstep(t: number): number {
  * scroll). Se usa para desviar muy sutilmente temperatura de luz y FOV — la
  * escena "sabe" en qué parte real de la interfaz está el usuario, en vez de
  * limitarse a un porcentaje de scroll de toda la página.
+ *
+ * Las fichas de entidad (`EntityAtmosphereBridge`) suman una segunda capa:
+ * cada entidad puede comunicar su propia atmósfera (categoría, estado
+ * editorial, featured) sin agregar geometría ni shaders nuevos — son
+ * desvíos adicionales sobre los mismos uniforms/luces que ya existen.
  */
 const SECTION_MOOD: Record<string, number> = {
   hero: 0,
@@ -270,6 +275,33 @@ const SECTION_MOOD: Record<string, number> = {
   featured: 0.35,
   categories: 0.55,
   about: 0.8,
+  // Ficha de entidad: el header es el "hero" propio de esa página; el
+  // cuerpo (contenido + sidebar) es donde se profundiza en el expediente.
+  'entity-header': 0,
+  'entity-content': 0.5,
+}
+
+/**
+ * Sesgo de categoría de entidad. Reutiliza el mismo lenguaje bicolor que ya
+ * usan `keyLight`/`fillLight` (cálido/frío) en vez de introducir colores
+ * nuevos — `EntityHeaderBackground` ya distingue categorías en CSS/SVG con
+ * el mismo criterio (personaje = presencia cálida, vehículo = precisión
+ * técnica fría, ubicación = mapa neutro-frío, organización = autoridad
+ * cálida). Categorías no listadas quedan neutras a propósito.
+ */
+const CATEGORY_WARMTH: Record<string, number> = {
+  personajes: 0.6,
+  organizaciones: 0.4,
+  negocios: 0.15,
+  vehiculos: -0.5,
+  ubicaciones: -0.3,
+}
+
+/** confirmado = estable; rumor = leve inquietud visual; nuestro = tibio, editorial. */
+const STATUS_UNREST: Record<string, number> = {
+  confirmado: 0,
+  rumor: 0.6,
+  nuestro: 0.22,
 }
 
 export class GTA6CodexWebGLEngine {
@@ -325,6 +357,13 @@ export class GTA6CodexWebGLEngine {
   private sceneMoodTarget = 0
   private pointerIntentTarget = 0
   private pointerIntent = 0
+  private entityAtmosphere: EntityAtmosphere | null = null
+  private entityWarmth = 0
+  private entityWarmthTarget = 0
+  private entityUnrest = 0
+  private entityUnrestTarget = 0
+  private entityPresence = 0
+  private entityPresenceTarget = 0
   private unsubscribeSceneBus: (() => void) | null = null
 
   constructor(canvas: HTMLCanvasElement, opts: { reducedMotion: boolean }) {
@@ -402,6 +441,15 @@ export class GTA6CodexWebGLEngine {
       if (snapshot.focus.sectionId && snapshot.focus.progress > 0.35) {
         this.sceneMoodTarget = SECTION_MOOD[snapshot.focus.sectionId] ?? this.sceneMoodTarget
       }
+
+      this.entityAtmosphere = snapshot.entityAtmosphere
+      this.entityWarmthTarget = snapshot.entityAtmosphere
+        ? CATEGORY_WARMTH[snapshot.entityAtmosphere.category] ?? 0
+        : 0
+      this.entityUnrestTarget = snapshot.entityAtmosphere
+        ? STATUS_UNREST[snapshot.entityAtmosphere.status] ?? 0
+        : 0
+      this.entityPresenceTarget = snapshot.entityAtmosphere?.featured ? 1 : 0
     })
   }
 
@@ -465,7 +513,11 @@ export class GTA6CodexWebGLEngine {
       // Deriva de temperatura de color lenta e independiente del scroll:
       // sensación de que pasa el tiempo, no un "loop" mecánico.
       const cycle = Math.sin(elapsed * 0.025)
-      this.keyLight.color.setHSL(0.07 + cycle * 0.015 + this.sceneMood * 0.02, 0.85, 0.5)
+      this.keyLight.color.setHSL(
+        0.07 + cycle * (0.015 + this.entityUnrest * 0.01) + this.sceneMood * 0.02 + this.entityWarmth * 0.03,
+        0.85,
+        0.5
+      )
       this.keyLight.intensity = 48 + cycle * 10 + this.scrollProgress * 14
       this.fillLight.intensity = 28 + Math.cos(elapsed * 0.021) * 6
       this.keyLight.position.x = 9 + Math.sin(elapsed * 0.09) * 3
@@ -733,7 +785,7 @@ export class GTA6CodexWebGLEngine {
 
     this.updaters.push((elapsed, delta, intro) => {
       shaderRef.uTime.value = elapsed
-      mesh.rotation.y += delta * 0.06 * intro
+      mesh.rotation.y += delta * (0.06 + this.entityPresence * 0.03) * intro
       mesh.rotation.x = Math.sin(elapsed * 0.05) * 0.15
     })
   }
@@ -824,6 +876,9 @@ export class GTA6CodexWebGLEngine {
       // desvíos de atmósfera, no reacciones bruscas.
       this.sceneMood += (this.sceneMoodTarget - this.sceneMood) * 0.02
       this.pointerIntent += (this.pointerIntentTarget - this.pointerIntent) * 0.08
+      this.entityWarmth += (this.entityWarmthTarget - this.entityWarmth) * 0.015
+      this.entityUnrest += (this.entityUnrestTarget - this.entityUnrest) * 0.03
+      this.entityPresence += (this.entityPresenceTarget - this.entityPresence) * 0.02
 
       // Coreografía de cámara + parallax de cursor + dolly de scroll + apertura de escena.
       const frame = this.computeShotFrame(elapsed)
@@ -863,11 +918,19 @@ export class GTA6CodexWebGLEngine {
 
       this.gradePass.uniforms.time.value = elapsed * 0.6
       this.gradePass.uniforms.fadeIn.value = intro
+      this.gradePass.uniforms.grainStrength.value = 0.03 + this.entityUnrest * 0.025
       const kick = this.reducedMotion
         ? 0
-        : Math.min(this.pointerVelocity * 1.3 + this.scrollVelocity * 6 + this.pointerIntent * 0.003, 0.009)
+        : Math.min(
+            this.pointerVelocity * 1.3 +
+              this.scrollVelocity * 6 +
+              this.pointerIntent * 0.003 +
+              this.entityUnrest * 0.0015,
+            0.009
+          )
       this.gradePass.uniforms.chromaKick.value = kick
-      this.bloomPass.strength = 0.8 * intro + (this.reducedMotion ? 0 : this.pointerIntent * 0.3)
+      this.bloomPass.strength =
+        0.8 * intro + (this.reducedMotion ? 0 : this.pointerIntent * 0.3) + this.entityPresence * 0.15
 
       for (const update of this.updaters) update(elapsed, delta, intro)
 

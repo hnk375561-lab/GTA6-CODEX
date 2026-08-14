@@ -23,11 +23,26 @@ export interface SceneFocus {
   progress: number
 }
 
+/**
+ * "Atmósfera" de la entidad cuya ficha está montada — reutiliza datos que
+ * ya existen en el contenido (categoría, estado editorial, si es featured),
+ * no inventa campos nuevos. Null cuando no hay ninguna ficha montada (home,
+ * listados).
+ */
+export interface EntityAtmosphere {
+  /** Valor de `EntityType` (ej. 'personajes', 'vehiculos'). */
+  category: string
+  /** Valor de `InformationStatus` (confirmado | rumor | nuestro). */
+  status: string
+  featured: boolean
+}
+
 type Listener = () => void
 
 class WebGLSceneBus {
   private focus: SceneFocus = { sectionId: null, progress: 0 }
   private pointerIntent = 0
+  private entityAtmosphere: EntityAtmosphere | null = null
   private listeners = new Set<Listener>()
 
   private emit() {
@@ -58,10 +73,29 @@ class WebGLSceneBus {
     this.emit()
   }
 
+  /**
+   * Publicado por `EntityAtmosphereBridge` al montar/desmontar una ficha de
+   * entidad. `null` limpia la atmósfera (vuelve al comportamiento de home).
+   */
+  setEntityAtmosphere(value: EntityAtmosphere | null) {
+    const prev = this.entityAtmosphere
+    const same =
+      prev === value ||
+      (prev !== null &&
+        value !== null &&
+        prev.category === value.category &&
+        prev.status === value.status &&
+        prev.featured === value.featured)
+    if (same) return
+    this.entityAtmosphere = value
+    this.emit()
+  }
+
   getSnapshot() {
     return {
       focus: this.focus,
       pointerIntent: this.pointerIntent,
+      entityAtmosphere: this.entityAtmosphere,
     }
   }
 }
