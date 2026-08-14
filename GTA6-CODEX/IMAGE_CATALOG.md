@@ -112,9 +112,9 @@ de esas dos páginas, no inventadas ni recordadas de memoria.
 
 | Slug | Título | Featured | Estado | Fuente | Notas |
 |---|---|---|---|---|---|
-| vice-city | Vice City | true | SOURCE_VERIFIED | Screenshots ×9 (`Vice_City_01..09.jpg`) + Artwork postcard | Mejor cobertura de ubicación |
+| vice-city | Vice City | true | **INTEGRATED** | `Vice_City_01.jpg` → `vice-city.webp` | Ver Ronda 3 — resto de screenshots ×8 + artwork sin integrar (arquitectura mono-imagen) |
 | leonida-keys | Leonida Keys | true | **INTEGRATED** | `Leonida_Keys_01.jpg` → `leonida-keys.webp` | Ver Ronda 2 |
-| port-gellhorn | Port Gellhorn | true | SOURCE_VERIFIED | Screenshots ×5 + Artwork postcard | |
+| port-gellhorn | Port Gellhorn | true | **INTEGRATED** | `Port_Gellhorn_01.jpg` → `port-gellhorn.webp` | Ver Ronda 3 — resto de screenshots ×4 + artwork sin integrar (arquitectura mono-imagen) |
 | ambrosia | Ambrosia | false | **INTEGRATED** | `Ambrosia_04.jpg` → `ambrosia.webp` | Ver Ronda 2 |
 | grassrivers | Grassrivers | true | **INTEGRATED** | `Grassrivers_02.jpg` → `grassrivers.webp` | Ver Ronda 2 |
 | mount-kalaga | Mount Kalaga National Park | false | **INTEGRATED** | `Mount_Kalaga_National_Park_05.jpg` → `mount-kalaga.webp` | Ver Ronda 2 |
@@ -223,18 +223,18 @@ TOTAL VERIFICADAS:           21  (misma cifra — todo lo DISCOVERED se
                                    verificó directamente antes de listarse)
 TOTAL PENDIENTES:            81  (UNVERIFIED)
 TOTAL DESCARTADAS:            0  (REJECTED)
-TOTAL DESCARGADAS:            4  (grassrivers, ambrosia, leonida-keys, mount-kalaga —
-                                   aportadas por el usuario, Ronda 2)
-TOTAL INTEGRADAS:             4  (mismas 4 — archivo real en public/, servido
+TOTAL DESCARGADAS:            6  (grassrivers, ambrosia, leonida-keys, mount-kalaga —
+                                   Ronda 2; vice-city, port-gellhorn — Ronda 3.
+                                   Todas aportadas por el usuario)
+TOTAL INTEGRADAS:             6  (mismas 6 — archivo real en public/, servido
                                    automáticamente por resolveEntityImage())
-TOTAL DOWNLOAD_PENDING:      17  (resto de SOURCE_VERIFIED sin bytes en el repo:
+TOTAL DOWNLOAD_PENDING:      15  (resto de SOURCE_VERIFIED sin bytes en el repo:
                                    jason-duval, lucia-caminos, cal-hampton,
                                    boobie-ike, drequan-priest, real-dimez,
-                                   raul-bautista, brian-heder, vice-city,
-                                   port-gellhorn, grotti-cheetah-95,
+                                   raul-bautista, brian-heder, grotti-cheetah-95,
                                    vapid-stanier-55, vapid-dominator-buggy-67,
                                    squalo, dinka-enduro, crest-kayak, vapid-ganado)
-COBERTURA POTENCIAL ACTUAL:  21/102 = 20.6%  (si se descargaran las 17
+COBERTURA POTENCIAL ACTUAL:  21/102 = 20.6%  (si se descargaran las 15
                                                SOURCE_VERIFIED restantes)
-COBERTURA REAL HOY:           4/102 =  3.9%  (4 archivos reales en el repo)
+COBERTURA REAL HOY:           6/102 =  5.9%  (6 archivos reales en el repo)
 ```
