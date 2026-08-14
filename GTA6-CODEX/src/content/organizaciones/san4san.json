@@ -1,0 +1,38 @@
+{
+  "slug": "san4san",
+  "type": "organizaciones",
+  "title": "San4San",
+  "description": "Pandilla callejera haitiana con base en La Perle, Vice City, cuyo emblema y grafiti aparecen de forma independiente en el Trailer 1 y el Trailer 2 de GTA VI.",
+  "content": "San4San es una pandilla callejera haitiana radicada en La Perle, el enclave de inmigración haitiana de Vice City. Su nombre y símbolo aparecen documentados en dos apariciones visuales distintas y no relacionadas entre sí: en el Trailer 1 (aprox. 1:08), un personaje lleva puesta una cadena con lo que se identifica como el emblema de la pandilla en un encuentro de autos personalizados; en el Trailer 2 (aprox. 0:46), el nombre 'San4San' puede leerse brevemente en el mismo mural de La Perle donde figura la frase 'S4SLIFE', visto mientras Jason conduce junto a una escena de arresto policial.\n\nEl nombre se originó en las filtraciones de septiembre de 2022, donde apareció repetidamente en un menú de depuración que listaba eventos del mundo, y también en un mural en un almacén abandonado del lado oeste de La Perle. El vínculo entre el grafiti filtrado en 2022 y las apariciones oficiales posteriores en ambos trailers fue documentado de forma independiente por GTA Wiki y por otras coberturas especializadas, lo que permite tratar la existencia de la pandilla como confirmada visualmente por Rockstar, más allá del origen filtrado del nombre.\n\nSe especula (sin confirmación oficial de Rockstar) que San4San es una reinterpretación de la pandilla haitiana de GTA: Vice City, y que su inspiración en el mundo real es Zoe Pound, una pandilla haitiana de Miami. El nombre proviene del criollo haitiano y se traduce aproximadamente como 'sangre por sangre'.",
+  "status": "confirmado",
+  "tags": [
+    "pandilla",
+    "la-perle",
+    "vice-city",
+    "trailer-1",
+    "trailer-2",
+    "haitiano"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "la-perle",
+      "relation": "located_in"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "associated_with",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-visual-multifuente",
+    "primarySource": "Rockstar Games, Trailer 1 (~1:08, cadena con emblema en encuentro de autos) y Trailer 2 (~0:46, nombre legible en mural de La Perle, 'S4SLIFE')",
+    "secondarySource": "GTA Wiki (gta.fandom.com/wiki/San4San), que documenta ambas apariciones en trailers de forma independiente a thegta6guide.com, gtabase.com e IGGM, que corroboran la misma lectura de las mismas escenas sin depender unas de otras",
+    "note": "DESCUBRIMIENTO (14 ago 2026, ronda 6): candidato que en la ronda 5 estaba en CANDIDATES_PENDING.md con evidence D (única fuente: thegta6guide.com). Se encontró que GTA Wiki documenta dos apariciones visuales concretas y con timestamp en el propio material oficial (Trailer 1 y Trailer 2), no solo la mención filtrada de 2022. Esa documentación es independiente de thegta6guide.com (que no desglosa el timestamp), por lo que sube de nivel D a oficial-visual-multifuente. La relación con Jason Duval se marca como 'associated_with' (no 'member_of' ni 'works_for') porque las fuentes solo documentan que Jason transita por el territorio de la pandilla (allanamiento de un taller en La Perle en el leak de 2022) y no una membresía o vínculo laboral confirmado."
+  }
+}

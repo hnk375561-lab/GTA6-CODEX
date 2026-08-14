@@ -26,7 +26,6 @@ Generado: 13 ago 2026, ronda de expansión masiva. Ninguno de estos entró al ca
 |---|---|---|---|---|
 | PGPD (Port Gellhorn Police Department) | `pgpd` | D | GTA Wiki (explícitamente dice "no hemos visto una aparición física oficial completa"; livery visto en leak de 2022) | Confirmación en material oficial (trailer/captura), no solo leak. |
 | POACH (Protection of Animals & Controlled Hunting) | `poach` | D | GTA Wiki (única fuente detallada encontrada esta ronda) | Segunda fuente independiente. |
-| San4San (pandilla de La Perle) | `san4san` | D | thegta6guide.com (única fuente esta ronda) | Segunda fuente independiente. Relevante porque la-perle.json ya existe como ubicación. |
 | Leonard County Sheriff | `leonard-county-sheriff` | D | Mencionado en vcpd.json como contexto, thegta6guide.com | Segunda fuente independiente con detalle propio (no solo mención de pasada). |
 | Ambrosia County Sheriff | `ambrosia-county-sheriff` | D | thegta6guide.com (única fuente esta ronda) | Segunda fuente independiente. |
 | Leonida Highway Patrol | `leonida-highway-patrol` | D | GTA Wiki (nombre oficial "aún no confirmado" según la propia fuente) | Nombre oficial no confirmado ni por Rockstar ni por consenso de fuentes. |
@@ -37,6 +36,8 @@ Generado: 13 ago 2026, ronda de expansión masiva. Ninguno de estos entró al ca
 
 | Nombre | Slug propuesto | Evidence | Fuentes | Qué falta |
 |---|---|---|---|---|
-| Buckingham Luxor | `buckingham-luxor` | D | gta6codex.com (fuente única, marca origen como "Trailer / Leak" sin especificar cuál) | Fuente que identifique específicamente su aparición en trailer oficial de GTA VI, no solo su existencia previa en GTA V/Online. |
+| Buckingham Luxor | `buckingham-luxor` | D | gta6codex.com (fuente única, marca origen como "Trailer / Leak" sin especificar cuál) | Fuente que identifique específicamente su aparición en trailer oficial de GTA VI, no solo su existencia previa en GTA V/Online. Revisado en ronda 6 (14 ago 2026): las fuentes adicionales encontradas (GTA Wiki, gtabase.com, gtamag.com) documentan el Luxor/Luxor Deluxe únicamente como vehículo de GTA V/GTA Online, sin identificar su aparición específica en material de GTA VI. Sigue sin segunda fuente válida. |
 
-**Total candidatos pendientes: 14** (13 tras incorporar NINE1NINE, +1 nuevo de vehículos)
+~~San4San~~ — **INCORPORADO** en ronda 6 (14 ago 2026). GTA Wiki documenta dos apariciones visuales independientes en Trailer 1 (~1:08) y Trailer 2 (~0:46, mural "S4SLIFE"), corroboradas también por gtabase.com e IGGM sin depender de thegta6guide.com. Ver `organizaciones/san4san.json`.
+
+**Total candidatos pendientes: 13** (12 tras incorporar San4San en ronda 6, Buckingham Luxor confirmado sin cambios)
