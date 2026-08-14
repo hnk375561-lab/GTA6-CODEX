@@ -19,12 +19,17 @@
       "targetType": "personajes",
       "targetSlug": "lucia-caminos",
       "relation": "appears_with"
+    },
+    {
+      "targetType": "organizaciones",
+      "targetSlug": "ldc",
+      "relation": "works_for"
     }
   ],
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, Trailer 1 (primera voz que se escucha en el trailer) y sitio oficial de GTA VI",
     "secondarySource": "GTA Wiki (Fandom) y GTA Boom, que identifican su rol como trabajadora social correccional asignada a Lucia",
-    "note": "Auditoria total (13 ago 2026): nombre y rol confirmados directamente por aparicion en Trailer 1 y material oficial. Backfill retroactivo de evidence."
+    "note": "Auditoria total (13 ago 2026): nombre y rol confirmados directamente por aparicion en Trailer 1 y material oficial. Backfill retroactivo de evidence. DESCUBRIMIENTO (13 ago 2026, ronda de expansion masiva): se crea la entidad organizaciones/ldc.json (antes solo mencionada en texto) y se agrega la relacion 'works_for' correspondiente."
   }
 }

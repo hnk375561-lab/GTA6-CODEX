@@ -5,7 +5,12 @@
   "description": "Protagonista femenina de GTA 6, la primera protagonista jugable mujer en la historia principal de la saga. Originaria de Liberty City, terminó en la Penitenciaría de Leonida antes de conocer a Jason.",
   "content": "Lucia Caminos es la primera protagonista jugable mujer en la historia principal de Grand Theft Auto. La vida la golpeó desde temprano: pelear por su familia la llevó a la Penitenciaría de Leonida, de donde salió gracias a un golpe de suerte.\n\nSegún Rockstar, Lucia ya aprendió la lección: de ahora en más, solo movidas inteligentes. Más que nada, quiere la buena vida que su madre siempre soñó desde sus días en Liberty City, pero a diferencia de las fantasías a medias de su madre, Lucia está dispuesta a tomar el asunto en sus propias manos.\n\nRecién salida de prisión y lista para cambiar las probabilidades a su favor, Lucia está comprometida con su plan, sin importar lo que cueste. Su relación con Jason, descrita como una pareja criminal inspirada en Bonnie y Clyde, es central en la narrativa del juego.",
   "status": "confirmado",
-  "tags": ["protagonista", "principal", "confirmado-rockstar", "primera-protagonista-femenina"],
+  "tags": [
+    "protagonista",
+    "principal",
+    "confirmado-rockstar",
+    "primera-protagonista-femenina"
+  ],
   "featured": true,
   "createdAt": "2024-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -13,7 +18,7 @@
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, sitio oficial de GTA VI (rockstargames.com/VI, seccion \"Only in Leonida\") y Trailer 1/2 (mayo de 2025)",
     "secondarySource": "The Games Wiki, cobertura que fecha y atribuye la bio oficial de Lucia a la publicacion de Rockstar junto al Trailer 2",
-    "note": "Auditoria total (13 ago 2026, Bloque de auditoria completa): nombre completo, condicion de primera protagonista femenina principal de la saga y biografia corroborados contra la bio oficial de Rockstar (parafraseada en 'content'). Backfill retroactivo del campo evidence."
+    "note": "Auditoria total (13 ago 2026, Bloque de auditoria completa): nombre completo, condicion de primera protagonista femenina principal de la saga y biografia corroborados contra la bio oficial de Rockstar (parafraseada en 'content'). Backfill retroactivo del campo evidence. DESCUBRIMIENTO (13 ago 2026, ronda de expansion masiva): se agrega relacion 'associated_with' hacia la nueva entidad organizaciones/ldc.json (institucion donde estuvo recluida), usando el termino mas debil disponible en el vocabulario del proyecto para no sobreafirmar (no es empleo ni membresia)."
   },
   "relations": [
     {
@@ -21,6 +26,11 @@
       "targetSlug": "jason-duval",
       "relation": "companion",
       "direction": "bidirectional"
+    },
+    {
+      "targetType": "organizaciones",
+      "targetSlug": "ldc",
+      "relation": "associated_with"
     }
   ]
 }
