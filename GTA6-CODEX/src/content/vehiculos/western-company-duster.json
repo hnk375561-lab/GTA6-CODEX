@@ -1,0 +1,48 @@
+{
+  "slug": "western-company-duster",
+  "type": "vehiculos",
+  "title": "Western Company Duster",
+  "description": "Avión de fumigación de Western Company",
+  "content": "El Western Company Duster es un avión de fumigación/agrícola, inspirado en el Stearman Model 75. Confirmado en trailers de GTA 6.",
+  "status": "confirmado",
+  "tags": [
+    "avion-agricola",
+    "western-company",
+    "trailer-confirmado"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Western Company",
+  "class": "planes",
+  "driven_by": [],
+  "locations": [
+    "ambrosia",
+    "grassrivers"
+  ],
+  "customizable": true,
+  "performance": {
+    "speed": "Media-Alta",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, trailers oficiales de GTA VI (Trailer 1 y/o Trailer 2)",
+    "secondarySource": "GTABase, GTA Wiki (Fandom), múltiples DBs independientes documentan el vehículo",
+    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Western Company."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "ambrosia",
+      "relation": "located_in"
+    },
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "grassrivers",
+      "relation": "located_in"
+    }
+  ]
+}

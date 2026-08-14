@@ -1,0 +1,43 @@
+{
+  "slug": "shitzu-tropic",
+  "type": "vehiculos",
+  "title": "Shitzu Tropic",
+  "description": "Lancha tropical de Shitzu",
+  "content": "El Shitzu Tropic es una lancha rápida de lujo, inspirada en lanchas de turismo. Confirmado en trailers de GTA 6 en escenas acuáticas.",
+  "status": "confirmado",
+  "tags": [
+    "lancha",
+    "shitzu",
+    "agua",
+    "trailer-confirmado"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Shitzu",
+  "class": "boats",
+  "driven_by": [],
+  "locations": [
+    "vice-city"
+  ],
+  "customizable": true,
+  "performance": {
+    "speed": "Media-Alta",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, trailers oficiales de GTA VI (Trailer 1 y/o Trailer 2)",
+    "secondarySource": "GTABase, GTA Wiki (Fandom), múltiples DBs independientes documentan el vehículo",
+    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Shitzu."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

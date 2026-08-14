@@ -1,0 +1,42 @@
+{
+  "slug": "vapid-speedo",
+  "type": "vehiculos",
+  "title": "Vapid Speedo",
+  "description": "Furgoneta compacta de Vapid",
+  "content": "El Vapid Speedo es una furgoneta compacta de Vapid, inspirada en el Chevrolet Express. Confirmado en trailers de GTA 6.",
+  "status": "confirmado",
+  "tags": [
+    "van",
+    "vapid",
+    "trailer-confirmado"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Vapid",
+  "class": "van",
+  "driven_by": [],
+  "locations": [
+    "vice-city"
+  ],
+  "customizable": true,
+  "performance": {
+    "speed": "Media-Alta",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, trailers oficiales de GTA VI (Trailer 1 y/o Trailer 2)",
+    "secondarySource": "GTABase, GTA Wiki (Fandom), múltiples DBs independientes documentan el vehículo",
+    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Vapid."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

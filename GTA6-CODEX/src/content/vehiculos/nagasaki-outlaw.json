@@ -1,0 +1,42 @@
+{
+  "slug": "nagasaki-outlaw",
+  "type": "vehiculos",
+  "title": "Nagasaki Outlaw",
+  "description": "Vehículo todoterreno extremo de Nagasaki",
+  "content": "El Nagasaki Outlaw es un vehículo todoterreno extremo, inspirado en el Can-Am Maverick X3 Turbo. Confirmado en trailers de GTA 6.",
+  "status": "confirmado",
+  "tags": [
+    "off-road-extremo",
+    "nagasaki",
+    "trailer-confirmado"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Nagasaki",
+  "class": "off-road",
+  "driven_by": [],
+  "locations": [
+    "grassrivers"
+  ],
+  "customizable": true,
+  "performance": {
+    "speed": "Media-Alta",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, trailers oficiales de GTA VI (Trailer 1 y/o Trailer 2)",
+    "secondarySource": "GTABase, GTA Wiki (Fandom), múltiples DBs independientes documentan el vehículo",
+    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Nagasaki."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "grassrivers",
+      "relation": "located_in"
+    }
+  ]
+}

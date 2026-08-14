@@ -1,0 +1,42 @@
+{
+  "slug": "invetero-coquette-d10",
+  "type": "vehiculos",
+  "title": "Invetero Coquette D10",
+  "description": "Variante moderna del Coquette de Invetero",
+  "content": "El Coquette D10 es la variante más moderna del icónico Coquette de Invetero, basada en el Corvette C8. Aparece en trailers de GTA 6.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "invetero",
+    "trailer-confirmado"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Invetero",
+  "class": "sports",
+  "driven_by": [],
+  "locations": [
+    "vice-city"
+  ],
+  "customizable": true,
+  "performance": {
+    "speed": "Media-Alta",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, trailers oficiales de GTA VI (Trailer 1 y/o Trailer 2)",
+    "secondarySource": "GTABase, GTA Wiki (Fandom), múltiples DBs independientes documentan el vehículo",
+    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Invetero."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

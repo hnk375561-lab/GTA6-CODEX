@@ -1,0 +1,42 @@
+{
+  "slug": "karin-futo",
+  "type": "vehiculos",
+  "title": "Karin Futo",
+  "description": "Compacto deportivo de Karin",
+  "content": "El Karin Futo es un compacto deportivo de Karin, inspirado en el Toyota AE86 Levin. Confirmado en trailers de GTA 6.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo-compacto",
+    "karin",
+    "trailer-confirmado"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Karin",
+  "class": "sports",
+  "driven_by": [],
+  "locations": [
+    "vice-city"
+  ],
+  "customizable": true,
+  "performance": {
+    "speed": "Media-Alta",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, trailers oficiales de GTA VI (Trailer 1 y/o Trailer 2)",
+    "secondarySource": "GTABase, GTA Wiki (Fandom), múltiples DBs independientes documentan el vehículo",
+    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Karin."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

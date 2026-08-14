@@ -1,0 +1,43 @@
+{
+  "slug": "vapid-taxi",
+  "type": "vehiculos",
+  "title": "Vapid Taxi",
+  "description": "Taxi de Vapid, variante del Stanier",
+  "content": "El Vapid Taxi es la livrea de taxi del Vapid Stanier, sedán amarillo de transporte público. Aparece en trailers de Vice City.",
+  "status": "confirmado",
+  "tags": [
+    "taxi",
+    "vapid",
+    "servicio",
+    "trailer-confirmado"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Vapid",
+  "class": "sedan",
+  "driven_by": [],
+  "locations": [
+    "vice-city"
+  ],
+  "customizable": true,
+  "performance": {
+    "speed": "Media-Alta",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, trailers oficiales de GTA VI (Trailer 1 y/o Trailer 2)",
+    "secondarySource": "GTABase, GTA Wiki (Fandom), múltiples DBs independientes documentan el vehículo",
+    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Vapid."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "buckingham-jet",
+  "type": "vehiculos",
+  "title": "Buckingham Jet",
+  "description": "Avión comercial de Buckingham",
+  "content": "El Buckingham Jet es un avión comercial, inspirado en el Boeing 747. Confirmado en trailers de GTA 6, visible en paisajes aéreos.",
+  "status": "confirmado",
+  "tags": [
+    "avion-comercial",
+    "buckingham",
+    "trailer-confirmado"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Buckingham",
+  "class": "planes",
+  "driven_by": [],
+  "locations": [
+    "vice-city"
+  ],
+  "customizable": true,
+  "performance": {
+    "speed": "Media-Alta",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, trailers oficiales de GTA VI (Trailer 1 y/o Trailer 2)",
+    "secondarySource": "GTABase, GTA Wiki (Fandom), múltiples DBs independientes documentan el vehículo",
+    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Buckingham."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}
