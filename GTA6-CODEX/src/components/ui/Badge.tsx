@@ -22,19 +22,15 @@ export function Badge({
 }: BadgeProps) {
   let style = 'bg-gta-card text-gta-text-secondary border border-gta-border'
 
-  let pulseClass = ''
-
   if (variant === 'status' && status) {
     style = statusStyles[status]
-    // El estado "rumor" late suavemente para reforzar su naturaleza incierta
-    if (status === 'rumor') pulseClass = 'badge-pulse-live'
   } else if (variant === 'tag') {
     style = 'bg-gta-accent/20 text-gta-accent border border-gta-accent/40'
   }
 
   return (
     <span
-      className={`badge-pop inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium transition-transform duration-200 hover:scale-105 ${style} ${pulseClass} ${className}`}
+      className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium ${style} ${className}`}
     >
       {children}
     </span>
