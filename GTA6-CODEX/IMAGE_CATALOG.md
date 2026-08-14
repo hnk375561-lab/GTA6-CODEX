@@ -4,8 +4,7 @@ Generado: 2026-08-14. Ronda: Sistema Visual de Imágenes, primera pasada.
 
 ## Cómo leer este documento
 
-Estados posibles (nunca se usa "INTEGRATED" porque ninguna imagen fue
-descargada todavía — ver limitación técnica más abajo):
+Estados posibles:
 
 - **SOURCE_VERIFIED** — se localizó la imagen en una página oficial de
   Rockstar Games que se **fetcheó y confirmó directamente** en esta sesión.
@@ -16,8 +15,42 @@ descargada todavía — ver limitación técnica más abajo):
 - **UNVERIFIED** — no se buscó/encontró nada todavía para esta entidad
   en esta ronda. No es un rechazo, es trabajo pendiente.
 - **REJECTED** — se investigó y se descartó explícitamente (con motivo).
-- **DOWNLOAD_PENDING** — aplica a TODAS las filas SOURCE_VERIFIED/DISCOVERED:
+- **DOWNLOAD_PENDING** — aplica a filas SOURCE_VERIFIED/DISCOVERED:
   la URL existe pero el archivo no está descargado al repo.
+- **INTEGRATED** — el archivo real está en `public/images/entities/{tipo}/{slug}.webp`
+  y el sitio lo sirve automáticamente vía `resolveEntityImage()`. Se
+  documenta el nombre del archivo fuente original y el criterio de
+  selección cuando había más de una captura disponible.
+
+## Ronda 2 (14 ago 2026) — primeras 4 imágenes DESCARGADAS e INTEGRADAS
+
+El usuario aportó directamente 20 capturas oficiales (las mismas que esta
+sesión ya había identificado como `SOURCE_VERIFIED` en la Ronda 1, mismo
+conteo exacto por ubicación: Grassrivers ×4, Ambrosia ×5, Leonida Keys ×5,
+Mount Kalaga ×6), sorteando la limitación de red de este entorno. De cada
+grupo se seleccionó **una sola imagen** como hero (la arquitectura actual
+de `src/lib/images.ts` resuelve una imagen por entidad por convención de
+nombre de archivo, no una galería — no se modificó esa arquitectura por
+estar fuera del alcance de esta misión):
+
+| Slug | Archivo fuente elegido | Criterio de selección | Otras capturas recibidas (no integradas, arquitectura mono-imagen) |
+|---|---|---|---|
+| grassrivers | `Grassrivers_02.jpg` | Toma aérea del asentamiento sobre el agua con skyline de fondo — mejor "postal" del lugar, sin personajes en primer plano | `_01` (airboat con personajes), `_03` (aéreo pantano), `_04` (persecución) |
+| ambrosia | `Ambrosia_04.jpg` | Paisaje panorámico atardecer con torres de alta tensión e incendio — la más cinemática y menos dependiente de personajes | `_01` (motociclistas), `_02` (skyline industrial nocturno), `_03` (retrato pareja), `_05` (lavadero de autos) |
+| leonida-keys | `Leonida_Keys_01.jpg` | Vista aérea del puente sobre cayos turquesa con hidroavión — imagen "postal" más reconocible del archipiélago | `_02` (calle con gente), `_03` (bar The Rusty Anchor), `_04` (buceo), `_05` (fiesta de yates) |
+| mount-kalaga | `Mount_Kalaga_National_Park_05.jpg` | Fauna del parque (puma y ciervos junto a un arroyo) sin presencia humana — la que mejor comunica "parque nacional" | `_01` (motocross en zona industrial), `_02` (helicóptero de noticias), `_03` (cazadores), `_04` (cañón con ruta), `_06` (kayak) |
+
+Procesadas con `npm run process-images:apply`: WebP calidad 82, redimensionadas
+a 1600×900 (lado mayor tope 1600px, sin upscaling). Verificado: no rotas, no
+duplicadas entre sí (hash de contenido distinto), no watermark, resolución
+razonable, no confusión con GTA V. Archivos finales:
+
+```
+public/images/entities/ubicaciones/grassrivers.webp     184 KB
+public/images/entities/ubicaciones/ambrosia.webp          69 KB
+public/images/entities/ubicaciones/leonida-keys.webp     179 KB
+public/images/entities/ubicaciones/mount-kalaga.webp     219 KB
+```
 
 ## Limitación técnica (léase antes de todo lo demás)
 
@@ -80,11 +113,11 @@ de esas dos páginas, no inventadas ni recordadas de memoria.
 | Slug | Título | Featured | Estado | Fuente | Notas |
 |---|---|---|---|---|---|
 | vice-city | Vice City | true | SOURCE_VERIFIED | Screenshots ×9 (`Vice_City_01..09.jpg`) + Artwork postcard | Mejor cobertura de ubicación |
-| leonida-keys | Leonida Keys | true | SOURCE_VERIFIED | Screenshots ×5 + Artwork postcard | |
+| leonida-keys | Leonida Keys | true | **INTEGRATED** | `Leonida_Keys_01.jpg` → `leonida-keys.webp` | Ver Ronda 2 |
 | port-gellhorn | Port Gellhorn | true | SOURCE_VERIFIED | Screenshots ×5 + Artwork postcard | |
-| ambrosia | Ambrosia | false | SOURCE_VERIFIED | Screenshots ×5 + Artwork postcard | |
-| grassrivers | Grassrivers | true | SOURCE_VERIFIED | Screenshots ×4 + Artwork postcard | |
-| mount-kalaga | Mount Kalaga National Park | false | SOURCE_VERIFIED | Screenshots ×6 + Artwork postcard | |
+| ambrosia | Ambrosia | false | **INTEGRATED** | `Ambrosia_04.jpg` → `ambrosia.webp` | Ver Ronda 2 |
+| grassrivers | Grassrivers | true | **INTEGRATED** | `Grassrivers_02.jpg` → `grassrivers.webp` | Ver Ronda 2 |
+| mount-kalaga | Mount Kalaga National Park | false | **INTEGRATED** | `Mount_Kalaga_National_Park_05.jpg` → `mount-kalaga.webp` | Ver Ronda 2 |
 | leonida | Leonida | true | UNVERIFIED | — | Es el estado completo, no un lugar puntual; ninguna captura individual lo representa mejor que el resto — requiere criterio editorial, no solo búsqueda |
 | downtown-vice-city | Downtown Vice City | false | UNVERIFIED | — | Podría solaparse con `Vice_City_0X.jpg` genéricas, pero no hay etiqueta oficial que distinga "Downtown" del resto |
 | kelly-county | Kelly County | false | UNVERIFIED | — | |
@@ -185,14 +218,23 @@ ese estado todavía.
 
 ```
 TOTAL ENTIDADES:            102
-TOTAL CON CANDIDATO:         21  (SOURCE_VERIFIED)
+TOTAL CON CANDIDATO:         21  (SOURCE_VERIFIED + INTEGRATED)
 TOTAL VERIFICADAS:           21  (misma cifra — todo lo DISCOVERED se
                                    verificó directamente antes de listarse)
 TOTAL PENDIENTES:            81  (UNVERIFIED)
 TOTAL DESCARTADAS:            0  (REJECTED)
-TOTAL DESCARGADAS:            0  (limitación de red — ver arriba)
-TOTAL INTEGRADAS:             0  (nada se integra sin estar descargado)
-COBERTURA POTENCIAL ACTUAL:  21/102 = 20.6%  (si se descargaran las 21
-                                               ya localizadas)
-COBERTURA REAL HOY:           0/102 =  0%    (0 archivos en el repo)
+TOTAL DESCARGADAS:            4  (grassrivers, ambrosia, leonida-keys, mount-kalaga —
+                                   aportadas por el usuario, Ronda 2)
+TOTAL INTEGRADAS:             4  (mismas 4 — archivo real en public/, servido
+                                   automáticamente por resolveEntityImage())
+TOTAL DOWNLOAD_PENDING:      17  (resto de SOURCE_VERIFIED sin bytes en el repo:
+                                   jason-duval, lucia-caminos, cal-hampton,
+                                   boobie-ike, drequan-priest, real-dimez,
+                                   raul-bautista, brian-heder, vice-city,
+                                   port-gellhorn, grotti-cheetah-95,
+                                   vapid-stanier-55, vapid-dominator-buggy-67,
+                                   squalo, dinka-enduro, crest-kayak, vapid-ganado)
+COBERTURA POTENCIAL ACTUAL:  21/102 = 20.6%  (si se descargaran las 17
+                                               SOURCE_VERIFIED restantes)
+COBERTURA REAL HOY:           4/102 =  3.9%  (4 archivos reales en el repo)
 ```
