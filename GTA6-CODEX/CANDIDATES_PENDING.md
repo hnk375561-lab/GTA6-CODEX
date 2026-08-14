@@ -24,7 +24,7 @@ Generado: 13 ago 2026, ronda de expansión masiva. Ninguno de estos entró al ca
 
 | Nombre | Slug propuesto | Evidence | Fuentes | Qué falta |
 |---|---|---|---|---|
-| PGPD (Port Gellhorn Police Department) | `pgpd` | D | GTA Wiki (explícitamente dice "no hemos visto una aparición física oficial completa"; livery visto en leak de 2022) | Confirmación en material oficial (trailer/captura), no solo leak. |
+| PGPD (Port Gellhorn Police Department) | `pgpd` | D | GTA Wiki (explícitamente dice "no hemos visto una aparición física oficial completa"; livery visto en leak de 2022) | Confirmación en material oficial (trailer/captura), no solo leak. Revisado en ronda 6 (14 ago 2026): Dexerto menciona a PGPD como visto "en el trailer", pero esa afirmación cita un PDF de análisis de fans de Reddit, no una verificación propia; GTA Wiki, más riguroso, mantiene que la única aparición documentada es del leak de 2022. Se trata de fuentes en conflicto, no de corroboración independiente real — sigue sin subir de nivel. |
 | POACH (Protection of Animals & Controlled Hunting) | `poach` | D | GTA Wiki (única fuente detallada encontrada esta ronda) | Segunda fuente independiente. |
 | Leonard County Sheriff | `leonard-county-sheriff` | D | Mencionado en vcpd.json como contexto, thegta6guide.com | Segunda fuente independiente con detalle propio (no solo mención de pasada). |
 | Ambrosia County Sheriff | `ambrosia-county-sheriff` | D | thegta6guide.com (única fuente esta ronda) | Segunda fuente independiente. |
