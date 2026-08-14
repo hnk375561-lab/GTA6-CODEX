@@ -9,38 +9,35 @@ import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js'
 import { webglSceneBus, type SceneFocus, type EntityAtmosphere } from './scene-bus'
 
 /**
- * GTA6CodexWebGLEngine — v4 "una sola escena, no un catálogo de efectos"
+ * GTA6CodexWebGLEngine — v5 "Vice City, no una demo abstracta de Three.js"
  * ---------------------------------------------------------------------------
- * Reescritura con dirección artística en vez de acumulación. Decisiones
- * deliberadas frente a v3:
+ * Reescritura de dirección artística: la escena deja de ser un objeto de
+ * vidrio genérico flotando entre partículas y pasa a ser, sin ambigüedad,
+ * una calle nocturna de Vice City vista desde el capó de un auto detenido:
  *
- *  - Se eliminan los 11 cuerpos idénticos flotando al azar. En su lugar hay
- *    UNA pieza focal (el "monolito", vidrio con superficie orgánica viva),
- *    un puñado de satélites que orbitan con intención, y siluetas lejanas
- *    tipo skyline — composición de tres planos (lejos/medio/cerca) con
- *    parallax propio, no un solo `group` moviéndose entero.
- *  - Los 5 sprites de "luz volumétrica" genéricos se reemplazan por UN solo
- *    haz direccional (shader propio con falloff angular), como si hubiera
- *    una sola fuente de luz real en la escena, no ambiente decorativo.
- *  - La cámara ya no es ruido sinusoidal sin fin: es una coreografía de 3
- *    encuadres fijos que se funden entre sí muy lentamente (composición
- *    tipo "plano secuencia"), con parallax de cursor y dolly de scroll
- *    montados encima. Al cargar, arranca desde un encuadre más abierto y
- *    se asienta en el primer plano — efecto de apertura de escena.
- *  - El monolito tiene desplazamiento de vértices por ruido en el propio
- *    shader (inyectado vía onBeforeCompile sobre MeshPhysicalMaterial, así
- *    conserva PBR/transmisión real) — superficie "viva", y esa misma
- *    geometría deformada es lo que distorsiona lo que hay detrás (vidrio
- *    real, no un truco de pantalla).
- *  - Las partículas ya no son 900 puntos decorativos: son motas de polvo
- *    que responden a las luces reales de la escena (se calientan cerca de
- *    la luz cálida, se enfrían cerca de la fría) y reaccionan al cursor.
- *  - Iluminación: temperatura de color con deriva lenta e independiente
- *    (sensación de tiempo pasando), más intensidad ligada al scroll.
- *  - Post-proceso (DoF, bloom, aberración cromática + grano, FXAA) se
- *    mantiene por ser correcto, pero todo entra con una única curva de
- *    aparición al cargar (bloom/opacidades en 0 → valor final) en vez de
- *    aparecer de golpe.
+ *  - Piso: ya no es una grilla decorativa, es una CARRETERA con línea
+ *    central discontinua (magenta) y líneas de carril continuas (cian) que
+ *    corren hacia la cámara — asfalto, no demo de shader.
+ *  - Tráfico: franjas de luz (faros blancos que se acercan, luces de freno
+ *    rojas que se alejan) recorren la carretera en loop — la calle vive.
+ *  - Skyline lejano: edificios con ventanas iluminadas (ámbar/cian/magenta
+ *    en additive blending) alternados con palmeras en silueta — Miami, no
+ *    geometría abstracta.
+ *  - Horizonte: un sol/luna bajo con bandas horizontales cortadas (el
+ *    ícono synthwave del atardecer de Miami) detrás del skyline.
+ *  - Pieza focal: donde antes había un icosaedro de vidrio genérico ahora
+ *    hay una TORRE ART DECO — tres cuerpos hexagonales de vidrio en
+ *    retranqueo (setback), con anillos de neón (cian/magenta) marcando
+ *    cada nivel y una baliza en la aguja, como los hoteles de Ocean Drive.
+ *    El vidrio conserva el desplazamiento de vértices por ruido del motor
+ *    anterior (vía onBeforeCompile) — superficie "viva", PBR/transmisión
+ *    real.
+ *  - Paleta: magenta/rosa neón como luz cálida, cian como luz fría —
+ *    reemplaza el naranja/verde original — con niebla violeta nocturna.
+ *  - Cámara, integración con scroll/cursor/scene-bus y post-proceso
+ *    (DoF, bloom, aberración cromática + grano, FXAA) se mantienen
+ *    intactos: la coreografía y la reactividad ya funcionaban, lo que
+ *    faltaba era identidad visual.
  *
  * Puntos de extensión:
  *  - `buildXxx()` construyen piezas de escena independientes.
@@ -102,14 +99,14 @@ const GRADE_SHADER = {
 
       // Apertura de escena: iris real desde el centro (máscara circular que
       // se expande), no un fundido plano a negro. "fadeIn" es el progreso
-      // 0→1 de esa apertura; el borde del iris tiene un halo cálido breve
-      // (una línea de luz corriendo hacia afuera) para que se sienta como
-      // un obturador abriéndose, no un simple crossfade.
+      // 0→1 de esa apertura; el borde del iris tiene un halo de neón rosa
+      // breve (una línea de luz corriendo hacia afuera) para que se sienta
+      // como un cartel encendiéndose, no un simple crossfade.
       float distFromCenter = length(centered);
       float irisRadius = fadeIn * 0.85;
       float iris = smoothstep(irisRadius, irisRadius - 0.14, distFromCenter);
       float irisEdge = 1.0 - smoothstep(0.0, 0.05, abs(distFromCenter - irisRadius));
-      vec3 irisGlow = vec3(1.0, 0.72, 0.42) * irisEdge * (1.0 - fadeIn) * 0.9;
+      vec3 irisGlow = vec3(1.0, 0.35, 0.75) * irisEdge * (1.0 - fadeIn) * 0.9;
       color.rgb = color.rgb * iris + irisGlow * iris;
 
       gl_FragColor = color;
@@ -117,7 +114,7 @@ const GRADE_SHADER = {
   `,
 }
 
-/** Motas de polvo: ruido orgánico + calor real de las luces de la escena + repulsión de cursor. */
+/** Bruma nocturna: ruido orgánico + calor real de las luces de la escena + repulsión de cursor. */
 const DUST_VERTEX_SHADER = /* glsl */ `
   attribute vec3 seed;
   attribute float aSize;
@@ -182,8 +179,8 @@ const DUST_FRAGMENT_SHADER = /* glsl */ `
   }
 `
 
-/** Piso de grilla: horizonte, no decoración — atmósfera y fuga de perspectiva. */
-const GRID_VERTEX_SHADER = /* glsl */ `
+/** Carretera: línea central discontinua + carriles laterales — asfalto real, no grilla decorativa. */
+const ROAD_VERTEX_SHADER = /* glsl */ `
   varying vec3 vWorldPos;
   void main() {
     vec4 worldPos = modelMatrix * vec4(position, 1.0);
@@ -192,33 +189,44 @@ const GRID_VERTEX_SHADER = /* glsl */ `
   }
 `
 
-const GRID_FRAGMENT_SHADER = /* glsl */ `
+const ROAD_FRAGMENT_SHADER = /* glsl */ `
   uniform float time;
   uniform vec3 colorA;
   uniform vec3 colorB;
   uniform float introFade;
   varying vec3 vWorldPos;
 
-  float gridLine(vec2 coord, float cell) {
-    vec2 g = abs(fract(coord / cell - 0.5) - 0.5) / fwidth(coord / cell);
-    return 1.0 - min(min(g.x, g.y), 1.0);
-  }
-
   void main() {
     float dist = length(vWorldPos.xz);
     float radialFade = smoothstep(90.0, 10.0, dist);
     if (radialFade <= 0.001) discard;
 
-    float line = gridLine(vWorldPos.xz, 4.0);
-    float pulse = 0.5 + 0.5 * sin(time * 0.18 + dist * 0.05);
-    vec3 tint = mix(colorA, colorB, pulse * 0.4);
+    float x = vWorldPos.x;
+    float z = vWorldPos.z;
 
-    float alpha = line * radialFade * 0.45 * introFade;
-    gl_FragColor = vec4(tint * line, alpha);
+    // Líneas de carril laterales, continuas, en cian.
+    float laneHalfWidth = 7.5;
+    float edgeDist = min(abs(x - laneHalfWidth), abs(x + laneHalfWidth));
+    float edgeLine = 1.0 - smoothstep(0.0, 0.16, edgeDist);
+
+    // Línea central discontinua en magenta, dashes que corren hacia la cámara.
+    float dashLength = 4.0;
+    float dashGap = 2.6;
+    float period = dashLength + dashGap;
+    float alongDash = mod(z - time * 5.0, period);
+    float centerMask = 1.0 - smoothstep(0.0, 0.14, abs(x));
+    float dash = step(alongDash, dashLength) * centerMask;
+
+    float pulse = 0.5 + 0.5 * sin(time * 0.18 + dist * 0.05);
+    vec3 edgeTint = mix(colorA, colorB, pulse * 0.2);
+
+    vec3 color = edgeTint * edgeLine + colorB * dash;
+    float alpha = (edgeLine * 0.55 + dash * 0.95) * radialFade * introFade;
+    gl_FragColor = vec4(color, alpha);
   }
 `
 
-/** Haz de luz único: falloff angular real desde un origen, no un sprite decorativo. */
+/** Haz de neón único: falloff angular real desde un origen, no un sprite decorativo. */
 const SHAFT_VERTEX_SHADER = /* glsl */ `
   varying vec2 vUv;
   void main() {
@@ -239,6 +247,39 @@ const SHAFT_FRAGMENT_SHADER = /* glsl */ `
     float flicker = 0.9 + 0.1 * sin(time * 0.6);
     float alpha = alongFalloff * pow(widthFalloff, 1.6) * 0.22 * flicker * introFade;
     gl_FragColor = vec4(shaftColor, alpha);
+  }
+`
+
+/** Sol/luna bajo de horizonte, con bandas cortadas — el ícono synthwave del atardecer de Miami. */
+const SUN_VERTEX_SHADER = /* glsl */ `
+  varying vec2 vUv;
+  void main() {
+    vUv = uv;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+`
+
+const SUN_FRAGMENT_SHADER = /* glsl */ `
+  uniform float time;
+  uniform float introFade;
+  uniform vec3 coreColor;
+  uniform vec3 rimColor;
+  varying vec2 vUv;
+
+  void main() {
+    vec2 c = vUv - 0.5;
+    float d = length(c) * 2.0;
+    float disc = 1.0 - smoothstep(0.78, 0.84, d);
+    if (disc <= 0.001) discard;
+
+    vec3 col = mix(coreColor, rimColor, smoothstep(-0.4, 0.9, c.y + 0.5));
+    float scanFreq = 22.0;
+    float scan = step(0.5, fract((vUv.y + time * 0.008) * scanFreq));
+    float band = smoothstep(0.05, -0.2, c.y);
+    col *= mix(1.0, scan, band * 0.85);
+
+    float alpha = disc * 0.8 * introFade;
+    gl_FragColor = vec4(col, alpha);
   }
 `
 
@@ -292,7 +333,7 @@ const SECTION_MOOD: Record<string, number> = {
 
 /**
  * Sesgo de categoría de entidad. Reutiliza el mismo lenguaje bicolor que ya
- * usan `keyLight`/`fillLight` (cálido/frío) en vez de introducir colores
+ * usan `keyLight`/`fillLight` (magenta/cian) en vez de introducir colores
  * nuevos — `EntityHeaderBackground` ya distingue categorías en CSS/SVG con
  * el mismo criterio (personaje = presencia cálida, vehículo = precisión
  * técnica fría, ubicación = mapa neutro-frío, organización = autoridad
@@ -347,9 +388,9 @@ export class GTA6CodexWebGLEngine {
     coolLightPos: { value: THREE.Vector3 }
     introFade: { value: number }
   }
-  private gridUniforms!: { time: { value: number }; introFade: { value: number } }
+  private roadUniforms!: { time: { value: number }; introFade: { value: number } }
   private shaftUniforms!: { time: { value: number }; introFade: { value: number } }
-  private monolithShaderRefs: { uTime: { value: number } }[] = []
+  private towerShaderRefs: { uTime: { value: number } }[] = []
 
   private keyLight!: THREE.PointLight
   private fillLight!: THREE.PointLight
@@ -400,7 +441,7 @@ export class GTA6CodexWebGLEngine {
     this.renderer.outputColorSpace = THREE.SRGBColorSpace
 
     this.scene = new THREE.Scene()
-    this.scene.fog = new THREE.FogExp2(0x0e0f0d, 0.03)
+    this.scene.fog = new THREE.FogExp2(0x1c0f28, 0.027)
 
     this.camera = new THREE.PerspectiveCamera(this.baseFov, 1, 0.1, 100)
     this.camera.position.copy(SHOTS[0].pos).add(new THREE.Vector3(0, 4, 14))
@@ -414,12 +455,14 @@ export class GTA6CodexWebGLEngine {
 
     this.setupEnvironment()
     this.setupLights()
-    this.buildGridFloor()
+    this.buildRoad()
     this.buildFarSkyline()
+    this.buildHorizonSun()
     this.buildLightShaft()
+    this.buildTrafficStreaks()
     this.buildDust()
     this.buildSatellites()
-    this.buildMonolith()
+    this.buildFocalTower()
 
     this.composer = new EffectComposer(this.renderer)
     this.composer.addPass(new RenderPass(this.scene, this.camera))
@@ -431,7 +474,7 @@ export class GTA6CodexWebGLEngine {
     })
     this.composer.addPass(this.bokehPass)
 
-    this.bloomPass = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.8, 0.55, 0.18)
+    this.bloomPass = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.85, 0.55, 0.16)
     this.composer.addPass(this.bloomPass)
 
     this.gradePass = new ShaderPass(GRADE_SHADER)
@@ -490,9 +533,12 @@ export class GTA6CodexWebGLEngine {
     const gradientMat = new THREE.ShaderMaterial({
       side: THREE.BackSide,
       uniforms: {
-        colorTop: { value: new THREE.Color(0x18281d) },
-        colorMid: { value: new THREE.Color(0x120d08) },
-        colorBottom: { value: new THREE.Color(0x040404) },
+        // Cielo nocturno de Vice City: zenit añil, banda de horizonte en
+        // magenta (contaminación lumínica de la ciudad) y suelo oscuro
+        // tibio — esto se ve reflejado/refractado en el vidrio de la torre.
+        colorTop: { value: new THREE.Color(0x1c1140) },
+        colorMid: { value: new THREE.Color(0xff3d78) },
+        colorBottom: { value: new THREE.Color(0x0a0612) },
       },
       vertexShader: `
         varying vec3 vPos;
@@ -522,25 +568,27 @@ export class GTA6CodexWebGLEngine {
   }
 
   private setupLights() {
-    const ambient = new THREE.AmbientLight(0x30302e, 0.55)
+    const ambient = new THREE.AmbientLight(0x3a2350, 0.5)
     this.scene.add(ambient)
 
-    this.keyLight = new THREE.PointLight(0xff7a1a, 55, 70, 2)
+    // Luz cálida = neón magenta (marquesina/rótulo), luz fría = neón cian.
+    this.keyLight = new THREE.PointLight(0xff2d78, 55, 70, 2)
     this.keyLight.position.set(9, 5, 12)
     this.scene.add(this.keyLight)
 
-    this.fillLight = new THREE.PointLight(0x22c55e, 32, 70, 2)
+    this.fillLight = new THREE.PointLight(0x22d3ee, 32, 70, 2)
     this.fillLight.position.set(-11, -3, 6)
     this.scene.add(this.fillLight)
 
     this.updaters.push((elapsed) => {
       // Deriva de temperatura de color lenta e independiente del scroll:
-      // sensación de que pasa el tiempo, no un "loop" mecánico.
+      // sensación de que pasa el tiempo, no un "loop" mecánico. Hue ~0.92
+      // mantiene el magenta/rosa neón como base en vez del naranja original.
       const cycle = Math.sin(elapsed * 0.025)
       this.keyLight.color.setHSL(
-        0.07 + cycle * (0.015 + this.entityUnrest * 0.01) + this.sceneMood * 0.02 + this.entityWarmth * 0.03,
+        0.92 + cycle * (0.015 + this.entityUnrest * 0.01) + this.sceneMood * 0.02 + this.entityWarmth * 0.03,
         0.85,
-        0.5
+        0.56
       )
       this.keyLight.intensity = 48 + cycle * 10 + this.scrollProgress * 14
       this.fillLight.intensity = 28 + Math.cos(elapsed * 0.021) * 6
@@ -553,17 +601,18 @@ export class GTA6CodexWebGLEngine {
   // Escena — plano lejano
   // ---------------------------------------------------------------------
 
-  private buildGridFloor() {
+  /** Carretera nocturna: horizonte, no decoración — atmósfera y fuga de perspectiva. */
+  private buildRoad() {
     const geometry = new THREE.PlaneGeometry(220, 220, 1, 1)
-    this.gridUniforms = { time: { value: 0 }, introFade: { value: 0 } }
+    this.roadUniforms = { time: { value: 0 }, introFade: { value: 0 } }
     const material = new THREE.ShaderMaterial({
       uniforms: {
-        ...this.gridUniforms,
-        colorA: { value: new THREE.Color(0x22c55e) },
-        colorB: { value: new THREE.Color(0xff8a3a) },
+        ...this.roadUniforms,
+        colorA: { value: new THREE.Color(0x22d3ee) },
+        colorB: { value: new THREE.Color(0xff2d78) },
       },
-      vertexShader: GRID_VERTEX_SHADER,
-      fragmentShader: GRID_FRAGMENT_SHADER,
+      vertexShader: ROAD_VERTEX_SHADER,
+      fragmentShader: ROAD_FRAGMENT_SHADER,
       transparent: true,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
@@ -580,26 +629,98 @@ export class GTA6CodexWebGLEngine {
     })
   }
 
-  /** Siluetas lejanas (tipo skyline/palmeras) — sin luces, puro contorno y niebla: fuga de profundidad barata. */
+  /** Skyline de Miami: edificios con ventanas encendidas alternados con palmeras en silueta. */
   private buildFarSkyline() {
-    const silhouetteMat = new THREE.MeshBasicMaterial({ color: 0x0a0f0b, fog: true, transparent: true, opacity: 0.85 })
-    const shapes: THREE.Mesh[] = []
+    const silhouetteMat = new THREE.MeshBasicMaterial({ color: 0x0a0612, fog: true, transparent: true, opacity: 0.92 })
+    const windowColors = [0xffd166, 0x22d3ee, 0xff3d81]
+    const shapes: THREE.Object3D[] = []
 
-    for (let i = 0; i < 6; i++) {
-      const isTower = i % 2 === 0
-      const geometry = isTower
-        ? new THREE.BoxGeometry(0.8 + Math.random() * 1.2, 6 + Math.random() * 10, 0.8)
-        : new THREE.ConeGeometry(0.5 + Math.random() * 0.5, 5 + Math.random() * 6, 6)
-      const mesh = new THREE.Mesh(geometry, silhouetteMat)
-      mesh.position.set((Math.random() - 0.5) * 70, -13 + (geometry.parameters as { height: number }).height / 2, -34 - Math.random() * 18)
-      this.farGroup.add(mesh)
-      shapes.push(mesh)
+    for (let i = 0; i < 9; i++) {
+      const isPalm = i % 3 === 2
+      const xPos = (Math.random() - 0.5) * 78
+      const zPos = -32 - Math.random() * 20
+
+      if (isPalm) {
+        const palm = new THREE.Group()
+        const trunkHeight = 5 + Math.random() * 3
+        const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.28, trunkHeight, 6), silhouetteMat)
+        trunk.position.y = -13 + trunkHeight / 2
+        trunk.rotation.z = (Math.random() - 0.5) * 0.18
+        palm.add(trunk)
+
+        const frondCount = 6
+        for (let f = 0; f < frondCount; f++) {
+          const angle = (f / frondCount) * Math.PI * 2
+          const frond = new THREE.Mesh(new THREE.BoxGeometry(2.3, 0.08, 0.32), silhouetteMat)
+          frond.position.set(Math.cos(angle) * 1.1, -13 + trunkHeight + 0.15, Math.sin(angle) * 0.44)
+          frond.rotation.y = angle
+          frond.rotation.z = 0.5
+          palm.add(frond)
+        }
+        palm.position.set(xPos, 0, zPos + 8)
+        this.farGroup.add(palm)
+        shapes.push(palm)
+      } else {
+        const width = 0.9 + Math.random() * 1.3
+        const height = 6 + Math.random() * 12
+        const depth = 0.9 + Math.random() * 1.3
+        const building = new THREE.Mesh(new THREE.BoxGeometry(width, height, depth), silhouetteMat)
+        building.position.set(xPos, -13 + height / 2, zPos)
+        this.farGroup.add(building)
+        shapes.push(building)
+
+        const windowCount = 2 + Math.floor(Math.random() * 3)
+        for (let w = 0; w < windowCount; w++) {
+          const winColor = windowColors[Math.floor(Math.random() * windowColors.length)]
+          const winMat = new THREE.MeshBasicMaterial({
+            color: winColor,
+            transparent: true,
+            opacity: 0.55 + Math.random() * 0.35,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false,
+          })
+          const win = new THREE.Mesh(new THREE.PlaneGeometry(width * 0.7, height * 0.12), winMat)
+          win.position.set(
+            xPos + (Math.random() - 0.5) * width * 0.3,
+            -13 + Math.random() * height * 0.8 + height * 0.1,
+            zPos + depth / 2 + 0.02
+          )
+          this.farGroup.add(win)
+          shapes.push(win)
+        }
+      }
     }
 
     this.updaters.push((elapsed) => {
       shapes.forEach((s, i) => {
-        s.position.y += Math.sin(elapsed * 0.02 + i) * 0.0015
+        s.position.y += Math.sin(elapsed * 0.02 + i) * 0.0012
       })
+    })
+  }
+
+  /** Sol/luna bajo de horizonte con bandas cortadas — el atardecer de Miami detrás del skyline. */
+  private buildHorizonSun() {
+    const uniforms = { time: { value: 0 }, introFade: { value: 0 } }
+    const material = new THREE.ShaderMaterial({
+      uniforms: {
+        ...uniforms,
+        coreColor: { value: new THREE.Color(0xff5b7c) },
+        rimColor: { value: new THREE.Color(0xffb04d) },
+      },
+      vertexShader: SUN_VERTEX_SHADER,
+      fragmentShader: SUN_FRAGMENT_SHADER,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      side: THREE.DoubleSide,
+    })
+    const sun = new THREE.Mesh(new THREE.PlaneGeometry(46, 46, 1, 1), material)
+    sun.position.set(-2, 4.5, -55)
+    this.farGroup.add(sun)
+
+    this.updaters.push((elapsed, _delta, intro) => {
+      material.uniforms.time.value = elapsed
+      material.uniforms.introFade.value = intro
     })
   }
 
@@ -607,7 +728,7 @@ export class GTA6CodexWebGLEngine {
     this.shaftUniforms = { time: { value: 0 }, introFade: { value: 0 } }
     const geometry = new THREE.PlaneGeometry(14, 46, 1, 1)
     const material = new THREE.ShaderMaterial({
-      uniforms: { ...this.shaftUniforms, shaftColor: { value: new THREE.Color(0xffb066) } },
+      uniforms: { ...this.shaftUniforms, shaftColor: { value: new THREE.Color(0xff5fa8) } },
       vertexShader: SHAFT_VERTEX_SHADER,
       fragmentShader: SHAFT_FRAGMENT_SHADER,
       transparent: true,
@@ -615,10 +736,12 @@ export class GTA6CodexWebGLEngine {
       blending: THREE.AdditiveBlending,
       side: THREE.DoubleSide,
     })
+    // Reubicado como el haz de neón que sube desde la torre focal, en vez de
+    // una fuente de luz genérica en el costado de la escena.
     const shaft = new THREE.Mesh(geometry, material)
-    shaft.position.set(9, 6, -8)
-    shaft.rotation.z = 0.18
-    shaft.rotation.x = -0.1
+    shaft.position.set(-3.2, 8, -5)
+    shaft.rotation.z = 0.05
+    shaft.rotation.x = -0.06
     this.farGroup.add(shaft)
 
     this.updaters.push((elapsed, _delta, intro) => {
@@ -627,8 +750,42 @@ export class GTA6CodexWebGLEngine {
     })
   }
 
+  /** Tráfico: faros blancos que se acercan y luces de freno rojas que se alejan, en loop sobre la carretera. */
+  private buildTrafficStreaks() {
+    const COUNT = 12
+    const streaks: { mesh: THREE.Mesh; speed: number; dir: number }[] = []
+    const streakGeometry = new THREE.PlaneGeometry(0.32, 3.2)
+
+    for (let i = 0; i < COUNT; i++) {
+      const oncoming = i % 2 === 0
+      const color = oncoming ? 0xfff2d6 : 0xff2d4d
+      const material = new THREE.MeshBasicMaterial({
+        color,
+        transparent: true,
+        opacity: 0.85,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      })
+      const mesh = new THREE.Mesh(streakGeometry, material)
+      const laneX = oncoming ? -4.6 - Math.random() * 1.6 : 4.6 + Math.random() * 1.6
+      mesh.position.set(laneX, -12.55, -60 + Math.random() * 90)
+      mesh.rotation.x = -Math.PI / 2
+      this.farGroup.add(mesh)
+      streaks.push({ mesh, speed: 14 + Math.random() * 10, dir: oncoming ? 1 : -1 })
+    }
+
+    this.updaters.push((_elapsed, delta, intro) => {
+      streaks.forEach((s) => {
+        s.mesh.position.z += s.dir * s.speed * delta * intro
+        if (s.mesh.position.z > 30) s.mesh.position.z = -60
+        if (s.mesh.position.z < -60) s.mesh.position.z = 30
+        s.mesh.scale.y = 1 + Math.min(this.scrollVelocity * 40, 3)
+      })
+    })
+  }
+
   // ---------------------------------------------------------------------
-  // Escena — plano medio: polvo
+  // Escena — plano medio: bruma
   // ---------------------------------------------------------------------
 
   private buildDust() {
@@ -667,8 +824,8 @@ export class GTA6CodexWebGLEngine {
     const material = new THREE.ShaderMaterial({
       uniforms: {
         ...this.dustUniforms,
-        warmColor: { value: new THREE.Color(0xffb066) },
-        coolColor: { value: new THREE.Color(0x4ade80) },
+        warmColor: { value: new THREE.Color(0xff6fa8) },
+        coolColor: { value: new THREE.Color(0x22d3ee) },
       },
       vertexShader: DUST_VERTEX_SHADER,
       fragmentShader: DUST_FRAGMENT_SHADER,
@@ -686,23 +843,23 @@ export class GTA6CodexWebGLEngine {
     })
   }
 
-  /** Satélites: pocos, orbitando con intención alrededor del monolito — no relleno al azar. */
+  /** Adornos de neón: pocos, orbitando con intención alrededor de la torre — no relleno al azar. */
   private buildSatellites() {
     const geometries = [new THREE.OctahedronGeometry(1, 2), new THREE.TorusGeometry(0.6, 0.2, 20, 56)]
     const bodies: { mesh: THREE.Mesh; rim: THREE.Mesh; angle: number; radius: number; speed: number; tilt: number }[] = []
     const COUNT = 4
 
     for (let i = 0; i < COUNT; i++) {
-      const isGreen = i % 2 === 0
+      const isCyan = i % 2 === 0
       const geometry = geometries[i % geometries.length]
       const material = new THREE.MeshPhysicalMaterial({
-        color: isGreen ? 0x22c55e : 0xff6600,
+        color: isCyan ? 0x22d3ee : 0xff2d78,
         roughness: 0.24,
         metalness: 0.85,
         clearcoat: 0.6,
         clearcoatRoughness: 0.25,
         envMapIntensity: 1.3,
-        emissive: isGreen ? 0x0b3d1f : 0x3d1600,
+        emissive: isCyan ? 0x0b3a3d : 0x3d0b28,
         emissiveIntensity: 0.32,
       })
       const scale = 0.4 + Math.random() * 0.35
@@ -710,7 +867,7 @@ export class GTA6CodexWebGLEngine {
       mesh.scale.setScalar(scale)
 
       const rimMaterial = new THREE.ShaderMaterial({
-        uniforms: { glowColor: { value: new THREE.Color(isGreen ? 0x4ade80 : 0xffb066) } },
+        uniforms: { glowColor: { value: new THREE.Color(isCyan ? 0x67e8f9 : 0xff8fc4) } },
         transparent: true,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
@@ -746,15 +903,15 @@ export class GTA6CodexWebGLEngine {
       })
     }
 
-    const monolithOffset = new THREE.Vector3(-3.2, 0.8, -1.5)
+    const towerOffset = new THREE.Vector3(-3.2, 0.8, -1.5)
 
-    this.updaters.push((elapsed, delta, intro) => {
+    this.updaters.push((_elapsed, delta, intro) => {
       const speedFactor = (this.reducedMotion ? 0.12 : 1) * intro
       bodies.forEach((b) => {
         b.angle += delta * b.speed * (this.reducedMotion ? 0.2 : 1)
-        const x = monolithOffset.x + Math.cos(b.angle) * b.radius
-        const z = monolithOffset.z + Math.sin(b.angle) * b.radius * 0.6 - 4
-        const y = monolithOffset.y + Math.sin(b.angle * 1.4) * b.tilt * b.radius * 0.3
+        const x = towerOffset.x + Math.cos(b.angle) * b.radius
+        const z = towerOffset.z + Math.sin(b.angle) * b.radius * 0.6 - 4
+        const y = towerOffset.y + Math.sin(b.angle * 1.4) * b.tilt * b.radius * 0.3
         b.mesh.position.set(x, y, z)
         b.mesh.rotation.x += delta * 0.1 * speedFactor
         b.mesh.rotation.y += delta * 0.14 * speedFactor
@@ -768,49 +925,109 @@ export class GTA6CodexWebGLEngine {
   // Escena — plano cercano: la pieza focal
   // ---------------------------------------------------------------------
 
-  /** El monolito: única pieza focal. Vidrio real con superficie viva (ruido de vértices vía onBeforeCompile). */
-  private buildMonolith() {
-    const geometry = new THREE.IcosahedronGeometry(2.3, 6)
-    const material = new THREE.MeshPhysicalMaterial({
-      color: 0xdcf5e6,
-      roughness: 0.04,
-      metalness: 0,
-      transmission: 1,
-      thickness: 2.4,
-      ior: 1.4,
-      clearcoat: 1,
-      clearcoatRoughness: 0.06,
-      envMapIntensity: 1.7,
-      attenuationColor: new THREE.Color(0x22c55e),
-      attenuationDistance: 3,
+  /**
+   * La torre Art Deco: pieza focal única. Tres cuerpos hexagonales de
+   * vidrio en retranqueo (setback), con anillos de neón por nivel y una
+   * baliza en la aguja — la silueta de un hotel de Ocean Drive. El vidrio
+   * conserva el desplazamiento de vértices por ruido en el propio shader
+   * (inyectado vía onBeforeCompile sobre MeshPhysicalMaterial), así
+   * mantiene PBR/transmisión real — superficie "viva".
+   */
+  private buildFocalTower() {
+    const group = new THREE.Group()
+    const shaderRef = { uTime: { value: 0 } }
+
+    const makeGlassMaterial = (tint: number) => {
+      const material = new THREE.MeshPhysicalMaterial({
+        color: 0xf5eaff,
+        roughness: 0.05,
+        metalness: 0,
+        transmission: 1,
+        thickness: 2.2,
+        ior: 1.4,
+        clearcoat: 1,
+        clearcoatRoughness: 0.08,
+        envMapIntensity: 1.6,
+        attenuationColor: new THREE.Color(tint),
+        attenuationDistance: 3,
+      })
+      material.onBeforeCompile = (shader) => {
+        shader.uniforms.uTime = shaderRef.uTime
+        shader.vertexShader = shader.vertexShader
+          .replace(
+            '#include <common>',
+            `#include <common>
+             uniform float uTime;`
+          )
+          .replace(
+            '#include <begin_vertex>',
+            `#include <begin_vertex>
+             float n = sin(position.x * 1.4 + uTime * 0.4) * cos(position.y * 0.6 + uTime * 0.3) * sin(position.z * 1.4 + uTime * 0.35);
+             transformed += normal * n * 0.045;`
+          )
+      }
+      return material
+    }
+    this.towerShaderRefs.push(shaderRef)
+
+    const tiers = [
+      { radius: 2.5, height: 7, tint: 0xff2d78 },
+      { radius: 1.7, height: 3.4, tint: 0x22d3ee },
+      { radius: 1.0, height: 2.4, tint: 0xff2d78 },
+    ]
+
+    let y = -13
+    const trimRings: THREE.Mesh[] = []
+    tiers.forEach((tier, i) => {
+      const geometry = new THREE.CylinderGeometry(tier.radius, tier.radius * 1.08, tier.height, 6)
+      const material = makeGlassMaterial(tier.tint)
+      const mesh = new THREE.Mesh(geometry, material)
+      mesh.position.y = y + tier.height / 2
+      group.add(mesh)
+      y += tier.height
+
+      const ringColor = i % 2 === 0 ? 0x22d3ee : 0xff2d78
+      const ringMat = new THREE.MeshBasicMaterial({
+        color: ringColor,
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      })
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(tier.radius * 1.12, 0.035, 8, 24), ringMat)
+      ring.rotation.x = Math.PI / 2
+      ring.position.y = y
+      group.add(ring)
+      trimRings.push(ring)
     })
 
-    const shaderRef = { uTime: { value: 0 } }
-    material.onBeforeCompile = (shader) => {
-      shader.uniforms.uTime = shaderRef.uTime
-      shader.vertexShader = shader.vertexShader
-        .replace(
-          '#include <common>',
-          `#include <common>
-           uniform float uTime;`
-        )
-        .replace(
-          '#include <begin_vertex>',
-          `#include <begin_vertex>
-           float n = sin(position.x * 1.6 + uTime * 0.5) * cos(position.y * 1.4 + uTime * 0.4) * sin(position.z * 1.8 + uTime * 0.35);
-           transformed += normal * n * 0.09;`
-        )
-    }
-    this.monolithShaderRefs.push(shaderRef)
+    const spire = new THREE.Mesh(
+      new THREE.ConeGeometry(0.32, 2.6, 6),
+      new THREE.MeshPhysicalMaterial({
+        color: 0xffffff,
+        metalness: 0.9,
+        roughness: 0.2,
+        emissive: 0xff2d78,
+        emissiveIntensity: 0.4,
+      })
+    )
+    spire.position.y = y + 1.3
+    group.add(spire)
 
-    const mesh = new THREE.Mesh(geometry, material)
-    mesh.position.set(-3.2, 0.8, -1.5)
-    this.nearGroup.add(mesh)
+    const beacon = new THREE.PointLight(0xff2d78, 8, 16, 2)
+    beacon.position.y = y + 2.6
+    group.add(beacon)
+
+    group.position.set(-3.2, 0.4, -1.5)
+    this.nearGroup.add(group)
 
     this.updaters.push((elapsed, delta, intro) => {
       shaderRef.uTime.value = elapsed
-      mesh.rotation.y += delta * (0.06 + this.entityPresence * 0.03) * intro
-      mesh.rotation.x = Math.sin(elapsed * 0.05) * 0.15
+      group.rotation.y += delta * (0.045 + this.entityPresence * 0.02) * intro
+      trimRings.forEach((ring, i) => {
+        const mat = ring.material as THREE.MeshBasicMaterial
+        mat.opacity = 0.6 + 0.4 * Math.sin(elapsed * 0.8 + i * 1.7)
+      })
+      beacon.intensity = 6 + Math.max(0, Math.sin(elapsed * 1.6)) * 10
     })
   }
 
@@ -945,7 +1162,7 @@ export class GTA6CodexWebGLEngine {
       this.dustUniforms.time.value = elapsed
       this.dustUniforms.mouseNDC.value.set(this.pointer.x, -this.pointer.y)
       // Hover real sobre UI interactiva (no solo mover el mouse) intensifica
-      // la respuesta del polvo, encima de la base por intro.
+      // la respuesta de la bruma, encima de la base por intro.
       this.dustUniforms.mouseStrength.value = this.reducedMotion
         ? 0
         : Math.min(intro + this.pointerIntent * 0.6, 1.6)
