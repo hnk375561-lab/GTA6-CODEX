@@ -52,6 +52,26 @@ public/images/entities/ubicaciones/leonida-keys.webp     179 KB
 public/images/entities/ubicaciones/mount-kalaga.webp     219 KB
 ```
 
+## Ronda 4 (14 ago 2026) — 2 imágenes DESCARGADAS e INTEGRADAS
+
+El usuario aportó directamente 6 capturas oficiales de Lucia Caminos y 4 de
+Raúl Bautista (mismas entidades ya listadas `SOURCE_VERIFIED` en la Ronda 1),
+sorteando otra vez la limitación de red de este entorno. Se seleccionó **una
+sola imagen por personaje** como hero (arquitectura mono-imagen, sin cambios):
+
+| Slug | Archivo fuente elegido | Criterio de selección | Otras capturas recibidas (no integradas, arquitectura mono-imagen) |
+|---|---|---|---|
+| lucia-caminos | `Lucia_Caminos_03.jpg` | Retrato en moto frente a un bar de neón — imagen "postal" nítida y cinemática del personaje, sin depender de otros personajes en cuadro | `_01` (boxeo en gimnasio), `_02` (borde de pileta), `_04` (primer plano con arma), `_05` (uniforme naranja de reclusa), `_06` (discoteca) |
+| raul-bautista | `Raul_Bautista_03.jpg` | Retrato sereno en yate al atardecer con skyline de Vice City de fondo — buena "tarjeta de presentación" del personaje, bien iluminado | `_01` (llamada telefónica), `_02` (conduciendo con arma y dinero), `_04` (fiesta nocturna, traje) |
+
+Procesadas con `npm run process-images:apply`: WebP calidad 82, redimensionadas
+a 1600×900 (lado mayor tope 1600px, sin upscaling). Archivos finales:
+
+```
+public/images/entities/personajes/lucia-caminos.webp     ~90 KB
+public/images/entities/personajes/raul-bautista.webp     ~95 KB
+```
+
 ## Limitación técnica (léase antes de todo lo demás)
 
 El entorno de ejecución de esta sesión tiene el egress de red restringido a
@@ -92,12 +112,12 @@ de esas dos páginas, no inventadas ni recordadas de memoria.
 | Slug | Título | Featured | Estado | Fuente | Notas |
 |---|---|---|---|---|---|
 | jason-duval | Jason Duval | true | SOURCE_VERIFIED | Screenshots ×6 (`Jason_Duval_01..06.jpg`) + Artwork ensemble (`Jason_and_Lucia_*.jpg`) | Protagonista, mejor cobertura del catálogo |
-| lucia-caminos | Lucia Caminos | true | SOURCE_VERIFIED | Screenshots ×6 (`Lucia_Caminos_01..06.jpg`) + Artwork ensemble | Protagonista |
+| lucia-caminos | Lucia Caminos | true | **INTEGRATED** | `Lucia_Caminos_03.jpg` → `lucia-caminos.webp` | Ver Ronda 4 — resto de screenshots ×5 + artwork sin integrar (arquitectura mono-imagen) |
 | cal-hampton | Cal Hampton | false | SOURCE_VERIFIED | Screenshots ×4 + Artwork retrato ×1 (`Cal_Hampton_landscape.jpg`) | |
 | boobie-ike | Boobie Ike | false | SOURCE_VERIFIED | Screenshots ×4 + Artwork retrato ×1 | |
 | drequan-priest | Dre'Quan Priest | false | SOURCE_VERIFIED | Screenshots ×4 (`DreQuan_Priest_*.jpg`) + Artwork retrato ×1 | |
 | real-dimez | Real Dimez | false | SOURCE_VERIFIED | Screenshots ×4 + Artwork retrato ×1 | |
-| raul-bautista | Raul Bautista | false | SOURCE_VERIFIED | Screenshots ×4 + Artwork retrato ×1 | |
+| raul-bautista | Raul Bautista | false | **INTEGRATED** | `Raul_Bautista_03.jpg` → `raul-bautista.webp` | Ver Ronda 4 — resto de screenshots ×3 + artwork sin integrar (arquitectura mono-imagen) |
 | brian-heder | Brian Heder | false | SOURCE_VERIFIED | Screenshots ×4 + Artwork retrato ×1 | |
 | bae-luxe | Bae-Luxe | false | UNVERIFIED | — | Sin asset individual en el media kit oficial actual |
 | lori-heder | Lori Heder | false | UNVERIFIED | — | ídem |
@@ -223,18 +243,19 @@ TOTAL VERIFICADAS:           21  (misma cifra — todo lo DISCOVERED se
                                    verificó directamente antes de listarse)
 TOTAL PENDIENTES:            81  (UNVERIFIED)
 TOTAL DESCARTADAS:            0  (REJECTED)
-TOTAL DESCARGADAS:            6  (grassrivers, ambrosia, leonida-keys, mount-kalaga —
-                                   Ronda 2; vice-city, port-gellhorn — Ronda 3.
+TOTAL DESCARGADAS:            8  (grassrivers, ambrosia, leonida-keys, mount-kalaga —
+                                   Ronda 2; vice-city, port-gellhorn — Ronda 3;
+                                   lucia-caminos, raul-bautista — Ronda 4.
                                    Todas aportadas por el usuario)
-TOTAL INTEGRADAS:             6  (mismas 6 — archivo real en public/, servido
+TOTAL INTEGRADAS:             8  (mismas 8 — archivo real en public/, servido
                                    automáticamente por resolveEntityImage())
-TOTAL DOWNLOAD_PENDING:      15  (resto de SOURCE_VERIFIED sin bytes en el repo:
-                                   jason-duval, lucia-caminos, cal-hampton,
+TOTAL DOWNLOAD_PENDING:      13  (resto de SOURCE_VERIFIED sin bytes en el repo:
+                                   jason-duval, cal-hampton,
                                    boobie-ike, drequan-priest, real-dimez,
-                                   raul-bautista, brian-heder, grotti-cheetah-95,
+                                   brian-heder, grotti-cheetah-95,
                                    vapid-stanier-55, vapid-dominator-buggy-67,
                                    squalo, dinka-enduro, crest-kayak, vapid-ganado)
-COBERTURA POTENCIAL ACTUAL:  21/102 = 20.6%  (si se descargaran las 15
+COBERTURA POTENCIAL ACTUAL:  21/102 = 20.6%  (si se descargaran las 13
                                                SOURCE_VERIFIED restantes)
-COBERTURA REAL HOY:           6/102 =  5.9%  (6 archivos reales en el repo)
+COBERTURA REAL HOY:           8/102 =  7.8%  (8 archivos reales en el repo)
 ```
