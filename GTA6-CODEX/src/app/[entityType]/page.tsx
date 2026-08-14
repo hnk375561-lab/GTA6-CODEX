@@ -6,6 +6,8 @@ import { getEntitiesByType } from '@/lib/entities'
 import { generateListMetadata } from '@/lib/seo'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
+import { Reveal } from '@/components/ui/Reveal'
+import { AnimatedText } from '@/components/ui/AnimatedText'
 
 interface PageProps {
   params: Promise<{ entityType: string }>
@@ -54,49 +56,55 @@ export default async function EntityTypePage({ params }: PageProps) {
   return (
     <section className="py-12 sm:py-16">
       <div className="container-max">
-        <div className="mb-10">
+        <Reveal className="mb-10">
           <nav className="mb-4 text-sm text-gta-text-secondary" aria-label="Breadcrumb">
-            <Link href="/" className="transition-colors hover:text-gta-accent">
+            <Link href="/" className="link-underline transition-colors hover:text-gta-accent">
               Inicio
             </Link>
             <span className="mx-2">/</span>
             <span className="text-gta-text">{TYPE_LABELS[type]}</span>
           </nav>
-          <h1 className="mb-2 text-4xl font-bold text-gta-text">{TYPE_LABELS[type]}</h1>
+          <h1 className="mb-2 text-4xl font-bold text-gta-text">
+            <AnimatedText text={TYPE_LABELS[type]} mode="letters" stagger={30} />
+          </h1>
           <p className="text-gta-text-secondary">
             {entities.length} {entities.length === 1 ? 'entrada documentada' : 'entradas documentadas'}
           </p>
-        </div>
+        </Reveal>
 
         {entities.length === 0 ? (
-          <Card>
-            <CardBody>
-              <p className="text-gta-text-secondary">
-                Todavía no hay contenido publicado en esta categoría. ¡Vuelve pronto!
-              </p>
-            </CardBody>
-          </Card>
+          <Reveal>
+            <Card>
+              <CardBody>
+                <p className="text-gta-text-secondary">
+                  Todavía no hay contenido publicado en esta categoría. ¡Vuelve pronto!
+                </p>
+              </CardBody>
+            </Card>
+          </Reveal>
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {entities.map((entity) => (
-              <Link key={entity.slug} href={`/${type}/${entity.slug}`} className="group">
-                <Card hoverable className="h-full">
-                  <CardBody>
-                    <div className="mb-3 flex items-center justify-between gap-2">
-                      <Badge variant="status" status={entity.status}>
-                        {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
-                      </Badge>
-                      {entity.featured && <Badge variant="tag">Destacado</Badge>}
-                    </div>
-                    <h2 className="mb-2 text-xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
-                      {entity.title}
-                    </h2>
-                    <p className="line-clamp-3 text-sm text-gta-text-secondary">
-                      {entity.description}
-                    </p>
-                  </CardBody>
-                </Card>
-              </Link>
+            {entities.map((entity, i) => (
+              <Reveal key={entity.slug} delay={(i % 6) * 80}>
+                <Link href={`/${type}/${entity.slug}`} className="group block h-full">
+                  <Card hoverable className="h-full">
+                    <CardBody>
+                      <div className="mb-3 flex items-center justify-between gap-2">
+                        <Badge variant="status" status={entity.status}>
+                          {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
+                        </Badge>
+                        {entity.featured && <Badge variant="tag">Destacado</Badge>}
+                      </div>
+                      <h2 className="mb-2 text-xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
+                        {entity.title}
+                      </h2>
+                      <p className="line-clamp-3 text-sm text-gta-text-secondary">
+                        {entity.description}
+                      </p>
+                    </CardBody>
+                  </Card>
+                </Link>
+              </Reveal>
             ))}
           </div>
         )}

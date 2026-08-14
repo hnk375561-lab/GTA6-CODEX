@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { EntityType } from '@/types'
+import { Reveal } from '@/components/ui/Reveal'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -9,7 +10,7 @@ export function Footer() {
   return (
     <footer className="border-t border-gta-border bg-gta-darker py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-3">
+        <Reveal className="grid gap-8 md:grid-cols-3">
           {/* About */}
           <div>
             <h3 className="mb-4 font-bold text-gta-text">GTA6 Codex</h3>
@@ -25,7 +26,7 @@ export function Footer() {
               <li>
                 <Link
                   href={`/${EntityType.CHARACTER}`}
-                  className="text-gta-text-secondary transition-colors hover:text-gta-accent"
+                  className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent"
                 >
                   Personajes
                 </Link>
@@ -33,7 +34,7 @@ export function Footer() {
               <li>
                 <Link
                   href={`/${EntityType.VEHICLE}`}
-                  className="text-gta-text-secondary transition-colors hover:text-gta-accent"
+                  className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent"
                 >
                   Vehículos
                 </Link>
@@ -41,7 +42,7 @@ export function Footer() {
               <li>
                 <Link
                   href={`/${EntityType.LOCATION}`}
-                  className="text-gta-text-secondary transition-colors hover:text-gta-accent"
+                  className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent"
                 >
                   Ubicaciones
                 </Link>
@@ -49,7 +50,7 @@ export function Footer() {
               <li>
                 <Link
                   href={`/${EntityType.MISSION}`}
-                  className="text-gta-text-secondary transition-colors hover:text-gta-accent"
+                  className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent"
                 >
                   Misiones
                 </Link>
@@ -64,7 +65,7 @@ export function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gta-text-secondary transition-colors hover:text-gta-accent"
+                  className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent"
                 >
                   Política de Privacidad
                 </a>
@@ -72,7 +73,7 @@ export function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gta-text-secondary transition-colors hover:text-gta-accent"
+                  className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent"
                 >
                   Términos de Uso
                 </a>
@@ -80,21 +81,21 @@ export function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gta-text-secondary transition-colors hover:text-gta-accent"
+                  className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent"
                 >
                   Contacto
                 </a>
               </li>
             </ul>
           </div>
-        </div>
+        </Reveal>
 
         {/* Copyright */}
-        <div className="mt-8 border-t border-gta-border pt-8 text-center text-sm text-gta-text-secondary">
+        <Reveal delay={150} className="mt-8 border-t border-gta-border pt-8 text-center text-sm text-gta-text-secondary">
           <p>
             © {currentYear} GTA6 Codex. Not affiliated with Rockstar Games or Take-Two Interactive.
           </p>
-        </div>
+        </Reveal>
       </div>
     </footer>
   )

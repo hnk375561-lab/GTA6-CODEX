@@ -7,7 +7,9 @@ interface CardProps {
 }
 
 export function Card({ children, className = '', hoverable = false }: CardProps) {
-  const hoverClass = hoverable ? 'transition-all hover:border-gta-accent hover:shadow-gta-md' : ''
+  const hoverClass = hoverable
+    ? 'card-animated hover:border-gta-accent hover:shadow-gta-md'
+    : 'transition-colors duration-300'
 
   return (
     <div
