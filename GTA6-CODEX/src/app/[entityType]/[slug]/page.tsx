@@ -3,12 +3,15 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { EntityType } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
-import { getRelatedEntities } from '@/lib/relations'
+import { getRelatedEntitiesWithLabel } from '@/lib/relations'
 import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
 import { AnimatedText } from '@/components/ui/AnimatedText'
+import { EvidenceBlock } from '@/components/entities/EvidenceBlock'
+import { EntityMetadata } from '@/components/entities/EntityMetadata'
+import { RelationsPanel } from '@/components/entities/RelationsPanel'
 
 interface PageProps {
   params: Promise<{ entityType: string; slug: string }>
@@ -67,7 +70,7 @@ export default async function EntityPage({ params }: PageProps) {
   const entity = await getEntity(type, slug)
   if (!entity) notFound()
 
-  const related = await getRelatedEntities(entity, 8)
+  const related = await getRelatedEntitiesWithLabel(entity, 8)
   const jsonLd = generateEntityJsonLd(entity)
   const breadcrumbLd = generateBreadcrumbJsonLd([
     { label: 'Inicio', url: '/' },
@@ -161,34 +164,33 @@ export default async function EntityPage({ params }: PageProps) {
           </div>
 
           <aside className="space-y-6">
-            {related.length > 0 && (
+            {entity.evidence && (
               <Reveal direction="right">
                 <Card>
                   <CardBody>
-                    <h2 className="mb-4 font-bold text-gta-text">Relacionado</h2>
-                    <ul className="space-y-3">
-                      {related.map((r) => (
-                        <li key={`${r.type}-${r.slug}`}>
-                          <Link
-                            href={`/${r.type}/${r.slug}`}
-                            className="group flex flex-col text-sm transition-colors"
-                          >
-                            <span className="link-underline text-gta-text group-hover:text-gta-accent">
-                              {r.title}
-                            </span>
-                            <span className="text-xs text-gta-text-secondary">
-                              {TYPE_LABELS[r.type]}
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                    <h2 className="mb-3 font-bold text-gta-text">Evidencia</h2>
+                    <EvidenceBlock evidence={entity.evidence} />
                   </CardBody>
                 </Card>
               </Reveal>
             )}
 
-            <Reveal direction="right" delay={150}>
+            <Reveal direction="right" delay={80}>
+              <EntityMetadata entity={entity} />
+            </Reveal>
+
+            {related.length > 0 && (
+              <Reveal direction="right" delay={150}>
+                <Card>
+                  <CardBody>
+                    <h2 className="mb-4 font-bold text-gta-text">Relacionado</h2>
+                    <RelationsPanel related={related} />
+                  </CardBody>
+                </Card>
+              </Reveal>
+            )}
+
+            <Reveal direction="right" delay={220}>
               <Card>
                 <CardBody>
                   <h2 className="mb-2 font-bold text-gta-text">Información</h2>

@@ -20,6 +20,28 @@ export async function getRelatedEntities(entity: Entity, limit?: number): Promis
 }
 
 /**
+ * Igual que getRelatedEntities, pero conserva el tipo de relación
+ * (label) junto a cada entidad resuelta, para poder agruparlas
+ * visualmente por vínculo (ej. "Ubicado en", "Conduce", "Trabaja para").
+ */
+export async function getRelatedEntitiesWithLabel(
+  entity: Entity,
+  limit?: number
+): Promise<Array<{ entity: Entity; relation: string }>> {
+  if (!entity.relations || entity.relations.length === 0) return []
+
+  const relations = limit ? entity.relations.slice(0, limit) : entity.relations
+  const resolved: Array<{ entity: Entity; relation: string }> = []
+
+  for (const rel of relations) {
+    const target = await getEntity(rel.targetType, rel.targetSlug)
+    if (target) resolved.push({ entity: target, relation: rel.relation })
+  }
+
+  return resolved
+}
+
+/**
  * Obtiene relaciones bidireccionales.
  * Si A relaciona con B, también retorna B como relacionado con A,
  * aunque B no declare explícitamente la relación inversa.
@@ -138,6 +160,14 @@ export function getRelationLabel(relation: string): string {
     leads: 'Lidera',
     works_for: 'Trabaja para',
     appears_in: 'Aparece en',
+    appears_with: 'Aparece con',
+    associated_with: 'Asociado con',
+    spouse_of: 'Cónyuge de',
+    related_line: 'Línea relacionada',
+    member_of: 'Miembro de',
+    variant_of: 'Variante de',
+    partners_with: 'Asociado con',
+    invests_in: 'Invierte en',
   }
 
   return labels[relation] || relation
