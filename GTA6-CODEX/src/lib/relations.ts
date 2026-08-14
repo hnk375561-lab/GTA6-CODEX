@@ -1,5 +1,5 @@
 import { Entity, EntityRelation, EntityType } from '@/types'
-import { getEntity } from './entities'
+import { getEntity, getEntitiesByType } from './entities'
 
 /**
  * Obtiene todas las entidades relacionadas a una entidad,
@@ -53,10 +53,13 @@ export async function getBidirectionalRelations(entity: Entity): Promise<EntityR
   // Para el resto, buscamos entidades del mismo tipo que referencien a esta.
   const inferred: EntityRelation[] = []
 
-  for (const type of Object.values(EntityType)) {
-    const { getEntitiesByType } = await import('./entities')
-    const candidates = await getEntitiesByType(type)
+  // Se cargan todos los tipos en paralelo una sola vez (en vez de un
+  // import() dinámico + lectura secuencial repetida en cada iteración).
+  const entitiesByType = await Promise.all(
+    Object.values(EntityType).map(async (type) => [type, await getEntitiesByType(type)] as const)
+  )
 
+  for (const [, candidates] of entitiesByType) {
     for (const candidate of candidates) {
       if (candidate.slug === entity.slug && candidate.type === entity.type) continue
 
@@ -197,19 +200,61 @@ export function generateBreadcrumbFromRelations(
 }
 
 /**
- * Detecta si hay relaciones circulares directas (A -> B -> A)
+ * Detecta relaciones circulares (A -> B -> ... -> A) mediante DFS,
+ * hasta `maxDepth` saltos. Devuelve las relaciones directas de `entity`
+ * que forman parte de al menos un ciclo detectado (incluye tanto
+ * auto-referencias A -> A como ciclos más largos, ej. A -> B -> A).
  */
-export function detectCircularRelations(entity: Entity, maxDepth: number = 5): EntityRelation[] {
-  // Implementación simple: detecta ciclos de longitud 2 en las relaciones directas.
-  // Para grafos más profundos se recomienda un BFS/DFS completo cuando el volumen
-  // de contenido lo justifique.
+export async function detectCircularRelations(
+  entity: Entity,
+  maxDepth: number = 5
+): Promise<EntityRelation[]> {
   const circular: EntityRelation[] = []
+  const startKey = `${entity.type}/${entity.slug}`
 
   for (const rel of entity.relations || []) {
-    if (rel.targetType === entity.type && rel.targetSlug === entity.slug) {
+    const targetKey = `${rel.targetType}/${rel.targetSlug}`
+
+    // Auto-referencia directa: siempre es un ciclo.
+    if (targetKey === startKey) {
+      circular.push(rel)
+      continue
+    }
+
+    // DFS desde el destino de esta relación, buscando un camino de
+    // vuelta a `entity` en como máximo maxDepth saltos adicionales.
+    const visited = new Set<string>([startKey])
+    if (await hasPathBackToStart(rel.targetType, rel.targetSlug, startKey, maxDepth, visited)) {
       circular.push(rel)
     }
   }
 
   return circular
+}
+
+async function hasPathBackToStart(
+  currentType: EntityType,
+  currentSlug: string,
+  startKey: string,
+  depthRemaining: number,
+  visited: Set<string>
+): Promise<boolean> {
+  const currentKey = `${currentType}/${currentSlug}`
+  if (currentKey === startKey) return true
+  if (depthRemaining <= 0 || visited.has(currentKey)) return false
+
+  visited.add(currentKey)
+
+  const current = await getEntity(currentType, currentSlug)
+  if (!current) return false
+
+  for (const rel of current.relations || []) {
+    if (
+      await hasPathBackToStart(rel.targetType, rel.targetSlug, startKey, depthRemaining - 1, visited)
+    ) {
+      return true
+    }
+  }
+
+  return false
 }

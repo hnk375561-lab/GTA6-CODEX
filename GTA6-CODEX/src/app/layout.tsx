@@ -1,11 +1,15 @@
 import { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { WebGLBackground } from '@/components/webgl/WebGLBackground'
 import { SceneAmbientBridge } from '@/components/webgl/SceneAmbientBridge'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta6codex.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel.app'
+// GA4 solo se activa si hay un ID real configurado. Sin esto, un build sin
+// NEXT_PUBLIC_GA_ID enviaría eventos a un ID placeholder inexistente.
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -64,21 +68,24 @@ export default function RootLayout({
         {/* Preconnect */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* GA4 - Placeholder, configurar después */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-XXXXXXXXXX');
-            `,
-          }}
-        />
       </head>
       <body className="flex flex-col min-h-screen">
+        {GA_MEASUREMENT_ID && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+          </>
+        )}
         <WebGLBackground />
         <SceneAmbientBridge />
         <div className="relative z-10 flex min-h-screen flex-1 flex-col">
