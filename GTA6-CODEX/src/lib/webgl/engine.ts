@@ -39,6 +39,35 @@ import { webglSceneBus, type SceneFocus, type EntityAtmosphere } from './scene-b
  *    intactos: la coreografía y la reactividad ya funcionaban, lo que
  *    faltaba era identidad visual.
  *
+ * v6 — la escena responde al CONTENIDO real, no solo a scroll/cursor
+ * ---------------------------------------------------------------------------
+ * No se crea un motor por categoría ni se duplica lógica: se extiende el
+ * mismo patrón que ya traía `CATEGORY_WARMTH`/`STATUS_UNREST` con dos tablas
+ * más, `CATEGORY_PACE` y `CATEGORY_FRAME`, y dos escalares suavizados más
+ * (`entityPace`, `entityFrame`) que se leen en los mismos `updaters` que ya
+ * existían:
+ *
+ *  - `CATEGORY_FRAME` (composición): cuán cerca/lejos e íntima/panorámica es
+ *    la toma. Personajes → encuadre cerrado y bajo (retrato). Ubicaciones →
+ *    encuadre elevado y abierto (plano establecedor, más niebla despejada
+ *    para leer el skyline). Organizaciones → toma elevada y solemne.
+ *    Alimenta FOV, altura de cámara/mira y densidad de niebla — una sola
+ *    variable, varios efectos coherentes entre sí, no ramas por categoría.
+ *  - `CATEGORY_PACE` (comportamiento): a qué velocidad "vive" la escena.
+ *    Vehículos → tráfico y flujo de la carretera notablemente más rápidos,
+ *    cámara más despejada (menos profundidad de campo). Ubicaciones →
+ *    todo se asienta, contemplativo. Alimenta el flujo de la carretera, la
+ *    velocidad del tráfico y la rotación de la torre.
+ *  - `STATUS_UNREST` (ya existía) ahora además desestabiliza el parpadeo de
+ *    la baliza y los anillos de neón de la torre: "rumor" tiembla, "nuestro"
+ *    respira suave, "confirmado" es estable — la editorial se ve, no solo
+ *    se lee.
+ *
+ * Igual que antes, nada de esto se dispara con `Math.random()` en cada
+ * frame: son funciones deterministas del tiempo transcurrido y de escalares
+ * ya suavizados, así que la escena es reproducible y nunca "tiembla" sin
+ * motivo — cada cambio visual es trazable a un dato real de la entidad.
+ *
  * Puntos de extensión:
  *  - `buildXxx()` construyen piezas de escena independientes.
  *  - `updaters` centraliza el loop de animación.
@@ -191,6 +220,7 @@ const ROAD_VERTEX_SHADER = /* glsl */ `
 
 const ROAD_FRAGMENT_SHADER = /* glsl */ `
   uniform float time;
+  uniform float flow;
   uniform vec3 colorA;
   uniform vec3 colorB;
   uniform float introFade;
@@ -209,11 +239,14 @@ const ROAD_FRAGMENT_SHADER = /* glsl */ `
     float edgeDist = min(abs(x - laneHalfWidth), abs(x + laneHalfWidth));
     float edgeLine = 1.0 - smoothstep(0.0, 0.16, edgeDist);
 
-    // Línea central discontinua en magenta, dashes que corren hacia la cámara.
+    // Línea central discontinua en magenta. "flow" (no "time") es lo que
+    // corre: un acumulador aparte que el motor avanza a un ritmo distinto
+    // según el "pace" de la categoría de contenido (vehículos = rápido,
+    // ubicaciones = lento) sin afectar el pulso ambiental de abajo.
     float dashLength = 4.0;
     float dashGap = 2.6;
     float period = dashLength + dashGap;
-    float alongDash = mod(z - time * 5.0, period);
+    float alongDash = mod(z - flow, period);
     float centerMask = 1.0 - smoothstep(0.0, 0.14, abs(x));
     float dash = step(alongDash, dashLength) * centerMask;
 
@@ -354,6 +387,36 @@ const STATUS_UNREST: Record<string, number> = {
   nuestro: 0.22,
 }
 
+/**
+ * Ritmo de la escena (1 = base). Vehículos: tráfico y flujo de carretera
+ * notablemente más vivos — es la categoría sobre velocidad. Ubicaciones:
+ * todo se asienta, plano contemplativo — es la categoría sobre lugar, no
+ * movimiento. Personajes/organizaciones quedan cerca de la base con un
+ * matiz propio; sin ficha montada (home) el valor por defecto es 1.
+ */
+const CATEGORY_PACE: Record<string, number> = {
+  personajes: 0.75,
+  organizaciones: 0.6,
+  negocios: 1,
+  vehiculos: 1.85,
+  ubicaciones: 0.45,
+}
+
+/**
+ * Encuadre (0 = base). Negativo = toma cerrada y baja, íntima (retrato).
+ * Positivo = toma elevada y abierta, panorámica (plano establecedor), con
+ * más niebla despejada para que se lea el skyline. Alimenta FOV, altura de
+ * cámara/mira y densidad de niebla a la vez — una sola variable con varios
+ * efectos coherentes, no una rama de código por categoría.
+ */
+const CATEGORY_FRAME: Record<string, number> = {
+  personajes: -1.2,
+  organizaciones: 0.55,
+  negocios: 0.15,
+  vehiculos: -0.35,
+  ubicaciones: 1.6,
+}
+
 export class GTA6CodexWebGLEngine {
   private renderer: THREE.WebGLRenderer
   private scene: THREE.Scene
@@ -394,6 +457,8 @@ export class GTA6CodexWebGLEngine {
 
   private keyLight!: THREE.PointLight
   private fillLight!: THREE.PointLight
+  private fog!: THREE.FogExp2
+  private readonly baseFogDensity = 0.027
 
   private updaters: Updater[] = []
   private rafId: number | null = null
@@ -414,6 +479,14 @@ export class GTA6CodexWebGLEngine {
   private entityUnrestTarget = 0
   private entityPresence = 0
   private entityPresenceTarget = 0
+  /** Ritmo de la escena derivado de `CATEGORY_PACE` (1 = base). */
+  private entityPace = 1
+  private entityPaceTarget = 1
+  /** Encuadre derivado de `CATEGORY_FRAME` (0 = base). */
+  private entityFrame = 0
+  private entityFrameTarget = 0
+  /** Acumulador del flujo de la carretera — avanza según `entityPace`, no según `elapsed`. */
+  private roadFlow = 0
   private unsubscribeSceneBus: (() => void) | null = null
 
   // --- Motor → DOM: ver `SceneAmbient` en scene-bus.ts -------------------
@@ -441,7 +514,8 @@ export class GTA6CodexWebGLEngine {
     this.renderer.outputColorSpace = THREE.SRGBColorSpace
 
     this.scene = new THREE.Scene()
-    this.scene.fog = new THREE.FogExp2(0x1c0f28, 0.027)
+    this.fog = new THREE.FogExp2(0x1c0f28, this.baseFogDensity)
+    this.scene.fog = this.fog
 
     this.camera = new THREE.PerspectiveCamera(this.baseFov, 1, 0.1, 100)
     this.camera.position.copy(SHOTS[0].pos).add(new THREE.Vector3(0, 4, 14))
@@ -517,6 +591,12 @@ export class GTA6CodexWebGLEngine {
         ? STATUS_UNREST[snapshot.entityAtmosphere.status] ?? 0
         : 0
       this.entityPresenceTarget = snapshot.entityAtmosphere?.featured ? 1 : 0
+      this.entityPaceTarget = snapshot.entityAtmosphere
+        ? CATEGORY_PACE[snapshot.entityAtmosphere.category] ?? 1
+        : 1
+      this.entityFrameTarget = snapshot.entityAtmosphere
+        ? CATEGORY_FRAME[snapshot.entityAtmosphere.category] ?? 0
+        : 0
     })
   }
 
@@ -608,6 +688,7 @@ export class GTA6CodexWebGLEngine {
     const material = new THREE.ShaderMaterial({
       uniforms: {
         ...this.roadUniforms,
+        flow: { value: 0 },
         colorA: { value: new THREE.Color(0x22d3ee) },
         colorB: { value: new THREE.Color(0xff2d78) },
       },
@@ -626,6 +707,10 @@ export class GTA6CodexWebGLEngine {
     this.updaters.push((elapsed, _delta, intro) => {
       material.uniforms.time.value = elapsed
       material.uniforms.introFade.value = intro
+      // El flujo de los dashes corre al ritmo acumulado en `roadFlow` (ver
+      // loop principal), no al tiempo absoluto — así "pace" por categoría
+      // cambia la velocidad percibida de la carretera sin saltos.
+      material.uniforms.flow.value = this.roadFlow
     })
   }
 
@@ -775,8 +860,11 @@ export class GTA6CodexWebGLEngine {
     }
 
     this.updaters.push((_elapsed, delta, intro) => {
+      // Velocidad real del tráfico ligada al "pace" de la categoría: en una
+      // ficha de vehículo la carretera se siente notablemente más rápida;
+      // en una ubicación, se asienta.
       streaks.forEach((s) => {
-        s.mesh.position.z += s.dir * s.speed * delta * intro
+        s.mesh.position.z += s.dir * s.speed * this.entityPace * delta * intro
         if (s.mesh.position.z > 30) s.mesh.position.z = -60
         if (s.mesh.position.z < -60) s.mesh.position.z = 30
         s.mesh.scale.y = 1 + Math.min(this.scrollVelocity * 40, 3)
@@ -1022,12 +1110,23 @@ export class GTA6CodexWebGLEngine {
 
     this.updaters.push((elapsed, delta, intro) => {
       shaderRef.uTime.value = elapsed
-      group.rotation.y += delta * (0.045 + this.entityPresence * 0.02) * intro
+      // Rotación moderada por "pace": la torre nunca se detiene del todo
+      // (sigue viva en una ficha de ubicación), pero acompaña con más
+      // energía una ficha de vehículo. Se amortigua a la mitad para que no
+      // se sienta como un mecanismo, solo como un matiz de ritmo.
+      const paceInfluence = 1 + (this.entityPace - 1) * 0.5
+      group.rotation.y += delta * (0.045 + this.entityPresence * 0.02) * paceInfluence * intro
+
+      // "unrest" (derivado del estado editorial: confirmado/rumor/nuestro)
+      // desestabiliza el parpadeo — rumor tiembla con armónicos extra,
+      // confirmado queda con un pulso limpio. Determinista, no aleatorio.
       trimRings.forEach((ring, i) => {
         const mat = ring.material as THREE.MeshBasicMaterial
-        mat.opacity = 0.6 + 0.4 * Math.sin(elapsed * 0.8 + i * 1.7)
+        const jitter = this.entityUnrest * Math.sin(elapsed * (5.2 + i * 1.3)) * 0.25
+        mat.opacity = 0.6 + 0.4 * Math.sin(elapsed * 0.8 + i * 1.7) + jitter
       })
-      beacon.intensity = 6 + Math.max(0, Math.sin(elapsed * 1.6)) * 10
+      const beaconJitter = this.entityUnrest * Math.sin(elapsed * 7.1) * 4
+      beacon.intensity = 6 + Math.max(0, Math.sin(elapsed * 1.6)) * 10 + beaconJitter
     })
   }
 
@@ -1131,6 +1230,13 @@ export class GTA6CodexWebGLEngine {
       this.entityWarmth += (this.entityWarmthTarget - this.entityWarmth) * 0.015
       this.entityUnrest += (this.entityUnrestTarget - this.entityUnrest) * 0.03
       this.entityPresence += (this.entityPresenceTarget - this.entityPresence) * 0.02
+      this.entityPace += (this.entityPaceTarget - this.entityPace) * 0.02
+      this.entityFrame += (this.entityFrameTarget - this.entityFrame) * 0.018
+
+      // El flujo de la carretera acumula a su propio ritmo (no al tiempo
+      // absoluto): así el cambio de "pace" al entrar a una ficha se siente
+      // como una aceleración/desaceleración real, no un salto de fase.
+      this.roadFlow += delta * 5 * this.entityPace
 
       // Coreografía de cámara + parallax de cursor + dolly de scroll + apertura de escena.
       const frame = this.computeShotFrame(elapsed)
@@ -1140,13 +1246,26 @@ export class GTA6CodexWebGLEngine {
       this.camera.position.x += this.pointer.x * 1.4
       this.camera.position.y += -this.pointer.y * 0.9
 
-      const lookTarget = frame.look.clone().lerp(new THREE.Vector3(0, 0, 0), 1 - intro)
+      // Encuadre por contenido: "entityFrame" eleva y abre la toma (positivo,
+      // p. ej. ubicaciones) o la cierra e intima (negativo, p. ej.
+      // personajes). Es composición real, no un filtro encima.
+      this.camera.position.y += this.entityFrame * 0.45
+      const lookTarget = frame.look
+        .clone()
+        .lerp(new THREE.Vector3(0, 0, 0), 1 - intro)
+        .add(new THREE.Vector3(0, -this.entityFrame * 0.22, 0))
       this.camera.lookAt(lookTarget)
       this.camera.rotation.z = this.reducedMotion ? 0 : this.pointer.x * -0.012
 
-      const targetFov = this.baseFov + frame.fovBias + this.scrollProgress * 5 + this.sceneMood * 4
+      const targetFov =
+        this.baseFov + frame.fovBias + this.scrollProgress * 5 + this.sceneMood * 4 + this.entityFrame * 3.2
       this.camera.fov += (targetFov - this.camera.fov) * 0.04
       this.camera.updateProjectionMatrix()
+
+      // Misma variable de encuadre gobierna cuánta niebla hay: una ficha de
+      // ubicación despeja el aire para leer el skyline (plano establecedor);
+      // una ficha de personaje lo cierra un poco (retrato, más íntimo).
+      this.fog.density = Math.max(0.014, this.baseFogDensity - this.entityFrame * 0.006)
 
       this.bokehPass.materialBokeh.uniforms.focus.value = 22 - this.scrollProgress * 7
 
