@@ -52,6 +52,26 @@ public/images/entities/ubicaciones/leonida-keys.webp     179 KB
 public/images/entities/ubicaciones/mount-kalaga.webp     219 KB
 ```
 
+## Ronda 5 (14 ago 2026) — 2 imágenes DESCARGADAS e INTEGRADAS
+
+El usuario aportó directamente 4 capturas oficiales de Dre'Quan Priest y 6 de
+Jason Duval (mismas entidades ya listadas `SOURCE_VERIFIED` en la Ronda 1),
+otra vez sorteando la limitación de red del entorno. Se seleccionó **una sola
+imagen por personaje** como hero (arquitectura mono-imagen, sin cambios):
+
+| Slug | Archivo fuente elegido | Criterio de selección | Otras capturas recibidas (no integradas, arquitectura mono-imagen) |
+|---|---|---|---|
+| drequan-priest | `DreQuan_Priest_03.jpg` | Retrato solo en discoteca, brazos cruzados, luz púrpura — foco claro en el personaje, resto de la gente desenfocada de fondo | `_01` (grupo en discoteca, dos personajes más en primer plano), `_02` (fiesta junto a pileta con copa), `_04` (estudio de grabación, junto a otro personaje, de perfil) |
+| jason-duval | `Jason_Duval_04.jpg` | Retrato apoyado en un árbol de noche con Vice City iluminada de fondo, celular en mano — la más serena y cinemática, sin arma en primer plano | `_01` (en moto con arma), `_02` (perfil en auto de día), `_03` (pesca en bote, con otro personaje), `_05` (apuntando rifle de asalto), `_06` (bar con otros personajes) |
+
+Procesadas con `npm run process-images:apply`: WebP calidad 82, redimensionadas
+a 1600×900 (lado mayor tope 1600px, sin upscaling). Archivos finales:
+
+```
+public/images/entities/personajes/drequan-priest.webp     ~45 KB
+public/images/entities/personajes/jason-duval.webp        ~100 KB
+```
+
 ## Ronda 4 (14 ago 2026) — 2 imágenes DESCARGADAS e INTEGRADAS
 
 El usuario aportó directamente 6 capturas oficiales de Lucia Caminos y 4 de
@@ -111,11 +131,11 @@ de esas dos páginas, no inventadas ni recordadas de memoria.
 
 | Slug | Título | Featured | Estado | Fuente | Notas |
 |---|---|---|---|---|---|
-| jason-duval | Jason Duval | true | SOURCE_VERIFIED | Screenshots ×6 (`Jason_Duval_01..06.jpg`) + Artwork ensemble (`Jason_and_Lucia_*.jpg`) | Protagonista, mejor cobertura del catálogo |
+| jason-duval | Jason Duval | true | **INTEGRATED** | `Jason_Duval_04.jpg` → `jason-duval.webp` | Ver Ronda 5 — resto de screenshots ×5 + artwork ensemble sin integrar (arquitectura mono-imagen) |
 | lucia-caminos | Lucia Caminos | true | **INTEGRATED** | `Lucia_Caminos_03.jpg` → `lucia-caminos.webp` | Ver Ronda 4 — resto de screenshots ×5 + artwork sin integrar (arquitectura mono-imagen) |
 | cal-hampton | Cal Hampton | false | SOURCE_VERIFIED | Screenshots ×4 + Artwork retrato ×1 (`Cal_Hampton_landscape.jpg`) | |
 | boobie-ike | Boobie Ike | false | SOURCE_VERIFIED | Screenshots ×4 + Artwork retrato ×1 | |
-| drequan-priest | Dre'Quan Priest | false | SOURCE_VERIFIED | Screenshots ×4 (`DreQuan_Priest_*.jpg`) + Artwork retrato ×1 | |
+| drequan-priest | Dre'Quan Priest | false | **INTEGRATED** | `DreQuan_Priest_03.jpg` → `drequan-priest.webp` | Ver Ronda 5 — resto de screenshots ×3 + artwork retrato sin integrar (arquitectura mono-imagen) |
 | real-dimez | Real Dimez | false | SOURCE_VERIFIED | Screenshots ×4 + Artwork retrato ×1 | |
 | raul-bautista | Raul Bautista | false | **INTEGRATED** | `Raul_Bautista_03.jpg` → `raul-bautista.webp` | Ver Ronda 4 — resto de screenshots ×3 + artwork sin integrar (arquitectura mono-imagen) |
 | brian-heder | Brian Heder | false | SOURCE_VERIFIED | Screenshots ×4 + Artwork retrato ×1 | |
@@ -243,19 +263,19 @@ TOTAL VERIFICADAS:           21  (misma cifra — todo lo DISCOVERED se
                                    verificó directamente antes de listarse)
 TOTAL PENDIENTES:            81  (UNVERIFIED)
 TOTAL DESCARTADAS:            0  (REJECTED)
-TOTAL DESCARGADAS:            8  (grassrivers, ambrosia, leonida-keys, mount-kalaga —
+TOTAL DESCARGADAS:           10  (grassrivers, ambrosia, leonida-keys, mount-kalaga —
                                    Ronda 2; vice-city, port-gellhorn — Ronda 3;
-                                   lucia-caminos, raul-bautista — Ronda 4.
+                                   lucia-caminos, raul-bautista — Ronda 4;
+                                   jason-duval, drequan-priest — Ronda 5.
                                    Todas aportadas por el usuario)
-TOTAL INTEGRADAS:             8  (mismas 8 — archivo real en public/, servido
+TOTAL INTEGRADAS:            10  (mismas 10 — archivo real en public/, servido
                                    automáticamente por resolveEntityImage())
-TOTAL DOWNLOAD_PENDING:      13  (resto de SOURCE_VERIFIED sin bytes en el repo:
-                                   jason-duval, cal-hampton,
-                                   boobie-ike, drequan-priest, real-dimez,
+TOTAL DOWNLOAD_PENDING:      11  (resto de SOURCE_VERIFIED sin bytes en el repo:
+                                   cal-hampton, boobie-ike, real-dimez,
                                    brian-heder, grotti-cheetah-95,
                                    vapid-stanier-55, vapid-dominator-buggy-67,
                                    squalo, dinka-enduro, crest-kayak, vapid-ganado)
-COBERTURA POTENCIAL ACTUAL:  21/102 = 20.6%  (si se descargaran las 13
+COBERTURA POTENCIAL ACTUAL:  21/102 = 20.6%  (si se descargaran las 11
                                                SOURCE_VERIFIED restantes)
-COBERTURA REAL HOY:           8/102 =  7.8%  (8 archivos reales en el repo)
+COBERTURA REAL HOY:          10/102 =  9.8%  (10 archivos reales en el repo)
 ```
