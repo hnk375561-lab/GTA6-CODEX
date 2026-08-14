@@ -11,6 +11,7 @@ import { GridPattern } from '@/components/ui/GridPattern'
 import { Marquee } from '@/components/ui/Marquee'
 import { ShineBorder } from '@/components/ui/ShineBorder'
 import { WordRotate } from '@/components/ui/WordRotate'
+import { RotatingHeroBackground } from '@/components/layout/RotatingHeroBackground'
 import { getEntityCount, getEntityCountsByType, getFeaturedEntities } from '@/lib/entities'
 
 export default async function Home() {
@@ -63,6 +64,7 @@ export default async function Home() {
     <>
       {/* Hero Section */}
       <section className="relative overflow-hidden border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-20 sm:py-32">
+        <RotatingHeroBackground />
         <div className="hero-scanline" aria-hidden="true" />
         <FlickeringGrid
           squareSize={4}
