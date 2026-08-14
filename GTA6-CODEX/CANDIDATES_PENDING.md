@@ -41,3 +41,16 @@ Generado: 13 ago 2026, ronda de expansión masiva. Ninguno de estos entró al ca
 ~~San4San~~ — **INCORPORADO** en ronda 6 (14 ago 2026). GTA Wiki documenta dos apariciones visuales independientes en Trailer 1 (~1:08) y Trailer 2 (~0:46, mural "S4SLIFE"), corroboradas también por gtabase.com e IGGM sin depender de thegta6guide.com. Ver `organizaciones/san4san.json`.
 
 **Total candidatos pendientes: 13** (12 tras incorporar San4San en ronda 6, Buckingham Luxor confirmado sin cambios)
+
+## Ronda 7 (14 ago 2026) — candidatos revisados y descartados/pendientes
+
+| Nombre | Categoría | Evidence | Motivo |
+|---|---|---|---|
+| Maibatsu Frogger | Vehículo | E | Ninguna fuente confirma su aparición en material de GTA VI; todo lo encontrado es de GTA V/Online. Descartado, no pasa a cola. |
+| Pegassi Speeder | Vehículo | D | Solo gtabase.com lo confirma en trailer; sin segunda fuente independiente con detalle. |
+| Übermacht Rebla GTS | Vehículo | D | GTA Wiki confirma explícitamente que está "ausente de cualquier forma de material oficial"; solo mencionado en leaks de código fuente de diciembre 2023. |
+| Guardia Brothers (pandilla motociclista) | Organización | D | Fuente propia (EZG) confirma "no hay presencia visual clara en ningún trailer hasta ahora". Solo leaks. |
+| Kelly County Police Department (KCPD) | Organización | D | Kelly County (la ubicación) sí está confirmada visualmente, pero la existencia de una agencia policial específica "KCPD" no tiene corroboración visual propia — se infiere por convención de nomenclatura, no observación directa. |
+| VYB (venue) | Negocio | D | Sin cambios desde ronda 6, sigue sin segunda fuente independiente con detalle propio. |
+
+**Total candidatos pendientes: 15** (13 previos + Pegassi Speeder + Übermacht Rebla GTS; Guardia Brothers y KCPD se documentan pero no se agregan como filas nuevas de tabla por ahora, ver nota arriba).

@@ -1,0 +1,34 @@
+{
+  "slug": "kelly-county",
+  "type": "ubicaciones",
+  "title": "Kelly County",
+  "description": "Condado del suroeste de Leonida, mencionado en un cartel de la Interestatal 404 en el Trailer 1; hogar de Port Gellhorn y del Gellhorn International Raceway.",
+  "content": "Kelly County es un condado del estado de Leonida cuyo nombre aparece en un cartel de salida de la Interestatal 404 en Vice City, visible en el Trailer 1 (aprox. 0:51), señalando la dirección hacia el condado. Esta señalización indica que Kelly County se ubica al oeste del condado de Vice-Dale.\n\nSe sabe que el condado alberga la ciudad de Port Gellhorn, el Gellhorn International Raceway y un complejo penitenciario en sus afueras. Su nombre parece inspirado en la combinación de los condados reales de Collier y Lee, en el suroeste de Florida.",
+  "status": "confirmado",
+  "tags": [
+    "condado",
+    "leonida",
+    "trailer-1",
+    "port-gellhorn"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
+  "region": "Leonida",
+  "points_of_interest": [],
+  "missions": [],
+  "businesses": [],
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "leonida",
+      "relation": "located_in"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-visual-multifuente",
+    "primarySource": "Rockstar Games, Trailer 1 (~0:51), cartel de salida de la Interestatal 404 en Vice City señalando hacia Kelly County",
+    "secondarySource": "GTA Wiki (gta.fandom.com/wiki/Kelly_County), que documenta el timestamp exacto del cartel, y GTA BOOM (gtaboom.com/Kelly_County), que confirma de forma independiente la existencia del condado como ubicación oficial",
+    "note": "DESCUBRIMIENTO (14 ago 2026, ronda 7): ubicación nueva que no estaba catalogada pese a que Port Gellhorn (dentro de este condado) ya tenía ficha propia. Confirmada visualmente en el propio Trailer 1 mediante señalización vial, corroborada por dos fuentes independientes. La relación con Port Gellhorn se modela como located_in del lado de port-gellhorn.json (Port Gellhorn → Kelly County, contenido dentro del condado), no se duplica aquí para evitar una relación circular/redundante entre ambos archivos."
+  }
+}

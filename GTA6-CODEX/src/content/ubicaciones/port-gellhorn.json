@@ -23,12 +23,17 @@
       "targetType": "ubicaciones",
       "targetSlug": "leonida",
       "relation": "located_in"
+    },
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "kelly-county",
+      "relation": "located_in"
     }
   ],
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, sitio oficial de GTA VI, seccion propia de Port Gellhorn (revelada junto al Trailer 2, 6 mayo 2025)",
     "secondarySource": "Sportskeeda, que confirma que Port Gellhorn figura entre las regiones nombradas oficialmente en el sitio de Rockstar",
-    "note": "Auditoria total (13 ago 2026): nombre de ciudad/region confirmado oficialmente, con seccion propia en el sitio de Rockstar. Backfill retroactivo de evidence. FASE D — auditoria adversarial (13 ago 2026): se agrego relations.located_in->leonida. El campo 'region: Leonida' ya existia como texto libre pero faltaba la relacion formal en el grafo; se corrige junto con la creacion de la entidad Leonida."
+    "note": "Auditoria total (13 ago 2026): nombre de ciudad/region confirmado oficialmente, con seccion propia en el sitio de Rockstar. Backfill retroactivo de evidence. FASE D — auditoria adversarial (13 ago 2026): se agrego relations.located_in->leonida. El campo 'region: Leonida' ya existia como texto libre pero faltaba la relacion formal en el grafo; se corrige junto con la creacion de la entidad Leonida. RONDA 7 (14 ago 2026): se agrega relations.located_in->kelly-county tras la creacion de esa entidad; se retira la relacion associated_with duplicada del lado de kelly-county.json para evitar una relacion redundante/circular entre ambos archivos."
   }
 }

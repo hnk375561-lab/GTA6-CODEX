@@ -1,0 +1,31 @@
+{
+  "slug": "peewees",
+  "type": "negocios",
+  "title": "Peewee's",
+  "description": "Diner de Vice City mencionado en un segmento de noticiero dentro del Trailer 1 de GTA VI, en relación con un caso de 'dine and dash'.",
+  "content": "Peewee's es un diner que aparece nombrado en un segmento de noticiero (estilo Weazel News) incrustado en el Trailer 1 de GTA VI, aproximadamente en el minuto 1:04. El titular leído menciona la detención de un hombre que volcó su auto tras cometer un 'dine and dash' (comer sin pagar y huir) en el local.\n\nMás allá de esa mención, Rockstar no ha revelado información adicional sobre el negocio: no se conoce su ubicación exacta dentro de Vice City ni si será un local visitable o solo una referencia de ambientación mencionada en las noticias.",
+  "status": "confirmado",
+  "tags": [
+    "negocio",
+    "diner",
+    "vice-city",
+    "trailer-1",
+    "noticiero"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-visual-multifuente",
+    "primarySource": "Rockstar Games, Trailer 1 (~1:04), titular de noticiero: 'Cops arrest man who flipped his car after Peewee's dine and dash'",
+    "secondarySource": "GTA-Xtreme (gta-xtreme.com) y LibertyCity.net, que identifican de forma independiente la misma mención en el noticiero del Trailer 1",
+    "note": "DESCUBRIMIENTO (14 ago 2026, ronda 7): candidato nuevo, corroborado por dos fuentes independientes que citan el mismo titular textual del noticiero. Se documenta únicamente lo confirmado (el nombre y el contexto del titular); no se specula sobre si será un negocio visitable, ya que ninguna fuente lo confirma."
+  }
+}
