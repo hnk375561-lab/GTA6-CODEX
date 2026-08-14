@@ -5,6 +5,9 @@ import { Badge } from '@/components/ui/Badge'
 import { AnimatedText } from '@/components/ui/AnimatedText'
 import { Reveal } from '@/components/ui/Reveal'
 import { CountUp } from '@/components/ui/CountUp'
+import { AuroraText } from '@/components/ui/AuroraText'
+import { FlickeringGrid } from '@/components/ui/FlickeringGrid'
+import { GridPattern } from '@/components/ui/GridPattern'
 import { getEntityCount, getFeaturedEntities } from '@/lib/entities'
 
 export default async function Home() {
@@ -57,15 +60,23 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-20 sm:py-32">
         <div className="hero-scanline" aria-hidden="true" />
+        <FlickeringGrid
+          squareSize={4}
+          gridGap={6}
+          flickerChance={0.2}
+          color="rgb(0, 208, 0)"
+          maxOpacity={0.15}
+          className="absolute inset-0 opacity-30"
+        />
         <div className="container-max relative">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="mb-4 text-5xl font-bold sm:text-6xl">
-              <AnimatedText
-                text="GTA6 Codex"
-                mode="letters"
-                shimmer
-                stagger={45}
-              />
+              <AuroraText
+                colors={["#00d000", "#7dffb0", "#ff6600", "#00d000"]}
+                speed={1.2}
+              >
+                GTA6 Codex
+              </AuroraText>
             </h1>
             <p className="mb-6 text-xl text-gta-text-secondary">
               <AnimatedText

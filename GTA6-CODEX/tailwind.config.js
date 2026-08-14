@@ -65,6 +65,13 @@ module.exports = {
         'gta-lg': '0 10px 15px rgba(0, 0, 0, 0.7)',
         'gta-xl': '0 20px 25px rgba(0, 0, 0, 0.8)',
       },
+      animation: {
+        aurora: 'aurora 10s linear infinite',
+        marquee: 'marquee 40s linear infinite',
+        'marquee-vertical': 'marquee-vertical 40s linear infinite',
+        shine: 'shine 14s linear infinite',
+        gradient: 'gradient 3s ease-in-out infinite',
+      },
       typography: {
         DEFAULT: {
           css: {

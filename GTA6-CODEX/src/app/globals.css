@@ -553,6 +553,85 @@ a:hover .logo-mark {
   animation: float-slow 4.5s ease-in-out infinite;
 }
 
+/* === Magic UI Animations === */
+
+/* Aurora Text - Gradient animation */
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-aurora {
+  background-size: 200% 200%;
+  animation: aurora 10s linear infinite;
+}
+
+/* Marquee - Horizontal scroll */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* Marquee - Vertical scroll */
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-100% - 1rem));
+  }
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical 40s linear infinite;
+}
+
+/* Shine Border - Animated shine effect */
+@keyframes shine {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 300% 0%;
+  }
+}
+
+.animate-shine {
+  animation: shine 14s linear infinite;
+}
+
+/* Animated Gradient Text */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease-in-out infinite;
+}
+
 /* --- Stagger genérico para listas de hijos directos --- */
 .stagger > * {
   opacity: 0;
