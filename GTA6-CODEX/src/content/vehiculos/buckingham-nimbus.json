@@ -1,0 +1,43 @@
+{
+  "slug": "buckingham-nimbus",
+  "type": "vehiculos",
+  "title": "Buckingham Nimbus",
+  "description": "Jet privado de Buckingham, visible volando sobre Vice Beach en el Trailer 1.",
+  "content": "El Buckingham Nimbus es un jet privado que regresa a la saga en GTA VI. Su presencia se identifica en el Trailer 1, donde puede verse volando a distancia sobre Vice Beach. Su diseño combina rasgos de aviones ejecutivos reales de alta gama, en la línea de los Cessna Citation.\n\nFunciona dentro del lore de la saga como una de las opciones de jet privado de Buckingham, junto al Shamal y el Luxor, orientada a un perfil de pasajero de alto poder adquisitivo.",
+  "status": "confirmado",
+  "tags": [
+    "avion-ejecutivo",
+    "buckingham",
+    "trailer-1",
+    "vice-beach"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "manufacturer": "Buckingham",
+  "class": "planes",
+  "driven_by": [],
+  "locations": [
+    "vice-city"
+  ],
+  "customizable": true,
+  "performance": {
+    "speed": "Alta",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-visual-multifuente",
+    "primarySource": "Rockstar Games, Trailer 1 (0:21), visible volando sobre Vice Beach",
+    "secondarySource": "GTA Wiki (gta.fandom.com/wiki/Nimbus) y gta6intel.com, que identifican de forma independiente la misma escena y el mismo modelo",
+    "note": "DESCUBRIMIENTO (13 ago 2026, ronda de expansión masiva): candidato nuevo, corroborado por dos fuentes independientes que describen el mismo timestamp y escena del Trailer 1. El modelo ya existía en GTA Online (desde 2016); su continuidad en GTA VI está confirmada visualmente en el propio trailer, no solo asumida por precedente de la saga (mismo criterio ya aplicado para incorporar Obey 8F Drafter en una ronda anterior)."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
+}
