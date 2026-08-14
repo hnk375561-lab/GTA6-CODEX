@@ -27,10 +27,16 @@
     "braking": "Media"
   },
   "evidence": {
-    "level": "oficial-visual",
-    "primarySource": "Rockstar Games, trailers oficiales de GTA VI (Trailer 1 y/o Trailer 2)",
-    "secondarySource": "GTABase, GTA Wiki (Fandom), múltiples DBs independientes documentan el vehículo",
-    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Invetero. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada ('trailers oficiales... Trailer 1 y/o Trailer 2') no especifica en que escena ni region aparece el vehiculo; el valor del campo 'locations' es una asignacion por defecto/tematica (no verificada escena por escena) y se conserva solo como metadato aproximado, no como afirmacion demostrada del grafo."
+    "level": "respaldado",
+    "primarySource": "Rockstar Games, GTA VI Trailer 1 (diciembre de 2023, min. 0:31-0:32), estacionada en Shore Drive, en el distrito de Vice Beach, detrás/delante de un Dundreary Landstalker XL",
+    "secondarySource": "GTA Wiki (Fandom) y su espejo gta.wiki documentan la misma escena (tratados como una sola familia de fuente, no como corroboración independiente); GTA BOOM corrobora de forma independiente que el Landstalker XL de esa misma escena está 'parked on a busy street in Vice City', sin nombrar al Coquette D10 específicamente",
+    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Invetero. AUDITORIA SEMANTICA located_in (13 ago 2026): se había retirado la relación formal located_in del grafo porque la fuente citada entonces ('trailers oficiales... Trailer 1 y/o Trailer 2') no especificaba escena ni región. CORRECCION DE UBICACION (13 ago 2026, auditoria forense Bloque 1 - located_in restantes): se localizó la escena específica (Shore Drive, Vice Beach, Trailer 1) documentada por GTA Wiki/gta.wiki. Se restaura located_in->vice-city, pero se clasifica como 'respaldado' (no 'oficial-visual') porque la fuente que nombra específicamente al Coquette D10 en esa escena es una sola familia de wiki (fandom + su espejo, no independientes entre sí); la corroboración de GTA BOOM cubre la escena y el Landstalker XL acompañante, pero no confirma por nombre al Coquette D10. No se fuerza a 'oficial-visual' sin una segunda fuente verdaderamente independiente que nombre el modelo D10."
   },
-  "relations": []
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
 }
