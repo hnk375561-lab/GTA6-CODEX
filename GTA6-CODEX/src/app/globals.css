@@ -402,6 +402,93 @@ a:hover .logo-mark {
   transition: box-shadow 600ms ease, opacity 600ms ease;
 }
 
+/* --- Entrada del hero: composición, no "fondo detrás de contenido" ---
+   Nunca se oculta por completo (opacity siempre 1): si el motor WebGL no
+   carga (JS lento, sin soporte, sin JS) el hero queda perfectamente
+   legible y funcional desde el primer render — el fallback de --scene-intro
+   en :root es 1 ("ya asentado"), así que sin motor esto es un no-op.
+   Cuando el motor sí corre, arranca en 0 y el hero se "revela" en foco,
+   escala y luz al mismo ritmo que la cámara 3D llega a su encuadre. */
+.hero-cinematic {
+  transform: scale(calc(1 + (1 - var(--scene-intro)) * 0.05))
+    translateY(calc((1 - var(--scene-intro)) * 14px));
+  filter: blur(calc((1 - var(--scene-intro)) * 5px))
+    brightness(calc(0.82 + var(--scene-intro) * 0.18))
+    saturate(calc(0.75 + var(--scene-intro) * 0.25));
+  transition: transform 90ms linear, filter 90ms linear;
+  will-change: transform, filter;
+}
+
+/* --- Sweep de luz del hero: una sola pasada de luz cálida/fría que cruza
+   la escena al asentarse, la MISMA luz que el motor publica (ángulo,
+   temperatura). En reposo (--scene-intro: 1, sin motor) es invisible. --- */
+.hero-gleam {
+  isolation: isolate;
+}
+
+.hero-gleam > .hero-gleam-sweep {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+  background: linear-gradient(
+    75deg,
+    transparent 0%,
+    color-mix(in srgb, #ff8a3a calc(var(--scene-warmth) * 65%), #22c55e calc((1 - var(--scene-warmth)) * 65%)) 48%,
+    transparent 62%
+  );
+  background-size: 260% 260%;
+  background-position: calc(260% - var(--scene-intro) * 260%) 50%;
+  opacity: calc((1 - var(--scene-intro)) * 0.55 + var(--scene-kick) * 0.35);
+  transition: background-position 260ms ease, opacity 260ms ease;
+}
+
+.hero-gleam .container-max {
+  z-index: 2;
+}
+
+/* --- Primera interacción: invitación a scrollear, aparece asentada la
+   escena. Puramente visual — no roba foco ni altera el orden de tabulación. --- */
+.hero-scroll-cue {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  z-index: 2;
+  color: #8a8a86;
+  opacity: calc(0.3 + var(--scene-intro) * 0.7);
+  transform: translateX(-50%);
+  animation: hero-scroll-cue-bounce 2200ms var(--ease-standard) infinite;
+  transition: opacity 500ms ease;
+}
+
+@keyframes hero-scroll-cue-bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cinematic {
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .hero-gleam > .hero-gleam-sweep {
+    display: none !important;
+  }
+
+  .hero-scroll-cue {
+    animation: none !important;
+    opacity: 0.6 !important;
+  }
+}
+
 .hero-pill-dot {
   width: 6px;
   height: 6px;

@@ -100,8 +100,17 @@ const GRADE_SHADER = {
       float gr = (noise(vUv * vec2(1920.0, 1080.0) + time) - 0.5) * grainStrength;
       color.rgb += gr;
 
-      // Apertura de escena: de negro a la imagen final, no un "on/off".
-      color.rgb *= fadeIn;
+      // Apertura de escena: iris real desde el centro (máscara circular que
+      // se expande), no un fundido plano a negro. "fadeIn" es el progreso
+      // 0→1 de esa apertura; el borde del iris tiene un halo cálido breve
+      // (una línea de luz corriendo hacia afuera) para que se sienta como
+      // un obturador abriéndose, no un simple crossfade.
+      float distFromCenter = length(centered);
+      float irisRadius = fadeIn * 0.85;
+      float iris = smoothstep(irisRadius, irisRadius - 0.14, distFromCenter);
+      float irisEdge = 1.0 - smoothstep(0.0, 0.05, abs(distFromCenter - irisRadius));
+      vec3 irisGlow = vec3(1.0, 0.72, 0.42) * irisEdge * (1.0 - fadeIn) * 0.9;
+      color.rgb = color.rgb * iris + irisGlow * iris;
 
       gl_FragColor = color;
     }
@@ -370,6 +379,7 @@ export class GTA6CodexWebGLEngine {
   /** Pulso de "llegada" a una sección nueva: sube a 1 y decae solo. Es el
    *  equivalente DOM del chromaKick — un momento real, no un loop. */
   private arrivalKick = 0
+  private introClimaxFired = false
   private ambientFrameCounter = 0
   private readonly tmpProjectVec = new THREE.Vector3()
 
@@ -861,8 +871,11 @@ export class GTA6CodexWebGLEngine {
 
   start() {
     this.startTime = this.clock.getElapsedTime()
-    const introDuration = this.reducedMotion ? 0.4 : 2.6
-    const introStartPos = SHOTS[0].pos.clone().add(new THREE.Vector3(0, 5, 16))
+    // Entrada deliberada: arranca desde un encuadre alto y distante (como
+    // una toma aérea) y desciende hacia el primer plano — una "llegada",
+    // no un simple crossfade. reducedMotion la colapsa casi a un corte.
+    const introDuration = this.reducedMotion ? 0.4 : 3.1
+    const introStartPos = SHOTS[0].pos.clone().add(new THREE.Vector3(-2.5, 8.5, 21))
 
     const loop = () => {
       if (this.disposed) return
@@ -873,6 +886,14 @@ export class GTA6CodexWebGLEngine {
       const elapsed = this.clock.getElapsedTime()
       const sinceStart = elapsed - this.startTime
       const intro = smootherstep(sinceStart / introDuration)
+
+      // El "settle": el instante exacto en que la cámara termina de llegar.
+      // Es el momento WOW real de la entrada — un pulso de luz/bloom que
+      // dispara una sola vez, sincronizado con el DOM vía --scene-kick.
+      if (!this.introClimaxFired && intro >= 0.92 && !this.reducedMotion) {
+        this.introClimaxFired = true
+        this.arrivalKick = 1
+      }
 
       const prevPointerX = this.pointer.x
       const prevPointerY = this.pointer.y

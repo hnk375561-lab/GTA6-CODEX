@@ -58,11 +58,15 @@ export default async function Home() {
     <>
       {/* Hero Section — cinematográfico pero contenido: un solo fondo con
           overlay de contraste, un solo acento de color, sin capas de efectos
-          compitiendo con el título. */}
-      <SceneSection sceneId="hero" className="relative overflow-hidden border-b border-gta-border py-24 sm:py-36">
+          compitiendo con el título. La entrada (escala/blur/luz) está
+          sincronizada con la apertura de iris del motor WebGL vía las
+          variables --scene-* (ver SceneAmbientBridge); nunca oculta el
+          contenido (opacity siempre 1) para no depender de que WebGL cargue. */}
+      <SceneSection sceneId="hero" className="hero-gleam relative overflow-hidden border-b border-gta-border py-24 sm:py-36">
         <RotatingHeroBackground />
+        <div className="hero-gleam-sweep" aria-hidden="true" />
         <div className="container-max relative">
-          <div className="mx-auto max-w-2xl text-center">
+          <div className="hero-cinematic mx-auto max-w-2xl text-center">
             <Reveal delay={0} className="mb-8 flex justify-center">
               <div className="hero-pill">
                 <span className="hero-pill-dot" aria-hidden="true" />
@@ -106,6 +110,15 @@ export default async function Home() {
               </Link>
             </Reveal>
           </div>
+        </div>
+
+        {/* Primera interacción sugerida: aparece cuando la escena se asienta
+            (--scene-intro), invita al primer scroll. Puramente decorativo,
+            no altera la navegación ni el foco del teclado. */}
+        <div className="hero-scroll-cue" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 7l6 6 6-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </div>
       </SceneSection>
 
