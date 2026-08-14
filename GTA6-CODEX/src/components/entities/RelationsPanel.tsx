@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Entity, EntityType } from '@/types'
 import { getRelationLabel } from '@/lib/relations'
+import { Badge } from '@/components/ui/Badge'
 
 const TYPE_LABELS: Record<EntityType, string> = {
   [EntityType.CHARACTER]: 'Personajes',
@@ -47,12 +48,12 @@ export function RelationsPanel({ related }: RelationsPanelProps) {
               <li key={`${e.type}-${e.slug}`}>
                 <Link
                   href={`/${e.type}/${e.slug}`}
-                  className="group flex flex-col text-sm transition-colors"
+                  className="group -mx-2 flex flex-col gap-1 rounded-md border border-transparent px-2 py-1.5 transition-colors duration-200 hover:border-gta-border hover:bg-gta-darker/40"
                 >
-                  <span className="link-underline text-gta-text group-hover:text-gta-accent">
+                  <span className="link-underline text-sm text-gta-text group-hover:text-gta-accent">
                     {e.title}
                   </span>
-                  <span className="text-xs text-gta-text-secondary">{TYPE_LABELS[e.type]}</span>
+                  <Badge className="w-fit">{TYPE_LABELS[e.type]}</Badge>
                 </Link>
               </li>
             ))}

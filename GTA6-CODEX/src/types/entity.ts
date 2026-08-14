@@ -78,6 +78,10 @@ export interface BaseEntity {
     secondarySource?: string
     // Aclaración libre sobre qué está y qué no está confirmado
     note?: string
+    // Limitaciones conocidas de la identificación/relación documentada,
+    // una por punto (ej. datos no verificables, contaminación cruzada
+    // detectada, ambigüedad no resuelta)
+    limitations?: string[]
   }
 }
 

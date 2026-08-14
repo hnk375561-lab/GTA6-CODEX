@@ -13,6 +13,7 @@ import { EvidenceBlock } from '@/components/entities/EvidenceBlock'
 import { EntityMetadata } from '@/components/entities/EntityMetadata'
 import { RelationsPanel } from '@/components/entities/RelationsPanel'
 import { EntityHeaderBackground } from '@/components/entities/EntityHeaderBackground'
+import { EntitySectionHeading } from '@/components/entities/EntitySectionHeading'
 import { MagicCard } from '@/components/ui/MagicCard'
 import { ShineBorder } from '@/components/ui/ShineBorder'
 
@@ -99,18 +100,38 @@ export default async function EntityPage({ params }: PageProps) {
   const classificationLabel =
     CLASSIFICATION_LABELS[type] ?? `Expediente · ${TYPE_LABELS[type]}`
 
+  // Índices editoriales de sección: solo cuentan secciones que realmente
+  // se van a renderizar, para que la numeración nunca muestre saltos
+  // (ej. "01" seguido de "03" si Evidencia no existe para esta entidad).
+  const hasEvidence = Boolean(entity.evidence)
+  const hasRelated = related.length > 0
+  let sectionCounter = 0
+  const evidenceIndex = hasEvidence ? ++sectionCounter : undefined
+  const relatedIndex = hasRelated ? ++sectionCounter : undefined
+  const infoIndex = ++sectionCounter
+
   const headerContent = (
     <>
-      <nav className="mb-6 text-sm text-gta-text-secondary animate-fade-in" aria-label="Breadcrumb">
-        <Link href="/" className="link-underline transition-colors hover:text-gta-accent">
-          Inicio
-        </Link>
-        <span className="mx-2">/</span>
-        <Link href={`/${type}`} className="link-underline transition-colors hover:text-gta-accent">
-          {TYPE_LABELS[type]}
-        </Link>
-        <span className="mx-2">/</span>
-        <span className="text-gta-text">{entity.title}</span>
+      <nav
+        className="mb-6 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-sm text-gta-text-secondary animate-fade-in"
+        aria-label="Breadcrumb"
+      >
+        <div>
+          <Link href="/" className="link-underline transition-colors hover:text-gta-accent">
+            Inicio
+          </Link>
+          <span className="mx-2">/</span>
+          <Link href={`/${type}`} className="link-underline transition-colors hover:text-gta-accent">
+            {TYPE_LABELS[type]}
+          </Link>
+          <span className="mx-2">/</span>
+          <span className="inline-block max-w-[50vw] truncate align-bottom text-gta-text sm:max-w-none">
+            {entity.title}
+          </span>
+        </div>
+        <code className="hidden shrink-0 font-mono text-[11px] text-gta-text-secondary/60 sm:inline-block">
+          {type}/{entity.slug}
+        </code>
       </nav>
 
       <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gta-accent/80">
@@ -165,6 +186,14 @@ export default async function EntityPage({ params }: PageProps) {
       <section className="relative overflow-hidden border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-10 sm:py-14">
         <EntityHeaderBackground type={type} />
         <div className="container-max relative">
+          <span
+            className="pointer-events-none absolute -left-1 -top-1 hidden h-5 w-5 border-l border-t border-gta-accent/25 sm:block"
+            aria-hidden="true"
+          />
+          <span
+            className="pointer-events-none absolute -bottom-1 -right-1 hidden h-5 w-5 border-b border-r border-gta-accent-orange/20 sm:block"
+            aria-hidden="true"
+          />
           <MagicCard
             mode="orb"
             glowFrom="#ff6600"
@@ -185,7 +214,7 @@ export default async function EntityPage({ params }: PageProps) {
           <div className="space-y-6 lg:col-span-2">
             {entity.content ? (
               <Reveal direction="left">
-                <Card className={entity.featured ? 'relative' : undefined}>
+                <Card className={entity.featured ? 'relative shadow-gta-sm' : 'shadow-gta-sm'}>
                   {entity.featured && (
                     <ShineBorder shineColor={['#00d000', '#ff6600']} borderWidth={1} duration={16} />
                   )}
@@ -202,7 +231,7 @@ export default async function EntityPage({ params }: PageProps) {
               </Reveal>
             ) : (
               <Reveal direction="left">
-                <Card>
+                <Card className="shadow-gta-sm">
                   <CardBody>
                     <p className="text-gta-text-secondary">
                       Todavía no hay contenido editorial extendido para esta entrada.
@@ -216,9 +245,9 @@ export default async function EntityPage({ params }: PageProps) {
           <aside className="space-y-6">
             {entity.evidence && (
               <Reveal direction="right">
-                <Card>
+                <Card className="shadow-gta-sm">
                   <CardBody>
-                    <h2 className="mb-3 font-bold text-gta-text">Evidencia</h2>
+                    <EntitySectionHeading label="Evidencia" index={evidenceIndex} />
                     <EvidenceBlock evidence={entity.evidence} />
                   </CardBody>
                 </Card>
@@ -231,9 +260,9 @@ export default async function EntityPage({ params }: PageProps) {
 
             {related.length > 0 && (
               <Reveal direction="right" delay={150}>
-                <Card>
+                <Card className="shadow-gta-sm">
                   <CardBody>
-                    <h2 className="mb-4 font-bold text-gta-text">Relacionado</h2>
+                    <EntitySectionHeading label="Relacionado" index={relatedIndex} />
                     <RelationsPanel related={related} />
                   </CardBody>
                 </Card>
@@ -241,9 +270,9 @@ export default async function EntityPage({ params }: PageProps) {
             )}
 
             <Reveal direction="right" delay={220}>
-              <Card>
+              <Card className="shadow-gta-sm">
                 <CardBody>
-                  <h2 className="mb-2 font-bold text-gta-text">Información</h2>
+                  <EntitySectionHeading label="Información" index={infoIndex} />
                   <dl className="space-y-2 text-sm">
                     <div className="flex justify-between gap-4">
                       <dt className="text-gta-text-secondary">Categoría</dt>

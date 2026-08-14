@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { Entity, EntityType } from '@/types'
 import { Card, CardBody } from '@/components/ui/Card'
+import { EntitySectionHeading } from '@/components/entities/EntitySectionHeading'
 
 /** Convierte valores cualitativos ("Media-Alta", "Muy alta"...) a una escala 1-5 para la barra. */
 function performanceToScale(value?: string): number | null {
@@ -78,9 +79,9 @@ interface EntityMetadataProps {
 function withCard(body: ReactNode | null) {
   if (!body) return null
   return (
-    <Card>
+    <Card className="shadow-gta-sm">
       <CardBody>
-        <h2 className="mb-4 font-bold text-gta-text">Ficha técnica</h2>
+        <EntitySectionHeading label="Ficha técnica" />
         {body}
       </CardBody>
     </Card>

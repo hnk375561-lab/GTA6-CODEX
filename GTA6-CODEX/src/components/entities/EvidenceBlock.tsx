@@ -90,6 +90,29 @@ export function EvidenceBlock({ evidence }: EvidenceBlockProps) {
           <p className="mt-2 text-xs leading-relaxed text-gta-text-secondary">{evidence.note}</p>
         </details>
       )}
+
+      {evidence.limitations && evidence.limitations.length > 0 && (
+        <details className="group mt-3 border-t border-gta-border pt-3">
+          <summary className="cursor-pointer list-none text-xs font-semibold text-gta-accent-warning transition-colors hover:text-gta-accent-orange">
+            <span className="inline-flex items-center gap-1">
+              Limitaciones conocidas
+              <span className="inline-block transition-transform duration-300 group-open:rotate-90">
+                ›
+              </span>
+            </span>
+          </summary>
+          <ul className="mt-2 space-y-1.5 text-xs leading-relaxed text-gta-text-secondary">
+            {evidence.limitations.map((item, i) => (
+              <li key={i} className="flex gap-2">
+                <span className="mt-0.5 text-gta-accent-warning/70" aria-hidden="true">
+                  ·
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
     </div>
   )
 }
