@@ -68,6 +68,31 @@ import { webglSceneBus, type SceneFocus, type EntityAtmosphere } from './scene-b
  * ya suavizados, así que la escena es reproducible y nunca "tiembla" sin
  * motivo — cada cambio visual es trazable a un dato real de la entidad.
  *
+ * v7 — la escena incorpora materia visual real de GTA VI
+ * ---------------------------------------------------------------------------
+ * Donde antes orbitaban 4 sólidos abstractos (octaedro/toro genéricos,
+ * `buildSatellites`) ahora orbitan 4 letreros con las imágenes oficiales
+ * que ya vive el proyecto (`buildImageBillboards`, ver `IMAGE_BILLBOARDS`):
+ * la portada de GTA VI, la postal de Port Gellhorn, y los retratos de Real
+ * Dimez y Boobie Ike — los mismos archivos `.webp` que sirve el hero DOM y
+ * las fichas de personaje, no una copia aparte para WebGL.
+ *
+ * Estos letreros no son un `<img>` flotando en 3D: cada uno es un
+ * `ShaderMaterial` que calcula su propio marco redondeado por SDF, un
+ * brillo de borde en el neón de la escena, scanlines de pantalla real, y
+ * una distorsión tipo VHS (aberración cromática + jitter) que sube y baja
+ * con `uDistortion` — una señal derivada de la velocidad real de scroll y
+ * la intención de cursor (mismo cálculo espíritu que `chromaKick`, pero
+ * vivido en la geometría del letrero, no solo en el post-proceso global).
+ * Cada letrero hace *billboarding* real (encara la cámara en todo
+ * momento, vía `quaternion.copy(camera.quaternion)`): son contenido
+ * legible, no un sólido que puede quedar cabeza abajo.
+ *
+ * El parallax es multicapa por diseño: cada letrero tiene su propio factor
+ * `parallax` en `IMAGE_BILLBOARDS`, así que el dolly de scroll acerca la
+ * portada de GTA VI (la pieza más icónica) más que al resto — profundidad
+ * real de escena, no una sola capa moviéndose a una velocidad fija.
+ *
  * Puntos de extensión:
  *  - `buildXxx()` construyen piezas de escena independientes.
  *  - `updaters` centraliza el loop de animación.
@@ -316,6 +341,75 @@ const SUN_FRAGMENT_SHADER = /* glsl */ `
   }
 `
 
+/**
+ * Billboards de material real: los planos que muestran las imágenes
+ * oficiales de GTA VI dentro de la propia escena 3D (no un overlay CSS).
+ * Cada uno es un letrero/pantalla suspendido cerca de la torre focal, con:
+ *  - Marco redondeado calculado por SDF (no una textura de marco aparte).
+ *  - Brillo de borde en el color de neón del letrero (fill + rim en un
+ *    solo pase, sin geometría extra para el aro).
+ *  - Distorsión tipo VHS (offset cromático + scanlines) que solo aparece
+ *    cuando `uDistortion` sube — y `uDistortion` viene de la velocidad
+ *    real de scroll y de la intención de cursor (ver loop principal), no
+ *    de ruido continuo: el letrero "vibra" cuando el usuario interactúa,
+ *    se asienta cuando no.
+ *  - Ligera onda de vértice (el letrero "respira" como una pantalla con
+ *    señal débil), también atada a `uDistortion`.
+ */
+const BILLBOARD_VERTEX_SHADER = /* glsl */ `
+  uniform float time;
+  uniform float uDistortion;
+  varying vec2 vUv;
+  void main() {
+    vUv = uv;
+    vec3 pos = position;
+    pos.z += sin(pos.y * 3.0 + time * 1.6) * (0.015 + uDistortion * 0.05);
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+  }
+`
+
+const BILLBOARD_FRAGMENT_SHADER = /* glsl */ `
+  uniform sampler2D map;
+  uniform float time;
+  uniform float introFade;
+  uniform vec3 uColor;
+  uniform float uDistortion;
+  varying vec2 vUv;
+
+  // SDF de rectángulo redondeado: define el marco del letrero sin textura aparte.
+  float roundedBoxSDF(vec2 p, vec2 b, float r) {
+    vec2 q = abs(p) - b + r;
+    return length(max(q, 0.0)) + min(max(q.x, q.y), 0.0) - r;
+  }
+
+  void main() {
+    vec2 centered = vUv - 0.5;
+
+    // Aberración cromática + jitter horizontal: solo perceptible cuando
+    // uDistortion sube (scroll/cursor real), nunca en reposo.
+    float scan = sin(vUv.y * 340.0 + time * 4.0) * uDistortion * 0.006;
+    vec2 uvR = vec2(vUv.x + scan + uDistortion * 0.008, vUv.y);
+    vec2 uvB = vec2(vUv.x + scan - uDistortion * 0.008, vUv.y);
+
+    float r = texture2D(map, uvR).r;
+    float g = texture2D(map, vUv).g;
+    float b = texture2D(map, uvB).b;
+    vec3 color = vec3(r, g, b);
+
+    float sdf = roundedBoxSDF(centered, vec2(0.46), 0.05);
+    float fill = 1.0 - smoothstep(-0.006, 0.006, sdf);
+    float edgeGlow = 1.0 - smoothstep(0.0, 0.05, abs(sdf + 0.012));
+    color += uColor * edgeGlow * (1.3 + uDistortion * 0.6);
+
+    // Scanlines sutiles: acabado de pantalla real, no una demo de shader.
+    float lines = 0.95 + 0.05 * sin(vUv.y * 260.0 - time * 2.2);
+    color *= lines;
+
+    float alpha = clamp(fill + edgeGlow, 0.0, 1.0) * introFade;
+    gl_FragColor = vec4(color, alpha);
+  }
+`
+
 // ---------------------------------------------------------------------------
 // Coreografía de cámara: encuadres deliberados, no ruido infinito.
 // ---------------------------------------------------------------------------
@@ -337,6 +431,73 @@ function smootherstep(t: number): number {
   const c = Math.min(Math.max(t, 0), 1)
   return c * c * c * (c * (c * 6 - 15) + 10)
 }
+
+/**
+ * Materia visual real de la escena: las 4 piezas oficiales de GTA VI que
+ * ya viven en `public/images/` (mismos archivos que usa el hero DOM y las
+ * fichas de personaje — una sola fuente de verdad, no assets duplicados
+ * para WebGL). Reemplazan los adornos abstractos que había antes
+ * orbitando la torre (octaedro/toro genéricos): ahora lo que orbita son
+ * letreros con las imágenes reales, del mismo modo que Ocean Drive está
+ * lleno de carteles y pantallas, no de sólidos platónicos.
+ *
+ * `width`/`height` respetan el aspect ratio real del archivo fuente (no
+ * se estira ninguna imagen). `color` es el tinte de neón del marco de
+ * cada letrero, tomado de la misma paleta magenta/cian que ya usa el
+ * resto de la escena. `parallax` es cuánto responde cada uno al dolly de
+ * scroll — la pieza más grande e icónica (portada de GTA VI) es la que
+ * más se acerca, como si fuera lo primero que “revela” el scroll.
+ */
+const IMAGE_BILLBOARDS = [
+  {
+    key: 'gta6-boxart',
+    path: '/images/heroes/hero-gta6-boxart-sunset.webp',
+    width: 3.4,
+    height: 1.91,
+    color: 0xff2d78,
+    radius: 5.2,
+    baseY: 1.6,
+    speed: 0.05,
+    phase: 0,
+    parallax: 1,
+  },
+  {
+    key: 'port-gellhorn',
+    path: '/images/heroes/hero-port-gellhorn-postcard.webp',
+    width: 2.6,
+    height: 1.1,
+    color: 0x22d3ee,
+    radius: 6.6,
+    baseY: -0.8,
+    speed: 0.038,
+    phase: 1.9,
+    parallax: 0.6,
+  },
+  {
+    key: 'real-dimez',
+    path: '/images/entities/personajes/real-dimez.webp',
+    width: 2.05,
+    height: 1.1,
+    color: 0xff2d78,
+    radius: 4.5,
+    baseY: -1.9,
+    speed: 0.062,
+    phase: 3.3,
+    parallax: 0.85,
+  },
+  {
+    key: 'boobie-ike',
+    path: '/images/entities/personajes/boobie-ike.webp',
+    width: 1.95,
+    height: 1.1,
+    color: 0x22d3ee,
+    radius: 4.9,
+    baseY: 2.7,
+    speed: 0.056,
+    phase: 4.6,
+    parallax: 0.7,
+  },
+] as const
 
 /**
  * Integración con la UI real (ver `scene-bus.ts`)
@@ -454,6 +615,8 @@ export class GTA6CodexWebGLEngine {
   private roadUniforms!: { time: { value: number }; introFade: { value: number } }
   private shaftUniforms!: { time: { value: number }; introFade: { value: number } }
   private towerShaderRefs: { uTime: { value: number } }[] = []
+  /** Texturas de los billboards con imágenes reales de GTA VI — liberadas en `dispose()`. */
+  private imageTextures: THREE.Texture[] = []
 
   private keyLight!: THREE.PointLight
   private fillLight!: THREE.PointLight
@@ -535,7 +698,7 @@ export class GTA6CodexWebGLEngine {
     this.buildLightShaft()
     this.buildTrafficStreaks()
     this.buildDust()
-    this.buildSatellites()
+    this.buildImageBillboards()
     this.buildFocalTower()
 
     this.composer = new EffectComposer(this.renderer)
@@ -931,80 +1094,79 @@ export class GTA6CodexWebGLEngine {
     })
   }
 
-  /** Adornos de neón: pocos, orbitando con intención alrededor de la torre — no relleno al azar. */
-  private buildSatellites() {
-    const geometries = [new THREE.OctahedronGeometry(1, 2), new THREE.TorusGeometry(0.6, 0.2, 20, 56)]
-    const bodies: { mesh: THREE.Mesh; rim: THREE.Mesh; angle: number; radius: number; speed: number; tilt: number }[] = []
-    const COUNT = 4
-
-    for (let i = 0; i < COUNT; i++) {
-      const isCyan = i % 2 === 0
-      const geometry = geometries[i % geometries.length]
-      const material = new THREE.MeshPhysicalMaterial({
-        color: isCyan ? 0x22d3ee : 0xff2d78,
-        roughness: 0.24,
-        metalness: 0.85,
-        clearcoat: 0.6,
-        clearcoatRoughness: 0.25,
-        envMapIntensity: 1.3,
-        emissive: isCyan ? 0x0b3a3d : 0x3d0b28,
-        emissiveIntensity: 0.32,
-      })
-      const scale = 0.4 + Math.random() * 0.35
-      const mesh = new THREE.Mesh(geometry, material)
-      mesh.scale.setScalar(scale)
-
-      const rimMaterial = new THREE.ShaderMaterial({
-        uniforms: { glowColor: { value: new THREE.Color(isCyan ? 0x67e8f9 : 0xff8fc4) } },
-        transparent: true,
-        depthWrite: false,
-        blending: THREE.AdditiveBlending,
-        side: THREE.BackSide,
-        vertexShader: `
-          varying vec3 vNormal; varying vec3 vViewDir;
-          void main() {
-            vNormal = normalize(normalMatrix * normal);
-            vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-            vViewDir = normalize(-mvPosition.xyz);
-            gl_Position = projectionMatrix * mvPosition;
-          }
-        `,
-        fragmentShader: `
-          varying vec3 vNormal; varying vec3 vViewDir; uniform vec3 glowColor;
-          void main() {
-            float fresnel = pow(1.0 - max(dot(vNormal, vViewDir), 0.0), 2.5);
-            gl_FragColor = vec4(glowColor, fresnel * 0.85);
-          }
-        `,
-      })
-      const rim = new THREE.Mesh(geometry, rimMaterial)
-      rim.scale.setScalar(scale * 1.2)
-
-      this.midGroup.add(mesh, rim)
-      bodies.push({
-        mesh,
-        rim,
-        angle: (i / COUNT) * Math.PI * 2,
-        radius: 4.5 + i * 1.3,
-        speed: 0.035 + i * 0.006,
-        tilt: (Math.random() - 0.5) * 0.5,
-      })
-    }
-
+  /** Letreros con las imágenes reales de GTA VI orbitando la torre — ver `IMAGE_BILLBOARDS`. */
+  private buildImageBillboards() {
+    const loader = new THREE.TextureLoader()
+    const maxAnisotropy = this.renderer.capabilities.getMaxAnisotropy()
     const towerOffset = new THREE.Vector3(-3.2, 0.8, -1.5)
 
-    this.updaters.push((_elapsed, delta, intro) => {
-      const speedFactor = (this.reducedMotion ? 0.12 : 1) * intro
-      bodies.forEach((b) => {
-        b.angle += delta * b.speed * (this.reducedMotion ? 0.2 : 1)
-        const x = towerOffset.x + Math.cos(b.angle) * b.radius
-        const z = towerOffset.z + Math.sin(b.angle) * b.radius * 0.6 - 4
-        const y = towerOffset.y + Math.sin(b.angle * 1.4) * b.tilt * b.radius * 0.3
+    const billboards: {
+      mesh: THREE.Mesh
+      material: THREE.ShaderMaterial
+      texture: THREE.Texture
+      angle: number
+      def: (typeof IMAGE_BILLBOARDS)[number]
+    }[] = []
+
+    IMAGE_BILLBOARDS.forEach((def, i) => {
+      const texture = loader.load(def.path)
+      texture.colorSpace = THREE.SRGBColorSpace
+      texture.anisotropy = maxAnisotropy
+      texture.wrapS = THREE.ClampToEdgeWrapping
+      texture.wrapT = THREE.ClampToEdgeWrapping
+
+      const material = new THREE.ShaderMaterial({
+        uniforms: {
+          map: { value: texture },
+          time: { value: 0 },
+          introFade: { value: 0 },
+          uColor: { value: new THREE.Color(def.color) },
+          uDistortion: { value: 0 },
+        },
+        vertexShader: BILLBOARD_VERTEX_SHADER,
+        fragmentShader: BILLBOARD_FRAGMENT_SHADER,
+        transparent: true,
+        depthWrite: false,
+        side: THREE.DoubleSide,
+      })
+
+      const geometry = new THREE.PlaneGeometry(def.width, def.height, 12, 8)
+      const mesh = new THREE.Mesh(geometry, material)
+      this.midGroup.add(mesh)
+      this.imageTextures.push(texture)
+
+      billboards.push({ mesh, material, texture, angle: (i / IMAGE_BILLBOARDS.length) * Math.PI * 2, def })
+    })
+
+    this.updaters.push((elapsed, delta, intro) => {
+      // "uDistortion" es la traducción directa de interacción real (scroll
+      // + cursor + inquietud editorial) a la señal de la pantalla — el
+      // mismo lenguaje que ya usa `chromaKick` en el grade pass, pero
+      // vivido dentro de la geometría de cada letrero.
+      const interactionDistortion = Math.min(
+        this.scrollVelocity * 9 + this.pointerIntent * 0.35 + this.entityUnrest * 0.25,
+        1
+      )
+
+      billboards.forEach((b, i) => {
+        b.angle += delta * b.def.speed * (this.reducedMotion ? 0.15 : 1)
+        const x = towerOffset.x + Math.cos(b.angle + b.def.phase) * b.def.radius
+        const zOrbit = towerOffset.z + Math.sin(b.angle + b.def.phase) * b.def.radius * 0.6 - 4
+        // Parallax multicapa real: el dolly de scroll acerca cada letrero
+        // según su propio factor — la portada de GTA VI (parallax=1) es la
+        // que más "sale al encuentro" del usuario al scrollear.
+        const z = zOrbit + this.scrollProgress * 4.5 * b.def.parallax
+        const y = towerOffset.y + b.def.baseY + Math.sin(elapsed * 0.15 + b.def.phase) * 0.35
         b.mesh.position.set(x, y, z)
-        b.mesh.rotation.x += delta * 0.1 * speedFactor
-        b.mesh.rotation.y += delta * 0.14 * speedFactor
-        b.rim.position.copy(b.mesh.position)
-        b.rim.rotation.copy(b.mesh.rotation)
+        // Billboard real: el letrero siempre encara la cámara, como
+        // corresponde a una imagen legible — no tumbla como un sólido
+        // abstracto, es contenido.
+        b.mesh.quaternion.copy(this.camera.quaternion)
+
+        const stagger = intro * 1.25 - i * 0.09
+        b.material.uniforms.introFade.value = Math.max(0, Math.min(stagger, 1))
+        b.material.uniforms.time.value = elapsed
+        b.material.uniforms.uDistortion.value = interactionDistortion
       })
     })
   }
@@ -1353,6 +1515,7 @@ export class GTA6CodexWebGLEngine {
       }
     })
     this.scene.environment?.dispose?.()
+    this.imageTextures.forEach((t) => t.dispose())
     this.bokehPass.dispose()
     this.composer.dispose()
     this.renderer.dispose()
