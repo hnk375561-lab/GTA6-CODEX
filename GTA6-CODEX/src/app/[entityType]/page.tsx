@@ -72,15 +72,18 @@ export default async function EntityTypePage({ params }: PageProps) {
         </Reveal>
 
         {entities.length === 0 ? (
-          <Reveal>
-            <Card>
-              <CardBody>
-                <p className="text-gta-text-secondary">
-                  Todavía no hay contenido publicado en esta categoría. ¡Vuelve pronto!
-                </p>
-              </CardBody>
-            </Card>
-          </Reveal>
+          <div className="rounded-lg border border-gta-border bg-gta-surface px-6 py-10 text-center">
+            <p className="mb-1 font-semibold text-gta-text">
+              Todavía no hay {TYPE_LABELS[type].toLowerCase()} documentados
+            </p>
+            <p className="mb-4 text-sm text-gta-text-secondary">
+              Esta categoría está vacía por ahora — estamos incorporando contenido a medida que se
+              confirma. Volvé pronto.
+            </p>
+            <Link href="/" className="text-sm font-semibold text-gta-accent hover:underline">
+              Explorar otras categorías
+            </Link>
+          </div>
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {entities.map((entity, i) => (

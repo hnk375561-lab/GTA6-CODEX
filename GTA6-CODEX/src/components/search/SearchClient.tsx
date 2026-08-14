@@ -6,7 +6,6 @@ import Fuse from 'fuse.js'
 import type { Entity, EntityType } from '@/types'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
-import { Reveal } from '@/components/ui/Reveal'
 
 interface SearchClientProps {
   entities: Entity[]
@@ -50,27 +49,61 @@ export function SearchClient({ entities }: SearchClientProps) {
 
   return (
     <div>
-      <div className="mb-8 animate-slide-in">
+      <div className="relative mb-8">
+        <svg
+          className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gta-text-tertiary"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
         <input
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Buscar personajes, vehículos, ubicaciones..."
           autoFocus
-          className="w-full rounded-lg border border-gta-border bg-gta-card px-5 py-4 text-lg text-gta-text placeholder:text-gta-text-secondary transition-all duration-300 focus:border-gta-accent focus:shadow-gta-md focus:outline-none"
+          aria-label="Buscar en GTA6 Codex"
+          className="w-full rounded-lg border border-gta-border bg-gta-surface py-4 pl-12 pr-12 text-lg text-gta-text placeholder:text-gta-text-secondary transition-colors focus:border-gta-accent focus:outline-none"
         />
+        {query && (
+          <button
+            type="button"
+            onClick={() => setQuery('')}
+            aria-label="Limpiar búsqueda"
+            className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md text-gta-text-secondary transition-colors hover:bg-gta-surface-elevated hover:text-gta-text"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        )}
       </div>
 
       {query.trim() && (
-        <p key={results.length} className="count-up mb-4 text-sm text-gta-text-secondary">
+        <p className="mb-4 text-sm text-gta-text-secondary" aria-live="polite">
           {results.length} {results.length === 1 ? 'resultado' : 'resultados'} para &ldquo;{query}&rdquo;
         </p>
       )}
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {results.map((entity, i) => (
-          <Reveal key={`${entity.type}-${entity.slug}`} delay={Math.min(i, 8) * 60} once={false}>
-            <Link href={`/${entity.type}/${entity.slug}`} className="group block h-full">
+      {!query.trim() && (
+        <p className="mb-4 text-sm text-gta-text-secondary">
+          {entities.length} entidades documentadas — escribí un nombre, vehículo, ubicación o misión.
+        </p>
+      )}
+
+      {results.length > 0 && (
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {results.map((entity) => (
+            <Link key={`${entity.type}-${entity.slug}`} href={`/${entity.type}/${entity.slug}`} className="group block h-full">
               <Card hoverable className="h-full">
                 <CardBody>
                   <div className="mb-2 flex items-center gap-2">
@@ -86,14 +119,22 @@ export function SearchClient({ entities }: SearchClientProps) {
                 </CardBody>
               </Card>
             </Link>
-          </Reveal>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
 
       {query.trim() && results.length === 0 && (
-        <p className="animate-fade-in text-gta-text-secondary">
-          No encontramos nada para esa búsqueda. Probá con otro término.
-        </p>
+        <div className="rounded-lg border border-gta-border bg-gta-surface px-6 py-10 text-center">
+          <p className="mb-1 font-semibold text-gta-text">
+            Sin resultados para &ldquo;{query}&rdquo;
+          </p>
+          <p className="mb-4 text-sm text-gta-text-secondary">
+            Puede que el nombre esté escrito distinto o que todavía no esté documentado.
+          </p>
+          <Link href="/" className="text-sm font-semibold text-gta-accent hover:underline">
+            Volver al inicio y explorar por categoría
+          </Link>
+        </div>
       )}
     </div>
   )
