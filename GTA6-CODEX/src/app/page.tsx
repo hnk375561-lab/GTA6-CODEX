@@ -8,12 +8,16 @@ import { CountUp } from '@/components/ui/CountUp'
 import { AuroraText } from '@/components/ui/AuroraText'
 import { FlickeringGrid } from '@/components/ui/FlickeringGrid'
 import { GridPattern } from '@/components/ui/GridPattern'
-import { getEntityCount, getFeaturedEntities } from '@/lib/entities'
+import { Marquee } from '@/components/ui/Marquee'
+import { ShineBorder } from '@/components/ui/ShineBorder'
+import { WordRotate } from '@/components/ui/WordRotate'
+import { getEntityCount, getEntityCountsByType, getFeaturedEntities } from '@/lib/entities'
 
 export default async function Home() {
-  const [entityCount, featured] = await Promise.all([
+  const [entityCount, featured, countsByType] = await Promise.all([
     getEntityCount(),
     getFeaturedEntities(3),
+    getEntityCountsByType(),
   ])
 
   const categories = [
@@ -70,7 +74,17 @@ export default async function Home() {
         />
         <div className="container-max relative">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-4 text-5xl font-bold sm:text-6xl">
+            <Reveal delay={0} direction="zoom" className="mb-6 flex justify-center">
+              <div className="hero-pill">
+                <ShineBorder shineColor={['#00d000', '#ff6600']} borderWidth={1} duration={9} />
+                <span className="hero-pill-dot" aria-hidden="true" />
+                <span>
+                  <strong className="font-semibold text-gta-text">{entityCount}</strong> entidades documentadas
+                </span>
+              </div>
+            </Reveal>
+
+            <h1 className="mb-2 text-5xl font-bold sm:text-6xl">
               <AuroraText
                 colors={["#00d000", "#7dffb0", "#ff6600", "#00d000"]}
                 speed={1.2}
@@ -78,6 +92,18 @@ export default async function Home() {
                 GTA6 Codex
               </AuroraText>
             </h1>
+
+            {/* La palabra rotativa refuerza las categorías principales del sitio:
+                es navegación implícita, no decoración (Nivel 3 — hero). */}
+            <div className="mb-6 flex items-center justify-center gap-2 text-xl text-gta-text-secondary">
+              <span>Explorá</span>
+              <WordRotate
+                words={['Personajes', 'Vehículos', 'Ubicaciones', 'Misiones', 'Organizaciones']}
+                duration={2200}
+                className="font-semibold text-gta-accent"
+              />
+            </div>
+
             <p className="mb-6 text-xl text-gta-text-secondary">
               <AnimatedText
                 text="El wiki editorial más completo sobre Grand Theft Auto 6."
@@ -109,6 +135,21 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Ticker de categorías: refuerza el conteo por tipo con sensación de
+          feed en vivo / HUD técnico, sin bloquear ninguna interacción. */}
+      <div className="category-ticker" aria-hidden="true">
+        <Marquee pauseOnHover className="[--duration:38s] py-2">
+          {categories.map((category, i) => (
+            <span key={category.type} className="category-ticker-item">
+              <span>{category.icon}</span>
+              <span>{category.label}</span>
+              <strong>{countsByType[category.type] ?? 0}</strong>
+              {i < categories.length - 1 && <span className="category-ticker-sep">/</span>}
+            </span>
+          ))}
+        </Marquee>
+      </div>
 
       {/* Info Section */}
       <section className="border-b border-gta-border bg-gta-dark py-12">

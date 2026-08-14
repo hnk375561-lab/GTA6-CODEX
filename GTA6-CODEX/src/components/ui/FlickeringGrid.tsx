@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { cn } from '@/lib/utils'
+import { cn, prefersReducedMotion } from '@/lib/utils'
 
 interface FlickeringGridProps extends React.HTMLAttributes<HTMLDivElement> {
   squareSize?: number
@@ -122,10 +122,27 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
         const newWidth = width || container.clientWidth
         const newHeight = height || container.clientHeight
         setCanvasSize({ width: newWidth, height: newHeight })
-        gridParams = setupCanvas(canvas, newWidth, newHeight)
+        const params = setupCanvas(canvas, newWidth, newHeight)
+        gridParams = params
+        return params
       }
 
-      updateCanvasSize()
+      const initialParams = updateCanvasSize()
+      const reduceMotion = prefersReducedMotion()
+
+      // Con reduced-motion, dibujamos un único frame estático (sin RAF loop):
+      // conserva la textura visual de la grilla sin costo de animación continua.
+      if (reduceMotion) {
+        drawGrid(
+          ctx,
+          canvas.width,
+          canvas.height,
+          initialParams.cols,
+          initialParams.rows,
+          initialParams.squares,
+          initialParams.dpr
+        )
+      }
 
       let lastTime = 0
       const animate = (time: number) => {
@@ -148,20 +165,25 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
       }
 
       resizeObserver = new ResizeObserver(() => {
-        updateCanvasSize()
+        const params = updateCanvasSize()
+        if (reduceMotion) {
+          drawGrid(ctx, canvas.width, canvas.height, params.cols, params.rows, params.squares, params.dpr)
+        }
       })
       resizeObserver.observe(container)
 
-      intersectionObserver = new IntersectionObserver(
-        ([entry]) => {
-          setIsInView(entry.isIntersecting)
-        },
-        { threshold: 0 }
-      )
-      intersectionObserver.observe(canvas)
+      if (!reduceMotion) {
+        intersectionObserver = new IntersectionObserver(
+          ([entry]) => {
+            setIsInView(entry.isIntersecting)
+          },
+          { threshold: 0 }
+        )
+        intersectionObserver.observe(canvas)
 
-      if (isInView) {
-        animationFrameId = requestAnimationFrame(animate)
+        if (isInView) {
+          animationFrameId = requestAnimationFrame(animate)
+        }
       }
     }
 

@@ -12,6 +12,9 @@ import { AnimatedText } from '@/components/ui/AnimatedText'
 import { EvidenceBlock } from '@/components/entities/EvidenceBlock'
 import { EntityMetadata } from '@/components/entities/EntityMetadata'
 import { RelationsPanel } from '@/components/entities/RelationsPanel'
+import { EntityHeaderBackground } from '@/components/entities/EntityHeaderBackground'
+import { MagicCard } from '@/components/ui/MagicCard'
+import { ShineBorder } from '@/components/ui/ShineBorder'
 
 interface PageProps {
   params: Promise<{ entityType: string; slug: string }>
@@ -80,6 +83,46 @@ export default async function EntityPage({ params }: PageProps) {
 
   const statusLabel = STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status
 
+  const headerContent = (
+    <>
+      <nav className="mb-6 text-sm text-gta-text-secondary animate-fade-in" aria-label="Breadcrumb">
+        <Link href="/" className="link-underline transition-colors hover:text-gta-accent">
+          Inicio
+        </Link>
+        <span className="mx-2">/</span>
+        <Link href={`/${type}`} className="link-underline transition-colors hover:text-gta-accent">
+          {TYPE_LABELS[type]}
+        </Link>
+        <span className="mx-2">/</span>
+        <span className="text-gta-text">{entity.title}</span>
+      </nav>
+
+      <div className="mb-3 flex flex-wrap items-center gap-3">
+        <h1 className="text-4xl font-bold text-gta-text sm:text-5xl">
+          <AnimatedText text={entity.title} mode="words" stagger={60} />
+        </h1>
+        <Badge variant="status" status={entity.status}>
+          {statusLabel}
+        </Badge>
+        {entity.featured && <Badge variant="tag">Destacado</Badge>}
+      </div>
+
+      <Reveal delay={200}>
+        <p className="max-w-3xl text-lg text-gta-text-secondary">{entity.description}</p>
+      </Reveal>
+
+      {entity.tags && entity.tags.length > 0 && (
+        <div className="stagger mt-5 flex flex-wrap gap-2">
+          {entity.tags.map((tag) => (
+            <Badge key={tag} variant="tag">
+              {tag}
+            </Badge>
+          ))}
+        </div>
+      )}
+    </>
+  )
+
   return (
     <>
       <script
@@ -91,43 +134,27 @@ export default async function EntityPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
-      {/* Header */}
-      <section className="border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-10 sm:py-14">
-        <div className="container-max">
-          <nav className="mb-6 text-sm text-gta-text-secondary animate-fade-in" aria-label="Breadcrumb">
-            <Link href="/" className="link-underline transition-colors hover:text-gta-accent">
-              Inicio
-            </Link>
-            <span className="mx-2">/</span>
-            <Link href={`/${type}`} className="link-underline transition-colors hover:text-gta-accent">
-              {TYPE_LABELS[type]}
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-gta-text">{entity.title}</span>
-          </nav>
-
-          <div className="mb-3 flex flex-wrap items-center gap-3">
-            <h1 className="text-4xl font-bold text-gta-text sm:text-5xl">
-              <AnimatedText text={entity.title} mode="words" stagger={60} />
-            </h1>
-            <Badge variant="status" status={entity.status}>
-              {statusLabel}
-            </Badge>
-            {entity.featured && <Badge variant="tag">Destacado</Badge>}
-          </div>
-
-          <Reveal delay={200}>
-            <p className="max-w-3xl text-lg text-gta-text-secondary">{entity.description}</p>
-          </Reveal>
-
-          {entity.tags && entity.tags.length > 0 && (
-            <div className="stagger mt-5 flex flex-wrap gap-2">
-              {entity.tags.map((tag) => (
-                <Badge key={tag} variant="tag">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
+      {/* Header — las fichas "featured" reciben fondo cinematográfico por
+          categoría (Nivel 4: personaje/vehículo/ubicación/organización) y
+          un contenedor MagicCard con glow ambiental que sigue al cursor en
+          desktop; el resto conserva el header plano original. */}
+      <section className="relative overflow-hidden border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-10 sm:py-14">
+        {entity.featured && <EntityHeaderBackground type={type} />}
+        <div className="container-max relative">
+          {entity.featured ? (
+            <MagicCard
+              mode="orb"
+              glowFrom="#ff6600"
+              glowTo="#00d000"
+              glowSize={380}
+              glowBlur={90}
+              glowOpacity={0.35}
+              className="p-6 sm:p-8"
+            >
+              {headerContent}
+            </MagicCard>
+          ) : (
+            headerContent
           )}
         </div>
       </section>
@@ -138,7 +165,10 @@ export default async function EntityPage({ params }: PageProps) {
           <div className="space-y-6 lg:col-span-2">
             {entity.content ? (
               <Reveal direction="left">
-                <Card>
+                <Card className={entity.featured ? 'relative' : undefined}>
+                  {entity.featured && (
+                    <ShineBorder shineColor={['#00d000', '#ff6600']} borderWidth={1} duration={16} />
+                  )}
                   <CardBody>
                     <div className="max-w-none">
                       {entity.content.split('\n\n').map((paragraph, i) => (
