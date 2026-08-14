@@ -52,6 +52,26 @@ public/images/entities/ubicaciones/leonida-keys.webp     179 KB
 public/images/entities/ubicaciones/mount-kalaga.webp     219 KB
 ```
 
+## Ronda 6 (14 ago 2026) — 2 imágenes DESCARGADAS e INTEGRADAS
+
+El usuario aportó 4 capturas oficiales de Brian Heder y 4 de Cal Hampton
+(mismas entidades ya listadas `SOURCE_VERIFIED` en la Ronda 1). Se
+seleccionó **una sola imagen por personaje** como hero (arquitectura
+mono-imagen, sin cambios):
+
+| Slug | Archivo fuente elegido | Criterio de selección | Otras capturas recibidas (no integradas, arquitectura mono-imagen) |
+|---|---|---|---|
+| brian-heder | `Brian_Heder_02.jpg` | Retrato solo de noche, apoyado en una baranda con ambiente tropical — atmosférico y sin otros personajes en primer plano | `_01` (asomado por ventanilla de auto, con otro personaje atrás), `_03` (entregando un paquete, con otro personaje), `_04` (confrontación con arma, junto a dos personajes más) |
+| cal-hampton | `Cal_Hampton_01.jpg` | Retrato solo en cancha de minigolf, sonriendo a cámara — la más nítida y reconocible como "postal" del personaje | `_02` (mesa de pool, grupo), `_03` (flotador de pileta, solo pero sin rostro tan protagónico), `_04` (caminando de noche junto a otro personaje) |
+
+Procesadas con `npm run process-images:apply`: WebP calidad 82, redimensionadas
+a 1600×900 (lado mayor tope 1600px, sin upscaling). Archivos finales:
+
+```
+public/images/entities/personajes/brian-heder.webp        ~88 KB
+public/images/entities/personajes/cal-hampton.webp        ~115 KB
+```
+
 ## Ronda 5 (14 ago 2026) — 2 imágenes DESCARGADAS e INTEGRADAS
 
 El usuario aportó directamente 4 capturas oficiales de Dre'Quan Priest y 6 de
@@ -133,12 +153,12 @@ de esas dos páginas, no inventadas ni recordadas de memoria.
 |---|---|---|---|---|---|
 | jason-duval | Jason Duval | true | **INTEGRATED** | `Jason_Duval_04.jpg` → `jason-duval.webp` | Ver Ronda 5 — resto de screenshots ×5 + artwork ensemble sin integrar (arquitectura mono-imagen) |
 | lucia-caminos | Lucia Caminos | true | **INTEGRATED** | `Lucia_Caminos_03.jpg` → `lucia-caminos.webp` | Ver Ronda 4 — resto de screenshots ×5 + artwork sin integrar (arquitectura mono-imagen) |
-| cal-hampton | Cal Hampton | false | SOURCE_VERIFIED | Screenshots ×4 + Artwork retrato ×1 (`Cal_Hampton_landscape.jpg`) | |
+| cal-hampton | Cal Hampton | false | **INTEGRATED** | `Cal_Hampton_01.jpg` → `cal-hampton.webp` | Ver Ronda 6 — resto de screenshots ×3 + artwork retrato sin integrar (arquitectura mono-imagen) |
 | boobie-ike | Boobie Ike | false | SOURCE_VERIFIED | Screenshots ×4 + Artwork retrato ×1 | |
 | drequan-priest | Dre'Quan Priest | false | **INTEGRATED** | `DreQuan_Priest_03.jpg` → `drequan-priest.webp` | Ver Ronda 5 — resto de screenshots ×3 + artwork retrato sin integrar (arquitectura mono-imagen) |
 | real-dimez | Real Dimez | false | SOURCE_VERIFIED | Screenshots ×4 + Artwork retrato ×1 | |
 | raul-bautista | Raul Bautista | false | **INTEGRATED** | `Raul_Bautista_03.jpg` → `raul-bautista.webp` | Ver Ronda 4 — resto de screenshots ×3 + artwork sin integrar (arquitectura mono-imagen) |
-| brian-heder | Brian Heder | false | SOURCE_VERIFIED | Screenshots ×4 + Artwork retrato ×1 | |
+| brian-heder | Brian Heder | false | **INTEGRATED** | `Brian_Heder_02.jpg` → `brian-heder.webp` | Ver Ronda 6 — resto de screenshots ×3 + artwork retrato sin integrar (arquitectura mono-imagen) |
 | bae-luxe | Bae-Luxe | false | UNVERIFIED | — | Sin asset individual en el media kit oficial actual |
 | lori-heder | Lori Heder | false | UNVERIFIED | — | ídem |
 | phil | Phil | false | UNVERIFIED | — | ídem |
@@ -263,19 +283,19 @@ TOTAL VERIFICADAS:           21  (misma cifra — todo lo DISCOVERED se
                                    verificó directamente antes de listarse)
 TOTAL PENDIENTES:            81  (UNVERIFIED)
 TOTAL DESCARTADAS:            0  (REJECTED)
-TOTAL DESCARGADAS:           10  (grassrivers, ambrosia, leonida-keys, mount-kalaga —
+TOTAL DESCARGADAS:           12  (grassrivers, ambrosia, leonida-keys, mount-kalaga —
                                    Ronda 2; vice-city, port-gellhorn — Ronda 3;
                                    lucia-caminos, raul-bautista — Ronda 4;
-                                   jason-duval, drequan-priest — Ronda 5.
+                                   jason-duval, drequan-priest — Ronda 5;
+                                   brian-heder, cal-hampton — Ronda 6.
                                    Todas aportadas por el usuario)
-TOTAL INTEGRADAS:            10  (mismas 10 — archivo real en public/, servido
+TOTAL INTEGRADAS:            12  (mismas 12 — archivo real en public/, servido
                                    automáticamente por resolveEntityImage())
-TOTAL DOWNLOAD_PENDING:      11  (resto de SOURCE_VERIFIED sin bytes en el repo:
-                                   cal-hampton, boobie-ike, real-dimez,
-                                   brian-heder, grotti-cheetah-95,
+TOTAL DOWNLOAD_PENDING:       9  (resto de SOURCE_VERIFIED sin bytes en el repo:
+                                   boobie-ike, real-dimez, grotti-cheetah-95,
                                    vapid-stanier-55, vapid-dominator-buggy-67,
                                    squalo, dinka-enduro, crest-kayak, vapid-ganado)
-COBERTURA POTENCIAL ACTUAL:  21/102 = 20.6%  (si se descargaran las 11
+COBERTURA POTENCIAL ACTUAL:  21/102 = 20.6%  (si se descargaran las 9
                                                SOURCE_VERIFIED restantes)
-COBERTURA REAL HOY:          10/102 =  9.8%  (10 archivos reales en el repo)
+COBERTURA REAL HOY:          12/102 = 11.8%  (12 archivos reales en el repo)
 ```
