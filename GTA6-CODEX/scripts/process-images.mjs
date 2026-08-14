@@ -41,6 +41,7 @@ import fs from 'fs'
 import path from 'path'
 import crypto from 'crypto'
 import sharp from 'sharp'
+import { fileURLToPath } from 'url'
 
 const ROOT = process.cwd()
 const INCOMING_DIR = path.join(ROOT, 'incoming-images')
@@ -89,30 +90,87 @@ function loadEntityIndex() {
   return index
 }
 
+/**
+ * Dado un conjunto de candidatos { entity, length }, determina si hay un
+ * ganador inequívoco: el de mayor `length`, y solo si nadie más empata con
+ * ese máximo. Nunca depende del orden del array de entrada.
+ */
+function pickMostSpecific(candidates) {
+  if (candidates.length === 0) return { status: 'none' }
+  const maxLength = Math.max(...candidates.map((c) => c.length))
+  const mostSpecific = candidates.filter((c) => c.length === maxLength)
+  if (mostSpecific.length > 1) {
+    return { status: 'ambiguous', candidates: mostSpecific.map((c) => c.entity) }
+  }
+  return { status: 'match', entity: mostSpecific[0].entity }
+}
+
+/**
+ * Resuelve un nombre de archivo normalizado a una entidad conocida.
+ *
+ * Reemplaza los antiguos index.find() (que devolvían la PRIMERA entidad que
+ * matcheaba, dependiendo del orden de fs.readdirSync) por una resolución
+ * por tiers que reúne TODOS los candidatos de cada tier y solo asigna
+ * cuando hay un candidato estrictamente más específico que el resto.
+ *
+ * Tiers, en orden de prioridad (un tier superior siempre gana, aunque un
+ * tier inferior tenga un candidato "más largo"):
+ *   1. exact-slug    — norm === slug
+ *   2. slug-prefix    — norm.startsWith(slug + '-'), desambiguado por
+ *                       longitud de slug
+ *   3. title-prefix   — norm.startsWith(normalizedTitle), desambiguado por
+ *                       longitud de título; solo se evalúa si el tier 2 no
+ *                       produjo NINGÚN candidato (ni único ni ambiguo)
+ *
+ * Devuelve siempre uno de:
+ *   { status: 'match', entity, confidence }
+ *   { status: 'ambiguous', tier, candidates }
+ *   { status: 'none' }
+ */
+function resolveMatch(norm, index, categoryHint) {
+  const inCategory = (e) => !categoryHint || e.type === categoryHint
+
+  // Tier 1: match exacto de slug
+  const exactCandidates = index.filter((e) => norm === e.slug && inCategory(e))
+  if (exactCandidates.length > 0) {
+    if (exactCandidates.length > 1) {
+      return { status: 'ambiguous', tier: 'exact-slug', candidates: exactCandidates }
+    }
+    return { status: 'match', entity: exactCandidates[0], confidence: 'exact-slug' }
+  }
+
+  // Tier 2: prefijo de slug (ej. lucia-caminos-01.jpg → lucia-caminos)
+  const slugPrefixCandidates = index
+    .filter((e) => norm.startsWith(e.slug + '-') && inCategory(e))
+    .map((e) => ({ entity: e, length: e.slug.length }))
+  if (slugPrefixCandidates.length > 0) {
+    const result = pickMostSpecific(slugPrefixCandidates)
+    if (result.status === 'ambiguous') {
+      return { status: 'ambiguous', tier: 'slug-prefix', candidates: result.candidates }
+    }
+    return { status: 'match', entity: result.entity, confidence: 'slug-prefix' }
+  }
+
+  // Tier 3: prefijo de título normalizado. Solo se evalúa si el tier 2 no
+  // produjo ningún candidato (evita mezclar especificidad entre tiers).
+  const titlePrefixCandidates = index
+    .filter((e) => e.normalizedTitle.length > 0 && norm.startsWith(e.normalizedTitle) && inCategory(e))
+    .map((e) => ({ entity: e, length: e.normalizedTitle.length }))
+  if (titlePrefixCandidates.length > 0) {
+    const result = pickMostSpecific(titlePrefixCandidates)
+    if (result.status === 'ambiguous') {
+      return { status: 'ambiguous', tier: 'title-prefix', candidates: result.candidates }
+    }
+    return { status: 'match', entity: result.entity, confidence: 'title-prefix' }
+  }
+
+  return { status: 'none' }
+}
+
 /** Intenta resolver un nombre de archivo a una entidad conocida */
 function matchEntity(fileBaseName, index, categoryHint) {
   const norm = normalize(fileBaseName)
-
-  // 1) match exacto por slug
-  const exact = index.find((e) => norm === e.slug && (!categoryHint || e.type === categoryHint))
-  if (exact) return { entity: exact, confidence: 'exact-slug' }
-
-  // 2) el nombre de archivo empieza con el slug (ej. lucia-caminos-01.jpg)
-  const prefixSlug = index.find(
-    (e) => norm.startsWith(e.slug + '-') && (!categoryHint || e.type === categoryHint)
-  )
-  if (prefixSlug) return { entity: prefixSlug, confidence: 'slug-prefix' }
-
-  // 3) el nombre de archivo empieza con el título normalizado (ej. "lucia-caminos-01" == "Lucia Caminos 01")
-  const prefixTitle = index.find(
-    (e) =>
-      e.normalizedTitle.length > 0 &&
-      norm.startsWith(e.normalizedTitle) &&
-      (!categoryHint || e.type === categoryHint)
-  )
-  if (prefixTitle) return { entity: prefixTitle, confidence: 'title-prefix' }
-
-  return null
+  return resolveMatch(norm, index, categoryHint)
 }
 
 function sha1(buffer) {
@@ -182,8 +240,19 @@ async function main() {
       seenHashes.set(hash, filePath)
 
       const match = matchEntity(baseName, entityIndex, categoryHint)
-      if (!match) {
+
+      if (match.status === 'none') {
         console.log(`  SIN IDENTIFICAR: ${filePath} (no coincide con ningún slug/título conocido)`)
+        report.unidentified++
+        if (APPLY) fs.renameSync(filePath, path.join(UNIDENTIFIED_DIR, path.basename(filePath)))
+        continue
+      }
+
+      if (match.status === 'ambiguous') {
+        const candidateList = match.candidates.map((e) => `${e.type}/${e.slug}`).join(', ')
+        console.log(
+          `  AMBIGUO (${match.tier}): ${filePath} coincide con más de una entidad (${candidateList}) — no se asigna, va a _sin-identificar/`
+        )
         report.unidentified++
         if (APPLY) fs.renameSync(filePath, path.join(UNIDENTIFIED_DIR, path.basename(filePath)))
         continue
@@ -245,4 +314,11 @@ async function main() {
   }
 }
 
-main()
+// Solo ejecuta main() cuando el script corre directamente (node scripts/process-images.mjs),
+// no cuando se importa desde un test.
+const isMainModule = process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])
+if (isMainModule) {
+  main()
+}
+
+export { normalize, loadEntityIndex, matchEntity, resolveMatch, pickMostSpecific, CATEGORIES }
