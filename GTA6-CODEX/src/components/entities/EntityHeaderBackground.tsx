@@ -16,6 +16,7 @@ interface EntityHeaderBackgroundProps {
  *  - Vehículo     → grid técnico + sweep de escaneo horizontal
  *  - Ubicación    → grid amplio tipo mapa + marcas de coordenadas
  *  - Organización → líneas diagonales tenues tipo "expediente"
+ *  - Negocio      → líneas horizontales tenues tipo "libro de registro"
  *  - Resto        → glow genérico, sin acento adicional
  *
  * 100% CSS/SVG, sin canvas ni JS: coste ~cero incluso repetido en varias
@@ -47,6 +48,8 @@ export function EntityHeaderBackground({ type }: EntityHeaderBackgroundProps) {
       )}
 
       {type === EntityType.FACTION && <div className="entity-bg-dossier" />}
+
+      {type === EntityType.BUSINESS && <div className="entity-bg-ledger" />}
     </div>
   )
 }

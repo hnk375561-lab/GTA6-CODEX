@@ -42,6 +42,20 @@ const STATUS_LABELS = {
   nuestro: 'Nuestro',
 } as const
 
+/**
+ * Eyebrow editorial de clasificación (sección "CLASSIFICATION / <TIPO>" del
+ * dossier). Las 5 categorías núcleo del sitio reciben un par semántico
+ * propio; el resto cae a un fallback genérico "EXPEDIENTE · <TIPO>" en vez
+ * de multiplicar variantes.
+ */
+const CLASSIFICATION_LABELS: Partial<Record<EntityType, string>> = {
+  [EntityType.CHARACTER]: 'Identidad · Dossier',
+  [EntityType.LOCATION]: 'Territorio · Ubicación',
+  [EntityType.FACTION]: 'Organización · Autoridad',
+  [EntityType.BUSINESS]: 'Negocio · Establecimiento',
+  [EntityType.VEHICLE]: 'Vehículo · Fabricante',
+}
+
 export async function generateStaticParams() {
   const params: { entityType: string; slug: string }[] = []
 
@@ -82,6 +96,8 @@ export default async function EntityPage({ params }: PageProps) {
   ])
 
   const statusLabel = STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status
+  const classificationLabel =
+    CLASSIFICATION_LABELS[type] ?? `Expediente · ${TYPE_LABELS[type]}`
 
   const headerContent = (
     <>
@@ -96,6 +112,11 @@ export default async function EntityPage({ params }: PageProps) {
         <span className="mx-2">/</span>
         <span className="text-gta-text">{entity.title}</span>
       </nav>
+
+      <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gta-accent/80">
+        <span className="h-px w-4 bg-gta-accent/40" aria-hidden="true" />
+        {classificationLabel}
+      </div>
 
       <div className="mb-3 flex flex-wrap items-center gap-3">
         <h1 className="text-4xl font-bold text-gta-text sm:text-5xl">
@@ -134,28 +155,27 @@ export default async function EntityPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
-      {/* Header — las fichas "featured" reciben fondo cinematográfico por
-          categoría (Nivel 4: personaje/vehículo/ubicación/organización) y
-          un contenedor MagicCard con glow ambiental que sigue al cursor en
-          desktop; el resto conserva el header plano original. */}
+      {/* Header — todo ficha es "el hero de su propia ficha" (Nivel 3 del
+          sistema de motion), así que el fondo cinematográfico por categoría
+          y el MagicCard con glow ambiental aplican siempre. Las entidades
+          "featured" (contenido seleccionado editorialmente, no una medida
+          de importancia visual) suman únicamente un glow algo más presente
+          y el ShineBorder en la card de contenido — un acento extra, no un
+          interruptor de "modo premium". */}
       <section className="relative overflow-hidden border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-10 sm:py-14">
-        {entity.featured && <EntityHeaderBackground type={type} />}
+        <EntityHeaderBackground type={type} />
         <div className="container-max relative">
-          {entity.featured ? (
-            <MagicCard
-              mode="orb"
-              glowFrom="#ff6600"
-              glowTo="#00d000"
-              glowSize={380}
-              glowBlur={90}
-              glowOpacity={0.35}
-              className="p-6 sm:p-8"
-            >
-              {headerContent}
-            </MagicCard>
-          ) : (
-            headerContent
-          )}
+          <MagicCard
+            mode="orb"
+            glowFrom="#ff6600"
+            glowTo="#00d000"
+            glowSize={entity.featured ? 380 : 320}
+            glowBlur={90}
+            glowOpacity={entity.featured ? 0.35 : 0.22}
+            className="p-6 sm:p-8"
+          >
+            {headerContent}
+          </MagicCard>
         </div>
       </section>
 
