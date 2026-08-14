@@ -5,14 +5,21 @@
   "description": "Cupé de dos puertas identificado visualmente en el Trailer 2, en la escena donde Jason conduce por su antiguo barrio y una vecina lo saluda.",
   "content": "En el Trailer 2 de GTA 6, durante la escena en la que Jason conduce por su antiguo vecindario mientras una mujer lo saluda a los gritos, aparece en segundo plano un cupé de dos puertas cuya carrocería coincide con la línea Penumbra de Maibatsu, presente en entregas anteriores de la saga.\n\nEl diseño observado combina elementos del Mitsubishi Eclipse de cuarta generación con detalles que recuerdan al Dodge Dart, Scion tC, Ford Fiesta y Audi TT, según coberturas especializadas que analizaron la escena.\n\nRockstar no ha publicado un nombre oficial para este vehículo dentro de GTA 6; la identificación se basa en la comparación visual con el modelo Penumbra de generaciones previas de la saga.",
   "status": "confirmado",
-  "tags": ["cupe", "trailer-2", "maibatsu", "identificacion-visual"],
+  "tags": [
+    "cupe",
+    "trailer-2",
+    "maibatsu",
+    "identificacion-visual"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
   "manufacturer": "Maibatsu",
   "class": "cupe",
   "driven_by": [],
-  "locations": ["vice-city"],
+  "locations": [
+    "vice-city"
+  ],
   "customizable": true,
   "performance": {
     "speed": "Media",
@@ -24,7 +31,7 @@
     "level": "oficial-visual",
     "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025), escena del regreso de Jason a su antiguo barrio",
     "secondarySource": "autoevolution.com y DriveSpark, coberturas de identificación de vehículos del Trailer 2",
-    "note": "Existencia y aparición en material oficial confirmadas; el nombre 'Penumbra' proviene de la comparación visual con el modelo homónimo de entregas previas de la saga, no de una publicación oficial de Rockstar para GTA VI."
+    "note": "Existencia y aparición en material oficial confirmadas; el nombre 'Penumbra' proviene de la comparación visual con el modelo homónimo de entregas previas de la saga, no de una publicación oficial de Rockstar para GTA VI. AUDITORIA (13 ago 2026, bloque located_in): se verifico la escena (Jason conduce y una vecina lo saluda, Trailer 2) mediante GameSpot y GTA6Bible, que la ubican temprano en la secuencia de Trailer 2, antes de que Jason pase carteles de ruta hacia Ambrosia, Downtown, VCI Airport y Southside -- es decir, en el area general de Vice City/Leonida donde vive Jason, sin contradecir la ubicacion Vice City. No se encontro evidencia independiente que apunte a una region distinta. Se mantiene la relacion located_in->vice-city sin cambios, con nivel 'respaldado' por falta de un distrito especifico confirmado."
   },
   "relations": [
     {

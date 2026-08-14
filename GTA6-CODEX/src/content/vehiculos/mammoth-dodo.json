@@ -12,7 +12,7 @@
   "manufacturer": "Mammoth",
   "class": "aeronave-ligera",
   "driven_by": [],
-  "locations": ["vice-city"],
+  "locations": ["leonida-keys"],
   "customizable": false,
   "performance": {
     "speed": "Media",
@@ -24,12 +24,12 @@
     "level": "respaldado",
     "primarySource": "Rockstar Games, GTA VI Trailer 1 (diciembre de 2023), toma aérea temprana sobre la ciudad",
     "secondarySource": "The Manual, análisis editorial de la escena del tráiler; GTA Wiki (Fandom), ficha de continuidad del modelo",
-    "note": "Identificación basada en análisis editorial de la escena, no en revisión frame-by-frame directa del archivo de video por parte de este proyecto. No se encontró nombre oficial publicado por Rockstar para GTA VI específicamente; el nombre proviene de la continuidad histórica de la saga. Se recomienda revisar si aparece material primario adicional (capturas oficiales, sitio web de Rockstar) que permita subir el nivel a 'oficial-visual'."
+    "note": "Identificación basada en análisis editorial de la escena, no en revisión frame-by-frame directa del archivo de video por parte de este proyecto. No se encontró nombre oficial publicado por Rockstar para GTA VI específicamente; el nombre proviene de la continuidad histórica de la saga. Se recomienda revisar si aparece material primario adicional (capturas oficiales, sitio web de Rockstar) que permita subir el nivel a 'oficial-visual'. CORRECCION DE UBICACION (13 ago 2026, auditoria forense de vehiculos, bloque located_in): la relacion located_in->vice-city era INCORRECTA. GTA Wiki (gta.fandom.com/wiki/Dodo_(HD_Universe)), fuente wiki especializada consolidada, documenta que la Dodo aparece dos veces en el Trailer 1: en la toma de establecimiento (0:13, remolcando un cartel NINE1NINE, sin ubicacion especifica confirmada) y, por separado, en otra toma aerea (0:34) 'sobrevolando Leonida Keys' (swooping into view above the Leonida Keys). Dado que la entidad 'leonida-keys' SI existe en este grafo, se corrige located_in de 'vice-city' a 'leonida-keys' y se actualiza el campo locations en consecuencia."
   },
   "relations": [
     {
       "targetType": "ubicaciones",
-      "targetSlug": "vice-city",
+      "targetSlug": "leonida-keys",
       "relation": "located_in"
     }
   ]

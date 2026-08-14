@@ -5,14 +5,21 @@
   "description": "Motocicleta crucero heredada de GTA Online, vista en el fondo de una captura oficial ambientada en el estudio de tatuajes Electric Fang.",
   "content": "El Western Nightblade es una motocicleta crucero heredada de GTA Online (actualización Bikers), inspirada en la Harley-Davidson V-Rod de 2009. Aparece en el fondo de una captura oficial de GTA VI ambientada en el estudio de tatuajes Electric Fang.\n\nSu diseño combina un chasis bajo y alargado con un motor en V característico de las motocicletas cruceras americanas, continuando la línea estética que la marca ficticia Western mantiene desde su introducción en la saga.",
   "status": "confirmado",
-  "tags": ["moto", "crucero", "western", "identificacion-visual"],
+  "tags": [
+    "moto",
+    "crucero",
+    "western",
+    "identificacion-visual"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
   "manufacturer": "Western",
   "class": "moto-crucero",
   "driven_by": [],
-  "locations": ["vice-city"],
+  "locations": [
+    "vice-city"
+  ],
   "customizable": true,
   "performance": {
     "speed": "Media",
@@ -24,7 +31,7 @@
     "level": "respaldado",
     "primarySource": "Rockstar Games, captura oficial de GTA VI (estudio de tatuajes Electric Fang)",
     "secondarySource": "GTA Wiki (cuenta oficial en X/Twitter), única fuente que documenta esta escena específica con el nivel de detalle necesario para la identificación",
-    "note": "Incorporación (13 ago 2026, Bloque B3): identificación basada en una única fuente que describe la escena con precisión; otra cobertura consultada (wikigta6.com) menciona el mismo vehículo pero remite a un metraje filtrado (leak) de septiembre de 2022, de origen no oficial, por lo que esa segunda fuente NO se usa para sostener esta ficha. Se documenta con nivel 'respaldado' por depender de una sola fuente confiable sobre material oficial."
+    "note": "Incorporación (13 ago 2026, Bloque B3): identificación basada en una única fuente que describe la escena con precisión; otra cobertura consultada (wikigta6.com) menciona el mismo vehículo pero remite a un metraje filtrado (leak) de septiembre de 2022, de origen no oficial, por lo que esa segunda fuente NO se usa para sostener esta ficha. Se documenta con nivel 'respaldado' por depender de una sola fuente confiable sobre material oficial. AUDITORIA (13 ago 2026, bloque located_in): se verifico independientemente que el estudio de tatuajes Electric Fang (escenario de esta ficha) esta ubicado en Stockyard, y que Stockyard es un barrio de Vice City (leonidacompanion.com: 'located in Stockyard, Vice City, Vice-Dale County'; Playhub: 'Stockyard is a neighborhood located in Vice City'; Driffle: listado entre los barrios de Vice City). La relacion located_in->vice-city queda CONFIRMADA con multiples fuentes independientes adicionales a la unica fuente original (cuenta de X de GTA Wiki). Se fortalece significativamente la evidencia de ubicacion, aunque el nivel 'respaldado' se mantiene porque sigue dependiendo de una sola fuente para la identificacion del vehiculo en si dentro de la escena."
   },
   "relations": [
     {

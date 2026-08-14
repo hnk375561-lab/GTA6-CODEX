@@ -5,14 +5,21 @@
   "description": "Roadster deportivo icónico de la saga, presente desde GTA III, identificado entre los vehículos de lujo del Trailer 2.",
   "content": "El Bravado Banshee es uno de los deportivos más reconocibles de la historia de Grand Theft Auto, presente en la saga desde GTA III. En GTA 6 aparece dentro de la fila de vehículos de lujo mostrada en una de las escenas del Trailer 2, esperando en un semáforo junto a otros modelos de alta gama.\n\nSu diseño se inspira en roadsters deportivos como el Dodge Viper, y su regreso confirma que Rockstar mantiene modelos clásicos de la franquicia dentro del parque automotor de Leonida, junto a los nuevos vehículos creados específicamente para esta entrega.\n\nDentro del lore de marcas ficticias, Bravado es la marca que agrupa gran parte de los muscle cars y deportivos de inspiración estadounidense de la saga.",
   "status": "confirmado",
-  "tags": ["deportivo", "clasico", "trailer-2", "bravado"],
+  "tags": [
+    "deportivo",
+    "clasico",
+    "trailer-2",
+    "bravado"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
   "manufacturer": "Bravado",
   "class": "deportivo",
   "driven_by": [],
-  "locations": ["vice-city"],
+  "locations": [
+    "vice-city"
+  ],
   "customizable": true,
   "performance": {
     "speed": "Alta",
@@ -24,7 +31,7 @@
     "level": "oficial-visual",
     "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025), fila de vehículos frente al Dominion Hotel",
     "secondarySource": "PC Gamer y overtake.gg, coberturas independientes que coinciden en la escena y en la identificación del modelo",
-    "note": "Saneamiento retroactivo (13 ago 2026, Bloque B2): ficha con status 'confirmado' preexistente sin campo 'evidence'. Se agrega evidencia por coincidencia independiente de dos fuentes especializadas. El nombre 'Banshee' proviene de la continuidad histórica de la saga; Rockstar no publicó el nombre para GTA VI específicamente."
+    "note": "Saneamiento retroactivo (13 ago 2026, Bloque B2): ficha con status 'confirmado' preexistente sin campo 'evidence'. Se agrega evidencia por coincidencia independiente de dos fuentes especializadas. El nombre 'Banshee' proviene de la continuidad histórica de la saga; Rockstar no publicó el nombre para GTA VI específicamente. AUDITORIA (13 ago 2026, bloque located_in): se verifico independientemente la ubicacion del Dominion Hotel (escenario de la fila de vehiculos de lujo, Trailer 2) mediante GTA Wiki (gta.fandom.com/wiki/Dominion_Hotel), que lo situa explicitamente en 'Ocean Beach, Vice Beach, Vice-Dale County', es decir, dentro de Vice City. La relacion located_in->vice-city queda CONFIRMADA con fuente independiente adicional a las ya citadas (PC Gamer, overtake.gg). Sin cambios en la relacion."
   },
   "relations": [
     {

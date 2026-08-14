@@ -24,13 +24,7 @@
     "level": "respaldado",
     "primarySource": "Rockstar Games, material oficial de GTA VI (escena de persecución aérea; el trailer exacto es objeto de discrepancia entre fuentes secundarias, ver nota)",
     "secondarySource": "6cheats.com (ubica la escena en el Trailer 2, junto a Jason y Lucia saltando de un edificio) y gtabase.com (ubica la aparición en el Trailer 1); ninguna es prensa especializada de primer nivel",
-    "note": "Incorporación con discrepancia documentada (13 ago 2026, Bloque B4): se descartó deliberadamente añadir fichas separadas para 'Buzzard' y 'Police Buzzard' en este mismo bloque, porque las fuentes disponibles no distinguen consistentemente entre el Buzzard de combate genérico y una variante policial, y las escenas citadas no coinciden entre sí lo suficiente como para sostener una identificación fuerte. Se prioriza el Police Maverick por tener la corroboración más consistente entre dos fuentes independientes, aunque de calidad media."
+    "note": "Incorporación con discrepancia documentada (13 ago 2026, Bloque B4): se descartó deliberadamente añadir fichas separadas para 'Buzzard' y 'Police Buzzard' en este mismo bloque, porque las fuentes disponibles no distinguen consistentemente entre el Buzzard de combate genérico y una variante policial, y las escenas citadas no coinciden entre sí lo suficiente como para sostener una identificación fuerte. Se prioriza el Police Maverick por tener la corroboración más consistente entre dos fuentes independientes, aunque de calidad media. CORRECCION DE UBICACION (13 ago 2026, auditoria forense de vehiculos, bloque located_in): la relacion formal located_in->vice-city estaba SOBREAFIRMADA. Se investigo la escena candidata mas probable (Jason y Lucia saltando por una ventana mientras un helicoptero policial sobrevuela, cubierta de forma independiente por GameSpot en su desglose del Trailer 2), pero esa fuente no especifica distrito ni confirma que la escena ocurra en Vice City propiamente y no en otra parte de Leonida. Sumado a que las dos fuentes secundarias originales ya discrepaban sobre el trailer exacto, no hay evidencia independiente suficiente para sostener una relacion formal located_in. Se elimina la relacion; 'vice-city' se mantiene unicamente como texto descriptivo de contexto general (la generalidad de las escenas de persecucion policial mostradas hasta ahora ocurre en Vice City), no como afirmacion verificada de ubicacion especifica."
   },
-  "relations": [
-    {
-      "targetType": "ubicaciones",
-      "targetSlug": "vice-city",
-      "relation": "located_in"
-    }
-  ]
+  "relations": []
 }

@@ -189,3 +189,32 @@ JSON + tsc + build, git diff revisión, push
 **Hallazgos documentados por:** Claude Forense Auditor
 **Estándar aplicado:** EVIDENCIA > INTUICIÓN > HISTORIAL
 **Regla de oro verificada:** No inventar relaciones, no inflar status sin evidencia
+
+---
+
+## 🧭 BLOQUE `located_in → vice-city` — CIERRE (13 ago 2026, nueva sesión)
+
+Se auditaron individualmente los 12 vehículos que quedaban con relación formal `located_in → vice-city` sin re-auditar tras el bloque anterior.
+
+**Resultado:**
+| Vehículo | Resultado | Acción |
+|---|---|---|
+| albany-buccaneer-custom | Sin evidencia contraria | Sin cambios |
+| bravado-banshee | Confirmado con fuente independiente (GTA Wiki, Dominion Hotel en Vice Beach) | Nota reforzada |
+| bravado-bison | Confirmado con 2 fuentes independientes (The Drive, GTABites) | Nota reforzada |
+| bravado-buffalo | Sin evidencia contraria | Sin cambios |
+| bravado-gauntlet-hellfire | Confirmado (Vice Beach = Vice City) | Nota reforzada |
+| **buckingham-police-maverick** | **Ubicación sobreafirmada**: ninguna fuente independiente confirma distrito ni Vice City específicamente; las 2 fuentes ya discrepaban sobre el trailer | **Relación `located_in` eliminada** |
+| maibatsu-penumbra | Sin evidencia contraria | Sin cambios |
+| maibatsu-sanchez | Confirmado con precisión: escena en La Perle (barrio de Vice City), vía GTA Wiki | Nota reforzada |
+| **mammoth-dodo** | **Ubicación incorrecta**: GTA Wiki documenta la escena del Trailer 1 (0:34) sobrevolando **Leonida Keys**, no Vice City | **Relación corregida a `leonida-keys`** |
+| speedophile-seashark | Confirmado (Vice Beach = Vice City, pese a discrepancia de trailer no resuelta) | Nota reforzada |
+| western-nightblade | Confirmado con 3 fuentes independientes adicionales (Electric Fang en Stockyard, barrio de Vice City) | Nota reforzada |
+| western-zombie-chopper | Confirmado (mismo hallazgo que western-nightblade) | Nota reforzada |
+
+**Errores nuevos encontrados de la misma familia que Sandking XL/Manchez/Outlaw/Squalo:** 1 (Mammoth Dodo → Leonida Keys, no Vice City).
+**Ubicaciones sobreafirmadas degradadas:** 1 (Buckingham Police Maverick → se retira relación formal).
+
+**Estado del bloque `located_in` pendiente: 12/12 procesados. 0 casos restantes en esta cola.**
+
+Próximo paso pendiente (no ejecutado aún en este bloque): investigación fresca individual del resto del catálogo (40 vehículos sin re-auditar en este bloque), priorizando por riesgo según protocolo.
