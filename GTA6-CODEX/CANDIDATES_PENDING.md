@@ -16,8 +16,9 @@ Generado: 13 ago 2026, ronda de expansión masiva. Ninguno de estos entró al ca
 | Nombre | Slug propuesto | Evidence | Fuentes | Qué falta |
 |---|---|---|---|---|
 | Delights (strip club, Port Gellhorn) | `delights` | D | gta6bible.com (única fuente, página "under construction") | Corroboración independiente (GTA Wiki, gtaboom, gta6intel no lo mencionan todavía). |
-| NINE1NINE (venue de entretenimiento) | `nine1nine` | D | GTA Wiki (mención breve, "due to appear", sin detalle) | Descripción más allá de una mención de una línea; ubicación exacta. |
-| VYB (venue de entretenimiento) | `vyb` | D | GTA Wiki (misma mención breve que NINE1NINE) | Igual que arriba. |
+| VYB (venue de entretenimiento) | `vyb` | D | GTA Wiki (mención breve, "due to appear", sin detalle) | Segunda fuente independiente con detalle propio (no solo mención de pasada). |
+
+~~NINE1NINE~~ — **INCORPORADO** en ronda 5 (corroboración independiente encontrada en eloboss.net). Ver `negocios/nine1nine.json`.
 
 ## Organizaciones
 
@@ -32,4 +33,10 @@ Generado: 13 ago 2026, ronda de expansión masiva. Ninguno de estos entró al ca
 | Vice City Mambas / Manatees (equipos de fútbol americano) | `vice-city-mambas` / `vice-city-manatees` | D | thegta6guide.com (única fuente esta ronda) | Segunda fuente independiente. |
 | AFF (American Football Federation) | `aff` | D | thegta6guide.com (única fuente esta ronda) | Segunda fuente independiente. |
 
-**Total candidatos pendientes: 14**
+## Vehículos (ronda 5)
+
+| Nombre | Slug propuesto | Evidence | Fuentes | Qué falta |
+|---|---|---|---|---|
+| Buckingham Luxor | `buckingham-luxor` | D | gta6codex.com (fuente única, marca origen como "Trailer / Leak" sin especificar cuál) | Fuente que identifique específicamente su aparición en trailer oficial de GTA VI, no solo su existencia previa en GTA V/Online. |
+
+**Total candidatos pendientes: 14** (13 tras incorporar NINE1NINE, +1 nuevo de vehículos)
