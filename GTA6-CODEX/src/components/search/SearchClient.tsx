@@ -6,6 +6,7 @@ import Fuse from 'fuse.js'
 import type { Entity, EntityType } from '@/types'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
+import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
 
 interface SearchClientProps {
   entities: Entity[]
@@ -27,6 +28,7 @@ const TYPE_LABELS: Record<EntityType, string> = {
 
 export function SearchClient({ entities }: SearchClientProps) {
   const [query, setQuery] = useState('')
+  const debouncedQuery = useDebouncedValue(query, 250)
 
   const fuse = useMemo(
     () =>
@@ -43,9 +45,9 @@ export function SearchClient({ entities }: SearchClientProps) {
   )
 
   const results = useMemo(() => {
-    if (!query.trim()) return []
-    return fuse.search(query).slice(0, 30).map((r) => r.item)
-  }, [fuse, query])
+    if (!debouncedQuery.trim()) return []
+    return fuse.search(debouncedQuery).slice(0, 30).map((r) => r.item)
+  }, [fuse, debouncedQuery])
 
   return (
     <div>
