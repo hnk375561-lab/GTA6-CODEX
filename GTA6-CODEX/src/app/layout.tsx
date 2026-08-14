@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { WebGLBackground } from '@/components/webgl/WebGLBackground'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta6codex.com'
 
@@ -77,11 +78,14 @@ export default function RootLayout({
         />
       </head>
       <body className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <WebGLBackground />
+        <div className="relative z-10 flex min-h-screen flex-1 flex-col">
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   )
