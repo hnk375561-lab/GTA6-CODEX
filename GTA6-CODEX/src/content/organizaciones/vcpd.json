@@ -2,14 +2,16 @@
   "slug": "vcpd",
   "type": "organizaciones",
   "title": "VCPD (Vice City Police Department)",
-  "description": "Departamento de policía de Vice City. Su sigla aparece pintada en los vehículos policiales visibles en el material oficial y en metraje de desarrollo confirmado como auténtico por Rockstar.",
-  "content": "El VCPD (Vice City Police Department) es la fuerza policial encargada de la seguridad en Vice City dentro de GTA 6. Su sigla se distingue claramente en los laterales de los vehículos policiales mostrados tanto en los trailers oficiales como en metraje de desarrollo filtrado en 2022, cuya autenticidad fue confirmada públicamente por Rockstar Games.\n\nCuenta con una flota diversa que incluye patrulleros estándar (Vapid Stanier LE), vehículos blindados antidisturbios (Brute Police Riot) y unidades aéreas, lo que sugiere un sistema de búsqueda policial más elaborado y con más niveles de respuesta que en entregas anteriores.\n\nSu presencia constante en las escenas de persecución y enfrentamiento confirma que seguirá siendo el principal antagonista institucional durante la actividad criminal del jugador.",
+  "description": "Departamento de policía municipal de la ciudad de Vice City, Leonida. Confirmado en material oficial de Rockstar Games (Trailer 1, Trailer 2 y sitio web promocional de GTA VI) como agencia distinta del VDPD (condado de Vice-Dale) y del VBPD (Vice Beach).",
+  "content": "El VCPD (Vice City Police Department) es la agencia de policía municipal responsable de la seguridad dentro de los límites de la ciudad de Vice City, en el estado ficticio de Leonida. Su logo aparece en el sitio web promocional oficial de Grand Theft Auto VI, y sus vehículos con librea VCPD son visibles tanto en el Trailer 1 como en el Trailer 2.\n\nA diferencia de entregas anteriores de la saga, GTA VI presenta un sistema de aplicación de la ley fragmentado y jurisdiccional: el VCPD opera exclusivamente dentro de la ciudad de Vice City, mientras que el VDPD (Vice-Dale Police Department) cubre el condado de Vice-Dale en su conjunto, y el VBPD (Vice Beach Police Department) opera de forma independiente en Vice Beach. Estas tres agencias, junto con otras como el Leonard County Sheriff (LCSO) y la Leonida Highway Patrol, conforman un ecosistema policial multi-agencia inspirado en la fragmentación real de las fuerzas de seguridad del sur de Florida.\n\nEl VCPD está modelado sobre el Departamento de Policía de Miami (Miami Police Department) en el mundo real, lo cual es consistente con la ambientación satírica de Vice City sobre Miami/Miami Beach. Su flota confirmada incluye el patrullero Vapid Police Cruiser (variante Stanier LE, con librea blanca y azul, visto en el Trailer 1 durante una persecución) y una SUV policial Vapid (Vapid Police Interceptor Utility), vista en escenas de persecución de ambos trailers. También se documentó una variante de patrullero con librea reflectante tipo 'ghost', casi invisible hasta que la luz incide sobre ella.\n\nUn dato de producción confirmado: el modelo 3D del patrullero VCPD fue escaneado a partir de un Chevrolet Caprice 2013 real, que posteriormente fue subastado públicamente ya rotulado con calcomanías VCPD, luces y sirena.\n\nEl VCPD es responsable del sistema de nivel de búsqueda ('wanted level') dentro de los límites de Vice City, y constituye la fuerza antagonista institucional primaria durante la actividad criminal del jugador en la ciudad. Al menos un personaje secundario confirmado -un oficial del VCPD sin nombre revelado hasta la fecha- aparece en el Trailer 2, aunque Rockstar no ha revelado su identidad, por lo que no se establece aquí ninguna relación character→organization hasta que exista una entidad de personaje verificable con ese vínculo.",
   "status": "confirmado",
   "tags": [
     "policia",
     "vice-city",
     "institucion",
-    "confirmado-rockstar"
+    "confirmado-rockstar",
+    "agencia-municipal",
+    "sistema-busqueda"
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
@@ -22,19 +24,30 @@
     },
     {
       "targetType": "vehiculos",
-      "targetSlug": "brute-police-riot",
+      "targetSlug": "vapid-stanier-le",
       "relation": "owns"
     },
     {
       "targetType": "vehiculos",
-      "targetSlug": "vapid-stanier-le",
+      "targetSlug": "vapid-police-suv",
+      "relation": "owns"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "brute-police-riot",
       "relation": "owns"
     }
   ],
   "evidence": {
-    "level": "oficial-visual",
-    "primarySource": "Rockstar Games, trailers oficiales y metraje de desarrollo de 2022 confirmado como autentico por Rockstar (siglas VCPD visibles en vehiculos policiales)",
-    "secondarySource": "The Games Wiki, que documenta ademas la existencia de VDPD y VBPD como agencias separadas dentro del mismo sistema fragmentado de policia de Leonida",
-    "note": "Auditoria total (13 ago 2026): siglas y presencia visual confirmadas por material oficial; el nombre completo 'Vice City Police Department' es una expansion razonable de la sigla, no una cita textual de Rockstar. No se encontro fuente que confirme el nombre completo letra por letra, solo la sigla en los vehiculos. Backfill retroactivo de evidence."
+    "level": "oficial-visual-multifuente",
+    "primarySource": "Rockstar Games: Trailer 1, Trailer 2 y sitio web promocional oficial de GTA VI (logo VCPD, siglas y libreas visibles en vehiculos policiales)",
+    "secondarySource": "GTA BOOM (vice-city-police-department wiki), GTA Wiki/Fandom (Vice_City_Police_Department_(HD_Universe)), cuenta oficial GTA Wiki en X (hilo comparativo de las 7+ agencias de Leonida), gta6supercars.com (ficha tecnica de flota policial, confirma escaneo 3D de Chevrolet Caprice 2013), gtaintel.com (listado de 26 personajes confirmados, incluye 'oficial del VCPD' sin nombre)",
+    "note": "AUDITORIA SEMANTICA located_in (13 ago 2026, aplicando la convencion aprobada): 1) La fuente demuestra jurisdiccion operativa, no residencia -no aplica a una organizacion-. 2) N/A. 3) Demuestra presencia constante (vehiculos, logo, escenas de persecucion). 4) Demuestra actividad activa de patrullaje. 5) El VCPD ES la entidad municipal de Vice City por definicion y jurisdiccion, no un negocio de paso. 6) NO es solo una escena que ocurre alli: multiples fuentes secundarias confirman explicitamente que el VCPD 'opera en la Ciudad de Vice' como jurisdiccion delimitada, distinta de VDPD (condado) y VBPD (Vice Beach). 7) La jurisdiccion es oficial (nombre de la agencia + delimitacion confirmada por comparacion cruzada de multiples wikis especializadas que documentan las fronteras entre VCPD/VDPD/VBPD). 8) located_in representa correctamente esta relacion (ambito geografico/jurisdiccional, tal como establece la convencion). Relacion APROBADA sin cambios.",
+    "limitations": [
+      "El nombre completo 'Vice City Police Department' es una expansion razonable de la sigla VCPD confirmada visualmente; no se hallo cita textual de Rockstar deletreando el nombre completo letra por letra fuera de wikis secundarias especializadas.",
+      "CONTAMINACION CRUZADA DETECTADA: el archivo del vehiculo brute-police-riot.json describe la unidad como perteneciente en exclusiva al VCPD ('policia de Vice City'), pero las fuentes consultadas (gta6supercars.com, gtabites.com) muestran que el Brute Police Riot es un activo blindado compartido por multiples agencias de Leonida para bloqueos viales en niveles de busqueda altos (4-5 estrellas), no un vehiculo VCPD-exclusivo confirmado. Se mantiene la relacion owns porque el vehiculo aparece efectivamente en escenas con contexto VCPD (Trailer 2), pero se marca como confianza media, no alta, y se recomienda corregir la descripcion de brute-police-riot.json en una auditoria posterior dedicada a vehiculos.",
+      "No se encontraron fuentes que confirmen si el VCPD opera unidades aereas o maritimas propias y exclusivas (el helicoptero Buckingham Maverick y las embarcaciones tipo Lure Predator aparecen documentados en contexto policial general de Leonida, sin atribucion exclusiva y verificable al VCPD). Por eso NO se agregan como relaciones owns: agregar esas relaciones seria inventar precision que las fuentes no sostienen.",
+      "El oficial del VCPD que aparece como personaje secundario en el Trailer 2 no tiene nombre confirmado por Rockstar ni entidad de personaje creada en este grafo; no se crea relacion character->organization para evitar una entidad fantasma. Pendiente de Fase F cuando exista un slug de personaje verificable."
+    ]
   }
 }
