@@ -11,12 +11,17 @@ module.exports = {
         // Paleta principal: tonos oscuros sofisticados con acentos de verde y naranja (GTA feel)
         'gta-dark': '#0f0f0f',
         'gta-darker': '#050505',
-        'gta-card': '#1a1a1a',
-        'gta-border': '#2d2d2d',
-        'gta-text': '#e0e0e0',
-        'gta-text-secondary': '#a0a0a0',
-        'gta-accent': '#00d000', // Verde GTA
-        'gta-accent-orange': '#ff6600', // Naranja secundario
+        'gta-card': '#161616',
+        'gta-surface': '#161616', // superficie estándar (cards, listas)
+        'gta-surface-elevated': '#1c1c1c', // superficie elevada (featured, sidebars)
+        'gta-border': '#262626',
+        'gta-border-strong': '#333333',
+        'gta-text': '#f2f2f0',
+        'gta-text-secondary': '#a3a3a0',
+        'gta-text-tertiary': '#6b6b68',
+        'gta-accent': '#22c55e', // Verde GTA — uso estratégico, no dominante
+        'gta-accent-strong': '#4ade80',
+        'gta-accent-orange': '#ff6600', // Naranja secundario — uso muy controlado
         'gta-accent-warning': '#ffaa00',
       },
       fontFamily: {

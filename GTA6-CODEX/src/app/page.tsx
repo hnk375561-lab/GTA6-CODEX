@@ -2,23 +2,16 @@ import Link from 'next/link'
 import { EntityType } from '@/types'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
-import { AnimatedText } from '@/components/ui/AnimatedText'
 import { Reveal } from '@/components/ui/Reveal'
 import { CountUp } from '@/components/ui/CountUp'
-import { AuroraText } from '@/components/ui/AuroraText'
-import { FlickeringGrid } from '@/components/ui/FlickeringGrid'
-import { GridPattern } from '@/components/ui/GridPattern'
-import { Marquee } from '@/components/ui/Marquee'
-import { ShineBorder } from '@/components/ui/ShineBorder'
 import { WordRotate } from '@/components/ui/WordRotate'
 import { RotatingHeroBackground } from '@/components/layout/RotatingHeroBackground'
-import { getEntityCount, getEntityCountsByType, getFeaturedEntities } from '@/lib/entities'
+import { getEntityCount, getFeaturedEntities } from '@/lib/entities'
 
 export default async function Home() {
-  const [entityCount, featured, countsByType] = await Promise.all([
+  const [entityCount, featured] = await Promise.all([
     getEntityCount(),
     getFeaturedEntities(3),
-    getEntityCountsByType(),
   ])
 
   const categories = [
@@ -62,23 +55,15 @@ export default async function Home() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-20 sm:py-32">
+      {/* Hero Section — cinematográfico pero contenido: un solo fondo con
+          overlay de contraste, un solo acento de color, sin capas de efectos
+          compitiendo con el título. */}
+      <section className="relative overflow-hidden border-b border-gta-border py-24 sm:py-36">
         <RotatingHeroBackground />
-        <div className="hero-scanline" aria-hidden="true" />
-        <FlickeringGrid
-          squareSize={4}
-          gridGap={6}
-          flickerChance={0.2}
-          color="rgb(0, 208, 0)"
-          maxOpacity={0.15}
-          className="absolute inset-0 opacity-30"
-        />
         <div className="container-max relative">
-          <div className="mx-auto max-w-3xl text-center">
-            <Reveal delay={0} direction="zoom" className="mb-6 flex justify-center">
+          <div className="mx-auto max-w-2xl text-center">
+            <Reveal delay={0} className="mb-8 flex justify-center">
               <div className="hero-pill">
-                <ShineBorder shineColor={['#00d000', '#ff6600']} borderWidth={1} duration={9} />
                 <span className="hero-pill-dot" aria-hidden="true" />
                 <span>
                   <strong className="font-semibold text-gta-text">{entityCount}</strong> entidades documentadas
@@ -86,18 +71,11 @@ export default async function Home() {
               </div>
             </Reveal>
 
-            <h1 className="mb-2 text-5xl font-bold sm:text-6xl">
-              <AuroraText
-                colors={["#00d000", "#7dffb0", "#ff6600", "#00d000"]}
-                speed={1.2}
-              >
-                GTA6 Codex
-              </AuroraText>
+            <h1 className="mb-3 text-5xl font-bold text-gta-text sm:text-6xl">
+              GTA6 <span className="text-gta-accent">Codex</span>
             </h1>
 
-            {/* La palabra rotativa refuerza las categorías principales del sitio:
-                es navegación implícita, no decoración (Nivel 3 — hero). */}
-            <div className="mb-6 flex items-center justify-center gap-2 text-xl text-gta-text-secondary">
+            <div className="mb-6 flex items-center justify-center gap-2 text-lg text-gta-text-secondary sm:text-xl">
               <span>Explorá</span>
               <WordRotate
                 words={['Personajes', 'Vehículos', 'Ubicaciones', 'Misiones', 'Organizaciones']}
@@ -106,30 +84,22 @@ export default async function Home() {
               />
             </div>
 
-            <p className="mb-6 text-xl text-gta-text-secondary">
-              <AnimatedText
-                text="El wiki editorial más completo sobre Grand Theft Auto 6."
-                mode="words"
-                startDelay={450}
-              />
+            <p className="mb-8 text-balance text-lg text-gta-text-secondary sm:text-xl">
+              El wiki editorial más completo sobre Grand Theft Auto 6. Información
+              verificada, rumores y análisis profundo en un solo lugar.
             </p>
-            <Reveal delay={950}>
-              <p className="mb-8 text-gta-text-secondary">
-                Información verificada, rumores, análisis profundo y contenido exclusivo en un solo lugar.
-              </p>
-            </Reveal>
 
             {/* CTA Buttons */}
-            <Reveal delay={1100} className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Reveal delay={200} className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
                 href={`/${EntityType.CHARACTER}`}
-                className="btn-shine btn-pop inline-flex items-center justify-center rounded-lg bg-gta-accent px-8 py-3 font-semibold text-gta-dark transition-colors hover:bg-gta-accent-orange"
+                className="inline-flex items-center justify-center rounded-lg bg-gta-accent px-8 py-3 font-semibold text-gta-dark transition-colors hover:bg-gta-accent-strong"
               >
                 Explorar
               </Link>
               <Link
                 href="/buscar"
-                className="btn-shine btn-pop inline-flex items-center justify-center rounded-lg border border-gta-accent px-8 py-3 font-semibold text-gta-accent transition-colors hover:bg-gta-accent/10"
+                className="inline-flex items-center justify-center rounded-lg border border-gta-border-strong px-8 py-3 font-semibold text-gta-text transition-colors hover:border-gta-accent hover:text-gta-accent"
               >
                 Buscar
               </Link>
@@ -138,41 +108,26 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Ticker de categorías: refuerza el conteo por tipo con sensación de
-          feed en vivo / HUD técnico, sin bloquear ninguna interacción. */}
-      <div className="category-ticker" aria-hidden="true">
-        <Marquee pauseOnHover className="[--duration:38s] py-2">
-          {categories.map((category, i) => (
-            <span key={category.type} className="category-ticker-item">
-              <span>{category.icon}</span>
-              <span>{category.label}</span>
-              <strong>{countsByType[category.type] ?? 0}</strong>
-              {i < categories.length - 1 && <span className="category-ticker-sep">/</span>}
-            </span>
-          ))}
-        </Marquee>
-      </div>
-
       {/* Info Section */}
       <section className="border-b border-gta-border bg-gta-dark py-12">
         <div className="container-max">
           <div className="grid gap-8 sm:grid-cols-3">
-            <Reveal delay={0} direction="zoom" className="text-center">
-              <div className="mb-2 text-3xl font-bold text-gta-accent">
+            <div className="text-center">
+              <div className="mb-2 text-3xl font-bold text-gta-text">
                 <CountUp end={entityCount} />
               </div>
               <p className="text-sm text-gta-text-secondary">Entidades documentadas</p>
-            </Reveal>
-            <Reveal delay={120} direction="zoom" className="text-center">
-              <div className="mb-2 text-3xl font-bold text-gta-accent-orange">
+            </div>
+            <div className="text-center">
+              <div className="mb-2 text-3xl font-bold text-gta-text">
                 <CountUp end={100} suffix="%" />
               </div>
               <p className="text-sm text-gta-text-secondary">Información verificada</p>
-            </Reveal>
-            <Reveal delay={240} direction="zoom" className="text-center">
-              <div className="mb-2 animate-float text-3xl font-bold text-gta-accent">Premium</div>
+            </div>
+            <div className="text-center">
+              <div className="mb-2 text-3xl font-bold text-gta-text">Premium</div>
               <p className="text-sm text-gta-text-secondary">Análisis de primer nivel</p>
-            </Reveal>
+            </div>
           </div>
         </div>
       </section>
@@ -183,7 +138,7 @@ export default async function Home() {
           <div className="container-max">
             <Reveal className="mb-12 text-center">
               <h2 className="mb-4 text-4xl font-bold text-gta-text">
-                <AnimatedText text="Destacados" mode="letters" stagger={35} />
+                Destacados
               </h2>
               <p className="text-lg text-gta-text-secondary">Lo más relevante ahora mismo</p>
             </Reveal>
@@ -218,7 +173,7 @@ export default async function Home() {
         <div className="container-max">
           <Reveal className="mb-12 text-center">
             <h2 className="mb-4 text-4xl font-bold text-gta-text">
-              <AnimatedText text="Categorías" mode="letters" stagger={35} />
+              Categorías
             </h2>
             <p className="text-lg text-gta-text-secondary">
               Accede a información detallada organizadas por categoría
