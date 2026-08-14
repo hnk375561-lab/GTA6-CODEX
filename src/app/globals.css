@@ -427,8 +427,11 @@ a:hover .logo-mark {
     opacity: 0 !important;
   }
 
+  .card-lvl2,
   .card-animated,
+  .card-lvl2::before,
   .card-animated::before,
+  .card-lvl2::after,
   .card-animated::after,
   .btn-pop,
   .btn-shine::after,
@@ -437,7 +440,39 @@ a:hover .logo-mark {
   }
 }
 
-/* --- Cards: glow de borde + brillo diagonal + tilt sutil --- */
+/* ============================================================
+   CARD SYSTEM — jerarquía de intensidad visual (Fase 5)
+   ============================================================
+   Level 1 (.card-lvl1): hover mínimo, para grillas grandes (listados
+     por tipo, resultados de búsqueda — hasta 100 cards). Solo
+     border-color + translateY(-2px), sin pseudo-elementos.
+   Level 2 (.card-lvl2, ex .card-animated): borde con glow diagonal +
+     shine sutil, para grillas curadas y chicas (categorías del home).
+   Level 3: no es una clase CSS — es composición de <MagicCard> +
+     <ShineBorder>, reservada para contenido realmente destacado
+     (Home → Destacados). Ver AmbientCursorGlow (Fase 1) para el
+     spotlight global; MagicCard ya trae el suyo propio por card. */
+
+.card-lvl1 {
+  transition: transform 200ms var(--ease-standard), border-color var(--transition-fast);
+}
+
+.card-lvl1:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-lvl1 {
+    transition: border-color var(--transition-fast) !important;
+  }
+
+  .card-lvl1:hover {
+    transform: none !important;
+  }
+}
+
+/* --- Cards: glow de borde + brillo diagonal + tilt sutil (Level 2) --- */
+.card-lvl2,
 .card-animated {
   position: relative;
   overflow: hidden;
@@ -445,6 +480,7 @@ a:hover .logo-mark {
     box-shadow var(--transition-base);
 }
 
+.card-lvl2::before,
 .card-animated::before {
   content: '';
   position: absolute;
@@ -462,16 +498,19 @@ a:hover .logo-mark {
   pointer-events: none;
 }
 
+.card-lvl2:hover,
 .card-animated:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.65);
 }
 
+.card-lvl2:hover::before,
 .card-animated:hover::before {
   opacity: 1;
   background-position: 100% 100%;
 }
 
+.card-lvl2::after,
 .card-animated::after {
   content: '';
   position: absolute;
@@ -490,6 +529,7 @@ a:hover .logo-mark {
   pointer-events: none;
 }
 
+.card-lvl2:hover::after,
 .card-animated:hover::after {
   left: 130%;
 }
@@ -966,6 +1006,21 @@ a:hover .logo-mark {
 @media (prefers-reduced-motion: reduce) {
   .magic-card-gradient,
   .magic-card-orb {
+    transition: none !important;
+  }
+}
+
+/* --- MagicCard: tilt 3D opcional, solo Level 3 (ver prop `tilt`) ---
+   Máximo ±2deg (tope duro en el handler de MagicCard.tsx). Transform
+   puro, sin recalcular layout; se resetea a 0deg en pointerleave. */
+.magic-card--tilt {
+  transform: perspective(800px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 200ms var(--ease-standard);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .magic-card--tilt {
+    transform: none !important;
     transition: none !important;
   }
 }

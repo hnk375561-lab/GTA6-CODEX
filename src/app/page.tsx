@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { EntityType } from '@/types'
 import { Card, CardBody } from '@/components/ui/Card'
+import { MagicCard } from '@/components/ui/MagicCard'
 import { Badge } from '@/components/ui/Badge'
 import { AnimatedText } from '@/components/ui/AnimatedText'
 import { Reveal } from '@/components/ui/Reveal'
@@ -215,23 +216,29 @@ export default async function Home() {
               <p className="text-lg text-gta-text-secondary">Lo más relevante ahora mismo</p>
             </Reveal>
 
+            {/* Level 3 del card system: único uso de MagicCard con tilt en
+                todo el sitio, reservado a contenido curado como "featured"
+                (máx. 3 items). Se descartó sumar <ShineBorder /> acá: su
+                animate-shine corre en loop infinito incluso sin hover — en
+                una card eso es exactamente el "efecto continuo innecesario"
+                que la Fase 5 pide evitar. El spotlight+tilt de MagicCard ya
+                es 100% event-driven (solo corre mientras el mouse está
+                encima), que es la sensación premium correcta acá. */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((entity, i) => (
                 <Reveal key={`${entity.type}-${entity.slug}`} delay={i * 100}>
                   <Link href={`/${entity.type}/${entity.slug}`} className="group block h-full">
-                    <Card hoverable className="h-full">
-                      <CardBody>
-                        <Badge variant="status" status={entity.status} className="mb-3">
-                          {entity.status}
-                        </Badge>
-                        <h3 className="mb-2 text-xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
-                          {entity.title}
-                        </h3>
-                        <p className="line-clamp-2 text-sm text-gta-text-secondary">
-                          {entity.description}
-                        </p>
-                      </CardBody>
-                    </Card>
+                    <MagicCard tilt className="h-full p-6">
+                      <Badge variant="status" status={entity.status} className="mb-3">
+                        {entity.status}
+                      </Badge>
+                      <h3 className="mb-2 text-xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
+                        {entity.title}
+                      </h3>
+                      <p className="line-clamp-2 text-sm text-gta-text-secondary">
+                        {entity.description}
+                      </p>
+                    </MagicCard>
                   </Link>
                 </Reveal>
               ))}
