@@ -2,8 +2,8 @@
   "slug": "boobie-ike",
   "type": "personajes",
   "title": "Boobie Ike",
-  "description": "Leyenda de Vice City que transformó su pasado en las calles en un imperio legítimo: inmobiliaria, un club nocturno y un estudio de grabación.",
-  "content": "Boobie Ike es descrito por Rockstar como uno de los pocos personajes que logró convertir su tiempo en las calles en un negocio legítimo, con intereses que abarcan bienes raíces, un club de striptease y un estudio de grabación, Only Raw Records.\n\nSu enfoque actual está puesto en impulsar a su nuevo mánager musical, Dre'Quan Priest, y al dúo Real Dimez. Es descrito como un hombre de sonrisa fácil hasta que llega el momento de hablar de negocios, sugiriendo un trasfondo más peligroso detrás de su fachada empresarial.\n\nSu perfil lo posiciona como una figura clave dentro de la escena musical y nocturna de Vice City en GTA 6.",
+  "description": "Leyenda de Vice City que transformó su pasado en las calles en un imperio legítimo: inmobiliaria, el club de striptease Jack of Hearts y un estudio de grabación.",
+  "content": "Boobie Ike es descrito por Rockstar como uno de los pocos personajes que logró convertir su tiempo en las calles en un negocio legítimo, con intereses que abarcan bienes raíces, el club de striptease Jack of Hearts y un estudio de grabación, Only Raw Records.\n\nSu enfoque actual está puesto en impulsar a su nuevo mánager musical, Dre'Quan Priest, y al dúo Real Dimez. Es descrito como un hombre de sonrisa fácil hasta que llega el momento de hablar de negocios, sugiriendo un trasfondo más peligroso detrás de su fachada empresarial.\n\nSu perfil lo posiciona como una figura clave dentro de la escena musical y nocturna de Vice City en GTA 6.",
   "status": "confirmado",
   "tags": [
     "secundario",
@@ -31,6 +31,6 @@
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, bio oficial en el sitio de GTA VI (Trailer 2, 6 mayo 2025)",
     "secondarySource": "GTA Wiki (Fandom) y gtaintel, que citan la bio oficial completa de Rockstar sobre su imperio (inmobiliaria, club Jack of Hearts, estudio de grabacion)",
-    "note": "Auditoria total (13 ago 2026): CORRECCION. La relacion 'owns' hacia only-raw-records sobre-representaba su rol: multiples fuentes que citan la bio oficial de Rockstar describen la relacion con Only Raw Records como sociedad/inversion junto a Dre'Quan Priest (quien la dirige), no propiedad exclusiva de Boobie. Se cambia la relacion a 'invests_in'. Backfill retroactivo de evidence."
+    "note": "Auditoria total (13 ago 2026): CORRECCION. La relacion 'owns' hacia only-raw-records sobre-representaba su rol: multiples fuentes que citan la bio oficial de Rockstar describen la relacion con Only Raw Records como sociedad/inversion junto a Dre'Quan Priest (quien la dirige), no propiedad exclusiva de Boobie. Se cambia la relacion a 'invests_in'. Backfill retroactivo de evidence. AUDITORIA FORENSE DE PERSONAJES (13 ago 2026): mejora de completitud. El nombre confirmado del club de striptease ('Jack of Hearts', citado literalmente en la bio oficial de Rockstar: 'It's all about heart – the Jack of Hearts') ya figuraba en evidence.secondarySource pero no en description/content, que solo decian 'club de striptease' de forma generica. Se agrega el nombre al texto visible, sin cambiar el nivel de evidencia ni agregar informacion nueva no verificada."
   }
 }
