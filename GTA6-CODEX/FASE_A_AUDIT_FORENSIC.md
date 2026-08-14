@@ -218,3 +218,19 @@ Se auditaron individualmente los 12 vehículos que quedaban con relación formal
 **Estado del bloque `located_in` pendiente: 12/12 procesados. 0 casos restantes en esta cola.**
 
 Próximo paso pendiente (no ejecutado aún en este bloque): investigación fresca individual del resto del catálogo (40 vehículos sin re-auditar en este bloque), priorizando por riesgo según protocolo.
+
+---
+
+## 🧭 BLOQUE `respaldado` de fuente única + PCJ-1000 (13 ago 2026, nueva sesión)
+
+**PCJ-1000 — ELIMINADO.** Investigación de origen del nombre: "PCJ-1000" no es un vehículo real de ningún juego de la saga GTA. Es el nombre de un mito/hoax de los foros de GTA Vice City (2002), documentado en GTA Myths Wiki, sobre un supuesto vehículo inexistente confundido con el modelo real "PCJ-600". La ficha ya tenía status='nuestro' y evidence.level='no-confirmado' de una auditoría previa, pero el propio nombre de la entidad estaba construido sobre una confusión de origen (mito ≠ modelo real ≠ vehículo confirmado en GTA VI). Sin evidencia de ningún tipo que sostenga su existencia en GTA VI, y sin referencias entrantes de otras fichas, se elimina la ficha completa en lugar de seguir degradándola.
+
+**gallivanter-baller-st — CORREGIDO (variante confundida).** GTA Wiki confirma que el vehículo de las escenas citadas (autopista Trailer 1, Starlet Motel Trailer 2) es el Baller de **segunda generación base**, no la variante de rendimiento **ST**. Se detectaron además dos fuentes tipo listicle/SEO (wikigta6.com, gtavitips.com) que presentaban la variante "ST" como "confirmada" con detalles técnicos muy específicos sin citar ninguna escena — patrón de sobreafirmación de Nivel D. Se corrigió el título a "Gallivanter Baller (2ª generación)"; el slug se mantiene por continuidad de URLs.
+
+**pfister-growler — disputa de nombre resuelta.** La disputa Pfister vs. "Feaster" (DriveSpark) documentada en el bloque anterior queda resuelta a favor de Pfister: GTA Wiki describe el emblema "PFISTER" grabado en el propio modelo 3D del vehículo, y 6 fuentes independientes coinciden en "Pfister" frente a la única mención de "Feaster". Se retira el tag `nombre-en-disputa`.
+
+**Confirmados con evidencia reforzada (sin cambios estructurales):** benefactor-schafter-v12, declasse-tulip-m100, grotti-furia, nagasaki-carbon-rs, pfister-comet-s2-cabrio, vapid-stanier-le. Se verificó que las citas a PC Gamer, GamesRadar, Smartprix y GTA-Xtreme son reales (no fabricadas) y, en varios casos, se sumaron fuentes independientes adicionales a la única citada originalmente.
+
+**Validación de grafo global tras este bloque:** 88 entidades indexadas, 0 relaciones rotas, 0 slugs duplicados. 28 nodos aislados (sin relaciones entrantes ni salientes) — mayormente vehículos sin evidencia suficiente para sostener una relación formal; no se fuerzan relaciones para reducir este número, por regla explícita del proyecto.
+
+**investigación fresca acumulada: 21/52** (12 vehículos del bloque `located_in` + 9 de este bloque: PCJ-1000 eliminado, Baller ST, Growler, Schafter V12, Tulip M-100, Furia, Carbon RS, Comet S2 Cabrio, Stanier LE. Catálogo total tras eliminar PCJ-1000: 52 vehículos, de los cuales quedan 31 sin investigación fresca en esta sesión).
