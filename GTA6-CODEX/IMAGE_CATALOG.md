@@ -52,6 +52,48 @@ public/images/entities/ubicaciones/leonida-keys.webp     179 KB
 public/images/entities/ubicaciones/mount-kalaga.webp     219 KB
 ```
 
+## Ronda 8 (14 ago 2026) — 2 imágenes de ficha INTEGRADAS + 2 fondos de hero
+
+El usuario aportó directamente capturas de Real Dimez (dúo, 4 variantes de
+recorte) y Boobie Ike (6 variantes de recorte), más el key art oficial de
+portada de GTA VI ("Jason y Lucia", 3 variantes) y el material promocional
+oficial "Visit Leonida" de Port Gellhorn (postal, 4 variantes). Se procesó
+todo con el pipeline existente, sin tocar su arquitectura.
+
+**Fichas de personaje (arquitectura mono-imagen, vía `incoming-images/` +
+`npm run process-images:apply`):**
+
+| Slug | Archivo fuente elegido | Criterio de selección | Otras variantes recibidas (no integradas, arquitectura mono-imagen) |
+|---|---|---|---|
+| real-dimez | `Real_Dimez_ultrawide.jpg` | Dúo completo (Bae-Luxe y Roxy) con el neón del hotel de fondo — composición más ancha y cinemática, ambas figuras completas en cuadro | `_tablet` (recorte cuadrado), `_square`, `_portrait` |
+| boobie-ike | `Boobie_Ike_landscape.jpg` | Retrato solo en su club, copa en mano, cadenas y campera Versace — imagen "postal" del personaje consistente con el resto de fichas (16:9, sujeto centrado) | `_ultrawide`, `_tablet`, `_square`, `_portrait`, `_phone` |
+
+Procesadas automáticamente por `scripts/process-images.mjs --apply`: WebP
+calidad 82, redimensionadas a 1600×900 (lado mayor tope 1600px). Archivos
+finales:
+
+```
+public/images/entities/personajes/real-dimez.webp   ~144 KB
+public/images/entities/personajes/boobie-ike.webp    ~172 KB
+```
+
+**Fondos del hero de la home (misma convención que Ronda 7: `sharp`, WebP
+calidad 92, sin redimensionar, resolución nativa):**
+
+| Archivo agregado | Fuente | Criterio de selección |
+|---|---|---|
+| `hero-gta6-boxart-sunset.webp` | `Jason_and_Lucia_01_With_Logos_landscape.jpg` | Key art oficial de portada de GTA VI — la pieza más reconocible de todo el proyecto, formato 16:9 nativo, sin recorte |
+| `hero-port-gellhorn-postcard.webp` | `Port_Gellhorn_Postcard_ultrawide.jpg` | Material "Visit Leonida" panorámico de Port Gellhorn, sin personajes en primer plano, funciona bien como fondo de página completa |
+
+La rotación del hero pasó de 4 a 6 fondos (`RotatingHeroBackground.tsx`).
+Se dejó fuera el resto de variantes de recorte (`_tablet`, `_square`,
+`_portrait`, `_phone`) del key art y de la postal por ser recortes del
+mismo material, no piezas panorámicas distintas.
+
+**Originales preservados sin comprimir** (fuera de `public/`, no se sirven
+al navegador) en `assets-originals/personajes/` y `assets-originals/heroes/`,
+con la variante de mayor resolución recibida para cada pieza.
+
 ## Ronda 7 (14 ago 2026) — fondos del hero de la home (fuera del catálogo de entidades)
 
 A diferencia de las rondas anteriores, esta no suma imágenes de ficha de

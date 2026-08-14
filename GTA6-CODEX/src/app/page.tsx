@@ -6,6 +6,7 @@ import { Reveal } from '@/components/ui/Reveal'
 import { CountUp } from '@/components/ui/CountUp'
 import { WordRotate } from '@/components/ui/WordRotate'
 import { RotatingHeroBackground } from '@/components/layout/RotatingHeroBackground'
+import { EntityImage } from '@/components/entities/EntityImage'
 import { SceneSection } from '@/components/webgl/SceneSection'
 import { getEntityCount, getFeaturedEntities } from '@/lib/entities'
 
@@ -161,11 +162,23 @@ export default async function Home() {
               {featured.map((entity, i) => (
                 <Reveal key={`${entity.type}-${entity.slug}`} delay={i * 100}>
                   <Link href={`/${entity.type}/${entity.slug}`} className="group block h-full">
-                    <Card hoverable className="h-full">
-                      <CardBody>
-                        <Badge variant="status" status={entity.status} className="mb-3">
+                    <Card hoverable className="h-full overflow-hidden !p-0">
+                      <div className="relative overflow-hidden">
+                        <EntityImage
+                          entity={entity}
+                          variant="thumbnail"
+                          className="!rounded-none !border-0 transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gta-card via-gta-card/10 to-transparent" />
+                        <Badge
+                          variant="status"
+                          status={entity.status}
+                          className="absolute left-4 top-4"
+                        >
                           {entity.status}
                         </Badge>
+                      </div>
+                      <CardBody className="px-6 pb-6 pt-4">
                         <h3 className="mb-2 text-xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
                           {entity.title}
                         </h3>
