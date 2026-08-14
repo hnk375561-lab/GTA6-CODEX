@@ -8,42 +8,60 @@ import { FXAAPass } from 'three/examples/jsm/postprocessing/FXAAPass.js'
 import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js'
 
 /**
- * GTA6CodexWebGLEngine — v3 "cinematográfico+"
+ * GTA6CodexWebGLEngine — v4 "una sola escena, no un catálogo de efectos"
  * ---------------------------------------------------------------------------
- * Segunda pasada radical sobre la capa gráfica de fondo. Todo lo de v2 se
- * mantiene y se profundiza:
+ * Reescritura con dirección artística en vez de acumulación. Decisiones
+ * deliberadas frente a v3:
  *
- *  - Partículas GPU con repulsión real al cursor (warp en espacio de
- *    pantalla, calculado 100% en el vertex shader) + brillo/tamaño reactivo.
- *  - Cuerpos flotantes con DOS familias de material: PBR metálico (igual que
- *    v2) y vidrio con transmisión/IOR real (refracción física, no un truco
- *    de transparencia) — más variedad de materia en escena.
- *  - Piso de grilla neón infinito (shader propio, sin geometría pesada) que
- *    ancla la composición y aporta profundidad de "horizonte", independiente
- *    de la rotación del resto de la escena.
- *  - Post-procesado ampliado: profundidad de campo real (BokehPass, con foco
- *    que respira con el scroll), bloom, viñeta + grano + aberración
- *    cromática combinados en un solo pase, y FXAA final para que todo el
- *    apilado de pases no deje bordes sucios.
- *  - Cámara coreografiada con deriva Lissajous (no un simple seno), roll
- *    sutil, dolly-zoom (FOV) atado al scroll, además del parallax de cursor.
+ *  - Se eliminan los 11 cuerpos idénticos flotando al azar. En su lugar hay
+ *    UNA pieza focal (el "monolito", vidrio con superficie orgánica viva),
+ *    un puñado de satélites que orbitan con intención, y siluetas lejanas
+ *    tipo skyline — composición de tres planos (lejos/medio/cerca) con
+ *    parallax propio, no un solo `group` moviéndose entero.
+ *  - Los 5 sprites de "luz volumétrica" genéricos se reemplazan por UN solo
+ *    haz direccional (shader propio con falloff angular), como si hubiera
+ *    una sola fuente de luz real en la escena, no ambiente decorativo.
+ *  - La cámara ya no es ruido sinusoidal sin fin: es una coreografía de 3
+ *    encuadres fijos que se funden entre sí muy lentamente (composición
+ *    tipo "plano secuencia"), con parallax de cursor y dolly de scroll
+ *    montados encima. Al cargar, arranca desde un encuadre más abierto y
+ *    se asienta en el primer plano — efecto de apertura de escena.
+ *  - El monolito tiene desplazamiento de vértices por ruido en el propio
+ *    shader (inyectado vía onBeforeCompile sobre MeshPhysicalMaterial, así
+ *    conserva PBR/transmisión real) — superficie "viva", y esa misma
+ *    geometría deformada es lo que distorsiona lo que hay detrás (vidrio
+ *    real, no un truco de pantalla).
+ *  - Las partículas ya no son 900 puntos decorativos: son motas de polvo
+ *    que responden a las luces reales de la escena (se calientan cerca de
+ *    la luz cálida, se enfrían cerca de la fría) y reaccionan al cursor.
+ *  - Iluminación: temperatura de color con deriva lenta e independiente
+ *    (sensación de tiempo pasando), más intensidad ligada al scroll.
+ *  - Post-proceso (DoF, bloom, aberración cromática + grano, FXAA) se
+ *    mantiene por ser correcto, pero todo entra con una única curva de
+ *    aparición al cargar (bloom/opacidades en 0 → valor final) en vez de
+ *    aparecer de golpe.
  *
  * Puntos de extensión:
- *  - `buildXxx()` son constructores de escena independientes.
+ *  - `buildXxx()` construyen piezas de escena independientes.
  *  - `updaters` centraliza el loop de animación.
- *  - `composer` expone el pipeline de post-procesado para sumar pases.
+ *  - `SHOTS` es la lista de encuadres; agregar uno más los suma a la ronda.
  */
 
-type Updater = (elapsed: number, delta: number) => void
+type Updater = (elapsed: number, delta: number, intro: number) => void
 
-const VIGNETTE_GRAIN_SHADER = {
+// ---------------------------------------------------------------------------
+// Shaders
+// ---------------------------------------------------------------------------
+
+const GRADE_SHADER = {
   uniforms: {
     tDiffuse: { value: null },
     time: { value: 0 },
     vignetteStrength: { value: 0.55 },
-    grainStrength: { value: 0.035 },
-    chromaStrength: { value: 0.0018 },
+    grainStrength: { value: 0.03 },
+    chromaStrength: { value: 0.0016 },
     chromaKick: { value: 0.0 },
+    fadeIn: { value: 0 },
   },
   vertexShader: /* glsl */ `
     varying vec2 vUv;
@@ -59,6 +77,7 @@ const VIGNETTE_GRAIN_SHADER = {
     uniform float grainStrength;
     uniform float chromaStrength;
     uniform float chromaKick;
+    uniform float fadeIn;
     varying vec2 vUv;
 
     float noise(vec2 co) {
@@ -67,8 +86,6 @@ const VIGNETTE_GRAIN_SHADER = {
 
     void main() {
       vec2 centered = vUv - 0.5;
-      float radial = length(centered);
-
       float aberration = chromaStrength + chromaKick;
       vec2 dir = centered * aberration;
       float r = texture2D(tDiffuse, vUv + dir).r;
@@ -82,69 +99,80 @@ const VIGNETTE_GRAIN_SHADER = {
       float gr = (noise(vUv * vec2(1920.0, 1080.0) + time) - 0.5) * grainStrength;
       color.rgb += gr;
 
+      // Apertura de escena: de negro a la imagen final, no un "on/off".
+      color.rgb *= fadeIn;
+
       gl_FragColor = color;
     }
   `,
 }
 
-/** Vertex shader: mueve cada partícula en GPU con ruido orgánico + repulsión de cursor en espacio de pantalla. */
-const PARTICLE_VERTEX_SHADER = /* glsl */ `
+/** Motas de polvo: ruido orgánico + calor real de las luces de la escena + repulsión de cursor. */
+const DUST_VERTEX_SHADER = /* glsl */ `
   attribute vec3 seed;
   attribute float aSize;
   uniform float time;
-  uniform float scrollProgress;
   uniform vec2 mouseNDC;
   uniform float mouseStrength;
-  varying vec3 vColor;
+  uniform vec3 warmLightPos;
+  uniform vec3 coolLightPos;
+  uniform float introFade;
   varying float vFade;
   varying float vGlow;
+  varying float vWarmth;
 
   void main() {
-    vColor = color;
-
     float phase = seed.x;
     float speed = seed.y;
     float radius = seed.z;
 
     vec3 p = position;
     p.x += sin(time * speed + phase) * radius;
-    p.y += cos(time * speed * 0.8 + phase) * radius * 0.8;
-    p.z += sin(time * speed * 0.5 + phase * 1.7) * radius * 0.5;
+    p.y += cos(time * speed * 0.83 + phase * 1.3) * radius * 0.7;
+    p.z += sin(time * speed * 0.6 + phase * 1.9) * radius * 0.5;
+
+    vec4 worldPos = modelMatrix * vec4(p, 1.0);
+    float dWarm = distance(worldPos.xyz, warmLightPos);
+    float dCool = distance(worldPos.xyz, coolLightPos);
+    vWarmth = clamp((dCool - dWarm) / 22.0 + 0.5, 0.0, 1.0);
 
     vec4 mvPosition = modelViewMatrix * vec4(p, 1.0);
     float dist = -mvPosition.z;
-    vFade = smoothstep(48.0, 6.0, dist);
+    vFade = smoothstep(50.0, 8.0, dist) * introFade;
 
     vec4 clip = projectionMatrix * mvPosition;
     vec2 ndc = clip.xy / max(clip.w, 0.0001);
     vec2 toMouse = ndc - mouseNDC;
     float mouseDist = length(toMouse);
-    float push = smoothstep(0.32, 0.0, mouseDist) * mouseStrength;
+    float push = smoothstep(0.3, 0.0, mouseDist) * mouseStrength;
     vec2 pushDir = toMouse / max(mouseDist, 0.0001);
-    ndc += pushDir * push * 0.06;
+    ndc += pushDir * push * 0.05;
     clip.xy = ndc * clip.w;
     vGlow = push;
 
-    gl_PointSize = aSize * (220.0 / dist) * (1.0 + scrollProgress * 0.4) * (1.0 + vGlow * 1.6);
+    gl_PointSize = aSize * (200.0 / dist) * (1.0 + vGlow * 1.4);
     gl_Position = clip;
   }
 `
 
-const PARTICLE_FRAGMENT_SHADER = /* glsl */ `
-  varying vec3 vColor;
+const DUST_FRAGMENT_SHADER = /* glsl */ `
+  uniform vec3 warmColor;
+  uniform vec3 coolColor;
   varying float vFade;
   varying float vGlow;
+  varying float vWarmth;
 
   void main() {
     vec2 uv = gl_PointCoord - 0.5;
     float d = length(uv);
     float alpha = smoothstep(0.5, 0.0, d) * vFade;
-    vec3 hot = mix(vColor, vec3(1.0), vGlow * 0.6);
-    gl_FragColor = vec4(hot, alpha * (0.85 + vGlow * 0.5));
+    vec3 base = mix(coolColor, warmColor, vWarmth);
+    vec3 hot = mix(base, vec3(1.0), vGlow * 0.55);
+    gl_FragColor = vec4(hot, alpha * (0.8 + vGlow * 0.5));
   }
 `
 
-/** Piso de grilla neón: horizonte infinito falso, sin geometría pesada. */
+/** Piso de grilla: horizonte, no decoración — atmósfera y fuga de perspectiva. */
 const GRID_VERTEX_SHADER = /* glsl */ `
   varying vec3 vWorldPos;
   void main() {
@@ -158,7 +186,7 @@ const GRID_FRAGMENT_SHADER = /* glsl */ `
   uniform float time;
   uniform vec3 colorA;
   uniform vec3 colorB;
-  uniform float scrollProgress;
+  uniform float introFade;
   varying vec3 vWorldPos;
 
   float gridLine(vec2 coord, float cell) {
@@ -168,31 +196,78 @@ const GRID_FRAGMENT_SHADER = /* glsl */ `
 
   void main() {
     float dist = length(vWorldPos.xz);
-    float radialFade = smoothstep(95.0, 8.0, dist);
+    float radialFade = smoothstep(90.0, 10.0, dist);
     if (radialFade <= 0.001) discard;
 
-    float line = gridLine(vWorldPos.xz, 3.0);
-    float pulse = 0.5 + 0.5 * sin(time * 0.25 + dist * 0.06);
-    vec3 tint = mix(colorA, colorB, pulse * 0.5 + scrollProgress * 0.3);
+    float line = gridLine(vWorldPos.xz, 4.0);
+    float pulse = 0.5 + 0.5 * sin(time * 0.18 + dist * 0.05);
+    vec3 tint = mix(colorA, colorB, pulse * 0.4);
 
-    vec3 color = tint * line;
-    float alpha = line * radialFade * 0.55;
-
-    gl_FragColor = vec4(color, alpha);
+    float alpha = line * radialFade * 0.45 * introFade;
+    gl_FragColor = vec4(tint * line, alpha);
   }
 `
+
+/** Haz de luz único: falloff angular real desde un origen, no un sprite decorativo. */
+const SHAFT_VERTEX_SHADER = /* glsl */ `
+  varying vec2 vUv;
+  void main() {
+    vUv = uv;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+`
+
+const SHAFT_FRAGMENT_SHADER = /* glsl */ `
+  uniform float time;
+  uniform vec3 shaftColor;
+  uniform float introFade;
+  varying vec2 vUv;
+
+  void main() {
+    float alongFalloff = smoothstep(0.0, 0.35, vUv.y) * smoothstep(1.0, 0.55, vUv.y);
+    float widthFalloff = 1.0 - smoothstep(0.0, 0.5, abs(vUv.x - 0.5));
+    float flicker = 0.9 + 0.1 * sin(time * 0.6);
+    float alpha = alongFalloff * pow(widthFalloff, 1.6) * 0.22 * flicker * introFade;
+    gl_FragColor = vec4(shaftColor, alpha);
+  }
+`
+
+// ---------------------------------------------------------------------------
+// Coreografía de cámara: encuadres deliberados, no ruido infinito.
+// ---------------------------------------------------------------------------
+
+interface CameraShot {
+  pos: THREE.Vector3
+  look: THREE.Vector3
+  fovBias: number
+  duration: number
+}
+
+const SHOTS: CameraShot[] = [
+  { pos: new THREE.Vector3(0, 0.4, 25), look: new THREE.Vector3(-3.2, 0.8, -1), fovBias: 0, duration: 16 },
+  { pos: new THREE.Vector3(7, -1.6, 22), look: new THREE.Vector3(-3.2, 1.2, -2.5), fovBias: 3, duration: 15 },
+  { pos: new THREE.Vector3(-6.5, 2.2, 23), look: new THREE.Vector3(-1.5, -0.4, -3), fovBias: -2, duration: 17 },
+]
+
+function smootherstep(t: number): number {
+  const c = Math.min(Math.max(t, 0), 1)
+  return c * c * c * (c * (c * 6 - 15) + 10)
+}
 
 export class GTA6CodexWebGLEngine {
   private renderer: THREE.WebGLRenderer
   private scene: THREE.Scene
   private camera: THREE.PerspectiveCamera
   private clock: THREE.Clock
-  private group: THREE.Group
   private composer: EffectComposer
   private bloomPass: UnrealBloomPass
   private bokehPass: BokehPass
-  private grainPass: ShaderPass
+  private gradePass: ShaderPass
   private fxaaPass: FXAAPass
+
+  private farGroup: THREE.Group
+  private midGroup: THREE.Group
+  private nearGroup: THREE.Group
 
   private pointer = { x: 0, y: 0 }
   private pointerTarget = { x: 0, y: 0 }
@@ -201,14 +276,24 @@ export class GTA6CodexWebGLEngine {
   private scrollTarget = 0
   private scrollVelocity = 0
 
-  private particleUniforms: {
+  private readonly baseFov = 40
+  private readonly totalShotDuration: number
+  private startTime = 0
+
+  private dustUniforms!: {
     time: { value: number }
-    scrollProgress: { value: number }
     mouseNDC: { value: THREE.Vector2 }
     mouseStrength: { value: number }
+    warmLightPos: { value: THREE.Vector3 }
+    coolLightPos: { value: THREE.Vector3 }
+    introFade: { value: number }
   }
+  private gridUniforms!: { time: { value: number }; introFade: { value: number } }
+  private shaftUniforms!: { time: { value: number }; introFade: { value: number } }
+  private monolithShaderRefs: { uTime: { value: number } }[] = []
 
-  private readonly baseFov = 42
+  private keyLight!: THREE.PointLight
+  private fillLight!: THREE.PointLight
 
   private updaters: Updater[] = []
   private rafId: number | null = null
@@ -218,6 +303,7 @@ export class GTA6CodexWebGLEngine {
 
   constructor(canvas: HTMLCanvasElement, opts: { reducedMotion: boolean }) {
     this.reducedMotion = opts.reducedMotion
+    this.totalShotDuration = SHOTS.reduce((sum, s) => sum + s.duration, 0)
 
     this.renderer = new THREE.WebGLRenderer({
       canvas,
@@ -228,48 +314,46 @@ export class GTA6CodexWebGLEngine {
     this.renderer.setClearColor(0x000000, 0)
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2))
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping
-    this.renderer.toneMappingExposure = 1.15
+    this.renderer.toneMappingExposure = 1.1
     this.renderer.outputColorSpace = THREE.SRGBColorSpace
 
     this.scene = new THREE.Scene()
-    this.scene.fog = new THREE.FogExp2(0x0f0f0f, 0.032)
+    this.scene.fog = new THREE.FogExp2(0x0e0f0d, 0.03)
 
     this.camera = new THREE.PerspectiveCamera(this.baseFov, 1, 0.1, 100)
-    this.camera.position.set(0, 0, 26)
+    this.camera.position.copy(SHOTS[0].pos).add(new THREE.Vector3(0, 4, 14))
 
     this.clock = new THREE.Clock()
-    this.group = new THREE.Group()
-    this.scene.add(this.group)
 
-    this.particleUniforms = {
-      time: { value: 0 },
-      scrollProgress: { value: 0 },
-      mouseNDC: { value: new THREE.Vector2(2, 2) },
-      mouseStrength: { value: this.reducedMotion ? 0 : 1 },
-    }
+    this.farGroup = new THREE.Group()
+    this.midGroup = new THREE.Group()
+    this.nearGroup = new THREE.Group()
+    this.scene.add(this.farGroup, this.midGroup, this.nearGroup)
 
     this.setupEnvironment()
     this.setupLights()
     this.buildGridFloor()
-    this.buildParticleField()
-    this.buildFloatingBodies()
-    this.buildLightShafts()
+    this.buildFarSkyline()
+    this.buildLightShaft()
+    this.buildDust()
+    this.buildSatellites()
+    this.buildMonolith()
 
     this.composer = new EffectComposer(this.renderer)
     this.composer.addPass(new RenderPass(this.scene, this.camera))
 
     this.bokehPass = new BokehPass(this.scene, this.camera, {
       focus: 22,
-      aperture: 0.0018,
-      maxblur: 0.008,
+      aperture: 0.0016,
+      maxblur: 0.007,
     })
     this.composer.addPass(this.bokehPass)
 
-    this.bloomPass = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.85, 0.55, 0.15)
+    this.bloomPass = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.8, 0.55, 0.18)
     this.composer.addPass(this.bloomPass)
 
-    this.grainPass = new ShaderPass(VIGNETTE_GRAIN_SHADER)
-    this.composer.addPass(this.grainPass)
+    this.gradePass = new ShaderPass(GRADE_SHADER)
+    this.composer.addPass(this.gradePass)
 
     this.fxaaPass = new FXAAPass()
     this.composer.addPass(this.fxaaPass)
@@ -297,9 +381,9 @@ export class GTA6CodexWebGLEngine {
     const gradientMat = new THREE.ShaderMaterial({
       side: THREE.BackSide,
       uniforms: {
-        colorTop: { value: new THREE.Color(0x1a2f22) },
+        colorTop: { value: new THREE.Color(0x18281d) },
         colorMid: { value: new THREE.Color(0x120d08) },
-        colorBottom: { value: new THREE.Color(0x050505) },
+        colorBottom: { value: new THREE.Color(0x040404) },
       },
       vertexShader: `
         varying vec3 vPos;
@@ -329,42 +413,41 @@ export class GTA6CodexWebGLEngine {
   }
 
   private setupLights() {
-    const ambient = new THREE.AmbientLight(0x404040, 0.7)
+    const ambient = new THREE.AmbientLight(0x30302e, 0.55)
     this.scene.add(ambient)
 
-    const keyLight = new THREE.PointLight(0xff7a1a, 60, 70, 2)
-    keyLight.position.set(10, 6, 14)
-    this.scene.add(keyLight)
+    this.keyLight = new THREE.PointLight(0xff7a1a, 55, 70, 2)
+    this.keyLight.position.set(9, 5, 12)
+    this.scene.add(this.keyLight)
 
-    const fillLight = new THREE.PointLight(0x22c55e, 40, 70, 2)
-    fillLight.position.set(-12, -4, 8)
-    this.scene.add(fillLight)
-
-    const rimLight = new THREE.PointLight(0x66ffe0, 25, 60, 2)
-    rimLight.position.set(0, -10, -10)
-    this.scene.add(rimLight)
+    this.fillLight = new THREE.PointLight(0x22c55e, 32, 70, 2)
+    this.fillLight.position.set(-11, -3, 6)
+    this.scene.add(this.fillLight)
 
     this.updaters.push((elapsed) => {
-      keyLight.position.x = 10 + Math.sin(elapsed * 0.15) * 6
-      keyLight.position.y = 6 + Math.cos(elapsed * 0.12) * 4
-      fillLight.position.x = -12 + Math.cos(elapsed * 0.1) * 5
-      fillLight.position.y = -4 + Math.sin(elapsed * 0.18) * 3
-      rimLight.intensity = 20 + Math.sin(elapsed * 0.4) * 8
+      // Deriva de temperatura de color lenta e independiente del scroll:
+      // sensación de que pasa el tiempo, no un "loop" mecánico.
+      const cycle = Math.sin(elapsed * 0.025)
+      this.keyLight.color.setHSL(0.07 + cycle * 0.015, 0.85, 0.5)
+      this.keyLight.intensity = 48 + cycle * 10 + this.scrollProgress * 14
+      this.fillLight.intensity = 28 + Math.cos(elapsed * 0.021) * 6
+      this.keyLight.position.x = 9 + Math.sin(elapsed * 0.09) * 3
+      this.keyLight.position.y = 5 + Math.cos(elapsed * 0.07) * 2
     })
   }
 
   // ---------------------------------------------------------------------
-  // Escena
+  // Escena — plano lejano
   // ---------------------------------------------------------------------
 
   private buildGridFloor() {
     const geometry = new THREE.PlaneGeometry(220, 220, 1, 1)
+    this.gridUniforms = { time: { value: 0 }, introFade: { value: 0 } }
     const material = new THREE.ShaderMaterial({
       uniforms: {
-        time: { value: 0 },
+        ...this.gridUniforms,
         colorA: { value: new THREE.Color(0x22c55e) },
         colorB: { value: new THREE.Color(0xff8a3a) },
-        scrollProgress: { value: 0 },
       },
       vertexShader: GRID_VERTEX_SHADER,
       fragmentShader: GRID_FRAGMENT_SHADER,
@@ -376,121 +459,142 @@ export class GTA6CodexWebGLEngine {
     const floor = new THREE.Mesh(geometry, material)
     floor.rotation.x = -Math.PI / 2
     floor.position.y = -13
-    this.scene.add(floor)
+    this.farGroup.add(floor)
 
-    this.updaters.push((elapsed) => {
+    this.updaters.push((elapsed, _delta, intro) => {
       material.uniforms.time.value = elapsed
-      material.uniforms.scrollProgress.value = this.scrollProgress
+      material.uniforms.introFade.value = intro
     })
   }
 
-  private buildParticleField() {
-    const COUNT = 900
+  /** Siluetas lejanas (tipo skyline/palmeras) — sin luces, puro contorno y niebla: fuga de profundidad barata. */
+  private buildFarSkyline() {
+    const silhouetteMat = new THREE.MeshBasicMaterial({ color: 0x0a0f0b, fog: true, transparent: true, opacity: 0.85 })
+    const shapes: THREE.Mesh[] = []
+
+    for (let i = 0; i < 6; i++) {
+      const isTower = i % 2 === 0
+      const geometry = isTower
+        ? new THREE.BoxGeometry(0.8 + Math.random() * 1.2, 6 + Math.random() * 10, 0.8)
+        : new THREE.ConeGeometry(0.5 + Math.random() * 0.5, 5 + Math.random() * 6, 6)
+      const mesh = new THREE.Mesh(geometry, silhouetteMat)
+      mesh.position.set((Math.random() - 0.5) * 70, -13 + (geometry.parameters as { height: number }).height / 2, -34 - Math.random() * 18)
+      this.farGroup.add(mesh)
+      shapes.push(mesh)
+    }
+
+    this.updaters.push((elapsed) => {
+      shapes.forEach((s, i) => {
+        s.position.y += Math.sin(elapsed * 0.02 + i) * 0.0015
+      })
+    })
+  }
+
+  private buildLightShaft() {
+    this.shaftUniforms = { time: { value: 0 }, introFade: { value: 0 } }
+    const geometry = new THREE.PlaneGeometry(14, 46, 1, 1)
+    const material = new THREE.ShaderMaterial({
+      uniforms: { ...this.shaftUniforms, shaftColor: { value: new THREE.Color(0xffb066) } },
+      vertexShader: SHAFT_VERTEX_SHADER,
+      fragmentShader: SHAFT_FRAGMENT_SHADER,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      side: THREE.DoubleSide,
+    })
+    const shaft = new THREE.Mesh(geometry, material)
+    shaft.position.set(9, 6, -8)
+    shaft.rotation.z = 0.18
+    shaft.rotation.x = -0.1
+    this.farGroup.add(shaft)
+
+    this.updaters.push((elapsed, _delta, intro) => {
+      material.uniforms.time.value = elapsed
+      material.uniforms.introFade.value = intro
+    })
+  }
+
+  // ---------------------------------------------------------------------
+  // Escena — plano medio: polvo
+  // ---------------------------------------------------------------------
+
+  private buildDust() {
+    const COUNT = 420
     const positions = new Float32Array(COUNT * 3)
     const seeds = new Float32Array(COUNT * 3)
-    const colors = new Float32Array(COUNT * 3)
     const sizes = new Float32Array(COUNT)
-
-    const colorA = new THREE.Color(0x22c55e)
-    const colorB = new THREE.Color(0xff8a3a)
 
     for (let i = 0; i < COUNT; i++) {
       const i3 = i * 3
-      positions[i3] = (Math.random() - 0.5) * 60
-      positions[i3 + 1] = (Math.random() - 0.5) * 40
-      positions[i3 + 2] = (Math.random() - 0.5) * 50 - 10
+      positions[i3] = (Math.random() - 0.5) * 55
+      positions[i3 + 1] = (Math.random() - 0.5) * 36
+      positions[i3 + 2] = (Math.random() - 0.5) * 46 - 8
 
       seeds[i3] = Math.random() * Math.PI * 2
-      seeds[i3 + 1] = this.reducedMotion ? 0.02 : 0.15 + Math.random() * 0.3
-      seeds[i3 + 2] = this.reducedMotion ? 0.05 : 0.5 + Math.random() * 2.2
+      seeds[i3 + 1] = this.reducedMotion ? 0.02 : 0.12 + Math.random() * 0.25
+      seeds[i3 + 2] = this.reducedMotion ? 0.05 : 0.4 + Math.random() * 1.8
 
-      const mixed = colorA.clone().lerp(colorB, Math.random() * 0.4)
-      colors[i3] = mixed.r
-      colors[i3 + 1] = mixed.g
-      colors[i3 + 2] = mixed.b
-
-      sizes[i] = 6 + Math.random() * 10
+      sizes[i] = 5 + Math.random() * 8
     }
 
     const geometry = new THREE.BufferGeometry()
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
     geometry.setAttribute('seed', new THREE.BufferAttribute(seeds, 3))
-    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3))
     geometry.setAttribute('aSize', new THREE.BufferAttribute(sizes, 1))
 
+    this.dustUniforms = {
+      time: { value: 0 },
+      mouseNDC: { value: new THREE.Vector2(2, 2) },
+      mouseStrength: { value: this.reducedMotion ? 0 : 1 },
+      warmLightPos: { value: this.keyLight.position.clone() },
+      coolLightPos: { value: this.fillLight.position.clone() },
+      introFade: { value: 0 },
+    }
+
     const material = new THREE.ShaderMaterial({
-      uniforms: this.particleUniforms,
-      vertexShader: PARTICLE_VERTEX_SHADER,
-      fragmentShader: PARTICLE_FRAGMENT_SHADER,
+      uniforms: {
+        ...this.dustUniforms,
+        warmColor: { value: new THREE.Color(0xffb066) },
+        coolColor: { value: new THREE.Color(0x4ade80) },
+      },
+      vertexShader: DUST_VERTEX_SHADER,
+      fragmentShader: DUST_FRAGMENT_SHADER,
       transparent: true,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
-      vertexColors: true,
     })
 
     const points = new THREE.Points(geometry, material)
-    this.group.add(points)
+    this.midGroup.add(points)
 
     this.updaters.push((elapsed) => {
-      points.rotation.y = elapsed * 0.01 + this.scrollProgress * 0.6
+      points.rotation.y = elapsed * 0.008
+      this.dustUniforms.warmLightPos.value.copy(this.keyLight.position)
     })
   }
 
-  private buildFloatingBodies() {
-    const geometries = [
-      new THREE.IcosahedronGeometry(1, 1),
-      new THREE.OctahedronGeometry(1, 2),
-      new THREE.TorusGeometry(0.7, 0.24, 24, 64),
-    ]
+  /** Satélites: pocos, orbitando con intención alrededor del monolito — no relleno al azar. */
+  private buildSatellites() {
+    const geometries = [new THREE.OctahedronGeometry(1, 2), new THREE.TorusGeometry(0.6, 0.2, 20, 56)]
+    const bodies: { mesh: THREE.Mesh; rim: THREE.Mesh; angle: number; radius: number; speed: number; tilt: number }[] = []
+    const COUNT = 4
 
-    const bodies: {
-      mesh: THREE.Mesh
-      rim: THREE.Mesh
-      seed: number
-      radius: number
-      speed: number
-    }[] = []
-    const BODY_COUNT = 11
-
-    for (let i = 0; i < BODY_COUNT; i++) {
-      const geometry = geometries[i % geometries.length]
+    for (let i = 0; i < COUNT; i++) {
       const isGreen = i % 2 === 0
-      const isGlass = i % 3 === 2
-
-      const material = isGlass
-        ? new THREE.MeshPhysicalMaterial({
-            color: isGreen ? 0xbdf5d1 : 0xffd9b3,
-            roughness: 0.05,
-            metalness: 0,
-            transmission: 1,
-            thickness: 1.6,
-            ior: 1.45,
-            clearcoat: 1,
-            clearcoatRoughness: 0.08,
-            envMapIntensity: 1.6,
-            attenuationColor: isGreen ? new THREE.Color(0x22c55e) : new THREE.Color(0xff8a3a),
-            attenuationDistance: 2.2,
-          })
-        : new THREE.MeshPhysicalMaterial({
-            color: isGreen ? 0x22c55e : 0xff6600,
-            roughness: 0.22,
-            metalness: 0.85,
-            clearcoat: 0.6,
-            clearcoatRoughness: 0.25,
-            envMapIntensity: 1.4,
-            emissive: isGreen ? 0x0b3d1f : 0x3d1600,
-            emissiveIntensity: 0.35,
-          })
-
+      const geometry = geometries[i % geometries.length]
+      const material = new THREE.MeshPhysicalMaterial({
+        color: isGreen ? 0x22c55e : 0xff6600,
+        roughness: 0.24,
+        metalness: 0.85,
+        clearcoat: 0.6,
+        clearcoatRoughness: 0.25,
+        envMapIntensity: 1.3,
+        emissive: isGreen ? 0x0b3d1f : 0x3d1600,
+        emissiveIntensity: 0.32,
+      })
+      const scale = 0.4 + Math.random() * 0.35
       const mesh = new THREE.Mesh(geometry, material)
-      const scale = 0.5 + Math.random() * 1.0
       mesh.scale.setScalar(scale)
-      mesh.position.set(
-        (Math.random() - 0.5) * 26,
-        (Math.random() - 0.5) * 16,
-        (Math.random() - 0.5) * 18 - 6
-      )
-      mesh.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0)
 
       const rimMaterial = new THREE.ShaderMaterial({
         uniforms: { glowColor: { value: new THREE.Color(isGreen ? 0x4ade80 : 0xffb066) } },
@@ -499,8 +603,7 @@ export class GTA6CodexWebGLEngine {
         blending: THREE.AdditiveBlending,
         side: THREE.BackSide,
         vertexShader: `
-          varying vec3 vNormal;
-          varying vec3 vViewDir;
+          varying vec3 vNormal; varying vec3 vViewDir;
           void main() {
             vNormal = normalize(normalMatrix * normal);
             vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
@@ -509,98 +612,93 @@ export class GTA6CodexWebGLEngine {
           }
         `,
         fragmentShader: `
-          varying vec3 vNormal;
-          varying vec3 vViewDir;
-          uniform vec3 glowColor;
+          varying vec3 vNormal; varying vec3 vViewDir; uniform vec3 glowColor;
           void main() {
             float fresnel = pow(1.0 - max(dot(vNormal, vViewDir), 0.0), 2.5);
-            gl_FragColor = vec4(glowColor, fresnel * 0.9);
+            gl_FragColor = vec4(glowColor, fresnel * 0.85);
           }
         `,
       })
       const rim = new THREE.Mesh(geometry, rimMaterial)
-      rim.scale.setScalar(scale * 1.18)
-      rim.position.copy(mesh.position)
-      rim.rotation.copy(mesh.rotation)
+      rim.scale.setScalar(scale * 1.2)
 
-      this.group.add(mesh)
-      this.group.add(rim)
+      this.midGroup.add(mesh, rim)
       bodies.push({
         mesh,
         rim,
-        seed: Math.random() * Math.PI * 2,
-        radius: 0.6 + Math.random() * 1.4,
-        speed: 0.08 + Math.random() * 0.12,
+        angle: (i / COUNT) * Math.PI * 2,
+        radius: 4.5 + i * 1.3,
+        speed: 0.035 + i * 0.006,
+        tilt: (Math.random() - 0.5) * 0.5,
       })
     }
 
-    const basePositions = bodies.map((b) => b.mesh.position.clone())
+    const monolithOffset = new THREE.Vector3(-3.2, 0.8, -1.5)
 
-    this.updaters.push((elapsed, delta) => {
-      const speedFactor = this.reducedMotion ? 0.12 : 1
-      bodies.forEach((b, i) => {
-        b.mesh.rotation.x += delta * 0.08 * speedFactor
-        b.mesh.rotation.y += delta * 0.12 * speedFactor
-        if (!this.reducedMotion) {
-          const base = basePositions[i]
-          b.mesh.position.y = base.y + Math.sin(elapsed * b.speed + b.seed) * b.radius
-          b.mesh.position.x = base.x + Math.cos(elapsed * b.speed * 0.7 + b.seed) * b.radius * 0.6
-        }
+    this.updaters.push((elapsed, delta, intro) => {
+      const speedFactor = (this.reducedMotion ? 0.12 : 1) * intro
+      bodies.forEach((b) => {
+        b.angle += delta * b.speed * (this.reducedMotion ? 0.2 : 1)
+        const x = monolithOffset.x + Math.cos(b.angle) * b.radius
+        const z = monolithOffset.z + Math.sin(b.angle) * b.radius * 0.6 - 4
+        const y = monolithOffset.y + Math.sin(b.angle * 1.4) * b.tilt * b.radius * 0.3
+        b.mesh.position.set(x, y, z)
+        b.mesh.rotation.x += delta * 0.1 * speedFactor
+        b.mesh.rotation.y += delta * 0.14 * speedFactor
         b.rim.position.copy(b.mesh.position)
         b.rim.rotation.copy(b.mesh.rotation)
       })
     })
   }
 
-  private buildLightShafts() {
-    const texture = this.createShaftTexture()
-    const shafts: THREE.Sprite[] = []
-    const COUNT = 5
+  // ---------------------------------------------------------------------
+  // Escena — plano cercano: la pieza focal
+  // ---------------------------------------------------------------------
 
-    for (let i = 0; i < COUNT; i++) {
-      const material = new THREE.SpriteMaterial({
-        map: texture,
-        transparent: true,
-        opacity: 0.16,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-        color: i % 2 === 0 ? 0x22c55e : 0xff8a3a,
-      })
-      const sprite = new THREE.Sprite(material)
-      sprite.scale.set(10, 34, 1)
-      sprite.position.set(
-        (Math.random() - 0.5) * 34,
-        (Math.random() - 0.5) * 10,
-        -20 - Math.random() * 10
-      )
-      this.group.add(sprite)
-      shafts.push(sprite)
-    }
-
-    this.updaters.push((elapsed) => {
-      shafts.forEach((s, i) => {
-        s.rotation.z = Math.sin(elapsed * 0.05 + i) * 0.15
-        s.material.opacity = this.reducedMotion ? 0.1 : 0.1 + Math.sin(elapsed * 0.3 + i) * 0.06
-      })
+  /** El monolito: única pieza focal. Vidrio real con superficie viva (ruido de vértices vía onBeforeCompile). */
+  private buildMonolith() {
+    const geometry = new THREE.IcosahedronGeometry(2.3, 6)
+    const material = new THREE.MeshPhysicalMaterial({
+      color: 0xdcf5e6,
+      roughness: 0.04,
+      metalness: 0,
+      transmission: 1,
+      thickness: 2.4,
+      ior: 1.4,
+      clearcoat: 1,
+      clearcoatRoughness: 0.06,
+      envMapIntensity: 1.7,
+      attenuationColor: new THREE.Color(0x22c55e),
+      attenuationDistance: 3,
     })
-  }
 
-  private createShaftTexture(): THREE.Texture {
-    const w = 64
-    const h = 256
-    const c = document.createElement('canvas')
-    c.width = w
-    c.height = h
-    const ctx = c.getContext('2d')!
-    const gradient = ctx.createLinearGradient(0, 0, 0, h)
-    gradient.addColorStop(0, 'rgba(255,255,255,0)')
-    gradient.addColorStop(0.5, 'rgba(255,255,255,0.9)')
-    gradient.addColorStop(1, 'rgba(255,255,255,0)')
-    ctx.fillStyle = gradient
-    ctx.fillRect(0, 0, w, h)
-    const texture = new THREE.CanvasTexture(c)
-    texture.needsUpdate = true
-    return texture
+    const shaderRef = { uTime: { value: 0 } }
+    material.onBeforeCompile = (shader) => {
+      shader.uniforms.uTime = shaderRef.uTime
+      shader.vertexShader = shader.vertexShader
+        .replace(
+          '#include <common>',
+          `#include <common>
+           uniform float uTime;`
+        )
+        .replace(
+          '#include <begin_vertex>',
+          `#include <begin_vertex>
+           float n = sin(position.x * 1.6 + uTime * 0.5) * cos(position.y * 1.4 + uTime * 0.4) * sin(position.z * 1.8 + uTime * 0.35);
+           transformed += normal * n * 0.09;`
+        )
+    }
+    this.monolithShaderRefs.push(shaderRef)
+
+    const mesh = new THREE.Mesh(geometry, material)
+    mesh.position.set(-3.2, 0.8, -1.5)
+    this.nearGroup.add(mesh)
+
+    this.updaters.push((elapsed, delta, intro) => {
+      shaderRef.uTime.value = elapsed
+      mesh.rotation.y += delta * 0.06 * intro
+      mesh.rotation.x = Math.sin(elapsed * 0.05) * 0.15
+    })
   }
 
   // ---------------------------------------------------------------------
@@ -634,11 +732,35 @@ export class GTA6CodexWebGLEngine {
     this.fxaaPass.setSize(width, height)
   }
 
+  /** Encuadre coreografiado: funde continuamente entre los `SHOTS`, en vez de ruido sin fin. */
+  private computeShotFrame(elapsed: number): { pos: THREE.Vector3; look: THREE.Vector3; fovBias: number } {
+    const t = elapsed % this.totalShotDuration
+    let acc = 0
+    for (let i = 0; i < SHOTS.length; i++) {
+      const shot = SHOTS[i]
+      const next = SHOTS[(i + 1) % SHOTS.length]
+      if (t < acc + shot.duration || i === SHOTS.length - 1) {
+        const local = smootherstep((t - acc) / shot.duration)
+        return {
+          pos: shot.pos.clone().lerp(next.pos, local),
+          look: shot.look.clone().lerp(next.look, local),
+          fovBias: shot.fovBias + (next.fovBias - shot.fovBias) * local,
+        }
+      }
+      acc += shot.duration
+    }
+    return { pos: SHOTS[0].pos.clone(), look: SHOTS[0].look.clone(), fovBias: 0 }
+  }
+
   // ---------------------------------------------------------------------
   // Ciclo de vida
   // ---------------------------------------------------------------------
 
   start() {
+    this.startTime = this.clock.getElapsedTime()
+    const introDuration = this.reducedMotion ? 0.4 : 2.6
+    const introStartPos = SHOTS[0].pos.clone().add(new THREE.Vector3(0, 5, 16))
+
     const loop = () => {
       if (this.disposed) return
       this.rafId = requestAnimationFrame(loop)
@@ -646,52 +768,58 @@ export class GTA6CodexWebGLEngine {
 
       const delta = Math.min(this.clock.getDelta(), 0.05)
       const elapsed = this.clock.getElapsedTime()
+      const sinceStart = elapsed - this.startTime
+      const intro = smootherstep(sinceStart / introDuration)
 
       const prevPointerX = this.pointer.x
       const prevPointerY = this.pointer.y
-      this.pointer.x += (this.pointerTarget.x - this.pointer.x) * 0.08
-      this.pointer.y += (this.pointerTarget.y - this.pointer.y) * 0.08
+      this.pointer.x += (this.pointerTarget.x - this.pointer.x) * 0.07
+      this.pointer.y += (this.pointerTarget.y - this.pointer.y) * 0.07
       this.pointerVelocity = Math.hypot(this.pointer.x - prevPointerX, this.pointer.y - prevPointerY)
 
       const prevScroll = this.scrollProgress
       this.scrollProgress += (this.scrollTarget - this.scrollProgress) * 0.06
       this.scrollVelocity = Math.abs(this.scrollProgress - prevScroll)
 
-      // Cámara: deriva Lissajous autónoma + parallax de cursor + roll + dolly-zoom.
-      const autoDriftX = Math.sin(elapsed * 0.05) * 1.5 + Math.sin(elapsed * 0.021) * 0.6
-      const autoDriftY = Math.cos(elapsed * 0.04) * 0.8 + Math.cos(elapsed * 0.033) * 0.4
-      this.camera.position.x += (this.pointer.x * 3 + autoDriftX - this.camera.position.x) * 0.05
-      this.camera.position.y += (-this.pointer.y * 2 + autoDriftY - this.camera.position.y) * 0.05
-      this.camera.position.z = 26 - this.scrollProgress * 6
-      this.camera.lookAt(0, 0, 0)
-      this.camera.rotation.z = this.reducedMotion
-        ? 0
-        : Math.sin(elapsed * 0.03) * 0.008 + this.pointer.x * -0.01
+      // Coreografía de cámara + parallax de cursor + dolly de scroll + apertura de escena.
+      const frame = this.computeShotFrame(elapsed)
+      const dolly = frame.pos.clone().add(new THREE.Vector3(0, 0, -this.scrollProgress * 6))
+      const targetPos = introStartPos.clone().lerp(dolly, intro)
+      this.camera.position.lerp(targetPos, this.reducedMotion ? 1 : 0.06)
+      this.camera.position.x += this.pointer.x * 1.4
+      this.camera.position.y += -this.pointer.y * 0.9
 
-      const targetFov = this.baseFov + this.scrollProgress * 6
-      if (Math.abs(this.camera.fov - targetFov) > 0.01) {
-        this.camera.fov += (targetFov - this.camera.fov) * 0.05
-        this.camera.updateProjectionMatrix()
-      }
+      const lookTarget = frame.look.clone().lerp(new THREE.Vector3(0, 0, 0), 1 - intro)
+      this.camera.lookAt(lookTarget)
+      this.camera.rotation.z = this.reducedMotion ? 0 : this.pointer.x * -0.012
 
-      // Profundidad de campo: el foco "respira" con el scroll.
-      this.bokehPass.materialBokeh.uniforms.focus.value = 22 - this.scrollProgress * 8
+      const targetFov = this.baseFov + frame.fovBias + this.scrollProgress * 5
+      this.camera.fov += (targetFov - this.camera.fov) * 0.04
+      this.camera.updateProjectionMatrix()
 
-      this.group.rotation.y = this.scrollProgress * 0.5
-      this.group.position.z = this.scrollProgress * 4
+      this.bokehPass.materialBokeh.uniforms.focus.value = 22 - this.scrollProgress * 7
 
-      this.particleUniforms.time.value = elapsed
-      this.particleUniforms.scrollProgress.value = this.scrollProgress
-      this.particleUniforms.mouseNDC.value.set(this.pointer.x, -this.pointer.y)
-      this.particleUniforms.mouseStrength.value = this.reducedMotion ? 0 : 1
+      // Parallax real por profundidad de plano.
+      this.farGroup.position.x = -this.pointer.x * 0.4
+      this.farGroup.position.y = this.pointer.y * 0.25
+      this.midGroup.position.x = this.pointer.x * 1.1
+      this.midGroup.position.y = -this.pointer.y * 0.7
+      this.midGroup.rotation.y = this.scrollProgress * 0.35
+      this.nearGroup.position.x = this.pointer.x * 2.1
+      this.nearGroup.position.y = -this.pointer.y * 1.3
 
-      this.grainPass.uniforms.time.value = elapsed * 0.6
-      const kick = this.reducedMotion
-        ? 0
-        : Math.min(this.pointerVelocity * 1.4 + this.scrollVelocity * 6, 0.01)
-      this.grainPass.uniforms.chromaKick.value = kick
+      this.dustUniforms.time.value = elapsed
+      this.dustUniforms.mouseNDC.value.set(this.pointer.x, -this.pointer.y)
+      this.dustUniforms.mouseStrength.value = this.reducedMotion ? 0 : intro
+      this.dustUniforms.introFade.value = intro
 
-      for (const update of this.updaters) update(elapsed, delta)
+      this.gradePass.uniforms.time.value = elapsed * 0.6
+      this.gradePass.uniforms.fadeIn.value = intro
+      const kick = this.reducedMotion ? 0 : Math.min(this.pointerVelocity * 1.3 + this.scrollVelocity * 6, 0.009)
+      this.gradePass.uniforms.chromaKick.value = kick
+      this.bloomPass.strength = 0.8 * intro
+
+      for (const update of this.updaters) update(elapsed, delta, intro)
 
       this.composer.render()
     }
@@ -700,7 +828,7 @@ export class GTA6CodexWebGLEngine {
 
   setReducedMotion(value: boolean) {
     this.reducedMotion = value
-    this.particleUniforms.mouseStrength.value = value ? 0 : 1
+    this.dustUniforms.mouseStrength.value = value ? 0 : 1
   }
 
   dispose() {
@@ -712,7 +840,7 @@ export class GTA6CodexWebGLEngine {
     document.removeEventListener('visibilitychange', this.handleVisibility)
 
     this.scene.traverse((obj) => {
-      if (obj instanceof THREE.Mesh || obj instanceof THREE.Points || obj instanceof THREE.Sprite) {
+      if (obj instanceof THREE.Mesh || obj instanceof THREE.Points) {
         obj.geometry?.dispose?.()
         const material = obj.material as THREE.Material | THREE.Material[]
         if (Array.isArray(material)) material.forEach((m) => m.dispose())
