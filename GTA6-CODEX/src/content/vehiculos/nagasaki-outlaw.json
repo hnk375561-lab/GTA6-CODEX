@@ -17,7 +17,7 @@
   "class": "off-road",
   "driven_by": [],
   "locations": [
-    "grassrivers"
+    "vice-city"
   ],
   "customizable": true,
   "performance": {
@@ -27,10 +27,16 @@
     "braking": "Media"
   },
   "evidence": {
-    "level": "oficial-visual",
+    "level": "respaldado",
     "primarySource": "Rockstar Games, trailers oficiales de GTA VI (Trailer 1 y/o Trailer 2)",
     "secondarySource": "GTABase, GTA Wiki (Fandom), múltiples DBs independientes documentan el vehículo",
-    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Nagasaki. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada ('trailers oficiales... Trailer 1 y/o Trailer 2') no especifica en que escena ni region aparece el vehiculo; el valor del campo 'locations' es una asignacion por defecto/tematica (no verificada escena por escena) y se conserva solo como metadato aproximado, no como afirmacion demostrada del grafo."
+    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Nagasaki. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada ('trailers oficiales... Trailer 1 y/o Trailer 2') no especifica en que escena ni region aparece el vehiculo; el valor del campo 'locations' es una asignacion por defecto/tematica (no verificada escena por escena) y se conserva solo como metadato aproximado, no como afirmacion demostrada del grafo. CORRECCION DE UBICACION (13 ago 2026, auditoria forense de vehiculos): el campo locations decia 'grassrivers' sin respaldo. Tres fuentes coincidentes (GTA Wiki/Fandom, su espejo gta.wiki, y gta6intel.com) ubican la variante personalizada del Outlaw circulando por 'Vice-Dale County Road 561 en La Perle, en una captura oficial de Vice City'. La Perle ya es una sub-ubicacion del grafo con located_in->vice-city, por lo que la relacion a nivel vice-city es consistente y defendible. Se corrige de grassrivers a vice-city."
   },
-  "relations": []
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ]
 }
