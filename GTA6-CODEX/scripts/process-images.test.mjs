@@ -15,7 +15,11 @@
 
 import { test, describe } from 'node:test'
 import assert from 'node:assert/strict'
-import { normalize, matchEntity, resolveMatch } from './process-images.mjs'
+import fs from 'node:fs'
+import path from 'node:path'
+import os from 'node:os'
+import { spawnSync } from 'node:child_process'
+import { normalize, matchEntity, resolveMatch, loadEntityIndex, CATEGORIES, isValidSlug } from './process-images.mjs'
 
 /** Construye una entidad de fixture con el mismo shape que loadEntityIndex() */
 function entity(slug, type, title) {
@@ -183,3 +187,95 @@ describe('resolveMatch — llamado directo (norm ya normalizado)', () => {
     assert.deepEqual(viaResolve, viaMatchEntity)
   })
 })
+
+describe('isValidSlug — sanitización contra path traversal e inyección de path', () => {
+  test('slugs válidos (lo que normalize() puede producir) se aceptan', () => {
+    assert.equal(isValidSlug('lucia-caminos'), true)
+    assert.equal(isValidSlug('bravado-buffalo-stx'), true)
+    assert.equal(isValidSlug('a'), true)
+    assert.equal(isValidSlug('a1-b2'), true)
+  })
+
+  test('path traversal (../) se rechaza', () => {
+    assert.equal(isValidSlug('../../etc/passwd'), false)
+    assert.equal(isValidSlug('..'), false)
+    assert.equal(isValidSlug('foo/../bar'), false)
+  })
+
+  test('separadores de path se rechazan', () => {
+    assert.equal(isValidSlug('foo/bar'), false)
+    assert.equal(isValidSlug('foo\\bar'), false)
+    assert.equal(isValidSlug('/etc/passwd'), false)
+  })
+
+  test('mayúsculas, espacios, guiones dobles/laterales y vacío se rechazan', () => {
+    assert.equal(isValidSlug('Foo-Bar'), false)
+    assert.equal(isValidSlug('foo bar'), false)
+    assert.equal(isValidSlug('foo--bar'), false)
+    assert.equal(isValidSlug('-foo'), false)
+    assert.equal(isValidSlug('foo-'), false)
+    assert.equal(isValidSlug(''), false)
+  })
+
+  test('tipos no-string (undefined, null, number) se rechazan sin tirar excepción', () => {
+    assert.equal(isValidSlug(undefined), false)
+    assert.equal(isValidSlug(null), false)
+    assert.equal(isValidSlug(42), false)
+  })
+})
+
+describe('loadEntityIndex — end-to-end: un slug con path traversal nunca entra al índice', () => {
+  test('entidad con slug malicioso se excluye del índice; el resto del contenido se carga normalmente', () => {
+    const tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'process-images-slug-test-'))
+    try {
+      const contentDir = path.join(tmpRoot, 'src', 'content', 'personajes')
+      fs.mkdirSync(contentDir, { recursive: true })
+
+      // Entidad legítima
+      fs.writeFileSync(
+        path.join(contentDir, 'lucia.json'),
+        JSON.stringify({ slug: 'lucia-caminos', type: 'personajes', title: 'Lucia Caminos' })
+      )
+      // Entidad con slug de path traversal — nunca debe poder usarse para
+      // construir un destPath fuera de public/images/entities/
+      fs.writeFileSync(
+        path.join(contentDir, 'malicioso.json'),
+        JSON.stringify({ slug: '../../../etc/evil', type: 'personajes', title: 'Evil' })
+      )
+
+      // loadEntityIndex() usa ROOT = process.cwd() capturado al importar el
+      // módulo, así que se corre en un subproceso con cwd = tmpRoot para
+      // que CONTENT_DIR apunte al fixture temporal.
+      const result = spawnSyncNode(tmpRoot)
+      assert.equal(result.status, 0, result.stderr)
+      const index = JSON.parse(result.stdout)
+
+      assert.equal(index.length, 1)
+      assert.equal(index[0].slug, 'lucia-caminos')
+      assert.ok(!index.some((e) => e.slug.includes('..')))
+    } finally {
+      fs.rmSync(tmpRoot, { recursive: true, force: true })
+    }
+  })
+})
+
+describe('CATEGORIES — fuente única de verdad compartida con src/lib/images.ts', () => {
+  test('CATEGORIES (script) coincide exactamente con entity-image-categories.json (usado por images.ts)', () => {
+    const jsonPath = path.join(import.meta.dirname, '..', 'src', 'config', 'entity-image-categories.json')
+    const fromJson = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'))
+    assert.deepEqual(CATEGORIES, fromJson)
+  })
+})
+
+// --- helper para el test end-to-end de loadEntityIndex ---
+function spawnSyncNode(cwd) {
+  const scriptPath = path.join(import.meta.dirname, 'process-images.mjs')
+  const inline = `
+    import { loadEntityIndex } from ${JSON.stringify(scriptPath)}
+    process.stdout.write(JSON.stringify(loadEntityIndex()))
+  `
+  return spawnSync(process.execPath, ['--input-type=module', '-e', inline], {
+    cwd,
+    encoding: 'utf-8',
+  })
+}

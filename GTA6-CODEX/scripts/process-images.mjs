@@ -42,6 +42,7 @@ import path from 'path'
 import crypto from 'crypto'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
+import CATEGORIES from '../src/config/entity-image-categories.json' with { type: 'json' }
 
 const ROOT = process.cwd()
 const INCOMING_DIR = path.join(ROOT, 'incoming-images')
@@ -49,8 +50,8 @@ const CONTENT_DIR = path.join(ROOT, 'src', 'content')
 const PUBLIC_ENTITIES_DIR = path.join(ROOT, 'public', 'images', 'entities')
 const UNIDENTIFIED_DIR = path.join(INCOMING_DIR, '_sin-identificar')
 const POSSIBLE_DUP_DIR = path.join(INCOMING_DIR, '_duplicados-posibles')
+const ERROR_DIR = path.join(INCOMING_DIR, '_errores')
 
-const CATEGORIES = ['personajes', 'vehiculos', 'ubicaciones', 'organizaciones', 'negocios']
 const VALID_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif'])
 const MAX_DIMENSION = 1600
 const WEBP_QUALITY = 82
@@ -67,6 +68,16 @@ function normalize(str) {
     .replace(/^-+|-+$/g, '')
 }
 
+// Un slug válido es exactamente lo que normalize() puede producir: minúsculas,
+// dígitos y guiones simples, sin separadores de path, sin '..', sin espacios.
+// Se usa para SANITIZAR entity.slug antes de que se use para construir
+// destPath — nunca se confía en el valor crudo del JSON de contenido.
+const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/
+
+function isValidSlug(slug) {
+  return typeof slug === 'string' && SLUG_PATTERN.test(slug)
+}
+
 /** Carga { slug, type, title, normalizedTitle }[] desde src/content/**.json */
 function loadEntityIndex() {
   const index = []
@@ -76,8 +87,17 @@ function loadEntityIndex() {
     for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) {
       try {
         const raw = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf-8'))
+        const slug = raw.slug || file.replace(/\.json$/, '')
+
+        if (!isValidSlug(slug)) {
+          console.warn(
+            `  ADVERTENCIA: ${path.join(category, file)} tiene un slug inválido/inseguro ("${slug}") — entidad excluida del índice, no se le asignará ninguna imagen.`
+          )
+          continue
+        }
+
         index.push({
-          slug: raw.slug || file.replace(/\.json$/, ''),
+          slug,
           type: category,
           title: raw.title || raw.slug,
           normalizedTitle: normalize(raw.title || ''),
@@ -200,6 +220,10 @@ async function main() {
           filesToProcess.push({ filePath: path.join(fullPath, f), categoryHint: entry.name })
         }
       }
+    } else if (entry.isDirectory()) {
+      console.warn(
+        `  ADVERTENCIA: subcarpeta "${entry.name}/" en incoming-images/ no coincide con ninguna categoría conocida (${CATEGORIES.join(', ')}) — se ignora por completo. ¿Typo?`
+      )
     } else if (entry.isFile()) {
       const ext = path.extname(entry.name).toLowerCase()
       if (VALID_EXT.has(ext)) {
@@ -221,11 +245,13 @@ async function main() {
   if (APPLY) {
     fs.mkdirSync(UNIDENTIFIED_DIR, { recursive: true })
     fs.mkdirSync(POSSIBLE_DUP_DIR, { recursive: true })
+    fs.mkdirSync(ERROR_DIR, { recursive: true })
   }
 
   for (const { filePath, categoryHint } of filesToProcess) {
     report.processed++
     const baseName = path.basename(filePath, path.extname(filePath))
+    let tempDestPath = null
 
     try {
       const inputBuffer = fs.readFileSync(filePath)
@@ -292,13 +318,39 @@ async function main() {
           })
         }
 
-        await pipeline.webp({ quality: WEBP_QUALITY }).toFile(destPath)
+        tempDestPath = path.join(destDir, `.${entity.slug}.${process.pid}-${Date.now()}.webp.tmp`)
+        await pipeline.webp({ quality: WEBP_QUALITY }).toFile(tempDestPath)
+        fs.renameSync(tempDestPath, destPath) // rename es atómico dentro del mismo filesystem
+        tempDestPath = null // ya no queda temp que limpiar
         fs.unlinkSync(filePath)
         report.moved++
       }
     } catch (err) {
       console.error(`  ERROR procesando ${filePath}:`, err.message)
       report.errors++
+
+      // Si la escritura con sharp se interrumpió a mitad de camino, el
+      // archivo temporal puede haber quedado en disco: se limpia para no
+      // dejar basura ni un destino final corrupto (destPath nunca se toca
+      // hasta el rename atómico, así que el asset bueno existente, si lo
+      // había, nunca se ve afectado).
+      if (tempDestPath && fs.existsSync(tempDestPath)) {
+        try {
+          fs.unlinkSync(tempDestPath)
+        } catch {
+          // best-effort
+        }
+      }
+
+      // El archivo original (si sigue en su lugar) se mueve a cuarentena de
+      // errores, para no dejarlo mezclado con archivos aún no procesados.
+      if (APPLY && fs.existsSync(filePath)) {
+        try {
+          fs.renameSync(filePath, path.join(ERROR_DIR, path.basename(filePath)))
+        } catch (moveErr) {
+          console.error(`  No se pudo mover ${filePath} a _errores/:`, moveErr.message)
+        }
+      }
     }
   }
 
@@ -321,4 +373,4 @@ if (isMainModule) {
   main()
 }
 
-export { normalize, loadEntityIndex, matchEntity, resolveMatch, pickMostSpecific, CATEGORIES }
+export { normalize, loadEntityIndex, matchEntity, resolveMatch, pickMostSpecific, CATEGORIES, isValidSlug }

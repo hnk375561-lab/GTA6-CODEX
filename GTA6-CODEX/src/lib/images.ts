@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { Entity, EntityType } from '@/types'
+import entityImageCategorySlugs from '@/config/entity-image-categories.json'
 
 /**
  * SISTEMA DE RESOLUCIÓN DE IMÁGENES POR CONVENCIÓN
@@ -70,14 +71,9 @@ export function countEntitiesWithImage(entities: Entity[]): number {
 }
 
 /**
- * Categorías núcleo con carpeta de imágenes propia. Mantenido en un solo
- * lugar para que el script de procesamiento y los componentes usen la
- * misma lista si en algún momento se necesita iterar todas las carpetas.
+ * Categorías núcleo con carpeta de imágenes propia. La lista vive en
+ * src/config/entity-image-categories.json — fuente única de verdad
+ * compartida con scripts/process-images.mjs, para que ambos queden
+ * sincronizados por construcción y no por convención manual.
  */
-export const ENTITY_IMAGE_CATEGORIES: EntityType[] = [
-  EntityType.CHARACTER,
-  EntityType.VEHICLE,
-  EntityType.LOCATION,
-  EntityType.FACTION,
-  EntityType.BUSINESS,
-]
+export const ENTITY_IMAGE_CATEGORIES: EntityType[] = entityImageCategorySlugs as EntityType[]
