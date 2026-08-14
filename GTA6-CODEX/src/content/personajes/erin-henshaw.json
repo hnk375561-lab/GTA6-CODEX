@@ -3,7 +3,7 @@
   "type": "personajes",
   "title": "Erin Henshaw",
   "description": "Candidata a la alcaldía de Ambrosia, Leonida. Su campaña, visible en carteles de jardín durante el Trailer 1, respalda a Allied Crystal, la empresa que opera el ingenio azucarero de la ciudad.",
-  "content": "Erin Henshaw es una candidata a la alcaldía de Ambrosia que aparece confirmada visualmente en el Trailer 1 de GTA VI a través de carteles de campaña ('Henshaw for Mayor') visibles al costado del camino en las escenas rurales de Leonida.\n\nSu campaña está explícitamente vinculada a Allied Crystal, la compañía que opera el ingenio azucarero local, lo que sugiere una trama de sátira política sobre la influencia corporativa en la política municipal de Leonida, un tema recurrente en la serie GTA.",
+  "content": "Erin Henshaw es una candidata a la alcaldía de Ambrosia que aparece confirmada visualmente en el Trailer 1 de GTA VI a través de carteles de campaña ('Henshaw for Mayor') visibles al costado del camino en las escenas rurales de Leonida.\n\nSegún GTA Wiki (Fandom), su campaña respalda a Allied Crystal, la compañía que opera el ingenio azucarero local; este vínculo no proviene de un texto oficial de Rockstar citado directamente, sino de la descripción secundaria del personaje. No hay evidencia de que Henshaw sea alcaldesa electa, de que resida en Ambrosia, ni de que tenga relación directa con Jason o Lucia.",
   "status": "confirmado",
   "tags": [
     "secundario",
@@ -26,6 +26,6 @@
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, Trailer 1 de GTA VI (carteles de campana 'Henshaw for Mayor' visibles en escenas de Ambrosia)",
     "secondarySource": "GTA Wiki (Fandom) y GTA Intel, que documentan el cartel de campana y su vinculo con Allied Crystal",
-    "note": "Fase C (13 ago 2026): nombre y rol politico confirmados por texto visible en pantalla durante el Trailer 1 oficial. Evidencia visual directa, no especulacion de leaks."
+    "note": "Fase C (13 ago 2026): nombre y candidatura confirmados por texto visible en pantalla durante el Trailer 1 oficial. El vinculo con Allied Crystal proviene de fuente secundaria (Fandom), no de texto oficial citado directamente. La relacion located_in->Ambrosia representa el ambito geografico de la campana visible en el cartel, no residencia confirmada del personaje. Auditoria adversarial (13 ago 2026): se recorto afirmacion narrativa no evidenciada sobre 'satira politica'."
   }
 }

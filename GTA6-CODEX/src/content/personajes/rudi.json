@@ -3,7 +3,7 @@
   "type": "personajes",
   "title": "Rudi",
   "description": "Un 'hombre de Leonida' del barrio de Crosstown, Vice City, visto en un video viral manejando una pickup Bravado a alta velocidad en el Trailer 1. Un comentario de red social ('RIP Rudi') sugiere que no sobrevivió al video, aunque reaparece en escenas del Trailer 2.",
-  "content": "Rudi aparece en el Trailer 1 de GTA VI dentro de un video de redes sociales publicado por el usuario 'YoMammazJammer', donde se lo ve conduciendo una pickup Bravado verde a alta velocidad mientras se asoma fuera del vehiculo. El comentario que acompana el clip, 'RIP Rudi - C U in heaven, cuz', llevo a la comunidad a asumir que el personaje no sobrevivio a la maniobra.\n\nSin embargo, segun coberturas del Trailer 2, una persona con la misma apariencia reaparece en mas de una escena -una vez en un bar cerca de Jason y Cal Hampton, y luego festejando junto a Jason y Lucia en Vice City-, lo que abre la duda sobre si el 'RIP' del primer trailer era literal o una broma dentro del propio mundo del juego. Las stickers de su camioneta lo ubican como oriundo del barrio de Crosstown en Vice City.",
+  "content": "Rudi aparece en el Trailer 1 de GTA VI dentro de un video de redes sociales publicado por el usuario 'YoMammazJammer', donde se lo ve conduciendo una pickup Bravado verde a alta velocidad mientras se asoma fuera del vehiculo. El comentario que acompana el clip, 'RIP Rudi - C U in heaven, cuz', llevo a la comunidad a asumir que el personaje no sobrevivio a la maniobra.\n\nSegun coberturas del Trailer 2, una persona con la misma apariencia reaparece en mas de una escena -una vez en un bar cerca de Jason y Cal Hampton, y luego festejando junto a Jason y Lucia en Vice City-, lo que abre la duda sobre si el 'RIP' del primer trailer era literal o una broma dentro del propio mundo del juego. Las stickers de su camioneta lo ubican como oriundo del barrio de Crosstown en Vice City.\n\nImportante: la coaparicion en escena con Jason, Cal y Lucia no demuestra por si sola una relacion narrativa (amistad, trabajo, parentesco) entre ellos; solo confirma proximidad fisica en el mismo cuadro. Por eso las relaciones se documentan con la etiqueta mas debil disponible del esquema (appears_with) y no como companion, member_of ni ninguna relacion que implique vinculo confirmado.",
   "status": "confirmado",
   "tags": [
     "secundario",
@@ -25,12 +25,17 @@
       "targetType": "personajes",
       "targetSlug": "cal-hampton",
       "relation": "appears_with"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
+      "relation": "appears_with"
     }
   ],
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, Trailer 1 de GTA VI (video social 'RIP Rudi' con nombre visible en pantalla) y apariciones adicionales en Trailer 2",
     "secondarySource": "GTA Wiki (Fandom) y gtabase.com, que documentan la escena del video viral y las reapariciones del personaje en el Trailer 2",
-    "note": "Fase C (13 ago 2026): nombre confirmado por texto en pantalla en material oficial de Rockstar. Estado de 'fallecido' es interpretacion de la comunidad, no confirmacion oficial de Rockstar; se documenta como ambiguo."
+    "note": "Fase C (13 ago 2026): nombre confirmado por texto en pantalla en material oficial de Rockstar. Estado de 'fallecido' es interpretacion de la comunidad, no confirmacion oficial de Rockstar; se documenta como ambiguo. Auditoria adversarial (13 ago 2026): se agrego relacion appears_with->lucia-caminos, presente en la misma fuente secundaria que ya sustentaba jason-duval y cal-hampton pero que se habia omitido. Las 3 relaciones documentan coexistencia visual en escena unicamente, no vinculo narrativo confirmado."
   }
 }
