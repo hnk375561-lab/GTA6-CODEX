@@ -83,6 +83,25 @@ export interface BaseEntity {
     // detectada, ambigüedad no resuelta)
     limitations?: string[]
   }
+
+  /**
+   * Metadata de procedencia de la imagen de esta entidad (opcional).
+   *
+   * NO contiene la ruta del archivo: la ruta se resuelve por convención
+   * (ver src/lib/images.ts) a partir de `type` + `slug`, buscando
+   * public/images/entities/{type}/{slug}.{webp|avif|jpg|jpeg|png}.
+   * Este campo es solo trazabilidad legal/editorial de esa imagen,
+   * en el mismo espíritu que `evidence` para el resto del contenido.
+   */
+  image?: {
+    // Nivel de verificación de la procedencia
+    source: 'official' | 'secondary' | 'unverified'
+    sourceName?: string // ej. "Rockstar Games — Media Screenshots"
+    sourceUrl?: string // URL de la página donde se localizó/confirmó
+    retrievedAt?: string // ISO timestamp de cuándo se verificó
+    credit?: string // Atribución a mostrar si corresponde
+    alt?: string // Texto alternativo específico; si falta, se usa entity.title
+  }
 }
 
 /**

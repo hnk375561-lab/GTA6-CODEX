@@ -14,6 +14,8 @@ import { EntityMetadata } from '@/components/entities/EntityMetadata'
 import { RelationsPanel } from '@/components/entities/RelationsPanel'
 import { EntityHeaderBackground } from '@/components/entities/EntityHeaderBackground'
 import { EntitySectionHeading } from '@/components/entities/EntitySectionHeading'
+import { EntityImage } from '@/components/entities/EntityImage'
+import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
 import { MagicCard } from '@/components/ui/MagicCard'
 import { ShineBorder } from '@/components/ui/ShineBorder'
 
@@ -243,6 +245,12 @@ export default async function EntityPage({ params }: PageProps) {
           </div>
 
           <aside className="space-y-6">
+            {ENTITY_IMAGE_CATEGORIES.includes(type) && (
+              <Reveal direction="right">
+                <EntityImage entity={entity} variant="portrait" />
+              </Reveal>
+            )}
+
             {entity.evidence && (
               <Reveal direction="right">
                 <Card className="shadow-gta-sm">

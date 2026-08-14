@@ -8,6 +8,8 @@ import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
 import { AnimatedText } from '@/components/ui/AnimatedText'
+import { EntityImage } from '@/components/entities/EntityImage'
+import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
 
 interface PageProps {
   params: Promise<{ entityType: string }>
@@ -87,8 +89,16 @@ export default async function EntityTypePage({ params }: PageProps) {
             {entities.map((entity, i) => (
               <Reveal key={entity.slug} delay={(i % 6) * 80}>
                 <Link href={`/${type}/${entity.slug}`} className="group block h-full">
-                  <Card hoverable className="h-full">
-                    <CardBody>
+                  <Card
+                    hoverable
+                    className={`h-full overflow-hidden ${
+                      ENTITY_IMAGE_CATEGORIES.includes(type) ? '!p-0' : ''
+                    }`}
+                  >
+                    {ENTITY_IMAGE_CATEGORIES.includes(type) && (
+                      <EntityImage entity={entity} variant="thumbnail" className="rounded-none border-x-0 border-t-0" />
+                    )}
+                    <CardBody className={ENTITY_IMAGE_CATEGORIES.includes(type) ? 'p-6' : undefined}>
                       <div className="mb-3 flex items-center justify-between gap-2">
                         <Badge variant="status" status={entity.status}>
                           {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
