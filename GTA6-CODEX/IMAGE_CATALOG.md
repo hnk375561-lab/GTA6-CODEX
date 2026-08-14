@@ -52,6 +52,37 @@ public/images/entities/ubicaciones/leonida-keys.webp     179 KB
 public/images/entities/ubicaciones/mount-kalaga.webp     219 KB
 ```
 
+## Ronda 7 (14 ago 2026) — fondos del hero de la home (fuera del catálogo de entidades)
+
+A diferencia de las rondas anteriores, esta no suma imágenes de ficha de
+entidad: el usuario aportó 12 capturas del key art oficial del **Vintage
+Vice City Pack** para usarlas como fondo. No se procesaron con
+`scripts/process-images.mjs` (ese pipeline es para `public/images/entities/`)
+sino que se integraron directamente en `RotatingHeroBackground.tsx`, el
+componente que ya rotaba fondos panorámicos en la home.
+
+De las 12, se seleccionaron **2** por ser composiciones panorámicas tipo
+"postal" (pareja + vehículo en escena completa, sin recorte); se descartó el
+resto por ser primeros planos de personajes o detalles de vehículo/armas que
+no funcionan como fondo de página completa:
+
+| Archivo agregado | Fuente | Criterio de selección |
+|---|---|---|
+| `hero-vintage-dock-sunset.webp` | `VINTAGE_VICE_CITY_PACK_02.jpg` | Pareja junto al Stanier en el muelle al atardecer — composición ancha, key art clásico |
+| `hero-vintage-hotel-neon.webp` | `VINTAGE_VICE_CITY_PACK_01.jpg` | Pareja frente al neón del Ocean View Hotel — buen contraste de noche para el overlay del hero |
+
+Procesadas con `sharp`, WebP calidad 92, **sin redimensionar** (resolución
+nativa 3840×2160) — misma convención que las dos imágenes de hero
+preexistentes (`hero-vice-sunset.webp`, `hero-vi-logo.webp`), distinta de la
+política de resize a 1600px que usa el pipeline de imágenes de entidad.
+
+La rotación del hero pasó de 2 a 4 fondos. Las 10 capturas restantes del
+pack (primeros planos de personajes, detalle de carrocería, patrón de
+armas, interior con dinero) no se integraron — no corresponden a ninguna
+entidad del catálogo (`vapid-stanier-55` sigue en `DOWNLOAD_PENDING`, ya que
+estas son imágenes de key art del pack, no screenshots individuales del
+vehículo) ni sirven como fondo panorámico.
+
 ## Ronda 6 (14 ago 2026) — 2 imágenes DESCARGADAS e INTEGRADAS
 
 El usuario aportó 4 capturas oficiales de Brian Heder y 4 de Cal Hampton

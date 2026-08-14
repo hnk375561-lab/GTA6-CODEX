@@ -12,14 +12,20 @@ import { useEffect, useState } from 'react'
  * next.config.js), así que el navegador nunca descarga el archivo crudo
  * completo salvo en pantallas que realmente lo necesiten.
  *
- * Ambas imágenes fueron revisadas por procedencia: se excluyó una tercera
+ * Todas las imágenes fueron revisadas por procedencia: se excluyó una
  * (fan art con firma de autor visible) por no ser material propio ni
- * oficial de Rockstar.
+ * oficial de Rockstar. Las dos últimas incorporadas (dock-sunset y
+ * hotel-neon) son key art oficial del Vintage Vice City Pack, elegidas por
+ * ser composiciones panorámicas tipo "postal" — se descartó el resto del
+ * pack (primeros planos de personajes, detalles de vehículo/armas) por no
+ * funcionar como fondo de página completa.
  */
 
 const HERO_BACKGROUNDS = [
   '/images/heroes/hero-vice-sunset.webp',
   '/images/heroes/hero-vi-logo.webp',
+  '/images/heroes/hero-vintage-dock-sunset.webp',
+  '/images/heroes/hero-vintage-hotel-neon.webp',
 ] as const
 
 const ROTATE_INTERVAL_MS = 7000
