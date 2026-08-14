@@ -535,7 +535,66 @@ a:hover .logo-mark {
   font-variant-numeric: tabular-nums;
 }
 
-/* --- Hero: rejilla + scanline sutil estilo GTA HUD --- */
+/* --- Hero: bloom ambiental estático (Capa 3) ---
+   Independiente del glow que sigue al cursor (AmbientCursorGlow, global):
+   este es fijo, da "iluminación de escena" detrás del título sin requerir
+   JS ni mousemove. Un solo radial-gradient, sin blur() ni box-shadow. */
+.hero-ambient-glow {
+  position: absolute;
+  inset: -10% -10% auto -10%;
+  height: 70%;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 55% 60% at 50% 20%,
+    rgba(0, 208, 0, 0.14),
+    rgba(255, 102, 0, 0.05) 45%,
+    transparent 75%
+  );
+}
+
+/* --- Reveal con blur sutil: usado solo en el título del hero para dar
+   sensación de "archivo revelándose" en vez de "elemento cargando" --- */
+.reveal-blur {
+  filter: blur(10px);
+  transition: filter 750ms var(--ease-premium), opacity 750ms var(--ease-premium),
+    transform 750ms var(--ease-premium);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-blur.reveal-visible {
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-blur {
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* --- Hero: tira de metadata técnica (Capa 5) --- */
+.hero-meta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #707070;
+}
+
+.hero-meta-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero-meta-sep {
+  color: #2d2d2d;
+}
+
+
 @keyframes scanline-move {
   0% {
     transform: translateY(-100%);
@@ -545,21 +604,16 @@ a:hover .logo-mark {
   }
 }
 
+/* Antes tenía un ::before con una grilla CSS estática, redundante con
+   FlickeringGrid (que ya cubre el mismo hero). Se retiró: dos grillas
+   superpuestas competían por atención y sumaban paint sin aportar nada.
+   FlickeringGrid es ahora la única fuente de textura de grilla del hero;
+   hero-scanline queda solo para el barrido de luz (accento, no textura). */
 .hero-scanline {
   position: absolute;
   inset: 0;
   overflow: hidden;
   pointer-events: none;
-}
-
-.hero-scanline::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(0, 208, 0, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 208, 0, 0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
 }
 
 .hero-scanline::after {
