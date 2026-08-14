@@ -37,13 +37,45 @@ export interface EntityAtmosphere {
   featured: boolean
 }
 
+/**
+ * "Ambiente" real de la escena 3D en el frame actual — la mitad del puente
+ * que va MOTOR → DOM (el resto del archivo es UI → motor). Publicado por
+ * `GTA6CodexWebGLEngine` en su loop de render y consumido por
+ * `SceneAmbientBridge`, que lo escribe como variables CSS en `<html>` para
+ * que cards, hero y demás superficies reaccionen a la MISMA luz, textura y
+ * "pulso" que ve la escena — no a un brillo CSS inventado aparte.
+ */
+export interface SceneAmbient {
+  /** Ángulo (grados, convención de `linear-gradient` CSS) de la luz clave proyectada en pantalla. */
+  lightAngleDeg: number
+  /** 0 = frío (verde), 1 = cálido (naranja) — mismo lenguaje que `keyLight`/`fillLight`. */
+  warmth: number
+  /** 0..1, brillo/bloom general de la escena en este momento. */
+  intensity: number
+  /** 0..1, pulso transitorio (llegada a una sección nueva). Decae solo. */
+  kick: number
+  /** 0..1, progreso de la coreografía de apertura inicial. */
+  intro: number
+}
+
+const DEFAULT_AMBIENT: SceneAmbient = {
+  lightAngleDeg: 135,
+  warmth: 0.5,
+  intensity: 0.55,
+  kick: 0,
+  intro: 1,
+}
+
 type Listener = () => void
+type AmbientListener = (ambient: SceneAmbient) => void
 
 class WebGLSceneBus {
   private focus: SceneFocus = { sectionId: null, progress: 0 }
   private pointerIntent = 0
   private entityAtmosphere: EntityAtmosphere | null = null
   private listeners = new Set<Listener>()
+  private ambient: SceneAmbient = DEFAULT_AMBIENT
+  private ambientListeners = new Set<AmbientListener>()
 
   private emit() {
     this.listeners.forEach((listener) => listener())
@@ -97,6 +129,34 @@ class WebGLSceneBus {
       pointerIntent: this.pointerIntent,
       entityAtmosphere: this.entityAtmosphere,
     }
+  }
+
+  /**
+   * El motor se suscribe acá — se le entrega el valor inmediatamente al
+   * suscribirse para no esperar al primer frame (evita un "flash" del
+   * fallback de :root al primer render post-mount).
+   */
+  subscribeAmbient(listener: AmbientListener): () => void {
+    this.ambientListeners.add(listener)
+    listener(this.ambient)
+    return () => {
+      this.ambientListeners.delete(listener)
+    }
+  }
+
+  /**
+   * Publicado por el motor en cada frame (throttled internamente por el
+   * motor). Deliberadamente separado de `emit()`: cambia constantemente y
+   * solo le interesa a los puentes DOM que pintan variables CSS, no a los
+   * listeners de foco/intención que reaccionan a cambios discretos.
+   */
+  publishAmbient(value: SceneAmbient) {
+    this.ambient = value
+    this.ambientListeners.forEach((listener) => listener(value))
+  }
+
+  getAmbient(): SceneAmbient {
+    return this.ambient
   }
 }
 

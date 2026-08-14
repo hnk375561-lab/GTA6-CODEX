@@ -366,6 +366,13 @@ export class GTA6CodexWebGLEngine {
   private entityPresenceTarget = 0
   private unsubscribeSceneBus: (() => void) | null = null
 
+  // --- Motor → DOM: ver `SceneAmbient` en scene-bus.ts -------------------
+  /** Pulso de "llegada" a una sección nueva: sube a 1 y decae solo. Es el
+   *  equivalente DOM del chromaKick — un momento real, no un loop. */
+  private arrivalKick = 0
+  private ambientFrameCounter = 0
+  private readonly tmpProjectVec = new THREE.Vector3()
+
   constructor(canvas: HTMLCanvasElement, opts: { reducedMotion: boolean }) {
     this.reducedMotion = opts.reducedMotion
     this.totalShotDuration = SHOTS.reduce((sum, s) => sum + s.duration, 0)
@@ -436,10 +443,17 @@ export class GTA6CodexWebGLEngine {
     // en vez de que el motor tenga que adivinarlo a partir de scroll crudo.
     this.unsubscribeSceneBus = webglSceneBus.subscribe(() => {
       const snapshot = webglSceneBus.getSnapshot()
+      const enteringNewSection =
+        snapshot.focus.sectionId !== null && snapshot.focus.sectionId !== this.sceneFocus.sectionId
       this.sceneFocus = snapshot.focus
       this.pointerIntentTarget = snapshot.pointerIntent
       if (snapshot.focus.sectionId && snapshot.focus.progress > 0.35) {
         this.sceneMoodTarget = SECTION_MOOD[snapshot.focus.sectionId] ?? this.sceneMoodTarget
+      }
+      if (enteringNewSection && !this.reducedMotion) {
+        // Llegar a una sección nueva es un momento real: un pulso breve de
+        // luz/bloom que decae solo en el loop, no un flash on/off.
+        this.arrivalKick = 1
       }
 
       this.entityAtmosphere = snapshot.entityAtmosphere
@@ -928,13 +942,33 @@ export class GTA6CodexWebGLEngine {
               this.entityUnrest * 0.0015,
             0.009
           )
-      this.gradePass.uniforms.chromaKick.value = kick
+      this.arrivalKick *= 0.92
+      this.gradePass.uniforms.chromaKick.value = Math.min(kick + this.arrivalKick * 0.006, 0.014)
       this.bloomPass.strength =
-        0.8 * intro + (this.reducedMotion ? 0 : this.pointerIntent * 0.3) + this.entityPresence * 0.15
+        0.8 * intro +
+        (this.reducedMotion ? 0 : this.pointerIntent * 0.3) +
+        this.entityPresence * 0.15 +
+        this.arrivalKick * 0.35
 
       for (const update of this.updaters) update(elapsed, delta, intro)
 
       this.composer.render()
+
+      // Motor → DOM: cada 3 frames alcanza de sobra para que las cards y el
+      // hero sigan la luz de la escena sin forzar repaint en cada frame.
+      this.ambientFrameCounter++
+      if (this.ambientFrameCounter % 3 === 0) {
+        this.tmpProjectVec.copy(this.keyLight.position).project(this.camera)
+        const angleRad = Math.atan2(this.tmpProjectVec.x, this.tmpProjectVec.y)
+        const lightAngleDeg = ((angleRad * 180) / Math.PI + 360) % 360
+        webglSceneBus.publishAmbient({
+          lightAngleDeg,
+          warmth: Math.min(Math.max(0.5 + this.entityWarmth * 0.5 + this.sceneMood * 0.1, 0), 1),
+          intensity: Math.min(Math.max(this.bloomPass.strength / 1.3, 0), 1),
+          kick: this.arrivalKick,
+          intro,
+        })
+      }
     }
     this.rafId = requestAnimationFrame(loop)
   }

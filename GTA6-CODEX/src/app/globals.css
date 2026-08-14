@@ -19,6 +19,19 @@
   --transition-fast: var(--dur-fast) var(--ease-standard);
   --transition-base: var(--dur-base) var(--ease-standard);
   --transition-slow: var(--dur-slow) var(--ease-standard);
+
+  /* --- Puente motor WebGL → DOM (ver SceneAmbientBridge) ---
+     El motor Three.js escribe estos valores en cada frame (throttled).
+     Son el mismo ángulo de luz, temperatura y "kick" de llegada que ve la
+     escena 3D — las superficies DOM (cards, hero) los leen para sentirse
+     iluminadas por la MISMA luz, no por un brillo CSS estático aparte.
+     Los valores acá son el fallback antes de que el motor monte (SSR / JS
+     desactivado / primer frame). */
+  --scene-light-angle: 135deg;
+  --scene-warmth: 0.5;
+  --scene-intensity: 0.55;
+  --scene-kick: 0;
+  --scene-intro: 1;
 }
 
 @media (max-width: 640px) {
@@ -269,20 +282,46 @@ a:hover .logo-mark {
   }
 
   .card-animated,
+  .card-animated::before,
   .link-underline::after {
     transition: none !important;
   }
 }
 
-/* --- Cards: elevación sutil, sin brillos ni bordes en gradiente --- */
+/* --- Cards: elevación sutil + borde iluminado por la MISMA luz que la
+   escena 3D (ver --scene-* arriba). No es un brillo decorativo fijo: el
+   ángulo, la temperatura y el pulso de llegada vienen del motor WebGL en
+   tiempo real, así la card se siente parte de la misma escena en vez de
+   flotar sobre un fondo animado. --- */
 .card-animated {
+  position: relative;
   transition: transform 250ms var(--ease-standard), border-color var(--transition-base),
     box-shadow var(--transition-base);
 }
 
+.card-animated::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    var(--scene-light-angle),
+    color-mix(in srgb, #ff8a3a calc(var(--scene-warmth) * 100%), #22c55e calc((1 - var(--scene-warmth)) * 100%)) 0%,
+    transparent 42%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: calc(0.14 + var(--scene-intensity) * 0.16 + var(--scene-kick) * 0.4);
+  pointer-events: none;
+  transition: opacity 500ms ease;
+}
+
 .card-animated:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.6),
+    0 0 32px -18px color-mix(in srgb, #ff8a3a calc(var(--scene-warmth) * 70%), #22c55e calc((1 - var(--scene-warmth)) * 70%));
 }
 
 /* --- Contador numérico: leve "tick" al actualizar --- */
@@ -355,6 +394,12 @@ a:hover .logo-mark {
   font-size: 0.75rem;
   color: #a3a3a0;
   backdrop-filter: blur(4px);
+  /* Primer elemento que ve el usuario: entra en escena junto con la
+     coreografía de apertura del motor WebGL (--scene-intro), no antes. */
+  opacity: var(--scene-intro);
+  box-shadow: 0 0 24px -12px
+    color-mix(in srgb, #ff8a3a calc(var(--scene-warmth) * 60%), #22c55e calc((1 - var(--scene-warmth)) * 60%));
+  transition: box-shadow 600ms ease, opacity 600ms ease;
 }
 
 .hero-pill-dot {
