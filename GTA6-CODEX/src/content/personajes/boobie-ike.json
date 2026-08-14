@@ -25,12 +25,17 @@
       "targetType": "negocios",
       "targetSlug": "only-raw-records",
       "relation": "invests_in"
+    },
+    {
+      "targetType": "negocios",
+      "targetSlug": "jack-of-hearts",
+      "relation": "owns"
     }
   ],
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, bio oficial en el sitio de GTA VI (Trailer 2, 6 mayo 2025)",
     "secondarySource": "GTA Wiki (Fandom) y gtaintel, que citan la bio oficial completa de Rockstar sobre su imperio (inmobiliaria, club Jack of Hearts, estudio de grabacion)",
-    "note": "Auditoria total (13 ago 2026): CORRECCION. La relacion 'owns' hacia only-raw-records sobre-representaba su rol: multiples fuentes que citan la bio oficial de Rockstar describen la relacion con Only Raw Records como sociedad/inversion junto a Dre'Quan Priest (quien la dirige), no propiedad exclusiva de Boobie. Se cambia la relacion a 'invests_in'. Backfill retroactivo de evidence. AUDITORIA FORENSE DE PERSONAJES (13 ago 2026): mejora de completitud. El nombre confirmado del club de striptease ('Jack of Hearts', citado literalmente en la bio oficial de Rockstar: 'It's all about heart – the Jack of Hearts') ya figuraba en evidence.secondarySource pero no en description/content, que solo decian 'club de striptease' de forma generica. Se agrega el nombre al texto visible, sin cambiar el nivel de evidencia ni agregar informacion nueva no verificada."
+    "note": "Auditoria total (13 ago 2026): CORRECCION. La relacion 'owns' hacia only-raw-records sobre-representaba su rol: multiples fuentes que citan la bio oficial de Rockstar describen la relacion con Only Raw Records como sociedad/inversion junto a Dre'Quan Priest (quien la dirige), no propiedad exclusiva de Boobie. Se cambia la relacion a 'invests_in'. Backfill retroactivo de evidence. AUDITORIA FORENSE DE PERSONAJES (13 ago 2026): mejora de completitud. El nombre confirmado del club de striptease ('Jack of Hearts', citado literalmente en la bio oficial de Rockstar: 'It's all about heart – the Jack of Hearts') ya figuraba en evidence.secondarySource pero no en description/content, que solo decian 'club de striptease' de forma generica. Se agrega el nombre al texto visible, sin cambiar el nivel de evidencia ni agregar informacion nueva no verificada. DESCUBRIMIENTO (13 ago 2026, ronda de expansion masiva): se crea la entidad negocios/jack-of-hearts.json (antes solo mencionada en texto) y se agrega la relacion 'owns' correspondiente, distinta de 'invests_in' porque las fuentes describen propiedad/operacion directa del club por parte de Boobie, sin socios mencionados para este negocio especifico."
   }
 }
