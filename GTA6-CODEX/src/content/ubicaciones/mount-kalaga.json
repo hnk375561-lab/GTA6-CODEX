@@ -18,11 +18,17 @@
   "points_of_interest": [],
   "missions": [],
   "businesses": [],
-  "relations": [],
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "leonida",
+      "relation": "located_in"
+    }
+  ],
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, sitio oficial de GTA VI, seccion propia de Mount Kalaga National Park (revelada junto al Trailer 2, 6 mayo 2025)",
     "secondarySource": "Sportskeeda, que confirma que Mount Kalaga National Park figura entre las regiones nombradas oficialmente en el sitio de Rockstar",
-    "note": "Auditoria total (13 ago 2026): nombre de parque nacional confirmado oficialmente, con seccion propia en el sitio de Rockstar. Backfill retroactivo de evidence."
+    "note": "Auditoria total (13 ago 2026): nombre de parque nacional confirmado oficialmente, con seccion propia en el sitio de Rockstar. Backfill retroactivo de evidence. FASE D — auditoria adversarial (13 ago 2026): se agrego relations.located_in->leonida. El campo 'region: Leonida' ya existia como texto libre pero faltaba la relacion formal en el grafo; se corrige junto con la creacion de la entidad Leonida."
   }
 }

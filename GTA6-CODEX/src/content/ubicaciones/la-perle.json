@@ -1,0 +1,35 @@
+{
+  "slug": "la-perle",
+  "type": "ubicaciones",
+  "title": "La Perle",
+  "description": "Barrio de Vice City de mayoria haitiana, inspirado en Little Haiti (Miami). Su nombre quedo confirmado directamente por un mural visible en el Trailer 2, que lo muestra escrito en la parte superior de la pintura.",
+  "content": "La Perle es un barrio de Vice City de fuerte identidad haitiana y caribena, inspirado en el vecindario real de Little Haiti en Miami. Aparecio por primera vez en las filtraciones de 2022 en una escena donde Jason Duval entraba sin autorizacion a un taller mecanico de la zona.\n\nSu nombre quedo confirmado directamente por Rockstar en el Trailer 2 oficial de GTA VI: en una escena donde Jason conduce frente a un mural de tematica haitiana sobre un almacen abandonado, el nombre 'La Perle' aparece escrito en la parte superior de la propia pintura, dentro del material oficial. Una cartelera visible en el mismo trailer menciona ademas dos puntos de interes del barrio: el La Perle Caribbean Market y el Haitian-American Cultural Center.",
+  "status": "confirmado",
+  "tags": ["distrito", "vice-city", "comunidad-haitiana"],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "district": "La Perle",
+  "region": "Leonida",
+  "points_of_interest": ["La Perle Caribbean Market", "Haitian-American Cultural Center"],
+  "missions": [],
+  "businesses": [],
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "appears_with"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, Trailer 2 de GTA VI (nombre 'La Perle' visible en la parte superior de un mural durante una escena con Jason Duval)",
+    "secondarySource": "GTA Wiki (Fandom), que documenta la escena exacta del trailer y la cartelera con los dos puntos de interes mencionados",
+    "note": "FASE D (13 ago 2026): nombre confirmado por texto en pantalla dentro del propio trailer oficial (mural), tier mas fuerte que interpretacion de comunidad. Los puntos de interes (La Perle Caribbean Market, Haitian-American Cultural Center) provienen de una cartelera visible en el mismo trailer, no de fuente secundaria. La relacion appears_with->jason-duval documenta unicamente que la escena que confirma el nombre lo muestra a el conduciendo por la zona, no una relacion narrativa del personaje con el barrio."
+  }
+}

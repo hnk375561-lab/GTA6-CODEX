@@ -5,7 +5,12 @@
   "description": "Ciudad principal de GTA 6, ubicada en el estado ficticio de Leonida. Inspirada en Miami, es el corazón urbano del juego.",
   "content": "Vice City es la metrópolis central de GTA 6, ambientada en el estado ficticio de Leonida, con fuerte inspiración en Miami. Combina playas, vida nocturna, rascacielos y una intensa cultura automotriz y criminal.\n\nLa ciudad está compuesta por múltiples distritos con identidad propia, desde zonas turísticas y costeras hasta barrios más industriales o marginales. Esta variedad de ambientes busca ofrecer una experiencia de mundo abierto rica en contrastes sociales y visuales.\n\nVice City ya fue el escenario de Grand Theft Auto: Vice City (2002), por lo que su regreso en GTA 6 representa tanto una expansión tecnológica de la ciudad clásica como un guiño nostálgico para los fans de la saga.",
   "status": "confirmado",
-  "tags": ["ciudad-principal", "leonida", "miami", "trailer"],
+  "tags": [
+    "ciudad-principal",
+    "leonida",
+    "miami",
+    "trailer"
+  ],
   "featured": true,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -13,11 +18,17 @@
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, Trailer 1 y 2, sitio oficial de GTA VI y comunicados de Newswire (nombre de la ciudad y del estado de Leonida confirmados repetidamente)",
     "secondarySource": "Cobertura generalizada (ESPN, GosuGamers, GTA Boom) que corrobora la ambientación en Vice City/Leonida como escenario central",
-    "note": "Auditoría total (13 ago 2026): nombre y rol de ciudad principal son de los datos más solidamente confirmados de todo el proyecto (aparece explícitamente en ambos trailers y en todo el material oficial). Backfill retroactivo del campo evidence, ausente hasta ahora en toda la categoría ubicaciones."
+    "note": "Auditoría total (13 ago 2026): nombre y rol de ciudad principal son de los datos más solidamente confirmados de todo el proyecto (aparece explícitamente en ambos trailers y en todo el material oficial). Backfill retroactivo del campo evidence, ausente hasta ahora en toda la categoría ubicaciones. FASE D — auditoria adversarial (13 ago 2026): se agrego relations.located_in->leonida. El campo 'region: Leonida' ya existia como texto libre pero faltaba la relacion formal en el grafo; se corrige junto con la creacion de la entidad Leonida."
   },
   "region": "Leonida",
   "points_of_interest": [],
   "missions": [],
   "businesses": [],
-  "relations": []
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "leonida",
+      "relation": "located_in"
+    }
+  ]
 }
