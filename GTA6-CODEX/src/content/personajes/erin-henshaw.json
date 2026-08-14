@@ -1,0 +1,31 @@
+{
+  "slug": "erin-henshaw",
+  "type": "personajes",
+  "title": "Erin Henshaw",
+  "description": "Candidata a la alcaldía de Ambrosia, Leonida. Su campaña, visible en carteles de jardín durante el Trailer 1, respalda a Allied Crystal, la empresa que opera el ingenio azucarero de la ciudad.",
+  "content": "Erin Henshaw es una candidata a la alcaldía de Ambrosia que aparece confirmada visualmente en el Trailer 1 de GTA VI a través de carteles de campaña ('Henshaw for Mayor') visibles al costado del camino en las escenas rurales de Leonida.\n\nSu campaña está explícitamente vinculada a Allied Crystal, la compañía que opera el ingenio azucarero local, lo que sugiere una trama de sátira política sobre la influencia corporativa en la política municipal de Leonida, un tema recurrente en la serie GTA.",
+  "status": "confirmado",
+  "tags": [
+    "secundario",
+    "confirmado-rockstar",
+    "politica",
+    "ambrosia"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-13T00:00:00Z",
+  "faction": null,
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "ambrosia",
+      "relation": "located_in"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games, Trailer 1 de GTA VI (carteles de campana 'Henshaw for Mayor' visibles en escenas de Ambrosia)",
+    "secondarySource": "GTA Wiki (Fandom) y GTA Intel, que documentan el cartel de campana y su vinculo con Allied Crystal",
+    "note": "Fase C (13 ago 2026): nombre y rol politico confirmados por texto visible en pantalla durante el Trailer 1 oficial. Evidencia visual directa, no especulacion de leaks."
+  }
+}
