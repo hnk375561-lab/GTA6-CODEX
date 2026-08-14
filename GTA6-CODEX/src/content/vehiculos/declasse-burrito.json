@@ -31,13 +31,7 @@
     "level": "oficial-visual",
     "primarySource": "Rockstar Games, trailers oficiales de GTA VI (Trailer 1 y/o Trailer 2)",
     "secondarySource": "GTABase, GTA Wiki (Fandom), múltiples DBs independientes documentan el vehículo",
-    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Declasse."
+    "note": "Identificación visual en trailers. Incorporación FASE B (13 ago 2026): completitud de línea Declasse. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada ('trailers oficiales... Trailer 1 y/o Trailer 2') no especifica en que escena ni region aparece el vehiculo; el valor del campo 'locations' es una asignacion por defecto/tematica (no verificada escena por escena) y se conserva solo como metadato aproximado, no como afirmacion demostrada del grafo."
   },
-  "relations": [
-    {
-      "targetType": "ubicaciones",
-      "targetSlug": "vice-city",
-      "relation": "located_in"
-    }
-  ]
+  "relations": []
 }

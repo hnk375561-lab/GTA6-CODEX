@@ -32,14 +32,9 @@
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games / Take-Two, anuncio oficial de pre-orders y Vintage Vice City Pack de GTA 6 (25 de junio de 2026)",
     "secondarySource": "GTA Base (listado de vehículos, categoría Pre-Order); Video Games Chronicle (VGC), que reproduce el texto oficial completo de Rockstar sobre el contenido de la Ultimate Edition / Vintage Vice City Pack",
-    "note": "Nombre confirmado por Rockstar como parte del bono de reserva universal, distinto de los vehículos exclusivos de la Ultimate Edition. Auditoría de completitud del Vintage Vice City Pack (13 ago 2026, Bloque B4): corroborado contra el texto oficial de Rockstar citado íntegramente por VGC y por dotesports.com/gtabase.com, que coinciden en que el '55 Vapid Stanier y el garage 'Shore Court' junto a Ocean Beach son el único vehículo incluido en este pack. No se encontraron vehículos adicionales del Vintage Vice City Pack sin documentar."
+    "note": "Nombre confirmado por Rockstar como parte del bono de reserva universal, distinto de los vehículos exclusivos de la Ultimate Edition. Auditoría de completitud del Vintage Vice City Pack (13 ago 2026, Bloque B4): corroborado contra el texto oficial de Rockstar citado íntegramente por VGC y por dotesports.com/gtabase.com, que coinciden en que el '55 Vapid Stanier y el garage 'Shore Court' junto a Ocean Beach son el único vehículo incluido en este pack. No se encontraron vehículos adicionales del Vintage Vice City Pack sin documentar. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada no describe una escena o region especifica; el campo 'locations' se conserva como metadato aproximado, no como afirmacion demostrada del grafo."
   },
   "relations": [
-    {
-      "targetType": "ubicaciones",
-      "targetSlug": "vice-city",
-      "relation": "located_in"
-    },
     {
       "targetType": "vehiculos",
       "targetSlug": "vapid-stanier-le",

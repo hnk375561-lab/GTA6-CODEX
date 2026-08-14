@@ -20,11 +20,11 @@
     "handling": "Alta",
     "braking": "Baja"
   },
-  "relations": [
-    {
-      "targetType": "ubicaciones",
-      "targetSlug": "vice-city",
-      "relation": "located_in"
-    }
-  ]
+  "relations": [],
+  "evidence": {
+    "level": "no-confirmado",
+    "primarySource": "N/A",
+    "secondarySource": "N/A",
+    "note": "AUDITORIA SEMANTICA located_in (13 ago 2026): ficha preexistente con status 'nuestro' (contenido especulativo, el propio texto dice 'posible regreso en GTA 6') pero sin bloque evidence y con una relacion located_in formal en el grafo, contradictorio con su propio status especulativo. Se agrega evidence.level='no-confirmado' explicito y se retira la relacion located_in: un vehiculo no confirmado no puede tener un edge de ubicacion confirmado."
+  }
 }

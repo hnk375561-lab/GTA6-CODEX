@@ -33,18 +33,13 @@
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games / Take-Two, anuncio oficial de la Ultimate Edition de GTA 6 (25 de junio de 2026)",
     "secondarySource": "gamingpromax, vgtimes citando el comunicado oficial; Video Games Chronicle (VGC), que reproduce el texto oficial completo de Rockstar sobre el contenido de la Ultimate Edition / Vintage Vice City Pack",
-    "note": "Nombre y propósito ('explorar las vías fluviales de Leonida') confirmados en el texto oficial de Rockstar. Auditoría de completitud UE (13 ago 2026, Bloque B4): corroborado contra el texto oficial de Rockstar citado íntegramente por VGC, agrupado junto al Dinka Enduro bajo 'Jason's Safehouse Vehicles'."
+    "note": "Nombre y propósito ('explorar las vías fluviales de Leonida') confirmados en el texto oficial de Rockstar. Auditoría de completitud UE (13 ago 2026, Bloque B4): corroborado contra el texto oficial de Rockstar citado íntegramente por VGC, agrupado junto al Dinka Enduro bajo 'Jason's Safehouse Vehicles'. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada no describe una escena o region especifica (trailer generico o anuncio de Ultimate Edition sin contexto geografico); el campo 'locations' se conserva como metadato aproximado, no como afirmacion demostrada del grafo."
   },
   "relations": [
     {
       "targetType": "personajes",
       "targetSlug": "jason-duval",
       "relation": "conducts"
-    },
-    {
-      "targetType": "ubicaciones",
-      "targetSlug": "grassrivers",
-      "relation": "located_in"
     }
   ]
 }

@@ -5,14 +5,22 @@
   "description": "Moto todoterreno casi idéntica a la Sanchez, identificada en una única captura oficial, con la imagen parcialmente cubierta de barro.",
   "content": "En una captura oficial de GTA 6 aparece una motocicleta todoterreno que PC Gamer identificó como una Maibatsu Manchez, prácticamente idéntica a la Sanchez pero distinguible de frente por la óptica y el manillar, y por carecer del guardabarros delantero característico de la Sanchez.\n\nLa imagen en la que se basa esta identificación está parcialmente cubierta de barro, lo que PC Gamer señala explícitamente como una limitante para la observación de detalles.\n\nRockstar no ha confirmado oficialmente el nombre de esta motocicleta para GTA VI; la identificación se apoya en una única fuente especializada y en una imagen con visibilidad reducida.",
   "status": "confirmado",
-  "tags": ["moto", "todoterreno", "captura-oficial", "maibatsu", "identificacion-visual"],
+  "tags": [
+    "moto",
+    "todoterreno",
+    "captura-oficial",
+    "maibatsu",
+    "identificacion-visual"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
   "manufacturer": "Maibatsu",
   "class": "moto-todoterreno",
   "driven_by": [],
-  "locations": ["vice-city"],
+  "locations": [
+    "vice-city"
+  ],
   "customizable": true,
   "performance": {
     "speed": "Media",
@@ -24,18 +32,13 @@
     "level": "respaldado",
     "primarySource": "Rockstar Games, captura oficial de GTA VI (fuente única disponible hasta el momento)",
     "secondarySource": "PC Gamer, cobertura de identificación de vehículos de los trailers y capturas de GTA VI",
-    "note": "Existencia confirmada en material oficial, pero basada en una sola captura con visibilidad reducida (barro cubriendo parte del vehículo) y una única fuente especializada. Es el candidato de menor certeza dentro de este bloque; se documenta con nivel 'respaldado' y se recomienda revisarlo si aparece material adicional más claro."
+    "note": "Existencia confirmada en material oficial, pero basada en una sola captura con visibilidad reducida (barro cubriendo parte del vehículo) y una única fuente especializada. Es el candidato de menor certeza dentro de este bloque; se documenta con nivel 'respaldado' y se recomienda revisarlo si aparece material adicional más claro. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada no describe una escena o region especifica (trailer generico o anuncio de Ultimate Edition sin contexto geografico); el campo 'locations' se conserva como metadato aproximado, no como afirmacion demostrada del grafo."
   },
   "relations": [
     {
       "targetType": "vehiculos",
       "targetSlug": "maibatsu-sanchez",
       "relation": "related_line"
-    },
-    {
-      "targetType": "ubicaciones",
-      "targetSlug": "vice-city",
-      "relation": "located_in"
     }
   ]
 }

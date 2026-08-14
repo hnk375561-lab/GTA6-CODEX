@@ -5,14 +5,22 @@
   "description": "Motocicleta deportiva identificada en el trailer de presentación, con una combinación de colores rojo y blanco y un escape aparentemente modificado.",
   "content": "En el trailer de presentación de GTA 6 aparece una motocicleta deportiva con una combinación de colores rojo y blanco y lo que parece ser un escape modificado, identificada por PC Gamer como la Nagasaki Carbon RS, moto que en GTA V fue originalmente exclusiva de la Collector's Edition y luego quedó disponible en GTA Online a través de Legendary Motorsport.\n\nRockstar no ha confirmado oficialmente el nombre de esta motocicleta para GTA VI; la identificación se apoya en la comparación visual con el modelo homónimo de la saga.",
   "status": "confirmado",
-  "tags": ["moto", "moto-deportiva", "trailer-1", "nagasaki", "identificacion-visual"],
+  "tags": [
+    "moto",
+    "moto-deportiva",
+    "trailer-1",
+    "nagasaki",
+    "identificacion-visual"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
   "manufacturer": "Nagasaki",
   "class": "moto-deportiva",
   "driven_by": [],
-  "locations": ["vice-city"],
+  "locations": [
+    "vice-city"
+  ],
   "customizable": true,
   "performance": {
     "speed": "Alta",
@@ -24,13 +32,7 @@
     "level": "respaldado",
     "primarySource": "Rockstar Games, trailer de presentación de GTA VI (diciembre de 2023)",
     "secondarySource": "PC Gamer, cobertura de identificación de vehículos de los trailers de GTA VI",
-    "note": "Existencia confirmada en material oficial; identificación basada en una única fuente especializada consultada hasta el momento, por lo que se documenta con nivel 'respaldado' en lugar de 'oficial-visual'."
+    "note": "Existencia confirmada en material oficial; identificación basada en una única fuente especializada consultada hasta el momento, por lo que se documenta con nivel 'respaldado' en lugar de 'oficial-visual'. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada no describe una escena o region especifica (trailer generico o anuncio de Ultimate Edition sin contexto geografico); el campo 'locations' se conserva como metadato aproximado, no como afirmacion demostrada del grafo."
   },
-  "relations": [
-    {
-      "targetType": "ubicaciones",
-      "targetSlug": "vice-city",
-      "relation": "located_in"
-    }
-  ]
+  "relations": []
 }

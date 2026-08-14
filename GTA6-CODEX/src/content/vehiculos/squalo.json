@@ -31,13 +31,7 @@
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games / Take-Two, anuncio oficial de la Ultimate Edition de GTA 6 (25 de junio de 2026)",
     "secondarySource": "Grand Theft Auto 6 Pre-Order Guide (gamingpromax), vgtimes, citando el comunicado oficial; Video Games Chronicle (VGC), que reproduce el texto oficial completo de Rockstar sobre el contenido de la Ultimate Edition / Vintage Vice City Pack",
-    "note": "Corrección de canon (13 ago 2026): el fabricante figuraba incorrectamente como 'Speeder'; el nombre oficial confirmado por Rockstar es Shitzu Squalo. Se actualiza el status de 'nuestro' a 'confirmado' con evidencia de la Ultimate Edition. Auditoría de completitud UE (13 ago 2026, Bloque B4): corroborado contra el texto oficial de Rockstar citado íntegramente por VGC, que especifica librea 'degradado rosa y azul', amarre en Washington Beach y equipamiento de caja de armas para uso en mar abierto — detalles no documentados previamente en esta ficha."
+    "note": "Corrección de canon (13 ago 2026): el fabricante figuraba incorrectamente como 'Speeder'; el nombre oficial confirmado por Rockstar es Shitzu Squalo. Se actualiza el status de 'nuestro' a 'confirmado' con evidencia de la Ultimate Edition. Auditoría de completitud UE (13 ago 2026, Bloque B4): corroborado contra el texto oficial de Rockstar citado íntegramente por VGC, que especifica librea 'degradado rosa y azul', amarre en Washington Beach y equipamiento de caja de armas para uso en mar abierto — detalles no documentados previamente en esta ficha. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada no describe una escena o region especifica; el campo 'locations' se conserva como metadato aproximado, no como afirmacion demostrada del grafo."
   },
-  "relations": [
-    {
-      "targetType": "ubicaciones",
-      "targetSlug": "vice-city",
-      "relation": "located_in"
-    }
-  ]
+  "relations": []
 }

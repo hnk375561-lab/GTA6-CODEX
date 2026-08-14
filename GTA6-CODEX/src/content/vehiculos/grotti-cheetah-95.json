@@ -31,13 +31,7 @@
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games / Take-Two, anuncio oficial de la Ultimate Edition de GTA 6 (25 de junio de 2026)",
     "secondarySource": "Cobertura de prensa especializada (AltChar, Top Gear, GTA Intel, RockstarINTEL) citando el comunicado oficial; Video Games Chronicle (VGC), que reproduce el texto oficial completo de Rockstar sobre el contenido de la Ultimate Edition / Vintage Vice City Pack",
-    "note": "Nombre e inclusión confirmados directamente por Rockstar como bonus de la Ultimate Edition, no es una identificación visual inferida. Auditoría de completitud UE (13 ago 2026, Bloque B4): corroborado además contra el texto oficial de Rockstar citado íntegramente por Video Games Chronicle (VGC), que reproduce la descripción exacta del vehículo tal como aparece en la Ultimate Edition. No se encontraron vehículos adicionales de Ultimate Edition sin documentar; los 6 vehículos oficiales de la UE ya están en el catálogo."
+    "note": "Nombre e inclusión confirmados directamente por Rockstar como bonus de la Ultimate Edition, no es una identificación visual inferida. Auditoría de completitud UE (13 ago 2026, Bloque B4): corroborado además contra el texto oficial de Rockstar citado íntegramente por Video Games Chronicle (VGC), que reproduce la descripción exacta del vehículo tal como aparece en la Ultimate Edition. No se encontraron vehículos adicionales de Ultimate Edition sin documentar; los 6 vehículos oficiales de la UE ya están en el catálogo. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada no describe una escena o region especifica (trailer generico o anuncio de Ultimate Edition sin contexto geografico); el campo 'locations' se conserva como metadato aproximado, no como afirmacion demostrada del grafo."
   },
-  "relations": [
-    {
-      "targetType": "ubicaciones",
-      "targetSlug": "vice-city",
-      "relation": "located_in"
-    }
-  ]
+  "relations": []
 }
