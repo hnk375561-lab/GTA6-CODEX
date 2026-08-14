@@ -8,7 +8,6 @@ import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd 
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
-import { AnimatedText } from '@/components/ui/AnimatedText'
 import { EvidenceBlock } from '@/components/entities/EvidenceBlock'
 import { EntityMetadata } from '@/components/entities/EntityMetadata'
 import { RelationsPanel } from '@/components/entities/RelationsPanel'
@@ -17,7 +16,6 @@ import { EntitySectionHeading } from '@/components/entities/EntitySectionHeading
 import { EntityImage } from '@/components/entities/EntityImage'
 import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
 import { MagicCard } from '@/components/ui/MagicCard'
-import { ShineBorder } from '@/components/ui/ShineBorder'
 
 interface PageProps {
   params: Promise<{ entityType: string; slug: string }>
@@ -142,9 +140,7 @@ export default async function EntityPage({ params }: PageProps) {
       </div>
 
       <div className="mb-3 flex flex-wrap items-center gap-3">
-        <h1 className="text-4xl font-bold text-gta-text sm:text-5xl">
-          <AnimatedText text={entity.title} mode="words" stagger={60} />
-        </h1>
+        <h1 className="text-4xl font-bold text-gta-text sm:text-5xl">{entity.title}</h1>
         <Badge variant="status" status={entity.status}>
           {statusLabel}
         </Badge>
@@ -178,13 +174,12 @@ export default async function EntityPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
-      {/* Header — todo ficha es "el hero de su propia ficha" (Nivel 3 del
-          sistema de motion), así que el fondo cinematográfico por categoría
-          y el MagicCard con glow ambiental aplican siempre. Las entidades
-          "featured" (contenido seleccionado editorialmente, no una medida
-          de importancia visual) suman únicamente un glow algo más presente
-          y el ShineBorder en la card de contenido — un acento extra, no un
-          interruptor de "modo premium". */}
+      {/* Header — el fondo ambiental por categoría (EntityHeaderBackground) se
+          mantiene siempre: es identidad visual de bajo costo (CSS/SVG, sin JS).
+          El orb interactivo que sigue al cursor (MagicCard) queda reservado a
+          entidades `featured`, que es exactamente lo que el comentario del
+          componente ya decía pero el código no respetaba — el resto usa un
+          contenedor estático, sin efecto de seguimiento de puntero. */}
       <section className="relative overflow-hidden border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-10 sm:py-14">
         <EntityHeaderBackground type={type} />
         <div className="container-max relative">
@@ -196,17 +191,23 @@ export default async function EntityPage({ params }: PageProps) {
             className="pointer-events-none absolute -bottom-1 -right-1 hidden h-5 w-5 border-b border-r border-gta-accent-orange/20 sm:block"
             aria-hidden="true"
           />
-          <MagicCard
-            mode="orb"
-            glowFrom="#ff6600"
-            glowTo="#00d000"
-            glowSize={entity.featured ? 380 : 320}
-            glowBlur={90}
-            glowOpacity={entity.featured ? 0.35 : 0.22}
-            className="p-6 sm:p-8"
-          >
-            {headerContent}
-          </MagicCard>
+          {entity.featured ? (
+            <MagicCard
+              mode="orb"
+              glowFrom="#ff6600"
+              glowTo="#22c55e"
+              glowSize={340}
+              glowBlur={90}
+              glowOpacity={0.25}
+              className="p-6 sm:p-8"
+            >
+              {headerContent}
+            </MagicCard>
+          ) : (
+            <div className="rounded-lg border border-gta-border bg-gta-surface/60 p-6 sm:p-8">
+              {headerContent}
+            </div>
+          )}
         </div>
       </section>
 
@@ -216,10 +217,7 @@ export default async function EntityPage({ params }: PageProps) {
           <div className="space-y-6 lg:col-span-2">
             {entity.content ? (
               <Reveal direction="left">
-                <Card className={entity.featured ? 'relative shadow-gta-sm' : 'shadow-gta-sm'}>
-                  {entity.featured && (
-                    <ShineBorder shineColor={['#00d000', '#ff6600']} borderWidth={1} duration={16} />
-                  )}
+                <Card className={entity.featured ? 'shadow-gta-sm border-gta-accent/30' : 'shadow-gta-sm'}>
                   <CardBody>
                     <div className="max-w-none">
                       {entity.content.split('\n\n').map((paragraph, i) => (

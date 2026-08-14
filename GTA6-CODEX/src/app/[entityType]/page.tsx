@@ -7,7 +7,6 @@ import { generateListMetadata } from '@/lib/seo'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
-import { AnimatedText } from '@/components/ui/AnimatedText'
 import { EntityImage } from '@/components/entities/EntityImage'
 import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
 
@@ -66,9 +65,7 @@ export default async function EntityTypePage({ params }: PageProps) {
             <span className="mx-2">/</span>
             <span className="text-gta-text">{TYPE_LABELS[type]}</span>
           </nav>
-          <h1 className="mb-2 text-4xl font-bold text-gta-text">
-            <AnimatedText text={TYPE_LABELS[type]} mode="letters" stagger={30} />
-          </h1>
+          <h1 className="mb-2 text-4xl font-bold text-gta-text">{TYPE_LABELS[type]}</h1>
           <p className="text-gta-text-secondary">
             {entities.length} {entities.length === 1 ? 'entrada documentada' : 'entradas documentadas'}
           </p>

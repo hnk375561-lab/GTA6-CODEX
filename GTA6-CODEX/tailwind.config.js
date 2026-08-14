@@ -70,21 +70,14 @@ module.exports = {
         'gta-lg': '0 10px 15px rgba(0, 0, 0, 0.7)',
         'gta-xl': '0 20px 25px rgba(0, 0, 0, 0.8)',
       },
-      animation: {
-        aurora: 'aurora 10s linear infinite',
-        marquee: 'marquee 40s linear infinite',
-        'marquee-vertical': 'marquee-vertical 40s linear infinite',
-        shine: 'shine 14s linear infinite',
-        gradient: 'gradient 3s ease-in-out infinite',
-      },
       typography: {
         DEFAULT: {
           css: {
-            color: '#e0e0e0',
+            color: '#f2f2f0',
             a: {
-              color: '#00d000',
+              color: '#22c55e',
               '&:hover': {
-                color: '#00ff00',
+                color: '#4ade80',
               },
             },
             h1: { color: '#ffffff' },
@@ -95,7 +88,7 @@ module.exports = {
             code: { color: '#ff6600' },
             pre: {
               backgroundColor: '#0a0a0a',
-              color: '#e0e0e0',
+              color: '#f2f2f0',
             },
           },
         },
