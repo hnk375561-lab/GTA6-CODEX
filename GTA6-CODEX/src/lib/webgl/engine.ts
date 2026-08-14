@@ -2,30 +2,36 @@ import * as THREE from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js'
+import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js'
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js'
+import { FXAAPass } from 'three/examples/jsm/postprocessing/FXAAPass.js'
 import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js'
 
 /**
- * GTA6CodexWebGLEngine — v2 "cinematográfico"
+ * GTA6CodexWebGLEngine — v3 "cinematográfico+"
  * ---------------------------------------------------------------------------
- * Capa gráfica WebGL de fondo. Reescrita para dejar de sentirse como un
- * "fondo de partículas" y pasar a una escena con luz, materia y composición:
+ * Segunda pasada radical sobre la capa gráfica de fondo. Todo lo de v2 se
+ * mantiene y se profundiza:
  *
- *  - Partículas animadas 100% en GPU (vertex shader, sin loops de CPU).
- *  - Cuerpos flotantes con material físico (PBR) + environment map generado
- *    en runtime (reflejos reales, sin assets externos) + rim-light shader.
- *  - Haces de luz volumétrica falsos (sprites aditivos) para profundidad.
- *  - Post-procesado: bloom cinematográfico + viñeta + grano fílmico sutil,
- *    con tonemap ACES.
- *  - Cámara coreografiada: deriva lenta autónoma + parallax de cursor +
- *    dolly de scroll, en vez de un simple "mirar al centro".
+ *  - Partículas GPU con repulsión real al cursor (warp en espacio de
+ *    pantalla, calculado 100% en el vertex shader) + brillo/tamaño reactivo.
+ *  - Cuerpos flotantes con DOS familias de material: PBR metálico (igual que
+ *    v2) y vidrio con transmisión/IOR real (refracción física, no un truco
+ *    de transparencia) — más variedad de materia en escena.
+ *  - Piso de grilla neón infinito (shader propio, sin geometría pesada) que
+ *    ancla la composición y aporta profundidad de "horizonte", independiente
+ *    de la rotación del resto de la escena.
+ *  - Post-procesado ampliado: profundidad de campo real (BokehPass, con foco
+ *    que respira con el scroll), bloom, viñeta + grano + aberración
+ *    cromática combinados en un solo pase, y FXAA final para que todo el
+ *    apilado de pases no deje bordes sucios.
+ *  - Cámara coreografiada con deriva Lissajous (no un simple seno), roll
+ *    sutil, dolly-zoom (FOV) atado al scroll, además del parallax de cursor.
  *
- * Puntos de extensión para el futuro (nuevas escenas/shaders/distorsión):
+ * Puntos de extensión:
  *  - `buildXxx()` son constructores de escena independientes.
- *  - `updaters` centraliza el loop de animación; una nueva escena solo debe
- *    empujar su propia función aquí.
- *  - `composer` ya expone el pipeline de post-procesado: un nuevo ShaderPass
- *    (distorsión, glitch, etc.) se inserta con `composer.addPass()`.
+ *  - `updaters` centraliza el loop de animación.
+ *  - `composer` expone el pipeline de post-procesado para sumar pases.
  */
 
 type Updater = (elapsed: number, delta: number) => void
@@ -36,6 +42,8 @@ const VIGNETTE_GRAIN_SHADER = {
     time: { value: 0 },
     vignetteStrength: { value: 0.55 },
     grainStrength: { value: 0.035 },
+    chromaStrength: { value: 0.0018 },
+    chromaKick: { value: 0.0 },
   },
   vertexShader: /* glsl */ `
     varying vec2 vUv;
@@ -49,6 +57,8 @@ const VIGNETTE_GRAIN_SHADER = {
     uniform float time;
     uniform float vignetteStrength;
     uniform float grainStrength;
+    uniform float chromaStrength;
+    uniform float chromaKick;
     varying vec2 vUv;
 
     float noise(vec2 co) {
@@ -56,28 +66,38 @@ const VIGNETTE_GRAIN_SHADER = {
     }
 
     void main() {
-      vec4 color = texture2D(tDiffuse, vUv);
-
       vec2 centered = vUv - 0.5;
+      float radial = length(centered);
+
+      float aberration = chromaStrength + chromaKick;
+      vec2 dir = centered * aberration;
+      float r = texture2D(tDiffuse, vUv + dir).r;
+      float g = texture2D(tDiffuse, vUv).g;
+      float b = texture2D(tDiffuse, vUv - dir).b;
+      vec4 color = vec4(r, g, b, 1.0);
+
       float vignette = 1.0 - dot(centered, centered) * vignetteStrength;
       color.rgb *= vignette;
 
-      float g = (noise(vUv * vec2(1920.0, 1080.0) + time) - 0.5) * grainStrength;
-      color.rgb += g;
+      float gr = (noise(vUv * vec2(1920.0, 1080.0) + time) - 0.5) * grainStrength;
+      color.rgb += gr;
 
       gl_FragColor = color;
     }
   `,
 }
 
-/** Vertex shader: mueve cada partícula en GPU con ruido orgánico por semilla. */
+/** Vertex shader: mueve cada partícula en GPU con ruido orgánico + repulsión de cursor en espacio de pantalla. */
 const PARTICLE_VERTEX_SHADER = /* glsl */ `
   attribute vec3 seed;
   attribute float aSize;
   uniform float time;
   uniform float scrollProgress;
+  uniform vec2 mouseNDC;
+  uniform float mouseStrength;
   varying vec3 vColor;
   varying float vFade;
+  varying float vGlow;
 
   void main() {
     vColor = color;
@@ -95,20 +115,70 @@ const PARTICLE_VERTEX_SHADER = /* glsl */ `
     float dist = -mvPosition.z;
     vFade = smoothstep(48.0, 6.0, dist);
 
-    gl_PointSize = aSize * (220.0 / dist) * (1.0 + scrollProgress * 0.4);
-    gl_Position = projectionMatrix * mvPosition;
+    vec4 clip = projectionMatrix * mvPosition;
+    vec2 ndc = clip.xy / max(clip.w, 0.0001);
+    vec2 toMouse = ndc - mouseNDC;
+    float mouseDist = length(toMouse);
+    float push = smoothstep(0.32, 0.0, mouseDist) * mouseStrength;
+    vec2 pushDir = toMouse / max(mouseDist, 0.0001);
+    ndc += pushDir * push * 0.06;
+    clip.xy = ndc * clip.w;
+    vGlow = push;
+
+    gl_PointSize = aSize * (220.0 / dist) * (1.0 + scrollProgress * 0.4) * (1.0 + vGlow * 1.6);
+    gl_Position = clip;
   }
 `
 
 const PARTICLE_FRAGMENT_SHADER = /* glsl */ `
   varying vec3 vColor;
   varying float vFade;
+  varying float vGlow;
 
   void main() {
     vec2 uv = gl_PointCoord - 0.5;
     float d = length(uv);
     float alpha = smoothstep(0.5, 0.0, d) * vFade;
-    gl_FragColor = vec4(vColor, alpha * 0.85);
+    vec3 hot = mix(vColor, vec3(1.0), vGlow * 0.6);
+    gl_FragColor = vec4(hot, alpha * (0.85 + vGlow * 0.5));
+  }
+`
+
+/** Piso de grilla neón: horizonte infinito falso, sin geometría pesada. */
+const GRID_VERTEX_SHADER = /* glsl */ `
+  varying vec3 vWorldPos;
+  void main() {
+    vec4 worldPos = modelMatrix * vec4(position, 1.0);
+    vWorldPos = worldPos.xyz;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+`
+
+const GRID_FRAGMENT_SHADER = /* glsl */ `
+  uniform float time;
+  uniform vec3 colorA;
+  uniform vec3 colorB;
+  uniform float scrollProgress;
+  varying vec3 vWorldPos;
+
+  float gridLine(vec2 coord, float cell) {
+    vec2 g = abs(fract(coord / cell - 0.5) - 0.5) / fwidth(coord / cell);
+    return 1.0 - min(min(g.x, g.y), 1.0);
+  }
+
+  void main() {
+    float dist = length(vWorldPos.xz);
+    float radialFade = smoothstep(95.0, 8.0, dist);
+    if (radialFade <= 0.001) discard;
+
+    float line = gridLine(vWorldPos.xz, 3.0);
+    float pulse = 0.5 + 0.5 * sin(time * 0.25 + dist * 0.06);
+    vec3 tint = mix(colorA, colorB, pulse * 0.5 + scrollProgress * 0.3);
+
+    vec3 color = tint * line;
+    float alpha = line * radialFade * 0.55;
+
+    gl_FragColor = vec4(color, alpha);
   }
 `
 
@@ -120,14 +190,25 @@ export class GTA6CodexWebGLEngine {
   private group: THREE.Group
   private composer: EffectComposer
   private bloomPass: UnrealBloomPass
+  private bokehPass: BokehPass
   private grainPass: ShaderPass
+  private fxaaPass: FXAAPass
 
   private pointer = { x: 0, y: 0 }
   private pointerTarget = { x: 0, y: 0 }
+  private pointerVelocity = 0
   private scrollProgress = 0
   private scrollTarget = 0
+  private scrollVelocity = 0
 
-  private particleUniforms: { time: { value: number }; scrollProgress: { value: number } }
+  private particleUniforms: {
+    time: { value: number }
+    scrollProgress: { value: number }
+    mouseNDC: { value: THREE.Vector2 }
+    mouseStrength: { value: number }
+  }
+
+  private readonly baseFov = 42
 
   private updaters: Updater[] = []
   private rafId: number | null = null
@@ -153,17 +234,23 @@ export class GTA6CodexWebGLEngine {
     this.scene = new THREE.Scene()
     this.scene.fog = new THREE.FogExp2(0x0f0f0f, 0.032)
 
-    this.camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100)
+    this.camera = new THREE.PerspectiveCamera(this.baseFov, 1, 0.1, 100)
     this.camera.position.set(0, 0, 26)
 
     this.clock = new THREE.Clock()
     this.group = new THREE.Group()
     this.scene.add(this.group)
 
-    this.particleUniforms = { time: { value: 0 }, scrollProgress: { value: 0 } }
+    this.particleUniforms = {
+      time: { value: 0 },
+      scrollProgress: { value: 0 },
+      mouseNDC: { value: new THREE.Vector2(2, 2) },
+      mouseStrength: { value: this.reducedMotion ? 0 : 1 },
+    }
 
     this.setupEnvironment()
     this.setupLights()
+    this.buildGridFloor()
     this.buildParticleField()
     this.buildFloatingBodies()
     this.buildLightShafts()
@@ -171,11 +258,21 @@ export class GTA6CodexWebGLEngine {
     this.composer = new EffectComposer(this.renderer)
     this.composer.addPass(new RenderPass(this.scene, this.camera))
 
+    this.bokehPass = new BokehPass(this.scene, this.camera, {
+      focus: 22,
+      aperture: 0.0018,
+      maxblur: 0.008,
+    })
+    this.composer.addPass(this.bokehPass)
+
     this.bloomPass = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.85, 0.55, 0.15)
     this.composer.addPass(this.bloomPass)
 
     this.grainPass = new ShaderPass(VIGNETTE_GRAIN_SHADER)
     this.composer.addPass(this.grainPass)
+
+    this.fxaaPass = new FXAAPass()
+    this.composer.addPass(this.fxaaPass)
 
     this.composer.addPass(new OutputPass())
 
@@ -260,6 +357,33 @@ export class GTA6CodexWebGLEngine {
   // Escena
   // ---------------------------------------------------------------------
 
+  private buildGridFloor() {
+    const geometry = new THREE.PlaneGeometry(220, 220, 1, 1)
+    const material = new THREE.ShaderMaterial({
+      uniforms: {
+        time: { value: 0 },
+        colorA: { value: new THREE.Color(0x22c55e) },
+        colorB: { value: new THREE.Color(0xff8a3a) },
+        scrollProgress: { value: 0 },
+      },
+      vertexShader: GRID_VERTEX_SHADER,
+      fragmentShader: GRID_FRAGMENT_SHADER,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      side: THREE.DoubleSide,
+    })
+    const floor = new THREE.Mesh(geometry, material)
+    floor.rotation.x = -Math.PI / 2
+    floor.position.y = -13
+    this.scene.add(floor)
+
+    this.updaters.push((elapsed) => {
+      material.uniforms.time.value = elapsed
+      material.uniforms.scrollProgress.value = this.scrollProgress
+    })
+  }
+
   private buildParticleField() {
     const COUNT = 900
     const positions = new Float32Array(COUNT * 3)
@@ -331,16 +455,33 @@ export class GTA6CodexWebGLEngine {
     for (let i = 0; i < BODY_COUNT; i++) {
       const geometry = geometries[i % geometries.length]
       const isGreen = i % 2 === 0
-      const material = new THREE.MeshPhysicalMaterial({
-        color: isGreen ? 0x22c55e : 0xff6600,
-        roughness: 0.22,
-        metalness: 0.85,
-        clearcoat: 0.6,
-        clearcoatRoughness: 0.25,
-        envMapIntensity: 1.4,
-        emissive: isGreen ? 0x0b3d1f : 0x3d1600,
-        emissiveIntensity: 0.35,
-      })
+      const isGlass = i % 3 === 2
+
+      const material = isGlass
+        ? new THREE.MeshPhysicalMaterial({
+            color: isGreen ? 0xbdf5d1 : 0xffd9b3,
+            roughness: 0.05,
+            metalness: 0,
+            transmission: 1,
+            thickness: 1.6,
+            ior: 1.45,
+            clearcoat: 1,
+            clearcoatRoughness: 0.08,
+            envMapIntensity: 1.6,
+            attenuationColor: isGreen ? new THREE.Color(0x22c55e) : new THREE.Color(0xff8a3a),
+            attenuationDistance: 2.2,
+          })
+        : new THREE.MeshPhysicalMaterial({
+            color: isGreen ? 0x22c55e : 0xff6600,
+            roughness: 0.22,
+            metalness: 0.85,
+            clearcoat: 0.6,
+            clearcoatRoughness: 0.25,
+            envMapIntensity: 1.4,
+            emissive: isGreen ? 0x0b3d1f : 0x3d1600,
+            emissiveIntensity: 0.35,
+          })
+
       const mesh = new THREE.Mesh(geometry, material)
       const scale = 0.5 + Math.random() * 1.0
       mesh.scale.setScalar(scale)
@@ -489,6 +630,8 @@ export class GTA6CodexWebGLEngine {
     this.composer.setSize(width, height)
     const pixelRatio = Math.min(window.devicePixelRatio || 1, 2)
     this.bloomPass.resolution.set(width * pixelRatio, height * pixelRatio)
+    this.bokehPass.setSize(width, height)
+    this.fxaaPass.setSize(width, height)
   }
 
   // ---------------------------------------------------------------------
@@ -504,23 +647,49 @@ export class GTA6CodexWebGLEngine {
       const delta = Math.min(this.clock.getDelta(), 0.05)
       const elapsed = this.clock.getElapsedTime()
 
-      this.pointer.x += (this.pointerTarget.x - this.pointer.x) * 0.04
-      this.pointer.y += (this.pointerTarget.y - this.pointer.y) * 0.04
-      this.scrollProgress += (this.scrollTarget - this.scrollProgress) * 0.06
+      const prevPointerX = this.pointer.x
+      const prevPointerY = this.pointer.y
+      this.pointer.x += (this.pointerTarget.x - this.pointer.x) * 0.08
+      this.pointer.y += (this.pointerTarget.y - this.pointer.y) * 0.08
+      this.pointerVelocity = Math.hypot(this.pointer.x - prevPointerX, this.pointer.y - prevPointerY)
 
-      const autoDriftX = Math.sin(elapsed * 0.05) * 1.5
-      const autoDriftY = Math.cos(elapsed * 0.04) * 0.8
+      const prevScroll = this.scrollProgress
+      this.scrollProgress += (this.scrollTarget - this.scrollProgress) * 0.06
+      this.scrollVelocity = Math.abs(this.scrollProgress - prevScroll)
+
+      // Cámara: deriva Lissajous autónoma + parallax de cursor + roll + dolly-zoom.
+      const autoDriftX = Math.sin(elapsed * 0.05) * 1.5 + Math.sin(elapsed * 0.021) * 0.6
+      const autoDriftY = Math.cos(elapsed * 0.04) * 0.8 + Math.cos(elapsed * 0.033) * 0.4
       this.camera.position.x += (this.pointer.x * 3 + autoDriftX - this.camera.position.x) * 0.05
       this.camera.position.y += (-this.pointer.y * 2 + autoDriftY - this.camera.position.y) * 0.05
       this.camera.position.z = 26 - this.scrollProgress * 6
       this.camera.lookAt(0, 0, 0)
+      this.camera.rotation.z = this.reducedMotion
+        ? 0
+        : Math.sin(elapsed * 0.03) * 0.008 + this.pointer.x * -0.01
+
+      const targetFov = this.baseFov + this.scrollProgress * 6
+      if (Math.abs(this.camera.fov - targetFov) > 0.01) {
+        this.camera.fov += (targetFov - this.camera.fov) * 0.05
+        this.camera.updateProjectionMatrix()
+      }
+
+      // Profundidad de campo: el foco "respira" con el scroll.
+      this.bokehPass.materialBokeh.uniforms.focus.value = 22 - this.scrollProgress * 8
 
       this.group.rotation.y = this.scrollProgress * 0.5
       this.group.position.z = this.scrollProgress * 4
 
       this.particleUniforms.time.value = elapsed
       this.particleUniforms.scrollProgress.value = this.scrollProgress
+      this.particleUniforms.mouseNDC.value.set(this.pointer.x, -this.pointer.y)
+      this.particleUniforms.mouseStrength.value = this.reducedMotion ? 0 : 1
+
       this.grainPass.uniforms.time.value = elapsed * 0.6
+      const kick = this.reducedMotion
+        ? 0
+        : Math.min(this.pointerVelocity * 1.4 + this.scrollVelocity * 6, 0.01)
+      this.grainPass.uniforms.chromaKick.value = kick
 
       for (const update of this.updaters) update(elapsed, delta)
 
@@ -531,6 +700,7 @@ export class GTA6CodexWebGLEngine {
 
   setReducedMotion(value: boolean) {
     this.reducedMotion = value
+    this.particleUniforms.mouseStrength.value = value ? 0 : 1
   }
 
   dispose() {
@@ -550,6 +720,7 @@ export class GTA6CodexWebGLEngine {
       }
     })
     this.scene.environment?.dispose?.()
+    this.bokehPass.dispose()
     this.composer.dispose()
     this.renderer.dispose()
   }
