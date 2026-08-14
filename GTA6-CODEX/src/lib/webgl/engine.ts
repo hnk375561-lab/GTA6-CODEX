@@ -6,6 +6,7 @@ import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js'
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js'
 import { FXAAPass } from 'three/examples/jsm/postprocessing/FXAAPass.js'
 import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js'
+import { webglSceneBus, type SceneFocus } from './scene-bus'
 
 /**
  * GTA6CodexWebGLEngine — v4 "una sola escena, no un catálogo de efectos"
@@ -254,6 +255,23 @@ function smootherstep(t: number): number {
   return c * c * c * (c * (c * 6 - 15) + 10)
 }
 
+/**
+ * Integración con la UI real (ver `scene-bus.ts`)
+ * ---------------------------------------------------------------------------
+ * Cada `sceneId` reportado por `SceneSection` mapea a un "mood" de 0 a 1:
+ * qué tan lejos está el usuario del hero, semánticamente (no en píxeles de
+ * scroll). Se usa para desviar muy sutilmente temperatura de luz y FOV — la
+ * escena "sabe" en qué parte real de la interfaz está el usuario, en vez de
+ * limitarse a un porcentaje de scroll de toda la página.
+ */
+const SECTION_MOOD: Record<string, number> = {
+  hero: 0,
+  stats: 0.15,
+  featured: 0.35,
+  categories: 0.55,
+  about: 0.8,
+}
+
 export class GTA6CodexWebGLEngine {
   private renderer: THREE.WebGLRenderer
   private scene: THREE.Scene
@@ -300,6 +318,14 @@ export class GTA6CodexWebGLEngine {
   private disposed = false
   private reducedMotion: boolean
   private paused = false
+
+  // --- Integración con la UI real (scene-bus) ---------------------------
+  private sceneFocus: SceneFocus = { sectionId: null, progress: 0 }
+  private sceneMood = 0
+  private sceneMoodTarget = 0
+  private pointerIntentTarget = 0
+  private pointerIntent = 0
+  private unsubscribeSceneBus: (() => void) | null = null
 
   constructor(canvas: HTMLCanvasElement, opts: { reducedMotion: boolean }) {
     this.reducedMotion = opts.reducedMotion
@@ -366,6 +392,17 @@ export class GTA6CodexWebGLEngine {
     window.addEventListener('pointermove', this.handlePointerMove, { passive: true })
     window.addEventListener('scroll', this.handleScroll, { passive: true })
     document.addEventListener('visibilitychange', this.handleVisibility)
+
+    // La UI real (secciones instrumentadas, hover de cards) empuja estado acá
+    // en vez de que el motor tenga que adivinarlo a partir de scroll crudo.
+    this.unsubscribeSceneBus = webglSceneBus.subscribe(() => {
+      const snapshot = webglSceneBus.getSnapshot()
+      this.sceneFocus = snapshot.focus
+      this.pointerIntentTarget = snapshot.pointerIntent
+      if (snapshot.focus.sectionId && snapshot.focus.progress > 0.35) {
+        this.sceneMoodTarget = SECTION_MOOD[snapshot.focus.sectionId] ?? this.sceneMoodTarget
+      }
+    })
   }
 
   // ---------------------------------------------------------------------
@@ -428,7 +465,7 @@ export class GTA6CodexWebGLEngine {
       // Deriva de temperatura de color lenta e independiente del scroll:
       // sensación de que pasa el tiempo, no un "loop" mecánico.
       const cycle = Math.sin(elapsed * 0.025)
-      this.keyLight.color.setHSL(0.07 + cycle * 0.015, 0.85, 0.5)
+      this.keyLight.color.setHSL(0.07 + cycle * 0.015 + this.sceneMood * 0.02, 0.85, 0.5)
       this.keyLight.intensity = 48 + cycle * 10 + this.scrollProgress * 14
       this.fillLight.intensity = 28 + Math.cos(elapsed * 0.021) * 6
       this.keyLight.position.x = 9 + Math.sin(elapsed * 0.09) * 3
@@ -781,6 +818,13 @@ export class GTA6CodexWebGLEngine {
       this.scrollProgress += (this.scrollTarget - this.scrollProgress) * 0.06
       this.scrollVelocity = Math.abs(this.scrollProgress - prevScroll)
 
+      // Deriva muy lenta hacia el "mood" de la sección real activa, y hacia
+      // la intención de cursor real (hover sobre UI interactiva), ambas
+      // publicadas por la UI vía scene-bus. Lerp lento a propósito: son
+      // desvíos de atmósfera, no reacciones bruscas.
+      this.sceneMood += (this.sceneMoodTarget - this.sceneMood) * 0.02
+      this.pointerIntent += (this.pointerIntentTarget - this.pointerIntent) * 0.08
+
       // Coreografía de cámara + parallax de cursor + dolly de scroll + apertura de escena.
       const frame = this.computeShotFrame(elapsed)
       const dolly = frame.pos.clone().add(new THREE.Vector3(0, 0, -this.scrollProgress * 6))
@@ -793,7 +837,7 @@ export class GTA6CodexWebGLEngine {
       this.camera.lookAt(lookTarget)
       this.camera.rotation.z = this.reducedMotion ? 0 : this.pointer.x * -0.012
 
-      const targetFov = this.baseFov + frame.fovBias + this.scrollProgress * 5
+      const targetFov = this.baseFov + frame.fovBias + this.scrollProgress * 5 + this.sceneMood * 4
       this.camera.fov += (targetFov - this.camera.fov) * 0.04
       this.camera.updateProjectionMatrix()
 
@@ -810,14 +854,20 @@ export class GTA6CodexWebGLEngine {
 
       this.dustUniforms.time.value = elapsed
       this.dustUniforms.mouseNDC.value.set(this.pointer.x, -this.pointer.y)
-      this.dustUniforms.mouseStrength.value = this.reducedMotion ? 0 : intro
+      // Hover real sobre UI interactiva (no solo mover el mouse) intensifica
+      // la respuesta del polvo, encima de la base por intro.
+      this.dustUniforms.mouseStrength.value = this.reducedMotion
+        ? 0
+        : Math.min(intro + this.pointerIntent * 0.6, 1.6)
       this.dustUniforms.introFade.value = intro
 
       this.gradePass.uniforms.time.value = elapsed * 0.6
       this.gradePass.uniforms.fadeIn.value = intro
-      const kick = this.reducedMotion ? 0 : Math.min(this.pointerVelocity * 1.3 + this.scrollVelocity * 6, 0.009)
+      const kick = this.reducedMotion
+        ? 0
+        : Math.min(this.pointerVelocity * 1.3 + this.scrollVelocity * 6 + this.pointerIntent * 0.003, 0.009)
       this.gradePass.uniforms.chromaKick.value = kick
-      this.bloomPass.strength = 0.8 * intro
+      this.bloomPass.strength = 0.8 * intro + (this.reducedMotion ? 0 : this.pointerIntent * 0.3)
 
       for (const update of this.updaters) update(elapsed, delta, intro)
 
@@ -838,6 +888,7 @@ export class GTA6CodexWebGLEngine {
     window.removeEventListener('pointermove', this.handlePointerMove)
     window.removeEventListener('scroll', this.handleScroll)
     document.removeEventListener('visibilitychange', this.handleVisibility)
+    this.unsubscribeSceneBus?.()
 
     this.scene.traverse((obj) => {
       if (obj instanceof THREE.Mesh || obj instanceof THREE.Points) {

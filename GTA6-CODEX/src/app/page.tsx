@@ -6,6 +6,7 @@ import { Reveal } from '@/components/ui/Reveal'
 import { CountUp } from '@/components/ui/CountUp'
 import { WordRotate } from '@/components/ui/WordRotate'
 import { RotatingHeroBackground } from '@/components/layout/RotatingHeroBackground'
+import { SceneSection } from '@/components/webgl/SceneSection'
 import { getEntityCount, getFeaturedEntities } from '@/lib/entities'
 
 export default async function Home() {
@@ -58,7 +59,7 @@ export default async function Home() {
       {/* Hero Section — cinematográfico pero contenido: un solo fondo con
           overlay de contraste, un solo acento de color, sin capas de efectos
           compitiendo con el título. */}
-      <section className="relative overflow-hidden border-b border-gta-border py-24 sm:py-36">
+      <SceneSection sceneId="hero" className="relative overflow-hidden border-b border-gta-border py-24 sm:py-36">
         <RotatingHeroBackground />
         <div className="container-max relative">
           <div className="mx-auto max-w-2xl text-center">
@@ -106,10 +107,10 @@ export default async function Home() {
             </Reveal>
           </div>
         </div>
-      </section>
+      </SceneSection>
 
       {/* Info Section */}
-      <section className="border-b border-gta-border bg-gta-dark py-12">
+      <SceneSection sceneId="stats" className="border-b border-gta-border bg-gta-dark py-12">
         <div className="container-max">
           <div className="grid gap-8 sm:grid-cols-3">
             <div className="text-center">
@@ -130,11 +131,11 @@ export default async function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </SceneSection>
 
       {/* Featured Section */}
       {featured.length > 0 && (
-        <section className="bg-gta-dark py-16 sm:py-24">
+        <SceneSection sceneId="featured" className="bg-gta-dark py-16 sm:py-24">
           <div className="container-max">
             <Reveal className="mb-12 text-center">
               <h2 className="mb-4 text-4xl font-bold text-gta-text">
@@ -165,11 +166,11 @@ export default async function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </SceneSection>
       )}
 
       {/* Categories Section */}
-      <section id="categories" className="bg-gta-dark py-16 sm:py-24">
+      <SceneSection sceneId="categories" htmlId="categories" className="bg-gta-dark py-16 sm:py-24">
         <div className="container-max">
           <Reveal className="mb-12 text-center">
             <h2 className="mb-4 text-4xl font-bold text-gta-text">
@@ -206,10 +207,10 @@ export default async function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </SceneSection>
 
       {/* Info Cards */}
-      <section className="border-t border-gta-border bg-gta-dark py-16 sm:py-24">
+      <SceneSection sceneId="about" className="border-t border-gta-border bg-gta-dark py-16 sm:py-24">
         <div className="container-max">
           <Reveal className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gta-text">
@@ -264,7 +265,7 @@ export default async function Home() {
             </Reveal>
           </div>
         </div>
-      </section>
+      </SceneSection>
     </>
   )
 }

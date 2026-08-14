@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { cn, hasFinePointer, prefersReducedMotion } from '@/lib/utils'
+import { webglSceneBus } from '@/lib/webgl/scene-bus'
 
 interface MagicCardBaseProps {
   children?: React.ReactNode
@@ -96,8 +97,17 @@ export function MagicCard(props: MagicCardProps) {
         className
       )}
       onPointerMove={handlePointerMove}
-      onPointerEnter={() => interactive && ref.current?.classList.add('magic-card--active')}
-      onPointerLeave={() => ref.current?.classList.remove('magic-card--active')}
+      onPointerEnter={() => {
+        if (!interactive) return
+        ref.current?.classList.add('magic-card--active')
+        // Intención real de cursor sobre UI interactiva → el motor WebGL
+        // puede reaccionar (partículas/bloom), no solo el CSS local.
+        webglSceneBus.setPointerIntent(1)
+      }}
+      onPointerLeave={() => {
+        ref.current?.classList.remove('magic-card--active')
+        if (interactive) webglSceneBus.setPointerIntent(0)
+      }}
       style={
         {
           '--mgs': `${gradientSize}px`,
