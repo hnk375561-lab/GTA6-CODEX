@@ -105,6 +105,55 @@
       "description": "El tráiler cierra con Jason Duval presentándose en la recepción del centro penitenciario preguntando por Lucia Caminos, seguido de la salida de ella y un reencuentro entre ambos.",
       "relations": [
         { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" },
+        { "targetType": "personajes", "targetSlug": "lucia-caminos", "relation": "personaje mostrado" },
+        { "targetType": "ubicaciones", "targetSlug": "penitenciaria-leonida", "relation": "ubicación mostrada" }
+      ]
+    },
+    {
+      "id": "scene-10",
+      "timestamp": "~0:15",
+      "title": "Smartphones y redes sociales — Vice City moderna",
+      "description": "Aparecen smartphones y interfaz de redes sociales en planos generales de Vice City, estableciendo la estética contemporánea del juego. Elementos de UI mostrando como la ciudad está conectada digitalmente.",
+      "relations": [
+        { "targetType": "ubicaciones", "targetSlug": "vice-city", "relation": "ubicación mostrada" }
+      ]
+    },
+    {
+      "id": "scene-11",
+      "timestamp": "~0:30",
+      "title": "Vida de calle y crimen",
+      "description": "Montaje de varias escenas mostrando la vida criminal en Vice City: transacciones, encuentros sospechosos, y ambientes urbanos criminales.",
+      "relations": [
+        { "targetType": "ubicaciones", "targetSlug": "vice-city", "relation": "ubicación mostrada" }
+      ]
+    },
+    {
+      "id": "scene-12",
+      "timestamp": "~1:35",
+      "title": "Equipo táctico policial en acción",
+      "description": "Se muestra un equipo de respuesta táctica realizando operaciones militarizadas. Un oficial habla sobre 'solidaridad entre policías', sugiriendo conflicto interno en fuerzas de seguridad.",
+      "relations": [
+        { "targetType": "organizaciones", "targetSlug": "vbpd", "relation": "presumiblemente-mostrada" }
+      ]
+    },
+    {
+      "id": "scene-13",
+      "timestamp": "~1:48",
+      "title": "Persecución vehicular de Jason",
+      "description": "Jason Duval aparece disparando desde un Bravado Gauntlet Hellfire en una secuencia de persecución de alta velocidad en entorno urbano.",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" },
+        { "targetType": "vehiculos", "targetSlug": "bravado-gauntlet-hellfire", "relation": "vehículo-mostrado" },
+        { "targetType": "armas", "targetSlug": "pistola", "relation": "arma-usada" }
+      ]
+    },
+    {
+      "id": "scene-14",
+      "timestamp": "~2:00",
+      "title": "Montaje final de acción",
+      "description": "Montaje rápido de escenas de acción: disparos, explosiones, conducción de alta velocidad, y persecuciones. Establece el tono de acción constante del juego.",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" },
         { "targetType": "personajes", "targetSlug": "lucia-caminos", "relation": "personaje mostrado" }
       ]
     }

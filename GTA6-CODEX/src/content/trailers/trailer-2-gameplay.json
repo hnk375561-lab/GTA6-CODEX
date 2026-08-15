@@ -55,6 +55,95 @@
       "relations": [
         { "targetType": "ubicaciones", "targetSlug": "port-gellhorn", "relation": "ubicación mostrada" }
       ]
+    },
+    {
+      "id": "scene-04",
+      "timestamp": "~1:00",
+      "title": "Navegación UI y HUD",
+      "description": "Se muestran elementos de interfaz de usuario incluyendo mapa, radar y objetivos en pantalla. Confirmación visual de sistemas de navegación y seguimiento de misiones.",
+      "status": "confirmado",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "jugador-controlado" }
+      ]
+    },
+    {
+      "id": "scene-05",
+      "timestamp": "~1:15",
+      "title": "Interacción con NPCs y diálogos",
+      "description": "Jason aparece en diálogos con personajes secundarios. Se muestra sistema de conversación y flujo de diálogo en gameplay.",
+      "status": "confirmado",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "protagonista" }
+      ]
+    },
+    {
+      "id": "scene-06",
+      "timestamp": "~1:30",
+      "title": "Combate en calle con enemigos",
+      "description": "Jason participa en combate físico contra múltiples enemigos en ambiente de calle. Sistema de combate mano a mano confirmado.",
+      "status": "confirmado",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "protagonista" },
+        { "targetType": "actividades", "targetSlug": "combate-mano-a-mano", "relation": "mostrada" }
+      ]
+    },
+    {
+      "id": "scene-07",
+      "timestamp": "~1:45",
+      "title": "Exploración de área urbana",
+      "description": "Se muestra a Jason explorando calles y tiendas de Vice City. Confirmación visual de mundo abierto explorable y sistemas de compra/venta.",
+      "status": "confirmado",
+      "relations": [
+        { "targetType": "ubicaciones", "targetSlug": "vice-city", "relation": "ubicación mostrada" },
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" }
+      ]
+    },
+    {
+      "id": "scene-08",
+      "timestamp": "~2:00",
+      "title": "Conducción y tráfico urbano",
+      "description": "Jason conduce un vehículo a través de calles con tráfico, otros NPCs y peatones. Sistema de conducción y IA de mundo mostrado en acción.",
+      "status": "confirmado",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "conductor" },
+        { "targetType": "actividades", "targetSlug": "conduccion", "relation": "mostrada" }
+      ]
+    },
+    {
+      "id": "scene-09",
+      "timestamp": "~2:15",
+      "title": "Paisajes costeros y zonas de agua",
+      "description": "Secuencias mostrando áreas costeras, playas y zonas de agua. Se ve agua limpia, reflexiones, y geografía costera de Leonida/Vice City.",
+      "status": "confirmado",
+      "relations": [
+        { "targetType": "ubicaciones", "targetSlug": "vice-city", "relation": "ubicación mostrada" }
+      ]
+    },
+    {
+      "id": "scene-10",
+      "timestamp": "~2:30",
+      "title": "Ciclo día/noche y cambios de iluminación",
+      "description": "Montaje mostrando transiciones de día a noche, cambios en iluminación ambiental y ciclo de tiempo del mundo abierto.",
+      "status": "confirmado",
+      "relations": []
+    },
+    {
+      "id": "scene-11",
+      "timestamp": "~2:45",
+      "title": "Lluvia y efectos climáticos",
+      "description": "Se muestra lluvia, agua cayendo, reflexiones mojadas en calles. Sistema de clima dinámico confirmado visualmente.",
+      "status": "confirmado",
+      "relations": []
+    },
+    {
+      "id": "scene-12",
+      "timestamp": "~3:00",
+      "title": "Zoom a cielo y créditos finales",
+      "description": "Cierre del tráiler con vista aérea de Vice City y créditos de Rockstar Games.",
+      "status": "confirmado",
+      "relations": [
+        { "targetType": "ubicaciones", "targetSlug": "vice-city", "relation": "ubicación mostrada" }
+      ]
     }
   ]
 }
