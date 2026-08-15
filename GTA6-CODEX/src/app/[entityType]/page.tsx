@@ -4,11 +4,9 @@ import type { Metadata } from 'next'
 import { EntityType } from '@/types'
 import { getEntitiesByType } from '@/lib/entities'
 import { generateListMetadata } from '@/lib/seo'
-import { Card, CardBody } from '@/components/ui/Card'
-import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
-import { EntityImage } from '@/components/entities/EntityImage'
-import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
+import { CategoryIcon } from '@/components/ui/CategoryIcon'
+import { EntityListExplorer } from '@/components/entities/EntityListExplorer'
 
 interface PageProps {
   params: Promise<{ entityType: string }>
@@ -54,71 +52,56 @@ export default async function EntityTypePage({ params }: PageProps) {
 
   const type = entityType as EntityType
   const entities = await getEntitiesByType(type)
+  const label = TYPE_LABELS[type]
+
+  const statusCounts = { confirmado: 0, rumor: 0, nuestro: 0 } as Record<
+    keyof typeof STATUS_LABELS,
+    number
+  >
+  for (const e of entities) {
+    const key = e.status as keyof typeof STATUS_LABELS
+    if (key in statusCounts) statusCounts[key] += 1
+  }
 
   return (
-    <section className="py-12 sm:py-16">
-      <div className="container-max">
+    <section className="relative overflow-hidden border-b border-gta-border py-12 sm:py-16">
+      <div className="list-header-glow" aria-hidden="true" />
+      <div className="container-max relative">
         <Reveal className="mb-10">
           <nav className="mb-4 text-sm text-gta-text-secondary" aria-label="Breadcrumb">
             <Link href="/" className="link-underline transition-colors hover:text-gta-accent">
               Inicio
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-gta-text">{TYPE_LABELS[type]}</span>
+            <span className="text-gta-text">{label}</span>
           </nav>
-          <h1 className="mb-2 text-4xl font-bold text-gta-text">{TYPE_LABELS[type]}</h1>
-          <p className="text-gta-text-secondary">
-            {entities.length} {entities.length === 1 ? 'entrada documentada' : 'entradas documentadas'}
-          </p>
+
+          <div className="flex items-center gap-4">
+            <div className="category-icon-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-xl text-gta-accent">
+              <CategoryIcon type={type} className="h-6 w-6" />
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold text-gta-text">{label}</h1>
+              <p className="mt-1 text-gta-text-secondary">
+                {entities.length} {entities.length === 1 ? 'entrada documentada' : 'entradas documentadas'}
+                {entities.length > 0 && (
+                  <span className="text-gta-text-secondary/60">
+                    {' · '}
+                    {[
+                      statusCounts.confirmado > 0 && `${statusCounts.confirmado} ${STATUS_LABELS.confirmado.toLowerCase()}`,
+                      statusCounts.rumor > 0 && `${statusCounts.rumor} ${STATUS_LABELS.rumor.toLowerCase()}`,
+                      statusCounts.nuestro > 0 && `${statusCounts.nuestro} ${STATUS_LABELS.nuestro.toLowerCase()}`,
+                    ]
+                      .filter(Boolean)
+                      .join(' · ')}
+                  </span>
+                )}
+              </p>
+            </div>
+          </div>
         </Reveal>
 
-        {entities.length === 0 ? (
-          <div className="rounded-lg border border-gta-border bg-gta-surface px-6 py-10 text-center">
-            <p className="mb-1 font-semibold text-gta-text">
-              Todavía no hay {TYPE_LABELS[type].toLowerCase()} documentados
-            </p>
-            <p className="mb-4 text-sm text-gta-text-secondary">
-              Esta categoría está vacía por ahora — estamos incorporando contenido a medida que se
-              confirma. Volvé pronto.
-            </p>
-            <Link href="/" className="text-sm font-semibold text-gta-accent hover:underline">
-              Explorar otras categorías
-            </Link>
-          </div>
-        ) : (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {entities.map((entity, i) => (
-              <Reveal key={entity.slug} delay={(i % 6) * 80}>
-                <Link href={`/${type}/${entity.slug}`} className="group block h-full">
-                  <Card
-                    hoverable
-                    className={`h-full overflow-hidden ${
-                      ENTITY_IMAGE_CATEGORIES.includes(type) ? '!p-0' : ''
-                    }`}
-                  >
-                    {ENTITY_IMAGE_CATEGORIES.includes(type) && (
-                      <EntityImage entity={entity} variant="thumbnail" className="rounded-none border-x-0 border-t-0" />
-                    )}
-                    <CardBody className={ENTITY_IMAGE_CATEGORIES.includes(type) ? 'p-6' : undefined}>
-                      <div className="mb-3 flex items-center justify-between gap-2">
-                        <Badge variant="status" status={entity.status}>
-                          {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
-                        </Badge>
-                        {entity.featured && <Badge variant="tag">Destacado</Badge>}
-                      </div>
-                      <h2 className="mb-2 text-xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
-                        {entity.title}
-                      </h2>
-                      <p className="line-clamp-3 text-sm text-gta-text-secondary">
-                        {entity.description}
-                      </p>
-                    </CardBody>
-                  </Card>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        )}
+        <EntityListExplorer type={type} entities={entities} typeLabel={label} />
       </div>
     </section>
   )
