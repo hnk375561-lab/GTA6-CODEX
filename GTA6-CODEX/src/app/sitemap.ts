@@ -1,0 +1,59 @@
+import type { MetadataRoute } from 'next'
+import { EntityType } from '@/types'
+import { getAllEntities, getEntityCountsByType } from '@/lib/entities'
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel.app'
+
+/**
+ * Genera /sitemap.xml (convención nativa del App Router de Next.js:
+ * cualquier export default de src/app/sitemap.ts se sirve automáticamente
+ * en esa ruta, sin registro manual).
+ *
+ * seo.ts ya declaraba `Sitemap: ${SITE_URL}/sitemap.xml` dentro de
+ * generateRobotsTxt(), pero esa función nunca estaba conectada a ninguna
+ * ruta real — el sitemap que anunciaba no existía. Este archivo es el que
+ * lo hace real.
+ *
+ * Incluye únicamente tipos de entidad con al menos una entrada publicada:
+ * un tipo vacío (ej. "misiones" hoy) no aporta nada al sitemap y anunciar
+ * una URL de listado vacía a los motores de búsqueda no tiene valor SEO.
+ */
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [allEntities, countsByType] = await Promise.all([
+    getAllEntities(),
+    getEntityCountsByType(),
+  ])
+
+  const staticRoutes: MetadataRoute.Sitemap = [
+    {
+      url: SITE_URL,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 1,
+    },
+    {
+      url: `${SITE_URL}/buscar`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+  ]
+
+  const listRoutes: MetadataRoute.Sitemap = Object.values(EntityType)
+    .filter((type) => countsByType[type] > 0)
+    .map((type) => ({
+      url: `${SITE_URL}/${type}`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.7,
+    }))
+
+  const entityRoutes: MetadataRoute.Sitemap = allEntities.map((entity) => ({
+    url: `${SITE_URL}/${entity.type}/${entity.slug}`,
+    lastModified: new Date(entity.updatedAt),
+    changeFrequency: 'weekly' as const,
+    priority: entity.featured ? 0.9 : 0.6,
+  }))
+
+  return [...staticRoutes, ...listRoutes, ...entityRoutes]
+}

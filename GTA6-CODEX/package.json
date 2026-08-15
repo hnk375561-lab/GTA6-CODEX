@@ -10,7 +10,8 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "process-images": "node scripts/process-images.mjs",
-    "process-images:apply": "node scripts/process-images.mjs --apply"
+    "process-images:apply": "node scripts/process-images.mjs --apply",
+    "verify:seo": "node scripts/verify-seo-routes.mjs"
   },
   "dependencies": {
     "@types/three": "^0.185.4",

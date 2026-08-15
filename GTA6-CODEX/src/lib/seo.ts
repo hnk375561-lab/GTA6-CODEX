@@ -155,29 +155,6 @@ export function generateBreadcrumbJsonLd(
 }
 
 /**
- * Genera un robots.txt compatible
- */
-export function generateRobotsTxt(): string {
-  return `User-agent: *
-Allow: /
-Disallow: /.next/
-Disallow: /api/
-Disallow: /admin/
-
-Sitemap: ${SITE_URL}/sitemap.xml
-
-User-agent: GPTBot
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-`
-}
-
-/**
  * Obtiene el URL canónico de una entidad
  */
 export function getCanonicalUrl(type: string, slug: string): string {
