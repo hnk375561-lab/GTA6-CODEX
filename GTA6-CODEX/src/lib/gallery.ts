@@ -2,6 +2,7 @@ import type { Trailer } from '@/types'
 import { EntityType } from '@/types'
 import { getEntitiesByType } from './entities'
 import { resolveEntityImage, ENTITY_IMAGE_CATEGORIES } from './images'
+import { getMediaAssets, resolveMediaRender } from './media'
 
 /**
  * SISTEMA DE GALERÍA — AGREGACIÓN DE ASSETS REALES
@@ -33,6 +34,8 @@ export interface GalleryTrailerAppearance {
 
 export interface GalleryItem {
   id: string
+  /** 'image' (default, retrocompatible) o 'video' — un asset de video embebido (hoy, YouTube). */
+  kind?: 'image' | 'video'
   src: string
   alt: string
   title: string
@@ -48,6 +51,8 @@ export interface GalleryItem {
   tags?: string[]
   featured?: boolean
   trailerAppearances: GalleryTrailerAppearance[]
+  /** Solo si kind === 'video': ID de embed de YouTube, para reproducir en el lightbox. */
+  videoEmbedId?: string
 }
 
 /**
@@ -197,6 +202,42 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
       categorySlug: 'key-art',
       categoryLabel: 'Key Art',
       trailerAppearances: [],
+    })
+  }
+
+  // Videos de tráiler del Media Registry: se listan en la galería como
+  // tarjetas 'video' (miniatura de YouTube, reproducción en el lightbox),
+  // en vez de necesitar una categoría/pipeline aparte de "videos".
+  const trailerEntities = (await getEntitiesByType(EntityType.TRAILER)) as Trailer[]
+  const trailerBySlug = new Map(trailerEntities.map((t) => [t.slug, t]))
+
+  for (const asset of getMediaAssets()) {
+    if (asset.kind !== 'trailer' && asset.kind !== 'video') continue
+    const rendered = resolveMediaRender(asset)
+    if (rendered.renderAs !== 'youtube') continue
+
+    const trailerSlug = asset.relations?.trailer?.trailerSlug
+    const trailerEntity = trailerSlug ? trailerBySlug.get(trailerSlug) : undefined
+
+    items.push({
+      id: asset.id,
+      kind: 'video',
+      src: rendered.thumbnailSrc,
+      alt: rendered.title,
+      title: rendered.title,
+      description: trailerEntity?.description || asset.description || '',
+      categorySlug: 'trailers',
+      categoryLabel: 'Trailers',
+      status: trailerEntity?.status,
+      href: trailerSlug ? `/trailers/${trailerSlug}` : undefined,
+      entityType: trailerSlug ? EntityType.TRAILER : undefined,
+      entitySlug: trailerSlug,
+      credit: asset.credit || asset.source.provider,
+      sourceNote: asset.source.hotlinkNote,
+      tags: asset.tags,
+      featured: trailerEntity?.featured,
+      trailerAppearances: [],
+      videoEmbedId: rendered.embedId,
     })
   }
 
