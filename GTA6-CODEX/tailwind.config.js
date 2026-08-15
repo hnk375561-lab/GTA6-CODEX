@@ -7,21 +7,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Paleta principal: tonos oscuros sofisticados con acentos de verde y naranja (GTA feel)
-        'gta-dark': '#0f0f0f',
-        'gta-darker': '#050505',
-        'gta-card': '#161616',
-        'gta-surface': '#161616', // superficie estándar (cards, listas)
-        'gta-surface-elevated': '#1c1c1c', // superficie elevada (featured, sidebars)
-        'gta-border': '#262626',
-        'gta-border-strong': '#333333',
-        'gta-text': '#f2f2f0',
-        'gta-text-secondary': '#a3a3a0',
-        'gta-text-tertiary': '#6b6b68',
-        'gta-accent': '#22c55e', // Verde GTA — uso estratégico, no dominante
-        'gta-accent-strong': '#4ade80',
-        'gta-accent-orange': '#ff6600', // Naranja secundario — uso muy controlado
-        'gta-accent-warning': '#ffaa00',
+        // Paleta principal: tonos violeta-noche profundos con acentos magenta/cian (Vice City / Leonida vibe)
+        'gta-dark': '#0a0118',
+        'gta-darker': '#050110',
+        'gta-card': '#170b2e',
+        'gta-surface': '#170b2e', // superficie estándar (cards, listas)
+        'gta-surface-elevated': '#1f0f3d', // superficie elevada (featured, sidebars)
+        'gta-border': '#3a1d63',
+        'gta-border-strong': '#5b2f96',
+        'gta-text': '#fdf2ff',
+        'gta-text-secondary': '#c9a6e8',
+        'gta-text-tertiary': '#8a68ab',
+        'gta-accent': '#ff2fb8', // Magenta neón — protagonista del nuevo look
+        'gta-accent-strong': '#ff6ad5',
+        'gta-accent-orange': '#00e5ff', // Cian neón secundario — contraste Vice City
+        'gta-accent-warning': '#ffe135',
       },
       fontFamily: {
         // Tipografía premium y editorial

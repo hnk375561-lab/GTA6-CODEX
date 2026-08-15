@@ -222,7 +222,7 @@ a:not(.no-style) {
 }
 
 a:hover .logo-mark {
-  box-shadow: 0 0 12px 1px rgba(34, 197, 94, 0.45);
+  box-shadow: 0 0 12px 1px rgba(255, 47, 184, 0.45);
   transform: scale(1.05);
 }
 
@@ -307,7 +307,7 @@ a:hover .logo-mark {
   border-radius: inherit;
   background: linear-gradient(
     var(--scene-light-angle),
-    color-mix(in srgb, #ff8a3a calc(var(--scene-warmth) * 100%), #22c55e calc((1 - var(--scene-warmth)) * 100%)) 0%,
+    color-mix(in srgb, #00e5ff calc(var(--scene-warmth) * 100%), #ff2fb8 calc((1 - var(--scene-warmth)) * 100%)) 0%,
     transparent 42%
   );
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -321,7 +321,7 @@ a:hover .logo-mark {
 .card-animated:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.6),
-    0 0 32px -18px color-mix(in srgb, #ff8a3a calc(var(--scene-warmth) * 70%), #22c55e calc((1 - var(--scene-warmth)) * 70%));
+    0 0 32px -18px color-mix(in srgb, #00e5ff calc(var(--scene-warmth) * 70%), #ff2fb8 calc((1 - var(--scene-warmth)) * 70%));
 }
 
 /* --- Contador numérico: leve "tick" al actualizar --- */
@@ -398,7 +398,7 @@ a:hover .logo-mark {
      coreografía de apertura del motor WebGL (--scene-intro), no antes. */
   opacity: var(--scene-intro);
   box-shadow: 0 0 24px -12px
-    color-mix(in srgb, #ff8a3a calc(var(--scene-warmth) * 60%), #22c55e calc((1 - var(--scene-warmth)) * 60%));
+    color-mix(in srgb, #00e5ff calc(var(--scene-warmth) * 60%), #ff2fb8 calc((1 - var(--scene-warmth)) * 60%));
   transition: box-shadow 600ms ease, opacity 600ms ease;
 }
 
@@ -435,7 +435,7 @@ a:hover .logo-mark {
   background: linear-gradient(
     75deg,
     transparent 0%,
-    color-mix(in srgb, #ff8a3a calc(var(--scene-warmth) * 65%), #22c55e calc((1 - var(--scene-warmth)) * 65%)) 48%,
+    color-mix(in srgb, #00e5ff calc(var(--scene-warmth) * 65%), #ff2fb8 calc((1 - var(--scene-warmth)) * 65%)) 48%,
     transparent 62%
   );
   background-size: 260% 260%;
@@ -493,8 +493,8 @@ a:hover .logo-mark {
   width: 6px;
   height: 6px;
   border-radius: 9999px;
-  background: #22c55e;
-  box-shadow: 0 0 6px 1px rgba(34, 197, 94, 0.6);
+  background: #ff2fb8;
+  box-shadow: 0 0 6px 1px rgba(255, 47, 184, 0.6);
 }
 
 /* --- Hero rediseño: kicker, título con gradiente animado, CTA primario
@@ -512,7 +512,7 @@ a:hover .logo-mark {
 }
 
 .hero-title-accent {
-  background: linear-gradient(90deg, #22c55e 0%, #4ade80 35%, #ff8a3a 70%, #ff6600 100%);
+  background: linear-gradient(90deg, #ff2fb8 0%, #ff6ad5 35%, #00e5ff 70%, #00b8d4 100%);
   background-size: 200% auto;
   background-position: 0% 50%;
   -webkit-background-clip: text;
@@ -532,12 +532,12 @@ a:hover .logo-mark {
 }
 
 .hero-cta-primary {
-  background: linear-gradient(90deg, #22c55e, #4ade80);
-  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.3), 0 8px 24px -8px rgba(34, 197, 94, 0.5);
+  background: linear-gradient(90deg, #ff2fb8, #ff6ad5);
+  box-shadow: 0 0 0 1px rgba(255, 47, 184, 0.3), 0 8px 24px -8px rgba(255, 47, 184, 0.5);
 }
 
 .hero-cta-primary:hover {
-  box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.5), 0 12px 32px -8px rgba(34, 197, 94, 0.7);
+  box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.5), 0 12px 32px -8px rgba(255, 47, 184, 0.7);
 }
 
 .hero-scanlines {
@@ -548,8 +548,8 @@ a:hover .logo-mark {
   opacity: 0.5;
   background-image: repeating-linear-gradient(
     180deg,
-    rgba(0, 208, 0, 0.05),
-    rgba(0, 208, 0, 0.05) 1px,
+    rgba(255, 47, 184, 0.05),
+    rgba(255, 47, 184, 0.05) 1px,
     transparent 0,
     transparent 3px
   );
@@ -593,9 +593,9 @@ a:hover .logo-mark {
 }
 
 .category-icon-badge {
-  border: 1px solid rgba(34, 197, 94, 0.25);
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(255, 102, 0, 0.06));
-  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.08), 0 4px 16px -8px rgba(34, 197, 94, 0.35);
+  border: 1px solid rgba(255, 47, 184, 0.25);
+  background: linear-gradient(135deg, rgba(255, 47, 184, 0.12), rgba(255, 102, 0, 0.06));
+  box-shadow: 0 0 0 1px rgba(255, 47, 184, 0.08), 0 4px 16px -8px rgba(255, 47, 184, 0.35);
 }
 
 .featured-card {
@@ -603,7 +603,7 @@ a:hover .logo-mark {
 }
 
 .featured-card:hover {
-  box-shadow: 0 16px 40px -20px rgba(34, 197, 94, 0.35);
+  box-shadow: 0 16px 40px -20px rgba(255, 47, 184, 0.35);
 }
 
 /* --- Fondo de ficha destacada (EntityHeaderBackground) --- */
@@ -612,7 +612,7 @@ a:hover .logo-mark {
   inset: -20%;
   background: radial-gradient(
     ellipse 60% 50% at 50% 0%,
-    rgba(0, 208, 0, 0.1),
+    rgba(255, 47, 184, 0.1),
     rgba(255, 102, 0, 0.04) 45%,
     transparent 75%
   );
@@ -649,7 +649,7 @@ a:hover .logo-mark {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, transparent, rgba(0, 208, 0, 0.5), transparent);
+  background: linear-gradient(180deg, transparent, rgba(255, 47, 184, 0.5), transparent);
   animation: entity-scan-sweep 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
@@ -659,7 +659,7 @@ a:hover .logo-mark {
   inset: 0;
   width: 100%;
   height: 100%;
-  stroke: rgba(0, 208, 0, 0.35);
+  stroke: rgba(255, 47, 184, 0.35);
   stroke-width: 0.4;
   fill: none;
 }
@@ -683,8 +683,8 @@ a:hover .logo-mark {
   inset: 0;
   background-image: repeating-linear-gradient(
     180deg,
-    rgba(0, 208, 0, 0.05) 0,
-    rgba(0, 208, 0, 0.05) 1px,
+    rgba(255, 47, 184, 0.05) 0,
+    rgba(255, 47, 184, 0.05) 1px,
     transparent 1px,
     transparent 22px
   );

@@ -81,11 +81,11 @@ export default async function Home() {
 
             <Reveal delay={60}>
               <p className="hero-kicker mb-4 text-xs font-bold uppercase tracking-[0.3em] text-gta-accent">
-                Leonida · 2026
+                Bienvenido a Leonida · Vice City, 2026
               </p>
             </Reveal>
 
-            <h1 className="hero-title mb-4 text-6xl font-black leading-[0.95] tracking-tight sm:text-8xl">
+            <h1 className="hero-title mb-4 text-7xl font-black leading-[0.9] tracking-tight sm:text-9xl">
               <span className="block text-gta-text">GTA6</span>
               <span className="hero-title-accent block">Codex</span>
             </h1>
@@ -100,8 +100,8 @@ export default async function Home() {
             </div>
 
             <p className="mb-10 text-balance text-lg text-gta-text-secondary sm:text-xl">
-              El wiki editorial más completo sobre Grand Theft Auto 6. Información
-              verificada, rumores y análisis profundo en un solo lugar.
+              La enciclopedia definitiva de Grand Theft Auto 6, reconstruida a fondo.
+              Todo Leonida, verificado y en un solo lugar.
             </p>
 
             {/* CTA Buttons */}
@@ -110,7 +110,7 @@ export default async function Home() {
                 href={`/${EntityType.CHARACTER}`}
                 className="hero-cta-primary inline-flex items-center justify-center gap-2 rounded-lg px-9 py-4 text-base font-bold text-gta-dark transition-all hover:-translate-y-0.5"
               >
-                Explorar el Codex
+                Entrar a Leonida
                 <span aria-hidden="true">→</span>
               </Link>
               <Link
