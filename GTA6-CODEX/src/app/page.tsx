@@ -1,49 +1,19 @@
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { EntityType, type Trailer } from '@/types'
-import { getEntity, getEntitySlugs } from '@/lib/entities'
-import { getRelatedEntitiesWithLabel } from '@/lib/relations'
-import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo'
+import { EntityType } from '@/types'
+import { getFeaturedEntities, getEntityCount, getEntityCountsByType } from '@/lib/entities'
+import { generateHomepageMetadata, generateBreadcrumbJsonLd } from '@/lib/seo'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
-import { EvidenceBlock } from '@/components/entities/EvidenceBlock'
-import { EntityMetadata } from '@/components/entities/EntityMetadata'
-import { RelationsPanel } from '@/components/entities/RelationsPanel'
-import { EntityHeaderBackground } from '@/components/entities/EntityHeaderBackground'
-import { EntitySectionHeading } from '@/components/entities/EntitySectionHeading'
+import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { EntityImage } from '@/components/entities/EntityImage'
-import { TrailerScenes } from '@/components/entities/TrailerScenes'
-import { TrailerStats } from '@/components/entities/TrailerStats'
-import { TrailerNav } from '@/components/entities/TrailerNav'
-import { TrailerPlayer } from '@/components/media/TrailerPlayer'
-import { MediaCarousel } from '@/components/media/MediaCarousel'
-import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
-import { getMediaForEntity } from '@/lib/media'
-import { MagicCard } from '@/components/ui/MagicCard'
+import { RotatingHeroBackground } from '@/components/layout/RotatingHeroBackground'
 import { SceneSection } from '@/components/webgl/SceneSection'
-import { EntityAtmosphereBridge } from '@/components/webgl/EntityAtmosphereBridge'
+import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
 
-interface PageProps {
-  params: Promise<{ entityType: string; slug: string }>
-}
-
-const VALID_TYPES = Object.values(EntityType) as string[]
-
-const TYPE_LABELS: Record<EntityType, string> = {
-  [EntityType.CHARACTER]: 'Personajes',
-  [EntityType.VEHICLE]: 'Vehículos',
-  [EntityType.LOCATION]: 'Ubicaciones',
-  [EntityType.MISSION]: 'Misiones',
-  [EntityType.WEAPON]: 'Armas',
-  [EntityType.ACTIVITY]: 'Actividades',
-  [EntityType.FACTION]: 'Organizaciones',
-  [EntityType.BUSINESS]: 'Negocios',
-  [EntityType.OBJECT]: 'Objetos',
-  [EntityType.NEWS]: 'Noticias',
-  [EntityType.GUIDE]: 'Guías',
-  [EntityType.TRAILER]: 'Trailers',
+export async function generateMetadata(): Promise<Metadata> {
+  return generateHomepageMetadata()
 }
 
 const STATUS_LABELS = {
@@ -53,308 +23,169 @@ const STATUS_LABELS = {
 } as const
 
 /**
- * Eyebrow editorial de clasificación (sección "CLASSIFICATION / <TIPO>" del
- * dossier). Las 5 categorías núcleo del sitio reciben un par semántico
- * propio; el resto cae a un fallback genérico "EXPEDIENTE · <TIPO>" en vez
- * de multiplicar variantes.
+ * Orden editorial de las tarjetas de categoría en la home: primero las 5
+ * categorías núcleo (quiénes, dónde, con qué se mueven, misiones, material
+ * oficial), el resto (armas, actividades, organizaciones, negocios,
+ * objetos, noticias, guías) después, en el mismo orden que ya usa el menú
+ * de navegación (`Header.tsx` / `Footer.tsx`).
  */
-const CLASSIFICATION_LABELS: Partial<Record<EntityType, string>> = {
-  [EntityType.CHARACTER]: 'Identidad · Dossier',
-  [EntityType.LOCATION]: 'Territorio · Ubicación',
-  [EntityType.FACTION]: 'Organización · Autoridad',
-  [EntityType.BUSINESS]: 'Negocio · Establecimiento',
-  [EntityType.VEHICLE]: 'Vehículo · Fabricante',
-  [EntityType.TRAILER]: 'Material Oficial · Archivo',
-}
+const CATEGORY_ORDER: EntityType[] = [
+  EntityType.CHARACTER,
+  EntityType.LOCATION,
+  EntityType.VEHICLE,
+  EntityType.MISSION,
+  EntityType.TRAILER,
+  EntityType.WEAPON,
+  EntityType.ACTIVITY,
+  EntityType.FACTION,
+  EntityType.BUSINESS,
+  EntityType.OBJECT,
+  EntityType.NEWS,
+  EntityType.GUIDE,
+]
 
-export async function generateStaticParams() {
-  const params: { entityType: string; slug: string }[] = []
-
-  for (const type of Object.values(EntityType)) {
-    const slugs = await getEntitySlugs(type)
-    for (const slug of slugs) {
-      params.push({ entityType: type, slug })
-    }
-  }
-
-  return params
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { entityType, slug } = await params
-  if (!VALID_TYPES.includes(entityType)) return {}
-
-  const entity = await getEntity(entityType as EntityType, slug)
-  if (!entity) return {}
-
-  return generateEntityMetadata(entity)
-}
-
-export default async function EntityPage({ params }: PageProps) {
-  const { entityType, slug } = await params
-  if (!VALID_TYPES.includes(entityType)) notFound()
-
-  const type = entityType as EntityType
-  const entity = await getEntity(type, slug)
-  if (!entity) notFound()
-
-  const related = await getRelatedEntitiesWithLabel(entity, 8)
-  const relatedMedia = getMediaForEntity(entity).filter(
-    (asset) => asset.id !== `entity-portrait-${type}-${entity.slug}`
-  )
-  const jsonLd = generateEntityJsonLd(entity)
-  const breadcrumbLd = generateBreadcrumbJsonLd([
-    { label: 'Inicio', url: '/' },
-    { label: TYPE_LABELS[type], url: `/${type}` },
-    { label: entity.title, url: `/${type}/${entity.slug}` },
+export default async function HomePage() {
+  const [featured, totalCount, countsByType] = await Promise.all([
+    getFeaturedEntities(6),
+    getEntityCount(),
+    getEntityCountsByType(),
   ])
 
-  const statusLabel = STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status
-  const classificationLabel =
-    CLASSIFICATION_LABELS[type] ?? `Expediente · ${TYPE_LABELS[type]}`
+  const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
 
-  // Índices editoriales de sección: solo cuentan secciones que realmente
-  // se van a renderizar, para que la numeración nunca muestre saltos
-  // (ej. "01" seguido de "03" si Evidencia no existe para esta entidad).
-  const hasEvidence = Boolean(entity.evidence)
-  const hasRelated = related.length > 0
-  let sectionCounter = 0
-  const evidenceIndex = hasEvidence ? ++sectionCounter : undefined
-  const relatedIndex = hasRelated ? ++sectionCounter : undefined
-  const infoIndex = ++sectionCounter
-
-  const headerContent = (
-    <>
-      <nav
-        className="mb-6 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-sm text-gta-text-secondary animate-fade-in"
-        aria-label="Breadcrumb"
-      >
-        <div>
-          <Link href="/" className="link-underline transition-colors hover:text-gta-accent">
-            Inicio
-          </Link>
-          <span className="mx-2">/</span>
-          <Link href={`/${type}`} className="link-underline transition-colors hover:text-gta-accent">
-            {TYPE_LABELS[type]}
-          </Link>
-          <span className="mx-2">/</span>
-          <span className="inline-block max-w-[50vw] truncate align-bottom text-gta-text sm:max-w-none">
-            {entity.title}
-          </span>
-        </div>
-        <code className="hidden shrink-0 font-mono text-[11px] text-gta-text-secondary/60 sm:inline-block">
-          {type}/{entity.slug}
-        </code>
-      </nav>
-
-      <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gta-accent/80">
-        <span className="h-px w-4 bg-gta-accent/40" aria-hidden="true" />
-        {classificationLabel}
-      </div>
-
-      <div className="mb-3 flex flex-wrap items-center gap-3">
-        <h1 className="text-4xl font-bold text-gta-text sm:text-5xl">{entity.title}</h1>
-        <Badge variant="status" status={entity.status}>
-          {statusLabel}
-        </Badge>
-        {entity.featured && <Badge variant="tag">Destacado</Badge>}
-      </div>
-
-      <Reveal delay={200}>
-        <p className="max-w-3xl text-lg text-gta-text-secondary">{entity.description}</p>
-      </Reveal>
-
-      {entity.tags && entity.tags.length > 0 && (
-        <div className="stagger mt-5 flex flex-wrap gap-2">
-          {entity.tags.map((tag) => (
-            <Badge key={tag} variant="tag">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-      )}
-    </>
-  )
+  const categories = CATEGORY_ORDER.filter((type) => countsByType[type] > 0)
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
-      {/* Publica categoría/estado/featured de esta ficha al motor WebGL.
-          No renderiza nada — ver EntityAtmosphereBridge. */}
-      <EntityAtmosphereBridge category={type} status={entity.status} featured={Boolean(entity.featured)} />
-
-      {/* Header — el fondo ambiental por categoría (EntityHeaderBackground) se
-          mantiene siempre: es identidad visual de bajo costo (CSS/SVG, sin JS).
-          El orb interactivo que sigue al cursor (MagicCard) queda reservado a
-          entidades `featured`, que es exactamente lo que el comentario del
-          componente ya decía pero el código no respetaba — el resto usa un
-          contenedor estático, sin efecto de seguimiento de puntero. */}
+      {/* Hero */}
       <SceneSection
-        sceneId="entity-header"
-        className="relative overflow-hidden border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-10 sm:py-14"
+        sceneId="home-hero"
+        className="relative overflow-hidden border-b border-gta-border py-24 sm:py-32"
       >
-        <EntityHeaderBackground type={type} />
-        <div className="container-max relative">
-          <span
-            className="pointer-events-none absolute -left-1 -top-1 hidden h-5 w-5 border-l border-t border-gta-accent/25 sm:block"
-            aria-hidden="true"
-          />
-          <span
-            className="pointer-events-none absolute -bottom-1 -right-1 hidden h-5 w-5 border-b border-r border-gta-accent-orange/20 sm:block"
-            aria-hidden="true"
-          />
-          {entity.featured ? (
-            <MagicCard
-              mode="orb"
-              glowFrom="#ff2f8f"
-              glowTo="#22d3ee"
-              glowSize={340}
-              glowBlur={90}
-              glowOpacity={0.25}
-              className="p-6 sm:p-8"
-            >
-              {headerContent}
-            </MagicCard>
-          ) : (
-            <div className="rounded-lg border border-gta-border bg-gta-surface/60 p-6 sm:p-8">
-              {headerContent}
+        <RotatingHeroBackground />
+        <div className="container-max relative text-center">
+          <Reveal>
+            <p className="eyebrow mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-gta-accent-strong">
+              Expediente no oficial · Leonida
+            </p>
+            <h1 className="text-gradient-vice mx-auto max-w-4xl font-display text-5xl font-bold leading-tight sm:text-7xl">
+              GTA6 Codex
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-gta-text-secondary sm:text-xl">
+              Wiki editorial de Grand Theft Auto 6: personajes, vehículos, ubicaciones,
+              misiones y más — información verificada, rumores y análisis profundo, todo
+              con su nivel de evidencia a la vista.
+            </p>
+          </Reveal>
+
+          <Reveal delay={150}>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/personajes"
+                className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
+              >
+                Explorar el Codex
+              </Link>
+              <Link
+                href="/buscar"
+                className="inline-flex items-center justify-center rounded-lg border border-gta-border bg-gta-surface/60 px-8 py-3.5 font-semibold text-gta-text transition-all hover:-translate-y-0.5 hover:border-gta-accent/50"
+              >
+                Buscar en el Codex
+              </Link>
             </div>
-          )}
+          </Reveal>
+
+          <Reveal delay={250}>
+            <p className="mt-8 text-sm text-gta-text-tertiary">
+              {totalCount} {totalCount === 1 ? 'entrada documentada' : 'entradas documentadas'}
+            </p>
+          </Reveal>
         </div>
       </SceneSection>
 
-      {/* Content */}
-      <SceneSection sceneId="entity-content" className="py-12 sm:py-16">
+      {/* Categorías */}
+      <SceneSection sceneId="home-categories" className="border-b border-gta-border py-16 sm:py-20">
         <div className="container-max">
-          {type === EntityType.TRAILER && 'scenes' in entity && (
-            <Reveal className="mb-10">
-              <TrailerStats trailer={entity as Trailer} />
-            </Reveal>
-          )}
+          <Reveal className="mb-10 text-center">
+            <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+              Categorías
+            </p>
+            <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">Explorá por sección</h2>
+          </Reveal>
 
-          <div className="grid gap-8 lg:grid-cols-3">
-          <div className="space-y-6 lg:col-span-2">
-            {type === EntityType.TRAILER && 'scenes' in entity && (
-              <Reveal direction="left">
-                <TrailerPlayer trailer={entity as Trailer} />
-              </Reveal>
-            )}
-            {type === EntityType.TRAILER && 'scenes' in entity && (
-              <Reveal direction="left">
-                <TrailerScenes trailer={entity as Trailer} />
-              </Reveal>
-            )}
-            {entity.content ? (
-              <Reveal direction="left">
-                <Card className={entity.featured ? 'shadow-gta-sm border-gta-accent/30' : 'shadow-gta-sm'}>
-                  <CardBody>
-                    <div className="max-w-none">
-                      {entity.content.split('\n\n').map((paragraph, i) => (
-                        <p key={i} className="mb-4 leading-relaxed text-gta-text-secondary last:mb-0">
-                          {paragraph}
-                        </p>
-                      ))}
-                    </div>
-                  </CardBody>
-                </Card>
-              </Reveal>
-            ) : (
-              <Reveal direction="left">
-                <Card className="shadow-gta-sm">
-                  <CardBody>
-                    <p className="text-gta-text-secondary">
-                      Todavía no hay contenido editorial extendido para esta entrada.
+          <div className="stagger grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {categories.map((type) => (
+              <Link key={type} href={`/${type}`} className="block h-full">
+                <Card hoverable className="flex h-full flex-col items-center gap-3 py-8 text-center">
+                  <div className="category-icon-badge flex h-14 w-14 items-center justify-center rounded-xl text-gta-accent">
+                    <CategoryIcon type={type} className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gta-text">{ENTITY_TYPE_LABELS[type]}</p>
+                    <p className="mt-1 text-sm text-gta-text-secondary">
+                      {countsByType[type]}{' '}
+                      {countsByType[type] === 1 ? 'entrada' : 'entradas'}
                     </p>
-                  </CardBody>
+                  </div>
                 </Card>
-              </Reveal>
-            )}
+              </Link>
+            ))}
           </div>
-
-          <aside className="space-y-6">
-            {ENTITY_IMAGE_CATEGORIES.includes(type) && (
-              <Reveal direction="right">
-                <EntityImage entity={entity} variant="portrait" />
-              </Reveal>
-            )}
-
-            {relatedMedia.length > 0 && (
-              <Reveal direction="right">
-                <MediaCarousel title="Contenido relacionado" assets={relatedMedia} />
-              </Reveal>
-            )}
-
-            {entity.evidence && (
-              <Reveal direction="right">
-                <Card className="shadow-gta-sm">
-                  <CardBody>
-                    <EntitySectionHeading label="Evidencia" index={evidenceIndex} />
-                    <EvidenceBlock evidence={entity.evidence} />
-                  </CardBody>
-                </Card>
-              </Reveal>
-            )}
-
-            <Reveal direction="right" delay={80}>
-              <EntityMetadata entity={entity} />
-            </Reveal>
-
-            {related.length > 0 && (
-              <Reveal direction="right" delay={150}>
-                <Card className="shadow-gta-sm">
-                  <CardBody>
-                    <EntitySectionHeading label="Relacionado" index={relatedIndex} />
-                    <RelationsPanel related={related} />
-                  </CardBody>
-                </Card>
-              </Reveal>
-            )}
-
-            <Reveal direction="right" delay={220}>
-              <Card className="shadow-gta-sm">
-                <CardBody>
-                  <EntitySectionHeading label="Información" index={infoIndex} />
-                  <dl className="space-y-2 text-sm">
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-gta-text-secondary">Categoría</dt>
-                      <dd className="text-gta-text">{TYPE_LABELS[type]}</dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-gta-text-secondary">Estado</dt>
-                      <dd className="text-gta-text">{statusLabel}</dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-gta-text-secondary">Actualizado</dt>
-                      <dd className="text-gta-text">
-                        {new Date(entity.updatedAt).toLocaleDateString('es-ES', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                        })}
-                      </dd>
-                    </div>
-                  </dl>
-                </CardBody>
-              </Card>
-            </Reveal>
-          </aside>
-          </div>
-
-          {type === EntityType.TRAILER && 'scenes' in entity && (
-            <Reveal className="mt-12 border-t border-gta-border pt-8">
-              <TrailerNav currentSlug={entity.slug} />
-            </Reveal>
-          )}
         </div>
       </SceneSection>
+
+      {/* Destacados */}
+      {featured.length > 0 && (
+        <SceneSection sceneId="home-featured" className="py-16 sm:py-20">
+          <div className="container-max">
+            <Reveal className="mb-10 flex items-end justify-between gap-4">
+              <div>
+                <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+                  Destacados
+                </p>
+                <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">
+                  Lo más relevante del expediente
+                </h2>
+              </div>
+              <Link
+                href="/galeria"
+                className="link-underline hidden shrink-0 text-sm font-semibold text-gta-accent transition-colors hover:text-gta-accent-strong sm:inline-block"
+              >
+                Ver galería completa
+              </Link>
+            </Reveal>
+
+            <div className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {featured.map((entity) => (
+                <Link key={`${entity.type}-${entity.slug}`} href={`/${entity.type}/${entity.slug}`}>
+                  <Card hoverable className="flex h-full flex-col overflow-hidden !p-0">
+                    <EntityImage entity={entity} variant="thumbnail" className="!rounded-b-none" />
+                    <CardBody className="flex flex-1 flex-col gap-2 px-5 pb-5">
+                      <div className="flex items-center gap-2">
+                        <Badge variant="status" status={entity.status}>
+                          {STATUS_LABELS[entity.status]}
+                        </Badge>
+                        <span className="text-xs uppercase tracking-wide text-gta-text-tertiary">
+                          {ENTITY_TYPE_LABELS[entity.type]}
+                        </span>
+                      </div>
+                      <h3 className="text-lg font-semibold text-gta-text">{entity.title}</h3>
+                      <p className="line-clamp-2 text-sm text-gta-text-secondary">
+                        {entity.description}
+                      </p>
+                    </CardBody>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </SceneSection>
+      )}
     </>
   )
 }
