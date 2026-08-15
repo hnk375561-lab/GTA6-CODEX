@@ -1,0 +1,71 @@
+{
+  "slug": "noche-jack-of-hearts",
+  "type": "misiones",
+  "title": "Una Noche en Jack of Hearts",
+  "description": "Secuencia ambientada en el club de striptease Jack of Hearts, propiedad de Boobie Ike, mostrada en material promocional de GTA 6.",
+  "content": "Jack of Hearts es uno de los negocios legítimos de Boobie Ike, leyenda de Vice City que transformó su pasado callejero en un imperio que incluye inmobiliaria, este club y el sello discográfico Only Raw Records (en sociedad con Dre'Quan Priest). El interior del club está confirmado visualmente en el Trailer 2 de GTA VI: escenario con bailarinas, la oficina de Boobie dentro del local, y a Dre'Quan Priest junto al dúo Real Dimez, a quien contrata para presentarse allí. El Trailer 1 muestra además una toma exterior parcial del edificio.\n\nEsta escena funcionaría como punto de entrada narrativo a la red de contactos de Boobie Ike, un personaje que —dada la diversidad de sus negocios— probablemente actúa como nexo entre distintos submundos de Vice City: música, entretenimiento nocturno y bienes raíces.\n\nEl local también sirve como escenario social donde los protagonistas pueden recibir información, encargos o simplemente ambientar la vida nocturna de la ciudad, en línea con la tradición de la saga de usar clubes nocturnos como hubs narrativos y de actividades secundarias. Lo que sigue sin confirmación oficial es que Lucia Caminos participe específicamente de esta escena como una misión jugable: el interior mostrado en el tráiler no tiene diálogo ni objetivo de misión identificable, por lo que esta ficha documenta una hipótesis narrativa propia del sitio sobre cómo podría integrarse el local a la trama jugable.",
+  "status": "rumor",
+  "tags": [
+    "boobie-ike",
+    "jack-of-hearts",
+    "vida-nocturna",
+    "negocios",
+    "lucia-caminos"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T10:10:00Z",
+  "updatedAt": "2026-08-15T10:10:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Rockstar Games — Trailer 2 (interior del club Jack of Hearts, escenario, oficina de Boobie Ike, Dre'Quan Priest y Real Dimez) y Trailer 1 (toma exterior parcial)",
+    "secondarySource": "GTA Wiki (gta.wiki/w/Jack_of_Hearts), que cataloga por separado las tomas del interior del club en ambos trailers y confirma la presencia de Boobie Ike, Dre'Quan Priest y Real Dimez en la escena",
+    "note": "Jack of Hearts y su interior están confirmados visualmente en ambos trailers oficiales. Lo que permanece especulativo es exclusivamente el uso narrativo de este local como escenario de una misión jugable con Lucia Caminos como protagonista: ninguna fuente confirma diálogo, objetivo o estructura de misión en esta escena, solo el espacio y los personajes que lo habitan. ACTUALIZACIÓN (Fase 3, 15 ago 2026): se corrige la referencia vaga a 'material promocional' por la cita directa de los trailers donde el interior del club está confirmado, y se agregan relaciones con trailers/trailer-1-anuncio, trailers/trailer-2-gameplay, personajes/drequan-priest y misiones/sesion-only-raw-records — esta última porque ambas fichas documentan el mismo negocio (Jack of Hearts) como parte del mismo imperio comercial de Boobie Ike y Dre'Quan Priest.",
+    "limitations": [
+      "No hay confirmación de una misión específica ambientada en este local",
+      "Rol de Lucia Caminos en esta escena no confirmado",
+      "Tipo de encargo o actividad no documentado"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "boobie-ike",
+      "relation": "anfitrión"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
+      "relation": "protagonista"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "drequan-priest",
+      "relation": "personaje-mostrado"
+    },
+    {
+      "targetType": "negocios",
+      "targetSlug": "jack-of-hearts",
+      "relation": "ubicación-misión"
+    },
+    {
+      "targetType": "actividades",
+      "targetSlug": "baile-clubs",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "documentada-en"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "documentada-en"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "sesion-only-raw-records",
+      "relation": "hilo-narrativo-compartido"
+    }
+  ]
+}

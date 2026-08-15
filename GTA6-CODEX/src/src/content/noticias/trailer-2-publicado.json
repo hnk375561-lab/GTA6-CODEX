@@ -1,0 +1,40 @@
+{
+  "slug": "trailer-2-publicado",
+  "type": "noticias",
+  "title": "Rockstar Publica Segundo Tráiler de GTA VI con Gameplay",
+  "description": "Rockstar Games publica el Trailer 2 oficial de GTA VI el 6 de mayo de 2025, mostrando gameplay e cinemáticas.",
+  "content": "El 6 de mayo de 2025, Rockstar Games publicó el segundo tráiler oficial de Grand Theft Auto VI, cuatro días después de anunciar en Rockstar Newswire que la fecha de lanzamiento pasaba a fijarse en el 26 de mayo de 2026. El propio comunicado de prensa que acompañó el tráiler citaba esa fecha de mayo de 2026, que Rockstar retrasó nuevamente meses más tarde (6 de noviembre de 2025) al 19 de noviembre de 2026, fecha vigente al momento de esta actualización — ver noticias/retraso-gta6-2025 para el historial completo de ambos retrasos.\n\nEste tráiler fue significativamente más largo y detallado que el primero, presentando una combinación de cinemáticas de gameplay en partes iguales (aunque Rockstar no especificó cuáles son cuáles).\n\n**Contenido del Trailer 2:**\n\n- Primeros vistazos reales de gameplay\n- Interacción con NPCs\n- Sistema de conducción en acción\n- Combate cuerpo a cuerpo mostrado\n- Exploración urbana de Vice City\n- Ciclo día/noche dinámico\n- Sistema de clima (lluvia, variaciones atmosféricas)\n- Paisajes y geografía de Leonida\n- Comercios y tiendas interactuables\n\n**Significado:**\nEste tráiler fue crucial para entender el alcance técnico y de diseño de GTA 6. Confirmó que el juego mantendría la escala épica esperada mientras mostraba mejoras significativas en gráficos, IA de mundo abierto y sistemas de interacción.\n\n**Ambigüedad Gameplay vs. Cinemática:**\nRockstar confirmó que el tráiler mezcla gameplay y cinemática en partes iguales, pero no especificó qué escenas pertenecen a cada categoría. Esto generó análisis extenso de la comunidad para intentar identificar qué es gameplay real.",
+  "status": "confirmado",
+  "tags": [
+    "trailer",
+    "gameplay",
+    "mayo-2025",
+    "rockstar",
+    "oficial",
+    "segundo-trailer"
+  ],
+  "featured": true,
+  "createdAt": "2025-05-06T00:00:00Z",
+  "updatedAt": "2026-08-15T12:00:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — Trailer 2 (6 de mayo de 2025) y comunicado de prensa asociado (BusinessWire)",
+    "note": "Trailer publicado oficialmente. Confirmación de gameplay/cinemática mezcla publicada oficialmente; identificación específica de qué escenas son gameplay vs. cinemática no fue especificada. ACTUALIZACIÓN (Fase 3, 15 ago 2026): se corrige el tag 'maio-2025' (error de tipeo) por 'mayo-2025', y se agrega contexto verificado sobre la fecha de lanzamiento vigente al momento de este tráiler (26 de mayo de 2026) y su retraso posterior (19 de noviembre de 2026), con relación a noticias/retraso-gta6-2025.",
+    "limitations": [
+      "Rockstar no identificó oficialmente cuáles escenas son gameplay vs. cinemática",
+      "Análisis de comunidad es especulativo en muchos casos"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "trailer-acompañante"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "retraso-gta6-2025",
+      "relation": "relacionada-con"
+    }
+  ]
+}

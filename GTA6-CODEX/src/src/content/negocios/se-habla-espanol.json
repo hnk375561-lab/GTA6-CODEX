@@ -1,0 +1,41 @@
+{
+  "slug": "se-habla-espanol",
+  "type": "negocios",
+  "title": "Se Habla Español",
+  "description": "Restaurante o local de comida de Vice City, con el rótulo 'Se Habla Español' visible en una escena nocturna de carreras callejeras en el Trailer 1.",
+  "content": "Se Habla Español es el nombre visible en el rótulo de un local, probablemente un restaurante o punto de comida, que aparece en una escena nocturna del Trailer 1 de GTA VI (aprox. 0:46), mientras varios autos hacen 'donuts' en la calle frente al establecimiento.\n\nEl nombre es una referencia directa a los carteles reales de comercios en barrios de fuerte presencia hispana en Miami (como Little Havana), consistente con la ambientación de Vice City. Rockstar no ha revelado el tipo exacto de negocio ni si será un local con interior explorable.",
+  "status": "confirmado",
+  "tags": [
+    "negocio",
+    "restaurante",
+    "vice-city",
+    "trailer-1",
+    "hispano"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrado-en",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-visual-multifuente",
+    "primarySource": "Rockstar Games, Trailer 1 (~0:46), rótulo 'Se Habla Español' visible en escena nocturna de carreras callejeras",
+    "secondarySource": "GTA-Xtreme (gta-xtreme.com) y LibertyCity.net, que identifican de forma independiente el mismo rótulo en la misma escena del Trailer 1",
+    "note": "DESCUBRIMIENTO (14 ago 2026, ronda 7): candidato nuevo, corroborado por dos fuentes independientes. No se afirma el rubro exacto del negocio (restaurante vs. otro tipo de comercio) porque las fuentes no lo confirman con precisión, solo documentan el rótulo visible. ACTUALIZACIÓN (Fase 3, 15 ago 2026): se agrega relación formal con trailers/trailer-1-anuncio, ya citada en primarySource pero ausente del array de relations.",
+    "limitations": [
+      "Rubro exacto del negocio no confirmado",
+      "Ubicación exacta dentro de Vice City no confirmada"
+    ]
+  }
+}
