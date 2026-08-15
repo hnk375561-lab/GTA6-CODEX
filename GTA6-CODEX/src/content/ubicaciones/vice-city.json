@@ -13,7 +13,7 @@
   ],
   "featured": true,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, Trailer 1 y 2, sitio oficial de GTA VI y comunicados de Newswire (nombre de la ciudad y del estado de Leonida confirmados repetidamente)",
@@ -30,5 +30,14 @@
       "targetSlug": "leonida",
       "relation": "located_in"
     }
-  ]
+  ],
+  "environment": {
+    "climate": "Clima dinámico básico (lluvia, iluminación cambiante de día/noche) visible en el material oficial de ambos trailers. No hay confirmación de un sistema de clima extremo (huracanes, tormentas tropicales).",
+    "fauna": [
+      "Caimán americano (alligator) — visto en varias escenas del Trailer 1: un video de \"animal control\" sacando uno de una piscina residencial y otro entrando caminando a una tienda de conveniencia",
+      "Iguana verde — visible sobre el hombro de un NPC en una calle de Vice City"
+    ],
+    "naturalEvents": [],
+    "unconfirmedNote": "Huracanes y clima extremo NO están confirmados por Rockstar Games. En noviembre de 2023, la cuenta no oficial Rockstar Universe declaró en X que esas funciones habrían sido descartadas durante el desarrollo, pero no es una fuente oficial de Rockstar ni hay comunicado propio al respecto en ningún sentido (ni confirmando ni descartando). Se documenta como rumor/no confirmado, no como hecho, siguiendo el sistema de evidencia del sitio."
+  }
 }

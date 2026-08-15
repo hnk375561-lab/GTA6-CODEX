@@ -13,7 +13,7 @@
   ],
   "featured": true,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "region": "Leonida",
   "points_of_interest": [],
   "missions": [],
@@ -30,5 +30,16 @@
     "primarySource": "Rockstar Games, sitio oficial de GTA VI, seccion propia de Leonida Keys (revelada junto al Trailer 2, 6 mayo 2025)",
     "secondarySource": "Sportskeeda, que confirma que Leonida Keys figura entre las regiones nombradas oficialmente en el sitio de Rockstar",
     "note": "Auditoria total (13 ago 2026): nombre de region confirmado oficialmente; es ademas el escenario donde se ambienta buena parte de la historia de Jason. Backfill retroactivo de evidence. FASE D — auditoria adversarial (13 ago 2026): se agrego relations.located_in->leonida. El campo 'region: Leonida' ya existia como texto libre pero faltaba la relacion formal en el grafo; se corrige junto con la creacion de la entidad Leonida."
+  },
+  "environment": {
+    "climate": "Clima dinámico básico (lluvia, iluminación cambiante de día/noche) visible en el material oficial de ambos trailers. No hay confirmación de un sistema de clima extremo (huracanes, tormentas tropicales). La región se presenta con aguas turquesas y ambientación tropical costera.",
+    "fauna": [
+      "Tortuga boba (loggerhead sea turtle) — vista cerca de una embarcación en escenas oceánicas del material oficial",
+      "Tiburón tigre — visto en la misma secuencia marina",
+      "Delfín nariz de botella — banco de delfines visible en la escena oceánica",
+      "Pelícano pardo — bandada vista sobrevolando el océano"
+    ],
+    "naturalEvents": [],
+    "unconfirmedNote": "Huracanes y clima extremo NO están confirmados por Rockstar Games. En noviembre de 2023, la cuenta no oficial Rockstar Universe declaró en X que esas funciones habrían sido descartadas durante el desarrollo, pero no es una fuente oficial de Rockstar ni hay comunicado propio al respecto en ningún sentido (ni confirmando ni descartando). Se documenta como rumor/no confirmado, no como hecho, siguiendo el sistema de evidencia del sitio."
   }
 }

@@ -171,6 +171,25 @@ export interface Location extends BaseEntity {
   points_of_interest?: string[] // Lugares notables dentro
   missions?: string[] // Misiones que ocurren aquí
   businesses?: string[] // Negocios ubicados aquí
+
+  /**
+   * Entorno natural (opcional, deliberadamente escaso).
+   *
+   * Rockstar apenas ha confirmado nada de esto de forma explícita: lo único
+   * verificable visualmente en los trailers es un ciclo día/noche y clima
+   * dinámico básico (lluvia, iluminación cambiante). Cualquier cosa más
+   * específica —huracanes, fauna concreta, eventos ambientales— circula
+   * como rumor o fue reportada como directamente descartada en desarrollo
+   * (ver `unconfirmedNote`). Por eso el campo existe como placeholder
+   * estructurado (sección 8 del brief: modelar sin inventar) en vez de
+   * poblarse con datos que no se pueden respaldar.
+   */
+  environment?: {
+    climate?: string // Solo lo verificable visualmente en material oficial
+    fauna?: string[] // Especies confirmadas visualmente; vacío si no hay ninguna
+    naturalEvents?: string[] // Eventos confirmados (ninguno hasta ahora)
+    unconfirmedNote?: string // Qué se rumorea/especula y por qué no está aquí como hecho
+  }
 }
 
 /**

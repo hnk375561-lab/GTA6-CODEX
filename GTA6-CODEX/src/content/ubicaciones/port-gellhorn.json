@@ -13,7 +13,7 @@
   ],
   "featured": true,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "region": "Leonida",
   "points_of_interest": [],
   "missions": [],
@@ -35,5 +35,11 @@
     "primarySource": "Rockstar Games, sitio oficial de GTA VI, seccion propia de Port Gellhorn (revelada junto al Trailer 2, 6 mayo 2025)",
     "secondarySource": "Sportskeeda, que confirma que Port Gellhorn figura entre las regiones nombradas oficialmente en el sitio de Rockstar",
     "note": "Auditoria total (13 ago 2026): nombre de ciudad/region confirmado oficialmente, con seccion propia en el sitio de Rockstar. Backfill retroactivo de evidence. FASE D — auditoria adversarial (13 ago 2026): se agrego relations.located_in->leonida. El campo 'region: Leonida' ya existia como texto libre pero faltaba la relacion formal en el grafo; se corrige junto con la creacion de la entidad Leonida. RONDA 7 (14 ago 2026): se agrega relations.located_in->kelly-county tras la creacion de esa entidad; se retira la relacion associated_with duplicada del lado de kelly-county.json para evitar una relacion redundante/circular entre ambos archivos."
+  },
+  "environment": {
+    "climate": "Clima dinámico básico (lluvia, iluminación cambiante de día/noche) visible en el material oficial de ambos trailers. No hay confirmación de un sistema de clima extremo (huracanes, tormentas tropicales).",
+    "fauna": [],
+    "naturalEvents": [],
+    "unconfirmedNote": "Huracanes y clima extremo NO están confirmados por Rockstar Games. En noviembre de 2023, la cuenta no oficial Rockstar Universe declaró en X que esas funciones habrían sido descartadas durante el desarrollo, pero no es una fuente oficial de Rockstar ni hay comunicado propio al respecto en ningún sentido (ni confirmando ni descartando). Se documenta como rumor/no confirmado, no como hecho, siguiendo el sistema de evidencia del sitio. Aún no se identificó fauna específica confirmada para esta región puntual."
   }
 }

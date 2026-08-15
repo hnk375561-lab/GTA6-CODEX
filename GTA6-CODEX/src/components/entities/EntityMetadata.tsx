@@ -144,11 +144,18 @@ export function EntityMetadata({ entity }: EntityMetadataProps) {
 
   if (entity.type === EntityType.LOCATION) {
     const loc = entity as Extract<Entity, { type: EntityType.LOCATION }>
+    const hasEnvironment =
+      loc.environment &&
+      (loc.environment.climate ||
+        loc.environment.fauna?.length ||
+        loc.environment.naturalEvents?.length ||
+        loc.environment.unconfirmedNote)
     if (
       !loc.district &&
       !loc.region &&
       !loc.points_of_interest?.length &&
-      !loc.businesses?.length
+      !loc.businesses?.length &&
+      !hasEnvironment
     )
       return null
 
@@ -160,6 +167,18 @@ export function EntityMetadata({ entity }: EntityMetadataProps) {
         </dl>
         <ListField label="Puntos de interés" items={loc.points_of_interest} />
         <ListField label="Negocios" items={loc.businesses} />
+        {hasEnvironment && (
+          <div className="space-y-2 border-t border-gta-border pt-3">
+            <Field label="Clima" value={loc.environment?.climate} />
+            <ListField label="Fauna confirmada" items={loc.environment?.fauna} />
+            <ListField label="Eventos ambientales confirmados" items={loc.environment?.naturalEvents} />
+            {loc.environment?.unconfirmedNote && (
+              <p className="text-xs italic leading-relaxed text-gta-text-secondary/70">
+                {loc.environment.unconfirmedNote}
+              </p>
+            )}
+          </div>
+        )}
       </div>
     )
   }
