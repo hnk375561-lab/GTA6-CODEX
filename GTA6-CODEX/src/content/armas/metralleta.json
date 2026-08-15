@@ -2,31 +2,41 @@
   "slug": "metralleta",
   "type": "armas",
   "title": "Metralleta",
-  "description": "Arma automática de fuego rápido y alto volumen de munición. Clásica en juegos GTA.",
-  "content": "La metralleta es un arma automática tradicional en la franquicia Grand Theft Auto. Aunque no ha sido visualmente confirmada en trailers de GTA 6, su presencia es altamente probable basada en:\n\n- Aparición estándar en todas las entregas de GTA\n- Presencia de escenarios de combate de fuego intenso en trailers\n- Necesidad de variedad de armas automáticas en sistema de combate\n- Compatibilidad con persecuciones policiales mostradas\n\n**Características Típicas**:\n- Fuego automático/ráfaga\n- Cadencia de fuego rápida\n- Menor daño por bala que rifles\n- Mayor volumen de fuego que pistolas\n- Útil para combate de corto-medio alcance\n- Munición abundante pero cara\n\n**Contexto en GTA 6**:\nSe espera que la metralleta sea disponible a través de:\n- Tiendas de armas\n- Enemigos derrotados\n- Ubicaciones específicas\n- Misiones que la requieren\n- Posibles variantes/modelo específico",
-  "status": "nuestro",
+  "description": "Categoría de armas automáticas de perfil subfusil/ametralladora ligera de GTA VI, mostrada en el comercial de Ammu-Nation del Trailer 2 y en una secuencia de robo a mano armada del mismo tráiler.",
+  "content": "La cobertura especializada identificó armas automáticas de perfil subfusil (SMG) y de ametralladora ligera (LMG) en dos momentos distintos del Trailer 2: una secuencia de robo a un banco, donde uno de los protagonistas empuña un arma de este tipo con mira réflex, y el comercial in-game de Phil's Ammu-Nation (~2:09), donde se ve un arma automática de mayor tamaño, con perfil de ametralladora ligera, exhibida en el mostrador del local junto a al menos una escopeta.\n\nA diferencia de otras categorías de armas del catálogo que siguen siendo especulativas por tradición de la saga, la presencia de este tipo de arma automática en GTA VI ya cuenta con respaldo visual directo en material oficial. Rockstar no confirmó nombres de modelo in-game; la identificación de inspiraciones en armas reales (por ejemplo, comparaciones con un MP5 o con el Combat MG de GTA V) proviene de análisis de prensa especializada, no de un comunicado oficial de Rockstar.",
+  "status": "confirmado",
   "tags": [
     "arma-de-fuego",
     "automática",
     "metralleta",
-    "fuego-rápido",
-    "especulado",
-    "tradicional"
+    "trailer-2",
+    "ammu-nation",
+    "confirmado-visual"
   ],
   "featured": false,
   "createdAt": "2026-08-14T00:00:00Z",
-  "updatedAt": "2026-08-15T02:45:00Z",
+  "updatedAt": "2026-08-15T12:00:00Z",
   "evidence": {
-    "level": "especulativo",
-    "primarySource": "Análisis de estructura de GTA tradicional",
-    "note": "No visualmente confirmada en trailers de GTA 6 hasta ahora. Incluida basada en aparición estándar en todas las entregas de GTA.",
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, Trailer 2 (secuencia de robo bancario y comercial de Ammu-Nation, ~2:09)",
+    "secondarySource": "games.gg y TheGamer, cobertura independiente que identifica un arma de perfil SMG en la escena del robo y un arma de perfil LMG en el comercial de Ammu-Nation",
+    "note": "Se confirma visualmente la existencia de al menos un arma automática de este tipo dentro del arsenal del juego, en dos escenas distintas del mismo tráiler. La identificación de marcas/modelos reales de inspiración es análisis de prensa especializada, no confirmación oficial de Rockstar.",
     "limitations": [
-      "Modelo específico desconocido",
-      "Variantes no confirmadas",
-      "Daño exacto no especificado",
-      "Cadencia de fuego no confirmada",
-      "Disponibilidad en juego no confirmada"
+      "Nombres de modelo in-game no confirmados oficialmente",
+      "No confirmado si el arma vista en el robo bancario y la del comercial de Ammu-Nation son el mismo modelo o variantes distintas",
+      "Cadencia de fuego, daño y capacidad de munición no confirmados"
     ]
   },
-  "relations": []
+  "relations": [
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrada-en"
+    },
+    {
+      "targetType": "negocios",
+      "targetSlug": "ammu-nation",
+      "relation": "vendida-en"
+    }
+  ]
 }

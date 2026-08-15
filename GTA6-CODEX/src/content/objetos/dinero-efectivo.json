@@ -2,30 +2,37 @@
   "slug": "dinero-efectivo",
   "type": "objetos",
   "title": "Dinero en Efectivo",
-  "description": "Moneda principal del juego. Usado para comprar items, pagar servicios y acceder a actividades.",
-  "content": "El dinero en efectivo es la moneda principal de GTA 6. Funciona como el sistema económico fundamental del juego.\n\n**Formas de Obtener Dinero**:\n- Completar misiones\n- Robar dinero de victimas\n- Actividades secundarias (carreras, pesca, etc.)\n- Negocios criminales\n- Encontrar dinero en el mundo\n- Apuestas en actividades\n\n**Usos del Dinero**:\n- Comprar armas y munición\n- Comprar ropa y accesorios\n- Pagar servicios (transporte, hotels)\n- Pagar multas policiales\n- Acceder a actividades (carreras, clubs)\n- Apuestas\n- Comprar propiedades\n- Invertir en negocios\n\n**Almacenamiento**:\nEl dinero se lleva en el inventario del jugador, con posibles límites de cantidad máxima portátil. Dinero adicional puede depositarse en bancos o propiedades.\n\nEl sistema de dinero es fundamental para la progresión y libertad del jugador en GTA 6, permitiendo acceso a múltiples actividades y mejoras.",
-  "status": "nuestro",
+  "description": "Moneda principal de GTA VI. El diseño de los billetes, visible en el Trailer 2, incluye retratos de los presidentes ficticios Hardin y Thaddeus Waxman, tomados del universo de Red Dead Redemption.",
+  "content": "El dinero en efectivo es la moneda del mundo de juego de GTA VI. Más allá de su función económica esperada (comprar armas, ropa, propiedades y servicios, como en cada entrega de la saga), un detalle concreto del diseño de los billetes sí fue observado directamente en el metraje del Trailer 2: los retratos que aparecen en el dinero corresponden a los presidentes ficticios Hardin y Thaddeus Waxman, personajes ya establecidos dentro del universo de Red Dead Redemption.\n\nEste detalle fue detectado por la comunidad a partir de capturas directas del propio tráiler oficial, y sugiere que GTA VI comparte universo ficticio con la saga Red Dead Redemption (ambas desarrolladas por Rockstar Games), algo que hasta ahora era solo materia de easter eggs menores en entregas anteriores.\n\nMás allá de este detalle visual confirmado, el resto de las mecánicas económicas (límites de dinero portátil, depósitos bancarios, inversión en negocios, apuestas) no fue confirmado oficialmente por Rockstar y sigue siendo una expectativa razonable basada en la estructura económica de GTA V y GTA Online, no un hecho documentado para GTA VI.",
+  "status": "confirmado",
   "tags": [
     "moneda",
     "economía",
     "dinero",
-    "tradicional",
-    "fundamental"
+    "trailer-2",
+    "red-dead-redemption",
+    "easter-egg"
   ],
   "featured": false,
   "createdAt": "2026-08-14T00:00:00Z",
-  "updatedAt": "2026-08-15T02:45:00Z",
+  "updatedAt": "2026-08-15T12:30:00Z",
   "evidence": {
-    "level": "especulativo",
-    "primarySource": "Sistema económico estándar de GTA",
-    "note": "Moneda económica estándar en todos los juegos GTA. Altamente probable que continúe en GTA 6, aunque las mecánicas específicas aún no están confirmadas.",
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, Trailer 2 (planos de billetes en cámara)",
+    "secondarySource": "Notebookcheck, cobertura que documenta la captura comunitaria (usuario 'Synth Potato') identificando los retratos de Hardin y Thaddeus Waxman en los billetes",
+    "note": "El diseño de los billetes con los presidentes de Red Dead Redemption es visible directamente en el tráiler oficial; se documenta como confirmado. Las mecánicas económicas generales del juego (límites, depósitos, inversión) NO están confirmadas oficialmente y se separan explícitamente del dato visual confirmado.",
     "limitations": [
+      "Detalle reportado por una única fuente secundaria hasta el momento (no multifuente)",
       "Cantidad máxima portátil no confirmada",
-      "Depósitos en banco no confirmados",
-      "Sistema de inversiones no especificado",
-      "Tasas de servicio desconocidas",
-      "Inflación/deflación económica no documentada"
+      "Depósitos en banco y sistema de inversiones no confirmados",
+      "No confirmado si el vínculo con Red Dead Redemption tendrá alguna implicancia narrativa más allá del easter egg visual"
     ]
   },
-  "relations": []
+  "relations": [
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrado-en"
+    }
+  ]
 }

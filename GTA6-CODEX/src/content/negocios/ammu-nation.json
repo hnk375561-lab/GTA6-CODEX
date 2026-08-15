@@ -1,0 +1,52 @@
+{
+  "slug": "ammu-nation",
+  "type": "negocios",
+  "title": "Ammu-Nation",
+  "description": "Cadena de armerías clásica de la saga GTA, mostrada en un comercial de televisión in-game protagonizado por Phil dentro del Trailer 2 de GTA VI.",
+  "content": "Ammu-Nation es la cadena de tiendas de armas más reconocible de la saga Grand Theft Auto, presente de una forma u otra desde las entregas de la era 3D. En GTA VI reaparece dentro de un inserto publicitario del Trailer 2: un comercial de televisión in-game que promociona el local, protagonizado por un personaje llamado Phil (reinterpretación del clásico Phil Cassidy).\n\nEl mostrador y la pared del local que se ven durante el comercial exhiben varias armas de fuego, entre ellas al menos una escopeta y un arma automática de perfil tipo subfusil/ametralladora ligera, lo que confirma visualmente parte del catálogo que la tienda vendería dentro del juego.\n\nRockstar no ha confirmado si Ammu-Nation será un local visitable y funcional dentro del mundo abierto (como en entregas anteriores) o si esta aparición se limita al comercial in-game mostrado en el tráiler. Tampoco se conoce su ubicación exacta dentro de Leonida.",
+  "status": "confirmado",
+  "tags": [
+    "negocio",
+    "armeria",
+    "ammu-nation",
+    "trailer-2",
+    "phil",
+    "comercial-in-game"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T12:00:00Z",
+  "updatedAt": "2026-08-15T12:00:00Z",
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "phil",
+      "relation": "protagonizado-por"
+    },
+    {
+      "targetType": "armas",
+      "targetSlug": "escopeta",
+      "relation": "vende"
+    },
+    {
+      "targetType": "armas",
+      "targetSlug": "metralleta",
+      "relation": "vende"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrado en"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, Trailer 2 (~2:09), inserto de comercial de televisión in-game para \"Phil's Ammu-Nation\"",
+    "secondarySource": "GTA Wiki (Fandom), TheGamer y games.gg, cobertura independiente que identifica la escena y el catálogo de armas visible en el mostrador",
+    "note": "El nombre 'Ammu-Nation' y la marca del local son visibles/legibles en el propio comercial mostrado en el tráiler oficial. No está confirmado si será una tienda funcional y visitable en el mundo abierto ni su ubicación exacta; se documenta únicamente lo mostrado en la escena.",
+    "limitations": [
+      "No confirmado si será un local visitable dentro del mundo abierto",
+      "Ubicación exacta dentro de Leonida desconocida",
+      "Catálogo completo de armas vendidas no confirmado más allá de lo visible en la escena"
+    ]
+  }
+}

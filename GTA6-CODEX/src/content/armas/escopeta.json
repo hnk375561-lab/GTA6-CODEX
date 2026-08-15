@@ -2,30 +2,41 @@
   "slug": "escopeta",
   "type": "armas",
   "title": "Escopeta",
-  "description": "Arma de dispersión de corto-medio alcance. Armamento típico en juegos GTA.",
-  "content": "La escopeta es un arma de dispersión que ha sido tradicional en la franquicia Grand Theft Auto. Aunque no ha sido visualmente confirmada en trailers de GTA 6 hasta el momento, su presencia es altamente probable basada en:\n\n- Aparición estándar en cada entrega de GTA desde los inicios\n- Presencia de escenarios de combate cercano en trailers\n- Material de Rockstar suele incluir una variedad de armas para diferentes rangos\n- Compatibilidad con el sistema de policía mostrado en trailers\n\nLa escopeta típicamente ofrece:\n- Daño alto en corto alcance\n- Spread/dispersión de proyectiles\n- Munición limitada pero potente\n- Uso en defensa del hogar y combate cercano\n\nEn GTA 6, se espera que la escopeta sea disponible a través de:\n- Tiendas de armas\n- Enemigos derrotados\n- Ubicaciones específicas (depósitos, etc.)\n- Misiones que la requieren",
-  "status": "nuestro",
+  "description": "Categoría de escopetas de GTA VI: al menos dos modelos distintos (de bomba y de dos cañones) fueron mostrados visualmente en el Trailer 2, entre ellas la exhibida en el comercial de Ammu-Nation protagonizado por Phil.",
+  "content": "A diferencia de otras armas de la categoría cuerpo a cuerpo o de fuego cuya presencia todavía es especulativa, las escopetas de GTA VI ya fueron mostradas visualmente en material oficial. La cobertura especializada identificó al menos dos siluetas distintas dentro del metraje y las capturas del Trailer 2: una escopeta de acción de bomba (bomb-action) usada en una secuencia de robo, y una escopeta de dos cañones (over-under / double-barreled) con una estética más rural, coherente con la ambientación de los Cayos de Leonida.\n\nEsta misma categoría de arma también aparece exhibida en el mostrador del comercial in-game de Phil's Ammu-Nation, dentro del Trailer 2 (~2:09), lo que refuerza que la escopeta formará parte del catálogo de armas comprables del juego.\n\nRockstar no publicó nombres oficiales de modelo para ninguna de las dos variantes: la identificación de marcas o inspiraciones de fabricantes reales (por ejemplo, comparaciones con modelos Mossberg o Remington) proviene exclusivamente de análisis de la comunidad y prensa especializada, no de Rockstar Games.",
+  "status": "confirmado",
   "tags": [
     "arma-de-fuego",
     "escopeta",
     "combate-cercano",
-    "especulado",
-    "tradicional"
+    "trailer-2",
+    "ammu-nation",
+    "confirmado-visual"
   ],
   "featured": false,
   "createdAt": "2026-08-14T00:00:00Z",
-  "updatedAt": "2026-08-15T02:40:00Z",
+  "updatedAt": "2026-08-15T12:00:00Z",
   "evidence": {
-    "level": "especulativo",
-    "primarySource": "Análisis de estructura de GTA tradicional",
-    "note": "No visualmente confirmada en trailers de GTA 6 hasta ahora. Incluida basada en aparición estándar en todas las entregas de GTA y lógica de gameplay consistente con series anteriores.",
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, Trailer 2 (secuencia de robo y comercial de Ammu-Nation, ~2:09)",
+    "secondarySource": "TheGamer, games.gg y Fossbytes, cobertura independiente que identifica al menos dos modelos distintos de escopeta (bomba y dos cañones) en el metraje oficial",
+    "note": "Se confirma visualmente la existencia de al menos dos variantes de escopeta dentro del arsenal del juego. La identificación de marcas/modelos reales de inspiración es análisis de prensa especializada, no confirmación oficial de Rockstar, y se documenta como tal.",
     "limitations": [
-      "Modelo específico desconocido",
-      "Daño exacto no confirmado",
-      "Capacidad de munición no especificada",
-      "Disponibilidad en juego no confirmada",
-      "Puede no estar presente en GTA 6"
+      "Nombres de modelo in-game no confirmados oficialmente",
+      "No confirmado si existen variantes adicionales más allá de las dos identificadas",
+      "Estadísticas de daño, munición y disponibilidad no confirmadas"
     ]
   },
-  "relations": []
+  "relations": [
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrada-en"
+    },
+    {
+      "targetType": "negocios",
+      "targetSlug": "ammu-nation",
+      "relation": "vendida-en"
+    }
+  ]
 }

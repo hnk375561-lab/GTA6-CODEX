@@ -78,6 +78,19 @@
       ]
     },
     {
+      "id": "scene-05b",
+      "timestamp": "~1:20",
+      "title": "Atraco al Sinfrontera National Bank",
+      "description": "Lucia Caminos, con máscara de calavera y lentes, encañona a empleados bancarios con un arma automática de perfil subfusil, frente a un cartel que identifica el local como 'Sinfrontera National Bank'. Jason Duval, con el mismo tipo de máscara, aparta a uno de los rehenes.",
+      "status": "confirmado",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "lucia-caminos", "relation": "personaje mostrado" },
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" },
+        { "targetType": "armas", "targetSlug": "metralleta", "relation": "mostrada en" },
+        { "targetType": "objetos", "targetSlug": "pasamontanas", "relation": "mostrado en" }
+      ]
+    },
+    {
       "id": "scene-06",
       "timestamp": "~1:30",
       "title": "Combate en calle con enemigos",
@@ -108,6 +121,19 @@
       "relations": [
         { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "conductor" },
         { "targetType": "actividades", "targetSlug": "conduccion", "relation": "mostrada" }
+      ]
+    },
+    {
+      "id": "scene-08b",
+      "timestamp": "~2:09",
+      "title": "Comercial de Phil's Ammu-Nation",
+      "description": "Inserto de un comercial de televisión in-game para la armería Ammu-Nation, protagonizado por un personaje llamado Phil. En el mostrador y la pared del local se ven varias armas de fuego, incluyendo al menos una escopeta y un arma automática de perfil tipo subfusil/ametralladora ligera.",
+      "status": "confirmado",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "phil", "relation": "protagoniza" },
+        { "targetType": "negocios", "targetSlug": "ammu-nation", "relation": "mostrado en" },
+        { "targetType": "armas", "targetSlug": "escopeta", "relation": "mostrada en" },
+        { "targetType": "armas", "targetSlug": "metralleta", "relation": "mostrada en" }
       ]
     },
     {

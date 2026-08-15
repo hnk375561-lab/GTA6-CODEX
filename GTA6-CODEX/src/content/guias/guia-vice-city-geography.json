@@ -5,12 +5,18 @@
   "description": "Exploración completa de los distritos, ubicaciones y puntos de interés en Vice City.",
   "content": "Vice City es un entorno expansivo inspirado en Miami que se divide en varios distritos distintivos. Esta guía te ayuda a navegar la ciudad y descubrir qué puedes hacer en cada zona.\n\n## Distritos Principales\n\nDowntown Vice City es el corazón financiero, Ambrosia la zona costera, el Astillero la base industrial, Grassrivers la naturaleza y Gambit Bay el acceso acuático.\n\n## Conexiones Geográficas con Personajes\n\nCada distrito alberga personajes específicos con sus propias agendas y operaciones.\n\n## Transporte Entre Distritos\n\nLa ciudad está conectada por carreteras, transporte marítimo y rutas a pie.",
   "status": "nuestro",
-  "tags": ["geografía", "vice-city", "distritos", "exploración", "ubicaciones"],
+  "tags": [
+    "geografía",
+    "vice-city",
+    "distritos",
+    "exploración",
+    "ubicaciones"
+  ],
   "featured": true,
   "createdAt": "2026-08-15T04:00:00Z",
   "updatedAt": "2026-08-15T04:00:00Z",
   "evidence": {
-    "level": "nuestro",
+    "level": "especulativo",
     "primarySource": "Catálogo de ubicaciones de GTA VI CODEX"
   },
   "relations": []

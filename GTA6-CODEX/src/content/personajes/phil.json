@@ -13,9 +13,20 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-15T12:00:00Z",
   "faction": null,
-  "relations": [],
+  "relations": [
+    {
+      "targetType": "negocios",
+      "targetSlug": "ammu-nation",
+      "relation": "dueño_de"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "aparece_en"
+    }
+  ],
   "evidence": {
     "level": "respaldado",
     "primarySource": "Rockstar Games, Trailer 2 (escena del comercial de \"Phil's Ammu-Nation\", ~2:09-2:10)",
