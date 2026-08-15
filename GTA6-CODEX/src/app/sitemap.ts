@@ -53,6 +53,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.5,
     },
+    {
+      url: `${SITE_URL}/galeria`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
   ]
 
   const listRoutes: MetadataRoute.Sitemap = Object.values(EntityType)
