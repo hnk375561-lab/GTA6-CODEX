@@ -12,7 +12,8 @@
     "process-images": "node scripts/process-images.mjs",
     "process-images:apply": "node scripts/process-images.mjs --apply",
     "verify:seo": "node scripts/verify-seo-routes.mjs",
-    "verify:content": "node scripts/verify-content-integrity.mjs"
+    "verify:content": "node scripts/verify-content-integrity.mjs",
+    "verify:tailwind": "node scripts/verify-tailwind-config.mjs"
   },
   "dependencies": {
     "@types/three": "^0.185.4",

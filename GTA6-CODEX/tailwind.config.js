@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
     './src/app/**/*.{js,ts,jsx,tsx}',
   ],
@@ -42,21 +41,6 @@ module.exports = {
           'monospace',
         ],
       },
-      fontSize: {
-        xs: ['0.75rem', { lineHeight: '1rem' }],
-        sm: ['0.875rem', { lineHeight: '1.25rem' }],
-        base: ['1rem', { lineHeight: '1.5rem' }],
-        lg: ['1.125rem', { lineHeight: '1.75rem' }],
-        xl: ['1.25rem', { lineHeight: '1.75rem' }],
-        '2xl': ['1.5rem', { lineHeight: '2rem' }],
-        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-        '5xl': ['3rem', { lineHeight: '1' }],
-        '6xl': ['3.75rem', { lineHeight: '1' }],
-      },
-      spacing: {
-        gutter: 'var(--gutter-width)',
-      },
       borderRadius: {
         sm: '0.25rem',
         DEFAULT: '0.375rem',
@@ -70,33 +54,8 @@ module.exports = {
         'gta-lg': '0 10px 15px rgba(0, 0, 0, 0.7)',
         'gta-xl': '0 20px 25px rgba(0, 0, 0, 0.8)',
       },
-      typography: {
-        DEFAULT: {
-          css: {
-            color: '#f2f2f0',
-            a: {
-              color: '#22c55e',
-              '&:hover': {
-                color: '#4ade80',
-              },
-            },
-            h1: { color: '#ffffff' },
-            h2: { color: '#ffffff' },
-            h3: { color: '#ffffff' },
-            h4: { color: '#ffffff' },
-            strong: { color: '#ffffff' },
-            code: { color: '#ff6600' },
-            pre: {
-              backgroundColor: '#0a0a0a',
-              color: '#f2f2f0',
-            },
-          },
-        },
-      },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [],
   darkMode: 'class',
 }
