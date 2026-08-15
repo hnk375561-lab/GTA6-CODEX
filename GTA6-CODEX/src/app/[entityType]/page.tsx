@@ -28,6 +28,7 @@ const TYPE_LABELS: Record<EntityType, string> = {
   [EntityType.OBJECT]: 'Objetos',
   [EntityType.NEWS]: 'Noticias',
   [EntityType.GUIDE]: 'Guías',
+  [EntityType.TRAILER]: 'Trailers',
 }
 
 const STATUS_LABELS = {

@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { href: `/${EntityType.CHARACTER}`, label: 'Personajes' },
   { href: `/${EntityType.VEHICLE}`, label: 'Vehículos' },
   { href: `/${EntityType.LOCATION}`, label: 'Ubicaciones' },
+  { href: `/${EntityType.TRAILER}`, label: 'Trailers' },
   { href: `/${EntityType.MISSION}`, label: 'Misiones' },
   { href: `/${EntityType.NEWS}`, label: 'Noticias' },
   { href: `/${EntityType.GUIDE}`, label: 'Guías' },

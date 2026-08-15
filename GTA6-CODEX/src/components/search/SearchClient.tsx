@@ -24,6 +24,7 @@ const TYPE_LABELS: Record<EntityType, string> = {
   objetos: 'Objetos',
   noticias: 'Noticias',
   guias: 'Guías',
+  trailers: 'Trailers',
 } as Record<EntityType, string>
 
 export function SearchClient({ entities }: SearchClientProps) {

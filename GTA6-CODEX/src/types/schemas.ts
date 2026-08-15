@@ -65,6 +65,35 @@ export const BaseEntitySchema = z.object({
 export type ValidatedBaseEntity = z.infer<typeof BaseEntitySchema>
 
 /**
+ * Schema de una escena dentro de un Trailer (ver `TrailerScene` en entity.ts).
+ */
+export const TrailerSceneSchema = z.object({
+  id: z.string().min(1),
+  timestamp: z.string().min(1),
+  title: z.string().min(1),
+  description: z.string().min(1),
+  relations: z.array(EntityRelationSchema).optional(),
+  status: InformationStatusSchema.optional(),
+})
+
+/**
+ * Schema completo de un Trailer: BaseEntitySchema + campos propios.
+ * Se valida por separado (en vez de sumarlo al schema base genérico)
+ * porque `scenes` es obligatorio solo para este tipo.
+ */
+export const TrailerSchema = BaseEntitySchema.extend({
+  type: z.literal(EntityType.TRAILER),
+  releaseDate: z.string().min(1, 'releaseDate requerido'),
+  officialUrl: z.string().url().optional(),
+  durationSeconds: z.number().positive().optional(),
+  scenes: z.array(TrailerSceneSchema).min(1, 'un trailer necesita al menos una escena'),
+})
+
+export function safeParseTrailer(entity: unknown) {
+  return TrailerSchema.safeParse(entity)
+}
+
+/**
  * Valida un valor desconocido (JSON parseado) contra el contrato base.
  * Devuelve `{ success: true, data }` o `{ success: false, error }` con el
  * detalle legible de Zod, para poder loguear qué campo exacto falló.

@@ -64,6 +64,7 @@ export function generateListMetadata(
     [EntityType.OBJECT]: 'Objetos',
     [EntityType.NEWS]: 'Noticias',
     [EntityType.GUIDE]: 'Guías',
+    [EntityType.TRAILER]: 'Trailers',
   }
 
   const label = typeLabel[type] || type

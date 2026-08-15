@@ -1,6 +1,24 @@
 import fs from 'fs'
 import path from 'path'
 import { Entity, EntityType, BaseEntity } from '@/types'
+import { safeParseTrailer } from '@/types/schemas'
+
+/**
+ * Validación adicional específica de tipo, para entidades cuyo contrato
+ * va más allá de BaseEntity (ej. Trailer requiere `scenes`). Se ejecuta
+ * después de `validateEntity` (que ya garantiza el contrato base) y solo
+ * agrega chequeos extra; nunca afloja lo que `validateEntity` ya exige.
+ */
+function validateTypeSpecific(type: EntityType, entity: unknown, contextLabel: string): boolean {
+  if (type === EntityType.TRAILER) {
+    const result = safeParseTrailer(entity)
+    if (!result.success) {
+      console.warn(`[entities] Trailer inválido en ${contextLabel}: ${result.error.message}`)
+      return false
+    }
+  }
+  return true
+}
 
 const CONTENT_DIR = path.join(process.cwd(), 'src', 'content')
 
@@ -26,6 +44,10 @@ export async function getEntitiesByType(type: EntityType): Promise<Entity[]> {
 
       if (!validateEntity(parsed)) {
         console.warn(`[entities] Entidad inválida ignorada: ${type}/${file}`)
+        continue
+      }
+
+      if (!validateTypeSpecific(type, parsed, `${type}/${file}`)) {
         continue
       }
 
@@ -56,6 +78,7 @@ export async function getEntity(type: EntityType, slug: string): Promise<Entity 
     const raw = fs.readFileSync(filePath, 'utf-8')
     const parsed = JSON.parse(raw)
     if (!validateEntity(parsed)) return null
+    if (!validateTypeSpecific(type, parsed, `${type}/${slug}.json`)) return null
     return parsed as Entity
   } catch (err) {
     console.warn(`[entities] Error leyendo ${type}/${slug}.json:`, err)

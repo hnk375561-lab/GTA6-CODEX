@@ -5,6 +5,8 @@ export type {
   Vehicle,
   Location,
   Mission,
+  Trailer,
+  TrailerScene,
   GenericEntity,
   EntityRelation,
   EntityTypeConfig,

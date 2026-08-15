@@ -71,6 +71,13 @@ function CategoryGlyph({ type }: { type: EntityType }) {
           <path d="M18 40V26h12v14" />
         </svg>
       )
+    case EntityType.TRAILER:
+      return (
+        <svg viewBox="0 0 48 48" className="h-10 w-10 stroke-gta-accent/50" fill="none" strokeWidth="1.5" aria-hidden="true">
+          <rect x="5" y="10" width="38" height="28" rx="3" />
+          <path d="M20 18l11 6-11 6z" />
+        </svg>
+      )
     default:
       return (
         <svg viewBox="0 0 48 48" className="h-10 w-10 stroke-gta-accent/50" fill="none" strokeWidth="1.5" aria-hidden="true">
@@ -86,6 +93,7 @@ const CATEGORY_FALLBACK_LABEL: Partial<Record<EntityType, string>> = {
   [EntityType.LOCATION]: 'Sin imagen verificada',
   [EntityType.FACTION]: 'Sin imagen verificada',
   [EntityType.BUSINESS]: 'Sin imagen verificada',
+  [EntityType.TRAILER]: 'Sin miniatura verificada',
 }
 
 export function EntityImage({ entity, variant = 'thumbnail', className }: EntityImageProps) {

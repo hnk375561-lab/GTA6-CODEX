@@ -1,0 +1,112 @@
+{
+  "slug": "trailer-1-anuncio",
+  "type": "trailers",
+  "title": "Trailer 1 — Tráiler de Anuncio",
+  "description": "Primer tráiler oficial de Grand Theft Auto VI, publicado por Rockstar Games el 5 de diciembre de 2023. Presenta Vice City en la actualidad y confirma a Jason Duval y Lucia Caminos como protagonistas.",
+  "content": "El primer tráiler de GTA VI marcó el regreso oficial de Rockstar Games a Vice City tras años de especulación. A diferencia de la ambientación ochentera de Vice City original, este tráiler sitúa la acción en un presente reconocible: smartphones, redes sociales y una estética que mezcla el imaginario clásico de la saga con comentario social contemporáneo.\n\nEl tráiler introduce a los dos protagonistas confirmados, Jason Duval y Lucia Caminos, y sugiere una historia centrada en su relación y en la vida criminal de ambos en Leonida. También aparecen personajes secundarios como Brian Heder y Bae-Luxe, integrante del grupo Real Dimez.\n\nEsta ficha documenta el tráiler escena por escena. Los timestamps son aproximados (no verificados frame por frame contra el archivo original) y se usan solo para ordenar cronológicamente el contenido dentro del video.",
+  "status": "confirmado",
+  "tags": ["anuncio", "vice-city", "jason-duval", "lucia-caminos", "2023"],
+  "featured": true,
+  "releaseDate": "2023-12-05",
+  "durationSeconds": 90,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — canal oficial de YouTube / rockstargames.com",
+    "note": "Fecha de publicación y aparición de personajes confirmadas por el material oficial de Rockstar Games. Los timestamps de cada escena son estimaciones propias para ordenar el contenido, no marcas de tiempo oficiales.",
+    "limitations": [
+      "Los timestamps son aproximados, no verificados frame por frame",
+      "El nombre completo y afiliación de algunos personajes secundarios se basa en material promocional posterior, no solo en este tráiler"
+    ]
+  },
+  "relations": [
+    { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "protagonista mostrado" },
+    { "targetType": "personajes", "targetSlug": "lucia-caminos", "relation": "protagonista mostrado" },
+    { "targetType": "ubicaciones", "targetSlug": "vice-city", "relation": "ubicación principal mostrada" }
+  ],
+  "scenes": [
+    {
+      "id": "scene-01",
+      "timestamp": "~0:05",
+      "title": "Vice City moderna",
+      "description": "El tráiler abre con tomas de un Vice City contemporáneo: costa, rascacielos y vida urbana con smartphones y redes sociales, estableciendo que la historia transcurre en la actualidad y no en los años 80 de los juegos clásicos.",
+      "relations": [
+        { "targetType": "ubicaciones", "targetSlug": "vice-city", "relation": "ubicación mostrada" }
+      ]
+    },
+    {
+      "id": "scene-02",
+      "timestamp": "~0:20",
+      "title": "Lucia en un centro penitenciario",
+      "description": "Se muestra a Lucia Caminos recluida en un centro de detención de Leonida. Material promocional relacionado la muestra posteriormente con un monitor de tobillo, sugiriendo una salida bajo libertad condicional.",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "lucia-caminos", "relation": "personaje mostrado" }
+      ]
+    },
+    {
+      "id": "scene-03",
+      "timestamp": "~0:40",
+      "title": "Jason y Lucia juntos",
+      "description": "Una serie de tomas muestra a Jason Duval y Lucia Caminos compartiendo momentos íntimos y en un club nocturno, donde bailan juntos.",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" },
+        { "targetType": "personajes", "targetSlug": "lucia-caminos", "relation": "personaje mostrado" }
+      ]
+    },
+    {
+      "id": "scene-04",
+      "timestamp": "~1:00",
+      "title": "Bae-Luxe en escena",
+      "description": "Aparece brevemente Bae-Luxe, integrante del grupo Real Dimez, en un ambiente social junto a otros personajes secundarios.",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "bae-luxe", "relation": "personaje mostrado" }
+      ]
+    },
+    {
+      "id": "scene-05",
+      "timestamp": "~1:15",
+      "title": "Advertencia de Brian Heder",
+      "description": "Se escucha la voz de Brian Heder advirtiendo que las autoridades ya tienen identificados a Jason y Lucia, mientras se ve al dúo escapando por una ventana con un helicóptero sobrevolando la zona.",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "brian-heder", "relation": "voz / diálogo" },
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" },
+        { "targetType": "personajes", "targetSlug": "lucia-caminos", "relation": "personaje mostrado" }
+      ]
+    },
+    {
+      "id": "scene-06",
+      "timestamp": "~1:30",
+      "title": "Redada policial táctica",
+      "description": "Se muestra a un equipo policial táctico realizando una redada, en paralelo a los diálogos sobre la persecución de los protagonistas. Un oficial comenta sobre la solidaridad entre policías."
+    },
+    {
+      "id": "scene-07",
+      "timestamp": "~1:45",
+      "title": "Jason dispara desde un vehículo",
+      "description": "Jason Duval dispara una pistola desde la ventanilla de un auto en movimiento durante una secuencia de acción.",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" }
+      ]
+    },
+    {
+      "id": "scene-08",
+      "timestamp": "~1:50",
+      "title": "Combate en jaula de MMA",
+      "description": "Lucia Caminos aparece peleando dentro de una jaula de artes marciales mixtas, golpeando a un oponente.",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "lucia-caminos", "relation": "personaje mostrado" }
+      ]
+    },
+    {
+      "id": "scene-09",
+      "timestamp": "~2:10",
+      "title": "Salida de la prisión",
+      "description": "El tráiler cierra con Jason Duval presentándose en la recepción del centro penitenciario preguntando por Lucia Caminos, seguido de la salida de ella y un reencuentro entre ambos.",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" },
+        { "targetType": "personajes", "targetSlug": "lucia-caminos", "relation": "personaje mostrado" }
+      ]
+    }
+  ]
+}

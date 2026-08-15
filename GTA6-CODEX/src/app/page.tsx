@@ -36,6 +36,12 @@ export default async function Home() {
       icon: '📍',
     },
     {
+      type: EntityType.TRAILER,
+      label: 'Trailers',
+      description: 'Análisis escena por escena del material oficial de Rockstar Games.',
+      icon: '🎬',
+    },
+    {
       type: EntityType.MISSION,
       label: 'Misiones',
       description: 'Información detallada sobre las misiones principales y secundarias.',

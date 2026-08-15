@@ -31,6 +31,7 @@ export enum EntityType {
   OBJECT = 'objetos',
   NEWS = 'noticias',
   GUIDE = 'guias',
+  TRAILER = 'trailers',
 }
 
 /**
@@ -189,10 +190,48 @@ export interface Mission extends BaseEntity {
 }
 
 /**
+ * Escena individual dentro de un trailer/material oficial.
+ *
+ * Es la unidad atómica del sistema "trailers como base de datos":
+ * cada escena documenta un momento puntual y se conecta, vía `relations`,
+ * con las entidades que aparecen en ella (personaje → ubicación →
+ * vehículo → actividad), reutilizando el mismo `EntityRelation` que ya
+ * usa el resto del sitio en vez de inventar un mecanismo de vínculo aparte.
+ */
+export interface TrailerScene {
+  id: string // identificador estable de la escena dentro del trailer, ej. "scene-01"
+  timestamp: string // marca de tiempo dentro del video, ej. "00:12"
+  title: string // resumen corto de la escena
+  description: string // qué se ve, en detalle, sin especular más allá de lo mostrado
+  relations?: EntityRelation[] // entidades que aparecen en esta escena
+  status?: InformationStatus // por defecto hereda el status del trailer si no se especifica
+}
+
+/**
+ * Entidad específica de trailer / material audiovisual oficial.
+ *
+ * Cubre trailers numerados, pero el mismo modelo sirve para futuro
+ * material oficial (gameplay reveals, anuncios) sin necesidad de un
+ * tipo nuevo: es "trailer" en sentido amplio de "pieza audiovisual
+ * oficial analizable escena por escena".
+ */
+export interface Trailer extends BaseEntity {
+  type: EntityType.TRAILER
+
+  releaseDate: string // ISO date de publicación oficial
+  officialUrl?: string // URL del video oficial (canal de Rockstar Games)
+  durationSeconds?: number // duración aproximada, si se conoce
+  scenes: TrailerScene[]
+}
+
+/**
  * Entidad genérica para tipos no tan complejos
  */
 export interface GenericEntity extends BaseEntity {
-  type: Exclude<EntityType, EntityType.CHARACTER | EntityType.VEHICLE | EntityType.LOCATION | EntityType.MISSION>
+  type: Exclude<
+    EntityType,
+    EntityType.CHARACTER | EntityType.VEHICLE | EntityType.LOCATION | EntityType.MISSION | EntityType.TRAILER
+  >
   
   // Propiedades personalizadas según tipo
   [key: string]: unknown
@@ -201,7 +240,7 @@ export interface GenericEntity extends BaseEntity {
 /**
  * Union de todos los tipos de entidad
  */
-export type Entity = Character | Vehicle | Location | Mission | GenericEntity
+export type Entity = Character | Vehicle | Location | Mission | Trailer | GenericEntity
 
 /**
  * Meta información sobre un tipo de entidad

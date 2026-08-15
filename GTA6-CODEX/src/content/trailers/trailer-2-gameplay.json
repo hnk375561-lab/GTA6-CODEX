@@ -1,0 +1,60 @@
+{
+  "slug": "trailer-2-gameplay",
+  "type": "trailers",
+  "title": "Trailer 2 — Segundo Tráiler",
+  "description": "Segundo tráiler oficial de Grand Theft Auto VI, publicado por Rockstar Games el 6 de mayo de 2025, combinando metraje de gameplay y cinemáticas confirmado por Rockstar en partes iguales, sin especificar cuáles son cuáles.",
+  "content": "El segundo tráiler llegó más de un año después del primero, tras el anuncio oficial de que el juego se retrasaba respecto a su ventana inicial. Rockstar Games confirmó públicamente que el video combina metraje de gameplay y de cinemáticas en partes iguales, pero no identificó oficialmente qué tomas corresponden a cada categoría.\n\nA raíz de eso, gran parte del análisis comunitario sobre qué escenas son gameplay real es especulación de fans (por ejemplo, el desglose del usuario de Reddit u/piemack), no confirmación de Rockstar. Esta ficha documenta ese matiz explícitamente en cada escena donde aplica.",
+  "status": "confirmado",
+  "tags": ["gameplay", "vice-city", "port-gellhorn", "jason-duval", "2025"],
+  "featured": true,
+  "releaseDate": "2025-05-06",
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — canal oficial de YouTube / rockstargames.com",
+    "secondarySource": "Análisis comunitario (Reddit, u/piemack) sobre distinción gameplay/cinemática",
+    "note": "La fecha de publicación y el contenido visual del tráiler son oficiales. La distinción entre qué tomas son gameplay real y cuáles son cinemática NO fue especificada por Rockstar Games y se basa en análisis de la comunidad; se marca como tal en cada escena.",
+    "limitations": [
+      "Rockstar no confirmó oficialmente qué escenas son gameplay vs. cinemática",
+      "Los timestamps son aproximados, no verificados frame por frame"
+    ]
+  },
+  "relations": [
+    { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "protagonista mostrado" },
+    { "targetType": "ubicaciones", "targetSlug": "port-gellhorn", "relation": "ubicación mostrada" },
+    { "targetType": "trailers", "targetSlug": "trailer-1-anuncio", "relation": "tráiler anterior" }
+  ],
+  "scenes": [
+    {
+      "id": "scene-01",
+      "timestamp": "~0:10",
+      "title": "Jason entra a su casa",
+      "description": "Una toma muestra a Jason Duval caminando hacia el interior de una vivienda. Es señalada por análisis comunitario como una posible transición de cinemática a gameplay, un recurso que Rockstar usó en tráilers anteriores de la saga; no confirmado oficialmente como gameplay.",
+      "status": "rumor",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" }
+      ]
+    },
+    {
+      "id": "scene-02",
+      "timestamp": "~0:25",
+      "title": "Jason conduciendo",
+      "description": "Se muestra a Jason Duval al volante de un vehículo. Señalada por análisis de fans como posible gameplay, sin confirmación oficial de Rockstar sobre esta toma en particular.",
+      "status": "rumor",
+      "relations": [
+        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" }
+      ]
+    },
+    {
+      "id": "scene-03",
+      "timestamp": "~0:40",
+      "title": "Robo en un comercio de Port Gellhorn",
+      "description": "Una secuencia muestra el robo a un comercio ambientado en la región de Port Gellhorn del mapa de GTA VI. Señalada por análisis de fans como posible gameplay.",
+      "status": "rumor",
+      "relations": [
+        { "targetType": "ubicaciones", "targetSlug": "port-gellhorn", "relation": "ubicación mostrada" }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { EntityType } from '@/types'
+import { EntityType, type Trailer } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
 import { getRelatedEntitiesWithLabel } from '@/lib/relations'
 import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo'
@@ -14,6 +14,7 @@ import { RelationsPanel } from '@/components/entities/RelationsPanel'
 import { EntityHeaderBackground } from '@/components/entities/EntityHeaderBackground'
 import { EntitySectionHeading } from '@/components/entities/EntitySectionHeading'
 import { EntityImage } from '@/components/entities/EntityImage'
+import { TrailerScenes } from '@/components/entities/TrailerScenes'
 import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
 import { MagicCard } from '@/components/ui/MagicCard'
 import { SceneSection } from '@/components/webgl/SceneSection'
@@ -37,6 +38,7 @@ const TYPE_LABELS: Record<EntityType, string> = {
   [EntityType.OBJECT]: 'Objetos',
   [EntityType.NEWS]: 'Noticias',
   [EntityType.GUIDE]: 'Guías',
+  [EntityType.TRAILER]: 'Trailers',
 }
 
 const STATUS_LABELS = {
@@ -57,6 +59,7 @@ const CLASSIFICATION_LABELS: Partial<Record<EntityType, string>> = {
   [EntityType.FACTION]: 'Organización · Autoridad',
   [EntityType.BUSINESS]: 'Negocio · Establecimiento',
   [EntityType.VEHICLE]: 'Vehículo · Fabricante',
+  [EntityType.TRAILER]: 'Material Oficial · Archivo',
 }
 
 export async function generateStaticParams() {
@@ -224,6 +227,11 @@ export default async function EntityPage({ params }: PageProps) {
       <SceneSection sceneId="entity-content" className="py-12 sm:py-16">
         <div className="container-max grid gap-8 lg:grid-cols-3">
           <div className="space-y-6 lg:col-span-2">
+            {type === EntityType.TRAILER && 'scenes' in entity && (
+              <Reveal direction="left">
+                <TrailerScenes trailer={entity as Trailer} />
+              </Reveal>
+            )}
             {entity.content ? (
               <Reveal direction="left">
                 <Card className={entity.featured ? 'shadow-gta-sm border-gta-accent/30' : 'shadow-gta-sm'}>
