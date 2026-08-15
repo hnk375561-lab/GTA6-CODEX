@@ -1,10 +1,32 @@
+/* ============================================================
+   Tipografía self-hosted (@fontsource) — sin llamadas externas a
+   Google Fonts en build/runtime. Cargada antes de Tailwind para
+   que las capas @layer puedan referenciarla sin FOUC de orden.
+   ============================================================ */
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/600.css';
+@import '@fontsource/space-grotesk/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* CSS Variables */
+/* ============================================================
+   CSS Variables — lenguaje visual "Leonida Nights"
+   Vice City nocturno + fotografía editorial + expediente clasificado.
+   ============================================================ */
 :root {
   --gutter-width: 1.5rem;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 
   /* --- Motion tokens: curva única premium para todo el sitio --- */
   --ease-premium: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -19,6 +41,14 @@
   --transition-fast: var(--dur-fast) var(--ease-standard);
   --transition-base: var(--dur-base) var(--ease-standard);
   --transition-slow: var(--dur-slow) var(--ease-standard);
+
+  /* --- Paleta de acentos crudos (uso en gradientes/color-mix) ---
+     Mismos valores que tailwind.config.js (gta-accent / gta-accent-orange
+     / gta-gold), centralizados acá para las fórmulas CSS de abajo. */
+  --c-pink: #ff2f8f;
+  --c-pink-soft: #ff7ec4;
+  --c-cyan: #22d3ee;
+  --c-gold: #f0c274;
 
   /* --- Puente motor WebGL → DOM (ver SceneAmbientBridge) ---
      El motor Three.js escribe estos valores en cada frame (throttled).
@@ -40,27 +70,75 @@
   }
 }
 
-/* Base */
+/* ============================================================
+   Base
+   ============================================================ */
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
   @apply bg-gta-dark text-gta-text antialiased;
+  font-family: var(--font-sans);
+  font-feature-settings: 'ss01' 1, 'cv05' 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 70% 45% at 12% -8%, rgba(255, 47, 143, 0.10), transparent 60%),
+    radial-gradient(ellipse 65% 45% at 100% 8%, rgba(34, 211, 238, 0.07), transparent 60%),
+    radial-gradient(ellipse 90% 60% at 50% 110%, rgba(240, 194, 116, 0.05), transparent 65%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-/* Tipografía */
+/* --- Grano fílmico + viñeta global ---
+   Capa fija entre el canvas WebGL (z-0) y el contenido (z-10). Le da al
+   sitio entero una textura de fotografía nocturna/análoga en vez de un
+   plano de color perfectamente limpio — el detalle que separa "interfaz
+   plana" de "cinematográfico". 100% decorativo, no bloquea interacción,
+   se apaga con reduced-motion (queda estático, no anima). */
+.gta-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gta-atmosphere::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+.gta-atmosphere::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 120% 90% at 50% 45%, transparent 45%, rgba(3, 2, 6, 0.55) 100%);
+}
+
+/* ============================================================
+   Tipografía
+   ============================================================ */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  @apply font-bold;
+  @apply font-bold text-gta-text;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
 
 h1 {
-  @apply text-4xl tracking-tight sm:text-5xl;
+  @apply text-4xl tracking-tightest sm:text-5xl;
 }
 
 h2 {
@@ -85,6 +163,16 @@ h6 {
 
 p {
   @apply text-gta-text-secondary;
+  line-height: 1.65;
+}
+
+/* --- Etiquetas/eyebrows/kickers editoriales: mono + tracking ancho,
+   la firma tipográfica del "expediente clasificado". --- */
+.eyebrow,
+.section-kicker,
+.hero-kicker {
+  font-family: var(--font-mono);
+  letter-spacing: 0.28em;
 }
 
 a {
@@ -93,31 +181,57 @@ a {
 
 /* Links */
 a:not(.no-style) {
-  @apply text-gta-accent hover:text-gta-accent-orange underline-offset-4;
+  @apply text-gta-accent hover:text-gta-accent-strong underline-offset-4;
+}
+
+/* --- Texto en gradiente Vice (magenta → rosa → cian), reutilizable en
+   cualquier heading/acento numérico del sitio. --- */
+.text-gradient-vice {
+  background: linear-gradient(90deg, var(--c-pink) 0%, var(--c-pink-soft) 35%, var(--c-cyan) 70%, #0891b2 100%);
+  background-size: 200% auto;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Selection */
 ::selection {
-  @apply bg-gta-accent text-gta-dark;
+  background: rgba(255, 47, 143, 0.35);
+  color: #fff;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gta-dark;
+  @apply bg-gta-darker;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-gta-border transition-colors hover:bg-gta-accent;
+  border-radius: 9999px;
+  border: 2px solid #050308;
+  background: linear-gradient(180deg, var(--c-pink), #7c3f6b);
+  transition: background var(--transition-base);
 }
 
-/* Focus visible */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--c-pink-soft), var(--c-pink));
+}
+
+* {
+  scrollbar-color: var(--c-pink) #0a0712;
+  scrollbar-width: thin;
+}
+
+/* Focus visible — anillo con resplandor de color en vez de outline duro */
 :focus-visible {
-  @apply outline-2 outline-offset-2 outline-gta-accent;
+  outline: 2px solid var(--c-pink);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* Visibilidad solo para screen readers */
@@ -138,6 +252,20 @@ a:not(.no-style) {
 
 .container-narrow {
   @apply mx-auto max-w-2xl px-4 sm:px-6 lg:px-8;
+}
+
+/* --- Separador de sección: línea degradada en vez de borde plano, para
+   una transición más editorial entre bloques del sitio. --- */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--c-pink) 35%, transparent) 25%,
+    color-mix(in srgb, var(--c-cyan) 25%, transparent) 75%,
+    transparent
+  );
 }
 
 /* Grid y Layout */
@@ -204,7 +332,7 @@ a:not(.no-style) {
   bottom: -2px;
   width: 100%;
   height: 2px;
-  background: currentColor;
+  background: linear-gradient(90deg, currentColor, transparent);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform var(--transition-base);
@@ -222,7 +350,7 @@ a:not(.no-style) {
 }
 
 a:hover .logo-mark {
-  box-shadow: 0 0 12px 1px rgba(255, 47, 184, 0.45);
+  box-shadow: 0 0 16px 2px rgba(255, 47, 143, 0.5);
   transform: scale(1.05);
 }
 
@@ -288,11 +416,11 @@ a:hover .logo-mark {
   }
 }
 
-/* --- Cards: elevación sutil + borde iluminado por la MISMA luz que la
-   escena 3D (ver --scene-* arriba). No es un brillo decorativo fijo: el
-   ángulo, la temperatura y el pulso de llegada vienen del motor WebGL en
-   tiempo real, así la card se siente parte de la misma escena en vez de
-   flotar sobre un fondo animado. --- */
+/* --- Cards: glass premium + elevación sutil + borde iluminado por la
+   MISMA luz que la escena 3D (ver --scene-* arriba). No es un brillo
+   decorativo fijo: el ángulo, la temperatura y el pulso de llegada vienen
+   del motor WebGL en tiempo real, así la card se siente parte de la misma
+   escena en vez de flotar sobre un fondo animado. --- */
 .card-animated {
   position: relative;
   transition: transform 250ms var(--ease-standard), border-color var(--transition-base),
@@ -307,7 +435,7 @@ a:hover .logo-mark {
   border-radius: inherit;
   background: linear-gradient(
     var(--scene-light-angle),
-    color-mix(in srgb, #00e5ff calc(var(--scene-warmth) * 100%), #ff2fb8 calc((1 - var(--scene-warmth)) * 100%)) 0%,
+    color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 100%), #ff2f8f calc((1 - var(--scene-warmth)) * 100%)) 0%,
     transparent 42%
   );
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -319,9 +447,17 @@ a:hover .logo-mark {
 }
 
 .card-animated:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.6),
-    0 0 32px -18px color-mix(in srgb, #00e5ff calc(var(--scene-warmth) * 70%), #ff2fb8 calc((1 - var(--scene-warmth)) * 70%));
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.7),
+    0 0 36px -16px color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 70%), #ff2f8f calc((1 - var(--scene-warmth)) * 70%));
+}
+
+/* --- Superficie "glass" reutilizable: header, menú móvil, pills, panel
+   de búsqueda. Un solo lenguaje de vidrio esmerilado en todo el sitio. --- */
+.glass-surface {
+  background: color-mix(in srgb, #140f20 78%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
 }
 
 /* --- Contador numérico: leve "tick" al actualizar --- */
@@ -381,6 +517,17 @@ a:hover .logo-mark {
   animation-delay: 460ms;
 }
 
+@keyframes word-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* --- Hero: pill de estado (entidades documentadas / actualizado) --- */
 .hero-pill {
   position: relative;
@@ -388,17 +535,20 @@ a:hover .logo-mark {
   align-items: center;
   gap: 0.5rem;
   border-radius: 9999px;
-  border: 1px solid rgba(38, 38, 38, 0.9);
-  background: rgba(22, 22, 22, 0.7);
-  padding: 0.4rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: color-mix(in srgb, #140f20 70%, transparent);
+  padding: 0.45rem 1.1rem;
   font-size: 0.75rem;
-  color: #a3a3a0;
-  backdrop-filter: blur(4px);
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  color: #b3a3c4;
+  backdrop-filter: blur(6px) saturate(140%);
+  -webkit-backdrop-filter: blur(6px) saturate(140%);
   /* Primer elemento que ve el usuario: entra en escena junto con la
      coreografía de apertura del motor WebGL (--scene-intro), no antes. */
   opacity: var(--scene-intro);
   box-shadow: 0 0 24px -12px
-    color-mix(in srgb, #00e5ff calc(var(--scene-warmth) * 60%), #ff2fb8 calc((1 - var(--scene-warmth)) * 60%));
+    color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 60%), #ff2f8f calc((1 - var(--scene-warmth)) * 60%));
   transition: box-shadow 600ms ease, opacity 600ms ease;
 }
 
@@ -435,7 +585,7 @@ a:hover .logo-mark {
   background: linear-gradient(
     75deg,
     transparent 0%,
-    color-mix(in srgb, #00e5ff calc(var(--scene-warmth) * 65%), #ff2fb8 calc((1 - var(--scene-warmth)) * 65%)) 48%,
+    color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 65%), #ff2f8f calc((1 - var(--scene-warmth)) * 65%)) 48%,
     transparent 62%
   );
   background-size: 260% 260%;
@@ -455,7 +605,7 @@ a:hover .logo-mark {
   bottom: 1.75rem;
   left: 50%;
   z-index: 2;
-  color: #8a8a86;
+  color: #7c6c8f;
   opacity: calc(0.3 + var(--scene-intro) * 0.7);
   transform: translateX(-50%);
   animation: hero-scroll-cue-bounce 2200ms var(--ease-standard) infinite;
@@ -493,8 +643,8 @@ a:hover .logo-mark {
   width: 6px;
   height: 6px;
   border-radius: 9999px;
-  background: #ff2fb8;
-  box-shadow: 0 0 6px 1px rgba(255, 47, 184, 0.6);
+  background: var(--c-pink);
+  box-shadow: 0 0 8px 1px rgba(255, 47, 143, 0.7);
 }
 
 /* --- Hero rediseño: kicker, título con gradiente animado, CTA primario
@@ -509,10 +659,11 @@ a:hover .logo-mark {
 .hero-title {
   opacity: var(--scene-intro);
   transition: opacity 600ms ease;
+  font-family: var(--font-display);
 }
 
 .hero-title-accent {
-  background: linear-gradient(90deg, #ff2fb8 0%, #ff6ad5 35%, #00e5ff 70%, #00b8d4 100%);
+  background: linear-gradient(90deg, var(--c-pink) 0%, var(--c-pink-soft) 35%, var(--c-cyan) 70%, #0891b2 100%);
   background-size: 200% auto;
   background-position: 0% 50%;
   -webkit-background-clip: text;
@@ -531,13 +682,33 @@ a:hover .logo-mark {
   }
 }
 
-.hero-cta-primary {
-  background: linear-gradient(90deg, #ff2fb8, #ff6ad5);
-  box-shadow: 0 0 0 1px rgba(255, 47, 184, 0.3), 0 8px 24px -8px rgba(255, 47, 184, 0.5);
+/* --- Botones: lenguaje único para todo el sitio (hero, formularios,
+   estados vacíos). Primario = gradiente sunset con glow; secundario =
+   contorno con hover a glass; ghost = texto con acento. --- */
+.hero-cta-primary,
+.btn-primary {
+  position: relative;
+  background: linear-gradient(90deg, var(--c-pink), var(--c-pink-soft));
+  box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.3), 0 10px 28px -10px rgba(255, 47, 143, 0.55);
 }
 
-.hero-cta-primary:hover {
-  box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.5), 0 12px 32px -8px rgba(255, 47, 184, 0.7);
+.hero-cta-primary:hover,
+.btn-primary:hover {
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.45), 0 14px 34px -10px rgba(255, 47, 143, 0.7);
+}
+
+.btn-secondary {
+  border: 1.5px solid var(--gta-border-strong, #453163);
+  background: color-mix(in srgb, #140f20 55%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: border-color var(--transition-base), color var(--transition-base), background var(--transition-base);
+}
+
+.btn-secondary:hover {
+  border-color: var(--c-pink);
+  color: var(--c-pink-soft);
+  background: color-mix(in srgb, #1b1430 65%, transparent);
 }
 
 .hero-scanlines {
@@ -548,8 +719,8 @@ a:hover .logo-mark {
   opacity: 0.5;
   background-image: repeating-linear-gradient(
     180deg,
-    rgba(255, 47, 184, 0.05),
-    rgba(255, 47, 184, 0.05) 1px,
+    rgba(255, 47, 143, 0.05),
+    rgba(255, 47, 143, 0.05) 1px,
     transparent 0,
     transparent 3px
   );
@@ -560,7 +731,7 @@ a:hover .logo-mark {
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  background: radial-gradient(ellipse 80% 60% at 50% 40%, transparent 40%, rgba(5, 5, 5, 0.65) 100%);
+  background: radial-gradient(ellipse 80% 60% at 50% 40%, transparent 40%, rgba(3, 2, 6, 0.7) 100%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -571,7 +742,7 @@ a:hover .logo-mark {
 }
 
 /* --- Secciones post-hero: banner de stats, kickers, badges de categoría.
-   Mismo lenguaje visual que el hero (gradiente verde->naranja, glow sutil),
+   Mismo lenguaje visual que el hero (gradiente rosa->cian, glow sutil),
    sin agregar colores nuevos a la paleta. --- */
 .stats-band {
   position: relative;
@@ -582,7 +753,8 @@ a:hover .logo-mark {
 }
 
 .stat-number {
-  background: linear-gradient(90deg, #f2f2f0, #a3a3a0);
+  font-family: var(--font-display);
+  background: linear-gradient(90deg, #f5eff9, #b3a3c4);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -593,9 +765,9 @@ a:hover .logo-mark {
 }
 
 .category-icon-badge {
-  border: 1px solid rgba(255, 47, 184, 0.25);
-  background: linear-gradient(135deg, rgba(255, 47, 184, 0.12), rgba(255, 102, 0, 0.06));
-  box-shadow: 0 0 0 1px rgba(255, 47, 184, 0.08), 0 4px 16px -8px rgba(255, 47, 184, 0.35);
+  border: 1px solid rgba(255, 47, 143, 0.25);
+  background: linear-gradient(135deg, rgba(255, 47, 143, 0.14), rgba(34, 211, 238, 0.06));
+  box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.08), 0 4px 16px -8px rgba(255, 47, 143, 0.35);
 }
 
 .featured-card {
@@ -603,7 +775,7 @@ a:hover .logo-mark {
 }
 
 .featured-card:hover {
-  box-shadow: 0 16px 40px -20px rgba(255, 47, 184, 0.35);
+  box-shadow: 0 20px 44px -20px rgba(255, 47, 143, 0.4);
 }
 
 /* --- Fondo de ficha destacada (EntityHeaderBackground) --- */
@@ -612,8 +784,8 @@ a:hover .logo-mark {
   inset: -20%;
   background: radial-gradient(
     ellipse 60% 50% at 50% 0%,
-    rgba(255, 47, 184, 0.1),
-    rgba(255, 102, 0, 0.04) 45%,
+    rgba(255, 47, 143, 0.12),
+    rgba(34, 211, 238, 0.05) 45%,
     transparent 75%
   );
 }
@@ -649,7 +821,7 @@ a:hover .logo-mark {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, transparent, rgba(255, 47, 184, 0.5), transparent);
+  background: linear-gradient(180deg, transparent, rgba(255, 47, 143, 0.5), transparent);
   animation: entity-scan-sweep 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
@@ -659,7 +831,7 @@ a:hover .logo-mark {
   inset: 0;
   width: 100%;
   height: 100%;
-  stroke: rgba(255, 47, 184, 0.35);
+  stroke: rgba(255, 47, 143, 0.35);
   stroke-width: 0.4;
   fill: none;
 }
@@ -670,8 +842,8 @@ a:hover .logo-mark {
   inset: 0;
   background-image: repeating-linear-gradient(
     45deg,
-    rgba(255, 102, 0, 0.05) 0,
-    rgba(255, 102, 0, 0.05) 1px,
+    rgba(240, 194, 116, 0.05) 0,
+    rgba(240, 194, 116, 0.05) 1px,
     transparent 1px,
     transparent 14px
   );
@@ -683,8 +855,8 @@ a:hover .logo-mark {
   inset: 0;
   background-image: repeating-linear-gradient(
     180deg,
-    rgba(255, 47, 184, 0.05) 0,
-    rgba(255, 47, 184, 0.05) 1px,
+    rgba(255, 47, 143, 0.05) 0,
+    rgba(255, 47, 143, 0.05) 1px,
     transparent 1px,
     transparent 22px
   );
@@ -738,8 +910,8 @@ a:hover .logo-mark {
   --mx: -9999px;
   --my: -9999px;
   background:
-    linear-gradient(#1a1a1a, #1a1a1a) padding-box,
-    radial-gradient(var(--mgs) circle at var(--mx) var(--my), var(--mg-from), var(--mg-to), #2d2d2d 100%)
+    linear-gradient(#140f20, #140f20) padding-box,
+    radial-gradient(var(--mgs) circle at var(--mx) var(--my), var(--mg-from), var(--mg-to), #2a2138 100%)
       border-box;
   border: 1px solid transparent;
 }
@@ -806,6 +978,11 @@ a:hover .logo-mark {
 @media print {
   body {
     @apply bg-white text-black;
+    background-image: none;
+  }
+
+  .gta-atmosphere {
+    display: none !important;
   }
 
   a {

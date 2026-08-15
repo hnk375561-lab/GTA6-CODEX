@@ -206,8 +206,8 @@ export default async function EntityPage({ params }: PageProps) {
           {entity.featured ? (
             <MagicCard
               mode="orb"
-              glowFrom="#ff6600"
-              glowTo="#22c55e"
+              glowFrom="#ff2f8f"
+              glowTo="#22d3ee"
               glowSize={340}
               glowBlur={90}
               glowOpacity={0.25}

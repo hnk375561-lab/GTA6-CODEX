@@ -79,6 +79,9 @@ export default function RootLayout({
         )}
         <WebGLBackground />
         <SceneAmbientBridge />
+        {/* Grano fílmico + viñeta: capa atmosférica entre el canvas WebGL
+            (z-0) y el contenido (z-10). Ver .gta-atmosphere en globals.css. */}
+        <div className="gta-atmosphere" aria-hidden="true" />
         <div className="relative z-10 flex min-h-screen flex-1 flex-col">
           <Header />
           <main className="flex-1">

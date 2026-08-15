@@ -9,9 +9,9 @@ interface BadgeProps {
 }
 
 const statusStyles: Record<InformationStatus, string> = {
-  confirmado: 'bg-green-900/50 text-green-300 border border-green-800',
-  rumor: 'bg-yellow-900/50 text-yellow-300 border border-yellow-800',
-  nuestro: 'bg-blue-900/50 text-blue-300 border border-blue-800',
+  confirmado: 'bg-emerald-500/10 text-emerald-300 border border-emerald-400/25',
+  rumor: 'bg-gta-accent-warning/10 text-gta-accent-warning border border-gta-accent-warning/30',
+  nuestro: 'bg-gta-accent-orange/10 text-gta-accent-orange border border-gta-accent-orange/30',
 }
 
 export function Badge({
@@ -20,17 +20,17 @@ export function Badge({
   children,
   className = '',
 }: BadgeProps) {
-  let style = 'bg-gta-card text-gta-text-secondary border border-gta-border'
+  let style = 'bg-gta-surface-elevated/80 text-gta-text-secondary border border-gta-border'
 
   if (variant === 'status' && status) {
     style = statusStyles[status]
   } else if (variant === 'tag') {
-    style = 'bg-gta-accent/20 text-gta-accent border border-gta-accent/40'
+    style = 'bg-gta-accent/15 text-gta-accent-strong border border-gta-accent/35'
   }
 
   return (
     <span
-      className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium ${style} ${className}`}
+      className={`inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide backdrop-blur-sm ${style} ${className}`}
     >
       {children}
     </span>

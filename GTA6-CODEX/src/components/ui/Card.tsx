@@ -11,13 +11,13 @@ interface CardProps {
 
 export function Card({ children, className = '', hoverable = false }: CardProps) {
   const hoverClass = hoverable
-    ? 'card-animated hover:border-gta-accent hover:shadow-gta-md'
+    ? 'card-animated hover:border-gta-accent/60 hover:shadow-gta-md'
     : 'transition-colors duration-300'
 
   return (
     <div
       className={`
-        rounded-lg border border-gta-border bg-gta-card p-6
+        rounded-xl border border-gta-border bg-gta-card/90 p-6 shadow-gta-sm backdrop-blur-[2px]
         ${hoverClass}
         ${className}
       `}

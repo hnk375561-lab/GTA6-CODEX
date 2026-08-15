@@ -7,27 +7,27 @@ const LEVEL_META: Record<EvidenceLevel, { label: string; icon: string; className
   'oficial-nombrado': {
     label: 'Oficial · nombrado',
     icon: '✓',
-    className: 'border-green-800 bg-green-900/40 text-green-300',
+    className: 'border-emerald-400/25 bg-emerald-500/10 text-emerald-300',
   },
   'oficial-visual-multifuente': {
     label: 'Oficial · visual (multi-fuente)',
     icon: '◎',
-    className: 'border-green-800 bg-green-900/40 text-green-300',
+    className: 'border-emerald-400/25 bg-emerald-500/10 text-emerald-300',
   },
   'oficial-visual': {
     label: 'Oficial · identificación visual',
     icon: '◎',
-    className: 'border-emerald-800 bg-emerald-900/30 text-emerald-300',
+    className: 'border-emerald-400/20 bg-emerald-500/10 text-emerald-300',
   },
   respaldado: {
     label: 'Respaldado por fuentes secundarias',
     icon: '◈',
-    className: 'border-blue-800 bg-blue-900/30 text-blue-300',
+    className: 'border-gta-accent-orange/25 bg-gta-accent-orange/10 text-gta-accent-orange',
   },
   especulativo: {
     label: 'Especulativo',
     icon: '?',
-    className: 'border-yellow-800 bg-yellow-900/30 text-yellow-300',
+    className: 'border-gta-accent-warning/25 bg-gta-accent-warning/10 text-gta-accent-warning',
   },
 }
 

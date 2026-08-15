@@ -121,7 +121,7 @@ export default async function Home() {
               </Link>
               <Link
                 href="/buscar"
-                className="inline-flex items-center justify-center rounded-lg border-2 border-gta-border-strong px-9 py-4 text-base font-bold text-gta-text transition-all hover:-translate-y-0.5 hover:border-gta-accent hover:text-gta-accent"
+                className="btn-secondary inline-flex items-center justify-center rounded-lg px-9 py-4 text-base font-bold text-gta-text transition-all hover:-translate-y-0.5"
               >
                 Buscar
               </Link>

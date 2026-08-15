@@ -7,52 +7,72 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Paleta principal: tonos violeta-noche profundos con acentos magenta/cian (Vice City / Leonida vibe)
-        'gta-dark': '#0a0118',
-        'gta-darker': '#050110',
-        'gta-card': '#170b2e',
-        'gta-surface': '#170b2e', // superficie estándar (cards, listas)
-        'gta-surface-elevated': '#1f0f3d', // superficie elevada (featured, sidebars)
-        'gta-border': '#3a1d63',
-        'gta-border-strong': '#5b2f96',
-        'gta-text': '#fdf2ff',
-        'gta-text-secondary': '#c9a6e8',
-        'gta-text-tertiary': '#8a68ab',
-        'gta-accent': '#ff2fb8', // Magenta neón — protagonista del nuevo look
-        'gta-accent-strong': '#ff6ad5',
-        'gta-accent-orange': '#00e5ff', // Cian neón secundario — contraste Vice City
-        'gta-accent-warning': '#ffe135',
+        // Paleta "Leonida Nights": negro-ciruela profundo tipo fotografía
+        // nocturna, con dos acentos neón (magenta sunset + cian Vice) y un
+        // toque de oro para momentos de lujo/premium. Menos saturado que un
+        // cyberpunk generico -- pensado para leerse como revista/editorial,
+        // no como arcade.
+        'gta-dark': '#0a0712',
+        'gta-darker': '#050308',
+        'gta-card': '#140f20',
+        'gta-surface': '#140f20',
+        'gta-surface-elevated': '#1b1430',
+        'gta-border': '#2a2138',
+        'gta-border-strong': '#453163',
+        'gta-text': '#f5eff9',
+        'gta-text-secondary': '#b3a3c4',
+        'gta-text-tertiary': '#7c6c8f',
+        'gta-accent': '#ff2f8f',
+        'gta-accent-strong': '#ff7ec4',
+        'gta-accent-orange': '#22d3ee',
+        'gta-accent-warning': '#ffcc4d',
+        'gta-gold': '#f0c274',
       },
       fontFamily: {
-        // Tipografía premium y editorial
         sans: [
+          'var(--font-sans)',
           '-apple-system',
           'BlinkMacSystemFont',
           '"Segoe UI"',
-          '"Roboto"',
-          '"Oxygen"',
-          '"Ubuntu"',
-          '"Cantarell"',
+          'sans-serif',
+        ],
+        display: [
+          'var(--font-display)',
+          'var(--font-sans)',
+          '-apple-system',
           'sans-serif',
         ],
         mono: [
+          'var(--font-mono)',
           '"Fira Code"',
           '"Courier New"',
           'monospace',
         ],
       },
       borderRadius: {
-        sm: '0.25rem',
-        DEFAULT: '0.375rem',
-        md: '0.5rem',
-        lg: '0.75rem',
-        xl: '1rem',
+        sm: '0.3rem',
+        DEFAULT: '0.5rem',
+        md: '0.65rem',
+        lg: '0.9rem',
+        xl: '1.25rem',
+        '2xl': '1.75rem',
       },
       boxShadow: {
         'gta-sm': '0 1px 2px rgba(0, 0, 0, 0.5)',
         'gta-md': '0 4px 6px rgba(0, 0, 0, 0.6)',
         'gta-lg': '0 10px 15px rgba(0, 0, 0, 0.7)',
         'gta-xl': '0 20px 25px rgba(0, 0, 0, 0.8)',
+        'glow-pink': '0 0 40px -8px rgba(255, 47, 143, 0.45)',
+        'glow-cyan': '0 0 40px -8px rgba(34, 211, 238, 0.4)',
+        'glow-gold': '0 0 32px -10px rgba(240, 194, 116, 0.35)',
+      },
+      letterSpacing: {
+        tightest: '-0.04em',
+        widest: '0.28em',
+      },
+      backgroundImage: {
+        'vice-sunset': 'linear-gradient(90deg, #ff2f8f 0%, #ff7ec4 35%, #22d3ee 70%, #0891b2 100%)',
+        'vice-radial': 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,47,143,0.16), transparent 60%)',
       },
     },
   },
