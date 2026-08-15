@@ -2,25 +2,28 @@
   "slug": "ganzua",
   "type": "objetos",
   "title": "Ganzúa",
-  "description": "Herramienta de forzado de cerraduras asociada al robo de vehículos y accesos no autorizados, elemento clásico del arsenal de herramientas de la saga GTA.",
-  "content": "La ganzúa es una herramienta narrativa y mecánica recurrente en juegos de crimen y mundo abierto, típicamente vinculada al robo de vehículos sin necesidad de destruir ventanas o forzar el encendido de forma más ruidosa, y a la apertura de puertas o cerraduras durante misiones de infiltración.\n\nDentro del contexto de Jason Duval como personaje con pasado en pequeños delitos y estafas, contar con habilidades de forzado de cerraduras encajaría naturalmente con su trasfondo, sugiriendo que el jugador podría acceder a este tipo de herramienta desde etapas tempranas de la historia.\n\nEste objeto también resultaría relevante en misiones de sigilo como la especulada trama del informante en VCPD, donde acceder a espacios cerrados sin generar alarmas sería preferible a la fuerza directa.",
-  "status": "nuestro",
+  "description": "Herramienta de forzado de cerraduras ('Lock Pick') listada de forma consistente por múltiples coberturas especializadas como parte del sistema de equipamiento de GTA 6, junto a otras herramientas de acceso a vehículos como el Slim Jim y el Immobilizer Bypass.",
+  "content": "La ganzúa es una herramienta narrativa y mecánica recurrente en juegos de crimen y mundo abierto, típicamente vinculada al robo de vehículos sin necesidad de destruir ventanas o forzar el encendido de forma más ruidosa, y a la apertura de puertas o cerraduras durante misiones de infiltración. Bajo el nombre 'Lock Pick', aparece de forma consistente en múltiples coberturas especializadas que compilan el sistema de equipamiento de GTA 6, junto a otras herramientas de acceso como el 'Slim Jim' (para forzar puertas de auto) y el 'Immobilizer Bypass' (para vehículos de lujo con inmovilizador electrónico), lo que sugiere un sistema de robo de vehículos más granular que el de GTA V.\n\nComo con el resto de ese listado de equipamiento, la mayoría de las fuentes remiten al mismo origen combinado (metraje de desarrollo filtrado de 2022 más capturas oficiales), sin que se trate de prensa especializada de primer nivel con verificación visual propia independiente ni de una confirmación nombrada por Rockstar en un trailer.\n\nDentro del contexto de Jason Duval como personaje con pasado en pequeños delitos y estafas, contar con habilidades de forzado de cerraduras encajaría naturalmente con su trasfondo, sugiriendo que el jugador podría acceder a este tipo de herramienta desde etapas tempranas de la historia; esa lectura narrativa específica, sin embargo, sigue siendo una interpretación propia del sitio.",
+  "status": "rumor",
   "tags": [
     "sigilo",
     "robo-de-vehículos",
-    "herramienta",
-    "infiltración"
+    "lock-pick",
+    "infiltración",
+    "rueda-de-equipamiento"
   ],
   "featured": false,
   "createdAt": "2026-08-15T12:25:00Z",
-  "updatedAt": "2026-08-15T12:25:00Z",
+  "updatedAt": "2026-08-15T23:10:00Z",
   "evidence": {
-    "level": "especulativo",
-    "primarySource": "Análisis propio basado en mecánicas de robo de vehículos y sigilo de la saga GTA",
-    "note": "Sin confirmación visual específica en material promocional de GTA 6.",
+    "level": "respaldado",
+    "primarySource": "Metraje de desarrollo filtrado (septiembre de 2022) y capturas oficiales posteriores, según compilación de múltiples coberturas especializadas",
+    "secondarySource": "Beebom, LEONIDA.HUB, GAMES.GG y GetGTA6 (jun.–jul. 2026), que coinciden de forma independiente en listar 'Lock Pick' junto a herramientas relacionadas ('Slim Jim', 'Immobilizer Bypass') dentro del sistema de equipamiento de GTA 6",
+    "note": "Se corrige el nivel de 'especulativo' a 'respaldado': múltiples coberturas independientes coinciden en el dato y en su ubicación dentro de un sistema de robo de vehículos más granular, aunque ninguna es prensa especializada de primer nivel con verificación visual propia y la mayoría remite al mismo origen combinado (filtración 2022 + capturas oficiales).",
     "limitations": [
-      "Sin confirmación visual en trailers",
-      "Mecánica de minijuego o uso instantáneo no confirmada"
+      "Mecánica de minijuego o uso instantáneo no confirmada",
+      "No confirmado si está vinculada específicamente a Jason Duval o disponible para ambos protagonistas por igual",
+      "Fuentes consultadas son agregadores/guías, no verificación visual propia de primera mano"
     ]
   },
   "relations": [
