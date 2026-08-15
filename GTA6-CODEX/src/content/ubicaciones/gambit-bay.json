@@ -1,0 +1,45 @@
+{
+  "slug": "gambit-bay",
+  "type": "ubicaciones",
+  "title": "Gambit Bay",
+  "description": "Bahía o zona acuática en Leonida confirmada como ubicación de pesca en GTA 6.",
+  "content": "Gambit Bay es una zona acuática confirmada en GTA 6 según comunicados oficiales de Rockstar Games. Fue específicamente mencionada en el anuncio de la Ultimate Edition del juego como un lugar práctica para pescar utilizando el Shitzu Squalo.\n\nCaracterísticas de Gambit Bay:\n\n**Ubicación**: Región acuática dentro de Leonida\n\n**Actividades**:\n- Pesca (confirmada mencionada)\n- Navegación con botes/lanchas\n- Posible transporte acuático\n- Potencial para actividades criminales en agua\n\n**Vehículos Disponibles**:\n- Shitzu Squalo (lancha deportiva con equipamiento de armas)\n- Posiblemente otros botes\n- Lanchas de transporte\n\n**Contexto**:\nLa mención específica de Gambit Bay como lugar de pesca sugiere que:\n- Será una ubicación explorable del mapa\n- Tendrá actividades jugables significativas\n- Es parte importante del ecosistema acuático de Leonida\n\nLa abundancia de agua y zonas costeras en Leonida indica que el mapa tendrá múltiples bahías y zonas acuáticas para exploración y actividades.",
+  "status": "confirmado",
+  "tags": [
+    "bahía",
+    "agua",
+    "pesca",
+    "leonida",
+    "mencionada-oficial",
+    "zona-acuática"
+  ],
+  "district": "Leonida",
+  "region": "Leonida",
+  "featured": false,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-15T02:40:00Z",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games — Comunicado de Ultimate Edition (25 de junio de 2026)",
+    "note": "Mencionada explícitamente por nombre en comunicado oficial de Rockstar Games como ubicación de pesca para el Shitzu Squalo.",
+    "limitations": [
+      "Coordenadas exactas no especificadas",
+      "Otros puntos de interés no documentados",
+      "Accesibilidad exacta no confirmada",
+      "NPCs asociados desconocidos",
+      "Misiones en la ubicación no confirmadas"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "actividades",
+      "targetSlug": "pesca",
+      "relation": "ubicación-principal"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "squalo",
+      "relation": "uso-practado"
+    }
+  ]
+}

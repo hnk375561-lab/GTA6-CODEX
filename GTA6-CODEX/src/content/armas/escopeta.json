@@ -1,0 +1,31 @@
+{
+  "slug": "escopeta",
+  "type": "armas",
+  "title": "Escopeta",
+  "description": "Arma de dispersión de corto-medio alcance. Armamento típico en juegos GTA.",
+  "content": "La escopeta es un arma de dispersión que ha sido tradicional en la franquicia Grand Theft Auto. Aunque no ha sido visualmente confirmada en trailers de GTA 6 hasta el momento, su presencia es altamente probable basada en:\n\n- Aparición estándar en cada entrega de GTA desde los inicios\n- Presencia de escenarios de combate cercano en trailers\n- Material de Rockstar suele incluir una variedad de armas para diferentes rangos\n- Compatibilidad con el sistema de policía mostrado en trailers\n\nLa escopeta típicamente ofrece:\n- Daño alto en corto alcance\n- Spread/dispersión de proyectiles\n- Munición limitada pero potente\n- Uso en defensa del hogar y combate cercano\n\nEn GTA 6, se espera que la escopeta sea disponible a través de:\n- Tiendas de armas\n- Enemigos derrotados\n- Ubicaciones específicas (depósitos, etc.)\n- Misiones que la requieren",
+  "status": "nuestro",
+  "tags": [
+    "arma-de-fuego",
+    "escopeta",
+    "combate-cercano",
+    "especulado",
+    "tradicional"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-15T02:40:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Análisis de estructura de GTA tradicional",
+    "note": "No visualmente confirmada en trailers de GTA 6 hasta ahora. Incluida basada en aparición estándar en todas las entregas de GTA y lógica de gameplay consistente con series anteriores.",
+    "limitations": [
+      "Modelo específico desconocido",
+      "Daño exacto no confirmado",
+      "Capacidad de munición no especificada",
+      "Disponibilidad en juego no confirmada",
+      "Puede no estar presente en GTA 6"
+    ]
+  },
+  "relations": []
+}

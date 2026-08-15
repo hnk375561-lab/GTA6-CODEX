@@ -1,0 +1,39 @@
+{
+  "slug": "pesca",
+  "type": "actividades",
+  "title": "Pesca",
+  "description": "Actividad de entretenimiento acuático. Mencionada en contexto de botes y zonas costeras.",
+  "content": "La pesca es una actividad de entretenimiento mencionada en material oficial de GTA 6. El Shitzu Squalo, una lancha deportiva de edición especial, fue específicamente mencionado por Rockstar como práctica para pescar en Gambit Bay.\n\nEsta mención oficial sugiere que la pesca será una actividad jugable en GTA 6, probablemente con las siguientes características:\n\n**Ubicaciones de Pesca**:\n- Gambit Bay (confirmado mencionado)\n- Costas de Vice City\n- Áreas de agua interior\n- Posiblemente ríos y lagos\n\n**Mecánicas Probables**:\n- Navegación a ubicación de pesca\n- Selección de técnica o cebo\n- Espera y captura de peces\n- Venta de capturas o recolección de recursos\n- Posible recompensa económica\n\n**Vehículos Relacionados**:\n- Botes y lanchas deportivas\n- Shitzu Squalo (específicamente mencionado)\n- Posiblemente vehículos especializados para pesca\n\nLa prominencia de zonas acuáticas en Leonida sugiere que la pesca será una actividad significativa en GTA 6.",
+  "status": "confirmado",
+  "tags": [
+    "pesca",
+    "actividad-acuática",
+    "entretenimiento",
+    "economía",
+    "bote",
+    "agua",
+    "mencionada-oficial"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-15T02:40:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — Comunicado Ultimate Edition (25 de junio de 2026)",
+    "note": "Mencionada explícitamente como actividad práctica para el Shitzu Squalo en Gambit Bay. No mostrada en gameplay aún, pero mencionada como parte del contexto de actividades acuáticas.",
+    "limitations": [
+      "Mecánicas específicas no documentadas",
+      "Ubicaciones exactas no todas confirmadas",
+      "Tipos de peces no especificados",
+      "Recompensas no documentadas",
+      "Requisitos de acceso desconocidos"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "gambit-bay",
+      "relation": "práctica-en"
+    }
+  ]
+}

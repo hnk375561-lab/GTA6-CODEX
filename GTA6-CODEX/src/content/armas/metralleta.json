@@ -1,0 +1,32 @@
+{
+  "slug": "metralleta",
+  "type": "armas",
+  "title": "Metralleta",
+  "description": "Arma automática de fuego rápido y alto volumen de munición. Clásica en juegos GTA.",
+  "content": "La metralleta es un arma automática tradicional en la franquicia Grand Theft Auto. Aunque no ha sido visualmente confirmada en trailers de GTA 6, su presencia es altamente probable basada en:\n\n- Aparición estándar en todas las entregas de GTA\n- Presencia de escenarios de combate de fuego intenso en trailers\n- Necesidad de variedad de armas automáticas en sistema de combate\n- Compatibilidad con persecuciones policiales mostradas\n\n**Características Típicas**:\n- Fuego automático/ráfaga\n- Cadencia de fuego rápida\n- Menor daño por bala que rifles\n- Mayor volumen de fuego que pistolas\n- Útil para combate de corto-medio alcance\n- Munición abundante pero cara\n\n**Contexto en GTA 6**:\nSe espera que la metralleta sea disponible a través de:\n- Tiendas de armas\n- Enemigos derrotados\n- Ubicaciones específicas\n- Misiones que la requieren\n- Posibles variantes/modelo específico",
+  "status": "nuestro",
+  "tags": [
+    "arma-de-fuego",
+    "automática",
+    "metralleta",
+    "fuego-rápido",
+    "especulado",
+    "tradicional"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-15T02:45:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Análisis de estructura de GTA tradicional",
+    "note": "No visualmente confirmada en trailers de GTA 6 hasta ahora. Incluida basada en aparición estándar en todas las entregas de GTA.",
+    "limitations": [
+      "Modelo específico desconocido",
+      "Variantes no confirmadas",
+      "Daño exacto no especificado",
+      "Cadencia de fuego no confirmada",
+      "Disponibilidad en juego no confirmada"
+    ]
+  },
+  "relations": []
+}

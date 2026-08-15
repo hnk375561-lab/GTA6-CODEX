@@ -1,0 +1,41 @@
+{
+  "slug": "conduccion",
+  "type": "actividades",
+  "title": "Conducción",
+  "description": "Sistema de conducción y navegación vehicular en GTA 6. Mecánica central del gameplay.",
+  "content": "La conducción es la mecánica fundamental de Grand Theft Auto 6. Los trailers oficiales muestran conducción de alta velocidad, persecuciones policiales y maniobras acrobáticas.\n\nEl sistema de conducción de GTA 6 incluye:\n\n**Vehículos**: Autos, motos, camiones, barcos, aviones, helicópteros\n\n**Mecánicas**:\n- Aceleración y frenado\n- Dirección y deslizamiento\n- Saltos y maniobras acrobáticas\n- Daño y deterioro del vehículo\n- Sistema de combustible\n\n**Contextos de Conducción**:\n- Viajes libres por el mundo abierto\n- Persecuciones policiales\n- Misiones de transporte\n- Carreras competitivas\n- Combate vehicular\n\nLos trailers de GTA 6 muestran conducción en:\n- Ciudades urbanas (Vice City, downtown)\n- Carreteras rurales\n- Zonas costeras\n- Persecuciones de alta velocidad\n- Combate desde vehículos\n\nJason dispara desde un Bravado Gauntlet Hellfire en movimiento, sugiriendo un sistema de combate vehicular sofisticado.",
+  "status": "confirmado",
+  "tags": [
+    "conducción",
+    "vehículo",
+    "gameplay",
+    "mecánica-central",
+    "visual-confirmado"
+  ],
+  "featured": true,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-15T02:40:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — Trailers 1 y 2 (múltiples escenas de conducción)",
+    "note": "La conducción es mostrada extensamente en todos los trailers de GTA 6. Aparecen múltiples vehículos en diferentes contextos, confirmando la centralidad de esta mecánica.",
+    "limitations": [
+      "Detalles específicos de física no confirmados",
+      "Sistema de daño/durabilidad no documentado",
+      "Customización de conducción desconocida",
+      "Controles específicos no publicados"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "prominentemente-mostrada"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "prominentemente-mostrada"
+    }
+  ]
+}

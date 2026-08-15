@@ -1,0 +1,43 @@
+{
+  "slug": "combate-mano-a-mano",
+  "type": "actividades",
+  "title": "Combate Mano a Mano",
+  "description": "Pelea física sin armas. Mecánica de combate cuerpo a cuerpo en mundo abierto.",
+  "content": "El combate mano a mano es un sistema de pelea sin armas en GTA 6. Los trailers muestran a Lucia Caminos peleando en una jaula de MMA, sugiriendo un sistema de combate cuerpo a cuerpo expandido.\n\n**Contextos de Combate Mano a Mano**:\n- Peleas casuales en la calle\n- Combates organizados (MMA)\n- Defensa contra enemigos desarmados\n- Misiones de pelea específicas\n- Confrontaciones narrativas\n\n**Mecánicas Esperadas**:\n- Sistema de combo y timing\n- Diferentes tipos de golpes (puño, patada)\n- Bloqueo y esquiva\n- Agarres y movimientos especiales\n- Derribos y finalizadores\n- Sistema de resistencia/energía\n\n**Mejora de Combate**:\n- Participación en MMA para mejorar habilidades\n- Desbloqueo de movimientos especiales\n- Aumento de daño y resistencia con progresión\n- Posibles entrenamientos con instructores\n\nLucia aparece usando el sistema de combate de forma competente en trailers, sugiriendo que ambos protagonistas tendrán acceso a este sistema con progresión.",
+  "status": "confirmado",
+  "tags": [
+    "combate",
+    "mano-a-mano",
+    "pelea",
+    "física",
+    "visual-confirmado",
+    "defensa"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-15T02:45:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — Trailer 1 (escena de Lucia en jaula de MMA)",
+    "note": "Sistema de combate cuerpo a cuerpo confirmado visualmente a través de Lucia participando en pelea de MMA.",
+    "limitations": [
+      "Detalles específicos de mecánicas no confirmados",
+      "Sistema de progresión no documentado",
+      "Movimientos especiales no mostrados",
+      "Requisitos de entrenamiento desconocidos",
+      "Balance de daño/defensa no especificado"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "actividades",
+      "targetSlug": "mma",
+      "relation": "forma-competitiva-de"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
+      "relation": "participante-confirmada"
+    }
+  ]
+}

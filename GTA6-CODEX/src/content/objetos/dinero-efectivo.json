@@ -1,0 +1,31 @@
+{
+  "slug": "dinero-efectivo",
+  "type": "objetos",
+  "title": "Dinero en Efectivo",
+  "description": "Moneda principal del juego. Usado para comprar items, pagar servicios y acceder a actividades.",
+  "content": "El dinero en efectivo es la moneda principal de GTA 6. Funciona como el sistema económico fundamental del juego.\n\n**Formas de Obtener Dinero**:\n- Completar misiones\n- Robar dinero de victimas\n- Actividades secundarias (carreras, pesca, etc.)\n- Negocios criminales\n- Encontrar dinero en el mundo\n- Apuestas en actividades\n\n**Usos del Dinero**:\n- Comprar armas y munición\n- Comprar ropa y accesorios\n- Pagar servicios (transporte, hotels)\n- Pagar multas policiales\n- Acceder a actividades (carreras, clubs)\n- Apuestas\n- Comprar propiedades\n- Invertir en negocios\n\n**Almacenamiento**:\nEl dinero se lleva en el inventario del jugador, con posibles límites de cantidad máxima portátil. Dinero adicional puede depositarse en bancos o propiedades.\n\nEl sistema de dinero es fundamental para la progresión y libertad del jugador en GTA 6, permitiendo acceso a múltiples actividades y mejoras.",
+  "status": "nuestro",
+  "tags": [
+    "moneda",
+    "economía",
+    "dinero",
+    "tradicional",
+    "fundamental"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-15T02:45:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Sistema económico estándar de GTA",
+    "note": "Moneda económica estándar en todos los juegos GTA. Altamente probable que continúe en GTA 6, aunque las mecánicas específicas aún no están confirmadas.",
+    "limitations": [
+      "Cantidad máxima portátil no confirmada",
+      "Depósitos en banco no confirmados",
+      "Sistema de inversiones no especificado",
+      "Tasas de servicio desconocidas",
+      "Inflación/deflación económica no documentada"
+    ]
+  },
+  "relations": []
+}
