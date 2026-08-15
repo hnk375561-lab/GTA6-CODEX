@@ -1,0 +1,38 @@
+{
+  "slug": "mochila-botin",
+  "type": "objetos",
+  "title": "Mochila de Botín",
+  "description": "Bolso o mochila utilizada para transportar el dinero y objetos de valor obtenidos durante atracos, elemento visual clásico de los golpes en la saga GTA.",
+  "content": "La mochila o bolso de botín es un elemento visual y funcional recurrente en las misiones de atraco de la saga GTA, sirviendo tanto como indicador visual de la cantidad de dinero robado como recurso jugable que el jugador debe proteger y transportar hasta un punto de escape seguro.\n\nEn misiones como el atraco al banco de Downtown, este objeto representaría el objetivo central del golpe: llenar la mochila con la mayor cantidad de efectivo posible mientras se gestiona el tiempo disponible antes de que lleguen refuerzos policiales.\n\nSu diseño suele estar vinculado a mecánicas de gestión de riesgo: llenar completamente la mochila puede requerir más tiempo dentro del banco, aumentando la exposición a fuerzas de seguridad, en un clásico dilema de riesgo-recompensa de los golpes de la saga.",
+  "status": "nuestro",
+  "tags": [
+    "atraco",
+    "botín",
+    "golpe",
+    "riesgo-recompensa"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T12:35:00Z",
+  "updatedAt": "2026-08-15T12:35:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Análisis propio basado en el diseño de misiones de atraco de entregas anteriores de la saga GTA",
+    "note": "Sin confirmación visual específica en material promocional de GTA 6.",
+    "limitations": [
+      "Sin confirmación visual en trailers",
+      "Mecánica exacta de gestión de tiempo/riesgo no confirmada"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "misiones",
+      "targetSlug": "atraco-banco-downtown",
+      "relation": "objeto-central"
+    },
+    {
+      "targetType": "objetos",
+      "targetSlug": "dinero-efectivo",
+      "relation": "categoría-relacionada"
+    }
+  ]
+}

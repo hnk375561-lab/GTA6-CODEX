@@ -1,0 +1,43 @@
+{
+  "slug": "municion",
+  "type": "objetos",
+  "title": "Munición",
+  "description": "Recurso consumible necesario para el uso de armas de fuego, elemento fundamental del sistema económico y de combate de GTA 6.",
+  "content": "La munición es un recurso consumible esencial en cualquier entrega de la saga GTA que incluya armas de fuego, funcionando como límite práctico al uso indiscriminado de armamento y como incentivo económico para que el jugador visite armerías o recolecte recursos del mundo del juego.\n\nCon un arsenal de armas de fuego ya confirmado visualmente —pistola, metralleta, rifle de asalto, escopeta, además de las variantes documentadas en este sitio como pistolas dobles— es certero que GTA 6 mantendrá un sistema de gestión de munición equivalente al de entregas anteriores.\n\nEste objeto se conecta directamente con el sistema económico del juego a través del dinero en efectivo, ya que la compra de munición en armerías representa uno de los gastos recurrentes más importantes para jugadores orientados al combate.",
+  "status": "nuestro",
+  "tags": [
+    "munición",
+    "consumible",
+    "combate",
+    "economía"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T12:30:00Z",
+  "updatedAt": "2026-08-15T12:30:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Análisis propio basado en el sistema de armas confirmado y el diseño económico estándar de la saga GTA",
+    "note": "Sistema estándar en toda la saga; sin detalles específicos de precios o capacidad máxima confirmados para GTA 6.",
+    "limitations": [
+      "Precios y capacidad máxima de munición desconocidos",
+      "Sistema de recarga en tiempo real no detallado"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "armas",
+      "targetSlug": "pistola",
+      "relation": "requerido-por"
+    },
+    {
+      "targetType": "armas",
+      "targetSlug": "rifle-de-asalto",
+      "relation": "requerido-por"
+    },
+    {
+      "targetType": "objetos",
+      "targetSlug": "dinero-efectivo",
+      "relation": "categoría-relacionada"
+    }
+  ]
+}

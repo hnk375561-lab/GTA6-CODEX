@@ -1,0 +1,38 @@
+{
+  "slug": "pasamontanas",
+  "type": "objetos",
+  "title": "Pasamontañas",
+  "description": "Prenda de ocultación facial asociada a atracos y robos a mano armada, elemento visual recurrente en escenas de golpes de la saga GTA.",
+  "content": "El pasamontañas es un accesorio visual asociado casi universalmente a escenas de atraco en medios de entretenimiento sobre crimen, y la saga GTA no es la excepción, habiéndolo utilizado en golpes bancarios de entregas anteriores como recurso tanto estético como funcional de ocultación de identidad.\n\nDentro del perfil narrativo de Jason y Lucia escalando hacia golpes de mayor planificación como el atraco al banco de Downtown, el uso de este tipo de prenda sería consistente con la necesidad de evitar ser identificados por cámaras de seguridad o testigos durante operaciones de alto perfil.\n\nEs posible que su uso esté vinculado a un sistema de nivel de búsqueda o reconocimiento facial dentro del juego, donde ocultar el rostro durante un delito reduzca las probabilidades de generar una respuesta policial inmediata o una alerta de búsqueda posterior.",
+  "status": "nuestro",
+  "tags": [
+    "atraco",
+    "ocultación",
+    "golpe",
+    "equipamiento"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T12:15:00Z",
+  "updatedAt": "2026-08-15T12:15:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Análisis propio basado en convenciones narrativas de atracos en la saga GTA",
+    "note": "Sin confirmación visual específica en material promocional de GTA 6; documentado como expectativa razonable dado el género narrativo de la trama.",
+    "limitations": [
+      "Sin confirmación visual en trailers",
+      "No confirmado si afecta mecánicas de reconocimiento o búsqueda policial"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "misiones",
+      "targetSlug": "atraco-banco-downtown",
+      "relation": "objeto-contextual"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "raul-bautista",
+      "relation": "asociado-con"
+    }
+  ]
+}

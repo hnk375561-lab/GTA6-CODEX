@@ -45,6 +45,11 @@
       "targetType": "ubicaciones",
       "targetSlug": "southside-vice-city",
       "relation": "ubicación-misión"
+    },
+    {
+      "targetType": "objetos",
+      "targetSlug": "ganzua",
+      "relation": "objeto-contextual"
     }
   ]
 }

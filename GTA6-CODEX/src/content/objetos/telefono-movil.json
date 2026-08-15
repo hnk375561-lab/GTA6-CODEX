@@ -1,0 +1,45 @@
+{
+  "slug": "telefono-movil",
+  "type": "objetos",
+  "title": "Teléfono Móvil",
+  "description": "Dispositivo central del sistema de interacción social e influencer del jugador, con fuerte presencia satírica en el material promocional de GTA 6.",
+  "content": "El material promocional de GTA 6 dedica varias escenas a retratar la cultura de redes sociales e influencers dentro de Vice City, con personajes grabando contenido, transmitiendo en vivo o reaccionando a través de sus teléfonos móviles en medio de situaciones caóticas. Esta sátira de la cultura digital contemporánea es un sello distintivo del tono humorístico de la entrega.\n\nSiguiendo la tradición de GTA V con Lifeinvader, es esperable que el teléfono móvil funcione como hub de mecánicas del juego: acceso a contactos para misiones, aplicaciones de redes sociales parodiadas, mapa del mundo, cámara para fotos y posiblemente algún sistema de mercado o compra dentro del juego.\n\nMás allá de su función narrativa satírica, el teléfono probablemente mantenga su rol mecánico establecido en entregas anteriores como interfaz principal de comunicación entre el jugador y los distintos personajes que ofrecen misiones y encargos.",
+  "status": "nuestro",
+  "tags": [
+    "teléfono",
+    "redes-sociales",
+    "sátira",
+    "interfaz",
+    "comunicación"
+  ],
+  "featured": true,
+  "createdAt": "2026-08-15T12:05:00Z",
+  "updatedAt": "2026-08-15T12:05:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — Trailer 1 y Trailer 2 (escenas de redes sociales e influencers)",
+    "note": "Las escenas de uso de teléfono y redes sociales están documentadas visualmente en ambos trailers; su función mecánica exacta como interfaz de juego es inferencia propia basada en el precedente de GTA V.",
+    "limitations": [
+      "Función mecánica exacta dentro del gameplay no confirmada",
+      "Aplicaciones específicas parodiadas no confirmadas en detalle",
+      "No confirmado si reemplaza o complementa otros sistemas de interfaz"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "usado-por"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
+      "relation": "usado-por"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "aparece-en"
+    }
+  ]
+}

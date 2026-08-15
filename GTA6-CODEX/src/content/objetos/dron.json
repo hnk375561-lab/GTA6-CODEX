@@ -1,0 +1,38 @@
+{
+  "slug": "dron",
+  "type": "objetos",
+  "title": "Dron",
+  "description": "Dispositivo volador de vigilancia y grabación, con presencia visual en el material promocional de GTA 6 vinculada tanto a la cultura de contenido digital como a posibles usos tácticos.",
+  "content": "El material promocional de GTA 6 incluye tomas aéreas con estética de grabación por dron, consistentes con la fuerte presencia de cultura de creación de contenido y redes sociales que caracteriza la ambientación satírica del juego. Este tipo de dispositivo también tiene precedente jugable en entregas anteriores de la saga como herramienta de exploración y reconocimiento.\n\nMás allá de su uso narrativo asociado a personajes influencers o creadores de contenido, un dron podría cumplir función táctica dentro del gameplay: reconocimiento previo a un golpe, vigilancia de objetivos o incluso como arma improvisada en misiones específicas, siguiendo la tendencia de otros títulos de mundo abierto recientes.\n\nSu eventual inclusión jugable —más allá de su presencia puramente estética en el material promocional— no ha sido confirmada oficialmente por Rockstar Games.",
+  "status": "nuestro",
+  "tags": [
+    "dron",
+    "vigilancia",
+    "tecnología",
+    "redes-sociales"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T12:40:00Z",
+  "updatedAt": "2026-08-15T12:40:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Rockstar Games — material promocional (tomas aéreas con estética de dron)",
+    "note": "Las tomas con estética de dron están presentes en material promocional, pero no hay confirmación de que el dron sea un objeto jugable dentro de GTA 6.",
+    "limitations": [
+      "No confirmado como objeto utilizable por el jugador",
+      "Función táctica o de vigilancia especulativa"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "objetos",
+      "targetSlug": "telefono-movil",
+      "relation": "categoría-relacionada"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "aparece-en"
+    }
+  ]
+}

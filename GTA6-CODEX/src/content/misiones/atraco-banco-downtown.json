@@ -57,6 +57,21 @@
       "targetType": "vehiculos",
       "targetSlug": "declasse-tulip-m100",
       "relation": "vehículo-huida"
+    },
+    {
+      "targetType": "objetos",
+      "targetSlug": "chaleco-antibalas",
+      "relation": "objeto-contextual"
+    },
+    {
+      "targetType": "objetos",
+      "targetSlug": "pasamontanas",
+      "relation": "objeto-contextual"
+    },
+    {
+      "targetType": "objetos",
+      "targetSlug": "mochila-botin",
+      "relation": "objeto-central"
     }
   ]
 }

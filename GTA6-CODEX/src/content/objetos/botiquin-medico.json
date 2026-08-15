@@ -1,0 +1,33 @@
+{
+  "slug": "botiquin-medico",
+  "type": "objetos",
+  "title": "Botiquín Médico",
+  "description": "Objeto consumible de restauración de salud, elemento estándar del sistema de supervivencia presente en todas las entregas de la saga GTA.",
+  "content": "El botiquín médico es uno de los objetos más constantes en el diseño de sistemas de supervivencia de la saga GTA, permitiendo al jugador restaurar salud durante o después de enfrentamientos, generalmente encontrado en el mundo abierto, comprado en farmacias o hospitales, o proporcionado como recompensa de misión.\n\nDada la naturaleza de acción intensa mostrada en el material promocional de GTA 6 —persecuciones, tiroteos y enfrentamientos con fuerzas policiales— es prácticamente seguro que el juego mantenga algún sistema de recuperación de salud consumible equivalente a los botiquines de entregas anteriores.\n\nEste tipo de objeto suele estar distribuido estratégicamente en el mundo del juego cerca de zonas de alto riesgo o disponible para compra en establecimientos específicos, incentivando al jugador a gestionar recursos antes de emprender misiones de combate.",
+  "status": "nuestro",
+  "tags": [
+    "salud",
+    "consumible",
+    "supervivencia",
+    "clásico-saga"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T12:20:00Z",
+  "updatedAt": "2026-08-15T12:20:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Análisis propio basado en el sistema de salud estándar de la saga GTA",
+    "note": "Sin confirmación visual específica; documentado como expectativa prácticamente segura dado el historial constante de la franquicia.",
+    "limitations": [
+      "Sin confirmación visual en trailers",
+      "Cantidad de salud restaurada y puntos de distribución desconocidos"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "objetos",
+      "targetSlug": "chaleco-antibalas",
+      "relation": "categoría-relacionada"
+    }
+  ]
+}
