@@ -1,276 +1,307 @@
-/**
- * TIPOS CENTRALES DE GTAS CODEX
- * 
- * Estos tipos definen el contrato fundamental para todas las entidades.
- * El sistema es genérico + configurable por tipo.
- */
+import fs from 'fs'
+import path from 'path'
+import { Entity, EntityType, BaseEntity } from '@/types'
+import {
+  safeParseEntity,
+  safeParseTrailer,
+  safeParseCharacter,
+  safeParseVehicle,
+  safeParseLocation,
+  safeParseMission,
+} from '@/types/schemas'
 
 /**
- * Estados posibles de información
- * - confirmado: Información oficial/verificada
- * - rumor: Especulación/no confirmado
- * - nuestro: Teoría/análisis propio del sitio
- * 
- * Extensible: nuevos estados pueden agregarse sin romper el modelo
+ * Validación adicional específica de tipo, para entidades cuyo contrato
+ * va más allá de BaseEntity (ej. Trailer requiere `scenes`; Vehicle tiene
+ * `performance` con forma propia). Se ejecuta después de `validateEntity`
+ * (que ya garantiza el contrato base) y solo agrega chequeos extra; nunca
+ * afloja lo que `validateEntity` ya exige. Los 7 `GenericEntity` (armas,
+ * actividades, organizaciones, negocios, objetos, noticias, guias) no
+ * tienen caso acá a propósito: ya quedan cubiertos por `validateEntity`
+ * (BaseEntitySchema) y su contrato es intencionalmente abierto.
  */
-export type InformationStatus = 'confirmado' | 'rumor' | 'nuestro'
+function validateTypeSpecific(type: EntityType, entity: unknown, contextLabel: string): boolean {
+  const result =
+    type === EntityType.TRAILER
+      ? safeParseTrailer(entity)
+      : type === EntityType.CHARACTER
+        ? safeParseCharacter(entity)
+        : type === EntityType.VEHICLE
+          ? safeParseVehicle(entity)
+          : type === EntityType.LOCATION
+            ? safeParseLocation(entity)
+            : type === EntityType.MISSION
+              ? safeParseMission(entity)
+              : null
 
-/**
- * Tipos de entidad soportados
- * Este enum es exhaustivo pero extensible
- */
-export enum EntityType {
-  CHARACTER = 'personajes',
-  VEHICLE = 'vehiculos',
-  LOCATION = 'ubicaciones',
-  MISSION = 'misiones',
-  WEAPON = 'armas',
-  ACTIVITY = 'actividades',
-  FACTION = 'organizaciones',
-  BUSINESS = 'negocios',
-  OBJECT = 'objetos',
-  NEWS = 'noticias',
-  GUIDE = 'guias',
-  TRAILER = 'trailers',
-}
-
-/**
- * Interfaz base para todas las entidades
- * Toda entidad debe cumplir con este contrato mínimo
- */
-export interface BaseEntity {
-  // Identificación
-  slug: string // URL-safe identifier, debe ser único por tipo
-  type: EntityType
-  
-  // Contenido
-  title: string
-  description: string // Resumen corto
-  content?: string // Contenido principal (opcional en fase 1)
-  
-  // Metadata
-  status: InformationStatus
-  tags?: string[]
-  createdAt: string // ISO timestamp
-  updatedAt: string // ISO timestamp
-  
-  // Relaciones
-  relations?: EntityRelation[]
-  
-  // SEO
-  seoTitle?: string // Sobrescribe title si está presente
-  seoDescription?: string // Sobrescribe description si está presente
-  featured?: boolean // Si debe aparecer en secciones destacadas
-
-  /**
-   * Trazabilidad de evidencia (opcional).
-   * Complementa a `status` con un nivel de certeza más granular,
-   * pensado inicialmente para entidades identificadas visualmente
-   * (ej. vehículos) donde "confirmado" puede significar cosas distintas:
-   * un nombre publicado oficialmente por Rockstar no es lo mismo que
-   * una identificación visual respaldada por fuentes especializadas.
-   */
-  evidence?: {
-    // Nivel de certeza de la identificación
-    level: 'oficial-nombrado' | 'oficial-visual' | 'respaldado' | 'especulativo'
-    // Fuente primaria: Rockstar Games, sitio oficial, trailer, comunicado, etc.
-    primarySource?: string
-    // Fuente secundaria usada para ayudar a identificar (nunca autoridad canónica)
-    secondarySource?: string
-    // Aclaración libre sobre qué está y qué no está confirmado
-    note?: string
-    // Limitaciones conocidas de la identificación/relación documentada,
-    // una por punto (ej. datos no verificables, contaminación cruzada
-    // detectada, ambigüedad no resuelta)
-    limitations?: string[]
+  if (result && !result.success) {
+    console.warn(`[entities] Entidad inválida (${type}) en ${contextLabel}: ${result.error.message}`)
+    return false
   }
+  return true
+}
 
-  /**
-   * Metadata de procedencia de la imagen de esta entidad (opcional).
-   *
-   * NO contiene la ruta del archivo: la ruta se resuelve por convención
-   * (ver src/lib/images.ts) a partir de `type` + `slug`, buscando
-   * public/images/entities/{type}/{slug}.{webp|avif|jpg|jpeg|png}.
-   * Este campo es solo trazabilidad legal/editorial de esa imagen,
-   * en el mismo espíritu que `evidence` para el resto del contenido.
-   */
-  image?: {
-    // Nivel de verificación de la procedencia
-    source: 'official' | 'secondary' | 'unverified'
-    sourceName?: string // ej. "Rockstar Games — Media Screenshots"
-    sourceUrl?: string // URL de la página donde se localizó/confirmó
-    retrievedAt?: string // ISO timestamp de cuándo se verificó
-    credit?: string // Atribución a mostrar si corresponde
-    alt?: string // Texto alternativo específico; si falta, se usa entity.title
-  }
+const CONTENT_DIR = path.join(process.cwd(), 'src', 'content')
+
+function getContentDirForType(type: EntityType): string {
+  return path.join(CONTENT_DIR, type)
 }
 
 /**
- * Relación entre entidades
- * Define conexiones significativas
- */
-export interface EntityRelation {
-  targetType: EntityType
-  targetSlug: string
-  relation: string // ej: "aparece en", "conducido por", "ubicado en", etc.
-  direction?: 'to' | 'from' | 'bidirectional' // Por defecto 'to'
-}
-
-/**
- * Entidad específica de personaje
- * Extiende BaseEntity con propiedades específicas
- */
-export interface Character extends BaseEntity {
-  type: EntityType.CHARACTER
-  
-  // Propiedades específicas
-  alias?: string[] // Alias o nombres alternativos
-  faction?: string // Facción/organización principal
-  voice_actor?: string
-  appearance?: {
-    age?: string
-    height?: string
-    build?: string
-    characteristics?: string
-  }
-}
-
-/**
- * Entidad específica de vehículo
- */
-export interface Vehicle extends BaseEntity {
-  type: EntityType.VEHICLE
-  
-  // Propiedades específicas
-  manufacturer?: string
-  class?: string // sports, sedan, truck, etc.
-  driven_by?: string[] // Personajes que lo conducen
-  locations?: string[] // Dónde aparece
-  customizable?: boolean
-  performance?: {
-    speed?: string
-    acceleration?: string
-    handling?: string
-    braking?: string
-  }
-}
-
-/**
- * Entidad específica de ubicación
- */
-export interface Location extends BaseEntity {
-  type: EntityType.LOCATION
-  
-  // Propiedades específicas
-  district?: string // Distrito/zona
-  region?: string // Región más amplia
-  coordinates?: {
-    x: number
-    y: number
-  }
-  points_of_interest?: string[] // Lugares notables dentro
-  missions?: string[] // Misiones que ocurren aquí
-  businesses?: string[] // Negocios ubicados aquí
-
-  /**
-   * Entorno natural (opcional, deliberadamente escaso).
-   *
-   * Rockstar apenas ha confirmado nada de esto de forma explícita: lo único
-   * verificable visualmente en los trailers es un ciclo día/noche y clima
-   * dinámico básico (lluvia, iluminación cambiante). Cualquier cosa más
-   * específica —huracanes, fauna concreta, eventos ambientales— circula
-   * como rumor o fue reportada como directamente descartada en desarrollo
-   * (ver `unconfirmedNote`). Por eso el campo existe como placeholder
-   * estructurado (sección 8 del brief: modelar sin inventar) en vez de
-   * poblarse con datos que no se pueden respaldar.
-   */
-  environment?: {
-    climate?: string // Solo lo verificable visualmente en material oficial
-    fauna?: string[] // Especies confirmadas visualmente; vacío si no hay ninguna
-    naturalEvents?: string[] // Eventos confirmados (ninguno hasta ahora)
-    unconfirmedNote?: string // Qué se rumorea/especula y por qué no está aquí como hecho
-  }
-}
-
-/**
- * Entidad específica de misión
- */
-export interface Mission extends BaseEntity {
-  type: EntityType.MISSION
-  
-  // Propiedades específicas
-  giver?: string // Quién da la misión
-  mission_type?: string // Misión principal, side quest, etc.
-  reward?: string
-  objectives?: string[]
-  location?: string
-  characters_involved?: string[]
-  prerequisite?: string // Misión prerequisita
-}
-
-/**
- * Escena individual dentro de un trailer/material oficial.
+ * CACHÉ EN MEMORIA
+ * ==================
+ * Todo el contenido vive en JSON en disco y se lee con fs *sync* (no hay
+ * I/O real de red). Sin caché, cada page/build request re-lee y re-parsea
+ * los mismos archivos: una entidad con 5 relaciones dispara 5 lecturas de
+ * disco completas por página, y funciones que recorren TODO el contenido
+ * (`getBidirectionalRelations`, `getAllEntities`, la galería, el sitemap)
+ * terminan re-leyendo todo el árbol de contenido una vez por cada entidad
+ * que exista — O(n²) I/O en un build que ya de por sí genera cientos de
+ * páginas estáticas.
  *
- * Es la unidad atómica del sistema "trailers como base de datos":
- * cada escena documenta un momento puntual y se conecta, vía `relations`,
- * con las entidades que aparecen en ella (personaje → ubicación →
- * vehículo → actividad), reutilizando el mismo `EntityRelation` que ya
- * usa el resto del sitio en vez de inventar un mecanismo de vínculo aparte.
+ * Se cachea únicamente en producción/build (`NODE_ENV === 'production'`).
+ * En `next dev` se deja el comportamiento original (siempre leer de
+ * disco) a propósito: el flujo documentado en el README es "crear/editar
+ * un JSON y verlo reflejado en dev sin reiniciar nada"; cachear ahí
+ * rompería esa experiencia de autoría de contenido.
  */
-export interface TrailerScene {
-  id: string // identificador estable de la escena dentro del trailer, ej. "scene-01"
-  timestamp: string // marca de tiempo dentro del video, ej. "00:12"
-  title: string // resumen corto de la escena
-  description: string // qué se ve, en detalle, sin especular más allá de lo mostrado
-  relations?: EntityRelation[] // entidades que aparecen en esta escena
-  status?: InformationStatus // por defecto hereda el status del trailer si no se especifica
+const CACHE_ENABLED = process.env.NODE_ENV === 'production'
+
+const typeCache = new Map<EntityType, Entity[]>()
+const singleEntityCache = new Map<string, Entity | null>()
+
+function entityCacheKey(type: EntityType, slug: string): string {
+  return `${type}/${slug}`
+}
+
+/** Limpia toda la caché en memoria. Expuesto para tests / scripts que
+ *  necesiten releer contenido dentro del mismo proceso (ej. watchers). */
+export function clearEntityCache(): void {
+  typeCache.clear()
+  singleEntityCache.clear()
 }
 
 /**
- * Entidad específica de trailer / material audiovisual oficial.
+ * Core síncrono de carga: lee, parsea y valida todos los JSON de un tipo.
+ * Separado de `getEntitiesByType` para que otros módulos (ej. `lib/media.ts`,
+ * que necesita leer trailers sin poder usar `await`) puedan reutilizar
+ * exactamente la misma lógica de lectura/validación/caché en vez de
+ * reimplementar su propia lectura de fs por separado.
+ */
+function loadEntitiesByTypeSync(type: EntityType): Entity[] {
+  if (CACHE_ENABLED && typeCache.has(type)) {
+    return typeCache.get(type)!
+  }
+
+  const dir = getContentDirForType(type)
+  if (!fs.existsSync(dir)) {
+    if (CACHE_ENABLED) typeCache.set(type, [])
+    return []
+  }
+
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith('.json'))
+  const entities: Entity[] = []
+
+  for (const file of files) {
+    try {
+      const raw = fs.readFileSync(path.join(dir, file), 'utf-8')
+      const parsed = JSON.parse(raw)
+
+      if (!validateEntity(parsed)) {
+        console.warn(`[entities] Entidad inválida ignorada: ${type}/${file}`)
+        continue
+      }
+
+      if (!validateTypeSpecific(type, parsed, `${type}/${file}`)) {
+        continue
+      }
+
+      // BLOQUEANTE (antes solo advertía y seguía): `getEntitySlugs()` /
+      // `generateStaticParams()` usan `parsed.slug` para construir la ruta
+      // estática, mientras que `getEntity()` busca el archivo por
+      // `${slug}.json`. Si no coinciden, se genera una ruta que en
+      // producción resuelve en 404 silencioso. Se excluye la entidad del
+      // build (mismo patrón que una entidad inválida) en vez de dejarla
+      // pasar con una ruta rota; no se aborta el build completo, para no
+      // reintroducir el problema ya corregido de que un solo archivo mal
+      // formado tire abajo `next build` entero (ver comentario de
+      // `validateEntity` más abajo).
+      const expectedSlug = file.replace(/\.json$/, '')
+      if (parsed.slug !== expectedSlug) {
+        console.error(
+          `[entities] Entidad excluida (slug/archivo no coinciden): slug "${parsed.slug}" ` +
+            `no coincide con el nombre de archivo "${file}" en ${type}. Renombrá el archivo a ` +
+            `"${parsed.slug}.json" o corregí el campo "slug" para que coincida con "${expectedSlug}".`
+        )
+        continue
+      }
+
+      entities.push(parsed as Entity)
+    } catch (err) {
+      console.warn(`[entities] Error leyendo ${type}/${file}:`, err)
+    }
+  }
+
+  entities.sort((a, b) => a.title.localeCompare(b.title, 'es'))
+
+  if (CACHE_ENABLED) typeCache.set(type, entities)
+  return entities
+}
+
+/**
+ * Variante síncrona de `getEntitiesByType`, para código que no puede (o no
+ * necesita) usar `await` — ej. módulos que se ejecutan fuera de un Server
+ * Component async, o utilidades que se apoyan en varias entidades a la vez
+ * dentro de una función síncrona.
+ */
+export function getEntitiesByTypeSync(type: EntityType): Entity[] {
+  return loadEntitiesByTypeSync(type)
+}
+
+/**
+ * Carga todas las entidades de un tipo específico.
+ * Lee todos los archivos .json en /content/{type}/
+ */
+export async function getEntitiesByType(type: EntityType): Promise<Entity[]> {
+  return loadEntitiesByTypeSync(type)
+}
+
+/**
+ * Obtiene una entidad específica por tipo y slug
+ */
+export async function getEntity(type: EntityType, slug: string): Promise<Entity | null> {
+  const cacheKey = entityCacheKey(type, slug)
+  if (CACHE_ENABLED && singleEntityCache.has(cacheKey)) {
+    return singleEntityCache.get(cacheKey)!
+  }
+
+  // Si ya cacheamos el tipo completo (ej. por una llamada previa a
+  // getEntitiesByType/getAllEntities), resolvemos desde ahí sin tocar fs.
+  if (CACHE_ENABLED && typeCache.has(type)) {
+    const found = typeCache.get(type)!.find((e) => e.slug === slug) || null
+    singleEntityCache.set(cacheKey, found)
+    return found
+  }
+
+  const filePath = path.join(getContentDirForType(type), `${slug}.json`)
+  let result: Entity | null = null
+
+  if (fs.existsSync(filePath)) {
+    try {
+      const raw = fs.readFileSync(filePath, 'utf-8')
+      const parsed = JSON.parse(raw)
+      if (validateEntity(parsed) && validateTypeSpecific(type, parsed, `${type}/${slug}.json`)) {
+        // Mismo chequeo bloqueante que `loadEntitiesByTypeSync`: este path
+        // se toma en acceso directo por slug (fuera de `generateStaticParams`,
+        // ej. request dinámico), así que necesita la misma garantía —si no,
+        // una entidad con slug interno desincronizado del nombre de archivo
+        // podía servirse igual bajo la URL del archivo, con canonical/JSON-LD
+        // apuntando a un slug distinto al de la URL real.
+        if (parsed.slug !== slug) {
+          console.error(
+            `[entities] Entidad excluida (slug/archivo no coinciden): slug "${parsed.slug}" ` +
+              `no coincide con el nombre de archivo "${slug}.json" en ${type}.`
+          )
+        } else {
+          result = parsed as Entity
+        }
+      }
+    } catch (err) {
+      console.warn(`[entities] Error leyendo ${type}/${slug}.json:`, err)
+    }
+  }
+
+  if (CACHE_ENABLED) singleEntityCache.set(cacheKey, result)
+  return result
+}
+
+/**
+ * Obtiene todos los slugs de un tipo (para generación de rutas estáticas)
+ */
+export async function getEntitySlugs(type: EntityType): Promise<string[]> {
+  return loadEntitiesByTypeSync(type).map((e) => e.slug)
+}
+
+/**
+ * Obtiene todas las entidades de todos los tipos
+ */
+export async function getAllEntities(): Promise<Entity[]> {
+  const all: Entity[] = []
+  for (const type of Object.values(EntityType)) {
+    all.push(...loadEntitiesByTypeSync(type))
+  }
+  return all
+}
+
+/**
+ * Obtiene las entidades marcadas como destacadas ("featured")
+ */
+export async function getFeaturedEntities(limit = 6): Promise<Entity[]> {
+  const all = await getAllEntities()
+  return all
+    .filter((e) => e.featured)
+    .sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1))
+    .slice(0, limit)
+}
+
+/**
+ * Cuenta el total de entidades publicadas (todas las categorías)
+ */
+export async function getEntityCount(): Promise<number> {
+  const all = await getAllEntities()
+  return all.length
+}
+
+/**
+ * Cuenta entidades por tipo. Devuelve un mapa type -> count.
+ * Reutiliza la caché de contenido en vez de solo contar archivos en disco,
+ * para que el conteo refleje entidades *válidas* (consistente con el resto
+ * de la API) y no archivos crudos que después se descartan por inválidos.
+ */
+export async function getEntityCountsByType(): Promise<Record<EntityType, number>> {
+  const counts = {} as Record<EntityType, number>
+  for (const type of Object.values(EntityType)) {
+    counts[type] = loadEntitiesByTypeSync(type).length
+  }
+  return counts
+}
+
+/**
+ * Valida que una entidad cumpla el contrato base.
  *
- * Cubre trailers numerados, pero el mismo modelo sirve para futuro
- * material oficial (gameplay reveals, anuncios) sin necesidad de un
- * tipo nuevo: es "trailer" en sentido amplio de "pieza audiovisual
- * oficial analizable escena por escena".
+ * Delegado íntegramente en `BaseEntitySchema` (Zod, `src/types/schemas.ts`)
+ * en vez de reimplementar los mismos chequeos a mano: antes existían dos
+ * validadores en paralelo (este, usado en la práctica, y `safeParseEntity`/
+ * `BaseEntitySchema`, definidos pero nunca invocados desde ningún caller
+ * real), con el riesgo de que evolucionaran distinto sin que nadie lo
+ * notara. Se mantiene la firma pública (`entity is BaseEntity`, boolean)
+ * para no tocar a ningún caller existente.
  */
-export interface Trailer extends BaseEntity {
-  type: EntityType.TRAILER
-
-  releaseDate: string // ISO date de publicación oficial
-  officialUrl?: string // URL del video oficial (canal de Rockstar Games)
-  durationSeconds?: number // duración aproximada, si se conoce
-  scenes: TrailerScene[]
+export function validateEntity(entity: unknown): entity is BaseEntity {
+  return safeParseEntity(entity).success
 }
 
 /**
- * Entidad genérica para tipos no tan complejos
+ * Normaliza un slug a formato URL-safe.
+ * Incluye normalización de acentos (á, é, í, ó, ú, ñ) para que títulos en
+ * español ("Lucía Caminos" -> "lucia-caminos") generen slugs limpios en
+ * vez de perder la letra acentuada silenciosamente en el regex de abajo.
  */
-export interface GenericEntity extends BaseEntity {
-  type: Exclude<
-    EntityType,
-    EntityType.CHARACTER | EntityType.VEHICLE | EntityType.LOCATION | EntityType.MISSION | EntityType.TRAILER
-  >
-  
-  // Propiedades personalizadas según tipo
-  [key: string]: unknown
+export function normalizeSlug(input: string): string {
+  return input
+    .toLowerCase()
+    .trim()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // quita diacríticos (incluye ñ -> n)
+    .replace(/[^\w\s-]/g, '') // remueve caracteres especiales restantes
+    .replace(/\s+/g, '-') // espacios -> guiones
+    .replace(/-+/g, '-') // colapsa guiones repetidos
+    .replace(/^-+|-+$/g, '') // recorta guiones al inicio/final
 }
 
 /**
- * Union de todos los tipos de entidad
+ * Obtiene el path de ruta para una entidad
  */
-export type Entity = Character | Vehicle | Location | Mission | Trailer | GenericEntity
-
-/**
- * Meta información sobre un tipo de entidad
- * Define configuración específica del tipo
- */
-export interface EntityTypeConfig {
-  type: EntityType
-  singular: string
-  plural: string
-  description: string
-  icon?: string
-  color?: string
-  defaultStatus?: InformationStatus
+export function getEntityPath(type: EntityType, slug: string): string {
+  return `/${type}/${slug}`
 }
