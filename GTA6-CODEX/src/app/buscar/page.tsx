@@ -3,9 +3,33 @@ import { getAllEntities, getEntityCountsByType } from '@/lib/entities'
 import { SearchClient } from '@/components/search/SearchClient'
 import { Reveal } from '@/components/ui/Reveal'
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel.app'
+const SITE_NAME = 'GTA6 Codex'
+
+// Antes esta página no definía `alternates`, `openGraph` ni `twitter`, así
+// que heredaba en silencio los del layout raíz: el canonical y el og:url
+// servidos en producción para /buscar apuntaban a la home, no a /buscar
+// (mismo patrón ya usado en /galeria — ver src/app/galeria/page.tsx).
+const TITLE = 'Buscar | GTA6 Codex'
+const DESCRIPTION = 'Busca personajes, vehículos, ubicaciones, misiones y más en GTA6 Codex.'
+
 export const metadata: Metadata = {
-  title: 'Buscar | GTA6 Codex',
-  description: 'Busca personajes, vehículos, ubicaciones, misiones y más en GTA6 Codex.',
+  title: TITLE,
+  description: DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: `${SITE_URL}/buscar` },
+  openGraph: {
+    type: 'website',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: `${SITE_URL}/buscar`,
+    siteName: SITE_NAME,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 }
 
 export default async function SearchPage() {

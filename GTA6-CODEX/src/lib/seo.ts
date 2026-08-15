@@ -93,6 +93,8 @@ export function generateListMetadata(type: EntityType, count: number): Metadata 
  * Genera metadata para la homepage
  */
 export function generateHomepageMetadata(): Metadata {
+  const image = `${SITE_URL}/og-image.png`
+
   return {
     title: `${SITE_NAME} | Wiki Editorial de Grand Theft Auto 6`,
     description: SITE_DESCRIPTION,
@@ -106,11 +108,17 @@ export function generateHomepageMetadata(): Metadata {
       description: SITE_DESCRIPTION,
       url: SITE_URL,
       siteName: SITE_NAME,
+      // Mismo og-image.png que ya usa generateEntityMetadata(): la home
+      // no tenía imagen propia de preview en redes (Facebook/WhatsApp/
+      // Slack caían a una tarjeta sin imagen), sin agregar ningún asset
+      // nuevo al repo.
+      images: [{ url: image, width: 1200, height: 630, alt: SITE_NAME }],
     },
     twitter: {
       card: 'summary_large_image',
       title: SITE_NAME,
       description: SITE_DESCRIPTION,
+      images: [image],
     },
   }
 }

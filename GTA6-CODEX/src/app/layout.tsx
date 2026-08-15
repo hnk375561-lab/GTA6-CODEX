@@ -61,6 +61,12 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="flex flex-col min-h-screen">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-gta-dark focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-gta-text focus:shadow-gta-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+        >
+          Saltar al contenido principal
+        </a>
         {GA_MEASUREMENT_ID && (
           <>
             <Script
@@ -84,7 +90,7 @@ export default function RootLayout({
         <div className="gta-atmosphere" aria-hidden="true" />
         <div className="relative z-10 flex min-h-screen flex-1 flex-col">
           <Header />
-          <main className="flex-1">
+          <main id="main-content" className="flex-1">
             {children}
           </main>
           <Footer />

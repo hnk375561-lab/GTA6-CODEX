@@ -58,6 +58,13 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
   const HERO_BACKGROUNDS = backgrounds.length > 0 ? backgrounds : DEFAULT_HERO_BACKGROUNDS
   const [index, setIndex] = useState(0)
   const [reducedMotion, setReducedMotion] = useState(false)
+  // Cuántas imágenes del array están montadas en el DOM. Arranca en 1
+  // (solo la primera, con `priority`) y se completa de a una — ver el
+  // efecto de abajo — en vez de montar las 5-6 de entrada: antes, al
+  // estar todas `fill` en la misma posición visible, el navegador las
+  // pedía prácticamente a la vez en la carga inicial, compitiendo por
+  // ancho de banda con la imagen LCP incluso siendo fondos de varios MB.
+  const [mountedCount, setMountedCount] = useState(1)
   const layerRef = useRef<HTMLDivElement>(null)
   const rootRef = useRef<HTMLDivElement>(null)
   const scrollOffset = useRef(0)
@@ -78,6 +85,21 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
     }, ROTATE_INTERVAL_MS)
     return () => clearInterval(id)
   }, [reducedMotion, HERO_BACKGROUNDS.length])
+
+  // Precarga escalonada: monta (y por lo tanto descarga) una imagen más
+  // cada 2s, muy por debajo del intervalo de rotación (7s), así que cada
+  // fondo ya está disponible con tiempo de sobra antes de que le toque
+  // entrar en el crossfade. Con reduced motion el índice nunca avanza,
+  // así que no tiene sentido seguir precargando fondos que no se van a
+  // mostrar nunca.
+  useEffect(() => {
+    if (reducedMotion) return
+    if (mountedCount >= HERO_BACKGROUNDS.length) return
+    const id = setTimeout(() => {
+      setMountedCount((c) => Math.min(c + 1, HERO_BACKGROUNDS.length))
+    }, 2000)
+    return () => clearTimeout(id)
+  }, [reducedMotion, mountedCount, HERO_BACKGROUNDS.length])
 
   // Parallax de scroll (capa lejana) + parallax de cursor (profundidad sutil).
   // Un solo rAF combina ambas fuentes para no pisarse el transform entre sí.
@@ -138,7 +160,7 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
         className="absolute inset-0"
         style={reducedMotion ? undefined : { willChange: 'transform' }}
       >
-        {HERO_BACKGROUNDS.map((src, i) => (
+        {HERO_BACKGROUNDS.slice(0, mountedCount).map((src, i) => (
           <Image
             key={src}
             src={src}
