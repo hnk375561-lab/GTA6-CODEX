@@ -3,7 +3,7 @@
   "type": "armas",
   "title": "Escopeta",
   "description": "Categoría de escopetas de GTA VI: al menos dos modelos distintos (de bomba y de dos cañones) fueron mostrados visualmente en el Trailer 2, entre ellas la exhibida en el comercial de Ammu-Nation protagonizado por Phil.",
-  "content": "A diferencia de otras armas de la categoría cuerpo a cuerpo o de fuego cuya presencia todavía es especulativa, las escopetas de GTA VI ya fueron mostradas visualmente en material oficial. La cobertura especializada identificó al menos dos siluetas distintas dentro del metraje y las capturas del Trailer 2: una escopeta de acción de bomba (bomb-action) usada en una secuencia de robo, y una escopeta de dos cañones (over-under / double-barreled) con una estética más rural, coherente con la ambientación de los Cayos de Leonida.\n\nEsta misma categoría de arma también aparece exhibida en el mostrador del comercial in-game de Phil's Ammu-Nation, dentro del Trailer 2 (~2:09), lo que refuerza que la escopeta formará parte del catálogo de armas comprables del juego.\n\nRockstar no publicó nombres oficiales de modelo para ninguna de las dos variantes: la identificación de marcas o inspiraciones de fabricantes reales (por ejemplo, comparaciones con modelos Mossberg o Remington) proviene exclusivamente de análisis de la comunidad y prensa especializada, no de Rockstar Games.",
+  "content": "A diferencia de otras armas de la categoría cuerpo a cuerpo o de fuego cuya presencia todavía es especulativa, las escopetas de GTA VI ya fueron mostradas visualmente en material oficial. La cobertura especializada identificó al menos dos siluetas distintas dentro del metraje y las capturas del Trailer 2: una escopeta de acción de bomba (bomb-action) usada en una secuencia de robo, y una escopeta de dos cañones (over-under / double-barreled) con una estética más rural, coherente con la ambientación de los Cayos de Leonida.\n\nEsta misma categoría de arma también aparece exhibida en el mostrador del comercial in-game de Phil's Ammu-Nation, dentro del Trailer 2 (~2:09), lo que refuerza que la escopeta formará parte del catálogo de armas comprables del juego. Cobertura posterior (PC Gamer, jun. 2026), basada en el conjunto más amplio de capturas oficiales publicadas por Rockstar de cara al lanzamiento del 19 de noviembre de 2026, corrobora de forma independiente la existencia de al menos dos familias de escopeta: una de dos cañones vista en manos de un cazador apuntando a un caimán, y variantes de bombeo estilo Remington 870 y semiautomáticas estilo Benelli M4 visibles en los estantes del propio Ammu-Nation.\n\nRockstar no publicó nombres oficiales de modelo para ninguna de las variantes: la identificación de marcas o inspiraciones de fabricantes reales (por ejemplo, comparaciones con modelos Mossberg, Remington o Benelli) proviene exclusivamente de análisis de la comunidad y prensa especializada, no de Rockstar Games.",
   "status": "confirmado",
   "tags": [
     "arma-de-fuego",
@@ -15,15 +15,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-14T00:00:00Z",
-  "updatedAt": "2026-08-15T12:00:00Z",
+  "updatedAt": "2026-08-15T22:50:00Z",
   "evidence": {
-    "level": "oficial-visual",
-    "primarySource": "Rockstar Games, Trailer 2 (secuencia de robo y comercial de Ammu-Nation, ~2:09)",
-    "secondarySource": "TheGamer, games.gg y Fossbytes, cobertura independiente que identifica al menos dos modelos distintos de escopeta (bomba y dos cañones) en el metraje oficial",
-    "note": "Se confirma visualmente la existencia de al menos dos variantes de escopeta dentro del arsenal del juego. La identificación de marcas/modelos reales de inspiración es análisis de prensa especializada, no confirmación oficial de Rockstar, y se documenta como tal.",
+    "level": "oficial-visual-multifuente",
+    "primarySource": "Rockstar Games, Trailer 2 (secuencia de robo y comercial de Ammu-Nation, ~2:09) y capturas oficiales adicionales publicadas de cara al lanzamiento (19 nov. 2026)",
+    "secondarySource": "TheGamer, games.gg y Fossbytes (identificación inicial de dos modelos en el metraje) más PC Gamer (jun. 2026), que corrobora de forma independiente la escopeta de dos cañones en una captura de cacería y variantes de bombeo/semiautomáticas en los estantes de Ammu-Nation",
+    "note": "Se confirma visualmente la existencia de al menos dos variantes de escopeta dentro del arsenal del juego, ahora corroborado por múltiples fuentes independientes que analizan capturas oficiales distintas (no solo el mismo tráiler). Se eleva el nivel de 'oficial-visual' a 'oficial-visual-multifuente'. La identificación de marcas/modelos reales de inspiración es análisis de prensa especializada, no confirmación oficial de Rockstar.",
     "limitations": [
       "Nombres de modelo in-game no confirmados oficialmente",
-      "No confirmado si existen variantes adicionales más allá de las dos identificadas",
+      "No confirmado el número total de variantes jugables más allá de las identificadas en material visual",
       "Estadísticas de daño, munición y disponibilidad no confirmadas"
     ]
   },
