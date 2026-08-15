@@ -15,7 +15,8 @@
     "verify:content": "node scripts/verify-content-integrity.mjs",
     "verify:relations": "node scripts/verify-relations-integrity.mjs",
     "verify:relations:selftest": "node scripts/verify-relations-integrity.mjs --self-test",
-    "verify:tailwind": "node scripts/verify-tailwind-config.mjs"
+    "verify:tailwind": "node scripts/verify-tailwind-config.mjs",
+    "sync:media": "node scripts/media-sync.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",
