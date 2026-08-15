@@ -77,7 +77,7 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
       setIndex((i) => (i + 1) % HERO_BACKGROUNDS.length)
     }, ROTATE_INTERVAL_MS)
     return () => clearInterval(id)
-  }, [reducedMotion])
+  }, [reducedMotion, HERO_BACKGROUNDS.length])
 
   // Parallax de scroll (capa lejana) + parallax de cursor (profundidad sutil).
   // Un solo rAF combina ambas fuentes para no pisarse el transform entre sí.
