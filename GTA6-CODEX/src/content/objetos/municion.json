@@ -3,24 +3,27 @@
   "type": "objetos",
   "title": "Munición",
   "description": "Recurso consumible necesario para el uso de armas de fuego, elemento fundamental del sistema económico y de combate de GTA 6.",
-  "content": "La munición es un recurso consumible esencial en cualquier entrega de la saga GTA que incluya armas de fuego, funcionando como límite práctico al uso indiscriminado de armamento y como incentivo económico para que el jugador visite armerías o recolecte recursos del mundo del juego.\n\nCon un arsenal de armas de fuego ya confirmado visualmente —pistola, metralleta, rifle de asalto, escopeta, además de las variantes documentadas en este sitio como pistolas dobles— es certero que GTA 6 mantendrá un sistema de gestión de munición equivalente al de entregas anteriores.\n\nEste objeto se conecta directamente con el sistema económico del juego a través del dinero en efectivo, ya que la compra de munición en armerías representa uno de los gastos recurrentes más importantes para jugadores orientados al combate.",
-  "status": "nuestro",
+  "content": "La munición es un recurso consumible esencial en cualquier entrega de la saga GTA que incluya armas de fuego, funcionando como límite práctico al uso indiscriminado de armamento y como incentivo económico para que el jugador visite armerías o recolecte recursos del mundo del juego.\n\nMúltiples coberturas especializadas sobre el sistema de armas de GTA 6 (jun. 2026) coinciden en identificar tipos de munición diferenciados por categoría de arma —munición pesada, de escopeta, de pistola, de arpón (para el Speargun de combate submarino) y cohetes para el lanzacohetes—, lo que sugiere un sistema más segmentado que el de GTA V. Esta segmentación es consistente entre varias fuentes independientes, aunque ninguna es prensa especializada de primer nivel con verificación visual propia directa de una pantalla de inventario de munición.\n\nCon un arsenal de armas de fuego ya confirmado visualmente —pistola, metralleta, rifle de asalto, escopeta, además de las variantes documentadas en este sitio— es certero que GTA 6 mantendrá un sistema de gestión de munición equivalente al de entregas anteriores. Este objeto se conecta directamente con el sistema económico del juego a través del dinero en efectivo, ya que la compra de munición en armerías representa uno de los gastos recurrentes más importantes para jugadores orientados al combate.",
+  "status": "rumor",
   "tags": [
     "munición",
     "consumible",
     "combate",
-    "economía"
+    "economía",
+    "rueda-de-equipamiento"
   ],
   "featured": false,
   "createdAt": "2026-08-15T12:30:00Z",
-  "updatedAt": "2026-08-15T12:30:00Z",
+  "updatedAt": "2026-08-15T23:15:00Z",
   "evidence": {
-    "level": "especulativo",
-    "primarySource": "Análisis propio basado en el sistema de armas confirmado y el diseño económico estándar de la saga GTA",
-    "note": "Sistema estándar en toda la saga; sin detalles específicos de precios o capacidad máxima confirmados para GTA 6.",
+    "level": "respaldado",
+    "primarySource": "Sistema de armas confirmado visualmente (pistola, metralleta, escopeta, rifle de asalto) y compilaciones de prensa especializada sobre tipos de munición",
+    "secondarySource": "gta6-news.net y wikigta6.com (jun. 2026), que coinciden de forma independiente en identificar munición diferenciada por categoría (pesada, escopeta, pistola, arpón, cohetes)",
+    "note": "Se corrige el nivel de 'especulativo' a 'respaldado': la existencia de un sistema de munición segmentado por categoría de arma está respaldada por múltiples coberturas independientes, aunque sin verificación visual directa de una pantalla de inventario y sin confirmación oficial de Rockstar sobre precios o capacidad.",
     "limitations": [
       "Precios y capacidad máxima de munición desconocidos",
-      "Sistema de recarga en tiempo real no detallado"
+      "Sistema de recarga en tiempo real no detallado",
+      "Fuentes consultadas son agregadores/guías, no verificación visual propia de primera mano"
     ]
   },
   "relations": [
