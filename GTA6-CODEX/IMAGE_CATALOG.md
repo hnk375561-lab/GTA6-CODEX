@@ -424,3 +424,52 @@ Estas 19 imágenes **no se eliminaron** — siguen en
 `/mnt/user-data/uploads/` tal como las subió el usuario, listas para
 usarse si en un lote futuro se decide dar de alta las entidades de
 negocio/arma correspondientes en `src/content/`.
+
+## Ronda 10 (15 ago 2026) — Lote 2 de imágenes del usuario (20 archivos, "Ultimate Edition")
+
+Segundo lote, mismo criterio que la Ronda 9. Resultado: **6 integradas**
+(5 vehículos + 1 ubicación), **14 sin integrar**.
+
+### Integradas
+
+| Slug | Tipo | Archivo fuente | Criterio de selección |
+|---|---|---|---|
+| squalo | vehiculos | `ULTIMATE_EDITION_SQUALO_01.jpg` | Lancha completa de perfil, degradado rosa/azul característico, skyline de Vice City de noche — coincide exacto con la descripción ya documentada de la entidad ("acabado degradado rosa y azul, Washington Beach"). Otras 3 capturas (`_02` detalle de logo, `_03` gente/delfines, `_04` aérea con 3 embarcaciones) quedan fuera por arquitectura mono-imagen. |
+| crest-kayak | vehiculos | `ULTIMATE_EDITION_SAFEHOUSE_VEHICLES_03.jpg` | Único plano del kayak naranja con logo "Crest" visible, en uso — coincide con la entidad ya documentada. |
+| dinka-enduro | vehiculos | `ULTIMATE_EDITION_SAFEHOUSE_VEHICLES_02.jpg` | Motocicleta scrambler verde con placa "DINKA" visible en el tanque — coincide con la entidad ya documentada ("acabado inspirado en uniformes militares"). |
+| vapid-dominator-buggy-67 | vehiculos | `ULTIMATE_EDITION_VAPID_BUGGY_01.jpg` | Todoterreno tipo "Mud Club" en pleno pantano, toma de 3/4 dinámica que muestra el vehículo completo — coincide con la descripción ("pensado para los pantanos de Mount Kalaga"). Otras 3 capturas (`_02` parrilla, `_03` interior/volante, `_04` frente estático) quedan fuera por arquitectura mono-imagen. |
+| vapid-ganado | vehiculos | `ULTIMATE_EDITION_VAPID_GANADO_RETRO_BUILD_01.jpg` | Única toma de la pickup estilo El Camino con script "Cianado" en la carrocería, costanera de fondo — coincide con "Retro Build" de Jason. |
+| stockyard | ubicaciones | `ULTIMATE_EDITION_STOCK_305_03.jpg` | Cartel "STOCK 305" en primer plano contra el mural de arte urbano del distrito, sin personas — identifica el distrito Stockyard mejor que las otras 3 capturas del mismo grupo (`_01` y `_02` tienen personajes en primer plano, `_04` es interior de una tienda). La entidad `stockyard` es la ubicación/distrito (confirmada por Rockstar), no el comercio "Stock 305" en sí — ese comercio específico no tiene entidad propia en `src/content/negocios/` (ver nota abajo). |
+
+Procesadas con `npm run process-images:apply`, mismo pipeline (WebP q82,
+1600×900 tope), detectadas automáticamente por `resolveEntityImage()` /
+`getCategoryPreviewImage()` sin tocar código ni contenido.
+
+**Trazabilidad (las 6):**
+- source: archivo local de trabajo aportado por el usuario
+- sourceUrl: desconocida
+- sourceType: usuario-archivo-local
+- verified: parcial — las 5 entidades de vehículo y la de ubicación ya estaban `SOURCE_VERIFIED`/`DOWNLOAD_PENDING` contra prensa oficial de Rockstar de una ronda anterior; el archivo de imagen específico de este lote no fue re-verificado contra una URL oficial en esta sesión
+- rightsNote: posible material promocional de Rockstar Games / Take-Two Interactive; uso ilustrativo/informativo en sitio de fans no oficial, sin asumir titularidad
+
+### No integradas (14 imágenes)
+
+| Nombre visto en archivo | Qué muestra | Entidad buscada | Resultado |
+|---|---|---|---|
+| `SARAS_SALON_01/02/03` (3 img) | Salón de belleza/uñas, letrero "Sara's Unisex Salon" | negocio "Sara's Unisex Salon" | No existe en `src/content/negocios/` — mismo negocio ya señalado como discrepancia en Ronda 8 |
+| `STOCK_305_01/02/04` (3 img) | Personas posando junto al distrito/mural, interior de tienda de ropa | negocio "Stock 305" (la tienda, no el distrito) | El **distrito** `stockyard` sí existe y ya se integró con `_03`; la tienda "Stock 305" en sí sigue sin entidad propia en `src/content/negocios/` |
+| `SAFEHOUSE_VEHICLES_01` | Casa de playa con pickup, moto y kayak, sin foco en un solo vehículo | — | Escena compuesta, no hay entidad de "refugio/safehouse" en `src/content/ubicaciones/`; los vehículos individuales de esta escena sí se cubrieron vía `_02` (dinka-enduro) y `_03` (crest-kayak) |
+| `VICE_CITY_STYLE_01` | Jason y Lucia en pose de pareja (key art), junto a fuente | — | Mismo caso que Ronda 9: ambos personajes ya tienen imagen individual asignada; no se sobreescribe por arquitectura mono-imagen |
+
+Estas 14 imágenes tampoco se eliminaron — siguen en
+`/mnt/user-data/uploads/`.
+
+### Totales acumulados (Rondas 9+10)
+
+```
+LOTES PROCESADOS:      2 (40 imágenes)
+INTEGRADAS:             7  (grotti-cheetah-95, squalo, crest-kayak,
+                             dinka-enduro, vapid-dominator-buggy-67,
+                             vapid-ganado, stockyard)
+SIN INTEGRAR:          33  (sin entidad correspondiente en el repo)
+```
