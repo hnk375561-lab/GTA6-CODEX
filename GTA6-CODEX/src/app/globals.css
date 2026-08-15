@@ -570,6 +570,42 @@ a:hover .logo-mark {
   }
 }
 
+/* --- Secciones post-hero: banner de stats, kickers, badges de categoría.
+   Mismo lenguaje visual que el hero (gradiente verde->naranja, glow sutil),
+   sin agregar colores nuevos a la paleta. --- */
+.stats-band {
+  position: relative;
+}
+
+.stat-block {
+  padding: 0.5rem 1.5rem;
+}
+
+.stat-number {
+  background: linear-gradient(90deg, #f2f2f0, #a3a3a0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-kicker {
+  opacity: 0.9;
+}
+
+.category-icon-badge {
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(255, 102, 0, 0.06));
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.08), 0 4px 16px -8px rgba(34, 197, 94, 0.35);
+}
+
+.featured-card {
+  transition: box-shadow 300ms ease;
+}
+
+.featured-card:hover {
+  box-shadow: 0 16px 40px -20px rgba(34, 197, 94, 0.35);
+}
+
 /* --- Fondo de ficha destacada (EntityHeaderBackground) --- */
 .entity-bg-glow {
   position: absolute;

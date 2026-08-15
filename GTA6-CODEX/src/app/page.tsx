@@ -134,24 +134,30 @@ export default async function Home() {
       </SceneSection>
 
       {/* Info Section */}
-      <SceneSection sceneId="stats" className="border-b border-gta-border bg-gta-dark py-12">
+      <SceneSection sceneId="stats" className="stats-band border-b border-gta-border bg-gta-dark py-16">
         <div className="container-max">
-          <div className="grid gap-8 sm:grid-cols-3">
-            <div className="text-center">
-              <div className="mb-2 text-3xl font-bold text-gta-text">
+          <div className="grid divide-y divide-gta-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            <div className="stat-block text-center">
+              <div className="stat-number mb-2 text-5xl font-black sm:text-6xl">
                 <CountUp end={entityCount} />
               </div>
-              <p className="text-sm text-gta-text-secondary">Entidades documentadas</p>
+              <p className="text-sm font-semibold uppercase tracking-wider text-gta-text-secondary">
+                Entidades documentadas
+              </p>
             </div>
-            <div className="text-center">
-              <div className="mb-2 text-3xl font-bold text-gta-text">
+            <div className="stat-block text-center">
+              <div className="stat-number mb-2 text-5xl font-black sm:text-6xl">
                 <CountUp end={100} suffix="%" />
               </div>
-              <p className="text-sm text-gta-text-secondary">Información verificada</p>
+              <p className="text-sm font-semibold uppercase tracking-wider text-gta-text-secondary">
+                Información verificada
+              </p>
             </div>
-            <div className="text-center">
-              <div className="mb-2 text-3xl font-bold text-gta-text">Premium</div>
-              <p className="text-sm text-gta-text-secondary">Análisis de primer nivel</p>
+            <div className="stat-block text-center">
+              <div className="stat-number mb-2 text-5xl font-black sm:text-6xl">Premium</div>
+              <p className="text-sm font-semibold uppercase tracking-wider text-gta-text-secondary">
+                Análisis de primer nivel
+              </p>
             </div>
           </div>
         </div>
@@ -162,7 +168,10 @@ export default async function Home() {
         <SceneSection sceneId="featured" className="bg-gta-dark py-16 sm:py-24">
           <div className="container-max">
             <Reveal className="mb-12 text-center">
-              <h2 className="mb-4 text-4xl font-bold text-gta-text">
+              <p className="section-kicker mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gta-accent">
+                Curado por el equipo
+              </p>
+              <h2 className="mb-4 text-4xl font-black text-gta-text sm:text-5xl">
                 Destacados
               </h2>
               <p className="text-lg text-gta-text-secondary">Lo más relevante ahora mismo</p>
@@ -172,7 +181,7 @@ export default async function Home() {
               {featured.map((entity, i) => (
                 <Reveal key={`${entity.type}-${entity.slug}`} delay={i * 100}>
                   <Link href={`/${entity.type}/${entity.slug}`} className="group block h-full">
-                    <Card hoverable className="h-full overflow-hidden !p-0">
+                    <Card hoverable className="featured-card h-full overflow-hidden !p-0">
                       <div className="relative overflow-hidden">
                         <EntityImage
                           entity={entity}
@@ -189,7 +198,7 @@ export default async function Home() {
                         </Badge>
                       </div>
                       <CardBody className="px-6 pb-6 pt-4">
-                        <h3 className="mb-2 text-xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
+                        <h3 className="mb-2 text-2xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
                           {entity.title}
                         </h3>
                         <p className="line-clamp-2 text-sm text-gta-text-secondary">
@@ -209,7 +218,10 @@ export default async function Home() {
       <SceneSection sceneId="categories" htmlId="categories" className="bg-gta-dark py-16 sm:py-24">
         <div className="container-max">
           <Reveal className="mb-12 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-gta-text">
+            <p className="section-kicker mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gta-accent">
+              Explorá el codex
+            </p>
+            <h2 className="mb-4 text-4xl font-black text-gta-text sm:text-5xl">
               Categorías
             </h2>
             <p className="text-lg text-gta-text-secondary">
@@ -227,7 +239,7 @@ export default async function Home() {
                 <Link href={`/${category.type}`} className="group block h-full">
                   <Card hoverable className="h-full">
                     <CardBody>
-                      <div className="mb-3 text-4xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
+                      <div className="category-icon-badge mb-4 flex h-14 w-14 items-center justify-center rounded-xl text-3xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
                         {category.icon}
                       </div>
                       <h3 className="mb-2 text-xl font-bold text-gta-text group-hover:text-gta-accent transition-colors">
@@ -249,7 +261,10 @@ export default async function Home() {
       <SceneSection sceneId="about" className="border-t border-gta-border bg-gta-dark py-16 sm:py-24">
         <div className="container-max">
           <Reveal className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gta-text">
+            <p className="section-kicker mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gta-accent">
+              El proyecto
+            </p>
+            <h2 className="mb-4 text-3xl font-black text-gta-text sm:text-4xl">
               Sobre GTA6 Codex
             </h2>
           </Reveal>
