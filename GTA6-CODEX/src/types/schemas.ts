@@ -101,3 +101,107 @@ export function safeParseTrailer(entity: unknown) {
 export function safeParseEntity(entity: unknown) {
   return BaseEntitySchema.safeParse(entity)
 }
+
+/**
+ * Schemas del Media Registry (ver `src/types/media.ts`). Se validan por
+ * separado del contrato de entidades porque un `MediaAsset` no es una
+ * entidad (no tiene `slug`/`type` de EntityType propio, ni vive en
+ * `src/content/{entityType}/`), pero sigue el mismo espíritu: contrato
+ * de runtime real sobre JSON en disco, con mensajes de error claros.
+ */
+export const MediaKindSchema = z.enum(['image', 'video', 'trailer', 'clip', 'artwork'])
+
+export const MediaSourceTypeSchema = z.enum([
+  'local-file',
+  'youtube-embed',
+  'remote-hotlink',
+  'external-link',
+])
+
+export const MediaValidationStatusSchema = z.enum(['verified', 'pending', 'broken', 'rejected'])
+
+export const MediaSourceSchema = z
+  .object({
+    type: MediaSourceTypeSchema,
+    originalUrl: z.string().min(1, 'originalUrl no puede estar vacía'),
+    provider: z.string().min(1, 'provider no puede estar vacío'),
+    hotlinkAllowed: z.boolean(),
+    hotlinkNote: z.string().optional(),
+    retrievedAt: z.string().min(1, 'retrievedAt requerido'),
+    localPath: z.string().optional(),
+    embedId: z.string().optional(),
+  })
+  .superRefine((source, ctx) => {
+    // Un remote-hotlink sin permiso explícito es una contradicción de
+    // modelo: si no está permitido, el tipo correcto es 'external-link'.
+    if (source.type === 'remote-hotlink' && !source.hotlinkAllowed) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message:
+          "source.type = 'remote-hotlink' requiere hotlinkAllowed = true; si el hotlink no está permitido, usar type = 'external-link'",
+        path: ['hotlinkAllowed'],
+      })
+    }
+    if (source.type === 'local-file' && !source.localPath) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "source.type = 'local-file' requiere localPath",
+        path: ['localPath'],
+      })
+    }
+    if (source.type === 'youtube-embed') {
+      if (!source.embedId) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: "source.type = 'youtube-embed' requiere embedId",
+          path: ['embedId'],
+        })
+      } else if (!/^[a-zA-Z0-9_-]{11}$/.test(source.embedId)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'embedId no tiene el formato de un video ID de YouTube (11 caracteres)',
+          path: ['embedId'],
+        })
+      }
+    }
+  })
+
+export const MediaEntityRelationSchema = z.object({
+  targetType: EntityTypeSchema,
+  targetSlug: z.string().min(1),
+  role: z.string().optional(),
+})
+
+export const MediaTrailerRelationSchema = z.object({
+  trailerSlug: z.string().min(1),
+  sceneId: z.string().optional(),
+})
+
+export const MediaAssetSchema = z.object({
+  id: z.string().min(1, 'id no puede estar vacío'),
+  kind: MediaKindSchema,
+  title: z.string().min(1, 'title no puede estar vacío'),
+  description: z.string().optional(),
+  source: MediaSourceSchema,
+  width: z.number().positive().optional(),
+  height: z.number().positive().optional(),
+  duration: z.number().positive().optional(),
+  tags: z.array(z.string()).optional(),
+  status: MediaValidationStatusSchema,
+  duplicateOf: z.string().optional(),
+  relations: z
+    .object({
+      entities: z.array(MediaEntityRelationSchema).optional(),
+      trailer: MediaTrailerRelationSchema.optional(),
+    })
+    .optional(),
+  credit: z.string().optional(),
+  createdAt: z.string().min(1, 'createdAt requerido'),
+  updatedAt: z.string().min(1, 'updatedAt requerido'),
+})
+
+export type ValidatedMediaAsset = z.infer<typeof MediaAssetSchema>
+
+export function safeParseMediaAsset(asset: unknown) {
+  return MediaAssetSchema.safeParse(asset)
+}
