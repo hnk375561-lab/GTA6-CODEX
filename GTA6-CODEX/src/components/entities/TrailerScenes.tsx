@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import type { Trailer, TrailerScene, Entity } from '@/types'
 import { getEntity } from '@/lib/entities'
-import { Card, CardBody } from '@/components/ui/Card'
-import { Badge } from '@/components/ui/Badge'
+import { EntityImage } from '@/components/entities/EntityImage'
 
 interface TrailerScenesProps {
   trailer: Trailer
@@ -31,9 +30,11 @@ async function resolveSceneLinks(
 }
 
 /**
- * Timeline de escenas de un trailer. Cada escena muestra su timestamp,
- * una descripción fiel a lo mostrado (sin especular más allá de eso) y,
- * cuando existen, chips hacia las entidades que aparecen en ella.
+ * Timeline vertical de escenas de un trailer — línea de tiempo conectada con
+ * un marcador por escena (como un editor de video/archivo forense), no una
+ * pila de cards sueltas. Cada escena muestra su timestamp, una descripción
+ * fiel a lo mostrado (sin especular más allá de eso) y, cuando existen,
+ * avatares de las entidades que aparecen en ella.
  */
 export async function TrailerScenes({ trailer }: TrailerScenesProps) {
   const scenesWithLinks = await Promise.all(
@@ -44,34 +45,45 @@ export async function TrailerScenes({ trailer }: TrailerScenesProps) {
   )
 
   return (
-    <div className="space-y-4">
-      {scenesWithLinks.map(({ scene, links }, i) => (
-        <Card key={scene.id} className="shadow-gta-sm">
-          <CardBody>
-            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <span className="font-mono text-xs text-gta-accent">{scene.timestamp}</span>
-              <h3 className="text-base font-semibold text-gta-text">{scene.title}</h3>
-              <span className="ml-auto text-[11px] text-gta-text-secondary/60">
-                Escena {String(i + 1).padStart(2, '0')}
-              </span>
+    <div className="scene-timeline relative">
+      <div className="scene-timeline-rail" aria-hidden="true" />
+      <ol className="space-y-8">
+        {scenesWithLinks.map(({ scene, links }, i) => (
+          <li key={scene.id} className="scene-timeline-item relative pl-14">
+            <div className="scene-timeline-marker" aria-hidden="true">
+              <span className="scene-timeline-marker-index">{String(i + 1).padStart(2, '0')}</span>
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-gta-text-secondary">
+
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <span className="scene-timestamp font-mono text-xs font-semibold text-gta-dark">
+                {scene.timestamp}
+              </span>
+              <h3 className="text-base font-semibold text-gta-text">{scene.title}</h3>
+            </div>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-gta-text-secondary">
               {scene.description}
             </p>
             {links.length > 0 && (
-              <div className="mt-3 flex flex-wrap gap-2">
+              <ul className="mt-3 flex flex-wrap gap-2">
                 {links.map(({ entity, relation }) => (
-                  <Link key={`${entity.type}-${entity.slug}`} href={`/${entity.type}/${entity.slug}`}>
-                    <Badge variant="tag" className="transition-colors hover:border-gta-accent/60">
-                      {relation}: {entity.title}
-                    </Badge>
-                  </Link>
+                  <li key={`${entity.type}-${entity.slug}`}>
+                    <Link
+                      href={`/${entity.type}/${entity.slug}`}
+                      className="group flex items-center gap-2 rounded-full border border-gta-border bg-gta-card/60 py-1 pl-1 pr-3 transition-colors hover:border-gta-accent/60 hover:bg-gta-darker/60"
+                    >
+                      <EntityImage entity={entity} variant="avatar" className="h-6 w-6 rounded-full" />
+                      <span className="text-xs text-gta-text-secondary transition-colors group-hover:text-gta-text">
+                        <span className="text-gta-text-secondary/70">{relation}:</span>{' '}
+                        <span className="font-medium text-gta-text">{entity.title}</span>
+                      </span>
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             )}
-          </CardBody>
-        </Card>
-      ))}
+          </li>
+        ))}
+      </ol>
     </div>
   )
 }

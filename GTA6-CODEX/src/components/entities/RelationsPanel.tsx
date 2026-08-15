@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Entity, EntityType } from '@/types'
 import { getRelationLabel } from '@/lib/relations'
 import { Badge } from '@/components/ui/Badge'
+import { EntityImage } from '@/components/entities/EntityImage'
 
 const TYPE_LABELS: Record<EntityType, string> = {
   [EntityType.CHARACTER]: 'Personajes',
@@ -25,7 +26,9 @@ interface RelationsPanelProps {
 /**
  * Agrupa las entidades relacionadas por tipo de vínculo (ej. "Ubicado en",
  * "Conduce", "Trabaja para") en lugar de una lista plana, para que la
- * naturaleza de cada relación sea explícita.
+ * naturaleza de cada relación sea explícita. Cada fila muestra un avatar
+ * (imagen real o glifo de categoría) para que el panel se sienta como un
+ * índice de base de datos navegable, no una lista de texto.
  */
 export function RelationsPanel({ related }: RelationsPanelProps) {
   if (related.length === 0) return null
@@ -38,23 +41,36 @@ export function RelationsPanel({ related }: RelationsPanelProps) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {Array.from(groups.entries()).map(([label, entities]) => (
         <div key={label}>
           <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-gta-accent">
             {label}
           </h3>
-          <ul className="space-y-2.5">
+          <ul className="space-y-1.5">
             {entities.map((e) => (
               <li key={`${e.type}-${e.slug}`}>
                 <Link
                   href={`/${e.type}/${e.slug}`}
-                  className="group -mx-2 flex flex-col gap-1 rounded-md border border-transparent px-2 py-1.5 transition-colors duration-200 hover:border-gta-border hover:bg-gta-darker/40"
+                  className="group -mx-2 flex items-center gap-3 rounded-md border border-transparent px-2 py-1.5 transition-colors duration-200 hover:border-gta-border hover:bg-gta-darker/40"
                 >
-                  <span className="link-underline text-sm text-gta-text group-hover:text-gta-accent">
-                    {e.title}
+                  <EntityImage
+                    entity={e}
+                    variant="avatar"
+                    className="h-11 w-11 transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="flex min-w-0 flex-col gap-1">
+                    <span className="link-underline truncate text-sm text-gta-text group-hover:text-gta-accent">
+                      {e.title}
+                    </span>
+                    <Badge className="w-fit">{TYPE_LABELS[e.type]}</Badge>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    className="ml-auto shrink-0 text-gta-text-secondary/40 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-gta-accent group-hover:opacity-100"
+                  >
+                    →
                   </span>
-                  <Badge className="w-fit">{TYPE_LABELS[e.type]}</Badge>
                 </Link>
               </li>
             ))}

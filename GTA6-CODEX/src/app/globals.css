@@ -801,6 +801,49 @@ a:hover .logo-mark {
   transform: translateY(-2px);
 }
 
+/* ============================================================
+   Scene timeline — escenas de trailer como línea de tiempo
+   conectada (editor de video / expediente forense) en vez de
+   una pila de cards sueltas.
+   ============================================================ */
+.scene-timeline-rail {
+  position: absolute;
+  left: 1.1rem;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 1px;
+  background: linear-gradient(180deg, var(--c-pink) 0%, rgba(255, 47, 143, 0.15) 60%, transparent 100%);
+  opacity: 0.35;
+}
+
+.scene-timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 47, 143, 0.3);
+  background: linear-gradient(135deg, rgba(255, 47, 143, 0.16), rgba(34, 211, 238, 0.06));
+  box-shadow: 0 0 0 4px #0a0712;
+}
+
+.scene-timeline-marker-index {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--c-pink-soft);
+}
+
+.scene-timestamp {
+  border-radius: 0.25rem;
+  background: linear-gradient(120deg, var(--c-cyan), var(--c-pink-soft));
+  padding: 0.15rem 0.5rem;
+}
+
 .featured-card {
   transition: box-shadow 300ms ease;
 }
