@@ -2,6 +2,61 @@
 
 Generado: 2026-08-14. Ronda: Sistema Visual de Imágenes, primera pasada.
 
+## Ronda 9 (15 ago 2026) — Lote 1 de archivos originales del usuario (20 imágenes)
+
+El usuario aportó 20 archivos JPG de trabajo originales (no descargados por
+esta sesión, sin acceso de red a dominios de Rockstar) agrupados en tres
+packs: `VINTAGE_VICE_CITY_PACK` (9 imágenes: 2 postales + 5 "exclusive
+looks" + 2 del Vapid Stanier), `ULTIMATE_EDITION_VICE_CITY_STYLE` (4
+imágenes de vestuario), `ULTIMATE_EDITION_WEAPON_VARIANTS` (1 imagen) y
+`ULTIMATE_EDITION_WYMAN_CAR_COLLECTION` (6 imágenes). De las 20, se
+identificaron con confianza suficiente **2 integradas**, se detectaron
+**2 duplicados exactos** de material ya integrado en Ronda 7, y **16
+quedaron sin integrar** por no corresponder a ninguna entidad existente del
+catálogo (ver detalle abajo, regla: no se inventan entidades nuevas).
+
+**Trazabilidad (aplica a las 20 imágenes de este lote):**
+- `source`: "Usuario (archivo de trabajo original, aportado directamente en sesión)"
+- `sourceUrl`: desconocida — el usuario indicó que son sus archivos originales; no se pudo verificar la URL/página oficial de origen en esta sesión (sin acceso de red a rockstargames.com)
+- `sourceType`: no verificado independientemente por esta sesión — probablemente material promocional oficial de Rockstar Games (Vintage Vice City Pack / Ultimate Edition, anunciados 25 jun 2026) por estilo, personajes y marcas de agua consistentes con el resto del catálogo, pero **no se confirma como oficial sin poder cotejar contra la fuente**
+- `verified`: false (no confirmado de forma independiente en esta ronda; se trata igual que el resto del catálogo bajo el mismo criterio de honestidad que Ronda 7)
+- `rightsNote`: "GTA es marca registrada de Rockstar Games / Take-Two Interactive. Uso editorial no comercial en un wiki de fans."
+
+**Integradas (2):**
+
+| Slug | Archivo fuente (nombre original del usuario) | Criterio de selección |
+|---|---|---|
+| `personajes/wyman` | `ULTIMATE_EDITION_WYMAN_CAR_COLLECTION_01.jpg` | Único retrato de Wyman en el lote: mecánico en su deshuesadero "Wyman's World Auto Salvage Co." con autos clásicos de fondo — coincide exactamente con su ficha (Ultimate Edition, Classic Car Collection). No tenía imagen previa. |
+| `vehiculos/vapid-stanier-55` | `VINTAGE_VICE_CITY_PACK_VAPID_STANIER_01.jpg` | Vista exterior 3/4 del sedán completo, insignia "VAPID" y "Stanier" legible, escena nocturna con neones — mejor "postal" del vehículo que la variante interior (`_STANIER_02`, personajes ocupando el cuadro). No tenía imagen previa; estaba en `DOWNLOAD_PENDING` desde Ronda 7. |
+
+Procesadas con `node scripts/process-images.mjs --apply` (match `exact-slug`
+tras renombrar el archivo de trabajo al slug de la entidad): WebP calidad
+82, 1600×900. Verificado build de producción: ambas páginas sirven
+`/images/entities/{tipo}/{slug}.webp` correctamente.
+
+**Duplicados exactos de Ronda 7, no re-integrados (2):**
+
+`VINTAGE_VICE_CITY_PACK_01.jpg` y `VINTAGE_VICE_CITY_PACK_02.jpg` son el
+mismo material fuente que ya está integrado como fondo de hero
+(`hero-vintage-hotel-neon.webp` y `hero-vintage-dock-sunset.webp`
+respectivamente, ver Ronda 7 arriba). Se reutiliza la referencia existente,
+sin duplicar archivo ni código.
+
+**No identificadas con confianza suficiente / sin entidad correspondiente (16):**
+
+| Grupo | Archivos | Motivo |
+|---|---|---|
+| Vintage Vice City Pack — "Exclusive Looks" (5) | `EXCLUSIVE_LOOKS_01` a `_05` | Primeros planos de Jason Duval y Lucia Caminos (rostro, brazo con arma, pareja bailando, mujer con martini). Ambos personajes **ya tienen imagen** de rondas anteriores; la arquitectura es mono-imagen por entidad (sin galería), así que no hay dónde integrarlas sin reemplazar el hero actual — no se sobrescribió sin confirmación explícita del usuario. |
+| Ultimate Edition Vice City Style (4) | `VICE_CITY_STYLE_02` a `_05` | Vestuario/cosméticos del pack Ultimate Edition (camisas, botas) sobre personajes/modelos genéricos sin identificar. El repo no tiene tipo de contenido para objetos de vestuario/cosmética (`src/content/objetos/` son ítems de gameplay: botiquín, chaleco, dron, etc., no outfits). Crear una entidad nueva de "vestuario" está fuera del alcance de esta tarea (regla: no inventar entidades sin verificación). |
+| Ultimate Edition Weapon Variants (1) | `WEAPON_VARIANTS_01` | Dos pistolas grabadas con nombre ("J. Duval", "Lucia") sobre una mesa. `src/content/armas/` solo tiene tipos genéricos de arma (`pistola.json`, etc.), no skins nombradas por personaje, y `armas` no está en `ENTITY_IMAGE_CATEGORIES` (`src/config/entity-image-categories.json`) — el sistema de imágenes por convención no cubre ese tipo todavía. Requeriría decisión de arquitectura, no solo ingesta de imagen. |
+| Wyman Car Collection — vehículos individuales (5) | `_02` (cupé turquesa "Sirius"), `_03` (pickup embarrada "Riata"), `_04` (auto de carrera #36 rojo/blanco), `_05` (auto verde pálido con insignia "R"), `_06` (auto con librea de bandera estadounidense "Deviant") | Ninguno de estos nombres/insignias (`Sirius`, `Riata`, `Deviant`, el #36 sin nombre legible) corresponde a una entidad existente en `src/content/vehiculos/` (se verificó con `grep` sobre todo `src/`, sin coincidencias). Son, aparentemente, vehículos de la "Classic Car Collection" de Wyman que **todavía no están documentados como entidades individuales** en el catálogo. No se crean entidades nuevas sin el proceso de verificación de fuentes que usa el resto del catálogo (ver `CANDIDATES_PENDING.md`) — quedan fuera de este lote. |
+
+Estas 16 imágenes **no se movieron ni se modificaron**; siguen disponibles
+tal cual las subió el usuario para un lote futuro, o para cuando se decida
+extender la arquitectura (galería multi-imagen, tipo de contenido
+"vestuario", categoría de imágenes para `armas`, o alta de las entidades de
+vehículo faltantes).
+
 ## Cómo leer este documento
 
 Estados posibles:
