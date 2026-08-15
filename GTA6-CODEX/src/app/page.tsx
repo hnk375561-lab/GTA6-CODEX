@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
 import { CountUp } from '@/components/ui/CountUp'
 import { WordRotate } from '@/components/ui/WordRotate'
+import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { RotatingHeroBackground } from '@/components/layout/RotatingHeroBackground'
 import { EntityImage } from '@/components/entities/EntityImage'
 import { SceneSection } from '@/components/webgl/SceneSection'
@@ -21,43 +22,36 @@ export default async function Home() {
       type: EntityType.CHARACTER,
       label: 'Personajes',
       description: 'Explora los personajes principales y secundarios de GTA 6.',
-      icon: '👤',
     },
     {
       type: EntityType.VEHICLE,
       label: 'Vehículos',
       description: 'Descubre todos los vehículos disponibles en el juego.',
-      icon: '🚗',
     },
     {
       type: EntityType.LOCATION,
       label: 'Ubicaciones',
       description: 'Conoce los distritos, barrios y puntos de interés de GTA 6.',
-      icon: '📍',
     },
     {
       type: EntityType.TRAILER,
       label: 'Trailers',
       description: 'Análisis escena por escena del material oficial de Rockstar Games.',
-      icon: '🎬',
     },
     {
       type: EntityType.MISSION,
       label: 'Misiones',
       description: 'Información detallada sobre las misiones principales y secundarias.',
-      icon: '🎯',
     },
     {
       type: EntityType.NEWS,
       label: 'Noticias',
       description: 'Últimas noticias, rumores y actualizaciones sobre GTA 6.',
-      icon: '📰',
     },
     {
       type: EntityType.GUIDE,
       label: 'Guías',
       description: 'Guías completas y tutoriales para dominar el juego.',
-      icon: '📚',
     },
   ]
 
@@ -243,13 +237,22 @@ export default async function Home() {
                 direction={i % 2 === 0 ? 'left' : 'right'}
               >
                 <Link href={`/${category.type}`} className="group block h-full">
-                  <Card hoverable className="h-full">
+                  <Card hoverable className="category-card relative h-full overflow-hidden">
+                    <span className="category-card-index" aria-hidden="true">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
                     <CardBody>
-                      <div className="category-icon-badge mb-4 flex h-14 w-14 items-center justify-center rounded-xl text-3xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
-                        {category.icon}
+                      <div className="category-icon-badge mb-5 flex h-14 w-14 items-center justify-center rounded-xl text-gta-accent transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
+                        <CategoryIcon type={category.type} className="h-6 w-6" />
                       </div>
-                      <h3 className="mb-2 text-xl font-bold text-gta-text group-hover:text-gta-accent transition-colors">
+                      <h3 className="mb-2 flex items-center gap-2 text-xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
                         {category.label}
+                        <span
+                          aria-hidden="true"
+                          className="translate-x-0 text-gta-accent opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+                        >
+                          →
+                        </span>
                       </h3>
                       <p className="text-sm text-gta-text-secondary">
                         {category.description}

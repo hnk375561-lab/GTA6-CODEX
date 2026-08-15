@@ -770,6 +770,37 @@ a:hover .logo-mark {
   box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.08), 0 4px 16px -8px rgba(255, 47, 143, 0.35);
 }
 
+/* --- Category card: numeración editorial de fondo ---
+   El número grande y semitransparente en la esquina da sensación de
+   "entrada de catálogo" (editorial/expediente) en vez de card genérica
+   de landing. Se mueve levemente al hover para dar profundidad. */
+.category-card {
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.category-card:hover {
+  transform: translateY(-3px);
+}
+
+.category-card-index {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.25rem;
+  font-family: var(--font-display);
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--c-pink);
+  opacity: 0.06;
+  pointer-events: none;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.category-card:hover .category-card-index {
+  opacity: 0.12;
+  transform: translateY(-2px);
+}
+
 .featured-card {
   transition: box-shadow 300ms ease;
 }
