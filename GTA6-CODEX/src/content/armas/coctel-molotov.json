@@ -1,0 +1,33 @@
+{
+  "slug": "coctel-molotov",
+  "type": "armas",
+  "title": "Cóctel Molotov",
+  "description": "Arma incendiaria arrojadiza, elemento recurrente del catálogo de explosivos improvisados en la saga GTA, esperada en GTA 6.",
+  "content": "El cóctel molotov es una de las armas arrojadizas más asociadas a la identidad caótica y callejera de la saga GTA, utilizada tanto para causar daño de área como para generar distracciones mediante incendios en vehículos o estructuras.\n\nSu naturaleza improvisada y de bajo costo de producción dentro de la ficción del juego encaja con el perfil de criminalidad de escalada gradual mostrado en la narrativa de Jason y Lucia, funcionando como recurso disponible incluso en las etapas más tempranas de su carrera delictiva.\n\nEste tipo de arma también suele estar vinculada a misiones de sabotaje o incendio provocado, un recurso narrativo clásico para conflictos territoriales o de negocios, como los sugeridos con Final Chapter MC.",
+  "status": "nuestro",
+  "tags": [
+    "arma-arrojadiza",
+    "incendiaria",
+    "explosivo",
+    "clásico-saga"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T11:30:00Z",
+  "updatedAt": "2026-08-15T11:30:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Análisis propio basado en el catálogo histórico de armas arrojadizas de la saga GTA",
+    "note": "Sin confirmación visual específica en material promocional disponible hasta el momento.",
+    "limitations": [
+      "Sin confirmación visual en trailers",
+      "Radio de daño y mecánicas de lanzamiento desconocidas"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "misiones",
+      "targetSlug": "guerra-final-chapter-mc",
+      "relation": "arma-contextual"
+    }
+  ]
+}

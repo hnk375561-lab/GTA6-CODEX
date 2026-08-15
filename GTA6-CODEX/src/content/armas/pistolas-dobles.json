@@ -1,0 +1,45 @@
+{
+  "slug": "pistolas-dobles",
+  "type": "armas",
+  "title": "Pistolas Dobles",
+  "description": "Empuñadura dual de pistolas utilizada por Lucia Caminos en una de las escenas más icónicas y compartidas del Trailer 1 de GTA 6.",
+  "content": "La imagen de Lucia Caminos empuñando dos pistolas simultáneamente se convirtió en una de las capturas más replicadas en redes sociales tras el lanzamiento del Trailer 1 de GTA 6, funcionando casi como imagen de marca no oficial del juego. La escena muestra a Lucia en pose de combate directo, un ángulo cinematográfico que enfatiza su rol como protagonista de acción tan capaz como Jason.\n\nEl 'dual wield' (doble empuñadura) es un mecanismo de combate presente en entregas anteriores de la saga, y su reaparición visual en material promocional sugiere que el sistema de combate de GTA 6 mantendrá o expandirá esta opción táctica, permitiendo mayor cadencia de disparo a costa de precisión.\n\nMás allá de la mecánica, la escena tiene peso narrativo: presenta a Lucia no como un personaje secundario o de apoyo, sino como una fuerza de combate igual o superior a Jason en las secuencias de acción del juego.",
+  "status": "confirmado",
+  "tags": [
+    "dual-wield",
+    "pistolas",
+    "lucia-caminos",
+    "visual-confirmado",
+    "icónico"
+  ],
+  "featured": true,
+  "createdAt": "2026-08-15T11:00:00Z",
+  "updatedAt": "2026-08-15T11:00:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — Trailer 1 (escena de combate de Lucia)",
+    "note": "Escena ampliamente documentada y compartida en cobertura mediática y redes sociales tras el estreno del Trailer 1.",
+    "limitations": [
+      "No confirmado si el dual wield será un sistema jugable general o exclusivo de secuencias cinemáticas",
+      "Modelo específico de las pistolas no confirmado",
+      "Mecánicas de precisión/cadencia no detalladas oficialmente"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
+      "relation": "usada-por"
+    },
+    {
+      "targetType": "armas",
+      "targetSlug": "pistola",
+      "relation": "variante-de"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "aparece-en"
+    }
+  ]
+}

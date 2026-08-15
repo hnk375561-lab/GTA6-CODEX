@@ -1,0 +1,38 @@
+{
+  "slug": "rifle-francotirador",
+  "type": "armas",
+  "title": "Rifle Francotirador",
+  "description": "Arma de largo alcance esperada dentro del catálogo de armas de precisión de GTA 6, siguiendo el estándar establecido por entregas anteriores de la saga.",
+  "content": "El rifle francotirador es un elemento constante del arsenal de armas de precisión en la saga GTA, utilizado tanto en misiones de asesinato a distancia como en actividades opcionales de francotirador. Su presencia en GTA 6 es esperable dado el patrón de las entregas anteriores.\n\nEste tipo de arma suele desbloquearse más avanzada la historia o requerir compra en armerías especializadas, reflejando su rol como herramienta de alto impacto reservada para objetivos específicos en lugar de combate general.\n\nDentro del contexto narrativo de Jason y Lucia como pareja criminal en ascenso, un rifle de este tipo encajaría con misiones de eliminación de objetivos de alto perfil, posiblemente vinculadas a conflictos con organizaciones rivales como Final Chapter MC.",
+  "status": "nuestro",
+  "tags": [
+    "arma-de-precisión",
+    "francotirador",
+    "largo-alcance",
+    "clásico-saga"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T11:15:00Z",
+  "updatedAt": "2026-08-15T11:15:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Análisis propio basado en el catálogo histórico de armas de la saga GTA",
+    "note": "No hay confirmación visual de esta arma en material promocional disponible hasta el momento; se documenta como expectativa razonable.",
+    "limitations": [
+      "Sin confirmación visual en trailers",
+      "Modelo, alcance y mecánicas de apuntado desconocidos"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "misiones",
+      "targetSlug": "guerra-final-chapter-mc",
+      "relation": "arma-contextual"
+    },
+    {
+      "targetType": "armas",
+      "targetSlug": "rifle-de-asalto",
+      "relation": "categoría-relacionada"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "escopeta-recortada",
+  "type": "armas",
+  "title": "Escopeta Recortada",
+  "description": "Variante compacta y de mayor dispersión de la escopeta estándar, orientada a combate a corta distancia dentro del arsenal esperado de GTA 6.",
+  "content": "La escopeta recortada es una variante clásica dentro del catálogo de armas de la saga GTA, valorada por su alto daño a corta distancia y su perfil más compacto en comparación con la escopeta estándar, a costa de alcance efectivo reducido.\n\nCon la escopeta base ya confirmada visualmente en material promocional de GTA 6, esta variante recortada representaría una expansión natural dentro de la misma categoría de armas, ofreciendo una alternativa táctica para enfrentamientos en espacios cerrados como interiores de comercios, clubes nocturnos o embarcaciones.\n\nDado el perfil de conflictos territoriales sugerido con organizaciones como Final Chapter MC, este tipo de arma de corto alcance y alto impacto encajaría en enfrentamientos directos en espacios reducidos.",
+  "status": "nuestro",
+  "tags": [
+    "arma-de-fuego",
+    "escopeta",
+    "corto-alcance",
+    "variante"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T11:25:00Z",
+  "updatedAt": "2026-08-15T11:25:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Análisis propio basado en la escopeta confirmada visualmente y el catálogo histórico de la saga",
+    "note": "La escopeta base está confirmada; esta variante recortada es extrapolación propia del sitio.",
+    "limitations": [
+      "Sin confirmación visual específica de esta variante",
+      "Estadísticas de dispersión y daño desconocidas"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "armas",
+      "targetSlug": "escopeta",
+      "relation": "variante-de"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "guerra-final-chapter-mc",
+      "relation": "arma-contextual"
+    }
+  ]
+}

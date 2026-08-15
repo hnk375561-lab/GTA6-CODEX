@@ -1,0 +1,38 @@
+{
+  "slug": "bate-beisbol",
+  "type": "armas",
+  "title": "Bate de Béisbol",
+  "description": "Arma improvisada cuerpo a cuerpo, clásico recurrente del arsenal melee de la saga GTA, esperado en el catálogo de armas de GTA 6.",
+  "content": "El bate de béisbol es una de las armas improvisadas más recurrentes de la saga GTA, presente prácticamente en todas las entregas anteriores como opción cuerpo a cuerpo accesible desde el inicio del juego, sin necesidad de comprarla en armerías especializadas.\n\nSu bajo costo narrativo y alta disponibilidad la convierten en un arma habitual para delitos menores o peleas callejeras espontáneas, encajando con el perfil de delincuencia de baja escala mostrado en las primeras escenas del material promocional de GTA 6, como el robo en tienda de conveniencia.\n\nAunque no hay confirmación visual específica de esta arma en el material mostrado hasta ahora, su presencia histórica en la saga la hace una de las adiciones más predecibles al catálogo final del juego.",
+  "status": "nuestro",
+  "tags": [
+    "arma-melee",
+    "improvisada",
+    "bate",
+    "clásico-saga"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T11:10:00Z",
+  "updatedAt": "2026-08-15T11:10:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Análisis propio basado en el catálogo histórico de armas de la saga GTA",
+    "note": "Arma recurrente en toda la saga; su inclusión en GTA 6 es altamente probable pero no ha sido confirmada visualmente en material oficial disponible.",
+    "limitations": [
+      "Sin confirmación visual en trailers",
+      "Estadísticas y disponibilidad desconocidas"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "misiones",
+      "targetSlug": "robo-tienda-conveniencia",
+      "relation": "arma-contextual"
+    },
+    {
+      "targetType": "actividades",
+      "targetSlug": "combate-mano-a-mano",
+      "relation": "relacionada-con"
+    }
+  ]
+}

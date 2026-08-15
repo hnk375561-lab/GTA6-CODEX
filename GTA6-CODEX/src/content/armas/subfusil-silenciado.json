@@ -1,0 +1,38 @@
+{
+  "slug": "subfusil-silenciado",
+  "type": "armas",
+  "title": "Subfusil Silenciado",
+  "description": "Variante silenciada de subfusil, arma de perfil sigiloso esperada dentro del catálogo de armas automáticas de GTA 6.",
+  "content": "Las variantes silenciadas de armas automáticas han sido un elemento habitual del arsenal de la saga GTA, pensadas para misiones que priorizan el sigilo sobre la confrontación directa, permitiendo eliminar objetivos sin alertar a enemigos cercanos ni disparar respuesta policial inmediata.\n\nDado que la metralleta ya está confirmada visualmente en material promocional de GTA 6, es razonable esperar que el juego incluya también variantes silenciadas de armas automáticas, siguiendo el patrón de personalización de armas presente en entregas recientes de la saga.\n\nEste tipo de arma encajaría particularmente en misiones de investigación o infiltración, como la trama especulativa de un informante dentro de VCPD, donde el sigilo sería preferible a la confrontación abierta con fuerzas policiales.",
+  "status": "nuestro",
+  "tags": [
+    "arma-automática",
+    "silenciada",
+    "sigilo",
+    "subfusil"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T11:20:00Z",
+  "updatedAt": "2026-08-15T11:20:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Análisis propio basado en la metralleta confirmada y el sistema de personalización de armas de entregas anteriores",
+    "note": "La metralleta base está confirmada visualmente; la variante silenciada específica es una extrapolación propia del sitio, no una confirmación directa.",
+    "limitations": [
+      "Sin confirmación visual específica de esta variante",
+      "Sistema de personalización de armas en GTA 6 aún no detallado oficialmente"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "armas",
+      "targetSlug": "metralleta",
+      "relation": "variante-de"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "informante-vcpd",
+      "relation": "arma-contextual"
+    }
+  ]
+}

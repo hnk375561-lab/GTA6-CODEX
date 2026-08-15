@@ -1,0 +1,39 @@
+{
+  "slug": "cuchillo-combate",
+  "type": "armas",
+  "title": "Cuchillo de Combate",
+  "description": "Arma cuerpo a cuerpo de corto alcance, parte esperada del arsenal melee de GTA 6 siguiendo la tradición de entregas anteriores de la saga.",
+  "content": "Todas las entregas numeradas recientes de GTA han incluido al menos un cuchillo de combate como opción de arma cuerpo a cuerpo silenciosa, útil tanto para eliminar enemigos sin alertar a otros como para ejecuciones rápidas en distancias cortas. Es razonable esperar que GTA 6 mantenga esta opción dentro de su catálogo de armas melee.\n\nA diferencia de las armas de fuego, el cuchillo permite un acercamiento más sigiloso, complementando misiones de infiltración o eliminación silenciosa frente a las secuencias de acción abierta que predominan en el material promocional mostrado hasta ahora.\n\nEsta entrada se mantiene en estado especulativo porque, a diferencia de las pistolas o el rifle de asalto, no hay hasta el momento una escena confirmada visualmente donde se muestre explícitamente este tipo de arma en GTA 6.",
+  "status": "nuestro",
+  "tags": [
+    "arma-melee",
+    "cuchillo",
+    "sigilo",
+    "cuerpo-a-cuerpo"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T11:05:00Z",
+  "updatedAt": "2026-08-15T11:05:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Análisis propio basado en el catálogo de armas de entregas anteriores de la saga (GTA V, RDR2)",
+    "note": "No hay confirmación visual específica de un cuchillo de combate en GTA 6. Esta entrada documenta una expectativa razonable basada en el historial de la saga.",
+    "limitations": [
+      "Sin confirmación visual u oficial",
+      "Modelo y mecánicas completamente desconocidos",
+      "Podría no estar presente o tener un rol distinto al esperado"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "armas",
+      "targetSlug": "pistola",
+      "relation": "categoría-relacionada"
+    },
+    {
+      "targetType": "actividades",
+      "targetSlug": "combate-mano-a-mano",
+      "relation": "relacionada-con"
+    }
+  ]
+}
