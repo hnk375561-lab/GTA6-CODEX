@@ -1,329 +1,358 @@
 import Link from 'next/link'
-import { EntityType } from '@/types'
+import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
+import { EntityType, type Trailer } from '@/types'
+import { getEntity, getEntitySlugs } from '@/lib/entities'
+import { getRelatedEntitiesWithLabel } from '@/lib/relations'
+import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
-import { CountUp } from '@/components/ui/CountUp'
-import { WordRotate } from '@/components/ui/WordRotate'
-import { CategoryIcon } from '@/components/ui/CategoryIcon'
-import { RotatingHeroBackground } from '@/components/layout/RotatingHeroBackground'
+import { EvidenceBlock } from '@/components/entities/EvidenceBlock'
+import { EntityMetadata } from '@/components/entities/EntityMetadata'
+import { RelationsPanel } from '@/components/entities/RelationsPanel'
+import { EntityHeaderBackground } from '@/components/entities/EntityHeaderBackground'
+import { EntitySectionHeading } from '@/components/entities/EntitySectionHeading'
 import { EntityImage } from '@/components/entities/EntityImage'
+import { TrailerScenes } from '@/components/entities/TrailerScenes'
+import { TrailerStats } from '@/components/entities/TrailerStats'
+import { TrailerNav } from '@/components/entities/TrailerNav'
+import { TrailerPlayer } from '@/components/media/TrailerPlayer'
+import { MediaCarousel } from '@/components/media/MediaCarousel'
+import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
+import { getMediaForEntity } from '@/lib/media'
+import { MagicCard } from '@/components/ui/MagicCard'
 import { SceneSection } from '@/components/webgl/SceneSection'
-import { getEntityCount, getFeaturedEntities } from '@/lib/entities'
+import { EntityAtmosphereBridge } from '@/components/webgl/EntityAtmosphereBridge'
 
-export default async function Home() {
-  const [entityCount, featured] = await Promise.all([
-    getEntityCount(),
-    getFeaturedEntities(3),
+interface PageProps {
+  params: Promise<{ entityType: string; slug: string }>
+}
+
+const VALID_TYPES = Object.values(EntityType) as string[]
+
+const TYPE_LABELS: Record<EntityType, string> = {
+  [EntityType.CHARACTER]: 'Personajes',
+  [EntityType.VEHICLE]: 'Vehículos',
+  [EntityType.LOCATION]: 'Ubicaciones',
+  [EntityType.MISSION]: 'Misiones',
+  [EntityType.WEAPON]: 'Armas',
+  [EntityType.ACTIVITY]: 'Actividades',
+  [EntityType.FACTION]: 'Organizaciones',
+  [EntityType.BUSINESS]: 'Negocios',
+  [EntityType.OBJECT]: 'Objetos',
+  [EntityType.NEWS]: 'Noticias',
+  [EntityType.GUIDE]: 'Guías',
+  [EntityType.TRAILER]: 'Trailers',
+}
+
+const STATUS_LABELS = {
+  confirmado: 'Confirmado',
+  rumor: 'Rumor',
+  nuestro: 'Nuestro',
+} as const
+
+/**
+ * Eyebrow editorial de clasificación (sección "CLASSIFICATION / <TIPO>" del
+ * dossier). Las 5 categorías núcleo del sitio reciben un par semántico
+ * propio; el resto cae a un fallback genérico "EXPEDIENTE · <TIPO>" en vez
+ * de multiplicar variantes.
+ */
+const CLASSIFICATION_LABELS: Partial<Record<EntityType, string>> = {
+  [EntityType.CHARACTER]: 'Identidad · Dossier',
+  [EntityType.LOCATION]: 'Territorio · Ubicación',
+  [EntityType.FACTION]: 'Organización · Autoridad',
+  [EntityType.BUSINESS]: 'Negocio · Establecimiento',
+  [EntityType.VEHICLE]: 'Vehículo · Fabricante',
+  [EntityType.TRAILER]: 'Material Oficial · Archivo',
+}
+
+export async function generateStaticParams() {
+  const params: { entityType: string; slug: string }[] = []
+
+  for (const type of Object.values(EntityType)) {
+    const slugs = await getEntitySlugs(type)
+    for (const slug of slugs) {
+      params.push({ entityType: type, slug })
+    }
+  }
+
+  return params
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { entityType, slug } = await params
+  if (!VALID_TYPES.includes(entityType)) return {}
+
+  const entity = await getEntity(entityType as EntityType, slug)
+  if (!entity) return {}
+
+  return generateEntityMetadata(entity)
+}
+
+export default async function EntityPage({ params }: PageProps) {
+  const { entityType, slug } = await params
+  if (!VALID_TYPES.includes(entityType)) notFound()
+
+  const type = entityType as EntityType
+  const entity = await getEntity(type, slug)
+  if (!entity) notFound()
+
+  const related = await getRelatedEntitiesWithLabel(entity, 8)
+  const relatedMedia = getMediaForEntity(entity).filter(
+    (asset) => asset.id !== `entity-portrait-${type}-${entity.slug}`
+  )
+  const jsonLd = generateEntityJsonLd(entity)
+  const breadcrumbLd = generateBreadcrumbJsonLd([
+    { label: 'Inicio', url: '/' },
+    { label: TYPE_LABELS[type], url: `/${type}` },
+    { label: entity.title, url: `/${type}/${entity.slug}` },
   ])
 
-  const categories = [
-    {
-      type: EntityType.CHARACTER,
-      label: 'Personajes',
-      description: 'Explora los personajes principales y secundarios de GTA 6.',
-    },
-    {
-      type: EntityType.VEHICLE,
-      label: 'Vehículos',
-      description: 'Descubre todos los vehículos disponibles en el juego.',
-    },
-    {
-      type: EntityType.LOCATION,
-      label: 'Ubicaciones',
-      description: 'Conoce los distritos, barrios y puntos de interés de GTA 6.',
-    },
-    {
-      type: EntityType.TRAILER,
-      label: 'Trailers',
-      description: 'Análisis escena por escena del material oficial de Rockstar Games.',
-    },
-    {
-      type: EntityType.MISSION,
-      label: 'Misiones',
-      description: 'Información detallada sobre las misiones principales y secundarias.',
-    },
-    {
-      type: EntityType.NEWS,
-      label: 'Noticias',
-      description: 'Últimas noticias, rumores y actualizaciones sobre GTA 6.',
-    },
-    {
-      type: EntityType.GUIDE,
-      label: 'Guías',
-      description: 'Guías completas y tutoriales para dominar el juego.',
-    },
-  ]
+  const statusLabel = STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status
+  const classificationLabel =
+    CLASSIFICATION_LABELS[type] ?? `Expediente · ${TYPE_LABELS[type]}`
+
+  // Índices editoriales de sección: solo cuentan secciones que realmente
+  // se van a renderizar, para que la numeración nunca muestre saltos
+  // (ej. "01" seguido de "03" si Evidencia no existe para esta entidad).
+  const hasEvidence = Boolean(entity.evidence)
+  const hasRelated = related.length > 0
+  let sectionCounter = 0
+  const evidenceIndex = hasEvidence ? ++sectionCounter : undefined
+  const relatedIndex = hasRelated ? ++sectionCounter : undefined
+  const infoIndex = ++sectionCounter
+
+  const headerContent = (
+    <>
+      <nav
+        className="mb-6 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-sm text-gta-text-secondary animate-fade-in"
+        aria-label="Breadcrumb"
+      >
+        <div>
+          <Link href="/" className="link-underline transition-colors hover:text-gta-accent">
+            Inicio
+          </Link>
+          <span className="mx-2">/</span>
+          <Link href={`/${type}`} className="link-underline transition-colors hover:text-gta-accent">
+            {TYPE_LABELS[type]}
+          </Link>
+          <span className="mx-2">/</span>
+          <span className="inline-block max-w-[50vw] truncate align-bottom text-gta-text sm:max-w-none">
+            {entity.title}
+          </span>
+        </div>
+        <code className="hidden shrink-0 font-mono text-[11px] text-gta-text-secondary/60 sm:inline-block">
+          {type}/{entity.slug}
+        </code>
+      </nav>
+
+      <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gta-accent/80">
+        <span className="h-px w-4 bg-gta-accent/40" aria-hidden="true" />
+        {classificationLabel}
+      </div>
+
+      <div className="mb-3 flex flex-wrap items-center gap-3">
+        <h1 className="text-4xl font-bold text-gta-text sm:text-5xl">{entity.title}</h1>
+        <Badge variant="status" status={entity.status}>
+          {statusLabel}
+        </Badge>
+        {entity.featured && <Badge variant="tag">Destacado</Badge>}
+      </div>
+
+      <Reveal delay={200}>
+        <p className="max-w-3xl text-lg text-gta-text-secondary">{entity.description}</p>
+      </Reveal>
+
+      {entity.tags && entity.tags.length > 0 && (
+        <div className="stagger mt-5 flex flex-wrap gap-2">
+          {entity.tags.map((tag) => (
+            <Badge key={tag} variant="tag">
+              {tag}
+            </Badge>
+          ))}
+        </div>
+      )}
+    </>
+  )
 
   return (
     <>
-      {/* Hero Section — cinematográfico pero contenido: un solo fondo con
-          overlay de contraste, un solo acento de color, sin capas de efectos
-          compitiendo con el título. La entrada (escala/blur/luz) está
-          sincronizada con la apertura de iris del motor WebGL vía las
-          variables --scene-* (ver SceneAmbientBridge); nunca oculta el
-          contenido (opacity siempre 1) para no depender de que WebGL cargue. */}
-      <SceneSection sceneId="hero" className="hero-gleam relative overflow-hidden border-b border-gta-border py-28 sm:py-44">
-        <RotatingHeroBackground />
-        <div className="hero-gleam-sweep" aria-hidden="true" />
-        <div className="hero-scanlines" aria-hidden="true" />
-        <div className="hero-vignette" aria-hidden="true" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+
+      {/* Publica categoría/estado/featured de esta ficha al motor WebGL.
+          No renderiza nada — ver EntityAtmosphereBridge. */}
+      <EntityAtmosphereBridge category={type} status={entity.status} featured={Boolean(entity.featured)} />
+
+      {/* Header — el fondo ambiental por categoría (EntityHeaderBackground) se
+          mantiene siempre: es identidad visual de bajo costo (CSS/SVG, sin JS).
+          El orb interactivo que sigue al cursor (MagicCard) queda reservado a
+          entidades `featured`, que es exactamente lo que el comentario del
+          componente ya decía pero el código no respetaba — el resto usa un
+          contenedor estático, sin efecto de seguimiento de puntero. */}
+      <SceneSection
+        sceneId="entity-header"
+        className="relative overflow-hidden border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-10 sm:py-14"
+      >
+        <EntityHeaderBackground type={type} />
         <div className="container-max relative">
-          <div className="hero-cinematic mx-auto max-w-3xl text-center">
-            <Reveal delay={0} className="mb-8 flex justify-center">
-              <div className="hero-pill">
-                <span className="hero-pill-dot" aria-hidden="true" />
-                <span>
-                  <strong className="font-semibold text-gta-text">{entityCount}</strong> entidades documentadas
-                </span>
-              </div>
-            </Reveal>
-
-            <Reveal delay={60}>
-              <p className="hero-kicker mb-4 text-xs font-bold uppercase tracking-[0.3em] text-gta-accent">
-                Bienvenido a Leonida · Vice City, 2026
-              </p>
-            </Reveal>
-
-            <h1 className="hero-title mb-4 text-7xl font-black leading-[0.9] tracking-tight sm:text-9xl">
-              <span className="block text-gta-text">GTA6</span>
-              <span className="hero-title-accent block">Codex</span>
-            </h1>
-
-            <div className="mb-7 flex items-center justify-center gap-2 text-lg text-gta-text-secondary sm:text-2xl">
-              <span>Explorá</span>
-              <WordRotate
-                words={['Personajes', 'Vehículos', 'Ubicaciones', 'Misiones', 'Organizaciones']}
-                duration={2200}
-                className="font-bold text-gta-accent"
-              />
+          <span
+            className="pointer-events-none absolute -left-1 -top-1 hidden h-5 w-5 border-l border-t border-gta-accent/25 sm:block"
+            aria-hidden="true"
+          />
+          <span
+            className="pointer-events-none absolute -bottom-1 -right-1 hidden h-5 w-5 border-b border-r border-gta-accent-orange/20 sm:block"
+            aria-hidden="true"
+          />
+          {entity.featured ? (
+            <MagicCard
+              mode="orb"
+              glowFrom="#ff2f8f"
+              glowTo="#22d3ee"
+              glowSize={340}
+              glowBlur={90}
+              glowOpacity={0.25}
+              className="p-6 sm:p-8"
+            >
+              {headerContent}
+            </MagicCard>
+          ) : (
+            <div className="rounded-lg border border-gta-border bg-gta-surface/60 p-6 sm:p-8">
+              {headerContent}
             </div>
-
-            <p className="mb-10 text-balance text-lg text-gta-text-secondary sm:text-xl">
-              La enciclopedia definitiva de Grand Theft Auto 6, reconstruida a fondo.
-              Todo Leonida, verificado y en un solo lugar.
-            </p>
-
-            {/* CTA Buttons */}
-            <Reveal delay={200} className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link
-                href={`/${EntityType.CHARACTER}`}
-                className="hero-cta-primary inline-flex items-center justify-center gap-2 rounded-lg px-9 py-4 text-base font-bold text-gta-dark transition-all hover:-translate-y-0.5"
-              >
-                Entrar a Leonida
-                <span aria-hidden="true">→</span>
-              </Link>
-              <Link
-                href="/buscar"
-                className="btn-secondary inline-flex items-center justify-center rounded-lg px-9 py-4 text-base font-bold text-gta-text transition-all hover:-translate-y-0.5"
-              >
-                Buscar
-              </Link>
-            </Reveal>
-          </div>
-        </div>
-
-        {/* Primera interacción sugerida: aparece cuando la escena se asienta
-            (--scene-intro), invita al primer scroll. Puramente decorativo,
-            no altera la navegación ni el foco del teclado. */}
-        <div className="hero-scroll-cue" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 7l6 6 6-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          )}
         </div>
       </SceneSection>
 
-      {/* Info Section */}
-      <SceneSection sceneId="stats" className="stats-band border-b border-gta-border bg-gta-dark py-16">
+      {/* Content */}
+      <SceneSection sceneId="entity-content" className="py-12 sm:py-16">
         <div className="container-max">
-          <div className="grid divide-y divide-gta-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            <div className="stat-block text-center">
-              <div className="stat-number mb-2 text-5xl font-black sm:text-6xl">
-                <CountUp end={entityCount} />
-              </div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-gta-text-secondary">
-                Entidades documentadas
-              </p>
-            </div>
-            <div className="stat-block text-center">
-              <div className="stat-number mb-2 text-5xl font-black sm:text-6xl">
-                <CountUp end={100} suffix="%" />
-              </div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-gta-text-secondary">
-                Información verificada
-              </p>
-            </div>
-            <div className="stat-block text-center">
-              <div className="stat-number mb-2 text-5xl font-black sm:text-6xl">Premium</div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-gta-text-secondary">
-                Análisis de primer nivel
-              </p>
-            </div>
-          </div>
-        </div>
-      </SceneSection>
-
-      {/* Featured Section */}
-      {featured.length > 0 && (
-        <SceneSection sceneId="featured" className="bg-gta-dark py-16 sm:py-24">
-          <div className="container-max">
-            <Reveal className="mb-12 text-center">
-              <p className="section-kicker mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gta-accent">
-                Curado por el equipo
-              </p>
-              <h2 className="mb-4 text-4xl font-black text-gta-text sm:text-5xl">
-                Destacados
-              </h2>
-              <p className="text-lg text-gta-text-secondary">Lo más relevante ahora mismo</p>
+          {type === EntityType.TRAILER && 'scenes' in entity && (
+            <Reveal className="mb-10">
+              <TrailerStats trailer={entity as Trailer} />
             </Reveal>
+          )}
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {featured.map((entity, i) => (
-                <Reveal key={`${entity.type}-${entity.slug}`} delay={i * 100}>
-                  <Link href={`/${entity.type}/${entity.slug}`} className="group block h-full">
-                    <Card hoverable className="featured-card h-full overflow-hidden !p-0">
-                      <div className="relative overflow-hidden">
-                        <EntityImage
-                          entity={entity}
-                          variant="thumbnail"
-                          className="!rounded-none !border-0 transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gta-card via-gta-card/10 to-transparent" />
-                        <Badge
-                          variant="status"
-                          status={entity.status}
-                          className="absolute left-4 top-4"
-                        >
-                          {entity.status}
-                        </Badge>
-                      </div>
-                      <CardBody className="px-6 pb-6 pt-4">
-                        <h3 className="mb-2 text-2xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
-                          {entity.title}
-                        </h3>
-                        <p className="line-clamp-2 text-sm text-gta-text-secondary">
-                          {entity.description}
-                        </p>
-                      </CardBody>
-                    </Card>
-                  </Link>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </SceneSection>
-      )}
-
-      {/* Categories Section */}
-      <SceneSection sceneId="categories" htmlId="categories" className="bg-gta-dark py-16 sm:py-24">
-        <div className="container-max">
-          <Reveal className="mb-12 text-center">
-            <p className="section-kicker mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gta-accent">
-              Explorá el codex
-            </p>
-            <h2 className="mb-4 text-4xl font-black text-gta-text sm:text-5xl">
-              Categorías
-            </h2>
-            <p className="text-lg text-gta-text-secondary">
-              Accede a información detallada organizadas por categoría
-            </p>
-          </Reveal>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((category, i) => (
-              <Reveal
-                key={category.type}
-                delay={(i % 3) * 100}
-                direction={i % 2 === 0 ? 'left' : 'right'}
-              >
-                <Link href={`/${category.type}`} className="group block h-full">
-                  <Card hoverable className="category-card relative h-full overflow-hidden">
-                    <span className="category-card-index" aria-hidden="true">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <CardBody>
-                      <div className="category-icon-badge mb-5 flex h-14 w-14 items-center justify-center rounded-xl text-gta-accent transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
-                        <CategoryIcon type={category.type} className="h-6 w-6" />
-                      </div>
-                      <h3 className="mb-2 flex items-center gap-2 text-xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
-                        {category.label}
-                        <span
-                          aria-hidden="true"
-                          className="translate-x-0 text-gta-accent opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
-                        >
-                          →
-                        </span>
-                      </h3>
-                      <p className="text-sm text-gta-text-secondary">
-                        {category.description}
-                      </p>
-                    </CardBody>
-                  </Card>
-                </Link>
+          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="space-y-6 lg:col-span-2">
+            {type === EntityType.TRAILER && 'scenes' in entity && (
+              <Reveal direction="left">
+                <TrailerPlayer trailer={entity as Trailer} />
               </Reveal>
-            ))}
+            )}
+            {type === EntityType.TRAILER && 'scenes' in entity && (
+              <Reveal direction="left">
+                <TrailerScenes trailer={entity as Trailer} />
+              </Reveal>
+            )}
+            {entity.content ? (
+              <Reveal direction="left">
+                <Card className={entity.featured ? 'shadow-gta-sm border-gta-accent/30' : 'shadow-gta-sm'}>
+                  <CardBody>
+                    <div className="max-w-none">
+                      {entity.content.split('\n\n').map((paragraph, i) => (
+                        <p key={i} className="mb-4 leading-relaxed text-gta-text-secondary last:mb-0">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </CardBody>
+                </Card>
+              </Reveal>
+            ) : (
+              <Reveal direction="left">
+                <Card className="shadow-gta-sm">
+                  <CardBody>
+                    <p className="text-gta-text-secondary">
+                      Todavía no hay contenido editorial extendido para esta entrada.
+                    </p>
+                  </CardBody>
+                </Card>
+              </Reveal>
+            )}
           </div>
-        </div>
-      </SceneSection>
 
-      {/* Info Cards */}
-      <SceneSection sceneId="about" className="border-t border-gta-border bg-gta-dark py-16 sm:py-24">
-        <div className="container-max">
-          <Reveal className="mb-12 text-center">
-            <p className="section-kicker mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gta-accent">
-              El proyecto
-            </p>
-            <h2 className="mb-4 text-3xl font-black text-gta-text sm:text-4xl">
-              Sobre GTA6 Codex
-            </h2>
-          </Reveal>
+          <aside className="space-y-6">
+            {ENTITY_IMAGE_CATEGORIES.includes(type) && (
+              <Reveal direction="right">
+                <EntityImage entity={entity} variant="portrait" />
+              </Reveal>
+            )}
 
-          <div className="grid gap-8 sm:grid-cols-2">
-            <Reveal direction="left">
-              <Card>
+            {relatedMedia.length > 0 && (
+              <Reveal direction="right">
+                <MediaCarousel title="Contenido relacionado" assets={relatedMedia} />
+              </Reveal>
+            )}
+
+            {entity.evidence && (
+              <Reveal direction="right">
+                <Card className="shadow-gta-sm">
+                  <CardBody>
+                    <EntitySectionHeading label="Evidencia" index={evidenceIndex} />
+                    <EvidenceBlock evidence={entity.evidence} />
+                  </CardBody>
+                </Card>
+              </Reveal>
+            )}
+
+            <Reveal direction="right" delay={80}>
+              <EntityMetadata entity={entity} />
+            </Reveal>
+
+            {related.length > 0 && (
+              <Reveal direction="right" delay={150}>
+                <Card className="shadow-gta-sm">
+                  <CardBody>
+                    <EntitySectionHeading label="Relacionado" index={relatedIndex} />
+                    <RelationsPanel related={related} />
+                  </CardBody>
+                </Card>
+              </Reveal>
+            )}
+
+            <Reveal direction="right" delay={220}>
+              <Card className="shadow-gta-sm">
                 <CardBody>
-                  <h3 className="mb-3 text-xl font-bold text-gta-text">
-                    ¿Qué es GTA6 Codex?
-                  </h3>
-                  <p className="text-sm text-gta-text-secondary leading-relaxed">
-                    Un proyecto editorial dedicado a documentar y analizar cada aspecto de
-                    Grand Theft Auto 6. Combinamos información oficial, análisis profundo y
-                    discusiones de la comunidad.
-                  </p>
+                  <EntitySectionHeading label="Información" index={infoIndex} />
+                  <dl className="space-y-2 text-sm">
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-gta-text-secondary">Categoría</dt>
+                      <dd className="text-gta-text">{TYPE_LABELS[type]}</dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-gta-text-secondary">Estado</dt>
+                      <dd className="text-gta-text">{statusLabel}</dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-gta-text-secondary">Actualizado</dt>
+                      <dd className="text-gta-text">
+                        {new Date(entity.updatedAt).toLocaleDateString('es-ES', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                        })}
+                      </dd>
+                    </div>
+                  </dl>
                 </CardBody>
               </Card>
             </Reveal>
-
-            <Reveal direction="right" delay={120}>
-              <Card>
-                <CardBody>
-                  <h3 className="mb-3 text-xl font-bold text-gta-text">
-                    Sistemas de Información
-                  </h3>
-                  <div className="stagger space-y-2">
-                    <div className="flex items-center gap-2">
-                      <Badge status="confirmado">Confirmado</Badge>
-                      <span className="text-xs text-gta-text-secondary">
-                        Información oficial o verificada
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Badge status="rumor">Rumor</Badge>
-                      <span className="text-xs text-gta-text-secondary">
-                        No confirmado, especulación
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Badge status="nuestro">Nuestro</Badge>
-                      <span className="text-xs text-gta-text-secondary">
-                        Análisis y teorías propias
-                      </span>
-                    </div>
-                  </div>
-                </CardBody>
-              </Card>
-            </Reveal>
+          </aside>
           </div>
+
+          {type === EntityType.TRAILER && 'scenes' in entity && (
+            <Reveal className="mt-12 border-t border-gta-border pt-8">
+              <TrailerNav currentSlug={entity.slug} />
+            </Reveal>
+          )}
         </div>
       </SceneSection>
     </>
