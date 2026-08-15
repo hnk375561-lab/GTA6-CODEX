@@ -7,6 +7,7 @@ import Fuse from 'fuse.js'
 import type { GalleryCategoryCount, GalleryItem } from '@/lib/gallery'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
+import { YouTubeEmbed } from '@/components/media/YouTubeEmbed'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
 import { cn } from '@/lib/utils'
 
@@ -229,14 +230,36 @@ function GalleryTile({
       )}
       aria-label={`Ampliar imagen: ${item.title}`}
     >
-      <Image
-        src={item.src}
-        alt={item.alt}
-        fill
-        sizes={featured ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw'}
-        className="gallery-tile-image object-cover"
-      />
+      {item.kind === 'video' ? (
+        // eslint-disable-next-line @next/next/no-img-element -- miniatura pública de i.ytimg.com (YouTube), fuera del dominio propio configurado en next/image
+        <img
+          src={item.src}
+          alt={item.alt}
+          loading="lazy"
+          className="gallery-tile-image absolute inset-0 h-full w-full object-cover"
+        />
+      ) : (
+        <Image
+          src={item.src}
+          alt={item.alt}
+          fill
+          sizes={featured ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw'}
+          className="gallery-tile-image object-cover"
+        />
+      )}
       <div className="gallery-tile-overlay" aria-hidden="true" />
+      {item.kind === 'video' && (
+        <span
+          className="absolute inset-0 flex items-center justify-center bg-black/20"
+          aria-hidden="true"
+        >
+          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-black/50 text-white backdrop-blur-sm">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+        </span>
+      )}
       <div className="absolute inset-x-0 bottom-0 translate-y-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
         <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
           {item.status && (
@@ -351,15 +374,21 @@ function GalleryLightbox({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative min-h-[45vh] bg-gta-darker md:min-h-[70vh]">
-          <Image
-            key={item.id}
-            src={item.src}
-            alt={item.alt}
-            fill
-            sizes="(min-width: 768px) 60vw, 100vw"
-            className="object-contain"
-            priority
-          />
+          {item.kind === 'video' && item.videoEmbedId ? (
+            <div className="flex h-full w-full items-center p-4">
+              <YouTubeEmbed embedId={item.videoEmbedId} title={item.title} thumbnailSrc={item.src} autoLoad />
+            </div>
+          ) : (
+            <Image
+              key={item.id}
+              src={item.src}
+              alt={item.alt}
+              fill
+              sizes="(min-width: 768px) 60vw, 100vw"
+              className="object-contain"
+              priority
+            />
+          )}
         </div>
 
         <div className="flex max-h-[45vh] flex-col overflow-y-auto p-6 md:max-h-[70vh]">
