@@ -5,14 +5,23 @@
   "description": "SUV policial de la marca Vapid, inspirada en el Ford Police Interceptor Utility, vista en escenas de persecución de los dos trailers con distintas librillas de agencia.",
   "content": "Se trata de una SUV policial de la marca ficticia Vapid que acompaña al Brute Police Riot y al Bravado Buffalo STX en la escena de persecución del Trailer 2 donde Lucia ataca vehículos con un lanzagranadas. La misma silueta de SUV policial también aparece en capturas oficiales adicionales con libreas de distintas agencias (VCPD y una agencia rural).\n\nIMPORTANTE — título descriptivo, no nombre oficial: a diferencia de otras fichas de este catálogo, este vehículo NO tiene un nombre de modelo específico publicado ni por Rockstar ni por ninguna fuente secundaria consultada; todas las coberturas se refieren a él únicamente como 'SUV policial Vapid' o equivalente. El título de esta ficha es descriptivo, no una nomenclatura oficial ni comunitaria de un modelo concreto (a diferencia de, por ejemplo, 'Stanier LE' o 'Buffalo STX', que sí son nombres de modelo).",
   "status": "confirmado",
-  "tags": ["policial", "suv", "trailer-1", "trailer-2", "vapid", "identificacion-visual"],
+  "tags": [
+    "policial",
+    "suv",
+    "trailer-1",
+    "trailer-2",
+    "vapid",
+    "identificacion-visual"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Vapid",
   "class": "policial",
   "driven_by": [],
-  "locations": ["vice-city"],
+  "locations": [
+    "vice-city"
+  ],
   "customizable": false,
   "performance": {
     "speed": "Media",
@@ -24,13 +33,23 @@
     "level": "oficial-visual",
     "primarySource": "Rockstar Games, captura oficial adicional que muestra esta misma silueta de SUV con librea VCPD (Vice City Police Department) en Vice City; también aparece, sin poder confirmarse la ubicación, en la escena de persecución con lanzagranadas del Trailer 2 y en una librea de agencia rural distinta",
     "secondarySource": "gta.fandom.com ('Unnamed GTA VI Vapid police SUV'), que documenta de forma independiente la variante VCPD en captura oficial de Vice City, junto a una variante POACH en Grassrivers y otra en Leonard County/Trailer 1; GTA BOOM, que describe la misma silueta con inspiración en el Ford Police Interceptor Utility",
-    "note": "Incorporación (13 ago 2026, Bloque B3): se documenta como entidad separada de 'Vapid Stanier LE' porque son carrocerías distintas (sedán vs. SUV) confirmadas en la misma escena de persecución, no una variante del mismo vehículo. Sin nombre de modelo publicado por ninguna fuente; el título es deliberadamente descriptivo para no inventar una nomenclatura. CORRECCION DE UBICACION (13 ago 2026, auditoria forense Bloque 1 - located_in restantes): la escena de la explosión con lanzagranadas del Trailer 2 (citada originalmente como base de located_in->vice-city) NO tiene ubicación confirmada -ver auditoría de brute-police-riot.json y bravado-buffalo-stx.json, misma escena-. Sin embargo, gta.fandom.com documenta de forma independiente que esta misma silueta de SUV aparece en AL MENOS TRES libreas distintas para distintas agencias en distintas regiones: VCPD en una captura oficial de Vice City, POACH (Protection of Animals & Controlled Hunting) en Grassrivers, y sin librea en Leonard County (Trailer 1). Se mantiene located_in->vice-city porque la librea VCPD en captura oficial de Vice City es una fuente independiente concreta para ESA variante, pero se documenta explícitamente que el vehículo como silueta/modelo NO está confinado a Vice City -aparece en al menos 3 regiones con libreas distintas-, y se retira cualquier vínculo entre este located_in y la escena de la explosión."
+    "note": "Incorporación (13 ago 2026, Bloque B3): se documenta como entidad separada de 'Vapid Stanier LE' porque son carrocerías distintas (sedán vs. SUV) confirmadas en la misma escena de persecución, no una variante del mismo vehículo. Sin nombre de modelo publicado por ninguna fuente; el título es deliberadamente descriptivo para no inventar una nomenclatura. CORRECCION DE UBICACION (13 ago 2026, auditoria forense Bloque 1 - located_in restantes): la escena de la explosión con lanzagranadas del Trailer 2 (citada originalmente como base de located_in->vice-city) NO tiene ubicación confirmada -ver auditoría de brute-police-riot.json y bravado-buffalo-stx.json, misma escena-. Sin embargo, gta.fandom.com documenta de forma independiente que esta misma silueta de SUV aparece en AL MENOS TRES libreas distintas para distintas agencias en distintas regiones: VCPD en una captura oficial de Vice City, POACH (Protection of Animals & Controlled Hunting) en Grassrivers, y sin librea en Leonard County (Trailer 1). Se mantiene located_in->vice-city porque la librea VCPD en captura oficial de Vice City es una fuente independiente concreta para ESA variante, pero se documenta explícitamente que el vehículo como silueta/modelo NO está confinado a Vice City -aparece en al menos 3 regiones con libreas distintas-, y se retira cualquier vínculo entre este located_in y la escena de la explosión. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-1, trailer-2) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
   "relations": [
     {
       "targetType": "ubicaciones",
       "targetSlug": "vice-city",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrado en"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrado en"
     }
   ]
 }

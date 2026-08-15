@@ -5,14 +5,21 @@
   "description": "Camión blindado antidisturbios de la policía de Leonida, inspirado en el Lenco BearCat/BEAR, visto resistiendo un ataque con lanzagranadas en el Trailer 2. NO confirmado como propiedad exclusiva del VCPD.",
   "content": "El Brute Police Riot es un camión blindado antidisturbios que aparece en la secuencia del Trailer 2 donde Lucia ataca vehículos policiales con un lanzagranadas desde un vehículo/autobús en movimiento. A diferencia de los patrulleros convencionales destruidos en la misma escena, este vehículo apenas se ve afectado por la onda expansiva de la explosión, mostrando su blindaje reforzado.\n\nSu diseño está inspirado en el Lenco BearCat/BEAR, un vehículo blindado real utilizado por unidades SWAT en Estados Unidos. Su identificación fue realizada de forma independiente por múltiples medios especializados en el spotting de vehículos de la saga a partir del material oficial (Trailer 2).\n\nCORRECCIÓN DE AUDITORÍA (13 ago 2026): la ficha anterior lo describía como vehículo 'de la policía de Vice City (VCPD)'. Ninguna fuente consultada respalda esa exclusividad. Las coberturas especializadas sobre la flota policial de GTA VI (gta6supercars.com, gtabites.com) documentan el Police Riot como un activo blindado compartido por el ecosistema policial de Leonida en general, desplegado en niveles de búsqueda altos (4-5 estrellas), sin atribuirlo a una sola agencia. Además, ninguna fuente confirma que la escena de la explosión del Trailer 2 ocurra específicamente dentro de los límites de Vice City -una sola fuente de menor fiabilidad la ubica en una 'Interstate 97' genérica, sin corroboración de otros medios-, por lo que tampoco puede sostenerse una relación located_in hacia Vice City con evidencia sólida.",
   "status": "confirmado",
-  "tags": ["policial", "blindado", "trailer-2", "leonida-wide"],
+  "tags": [
+    "policial",
+    "blindado",
+    "trailer-2",
+    "leonida-wide"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Brute",
   "class": "policial-blindado",
   "driven_by": [],
-  "locations": ["leonida"],
+  "locations": [
+    "leonida"
+  ],
   "customizable": false,
   "performance": {
     "speed": "Baja",
@@ -24,7 +31,13 @@
     "level": "oficial-visual",
     "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025), secuencia de la explosion provocada por Lucia con lanzagranadas",
     "secondarySourceIndependent": "autoevolution.com (identificacion independiente del vehiculo como Brute Police Riot/Lenco BearCat en la escena, sin atribuir agencia especifica ni ubicacion especifica), gta6supercars.com y gtabites.com (documentan el vehiculo como parte de la flota policial general de Leonida, desplegado en niveles de busqueda 4-5 estrellas, no exclusivo de una agencia)",
-    "note": "CORRECCION DE CONTAMINACION CRUZADA (13 ago 2026), detectada durante la auditoria de vcpd.json: se retira la atribucion exclusiva a VCPD del titulo/descripcion/tags de esta ficha, porque ninguna fuente independiente sostiene esa exclusividad -es un activo generico de la policia de Leonida en escenarios de alto nivel de busqueda-. La relacion formal located_in->vice-city se ELIMINA del array 'relations' porque ninguna fuente confirma que la escena del Trailer 2 ocurra especificamente dentro de los limites de Vice City; el campo 'locations' se degrada a ['leonida'] como metadato aproximado no verificado, siguiendo el mismo criterio de precaucion ya aplicado en western-company-duster.json. La relacion VCPD->brute-police-riot (owns) en vcpd.json se mantiene pero con confianza media y limitacion documentada alli, ya que el vehiculo si aparece en un contexto de persecucion policial vinculado a VCPD en otras escenas del material promocional, aunque no en exclusiva."
+    "note": "CORRECCION DE CONTAMINACION CRUZADA (13 ago 2026), detectada durante la auditoria de vcpd.json: se retira la atribucion exclusiva a VCPD del titulo/descripcion/tags de esta ficha, porque ninguna fuente independiente sostiene esa exclusividad -es un activo generico de la policia de Leonida en escenarios de alto nivel de busqueda-. La relacion formal located_in->vice-city se ELIMINA del array 'relations' porque ninguna fuente confirma que la escena del Trailer 2 ocurra especificamente dentro de los limites de Vice City; el campo 'locations' se degrada a ['leonida'] como metadato aproximado no verificado, siguiendo el mismo criterio de precaucion ya aplicado en western-company-duster.json. La relacion VCPD->brute-police-riot (owns) en vcpd.json se mantiene pero con confianza media y limitacion documentada alli, ya que el vehiculo si aparece en un contexto de persecucion policial vinculado a VCPD en otras escenas del material promocional, aunque no en exclusiva. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-2) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
-  "relations": []
+  "relations": [
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrado en"
+    }
+  ]
 }

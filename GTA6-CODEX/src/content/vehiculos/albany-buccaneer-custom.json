@@ -14,7 +14,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Albany",
   "class": "clasico-customizado",
   "driven_by": [],
@@ -32,13 +32,18 @@
     "level": "respaldado",
     "primarySource": "Rockstar Games, trailer de presentación de GTA VI (diciembre de 2023), toma con una fila de vehículos customizados",
     "secondarySource": "PC Gamer, cobertura de identificación de vehículos de los trailers de GTA VI",
-    "note": "Existencia confirmada en material oficial; identificación basada en una única fuente especializada consultada hasta el momento. Se documenta con nivel 'respaldado' en lugar de 'oficial-visual'. AUDITORIA (13 ago 2026, bloque located_in): se investigo la escena de origen (fila de vehiculos customizados, Trailer 1) via GamesRadar ('All of the GTA 6 cars we know about so far'), que la describe como parte de una secuencia urbana continua sin salir del contexto de Vice City mostrado en el resto del trailer. No se encontro evidencia independiente que contradiga la ubicacion Vice City ni que apunte a otra region de Leonida. Se mantiene la relacion located_in->vice-city sin cambios; se mantiene el nivel 'respaldado' por seguir dependiendo de una unica fuente especializada para la identificacion del vehiculo en si (no de la ubicacion)."
+    "note": "Existencia confirmada en material oficial; identificación basada en una única fuente especializada consultada hasta el momento. Se documenta con nivel 'respaldado' en lugar de 'oficial-visual'. AUDITORIA (13 ago 2026, bloque located_in): se investigo la escena de origen (fila de vehiculos customizados, Trailer 1) via GamesRadar ('All of the GTA 6 cars we know about so far'), que la describe como parte de una secuencia urbana continua sin salir del contexto de Vice City mostrado en el resto del trailer. No se encontro evidencia independiente que contradiga la ubicacion Vice City ni que apunte a otra region de Leonida. Se mantiene la relacion located_in->vice-city sin cambios; se mantiene el nivel 'respaldado' por seguir dependiendo de una unica fuente especializada para la identificacion del vehiculo en si (no de la ubicacion). AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-1) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
   "relations": [
     {
       "targetType": "ubicaciones",
       "targetSlug": "vice-city",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrado en"
     }
   ]
 }

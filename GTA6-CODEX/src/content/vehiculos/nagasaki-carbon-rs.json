@@ -14,7 +14,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Nagasaki",
   "class": "moto-deportiva",
   "driven_by": [],
@@ -32,7 +32,13 @@
     "level": "respaldado",
     "primarySource": "Rockstar Games, trailer de presentación de GTA VI (diciembre de 2023)",
     "secondarySource": "PC Gamer, cobertura de identificación de vehículos de los trailers de GTA VI",
-    "note": "Existencia confirmada en material oficial; identificación basada en una única fuente especializada consultada hasta el momento, por lo que se documenta con nivel 'respaldado' en lugar de 'oficial-visual'. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada no describe una escena o region especifica (trailer generico o anuncio de Ultimate Edition sin contexto geografico); el campo 'locations' se conserva como metadato aproximado, no como afirmacion demostrada del grafo. AUDITORIA ADVERSARIAL (13 ago 2026, bloque riesgo alto - respaldado de fuente unica): se confirmo independientemente la presencia del Nagasaki Carbon RS en la misma secuencia urbana del Trailer 1 mediante GamesRadar y Smartprix, que lo listan junto al Declasse Tulip M-100 y Pfister Comet S2 Cabrio en la escena de 'varios vehiculos personalizados'. Se mantiene 'respaldado'; identificacion reforzada con fuentes independientes adicionales a PC Gamer. Sin cambios en status ni relaciones."
+    "note": "Existencia confirmada en material oficial; identificación basada en una única fuente especializada consultada hasta el momento, por lo que se documenta con nivel 'respaldado' en lugar de 'oficial-visual'. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada no describe una escena o region especifica (trailer generico o anuncio de Ultimate Edition sin contexto geografico); el campo 'locations' se conserva como metadato aproximado, no como afirmacion demostrada del grafo. AUDITORIA ADVERSARIAL (13 ago 2026, bloque riesgo alto - respaldado de fuente unica): se confirmo independientemente la presencia del Nagasaki Carbon RS en la misma secuencia urbana del Trailer 1 mediante GamesRadar y Smartprix, que lo listan junto al Declasse Tulip M-100 y Pfister Comet S2 Cabrio en la escena de 'varios vehiculos personalizados'. Se mantiene 'respaldado'; identificacion reforzada con fuentes independientes adicionales a PC Gamer. Sin cambios en status ni relaciones. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-1) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
-  "relations": []
+  "relations": [
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrado en"
+    }
+  ]
 }

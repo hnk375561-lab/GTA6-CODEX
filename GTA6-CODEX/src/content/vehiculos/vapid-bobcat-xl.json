@@ -14,7 +14,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Vapid",
   "class": "pickup",
   "driven_by": [],
@@ -35,7 +35,7 @@
     "level": "oficial-visual-multifuente",
     "primarySource": "Rockstar Games, Trailer 1 (plano de apertura, 0:02, y estacionamiento en islas artificiales, 0:31) y Trailer 2 (0:44), más cuatro capturas oficiales de Vice City, Leonida Keys, Port Gellhorn y Ambrosia",
     "secondarySource": "GTA Wiki (gta.fandom.com/wiki/Bobcat_XL y gta.wiki/w/Bobcat_XL), que documentan cada aparición con timestamps específicos, corroborado independientemente por gtabase.com y gtaintel.com",
-    "note": "DESCUBRIMIENTO (13 ago 2026, ronda de expansión masiva): candidato nuevo. A diferencia del Brute Boxville (también evaluado en esta ronda), cuya única aparición documentada proviene de la filtración de septiembre de 2022 y no de material oficial publicado por Rockstar, el Bobcat XL tiene apariciones confirmadas en AMBOS trailers oficiales y en capturas oficiales del sitio de GTA VI, por lo que se incorpora con nivel oficial-visual-multifuente y el Boxville queda en cola de candidatos pendientes (evidence D, contaminación de fuente por origen en leak no oficial)."
+    "note": "DESCUBRIMIENTO (13 ago 2026, ronda de expansión masiva): candidato nuevo. A diferencia del Brute Boxville (también evaluado en esta ronda), cuya única aparición documentada proviene de la filtración de septiembre de 2022 y no de material oficial publicado por Rockstar, el Bobcat XL tiene apariciones confirmadas en AMBOS trailers oficiales y en capturas oficiales del sitio de GTA VI, por lo que se incorpora con nivel oficial-visual-multifuente y el Boxville queda en cola de candidatos pendientes (evidence D, contaminación de fuente por origen en leak no oficial). AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-1, trailer-2) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
   "relations": [
     {
@@ -57,6 +57,16 @@
       "targetType": "ubicaciones",
       "targetSlug": "ambrosia",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrado en"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrado en"
     }
   ]
 }

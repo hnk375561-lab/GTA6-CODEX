@@ -14,7 +14,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Maibatsu",
   "class": "moto-todoterreno",
   "driven_by": [],
@@ -32,13 +32,18 @@
     "level": "respaldado",
     "primarySource": "Rockstar Games, GTA VI Trailer 1 (diciembre de 2023), escena de motociclistas haciendo caballitos",
     "secondarySource": "PC Gamer, cobertura de identificación de vehículos de los trailers de GTA VI",
-    "note": "Existencia confirmada en material oficial; identificación basada en una única fuente especializada consultada hasta el momento, aunque el diseño de la Sanchez es muy característico dentro de la saga. Se documenta con nivel 'respaldado' en lugar de 'oficial-visual' por prudencia metodológica. AUDITORIA (13 ago 2026, bloque located_in): se identifico con precision la escena de origen mediante GTA Wiki (gta.fandom.com/wiki/La_Perle): 'La Perle made its official debut in the game's first trailer, with a shot of dirt bikers riding through a residential street in the neighborhood (1:05)'. La Perle es un barrio confirmado de Vice City (basado en Little Haiti de Miami). La relacion located_in->vice-city queda CONFIRMADA con fuente independiente de mayor precision (barrio especifico, no solo la ciudad). Se anade GTA Wiki como fuente secundaria adicional en este bloque; se mantiene el nivel 'respaldado' por prudencia ya que Rockstar no nombro el modelo oficialmente para GTA VI."
+    "note": "Existencia confirmada en material oficial; identificación basada en una única fuente especializada consultada hasta el momento, aunque el diseño de la Sanchez es muy característico dentro de la saga. Se documenta con nivel 'respaldado' en lugar de 'oficial-visual' por prudencia metodológica. AUDITORIA (13 ago 2026, bloque located_in): se identifico con precision la escena de origen mediante GTA Wiki (gta.fandom.com/wiki/La_Perle): 'La Perle made its official debut in the game's first trailer, with a shot of dirt bikers riding through a residential street in the neighborhood (1:05)'. La Perle es un barrio confirmado de Vice City (basado en Little Haiti de Miami). La relacion located_in->vice-city queda CONFIRMADA con fuente independiente de mayor precision (barrio especifico, no solo la ciudad). Se anade GTA Wiki como fuente secundaria adicional en este bloque; se mantiene el nivel 'respaldado' por prudencia ya que Rockstar no nombro el modelo oficialmente para GTA VI. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-1) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
   "relations": [
     {
       "targetType": "ubicaciones",
       "targetSlug": "vice-city",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrado en"
     }
   ]
 }

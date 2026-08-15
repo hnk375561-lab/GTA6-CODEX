@@ -14,7 +14,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Western",
   "class": "moto-chopper",
   "driven_by": [],
@@ -32,13 +32,18 @@
     "level": "respaldado",
     "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025, minuto 1:38 aprox., escena de Jason y Lucia conversando en un auto) y captura oficial de Electric Fang Tattoo",
     "secondarySource": "gta6bible.com, gta.wiki y 6cheats.com, que coinciden de forma independiente en el modelo y en la escena del Trailer 2",
-    "note": "Incorporación (13 ago 2026, Bloque B4): tres fuentes secundarias independientes, todas de tipo wiki/base de datos (ninguna de prensa especializada de primer nivel), coinciden sin contradicción en modelo y escena. Se clasifica como 'respaldado' por el tipo de fuente, no por falta de consenso. AUDITORIA (13 ago 2026, bloque located_in): mismo hallazgo que western-nightblade (misma fecha): Electric Fang Tattoo esta confirmado en Stockyard, barrio de Vice City, por multiples fuentes independientes (leonidacompanion.com, Playhub, Driffle). Esto corrobora la ubicacion Vice City tanto para la aparicion en la captura de Electric Fang como, por extension de continuidad de escena, para la aparicion en Trailer 2 (Jason y Lucia conversando en un auto, gta6bible.com/gta.wiki/6cheats.com). La relacion located_in->vice-city queda CONFIRMADA con evidencia reforzada. Sin cambios en la relacion."
+    "note": "Incorporación (13 ago 2026, Bloque B4): tres fuentes secundarias independientes, todas de tipo wiki/base de datos (ninguna de prensa especializada de primer nivel), coinciden sin contradicción en modelo y escena. Se clasifica como 'respaldado' por el tipo de fuente, no por falta de consenso. AUDITORIA (13 ago 2026, bloque located_in): mismo hallazgo que western-nightblade (misma fecha): Electric Fang Tattoo esta confirmado en Stockyard, barrio de Vice City, por multiples fuentes independientes (leonidacompanion.com, Playhub, Driffle). Esto corrobora la ubicacion Vice City tanto para la aparicion en la captura de Electric Fang como, por extension de continuidad de escena, para la aparicion en Trailer 2 (Jason y Lucia conversando en un auto, gta6bible.com/gta.wiki/6cheats.com). La relacion located_in->vice-city queda CONFIRMADA con evidencia reforzada. Sin cambios en la relacion. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-2) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
   "relations": [
     {
       "targetType": "ubicaciones",
       "targetSlug": "vice-city",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrado en"
     }
   ]
 }

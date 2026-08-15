@@ -13,7 +13,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Pfister",
   "class": "cupe-deportivo",
   "driven_by": [],
@@ -31,7 +31,13 @@
     "level": "respaldado",
     "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025)",
     "secondarySource": "GTA Wiki (gta.fandom.com/wiki/Growler, gta.wiki), que documenta el emblema 'PFISTER' visible en la carrocería del propio modelo; overtake.gg, gta6intel.com, gta6guru.com, leonidahub.com y gtabase.com, que coinciden de forma independiente en 'Pfister Growler'. DriveSpark es la única fuente consultada que usa 'Feaster Growler', en clara minoría frente al resto",
-    "note": "Existencia confirmada en material oficial. AUDITORIA ADVERSARIAL - RESOLUCION DE DISPUTA DE NOMBRE (13 ago 2026, bloque riesgo alto): la disputa Pfister vs. Feaster documentada en el bloque anterior queda resuelta a favor de 'Pfister'. GTA Wiki describe el emblema trasero del propio modelo con la palabra 'PFISTER' grabada, y seis fuentes independientes adicionales coinciden en 'Pfister Growler' frente a una sola mención de 'Feaster Growler' (DriveSpark), que se interpreta como probable error de transcripcion de un nombre de fabricante ficticio poco comun. El campo 'manufacturer' se mantiene en 'Pfister' con confianza reforzada. Se conserva el nivel 'respaldado' (no se eleva a 'oficial-nombrado') porque la fuente del nombre sigue siendo el propio modelo 3D del vehiculo tal como lo documentan wikis especializadas, no un comunicado textual directo de Rockstar para GTA VI. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada no describe una escena o region especifica; el campo 'locations' se conserva como metadato aproximado, no como afirmacion demostrada del grafo."
+    "note": "Existencia confirmada en material oficial. AUDITORIA ADVERSARIAL - RESOLUCION DE DISPUTA DE NOMBRE (13 ago 2026, bloque riesgo alto): la disputa Pfister vs. Feaster documentada en el bloque anterior queda resuelta a favor de 'Pfister'. GTA Wiki describe el emblema trasero del propio modelo con la palabra 'PFISTER' grabada, y seis fuentes independientes adicionales coinciden en 'Pfister Growler' frente a una sola mención de 'Feaster Growler' (DriveSpark), que se interpreta como probable error de transcripcion de un nombre de fabricante ficticio poco comun. El campo 'manufacturer' se mantiene en 'Pfister' con confianza reforzada. Se conserva el nivel 'respaldado' (no se eleva a 'oficial-nombrado') porque la fuente del nombre sigue siendo el propio modelo 3D del vehiculo tal como lo documentan wikis especializadas, no un comunicado textual directo de Rockstar para GTA VI. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada no describe una escena o region especifica; el campo 'locations' se conserva como metadato aproximado, no como afirmacion demostrada del grafo. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-2) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
-  "relations": []
+  "relations": [
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrado en"
+    }
+  ]
 }

@@ -32,13 +32,18 @@
     "level": "oficial-visual-multifuente",
     "primarySource": "Rockstar Games, Trailer 1 (~0:22), visible volando sobre Vice Beach",
     "secondarySource": "GTA Wiki (gta.fandom.com/wiki/SuperVolito) y GTA BOOM (gtaboom.com), que identifican de forma independiente el mismo timestamp y la misma escena sin citarse entre sí",
-    "note": "DESCUBRIMIENTO (14 ago 2026, ronda 7): candidato nuevo, corroborado por dos fuentes independientes con el mismo timestamp del Trailer 1. El modelo ya existía en GTA Online (desde 2015); su continuidad en GTA VI está confirmada visualmente en el propio trailer, mismo criterio ya aplicado a Buckingham Nimbus y Obey 8F Drafter."
+    "note": "DESCUBRIMIENTO (14 ago 2026, ronda 7): candidato nuevo, corroborado por dos fuentes independientes con el mismo timestamp del Trailer 1. El modelo ya existía en GTA Online (desde 2015); su continuidad en GTA VI está confirmada visualmente en el propio trailer, mismo criterio ya aplicado a Buckingham Nimbus y Obey 8F Drafter. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-1) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
   "relations": [
     {
       "targetType": "ubicaciones",
       "targetSlug": "vice-city",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrado en"
     }
   ]
 }

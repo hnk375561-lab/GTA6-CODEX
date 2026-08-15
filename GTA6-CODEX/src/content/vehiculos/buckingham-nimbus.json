@@ -13,7 +13,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Buckingham",
   "class": "planes",
   "driven_by": [],
@@ -31,13 +31,18 @@
     "level": "oficial-visual-multifuente",
     "primarySource": "Rockstar Games, Trailer 1 (0:21), visible volando sobre Vice Beach",
     "secondarySource": "GTA Wiki (gta.fandom.com/wiki/Nimbus) y gta6intel.com, que identifican de forma independiente la misma escena y el mismo modelo",
-    "note": "DESCUBRIMIENTO (13 ago 2026, ronda de expansión masiva): candidato nuevo, corroborado por dos fuentes independientes que describen el mismo timestamp y escena del Trailer 1. El modelo ya existía en GTA Online (desde 2016); su continuidad en GTA VI está confirmada visualmente en el propio trailer, no solo asumida por precedente de la saga (mismo criterio ya aplicado para incorporar Obey 8F Drafter en una ronda anterior)."
+    "note": "DESCUBRIMIENTO (13 ago 2026, ronda de expansión masiva): candidato nuevo, corroborado por dos fuentes independientes que describen el mismo timestamp y escena del Trailer 1. El modelo ya existía en GTA Online (desde 2016); su continuidad en GTA VI está confirmada visualmente en el propio trailer, no solo asumida por precedente de la saga (mismo criterio ya aplicado para incorporar Obey 8F Drafter en una ronda anterior). AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-1) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
   "relations": [
     {
       "targetType": "ubicaciones",
       "targetSlug": "vice-city",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrado en"
     }
   ]
 }

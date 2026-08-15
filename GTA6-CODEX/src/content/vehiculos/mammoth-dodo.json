@@ -5,14 +5,22 @@
   "description": "Avioneta clásica de la saga, con capacidad de amerizaje, identificada en una escena aérea temprana del Trailer 1.",
   "content": "La Mammoth Dodo es una avioneta ligera con capacidad de amerizar en agua, presente en la saga desde la era 3D. En el Trailer 1 de GTA VI se observa una pequeña aeronave sobrevolando la ciudad en uno de los primeros planos aéreos, identificada por coberturas especializadas como una Dodo con alas completas (a diferencia de la versión de alas recortadas de GTA III y Vice City).\n\nRockstar no ha publicado el nombre del modelo para GTA VI de forma oficial; la identificación se apoya en el diseño altamente reconocible de la aeronave y en la coincidencia de al menos dos coberturas independientes que analizaron la misma escena del tráiler.\n\nNota metodológica: esta ficha se basa en análisis editorial de la escena del tráiler, no en una inspección directa frame-by-frame del archivo de video original por parte de este proyecto. Se documenta con nivel 'respaldado' por prudencia hasta que se pueda corroborar con material primario adicional.",
   "status": "confirmado",
-  "tags": ["aeronave", "avioneta", "trailer-1", "mammoth", "identificacion-visual"],
+  "tags": [
+    "aeronave",
+    "avioneta",
+    "trailer-1",
+    "mammoth",
+    "identificacion-visual"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Mammoth",
   "class": "aeronave-ligera",
   "driven_by": [],
-  "locations": ["leonida-keys"],
+  "locations": [
+    "leonida-keys"
+  ],
   "customizable": false,
   "performance": {
     "speed": "Media",
@@ -24,13 +32,18 @@
     "level": "respaldado",
     "primarySource": "Rockstar Games, GTA VI Trailer 1 (diciembre de 2023), toma aérea temprana sobre la ciudad",
     "secondarySource": "The Manual, análisis editorial de la escena del tráiler; GTA Wiki (Fandom), ficha de continuidad del modelo",
-    "note": "Identificación basada en análisis editorial de la escena, no en revisión frame-by-frame directa del archivo de video por parte de este proyecto. No se encontró nombre oficial publicado por Rockstar para GTA VI específicamente; el nombre proviene de la continuidad histórica de la saga. Se recomienda revisar si aparece material primario adicional (capturas oficiales, sitio web de Rockstar) que permita subir el nivel a 'oficial-visual'. CORRECCION DE UBICACION (13 ago 2026, auditoria forense de vehiculos, bloque located_in): la relacion located_in->vice-city era INCORRECTA. GTA Wiki (gta.fandom.com/wiki/Dodo_(HD_Universe)), fuente wiki especializada consolidada, documenta que la Dodo aparece dos veces en el Trailer 1: en la toma de establecimiento (0:13, remolcando un cartel NINE1NINE, sin ubicacion especifica confirmada) y, por separado, en otra toma aerea (0:34) 'sobrevolando Leonida Keys' (swooping into view above the Leonida Keys). Dado que la entidad 'leonida-keys' SI existe en este grafo, se corrige located_in de 'vice-city' a 'leonida-keys' y se actualiza el campo locations en consecuencia."
+    "note": "Identificación basada en análisis editorial de la escena, no en revisión frame-by-frame directa del archivo de video por parte de este proyecto. No se encontró nombre oficial publicado por Rockstar para GTA VI específicamente; el nombre proviene de la continuidad histórica de la saga. Se recomienda revisar si aparece material primario adicional (capturas oficiales, sitio web de Rockstar) que permita subir el nivel a 'oficial-visual'. CORRECCION DE UBICACION (13 ago 2026, auditoria forense de vehiculos, bloque located_in): la relacion located_in->vice-city era INCORRECTA. GTA Wiki (gta.fandom.com/wiki/Dodo_(HD_Universe)), fuente wiki especializada consolidada, documenta que la Dodo aparece dos veces en el Trailer 1: en la toma de establecimiento (0:13, remolcando un cartel NINE1NINE, sin ubicacion especifica confirmada) y, por separado, en otra toma aerea (0:34) 'sobrevolando Leonida Keys' (swooping into view above the Leonida Keys). Dado que la entidad 'leonida-keys' SI existe en este grafo, se corrige located_in de 'vice-city' a 'leonida-keys' y se actualiza el campo locations en consecuencia. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-1) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
   "relations": [
     {
       "targetType": "ubicaciones",
       "targetSlug": "leonida-keys",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrado en"
     }
   ]
 }

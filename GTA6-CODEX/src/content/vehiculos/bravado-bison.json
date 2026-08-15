@@ -13,7 +13,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Bravado",
   "class": "pickup",
   "driven_by": [],
@@ -31,13 +31,18 @@
     "level": "oficial-visual",
     "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025), secuencia de la autopista y escena homenaje a Fast & Furious",
     "secondarySource": "autoevolution.com y DriveSpark, coberturas independientes que coinciden en la identificación del modelo en distintas escenas",
-    "note": "Saneamiento retroactivo (13 ago 2026, Bloque B2): ficha con status 'confirmado' preexistente sin campo 'evidence'. Se agrega evidencia por coincidencia independiente de dos fuentes especializadas. Rockstar no publicó el nombre 'Bison' para GTA VI; proviene de la continuidad con entregas anteriores de la saga. AUDITORIA (13 ago 2026, bloque located_in): se verifico la escena de la persecucion tipo 'Fast Five' (camioneta arrastrando una caja fuerte) mediante dos fuentes independientes adicionales: The Drive ('we follow Jason as he heads into Vice City... a dual-rear-axle Bison is doing a full Fast Five with a safe') y GTABites ('a truck speeding through Vice City with what looks like a bank vault attached to it'). Ambas ubican la escena explicitamente en Vice City. La relacion located_in->vice-city queda CONFIRMADA con fuentes independientes adicionales. Sin cambios en la relacion."
+    "note": "Saneamiento retroactivo (13 ago 2026, Bloque B2): ficha con status 'confirmado' preexistente sin campo 'evidence'. Se agrega evidencia por coincidencia independiente de dos fuentes especializadas. Rockstar no publicó el nombre 'Bison' para GTA VI; proviene de la continuidad con entregas anteriores de la saga. AUDITORIA (13 ago 2026, bloque located_in): se verifico la escena de la persecucion tipo 'Fast Five' (camioneta arrastrando una caja fuerte) mediante dos fuentes independientes adicionales: The Drive ('we follow Jason as he heads into Vice City... a dual-rear-axle Bison is doing a full Fast Five with a safe') y GTABites ('a truck speeding through Vice City with what looks like a bank vault attached to it'). Ambas ubican la escena explicitamente en Vice City. La relacion located_in->vice-city queda CONFIRMADA con fuentes independientes adicionales. Sin cambios en la relacion. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-2) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
   "relations": [
     {
       "targetType": "ubicaciones",
       "targetSlug": "vice-city",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrado en"
     }
   ]
 }

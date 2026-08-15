@@ -13,7 +13,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Bravado",
   "class": "deportivo",
   "driven_by": [],
@@ -31,13 +31,18 @@
     "level": "oficial-visual",
     "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025), fila de vehículos frente al Dominion Hotel",
     "secondarySource": "PC Gamer y overtake.gg, coberturas independientes que coinciden en la escena y en la identificación del modelo",
-    "note": "Saneamiento retroactivo (13 ago 2026, Bloque B2): ficha con status 'confirmado' preexistente sin campo 'evidence'. Se agrega evidencia por coincidencia independiente de dos fuentes especializadas. El nombre 'Banshee' proviene de la continuidad histórica de la saga; Rockstar no publicó el nombre para GTA VI específicamente. AUDITORIA (13 ago 2026, bloque located_in): se verifico independientemente la ubicacion del Dominion Hotel (escenario de la fila de vehiculos de lujo, Trailer 2) mediante GTA Wiki (gta.fandom.com/wiki/Dominion_Hotel), que lo situa explicitamente en 'Ocean Beach, Vice Beach, Vice-Dale County', es decir, dentro de Vice City. La relacion located_in->vice-city queda CONFIRMADA con fuente independiente adicional a las ya citadas (PC Gamer, overtake.gg). Sin cambios en la relacion."
+    "note": "Saneamiento retroactivo (13 ago 2026, Bloque B2): ficha con status 'confirmado' preexistente sin campo 'evidence'. Se agrega evidencia por coincidencia independiente de dos fuentes especializadas. El nombre 'Banshee' proviene de la continuidad histórica de la saga; Rockstar no publicó el nombre para GTA VI específicamente. AUDITORIA (13 ago 2026, bloque located_in): se verifico independientemente la ubicacion del Dominion Hotel (escenario de la fila de vehiculos de lujo, Trailer 2) mediante GTA Wiki (gta.fandom.com/wiki/Dominion_Hotel), que lo situa explicitamente en 'Ocean Beach, Vice Beach, Vice-Dale County', es decir, dentro de Vice City. La relacion located_in->vice-city queda CONFIRMADA con fuente independiente adicional a las ya citadas (PC Gamer, overtake.gg). Sin cambios en la relacion. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-2) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
   "relations": [
     {
       "targetType": "ubicaciones",
       "targetSlug": "vice-city",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrado en"
     }
   ]
 }

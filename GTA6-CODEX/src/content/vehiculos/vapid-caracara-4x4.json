@@ -14,7 +14,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Vapid",
   "class": "camioneta-todoterreno",
   "driven_by": [],
@@ -32,13 +32,18 @@
     "level": "oficial-visual",
     "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025)",
     "secondarySource": "PC Gamer, DriveSpark y autoevolution.com, coberturas de identificación de vehículos del Trailer 2",
-    "note": "Existencia confirmada en material oficial. El vínculo con Brian Heder proviene de la lectura de PC Gamer sobre la escena, no de un comunicado oficial de Rockstar; se documenta como identificación respaldada, no como canon confirmado. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada no describe una escena o region especifica; el campo 'locations' se conserva como metadato aproximado, no como afirmacion demostrada del grafo."
+    "note": "Existencia confirmada en material oficial. El vínculo con Brian Heder proviene de la lectura de PC Gamer sobre la escena, no de un comunicado oficial de Rockstar; se documenta como identificación respaldada, no como canon confirmado. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada no describe una escena o region especifica; el campo 'locations' se conserva como metadato aproximado, no como afirmacion demostrada del grafo. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-2) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
   "relations": [
     {
       "targetType": "personajes",
       "targetSlug": "brian-heder",
       "relation": "associated_with"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrado en"
     }
   ]
 }

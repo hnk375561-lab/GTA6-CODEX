@@ -13,7 +13,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Maibatsu",
   "class": "cupe",
   "driven_by": [],
@@ -31,13 +31,18 @@
     "level": "oficial-visual",
     "primarySource": "Rockstar Games, GTA VI Trailer 2 (mayo de 2025), escena del regreso de Jason a su antiguo barrio",
     "secondarySource": "autoevolution.com y DriveSpark, coberturas de identificación de vehículos del Trailer 2",
-    "note": "Existencia y aparición en material oficial confirmadas; el nombre 'Penumbra' proviene de la comparación visual con el modelo homónimo de entregas previas de la saga, no de una publicación oficial de Rockstar para GTA VI. AUDITORIA (13 ago 2026, bloque located_in): se verifico la escena (Jason conduce y una vecina lo saluda, Trailer 2) mediante GameSpot y GTA6Bible, que la ubican temprano en la secuencia de Trailer 2, antes de que Jason pase carteles de ruta hacia Ambrosia, Downtown, VCI Airport y Southside -- es decir, en el area general de Vice City/Leonida donde vive Jason, sin contradecir la ubicacion Vice City. No se encontro evidencia independiente que apunte a una region distinta. Se mantiene la relacion located_in->vice-city sin cambios, con nivel 'respaldado' por falta de un distrito especifico confirmado."
+    "note": "Existencia y aparición en material oficial confirmadas; el nombre 'Penumbra' proviene de la comparación visual con el modelo homónimo de entregas previas de la saga, no de una publicación oficial de Rockstar para GTA VI. AUDITORIA (13 ago 2026, bloque located_in): se verifico la escena (Jason conduce y una vecina lo saluda, Trailer 2) mediante GameSpot y GTA6Bible, que la ubican temprano en la secuencia de Trailer 2, antes de que Jason pase carteles de ruta hacia Ambrosia, Downtown, VCI Airport y Southside -- es decir, en el area general de Vice City/Leonida donde vive Jason, sin contradecir la ubicacion Vice City. No se encontro evidencia independiente que apunte a una region distinta. Se mantiene la relacion located_in->vice-city sin cambios, con nivel 'respaldado' por falta de un distrito especifico confirmado. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-2) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
   "relations": [
     {
       "targetType": "ubicaciones",
       "targetSlug": "vice-city",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrado en"
     }
   ]
 }

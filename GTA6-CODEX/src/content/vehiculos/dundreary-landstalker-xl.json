@@ -5,14 +5,21 @@
   "description": "SUV de gran tamaño identificada visualmente en el Trailer 2, con un diseño que recuerda al Lincoln Navigator de cuarta generación.",
   "content": "En el Trailer 2 de GTA 6 aparece una SUV de gran tamaño cuya carrocería fue identificada por coberturas especializadas (autoevolution, DriveSpark) como una variante 'XL' de la Dundreary Landstalker, línea presente en entregas anteriores de la saga.\n\nEl diseño combina rasgos del Lincoln Navigator de cuarta generación con detalles que también recuerdan al Chevrolet Tahoe y al Chevrolet Suburban, según el análisis de estas coberturas.\n\nRockstar no ha confirmado oficialmente el nombre de este vehículo para GTA VI; la identificación se basa en la comparación visual con la línea Landstalker de la saga.",
   "status": "confirmado",
-  "tags": ["suv", "trailer-2", "dundreary", "identificacion-visual"],
+  "tags": [
+    "suv",
+    "trailer-2",
+    "dundreary",
+    "identificacion-visual"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Dundreary",
   "class": "suv",
   "driven_by": [],
-  "locations": ["vice-city"],
+  "locations": [
+    "vice-city"
+  ],
   "customizable": true,
   "performance": {
     "speed": "Media",
@@ -24,13 +31,18 @@
     "level": "oficial-visual",
     "primarySource": "Rockstar Games, GTA VI Trailer 1 (diciembre de 2023), estacionada en Shore Drive (Vice Beach), y más adelante circulando por una autopista de Vice City (min. 1:03); también identificada en la secuencia de autopista del Trailer 2 (mayo de 2025)",
     "secondarySource": "GTA Wiki (Fandom) y su espejo gta.wiki, que documentan de forma independiente ambas escenas del Trailer 1 (estacionada en Shore Drive junto a un Coquette D10, y circulando por una autopista de Vice City); GTA BOOM corrobora independientemente la escena de Shore Drive ('parked on a busy street in Vice City'); autoevolution.com y DriveSpark documentan además su aparición en la secuencia de autopista del Trailer 2",
-    "note": "Existencia confirmada en material oficial; el nombre 'Landstalker XL' proviene de la comparación visual con la línea homónima de la saga, no de una publicación oficial de Rockstar para GTA VI. AMPLIACION DE EVIDENCIA (13 ago 2026, auditoria forense Bloque 1 - located_in restantes): la escena citada originalmente ('autopista con múltiples vehículos' del Trailer 2) no especificaba región. Se localizaron dos escenas adicionales del Trailer 1 con ubicación explícita y corroboración cruzada independiente (GTA Wiki + GTA BOOM): estacionada en Shore Drive, en el distrito de Vice Beach (parte del área metropolitana de Vice City), y circulando por una autopista dentro de Vice City. Esto refuerza located_in->vice-city con evidencia mucho más específica que la escena de autopista genérica original."
+    "note": "Existencia confirmada en material oficial; el nombre 'Landstalker XL' proviene de la comparación visual con la línea homónima de la saga, no de una publicación oficial de Rockstar para GTA VI. AMPLIACION DE EVIDENCIA (13 ago 2026, auditoria forense Bloque 1 - located_in restantes): la escena citada originalmente ('autopista con múltiples vehículos' del Trailer 2) no especificaba región. Se localizaron dos escenas adicionales del Trailer 1 con ubicación explícita y corroboración cruzada independiente (GTA Wiki + GTA BOOM): estacionada en Shore Drive, en el distrito de Vice Beach (parte del área metropolitana de Vice City), y circulando por una autopista dentro de Vice City. Esto refuerza located_in->vice-city con evidencia mucho más específica que la escena de autopista genérica original. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-2) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
   "relations": [
     {
       "targetType": "ubicaciones",
       "targetSlug": "vice-city",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "mostrado en"
     }
   ]
 }

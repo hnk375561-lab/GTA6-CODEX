@@ -29,7 +29,13 @@
     "level": "oficial-visual-multifuente",
     "primarySource": "Rockstar Games, Trailer 1, visible en el fondo de la escena del Thrillbilly Mud Club",
     "secondarySource": "GTA Wiki (gta.fandom.com/wiki/Verus), que confirma su aparición en el Trailer 1, y gta6intel.com, que identifica de forma independiente la escena específica (fondo del plano del Thrillbilly Mud Club) sin depender de GTA Wiki para ese detalle",
-    "note": "DESCUBRIMIENTO (14 ago 2026, ronda 7): candidato nuevo, corroborado por dos fuentes independientes. GTA Wiki confirma la aparición en el Trailer 1 sin desglosar la escena; gta6intel.com aporta el detalle específico (Thrillbilly Mud Club) de forma independiente, lo que se toma como corroboración suficiente para nivel oficial-visual-multifuente."
+    "note": "DESCUBRIMIENTO (14 ago 2026, ronda 7): candidato nuevo, corroborado por dos fuentes independientes. GTA Wiki confirma la aparición en el Trailer 1 sin desglosar la escena; gta6intel.com aporta el detalle específico (Thrillbilly Mud Club) de forma independiente, lo que se toma como corroboración suficiente para nivel oficial-visual-multifuente. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-1) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
-  "relations": []
+  "relations": [
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrado en"
+    }
+  ]
 }

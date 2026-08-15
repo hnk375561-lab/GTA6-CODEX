@@ -14,7 +14,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z",
   "manufacturer": "Vapid",
   "class": "todoterreno",
   "driven_by": [],
@@ -32,7 +32,13 @@
     "level": "respaldado",
     "primarySource": "Rockstar Games, GTA VI Trailer 1 (diciembre de 2023), escena junto a una estación de servicio",
     "secondarySource": "Coberturas comunitarias especializadas (gta-fandom.com y gta6intel.com) que coinciden de forma independiente en la escena; The Drive menciona en la misma cobertura del Trailer 2 'un Sandking antiguo o similar' con reservas, sin confirmar el modelo exacto",
-    "note": "Auditoría y reemplazo de placeholder (13 ago 2026, Bloque B2 extendido): se elimina la ficha especulativa 'Sandking' (status 'nuestro', sin evidencia) y se documenta en su lugar el Sandking XL con una escena concreta. Se clasifica como 'respaldado' y no 'oficial-visual' porque las fuentes que describen la escena con precisión son de tipo wiki/comunitario, no periodístico especializado de primer nivel; la única mención en prensa especializada (The Drive) es dubitativa sobre el modelo exacto. CORRECCION DE UBICACION (13 ago 2026, auditoria forense de vehiculos): la relacion located_in->vice-city era INCORRECTA. Dos fuentes independientes (GTA BOOM en dos articulos distintos) identifican la escena especifica como 'driving through a police scene in Leonard County, Leonida', no Vice City. Se elimina la relacion formal located_in y se retira 'vice-city' del campo locations. Leonard County no existe todavia como entidad ubicaciones en este grafo, por lo que NO se crea una relacion formal hacia un slug inexistente; se documenta como metadato de texto libre pendiente de que se cree la entidad correspondiente."
+    "note": "Auditoría y reemplazo de placeholder (13 ago 2026, Bloque B2 extendido): se elimina la ficha especulativa 'Sandking' (status 'nuestro', sin evidencia) y se documenta en su lugar el Sandking XL con una escena concreta. Se clasifica como 'respaldado' y no 'oficial-visual' porque las fuentes que describen la escena con precisión son de tipo wiki/comunitario, no periodístico especializado de primer nivel; la única mención en prensa especializada (The Drive) es dubitativa sobre el modelo exacto. CORRECCION DE UBICACION (13 ago 2026, auditoria forense de vehiculos): la relacion located_in->vice-city era INCORRECTA. Dos fuentes independientes (GTA BOOM en dos articulos distintos) identifican la escena especifica como 'driving through a police scene in Leonard County, Leonida', no Vice City. Se elimina la relacion formal located_in y se retira 'vice-city' del campo locations. Leonard County no existe todavia como entidad ubicaciones en este grafo, por lo que NO se crea una relacion formal hacia un slug inexistente; se documenta como metadato de texto libre pendiente de que se cree la entidad correspondiente. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-1) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
   },
-  "relations": []
+  "relations": [
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrado en"
+    }
+  ]
 }
