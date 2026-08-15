@@ -32,7 +32,7 @@ export function MediaCarousel({ title, assets }: MediaCarouselProps) {
         <h3 className="text-sm font-semibold uppercase tracking-wide text-gta-text-secondary">{title}</h3>
       </CardHeader>
       <CardBody className="!py-0">
-        <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 pt-4 -mx-1 px-1">
+        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 pt-4 -mx-1 px-1">
           {renderable.map(({ asset, rendered }) => {
             const content =
               rendered.renderAs === 'youtube' ? (
@@ -40,13 +40,13 @@ export function MediaCarousel({ title, assets }: MediaCarouselProps) {
               ) : rendered.renderAs === 'video' ? (
                 <VideoEmbed videoSrc={rendered.videoSrc!} title={rendered.title} />
               ) : (
-                <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-gta-darker">
+                <div className="group relative aspect-video w-full overflow-hidden rounded-lg bg-gta-darker">
                   <Image
                     src={rendered.thumbnailSrc}
                     alt={rendered.title}
                     fill
                     sizes="240px"
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   />
                 </div>
               )
@@ -59,9 +59,9 @@ export function MediaCarousel({ title, assets }: MediaCarouselProps) {
                   : undefined
 
             const body = (
-              <div className="w-56 flex-shrink-0 snap-start">
-                {content}
-                <p className="mt-2 truncate text-sm font-medium text-gta-text">{rendered.title}</p>
+              <div className="media-carousel-item w-56 flex-shrink-0 snap-start">
+                <div className="media-carousel-item-frame overflow-hidden">{content}</div>
+                <p className="mt-2.5 truncate text-sm font-medium text-gta-text">{rendered.title}</p>
                 {asset.credit && <p className="truncate text-xs text-gta-text-tertiary">{asset.credit}</p>}
               </div>
             )

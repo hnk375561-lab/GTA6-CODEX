@@ -197,7 +197,29 @@ export function EntityListExplorer({ type, entities, typeLabel }: EntityListExpl
               <Link href={`/${type}/${entity.slug}`} className="group block h-full">
                 <Card hoverable className={cn('h-full overflow-hidden', hasImages && '!p-0')}>
                   {hasImages && (
-                    <EntityImage entity={entity} variant="thumbnail" className="rounded-none border-x-0 border-t-0" />
+                    <div className="relative">
+                      <EntityImage entity={entity} variant="thumbnail" className="rounded-none border-x-0 border-t-0" />
+                      {type === EntityTypeEnum.TRAILER && 'scenes' in entity && (
+                        <div className="trailer-card-overlay">
+                          <span className="trailer-card-overlay-chip">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                              <rect x="3.5" y="5.5" width="17" height="13" rx="1.6" />
+                              <path d="M9.7 9.3v5.4l4.6-2.7-4.6-2.7Z" />
+                            </svg>
+                            {(entity as Trailer).scenes.length} escenas
+                          </span>
+                          {formatTrailerDuration((entity as Trailer).durationSeconds) && (
+                            <span className="trailer-card-overlay-chip">
+                              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="8.5" />
+                                <path d="M12 7v5l3.2 2" />
+                              </svg>
+                              {formatTrailerDuration((entity as Trailer).durationSeconds)}
+                            </span>
+                          )}
+                        </div>
+                      )}
+                    </div>
                   )}
                   <CardBody className={hasImages ? 'p-6' : undefined}>
                     <div className="mb-3 flex items-center justify-between gap-2">

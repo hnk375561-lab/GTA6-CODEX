@@ -19,7 +19,19 @@ export function TrailerPlayer({ trailer }: TrailerPlayerProps) {
 
   if (!asset) {
     return (
-      <Card>
+      <Card className="overflow-hidden !p-0">
+        <div className="card-media relative aspect-video w-full overflow-hidden bg-gta-dark">
+          <div className="card-media-fallback absolute inset-0 flex flex-col items-center justify-center gap-3">
+            <div className="card-media-fallback-sweep" aria-hidden="true" />
+            <svg viewBox="0 0 48 48" className="relative h-12 w-12 stroke-gta-accent/50" fill="none" strokeWidth="1.5" aria-hidden="true">
+              <rect x="5" y="10" width="38" height="28" rx="3" />
+              <path d="M20 18l11 6-11 6z" />
+            </svg>
+            <span className="relative text-[11px] font-medium uppercase tracking-wider text-gta-text-secondary/70">
+              Sin video oficial verificado
+            </span>
+          </div>
+        </div>
         <CardBody>
           <p className="text-gta-text-secondary">
             Todavía no hay un video oficial reconocible para este trailer.

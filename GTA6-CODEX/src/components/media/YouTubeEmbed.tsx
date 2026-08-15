@@ -29,7 +29,7 @@ export function YouTubeEmbed({ embedId, title, thumbnailSrc, autoLoad = false, c
     return (
       <div className={cn('relative aspect-video w-full overflow-hidden rounded-xl bg-black', className)}>
         <iframe
-          className="absolute inset-0 h-full w-full"
+          className="media-embed-fade-in absolute inset-0 h-full w-full"
           src={`https://www.youtube-nocookie.com/embed/${embedId}?autoplay=1&rel=0`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -54,10 +54,10 @@ export function YouTubeEmbed({ embedId, title, thumbnailSrc, autoLoad = false, c
         alt={title}
         fill
         sizes="(min-width: 768px) 60vw, 100vw"
-        className="object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+        className="object-cover opacity-80 transition-all duration-300 group-hover:scale-105 group-hover:opacity-100"
       />
       <span className="absolute inset-0 flex items-center justify-center bg-gta-dark/30 transition-colors group-hover:bg-gta-dark/10">
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gta-accent/90 shadow-gta-lg transition-transform duration-200 group-hover:scale-110">
+        <span className="media-play-button flex h-16 w-16 items-center justify-center rounded-full bg-gta-accent/90 shadow-gta-lg transition-transform duration-200 group-hover:scale-110">
           <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7 fill-white">
             <path d="M8 5v14l11-7z" />
           </svg>

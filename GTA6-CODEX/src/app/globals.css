@@ -510,7 +510,7 @@ a:hover .logo-mark {
 .group:hover .card-media-image,
 .group:focus-visible .card-media-image {
   transform: scale(1.09);
-  filter: brightness(1.08) saturate(1.12);
+  filter: brightness(1.14) saturate(1.22) contrast(1.04);
   animation-play-state: paused;
 }
 
@@ -567,15 +567,20 @@ a:hover .logo-mark {
 .card-media-vignette {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(5, 3, 8, 0) 55%, rgba(5, 3, 8, 0.5) 100%);
-  opacity: 0.7;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 3, 8, 0) 42%,
+    rgba(5, 3, 8, 0.22) 68%,
+    rgba(5, 3, 8, 0.58) 100%
+  ), radial-gradient(ellipse 120% 60% at 50% 0%, rgba(5, 3, 8, 0.3), transparent 55%);
+  opacity: 0.75;
   transition: opacity var(--transition-base);
   pointer-events: none;
 }
 
 .group:hover .card-media-vignette,
 .group:focus-visible .card-media-vignette {
-  opacity: 0.4;
+  opacity: 0.45;
 }
 
 /* --- Fallback: sin imagen real todavía --- */
@@ -1027,14 +1032,22 @@ a:hover .logo-mark {
   left: 1.1rem;
   top: 0.4rem;
   bottom: 0.4rem;
-  width: 1px;
-  background: linear-gradient(180deg, var(--c-pink) 0%, rgba(255, 47, 143, 0.15) 60%, transparent 100%);
-  opacity: 0.35;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--c-cyan) 0%,
+    var(--c-pink) 22%,
+    rgba(255, 47, 143, 0.25) 70%,
+    transparent 100%
+  );
+  border-radius: 9999px;
+  opacity: 0.45;
+  box-shadow: 0 0 12px 0 rgba(255, 47, 143, 0.25);
 }
 
 .scene-timeline-marker {
   position: absolute;
-  left: 0;
+  left: -0.5px;
   top: 0;
   display: flex;
   height: 2.25rem;
@@ -1042,9 +1055,17 @@ a:hover .logo-mark {
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 47, 143, 0.3);
-  background: linear-gradient(135deg, rgba(255, 47, 143, 0.16), rgba(34, 211, 238, 0.06));
-  box-shadow: 0 0 0 4px #0a0712;
+  border: 1px solid rgba(255, 47, 143, 0.35);
+  background: linear-gradient(135deg, rgba(255, 47, 143, 0.2), rgba(34, 211, 238, 0.08));
+  box-shadow: 0 0 0 4px #0a0712, 0 0 18px -4px rgba(255, 47, 143, 0.55);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.scene-timeline-item:hover .scene-timeline-marker,
+.scene-timeline-item:focus-within .scene-timeline-marker {
+  border-color: rgba(255, 47, 143, 0.75);
+  box-shadow: 0 0 0 4px #0a0712, 0 0 26px -2px rgba(255, 47, 143, 0.75);
+  transform: scale(1.06);
 }
 
 .scene-timeline-marker-index {
@@ -1058,6 +1079,13 @@ a:hover .logo-mark {
   border-radius: 0.25rem;
   background: linear-gradient(120deg, var(--c-cyan), var(--c-pink-soft));
   padding: 0.15rem 0.5rem;
+  box-shadow: 0 2px 10px -4px rgba(34, 211, 238, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-timeline-marker {
+    transition: none !important;
+  }
 }
 
 /* ============================================================
@@ -1310,6 +1338,136 @@ a:hover .logo-mark {
 /* --- Barra de estadísticas del trailer (TrailerStats) --- */
 .trailer-stats-bar dt {
   opacity: 0.85;
+}
+
+/* ============================================================
+   Media Carousel — item hover feedback (MediaCarousel)
+   ============================================================ */
+.media-carousel-item {
+  border-radius: 0.75rem;
+  transition: transform var(--transition-base);
+}
+
+.media-carousel-item:hover,
+.media-carousel-item:focus-within {
+  transform: translateY(-3px);
+}
+
+.media-carousel-item-frame {
+  position: relative;
+  border-radius: 0.75rem;
+  transition: box-shadow var(--transition-base);
+}
+
+.media-carousel-item:hover .media-carousel-item-frame,
+.media-carousel-item:focus-within .media-carousel-item-frame {
+  box-shadow: 0 14px 30px -16px rgba(0, 0, 0, 0.75), 0 0 26px -10px rgba(34, 211, 238, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-carousel-item,
+  .media-carousel-item-frame {
+    transition: none !important;
+  }
+
+  .media-carousel-item:hover {
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   Reproductores (VideoEmbed / YouTubeEmbed) — botón play + carga
+   ============================================================ */
+.media-play-button {
+  position: relative;
+}
+
+.media-play-button::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--c-pink) 55%, transparent);
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  pointer-events: none;
+}
+
+.group:hover .media-play-button::after,
+.group:focus-visible .media-play-button::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes media-embed-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.media-embed-fade-in {
+  animation: media-embed-in var(--dur-slow) var(--ease-premium) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-play-button::after {
+    transition: none !important;
+  }
+
+  .media-embed-fade-in {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   Trailer card — overlay de metadata sobre la miniatura
+   (EntityListExplorer, listado de tipo "trailer")
+   ============================================================ */
+.trailer-card-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0 0.75rem 0.6rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  pointer-events: none;
+}
+
+.group:hover .trailer-card-overlay,
+.group:focus-visible .trailer-card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.trailer-card-overlay-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: 9999px;
+  padding: 0.2rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--gta-text, #f5eff9);
+  background: color-mix(in srgb, #050308 62%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid color-mix(in srgb, var(--c-pink) 35%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trailer-card-overlay {
+    transition: none !important;
+  }
 }
 
 /* Utilities */

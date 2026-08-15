@@ -49,7 +49,7 @@ export function VideoEmbed({ videoSrc, title, ambient = false, className }: Vide
     return (
       <div className={cn('relative aspect-video w-full overflow-hidden rounded-xl bg-black', className)}>
         <video
-          className="absolute inset-0 h-full w-full"
+          className="media-embed-fade-in absolute inset-0 h-full w-full"
           src={videoSrc}
           title={title}
           preload="metadata"
@@ -79,7 +79,7 @@ export function VideoEmbed({ videoSrc, title, ambient = false, className }: Vide
           tarjetas de clips arranquen la descarga a la vez al cargar la
           página — es no crear el elemento hasta que el usuario interactúa. */}
       <span className="absolute inset-0 flex items-center justify-center bg-gta-dark/30 transition-colors group-hover:bg-gta-dark/10">
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gta-accent/90 shadow-gta-lg transition-transform duration-200 group-hover:scale-110">
+        <span className="media-play-button flex h-16 w-16 items-center justify-center rounded-full bg-gta-accent/90 shadow-gta-lg transition-transform duration-200 group-hover:scale-110">
           <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7 fill-white">
             <path d="M8 5v14l11-7z" />
           </svg>
