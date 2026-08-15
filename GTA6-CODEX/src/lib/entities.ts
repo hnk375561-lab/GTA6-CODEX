@@ -1,21 +1,42 @@
 import fs from 'fs'
 import path from 'path'
 import { Entity, EntityType, BaseEntity } from '@/types'
-import { safeParseTrailer } from '@/types/schemas'
+import {
+  safeParseEntity,
+  safeParseTrailer,
+  safeParseCharacter,
+  safeParseVehicle,
+  safeParseLocation,
+  safeParseMission,
+} from '@/types/schemas'
 
 /**
  * Validación adicional específica de tipo, para entidades cuyo contrato
- * va más allá de BaseEntity (ej. Trailer requiere `scenes`). Se ejecuta
- * después de `validateEntity` (que ya garantiza el contrato base) y solo
- * agrega chequeos extra; nunca afloja lo que `validateEntity` ya exige.
+ * va más allá de BaseEntity (ej. Trailer requiere `scenes`; Vehicle tiene
+ * `performance` con forma propia). Se ejecuta después de `validateEntity`
+ * (que ya garantiza el contrato base) y solo agrega chequeos extra; nunca
+ * afloja lo que `validateEntity` ya exige. Los 7 `GenericEntity` (armas,
+ * actividades, organizaciones, negocios, objetos, noticias, guias) no
+ * tienen caso acá a propósito: ya quedan cubiertos por `validateEntity`
+ * (BaseEntitySchema) y su contrato es intencionalmente abierto.
  */
 function validateTypeSpecific(type: EntityType, entity: unknown, contextLabel: string): boolean {
-  if (type === EntityType.TRAILER) {
-    const result = safeParseTrailer(entity)
-    if (!result.success) {
-      console.warn(`[entities] Trailer inválido en ${contextLabel}: ${result.error.message}`)
-      return false
-    }
+  const result =
+    type === EntityType.TRAILER
+      ? safeParseTrailer(entity)
+      : type === EntityType.CHARACTER
+        ? safeParseCharacter(entity)
+        : type === EntityType.VEHICLE
+          ? safeParseVehicle(entity)
+          : type === EntityType.LOCATION
+            ? safeParseLocation(entity)
+            : type === EntityType.MISSION
+              ? safeParseMission(entity)
+              : null
+
+  if (result && !result.success) {
+    console.warn(`[entities] Entidad inválida (${type}) en ${contextLabel}: ${result.error.message}`)
+    return false
   }
   return true
 }
@@ -95,11 +116,24 @@ function loadEntitiesByTypeSync(type: EntityType): Entity[] {
         continue
       }
 
+      // BLOQUEANTE (antes solo advertía y seguía): `getEntitySlugs()` /
+      // `generateStaticParams()` usan `parsed.slug` para construir la ruta
+      // estática, mientras que `getEntity()` busca el archivo por
+      // `${slug}.json`. Si no coinciden, se genera una ruta que en
+      // producción resuelve en 404 silencioso. Se excluye la entidad del
+      // build (mismo patrón que una entidad inválida) en vez de dejarla
+      // pasar con una ruta rota; no se aborta el build completo, para no
+      // reintroducir el problema ya corregido de que un solo archivo mal
+      // formado tire abajo `next build` entero (ver comentario de
+      // `validateEntity` más abajo).
       const expectedSlug = file.replace(/\.json$/, '')
       if (parsed.slug !== expectedSlug) {
-        console.warn(
-          `[entities] Slug "${parsed.slug}" no coincide con nombre de archivo "${file}" en ${type}`
+        console.error(
+          `[entities] Entidad excluida (slug/archivo no coinciden): slug "${parsed.slug}" ` +
+            `no coincide con el nombre de archivo "${file}" en ${type}. Renombrá el archivo a ` +
+            `"${parsed.slug}.json" o corregí el campo "slug" para que coincida con "${expectedSlug}".`
         )
+        continue
       }
 
       entities.push(parsed as Entity)
@@ -157,7 +191,20 @@ export async function getEntity(type: EntityType, slug: string): Promise<Entity 
       const raw = fs.readFileSync(filePath, 'utf-8')
       const parsed = JSON.parse(raw)
       if (validateEntity(parsed) && validateTypeSpecific(type, parsed, `${type}/${slug}.json`)) {
-        result = parsed as Entity
+        // Mismo chequeo bloqueante que `loadEntitiesByTypeSync`: este path
+        // se toma en acceso directo por slug (fuera de `generateStaticParams`,
+        // ej. request dinámico), así que necesita la misma garantía —si no,
+        // una entidad con slug interno desincronizado del nombre de archivo
+        // podía servirse igual bajo la URL del archivo, con canonical/JSON-LD
+        // apuntando a un slug distinto al de la URL real.
+        if (parsed.slug !== slug) {
+          console.error(
+            `[entities] Entidad excluida (slug/archivo no coinciden): slug "${parsed.slug}" ` +
+              `no coincide con el nombre de archivo "${slug}.json" en ${type}.`
+          )
+        } else {
+          result = parsed as Entity
+        }
       }
     } catch (err) {
       console.warn(`[entities] Error leyendo ${type}/${slug}.json:`, err)
@@ -220,41 +267,18 @@ export async function getEntityCountsByType(): Promise<Record<EntityType, number
 }
 
 /**
- * Valida que una entidad cumpla el contrato base
+ * Valida que una entidad cumpla el contrato base.
+ *
+ * Delegado íntegramente en `BaseEntitySchema` (Zod, `src/types/schemas.ts`)
+ * en vez de reimplementar los mismos chequeos a mano: antes existían dos
+ * validadores en paralelo (este, usado en la práctica, y `safeParseEntity`/
+ * `BaseEntitySchema`, definidos pero nunca invocados desde ningún caller
+ * real), con el riesgo de que evolucionaran distinto sin que nadie lo
+ * notara. Se mantiene la firma pública (`entity is BaseEntity`, boolean)
+ * para no tocar a ningún caller existente.
  */
 export function validateEntity(entity: unknown): entity is BaseEntity {
-  if (!entity || typeof entity !== 'object') return false
-
-  const e = entity as Record<string, unknown>
-
-  // Campos obligatorios
-  if (!e.slug || typeof e.slug !== 'string') return false
-  if (!e.type || typeof e.type !== 'string') return false
-  if (!e.title || typeof e.title !== 'string') return false
-  if (!e.description || typeof e.description !== 'string') return false
-  if (!e.status || typeof e.status !== 'string') return false
-  if (!e.createdAt || typeof e.createdAt !== 'string') return false
-  if (!e.updatedAt || typeof e.updatedAt !== 'string') return false
-
-  // createdAt/updatedAt deben ser fechas parseables, no solo strings.
-  // sitemap.ts (y generateEntityJsonLd en seo.ts) construyen new Date(...) a
-  // partir de estos campos; un string no parseable produce un Invalid Date
-  // cuyo .toISOString() TIRA (RangeError: Invalid time value) en vez de
-  // fallar silenciosamente. Como sitemap.xml se prerenderiza en build time,
-  // una sola entidad con una fecha malformada tira ABAJO TODO `next build`
-  // (reproducido y confirmado), no solo esa entidad. Se valida acá, en el
-  // mismo lugar donde ya se rechazan otras entidades con forma inválida.
-  if (isNaN(new Date(e.createdAt as string).getTime())) return false
-  if (isNaN(new Date(e.updatedAt as string).getTime())) return false
-
-  // Validar que status sea uno de los valores permitidos
-  if (!['confirmado', 'rumor', 'nuestro'].includes(e.status as string)) return false
-
-  // Validar que type sea uno de los EntityType válidos
-  const validTypes = Object.values(EntityType)
-  if (!validTypes.includes(e.type as EntityType)) return false
-
-  return true
+  return safeParseEntity(entity).success
 }
 
 /**
