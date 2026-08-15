@@ -12,7 +12,7 @@ export function generateEntityMetadata(entity: Entity): Metadata {
   const title = entity.seoTitle || entity.title
   const description = entity.seoDescription || entity.description
   const url = `${SITE_URL}/${entity.type}/${entity.slug}`
-  const image = `${SITE_URL}/og-image.png` // Placeholder, personalizar después
+  const image = `${SITE_URL}/og-image.png`
 
   return {
     title: `${title} | ${SITE_NAME}`,
