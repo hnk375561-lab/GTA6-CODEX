@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { Entity, EntityType } from '@/types'
 import entityImageCategorySlugs from '@/config/entity-image-categories.json'
+import { getEntitiesByTypeSync } from './entities'
 
 /**
  * SISTEMA DE RESOLUCIÓN DE IMÁGENES POR CONVENCIÓN
@@ -101,6 +102,22 @@ export function resolveEntityImage(entity: Entity): ResolvedEntityImage | null {
  */
 export function countEntitiesWithImage(entities: Entity[]): number {
   return entities.filter((e) => resolveEntityImage(e) !== null).length
+}
+
+/**
+ * Imagen de portada para una card de CATEGORÍA (home → "Explorá por
+ * sección"): la primera imagen local resuelta entre las entidades de ese
+ * tipo, en el mismo orden en que ya vienen listadas (no hay ranking
+ * propio — es una vista previa, no un "destacado" editorial). Devuelve
+ * null si ninguna entidad del tipo tiene imagen local todavía, y el
+ * caller cae a un fondo 100% CSS (mismo criterio que `EntityImage`).
+ */
+export function getCategoryPreviewImage(type: EntityType): ResolvedEntityImage | null {
+  for (const entity of getEntitiesByTypeSync(type)) {
+    const resolved = resolveEntityImage(entity)
+    if (resolved) return resolved
+  }
+  return null
 }
 
 /**

@@ -1,6 +1,7 @@
 import Image from 'next/image'
-import { Entity, EntityType } from '@/types'
+import { Entity, EntityType, Trailer } from '@/types'
 import { resolveEntityImage } from '@/lib/images'
+import { resolveTrailerThumbnail } from '@/lib/media'
 import { GridPattern } from '@/components/ui/GridPattern'
 import { cn } from '@/lib/utils'
 
@@ -100,31 +101,71 @@ const CATEGORY_FALLBACK_LABEL: Partial<Record<EntityType, string>> = {
   [EntityType.TRAILER]: 'Sin miniatura verificada',
 }
 
+/**
+ * Resuelve la imagen a usar para esta entidad, en orden:
+ *  1) archivo local por convención (`resolveEntityImage`, ver lib/images.ts);
+ *  2) para trailers sin key art propia: miniatura pública de YouTube
+ *     (`resolveTrailerThumbnail`, mismo host que ya usa el embed);
+ *  3) null → el caller pinta el fallback 100% CSS (nunca un hueco vacío).
+ */
+function resolveDisplayImage(entity: Entity): { src: string; alt: string; remote: boolean } | null {
+  const local = resolveEntityImage(entity)
+  if (local) return { src: local.src, alt: local.alt, remote: false }
+
+  if (entity.type === EntityType.TRAILER) {
+    const remote = resolveTrailerThumbnail(entity as Trailer)
+    if (remote) return { ...remote, remote: true }
+  }
+
+  return null
+}
+
 export function EntityImage({ entity, variant = 'thumbnail', className }: EntityImageProps) {
-  const resolved = resolveEntityImage(entity)
+  const resolved = resolveDisplayImage(entity)
   const isAvatar = variant === 'avatar'
 
   return (
     <div
       className={cn(
-        'relative shrink-0 overflow-hidden rounded-lg border border-gta-border bg-gta-dark',
-        isAvatar && 'rounded-md',
+        'card-media relative shrink-0 overflow-hidden rounded-lg border border-gta-border bg-gta-dark',
+        isAvatar && 'card-media--avatar rounded-md',
         ASPECT[variant],
         className
       )}
     >
       {resolved ? (
-        <Image
-          src={resolved.src}
-          alt={resolved.alt}
-          fill
-          sizes={SIZES[variant]}
-          className="object-cover"
-        />
+        <>
+          {resolved.remote ? (
+            // Miniatura de YouTube (img.youtube.com): dominio externo no
+            // configurado en next.config.js `images` a propósito (el resto
+            // del sitio nunca hotlinkea assets externos), mismo criterio
+            // que ya usa GalleryExplorer para las piezas de video.
+            // eslint-disable-next-line @next/next/no-img-element -- ver comentario arriba
+            <img
+              src={resolved.src}
+              alt={resolved.alt}
+              loading="lazy"
+              className="card-media-image absolute inset-0 h-full w-full object-cover"
+            />
+          ) : (
+            <Image
+              src={resolved.src}
+              alt={resolved.alt}
+              fill
+              sizes={SIZES[variant]}
+              className="card-media-image object-cover"
+            />
+          )}
+          {!isAvatar && <div className="card-media-sheen" aria-hidden="true" />}
+          {!isAvatar && <div className="card-media-vignette" aria-hidden="true" />}
+        </>
       ) : (
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+        <div className="card-media-fallback absolute inset-0 flex flex-col items-center justify-center gap-2">
+          {!isAvatar && <div className="card-media-fallback-sweep" aria-hidden="true" />}
           {!isAvatar && <GridPattern width={20} height={20} className="opacity-40" />}
-          <CategoryGlyph type={entity.type} size={isAvatar ? 'sm' : 'default'} />
+          <div className="card-media-fallback-glyph">
+            <CategoryGlyph type={entity.type} size={isAvatar ? 'sm' : 'default'} />
+          </div>
           {!isAvatar && (
             <span className="relative text-[10px] font-medium uppercase tracking-wider text-gta-text-secondary/70">
               {CATEGORY_FALLBACK_LABEL[entity.type] ?? 'Sin imagen verificada'}

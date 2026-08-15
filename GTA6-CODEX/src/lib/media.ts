@@ -37,6 +37,24 @@ function extractYouTubeId(url?: string): string | null {
   return match ? match[1] : null
 }
 
+/**
+ * Miniatura de un trailer para usarla como imagen de card (EntityImage).
+ * Los trailers no tienen archivo local en `public/images/entities/trailers/`
+ * (no hay key art propia todavía) — en vez de dejar la card sin imagen,
+ * se reutiliza la miniatura pública de YouTube (mismo host que ya usa
+ * `resolveMediaRender`/`GalleryExplorer` para el embed: `img.youtube.com`,
+ * no se aloja el archivo en el repo). Devuelve null si el trailer no tiene
+ * una URL de YouTube reconocible, y el caller cae al fallback genérico.
+ */
+export function resolveTrailerThumbnail(trailer: Trailer): { src: string; alt: string } | null {
+  const youtubeId = extractYouTubeId(trailer.officialUrl)
+  if (!youtubeId) return null
+  return {
+    src: `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`,
+    alt: trailer.title,
+  }
+}
+
 const CACHE_ENABLED = process.env.NODE_ENV === 'production'
 let assetsCache: MediaAsset[] | null = null
 

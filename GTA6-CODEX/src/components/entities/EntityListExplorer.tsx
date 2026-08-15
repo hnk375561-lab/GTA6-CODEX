@@ -9,7 +9,6 @@ import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
 import { EntityImage } from '@/components/entities/EntityImage'
-import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
 import { cn } from '@/lib/utils'
 
@@ -80,7 +79,12 @@ export function EntityListExplorer({ type, entities, typeLabel }: EntityListExpl
     return base.filter((e) => e.status === status)
   }, [fuse, debouncedQuery, entities, status])
 
-  const hasImages = ENTITY_IMAGE_CATEGORIES.includes(type)
+  // Toda card de listado lleva media (imagen local, miniatura de trailer o
+  // fallback animado por categoría — ver EntityImage/lib/images.ts): ya no
+  // se oculta el slot de imagen para las categorías sin key art propia
+  // todavía, para que ninguna card se vea "muerta" mientras se sube el
+  // asset real.
+  const hasImages = true
   const isFiltering = debouncedQuery.trim().length > 0 || status !== 'todos'
 
   return (

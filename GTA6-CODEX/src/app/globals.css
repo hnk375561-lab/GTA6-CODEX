@@ -401,7 +401,11 @@ a:hover .logo-mark {
   .animate-gradient,
   .animate-float,
   .animate-pulse-gta,
-  .count-up {
+  .count-up,
+  .card-media-image,
+  .card-media-sheen,
+  .card-media-fallback-sweep,
+  .card-media-fallback-glyph {
     animation: none !important;
   }
 
@@ -413,6 +417,17 @@ a:hover .logo-mark {
   .card-animated::before,
   .link-underline::after {
     transition: none !important;
+  }
+
+  .card-media-image,
+  .card-media-vignette {
+    transition: none !important;
+  }
+
+  .group:hover .card-media-image,
+  .group:focus-visible .card-media-image {
+    transform: none !important;
+    filter: none !important;
   }
 }
 
@@ -450,6 +465,207 @@ a:hover .logo-mark {
   transform: translateY(-4px);
   box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.7),
     0 0 36px -16px color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 70%), #ff2f8f calc((1 - var(--scene-warmth)) * 70%));
+}
+
+/* ===================================================================
+   CARD MEDIA — sistema reutilizable de imagen animada para tarjetas
+   ===================================================================
+   Un único lenguaje visual para TODA imagen (real o fallback) dentro de
+   una card en todo el sitio (listados, destacados, categorías, ficha):
+     1) Movimiento ambiental sutil incluso sin interacción — "breathing"
+        zoom lentísimo + barrido de luz diagonal — para que la grilla se
+        sienta viva mientras se explora, no solo al pasar el mouse.
+     2) Profundidad + zoom + iluminación al hover/focus, activados por el
+        ancestro `.group` (el <Link>/<button> que envuelve la card entera:
+        EntityListExplorer, destacados de home, category cards), mismo
+        patrón que ya usa `.gallery-tile-image` en la galería.
+     3) Fallback (sin imagen real todavía, `EntityImage` sin match en
+        `resolveEntityImage`) con el mismo lenguaje — glifo de categoría +
+        barrido de escaneo — para que ninguna card se vea "muerta" mientras
+        se van incorporando assets a `public/images/entities/{tipo}/`.
+   Todo animado por `transform`/`opacity` (compositable, sin reflow): barato
+   incluso con varias decenas de cards montadas en un mismo listado. Se
+   desactiva por completo bajo `prefers-reduced-motion` (ver bloque arriba). */
+
+.card-media {
+  isolation: isolate;
+}
+
+.card-media-image {
+  transform: scale(1.001); /* fuerza layer de composición desde el primer frame, sin "pop" al arrancar la animación */
+  animation: card-media-breathe 17s var(--ease-standard) infinite alternate;
+  transition: transform var(--dur-slower) var(--ease-premium), filter var(--transition-base);
+  will-change: transform;
+}
+
+@keyframes card-media-breathe {
+  0% {
+    transform: scale(1.001);
+  }
+  100% {
+    transform: scale(1.045);
+  }
+}
+
+.group:hover .card-media-image,
+.group:focus-visible .card-media-image {
+  transform: scale(1.09);
+  filter: brightness(1.08) saturate(1.12);
+  animation-play-state: paused;
+}
+
+/* Avatares (relaciones, resultados de búsqueda, escenas de trailer):
+   demasiado chicos para el "breathing" ambiental — solo zoom en hover,
+   mismo criterio liviano que el resto de la UI compacta del sitio. */
+.card-media--avatar .card-media-image {
+  animation: none;
+  will-change: auto;
+}
+
+.group:hover .card-media--avatar .card-media-image,
+.group:focus-visible .card-media--avatar .card-media-image {
+  transform: scale(1.14);
+}
+
+/* Barrido de luz diagonal — sheen premium, en loop propio e independiente
+   del hover (movimiento ambiental real, no solo reactivo al cursor). */
+.card-media-sheen {
+  position: absolute;
+  inset: -40% -60%;
+  background: linear-gradient(
+    115deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.14) 49%,
+    rgba(34, 211, 238, 0.12) 53%,
+    transparent 60%
+  );
+  transform: translateX(-55%);
+  opacity: 0;
+  animation: card-media-sheen-sweep 8s ease-in-out infinite;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+@keyframes card-media-sheen-sweep {
+  0%,
+  38% {
+    transform: translateX(-55%);
+    opacity: 0;
+  }
+  55% {
+    opacity: 0.85;
+  }
+  72%,
+  100% {
+    transform: translateX(55%);
+    opacity: 0;
+  }
+}
+
+/* Viñeta inferior fija (legibilidad de badges/título superpuestos), se
+   atenúa un poco al hover para dejar respirar la imagen iluminada. */
+.card-media-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 3, 8, 0) 55%, rgba(5, 3, 8, 0.5) 100%);
+  opacity: 0.7;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+
+.group:hover .card-media-vignette,
+.group:focus-visible .card-media-vignette {
+  opacity: 0.4;
+}
+
+/* --- Fallback: sin imagen real todavía --- */
+.card-media-fallback {
+  background: linear-gradient(160deg, rgba(255, 47, 143, 0.05), rgba(34, 211, 238, 0.04));
+}
+
+.card-media-fallback-sweep {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(255, 47, 143, 0.14) 48%,
+    rgba(34, 211, 238, 0.12) 54%,
+    transparent 72%
+  );
+  transform: translateX(-100%);
+  animation: card-media-fallback-scan 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes card-media-fallback-scan {
+  0%,
+  25% {
+    transform: translateX(-100%);
+  }
+  75%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.group:hover .card-media-fallback-sweep,
+.group:focus-visible .card-media-fallback-sweep {
+  animation-duration: 3.5s;
+}
+
+.card-media-fallback-glyph {
+  position: relative;
+  animation: card-media-glyph-pulse 4.5s ease-in-out infinite;
+  transition: transform var(--transition-base);
+}
+
+@keyframes card-media-glyph-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-3px);
+  }
+}
+
+.group:hover .card-media-fallback-glyph,
+.group:focus-visible .card-media-fallback-glyph {
+  opacity: 1;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* --- Variante: card de CATEGORÍA (home → "Explorá por sección") ---
+   La imagen vive detrás del ícono + texto, atenuada por un tinte fijo
+   para que el contenido siga legible sin perder el movimiento de fondo. */
+.card-media--category {
+  z-index: 0;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.card-media--category .card-media-image {
+  opacity: 0.3;
+}
+
+.group:hover .card-media--category .card-media-image,
+.group:focus-visible .card-media--category .card-media-image {
+  opacity: 0.48;
+}
+
+.card-media--category .card-media-fallback-sweep {
+  opacity: 0.6;
+}
+
+.card-media-category-tint {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 90% at 50% 0%, rgba(255, 47, 143, 0.14), transparent 60%),
+    linear-gradient(180deg, rgba(10, 7, 18, 0.55), rgba(10, 7, 18, 0.86));
+  pointer-events: none;
 }
 
 /* --- Superficie "glass" reutilizable: header, menú móvil, pills, panel

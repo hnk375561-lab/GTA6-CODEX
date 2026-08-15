@@ -7,7 +7,9 @@ import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
+import { CategoryCardMedia } from '@/components/ui/CategoryCardMedia'
 import { EntityImage } from '@/components/entities/EntityImage'
+import { getCategoryPreviewImage } from '@/lib/images'
 import { RotatingHeroBackground } from '@/components/layout/RotatingHeroBackground'
 import { SceneSection } from '@/components/webgl/SceneSection'
 import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
@@ -54,6 +56,11 @@ export default async function HomePage() {
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
 
   const categories = CATEGORY_ORDER.filter((type) => countsByType[type] > 0)
+  // Vista previa animada por categoría (ver CategoryCardMedia): primera
+  // imagen local real de esa categoría, o null → fondo 100% CSS.
+  const categoryPreviews = Object.fromEntries(
+    categories.map((type) => [type, getCategoryPreviewImage(type)])
+  ) as Record<EntityType, ReturnType<typeof getCategoryPreviewImage>>
 
   return (
     <>
@@ -120,12 +127,16 @@ export default async function HomePage() {
 
           <div className="stagger grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {categories.map((type) => (
-              <Link key={type} href={`/${type}`} className="block h-full">
-                <Card hoverable className="flex h-full flex-col items-center gap-3 py-8 text-center">
-                  <div className="category-icon-badge flex h-14 w-14 items-center justify-center rounded-xl text-gta-accent">
+              <Link key={type} href={`/${type}`} className="group block h-full">
+                <Card
+                  hoverable
+                  className="relative flex h-full flex-col items-center gap-3 overflow-hidden py-8 text-center"
+                >
+                  <CategoryCardMedia preview={categoryPreviews[type]} />
+                  <div className="category-icon-badge relative z-10 flex h-14 w-14 items-center justify-center rounded-xl text-gta-accent">
                     <CategoryIcon type={type} className="h-6 w-6" />
                   </div>
-                  <div>
+                  <div className="relative z-10">
                     <p className="font-semibold text-gta-text">{ENTITY_TYPE_LABELS[type]}</p>
                     <p className="mt-1 text-sm text-gta-text-secondary">
                       {countsByType[type]}{' '}
@@ -162,7 +173,11 @@ export default async function HomePage() {
 
             <div className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((entity) => (
-                <Link key={`${entity.type}-${entity.slug}`} href={`/${entity.type}/${entity.slug}`}>
+                <Link
+                  key={`${entity.type}-${entity.slug}`}
+                  href={`/${entity.type}/${entity.slug}`}
+                  className="group block h-full"
+                >
                   <Card hoverable className="flex h-full flex-col overflow-hidden !p-0">
                     <EntityImage entity={entity} variant="thumbnail" className="!rounded-b-none" />
                     <CardBody className="flex flex-1 flex-col gap-2 px-5 pb-5">
