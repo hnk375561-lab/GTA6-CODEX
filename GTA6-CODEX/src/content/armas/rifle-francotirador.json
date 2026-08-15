@@ -2,25 +2,29 @@
   "slug": "rifle-francotirador",
   "type": "armas",
   "title": "Rifle Francotirador",
-  "description": "Arma de largo alcance esperada dentro del catálogo de armas de precisión de GTA 6, siguiendo el estándar establecido por entregas anteriores de la saga.",
-  "content": "El rifle francotirador es un elemento constante del arsenal de armas de precisión en la saga GTA, utilizado tanto en misiones de asesinato a distancia como en actividades opcionales de francotirador. Su presencia en GTA 6 es esperable dado el patrón de las entregas anteriores.\n\nEste tipo de arma suele desbloquearse más avanzada la historia o requerir compra en armerías especializadas, reflejando su rol como herramienta de alto impacto reservada para objetivos específicos en lugar de combate general.\n\nDentro del contexto narrativo de Jason y Lucia como pareja criminal en ascenso, un rifle de este tipo encajaría con misiones de eliminación de objetivos de alto perfil, posiblemente vinculadas a conflictos con organizaciones rivales como Final Chapter MC.",
-  "status": "nuestro",
+  "description": "Categoría de rifles de precisión de largo alcance de GTA 6: al menos dos modelos distintos (de cerrojo y semiautomático) fueron identificados en capturas oficiales, usados por cazadores dentro del mundo del juego.",
+  "content": "A diferencia de lo que documentaba la versión anterior de esta ficha, el rifle francotirador ya no es una categoría puramente especulativa: cobertura especializada (PC Gamer, jun. 2026) identificó al menos dos rifles de precisión distintos en capturas oficiales de GTA 6, ambos usados por cazadores dentro del mundo del juego. Uno tiene apariencia de cerrojo (bolt-action) inspirada en un Remington 700; el otro, de aspecto semiautomático inspirado en un M1A. Por separado, la misma cobertura identifica un rifle con el sello del fabricante ficticio 'Duke Arms Company' (la misma marca de Red Dead Redemption 2) que podría ser una variante modificada del rifle de asalto tipo carabina de esa marca, más que un modelo de francotirador completamente distinto.\n\nEsta evidencia confirma la existencia visual de armas de precisión de largo alcance en el juego, aunque en manos de NPCs cazadores en escenas de caza, no necesariamente como arma seleccionable de forma inmediata por Jason o Lucia. Rockstar no ha publicado nombres in-game definitivos ni confirmado si los modelos vistos (cerrojo vs. semiautomático) son variantes de una misma arma base o categorías jugables separadas.\n\nDentro del contexto narrativo de Jason y Lucia como pareja criminal en ascenso, un rifle de este tipo encajaría con misiones de eliminación de objetivos de alto perfil, posiblemente vinculadas a conflictos con organizaciones rivales como Final Chapter MC, aunque ese vínculo narrativo específico sigue siendo una lectura propia del sitio, no un hecho confirmado por Rockstar.",
+  "status": "confirmado",
   "tags": [
     "arma-de-precisión",
     "francotirador",
     "largo-alcance",
-    "clásico-saga"
+    "confirmado-visual",
+    "duke-arms-company"
   ],
   "featured": false,
   "createdAt": "2026-08-15T11:15:00Z",
-  "updatedAt": "2026-08-15T11:15:00Z",
+  "updatedAt": "2026-08-15T22:20:00Z",
   "evidence": {
-    "level": "especulativo",
-    "primarySource": "Análisis propio basado en el catálogo histórico de armas de la saga GTA",
-    "note": "No hay confirmación visual de esta arma en material promocional disponible hasta el momento; se documenta como expectativa razonable.",
+    "level": "oficial-visual",
+    "primarySource": "Capturas oficiales de Rockstar Games (escenas de caza con dos cazadores portando rifles de precisión distintos)",
+    "secondarySource": "PC Gamer (26 jun. 2026), cobertura independiente que identifica un rifle de cerrojo inspirado en un Remington 700, uno semiautomático inspirado en un M1A, y un tercero con sello 'Duke Arms Company'",
+    "note": "Se corrige el nivel de evidencia de 'especulativo' a 'oficial-visual': existen al menos dos armas de perfil francotirador identificables en capturas oficiales, aunque en manos de NPCs cazadores. La identificación de marcas/modelos reales de inspiración (Remington 700, M1A) es análisis de prensa especializada, no confirmación de Rockstar.",
     "limitations": [
-      "Sin confirmación visual en trailers",
-      "Modelo, alcance y mecánicas de apuntado desconocidos"
+      "Nombres de modelo in-game no confirmados oficialmente",
+      "No confirmado si los modelos vistos son variantes jugables independientes o solo props de NPCs cazadores",
+      "No confirmado si el rifle con sello 'Duke Arms Company' es un modelo de francotirador distinto o una variante modificada de una carabina de asalto de la misma marca",
+      "Alcance, daño y mecánicas de apuntado no confirmados"
     ]
   },
   "relations": [
