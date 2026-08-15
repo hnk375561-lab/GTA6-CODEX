@@ -372,3 +372,55 @@ COBERTURA POTENCIAL ACTUAL:  21/102 = 20.6%  (si se descargaran las 9
                                                SOURCE_VERIFIED restantes)
 COBERTURA REAL HOY:          12/102 = 11.8%  (12 archivos reales en el repo)
 ```
+
+## Ronda 9 (15 ago 2026) — Lote 1 de imágenes del usuario (20 archivos, material "Ultimate Edition")
+
+El usuario aportó 20 capturas locales de trabajo, todas con prefijo
+`ULTIMATE_EDITION_*`, para asociar contra entidades reales del repo.
+Resultado: **1 integrada**, **19 sin integrar** (ninguna corresponde a
+una entidad existente, y por regla explícita del proceso no se crean
+entidades nuevas solo por una imagen — ver `CANDIDATES_PENDING.md` y la
+nota de la Ronda 8 sobre negocios de la Ultimate Edition sin
+contrapartida en `src/content/negocios/`).
+
+### Integrada
+
+| Slug | Tipo | Archivo fuente | Archivo final | Criterio de selección |
+|---|---|---|---|---|
+| grotti-cheetah-95 | vehiculos | `ULTIMATE_EDITION_GROTTI_CHEETAH_01.jpg` | `public/images/entities/vehiculos/grotti-cheetah-95.webp` (158 KB) | Toma "postal" del auto completo (blanco/rojo, inspirado en Ferrari Testarossa) frente a Pegassi Residences, atardecer, sin personas — coincide con la entidad ya documentada como `SOURCE_VERIFIED`/`DOWNLOAD_PENDING` desde Ronda 8. Otras 3 capturas recibidas (`_02` faro, `_03` trasera/logo, `_04` interior) son planos de detalle, no integradas por arquitectura mono-imagen. |
+
+Procesada con `npm run process-images:apply` (pipeline existente, sin
+modificar `src/lib/images.ts` ni ningún componente): WebP calidad 82,
+redimensionada a 1600×900. Detectada automáticamente por
+`resolveEntityImage()` vía convención de nombre de archivo — no hizo
+falta tocar contenido ni código.
+
+**Trazabilidad:**
+- source: archivo local de trabajo aportado por el usuario
+- sourceUrl: desconocida (no se pudo determinar la URL exacta del asset original de Rockstar; el usuario indicó que es material de la Ultimate Edition)
+- sourceType: usuario-archivo-local
+- verified: parcial — la **entidad** `grotti-cheetah-95` está `SOURCE_VERIFIED` contra prensa oficial de Rockstar desde una ronda anterior (ver ficha), pero el **archivo de imagen específico** entregado en este lote no fue re-verificado contra una URL oficial en esta sesión
+- rightsNote: posible material promocional de Rockstar Games / Take-Two Interactive; no se asume titularidad ni licencia de uso; uso ilustrativo/informativo en un sitio de fans no oficial
+
+### No integradas — sin entidad correspondiente en el repo (19 imágenes)
+
+Verificado explícitamente contra `src/content/negocios/`, `src/content/armas/`,
+`src/content/personajes/` y `src/content/vehiculos/`: ninguno de estos
+nombres tiene una entidad real en el catálogo. Por regla del proceso, no
+se crean entidades nuevas a partir de una imagen — queda como candidato
+para una revisión de contenido futura (no es tarea de imágenes).
+
+| Nombre visto en archivo | Qué muestra | Entidad buscada | Resultado de la búsqueda |
+|---|---|---|---|
+| `ONE_EYED_WILLIE_01/02/03` | Pickup Canis todoterreno verde, taller de personalización | negocio "One-Eyed Willie's Mod Shop" | No existe en `src/content/negocios/` (ya señalado como discrepancia en Ronda 8) |
+| `PTT_STORE_01` | Escena callejera con personajes, motos, grafiti "PTT" | negocio "PTT YOUNGIN$ Illegal Goods Store" | No existe en `src/content/negocios/` |
+| `RIDEOUT_CUSTOMS_01/02/03` | Lowrider Albany dorado/verde, taller mecánico | negocio "Rideout Customs" | No existe en `src/content/negocios/` |
+| `ELECTRIC_FANG_01/02/03/04` | Local de tatuajes, cartel neón, interior | negocio "Electric Fang Tattoo" | No existe en `src/content/negocios/` |
+| `GOODTIME_GEAR_01` | Remeras/gorras con branding "Vice City" | negocio "Goodtime Gear" (tienda de ropa) | No existe en `src/content/negocios/` |
+| `HAWK_AND_LITTLE_MORGAN_REVOLVERS_01/02` | Revólveres grabados "J.DUVAL" y "L.CAMINOS" (posible ítem coleccionable físico de la edición Ultimate, no necesariamente un arma jugable) | arma "revolver"/"Hawk & Little Morgan" | No existe en `src/content/armas/` (solo hay `pistola.json`, genérica, sin modelo específico) |
+| `ULTIMATE_EDITION_01/02` | Jason Duval y Lucia Caminos en pose de pareja (key art) | — | `jason-duval` y `lucia-caminos` ya tienen imagen individual asignada (arquitectura mono-imagen); no se sobreescribió por no ser claramente superior y por mezclar a ambos personajes en una sola imagen. No se tocó el sistema de fondos de hero (`public/images/heroes/`) por estar cableado directamente en código WebGL, fuera del alcance de esta misión de imágenes. |
+
+Estas 19 imágenes **no se eliminaron** — siguen en
+`/mnt/user-data/uploads/` tal como las subió el usuario, listas para
+usarse si en un lote futuro se decide dar de alta las entidades de
+negocio/arma correspondientes en `src/content/`.
