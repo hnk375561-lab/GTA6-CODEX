@@ -1,0 +1,53 @@
+{
+  "slug": "liberacion-lucia",
+  "type": "misiones",
+  "title": "Liberación de Lucia",
+  "description": "Misión narrativa central que establece el comienzo de la historia de GTA 6. Jason obtiene la libertad condicional de Lucia de la Penitenciaría de Leonida.",
+  "content": "La liberación de Lucia Caminos de la Penitenciaría de Leonida es un evento narrativo central en GTA 6. Lucia, recluida en la penitenciaría después de una vida criminal, sale gracias a un golpe de suerte y la intervención de Jason Duval.\n\nSegún el material oficial de Rockstar Games, Jason se presenta en la recepción del centro penitenciario preguntando específicamente por Lucia Caminos. Material promocional posterior sugiere que Lucia fue liberada bajo un programa de libertad condicional, equipada con un monitor de tobillo que monitorea su paradero.\n\nEsta misión es fundamental para establecer la relación entre los dos protagonistas y marca el inicio de su asociación criminal como pareja, sugiriendo una estructura narrativa tipo Bonnie y Clyde que domina la historia principal del juego.\n\nLa salida de Lucia de la prisión y su reencuentro con Jason en el final del Trailer 1 sugiere que esta misión será jugable y dramáticamente significativa, no solo cinemática.",
+  "status": "confirmado",
+  "tags": [
+    "misión-principal",
+    "narrativa",
+    "lucia-caminos",
+    "penitenciaría",
+    "libertad-condicional",
+    "introducción"
+  ],
+  "featured": true,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-15T02:30:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — Trailer 1 (escenas finales), Material Oficial Lucia Caminos",
+    "note": "La escena de liberación de Lucia está documentada visualmente en el Trailer 1 oficial de Rockstar Games. La narrativa de libertad condicional y el monitor de tobillo son confirmados en material promocional oficial relacionado con el personaje.",
+    "limitations": [
+      "Estructura detallada de la misión no confirmada",
+      "Objetivos específicos no documentados",
+      "Duración/complejidad no confirmada",
+      "Mecánicas específicas no especificadas",
+      "Solo documentada como evento narrativo, no como estructura de gameplay"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
+      "relation": "protagonista"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "protagonista"
+    },
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "penitenciaria-leonida",
+      "relation": "ubicación-misión"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "documentada-en"
+    }
+  ]
+}

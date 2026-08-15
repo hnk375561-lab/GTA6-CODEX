@@ -1,0 +1,41 @@
+{
+  "slug": "pistola",
+  "type": "armas",
+  "title": "Pistola",
+  "description": "Arma de fuego de mano confirmada en trailers de GTA 6. Utilizada por protagonistas y NPCs en escenas de combate.",
+  "content": "La pistola es una de las armas de fuego más fundamentales del arsenal de GTA 6, confirmada visualmente en material oficial de Rockstar Games. Se ha documentado su uso por protagonistas y personajes secundarios en múltiples escenas de combate capturadas en trailers.\n\nApareciendo en diversas escenas de acción, la pistola representa una de las armas de combate cercano/medio alcance que los jugadores tendrán disponibles. Aunque su modelo específico y fabricante exacto aún no han sido oficialmente nombrados por Rockstar, su aparición en material promocional oficial la confirma como parte del arsenal del juego.\n\nLa pistola aparece tanto en manos de protagonistas (Jason Duval dispara desde un vehículo en movimiento) como en manos de fuerzas de seguridad, sugiriendo su uso generalizado en el mundo del juego.",
+  "status": "confirmado",
+  "tags": [
+    "arma-de-fuego",
+    "pistola",
+    "combate",
+    "visual-confirmado",
+    "trailers"
+  ],
+  "featured": true,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-15T02:30:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — Trailer 1 (escena ~1:45), Trailer 2",
+    "note": "Aparición visual confirmada de un arma de fuego en forma de pistola. El modelo específico, fabricante ficticio y nombre exacto aún no han sido nombrados oficialmente por Rockstar Games. Esta entrada documenta la pistola de forma genérica basada en apariciones visuales verificables.",
+    "limitations": [
+      "Modelo específico no confirmado oficialmente",
+      "Fabricante ficticio no especificado",
+      "Estadísticas de daño/munición no disponibles",
+      "Solo documentada visualmente, sin nombre oficial confirmado"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "usada-por"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "aparece-en"
+    }
+  ]
+}

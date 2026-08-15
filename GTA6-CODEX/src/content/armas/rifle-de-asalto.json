@@ -1,0 +1,43 @@
+{
+  "slug": "rifle-de-asalto",
+  "type": "armas",
+  "title": "Rifle de Asalto",
+  "description": "Arma de fuego de largo alcance confirmada en material oficial de GTA 6. Mostrada siendo manejada por personajes en trailers y material promocional.",
+  "content": "El rifle de asalto es un arma de fuego de largo alcance confirmada en material oficial de Rockstar Games para GTA 6. Se ha documentado su presencia en manos de personajes secundarios en escenas capturadas en trailers y material promocional oficial.\n\nLori Heder, personaje confirmado en GTA 6, aparece en material oficial manejando un rifle de asalto como parte de sus operaciones en el astillero ubicado en los Cayos de Leonida. Su aparición sugiere que el rifle de asalto será un arma disponible para uso en diversas actividades dentro del juego, posiblemente incluyendo operaciones criminales y combate táctico.\n\nComo arma de fuego de mayor poder que la pistola, el rifle de asalto representa una escalada en capacidad letal, sugiriendo un sistema de progresión de armamento o especialización de personajes durante misiones de mayor intensidad.",
+  "status": "confirmado",
+  "tags": [
+    "arma-de-fuego",
+    "rifle",
+    "combate-tactico",
+    "largo-alcance",
+    "visual-confirmado",
+    "material-promocional"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-15T02:30:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — Material Oficial / Lori Heder (Trailer 2 / Material Promocional)",
+    "note": "Aparición visual confirmada de un rifle de asalto en manos de Lori Heder en material oficial promocional. El modelo específico, fabricante ficticio y nombre exacto no han sido nombrados oficialmente por Rockstar Games.",
+    "limitations": [
+      "Modelo específico no confirmado oficialmente",
+      "Fabricante ficticio no especificado",
+      "Estadísticas de daño/munición no disponibles",
+      "Solo documentado en contexto de personaje específico (Lori Heder)",
+      "Disponibilidad general en juego no confirmada"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "lori-heder",
+      "relation": "usada-por"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "aparece-en"
+    }
+  ]
+}

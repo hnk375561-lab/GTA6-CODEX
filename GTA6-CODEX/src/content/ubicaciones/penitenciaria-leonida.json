@@ -1,0 +1,51 @@
+{
+  "slug": "penitenciaria-leonida",
+  "type": "ubicaciones",
+  "title": "Penitenciaría de Leonida",
+  "description": "Centro penitenciario de máxima seguridad donde Lucia Caminos estuvo recluida. Ubicación narrativa clave en GTA 6.",
+  "content": "La Penitenciaría de Leonida es un centro de detención de máxima seguridad ubicado en la región de Leonida en GTA 6. Es el lugar donde Lucia Caminos pasó tiempo recluida antes de su liberación, que marca el inicio de la historia principal del juego.\n\nSegún material oficial de Rockstar Games, Lucia fue encarcelada después de pelear por su familia, una acción que la llevó a pasar tiempo en este centro penitenciario. Su liberación mediante un programa de libertad condicional (posiblemente bajo vigilancia de un monitor de tobillo) es el evento que gatilla el comienzo de su asociación criminal con Jason Duval.\n\nEsta ubicación aparece visualmente en el Trailer 1 de GTA 6, mostrando:\n- Área de recepción donde Jason pregunta por Lucia\n- Zona de detención interior donde aparece Lucia\n- Una salida/conclusión donde ambos personajes se reencuentran\n\nLa penitenciaría representa uno de los pocos edificios institucionales mostrados visualmente en trailers oficiales, sugiriendo que puede ser explorada o visitada por el jugador durante la progresión de la narrativa.",
+  "status": "confirmado",
+  "tags": [
+    "penitenciaria",
+    "institución",
+    "narrativa",
+    "lucia-caminos",
+    "visual-confirmado",
+    "leonida"
+  ],
+  "district": "Leonida",
+  "region": "Leonida",
+  "featured": true,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-15T02:30:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — Trailer 1 (escenas finales), Material Oficial Lucia Caminos",
+    "note": "La penitenciaría aparece visualmente en el Trailer 1 oficial. La narrativa de Lucia siendo liberada del centro de detención es confirmada en material promocional oficial de Rockstar Games.",
+    "limitations": [
+      "Ubicación exacta en el mapa no especificada",
+      "Coordinates no conocidas",
+      "Accesibilidad post-narrativa desconocida",
+      "Interior del edificio más allá de la escena de liberación no documentado",
+      "NPCs específicos no identificados",
+      "Posibles misiones relacionadas más allá de la liberación de Lucia desconocidas"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
+      "relation": "fue-recluida-en"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "liberacion-lucia",
+      "relation": "ubicación-principal"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrada-en"
+    }
+  ]
+}

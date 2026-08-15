@@ -1,0 +1,47 @@
+{
+  "slug": "combate-mma",
+  "type": "misiones",
+  "title": "Combate en Jaula",
+  "description": "Secuencia de combate cuerpo a cuerpo en una jaula de artes marciales mixtas. Lucia Caminos participa en un combate de MMA mostrado en trailers oficiales.",
+  "content": "El combate en jaula de artes marciales mixtas es una actividad de combate confirmada visualmente en el Trailer 1 de GTA 6. Lucia Caminos aparece dentro de una jaula de MMA, peleando contra un oponente y golpeándolo.\n\nEsta escena sugiere que GTA 6 incluirá un sistema de combate cuerpo a cuerpo expandido, posiblemente con artes marciales o boxeo como actividades jugables. La presencia de Lucia en esta escena indica que ambos protagonistas tendrán acceso a este tipo de confrontaciones físicas.\n\nLa jaula de MMA sugiere la existencia de una ubicación dedicada a este tipo de entretenimiento criminal/deportivo, posiblemente vinculada a apuestas, ganancias económicas o parte de la narrativa criminal de los protagonistas.",
+  "status": "confirmado",
+  "tags": [
+    "combate-cuerpo-a-cuerpo",
+    "mma",
+    "lucia-caminos",
+    "actividad",
+    "visual-confirmado"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-15T02:30:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — Trailer 1 (escena ~1:50)",
+    "note": "Aparición visual directa de Lucia Caminos participando en un combate dentro de una jaula de MMA. El contexto (si es misión, actividad secundaria o minijuego) aún no está confirmado oficialmente.",
+    "limitations": [
+      "Contexto de gameplay desconocido (¿misión? ¿actividad secundaria? ¿minijuego?)",
+      "Objetivos específicos no documentados",
+      "Ubicación exacta no confirmada",
+      "Oponentes potenciales no identificados",
+      "Sistema de combate específico no detallado"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
+      "relation": "participante"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "documentada-en"
+    },
+    {
+      "targetType": "actividades",
+      "targetSlug": "mma",
+      "relation": "relacionada-con"
+    }
+  ]
+}
