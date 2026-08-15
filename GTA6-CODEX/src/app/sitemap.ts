@@ -5,6 +5,22 @@ import { getAllEntities, getEntityCountsByType } from '@/lib/entities'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel.app'
 
 /**
+ * Parsea una fecha de entidad de forma segura. entities.ts:validateEntity()
+ * ya rechaza (con warning) cualquier entidad con updatedAt no parseable, así
+ * que esto no debería activarse en la práctica — pero esta función es la
+ * responsable de que /sitemap.xml (prerenderizada en build time) NUNCA
+ * pueda tirar abajo `next build` completo por una fecha malformada,
+ * incluso si esa garantía de entities.ts cambiara en el futuro. Un
+ * Invalid Date sin este guard revienta con RangeError al llamarse
+ * .toISOString() dentro del route handler de Next — confirmado
+ * reproduciendo el build real con un fixture.
+ */
+function safeDate(value: string): Date {
+  const d = new Date(value)
+  return isNaN(d.getTime()) ? new Date() : d
+}
+
+/**
  * Genera /sitemap.xml (convención nativa del App Router de Next.js:
  * cualquier export default de src/app/sitemap.ts se sirve automáticamente
  * en esa ruta, sin registro manual).
@@ -50,7 +66,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const entityRoutes: MetadataRoute.Sitemap = allEntities.map((entity) => ({
     url: `${SITE_URL}/${entity.type}/${entity.slug}`,
-    lastModified: new Date(entity.updatedAt),
+    lastModified: safeDate(entity.updatedAt),
     changeFrequency: 'weekly' as const,
     priority: entity.featured ? 0.9 : 0.6,
   }))

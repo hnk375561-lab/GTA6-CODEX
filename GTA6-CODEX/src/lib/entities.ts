@@ -138,6 +138,17 @@ export function validateEntity(entity: unknown): entity is BaseEntity {
   if (!e.createdAt || typeof e.createdAt !== 'string') return false
   if (!e.updatedAt || typeof e.updatedAt !== 'string') return false
 
+  // createdAt/updatedAt deben ser fechas parseables, no solo strings.
+  // sitemap.ts (y generateEntityJsonLd en seo.ts) construyen new Date(...) a
+  // partir de estos campos; un string no parseable produce un Invalid Date
+  // cuyo .toISOString() TIRA (RangeError: Invalid time value) en vez de
+  // fallar silenciosamente. Como sitemap.xml se prerenderiza en build time,
+  // una sola entidad con una fecha malformada tira ABAJO TODO `next build`
+  // (reproducido y confirmado), no solo esa entidad. Se valida acá, en el
+  // mismo lugar donde ya se rechazan otras entidades con forma inválida.
+  if (isNaN(new Date(e.createdAt as string).getTime())) return false
+  if (isNaN(new Date(e.updatedAt as string).getTime())) return false
+
   // Validar que status sea uno de los valores permitidos
   if (!['confirmado', 'rumor', 'nuestro'].includes(e.status as string)) return false
 
