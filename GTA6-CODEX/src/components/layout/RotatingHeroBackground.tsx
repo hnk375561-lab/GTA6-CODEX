@@ -28,7 +28,14 @@ import { useEffect, useRef, useState } from 'react'
  * desactivan por completo con prefers-reduced-motion.
  */
 
-const HERO_BACKGROUNDS = [
+/**
+ * Fallback hardcodeado, usado solo si el caller no pasa `backgrounds`.
+ * El caller real (`src/app/page.tsx`) las obtiene del Media Registry
+ * (`getKeyArtAssets()` en src/lib/media.ts) para que este componente no
+ * tenga que saber nada sobre `MediaAsset`/fuentes — sigue recibiendo un
+ * array plano de rutas, como siempre.
+ */
+const DEFAULT_HERO_BACKGROUNDS = [
   '/images/heroes/hero-vice-sunset.webp',
   '/images/heroes/hero-gta6-boxart-sunset.webp',
   '/images/heroes/hero-vi-logo.webp',
@@ -42,7 +49,13 @@ const CROSSFADE_MS = 1500
 const SCROLL_PARALLAX_STRENGTH = 0.18
 const POINTER_PARALLAX_MAX_PX = 10
 
-export function RotatingHeroBackground() {
+interface RotatingHeroBackgroundProps {
+  /** Rutas públicas de fondo, en orden de rotación. Default: DEFAULT_HERO_BACKGROUNDS. */
+  backgrounds?: readonly string[]
+}
+
+export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS }: RotatingHeroBackgroundProps) {
+  const HERO_BACKGROUNDS = backgrounds.length > 0 ? backgrounds : DEFAULT_HERO_BACKGROUNDS
   const [index, setIndex] = useState(0)
   const [reducedMotion, setReducedMotion] = useState(false)
   const layerRef = useRef<HTMLDivElement>(null)
