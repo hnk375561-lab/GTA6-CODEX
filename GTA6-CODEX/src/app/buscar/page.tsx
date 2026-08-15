@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getAllEntities } from '@/lib/entities'
+import { getAllEntities, getEntityCountsByType } from '@/lib/entities'
 import { SearchClient } from '@/components/search/SearchClient'
 import { Reveal } from '@/components/ui/Reveal'
 
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 }
 
 export default async function SearchPage() {
-  const entities = await getAllEntities()
+  const [entities, counts] = await Promise.all([getAllEntities(), getEntityCountsByType()])
 
   return (
     <section className="py-12 sm:py-16">
@@ -23,7 +23,7 @@ export default async function SearchPage() {
           </Reveal>
         </div>
 
-        <SearchClient entities={entities} />
+        <SearchClient entities={entities} counts={counts} />
       </div>
     </section>
   )
