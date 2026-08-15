@@ -1,0 +1,55 @@
+{
+  "slug": "guerra-final-chapter-mc",
+  "type": "misiones",
+  "title": "Guerra con Final Chapter MC",
+  "description": "Escalada de tensiones entre los protagonistas y la organización motociclista Final Chapter MC por control territorial en Vice City.",
+  "content": "Final Chapter MC es una de las organizaciones confirmadas oficialmente en el universo de GTA 6, presentada como club de motociclistas con presencia en Vice City. Un conflicto territorial o de negocios entre esta organización y los protagonistas encajaría con el patrón clásico de la saga de escalada de tensiones con facciones rivales a medida que avanza la historia.\n\nDado que Jason y Lucia atraviesan una transición de delitos menores a operaciones de mayor escala, un choque con un club de motociclistas establecido representaría un obstáculo lógico: territorio disputado, rutas de contrabando cruzadas o negocios que se pisan entre bandas.\n\nEste tipo de misión también introduciría naturalmente vehículos de motociclismo customizado dentro del catálogo jugable, así como combate en carretera contra grupos organizados en lugar de policía o pandillas menores.",
+  "status": "nuestro",
+  "tags": [
+    "final-chapter-mc",
+    "conflicto",
+    "motociclistas",
+    "territorio",
+    "acción"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T10:35:00Z",
+  "updatedAt": "2026-08-15T10:35:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Ficha oficial de Final Chapter MC (Rockstar Games)",
+    "note": "La organización está confirmada oficialmente. El conflicto narrativo específico descrito aquí es una hipótesis propia del sitio, no una escena documentada.",
+    "limitations": [
+      "No hay confirmación de conflicto directo entre los protagonistas y esta organización",
+      "Estructura de misión y desenlace desconocidos",
+      "Territorio específico en disputa no confirmado"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "organizaciones",
+      "targetSlug": "final-chapter-mc",
+      "relation": "antagonista"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "protagonista"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
+      "relation": "protagonista"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "western-zombie-chopper",
+      "relation": "vehículo-relacionado"
+    },
+    {
+      "targetType": "armas",
+      "targetSlug": "escopeta",
+      "relation": "equipamiento"
+    }
+  ]
+}

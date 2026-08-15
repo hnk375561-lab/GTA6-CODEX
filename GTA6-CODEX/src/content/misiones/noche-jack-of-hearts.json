@@ -1,0 +1,50 @@
+{
+  "slug": "noche-jack-of-hearts",
+  "type": "misiones",
+  "title": "Una Noche en Jack of Hearts",
+  "description": "Secuencia ambientada en el club de striptease Jack of Hearts, propiedad de Boobie Ike, mostrada en material promocional de GTA 6.",
+  "content": "Jack of Hearts es uno de los negocios legítimos de Boobie Ike, leyenda de Vice City que transformó su pasado callejero en un imperio que incluye inmobiliaria, este club y un estudio de grabación. El material promocional oficial de GTA 6 muestra ambientes de vida nocturna consistentes con este tipo de local.\n\nEsta escena funcionaría como punto de entrada narrativo a la red de contactos de Boobie Ike, un personaje que —dada la diversidad de sus negocios— probablemente actúa como nexo entre distintos submundos de Vice City: música, entretenimiento nocturno y bienes raíces.\n\nEl local también sirve como escenario social donde los protagonistas pueden recibir información, encargos o simplemente ambientar la vida nocturna de la ciudad, en línea con la tradición de la saga de usar clubes nocturnos como hubs narrativos y de actividades secundarias.",
+  "status": "rumor",
+  "tags": [
+    "boobie-ike",
+    "jack-of-hearts",
+    "vida-nocturna",
+    "negocios",
+    "lucia-caminos"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T10:10:00Z",
+  "updatedAt": "2026-08-15T10:10:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Rockstar Games — material promocional (ambientes de vida nocturna), ficha oficial de Boobie Ike",
+    "note": "Jack of Hearts está confirmado como negocio de Boobie Ike. El uso narrativo específico de este local como escenario de misión es especulación propia del sitio.",
+    "limitations": [
+      "No hay confirmación de una misión específica ambientada en este local",
+      "Rol de Lucia Caminos en esta escena no confirmado",
+      "Tipo de encargo o actividad no documentado"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "boobie-ike",
+      "relation": "anfitrión"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
+      "relation": "protagonista"
+    },
+    {
+      "targetType": "negocios",
+      "targetSlug": "jack-of-hearts",
+      "relation": "ubicación-misión"
+    },
+    {
+      "targetType": "actividades",
+      "targetSlug": "baile-clubs",
+      "relation": "relacionada-con"
+    }
+  ]
+}
