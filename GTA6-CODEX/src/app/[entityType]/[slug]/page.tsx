@@ -15,6 +15,8 @@ import { EntityHeaderBackground } from '@/components/entities/EntityHeaderBackgr
 import { EntitySectionHeading } from '@/components/entities/EntitySectionHeading'
 import { EntityImage } from '@/components/entities/EntityImage'
 import { TrailerScenes } from '@/components/entities/TrailerScenes'
+import { TrailerStats } from '@/components/entities/TrailerStats'
+import { TrailerNav } from '@/components/entities/TrailerNav'
 import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
 import { MagicCard } from '@/components/ui/MagicCard'
 import { SceneSection } from '@/components/webgl/SceneSection'
@@ -225,7 +227,14 @@ export default async function EntityPage({ params }: PageProps) {
 
       {/* Content */}
       <SceneSection sceneId="entity-content" className="py-12 sm:py-16">
-        <div className="container-max grid gap-8 lg:grid-cols-3">
+        <div className="container-max">
+          {type === EntityType.TRAILER && 'scenes' in entity && (
+            <Reveal className="mb-10">
+              <TrailerStats trailer={entity as Trailer} />
+            </Reveal>
+          )}
+
+          <div className="grid gap-8 lg:grid-cols-3">
           <div className="space-y-6 lg:col-span-2">
             {type === EntityType.TRAILER && 'scenes' in entity && (
               <Reveal direction="left">
@@ -320,6 +329,13 @@ export default async function EntityPage({ params }: PageProps) {
               </Card>
             </Reveal>
           </aside>
+          </div>
+
+          {type === EntityType.TRAILER && 'scenes' in entity && (
+            <Reveal className="mt-12 border-t border-gta-border pt-8">
+              <TrailerNav currentSlug={entity.slug} />
+            </Reveal>
+          )}
         </div>
       </SceneSection>
     </>

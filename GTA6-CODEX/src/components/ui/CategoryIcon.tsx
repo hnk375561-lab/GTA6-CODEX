@@ -58,6 +58,37 @@ const PATHS: Partial<Record<EntityType, ReactNode>> = {
       <path d="M20 5.2c-1.6-.9-3.6-1.2-5.5-.7-1 .3-1.9.8-2.5 1.5v13c.6-.7 1.5-1.2 2.5-1.5 1.9-.5 3.9-.2 5.5.7V5.2Z" />
     </>
   ),
+  [EntityType.WEAPON]: (
+    <>
+      <path d="M3.5 14.5 13 5c.6-.6 1.6-.6 2.2 0l3.3 3.3c.6.6.6 1.6 0 2.2L9 20l-3.2-1.3L3.5 14.5Z" />
+      <path d="M12.5 7.5l4 4M9.5 18.5l-4-4" />
+    </>
+  ),
+  [EntityType.ACTIVITY]: (
+    <>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 7v5l3.2 2" />
+    </>
+  ),
+  [EntityType.FACTION]: (
+    <>
+      <path d="M12 3.5 19 6.5v5.2c0 5-3 8.7-7 9.8-4-1.1-7-4.8-7-9.8V6.5L12 3.5Z" />
+      <path d="M8.7 12.3l2.3 2.3 4.3-4.6" />
+    </>
+  ),
+  [EntityType.BUSINESS]: (
+    <>
+      <path d="M4 9.5 5.6 4.5h12.8L20 9.5" />
+      <path d="M4.5 9.5v9.8h15V9.5" />
+      <path d="M9.5 19.3v-5.6h5v5.6" />
+    </>
+  ),
+  [EntityType.OBJECT]: (
+    <>
+      <rect x="5" y="5" width="14" height="14" rx="1.6" />
+      <path d="M5 9.5h14M9.5 5v14" />
+    </>
+  ),
 }
 
 export function CategoryIcon({ type, className }: CategoryIconProps) {
