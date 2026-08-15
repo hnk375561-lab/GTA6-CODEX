@@ -15,12 +15,12 @@
   ],
   "featured": false,
   "createdAt": "2026-08-14T00:00:00Z",
-  "updatedAt": "2026-08-15T12:00:00Z",
+  "updatedAt": "2026-08-15T22:52:00Z",
   "evidence": {
-    "level": "oficial-visual",
+    "level": "oficial-visual-multifuente",
     "primarySource": "Rockstar Games, Trailer 2 (secuencia de robo bancario y comercial de Ammu-Nation, ~2:09)",
-    "secondarySource": "games.gg y TheGamer, cobertura independiente que identifica un arma de perfil SMG en la escena del robo y un arma de perfil LMG en el comercial de Ammu-Nation",
-    "note": "Se confirma visualmente la existencia de al menos un arma automática de este tipo dentro del arsenal del juego, en dos escenas distintas del mismo tráiler. La identificación de marcas/modelos reales de inspiración es análisis de prensa especializada, no confirmación oficial de Rockstar.",
+    "secondarySource": "games.gg y TheGamer (identificación inicial en el mismo tráiler) más PC Gamer (jun. 2026), que corrobora de forma independiente un SMG estilo MP5 usado por Jason y Lucia en el atraco y un LMG estilo M249 en el comercial de Ammu-Nation, además de una fila de SMGs estilo Uzi/MP7/MP9/TEC-9 en los estantes del propio local",
+    "note": "Se confirma visualmente la existencia de al menos un arma automática de este tipo dentro del arsenal del juego, ahora corroborado por análisis independiente de capturas oficiales adicionales más allá del mismo tráiler. Se eleva el nivel de 'oficial-visual' a 'oficial-visual-multifuente'. La identificación de marcas/modelos reales de inspiración es análisis de prensa especializada, no confirmación oficial de Rockstar.",
     "limitations": [
       "Nombres de modelo in-game no confirmados oficialmente",
       "No confirmado si el arma vista en el robo bancario y la del comercial de Ammu-Nation son el mismo modelo o variantes distintas",
