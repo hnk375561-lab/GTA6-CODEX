@@ -497,6 +497,79 @@ a:hover .logo-mark {
   box-shadow: 0 0 6px 1px rgba(34, 197, 94, 0.6);
 }
 
+/* --- Hero rediseño: kicker, título con gradiente animado, CTA primario
+   con glow y capas cinematográficas (scanlines + viñeta). Todo puramente
+   decorativo (aria-hidden en las capas) y desactivado por completo con
+   prefers-reduced-motion. --- */
+.hero-kicker {
+  opacity: var(--scene-intro);
+  transition: opacity 600ms ease;
+}
+
+.hero-title {
+  opacity: var(--scene-intro);
+  transition: opacity 600ms ease;
+}
+
+.hero-title-accent {
+  background: linear-gradient(90deg, #22c55e 0%, #4ade80 35%, #ff8a3a 70%, #ff6600 100%);
+  background-size: 200% auto;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hero-title-gradient-shift 6s ease-in-out infinite;
+}
+
+@keyframes hero-title-gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-cta-primary {
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.3), 0 8px 24px -8px rgba(34, 197, 94, 0.5);
+}
+
+.hero-cta-primary:hover {
+  box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.5), 0 12px 32px -8px rgba(34, 197, 94, 0.7);
+}
+
+.hero-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+  background-image: repeating-linear-gradient(
+    180deg,
+    rgba(0, 208, 0, 0.05),
+    rgba(0, 208, 0, 0.05) 1px,
+    transparent 0,
+    transparent 3px
+  );
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(ellipse 80% 60% at 50% 40%, transparent 40%, rgba(5, 5, 5, 0.65) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-accent {
+    animation: none !important;
+    background-position: 50% 50% !important;
+  }
+}
+
 /* --- Fondo de ficha destacada (EntityHeaderBackground) --- */
 .entity-bg-glow {
   position: absolute;

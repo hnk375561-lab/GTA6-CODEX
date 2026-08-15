@@ -136,7 +136,7 @@ export function RotatingHeroBackground() {
             quality={90}
             className="object-cover"
             style={{
-              opacity: i === index ? 0.32 : 0,
+              opacity: i === index ? 0.5 : 0,
               transition: `opacity ${CROSSFADE_MS}ms ease-in-out`,
             }}
           />

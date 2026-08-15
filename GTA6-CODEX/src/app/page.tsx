@@ -63,11 +63,13 @@ export default async function Home() {
           sincronizada con la apertura de iris del motor WebGL vía las
           variables --scene-* (ver SceneAmbientBridge); nunca oculta el
           contenido (opacity siempre 1) para no depender de que WebGL cargue. */}
-      <SceneSection sceneId="hero" className="hero-gleam relative overflow-hidden border-b border-gta-border py-24 sm:py-36">
+      <SceneSection sceneId="hero" className="hero-gleam relative overflow-hidden border-b border-gta-border py-28 sm:py-44">
         <RotatingHeroBackground />
         <div className="hero-gleam-sweep" aria-hidden="true" />
+        <div className="hero-scanlines" aria-hidden="true" />
+        <div className="hero-vignette" aria-hidden="true" />
         <div className="container-max relative">
-          <div className="hero-cinematic mx-auto max-w-2xl text-center">
+          <div className="hero-cinematic mx-auto max-w-3xl text-center">
             <Reveal delay={0} className="mb-8 flex justify-center">
               <div className="hero-pill">
                 <span className="hero-pill-dot" aria-hidden="true" />
@@ -77,20 +79,27 @@ export default async function Home() {
               </div>
             </Reveal>
 
-            <h1 className="mb-3 text-5xl font-bold text-gta-text sm:text-6xl">
-              GTA6 <span className="text-gta-accent">Codex</span>
+            <Reveal delay={60}>
+              <p className="hero-kicker mb-4 text-xs font-bold uppercase tracking-[0.3em] text-gta-accent">
+                Leonida · 2026
+              </p>
+            </Reveal>
+
+            <h1 className="hero-title mb-4 text-6xl font-black leading-[0.95] tracking-tight sm:text-8xl">
+              <span className="block text-gta-text">GTA6</span>
+              <span className="hero-title-accent block">Codex</span>
             </h1>
 
-            <div className="mb-6 flex items-center justify-center gap-2 text-lg text-gta-text-secondary sm:text-xl">
+            <div className="mb-7 flex items-center justify-center gap-2 text-lg text-gta-text-secondary sm:text-2xl">
               <span>Explorá</span>
               <WordRotate
                 words={['Personajes', 'Vehículos', 'Ubicaciones', 'Misiones', 'Organizaciones']}
                 duration={2200}
-                className="font-semibold text-gta-accent"
+                className="font-bold text-gta-accent"
               />
             </div>
 
-            <p className="mb-8 text-balance text-lg text-gta-text-secondary sm:text-xl">
+            <p className="mb-10 text-balance text-lg text-gta-text-secondary sm:text-xl">
               El wiki editorial más completo sobre Grand Theft Auto 6. Información
               verificada, rumores y análisis profundo en un solo lugar.
             </p>
@@ -99,13 +108,14 @@ export default async function Home() {
             <Reveal delay={200} className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
                 href={`/${EntityType.CHARACTER}`}
-                className="inline-flex items-center justify-center rounded-lg bg-gta-accent px-8 py-3 font-semibold text-gta-dark transition-colors hover:bg-gta-accent-strong"
+                className="hero-cta-primary inline-flex items-center justify-center gap-2 rounded-lg px-9 py-4 text-base font-bold text-gta-dark transition-all hover:-translate-y-0.5"
               >
-                Explorar
+                Explorar el Codex
+                <span aria-hidden="true">→</span>
               </Link>
               <Link
                 href="/buscar"
-                className="inline-flex items-center justify-center rounded-lg border border-gta-border-strong px-8 py-3 font-semibold text-gta-text transition-colors hover:border-gta-accent hover:text-gta-accent"
+                className="inline-flex items-center justify-center rounded-lg border-2 border-gta-border-strong px-9 py-4 text-base font-bold text-gta-text transition-all hover:-translate-y-0.5 hover:border-gta-accent hover:text-gta-accent"
               >
                 Buscar
               </Link>
