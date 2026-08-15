@@ -3,10 +3,13 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { EntityType } from '@/types'
 import { getEntitiesByType } from '@/lib/entities'
+import { getCoverArtVideoAsset, resolveMediaRender } from '@/lib/media'
 import { generateListMetadata } from '@/lib/seo'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
+import { Card, CardBody } from '@/components/ui/Card'
 import { EntityListExplorer } from '@/components/entities/EntityListExplorer'
+import { VideoEmbed } from '@/components/media/VideoEmbed'
 
 interface PageProps {
   params: Promise<{ entityType: string }>
@@ -100,6 +103,25 @@ export default async function EntityTypePage({ params }: PageProps) {
             </div>
           </div>
         </Reveal>
+
+        {/* Portada oficial en video: solo en el listado de Trailers, no
+            reemplaza ningún contenido existente — se agrega arriba del
+            explorador de la lista. */}
+        {type === EntityType.TRAILER && (
+          <Reveal className="mb-10">
+            {(() => {
+              const coverArt = resolveMediaRender(getCoverArtVideoAsset())
+              return (
+                <Card className="overflow-hidden !p-0">
+                  <VideoEmbed videoSrc={coverArt.videoSrc!} title={coverArt.title} className="!rounded-none !border-0" />
+                  <CardBody>
+                    <p className="text-sm text-gta-text-secondary">{coverArt.title}</p>
+                  </CardBody>
+                </Card>
+              )
+            })()}
+          </Reveal>
+        )}
 
         <EntityListExplorer type={type} entities={entities} typeLabel={label} />
       </div>

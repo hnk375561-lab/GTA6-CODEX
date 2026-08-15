@@ -17,6 +17,9 @@ import { EntityImage } from '@/components/entities/EntityImage'
 import { TrailerScenes } from '@/components/entities/TrailerScenes'
 import { TrailerStats } from '@/components/entities/TrailerStats'
 import { TrailerNav } from '@/components/entities/TrailerNav'
+import { TrailerPlayer } from '@/components/media/TrailerPlayer'
+import { MediaCarousel } from '@/components/media/MediaCarousel'
+import { getMediaForEntity } from '@/lib/media'
 import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
 import { MagicCard } from '@/components/ui/MagicCard'
 import { SceneSection } from '@/components/webgl/SceneSection'
@@ -96,6 +99,13 @@ export default async function EntityPage({ params }: PageProps) {
   if (!entity) notFound()
 
   const related = await getRelatedEntitiesWithLabel(entity, 8)
+  // Media relacionada (clips de personaje, trailers donde aparece, retratos
+  // de entidades vinculadas). Se filtra el propio retrato de la entidad
+  // (id `entity-portrait-{type}-{slug}`) porque ya se muestra aparte vía
+  // `EntityImage` más abajo — el carrusel es "lo demás", no un duplicado.
+  const relatedMedia = getMediaForEntity(entity).filter(
+    (asset) => asset.id !== `entity-portrait-${type}-${entity.slug}`
+  )
   const jsonLd = generateEntityJsonLd(entity)
   const breadcrumbLd = generateBreadcrumbJsonLd([
     { label: 'Inicio', url: '/' },
@@ -238,6 +248,11 @@ export default async function EntityPage({ params }: PageProps) {
           <div className="space-y-6 lg:col-span-2">
             {type === EntityType.TRAILER && 'scenes' in entity && (
               <Reveal direction="left">
+                <TrailerPlayer trailer={entity as Trailer} />
+              </Reveal>
+            )}
+            {type === EntityType.TRAILER && 'scenes' in entity && (
+              <Reveal direction="left">
                 <TrailerScenes trailer={entity as Trailer} />
               </Reveal>
             )}
@@ -272,6 +287,12 @@ export default async function EntityPage({ params }: PageProps) {
             {ENTITY_IMAGE_CATEGORIES.includes(type) && (
               <Reveal direction="right">
                 <EntityImage entity={entity} variant="portrait" />
+              </Reveal>
+            )}
+
+            {relatedMedia.length > 0 && (
+              <Reveal direction="right" delay={40}>
+                <MediaCarousel title="Contenido audiovisual" assets={relatedMedia} />
               </Reveal>
             )}
 

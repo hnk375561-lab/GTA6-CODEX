@@ -2,6 +2,7 @@ import type { Trailer } from '@/types'
 import { getMediaAssets, resolveMediaRender } from '@/lib/media'
 import { Card, CardBody } from '@/components/ui/Card'
 import { YouTubeEmbed } from '@/components/media/YouTubeEmbed'
+import { VideoEmbed } from '@/components/media/VideoEmbed'
 
 interface TrailerPlayerProps {
   trailer: Trailer
@@ -47,12 +48,16 @@ export function TrailerPlayer({ trailer }: TrailerPlayerProps) {
 
   return (
     <Card className="overflow-hidden !p-0">
-      <YouTubeEmbed
-        embedId={rendered.embedId!}
-        title={rendered.title}
-        thumbnailSrc={rendered.thumbnailSrc}
-        className="!rounded-none !border-0"
-      />
+      {rendered.renderAs === 'youtube' ? (
+        <YouTubeEmbed
+          embedId={rendered.embedId!}
+          title={rendered.title}
+          thumbnailSrc={rendered.thumbnailSrc}
+          className="!rounded-none !border-0"
+        />
+      ) : rendered.renderAs === 'video' ? (
+        <VideoEmbed videoSrc={rendered.videoSrc!} title={rendered.title} className="!rounded-none !border-0" />
+      ) : null}
       <div className="flex flex-wrap items-center justify-between gap-2 p-4">
         <p className="text-sm text-gta-text-secondary">{asset.credit}</p>
         {trailer.durationSeconds && (

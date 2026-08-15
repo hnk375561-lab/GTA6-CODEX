@@ -23,8 +23,11 @@ import type { EntityType } from './entity'
  *  adelante sin romper el contrato. */
 export type MediaKind = 'trailer' | 'video' | 'image'
 
-/** De dónde viene el asset. 'youtube' es el único proveedor con embed hoy. */
-export type MediaSourceType = 'youtube' | 'official-site' | 'local'
+/** De dónde viene el asset. 'youtube' es embed; 'vercel-blob' es un archivo
+ *  de video servido directamente (mp4) desde Vercel Blob Storage, hotlinkeado
+ *  por URL pública — mismo criterio de "no alojar en el repo" que ya usa
+ *  'youtube', pero sin proveedor de embed intermedio. */
+export type MediaSourceType = 'youtube' | 'vercel-blob' | 'official-site' | 'local'
 
 /** Nivel de verificación de la procedencia del asset — mismo espíritu que
  *  `evidence.level` en BaseEntity, pero acotado al material audiovisual. */
@@ -63,6 +66,9 @@ export interface MediaAsset {
   source: MediaSource
   /** Id de video de YouTube, si el asset es reproducible como embed. */
   youtubeId?: string
+  /** URL pública y directa de un archivo de video (mp4), para assets sin
+   *  proveedor de embed — hoy, clips y tráilers alojados en Vercel Blob. */
+  videoSrc?: string
   /** Ruta pública de imagen, para assets tipo 'image'. */
   imageSrc?: string
   relations?: {
@@ -73,10 +79,14 @@ export interface MediaAsset {
 
 /** Resultado de resolver un MediaAsset a algo efectivamente renderizable. */
 export interface RenderableMedia {
-  renderAs: 'youtube' | 'image' | 'unavailable'
+  renderAs: 'youtube' | 'video' | 'image' | 'unavailable'
   /** Id de embed de YouTube — solo si renderAs === 'youtube'. */
   embedId?: string
-  /** Miniatura a mostrar en galería/carrusel/lightbox. */
+  /** URL directa del archivo mp4 — solo si renderAs === 'video'. */
+  videoSrc?: string
+  /** Miniatura a mostrar en galería/carrusel/lightbox. Vacía para 'video'
+   *  directo: no hay miniatura estática generada, el propio <video> resuelve
+   *  su primer frame vía `preload="metadata"`. */
   thumbnailSrc: string
   title: string
 }

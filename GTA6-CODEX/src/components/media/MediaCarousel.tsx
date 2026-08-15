@@ -4,6 +4,7 @@ import type { MediaAsset } from '@/types/media'
 import { resolveMediaRender } from '@/lib/media'
 import { Card, CardHeader, CardBody } from '@/components/ui/Card'
 import { YouTubeEmbed } from '@/components/media/YouTubeEmbed'
+import { VideoEmbed } from '@/components/media/VideoEmbed'
 
 interface MediaCarouselProps {
   title: string
@@ -14,8 +15,9 @@ interface MediaCarouselProps {
  * Carrusel horizontal de media relacionada, mostrado en el sidebar de la
  * ficha de entidad ("Contenido relacionado"). Cada asset se resuelve a su
  * forma renderizable vía `resolveMediaRender`: video de YouTube (facade
- * click-to-load) o imagen. Assets 'unavailable' se omiten silenciosamente
- * en vez de mostrar un placeholder roto.
+ * click-to-load), video mp4 directo (facade click-to-load, ver VideoEmbed)
+ * o imagen. Assets 'unavailable' se omiten silenciosamente en vez de
+ * mostrar un placeholder roto.
  */
 export function MediaCarousel({ title, assets }: MediaCarouselProps) {
   const renderable = assets
@@ -35,6 +37,8 @@ export function MediaCarousel({ title, assets }: MediaCarouselProps) {
             const content =
               rendered.renderAs === 'youtube' ? (
                 <YouTubeEmbed embedId={rendered.embedId!} title={rendered.title} thumbnailSrc={rendered.thumbnailSrc} />
+              ) : rendered.renderAs === 'video' ? (
+                <VideoEmbed videoSrc={rendered.videoSrc!} title={rendered.title} />
               ) : (
                 <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-gta-darker">
                   <Image
@@ -62,7 +66,12 @@ export function MediaCarousel({ title, assets }: MediaCarouselProps) {
               </div>
             )
 
-            return href && rendered.renderAs !== 'youtube' ? (
+            // Youtube y video (mp4) ya son sus propios elementos interactivos
+            // (facade con <button>) — no se envuelven en <Link> para no anidar
+            // controles interactivos uno dentro del otro.
+            const isInteractiveEmbed = rendered.renderAs === 'youtube' || rendered.renderAs === 'video'
+
+            return href && !isInteractiveEmbed ? (
               <Link key={asset.id} href={href} className="block">
                 {body}
               </Link>

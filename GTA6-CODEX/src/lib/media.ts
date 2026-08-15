@@ -37,6 +37,21 @@ function extractYouTubeId(url?: string): string | null {
   return match ? match[1] : null
 }
 
+/** Reconoce una URL de archivo de video directo (mp4) sin importar el host
+ *  ni el query string — hoy usado para los assets alojados en Vercel Blob
+ *  Storage (`*.public.blob.vercel-storage.com`), pero no se ata el patrón a
+ *  ese host: cualquier URL https que termine en `.mp4` sirve como fuente
+ *  reproducible directa. */
+function isDirectVideoUrl(url?: string): url is string {
+  if (!url) return false
+  try {
+    const { pathname } = new URL(url)
+    return /\.mp4$/i.test(pathname)
+  } catch {
+    return false
+  }
+}
+
 /**
  * Miniatura de un trailer para usarla como imagen de card (EntityImage).
  * Los trailers no tienen archivo local en `public/images/entities/trailers/`
@@ -70,30 +85,159 @@ export function getMediaAssets(): MediaAsset[] {
 
   for (const trailer of trailers) {
     const youtubeId = extractYouTubeId(trailer.officialUrl)
-    if (!youtubeId) continue
 
-    assets.push({
-      id: `trailer-${trailer.slug}`,
-      kind: 'trailer',
-      title: trailer.title,
-      description: trailer.description,
-      credit: 'Rockstar Games — canal oficial de YouTube',
-      tags: trailer.tags,
-      status: trailer.status === 'confirmado' ? 'verified' : 'unverified',
-      source: {
-        provider: 'YouTube (Rockstar Games)',
-        type: 'youtube',
-        hotlinkNote: 'Embed oficial de YouTube — no se aloja el video en este sitio.',
-      },
-      youtubeId,
-      relations: {
-        trailer: { trailerSlug: trailer.slug },
-      },
-    })
+    if (youtubeId) {
+      assets.push({
+        id: `trailer-${trailer.slug}`,
+        kind: 'trailer',
+        title: trailer.title,
+        description: trailer.description,
+        credit: 'Rockstar Games — canal oficial de YouTube',
+        tags: trailer.tags,
+        status: trailer.status === 'confirmado' ? 'verified' : 'unverified',
+        source: {
+          provider: 'YouTube (Rockstar Games)',
+          type: 'youtube',
+          hotlinkNote: 'Embed oficial de YouTube — no se aloja el video en este sitio.',
+        },
+        youtubeId,
+        relations: {
+          trailer: { trailerSlug: trailer.slug },
+        },
+      })
+      continue
+    }
+
+    // Sin ID de YouTube reconocible: si `officialUrl` es un archivo de
+    // video directo (mp4), se arma un MediaAsset reproducible vía <video>
+    // nativo en vez de descartar el trailer. No se hotlinkea el archivo
+    // en el repo: la URL pública queda tal cual llegó (Vercel Blob).
+    if (isDirectVideoUrl(trailer.officialUrl)) {
+      assets.push({
+        id: `trailer-${trailer.slug}`,
+        kind: 'trailer',
+        title: trailer.title,
+        description: trailer.description,
+        credit: 'Rockstar Games — material oficial',
+        tags: trailer.tags,
+        status: trailer.status === 'confirmado' ? 'verified' : 'unverified',
+        source: {
+          provider: 'Vercel Blob Storage',
+          type: 'vercel-blob',
+          hotlinkNote: 'Archivo de video servido directamente por URL pública — no se aloja en este repositorio.',
+        },
+        videoSrc: trailer.officialUrl,
+        relations: {
+          trailer: { trailerSlug: trailer.slug },
+        },
+      })
+    }
   }
+
+  assets.push(...getCharacterClipAssets())
 
   if (CACHE_ENABLED) assetsCache = assets
   return assets
+}
+
+/**
+ * REGISTRO DE CLIPS DE PERSONAJE (Vercel Blob)
+ * ================================================
+ * Clips cortos de presentación de personaje, hotlinkeados por URL pública
+ * de Vercel Blob (no se descargan ni se alojan en el repo). Mismo criterio
+ * que `KEY_ART` en `lib/gallery.ts`: un registro chico y explícito en código
+ * en vez de inventar un nuevo tipo de contenido en `src/content/`, porque
+ * `Character` (`types/entity.ts`) no modela video y estos clips no son
+ * escenas de trailer (no tienen `TrailerScene` asociada). Cada entrada se
+ * ata a un personaje ya existente por `entitySlug`; si el slug no matchea
+ * ninguna entidad real, `getMediaForEntity` simplemente no la muestra.
+ */
+const CHARACTER_CLIPS: ReadonlyArray<{ entitySlug: string; title: string; url: string }> = [
+  {
+    entitySlug: 'boobie-ike',
+    title: 'Boobie Ike — clip de presentación',
+    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Boobie_Ike_Video_Clip.mp4',
+  },
+  {
+    entitySlug: 'brian-heder',
+    title: 'Brian Heder — clip de presentación',
+    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Brian_Heder_Video_Clip.mp4',
+  },
+  {
+    entitySlug: 'cal-hampton',
+    title: 'Cal Hampton — clip de presentación',
+    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Cal_Hampton_Video_Clip.mp4',
+  },
+  {
+    entitySlug: 'drequan-priest',
+    title: "Dre'Quan Priest — clip de presentación",
+    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/DreQuan_Priest_Video_Clip.mp4',
+  },
+  {
+    entitySlug: 'jason-duval',
+    title: 'Jason Duval — clip de presentación',
+    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Jason_Duval_Video_Clip.mp4',
+  },
+  {
+    entitySlug: 'lucia-caminos',
+    title: 'Lucia Caminos — clip de presentación',
+    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Lucia_Caminos_Video_Clip.mp4',
+  },
+  {
+    entitySlug: 'raul-bautista',
+    title: 'Raul Bautista — clip de presentación',
+    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Raul_Bautista_Video_Clip.mp4',
+  },
+  {
+    entitySlug: 'real-dimez',
+    title: 'Real Dimez — clip de presentación',
+    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Real_Dimez_Video_Clip.mp4',
+  },
+]
+
+/** MediaAsset de kind 'video' por cada clip de personaje registrado arriba. */
+function getCharacterClipAssets(): MediaAsset[] {
+  return CHARACTER_CLIPS.map((clip) => ({
+    id: `clip-${clip.entitySlug}`,
+    kind: 'video',
+    title: clip.title,
+    credit: 'Rockstar Games — material oficial',
+    status: 'unverified',
+    source: {
+      provider: 'Vercel Blob Storage',
+      type: 'vercel-blob',
+      hotlinkNote: 'Archivo de video servido directamente por URL pública — no se aloja en este repositorio.',
+    },
+    videoSrc: clip.url,
+    relations: {
+      entity: { entityType: EntityType.CHARACTER, entitySlug: clip.entitySlug },
+    },
+  }))
+}
+
+/**
+ * Video de key art / portada oficial (formato horizontal), alojado en
+ * Vercel Blob. No pertenece a ningún personaje ni trailer puntual — mismo
+ * espíritu que `KEY_ART` en `gallery.ts`, pero en video. Se expone aparte
+ * (no vive en `getMediaAssets`) porque no es "media relacionada" de ninguna
+ * entidad ni un trailer con escenas: es la pieza de portada del sitio.
+ */
+export function getCoverArtVideoAsset(): MediaAsset {
+  return {
+    id: 'video-cover-art-landscape',
+    kind: 'video',
+    title: 'Grand Theft Auto VI — portada oficial (video)',
+    description: 'Pieza de portada oficial de Grand Theft Auto VI en formato horizontal.',
+    credit: 'Rockstar Games — material oficial',
+    status: 'verified',
+    source: {
+      provider: 'Vercel Blob Storage',
+      type: 'vercel-blob',
+      hotlinkNote: 'Archivo de video servido directamente por URL pública — no se aloja en este repositorio.',
+    },
+    videoSrc:
+      'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/GTAVI_Official_Cover_Art_Landscape.mp4',
+  }
 }
 
 /**
@@ -106,6 +250,17 @@ export function resolveMediaRender(asset: MediaAsset): RenderableMedia {
       renderAs: 'youtube',
       embedId: asset.youtubeId,
       thumbnailSrc: `https://img.youtube.com/vi/${asset.youtubeId}/hqdefault.jpg`,
+      title: asset.title,
+    }
+  }
+
+  if (asset.videoSrc) {
+    return {
+      renderAs: 'video',
+      videoSrc: asset.videoSrc,
+      // Sin miniatura estática: el <video> nativo resuelve su propio primer
+      // frame vía `preload="metadata"` (ver VideoEmbed.tsx).
+      thumbnailSrc: '',
       title: asset.title,
     }
   }
@@ -184,6 +339,13 @@ export function getMediaForEntity(entity: Entity, limit = 12): MediaAsset[] {
       imageSrc: ownImage.src,
       relations: { entity: { entityType: entity.type, entitySlug: entity.slug } },
     })
+  }
+
+  if (entity.type === EntityType.CHARACTER) {
+    const clip = getCharacterClipAssets().find(
+      (asset) => asset.relations?.entity?.entitySlug === entity.slug
+    )
+    if (clip) items.push(clip)
   }
 
   items.push(...getTrailerAssetsFeaturingEntity(entity))
