@@ -41,18 +41,51 @@ export interface ResolvedEntityImage {
 }
 
 /**
+ * CACHÉ DE LISTADOS DE DIRECTORIO
+ * ==================================
+ * `resolveEntityImage` original hacía hasta 5 `fs.existsSync` (uno por
+ * extensión candidata) POR entidad, cada vez que se llamaba — y se llama
+ * una vez por card en cada listado, más una vez por ficha, más una vez
+ * por ítem de galería. Para N entidades de un tipo eso es hasta 5×N
+ * syscalls repetidos en cada página que renderiza ese listado.
+ *
+ * En vez de eso, se lista el directorio UNA vez por tipo (`fs.readdirSync`)
+ * y se cachea como `Set<string>` de nombres de archivo; resolver una
+ * entidad pasa a ser una búsqueda en memoria (`set.has(...)`), sin tocar
+ * fs de nuevo. Igual que en `entities.ts`, la caché solo se activa en
+ * producción/build para no esconder imágenes nuevas agregadas en `next dev`.
+ */
+const CACHE_ENABLED = process.env.NODE_ENV === 'production'
+const dirListingCache = new Map<EntityType, Set<string> | null>()
+
+function getDirListing(type: EntityType): Set<string> | null {
+  if (CACHE_ENABLED && dirListingCache.has(type)) {
+    return dirListingCache.get(type)!
+  }
+
+  const dir = path.join(ENTITY_IMAGES_DIR, type)
+  let listing: Set<string> | null = null
+  if (fs.existsSync(dir)) {
+    listing = new Set(fs.readdirSync(dir))
+  }
+
+  if (CACHE_ENABLED) dirListingCache.set(type, listing)
+  return listing
+}
+
+/**
  * Busca en disco si existe una imagen local para esta entidad.
  * Devuelve null si no hay ninguna — el caller debe manejar el fallback.
  */
 export function resolveEntityImage(entity: Entity): ResolvedEntityImage | null {
-  const dir = path.join(ENTITY_IMAGES_DIR, entity.type)
-  if (!fs.existsSync(dir)) return null
+  const listing = getDirListing(entity.type)
+  if (!listing) return null
 
   for (const ext of IMAGE_EXTENSIONS) {
-    const filePath = path.join(dir, `${entity.slug}.${ext}`)
-    if (fs.existsSync(filePath)) {
+    const filename = `${entity.slug}.${ext}`
+    if (listing.has(filename)) {
       return {
-        src: `/images/entities/${entity.type}/${entity.slug}.${ext}`,
+        src: `/images/entities/${entity.type}/${filename}`,
         extension: ext,
         alt: entity.image?.alt || entity.title,
       }

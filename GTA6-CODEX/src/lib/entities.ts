@@ -27,12 +27,56 @@ function getContentDirForType(type: EntityType): string {
 }
 
 /**
- * Carga todas las entidades de un tipo específico
- * Lee todos los archivos .json en /content/{type}/
+ * CACHÉ EN MEMORIA
+ * ==================
+ * Todo el contenido vive en JSON en disco y se lee con fs *sync* (no hay
+ * I/O real de red). Sin caché, cada page/build request re-lee y re-parsea
+ * los mismos archivos: una entidad con 5 relaciones dispara 5 lecturas de
+ * disco completas por página, y funciones que recorren TODO el contenido
+ * (`getBidirectionalRelations`, `getAllEntities`, la galería, el sitemap)
+ * terminan re-leyendo todo el árbol de contenido una vez por cada entidad
+ * que exista — O(n²) I/O en un build que ya de por sí genera cientos de
+ * páginas estáticas.
+ *
+ * Se cachea únicamente en producción/build (`NODE_ENV === 'production'`).
+ * En `next dev` se deja el comportamiento original (siempre leer de
+ * disco) a propósito: el flujo documentado en el README es "crear/editar
+ * un JSON y verlo reflejado en dev sin reiniciar nada"; cachear ahí
+ * rompería esa experiencia de autoría de contenido.
  */
-export async function getEntitiesByType(type: EntityType): Promise<Entity[]> {
+const CACHE_ENABLED = process.env.NODE_ENV === 'production'
+
+const typeCache = new Map<EntityType, Entity[]>()
+const singleEntityCache = new Map<string, Entity | null>()
+
+function entityCacheKey(type: EntityType, slug: string): string {
+  return `${type}/${slug}`
+}
+
+/** Limpia toda la caché en memoria. Expuesto para tests / scripts que
+ *  necesiten releer contenido dentro del mismo proceso (ej. watchers). */
+export function clearEntityCache(): void {
+  typeCache.clear()
+  singleEntityCache.clear()
+}
+
+/**
+ * Core síncrono de carga: lee, parsea y valida todos los JSON de un tipo.
+ * Separado de `getEntitiesByType` para que otros módulos (ej. `lib/media.ts`,
+ * que necesita leer trailers sin poder usar `await`) puedan reutilizar
+ * exactamente la misma lógica de lectura/validación/caché en vez de
+ * reimplementar su propia lectura de fs por separado.
+ */
+function loadEntitiesByTypeSync(type: EntityType): Entity[] {
+  if (CACHE_ENABLED && typeCache.has(type)) {
+    return typeCache.get(type)!
+  }
+
   const dir = getContentDirForType(type)
-  if (!fs.existsSync(dir)) return []
+  if (!fs.existsSync(dir)) {
+    if (CACHE_ENABLED) typeCache.set(type, [])
+    return []
+  }
 
   const files = fs.readdirSync(dir).filter((f) => f.endsWith('.json'))
   const entities: Entity[] = []
@@ -64,39 +108,71 @@ export async function getEntitiesByType(type: EntityType): Promise<Entity[]> {
     }
   }
 
-  return entities.sort((a, b) => a.title.localeCompare(b.title, 'es'))
+  entities.sort((a, b) => a.title.localeCompare(b.title, 'es'))
+
+  if (CACHE_ENABLED) typeCache.set(type, entities)
+  return entities
+}
+
+/**
+ * Variante síncrona de `getEntitiesByType`, para código que no puede (o no
+ * necesita) usar `await` — ej. módulos que se ejecutan fuera de un Server
+ * Component async, o utilidades que se apoyan en varias entidades a la vez
+ * dentro de una función síncrona.
+ */
+export function getEntitiesByTypeSync(type: EntityType): Entity[] {
+  return loadEntitiesByTypeSync(type)
+}
+
+/**
+ * Carga todas las entidades de un tipo específico.
+ * Lee todos los archivos .json en /content/{type}/
+ */
+export async function getEntitiesByType(type: EntityType): Promise<Entity[]> {
+  return loadEntitiesByTypeSync(type)
 }
 
 /**
  * Obtiene una entidad específica por tipo y slug
  */
 export async function getEntity(type: EntityType, slug: string): Promise<Entity | null> {
-  const filePath = path.join(getContentDirForType(type), `${slug}.json`)
-  if (!fs.existsSync(filePath)) return null
-
-  try {
-    const raw = fs.readFileSync(filePath, 'utf-8')
-    const parsed = JSON.parse(raw)
-    if (!validateEntity(parsed)) return null
-    if (!validateTypeSpecific(type, parsed, `${type}/${slug}.json`)) return null
-    return parsed as Entity
-  } catch (err) {
-    console.warn(`[entities] Error leyendo ${type}/${slug}.json:`, err)
-    return null
+  const cacheKey = entityCacheKey(type, slug)
+  if (CACHE_ENABLED && singleEntityCache.has(cacheKey)) {
+    return singleEntityCache.get(cacheKey)!
   }
+
+  // Si ya cacheamos el tipo completo (ej. por una llamada previa a
+  // getEntitiesByType/getAllEntities), resolvemos desde ahí sin tocar fs.
+  if (CACHE_ENABLED && typeCache.has(type)) {
+    const found = typeCache.get(type)!.find((e) => e.slug === slug) || null
+    singleEntityCache.set(cacheKey, found)
+    return found
+  }
+
+  const filePath = path.join(getContentDirForType(type), `${slug}.json`)
+  let result: Entity | null = null
+
+  if (fs.existsSync(filePath)) {
+    try {
+      const raw = fs.readFileSync(filePath, 'utf-8')
+      const parsed = JSON.parse(raw)
+      if (validateEntity(parsed) && validateTypeSpecific(type, parsed, `${type}/${slug}.json`)) {
+        result = parsed as Entity
+      }
+    } catch (err) {
+      console.warn(`[entities] Error leyendo ${type}/${slug}.json:`, err)
+    }
+  }
+
+  if (CACHE_ENABLED) singleEntityCache.set(cacheKey, result)
+  return result
 }
 
 /**
  * Obtiene todos los slugs de un tipo (para generación de rutas estáticas)
  */
 export async function getEntitySlugs(type: EntityType): Promise<string[]> {
-  const dir = getContentDirForType(type)
-  if (!fs.existsSync(dir)) return []
-
-  return fs
-    .readdirSync(dir)
-    .filter((f) => f.endsWith('.json'))
-    .map((f) => f.replace(/\.json$/, ''))
+  return loadEntitiesByTypeSync(type).map((e) => e.slug)
 }
 
 /**
@@ -105,8 +181,7 @@ export async function getEntitySlugs(type: EntityType): Promise<string[]> {
 export async function getAllEntities(): Promise<Entity[]> {
   const all: Entity[] = []
   for (const type of Object.values(EntityType)) {
-    const entities = await getEntitiesByType(type)
-    all.push(...entities)
+    all.push(...loadEntitiesByTypeSync(type))
   }
   return all
 }
@@ -131,15 +206,15 @@ export async function getEntityCount(): Promise<number> {
 }
 
 /**
- * Cuenta entidades por tipo. Devuelve un mapa type -> count
+ * Cuenta entidades por tipo. Devuelve un mapa type -> count.
+ * Reutiliza la caché de contenido en vez de solo contar archivos en disco,
+ * para que el conteo refleje entidades *válidas* (consistente con el resto
+ * de la API) y no archivos crudos que después se descartan por inválidos.
  */
 export async function getEntityCountsByType(): Promise<Record<EntityType, number>> {
   const counts = {} as Record<EntityType, number>
   for (const type of Object.values(EntityType)) {
-    const dir = getContentDirForType(type)
-    counts[type] = fs.existsSync(dir)
-      ? fs.readdirSync(dir).filter((f) => f.endsWith('.json')).length
-      : 0
+    counts[type] = loadEntitiesByTypeSync(type).length
   }
   return counts
 }
@@ -183,16 +258,21 @@ export function validateEntity(entity: unknown): entity is BaseEntity {
 }
 
 /**
- * Normaliza un slug a formato URL-safe
+ * Normaliza un slug a formato URL-safe.
+ * Incluye normalización de acentos (á, é, í, ó, ú, ñ) para que títulos en
+ * español ("Lucía Caminos" -> "lucia-caminos") generen slugs limpios en
+ * vez de perder la letra acentuada silenciosamente en el regex de abajo.
  */
 export function normalizeSlug(input: string): string {
   return input
     .toLowerCase()
     .trim()
-    .replace(/[^\w\s-]/g, '') // Remove special chars
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/-+/g, '-') // Replace multiple hyphens with single
-    .replace(/^-+|-+$/g, '') // Remove leading/trailing hyphens
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // quita diacríticos (incluye ñ -> n)
+    .replace(/[^\w\s-]/g, '') // remueve caracteres especiales restantes
+    .replace(/\s+/g, '-') // espacios -> guiones
+    .replace(/-+/g, '-') // colapsa guiones repetidos
+    .replace(/^-+|-+$/g, '') // recorta guiones al inicio/final
 }
 
 /**

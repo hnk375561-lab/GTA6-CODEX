@@ -1,9 +1,27 @@
 import { Entity, EntityType } from '@/types'
 import { Metadata } from 'next'
+import { ENTITY_TYPE_LABELS } from './entity-labels'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel.app'
 const SITE_NAME = 'GTA6 Codex'
 const SITE_DESCRIPTION = 'Un wiki editorial de primer nivel sobre Grand Theft Auto 6'
+
+/**
+ * Tipo de Schema.org más específico por EntityType, para JSON-LD con mejor
+ * chance de generar rich snippets (personas, vehículos, lugares) en vez de
+ * un genérico `Thing` para todo el sitio. Tipos sin match específico caen
+ * a 'Thing' (ver `SCHEMA_TYPE_BY_ENTITY_TYPE[type] || 'Thing'` abajo).
+ */
+const SCHEMA_TYPE_BY_ENTITY_TYPE: Partial<Record<EntityType, string>> = {
+  [EntityType.CHARACTER]: 'Person',
+  [EntityType.VEHICLE]: 'Vehicle',
+  [EntityType.LOCATION]: 'Place',
+  [EntityType.FACTION]: 'Organization',
+  [EntityType.BUSINESS]: 'Organization',
+  [EntityType.NEWS]: 'NewsArticle',
+  [EntityType.GUIDE]: 'Article',
+  [EntityType.TRAILER]: 'VideoObject',
+}
 
 /**
  * Genera metadata para una entidad
@@ -48,26 +66,8 @@ export function generateEntityMetadata(entity: Entity): Metadata {
 /**
  * Genera metadata para páginas de listado
  */
-export function generateListMetadata(
-  type: EntityType,
-  count: number
-): Metadata {
-  const typeLabel = {
-    [EntityType.CHARACTER]: 'Personajes',
-    [EntityType.VEHICLE]: 'Vehículos',
-    [EntityType.LOCATION]: 'Ubicaciones',
-    [EntityType.MISSION]: 'Misiones',
-    [EntityType.WEAPON]: 'Armas',
-    [EntityType.ACTIVITY]: 'Actividades',
-    [EntityType.FACTION]: 'Organizaciones',
-    [EntityType.BUSINESS]: 'Negocios',
-    [EntityType.OBJECT]: 'Objetos',
-    [EntityType.NEWS]: 'Noticias',
-    [EntityType.GUIDE]: 'Guías',
-    [EntityType.TRAILER]: 'Trailers',
-  }
-
-  const label = typeLabel[type] || type
+export function generateListMetadata(type: EntityType, count: number): Metadata {
+  const label = ENTITY_TYPE_LABELS[type] || type
   const title = `${label} | ${SITE_NAME}`
   const description = `Explora ${count} ${label.toLowerCase()} en GTA 6 Codex`
   const url = `${SITE_URL}/${type}`
@@ -116,20 +116,25 @@ export function generateHomepageMetadata(): Metadata {
 }
 
 /**
- * Genera JSON-LD structured data para una entidad
+ * Genera JSON-LD structured data para una entidad.
+ * Usa un `@type` de Schema.org específico por categoría cuando existe
+ * mapeo (Person, Vehicle, Place, Organization...) en vez de un `Thing`
+ * genérico para todas las entidades del sitio — mejora la elegibilidad
+ * para rich snippets en buscadores.
  */
 export function generateEntityJsonLd(entity: Entity): object {
   const url = `${SITE_URL}/${entity.type}/${entity.slug}`
+  const schemaType = SCHEMA_TYPE_BY_ENTITY_TYPE[entity.type] || 'Thing'
 
   return {
     '@context': 'https://schema.org',
-    '@type': 'Thing',
+    '@type': schemaType,
     name: entity.title,
     description: entity.description,
     url,
     datePublished: entity.createdAt,
     dateModified: entity.updatedAt,
-    inLanguage: 'es-ES',
+    inLanguage: 'es',
     mainEntity: {
       '@type': 'WebPage',
       url,
@@ -140,9 +145,7 @@ export function generateEntityJsonLd(entity: Entity): object {
 /**
  * Genera JSON-LD para BreadcrumbList
  */
-export function generateBreadcrumbJsonLd(
-  items: Array<{ label: string; url: string }>
-): object {
+export function generateBreadcrumbJsonLd(items: Array<{ label: string; url: string }>): object {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
