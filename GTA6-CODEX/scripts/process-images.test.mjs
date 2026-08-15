@@ -259,6 +259,66 @@ describe('loadEntityIndex — end-to-end: un slug con path traversal nunca entra
   })
 })
 
+describe('main() end-to-end: concurrencia no debe pisar destinos entre workers', () => {
+  test('N archivos que resuelven a la misma entidad, con --concurrency alto: solo uno se mueve, el resto va a _duplicados-posibles/ (sin pérdida ni pisada silenciosa)', async () => {
+    const sharp = (await import('sharp')).default
+    const tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'process-images-concurrency-test-'))
+    try {
+      const contentDir = path.join(tmpRoot, 'src', 'content', 'personajes')
+      fs.mkdirSync(contentDir, { recursive: true })
+      fs.writeFileSync(
+        path.join(contentDir, 'lucia.json'),
+        JSON.stringify({ slug: 'lucia-caminos', type: 'personajes', title: 'Lucia Caminos' })
+      )
+
+      const configDir = path.join(tmpRoot, 'src', 'config')
+      fs.mkdirSync(configDir, { recursive: true })
+      fs.writeFileSync(path.join(configDir, 'entity-image-categories.json'), JSON.stringify(CATEGORIES))
+
+      const incomingDir = path.join(tmpRoot, 'incoming-images')
+      fs.mkdirSync(incomingDir, { recursive: true })
+
+      // 8 imágenes con contenido DISTINTO (para no activar el dedup por hash)
+      // que todas resuelven, por slug-prefix, a la misma entidad lucia-caminos.
+      const FILE_COUNT = 8
+      for (let i = 0; i < FILE_COUNT; i++) {
+        await sharp({
+          create: { width: 20, height: 20, channels: 3, background: { r: i * 10, g: 5, b: 5 } },
+        })
+          .png()
+          .toFile(path.join(incomingDir, `lucia-caminos-${i}.png`))
+      }
+
+      const result = spawnSync(
+        process.execPath,
+        [path.join(import.meta.dirname, 'process-images.mjs'), '--apply', '--concurrency=8'],
+        { cwd: tmpRoot, encoding: 'utf-8' }
+      )
+      assert.equal(result.status, 0, result.stderr)
+
+      const movedDir = path.join(tmpRoot, 'public', 'images', 'entities', 'personajes')
+      const movedFiles = fs.existsSync(movedDir) ? fs.readdirSync(movedDir) : []
+      const dupDir = path.join(incomingDir, '_duplicados-posibles')
+      const dupFiles = fs.existsSync(dupDir) ? fs.readdirSync(dupDir) : []
+
+      // Exactamente UN archivo final para la entidad (nunca pisado por otro
+      // worker sin pasar por la cuarentena de duplicados).
+      assert.deepEqual(movedFiles, ['lucia-caminos.webp'])
+      // El resto (FILE_COUNT - 1) tiene que estar en cuarentena, no perdido.
+      assert.equal(dupFiles.length, FILE_COUNT - 1)
+      // Ningún .tmp huérfano de escritura atómica.
+      const orphanTmp = fs.existsSync(movedDir)
+        ? fs.readdirSync(movedDir).filter((f) => f.endsWith('.tmp'))
+        : []
+      assert.equal(orphanTmp.length, 0)
+      // Nada se perdió: total de archivos vistos == movidos + duplicados.
+      assert.equal(movedFiles.length + dupFiles.length, FILE_COUNT)
+    } finally {
+      fs.rmSync(tmpRoot, { recursive: true, force: true })
+    }
+  })
+})
+
 describe('CATEGORIES — fuente única de verdad compartida con src/lib/images.ts', () => {
   test('CATEGORIES (script) coincide exactamente con entity-image-categories.json (usado por images.ts)', () => {
     const jsonPath = path.join(import.meta.dirname, '..', 'src', 'config', 'entity-image-categories.json')

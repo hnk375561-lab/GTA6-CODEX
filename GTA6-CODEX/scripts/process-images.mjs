@@ -30,6 +30,16 @@
  *   node scripts/process-images.mjs           # dry-run (no mueve nada)
  *   node scripts/process-images.mjs --apply    # ejecuta de verdad
  *   node scripts/process-images.mjs --apply --overwrite
+ *   node scripts/process-images.mjs --apply --concurrency=8
+ *
+ * CONCURRENCIA:
+ *   El procesamiento de cada archivo corre con un pool de concurrencia
+ *   acotada (CONCURRENCY, default 4, configurable con --concurrency=N).
+ *   La parte que decide duplicados exactos (lectura + hash + chequeo/set
+ *   en seenHashes) es síncrona y corre de un tirón sin ningún await en el
+ *   medio, así que no hay condición de carrera entre workers aunque se
+ *   ejecuten en paralelo. Cada archivo mantiene su propio temp file de
+ *   escritura atómica, así que tampoco hay colisión entre workers ahí.
  *
  * IMPORTANTE:
  *   Este script NO descarga nada de internet. Solo procesa archivos que
@@ -58,6 +68,27 @@ const WEBP_QUALITY = 82
 
 const APPLY = process.argv.includes('--apply')
 const OVERWRITE = process.argv.includes('--overwrite')
+
+const concurrencyArg = process.argv.find((a) => a.startsWith('--concurrency='))
+const CONCURRENCY = concurrencyArg ? Math.max(1, parseInt(concurrencyArg.split('=')[1], 10) || 4) : 4
+
+/**
+ * Pool de concurrencia acotada, sin dependencias nuevas.
+ * Corre `worker(item)` para cada elemento de `items`, nunca más de `limit`
+ * a la vez. Preserva el orden de `items` solo en el sentido de que todos se
+ * lanzan y se esperan; el orden de finalización puede variar.
+ */
+async function runWithConcurrency(items, limit, worker) {
+  let cursor = 0
+  async function runNext() {
+    while (cursor < items.length) {
+      const index = cursor++
+      await worker(items[index], index)
+    }
+  }
+  const workers = Array.from({ length: Math.min(limit, items.length) }, () => runNext())
+  await Promise.all(workers)
+}
 
 function normalize(str) {
   return str
@@ -240,6 +271,14 @@ async function main() {
   }
 
   const seenHashes = new Map() // hash -> filePath ya procesado en esta corrida
+  // destPath -> filePath que ya la reservó en esta corrida. Necesario porque con
+  // concurrencia > 1, dos workers pueden entrar casi a la vez con archivos que
+  // resuelven a la MISMA entidad (ej. lucia-caminos-1.png y lucia-caminos-2.png):
+  // sin esto, ambos pasan el chequeo fs.existsSync(destPath) antes de que
+  // cualquiera escriba, y el segundo rename() pisa en silencio al primero,
+  // saltándose la protección de "_duplicados-posibles/". La reserva es una
+  // operación 100% síncrona (sin await en el medio) así que no hay carrera.
+  const claimedDestPaths = new Map() // destPath -> filePath que la reservó
   const report = { processed: 0, identified: 0, moved: 0, duplicates: 0, unidentified: 0, errors: 0 }
 
   if (APPLY) {
@@ -248,7 +287,7 @@ async function main() {
     fs.mkdirSync(ERROR_DIR, { recursive: true })
   }
 
-  for (const { filePath, categoryHint } of filesToProcess) {
+  await runWithConcurrency(filesToProcess, CONCURRENCY, async ({ filePath, categoryHint }) => {
     report.processed++
     const baseName = path.basename(filePath, path.extname(filePath))
     let tempDestPath = null
@@ -261,7 +300,7 @@ async function main() {
         console.log(`  DUPLICADO EXACTO (mismo contenido que ${seenHashes.get(hash)}): ${filePath}`)
         report.duplicates++
         if (APPLY) fs.renameSync(filePath, path.join(POSSIBLE_DUP_DIR, path.basename(filePath)))
-        continue
+        return
       }
       seenHashes.set(hash, filePath)
 
@@ -271,7 +310,7 @@ async function main() {
         console.log(`  SIN IDENTIFICAR: ${filePath} (no coincide con ningún slug/título conocido)`)
         report.unidentified++
         if (APPLY) fs.renameSync(filePath, path.join(UNIDENTIFIED_DIR, path.basename(filePath)))
-        continue
+        return
       }
 
       if (match.status === 'ambiguous') {
@@ -281,7 +320,7 @@ async function main() {
         )
         report.unidentified++
         if (APPLY) fs.renameSync(filePath, path.join(UNIDENTIFIED_DIR, path.basename(filePath)))
-        continue
+        return
       }
 
       report.identified++
@@ -289,14 +328,22 @@ async function main() {
       const destDir = path.join(PUBLIC_ENTITIES_DIR, entity.type)
       const destPath = path.join(destDir, `${entity.slug}.webp`)
 
-      if (fs.existsSync(destPath) && !OVERWRITE) {
+      // Chequeo + reserva síncronos, sin ningún await entre medio: si dos
+      // archivos de esta misma corrida resuelven a la misma entidad, solo el
+      // primero que llega a esta línea la reserva; el resto cae al mismo
+      // camino que "ya existe en disco", sin pisar nada.
+      if ((fs.existsSync(destPath) || claimedDestPaths.has(destPath)) && !OVERWRITE) {
+        const reason = claimedDestPaths.has(destPath)
+          ? `otro archivo de esta misma corrida (${claimedDestPaths.get(destPath)}) ya la reservó`
+          : 'ya existe en disco'
         console.log(
-          `  YA EXISTE imagen para ${entity.type}/${entity.slug} — dejo el archivo en _duplicados-posibles/ (usá --overwrite para reemplazar)`
+          `  YA EXISTE imagen para ${entity.type}/${entity.slug} (${reason}) — dejo el archivo en _duplicados-posibles/ (usá --overwrite para reemplazar)`
         )
         report.duplicates++
         if (APPLY) fs.renameSync(filePath, path.join(POSSIBLE_DUP_DIR, path.basename(filePath)))
-        continue
+        return
       }
+      claimedDestPaths.set(destPath, filePath)
 
       console.log(
         `  ${entity.type}/${entity.slug}  <—  ${path.basename(filePath)}  (match: ${confidence})`
@@ -352,7 +399,7 @@ async function main() {
         }
       }
     }
-  }
+  })
 
   console.log('\n=== REPORTE ===')
   console.log(`Archivos vistos:       ${report.processed}`)
