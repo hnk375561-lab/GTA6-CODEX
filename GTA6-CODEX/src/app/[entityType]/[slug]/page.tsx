@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { EntityType, type Trailer } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
-import { getRelatedEntitiesWithLabel } from '@/lib/relations'
+import { getBidirectionalRelatedEntitiesWithLabel } from '@/lib/relations'
 import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
@@ -98,7 +98,7 @@ export default async function EntityPage({ params }: PageProps) {
   const entity = await getEntity(type, slug)
   if (!entity) notFound()
 
-  const related = await getRelatedEntitiesWithLabel(entity, 8)
+  const related = await getBidirectionalRelatedEntitiesWithLabel(entity, 8)
   // Media relacionada (clips de personaje, trailers donde aparece, retratos
   // de entidades vinculadas). Se filtra el propio retrato de la entidad
   // (id `entity-portrait-{type}-{slug}`) porque ya se muestra aparte vía

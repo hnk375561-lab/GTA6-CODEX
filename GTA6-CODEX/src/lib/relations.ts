@@ -87,6 +87,29 @@ export async function getBidirectionalRelations(entity: Entity): Promise<EntityR
 }
 
 /**
+ * Igual que getRelatedEntitiesWithLabel, pero incluye también las
+ * relaciones entrantes inferidas (getBidirectionalRelations), para que
+ * una entidad como "leonida" -que no declara relations propias pero es
+ * referenciada por 7 ubicaciones con located_in- muestre esos vínculos
+ * en su panel "Relacionado" aunque nunca los haya declarado ella misma.
+ */
+export async function getBidirectionalRelatedEntitiesWithLabel(
+  entity: Entity,
+  limit?: number
+): Promise<Array<{ entity: Entity; relation: string }>> {
+  const relations = await getBidirectionalRelations(entity)
+  const sliced = limit ? relations.slice(0, limit) : relations
+  const resolved: Array<{ entity: Entity; relation: string }> = []
+
+  for (const rel of sliced) {
+    const target = await getEntity(rel.targetType, rel.targetSlug)
+    if (target) resolved.push({ entity: target, relation: rel.relation })
+  }
+
+  return resolved
+}
+
+/**
  * Agrupa relaciones por tipo de relación
  */
 export function groupRelationsByType(relations: EntityRelation[]): Map<string, EntityRelation[]> {

@@ -64,33 +64,33 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Secciones */}
           <div>
-            <h3 className="eyebrow mb-4 text-xs font-semibold uppercase text-gta-accent-strong">Legal</h3>
+            <h3 className="eyebrow mb-4 text-xs font-semibold uppercase text-gta-accent-strong">Secciones</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/buscar"
                   className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
                 >
-                  Política de Privacidad
-                </a>
+                  Búsqueda
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/galeria"
                   className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
                 >
-                  Términos de Uso
-                </a>
+                  Galería
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={`/${EntityType.TRAILER}`}
                   className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
                 >
-                  Contacto
-                </a>
+                  Trailers
+                </Link>
               </li>
             </ul>
           </div>

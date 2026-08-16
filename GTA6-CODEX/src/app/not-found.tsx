@@ -23,7 +23,13 @@ export default function NotFound() {
             Volver a Inicio
           </Link>
           <p className="text-sm text-gta-text-tertiary">
-            Si crees que esto es un error, contáctanos
+            Si crees que esto es un error,{' '}
+            <Link
+              href="/buscar"
+              className="link-underline text-gta-accent-strong transition-colors hover:text-gta-accent"
+            >
+              probá buscarlo
+            </Link>
           </p>
         </div>
       </div>

@@ -31,8 +31,8 @@ function safeDate(value: string): Date {
  * lo hace real.
  *
  * Incluye únicamente tipos de entidad con al menos una entrada publicada:
- * un tipo vacío (ej. "misiones" hoy) no aporta nada al sitemap y anunciar
- * una URL de listado vacía a los motores de búsqueda no tiene valor SEO.
+ * un tipo vacío no aporta nada al sitemap y anunciar una URL de listado
+ * vacía a los motores de búsqueda no tiene valor SEO.
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [allEntities, countsByType] = await Promise.all([
