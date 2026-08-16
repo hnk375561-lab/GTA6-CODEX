@@ -20,8 +20,9 @@ import { computeShotFrame as computeCameraShotFrame } from './core/camera-shots'
 import { createEnvironment } from './core/environment'
 import { createPostProcessingPipeline } from './core/postprocessing'
 import { computePointerTarget, computeScrollTarget } from './core/input'
+import { computeSceneBusStateUpdate } from './core/scene-bus-adapter'
 import { lerpDayColor, lerpCyclic01, smootherstep } from './utils/math'
-import { SHOTS, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP, IMAGE_BILLBOARDS, SECTION_MOOD, CATEGORY_WARMTH, STATUS_UNREST, CATEGORY_PACE, CATEGORY_FRAME } from './config/scene'
+import { SHOTS, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP, IMAGE_BILLBOARDS } from './config/scene'
 import { SKY_VERTEX_SHADER, SKY_FRAGMENT_SHADER } from './shaders/sky'
 import { WATER_VERTEX_SHADER, WATER_FRAGMENT_SHADER } from './shaders/water'
 import { SHAFT_VERTEX_SHADER, SHAFT_FRAGMENT_SHADER, NEON_SIGN_FRAGMENT_SHADER } from './shaders/neon'
@@ -411,33 +412,8 @@ export class GTA6CodexWebGLEngine {
     // en vez de que el motor tenga que adivinarlo a partir de scroll crudo.
     this.unsubscribeSceneBus = webglSceneBus.subscribe(() => {
       const snapshot = webglSceneBus.getSnapshot()
-      const enteringNewSection =
-        snapshot.focus.sectionId !== null && snapshot.focus.sectionId !== this.sceneFocus.sectionId
-      this.sceneFocus = snapshot.focus
-      this.pointerIntentTarget = snapshot.pointerIntent
-      if (snapshot.focus.sectionId && snapshot.focus.progress > 0.35) {
-        this.sceneMoodTarget = SECTION_MOOD[snapshot.focus.sectionId] ?? this.sceneMoodTarget
-      }
-      if (enteringNewSection && !this.reducedMotion) {
-        // Llegar a una sección nueva es un momento real: un pulso breve de
-        // luz/bloom que decae solo en el loop, no un flash on/off.
-        this.arrivalKick = 1
-      }
-
-      this.entityAtmosphere = snapshot.entityAtmosphere
-      this.entityWarmthTarget = snapshot.entityAtmosphere
-        ? CATEGORY_WARMTH[snapshot.entityAtmosphere.category] ?? 0
-        : 0
-      this.entityUnrestTarget = snapshot.entityAtmosphere
-        ? STATUS_UNREST[snapshot.entityAtmosphere.status] ?? 0
-        : 0
-      this.entityPresenceTarget = snapshot.entityAtmosphere?.featured ? 1 : 0
-      this.entityPaceTarget = snapshot.entityAtmosphere
-        ? CATEGORY_PACE[snapshot.entityAtmosphere.category] ?? 1
-        : 1
-      this.entityFrameTarget = snapshot.entityAtmosphere
-        ? CATEGORY_FRAME[snapshot.entityAtmosphere.category] ?? 0
-        : 0
+      const update = computeSceneBusStateUpdate(snapshot, this.sceneFocus, this.sceneMoodTarget, this.reducedMotion)
+      Object.assign(this, update)
     })
 
     this.assertFullyInitialized()
