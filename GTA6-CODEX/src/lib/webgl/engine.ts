@@ -42,6 +42,11 @@ import { buildHumidityMist as buildHumidityMistScene } from './scene/humidity-mi
 // FIREFLY_FRAGMENT_SHADER ya no se importan acá directamente: ahora los
 // consume ./scene/fireflies.ts.
 import { buildFireflies as buildFirefliesScene } from './scene/fireflies'
+// Fase 8.5: buildAtmosphericHaze() migrado mecánicamente a
+// ./scene/atmospheric-haze.ts (ver nota de arquitectura al pie del
+// archivo). HAZE_VERTEX_SHADER/HAZE_FRAGMENT_SHADER ya no se importan acá
+// directamente: ahora los consume ./scene/atmospheric-haze.ts.
+import { buildAtmosphericHaze as buildAtmosphericHazeScene } from './scene/atmospheric-haze'
 import { SHAFT_VERTEX_SHADER, SHAFT_FRAGMENT_SHADER, NEON_SIGN_FRAGMENT_SHADER } from './shaders/neon'
 import { ROAD_VERTEX_SHADER, ROAD_FRAGMENT_SHADER } from './shaders/road'
 import { SUN_VERTEX_SHADER, SUN_FRAGMENT_SHADER } from './shaders/sun'
@@ -49,8 +54,6 @@ import { BILLBOARD_VERTEX_SHADER, BILLBOARD_FRAGMENT_SHADER } from './shaders/bi
 import {
   DUST_VERTEX_SHADER,
   DUST_FRAGMENT_SHADER,
-  HAZE_VERTEX_SHADER,
-  HAZE_FRAGMENT_SHADER,
 } from './shaders/particles'
 
 /**
@@ -697,35 +700,52 @@ export class GTA6CodexWebGLEngine {
     })
   }
 
-  /** Capas de haze volumétrico con parallax por profundidad. */
+  /**
+   * Capas de haze volumétrico con parallax por profundidad.
+   *
+   * Fase 8.5 — geometría, material, uniforms y valores idénticos a la
+   * versión inline anterior; solo se movieron a
+   * `./scene/atmospheric-haze.ts` (`buildAtmosphericHazeScene`). Igual
+   * que en las Fases 8.1/8.2/8.3/8.4, el `updater` que devuelve esa
+   * función usa la firma común de 11 parámetros de `scene/*.ts` (ver
+   * nota de arquitectura al pie del archivo), incompatible con
+   * `SceneUpdater` de este motor — se lo envuelve acá en un closure de 3
+   * parámetros igual que los builders anteriores, y se lo registra en
+   * `this.updaters` sin tocar `start()`/el loop de animación. Único
+   * ajuste estructural: la versión inline hacía `this.updaters.push(...)`
+   * una vez por capa (dentro del `for`) más una vez extra al final para
+   * el ajuste de `position.y` por `scrollProgress`; el builder extraído
+   * consolida las actualizaciones por capa (`time`/`introFade`/
+   * `position.x`) en un único `Updater` que itera las capas con
+   * `forEach` — mismo patrón ya usado en `buildNeonSigns()` de este
+   * archivo — y este método sigue haciendo el `push` del ajuste de
+   * `position.y` por separado, porque depende de `this.scrollProgress`,
+   * estado propio del motor que no forma parte de la firma de
+   * `Updater`. El orden de ejecución por frame (actualizaciones por capa
+   * antes que el ajuste de Y) y los valores numéricos son idénticos a
+   * los de la versión inline.
+   */
   private buildAtmosphericHaze() {
-    const layers: THREE.Mesh[] = []
-    for (let i = 0; i < this.quality.hazeLayers; i++) {
-      const mat = new THREE.ShaderMaterial({
-        uniforms: {
-          time: { value: 0 },
-          introFade: { value: 0 },
-          hazeColor: { value: new THREE.Color(i % 2 === 0 ? 0x6a2878 : 0x284868) },
-          layerSeed: { value: i * 1.73 },
-        },
-        vertexShader: HAZE_VERTEX_SHADER,
-        fragmentShader: HAZE_FRAGMENT_SHADER,
-        transparent: true,
-        depthWrite: false,
-        blending: THREE.AdditiveBlending,
-        side: THREE.DoubleSide,
-      })
-      const mesh = new THREE.Mesh(new THREE.PlaneGeometry(90 + i * 20, 35, 1, 1), mat)
-      mesh.position.set(0, -2 + i * 2.5, -18 - i * 12)
-      this.midGroup.add(mesh)
-      layers.push(mesh)
+    const { layers, updater } = buildAtmosphericHazeScene({
+      midGroup: this.midGroup,
+      quality: this.quality,
+    })
 
-      this.updaters.push((elapsed, _delta, intro) => {
-        mat.uniforms.time.value = elapsed
-        mat.uniforms.introFade.value = intro
-        mesh.position.x = Math.sin(elapsed * 0.03 + i) * (1.2 + i * 0.4)
-      })
-    }
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
+    )
 
     this.updaters.push((_elapsed, _delta, intro) => {
       layers.forEach((l, i) => {
@@ -1637,7 +1657,7 @@ export class GTA6CodexWebGLEngine {
 }
 
 /**
- * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 8.4) — deuda
+ * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 8.5) — deuda
  * técnica real, parcialmente atendida de forma incremental
  * ---------------------------------------------------------------------------
  * El repo tiene una extracción paralela, mayormente NO conectada, de los
@@ -1645,8 +1665,9 @@ export class GTA6CodexWebGLEngine {
  * de más arriba, con un `Updater` de 11 parámetros distinto al
  * `SceneUpdater` de este archivo). Salvo las excepciones de `scene/sky.ts`
  * (Fase 8.1), `scene/water.ts` (Fase 8.2), `scene/humidity-mist.ts`
- * (Fase 8.3) y `scene/fireflies.ts` (Fase 8.4, ver las cuatro abajo), esos
- * `buildXxx()` inline siguen siendo los que realmente corren en
+ * (Fase 8.3), `scene/fireflies.ts` (Fase 8.4) y `scene/atmospheric-haze.ts`
+ * (Fase 8.5, ver las cinco abajo), esos `buildXxx()` inline siguen siendo
+ * los que realmente corren en
  * producción; el resto de `scene/*.ts` es código muerto — incluyendo,
  * notablemente, `buildHumidityMist` y `buildFireflies` dentro de
  * `scene/particles.ts`: son implementaciones previas, ya existentes y sin
@@ -1736,6 +1757,31 @@ export class GTA6CodexWebGLEngine {
  *    `scene/particles.ts` (código muerto, sin conectar, no tocado por
  *    esta fase, auditada y verificada equivalente antes de descartarla)
  *    — el módulo realmente conectado es `scene/fireflies.ts`.
+ *  - Fase 8.5: `scene/atmospheric-haze.ts` (`buildAtmosphericHaze`) —
+ *    capas de haze volumétrico con parallax por profundidad. Mismo
+ *    número de capas (`quality.hazeLayers`), misma geometría por capa
+ *    (`PlaneGeometry(90 + i * 20, 35, 1, 1)`), misma posición inicial
+ *    (`0, -2 + i * 2.5, -18 - i * 12`), mismo `ShaderMaterial` (mismos
+ *    shaders, `transparent`/`depthWrite`/`blending`/`side`) y mismos
+ *    uniforms (`time`, `introFade`, `hazeColor` alternando
+ *    `0x6a2878`/`0x284868`, `layerSeed: i * 1.73`) que la versión inline
+ *    anterior. No existía ni `atmospheric-haze.ts` previo ni código
+ *    muerto relacionado en `scene/particles.ts` — se auditó antes de
+ *    escribir y se confirmó que el módulo se crea desde cero, sin
+ *    reutilizar nada. El `updater` de 11 parámetros se adapta con el
+ *    mismo patrón de closure que en las Fases 8.1/8.2/8.3/8.4, en
+ *    `buildAtmosphericHaze()` (más arriba en este archivo);
+ *    `this.updaters`/`start()` no se tocaron. Único ajuste estructural:
+ *    la versión inline hacía un `this.updaters.push(...)` por capa
+ *    (dentro del `for`) para `time`/`introFade`/`position.x`, más un
+ *    `push` final para `position.y` dependiente de
+ *    `this.scrollProgress`; el builder extraído consolida las
+ *    actualizaciones por capa en un único `Updater` (mismo patrón de
+ *    `forEach` ya usado en `buildNeonSigns()`), y el `position.y` por
+ *    `scrollProgress` — estado propio del motor, ausente de la firma de
+ *    `Updater` — se mantiene como un `push` separado en `engine.ts`, tal
+ *    como antes. Mismo orden de ejecución por frame y mismos valores
+ *    numéricos que la versión inline.
  *
  * El cuerpo del loop de animación dentro de `start()` (cámara dinámica,
  * uniforms por frame, matemática visual del ciclo día/noche) sigue sin
