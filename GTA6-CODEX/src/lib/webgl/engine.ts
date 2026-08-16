@@ -66,8 +66,8 @@ import { buildTrafficStreaks as buildTrafficStreaksScene } from './scene/traffic
 // 8.1–8.6 (cada builder en su propio archivo, sin depender de
 // `scene/particles.ts`, que sigue sin conectar).
 import { buildDust as buildDustScene } from './scene/dust'
+import { buildRoadScene } from './scene/road'
 import { SHAFT_VERTEX_SHADER, SHAFT_FRAGMENT_SHADER, NEON_SIGN_FRAGMENT_SHADER } from './shaders/neon'
-import { ROAD_VERTEX_SHADER, ROAD_FRAGMENT_SHADER } from './shaders/road'
 import { SUN_VERTEX_SHADER, SUN_FRAGMENT_SHADER } from './shaders/sun'
 import { BILLBOARD_VERTEX_SHADER, BILLBOARD_FRAGMENT_SHADER } from './shaders/billboard'
 
@@ -891,38 +891,43 @@ export class GTA6CodexWebGLEngine {
   // Escena — plano lejano
   // ---------------------------------------------------------------------
 
-  /** Carretera nocturna: horizonte, no decoración — atmósfera y fuga de perspectiva. */
+  /**
+   * Carretera nocturna: horizonte, no decoración — atmósfera y fuga de
+   * perspectiva.
+   *
+   * Fase 8.8 — geometría, material, uniforms y valores idénticos a la
+   * versión inline anterior; solo se movieron a `./scene/road.ts`
+   * (`buildRoadScene`). Igual que en Fases 8.1/8.2, el `updater` que
+   * devuelve esa función es incompatible con `SceneUpdater` de este
+   * motor — se lo envuelve acá en un closure de 3 parámetros que lee
+   * `this.dayPhase`/`this.humidity`/`this.fog.color`/`this.reducedMotion`/
+   * `this.roadFlow` en cada frame exactamente igual que antes, y se lo
+   * registra en `this.updaters` sin tocar `start()`/el loop de
+   * animación. `this.roadFlow` en particular sigue siendo acumulado
+   * exclusivamente por el loop de `start()` (ver `ROAD_FLOW_WRAP`); acá
+   * solo se lee su valor ya actualizado del frame, nunca se lo escribe.
+   */
   private buildRoad() {
-    const geometry = new THREE.PlaneGeometry(220, 220, 1, 1)
-    this.roadUniforms = { time: { value: 0 }, introFade: { value: 0 } }
-    const material = new THREE.ShaderMaterial({
-      uniforms: {
-        ...this.roadUniforms,
-        flow: { value: 0 },
-        colorA: { value: new THREE.Color(0x22d3ee) },
-        colorB: { value: new THREE.Color(0xff2d78) },
-        humidity: { value: 0.45 },
-        heatShimmer: { value: 0.0 },
-      },
-      vertexShader: ROAD_VERTEX_SHADER,
-      fragmentShader: ROAD_FRAGMENT_SHADER,
-      transparent: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      side: THREE.DoubleSide,
-    })
-    const floor = new THREE.Mesh(geometry, material)
-    floor.rotation.x = -Math.PI / 2
-    floor.position.y = -13
-    this.farGroup.add(floor)
+    const { uniforms, updater } = buildRoadScene({ farGroup: this.farGroup })
+    this.roadUniforms = uniforms
 
-    this.updaters.push((elapsed, _delta, intro) => {
-      material.uniforms.time.value = elapsed
-      material.uniforms.introFade.value = intro
-      material.uniforms.flow.value = this.roadFlow
-      material.uniforms.humidity.value = this.humidity
-      material.uniforms.heatShimmer.value = this.reducedMotion ? 0 : 0.35 + this.entityPace * 0.15
-    })
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence,
+        this.reducedMotion,
+        this.roadFlow
+      )
+    )
   }
 
   /** Skyline de Miami: edificios con ventanas encendidas alternados con palmeras en silueta. */
