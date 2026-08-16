@@ -68,7 +68,8 @@ import { buildTrafficStreaks as buildTrafficStreaksScene } from './scene/traffic
 import { buildDust as buildDustScene } from './scene/dust'
 import { buildRoadScene } from './scene/road'
 import { buildHorizonSunScene } from './scene/horizon-sun'
-import { SHAFT_VERTEX_SHADER, SHAFT_FRAGMENT_SHADER, NEON_SIGN_FRAGMENT_SHADER } from './shaders/neon'
+import { buildLightShaftScene } from './scene/light-shaft'
+import { SHAFT_VERTEX_SHADER, NEON_SIGN_FRAGMENT_SHADER } from './shaders/neon'
 import { BILLBOARD_VERTEX_SHADER, BILLBOARD_FRAGMENT_SHADER } from './shaders/billboard'
 
 /**
@@ -1041,50 +1042,40 @@ export class GTA6CodexWebGLEngine {
     )
   }
 
+  /**
+   * Haces de neón que suben desde la torre focal (magenta + cian, el
+   * segundo condicionado a `quality.tier !== 'low'`).
+   *
+   * Fase 8.10 — geometría, material, uniforms y valores idénticos a la
+   * versión inline anterior; solo se movieron a
+   * `./scene/light-shaft.ts` (`buildLightShaftScene`). Igual que en
+   * Fases 8.1/8.8, el `updater` que devuelve esa función es
+   * incompatible con `SceneUpdater` de este motor — se lo envuelve acá
+   * en un closure de 3 parámetros, exactamente igual que antes, y se lo
+   * registra en `this.updaters` sin tocar `start()`/el loop de
+   * animación. `this.shaftUniforms` se sigue asignando acá desde el
+   * `uniforms` devuelto por el builder, tal como exige
+   * `assertFullyInitialized()`.
+   */
   private buildLightShaft() {
-    this.shaftUniforms = { time: { value: 0 }, introFade: { value: 0 } }
-    const geometry = new THREE.PlaneGeometry(14, 46, 1, 1)
-    const material = new THREE.ShaderMaterial({
-      uniforms: { ...this.shaftUniforms, shaftColor: { value: new THREE.Color(0xff5fa8) } },
-      vertexShader: SHAFT_VERTEX_SHADER,
-      fragmentShader: SHAFT_FRAGMENT_SHADER,
-      transparent: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      side: THREE.DoubleSide,
-    })
-    // Reubicado como el haz de neón que sube desde la torre focal, en vez de
-    // una fuente de luz genérica en el costado de la escena.
-    const shaft = new THREE.Mesh(geometry, material)
-    shaft.position.set(-3.2, 8, -5)
-    shaft.rotation.z = 0.05
-    shaft.rotation.x = -0.06
-    this.farGroup.add(shaft)
+    const { uniforms, updater } = buildLightShaftScene({ farGroup: this.farGroup, quality: this.quality })
+    this.shaftUniforms = uniforms
 
-    if (this.quality.tier !== 'low') {
-      const shaft2 = new THREE.Mesh(
-        geometry.clone(),
-        new THREE.ShaderMaterial({
-          uniforms: { ...this.shaftUniforms, shaftColor: { value: new THREE.Color(0x22d3ee) } },
-          vertexShader: SHAFT_VERTEX_SHADER,
-          fragmentShader: SHAFT_FRAGMENT_SHADER,
-          transparent: true,
-          depthWrite: false,
-          blending: THREE.AdditiveBlending,
-          side: THREE.DoubleSide,
-        })
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
       )
-      shaft2.position.set(5.5, 6, -8)
-      shaft2.rotation.z = -0.08
-      shaft2.rotation.x = -0.04
-      shaft2.scale.set(0.7, 0.85, 1)
-      this.farGroup.add(shaft2)
-    }
-
-    this.updaters.push((elapsed, _delta, intro) => {
-      material.uniforms.time.value = elapsed
-      material.uniforms.introFade.value = intro
-    })
+    )
   }
 
   /**
