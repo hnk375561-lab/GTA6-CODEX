@@ -18,8 +18,10 @@ import {
   handleContextRestored as lifecycleHandleContextRestored,
   disposeSceneResources,
 } from './core/lifecycle'
+import { computeShotFrame as computeCameraShotFrame } from './core/camera-shots'
+import { createEnvironment } from './core/environment'
 import { lerpDayColor, lerpCyclic01, smootherstep } from './utils/math'
-import { SHOTS, FALLBACK_SHOT, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP, IMAGE_BILLBOARDS, SECTION_MOOD, CATEGORY_WARMTH, STATUS_UNREST, CATEGORY_PACE, CATEGORY_FRAME } from './config/scene'
+import { SHOTS, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP, IMAGE_BILLBOARDS, SECTION_MOOD, CATEGORY_WARMTH, STATUS_UNREST, CATEGORY_PACE, CATEGORY_FRAME } from './config/scene'
 import { GRADE_SHADER } from './shaders/postprocess'
 import { SKY_VERTEX_SHADER, SKY_FRAGMENT_SHADER } from './shaders/sky'
 import { WATER_VERTEX_SHADER, WATER_FRAGMENT_SHADER } from './shaders/water'
@@ -188,11 +190,17 @@ import {
 /**
  * Callback de animación por-frame para piezas de escena registradas en
  * `this.updaters` (ver `start()`). Deliberadamente distinto — y sin
- * relación — del tipo `Updater` de 11 parámetros que exportan
- * `scene/*.ts`/`core/lifecycle.ts`: esos módulos son una extracción en
- * curso que todavía no está conectada a este motor (ver nota de
- * arquitectura al pie del archivo). Nombrado `SceneUpdater` a propósito
- * para que ambas formas nunca se confundan ni se mezclen por accidente.
+ * relación — del tipo `Updater` de 11 parámetros que exporta la
+ * extracción paralela y todavía no verificada en `scene/*.ts` (ver nota
+ * de arquitectura al pie del archivo). `core/lifecycle.ts` YA NO forma
+ * parte de esa extracción sin conectar: desde la Fase 3 fue reescrito
+ * desde cero como orquestación verificada del ciclo de vida del
+ * renderer y está conectado a este motor (`createRenderer`,
+ * `resizeRendererAndPasses`, `disposeSceneResources`, etc. — ver
+ * imports arriba). Solo `scene/*.ts` sigue siendo código muerto sin
+ * conectar. Nombrado `SceneUpdater` a propósito para que este tipo
+ * nunca se confunda ni se mezcle por accidente con el `Updater` de
+ * `scene/*.ts`.
  */
 type SceneUpdater = (elapsed: number, delta: number, intro: number) => void
 
@@ -487,52 +495,7 @@ export class GTA6CodexWebGLEngine {
   // ---------------------------------------------------------------------
 
   private setupEnvironment() {
-    const pmrem = new THREE.PMREMGenerator(this.renderer)
-    pmrem.compileEquirectangularShader()
-
-    const envScene = new THREE.Scene()
-    const gradientGeo = new THREE.SphereGeometry(30, 32, 32)
-    const gradientMat = new THREE.ShaderMaterial({
-      side: THREE.BackSide,
-      uniforms: {
-        // Cielo nocturno de Vice City: zenit añil, banda de horizonte en
-        // magenta (contaminación lumínica de la ciudad) y suelo oscuro
-        // tibio — esto se ve reflejado/refractado en el vidrio de la torre.
-        colorTop: { value: new THREE.Color(0x1c1140) },
-        colorMid: { value: new THREE.Color(0xff3d78) },
-        colorBottom: { value: new THREE.Color(0x0a0612) },
-      },
-      vertexShader: `
-        varying vec3 vPos;
-        void main() {
-          vPos = position;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-        }
-      `,
-      fragmentShader: `
-        varying vec3 vPos;
-        uniform vec3 colorTop;
-        uniform vec3 colorMid;
-        uniform vec3 colorBottom;
-        void main() {
-          float h = normalize(vPos).y * 0.5 + 0.5;
-          vec3 c = mix(colorBottom, colorMid, smoothstep(0.0, 0.5, h));
-          c = mix(c, colorTop, smoothstep(0.5, 1.0, h));
-          gl_FragColor = vec4(c, 1.0);
-        }
-      `,
-    })
-    envScene.add(new THREE.Mesh(gradientGeo, gradientMat))
-
-    const renderTarget = pmrem.fromScene(envScene, 0.04)
-    this.envRenderTarget = renderTarget
-    this.scene.environment = renderTarget.texture
-    pmrem.dispose()
-
-    // La geometría/material del paso de gradiente solo existían para
-    // alimentar el PMREM; ya renderizados, no hace falta retenerlos.
-    gradientGeo.dispose()
-    gradientMat.dispose()
+    this.envRenderTarget = createEnvironment(this.renderer, this.scene)
   }
 
   /**
@@ -1441,28 +1404,7 @@ export class GTA6CodexWebGLEngine {
 
   /** Encuadre coreografiado: funde continuamente entre los `SHOTS`, en vez de ruido sin fin. */
   private computeShotFrame(elapsed: number): { pos: THREE.Vector3; look: THREE.Vector3; fovBias: number } {
-    // Guarda contra `SHOTS` vacío o con duración total 0: sin esto, `%`
-    // por 0 produce NaN y la cámara desaparece del encuadre.
-    if (SHOTS.length === 0 || this.totalShotDuration <= 0) {
-      return { pos: FALLBACK_SHOT.pos.clone(), look: FALLBACK_SHOT.look.clone(), fovBias: FALLBACK_SHOT.fovBias }
-    }
-
-    const t = elapsed % this.totalShotDuration
-    let acc = 0
-    for (let i = 0; i < SHOTS.length; i++) {
-      const shot = SHOTS[i]
-      const next = SHOTS[(i + 1) % SHOTS.length]
-      if (t < acc + shot.duration || i === SHOTS.length - 1) {
-        const local = smootherstep((t - acc) / shot.duration)
-        return {
-          pos: shot.pos.clone().lerp(next.pos, local),
-          look: shot.look.clone().lerp(next.look, local),
-          fovBias: shot.fovBias + (next.fovBias - shot.fovBias) * local,
-        }
-      }
-      acc += shot.duration
-    }
-    return { pos: SHOTS[0].pos.clone(), look: SHOTS[0].look.clone(), fovBias: 0 }
+    return computeCameraShotFrame(elapsed, this.totalShotDuration)
   }
 
   // ---------------------------------------------------------------------
@@ -1694,22 +1636,34 @@ export class GTA6CodexWebGLEngine {
 }
 
 /**
- * NOTA DE ARQUITECTURA (auditoría v8.2) — deuda técnica real, no atendida
- * en esta pasada a propósito
+ * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 4) — deuda
+ * técnica real, parcialmente atendida de forma incremental
  * ---------------------------------------------------------------------------
- * El repo ya tiene una extracción completa y en curso de este motor hacia
- * `./scene/*.ts` + `./shaders/*.ts` + `./core/lifecycle.ts` (~2000 líneas):
- * builders equivalentes a cada `buildXxx()` de más arriba, con un `Updater`
- * de 11 parámetros y un loop de animación (`createAnimationLoop`) ya
- * escritos. Hoy esos módulos NO están conectados a esta clase — sus
- * `buildXxx()` inline son los que realmente corren en producción, y los
- * de `scene/*.ts` son código muerto. Verificar que ambas implementaciones
- * produzcan exactamente el mismo resultado visual, línea por línea, excede
- * lo que se puede confirmar sin correr el motor en un navegador; conectar
- * esa extracción a ciegas arriesgaba una regresión visual silenciosa, así
- * que esta pasada endureció el archivo actual (lifecycle, listeners,
- * recuperación de contexto GPU, invariantes de construcción) sin migrar la
- * fuente de verdad. Migrar a los módulos ya extraídos — o borrarlos si se
- * descartan — sigue siendo la mejora estructural más grande disponible,
- * pero debe hacerse aparte, con verificación visual manual en el navegador.
+ * El repo tiene una extracción paralela y todavía NO conectada de los
+ * builders de escena hacia `./scene/*.ts` (equivalentes a cada `buildXxx()`
+ * de más arriba, con un `Updater` de 11 parámetros distinto al
+ * `SceneUpdater` de este archivo). Esos `buildXxx()` inline siguen siendo
+ * los que realmente corren en producción; los de `scene/*.ts` son código
+ * muerto. Verificar que ambas implementaciones produzcan exactamente el
+ * mismo resultado visual, línea por línea, excede lo que se puede
+ * confirmar sin correr el motor en un navegador — conectar esa extracción
+ * a ciegas arriesgaría una regresión visual silenciosa. Migrarlos — o
+ * borrarlos si se descartan — sigue siendo la mejora estructural más
+ * grande disponible, pero debe hacerse builder por builder, con
+ * verificación visual manual en el navegador después de cada uno.
+ *
+ * Lo que SÍ está migrado y conectado, por fases sucesivas de extracción
+ * mecánica y verificada (sin tocar cámara/uniforms/loop de animación):
+ *  - Fase 3: `core/lifecycle.ts` — creación del renderer, resize,
+ *    detección de visibilidad, pérdida/recuperación de contexto GPU y
+ *    liberación de recursos GPU en `dispose()`.
+ *  - Fase 4: `core/camera-shots.ts` (`computeShotFrame`, función pura
+ *    sobre `SHOTS`/`FALLBACK_SHOT`) y `core/environment.ts`
+ *    (`createEnvironment`, generación PMREM del environment map).
+ *
+ * El cuerpo del loop de animación dentro de `start()` (cámara dinámica,
+ * uniforms por frame, matemática visual del ciclo día/noche) sigue sin
+ * tocarse — es, a propósito, la parte de mayor riesgo y la última en
+ * migrar, solo cuando exista una forma de verificar equivalencia visual
+ * sin depender de inspección manual línea por línea.
  */
