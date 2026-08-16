@@ -1,0 +1,19 @@
+{
+  "id": "trailer-trailer-2-gameplay",
+  "kind": "trailer",
+  "title": "Trailer 2 — Segundo Tráiler",
+  "description": "Segundo tráiler oficial de Grand Theft Auto VI.",
+  "status": "verified",
+  "credit": "Rockstar Games — material oficial",
+  "source": {
+    "provider": "Vercel Blob Storage",
+    "type": "vercel-blob",
+    "originalUrl": "https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/GTAVI_Trailer_2.mp4",
+    "hotlinkAllowed": true,
+    "hotlinkNote": "Archivo de vídeo público ya usado por la ficha del tráiler.",
+    "retrievedAt": "2026-08-14T00:00:00Z"
+  },
+  "relations": { "trailer": { "trailerSlug": "trailer-2-gameplay" } },
+  "createdAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-14T00:00:00Z"
+}

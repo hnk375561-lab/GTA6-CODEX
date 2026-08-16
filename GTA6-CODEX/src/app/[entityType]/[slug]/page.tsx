@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { EntityType, type Trailer } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
-import { resolveEntityDisplayImage } from '@/lib/media'
+import { getMediaForTrailer, resolveEntityDisplayImage } from '@/lib/media'
 import { getBidirectionalRelatedEntitiesWithLabel } from '@/lib/relations'
 import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo'
 import { Card, CardBody } from '@/components/ui/Card'
@@ -107,7 +107,10 @@ export default async function EntityPage({ params }: PageProps) {
   const relatedMedia = getMediaForEntity(entity).filter(
     (asset) => asset.id !== `entity-portrait-${type}-${entity.slug}`
   )
-  const jsonLd = generateEntityJsonLd(entity)
+  const jsonLd = generateEntityJsonLd(
+    entity,
+    type === EntityType.TRAILER ? getMediaForTrailer(entity.slug) : null
+  )
   const breadcrumbLd = generateBreadcrumbJsonLd([
     { label: 'Inicio', url: '/' },
     { label: TYPE_LABELS[type], url: `/${type}` },

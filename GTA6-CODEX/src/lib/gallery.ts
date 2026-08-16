@@ -53,6 +53,8 @@ export interface GalleryItem {
   trailerAppearances: GalleryTrailerAppearance[]
   /** Solo si kind === 'video': ID de embed de YouTube, para reproducir en el lightbox. */
   videoEmbedId?: string
+  /** Solo si kind === 'video' directo: URL resuelta para el reproductor nativo. */
+  videoSrc?: string
 }
 
 /**
@@ -212,11 +214,12 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
   const trailerBySlug = new Map(trailerEntities.map((t) => [t.slug, t]))
 
   for (const asset of getMediaAssets()) {
-    if (asset.kind !== 'trailer' && asset.kind !== 'video') continue
+    if (!['trailer', 'video', 'clip', 'artwork'].includes(asset.kind)) continue
     const rendered = resolveMediaRender(asset)
-    if (rendered.renderAs !== 'youtube') continue
+    if (rendered.renderAs !== 'youtube' && rendered.renderAs !== 'video') continue
 
     const trailerSlug = asset.relations?.trailer?.trailerSlug
+    const entityRelation = asset.relations?.entities?.[0]
     const trailerEntity = trailerSlug ? trailerBySlug.get(trailerSlug) : undefined
 
     items.push({
@@ -226,18 +229,19 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
       alt: rendered.title,
       title: rendered.title,
       description: trailerEntity?.description || asset.description || '',
-      categorySlug: 'trailers',
-      categoryLabel: 'Trailers',
+      categorySlug: asset.kind === 'clip' ? 'clips' : asset.kind === 'artwork' ? 'key-art' : 'trailers',
+      categoryLabel: asset.kind === 'clip' ? 'Clips' : asset.kind === 'artwork' ? 'Key Art' : 'Trailers',
       status: trailerEntity?.status,
-      href: trailerSlug ? `/trailers/${trailerSlug}` : undefined,
-      entityType: trailerSlug ? EntityType.TRAILER : undefined,
-      entitySlug: trailerSlug,
+      href: trailerSlug ? `/trailers/${trailerSlug}` : entityRelation ? `/${entityRelation.entityType}/${entityRelation.entitySlug}` : undefined,
+      entityType: trailerSlug ? EntityType.TRAILER : entityRelation?.entityType,
+      entitySlug: trailerSlug || entityRelation?.entitySlug,
       credit: asset.credit || asset.source.provider,
       sourceNote: asset.source.hotlinkNote,
       tags: asset.tags,
       featured: trailerEntity?.featured,
       trailerAppearances: [],
       videoEmbedId: rendered.embedId,
+      videoSrc: rendered.videoSrc,
     })
   }
 

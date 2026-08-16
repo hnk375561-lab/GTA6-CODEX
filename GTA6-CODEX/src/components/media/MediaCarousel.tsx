@@ -54,8 +54,8 @@ export function MediaCarousel({ title, assets }: MediaCarouselProps) {
             const href =
               asset.relations?.trailer?.trailerSlug != null
                 ? `/trailers/${asset.relations.trailer.trailerSlug}`
-                : asset.relations?.entity != null
-                  ? `/${asset.relations.entity.entityType}/${asset.relations.entity.entitySlug}`
+                : asset.relations?.entities?.[0] != null
+                  ? `/${asset.relations.entities[0].entityType}/${asset.relations.entities[0].entitySlug}`
                   : undefined
 
             const body = (

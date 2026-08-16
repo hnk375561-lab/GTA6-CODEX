@@ -15,7 +15,7 @@ import { cn } from '@/lib/utils'
 interface SearchClientProps {
   entities: Entity[]
   counts: Record<EntityType, number>
-  /** slug → imagen ya resuelta (ver `getEntityImageMap` en `@/lib/media.ts`).
+  /** type/slug → imagen ya resuelta (ver `getEntityImageMap` en `@/lib/media.ts`).
    *  `SearchClient` es `'use client'`, así que no puede resolver imágenes
    *  por su cuenta con `fs` — el caller server (`/buscar/page.tsx`)
    *  resuelve el mapa completo una sola vez y lo pasa acá. */
@@ -193,7 +193,7 @@ export function SearchClient({ entities, counts, imageBySlug }: SearchClientProp
                 <Link key={`${entity.type}-${entity.slug}`} href={`/${entity.type}/${entity.slug}`} className="group block h-full">
                   <Card hoverable className="h-full">
                     <CardBody className="flex gap-3">
-                      <EntityImage entity={entity} image={imageBySlug?.[entity.slug]} variant="avatar" className="h-12 w-12" />
+                      <EntityImage entity={entity} image={imageBySlug?.[`${entity.type}/${entity.slug}`]} variant="avatar" className="h-12 w-12" />
                       <div className="min-w-0 flex-1">
                         <div className="mb-2 flex items-center gap-2">
                           <Badge variant="tag">{TYPE_LABELS[entity.type]}</Badge>

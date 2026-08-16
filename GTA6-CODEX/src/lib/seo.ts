@@ -1,4 +1,5 @@
 import { Entity, EntityType } from '@/types'
+import type { MediaAsset } from '@/types/media'
 import { Metadata } from 'next'
 import { ENTITY_TYPE_LABELS } from './entity-labels'
 
@@ -130,11 +131,11 @@ export function generateHomepageMetadata(): Metadata {
  * genérico para todas las entidades del sitio — mejora la elegibilidad
  * para rich snippets en buscadores.
  */
-export function generateEntityJsonLd(entity: Entity): object {
+export function generateEntityJsonLd(entity: Entity, primaryMedia?: MediaAsset | null): object {
   const url = `${SITE_URL}/${entity.type}/${entity.slug}`
   const schemaType = SCHEMA_TYPE_BY_ENTITY_TYPE[entity.type] || 'Thing'
 
-  return {
+  const base = {
     '@context': 'https://schema.org',
     '@type': schemaType,
     name: entity.title,
@@ -148,6 +149,20 @@ export function generateEntityJsonLd(entity: Entity): object {
       url,
     },
   }
+
+  // VideoObject sólo se enriquece cuando existe un asset editorial real.
+  // No se infieren URLs ni duración desde texto de la ficha.
+  if (schemaType === 'VideoObject' && primaryMedia) {
+    const sourceUrl = primaryMedia.source.originalUrl || primaryMedia.source.localPath
+    return {
+      ...base,
+      ...(sourceUrl ? { contentUrl: sourceUrl } : {}),
+      ...(primaryMedia.duration ? { duration: `PT${Math.round(primaryMedia.duration)}S` } : {}),
+      uploadDate: primaryMedia.createdAt,
+    }
+  }
+
+  return base
 }
 
 /**

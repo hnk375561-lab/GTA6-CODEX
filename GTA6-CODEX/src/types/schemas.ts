@@ -232,45 +232,37 @@ export function safeParseEntity(entity: unknown) {
  */
 export const MediaKindSchema = z.enum(['image', 'video', 'trailer', 'clip', 'artwork'])
 
-export const MediaSourceTypeSchema = z.enum([
-  'local-file',
-  'youtube-embed',
-  'remote-hotlink',
-  'external-link',
-])
+export const MediaSourceTypeSchema = z.enum(['youtube', 'vercel-blob', 'official-site', 'local'])
 
-export const MediaValidationStatusSchema = z.enum(['verified', 'pending', 'broken', 'rejected'])
+export const MediaValidationStatusSchema = z.enum(['verified', 'unverified'])
 
 export const MediaSourceSchema = z
   .object({
     type: MediaSourceTypeSchema,
-    originalUrl: z.string().min(1, 'originalUrl no puede estar vacía'),
     provider: z.string().min(1, 'provider no puede estar vacío'),
-    hotlinkAllowed: z.boolean(),
+    originalUrl: z.string().url().optional(),
+    hotlinkAllowed: z.boolean().optional(),
     hotlinkNote: z.string().optional(),
     retrievedAt: z.string().min(1, 'retrievedAt requerido'),
     localPath: z.string().optional(),
     embedId: z.string().optional(),
   })
   .superRefine((source, ctx) => {
-    // Un remote-hotlink sin permiso explícito es una contradicción de
-    // modelo: si no está permitido, el tipo correcto es 'external-link'.
-    if (source.type === 'remote-hotlink' && !source.hotlinkAllowed) {
+    if (source.type === 'local' && !source.localPath) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message:
-          "source.type = 'remote-hotlink' requiere hotlinkAllowed = true; si el hotlink no está permitido, usar type = 'external-link'",
-        path: ['hotlinkAllowed'],
-      })
-    }
-    if (source.type === 'local-file' && !source.localPath) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "source.type = 'local-file' requiere localPath",
+        message: "source.type = 'local' requiere localPath",
         path: ['localPath'],
       })
     }
-    if (source.type === 'youtube-embed') {
+    if (source.type !== 'local' && !source.originalUrl) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'las fuentes remotas requieren originalUrl',
+        path: ['originalUrl'],
+      })
+    }
+    if (source.type === 'youtube') {
       if (!source.embedId) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,

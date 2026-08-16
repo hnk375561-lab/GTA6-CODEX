@@ -9,6 +9,8 @@ interface VideoEmbedProps {
   title: string
   /** Si es true, reproduce en loop, muteado y sin controles (uso hero/banner). */
   ambient?: boolean
+  /** Monta el reproductor de inmediato; reservado para un lightbox abierto. */
+  autoLoad?: boolean
   className?: string
 }
 
@@ -25,8 +27,17 @@ interface VideoEmbedProps {
  * pieza de key art en loop (ej. portada), no para contenido narrativo con
  * audio ni para listas de varios clips.
  */
-export function VideoEmbed({ videoSrc, title, ambient = false, className }: VideoEmbedProps) {
-  const [loaded, setLoaded] = useState(ambient)
+export function VideoEmbed({ videoSrc, title, ambient = false, autoLoad = false, className }: VideoEmbedProps) {
+  const [loaded, setLoaded] = useState(ambient || autoLoad)
+  const [failed, setFailed] = useState(false)
+
+  const fallback = (
+    <div className={cn('relative flex aspect-video w-full items-center justify-center rounded-xl bg-gta-darker px-6 text-center', className)}>
+      <p className="text-sm text-gta-text-secondary">No se pudo cargar este vídeo. Probá nuevamente más tarde.</p>
+    </div>
+  )
+
+  if (failed) return fallback
 
   if (ambient) {
     return (
@@ -40,6 +51,7 @@ export function VideoEmbed({ videoSrc, title, ambient = false, className }: Vide
           loop
           playsInline
           autoPlay
+          onError={() => setFailed(true)}
         />
       </div>
     )
@@ -57,6 +69,7 @@ export function VideoEmbed({ videoSrc, title, ambient = false, className }: Vide
           playsInline
           controls
           autoPlay
+          onError={() => setFailed(true)}
         />
       </div>
     )

@@ -8,6 +8,7 @@ import type { GalleryCategoryCount, GalleryItem } from '@/lib/gallery'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
 import { YouTubeEmbed } from '@/components/media/YouTubeEmbed'
+import { VideoEmbed } from '@/components/media/VideoEmbed'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
 import { cn } from '@/lib/utils'
 
@@ -230,7 +231,7 @@ function GalleryTile({
       )}
       aria-label={`Ampliar imagen: ${item.title}`}
     >
-      {item.kind === 'video' ? (
+      {item.kind === 'video' && item.src ? (
         // eslint-disable-next-line @next/next/no-img-element -- miniatura pública de i.ytimg.com (YouTube), fuera del dominio propio configurado en next/image
         <img
           src={item.src}
@@ -238,6 +239,8 @@ function GalleryTile({
           loading="lazy"
           className="gallery-tile-image absolute inset-0 h-full w-full object-cover"
         />
+      ) : item.kind === 'video' ? (
+        <div className="absolute inset-0 bg-gradient-to-br from-gta-surface-elevated via-gta-darker to-black" aria-hidden="true" />
       ) : (
         <Image
           src={item.src}
@@ -377,6 +380,10 @@ function GalleryLightbox({
           {item.kind === 'video' && item.videoEmbedId ? (
             <div className="flex h-full w-full items-center p-4">
               <YouTubeEmbed embedId={item.videoEmbedId} title={item.title} thumbnailSrc={item.src} autoLoad />
+            </div>
+          ) : item.kind === 'video' && item.videoSrc ? (
+            <div className="flex h-full w-full items-center p-4">
+              <VideoEmbed videoSrc={item.videoSrc} title={item.title} autoLoad />
             </div>
           ) : (
             <Image

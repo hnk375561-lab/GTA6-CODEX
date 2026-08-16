@@ -15,6 +15,8 @@
     "verify:content": "node scripts/verify-content-integrity.mjs",
     "verify:relations": "node scripts/verify-relations-integrity.mjs",
     "verify:relations:selftest": "node scripts/verify-relations-integrity.mjs --self-test",
+    "verify:media": "node scripts/verify-media-integrity.mjs",
+    "test:media": "node --test scripts/verify-media-integrity.test.mjs",
     "verify:tailwind": "node scripts/verify-tailwind-config.mjs",
     "sync:media": "node scripts/media-sync.mjs"
   },

@@ -1,92 +1,125 @@
+import fs from 'fs'
+import path from 'path'
 import type { Entity, Trailer } from '@/types'
 import { EntityType } from '@/types'
 import type { MediaAsset, RenderableMedia } from '@/types/media'
+import { safeParseMediaAsset } from '@/types/schemas'
 import type { ResolvedDisplayImage } from './images'
 import { getEntitiesByTypeSync } from './entities'
 import { resolveEntityImage } from './images'
 
 /**
- * SISTEMA DE MEDIA (video / trailers)
- * ======================================
- * Este módulo no existía en el repo original: `gallery.ts` y la ficha de
- * entidad (`[entityType]/[slug]/page.tsx`) ya importaban `getMediaAssets`,
- * `resolveMediaRender` y `getMediaForEntity` desde `@/lib/media`, pero el
- * archivo nunca se había creado — el build fallaba con
- * "Cannot find module '@/lib/media'".
+ * Registro editorial de media.
  *
- * No se inventa una fuente de datos nueva: el único material audiovisual
- * real que ya existe en el contenido es `Trailer.officialUrl` (URL de
- * YouTube del trailer oficial, ver `src/types/entity.ts`). Este módulo
- * deriva los `MediaAsset` de tipo 'trailer' directamente de esa propiedad,
- * y arma "media relacionada" para una entidad combinando:
- *   1) su propio retrato (si tiene imagen resuelta vía `images.ts`),
- *   2) los trailers en cuya(s) escena(s) aparece (según las `relations`
- *      que cada `TrailerScene` ya declara),
- *   3) los retratos de sus entidades directamente relacionadas.
- *
- * Todos síncronos a propósito: los callers existentes (`gallery.ts`,
- * `page.tsx`) los invocan sin `await`.
+ * La fuente de verdad son los JSON de `src/content/media/`. Los trailers
+ * antiguos siguen pudiendo derivarse desde `officialUrl` como fallback: así
+ * una entidad trailer nueva no pierde reproductor antes de tener su ficha de
+ * media editorial. Los clips y la portada ya no viven hardcodeados aquí.
  */
+const MEDIA_DIR = path.join(process.cwd(), 'src', 'content', 'media')
+const CACHE_ENABLED = process.env.NODE_ENV === 'production'
+let mediaCache: MediaAsset[] | null = null
 
-const YOUTUBE_ID_PATTERN =
-  /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([a-zA-Z0-9_-]{11})/
-
-/** Extrae el ID de video de una URL de YouTube. Null si no matchea. */
-function extractYouTubeId(url?: string): string | null {
-  if (!url) return null
-  const match = url.match(YOUTUBE_ID_PATTERN)
-  return match ? match[1] : null
-}
-
-/** Reconoce una URL de archivo de video directo (mp4) sin importar el host
- *  ni el query string — hoy usado para los assets alojados en Vercel Blob
- *  Storage (`*.public.blob.vercel-storage.com`), pero no se ata el patrón a
- *  ese host: cualquier URL https que termine en `.mp4` sirve como fuente
- *  reproducible directa. */
 function isDirectVideoUrl(url?: string): url is string {
   if (!url) return false
   try {
-    const { pathname } = new URL(url)
-    return /\.mp4$/i.test(pathname)
+    return /\.mp4$/i.test(new URL(url).pathname)
   } catch {
     return false
   }
 }
 
-/**
- * Miniatura de un trailer para usarla como imagen de card (EntityImage).
- * Los trailers no tienen archivo local en `public/images/entities/trailers/`
- * (no hay key art propia todavía) — en vez de dejar la card sin imagen,
- * se reutiliza la miniatura pública de YouTube (mismo host que ya usa
- * `resolveMediaRender`/`GalleryExplorer` para el embed: `img.youtube.com`,
- * no se aloja el archivo en el repo). Devuelve null si el trailer no tiene
- * una URL de YouTube reconocible, y el caller cae al fallback genérico.
- */
-export function resolveTrailerThumbnail(trailer: Trailer): { src: string; alt: string } | null {
-  const youtubeId = extractYouTubeId(trailer.officialUrl)
-  if (!youtubeId) return null
+function readEditorialMedia(): MediaAsset[] {
+  if (CACHE_ENABLED && mediaCache) return mediaCache
+  if (!fs.existsSync(MEDIA_DIR)) return []
+
+  const seenIds = new Set<string>()
+  const assets: MediaAsset[] = []
+
+  for (const file of fs.readdirSync(MEDIA_DIR).filter((name) => name.endsWith('.json')).sort()) {
+    try {
+      const parsed: unknown = JSON.parse(fs.readFileSync(path.join(MEDIA_DIR, file), 'utf8'))
+      const result = safeParseMediaAsset(parsed)
+      if (!result.success) {
+        console.warn(`[media] Asset inválido ignorado: media/${file}: ${result.error.message}`)
+        continue
+      }
+      const asset = result.data as MediaAsset
+      const expectedId = file.replace(/\.json$/, '')
+      if (asset.id !== expectedId || seenIds.has(asset.id)) {
+        console.warn(`[media] Asset ignorado por id inválido o duplicado: media/${file}`)
+        continue
+      }
+      seenIds.add(asset.id)
+      assets.push(asset)
+    } catch (error) {
+      console.warn(`[media] Error leyendo media/${file}:`, error)
+    }
+  }
+
+  if (CACHE_ENABLED) mediaCache = assets
+  return assets
+}
+
+/** Útil para tests y scripts que necesitan releer el registro en el proceso actual. */
+export function clearMediaCache(): void {
+  mediaCache = null
+}
+
+function fallbackTrailerAsset(trailer: Trailer): MediaAsset | null {
+  const url = trailer.officialUrl
+  if (!url || !isDirectVideoUrl(url)) return null
   return {
-    src: `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`,
-    alt: trailer.title,
+    id: `trailer-${trailer.slug}`,
+    kind: 'trailer',
+    title: trailer.title,
+    description: trailer.description,
+    status: trailer.status === 'confirmado' ? 'verified' : 'unverified',
+    credit: 'Rockstar Games — material oficial',
+    source: {
+      provider: 'Vercel Blob Storage',
+      type: 'vercel-blob',
+      originalUrl: url,
+      hotlinkAllowed: true,
+      hotlinkNote: 'Archivo de vídeo público ya usado por la ficha oficial del tráiler.',
+      retrievedAt: trailer.updatedAt,
+    },
+    relations: { trailer: { trailerSlug: trailer.slug } },
+    createdAt: trailer.createdAt,
+    updatedAt: trailer.updatedAt,
   }
 }
 
-/**
- * Resuelve la imagen a mostrar para una entidad, en orden:
- *  1) archivo local por convención (`resolveEntityImage`, ver lib/images.ts);
- *  2) para trailers sin key art propia: miniatura pública de YouTube
- *     (`resolveTrailerThumbnail`, arriba);
- *  3) null → el caller (EntityImage) pinta el fallback 100% CSS.
- *
- * IMPORTANTE: depende de `fs` (vía `resolveEntityImage`), así que solo
- * puede llamarse desde código de servidor (Server Components, `page.tsx`,
- * u otros módulos de `lib/`). `EntityImage.tsx` ya NO llama a esto — lo
- * hacía antes, pero al ser un componente renderizado también dentro de
- * árboles `'use client'` (`EntityCard`, `SearchClient`), Next.js lo
- * empaqueta para el bundle del navegador, donde `fs` no existe
- * (`fs.existsSync is not a function`). Los callers de servidor ahora
- * resuelven la imagen acá y la pasan como prop plano ya serializado.
- */
+/** Todos los assets editoriales, más fallback compatible para trailers sin ficha media. */
+export function getMediaAssets(): MediaAsset[] {
+  const editorial = readEditorialMedia()
+  const trailerSlugs = new Set(
+    editorial.flatMap((asset) => (asset.relations?.trailer ? [asset.relations.trailer.trailerSlug] : []))
+  )
+  const fallback = (getEntitiesByTypeSync(EntityType.TRAILER) as Trailer[])
+    .filter((trailer) => !trailerSlugs.has(trailer.slug))
+    .map(fallbackTrailerAsset)
+    .filter((asset): asset is MediaAsset => asset !== null)
+
+  return [...editorial, ...fallback]
+}
+
+export function getMediaForTrailer(trailerSlug: string): MediaAsset | null {
+  return getMediaAssets().find((asset) => asset.relations?.trailer?.trailerSlug === trailerSlug) || null
+}
+
+export function getCoverArtVideoAsset(): MediaAsset | null {
+  return getMediaAssets().find((asset) => asset.tags?.includes('cover-art')) || null
+}
+
+export function resolveTrailerThumbnail(trailer: Trailer): { src: string; alt: string } | null {
+  const asset = getMediaForTrailer(trailer.slug)
+  const rendered = asset ? resolveMediaRender(asset) : null
+  if (!rendered || rendered.renderAs !== 'youtube' || !rendered.thumbnailSrc) return null
+  return { src: rendered.thumbnailSrc, alt: trailer.title }
+}
+
+/** Server-only: resuelve archivos locales antes de serializar props a clientes. */
 export function resolveEntityDisplayImage(entity: Entity): ResolvedDisplayImage | null {
   const local = resolveEntityImage(entity)
   if (local) return { src: local.src, alt: local.alt, remote: false }
@@ -95,334 +128,111 @@ export function resolveEntityDisplayImage(entity: Entity): ResolvedDisplayImage 
     const remote = resolveTrailerThumbnail(entity as Trailer)
     if (remote) return { ...remote, remote: true }
   }
-
   return null
 }
 
-/**
- * Variante en lote de `resolveEntityDisplayImage`, para callers de
- * servidor que necesitan pasar un mapa `slug -> imagen resuelta` a un
- * componente cliente (ej. `EntityListExplorer`, `SearchClient`) que
- * renderiza muchas entidades a la vez sin poder tocar `fs` por su cuenta.
- */
+/** La clave incluye tipo para que el mapa sea seguro en colecciones globales. */
 export function getEntityImageMap(entities: Entity[]): Record<string, ResolvedDisplayImage | null> {
-  return Object.fromEntries(entities.map((e) => [e.slug, resolveEntityDisplayImage(e)]))
+  return Object.fromEntries(entities.map((entity) => [`${entity.type}/${entity.slug}`, resolveEntityDisplayImage(entity)]))
 }
 
-const CACHE_ENABLED = process.env.NODE_ENV === 'production'
-let assetsCache: MediaAsset[] | null = null
-
-/**
- * Todos los MediaAsset del sitio (hoy: un 'trailer' por cada entidad
- * Trailer que tenga `officialUrl` de YouTube reconocible). Síncrono.
- */
-export function getMediaAssets(): MediaAsset[] {
-  if (CACHE_ENABLED && assetsCache) return assetsCache
-
-  const trailers = getEntitiesByTypeSync(EntityType.TRAILER) as Trailer[]
-  const assets: MediaAsset[] = []
-
-  for (const trailer of trailers) {
-    const youtubeId = extractYouTubeId(trailer.officialUrl)
-
-    if (youtubeId) {
-      assets.push({
-        id: `trailer-${trailer.slug}`,
-        kind: 'trailer',
-        title: trailer.title,
-        description: trailer.description,
-        credit: 'Rockstar Games — canal oficial de YouTube',
-        tags: trailer.tags,
-        status: trailer.status === 'confirmado' ? 'verified' : 'unverified',
-        source: {
-          provider: 'YouTube (Rockstar Games)',
-          type: 'youtube',
-          hotlinkNote: 'Embed oficial de YouTube — no se aloja el video en este sitio.',
-        },
-        youtubeId,
-        relations: {
-          trailer: { trailerSlug: trailer.slug },
-        },
-      })
-      continue
-    }
-
-    // Sin ID de YouTube reconocible: si `officialUrl` es un archivo de
-    // video directo (mp4), se arma un MediaAsset reproducible vía <video>
-    // nativo en vez de descartar el trailer. No se hotlinkea el archivo
-    // en el repo: la URL pública queda tal cual llegó (Vercel Blob).
-    if (isDirectVideoUrl(trailer.officialUrl)) {
-      assets.push({
-        id: `trailer-${trailer.slug}`,
-        kind: 'trailer',
-        title: trailer.title,
-        description: trailer.description,
-        credit: 'Rockstar Games — material oficial',
-        tags: trailer.tags,
-        status: trailer.status === 'confirmado' ? 'verified' : 'unverified',
-        source: {
-          provider: 'Vercel Blob Storage',
-          type: 'vercel-blob',
-          hotlinkNote: 'Archivo de video servido directamente por URL pública — no se aloja en este repositorio.',
-        },
-        videoSrc: trailer.officialUrl,
-        relations: {
-          trailer: { trailerSlug: trailer.slug },
-        },
-      })
-    }
-  }
-
-  assets.push(...getCharacterClipAssets())
-
-  if (CACHE_ENABLED) assetsCache = assets
-  return assets
-}
-
-/**
- * REGISTRO DE CLIPS DE PERSONAJE (Vercel Blob)
- * ================================================
- * Clips cortos de presentación de personaje, hotlinkeados por URL pública
- * de Vercel Blob (no se descargan ni se alojan en el repo). Mismo criterio
- * que `KEY_ART` en `lib/gallery.ts`: un registro chico y explícito en código
- * en vez de inventar un nuevo tipo de contenido en `src/content/`, porque
- * `Character` (`types/entity.ts`) no modela video y estos clips no son
- * escenas de trailer (no tienen `TrailerScene` asociada). Cada entrada se
- * ata a un personaje ya existente por `entitySlug`; si el slug no matchea
- * ninguna entidad real, `getMediaForEntity` simplemente no la muestra.
- */
-const CHARACTER_CLIPS: ReadonlyArray<{ entitySlug: string; title: string; url: string }> = [
-  {
-    entitySlug: 'boobie-ike',
-    title: 'Boobie Ike — clip de presentación',
-    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Boobie_Ike_Video_Clip.mp4',
-  },
-  {
-    entitySlug: 'brian-heder',
-    title: 'Brian Heder — clip de presentación',
-    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Brian_Heder_Video_Clip.mp4',
-  },
-  {
-    entitySlug: 'cal-hampton',
-    title: 'Cal Hampton — clip de presentación',
-    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Cal_Hampton_Video_Clip.mp4',
-  },
-  {
-    entitySlug: 'drequan-priest',
-    title: "Dre'Quan Priest — clip de presentación",
-    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/DreQuan_Priest_Video_Clip.mp4',
-  },
-  {
-    entitySlug: 'jason-duval',
-    title: 'Jason Duval — clip de presentación',
-    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Jason_Duval_Video_Clip.mp4',
-  },
-  {
-    entitySlug: 'lucia-caminos',
-    title: 'Lucia Caminos — clip de presentación',
-    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Lucia_Caminos_Video_Clip.mp4',
-  },
-  {
-    entitySlug: 'raul-bautista',
-    title: 'Raul Bautista — clip de presentación',
-    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Raul_Bautista_Video_Clip.mp4',
-  },
-  {
-    entitySlug: 'real-dimez',
-    title: 'Real Dimez — clip de presentación',
-    url: 'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Real_Dimez_Video_Clip.mp4',
-  },
-]
-
-/** MediaAsset de kind 'video' por cada clip de personaje registrado arriba. */
-function getCharacterClipAssets(): MediaAsset[] {
-  return CHARACTER_CLIPS.map((clip) => ({
-    id: `clip-${clip.entitySlug}`,
-    kind: 'video',
-    title: clip.title,
-    credit: 'Rockstar Games — material oficial',
-    status: 'unverified',
-    source: {
-      provider: 'Vercel Blob Storage',
-      type: 'vercel-blob',
-      hotlinkNote: 'Archivo de video servido directamente por URL pública — no se aloja en este repositorio.',
-    },
-    videoSrc: clip.url,
-    relations: {
-      entity: { entityType: EntityType.CHARACTER, entitySlug: clip.entitySlug },
-    },
-  }))
-}
-
-/**
- * URL directa (mp4) del clip de presentación de un personaje, si existe en
- * `CHARACTER_CLIPS`. Pensado para las cards de listado (Fase 8): permite
- * usar el clip como media animada de la card (hover-to-play) sin tener que
- * resolver el `MediaAsset` completo ni importar `getCharacterClipAssets` en
- * un componente cliente. Null si el personaje no tiene clip registrado.
- */
-export function getCharacterClipUrl(entitySlug: string): string | null {
-  return CHARACTER_CLIPS.find((clip) => clip.entitySlug === entitySlug)?.url ?? null
-}
-
-/**
- * Video de key art / portada oficial (formato horizontal), alojado en
- * Vercel Blob. No pertenece a ningún personaje ni trailer puntual — mismo
- * espíritu que `KEY_ART` en `gallery.ts`, pero en video. Se expone aparte
- * (no vive en `getMediaAssets`) porque no es "media relacionada" de ninguna
- * entidad ni un trailer con escenas: es la pieza de portada del sitio.
- */
-export function getCoverArtVideoAsset(): MediaAsset {
-  return {
-    id: 'video-cover-art-landscape',
-    kind: 'video',
-    title: 'Grand Theft Auto VI — portada oficial (video)',
-    description: 'Pieza de portada oficial de Grand Theft Auto VI en formato horizontal.',
-    credit: 'Rockstar Games — material oficial',
-    status: 'verified',
-    source: {
-      provider: 'Vercel Blob Storage',
-      type: 'vercel-blob',
-      hotlinkNote: 'Archivo de video servido directamente por URL pública — no se aloja en este repositorio.',
-    },
-    videoSrc:
-      'https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/GTAVI_Official_Cover_Art_Landscape.mp4',
-  }
-}
-
-/**
- * Resuelve un MediaAsset a algo efectivamente renderizable (embed de
- * YouTube, imagen, o 'unavailable' si no hay forma de mostrarlo).
- */
 export function resolveMediaRender(asset: MediaAsset): RenderableMedia {
-  if (asset.youtubeId) {
+  const { source } = asset
+  if (source.type === 'youtube' && source.embedId) {
     return {
       renderAs: 'youtube',
-      embedId: asset.youtubeId,
-      thumbnailSrc: `https://img.youtube.com/vi/${asset.youtubeId}/hqdefault.jpg`,
+      embedId: source.embedId,
+      thumbnailSrc: `https://img.youtube.com/vi/${source.embedId}/hqdefault.jpg`,
       title: asset.title,
     }
   }
-
-  if (asset.videoSrc) {
-    return {
-      renderAs: 'video',
-      videoSrc: asset.videoSrc,
-      // Sin miniatura estática: el <video> nativo resuelve su propio primer
-      // frame vía `preload="metadata"` (ver VideoEmbed.tsx).
-      thumbnailSrc: '',
-      title: asset.title,
-    }
+  if (source.type === 'local' && source.localPath) {
+    return { renderAs: 'image', thumbnailSrc: source.localPath, title: asset.title }
   }
-
-  if (asset.imageSrc) {
-    return {
-      renderAs: 'image',
-      thumbnailSrc: asset.imageSrc,
-      title: asset.title,
-    }
+  if (isDirectVideoUrl(source.originalUrl) && source.hotlinkAllowed) {
+    return { renderAs: 'video', videoSrc: source.originalUrl, thumbnailSrc: '', title: asset.title }
   }
-
-  return {
-    renderAs: 'unavailable',
-    thumbnailSrc: '',
-    title: asset.title,
-  }
+  return { renderAs: 'unavailable', thumbnailSrc: '', title: asset.title }
 }
 
-/**
- * Busca, entre todos los trailers, en qué escenas aparece la entidad dada
- * (por slug+tipo, vía las `relations` de cada `TrailerScene`), y devuelve
- * el asset de ese trailer (deduplicado por trailer, no por escena).
- */
-function getTrailerAssetsFeaturingEntity(entity: Entity): MediaAsset[] {
-  if (entity.type === EntityType.TRAILER) return []
+function hasEntityRelation(asset: MediaAsset, entity: Entity): boolean {
+  return (asset.relations?.entities || []).some(
+    (relation) => relation.entityType === entity.type && relation.entitySlug === entity.slug
+  )
+}
 
-  const trailers = getEntitiesByTypeSync(EntityType.TRAILER) as Trailer[]
-  const allAssets = getMediaAssets()
-  const assetBySlug = new Map(allAssets.map((a) => [a.relations?.trailer?.trailerSlug, a]))
+function trailerFeaturesEntity(asset: MediaAsset, entity: Entity): boolean {
+  const trailerSlug = asset.relations?.trailer?.trailerSlug
+  if (!trailerSlug) return false
+  const trailer = (getEntitiesByTypeSync(EntityType.TRAILER) as Trailer[]).find((item) => item.slug === trailerSlug)
+  if (!trailer) return false
 
-  const matches: MediaAsset[] = []
-  const seenTrailerSlugs = new Set<string>()
-
-  for (const trailer of trailers) {
-    if (seenTrailerSlugs.has(trailer.slug)) continue
-
-    const appearsInScene = trailer.scenes.some((scene) =>
-      (scene.relations || []).some(
-        (rel) => rel.targetType === entity.type && rel.targetSlug === entity.slug
-      )
+  const sceneId = asset.relations?.trailer?.sceneId
+  const scenes = sceneId ? trailer.scenes.filter((scene) => scene.id === sceneId) : trailer.scenes
+  return scenes.some((scene) =>
+    (scene.relations || []).some(
+      (relation) => relation.targetType === entity.type && relation.targetSlug === entity.slug
     )
-
-    if (appearsInScene) {
-      const asset = assetBySlug.get(trailer.slug)
-      if (asset) {
-        matches.push(asset)
-        seenTrailerSlugs.add(trailer.slug)
-      }
-    }
-  }
-
-  return matches
+  )
 }
 
-/**
- * Media relacionada a mostrar en la ficha de una entidad: su propio
- * retrato (si existe), los trailers donde aparece, y los retratos de sus
- * entidades directamente relacionadas. El caller (`page.tsx`) filtra el
- * retrato propio por convención de id (`entity-portrait-{type}-{slug}`)
- * para mostrar solo "lo demás" en el carrusel de contenido relacionado.
- */
+/** Assets editoriales vinculados de forma explícita o por escenas de trailer. */
+export function getEditorialMediaForEntity(entity: Entity, limit = 12): MediaAsset[] {
+  const seen = new Set<string>()
+  return getMediaAssets()
+    .filter((asset) => hasEntityRelation(asset, entity) || trailerFeaturesEntity(asset, entity))
+    .filter((asset) => (seen.has(asset.id) ? false : (seen.add(asset.id), true)))
+    .slice(0, limit)
+}
+
+/** Media de ficha: retrato local, assets editoriales y retratos relacionados. */
 export function getMediaForEntity(entity: Entity, limit = 12): MediaAsset[] {
   const items: MediaAsset[] = []
-
-  const ownImage = resolveEntityImage(entity)
-  if (ownImage) {
+  const image = resolveEntityImage(entity)
+  if (image) {
     items.push({
       id: `entity-portrait-${entity.type}-${entity.slug}`,
       kind: 'image',
       title: entity.title,
       description: entity.description,
-      credit: entity.image?.credit || entity.image?.sourceName || 'Rockstar Games — material oficial',
-      tags: entity.tags,
-      source: { provider: entity.image?.sourceName || 'Material oficial', type: 'local' },
-      imageSrc: ownImage.src,
-      relations: { entity: { entityType: entity.type, entitySlug: entity.slug } },
+      status: entity.status === 'confirmado' ? 'verified' : 'unverified',
+      credit: entity.image?.credit || entity.image?.sourceName || 'Material de entidad',
+      source: { provider: 'Archivo local', type: 'local', localPath: image.src, retrievedAt: entity.updatedAt },
+      relations: { entities: [{ entityType: entity.type, entitySlug: entity.slug, role: 'retrato' }] },
+      createdAt: entity.createdAt,
+      updatedAt: entity.updatedAt,
     })
   }
 
-  if (entity.type === EntityType.CHARACTER) {
-    const clip = getCharacterClipAssets().find(
-      (asset) => asset.relations?.entity?.entitySlug === entity.slug
-    )
-    if (clip) items.push(clip)
-  }
+  items.push(...getEditorialMediaForEntity(entity, limit))
 
-  items.push(...getTrailerAssetsFeaturingEntity(entity))
-
-  for (const rel of entity.relations || []) {
+  for (const relation of entity.relations || []) {
     if (items.length >= limit) break
-    if (rel.targetType === EntityType.TRAILER) continue
-
-    const relatedEntities = getEntitiesByTypeSync(rel.targetType)
-    const target = relatedEntities.find((e) => e.slug === rel.targetSlug)
-    if (!target) continue
-
-    const targetImage = resolveEntityImage(target)
-    if (!targetImage) continue
-
+    const target = getEntitiesByTypeSync(relation.targetType).find((item) => item.slug === relation.targetSlug)
+    const targetImage = target && resolveEntityImage(target)
+    if (!target || !targetImage) continue
     items.push({
       id: `entity-portrait-${target.type}-${target.slug}`,
       kind: 'image',
       title: target.title,
       description: target.description,
-      credit: target.image?.credit || target.image?.sourceName || 'Rockstar Games — material oficial',
-      tags: target.tags,
-      source: { provider: target.image?.sourceName || 'Material oficial', type: 'local' },
-      imageSrc: targetImage.src,
-      relations: { entity: { entityType: target.type, entitySlug: target.slug } },
+      status: target.status === 'confirmado' ? 'verified' : 'unverified',
+      credit: target.image?.credit || target.image?.sourceName || 'Material de entidad',
+      source: { provider: 'Archivo local', type: 'local', localPath: targetImage.src, retrievedAt: target.updatedAt },
+      relations: { entities: [{ entityType: target.type, entitySlug: target.slug, role: 'relacionado' }] },
+      createdAt: target.createdAt,
+      updatedAt: target.updatedAt,
     })
   }
-
   return items.slice(0, limit)
+}
+
+export function getCharacterClipUrl(entitySlug: string): string | null {
+  const clip = getMediaAssets().find(
+    (asset) => asset.kind === 'clip' && (asset.relations?.entities || []).some(
+      (relation) => relation.entityType === EntityType.CHARACTER && relation.entitySlug === entitySlug
+    )
+  )
+  const rendered = clip ? resolveMediaRender(clip) : null
+  return rendered?.renderAs === 'video' ? rendered.videoSrc || null : null
 }

@@ -19,6 +19,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import os from 'node:os'
 import { spawnSync } from 'node:child_process'
+import { pathToFileURL } from 'node:url'
 import { normalize, matchEntity, resolveMatch, loadEntityIndex, CATEGORIES, isValidSlug } from './process-images.mjs'
 
 /** Construye una entidad de fixture con el mismo shape que loadEntityIndex() */
@@ -331,7 +332,7 @@ describe('CATEGORIES — fuente única de verdad compartida con src/lib/images.t
 function spawnSyncNode(cwd) {
   const scriptPath = path.join(import.meta.dirname, 'process-images.mjs')
   const inline = `
-    import { loadEntityIndex } from ${JSON.stringify(scriptPath)}
+    import { loadEntityIndex } from ${JSON.stringify(pathToFileURL(scriptPath).href)}
     process.stdout.write(JSON.stringify(loadEntityIndex()))
   `
   return spawnSync(process.execPath, ['--input-type=module', '-e', inline], {

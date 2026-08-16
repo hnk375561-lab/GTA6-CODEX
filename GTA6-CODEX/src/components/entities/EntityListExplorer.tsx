@@ -48,7 +48,7 @@ interface EntityListExplorerProps {
    *  registrado (ver getCharacterClipUrl en lib/media.ts). El caller server
    *  (`[entityType]/page.tsx`) resuelve este mapa una sola vez. */
   clipUrlBySlug?: Record<string, string>
-  /** slug → imagen ya resuelta (ver `getEntityImageMap` en `@/lib/media.ts`).
+  /** type/slug → imagen ya resuelta (ver `getEntityImageMap` en `@/lib/media.ts`).
    *  Este componente es `'use client'`, así que no puede resolver imágenes
    *  por su cuenta con `fs` — el caller server (`[entityType]/page.tsx`)
    *  resuelve el mapa completo una sola vez y lo pasa acá. */
@@ -416,7 +416,7 @@ export function EntityListExplorer({
             <Reveal key={entity.slug} delay={(i % 6) * 80}>
               <EntityCard
                 entity={entity}
-                image={imageBySlug?.[entity.slug]}
+                image={imageBySlug?.[`${entity.type}/${entity.slug}`]}
                 typeLabel={typeLabel}
                 clipUrl={clipUrlBySlug?.[entity.slug]}
                 relationCount={relationCountBySlug?.[entity.slug]}

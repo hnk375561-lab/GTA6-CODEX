@@ -117,10 +117,10 @@ export default async function EntityTypePage({ params }: PageProps) {
         {/* Portada oficial en video: solo en el listado de Trailers, no
             reemplaza ningún contenido existente — se agrega arriba del
             explorador de la lista. */}
-        {type === EntityType.TRAILER && (
+        {type === EntityType.TRAILER && getCoverArtVideoAsset() && (
           <Reveal className="mb-10">
             {(() => {
-              const coverArt = resolveMediaRender(getCoverArtVideoAsset())
+              const coverArt = resolveMediaRender(getCoverArtVideoAsset()!)
               return (
                 <Card className="overflow-hidden !p-0">
                   <VideoEmbed videoSrc={coverArt.videoSrc!} title={coverArt.title} className="!rounded-none !border-0" />
