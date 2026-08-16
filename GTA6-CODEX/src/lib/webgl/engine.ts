@@ -23,7 +23,10 @@ import { computePointerTarget, computeScrollTarget } from './core/input'
 import { computeSceneBusStateUpdate } from './core/scene-bus-adapter'
 import { lerpDayColor, lerpCyclic01, smootherstep } from './utils/math'
 import { SHOTS, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP, IMAGE_BILLBOARDS } from './config/scene'
-import { SKY_VERTEX_SHADER, SKY_FRAGMENT_SHADER } from './shaders/sky'
+// Fase 8.1: buildSkyDome() migrado mecánicamente a ./scene/sky.ts (ver nota
+// de arquitectura al pie del archivo). SKY_VERTEX_SHADER/SKY_FRAGMENT_SHADER
+// ya no se importan acá directamente: ahora los consume ./scene/sky.ts.
+import { buildSkyDome as buildSkyDomeScene } from './scene/sky'
 import { WATER_VERTEX_SHADER, WATER_FRAGMENT_SHADER } from './shaders/water'
 import { SHAFT_VERTEX_SHADER, SHAFT_FRAGMENT_SHADER, NEON_SIGN_FRAGMENT_SHADER } from './shaders/neon'
 import { ROAD_VERTEX_SHADER, ROAD_FRAGMENT_SHADER } from './shaders/road'
@@ -190,17 +193,20 @@ import {
 /**
  * Callback de animación por-frame para piezas de escena registradas en
  * `this.updaters` (ver `start()`). Deliberadamente distinto — y sin
- * relación — del tipo `Updater` de 11 parámetros que exporta la
- * extracción paralela y todavía no verificada en `scene/*.ts` (ver nota
- * de arquitectura al pie del archivo). `core/lifecycle.ts` YA NO forma
- * parte de esa extracción sin conectar: desde la Fase 3 fue reescrito
- * desde cero como orquestación verificada del ciclo de vida del
- * renderer y está conectado a este motor (`createRenderer`,
- * `resizeRendererAndPasses`, `disposeSceneResources`, etc. — ver
- * imports arriba). Solo `scene/*.ts` sigue siendo código muerto sin
- * conectar. Nombrado `SceneUpdater` a propósito para que este tipo
- * nunca se confunda ni se mezcle por accidente con el `Updater` de
- * `scene/*.ts`.
+ * relación estructural — del tipo `Updater` de 11 parámetros que exporta
+ * `scene/*.ts` (ver nota de arquitectura al pie del archivo).
+ * `core/lifecycle.ts` YA NO forma parte de esa extracción sin conectar:
+ * desde la Fase 3 fue reescrito desde cero como orquestación verificada
+ * del ciclo de vida del renderer y está conectado a este motor
+ * (`createRenderer`, `resizeRendererAndPasses`, `disposeSceneResources`,
+ * etc. — ver imports arriba). Desde la Fase 8.1, `scene/sky.ts` también
+ * está conectado (ver `buildSkyDome()` más abajo): su `updater` de 11
+ * parámetros se envuelve ahí mismo en un closure `SceneUpdater` de 3
+ * parámetros antes de entrar a `this.updaters`, así que este tipo sigue
+ * siendo el único que viaja por `start()`/el loop de animación. El resto
+ * de `scene/*.ts` sigue siendo código muerto sin conectar. Nombrado
+ * `SceneUpdater` a propósito para que este tipo nunca se confunda ni se
+ * mezcle por accidente con el `Updater` de `scene/*.ts`.
  */
 type SceneUpdater = (elapsed: number, delta: number, intro: number) => void
 
@@ -470,43 +476,41 @@ export class GTA6CodexWebGLEngine {
    * `this.fog` ya existe en este punto del constructor (se crea antes de
    * llamar a `buildSkyDome()`), así que es seguro leer su color acá.
    */
+  /**
+   * Fase 8.1 — geometría, material, uniforms y valores idénticos a la
+   * versión inline anterior; solo se movieron a `./scene/sky.ts`
+   * (`buildSkyDomeScene`). El `updater` que devuelve esa función usa la
+   * firma común de 11 parámetros de `scene/*.ts` (ver nota de
+   * arquitectura al pie del archivo), incompatible con `SceneUpdater` de
+   * este motor — por eso se lo envuelve acá en un closure de 3
+   * parámetros que lee `this.dayPhase` / `this.humidity` / `this.fog.color`
+   * en cada frame exactamente igual que antes, y se lo registra en
+   * `this.updaters` sin tocar `start()`/el loop de animación.
+   */
   private buildSkyDome() {
-    this.skyUniforms = {
-      time: { value: 0 },
-      dayPhase: { value: 0.42 },
-      introFade: { value: 0 },
-      humidity: { value: this.humidity },
-      fogColor: { value: this.fog.color.clone() },
-    }
-    const material = new THREE.ShaderMaterial({
-      uniforms: {
-        time: this.skyUniforms.time,
-        dayPhase: this.skyUniforms.dayPhase,
-        introFade: this.skyUniforms.introFade,
-        humidity: this.skyUniforms.humidity,
-        fogColor: this.skyUniforms.fogColor,
-      },
-      vertexShader: SKY_VERTEX_SHADER,
-      fragmentShader: SKY_FRAGMENT_SHADER,
-      side: THREE.BackSide,
-      depthWrite: false,
-      fog: false,
+    const { uniforms, updater } = buildSkyDomeScene({
+      humidity: this.humidity,
+      fog: this.fog,
+      skyGroup: this.skyGroup,
+      quality: this.quality,
     })
-    // Ligero aumento de subdivisión (32×24 → 48×32) respecto a la versión
-    // anterior: una sola malla de fondo, coste trivial, pero evita cualquier
-    // facetado perceptible en las curvas `pow()` ajustadas del resplandor
-    // de horizonte, que son más exigentes que el degradado plano original.
-    const dome = new THREE.Mesh(new THREE.SphereGeometry(85, 48, 32), material)
-    dome.frustumCulled = false
-    this.skyGroup.add(dome)
+    this.skyUniforms = uniforms
 
-    this.updaters.push((elapsed, _delta, intro) => {
-      this.skyUniforms.time.value = elapsed
-      this.skyUniforms.dayPhase.value = this.dayPhase
-      this.skyUniforms.introFade.value = intro
-      this.skyUniforms.humidity.value = this.humidity
-      this.skyUniforms.fogColor.value.copy(this.fog.color)
-    })
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
+    )
   }
 
   /** Bahía Leonida en el horizonte — reflejos y ondas sutiles. */
@@ -1595,14 +1599,15 @@ export class GTA6CodexWebGLEngine {
 }
 
 /**
- * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 5) — deuda
+ * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 8.1) — deuda
  * técnica real, parcialmente atendida de forma incremental
  * ---------------------------------------------------------------------------
- * El repo tiene una extracción paralela y todavía NO conectada de los
+ * El repo tiene una extracción paralela, mayormente NO conectada, de los
  * builders de escena hacia `./scene/*.ts` (equivalentes a cada `buildXxx()`
  * de más arriba, con un `Updater` de 11 parámetros distinto al
- * `SceneUpdater` de este archivo). Esos `buildXxx()` inline siguen siendo
- * los que realmente corren en producción; los de `scene/*.ts` son código
+ * `SceneUpdater` de este archivo). Salvo la excepción de `scene/sky.ts`
+ * (Fase 8.1, ver abajo), esos `buildXxx()` inline siguen siendo los que
+ * realmente corren en producción; el resto de `scene/*.ts` es código
  * muerto. Verificar que ambas implementaciones produzcan exactamente el
  * mismo resultado visual, línea por línea, excede lo que se puede
  * confirmar sin correr el motor en un navegador — conectar esa extracción
@@ -1626,6 +1631,14 @@ export class GTA6CodexWebGLEngine {
  *    el constructor). El resize de estos passes y sus uniforms por frame
  *    NO se movieron — siguen en `resizeRendererAndPasses` (Fase 3) y en
  *    el loop de `start()` respectivamente.
+ *  - Fase 8.1: `scene/sky.ts` (`buildSkyDome`) — cúpula celeste
+ *    procedural. Misma geometría (`SphereGeometry(85, 48, 32)`), mismo
+ *    `ShaderMaterial` (mismos shaders, `side`/`depthWrite`/`fog`), mismos
+ *    uniforms y mismos valores iniciales que la versión inline anterior.
+ *    El `updater` de 11 parámetros que devuelve se envuelve en
+ *    `buildSkyDome()` (más arriba en este archivo) en un closure
+ *    `SceneUpdater` de 3 parámetros — este es el único punto de contacto
+ *    entre ambas convenciones; `this.updaters`/`start()` no se tocaron.
  *
  * El cuerpo del loop de animación dentro de `start()` (cámara dinámica,
  * uniforms por frame, matemática visual del ciclo día/noche) sigue sin
