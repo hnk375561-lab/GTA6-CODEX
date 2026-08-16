@@ -8,6 +8,12 @@ import { FXAAPass } from 'three/examples/jsm/postprocessing/FXAAPass.js'
 import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js'
 import { webglSceneBus, type SceneFocus, type EntityAtmosphere } from './scene-bus'
 
+// Extracted modules
+import { detectQualityProfile, type QualityProfile } from './core/quality'
+import { lerpDayColor, lerpCyclic01, smootherstep } from './utils/math'
+import { SHOTS, FALLBACK_SHOT, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP, IMAGE_BILLBOARDS, SECTION_MOOD, CATEGORY_WARMTH, STATUS_UNREST, CATEGORY_PACE, CATEGORY_FRAME } from './constants'
+import { GRADE_SHADER } from './shaders/postprocess'
+
 /**
  * GTA6CodexWebGLEngine — v5 "Vice City, no una demo abstracta de Three.js"
  * ---------------------------------------------------------------------------
@@ -156,94 +162,6 @@ import { webglSceneBus, type SceneFocus, type EntityAtmosphere } from './scene-b
  */
 
 type Updater = (elapsed: number, delta: number, intro: number) => void
-
-/** Perfil de calidad: degrada partículas, post-proceso y DPR en mobile. */
-interface QualityProfile {
-  tier: 'high' | 'medium' | 'low'
-  maxDpr: number
-  dustCount: number
-  fireflyCount: number
-  mistCount: number
-  trafficCount: number
-  enableBokeh: boolean
-  bloomScale: number
-  hazeLayers: number
-}
-
-function detectQualityProfile(reducedMotion: boolean): QualityProfile {
-  const w = typeof window !== 'undefined' ? window.innerWidth : 1920
-  const coarse = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches
-  const lowEnd = w < 480 || (coarse && w < 768)
-  const mobile = coarse && w < 1024
-
-  if (reducedMotion || lowEnd) {
-    return {
-      tier: 'low',
-      maxDpr: 1,
-      dustCount: 120,
-      fireflyCount: 0,
-      mistCount: 40,
-      trafficCount: 6,
-      enableBokeh: false,
-      bloomScale: 0.55,
-      hazeLayers: 1,
-    }
-  }
-  if (mobile) {
-    return {
-      tier: 'medium',
-      maxDpr: 1.35,
-      dustCount: 260,
-      fireflyCount: 35,
-      mistCount: 90,
-      trafficCount: 9,
-      enableBokeh: false,
-      bloomScale: 0.75,
-      hazeLayers: 2,
-    }
-  }
-  return {
-    tier: 'high',
-    maxDpr: 2,
-    dustCount: 520,
-    fireflyCount: 80,
-    mistCount: 180,
-    trafficCount: 14,
-    enableBokeh: true,
-    bloomScale: 1,
-    hazeLayers: 3,
-  }
-}
-
-/** Paleta por fase del día: 0=atardecer dorado, 0.5=noche neón, 1=madrugada azul. */
-function lerpDayColor(phase: number, dusk: number, night: number, dawn: number): number {
-  const p = ((phase % 1) + 1) % 1
-  if (p < 0.33) {
-    const t = p / 0.33
-    return dusk + (night - dusk) * t
-  }
-  if (p < 0.66) {
-    const t = (p - 0.33) / 0.33
-    return night + (dawn - night) * t
-  }
-  const t = (p - 0.66) / 0.34
-  return dawn + (dusk - dawn) * t
-}
-
-/**
- * Interpola en el círculo unitario [0,1) tomando siempre el camino más
- * corto, para que un valor cíclico (como `dayPhase`) nunca "rebobine"
- * visualmente al cruzar el punto de wraparound (p. ej. de 0.98 a 0.02).
- * Un `lerp` lineal común recorrería el camino largo (0.98 → 0.5 → 0.02),
- * lo cual se ve como el ciclo día/noche retrocediendo de golpe.
- */
-function lerpCyclic01(current: number, target: number, t: number): number {
-  let delta = (target - current) % 1
-  if (delta > 0.5) delta -= 1
-  if (delta < -0.5) delta += 1
-  const next = current + delta * t
-  return ((next % 1) + 1) % 1
-}
 
 // ---------------------------------------------------------------------------
 // Shaders
@@ -432,7 +350,7 @@ const SHAFT_FRAGMENT_SHADER = /* glsl */ `
   }
 `
 
-/** Sol/luna bajo de horizonte — amanecer/golden hour/atardecer tropical de Leonida. */
+/** Sol/luna bajo de horizonte, con bandas cortadas — el ícono synthwave del atardecer de Miami. */
 const SUN_VERTEX_SHADER = /* glsl */ `
   varying vec2 vUv;
   void main() {
@@ -444,109 +362,24 @@ const SUN_VERTEX_SHADER = /* glsl */ `
 const SUN_FRAGMENT_SHADER = /* glsl */ `
   uniform float time;
   uniform float introFade;
-  uniform float dayPhase;
-  uniform float humidity;
-  uniform vec3 fogColor;
+  uniform vec3 coreColor;
+  uniform vec3 rimColor;
   varying vec2 vUv;
-
-  // Misma técnica de 6 paradas horarias que ya usa la cúpula celeste
-  // (buildSkyDome/sixKeyMix), pero acotada al disco y su halo — el sol
-  // y el cielo cambian de humor exactamente en sincronía, no con curvas de
-  // color independientes como antes (lerp de 3 puntos aparte).
-  vec3 sunKeyMix(float p, vec3 c0, vec3 c1, vec3 c2, vec3 c3, vec3 c4, vec3 c5) {
-    float scaled = p * 6.0;
-    float seg = floor(scaled);
-    float f = scaled - seg;
-    f = f * f * (3.0 - 2.0 * f);
-    if (seg < 0.5) return mix(c0, c1, f);
-    if (seg < 1.5) return mix(c1, c2, f);
-    if (seg < 2.5) return mix(c2, c3, f);
-    if (seg < 3.5) return mix(c3, c4, f);
-    if (seg < 4.5) return mix(c4, c5, f);
-    return mix(c5, c0, f);
-  }
 
   void main() {
     vec2 c = vUv - 0.5;
+    float d = length(c) * 2.0;
+    float disc = 1.0 - smoothstep(0.78, 0.84, d);
+    if (disc <= 0.001) discard;
 
-    // Achatamiento atmosférico: cerca del horizonte el disco se "aplana"
-    // por refracción real de la atmósfera — nunca es un círculo perfecto
-    // al tocar el horizonte.
-    float squash = mix(1.35, 1.0, smoothstep(-0.5, 0.15, c.y));
-    vec2 cs = vec2(c.x, c.y * squash);
-    float d = length(cs) * 2.0;
+    vec3 col = mix(coreColor, rimColor, smoothstep(-0.4, 0.9, c.y + 0.5));
+    float scanFreq = 22.0;
+    float scan = step(0.5, fract((vUv.y + time * 0.008) * scanFreq));
+    float band = smoothstep(0.05, -0.2, c.y);
+    col *= mix(1.0, scan, band * 0.85);
 
-    vec3 core0     = vec3(1.0, 0.98, 0.9);
-    vec3 nightCore = vec3(0.78, 0.82, 0.92);
-    vec3 nightRim  = vec3(0.35, 0.42, 0.62);
-    vec3 dawnCore  = vec3(1.0, 0.82, 0.62);
-    vec3 dawnRim   = vec3(1.0, 0.45, 0.42);
-    vec3 dayCore   = vec3(1.0, 0.97, 0.85);
-    vec3 dayRim    = vec3(1.0, 0.82, 0.5);
-    vec3 goldCore  = vec3(1.0, 0.82, 0.42);
-    vec3 goldRim   = vec3(1.0, 0.45, 0.12);
-    vec3 duskCore  = vec3(1.0, 0.55, 0.55);
-    vec3 duskRim   = vec3(0.85, 0.18, 0.55);
-    vec3 blueCore  = vec3(0.85, 0.42, 0.68);
-    vec3 blueRim   = vec3(0.42, 0.16, 0.52);
-
-    vec3 coreColor = sunKeyMix(dayPhase, nightCore, dawnCore, dayCore, goldCore, duskCore, blueCore);
-    vec3 rimColor  = sunKeyMix(dayPhase, nightRim,  dawnRim,  dayRim,  goldRim,  duskRim,  blueRim);
-
-    // Disco: núcleo cálido saturando a blanco, limb darkening real hacia
-    // el borde (más natural que el gradiente vertical anterior).
-    float discMask = 1.0 - smoothstep(0.7, 0.82, d);
-    float limb = smoothstep(0.0, 0.78, d);
-    vec3 discColor = mix(mix(core0, coreColor, 0.55), rimColor, pow(limb, 1.6));
-
-    // Halo atmosférico: bleed suave más allá del disco, su dispersión
-    // crece con la humedad tropical (aire denso de Florida dispersa más
-    // luz alrededor del sol).
-    float haloSpread = 0.82 + humidity * 0.5;
-    float halo = pow(clamp(1.0 - d / haloSpread, 0.0, 1.0), 2.4) * (0.55 + humidity * 0.3);
-
-    // Rayos suaves (god-rays baratos): armónicos angulares fijos, sin
-    // loops — coste de shader constante sin importar la resolución.
-    float ang = atan(cs.y, cs.x);
-    float rays = 0.5 + 0.5 * cos(ang * 5.0 + time * 0.06);
-    rays *= 0.5 + 0.5 * cos(ang * 11.0 - time * 0.03);
-    float rayMask = smoothstep(0.35, 0.85, d) * (1.0 - smoothstep(1.4, 1.7, d));
-    float rayGlow = rays * rayMask * (0.18 + humidity * 0.12);
-
-    // Integración con niebla real: la base del disco se funde con el
-    // color real de this.fog — cero costura entre el sol y la bruma de
-    // la escena, el mismo truco que ya usa la cúpula celeste.
-    float hazeBand = smoothstep(-0.05, -0.42, c.y) * (0.35 + humidity * 0.35);
-
-    vec3 col = discColor * discMask + rimColor * halo + rimColor * rayGlow;
-    col = mix(col, fogColor, hazeBand * discMask * 0.6);
-    col += fogColor * halo * hazeBand * 0.4;
-
-    float alpha = clamp(discMask + halo * 0.9 + rayGlow, 0.0, 1.0) * introFade;
-    if (alpha <= 0.002) discard;
-
+    float alpha = disc * 0.8 * introFade;
     gl_FragColor = vec4(col, alpha);
-  }
-`
-
-/** Reflejo del sol sobre la bahía — streak vertical que nace en la línea de
- *  agua y se atenúa/angosta hacia abajo, con shimmer de oleaje. Uso
- *  exclusivo de `buildHorizonSun()`: no depende de `buildWaterHorizon`. */
-const SUN_REFLECTION_FRAGMENT_SHADER = /* glsl */ `
-  uniform float time;
-  uniform float introFade;
-  uniform vec3 sunColor;
-  uniform float reflectionStrength;
-  varying vec2 vUv;
-
-  void main() {
-    vec2 c = vUv - 0.5;
-    float widthTaper = 1.0 - smoothstep(0.0, 0.5, abs(c.x) * mix(1.0, 2.6, 0.5 - c.y));
-    float fade = smoothstep(-0.5, 0.48, c.y);
-    float shimmer = 0.7 + 0.3 * sin(c.y * 46.0 - time * 2.4) * sin(c.x * 18.0 + time * 1.1);
-    float alpha = widthTaper * fade * shimmer * reflectionStrength * introFade;
-    if (alpha <= 0.002) discard;
-    gl_FragColor = vec4(sunColor, alpha);
   }
 `
 
@@ -940,7 +773,6 @@ const MIST_FRAGMENT_SHADER = /* glsl */ `
   }
 `
 
-/** Letrero neón distante con parpadeo determinista. */
 /** Letrero neón premium con parpadeo orgánico, variación por tipo y respuesta a día/noche. */
 const NEON_SIGN_FRAGMENT_SHADER = /* glsl */ `
   uniform float time;
@@ -954,58 +786,58 @@ const NEON_SIGN_FRAGMENT_SHADER = /* glsl */ `
 
   void main() {
     vec2 centered = vUv - 0.5;
-
+    
     // Forma base con variación por tipo de negocio
     float edgeBase = smoothstep(0.48, 0.42, abs(centered.x));
     float vertical = smoothstep(0.22, 0.18, abs(centered.y));
-
+    
     // Hoteles: marco más elaborado con esquinas redondeadas
     float hotelFrame = edgeBase * vertical;
     float hotelCorner = smoothstep(0.35, 0.25, length(centered - vec2(0.35, 0.35))) +
                          smoothstep(0.35, 0.25, length(centered - vec2(-0.35, 0.35))) +
                          smoothstep(0.35, 0.25, length(centered - vec2(0.35, -0.35))) +
                          smoothstep(0.35, 0.25, length(centered - vec2(-0.35, -0.35)));
-
+    
     // Clubes: líneas dinámicas horizontales
     float clubLines = edgeBase * vertical + smoothstep(0.45, 0.40, abs(centered.y - 0.15)) + smoothstep(0.45, 0.40, abs(centered.y + 0.15));
-
+    
     // Restaurantes: borde suave con interior tenue
     float restGlow = edgeBase * vertical * 0.8 + smoothstep(0.30, 0.15, length(centered)) * 0.3;
-
+    
     // Casinos: patrón de diamante
     float casinoPattern = abs(centered.x * centered.y) * 4.0;
     float casinoEdge = edgeBase * vertical + smoothstep(0.6, 0.4, casinoPattern) * 0.4;
-
+    
     // Negocios: simple pero elegante
     float businessSimple = edgeBase * vertical;
-
+    
     // Mezcla por tipo
-    float edge = mix(hotelFrame + hotelCorner * 0.5,
-                   mix(clubLines,
-                      mix(restGlow,
+    float edge = mix(hotelFrame + hotelCorner * 0.5, 
+                   mix(clubLines, 
+                      mix(restGlow, 
                          mix(casinoEdge, businessSimple, step(3.5, signType)),
                          step(2.5, signType)),
                       step(1.5, signType)),
                    step(0.5, signType));
-
+    
     // Parpadeo orgánico diferente por tipo
     float baseFlicker = 0.85 + 0.15 * sin(time * (3.0 + signType * 0.5) + flickerSeed);
-
+    
     // Hoteles: parpadeo lento y estable
     float hotelFlicker = baseFlicker * (0.92 + 0.08 * sin(time * 0.3 + flickerSeed * 2.0));
-
+    
     // Clubes: parpadeo rápido y dinámico
     float clubFlicker = baseFlicker * (0.75 + 0.25 * sin(time * 8.0 + flickerSeed) * sin(time * 12.0 + flickerSeed * 1.5));
-
+    
     // Restaurantes: parpadeo suave
     float restFlicker = baseFlicker * (0.88 + 0.12 * sin(time * 1.5 + flickerSeed * 0.5));
-
+    
     // Casinos: parpadeo errático
     float casinoFlicker = baseFlicker * (0.7 + 0.3 * fract(sin(time * 15.0 + flickerSeed * 3.0) * 43758.5453));
-
+    
     // Negocios: parpadeo minimalista
     float businessFlicker = baseFlicker * 0.95;
-
+    
     float flicker = mix(hotelFlicker,
                        mix(clubFlicker,
                           mix(restFlicker,
@@ -1013,130 +845,18 @@ const NEON_SIGN_FRAGMENT_SHADER = /* glsl */ `
                              step(2.5, signType)),
                           step(1.5, signType)),
                        step(0.5, signType));
-
+    
     // Integración con ciclo día/noche: más brillante en noche, más tenue en día
     float nightAmount = 1.0 - smoothstep(0.0, 0.3, min(dayPhase, 1.0 - dayPhase));
     float dayPhaseDim = 0.4 + 0.6 * nightAmount;
-
+    
     // Falloff por distancia para profundidad real
     float alpha = edge * flicker * dayPhaseDim * distanceFade * introFade;
-
+    
     // Añadir brillo extra en bordes para efecto neón realista
     vec3 glowColor = signColor * (1.0 + 0.3 * sin(time * 2.0 + flickerSeed));
-
+    
     gl_FragColor = vec4(glowColor, alpha);
-  }
-`
-
-/**
- * Ventanas del skyline lejano — v2 "una sola malla, miles de luces".
- * ---------------------------------------------------------------------------
- * Un único `THREE.InstancedMesh` (un solo draw call) hace triple función
- * vía el atributo por-instancia `aMeta` (seed, esReflejo, esBaliza), en vez
- * de tres materiales/mallas separados:
- *  - Ventana normal: rectángulo con parpadeo determinista por semilla,
- *    igual en espíritu al `NEON_SIGN_FRAGMENT_SHADER` ya existente.
- *  - Reflejo en la bahía (`esReflejo=1`): mismo quad, reubicado en Y por
- *    CPU al construir la instancia (espejo respecto al plano de
- *    `buildWaterHorizon`), pero aquí se le da el tinte frío del agua, se
- *    atenúa y se le agrega un oleaje vertical sutil en el vértice.
- *  - Baliza de azotea (`esBaliza=1`): en vez del rectángulo de ventana,
- *    dibuja un resplandor radial (más parecido a una luz puntual) con
- *    pulso lento — la aguja de un hotel de Ocean Drive, no una ventana.
- *
- * El parpadeo NUNCA se calcula en la CPU (no hay un updater por ventana,
- * a diferencia de la versión anterior): todo depende de `time`, que se
- * actualiza en un único updater sin importar cuántas ventanas existan —
- * el costo por frame es O(1), el conteo de ventanas es "gratis".
- */
-const SKYLINE_WINDOW_VERTEX_SHADER = /* glsl */ `
-  #ifdef USE_INSTANCING
-    attribute mat4 instanceMatrix;
-  #endif
-  #ifdef USE_INSTANCING_COLOR
-    attribute vec3 instanceColor;
-  #endif
-  attribute vec3 aMeta;
-  uniform float time;
-  varying vec2 vUv;
-  varying vec3 vColor;
-  varying vec3 vMeta;
-
-  void main() {
-    vUv = uv;
-    vMeta = aMeta;
-    #ifdef USE_INSTANCING_COLOR
-      vColor = instanceColor;
-    #else
-      vColor = vec3(1.0);
-    #endif
-
-    vec3 pos = position;
-    // Oleaje vertical sutil — solo en los reflejos de la bahía, la ciudad
-    // real no "respira", únicamente su espejo en el agua.
-    if (aMeta.y > 0.5) {
-      pos.y += sin(time * 0.6 + aMeta.x * 12.0) * 0.055;
-      pos.x += sin(time * 0.35 + aMeta.x * 7.0) * 0.03;
-    }
-
-    vec4 mvPosition = vec4(pos, 1.0);
-    #ifdef USE_INSTANCING
-      mvPosition = instanceMatrix * mvPosition;
-    #endif
-    mvPosition = modelViewMatrix * mvPosition;
-    gl_Position = projectionMatrix * mvPosition;
-  }
-`
-
-const SKYLINE_WINDOW_FRAGMENT_SHADER = /* glsl */ `
-  uniform float time;
-  uniform float introFade;
-  uniform float flickerAmount;
-  uniform float atmosphere;
-  varying vec2 vUv;
-  varying vec3 vColor;
-  varying vec3 vMeta;
-
-  void main() {
-    float seed = vMeta.x;
-    float isReflection = vMeta.y;
-    float isBeacon = vMeta.z;
-    vec2 c = vUv - 0.5;
-
-    float shapeMask;
-    if (isBeacon > 0.5) {
-      float d = length(c);
-      shapeMask = smoothstep(0.5, 0.0, d);
-    } else {
-      shapeMask = smoothstep(0.5, 0.4, abs(c.x)) * smoothstep(0.5, 0.28, abs(c.y));
-    }
-
-    float speed = 0.5 + fract(seed * 13.7) * 1.6;
-    float flicker = 0.55 + 0.45 * sin(time * speed + seed * 6.2831);
-    float alive = step(0.05, fract(sin(seed * 91.7) * 43758.5453));
-    float pulse = isBeacon > 0.5
-      ? 0.72 + 0.28 * sin(time * 0.8 + seed * 4.0)
-      : mix(1.0, flicker, flickerAmount) * alive;
-
-    float alpha = shapeMask * pulse * introFade;
-    vec3 col = vColor;
-
-    if (isReflection > 0.5) {
-      // El reflejo en la bahía es más frío y tenue — se difumina en el oleaje.
-      col = mix(col, vec3(0.35, 0.66, 0.86), 0.4);
-      alpha *= 0.3;
-    }
-    if (isBeacon > 0.5) {
-      col = mix(col, vec3(1.0), 0.3);
-      alpha *= 1.35;
-    }
-
-    // Calor/vapor tropical: cuanto más húmedo el aire, más se difuminan
-    // las luces distantes — la misma sensación que ya usa humidity en
-    // GRADE_SHADER y en la niebla, aplicada acá a la fuente puntual.
-    alpha *= mix(1.0, 0.78, atmosphere * (isReflection > 0.5 ? 1.3 : 1.0));
-
-    gl_FragColor = vec4(col, clamp(alpha, 0.0, 1.0));
   }
 `
 
@@ -1328,81 +1048,6 @@ const CATEGORY_FRAME: Record<string, number> = {
   vehiculos: -0.35,
   ubicaciones: 1.6,
 }
-
-/**
- * Config de una banda de profundidad del skyline lejano (ver `buildFarSkyline`).
- * Tres bandas (far/mid/near) dan la "escala enorme" de una metrópoli de
- * Leonida sin disparar el conteo de meshes: cada banda es geometría
- * instanciada, así que más edificios no cuesta más draw calls, solo más
- * instancias dentro de las mismas ~4 mallas.
- */
-interface SkylineLayerConfig {
-  key: 'far' | 'mid' | 'near'
-  zMin: number
-  zMax: number
-  /** Conteo base (perfil 'high'); se escala por `quality.tier` al usarse. */
-  count: number
-  heightMin: number
-  heightMax: number
-  widthMin: number
-  widthMax: number
-  /** 0..1 — cuánto se funde la silueta hacia el color de niebla (perspectiva atmosférica). */
-  hazeMix: number
-  /** 0..1 — probabilidad/densidad de ventanas encendidas por fachada. */
-  windowDensity: number
-  /** Cuántos edificios de esta banda pueden ser "hero" (aguja + baliza). */
-  heroCount: number
-}
-
-const SKYLINE_LAYERS: SkylineLayerConfig[] = [
-  {
-    key: 'far',
-    zMin: -84,
-    zMax: -66,
-    count: 24,
-    heightMin: 9,
-    heightMax: 30,
-    widthMin: 1.1,
-    widthMax: 2.4,
-    hazeMix: 0.62,
-    windowDensity: 0.32,
-    heroCount: 1,
-  },
-  {
-    key: 'mid',
-    zMin: -64,
-    zMax: -46,
-    count: 32,
-    heightMin: 6,
-    heightMax: 22,
-    widthMin: 1.0,
-    widthMax: 2.5,
-    hazeMix: 0.28,
-    windowDensity: 0.62,
-    heroCount: 2,
-  },
-  {
-    key: 'near',
-    zMin: -44,
-    zMax: -28,
-    count: 15,
-    heightMin: 9,
-    heightMax: 32,
-    widthMin: 1.4,
-    widthMax: 3.2,
-    hazeMix: 0.06,
-    windowDensity: 0.85,
-    heroCount: 2,
-  },
-]
-
-/** Paleta de ventanas: ámbar (dominante, cálido/residencial), cian y magenta
- *  (acento neón, la firma de Vice City), y blanco-cálido (raro, "penthouse"). */
-const SKYLINE_WINDOW_COLORS = [0xffd166, 0xffd166, 0xffb04d, 0x22d3ee, 0xff3d81, 0xfff2d9]
-
-/** Siluetas: base violeta-noche y una variante ligeramente más fría (vidrio) o
- *  más cálida (hormigón/hotel), para que no todo el skyline sea un solo tono plano. */
-const SKYLINE_SILHOUETTE_COLORS = [0x120c22, 0x160f28, 0x1a0f1c, 0x0d0a1c]
 
 export class GTA6CodexWebGLEngine {
   private renderer: THREE.WebGLRenderer
@@ -1753,7 +1398,6 @@ export class GTA6CodexWebGLEngine {
     })
   }
 
-  /** Letreros neón distantes en el skyline — vida urbana parpadeante. */
   /** Letreros neón premium GTA VI — Vice City moderna con atmósfera cinematográfica. */
   private buildNeonSigns() {
     if (this.quality.tier === 'low') return
@@ -1785,13 +1429,13 @@ export class GTA6CodexWebGLEngine {
       { type: 0, colorIndex: 0, width: 4.2, height: 1.8, baseIntensity: 0.6 }, // Hotel rosa
       { type: 0, colorIndex: 3, width: 3.8, height: 1.6, baseIntensity: 0.55 }, // Hotel violeta
       { type: 3, colorIndex: 4, width: 3.5, height: 1.4, baseIntensity: 0.5 }, // Casino azul
-
+      
       // CAPA MEDIA (-40 a -50): clubes y restaurantes, visibilidad media
       { type: 1, colorIndex: 1, width: 3.2, height: 1.2, baseIntensity: 0.75 }, // Club magenta
       { type: 2, colorIndex: 2, width: 2.8, height: 1.0, baseIntensity: 0.7 }, // Restaurante cyan
       { type: 1, colorIndex: 5, width: 3.0, height: 1.1, baseIntensity: 0.72 }, // Club naranja
       { type: 2, colorIndex: 6, width: 2.6, height: 0.95, baseIntensity: 0.68 }, // Restaurante rosa
-
+      
       // CAPA CERCANA (-30 a -40): negocios y locales, mayor detalle
       { type: 4, colorIndex: 7, width: 2.4, height: 0.85, baseIntensity: 0.85 }, // Negocio cyan claro
       { type: 4, colorIndex: 0, width: 2.2, height: 0.8, baseIntensity: 0.82 }, // Negocio rosa
@@ -1802,32 +1446,32 @@ export class GTA6CodexWebGLEngine {
     const signCount = this.quality.tier === 'high' ? signConfigs.length : Math.floor(signConfigs.length * 0.6)
     const activeConfigs = signConfigs.slice(0, signCount)
 
-    const signs: {
-      mat: THREE.ShaderMaterial
-      seed: number
-      signType: number
-      baseIntensity: number
-      distanceFade: number
+    const signs: { 
+      mat: THREE.ShaderMaterial; 
+      seed: number; 
+      signType: number;
+      baseIntensity: number;
+      distanceFade: number;
     }[] = []
 
     // Posiciones pre-diseñadas para composición cinematográfica
     const positions = [
       { x: -18, y: 2, z: -55 }, // Hotel lejano izquierda
-      { x: 12, y: 3, z: -58 }, // Hotel lejano derecha
-      { x: -8, y: 1, z: -52 }, // Casino centro-lejano
+      { x: 12, y: 3, z: -58 },  // Hotel lejano derecha
+      { x: -8, y: 1, z: -52 },  // Casino centro-lejano
       { x: -22, y: -1, z: -45 }, // Club medio-izquierda
-      { x: 15, y: 0, z: -47 }, // Restaurante medio-derecha
-      { x: 0, y: -2, z: -44 }, // Club centro-medio
-      { x: 18, y: -3, z: -42 }, // Restaurante medio-derecha bajo
+      { x: 15, y: 0, z: -47 },  // Restaurante medio-derecha
+      { x: 0, y: -2, z: -44 },   // Club centro-medio
+      { x: 18, y: -3, z: -42 },  // Restaurante medio-derecha bajo
       { x: -12, y: -4, z: -38 }, // Negocio cercano izquierda
-      { x: 8, y: -5, z: -36 }, // Negocio cercano derecha
-      { x: -3, y: -3, z: -35 }, // Club cercano centro
+      { x: 8, y: -5, z: -36 },   // Negocio cercano derecha
+      { x: -3, y: -3, z: -35 },  // Club cercano centro
     ]
 
     activeConfigs.forEach((config, i) => {
       const seed = i * 3.14159 + 0.618
       const pos = positions[i] || { x: (i - 5) * 8, y: -2 + (i % 3) * 2, z: -40 - (i % 2) * 5 }
-
+      
       // Calcular fade por distancia
       const distance = Math.abs(pos.z)
       const distanceFade = Math.max(0.3, 1.0 - (distance - 35) / 30) * config.baseIntensity
@@ -1852,30 +1496,27 @@ export class GTA6CodexWebGLEngine {
 
       // Variación sutil en geometría según tipo
       let geometry: THREE.PlaneGeometry
-      if (config.type === 0) {
-        // Hoteles: más grandes y prominentes
+      if (config.type === 0) { // Hoteles: más grandes y prominentes
         geometry = new THREE.PlaneGeometry(config.width, config.height, 2, 1)
-      } else if (config.type === 1) {
-        // Clubes: más dinámicos
+      } else if (config.type === 1) { // Clubes: más dinámicos
         geometry = new THREE.PlaneGeometry(config.width, config.height, 3, 1)
-      } else {
-        // Restaurantes, casinos, negocios: estándar
+      } else { // Restaurantes, casinos, negocios: estándar
         geometry = new THREE.PlaneGeometry(config.width, config.height, 1, 1)
       }
 
       const mesh = new THREE.Mesh(geometry, mat)
       mesh.position.set(pos.x, pos.y, pos.z)
-
+      
       // Rotación sutil para variedad visual (billboarding parcial)
       mesh.rotation.y = (Math.random() - 0.5) * 0.15
-
+      
       this.farGroup.add(mesh)
-      signs.push({
-        mat,
-        seed,
+      signs.push({ 
+        mat, 
+        seed, 
         signType: config.type,
         baseIntensity: config.baseIntensity,
-        distanceFade,
+        distanceFade
       })
     })
 
@@ -1884,7 +1525,7 @@ export class GTA6CodexWebGLEngine {
         s.mat.uniforms.time.value = elapsed
         s.mat.uniforms.introFade.value = intro
         s.mat.uniforms.dayPhase.value = this.dayPhase
-
+        
         // Variación dinámica de intensidad por "estado" del neón
         const unrestMod = 1.0 + this.entityUnrest * 0.15
         const dynamicFade = s.distanceFade * unrestMod
@@ -2071,389 +1712,90 @@ export class GTA6CodexWebGLEngine {
     })
   }
 
-  /**
-   * Skyline lejano — v3 "Leonida cinematográfica, no seis cajas al azar".
-   * ---------------------------------------------------------------------
-   * Reescritura completa con dirección de arte GTA VI / Vice City: tres
-   * bandas de profundidad (`SKYLINE_LAYERS`: far/mid/near) con siluetas
-   * variadas (slab, retranqueo art-decó, torres gemelas, drum de vidrio),
-   * un puñado de torres "hero" con aguja y baliza de azotea, cientos de
-   * ventanas encendidas con parpadeo determinista y sus reflejos en la
-   * bahía — todo sostenido por un puñado fijo de mallas *instanciadas*
-   * (2 para siluetas + 1 para ventanas/reflejos/balizas), así el detalle
-   * escala con `quality.tier` sin agregar un solo draw call ni un solo
-   * updater por edificio/ventana (a diferencia de la v2, que empujaba un
-   * updater por ventana individual).
-   *
-   * Integración con el resto del motor:
-   *  - Niebla: las siluetas llevan `fog: true` (se devoran en la distancia,
-   *    igual que la carretera), pero ventanas/balizas NO llevan niebla
-   *    (como `NEON_SIGN_FRAGMENT_SHADER`) — las luces perforan la bruma
-   *    tropical aunque la masa del edificio ya se haya fundido en ella.
-   *  - Perspectiva atmosférica: cada silueta se mezcla con `this.fog.color`
-   *    según `hazeMix` de su capa (más en `far`, casi nada en `near`), así
-   *    la ciudad se hunde en la bruma violeta sin necesitar transparencia
-   *    por instancia (no soportada de forma barata en `InstancedMesh`).
-   *  - Sol de horizonte (`buildHorizonSun`, z=-55) y cúpula celeste: el
-   *    rango de profundidad de `far`/`mid` (-46 a -84) los rodea sin
-   *    taparlos, dejando el sol leerse entre las siluetas, como el skyline
-   *    recortado contra el atardecer en los trailers de Rockstar.
-   *  - Bahía (`buildWaterHorizon`, y=-12.8): `WATER_LEVEL_Y` replica ese
-   *    mismo plano para espejar una fracción de las ventanas bajas/medias.
-   *  - Bloom: ventanas y balizas usan additive blending sin `depthWrite`,
-   *    igual que el resto de la escena — el `UnrealBloomPass` ya existente
-   *    (`threshold: 0.16`) las hace brillar sin tocar su configuración.
-   *  - Cámara/capas de profundidad: todo vive en `farGroup` (el mismo grupo
-   *    que ya usan carretera, agua, letreros y haze), así el dolly de
-   *    scroll y el parallax existente lo mueven exactamente igual que
-   *    antes.
-   */
+  /** Skyline de Miami: edificios con ventanas encendidas alternados con palmeras en silueta. */
   private buildFarSkyline() {
-    const GROUND_Y = -13
-    // Debe coincidir con `water.position.y` en `buildWaterHorizon` — es el
-    // plano que se usa para espejar las ventanas bajas/medias en la bahía.
-    const WATER_LEVEL_Y = -12.8
-    const IDENTITY_QUAT = new THREE.Quaternion()
+    const silhouetteMat = new THREE.MeshBasicMaterial({ color: 0x0a0612, fog: true, transparent: true, opacity: 0.92 })
+    const windowColors = [0xffd166, 0x22d3ee, 0xff3d81]
+    const shapes: THREE.Object3D[] = []
 
-    interface SilhouetteEntry {
-      matrix: THREE.Matrix4
-      color: THREE.Color
-    }
-    interface WindowEntry {
-      matrix: THREE.Matrix4
-      color: THREE.Color
-      /** [semilla, esReflejo(0/1), esBaliza(0/1)] — ver `SKYLINE_WINDOW_FRAGMENT_SHADER`. */
-      meta: [number, number, number]
-    }
+    for (let i = 0; i < 9; i++) {
+      const isPalm = i % 3 === 2
+      const xPos = (Math.random() - 0.5) * 78
+      const zPos = -32 - Math.random() * 20
 
-    const boxInstances: SilhouetteEntry[] = []
-    const cylInstances: SilhouetteEntry[] = []
-    const windowInstances: WindowEntry[] = []
+      if (isPalm) {
+        const palm = new THREE.Group()
+        const trunkHeight = 5 + Math.random() * 3
+        const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.28, trunkHeight, 6), silhouetteMat)
+        trunk.position.y = -13 + trunkHeight / 2
+        trunk.rotation.z = (Math.random() - 0.5) * 0.18
+        palm.add(trunk)
 
-    // El detalle escala con el perfil de calidad, no el conteo de mallas:
-    // en 'low' se generan menos instancias, pero siguen siendo las mismas
-    // ~3 mallas instanciadas (nunca miles de meshes individuales).
-    const tierScale = this.quality.tier === 'high' ? 1 : this.quality.tier === 'medium' ? 0.62 : 0.34
-    let windowBudget = this.quality.tier === 'high' ? 560 : this.quality.tier === 'medium' ? 280 : 80
-    let reflectionBudget = this.quality.tier === 'low' ? 0 : this.quality.tier === 'medium' ? 70 : 150
-    const canFlicker = this.quality.tier !== 'low'
-
-    const pushWindow = (position: THREE.Vector3, w: number, h: number, color: THREE.Color, seed: number, isBeacon: boolean) => {
-      if (windowBudget <= 0) return
-      windowBudget--
-      windowInstances.push({
-        matrix: new THREE.Matrix4().compose(position, IDENTITY_QUAT, new THREE.Vector3(w, h, 1)),
-        color,
-        meta: [seed, 0, isBeacon ? 1 : 0],
-      })
-
-      // Reflejo en la bahía: solo fachadas bajas/medias (un remate a 25
-      // unidades de altura no se leería en el agua) y dentro del ancho
-      // real del plano de `buildWaterHorizon` (240 de ancho).
-      if (!isBeacon && reflectionBudget > 0 && position.y - GROUND_Y < 11 && Math.abs(position.x) < 105) {
-        reflectionBudget--
-        const ry = 2 * WATER_LEVEL_Y - position.y
-        windowInstances.push({
-          matrix: new THREE.Matrix4().compose(
-            new THREE.Vector3(position.x, ry, position.z),
-            IDENTITY_QUAT,
-            new THREE.Vector3(w * 1.15, h * 1.4, 1)
-          ),
-          color,
-          meta: [seed + 4.2, 1, 0],
-        })
-      }
-    }
-
-    SKYLINE_LAYERS.forEach((layer) => {
-      const count = Math.max(4, Math.round(layer.count * tierScale))
-      let heroPlaced = 0
-
-      for (let i = 0; i < count; i++) {
-        const x = (Math.random() - 0.5) * 96
-        const z = layer.zMin + Math.random() * (layer.zMax - layer.zMin)
-        const isHero = heroPlaced < layer.heroCount && Math.random() < 0.4
-        const width = layer.widthMin + Math.random() * (layer.widthMax - layer.widthMin)
-        const depth = width * (0.7 + Math.random() * 0.6)
-        let height = layer.heightMin + Math.random() * (layer.heightMax - layer.heightMin)
-        if (isHero) {
-          height *= 1.25
-          heroPlaced++
+        const frondCount = 6
+        for (let f = 0; f < frondCount; f++) {
+          const angle = (f / frondCount) * Math.PI * 2
+          const frond = new THREE.Mesh(new THREE.BoxGeometry(2.3, 0.08, 0.32), silhouetteMat)
+          frond.position.set(Math.cos(angle) * 1.1, -13 + trunkHeight + 0.15, Math.sin(angle) * 0.44)
+          frond.rotation.y = angle
+          frond.rotation.z = 0.5
+          palm.add(frond)
         }
+        palm.position.set(xPos, 0, zPos + 8)
+        this.farGroup.add(palm)
+        shapes.push(palm)
+      } else {
+        const width = 0.9 + Math.random() * 1.3
+        const height = 6 + Math.random() * 12
+        const depth = 0.9 + Math.random() * 1.3
+        const building = new THREE.Mesh(new THREE.BoxGeometry(width, height, depth), silhouetteMat)
+        building.position.set(xPos, -13 + height / 2, zPos)
+        this.farGroup.add(building)
+        shapes.push(building)
 
-        const baseColorHex = SKYLINE_SILHOUETTE_COLORS[Math.floor(Math.random() * SKYLINE_SILHOUETTE_COLORS.length)]
-        const silColor = new THREE.Color(baseColorHex).lerp(this.fog.color, layer.hazeMix)
-
-        // Fachadas frontales donde se podrán abrir ventanas (una por cada
-        // "cuerpo" del edificio — un retranqueo o una torre gemela generan
-        // varias, un drum cilíndrico no genera ninguna: el vidrio curvo
-        // brilla como masa, no como grilla de ventanas individuales).
-        const facades: { x: number; y0: number; width: number; height: number }[] = []
-
-        const shapeRoll = Math.random()
-        if (shapeRoll < 0.14 && this.quality.tier !== 'low') {
-          // Torre-tambor de vidrio (hotel de bahía).
-          cylInstances.push({
-            matrix: new THREE.Matrix4().compose(new THREE.Vector3(x, GROUND_Y, z), IDENTITY_QUAT, new THREE.Vector3(width, height, depth)),
-            color: silColor,
+        const windowCount = 2 + Math.floor(Math.random() * 3)
+        for (let w = 0; w < windowCount; w++) {
+          const winColor = windowColors[Math.floor(Math.random() * windowColors.length)]
+          const winMat = new THREE.MeshBasicMaterial({
+            color: winColor,
+            transparent: true,
+            opacity: 0.55 + Math.random() * 0.35,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false,
           })
-        } else if (shapeRoll < 0.4) {
-          // Retranqueo art-decó: 2-3 cuerpos decrecientes apilados.
-          const tiers = 2 + Math.floor(Math.random() * 2)
-          let y = GROUND_Y
-          let w = width
-          let d = depth
-          for (let t = 0; t < tiers; t++) {
-            const tierH = height / tiers
-            boxInstances.push({
-              matrix: new THREE.Matrix4().compose(new THREE.Vector3(x, y, z), IDENTITY_QUAT, new THREE.Vector3(w, tierH, d)),
-              color: silColor,
-            })
-            facades.push({ x, y0: y, width: w, height: tierH })
-            y += tierH
-            w *= 0.72
-            d *= 0.72
-          }
-        } else if (shapeRoll < 0.56) {
-          // Torres gemelas (alas de hotel).
-          const gap = width * 0.32
-          const h2 = height * (0.82 + Math.random() * 0.24)
-          const wingW = width * 0.85
-          boxInstances.push({
-            matrix: new THREE.Matrix4().compose(
-              new THREE.Vector3(x - width * 0.5 - gap * 0.5, GROUND_Y, z),
-              IDENTITY_QUAT,
-              new THREE.Vector3(wingW, height, depth)
-            ),
-            color: silColor,
-          })
-          boxInstances.push({
-            matrix: new THREE.Matrix4().compose(
-              new THREE.Vector3(x + width * 0.5 + gap * 0.5, GROUND_Y, z),
-              IDENTITY_QUAT,
-              new THREE.Vector3(wingW, h2, depth)
-            ),
-            color: silColor,
-          })
-          facades.push({ x: x - width * 0.5 - gap * 0.5, y0: GROUND_Y, width: wingW, height })
-          facades.push({ x: x + width * 0.5 + gap * 0.5, y0: GROUND_Y, width: wingW, height: h2 })
-        } else {
-          // Slab simple — el grueso del skyline, como en cualquier ciudad real.
-          boxInstances.push({
-            matrix: new THREE.Matrix4().compose(new THREE.Vector3(x, GROUND_Y, z), IDENTITY_QUAT, new THREE.Vector3(width, height, depth)),
-            color: silColor,
-          })
-          facades.push({ x, y0: GROUND_Y, width, height })
-        }
-
-        // Aguja + baliza de azotea — el remate de una torre "hero", visible
-        // por encima de la niebla y del resto del skyline como en Ocean Drive.
-        if (isHero) {
-          const needleH = 2.2 + Math.random() * 2.4
-          cylInstances.push({
-            matrix: new THREE.Matrix4().compose(
-              new THREE.Vector3(x, GROUND_Y + height, z),
-              IDENTITY_QUAT,
-              new THREE.Vector3(width * 0.09, needleH, depth * 0.09)
-            ),
-            color: new THREE.Color(0x0a0714),
-          })
-          pushWindow(
-            new THREE.Vector3(x, GROUND_Y + height + needleH, z + depth * 0.5 + 0.04),
-            1.15,
-            1.15,
-            new THREE.Color(Math.random() < 0.5 ? 0xff2d78 : 0x22d3ee),
-            i * 3.13 + layer.zMin * 0.01,
-            true
+          const win = new THREE.Mesh(new THREE.PlaneGeometry(width * 0.7, height * 0.12), winMat)
+          win.position.set(
+            xPos + (Math.random() - 0.5) * width * 0.3,
+            -13 + Math.random() * height * 0.8 + height * 0.1,
+            zPos + depth / 2 + 0.02
           )
-        }
+          this.farGroup.add(win)
+          shapes.push(win)
 
-        // Ventanas: una grilla por fachada, encendidas con probabilidad
-        // `windowDensity` — nunca el 100%, una ciudad real tiene oficinas
-        // apagadas y balcones a oscuras mezclados con las luces vivas.
-        if (layer.windowDensity > 0) {
-          facades.forEach((facade) => {
-            if (windowBudget <= 0) return
-            const rows = THREE.MathUtils.clamp(Math.round(facade.height / 1.9), 2, 10)
-            const cols = THREE.MathUtils.clamp(Math.round(facade.width / 0.55), 1, 6)
-            for (let r = 0; r < rows; r++) {
-              for (let c = 0; c < cols; c++) {
-                if (Math.random() > layer.windowDensity * 0.62) continue
-                const wx = facade.x + (c - (cols - 1) / 2) * (facade.width / cols) * 0.8
-                const wy = facade.y0 + (r + 0.5) * (facade.height / rows)
-                const wColor = new THREE.Color(SKYLINE_WINDOW_COLORS[Math.floor(Math.random() * SKYLINE_WINDOW_COLORS.length)])
-                pushWindow(
-                  new THREE.Vector3(wx, wy, z + depth / 2 + 0.03),
-                  (facade.width / cols) * 0.52,
-                  (facade.height / rows) * 0.42,
-                  wColor,
-                  i * 3.13 + r * 0.71 + c * 0.29 + layer.zMin * 0.01,
-                  false
-                )
-              }
-            }
+          const wi = w
+          this.updaters.push((elapsed) => {
+            if (this.quality.tier === 'low') return
+            const flicker = 0.45 + 0.55 * Math.sin(elapsed * (0.8 + wi * 0.3) + i * 1.7)
+            winMat.opacity = (0.35 + flicker * 0.5) * (0.7 + this.dayPhase * 0.3)
           })
         }
       }
+    }
+
+    this.updaters.push((elapsed) => {
+      shapes.forEach((s, i) => {
+        s.position.y += Math.sin(elapsed * 0.02 + i) * 0.0012
+      })
     })
-
-    // --- Palmeras en silueta, dispersas en el borde cercano de la banda `mid` ---
-    const palmCount = Math.max(2, Math.round((this.quality.tier === 'high' ? 10 : this.quality.tier === 'medium' ? 6 : 3)))
-    for (let p = 0; p < palmCount; p++) {
-      const x = (Math.random() - 0.5) * 92
-      const z = -30 - Math.random() * 16
-      const trunkHeight = 5 + Math.random() * 3.4
-      const palmColor = new THREE.Color(0x0a0714)
-
-      cylInstances.push({
-        matrix: new THREE.Matrix4().compose(
-          new THREE.Vector3(x, GROUND_Y, z),
-          new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), (Math.random() - 0.5) * 0.18),
-          new THREE.Vector3(0.5, trunkHeight, 0.5)
-        ),
-        color: palmColor,
-      })
-
-      const frondCount = 6
-      const crownY = GROUND_Y + trunkHeight
-      for (let f = 0; f < frondCount; f++) {
-        const angle = (f / frondCount) * Math.PI * 2
-        const frondQuat = new THREE.Quaternion()
-          .setFromAxisAngle(new THREE.Vector3(0, 1, 0), angle)
-          .multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), 0.5))
-        boxInstances.push({
-          matrix: new THREE.Matrix4().compose(
-            new THREE.Vector3(x + Math.cos(angle) * 1.1, crownY + 0.15, z + Math.sin(angle) * 0.44),
-            frondQuat,
-            new THREE.Vector3(2.3, 0.08, 0.32)
-          ),
-          color: palmColor,
-        })
-      }
-    }
-
-    // --- Ensamblado: geometría/material reutilizados, 2-3 draw calls totales ---
-    const boxUnit = new THREE.BoxGeometry(1, 1, 1)
-    boxUnit.translate(0, 0.5, 0)
-    const cylUnit = new THREE.CylinderGeometry(0.5, 0.56, 1, 8)
-    cylUnit.translate(0, 0.5, 0)
-
-    const silhouetteMaterial = new THREE.MeshBasicMaterial({
-      color: 0xffffff,
-      vertexColors: true,
-      fog: true,
-      transparent: true,
-      opacity: 0.95,
-    })
-
-    const addSilhouetteMesh = (geometry: THREE.BufferGeometry, entries: SilhouetteEntry[]) => {
-      if (entries.length === 0) return
-      const mesh = new THREE.InstancedMesh(geometry, silhouetteMaterial, entries.length)
-      const colors = new Float32Array(entries.length * 3)
-      entries.forEach((entry, i) => {
-        mesh.setMatrixAt(i, entry.matrix)
-        entry.color.toArray(colors, i * 3)
-      })
-      mesh.instanceMatrix.needsUpdate = true
-      mesh.instanceColor = new THREE.InstancedBufferAttribute(colors, 3)
-      mesh.frustumCulled = false
-      this.farGroup.add(mesh)
-    }
-
-    addSilhouetteMesh(boxUnit, boxInstances)
-    addSilhouetteMesh(cylUnit, cylInstances)
-
-    if (windowInstances.length > 0) {
-      const windowGeometry = new THREE.PlaneGeometry(1, 1)
-      const seeds = new Float32Array(windowInstances.length * 3)
-      const colors = new Float32Array(windowInstances.length * 3)
-
-      const windowUniforms = {
-        time: { value: 0 },
-        introFade: { value: 0 },
-        flickerAmount: { value: canFlicker ? 1 : 0 },
-        atmosphere: { value: this.humidity },
-      }
-      const windowMaterial = new THREE.ShaderMaterial({
-        uniforms: windowUniforms,
-        vertexShader: SKYLINE_WINDOW_VERTEX_SHADER,
-        fragmentShader: SKYLINE_WINDOW_FRAGMENT_SHADER,
-        transparent: true,
-        depthWrite: false,
-        blending: THREE.AdditiveBlending,
-        side: THREE.DoubleSide,
-        fog: false,
-      })
-
-      const windowMesh = new THREE.InstancedMesh(windowGeometry, windowMaterial, windowInstances.length)
-      windowInstances.forEach((entry, i) => {
-        windowMesh.setMatrixAt(i, entry.matrix)
-        entry.color.toArray(colors, i * 3)
-        seeds[i * 3] = entry.meta[0]
-        seeds[i * 3 + 1] = entry.meta[1]
-        seeds[i * 3 + 2] = entry.meta[2]
-      })
-      windowMesh.instanceMatrix.needsUpdate = true
-      windowMesh.instanceColor = new THREE.InstancedBufferAttribute(colors, 3)
-      windowGeometry.setAttribute('aMeta', new THREE.InstancedBufferAttribute(seeds, 3))
-      windowMesh.frustumCulled = false
-      this.farGroup.add(windowMesh)
-
-      // Único updater para todo el sistema de ventanas/reflejos/balizas,
-      // sin importar cuántas instancias haya — el costo por frame es O(1).
-      this.updaters.push((elapsed, _delta, intro) => {
-        windowUniforms.time.value = elapsed
-        windowUniforms.introFade.value = intro
-        windowUniforms.atmosphere.value = this.humidity
-      })
-    }
   }
 
-  /**
-   * Sol/luna del horizonte — v2 "amanecer y atardecer tropical de Leonida".
-   * ---------------------------------------------------------------------------
-   * Se mantiene la misma cinemática de altura que antes (`dayLift`, idéntica
-   * fórmula a la que usa `sunDirApprox` en `buildSkyDome`, así el resplandor
-   * direccional del domo y la posición real del disco nunca se desincronizan),
-   * pero el disco en sí ahora:
-   *
-   *  - Usa la MISMA paleta de 6 paradas horarias que ya pinta la cúpula
-   *    celeste (`sunKeyMix`, espejo de `sixKeyMix`), en vez del lerp de 3
-   *    puntos anterior — sol y cielo cambian de humor en sincronía real.
-   *  - Tiene limb darkening real y se achata cerca del horizonte (refracción
-   *    atmosférica), en vez de un disco geométricamente perfecto.
-   *  - Tiene halo atmosférico cuya dispersión crece con `this.humidity`.
-   *  - Se funde con `this.fog.color` real en su base (integración directa
-   *    con la niebla de la escena).
-   *  - Reemplaza las scanlines retro por rayos suaves baratos (sin loops).
-   *
-   * Nuevo: un mesh adicional (`reflection`) — un streak vertical que nace en
-   * la línea de agua (mismo nivel Y que usa `buildWaterHorizon`, -12.8) y
-   * refleja el color real del sol de ese instante, con shimmer de oleaje.
-   * Es contenido propio de esta función — no se toca `buildWaterHorizon` ni
-   * `buildFarSkyline`, solo se reutiliza el nivel de agua ya conocido.
-   *
-   * Rendimiento: 2 planos transparentes adicionales como máximo (el segundo
-   * es nuevo), sin geometría extra por-vértice, sin loops en el fragment
-   * shader, sin nuevas texturas — mismo perfil de coste que la versión
-   * anterior, con más densidad de instrucciones ALU por fragmento cubierto
-   * (el sol ocupa una porción acotada y lejana de la pantalla).
-   */
+  /** Sol/luna bajo de horizonte con bandas cortadas — el atardecer de Miami detrás del skyline. */
   private buildHorizonSun() {
-    const SUN_X = -2
-    const SUN_BASE_Y = 4.5
-    const SUN_Z = -55
-    // Debe coincidir con `water.position.y` en `buildWaterHorizon` — es el
-    // plano donde se ancla el reflejo, no se modifica esa función.
-    const WATER_LEVEL_Y = -12.8
-
+    const uniforms = { time: { value: 0 }, introFade: { value: 0 } }
     const material = new THREE.ShaderMaterial({
       uniforms: {
-        time: { value: 0 },
-        introFade: { value: 0 },
-        dayPhase: { value: 0.5 },
-        humidity: { value: this.humidity },
-        fogColor: { value: this.fog.color.clone() },
+        ...uniforms,
+        coreColor: { value: new THREE.Color(0xff5b7c) },
+        rimColor: { value: new THREE.Color(0xffb04d) },
       },
       vertexShader: SUN_VERTEX_SHADER,
       fragmentShader: SUN_FRAGMENT_SHADER,
@@ -2462,57 +1804,17 @@ export class GTA6CodexWebGLEngine {
       blending: THREE.AdditiveBlending,
       side: THREE.DoubleSide,
     })
-    // Plano más grande que antes (70 vs 46) para darle espacio real al halo
-    // atmosférico sin que el borde del mesh lo recorte — sigue siendo una
-    // sola malla transparente, coste de GPU equivalente al anterior.
-    const sun = new THREE.Mesh(new THREE.PlaneGeometry(70, 70, 1, 1), material)
-    sun.position.set(SUN_X, SUN_BASE_Y, SUN_Z)
+    const sun = new THREE.Mesh(new THREE.PlaneGeometry(46, 46, 1, 1), material)
+    sun.position.set(-2, 4.5, -55)
     this.farGroup.add(sun)
 
-    const reflectionMaterial = new THREE.ShaderMaterial({
-      uniforms: {
-        time: { value: 0 },
-        introFade: { value: 0 },
-        sunColor: { value: new THREE.Color(0xffb066) },
-        reflectionStrength: { value: 0.3 },
-      },
-      vertexShader: SUN_VERTEX_SHADER,
-      fragmentShader: SUN_REFLECTION_FRAGMENT_SHADER,
-      transparent: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      side: THREE.DoubleSide,
-    })
-    // Plano vertical angosto anclado a la línea de agua: el borde superior
-    // (vUv.y=1) coincide con `WATER_LEVEL_Y`, el resto se atenúa hacia abajo.
-    const reflectionHeight = 9
-    const reflection = new THREE.Mesh(new THREE.PlaneGeometry(6, reflectionHeight, 1, 1), reflectionMaterial)
-    reflection.position.set(SUN_X, WATER_LEVEL_Y - reflectionHeight / 2, SUN_Z + 6)
-    this.farGroup.add(reflection)
-
     this.updaters.push((elapsed, _delta, intro) => {
-      const dayLift = 0.5 + 0.5 * Math.cos(this.dayPhase * Math.PI * 2)
-      sun.position.y = SUN_BASE_Y + dayLift * 2.5
-
       material.uniforms.time.value = elapsed
       material.uniforms.introFade.value = intro
-      material.uniforms.dayPhase.value = this.dayPhase
-      material.uniforms.humidity.value = this.humidity
-      material.uniforms.fogColor.value.copy(this.fog.color)
-
-      // El reflejo hereda un tono cálido acorde a la hora, y su intensidad
-      // decae cuando el sol está muy alto (menos ángulo rasante sobre el
-      // agua) o casi bajo el horizonte (poca luz que reflejar).
-      reflectionMaterial.uniforms.sunColor.value.setHex(
-        lerpDayColor(this.dayPhase, 0xff9a4d, 0xff5b7c, 0xff8a6a)
-      )
-      reflectionMaterial.uniforms.time.value = elapsed
-      reflectionMaterial.uniforms.introFade.value = intro
-      reflectionMaterial.uniforms.reflectionStrength.value = THREE.MathUtils.clamp(
-        0.5 - Math.abs(dayLift - 0.35) * 0.6,
-        0.05,
-        0.45
-      )
+      const dayLift = 0.5 + 0.5 * Math.cos(this.dayPhase * Math.PI * 2)
+      sun.position.y = 4.5 + dayLift * 2.5
+      material.uniforms.coreColor.value.setHex(lerpDayColor(this.dayPhase, 0xff5b7c, 0xff3d78, 0xff9060))
+      material.uniforms.rimColor.value.setHex(lerpDayColor(this.dayPhase, 0xffb04d, 0xff6088, 0x88b0ff))
     })
   }
 
