@@ -11,7 +11,7 @@ import { webglSceneBus, type SceneFocus, type EntityAtmosphere } from './scene-b
 // Extracted modules
 import { detectQualityProfile, type QualityProfile } from './core/quality'
 import { lerpDayColor, lerpCyclic01, smootherstep } from './utils/math'
-import { SHOTS, FALLBACK_SHOT, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP, IMAGE_BILLBOARDS, SECTION_MOOD, CATEGORY_WARMTH, STATUS_UNREST, CATEGORY_PACE, CATEGORY_FRAME } from './constants'
+import { SHOTS, FALLBACK_SHOT, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP, IMAGE_BILLBOARDS, SECTION_MOOD, CATEGORY_WARMTH, STATUS_UNREST, CATEGORY_PACE, CATEGORY_FRAME } from './config/scene'
 import { GRADE_SHADER } from './shaders/postprocess'
 import { SKY_VERTEX_SHADER, SKY_FRAGMENT_SHADER } from './shaders/sky'
 import { WATER_VERTEX_SHADER, WATER_FRAGMENT_SHADER } from './shaders/water'
