@@ -67,8 +67,8 @@ import { buildTrafficStreaks as buildTrafficStreaksScene } from './scene/traffic
 // `scene/particles.ts`, que sigue sin conectar).
 import { buildDust as buildDustScene } from './scene/dust'
 import { buildRoadScene } from './scene/road'
+import { buildHorizonSunScene } from './scene/horizon-sun'
 import { SHAFT_VERTEX_SHADER, SHAFT_FRAGMENT_SHADER, NEON_SIGN_FRAGMENT_SHADER } from './shaders/neon'
-import { SUN_VERTEX_SHADER, SUN_FRAGMENT_SHADER } from './shaders/sun'
 import { BILLBOARD_VERTEX_SHADER, BILLBOARD_FRAGMENT_SHADER } from './shaders/billboard'
 
 /**
@@ -1006,34 +1006,39 @@ export class GTA6CodexWebGLEngine {
     })
   }
 
-  /** Sol/luna bajo de horizonte con bandas cortadas — el atardecer de Miami detrás del skyline. */
+  /**
+   * Sol/luna bajo de horizonte con bandas cortadas — el atardecer de
+   * Miami detrás del skyline.
+   *
+   * Fase 8.9 — geometría, material, uniforms y valores idénticos a la
+   * versión inline anterior; solo se movieron a `./scene/horizon-sun.ts`
+   * (`buildHorizonSunScene`). Igual que en Fases 8.1/8.2/8.8, el
+   * `updater` que devuelve esa función es incompatible con
+   * `SceneUpdater` de este motor — se lo envuelve acá en un closure de 3
+   * parámetros que lee `this.dayPhase` en cada frame exactamente igual
+   * que antes, y se lo registra en `this.updaters` sin tocar
+   * `start()`/el loop de animación. El sol no tiene uniforms propios
+   * expuestos en `this` (no existía un campo `this.sunUniforms` en la
+   * versión inline), así que acá tampoco se agrega uno.
+   */
   private buildHorizonSun() {
-    const uniforms = { time: { value: 0 }, introFade: { value: 0 } }
-    const material = new THREE.ShaderMaterial({
-      uniforms: {
-        ...uniforms,
-        coreColor: { value: new THREE.Color(0xff5b7c) },
-        rimColor: { value: new THREE.Color(0xffb04d) },
-      },
-      vertexShader: SUN_VERTEX_SHADER,
-      fragmentShader: SUN_FRAGMENT_SHADER,
-      transparent: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      side: THREE.DoubleSide,
-    })
-    const sun = new THREE.Mesh(new THREE.PlaneGeometry(46, 46, 1, 1), material)
-    sun.position.set(-2, 4.5, -55)
-    this.farGroup.add(sun)
+    const updater = buildHorizonSunScene({ farGroup: this.farGroup })
 
-    this.updaters.push((elapsed, _delta, intro) => {
-      material.uniforms.time.value = elapsed
-      material.uniforms.introFade.value = intro
-      const dayLift = 0.5 + 0.5 * Math.cos(this.dayPhase * Math.PI * 2)
-      sun.position.y = 4.5 + dayLift * 2.5
-      material.uniforms.coreColor.value.setHex(lerpDayColor(this.dayPhase, 0xff5b7c, 0xff3d78, 0xff9060))
-      material.uniforms.rimColor.value.setHex(lerpDayColor(this.dayPhase, 0xffb04d, 0xff6088, 0x88b0ff))
-    })
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
+    )
   }
 
   private buildLightShaft() {
