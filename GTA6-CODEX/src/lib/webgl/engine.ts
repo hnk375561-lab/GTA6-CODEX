@@ -1,11 +1,9 @@
 import * as THREE from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js'
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js'
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js'
 import { FXAAPass } from 'three/examples/jsm/postprocessing/FXAAPass.js'
-import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js'
 import { webglSceneBus, type SceneFocus, type EntityAtmosphere } from './scene-bus'
 
 // Extracted modules
@@ -20,9 +18,9 @@ import {
 } from './core/lifecycle'
 import { computeShotFrame as computeCameraShotFrame } from './core/camera-shots'
 import { createEnvironment } from './core/environment'
+import { createPostProcessingPipeline } from './core/postprocessing'
 import { lerpDayColor, lerpCyclic01, smootherstep } from './utils/math'
 import { SHOTS, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP, IMAGE_BILLBOARDS, SECTION_MOOD, CATEGORY_WARMTH, STATUS_UNREST, CATEGORY_PACE, CATEGORY_FRAME } from './config/scene'
-import { GRADE_SHADER } from './shaders/postprocess'
 import { SKY_VERTEX_SHADER, SKY_FRAGMENT_SHADER } from './shaders/sky'
 import { WATER_VERTEX_SHADER, WATER_FRAGMENT_SHADER } from './shaders/water'
 import { SHAFT_VERTEX_SHADER, SHAFT_FRAGMENT_SHADER, NEON_SIGN_FRAGMENT_SHADER } from './shaders/neon'
@@ -375,33 +373,19 @@ export class GTA6CodexWebGLEngine {
     this.buildImageBillboards()
     this.buildFocalTower()
 
-    this.composer = new EffectComposer(this.renderer)
-    this.composer.addPass(new RenderPass(this.scene, this.camera))
-
-    if (this.quality.enableBokeh) {
-      this.bokehPass = new BokehPass(this.scene, this.camera, {
-        focus: 22,
-        aperture: 0.0016,
-        maxblur: 0.007,
-      })
-      this.composer.addPass(this.bokehPass)
-    }
-
-    this.bloomPass = new UnrealBloomPass(
-      new THREE.Vector2(1, 1),
-      0.85 * this.quality.bloomScale,
-      0.55,
-      0.16
-    )
-    this.composer.addPass(this.bloomPass)
-
-    this.gradePass = new ShaderPass(GRADE_SHADER)
-    this.composer.addPass(this.gradePass)
-
-    this.fxaaPass = new FXAAPass()
-    this.composer.addPass(this.fxaaPass)
-
-    this.composer.addPass(new OutputPass())
+    const { composer, bloomPass, bokehPass, gradePass, fxaaPass } = createPostProcessingPipeline({
+      renderer: this.renderer,
+      scene: this.scene,
+      camera: this.camera,
+      width: window.innerWidth,
+      height: window.innerHeight,
+      quality: this.quality,
+    })
+    this.composer = composer
+    this.bloomPass = bloomPass
+    this.bokehPass = bokehPass
+    this.gradePass = gradePass
+    this.fxaaPass = fxaaPass
 
     this.handleResize()
 
@@ -1636,7 +1620,7 @@ export class GTA6CodexWebGLEngine {
 }
 
 /**
- * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 4) — deuda
+ * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 5) — deuda
  * técnica real, parcialmente atendida de forma incremental
  * ---------------------------------------------------------------------------
  * El repo tiene una extracción paralela y todavía NO conectada de los
@@ -1660,6 +1644,13 @@ export class GTA6CodexWebGLEngine {
  *  - Fase 4: `core/camera-shots.ts` (`computeShotFrame`, función pura
  *    sobre `SHOTS`/`FALLBACK_SHOT`) y `core/environment.ts`
  *    (`createEnvironment`, generación PMREM del environment map).
+ *  - Fase 5: `core/postprocessing.ts` (`createPostProcessingPipeline`,
+ *    creación de `EffectComposer` + `RenderPass`/`BokehPass` condicional/
+ *    `UnrealBloomPass`/`ShaderPass` de grade/`FXAAPass`/`OutputPass`, en
+ *    el mismo orden y con los mismos valores que antes vivían inline en
+ *    el constructor). El resize de estos passes y sus uniforms por frame
+ *    NO se movieron — siguen en `resizeRendererAndPasses` (Fase 3) y en
+ *    el loop de `start()` respectivamente.
  *
  * El cuerpo del loop de animación dentro de `start()` (cámara dinámica,
  * uniforms por frame, matemática visual del ciclo día/noche) sigue sin
