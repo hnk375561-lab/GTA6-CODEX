@@ -37,6 +37,11 @@ import { buildWaterHorizon as buildWaterHorizonScene } from './scene/water'
 // MIST_FRAGMENT_SHADER ya no se importan acá directamente: ahora los
 // consume ./scene/humidity-mist.ts.
 import { buildHumidityMist as buildHumidityMistScene } from './scene/humidity-mist'
+// Fase 8.4: buildFireflies() migrado mecánicamente a ./scene/fireflies.ts
+// (ver nota de arquitectura al pie del archivo). FIREFLY_VERTEX_SHADER/
+// FIREFLY_FRAGMENT_SHADER ya no se importan acá directamente: ahora los
+// consume ./scene/fireflies.ts.
+import { buildFireflies as buildFirefliesScene } from './scene/fireflies'
 import { SHAFT_VERTEX_SHADER, SHAFT_FRAGMENT_SHADER, NEON_SIGN_FRAGMENT_SHADER } from './shaders/neon'
 import { ROAD_VERTEX_SHADER, ROAD_FRAGMENT_SHADER } from './shaders/road'
 import { SUN_VERTEX_SHADER, SUN_FRAGMENT_SHADER } from './shaders/sun'
@@ -44,8 +49,6 @@ import { BILLBOARD_VERTEX_SHADER, BILLBOARD_FRAGMENT_SHADER } from './shaders/bi
 import {
   DUST_VERTEX_SHADER,
   DUST_FRAGMENT_SHADER,
-  FIREFLY_VERTEX_SHADER,
-  FIREFLY_FRAGMENT_SHADER,
   HAZE_VERTEX_SHADER,
   HAZE_FRAGMENT_SHADER,
 } from './shaders/particles'
@@ -731,42 +734,47 @@ export class GTA6CodexWebGLEngine {
     })
   }
 
-  /** Luciérnagas tropicales cerca del skyline. */
+  /**
+   * Luciérnagas tropicales cerca del skyline.
+   *
+   * Fase 8.4 — geometría, atributos, material, uniforms y valores
+   * idénticos a la versión inline anterior; solo se movieron a
+   * `./scene/fireflies.ts` (`buildFirefliesScene`). Igual que en las
+   * Fases 8.1/8.2/8.3, el `updater` que devuelve esa función usa la
+   * firma común de 11 parámetros de `scene/*.ts` (ver nota de
+   * arquitectura al pie del archivo), incompatible con `SceneUpdater`
+   * de este motor — se lo envuelve acá en un closure de 3 parámetros
+   * igual que los builders anteriores, y se lo registra en
+   * `this.updaters` sin tocar `start()`/el loop de animación. La
+   * comprobación `quality.fireflyCount <= 0` se movió dentro del
+   * builder: en vez de que este método corte antes de llamar a
+   * `this.updaters.push(...)` (como hacía la versión inline), el
+   * builder devuelve un `updater` no-op cuando no hay luciérnagas que
+   * dibujar, y ese no-op es el que termina envuelto y registrado —
+   * mismo resultado visual (nada se dibuja, nada se calcula por
+   * frame), único ajuste estructural permitido por esta fase.
+   */
   private buildFireflies() {
-    if (this.quality.fireflyCount <= 0) return
-
-    const COUNT = this.quality.fireflyCount
-    const positions = new Float32Array(COUNT * 3)
-    const phases = new Float32Array(COUNT)
-    const speeds = new Float32Array(COUNT)
-
-    for (let i = 0; i < COUNT; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 50
-      positions[i * 3 + 1] = -6 + Math.random() * 14
-      positions[i * 3 + 2] = -20 - Math.random() * 25
-      phases[i] = Math.random() * Math.PI * 2
-      speeds[i] = 0.15 + Math.random() * 0.35
-    }
-
-    const geo = new THREE.BufferGeometry()
-    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3))
-    geo.setAttribute('aPhase', new THREE.BufferAttribute(phases, 1))
-    geo.setAttribute('aSpeed', new THREE.BufferAttribute(speeds, 1))
-
-    const mat = new THREE.ShaderMaterial({
-      uniforms: { time: { value: 0 }, introFade: { value: 0 } },
-      vertexShader: FIREFLY_VERTEX_SHADER,
-      fragmentShader: FIREFLY_FRAGMENT_SHADER,
-      transparent: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
+    const updater = buildFirefliesScene({
+      farGroup: this.farGroup,
+      quality: this.quality,
     })
-    this.farGroup.add(new THREE.Points(geo, mat))
 
-    this.updaters.push((elapsed, _delta, intro) => {
-      mat.uniforms.time.value = elapsed
-      mat.uniforms.introFade.value = intro
-    })
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
+    )
   }
 
   /**
@@ -1629,21 +1637,23 @@ export class GTA6CodexWebGLEngine {
 }
 
 /**
- * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 8.3) — deuda
+ * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 8.4) — deuda
  * técnica real, parcialmente atendida de forma incremental
  * ---------------------------------------------------------------------------
  * El repo tiene una extracción paralela, mayormente NO conectada, de los
  * builders de escena hacia `./scene/*.ts` (equivalentes a cada `buildXxx()`
  * de más arriba, con un `Updater` de 11 parámetros distinto al
  * `SceneUpdater` de este archivo). Salvo las excepciones de `scene/sky.ts`
- * (Fase 8.1), `scene/water.ts` (Fase 8.2) y `scene/humidity-mist.ts`
- * (Fase 8.3, ver las tres abajo), esos `buildXxx()` inline siguen siendo
- * los que realmente corren en producción; el resto de `scene/*.ts` es
- * código muerto — incluyendo, notablemente, `buildHumidityMist` dentro de
- * `scene/particles.ts`: es una implementación previa, ya existente y sin
- * conectar, que no se tocó ni se reutilizó en esta fase (regla de "no
- * modificar otros builders"); `scene/humidity-mist.ts` es el módulo nuevo
- * y realmente conectado. Verificar que ambas implementaciones produzcan
+ * (Fase 8.1), `scene/water.ts` (Fase 8.2), `scene/humidity-mist.ts`
+ * (Fase 8.3) y `scene/fireflies.ts` (Fase 8.4, ver las cuatro abajo), esos
+ * `buildXxx()` inline siguen siendo los que realmente corren en
+ * producción; el resto de `scene/*.ts` es código muerto — incluyendo,
+ * notablemente, `buildHumidityMist` y `buildFireflies` dentro de
+ * `scene/particles.ts`: son implementaciones previas, ya existentes y sin
+ * conectar, auditadas y descartadas en sus respectivas fases (no se
+ * tocaron ni se reutilizaron, regla de "no modificar otros builders");
+ * `scene/humidity-mist.ts` y `scene/fireflies.ts` son los módulos nuevos
+ * y realmente conectados. Verificar que ambas implementaciones produzcan
  * exactamente el mismo resultado visual, línea por línea, excede lo que
  * se puede confirmar sin correr el motor en un navegador — conectar esa
  * extracción a ciegas arriesgaría una regresión visual silenciosa.
@@ -1702,6 +1712,30 @@ export class GTA6CodexWebGLEngine {
  *    `scene/particles.ts` (código muerto, sin conectar, no tocado por
  *    esta fase) — el módulo realmente conectado es
  *    `scene/humidity-mist.ts`.
+ *  - Fase 8.4: `scene/fireflies.ts` (`buildFireflies`) — luciérnagas
+ *    tropicales cerca del skyline. Mismo `COUNT` de partículas
+ *    (`quality.fireflyCount`), mismos rangos de posición inicial
+ *    (`50`/`-6 + 14`/`-20 - 25`) y mismos atributos `aPhase`/`aSpeed`
+ *    con los mismos rangos (`Math.random() * Math.PI * 2` y
+ *    `0.15 + Math.random() * 0.35`), mismo `ShaderMaterial` (mismos
+ *    shaders, `transparent`/`depthWrite`/`blending`) y mismos uniforms
+ *    (`time`, `introFade`) que la versión inline anterior. No expone
+ *    uniforms propios en `this` — tampoco los tenía la versión inline.
+ *    El `updater` de 11 parámetros se adapta con el mismo patrón de
+ *    closure que en las Fases 8.1/8.2/8.3, en `buildFireflies()` (más
+ *    arriba en este archivo); `this.updaters`/`start()` no se tocaron.
+ *    Único ajuste estructural: la versión inline cortaba con
+ *    `if (fireflyCount <= 0) return` antes de llamar a
+ *    `this.updaters.push(...)`; el builder extraído mueve ese corte
+ *    adentro y devuelve un `updater` no-op en ese caso (mismo patrón ya
+ *    presente en la implementación descartada de `scene/particles.ts`),
+ *    así que el corte se sigue haciendo, solo que un nivel más adentro
+ *    — sin cambio de comportamiento visual observable (nada se dibuja,
+ *    nada se calcula por frame en ambos casos). Nota: existe una
+ *    implementación previa y NO relacionada de `buildFireflies` en
+ *    `scene/particles.ts` (código muerto, sin conectar, no tocado por
+ *    esta fase, auditada y verificada equivalente antes de descartarla)
+ *    — el módulo realmente conectado es `scene/fireflies.ts`.
  *
  * El cuerpo del loop de animación dentro de `start()` (cámara dinámica,
  * uniforms por frame, matemática visual del ciclo día/noche) sigue sin
