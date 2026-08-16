@@ -856,19 +856,90 @@ const MIST_FRAGMENT_SHADER = /* glsl */ `
 `
 
 /** Letrero neón distante con parpadeo determinista. */
+/** Letrero neón premium con parpadeo orgánico, variación por tipo y respuesta a día/noche. */
 const NEON_SIGN_FRAGMENT_SHADER = /* glsl */ `
   uniform float time;
   uniform vec3 signColor;
   uniform float introFade;
   uniform float flickerSeed;
+  uniform float signType; // 0=hotel, 1=club, 2=restaurante, 3=casino, 4=negocio
+  uniform float dayPhase;
+  uniform float distanceFade;
   varying vec2 vUv;
 
   void main() {
-    float edge = smoothstep(0.48, 0.42, abs(vUv.x - 0.5)) + smoothstep(0.22, 0.18, abs(vUv.y - 0.5));
-    float flicker = 0.82 + 0.18 * sin(time * 4.2 + flickerSeed);
-    flicker *= step(0.02, fract(sin(flickerSeed * 43.0) * 43758.5453) + sin(time * 0.7 + flickerSeed) * 0.08);
-    float alpha = edge * flicker * 0.55 * introFade;
-    gl_FragColor = vec4(signColor, alpha);
+    vec2 centered = vUv - 0.5;
+
+    // Forma base con variación por tipo de negocio
+    float edgeBase = smoothstep(0.48, 0.42, abs(centered.x));
+    float vertical = smoothstep(0.22, 0.18, abs(centered.y));
+
+    // Hoteles: marco más elaborado con esquinas redondeadas
+    float hotelFrame = edgeBase * vertical;
+    float hotelCorner = smoothstep(0.35, 0.25, length(centered - vec2(0.35, 0.35))) +
+                         smoothstep(0.35, 0.25, length(centered - vec2(-0.35, 0.35))) +
+                         smoothstep(0.35, 0.25, length(centered - vec2(0.35, -0.35))) +
+                         smoothstep(0.35, 0.25, length(centered - vec2(-0.35, -0.35)));
+
+    // Clubes: líneas dinámicas horizontales
+    float clubLines = edgeBase * vertical + smoothstep(0.45, 0.40, abs(centered.y - 0.15)) + smoothstep(0.45, 0.40, abs(centered.y + 0.15));
+
+    // Restaurantes: borde suave con interior tenue
+    float restGlow = edgeBase * vertical * 0.8 + smoothstep(0.30, 0.15, length(centered)) * 0.3;
+
+    // Casinos: patrón de diamante
+    float casinoPattern = abs(centered.x * centered.y) * 4.0;
+    float casinoEdge = edgeBase * vertical + smoothstep(0.6, 0.4, casinoPattern) * 0.4;
+
+    // Negocios: simple pero elegante
+    float businessSimple = edgeBase * vertical;
+
+    // Mezcla por tipo
+    float edge = mix(hotelFrame + hotelCorner * 0.5,
+                   mix(clubLines,
+                      mix(restGlow,
+                         mix(casinoEdge, businessSimple, step(3.5, signType)),
+                         step(2.5, signType)),
+                      step(1.5, signType)),
+                   step(0.5, signType));
+
+    // Parpadeo orgánico diferente por tipo
+    float baseFlicker = 0.85 + 0.15 * sin(time * (3.0 + signType * 0.5) + flickerSeed);
+
+    // Hoteles: parpadeo lento y estable
+    float hotelFlicker = baseFlicker * (0.92 + 0.08 * sin(time * 0.3 + flickerSeed * 2.0));
+
+    // Clubes: parpadeo rápido y dinámico
+    float clubFlicker = baseFlicker * (0.75 + 0.25 * sin(time * 8.0 + flickerSeed) * sin(time * 12.0 + flickerSeed * 1.5));
+
+    // Restaurantes: parpadeo suave
+    float restFlicker = baseFlicker * (0.88 + 0.12 * sin(time * 1.5 + flickerSeed * 0.5));
+
+    // Casinos: parpadeo errático
+    float casinoFlicker = baseFlicker * (0.7 + 0.3 * fract(sin(time * 15.0 + flickerSeed * 3.0) * 43758.5453));
+
+    // Negocios: parpadeo minimalista
+    float businessFlicker = baseFlicker * 0.95;
+
+    float flicker = mix(hotelFlicker,
+                       mix(clubFlicker,
+                          mix(restFlicker,
+                             mix(casinoFlicker, businessFlicker, step(3.5, signType)),
+                             step(2.5, signType)),
+                          step(1.5, signType)),
+                       step(0.5, signType));
+
+    // Integración con ciclo día/noche: más brillante en noche, más tenue en día
+    float nightAmount = 1.0 - smoothstep(0.0, 0.3, min(dayPhase, 1.0 - dayPhase));
+    float dayPhaseDim = 0.4 + 0.6 * nightAmount;
+
+    // Falloff por distancia para profundidad real
+    float alpha = edge * flicker * dayPhaseDim * distanceFade * introFade;
+
+    // Añadir brillo extra en bordes para efecto neón realista
+    vec3 glowColor = signColor * (1.0 + 0.3 * sin(time * 2.0 + flickerSeed));
+
+    gl_FragColor = vec4(glowColor, alpha);
   }
 `
 
@@ -1598,20 +1669,93 @@ export class GTA6CodexWebGLEngine {
   }
 
   /** Letreros neón distantes en el skyline — vida urbana parpadeante. */
+  /** Letreros neón premium GTA VI — Vice City moderna con atmósfera cinematográfica. */
   private buildNeonSigns() {
     if (this.quality.tier === 'low') return
 
-    const signs: { mat: THREE.ShaderMaterial; seed: number }[] = []
-    const colors = [new THREE.Color(0xff2d78), new THREE.Color(0x22d3ee), new THREE.Color(0xffb04d)]
+    // Paleta expandida GTA VI: rosa neón, magenta, cyan, violeta, azul eléctrico, naranja cálido
+    const neonColors = [
+      new THREE.Color(0xff2d78), // Rosa neón
+      new THREE.Color(0xff1744), // Magenta intenso
+      new THREE.Color(0x22d3ee), // Cyan
+      new THREE.Color(0x9c27b0), // Violeta
+      new THREE.Color(0x2979ff), // Azul eléctrico
+      new THREE.Color(0xff9100), // Naranja cálido
+      new THREE.Color(0xe91e63), // Rosa profundo
+      new THREE.Color(0x00bcd4), // Cyan claro
+    ]
 
-    for (let i = 0; i < (this.quality.tier === 'high' ? 7 : 4); i++) {
-      const seed = i * 2.17 + 0.5
+    // Configuración de tipos de negocio con su estética específica
+    interface SignConfig {
+      type: number // 0=hotel, 1=club, 2=restaurante, 3=casino, 4=negocio
+      colorIndex: number
+      width: number
+      height: number
+      baseIntensity: number
+    }
+
+    // Distribución orgánica por capas de profundidad
+    const signConfigs: SignConfig[] = [
+      // CAPA LEJANA (-50 a -60): hoteles grandes, poca visibilidad, atmósfera
+      { type: 0, colorIndex: 0, width: 4.2, height: 1.8, baseIntensity: 0.6 }, // Hotel rosa
+      { type: 0, colorIndex: 3, width: 3.8, height: 1.6, baseIntensity: 0.55 }, // Hotel violeta
+      { type: 3, colorIndex: 4, width: 3.5, height: 1.4, baseIntensity: 0.5 }, // Casino azul
+
+      // CAPA MEDIA (-40 a -50): clubes y restaurantes, visibilidad media
+      { type: 1, colorIndex: 1, width: 3.2, height: 1.2, baseIntensity: 0.75 }, // Club magenta
+      { type: 2, colorIndex: 2, width: 2.8, height: 1.0, baseIntensity: 0.7 }, // Restaurante cyan
+      { type: 1, colorIndex: 5, width: 3.0, height: 1.1, baseIntensity: 0.72 }, // Club naranja
+      { type: 2, colorIndex: 6, width: 2.6, height: 0.95, baseIntensity: 0.68 }, // Restaurante rosa
+
+      // CAPA CERCANA (-30 a -40): negocios y locales, mayor detalle
+      { type: 4, colorIndex: 7, width: 2.4, height: 0.85, baseIntensity: 0.85 }, // Negocio cyan claro
+      { type: 4, colorIndex: 0, width: 2.2, height: 0.8, baseIntensity: 0.82 }, // Negocio rosa
+      { type: 1, colorIndex: 3, width: 2.8, height: 1.0, baseIntensity: 0.88 }, // Club violeta cercano
+    ]
+
+    // Ajustar cantidad según calidad
+    const signCount = this.quality.tier === 'high' ? signConfigs.length : Math.floor(signConfigs.length * 0.6)
+    const activeConfigs = signConfigs.slice(0, signCount)
+
+    const signs: {
+      mat: THREE.ShaderMaterial
+      seed: number
+      signType: number
+      baseIntensity: number
+      distanceFade: number
+    }[] = []
+
+    // Posiciones pre-diseñadas para composición cinematográfica
+    const positions = [
+      { x: -18, y: 2, z: -55 }, // Hotel lejano izquierda
+      { x: 12, y: 3, z: -58 }, // Hotel lejano derecha
+      { x: -8, y: 1, z: -52 }, // Casino centro-lejano
+      { x: -22, y: -1, z: -45 }, // Club medio-izquierda
+      { x: 15, y: 0, z: -47 }, // Restaurante medio-derecha
+      { x: 0, y: -2, z: -44 }, // Club centro-medio
+      { x: 18, y: -3, z: -42 }, // Restaurante medio-derecha bajo
+      { x: -12, y: -4, z: -38 }, // Negocio cercano izquierda
+      { x: 8, y: -5, z: -36 }, // Negocio cercano derecha
+      { x: -3, y: -3, z: -35 }, // Club cercano centro
+    ]
+
+    activeConfigs.forEach((config, i) => {
+      const seed = i * 3.14159 + 0.618
+      const pos = positions[i] || { x: (i - 5) * 8, y: -2 + (i % 3) * 2, z: -40 - (i % 2) * 5 }
+
+      // Calcular fade por distancia
+      const distance = Math.abs(pos.z)
+      const distanceFade = Math.max(0.3, 1.0 - (distance - 35) / 30) * config.baseIntensity
+
       const mat = new THREE.ShaderMaterial({
         uniforms: {
           time: { value: 0 },
-          signColor: { value: colors[i % colors.length] },
+          signColor: { value: neonColors[config.colorIndex] },
           introFade: { value: 0 },
           flickerSeed: { value: seed },
+          signType: { value: config.type },
+          dayPhase: { value: 0.5 },
+          distanceFade: { value: distanceFade },
         },
         vertexShader: SHAFT_VERTEX_SHADER,
         fragmentShader: NEON_SIGN_FRAGMENT_SHADER,
@@ -1620,16 +1764,46 @@ export class GTA6CodexWebGLEngine {
         blending: THREE.AdditiveBlending,
         side: THREE.DoubleSide,
       })
-      const mesh = new THREE.Mesh(new THREE.PlaneGeometry(2.8 + (i % 3) * 0.6, 0.55, 1, 1), mat)
-      mesh.position.set((i - 3) * 9.5 + Math.sin(seed) * 4, -4 + (i % 4) * 3.5, -38 - (i % 3) * 6)
+
+      // Variación sutil en geometría según tipo
+      let geometry: THREE.PlaneGeometry
+      if (config.type === 0) {
+        // Hoteles: más grandes y prominentes
+        geometry = new THREE.PlaneGeometry(config.width, config.height, 2, 1)
+      } else if (config.type === 1) {
+        // Clubes: más dinámicos
+        geometry = new THREE.PlaneGeometry(config.width, config.height, 3, 1)
+      } else {
+        // Restaurantes, casinos, negocios: estándar
+        geometry = new THREE.PlaneGeometry(config.width, config.height, 1, 1)
+      }
+
+      const mesh = new THREE.Mesh(geometry, mat)
+      mesh.position.set(pos.x, pos.y, pos.z)
+
+      // Rotación sutil para variedad visual (billboarding parcial)
+      mesh.rotation.y = (Math.random() - 0.5) * 0.15
+
       this.farGroup.add(mesh)
-      signs.push({ mat, seed })
-    }
+      signs.push({
+        mat,
+        seed,
+        signType: config.type,
+        baseIntensity: config.baseIntensity,
+        distanceFade,
+      })
+    })
 
     this.updaters.push((elapsed, _delta, intro) => {
       signs.forEach((s) => {
         s.mat.uniforms.time.value = elapsed
         s.mat.uniforms.introFade.value = intro
+        s.mat.uniforms.dayPhase.value = this.dayPhase
+
+        // Variación dinámica de intensidad por "estado" del neón
+        const unrestMod = 1.0 + this.entityUnrest * 0.15
+        const dynamicFade = s.distanceFade * unrestMod
+        s.mat.uniforms.distanceFade.value = dynamicFade
       })
     })
   }
