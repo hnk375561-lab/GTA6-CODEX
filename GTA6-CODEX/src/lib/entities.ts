@@ -9,6 +9,7 @@ import {
   safeParseLocation,
   safeParseMission,
 } from '@/types/schemas'
+import { clearRelationCache } from './relations'
 
 /**
  * Validación adicional específica de tipo, para entidades cuyo contrato
@@ -111,11 +112,14 @@ function entityCacheKey(type: EntityType, slug: string): string {
 /**
  * Limpia toda la caché en memoria. Expuesto para tests / scripts que
  * necesiten releer contenido dentro del mismo proceso (ej. watchers).
+ * También limpia el caché de relaciones bidireccionales ya que dependen
+ * del contenido de entidades.
  */
 export function clearEntityCache(): void {
   typeCache.clear()
   singleEntityCache.clear()
   slugIndex.clear()
+  clearRelationCache()
 }
 
 /**
