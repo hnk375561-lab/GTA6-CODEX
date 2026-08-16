@@ -10,6 +10,14 @@ import { webglSceneBus, type SceneFocus, type EntityAtmosphere } from './scene-b
 
 // Extracted modules
 import { detectQualityProfile, type QualityProfile } from './core/quality'
+import {
+  createRenderer,
+  resizeRendererAndPasses,
+  isDocumentHidden,
+  handleContextLost as lifecycleHandleContextLost,
+  handleContextRestored as lifecycleHandleContextRestored,
+  disposeSceneResources,
+} from './core/lifecycle'
 import { lerpDayColor, lerpCyclic01, smootherstep } from './utils/math'
 import { SHOTS, FALLBACK_SHOT, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP, IMAGE_BILLBOARDS, SECTION_MOOD, CATEGORY_WARMTH, STATUS_UNREST, CATEGORY_PACE, CATEGORY_FRAME } from './config/scene'
 import { GRADE_SHADER } from './shaders/postprocess'
@@ -325,17 +333,7 @@ export class GTA6CodexWebGLEngine {
     this.quality = detectQualityProfile(opts.reducedMotion)
     this.totalShotDuration = SHOTS.reduce((sum, s) => sum + s.duration, 0)
 
-    this.renderer = new THREE.WebGLRenderer({
-      canvas,
-      alpha: true,
-      antialias: this.quality.tier === 'high',
-      powerPreference: 'high-performance',
-    })
-    this.renderer.setClearColor(0x000000, 0)
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, this.quality.maxDpr))
-    this.renderer.toneMapping = THREE.ACESFilmicToneMapping
-    this.renderer.toneMappingExposure = 1.1
-    this.renderer.outputColorSpace = THREE.SRGBColorSpace
+    this.renderer = createRenderer(canvas, this.quality)
 
     this.scene = new THREE.Scene()
     this.fog = new THREE.FogExp2(0x1c0f28, this.baseFogDensity)
@@ -1396,7 +1394,7 @@ export class GTA6CodexWebGLEngine {
   }
 
   private handleVisibility = () => {
-    this.paused = document.hidden
+    this.paused = isDocumentHidden()
   }
 
   /**
@@ -1407,12 +1405,9 @@ export class GTA6CodexWebGLEngine {
    * un contexto muerto mientras esperamos `webglcontextrestored`.
    */
   private handleContextLost = (event: Event) => {
-    event.preventDefault()
-    this.contextLost = true
-    if (this.rafId !== null) {
-      cancelAnimationFrame(this.rafId)
-      this.rafId = null
-    }
+    const { contextLost, rafId } = lifecycleHandleContextLost(event, this.rafId)
+    this.contextLost = contextLost
+    this.rafId = rafId
   }
 
   /**
@@ -1423,26 +1418,25 @@ export class GTA6CodexWebGLEngine {
    * ni perder la coreografía de cámara en curso.
    */
   private handleContextRestored = () => {
-    this.contextLost = false
-    if (this.lifecycle === 'running' && this.rafId === null && this.loopFn) {
-      this.rafId = requestAnimationFrame(this.loopFn)
-    }
+    const { contextLost, rafId } = lifecycleHandleContextRestored({
+      lifecycle: this.lifecycle,
+      rafId: this.rafId,
+      loopFn: this.loopFn,
+    })
+    this.contextLost = contextLost
+    this.rafId = rafId
   }
 
   private handleResize = () => {
-    const width = window.innerWidth
-    const height = window.innerHeight
-    const pixelRatio = Math.min(window.devicePixelRatio || 1, this.quality.maxDpr)
-    this.camera.aspect = width / height
-    this.camera.updateProjectionMatrix()
-    this.renderer.setPixelRatio(pixelRatio)
-    this.renderer.setSize(width, height, false)
-    this.composer.setSize(width, height)
-    this.bloomPass.resolution.set(width * pixelRatio, height * pixelRatio)
-    if (this.bokehPass) {
-      this.bokehPass.setSize(width, height)
-    }
-    this.fxaaPass.setSize(width, height)
+    resizeRendererAndPasses({
+      camera: this.camera,
+      renderer: this.renderer,
+      composer: this.composer,
+      bloomPass: this.bloomPass,
+      bokehPass: this.bokehPass,
+      fxaaPass: this.fxaaPass,
+      quality: this.quality,
+    })
   }
 
   /** Encuadre coreografiado: funde continuamente entre los `SHOTS`, en vez de ruido sin fin. */
@@ -1684,26 +1678,18 @@ export class GTA6CodexWebGLEngine {
     this.unsubscribeSceneBus?.()
     this.unsubscribeSceneBus = null
 
-    this.scene.traverse((obj) => {
-      if (obj instanceof THREE.Mesh || obj instanceof THREE.Points) {
-        obj.geometry?.dispose?.()
-        const material = obj.material as THREE.Material | THREE.Material[]
-        if (Array.isArray(material)) material.forEach((m) => m.dispose())
-        else material?.dispose?.()
-      }
-    })
-    this.scene.environment = null
-    this.envRenderTarget?.dispose()
-    this.envRenderTarget = null
-    this.imageTextures.forEach((t) => t.dispose())
-    this.imageTextures = []
-
     // Libera cada pass del composer de forma genérica: cualquier pass que
     // se agregue en el futuro queda cubierto sin tener que recordar
     // llamarlo a mano (antes solo `bokehPass` se liberaba explícitamente).
-    this.composer.passes.forEach((pass) => pass.dispose?.())
-    this.composer.dispose()
-    this.renderer.dispose()
+    disposeSceneResources({
+      scene: this.scene,
+      envRenderTarget: this.envRenderTarget,
+      imageTextures: this.imageTextures,
+      composer: this.composer,
+      renderer: this.renderer,
+    })
+    this.envRenderTarget = null
+    this.imageTextures = []
   }
 }
 

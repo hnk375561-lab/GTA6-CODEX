@@ -1,243 +1,170 @@
 /**
- * Lifecycle management for the GTA6 Codex WebGL engine.
- * Handles the main animation loop, state updates, and disposal.
+ * Lifecycle orchestration for the GTA6 Codex WebGL engine.
+ *
+ * Este módulo NO contiene el loop de animación (cámara, uniforms, día/noche,
+ * parallax) — eso permanece en `engine.ts` (closure `loop` dentro de
+ * `start()`), fuera de alcance de esta extracción. Lo que vive acá es
+ * exclusivamente el SCHEDULING del ciclo de vida del `WebGLRenderer`:
+ * cuándo se crea, cuándo se redimensiona, cuándo se detecta que el
+ * documento está oculto, cuándo se pierde/recupera el contexto GPU, y
+ * cuándo se liberan los recursos de GPU en `dispose()`.
+ *
+ * Cada función es una transcripción literal, verificada línea por línea,
+ * del método privado equivalente que existía inline en
+ * `GTA6CodexWebGLEngine` (ver comentario sobre cada una). No reemplaza ni
+ * reutiliza la implementación paralela y no verificada que este archivo
+ * tenía antes (`createLifecycleState` / `createAnimationLoop`): esa
+ * reimplementación del loop usaba un `Updater` de 11 parámetros que no
+ * coincide con la firma real que `engine.ts` usa hoy, y no había forma de
+ * confirmar que fuera funcionalmente idéntica sin correr el motor en un
+ * navegador. Por eso este archivo fue reescrito desde cero con un alcance
+ * más chico pero verificable: pura orquestación, sin matemática visual.
  */
 
 import * as THREE from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'
-import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js'
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js'
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js'
-import { GRADE_SHADER } from '../shaders/postprocess'
-import { lerpCyclic01, smootherstep } from '../utils/math'
-import { webglSceneBus } from '../scene-bus'
-import type { Updater } from '../scene/sky'
-import type { DustUniforms } from '../scene/particles'
+import { FXAAPass } from 'three/examples/jsm/postprocessing/FXAAPass.js'
+import type { QualityProfile } from './quality'
 
-export interface LifecycleState {
-  dayPhase: number
-  dayPhaseTarget: number
-  humidity: number
-  pointer: { x: number; y: number }
-  pointerTarget: { x: number; y: number }
-  pointerVelocity: number
-  scrollProgress: number
-  scrollTarget: number
-  scrollVelocity: number
-  sceneMood: number
-  sceneMoodTarget: number
-  pointerIntent: number
-  pointerIntentTarget: number
-  entityWarmth: number
-  entityWarmthTarget: number
-  entityUnrest: number
-  entityUnrestTarget: number
-  entityPresence: number
-  entityPresenceTarget: number
-  entityPace: number
-  entityPaceTarget: number
-  entityFrame: number
-  entityFrameTarget: number
-  roadFlow: number
-  arrivalKick: number
-  introClimaxFired: boolean
-  ambientFrameCounter: number
+/**
+ * Proviene del constructor de `GTA6CodexWebGLEngine` (creación inline de
+ * `this.renderer`). Mismas opciones, mismo orden de configuración
+ * (`setClearColor` → `setPixelRatio` → `toneMapping` →
+ * `toneMappingExposure` → `outputColorSpace`) que antes vivía inline.
+ */
+export function createRenderer(canvas: HTMLCanvasElement, quality: QualityProfile): THREE.WebGLRenderer {
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    alpha: true,
+    antialias: quality.tier === 'high',
+    powerPreference: 'high-performance',
+  })
+  renderer.setClearColor(0x000000, 0)
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, quality.maxDpr))
+  renderer.toneMapping = THREE.ACESFilmicToneMapping
+  renderer.toneMappingExposure = 1.1
+  renderer.outputColorSpace = THREE.SRGBColorSpace
+  return renderer
 }
 
-export interface LifecycleOptions {
-  clock: THREE.Clock
+export interface ResizeTargets {
+  camera: THREE.PerspectiveCamera
+  renderer: THREE.WebGLRenderer
   composer: EffectComposer
   bloomPass: UnrealBloomPass
   bokehPass: BokehPass | null
-  gradePass: ShaderPass
-  dustUniforms: DustUniforms
-  fog: THREE.FogExp2
-  keyLight: THREE.PointLight
-  skyGroup: THREE.Group
-  farGroup: THREE.Group
-  midGroup: THREE.Group
-  nearGroup: THREE.Group
-  baseFogDensity: number
-  reducedMotion: boolean
-  tmpProjectVec: THREE.Vector3
-  updaters: Updater[]
-  ROAD_FLOW_WRAP: number
+  fxaaPass: FXAAPass
+  quality: QualityProfile
 }
 
-export function createLifecycleState(): LifecycleState {
-  return {
-    dayPhase: 0.42,
-    dayPhaseTarget: 0.42,
-    humidity: 0.45,
-    pointer: { x: 0, y: 0 },
-    pointerTarget: { x: 0, y: 0 },
-    pointerVelocity: 0,
-    scrollProgress: 0,
-    scrollTarget: 0,
-    scrollVelocity: 0,
-    sceneMood: 0,
-    sceneMoodTarget: 0,
-    pointerIntent: 0,
-    pointerIntentTarget: 0,
-    entityWarmth: 0,
-    entityWarmthTarget: 0,
-    entityUnrest: 0,
-    entityUnrestTarget: 0,
-    entityPresence: 0,
-    entityPresenceTarget: 0,
-    entityPace: 1,
-    entityPaceTarget: 1,
-    entityFrame: 0,
-    entityFrameTarget: 0,
-    roadFlow: 0,
-    arrivalKick: 0,
-    introClimaxFired: false,
-    ambientFrameCounter: 0,
+/**
+ * Proviene de `handleResize` en `GTA6CodexWebGLEngine`. Mismo cálculo de
+ * `width`/`height`/`pixelRatio` a partir de `window.*` y mismas llamadas
+ * de propagación a cámara/renderer/composer/passes, en el mismo orden.
+ */
+export function resizeRendererAndPasses(targets: ResizeTargets): void {
+  const { camera, renderer, composer, bloomPass, bokehPass, fxaaPass, quality } = targets
+  const width = window.innerWidth
+  const height = window.innerHeight
+  const pixelRatio = Math.min(window.devicePixelRatio || 1, quality.maxDpr)
+  camera.aspect = width / height
+  camera.updateProjectionMatrix()
+  renderer.setPixelRatio(pixelRatio)
+  renderer.setSize(width, height, false)
+  composer.setSize(width, height)
+  bloomPass.resolution.set(width * pixelRatio, height * pixelRatio)
+  if (bokehPass) {
+    bokehPass.setSize(width, height)
   }
+  fxaaPass.setSize(width, height)
 }
 
-export function createAnimationLoop(
-  state: LifecycleState,
-  options: LifecycleOptions,
-  startTime: number
-): () => void {
-  const {
-    clock,
-    composer,
-    bloomPass,
-    bokehPass,
-    gradePass,
-    dustUniforms,
-    fog,
-    keyLight,
-    skyGroup,
-    farGroup,
-    midGroup,
-    nearGroup,
-    baseFogDensity,
-    reducedMotion,
-    tmpProjectVec,
-    updaters,
-    ROAD_FLOW_WRAP,
-  } = options
+/**
+ * Proviene de `handleVisibility` en `GTA6CodexWebGLEngine`. Misma
+ * condición (`document.hidden`); el llamador sigue siendo responsable de
+ * asignar el resultado a `this.paused`.
+ */
+export function isDocumentHidden(): boolean {
+  return document.hidden
+}
 
-  const introDuration = reducedMotion ? 0.4 : 3.1
+export interface ContextLostResult {
+  contextLost: boolean
+  rafId: number | null
+}
 
-  return () => {
-    const delta = Math.min(clock.getDelta(), 0.05)
-    const elapsed = clock.getElapsedTime()
-    const sinceStart = elapsed - startTime
-    const intro = smootherstep(sinceStart / introDuration)
-
-    if (!state.introClimaxFired && intro >= 0.92 && !reducedMotion) {
-      state.introClimaxFired = true
-      state.arrivalKick = 1
-    }
-
-    const prevPointerX = state.pointer.x
-    const prevPointerY = state.pointer.y
-    state.pointer.x += (state.pointerTarget.x - state.pointer.x) * 0.07
-    state.pointer.y += (state.pointerTarget.y - state.pointer.y) * 0.07
-    state.pointerVelocity = Math.hypot(state.pointer.x - prevPointerX, state.pointer.y - prevPointerY)
-
-    const prevScroll = state.scrollProgress
-    state.scrollProgress += (state.scrollTarget - state.scrollProgress) * 0.06
-    state.scrollVelocity = Math.abs(state.scrollProgress - prevScroll)
-
-    state.sceneMood += (state.sceneMoodTarget - state.sceneMood) * 0.02
-    state.pointerIntent += (state.pointerIntentTarget - state.pointerIntent) * 0.08
-    state.entityWarmth += (state.entityWarmthTarget - state.entityWarmth) * 0.015
-    state.entityUnrest += (state.entityUnrestTarget - state.entityUnrest) * 0.03
-    state.entityPresence += (state.entityPresenceTarget - state.entityPresence) * 0.02
-    state.entityPace += (state.entityPaceTarget - state.entityPace) * 0.02
-    state.entityFrame += (state.entityFrameTarget - state.entityFrame) * 0.018
-
-    const cyclicalTime = (elapsed * 0.004) % 1
-    state.dayPhaseTarget = (cyclicalTime * 0.55 + state.sceneMood * 0.35 + state.scrollProgress * 0.1) % 1
-    state.dayPhase = lerpCyclic01(state.dayPhase, state.dayPhaseTarget, reducedMotion ? 0.004 : 0.012)
-    state.humidity = 0.38 + state.sceneMood * 0.22 + Math.sin(elapsed * 0.015) * 0.06
-
-    state.roadFlow = (state.roadFlow + delta * 5 * state.entityPace) % ROAD_FLOW_WRAP
-
-    // Call all updaters with the current state
-    for (const update of updaters) {
-      update(
-        elapsed,
-        delta,
-        intro,
-        state.dayPhase,
-        state.humidity,
-        fog.color,
-        state.entityPace,
-        state.entityUnrest,
-        state.scrollVelocity,
-        state.pointerIntent,
-        state.entityPresence
-      )
-    }
-
-    // Update dust uniforms directly (bypass pattern)
-    dustUniforms.time.value = elapsed
-    dustUniforms.mouseNDC.value.set(state.pointer.x, -state.pointer.y)
-    dustUniforms.mouseStrength.value = reducedMotion ? 0 : Math.min(intro + state.pointerIntent * 0.6, 1.6)
-    dustUniforms.introFade.value = intro
-
-    // Update post-processing
-    gradePass.uniforms.time.value = elapsed * 0.6
-    gradePass.uniforms.fadeIn.value = intro
-    gradePass.uniforms.dayPhase.value = state.dayPhase
-    gradePass.uniforms.humidity.value = state.humidity
-    gradePass.uniforms.grainStrength.value = 0.03 + state.entityUnrest * 0.025 + state.humidity * 0.012
-    const kick = reducedMotion
-      ? 0
-      : Math.min(
-          state.pointerVelocity * 1.3 +
-            state.scrollVelocity * 6 +
-            state.pointerIntent * 0.003 +
-            state.entityUnrest * 0.0015,
-          0.009
-        )
-    state.arrivalKick *= 0.92
-    gradePass.uniforms.chromaKick.value = Math.min(kick + state.arrivalKick * 0.006, 0.014)
-    bloomPass.strength = THREE.MathUtils.clamp(
-      (0.8 * intro + (reducedMotion ? 0 : state.pointerIntent * 0.3) + state.entityPresence * 0.15 + state.arrivalKick * 0.35),
-      0,
-      2.5
-    )
-    gradePass.uniforms.bloomMix.value = bloomPass.strength * 0.08
-
-    // Update groups
-    skyGroup.position.x = -state.pointer.x * 0.15
-    skyGroup.position.y = state.pointer.y * 0.1
-    skyGroup.rotation.y = elapsed * 0.002
-
-    farGroup.position.x = -state.pointer.x * 0.4 - state.scrollProgress * 0.6
-    farGroup.position.y = state.pointer.y * 0.25
-    midGroup.position.x = state.pointer.x * 1.1
-    midGroup.position.y = -state.pointer.y * 0.7
-    midGroup.rotation.y = state.scrollProgress * 0.35
-    nearGroup.position.x = state.pointer.x * 2.1
-    nearGroup.position.y = -state.pointer.y * 1.3
-
-    // Update fog
-    fog.density = THREE.MathUtils.clamp(
-      baseFogDensity - state.entityFrame * 0.006 + state.humidity * 0.008 - Math.abs(state.dayPhase - 0.5) * 0.006,
-      0.012,
-      0.08
-    )
-
-    // Update bokeh if available
-    if (bokehPass) {
-      bokehPass.materialBokeh.uniforms.focus.value = 22 - state.scrollProgress * 7
-    }
-
-    // Render
-    composer.render()
-
-    // Publish ambient data to DOM (camera needs to be passed separately)
-    state.ambientFrameCounter++
-    if (state.ambientFrameCounter % 3 === 0) {
-      // This will be handled by the main engine class
-    }
+/**
+ * Proviene de `handleContextLost` en `GTA6CodexWebGLEngine`. Mismo
+ * `event.preventDefault()` (necesario para que el navegador le dé al
+ * motor la oportunidad de recuperar el contexto) + misma cancelación del
+ * frame en vuelo. El llamador asigna `contextLost`/`rafId` sobre `this`.
+ */
+export function handleContextLost(event: Event, rafId: number | null): ContextLostResult {
+  event.preventDefault()
+  if (rafId !== null) {
+    cancelAnimationFrame(rafId)
+    rafId = null
   }
+  return { contextLost: true, rafId }
+}
+
+export interface ContextRestoredParams {
+  lifecycle: 'idle' | 'running' | 'disposed'
+  rafId: number | null
+  loopFn: (() => void) | null
+}
+
+/**
+ * Proviene de `handleContextRestored` en `GTA6CodexWebGLEngine`. Mismo
+ * criterio de reanudación (`lifecycle === 'running' && rafId === null &&
+ * loopFn`) — Three.js re-crea los recursos de GPU derivados del contexto
+ * por su cuenta, acá solo hace falta retomar el mismo `loopFn` ya
+ * existente vía `requestAnimationFrame`.
+ */
+export function handleContextRestored(params: ContextRestoredParams): ContextLostResult {
+  const { lifecycle, loopFn } = params
+  let { rafId } = params
+  if (lifecycle === 'running' && rafId === null && loopFn) {
+    rafId = requestAnimationFrame(loopFn)
+  }
+  return { contextLost: false, rafId }
+}
+
+export interface DisposeSceneResourcesParams {
+  scene: THREE.Scene
+  envRenderTarget: THREE.WebGLRenderTarget | null
+  imageTextures: THREE.Texture[]
+  composer: EffectComposer
+  renderer: THREE.WebGLRenderer
+}
+
+/**
+ * Proviene del cuerpo de `dispose()` en `GTA6CodexWebGLEngine` (la parte
+ * de liberación de recursos GPU, no la de estado de la propia instancia:
+ * `rafId`/`loopFn`/`abortController`/`unsubscribeSceneBus` siguen
+ * gestionándose en `engine.ts`). Mismo recorrido de `scene.traverse`
+ * liberando geometría/material, mismo dispose de `envRenderTarget`,
+ * `imageTextures`, cada pass del `composer`, el `composer` y el
+ * `renderer`, en el mismo orden.
+ */
+export function disposeSceneResources(params: DisposeSceneResourcesParams): void {
+  const { scene, envRenderTarget, imageTextures, composer, renderer } = params
+
+  scene.traverse((obj) => {
+    if (obj instanceof THREE.Mesh || obj instanceof THREE.Points) {
+      obj.geometry?.dispose?.()
+      const material = obj.material as THREE.Material | THREE.Material[]
+      if (Array.isArray(material)) material.forEach((m) => m.dispose())
+      else material?.dispose?.()
+    }
+  })
+  scene.environment = null
+  envRenderTarget?.dispose()
+  imageTextures.forEach((t) => t.dispose())
+
+  composer.passes.forEach((pass) => pass.dispose?.())
+  composer.dispose()
+  renderer.dispose()
 }
