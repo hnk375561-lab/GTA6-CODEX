@@ -9,6 +9,7 @@ import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { EntityImage } from '@/components/entities/EntityImage'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
+import { getGenericQuickFacts } from '@/lib/entity-fields'
 import { cn } from '@/lib/utils'
 
 const STATUS_LABELS = {
@@ -83,9 +84,14 @@ function MiniIcon({ name }: { name: 'clock' | 'calendar' | 'link' | 'play' | 'sc
  * Datos rápidos específicos por tipo de entidad, derivados únicamente de
  * campos que ya existen en el contenido (nunca se inventa nada — Fase 8,
  * punto 10). Cada tipo con contrato TS propio (`types/entity.ts`) obtiene
- * hasta 2 datos de mayor valor editorial; el resto (GenericEntity) no
- * agrega fila propia acá — ya tiene su ficha técnica data-driven completa
- * en `EntityMetadata`, y listar campos arbitrarios en la card sería ruido.
+ * hasta 2 datos de mayor valor editorial mediante una rama dedicada;
+ * Trailer no agrega fila propia acá (ya tiene su bloque de escenas/
+ * duración/fecha); el resto (GenericEntity: armas, actividades,
+ * organizaciones, negocios, objetos, noticias, guías) obtiene hasta 2
+ * campos data-driven vía `getGenericQuickFacts` (ver `lib/entity-fields.ts`),
+ * la misma heurística que ya alimenta su ficha técnica completa en
+ * `EntityMetadata` — así la card ya no queda sin ningún dato visible para
+ * esos 7 tipos (Fase 8, etapa A).
  */
 function getQuickFacts(entity: Entity): Array<{ label: string; value: string }> {
   if (entity.type === EntityType.CHARACTER) {
@@ -118,7 +124,18 @@ function getQuickFacts(entity: Entity): Array<{ label: string; value: string }> 
     return facts
   }
 
-  return []
+  // Trailer ya tiene su propio bloque de datos dedicado más abajo en la
+  // card (escenas, duración, fecha) — un quick-fact genérico acá sería
+  // redundante/ruido, mismo criterio que ya usa `EntityMetadata`.
+  if (entity.type === EntityType.TRAILER) return []
+
+  // Resto de tipos (hoy: armas, actividades, organizaciones, negocios,
+  // objetos, noticias, guías — los 7 `GenericEntity` sin rama propia
+  // arriba): hasta 2 campos data-driven, reutilizando exactamente la
+  // misma heurística que ya alimenta la ficha técnica completa en
+  // `EntityMetadata`/`GenericEntityMetadata` (ver `lib/entity-fields.ts`).
+  // Nunca inventa un dato que no exista ya en el JSON de contenido.
+  return getGenericQuickFacts(entity as unknown as Record<string, unknown>, 2)
 }
 
 interface EntityCardProps {
