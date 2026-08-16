@@ -54,14 +54,22 @@ import { buildAtmosphericHaze as buildAtmosphericHazeScene } from './scene/atmos
 // fallbacks `|| 1`/`|| 0` sobre `entityPace`/`scrollVelocity` ausentes en
 // la versión que corre en producción) — no se reutilizó.
 import { buildTrafficStreaks as buildTrafficStreaksScene } from './scene/traffic-streaks'
+// Fase 8.7: buildDust() migrado mecánicamente a ./scene/dust.ts (ver nota
+// de arquitectura al pie del archivo). DUST_VERTEX_SHADER/
+// DUST_FRAGMENT_SHADER ya no se importan acá directamente: ahora los
+// consume ./scene/dust.ts. Existía una implementación de `buildDust`
+// desconectada dentro de `scene/particles.ts` — se auditó contra el
+// inline real y, a diferencia de `scene/traffic.ts` en la Fase 8.6, SÍ
+// resultó equivalente (mismo COUNT, geometría, atributos, uniforms,
+// material y updater); aun así no se reutilizó directamente para
+// mantener el mismo patrón de módulo autocontenido usado en las Fases
+// 8.1–8.6 (cada builder en su propio archivo, sin depender de
+// `scene/particles.ts`, que sigue sin conectar).
+import { buildDust as buildDustScene } from './scene/dust'
 import { SHAFT_VERTEX_SHADER, SHAFT_FRAGMENT_SHADER, NEON_SIGN_FRAGMENT_SHADER } from './shaders/neon'
 import { ROAD_VERTEX_SHADER, ROAD_FRAGMENT_SHADER } from './shaders/road'
 import { SUN_VERTEX_SHADER, SUN_FRAGMENT_SHADER } from './shaders/sun'
 import { BILLBOARD_VERTEX_SHADER, BILLBOARD_FRAGMENT_SHADER } from './shaders/billboard'
-import {
-  DUST_VERTEX_SHADER,
-  DUST_FRAGMENT_SHADER,
-} from './shaders/particles'
 
 /**
  * GTA6CodexWebGLEngine — v5 "Vice City, no una demo abstracta de Three.js"
@@ -1123,60 +1131,59 @@ export class GTA6CodexWebGLEngine {
   // Escena — plano medio: bruma
   // ---------------------------------------------------------------------
 
+  /**
+   * Partículas de polvo/bruma en el plano medio.
+   *
+   * Fase 8.7 — `COUNT` (`quality.dustCount`), `BufferGeometry`/atributos
+   * (`position`, `seed`, `aSize`), `ShaderMaterial` (mismos shaders,
+   * `transparent`/`depthWrite`/`blending`), uniforms (`time`, `mouseNDC`,
+   * `mouseStrength`, `warmLightPos`, `coolLightPos`, `introFade`,
+   * `warmColor`, `coolColor`) y updater idénticos a la versión inline
+   * anterior; solo se movieron a `./scene/dust.ts` (`buildDustScene`).
+   * Existía una implementación de `buildDust` desconectada en
+   * `scene/particles.ts` — a diferencia de `scene/traffic.ts` (Fase 8.6),
+   * esa sí resultó equivalente al auditarla línea por línea contra este
+   * método, pero no se reutilizó directamente: se transcribió mecánicamente
+   * igual, manteniendo el patrón de un archivo autocontenido por builder ya
+   * usado en las Fases 8.1–8.6, sin crear una dependencia hacia
+   * `scene/particles.ts` (que sigue sin conectar). A diferencia de los
+   * builders de las Fases 8.1–8.6, este SÍ expone estado propio en
+   * `this.dustUniforms` — igual que `this.skyUniforms` en la Fase 8.1 —
+   * porque el loop de `start()` sigue leyendo/escribiendo
+   * `this.dustUniforms.time`/`mouseNDC`/`mouseStrength`/`introFade` cada
+   * frame (uniforms globales del loop, sin tocar). El `updater` de 11
+   * parámetros que devuelve `buildDustScene()` se envuelve acá en un
+   * closure de 3 parámetros igual que los builders anteriores, y solo
+   * cubre lo que cubría el `updater` original (`points.rotation.y` y
+   * copiar `keyLight`/`fillLight` en `warmLightPos`/`coolLightPos`); el
+   * resto de `this.dustUniforms` lo sigue actualizando el loop de
+   * `start()`, sin cambios. `this.updaters`/`start()` no se tocaron.
+   */
   private buildDust() {
-    const COUNT = this.quality.dustCount
-    const positions = new Float32Array(COUNT * 3)
-    const seeds = new Float32Array(COUNT * 3)
-    const sizes = new Float32Array(COUNT)
-
-    for (let i = 0; i < COUNT; i++) {
-      const i3 = i * 3
-      positions[i3] = (Math.random() - 0.5) * 55
-      positions[i3 + 1] = (Math.random() - 0.5) * 36
-      positions[i3 + 2] = (Math.random() - 0.5) * 46 - 8
-
-      seeds[i3] = Math.random() * Math.PI * 2
-      seeds[i3 + 1] = this.reducedMotion ? 0.02 : 0.12 + Math.random() * 0.25
-      seeds[i3 + 2] = this.reducedMotion ? 0.05 : 0.4 + Math.random() * 1.8
-
-      sizes[i] = 5 + Math.random() * 8
-    }
-
-    const geometry = new THREE.BufferGeometry()
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
-    geometry.setAttribute('seed', new THREE.BufferAttribute(seeds, 3))
-    geometry.setAttribute('aSize', new THREE.BufferAttribute(sizes, 1))
-
-    this.dustUniforms = {
-      time: { value: 0 },
-      mouseNDC: { value: new THREE.Vector2(2, 2) },
-      mouseStrength: { value: this.reducedMotion ? 0 : 1 },
-      warmLightPos: { value: this.keyLight.position.clone() },
-      coolLightPos: { value: this.fillLight.position.clone() },
-      introFade: { value: 0 },
-    }
-
-    const material = new THREE.ShaderMaterial({
-      uniforms: {
-        ...this.dustUniforms,
-        warmColor: { value: new THREE.Color(0xff6fa8) },
-        coolColor: { value: new THREE.Color(0x22d3ee) },
-      },
-      vertexShader: DUST_VERTEX_SHADER,
-      fragmentShader: DUST_FRAGMENT_SHADER,
-      transparent: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
+    const { uniforms, updater } = buildDustScene({
+      midGroup: this.midGroup,
+      quality: this.quality,
+      reducedMotion: this.reducedMotion,
+      keyLight: this.keyLight,
+      fillLight: this.fillLight,
     })
+    this.dustUniforms = uniforms
 
-    const points = new THREE.Points(geometry, material)
-    this.midGroup.add(points)
-
-    this.updaters.push((elapsed) => {
-      points.rotation.y = elapsed * 0.008
-      this.dustUniforms.warmLightPos.value.copy(this.keyLight.position)
-      this.dustUniforms.coolLightPos.value.copy(this.fillLight.position)
-    })
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
+    )
   }
 
   /** Letreros con las imágenes reales de GTA VI orbitando la torre — ver `IMAGE_BILLBOARDS`. */
@@ -1677,7 +1684,7 @@ export class GTA6CodexWebGLEngine {
 }
 
 /**
- * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 8.6) — deuda
+ * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 8.7) — deuda
  * técnica real, parcialmente atendida de forma incremental
  * ---------------------------------------------------------------------------
  * El repo tiene una extracción paralela, mayormente NO conectada, de los
@@ -1686,16 +1693,22 @@ export class GTA6CodexWebGLEngine {
  * `SceneUpdater` de este archivo). Salvo las excepciones de `scene/sky.ts`
  * (Fase 8.1), `scene/water.ts` (Fase 8.2), `scene/humidity-mist.ts`
  * (Fase 8.3), `scene/fireflies.ts` (Fase 8.4), `scene/atmospheric-haze.ts`
- * (Fase 8.5) y `scene/traffic-streaks.ts` (Fase 8.6, ver las seis abajo),
- * esos `buildXxx()` inline siguen siendo los que realmente corren en
+ * (Fase 8.5), `scene/traffic-streaks.ts` (Fase 8.6) y `scene/dust.ts`
+ * (Fase 8.7, ver las siete abajo), esos `buildXxx()` inline siguen siendo
+ * los que realmente corren en
  * producción; el resto de `scene/*.ts` es código muerto — incluyendo,
  * notablemente, `buildHumidityMist` y `buildFireflies` dentro de
- * `scene/particles.ts`, y `buildTrafficStreaks` dentro de
- * `scene/traffic.ts`: son implementaciones previas, ya existentes y sin
- * conectar, auditadas y descartadas en sus respectivas fases (no se
- * tocaron ni se reutilizaron, regla de "no modificar otros builders");
- * `scene/humidity-mist.ts`, `scene/fireflies.ts` y `scene/traffic-streaks.ts`
- * son los módulos nuevos y realmente conectados. Verificar que ambas implementaciones produzcan
+ * `scene/particles.ts` (no equivalentes en detalle a la versión real:
+ * ver Fases 8.3/8.4), `buildTrafficStreaks` dentro de `scene/traffic.ts`
+ * (no equivalente, ver Fase 8.6), y `buildDust` dentro de
+ * `scene/particles.ts` (SÍ equivalente al inline real, ver Fase 8.7, pero
+ * tampoco reutilizado directamente — se transcribió mecánicamente a un
+ * módulo propio para mantener el patrón de un archivo autocontenido por
+ * builder): son implementaciones previas, ya existentes y sin conectar,
+ * auditadas en sus respectivas fases (no se tocaron, regla de "no
+ * modificar otros builders"); `scene/humidity-mist.ts`,
+ * `scene/fireflies.ts`, `scene/traffic-streaks.ts` y `scene/dust.ts` son
+ * los módulos nuevos y realmente conectados. Verificar que ambas implementaciones produzcan
  * exactamente el mismo resultado visual, línea por línea, excede lo que
  * se puede confirmar sin correr el motor en un navegador — conectar esa
  * extracción a ciegas arriesgaría una regresión visual silenciosa.
@@ -1833,6 +1846,38 @@ export class GTA6CodexWebGLEngine {
  *    ni `reducedMotion` en la versión inline, así que tampoco lo hace
  *    acá. Mismos valores numéricos y mismo comportamiento que la
  *    versión inline.
+ *  - Fase 8.7: `scene/dust.ts` (`buildDust`) — partículas de polvo/bruma
+ *    en el plano medio. Mismo `COUNT` (`quality.dustCount`), misma
+ *    `BufferGeometry`/atributos (`position`, `seed` — con el mismo
+ *    condicional de `reducedMotion` sobre `seed[i3+1]`/`seed[i3+2]` que la
+ *    versión inline —, `aSize`), mismo `ShaderMaterial` (mismos shaders,
+ *    `transparent`/`depthWrite`/`blending`), mismos uniforms (`time`,
+ *    `mouseNDC`, `mouseStrength`, `warmLightPos`, `coolLightPos`,
+ *    `introFade`, `warmColor: 0xff6fa8`, `coolColor: 0x22d3ee`) y mismo
+ *    `updater` (`points.rotation.y = elapsed * 0.008` + copiar
+ *    `keyLight`/`fillLight` en `warmLightPos`/`coolLightPos`) que la
+ *    versión inline anterior. A diferencia de las Fases 8.1–8.6, este
+ *    builder SÍ expone estado propio en `this.dustUniforms` — mismo caso
+ *    que `this.skyUniforms` en la Fase 8.1 —, porque el loop de `start()`
+ *    sigue leyendo/escribiendo `this.dustUniforms.time`/`mouseNDC`/
+ *    `mouseStrength`/`introFade` cada frame; ese fragmento del loop
+ *    (uniforms globales) no se tocó. Existía una implementación de
+ *    `buildDust` desconectada en `scene/particles.ts` — a diferencia de
+ *    `scene/traffic.ts` (Fase 8.6), al auditarla línea por línea SÍ
+ *    resultó equivalente al inline real (mismo `COUNT`, geometría,
+ *    atributos, uniforms, material y updater, solo con la firma de 11
+ *    parámetros en vez del `push` directo de 1 parámetro que usaba el
+ *    inline). Aun siendo equivalente, no se reutilizó directamente
+ *    importándola desde `scene/particles.ts`: se transcribió
+ *    mecánicamente a `scene/dust.ts`, manteniendo el mismo patrón de
+ *    módulo autocontenido por builder usado en las Fases 8.1–8.6, sin
+ *    crear una dependencia hacia `scene/particles.ts` (que sigue sin
+ *    conectar, con `buildFireflies`/`buildHumidityMist` como código
+ *    muerto no equivalente, ver Fases 8.3/8.4). El `updater` de 11
+ *    parámetros que devuelve `buildDust()` (el de `scene/dust.ts`) se
+ *    adapta con el mismo patrón de closure que en las Fases 8.1–8.6, en
+ *    `buildDust()` (más arriba en este archivo, ahora el wrapper delgado
+ *    de la clase); `this.updaters`/`start()` no se tocaron.
  *
  * El cuerpo del loop de animación dentro de `start()` (cámara dinámica,
  * uniforms por frame, matemática visual del ciclo día/noche) sigue sin
