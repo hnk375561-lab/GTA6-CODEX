@@ -47,6 +47,13 @@ import { buildFireflies as buildFirefliesScene } from './scene/fireflies'
 // archivo). HAZE_VERTEX_SHADER/HAZE_FRAGMENT_SHADER ya no se importan acá
 // directamente: ahora los consume ./scene/atmospheric-haze.ts.
 import { buildAtmosphericHaze as buildAtmosphericHazeScene } from './scene/atmospheric-haze'
+// Fase 8.6: buildTrafficStreaks() migrado mecánicamente a
+// ./scene/traffic-streaks.ts (ver nota de arquitectura al pie del
+// archivo). Existía un `scene/traffic.ts` previo y desconectado, pero
+// auditado y descartado por no ser equivalente al inline real (usaba
+// fallbacks `|| 1`/`|| 0` sobre `entityPace`/`scrollVelocity` ausentes en
+// la versión que corre en producción) — no se reutilizó.
+import { buildTrafficStreaks as buildTrafficStreaksScene } from './scene/traffic-streaks'
 import { SHAFT_VERTEX_SHADER, SHAFT_FRAGMENT_SHADER, NEON_SIGN_FRAGMENT_SHADER } from './shaders/neon'
 import { ROAD_VERTEX_SHADER, ROAD_FRAGMENT_SHADER } from './shaders/road'
 import { SUN_VERTEX_SHADER, SUN_FRAGMENT_SHADER } from './shaders/sun'
@@ -1062,41 +1069,54 @@ export class GTA6CodexWebGLEngine {
     })
   }
 
-  /** Tráfico: faros blancos que se acercan y luces de freno rojas que se alejan, en loop sobre la carretera. */
+  /**
+   * Tráfico: faros blancos que se acercan y luces de freno rojas que se
+   * alejan, en loop sobre la carretera.
+   *
+   * Fase 8.6 — cantidad de streaks (`quality.trafficCount`),
+   * `BufferGeometry`/geometría (`PlaneGeometry(0.32, 3.2)`), posiciones
+   * iniciales, material (`MeshBasicMaterial`, mismos `transparent`/
+   * `opacity`/`blending`/`depthWrite`), velocidades (`14 + Math.random() * 10`)
+   * y updater idénticos a la versión inline anterior; solo se movieron a
+   * `./scene/traffic-streaks.ts` (`buildTrafficStreaksScene`). Existía un
+   * `scene/traffic.ts` previo y desconectado (código muerto, sin importar
+   * en este archivo) que se auditó antes de escribir: no era equivalente
+   * al inline real — envolvía `entityPace`/`scrollVelocity` con
+   * fallbacks `|| 1`/`|| 0` que la versión en producción no tiene — así
+   * que no se reutilizó; `scene/traffic-streaks.ts` es un módulo nuevo,
+   * transcripto mecánicamente desde este método. Igual que en las Fases
+   * 8.1–8.5, el `updater` que devuelve la función usa la firma común de
+   * 11 parámetros de `scene/*.ts` (ver nota de arquitectura al pie del
+   * archivo), incompatible con `SceneUpdater` de este motor — se lo
+   * envuelve acá en un closure de 3 parámetros igual que los builders
+   * anteriores, y se lo registra en `this.updaters` sin tocar
+   * `start()`/el loop de animación. `roadFlow`, `elapsed`, `intro` y
+   * `reducedMotion` siguen siendo estado propio de `engine.ts`: este
+   * builder en particular no los usaba en la versión inline (no
+   * referencia `roadFlow` ni `reducedMotion`), así que tampoco los usa
+   * acá — no se agregó nada que la versión original no tuviera.
+   */
   private buildTrafficStreaks() {
-    const COUNT = this.quality.trafficCount
-    const streaks: { mesh: THREE.Mesh; speed: number; dir: number }[] = []
-    const streakGeometry = new THREE.PlaneGeometry(0.32, 3.2)
-
-    for (let i = 0; i < COUNT; i++) {
-      const oncoming = i % 2 === 0
-      const color = oncoming ? 0xfff2d6 : 0xff2d4d
-      const material = new THREE.MeshBasicMaterial({
-        color,
-        transparent: true,
-        opacity: 0.85,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-      })
-      const mesh = new THREE.Mesh(streakGeometry, material)
-      const laneX = oncoming ? -4.6 - Math.random() * 1.6 : 4.6 + Math.random() * 1.6
-      mesh.position.set(laneX, -12.55, -60 + Math.random() * 90)
-      mesh.rotation.x = -Math.PI / 2
-      this.farGroup.add(mesh)
-      streaks.push({ mesh, speed: 14 + Math.random() * 10, dir: oncoming ? 1 : -1 })
-    }
-
-    this.updaters.push((_elapsed, delta, intro) => {
-      // Velocidad real del tráfico ligada al "pace" de la categoría: en una
-      // ficha de vehículo la carretera se siente notablemente más rápida;
-      // en una ubicación, se asienta.
-      streaks.forEach((s) => {
-        s.mesh.position.z += s.dir * s.speed * this.entityPace * delta * intro
-        if (s.mesh.position.z > 30) s.mesh.position.z = -60
-        if (s.mesh.position.z < -60) s.mesh.position.z = 30
-        s.mesh.scale.y = 1 + Math.min(this.scrollVelocity * 40, 3)
-      })
+    const updater = buildTrafficStreaksScene({
+      farGroup: this.farGroup,
+      quality: this.quality,
     })
+
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
+    )
   }
 
   // ---------------------------------------------------------------------
@@ -1657,7 +1677,7 @@ export class GTA6CodexWebGLEngine {
 }
 
 /**
- * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 8.5) — deuda
+ * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 8.6) — deuda
  * técnica real, parcialmente atendida de forma incremental
  * ---------------------------------------------------------------------------
  * El repo tiene una extracción paralela, mayormente NO conectada, de los
@@ -1665,16 +1685,17 @@ export class GTA6CodexWebGLEngine {
  * de más arriba, con un `Updater` de 11 parámetros distinto al
  * `SceneUpdater` de este archivo). Salvo las excepciones de `scene/sky.ts`
  * (Fase 8.1), `scene/water.ts` (Fase 8.2), `scene/humidity-mist.ts`
- * (Fase 8.3), `scene/fireflies.ts` (Fase 8.4) y `scene/atmospheric-haze.ts`
- * (Fase 8.5, ver las cinco abajo), esos `buildXxx()` inline siguen siendo
- * los que realmente corren en
+ * (Fase 8.3), `scene/fireflies.ts` (Fase 8.4), `scene/atmospheric-haze.ts`
+ * (Fase 8.5) y `scene/traffic-streaks.ts` (Fase 8.6, ver las seis abajo),
+ * esos `buildXxx()` inline siguen siendo los que realmente corren en
  * producción; el resto de `scene/*.ts` es código muerto — incluyendo,
  * notablemente, `buildHumidityMist` y `buildFireflies` dentro de
- * `scene/particles.ts`: son implementaciones previas, ya existentes y sin
+ * `scene/particles.ts`, y `buildTrafficStreaks` dentro de
+ * `scene/traffic.ts`: son implementaciones previas, ya existentes y sin
  * conectar, auditadas y descartadas en sus respectivas fases (no se
  * tocaron ni se reutilizaron, regla de "no modificar otros builders");
- * `scene/humidity-mist.ts` y `scene/fireflies.ts` son los módulos nuevos
- * y realmente conectados. Verificar que ambas implementaciones produzcan
+ * `scene/humidity-mist.ts`, `scene/fireflies.ts` y `scene/traffic-streaks.ts`
+ * son los módulos nuevos y realmente conectados. Verificar que ambas implementaciones produzcan
  * exactamente el mismo resultado visual, línea por línea, excede lo que
  * se puede confirmar sin correr el motor en un navegador — conectar esa
  * extracción a ciegas arriesgaría una regresión visual silenciosa.
@@ -1782,6 +1803,36 @@ export class GTA6CodexWebGLEngine {
  *    `Updater` — se mantiene como un `push` separado en `engine.ts`, tal
  *    como antes. Mismo orden de ejecución por frame y mismos valores
  *    numéricos que la versión inline.
+ *  - Fase 8.6: `scene/traffic-streaks.ts` (`buildTrafficStreaks`) —
+ *    faros blancos que se acercan y luces de freno rojas que se alejan,
+ *    en loop sobre la carretera. Mismo `COUNT` de streaks
+ *    (`quality.trafficCount`), misma geometría (`PlaneGeometry(0.32, 3.2)`
+ *    compartida entre todos los streaks), mismas posiciones iniciales
+ *    (`laneX` según `oncoming`, `y = -12.55`, `z = -60 + Math.random() * 90`,
+ *    `rotation.x = -Math.PI / 2`), mismo `MeshBasicMaterial` (mismo
+ *    `color` alternando `0xfff2d6`/`0xff2d4d`, `transparent`/`opacity`/
+ *    `blending`/`depthWrite`) y mismas velocidades
+ *    (`14 + Math.random() * 10`) que la versión inline anterior. Este
+ *    builder no usa `ShaderMaterial`/uniforms ni `ROAD_FLOW_WRAP`/
+ *    `ROAD_DASH_PERIOD` — esas constantes las consume el road builder y
+ *    el acumulador `this.roadFlow`, ninguno de los dos tocado por esta
+ *    fase. Existía un `scene/traffic.ts` previo, desconectado, con una
+ *    implementación de `buildTrafficStreaks` — se auditó contra el
+ *    inline real y NO era equivalente: envolvía `entityPace` y
+ *    `scrollVelocity` con fallbacks `(entityPace || 1)`/
+ *    `(scrollVelocity || 0)` que la versión en producción no tiene (esta
+ *    multiplica directamente por `this.entityPace`/`this.scrollVelocity`
+ *    sin fallback), por lo que ese archivo no se tocó ni se reutilizó;
+ *    `scene/traffic-streaks.ts` es un módulo nuevo, transcripto
+ *    mecánicamente desde el inline real. El `updater` de 11 parámetros
+ *    se adapta con el mismo patrón de closure que en las Fases
+ *    8.1–8.5, en `buildTrafficStreaks()` (más arriba en este archivo);
+ *    `this.updaters`/`start()` no se tocaron. `roadFlow`, `elapsed`,
+ *    `intro` y `reducedMotion` siguen siendo estado propio de
+ *    `engine.ts`; este builder en particular no referenciaba `roadFlow`
+ *    ni `reducedMotion` en la versión inline, así que tampoco lo hace
+ *    acá. Mismos valores numéricos y mismo comportamiento que la
+ *    versión inline.
  *
  * El cuerpo del loop de animación dentro de `start()` (cámara dinámica,
  * uniforms por frame, matemática visual del ciclo día/noche) sigue sin
