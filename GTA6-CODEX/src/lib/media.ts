@@ -1,6 +1,7 @@
 import type { Entity, Trailer } from '@/types'
 import { EntityType } from '@/types'
 import type { MediaAsset, RenderableMedia } from '@/types/media'
+import type { ResolvedDisplayImage } from './images'
 import { getEntitiesByTypeSync } from './entities'
 import { resolveEntityImage } from './images'
 
@@ -68,6 +69,44 @@ export function resolveTrailerThumbnail(trailer: Trailer): { src: string; alt: s
     src: `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`,
     alt: trailer.title,
   }
+}
+
+/**
+ * Resuelve la imagen a mostrar para una entidad, en orden:
+ *  1) archivo local por convención (`resolveEntityImage`, ver lib/images.ts);
+ *  2) para trailers sin key art propia: miniatura pública de YouTube
+ *     (`resolveTrailerThumbnail`, arriba);
+ *  3) null → el caller (EntityImage) pinta el fallback 100% CSS.
+ *
+ * IMPORTANTE: depende de `fs` (vía `resolveEntityImage`), así que solo
+ * puede llamarse desde código de servidor (Server Components, `page.tsx`,
+ * u otros módulos de `lib/`). `EntityImage.tsx` ya NO llama a esto — lo
+ * hacía antes, pero al ser un componente renderizado también dentro de
+ * árboles `'use client'` (`EntityCard`, `SearchClient`), Next.js lo
+ * empaqueta para el bundle del navegador, donde `fs` no existe
+ * (`fs.existsSync is not a function`). Los callers de servidor ahora
+ * resuelven la imagen acá y la pasan como prop plano ya serializado.
+ */
+export function resolveEntityDisplayImage(entity: Entity): ResolvedDisplayImage | null {
+  const local = resolveEntityImage(entity)
+  if (local) return { src: local.src, alt: local.alt, remote: false }
+
+  if (entity.type === EntityType.TRAILER) {
+    const remote = resolveTrailerThumbnail(entity as Trailer)
+    if (remote) return { ...remote, remote: true }
+  }
+
+  return null
+}
+
+/**
+ * Variante en lote de `resolveEntityDisplayImage`, para callers de
+ * servidor que necesitan pasar un mapa `slug -> imagen resuelta` a un
+ * componente cliente (ej. `EntityListExplorer`, `SearchClient`) que
+ * renderiza muchas entidades a la vez sin poder tocar `fs` por su cuenta.
+ */
+export function getEntityImageMap(entities: Entity[]): Record<string, ResolvedDisplayImage | null> {
+  return Object.fromEntries(entities.map((e) => [e.slug, resolveEntityDisplayImage(e)]))
 }
 
 const CACHE_ENABLED = process.env.NODE_ENV === 'production'

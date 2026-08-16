@@ -1,12 +1,27 @@
 import Image from 'next/image'
-import { Entity, EntityType, Trailer } from '@/types'
-import { resolveEntityImage } from '@/lib/images'
-import { resolveTrailerThumbnail } from '@/lib/media'
+import { Entity, EntityType } from '@/types'
+import type { ResolvedDisplayImage } from '@/lib/images'
 import { GridPattern } from '@/components/ui/GridPattern'
 import { cn } from '@/lib/utils'
 
 interface EntityImageProps {
   entity: Entity
+  /**
+   * Imagen ya resuelta por el caller de servidor (ver
+   * `resolveEntityDisplayImage`/`getEntityImageMap` en `@/lib/media.ts`),
+   * o `null` si la entidad no tiene ninguna. `undefined` se trata igual
+   * que `null` (fallback CSS) — se acepta para no forzar a cada caller a
+   * poner `?? null` explícito.
+   *
+   * Este componente se renderiza tanto desde Server Components como desde
+   * dentro de árboles `'use client'` (`EntityCard`, `SearchClient`), y en
+   * ese segundo caso Next.js lo empaqueta para el navegador. Por eso NO
+   * puede resolver la imagen acá mismo con `fs` (como hacía antes): el
+   * navegador no tiene `fs`, y esa llamada rompía con
+   * "fs.existsSync is not a function". Resolver siempre aguas arriba, en
+   * servidor, y pasar el resultado ya serializado como esta prop.
+   */
+  image?: ResolvedDisplayImage | null
   /**
    * 'thumbnail' → card de listado (más ancha que alta, sin prioridad de carga)
    * 'portrait'  → sidebar de la ficha individual (más alta, sin prioridad de carga)
@@ -101,27 +116,8 @@ const CATEGORY_FALLBACK_LABEL: Partial<Record<EntityType, string>> = {
   [EntityType.TRAILER]: 'Sin miniatura verificada',
 }
 
-/**
- * Resuelve la imagen a usar para esta entidad, en orden:
- *  1) archivo local por convención (`resolveEntityImage`, ver lib/images.ts);
- *  2) para trailers sin key art propia: miniatura pública de YouTube
- *     (`resolveTrailerThumbnail`, mismo host que ya usa el embed);
- *  3) null → el caller pinta el fallback 100% CSS (nunca un hueco vacío).
- */
-function resolveDisplayImage(entity: Entity): { src: string; alt: string; remote: boolean } | null {
-  const local = resolveEntityImage(entity)
-  if (local) return { src: local.src, alt: local.alt, remote: false }
-
-  if (entity.type === EntityType.TRAILER) {
-    const remote = resolveTrailerThumbnail(entity as Trailer)
-    if (remote) return { ...remote, remote: true }
-  }
-
-  return null
-}
-
-export function EntityImage({ entity, variant = 'thumbnail', className }: EntityImageProps) {
-  const resolved = resolveDisplayImage(entity)
+export function EntityImage({ entity, image, variant = 'thumbnail', className }: EntityImageProps) {
+  const resolved = image ?? null
   const isAvatar = variant === 'avatar'
 
   return (

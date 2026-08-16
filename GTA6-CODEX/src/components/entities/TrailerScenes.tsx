@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { Trailer, TrailerScene, Entity, EntityType } from '@/types'
 import { getEntity } from '@/lib/entities'
+import { resolveEntityDisplayImage } from '@/lib/media'
 import { EntityImage } from '@/components/entities/EntityImage'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { ENTITY_TYPE_LABELS, ENTITY_TYPE_GROUP_ORDER } from '@/lib/entity-labels'
@@ -135,7 +136,7 @@ export async function TrailerScenes({ trailer }: TrailerScenesProps) {
                               href={`/${entity.type}/${entity.slug}`}
                               className="group flex items-center gap-2 rounded-full border border-gta-border bg-gta-card/60 py-1 pl-1 pr-3 transition-colors hover:border-gta-accent/60 hover:bg-gta-darker/60"
                             >
-                              <EntityImage entity={entity} variant="avatar" className="h-6 w-6 rounded-full" />
+                              <EntityImage entity={entity} image={resolveEntityDisplayImage(entity)} variant="avatar" className="h-6 w-6 rounded-full" />
                               <span className="text-xs text-gta-text-secondary transition-colors group-hover:text-gta-text">
                                 <span className="text-gta-text-secondary/70">{relation}:</span>{' '}
                                 <span className="font-medium text-gta-text">{entity.title}</span>

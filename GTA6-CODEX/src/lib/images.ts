@@ -42,6 +42,20 @@ export interface ResolvedEntityImage {
 }
 
 /**
+ * Forma "display-ready" de una imagen ya resuelta (local o remota), la
+ * misma que antes calculaba `EntityImage.tsx` en cliente. Se define acá
+ * (junto al resto de la resolución de imágenes, que depende de `fs` y por
+ * lo tanto SOLO puede ejecutarse en servidor) para que `EntityImage` deje
+ * de importar `fs` transitivamente: los callers server-side resuelven esto
+ * y lo pasan como prop plano (serializable) a los componentes cliente.
+ */
+export interface ResolvedDisplayImage {
+  src: string
+  alt: string
+  remote: boolean
+}
+
+/**
  * CACHÉ DE LISTADOS DE DIRECTORIO
  * ==================================
  * `resolveEntityImage` original hacía hasta 5 `fs.existsSync` (uno por

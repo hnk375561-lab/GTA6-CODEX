@@ -3,6 +3,7 @@ import { Entity, EntityType } from '@/types'
 import { getRelationLabel } from '@/lib/relations'
 import { Badge } from '@/components/ui/Badge'
 import { EntityImage } from '@/components/entities/EntityImage'
+import { resolveEntityDisplayImage } from '@/lib/media'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 
 const TYPE_LABELS: Record<EntityType, string> = {
@@ -58,6 +59,7 @@ export function RelationsPanel({ related }: RelationsPanelProps) {
                 >
                   <EntityImage
                     entity={e}
+                    image={resolveEntityDisplayImage(e)}
                     variant="avatar"
                     className="h-11 w-11 shrink-0 transition-transform duration-300 group-hover:scale-105"
                   />

@@ -7,6 +7,7 @@ import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { EntityImage } from '@/components/entities/EntityImage'
+import type { ResolvedDisplayImage } from '@/lib/images'
 import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
 import { cn } from '@/lib/utils'
 
@@ -122,6 +123,11 @@ function getQuickFacts(entity: Entity): Array<{ label: string; value: string }> 
 
 interface EntityCardProps {
   entity: Entity
+  /** Imagen ya resuelta por el caller de servidor (ver
+   *  `resolveEntityDisplayImage`/`getEntityImageMap` en `@/lib/media.ts`).
+   *  `EntityCard` es `'use client'`, así que no puede resolverla por su
+   *  cuenta con `fs` — ver el comentario largo en `EntityImage.tsx`. */
+  image?: ResolvedDisplayImage | null
   /** Label legible del tipo (ej. "Personajes"). Opcional: si no se pasa,
    *  se resuelve de `ENTITY_TYPE_LABELS` (fuente compartida en
    *  lib/entity-labels.ts) — se deja overrideable por si el caller ya
@@ -143,7 +149,7 @@ interface EntityCardProps {
  * cierre siempre visible ("Ver ficha") además de que la card entera ya es
  * un link real a la ficha (Fase 8, punto 3: ningún botón decorativo).
  */
-export function EntityCard({ entity, typeLabel, clipUrl, className }: EntityCardProps) {
+export function EntityCard({ entity, image, typeLabel, clipUrl, className }: EntityCardProps) {
   const [hovering, setHovering] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const isTrailer = entity.type === EntityType.TRAILER && 'scenes' in entity
@@ -181,7 +187,7 @@ export function EntityCard({ entity, typeLabel, clipUrl, className }: EntityCard
           onMouseEnter={clipUrl ? handleEnter : undefined}
           onMouseLeave={clipUrl ? handleLeave : undefined}
         >
-          <EntityImage entity={entity} variant="thumbnail" className="rounded-none border-x-0 border-t-0" />
+          <EntityImage entity={entity} image={image} variant="thumbnail" className="rounded-none border-x-0 border-t-0" />
 
           {clipUrl && (
             <>

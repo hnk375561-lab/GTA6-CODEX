@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { EntityType } from '@/types'
 import { getFeaturedEntities, getEntityCount, getEntityCountsByType } from '@/lib/entities'
-import { getCharacterClipUrl } from '@/lib/media'
+import { getCharacterClipUrl, resolveEntityDisplayImage } from '@/lib/media'
 import { generateHomepageMetadata, generateBreadcrumbJsonLd } from '@/lib/seo'
 import { Card } from '@/components/ui/Card'
 import { Reveal } from '@/components/ui/Reveal'
@@ -170,6 +170,7 @@ export default async function HomePage() {
                 <EntityCard
                   key={`${entity.type}-${entity.slug}`}
                   entity={entity}
+                  image={resolveEntityDisplayImage(entity)}
                   clipUrl={entity.type === EntityType.CHARACTER ? getCharacterClipUrl(entity.slug) : undefined}
                 />
               ))}

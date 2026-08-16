@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { EntityType, type Trailer } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
+import { resolveEntityDisplayImage } from '@/lib/media'
 import { getBidirectionalRelatedEntitiesWithLabel } from '@/lib/relations'
 import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo'
 import { Card, CardBody } from '@/components/ui/Card'
@@ -286,7 +287,7 @@ export default async function EntityPage({ params }: PageProps) {
           <aside className="space-y-6">
             {ENTITY_IMAGE_CATEGORIES.includes(type) && (
               <Reveal direction="right">
-                <EntityImage entity={entity} variant="portrait" />
+                <EntityImage entity={entity} image={resolveEntityDisplayImage(entity)} variant="portrait" />
               </Reveal>
             )}
 

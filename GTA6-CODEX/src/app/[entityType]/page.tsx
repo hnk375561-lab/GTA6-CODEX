@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { EntityType } from '@/types'
 import { getEntitiesByType } from '@/lib/entities'
-import { getCoverArtVideoAsset, resolveMediaRender, getCharacterClipUrl } from '@/lib/media'
+import { getCoverArtVideoAsset, resolveMediaRender, getCharacterClipUrl, getEntityImageMap } from '@/lib/media'
 import { generateListMetadata } from '@/lib/seo'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
@@ -127,6 +127,7 @@ export default async function EntityTypePage({ params }: PageProps) {
           type={type}
           entities={entities}
           typeLabel={label}
+          imageBySlug={getEntityImageMap(entities)}
           clipUrlBySlug={
             type === EntityType.CHARACTER
               ? Object.fromEntries(

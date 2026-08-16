@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { getAllEntities, getEntityCountsByType } from '@/lib/entities'
+import { getEntityImageMap } from '@/lib/media'
 import { SearchClient } from '@/components/search/SearchClient'
 import { Reveal } from '@/components/ui/Reveal'
 
@@ -47,7 +48,7 @@ export default async function SearchPage() {
           </Reveal>
         </div>
 
-        <SearchClient entities={entities} counts={counts} />
+        <SearchClient entities={entities} counts={counts} imageBySlug={getEntityImageMap(entities)} />
       </div>
     </section>
   )

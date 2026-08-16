@@ -7,6 +7,7 @@ import type { Entity, EntityType } from '@/types'
 import { Reveal } from '@/components/ui/Reveal'
 import { EntityCard } from '@/components/entities/EntityCard'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
+import type { ResolvedDisplayImage } from '@/lib/images'
 import { cn } from '@/lib/utils'
 
 const STATUS_LABELS = {
@@ -25,6 +26,11 @@ interface EntityListExplorerProps {
    *  registrado (ver getCharacterClipUrl en lib/media.ts). El caller server
    *  (`[entityType]/page.tsx`) resuelve este mapa una sola vez. */
   clipUrlBySlug?: Record<string, string>
+  /** slug → imagen ya resuelta (ver `getEntityImageMap` en `@/lib/media.ts`).
+   *  Este componente es `'use client'`, así que no puede resolver imágenes
+   *  por su cuenta con `fs` — el caller server (`[entityType]/page.tsx`)
+   *  resuelve el mapa completo una sola vez y lo pasa acá. */
+  imageBySlug?: Record<string, ResolvedDisplayImage | null>
 }
 
 /**
@@ -37,7 +43,7 @@ interface EntityListExplorerProps {
  * herramientas real con conteos por estado y estados vacíos específicos
  * para "sin resultados de búsqueda" vs. "categoría todavía vacía".
  */
-export function EntityListExplorer({ entities, typeLabel, clipUrlBySlug }: EntityListExplorerProps) {
+export function EntityListExplorer({ entities, typeLabel, clipUrlBySlug, imageBySlug }: EntityListExplorerProps) {
   const [query, setQuery] = useState('')
   const [status, setStatus] = useState<StatusFilter>('todos')
   const debouncedQuery = useDebouncedValue(query, 200)
@@ -189,6 +195,7 @@ export function EntityListExplorer({ entities, typeLabel, clipUrlBySlug }: Entit
             <Reveal key={entity.slug} delay={(i % 6) * 80}>
               <EntityCard
                 entity={entity}
+                image={imageBySlug?.[entity.slug]}
                 typeLabel={typeLabel}
                 clipUrl={clipUrlBySlug?.[entity.slug]}
               />
