@@ -93,13 +93,157 @@ import { webglSceneBus, type SceneFocus, type EntityAtmosphere } from './scene-b
  * portada de GTA VI (la pieza más icónica) más que al resto — profundidad
  * real de escena, no una sola capa moviéndose a una velocidad fija.
  *
+ * v8 — mini motor ambiental procedural AAA (Leonida / Miami / Rockstar)
+ * ---------------------------------------------------------------------------
+ * Evolución máxima sin tocar la API ni los bridges externos:
+ *
+ *  - Ciclo día→atardecer→noche→madrugada (`dayPhase`) impulsado por tiempo,
+ *    scroll y `sceneMood` — niebla, cielo, luces y grading coheren.
+ *  - Perfil de calidad adaptativo (desktop / mobile / reduced-motion).
+ *  - Cúpula celeste procedural con estrellas, gradiente y bruma atmosférica.
+ *  - Capas de haze volumétrico multicapa con parallax y scroll.
+ *  - Carretera húmeda con asfalto specular, charcos y heat-shimmer.
+ *  - Bahía/reflejo de agua en el horizonte (Leonida costera).
+ *  - Partículas: bruma mejorada, luciérnagas, gotas de humedad/nocturnas.
+ *  - Vida urbana: letreros neón distantes, ventanas parpadeantes, haz extra.
+ *  - Color grading cinematográfico teal-orange + humedad + bloom adaptativo.
+ *  - Cámara: 4º encuadre, handheld sutil por `entityUnrest`, respiración.
+ *
  * Puntos de extensión:
  *  - `buildXxx()` construyen piezas de escena independientes.
  *  - `updaters` centraliza el loop de animación.
  *  - `SHOTS` es la lista de encuadres; agregar uno más los suma a la ronda.
+ *
+ * v8.1 — endurecimiento (robustez / mantenimiento), sin tocar la API pública
+ * ---------------------------------------------------------------------------
+ * Misma arquitectura y mismo comportamiento visual observable; se cierran
+ * riesgos que hoy no se notan pero podían romperse a futuro:
+ *
+ *  - `dayPhase` ahora se interpola por el camino más corto en el círculo
+ *    [0,1) (`lerpCyclic01`): antes, un lerp lineal normal hacía que el
+ *    ciclo día/noche "rebobinara" visualmente cada vez que el target
+ *    cruzaba el punto de wraparound (p. ej. 0.98 → 0.02).
+ *  - `roadFlow` ahora se envuelve en un múltiplo exacto del período de la
+ *    carretera (`ROAD_DASH_PERIOD`) en vez de crecer sin límite: pasado a
+ *    un `float` de shader (precisión simple), un acumulador sin cota
+ *    termina degradando el patrón de la carretera en sesiones largas.
+ *  - `computeShotFrame` ya no puede dividir por cero si en el futuro
+ *    `SHOTS` queda vacío o con duración total 0.
+ *  - `BokehPass` (profundidad de campo) ya no se instancia cuando el
+ *    perfil de calidad no lo usa (`enableBokeh: false`): antes se
+ *    reservaban sus render targets igual, justo en los dispositivos de
+ *    gama baja que menos memoria de GPU pueden ceder.
+ *  - El render target intermedio del entorno PMREM se libera por completo
+ *    (antes solo se descartaba su textura) y la geometría/material
+ *    temporales de ese paso también se liberan.
+ *  - `dispose()` es idempotente (`if (this.disposed) return`) y `start()`
+ *    no puede quedar corriendo dos loops de animación en paralelo si se
+ *    invoca más de una vez — ambos casos son reales bajo Strict Mode /
+ *    remounts de React.
+ *  - Todos los passes del composer se liberan de forma genérica
+ *    (`pass.dispose()`), así un pass nuevo que se agregue a `SHOTS`-style
+ *    al pipeline no queda fugando memoria por olvido.
+ *  - FOV, densidad de niebla y fuerza de bloom quedan acotados a rangos
+ *    seguros: hoy nunca se salen de rango, pero quedan protegidos si en
+ *    el futuro se agregan categorías/estados con valores más extremos en
+ *    `CATEGORY_FRAME` / `CATEGORY_PACE` / `STATUS_UNREST`.
+ *  - Carga de texturas de los billboards con `onError`, para que una
+ *    imagen faltante o movida se note en consola en vez de quedar como un
+ *    letrero invisible sin explicación.
+ *  - Se retira `towerShaderRefs`: quedaba poblado pero nunca se leía (el
+ *    `onBeforeCompile` ya actualiza el uniform por referencia cerrada), y
+ *    como código muerto invitaba a futuras confusiones.
  */
 
 type Updater = (elapsed: number, delta: number, intro: number) => void
+
+/** Perfil de calidad: degrada partículas, post-proceso y DPR en mobile. */
+interface QualityProfile {
+  tier: 'high' | 'medium' | 'low'
+  maxDpr: number
+  dustCount: number
+  fireflyCount: number
+  mistCount: number
+  trafficCount: number
+  enableBokeh: boolean
+  bloomScale: number
+  hazeLayers: number
+}
+
+function detectQualityProfile(reducedMotion: boolean): QualityProfile {
+  const w = typeof window !== 'undefined' ? window.innerWidth : 1920
+  const coarse = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches
+  const lowEnd = w < 480 || (coarse && w < 768)
+  const mobile = coarse && w < 1024
+
+  if (reducedMotion || lowEnd) {
+    return {
+      tier: 'low',
+      maxDpr: 1,
+      dustCount: 120,
+      fireflyCount: 0,
+      mistCount: 40,
+      trafficCount: 6,
+      enableBokeh: false,
+      bloomScale: 0.55,
+      hazeLayers: 1,
+    }
+  }
+  if (mobile) {
+    return {
+      tier: 'medium',
+      maxDpr: 1.35,
+      dustCount: 260,
+      fireflyCount: 35,
+      mistCount: 90,
+      trafficCount: 9,
+      enableBokeh: false,
+      bloomScale: 0.75,
+      hazeLayers: 2,
+    }
+  }
+  return {
+    tier: 'high',
+    maxDpr: 2,
+    dustCount: 520,
+    fireflyCount: 80,
+    mistCount: 180,
+    trafficCount: 14,
+    enableBokeh: true,
+    bloomScale: 1,
+    hazeLayers: 3,
+  }
+}
+
+/** Paleta por fase del día: 0=atardecer dorado, 0.5=noche neón, 1=madrugada azul. */
+function lerpDayColor(phase: number, dusk: number, night: number, dawn: number): number {
+  const p = ((phase % 1) + 1) % 1
+  if (p < 0.33) {
+    const t = p / 0.33
+    return dusk + (night - dusk) * t
+  }
+  if (p < 0.66) {
+    const t = (p - 0.33) / 0.33
+    return night + (dawn - night) * t
+  }
+  const t = (p - 0.66) / 0.34
+  return dawn + (dusk - dawn) * t
+}
+
+/**
+ * Interpola en el círculo unitario [0,1) tomando siempre el camino más
+ * corto, para que un valor cíclico (como `dayPhase`) nunca "rebobine"
+ * visualmente al cruzar el punto de wraparound (p. ej. de 0.98 a 0.02).
+ * Un `lerp` lineal común recorrería el camino largo (0.98 → 0.5 → 0.02),
+ * lo cual se ve como el ciclo día/noche retrocediendo de golpe.
+ */
+function lerpCyclic01(current: number, target: number, t: number): number {
+  let delta = (target - current) % 1
+  if (delta > 0.5) delta -= 1
+  if (delta < -0.5) delta += 1
+  const next = current + delta * t
+  return ((next % 1) + 1) % 1
+}
 
 // ---------------------------------------------------------------------------
 // Shaders
@@ -114,6 +258,9 @@ const GRADE_SHADER = {
     chromaStrength: { value: 0.0016 },
     chromaKick: { value: 0.0 },
     fadeIn: { value: 0 },
+    dayPhase: { value: 0.5 },
+    humidity: { value: 0.45 },
+    bloomMix: { value: 0.12 },
   },
   vertexShader: /* glsl */ `
     varying vec2 vUv;
@@ -130,10 +277,22 @@ const GRADE_SHADER = {
     uniform float chromaStrength;
     uniform float chromaKick;
     uniform float fadeIn;
+    uniform float dayPhase;
+    uniform float humidity;
+    uniform float bloomMix;
     varying vec2 vUv;
 
-    float noise(vec2 co) {
+    float hash(vec2 co) {
       return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
+    }
+
+    vec3 tealOrangeGrade(vec3 c, float warmth) {
+      vec3 shadowTint = mix(vec3(0.05, 0.12, 0.18), vec3(0.12, 0.04, 0.08), warmth);
+      vec3 highlightTint = mix(vec3(0.08, 0.22, 0.28), vec3(0.28, 0.10, 0.16), warmth);
+      float luma = dot(c, vec3(0.2126, 0.7152, 0.0722));
+      c = mix(c * shadowTint * 2.2, c * highlightTint * 1.15, smoothstep(0.08, 0.72, luma));
+      c = pow(c, vec3(0.94 + warmth * 0.04));
+      return c;
     }
 
     void main() {
@@ -145,17 +304,23 @@ const GRADE_SHADER = {
       float b = texture2D(tDiffuse, vUv - dir).b;
       vec4 color = vec4(r, g, b, 1.0);
 
+      float warmth = 0.5 + 0.5 * sin(dayPhase * 6.28318);
+      color.rgb = tealOrangeGrade(color.rgb, warmth);
+      color.rgb = mix(color.rgb, color.rgb * vec3(0.88, 0.94, 1.06), humidity * 0.35);
+
+      float hazeBand = smoothstep(0.15, 0.55, vUv.y) * (0.08 + humidity * 0.14);
+      vec3 hazeCol = mix(vec3(0.18, 0.06, 0.22), vec3(0.06, 0.14, 0.24), dayPhase);
+      color.rgb = mix(color.rgb, hazeCol, hazeBand);
+
+      color.rgb += color.rgb * bloomMix;
+
       float vignette = 1.0 - dot(centered, centered) * vignetteStrength;
       color.rgb *= vignette;
 
-      float gr = (noise(vUv * vec2(1920.0, 1080.0) + time) - 0.5) * grainStrength;
+      float gr = (hash(vUv * vec2(1920.0, 1080.0) + time) - 0.5) * grainStrength;
       color.rgb += gr;
+      color.b += gr * humidity * 0.4;
 
-      // Apertura de escena: iris real desde el centro (máscara circular que
-      // se expande), no un fundido plano a negro. "fadeIn" es el progreso
-      // 0→1 de esa apertura; el borde del iris tiene un halo de neón rosa
-      // breve (una línea de luz corriendo hacia afuera) para que se sienta
-      // como un cartel encendiéndose, no un simple crossfade.
       float distFromCenter = length(centered);
       float irisRadius = fadeIn * 0.85;
       float iris = smoothstep(irisRadius, irisRadius - 0.14, distFromCenter);
@@ -240,47 +405,6 @@ const ROAD_VERTEX_SHADER = /* glsl */ `
     vec4 worldPos = modelMatrix * vec4(position, 1.0);
     vWorldPos = worldPos.xyz;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-  }
-`
-
-const ROAD_FRAGMENT_SHADER = /* glsl */ `
-  uniform float time;
-  uniform float flow;
-  uniform vec3 colorA;
-  uniform vec3 colorB;
-  uniform float introFade;
-  varying vec3 vWorldPos;
-
-  void main() {
-    float dist = length(vWorldPos.xz);
-    float radialFade = smoothstep(90.0, 10.0, dist);
-    if (radialFade <= 0.001) discard;
-
-    float x = vWorldPos.x;
-    float z = vWorldPos.z;
-
-    // Líneas de carril laterales, continuas, en cian.
-    float laneHalfWidth = 7.5;
-    float edgeDist = min(abs(x - laneHalfWidth), abs(x + laneHalfWidth));
-    float edgeLine = 1.0 - smoothstep(0.0, 0.16, edgeDist);
-
-    // Línea central discontinua en magenta. "flow" (no "time") es lo que
-    // corre: un acumulador aparte que el motor avanza a un ritmo distinto
-    // según el "pace" de la categoría de contenido (vehículos = rápido,
-    // ubicaciones = lento) sin afectar el pulso ambiental de abajo.
-    float dashLength = 4.0;
-    float dashGap = 2.6;
-    float period = dashLength + dashGap;
-    float alongDash = mod(z - flow, period);
-    float centerMask = 1.0 - smoothstep(0.0, 0.14, abs(x));
-    float dash = step(alongDash, dashLength) * centerMask;
-
-    float pulse = 0.5 + 0.5 * sin(time * 0.18 + dist * 0.05);
-    vec3 edgeTint = mix(colorA, colorB, pulse * 0.2);
-
-    vec3 color = edgeTint * edgeLine + colorB * dash;
-    float alpha = (edgeLine * 0.55 + dash * 0.95) * radialFade * introFade;
-    gl_FragColor = vec4(color, alpha);
   }
 `
 
@@ -410,6 +534,260 @@ const BILLBOARD_FRAGMENT_SHADER = /* glsl */ `
   }
 `
 
+/** Cúpula celeste procedural: gradiente dinámico + campo estelar + bruma alta. */
+const SKY_VERTEX_SHADER = /* glsl */ `
+  varying vec3 vWorldPos;
+  void main() {
+    vec4 wp = modelMatrix * vec4(position, 1.0);
+    vWorldPos = wp.xyz;
+    gl_Position = projectionMatrix * viewMatrix * wp;
+  }
+`
+
+const SKY_FRAGMENT_SHADER = /* glsl */ `
+  uniform float time;
+  uniform float dayPhase;
+  uniform float introFade;
+  varying vec3 vWorldPos;
+
+  float starField(vec3 dir) {
+    vec2 uv = dir.xz / (abs(dir.y) + 0.08);
+    float n = fract(sin(dot(floor(uv * 180.0), vec2(12.9898, 78.233))) * 43758.5453);
+    float twinkle = 0.55 + 0.45 * sin(time * 2.4 + n * 40.0);
+    float star = step(0.992, n) * twinkle;
+    return star * smoothstep(0.05, 0.35, dir.y);
+  }
+
+  void main() {
+    vec3 dir = normalize(vWorldPos);
+    float h = dir.y * 0.5 + 0.5;
+
+    vec3 duskTop = vec3(0.12, 0.08, 0.28);
+    vec3 duskMid = vec3(0.85, 0.28, 0.42);
+    vec3 duskBot = vec3(0.18, 0.06, 0.12);
+
+    vec3 nightTop = vec3(0.04, 0.05, 0.14);
+    vec3 nightMid = vec3(0.55, 0.12, 0.38);
+    vec3 nightBot = vec3(0.02, 0.02, 0.06);
+
+    vec3 dawnTop = vec3(0.08, 0.14, 0.32);
+    vec3 dawnMid = vec3(0.42, 0.22, 0.55);
+    vec3 dawnBot = vec3(0.10, 0.08, 0.18);
+
+    float p = dayPhase;
+    vec3 top = mix(mix(duskTop, nightTop, smoothstep(0.0, 0.5, p)), dawnTop, smoothstep(0.5, 1.0, p));
+    vec3 mid = mix(mix(duskMid, nightMid, smoothstep(0.0, 0.5, p)), dawnMid, smoothstep(0.5, 1.0, p));
+    vec3 bot = mix(mix(duskBot, nightBot, smoothstep(0.0, 0.5, p)), dawnBot, smoothstep(0.5, 1.0, p));
+
+    vec3 col = mix(bot, mid, smoothstep(0.0, 0.45, h));
+    col = mix(col, top, smoothstep(0.45, 1.0, h));
+
+    float nightness = 1.0 - abs(p - 0.5) * 2.0;
+    col += vec3(starField(dir)) * nightness * introFade;
+
+    float haze = smoothstep(0.0, 0.22, h) * (0.12 + 0.08 * sin(time * 0.04));
+    col = mix(col, mid * 1.2, haze);
+
+    gl_FragColor = vec4(col, 1.0);
+  }
+`
+
+/** Capas de haze volumétrico con ruido FBM y parallax. */
+const HAZE_VERTEX_SHADER = /* glsl */ `
+  varying vec2 vUv;
+  varying float vDepth;
+  void main() {
+    vUv = uv;
+    vec4 mv = modelViewMatrix * vec4(position, 1.0);
+    vDepth = -mv.z;
+    gl_Position = projectionMatrix * mv;
+  }
+`
+
+const HAZE_FRAGMENT_SHADER = /* glsl */ `
+  uniform float time;
+  uniform float introFade;
+  uniform vec3 hazeColor;
+  uniform float layerSeed;
+  varying vec2 vUv;
+  varying float vDepth;
+
+  float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+  float noise(vec2 p) {
+    vec2 i = floor(p); vec2 f = fract(p);
+    f = f * f * (3.0 - 2.0 * f);
+    return mix(mix(hash(i), hash(i + vec2(1,0)), f.x), mix(hash(i + vec2(0,1)), hash(i + vec2(1,1)), f.x), f.y);
+  }
+  float fbm(vec2 p) {
+    float v = 0.0; float a = 0.5;
+    for (int i = 0; i < 4; i++) { v += a * noise(p); p *= 2.1; a *= 0.5; }
+    return v;
+  }
+
+  void main() {
+    vec2 uv = vUv * vec2(2.4, 1.0) + vec2(time * 0.012 + layerSeed, time * 0.006);
+    float n = fbm(uv);
+    float alpha = smoothstep(0.35, 0.75, n) * 0.22 * introFade;
+    alpha *= smoothstep(5.0, 45.0, vDepth);
+    gl_FragColor = vec4(hazeColor, alpha);
+  }
+`
+
+/** Bahía Leonida: agua reflectante con ondas y luces urbanas distantes. */
+const WATER_VERTEX_SHADER = /* glsl */ `
+  varying vec3 vWorldPos;
+  varying vec2 vUv;
+  void main() {
+    vUv = uv;
+    vec4 wp = modelMatrix * vec4(position, 1.0);
+    vWorldPos = wp.xyz;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+`
+
+const WATER_FRAGMENT_SHADER = /* glsl */ `
+  uniform float time;
+  uniform float introFade;
+  uniform float dayPhase;
+  varying vec3 vWorldPos;
+  varying vec2 vUv;
+
+  void main() {
+    float dist = length(vWorldPos.xz);
+    float fade = smoothstep(95.0, 18.0, dist);
+    if (fade <= 0.001) discard;
+
+    float wave = sin(vWorldPos.x * 0.35 + time * 0.7) * cos(vWorldPos.z * 0.22 + time * 0.5);
+    float ripple = sin(vWorldPos.z * 0.8 - time * 1.1 + vWorldPos.x * 0.15) * 0.5 + 0.5;
+
+    vec3 deep = mix(vec3(0.02, 0.06, 0.14), vec3(0.04, 0.02, 0.10), dayPhase);
+    vec3 spec = mix(vec3(0.15, 0.45, 0.55), vec3(0.55, 0.18, 0.35), abs(sin(dayPhase * 3.14159)));
+    vec3 col = deep + spec * (0.08 + ripple * 0.06 + wave * 0.04);
+
+    float cityGlow = smoothstep(0.3, 0.0, abs(vWorldPos.x * 0.02)) * 0.12;
+    col += vec3(1.0, 0.35, 0.55) * cityGlow;
+
+    gl_FragColor = vec4(col, fade * 0.55 * introFade);
+  }
+`
+
+/** Carretera húmeda extendida: asfalto, charcos specular y heat-shimmer. */
+const ROAD_FRAGMENT_SHADER = /* glsl */ `
+  uniform float time;
+  uniform float flow;
+  uniform vec3 colorA;
+  uniform vec3 colorB;
+  uniform float introFade;
+  uniform float humidity;
+  uniform float heatShimmer;
+  varying vec3 vWorldPos;
+
+  void main() {
+    float dist = length(vWorldPos.xz);
+    float radialFade = smoothstep(90.0, 10.0, dist);
+    if (radialFade <= 0.001) discard;
+
+    float x = vWorldPos.x + sin(vWorldPos.z * 0.4 + time * 2.0) * heatShimmer * 0.08;
+    float z = vWorldPos.z;
+
+    float laneHalfWidth = 7.5;
+    float edgeDist = min(abs(x - laneHalfWidth), abs(x + laneHalfWidth));
+    float edgeLine = 1.0 - smoothstep(0.0, 0.16, edgeDist);
+
+    float dashLength = 4.0;
+    float dashGap = 2.6;
+    float period = dashLength + dashGap;
+    float alongDash = mod(z - flow, period);
+    float centerMask = 1.0 - smoothstep(0.0, 0.14, abs(x));
+    float dash = step(alongDash, dashLength) * centerMask;
+
+    float pulse = 0.5 + 0.5 * sin(time * 0.18 + dist * 0.05);
+    vec3 edgeTint = mix(colorA, colorB, pulse * 0.2);
+
+    float wet = 0.35 + humidity * 0.45;
+    float puddle = smoothstep(0.82, 0.95, sin(x * 0.7 + z * 0.3) * cos(z * 0.15));
+    vec3 asphalt = vec3(0.015, 0.012, 0.022) * wet;
+    vec3 specHit = mix(colorA, colorB, 0.5) * puddle * 0.35;
+
+    vec3 color = asphalt * 0.6 + edgeTint * edgeLine + colorB * dash + specHit;
+    float alpha = (edgeLine * 0.55 + dash * 0.95 + puddle * 0.25 + wet * 0.08) * radialFade * introFade;
+    gl_FragColor = vec4(color, alpha);
+  }
+`
+
+/** Luciérnagas tropicales: puntos cálidos con pulso orgánico. */
+const FIREFLY_VERTEX_SHADER = /* glsl */ `
+  attribute float aPhase;
+  attribute float aSpeed;
+  uniform float time;
+  uniform float introFade;
+  varying float vGlow;
+  void main() {
+    vec3 p = position;
+    p.x += sin(time * aSpeed + aPhase) * 1.8;
+    p.y += cos(time * aSpeed * 0.7 + aPhase * 1.4) * 1.2;
+    p.z += sin(time * aSpeed * 0.5 + aPhase * 2.1) * 0.9;
+    vec4 mv = modelViewMatrix * vec4(p, 1.0);
+    float dist = -mv.z;
+    vGlow = (0.4 + 0.6 * pow(sin(time * 3.5 + aPhase * 6.0) * 0.5 + 0.5, 3.0)) * introFade;
+    gl_PointSize = (3.5 + vGlow * 5.0) * (120.0 / dist);
+    gl_Position = projectionMatrix * mv;
+  }
+`
+
+const FIREFLY_FRAGMENT_SHADER = /* glsl */ `
+  varying float vGlow;
+  void main() {
+    float d = length(gl_PointCoord - 0.5);
+    float alpha = smoothstep(0.5, 0.0, d) * vGlow;
+    vec3 col = mix(vec3(0.95, 0.55, 0.15), vec3(1.0, 0.85, 0.45), vGlow);
+    gl_FragColor = vec4(col, alpha * 0.85);
+  }
+`
+
+/** Gotas de humedad/nocturnas cayendo lentamente — sensación de aire húmedo. */
+const MIST_VERTEX_SHADER = /* glsl */ `
+  attribute float aSeed;
+  uniform float time;
+  uniform float introFade;
+  varying float vAlpha;
+  void main() {
+    float fall = mod(aSeed + time * (0.08 + aSeed * 0.04), 1.0);
+    vec3 p = position;
+    p.y = mix(18.0, -16.0, fall);
+    p.x += sin(time * 0.3 + aSeed * 12.0) * 0.6;
+    vec4 mv = modelViewMatrix * vec4(p, 1.0);
+    vAlpha = smoothstep(0.0, 0.15, fall) * smoothstep(1.0, 0.85, fall) * introFade * 0.35;
+    gl_PointSize = 2.2 * (90.0 / -mv.z);
+    gl_Position = projectionMatrix * mv;
+  }
+`
+
+const MIST_FRAGMENT_SHADER = /* glsl */ `
+  varying float vAlpha;
+  void main() {
+    float d = length(gl_PointCoord - 0.5);
+    gl_FragColor = vec4(0.75, 0.85, 0.95, smoothstep(0.5, 0.0, d) * vAlpha);
+  }
+`
+
+/** Letrero neón distante con parpadeo determinista. */
+const NEON_SIGN_FRAGMENT_SHADER = /* glsl */ `
+  uniform float time;
+  uniform vec3 signColor;
+  uniform float introFade;
+  uniform float flickerSeed;
+  varying vec2 vUv;
+
+  void main() {
+    float edge = smoothstep(0.48, 0.42, abs(vUv.x - 0.5)) + smoothstep(0.22, 0.18, abs(vUv.y - 0.5));
+    float flicker = 0.82 + 0.18 * sin(time * 4.2 + flickerSeed);
+    flicker *= step(0.02, fract(sin(flickerSeed * 43.0) * 43758.5453) + sin(time * 0.7 + flickerSeed) * 0.08);
+    float alpha = edge * flicker * 0.55 * introFade;
+    gl_FragColor = vec4(signColor, alpha);
+  }
+`
+
 // ---------------------------------------------------------------------------
 // Coreografía de cámara: encuadres deliberados, no ruido infinito.
 // ---------------------------------------------------------------------------
@@ -425,12 +803,33 @@ const SHOTS: CameraShot[] = [
   { pos: new THREE.Vector3(0, 0.4, 25), look: new THREE.Vector3(-3.2, 0.8, -1), fovBias: 0, duration: 16 },
   { pos: new THREE.Vector3(7, -1.6, 22), look: new THREE.Vector3(-3.2, 1.2, -2.5), fovBias: 3, duration: 15 },
   { pos: new THREE.Vector3(-6.5, 2.2, 23), look: new THREE.Vector3(-1.5, -0.4, -3), fovBias: -2, duration: 17 },
+  { pos: new THREE.Vector3(2.5, 3.8, 20), look: new THREE.Vector3(-4.5, 0.2, -4), fovBias: 1.5, duration: 14 },
 ]
 
 function smootherstep(t: number): number {
   const c = Math.min(Math.max(t, 0), 1)
   return c * c * c * (c * (c * 6 - 15) + 10)
 }
+
+/** Fallback estable si `SHOTS` quedara vacío en el futuro (ver `computeShotFrame`). */
+const FALLBACK_SHOT: CameraShot = {
+  pos: new THREE.Vector3(0, 0.4, 25),
+  look: new THREE.Vector3(0, 0, 0),
+  fovBias: 0,
+  duration: 1,
+}
+
+/** Período (segundos de mundo) del patrón de la línea central de la carretera.
+ *  Debe coincidir con `dashLength + dashGap` en `ROAD_FRAGMENT_SHADER`. Se
+ *  usa para envolver `roadFlow` en un múltiplo exacto de este período, así
+ *  el patrón nunca "salta" al envolver el acumulador (ver `ROAD_FLOW_WRAP`). */
+const ROAD_DASH_PERIOD = 6.6
+/** Techo de `roadFlow`: un múltiplo grande y exacto del período de la
+ *  carretera. Sin este límite, `roadFlow` crece indefinidamente mientras la
+ *  pestaña sigue abierta y, al viajar a un `uniform float` (precisión
+ *  simple) del shader, termina degradando visualmente el patrón de la
+ *  carretera en sesiones largas. */
+const ROAD_FLOW_WRAP = ROAD_DASH_PERIOD * 100000
 
 /**
  * Materia visual real de la escena: las 4 piezas oficiales de GTA VI que
@@ -585,13 +984,28 @@ export class GTA6CodexWebGLEngine {
   private clock: THREE.Clock
   private composer: EffectComposer
   private bloomPass: UnrealBloomPass
-  private bokehPass: BokehPass
+  /** Solo se instancia cuando `quality.enableBokeh` es true (ver `constructor`).
+   *  En perfiles de calidad media/baja, nunca se reserva memoria de GPU para
+   *  un efecto que nunca se usa. */
+  private bokehPass: BokehPass | null = null
   private gradePass: ShaderPass
   private fxaaPass: FXAAPass
 
   private farGroup: THREE.Group
   private midGroup: THREE.Group
   private nearGroup: THREE.Group
+  private skyGroup: THREE.Group
+
+  private readonly quality: QualityProfile
+  private dayPhase = 0.42
+  private dayPhaseTarget = 0.42
+  private humidity = 0.45
+  /** Render target completo del paso PMREM del entorno — se libera entero
+   *  en `dispose()` (antes solo se descartaba `.texture`, dejando el
+   *  render target en sí sin liberar). */
+  private envRenderTarget: THREE.WebGLRenderTarget | null = null
+
+  private skyUniforms!: { time: { value: number }; dayPhase: { value: number }; introFade: { value: number } }
 
   private pointer = { x: 0, y: 0 }
   private pointerTarget = { x: 0, y: 0 }
@@ -614,7 +1028,6 @@ export class GTA6CodexWebGLEngine {
   }
   private roadUniforms!: { time: { value: number }; introFade: { value: number } }
   private shaftUniforms!: { time: { value: number }; introFade: { value: number } }
-  private towerShaderRefs: { uTime: { value: number } }[] = []
   /** Texturas de los billboards con imágenes reales de GTA VI — liberadas en `dispose()`. */
   private imageTextures: THREE.Texture[] = []
 
@@ -648,7 +1061,8 @@ export class GTA6CodexWebGLEngine {
   /** Encuadre derivado de `CATEGORY_FRAME` (0 = base). */
   private entityFrame = 0
   private entityFrameTarget = 0
-  /** Acumulador del flujo de la carretera — avanza según `entityPace`, no según `elapsed`. */
+  /** Acumulador del flujo de la carretera — avanza según `entityPace`, no
+   *  según `elapsed`, y se mantiene acotado por `ROAD_FLOW_WRAP`. */
   private roadFlow = 0
   private unsubscribeSceneBus: (() => void) | null = null
 
@@ -662,16 +1076,17 @@ export class GTA6CodexWebGLEngine {
 
   constructor(canvas: HTMLCanvasElement, opts: { reducedMotion: boolean }) {
     this.reducedMotion = opts.reducedMotion
+    this.quality = detectQualityProfile(opts.reducedMotion)
     this.totalShotDuration = SHOTS.reduce((sum, s) => sum + s.duration, 0)
 
     this.renderer = new THREE.WebGLRenderer({
       canvas,
       alpha: true,
-      antialias: true,
+      antialias: this.quality.tier === 'high',
       powerPreference: 'high-performance',
     })
     this.renderer.setClearColor(0x000000, 0)
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2))
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, this.quality.maxDpr))
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping
     this.renderer.toneMappingExposure = 1.1
     this.renderer.outputColorSpace = THREE.SRGBColorSpace
@@ -688,30 +1103,44 @@ export class GTA6CodexWebGLEngine {
     this.farGroup = new THREE.Group()
     this.midGroup = new THREE.Group()
     this.nearGroup = new THREE.Group()
-    this.scene.add(this.farGroup, this.midGroup, this.nearGroup)
+    this.skyGroup = new THREE.Group()
+    this.scene.add(this.skyGroup, this.farGroup, this.midGroup, this.nearGroup)
 
     this.setupEnvironment()
+    this.buildSkyDome()
     this.setupLights()
+    this.buildWaterHorizon()
     this.buildRoad()
     this.buildFarSkyline()
+    this.buildNeonSigns()
     this.buildHorizonSun()
     this.buildLightShaft()
+    this.buildAtmosphericHaze()
     this.buildTrafficStreaks()
     this.buildDust()
+    this.buildFireflies()
+    this.buildHumidityMist()
     this.buildImageBillboards()
     this.buildFocalTower()
 
     this.composer = new EffectComposer(this.renderer)
     this.composer.addPass(new RenderPass(this.scene, this.camera))
 
-    this.bokehPass = new BokehPass(this.scene, this.camera, {
-      focus: 22,
-      aperture: 0.0016,
-      maxblur: 0.007,
-    })
-    this.composer.addPass(this.bokehPass)
+    if (this.quality.enableBokeh) {
+      this.bokehPass = new BokehPass(this.scene, this.camera, {
+        focus: 22,
+        aperture: 0.0016,
+        maxblur: 0.007,
+      })
+      this.composer.addPass(this.bokehPass)
+    }
 
-    this.bloomPass = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.85, 0.55, 0.16)
+    this.bloomPass = new UnrealBloomPass(
+      new THREE.Vector2(1, 1),
+      0.85 * this.quality.bloomScale,
+      0.55,
+      0.16
+    )
     this.composer.addPass(this.bloomPass)
 
     this.gradePass = new ShaderPass(GRADE_SHADER)
@@ -806,8 +1235,206 @@ export class GTA6CodexWebGLEngine {
     envScene.add(new THREE.Mesh(gradientGeo, gradientMat))
 
     const renderTarget = pmrem.fromScene(envScene, 0.04)
+    this.envRenderTarget = renderTarget
     this.scene.environment = renderTarget.texture
     pmrem.dispose()
+
+    // La geometría/material del paso de gradiente solo existían para
+    // alimentar el PMREM; ya renderizados, no hace falta retenerlos.
+    gradientGeo.dispose()
+    gradientMat.dispose()
+  }
+
+  /** Cúpula celeste procedural — gradiente dinámico + estrellas. */
+  private buildSkyDome() {
+    this.skyUniforms = { time: { value: 0 }, dayPhase: { value: 0.42 }, introFade: { value: 0 } }
+    const material = new THREE.ShaderMaterial({
+      uniforms: { ...this.skyUniforms },
+      vertexShader: SKY_VERTEX_SHADER,
+      fragmentShader: SKY_FRAGMENT_SHADER,
+      side: THREE.BackSide,
+      depthWrite: false,
+      fog: false,
+    })
+    const dome = new THREE.Mesh(new THREE.SphereGeometry(85, 32, 24), material)
+    dome.frustumCulled = false
+    this.skyGroup.add(dome)
+
+    this.updaters.push((elapsed, _delta, intro) => {
+      this.skyUniforms.time.value = elapsed
+      this.skyUniforms.dayPhase.value = this.dayPhase
+      this.skyUniforms.introFade.value = intro
+    })
+  }
+
+  /** Bahía Leonida en el horizonte — reflejos y ondas sutiles. */
+  private buildWaterHorizon() {
+    const uniforms = { time: { value: 0 }, introFade: { value: 0 }, dayPhase: { value: 0.42 } }
+    const material = new THREE.ShaderMaterial({
+      uniforms,
+      vertexShader: WATER_VERTEX_SHADER,
+      fragmentShader: WATER_FRAGMENT_SHADER,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.NormalBlending,
+      side: THREE.DoubleSide,
+    })
+    const water = new THREE.Mesh(new THREE.PlaneGeometry(240, 120, 1, 1), material)
+    water.rotation.x = -Math.PI / 2
+    water.position.y = -12.8
+    water.position.z = -48
+    this.farGroup.add(water)
+
+    this.updaters.push((elapsed, _delta, intro) => {
+      material.uniforms.time.value = elapsed
+      material.uniforms.introFade.value = intro
+      material.uniforms.dayPhase.value = this.dayPhase
+    })
+  }
+
+  /** Letreros neón distantes en el skyline — vida urbana parpadeante. */
+  private buildNeonSigns() {
+    if (this.quality.tier === 'low') return
+
+    const signs: { mat: THREE.ShaderMaterial; seed: number }[] = []
+    const colors = [new THREE.Color(0xff2d78), new THREE.Color(0x22d3ee), new THREE.Color(0xffb04d)]
+
+    for (let i = 0; i < (this.quality.tier === 'high' ? 7 : 4); i++) {
+      const seed = i * 2.17 + 0.5
+      const mat = new THREE.ShaderMaterial({
+        uniforms: {
+          time: { value: 0 },
+          signColor: { value: colors[i % colors.length] },
+          introFade: { value: 0 },
+          flickerSeed: { value: seed },
+        },
+        vertexShader: SHAFT_VERTEX_SHADER,
+        fragmentShader: NEON_SIGN_FRAGMENT_SHADER,
+        transparent: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+        side: THREE.DoubleSide,
+      })
+      const mesh = new THREE.Mesh(new THREE.PlaneGeometry(2.8 + (i % 3) * 0.6, 0.55, 1, 1), mat)
+      mesh.position.set((i - 3) * 9.5 + Math.sin(seed) * 4, -4 + (i % 4) * 3.5, -38 - (i % 3) * 6)
+      this.farGroup.add(mesh)
+      signs.push({ mat, seed })
+    }
+
+    this.updaters.push((elapsed, _delta, intro) => {
+      signs.forEach((s) => {
+        s.mat.uniforms.time.value = elapsed
+        s.mat.uniforms.introFade.value = intro
+      })
+    })
+  }
+
+  /** Capas de haze volumétrico con parallax por profundidad. */
+  private buildAtmosphericHaze() {
+    const layers: THREE.Mesh[] = []
+    for (let i = 0; i < this.quality.hazeLayers; i++) {
+      const mat = new THREE.ShaderMaterial({
+        uniforms: {
+          time: { value: 0 },
+          introFade: { value: 0 },
+          hazeColor: { value: new THREE.Color(i % 2 === 0 ? 0x6a2878 : 0x284868) },
+          layerSeed: { value: i * 1.73 },
+        },
+        vertexShader: HAZE_VERTEX_SHADER,
+        fragmentShader: HAZE_FRAGMENT_SHADER,
+        transparent: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+        side: THREE.DoubleSide,
+      })
+      const mesh = new THREE.Mesh(new THREE.PlaneGeometry(90 + i * 20, 35, 1, 1), mat)
+      mesh.position.set(0, -2 + i * 2.5, -18 - i * 12)
+      this.midGroup.add(mesh)
+      layers.push(mesh)
+
+      this.updaters.push((elapsed, _delta, intro) => {
+        mat.uniforms.time.value = elapsed
+        mat.uniforms.introFade.value = intro
+        mesh.position.x = Math.sin(elapsed * 0.03 + i) * (1.2 + i * 0.4)
+      })
+    }
+
+    this.updaters.push((_elapsed, _delta, intro) => {
+      layers.forEach((l, i) => {
+        l.position.y = -2 + i * 2.5 + this.scrollProgress * (0.8 + i * 0.3) * intro
+      })
+    })
+  }
+
+  /** Luciérnagas tropicales cerca del skyline. */
+  private buildFireflies() {
+    if (this.quality.fireflyCount <= 0) return
+
+    const COUNT = this.quality.fireflyCount
+    const positions = new Float32Array(COUNT * 3)
+    const phases = new Float32Array(COUNT)
+    const speeds = new Float32Array(COUNT)
+
+    for (let i = 0; i < COUNT; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 50
+      positions[i * 3 + 1] = -6 + Math.random() * 14
+      positions[i * 3 + 2] = -20 - Math.random() * 25
+      phases[i] = Math.random() * Math.PI * 2
+      speeds[i] = 0.15 + Math.random() * 0.35
+    }
+
+    const geo = new THREE.BufferGeometry()
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+    geo.setAttribute('aPhase', new THREE.BufferAttribute(phases, 1))
+    geo.setAttribute('aSpeed', new THREE.BufferAttribute(speeds, 1))
+
+    const mat = new THREE.ShaderMaterial({
+      uniforms: { time: { value: 0 }, introFade: { value: 0 } },
+      vertexShader: FIREFLY_VERTEX_SHADER,
+      fragmentShader: FIREFLY_FRAGMENT_SHADER,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    })
+    this.farGroup.add(new THREE.Points(geo, mat))
+
+    this.updaters.push((elapsed, _delta, intro) => {
+      mat.uniforms.time.value = elapsed
+      mat.uniforms.introFade.value = intro
+    })
+  }
+
+  /** Gotas de humedad/nocturnas — aire denso de Florida. */
+  private buildHumidityMist() {
+    const COUNT = this.quality.mistCount
+    const positions = new Float32Array(COUNT * 3)
+    const seeds = new Float32Array(COUNT)
+
+    for (let i = 0; i < COUNT; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 60
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 30
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 40 - 10
+      seeds[i] = Math.random()
+    }
+
+    const geo = new THREE.BufferGeometry()
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+    geo.setAttribute('aSeed', new THREE.BufferAttribute(seeds, 1))
+
+    const mat = new THREE.ShaderMaterial({
+      uniforms: { time: { value: 0 }, introFade: { value: 0 } },
+      vertexShader: MIST_VERTEX_SHADER,
+      fragmentShader: MIST_FRAGMENT_SHADER,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    })
+    this.midGroup.add(new THREE.Points(geo, mat))
+
+    this.updaters.push((elapsed, _delta, intro) => {
+      mat.uniforms.time.value = elapsed * (this.reducedMotion ? 0.2 : 1)
+      mat.uniforms.introFade.value = intro
+    })
   }
 
   private setupLights() {
@@ -824,19 +1451,21 @@ export class GTA6CodexWebGLEngine {
     this.scene.add(this.fillLight)
 
     this.updaters.push((elapsed) => {
-      // Deriva de temperatura de color lenta e independiente del scroll:
-      // sensación de que pasa el tiempo, no un "loop" mecánico. Hue ~0.92
-      // mantiene el magenta/rosa neón como base en vez del naranja original.
       const cycle = Math.sin(elapsed * 0.025)
+      const dayWarmth = 0.5 + 0.5 * Math.cos(this.dayPhase * Math.PI * 2)
       this.keyLight.color.setHSL(
-        0.92 + cycle * (0.015 + this.entityUnrest * 0.01) + this.sceneMood * 0.02 + this.entityWarmth * 0.03,
+        0.92 + cycle * (0.015 + this.entityUnrest * 0.01) + this.sceneMood * 0.02 + this.entityWarmth * 0.03 - dayWarmth * 0.04,
         0.85,
-        0.56
+        0.52 + dayWarmth * 0.08
       )
-      this.keyLight.intensity = 48 + cycle * 10 + this.scrollProgress * 14
-      this.fillLight.intensity = 28 + Math.cos(elapsed * 0.021) * 6
+      this.fillLight.color.setHSL(0.52 + dayWarmth * 0.06, 0.75, 0.48)
+      this.keyLight.intensity = 48 + cycle * 10 + this.scrollProgress * 14 + dayWarmth * 8
+      this.fillLight.intensity = 28 + Math.cos(elapsed * 0.021) * 6 + (1 - dayWarmth) * 6
       this.keyLight.position.x = 9 + Math.sin(elapsed * 0.09) * 3
       this.keyLight.position.y = 5 + Math.cos(elapsed * 0.07) * 2
+
+      const fogColor = lerpDayColor(this.dayPhase, 0x3a1830, 0x1c0f28, 0x142038)
+      this.fog.color.setHex(fogColor)
     })
   }
 
@@ -854,6 +1483,8 @@ export class GTA6CodexWebGLEngine {
         flow: { value: 0 },
         colorA: { value: new THREE.Color(0x22d3ee) },
         colorB: { value: new THREE.Color(0xff2d78) },
+        humidity: { value: 0.45 },
+        heatShimmer: { value: 0.0 },
       },
       vertexShader: ROAD_VERTEX_SHADER,
       fragmentShader: ROAD_FRAGMENT_SHADER,
@@ -870,10 +1501,9 @@ export class GTA6CodexWebGLEngine {
     this.updaters.push((elapsed, _delta, intro) => {
       material.uniforms.time.value = elapsed
       material.uniforms.introFade.value = intro
-      // El flujo de los dashes corre al ritmo acumulado en `roadFlow` (ver
-      // loop principal), no al tiempo absoluto — así "pace" por categoría
-      // cambia la velocidad percibida de la carretera sin saltos.
       material.uniforms.flow.value = this.roadFlow
+      material.uniforms.humidity.value = this.humidity
+      material.uniforms.heatShimmer.value = this.reducedMotion ? 0 : 0.35 + this.entityPace * 0.15
     })
   }
 
@@ -935,6 +1565,13 @@ export class GTA6CodexWebGLEngine {
           )
           this.farGroup.add(win)
           shapes.push(win)
+
+          const wi = w
+          this.updaters.push((elapsed) => {
+            if (this.quality.tier === 'low') return
+            const flicker = 0.45 + 0.55 * Math.sin(elapsed * (0.8 + wi * 0.3) + i * 1.7)
+            winMat.opacity = (0.35 + flicker * 0.5) * (0.7 + this.dayPhase * 0.3)
+          })
         }
       }
     }
@@ -969,6 +1606,10 @@ export class GTA6CodexWebGLEngine {
     this.updaters.push((elapsed, _delta, intro) => {
       material.uniforms.time.value = elapsed
       material.uniforms.introFade.value = intro
+      const dayLift = 0.5 + 0.5 * Math.cos(this.dayPhase * Math.PI * 2)
+      sun.position.y = 4.5 + dayLift * 2.5
+      material.uniforms.coreColor.value.setHex(lerpDayColor(this.dayPhase, 0xff5b7c, 0xff3d78, 0xff9060))
+      material.uniforms.rimColor.value.setHex(lerpDayColor(this.dayPhase, 0xffb04d, 0xff6088, 0x88b0ff))
     })
   }
 
@@ -992,6 +1633,26 @@ export class GTA6CodexWebGLEngine {
     shaft.rotation.x = -0.06
     this.farGroup.add(shaft)
 
+    if (this.quality.tier !== 'low') {
+      const shaft2 = new THREE.Mesh(
+        geometry.clone(),
+        new THREE.ShaderMaterial({
+          uniforms: { ...this.shaftUniforms, shaftColor: { value: new THREE.Color(0x22d3ee) } },
+          vertexShader: SHAFT_VERTEX_SHADER,
+          fragmentShader: SHAFT_FRAGMENT_SHADER,
+          transparent: true,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
+          side: THREE.DoubleSide,
+        })
+      )
+      shaft2.position.set(5.5, 6, -8)
+      shaft2.rotation.z = -0.08
+      shaft2.rotation.x = -0.04
+      shaft2.scale.set(0.7, 0.85, 1)
+      this.farGroup.add(shaft2)
+    }
+
     this.updaters.push((elapsed, _delta, intro) => {
       material.uniforms.time.value = elapsed
       material.uniforms.introFade.value = intro
@@ -1000,7 +1661,7 @@ export class GTA6CodexWebGLEngine {
 
   /** Tráfico: faros blancos que se acercan y luces de freno rojas que se alejan, en loop sobre la carretera. */
   private buildTrafficStreaks() {
-    const COUNT = 12
+    const COUNT = this.quality.trafficCount
     const streaks: { mesh: THREE.Mesh; speed: number; dir: number }[] = []
     const streakGeometry = new THREE.PlaneGeometry(0.32, 3.2)
 
@@ -1040,7 +1701,7 @@ export class GTA6CodexWebGLEngine {
   // ---------------------------------------------------------------------
 
   private buildDust() {
-    const COUNT = 420
+    const COUNT = this.quality.dustCount
     const positions = new Float32Array(COUNT * 3)
     const seeds = new Float32Array(COUNT * 3)
     const sizes = new Float32Array(COUNT)
@@ -1091,6 +1752,7 @@ export class GTA6CodexWebGLEngine {
     this.updaters.push((elapsed) => {
       points.rotation.y = elapsed * 0.008
       this.dustUniforms.warmLightPos.value.copy(this.keyLight.position)
+      this.dustUniforms.coolLightPos.value.copy(this.fillLight.position)
     })
   }
 
@@ -1109,7 +1771,16 @@ export class GTA6CodexWebGLEngine {
     }[] = []
 
     IMAGE_BILLBOARDS.forEach((def, i) => {
-      const texture = loader.load(def.path)
+      const texture = loader.load(
+        def.path,
+        undefined,
+        undefined,
+        // Una imagen faltante o movida queda visible en consola en vez de
+        // convertirse en un letrero invisible sin explicación.
+        (err) => {
+          console.warn(`[GTA6CodexWebGLEngine] No se pudo cargar el billboard "${def.key}" (${def.path}):`, err)
+        }
+      )
       texture.colorSpace = THREE.SRGBColorSpace
       texture.anisotropy = maxAnisotropy
       texture.wrapS = THREE.ClampToEdgeWrapping
@@ -1218,7 +1889,6 @@ export class GTA6CodexWebGLEngine {
       }
       return material
     }
-    this.towerShaderRefs.push(shaderRef)
 
     const tiers = [
       { radius: 2.5, height: 7, tint: 0xff2d78 },
@@ -1313,18 +1983,27 @@ export class GTA6CodexWebGLEngine {
   private handleResize = () => {
     const width = window.innerWidth
     const height = window.innerHeight
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, this.quality.maxDpr)
     this.camera.aspect = width / height
     this.camera.updateProjectionMatrix()
-    this.renderer.setSize(width, height)
+    this.renderer.setPixelRatio(pixelRatio)
+    this.renderer.setSize(width, height, false)
     this.composer.setSize(width, height)
-    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2)
     this.bloomPass.resolution.set(width * pixelRatio, height * pixelRatio)
-    this.bokehPass.setSize(width, height)
+    if (this.bokehPass) {
+      this.bokehPass.setSize(width, height)
+    }
     this.fxaaPass.setSize(width, height)
   }
 
   /** Encuadre coreografiado: funde continuamente entre los `SHOTS`, en vez de ruido sin fin. */
   private computeShotFrame(elapsed: number): { pos: THREE.Vector3; look: THREE.Vector3; fovBias: number } {
+    // Guarda contra `SHOTS` vacío o con duración total 0: sin esto, `%`
+    // por 0 produce NaN y la cámara desaparece del encuadre.
+    if (SHOTS.length === 0 || this.totalShotDuration <= 0) {
+      return { pos: FALLBACK_SHOT.pos.clone(), look: FALLBACK_SHOT.look.clone(), fovBias: FALLBACK_SHOT.fovBias }
+    }
+
     const t = elapsed % this.totalShotDuration
     let acc = 0
     for (let i = 0; i < SHOTS.length; i++) {
@@ -1348,6 +2027,11 @@ export class GTA6CodexWebGLEngine {
   // ---------------------------------------------------------------------
 
   start() {
+    // Idempotente: evita un segundo loop de rAF corriendo en paralelo si
+    // `start()` se invoca más de una vez (p. ej. remounts en React Strict
+    // Mode), y no arranca nada si el motor ya fue liberado.
+    if (this.disposed || this.rafId !== null) return
+
     this.startTime = this.clock.getElapsedTime()
     // Entrada deliberada: arranca desde un encuadre alto y distante (como
     // una toma aérea) y desciende hacia el primer plano — una "llegada",
@@ -1395,10 +2079,18 @@ export class GTA6CodexWebGLEngine {
       this.entityPace += (this.entityPaceTarget - this.entityPace) * 0.02
       this.entityFrame += (this.entityFrameTarget - this.entityFrame) * 0.018
 
-      // El flujo de la carretera acumula a su propio ritmo (no al tiempo
-      // absoluto): así el cambio de "pace" al entrar a una ficha se siente
-      // como una aceleración/desaceleración real, no un salto de fase.
-      this.roadFlow += delta * 5 * this.entityPace
+      // Ciclo día→atardecer→noche: tiempo lento + scroll + mood de sección.
+      const cyclicalTime = (elapsed * 0.004) % 1
+      this.dayPhaseTarget = (cyclicalTime * 0.55 + this.sceneMood * 0.35 + this.scrollProgress * 0.1) % 1
+      // Interpolación circular: el ciclo día/noche nunca "rebobina" al
+      // cruzar el punto de wraparound (ver `lerpCyclic01`).
+      this.dayPhase = lerpCyclic01(this.dayPhase, this.dayPhaseTarget, this.reducedMotion ? 0.004 : 0.012)
+      this.humidity = 0.38 + this.sceneMood * 0.22 + Math.sin(elapsed * 0.015) * 0.06
+
+      // Acotado a un múltiplo exacto del período de la carretera: crece sin
+      // saltos visuales pero nunca degrada la precisión del uniform float
+      // del shader en sesiones largas (ver `ROAD_FLOW_WRAP`).
+      this.roadFlow = (this.roadFlow + delta * 5 * this.entityPace) % ROAD_FLOW_WRAP
 
       // Coreografía de cámara + parallax de cursor + dolly de scroll + apertura de escena.
       const frame = this.computeShotFrame(elapsed)
@@ -1417,22 +2109,44 @@ export class GTA6CodexWebGLEngine {
         .lerp(new THREE.Vector3(0, 0, 0), 1 - intro)
         .add(new THREE.Vector3(0, -this.entityFrame * 0.22, 0))
       this.camera.lookAt(lookTarget)
-      this.camera.rotation.z = this.reducedMotion ? 0 : this.pointer.x * -0.012
 
-      const targetFov =
-        this.baseFov + frame.fovBias + this.scrollProgress * 5 + this.sceneMood * 4 + this.entityFrame * 3.2
+      const handheld =
+        this.reducedMotion ? 0 : this.entityUnrest * Math.sin(elapsed * 11.3) * 0.018
+      const breath = this.reducedMotion ? 0 : Math.sin(elapsed * 0.45) * 0.012
+      this.camera.rotation.z =
+        (this.reducedMotion ? 0 : this.pointer.x * -0.012) + handheld
+      this.camera.position.y += breath
+
+      // FOV acotado a un rango seguro: hoy la combinación de términos nunca
+      // se sale de este rango, pero queda protegido si en el futuro se
+      // agregan categorías/estados con valores más extremos.
+      const targetFov = THREE.MathUtils.clamp(
+        this.baseFov + frame.fovBias + this.scrollProgress * 5 + this.sceneMood * 4 + this.entityFrame * 3.2,
+        20,
+        65
+      )
       this.camera.fov += (targetFov - this.camera.fov) * 0.04
       this.camera.updateProjectionMatrix()
 
       // Misma variable de encuadre gobierna cuánta niebla hay: una ficha de
       // ubicación despeja el aire para leer el skyline (plano establecedor);
       // una ficha de personaje lo cierra un poco (retrato, más íntimo).
-      this.fog.density = Math.max(0.014, this.baseFogDensity - this.entityFrame * 0.006)
+      this.fog.density = THREE.MathUtils.clamp(
+        this.baseFogDensity - this.entityFrame * 0.006 + this.humidity * 0.008 - Math.abs(this.dayPhase - 0.5) * 0.006,
+        0.012,
+        0.08
+      )
 
-      this.bokehPass.materialBokeh.uniforms.focus.value = 22 - this.scrollProgress * 7
+      if (this.bokehPass) {
+        this.bokehPass.materialBokeh.uniforms.focus.value = 22 - this.scrollProgress * 7
+      }
+
+      this.skyGroup.position.x = -this.pointer.x * 0.15
+      this.skyGroup.position.y = this.pointer.y * 0.1
+      this.skyGroup.rotation.y = elapsed * 0.002
 
       // Parallax real por profundidad de plano.
-      this.farGroup.position.x = -this.pointer.x * 0.4
+      this.farGroup.position.x = -this.pointer.x * 0.4 - this.scrollProgress * 0.6
       this.farGroup.position.y = this.pointer.y * 0.25
       this.midGroup.position.x = this.pointer.x * 1.1
       this.midGroup.position.y = -this.pointer.y * 0.7
@@ -1451,7 +2165,9 @@ export class GTA6CodexWebGLEngine {
 
       this.gradePass.uniforms.time.value = elapsed * 0.6
       this.gradePass.uniforms.fadeIn.value = intro
-      this.gradePass.uniforms.grainStrength.value = 0.03 + this.entityUnrest * 0.025
+      this.gradePass.uniforms.dayPhase.value = this.dayPhase
+      this.gradePass.uniforms.humidity.value = this.humidity
+      this.gradePass.uniforms.grainStrength.value = 0.03 + this.entityUnrest * 0.025 + this.humidity * 0.012
       const kick = this.reducedMotion
         ? 0
         : Math.min(
@@ -1463,11 +2179,13 @@ export class GTA6CodexWebGLEngine {
           )
       this.arrivalKick *= 0.92
       this.gradePass.uniforms.chromaKick.value = Math.min(kick + this.arrivalKick * 0.006, 0.014)
-      this.bloomPass.strength =
-        0.8 * intro +
-        (this.reducedMotion ? 0 : this.pointerIntent * 0.3) +
-        this.entityPresence * 0.15 +
-        this.arrivalKick * 0.35
+      this.bloomPass.strength = THREE.MathUtils.clamp(
+        (0.8 * intro + (this.reducedMotion ? 0 : this.pointerIntent * 0.3) + this.entityPresence * 0.15 + this.arrivalKick * 0.35) *
+          this.quality.bloomScale,
+        0,
+        2.5
+      )
+      this.gradePass.uniforms.bloomMix.value = this.bloomPass.strength * 0.08
 
       for (const update of this.updaters) update(elapsed, delta, intro)
 
@@ -1498,13 +2216,21 @@ export class GTA6CodexWebGLEngine {
   }
 
   dispose() {
+    // Idempotente: `dispose()` puede llegar a invocarse más de una vez
+    // (React Strict Mode en desarrollo monta/desmonta dos veces), y una
+    // segunda pasada no debe repetir trabajo ni arriesgar llamadas sobre
+    // recursos ya liberados.
+    if (this.disposed) return
     this.disposed = true
-    if (this.rafId) cancelAnimationFrame(this.rafId)
+
+    if (this.rafId !== null) cancelAnimationFrame(this.rafId)
+    this.rafId = null
     window.removeEventListener('resize', this.handleResize)
     window.removeEventListener('pointermove', this.handlePointerMove)
     window.removeEventListener('scroll', this.handleScroll)
     document.removeEventListener('visibilitychange', this.handleVisibility)
     this.unsubscribeSceneBus?.()
+    this.unsubscribeSceneBus = null
 
     this.scene.traverse((obj) => {
       if (obj instanceof THREE.Mesh || obj instanceof THREE.Points) {
@@ -1514,9 +2240,16 @@ export class GTA6CodexWebGLEngine {
         else material?.dispose?.()
       }
     })
-    this.scene.environment?.dispose?.()
+    this.scene.environment = null
+    this.envRenderTarget?.dispose()
+    this.envRenderTarget = null
     this.imageTextures.forEach((t) => t.dispose())
-    this.bokehPass.dispose()
+    this.imageTextures = []
+
+    // Libera cada pass del composer de forma genérica: cualquier pass que
+    // se agregue en el futuro queda cubierto sin tener que recordar
+    // llamarlo a mano (antes solo `bokehPass` se liberaba explícitamente).
+    this.composer.passes.forEach((pass) => pass.dispose?.())
     this.composer.dispose()
     this.renderer.dispose()
   }
