@@ -32,6 +32,11 @@ import { buildSkyDome as buildSkyDomeScene } from './scene/sky'
 // WATER_FRAGMENT_SHADER ya no se importan acá directamente: ahora los
 // consume ./scene/water.ts.
 import { buildWaterHorizon as buildWaterHorizonScene } from './scene/water'
+// Fase 8.3: buildHumidityMist() migrado mecánicamente a ./scene/humidity-mist.ts
+// (ver nota de arquitectura al pie del archivo). MIST_VERTEX_SHADER/
+// MIST_FRAGMENT_SHADER ya no se importan acá directamente: ahora los
+// consume ./scene/humidity-mist.ts.
+import { buildHumidityMist as buildHumidityMistScene } from './scene/humidity-mist'
 import { SHAFT_VERTEX_SHADER, SHAFT_FRAGMENT_SHADER, NEON_SIGN_FRAGMENT_SHADER } from './shaders/neon'
 import { ROAD_VERTEX_SHADER, ROAD_FRAGMENT_SHADER } from './shaders/road'
 import { SUN_VERTEX_SHADER, SUN_FRAGMENT_SHADER } from './shaders/sun'
@@ -41,8 +46,6 @@ import {
   DUST_FRAGMENT_SHADER,
   FIREFLY_VERTEX_SHADER,
   FIREFLY_FRAGMENT_SHADER,
-  MIST_VERTEX_SHADER,
-  MIST_FRAGMENT_SHADER,
   HAZE_VERTEX_SHADER,
   HAZE_FRAGMENT_SHADER,
 } from './shaders/particles'
@@ -766,37 +769,47 @@ export class GTA6CodexWebGLEngine {
     })
   }
 
-  /** Gotas de humedad/nocturnas — aire denso de Florida. */
+  /**
+   * Gotas de humedad/nocturnas — aire denso de Florida.
+   *
+   * Fase 8.3 — geometría, material, uniforms y valores idénticos a la
+   * versión inline anterior; solo se movieron a `./scene/humidity-mist.ts`
+   * (`buildHumidityMistScene`). Igual que en las Fases 8.1/8.2, el
+   * `updater` que devuelve esa función usa la firma común de 11
+   * parámetros de `scene/*.ts` (ver nota de arquitectura al pie del
+   * archivo), incompatible con `SceneUpdater` de este motor — se lo
+   * envuelve acá en un closure de 3 parámetros que replica exactamente
+   * el mismo cálculo que antes (`elapsed * (reducedMotion ? 0.2 : 1)`),
+   * y se lo registra en `this.updaters` sin tocar `start()`/el loop de
+   * animación. A diferencia del cielo, esta niebla no tiene uniforms
+   * propios expuestos en `this` (no existía un campo
+   * `this.mistUniforms` en la versión inline), así que acá tampoco se
+   * agrega uno. `reducedMotion` no cambia por frame, así que se pasa
+   * una sola vez como opción del builder en vez de viajar por el
+   * `updater`.
+   */
   private buildHumidityMist() {
-    const COUNT = this.quality.mistCount
-    const positions = new Float32Array(COUNT * 3)
-    const seeds = new Float32Array(COUNT)
-
-    for (let i = 0; i < COUNT; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 60
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 30
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 40 - 10
-      seeds[i] = Math.random()
-    }
-
-    const geo = new THREE.BufferGeometry()
-    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3))
-    geo.setAttribute('aSeed', new THREE.BufferAttribute(seeds, 1))
-
-    const mat = new THREE.ShaderMaterial({
-      uniforms: { time: { value: 0 }, introFade: { value: 0 } },
-      vertexShader: MIST_VERTEX_SHADER,
-      fragmentShader: MIST_FRAGMENT_SHADER,
-      transparent: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
+    const updater = buildHumidityMistScene({
+      midGroup: this.midGroup,
+      quality: this.quality,
+      reducedMotion: this.reducedMotion,
     })
-    this.midGroup.add(new THREE.Points(geo, mat))
 
-    this.updaters.push((elapsed, _delta, intro) => {
-      mat.uniforms.time.value = elapsed * (this.reducedMotion ? 0.2 : 1)
-      mat.uniforms.introFade.value = intro
-    })
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
+    )
   }
 
   private setupLights() {
@@ -1616,23 +1629,28 @@ export class GTA6CodexWebGLEngine {
 }
 
 /**
- * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 8.2) — deuda
+ * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 8.3) — deuda
  * técnica real, parcialmente atendida de forma incremental
  * ---------------------------------------------------------------------------
  * El repo tiene una extracción paralela, mayormente NO conectada, de los
  * builders de escena hacia `./scene/*.ts` (equivalentes a cada `buildXxx()`
  * de más arriba, con un `Updater` de 11 parámetros distinto al
  * `SceneUpdater` de este archivo). Salvo las excepciones de `scene/sky.ts`
- * (Fase 8.1) y `scene/water.ts` (Fase 8.2, ver ambas abajo), esos
- * `buildXxx()` inline siguen siendo los que realmente corren en
- * producción; el resto de `scene/*.ts` es código muerto. Verificar que
- * ambas implementaciones produzcan exactamente el
- * mismo resultado visual, línea por línea, excede lo que se puede
- * confirmar sin correr el motor en un navegador — conectar esa extracción
- * a ciegas arriesgaría una regresión visual silenciosa. Migrarlos — o
- * borrarlos si se descartan — sigue siendo la mejora estructural más
- * grande disponible, pero debe hacerse builder por builder, con
- * verificación visual manual en el navegador después de cada uno.
+ * (Fase 8.1), `scene/water.ts` (Fase 8.2) y `scene/humidity-mist.ts`
+ * (Fase 8.3, ver las tres abajo), esos `buildXxx()` inline siguen siendo
+ * los que realmente corren en producción; el resto de `scene/*.ts` es
+ * código muerto — incluyendo, notablemente, `buildHumidityMist` dentro de
+ * `scene/particles.ts`: es una implementación previa, ya existente y sin
+ * conectar, que no se tocó ni se reutilizó en esta fase (regla de "no
+ * modificar otros builders"); `scene/humidity-mist.ts` es el módulo nuevo
+ * y realmente conectado. Verificar que ambas implementaciones produzcan
+ * exactamente el mismo resultado visual, línea por línea, excede lo que
+ * se puede confirmar sin correr el motor en un navegador — conectar esa
+ * extracción a ciegas arriesgaría una regresión visual silenciosa.
+ * Migrarlos — o borrarlos si se descartan — sigue siendo la mejora
+ * estructural más grande disponible, pero debe hacerse builder por
+ * builder, con verificación visual manual en el navegador después de
+ * cada uno.
  *
  * Lo que SÍ está migrado y conectado, por fases sucesivas de extracción
  * mecánica y verificada (sin tocar cámara/uniforms/loop de animación):
@@ -1668,6 +1686,22 @@ export class GTA6CodexWebGLEngine {
  *    mismo patrón de closure que en la Fase 8.1, en `buildWaterHorizon()`
  *    (más arriba en este archivo); `this.updaters`/`start()` no se
  *    tocaron.
+ *  - Fase 8.3: `scene/humidity-mist.ts` (`buildHumidityMist`) — gotas de
+ *    humedad/nocturnas del aire denso de Florida. Mismo `COUNT` de
+ *    partículas (`quality.mistCount`), mismos rangos de posición inicial
+ *    (`60`/`30`/`40 - 10`) y semillas (`aSeed`), mismo `ShaderMaterial`
+ *    (mismos shaders, `transparent`/`depthWrite`/`blending`) y mismos
+ *    uniforms (`time`, `introFade`) que la versión inline anterior,
+ *    incluyendo el mismo factor de `reducedMotion` sobre `time`
+ *    (`elapsed * (reducedMotion ? 0.2 : 1)`). No expone uniforms propios
+ *    en `this` — tampoco los tenía la versión inline. El `updater` de 11
+ *    parámetros se adapta con el mismo patrón de closure que en las
+ *    Fases 8.1/8.2, en `buildHumidityMist()` (más arriba en este
+ *    archivo); `this.updaters`/`start()` no se tocaron. Nota: existe una
+ *    implementación previa y NO relacionada de `buildHumidityMist` en
+ *    `scene/particles.ts` (código muerto, sin conectar, no tocado por
+ *    esta fase) — el módulo realmente conectado es
+ *    `scene/humidity-mist.ts`.
  *
  * El cuerpo del loop de animación dentro de `start()` (cámara dinámica,
  * uniforms por frame, matemática visual del ciclo día/noche) sigue sin
