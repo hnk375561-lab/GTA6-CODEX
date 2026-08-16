@@ -48,6 +48,28 @@ function getContentDirForType(type: EntityType): string {
 }
 
 /**
+ * Valida que el slug de una entidad coincida con el nombre de su archivo JSON.
+ * Esta validación es bloqueante para evitar rutas 404 silenciosas en producción.
+ * 
+ * @param parsed - Entidad parseada
+ * @param filename - Nombre del archivo JSON
+ * @param type - Tipo de entidad
+ * @returns true si el slug coincide con el filename, false si no
+ */
+function validateSlugFilenameMatch(parsed: { slug: string }, filename: string, type: EntityType): boolean {
+  const expectedSlug = filename.replace(/\.json$/, '')
+  if (parsed.slug !== expectedSlug) {
+    console.error(
+      `[entities] Entidad excluida (slug/archivo no coinciden): slug "${parsed.slug}" ` +
+        `no coincide con el nombre de archivo "${filename}" en ${type}. Renombrá el archivo a ` +
+        `"${parsed.slug}.json" o corregí el campo "slug" para que coincida con "${expectedSlug}".`
+    )
+    return false
+  }
+  return true
+}
+
+/**
  * CACHÉ EN MEMORIA
  * ==================
  * Todo el contenido vive en JSON en disco y se lee con fs *sync* (no hay
@@ -69,16 +91,31 @@ const CACHE_ENABLED = process.env.NODE_ENV === 'production'
 
 const typeCache = new Map<EntityType, Entity[]>()
 const singleEntityCache = new Map<string, Entity | null>()
+/**
+ * Índice por slug para búsquedas O(1) en lugar de O(n).
+ * Solo se construye cuando se carga un tipo completo por primera vez.
+ * Clave: "type/slug", Valor: Entity
+ */
+const slugIndex = new Map<string, Entity>()
 
+/**
+ * Genera clave de caché única para una entidad específica.
+ * @param type - Tipo de entidad
+ * @param slug - Slug de la entidad
+ * @returns Clave de caché en formato "type/slug"
+ */
 function entityCacheKey(type: EntityType, slug: string): string {
   return `${type}/${slug}`
 }
 
-/** Limpia toda la caché en memoria. Expuesto para tests / scripts que
- *  necesiten releer contenido dentro del mismo proceso (ej. watchers). */
+/**
+ * Limpia toda la caché en memoria. Expuesto para tests / scripts que
+ * necesiten releer contenido dentro del mismo proceso (ej. watchers).
+ */
 export function clearEntityCache(): void {
   typeCache.clear()
   singleEntityCache.clear()
+  slugIndex.clear()
 }
 
 /**
@@ -87,6 +124,9 @@ export function clearEntityCache(): void {
  * que necesita leer trailers sin poder usar `await`) puedan reutilizar
  * exactamente la misma lógica de lectura/validación/caché en vez de
  * reimplementar su propia lectura de fs por separado.
+ * 
+ * @param type - Tipo de entidad a cargar
+ * @returns Array de entidades válidas del tipo especificado
  */
 function loadEntitiesByTypeSync(type: EntityType): Entity[] {
   if (CACHE_ENABLED && typeCache.has(type)) {
@@ -126,13 +166,7 @@ function loadEntitiesByTypeSync(type: EntityType): Entity[] {
       // reintroducir el problema ya corregido de que un solo archivo mal
       // formado tire abajo `next build` entero (ver comentario de
       // `validateEntity` más abajo).
-      const expectedSlug = file.replace(/\.json$/, '')
-      if (parsed.slug !== expectedSlug) {
-        console.error(
-          `[entities] Entidad excluida (slug/archivo no coinciden): slug "${parsed.slug}" ` +
-            `no coincide con el nombre de archivo "${file}" en ${type}. Renombrá el archivo a ` +
-            `"${parsed.slug}.json" o corregí el campo "slug" para que coincida con "${expectedSlug}".`
-        )
+      if (!validateSlugFilenameMatch(parsed, file, type)) {
         continue
       }
 
@@ -144,7 +178,13 @@ function loadEntitiesByTypeSync(type: EntityType): Entity[] {
 
   entities.sort((a, b) => a.title.localeCompare(b.title, 'es'))
 
-  if (CACHE_ENABLED) typeCache.set(type, entities)
+  if (CACHE_ENABLED) {
+    typeCache.set(type, entities)
+    // Construir índice por slug para búsquedas O(1)
+    entities.forEach(entity => {
+      slugIndex.set(entityCacheKey(type, entity.slug), entity)
+    })
+  }
   return entities
 }
 
@@ -153,6 +193,9 @@ function loadEntitiesByTypeSync(type: EntityType): Entity[] {
  * necesita) usar `await` — ej. módulos que se ejecutan fuera de un Server
  * Component async, o utilidades que se apoyan en varias entidades a la vez
  * dentro de una función síncrona.
+ * 
+ * @param type - Tipo de entidad a cargar
+ * @returns Array de entidades del tipo especificado
  */
 export function getEntitiesByTypeSync(type: EntityType): Entity[] {
   return loadEntitiesByTypeSync(type)
@@ -161,13 +204,20 @@ export function getEntitiesByTypeSync(type: EntityType): Entity[] {
 /**
  * Carga todas las entidades de un tipo específico.
  * Lee todos los archivos .json en /content/{type}/
+ * 
+ * @param type - Tipo de entidad a cargar
+ * @returns Array de entidades del tipo especificado
  */
 export async function getEntitiesByType(type: EntityType): Promise<Entity[]> {
   return loadEntitiesByTypeSync(type)
 }
 
 /**
- * Obtiene una entidad específica por tipo y slug
+ * Obtiene una entidad específica por tipo y slug.
+ * 
+ * @param type - Tipo de entidad
+ * @param slug - Slug de la entidad
+ * @returns La entidad si existe, null si no
  */
 export async function getEntity(type: EntityType, slug: string): Promise<Entity | null> {
   const cacheKey = entityCacheKey(type, slug)
@@ -176,9 +226,10 @@ export async function getEntity(type: EntityType, slug: string): Promise<Entity 
   }
 
   // Si ya cacheamos el tipo completo (ej. por una llamada previa a
-  // getEntitiesByType/getAllEntities), resolvemos desde ahí sin tocar fs.
-  if (CACHE_ENABLED && typeCache.has(type)) {
-    const found = typeCache.get(type)!.find((e) => e.slug === slug) || null
+  // getEntitiesByType/getAllEntities), resolvemos desde el índice O(1)
+  // en lugar de buscar linealmente O(n) en el array.
+  if (CACHE_ENABLED && slugIndex.has(cacheKey)) {
+    const found = slugIndex.get(cacheKey) || null
     singleEntityCache.set(cacheKey, found)
     return found
   }
@@ -197,11 +248,8 @@ export async function getEntity(type: EntityType, slug: string): Promise<Entity 
         // una entidad con slug interno desincronizado del nombre de archivo
         // podía servirse igual bajo la URL del archivo, con canonical/JSON-LD
         // apuntando a un slug distinto al de la URL real.
-        if (parsed.slug !== slug) {
-          console.error(
-            `[entities] Entidad excluida (slug/archivo no coinciden): slug "${parsed.slug}" ` +
-              `no coincide con el nombre de archivo "${slug}.json" en ${type}.`
-          )
+        if (!validateSlugFilenameMatch(parsed, `${slug}.json`, type)) {
+          result = null
         } else {
           result = parsed as Entity
         }
@@ -216,14 +264,21 @@ export async function getEntity(type: EntityType, slug: string): Promise<Entity 
 }
 
 /**
- * Obtiene todos los slugs de un tipo (para generación de rutas estáticas)
+ * Obtiene todos los slugs de un tipo (para generación de rutas estáticas).
+ * 
+ * @param type - Tipo de entidad
+ * @returns Array de slugs para generar rutas estáticas
  */
 export async function getEntitySlugs(type: EntityType): Promise<string[]> {
   return loadEntitiesByTypeSync(type).map((e) => e.slug)
 }
 
 /**
- * Obtiene todas las entidades de todos los tipos
+ * Obtiene todas las entidades de todos los tipos.
+ * Nota: Carga todas las entidades en memoria. Para volúmenes grandes
+ * (1000+ entidades), considerar implementación con paginación o lazy loading.
+ * 
+ * @returns Array con todas las entidades de todos los tipos
  */
 export async function getAllEntities(): Promise<Entity[]> {
   const all: Entity[] = []
@@ -234,7 +289,10 @@ export async function getAllEntities(): Promise<Entity[]> {
 }
 
 /**
- * Obtiene las entidades marcadas como destacadas ("featured")
+ * Obtiene las entidades marcadas como destacadas ("featured").
+ * 
+ * @param limit - Cantidad máxima de entidades a retornar (default: 6)
+ * @returns Array de entidades destacadas ordenadas por fecha de actualización
  */
 export async function getFeaturedEntities(limit = 6): Promise<Entity[]> {
   const all = await getAllEntities()
@@ -245,7 +303,9 @@ export async function getFeaturedEntities(limit = 6): Promise<Entity[]> {
 }
 
 /**
- * Cuenta el total de entidades publicadas (todas las categorías)
+ * Cuenta el total de entidades publicadas (todas las categorías).
+ * 
+ * @returns Total de entidades válidas en el sistema
  */
 export async function getEntityCount(): Promise<number> {
   const all = await getAllEntities()
@@ -257,6 +317,8 @@ export async function getEntityCount(): Promise<number> {
  * Reutiliza la caché de contenido en vez de solo contar archivos en disco,
  * para que el conteo refleje entidades *válidas* (consistente con el resto
  * de la API) y no archivos crudos que después se descartan por inválidos.
+ * 
+ * @returns Objeto con el conteo de entidades por tipo
  */
 export async function getEntityCountsByType(): Promise<Record<EntityType, number>> {
   const counts = {} as Record<EntityType, number>
@@ -286,6 +348,9 @@ export function validateEntity(entity: unknown): entity is BaseEntity {
  * Incluye normalización de acentos (á, é, í, ó, ú, ñ) para que títulos en
  * español ("Lucía Caminos" -> "lucia-caminos") generen slugs limpios en
  * vez de perder la letra acentuada silenciosamente en el regex de abajo.
+ * 
+ * @param input - Texto a normalizar (generalmente un título)
+ * @returns Slug en formato URL-safe
  */
 export function normalizeSlug(input: string): string {
   return input
@@ -300,7 +365,11 @@ export function normalizeSlug(input: string): string {
 }
 
 /**
- * Obtiene el path de ruta para una entidad
+ * Obtiene el path de ruta para una entidad.
+ * 
+ * @param type - Tipo de entidad
+ * @param slug - Slug de la entidad
+ * @returns Path de ruta en formato "/type/slug"
  */
 export function getEntityPath(type: EntityType, slug: string): string {
   return `/${type}/${slug}`
