@@ -3,12 +3,9 @@
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import Fuse from 'fuse.js'
-import type { Entity, EntityType, Trailer } from '@/types'
-import { EntityType as EntityTypeEnum } from '@/types'
-import { Card, CardBody } from '@/components/ui/Card'
-import { Badge } from '@/components/ui/Badge'
+import type { Entity, EntityType } from '@/types'
 import { Reveal } from '@/components/ui/Reveal'
-import { EntityImage } from '@/components/entities/EntityImage'
+import { EntityCard } from '@/components/entities/EntityCard'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
 import { cn } from '@/lib/utils'
 
@@ -20,17 +17,14 @@ const STATUS_LABELS = {
 
 type StatusFilter = 'todos' | keyof typeof STATUS_LABELS
 
-function formatTrailerDuration(seconds?: number): string | null {
-  if (!seconds || seconds <= 0) return null
-  const m = Math.floor(seconds / 60)
-  const s = seconds % 60
-  return `${m}:${String(s).padStart(2, '0')}`
-}
-
 interface EntityListExplorerProps {
   type: EntityType
   entities: Entity[]
   typeLabel: string
+  /** slug → URL de clip (mp4), hoy solo relevante para personajes con clip
+   *  registrado (ver getCharacterClipUrl en lib/media.ts). El caller server
+   *  (`[entityType]/page.tsx`) resuelve este mapa una sola vez. */
+  clipUrlBySlug?: Record<string, string>
 }
 
 /**
@@ -43,7 +37,7 @@ interface EntityListExplorerProps {
  * herramientas real con conteos por estado y estados vacíos específicos
  * para "sin resultados de búsqueda" vs. "categoría todavía vacía".
  */
-export function EntityListExplorer({ type, entities, typeLabel }: EntityListExplorerProps) {
+export function EntityListExplorer({ entities, typeLabel, clipUrlBySlug }: EntityListExplorerProps) {
   const [query, setQuery] = useState('')
   const [status, setStatus] = useState<StatusFilter>('todos')
   const debouncedQuery = useDebouncedValue(query, 200)
@@ -83,8 +77,7 @@ export function EntityListExplorer({ type, entities, typeLabel }: EntityListExpl
   // fallback animado por categoría — ver EntityImage/lib/images.ts): ya no
   // se oculta el slot de imagen para las categorías sin key art propia
   // todavía, para que ninguna card se vea "muerta" mientras se sube el
-  // asset real.
-  const hasImages = true
+  // asset real. La propia card (EntityCard) ya asume esto siempre.
   const isFiltering = debouncedQuery.trim().length > 0 || status !== 'todos'
 
   return (
@@ -194,78 +187,11 @@ export function EntityListExplorer({ type, entities, typeLabel }: EntityListExpl
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((entity, i) => (
             <Reveal key={entity.slug} delay={(i % 6) * 80}>
-              <Link href={`/${type}/${entity.slug}`} className="group block h-full">
-                <Card hoverable className={cn('h-full overflow-hidden', hasImages && '!p-0')}>
-                  {hasImages && (
-                    <div className="relative">
-                      <EntityImage entity={entity} variant="thumbnail" className="rounded-none border-x-0 border-t-0" />
-                      {type === EntityTypeEnum.TRAILER && 'scenes' in entity && (
-                        <div className="trailer-card-overlay">
-                          <span className="trailer-card-overlay-chip">
-                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                              <rect x="3.5" y="5.5" width="17" height="13" rx="1.6" />
-                              <path d="M9.7 9.3v5.4l4.6-2.7-4.6-2.7Z" />
-                            </svg>
-                            {(entity as Trailer).scenes.length} escenas
-                          </span>
-                          {formatTrailerDuration((entity as Trailer).durationSeconds) && (
-                            <span className="trailer-card-overlay-chip">
-                              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                <circle cx="12" cy="12" r="8.5" />
-                                <path d="M12 7v5l3.2 2" />
-                              </svg>
-                              {formatTrailerDuration((entity as Trailer).durationSeconds)}
-                            </span>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                  <CardBody className={hasImages ? 'p-6' : undefined}>
-                    <div className="mb-3 flex items-center justify-between gap-2">
-                      <Badge variant="status" status={entity.status}>
-                        {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
-                      </Badge>
-                      {entity.featured && <Badge variant="tag">Destacado</Badge>}
-                    </div>
-                    <h2 className="mb-2 text-xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
-                      {entity.title}
-                    </h2>
-                    <p className="line-clamp-3 text-sm text-gta-text-secondary">{entity.description}</p>
-                    {type === EntityTypeEnum.TRAILER && 'scenes' in entity && (
-                      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-gta-border pt-3 text-xs text-gta-text-secondary">
-                        <span className="inline-flex items-center gap-1">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                            <rect x="3.5" y="5.5" width="17" height="13" rx="1.6" />
-                            <path d="M9.7 9.3v5.4l4.6-2.7-4.6-2.7Z" />
-                          </svg>
-                          {(entity as Trailer).scenes.length} escenas
-                        </span>
-                        {formatTrailerDuration((entity as Trailer).durationSeconds) && (
-                          <span className="inline-flex items-center gap-1">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                              <circle cx="12" cy="12" r="8.5" />
-                              <path d="M12 7v5l3.2 2" />
-                            </svg>
-                            {formatTrailerDuration((entity as Trailer).durationSeconds)}
-                          </span>
-                        )}
-                        <span className="inline-flex items-center gap-1">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                            <rect x="4" y="4.5" width="16" height="15" rx="1.4" />
-                            <path d="M7.5 8.5h6M7.5 11.5h9" />
-                          </svg>
-                          {new Date((entity as Trailer).releaseDate).toLocaleDateString('es-ES', {
-                            year: 'numeric',
-                            month: 'short',
-                            day: 'numeric',
-                          })}
-                        </span>
-                      </div>
-                    )}
-                  </CardBody>
-                </Card>
-              </Link>
+              <EntityCard
+                entity={entity}
+                typeLabel={typeLabel}
+                clipUrl={clipUrlBySlug?.[entity.slug]}
+              />
             </Reveal>
           ))}
         </div>

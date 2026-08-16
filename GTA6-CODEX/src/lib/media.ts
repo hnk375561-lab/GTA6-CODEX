@@ -216,6 +216,17 @@ function getCharacterClipAssets(): MediaAsset[] {
 }
 
 /**
+ * URL directa (mp4) del clip de presentación de un personaje, si existe en
+ * `CHARACTER_CLIPS`. Pensado para las cards de listado (Fase 8): permite
+ * usar el clip como media animada de la card (hover-to-play) sin tener que
+ * resolver el `MediaAsset` completo ni importar `getCharacterClipAssets` en
+ * un componente cliente. Null si el personaje no tiene clip registrado.
+ */
+export function getCharacterClipUrl(entitySlug: string): string | null {
+  return CHARACTER_CLIPS.find((clip) => clip.entitySlug === entitySlug)?.url ?? null
+}
+
+/**
  * Video de key art / portada oficial (formato horizontal), alojado en
  * Vercel Blob. No pertenece a ningún personaje ni trailer puntual — mismo
  * espíritu que `KEY_ART` en `gallery.ts`, pero en video. Se expone aparte

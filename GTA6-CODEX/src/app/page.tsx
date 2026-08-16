@@ -2,13 +2,13 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { EntityType } from '@/types'
 import { getFeaturedEntities, getEntityCount, getEntityCountsByType } from '@/lib/entities'
+import { getCharacterClipUrl } from '@/lib/media'
 import { generateHomepageMetadata, generateBreadcrumbJsonLd } from '@/lib/seo'
-import { Card, CardBody } from '@/components/ui/Card'
-import { Badge } from '@/components/ui/Badge'
+import { Card } from '@/components/ui/Card'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { CategoryCardMedia } from '@/components/ui/CategoryCardMedia'
-import { EntityImage } from '@/components/entities/EntityImage'
+import { EntityCard } from '@/components/entities/EntityCard'
 import { getCategoryPreviewImage } from '@/lib/images'
 import { RotatingHeroBackground } from '@/components/layout/RotatingHeroBackground'
 import { SceneSection } from '@/components/webgl/SceneSection'
@@ -17,12 +17,6 @@ import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
 export async function generateMetadata(): Promise<Metadata> {
   return generateHomepageMetadata()
 }
-
-const STATUS_LABELS = {
-  confirmado: 'Confirmado',
-  rumor: 'Rumor',
-  nuestro: 'Nuestro',
-} as const
 
 /**
  * Orden editorial de las tarjetas de categoría en la home: primero las 5
@@ -173,29 +167,11 @@ export default async function HomePage() {
 
             <div className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((entity) => (
-                <Link
+                <EntityCard
                   key={`${entity.type}-${entity.slug}`}
-                  href={`/${entity.type}/${entity.slug}`}
-                  className="group block h-full"
-                >
-                  <Card hoverable className="flex h-full flex-col overflow-hidden !p-0">
-                    <EntityImage entity={entity} variant="thumbnail" className="!rounded-b-none" />
-                    <CardBody className="flex flex-1 flex-col gap-2 px-5 pb-5">
-                      <div className="flex items-center gap-2">
-                        <Badge variant="status" status={entity.status}>
-                          {STATUS_LABELS[entity.status]}
-                        </Badge>
-                        <span className="text-xs uppercase tracking-wide text-gta-text-tertiary">
-                          {ENTITY_TYPE_LABELS[entity.type]}
-                        </span>
-                      </div>
-                      <h3 className="text-lg font-semibold text-gta-text">{entity.title}</h3>
-                      <p className="line-clamp-2 text-sm text-gta-text-secondary">
-                        {entity.description}
-                      </p>
-                    </CardBody>
-                  </Card>
-                </Link>
+                  entity={entity}
+                  clipUrl={entity.type === EntityType.CHARACTER ? getCharacterClipUrl(entity.slug) : undefined}
+                />
               ))}
             </div>
           </div>
