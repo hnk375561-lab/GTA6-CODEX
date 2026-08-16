@@ -19,6 +19,7 @@ import {
 import { computeShotFrame as computeCameraShotFrame } from './core/camera-shots'
 import { createEnvironment } from './core/environment'
 import { createPostProcessingPipeline } from './core/postprocessing'
+import { computePointerTarget, computeScrollTarget } from './core/input'
 import { lerpDayColor, lerpCyclic01, smootherstep } from './utils/math'
 import { SHOTS, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP, IMAGE_BILLBOARDS, SECTION_MOOD, CATEGORY_WARMTH, STATUS_UNREST, CATEGORY_PACE, CATEGORY_FRAME } from './config/scene'
 import { SKY_VERTEX_SHADER, SKY_FRAGMENT_SHADER } from './shaders/sky'
@@ -1331,13 +1332,11 @@ export class GTA6CodexWebGLEngine {
   // ---------------------------------------------------------------------
 
   private handlePointerMove = (e: PointerEvent) => {
-    this.pointerTarget.x = (e.clientX / window.innerWidth) * 2 - 1
-    this.pointerTarget.y = (e.clientY / window.innerHeight) * 2 - 1
+    this.pointerTarget = computePointerTarget(e)
   }
 
   private handleScroll = () => {
-    const max = document.documentElement.scrollHeight - window.innerHeight
-    this.scrollTarget = max > 0 ? window.scrollY / max : 0
+    this.scrollTarget = computeScrollTarget()
   }
 
   private handleVisibility = () => {
