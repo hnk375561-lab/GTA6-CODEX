@@ -27,7 +27,11 @@ import { SHOTS, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP, IMAGE_BILLBOARDS } from './con
 // de arquitectura al pie del archivo). SKY_VERTEX_SHADER/SKY_FRAGMENT_SHADER
 // ya no se importan acá directamente: ahora los consume ./scene/sky.ts.
 import { buildSkyDome as buildSkyDomeScene } from './scene/sky'
-import { WATER_VERTEX_SHADER, WATER_FRAGMENT_SHADER } from './shaders/water'
+// Fase 8.2: buildWaterHorizon() migrado mecánicamente a ./scene/water.ts (ver
+// nota de arquitectura al pie del archivo). WATER_VERTEX_SHADER/
+// WATER_FRAGMENT_SHADER ya no se importan acá directamente: ahora los
+// consume ./scene/water.ts.
+import { buildWaterHorizon as buildWaterHorizonScene } from './scene/water'
 import { SHAFT_VERTEX_SHADER, SHAFT_FRAGMENT_SHADER, NEON_SIGN_FRAGMENT_SHADER } from './shaders/neon'
 import { ROAD_VERTEX_SHADER, ROAD_FRAGMENT_SHADER } from './shaders/road'
 import { SUN_VERTEX_SHADER, SUN_FRAGMENT_SHADER } from './shaders/sun'
@@ -200,13 +204,15 @@ import {
  * del ciclo de vida del renderer y está conectado a este motor
  * (`createRenderer`, `resizeRendererAndPasses`, `disposeSceneResources`,
  * etc. — ver imports arriba). Desde la Fase 8.1, `scene/sky.ts` también
- * está conectado (ver `buildSkyDome()` más abajo): su `updater` de 11
- * parámetros se envuelve ahí mismo en un closure `SceneUpdater` de 3
- * parámetros antes de entrar a `this.updaters`, así que este tipo sigue
- * siendo el único que viaja por `start()`/el loop de animación. El resto
- * de `scene/*.ts` sigue siendo código muerto sin conectar. Nombrado
- * `SceneUpdater` a propósito para que este tipo nunca se confunda ni se
- * mezcle por accidente con el `Updater` de `scene/*.ts`.
+ * está conectado (ver `buildSkyDome()` más abajo), y desde la Fase 8.2,
+ * `scene/water.ts` también (ver `buildWaterHorizon()` más abajo): en
+ * ambos casos su `updater` de 11 parámetros se envuelve ahí mismo en un
+ * closure `SceneUpdater` de 3 parámetros antes de entrar a
+ * `this.updaters`, así que este tipo sigue siendo el único que viaja
+ * por `start()`/el loop de animación. El resto de `scene/*.ts` sigue
+ * siendo código muerto sin conectar. Nombrado `SceneUpdater` a
+ * propósito para que este tipo nunca se confunda ni se mezcle por
+ * accidente con el `Updater` de `scene/*.ts`.
  */
 type SceneUpdater = (elapsed: number, delta: number, intro: number) => void
 
@@ -513,29 +519,40 @@ export class GTA6CodexWebGLEngine {
     )
   }
 
-  /** Bahía Leonida en el horizonte — reflejos y ondas sutiles. */
+  /**
+   * Bahía Leonida en el horizonte — reflejos y ondas sutiles.
+   *
+   * Fase 8.2 — geometría, material, uniforms y valores idénticos a la
+   * versión inline anterior; solo se movieron a `./scene/water.ts`
+   * (`buildWaterHorizonScene`). Igual que en la Fase 8.1, el `updater`
+   * que devuelve esa función usa la firma común de 11 parámetros de
+   * `scene/*.ts` (ver nota de arquitectura al pie del archivo),
+   * incompatible con `SceneUpdater` de este motor — se lo envuelve acá
+   * en un closure de 3 parámetros que lee `this.dayPhase` en cada frame
+   * exactamente igual que antes, y se lo registra en `this.updaters`
+   * sin tocar `start()`/el loop de animación. A diferencia del cielo,
+   * el agua no tiene uniforms propios expuestos en `this` (no existía
+   * un campo `this.waterUniforms` en la versión inline), así que acá
+   * tampoco se agrega uno.
+   */
   private buildWaterHorizon() {
-    const uniforms = { time: { value: 0 }, introFade: { value: 0 }, dayPhase: { value: 0.42 } }
-    const material = new THREE.ShaderMaterial({
-      uniforms,
-      vertexShader: WATER_VERTEX_SHADER,
-      fragmentShader: WATER_FRAGMENT_SHADER,
-      transparent: true,
-      depthWrite: false,
-      blending: THREE.NormalBlending,
-      side: THREE.DoubleSide,
-    })
-    const water = new THREE.Mesh(new THREE.PlaneGeometry(240, 120, 1, 1), material)
-    water.rotation.x = -Math.PI / 2
-    water.position.y = -12.8
-    water.position.z = -48
-    this.farGroup.add(water)
+    const updater = buildWaterHorizonScene({ farGroup: this.farGroup })
 
-    this.updaters.push((elapsed, _delta, intro) => {
-      material.uniforms.time.value = elapsed
-      material.uniforms.introFade.value = intro
-      material.uniforms.dayPhase.value = this.dayPhase
-    })
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
+    )
   }
 
   /** Letreros neón premium GTA VI — Vice City moderna con atmósfera cinematográfica. */
@@ -1599,16 +1616,17 @@ export class GTA6CodexWebGLEngine {
 }
 
 /**
- * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 8.1) — deuda
+ * NOTA DE ARQUITECTURA (auditoría v8.2, actualizada en Fase 8.2) — deuda
  * técnica real, parcialmente atendida de forma incremental
  * ---------------------------------------------------------------------------
  * El repo tiene una extracción paralela, mayormente NO conectada, de los
  * builders de escena hacia `./scene/*.ts` (equivalentes a cada `buildXxx()`
  * de más arriba, con un `Updater` de 11 parámetros distinto al
- * `SceneUpdater` de este archivo). Salvo la excepción de `scene/sky.ts`
- * (Fase 8.1, ver abajo), esos `buildXxx()` inline siguen siendo los que
- * realmente corren en producción; el resto de `scene/*.ts` es código
- * muerto. Verificar que ambas implementaciones produzcan exactamente el
+ * `SceneUpdater` de este archivo). Salvo las excepciones de `scene/sky.ts`
+ * (Fase 8.1) y `scene/water.ts` (Fase 8.2, ver ambas abajo), esos
+ * `buildXxx()` inline siguen siendo los que realmente corren en
+ * producción; el resto de `scene/*.ts` es código muerto. Verificar que
+ * ambas implementaciones produzcan exactamente el
  * mismo resultado visual, línea por línea, excede lo que se puede
  * confirmar sin correr el motor en un navegador — conectar esa extracción
  * a ciegas arriesgaría una regresión visual silenciosa. Migrarlos — o
@@ -1639,6 +1657,17 @@ export class GTA6CodexWebGLEngine {
  *    `buildSkyDome()` (más arriba en este archivo) en un closure
  *    `SceneUpdater` de 3 parámetros — este es el único punto de contacto
  *    entre ambas convenciones; `this.updaters`/`start()` no se tocaron.
+ *  - Fase 8.2: `scene/water.ts` (`buildWaterHorizon`) — bahía Leonida en
+ *    el horizonte. Misma geometría (`PlaneGeometry(240, 120, 1, 1)`,
+ *    rotación/posición idénticas), mismo `ShaderMaterial` (mismos
+ *    shaders, `transparent`/`depthWrite`/`blending`/`side`), mismos
+ *    uniforms (`time`, `introFade`, `dayPhase`) y mismos valores
+ *    iniciales que la versión inline anterior. A diferencia del cielo,
+ *    no expone un campo `this.waterUniforms` — tampoco lo tenía la
+ *    versión inline. El `updater` de 11 parámetros se adapta con el
+ *    mismo patrón de closure que en la Fase 8.1, en `buildWaterHorizon()`
+ *    (más arriba en este archivo); `this.updaters`/`start()` no se
+ *    tocaron.
  *
  * El cuerpo del loop de animación dentro de `start()` (cámara dinámica,
  * uniforms por frame, matemática visual del ciclo día/noche) sigue sin
