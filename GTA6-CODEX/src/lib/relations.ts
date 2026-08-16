@@ -2,8 +2,38 @@ import { Entity, EntityRelation, EntityType } from '@/types'
 import { getEntity, getEntitiesByType } from './entities'
 
 /**
+ * CACHÉ DE RELACIONES BIDIRECCIONALES
+ * =====================================
+ * Para evitar el costo O(n²) de inferir relaciones en cada llamada,
+ * cacheamos los resultados por entidad. Clave: "type/slug", Valor: EntityRelation[]
+ */
+const bidirectionalCache = new Map<string, EntityRelation[]>()
+
+/**
+ * Genera clave de caché única para relaciones bidireccionales.
+ * @param type - Tipo de entidad
+ * @param slug - Slug de la entidad
+ * @returns Clave de caché en formato "type/slug"
+ */
+function relationCacheKey(type: EntityType, slug: string): string {
+  return `${type}/${slug}`
+}
+
+/**
+ * Limpia el caché de relaciones bidireccionales.
+ * Expuesto para tests / scripts que necesiten recalcular relaciones.
+ */
+export function clearRelationCache(): void {
+  bidirectionalCache.clear()
+}
+
+/**
  * Obtiene todas las entidades relacionadas a una entidad,
  * resolviendo cada EntityRelation contra el contenido real.
+ * 
+ * @param entity - Entidad origen
+ * @param limit - Límite opcional de relaciones a resolver
+ * @returns Array de entidades relacionadas y existentes
  */
 export async function getRelatedEntities(entity: Entity, limit?: number): Promise<Entity[]> {
   if (!entity.relations || entity.relations.length === 0) return []
@@ -23,6 +53,10 @@ export async function getRelatedEntities(entity: Entity, limit?: number): Promis
  * Igual que getRelatedEntities, pero conserva el tipo de relación
  * (label) junto a cada entidad resuelta, para poder agruparlas
  * visualmente por vínculo (ej. "Ubicado en", "Conduce", "Trabaja para").
+ * 
+ * @param entity - Entidad origen
+ * @param limit - Límite opcional de relaciones a resolver
+ * @returns Array de entidades con sus etiquetas de relación
  */
 export async function getRelatedEntitiesWithLabel(
   entity: Entity,
@@ -45,8 +79,22 @@ export async function getRelatedEntitiesWithLabel(
  * Obtiene relaciones bidireccionales.
  * Si A relaciona con B, también retorna B como relacionado con A,
  * aunque B no declare explícitamente la relación inversa.
+ * 
+ * NOTA DE ESCALABILIDAD: Esta función tiene complejidad O(n²) porque
+ * carga todas las entidades de todos los tipos para inferir relaciones
+ * inversas. Para 162 entidades actuales es aceptable, pero para 1000+
+ * entidades necesitará optimización (índices invertidos o sistema de
+ * grafo dedicado).
+ * 
+ * @param entity - Entidad origen
+ * @returns Array de relaciones directas e inferidas
  */
 export async function getBidirectionalRelations(entity: Entity): Promise<EntityRelation[]> {
+  const cacheKey = relationCacheKey(entity.type, entity.slug)
+  if (bidirectionalCache.has(cacheKey)) {
+    return bidirectionalCache.get(cacheKey)!
+  }
+
   const direct = entity.relations || []
 
   // Relaciones explícitas marcadas como bidireccionales ya cuentan.
@@ -83,18 +131,22 @@ export async function getBidirectionalRelations(entity: Entity): Promise<EntityR
     }
   }
 
-  return [...direct, ...inferred]
+  const result = [...direct, ...inferred]
+  bidirectionalCache.set(cacheKey, result)
+  return result
 }
 
 /**
  * Cuenta relaciones (explícitas + inferidas) sin resolver cada entidad
  * objetivo — solo lo que necesita una card de listado para mostrar
- * "N conexiones" incluyendo las inferidas (Fase 8, hallazgo [7]: hoy solo
- * las explícitas cuentan en `EntityCard`). Reutiliza `getBidirectionalRelations`
+ * "N conexiones" incluyendo las inferidas. Reutiliza `getBidirectionalRelations`
  * (que ya evita resolver entidades completas) y se queda solo con el
  * largo — el caller server-side arma un mapa slug→count una sola vez por
  * listado y lo pasa a los componentes cliente como prop plana, mismo
  * patrón que `imageBySlug`/`clipUrlBySlug`.
+ * 
+ * @param entity - Entidad origen
+ * @returns Total de relaciones (directas + inferidas)
  */
 export async function getBidirectionalRelationCount(entity: Entity): Promise<number> {
   const relations = await getBidirectionalRelations(entity)
@@ -107,6 +159,10 @@ export async function getBidirectionalRelationCount(entity: Entity): Promise<num
  * una entidad como "leonida" -que no declara relations propias pero es
  * referenciada por 7 ubicaciones con located_in- muestre esos vínculos
  * en su panel "Relacionado" aunque nunca los haya declarado ella misma.
+ * 
+ * @param entity - Entidad origen
+ * @param limit - Límite opcional de relaciones a resolver
+ * @returns Array de entidades con sus etiquetas de relación (incluye inferidas)
  */
 export async function getBidirectionalRelatedEntitiesWithLabel(
   entity: Entity,
@@ -125,7 +181,11 @@ export async function getBidirectionalRelatedEntitiesWithLabel(
 }
 
 /**
- * Agrupa relaciones por tipo de relación
+ * Agrupa relaciones por tipo de relación.
+ * Útil para agrupación visual en UI (ej. todas las "ubicado_en" juntas).
+ * 
+ * @param relations - Array de relaciones a agrupar
+ * @returns Map donde la clave es el tipo de relación y el valor es el array de relaciones
  */
 export function groupRelationsByType(relations: EntityRelation[]): Map<string, EntityRelation[]> {
   const grouped = new Map<string, EntityRelation[]>()
@@ -141,7 +201,11 @@ export function groupRelationsByType(relations: EntityRelation[]): Map<string, E
 }
 
 /**
- * Agrupa relaciones por tipo de entidad objetivo
+ * Agrupa relaciones por tipo de entidad objetivo.
+ * Útil para mostrar secciones separadas por categoría (ej. "Personajes relacionados", "Ubicaciones").
+ * 
+ * @param relations - Array de relaciones a agrupar
+ * @returns Map donde la clave es el tipo de entidad y el valor es el array de relaciones
  */
 export function groupRelationsByEntityType(relations: EntityRelation[]): Map<EntityType, EntityRelation[]> {
   const grouped = new Map<EntityType, EntityRelation[]>()
@@ -157,7 +221,10 @@ export function groupRelationsByEntityType(relations: EntityRelation[]): Map<Ent
 }
 
 /**
- * Valida que una relación sea válida
+ * Valida que una relación sea válida según el contrato EntityRelation.
+ * 
+ * @param relation - Relación a validar
+ * @returns true si la relación es válida, false si no
  */
 export function validateRelation(relation: EntityRelation): boolean {
   if (!relation.targetType || !relation.targetSlug || !relation.relation) {
@@ -177,7 +244,11 @@ export function validateRelation(relation: EntityRelation): boolean {
 }
 
 /**
- * Obtiene el label readable de una relación
+ * Obtiene el label legible en español de una relación.
+ * Mapea los códigos internos (ej. "located_in") a etiquetas UI (ej. "Ubicado en").
+ * 
+ * @param relation - Código de relación a traducir
+ * @returns Etiqueta legible en español, o el código original si no hay mapeo
  */
 export function getRelationLabel(relation: string): string {
   const labels: Record<string, string> = {
@@ -215,7 +286,12 @@ export function getRelationLabel(relation: string): string {
 }
 
 /**
- * Genera breadcrumb desde relaciones
+ * Genera breadcrumb desde relaciones.
+ * Crea una navegación jerárquica basada en las relaciones de la entidad.
+ * 
+ * @param entity - Entidad origen
+ * @param relations - Relaciones a procesar
+ * @returns Array de breadcrumb items
  */
 export function generateBreadcrumbFromRelations(
   entity: Entity,
@@ -242,6 +318,10 @@ export function generateBreadcrumbFromRelations(
  * hasta `maxDepth` saltos. Devuelve las relaciones directas de `entity`
  * que forman parte de al menos un ciclo detectado (incluye tanto
  * auto-referencias A -> A como ciclos más largos, ej. A -> B -> A).
+ * 
+ * @param entity - Entidad origen a analizar
+ * @param maxDepth - Profundidad máxima de búsqueda (default: 5)
+ * @returns Array de relaciones que forman parte de ciclos
  */
 export async function detectCircularRelations(
   entity: Entity,
@@ -270,6 +350,17 @@ export async function detectCircularRelations(
   return circular
 }
 
+/**
+ * Helper recursivo para detectar caminos de vuelta al nodo inicial.
+ * Implementa DFS con detección de ciclos para evitar loops infinitos.
+ * 
+ * @param currentType - Tipo de entidad actual en el recorrido
+ * @param currentSlug - Slug de entidad actual en el recorrido
+ * @param startKey - Clave del nodo inicial (formato "type/slug")
+ * @param depthRemaining - Profundidad restante permitida
+ * @param visited - Conjunto de nodos ya visitados en este camino
+ * @returns true si existe un camino de vuelta al inicio, false si no
+ */
 async function hasPathBackToStart(
   currentType: EntityType,
   currentSlug: string,
