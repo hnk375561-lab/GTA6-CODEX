@@ -17,7 +17,7 @@ import { EntitySectionHeading } from '@/components/entities/EntitySectionHeading
 import { EntityImage } from '@/components/entities/EntityImage'
 import { TrailerScenes } from '@/components/entities/TrailerScenes'
 import { TrailerStats } from '@/components/entities/TrailerStats'
-import { TrailerNav } from '@/components/entities/TrailerNav'
+import { EntityNav } from '@/components/entities/EntityNav'
 import { TrailerPlayer } from '@/components/media/TrailerPlayer'
 import { MediaCarousel } from '@/components/media/MediaCarousel'
 import { getMediaForEntity } from '@/lib/media'
@@ -353,11 +353,9 @@ export default async function EntityPage({ params }: PageProps) {
           </aside>
           </div>
 
-          {type === EntityType.TRAILER && 'scenes' in entity && (
-            <Reveal className="mt-12 border-t border-gta-border pt-8">
-              <TrailerNav currentSlug={entity.slug} />
-            </Reveal>
-          )}
+          <Reveal className="mt-12">
+            <EntityNav type={type} currentSlug={entity.slug} />
+          </Reveal>
         </div>
       </SceneSection>
     </>
