@@ -15,7 +15,19 @@ export interface SkyDomeUniforms {
   fogColor: { value: THREE.Color }
 }
 
-export type Updater = (elapsed: number, delta: number, intro: number) => void
+export type Updater = (
+  elapsed: number,
+  delta: number,
+  intro: number,
+  dayPhase: number,
+  humidity: number,
+  fogColor: THREE.Color,
+  entityPace: number,
+  entityUnrest: number,
+  scrollVelocity: number,
+  pointerIntent: number,
+  entityPresence: number
+) => void
 
 export interface SkyDomeBuilderOptions {
   humidity: number
