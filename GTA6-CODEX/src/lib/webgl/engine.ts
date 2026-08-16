@@ -161,7 +161,16 @@ import { GRADE_SHADER } from './shaders/postprocess'
  *    como código muerto invitaba a futuras confusiones.
  */
 
-type Updater = (elapsed: number, delta: number, intro: number) => void
+/**
+ * Callback de animación por-frame para piezas de escena registradas en
+ * `this.updaters` (ver `start()`). Deliberadamente distinto — y sin
+ * relación — del tipo `Updater` de 11 parámetros que exportan
+ * `scene/*.ts`/`core/lifecycle.ts`: esos módulos son una extracción en
+ * curso que todavía no está conectada a este motor (ver nota de
+ * arquitectura al pie del archivo). Nombrado `SceneUpdater` a propósito
+ * para que ambas formas nunca se confundan ni se mezclen por accidente.
+ */
+type SceneUpdater = (elapsed: number, delta: number, intro: number) => void
 
 // ---------------------------------------------------------------------------
 // Shaders
@@ -841,11 +850,36 @@ export class GTA6CodexWebGLEngine {
   private fog!: THREE.FogExp2
   private readonly baseFogDensity = 0.027
 
-  private updaters: Updater[] = []
+  private updaters: SceneUpdater[] = []
   private rafId: number | null = null
-  private disposed = false
+  /**
+   * Máquina de estados explícita del ciclo de vida, en vez de un booleano
+   * `disposed` + la presencia/ausencia de `rafId` como señal implícita de
+   * "está corriendo". Con dos flags sueltos hay combinaciones que el tipo
+   * no prohíbe pero que no deberían existir (`disposed && rafId !== null`);
+   * con un enum de 3 estados esa combinación es irrepresentable.
+   *  - 'idle'      → construido, `start()` todavía no se llamó.
+   *  - 'running'   → loop de render activo (`paused` puede seguir
+   *                  pausando frames sin salir de este estado).
+   *  - 'disposed'  → recursos liberados, el motor es inutilizable.
+   */
+  private lifecycle: 'idle' | 'running' | 'disposed' = 'idle'
   private reducedMotion: boolean
   private paused = false
+  /** Referencia al loop para poder retomarlo tras `webglcontextrestored`
+   *  sin duplicar su lógica (ver `handleContextLost`/`handleContextRestored`). */
+  private loopFn: (() => void) | null = null
+  /** true entre `webglcontextlost` y `webglcontextrestored`: el loop deja
+   *  de reprogramarse mientras el contexto GPU no es válido, en vez de
+   *  seguir llamando a `composer.render()` contra un contexto perdido
+   *  (eso no crashea, pero satura la consola de errores WebGL sin ningún
+   *  beneficio hasta que el usuario recarga la página a mano). */
+  private contextLost = false
+  /** Todos los listeners del motor se registran con esta señal y se dan
+   *  de baja con una sola llamada (`abortController.abort()`) en
+   *  `dispose()` — un listener nuevo que se agregue a futuro no puede
+   *  quedar fugado por un `removeEventListener` olvidado. */
+  private readonly abortController = new AbortController()
 
   // --- Integración con la UI real (scene-bus) ---------------------------
   private sceneFocus: SceneFocus = { sectionId: null, progress: 0 }
@@ -958,10 +992,22 @@ export class GTA6CodexWebGLEngine {
 
     this.handleResize()
 
-    window.addEventListener('resize', this.handleResize)
-    window.addEventListener('pointermove', this.handlePointerMove, { passive: true })
-    window.addEventListener('scroll', this.handleScroll, { passive: true })
-    document.addEventListener('visibilitychange', this.handleVisibility)
+    // AbortController: dar de baja los 6 listeners de abajo es una sola
+    // llamada (`this.abortController.abort()` en `dispose()`) en vez de 6
+    // pares add/remove que hay que mantener sincronizados a mano cada vez
+    // que se agrega un listener nuevo.
+    const { signal } = this.abortController
+    window.addEventListener('resize', this.handleResize, { signal })
+    window.addEventListener('pointermove', this.handlePointerMove, { passive: true, signal })
+    window.addEventListener('scroll', this.handleScroll, { passive: true, signal })
+    document.addEventListener('visibilitychange', this.handleVisibility, { signal })
+    // Pérdida/recuperación de contexto GPU: el navegador puede matar el
+    // contexto WebGL en cualquier momento (cambio de pestaña prolongado,
+    // throttling del driver, low-memory kill en mobile) y recuperarlo
+    // después. Sin manejarlo explícitamente, el loop sigue llamando a
+    // `composer.render()` contra un contexto muerto indefinidamente.
+    canvas.addEventListener('webglcontextlost', this.handleContextLost, { signal })
+    canvas.addEventListener('webglcontextrestored', this.handleContextRestored, { signal })
 
     // La UI real (secciones instrumentadas, hover de cards) empuja estado acá
     // en vez de que el motor tenga que adivinarlo a partir de scroll crudo.
@@ -995,6 +1041,40 @@ export class GTA6CodexWebGLEngine {
         ? CATEGORY_FRAME[snapshot.entityAtmosphere.category] ?? 0
         : 0
     })
+
+    this.assertFullyInitialized()
+  }
+
+  /**
+   * Guarda de invariante de construcción. Los campos declarados con `!`
+   * arriba (`skyUniforms`, `dustUniforms`, `roadUniforms`, `shaftUniforms`,
+   * `keyLight`, `fillLight`, `fog`) se asignan de forma síncrona dentro de
+   * los `buildXxx()`/`setupXxx()` que se llaman más arriba, en orden fijo.
+   * Nada en el compilador impone ese orden: un refactor futuro que
+   * reordene, condicione o elimine una de esas llamadas dejaría el motor a
+   * medio construir sin ningún error hasta el primer frame de render
+   * (acceso a `undefined` propagándose como `NaN` en uniforms, o un
+   * crash silencioso). Esta guarda convierte esa clase de bug en un error
+   * inmediato y explícito en el constructor, con el campo exacto que
+   * falta, en vez de un fallo diferido e imposible de rastrear.
+   */
+  private assertFullyInitialized(): void {
+    const required: Array<[string, unknown]> = [
+      ['skyUniforms', this.skyUniforms],
+      ['dustUniforms', this.dustUniforms],
+      ['roadUniforms', this.roadUniforms],
+      ['shaftUniforms', this.shaftUniforms],
+      ['keyLight', this.keyLight],
+      ['fillLight', this.fillLight],
+      ['fog', this.fog],
+    ]
+    const missing = required.filter(([, value]) => value == null).map(([name]) => name)
+    if (missing.length > 0) {
+      throw new Error(
+        `GTA6CodexWebGLEngine: construcción incompleta, falta inicializar: ${missing.join(', ')}. ` +
+          'Revisar el orden de las llamadas a buildXxx()/setupXxx() en el constructor.'
+      )
+    }
   }
 
   // ---------------------------------------------------------------------
@@ -1912,6 +1992,36 @@ export class GTA6CodexWebGLEngine {
     this.paused = document.hidden
   }
 
+  /**
+   * `preventDefault()` es lo que le indica al navegador que este motor
+   * *puede* recuperar el contexto (sin eso, Three.js no tiene oportunidad
+   * de intentarlo y el canvas queda negro para siempre). Cancelamos el
+   * frame en vuelo para no seguir llamando a `composer.render()` contra
+   * un contexto muerto mientras esperamos `webglcontextrestored`.
+   */
+  private handleContextLost = (event: Event) => {
+    event.preventDefault()
+    this.contextLost = true
+    if (this.rafId !== null) {
+      cancelAnimationFrame(this.rafId)
+      this.rafId = null
+    }
+  }
+
+  /**
+   * Three.js re-crea automáticamente los recursos de GPU derivados del
+   * contexto restaurado; del lado del motor solo hace falta retomar el
+   * mismo loop (`this.loopFn`) que ya traía capturados `introStartPos`/
+   * `introDuration` por closure — no hay que reconstruir el motor entero
+   * ni perder la coreografía de cámara en curso.
+   */
+  private handleContextRestored = () => {
+    this.contextLost = false
+    if (this.lifecycle === 'running' && this.rafId === null && this.loopFn) {
+      this.rafId = requestAnimationFrame(this.loopFn)
+    }
+  }
+
   private handleResize = () => {
     const width = window.innerWidth
     const height = window.innerHeight
@@ -1959,10 +2069,11 @@ export class GTA6CodexWebGLEngine {
   // ---------------------------------------------------------------------
 
   start() {
-    // Idempotente: evita un segundo loop de rAF corriendo en paralelo si
-    // `start()` se invoca más de una vez (p. ej. remounts en React Strict
-    // Mode), y no arranca nada si el motor ya fue liberado.
-    if (this.disposed || this.rafId !== null) return
+    // Idempotente y sin estados ambiguos: solo arranca desde 'idle'. Un
+    // segundo `start()` (remounts en React Strict Mode) o uno posterior a
+    // `dispose()` son no-ops seguros por construcción, no por convención.
+    if (this.lifecycle !== 'idle') return
+    this.lifecycle = 'running'
 
     this.startTime = this.clock.getElapsedTime()
     // Entrada deliberada: arranca desde un encuadre alto y distante (como
@@ -1972,9 +2083,9 @@ export class GTA6CodexWebGLEngine {
     const introStartPos = SHOTS[0].pos.clone().add(new THREE.Vector3(-2.5, 8.5, 21))
 
     const loop = () => {
-      if (this.disposed) return
-      this.rafId = requestAnimationFrame(loop)
-      if (this.paused) return
+      if (this.lifecycle !== 'running') return
+      if (!this.contextLost) this.rafId = requestAnimationFrame(loop)
+      if (this.paused || this.contextLost) return
 
       const delta = Math.min(this.clock.getDelta(), 0.05)
       const elapsed = this.clock.getElapsedTime()
@@ -2139,6 +2250,7 @@ export class GTA6CodexWebGLEngine {
         })
       }
     }
+    this.loopFn = loop
     this.rafId = requestAnimationFrame(loop)
   }
 
@@ -2152,15 +2264,16 @@ export class GTA6CodexWebGLEngine {
     // (React Strict Mode en desarrollo monta/desmonta dos veces), y una
     // segunda pasada no debe repetir trabajo ni arriesgar llamadas sobre
     // recursos ya liberados.
-    if (this.disposed) return
-    this.disposed = true
+    if (this.lifecycle === 'disposed') return
+    this.lifecycle = 'disposed'
 
     if (this.rafId !== null) cancelAnimationFrame(this.rafId)
     this.rafId = null
-    window.removeEventListener('resize', this.handleResize)
-    window.removeEventListener('pointermove', this.handlePointerMove)
-    window.removeEventListener('scroll', this.handleScroll)
-    document.removeEventListener('visibilitychange', this.handleVisibility)
+    this.loopFn = null
+    // Un solo `abort()` da de baja los 6 listeners (resize, pointermove,
+    // scroll, visibilitychange, webglcontextlost, webglcontextrestored)
+    // registrados en el constructor con esta misma señal.
+    this.abortController.abort()
     this.unsubscribeSceneBus?.()
     this.unsubscribeSceneBus = null
 
@@ -2186,3 +2299,24 @@ export class GTA6CodexWebGLEngine {
     this.renderer.dispose()
   }
 }
+
+/**
+ * NOTA DE ARQUITECTURA (auditoría v8.2) — deuda técnica real, no atendida
+ * en esta pasada a propósito
+ * ---------------------------------------------------------------------------
+ * El repo ya tiene una extracción completa y en curso de este motor hacia
+ * `./scene/*.ts` + `./shaders/*.ts` + `./core/lifecycle.ts` (~2000 líneas):
+ * builders equivalentes a cada `buildXxx()` de más arriba, con un `Updater`
+ * de 11 parámetros y un loop de animación (`createAnimationLoop`) ya
+ * escritos. Hoy esos módulos NO están conectados a esta clase — sus
+ * `buildXxx()` inline son los que realmente corren en producción, y los
+ * de `scene/*.ts` son código muerto. Verificar que ambas implementaciones
+ * produzcan exactamente el mismo resultado visual, línea por línea, excede
+ * lo que se puede confirmar sin correr el motor en un navegador; conectar
+ * esa extracción a ciegas arriesgaba una regresión visual silenciosa, así
+ * que esta pasada endureció el archivo actual (lifecycle, listeners,
+ * recuperación de contexto GPU, invariantes de construcción) sin migrar la
+ * fuente de verdad. Migrar a los módulos ya extraídos — o borrarlos si se
+ * descartan — sigue siendo la mejora estructural más grande disponible,
+ * pero debe hacerse aparte, con verificación visual manual en el navegador.
+ */
