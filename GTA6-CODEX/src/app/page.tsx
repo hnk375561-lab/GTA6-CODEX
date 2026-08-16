@@ -3,13 +3,14 @@ import type { Metadata } from 'next'
 import { EntityType } from '@/types'
 import { getFeaturedEntities, getEntityCount, getEntityCountsByType } from '@/lib/entities'
 import { getCharacterClipUrl, resolveEntityDisplayImage } from '@/lib/media'
+import { getBidirectionalRelationCount } from '@/lib/relations'
 import { generateHomepageMetadata, generateBreadcrumbJsonLd } from '@/lib/seo'
 import { Card } from '@/components/ui/Card'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { CategoryCardMedia } from '@/components/ui/CategoryCardMedia'
 import { EntityCard } from '@/components/entities/EntityCard'
-import { getCategoryPreviewImage } from '@/lib/images'
+import { getCategoryPreviewImages } from '@/lib/images'
 import { RotatingHeroBackground } from '@/components/layout/RotatingHeroBackground'
 import { SceneSection } from '@/components/webgl/SceneSection'
 import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
@@ -49,12 +50,21 @@ export default async function HomePage() {
 
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
 
+  // Conteo de conexiones incluyendo relaciones inferidas/bidireccionales
+  // para las cards de Destacados (Fase 8, hallazgo [7]) — mismo criterio
+  // que ya se aplica en los listados por tipo, acotado a las 6 entidades
+  // destacadas de home.
+  const featuredRelationCounts = Object.fromEntries(
+    await Promise.all(featured.map(async (e) => [e.slug, await getBidirectionalRelationCount(e)] as const))
+  )
+
   const categories = CATEGORY_ORDER.filter((type) => countsByType[type] > 0)
-  // Vista previa animada por categoría (ver CategoryCardMedia): primera
-  // imagen local real de esa categoría, o null → fondo 100% CSS.
+  // Vista previa animada por categoría (ver CategoryCardMedia): hasta 3
+  // imágenes locales reales de esa categoría (fondo principal + hasta 2
+  // miniaturas superpuestas), o array vacío → fondo 100% CSS.
   const categoryPreviews = Object.fromEntries(
-    categories.map((type) => [type, getCategoryPreviewImage(type)])
-  ) as Record<EntityType, ReturnType<typeof getCategoryPreviewImage>>
+    categories.map((type) => [type, getCategoryPreviewImages(type, 3)])
+  ) as Record<EntityType, ReturnType<typeof getCategoryPreviewImages>>
 
   return (
     <>
@@ -126,7 +136,7 @@ export default async function HomePage() {
                   hoverable
                   className="relative flex h-full flex-col items-center gap-3 overflow-hidden py-8 text-center"
                 >
-                  <CategoryCardMedia preview={categoryPreviews[type]} />
+                  <CategoryCardMedia previews={categoryPreviews[type]} />
                   <div className="category-icon-badge relative z-10 flex h-14 w-14 items-center justify-center rounded-xl text-gta-accent">
                     <CategoryIcon type={type} className="h-6 w-6" />
                   </div>
@@ -172,6 +182,7 @@ export default async function HomePage() {
                   entity={entity}
                   image={resolveEntityDisplayImage(entity)}
                   clipUrl={entity.type === EntityType.CHARACTER ? getCharacterClipUrl(entity.slug) : undefined}
+                  relationCount={featuredRelationCounts[entity.slug]}
                 />
               ))}
             </div>

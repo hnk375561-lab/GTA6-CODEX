@@ -156,6 +156,17 @@ interface EntityCardProps {
    *  (punto 6 de Fase 8), sin descargar nada hasta que el usuario
    *  interactúa (punto 14: rendimiento, no todas las cards a la vez). */
   clipUrl?: string | null
+  /** Conteo de conexiones a mostrar en el pie de la card. Opcional: si no
+   *  se pasa, se usa `entity.relations?.length` (solo relaciones
+   *  explícitas, comportamiento previo). El caller server (hoy,
+   *  `EntityListExplorer` vía `[entityType]/page.tsx`) puede resolver acá
+   *  un conteo que incluye relaciones inferidas/bidireccionales — ver
+   *  `getBidirectionalRelationCount` en `lib/relations.ts` — para que la
+   *  card sugiera también conexiones que la entidad no declaró ella
+   *  misma pero que otras entidades sí declaran hacia ella (Fase 8,
+   *  hallazgo [7]). Nunca se inventa un número: sigue siendo 100%
+   *  derivado de relaciones reales, solo que en ambas direcciones. */
+  relationCount?: number
   className?: string
 }
 
@@ -166,13 +177,13 @@ interface EntityCardProps {
  * cierre siempre visible ("Ver ficha") además de que la card entera ya es
  * un link real a la ficha (Fase 8, punto 3: ningún botón decorativo).
  */
-export function EntityCard({ entity, image, typeLabel, clipUrl, className }: EntityCardProps) {
+export function EntityCard({ entity, image, typeLabel, clipUrl, relationCount, className }: EntityCardProps) {
   const [hovering, setHovering] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const isTrailer = entity.type === EntityType.TRAILER && 'scenes' in entity
   const trailer = isTrailer ? (entity as Trailer) : null
   const quickFacts = getQuickFacts(entity)
-  const relationCount = entity.relations?.length ?? 0
+  const resolvedRelationCount = relationCount ?? entity.relations?.length ?? 0
   const resolvedTypeLabel = typeLabel ?? ENTITY_TYPE_LABELS[entity.type]
 
   const handleEnter = () => {
@@ -303,10 +314,10 @@ export function EntityCard({ entity, image, typeLabel, clipUrl, className }: Ent
           )}
 
           <div className="mt-auto flex items-center justify-between gap-2 border-t border-gta-border pt-3">
-            {relationCount > 0 ? (
+            {resolvedRelationCount > 0 ? (
               <span className="inline-flex items-center gap-1.5 text-xs text-gta-text-secondary">
                 <MiniIcon name="link" />
-                {relationCount} {relationCount === 1 ? 'conexión' : 'conexiones'}
+                {resolvedRelationCount} {resolvedRelationCount === 1 ? 'conexión' : 'conexiones'}
               </span>
             ) : (
               <span aria-hidden="true" />

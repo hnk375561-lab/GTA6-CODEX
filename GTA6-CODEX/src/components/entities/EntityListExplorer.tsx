@@ -53,6 +53,13 @@ interface EntityListExplorerProps {
    *  por su cuenta con `fs` — el caller server (`[entityType]/page.tsx`)
    *  resuelve el mapa completo una sola vez y lo pasa acá. */
   imageBySlug?: Record<string, ResolvedDisplayImage | null>
+  /** slug → conteo de conexiones incluyendo relaciones inferidas/
+   *  bidireccionales (ver `getBidirectionalRelationCount` en
+   *  `@/lib/relations.ts`, Fase 8, hallazgo [7]). Igual patrón que
+   *  `imageBySlug`: el caller server resuelve el mapa una sola vez. Si no
+   *  se pasa, cada `EntityCard` cae a `entity.relations?.length` (solo
+   *  explícitas, comportamiento previo). */
+  relationCountBySlug?: Record<string, number>
 }
 
 /**
@@ -66,7 +73,14 @@ interface EntityListExplorerProps {
  * herramientas real con conteos por estado y estados vacíos específicos
  * para "sin resultados de búsqueda" vs. "categoría todavía vacía".
  */
-export function EntityListExplorer({ type, entities, typeLabel, clipUrlBySlug, imageBySlug }: EntityListExplorerProps) {
+export function EntityListExplorer({
+  type,
+  entities,
+  typeLabel,
+  clipUrlBySlug,
+  imageBySlug,
+  relationCountBySlug,
+}: EntityListExplorerProps) {
   const [query, setQuery] = useState('')
   const [status, setStatus] = useState<StatusFilter>('todos')
   const [sortBy, setSortBy] = useState<SortOption>('default')
@@ -100,13 +114,18 @@ export function EntityListExplorer({ type, entities, typeLabel, clipUrlBySlug, i
   // Criterios de orden disponibles para este tipo. A-Z/Z-A/Más recientes
   // usan campos requeridos en toda entidad (`title`, `updatedAt`) — siempre
   // disponibles. "Más conexiones" solo se ofrece si al menos una entidad de
-  // este tipo tiene relaciones declaradas; si no, el criterio no aportaría
-  // ningún orden real y no se muestra (nunca se inventa un dato ausente).
+  // este tipo tiene alguna conexión (explícita o inferida vía
+  // `relationCountBySlug`, Fase 8, hallazgo [7]); si no, el criterio no
+  // aportaría ningún orden real y no se muestra (nunca se inventa un dato
+  // ausente).
+  const getRelationCount = (e: Entity) => relationCountBySlug?.[e.slug] ?? e.relations?.length ?? 0
+
   const sortOptions = useMemo(() => {
     const options: SortOption[] = ['default', 'az', 'za', 'recent']
-    if (entities.some((e) => (e.relations?.length ?? 0) > 0)) options.push('connections')
+    if (entities.some((e) => getRelationCount(e) > 0)) options.push('connections')
     return options
-  }, [entities])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [entities, relationCountBySlug])
 
   // Tags "consistentes" del tipo actual: cualquier tag que ya existe en el
   // contenido y aparece en 2+ entidades. Nunca se inventa una categoría —
@@ -164,11 +183,15 @@ export function EntityListExplorer({ type, entities, typeLabel, clipUrlBySlug, i
     } else if (sortBy === 'recent') {
       base = [...base].sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
     } else if (sortBy === 'connections') {
-      base = [...base].sort((a, b) => (b.relations?.length ?? 0) - (a.relations?.length ?? 0))
+      base = [...base].sort((a, b) => getRelationCount(b) - getRelationCount(a))
     }
 
     return base
-  }, [fuse, debouncedQuery, entities, status, selectedClass, selectedTags, sortBy])
+    // getRelationCount solo depende de relationCountBySlug (ya en deps) y
+    // de `entity.relations`, que viaja dentro de cada `entity` — no hace
+    // falta re-crearla como dependencia propia.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fuse, debouncedQuery, entities, status, selectedClass, selectedTags, sortBy, relationCountBySlug])
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]))
@@ -396,6 +419,7 @@ export function EntityListExplorer({ type, entities, typeLabel, clipUrlBySlug, i
                 image={imageBySlug?.[entity.slug]}
                 typeLabel={typeLabel}
                 clipUrl={clipUrlBySlug?.[entity.slug]}
+                relationCount={relationCountBySlug?.[entity.slug]}
               />
             </Reveal>
           ))}

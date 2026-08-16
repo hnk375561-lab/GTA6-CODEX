@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { EntityType } from '@/types'
 import { getEntitiesByType } from '@/lib/entities'
 import { getCoverArtVideoAsset, resolveMediaRender, getCharacterClipUrl, getEntityImageMap } from '@/lib/media'
+import { getBidirectionalRelationCount } from '@/lib/relations'
 import { generateListMetadata } from '@/lib/seo'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
@@ -56,6 +57,15 @@ export default async function EntityTypePage({ params }: PageProps) {
   const type = entityType as EntityType
   const entities = await getEntitiesByType(type)
   const label = TYPE_LABELS[type]
+
+  // Conteo de conexiones incluyendo relaciones inferidas/bidireccionales
+  // (Fase 8, hallazgo [7]): se resuelve una sola vez acá, en servidor —
+  // EntityListExplorer/EntityCard son 'use client' y no pueden recorrer
+  // todo el contenido por su cuenta. Mismo patrón que imageBySlug.
+  const relationCountEntries = await Promise.all(
+    entities.map(async (e) => [e.slug, await getBidirectionalRelationCount(e)] as const)
+  )
+  const relationCountBySlug = Object.fromEntries(relationCountEntries)
 
   const statusCounts = { confirmado: 0, rumor: 0, nuestro: 0 } as Record<
     keyof typeof STATUS_LABELS,
@@ -128,6 +138,7 @@ export default async function EntityTypePage({ params }: PageProps) {
           entities={entities}
           typeLabel={label}
           imageBySlug={getEntityImageMap(entities)}
+          relationCountBySlug={relationCountBySlug}
           clipUrlBySlug={
             type === EntityType.CHARACTER
               ? Object.fromEntries(

@@ -87,6 +87,21 @@ export async function getBidirectionalRelations(entity: Entity): Promise<EntityR
 }
 
 /**
+ * Cuenta relaciones (explícitas + inferidas) sin resolver cada entidad
+ * objetivo — solo lo que necesita una card de listado para mostrar
+ * "N conexiones" incluyendo las inferidas (Fase 8, hallazgo [7]: hoy solo
+ * las explícitas cuentan en `EntityCard`). Reutiliza `getBidirectionalRelations`
+ * (que ya evita resolver entidades completas) y se queda solo con el
+ * largo — el caller server-side arma un mapa slug→count una sola vez por
+ * listado y lo pasa a los componentes cliente como prop plana, mismo
+ * patrón que `imageBySlug`/`clipUrlBySlug`.
+ */
+export async function getBidirectionalRelationCount(entity: Entity): Promise<number> {
+  const relations = await getBidirectionalRelations(entity)
+  return relations.length
+}
+
+/**
  * Igual que getRelatedEntitiesWithLabel, pero incluye también las
  * relaciones entrantes inferidas (getBidirectionalRelations), para que
  * una entidad como "leonida" -que no declara relations propias pero es

@@ -135,6 +135,26 @@ export function getCategoryPreviewImage(type: EntityType): ResolvedEntityImage |
 }
 
 /**
+ * Variante de `getCategoryPreviewImage` que devuelve hasta `limit`
+ * imágenes locales reales de la categoría en vez de solo la primera
+ * (Fase 8, etapa F — mini-collage de home: fondo principal + hasta 2
+ * miniaturas superpuestas, ver `CategoryCardMedia`). Mismo criterio que
+ * la variante singular: recorre las entidades del tipo en el orden en
+ * que ya vienen listadas (no hay ranking propio, es una vista previa) y
+ * nunca inventa una imagen — si el tipo tiene menos de `limit` entidades
+ * con imagen local, devuelve las que haya (incluido un array vacío).
+ */
+export function getCategoryPreviewImages(type: EntityType, limit = 3): ResolvedEntityImage[] {
+  const found: ResolvedEntityImage[] = []
+  for (const entity of getEntitiesByTypeSync(type)) {
+    if (found.length >= limit) break
+    const resolved = resolveEntityImage(entity)
+    if (resolved) found.push(resolved)
+  }
+  return found
+}
+
+/**
  * Categorías núcleo con carpeta de imágenes propia. La lista vive en
  * src/config/entity-image-categories.json — fuente única de verdad
  * compartida con scripts/process-images.mjs, para que ambos queden
