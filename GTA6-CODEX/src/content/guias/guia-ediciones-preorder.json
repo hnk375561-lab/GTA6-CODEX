@@ -1,0 +1,59 @@
+{
+  "slug": "guia-ediciones-preorder",
+  "type": "guias",
+  "title": "Guía: Ediciones, Precio y Pre-order de GTA 6 (Qué Está Confirmado y Qué No)",
+  "description": "Qué confirmó oficialmente Rockstar sobre ediciones, precio y pre-venta de GTA VI, separado con claridad de lo que todavía es reporte de terceros o rumor.",
+  "content": "Esta guía separa, campo por campo, lo que Rockstar Games confirmó oficialmente sobre la compra de GTA VI de lo que todavía circula como reporte de prensa o rumor no confirmado. Última actualización: 17 de agosto de 2026.\n\n## Lo Confirmado Oficialmente por Rockstar\n\n### Fecha y plataformas\n\n- **Lanzamiento:** 19 de noviembre de 2026\n- **Plataformas:** PlayStation 5 (incluyendo PS5 Pro) y Xbox Series X|S — exclusivamente\n- **No habrá versión** de PS4, Xbox One, PC ni Nintendo Switch 2 al lanzamiento\n\n### Ediciones y precio\n\nEl 24 de junio de 2026, un día antes de la apertura de pre-ventas, Rockstar confirmó oficialmente la estructura de ediciones:\n\n- **Edición Estándar — USD 79,99:** el juego completo, la historia de [Jason Duval](/personajes/jason-duval) y [Lucia Caminos](/personajes/lucia-caminos) y el mundo abierto de Leonida.\n- **Edición Ultimate — USD 99,99:** todo lo de la Estándar más una colección exclusiva de vehículos, armas y vestimenta integrados a la narrativa (no contenido separado de un modo online).\n- No existe una tercera edición ni una Collector's Edition física — las versiones \"Deluxe\" o \"Collector's a USD 129,99\" que circularon antes de junio de 2026 fueron especulación de analistas, no productos reales.\n- El precio confirmado en dólares aplica a Estados Unidos; el resto de las regiones tiene su propia conversión local.\n\n### Formato físico\n\nRockstar confirmó que la versión física en caja **no incluye disco**: es un código de descarga dentro de una caja física.\n\n### Modo de juego al lanzamiento\n\nRockstar describió el juego como una **experiencia para un jugador** al lanzamiento, sin mencionar un componente online — la propia compañía indicó que ese componente, si existe, llegaría después.\n\n### Pre-venta\n\nLas pre-ventas abrieron el 25 de junio de 2026 a través de PlayStation Store, Xbox/Microsoft Store, la tienda oficial de Rockstar y minoristas participantes.\n\n## Lo Reportado pero NO Confirmado Directamente por Rockstar\n\n- **Ventana de precarga digital alrededor del 12 de noviembre de 2026** (una semana antes del lanzamiento): reportado por al menos dos medios especializados, sin comunicado oficial de Rockstar que fije esa fecha exacta.\n- **Vintage Vice City Pack** de regalo por pre-ordenar antes del 20 de noviembre de 2026 (auto retro con garage personal, vestuario de época para ambos protagonistas, mes gratis de GTA+ en pre-ventas digitales): descrito por múltiples medios, pero sin página oficial de Rockstar que lo detalle punto por punto.\n- **Proporción de pre-ventas PS5 vs. Xbox** (reportes hablan de una ventaja de PS5 de aproximadamente 6 a 1): cifra de prensa especializada, no confirmada por Sony, Microsoft ni Take-Two.\n- **Venta anticipada agotada** de la versión física \"código en caja\" en algunos minoristas: reportado, no una cifra oficial de unidades.\n\n## Lo Que Todavía No Se Sabe\n\n- **Fecha de PC:** no anunciada. Como referencia histórica, GTA V llegó a PC casi dos años después de consolas, y Red Dead Redemption 2 aproximadamente un año después — no es una promesa, solo el patrón previo de Rockstar.\n- **Fecha de un tercer tráiler o campaña de marketing sostenida:** ver [noticias/sin-campana-marketing-agosto-2026](/noticias/sin-campana-marketing-agosto-2026).\n- **Detalles del componente online:** no descrito por Rockstar más allá de que llegaría después del lanzamiento.\n\n## Recomendación Práctica\n\nSi vas a pre-ordenar, la única información que necesitás para decidir entre ediciones ya está confirmada oficialmente (precio y contenido de cada una). Todo lo demás — bonos exactos, fecha de precarga, disponibilidad de stock físico — conviene confirmarlo directamente en la tienda donde vayas a comprar antes del lanzamiento, porque son detalles reportados por prensa, no garantizados por Rockstar en una página propia.",
+  "status": "confirmado",
+  "tags": [
+    "preorder",
+    "precio",
+    "ediciones",
+    "compra",
+    "day-one",
+    "plataformas",
+    "guía-jugador"
+  ],
+  "featured": true,
+  "createdAt": "2026-08-17T00:00:00Z",
+  "updatedAt": "2026-08-17T00:00:00Z",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Anuncio oficial de Rockstar Games sobre precio y ediciones (24 de junio de 2026), citado por Variety",
+    "secondarySource": "ThePCEnthusiast y Tech Insider (detalles de precarga y bonos de pre-orden, junio de 2026); cobertura contemporánea de apertura de pre-ventas (25 de junio de 2026)",
+    "note": "Los campos de fecha, plataformas, precio y ediciones son oficiales y están confirmados por Rockstar/Take-Two. Los campos marcados como 'reportado' en el texto (precarga, Vintage Vice City Pack, proporción de pre-ventas) provienen de cobertura de prensa especializada, no de un comunicado propio de Rockstar, y se los distingue explícitamente por regla editorial del proyecto.",
+    "limitations": [
+      "Precio en USD; conversión a otras monedas no confirmada entidad por entidad",
+      "Detalles exactos del Vintage Vice City Pack y de la ventana de precarga no tienen página oficial propia de Rockstar al momento de esta guía"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "protagonista_mencionado"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
+      "relation": "protagonista_mencionado"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "zelnick-reafirma-fecha-marketing-verano",
+      "relation": "contexto-previo"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "sin-campana-marketing-agosto-2026",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "guias",
+      "targetSlug": "guia-checklist-lanzamiento",
+      "relation": "guía-complementaria"
+    }
+  ],
+  "seoTitle": "Guía: Precio, Ediciones y Pre-order de GTA 6 (2026) — GTA 6 Codex",
+  "seoDescription": "Qué confirmó Rockstar sobre precio, ediciones y pre-venta de GTA VI, y qué todavía es solo reporte de prensa. Guía actualizada."
+}

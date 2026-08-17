@@ -1,0 +1,48 @@
+{
+  "slug": "zelnick-reafirma-fecha-marketing-verano",
+  "type": "noticias",
+  "title": "Zelnick Reafirma el 19 de Noviembre y Promete Marketing \"Cuando Llegue el Verano\"",
+  "description": "En la earnings call de Take-Two del 21 de mayo de 2026, Strauss Zelnick reafirma la fecha del 19 de noviembre y adelanta que la campaña de marketing arrancará en el verano boreal, sin dar fecha exacta ni hablar de precio.",
+  "content": "El 21 de mayo de 2026, coincidiendo con el reporte de resultados del cuarto trimestre fiscal de Take-Two Interactive, el CEO Strauss Zelnick volvió a confirmar en una entrevista con Variety que [GTA VI](/noticias/retraso-gta6-2025) se mantiene en la fecha del 19 de noviembre de 2026, calificando la reafirmación pública de la fecha como \"probablemente positiva\".\n\n**Sobre el marketing:**\nZelnick adelantó que la campaña principal de marketing arrancaría \"cuando llegue el verano\" (en el hemisferio norte), aclarando que las semanas inmediatamente posteriores a la earnings call todavía no calificaban como tal. No comprometió una fecha concreta para un eventual tercer tráiler ni para el arranque exacto de la campaña.\n\n**Sobre el precio:**\nConsultado directamente sobre si el anuncio de precio llegaría junto con los resultados financieros de esa tarde, Zelnick respondió que no, remarcando que Take-Two nunca hace anuncios de marketing durante sus llamadas de resultados con analistas.\n\n**Contexto financiero:**\nEn la misma earnings call, Take-Two proyectó ingresos netos (\"net bookings\") de entre 8.000 y 8.200 millones de dólares para el año fiscal 2027, una guía construida explícitamente sobre el lanzamiento de noviembre de 2026 — la compañía no ha planteado ningún escenario financiero alternativo ante un eventual nuevo retraso.\n\n**Por qué importa:**\nEsta fue la primera vez que Take-Two puso una referencia estacional (\"verano\") sobre el arranque de la campaña, dato que la comunidad usó luego para especular sobre la llegada de un tercer tráiler. Ver [noticias/sin-campana-marketing-agosto-2026](/noticias/sin-campana-marketing-agosto-2026) para el seguimiento de si esa promesa se cumplió.",
+  "status": "confirmado",
+  "tags": [
+    "zelnick",
+    "take-two",
+    "marketing",
+    "earnings-call",
+    "mayo-2026",
+    "fecha-lanzamiento"
+  ],
+  "featured": true,
+  "createdAt": "2026-05-21T20:00:00Z",
+  "updatedAt": "2026-08-17T00:00:00Z",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Strauss Zelnick (CEO, Take-Two Interactive) en entrevista con Variety durante la earnings call del Q4 FY2026 (21 de mayo de 2026)",
+    "secondarySource": "Cobertura contemporánea de TechRadar, GTA BOOM y discusión de comunidad (ResetEra) citando la misma entrevista de Variety",
+    "note": "Declaraciones directas del CEO de la empresa matriz, citadas por Variety en el momento de la earnings call. Se trata de una reafirmación de fecha ya conocida, no de un anuncio nuevo de contenido del juego.",
+    "limitations": [
+      "Zelnick no dio fecha exacta para el inicio de marketing ni para un tercer tráiler",
+      "No hubo anuncio de precio en este evento (llegó recién en junio 2026, ver noticias relacionadas)"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "noticias",
+      "targetSlug": "retraso-gta6-2025",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "sin-campana-marketing-agosto-2026",
+      "relation": "seguimiento-de"
+    },
+    {
+      "targetType": "guias",
+      "targetSlug": "guia-ediciones-preorder",
+      "relation": "contexto-para"
+    }
+  ],
+  "seoTitle": "Zelnick Reafirma GTA 6 para el 19 de Noviembre — Noticias de GTA 6",
+  "seoDescription": "Strauss Zelnick confirma en mayo de 2026 que GTA VI mantiene su fecha de lanzamiento y que el marketing arrancará en el verano boreal."
+}

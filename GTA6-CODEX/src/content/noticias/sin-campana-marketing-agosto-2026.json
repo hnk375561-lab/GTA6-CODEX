@@ -1,0 +1,48 @@
+{
+  "slug": "sin-campana-marketing-agosto-2026",
+  "type": "noticias",
+  "title": "A Mediados de Agosto de 2026, la Campaña de Marketing de Verano Prometida por Zelnick Todavía No Se Materializó",
+  "description": "Pese a que Take-Two adelantó en mayo que la campaña de marketing arrancaría 'en el verano', a mediados de agosto de 2026 Rockstar no publicó un tercer tráiler ni una campaña visible; la fecha de lanzamiento del 19 de noviembre sigue sin cambios.",
+  "content": "Como se documenta en [noticias/zelnick-reafirma-fecha-marketing-verano](/noticias/zelnick-reafirma-fecha-marketing-verano), Strauss Zelnick había adelantado en mayo de 2026 que la campaña principal de marketing de GTA VI arrancaría durante el verano boreal (junio-septiembre). A mediados de agosto de 2026, medios especializados como TheGamer señalaban que esa campaña todavía no había arrancado de forma visible: no hubo tercer tráiler, ni un evento de revelación equivalente al de mayo de 2025.\n\n**Lo que sí ocurrió en el medio:**\nEntre la promesa de mayo y agosto de 2026, Rockstar sí confirmó oficialmente precio y ediciones (24 de junio) y abrió pre-ventas (25 de junio) — ver [guías/guia-ediciones-preorder](/guias/guia-ediciones-preorder) — pero eso corresponde a un anuncio comercial puntual, no a la campaña de marketing sostenida (tráilers, contenido promocional, activaciones) que Zelnick había descrito.\n\n**Especulación de la comunidad (marcada explícitamente como no confirmada):**\nEl periodista especializado en filtraciones Tom Henderson (Insider Gaming) había anticipado en febrero de 2026, antes de la earnings call de mayo, que agosto era un mes probable para un nuevo tráiler, en el marco de la siguiente earnings call de Take-Two. Al cierre de esta nota, esa predicción no se había cumplido todavía.\n\n**Postura oficial ante la demora:**\nConsultado por inversores sobre si un juego de esta magnitud realmente necesita campaña de marketing, Zelnick respondió que sí es necesaria, sin dar una fecha concreta de arranque.\n\n**Por qué importa:**\nLa ausencia de campaña no altera, por sí sola, la fecha de lanzamiento confirmada (19 de noviembre de 2026) — Take-Two no ha emitido ninguna señal de un tercer retraso — pero sí acorta la ventana disponible para una campaña sostenida antes del lanzamiento, algo que varios medios señalan como inusualmente breve comparado con los casi 22 meses de campaña que tuvo GTA V.",
+  "status": "confirmado",
+  "tags": [
+    "marketing",
+    "agosto-2026",
+    "tercer-trailer",
+    "tom-henderson",
+    "rumor",
+    "seguimiento"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-15T00:00:00Z",
+  "updatedAt": "2026-08-17T00:00:00Z",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "TheGamer — cobertura de agosto de 2026 sobre la ausencia de campaña de marketing",
+    "secondarySource": "Notebookcheck (predicción de Tom Henderson / Insider Gaming, febrero de 2026); Variety y TechRadar (declaraciones previas de Zelnick sobre el arranque estival del marketing)",
+    "note": "El hecho verificable es la ausencia de campaña visible a la fecha de esta ficha, reportada por múltiples medios especializados. La predicción de un tráiler en agosto es explícitamente especulación de un insider, no una confirmación de Rockstar, y se marca así en el texto.",
+    "limitations": [
+      "Esta ficha describe un estado de cosas a mediados de agosto de 2026; puede quedar desactualizada apenas Rockstar publique nuevo material",
+      "La predicción de Tom Henderson es un rumor de industria, no una fuente oficial"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "noticias",
+      "targetSlug": "zelnick-reafirma-fecha-marketing-verano",
+      "relation": "seguimiento-de"
+    },
+    {
+      "targetType": "guias",
+      "targetSlug": "guia-ediciones-preorder",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "referencia-comparativa"
+    }
+  ],
+  "seoTitle": "¿Dónde Está el Marketing de GTA 6? Estado a Agosto de 2026 — Noticias de GTA 6",
+  "seoDescription": "A mediados de agosto de 2026 la campaña de marketing de verano prometida por Take-Two todavía no se hizo visible. Esto es lo que se sabe."
+}
