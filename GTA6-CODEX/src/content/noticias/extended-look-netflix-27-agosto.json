@@ -1,0 +1,53 @@
+{
+  "slug": "extended-look-netflix-27-agosto",
+  "type": "noticias",
+  "title": "Rockstar Anuncia \"Grand Theft Auto VI: An Extended Look\", con Estreno en Netflix el 27 de Agosto",
+  "description": "Rockstar Games anunció el 6 de agosto de 2026 un adelanto extendido de GTA VI que se estrena primero en Netflix (27 de agosto, 3pm ET) y seis horas después en YouTube y el sitio oficial — la campaña de marketing prometida para 'el verano' finalmente se hizo visible.",
+  "content": "El 6 de agosto de 2026, Rockstar Games anunció mediante un comunicado de prensa propio (y un posteo en su cuenta oficial de X) que estrenaría \"Grand Theft Auto VI: An Extended Look\" — un adelanto extendido del juego — el jueves 27 de agosto de 2026, con una particularidad: se estrena primero en Netflix.\n\n**Cronograma confirmado:**\n\n- **3:00 pm ET (27 de agosto):** estreno exclusivo en Netflix, en el marco de una alianza descrita por ambas compañías como \"inédita\" (\"first-of-its-kind\").\n- **9:00 pm ET (mismo día):** el material se libera en el canal oficial de YouTube de Rockstar Games y en el sitio web oficial de GTA VI, de acceso gratuito sin cuenta de Netflix.\n\n**Aclaración de nomenclatura:**\nRockstar no llamó a este material \"Tráiler 3\" en ningún comunicado oficial — ese es un apodo que la comunidad de fans le puso tras los dos tráilers anteriores. El nombre oficial es \"Grand Theft Auto VI: An Extended Look\".\n\n**Declaraciones oficiales:**\nNetflix, a través de su VP de series de no ficción Brandon Riegg, describió la colaboración como un reflejo de su ambición de convertirse en un lugar donde las historias más ambiciosas, de cualquier medio, encuentren la audiencia más grande posible.\n\n**Contexto — por qué esto actualiza noticias anteriores:**\nEsta ficha actualiza directamente a [noticias/sin-campana-marketing-agosto-2026](/noticias/sin-campana-marketing-agosto-2026), publicada apenas días antes de este anuncio: la campaña de marketing \"de verano\" que Zelnick había prometido en mayo (ver [noticias/zelnick-reafirma-fecha-marketing-verano](/noticias/zelnick-reafirma-fecha-marketing-verano)) finalmente se hizo visible el 6 de agosto de 2026, aunque con casi dos meses de demora respecto al inicio literal del verano boreal.\n\n**Lo que no está confirmado todavía:**\nRockstar no precisó la duración del material ni adelantó contenido específico más allá del título. No hay confirmación de que incluya gameplay real (los dos tráilers anteriores mezclaron cinemática y gameplay sin distinguir cuál era cuál — ver [noticias/trailer-2-publicado](/noticias/trailer-2-publicado)).",
+  "status": "confirmado",
+  "tags": [
+    "trailer-3",
+    "netflix",
+    "extended-look",
+    "agosto-2026",
+    "marketing",
+    "oficial"
+  ],
+  "featured": true,
+  "createdAt": "2026-08-06T21:00:00Z",
+  "updatedAt": "2026-08-17T00:00:00Z",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Comunicado de prensa de Rockstar Games (6 de agosto de 2026) y anuncio oficial de Netflix (Netflix Tudum)",
+    "secondarySource": "Cobertura contemporánea de Variety, Kotaku, TheGamer y CBR citando el mismo comunicado",
+    "note": "Fecha, horarios y plataformas de estreno provienen directamente del comunicado de Rockstar y de la página oficial de Netflix Tudum, no de especulación de prensa. El nombre 'Tráiler 3' se aclara explícitamente como apodo de fans, no nomenclatura oficial de Rockstar.",
+    "limitations": [
+      "Duración y contenido exacto del material no confirmados por Rockstar antes del estreno",
+      "No confirmado si incluye gameplay real o es mayormente cinemática, como ocurrió con los dos tráilers anteriores"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "noticias",
+      "targetSlug": "sin-campana-marketing-agosto-2026",
+      "relation": "actualiza-a"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "zelnick-reafirma-fecha-marketing-verano",
+      "relation": "seguimiento-de"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "trailer-2-publicado",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "referencia-comparativa"
+    }
+  ],
+  "seoTitle": "GTA 6: Extended Look se Estrena el 27 de Agosto en Netflix — Noticias de GTA 6",
+  "seoDescription": "Rockstar anuncia 'Grand Theft Auto VI: An Extended Look', con estreno exclusivo en Netflix el 27 de agosto y luego en YouTube. Fechas y horarios confirmados."
+}

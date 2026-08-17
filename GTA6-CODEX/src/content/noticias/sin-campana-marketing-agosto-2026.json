@@ -1,29 +1,29 @@
 {
   "slug": "sin-campana-marketing-agosto-2026",
   "type": "noticias",
-  "title": "A Mediados de Agosto de 2026, la Campaña de Marketing de Verano Prometida por Zelnick Todavía No Se Materializó",
-  "description": "Pese a que Take-Two adelantó en mayo que la campaña de marketing arrancaría 'en el verano', a mediados de agosto de 2026 Rockstar no publicó un tercer tráiler ni una campaña visible; la fecha de lanzamiento del 19 de noviembre sigue sin cambios.",
-  "content": "Como se documenta en [noticias/zelnick-reafirma-fecha-marketing-verano](/noticias/zelnick-reafirma-fecha-marketing-verano), Strauss Zelnick había adelantado en mayo de 2026 que la campaña principal de marketing de GTA VI arrancaría durante el verano boreal (junio-septiembre). A mediados de agosto de 2026, medios especializados como TheGamer señalaban que esa campaña todavía no había arrancado de forma visible: no hubo tercer tráiler, ni un evento de revelación equivalente al de mayo de 2025.\n\n**Lo que sí ocurrió en el medio:**\nEntre la promesa de mayo y agosto de 2026, Rockstar sí confirmó oficialmente precio y ediciones (24 de junio) y abrió pre-ventas (25 de junio) — ver [guías/guia-ediciones-preorder](/guias/guia-ediciones-preorder) — pero eso corresponde a un anuncio comercial puntual, no a la campaña de marketing sostenida (tráilers, contenido promocional, activaciones) que Zelnick había descrito.\n\n**Especulación de la comunidad (marcada explícitamente como no confirmada):**\nEl periodista especializado en filtraciones Tom Henderson (Insider Gaming) había anticipado en febrero de 2026, antes de la earnings call de mayo, que agosto era un mes probable para un nuevo tráiler, en el marco de la siguiente earnings call de Take-Two. Al cierre de esta nota, esa predicción no se había cumplido todavía.\n\n**Postura oficial ante la demora:**\nConsultado por inversores sobre si un juego de esta magnitud realmente necesita campaña de marketing, Zelnick respondió que sí es necesaria, sin dar una fecha concreta de arranque.\n\n**Por qué importa:**\nLa ausencia de campaña no altera, por sí sola, la fecha de lanzamiento confirmada (19 de noviembre de 2026) — Take-Two no ha emitido ninguna señal de un tercer retraso — pero sí acorta la ventana disponible para una campaña sostenida antes del lanzamiento, algo que varios medios señalan como inusualmente breve comparado con los casi 22 meses de campaña que tuvo GTA V.",
+  "title": "El Silencio de Marketing Post-Promesa de Verano Duró Hasta el 6 de Agosto de 2026",
+  "description": "Entre la promesa de Zelnick en mayo de 2026 ('marketing en el verano') y el anuncio oficial del 6 de agosto de 2026, Rockstar no publicó tráiler ni campaña visible — una ventana de silencio de más de dos meses que terminó con el anuncio de 'An Extended Look'.",
+  "content": "**CORRECCIÓN (17 ago 2026):** la versión original de esta ficha, publicada el 15 de agosto de 2026, afirmaba que la campaña de marketing todavía no se había hecho visible \"a mediados de agosto\". Eso era un error: Rockstar ya había anunciado oficialmente, el **6 de agosto de 2026**, el estreno de \"Grand Theft Auto VI: An Extended Look\" para el 27 de agosto — ver [noticias/extended-look-netflix-27-agosto](/noticias/extended-look-netflix-27-agosto). Se reescribe esta ficha para documentar con precisión la ventana real de silencio (mayo-6 de agosto) en lugar de una afirmación de \"silencio continuo\" que ya no era exacta al momento de la publicación original.\n\nComo se documenta en [noticias/zelnick-reafirma-fecha-marketing-verano](/noticias/zelnick-reafirma-fecha-marketing-verano), Strauss Zelnick había adelantado en mayo de 2026 que la campaña principal de marketing de GTA VI arrancaría durante el verano boreal (junio-septiembre). Entre esa declaración y el 6 de agosto de 2026, no hubo tercer tráiler ni un evento de revelación equivalente al de mayo de 2025 — más de dos meses de silencio pese a la promesa.\n\n**Lo que sí ocurrió en el medio:**\nEn ese período, Rockstar confirmó oficialmente precio y ediciones (24 de junio) y abrió pre-ventas (25 de junio) — ver [guías/guia-ediciones-preorder](/guias/guia-ediciones-preorder) — pero eso fue un anuncio comercial puntual, no la campaña de marketing sostenida (tráilers, contenido promocional, activaciones) que Zelnick había descrito.\n\n**Especulación de la comunidad durante el silencio (marcada explícitamente como no confirmada en su momento):**\nEl periodista especializado en filtraciones Tom Henderson (Insider Gaming) había anticipado en febrero de 2026 que agosto era un mes probable para un nuevo tráiler. Esa predicción terminó cumpliéndose en términos generales (el anuncio llegó el 6 de agosto), aunque como fecha de estreno del contenido, no como fecha del anuncio en sí.\n\n**Postura oficial ante la demora (declaraciones previas al 6 de agosto):**\nConsultado por inversores sobre si un juego de esta magnitud realmente necesita campaña de marketing, Zelnick había respondido que sí es necesaria, sin dar en ese momento una fecha concreta de arranque.\n\n**Por qué importa:**\nEsta ficha queda como registro histórico de la ventana de silencio real (mayo-6 de agosto de 2026). Para el estado actual de la campaña de marketing, ver [noticias/extended-look-netflix-27-agosto](/noticias/extended-look-netflix-27-agosto).",
   "status": "confirmado",
   "tags": [
     "marketing",
     "agosto-2026",
     "tercer-trailer",
     "tom-henderson",
-    "rumor",
-    "seguimiento"
+    "registro-historico",
+    "corregido"
   ],
   "featured": false,
   "createdAt": "2026-08-15T00:00:00Z",
   "updatedAt": "2026-08-17T00:00:00Z",
   "evidence": {
     "level": "respaldado",
-    "primarySource": "TheGamer — cobertura de agosto de 2026 sobre la ausencia de campaña de marketing",
+    "primarySource": "TheGamer — cobertura sobre la ventana de silencio de marketing entre mayo y agosto de 2026",
     "secondarySource": "Notebookcheck (predicción de Tom Henderson / Insider Gaming, febrero de 2026); Variety y TechRadar (declaraciones previas de Zelnick sobre el arranque estival del marketing)",
-    "note": "El hecho verificable es la ausencia de campaña visible a la fecha de esta ficha, reportada por múltiples medios especializados. La predicción de un tráiler en agosto es explícitamente especulación de un insider, no una confirmación de Rockstar, y se marca así en el texto.",
+    "note": "CORRECCIÓN (17 ago 2026): la versión original de esta ficha (publicada 15 ago 2026) afirmaba que la campaña 'todavía no se materializó' sin precisar que el anuncio oficial ya había ocurrido el 6 de agosto — una imprecisión de fechas propia, no un error de la fuente. Se reescribe el contenido para documentar la ventana de silencio real (mayo-6 de agosto) como hecho histórico cerrado, y se agrega relación explícita hacia noticias/extended-look-netflix-27-agosto para el estado actual.",
     "limitations": [
-      "Esta ficha describe un estado de cosas a mediados de agosto de 2026; puede quedar desactualizada apenas Rockstar publique nuevo material",
-      "La predicción de Tom Henderson es un rumor de industria, no una fuente oficial"
+      "Esta ficha describe una ventana histórica ya cerrada (mayo-6 de agosto de 2026); para el estado actual de la campaña, ver noticias/extended-look-netflix-27-agosto",
+      "La predicción de Tom Henderson fue un rumor de industria en su momento, no una fuente oficial"
     ]
   },
   "relations": [
@@ -31,6 +31,11 @@
       "targetType": "noticias",
       "targetSlug": "zelnick-reafirma-fecha-marketing-verano",
       "relation": "seguimiento-de"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "extended-look-netflix-27-agosto",
+      "relation": "actualizada-por"
     },
     {
       "targetType": "guias",
@@ -43,6 +48,6 @@
       "relation": "referencia-comparativa"
     }
   ],
-  "seoTitle": "¿Dónde Está el Marketing de GTA 6? Estado a Agosto de 2026 — Noticias de GTA 6",
-  "seoDescription": "A mediados de agosto de 2026 la campaña de marketing de verano prometida por Take-Two todavía no se hizo visible. Esto es lo que se sabe."
+  "seoTitle": "GTA 6: La Ventana de Silencio de Marketing (Mayo-Agosto 2026) — Noticias de GTA 6",
+  "seoDescription": "Entre la promesa de mayo y el anuncio del 6 de agosto de 2026, Rockstar no publicó campaña de marketing visible. Registro histórico del período."
 }
