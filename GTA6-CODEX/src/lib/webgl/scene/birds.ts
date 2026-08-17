@@ -12,6 +12,14 @@
  * referencias — no crea arrays/vectores temporales ni usa
  * `Math.random()`; toda la trayectoria es una función cerrada de
  * `elapsed` + los offsets fijos de cada ave.
+ *
+ * Fase 10.4A FIX — única corrección: la bandada `(18, 11, -62)` daba una
+ * profundidad de cámara de ~96-101 según la toma activa (`camera.far =
+ * 100`, cámara en `z≈34-39` entre las 4 `SHOTS`), al borde del far
+ * plane, con riesgo de parpadeo en transiciones. Se cambia solo su
+ * `baseZ` a -52 (misma profundidad segura que ya usa `far-skyline.ts`,
+ * ~91 de margen) — sin tocar cantidad, sistema de movimiento ni
+ * geometría/material compartidos.
  */
 
 import * as THREE from 'three'
@@ -49,13 +57,13 @@ interface FlockDef {
 
 const FLOCKS_HIGH: FlockDef[] = [
   { baseX: -30, baseY: 9.5, baseZ: -55, count: 5, phaseOffset: 0 },
-  { baseX: 18, baseY: 11, baseZ: -62, count: 4, phaseOffset: 2.4 },
+  { baseX: 18, baseY: 11, baseZ: -52, count: 4, phaseOffset: 2.4 },
   { baseX: -8, baseY: 8, baseZ: -48, count: 3, phaseOffset: 4.8 },
 ]
 
 const FLOCKS_MEDIUM: FlockDef[] = [
   { baseX: -30, baseY: 9.5, baseZ: -55, count: 3, phaseOffset: 0 },
-  { baseX: 18, baseY: 11, baseZ: -62, count: 3, phaseOffset: 2.4 },
+  { baseX: 18, baseY: 11, baseZ: -52, count: 3, phaseOffset: 2.4 },
 ]
 
 /**
