@@ -57,6 +57,12 @@
 import * as THREE from 'three'
 import { lerpDayColor } from '../utils/math'
 
+/**
+ * Firma propia (no `Updater` de `./sky`): este builder lee sus 6 valores
+ * dinámicos directo de `this` en la versión inline original, sin seguir
+ * la firma común de 11 parámetros — ver la nota de arquitectura al inicio
+ * del archivo para el detalle completo de por qué diverge.
+ */
 export type LightsUpdater = (
   elapsed: number,
   dayPhase: number,
@@ -82,6 +88,15 @@ export interface LightsBuildResult {
   updater: LightsUpdater
 }
 
+/**
+ * Construye la iluminación de la escena: luz ambiental + luz clave
+ * (magenta) + luz de relleno (cian), sobre `scene`, acopladas al ciclo
+ * día/noche y a la niebla (`fog`, recibida como dependencia). Genera 3
+ * `THREE.Light`. Devuelve `{ keyLight, fillLight, updater }`: las luces
+ * se exponen porque otros builders (`buildDust()`) y el loop las
+ * consumen después; `updater: LightsUpdater` (firma propia, ver arriba)
+ * anima color/intensidad/posición y actualiza `fog.color`.
+ */
 export function buildLightsScene(options: LightsBuilderOptions): LightsBuildResult {
   const { scene, fog } = options
 

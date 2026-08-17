@@ -43,6 +43,13 @@ export interface LightShaftBuilderOptions {
   quality: QualityProfile
 }
 
+/**
+ * Construye los haces de neón que suben desde la torre focal (magenta
+ * siempre, cian condicionado a `quality.tier !== 'low'`), sobre
+ * `farGroup`. Genera 1 o 2 `THREE.Mesh` con `ShaderMaterial` aditivo.
+ * Devuelve `{ uniforms, updater }`; `updater: Updater` anima ambos haces
+ * a la vez (comparten el mismo objeto de uniforms).
+ */
 export function buildLightShaftScene(
   options: LightShaftBuilderOptions
 ): { uniforms: LightShaftUniforms; updater: Updater } {

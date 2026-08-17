@@ -58,14 +58,20 @@
  * fallbacks defensivos como en Fases 8.6/8.11/8.12/8.13), siguiendo la
  * instrucción de esta fase, **no se reutilizó** `scene/billboard.ts`: se
  * transcribió mecánicamente el inline real a este archivo nuevo,
- * `scene/image-billboards.ts`. `scene/billboard.ts` permanece intacto y
- * sigue sin conectar.
+ * `scene/image-billboards.ts`. `scene/billboard.ts` fue eliminado en la
+ * Fase 8.19 (código muerto, no equivalente al builder real, sin conectar).
  */
 
 import * as THREE from 'three'
 import { BILLBOARD_VERTEX_SHADER, BILLBOARD_FRAGMENT_SHADER } from '../shaders/billboard'
 import { IMAGE_BILLBOARDS } from '../config/scene'
 
+/**
+ * Firma propia (no `Updater` de `./sky`): este builder depende de
+ * `camera`/`scrollProgress`/`reducedMotion`, ausentes de los 11
+ * parámetros comunes — ver la nota de arquitectura al inicio del archivo
+ * para el detalle completo de por qué diverge.
+ */
 export type ImageBillboardsUpdater = (
   elapsed: number,
   delta: number,
@@ -94,6 +100,15 @@ export interface ImageBillboardsBuildResult {
   updater: ImageBillboardsUpdater
 }
 
+/**
+ * Construye los letreros con imágenes reales de GTA VI orbitando la torre
+ * focal, sobre `midGroup` (usa `renderer` para anisotropía y `camera`
+ * para el billboarding). Genera un `THREE.Mesh` con textura por cada
+ * entrada de `IMAGE_BILLBOARDS`. Devuelve `{ textures, updater }`:
+ * `textures` para que el llamador las libere en `dispose()`, `updater:
+ * ImageBillboardsUpdater` (firma propia, ver arriba) para órbita,
+ * parallax y orientación hacia cámara.
+ */
 export function buildImageBillboardsScene(options: ImageBillboardsBuilderOptions): ImageBillboardsBuildResult {
   const { midGroup, renderer } = options
 

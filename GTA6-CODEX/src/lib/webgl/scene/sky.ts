@@ -15,6 +15,21 @@ export interface SkyDomeUniforms {
   fogColor: { value: THREE.Color }
 }
 
+/**
+ * Firma común de 11 parámetros que reutilizan directamente la mayoría de
+ * builders de `scene/*.ts` (ver `import type { Updater } from './sky'` en
+ * cada archivo). Tres builders definen su propia firma especializada en
+ * vez de reutilizar esta — `LightsUpdater` (`./lights`), `RoadUpdater`
+ * (`./road`) e `ImageBillboardsUpdater` (`./image-billboards`) — porque
+ * cada uno depende de datos dinámicos distintos a estos 11 (p. ej.
+ * `camera` o `roadFlow`); ver el comentario de cabecera de cada uno de
+ * esos archivos para el detalle completo de por qué diverge. Aparte,
+ * fuera de `scene/`, `engine.ts` define `SceneUpdater`, un tipo interno
+ * de 3 parámetros (`elapsed, delta, intro`) al que el motor reduce cada
+ * uno de estos updaters mediante un closure antes de registrarlo en su
+ * loop de animación — `Updater` y `SceneUpdater` son intencionalmente
+ * tipos distintos y no deben confundirse ni unificarse.
+ */
 export type Updater = (
   elapsed: number,
   delta: number,
@@ -36,6 +51,12 @@ export interface SkyDomeBuilderOptions {
   quality: QualityProfile
 }
 
+/**
+ * Construye el domo de cielo procedural sobre `skyGroup`. Genera un
+ * `THREE.Mesh` esférico (`BackSide`) con `ShaderMaterial` del ciclo
+ * día/noche. Devuelve `{ uniforms, updater }`; `updater: Updater` (tipo
+ * base, ver arriba) anima tiempo, fase del día, humedad y color de niebla.
+ */
 export function buildSkyDome(
   options: SkyDomeBuilderOptions
 ): { uniforms: SkyDomeUniforms; updater: Updater } {

@@ -16,7 +16,8 @@
  * se transcribió mecánicamente a este archivo nuevo, `scene/neon-signs.ts`,
  * manteniendo el patrón de módulo autocontenido por builder usado en las
  * Fases 8.1–8.11, sin crear una dependencia hacia `scene/neon.ts` (que
- * permanece intacta y sigue sin conectar). El `updater` que devuelve esta
+ * fue eliminado en la Fase 8.19, código muerto ya migrado y sin
+ * conectar). El `updater` que devuelve esta
  * función usa la firma común de 11 parámetros de `scene/*.ts` (ver
  * `Updater` en `./sky`), incompatible con `SceneUpdater` de `engine.ts` —
  * el wrapper en `engine.ts` (`buildNeonSigns()`) se encarga de envolverlo
@@ -43,6 +44,13 @@ export interface NeonSignsBuilderOptions {
   quality: QualityProfile
 }
 
+/**
+ * Construye los letreros neón de negocios (hoteles/clubes/restaurantes/
+ * casinos) distribuidos en capas de profundidad, sobre `farGroup`, según
+ * `quality`. Genera un `THREE.Mesh` por letrero activo (ninguno si
+ * `quality.tier === 'low'`). Devuelve un único `updater: Updater` que
+ * anima tiempo, intro, día/noche y el fade dinámico por `entityUnrest`.
+ */
 export function buildNeonSignsScene(options: NeonSignsBuilderOptions): Updater {
   const { farGroup, quality } = options
 

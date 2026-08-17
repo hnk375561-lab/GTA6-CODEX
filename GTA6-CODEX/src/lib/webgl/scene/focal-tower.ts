@@ -43,8 +43,8 @@
  * este archivo nuevo, `scene/focal-tower.ts`, sin los fallbacks
  * defensivos (para conservar el comportamiento exacto del inline real),
  * manteniendo el patrón de módulo autocontenido por builder usado en las
- * Fases 8.1–8.12. `scene/tower.ts` permanece intacta y sigue sin
- * conectar.
+ * Fases 8.1–8.12. `scene/tower.ts` fue eliminado en la Fase 8.19 (código
+ * muerto, ya migrado y sin conectar).
  */
 
 import * as THREE from 'three'
@@ -54,6 +54,13 @@ export interface FocalTowerBuilderOptions {
   nearGroup: THREE.Group
 }
 
+/**
+ * Construye la torre focal Art Deco (vidrio + anillos neón + baliza)
+ * sobre `nearGroup`. Genera el `THREE.Group` con los tiers de vidrio
+ * (`MeshPhysicalMaterial`), los anillos y la baliza (`PointLight`).
+ * Devuelve un único `updater: Updater` que anima rotación, jitter de
+ * anillos y parpadeo de la baliza según pace/unrest/presence.
+ */
 export function buildFocalTowerScene(options: FocalTowerBuilderOptions): Updater {
   const { nearGroup } = options
 

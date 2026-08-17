@@ -14,6 +14,11 @@ export interface HumidityMistBuilderOptions {
   reducedMotion: boolean
 }
 
+/**
+ * Construye las gotas de humedad/niebla nocturna sobre `midGroup`. Genera
+ * un `THREE.Points` con `quality.mistCount` partículas. Devuelve un único
+ * `updater: Updater` que anima tiempo, amortiguado por `reducedMotion`.
+ */
 export function buildHumidityMist(options: HumidityMistBuilderOptions): Updater {
   const { midGroup, quality, reducedMotion } = options
 

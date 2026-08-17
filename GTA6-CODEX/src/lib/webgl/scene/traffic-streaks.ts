@@ -13,6 +13,13 @@ export interface TrafficStreaksBuilderOptions {
   quality: QualityProfile
 }
 
+/**
+ * Construye el tráfico de la carretera (faros blancos + luces de freno
+ * rojas en loop), sobre `farGroup`, según `quality`. Genera
+ * `quality.trafficCount` `THREE.Mesh` con `MeshBasicMaterial` aditivo.
+ * Devuelve un único `updater: Updater` que anima posición y velocidad
+ * ligada a `entityPace`/`scrollVelocity`.
+ */
 export function buildTrafficStreaks(options: TrafficStreaksBuilderOptions): Updater {
   const { farGroup, quality } = options
 

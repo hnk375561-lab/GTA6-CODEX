@@ -34,6 +34,12 @@ export interface HorizonSunBuilderOptions {
   farGroup: THREE.Group
 }
 
+/**
+ * Construye el sol/luna bajo de horizonte sobre `farGroup`. Genera un
+ * `THREE.Mesh` plano con `ShaderMaterial` de banda cortada. Devuelve un
+ * único `updater: Updater` que anima posición e intensidad de color según
+ * `dayPhase`.
+ */
 export function buildHorizonSunScene(options: HorizonSunBuilderOptions): Updater {
   const { farGroup } = options
 

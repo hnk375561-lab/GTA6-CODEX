@@ -30,6 +30,12 @@ export interface RoadUniforms {
   introFade: { value: number }
 }
 
+/**
+ * Firma propia (no `Updater` de `./sky`): extiende los 11 parámetros
+ * comunes con `reducedMotion`/`roadFlow`, ambos necesarios para el efecto
+ * de flujo/heat-shimmer real — ver la nota de arquitectura al inicio del
+ * archivo para el detalle completo de por qué diverge.
+ */
 export type RoadUpdater = (
   elapsed: number,
   delta: number,
@@ -50,6 +56,13 @@ export interface RoadBuilderOptions {
   farGroup: THREE.Group
 }
 
+/**
+ * Construye la carretera nocturna (horizonte con fuga de perspectiva)
+ * sobre `farGroup`. Genera un `THREE.Mesh` plano con `ShaderMaterial`.
+ * Devuelve `{ uniforms, updater }`; `updater: RoadUpdater` (firma propia,
+ * ver arriba) anima flujo, humedad y heat-shimmer, recibiendo
+ * `reducedMotion`/`roadFlow` además de los 11 parámetros comunes.
+ */
 export function buildRoadScene(
   options: RoadBuilderOptions
 ): { uniforms: RoadUniforms; updater: RoadUpdater } {

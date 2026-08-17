@@ -24,6 +24,13 @@ export interface AtmosphericHazeBuildResult {
   updater: Updater
 }
 
+/**
+ * Construye las capas de haze volumétrico en profundidad sobre `midGroup`.
+ * Genera N `THREE.Mesh` (uno por capa, según `quality.hazeLayers`) con
+ * `ShaderMaterial` aditivo. Devuelve `{ layers, updater }`: `layers` para
+ * que el llamador aplique el parallax de scroll externo, `updater:
+ * Updater` (firma común de 11 parámetros) para el loop de animación.
+ */
 export function buildAtmosphericHaze(options: AtmosphericHazeBuilderOptions): AtmosphericHazeBuildResult {
   const { midGroup, quality } = options
 

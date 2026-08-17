@@ -13,6 +13,12 @@ export interface FirefliesBuilderOptions {
   quality: QualityProfile
 }
 
+/**
+ * Construye las luciérnagas tropicales cerca del skyline, sobre
+ * `farGroup`. Genera un `THREE.Points` con `quality.fireflyCount`
+ * partículas (o ningún recurso si la cuenta es 0). Devuelve un único
+ * `updater: Updater` que anima tiempo e intro del shader.
+ */
 export function buildFireflies(options: FirefliesBuilderOptions): Updater {
   const { farGroup, quality } = options
 

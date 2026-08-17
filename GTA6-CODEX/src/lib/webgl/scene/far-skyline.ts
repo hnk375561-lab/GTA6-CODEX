@@ -25,6 +25,13 @@ export interface FarSkylineBuilderOptions {
   quality: QualityProfile
 }
 
+/**
+ * Construye el skyline lejano (edificios con ventanas + palmeras en
+ * silueta) sobre `farGroup`, según `quality`. Genera los `THREE.Mesh` de
+ * edificios/ventanas/palmeras. Devuelve `{ updater, windowUpdaters }`: el
+ * `updater` principal anima las siluetas; `windowUpdaters` es un
+ * `Updater` por ventana para su parpadeo individual.
+ */
 export function buildFarSkyline(
   options: FarSkylineBuilderOptions
 ): { updater: Updater; windowUpdaters: Updater[] } {

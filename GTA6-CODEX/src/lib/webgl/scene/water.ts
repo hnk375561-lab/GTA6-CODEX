@@ -11,6 +11,11 @@ export interface WaterBuilderOptions {
   farGroup: THREE.Group
 }
 
+/**
+ * Construye la bahía de Leonida con agua reflectante, sobre `farGroup`.
+ * Genera un `THREE.Mesh` plano con `ShaderMaterial` de olas. Devuelve un
+ * único `updater: Updater` que anima tiempo, intro y fase del día.
+ */
 export function buildWaterHorizon(options: WaterBuilderOptions): Updater {
   const { farGroup } = options
 

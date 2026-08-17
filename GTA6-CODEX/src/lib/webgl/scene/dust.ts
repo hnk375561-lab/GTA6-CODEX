@@ -27,6 +27,13 @@ export interface DustBuilderOptions {
   fillLight: THREE.PointLight
 }
 
+/**
+ * Construye las partículas de polvo/bruma del plano medio sobre `midGroup`.
+ * Genera un `THREE.Points` con geometría de buffer (`quality.dustCount`
+ * partículas) y sus uniforms de reacción a luz/puntero. Devuelve
+ * `{ uniforms, updater }`; `updater: Updater` sigue en vivo la posición de
+ * `keyLight`/`fillLight`, recibidas como dependencia de construcción.
+ */
 export function buildDust(
   options: DustBuilderOptions
 ): { uniforms: DustUniforms; updater: Updater } {
