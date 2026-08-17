@@ -95,9 +95,19 @@ export function buildLightShaftScene(
     farGroup.add(shaft2)
   }
 
+  // Referencias cacheadas a los objetos uniform (evita re-atravesar la
+  // cadena `material.uniforms.<nombre>` en cada frame dentro del
+  // updater). `time`/`introFade` son el mismo objeto que `uniforms.time`/
+  // `uniforms.introFade` porque el spread superficial al construir cada
+  // `ShaderMaterial` copia las referencias, no clona los valores — por
+  // eso mutar `uniforms.time`/`uniforms.introFade` sigue actualizando
+  // ambos haces (y el objeto de retorno), igual que antes.
+  const timeUniform = uniforms.time
+  const introFadeUniform = uniforms.introFade
+
   const updater: Updater = (elapsed, _delta, intro, _dayPhase, _humidity, _fog, _entityPace, _entityUnrest, _scrollVelocity, _pointerIntent, _entityPresence) => {
-    material.uniforms.time.value = elapsed
-    material.uniforms.introFade.value = intro
+    timeUniform.value = elapsed
+    introFadeUniform.value = intro
   }
 
   return { uniforms, updater }
