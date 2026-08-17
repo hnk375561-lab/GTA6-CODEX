@@ -18,7 +18,7 @@
   "evidence": {
     "level": "especulativo",
     "primarySource": "Análisis propio del sitio basado en patrones narrativos previos de la saga GTA",
-    "note": "Esta entrada es explícitamente una teoría del sitio, no información confirmada ni filtrada. Se incluye para ofrecer contexto analítico, claramente diferenciado del contenido confirmado.",
+    "note": "Esta entrada es explícitamente una teoría del sitio, no información confirmada ni filtrada. Se incluye para ofrecer contexto analítico, claramente diferenciado del contenido confirmado. ACTUALIZACIÓN (Fase 3, 15 ago 2026): se agregan relaciones con negocios/jack-of-hearts y negocios/only-raw-records — ambos negocios legítimos de Boobie Ike ya mencionados textualmente en el 'content' como posibles fachadas, pero ausentes del array de relations. No se agregan otros negocios ni se sube el nivel de evidencia: sigue siendo una hipótesis 'nuestro', no una escena o mecánica confirmada.",
     "limitations": [
       "Sin ninguna confirmación oficial",
       "Basada en patrones de juegos anteriores, no en GTA 6 específicamente",
@@ -50,6 +50,16 @@
       "targetType": "personajes",
       "targetSlug": "lucia-caminos",
       "relation": "protagonista"
+    },
+    {
+      "targetType": "negocios",
+      "targetSlug": "jack-of-hearts",
+      "relation": "posible-fachada"
+    },
+    {
+      "targetType": "negocios",
+      "targetSlug": "only-raw-records",
+      "relation": "posible-fachada"
     }
   ]
 }

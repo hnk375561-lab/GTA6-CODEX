@@ -18,7 +18,7 @@
   "evidence": {
     "level": "especulativo",
     "primarySource": "Ficha oficial de Dre'Quan Priest (Rockstar Games)",
-    "note": "El personaje y su negocio están confirmados oficialmente. El contenido específico de esta misión es una construcción propia del sitio basada en su perfil de personaje.",
+    "note": "El personaje y su negocio están confirmados oficialmente. El contenido específico de esta misión es una construcción propia del sitio basada en su perfil de personaje. ACTUALIZACIÓN (Fase 3, 15 ago 2026): se agregan relaciones con negocios/jack-of-hearts, personajes/boobie-ike y misiones/noche-jack-of-hearts, porque el propio Only Raw Records está descrito en fuentes oficiales y secundarias como financiado en sociedad entre Dre'Quan Priest y Boobie Ike (dueño de Jack of Hearts), y Dre'Quan es quien contrata a los artistas que se presentan en ese club — el mismo escenario de la ficha 'noche-jack-of-hearts'. Se mantiene el nivel 'especulativo' porque la conexión entre AMBAS misiones específicas sigue siendo hipótesis propia del sitio, no una escena confirmada.",
     "limitations": [
       "No hay escena o misión confirmada oficialmente para este contenido",
       "Estructura de gameplay desconocida",
@@ -40,6 +40,21 @@
       "targetType": "ubicaciones",
       "targetSlug": "little-cuba",
       "relation": "ubicación-relacionada"
+    },
+    {
+      "targetType": "negocios",
+      "targetSlug": "jack-of-hearts",
+      "relation": "negocio-relacionado"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "boobie-ike",
+      "relation": "socio-comercial"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "noche-jack-of-hearts",
+      "relation": "hilo-narrativo-compartido"
     }
   ]
 }

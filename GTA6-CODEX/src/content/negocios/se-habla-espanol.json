@@ -20,12 +20,22 @@
       "targetType": "ubicaciones",
       "targetSlug": "vice-city",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrado-en",
+      "direction": "from"
     }
   ],
   "evidence": {
     "level": "oficial-visual-multifuente",
     "primarySource": "Rockstar Games, Trailer 1 (~0:46), rótulo 'Se Habla Español' visible en escena nocturna de carreras callejeras",
     "secondarySource": "GTA-Xtreme (gta-xtreme.com) y LibertyCity.net, que identifican de forma independiente el mismo rótulo en la misma escena del Trailer 1",
-    "note": "DESCUBRIMIENTO (14 ago 2026, ronda 7): candidato nuevo, corroborado por dos fuentes independientes. No se afirma el rubro exacto del negocio (restaurante vs. otro tipo de comercio) porque las fuentes no lo confirman con precisión, solo documentan el rótulo visible."
+    "note": "DESCUBRIMIENTO (14 ago 2026, ronda 7): candidato nuevo, corroborado por dos fuentes independientes. No se afirma el rubro exacto del negocio (restaurante vs. otro tipo de comercio) porque las fuentes no lo confirman con precisión, solo documentan el rótulo visible. ACTUALIZACIÓN (Fase 3, 15 ago 2026): se agrega relación formal con trailers/trailer-1-anuncio, ya citada en primarySource pero ausente del array de relations.",
+    "limitations": [
+      "Rubro exacto del negocio no confirmado",
+      "Ubicación exacta dentro de Vice City no confirmada"
+    ]
   }
 }

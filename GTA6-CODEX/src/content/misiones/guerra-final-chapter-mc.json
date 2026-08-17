@@ -18,7 +18,7 @@
   "evidence": {
     "level": "especulativo",
     "primarySource": "Ficha oficial de Final Chapter MC (Rockstar Games)",
-    "note": "La organización está confirmada oficialmente. El conflicto narrativo específico descrito aquí es una hipótesis propia del sitio, no una escena documentada.",
+    "note": "La organización está confirmada oficialmente y opera en el condado de Ambrosia, según capturas y descripciones oficiales publicadas junto al Trailer 2. El conflicto narrativo específico descrito aquí es una hipótesis propia del sitio, no una escena documentada. ACTUALIZACIÓN (Fase 3, 15 ago 2026): se agrega relación con ubicaciones/ambrosia, territorio confirmado de la organización, para anclar geográficamente la hipótesis sin inventar un enfrentamiento específico.",
     "limitations": [
       "No hay confirmación de conflicto directo entre los protagonistas y esta organización",
       "Estructura de misión y desenlace desconocidos",
@@ -30,6 +30,11 @@
       "targetType": "organizaciones",
       "targetSlug": "final-chapter-mc",
       "relation": "antagonista"
+    },
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "ambrosia",
+      "relation": "territorio-organización"
     },
     {
       "targetType": "personajes",

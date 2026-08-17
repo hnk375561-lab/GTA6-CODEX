@@ -3,7 +3,7 @@
   "type": "noticias",
   "title": "Rockstar Games Anuncia Grand Theft Auto VI",
   "description": "Anuncio oficial de Rockstar Games confirmando Grand Theft Auto VI y publicación del primer tráiler.",
-  "content": "El 5 de diciembre de 2023, Rockstar Games hizo oficial el anuncio de Grand Theft Auto VI tras años de especulación. El anuncio coincidió con la publicación del primer tráiler oficial del juego en el canal de YouTube de Rockstar Games.\n\nEste hito histórico marcó:\n\n**Confirmaciones Iniciales:**\n- Regreso a Vice City como ubicación principal\n- Jason Duval y Lucia Caminos como protagonistas jugables\n- Primera protagonista femenina jugable en historia principal de GTA\n- Ambientación contemporánea (no años 80 clásicos)\n- Lanzamiento previsto para otoño de 2025 (posteriormente retrasado)\n\n**Significado**:\nEl anuncio fue el evento más importante de la historia reciente de Rockstar Games, generando un fenómeno global de expectativa. Tras una ausencia de 7 años desde GTA V (2013), el anuncio de GTA VI reafirmó el compromiso de Rockstar con la franquicia.\n\n**Material Asociado:**\n- Trailer 1 (Tráiler de Anuncio) — 90 segundos\n- Primer vistazo al mundo, personajes y atmósfera",
+  "content": "El 5 de diciembre de 2023, Rockstar Games hizo oficial el anuncio de Grand Theft Auto VI tras años de especulación. El anuncio coincidió con la publicación del primer tráiler oficial del juego en el canal de YouTube de Rockstar Games.\n\nEste hito histórico marcó:\n\n**Confirmaciones Iniciales:**\n- Regreso a Vice City como ubicación principal\n- Jason Duval y Lucia Caminos como protagonistas jugables\n- Primera protagonista femenina jugable en historia principal de GTA\n- Ambientación contemporánea (no años 80 clásicos)\n- Lanzamiento previsto para 2025, ventana que Rockstar retrasó dos veces después: primero a mayo de 2026 (anuncio del 2 de mayo de 2025) y luego a noviembre de 2026 (anuncio del 6 de noviembre de 2025), fecha en la que el juego permanece confirmado a la fecha de esta actualización\n\n**Significado**:\nEl anuncio fue el evento más importante de la historia reciente de Rockstar Games, generando un fenómeno global de expectativa. Tras una ausencia de 7 años desde GTA V (2013), el anuncio de GTA VI reafirmó el compromiso de Rockstar con la franquicia.\n\n**Material Asociado:**\n- Trailer 1 (Tráiler de Anuncio) — 90 segundos\n- Primer vistazo al mundo, personajes y atmósfera",
   "status": "confirmado",
   "tags": [
     "anuncio",
@@ -19,7 +19,7 @@
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games — Anuncio Oficial (5 de diciembre de 2023)",
-    "note": "Evento oficial histórico confirmado por Rockstar Games. Datos verificables y públicos.",
+    "note": "Evento oficial histórico confirmado por Rockstar Games. Datos verificables y públicos. ACTUALIZACIÓN (Fase 3, 15 ago 2026): se corrige la mención genérica de 'posteriormente retrasado' por el historial preciso de ambos retrasos oficiales (ver noticias/retraso-gta6-2025 para el detalle completo, con fuentes de Rockstar Newswire), y se agrega la relación correspondiente.",
     "limitations": []
   },
   "relations": [
@@ -27,6 +27,11 @@
       "targetType": "trailers",
       "targetSlug": "trailer-1-anuncio",
       "relation": "trailer-acompañante"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "retraso-gta6-2025",
+      "relation": "seguida-de"
     }
   ]
 }

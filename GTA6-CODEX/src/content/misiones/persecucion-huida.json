@@ -20,7 +20,7 @@
   "evidence": {
     "level": "oficial-visual",
     "primarySource": "Rockstar Games — Trailer 1 (escenas ~1:15-1:30)",
-    "note": "Escena de persecución documentada visualmente en Trailer 1 con helicóptero policial, equipos tácticos y diálogos de Brian Heder.",
+    "note": "Escena de persecución documentada visualmente en Trailer 1 con helicóptero policial, equipos tácticos y diálogos de Brian Heder. ACTUALIZACIÓN (Fase 3, 15 ago 2026): se agrega relación recíproca con misiones/contrabando-cayos-leonida (hipótesis propia del sitio que la presenta como antecedente narrativo de esta persecución), para mantener consistencia bidireccional del grafo de relaciones.",
     "limitations": [
       "Objetivos específicos no documentados",
       "Duración de persecución desconocida",
@@ -49,6 +49,11 @@
       "targetType": "trailers",
       "targetSlug": "trailer-1-anuncio",
       "relation": "documentada-en"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "contrabando-cayos-leonida",
+      "relation": "precedida-narrativamente-por"
     }
   ]
 }

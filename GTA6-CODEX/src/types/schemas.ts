@@ -280,8 +280,8 @@ export const MediaSourceSchema = z
   })
 
 export const MediaEntityRelationSchema = z.object({
-  targetType: EntityTypeSchema,
-  targetSlug: z.string().min(1),
+  entityType: EntityTypeSchema,
+  entitySlug: z.string().min(1),
   role: z.string().optional(),
 })
 
