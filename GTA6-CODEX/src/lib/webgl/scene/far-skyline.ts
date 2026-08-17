@@ -97,11 +97,17 @@ export function buildFarSkyline(
 
         const wi = w
         const winMatLocal = winMat
+        // `flickerFreq`/`phaseOffset` no dependen de ningún valor que
+        // cambie por frame (solo de `wi`/`i`, fijos para esta ventana):
+        // se calculan una sola vez acá en vez de en cada frame dentro
+        // del closure de abajo.
+        const flickerFreq = 0.8 + wi * 0.3
+        const phaseOffset = i * 1.7
 
         // Ventana individual: parpadeo (idéntico a la versión inline).
         windowUpdaters.push((elapsed, _delta, _intro, dayPhase, _humidity, _fog, _entityPace, _entityUnrest, _scrollVelocity, _pointerIntent, _entityPresence) => {
           if (quality.tier === 'low') return
-          const flicker = 0.45 + 0.55 * Math.sin(elapsed * (0.8 + wi * 0.3) + i * 1.7)
+          const flicker = 0.45 + 0.55 * Math.sin(elapsed * flickerFreq + phaseOffset)
           winMatLocal.opacity = (0.35 + flicker * 0.5) * (0.7 + dayPhase * 0.3)
         })
       }
@@ -109,8 +115,12 @@ export function buildFarSkyline(
   }
 
   const updater: Updater = (elapsed, _delta, _intro, _dayPhase, _humidity, _fog, _entityPace, _entityUnrest, _scrollVelocity, _pointerIntent, _entityPresence) => {
+    // `elapsed * 0.02` es el mismo valor para todas las formas dentro de
+    // un mismo frame: se calcula una sola vez en vez de una vez por
+    // forma dentro del `forEach` de abajo.
+    const timeAngle = elapsed * 0.02
     shapes.forEach((s, i) => {
-      s.position.y += Math.sin(elapsed * 0.02 + i) * 0.0012
+      s.position.y += Math.sin(timeAngle + i) * 0.0012
     })
   }
 
