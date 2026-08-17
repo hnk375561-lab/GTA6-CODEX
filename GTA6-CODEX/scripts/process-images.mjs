@@ -63,8 +63,8 @@ const POSSIBLE_DUP_DIR = path.join(INCOMING_DIR, '_duplicados-posibles')
 const ERROR_DIR = path.join(INCOMING_DIR, '_errores')
 
 const VALID_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif'])
-const MAX_DIMENSION = 1600
-const WEBP_QUALITY = 82
+const MAX_DIMENSION = 3840
+const WEBP_QUALITY = 92
 
 const APPLY = process.argv.includes('--apply')
 const OVERWRITE = process.argv.includes('--overwrite')
