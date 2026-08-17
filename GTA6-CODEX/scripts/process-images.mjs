@@ -17,8 +17,9 @@
  *      NO la sobreescribe automáticamente — la dejá en
  *      incoming-images/_duplicados-posibles/ para revisión manual,
  *      salvo que se pase --overwrite.
- *   5. Optimiza con sharp: convierte a WebP, resize máx 1600px en el
- *      lado mayor (no upscalea), y calidad 82 (ajustable).
+ *   5. Optimiza con sharp: convierte a WebP en resolución nativa (sin
+ *      resize, se preserva el tamaño original tal cual) y calidad 100
+ *      (visualmente sin pérdida, ajustable).
  *   6. Calcula un hash de contenido (sha1 del buffer decodificado) para
  *      detectar duplicados exactos entre archivos de incoming-images/,
  *      incluso si tienen nombres distintos.
@@ -63,8 +64,7 @@ const POSSIBLE_DUP_DIR = path.join(INCOMING_DIR, '_duplicados-posibles')
 const ERROR_DIR = path.join(INCOMING_DIR, '_errores')
 
 const VALID_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif'])
-const MAX_DIMENSION = 3840
-const WEBP_QUALITY = 92
+const WEBP_QUALITY = 100
 
 const APPLY = process.argv.includes('--apply')
 const OVERWRITE = process.argv.includes('--overwrite')
@@ -352,18 +352,13 @@ async function main() {
       if (APPLY) {
         fs.mkdirSync(destDir, { recursive: true })
         const image = sharp(inputBuffer)
-        const metadata = await image.metadata()
-        const needsResize =
-          (metadata.width && metadata.width > MAX_DIMENSION) ||
-          (metadata.height && metadata.height > MAX_DIMENSION)
 
-        let pipeline = image
-        if (needsResize) {
-          pipeline = pipeline.resize(MAX_DIMENSION, MAX_DIMENSION, {
-            fit: 'inside',
-            withoutEnlargement: true,
-          })
-        }
+        // Sin resize: se preserva la resolución nativa del original tal
+        // cual (decisión deliberada del usuario, mismo criterio que ya
+        // usa RotatingHeroBackground.tsx para los heroes). Solo se
+        // re-encodea a WebP calidad 100 — visualmente sin pérdida
+        // perceptible, sin achicar dimensiones.
+        const pipeline = image
 
         tempDestPath = path.join(destDir, `.${entity.slug}.${process.pid}-${Date.now()}.webp.tmp`)
         await pipeline.webp({ quality: WEBP_QUALITY }).toFile(tempDestPath)
