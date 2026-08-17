@@ -122,6 +122,12 @@ export function buildImageBillboardsScene(options: ImageBillboardsBuilderOptions
     texture: THREE.Texture
     angle: number
     def: (typeof IMAGE_BILLBOARDS)[number]
+    // Referencias cacheadas a los objetos uniform (evita re-atravesar la
+    // cadena `material.uniforms.<nombre>` en cada frame dentro del
+    // updater — mismo criterio aplicado en `scene/road.ts`).
+    introFadeUniform: { value: number }
+    timeUniform: { value: number }
+    uDistortionUniform: { value: number }
   }[] = []
 
   const textures: THREE.Texture[] = []
@@ -162,7 +168,16 @@ export function buildImageBillboardsScene(options: ImageBillboardsBuilderOptions
     midGroup.add(mesh)
     textures.push(texture)
 
-    billboards.push({ mesh, material, texture, angle: (i / IMAGE_BILLBOARDS.length) * Math.PI * 2, def })
+    billboards.push({
+      mesh,
+      material,
+      texture,
+      angle: (i / IMAGE_BILLBOARDS.length) * Math.PI * 2,
+      def,
+      introFadeUniform: material.uniforms.introFade,
+      timeUniform: material.uniforms.time,
+      uDistortionUniform: material.uniforms.uDistortion,
+    })
   })
 
   const updater: ImageBillboardsUpdater = (
@@ -182,15 +197,22 @@ export function buildImageBillboardsScene(options: ImageBillboardsBuilderOptions
     // vivido dentro de la geometría de cada letrero.
     const interactionDistortion = Math.min(scrollVelocity * 9 + pointerIntent * 0.35 + entityUnrest * 0.25, 1)
 
+    // `towerOffset` no cambia entre frames: se resuelven sus componentes
+    // una sola vez por frame en vez de una vez por letrero dentro del
+    // `forEach` de abajo.
+    const towerOffsetX = towerOffset.x
+    const towerOffsetY = towerOffset.y
+    const towerOffsetZ = towerOffset.z
+
     billboards.forEach((b, i) => {
       b.angle += delta * b.def.speed * (reducedMotion ? 0.15 : 1)
-      const x = towerOffset.x + Math.cos(b.angle + b.def.phase) * b.def.radius
-      const zOrbit = towerOffset.z + Math.sin(b.angle + b.def.phase) * b.def.radius * 0.6 - 4
+      const x = towerOffsetX + Math.cos(b.angle + b.def.phase) * b.def.radius
+      const zOrbit = towerOffsetZ + Math.sin(b.angle + b.def.phase) * b.def.radius * 0.6 - 4
       // Parallax multicapa real: el dolly de scroll acerca cada letrero
       // según su propio factor — la portada de GTA VI (parallax=1) es la
       // que más "sale al encuentro" del usuario al scrollear.
       const z = zOrbit + scrollProgress * 4.5 * b.def.parallax
-      const y = towerOffset.y + b.def.baseY + Math.sin(elapsed * 0.15 + b.def.phase) * 0.35
+      const y = towerOffsetY + b.def.baseY + Math.sin(elapsed * 0.15 + b.def.phase) * 0.35
       b.mesh.position.set(x, y, z)
       // Billboard real: el letrero siempre encara la cámara, como
       // corresponde a una imagen legible — no tumbla como un sólido
@@ -198,9 +220,9 @@ export function buildImageBillboardsScene(options: ImageBillboardsBuilderOptions
       b.mesh.quaternion.copy(camera.quaternion)
 
       const stagger = intro * 1.25 - i * 0.09
-      b.material.uniforms.introFade.value = Math.max(0, Math.min(stagger, 1))
-      b.material.uniforms.time.value = elapsed
-      b.material.uniforms.uDistortion.value = interactionDistortion
+      b.introFadeUniform.value = Math.max(0, Math.min(stagger, 1))
+      b.timeUniform.value = elapsed
+      b.uDistortionUniform.value = interactionDistortion
     })
   }
 
