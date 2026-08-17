@@ -112,22 +112,32 @@ export function buildLightsScene(options: LightsBuilderOptions): LightsBuildResu
   fillLight.position.set(-11, -3, 6)
   scene.add(fillLight)
 
+  // Referencias cacheadas a objetos estables (nunca se reasignan durante
+  // la vida del motor): evita re-atravesar `keyLight.color`,
+  // `fillLight.color`, `keyLight.position` y `fog.color` en cada frame
+  // dentro del updater — mismo criterio aplicado en el resto de
+  // `scene/*.ts`.
+  const keyLightColor = keyLight.color
+  const fillLightColor = fillLight.color
+  const keyLightPosition = keyLight.position
+  const fogColorRef = fog.color
+
   const updater: LightsUpdater = (elapsed, dayPhase, entityUnrest, sceneMood, entityWarmth, scrollProgress) => {
     const cycle = Math.sin(elapsed * 0.025)
     const dayWarmth = 0.5 + 0.5 * Math.cos(dayPhase * Math.PI * 2)
-    keyLight.color.setHSL(
+    keyLightColor.setHSL(
       0.92 + cycle * (0.015 + entityUnrest * 0.01) + sceneMood * 0.02 + entityWarmth * 0.03 - dayWarmth * 0.04,
       0.85,
       0.52 + dayWarmth * 0.08
     )
-    fillLight.color.setHSL(0.52 + dayWarmth * 0.06, 0.75, 0.48)
+    fillLightColor.setHSL(0.52 + dayWarmth * 0.06, 0.75, 0.48)
     keyLight.intensity = 48 + cycle * 10 + scrollProgress * 14 + dayWarmth * 8
     fillLight.intensity = 28 + Math.cos(elapsed * 0.021) * 6 + (1 - dayWarmth) * 6
-    keyLight.position.x = 9 + Math.sin(elapsed * 0.09) * 3
-    keyLight.position.y = 5 + Math.cos(elapsed * 0.07) * 2
+    keyLightPosition.x = 9 + Math.sin(elapsed * 0.09) * 3
+    keyLightPosition.y = 5 + Math.cos(elapsed * 0.07) * 2
 
     const fogColor = lerpDayColor(dayPhase, 0x3a1830, 0x1c0f28, 0x142038)
-    fog.color.setHex(fogColor)
+    fogColorRef.setHex(fogColor)
   }
 
   return { keyLight, fillLight, updater }
