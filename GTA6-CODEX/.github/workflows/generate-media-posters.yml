@@ -2,6 +2,9 @@ name: Generate media posters
 
 on:
   workflow_dispatch: {}
+  push:
+    paths:
+      - 'GTA6-CODEX/.trigger-poster-gen'
 
 permissions:
   contents: write
