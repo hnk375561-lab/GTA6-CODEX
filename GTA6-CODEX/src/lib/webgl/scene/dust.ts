@@ -87,10 +87,19 @@ export function buildDust(
   const points = new THREE.Points(geometry, material)
   midGroup.add(points)
 
+  // Referencias cacheadas (evita re-atravesar las cadenas
+  // `uniforms.X.value` y `keyLight.position`/`fillLight.position` en
+  // cada frame dentro del updater — mismo criterio aplicado en
+  // `scene/road.ts` y `scene/image-billboards.ts`).
+  const warmLightPosValue = uniforms.warmLightPos.value
+  const coolLightPosValue = uniforms.coolLightPos.value
+  const keyLightPosition = keyLight.position
+  const fillLightPosition = fillLight.position
+
   const updater: Updater = (elapsed, _delta, _intro, _dayPhase, _humidity, _fog, _entityPace, _entityUnrest, _scrollVelocity, _pointerIntent, _entityPresence) => {
     points.rotation.y = elapsed * 0.008
-    uniforms.warmLightPos.value.copy(keyLight.position)
-    uniforms.coolLightPos.value.copy(fillLight.position)
+    warmLightPosValue.copy(keyLightPosition)
+    coolLightPosValue.copy(fillLightPosition)
   }
 
   return { uniforms, updater }
