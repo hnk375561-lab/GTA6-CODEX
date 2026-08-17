@@ -54,6 +54,14 @@ import { buildAtmosphericHaze as buildAtmosphericHazeScene } from './scene/atmos
 // fallbacks `|| 1`/`|| 0` sobre `entityPace`/`scrollVelocity` ausentes en
 // la versión que corre en producción) — no se reutilizó.
 import { buildTrafficStreaks as buildTrafficStreaksScene } from './scene/traffic-streaks'
+// Fase nueva: vida urbana — vehículos con cuerpo (carril propio, más
+// cerca que traffic-streaks.ts), botes lentos en la bahía y semáforos
+// cerca de la carretera. Los tres siguen el mismo patrón de módulo
+// autocontenido por builder (Updater de 11 parámetros, wrapper de 3
+// parámetros acá abajo) que el resto de scene/*.ts.
+import { buildStreetTraffic as buildStreetTrafficScene } from './scene/street-traffic'
+import { buildDistantMovement as buildDistantMovementScene } from './scene/distant-movement'
+import { buildStreetSignals as buildStreetSignalsScene } from './scene/street-signals'
 // Fase 8.7: buildDust() migrado mecánicamente a ./scene/dust.ts (ver nota
 // de arquitectura al pie del archivo). DUST_VERTEX_SHADER/
 // DUST_FRAGMENT_SHADER ya no se importan acá directamente: ahora los
@@ -453,6 +461,9 @@ export class GTA6CodexWebGLEngine {
     this.buildLightShaft()
     this.buildAtmosphericHaze()
     this.buildTrafficStreaks()
+    this.buildStreetTraffic()
+    this.buildDistantMovement()
+    this.buildStreetSignals()
     this.buildDust()
     this.buildFireflies()
     this.buildHumidityMist()
@@ -1049,6 +1060,101 @@ export class GTA6CodexWebGLEngine {
    */
   private buildTrafficStreaks() {
     const updater = buildTrafficStreaksScene({
+      farGroup: this.farGroup,
+      quality: this.quality,
+    })
+
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
+    )
+  }
+
+  /**
+   * Vehículos con cuerpo (silueta bajo-poly + faros/frenos aditivos) en
+   * un carril propio, más cerca de cámara que `buildTrafficStreaks()`
+   * (que sigue igual, sin tocar). Ver `./scene/street-traffic.ts`
+   * (`buildStreetTrafficScene`) para el detalle completo. Mismo patrón
+   * de wiring que el resto de builders migrados: el `updater` de 11
+   * parámetros se envuelve acá en un closure de 3 parámetros que lee el
+   * estado del motor en cada frame, y se registra en `this.updaters`
+   * sin tocar `start()`/el loop de animación.
+   */
+  private buildStreetTraffic() {
+    const updater = buildStreetTrafficScene({
+      farGroup: this.farGroup,
+      quality: this.quality,
+    })
+
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
+    )
+  }
+
+  /**
+   * Siluetas de bote cruzando lentamente el horizonte de la bahía, sobre
+   * el mismo plano que `buildWaterHorizon()`. Ver
+   * `./scene/distant-movement.ts` (`buildDistantMovementScene`) para el
+   * detalle completo. Gateado a `quality.tier !== 'low'` dentro del
+   * builder (no-op sin construir nada en low-end, mismo criterio que
+   * `buildNeonSigns()`/Fase 8.4 `buildFireflies()`), así que este
+   * wrapper se registra igual en todos los tiers sin ramificar acá.
+   */
+  private buildDistantMovement() {
+    const updater = buildDistantMovementScene({
+      farGroup: this.farGroup,
+      quality: this.quality,
+    })
+
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
+    )
+  }
+
+  /**
+   * Postes con semáforo (3 discos apilados, ciclo cian/magenta
+   * determinista por `elapsed`) cerca del borde de la carretera. Ver
+   * `./scene/street-signals.ts` (`buildStreetSignalsScene`) para el
+   * detalle completo. Mismo gating por tier que `buildDistantMovement()`
+   * de arriba (no-op en low-end, resuelto dentro del builder).
+   */
+  private buildStreetSignals() {
+    const updater = buildStreetSignalsScene({
       farGroup: this.farGroup,
       quality: this.quality,
     })
