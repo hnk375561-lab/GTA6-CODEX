@@ -106,6 +106,13 @@ export function buildNeonSignsScene(options: NeonSignsBuilderOptions): Updater {
     signType: number
     baseIntensity: number
     distanceFade: number
+    // Referencias cacheadas a los objetos uniform (evita re-atravesar la
+    // cadena `mat.uniforms.<nombre>` en cada frame dentro del updater —
+    // mismo criterio aplicado en el resto de `scene/*.ts`).
+    timeUniform: { value: number }
+    introFadeUniform: { value: number }
+    dayPhaseUniform: { value: number }
+    distanceFadeUniform: { value: number }
   }[] = []
 
   // Posiciones pre-diseñadas para composición cinematográfica
@@ -174,19 +181,27 @@ export function buildNeonSignsScene(options: NeonSignsBuilderOptions): Updater {
       signType: config.type,
       baseIntensity: config.baseIntensity,
       distanceFade,
+      timeUniform: mat.uniforms.time,
+      introFadeUniform: mat.uniforms.introFade,
+      dayPhaseUniform: mat.uniforms.dayPhase,
+      distanceFadeUniform: mat.uniforms.distanceFade,
     })
   })
 
   const updater: Updater = (elapsed, _delta, intro, dayPhase, _humidity, _fog, _entityPace, entityUnrest, _scrollVelocity, _pointerIntent, _entityPresence) => {
+    // `unrestMod` no depende de cada letrero individual: se calcula una
+    // sola vez por frame en vez de una vez por letrero dentro del
+    // `forEach` de abajo.
+    const unrestMod = 1.0 + entityUnrest * 0.15
+
     signs.forEach((s) => {
-      s.mat.uniforms.time.value = elapsed
-      s.mat.uniforms.introFade.value = intro
-      s.mat.uniforms.dayPhase.value = dayPhase
+      s.timeUniform.value = elapsed
+      s.introFadeUniform.value = intro
+      s.dayPhaseUniform.value = dayPhase
 
       // Variación dinámica de intensidad por "estado" del neón
-      const unrestMod = 1.0 + entityUnrest * 0.15
       const dynamicFade = s.distanceFade * unrestMod
-      s.mat.uniforms.distanceFade.value = dynamicFade
+      s.distanceFadeUniform.value = dynamicFade
     })
   }
 
