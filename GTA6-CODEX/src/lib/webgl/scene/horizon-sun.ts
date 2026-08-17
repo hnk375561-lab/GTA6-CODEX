@@ -61,13 +61,25 @@ export function buildHorizonSunScene(options: HorizonSunBuilderOptions): Updater
   sun.position.set(-2, 4.5, -55)
   farGroup.add(sun)
 
+  // Referencias cacheadas (evita re-atravesar `material.uniforms.X.value`
+  // y `sun.position` en cada frame dentro del updater — mismo criterio
+  // aplicado en el resto de `scene/*.ts`). `time`/`introFade` son el
+  // mismo objeto que `uniforms.time`/`uniforms.introFade` porque el
+  // spread superficial de arriba copia las referencias, no clona los
+  // valores.
+  const timeUniform = uniforms.time
+  const introFadeUniform = uniforms.introFade
+  const coreColorValue = material.uniforms.coreColor.value
+  const rimColorValue = material.uniforms.rimColor.value
+  const sunPosition = sun.position
+
   const updater: Updater = (elapsed, _delta, intro, dayPhase, _humidity, _fog, _entityPace, _entityUnrest, _scrollVelocity, _pointerIntent, _entityPresence) => {
-    material.uniforms.time.value = elapsed
-    material.uniforms.introFade.value = intro
+    timeUniform.value = elapsed
+    introFadeUniform.value = intro
     const dayLift = 0.5 + 0.5 * Math.cos(dayPhase * Math.PI * 2)
-    sun.position.y = 4.5 + dayLift * 2.5
-    material.uniforms.coreColor.value.setHex(lerpDayColor(dayPhase, 0xff5b7c, 0xff3d78, 0xff9060))
-    material.uniforms.rimColor.value.setHex(lerpDayColor(dayPhase, 0xffb04d, 0xff6088, 0x88b0ff))
+    sunPosition.y = 4.5 + dayLift * 2.5
+    coreColorValue.setHex(lerpDayColor(dayPhase, 0xff5b7c, 0xff3d78, 0xff9060))
+    rimColorValue.setHex(lerpDayColor(dayPhase, 0xffb04d, 0xff6088, 0x88b0ff))
   }
 
   return updater
