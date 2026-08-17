@@ -21,7 +21,7 @@ import { createEnvironment } from './core/environment'
 import { createPostProcessingPipeline } from './core/postprocessing'
 import { computePointerTarget, computeScrollTarget } from './core/input'
 import { computeSceneBusStateUpdate } from './core/scene-bus-adapter'
-import { lerpDayColor, lerpCyclic01, smootherstep } from './utils/math'
+import { lerpCyclic01, smootherstep } from './utils/math'
 import { SHOTS, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP } from './config/scene'
 // Fase 8.1: buildSkyDome() migrado mecánicamente a ./scene/sky.ts (ver nota
 // de arquitectura al pie del archivo). SKY_VERTEX_SHADER/SKY_FRAGMENT_SHADER
@@ -111,6 +111,13 @@ import { buildFocalTowerScene } from './scene/focal-tower'
 // reutilizó, se transcribió mecánicamente el inline real a
 // `scene/image-billboards.ts`.
 import { buildImageBillboardsScene } from './scene/image-billboards'
+// Fase 8.15: setupLights() migrado mecánicamente a ./scene/lights.ts
+// (ver nota de arquitectura al pie del archivo). No existía ningún
+// `scene/lights.ts`/`scene/light.ts` paralelo previo a esta fase (el
+// único archivo con "light" en el nombre desconectado era
+// `scene/lightShaft.ts`, que no tiene relación con `setupLights()`); el
+// módulo nuevo se transcribió mecánicamente desde el inline real.
+import { buildLightsScene } from './scene/lights'
 
 /**
  * GTA6CodexWebGLEngine — v5 "Vice City, no una demo abstracta de Three.js"
@@ -805,36 +812,40 @@ export class GTA6CodexWebGLEngine {
     )
   }
 
+  /**
+   * Luz ambiental + luz clave (magenta neón) + luz de relleno (cian
+   * neón), acopladas al ciclo día/noche y a la niebla de la escena.
+   *
+   * Fase 8.15 — colores, intensidades, posiciones, fórmulas de
+   * oscilación y el cálculo de `fogColor` idénticos a la versión inline
+   * anterior; solo se movieron a `./scene/lights.ts`
+   * (`buildLightsScene`). A diferencia de la mayoría de builders
+   * migrados, este wrapper conserva la asignación de
+   * `this.keyLight`/`this.fillLight` (otros métodos dependen de esas
+   * referencias: `buildDust()`, el loop de `start()`, y el invariante de
+   * `assertFullyInitialized()`). El `updater` que devuelve
+   * `buildLightsScene()` no usa la firma común de 11 parámetros de
+   * `scene/*.ts` — define su propio `LightsUpdater`, porque la versión
+   * inline leía `this.dayPhase`/`this.entityUnrest`/`this.sceneMood`/
+   * `this.entityWarmth`/`this.scrollProgress` directo de `this` dentro
+   * de un closure de un solo parámetro (`elapsed`), sin pasar por esa
+   * firma común (mismo criterio que `scene/road.ts` en la Fase 8.8 y
+   * `scene/image-billboards.ts` en la Fase 8.14). `this.fog` se pasa
+   * como opción del builder (se crea una única vez en el constructor,
+   * antes de esta llamada, y nunca se reasigna) para que el `updater`
+   * pueda escribir `fog.color` cada frame exactamente igual que antes.
+   */
   private setupLights() {
-    const ambient = new THREE.AmbientLight(0x3a2350, 0.5)
-    this.scene.add(ambient)
-
-    // Luz cálida = neón magenta (marquesina/rótulo), luz fría = neón cian.
-    this.keyLight = new THREE.PointLight(0xff2d78, 55, 70, 2)
-    this.keyLight.position.set(9, 5, 12)
-    this.scene.add(this.keyLight)
-
-    this.fillLight = new THREE.PointLight(0x22d3ee, 32, 70, 2)
-    this.fillLight.position.set(-11, -3, 6)
-    this.scene.add(this.fillLight)
-
-    this.updaters.push((elapsed) => {
-      const cycle = Math.sin(elapsed * 0.025)
-      const dayWarmth = 0.5 + 0.5 * Math.cos(this.dayPhase * Math.PI * 2)
-      this.keyLight.color.setHSL(
-        0.92 + cycle * (0.015 + this.entityUnrest * 0.01) + this.sceneMood * 0.02 + this.entityWarmth * 0.03 - dayWarmth * 0.04,
-        0.85,
-        0.52 + dayWarmth * 0.08
-      )
-      this.fillLight.color.setHSL(0.52 + dayWarmth * 0.06, 0.75, 0.48)
-      this.keyLight.intensity = 48 + cycle * 10 + this.scrollProgress * 14 + dayWarmth * 8
-      this.fillLight.intensity = 28 + Math.cos(elapsed * 0.021) * 6 + (1 - dayWarmth) * 6
-      this.keyLight.position.x = 9 + Math.sin(elapsed * 0.09) * 3
-      this.keyLight.position.y = 5 + Math.cos(elapsed * 0.07) * 2
-
-      const fogColor = lerpDayColor(this.dayPhase, 0x3a1830, 0x1c0f28, 0x142038)
-      this.fog.color.setHex(fogColor)
+    const { keyLight, fillLight, updater } = buildLightsScene({
+      scene: this.scene,
+      fog: this.fog,
     })
+    this.keyLight = keyLight
+    this.fillLight = fillLight
+
+    this.updaters.push((elapsed) =>
+      updater(elapsed, this.dayPhase, this.entityUnrest, this.sceneMood, this.entityWarmth, this.scrollProgress)
+    )
   }
 
   // ---------------------------------------------------------------------
