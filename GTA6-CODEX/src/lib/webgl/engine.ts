@@ -62,6 +62,11 @@ import { buildTrafficStreaks as buildTrafficStreaksScene } from './scene/traffic
 import { buildStreetTraffic as buildStreetTrafficScene } from './scene/street-traffic'
 import { buildDistantMovement as buildDistantMovementScene } from './scene/distant-movement'
 import { buildStreetSignals as buildStreetSignalsScene } from './scene/street-signals'
+// Fase 10.4A: eventos dinámicos del mundo — capa de cielo. Mismo patrón
+// autocontenido de módulo por builder (Updater de 11 parámetros, wrapper
+// de 3 parámetros acá abajo) que el resto de scene/*.ts.
+import { buildAirEvents as buildAirEventsScene } from './scene/air-events'
+import { buildBirds as buildBirdsScene } from './scene/birds'
 // Fase 8.7: buildDust() migrado mecánicamente a ./scene/dust.ts (ver nota
 // de arquitectura al pie del archivo). DUST_VERTEX_SHADER/
 // DUST_FRAGMENT_SHADER ya no se importan acá directamente: ahora los
@@ -469,6 +474,8 @@ export class GTA6CodexWebGLEngine {
     this.buildHumidityMist()
     this.buildImageBillboards()
     this.buildFocalTower()
+    this.buildAirEvents()
+    this.buildBirds()
 
     const { composer, bloomPass, bokehPass, gradePass, fxaaPass } = createPostProcessingPipeline({
       renderer: this.renderer,
@@ -1319,6 +1326,71 @@ export class GTA6CodexWebGLEngine {
   private buildFocalTower() {
     const updater = buildFocalTowerScene({
       nearGroup: this.nearGroup,
+    })
+
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
+    )
+  }
+
+  // ---------------------------------------------------------------------
+  // Escena — plano lejano: eventos dinámicos de mundo (cielo)
+  // ---------------------------------------------------------------------
+
+  /**
+   * Fase 10.4A — avión lejano cruzando el cielo (silueta cuerpo + alas,
+   * sin luces/aditivo en esta primera versión). Ver
+   * `./scene/air-events.ts` (`buildAirEventsScene`) para el detalle
+   * completo. Mismo patrón de wiring que el resto de builders migrados:
+   * el `updater` de 11 parámetros se envuelve en un closure de 3
+   * parámetros que lee el estado del motor en cada frame, y se registra
+   * en `this.updaters` sin tocar `start()`/el loop de animación.
+   */
+  private buildAirEvents() {
+    const updater = buildAirEventsScene({
+      farGroup: this.farGroup,
+      quality: this.quality,
+    })
+
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
+    )
+  }
+
+  /**
+   * Fase 10.4A — bandadas de aves lejanas (geometría/material
+   * compartidos). Ver `./scene/birds.ts` (`buildBirdsScene`) para el
+   * detalle completo. Mismo gating por tier que `buildAirEvents()` de
+   * arriba (no-op en low-end, resuelto dentro del builder).
+   */
+  private buildBirds() {
+    const updater = buildBirdsScene({
+      farGroup: this.farGroup,
+      quality: this.quality,
     })
 
     this.updaters.push((elapsed, delta, intro) =>
