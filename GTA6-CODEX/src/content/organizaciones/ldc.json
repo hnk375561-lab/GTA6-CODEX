@@ -33,5 +33,7 @@
     "primarySource": "Rockstar Games, Trailer 1 (primera escena del juego) y sitio oficial de GTA VI, bio de Stefanie",
     "secondarySource": "GTA Wiki (gta.fandom.com) y GTA BOOM (gtaboom.com/gta-6-police-departments-2862), que identifican de forma independiente al LDC como la agencia que sostiene a Lucia al inicio del juego",
     "note": "DESCUBRIMIENTO (13 ago 2026, ronda de expansión masiva): entidad nueva. Se usa 'associated_with' para Lucia (no 'works_for' ni 'member_of', que implicarían empleo o membresía) porque su vínculo con el LDC es como reclusa, un tipo de relación que el vocabulario actual del proyecto no tiene un término específico para describir; 'associated_with' es la opción existente semánticamente más débil/neutral que no sobreafirma. Para Stefanie se usa 'works_for' porque las fuentes la describen explícitamente como trabajadora social empleada allí."
-  }
+  },
+  "seoTitle": "LDC (Leonida Department of Corrections) — Organización de GTA 6",
+  "seoDescription": "GTA 6: Institución penitenciaria estatal de Leonida donde estuvo recluida Lucia Caminos; Stefanie trabaja allí como trabajadora social."
 }

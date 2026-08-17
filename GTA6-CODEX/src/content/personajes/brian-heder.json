@@ -44,5 +44,7 @@
     "primarySource": "Rockstar Games, sitio oficial GTA VI y Trailer 1/2 (cita atribuida a Brian Heder en el sitio oficial)",
     "secondarySource": "GTA Wiki (Fandom), que reproduce la bio oficial completa de Rockstar sobre Brian Heder",
     "note": "Auditoria total (13 ago 2026): nombre, rol de traficante en los Cayos y vinculo laboral con Jason corroborados contra bio oficial de Rockstar. Backfill retroactivo de evidence. FASE G (13 ago 2026): CORRECCION. La relacion hacia cal-hampton estaba tipada como 'works_for'; el texto de esta ficha y el de cal-hampton.json describen el vinculo explicitamente como 'asociado', no como relacion laboral. Se corrige a 'associated_with' con direction 'bidirectional' (consistente con el resto de relaciones simetricas del grafo, p. ej. companion, spouse_of)."
-  }
+  },
+  "seoTitle": "Brian Heder — Personaje de GTA 6",
+  "seoDescription": "Traficante de droga ligado a la región de los Cayos de Leonida, para quien Jason trabajó antes de los eventos centrales de GTA 6."
 }

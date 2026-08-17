@@ -30,5 +30,7 @@
     "primarySource": "Rockstar Games, Trailer 1 (~0:51), cartel de salida de la Interestatal 404 en Vice City señalando hacia Kelly County",
     "secondarySource": "GTA Wiki (gta.fandom.com/wiki/Kelly_County), que documenta el timestamp exacto del cartel, y GTA BOOM (gtaboom.com/Kelly_County), que confirma de forma independiente la existencia del condado como ubicación oficial",
     "note": "DESCUBRIMIENTO (14 ago 2026, ronda 7): ubicación nueva que no estaba catalogada pese a que Port Gellhorn (dentro de este condado) ya tenía ficha propia. Confirmada visualmente en el propio Trailer 1 mediante señalización vial, corroborada por dos fuentes independientes. La relación con Port Gellhorn se modela como located_in del lado de port-gellhorn.json (Port Gellhorn → Kelly County, contenido dentro del condado), no se duplica aquí para evitar una relación circular/redundante entre ambos archivos."
-  }
+  },
+  "seoTitle": "Kelly County — Ubicación de GTA 6 en Leonida",
+  "seoDescription": "GTA 6: Condado del suroeste de Leonida, mencionado en un cartel de la Interestatal 404 en el Trailer 1; hogar de Port Gellhorn y del Gellhorn…"
 }

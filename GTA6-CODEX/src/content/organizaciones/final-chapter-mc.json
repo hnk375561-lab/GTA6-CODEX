@@ -5,7 +5,13 @@
   "description": "Club de motociclistas outlaw ('one-percenter') con operación confirmada en el condado de Ambrosia, Leonida. Revelado por Rockstar Games en material oficial vinculado al Trailer 2 (mayo 2025).",
   "content": "Final Chapter MC es un club de motociclistas outlaw ('one-percenter', según terminología de fan-sites que documentan los parches visibles) que opera en el condado de Ambrosia, en el interior industrial de Leonida. Su existencia y nombre están confirmados por capturas y descripciones oficiales de Rockstar Games publicadas junto al Trailer 2.\n\nLo que está CONFIRMADO visualmente: los miembros visten chaquetas de cuero sin mangas ('cuts') con el logo del club -una calavera encapuchada abriendo un libro, con las letras 'MC' en su interior, en referencia al nombre 'Final Chapter'- y parches que indican el año 1982, interpretado por coberturas especializadas como el año de fundación del club. Se los ve circulando en grupo sobre distintos modelos de motocicleta (incluida la Western Nightblade, inspirada en la Avarus) en tomas oficiales del condado de Ambrosia.\n\nLo que es INFERENCIA, no confirmación directa: al menos una captura oficial muestra a un miembro con una gorra 'Liberty City Cycles' y un parche con la palabra 'Enforcer'. Coberturas especializadas interpretan esto como indicio de una estructura jerárquica interna, pero Rockstar no ha confirmado explícitamente una jerarquía, roles, un fundador o un líder identificado por nombre. NO existe, a la fecha de esta auditoría, ningún miembro individual del club identificado por nombre propio en material oficial.\n\nSegún la descripción oficial de Rockstar Games sobre Ambrosia, el ingenio azucarero Allied Crystal 'provee los empleos, mientras que la banda motociclista local provee casi todo lo demás', lo cual sugiere una economía informal apoyada en actividad ilícita, pero sin que Rockstar especifique qué actividades delictivas concretas realiza el club. Este detalle es contexto oficial sobre la economía de Ambrosia, no una biografía criminal confirmada del club.\n\nEl parecido estético de sus colores y parches con el club real Bandidos Motorcycle Club, y su presencia regional comparada con el club real Warlocks Motorcycle Club, son observaciones editoriales de coberturas especializadas (inspiración visual/temática), no afirmaciones de Rockstar.",
   "status": "confirmado",
-  "tags": ["motociclistas", "ambrosia", "captura-oficial", "trailer-2", "outlaw-mc"],
+  "tags": [
+    "motociclistas",
+    "ambrosia",
+    "captura-oficial",
+    "trailer-2",
+    "outlaw-mc"
+  ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -39,5 +45,7 @@
         "evidenciaQueFaltaria": "Revelacion oficial de un personaje identificado como lider/fundador del club"
       }
     ]
-  }
+  },
+  "seoTitle": "Final Chapter MC — Organización de GTA 6",
+  "seoDescription": "GTA 6: Club de motociclistas outlaw ('one-percenter') con operación confirmada en el condado de Ambrosia, Leonida. Revelado por Rockstar Games en material…"
 }

@@ -31,5 +31,7 @@
     "primarySource": "Rockstar Games, bio oficial en el sitio de GTA VI y portada oficial del juego (Raul Bautista es uno de los personajes destacados en el cover art)",
     "secondarySource": "Yahoo/tech.yahoo.com y Sportskeeda, que citan la bio oficial de Rockstar sobre su rol como asaltante de bancos",
     "note": "Auditoria total (13 ago 2026): nombre y rol confirmados por bio oficial de Rockstar y presencia en la portada oficial del juego. Backfill retroactivo de evidence. AUDITORIA FORENSE DE PERSONAJES (13 ago 2026): CORRECCION. El content afirmaba sin matiz suficiente que Raul se 'posiciona como posible empleador o socio ocasional de Jason y Lucia'. Re-verificacion con multiples fuentes (allkeyshop.com, sportskeeda.com, gta6bible.com, gtabites.com) confirma que la UNICA evidencia oficial es una captura del sitio de Rockstar donde aparece junto a Jason y Lucia en un tiroteo/atraco (coexistencia visual). El rol narrativo especifico -mentor, empleador, miembro de su crew, antagonista parcial- es especulacion de la comunidad explicitamente marcada como no confirmada por las propias fuentes ('The latter remains speculation, of course, as Rockstar has yet to reveal how these characters are connected' -sportskeeda). Se agregan relaciones appears_with hacia jason-duval y lucia-caminos (evidencia real: co-aparicion visual), y se reescribe content retirando la afirmacion de rol no evidenciada."
-  }
+  },
+  "seoTitle": "Raul Bautista — Personaje de GTA 6",
+  "seoDescription": "GTA 6: Asaltante de bancos experimentado, siempre en busca de talento dispuesto a asumir los riesgos que traen las mayores recompensas."
 }

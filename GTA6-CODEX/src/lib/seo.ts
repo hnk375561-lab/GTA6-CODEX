@@ -25,13 +25,40 @@ const SCHEMA_TYPE_BY_ENTITY_TYPE: Partial<Record<EntityType, string>> = {
 }
 
 /**
- * Genera metadata para una entidad
+ * Imagen de entidad ya resuelta (ver `resolveEntityDisplayImage` en
+ * `@/lib/media`), en la forma mínima que necesita esta función. Se recibe
+ * como parámetro en vez de resolverse acá porque `resolveEntityDisplayImage`
+ * depende de `fs` (solo-servidor) y este módulo no tiene por qué asumir
+ * ese acoplamiento; el caller (`generateMetadata` en la ruta de la ficha)
+ * ya la resuelve para el body de la página y la reutiliza acá.
  */
-export function generateEntityMetadata(entity: Entity): Metadata {
+interface EntityOgImage {
+  src: string
+  alt: string
+  remote: boolean
+}
+
+/**
+ * Genera metadata para una entidad.
+ *
+ * `ogImage`: retrato ya resuelto de la entidad (local o remoto). Si no se
+ * pasa o la entidad no tiene ninguno, cae al OG genérico del sitio
+ * (`/og-image.png`) — antes esto pasaba SIEMPRE, para las 162 entidades por
+ * igual, sin importar que muchas ya tuvieran retrato propio. No se fija
+ * `width`/`height` fijos (1200x630) para el retrato de entidad porque su
+ * aspect ratio real varía por variante (`portrait` ~4:5); forzar esas
+ * dimensiones mentiría sobre el tamaño real de la imagen a los crawlers de
+ * OG/Twitter. El fallback genérico sí es 1200x630 real, así que ahí se
+ * mantienen explícitas.
+ */
+export function generateEntityMetadata(entity: Entity, ogImage?: EntityOgImage | null): Metadata {
   const title = entity.seoTitle || entity.title
   const description = entity.seoDescription || entity.description
   const url = `${SITE_URL}/${entity.type}/${entity.slug}`
-  const image = `${SITE_URL}/og-image.png`
+  const fallbackImage = `${SITE_URL}/og-image.png`
+
+  const image = ogImage ? (ogImage.remote ? ogImage.src : `${SITE_URL}${ogImage.src}`) : fallbackImage
+  const imageAlt = ogImage?.alt || title
 
   return {
     title: `${title} | ${SITE_NAME}`,
@@ -46,14 +73,9 @@ export function generateEntityMetadata(entity: Entity): Metadata {
       description,
       url,
       siteName: SITE_NAME,
-      images: [
-        {
-          url: image,
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-      ],
+      images: ogImage
+        ? [{ url: image, alt: imageAlt }]
+        : [{ url: image, width: 1200, height: 630, alt: imageAlt }],
     },
     twitter: {
       card: 'summary_large_image',

@@ -5,7 +5,12 @@
   "description": "Protagonista masculino de GTA 6. Creció entre estafadores y delincuentes menores, pasó por el Ejército y terminó trabajando para narcotraficantes en los Cayos de Leonida.",
   "content": "Jason Duval quiere una vida tranquila, pero las cosas se le complican cada vez más. Creció rodeado de estafadores y delincuentes, y tras un paso por el Ejército para dejar atrás una adolescencia problemática, terminó en los Cayos de Leonida haciendo lo que mejor sabe: trabajar para narcotraficantes locales, entre ellos Brian Heder.\n\nSu apellido, Duval, es un guiño directo a Duval Street, una calle real y emblemática de Key West, Florida, reforzando la inspiración geográfica de la región de los Cayos.\n\nSegún Rockstar, conocer a Lucia podría ser lo mejor o lo peor que le haya pasado en la vida. Jason sabe cómo le gustaría que terminara la historia, pero por ahora es difícil saberlo.",
   "status": "confirmado",
-  "tags": ["protagonista", "principal", "confirmado-rockstar", "leonida-keys"],
+  "tags": [
+    "protagonista",
+    "principal",
+    "confirmado-rockstar",
+    "leonida-keys"
+  ],
   "featured": true,
   "createdAt": "2024-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
@@ -58,5 +63,7 @@
       "targetSlug": "vapid-ganado",
       "relation": "conducts"
     }
-  ]
+  ],
+  "seoTitle": "Jason Duval — Personaje de GTA 6",
+  "seoDescription": "Protagonista masculino de GTA 6. Creció entre estafadores y delincuentes menores, pasó por el Ejército y terminó trabajando para narcotraficantes en los…"
 }

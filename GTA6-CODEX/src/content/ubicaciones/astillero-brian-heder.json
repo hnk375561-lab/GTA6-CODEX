@@ -31,7 +31,9 @@
       "Accesibilidad post-narrativa desconocida"
     ]
   },
-  "businesses": ["contrabando-acuático"],
+  "businesses": [
+    "contrabando-acuático"
+  ],
   "relations": [
     {
       "targetType": "personajes",
@@ -58,5 +60,7 @@
       "targetSlug": "pesca",
       "relation": "punto-acceso"
     }
-  ]
+  ],
+  "seoTitle": "Astillero de Brian Heder — Ubicación de GTA 6 en Leonida",
+  "seoDescription": "GTA 6: Astillero / boat yard ubicado en los Cayos de Leonida. Operado por Brian Heder y Lori Heder, centro de operaciones criminales."
 }

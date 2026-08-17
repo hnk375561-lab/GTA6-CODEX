@@ -37,5 +37,7 @@
     "primarySource": "Rockstar Games, Trailer 1 de GTA VI (video social 'RIP Rudi' con nombre visible en pantalla) y apariciones adicionales en Trailer 2",
     "secondarySource": "GTA Wiki (Fandom) y gtabase.com, que documentan la escena del video viral y las reapariciones del personaje en el Trailer 2",
     "note": "Fase C (13 ago 2026): nombre confirmado por texto en pantalla en material oficial de Rockstar. Estado de 'fallecido' es interpretacion de la comunidad, no confirmacion oficial de Rockstar; se documenta como ambiguo. Auditoria adversarial (13 ago 2026): se agrego relacion appears_with->lucia-caminos, presente en la misma fuente secundaria que ya sustentaba jason-duval y cal-hampton pero que se habia omitido. Las 3 relaciones documentan coexistencia visual en escena unicamente, no vinculo narrativo confirmado."
-  }
+  },
+  "seoTitle": "Rudi — Personaje de GTA 6",
+  "seoDescription": "GTA 6: Un 'hombre de Leonida' del barrio de Crosstown, Vice City, visto en un video viral manejando una pickup Bravado a alta velocidad en el Trailer 1…"
 }

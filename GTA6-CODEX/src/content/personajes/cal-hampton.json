@@ -27,5 +27,7 @@
     "primarySource": "Rockstar Games, bio oficial en el sitio de GTA VI (Trailer 2, 6 mayo 2025)",
     "secondarySource": "ScreenRant y GTA Boom, que citan directamente la bio oficial de Rockstar (\"What if everything on the internet was true?\")",
     "note": "Auditoria total (13 ago 2026): CORRECCION. La relacion original works_for entre Brian Heder y Cal Hampton estaba marcada bidirectional, lo cual era semanticamente incorrecto. Esa correccion quedo obsoleta: en FASE G (13 ago 2026, ver brian-heder.json) el vinculo fue re-tipado por completo de 'works_for' a 'associated_with' bidireccional, ya que ninguna fuente describe una relacion laboral formal entre ambos, solo una asociacion. La relacion vive declarada en brian-heder.json (bidireccional, se infiere automaticamente en esta ficha); cal-hampton.json no necesita declararla de vuelta. NOTA DE CONSISTENCIA (13 ago 2026, auditoria forense de personajes): esta nota estaba desactualizada, describia un estado intermedio ya superado. Corregida para reflejar el estado final. Backfill retroactivo de evidence."
-  }
+  },
+  "seoTitle": "Cal Hampton — Personaje de GTA 6",
+  "seoDescription": "GTA 6: Amigo de Jason y teórico de la conspiración, siempre atento a patrones y señales que solo él parece ver."
 }

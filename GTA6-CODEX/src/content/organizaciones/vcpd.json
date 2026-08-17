@@ -49,5 +49,7 @@
       "No se encontraron fuentes que confirmen si el VCPD opera unidades aereas o maritimas propias y exclusivas (el helicoptero Buckingham Maverick y las embarcaciones tipo Lure Predator aparecen documentados en contexto policial general de Leonida, sin atribucion exclusiva y verificable al VCPD). Por eso NO se agregan como relaciones owns: agregar esas relaciones seria inventar precision que las fuentes no sostienen.",
       "El oficial del VCPD que aparece como personaje secundario en el Trailer 2 no tiene nombre confirmado por Rockstar ni entidad de personaje creada en este grafo; no se crea relacion character->organization para evitar una entidad fantasma. Pendiente de Fase F cuando exista un slug de personaje verificable."
     ]
-  }
+  },
+  "seoTitle": "VCPD (Vice City Police Department) — Organización de GTA 6",
+  "seoDescription": "Departamento de policía municipal de la ciudad de Vice City, Leonida. Confirmado en material oficial de Rockstar Games (Trailer 1, Trailer 2 y sitio web…"
 }

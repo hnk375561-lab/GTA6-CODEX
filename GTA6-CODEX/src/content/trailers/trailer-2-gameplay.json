@@ -5,7 +5,13 @@
   "description": "Segundo tráiler oficial de Grand Theft Auto VI, publicado por Rockstar Games el 6 de mayo de 2025, combinando metraje de gameplay y cinemáticas confirmado por Rockstar en partes iguales, sin especificar cuáles son cuáles.",
   "content": "El segundo tráiler llegó más de un año después del primero, tras el anuncio oficial de que el juego se retrasaba respecto a su ventana inicial. Rockstar Games confirmó públicamente que el video combina metraje de gameplay y de cinemáticas en partes iguales, pero no identificó oficialmente qué tomas corresponden a cada categoría.\n\nA raíz de eso, gran parte del análisis comunitario sobre qué escenas son gameplay real es especulación de fans (por ejemplo, el desglose del usuario de Reddit u/piemack), no confirmación de Rockstar. Esta ficha documenta ese matiz explícitamente en cada escena donde aplica.",
   "status": "confirmado",
-  "tags": ["gameplay", "vice-city", "port-gellhorn", "jason-duval", "2025"],
+  "tags": [
+    "gameplay",
+    "vice-city",
+    "port-gellhorn",
+    "jason-duval",
+    "2025"
+  ],
   "featured": true,
   "releaseDate": "2025-05-06",
   "officialUrl": "https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/GTAVI_Trailer_2.mp4",
@@ -22,9 +28,21 @@
     ]
   },
   "relations": [
-    { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "protagonista mostrado" },
-    { "targetType": "ubicaciones", "targetSlug": "port-gellhorn", "relation": "ubicación mostrada" },
-    { "targetType": "trailers", "targetSlug": "trailer-1-anuncio", "relation": "tráiler anterior" }
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "protagonista mostrado"
+    },
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "port-gellhorn",
+      "relation": "ubicación mostrada"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "tráiler anterior"
+    }
   ],
   "scenes": [
     {
@@ -34,7 +52,11 @@
       "description": "Una toma muestra a Jason Duval caminando hacia el interior de una vivienda. Es señalada por análisis comunitario como una posible transición de cinemática a gameplay, un recurso que Rockstar usó en tráilers anteriores de la saga; no confirmado oficialmente como gameplay.",
       "status": "rumor",
       "relations": [
-        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" }
+        {
+          "targetType": "personajes",
+          "targetSlug": "jason-duval",
+          "relation": "personaje mostrado"
+        }
       ]
     },
     {
@@ -44,7 +66,11 @@
       "description": "Se muestra a Jason Duval al volante de un vehículo. Señalada por análisis de fans como posible gameplay, sin confirmación oficial de Rockstar sobre esta toma en particular.",
       "status": "rumor",
       "relations": [
-        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" }
+        {
+          "targetType": "personajes",
+          "targetSlug": "jason-duval",
+          "relation": "personaje mostrado"
+        }
       ]
     },
     {
@@ -54,7 +80,11 @@
       "description": "Una secuencia muestra el robo a un comercio ambientado en la región de Port Gellhorn del mapa de GTA VI. Señalada por análisis de fans como posible gameplay.",
       "status": "rumor",
       "relations": [
-        { "targetType": "ubicaciones", "targetSlug": "port-gellhorn", "relation": "ubicación mostrada" }
+        {
+          "targetType": "ubicaciones",
+          "targetSlug": "port-gellhorn",
+          "relation": "ubicación mostrada"
+        }
       ]
     },
     {
@@ -64,7 +94,11 @@
       "description": "Se muestran elementos de interfaz de usuario incluyendo mapa, radar y objetivos en pantalla. Confirmación visual de sistemas de navegación y seguimiento de misiones.",
       "status": "confirmado",
       "relations": [
-        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "jugador-controlado" }
+        {
+          "targetType": "personajes",
+          "targetSlug": "jason-duval",
+          "relation": "jugador-controlado"
+        }
       ]
     },
     {
@@ -74,7 +108,11 @@
       "description": "Jason aparece en diálogos con personajes secundarios. Se muestra sistema de conversación y flujo de diálogo en gameplay.",
       "status": "confirmado",
       "relations": [
-        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "protagonista" }
+        {
+          "targetType": "personajes",
+          "targetSlug": "jason-duval",
+          "relation": "protagonista"
+        }
       ]
     },
     {
@@ -84,10 +122,26 @@
       "description": "Lucia Caminos, con máscara de calavera y lentes, encañona a empleados bancarios con un arma automática de perfil subfusil, frente a un cartel que identifica el local como 'Sinfrontera National Bank'. Jason Duval, con el mismo tipo de máscara, aparta a uno de los rehenes.",
       "status": "confirmado",
       "relations": [
-        { "targetType": "personajes", "targetSlug": "lucia-caminos", "relation": "personaje mostrado" },
-        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" },
-        { "targetType": "armas", "targetSlug": "metralleta", "relation": "mostrada en" },
-        { "targetType": "objetos", "targetSlug": "pasamontanas", "relation": "mostrado en" }
+        {
+          "targetType": "personajes",
+          "targetSlug": "lucia-caminos",
+          "relation": "personaje mostrado"
+        },
+        {
+          "targetType": "personajes",
+          "targetSlug": "jason-duval",
+          "relation": "personaje mostrado"
+        },
+        {
+          "targetType": "armas",
+          "targetSlug": "metralleta",
+          "relation": "mostrada en"
+        },
+        {
+          "targetType": "objetos",
+          "targetSlug": "pasamontanas",
+          "relation": "mostrado en"
+        }
       ]
     },
     {
@@ -97,8 +151,16 @@
       "description": "Jason participa en combate físico contra múltiples enemigos en ambiente de calle. Sistema de combate mano a mano confirmado.",
       "status": "confirmado",
       "relations": [
-        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "protagonista" },
-        { "targetType": "actividades", "targetSlug": "combate-mano-a-mano", "relation": "mostrada" }
+        {
+          "targetType": "personajes",
+          "targetSlug": "jason-duval",
+          "relation": "protagonista"
+        },
+        {
+          "targetType": "actividades",
+          "targetSlug": "combate-mano-a-mano",
+          "relation": "mostrada"
+        }
       ]
     },
     {
@@ -108,8 +170,16 @@
       "description": "Se muestra a Jason explorando calles y tiendas de Vice City. Confirmación visual de mundo abierto explorable y sistemas de compra/venta.",
       "status": "confirmado",
       "relations": [
-        { "targetType": "ubicaciones", "targetSlug": "vice-city", "relation": "ubicación mostrada" },
-        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "personaje mostrado" }
+        {
+          "targetType": "ubicaciones",
+          "targetSlug": "vice-city",
+          "relation": "ubicación mostrada"
+        },
+        {
+          "targetType": "personajes",
+          "targetSlug": "jason-duval",
+          "relation": "personaje mostrado"
+        }
       ]
     },
     {
@@ -119,8 +189,16 @@
       "description": "Jason conduce un vehículo a través de calles con tráfico, otros NPCs y peatones. Sistema de conducción y IA de mundo mostrado en acción.",
       "status": "confirmado",
       "relations": [
-        { "targetType": "personajes", "targetSlug": "jason-duval", "relation": "conductor" },
-        { "targetType": "actividades", "targetSlug": "conduccion", "relation": "mostrada" }
+        {
+          "targetType": "personajes",
+          "targetSlug": "jason-duval",
+          "relation": "conductor"
+        },
+        {
+          "targetType": "actividades",
+          "targetSlug": "conduccion",
+          "relation": "mostrada"
+        }
       ]
     },
     {
@@ -130,10 +208,26 @@
       "description": "Inserto de un comercial de televisión in-game para la armería Ammu-Nation, protagonizado por un personaje llamado Phil. En el mostrador y la pared del local se ven varias armas de fuego, incluyendo al menos una escopeta y un arma automática de perfil tipo subfusil/ametralladora ligera.",
       "status": "confirmado",
       "relations": [
-        { "targetType": "personajes", "targetSlug": "phil", "relation": "protagoniza" },
-        { "targetType": "negocios", "targetSlug": "ammu-nation", "relation": "mostrado en" },
-        { "targetType": "armas", "targetSlug": "escopeta", "relation": "mostrada en" },
-        { "targetType": "armas", "targetSlug": "metralleta", "relation": "mostrada en" }
+        {
+          "targetType": "personajes",
+          "targetSlug": "phil",
+          "relation": "protagoniza"
+        },
+        {
+          "targetType": "negocios",
+          "targetSlug": "ammu-nation",
+          "relation": "mostrado en"
+        },
+        {
+          "targetType": "armas",
+          "targetSlug": "escopeta",
+          "relation": "mostrada en"
+        },
+        {
+          "targetType": "armas",
+          "targetSlug": "metralleta",
+          "relation": "mostrada en"
+        }
       ]
     },
     {
@@ -143,7 +237,11 @@
       "description": "Secuencias mostrando áreas costeras, playas y zonas de agua. Se ve agua limpia, reflexiones, y geografía costera de Leonida/Vice City.",
       "status": "confirmado",
       "relations": [
-        { "targetType": "ubicaciones", "targetSlug": "vice-city", "relation": "ubicación mostrada" }
+        {
+          "targetType": "ubicaciones",
+          "targetSlug": "vice-city",
+          "relation": "ubicación mostrada"
+        }
       ]
     },
     {
@@ -169,8 +267,14 @@
       "description": "Cierre del tráiler con vista aérea de Vice City y créditos de Rockstar Games.",
       "status": "confirmado",
       "relations": [
-        { "targetType": "ubicaciones", "targetSlug": "vice-city", "relation": "ubicación mostrada" }
+        {
+          "targetType": "ubicaciones",
+          "targetSlug": "vice-city",
+          "relation": "ubicación mostrada"
+        }
       ]
     }
-  ]
+  ],
+  "seoTitle": "Trailer 2 — Segundo Tráiler de GTA 6",
+  "seoDescription": "GTA 6: Segundo tráiler oficial de Grand Theft Auto VI, publicado por Rockstar Games el 6 de mayo de 2025, combinando metraje de gameplay y cinemáticas…"
 }

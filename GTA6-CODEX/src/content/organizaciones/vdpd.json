@@ -32,5 +32,7 @@
     "primarySource": "Rockstar Games, Trailer 1 (placa de la Vice-Dale County Sheriff's Office visible en escena de noticiero) y material promocional oficial",
     "secondarySource": "GTA Wiki (gta.fandom.com/wiki/Vice-Dale_Police_Department), cuenta oficial GTA Wiki en X (hilo comparativo de agencias de Leonida) y gta6intel.com, que describen de forma independiente la misma jurisdicción, flota e inspiración real (Miami-Dade Sheriff's Office)",
     "note": "DESCUBRIMIENTO (13 ago 2026, ronda de expansión masiva): entidad nueva, ya mencionada como contexto en vcpd.json ('el VDPD cubre el condado de Vice-Dale en su conjunto') pero sin ficha propia. Se crea siguiendo el mismo estándar de evidencia que vcpd.json. Se agregan únicamente las relaciones vehículo->organización que las fuentes confirman de forma consistente (Buffalo STX Pursuit, Police Maverick); no se agrega relación con el Police Cruiser genérico ni la SUV/pickup sin nombre porque no hay un slug de vehículo específico en el repo que las identifique sin ambigüedad."
-  }
+  },
+  "seoTitle": "VDPD (Vice-Dale Police Department) — Organización de GTA 6",
+  "seoDescription": "GTA 6: Agencia policial de condado que cubre Vice-Dale County, Leonida, distinta y complementaria del VCPD (ciudad) y el VBPD (Vice Beach)."
 }

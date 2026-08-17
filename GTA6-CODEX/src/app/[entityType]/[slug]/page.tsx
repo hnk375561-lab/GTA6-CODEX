@@ -88,7 +88,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const entity = await getEntity(entityType as EntityType, slug)
   if (!entity) return {}
 
-  return generateEntityMetadata(entity)
+  // Retrato propio de la entidad para OG/Twitter cards (antes esta función
+  // no lo resolvía y generateEntityMetadata caía siempre al og-image.png
+  // genérico del sitio, aunque la entidad ya tuviera imagen propia).
+  return generateEntityMetadata(entity, resolveEntityDisplayImage(entity))
 }
 
 export default async function EntityPage({ params }: PageProps) {
