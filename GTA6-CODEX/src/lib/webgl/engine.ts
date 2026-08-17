@@ -90,6 +90,15 @@ import { buildFarSkyline as buildFarSkylineScene } from './scene/far-skyline'
 // `scene/neon.ts`), para mantener el mismo patrón de módulo
 // autocontenido usado en las Fases 8.1–8.11.
 import { buildNeonSignsScene } from './scene/neon-signs'
+// Fase 8.13: buildFocalTower() migrado mecánicamente a
+// ./scene/focal-tower.ts (ver nota de arquitectura al pie del archivo).
+// Existía una implementación desconectada equivalente en `scene/tower.ts`
+// — se auditó línea por línea contra el inline real y resultó
+// equivalente en todo lo sustantivo (geometría/material/shader/luces/
+// updater), salvo fallbacks defensivos `|| 1`/`|| 0` ausentes en la
+// versión que corre en producción; no se reutilizó, para mantener el
+// mismo patrón de módulo autocontenido usado en las Fases 8.1–8.12.
+import { buildFocalTowerScene } from './scene/focal-tower'
 import { BILLBOARD_VERTEX_SHADER, BILLBOARD_FRAGMENT_SHADER } from './shaders/billboard'
 
 /**
@@ -1196,112 +1205,47 @@ export class GTA6CodexWebGLEngine {
    * (inyectado vía onBeforeCompile sobre MeshPhysicalMaterial), así
    * mantiene PBR/transmisión real — superficie "viva".
    */
+  /**
+   * Torre Art Deco de vidrio con anillos neón y baliza.
+   *
+   * Fase 8.13 — geometría, material, shader injection, luces, colores,
+   * posiciones, escalas y cálculos de jitter idénticos a la versión
+   * inline anterior; solo se movieron a `./scene/focal-tower.ts`
+   * (`buildFocalTowerScene`). Igual que en las Fases 8.1–8.12, el
+   * `updater` que devuelve esa función usa la firma común de 11
+   * parámetros de `scene/*.ts` (ver nota de arquitectura al pie del
+   * archivo), incompatible con `SceneUpdater` de este motor — se lo
+   * envuelve acá en un closure de 3 parámetros que lee
+   * `this.entityPace`/`this.entityUnrest`/`this.entityPresence` en cada
+   * frame exactamente igual que antes, y se lo registra en
+   * `this.updaters` sin tocar `start()`/el loop de animación. Existía una
+   * implementación desconectada equivalente en `scene/tower.ts` — se
+   * auditó línea por línea contra el inline real y resultó equivalente
+   * en todo lo sustantivo (única diferencia: fallbacks defensivos
+   * `|| 1`/`|| 0` ausentes acá); no se reutilizó, siguiendo el mismo
+   * criterio de las Fases 8.6/8.11/8.12. Mismos valores numéricos y
+   * mismo comportamiento que la versión inline.
+   */
   private buildFocalTower() {
-    const group = new THREE.Group()
-    const shaderRef = { uTime: { value: 0 } }
-
-    const makeGlassMaterial = (tint: number) => {
-      const material = new THREE.MeshPhysicalMaterial({
-        color: 0xf5eaff,
-        roughness: 0.05,
-        metalness: 0,
-        transmission: 1,
-        thickness: 2.2,
-        ior: 1.4,
-        clearcoat: 1,
-        clearcoatRoughness: 0.08,
-        envMapIntensity: 1.6,
-        attenuationColor: new THREE.Color(tint),
-        attenuationDistance: 3,
-      })
-      material.onBeforeCompile = (shader) => {
-        shader.uniforms.uTime = shaderRef.uTime
-        shader.vertexShader = shader.vertexShader
-          .replace(
-            '#include <common>',
-            `#include <common>
-             uniform float uTime;`
-          )
-          .replace(
-            '#include <begin_vertex>',
-            `#include <begin_vertex>
-             float n = sin(position.x * 1.4 + uTime * 0.4) * cos(position.y * 0.6 + uTime * 0.3) * sin(position.z * 1.4 + uTime * 0.35);
-             transformed += normal * n * 0.045;`
-          )
-      }
-      return material
-    }
-
-    const tiers = [
-      { radius: 2.5, height: 7, tint: 0xff2d78 },
-      { radius: 1.7, height: 3.4, tint: 0x22d3ee },
-      { radius: 1.0, height: 2.4, tint: 0xff2d78 },
-    ]
-
-    let y = -13
-    const trimRings: THREE.Mesh[] = []
-    tiers.forEach((tier, i) => {
-      const geometry = new THREE.CylinderGeometry(tier.radius, tier.radius * 1.08, tier.height, 6)
-      const material = makeGlassMaterial(tier.tint)
-      const mesh = new THREE.Mesh(geometry, material)
-      mesh.position.y = y + tier.height / 2
-      group.add(mesh)
-      y += tier.height
-
-      const ringColor = i % 2 === 0 ? 0x22d3ee : 0xff2d78
-      const ringMat = new THREE.MeshBasicMaterial({
-        color: ringColor,
-        transparent: true,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-      })
-      const ring = new THREE.Mesh(new THREE.TorusGeometry(tier.radius * 1.12, 0.035, 8, 24), ringMat)
-      ring.rotation.x = Math.PI / 2
-      ring.position.y = y
-      group.add(ring)
-      trimRings.push(ring)
+    const updater = buildFocalTowerScene({
+      nearGroup: this.nearGroup,
     })
 
-    const spire = new THREE.Mesh(
-      new THREE.ConeGeometry(0.32, 2.6, 6),
-      new THREE.MeshPhysicalMaterial({
-        color: 0xffffff,
-        metalness: 0.9,
-        roughness: 0.2,
-        emissive: 0xff2d78,
-        emissiveIntensity: 0.4,
-      })
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.dayPhase,
+        this.humidity,
+        this.fog.color,
+        this.entityPace,
+        this.entityUnrest,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityPresence
+      )
     )
-    spire.position.y = y + 1.3
-    group.add(spire)
-
-    const beacon = new THREE.PointLight(0xff2d78, 8, 16, 2)
-    beacon.position.y = y + 2.6
-    group.add(beacon)
-
-    group.position.set(-3.2, 0.4, -1.5)
-    this.nearGroup.add(group)
-
-    this.updaters.push((elapsed, delta, intro) => {
-      shaderRef.uTime.value = elapsed
-      // Rotación moderada por "pace": la torre nunca se detiene del todo
-      // (sigue viva en una ficha de ubicación), pero acompaña con más
-      // energía una ficha de vehículo. Se amortigua a la mitad para que no
-      // se sienta como un mecanismo, solo como un matiz de ritmo.
-      const paceInfluence = 1 + (this.entityPace - 1) * 0.5
-      group.rotation.y += delta * (0.045 + this.entityPresence * 0.02) * paceInfluence * intro
-
-      // "unrest" (derivado del estado editorial: confirmado/rumor/nuestro)
-      // desestabiliza el parpadeo — rumor tiembla con armónicos extra,
-      // confirmado queda con un pulso limpio. Determinista, no aleatorio.
-      trimRings.forEach((ring, i) => {
-        const mat = ring.material as THREE.MeshBasicMaterial
-        const jitter = this.entityUnrest * Math.sin(elapsed * (5.2 + i * 1.3)) * 0.25
-        mat.opacity = 0.6 + 0.4 * Math.sin(elapsed * 0.8 + i * 1.7) + jitter
-      })
-      const beaconJitter = this.entityUnrest * Math.sin(elapsed * 7.1) * 4
-      beacon.intensity = 6 + Math.max(0, Math.sin(elapsed * 1.6)) * 10 + beaconJitter
-    })
   }
 
   // ---------------------------------------------------------------------
