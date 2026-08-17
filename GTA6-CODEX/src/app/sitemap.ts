@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { EntityType } from '@/types'
 import { getAllEntities, getEntityCountsByType } from '@/lib/entities'
+import { getVehiclesByManufacturer } from '@/lib/vehicle-manufacturers'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel.app'
 
@@ -77,5 +78,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: entity.featured ? 0.9 : 0.6,
   }))
 
-  return [...staticRoutes, ...listRoutes, ...entityRoutes]
+  // Páginas de agregación por fabricante de vehículo (roadmap punto 4):
+  // exponen el mismo dato ya validado en cada ficha, así que su fecha de
+  // modificación se ata al vehículo más reciente del grupo en vez de
+  // usar `new Date()` fijo, que mentiría sobre qué tan "fresca" es cada URL.
+  const manufacturerGroups = await getVehiclesByManufacturer()
+  const manufacturerRoutes: MetadataRoute.Sitemap = Array.from(manufacturerGroups.values()).map(
+    (group) => ({
+      url: `${SITE_URL}/vehiculos/fabricante/${group.slug}`,
+      lastModified: group.vehicles.reduce(
+        (latest, v) => (safeDate(v.updatedAt) > latest ? safeDate(v.updatedAt) : latest),
+        safeDate(group.vehicles[0].updatedAt)
+      ),
+      changeFrequency: 'weekly' as const,
+      priority: 0.5,
+    })
+  )
+
+  return [...staticRoutes, ...listRoutes, ...entityRoutes, ...manufacturerRoutes]
 }

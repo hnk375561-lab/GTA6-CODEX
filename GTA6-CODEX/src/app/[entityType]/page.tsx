@@ -6,6 +6,7 @@ import { getEntitiesByType } from '@/lib/entities'
 import { getCoverArtVideoAsset, resolveMediaRender, getCharacterClipUrl, getEntityImageMap } from '@/lib/media'
 import { getBidirectionalRelationCount } from '@/lib/relations'
 import { generateListMetadata } from '@/lib/seo'
+import { getVehiclesByManufacturer } from '@/lib/vehicle-manufacturers'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { Card, CardBody } from '@/components/ui/Card'
@@ -76,6 +77,8 @@ export default async function EntityTypePage({ params }: PageProps) {
     if (key in statusCounts) statusCounts[key] += 1
   }
 
+  const vehicleManufacturerGroups = type === EntityType.VEHICLE ? await getVehiclesByManufacturer() : null
+
   return (
     <section className="relative overflow-hidden border-b border-gta-border py-12 sm:py-16">
       <div className="list-header-glow" aria-hidden="true" />
@@ -126,6 +129,42 @@ export default async function EntityTypePage({ params }: PageProps) {
                   <VideoEmbed videoSrc={coverArt.videoSrc!} title={coverArt.title} className="!rounded-none !border-0" />
                   <CardBody>
                     <p className="text-sm text-gta-text-secondary">{coverArt.title}</p>
+                  </CardBody>
+                </Card>
+              )
+            })()}
+          </Reveal>
+        )}
+
+        {/* Índice de fabricantes (roadmap punto 4, agregación por
+            atributo): solo en el listado de Vehículos, único tipo con
+            `manufacturer` en su schema. Enlaza a las páginas hub en
+            /vehiculos/fabricante/[manufacturer], que de otro modo
+            quedarían sin descubrimiento interno. */}
+        {type === EntityType.VEHICLE && (
+          <Reveal className="mb-10">
+            {(() => {
+              const groups = Array.from(vehicleManufacturerGroups!.values()).sort(
+                (a, b) => b.vehicles.length - a.vehicles.length
+              )
+              return (
+                <Card>
+                  <CardBody>
+                    <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gta-text-secondary">
+                      Explorar por fabricante
+                    </h2>
+                    <div className="flex flex-wrap gap-2">
+                      {groups.map((group) => (
+                        <Link
+                          key={group.slug}
+                          href={`/vehiculos/fabricante/${group.slug}`}
+                          className="rounded-full border border-gta-border px-3 py-1.5 text-sm text-gta-text-secondary transition-colors hover:border-gta-accent hover:text-gta-accent"
+                        >
+                          {group.label}
+                          <span className="ml-1.5 text-gta-text-secondary/60">{group.vehicles.length}</span>
+                        </Link>
+                      ))}
+                    </div>
                   </CardBody>
                 </Card>
               )
