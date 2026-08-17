@@ -54,9 +54,15 @@ export function buildFireflies(options: FirefliesBuilderOptions): Updater {
   })
   farGroup.add(new THREE.Points(geo, mat))
 
+  // Referencias cacheadas a los objetos uniform (evita re-atravesar la
+  // cadena `mat.uniforms.<nombre>` en cada frame dentro del updater —
+  // mismo criterio aplicado en el resto de `scene/*.ts`).
+  const timeUniform = mat.uniforms.time
+  const introFadeUniform = mat.uniforms.introFade
+
   const updater: Updater = (elapsed, _delta, intro, _dayPhase, _humidity, _fog, _entityPace, _entityUnrest, _scrollVelocity, _pointerIntent, _entityPresence) => {
-    mat.uniforms.time.value = elapsed
-    mat.uniforms.introFade.value = intro
+    timeUniform.value = elapsed
+    introFadeUniform.value = intro
   }
 
   return updater
