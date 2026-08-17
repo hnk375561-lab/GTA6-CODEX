@@ -106,7 +106,7 @@ export function buildFocalTowerScene(options: FocalTowerBuilderOptions): Updater
   ]
 
   let y = -13
-  const trimRingMaterials: THREE.MeshBasicMaterial[] = []
+  const trimRings: { mat: THREE.MeshBasicMaterial; jitterFreq: number; phaseOffset: number }[] = []
   tiers.forEach((tier, i) => {
     const geometry = new THREE.CylinderGeometry(tier.radius, tier.radius * 1.08, tier.height, 6)
     const material = makeGlassMaterial(tier.tint)
@@ -129,8 +129,10 @@ export function buildFocalTowerScene(options: FocalTowerBuilderOptions): Updater
     // Se cachea el material del anillo (no el `Mesh`) porque el updater
     // solo necesita `ring.material` en cada frame — evita re-acceder a
     // esa propiedad y volver a castear a `MeshBasicMaterial` por anillo,
-    // por frame.
-    trimRingMaterials.push(ringMat)
+    // por frame. `jitterFreq`/`phaseOffset` tampoco dependen de ningún
+    // valor que cambie por frame (solo de `i`, fijo para este anillo):
+    // se calculan una sola vez acá en vez de en cada frame.
+    trimRings.push({ mat: ringMat, jitterFreq: 5.2 + i * 1.3, phaseOffset: i * 1.7 })
   })
 
   const spire = new THREE.Mesh(
@@ -181,9 +183,9 @@ export function buildFocalTowerScene(options: FocalTowerBuilderOptions): Updater
     // "unrest" (derivado del estado editorial: confirmado/rumor/nuestro)
     // desestabiliza el parpadeo — rumor tiembla con armónicos extra,
     // confirmado queda con un pulso limpio. Determinista, no aleatorio.
-    trimRingMaterials.forEach((mat, i) => {
-      const jitter = entityUnrest * Math.sin(elapsed * (5.2 + i * 1.3)) * 0.25
-      mat.opacity = 0.6 + 0.4 * Math.sin(elapsed * 0.8 + i * 1.7) + jitter
+    trimRings.forEach((ring) => {
+      const jitter = entityUnrest * Math.sin(elapsed * ring.jitterFreq) * 0.25
+      ring.mat.opacity = 0.6 + 0.4 * Math.sin(elapsed * 0.8 + ring.phaseOffset) + jitter
     })
     const beaconJitter = entityUnrest * Math.sin(elapsed * 7.1) * 4
     beacon.intensity = 6 + Math.max(0, Math.sin(elapsed * 1.6)) * 10 + beaconJitter
