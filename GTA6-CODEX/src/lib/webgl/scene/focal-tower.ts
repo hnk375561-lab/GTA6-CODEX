@@ -106,7 +106,7 @@ export function buildFocalTowerScene(options: FocalTowerBuilderOptions): Updater
   ]
 
   let y = -13
-  const trimRings: THREE.Mesh[] = []
+  const trimRingMaterials: THREE.MeshBasicMaterial[] = []
   tiers.forEach((tier, i) => {
     const geometry = new THREE.CylinderGeometry(tier.radius, tier.radius * 1.08, tier.height, 6)
     const material = makeGlassMaterial(tier.tint)
@@ -126,7 +126,11 @@ export function buildFocalTowerScene(options: FocalTowerBuilderOptions): Updater
     ring.rotation.x = Math.PI / 2
     ring.position.y = y
     group.add(ring)
-    trimRings.push(ring)
+    // Se cachea el material del anillo (no el `Mesh`) porque el updater
+    // solo necesita `ring.material` en cada frame — evita re-acceder a
+    // esa propiedad y volver a castear a `MeshBasicMaterial` por anillo,
+    // por frame.
+    trimRingMaterials.push(ringMat)
   })
 
   const spire = new THREE.Mesh(
@@ -149,6 +153,10 @@ export function buildFocalTowerScene(options: FocalTowerBuilderOptions): Updater
   group.position.set(-3.2, 0.4, -1.5)
   nearGroup.add(group)
 
+  // Referencia cacheada al uniform de tiempo (evita re-atravesar
+  // `shaderRef.uTime` en cada frame).
+  const uTimeUniform = shaderRef.uTime
+
   const updater: Updater = (
     elapsed,
     delta,
@@ -162,7 +170,7 @@ export function buildFocalTowerScene(options: FocalTowerBuilderOptions): Updater
     _pointerIntent,
     entityPresence
   ) => {
-    shaderRef.uTime.value = elapsed
+    uTimeUniform.value = elapsed
     // Rotación moderada por "pace": la torre nunca se detiene del todo
     // (sigue viva en una ficha de ubicación), pero acompaña con más
     // energía una ficha de vehículo. Se amortigua a la mitad para que no
@@ -173,8 +181,7 @@ export function buildFocalTowerScene(options: FocalTowerBuilderOptions): Updater
     // "unrest" (derivado del estado editorial: confirmado/rumor/nuestro)
     // desestabiliza el parpadeo — rumor tiembla con armónicos extra,
     // confirmado queda con un pulso limpio. Determinista, no aleatorio.
-    trimRings.forEach((ring, i) => {
-      const mat = ring.material as THREE.MeshBasicMaterial
+    trimRingMaterials.forEach((mat, i) => {
       const jitter = entityUnrest * Math.sin(elapsed * (5.2 + i * 1.3)) * 0.25
       mat.opacity = 0.6 + 0.4 * Math.sin(elapsed * 0.8 + i * 1.7) + jitter
     })
