@@ -150,7 +150,7 @@ export function resolveMediaRender(asset: MediaAsset): RenderableMedia {
     return { renderAs: 'image', thumbnailSrc: source.localPath, title: asset.title }
   }
   if (isDirectVideoUrl(source.originalUrl) && source.hotlinkAllowed) {
-    return { renderAs: 'video', videoSrc: source.originalUrl, thumbnailSrc: '', title: asset.title }
+    return { renderAs: 'video', videoSrc: source.originalUrl, thumbnailSrc: asset.posterUrl || '', title: asset.title }
   }
   return { renderAs: 'unavailable', thumbnailSrc: '', title: asset.title }
 }

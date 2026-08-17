@@ -34,6 +34,8 @@ export interface MediaAsset {
   title: string
   description?: string
   source: MediaSource
+  /** Poster/thumbnail generado desde el video (frame extraido con ffmpeg). Ruta publica, ej: /images/entities/media/clip-boobie-ike.webp */
+  posterUrl?: string
   width?: number
   height?: number
   duration?: number

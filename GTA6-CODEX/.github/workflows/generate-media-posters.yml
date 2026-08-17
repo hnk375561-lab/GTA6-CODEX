@@ -1,0 +1,69 @@
+name: Generate media posters
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  posters:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Generate posters and update JSON
+        working-directory: GTA6-CODEX
+        run: |
+          set -e
+          mkdir -p public/images/entities/media
+
+          declare -A ITEMS=(
+            ["clip-boobie-ike"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Boobie_Ike_Video_Clip.mp4|2"
+            ["clip-brian-heder"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Brian_Heder_Video_Clip.mp4|2"
+            ["clip-cal-hampton"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Cal_Hampton_Video_Clip.mp4|2"
+            ["clip-drequan-priest"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/DreQuan_Priest_Video_Clip.mp4|2"
+            ["clip-jason-duval"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Jason_Duval_Video_Clip.mp4|2"
+            ["clip-lucia-caminos"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Lucia_Caminos_Video_Clip.mp4|2"
+            ["clip-raul-bautista"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Raul_Bautista_Video_Clip.mp4|2"
+            ["clip-real-dimez"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Real_Dimez_Video_Clip.mp4|2"
+            ["trailer-trailer-1-anuncio"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/GTAVI_Trailer_1.mp4|5"
+            ["trailer-trailer-2-gameplay"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/GTAVI_Trailer_2.mp4|5"
+            ["video-cover-art-landscape"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/GTAVI_Official_Cover_Art_Landscape.mp4|1"
+          )
+
+          for id in "${!ITEMS[@]}"; do
+            IFS='|' read -r url seek <<< "${ITEMS[$id]}"
+            out="public/images/entities/media/${id}.webp"
+            echo "== $id (seek ${seek}s) =="
+            ffmpeg -hide_banner -loglevel error -y -ss "$seek" -i "$url" -frames:v 1 -c:v libwebp -q:v 82 "$out"
+            if [ ! -s "$out" ]; then
+              echo "FALLO generando $id"
+              exit 1
+            fi
+
+            node -e "
+              const fs = require('fs');
+              const path = 'src/content/media/${id}.json';
+              const obj = JSON.parse(fs.readFileSync(path, 'utf8'));
+              obj.posterUrl = '/images/entities/media/${id}.webp';
+              fs.writeFileSync(path, JSON.stringify(obj, null, 2) + '\n');
+            "
+          done
+
+      - name: Commit and push
+        working-directory: GTA6-CODEX
+        run: |
+          git config user.name "gta6-codex-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/images/entities/media src/content/media
+          git diff --cached --quiet && echo "Nada para commitear" && exit 0
+          git commit -m "feat(media): genera posters de trailers/clips/cover-art via ffmpeg (GitHub Actions)"
+          git push origin main

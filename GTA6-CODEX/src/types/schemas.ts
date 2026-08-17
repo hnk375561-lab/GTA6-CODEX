@@ -296,6 +296,7 @@ export const MediaAssetSchema = z.object({
   title: z.string().min(1, 'title no puede estar vacío'),
   description: z.string().optional(),
   source: MediaSourceSchema,
+  posterUrl: z.string().min(1).optional(),
   width: z.number().positive().optional(),
   height: z.number().positive().optional(),
   duration: z.number().positive().optional(),
