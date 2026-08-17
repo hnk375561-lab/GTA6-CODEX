@@ -57,10 +57,20 @@ export function buildAtmosphericHaze(options: AtmosphericHazeBuilderOptions): At
     midGroup.add(mesh)
     layers.push(mesh)
 
+    // Referencias cacheadas (evita re-atravesar `mat.uniforms.<nombre>` y
+    // `mesh.position` en cada frame dentro del closure de abajo — mismo
+    // criterio aplicado en el resto de `scene/*.ts`). `amplitude` no
+    // depende de ningún valor que cambie por frame (solo de `i`, fijo
+    // para esta capa), así que se calcula una sola vez acá.
+    const timeUniform = mat.uniforms.time
+    const introFadeUniform = mat.uniforms.introFade
+    const meshPosition = mesh.position
+    const amplitude = 1.2 + i * 0.4
+
     layerUpdaters.push((elapsed, intro) => {
-      mat.uniforms.time.value = elapsed
-      mat.uniforms.introFade.value = intro
-      mesh.position.x = Math.sin(elapsed * 0.03 + i) * (1.2 + i * 0.4)
+      timeUniform.value = elapsed
+      introFadeUniform.value = intro
+      meshPosition.x = Math.sin(elapsed * 0.03 + i) * amplitude
     })
   }
 
