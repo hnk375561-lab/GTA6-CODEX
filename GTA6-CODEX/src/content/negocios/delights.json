@@ -1,0 +1,44 @@
+{
+  "slug": "delights",
+  "type": "negocios",
+  "title": "Delights",
+  "description": "Cabaret/strip club de Port Gellhorn, Leonida, confirmado en el material promocional oficial de Rockstar dedicado a esa región.",
+  "content": "Delights (también referido como \"Delights Cabaret\") es un club de striptease ubicado en Port Gellhorn, Leonida. Su señalética apareció por primera vez en dos clips del material filtrado de septiembre de 2022, con un cartel publicitario visible junto a la U.S. Route 2 en Port Gellhorn. El local fue confirmado oficialmente más tarde, apareciendo en una de las capturas de pantalla oficiales publicadas en la sección dedicada a Port Gellhorn del sitio promocional de Grand Theft Auto VI.\n\n**Contexto del local:**\nSegún la cobertura independiente que documenta el material oficial, la estética de Delights toma influencia visual de clubes y cabarets reales de las zonas de Panama City y Tampa, Florida. Port Gellhorn en su conjunto se presenta como una región más golpeada económicamente que Vice City, con negocios de perfil más bajo y local — Delights encaja en esa caracterización, en contraste con clubes de mayor perfil como Jack of Hearts en Vice City.\n\n**Lo que no está confirmado:**\nRockstar no ha confirmado si Delights será un local visitable y funcional dentro del mundo abierto, si tendrá actividades jugables propias, ni si tiene alguna conexión narrativa directa con personajes específicos de Port Gellhorn (como Raul Bautista, asociado a esa región).",
+  "status": "confirmado",
+  "tags": [
+    "negocio",
+    "strip-club",
+    "port-gellhorn",
+    "leonida",
+    "entretenimiento-adulto",
+    "material-oficial"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-17T00:00:00Z",
+  "updatedAt": "2026-08-17T00:00:00Z",
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "port-gellhorn",
+      "relation": "located_in"
+    },
+    {
+      "targetType": "negocios",
+      "targetSlug": "jack-of-hearts",
+      "relation": "contraste-con"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, capturas de pantalla oficiales de la sección dedicada a Port Gellhorn en el sitio promocional de Grand Theft Auto VI",
+    "secondarySource": "GTA Wiki (Fandom) y The Games Wiki, cobertura independiente que identifica el local, su nombre y su rol dentro de Port Gellhorn a partir del material oficial",
+    "note": "Auditoría (17 ago 2026): este negocio estaba en CANDIDATES_PENDING.md por depender de una única fuente (gta6bible.com, página marcada 'under construction'). Se encontró corroboración independiente adicional (GTA Wiki, The Games Wiki) que documenta la aparición del local en capturas de pantalla oficiales del sitio promocional de Rockstar, no solo en el material filtrado de 2022 — se sube de candidato pendiente a entidad confirmada con nivel 'oficial-visual'.",
+    "limitations": [
+      "No confirmado si será un local visitable y funcional en el mundo abierto",
+      "No confirmadas actividades jugables propias dentro del local",
+      "Sin confirmación de conexión narrativa directa con personajes específicos"
+    ]
+  },
+  "seoTitle": "Delights — Negocio de GTA 6",
+  "seoDescription": "Cabaret y strip club de Port Gellhorn confirmado en el material promocional oficial de Rockstar para Grand Theft Auto VI."
+}

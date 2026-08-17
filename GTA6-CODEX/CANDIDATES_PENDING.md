@@ -15,8 +15,9 @@ Generado: 13 ago 2026, ronda de expansión masiva. Ninguno de estos entró al ca
 
 | Nombre | Slug propuesto | Evidence | Fuentes | Qué falta |
 |---|---|---|---|---|
-| Delights (strip club, Port Gellhorn) | `delights` | D | gta6bible.com (única fuente, página "under construction") | Corroboración independiente (GTA Wiki, gtaboom, gta6intel no lo mencionan todavía). |
 | VYB (venue de entretenimiento) | `vyb` | D | GTA Wiki (mención breve, "due to appear", sin detalle) | Segunda fuente independiente con detalle propio (no solo mención de pasada). |
+
+~~Delights (strip club, Port Gellhorn)~~ — **INCORPORADO** en ronda 8 (17 ago 2026). Se encontró corroboración independiente adicional (GTA Wiki, The Games Wiki) que documenta el local en capturas de pantalla oficiales del sitio promocional de Rockstar para Port Gellhorn, no solo en el leak de 2022. Ver `negocios/delights.json`.
 
 ~~NINE1NINE~~ — **INCORPORADO** en ronda 5 (corroboración independiente encontrada en eloboss.net). Ver `negocios/nine1nine.json`.
 
