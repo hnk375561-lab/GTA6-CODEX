@@ -59,6 +59,7 @@ const ROOT = process.cwd()
 const INCOMING_DIR = path.join(ROOT, 'incoming-images')
 const CONTENT_DIR = path.join(ROOT, 'src', 'content')
 const PUBLIC_ENTITIES_DIR = path.join(ROOT, 'public', 'images', 'entities')
+const ORIGINALS_DIR = path.join(ROOT, 'assets-originals')
 const UNIDENTIFIED_DIR = path.join(INCOMING_DIR, '_sin-identificar')
 const POSSIBLE_DUP_DIR = path.join(INCOMING_DIR, '_duplicados-posibles')
 const ERROR_DIR = path.join(INCOMING_DIR, '_errores')
@@ -351,6 +352,19 @@ async function main() {
 
       if (APPLY) {
         fs.mkdirSync(destDir, { recursive: true })
+
+        // Respaldo automático del original TAL CUAL llegó (sin procesar,
+        // sin recomprimir) en assets-originals/{type}/{slug}.{ext}, antes
+        // de tocarlo con sharp. Así, si en el futuro cambia MAX_DIMENSION,
+        // WEBP_QUALITY, o cualquier otro parámetro del pipeline, se puede
+        // reprocesar TODO el catálogo sin depender de volver a conseguir
+        // cada imagen a mano — el problema que motivó este cambio.
+        const originalExt = path.extname(filePath) // incluye el punto, ej. '.jpg'
+        const originalBackupDir = path.join(ORIGINALS_DIR, entity.type)
+        const originalBackupPath = path.join(originalBackupDir, `${entity.slug}${originalExt}`)
+        fs.mkdirSync(originalBackupDir, { recursive: true })
+        fs.writeFileSync(originalBackupPath, inputBuffer)
+
         const image = sharp(inputBuffer)
 
         // Sin resize: se preserva la resolución nativa del original tal
