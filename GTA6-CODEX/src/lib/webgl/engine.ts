@@ -22,7 +22,7 @@ import { createPostProcessingPipeline } from './core/postprocessing'
 import { computePointerTarget, computeScrollTarget } from './core/input'
 import { computeSceneBusStateUpdate } from './core/scene-bus-adapter'
 import { lerpDayColor, lerpCyclic01, smootherstep } from './utils/math'
-import { SHOTS, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP, IMAGE_BILLBOARDS } from './config/scene'
+import { SHOTS, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP } from './config/scene'
 // Fase 8.1: buildSkyDome() migrado mecánicamente a ./scene/sky.ts (ver nota
 // de arquitectura al pie del archivo). SKY_VERTEX_SHADER/SKY_FRAGMENT_SHADER
 // ya no se importan acá directamente: ahora los consume ./scene/sky.ts.
@@ -99,7 +99,18 @@ import { buildNeonSignsScene } from './scene/neon-signs'
 // versión que corre en producción; no se reutilizó, para mantener el
 // mismo patrón de módulo autocontenido usado en las Fases 8.1–8.12.
 import { buildFocalTowerScene } from './scene/focal-tower'
-import { BILLBOARD_VERTEX_SHADER, BILLBOARD_FRAGMENT_SHADER } from './shaders/billboard'
+// Fase 8.14: buildImageBillboards() migrado mecánicamente a
+// ./scene/image-billboards.ts (ver nota de arquitectura al pie del
+// archivo). BILLBOARD_VERTEX_SHADER/BILLBOARD_FRAGMENT_SHADER ya no se
+// importan acá directamente: ahora los consume
+// ./scene/image-billboards.ts. Existía una implementación desconectada
+// en `scene/billboard.ts` — se auditó línea por línea contra el inline
+// real y NO resultó equivalente (faltaba el amortiguado por
+// `reducedMotion` en la velocidad angular, y usaba `scrollVelocity` en
+// vez de `scrollProgress` para el parallax de profundidad); no se
+// reutilizó, se transcribió mecánicamente el inline real a
+// `scene/image-billboards.ts`.
+import { buildImageBillboardsScene } from './scene/image-billboards'
 
 /**
  * GTA6CodexWebGLEngine — v5 "Vice City, no una demo abstracta de Three.js"
@@ -1107,90 +1118,52 @@ export class GTA6CodexWebGLEngine {
     )
   }
 
-  /** Letreros con las imágenes reales de GTA VI orbitando la torre — ver `IMAGE_BILLBOARDS`. */
+  /**
+   * Letreros con las imágenes reales de GTA VI orbitando la torre — ver
+   * `IMAGE_BILLBOARDS`.
+   *
+   * Fase 8.14 — `IMAGE_BILLBOARDS`, geometrías, texturas, materiales,
+   * shaders, posiciones orbitales, velocidad, parallax, `reducedMotion`,
+   * `scrollProgress`, `pointerIntent`, `entityUnrest` y el quaternion de
+   * cámara idénticos a la versión inline anterior; solo se movieron a
+   * `./scene/image-billboards.ts` (`buildImageBillboardsScene`). A
+   * diferencia de la mayoría de builders migrados (Fases 8.1–8.13), este
+   * no usa la firma común de 11 parámetros de `scene/*.ts` — define su
+   * propio `ImageBillboardsUpdater` porque la versión inline dependía de
+   * `this.scrollProgress`/`this.reducedMotion`/`this.camera`, ausentes
+   * de esa firma común (ver comentario en el archivo extraído, mismo
+   * criterio que `scene/road.ts` en la Fase 8.8). El wrapper de acá lee
+   * esos tres valores de `this` en cada frame, igual que el resto de
+   * builders migrados leen `this.dayPhase`/`this.entityUnrest`/etc.
+   * `this.imageTextures` (usado por `dispose()`) tampoco se tocó: el
+   * builder devuelve las texturas creadas y este wrapper las agrega acá,
+   * igual que antes. Existía una implementación desconectada en
+   * `scene/billboard.ts` — se auditó línea por línea contra el inline
+   * real y NO resultó equivalente (sin amortiguado por `reducedMotion`,
+   * y `scrollVelocity` en vez de `scrollProgress` para el parallax); no
+   * se reutilizó.
+   */
   private buildImageBillboards() {
-    const loader = new THREE.TextureLoader()
-    const maxAnisotropy = this.renderer.capabilities.getMaxAnisotropy()
-    const towerOffset = new THREE.Vector3(-3.2, 0.8, -1.5)
-
-    const billboards: {
-      mesh: THREE.Mesh
-      material: THREE.ShaderMaterial
-      texture: THREE.Texture
-      angle: number
-      def: (typeof IMAGE_BILLBOARDS)[number]
-    }[] = []
-
-    IMAGE_BILLBOARDS.forEach((def, i) => {
-      const texture = loader.load(
-        def.path,
-        undefined,
-        undefined,
-        // Una imagen faltante o movida queda visible en consola en vez de
-        // convertirse en un letrero invisible sin explicación.
-        (err) => {
-          console.warn(`[GTA6CodexWebGLEngine] No se pudo cargar el billboard "${def.key}" (${def.path}):`, err)
-        }
-      )
-      texture.colorSpace = THREE.SRGBColorSpace
-      texture.anisotropy = maxAnisotropy
-      texture.wrapS = THREE.ClampToEdgeWrapping
-      texture.wrapT = THREE.ClampToEdgeWrapping
-
-      const material = new THREE.ShaderMaterial({
-        uniforms: {
-          map: { value: texture },
-          time: { value: 0 },
-          introFade: { value: 0 },
-          uColor: { value: new THREE.Color(def.color) },
-          uDistortion: { value: 0 },
-        },
-        vertexShader: BILLBOARD_VERTEX_SHADER,
-        fragmentShader: BILLBOARD_FRAGMENT_SHADER,
-        transparent: true,
-        depthWrite: false,
-        side: THREE.DoubleSide,
-      })
-
-      const geometry = new THREE.PlaneGeometry(def.width, def.height, 12, 8)
-      const mesh = new THREE.Mesh(geometry, material)
-      this.midGroup.add(mesh)
-      this.imageTextures.push(texture)
-
-      billboards.push({ mesh, material, texture, angle: (i / IMAGE_BILLBOARDS.length) * Math.PI * 2, def })
+    const { textures, updater } = buildImageBillboardsScene({
+      midGroup: this.midGroup,
+      renderer: this.renderer,
+      camera: this.camera,
     })
+    this.imageTextures.push(...textures)
 
-    this.updaters.push((elapsed, delta, intro) => {
-      // "uDistortion" es la traducción directa de interacción real (scroll
-      // + cursor + inquietud editorial) a la señal de la pantalla — el
-      // mismo lenguaje que ya usa `chromaKick` en el grade pass, pero
-      // vivido dentro de la geometría de cada letrero.
-      const interactionDistortion = Math.min(
-        this.scrollVelocity * 9 + this.pointerIntent * 0.35 + this.entityUnrest * 0.25,
-        1
+    this.updaters.push((elapsed, delta, intro) =>
+      updater(
+        elapsed,
+        delta,
+        intro,
+        this.camera,
+        this.scrollProgress,
+        this.scrollVelocity,
+        this.pointerIntent,
+        this.entityUnrest,
+        this.reducedMotion
       )
-
-      billboards.forEach((b, i) => {
-        b.angle += delta * b.def.speed * (this.reducedMotion ? 0.15 : 1)
-        const x = towerOffset.x + Math.cos(b.angle + b.def.phase) * b.def.radius
-        const zOrbit = towerOffset.z + Math.sin(b.angle + b.def.phase) * b.def.radius * 0.6 - 4
-        // Parallax multicapa real: el dolly de scroll acerca cada letrero
-        // según su propio factor — la portada de GTA VI (parallax=1) es la
-        // que más "sale al encuentro" del usuario al scrollear.
-        const z = zOrbit + this.scrollProgress * 4.5 * b.def.parallax
-        const y = towerOffset.y + b.def.baseY + Math.sin(elapsed * 0.15 + b.def.phase) * 0.35
-        b.mesh.position.set(x, y, z)
-        // Billboard real: el letrero siempre encara la cámara, como
-        // corresponde a una imagen legible — no tumbla como un sólido
-        // abstracto, es contenido.
-        b.mesh.quaternion.copy(this.camera.quaternion)
-
-        const stagger = intro * 1.25 - i * 0.09
-        b.material.uniforms.introFade.value = Math.max(0, Math.min(stagger, 1))
-        b.material.uniforms.time.value = elapsed
-        b.material.uniforms.uDistortion.value = interactionDistortion
-      })
-    })
+    )
   }
 
   // ---------------------------------------------------------------------
