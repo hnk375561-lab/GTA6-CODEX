@@ -59,6 +59,11 @@ export default async function HomePage() {
   )
 
   const categories = CATEGORY_ORDER.filter((type) => countsByType[type] > 0)
+  // Referencia para la barra de "densidad de archivo" de cada card de
+  // categoría: la categoría con más entradas define el 100%, el resto
+  // se expresa como proporción de esa — nunca se inventa un ranking
+  // editorial, es puramente el conteo real de countsByType.
+  const maxCategoryCount = Math.max(...categories.map((type) => countsByType[type]), 1)
   // Vista previa animada por categoría (ver CategoryCardMedia): hasta 3
   // imágenes locales reales de esa categoría (fondo principal + hasta 2
   // miniaturas superpuestas), o array vacío → fondo 100% CSS.
@@ -130,26 +135,42 @@ export default async function HomePage() {
           </Reveal>
 
           <div className="stagger grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {categories.map((type) => (
-              <Link key={type} href={`/${type}`} className="group block h-full">
-                <Card
-                  hoverable
-                  className="relative flex h-full flex-col items-center gap-3 overflow-hidden py-8 text-center"
-                >
-                  <CategoryCardMedia previews={categoryPreviews[type]} />
-                  <div className="category-icon-badge relative z-10 flex h-14 w-14 items-center justify-center rounded-xl text-gta-accent">
-                    <CategoryIcon type={type} className="h-6 w-6" />
-                  </div>
-                  <div className="relative z-10">
-                    <p className="font-semibold text-gta-text">{ENTITY_TYPE_LABELS[type]}</p>
-                    <p className="mt-1 text-sm text-gta-text-secondary">
-                      {countsByType[type]}{' '}
-                      {countsByType[type] === 1 ? 'entrada' : 'entradas'}
-                    </p>
-                  </div>
-                </Card>
-              </Link>
-            ))}
+            {categories.map((type, i) => {
+              const density = Math.max(6, Math.round((countsByType[type] / maxCategoryCount) * 100))
+              return (
+                <Link key={type} href={`/${type}`} className="group category-card block h-full">
+                  <Card
+                    hoverable
+                    className="relative flex h-full flex-col overflow-hidden !p-0 text-center"
+                  >
+                    <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden">
+                      <CategoryCardMedia previews={categoryPreviews[type]} />
+                      <div className="category-icon-badge absolute left-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-lg text-gta-accent">
+                        <CategoryIcon type={type} className="h-5 w-5" />
+                      </div>
+                      <span className="category-card-corner category-card-corner--tl" aria-hidden="true" />
+                      <span className="category-card-corner category-card-corner--tr" aria-hidden="true" />
+                      <span className="category-card-corner category-card-corner--bl" aria-hidden="true" />
+                      <span className="category-card-corner category-card-corner--br" aria-hidden="true" />
+                    </div>
+
+                    <div className="relative z-10 flex flex-1 flex-col gap-2 px-5 py-4">
+                      <p className="font-semibold text-gta-text">{ENTITY_TYPE_LABELS[type]}</p>
+                      <p className="text-sm text-gta-text-secondary">
+                        {countsByType[type]}{' '}
+                        {countsByType[type] === 1 ? 'entrada' : 'entradas'}
+                      </p>
+                      <div className="category-card-meter-track" aria-hidden="true">
+                        <div className="category-card-meter-fill" style={{ width: `${density}%` }} />
+                      </div>
+                      <span className="category-card-index" aria-hidden="true">
+                        {String(i).padStart(2, '0')}
+                      </span>
+                    </div>
+                  </Card>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </SceneSection>

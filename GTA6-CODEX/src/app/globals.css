@@ -986,9 +986,18 @@ a:hover .logo-mark {
 }
 
 .category-icon-badge {
-  border: 1px solid rgba(255, 47, 143, 0.25);
-  background: linear-gradient(135deg, rgba(255, 47, 143, 0.14), rgba(34, 211, 238, 0.06));
-  box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.08), 0 4px 16px -8px rgba(255, 47, 143, 0.35);
+  border: 1px solid rgba(255, 47, 143, 0.35);
+  background: linear-gradient(135deg, rgba(20, 15, 32, 0.85), rgba(20, 15, 32, 0.6));
+  backdrop-filter: blur(6px) saturate(140%);
+  -webkit-backdrop-filter: blur(6px) saturate(140%);
+  box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.1), 0 4px 16px -6px rgba(0, 0, 0, 0.6);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.group:hover .category-icon-badge,
+.group:focus-visible .category-icon-badge {
+  border-color: rgba(255, 47, 143, 0.6);
+  box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.25), 0 0 24px -6px rgba(255, 47, 143, 0.5);
 }
 
 /* --- Category card: numeración editorial de fondo ---
@@ -1005,21 +1014,96 @@ a:hover .logo-mark {
 
 .category-card-index {
   position: absolute;
-  right: 0.75rem;
-  top: 0.25rem;
+  right: 0.6rem;
+  bottom: -0.4rem;
   font-family: var(--font-display);
-  font-size: 3.25rem;
+  font-size: 3.5rem;
   font-weight: 700;
   line-height: 1;
   color: var(--c-pink);
-  opacity: 0.06;
+  opacity: 0.07;
   pointer-events: none;
+  z-index: 1;
   transition: opacity var(--transition-base), transform var(--transition-base);
 }
 
 .category-card:hover .category-card-index {
-  opacity: 0.12;
-  transform: translateY(-2px);
+  opacity: 0.14;
+  transform: translateY(-3px);
+}
+
+/* --- Marco HUD: esquinas tipo cámara de vigilancia / material
+   filtrado, que se iluminan en el acento al hover. Es el elemento de
+   firma de la card de categoría — todo lo demás alrededor se queda
+   quieto para no competirle. --- */
+.category-card-corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 0 solid var(--gta-corner-color, #ff2f8f);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity var(--transition-base), width var(--transition-base), height var(--transition-base);
+}
+
+.category-card-corner--tl {
+  top: 10px;
+  left: 10px;
+  border-top-width: 2px;
+  border-left-width: 2px;
+  border-top-left-radius: 4px;
+}
+
+.category-card-corner--tr {
+  top: 10px;
+  right: 10px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-top-right-radius: 4px;
+}
+
+.category-card-corner--bl {
+  bottom: 10px;
+  left: 10px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-bottom-left-radius: 4px;
+}
+
+.category-card-corner--br {
+  bottom: 10px;
+  right: 10px;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+  border-bottom-right-radius: 4px;
+}
+
+.group:hover .category-card-corner,
+.group:focus-visible .category-card-corner {
+  opacity: 0.95;
+  width: 22px;
+  height: 22px;
+}
+
+/* --- Barra de "densidad de archivo": ancho proporcional al conteo de
+   entradas de esa categoría vs. la más grande, sensación de base de
+   datos viva en vez de un número suelto. --- */
+.category-card-meter-track {
+  position: relative;
+  z-index: 1;
+  height: 3px;
+  width: 100%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.category-card-meter-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--gta-accent-strong, #ff7ec4), var(--gta-accent-orange, #22d3ee));
+  transition: width 900ms var(--ease-premium);
 }
 
 /* ============================================================

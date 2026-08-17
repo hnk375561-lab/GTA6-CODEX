@@ -38,7 +38,14 @@ export function CategoryCardMedia({ previews }: CategoryCardMediaProps) {
   return (
     <div className="card-media card-media--category pointer-events-none absolute inset-0" aria-hidden="true">
       {main ? (
-        <Image src={main.src} alt="" fill sizes="240px" className="card-media-image object-cover" />
+        <Image
+          src={main.src}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 50vw"
+          quality={95}
+          className="card-media-image object-cover"
+        />
       ) : (
         <div className="card-media-fallback-sweep" />
       )}
