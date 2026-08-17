@@ -47,9 +47,16 @@ export function buildHumidityMist(options: HumidityMistBuilderOptions): Updater 
   })
   midGroup.add(new THREE.Points(geo, mat))
 
+  // Referencias cacheadas a los objetos uniform (evita re-atravesar la
+  // cadena `mat.uniforms.<nombre>` en cada frame dentro del updater —
+  // mismo criterio aplicado en el resto de `scene/*.ts`).
+  const timeUniform = mat.uniforms.time
+  const introFadeUniform = mat.uniforms.introFade
+  const timeScale = reducedMotion ? 0.2 : 1
+
   const updater: Updater = (elapsed, _delta, intro, _dayPhase, _humidity, _fog, _entityPace, _entityUnrest, _scrollVelocity, _pointerIntent, _entityPresence) => {
-    mat.uniforms.time.value = elapsed * (reducedMotion ? 0.2 : 1)
-    mat.uniforms.introFade.value = intro
+    timeUniform.value = elapsed * timeScale
+    introFadeUniform.value = intro
   }
 
   return updater
