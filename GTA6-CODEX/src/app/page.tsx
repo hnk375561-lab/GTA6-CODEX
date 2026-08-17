@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import type { CSSProperties } from 'react'
 import type { Metadata } from 'next'
 import { EntityType } from '@/types'
 import { getFeaturedEntities, getEntityCount, getEntityCountsByType } from '@/lib/entities'
@@ -40,6 +41,29 @@ const CATEGORY_ORDER: EntityType[] = [
   EntityType.NEWS,
   EntityType.GUIDE,
 ]
+
+/**
+ * Color de acento por categoría — mismo trío de la paleta "Leonida
+ * Nights" ya existente (magenta / cian / dorado), asignado por tipo de
+ * contenido en vez de rotar al azar: gente y facciones en magenta
+ * (el acento "humano" del sitio), lugares y material audiovisual en
+ * cian (frío/espacial), objetos y economía del mundo en dorado. Da
+ * identidad reconocible por sección sin introducir ningún color nuevo.
+ */
+const CATEGORY_ACCENT: Record<EntityType, string> = {
+  [EntityType.CHARACTER]: '#ff2f8f',
+  [EntityType.FACTION]: '#ff2f8f',
+  [EntityType.MISSION]: '#ff2f8f',
+  [EntityType.NEWS]: '#ff2f8f',
+  [EntityType.LOCATION]: '#22d3ee',
+  [EntityType.TRAILER]: '#22d3ee',
+  [EntityType.GUIDE]: '#22d3ee',
+  [EntityType.VEHICLE]: '#f0c274',
+  [EntityType.WEAPON]: '#f0c274',
+  [EntityType.ACTIVITY]: '#f0c274',
+  [EntityType.BUSINESS]: '#f0c274',
+  [EntityType.OBJECT]: '#f0c274',
+}
 
 export default async function HomePage() {
   const [featured, totalCount, countsByType] = await Promise.all([
@@ -137,8 +161,14 @@ export default async function HomePage() {
           <div className="stagger grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {categories.map((type, i) => {
               const density = Math.max(6, Math.round((countsByType[type] / maxCategoryCount) * 100))
+              const accent = CATEGORY_ACCENT[type]
               return (
-                <Link key={type} href={`/${type}`} className="group category-card block h-full">
+                <Link
+                  key={type}
+                  href={`/${type}`}
+                  className="group category-card block h-full"
+                  style={{ '--gta-corner-color': accent } as CSSProperties}
+                >
                   <Card
                     hoverable
                     className="relative flex h-full flex-col overflow-hidden !p-0 text-center"
@@ -152,6 +182,12 @@ export default async function HomePage() {
                       <span className="category-card-corner category-card-corner--tr" aria-hidden="true" />
                       <span className="category-card-corner category-card-corner--bl" aria-hidden="true" />
                       <span className="category-card-corner category-card-corner--br" aria-hidden="true" />
+                      <div className="category-card-redaction category-card-redaction--top" aria-hidden="true">
+                        <span className="category-card-redaction-label">
+                          Expediente · {ENTITY_TYPE_LABELS[type]}
+                        </span>
+                      </div>
+                      <div className="category-card-redaction category-card-redaction--bottom" aria-hidden="true" />
                     </div>
 
                     <div className="relative z-10 flex flex-1 flex-col gap-2 px-5 py-4">
@@ -161,7 +197,10 @@ export default async function HomePage() {
                         {countsByType[type] === 1 ? 'entrada' : 'entradas'}
                       </p>
                       <div className="category-card-meter-track" aria-hidden="true">
-                        <div className="category-card-meter-fill" style={{ width: `${density}%` }} />
+                        <div
+                          className="category-card-meter-fill"
+                          style={{ width: `${density}%`, background: accent }}
+                        />
                       </div>
                       <span className="category-card-index" aria-hidden="true">
                         {String(i).padStart(2, '0')}
