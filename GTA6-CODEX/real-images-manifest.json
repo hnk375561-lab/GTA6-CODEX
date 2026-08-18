@@ -33,5 +33,12 @@
     "sourceUrl": "https://www.gtabase.com/igallery/gta-6-screens/ultimateedition-hawk-and-little-morgan-revolvers-01-1080.jpg",
     "sourceType": "secondary-reliable",
     "note": "GTA Base, pagina 'Morgan Revolver' (www.gtabase.com/weapons/gta-6/morgan-revolver), que republica la captura oficial de Rockstar de personalizacion de la Ultimate Edition mostrando los revolveres Morgan de Jason y Lucia. Coincide exactamente con el primarySource ya documentado en cuchillo-combate.json (navaja automatica visible junto a los revolveres personalizados). GTA Base cita como fuente 'los screenshots oficiales del juego' (www.gtabase.com/gta-6/screenshots/official/)."
+  },
+  {
+    "category": "armas",
+    "slug": "metralleta",
+    "sourceUrl": "https://www.gtabase.com/igallery/gta-6-screenshots-trailer/gta-6-trailer-2-screen-24-1080.jpg",
+    "sourceType": "secondary-reliable",
+    "note": "GTA Base, pagina 'SMG' (www.gtabase.com/weapons/gta-6/smg), frame propio de GTA Base extraido del Trailer 2 oficial (confirmado por GTA Base como 'seen in the second official trailer'). Corresponde al arma de perfil MP5 usada por Lucia y Jason en la secuencia de robo bancario que la ficha metralleta.json ya identificaba como fuente (~2:09). Hay una segunda captura alternativa disponible en la misma pagina (gta-6-trailer-2-screen-22-1080.jpg) por si se prefiere otro angulo."
   }
 ]
