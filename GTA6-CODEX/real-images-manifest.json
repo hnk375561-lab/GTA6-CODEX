@@ -12,5 +12,19 @@
     "sourceUrl": "https://videos.rockstargames.com/v4/cpys7u21/art/global.jpg",
     "sourceType": "rockstar-official",
     "note": "meta-og:image de rockstargames.com/videos/cpys7u21, pagina oficial del Trailer 2."
+  },
+  {
+    "category": "vehiculos",
+    "slug": "vapid-taxi",
+    "sourceUrl": "https://www.gtabase.com/igallery/gta-6-screens/vice-city-06-1080.jpg",
+    "sourceType": "secondary-reliable",
+    "note": "GTA Base, seccion 'Taxi: GTA 6 Screenshots' (www.gtabase.com/vehicles/gta-6/taxi). Captura oficial de GTA 6 (Vice City), no de trailer sino de la galeria de screenshots oficiales de Rockstar que GTA Base republica. Confirmado visible en Trailer 1 tambien (0:14, Vice Beach)."
+  },
+  {
+    "category": "vehiculos",
+    "slug": "karin-futo",
+    "sourceUrl": "https://www.gtabase.com/igallery/gta-6-screenshots-trailer/gta-6-trailer1-screenshot-46-1080.jpg",
+    "sourceType": "secondary-reliable",
+    "note": "GTA Base, seccion 'Futo: GTA 6 Screenshots' (www.gtabase.com/gta-6/vehicles/futo). Frame extraido del Trailer 1 oficial (interseccion en Vice City, minuto 1:06)."
   }
 ]
