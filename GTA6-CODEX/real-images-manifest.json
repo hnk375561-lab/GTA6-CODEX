@@ -47,5 +47,12 @@
     "sourceUrl": "https://www.gtabase.com/igallery/gta-6-screens/port-gellhorn-02-1080.jpg",
     "sourceType": "secondary-reliable",
     "note": "GTA Base, pagina 'Baseball Bat' (www.gtabase.com/gta-6/weapons/baseball-bat), que enlaza esta captura oficial de Port Gellhorn como evidencia de la aparicion del bate. Coincide con el primarySource ya documentado en bate-beisbol.json (NPC con bate en captura oficial de Port Gellhorn, cobertura de ScreenRant) y con la descripcion independiente de SixWiki ('a Port Gellhorn heavy shoulders a baseball bat'). Se mantiene el nivel 'especulativo' de la ficha: el bate esta en manos de un NPC de ambientacion, no confirmado como recogible por el jugador."
+  },
+  {
+    "category": "organizaciones",
+    "slug": "vcpd",
+    "sourceUrl": "https://media.gtaboom.com/variants/300/media/images/79/48/VCPD_Logo_Promotional.jpg",
+    "sourceType": "secondary-reliable",
+    "note": "GTA BOOM, wiki 'Vice City Police Department' (www.gtaboom.com/vice-city-police-department-23bd). La imagen esta explicitamente etiquetada por GTA BOOM como 'The Vice City Police Department Logo as seen on GTA VI's promotional website', es decir, republica el logo oficial que aparece en el sitio promocional de Rockstar Games para GTA VI. GTA BOOM cita como referencia primaria los articulos oficiales de Rockstar Newswire para Trailer 1 y Trailer 2 (rockstargames.com/newswire). Coincide con el primarySource ya documentado en vcpd.json ('logo VCPD... en el sitio web promocional oficial de GTA VI'). ALTERNATIVA: la misma pagina tiene tambien capturas de los vehiculos VCPD en accion (Vapid Police Interceptor en Trailer 1: media.gtaboom.com/variants/1279/media/images/f6/7e/Vapid_Police_Intercepter.jpg; Vapid Police Cruiser blanco y azul en Trailer 2: media.gtaboom.com/variants/1485/media/images/dd/6c/Vapid_Police_Cruiser_(white_and_blue_livery).jpg) por si se prefiere una escena en vez del logo aislado."
   }
 ]
