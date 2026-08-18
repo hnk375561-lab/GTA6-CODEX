@@ -54,5 +54,33 @@
     "sourceUrl": "https://media.gtaboom.com/variants/300/media/images/79/48/VCPD_Logo_Promotional.jpg",
     "sourceType": "secondary-reliable",
     "note": "GTA BOOM, wiki 'Vice City Police Department' (www.gtaboom.com/vice-city-police-department-23bd). La imagen esta explicitamente etiquetada por GTA BOOM como 'The Vice City Police Department Logo as seen on GTA VI's promotional website', es decir, republica el logo oficial que aparece en el sitio promocional de Rockstar Games para GTA VI. GTA BOOM cita como referencia primaria los articulos oficiales de Rockstar Newswire para Trailer 1 y Trailer 2 (rockstargames.com/newswire). Coincide con el primarySource ya documentado en vcpd.json ('logo VCPD... en el sitio web promocional oficial de GTA VI'). ALTERNATIVA: la misma pagina tiene tambien capturas de los vehiculos VCPD en accion (Vapid Police Interceptor en Trailer 1: media.gtaboom.com/variants/1279/media/images/f6/7e/Vapid_Police_Intercepter.jpg; Vapid Police Cruiser blanco y azul en Trailer 2: media.gtaboom.com/variants/1485/media/images/dd/6c/Vapid_Police_Cruiser_(white_and_blue_livery).jpg) por si se prefiere una escena en vez del logo aislado."
+  },
+  {
+    "category": "ubicaciones",
+    "slug": "little-cuba",
+    "sourceUrl": null,
+    "sourceType": "ai-generated-illustration",
+    "note": "NO es una captura oficial de Rockstar. Ilustracion generada por IA (herramienta externa del usuario, no Rockstar), comisionada especificamente para representar la descripcion oficial de Little Cuba (barrio de panaderias inspirado en Little Havana). Revisada y aprobada manualmente antes de subir. Reemplaza el placeholder generico ('pendiente de confirmacion'). Si en el futuro Rockstar publica una captura oficial de esta zona, debe reemplazarse por esa fuente primaria."
+  },
+  {
+    "category": "ubicaciones",
+    "slug": "tequesta",
+    "sourceUrl": null,
+    "sourceType": "ai-generated-illustration",
+    "note": "NO es una captura oficial de Rockstar. Ilustracion generada por IA (herramienta externa del usuario, no Rockstar), comisionada para representar la descripcion oficial de Tequesta (distrito de torres de lujo inspirado en Brickell, con cartel vial 'Route 3'). Revisada y aprobada manualmente antes de subir. Reemplaza el placeholder generico. Si Rockstar publica una captura oficial, debe reemplazarse por esa fuente primaria."
+  },
+  {
+    "category": "ubicaciones",
+    "slug": "leonida",
+    "sourceUrl": null,
+    "sourceType": "ai-generated-illustration",
+    "note": "NO es una captura oficial de Rockstar. Ilustracion generada por IA (herramienta externa del usuario, no Rockstar), comisionada como toma aerea de establecimiento que representa el estado ficticio de Leonida (transicion de pantano a skyline de Vice City). Revisada y aprobada manualmente antes de subir. Reemplaza el placeholder generico. Si Rockstar publica una captura oficial, debe reemplazarse por esa fuente primaria."
+  },
+  {
+    "category": "ubicaciones",
+    "slug": "gambit-bay",
+    "sourceUrl": null,
+    "sourceType": "ai-generated-illustration",
+    "note": "NO es una captura oficial de Rockstar. Ilustracion generada por IA (herramienta externa del usuario, no Rockstar), comisionada para representar la descripcion oficial de Gambit Bay (zona acuatica confirmada para pesca). Revisada y aprobada manualmente antes de subir. Reemplaza el placeholder generico. Si Rockstar publica una captura oficial, debe reemplazarse por esa fuente primaria."
   }
 ]
