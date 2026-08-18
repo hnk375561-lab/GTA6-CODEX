@@ -1,0 +1,16 @@
+[
+  {
+    "category": "trailers",
+    "slug": "trailer-1-anuncio",
+    "sourceUrl": "https://videos.rockstargames.com/v4/rkoCtr1r/art/global.jpg",
+    "sourceType": "rockstar-official",
+    "note": "meta-og:image de rockstargames.com/videos/rkoCtr1r, pagina oficial del Trailer 1."
+  },
+  {
+    "category": "trailers",
+    "slug": "trailer-2-gameplay",
+    "sourceUrl": "https://videos.rockstargames.com/v4/cpys7u21/art/global.jpg",
+    "sourceType": "rockstar-official",
+    "note": "meta-og:image de rockstargames.com/videos/cpys7u21, pagina oficial del Trailer 2."
+  }
+]
