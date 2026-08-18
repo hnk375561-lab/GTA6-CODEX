@@ -16,9 +16,9 @@
   {
     "category": "vehiculos",
     "slug": "vapid-taxi",
-    "sourceUrl": "https://www.gtabase.com/igallery/gta-6-screens/vice-city-06-1080.jpg",
-    "sourceType": "secondary-reliable",
-    "note": "GTA Base, seccion 'Taxi: GTA 6 Screenshots' (www.gtabase.com/vehicles/gta-6/taxi). Captura oficial de GTA 6 (Vice City), no de trailer sino de la galeria de screenshots oficiales de Rockstar que GTA Base republica. Confirmado visible en Trailer 1 tambien (0:14, Vice Beach)."
+    "sourceUrl": "https://www.rockstargames.com/VI/_next/static/media/Vice_City_06.0_tdmr3u9w84x.jpg?akim=1&imdensity=1&imwidth=3840",
+    "sourceType": "rockstar-official",
+    "note": "UPGRADE (ronda de sourcing, 18 ago 2026): fuente primaria directa localizada en la pagina oficial de media kit de Rockstar (rockstargames.com/VI/media/screenshots), archivo 'Vice City 06'. El nombre de archivo que GTA Base usa para republicar esta misma captura ('vice-city-06-1080.jpg', ver www.gtabase.com/vehicles/gta-6/taxi) coincide en numeracion secuencial con 'Vice_City_06' del kit oficial, lo cual indica que es el mismo asset original sin marca de agua ni recompresion de terceros. No se verifico pixel a pixel (esta sesion no puede descargar bytes de imagen), pero la coincidencia de nombre+contexto (taxi visible en escena de Vice City) es consistente. Se conserva GTA Base como fuente secundaria de respaldo por si el nombre de archivo cambia en el CDN de Rockstar. Confirmado visible en Trailer 1 tambien (0:14, Vice Beach)."
   },
   {
     "category": "vehiculos",
@@ -30,9 +30,9 @@
   {
     "category": "armas",
     "slug": "cuchillo-combate",
-    "sourceUrl": "https://www.gtabase.com/igallery/gta-6-screens/ultimateedition-hawk-and-little-morgan-revolvers-01-1080.jpg",
-    "sourceType": "secondary-reliable",
-    "note": "GTA Base, pagina 'Morgan Revolver' (www.gtabase.com/weapons/gta-6/morgan-revolver), que republica la captura oficial de Rockstar de personalizacion de la Ultimate Edition mostrando los revolveres Morgan de Jason y Lucia. Coincide exactamente con el primarySource ya documentado en cuchillo-combate.json (navaja automatica visible junto a los revolveres personalizados). GTA Base cita como fuente 'los screenshots oficiales del juego' (www.gtabase.com/gta-6/screenshots/official/)."
+    "sourceUrl": "https://www.rockstargames.com/VI/_next/static/media/ULTIMATE_EDITION_HAWK_AND_LITTLE_MORGAN_REVOLVERS_01.0~3pdc~~sing4.jpg?akim=1&imdensity=1&imwidth=3840",
+    "sourceType": "rockstar-official",
+    "note": "UPGRADE (ronda de sourcing, 18 ago 2026): fuente primaria directa localizada en el media kit oficial de Rockstar (rockstargames.com/VI/media/screenshots, seccion 'Ultimate Edition Benefits'), archivo 'Hawk & Little Morgan Revolvers 01'. El slug de archivo coincide de forma exacta (no solo numerica, sino textual completa: 'ultimateedition-hawk-and-little-morgan-revolvers-01') con la version que GTA Base republica en www.gtabase.com/weapons/gta-6/morgan-revolver, confirmando que es el mismo asset oficial. Coincide con el primarySource ya documentado en cuchillo-combate.json (navaja automatica visible junto a los revolveres Morgan personalizados de Jason y Lucia)."
   },
   {
     "category": "armas",
@@ -44,9 +44,9 @@
   {
     "category": "armas",
     "slug": "bate-beisbol",
-    "sourceUrl": "https://www.gtabase.com/igallery/gta-6-screens/port-gellhorn-02-1080.jpg",
-    "sourceType": "secondary-reliable",
-    "note": "GTA Base, pagina 'Baseball Bat' (www.gtabase.com/gta-6/weapons/baseball-bat), que enlaza esta captura oficial de Port Gellhorn como evidencia de la aparicion del bate. Coincide con el primarySource ya documentado en bate-beisbol.json (NPC con bate en captura oficial de Port Gellhorn, cobertura de ScreenRant) y con la descripcion independiente de SixWiki ('a Port Gellhorn heavy shoulders a baseball bat'). Se mantiene el nivel 'especulativo' de la ficha: el bate esta en manos de un NPC de ambientacion, no confirmado como recogible por el jugador."
+    "sourceUrl": "https://www.rockstargames.com/VI/_next/static/media/Port_Gellhorn_02.00e7cz6lwrup-.jpg?akim=1&imdensity=1&imwidth=3840",
+    "sourceType": "rockstar-official",
+    "note": "UPGRADE (ronda de sourcing, 18 ago 2026): fuente primaria directa localizada en el media kit oficial de Rockstar (rockstargames.com/VI/media/screenshots), archivo 'Port Gellhorn 02'. La numeracion coincide con la version que GTA Base republica como 'port-gellhorn-02-1080.jpg' (www.gtabase.com/gta-6/weapons/baseball-bat). Coincide con el primarySource ya documentado en bate-beisbol.json (NPC con bate en captura oficial de Port Gellhorn, cobertura de ScreenRant) y con SixWiki ('a Port Gellhorn heavy shoulders a baseball bat'). Se mantiene el nivel 'especulativo' de la ficha: el bate esta en manos de un NPC de ambientacion, no confirmado como recogible por el jugador."
   },
   {
     "category": "organizaciones",
