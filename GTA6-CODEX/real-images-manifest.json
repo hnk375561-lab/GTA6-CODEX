@@ -82,5 +82,26 @@
     "sourceUrl": null,
     "sourceType": "ai-generated-illustration",
     "note": "NO es una captura oficial de Rockstar. Ilustracion generada por IA (herramienta externa del usuario, no Rockstar), comisionada para representar la descripcion oficial de Gambit Bay (zona acuatica confirmada para pesca). Revisada y aprobada manualmente antes de subir. Reemplaza el placeholder generico. Si Rockstar publica una captura oficial, debe reemplazarse por esa fuente primaria."
+  },
+  {
+    "category": "ubicaciones",
+    "slug": "ocean-beach",
+    "sourceUrl": null,
+    "sourceType": "ai-generated-illustration",
+    "note": "NO es una captura oficial de Rockstar. Ilustracion generada por IA (herramienta externa del usuario, no Rockstar), comisionada para representar Ocean Beach (distrito costero inspirado en South Beach, Miami, hoteles art deco). Revisada y aprobada manualmente antes de subir. Reemplaza el placeholder generico. Si Rockstar publica una captura oficial, debe reemplazarse por esa fuente primaria."
+  },
+  {
+    "category": "ubicaciones",
+    "slug": "southside-vice-city",
+    "sourceUrl": null,
+    "sourceType": "ai-generated-illustration",
+    "note": "NO es una captura oficial de Rockstar. Ilustracion generada por IA (herramienta externa del usuario, no Rockstar), comisionada para representar Southside Vice City (zona sur, territorio de bandas, mencionada en material oficial de la Ultimate Edition). Revisada y aprobada manualmente antes de subir. Reemplaza el placeholder generico. Si Rockstar publica una captura oficial, debe reemplazarse por esa fuente primaria."
+  },
+  {
+    "category": "ubicaciones",
+    "slug": "tisha-wocka",
+    "sourceUrl": null,
+    "sourceType": "ai-generated-illustration",
+    "note": "NO es una captura oficial de Rockstar. Ilustracion generada por IA (herramienta externa del usuario, no Rockstar), comisionada para representar el Tisha-Wocka Flea Market (mercado de marcas bootleg mencionado en texto oficial junto al Trailer 2). Revisada y aprobada manualmente antes de subir. Nota de calidad: un cartel de fondo del centro comercial vecino salio parcialmente ilegible (artefacto tipico de IA con texto), pero esta fuera de foco y no afecta el elemento principal. Reemplaza el placeholder generico. Si Rockstar publica una captura oficial, debe reemplazarse por esa fuente primaria."
   }
 ]
