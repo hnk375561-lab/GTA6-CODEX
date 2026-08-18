@@ -53,7 +53,7 @@ oficial. Ninguno requiere pasar a `CANDIDATES_PENDING.md`.
 | `buckingham-shamal` | GTA Wiki: Trailer 1, sobrevolando Vice Beach |
 | `buckingham-nimbus` | GTA Wiki: Trailer 1 (0:21), sobre Vice Beach |
 | `buckingham-supervolito` | GTA Wiki: Trailer 1 (0:22), cielos de Vice Beach |
-| `buckingham-police-maverick` | GTA Base: confirmado en Trailer 1 (sin timestamp exacto de GTA Wiki — verificar en próxima ronda) |
+| `buckingham-police-maverick` | **Cerrado (ronda 2, 18 ago 2026)**: GTA Wiki (ES): "También apareció en el primer tráiler" + GTA Wiki (EN): "Another Vice-Dale Police Department Police Maverick seen in the second trailer" — confirmado en ambos trailers |
 
 ### Nagasaki (4/4 confirmados, 1 con nota de fabricante)
 | Vehículo | Fuente / evidencia |
@@ -93,7 +93,7 @@ oficial. Ninguno requiere pasar a `CANDIDATES_PENDING.md`.
 ### Otros (9/9 confirmados)
 | Vehículo | Fuente / evidencia |
 |---|---|
-| `dinka-verus` | GTA Wiki: "due to appear" — **sin cita de aparición visual específica encontrada esta ronda, sourcing más débil que el resto, revisar en próxima ronda** |
+| `dinka-verus` | **Cerrado (ronda 2, 18 ago 2026)**: GTA Wiki, caption directo "A Verus in the first trailer for Grand Theft Auto VI", más variante lifeguard documentada en Vice Beach |
 | `shitzu-tropic` | GTA Base: Trailer 1 (una fuente marca Trailer 2 — hay discrepancia menor entre agregadores, sin GTA Wiki dedicado encontrado) |
 | `karin-intruder` | GTA Wiki: Trailer 1, 3 apariciones distintas (0:44, 1:03, 1:07) |
 | `mammoth-dodo` | GTA Wiki: Trailer 1, dos apariciones (0:13 remolcando banner NINE1NINE, 0:34 Leonida Keys) |
@@ -118,12 +118,32 @@ Ronda 9. **Los archivos de imagen real deben ser aportados por el usuario**
 (como en rondas anteriores) para poder procesarlos e integrarlos con
 `scripts/process-images.mjs --apply`.
 
+## Ronda 2 (18 ago 2026) — cierre de pendientes de sourcing + fix de datos
+
+- **`dinka-verus`**: sourcing cerrado, ver tabla arriba.
+- **`buckingham-police-maverick`**: sourcing cerrado, ver tabla arriba.
+- **Corrección aplicada**: `nagasaki-double-t` renombrado a
+  `dinka-double-t` en `src/content/vehiculos/` y en
+  `public/images/entities/vehiculos/` (slug, `manufacturer`, `title`,
+  `content`, `seoTitle`/`seoDescription` actualizados; nota de auditoría
+  agregada en `evidence.note`). Sin referencias cruzadas rotas — se
+  verificó con `grep -r "nagasaki-double-t"` sobre todo `src/` antes del
+  rename; el único resultado era el propio archivo.
+- Verificación de integridad (`scripts/verify-content-integrity.mjs`)
+  falla en este entorno por un problema preexistente de configuración
+  Turbopack/webpack de Next.js 16, **no relacionado a este cambio**
+  (confirmado corriendo el mismo script con `git stash` antes de aplicar
+  la corrección: falla igual sin el cambio).
+
 ## Próximos pasos
 
-1. Usuario aporta los 37 archivos de imagen (o los que tenga disponibles).
+1. Usuario aporta los 37 archivos de imagen (o los que tenga disponibles)
+   — sigue siendo el único bloqueante real para pasar de placeholder a
+   imagen definitiva.
 2. Se procesan e integran con el pipeline existente (WebP 82, 1600×900).
-3. Se corrige `nagasaki-double-t` → `dinka-double-t` (manufacturer +
-   título + posible slug/URL, revisar referencias cruzadas en `relations`).
-4. Se completa sourcing de `dinka-verus` (evidencia más débil) y se
-   confirma timestamp exacto de `buckingham-police-maverick`.
-5. Commit y push a `main` (pendiente token de acceso al repo).
+3. Resolver el problema de build Turbopack/webpack de
+   `scripts/verify-content-integrity.mjs` (preexistente, no introducido
+   en esta sesión).
+4. `shitzu-tropic` tiene una discrepancia menor entre agregadores sobre
+   si aparece en Trailer 1 o Trailer 2 — no bloqueante, pero pendiente de
+   precisar.

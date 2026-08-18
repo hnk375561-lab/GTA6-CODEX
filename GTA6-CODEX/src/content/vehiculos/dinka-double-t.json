@@ -1,0 +1,38 @@
+{
+  "slug": "dinka-double-t",
+  "type": "vehiculos",
+  "title": "Dinka Double-T",
+  "description": "Motocicleta deportiva de Dinka",
+  "content": "La Dinka Double-T es una motocicleta deportiva, inspirada en el Ducati Desmosedici RR, Yamaha YZF-R6 y Honda CBR1000RR (SC59). Aparece en el primer trailer de GTA VI, estacionada junto a una Nagasaki Carbon RS en Shore Drive, Vice Beach (0:33).",
+  "status": "confirmado",
+  "tags": [
+    "moto-deportiva",
+    "dinka",
+    "trailer-confirmado"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-18T00:00:00Z",
+  "manufacturer": "Dinka",
+  "class": "motorcycles",
+  "driven_by": [],
+  "locations": [
+    "vice-city"
+  ],
+  "customizable": true,
+  "performance": {
+    "speed": "Media-Alta",
+    "acceleration": "Media",
+    "handling": "Media",
+    "braking": "Media"
+  },
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games, GTA VI Trailer 1 (0:33)",
+    "secondarySource": "GTA Wiki (Fandom): \"A red Double-T can be partially seen parked next to a Carbon RS on Shore Drive in Vice Beach during the game's first trailer (0:33)\"",
+    "note": "CORRECCION (18 ago 2026): entidad creada originalmente como 'nagasaki-double-t' (fabricante incorrecto). GTA Wiki documenta el Double-T como vehiculo Dinka, no Nagasaki (ver gta.fandom.com/wiki/Vehicles_in_GTA_VI, categoria Dinka; y gta.fandom.com/wiki/Double_T). Se corrige slug, manufacturer, title y contenido. La confusion probablemente vino de aparecer en la misma escena que la Nagasaki Carbon RS. Verificado en sesion de investigacion de sourcing del 18 ago 2026, ver VEHICLE_IMAGE_SOURCING.md."
+  },
+  "relations": [],
+  "seoTitle": "Dinka Double-T — Vehículo de GTA 6",
+  "seoDescription": "GTA 6: Motocicleta deportiva de Dinka"
+}
