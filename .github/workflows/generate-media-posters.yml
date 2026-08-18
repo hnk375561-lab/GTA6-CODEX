@@ -25,8 +25,11 @@ jobs:
       - name: Generate posters and update JSON
         working-directory: GTA6-CODEX
         run: |
-          set -e
+          set +e
           mkdir -p public/images/entities/media
+          : > /tmp/poster-gen-errors.log
+          OK=0
+          FAIL=0
 
           declare -A ITEMS=(
             ["clip-boobie-ike"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Boobie_Ike_Video_Clip.mp4|2"
@@ -46,10 +49,16 @@ jobs:
             IFS='|' read -r url seek <<< "${ITEMS[$id]}"
             out="public/images/entities/media/${id}.webp"
             echo "== $id (seek ${seek}s) =="
-            ffmpeg -hide_banner -loglevel error -y -ss "$seek" -i "$url" -frames:v 1 -c:v libwebp -q:v 82 "$out"
+            ffmpeg -hide_banner -loglevel warning -y \
+              -reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5 \
+              -i "$url" -ss "$seek" -frames:v 1 -c:v libwebp -q:v 82 "$out" \
+              2>> /tmp/poster-gen-errors.log
+
             if [ ! -s "$out" ]; then
-              echo "FALLO generando $id"
-              exit 1
+              echo "FALLO generando $id (ver /tmp/poster-gen-errors.log)" | tee -a /tmp/poster-gen-errors.log
+              FAIL=$((FAIL+1))
+              rm -f "$out"
+              continue
             fi
 
             node -e "
@@ -59,14 +68,25 @@ jobs:
               obj.posterUrl = '/images/entities/media/${id}.webp';
               fs.writeFileSync(path, JSON.stringify(obj, null, 2) + '\n');
             "
+            OK=$((OK+1))
           done
 
+          echo "OK=$OK FAIL=$FAIL"
+          echo "OK=$OK" >> "$GITHUB_ENV"
+          echo "FAIL=$FAIL" >> "$GITHUB_ENV"
+          if [ "$FAIL" -gt 0 ]; then
+            mkdir -p .ci-debug
+            cp /tmp/poster-gen-errors.log .ci-debug/poster-gen-errors.log
+          fi
+          exit 0
+
       - name: Commit and push
+        if: always()
         working-directory: GTA6-CODEX
         run: |
           git config user.name "gta6-codex-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add public/images/entities/media src/content/media
+          git add public/images/entities/media src/content/media .ci-debug 2>/dev/null || true
           git diff --cached --quiet && echo "Nada para commitear" && exit 0
-          git commit -m "feat(media): genera posters de trailers/clips/cover-art via ffmpeg (GitHub Actions)"
+          git commit -m "feat(media): genera posters de trailers/clips/cover-art via ffmpeg (GitHub Actions) [OK=${OK:-?} FAIL=${FAIL:-?}]"
           git push origin main
