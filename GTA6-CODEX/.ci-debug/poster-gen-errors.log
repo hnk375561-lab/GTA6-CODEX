@@ -1,0 +1,55 @@
+[https @ 0x558a7156c680] HTTP error 403 Forbidden
+[in#0 @ 0x558a7156be80] Error opening input: Server returned 403 Forbidden (access denied)
+Error opening input file https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Cal_Hampton_Video_Clip.mp4.
+Error opening input files: Server returned 403 Forbidden (access denied)
+FALLO generando clip-cal-hampton (ver /tmp/poster-gen-errors.log)
+[https @ 0x56066f70e680] HTTP error 403 Forbidden
+[in#0 @ 0x56066f70de80] Error opening input: Server returned 403 Forbidden (access denied)
+Error opening input file https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/GTAVI_Trailer_2.mp4.
+Error opening input files: Server returned 403 Forbidden (access denied)
+FALLO generando trailer-trailer-2-gameplay (ver /tmp/poster-gen-errors.log)
+[https @ 0x55caa901d680] HTTP error 403 Forbidden
+[in#0 @ 0x55caa901ce80] Error opening input: Server returned 403 Forbidden (access denied)
+Error opening input file https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/GTAVI_Official_Cover_Art_Landscape.mp4.
+Error opening input files: Server returned 403 Forbidden (access denied)
+FALLO generando video-cover-art-landscape (ver /tmp/poster-gen-errors.log)
+[https @ 0x565483607680] HTTP error 403 Forbidden
+[in#0 @ 0x565483606e80] Error opening input: Server returned 403 Forbidden (access denied)
+Error opening input file https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Lucia_Caminos_Video_Clip.mp4.
+Error opening input files: Server returned 403 Forbidden (access denied)
+FALLO generando clip-lucia-caminos (ver /tmp/poster-gen-errors.log)
+[https @ 0x557fbca5e680] HTTP error 403 Forbidden
+[in#0 @ 0x557fbca5de80] Error opening input: Server returned 403 Forbidden (access denied)
+Error opening input file https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Boobie_Ike_Video_Clip.mp4.
+Error opening input files: Server returned 403 Forbidden (access denied)
+FALLO generando clip-boobie-ike (ver /tmp/poster-gen-errors.log)
+[https @ 0x56042d181680] HTTP error 403 Forbidden
+[in#0 @ 0x56042d180e80] Error opening input: Server returned 403 Forbidden (access denied)
+Error opening input file https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Brian_Heder_Video_Clip.mp4.
+Error opening input files: Server returned 403 Forbidden (access denied)
+FALLO generando clip-brian-heder (ver /tmp/poster-gen-errors.log)
+[https @ 0x55e07b8eb680] HTTP error 403 Forbidden
+[in#0 @ 0x55e07b8eae80] Error opening input: Server returned 403 Forbidden (access denied)
+Error opening input file https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/DreQuan_Priest_Video_Clip.mp4.
+Error opening input files: Server returned 403 Forbidden (access denied)
+FALLO generando clip-drequan-priest (ver /tmp/poster-gen-errors.log)
+[https @ 0x55584a4ce680] HTTP error 403 Forbidden
+[in#0 @ 0x55584a4cde80] Error opening input: Server returned 403 Forbidden (access denied)
+Error opening input file https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/GTAVI_Trailer_1.mp4.
+Error opening input files: Server returned 403 Forbidden (access denied)
+FALLO generando trailer-trailer-1-anuncio (ver /tmp/poster-gen-errors.log)
+[https @ 0x5600fb377680] HTTP error 403 Forbidden
+[in#0 @ 0x5600fb376e80] Error opening input: Server returned 403 Forbidden (access denied)
+Error opening input file https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Real_Dimez_Video_Clip.mp4.
+Error opening input files: Server returned 403 Forbidden (access denied)
+FALLO generando clip-real-dimez (ver /tmp/poster-gen-errors.log)
+[https @ 0x561610d5c680] HTTP error 403 Forbidden
+[in#0 @ 0x561610d5be80] Error opening input: Server returned 403 Forbidden (access denied)
+Error opening input file https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Jason_Duval_Video_Clip.mp4.
+Error opening input files: Server returned 403 Forbidden (access denied)
+FALLO generando clip-jason-duval (ver /tmp/poster-gen-errors.log)
+[https @ 0x563275cff680] HTTP error 403 Forbidden
+[in#0 @ 0x563275cfee80] Error opening input: Server returned 403 Forbidden (access denied)
+Error opening input file https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Raul_Bautista_Video_Clip.mp4.
+Error opening input files: Server returned 403 Forbidden (access denied)
+FALLO generando clip-raul-bautista (ver /tmp/poster-gen-errors.log)
