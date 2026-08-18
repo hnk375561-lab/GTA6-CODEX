@@ -51,8 +51,21 @@ jobs:
             echo "== $id (seek ${seek}s) =="
             ffmpeg -hide_banner -loglevel warning -y \
               -reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5 \
+              -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" \
               -i "$url" -ss "$seek" -frames:v 1 -c:v libwebp -q:v 82 "$out" \
               2>> /tmp/poster-gen-errors.log
+
+            if [ ! -s "$out" ]; then
+              echo "-- retry $id via curl+ffmpeg (local file) --" >> /tmp/poster-gen-errors.log
+              tmp_mp4="/tmp/${id}.mp4"
+              curl -sL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" \
+                -e "https://gta6-codex.vercel.app/" \
+                -o "$tmp_mp4" "$url" 2>> /tmp/poster-gen-errors.log
+              if [ -s "$tmp_mp4" ]; then
+                ffmpeg -hide_banner -loglevel warning -y -i "$tmp_mp4" -ss "$seek" -frames:v 1 -c:v libwebp -q:v 82 "$out" 2>> /tmp/poster-gen-errors.log
+              fi
+              rm -f "$tmp_mp4"
+            fi
 
             if [ ! -s "$out" ]; then
               echo "FALLO generando $id (ver /tmp/poster-gen-errors.log)" | tee -a /tmp/poster-gen-errors.log
