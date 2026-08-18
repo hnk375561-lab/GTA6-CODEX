@@ -40,5 +40,12 @@
     "sourceUrl": "https://www.gtabase.com/igallery/gta-6-screenshots-trailer/gta-6-trailer-2-screen-24-1080.jpg",
     "sourceType": "secondary-reliable",
     "note": "GTA Base, pagina 'SMG' (www.gtabase.com/weapons/gta-6/smg), frame propio de GTA Base extraido del Trailer 2 oficial (confirmado por GTA Base como 'seen in the second official trailer'). Corresponde al arma de perfil MP5 usada por Lucia y Jason en la secuencia de robo bancario que la ficha metralleta.json ya identificaba como fuente (~2:09). Hay una segunda captura alternativa disponible en la misma pagina (gta-6-trailer-2-screen-22-1080.jpg) por si se prefiere otro angulo."
+  },
+  {
+    "category": "armas",
+    "slug": "bate-beisbol",
+    "sourceUrl": "https://www.gtabase.com/igallery/gta-6-screens/port-gellhorn-02-1080.jpg",
+    "sourceType": "secondary-reliable",
+    "note": "GTA Base, pagina 'Baseball Bat' (www.gtabase.com/gta-6/weapons/baseball-bat), que enlaza esta captura oficial de Port Gellhorn como evidencia de la aparicion del bate. Coincide con el primarySource ya documentado en bate-beisbol.json (NPC con bate en captura oficial de Port Gellhorn, cobertura de ScreenRant) y con la descripcion independiente de SixWiki ('a Port Gellhorn heavy shoulders a baseball bat'). Se mantiene el nivel 'especulativo' de la ficha: el bate esta en manos de un NPC de ambientacion, no confirmado como recogible por el jugador."
   }
 ]
