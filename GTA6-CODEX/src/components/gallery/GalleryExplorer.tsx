@@ -225,45 +225,49 @@ function GalleryTile({
       onClick={onOpen}
       data-featured={featured}
       className={cn(
-        'gallery-tile group relative block h-full w-full overflow-hidden rounded-xl border border-gta-border bg-gta-card text-left',
-        featured ? 'col-span-2 sm:row-span-2' : undefined
+        'gallery-tile group relative block h-full w-full overflow-hidden rounded-xl border border-gta-border bg-gta-card text-left flex flex-col'
       )}
       aria-label={`Ampliar imagen: ${item.title}`}
     >
-      {item.kind === 'video' && item.src ? (
-        // eslint-disable-next-line @next/next/no-img-element -- miniatura pública de i.ytimg.com (YouTube), fuera del dominio propio configurado en next/image
-        <img
-          src={item.src}
-          alt={item.alt}
-          loading="lazy"
-          className="gallery-tile-image absolute inset-0 h-full w-full object-cover"
-        />
-      ) : item.kind === 'video' ? (
-        <div className="absolute inset-0 bg-gradient-to-br from-gta-surface-elevated via-gta-darker to-black" aria-hidden="true" />
-      ) : (
-        <Image
-          src={item.src}
-          alt={item.alt}
-          fill
-          sizes={featured ? '(min-width: 1920px) 1000px, (min-width: 1536px) 800px, (min-width: 1280px) 700px, (min-width: 1024px) 600px, (min-width: 768px) 90vw, 100vw' : '(min-width: 1920px) 500px, (min-width: 1536px) 450px, (min-width: 1280px) 400px, (min-width: 1024px) 350px, (min-width: 768px) 300px, 90vw'}
-          className="gallery-tile-image object-cover"
-          quality={90}
-        />
-      )}
-      <div className="gallery-tile-overlay" aria-hidden="true" />
-      {item.kind === 'video' && (
-        <span
-          className="absolute inset-0 flex items-center justify-center bg-black/20"
-          aria-hidden="true"
-        >
-          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-black/50 text-white backdrop-blur-sm">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z" />
-            </svg>
+      {/* Contenedor de imagen - ocupa espacio flexible */}
+      <div className="relative flex-1 w-full overflow-hidden flex items-center justify-center">
+        {item.kind === 'video' && item.src ? (
+          // eslint-disable-next-line @next/next/no-img-element -- miniatura pública de i.ytimg.com (YouTube), fuera del dominio propio configurado en next/image
+          <img
+            src={item.src}
+            alt={item.alt}
+            loading="lazy"
+            className="gallery-tile-image w-full h-full"
+          />
+        ) : item.kind === 'video' ? (
+          <div className="w-full h-full bg-gradient-to-br from-gta-surface-elevated via-gta-darker to-black" aria-hidden="true" />
+        ) : (
+          <Image
+            src={item.src}
+            alt={item.alt}
+            fill
+            sizes={featured ? '(min-width: 1920px) 1000px, (min-width: 1536px) 800px, (min-width: 1280px) 700px, (min-width: 1024px) 600px, (min-width: 768px) 90vw, 100vw' : '(min-width: 1920px) 500px, (min-width: 1536px) 450px, (min-width: 1280px) 400px, (min-width: 1024px) 350px, (min-width: 768px) 300px, 90vw'}
+            className="gallery-tile-image"
+            quality={90}
+          />
+        )}
+        <div className="gallery-tile-overlay absolute inset-0" aria-hidden="true" />
+        {item.kind === 'video' && (
+          <span
+            className="absolute inset-0 flex items-center justify-center bg-black/20"
+            aria-hidden="true"
+          >
+            <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-black/50 text-white backdrop-blur-sm">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </span>
           </span>
-        </span>
-      )}
-      <div className="absolute inset-x-0 bottom-0 translate-y-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+        )}
+      </div>
+
+      {/* Contenedor de texto - siempre visible */}
+      <div className="px-4 py-3 bg-gradient-to-t from-gta-darker/80 to-transparent">
         <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
           {item.status && (
             <Badge variant="status" status={item.status}>
@@ -272,10 +276,11 @@ function GalleryTile({
           )}
           <Badge variant="tag">{item.categoryLabel}</Badge>
         </div>
-        <p className="font-display text-sm font-semibold leading-tight text-gta-text drop-shadow-md">
+        <p className="font-display text-xs font-semibold leading-tight text-gta-text drop-shadow-md line-clamp-2">
           {item.title}
         </p>
       </div>
+
       <div className="gallery-tile-zoom-icon" aria-hidden="true">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="7" />
