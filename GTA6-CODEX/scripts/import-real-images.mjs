@@ -4,9 +4,21 @@
  * ============================================================
  * Descarga las imágenes REALES listadas en real-images-manifest.json
  * (fuentes oficiales de Rockstar o secundarias confiables, ya
- * investigadas y verificadas manualmente) y las convierte al mismo
- * formato que usa el resto del sitio: WebP, 1600px de lado mayor,
- * calidad 82, en public/images/entities/{categoria}/{slug}.webp
+ * investigadas y verificadas manualmente) y las convierte a WebP,
+ * hasta 3840px de lado mayor (4K real, nunca upscaleado — ver
+ * `withoutEnlargement`), calidad 92, en
+ * public/images/entities/{categoria}/{slug}.webp
+ *
+ * IMPORTANTE (19 ago 2026): el techo era antes 1600x900/q82, muy por
+ * debajo de las fuentes oficiales reales (muchas a 3840px+). Eso
+ * aplastaba capturas 4K a menos de 1600px antes de que llegaran al
+ * sitio. Se sube el techo a 3840x2160/q92. `fit: 'inside'` +
+ * `withoutEnlargement: true` significa que esto NUNCA infla una
+ * imagen más allá de su resolución real de origen (a diferencia del
+ * pipeline de "súper-resolución" IA que se probó y revirtió el mismo
+ * día — ver commits 6e20cfd/ea49655 y sus reverts 75e7b2b/180bb7a —
+ * que sí inventaba píxeles falsos). Acá solo se deja pasar más detalle
+ * real cuando la fuente lo tiene.
  *
  * A diferencia de process-images.mjs (que solo procesa archivos ya
  * puestos a mano en incoming-images/), este script SÍ descarga de
@@ -85,8 +97,8 @@ async function main() {
       const buf = await downloadBuffer(sourceUrl)
 
       const webp = await sharp(buf)
-        .resize({ width: 1600, height: 900, fit: 'inside', withoutEnlargement: true })
-        .webp({ quality: 82 })
+        .resize({ width: 3840, height: 2160, fit: 'inside', withoutEnlargement: true })
+        .webp({ quality: 92 })
         .toBuffer()
 
       if (APPLY) {

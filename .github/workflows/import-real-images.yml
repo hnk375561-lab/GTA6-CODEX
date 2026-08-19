@@ -29,9 +29,14 @@ jobs:
         working-directory: GTA6-CODEX
         run: npm install --no-save sharp
 
+      # --overwrite: el manifest es curado a mano (fuentes ya verificadas
+      # una por una), asi que siempre corresponde re-generar si cambia el
+      # pipeline (ver scripts/import-real-images.mjs, techo subido a
+      # 3840x2160/q92 el 19 ago 2026 — antes 1600x900/q82 aplastaba
+      # capturas 4K reales antes de llegar al sitio).
       - name: Run import script
         working-directory: GTA6-CODEX
-        run: node scripts/import-real-images.mjs --apply
+        run: node scripts/import-real-images.mjs --apply --overwrite
 
       - name: Commit and push
         if: always()
