@@ -233,7 +233,7 @@ export async function TrailerScenes({ trailer }: TrailerScenesProps) {
                                           className="h-6 w-6 rounded-full"
                                         />
                                         <span className="text-xs text-gta-text-secondary transition-colors group-hover:text-gta-text">
-                                          <span className="text-gta-text-secondary/70">{relation}:</span>{' '}
+                                          <span className="text-gta-text-secondary/80">{relation}:</span>{' '}
                                           <span className="font-medium text-gta-text">{entity.title}</span>
                                         </span>
                                       </Link>

@@ -163,7 +163,7 @@ export function EntityImage({ entity, image, variant = 'thumbnail', className }:
             <CategoryGlyph type={entity.type} size={isAvatar ? 'sm' : 'default'} />
           </div>
           {!isAvatar && (
-            <span className="relative text-[10px] font-medium uppercase tracking-wider text-gta-text-secondary/70">
+            <span className="relative text-[10px] font-medium uppercase tracking-wider text-gta-text-secondary/80">
               {CATEGORY_FALLBACK_LABEL[entity.type] ?? 'Sin imagen verificada'}
             </span>
           )}

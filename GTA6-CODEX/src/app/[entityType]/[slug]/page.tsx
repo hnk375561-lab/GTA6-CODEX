@@ -153,7 +153,7 @@ export default async function EntityPage({ params }: PageProps) {
             {entity.title}
           </span>
         </div>
-        <code className="hidden shrink-0 font-mono text-[11px] text-gta-text-secondary/60 sm:inline-block">
+        <code className="hidden shrink-0 font-mono text-[11px] text-gta-text-secondary/80 sm:inline-block">
           {type}/{entity.slug}
         </code>
       </nav>

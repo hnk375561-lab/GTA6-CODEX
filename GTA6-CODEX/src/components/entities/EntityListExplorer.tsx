@@ -293,7 +293,7 @@ export function EntityListExplorer({
                 )}
               >
                 {key === 'todos' ? 'Todos' : STATUS_LABELS[key]}
-                <span className="ml-1.5 text-gta-text-secondary/60">{counts[key]}</span>
+                <span className="ml-1.5 text-gta-text-secondary/80">{counts[key]}</span>
               </button>
             ))}
           </div>
@@ -321,7 +321,7 @@ export function EntityListExplorer({
                   )}
                 >
                   {value.replace(/-/g, ' ')}
-                  <span className="ml-1 text-gta-text-secondary/60">{count}</span>
+                  <span className="ml-1 text-gta-text-secondary/80">{count}</span>
                 </button>
               ))}
             </>
@@ -351,7 +351,7 @@ export function EntityListExplorer({
                   )}
                 >
                   {tag.replace(/-/g, ' ')}
-                  <span className="ml-1 text-gta-text-secondary/60">{count}</span>
+                  <span className="ml-1 text-gta-text-secondary/80">{count}</span>
                 </button>
               ))}
             </>
