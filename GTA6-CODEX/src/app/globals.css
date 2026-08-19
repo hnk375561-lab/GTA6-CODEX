@@ -514,6 +514,25 @@ a:hover .logo-mark {
   animation-play-state: paused;
 }
 
+/* Variante SIN animación para el retrato "hero" de la ficha (EntityImage
+   variant="portrait") y para el visor ampliado. El "breathing" zoom +
+   los filtros de brillo/saturación de `.card-media-image` están pensados
+   para las cards chicas de un listado (decorativo, imagen siempre en
+   movimiento); sobre la pieza más grande y más mirada del sitio —el
+   retrato de personaje/vehículo/ubicación en su propia página, la que
+   además se puede ampliar en el lightbox— ese reescalado y esos filtros
+   continuos hacen que la imagen nunca quede quieta en su resolución
+   nativa: el navegador la está recomponiendo todo el tiempo, lo que en
+   la práctica se percibe como falta de nitidez (más aún al hacer hover,
+   con scale(1.09) + filtros encima). Acá priorizamos que se vea fija y
+   nítida por sobre el efecto ambiental. */
+.card-media-image-static {
+  transform: none;
+  animation: none;
+  transition: filter var(--transition-base);
+  will-change: auto;
+}
+
 /* Avatares (relaciones, resultados de búsqueda, escenas de trailer):
    demasiado chicos para el "breathing" ambiental — solo zoom en hover,
    mismo criterio liviano que el resto de la UI compacta del sitio. */

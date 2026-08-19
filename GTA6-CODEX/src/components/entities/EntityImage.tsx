@@ -166,7 +166,7 @@ export function EntityImage({ entity, image, variant = 'thumbnail', className }:
               src={resolved.src}
               alt={resolved.alt}
               loading="lazy"
-              className="card-media-image absolute inset-0 h-full w-full object-cover"
+              className={cn('absolute inset-0 h-full w-full object-cover', variant === 'portrait' ? 'card-media-image-static' : 'card-media-image')}
             />
           ) : (
             <Image
@@ -175,7 +175,7 @@ export function EntityImage({ entity, image, variant = 'thumbnail', className }:
               fill
               sizes={SIZES[variant]}
               quality={QUALITY[variant]}
-              className="card-media-image object-cover"
+              className={cn('object-cover', variant === 'portrait' ? 'card-media-image-static' : 'card-media-image')}
             />
           )}
           {!isAvatar && <div className="card-media-sheen" aria-hidden="true" />}
