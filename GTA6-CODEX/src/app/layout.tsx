@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
+import { TrendingBar } from '@/components/layout/TrendingBar'
 import { Footer } from '@/components/layout/Footer'
 import { WebGLBackground } from '@/components/webgl/WebGLBackground'
 import { SceneAmbientBridge } from '@/components/webgl/SceneAmbientBridge'
@@ -90,6 +91,7 @@ export default function RootLayout({
         <div className="gta-atmosphere" aria-hidden="true" />
         <div className="relative z-10 flex min-h-screen flex-1 flex-col">
           <Header />
+          <TrendingBar />
           <main id="main-content" className="flex-1">
             {children}
           </main>
