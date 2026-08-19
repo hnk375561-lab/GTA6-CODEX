@@ -11,6 +11,12 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel
 // GA4 solo se activa si hay un ID real configurado. Sin esto, un build sin
 // NEXT_PUBLIC_GA_ID enviaría eventos a un ID placeholder inexistente.
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID
+// Google AdSense: mismo criterio que GA4. No se activa hasta que exista
+// NEXT_PUBLIC_ADSENSE_CLIENT_ID (formato "ca-pub-XXXXXXXXXXXXXXXX"), que se
+// obtiene al aprobar la cuenta de AdSense. Cargar esto sin una cuenta
+// aprobada no hace nada útil y solo suma peso a la página, por eso queda
+// condicionado igual que GA4.
+const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -52,6 +58,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
+  other: process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID
+    ? { 'google-adsense-account': process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID }
+    : undefined,
 }
 
 export default function RootLayout({
@@ -83,6 +92,14 @@ export default function RootLayout({
               `}
             </Script>
           </>
+        )}
+        {ADSENSE_CLIENT_ID && (
+          <Script
+            async
+            strategy="afterInteractive"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+            crossOrigin="anonymous"
+          />
         )}
         <WebGLBackground />
         <SceneAmbientBridge />
