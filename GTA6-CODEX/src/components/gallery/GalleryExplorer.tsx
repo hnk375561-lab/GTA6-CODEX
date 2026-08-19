@@ -184,7 +184,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-2 gap-[0.85rem] sm:grid-cols-3 sm:gap-4 lg:grid-cols-5 lg:gap-[1.1rem]">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-5 lg:gap-2.5">
           {filtered.map((item, i) => (
             <Reveal
               key={item.id}
