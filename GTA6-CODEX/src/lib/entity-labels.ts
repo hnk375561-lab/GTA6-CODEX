@@ -1,4 +1,5 @@
 import { EntityType } from '@/types'
+import type { InformationStatus } from '@/types'
 
 /**
  * Labels legibles por tipo de entidad. Mismo texto que ya usan
@@ -43,3 +44,16 @@ export const ENTITY_TYPE_GROUP_ORDER: EntityType[] = [
   EntityType.NEWS,
   EntityType.GUIDE,
 ]
+
+/**
+ * Label legible del estado editorial (`InformationStatus`). Antes vivía
+ * copiado idéntico en 4 componentes distintos (`GalleryExplorer`,
+ * `EntityListExplorer`, `EntityCard`, `TrailerScenes`); se consolida acá
+ * junto al resto de labels compartidos para que un cambio de texto futuro
+ * (ej. "Nuestro" -> "Especulación editorial") se haga en un solo lugar.
+ */
+export const STATUS_LABELS: Record<InformationStatus, string> = {
+  confirmado: 'Confirmado',
+  rumor: 'Rumor',
+  nuestro: 'Nuestro',
+}

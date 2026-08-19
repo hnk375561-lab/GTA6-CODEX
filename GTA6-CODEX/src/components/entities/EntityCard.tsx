@@ -8,15 +8,9 @@ import { Badge } from '@/components/ui/Badge'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { EntityImage } from '@/components/entities/EntityImage'
 import type { ResolvedDisplayImage } from '@/lib/images'
-import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
+import { ENTITY_TYPE_LABELS, STATUS_LABELS } from '@/lib/entity-labels'
 import { getGenericQuickFacts } from '@/lib/entity-fields'
 import { cn } from '@/lib/utils'
-
-const STATUS_LABELS = {
-  confirmado: 'Confirmado',
-  rumor: 'Rumor',
-  nuestro: 'Nuestro',
-} as const
 
 function formatTrailerDuration(seconds?: number): string | null {
   if (!seconds || seconds <= 0) return null

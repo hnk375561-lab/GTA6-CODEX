@@ -20,7 +20,7 @@ import path from 'node:path'
 import os from 'node:os'
 import { spawnSync } from 'node:child_process'
 import { pathToFileURL } from 'node:url'
-import { normalize, matchEntity, resolveMatch, loadEntityIndex, CATEGORIES, isValidSlug } from './process-images.mjs'
+import { normalize, matchEntity, resolveMatch, CATEGORIES, isValidSlug } from './process-images.mjs'
 
 /** Construye una entidad de fixture con el mismo shape que loadEntityIndex() */
 function entity(slug, type, title) {

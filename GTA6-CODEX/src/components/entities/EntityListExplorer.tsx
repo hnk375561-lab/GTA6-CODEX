@@ -9,12 +9,7 @@ import { EntityCard } from '@/components/entities/EntityCard'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { cn } from '@/lib/utils'
-
-const STATUS_LABELS = {
-  confirmado: 'Confirmado',
-  rumor: 'Rumor',
-  nuestro: 'Nuestro',
-} as const
+import { STATUS_LABELS } from '@/lib/entity-labels'
 
 type StatusFilter = 'todos' | keyof typeof STATUS_LABELS
 

@@ -6,7 +6,7 @@ import { EntityImage } from '@/components/entities/EntityImage'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
-import { ENTITY_TYPE_LABELS, ENTITY_TYPE_GROUP_ORDER } from '@/lib/entity-labels'
+import { ENTITY_TYPE_LABELS, ENTITY_TYPE_GROUP_ORDER, STATUS_LABELS } from '@/lib/entity-labels'
 
 interface TrailerScenesProps {
   trailer: Trailer
@@ -16,18 +16,6 @@ interface ResolvedLink {
   entity: Entity
   relation: string
 }
-
-/** Mismo texto que ya usan EntityCard/RelationsPanel/etc. (Fase 8, punto
- *  10 de la auditoría original) para el badge de estado — acá se duplica
- *  localmente en vez de importarlo porque ningún archivo del proyecto lo
- *  exporta hoy (cada componente lo define local, ver EntityCard.tsx,
- *  EntityListExplorer.tsx, GalleryExplorer.tsx, page.tsx). Se sigue el
- *  mismo patrón ya establecido para no tocar esos archivos. */
-const STATUS_LABELS = {
-  confirmado: 'Confirmado',
-  rumor: 'Rumor',
-  nuestro: 'Nuestro',
-} as const
 
 /**
  * Resuelve las `relations` de una escena contra el contenido real,
