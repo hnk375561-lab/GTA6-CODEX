@@ -92,13 +92,36 @@ export function Footer() {
                   Trailers
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/privacidad"
+                  className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
+                >
+                  Privacidad
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terminos"
+                  className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
+                >
+                  Términos de Uso
+                </Link>
+              </li>
             </ul>
           </div>
         </Reveal>
 
-        {/* Copyright */}
-        <Reveal delay={150} className="relative mt-10 pt-8 text-center text-sm text-gta-text-tertiary">
+        {/* Disclaimer + Copyright */}
+        <Reveal delay={150} className="relative mt-10 space-y-3 pt-8 text-center text-gta-text-tertiary">
           <div className="section-divider absolute inset-x-0 top-0" aria-hidden="true" />
+          <p className="mx-auto max-w-2xl text-xs leading-relaxed">
+            GTA6 Codex es un proyecto editorial independiente y no oficial. No está
+            afiliado, respaldado ni patrocinado por Rockstar Games ni Take-Two
+            Interactive Software, Inc. Grand Theft Auto, GTA y las imágenes,
+            personajes y marcas relacionadas son propiedad de sus respectivos
+            dueños y se usan aquí con fines informativos y de comentario editorial.
+          </p>
           <p className="font-mono text-xs tracking-wide">
             © {currentYear} GTA6 Codex. Not affiliated with Rockstar Games or Take-Two Interactive.
           </p>
