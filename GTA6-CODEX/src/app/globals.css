@@ -1647,7 +1647,7 @@ a:hover .logo-mark {
     border-color var(--transition-base);
   /* Forzar aspect ratio con CSS puro - 4:5 por defecto */
   aspect-ratio: 4 / 5;
-  min-height: 300px;
+  min-height: 200px;
   position: relative;
   display: flex;
   align-items: center;
@@ -1657,17 +1657,19 @@ a:hover .logo-mark {
 /* Featured items: 1:1 aspect ratio */
 .gallery-tile[data-featured="true"] {
   aspect-ratio: 1 / 1;
+  border-width: 2px;
+  border-color: color-mix(in srgb, var(--c-pink) 40%, var(--gta-border-strong, #453163));
 }
 
 @media (min-width: 640px) {
   .gallery-tile {
-    min-height: 350px;
+    min-height: 250px;
   }
 }
 
 @media (min-width: 1024px) {
   .gallery-tile {
-    min-height: 400px;
+    min-height: 280px;
   }
 }
 
