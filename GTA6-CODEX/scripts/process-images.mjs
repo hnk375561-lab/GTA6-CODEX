@@ -375,7 +375,7 @@ async function main() {
         const pipeline = image
 
         tempDestPath = path.join(destDir, `.${entity.slug}.${process.pid}-${Date.now()}.webp.tmp`)
-        await pipeline.webp({ quality: WEBP_QUALITY }).toFile(tempDestPath)
+        await pipeline.webp({ quality: WEBP_QUALITY, lossless: true, alphaQuality: 100 }).toFile(tempDestPath)
         fs.renameSync(tempDestPath, destPath) // rename es atómico dentro del mismo filesystem
         tempDestPath = null // ya no queda temp que limpiar
         fs.unlinkSync(filePath)
