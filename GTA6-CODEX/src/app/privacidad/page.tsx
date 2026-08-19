@@ -76,8 +76,14 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold text-gta-text">5. Tus derechos</h2>
           <p>
             Podés solicitar información sobre los datos que tenemos asociados a tu
-            visita, o pedir que dejemos de procesarlos, escribiéndonos por los
-            medios de contacto listados en el sitio.
+            visita, o pedir que dejemos de procesarlos, escribiéndonos a{' '}
+            <a
+              href="mailto:uruspotcdu@gmail.com"
+              className="link-underline text-gta-accent-strong transition-colors hover:text-gta-accent"
+            >
+              uruspotcdu@gmail.com
+            </a>
+            .
           </p>
         </section>
 

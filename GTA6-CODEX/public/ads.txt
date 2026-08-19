@@ -1,3 +1,17 @@
 # Este archivo debe reemplazarse por el contenido real que te da tu red publicitaria.
-# Ejemplo para Google AdSense (reemplazar pub-0000000000000000 por tu Publisher ID real):
+#
+# Pasos para AdSense:
+# 1. Andá a https://www.google.com/adsense → "Comenzar ahora" → creá cuenta con
+#    uruspotcdu@gmail.com (o el email que uses para el sitio).
+# 2. Agregá el sitio (dominio de producción, no el de Vercel de preview).
+# 3. Google te da un Publisher ID con formato pub-0000000000000000. Cuando lo
+#    tengas, configurá la variable de entorno NEXT_PUBLIC_ADSENSE_CLIENT_ID
+#    (formato "ca-pub-0000000000000000") en Vercel → Settings → Environment
+#    Variables, y reemplazá la línea de ejemplo de abajo por la real:
+#
 # google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+#
+# 4. Esperá la revisión de Google (puede tardar días/semanas). Con las
+#    páginas de Privacidad, Términos, contacto y el disclaimer ya en el
+#    sitio, y sin key art oficial de Rockstar como branding, el sitio
+#    cumple los requisitos básicos de contenido de AdSense.

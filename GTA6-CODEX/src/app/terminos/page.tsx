@@ -54,8 +54,14 @@ export default function TermsPage() {
             logos y material promocional que pertenecen a Rockstar Games o
             Take-Two se usan con fines informativos y de comentario editorial,
             citando la fuente cuando corresponde. Si sos titular de derechos
-            sobre algún material y querés que lo retiremos, escribinos y lo
-            resolvemos rápido.
+            sobre algún material y querés que lo retiremos, escribinos a{' '}
+            <a
+              href="mailto:uruspotcdu@gmail.com"
+              className="link-underline text-gta-accent-strong transition-colors hover:text-gta-accent"
+            >
+              uruspotcdu@gmail.com
+            </a>{' '}
+            y lo resolvemos rápido.
           </p>
         </section>
 
@@ -92,7 +98,14 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-gta-text">7. Contacto</h2>
           <p>
             Para consultas, reportes de errores o solicitudes de retiro de
-            contenido, usá los medios de contacto listados en el sitio.
+            contenido, escribinos a{' '}
+            <a
+              href="mailto:uruspotcdu@gmail.com"
+              className="link-underline text-gta-accent-strong transition-colors hover:text-gta-accent"
+            >
+              uruspotcdu@gmail.com
+            </a>
+            .
           </p>
         </section>
       </div>

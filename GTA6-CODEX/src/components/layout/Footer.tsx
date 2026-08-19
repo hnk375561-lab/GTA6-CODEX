@@ -108,6 +108,14 @@ export function Footer() {
                   Términos de Uso
                 </Link>
               </li>
+              <li>
+                <a
+                  href="mailto:uruspotcdu@gmail.com"
+                  className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
+                >
+                  Contacto
+                </a>
+              </li>
             </ul>
           </div>
         </Reveal>
