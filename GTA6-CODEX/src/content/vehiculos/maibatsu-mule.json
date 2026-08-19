@@ -1,0 +1,29 @@
+{
+  "slug": "maibatsu-mule",
+  "type": "vehiculos",
+  "title": "Maibatsu Mule",
+  "description": "Camión de caja cerrada de Maibatsu para reparto local, confirmado como vehículo de tráfico comercial en GTA VI.",
+  "content": "El Maibatsu Mule es un camión de caja cerrada mediano, presente en la saga GTA desde Vice City (2002), donde ya cumplía el mismo rol de vehículo de reparto local. En GTA VI regresa como parte de la flota de vehículos comerciales que pueblan las calles de Leonida, junto al Yankee y al Benson.\n\nSu diseño está inspirado en camiones de caja tipo Ford E-350, coherente con el catálogo de vehículos de trabajo de la saga. Aparece documentado como retorno confirmado en el catálogo de vehículos de GTA VI recopilado a partir de tráilers y material promocional oficial.",
+  "manufacturer": "Maibatsu",
+  "class": "Camión de reparto",
+  "status": "confirmado",
+  "tags": [
+    "maibatsu",
+    "camion",
+    "reparto",
+    "trafico",
+    "regreso"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-19T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — tráilers y material promocional oficial de GTA VI (vehículo de tráfico comercial)",
+    "secondarySource": "GTA Intel ('All 198 Confirmed GTA 6 Vehicles') y GTABites, que documentan el regreso del Mule como camión de caja cerrada",
+    "note": "Aparición como vehículo de tráfico de fondo; sin escena dedicada. El modelo es un retorno directo de entregas anteriores de la saga (desde GTA Vice City), lo que facilita su identificación en material de fondo."
+  },
+  "relations": [],
+  "seoTitle": "Maibatsu Mule — Vehículo de GTA 6",
+  "seoDescription": "Maibatsu Mule, camión de caja cerrada para reparto local, confirmado como vehículo de tráfico comercial en GTA VI."
+}
