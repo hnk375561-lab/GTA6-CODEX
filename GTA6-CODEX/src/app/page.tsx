@@ -2,7 +2,12 @@ import Link from 'next/link'
 import type { CSSProperties } from 'react'
 import type { Metadata } from 'next'
 import { EntityType } from '@/types'
-import { getFeaturedEntities, getEntityCount, getEntityCountsByType } from '@/lib/entities'
+import {
+  getFeaturedEntities,
+  getEntityCount,
+  getEntityCountsByType,
+  getEntitiesByType,
+} from '@/lib/entities'
 import { getCharacterClipUrl, resolveEntityDisplayImage } from '@/lib/media'
 import { getBidirectionalRelationCount } from '@/lib/relations'
 import { generateHomepageMetadata, generateBreadcrumbJsonLd } from '@/lib/seo'
@@ -80,12 +85,63 @@ const CATEGORY_ACCENT: Record<EntityType, string> = {
   [EntityType.OBJECT]: '#f0c274',
 }
 
+/**
+ * Explicación de los 4 niveles de evidencia que ya usa el sitio a nivel de
+ * ficha individual (ver `EvidenceBlock.tsx`), resumida acá para que el
+ * criterio editorial del proyecto —su diferencial real frente a un wiki
+ * genérico— sea visible desde la home y no recién al entrar a una entidad.
+ * Mismo vocabulario e iconografía (✓ ◎ ◈ ?) que `EvidenceBlock`, para que
+ * un visitante reconozca el badge cuando lo vea después en una ficha.
+ */
+const EVIDENCE_LEVELS: Array<{
+  icon: string
+  label: string
+  description: string
+  className: string
+}> = [
+  {
+    icon: '✓',
+    label: 'Oficial',
+    description: 'Confirmado por Rockstar Games en un comunicado, tráiler o material propio.',
+    className: 'border-emerald-400/25 bg-emerald-500/10 text-emerald-300',
+  },
+  {
+    icon: '◎',
+    label: 'Identificación visual',
+    description: 'Visible en material oficial, aunque sin confirmación textual explícita.',
+    className: 'border-emerald-400/20 bg-emerald-500/10 text-emerald-300',
+  },
+  {
+    icon: '◈',
+    label: 'Respaldado',
+    description: 'Sin confirmación oficial directa, pero sostenido por fuentes secundarias solventes.',
+    className: 'border-gta-accent-orange/25 bg-gta-accent-orange/10 text-gta-accent-orange',
+  },
+  {
+    icon: '?',
+    label: 'Especulativo',
+    description: 'Teoría o rumor razonable, marcado como tal, sin evidencia sólida detrás — todavía.',
+    className: 'border-gta-accent-warning/25 bg-gta-accent-warning/10 text-gta-accent-warning',
+  },
+]
+
 export default async function HomePage() {
-  const [featured, totalCount, countsByType] = await Promise.all([
+  const [featured, totalCount, countsByType, allNews] = await Promise.all([
     getFeaturedEntities(6),
     getEntityCount(),
     getEntityCountsByType(),
+    getEntitiesByType(EntityType.NEWS),
   ])
+
+  // Últimas 3 noticias por fecha real del evento (`createdAt`), no por
+  // orden alfabético de `getEntitiesByType` — la portada de "Últimas
+  // noticias" debe reflejar la cronología del desarrollo, no el título.
+  const latestNews = [...allNews]
+    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+    .slice(0, 3)
+  const latestNewsImages = Object.fromEntries(
+    latestNews.map((entity) => [entity.slug, resolveEntityDisplayImage(entity)])
+  )
 
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
 
@@ -244,6 +300,16 @@ export default async function HomePage() {
               )
             })}
           </div>
+
+          <Reveal className="mt-10 text-center">
+            <Link
+              href="/buscar"
+              className="link-underline inline-flex items-center gap-1.5 text-sm font-semibold text-gta-accent transition-colors hover:text-gta-accent-strong"
+            >
+              Ver las {totalCount} entradas del expediente
+              <span aria-hidden="true">→</span>
+            </Link>
+          </Reveal>
         </div>
       </SceneSection>
 
@@ -282,6 +348,112 @@ export default async function HomePage() {
           </div>
         </SceneSection>
       )}
+
+      {/* Cómo verificamos */}
+      <SceneSection sceneId="home-evidence" className="border-t border-gta-border py-16 sm:py-20">
+        <div className="container-max">
+          <Reveal className="mx-auto mb-10 max-w-2xl text-center">
+            <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+              Metodología
+            </p>
+            <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">Cómo verificamos la información</h2>
+            <p className="mt-4 text-gta-text-secondary">
+              Cada entrada del expediente lleva su propio nivel de evidencia a la vista, en vez
+              de mezclar confirmación oficial con rumor sin distinción. Así se ve en cada ficha:
+            </p>
+          </Reveal>
+
+          <div className="stagger grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {EVIDENCE_LEVELS.map((level) => (
+              <Card key={level.label} className="h-full">
+                <span
+                  className={`mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full border text-base font-semibold ${level.className}`}
+                  aria-hidden="true"
+                >
+                  {level.icon}
+                </span>
+                <p className="mb-1.5 font-semibold text-gta-text">{level.label}</p>
+                <p className="text-sm text-gta-text-secondary">{level.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </SceneSection>
+
+      {/* Últimas noticias */}
+      {latestNews.length > 0 && (
+        <SceneSection sceneId="home-news" className="border-t border-gta-border py-16 sm:py-20">
+          <div className="container-max">
+            <Reveal className="mb-10 flex items-end justify-between gap-4">
+              <div>
+                <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+                  Últimas noticias
+                </p>
+                <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">
+                  Novedades del desarrollo
+                </h2>
+              </div>
+              <Link
+                href="/noticias"
+                className="link-underline hidden shrink-0 text-sm font-semibold text-gta-accent transition-colors hover:text-gta-accent-strong sm:inline-block"
+              >
+                Ver todas las noticias
+              </Link>
+            </Reveal>
+
+            <div className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {latestNews.map((entity) => (
+                <EntityCard
+                  key={`${entity.type}-${entity.slug}`}
+                  entity={entity}
+                  image={latestNewsImages[entity.slug]}
+                />
+              ))}
+            </div>
+
+            <Reveal className="mt-8 text-center sm:hidden">
+              <Link
+                href="/noticias"
+                className="link-underline inline-flex items-center gap-1.5 text-sm font-semibold text-gta-accent transition-colors hover:text-gta-accent-strong"
+              >
+                Ver todas las noticias
+                <span aria-hidden="true">→</span>
+              </Link>
+            </Reveal>
+          </div>
+        </SceneSection>
+      )}
+
+      {/* CTA final */}
+      <SceneSection sceneId="home-cta" className="border-t border-gta-border py-16 sm:py-24">
+        <div className="container-max text-center">
+          <Reveal>
+            <div className="glass-surface mx-auto max-w-2xl rounded-2xl border border-gta-border/70 px-8 py-12 sm:px-14">
+              <h2 className="text-gradient-vice font-display text-3xl font-bold sm:text-4xl">
+                ¿Buscás algo puntual?
+              </h2>
+              <p className="mx-auto mt-4 max-w-lg text-gta-text-secondary">
+                Personajes, vehículos, misiones, ubicaciones o tráilers: todo el expediente es
+                buscable, con su nivel de evidencia siempre visible.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                <Link
+                  href="/buscar"
+                  className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
+                >
+                  Buscar en el Zona
+                </Link>
+                <Link
+                  href="/galeria"
+                  className="inline-flex items-center justify-center rounded-lg border border-gta-border bg-gta-surface/60 px-8 py-3.5 font-semibold text-gta-text transition-all hover:-translate-y-0.5 hover:border-gta-accent/50"
+                >
+                  Ver galería
+                </Link>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </SceneSection>
     </>
   )
 }
