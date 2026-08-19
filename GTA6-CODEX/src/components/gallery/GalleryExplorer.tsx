@@ -335,11 +335,17 @@ function GalleryLightbox({
     >
       <div className="gallery-lightbox-backdrop absolute inset-0" aria-hidden="true" />
 
+      {/* Controles (cerrar, prev/next) van en z-20: el panel de abajo (imagen +
+          metadata) es z-10 pero ocupa casi toda la superficie del modal, así
+          que si quedaran en el mismo nivel el panel se pinta encima (llega
+          después en el DOM) y le "roba" los clics a los botones en las
+          esquinas donde se superponen — el bug que hacía que la cruz de
+          cerrar no respondiera de forma confiable. */}
       <button
         type="button"
         onClick={onClose}
         aria-label="Cerrar visor"
-        className="glass-surface absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-gta-border text-gta-text transition-colors hover:border-gta-accent hover:text-gta-accent-strong sm:right-6 sm:top-6"
+        className="glass-surface absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-gta-border text-gta-text transition-colors hover:border-gta-accent hover:text-gta-accent-strong sm:right-6 sm:top-6"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
           <path d="M18 6 6 18M6 6l12 12" />
@@ -355,7 +361,7 @@ function GalleryLightbox({
               onPrev()
             }}
             aria-label="Imagen anterior"
-            className="glass-surface absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-gta-border text-gta-text transition-colors hover:border-gta-accent hover:text-gta-accent-strong sm:left-6"
+            className="glass-surface absolute left-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-gta-border text-gta-text transition-colors hover:border-gta-accent hover:text-gta-accent-strong sm:left-6"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m15 18-6-6 6-6" />
@@ -368,7 +374,7 @@ function GalleryLightbox({
               onNext()
             }}
             aria-label="Imagen siguiente"
-            className="glass-surface absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-gta-border text-gta-text transition-colors hover:border-gta-accent hover:text-gta-accent-strong sm:right-6"
+            className="glass-surface absolute right-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-gta-border text-gta-text transition-colors hover:border-gta-accent hover:text-gta-accent-strong sm:right-6"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m9 18 6-6-6-6" />
