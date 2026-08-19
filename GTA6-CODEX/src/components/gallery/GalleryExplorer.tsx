@@ -10,13 +10,8 @@ import { Reveal } from '@/components/ui/Reveal'
 import { YouTubeEmbed } from '@/components/media/YouTubeEmbed'
 import { VideoEmbed } from '@/components/media/VideoEmbed'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
+import { STATUS_LABELS } from '@/lib/entity-labels'
 import { cn } from '@/lib/utils'
-
-const STATUS_LABELS = {
-  confirmado: 'Confirmado',
-  rumor: 'Rumor',
-  nuestro: 'Nuestro',
-} as const
 
 interface GalleryExplorerProps {
   items: GalleryItem[]

@@ -4,7 +4,7 @@ import type { Entity, Trailer } from '@/types'
 import { EntityType } from '@/types'
 import type { MediaAsset, RenderableMedia } from '@/types/media'
 import { safeParseMediaAsset } from '@/types/schemas'
-import type { ResolvedDisplayImage } from './images'
+import type { ResolvedDisplayImage, ResolvedEntityImage } from './images'
 import { getEntitiesByTypeSync } from './entities'
 import { resolveEntityImage } from './images'
 
@@ -185,23 +185,34 @@ export function getEditorialMediaForEntity(entity: Entity, limit = 12): MediaAss
     .slice(0, limit)
 }
 
+/**
+ * Construye el `MediaAsset` de "retrato" a partir de una entidad y su
+ * imagen local ya resuelta. Compartido entre el retrato de la entidad
+ * principal y los retratos de sus entidades relacionadas en
+ * `getMediaForEntity`, que antes duplicaban este mismo objeto letra por
+ * letra salvo por `role` (retrato vs. relacionado).
+ */
+function buildPortraitAsset(entity: Entity, image: ResolvedEntityImage, role: 'retrato' | 'relacionado'): MediaAsset {
+  return {
+    id: `entity-portrait-${entity.type}-${entity.slug}`,
+    kind: 'image',
+    title: entity.title,
+    description: entity.description,
+    status: entity.status === 'confirmado' ? 'verified' : 'unverified',
+    credit: entity.image?.credit || entity.image?.sourceName || 'Material de entidad',
+    source: { provider: 'Archivo local', type: 'local', localPath: image.src, retrievedAt: entity.updatedAt },
+    relations: { entities: [{ entityType: entity.type, entitySlug: entity.slug, role }] },
+    createdAt: entity.createdAt,
+    updatedAt: entity.updatedAt,
+  }
+}
+
 /** Media de ficha: retrato local, assets editoriales y retratos relacionados. */
 export function getMediaForEntity(entity: Entity, limit = 12): MediaAsset[] {
   const items: MediaAsset[] = []
   const image = resolveEntityImage(entity)
   if (image) {
-    items.push({
-      id: `entity-portrait-${entity.type}-${entity.slug}`,
-      kind: 'image',
-      title: entity.title,
-      description: entity.description,
-      status: entity.status === 'confirmado' ? 'verified' : 'unverified',
-      credit: entity.image?.credit || entity.image?.sourceName || 'Material de entidad',
-      source: { provider: 'Archivo local', type: 'local', localPath: image.src, retrievedAt: entity.updatedAt },
-      relations: { entities: [{ entityType: entity.type, entitySlug: entity.slug, role: 'retrato' }] },
-      createdAt: entity.createdAt,
-      updatedAt: entity.updatedAt,
-    })
+    items.push(buildPortraitAsset(entity, image, 'retrato'))
   }
 
   items.push(...getEditorialMediaForEntity(entity, limit))
@@ -211,18 +222,7 @@ export function getMediaForEntity(entity: Entity, limit = 12): MediaAsset[] {
     const target = getEntitiesByTypeSync(relation.targetType).find((item) => item.slug === relation.targetSlug)
     const targetImage = target && resolveEntityImage(target)
     if (!target || !targetImage) continue
-    items.push({
-      id: `entity-portrait-${target.type}-${target.slug}`,
-      kind: 'image',
-      title: target.title,
-      description: target.description,
-      status: target.status === 'confirmado' ? 'verified' : 'unverified',
-      credit: target.image?.credit || target.image?.sourceName || 'Material de entidad',
-      source: { provider: 'Archivo local', type: 'local', localPath: targetImage.src, retrievedAt: target.updatedAt },
-      relations: { entities: [{ entityType: target.type, entitySlug: target.slug, role: 'relacionado' }] },
-      createdAt: target.createdAt,
-      updatedAt: target.updatedAt,
-    })
+    items.push(buildPortraitAsset(target, targetImage, 'relacionado'))
   }
   return items.slice(0, limit)
 }

@@ -18,6 +18,7 @@
     "verify:media": "node scripts/verify-media-integrity.mjs",
     "test:media": "node --test scripts/verify-media-integrity.test.mjs",
     "verify:tailwind": "node scripts/verify-tailwind-config.mjs",
+    "check:unused": "knip",
     "sync:media": "node scripts/media-sync.mjs"
   },
   "dependencies": {
@@ -43,6 +44,7 @@
     "autoprefixer": "^10.4.16",
     "eslint": "^8.55.0",
     "eslint-config-next": "^15.0.0",
+    "knip": "^6.32.2",
     "postcss": "^8.4.32",
     "sharp": "^0.35.3",
     "tailwindcss": "^3.4.0"
