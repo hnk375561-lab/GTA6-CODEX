@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import { Reveal } from '@/components/ui/Reveal'
 import { GridPattern } from '@/components/ui/GridPattern'
+import { HeroSceneSVG } from '@/components/layout/HeroSceneSVG'
 
 interface GalleryHeroProps {
   total: number
@@ -8,24 +8,19 @@ interface GalleryHeroProps {
 }
 
 /**
- * Header cinematográfico de /galeria: key art real de portada como fondo
- * (mismo archivo que usa RotatingHeroBackground, aquí estático y con más
- * contraste porque no rota) + degradé "Leonida Nights" + grid técnico
- * sutil, para que la galería abra con la misma fuerza fotográfica que
+ * Header cinematográfico de /galeria: escena SVG original (ver
+ * HeroSceneSVG — reemplaza el key art oficial de Rockstar que usaba
+ * antes este componente) + degradé "Leonida Nights" + grid técnico
+ * sutil, para que la galería abra con la misma fuerza visual que
  * promete el contenido de abajo, en vez de un título plano sobre fondo liso.
  */
 export function GalleryHero({ total, categoryCount }: GalleryHeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-gta-border">
       <div className="absolute inset-0" aria-hidden="true">
-        <Image
-          src="/images/heroes/hero-gta6-boxart-sunset.webp"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          quality={90}
-          className="object-cover object-[50%_30%] opacity-45"
+        <HeroSceneSVG
+          variant="cyan"
+          className="absolute inset-0 h-full w-full object-cover opacity-45"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-gta-dark/60 via-gta-dark/85 to-gta-dark" />
         <div className="absolute inset-0 bg-gradient-to-r from-gta-dark/70 via-transparent to-gta-dark/40" />
