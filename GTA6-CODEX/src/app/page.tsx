@@ -9,6 +9,7 @@ import { generateHomepageMetadata, generateBreadcrumbJsonLd } from '@/lib/seo'
 import { Card } from '@/components/ui/Card'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
+import { CountUp } from '@/components/ui/CountUp'
 import { CategoryCardMedia } from '@/components/ui/CategoryCardMedia'
 import { EntityCard } from '@/components/entities/EntityCard'
 import { getCategoryPreviewImages } from '@/lib/images'
@@ -27,6 +28,20 @@ export async function generateMetadata(): Promise<Metadata> {
  * objetos, noticias, guías) después, en el mismo orden que ya usa el menú
  * de navegación (`Header.tsx` / `Footer.tsx`).
  */
+/**
+ * Los 4 tipos que se destacan en el stat strip del hero — mismo criterio
+ * que el mockup original ("Vehicles / Characters / Locations /
+ * Businesses" al pie), pero alimentado por `countsByType` real en vez de
+ * números hardcodeados, y con el total del sitio (`totalCount`) como
+ * quinto valor destacado en el color de acento.
+ */
+const HERO_STAT_TYPES: EntityType[] = [
+  EntityType.CHARACTER,
+  EntityType.VEHICLE,
+  EntityType.LOCATION,
+  EntityType.BUSINESS,
+]
+
 const CATEGORY_ORDER: EntityType[] = [
   EntityType.CHARACTER,
   EntityType.LOCATION,
@@ -141,9 +156,27 @@ export default async function HomePage() {
           </Reveal>
 
           <Reveal delay={250}>
-            <p className="mt-8 text-sm text-gta-text-tertiary">
-              {totalCount} {totalCount === 1 ? 'entrada documentada' : 'entradas documentadas'}
-            </p>
+            <div className="glass-surface mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 rounded-xl border border-gta-border/70 px-8 py-5">
+              {HERO_STAT_TYPES.map((type) => (
+                <div key={type} className="flex flex-col items-center gap-0.5 px-2">
+                  <span className="font-display text-2xl font-bold text-gta-text sm:text-3xl">
+                    <CountUp end={countsByType[type] ?? 0} />
+                  </span>
+                  <span className="text-xs uppercase tracking-[0.15em] text-gta-text-tertiary">
+                    {ENTITY_TYPE_LABELS[type]}
+                  </span>
+                </div>
+              ))}
+              <div className="hidden h-10 w-px bg-gta-border sm:block" aria-hidden="true" />
+              <div className="flex flex-col items-center gap-0.5 px-2">
+                <span className="font-display text-2xl font-bold text-gta-accent-strong sm:text-3xl">
+                  <CountUp end={totalCount} />
+                </span>
+                <span className="text-xs uppercase tracking-[0.15em] text-gta-text-tertiary">
+                  {totalCount === 1 ? 'Entrada total' : 'Entradas totales'}
+                </span>
+              </div>
+            </div>
           </Reveal>
         </div>
       </SceneSection>
