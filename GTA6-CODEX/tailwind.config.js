@@ -21,7 +21,11 @@ module.exports = {
         'gta-border-strong': '#453163',
         'gta-text': '#f5eff9',
         'gta-text-secondary': '#b3a3c4',
-        'gta-text-tertiary': '#7c6c8f',
+        // #7c6c8f original daba 4.18:1 de contraste sobre gta-dark — por debajo
+        // de AA (4.5:1) para texto normal. Se usa en 14+ lugares como
+        // text-xs/text-sm (metadata, timestamps, stat labels). #88799a
+        // mantiene el mismo matiz violeta-gris y sube a 4.99:1.
+        'gta-text-tertiary': '#88799a',
         'gta-accent': '#ff2f8f',
         'gta-accent-strong': '#ff7ec4',
         'gta-accent-orange': '#22d3ee',
