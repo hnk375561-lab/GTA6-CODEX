@@ -23,7 +23,13 @@
     "secondarySource": "Sportskeeda ('GTA 6 cars & vehicles list'), listado que documenta el Benson junto a otros vehículos misceláneos identificados en tráiler",
     "note": "Aparición como vehículo de tráfico de fondo en material oficial; sin escena dedicada. Clasificación de clase y descripción de uso inferidas por continuidad con entregas anteriores de la saga."
   },
-  "relations": [],
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "vice-city",
+      "relation": "located_in"
+    }
+  ],
   "seoTitle": "Vapid Benson — Vehículo de GTA 6",
   "seoDescription": "Vapid Benson, camión mediano de reparto visible como vehículo de tráfico en tráilers oficiales de GTA VI."
 }

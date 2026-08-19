@@ -23,7 +23,13 @@
     "secondarySource": "Retrogems ('All 146 Vehicles Confirmed in GTA 6'), GTA Wiki (Fandom) y listados de Sportskeeda",
     "note": "Aparición visual confirmada en tráiler oficial como coupé de dos puertas; el nombre completo 'Infernus Classic' y su inspiración en el Lamborghini Countach provienen de análisis y material de marca reproducido por sitios especializados."
   },
-  "relations": [],
+  "relations": [
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "mostrado en"
+    }
+  ],
   "seoTitle": "Pegassi Infernus Classic — Vehículo de GTA 6",
   "seoDescription": "Pegassi Infernus Classic, superdeportivo clásico inspirado en el Lamborghini Countach, visible en el Trailer 1 de GTA VI."
 }
