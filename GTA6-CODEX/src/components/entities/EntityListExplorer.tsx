@@ -6,14 +6,16 @@ import Fuse from 'fuse.js'
 import { EntityType, type Entity, type Vehicle } from '@/types'
 import { Reveal } from '@/components/ui/Reveal'
 import { EntityCard } from '@/components/entities/EntityCard'
+import { VehicleCompareBar, VehicleCompareSheet, MAX_COMPARE } from '@/components/entities/VehicleCompareSheet'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { cn } from '@/lib/utils'
 import { STATUS_LABELS } from '@/lib/entity-labels'
+import { vehiclePerformanceScore, hasPerformanceData } from '@/lib/vehicle-performance'
 
 type StatusFilter = 'todos' | keyof typeof STATUS_LABELS
 
-type SortOption = 'default' | 'az' | 'za' | 'recent' | 'connections'
+type SortOption = 'default' | 'az' | 'za' | 'recent' | 'connections' | 'performance'
 
 const SORT_LABELS: Record<SortOption, string> = {
   default: 'Orden por defecto',
@@ -21,7 +23,10 @@ const SORT_LABELS: Record<SortOption, string> = {
   za: 'Z-A',
   recent: 'Más recientes',
   connections: 'Más conexiones',
+  performance: 'Mejor rendimiento',
 }
+
+type ViewMode = 'grid' | 'catalogo'
 
 /** Un tag/atributo necesita aparecer en al menos 2 entidades del mismo
  *  tipo para contar como "consistente" y mostrarse como filtro — evita
@@ -83,6 +88,38 @@ export function EntityListExplorer({
   const [selectedClass, setSelectedClass] = useState<string | null>(null)
   const debouncedQuery = useDebouncedValue(query, 200)
 
+  // Vista tipo catálogo (filas compactas) vs. grilla de cards. Solo se
+  // ofrece el toggle para Vehículos: es el único tipo con suficientes
+  // atributos comparables por fila (fabricante, clase, 4 métricas de
+  // rendimiento) para que una vista tabular aporte algo real — en el
+  // resto de tipos, la card actual ya es la representación más densa.
+  const [viewMode, setViewMode] = useState<ViewMode>('grid')
+
+  // Comparador de vehículos (solo EntityType.VEHICLE): hasta MAX_COMPARE
+  // slugs seleccionados desde las cards/filas, más el estado de apertura
+  // del panel de comparación. Vive acá (no en EntityCard) porque la
+  // selección es compartida entre todas las cards de la lista.
+  const [compareSlugs, setCompareSlugs] = useState<string[]>([])
+  const [compareOpen, setCompareOpen] = useState(false)
+  const isVehicleList = type === EntityType.VEHICLE
+
+  const toggleCompare = (slug: string) => {
+    setCompareSlugs((prev) => {
+      if (prev.includes(slug)) return prev.filter((s) => s !== slug)
+      if (prev.length >= MAX_COMPARE) return prev
+      return [...prev, slug]
+    })
+  }
+  const removeCompare = (slug: string) => setCompareSlugs((prev) => prev.filter((s) => s !== slug))
+  const clearCompare = () => {
+    setCompareSlugs([])
+    setCompareOpen(false)
+  }
+  const compareVehicles = useMemo(
+    () => compareSlugs.map((slug) => entities.find((e) => e.slug === slug)).filter((e): e is Vehicle => Boolean(e)),
+    [compareSlugs, entities]
+  )
+
   const counts = useMemo(() => {
     const c: Record<StatusFilter, number> = { todos: entities.length, confirmado: 0, rumor: 0, nuestro: 0 }
     for (const e of entities) {
@@ -118,9 +155,15 @@ export function EntityListExplorer({
   const sortOptions = useMemo(() => {
     const options: SortOption[] = ['default', 'az', 'za', 'recent']
     if (entities.some((e) => getRelationCount(e) > 0)) options.push('connections')
+    // "Mejor rendimiento" solo se ofrece en Vehículos y solo si al menos
+    // una entidad tiene algún dato de performance cargado (nunca se
+    // inventa un orden sobre datos ausentes).
+    if (isVehicleList && entities.some((e) => hasPerformanceData(e as Vehicle))) {
+      options.push('performance')
+    }
     return options
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [entities, relationCountBySlug])
+  }, [entities, relationCountBySlug, isVehicleList])
 
   // Tags "consistentes" del tipo actual: cualquier tag que ya existe en el
   // contenido y aparece en 2+ entidades. Nunca se inventa una categoría —
@@ -179,6 +222,10 @@ export function EntityListExplorer({
       base = [...base].sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
     } else if (sortBy === 'connections') {
       base = [...base].sort((a, b) => getRelationCount(b) - getRelationCount(a))
+    } else if (sortBy === 'performance') {
+      base = [...base].sort(
+        (a, b) => vehiclePerformanceScore(b as Vehicle) - vehiclePerformanceScore(a as Vehicle)
+      )
     }
 
     return base
@@ -272,6 +319,50 @@ export function EntityListExplorer({
               ))}
             </select>
           </label>
+
+          {isVehicleList && (
+            <div
+              className="flex items-center gap-0.5 rounded-lg border border-gta-border bg-gta-card/60 p-0.5"
+              role="group"
+              aria-label="Tipo de vista"
+            >
+              <button
+                type="button"
+                onClick={() => setViewMode('grid')}
+                aria-pressed={viewMode === 'grid'}
+                title="Vista en grilla"
+                className={cn(
+                  'flex h-7 w-7 items-center justify-center rounded-md transition-colors',
+                  viewMode === 'grid'
+                    ? 'bg-gta-accent/15 text-gta-accent'
+                    : 'text-gta-text-secondary hover:text-gta-text'
+                )}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <rect x="3" y="3" width="8" height="8" rx="1.5" />
+                  <rect x="13" y="3" width="8" height="8" rx="1.5" />
+                  <rect x="3" y="13" width="8" height="8" rx="1.5" />
+                  <rect x="13" y="13" width="8" height="8" rx="1.5" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode('catalogo')}
+                aria-pressed={viewMode === 'catalogo'}
+                title="Vista de catálogo"
+                className={cn(
+                  'flex h-7 w-7 items-center justify-center rounded-md transition-colors',
+                  viewMode === 'catalogo'
+                    ? 'bg-gta-accent/15 text-gta-accent'
+                    : 'text-gta-text-secondary hover:text-gta-text'
+                )}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          )}
 
           <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrar por estado">
             {(['todos', 'confirmado', 'rumor', 'nuestro'] as StatusFilter[]).map((key) => (
@@ -405,8 +496,27 @@ export function EntityListExplorer({
             </>
           )}
         </div>
+      ) : isVehicleList && viewMode === 'catalogo' ? (
+        <div className={cn('space-y-2', compareSlugs.length > 0 && 'pb-24')}>
+          {filtered.map((entity, i) => (
+            <Reveal key={entity.slug} delay={(i % 8) * 40}>
+              <EntityCard
+                entity={entity}
+                image={imageBySlug?.[`${entity.type}/${entity.slug}`]}
+                typeLabel={typeLabel}
+                clipUrl={clipUrlBySlug?.[entity.slug]}
+                relationCount={relationCountBySlug?.[entity.slug]}
+                layout="row"
+                compareEnabled={isVehicleList}
+                compareChecked={compareSlugs.includes(entity.slug)}
+                onCompareToggle={() => toggleCompare(entity.slug)}
+                compareDisabled={!compareSlugs.includes(entity.slug) && compareSlugs.length >= MAX_COMPARE}
+              />
+            </Reveal>
+          ))}
+        </div>
       ) : (
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={cn('grid gap-6 sm:grid-cols-2 lg:grid-cols-3', compareSlugs.length > 0 && 'pb-24')}>
           {filtered.map((entity, i) => (
             <Reveal key={entity.slug} delay={(i % 6) * 80}>
               <EntityCard
@@ -415,10 +525,33 @@ export function EntityListExplorer({
                 typeLabel={typeLabel}
                 clipUrl={clipUrlBySlug?.[entity.slug]}
                 relationCount={relationCountBySlug?.[entity.slug]}
+                compareEnabled={isVehicleList}
+                compareChecked={compareSlugs.includes(entity.slug)}
+                onCompareToggle={() => toggleCompare(entity.slug)}
+                compareDisabled={!compareSlugs.includes(entity.slug) && compareSlugs.length >= MAX_COMPARE}
               />
             </Reveal>
           ))}
         </div>
+      )}
+
+      {isVehicleList && (
+        <>
+          <VehicleCompareBar
+            selected={compareVehicles}
+            imageBySlug={imageBySlug}
+            onRemove={removeCompare}
+            onClear={clearCompare}
+            onOpen={() => setCompareOpen(true)}
+          />
+          <VehicleCompareSheet
+            open={compareOpen}
+            vehicles={compareVehicles}
+            imageBySlug={imageBySlug}
+            onClose={() => setCompareOpen(false)}
+            onRemove={removeCompare}
+          />
+        </>
       )}
     </div>
   )

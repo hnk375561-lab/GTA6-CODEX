@@ -3,41 +3,7 @@ import { Entity, EntityType } from '@/types'
 import { collectGenericFields } from '@/lib/entity-fields'
 import { Card, CardBody } from '@/components/ui/Card'
 import { EntitySectionHeading } from '@/components/entities/EntitySectionHeading'
-
-/** Convierte valores cualitativos ("Media-Alta", "Muy alta"...) a una escala 1-5 para la barra. */
-function performanceToScale(value?: string): number | null {
-  if (!value) return null
-  const v = value.toLowerCase()
-  if (v.includes('n/a')) return null
-  if (v.includes('muy alta')) return 5
-  if (v.includes('media-alta')) return 3
-  if (v.includes('alta')) return 4
-  if (v.includes('media')) return 2
-  if (v.includes('baja')) return 1
-  return null
-}
-
-function StatBar({ label, value }: { label: string; value?: string }) {
-  if (!value) return null
-  const scale = performanceToScale(value)
-
-  return (
-    <div>
-      <div className="mb-1 flex items-center justify-between text-xs">
-        <span className="text-gta-text-secondary">{label}</span>
-        <span className="font-medium text-gta-text">{value}</span>
-      </div>
-      {scale !== null && (
-        <div className="h-1.5 w-full overflow-hidden rounded-full bg-gta-border">
-          <div
-            className="h-full rounded-full bg-gradient-to-r from-gta-accent to-gta-accent-orange transition-[width] duration-700 ease-[var(--ease-premium)]"
-            style={{ width: `${(scale / 5) * 100}%` }}
-          />
-        </div>
-      )}
-    </div>
-  )
-}
+import { StatBar } from '@/components/entities/StatBar'
 
 function Field({ label, value }: { label: string; value?: string | null }) {
   if (!value) return null

@@ -10,7 +10,15 @@ import { EntityImage } from '@/components/entities/EntityImage'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { ENTITY_TYPE_LABELS, STATUS_LABELS } from '@/lib/entity-labels'
 import { getGenericQuickFacts } from '@/lib/entity-fields'
+import { performanceToScale } from '@/lib/vehicle-performance'
 import { cn } from '@/lib/utils'
+
+/** Ancho de la mini-barra de rendimiento en la vista de catálogo (fila),
+ *  reutilizando la misma escala 1-5 que EntityMetadata/StatBar. */
+function statBarWidth(value?: string): string {
+  const scale = performanceToScale(value)
+  return scale !== null ? `${(scale / 5) * 100}%` : '0%'
+}
 
 function formatTrailerDuration(seconds?: number): string | null {
   if (!seconds || seconds <= 0) return null
@@ -162,6 +170,63 @@ interface EntityCardProps {
    *  derivado de relaciones reales, solo que en ambas direcciones. */
   relationCount?: number
   className?: string
+  /** 'grid' (default) = card actual. 'row' = fila compacta horizontal,
+   *  usada solo por la vista "Catálogo" del listado de Vehículos (ver
+   *  EntityListExplorer) — mismo componente, sin duplicar lógica de
+   *  quick facts/badges/comparación entre ambas vistas. */
+  layout?: 'grid' | 'row'
+  /** Habilita el checkbox de comparación (solo Vehículos). Si es false u
+   *  omitido, el checkbox no se renderiza y la card se comporta como
+   *  siempre. */
+  compareEnabled?: boolean
+  compareChecked?: boolean
+  onCompareToggle?: () => void
+  /** true cuando ya se alcanzó el máximo de vehículos a comparar y esta
+   *  card no está seleccionada — el checkbox se muestra deshabilitado en
+   *  vez de ocultarse, para que quede claro por qué no se puede tildar. */
+  compareDisabled?: boolean
+}
+
+/** Checkbox de comparación superpuesto a la card/fila. Detiene la
+ *  propagación del click para no disparar la navegación del `<Link>` que
+ *  envuelve toda la card. */
+function CompareCheckbox({
+  checked,
+  disabled,
+  onToggle,
+  title,
+}: {
+  checked?: boolean
+  disabled?: boolean
+  onToggle?: () => void
+  title: string
+}) {
+  return (
+    <button
+      type="button"
+      role="checkbox"
+      aria-checked={Boolean(checked)}
+      aria-label={checked ? `Quitar ${title} del comparador` : `Agregar ${title} al comparador`}
+      title={disabled ? 'Máximo 3 vehículos para comparar' : undefined}
+      disabled={disabled}
+      onClick={(e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        onToggle?.()
+      }}
+      className={cn(
+        'flex h-6 w-6 shrink-0 items-center justify-center rounded-md border backdrop-blur-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent',
+        checked
+          ? 'border-gta-accent bg-gta-accent text-white'
+          : 'border-white/25 bg-black/40 text-transparent hover:border-white/50',
+        disabled && !checked && 'cursor-not-allowed opacity-40'
+      )}
+    >
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M20 6 9 17l-5-5" />
+      </svg>
+    </button>
+  )
 }
 
 /**
@@ -171,7 +236,19 @@ interface EntityCardProps {
  * cierre siempre visible ("Ver ficha") además de que la card entera ya es
  * un link real a la ficha (Fase 8, punto 3: ningún botón decorativo).
  */
-export function EntityCard({ entity, image, typeLabel, clipUrl, relationCount, className }: EntityCardProps) {
+export function EntityCard({
+  entity,
+  image,
+  typeLabel,
+  clipUrl,
+  relationCount,
+  className,
+  layout = 'grid',
+  compareEnabled,
+  compareChecked,
+  onCompareToggle,
+  compareDisabled,
+}: EntityCardProps) {
   const [hovering, setHovering] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const isTrailer = entity.type === EntityType.TRAILER && 'scenes' in entity
@@ -179,6 +256,75 @@ export function EntityCard({ entity, image, typeLabel, clipUrl, relationCount, c
   const quickFacts = getQuickFacts(entity)
   const resolvedRelationCount = relationCount ?? entity.relations?.length ?? 0
   const resolvedTypeLabel = typeLabel ?? ENTITY_TYPE_LABELS[entity.type]
+
+  if (layout === 'row') {
+    return (
+      <Link href={`/${entity.type}/${entity.slug}`} className={cn('group block', className)}>
+        <div className="flex items-center gap-4 rounded-xl border border-gta-border bg-gta-card/90 p-3 shadow-gta-sm backdrop-blur-[2px] transition-colors duration-300 hover:border-gta-accent/60 hover:shadow-gta-md sm:p-4">
+          {compareEnabled && (
+            <CompareCheckbox
+              checked={compareChecked}
+              disabled={compareDisabled}
+              onToggle={onCompareToggle}
+              title={entity.title}
+            />
+          )}
+
+          <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg sm:h-20 sm:w-28">
+            <EntityImage entity={entity} image={image} variant="thumbnail" className="h-full rounded-lg border-0" />
+          </div>
+
+          <div className="min-w-0 flex-1">
+            <div className="mb-1 flex flex-wrap items-center gap-2">
+              <Badge variant="status" status={entity.status}>
+                {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
+              </Badge>
+              {entity.featured && <Badge variant="tag">Destacado</Badge>}
+            </div>
+            <h2 className="truncate text-base font-bold text-gta-text transition-colors group-hover:text-gta-accent sm:text-lg">
+              {entity.title}
+            </h2>
+            <p className="hidden truncate text-xs text-gta-text-secondary sm:block">{entity.description}</p>
+          </div>
+
+          {quickFacts.length > 0 && (
+            <dl className="hidden shrink-0 flex-col gap-0.5 text-xs md:flex">
+              {quickFacts.map((fact) => (
+                <div key={fact.label} className="flex items-center gap-1.5 whitespace-nowrap">
+                  <dt className="text-gta-text-secondary">{fact.label}:</dt>
+                  <dd className="font-medium text-gta-text">{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
+
+          {entity.type === EntityType.VEHICLE && entity.performance && (
+            <div className="hidden w-32 shrink-0 gap-1 lg:grid">
+              {(['speed', 'acceleration', 'handling', 'braking'] as const).map((key) => {
+                const value = entity.performance?.[key]
+                if (!value) return null
+                return (
+                  <div key={key} className="h-1 w-full overflow-hidden rounded-full bg-gta-border" title={`${key}: ${value}`}>
+                    <div
+                      className="h-full rounded-full bg-gradient-to-r from-gta-accent to-gta-accent-orange"
+                      style={{ width: statBarWidth(value) }}
+                    />
+                  </div>
+                )
+              })}
+            </div>
+          )}
+
+          <span
+            aria-hidden="true"
+            className="hidden shrink-0 items-center gap-1 text-xs font-semibold uppercase tracking-wide text-gta-accent transition-transform duration-200 group-hover:translate-x-0.5 sm:inline-flex"
+          >
+            Ver ficha →
+          </span>
+        </div>
+      </Link>
+    )
+  }
 
   const handleEnter = () => {
     setHovering(true)
@@ -210,6 +356,17 @@ export function EntityCard({ entity, image, typeLabel, clipUrl, relationCount, c
           onMouseLeave={clipUrl ? handleLeave : undefined}
         >
           <EntityImage entity={entity} image={image} variant="thumbnail" className="rounded-none border-x-0 border-t-0" />
+
+          {compareEnabled && (
+            <div className="absolute left-2 top-2 z-10">
+              <CompareCheckbox
+                checked={compareChecked}
+                disabled={compareDisabled}
+                onToggle={onCompareToggle}
+                title={entity.title}
+              />
+            </div>
+          )}
 
           {clipUrl && (
             <>
