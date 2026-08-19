@@ -15,6 +15,7 @@ import { RelationsPanel } from '@/components/entities/RelationsPanel'
 import { EntityHeaderBackground } from '@/components/entities/EntityHeaderBackground'
 import { EntitySectionHeading } from '@/components/entities/EntitySectionHeading'
 import { EntityImage } from '@/components/entities/EntityImage'
+import { EntityContent } from '@/components/entities/EntityContent'
 import { TrailerScenes } from '@/components/entities/TrailerScenes'
 import { TrailerStats } from '@/components/entities/TrailerStats'
 import { EntityNav } from '@/components/entities/EntityNav'
@@ -267,13 +268,7 @@ export default async function EntityPage({ params }: PageProps) {
               <Reveal direction="left">
                 <Card className={entity.featured ? 'shadow-gta-sm border-gta-accent/30' : 'shadow-gta-sm'}>
                   <CardBody>
-                    <div className="max-w-none">
-                      {entity.content.split('\n\n').map((paragraph, i) => (
-                        <p key={i} className="mb-4 leading-relaxed text-gta-text-secondary last:mb-0">
-                          {paragraph}
-                        </p>
-                      ))}
-                    </div>
+                    <EntityContent content={entity.content} />
                   </CardBody>
                 </Card>
               </Reveal>
