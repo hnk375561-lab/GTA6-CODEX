@@ -1,26 +1,19 @@
 'use client'
 
-import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
+import { HeroSceneSVG } from './HeroSceneSVG'
 
 /**
- * Fondos rotativos del hero de la home, en resolución nativa 4K/8K (WebP
- * calidad 92, sin redimensionar — decisión deliberada del usuario, distinta
- * de la política de resize a 1600px que usa scripts/process-images.mjs para
- * imágenes de fichas de entidad). next/image + el optimizador de Next en
- * Vercel generan variantes responsive on-demand (deviceSizes hasta 3840px en
- * next.config.js), así que el navegador nunca descarga el archivo crudo
- * completo salvo en pantallas que realmente lo necesiten.
+ * Fondos rotativos del hero de la home.
  *
- * Todas las imágenes fueron revisadas por procedencia: se excluyó una
- * (fan art con firma de autor visible) por no ser material propio ni
- * oficial de Rockstar. dock-sunset y hotel-neon son key art oficial del
- * Vintage Vice City Pack; boxart-sunset es el key art oficial de portada
- * de GTA VI (Jason y Lucia); port-gellhorn-postcard es el material
- * promocional oficial "Visit Leonida" del pueblo de Port Gellhorn. Las
- * cuatro comparten el mismo criterio: composiciones panorámicas tipo
- * "postal", sin recorte, que funcionan como fondo de página completa —
- * se descartó todo primer plano de personaje o detalle de vehículo/arma.
+ * IMPORTANTE — historial: esta capa usaba key art oficial de Rockstar
+ * Games / Take-Two (boxart de portada de GTA VI, material del Vintage
+ * Vice City Pack, promocional "Visit Leonida", logo oficial "GTA VI").
+ * Se reemplazó por completo por `HeroSceneSVG`, una escena vectorial
+ * 100% original (mismo espíritu "sunset synthwave", sin ningún asset de
+ * terceros) para reducir la exposición de propiedad intelectual del
+ * sitio, especialmente de cara a monetización (ads/afiliados). Ver PR
+ * de referencia para el detalle de la decisión.
  *
  * Parallax: el fondo se desplaza a una fracción de la velocidad del
  * scroll (capa "lejana") y responde levemente al cursor (paralaje sutil,
@@ -29,20 +22,13 @@ import { useEffect, useRef, useState } from 'react'
  */
 
 /**
- * Fallback hardcodeado, usado solo si el caller no pasa `backgrounds`.
- * El caller real (`src/app/page.tsx`) las obtiene del Media Registry
- * (`getKeyArtAssets()` en src/lib/media.ts) para que este componente no
- * tenga que saber nada sobre `MediaAsset`/fuentes — sigue recibiendo un
- * array plano de rutas, como siempre.
+ * Variantes de paleta de la escena SVG, en orden de rotación. Reemplaza
+ * al array de rutas de imagen que tenía este componente antes; se
+ * mantiene el mismo prop `backgrounds` por compatibilidad con el caller
+ * (`src/app/page.tsx`), pero ahora sus valores son ids de variante en
+ * vez de rutas de archivo.
  */
-const DEFAULT_HERO_BACKGROUNDS = [
-  '/images/heroes/hero-vice-sunset.webp',
-  '/images/heroes/hero-gta6-boxart-sunset.webp',
-  '/images/heroes/hero-vi-logo.webp',
-  '/images/heroes/hero-vintage-dock-sunset.webp',
-  '/images/heroes/hero-port-gellhorn-postcard.webp',
-  '/images/heroes/hero-vintage-hotel-neon.webp',
-] as const
+const DEFAULT_HERO_BACKGROUNDS = ['magenta', 'cyan'] as const
 
 const ROTATE_INTERVAL_MS = 7000
 const CROSSFADE_MS = 1500
@@ -160,16 +146,11 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
         className="absolute inset-0"
         style={reducedMotion ? undefined : { willChange: 'transform' }}
       >
-        {HERO_BACKGROUNDS.slice(0, mountedCount).map((src, i) => (
-          <Image
-            key={src}
-            src={src}
-            alt=""
-            fill
-            priority={i === 0}
-            sizes="100vw"
-            quality={90}
-            className="object-cover"
+        {HERO_BACKGROUNDS.slice(0, mountedCount).map((variant, i) => (
+          <HeroSceneSVG
+            key={variant}
+            variant={variant as 'magenta' | 'cyan'}
+            className="absolute inset-0 h-full w-full object-cover"
             style={{
               opacity: i === index ? 0.5 : 0,
               transition: `opacity ${CROSSFADE_MS}ms ease-in-out`,

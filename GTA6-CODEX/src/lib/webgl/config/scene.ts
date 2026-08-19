@@ -44,30 +44,6 @@ export interface ImageBillboardConfig {
 
 export const IMAGE_BILLBOARDS: readonly ImageBillboardConfig[] = [
   {
-    key: 'gta6-boxart',
-    path: '/images/heroes/hero-gta6-boxart-sunset.webp',
-    width: 3.4,
-    height: 1.91,
-    color: 0xff2d78,
-    radius: 5.2,
-    baseY: 1.6,
-    speed: 0.05,
-    phase: 0,
-    parallax: 1,
-  },
-  {
-    key: 'port-gellhorn',
-    path: '/images/heroes/hero-port-gellhorn-postcard.webp',
-    width: 2.6,
-    height: 1.1,
-    color: 0x22d3ee,
-    radius: 6.6,
-    baseY: -0.8,
-    speed: 0.038,
-    phase: 1.9,
-    parallax: 0.6,
-  },
-  {
     key: 'real-dimez',
     path: '/images/entities/personajes/real-dimez.webp',
     width: 2.05,
