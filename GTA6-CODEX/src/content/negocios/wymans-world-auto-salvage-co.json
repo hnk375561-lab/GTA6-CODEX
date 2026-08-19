@@ -1,0 +1,34 @@
+{
+  "slug": "wymans-world-auto-salvage-co",
+  "type": "negocios",
+  "title": "Wyman's World Auto Salvage Co.",
+  "description": "Deshuesadero y taller de restauración de autos clásicos dirigido por Wyman. Base de la encomienda de la 'Classic Car Collection', exclusiva de la Ultimate Edition de GTA VI.",
+  "content": "Wyman's World Auto Salvage Co. es el negocio de deshuesadero y restauración de vehículos dirigido por Wyman, descrito por Rockstar Games como un \"coleccionista excéntrico y arreglador local\" (eccentric collector and local fixer).\n\nEl negocio es la base de una encomienda especial exclusiva de la Ultimate Edition de GTA VI, en la que Wyman encarga al jugador rastrear una variedad de autos clásicos abandonados y vehículos en proceso de restauración para devolverlos a su antiguo esplendor, como parte de la 'Classic Car Collection'.\n\nLas fuentes disponibles no especifican una ubicación física dentro de Leonida para el negocio, por lo que no se afirma aquí ningún distrito o región concreta.",
+  "status": "confirmado",
+  "tags": [
+    "ultimate-edition",
+    "taller",
+    "restauracion",
+    "autos-clasicos",
+    "confirmado-rockstar"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-19T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games / Take-Two, comunicado oficial de pre-orders y Ultimate Edition de GTA VI (25 de junio de 2026), descripción de la 'Classic Car Collection'",
+    "secondarySource": "Sportskeeda/gtabase, que citan la descripción oficial de Rockstar (\"coleccionista excéntrico y arreglador local\")",
+    "note": "Entidad creada para cerrar el hueco de relations de la ficha de Wyman (personaje); nombre y descripción del negocio provienen del mismo comunicado oficial ya citado en esa ficha, sin datos adicionales inventados. Las fuentes no especifican ubicación física dentro de Leonida — no se agrega relation located_in ni coordinates hasta que exista evidencia concreta."
+  },
+  "relations": [
+    {
+      "targetType": "personajes",
+      "targetSlug": "wyman",
+      "relation": "owns",
+      "direction": "from"
+    }
+  ],
+  "seoTitle": "Wyman's World Auto Salvage Co. — Negocio de GTA 6",
+  "seoDescription": "Wyman's World Auto Salvage Co., deshuesadero y taller de restauración de autos clásicos dirigido por Wyman, base de la Classic Car Collection en la Ultimate Edition de GTA VI."
+}

@@ -15,7 +15,14 @@
   "createdAt": "2026-08-13T00:00:00Z",
   "updatedAt": "2026-08-13T00:00:00Z",
   "faction": "Wyman's World Auto Salvage Co.",
-  "relations": [],
+  "relations": [
+    {
+      "targetType": "negocios",
+      "targetSlug": "wymans-world-auto-salvage-co",
+      "relation": "owns",
+      "direction": "from"
+    }
+  ],
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games / Take-Two, comunicado oficial de pre-orders y Ultimate Edition de GTA VI (25 de junio de 2026), descripcion de la 'Classic Car Collection'",
