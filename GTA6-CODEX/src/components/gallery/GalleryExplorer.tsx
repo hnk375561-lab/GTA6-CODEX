@@ -245,7 +245,7 @@ function GalleryTile({
           src={item.src}
           alt={item.alt}
           fill
-          sizes={featured ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw'}
+          sizes={featured ? '(min-width: 1920px) 1000px, (min-width: 1536px) 800px, (min-width: 1280px) 700px, (min-width: 1024px) 600px, (min-width: 768px) 90vw, 100vw' : '(min-width: 1920px) 500px, (min-width: 1536px) 450px, (min-width: 1280px) 400px, (min-width: 1024px) 350px, (min-width: 768px) 300px, 90vw'}
           className="gallery-tile-image object-cover"
           quality={90}
         />
@@ -391,7 +391,7 @@ function GalleryLightbox({
               src={item.src}
               alt={item.alt}
               fill
-              sizes="(min-width: 1920px) 1920px, (min-width: 1536px) 1536px, (min-width: 1280px) 1280px, (min-width: 1024px) 1024px, (min-width: 768px) 80vw, 100vw"
+              sizes="100vw"
               className="object-contain"
               priority
               quality={95}
