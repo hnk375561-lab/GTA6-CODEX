@@ -19,7 +19,33 @@
     "level": "especulativo",
     "primarySource": "Catálogo de ubicaciones de GTA VI CODEX"
   },
-  "relations": [],
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "downtown-vice-city",
+      "relation": "location_covered"
+    },
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "ambrosia",
+      "relation": "location_covered"
+    },
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "astillero-brian-heder",
+      "relation": "location_covered"
+    },
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "grassrivers",
+      "relation": "location_covered"
+    },
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "gambit-bay",
+      "relation": "location_covered"
+    }
+  ],
   "seoTitle": "Guía: Geografía de Vice City y sus Distritos — Guía de GTA 6",
   "seoDescription": "GTA 6: Exploración completa de los distritos, ubicaciones y puntos de interés en Vice City."
 }
