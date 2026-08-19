@@ -1,0 +1,34 @@
+{
+  "slug": "electric-fang-tattoo",
+  "type": "negocios",
+  "title": "Electric Fang Tattoo Parlor",
+  "description": "Tatuajería en Stockyard con más de 50 diseños del colectivo de arte FAILE. Exclusivo de la Ultimate Edition de GTA VI.",
+  "content": "Electric Fang Tattoo Parlor es la tatuajería confirmada oficialmente por Rockstar Games como parte del contenido exclusivo de la Ultimate Edition de GTA VI. Según la descripción oficial, es 'el local de tinta más icónico de Stockyard', y ofrece más de 50 tatuajes exclusivos para Jason y Lucia diseñados por FAILE, un colectivo de arte real (dupla de artistas de Brooklyn conocidos por trabajo de street art y collage).\n\nEs uno de los cinco locales exclusivos anunciados el 24 de junio de 2026 junto con el desglose de precios de ambas ediciones ($79.99 la Estándar, $99.99 la Ultimate). Junto con Sara's Unisex Salon y Stock 305, representa la personalización estética bloqueada detrás de la edición premium, un punto de controversia señalado por outlets como PC Gamer.",
+  "status": "confirmado",
+  "tags": [
+    "ultimate-edition",
+    "tatuajes",
+    "stockyard",
+    "faile",
+    "exclusivo",
+    "confirmado-rockstar"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-19T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games — página oficial de detalle de la Ultimate Edition de GTA VI (24 de junio de 2026)",
+    "secondarySource": "Cobertura de Insider Gaming, Driffle y GamerFuzion reproduciendo la descripción oficial y el crédito a FAILE",
+    "note": "Nombre, ubicación (Stockyard), cantidad de diseños y colaboración con FAILE confirmados directamente por Rockstar."
+  },
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "stockyard",
+      "relation": "located_in"
+    }
+  ],
+  "seoTitle": "Electric Fang Tattoo Parlor — Tatuajería en GTA 6",
+  "seoDescription": "Electric Fang Tattoo Parlor, tatuajería en Stockyard con 50+ diseños de FAILE, exclusiva de la Ultimate Edition de GTA VI."
+}
