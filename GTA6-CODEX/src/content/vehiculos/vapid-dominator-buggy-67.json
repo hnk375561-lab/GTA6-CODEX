@@ -31,9 +31,15 @@
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games / Take-Two, anuncio oficial de la Ultimate Edition de GTA 6 (25 de junio de 2026)",
     "secondarySource": "RockstarINTEL, vgtimes, gta6bible citando el comunicado oficial; Video Games Chronicle (VGC), que reproduce el texto oficial completo de Rockstar sobre el contenido de la Ultimate Edition / Vintage Vice City Pack",
-    "note": "Nombre, descripción y ubicación de guardado (Paradise Garage, Watson Bay) provienen del texto oficial de Rockstar sobre el contenido de la Ultimate Edition. Auditoría de completitud UE (13 ago 2026, Bloque B4): corroborado contra el texto oficial de Rockstar citado íntegramente por VGC, que confirma el vínculo con Mount Kalaga y el Paradise Garage en Watson Bay ya documentados en esta ficha. AUDITORIA SEMANTICA located_in (13 ago 2026): se retira la relacion formal located_in del grafo. La fuente citada no describe una escena o region especifica; el campo 'locations' se conserva como metadato aproximado, no como afirmacion demostrada del grafo."
+    "note": "Nombre, descripción y ubicación de guardado (Paradise Garage, Watson Bay) provienen del texto oficial de Rockstar sobre el contenido de la Ultimate Edition. Auditoría de completitud UE (13 ago 2026, Bloque B4): corroborado contra el texto oficial de Rockstar citado íntegramente por VGC. RESOLUCION (19 ago 2026): la auditoria semantica del 13 ago habia retirado located_in citando falta de escena/region especifica, pero esa nota no distinguia entre dos afirmaciones distintas del mismo texto oficial: (1) el vehiculo esta 'pensado para' el terreno alrededor de Mount Kalaga (tematico, no ubicacion real — se conserva solo en el campo 'locations' como metadato aproximado) y (2) el vehiculo 'se guarda en' el Paradise Garage, ubicado en Watson Bay (ubicacion real y especifica). Se creo la ficha propia de Watson Bay (que no existia) y se agrega located_in->watson-bay, que si cumple el estandar de evidencia especifica exigido por esa auditoria."
   },
-  "relations": [],
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "watson-bay",
+      "relation": "located_in"
+    }
+  ],
   "seoTitle": "'67 Vapid Dominator Buggy — Vehículo de GTA 6",
   "seoDescription": "GTA 6: Todoterreno tipo 'Mud Club' de la Ultimate Edition, pensado para los pantanos de Mount Kalaga, guardado en el Paradise Garage de Watson Bay."
 }

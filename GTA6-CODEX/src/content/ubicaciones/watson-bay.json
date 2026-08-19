@@ -1,0 +1,40 @@
+{
+  "slug": "watson-bay",
+  "type": "ubicaciones",
+  "title": "Watson Bay",
+  "description": "Zona de Leonida donde se ubica el Paradise Garage, contenido exclusivo de la Ultimate Edition de GTA VI.",
+  "content": "Watson Bay es un área de Leonida nombrada oficialmente por Rockstar Games como parte del desglose de contenido de la Ultimate Edition de GTA VI. Ahí se ubica el Paradise Garage, un espacio que además de guardar vehículos incluye un armero y un lugar seguro para depositar objetos robados y venderlos (fence).\n\nMás allá de esta mención, el material oficial disponible hasta ahora no describe el carácter urbano, rural o costero de la zona, ni su ubicación exacta dentro del mapa de Leonida.",
+  "status": "confirmado",
+  "tags": [
+    "ultimate-edition",
+    "paradise-garage",
+    "leonida"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-19T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
+  "region": "Leonida",
+  "points_of_interest": [],
+  "missions": [],
+  "businesses": [],
+  "relations": [
+    {
+      "targetType": "ubicaciones",
+      "targetSlug": "leonida",
+      "relation": "located_in"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "vapid-dominator-buggy-67",
+      "relation": "location_covered"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "Rockstar Games / Take-Two, anuncio oficial de la Ultimate Edition de GTA VI (25 de junio de 2026), descripción del Paradise Garage",
+    "secondarySource": "RockstarINTEL, vgtimes, gta6bible y Video Games Chronicle (VGC), que citan/reproducen el texto oficial",
+    "note": "Entidad creada para resolver la relation located_in del '67 Vapid Dominator Buggy, que estaba bloqueada por no existir ficha propia de Watson Bay. Contenido limitado estrictamente a lo que dice el mismo comunicado oficial ya citado en la ficha del vehículo — no se agrega distrito, coordinates ni caracterización adicional sin fuente."
+  },
+  "seoTitle": "Watson Bay — Ubicación de GTA 6 en Leonida",
+  "seoDescription": "Watson Bay, zona de Leonida donde se ubica el Paradise Garage, contenido exclusivo de la Ultimate Edition de GTA VI."
+}
