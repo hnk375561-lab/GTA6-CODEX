@@ -246,9 +246,9 @@ function GalleryTile({
             src={item.src}
             alt={item.alt}
             fill
-            sizes={featured ? '(min-width: 1920px) 1000px, (min-width: 1536px) 800px, (min-width: 1280px) 700px, (min-width: 1024px) 600px, (min-width: 768px) 90vw, 100vw' : '(min-width: 1920px) 500px, (min-width: 1536px) 450px, (min-width: 1280px) 400px, (min-width: 1024px) 350px, (min-width: 768px) 300px, 90vw'}
+            sizes={featured ? '(min-width: 1920px) 1400px, (min-width: 1536px) 1100px, (min-width: 1280px) 1000px, (min-width: 1024px) 900px, (min-width: 768px) 95vw, 100vw' : '(min-width: 1920px) 750px, (min-width: 1536px) 700px, (min-width: 1280px) 650px, (min-width: 1024px) 600px, (min-width: 768px) 60vw, 90vw'}
             className="gallery-tile-image"
-            quality={90}
+            quality={94}
           />
         )}
         <div className="gallery-tile-overlay absolute inset-0" aria-hidden="true" />

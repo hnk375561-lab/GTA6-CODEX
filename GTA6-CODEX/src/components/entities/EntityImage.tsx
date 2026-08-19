@@ -47,10 +47,24 @@ const ASPECT: Record<NonNullable<EntityImageProps['variant']>, string> = {
  * que se sirviera una versión más chica de la que el navegador terminaba
  * estirando, produciendo el efecto "pixelado" pese a tener el original en
  * alta resolución guardado en el repo).
+ *
+ * `portrait` pide deliberadamente MÁS ancho del que mide su contenedor en
+ * CSS (440px reales, pero acá se declara como si tuviera 900px). Esto no
+ * es un error: es la única forma confiable de garantizar nitidez sin
+ * conocer el devicePixelRatio real de cada pantalla. El algoritmo de
+ * `sizes` de next/image elige, del array `imageSizes` de next.config.js,
+ * el primer candidato >= (ancho-declarado × devicePixelRatio). Con el
+ * ancho real (440px) y DPR=1 eso resolvía a 512px — que en pantallas con
+ * escalado de SO (125%/150%, muy común en Windows) queda por debajo de
+ * lo necesario y el navegador termina estirando esos 512px, percibido
+ * como imagen "pixelada" aun siendo el comportamiento esperado del
+ * algoritmo. Sobre-declarar el ancho fuerza siempre un candidato de la
+ * franja 1024–1280px para esta pieza puntual (la más grande y más
+ * mirada del sitio), a costa de unos KB extra que acá no importan.
  */
 const SIZES: Record<NonNullable<EntityImageProps['variant']>, string> = {
-  thumbnail: '(min-width: 1024px) 400px, (min-width: 640px) 45vw, 100vw',
-  portrait: '(min-width: 1024px) 440px, (min-width: 640px) 70vw, 100vw',
+  thumbnail: '(min-width: 1024px) 700px, (min-width: 640px) 90vw, 100vw',
+  portrait: '(min-width: 1024px) 900px, (min-width: 640px) 100vw, 100vw',
   avatar: '56px',
 }
 
@@ -59,8 +73,8 @@ const SIZES: Record<NonNullable<EntityImageProps['variant']>, string> = {
  * calidad más alta; thumbnail se ve pequeña en grillas de listado y no
  * necesita tanto peso. */
 const QUALITY: Record<NonNullable<EntityImageProps['variant']>, number> = {
-  thumbnail: 85,
-  portrait: 92,
+  thumbnail: 90,
+  portrait: 97,
   avatar: 75,
 }
 

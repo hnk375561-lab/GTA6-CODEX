@@ -46,8 +46,8 @@ export function MediaCarousel({ title, assets }: MediaCarouselProps) {
                     src={rendered.thumbnailSrc}
                     alt={rendered.title}
                     fill
-                    sizes="(min-width: 1024px) 224px, 45vw"
-                    quality={88}
+                    sizes="(min-width: 1024px) 500px, 90vw"
+                    quality={92}
                     className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   />
                 </div>
