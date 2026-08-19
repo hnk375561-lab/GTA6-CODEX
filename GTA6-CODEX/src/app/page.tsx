@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { CSSProperties } from 'react'
 import type { Metadata } from 'next'
 import { EntityType } from '@/types'
+import type { Trailer } from '@/types'
 import {
   getFeaturedEntities,
   getEntityCount,
@@ -21,6 +22,8 @@ import { getCategoryPreviewImages } from '@/lib/images'
 import { RotatingHeroBackground } from '@/components/layout/RotatingHeroBackground'
 import { SceneSection } from '@/components/webgl/SceneSection'
 import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
+import { DevelopmentTimeline, type TimelineEvent } from '@/components/home/DevelopmentTimeline'
+import { QuickSearchForm } from '@/components/home/QuickSearchForm'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateHomepageMetadata()
@@ -126,11 +129,12 @@ const EVIDENCE_LEVELS: Array<{
 ]
 
 export default async function HomePage() {
-  const [featured, totalCount, countsByType, allNews] = await Promise.all([
+  const [featured, totalCount, countsByType, allNews, allTrailers] = await Promise.all([
     getFeaturedEntities(6),
     getEntityCount(),
     getEntityCountsByType(),
     getEntitiesByType(EntityType.NEWS),
+    getEntitiesByType(EntityType.TRAILER),
   ])
 
   // Últimas 3 noticias por fecha real del evento (`createdAt`), no por
@@ -142,6 +146,20 @@ export default async function HomePage() {
   const latestNewsImages = Object.fromEntries(
     latestNews.map((entity) => [entity.slug, resolveEntityDisplayImage(entity)])
   )
+
+  // Línea de tiempo del desarrollo: noticias + tráilers combinados, en
+  // orden cronológico ascendente (a diferencia de "Últimas noticias",
+  // que es descendente). Los tráilers usan `releaseDate` (fecha de
+  // publicación real del video); las noticias usan `createdAt` (fecha
+  // del evento que documentan) — ambos campos ya existen en el contenido,
+  // no se deriva ni inventa ninguna fecha nueva.
+  const timelineEvents: TimelineEvent[] = [...allNews, ...allTrailers]
+    .map((entity) => ({
+      entity,
+      date: entity.type === EntityType.TRAILER ? (entity as Trailer).releaseDate : entity.createdAt,
+      accent: CATEGORY_ACCENT[entity.type],
+    }))
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
 
@@ -208,6 +226,12 @@ export default async function HomePage() {
               >
                 Buscar en el Zona
               </Link>
+            </div>
+          </Reveal>
+
+          <Reveal delay={200}>
+            <div className="mt-6">
+              <QuickSearchForm />
             </div>
           </Reveal>
 
@@ -345,6 +369,27 @@ export default async function HomePage() {
                 />
               ))}
             </div>
+          </div>
+        </SceneSection>
+      )}
+
+      {/* Línea de tiempo del desarrollo */}
+      {timelineEvents.length > 0 && (
+        <SceneSection sceneId="home-timeline" className="border-t border-gta-border py-16 sm:py-20">
+          <div className="container-max">
+            <Reveal className="mx-auto mb-12 max-w-2xl text-center">
+              <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+                Cronología
+              </p>
+              <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">
+                Línea de tiempo del desarrollo
+              </h2>
+              <p className="mt-4 text-gta-text-secondary">
+                Del anuncio a hoy, cada hito oficial y cada tráiler documentado, en orden.
+              </p>
+            </Reveal>
+
+            <DevelopmentTimeline events={timelineEvents} />
           </div>
         </SceneSection>
       )}

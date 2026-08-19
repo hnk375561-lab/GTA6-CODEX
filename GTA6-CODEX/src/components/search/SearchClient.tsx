@@ -20,6 +20,12 @@ interface SearchClientProps {
    *  por su cuenta con `fs` — el caller server (`/buscar/page.tsx`)
    *  resuelve el mapa completo una sola vez y lo pasa acá. */
   imageBySlug?: Record<string, ResolvedDisplayImage | null>
+  /** Query inicial con la que arranca el input, resuelta server-side desde
+   *  `?q=` en la URL (ver `/buscar/page.tsx`). Permite deep-linking real
+   *  desde otros puntos del sitio (ej. el buscador rápido de la home) en
+   *  vez de forzar al usuario a re-escribir la búsqueda. Sigue siendo
+   *  100% opcional: sin `?q=`, el comportamiento es idéntico al de antes. */
+  initialQuery?: string
 }
 
 const TYPE_LABELS: Record<EntityType, string> = {
@@ -48,8 +54,8 @@ const QUICK_TYPES: EntityType[] = [
   'trailers' as EntityType,
 ]
 
-export function SearchClient({ entities, counts, imageBySlug }: SearchClientProps) {
-  const [query, setQuery] = useState('')
+export function SearchClient({ entities, counts, imageBySlug, initialQuery }: SearchClientProps) {
+  const [query, setQuery] = useState(initialQuery ?? '')
   const [activeType, setActiveType] = useState<EntityType | 'todos'>('todos')
   const debouncedQuery = useDebouncedValue(query, 250)
 
