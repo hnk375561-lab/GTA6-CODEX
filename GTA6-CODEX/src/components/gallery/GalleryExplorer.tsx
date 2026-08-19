@@ -184,9 +184,13 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
           </button>
         </div>
       ) : (
-        <div className="gallery-grid">
+        <div className="grid grid-cols-2 gap-[0.85rem] sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 lg:gap-[1.1rem]">
           {filtered.map((item, i) => (
-            <Reveal key={item.id} delay={(i % 8) * 60} className={item.featured ? 'gallery-grid-item--featured' : undefined}>
+            <Reveal
+              key={item.id}
+              delay={(i % 8) * 60}
+              className={item.featured ? 'col-span-2 sm:row-span-2' : undefined}
+            >
               <GalleryTile item={item} featured={!!item.featured} onOpen={() => openLightbox(item)} />
             </Reveal>
           ))}
