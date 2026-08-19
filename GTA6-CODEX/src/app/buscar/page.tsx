@@ -33,8 +33,17 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function SearchPage() {
-  const [entities, counts] = await Promise.all([getAllEntities(), getEntityCountsByType()])
+export default async function SearchPage({
+  searchParams,
+}: {
+  // Next.js 15: `searchParams` llega como Promise en Server Components.
+  searchParams: Promise<{ q?: string }>
+}) {
+  const [{ q }, entities, counts] = await Promise.all([
+    searchParams,
+    getAllEntities(),
+    getEntityCountsByType(),
+  ])
 
   return (
     <section className="py-12 sm:py-16">
@@ -48,7 +57,12 @@ export default async function SearchPage() {
           </Reveal>
         </div>
 
-        <SearchClient entities={entities} counts={counts} imageBySlug={getEntityImageMap(entities)} />
+        <SearchClient
+          entities={entities}
+          counts={counts}
+          imageBySlug={getEntityImageMap(entities)}
+          initialQuery={q}
+        />
       </div>
     </section>
   )
