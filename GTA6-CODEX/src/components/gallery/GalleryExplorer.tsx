@@ -224,9 +224,10 @@ function GalleryTile({
     <button
       type="button"
       onClick={onOpen}
+      data-featured={featured}
       className={cn(
         'gallery-tile group relative block h-full w-full overflow-hidden rounded-xl border border-gta-border bg-gta-card text-left',
-        featured ? 'aspect-square sm:aspect-auto' : 'aspect-[4/5]'
+        featured ? 'col-span-2 sm:row-span-2' : undefined
       )}
       aria-label={`Ampliar imagen: ${item.title}`}
     >

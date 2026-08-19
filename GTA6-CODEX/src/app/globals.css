@@ -1645,6 +1645,30 @@ a:hover .logo-mark {
   cursor: zoom-in;
   transition: transform var(--transition-base), box-shadow var(--transition-base),
     border-color var(--transition-base);
+  /* Forzar aspect ratio con CSS puro - 4:5 por defecto */
+  aspect-ratio: 4 / 5;
+  min-height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Featured items: 1:1 aspect ratio */
+.gallery-tile[data-featured="true"] {
+  aspect-ratio: 1 / 1;
+}
+
+@media (min-width: 640px) {
+  .gallery-tile {
+    min-height: 350px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-tile {
+    min-height: 400px;
+  }
 }
 
 .gallery-tile:hover,
@@ -1656,6 +1680,10 @@ a:hover .logo-mark {
 
 .gallery-tile-image {
   transition: transform var(--dur-slower) var(--ease-premium), filter var(--transition-base);
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
 }
 
 .gallery-tile:hover .gallery-tile-image,
