@@ -1,5 +1,5 @@
 /**
- * Math utilities for the GTA6 Codex WebGL engine.
+ * Math utilities for the GTA6 Zona WebGL engine.
  * Pure functions with no side effects.
  */
 

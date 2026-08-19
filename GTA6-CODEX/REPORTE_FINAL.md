@@ -1,4 +1,4 @@
-﻿# 📊 REPORTE FINAL - GTA6-CODEX MULTIMEDIA REPOSITORY
+﻿# 📊 REPORTE FINAL - GTA6-ZONA MULTIMEDIA REPOSITORY
 
 ## Resumen Ejecutivo
 - **Total de Imágenes:** 76 archivos multimedia
@@ -52,7 +52,7 @@ Instituciones, artworks oficiales y promocionales.
 
 ## Estructura del Repositorio
 \\\
-GTA6-CODEX/
+GTA6-ZONA/
 ├── incoming-images/
 │   ├── personajes/       (13 imágenes)
 │   ├── ubicaciones/      (15 imágenes)
@@ -72,6 +72,6 @@ GTA6-CODEX/
 - [Rockstar Games](https://www.rockstargames.com) - Sitio oficial
 
 ---
-**Repositorio:** https://github.com/hnk375561-lab/GTA6-CODEX
+**Repositorio:** https://github.com/hnk375561-lab/GTA6-ZONA
 **Última actualización:** 17/08/2026
 **Estado:** 📊 82% Completado - ✅ Production Ready

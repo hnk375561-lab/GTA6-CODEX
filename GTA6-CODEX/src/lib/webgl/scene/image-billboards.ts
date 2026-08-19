@@ -1,5 +1,5 @@
 /**
- * Image billboard builder for the GTA6 Codex WebGL engine.
+ * Image billboard builder for the GTA6 Zona WebGL engine.
  * Letreros con las imágenes reales de GTA VI orbitando la torre focal —
  * ver `IMAGE_BILLBOARDS` en `../config/scene`.
  *
@@ -140,7 +140,7 @@ export function buildImageBillboardsScene(options: ImageBillboardsBuilderOptions
       // Una imagen faltante o movida queda visible en consola en vez de
       // convertirse en un letrero invisible sin explicación.
       (err) => {
-        console.warn(`[GTA6CodexWebGLEngine] No se pudo cargar el billboard "${def.key}" (${def.path}):`, err)
+        console.warn(`[GTA6ZonaWebGLEngine] No se pudo cargar el billboard "${def.key}" (${def.path}):`, err)
       }
     )
     texture.colorSpace = THREE.SRGBColorSpace

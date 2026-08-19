@@ -1,5 +1,5 @@
 /**
- * Quality profile configuration for the GTA6 Codex WebGL engine.
+ * Quality profile configuration for the GTA6 Zona WebGL engine.
  * Handles device detection and quality settings adaptation.
  */
 

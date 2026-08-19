@@ -1,5 +1,5 @@
 /**
- * Traffic streaks builder for the GTA6 Codex WebGL engine.
+ * Traffic streaks builder for the GTA6 Zona WebGL engine.
  * Tráfico: faros blancos que se acercan y luces de freno rojas que se
  * alejan, en loop sobre la carretera.
  */

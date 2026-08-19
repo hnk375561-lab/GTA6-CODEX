@@ -1,5 +1,5 @@
 /**
- * Light shaft builder for the GTA6 Codex WebGL engine.
+ * Light shaft builder for the GTA6 Zona WebGL engine.
  * Haces de neón que suben desde la torre focal (magenta + cian, el
  * segundo condicionado a `quality.tier !== 'low'`).
  *

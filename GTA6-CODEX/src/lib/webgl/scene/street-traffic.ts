@@ -1,5 +1,5 @@
 /**
- * Street traffic builder for the GTA6 Codex WebGL engine.
+ * Street traffic builder for the GTA6 Zona WebGL engine.
  * Vehículos con silueta real (cuerpo bajo-poly + faros/frenos) en un
  * carril propio, más cerca de cámara que el de `scene/traffic-streaks.ts`
  * (que queda intacto y sin tocar: solo luces, sin cuerpo, en un carril

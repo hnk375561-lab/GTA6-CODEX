@@ -129,7 +129,7 @@ export default async function HomePage() {
               Expediente no oficial · Leonida
             </p>
             <h1 className="text-gradient-vice mx-auto max-w-4xl font-display text-5xl font-bold leading-tight sm:text-7xl">
-              GTA6 Codex
+              GTA6 Zona
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-gta-text-secondary sm:text-xl">
               Wiki editorial de Grand Theft Auto 6: personajes, vehículos, ubicaciones,
@@ -144,13 +144,13 @@ export default async function HomePage() {
                 href="/personajes"
                 className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
               >
-                Explorar el Codex
+                Explorar el Zona
               </Link>
               <Link
                 href="/buscar"
                 className="inline-flex items-center justify-center rounded-lg border border-gta-border bg-gta-surface/60 px-8 py-3.5 font-semibold text-gta-text transition-all hover:-translate-y-0.5 hover:border-gta-accent/50"
               >
-                Buscar en el Codex
+                Buscar en el Zona
               </Link>
             </div>
           </Reveal>

@@ -2,7 +2,7 @@
 /**
  * scripts/process-images.mjs
  * ============================================================
- * Pipeline de ingesta de imágenes para GTA6 Codex.
+ * Pipeline de ingesta de imágenes para GTA6 Zona.
  *
  * QUÉ HACE:
  *   1. Lee todos los archivos de /incoming-images/ (no recursivo por

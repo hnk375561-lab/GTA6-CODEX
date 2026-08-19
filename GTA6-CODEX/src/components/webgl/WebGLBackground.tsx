@@ -13,14 +13,14 @@ export function WebGLBackground() {
   useEffect(() => {
     if (!canvasRef.current) return
 
-    let engine: import('@/lib/webgl/engine').GTA6CodexWebGLEngine | null = null
+    let engine: import('@/lib/webgl/engine').GTA6ZonaWebGLEngine | null = null
     let cancelled = false
 
     const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
 
-    import('@/lib/webgl/engine').then(({ GTA6CodexWebGLEngine }) => {
+    import('@/lib/webgl/engine').then(({ GTA6ZonaWebGLEngine }) => {
       if (cancelled || !canvasRef.current) return
-      engine = new GTA6CodexWebGLEngine(canvasRef.current, {
+      engine = new GTA6ZonaWebGLEngine(canvasRef.current, {
         reducedMotion: mql.matches,
       })
       engine.start()

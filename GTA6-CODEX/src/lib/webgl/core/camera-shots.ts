@@ -3,7 +3,7 @@
  * tomas en vez de ruido sin fin.
  *
  * Extraído literalmente de `computeShotFrame()`, método privado de
- * `GTA6CodexWebGLEngine` (ver `engine.ts`). Es una función pura: no lee ni
+ * `GTA6ZonaWebGLEngine` (ver `engine.ts`). Es una función pura: no lee ni
  * escribe ningún campo de instancia — solo recibe `elapsed` y
  * `totalShotDuration` como parámetros y devuelve el frame calculado a
  * partir de las constantes `SHOTS`/`FALLBACK_SHOT` de `config/scene.ts`.
@@ -29,7 +29,7 @@ export interface ShotFrame {
 }
 
 /**
- * Proviene de `computeShotFrame` en `GTA6CodexWebGLEngine`. Mismo cálculo
+ * Proviene de `computeShotFrame` en `GTA6ZonaWebGLEngine`. Mismo cálculo
  * de índice/interpolación entre tomas consecutivas de `SHOTS`, misma
  * guarda contra `SHOTS` vacío o duración total 0 (sin esto, `%` por 0
  * produce NaN y la cámara desaparece del encuadre).

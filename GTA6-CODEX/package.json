@@ -1,7 +1,7 @@
 {
-  "name": "gta6-codex",
+  "name": "gta6-zona",
   "version": "0.1.0",
-  "description": "GTA6 Codex - Un wiki editorial de primer nivel sobre Grand Theft Auto 6",
+  "description": "GTA6 Zona - Un wiki editorial de primer nivel sobre Grand Theft Auto 6",
   "private": true,
   "scripts": {
     "dev": "next dev",

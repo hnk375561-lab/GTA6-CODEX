@@ -1,5 +1,5 @@
 /**
- * Sun shaders for the GTA6 Codex WebGL engine.
+ * Sun shaders for the GTA6 Zona WebGL engine.
  * Horizon sun/moon with bands and synthwave aesthetics.
  */
 

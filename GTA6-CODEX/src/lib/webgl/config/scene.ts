@@ -1,5 +1,5 @@
 /**
- * Scene configuration constants for the GTA6 Codex WebGL engine.
+ * Scene configuration constants for the GTA6 Zona WebGL engine.
  * Camera shots, entity atmosphere mappings, and visual parameters.
  */
 

@@ -7,7 +7,7 @@ type CategoryIconProps = {
 }
 
 /**
- * Iconografía lineal propia para las categorías del codex.
+ * Iconografía lineal propia para las categorías del zona.
  * Reemplaza los emojis (dependientes de la fuente del sistema operativo,
  * inconsistentes entre plataformas) por trazos SVG unificados: mismo
  * grosor de línea, mismos remates, mismo lenguaje visual "Leonida Nights".

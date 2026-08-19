@@ -1,5 +1,5 @@
 /**
- * Fireflies builder for the GTA6 Codex WebGL engine.
+ * Fireflies builder for the GTA6 Zona WebGL engine.
  * Luciérnagas tropicales cerca del skyline.
  */
 

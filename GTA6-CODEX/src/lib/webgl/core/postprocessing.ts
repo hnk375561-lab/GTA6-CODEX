@@ -1,8 +1,8 @@
 /**
- * Pipeline de postprocessing del motor GTA6 Codex WebGL.
+ * Pipeline de postprocessing del motor GTA6 Zona WebGL.
  *
  * Extraído literalmente del bloque de creación en el constructor de
- * `GTA6CodexWebGLEngine` (ver `engine.ts`): `EffectComposer` + `RenderPass`
+ * `GTA6ZonaWebGLEngine` (ver `engine.ts`): `EffectComposer` + `RenderPass`
  * + `BokehPass` (condicional a `quality.enableBokeh`) + `UnrealBloomPass` +
  * `ShaderPass` de grade + `FXAAPass` + `OutputPass`, en ese mismo orden.
  *
@@ -59,7 +59,7 @@ export interface PostProcessingPipeline {
 
 /**
  * Proviene del bloque de creación del pipeline en el constructor de
- * `GTA6CodexWebGLEngine`. Transcripción literal: mismo orden de
+ * `GTA6ZonaWebGLEngine`. Transcripción literal: mismo orden de
  * `composer.addPass(...)` (Render → Bokeh condicional → Bloom → Grade →
  * FXAA → Output), mismos valores de `UnrealBloomPass` (resolución inicial
  * `(1, 1)` — se sobreescribe enseguida vía `resizeRendererAndPasses` —,

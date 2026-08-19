@@ -133,7 +133,7 @@ import { buildImageBillboardsScene } from './scene/image-billboards'
 import { buildLightsScene } from './scene/lights'
 
 /**
- * GTA6CodexWebGLEngine — v5 "Vice City, no una demo abstracta de Three.js"
+ * GTA6ZonaWebGLEngine — v5 "Vice City, no una demo abstracta de Three.js"
  * ---------------------------------------------------------------------------
  * Reescritura de dirección artística: la escena deja de ser un objeto de
  * vidrio genérico flotando entre partículas y pasa a ser, sin ambigüedad,
@@ -305,7 +305,7 @@ type SceneUpdater = (elapsed: number, delta: number, intro: number) => void
 // Shaders — extraídos a ./shaders/*.ts (ver imports arriba)
 // ---------------------------------------------------------------------------
 
-export class GTA6CodexWebGLEngine {
+export class GTA6ZonaWebGLEngine {
   private renderer: THREE.WebGLRenderer
   private scene: THREE.Scene
   private camera: THREE.PerspectiveCamera
@@ -547,7 +547,7 @@ export class GTA6CodexWebGLEngine {
     const missing = required.filter(([, value]) => value == null).map(([name]) => name)
     if (missing.length > 0) {
       throw new Error(
-        `GTA6CodexWebGLEngine: construcción incompleta, falta inicializar: ${missing.join(', ')}. ` +
+        `GTA6ZonaWebGLEngine: construcción incompleta, falta inicializar: ${missing.join(', ')}. ` +
           'Revisar el orden de las llamadas a buildXxx()/setupXxx() en el constructor.'
       )
     }

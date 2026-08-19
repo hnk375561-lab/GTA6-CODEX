@@ -3,8 +3,8 @@ import type { MediaAsset } from '@/types/media'
 import { Metadata } from 'next'
 import { ENTITY_TYPE_LABELS } from './entity-labels'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel.app'
-const SITE_NAME = 'GTA6 Codex'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+const SITE_NAME = 'GTA6 Zona'
 const SITE_DESCRIPTION = 'Un wiki editorial de primer nivel sobre Grand Theft Auto 6'
 
 /**
@@ -92,7 +92,7 @@ export function generateEntityMetadata(entity: Entity, ogImage?: EntityOgImage |
 /**
  * Descripciones de listado por tipo de entidad (roadmap, prioridad
  * "Bajo": micro-copy variada en vez de "Explora N {categoría} en GTA 6
- * Codex" repetido igual para las 12 categorías). Cada función recibe el
+ * Zona" repetido igual para las 12 categorías). Cada función recibe el
  * conteo real y arma una oración específica de esa categoría — nada de
  * relleno genérico, solo variar la forma en que se presenta el mismo
  * dato real (`count`).
@@ -128,7 +128,7 @@ export function generateListMetadata(type: EntityType, count: number): Metadata 
   const label = ENTITY_TYPE_LABELS[type] || type
   const title = `${label} | ${SITE_NAME}`
   const description =
-    LIST_DESCRIPTION_BY_TYPE[type]?.(count, label) ?? `Explora ${count} ${label.toLowerCase()} en GTA 6 Codex`
+    LIST_DESCRIPTION_BY_TYPE[type]?.(count, label) ?? `Explora ${count} ${label.toLowerCase()} en GTA 6 Zona`
   const url = `${SITE_URL}/${type}`
 
   return {

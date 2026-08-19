@@ -3,8 +3,8 @@ import { getGalleryItems, getGalleryCategoryCounts } from '@/lib/gallery'
 import { GalleryHero } from '@/components/gallery/GalleryHero'
 import { GalleryExplorer } from '@/components/gallery/GalleryExplorer'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel.app'
-const SITE_NAME = 'GTA6 Codex'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+const SITE_NAME = 'GTA6 Zona'
 
 export async function generateMetadata(): Promise<Metadata> {
   const items = await getGalleryItems()
@@ -38,7 +38,7 @@ export default async function GaleriaPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ImageGallery',
-    name: 'Galería — GTA6 Codex',
+    name: 'Galería — GTA6 Zona',
     description:
       'Fotografía oficial y material promocional de Grand Theft Auto VI: personajes, ubicaciones y key art.',
     url: `${SITE_URL}/galeria`,

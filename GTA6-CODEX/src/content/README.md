@@ -1,6 +1,6 @@
 # Arquitectura de Contenido
 
-Este directorio contiene todo el contenido estructurado de GTA6 Codex. Está organizado por tipo de entidad.
+Este directorio contiene todo el contenido estructurado de GTA6 Zona. Está organizado por tipo de entidad.
 
 ## Estructura
 

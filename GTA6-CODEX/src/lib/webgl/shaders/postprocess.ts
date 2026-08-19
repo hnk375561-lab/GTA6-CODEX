@@ -1,5 +1,5 @@
 /**
- * Post-processing shaders for the GTA6 Codex WebGL engine.
+ * Post-processing shaders for the GTA6 Zona WebGL engine.
  * Contains the main color grading shader with cinematic teal-orange look.
  */
 

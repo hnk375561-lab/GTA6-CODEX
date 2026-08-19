@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel.app'
-const SITE_NAME = 'GTA6 Codex'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+const SITE_NAME = 'GTA6 Zona'
 
 export const metadata: Metadata = {
   title: `Términos de Uso | ${SITE_NAME}`,

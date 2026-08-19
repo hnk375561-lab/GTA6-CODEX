@@ -1,5 +1,5 @@
 /**
- * Neon shaders for the GTA6 Codex WebGL engine.
+ * Neon shaders for the GTA6 Zona WebGL engine.
  * Light shafts and neon signs with organic flickering.
  */
 

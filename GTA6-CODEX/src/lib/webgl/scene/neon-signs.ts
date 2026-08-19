@@ -1,5 +1,5 @@
 /**
- * Neon signs builder for the GTA6 Codex WebGL engine.
+ * Neon signs builder for the GTA6 Zona WebGL engine.
  * Letreros neón premium GTA VI — Vice City moderna con atmósfera
  * cinematográfica, distribuidos en capas de profundidad (hoteles/casinos
  * lejanos, clubes/restaurantes medios, negocios cercanos).

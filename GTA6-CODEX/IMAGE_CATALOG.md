@@ -1,4 +1,4 @@
-# IMAGE_CATALOG.md — GTA6 Codex
+# IMAGE_CATALOG.md — GTA6 Zona
 
 Generado: 2026-08-14. Ronda: Sistema Visual de Imágenes, primera pasada.
 

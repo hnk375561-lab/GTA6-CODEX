@@ -1,5 +1,5 @@
 /**
- * Humidity mist builder for the GTA6 Codex WebGL engine.
+ * Humidity mist builder for the GTA6 Zona WebGL engine.
  * Gotas de humedad/nocturnas — aire denso de Florida.
  */
 

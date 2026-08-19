@@ -42,7 +42,7 @@ export function Header() {
             <span className="font-display text-xs font-bold tracking-tight text-gta-darker">GTA</span>
           </div>
           <span className="hidden font-display text-base font-semibold tracking-tight text-gta-text transition-colors duration-300 group-hover:text-gta-accent-strong sm:inline">
-            GTA6 <span className="text-gradient-vice">Codex</span>
+            GTA6 <span className="text-gradient-vice">Zona</span>
           </span>
         </Link>
 

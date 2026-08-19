@@ -1,5 +1,5 @@
 /**
- * Street signals builder for the GTA6 Codex WebGL engine.
+ * Street signals builder for the GTA6 Zona WebGL engine.
  * Postes delgados con semáforo (3 discos apilados) cerca del borde de la
  * carretera — textura urbana en primer/medio plano.
  *

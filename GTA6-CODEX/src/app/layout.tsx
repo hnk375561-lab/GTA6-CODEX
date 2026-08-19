@@ -7,7 +7,7 @@ import { Footer } from '@/components/layout/Footer'
 import { WebGLBackground } from '@/components/webgl/WebGLBackground'
 import { SceneAmbientBridge } from '@/components/webgl/SceneAmbientBridge'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel.app'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
 // GA4 solo se activa si hay un ID real configurado. Sin esto, un build sin
 // NEXT_PUBLIC_GA_ID enviaría eventos a un ID placeholder inexistente.
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID
@@ -20,7 +20,7 @@ const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'GTA6 Codex | Wiki Editorial de Grand Theft Auto 6',
+  title: 'GTA6 Zona | Wiki Editorial de Grand Theft Auto 6',
   description:
     'Exploración comprensiva de GTA 6: personajes, vehículos, ubicaciones, misiones y más. Información verificada, rumores y análisis profundo.',
   keywords: [
@@ -36,15 +36,15 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_ES',
     url: SITE_URL,
-    siteName: 'GTA6 Codex',
-    title: 'GTA6 Codex | Wiki Editorial de Grand Theft Auto 6',
+    siteName: 'GTA6 Zona',
+    title: 'GTA6 Zona | Wiki Editorial de Grand Theft Auto 6',
     description:
       'Exploración comprensiva de GTA 6: personajes, vehículos, ubicaciones, misiones y más.',
   },
   twitter: {
     card: 'summary_large_image',
-    creator: '@gta6codex',
-    title: 'GTA6 Codex',
+    creator: '@gta6zona',
+    title: 'GTA6 Zona',
     description:
       'Exploración comprensiva de GTA 6: personajes, vehículos, ubicaciones, misiones y más.',
   },

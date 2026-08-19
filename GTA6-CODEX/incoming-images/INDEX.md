@@ -1,4 +1,4 @@
-﻿# GTA6-CODEX: Inventario de Medios
+﻿# GTA6-ZONA: Inventario de Medios
 
 ## 📊 Estadísticas
 - **Total de Imágenes:** 48
@@ -59,4 +59,4 @@
 ---
 
 **Última actualización:** 17/08/2026 19:45
-**Repositorio:** https://github.com/hnk375561-lab/GTA6-CODEX
+**Repositorio:** https://github.com/hnk375561-lab/GTA6-ZONA

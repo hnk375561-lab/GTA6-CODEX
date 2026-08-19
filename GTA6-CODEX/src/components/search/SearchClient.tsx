@@ -107,7 +107,7 @@ export function SearchClient({ entities, counts, imageBySlug }: SearchClientProp
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Buscar personajes, vehículos, ubicaciones..."
           autoFocus
-          aria-label="Buscar en GTA6 Codex"
+          aria-label="Buscar en GTA6 Zona"
           className="glass-surface w-full rounded-xl border border-gta-border py-4 pl-12 pr-12 text-lg text-gta-text placeholder:text-gta-text-tertiary transition-all focus:border-gta-accent focus:shadow-glow-pink focus:outline-none"
         />
         {query && (

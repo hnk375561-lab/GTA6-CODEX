@@ -3,7 +3,7 @@ import { EntityType } from '@/types'
 import { getAllEntities, getEntityCountsByType } from '@/lib/entities'
 import { getVehiclesByManufacturer } from '@/lib/vehicle-manufacturers'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel.app'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
 
 /**
  * Parsea una fecha de entidad de forma segura. entities.ts:validateEntity()

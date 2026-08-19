@@ -1,5 +1,5 @@
 /**
- * Sky dome shaders for the GTA6 Codex WebGL engine.
+ * Sky dome shaders for the GTA6 Zona WebGL engine.
  * Procedural sky with 6 keyframe horarios, scattering, clouds, and stars.
  */
 

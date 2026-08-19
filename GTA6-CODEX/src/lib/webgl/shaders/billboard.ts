@@ -1,5 +1,5 @@
 /**
- * Billboard shaders for the GTA6 Codex WebGL engine.
+ * Billboard shaders for the GTA6 Zona WebGL engine.
  * Image billboards with rounded frames, neon glow, and VHS distortion.
  */
 

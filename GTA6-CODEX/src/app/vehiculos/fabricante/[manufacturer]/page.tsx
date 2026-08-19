@@ -9,8 +9,8 @@ import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { EntityCard } from '@/components/entities/EntityCard'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel.app'
-const SITE_NAME = 'GTA6 Codex'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+const SITE_NAME = 'GTA6 Zona'
 
 interface PageProps {
   params: Promise<{ manufacturer: string }>
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!entry) return {}
 
   const title = `Vehículos ${entry.label} en GTA 6 — ${SITE_NAME}`
-  const description = `Explorá los ${entry.vehicles.length} vehículos de ${entry.label} documentados en GTA 6 Codex, con estado de confirmación y evidencia por unidad.`
+  const description = `Explorá los ${entry.vehicles.length} vehículos de ${entry.label} documentados en GTA 6 Zona, con estado de confirmación y evidencia por unidad.`
   const url = `${SITE_URL}/vehiculos/fabricante/${manufacturer}`
 
   return {

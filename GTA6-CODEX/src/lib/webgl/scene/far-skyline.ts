@@ -1,5 +1,5 @@
 /**
- * Far skyline builder for the GTA6 Codex WebGL engine.
+ * Far skyline builder for the GTA6 Zona WebGL engine.
  * Skyline de Miami: edificios con ventanas encendidas alternados con
  * palmeras en silueta, en el plano lejano (`farGroup`).
  *

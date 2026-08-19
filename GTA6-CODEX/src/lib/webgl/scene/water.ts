@@ -1,5 +1,5 @@
 /**
- * Water horizon builder for the GTA6 Codex WebGL engine.
+ * Water horizon builder for the GTA6 Zona WebGL engine.
  * Creates the Leonida bay with reflective water and waves.
  */
 

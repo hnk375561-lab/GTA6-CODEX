@@ -10,7 +10,7 @@ imagen por imagen (no solo por tamaño de archivo) del rango de bytes
 19390–23942 en `public/images/entities/vehiculos/`:
 
 - **Corte real confirmado**: ≤23820 bytes = placeholder genérico (template
-  "GTA6-CODEX · VEHÍCULO" con silueta de auto). ≥23942 bytes = imagen real
+  "GTA6-ZONA · VEHÍCULO" con silueta de auto). ≥23942 bytes = imagen real
   (incluye `bravado-buffalo-stx.webp`, un frame de trailer borroso que por
   tamaño casi cae en el rango de placeholder — caso borde verificado
   visualmente, no por heurística de tamaño).

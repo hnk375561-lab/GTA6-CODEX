@@ -1,8 +1,8 @@
 /**
- * Environment map procedural (PMREM) para el motor GTA6 Codex WebGL.
+ * Environment map procedural (PMREM) para el motor GTA6 Zona WebGL.
  *
  * Extraído literalmente de `setupEnvironment()`, método privado de
- * `GTA6CodexWebGLEngine` (ver `engine.ts`). Genera un gradiente de cielo
+ * `GTA6ZonaWebGLEngine` (ver `engine.ts`). Genera un gradiente de cielo
  * nocturno de Vice City (zenit añil, banda de horizonte en magenta, suelo
  * oscuro tibio) vía `PMREMGenerator` y lo aplica como `scene.environment`
  * — esto es lo que se ve reflejado/refractado en el vidrio de la torre
@@ -18,7 +18,7 @@
 import * as THREE from 'three'
 
 /**
- * Proviene de `setupEnvironment` en `GTA6CodexWebGLEngine`. Misma
+ * Proviene de `setupEnvironment` en `GTA6ZonaWebGLEngine`. Misma
  * secuencia: `PMREMGenerator` → escena auxiliar con esfera de gradiente →
  * `pmrem.fromScene()` → asignación a `scene.environment` → dispose del
  * generador y de la geometría/material auxiliares (solo existían para

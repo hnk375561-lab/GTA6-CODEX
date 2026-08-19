@@ -1,5 +1,5 @@
 /**
- * Atmospheric haze builder for the GTA6 Codex WebGL engine.
+ * Atmospheric haze builder for the GTA6 Zona WebGL engine.
  * Capas de haze volumétrico con parallax por profundidad.
  */
 
