@@ -17,7 +17,7 @@ export const GRADE_SHADER = {
     dayPhase: { value: 0.5 },
     humidity: { value: 0.45 },
     bloomMix: { value: 0.12 },
-  } as Record<string, IUniform<any>>,
+  } as Record<string, IUniform>,
   vertexShader: /* glsl */ `
     varying vec2 vUv;
     void main() {

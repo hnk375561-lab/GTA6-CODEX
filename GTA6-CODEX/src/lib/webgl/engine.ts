@@ -22,7 +22,7 @@ import { createPostProcessingPipeline } from './core/postprocessing'
 import { computePointerTarget, computeScrollTarget } from './core/input'
 import { computeSceneBusStateUpdate } from './core/scene-bus-adapter'
 import { lerpCyclic01, smootherstep } from './utils/math'
-import { SHOTS, ROAD_DASH_PERIOD, ROAD_FLOW_WRAP } from './config/scene'
+import { SHOTS, ROAD_FLOW_WRAP } from './config/scene'
 // Fase 8.1: buildSkyDome() migrado mecánicamente a ./scene/sky.ts (ver nota
 // de arquitectura al pie del archivo). SKY_VERTEX_SHADER/SKY_FRAGMENT_SHADER
 // ya no se importan acá directamente: ahora los consume ./scene/sky.ts.
