@@ -1,0 +1,30 @@
+{
+  "slug": "ocelot-jugular",
+  "type": "vehiculos",
+  "title": "Ocelot Jugular",
+  "description": "Sedán deportivo de Ocelot, inspirado en el Jaguar F-Type. Visible en el Trailer 1 durante la escena del hotel en Ocean Drive.",
+  "content": "El Ocelot Jugular es un vehículo deportivo de cinco puertas que marca la introducción de la marca Ocelot al universo de GTA VI. La marca, ausente en GTA V, está inspirada en fabricantes británicos como Jaguar y Lotus, y el Jugular en particular toma su diseño del Jaguar F-Type.\n\nEl vehículo aparece en el Trailer 1 de GTA VI, en la escena frente al hotel de Ocean Drive (aproximadamente en el segundo 0:33), aunque su aparición es breve y a cierta distancia de la cámara, lo que generó cierto debate inicial en la comunidad sobre su identificación exacta antes de que análisis frame-by-frame confirmaran el modelo.",
+  "manufacturer": "Ocelot",
+  "class": "Sedán deportivo",
+  "status": "confirmado",
+  "tags": [
+    "ocelot",
+    "trailer-1",
+    "sedan",
+    "deportivo",
+    "vice-city",
+    "nueva-marca"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-19T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
+  "evidence": {
+    "level": "oficial-visual",
+    "primarySource": "Rockstar Games — Trailer 1 de GTA VI (4 de diciembre de 2023), escena de Ocean Drive (~0:33)",
+    "secondarySource": "Análisis frame-by-frame de GTA-Xtreme y listados de vehículos de Sportskeeda y GTA Wiki (Fandom)",
+    "note": "Aparición visual confirmada en tráiler oficial; el nombre 'Jugular' proviene de material de marca de Rockstar reproducido por sitios especializados en vehículos de GTA. La marca Ocelot es nueva para la saga (no existía en GTA V)."
+  },
+  "relations": [],
+  "seoTitle": "Ocelot Jugular — Vehículo de GTA 6",
+  "seoDescription": "Ocelot Jugular, sedán deportivo inspirado en el Jaguar F-Type, visible en el Trailer 1 de GTA VI en Ocean Drive."
+}
