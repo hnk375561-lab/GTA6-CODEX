@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Entity, EntityType } from '@/types'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { GridPattern } from '@/components/ui/GridPattern'
+import { SimpleLightbox } from '@/components/ui/SimpleLightbox'
 import { cn } from '@/lib/utils'
 
 interface EntityImageProps {
@@ -39,10 +40,28 @@ const ASPECT: Record<NonNullable<EntityImageProps['variant']>, string> = {
   avatar: 'aspect-square',
 }
 
+/**
+ * Anchos reales que next/image debe pedir para cada variante, ajustados al
+ * layout de cada superficie donde se usa (antes `portrait` estaba fijo en
+ * '320px' sin importar el ancho real del sidebar de la ficha — eso hacía
+ * que se sirviera una versión más chica de la que el navegador terminaba
+ * estirando, produciendo el efecto "pixelado" pese a tener el original en
+ * alta resolución guardado en el repo).
+ */
 const SIZES: Record<NonNullable<EntityImageProps['variant']>, string> = {
-  thumbnail: '(min-width: 1024px) 360px, (min-width: 640px) 45vw, 100vw',
-  portrait: '320px',
+  thumbnail: '(min-width: 1024px) 400px, (min-width: 640px) 45vw, 100vw',
+  portrait: '(min-width: 1024px) 440px, (min-width: 640px) 70vw, 100vw',
   avatar: '56px',
+}
+
+/** Calidad de codificación por variante. Portrait es la pieza "hero" de la
+ * ficha (y la que se ve ampliada en el lightbox), así que va con la
+ * calidad más alta; thumbnail se ve pequeña en grillas de listado y no
+ * necesita tanto peso. */
+const QUALITY: Record<NonNullable<EntityImageProps['variant']>, number> = {
+  thumbnail: 85,
+  portrait: 92,
+  avatar: 75,
 }
 
 /**
@@ -119,8 +138,14 @@ const CATEGORY_FALLBACK_LABEL: Partial<Record<EntityType, string>> = {
 export function EntityImage({ entity, image, variant = 'thumbnail', className }: EntityImageProps) {
   const resolved = image ?? null
   const isAvatar = variant === 'avatar'
+  // Solo el retrato de la ficha (variant="portrait") se puede ampliar: es
+  // la única variante que NO se renderiza anidada dentro de un <Link> de
+  // tarjeta (ver EntityCard, que usa 'thumbnail'/'avatar' como parte de la
+  // navegación de la card completa — ahí un botón de lightbox anidado
+  // rompería esa navegación y sería HTML inválido, botón dentro de link).
+  const isZoomable = variant === 'portrait' && resolved && !resolved.remote
 
-  return (
+  const mediaContent = (
     <div
       className={cn(
         'card-media relative shrink-0 overflow-hidden rounded-lg border border-gta-border bg-gta-dark',
@@ -149,11 +174,20 @@ export function EntityImage({ entity, image, variant = 'thumbnail', className }:
               alt={resolved.alt}
               fill
               sizes={SIZES[variant]}
+              quality={QUALITY[variant]}
               className="card-media-image object-cover"
             />
           )}
           {!isAvatar && <div className="card-media-sheen" aria-hidden="true" />}
           {!isAvatar && <div className="card-media-vignette" aria-hidden="true" />}
+          {isZoomable && (
+            <div className="gallery-tile-zoom-icon !opacity-100" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M11 8v6M8 11h6M21 21l-4.3-4.3" />
+              </svg>
+            </div>
+          )}
         </>
       ) : (
         <div className="card-media-fallback absolute inset-0 flex flex-col items-center justify-center gap-2">
@@ -171,4 +205,14 @@ export function EntityImage({ entity, image, variant = 'thumbnail', className }:
       )}
     </div>
   )
+
+  if (isZoomable && resolved) {
+    return (
+      <SimpleLightbox src={resolved.src} alt={resolved.alt} triggerClassName="rounded-lg">
+        {mediaContent}
+      </SimpleLightbox>
+    )
+  }
+
+  return mediaContent
 }

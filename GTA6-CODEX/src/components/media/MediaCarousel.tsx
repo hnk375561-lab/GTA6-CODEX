@@ -5,6 +5,7 @@ import { resolveMediaRender } from '@/lib/media'
 import { Card, CardHeader, CardBody } from '@/components/ui/Card'
 import { YouTubeEmbed } from '@/components/media/YouTubeEmbed'
 import { VideoEmbed } from '@/components/media/VideoEmbed'
+import { SimpleLightbox } from '@/components/ui/SimpleLightbox'
 
 interface MediaCarouselProps {
   title: string
@@ -45,7 +46,8 @@ export function MediaCarousel({ title, assets }: MediaCarouselProps) {
                     src={rendered.thumbnailSrc}
                     alt={rendered.title}
                     fill
-                    sizes="240px"
+                    sizes="(min-width: 1024px) 224px, 45vw"
+                    quality={88}
                     className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   />
                 </div>
@@ -71,13 +73,27 @@ export function MediaCarousel({ title, assets }: MediaCarouselProps) {
             // controles interactivos uno dentro del otro.
             const isInteractiveEmbed = rendered.renderAs === 'youtube' || rendered.renderAs === 'video'
 
-            return href && !isInteractiveEmbed ? (
-              <Link key={asset.id} href={href} className="block">
-                {body}
-              </Link>
-            ) : (
-              <div key={asset.id}>{body}</div>
-            )
+            if (href && !isInteractiveEmbed) {
+              return (
+                <Link key={asset.id} href={href} className="block">
+                  {body}
+                </Link>
+              )
+            }
+
+            // Imagen suelta sin relación a ninguna otra ficha: antes caía
+            // en un <div> sin ningún manejador de click (no pasaba nada al
+            // tocarla). Ahora se puede ampliar en el mismo lightbox que usa
+            // el retrato de la ficha.
+            if (!isInteractiveEmbed) {
+              return (
+                <SimpleLightbox key={asset.id} src={rendered.thumbnailSrc} alt={rendered.title}>
+                  {body}
+                </SimpleLightbox>
+              )
+            }
+
+            return <div key={asset.id}>{body}</div>
           })}
         </div>
       </CardBody>
