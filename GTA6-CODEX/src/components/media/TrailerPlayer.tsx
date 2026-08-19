@@ -27,7 +27,7 @@ export function TrailerPlayer({ trailer }: TrailerPlayerProps) {
               <rect x="5" y="10" width="38" height="28" rx="3" />
               <path d="M20 18l11 6-11 6z" />
             </svg>
-            <span className="relative text-[11px] font-medium uppercase tracking-wider text-gta-text-secondary/70">
+            <span className="relative text-[11px] font-medium uppercase tracking-wider text-gta-text-secondary/80">
               Sin video oficial verificado
             </span>
           </div>

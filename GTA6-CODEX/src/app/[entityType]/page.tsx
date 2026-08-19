@@ -101,7 +101,7 @@ export default async function EntityTypePage({ params }: PageProps) {
               <p className="mt-1 text-gta-text-secondary">
                 {entities.length} {entities.length === 1 ? 'entrada documentada' : 'entradas documentadas'}
                 {entities.length > 0 && (
-                  <span className="text-gta-text-secondary/60">
+                  <span className="text-gta-text-secondary/80">
                     {' · '}
                     {[
                       statusCounts.confirmado > 0 && `${statusCounts.confirmado} ${STATUS_LABELS.confirmado.toLowerCase()}`,
@@ -161,7 +161,7 @@ export default async function EntityTypePage({ params }: PageProps) {
                           className="rounded-full border border-gta-border px-3 py-1.5 text-sm text-gta-text-secondary transition-colors hover:border-gta-accent hover:text-gta-accent"
                         >
                           {group.label}
-                          <span className="ml-1.5 text-gta-text-secondary/60">{group.vehicles.length}</span>
+                          <span className="ml-1.5 text-gta-text-secondary/80">{group.vehicles.length}</span>
                         </Link>
                       ))}
                     </div>

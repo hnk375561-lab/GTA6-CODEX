@@ -163,7 +163,7 @@ export function SearchClient({ entities, counts, imageBySlug }: SearchClientProp
                   : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
               )}
             >
-              Todos <span className="ml-1 text-gta-text-secondary/60">{rawResults.length}</span>
+              Todos <span className="ml-1 text-gta-text-secondary/80">{rawResults.length}</span>
             </button>
             {Array.from(typeCountsInResults.entries()).map(([type, count]) => (
               <button
@@ -178,7 +178,7 @@ export function SearchClient({ entities, counts, imageBySlug }: SearchClientProp
                     : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
                 )}
               >
-                {TYPE_LABELS[type]} <span className="ml-1 text-gta-text-secondary/60">{count}</span>
+                {TYPE_LABELS[type]} <span className="ml-1 text-gta-text-secondary/80">{count}</span>
               </button>
             ))}
           </div>

@@ -142,7 +142,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
             )}
           >
             Todas
-            <span className="ml-1.5 text-gta-text-secondary/60">{items.length}</span>
+            <span className="ml-1.5 text-gta-text-secondary/80">{items.length}</span>
           </button>
           {categories.map((c) => (
             <button
@@ -158,7 +158,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
               )}
             >
               {c.label}
-              <span className="ml-1.5 text-gta-text-secondary/60">{c.count}</span>
+              <span className="ml-1.5 text-gta-text-secondary/80">{c.count}</span>
             </button>
           ))}
         </div>

@@ -103,7 +103,7 @@ export default async function ManufacturerHubPage({ params }: PageProps) {
               <p className="mt-1 text-gta-text-secondary">
                 {vehicles.length} {vehicles.length === 1 ? 'vehículo documentado' : 'vehículos documentados'}
                 {vehicles.length > 0 && (
-                  <span className="text-gta-text-secondary/60">
+                  <span className="text-gta-text-secondary/80">
                     {' · '}
                     {[
                       statusCounts.confirmado > 0 && `${statusCounts.confirmado} confirmado${statusCounts.confirmado === 1 ? '' : 's'}`,

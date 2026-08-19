@@ -205,7 +205,7 @@ export function EntityMetadata({ entity }: EntityMetadataProps) {
             <ListField label="Fauna confirmada" items={loc.environment?.fauna} />
             <ListField label="Eventos ambientales confirmados" items={loc.environment?.naturalEvents} />
             {loc.environment?.unconfirmedNote && (
-              <p className="text-xs italic leading-relaxed text-gta-text-secondary/70">
+              <p className="text-xs italic leading-relaxed text-gta-text-secondary/80">
                 {loc.environment.unconfirmedNote}
               </p>
             )}
