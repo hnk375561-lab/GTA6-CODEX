@@ -12,6 +12,9 @@ const map = {
   'leonida.jpg': 'leonida',
   'la-perle.jpg': 'la-perle',
   'downtown-vice-city.png': 'downtown-vice-city',
+  'little-cuba.jpg': 'little-cuba',
+  'watson-bay.jpg': 'watson-bay',
+  'ocean-beach.jpg': 'ocean-beach',
 };
 
 for (const [src, slug] of Object.entries(map)) {
