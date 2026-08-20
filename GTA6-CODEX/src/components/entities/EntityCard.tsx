@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { Entity, EntityType, Trailer } from '@/types'
 import { Card, CardBody } from '@/components/ui/Card'
@@ -186,6 +186,13 @@ interface EntityCardProps {
    *  card no está seleccionada — el checkbox se muestra deshabilitado en
    *  vez de ocultarse, para que quede claro por qué no se puede tildar. */
   compareDisabled?: boolean
+  /** 'default' = card actual. 'hero' = variante ampliada para la primera
+   *  entrada de una sección de Destacados: tipografía más grande,
+   *  descripción sin recortar tan corto, franja de datos con más aire.
+   *  Solo tiene efecto con `layout="grid"`; el caller controla el ancho
+   *  real (col-span) vía `className`, esta prop solo cambia la densidad
+   *  interna de contenido. */
+  size?: 'default' | 'hero'
 }
 
 /** Checkbox de comparación superpuesto a la card/fila. Detiene la
@@ -249,9 +256,24 @@ export function EntityCard({
   compareChecked,
   onCompareToggle,
   compareDisabled,
+  size = 'default',
 }: EntityCardProps) {
   const [hovering, setHovering] = useState(false)
+  /** Visible en viewport (con margen), independiente del hover — habilita
+   *  el clip como "media ambiental" (loop a bajo opacity apenas la card
+   *  entra en pantalla), no solo como reacción al mouse. Sigue sin haber
+   *  descarga para cards fuera de pantalla: `videoRef.play()` es lo que
+   *  dispara la carga real, y solo se llama cuando el IntersectionObserver
+   *  confirma que la card está cerca del viewport. */
+  const [ambientVisible, setAmbientVisible] = useState(false)
+  const [reducedMotion, setReducedMotion] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const mediaWrapRef = useRef<HTMLDivElement>(null)
+  /** Elemento que recibe la inclinación 3D en hover (mousemove). Separado
+   *  del nodo de `Card` (que ya tiene su propia animación CSS de
+   *  translateY + glow) para no pisar esa transición existente: acá se
+   *  compone un `perspective()+rotateX+rotateY` en un wrapper propio. */
+  const tiltRef = useRef<HTMLDivElement>(null)
   const isTrailer = entity.type === EntityType.TRAILER && 'scenes' in entity
   const trailer = isTrailer ? (entity as Trailer) : null
   const quickFacts = getQuickFacts(entity)
@@ -263,6 +285,56 @@ export function EntityCard({
    *  evidencia cargada (ej. contenido "nuestro"/analítico sin fuente
    *  puntual) — el sello simplemente no se renderiza en ese caso. */
   const evidenceStamp = entity.evidence?.level ? EVIDENCE_STAMP_META[entity.evidence.level] : null
+
+  useEffect(() => {
+    setReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+  }, [])
+
+  // Clip como media ambiental: arranca el loop (mute, sin sonido) apenas la
+  // card entra en viewport, con opacity baja hasta que además hay hover.
+  // Se pausa al salir de pantalla — evita que una grilla larga de cards con
+  // clip mantenga decenas de videos corriendo en simultáneo fuera de vista.
+  useEffect(() => {
+    if (!clipUrl || reducedMotion) return
+    const el = mediaWrapRef.current
+    if (!el) return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        setAmbientVisible(entry.isIntersecting)
+        if (entry.isIntersecting) {
+          videoRef.current?.play().catch(() => {
+            // Igual que en handleEnter: autoplay puede fallar según política
+            // del navegador, la card sigue viéndose bien como imagen fija.
+          })
+        } else {
+          videoRef.current?.pause()
+        }
+      },
+      { rootMargin: '200px 0px', threshold: 0.15 }
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [clipUrl, reducedMotion])
+
+  const handleTiltMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (reducedMotion) return
+    const el = tiltRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    const px = (e.clientX - rect.left) / rect.width
+    const py = (e.clientY - rect.top) / rect.height
+    // Amplitud chica a propósito (±4°/±3°): la idea es que la card se
+    // sienta como un objeto físico que reacciona al cursor, no un efecto
+    // de feria — demasiado ángulo lee como gimmick, no como premium.
+    const rotateY = (px - 0.5) * 8
+    const rotateX = (0.5 - py) * 6
+    el.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+  }
+
+  const handleTiltLeave = () => {
+    const el = tiltRef.current
+    if (el) el.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)'
+  }
 
   if (layout === 'row') {
     return (
@@ -360,10 +432,16 @@ export function EntityCard({
 
   const handleLeave = () => {
     setHovering(false)
-    const video = videoRef.current
-    if (video) {
-      video.pause()
-      video.currentTime = 0
+    // Si la card sigue en viewport, el clip sigue como media ambiental a
+    // baja opacidad (ver IntersectionObserver arriba) — solo se pausa acá
+    // si ya salió de pantalla, para no cortar el loop ambiental al mover
+    // el mouse dentro de la misma card.
+    if (!ambientVisible) {
+      const video = videoRef.current
+      if (video) {
+        video.pause()
+        video.currentTime = 0
+      }
     }
   }
 
@@ -372,13 +450,28 @@ export function EntityCard({
       href={`/${entity.type}/${entity.slug}`}
       className={cn('group block h-full', className)}
     >
-      <Card hoverable className="flex h-full flex-col overflow-hidden !p-0">
-        <div
-          className="relative"
-          onMouseEnter={clipUrl ? handleEnter : undefined}
-          onMouseLeave={clipUrl ? handleLeave : undefined}
-        >
-          <EntityImage entity={entity} image={image} variant="thumbnail" className="rounded-none border-x-0 border-t-0" />
+      {/* Wrapper de inclinación 3D: transform propio (perspective + rotateX/Y
+          calculado en el mousemove), separado del translateY+glow que ya
+          aplica `.card-animated` sobre `Card` — se componen sin pisarse. */}
+      <div
+        ref={tiltRef}
+        onMouseMove={handleTiltMove}
+        onMouseLeave={handleTiltLeave}
+        className="h-full transition-transform duration-300 ease-out will-change-transform"
+      >
+        <Card hoverable className="flex h-full flex-col overflow-hidden !p-0">
+          <div
+            ref={mediaWrapRef}
+            className="relative"
+            onMouseEnter={clipUrl ? handleEnter : undefined}
+            onMouseLeave={clipUrl ? handleLeave : undefined}
+          >
+            <EntityImage
+              entity={entity}
+              image={image}
+              variant="thumbnail"
+              className={cn('rounded-none border-x-0 border-t-0', size === 'hero' && 'aspect-[16/9] sm:aspect-[2/1]')}
+            />
 
           {/* Pestaña de categoría — lengüeta de separador de carpeta, refuerza
               la lectura "expediente" de la card. Ancla siempre a la misma
@@ -433,8 +526,8 @@ export function EntityCard({
                 aria-hidden="true"
                 tabIndex={-1}
                 className={cn(
-                  'absolute inset-0 h-full w-full object-cover transition-opacity duration-300',
-                  hovering ? 'opacity-100' : 'opacity-0'
+                  'absolute inset-0 h-full w-full object-cover transition-opacity duration-500',
+                  hovering ? 'opacity-100' : ambientVisible ? 'opacity-35' : 'opacity-0'
                 )}
               />
               <span className="absolute right-2 top-2 z-10 inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/60 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-0">
@@ -460,7 +553,7 @@ export function EntityCard({
           )}
         </div>
 
-        <CardBody className="flex flex-1 flex-col gap-3 p-6">
+        <CardBody className={cn('flex flex-1 flex-col gap-3', size === 'hero' ? 'p-6 sm:p-8' : 'p-6')}>
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="status" status={entity.status}>
               {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
@@ -472,11 +565,13 @@ export function EntityCard({
             {entity.featured && <Badge variant="tag">Destacado</Badge>}
           </div>
 
-          <h2 className="text-xl font-bold text-gta-text transition-colors group-hover:text-gta-accent">
+          <h2 className={cn('font-bold text-gta-text transition-colors group-hover:text-gta-accent', size === 'hero' ? 'text-2xl sm:text-3xl' : 'text-xl')}>
             {entity.title}
           </h2>
 
-          <p className="line-clamp-3 text-sm text-gta-text-secondary">{entity.description}</p>
+          <p className={cn('text-gta-text-secondary', size === 'hero' ? 'line-clamp-4 text-[15px] sm:text-base' : 'line-clamp-3 text-sm')}>
+            {entity.description}
+          </p>
 
           {quickFacts.length > 0 && (
             /* "Ficha técnica": borde punteado (formulario/expediente, no un
@@ -533,7 +628,8 @@ export function EntityCard({
             </span>
           </div>
         </CardBody>
-      </Card>
+        </Card>
+      </div>
     </Link>
   )
 }

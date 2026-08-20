@@ -359,13 +359,15 @@ export default async function HomePage() {
             </Reveal>
 
             <div className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {featured.map((entity) => (
+              {featured.map((entity, i) => (
                 <EntityCard
                   key={`${entity.type}-${entity.slug}`}
                   entity={entity}
                   image={resolveEntityDisplayImage(entity)}
                   clipUrl={entity.type === EntityType.CHARACTER ? getCharacterClipUrl(entity.slug) : undefined}
                   relationCount={featuredRelationCounts[entity.slug]}
+                  size={i === 0 ? 'hero' : 'default'}
+                  className={i === 0 ? 'sm:col-span-2' : undefined}
                 />
               ))}
             </div>
