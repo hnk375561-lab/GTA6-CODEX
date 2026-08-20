@@ -7,6 +7,7 @@ import Fuse from 'fuse.js'
 import type { GalleryCategoryCount, GalleryItem } from '@/lib/gallery'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
+import { ZoomableImage } from '@/components/ui/ZoomableImage'
 import { YouTubeEmbed } from '@/components/media/YouTubeEmbed'
 import { VideoEmbed } from '@/components/media/VideoEmbed'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
@@ -397,13 +398,12 @@ function GalleryLightbox({
               <VideoEmbed videoSrc={item.videoSrc} title={item.title} autoLoad />
             </div>
           ) : (
-            <Image
+            <ZoomableImage
               key={item.id}
+              resetKey={item.id}
               src={item.src}
               alt={item.alt}
-              fill
               sizes="(min-width: 1920px) 1800px, (min-width: 1536px) 1400px, (min-width: 1280px) 1200px, (min-width: 1024px) 1000px, (min-width: 768px) 800px, 100vw"
-              className="object-contain"
               priority
               quality={100}
             />

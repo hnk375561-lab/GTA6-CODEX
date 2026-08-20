@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
-import Image from 'next/image'
+import { ZoomableImage } from '@/components/ui/ZoomableImage'
 import { cn } from '@/lib/utils'
 
 interface SimpleLightboxProps {
@@ -79,15 +79,13 @@ export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleL
           </button>
 
           <div
-            className="gallery-lightbox-panel relative z-10 flex h-[85vh] w-full max-w-6xl items-center justify-center"
+            className="gallery-lightbox-panel relative z-10 h-[85vh] w-full max-w-6xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
+            <ZoomableImage
               src={src}
               alt={alt}
-              fill
               sizes="(min-width: 1280px) 1200px, 95vw"
-              className="object-contain"
               quality={100}
               priority
             />
