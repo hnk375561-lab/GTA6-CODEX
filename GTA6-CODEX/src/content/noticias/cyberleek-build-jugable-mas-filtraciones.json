@@ -1,0 +1,51 @@
+{
+  "slug": "cyberleek-build-jugable-mas-filtraciones",
+  "type": "noticias",
+  "title": "El Filtrador 'Cyberleek' Confirma que Tiene una Build Jugable de GTA VI y Amenaza con Más Contenido",
+  "description": "Dos días después de la filtración inicial, nueva evidencia sugiere que 'Cyberleek' no solo tiene clips grabados sino acceso a una build jugable real de GTA VI. Publica un tercer y cuarto clip y advierte que seguirá filtrando.",
+  "content": "La filtración de gameplay de GTA VI iniciada el 18 de agosto de 2026 escaló durante el 19 y 20 de agosto, cuando surgió evidencia de que el actor detrás de la cuenta 'Cyberleek' no se limita a redistribuir clips ya grabados, sino que tendría acceso directo a una build jugable del juego.\n\n**Nuevos clips publicados:**\n\n- Un tercer clip muestra a Jason Duval sobrevolando la ciudad en una escena aérea, seguido de otro momento en el que dispara contra una pared formando la palabra 'Leek' con los impactos de bala — una firma deliberada del filtrador sobre el propio material, interpretada por varios medios como prueba de manipulación en tiempo real dentro del juego, no de un video pregrabado y editado.\n- Un cuarto clip, publicado el 19 de agosto, muestra más metraje de conducción; la canción que suena en la radio del vehículo es 'Sports Car' de Tate McRae, lanzada a inicios de 2025, lo que sitúa el contenido del clip en una build relativamente reciente del juego.\n\n**Por qué esto cambia la lectura de la filtración:**\n\nHasta el 18 de agosto, la interpretación dominante era que 'Cyberleek' había obtenido y redistribuido un conjunto fijo de clips ya grabados. La aparición de contenido adicional —incluyendo una acción deliberada e irrepetible como disparar letras contra una pared— llevó a varios medios (Push Square, PC Gamer) a concluir que el filtrador posee y opera activamente alguna forma de build jugable del juego, no solo un archivo de video estático. Esto implica que 'Cyberleek' podría seguir generando y publicando material nuevo a voluntad, incluyendo posibles fragmentos de historia o cinemáticas no vistas.\n\n**Demandas y contexto del filtrador:**\n\n'Cyberleek' reiteró sus exigencias hacia Rockstar y Take-Two centradas en el rechazo a las ediciones físicas sin disco (solo con código de descarga), y advirtió que continuará publicando contenido mientras no reciba una respuesta pública de la compañía. El grupo también mencionó tener preparado un 'proyecto secreto' adicional sin dar más detalles, y amenazó con dirigir acciones similares contra otras publishers.\n\n**Distanciamiento de Stop Killing Games:**\n\nEl movimiento de consumidores Stop Killing Games publicó una declaración aclarando que no tiene ninguna conexión con 'Cyberleek' ni con esta filtración, y expresó preocupación de que la controversia opaque el evento oficial 'Extended Look' de Rockstar en Netflix, programado para el 27 de agosto de 2026.\n\n**Estado de la respuesta de Rockstar:**\n\nRockstar Games y Take-Two continúan emitiendo notificaciones DMCA contra las cuentas que redistribuyen el material, pero no han emitido ningún comunicado oficial confirmando o desmintiendo la autenticidad de los clips ni la naturaleza exacta del acceso que tendría 'Cyberleek' al juego.",
+  "status": "rumor",
+  "tags": [
+    "leak",
+    "filtracion",
+    "gameplay",
+    "cyberleek",
+    "agosto-2026",
+    "dmca",
+    "no-oficial",
+    "build-jugable"
+  ],
+  "featured": true,
+  "createdAt": "2026-08-20T00:00:00Z",
+  "updatedAt": "2026-08-20T00:00:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "Push Square — 'GTA 6 Gameplay Leaker Has an Actual Build of the Game, Still Posting Leaks' (actualizado 20 de agosto de 2026)",
+    "secondarySource": "PC Gamer, Kotaku y Pure Xbox — cobertura del tercer y cuarto clip filtrados entre el 19 y 20 de agosto de 2026",
+    "note": "Ningún elemento de esta filtración fue confirmado oficialmente por Rockstar Games o Take-Two Interactive. La interpretación de que 'Cyberleek' posee una build jugable (en vez de solo clips grabados) se basa en el análisis de prensa especializada sobre el contenido de los clips 3 y 4, no en una confirmación directa del filtrador ni de Rockstar. Se recomienda contrastar esta ficha después del evento oficial 'Extended Look' del 27 de agosto de 2026.",
+    "limitations": [
+      "Rockstar Games no ha confirmado ni desmentido oficialmente ningún elemento de esta filtración ni la naturaleza del acceso del filtrador",
+      "La existencia de un supuesto 'proyecto secreto' mencionado por el filtrador no tiene ningún detalle verificable",
+      "Circula abundante contenido generado con IA y clips reciclados del leak de 2022 mezclados con el material real; tratar cualquier clip individual con cautela"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "noticias",
+      "targetSlug": "leak-gameplay-mapa-agosto-2026",
+      "relation": "continuación-de"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "extended-look-netflix-27-agosto",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "protagonista-de"
+    }
+  ],
+  "seoTitle": "Cyberleek Confirma Build Jugable de GTA VI y Promete Más Filtraciones — Noticias de GTA 6",
+  "seoDescription": "GTA 6: nueva evidencia sugiere que el filtrador 'Cyberleek' tiene acceso a una build jugable real del juego, no solo clips grabados. Publica un tercer y cuarto clip y amenaza con más contenido."
+}

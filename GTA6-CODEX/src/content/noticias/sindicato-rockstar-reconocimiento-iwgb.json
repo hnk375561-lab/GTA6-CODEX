@@ -1,0 +1,40 @@
+{
+  "slug": "sindicato-rockstar-reconocimiento-iwgb",
+  "type": "noticias",
+  "title": "Trabajadores de Rockstar Entran en Negociaciones Formales de Reconocimiento Sindical a Meses del Lanzamiento",
+  "description": "El Rockstar Games Workers Union, respaldado por el sindicato británico IWGB, sostuvo su primera reunión formal con la dirección de Rockstar el 22 de julio de 2026, mientras sigue abierto un litigio laboral por despidos de octubre de 2025.",
+  "content": "Empleados de Rockstar Games en el Reino Unido presentaron una solicitud de reconocimiento voluntario del sindicato IWGB Game Workers Union el 30 de junio de 2026, dando inicio a un proceso formal de negociación colectiva que sigue en curso a menos de cuatro meses del lanzamiento de GTA VI.\n\n**Quiénes están detrás del sindicato:**\n\nEl Rockstar Games Workers Union opera bajo el paraguas del Independent Workers' Union of Great Britain (IWGB), que dice organizar trabajadores en los estudios de Rockstar en Edimburgo, Dundee, Lincoln, Leeds y Londres desde 2019. De prosperar el reconocimiento, Rockstar se convertiría en el segundo estudio de videojuegos del Reino Unido con un sindicato reconocido formalmente, después de ZA/UM (desarrollador de Disco Elysium), que lo logró en octubre de 2025.\n\n**Proceso de reconocimiento:**\n\nBajo la legislación laboral británica, un empleador tiene 10 días hábiles para responder a una solicitud de reconocimiento voluntario. Puede aceptarla, rechazarla, o —como hizo Rockstar— abrir un período de negociación de 20 días hábiles (prorrogable por acuerdo mutuo) antes de decidir. Si Rockstar finalmente rechaza el reconocimiento voluntario, el caso pasaría al Central Arbitration Committee del Reino Unido para una vía de reconocimiento estatutario.\n\n**Primera reunión — 22 de julio de 2026:**\n\nEl sindicato sostuvo su primera reunión formal con la dirección de Rockstar el 22 de julio de 2026, tras meses de organización y protestas. La calificó como 'un paso en la dirección correcta' y afirmó que ambas partes acordaron una hoja de ruta para un proceso de negociación más ágil. El siguiente paso pendiente es definir la 'unidad de negociación' — qué empleados exactamente representaría el sindicato formalmente. Rockstar no se ha comprometido aún a un reconocimiento voluntario.\n\n**Demandas centrales del sindicato:**\n\n- Que las horas extra siempre sean compensadas y fin del 'crunch'\n- Mayor transparencia en el sistema de pagos y bonificaciones\n- Retorno del trabajo remoto y flexible\n- Protecciones frente al desplazamiento de puestos por tecnología/IA\n- Compromiso de no realizar despidos\n\n**El litigio de fondo — despidos de octubre de 2025:**\n\nLa solicitud de reconocimiento llega en medio de una disputa legal en curso: el 30 de octubre de 2025, Rockstar despidió a 31 empleados en el Reino Unido, todos miembros del canal de Discord del IWGB Game Workers. Rockstar sostiene que los despidos se debieron a la distribución de información confidencial en un foro público, y ha negado explícitamente cualquier relación con actividad sindical. El IWGB califica los despidos como 'union busting' (represión sindical) y ha llevado el caso a un tribunal laboral, cuya audiencia final está programada para septiembre de 2026 — apenas dos meses antes del lanzamiento de GTA VI.\n\n**Contexto de la industria:**\n\nLa organización sindical en Rockstar se da en un momento de creciente actividad laboral en la industria de videojuegos: se reportan aproximadamente 45.000 empleos perdidos en el sector entre 2022 y mediados de 2025, y una encuesta de 2026 encontró que el 82% de los desarrolladores estadounidenses apoya la sindicalización.",
+  "status": "confirmado",
+  "tags": [
+    "rockstar",
+    "sindicato",
+    "iwgb",
+    "laboral",
+    "crunch",
+    "despidos",
+    "2026"
+  ],
+  "featured": false,
+  "createdAt": "2026-06-30T00:00:00Z",
+  "updatedAt": "2026-08-20T00:00:00Z",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "IWGB (Independent Workers' Union of Great Britain) — comunicados oficiales del 30 de junio y 22 de julio de 2026",
+    "secondarySource": "Softonic, GodisaGeek, Outlook Respawn, PC Guide — cobertura de la primera reunión formal de negociación del 22 de julio de 2026",
+    "note": "Los hechos centrales (solicitud de reconocimiento, primera reunión, litigio por despidos) están confirmados por comunicados directos del propio sindicato y corroborados por múltiples medios especializados. La posición de Rockstar sobre los despidos (información confidencial vs. actividad sindical) se basa en declaraciones de la empresa a Bloomberg, no verificable de forma independiente por este sitio.",
+    "limitations": [
+      "Rockstar no ha confirmado ni negado públicamente si otorgará el reconocimiento voluntario del sindicato",
+      "El resultado del tribunal laboral de septiembre de 2026 sobre los despidos de octubre de 2025 aún no se conoce",
+      "No hay confirmación de que estas negociaciones afecten el desarrollo o la fecha de lanzamiento de GTA VI"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "noticias",
+      "targetSlug": "retraso-gta6-2025",
+      "relation": "relacionada-con"
+    }
+  ],
+  "seoTitle": "Sindicato de Rockstar Entra en Negociaciones Formales con IWGB — Noticias de GTA 6",
+  "seoDescription": "GTA 6: el Rockstar Games Workers Union, respaldado por el IWGB, sostuvo su primera reunión formal con la dirección de Rockstar el 22 de julio de 2026, en medio de un litigio por despidos de octubre de 2025."
+}
