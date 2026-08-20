@@ -1674,6 +1674,35 @@ a:hover .logo-mark {
   }
 }
 
+/* --- Zoom de imágenes (SimpleLightbox y GalleryExplorer, vía ZoomableImage) --- */
+.zoomable-image-container {
+  /* El propio contenedor es el que recibe los gestos de pan/pinch/wheel;
+     sin esto el navegador intenta hacer scroll/zoom nativo de la página en
+     mobile antes de que el pointermove del hook llegue a procesarlos. */
+  touch-action: none;
+}
+
+.zoomable-image-controls {
+  animation: zoomable-controls-in 220ms var(--ease-out-back);
+}
+
+@keyframes zoomable-controls-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zoomable-image-controls {
+    animation: none !important;
+  }
+}
+
 /* Print styles */
 @media print {
   body {
