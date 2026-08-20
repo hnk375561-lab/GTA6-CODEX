@@ -13,11 +13,13 @@
     "process-images:apply": "node scripts/process-images.mjs --apply",
     "verify:seo": "node scripts/verify-seo-routes.mjs",
     "verify:content": "node scripts/verify-content-integrity.mjs",
+    "audit:evidence": "node scripts/audit-evidence-coverage.mjs",
     "verify:relations": "node scripts/verify-relations-integrity.mjs",
     "verify:relations:selftest": "node scripts/verify-relations-integrity.mjs --self-test",
     "verify:media": "node scripts/verify-media-integrity.mjs",
     "test:media": "node --test scripts/verify-media-integrity.test.mjs",
     "verify:tailwind": "node scripts/verify-tailwind-config.mjs",
+    "verify:reserved-keys": "node scripts/verify-reserved-entity-keys.mjs",
     "check:unused": "knip",
     "sync:media": "node scripts/media-sync.mjs"
   },

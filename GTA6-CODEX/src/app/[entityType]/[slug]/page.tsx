@@ -213,7 +213,7 @@ export default async function EntityPage({ params }: PageProps) {
         sceneId="entity-header"
         className="relative overflow-hidden border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-10 sm:py-14"
       >
-        <EntityHeaderBackground type={type} />
+        <EntityHeaderBackground type={type} evidenceLevel={entity.evidence?.level} />
         <div className="container-max relative">
           <span
             className="pointer-events-none absolute -left-1 -top-1 hidden h-5 w-5 border-l border-t border-gta-accent/25 sm:block"

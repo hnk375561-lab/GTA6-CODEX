@@ -1,5 +1,3 @@
-import { BaseEntitySchema } from '@/types/schemas'
-
 /**
  * Lógica compartida para extraer campos "propios" (no reservados por
  * BaseEntity) de una entidad de forma genérica y data-driven, sin
@@ -19,7 +17,41 @@ import { BaseEntitySchema } from '@/types/schemas'
  * vez de mantener una lista aparte a mano, para que nunca puedan
  * desincronizarse.
  */
-export const RESERVED_ENTITY_KEYS = new Set<string>(BaseEntitySchema.keyof().options as string[])
+/**
+ * Claves reservadas del contrato base de toda entidad (ver `BaseEntitySchema`
+ * en `src/types/schemas.ts`), como constante plana en vez de derivarlas de
+ * Zod en runtime.
+ *
+ * Antes esta constante hacía `BaseEntitySchema.keyof().options`, lo cual
+ * era correcto pero traía un costo real: este archivo lo importa
+ * `EntityCard.tsx` (`'use client'`, se renderiza en la home, en las 12
+ * páginas `/[entityType]` y en `/vehiculos/fabricante/[manufacturer]` — el
+ * grupo de páginas con más tráfico del sitio), y `schemas.ts` importa
+ * `zod` completo. Auditoría de bundle (Fase "Expediente", punto 4): eso
+ * ponía ~64 KB minificados de Zod en el cliente, en todas esas rutas, para
+ * obtener en runtime una lista de ~14 strings que nunca cambia salvo que
+ * alguien edite `BaseEntitySchema` a mano. Se listan acá como constante,
+ * y `entity-fields.test.mjs` (`node --test`) falla si alguna vez se
+ * desincroniza de `BaseEntitySchema` — mismo resultado, sin arrastrar Zod
+ * al bundle del cliente.
+ */
+export const RESERVED_ENTITY_KEYS = new Set<string>([
+  'slug',
+  'type',
+  'title',
+  'description',
+  'content',
+  'status',
+  'tags',
+  'createdAt',
+  'updatedAt',
+  'relations',
+  'seoTitle',
+  'seoDescription',
+  'featured',
+  'evidence',
+  'image',
+])
 
 /**
  * Convierte una key cruda de JSON (snake_case, la convención ya usada en
