@@ -169,7 +169,6 @@ p {
 /* --- Etiquetas/eyebrows/kickers editoriales: mono + tracking ancho,
    la firma tipográfica del "expediente clasificado". --- */
 .eyebrow,
-.section-kicker,
 .hero-kicker {
   font-family: var(--font-mono);
   letter-spacing: 0.28em;
@@ -246,10 +245,6 @@ a:not(.no-style) {
   @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
 }
 
-.container-tight {
-  @apply mx-auto max-w-4xl px-4 sm:px-6 lg:px-8;
-}
-
 .container-narrow {
   @apply mx-auto max-w-2xl px-4 sm:px-6 lg:px-8;
 }
@@ -268,11 +263,6 @@ a:not(.no-style) {
   );
 }
 
-/* Grid y Layout */
-.grid-auto {
-  @apply grid auto-cols-max gap-4;
-}
-
 /* ============================================================
    ANIMACIONES — Sistema global GTA6 Zona
    ============================================================ */
@@ -287,37 +277,8 @@ a:not(.no-style) {
   }
 }
 
-@keyframes slide-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse-gta {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
 .animate-fade-in {
   animation: fade-in 300ms ease-in-out;
-}
-
-.animate-slide-in {
-  animation: slide-in 300ms ease-in-out;
-}
-
-.animate-pulse-gta {
-  animation: pulse-gta 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 /* --- Subrayado que crece (links / nav) --- */
@@ -390,27 +351,16 @@ a:hover .logo-mark {
   }
 
   /* --- Detiene toda animación infinita/ambiental del sitio ---
-     Cubre: logo (hover glow), aurora, marquee, shine, float, pulso
-     genérico y el contador. Cada elemento queda en un estado final
-     estático y legible en vez de congelarse a mitad de ciclo. */
+     Cubre: logo (hover glow), contador y capas de media de las cards.
+     Cada elemento queda en un estado final estático y legible en vez
+     de congelarse a mitad de ciclo. */
   .logo-mark,
-  .animate-aurora,
-  .animate-marquee,
-  .animate-marquee-vertical,
-  .animate-shine,
-  .animate-gradient,
-  .animate-float,
-  .animate-pulse-gta,
   .count-up,
   .card-media-image,
   .card-media-sheen,
   .card-media-fallback-sweep,
   .card-media-fallback-glyph {
     animation: none !important;
-  }
-
-  .animate-aurora {
-    background-position: 0% 50% !important;
   }
 
   .card-animated,
@@ -718,20 +668,6 @@ a:hover .logo-mark {
   font-variant-numeric: tabular-nums;
 }
 
-@keyframes float-slow {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-float {
-  animation: float-slow 4.5s ease-in-out infinite;
-}
-
 /* --- Stagger genérico para listas de hijos directos --- */
 .stagger > * {
   opacity: 0;
@@ -979,29 +915,9 @@ a:hover .logo-mark {
   }
 }
 
-/* --- Secciones post-hero: banner de stats, kickers, badges de categoría.
-   Mismo lenguaje visual que el hero (gradiente rosa->cian, glow sutil),
-   sin agregar colores nuevos a la paleta. --- */
-.stats-band {
-  position: relative;
-}
-
-.stat-block {
-  padding: 0.5rem 1.5rem;
-}
-
-.stat-number {
-  font-family: var(--font-display);
-  background: linear-gradient(90deg, #f5eff9, #b3a3c4);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.section-kicker {
-  opacity: 0.9;
-}
-
+/* --- Secciones post-hero: badges de categoría. Mismo lenguaje visual
+   que el hero (gradiente rosa->cian, glow sutil), sin agregar colores
+   nuevos a la paleta. --- */
 .category-icon-badge {
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: linear-gradient(135deg, rgba(20, 15, 32, 0.85), rgba(20, 15, 32, 0.6));
@@ -1254,14 +1170,6 @@ a:hover .logo-mark {
   pointer-events: none;
   background: radial-gradient(ellipse 60% 100% at 15% 0%, rgba(255, 47, 143, 0.08), transparent 65%);
   z-index: 0;
-}
-
-.featured-card {
-  transition: box-shadow 300ms ease;
-}
-
-.featured-card:hover {
-  box-shadow: 0 20px 44px -20px rgba(255, 47, 143, 0.4);
 }
 
 /* --- Fondo de ficha destacada (EntityHeaderBackground) --- */
@@ -1622,21 +1530,6 @@ a:hover .logo-mark {
   .trailer-card-overlay {
     transition: none !important;
   }
-}
-
-/* Utilities */
-.truncate-2 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-}
-
-.truncate-3 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
 }
 
 /* ============================================================
