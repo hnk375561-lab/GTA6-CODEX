@@ -31,9 +31,9 @@
  * ponía ~64 KB minificados de Zod en el cliente, en todas esas rutas, para
  * obtener en runtime una lista de ~14 strings que nunca cambia salvo que
  * alguien edite `BaseEntitySchema` a mano. Se listan acá como constante,
- * y `entity-fields.test.mjs` (`node --test`) falla si alguna vez se
- * desincroniza de `BaseEntitySchema` — mismo resultado, sin arrastrar Zod
- * al bundle del cliente.
+ * y `entity-fields.test.ts` (Vitest) falla si alguna vez se desincroniza
+ * de `BaseEntitySchema` — mismo resultado, sin arrastrar Zod al bundle
+ * del cliente.
  */
 export const RESERVED_ENTITY_KEYS = new Set<string>([
   'slug',
