@@ -231,6 +231,18 @@ export function EntityImage({ entity, image, variant = 'thumbnail', className }:
               {CATEGORY_FALLBACK_LABEL[entity.type] ?? 'Sin imagen verificada'}
             </span>
           )}
+          {/* Placeholders sin imagen resuelta todavía: se completan con IA,
+              no con material oficial, así que llevan el mismo sello que
+              una imagen ya subida con image.source='unverified' — no hay
+              que esperar a que se cargue el archivo para avisarlo. */}
+          {!isAvatar && (
+            <span
+              className="absolute bottom-2 left-2 z-10 inline-flex items-center gap-1 rounded-full border border-cyan-400/40 bg-black/70 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-cyan-300 backdrop-blur-sm"
+              title="Recreación generada con IA — no es material oficial de Rockstar Games"
+            >
+              IA
+            </span>
+          )}
         </div>
       )}
     </div>
