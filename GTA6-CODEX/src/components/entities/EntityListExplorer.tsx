@@ -163,8 +163,6 @@ export function EntityListExplorer({
   // únicos por entidad, así que no aportan un filtro real).
   const classOptions = useMemo(() => computeClassOptions(entities, type), [entities, type])
 
-  const hasAttributeFilters = tagOptions.length > 0 || classOptions.length > 0
-
   // "default" respeta el orden ya recibido (relevancia de Fuse mientras se
   // busca; orden alfabético natural del servidor el resto del tiempo) —
   // nunca se reordena de más sin que el usuario elija un criterio. El
@@ -217,7 +215,7 @@ export function EntityListExplorer({
 
   return (
     <div>
-      <div className="mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="relative w-full sm:max-w-sm">
           <svg
             className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-gta-text-tertiary"
@@ -316,100 +314,107 @@ export function EntityListExplorer({
               </button>
             </div>
           )}
+        </div>
+      </div>
 
-          <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrar por estado">
-            {(['todos', 'confirmado', 'rumor', 'nuestro'] as StatusFilter[]).map((key) => (
+      {/* Nivel de filtros, separado de la fila de arriba a propósito:
+          buscar/ordenar/vista son controles de "cómo ver" la lista, esto
+          decide "qué subconjunto" se ve — dos categorías de acción
+          distintas que antes competían por el mismo peso visual en una
+          sola fila (estado mezclado con orden/vista), con clase/tags
+          apareciendo recién más abajo en un bloque aparte. Ahora todo
+          filtro vive en un único nivel con su propia etiqueta y un borde
+          superior que lo desprende visualmente de la fila de utilidad. */}
+      <div
+        className="mb-6 flex flex-wrap items-center gap-2 border-t border-gta-border pt-4"
+        role="group"
+        aria-label="Filtrar resultados"
+      >
+        <span className="text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+          Filtros
+        </span>
+
+        {(['todos', 'confirmado', 'rumor', 'nuestro'] as StatusFilter[]).map((key) => (
+          <button
+            key={key}
+            type="button"
+            onClick={() => setStatus(key)}
+            aria-pressed={status === key}
+            className={cn(
+              'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
+              status === key
+                ? 'border-gta-accent bg-gta-accent/15 text-gta-accent'
+                : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
+            )}
+          >
+            {key === 'todos' ? 'Todos' : STATUS_LABELS[key]}
+            <span className="ml-1.5 text-gta-text-secondary/80">{counts[key]}</span>
+          </button>
+        ))}
+
+        {classOptions.length > 0 && (
+          <>
+            <span className="ml-1 text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+              Clase
+            </span>
+            {classOptions.map(({ value, count }) => (
               <button
-                key={key}
+                key={value}
                 type="button"
-                onClick={() => setStatus(key)}
-                aria-pressed={status === key}
+                onClick={() => setSelectedClass((prev) => (prev === value ? null : value))}
+                aria-pressed={selectedClass === value}
                 className={cn(
-                  'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
-                  status === key
+                  'rounded-full border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent',
+                  selectedClass === value
+                    ? 'border-gta-accent-orange bg-gta-accent-orange/15 text-gta-accent-orange'
+                    : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
+                )}
+              >
+                {value.replace(/-/g, ' ')}
+                <span className="ml-1 text-gta-text-secondary/80">{count}</span>
+              </button>
+            ))}
+          </>
+        )}
+
+        {tagOptions.length > 0 && (
+          <>
+            <span className="ml-1 text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+              Tags
+            </span>
+            {tagOptions.map(({ tag, count }) => (
+              <button
+                key={tag}
+                type="button"
+                onClick={() => toggleTag(tag)}
+                aria-pressed={selectedTags.includes(tag)}
+                className={cn(
+                  'rounded-full border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent',
+                  selectedTags.includes(tag)
                     ? 'border-gta-accent bg-gta-accent/15 text-gta-accent'
                     : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
                 )}
               >
-                {key === 'todos' ? 'Todos' : STATUS_LABELS[key]}
-                <span className="ml-1.5 text-gta-text-secondary/80">{counts[key]}</span>
+                {tag.replace(/-/g, ' ')}
+                <span className="ml-1 text-gta-text-secondary/80">{count}</span>
               </button>
             ))}
-          </div>
-        </div>
+          </>
+        )}
+
+        {hasActiveFilters && (
+          <button
+            type="button"
+            onClick={clearAttributeFilters}
+            className="ml-1 flex items-center gap-1 rounded-full border border-transparent px-3 py-1 text-[11px] font-semibold text-gta-text-secondary transition-colors hover:text-gta-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent"
+          >
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+            Limpiar filtros
+          </button>
+        )}
       </div>
-
-      {hasAttributeFilters && (
-        <div className="mb-8 flex flex-wrap items-center gap-2" role="group" aria-label="Filtrar por atributo">
-          {classOptions.length > 0 && (
-            <>
-              <span className="text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
-                Clase
-              </span>
-              {classOptions.map(({ value, count }) => (
-                <button
-                  key={value}
-                  type="button"
-                  onClick={() => setSelectedClass((prev) => (prev === value ? null : value))}
-                  aria-pressed={selectedClass === value}
-                  className={cn(
-                    'rounded-full border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent',
-                    selectedClass === value
-                      ? 'border-gta-accent-orange bg-gta-accent-orange/15 text-gta-accent-orange'
-                      : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
-                  )}
-                >
-                  {value.replace(/-/g, ' ')}
-                  <span className="ml-1 text-gta-text-secondary/80">{count}</span>
-                </button>
-              ))}
-            </>
-          )}
-
-          {tagOptions.length > 0 && (
-            <>
-              <span
-                className={cn(
-                  'text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary',
-                  classOptions.length > 0 && 'ml-2'
-                )}
-              >
-                Tags
-              </span>
-              {tagOptions.map(({ tag, count }) => (
-                <button
-                  key={tag}
-                  type="button"
-                  onClick={() => toggleTag(tag)}
-                  aria-pressed={selectedTags.includes(tag)}
-                  className={cn(
-                    'rounded-full border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent',
-                    selectedTags.includes(tag)
-                      ? 'border-gta-accent bg-gta-accent/15 text-gta-accent'
-                      : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
-                  )}
-                >
-                  {tag.replace(/-/g, ' ')}
-                  <span className="ml-1 text-gta-text-secondary/80">{count}</span>
-                </button>
-              ))}
-            </>
-          )}
-
-          {hasActiveFilters && (
-            <button
-              type="button"
-              onClick={clearAttributeFilters}
-              className="ml-1 flex items-center gap-1 rounded-full border border-transparent px-3 py-1 text-[11px] font-semibold text-gta-text-secondary transition-colors hover:text-gta-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent"
-            >
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-                <path d="M18 6 6 18M6 6l12 12" />
-              </svg>
-              Limpiar filtros
-            </button>
-          )}
-        </div>
-      )}
 
       {isFiltering && (
         <p className="mb-5 text-sm text-gta-text-secondary" aria-live="polite">

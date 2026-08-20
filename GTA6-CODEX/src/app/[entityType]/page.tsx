@@ -119,7 +119,7 @@ export default async function EntityTypePage({ params }: PageProps) {
       <div className="list-header-glow" aria-hidden="true" />
       <div className="container-max relative">
         <Reveal className="mb-10">
-          <nav className="mb-4 text-sm text-gta-text-secondary" aria-label="Breadcrumb">
+          <nav className="mb-6 text-sm text-gta-text-secondary" aria-label="Breadcrumb">
             <Link href="/" className="link-underline transition-colors hover:text-gta-accent">
               Inicio
             </Link>
@@ -132,8 +132,18 @@ export default async function EntityTypePage({ params }: PageProps) {
               <CategoryIcon type={type} className="h-6 w-6" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold text-gta-text">{label}</h1>
-              <p className="mt-1 text-gta-text-secondary">
+              {/* Mismo patrón eyebrow→heading que cada sección del home
+                  (Categorías, Destacados) — antes esta página era la única
+                  que saltaba directo al h1 sin ese primer escalón, así que
+                  el título no se leía como parte del mismo sistema. */}
+              <p className="eyebrow mb-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+                Catálogo
+              </p>
+              <h1 className="text-4xl font-bold leading-tight text-gta-text">{label}</h1>
+              {/* text-sm (antes heredaba el tamaño base de <p>): la metadata
+                  de conteo es información de apoyo, no debería competir en
+                  peso visual con el h1 que tiene justo arriba. */}
+              <p className="mt-2 text-sm text-gta-text-secondary">
                 {entities.length} {entities.length === 1 ? 'entrada documentada' : 'entradas documentadas'}
                 {entities.length > 0 && (
                   <span className="text-gta-text-secondary/80">
