@@ -213,30 +213,34 @@ export default async function HomePage() {
           </Reveal>
 
           <Reveal delay={150}>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            {/* Un solo CTA de botón acá a propósito: antes había un segundo
+                botón "Buscar en el Zona" apuntando al mismo /buscar que el
+                QuickSearchForm de abajo — dos affordances distintas para la
+                misma acción, una al lado de la otra, diluían cuál era la
+                principal. El buscador real (con input) ya cubre ese caso
+                mejor que un botón que aterriza en una página vacía. */}
+            <div className="mt-10 flex justify-center">
               <Link
                 href="/personajes"
                 className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
               >
                 Explorar el Zona
               </Link>
-              <Link
-                href="/buscar"
-                className="inline-flex items-center justify-center rounded-lg border border-gta-border bg-gta-surface/60 px-8 py-3.5 font-semibold text-gta-text transition-all hover:-translate-y-0.5 hover:border-gta-accent/50"
-              >
-                Buscar en el Zona
-              </Link>
             </div>
           </Reveal>
 
           <Reveal delay={200}>
-            <div className="mt-6">
+            <div className="mt-5">
               <QuickSearchForm />
             </div>
           </Reveal>
 
           <Reveal delay={250}>
-            <div className="glass-surface mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 rounded-xl border border-gta-border/70 px-8 py-5">
+            {/* mt-12 (antes mt-10): el strip de stats es un bloque de
+                naturaleza distinta (datos, no acción) — más separación acá
+                refuerza que cerró el bloque de "acción" de arriba (CTA +
+                buscador) antes de pasar al de "cifras". */}
+            <div className="glass-surface mx-auto mt-12 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 rounded-xl border border-gta-border/70 px-8 py-5">
               {HERO_STAT_TYPES.map((type) => (
                 <div key={type} className="flex flex-col items-center gap-0.5 px-2">
                   <span className="font-display text-2xl font-bold text-gta-text sm:text-3xl">
