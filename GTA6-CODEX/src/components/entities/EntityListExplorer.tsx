@@ -2,44 +2,29 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
-import Fuse from 'fuse.js'
-import { EntityType, type Entity, type Vehicle } from '@/types'
+import { EntityType, type Entity } from '@/types'
 import { Reveal } from '@/components/ui/Reveal'
 import { EntityCard } from '@/components/entities/EntityCard'
 import { VehicleCompareBar, VehicleCompareSheet, MAX_COMPARE } from '@/components/entities/VehicleCompareSheet'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
 import { useSyncedSearchParams } from '@/lib/hooks/useSyncedSearchParams'
+import { useVehicleCompare } from '@/lib/hooks/useVehicleCompare'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { cn } from '@/lib/utils'
 import { STATUS_LABELS } from '@/lib/entity-labels'
-import { vehiclePerformanceScore, hasPerformanceData } from '@/lib/vehicle-performance'
-
-type StatusFilter = 'todos' | keyof typeof STATUS_LABELS
-
-type SortOption = 'default' | 'az' | 'za' | 'recent' | 'connections' | 'performance'
-
-const SORT_LABELS: Record<SortOption, string> = {
-  default: 'Orden por defecto',
-  az: 'A-Z',
-  za: 'Z-A',
-  recent: 'Más recientes',
-  connections: 'Más conexiones',
-  performance: 'Mejor rendimiento',
-}
+import {
+  type StatusFilter,
+  type SortOption,
+  SORT_LABELS,
+  buildFuse,
+  computeClassOptions,
+  computeSortOptions,
+  computeStatusCounts,
+  computeTagOptions,
+  filterAndSortEntities,
+} from '@/lib/entity-list-filters'
 
 type ViewMode = 'grid' | 'catalogo'
-
-/** Un tag/atributo necesita aparecer en al menos 2 entidades del mismo
- *  tipo para contar como "consistente" y mostrarse como filtro — evita
- *  chips inútiles armados a partir de un tag usado una sola vez (ruido,
- *  no una categoría real). */
-const MIN_ATTRIBUTE_COUNT = 2
-/** Tope de chips de tag visibles (se muestran los más frecuentes
- *  primero). Con tipos de 50+ entidades (ej. vehículos) la cantidad de
- *  tags distintos que ya cumple MIN_ATTRIBUTE_COUNT puede ser alta; este
- *  tope es puramente de presentación (no descarta datos, solo no lista
- *  cola larga) para no "llenar la interfaz de controles". */
-const MAX_TAG_OPTIONS = 14
 
 interface EntityListExplorerProps {
   type: EntityType
@@ -114,10 +99,18 @@ export function EntityListExplorer({
 
   // Comparador de vehículos (solo EntityType.VEHICLE): hasta MAX_COMPARE
   // slugs seleccionados desde las cards/filas, más el estado de apertura
-  // del panel de comparación. Vive acá (no en EntityCard) porque la
-  // selección es compartida entre todas las cards de la lista.
-  const [compareSlugs, setCompareSlugs] = useState<string[]>([])
-  const [compareOpen, setCompareOpen] = useState(false)
+  // del panel de comparación. Vive en un hook propio (no en EntityCard)
+  // porque la selección es compartida entre todas las cards de la lista —
+  // ver `useVehicleCompare`.
+  const {
+    compareSlugs,
+    compareOpen,
+    compareVehicles,
+    setCompareOpen,
+    toggleCompare,
+    removeCompare,
+    clearCompare,
+  } = useVehicleCompare(entities)
   const isVehicleList = type === EntityType.VEHICLE
 
   // Mantiene la URL al día con el estado actual de filtros (debounced en
@@ -141,45 +134,9 @@ export function EntityListExplorer({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedQuery, status, sortBy, selectedTags, selectedClass, viewMode, isVehicleList])
 
-  const toggleCompare = (slug: string) => {
-    setCompareSlugs((prev) => {
-      if (prev.includes(slug)) return prev.filter((s) => s !== slug)
-      if (prev.length >= MAX_COMPARE) return prev
-      return [...prev, slug]
-    })
-  }
-  const removeCompare = (slug: string) => setCompareSlugs((prev) => prev.filter((s) => s !== slug))
-  const clearCompare = () => {
-    setCompareSlugs([])
-    setCompareOpen(false)
-  }
-  const compareVehicles = useMemo(
-    () => compareSlugs.map((slug) => entities.find((e) => e.slug === slug)).filter((e): e is Vehicle => Boolean(e)),
-    [compareSlugs, entities]
-  )
+  const counts = useMemo(() => computeStatusCounts(entities), [entities])
 
-  const counts = useMemo(() => {
-    const c: Record<StatusFilter, number> = { todos: entities.length, confirmado: 0, rumor: 0, nuestro: 0 }
-    for (const e of entities) {
-      const key = e.status as keyof typeof STATUS_LABELS
-      if (key in STATUS_LABELS) c[key] += 1
-    }
-    return c
-  }, [entities])
-
-  const fuse = useMemo(
-    () =>
-      new Fuse(entities, {
-        keys: [
-          { name: 'title', weight: 0.6 },
-          { name: 'description', weight: 0.25 },
-          { name: 'tags', weight: 0.15 },
-        ],
-        threshold: 0.35,
-        ignoreLocation: true,
-      }),
-    [entities]
-  )
+  const fuse = useMemo(() => buildFuse(entities), [entities])
 
   // Criterios de orden disponibles para este tipo. A-Z/Z-A/Más recientes
   // usan campos requeridos en toda entidad (`title`, `updatedAt`) — siempre
@@ -187,91 +144,49 @@ export function EntityListExplorer({
   // este tipo tiene alguna conexión (explícita o inferida vía
   // `relationCountBySlug`, Fase 8, hallazgo [7]); si no, el criterio no
   // aportaría ningún orden real y no se muestra (nunca se inventa un dato
-  // ausente).
-  const getRelationCount = (e: Entity) => relationCountBySlug?.[e.slug] ?? e.relations?.length ?? 0
-
-  const sortOptions = useMemo(() => {
-    const options: SortOption[] = ['default', 'az', 'za', 'recent']
-    if (entities.some((e) => getRelationCount(e) > 0)) options.push('connections')
-    // "Mejor rendimiento" solo se ofrece en Vehículos y solo si al menos
-    // una entidad tiene algún dato de performance cargado (nunca se
-    // inventa un orden sobre datos ausentes).
-    if (isVehicleList && entities.some((e) => hasPerformanceData(e as Vehicle))) {
-      options.push('performance')
-    }
-    return options
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [entities, relationCountBySlug, isVehicleList])
+  // ausente). "Mejor rendimiento" solo se ofrece en Vehículos y solo si al
+  // menos una entidad tiene algún dato de performance cargado.
+  const sortOptions = useMemo(
+    () => computeSortOptions(entities, relationCountBySlug, isVehicleList),
+    [entities, relationCountBySlug, isVehicleList]
+  )
 
   // Tags "consistentes" del tipo actual: cualquier tag que ya existe en el
   // contenido y aparece en 2+ entidades. Nunca se inventa una categoría —
   // se deriva 100% de `entity.tags`, presente en toda entidad (BaseEntity).
-  const tagOptions = useMemo(() => {
-    const freq = new Map<string, number>()
-    for (const e of entities) {
-      for (const tag of e.tags ?? []) {
-        freq.set(tag, (freq.get(tag) ?? 0) + 1)
-      }
-    }
-    return Array.from(freq.entries())
-      .filter(([, count]) => count >= MIN_ATTRIBUTE_COUNT)
-      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'es'))
-      .slice(0, MAX_TAG_OPTIONS)
-      .map(([tag, count]) => ({ tag, count }))
-  }, [entities])
+  const tagOptions = useMemo(() => computeTagOptions(entities), [entities])
 
   // Filtro por `class`, exclusivo de Vehículos: es el único tipo con un
   // atributo propio (no un tag) que además varía de forma consistente
   // entre entidades (ver auditoría — el resto de tipos con campos propios,
   // como `district`/`region` en Ubicaciones, o no varían o son casi
   // únicos por entidad, así que no aportan un filtro real).
-  const classOptions = useMemo(() => {
-    if (type !== EntityType.VEHICLE) return []
-    const freq = new Map<string, number>()
-    for (const e of entities) {
-      const value = (e as Vehicle).class
-      if (value) freq.set(value, (freq.get(value) ?? 0) + 1)
-    }
-    return Array.from(freq.entries())
-      .filter(([, count]) => count >= MIN_ATTRIBUTE_COUNT)
-      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'es'))
-      .map(([value, count]) => ({ value, count }))
-  }, [entities, type])
+  const classOptions = useMemo(() => computeClassOptions(entities, type), [entities, type])
 
   const hasAttributeFilters = tagOptions.length > 0 || classOptions.length > 0
 
-  const filtered = useMemo(() => {
-    let base = debouncedQuery.trim() ? fuse.search(debouncedQuery).map((r) => r.item) : entities
-
-    if (status !== 'todos') base = base.filter((e) => e.status === status)
-    if (selectedClass) base = base.filter((e) => (e as Vehicle).class === selectedClass)
-    if (selectedTags.length > 0) {
-      base = base.filter((e) => e.tags?.some((tag) => selectedTags.includes(tag)))
-    }
-
-    // "default" respeta el orden ya recibido (relevancia de Fuse mientras
-    // se busca; orden alfabético natural del servidor el resto del tiempo)
-    // — nunca se reordena de más sin que el usuario elija un criterio.
-    if (sortBy === 'az') {
-      base = [...base].sort((a, b) => a.title.localeCompare(b.title, 'es'))
-    } else if (sortBy === 'za') {
-      base = [...base].sort((a, b) => b.title.localeCompare(a.title, 'es'))
-    } else if (sortBy === 'recent') {
-      base = [...base].sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
-    } else if (sortBy === 'connections') {
-      base = [...base].sort((a, b) => getRelationCount(b) - getRelationCount(a))
-    } else if (sortBy === 'performance') {
-      base = [...base].sort(
-        (a, b) => vehiclePerformanceScore(b as Vehicle) - vehiclePerformanceScore(a as Vehicle)
-      )
-    }
-
-    return base
-    // getRelationCount solo depende de relationCountBySlug (ya en deps) y
-    // de `entity.relations`, que viaja dentro de cada `entity` — no hace
-    // falta re-crearla como dependencia propia.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [fuse, debouncedQuery, entities, status, selectedClass, selectedTags, sortBy, relationCountBySlug])
+  // "default" respeta el orden ya recibido (relevancia de Fuse mientras se
+  // busca; orden alfabético natural del servidor el resto del tiempo) —
+  // nunca se reordena de más sin que el usuario elija un criterio. El
+  // pipeline completo (búsqueda → filtros → orden) vive en
+  // `filterAndSortEntities` (lib/entity-list-filters.ts), pura y testeada
+  // por separado del ciclo de render de React.
+  const filtered = useMemo(
+    () =>
+      filterAndSortEntities(
+        {
+          entities,
+          query: debouncedQuery,
+          status,
+          selectedClass,
+          selectedTags,
+          sortBy,
+          relationCountBySlug,
+        },
+        fuse
+      ),
+    [entities, debouncedQuery, status, selectedClass, selectedTags, sortBy, relationCountBySlug, fuse]
+  )
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]))

@@ -18,6 +18,7 @@
     "verify:relations:selftest": "node scripts/verify-relations-integrity.mjs --self-test",
     "verify:media": "node scripts/verify-media-integrity.mjs",
     "test:media": "node --test scripts/verify-media-integrity.test.mjs",
+    "test": "vitest run",
     "verify:tailwind": "node scripts/verify-tailwind-config.mjs",
     "verify:reserved-keys": "node scripts/verify-reserved-entity-keys.mjs",
     "check:unused": "knip",
@@ -54,6 +55,7 @@
     "knip": "^6.32.2",
     "postcss": "^8.4.32",
     "sharp": "^0.35.3",
-    "tailwindcss": "^3.4.0"
+    "tailwindcss": "^3.4.0",
+    "vitest": "^4.1.11"
   }
 }
