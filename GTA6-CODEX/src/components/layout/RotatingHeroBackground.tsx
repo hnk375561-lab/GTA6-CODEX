@@ -148,8 +148,9 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
       >
         {HERO_BACKGROUNDS.slice(0, mountedCount).map((variant, i) => (
           <HeroSceneSVG
-            key={variant}
+            key={`${variant}-${i}`}
             variant={variant as 'magenta' | 'cyan'}
+            instanceId={`${variant}-${i}`}
             className="absolute inset-0 h-full w-full object-cover"
             style={{
               opacity: i === index ? 0.5 : 0,

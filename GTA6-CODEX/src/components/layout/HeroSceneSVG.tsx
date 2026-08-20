@@ -13,17 +13,29 @@
 
 interface HeroSceneSVGProps {
   variant?: 'magenta' | 'cyan'
+  /**
+   * Identificador único de esta instancia, para desambiguar los `id` de
+   * `<defs>` (gradientes) cuando dos instancias con el mismo `variant`
+   * conviven en el DOM (p. ej. si `RotatingHeroBackground` llegara a
+   * recibir un array `backgrounds` con la misma paleta repetida). Sin
+   * esto, los `id="sky-magenta"` etc. colisionarían — SVG inválido, y el
+   * navegador puede resolver `url(#...)` contra el primer `id` que
+   * encuentre para ambas instancias. Default al propio `variant` para no
+   * romper compatibilidad con callers existentes que no lo pasan.
+   */
+  instanceId?: string
   className?: string
   style?: React.CSSProperties
 }
 
-export function HeroSceneSVG({ variant = 'magenta', className, style }: HeroSceneSVGProps) {
+export function HeroSceneSVG({ variant = 'magenta', instanceId, className, style }: HeroSceneSVGProps) {
   const isMagenta = variant === 'magenta'
   const skyTop = isMagenta ? '#2a0a3d' : '#0a1a3d'
   const skyMid = isMagenta ? '#ff2f8f' : '#22d3ee'
   const skyBottom = isMagenta ? '#ffb347' : '#a78bfa'
   const sun = isMagenta ? '#ffd700' : '#f0c274'
   const silhouette = '#0a0712'
+  const uid = instanceId ?? variant
 
   return (
     <svg
@@ -34,26 +46,26 @@ export function HeroSceneSVG({ variant = 'magenta', className, style }: HeroScen
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id={`sky-${variant}`} x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id={`sky-${uid}`} x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor={skyTop} />
           <stop offset="55%" stopColor={skyMid} />
           <stop offset="100%" stopColor={skyBottom} />
         </linearGradient>
-        <linearGradient id={`sun-${variant}`} x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id={`sun-${uid}`} x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor={sun} stopOpacity="0.95" />
           <stop offset="100%" stopColor={sun} stopOpacity="0.6" />
         </linearGradient>
-        <linearGradient id={`ground-${variant}`} x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id={`ground-${uid}`} x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor={silhouette} stopOpacity="0.4" />
           <stop offset="100%" stopColor={silhouette} stopOpacity="1" />
         </linearGradient>
       </defs>
 
       {/* Cielo */}
-      <rect width="1600" height="900" fill={`url(#sky-${variant})`} />
+      <rect width="1600" height="900" fill={`url(#sky-${uid})`} />
 
       {/* Sol */}
-      <circle cx="800" cy="560" r="220" fill={`url(#sun-${variant})`} />
+      <circle cx="800" cy="560" r="220" fill={`url(#sun-${uid})`} />
 
       {/* Líneas horizontales del sol, estilo synthwave */}
       {[0, 1, 2, 3, 4, 5].map((i) => (
@@ -112,7 +124,7 @@ export function HeroSceneSVG({ variant = 'magenta', className, style }: HeroScen
       </g>
 
       {/* Suelo / calle */}
-      <rect x="0" y="780" width="1600" height="120" fill={`url(#ground-${variant})`} />
+      <rect x="0" y="780" width="1600" height="120" fill={`url(#ground-${uid})`} />
 
       {/* Silueta de sedán clásico, sin marca */}
       <g transform="translate(560, 720)" fill={silhouette}>
