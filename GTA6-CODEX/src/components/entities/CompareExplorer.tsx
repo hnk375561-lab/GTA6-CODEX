@@ -225,7 +225,8 @@ function VehiclePickerTile({
             src={image.src}
             alt={vehicle.title}
             fill
-            sizes="(min-width: 1024px) 200px, 40vw"
+            sizes="(min-width: 1280px) 220px, (min-width: 1024px) 240px, (min-width: 640px) 30vw, 45vw"
+            quality={90}
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         ) : (

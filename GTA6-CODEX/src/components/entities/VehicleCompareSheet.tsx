@@ -127,7 +127,14 @@ export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: Vehicle
             <div key={v.slug} className="flex flex-col">
               <div className="relative mb-3 aspect-[4/3] overflow-hidden rounded-xl border border-gta-border bg-gta-surface">
                 {img?.src ? (
-                  <Image src={img.src} alt={v.title} fill sizes="240px" className="object-cover" />
+                  <Image
+                    src={img.src}
+                    alt={v.title}
+                    fill
+                    sizes={`(min-width: 1024px) calc((min(100vw, 1280px) - 200px) / ${vehicles.length}), calc((100vw - 48px) / ${vehicles.length})`}
+                    quality={95}
+                    className="object-cover"
+                  />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center text-xs text-gta-text-tertiary">
                     Sin imagen
