@@ -459,10 +459,10 @@ export function EntityCard({
         onMouseLeave={handleTiltLeave}
         className="h-full transition-transform duration-300 ease-out will-change-transform"
       >
-        <Card hoverable className="flex h-full flex-col overflow-hidden !p-0">
+        <Card hoverable className={cn('flex h-full flex-col overflow-hidden !p-0', size === 'hero' && 'lg:flex-row')}>
           <div
             ref={mediaWrapRef}
-            className="relative"
+            className={cn('relative', size === 'hero' && 'lg:w-2/5 lg:shrink-0')}
             onMouseEnter={clipUrl ? handleEnter : undefined}
             onMouseLeave={clipUrl ? handleLeave : undefined}
           >
@@ -470,7 +470,10 @@ export function EntityCard({
               entity={entity}
               image={image}
               variant="thumbnail"
-              className={cn('rounded-none border-x-0 border-t-0', size === 'hero' && 'aspect-[16/9] sm:aspect-[2/1]')}
+              className={cn(
+                'rounded-none border-x-0 border-t-0',
+                size === 'hero' && 'sm:aspect-[2/1] lg:aspect-auto lg:h-full lg:w-full lg:border-b-0'
+              )}
             />
 
           {/* Pestaña de categoría — lengüeta de separador de carpeta, refuerza
@@ -553,7 +556,7 @@ export function EntityCard({
           )}
         </div>
 
-        <CardBody className={cn('flex flex-1 flex-col gap-3', size === 'hero' ? 'p-6 sm:p-8' : 'p-6')}>
+        <CardBody className={cn('flex flex-1 flex-col gap-3', size === 'hero' ? 'p-6 sm:p-8 lg:justify-center' : 'p-6')}>
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="status" status={entity.status}>
               {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
