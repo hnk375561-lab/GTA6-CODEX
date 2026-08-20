@@ -11,6 +11,7 @@ import type { ResolvedDisplayImage } from '@/lib/images'
 import { ENTITY_TYPE_LABELS, STATUS_LABELS } from '@/lib/entity-labels'
 import { getGenericQuickFacts } from '@/lib/entity-fields'
 import { performanceToScale } from '@/lib/vehicle-performance'
+import { EVIDENCE_STAMP_META } from '@/lib/evidence'
 import { cn } from '@/lib/utils'
 
 /** Ancho de la mini-barra de rendimiento en la vista de catálogo (fila),
@@ -256,6 +257,12 @@ export function EntityCard({
   const quickFacts = getQuickFacts(entity)
   const resolvedRelationCount = relationCount ?? entity.relations?.length ?? 0
   const resolvedTypeLabel = typeLabel ?? ENTITY_TYPE_LABELS[entity.type]
+  /** Sello de trazabilidad — mismo dato que EvidenceBlock muestra en la
+   *  ficha completa, ahora también visible en el grid (ver lib/evidence.ts
+   *  para el razonamiento). `undefined` cuando la entidad no tiene
+   *  evidencia cargada (ej. contenido "nuestro"/analítico sin fuente
+   *  puntual) — el sello simplemente no se renderiza en ese caso. */
+  const evidenceStamp = entity.evidence?.level ? EVIDENCE_STAMP_META[entity.evidence.level] : null
 
   if (layout === 'row') {
     return (
@@ -272,6 +279,22 @@ export function EntityCard({
 
           <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg sm:h-20 sm:w-28">
             <EntityImage entity={entity} image={image} variant="thumbnail" className="h-full rounded-lg border-0" />
+            {evidenceStamp && (
+              /* Versión "solo ícono" del sello: la fila es angosta (catálogo
+                 de vehículos), no hay lugar para el label de texto completo
+                 que sí usa la card en grilla — el glifo solo, con el mismo
+                 color por nivel, mantiene la señal sin romper el layout. */
+              <span
+                className={cn(
+                  'absolute right-1 top-1 z-10 flex h-4 w-4 items-center justify-center rounded-full border font-mono text-[9px] leading-none backdrop-blur-sm',
+                  evidenceStamp.className
+                )}
+                title={`Evidencia: ${evidenceStamp.shortLabel}`}
+                aria-hidden="true"
+              >
+                {evidenceStamp.icon}
+              </span>
+            )}
           </div>
 
           <div className="min-w-0 flex-1">
@@ -357,8 +380,33 @@ export function EntityCard({
         >
           <EntityImage entity={entity} image={image} variant="thumbnail" className="rounded-none border-x-0 border-t-0" />
 
+          {/* Pestaña de categoría — lengüeta de separador de carpeta, refuerza
+              la lectura "expediente" de la card. Ancla siempre a la misma
+              posición (top-0 left-5) para que el grid no "salte" entre
+              tarjetas con y sin otros overlays. */}
+          <span className="absolute left-5 top-0 z-10 inline-flex items-center gap-1.5 rounded-b-lg border border-t-0 border-gta-border-strong bg-gta-darker px-3 py-1.5 font-mono text-[10px] uppercase tracking-wide text-gta-text-tertiary transition-colors duration-300 group-hover:border-gta-accent group-hover:text-gta-accent-strong">
+            <CategoryIcon type={entity.type} className="h-2.5 w-2.5" />
+            {resolvedTypeLabel}
+          </span>
+
+          {evidenceStamp && (
+            <span
+              className={cn(
+                'absolute right-3 top-3 z-10 inline-flex -rotate-3 items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-wide backdrop-blur-sm transition-transform duration-300 group-hover:rotate-0',
+                evidenceStamp.className
+              )}
+              title="Nivel de evidencia — ver detalle completo en la ficha"
+            >
+              <span aria-hidden="true">{evidenceStamp.icon}</span>
+              {evidenceStamp.shortLabel}
+            </span>
+          )}
+
           {compareEnabled && (
-            <div className="absolute left-2 top-2 z-10">
+            /* top-9 en vez de top-2: deja libre la esquina donde ahora vive
+               la pestaña de categoría (left-5 top-0) para que no se solapen
+               en la vista grilla de Vehículos. */
+            <div className="absolute left-2 top-9 z-10">
               <CompareCheckbox
                 checked={compareChecked}
                 disabled={compareDisabled}
@@ -431,11 +479,17 @@ export function EntityCard({
           <p className="line-clamp-3 text-sm text-gta-text-secondary">{entity.description}</p>
 
           {quickFacts.length > 0 && (
-            <dl className="flex flex-wrap gap-x-4 gap-y-1 border-t border-gta-border pt-3 text-xs">
+            /* "Ficha técnica": borde punteado (formulario/expediente, no un
+               simple divisor) + columnas separadas por hairline + valores en
+               mono con tabular-nums, mismo lenguaje que EvidenceBlock en la
+               ficha completa (Fase "Expediente", punto 1). */
+            <dl className="grid grid-flow-col auto-cols-fr divide-x divide-gta-border border-y border-dashed border-gta-border-strong py-2.5">
               {quickFacts.map((fact) => (
-                <div key={fact.label} className="flex items-center gap-1.5">
-                  <dt className="text-gta-text-secondary">{fact.label}:</dt>
-                  <dd className="truncate font-medium text-gta-text">{fact.value}</dd>
+                <div key={fact.label} className="min-w-0 px-3 first:pl-0">
+                  <dt className="mb-0.5 truncate font-mono text-[9px] uppercase tracking-wide text-gta-text-tertiary">
+                    {fact.label}
+                  </dt>
+                  <dd className="truncate font-mono text-xs font-medium tabular-nums text-gta-text">{fact.value}</dd>
                 </div>
               ))}
             </dl>
