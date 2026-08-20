@@ -33,5 +33,10 @@
     "note": "FASE G (13 ago 2026): CORRECCION. La ficha no tenia bloque evidence y estaba en status 'nuestro' (no oficial), pero la investigacion confirma que Rockstar nombra a Ocean Beach explicitamente en la descripcion oficial de Vice City en su sitio web, ademas de su aparicion visual en el Trailer 1. Se sube a 'confirmado' con evidence_level 'oficial-nombrado'."
   },
   "seoTitle": "Ocean Beach — Ubicación de GTA 6 en Leonida",
-  "seoDescription": "GTA 6: Distrito costero de Vice City, inspirado en South Beach, Miami. Zona turística con playas, hoteles art déco y vida nocturna."
+  "seoDescription": "GTA 6: Distrito costero de Vice City, inspirado en South Beach, Miami. Zona turística con playas, hoteles art déco y vida nocturna.",
+  "image": {
+    "source": "unverified",
+    "credit": "Placeholder / recreación generada con IA — no es material oficial de Rockstar Games, pendiente de reemplazo por captura oficial o ilustración IA final",
+    "alt": "Ocean Beach en GTA VI, recreación no oficial generada con IA (placeholder pendiente de reemplazo)"
+  }
 }

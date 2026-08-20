@@ -38,5 +38,10 @@
     "note": "Auditoria total (13 ago 2026): nombre de barrio confirmado oficialmente en el comunicado de Ultimate Edition, no solo por wikis comunitarias. Backfill retroactivo de evidence. Expansion (19 ago 2026, ronda 4 - auditoria de relaciones inversas): se agregan relaciones 'aparece_en' hacia misiones/sesion-only-raw-records, donde esta entidad ya estaba documentada como relacionada desde el lado de esas fichas. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso para habilitar navegacion cruzada en ambos sentidos."
   },
   "seoTitle": "Little Cuba — Ubicación de GTA 6 en Leonida",
-  "seoDescription": "GTA 6: Barrio de Vice City inspirado en Little Havana, Miami. Confirmado directamente por el texto oficial de Rockstar Games sobre la ciudad."
+  "seoDescription": "GTA 6: Barrio de Vice City inspirado en Little Havana, Miami. Confirmado directamente por el texto oficial de Rockstar Games sobre la ciudad.",
+  "image": {
+    "source": "unverified",
+    "credit": "Placeholder / recreación generada con IA — no es material oficial de Rockstar Games, pendiente de reemplazo por captura oficial o ilustración IA final",
+    "alt": "Little Cuba en GTA VI, recreación no oficial generada con IA (placeholder pendiente de reemplazo)"
+  }
 }
