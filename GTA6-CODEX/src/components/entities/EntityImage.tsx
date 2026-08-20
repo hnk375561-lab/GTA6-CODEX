@@ -152,6 +152,14 @@ const CATEGORY_FALLBACK_LABEL: Partial<Record<EntityType, string>> = {
 export function EntityImage({ entity, image, variant = 'thumbnail', className }: EntityImageProps) {
   const resolved = image ?? null
   const isAvatar = variant === 'avatar'
+  /** Marca visual de que la FOTO (no la entidad) es una recreación no
+   *  oficial generada con IA. Deliberadamente independiente de
+   *  `entity.status` (confirmado/rumor/nuestro es el nivel de evidencia
+   *  del objeto en sí; esto es sobre la procedencia del archivo de
+   *  imagen) — así un objeto "confirmado" con foto IA muestra ambas
+   *  cosas: badge de estado real + este sello sobre la imagen. Se
+   *  omite en 'avatar' por tamaño (56px, sin espacio legible). */
+  const isAiImage = entity.image?.source === 'unverified'
   // Solo el retrato de la ficha (variant="portrait") se puede ampliar: es
   // la única variante que NO se renderiza anidada dentro de un <Link> de
   // tarjeta (ver EntityCard, que usa 'thumbnail'/'avatar' como parte de la
@@ -194,6 +202,14 @@ export function EntityImage({ entity, image, variant = 'thumbnail', className }:
           )}
           {!isAvatar && <div className="card-media-sheen" aria-hidden="true" />}
           {!isAvatar && <div className="card-media-vignette" aria-hidden="true" />}
+          {!isAvatar && isAiImage && (
+            <span
+              className="absolute bottom-2 left-2 z-10 inline-flex items-center gap-1 rounded-full border border-cyan-400/40 bg-black/70 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-cyan-300 backdrop-blur-sm"
+              title="Recreación generada con IA — no es material oficial de Rockstar Games"
+            >
+              IA
+            </span>
+          )}
           {isZoomable && (
             <div className="gallery-tile-zoom-icon !opacity-100" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
