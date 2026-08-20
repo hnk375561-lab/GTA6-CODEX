@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { getAllEntities, getEntityCountsByType } from '@/lib/entities'
 import { getEntityImageMap } from '@/lib/media'
+import { getBidirectionalRelationCount } from '@/lib/relations'
 import { SearchClient } from '@/components/search/SearchClient'
 import { Reveal } from '@/components/ui/Reveal'
 
@@ -46,6 +47,16 @@ export default async function SearchPage({
     getEntityCountsByType(),
   ])
 
+  // Conteo de conexiones incluyendo relaciones inferidas/bidireccionales
+  // (mismo patrón que `[entityType]/page.tsx`), para habilitar el orden
+  // "Más conexiones" en el buscador global igual que en los listados por
+  // categoría. Se resuelve una sola vez acá, en servidor — `SearchClient`
+  // es `'use client'` y no puede recorrer todo el contenido por su cuenta.
+  const relationCountEntries = await Promise.all(
+    entities.map(async (e) => [`${e.type}/${e.slug}`, await getBidirectionalRelationCount(e)] as const)
+  )
+  const relationCountBySlug = Object.fromEntries(relationCountEntries)
+
   return (
     <section className="py-12 sm:py-16">
       <div className="container-max">
@@ -70,6 +81,7 @@ export default async function SearchPage({
             entities={entities}
             counts={counts}
             imageBySlug={getEntityImageMap(entities)}
+            relationCountBySlug={relationCountBySlug}
             initialQuery={q}
           />
         </Suspense>
