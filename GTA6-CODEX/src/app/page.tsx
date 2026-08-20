@@ -206,9 +206,8 @@ export default async function HomePage() {
               GTA6 Zona
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-gta-text-secondary sm:text-xl">
-              Wiki editorial de Grand Theft Auto 6: personajes, vehículos, ubicaciones,
-              misiones y más — información verificada, rumores y análisis profundo, todo
-              con su nivel de evidencia a la vista.
+              Cada personaje, vehículo, ubicación y misión de GTA6, clasificado por nivel
+              de evidencia — para que sepas de un vistazo qué es oficial y qué es rumor.
             </p>
           </Reveal>
 
@@ -224,7 +223,7 @@ export default async function HomePage() {
                 href="/personajes"
                 className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
               >
-                Explorar el Zona
+                Entrar al expediente
               </Link>
             </div>
           </Reveal>
