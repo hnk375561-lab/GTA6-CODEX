@@ -16,6 +16,7 @@ import { Card } from '@/components/ui/Card'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { CountUp } from '@/components/ui/CountUp'
+import { WordRotate } from '@/components/ui/WordRotate'
 import { CategoryCardMedia } from '@/components/ui/CategoryCardMedia'
 import { EntityCard } from '@/components/entities/EntityCard'
 import { getCategoryPreviewImages } from '@/lib/images'
@@ -49,6 +50,16 @@ const HERO_STAT_TYPES: EntityType[] = [
   EntityType.LOCATION,
   EntityType.BUSINESS,
 ]
+
+/**
+ * Mismas cuatro palabras que ya formaban la lista estática del subtítulo
+ * del hero ("Cada personaje, vehículo, ubicación y misión de GTA6...").
+ * Se rotan de a una con `WordRotate` en vez de listarlas juntas — mismo
+ * contenido, sin agregar copy nuevo. Concuerdan en singular porque el
+ * "clasificado" que sigue en la oración concuerda con "GTA6", no con
+ * esta palabra.
+ */
+const HERO_SUBTITLE_WORDS = ['personaje', 'vehículo', 'ubicación', 'misión']
 
 const CATEGORY_ORDER: EntityType[] = [
   EntityType.CHARACTER,
@@ -217,8 +228,8 @@ export default async function HomePage() {
               GTA6 Zona
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-gta-text-secondary sm:text-xl">
-              Cada personaje, vehículo, ubicación y misión de GTA6, clasificado por nivel
-              de evidencia — para que sepas de un vistazo qué es oficial y qué es rumor.
+              Cada <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gta-text" /> de GTA6, clasificado
+              por nivel de evidencia — para que sepas de un vistazo qué es oficial y qué es rumor.
             </p>
           </Reveal>
 
