@@ -131,7 +131,11 @@ export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: Vehicle
                     src={img.src}
                     alt={v.title}
                     fill
-                    sizes={`(min-width: 1024px) calc((min(100vw, 1280px) - 200px) / ${vehicles.length}), calc((100vw - 48px) / ${vehicles.length})`}
+                    sizes={
+                      vehicles.length <= 2
+                        ? '(min-width: 1024px) 900px, (min-width: 640px) 700px, 500px'
+                        : '(min-width: 1024px) 700px, (min-width: 640px) 500px, 400px'
+                    }
                     quality={95}
                     className="object-cover"
                   />
