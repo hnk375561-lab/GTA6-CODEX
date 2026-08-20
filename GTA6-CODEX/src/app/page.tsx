@@ -24,6 +24,7 @@ import { RotatingHeroBackground } from '@/components/layout/RotatingHeroBackgrou
 import { SceneSection } from '@/components/webgl/SceneSection'
 import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
 import { DevelopmentTimeline, type TimelineEvent } from '@/components/home/DevelopmentTimeline'
+import { LaunchCountdown, type CountdownTarget } from '@/components/home/LaunchCountdown'
 import { QuickSearchForm } from '@/components/home/QuickSearchForm'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -139,6 +140,53 @@ const EVIDENCE_LEVELS: Array<{
   },
 ]
 
+/**
+ * Definición estática de las dos fechas ancla del proyecto (mejora 1.3 del
+ * análisis) — el evento "Extended Look" de Netflix y el lanzamiento del
+ * juego. Las fechas en sí (día, hora ET) están confirmadas por Rockstar/
+ * Take-Two (ver `noticias/extended-look-netflix-27-agosto` y
+ * `noticias/zelnick-reafirma-fecha-marketing-verano`), así que viven acá
+ * como dato fijo — igual que cualquier otro hecho confirmado del sitio, no
+ * es un valor inventado. La noticia "más relevante" de cada una sí se
+ * resuelve dinámicamente en `HomePage` a partir de `allNews`, para no
+ * hardcodear un slug que quede desactualizado en cuanto salga una noticia
+ * más nueva sobre el mismo tema.
+ */
+const COUNTDOWN_DEFS: Array<{
+  id: string
+  label: string
+  detail: string
+  targetIso: string
+  pendingLabel: string
+  reachedLabel: string
+  accent: string
+  newsTags: string[]
+}> = [
+  {
+    id: 'netflix-extended-look',
+    label: '"An Extended Look" en Netflix',
+    detail: '3:00 pm ET en Netflix · 9:00 pm ET en YouTube y el sitio oficial (acceso libre)',
+    // 3pm ET del 27 de agosto de 2026 = 19:00 UTC (EDT, UTC-4, vigente en agosto).
+    targetIso: '2026-08-27T15:00:00-04:00',
+    pendingLabel: 'Evento pendiente',
+    reachedLabel: 'Ya disponible',
+    accent: '#22d3ee',
+    newsTags: ['netflix', 'extended-look'],
+  },
+  {
+    id: 'lanzamiento-gta6',
+    label: 'Lanzamiento de GTA VI',
+    detail: 'PlayStation 5 y Xbox Series X|S — sin fecha de PC anunciada',
+    // Sin horario global confirmado por Rockstar: se cuenta a medianoche
+    // en la zona horaria de quien mira la página (ver nota en el tipo).
+    targetIso: '2026-11-19T00:00:00',
+    pendingLabel: 'Preventa abierta',
+    reachedLabel: 'Ya disponible',
+    accent: '#f0c274',
+    newsTags: ['fecha-lanzamiento', 'lanzamiento', 'retraso'],
+  },
+]
+
 export default async function HomePage() {
   const [featured, totalCount, countsByType, allNews, allTrailers] = await Promise.all([
     getFeaturedEntities(6),
@@ -173,6 +221,28 @@ export default async function HomePage() {
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
+
+  // Resuelve, para cada fecha ancla, la noticia más reciente cuyos tags
+  // coincidan con el tema — mismo criterio que ya usa `relations` en el
+  // contenido para conectar entidades, aplicado acá a nivel de tags en vez
+  // de a un slug hardcodeado.
+  const countdownTargets: CountdownTarget[] = COUNTDOWN_DEFS.map((def) => {
+    const relatedNews = [...allNews]
+      .filter((n) => n.tags?.some((tag) => def.newsTags.includes(tag)))
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())[0]
+
+    return {
+      id: def.id,
+      label: def.label,
+      detail: def.detail,
+      targetIso: def.targetIso,
+      pendingLabel: def.pendingLabel,
+      reachedLabel: def.reachedLabel,
+      accent: def.accent,
+      newsHref: relatedNews ? `/noticias/${relatedNews.slug}` : undefined,
+      newsLabel: relatedNews ? `Última noticia: ${relatedNews.title}` : undefined,
+    }
+  })
 
   // Conteo de conexiones incluyendo relaciones inferidas/bidireccionales
   // para las cards de Destacados (Fase 8, hallazgo [7]) — mismo criterio
@@ -294,6 +364,25 @@ export default async function HomePage() {
           </svg>
         </div>
       </SceneSection>
+
+      {/* Cuenta regresiva / Estado del lanzamiento */}
+      {countdownTargets.length > 0 && (
+        <SceneSection sceneId="home-countdown" className="border-b border-gta-border py-16 sm:py-20">
+          <div className="container-max">
+            <Reveal className="mx-auto mb-10 max-w-2xl text-center">
+              <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+                Cuenta regresiva
+              </p>
+              <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">Estado del lanzamiento</h2>
+              <p className="mt-4 text-gta-text-secondary">
+                Las dos fechas que definen el momento del proyecto ahora mismo, en un solo lugar.
+              </p>
+            </Reveal>
+
+            <LaunchCountdown targets={countdownTargets} />
+          </div>
+        </SceneSection>
+      )}
 
       {/* Categorías */}
       <SceneSection sceneId="home-categories" className="border-b border-gta-border py-16 sm:py-20">
