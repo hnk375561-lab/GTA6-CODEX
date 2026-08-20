@@ -5,7 +5,8 @@ import { ENTITY_TYPE_LABELS } from './entity-labels'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
 const SITE_NAME = 'GTA6 Zona'
-const SITE_DESCRIPTION = 'Un wiki editorial de primer nivel sobre Grand Theft Auto 6'
+const SITE_DESCRIPTION =
+  'Un wiki editorial de Grand Theft Auto 6, clasificado por nivel de evidencia — descubrí qué es oficial y qué es rumor sobre personajes, vehículos, ubicaciones y misiones.'
 
 /**
  * Tipo de Schema.org más específico por EntityType, para JSON-LD con mejor
