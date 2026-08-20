@@ -877,6 +877,16 @@ a:hover .logo-mark {
     animation: none !important;
     opacity: 0.6 !important;
   }
+
+  /* Faltaba acá: el resto de las capas del hero (arriba) ya se aquietan
+     con reduced motion, pero .hero-title-accent (definida más abajo en
+     este archivo) tenía su animación de gradiente sin cubrir. El texto
+     queda perfectamente legible igual: el gradiente estático (misma
+     paleta, sin animar) permanece. */
+  .hero-title-accent {
+    animation: none !important;
+    background-position: 0% 50% !important;
+  }
 }
 
 .hero-pill-dot {

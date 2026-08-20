@@ -194,15 +194,21 @@ export default async function HomePage() {
       {/* Hero */}
       <SceneSection
         sceneId="home-hero"
-        className="relative overflow-hidden border-b border-gta-border py-24 sm:py-32"
+        className="hero-gleam relative overflow-hidden border-b border-gta-border py-24 sm:py-32"
       >
         <RotatingHeroBackground />
-        <div className="container-max relative text-center">
+        {/* Sweep de luz sincronizado con el motor WebGL (ángulo/temperatura
+            reales de la escena 3D, no un brillo inventado aparte) — ver
+            `.hero-gleam` en globals.css. En reposo (motor sin cargar) es
+            invisible por diseño, no un "flash" que dependa de JS. */}
+        <div className="hero-gleam-sweep" aria-hidden="true" />
+        <div className="hero-cinematic container-max relative text-center">
           <Reveal>
-            <p className="eyebrow mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-gta-accent-strong">
+            <p className="hero-pill mb-4">
+              <span className="hero-pill-dot" aria-hidden="true" />
               Expediente no oficial · Leonida
             </p>
-            <h1 className="text-gradient-vice mx-auto max-w-4xl font-display text-5xl font-bold leading-tight sm:text-7xl">
+            <h1 className="hero-title-accent mx-auto max-w-4xl font-display text-5xl font-bold leading-tight sm:text-7xl">
               GTA6 Zona
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-gta-text-secondary sm:text-xl">
@@ -261,6 +267,15 @@ export default async function HomePage() {
               </div>
             </div>
           </Reveal>
+        </div>
+
+        {/* Invitación a seguir scrolleando — puramente decorativo, no roba
+            foco ni altera el orden de tabulación. Se aquieta solo con
+            prefers-reduced-motion (ver `.hero-scroll-cue` en globals.css). */}
+        <div className="hero-scroll-cue" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
         </div>
       </SceneSection>
 
