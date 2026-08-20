@@ -46,7 +46,7 @@ export function RelationsPanel({ related }: RelationsPanelProps) {
     <div className="space-y-5">
       {Array.from(groups.entries()).map(([label, entities]) => (
         <div key={label}>
-          <h3 className="mb-2.5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-gta-accent">
+          <h3 className="mb-2.5 flex items-center gap-1.5 font-mono text-xs font-semibold uppercase tracking-wide text-gta-accent">
             <span className="h-1 w-1 rounded-full bg-gta-accent" aria-hidden="true" />
             {label}
           </h3>
@@ -55,7 +55,7 @@ export function RelationsPanel({ related }: RelationsPanelProps) {
               <li key={`${e.type}-${e.slug}`}>
                 <Link
                   href={`/${e.type}/${e.slug}`}
-                  className="group -mx-2 flex items-center gap-3 rounded-md border border-transparent px-2 py-2 transition-colors duration-200 hover:border-gta-border hover:bg-gta-darker/40"
+                  className="group -mx-2 flex items-center gap-3 rounded-md border border-dashed border-transparent px-2 py-2 transition-colors duration-200 hover:border-gta-border-strong hover:bg-gta-darker/40"
                 >
                   <EntityImage
                     entity={e}
@@ -67,7 +67,10 @@ export function RelationsPanel({ related }: RelationsPanelProps) {
                     <span className="link-underline truncate text-sm text-gta-text group-hover:text-gta-accent">
                       {e.title}
                     </span>
-                    <Badge className="w-fit gap-1">
+                    {/* font-mono: mismo lenguaje que la pestaña de categoría
+                        de EntityCard — este badge es, en los hechos, esa
+                        misma etiqueta reaparecida acá. */}
+                    <Badge className="w-fit gap-1 font-mono">
                       <CategoryIcon type={e.type} className="h-3 w-3" />
                       {TYPE_LABELS[e.type]}
                     </Badge>
