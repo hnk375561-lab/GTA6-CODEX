@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import Fuse from 'fuse.js'
 import type { Entity, EntityType } from '@/types'
@@ -10,6 +10,7 @@ import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { EntityImage } from '@/components/entities/EntityImage'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
+import { useSyncedSearchParams } from '@/lib/hooks/useSyncedSearchParams'
 import { cn } from '@/lib/utils'
 
 interface SearchClientProps {
@@ -55,9 +56,28 @@ const QUICK_TYPES: EntityType[] = [
 ]
 
 export function SearchClient({ entities, counts, imageBySlug, initialQuery }: SearchClientProps) {
-  const [query, setQuery] = useState(initialQuery ?? '')
-  const [activeType, setActiveType] = useState<EntityType | 'todos'>('todos')
+  // Estado inicial: `initialQuery` llega resuelto del servidor desde
+  // `?q=` (ver /buscar/page.tsx), y acá se suma `?tipo=` para que el
+  // filtro de categoría también sea parte del link compartible y del
+  // historial del navegador (ver `useSyncedSearchParams`).
+  const { searchParams, updateParams } = useSyncedSearchParams()
+  const [query, setQuery] = useState(initialQuery ?? searchParams.get('q') ?? '')
+  const [activeType, setActiveType] = useState<EntityType | 'todos'>(() => {
+    const raw = searchParams.get('tipo')
+    return raw && raw in TYPE_LABELS ? (raw as EntityType) : 'todos'
+  })
   const debouncedQuery = useDebouncedValue(query, 250)
+
+  // Mantiene `?q=` y `?tipo=` al día con el estado actual, así el link es
+  // compartible y el botón "atrás" del navegador restaura la búsqueda tal
+  // como estaba (ver comentario largo en `useSyncedSearchParams`).
+  useEffect(() => {
+    updateParams({
+      q: debouncedQuery.trim() || null,
+      tipo: activeType !== 'todos' ? activeType : null,
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedQuery, activeType])
 
   const fuse = useMemo(
     () =>

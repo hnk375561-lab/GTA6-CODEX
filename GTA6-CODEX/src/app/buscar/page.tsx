@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { getAllEntities, getEntityCountsByType } from '@/lib/entities'
 import { getEntityImageMap } from '@/lib/media'
@@ -57,12 +58,21 @@ export default async function SearchPage({
           </Reveal>
         </div>
 
-        <SearchClient
-          entities={entities}
-          counts={counts}
-          imageBySlug={getEntityImageMap(entities)}
-          initialQuery={q}
-        />
+        {/* Suspense requerido por `useSearchParams` dentro de SearchClient
+            (sincroniza `?q=`/`?tipo=` con la URL, ver
+            `useSyncedSearchParams`). Esta ruta ya es 100% dinámica (usa
+            `searchParams` server-side arriba), así que no afecta la
+            generación estática — se agrega igual por consistencia y para
+            que una futura navegación cliente entre categorías no bloquee
+            el resto de la página. */}
+        <Suspense>
+          <SearchClient
+            entities={entities}
+            counts={counts}
+            imageBySlug={getEntityImageMap(entities)}
+            initialQuery={q}
+          />
+        </Suspense>
       </div>
     </section>
   )

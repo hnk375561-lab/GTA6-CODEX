@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
-import { EntityType } from '@/types'
+import { EntityType, type Entity } from '@/types'
 import { getEntitiesByType } from '@/lib/entities'
 import { getCoverArtVideoAsset, resolveMediaRender, getCharacterClipUrl, getEntityImageMap } from '@/lib/media'
 import { getBidirectionalRelationCount } from '@/lib/relations'
@@ -11,10 +12,43 @@ import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { Card, CardBody } from '@/components/ui/Card'
 import { EntityListExplorer } from '@/components/entities/EntityListExplorer'
+import { EntityCard } from '@/components/entities/EntityCard'
 import { VideoEmbed } from '@/components/media/VideoEmbed'
 
 interface PageProps {
   params: Promise<{ entityType: string }>
+}
+
+/**
+ * Fallback del `Suspense` que envuelve `EntityListExplorer` (necesario
+ * porque ese componente usa `useSearchParams` para sincronizar filtros
+ * con la URL). Este fallback es lo que efectivamente queda en el HTML
+ * generado estáticamente hasta que React hidrata — por eso reproduce la
+ * grilla real de entidades (sin buscador/filtros interactivos) en vez de
+ * un simple "Cargando…", para no perder contenido indexable ni mostrar
+ * una pantalla vacía antes de la hidratación.
+ */
+function EntityListExplorerFallback({
+  entities,
+  typeLabel,
+  imageBySlug,
+}: {
+  entities: Entity[]
+  typeLabel: string
+  imageBySlug: ReturnType<typeof getEntityImageMap>
+}) {
+  return (
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {entities.map((entity) => (
+        <EntityCard
+          key={`${entity.type}-${entity.slug}`}
+          entity={entity}
+          typeLabel={typeLabel}
+          image={imageBySlug[`${entity.type}/${entity.slug}`]}
+        />
+      ))}
+    </div>
+  )
 }
 
 const VALID_TYPES = Object.values(EntityType) as string[]
@@ -78,6 +112,7 @@ export default async function EntityTypePage({ params }: PageProps) {
   }
 
   const vehicleManufacturerGroups = type === EntityType.VEHICLE ? await getVehiclesByManufacturer() : null
+  const entityImageMap = getEntityImageMap(entities)
 
   return (
     <section className="relative overflow-hidden border-b border-gta-border py-12 sm:py-16">
@@ -172,22 +207,31 @@ export default async function EntityTypePage({ params }: PageProps) {
           </Reveal>
         )}
 
-        <EntityListExplorer
-          type={type}
-          entities={entities}
-          typeLabel={label}
-          imageBySlug={getEntityImageMap(entities)}
-          relationCountBySlug={relationCountBySlug}
-          clipUrlBySlug={
-            type === EntityType.CHARACTER
-              ? Object.fromEntries(
-                  entities
-                    .map((e) => [e.slug, getCharacterClipUrl(e.slug)] as const)
-                    .filter((pair): pair is [string, string] => Boolean(pair[1]))
-                )
-              : undefined
-          }
-        />
+        {/* Suspense requerido por `useSearchParams` dentro de
+            EntityListExplorer (sincroniza filtros con la URL, ver
+            `useSyncedSearchParams`) — sin este boundary, Next.js
+            desoptimiza la generación estática de toda la ruta en vez de
+            solo este subárbol. El fallback reproduce el layout sin
+            interactividad para que no haya salto de layout mientras
+            hidrata. */}
+        <Suspense fallback={<EntityListExplorerFallback entities={entities} typeLabel={label} imageBySlug={entityImageMap} />}>
+          <EntityListExplorer
+            type={type}
+            entities={entities}
+            typeLabel={label}
+            imageBySlug={entityImageMap}
+            relationCountBySlug={relationCountBySlug}
+            clipUrlBySlug={
+              type === EntityType.CHARACTER
+                ? Object.fromEntries(
+                    entities
+                      .map((e) => [e.slug, getCharacterClipUrl(e.slug)] as const)
+                      .filter((pair): pair is [string, string] => Boolean(pair[1]))
+                  )
+                : undefined
+            }
+          />
+        </Suspense>
       </div>
     </section>
   )
