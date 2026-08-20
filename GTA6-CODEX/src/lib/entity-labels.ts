@@ -55,5 +55,5 @@ export const ENTITY_TYPE_GROUP_ORDER: EntityType[] = [
 export const STATUS_LABELS: Record<InformationStatus, string> = {
   confirmado: 'Confirmado',
   rumor: 'Rumor',
-  nuestro: 'Nuestro',
+  nuestro: 'Recreación no oficial (IA)',
 }
