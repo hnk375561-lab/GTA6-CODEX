@@ -1,16 +1,17 @@
-import sharp from 'sharp';
+﻿import sharp from 'sharp';
 import { existsSync } from 'fs';
 
 const map = {
   'astillero-brian-heder.png': 'astillero-brian-heder',
   'gambit-bay.png': 'gambit-bay',
-  'vice-city-port.png': 'vice-city-port',
-  'tisha-wocka.png': 'tisha-wocka',
-  'tequesta.png': 'tequesta',
-  'southside-vice-city.png': 'southside-vice-city',
-  'penitenciaria-leonida.png': 'penitenciaria-leonida',
-  'leonida.png': 'leonida',
-  'la-perle.png': 'la-perle',
+  'vice-city-port.jpg': 'vice-city-port',
+  'tisha-wocka.jpg': 'tisha-wocka',
+  'tequesta.jpg': 'tequesta',
+  'southside-vice-city.jpg': 'southside-vice-city',
+  'penitenciaria-leonida.jpg': 'penitenciaria-leonida',
+  'leonida.jpg': 'leonida',
+  'la-perle.jpg': 'la-perle',
+  'downtown-vice-city.png': 'downtown-vice-city',
 };
 
 for (const [src, slug] of Object.entries(map)) {
