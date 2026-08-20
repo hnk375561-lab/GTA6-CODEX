@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import Fuse from 'fuse.js'
 import { EntityType, type Entity, type Vehicle } from '@/types'
@@ -8,6 +8,7 @@ import { Reveal } from '@/components/ui/Reveal'
 import { EntityCard } from '@/components/entities/EntityCard'
 import { VehicleCompareBar, VehicleCompareSheet, MAX_COMPARE } from '@/components/entities/VehicleCompareSheet'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
+import { useSyncedSearchParams } from '@/lib/hooks/useSyncedSearchParams'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { cn } from '@/lib/utils'
 import { STATUS_LABELS } from '@/lib/entity-labels'
@@ -81,11 +82,27 @@ export function EntityListExplorer({
   imageBySlug,
   relationCountBySlug,
 }: EntityListExplorerProps) {
-  const [query, setQuery] = useState('')
-  const [status, setStatus] = useState<StatusFilter>('todos')
-  const [sortBy, setSortBy] = useState<SortOption>('default')
-  const [selectedTags, setSelectedTags] = useState<string[]>([])
-  const [selectedClass, setSelectedClass] = useState<string | null>(null)
+  // Estado inicial leído de la URL (`?q=`, `?estado=`, `?orden=`, `?tags=`,
+  // `?clase=`, `?vista=`): permite que un link con filtros aplicados sea
+  // compartible y que el botón "atrás" del navegador, al volver desde una
+  // ficha, restaure la lista tal como estaba en vez de resetearla. Se lee
+  // una sola vez al montar (no en cada render) — el efecto más abajo es el
+  // que mantiene la URL al día a partir de ahí.
+  const { searchParams, updateParams } = useSyncedSearchParams()
+  const [query, setQuery] = useState(() => searchParams.get('q') ?? '')
+  const [status, setStatus] = useState<StatusFilter>(() => {
+    const raw = searchParams.get('estado')
+    return raw && raw in STATUS_LABELS ? (raw as StatusFilter) : 'todos'
+  })
+  const [sortBy, setSortBy] = useState<SortOption>(() => {
+    const raw = searchParams.get('orden')
+    return raw && raw in SORT_LABELS ? (raw as SortOption) : 'default'
+  })
+  const [selectedTags, setSelectedTags] = useState<string[]>(() => {
+    const raw = searchParams.get('tags')
+    return raw ? raw.split(',').filter(Boolean) : []
+  })
+  const [selectedClass, setSelectedClass] = useState<string | null>(() => searchParams.get('clase'))
   const debouncedQuery = useDebouncedValue(query, 200)
 
   // Vista tipo catálogo (filas compactas) vs. grilla de cards. Solo se
@@ -93,7 +110,7 @@ export function EntityListExplorer({
   // atributos comparables por fila (fabricante, clase, 4 métricas de
   // rendimiento) para que una vista tabular aporte algo real — en el
   // resto de tipos, la card actual ya es la representación más densa.
-  const [viewMode, setViewMode] = useState<ViewMode>('grid')
+  const [viewMode, setViewMode] = useState<ViewMode>(() => (searchParams.get('vista') === 'catalogo' ? 'catalogo' : 'grid'))
 
   // Comparador de vehículos (solo EntityType.VEHICLE): hasta MAX_COMPARE
   // slugs seleccionados desde las cards/filas, más el estado de apertura
@@ -102,6 +119,27 @@ export function EntityListExplorer({
   const [compareSlugs, setCompareSlugs] = useState<string[]>([])
   const [compareOpen, setCompareOpen] = useState(false)
   const isVehicleList = type === EntityType.VEHICLE
+
+  // Mantiene la URL al día con el estado actual de filtros (debounced en
+  // el caso de la búsqueda, vía `debouncedQuery`, para no reescribir la
+  // URL en cada tecla). Cada filtro en su valor "por defecto" se omite de
+  // la URL (ver `useSyncedSearchParams`) para no ensuciarla con
+  // `?estado=todos&orden=default&vista=grid` en el caso común.
+  useEffect(() => {
+    updateParams({
+      q: debouncedQuery.trim() || null,
+      estado: status !== 'todos' ? status : null,
+      orden: sortBy !== 'default' ? sortBy : null,
+      tags: selectedTags.length > 0 ? selectedTags.join(',') : null,
+      clase: selectedClass,
+      vista: isVehicleList && viewMode !== 'grid' ? viewMode : null,
+    })
+    // updateParams se omite adrede: se recrea cuando cambian los
+    // searchParams (que nosotros mismos actualizamos), así que incluirla
+    // dispararía el efecto en un loop innecesario sin cambiar el
+    // resultado — solo nos interesa reaccionar a cambios reales de filtro.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedQuery, status, sortBy, selectedTags, selectedClass, viewMode, isVehicleList])
 
   const toggleCompare = (slug: string) => {
     setCompareSlugs((prev) => {
