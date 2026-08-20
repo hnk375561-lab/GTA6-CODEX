@@ -13,7 +13,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "district": "Downtown",
   "region": "Leonida",
   "points_of_interest": [],
@@ -24,13 +24,18 @@
       "targetType": "ubicaciones",
       "targetSlug": "vice-city",
       "relation": "located_in"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "atraco-banco-downtown",
+      "relation": "aparece_en"
     }
   ],
   "evidence": {
     "level": "oficial-visual",
     "primarySource": "Rockstar Games, tomas aereas del distrito financiero en el Trailer 2 de GTA VI (rascacielos y densidad urbana visibles)",
     "secondarySource": "Cobertura especializada (driffle.com, gtamaps.io) que identifica la zona como nucleo financiero/'Downtown core' a partir de las mismas tomas del Trailer 2",
-    "note": "FASE G (13 ago 2026): CORRECCION. La ficha no tenia bloque evidence y estaba en status 'nuestro'. El distrito en si (rascacielos, densidad urbana, nucleo financiero) esta confirmado visualmente en tomas aereas del Trailer 2; lo que NO esta oficialmente confirmado es el nombre exacto 'Downtown Vice City', que es terminologia de la comunidad (Rockstar aun no publico nombres oficiales de barrios). Se sube a 'confirmado' con evidence_level 'oficial-visual' (visual si, nombre no oficial), siguiendo la misma convencion usada en otras fichas del dataset para contenido visualmente confirmado pero sin nombre oficial."
+    "note": "FASE G (13 ago 2026): CORRECCION. La ficha no tenia bloque evidence y estaba en status 'nuestro'. El distrito en si (rascacielos, densidad urbana, nucleo financiero) esta confirmado visualmente en tomas aereas del Trailer 2; lo que NO esta oficialmente confirmado es el nombre exacto 'Downtown Vice City', que es terminologia de la comunidad (Rockstar aun no publico nombres oficiales de barrios). Se sube a 'confirmado' con evidence_level 'oficial-visual' (visual si, nombre no oficial), siguiendo la misma convencion usada en otras fichas del dataset para contenido visualmente confirmado pero sin nombre oficial. Expansion (19 ago 2026, ronda 4 - auditoria de relaciones inversas): se agregan relaciones 'aparece_en' hacia misiones/atraco-banco-downtown, donde esta entidad ya estaba documentada como relacionada desde el lado de esas fichas. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso para habilitar navegacion cruzada en ambos sentidos."
   },
   "seoTitle": "Downtown Vice City — Ubicación de GTA 6 en Leonida",
   "seoDescription": "GTA 6: Distrito financiero y urbano de Vice City, con rascacielos, oficinas corporativas y una intensa actividad comercial."

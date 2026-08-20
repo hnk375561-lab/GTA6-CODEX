@@ -15,12 +15,12 @@
   ],
   "featured": false,
   "createdAt": "2026-08-14T00:00:00Z",
-  "updatedAt": "2026-08-15T22:50:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "evidence": {
     "level": "oficial-visual-multifuente",
     "primarySource": "Rockstar Games, Trailer 2 (secuencia de robo y comercial de Ammu-Nation, ~2:09) y capturas oficiales adicionales publicadas de cara al lanzamiento (19 nov. 2026)",
     "secondarySource": "TheGamer, games.gg y Fossbytes (identificación inicial de dos modelos en el metraje) más PC Gamer (jun. 2026), que corrobora de forma independiente la escopeta de dos cañones en una captura de cacería y variantes de bombeo/semiautomáticas en los estantes de Ammu-Nation",
-    "note": "Se confirma visualmente la existencia de al menos dos variantes de escopeta dentro del arsenal del juego, ahora corroborado por múltiples fuentes independientes que analizan capturas oficiales distintas (no solo el mismo tráiler). Se eleva el nivel de 'oficial-visual' a 'oficial-visual-multifuente'. La identificación de marcas/modelos reales de inspiración es análisis de prensa especializada, no confirmación oficial de Rockstar.",
+    "note": "Se confirma visualmente la existencia de al menos dos variantes de escopeta dentro del arsenal del juego, ahora corroborado por múltiples fuentes independientes que analizan capturas oficiales distintas (no solo el mismo tráiler). Se eleva el nivel de 'oficial-visual' a 'oficial-visual-multifuente'. La identificación de marcas/modelos reales de inspiración es análisis de prensa especializada, no confirmación oficial de Rockstar. Expansion (19 ago 2026, ronda 4 - auditoria de relaciones inversas): se agregan relaciones 'aparece_en' hacia misiones/guerra-final-chapter-mc, donde esta entidad ya estaba documentada como relacionada desde el lado de esas fichas. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso para habilitar navegacion cruzada en ambos sentidos.",
     "limitations": [
       "Nombres de modelo in-game no confirmados oficialmente",
       "No confirmado el número total de variantes jugables más allá de las identificadas en material visual",
@@ -37,6 +37,11 @@
       "targetType": "negocios",
       "targetSlug": "ammu-nation",
       "relation": "vendida-en"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "guerra-final-chapter-mc",
+      "relation": "aparece_en"
     }
   ],
   "seoTitle": "Escopeta — Arma de GTA 6",

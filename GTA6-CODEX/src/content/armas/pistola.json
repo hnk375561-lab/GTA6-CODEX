@@ -14,11 +14,11 @@
   ],
   "featured": true,
   "createdAt": "2026-08-14T00:00:00Z",
-  "updatedAt": "2026-08-15T02:30:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "evidence": {
     "level": "oficial-visual",
     "primarySource": "Rockstar Games — Trailer 1 (escena ~1:45), Trailer 2",
-    "note": "Aparición visual confirmada de un arma de fuego en forma de pistola. El modelo específico, fabricante ficticio y nombre exacto aún no han sido nombrados oficialmente por Rockstar Games. Esta entrada documenta la pistola de forma genérica basada en apariciones visuales verificables.",
+    "note": "Aparición visual confirmada de un arma de fuego en forma de pistola. El modelo específico, fabricante ficticio y nombre exacto aún no han sido nombrados oficialmente por Rockstar Games. Esta entrada documenta la pistola de forma genérica basada en apariciones visuales verificables. Expansion (19 ago 2026, ronda 4 - auditoria de relaciones inversas): se agregan relaciones 'aparece_en' hacia misiones/robo-tienda-conveniencia, donde esta entidad ya estaba documentada como relacionada desde el lado de esas fichas. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso para habilitar navegacion cruzada en ambos sentidos.",
     "limitations": [
       "Modelo específico no confirmado oficialmente",
       "Fabricante ficticio no especificado",
@@ -36,6 +36,11 @@
       "targetType": "trailers",
       "targetSlug": "trailer-1-anuncio",
       "relation": "aparece-en"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "robo-tienda-conveniencia",
+      "relation": "aparece_en"
     }
   ],
   "seoTitle": "Pistola — Arma de GTA 6",

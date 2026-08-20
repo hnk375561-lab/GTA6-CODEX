@@ -13,7 +13,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "faction": null,
   "relations": [
     {
@@ -30,13 +30,23 @@
       "targetType": "negocios",
       "targetSlug": "only-raw-records",
       "relation": "works_for"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "noche-jack-of-hearts",
+      "relation": "aparece_en"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "sesion-only-raw-records",
+      "relation": "aparece_en"
     }
   ],
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, bio oficial en el sitio de GTA VI (Trailer 2, 6 mayo 2025)",
     "secondarySource": "The Games Wiki, que cita textualmente la descripcion oficial de Rockstar sobre Dre'Quan como CEO de Only Raw Records",
-    "note": "Auditoria total (13 ago 2026): CORRECCION. La relacion drequan-priest -> works_for -> boobie-ike sobre-representaba una relacion de empleo formal; las fuentes que citan la bio oficial describen una sociedad de negocios (Boobie invierte, Dre'Quan dirige como CEO), no una relacion jerarquica de Dre'Quan hacia Boobie. Se cambia la relacion a 'partners_with'. Backfill retroactivo de evidence. AUDITORIA FORENSE DE PERSONAJES (13 ago 2026): re-verificacion con busqueda fresca confirma 'partners_with' (vicountdown.com describe explicitamente la 'partnership' de Boobie con Dre'Quan para Only Raw Records). CANDIDATO DESCARTADO: gtaboom.com afirma que Dre'Quan 'works for' Brian Heder como uno de sus 'enforcers y drug runners' en los Cayos. Se descarta por evidencia insuficiente: es la unica fuente que menciona este vinculo; las demas fuentes corroborantes (gtabase, Giant Bomb, gta-db, GTA Wiki/Fandom, gta6intel, vicountdown) describen a Dre'Quan exclusivamente en la orbita de Boobie Ike/Only Raw Records, sin mencion alguna de Brian Heder. Posible confusion editorial de gtaboom.com con otro personaje de los Cayos. No se agrega relacion drequan-priest->brian-heder por falta de corroboracion independiente."
+    "note": "Auditoria total (13 ago 2026): CORRECCION. La relacion drequan-priest -> works_for -> boobie-ike sobre-representaba una relacion de empleo formal; las fuentes que citan la bio oficial describen una sociedad de negocios (Boobie invierte, Dre'Quan dirige como CEO), no una relacion jerarquica de Dre'Quan hacia Boobie. Se cambia la relacion a 'partners_with'. Backfill retroactivo de evidence. AUDITORIA FORENSE DE PERSONAJES (13 ago 2026): re-verificacion con busqueda fresca confirma 'partners_with' (vicountdown.com describe explicitamente la 'partnership' de Boobie con Dre'Quan para Only Raw Records). CANDIDATO DESCARTADO: gtaboom.com afirma que Dre'Quan 'works for' Brian Heder como uno de sus 'enforcers y drug runners' en los Cayos. Se descarta por evidencia insuficiente: es la unica fuente que menciona este vinculo; las demas fuentes corroborantes (gtabase, Giant Bomb, gta-db, GTA Wiki/Fandom, gta6intel, vicountdown) describen a Dre'Quan exclusivamente en la orbita de Boobie Ike/Only Raw Records, sin mencion alguna de Brian Heder. Posible confusion editorial de gtaboom.com con otro personaje de los Cayos. No se agrega relacion drequan-priest->brian-heder por falta de corroboracion independiente. Expansion (19 ago 2026, ronda 4): se agregan relaciones inversas 'aparece_en' hacia noche-jack-of-hearts, sesion-only-raw-records — misiones donde Drequan Priest ya estaba documentado como personaje relacionado desde el lado de esas fichas (src/content/misiones/*.json), usando la relacion ya establecida en el vocabulario del proyecto. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso para habilitar navegacion cruzada."
   },
   "seoTitle": "Dre'Quan Priest — Personaje de GTA 6",
   "seoDescription": "GTA 6: Más hustler que gángster: exvendedor callejero que ahora dirige Only Raw Records y sueña con dominar la escena musical de Vice City."

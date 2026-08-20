@@ -15,7 +15,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "relations": [
     {
       "targetType": "ubicaciones",
@@ -36,13 +36,18 @@
       "targetType": "vehiculos",
       "targetSlug": "brute-police-riot",
       "relation": "owns"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "informante-vcpd",
+      "relation": "aparece_en"
     }
   ],
   "evidence": {
     "level": "oficial-visual-multifuente",
     "primarySource": "Rockstar Games: Trailer 1, Trailer 2 y sitio web promocional oficial de GTA VI (logo VCPD, siglas y libreas visibles en vehiculos policiales)",
     "secondarySource": "GTA BOOM (vice-city-police-department wiki), GTA Wiki/Fandom (Vice_City_Police_Department_(HD_Universe)), cuenta oficial GTA Wiki en X (hilo comparativo de las 7+ agencias de Leonida), gta6supercars.com (ficha tecnica de flota policial, confirma escaneo 3D de Chevrolet Caprice 2013), gtaintel.com (listado de 26 personajes confirmados, incluye 'oficial del VCPD' sin nombre)",
-    "note": "AUDITORIA SEMANTICA located_in (13 ago 2026, aplicando la convencion aprobada): 1) La fuente demuestra jurisdiccion operativa, no residencia -no aplica a una organizacion-. 2) N/A. 3) Demuestra presencia constante (vehiculos, logo, escenas de persecucion). 4) Demuestra actividad activa de patrullaje. 5) El VCPD ES la entidad municipal de Vice City por definicion y jurisdiccion, no un negocio de paso. 6) NO es solo una escena que ocurre alli: multiples fuentes secundarias confirman explicitamente que el VCPD 'opera en la Ciudad de Vice' como jurisdiccion delimitada, distinta de VDPD (condado) y VBPD (Vice Beach). 7) La jurisdiccion es oficial (nombre de la agencia + delimitacion confirmada por comparacion cruzada de multiples wikis especializadas que documentan las fronteras entre VCPD/VDPD/VBPD). 8) located_in representa correctamente esta relacion (ambito geografico/jurisdiccional, tal como establece la convencion). Relacion APROBADA sin cambios.",
+    "note": "AUDITORIA SEMANTICA located_in (13 ago 2026, aplicando la convencion aprobada): 1) La fuente demuestra jurisdiccion operativa, no residencia -no aplica a una organizacion-. 2) N/A. 3) Demuestra presencia constante (vehiculos, logo, escenas de persecucion). 4) Demuestra actividad activa de patrullaje. 5) El VCPD ES la entidad municipal de Vice City por definicion y jurisdiccion, no un negocio de paso. 6) NO es solo una escena que ocurre alli: multiples fuentes secundarias confirman explicitamente que el VCPD 'opera en la Ciudad de Vice' como jurisdiccion delimitada, distinta de VDPD (condado) y VBPD (Vice Beach). 7) La jurisdiccion es oficial (nombre de la agencia + delimitacion confirmada por comparacion cruzada de multiples wikis especializadas que documentan las fronteras entre VCPD/VDPD/VBPD). 8) located_in representa correctamente esta relacion (ambito geografico/jurisdiccional, tal como establece la convencion). Relacion APROBADA sin cambios. Expansion (19 ago 2026, ronda 4 - auditoria de relaciones inversas): se agregan relaciones 'aparece_en' hacia misiones/informante-vcpd, donde esta entidad ya estaba documentada como relacionada desde el lado de esas fichas. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso para habilitar navegacion cruzada en ambos sentidos.",
     "limitations": [
       "El nombre completo 'Vice City Police Department' es una expansion razonable de la sigla VCPD confirmada visualmente; no se hallo cita textual de Rockstar deletreando el nombre completo letra por letra fuera de wikis secundarias especializadas.",
       "CONTAMINACION CRUZADA DETECTADA: el archivo del vehiculo brute-police-riot.json describe la unidad como perteneciente en exclusiva al VCPD ('policia de Vice City'), pero las fuentes consultadas (gta6supercars.com, gtabites.com) muestran que el Brute Police Riot es un activo blindado compartido por multiples agencias de Leonida para bloqueos viales en niveles de busqueda altos (4-5 estrellas), no un vehiculo VCPD-exclusivo confirmado. Se mantiene la relacion owns porque el vehiculo aparece efectivamente en escenas con contexto VCPD (Trailer 2), pero se marca como confianza media, no alta, y se recomienda corregir la descripcion de brute-police-riot.json en una auditoria posterior dedicada a vehiculos.",

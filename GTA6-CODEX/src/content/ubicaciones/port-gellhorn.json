@@ -13,7 +13,7 @@
   ],
   "featured": true,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "region": "Leonida",
   "points_of_interest": [],
   "missions": [],
@@ -28,13 +28,18 @@
       "targetType": "ubicaciones",
       "targetSlug": "kelly-county",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "aparece_en"
     }
   ],
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, sitio oficial de GTA VI, seccion propia de Port Gellhorn (revelada junto al Trailer 2, 6 mayo 2025)",
     "secondarySource": "Sportskeeda, que confirma que Port Gellhorn figura entre las regiones nombradas oficialmente en el sitio de Rockstar",
-    "note": "Auditoria total (13 ago 2026): nombre de ciudad/region confirmado oficialmente, con seccion propia en el sitio de Rockstar. Backfill retroactivo de evidence. FASE D — auditoria adversarial (13 ago 2026): se agrego relations.located_in->leonida. El campo 'region: Leonida' ya existia como texto libre pero faltaba la relacion formal en el grafo; se corrige junto con la creacion de la entidad Leonida. RONDA 7 (14 ago 2026): se agrega relations.located_in->kelly-county tras la creacion de esa entidad; se retira la relacion associated_with duplicada del lado de kelly-county.json para evitar una relacion redundante/circular entre ambos archivos."
+    "note": "Auditoria total (13 ago 2026): nombre de ciudad/region confirmado oficialmente, con seccion propia en el sitio de Rockstar. Backfill retroactivo de evidence. FASE D — auditoria adversarial (13 ago 2026): se agrego relations.located_in->leonida. El campo 'region: Leonida' ya existia como texto libre pero faltaba la relacion formal en el grafo; se corrige junto con la creacion de la entidad Leonida. RONDA 7 (14 ago 2026): se agrega relations.located_in->kelly-county tras la creacion de esa entidad; se retira la relacion associated_with duplicada del lado de kelly-county.json para evitar una relacion redundante/circular entre ambos archivos. Expansion (19 ago 2026, ronda 4 - auditoria de relaciones inversas): se agregan relaciones 'aparece_en' hacia trailers/trailer-2-gameplay, donde esta entidad ya estaba documentada como relacionada desde el lado de esas fichas. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso para habilitar navegacion cruzada en ambos sentidos."
   },
   "environment": {
     "climate": "Clima dinámico básico (lluvia, iluminación cambiante de día/noche) visible en el material oficial de ambos trailers. No hay confirmación de un sistema de clima extremo (huracanes, tormentas tropicales).",

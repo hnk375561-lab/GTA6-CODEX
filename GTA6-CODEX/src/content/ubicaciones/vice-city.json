@@ -13,12 +13,12 @@
   ],
   "featured": true,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, Trailer 1 y 2, sitio oficial de GTA VI y comunicados de Newswire (nombre de la ciudad y del estado de Leonida confirmados repetidamente)",
     "secondarySource": "Cobertura generalizada (ESPN, GosuGamers, GTA Boom) que corrobora la ambientación en Vice City/Leonida como escenario central",
-    "note": "Auditoría total (13 ago 2026): nombre y rol de ciudad principal son de los datos más solidamente confirmados de todo el proyecto (aparece explícitamente en ambos trailers y en todo el material oficial). Backfill retroactivo del campo evidence, ausente hasta ahora en toda la categoría ubicaciones. FASE D — auditoria adversarial (13 ago 2026): se agrego relations.located_in->leonida. El campo 'region: Leonida' ya existia como texto libre pero faltaba la relacion formal en el grafo; se corrige junto con la creacion de la entidad Leonida."
+    "note": "Auditoría total (13 ago 2026): nombre y rol de ciudad principal son de los datos más solidamente confirmados de todo el proyecto (aparece explícitamente en ambos trailers y en todo el material oficial). Backfill retroactivo del campo evidence, ausente hasta ahora en toda la categoría ubicaciones. FASE D — auditoria adversarial (13 ago 2026): se agrego relations.located_in->leonida. El campo 'region: Leonida' ya existia como texto libre pero faltaba la relacion formal en el grafo; se corrige junto con la creacion de la entidad Leonida. Expansion (19 ago 2026, ronda 4 - auditoria de relaciones inversas): se agregan relaciones 'aparece_en' hacia trailers/trailer-1-anuncio, donde esta entidad ya estaba documentada como relacionada desde el lado de esas fichas. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso para habilitar navegacion cruzada en ambos sentidos. Expansion (19 ago 2026, ronda 4b - auditoria de relaciones inversas via escenas de trailer): se agregan relaciones 'aparece_en' hacia trailers/trailer-2-gameplay, detectadas via las relaciones a nivel de escena (no solo a nivel de ficha) en los trailers. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso."
   },
   "region": "Leonida",
   "points_of_interest": [],
@@ -29,6 +29,16 @@
       "targetType": "ubicaciones",
       "targetSlug": "leonida",
       "relation": "located_in"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "aparece_en"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-2-gameplay",
+      "relation": "aparece_en"
     }
   ],
   "environment": {

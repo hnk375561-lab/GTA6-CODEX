@@ -14,19 +14,24 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "relations": [
     {
       "targetType": "vehiculos",
       "targetSlug": "bravado-buffalo-stx",
       "relation": "owns"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "aparece_en"
     }
   ],
   "evidence": {
     "level": "oficial-visual-multifuente",
     "primarySource": "Rockstar Games, capturas y artwork oficiales de GTA VI (embarcación y vehículo con librea VBPD)",
     "secondarySource": "GTA Wiki (gta.fandom.com/wiki/Vice_Beach_Police_Department), cuenta oficial GTA Wiki en X y gta6intel.com, que corroboran de forma independiente la jurisdicción de Vice Beach y su inspiración en el Miami Beach Police Department real",
-    "note": "DESCUBRIMIENTO (13 ago 2026, ronda de expansión masiva): entidad nueva, mencionada como contexto en vcpd.json pero sin ficha propia. El dato sobre el nombre previo 'Ocean Beach Police Department' proviene de la filtración de 2022 (GTA Wiki lo marca explícitamente como contenido de beta/filtración, no confirmado por Rockstar); se incluye solo como nota histórica, no como nombre oficial vigente. Se agrega únicamente la relación con el Buffalo STX Pursuit, que es el vehículo nombrado con mayor consistencia entre fuentes; la embarcación policial no se vincula a un slug porque el repo no tiene todavía un vehículo acuático policial catalogado que corresponda sin ambigüedad."
+    "note": "DESCUBRIMIENTO (13 ago 2026, ronda de expansión masiva): entidad nueva, mencionada como contexto en vcpd.json pero sin ficha propia. El dato sobre el nombre previo 'Ocean Beach Police Department' proviene de la filtración de 2022 (GTA Wiki lo marca explícitamente como contenido de beta/filtración, no confirmado por Rockstar); se incluye solo como nota histórica, no como nombre oficial vigente. Se agrega únicamente la relación con el Buffalo STX Pursuit, que es el vehículo nombrado con mayor consistencia entre fuentes; la embarcación policial no se vincula a un slug porque el repo no tiene todavía un vehículo acuático policial catalogado que corresponda sin ambigüedad. Expansion (19 ago 2026, ronda 4b - auditoria de relaciones inversas via escenas de trailer): se agregan relaciones 'aparece_en' hacia trailers/trailer-1-anuncio, detectadas via las relaciones a nivel de escena (no solo a nivel de ficha) en los trailers. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso."
   },
   "seoTitle": "VBPD (Vice Beach Police Department) — Organización de GTA 6",
   "seoDescription": "GTA 6: Agencia policial municipal que opera de forma independiente en Vice Beach, Leonida, distinta del VCPD (Vice City) y el VDPD (condado de Vice-Dale)."

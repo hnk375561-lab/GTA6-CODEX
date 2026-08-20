@@ -13,7 +13,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "faction": null,
   "relations": [
     {
@@ -30,13 +30,28 @@
       "targetType": "negocios",
       "targetSlug": "jack-of-hearts",
       "relation": "owns"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "el-golpe-mayor",
+      "relation": "aparece_en"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "noche-jack-of-hearts",
+      "relation": "aparece_en"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "sesion-only-raw-records",
+      "relation": "aparece_en"
     }
   ],
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, bio oficial en el sitio de GTA VI (Trailer 2, 6 mayo 2025)",
     "secondarySource": "GTA Wiki (Fandom) y gtaintel, que citan la bio oficial completa de Rockstar sobre su imperio (inmobiliaria, club Jack of Hearts, estudio de grabacion)",
-    "note": "Auditoria total (13 ago 2026): CORRECCION. La relacion 'owns' hacia only-raw-records sobre-representaba su rol: multiples fuentes que citan la bio oficial de Rockstar describen la relacion con Only Raw Records como sociedad/inversion junto a Dre'Quan Priest (quien la dirige), no propiedad exclusiva de Boobie. Se cambia la relacion a 'invests_in'. Backfill retroactivo de evidence. AUDITORIA FORENSE DE PERSONAJES (13 ago 2026): mejora de completitud. El nombre confirmado del club de striptease ('Jack of Hearts', citado literalmente en la bio oficial de Rockstar: 'It's all about heart – the Jack of Hearts') ya figuraba en evidence.secondarySource pero no en description/content, que solo decian 'club de striptease' de forma generica. Se agrega el nombre al texto visible, sin cambiar el nivel de evidencia ni agregar informacion nueva no verificada. DESCUBRIMIENTO (13 ago 2026, ronda de expansion masiva): se crea la entidad negocios/jack-of-hearts.json (antes solo mencionada en texto) y se agrega la relacion 'owns' correspondiente, distinta de 'invests_in' porque las fuentes describen propiedad/operacion directa del club por parte de Boobie, sin socios mencionados para este negocio especifico."
+    "note": "Auditoria total (13 ago 2026): CORRECCION. La relacion 'owns' hacia only-raw-records sobre-representaba su rol: multiples fuentes que citan la bio oficial de Rockstar describen la relacion con Only Raw Records como sociedad/inversion junto a Dre'Quan Priest (quien la dirige), no propiedad exclusiva de Boobie. Se cambia la relacion a 'invests_in'. Backfill retroactivo de evidence. AUDITORIA FORENSE DE PERSONAJES (13 ago 2026): mejora de completitud. El nombre confirmado del club de striptease ('Jack of Hearts', citado literalmente en la bio oficial de Rockstar: 'It's all about heart – the Jack of Hearts') ya figuraba en evidence.secondarySource pero no en description/content, que solo decian 'club de striptease' de forma generica. Se agrega el nombre al texto visible, sin cambiar el nivel de evidencia ni agregar informacion nueva no verificada. DESCUBRIMIENTO (13 ago 2026, ronda de expansion masiva): se crea la entidad negocios/jack-of-hearts.json (antes solo mencionada en texto) y se agrega la relacion 'owns' correspondiente, distinta de 'invests_in' porque las fuentes describen propiedad/operacion directa del club por parte de Boobie, sin socios mencionados para este negocio especifico. Expansion (19 ago 2026, ronda 4): se agregan relaciones inversas 'aparece_en' hacia el-golpe-mayor, noche-jack-of-hearts, sesion-only-raw-records — misiones donde Boobie Ike ya estaba documentado como personaje relacionado desde el lado de esas fichas (src/content/misiones/*.json), usando la relacion ya establecida en el vocabulario del proyecto. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso para habilitar navegacion cruzada."
   },
   "seoTitle": "Boobie Ike — Personaje de GTA 6",
   "seoDescription": "GTA 6: Leyenda de Vice City que transformó su pasado en las calles en un imperio legítimo: inmobiliaria, el club de striptease Jack of Hearts y un estudio…"

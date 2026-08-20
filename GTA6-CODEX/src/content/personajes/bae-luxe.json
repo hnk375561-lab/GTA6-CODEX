@@ -13,7 +13,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-13T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "faction": "Real Dimez",
   "relations": [
     {
@@ -31,13 +31,18 @@
       "targetType": "negocios",
       "targetSlug": "only-raw-records",
       "relation": "works_for"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "aparece_en"
     }
   ],
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, sitio oficial GTA VI (\"Only in Leonida\", personajes revelados junto al Trailer 2, 6 mayo 2025)",
     "secondarySource": "GosuGamers y Yahoo/BoostRoom, cobertura que reproduce la bio oficial de Real Dimez (Bae-Luxe y Roxy)",
-    "note": "Auditoria total (13 ago 2026): nombre e integracion al duo Real Dimez confirmados por Rockstar. Backfill retroactivo de evidence."
+    "note": "Auditoria total (13 ago 2026): nombre e integracion al duo Real Dimez confirmados por Rockstar. Backfill retroactivo de evidence. Expansion (19 ago 2026, ronda 4b - auditoria de relaciones inversas via escenas de trailer): se agregan relaciones 'aparece_en' hacia trailers/trailer-1-anuncio, detectadas via las relaciones a nivel de escena (no solo a nivel de ficha) en los trailers. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso."
   },
   "seoTitle": "Bae-Luxe — Personaje de GTA 6 (Real Dimez)",
   "seoDescription": "GTA 6: Una de las dos integrantes del dúo de hip-hop Real Dimez, junto a Roxy. Amigas desde la secundaria, firmaron con Only Raw Records tras un sencillo…"

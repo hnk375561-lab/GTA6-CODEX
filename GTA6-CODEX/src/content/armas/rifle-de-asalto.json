@@ -15,11 +15,11 @@
   ],
   "featured": false,
   "createdAt": "2026-08-14T00:00:00Z",
-  "updatedAt": "2026-08-15T02:30:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "evidence": {
     "level": "oficial-visual",
     "primarySource": "Rockstar Games — Material Oficial / Lori Heder (Trailer 2 / Material Promocional)",
-    "note": "Aparición visual confirmada de un rifle de asalto en manos de Lori Heder en material oficial promocional. El modelo específico, fabricante ficticio y nombre exacto no han sido nombrados oficialmente por Rockstar Games.",
+    "note": "Aparición visual confirmada de un rifle de asalto en manos de Lori Heder en material oficial promocional. El modelo específico, fabricante ficticio y nombre exacto no han sido nombrados oficialmente por Rockstar Games. Expansion (19 ago 2026, ronda 4 - auditoria de relaciones inversas): se agregan relaciones 'aparece_en' hacia misiones/atraco-banco-downtown, donde esta entidad ya estaba documentada como relacionada desde el lado de esas fichas. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso para habilitar navegacion cruzada en ambos sentidos.",
     "limitations": [
       "Modelo específico no confirmado oficialmente",
       "Fabricante ficticio no especificado",
@@ -38,6 +38,11 @@
       "targetType": "trailers",
       "targetSlug": "trailer-2-gameplay",
       "relation": "aparece-en"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "atraco-banco-downtown",
+      "relation": "aparece_en"
     }
   ],
   "seoTitle": "Rifle de Asalto — Arma de GTA 6",

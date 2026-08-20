@@ -13,7 +13,7 @@
   ],
   "featured": true,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "manufacturer": "Bravado",
   "class": "muscle",
   "driven_by": [
@@ -33,7 +33,7 @@
     "level": "oficial-visual",
     "primarySource": "Rockstar Games, GTA VI Trailer 1 (diciembre de 2023, escena de Vice Beach) y Trailer 2 (mayo de 2025, escena en la que Jason dispara desde la ventanilla)",
     "secondarySource": "autoevolution.com, GTA Wiki (gta.fandom.com) y gta6intel.com, coberturas que coinciden de forma independiente en la escena y en la identificación del modelo",
-    "note": "Saneamiento retroactivo (13 ago 2026, Bloque B2): esta ficha ya existía con status 'confirmado' pero sin campo 'evidence'. Se agrega evidencia porque múltiples fuentes especializadas coinciden de forma independiente en la escena exacta (Jason disparando desde la ventanilla en Trailer 2) y en el modelo. El nombre 'Gauntlet Hellfire' proviene de la continuidad con GTA Online; Rockstar no publicó un nombre específico para GTA VI, por lo que se clasifica como 'oficial-visual' y no como 'oficial-nombrado'. AUDITORIA (13 ago 2026, bloque located_in): se verifico independientemente que Vice Beach es un distrito de Vice City (ScreenRant: 'Vice Beach is the heart of Vice City'; GTA Wiki: Dominion Hotel 'located in Ocean Beach, Vice Beach, Vice-Dale County'). La escena de Vice Beach del Trailer 1 citada como primera aparicion del vehiculo queda asi confirmada como parte de Vice City. La relacion located_in->vice-city queda CONFIRMADA. Sin cambios en la relacion. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-2) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer."
+    "note": "Saneamiento retroactivo (13 ago 2026, Bloque B2): esta ficha ya existía con status 'confirmado' pero sin campo 'evidence'. Se agrega evidencia porque múltiples fuentes especializadas coinciden de forma independiente en la escena exacta (Jason disparando desde la ventanilla en Trailer 2) y en el modelo. El nombre 'Gauntlet Hellfire' proviene de la continuidad con GTA Online; Rockstar no publicó un nombre específico para GTA VI, por lo que se clasifica como 'oficial-visual' y no como 'oficial-nombrado'. AUDITORIA (13 ago 2026, bloque located_in): se verifico independientemente que Vice Beach es un distrito de Vice City (ScreenRant: 'Vice Beach is the heart of Vice City'; GTA Wiki: Dominion Hotel 'located in Ocean Beach, Vice Beach, Vice-Dale County'). La escena de Vice Beach del Trailer 1 citada como primera aparicion del vehiculo queda asi confirmada como parte de Vice City. La relacion located_in->vice-city queda CONFIRMADA. Sin cambios en la relacion. AUDITORIA (14 ago 2026, bloque Vehiculos/Trailers): se agrega la relacion formal relations->trailers hacia la ficha del trailer correspondiente, basada en el tag ya presente (trailer-2) que documentaba la aparicion. No se agrega informacion nueva, solo se formaliza el vinculo ya editorializado para habilitar la navegacion cruzada vehiculo<->trailer. Expansion (19 ago 2026, ronda 4b - auditoria de relaciones inversas via escenas de trailer): se agregan relaciones 'aparece_en' hacia trailers/trailer-1-anuncio, detectadas via las relaciones a nivel de escena (no solo a nivel de ficha) en los trailers. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso."
   },
   "relations": [
     {
@@ -50,6 +50,11 @@
       "targetType": "trailers",
       "targetSlug": "trailer-2-gameplay",
       "relation": "mostrado en"
+    },
+    {
+      "targetType": "trailers",
+      "targetSlug": "trailer-1-anuncio",
+      "relation": "aparece_en"
     }
   ],
   "seoTitle": "Bravado Gauntlet Hellfire — Vehículo de GTA 6",

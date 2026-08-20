@@ -13,7 +13,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-13T00:00:00Z",
-  "updatedAt": "2026-08-14T00:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "region": "Leonida",
   "points_of_interest": [],
   "missions": [],
@@ -23,13 +23,18 @@
       "targetType": "ubicaciones",
       "targetSlug": "leonida",
       "relation": "located_in"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "guerra-final-chapter-mc",
+      "relation": "aparece_en"
     }
   ],
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games, sitio oficial de GTA VI, seccion propia de Ambrosia (revelada junto al Trailer 2, 6 mayo 2025)",
     "secondarySource": "Sportskeeda, que confirma que Ambrosia figura entre las regiones nombradas oficialmente en el sitio de Rockstar",
-    "note": "Auditoria total (13 ago 2026): nombre de condado confirmado oficialmente, con seccion propia en el sitio de Rockstar. Backfill retroactivo de evidence. FASE D — auditoria adversarial (13 ago 2026): se agrego relations.located_in->leonida. El campo 'region: Leonida' ya existia como texto libre pero faltaba la relacion formal en el grafo; se corrige junto con la creacion de la entidad Leonida."
+    "note": "Auditoria total (13 ago 2026): nombre de condado confirmado oficialmente, con seccion propia en el sitio de Rockstar. Backfill retroactivo de evidence. FASE D — auditoria adversarial (13 ago 2026): se agrego relations.located_in->leonida. El campo 'region: Leonida' ya existia como texto libre pero faltaba la relacion formal en el grafo; se corrige junto con la creacion de la entidad Leonida. Expansion (19 ago 2026, ronda 4 - auditoria de relaciones inversas): se agregan relaciones 'aparece_en' hacia misiones/guerra-final-chapter-mc, donde esta entidad ya estaba documentada como relacionada desde el lado de esas fichas. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso para habilitar navegacion cruzada en ambos sentidos."
   },
   "environment": {
     "climate": "Clima dinámico básico (lluvia, iluminación cambiante de día/noche) visible en el material oficial de ambos trailers. No hay confirmación de un sistema de clima extremo (huracanes, tormentas tropicales).",

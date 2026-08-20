@@ -18,11 +18,11 @@
   "region": "Leonida",
   "featured": false,
   "createdAt": "2026-08-14T00:00:00Z",
-  "updatedAt": "2026-08-15T03:00:00Z",
+  "updatedAt": "2026-08-19T00:00:00Z",
   "evidence": {
     "level": "oficial-visual",
     "primarySource": "Rockstar Games — Material Oficial de Personajes (Brian Heder, Lori Heder)",
-    "note": "Ubicación confirmada en material promocional oficial de Rockstar Games. Descripción funcional basada en contexto de personajes.",
+    "note": "Ubicación confirmada en material promocional oficial de Rockstar Games. Descripción funcional basada en contexto de personajes. Expansion (19 ago 2026, ronda 4 - auditoria de relaciones inversas): se agregan relaciones 'aparece_en' hacia misiones/contrabando-cayos-leonida, donde esta entidad ya estaba documentada como relacionada desde el lado de esas fichas. No se agrega ningun hecho nuevo, solo se formaliza el vinculo inverso para habilitar navegacion cruzada en ambos sentidos.",
     "limitations": [
       "Ubicación exacta en mapa no especificada",
       "Coordinates no proporcionadas",
@@ -59,6 +59,11 @@
       "targetType": "actividades",
       "targetSlug": "pesca",
       "relation": "punto-acceso"
+    },
+    {
+      "targetType": "misiones",
+      "targetSlug": "contrabando-cayos-leonida",
+      "relation": "aparece_en"
     }
   ],
   "seoTitle": "Astillero de Brian Heder — Ubicación de GTA 6 en Leonida",
