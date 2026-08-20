@@ -202,13 +202,18 @@ export default async function HomePage() {
             `.hero-gleam` en globals.css. En reposo (motor sin cargar) es
             invisible por diseño, no un "flash" que dependa de JS. */}
         <div className="hero-gleam-sweep" aria-hidden="true" />
+        {/* Capas cinematográficas: scanlines sutiles + viñeta radial, mismo
+            lenguaje visual que el sweep de arriba. Puramente decorativo
+            (aria-hidden, no interactivo) — no altera layout ni foco. */}
+        <div className="hero-scanlines" aria-hidden="true" />
+        <div className="hero-vignette" aria-hidden="true" />
         <div className="hero-cinematic container-max relative text-center">
           <Reveal>
             <p className="hero-pill mb-4">
               <span className="hero-pill-dot" aria-hidden="true" />
               Expediente no oficial · Leonida
             </p>
-            <h1 className="hero-title-accent mx-auto max-w-4xl font-display text-5xl font-bold leading-tight sm:text-7xl">
+            <h1 className="hero-title hero-title-accent mx-auto max-w-4xl font-display text-5xl font-bold leading-tight sm:text-7xl">
               GTA6 Zona
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-gta-text-secondary sm:text-xl">

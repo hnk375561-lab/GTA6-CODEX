@@ -925,14 +925,12 @@ a:hover .logo-mark {
 /* --- Botones: lenguaje único para todo el sitio (hero, formularios,
    estados vacíos). Primario = gradiente sunset con glow; secundario =
    contorno con hover a glass; ghost = texto con acento. --- */
-.hero-cta-primary,
 .btn-primary {
   position: relative;
   background: linear-gradient(90deg, var(--c-pink), var(--c-pink-soft));
   box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.3), 0 10px 28px -10px rgba(255, 47, 143, 0.55);
 }
 
-.hero-cta-primary:hover,
 .btn-primary:hover {
   box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.45), 0 14px 34px -10px rgba(255, 47, 143, 0.7);
 }
