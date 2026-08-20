@@ -315,7 +315,7 @@ export default async function HomePage() {
                       <span className="category-card-corner category-card-corner--br" aria-hidden="true" />
                       <div className="category-card-redaction category-card-redaction--top" aria-hidden="true">
                         <span className="category-card-redaction-label">
-                          Expediente · {ENTITY_TYPE_LABELS[type]}
+                          Expediente Nº {String(i).padStart(2, '0')}
                         </span>
                       </div>
                       <div className="category-card-redaction category-card-redaction--bottom" aria-hidden="true" />
