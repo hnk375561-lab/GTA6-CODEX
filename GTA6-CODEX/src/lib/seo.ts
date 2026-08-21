@@ -241,6 +241,36 @@ export function generateBreadcrumbJsonLd(items: Array<{ label: string; url: stri
 }
 
 /**
+ * Genera JSON-LD `WebSite` con `SearchAction` para el buscador rápido del
+ * hero (`QuickSearchForm.tsx`, `/buscar?q=...`) — habilita el "sitelinks
+ * search box" de Google (el cuadro de búsqueda que a veces aparece debajo
+ * del resultado del sitio en el buscador) sin agregar ningún campo que el
+ * sitio no soporte de verdad: `target` apunta al mismo endpoint GET que ya
+ * arma `QuickSearchForm`, y `query-input` describe la misma variable `q`
+ * que ese formulario ya envía. No hay overlap con `generateBreadcrumbJsonLd`
+ * (tipos de Schema.org distintos, `@graph` no hace falta acá porque Next
+ * ya permite múltiples `<script type="application/ld+json">` sueltos en
+ * la misma página).
+ */
+export function generateWebsiteJsonLd(): object {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: SITE_URL,
+    inLanguage: 'es',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/buscar?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  }
+}
+
+/**
  * Obtiene el URL canónico de una entidad
  */
 export function getCanonicalUrl(type: string, slug: string): string {

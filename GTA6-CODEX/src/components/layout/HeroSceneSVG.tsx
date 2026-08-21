@@ -7,12 +7,18 @@
  * cielo degradé, sol, siluetas de palmera, skyline genérico y un sedán
  * clásico estilizado en silueta (sin marca).
  *
- * Dos variantes de paleta para mantener la rotación visual del hero sin
- * depender de archivos de imagen.
+ * Tres variantes de paleta — una por cada color de "Leonida Nights"
+ * (magenta / cian / dorado, tailwind.config.js) — para mantener la
+ * rotación visual del hero sin depender de archivos de imagen. Antes
+ * solo existían `magenta` y `cyan`: el dorado, aun siendo el tercer
+ * acento oficial del sitio (el mismo que ya usan vehículos, armas,
+ * actividades y negocios en `CATEGORY_ACCENT` de `src/app/page.tsx`),
+ * nunca aparecía en el fondo del hero. `gold` cierra ese hueco con la
+ * misma técnica (gradiente de cielo + sol, sin assets nuevos).
  */
 
 interface HeroSceneSVGProps {
-  variant?: 'magenta' | 'cyan'
+  variant?: 'magenta' | 'cyan' | 'gold'
   /**
    * Identificador único de esta instancia, para desambiguar los `id` de
    * `<defs>` (gradientes) cuando dos instancias con el mismo `variant`
@@ -28,12 +34,26 @@ interface HeroSceneSVGProps {
   style?: React.CSSProperties
 }
 
+/**
+ * Paleta por variante — mismo criterio que `CATEGORY_ACCENT` en
+ * `src/app/page.tsx` (magenta = personajes/facciones, cian = lugares/
+ * material audiovisual, dorado = vehículos/objetos/economía), aplicado acá
+ * a cielo/sol en vez de a un borde de card. `gold` reutiliza el naranja
+ * cálido que `magenta` ya tenía como base del degradé (`#ffb347`) para el
+ * cielo, y sube el dorado (`#f0c274`, el mismo hex que `CATEGORY_ACCENT`)
+ * a color principal en vez de acento secundario.
+ */
+const SCENE_PALETTES: Record<
+  NonNullable<HeroSceneSVGProps['variant']>,
+  { skyTop: string; skyMid: string; skyBottom: string; sun: string }
+> = {
+  magenta: { skyTop: '#2a0a3d', skyMid: '#ff2f8f', skyBottom: '#ffb347', sun: '#ffd700' },
+  cyan: { skyTop: '#0a1a3d', skyMid: '#22d3ee', skyBottom: '#a78bfa', sun: '#f0c274' },
+  gold: { skyTop: '#2a1a05', skyMid: '#f0c274', skyBottom: '#ff8a3d', sun: '#ffe08a' },
+}
+
 export function HeroSceneSVG({ variant = 'magenta', instanceId, className, style }: HeroSceneSVGProps) {
-  const isMagenta = variant === 'magenta'
-  const skyTop = isMagenta ? '#2a0a3d' : '#0a1a3d'
-  const skyMid = isMagenta ? '#ff2f8f' : '#22d3ee'
-  const skyBottom = isMagenta ? '#ffb347' : '#a78bfa'
-  const sun = isMagenta ? '#ffd700' : '#f0c274'
+  const { skyTop, skyMid, skyBottom, sun } = SCENE_PALETTES[variant]
   const silhouette = '#0a0712'
   const uid = instanceId ?? variant
 
