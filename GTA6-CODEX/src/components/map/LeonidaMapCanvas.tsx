@@ -194,11 +194,7 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
         </div>
       )}
 
-      <div
-        className={
-          isFullscreen ? 'grid flex-1 gap-4 lg:grid-cols-[1.7fr_1fr]' : 'grid gap-6 lg:grid-cols-[1.7fr_1fr]'
-        }
-      >
+      <div className={isFullscreen ? 'grid gap-4 lg:grid-cols-[1.7fr_1fr]' : 'grid gap-6 lg:grid-cols-[1.7fr_1fr]'}>
         <div className="relative flex flex-col overflow-hidden rounded-xl border border-gta-border bg-gta-card p-4 md:p-6">
           {!isFullscreen && (
             <div className="mb-3 flex flex-wrap items-start gap-2 rounded-lg border border-gta-accent-warning/25 bg-gta-accent-warning/10 px-3 py-2.5 text-xs leading-relaxed text-gta-accent-warning">
@@ -322,9 +318,9 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
           </div>
 
           <div
-            className={`leonida-leaflet-wrap relative w-full flex-1 overflow-hidden rounded-lg border border-gta-border-strong/60 ${
+            className={`leonida-leaflet-wrap relative w-full overflow-hidden rounded-lg border border-gta-border-strong/60 ${
               isFullscreen
-                ? 'h-[52vh] min-h-[360px] lg:h-full'
+                ? 'h-[58vh] min-h-[360px] sm:h-[64vh] lg:h-[72vh]'
                 : 'h-[440px] sm:h-[560px] md:h-[640px] lg:h-[720px]'
             }`}
           >
