@@ -447,10 +447,13 @@ export class GTA6ZonaWebGLEngine {
   private lastFrameTimestamp = 0
   private readonly frameTimeSamples: number[] = []
   private perfDowngraded = false
-  /** Umbral: promedio sostenido por debajo de ~24fps (41.6ms/frame). */
-  private static readonly SLOW_FRAME_MS = 41.6
-  /** Cuántas muestras (~frames) evaluar antes de decidir degradar. */
-  private static readonly PERF_SAMPLE_WINDOW = 90
+  /** Umbral: promedio sostenido por debajo de ~30fps (33.3ms/frame). */
+  private static readonly SLOW_FRAME_MS = 33.3
+  /** Cuántas muestras (~frames) evaluar antes de decidir degradar. Antes
+   *  eran 90 (hasta ~6s de mal rendimiento sostenido antes de corregir,
+   *  con el umbral viejo de 24fps); 45 reacciona en ~1.5-2s sin volverse
+   *  tan sensible como para degradar por un par de frames sueltos. */
+  private static readonly PERF_SAMPLE_WINDOW = 45
 
   constructor(canvas: HTMLCanvasElement, opts: { reducedMotion: boolean }) {
     this.reducedMotion = opts.reducedMotion
@@ -1540,7 +1543,7 @@ export class GTA6ZonaWebGLEngine {
     // leen estos valores en cada frame/resize, así que mutarlos in-place
     // basta para que el resto del motor reaccione sin cambios adicionales.
     this.quality.enableBokeh = false
-    this.quality.bloomScale = Math.min(this.quality.bloomScale, 0.5)
+    this.quality.bloomScale = Math.min(this.quality.bloomScale, 0.4)
     this.quality.maxDpr = 1
 
     this.handleResize()
