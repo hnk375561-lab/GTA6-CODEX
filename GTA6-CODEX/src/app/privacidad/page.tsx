@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Reveal } from '@/components/ui/Reveal'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
 const SITE_NAME = 'GTA6 Zona'
@@ -14,14 +15,16 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div className="container-narrow py-16 sm:py-20">
-      <p className="eyebrow mb-4 text-xs font-semibold uppercase text-gta-accent-strong">
-        Legal
-      </p>
-      <h1 className="mb-8 text-3xl font-bold text-gta-text sm:text-4xl">
-        Política de Privacidad
-      </h1>
+      <Reveal>
+        <p className="eyebrow mb-4 text-xs font-semibold uppercase text-gta-accent-strong">
+          Legal
+        </p>
+        <h1 className="mb-8 text-3xl font-bold text-gta-text sm:text-4xl">
+          Política de Privacidad
+        </h1>
+      </Reveal>
 
-      <div className="prose-legal max-w-none space-y-8 text-gta-text-secondary/80">
+      <Reveal delay={100} className="stagger prose-legal max-w-none space-y-8 text-gta-text-secondary/80">
         <p className="text-sm text-gta-text-tertiary">
           Última actualización: agosto de 2026
         </p>
@@ -95,7 +98,7 @@ export default function PrivacyPage() {
             última actualización siempre figura arriba.
           </p>
         </section>
-      </div>
+      </Reveal>
     </div>
   )
 }

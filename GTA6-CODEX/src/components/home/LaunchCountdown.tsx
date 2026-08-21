@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { Reveal } from '@/components/ui/Reveal'
 
 export interface CountdownTarget {
   id: string
@@ -69,11 +70,11 @@ function formatLocalDateTime(targetIso: string): string | null {
  */
 export function LaunchCountdown({ targets }: { targets: CountdownTarget[] }) {
   return (
-    <div className="stagger grid grid-cols-1 gap-6 lg:grid-cols-2">
+    <Reveal className="stagger grid grid-cols-1 gap-6 lg:grid-cols-2">
       {targets.map((target) => (
         <CountdownCard key={target.id} target={target} />
       ))}
-    </div>
+    </Reveal>
   )
 }
 

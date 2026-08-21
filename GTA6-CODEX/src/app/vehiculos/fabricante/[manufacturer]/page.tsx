@@ -119,7 +119,7 @@ export default async function ManufacturerHubPage({ params }: PageProps) {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {vehicles.map((vehicle) => (
             <EntityCard
               key={vehicle.slug}
@@ -129,7 +129,7 @@ export default async function ManufacturerHubPage({ params }: PageProps) {
               relationCount={relationCountBySlug[vehicle.slug]}
             />
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   )

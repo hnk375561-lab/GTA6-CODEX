@@ -290,50 +290,65 @@ export default async function HomePage() {
         <div className="hero-vignette" aria-hidden="true" />
         <div className="hero-cinematic container-max relative text-center">
           <Reveal>
-            <p className="hero-pill mb-4">
+            <p className="hero-pill hero-pill-stamp mb-4">
               <span className="hero-pill-dot" aria-hidden="true" />
-              Expediente no oficial · Leonida
+              Expediente no oficial <span className="hero-pill-sep">·</span> Leonida
             </p>
-            <h1 className="hero-title hero-title-accent mx-auto max-w-4xl font-display text-5xl font-bold leading-tight sm:text-7xl">
-              GTA6 Zona
+            <h1 className="hero-title hero-title-accent mx-auto max-w-4xl font-display font-bold leading-[0.9]">
+              <span
+                className="hero-title-word hero-title-word--mark text-6xl sm:text-8xl"
+                aria-label="GTA6"
+              >
+                {['G', 'T', 'A', '6'].map((ch, i) => (
+                  <span
+                    key={i}
+                    className="hero-title-letter"
+                    aria-hidden="true"
+                    style={{
+                      ['--letter-delay' as string]: `${40 + i * 55}ms`,
+                      /* Zigzag en vez de una única inclinación uniforme:
+                         cada letra cae desde su propio ángulo (par/impar)
+                         en lugar de todas desde -4deg — mismo timing,
+                         trazo menos "en fila". */
+                      ['--letter-rotate' as string]: i % 2 === 0 ? '-4deg' : '4deg',
+                    }}
+                  >
+                    {ch}
+                  </span>
+                ))}
+              </span>
+              <span className="hero-title-word hero-title-word--label mt-2 text-xl sm:mt-3 sm:text-3xl">
+                Zona<span className="hero-title-cursor" aria-hidden="true">_</span>
+              </span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-gta-text-secondary sm:text-xl">
-              Cada <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gta-text" /> de GTA6, clasificado
-              por nivel de evidencia — para que sepas de un vistazo qué es oficial y qué es rumor.
+              <span className="hero-subtitle-line" style={{ ['--line-delay' as string]: '80ms' }}>
+                Cada{' '}
+                <span className="hero-subtitle-rotate">
+                  <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gta-text" />
+                </span>{' '}
+                de GTA6, <span className="font-semibold text-gta-text">clasificado</span>
+              </span>{' '}
+              <span className="hero-subtitle-line" style={{ ['--line-delay' as string]: '180ms' }}>
+                por nivel de evidencia — para que sepas de un vistazo qué es oficial y qué es rumor.
+              </span>
             </p>
           </Reveal>
 
           <Reveal delay={150}>
-            {/* Un solo CTA de botón acá a propósito: antes había un segundo
-                botón "Buscar en el Zona" apuntando al mismo /buscar que el
-                QuickSearchForm de abajo — dos affordances distintas para la
-                misma acción, una al lado de la otra, diluían cuál era la
-                principal. El buscador real (con input) ya cubre ese caso
-                mejor que un botón que aterriza en una página vacía. */}
-            <div className="mt-10 flex justify-center">
-              <Link
-                href="/personajes"
-                className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
-              >
-                Entrar al expediente
-              </Link>
-            </div>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <div className="mt-5">
-              <QuickSearchForm />
-            </div>
-          </Reveal>
-
-          <Reveal delay={250}>
-            {/* mt-12 (antes mt-10): el strip de stats es un bloque de
-                naturaleza distinta (datos, no acción) — más separación acá
-                refuerza que cerró el bloque de "acción" de arriba (CTA +
-                buscador) antes de pasar al de "cifras". */}
-            <div className="glass-surface mx-auto mt-12 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 rounded-xl border border-gta-border/70 px-8 py-5">
-              {HERO_STAT_TYPES.map((type) => (
-                <div key={type} className="flex flex-col items-center gap-0.5 px-2">
+            {/* El strip de cifras ahora abre el bloque de abajo, antes del
+                CTA: las cifras hacen de credencial ("esto no es una promesa
+                vacía, hay X entradas documentadas") antes de pedir la
+                acción, en vez de quedar como cierre después del botón y el
+                buscador. Mismo contenido, mismo <Reveal>, solo cambia el
+                orden en el que entra. */}
+            <div className="hero-stat-strip glass-surface mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 rounded-xl border border-gta-border/70 px-8 py-5">
+              {HERO_STAT_TYPES.map((type, i) => (
+                <div
+                  key={type}
+                  className="hero-stat-item flex flex-col items-center gap-0.5 px-2"
+                  style={{ ['--stat-delay' as string]: `${i * 70}ms` }}
+                >
                   <span className="font-display text-2xl font-bold text-gta-text sm:text-3xl">
                     <CountUp end={countsByType[type] ?? 0} />
                   </span>
@@ -342,8 +357,15 @@ export default async function HomePage() {
                   </span>
                 </div>
               ))}
-              <div className="hidden h-10 w-px bg-gta-border sm:block" aria-hidden="true" />
-              <div className="flex flex-col items-center gap-0.5 px-2">
+              <div
+                className="hero-stat-divider hidden h-10 w-px bg-gta-border sm:block"
+                style={{ ['--stat-delay' as string]: `${HERO_STAT_TYPES.length * 70}ms` }}
+                aria-hidden="true"
+              />
+              <div
+                className="hero-stat-item flex flex-col items-center gap-0.5 px-2"
+                style={{ ['--stat-delay' as string]: `${HERO_STAT_TYPES.length * 70}ms` }}
+              >
                 <span className="font-display text-2xl font-bold text-gta-accent-strong sm:text-3xl">
                   <CountUp end={totalCount} />
                 </span>
@@ -353,12 +375,37 @@ export default async function HomePage() {
               </div>
             </div>
           </Reveal>
+
+          <Reveal delay={200}>
+            {/* Un solo CTA de botón acá a propósito: antes había un segundo
+                botón "Buscar en el Zona" apuntando al mismo /buscar que el
+                QuickSearchForm de abajo — dos affordances distintas para la
+                misma acción, una al lado de la otra, diluían cuál era la
+                principal. El buscador real (con input) ya cubre ese caso
+                mejor que un botón que aterriza en una página vacía. */}
+            <div className="mt-10 flex justify-center">
+              <Link
+                href="/personajes"
+                className="btn-primary hero-cta inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
+              >
+                <span className="hero-cta-label">Entrar al expediente</span>
+                <span className="hero-cta-arrow" aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </Reveal>
+
+          <Reveal delay={250}>
+            <div className="hero-search-wrap mt-5">
+              <QuickSearchForm />
+            </div>
+          </Reveal>
         </div>
 
         {/* Invitación a seguir scrolleando — puramente decorativo, no roba
             foco ni altera el orden de tabulación. Se aquieta solo con
             prefers-reduced-motion (ver `.hero-scroll-cue` en globals.css). */}
         <div className="hero-scroll-cue" aria-hidden="true">
+          <span className="hero-scroll-cue-label">Desplazate</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 5v14M5 12l7 7 7-7" />
           </svg>
@@ -394,7 +441,7 @@ export default async function HomePage() {
             <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">Explorá por sección</h2>
           </Reveal>
 
-          <div className="stagger grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <Reveal className="stagger grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {categories.map((type, i) => {
               const density = Math.max(6, Math.round((countsByType[type] / maxCategoryCount) * 100))
               const accent = CATEGORY_ACCENT[type]
@@ -446,7 +493,7 @@ export default async function HomePage() {
                 </Link>
               )
             })}
-          </div>
+          </Reveal>
 
           <Reveal className="mt-10 text-center">
             <Link
@@ -481,7 +528,7 @@ export default async function HomePage() {
               </Link>
             </Reveal>
 
-            <div className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Reveal className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((entity, i) => (
                 <EntityCard
                   key={`${entity.type}-${entity.slug}`}
@@ -493,7 +540,7 @@ export default async function HomePage() {
                   className={i === 0 ? 'sm:col-span-2' : undefined}
                 />
               ))}
-            </div>
+            </Reveal>
           </div>
         </SceneSection>
       )}
@@ -533,7 +580,7 @@ export default async function HomePage() {
             </p>
           </Reveal>
 
-          <div className="stagger grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal className="stagger grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {EVIDENCE_LEVELS.map((level) => (
               <Card key={level.label} className="h-full">
                 <span
@@ -546,7 +593,7 @@ export default async function HomePage() {
                 <p className="text-sm text-gta-text-secondary">{level.description}</p>
               </Card>
             ))}
-          </div>
+          </Reveal>
         </div>
       </SceneSection>
 
@@ -571,7 +618,7 @@ export default async function HomePage() {
               </Link>
             </Reveal>
 
-            <div className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Reveal className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {latestNews.map((entity) => (
                 <EntityCard
                   key={`${entity.type}-${entity.slug}`}
@@ -579,7 +626,7 @@ export default async function HomePage() {
                   image={latestNewsImages[entity.slug]}
                 />
               ))}
-            </div>
+            </Reveal>
 
             <Reveal className="mt-8 text-center sm:hidden">
               <Link
