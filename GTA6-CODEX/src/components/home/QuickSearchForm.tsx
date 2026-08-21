@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 /**
@@ -14,12 +14,32 @@ import { useRouter } from 'next/navigation'
 export function QuickSearchForm() {
   const router = useRouter()
   const [value, setValue] = useState('')
+  const inputRef = useRef<HTMLInputElement>(null)
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     const trimmed = value.trim()
     router.push(trimmed ? `/buscar?q=${encodeURIComponent(trimmed)}` : '/buscar')
   }
+
+  // Atajo "/" para enfocar la búsqueda sin tocar el mouse, mismo patrón
+  // que sitios de referencia (GitHub, Notion, etc.). Se ignora si el foco
+  // ya está en un campo de texto/textarea/contentEditable, para no robar
+  // el "/" a quien lo esté escribiendo en otro input de la página.
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return
+      const target = e.target as HTMLElement | null
+      const tag = target?.tagName
+      const isEditable =
+        tag === 'INPUT' || tag === 'TEXTAREA' || target?.isContentEditable
+      if (isEditable) return
+      e.preventDefault()
+      inputRef.current?.focus()
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
 
   return (
     <form onSubmit={handleSubmit} className="relative mx-auto w-full max-w-xl" role="search">
@@ -39,16 +59,28 @@ export function QuickSearchForm() {
         <path d="m21 21-4.3-4.3" />
       </svg>
       <input
+        ref={inputRef}
         type="search"
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Ej. Jason Duval, Vice City, Bati 801…"
-        aria-label="Búsqueda rápida en GTA6 Zona"
+        aria-label="Búsqueda rápida en GTA6 Zona. Atajo: tecla oblicua"
         className="glass-surface w-full rounded-xl border border-gta-border py-3.5 pl-11 pr-24 text-sm text-gta-text placeholder:text-gta-text-tertiary transition-all focus:border-gta-accent focus:shadow-glow-pink focus:outline-none sm:text-base"
       />
+      {/* Indicador del atajo de teclado: se oculta solo mientras el input
+          tiene contenido o foco (empty-values / has-[:focus]), y en mobile
+          (donde no hay teclado físico) vía sm:flex. No compite con el
+          botón "Buscar" porque ambos ocupan el mismo hueco a la derecha
+          en momentos distintos. */}
+      <kbd
+        aria-hidden="true"
+        className="hero-search-kbd-hint pointer-events-none absolute right-20 top-1/2 hidden -translate-y-1/2 items-center rounded-md border border-gta-border px-1.5 py-1 font-mono text-xs text-gta-text-tertiary sm:flex"
+      >
+        /
+      </kbd>
       <button
         type="submit"
-        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-gta-accent px-3.5 py-2 text-xs font-semibold uppercase tracking-wide text-gta-darker transition-colors hover:bg-gta-accent-strong sm:text-sm"
+        className="hero-search-submit absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-gta-accent px-3.5 py-2 text-xs font-semibold uppercase tracking-wide text-gta-darker transition-colors hover:bg-gta-accent-strong sm:text-sm"
       >
         Buscar
       </button>

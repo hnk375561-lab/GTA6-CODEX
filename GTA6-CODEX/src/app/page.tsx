@@ -26,6 +26,7 @@ import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
 import { DevelopmentTimeline, type TimelineEvent } from '@/components/home/DevelopmentTimeline'
 import { LaunchCountdown, type CountdownTarget } from '@/components/home/LaunchCountdown'
 import { QuickSearchForm } from '@/components/home/QuickSearchForm'
+import { HeroScrollCue } from '@/components/home/HeroScrollCue'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateHomepageMetadata()
@@ -220,6 +221,14 @@ export default async function HomePage() {
     }))
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
+  // Tráiler más reciente por fecha real de publicación (`releaseDate`),
+  // para el CTA secundario del hero ("Ver tráiler oficial"). Mismo criterio
+  // cronológico que ya usa `timelineEvents` más abajo — no se marca ningún
+  // tráiler como "destacado" a mano, es simplemente el último publicado.
+  const latestTrailer = (allTrailers as Trailer[]).sort(
+    (a, b) => new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
+  )[0]
+
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
 
   // Resuelve, para cada fecha ancla, la noticia más reciente cuyos tags
@@ -359,7 +368,7 @@ export default async function HomePage() {
                 misma acción, una al lado de la otra, diluían cuál era la
                 principal. El buscador real (con input) ya cubre ese caso
                 mejor que un botón que aterriza en una página vacía. */}
-            <div className="mt-10 flex justify-center">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/personajes"
                 className="btn-primary hero-cta inline-flex items-center justify-center rounded-lg px-9 py-4 text-base font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
@@ -367,6 +376,21 @@ export default async function HomePage() {
                 <span className="hero-cta-label">Entrar al expediente</span>
                 <span className="hero-cta-arrow" aria-hidden="true">→</span>
               </Link>
+              {/* CTA secundario condicionado a datos reales: solo aparece
+                  si hay al menos un tráiler cargado, y apunta al último
+                  publicado (`latestTrailer`, calculado arriba) — nunca a
+                  un slug hardcodeado que podría quedar obsoleto. */}
+              {latestTrailer && (
+                <Link
+                  href={`/trailers/${latestTrailer.slug}`}
+                  className="btn-secondary hero-cta-secondary inline-flex items-center justify-center gap-2 rounded-lg px-7 py-4 text-base font-semibold text-gta-text transition-all hover:-translate-y-0.5"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polygon points="6 3 20 12 6 21 6 3" />
+                  </svg>
+                  Ver tráiler oficial
+                </Link>
+              )}
             </div>
           </Reveal>
 
@@ -377,15 +401,14 @@ export default async function HomePage() {
           </Reveal>
         </div>
 
-        {/* Invitación a seguir scrolleando — puramente decorativo, no roba
-            foco ni altera el orden de tabulación. Se aquieta solo con
+        {/* Invitación a seguir scrolleando. Ahora es un botón real (antes
+            era un div puramente decorativo aria-hidden): hace scroll suave
+            a la sección siguiente al hacer click/Enter, y queda en el
+            orden de tabulación normal para quien navega con teclado o
+            lector de pantalla — la flecha ya no es solo un adorno visual,
+            es una affordance de navegación real. Se sigue aquietando con
             prefers-reduced-motion (ver `.hero-scroll-cue` en globals.css). */}
-        <div className="hero-scroll-cue" aria-hidden="true">
-          <span className="hero-scroll-cue-label">Desplazate</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 5v14M5 12l7 7 7-7" />
-          </svg>
-        </div>
+        <HeroScrollCue />
       </SceneSection>
 
       {/* Cuenta regresiva / Estado del lanzamiento */}

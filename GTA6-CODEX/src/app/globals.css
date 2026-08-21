@@ -872,7 +872,10 @@ a:hover .logo-mark {
 }
 
 /* --- Primera interacción: invitación a scrollear, aparece asentada la
-   escena. Puramente visual — no roba foco ni altera el orden de tabulación. --- */
+   escena. Es un <button> real (hace scroll suave a la siguiente sección
+   al hacer click/Enter) reseteado a la apariencia del div decorativo que
+   tenía antes, con un estado :focus-visible propio para quien navega con
+   teclado. --- */
 .hero-scroll-cue {
   position: absolute;
   bottom: 1.75rem;
@@ -885,7 +888,23 @@ a:hover .logo-mark {
   color: #7c6c8f;
   opacity: calc(0.3 + var(--scene-intro) * 0.7);
   transform: translateX(-50%);
-  transition: opacity 500ms ease;
+  transition: opacity 500ms ease, color var(--transition-base);
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+.hero-scroll-cue:hover,
+.hero-scroll-cue:focus-visible {
+  color: var(--c-pink-soft);
+}
+
+.hero-scroll-cue:focus-visible {
+  outline: 2px solid var(--c-pink);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
 }
 
 .hero-scroll-cue svg {
@@ -1260,6 +1279,19 @@ a:hover .logo-mark {
 
 .hero-search-wrap button:hover {
   letter-spacing: 0.06em;
+}
+
+/* Hint del atajo de teclado "/": visible solo en su estado útil (input
+   vacío y sin foco). Se oculta apenas hay texto (`:placeholder-shown`
+   deja de aplicar) o apenas el usuario ya está escribiendo (`:focus`),
+   momento en el que ya sabe dónde está y el hint solo estorbaría. */
+.hero-search-kbd-hint {
+  transition: opacity 200ms ease;
+}
+
+.hero-search-wrap input:not(:placeholder-shown) ~ .hero-search-kbd-hint,
+.hero-search-wrap input:focus ~ .hero-search-kbd-hint {
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
