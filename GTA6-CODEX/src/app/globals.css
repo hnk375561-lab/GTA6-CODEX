@@ -1748,19 +1748,56 @@ a:hover .logo-mark {
   color: #b3a3c4;
 }
 
+.leonida-recenter-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: rgba(5, 3, 8, 0.85);
+  border: 1px solid #453163;
+  color: #f5eff9;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.leonida-recenter-btn:hover {
+  border-color: #ff7ec4;
+  color: #ff7ec4;
+  background: rgba(255, 126, 196, 0.1);
+}
+
 .leonida-pin__dot {
   display: block;
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   border-radius: 9999px;
   background: #f0c274;
-  border: 1.5px solid #050308;
+  border: 2px solid #050308;
   box-shadow: 0 0 6px rgba(240, 194, 116, 0.7);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.leonida-pin:hover .leonida-pin__dot {
+  transform: scale(1.35);
+  box-shadow: 0 0 12px rgba(240, 194, 116, 0.95);
 }
 
 .leonida-pin__dot--active {
   background: #ff7ec4;
   box-shadow: 0 0 8px rgba(255, 126, 196, 0.9);
+}
+
+.leonida-pin:hover .leonida-pin__dot--active {
+  box-shadow: 0 0 14px rgba(255, 126, 196, 1);
 }
 
 .leonida-zone-tooltip {
@@ -1773,6 +1810,21 @@ a:hover .logo-mark {
   box-shadow: none !important;
   text-align: center;
   line-height: 1.5;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.leonida-zone-tooltip--active {
+  border-color: #ff7ec4 !important;
+  background: rgba(255, 126, 196, 0.12) !important;
+}
+
+.leonida-zone-tooltip__cta {
+  display: block;
+  margin-top: 3px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #b3a3c4;
 }
 
 .leonida-zone-tooltip::before {

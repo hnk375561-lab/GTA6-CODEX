@@ -27,11 +27,11 @@ export default async function MapaPage() {
   const locations = await getEntitiesByType(EntityType.LOCATION)
 
   return (
-    <div className="mx-auto max-w-6xl px-[var(--gutter-width)] py-10 md:py-14">
+    <div className="mx-auto max-w-7xl px-[var(--gutter-width)] py-10 md:py-14">
       <Reveal>
         <h1 className="font-display text-3xl font-bold text-gta-text md:text-4xl">Mapa de Leonida</h1>
         <p className="mt-2 max-w-2xl text-gta-text-secondary">
-          Un diagrama esquemático de las 5 zonas reportadas en la filtración CYBERLEEK, cruzado con las ubicaciones de
+          Un mapa interactivo de las 5 zonas reportadas en la filtración CYBERLEEK, cruzado con las ubicaciones de
           Leonida que Rockstar ya confirmó en material oficial. No es el mapa real del juego.
         </p>
       </Reveal>

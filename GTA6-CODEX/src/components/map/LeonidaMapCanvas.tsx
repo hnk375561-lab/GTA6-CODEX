@@ -1,15 +1,20 @@
 'use client'
 
 import 'leaflet/dist/leaflet.css'
-import { Fragment, useMemo, useState } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import L from 'leaflet'
-import { MapContainer, TileLayer, Circle, Marker, Tooltip, Popup, useMapEvents } from 'react-leaflet'
+import { MapContainer, TileLayer, Circle, Marker, Tooltip, Popup, useMap, useMapEvents } from 'react-leaflet'
 import type { Entity, EntityType } from '@/types'
 import { Badge } from '@/components/ui/Badge'
 import { STATUS_LABELS } from '@/lib/entity-labels'
 import { LEONIDA_ZONES, LEONIDA_ZONES_SOURCE, type LeonidaZone } from '@/lib/leonida-zones'
-import { LEONIDA_MAP_VIEW, LEONIDA_ZONE_COORDS, locationPinOffset } from '@/lib/leonida-map-coordinates'
+import {
+  LEONIDA_MAP_VIEW,
+  LEONIDA_ZONE_COORDS,
+  getLeonidaZonesBounds,
+  locationPinOffset,
+} from '@/lib/leonida-map-coordinates'
 
 interface LeonidaMapCanvasProps {
   locations: Entity[]
@@ -29,9 +34,15 @@ const pinIcon = (variant: 'default' | 'active') =>
   L.divIcon({
     className: 'leonida-pin',
     html: `<span class="leonida-pin__dot leonida-pin__dot--${variant}"></span>`,
-    iconSize: [14, 14],
-    iconAnchor: [7, 7],
+    iconSize: [22, 22],
+    iconAnchor: [11, 11],
   })
+
+const ZONES_BOUNDS = getLeonidaZonesBounds()
+const ZONES_LATLNG_BOUNDS: L.LatLngBoundsExpression = [
+  [ZONES_BOUNDS.south, ZONES_BOUNDS.west],
+  [ZONES_BOUNDS.north, ZONES_BOUNDS.east],
+]
 
 /** Cierra el detalle de zona al clickear el mapa fuera de cualquier círculo. */
 function MapClickHandler({ onClear }: { onClear: () => void }) {
@@ -39,9 +50,37 @@ function MapClickHandler({ onClear }: { onClear: () => void }) {
   return null
 }
 
+/**
+ * Encuadra automáticamente las 5 zonas al montar el mapa (sin depender de un
+ * zoom fijo que se amontona en pantallas chicas) y vuelve a ajustar el
+ * tamaño del mapa cuando cambia el layout (por ejemplo al rotar el celular).
+ * También expone la función de recentrado al padre vía `onReady`.
+ */
+function MapBoundsController({ onReady }: { onReady: (recenter: () => void) => void }) {
+  const map = useMap()
+
+  useEffect(() => {
+    const recenter = () => {
+      map.fitBounds(ZONES_LATLNG_BOUNDS, { padding: [24, 24] })
+    }
+    recenter()
+    onReady(recenter)
+
+    const handleResize = () => {
+      map.invalidateSize()
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [map])
+
+  return null
+}
+
 export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProps) {
   const [activeZoneId, setActiveZoneId] = useState<string | null>(null)
   const [hoverZoneId, setHoverZoneId] = useState<string | null>(null)
+  const recenterRef = useRef<(() => void) | null>(null)
 
   const zonedSlugs = useMemo(() => new Set(LEONIDA_ZONES.flatMap((z) => z.locationSlugs)), [])
   const unzonedLocations = useMemo(
@@ -54,9 +93,9 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
     : null
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
+    <div className="grid gap-6 lg:grid-cols-[1.7fr_1fr]">
       <div className="relative overflow-hidden rounded-xl border border-gta-border bg-gta-card p-4 md:p-6">
-        <div className="mb-4 flex flex-wrap items-start gap-2 rounded-lg border border-gta-accent-warning/25 bg-gta-accent-warning/10 px-3 py-2.5 text-xs leading-relaxed text-gta-accent-warning">
+        <div className="mb-3 flex flex-wrap items-start gap-2 rounded-lg border border-gta-accent-warning/25 bg-gta-accent-warning/10 px-3 py-2.5 text-xs leading-relaxed text-gta-accent-warning">
           <span aria-hidden="true" className="mt-0.5">
             ⚠
           </span>
@@ -67,20 +106,38 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
           </span>
         </div>
 
-        <div className="leonida-leaflet-wrap overflow-hidden rounded-lg border border-gta-border-strong/60">
+        <div className="mb-3 flex flex-wrap items-center gap-2 rounded-lg border border-gta-border bg-gta-darker/70 px-3 py-2 text-xs text-gta-text-secondary">
+          <span className="font-semibold text-gta-text">Cómo se usa:</span>
+          <span className="inline-flex items-center gap-1">
+            <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-gta-accent-orange/20 text-[10px] font-bold text-gta-accent-orange">
+              1
+            </span>
+            tocá un círculo para ver el detalle de esa zona a la derecha
+          </span>
+          <span className="text-gta-border-strong">·</span>
+          <span className="inline-flex items-center gap-1">
+            <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-gta-gold/20 text-[10px] font-bold text-gta-gold">
+              2
+            </span>
+            tocá un punto dorado para ver el resumen de esa ubicación
+          </span>
+        </div>
+
+        <div className="leonida-leaflet-wrap relative h-[440px] w-full overflow-hidden rounded-lg border border-gta-border-strong/60 sm:h-[560px] md:h-[640px] lg:h-[720px]">
           <MapContainer
             center={LEONIDA_MAP_VIEW.center}
             zoom={LEONIDA_MAP_VIEW.zoom}
-            minZoom={LEONIDA_MAP_VIEW.minZoom}
+            minZoom={5}
             maxZoom={LEONIDA_MAP_VIEW.maxZoom}
-            scrollWheelZoom={false}
-            style={{ height: '520px', width: '100%', background: '#050308' }}
+            scrollWheelZoom
+            style={{ height: '100%', width: '100%', background: '#050308' }}
           >
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
               url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
             />
             <MapClickHandler onClear={() => setActiveZoneId(null)} />
+            <MapBoundsController onReady={(recenter) => (recenterRef.current = recenter)} />
 
             {LEONIDA_ZONES.map((zone) => {
               const coords = LEONIDA_ZONE_COORDS[zone.id]
@@ -101,9 +158,9 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                     radius={coords.radiusMeters}
                     pathOptions={{
                       color,
-                      weight: isActive ? 2.5 : 1.5,
+                      weight: isActive ? 3 : 1.5,
                       fillColor: color,
-                      fillOpacity: isActive ? 0.22 : isHover ? 0.14 : hasLocations ? 0.08 : 0.03,
+                      fillOpacity: isActive ? 0.24 : isHover ? 0.16 : hasLocations ? 0.1 : 0.04,
                       dashArray: hasLocations ? undefined : '6 5',
                     }}
                     eventHandlers={{
@@ -115,7 +172,12 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                       mouseout: () => setHoverZoneId((current) => (current === zone.id ? null : current)),
                     }}
                   >
-                    <Tooltip direction="center" permanent className="leonida-zone-tooltip" opacity={1}>
+                    <Tooltip
+                      direction="center"
+                      permanent
+                      className={`leonida-zone-tooltip ${isActive ? 'leonida-zone-tooltip--active' : ''}`}
+                      opacity={1}
+                    >
                       <span className="leonida-zone-tooltip__row">
                         <span className="leonida-zone-tooltip__name">{zone.leakName}</span>
                         <span className="leonida-zone-tooltip__position">{zone.position}</span>
@@ -131,6 +193,7 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                           ? `✓ ${zoneLocations.length} ubicación${zoneLocations.length === 1 ? '' : 'es'} confirmada${zoneLocations.length === 1 ? '' : 's'}`
                           : '⚠ sin ubicaciones confirmadas'}
                       </span>
+                      <span className="leonida-zone-tooltip__cta">Tocá para ver el detalle →</span>
                     </Tooltip>
                   </Circle>
 
@@ -139,7 +202,7 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                     const pos: [number, number] = [coords.center[0] + dLat, coords.center[1] + dLng]
                     return (
                       <Marker key={loc.slug} position={pos} icon={pinIcon(isActive ? 'active' : 'default')}>
-                        <Tooltip direction="top" offset={[0, -6]}>
+                        <Tooltip direction="top" offset={[0, -10]}>
                           {loc.title}
                         </Tooltip>
                         <Popup className="leonida-pin-popup" closeButton minWidth={220} maxWidth={260}>
@@ -165,34 +228,45 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
               )
             })}
           </MapContainer>
+
+          <button
+            type="button"
+            onClick={() => recenterRef.current?.()}
+            className="leonida-recenter-btn"
+            aria-label="Volver a mostrar las 5 zonas completas"
+          >
+            ⤢ Ver las 5 zonas
+          </button>
         </div>
 
-        <div className="mt-4 grid grid-cols-1 gap-x-5 gap-y-2 text-xs text-gta-text-tertiary sm:grid-cols-2">
-          <span className="inline-flex items-center gap-1.5">
-            <span
-              className="inline-block h-2.5 w-2.5 rounded-full"
-              style={{ backgroundColor: 'rgba(34,211,238,0.2)', border: '1.5px solid #22d3ee' }}
-            />
-            Círculo cian = zona con al menos una ubicación confirmada
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <span
-              className="inline-block h-2.5 w-4 rounded-sm"
-              style={{ border: '1.5px dashed #453163' }}
-            />
-            Círculo gris punteado = zona reportada, sin confirmar todavía
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <span
-              className="inline-block h-2.5 w-2.5 rounded-full"
-              style={{ backgroundColor: 'rgba(255,126,196,0.25)', border: '1.5px solid #ff7ec4' }}
-            />
-            Círculo rosa = zona seleccionada (mostrando su detalle a la derecha)
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <span className="inline-block h-2.5 w-2.5 rounded-full bg-gta-gold" />
-            Punto dorado = ubicación catalogada — tocalo para ver un resumen
-          </span>
+        <div className="mt-4 rounded-lg border border-gta-border bg-gta-darker/50 p-3">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gta-text-tertiary">
+            Cómo leer este mapa
+          </p>
+          <div className="grid grid-cols-1 gap-x-5 gap-y-2 text-xs text-gta-text-tertiary sm:grid-cols-2">
+            <span className="inline-flex items-center gap-1.5">
+              <span
+                className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
+                style={{ backgroundColor: 'rgba(34,211,238,0.2)', border: '1.5px solid #22d3ee' }}
+              />
+              Círculo cian = zona con al menos una ubicación confirmada
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="inline-block h-2.5 w-4 shrink-0 rounded-sm" style={{ border: '1.5px dashed #453163' }} />
+              Círculo gris punteado = zona reportada, sin confirmar todavía
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span
+                className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
+                style={{ backgroundColor: 'rgba(255,126,196,0.25)', border: '1.5px solid #ff7ec4' }}
+              />
+              Círculo rosa = zona seleccionada (mostrando su detalle a la derecha)
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-gta-gold" />
+              Punto dorado = ubicación catalogada — tocalo para ver un resumen
+            </span>
+          </div>
         </div>
       </div>
 

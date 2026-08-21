@@ -59,3 +59,37 @@ export function locationPinOffset(
   const angle = (index / (total - 1)) * Math.PI - Math.PI / 2
   return { dLat: Math.sin(angle) * (spread * 0.6), dLng: Math.cos(angle) * spread }
 }
+
+/**
+ * Calcula el rectángulo (bounding box) que contiene las 5 zonas completas
+ * (centro + radio de cada círculo), con un margen extra para que las
+ * etiquetas no queden pegadas al borde del mapa. Se usa para encuadrar el
+ * mapa automáticamente al cargar, sin depender de un zoom fijo que podría
+ * quedar demasiado cerca (zonas pisándose) o demasiado lejos según la
+ * pantalla del usuario.
+ */
+export function getLeonidaZonesBounds(paddingFactor = 1.35): {
+  south: number
+  north: number
+  west: number
+  east: number
+} {
+  let south = Infinity
+  let north = -Infinity
+  let west = Infinity
+  let east = -Infinity
+
+  for (const { center, radiusMeters } of Object.values(LEONIDA_ZONE_COORDS)) {
+    const [lat, lng] = center
+    const dLat = (radiusMeters * paddingFactor) / 110574
+    const latRad = (lat * Math.PI) / 180
+    const dLng = (radiusMeters * paddingFactor) / (111320 * Math.cos(latRad))
+
+    south = Math.min(south, lat - dLat)
+    north = Math.max(north, lat + dLat)
+    west = Math.min(west, lng - dLng)
+    east = Math.max(east, lng + dLng)
+  }
+
+  return { south, north, west, east }
+}
