@@ -30,6 +30,7 @@ import { LaunchCountdown, type CountdownTarget } from '@/components/home/LaunchC
 import { QuickSearchForm } from '@/components/home/QuickSearchForm'
 import { HeroScrollCue } from '@/components/home/HeroScrollCue'
 import { HeroNewsFlash } from '@/components/home/HeroNewsFlash'
+import { HeroCountdownChip } from '@/components/home/HeroCountdownChip'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateHomepageMetadata()
@@ -319,19 +320,22 @@ export default async function HomePage() {
               )}
             </p>
 
-            {/* Última filtración, en vivo, antes del título — el hero
-                antes era 100% branding estático ("expediente clasificado")
-                sin ningún gancho de contenido real hasta bajar a la
-                sección de noticias, muy por debajo del fold. `latestNews`
-                ya se calculaba más abajo para esa sección; acá se reusan
-                los mismos 3 items (misma fuente de verdad, ningún
-                duplicado) para que el hero cicle entre titulares reales
-                en vez de mostrar uno solo fijo — ver HeroNewsFlash. */}
-            {latestNews.length > 0 && (
-              <HeroNewsFlash
-                items={latestNews.map((entity) => ({ slug: entity.slug, type: entity.type, title: entity.title }))}
-              />
-            )}
+            {/* Fila de "gancho de contenido" del hero: última filtración
+                rotativa + hito más próximo (Netflix / lanzamiento), lo
+                que haya, en flex-wrap para apilarse limpio en mobile.
+                Antes el hero era 100% branding estático hasta bajar al
+                fold; ahora hay dos señales de contenido real y vivo
+                arriba del título. Ambos reusan datos ya calculados más
+                abajo en esta misma función (latestNews, countdownTargets)
+                — ninguna fuente de verdad nueva ni duplicada. */}
+            <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
+              {latestNews.length > 0 && (
+                <HeroNewsFlash
+                  items={latestNews.map((entity) => ({ slug: entity.slug, type: entity.type, title: entity.title }))}
+                />
+              )}
+              <HeroCountdownChip targets={countdownTargets} />
+            </div>
 
             <h1 className="hero-title mx-auto max-w-3xl font-display font-bold leading-[1.08]">
               <span className="hero-mark" aria-hidden="true">
@@ -443,7 +447,7 @@ export default async function HomePage() {
 
       {/* Cuenta regresiva / Estado del lanzamiento */}
       {countdownTargets.length > 0 && (
-        <SceneSection sceneId="home-countdown" className="border-b border-gta-border py-16 sm:py-20">
+        <SceneSection sceneId="home-countdown" htmlId="countdown" className="border-b border-gta-border py-16 sm:py-20">
           <div className="container-max">
             <Reveal className="mx-auto mb-10 max-w-2xl text-center">
               <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">

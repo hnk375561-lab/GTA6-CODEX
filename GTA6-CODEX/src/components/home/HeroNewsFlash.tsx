@@ -53,7 +53,7 @@ export function HeroNewsFlash({ items, intervalMs = 6000 }: HeroNewsFlashProps) 
   return (
     <Link
       href={`/${current.type}/${current.slug}`}
-      className="hero-news-flash glass-surface mx-auto mb-6 inline-flex max-w-full items-center gap-2.5 rounded-full border border-gta-border/70 px-4 py-2 text-left hover:-translate-y-0.5 hover:border-gta-accent/60"
+      className="hero-news-flash glass-surface inline-flex max-w-full items-center gap-2.5 rounded-full border border-gta-border/70 px-4 py-2 text-left hover:-translate-y-0.5 hover:border-gta-accent/60"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}

@@ -78,6 +78,14 @@ html {
   color-scheme: dark;
 }
 
+/* Ancla del countdown (#countdown, ver htmlId en la SceneSection de
+   page.tsx), enlazada desde el nuevo chip de countdown del hero: el
+   header es sticky (~72-80px), así que sin este margen el scroll-into-
+   view dejaría el título de la sección tapado debajo de él. */
+#countdown {
+  scroll-margin-top: 6rem;
+}
+
 body {
   @apply bg-gta-dark text-gta-text antialiased;
   font-family: var(--font-sans);
@@ -1074,6 +1082,25 @@ a:hover .logo-mark {
 .hero-news-flash-dot[data-active='true'] {
   background: var(--c-pink);
   transform: scale(1.4);
+}
+
+/* --- Chip de countdown del hero: mismo lenguaje visual que
+   .hero-news-flash (glass-surface, borde que se enciende en acento al
+   hover), pero sin badge propio — el puntito de color hereda el accent
+   del hito (mismo criterio de CATEGORY_ACCENT que usa el resto del
+   sitio) en vez de duplicar la paleta magenta/cian/dorado a mano. --- */
+.hero-countdown-chip {
+  transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hero-countdown-chip:hover {
+  box-shadow: 0 0 20px -10px var(--c-cyan, #22d3ee);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-countdown-chip {
+    transition: none !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
