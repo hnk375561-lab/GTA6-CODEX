@@ -312,12 +312,16 @@ export default async function HomePage() {
               </span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-gta-text-secondary sm:text-xl">
-              Cada{' '}
-              <span className="hero-subtitle-rotate">
-                <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gta-text" />
+              <span className="hero-subtitle-line" style={{ ['--line-delay' as string]: '80ms' }}>
+                Cada{' '}
+                <span className="hero-subtitle-rotate">
+                  <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gta-text" />
+                </span>{' '}
+                de GTA6, clasificado
               </span>{' '}
-              de GTA6, clasificado
-              por nivel de evidencia — para que sepas de un vistazo qué es oficial y qué es rumor.
+              <span className="hero-subtitle-line" style={{ ['--line-delay' as string]: '180ms' }}>
+                por nivel de evidencia — para que sepas de un vistazo qué es oficial y qué es rumor.
+              </span>
             </p>
           </Reveal>
 
@@ -340,7 +344,7 @@ export default async function HomePage() {
           </Reveal>
 
           <Reveal delay={200}>
-            <div className="mt-5">
+            <div className="hero-search-wrap mt-5">
               <QuickSearchForm />
             </div>
           </Reveal>
@@ -350,7 +354,7 @@ export default async function HomePage() {
                 naturaleza distinta (datos, no acción) — más separación acá
                 refuerza que cerró el bloque de "acción" de arriba (CTA +
                 buscador) antes de pasar al de "cifras". */}
-            <div className="glass-surface mx-auto mt-12 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 rounded-xl border border-gta-border/70 px-8 py-5">
+            <div className="hero-stat-strip glass-surface mx-auto mt-12 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 rounded-xl border border-gta-border/70 px-8 py-5">
               {HERO_STAT_TYPES.map((type, i) => (
                 <div
                   key={type}
