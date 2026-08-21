@@ -8,10 +8,12 @@ import {
   getEntityCount,
   getEntityCountsByType,
   getEntitiesByType,
+  getMostRecentUpdate,
 } from '@/lib/entities'
 import { getCharacterClipUrl, resolveEntityDisplayImage } from '@/lib/media'
 import { getBidirectionalRelationCount } from '@/lib/relations'
 import { generateHomepageMetadata, generateBreadcrumbJsonLd } from '@/lib/seo'
+import { formatRelativeTime } from '@/lib/utils'
 import { Card } from '@/components/ui/Card'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
@@ -189,12 +191,13 @@ const COUNTDOWN_DEFS: Array<{
 ]
 
 export default async function HomePage() {
-  const [featured, totalCount, countsByType, allNews, allTrailers] = await Promise.all([
+  const [featured, totalCount, countsByType, allNews, allTrailers, mostRecentUpdate] = await Promise.all([
     getFeaturedEntities(6),
     getEntityCount(),
     getEntityCountsByType(),
     getEntitiesByType(EntityType.NEWS),
     getEntitiesByType(EntityType.TRAILER),
+    getMostRecentUpdate(),
   ])
 
   // Últimas 3 noticias por fecha real del evento (`createdAt`), no por
@@ -302,6 +305,17 @@ export default async function HomePage() {
             <p className="hero-pill hero-pill-stamp mb-4">
               <span className="hero-pill-dot" aria-hidden="true" />
               Expediente no oficial <span className="hero-pill-sep">·</span> Leonida
+              {/* Señal de frescura real, no un "actualizado hoy" fijo en
+                  el copy: `mostRecentUpdate` es el updatedAt más reciente
+                  entre TODAS las entidades del sitio (`getMostRecentUpdate`
+                  en lib/entities.ts), formateado con Intl.RelativeTimeFormat.
+                  Ausente solo en el caso borde de un sitio sin contenido. */}
+              {mostRecentUpdate && (
+                <>
+                  {' '}
+                  <span className="hero-pill-sep">·</span> Actualizado {formatRelativeTime(mostRecentUpdate)}
+                </>
+              )}
             </p>
             <h1 className="hero-title mx-auto max-w-3xl font-display font-bold leading-[1.08]">
               <span className="hero-mark" aria-hidden="true">

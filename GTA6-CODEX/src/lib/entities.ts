@@ -307,6 +307,23 @@ export async function getFeaturedEntities(limit = 6): Promise<Entity[]> {
 }
 
 /**
+ * `updatedAt` más reciente entre TODAS las entidades del sitio (no solo
+ * las destacadas de `getFeaturedEntities`). Usado por el pill del hero
+ * en la home para mostrar una señal real de frescura ("Actualizado hace
+ * X") — reutiliza el mismo `getAllEntities()` cacheado que ya usa el
+ * resto de este módulo, así que no agrega ninguna lectura de disco
+ * adicional en producción.
+ *
+ * @returns ISO string de la actualización más reciente, o null si no hay
+ * entidades cargadas (caso borde, no debería pasar en producción).
+ */
+export async function getMostRecentUpdate(): Promise<string | null> {
+  const all = await getAllEntities()
+  if (all.length === 0) return null
+  return all.reduce((latest, e) => (e.updatedAt > latest ? e.updatedAt : latest), all[0].updatedAt)
+}
+
+/**
  * Cuenta el total de entidades publicadas (todas las categorías).
  * 
  * @returns Total de entidades válidas en el sistema
