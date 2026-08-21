@@ -39,12 +39,17 @@ function EntityListExplorerFallback({
 }) {
   return (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {entities.map((entity) => (
+      {entities.map((entity, index) => (
         <div key={`${entity.type}-${entity.slug}`} className="entity-card-viewport">
           <EntityCard
             entity={entity}
             typeLabel={typeLabel}
             image={imageBySlug[`${entity.type}/${entity.slug}`]}
+            // Las primeras 4 cards son las que típicamente están visibles
+            // sin scroll (1-2 columnas en mobile, hasta 3 en desktop) —
+            // ver docs/audit-performance-2026-08.md sección 3. Solo esas
+            // piden priority; el resto sigue lazy como antes.
+            priority={index < 4}
           />
         </div>
       ))}

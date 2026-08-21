@@ -193,6 +193,10 @@ interface EntityCardProps {
    *  real (col-span) vía `className`, esta prop solo cambia la densidad
    *  interna de contenido. */
   size?: 'default' | 'hero'
+  /** Pasado directo a `EntityImage`. Ver el comentario de `priority` en
+   *  `EntityImageProps` — solo las primeras cards visibles sin scroll de
+   *  una página de listado deberían pasar `true` acá. */
+  priority?: boolean
 }
 
 /** Checkbox de comparación superpuesto a la card/fila. Detiene la
@@ -257,6 +261,7 @@ export function EntityCard({
   onCompareToggle,
   compareDisabled,
   size = 'default',
+  priority = false,
 }: EntityCardProps) {
   const [hovering, setHovering] = useState(false)
   /** Visible en viewport (con margen), independiente del hover — habilita
@@ -470,6 +475,7 @@ export function EntityCard({
               entity={entity}
               image={image}
               variant="thumbnail"
+              priority={priority}
               className={cn(
                 'rounded-none border-x-0 border-t-0',
                 size === 'hero' && 'sm:aspect-[2/1] lg:aspect-auto lg:h-full lg:w-full lg:border-b-0'

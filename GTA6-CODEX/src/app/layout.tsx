@@ -6,6 +6,7 @@ import { TrendingBar } from '@/components/layout/TrendingBar'
 import { Footer } from '@/components/layout/Footer'
 import { WebGLBackground } from '@/components/webgl/WebGLBackground'
 import { SceneAmbientBridge } from '@/components/webgl/SceneAmbientBridge'
+import { ConsentBanner } from '@/components/layout/ConsentBanner'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
 // GA4 solo se activa si hay un ID real configurado. Sin esto, un build sin
@@ -77,22 +78,7 @@ export default function RootLayout({
         >
           Saltar al contenido principal
         </a>
-        {GA_MEASUREMENT_ID && (
-          <>
-            <Script
-              strategy="afterInteractive"
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-            />
-            <Script id="ga4-init" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_MEASUREMENT_ID}');
-              `}
-            </Script>
-          </>
-        )}
+        {GA_MEASUREMENT_ID && <ConsentBanner gaId={GA_MEASUREMENT_ID} />}
         {ADSENSE_CLIENT_ID && (
           <Script
             async

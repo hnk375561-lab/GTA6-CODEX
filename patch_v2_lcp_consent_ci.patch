@@ -1,0 +1,260 @@
+diff --git a/GTA6-CODEX/.github/workflows/ci.yml b/GTA6-CODEX/.github/workflows/ci.yml
+index ba8c6fe..ad19fe1 100644
+--- a/GTA6-CODEX/.github/workflows/ci.yml
++++ b/GTA6-CODEX/.github/workflows/ci.yml
+@@ -7,6 +7,18 @@ on:
+     branches: [main]
+ 
+ jobs:
++  secrets-scan:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++        with:
++          fetch-depth: 0
++
++      - name: Escaneo de secretos (historial completo)
++        uses: gitleaks/gitleaks-action@v2
++        env:
++          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++
+   verify:
+     runs-on: ubuntu-latest
+     steps:
+diff --git a/GTA6-CODEX/src/app/[entityType]/page.tsx b/GTA6-CODEX/src/app/[entityType]/page.tsx
+index 07c4501..6292998 100644
+--- a/GTA6-CODEX/src/app/[entityType]/page.tsx
++++ b/GTA6-CODEX/src/app/[entityType]/page.tsx
+@@ -39,12 +39,17 @@ function EntityListExplorerFallback({
+ }) {
+   return (
+     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+-      {entities.map((entity) => (
++      {entities.map((entity, index) => (
+         <div key={`${entity.type}-${entity.slug}`} className="entity-card-viewport">
+           <EntityCard
+             entity={entity}
+             typeLabel={typeLabel}
+             image={imageBySlug[`${entity.type}/${entity.slug}`]}
++            // Las primeras 4 cards son las que típicamente están visibles
++            // sin scroll (1-2 columnas en mobile, hasta 3 en desktop) —
++            // ver docs/audit-performance-2026-08.md sección 3. Solo esas
++            // piden priority; el resto sigue lazy como antes.
++            priority={index < 4}
+           />
+         </div>
+       ))}
+diff --git a/GTA6-CODEX/src/app/layout.tsx b/GTA6-CODEX/src/app/layout.tsx
+index 52b5bc7..baeab95 100644
+--- a/GTA6-CODEX/src/app/layout.tsx
++++ b/GTA6-CODEX/src/app/layout.tsx
+@@ -6,6 +6,7 @@ import { TrendingBar } from '@/components/layout/TrendingBar'
+ import { Footer } from '@/components/layout/Footer'
+ import { WebGLBackground } from '@/components/webgl/WebGLBackground'
+ import { SceneAmbientBridge } from '@/components/webgl/SceneAmbientBridge'
++import { ConsentBanner } from '@/components/layout/ConsentBanner'
+ 
+ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+ // GA4 solo se activa si hay un ID real configurado. Sin esto, un build sin
+@@ -77,22 +78,7 @@ export default function RootLayout({
+         >
+           Saltar al contenido principal
+         </a>
+-        {GA_MEASUREMENT_ID && (
+-          <>
+-            <Script
+-              strategy="afterInteractive"
+-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+-            />
+-            <Script id="ga4-init" strategy="afterInteractive">
+-              {`
+-                window.dataLayer = window.dataLayer || [];
+-                function gtag(){dataLayer.push(arguments);}
+-                gtag('js', new Date());
+-                gtag('config', '${GA_MEASUREMENT_ID}');
+-              `}
+-            </Script>
+-          </>
+-        )}
++        {GA_MEASUREMENT_ID && <ConsentBanner gaId={GA_MEASUREMENT_ID} />}
+         {ADSENSE_CLIENT_ID && (
+           <Script
+             async
+diff --git a/GTA6-CODEX/src/components/entities/EntityCard.tsx b/GTA6-CODEX/src/components/entities/EntityCard.tsx
+index 3929550..7a04438 100644
+--- a/GTA6-CODEX/src/components/entities/EntityCard.tsx
++++ b/GTA6-CODEX/src/components/entities/EntityCard.tsx
+@@ -193,6 +193,10 @@ interface EntityCardProps {
+    *  real (col-span) vía `className`, esta prop solo cambia la densidad
+    *  interna de contenido. */
+   size?: 'default' | 'hero'
++  /** Pasado directo a `EntityImage`. Ver el comentario de `priority` en
++   *  `EntityImageProps` — solo las primeras cards visibles sin scroll de
++   *  una página de listado deberían pasar `true` acá. */
++  priority?: boolean
+ }
+ 
+ /** Checkbox de comparación superpuesto a la card/fila. Detiene la
+@@ -257,6 +261,7 @@ export function EntityCard({
+   onCompareToggle,
+   compareDisabled,
+   size = 'default',
++  priority = false,
+ }: EntityCardProps) {
+   const [hovering, setHovering] = useState(false)
+   /** Visible en viewport (con margen), independiente del hover — habilita
+@@ -470,6 +475,7 @@ export function EntityCard({
+               entity={entity}
+               image={image}
+               variant="thumbnail"
++              priority={priority}
+               className={cn(
+                 'rounded-none border-x-0 border-t-0',
+                 size === 'hero' && 'sm:aspect-[2/1] lg:aspect-auto lg:h-full lg:w-full lg:border-b-0'
+diff --git a/GTA6-CODEX/src/components/entities/EntityImage.tsx b/GTA6-CODEX/src/components/entities/EntityImage.tsx
+index aea5b6e..c4244c4 100644
+--- a/GTA6-CODEX/src/components/entities/EntityImage.tsx
++++ b/GTA6-CODEX/src/components/entities/EntityImage.tsx
+@@ -24,13 +24,25 @@ interface EntityImageProps {
+    */
+   image?: ResolvedDisplayImage | null
+   /**
+-   * 'thumbnail' → card de listado (más ancha que alta, sin prioridad de carga)
+-   * 'portrait'  → sidebar de la ficha individual (más alta, sin prioridad de carga)
++   * 'thumbnail' → card de listado (más ancha que alta)
++   * 'portrait'  → sidebar de la ficha individual (más alta)
+    * 'avatar'    → miniatura cuadrada compacta (paneles de relaciones, timeline)
+-   * Ninguna variante usa `priority`: la primera pintura relevante del sitio
+-   * sigue siendo el hero animado de texto, no una foto de entidad.
+    */
+   variant?: 'thumbnail' | 'portrait' | 'avatar'
++  /**
++   * Por defecto `false`: la primera pintura relevante de la HOME sigue
++   * siendo el hero animado de texto, no una foto de entidad, así que ahí
++   * ninguna EntityCard debe pedir priority.
++   *
++   * Pero en las páginas de listado (`/vehiculos`, `/personajes`, etc.) el
++   * grid de cards empieza inmediatamente después de un `<h1>` corto — en
++   * viewports angostos el LCP real de esas rutas es la primera imagen del
++   * grid, no el título (medido, ver docs/audit-performance-2026-08.md
++   * sección 3). El caller (la página de listado) es quien sabe si esta
++   * card es de las primeras visibles sin scroll; por eso esto es una prop
++   * explícita y no una decisión interna de este componente.
++   */
++  priority?: boolean
+   className?: string
+ }
+ 
+@@ -149,7 +161,7 @@ const CATEGORY_FALLBACK_LABEL: Partial<Record<EntityType, string>> = {
+   [EntityType.TRAILER]: 'Sin miniatura verificada',
+ }
+ 
+-export function EntityImage({ entity, image, variant = 'thumbnail', className }: EntityImageProps) {
++export function EntityImage({ entity, image, variant = 'thumbnail', priority = false, className }: EntityImageProps) {
+   const resolved = image ?? null
+   const isAvatar = variant === 'avatar'
+   /** Marca visual de que la FOTO (no la entidad) es una recreación no
+@@ -197,6 +209,8 @@ export function EntityImage({ entity, image, variant = 'thumbnail', className }:
+               fill
+               sizes={SIZES[variant]}
+               quality={QUALITY[variant]}
++              priority={priority}
++              loading={priority ? undefined : 'lazy'}
+               className={cn('object-cover', variant === 'portrait' ? 'card-media-image-static' : 'card-media-image')}
+             />
+           )}
+diff --git a/GTA6-CODEX/src/components/layout/ConsentBanner.tsx b/GTA6-CODEX/src/components/layout/ConsentBanner.tsx
+new file mode 100644
+index 0000000..7e84900
+--- /dev/null
++++ b/GTA6-CODEX/src/components/layout/ConsentBanner.tsx
+@@ -0,0 +1,89 @@
++'use client'
++
++import { useEffect, useState } from 'react'
++import Script from 'next/script'
++
++const STORAGE_KEY = 'gta6zona-cookie-consent'
++
++type ConsentState = 'accepted' | 'rejected' | null
++
++/**
++ * Gatea la carga de Google Analytics detrás de un consentimiento explícito
++ * del usuario (banner aceptar/rechazar), en vez de inyectar el script de
++ * `gtag` incondicionalmente apenas hay un `NEXT_PUBLIC_GA_ID` configurado.
++ *
++ * Por qué: GA sin gating de consentimiento previo es un problema de
++ * cumplimiento GDPR/ePrivacy en cuanto el sitio reciba tráfico de la UE —
++ * ver AUDITORIA_CRITICA_VENTA.md sección 6.2. Este componente resuelve
++ * solo eso, es intencionalmente mínimo (sin librería de CMP de terceros,
++ * sin categorías granulares) y no toca AdSense.
++ *
++ * Guardamos la decisión en localStorage (no cookie) a propósito: es
++ * exactamente lo que se está decidiendo (si se puede trackear al usuario),
++ * así que la propia decisión no debería depender de una cookie que ya
++ * requeriría el mismo consentimiento para setearse con TTL largo.
++ */
++export function ConsentBanner({ gaId }: { gaId: string }) {
++  const [consent, setConsent] = useState<ConsentState>(null)
++  const [hydrated, setHydrated] = useState(false)
++
++  useEffect(() => {
++    const stored = window.localStorage.getItem(STORAGE_KEY)
++    if (stored === 'accepted' || stored === 'rejected') {
++      setConsent(stored)
++    }
++    setHydrated(true)
++  }, [])
++
++  const decide = (value: 'accepted' | 'rejected') => {
++    window.localStorage.setItem(STORAGE_KEY, value)
++    setConsent(value)
++  }
++
++  return (
++    <>
++      {consent === 'accepted' && (
++        <>
++          <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
++          <Script id="ga4-init" strategy="afterInteractive">
++            {`
++              window.dataLayer = window.dataLayer || [];
++              function gtag(){dataLayer.push(arguments);}
++              gtag('js', new Date());
++              gtag('config', '${gaId}');
++            `}
++          </Script>
++        </>
++      )}
++
++      {hydrated && consent === null && (
++        <div
++          role="dialog"
++          aria-label="Consentimiento de cookies"
++          className="fixed inset-x-0 bottom-0 z-[200] border-t border-gta-border bg-gta-darker/95 px-4 py-4 backdrop-blur-sm sm:px-6"
++        >
++          <div className="container-max flex flex-col items-center justify-between gap-3 sm:flex-row">
++            <p className="text-sm text-gta-text-secondary">
++              Usamos cookies analíticas para entender cómo se usa el sitio. Podés aceptarlas o rechazarlas —
++              el sitio funciona igual en ambos casos.
++            </p>
++            <div className="flex shrink-0 gap-3">
++              <button
++                onClick={() => decide('rejected')}
++                className="rounded-lg border border-gta-border px-4 py-2 text-sm font-semibold text-gta-text-secondary transition-colors hover:text-gta-text"
++              >
++                Rechazar
++              </button>
++              <button
++                onClick={() => decide('accepted')}
++                className="btn-primary rounded-lg px-4 py-2 text-sm font-semibold text-gta-darker"
++              >
++                Aceptar
++              </button>
++            </div>
++          </div>
++        </div>
++      )}
++    </>
++  )
++}

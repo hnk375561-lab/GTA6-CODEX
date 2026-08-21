@@ -24,13 +24,25 @@ interface EntityImageProps {
    */
   image?: ResolvedDisplayImage | null
   /**
-   * 'thumbnail' → card de listado (más ancha que alta, sin prioridad de carga)
-   * 'portrait'  → sidebar de la ficha individual (más alta, sin prioridad de carga)
+   * 'thumbnail' → card de listado (más ancha que alta)
+   * 'portrait'  → sidebar de la ficha individual (más alta)
    * 'avatar'    → miniatura cuadrada compacta (paneles de relaciones, timeline)
-   * Ninguna variante usa `priority`: la primera pintura relevante del sitio
-   * sigue siendo el hero animado de texto, no una foto de entidad.
    */
   variant?: 'thumbnail' | 'portrait' | 'avatar'
+  /**
+   * Por defecto `false`: la primera pintura relevante de la HOME sigue
+   * siendo el hero animado de texto, no una foto de entidad, así que ahí
+   * ninguna EntityCard debe pedir priority.
+   *
+   * Pero en las páginas de listado (`/vehiculos`, `/personajes`, etc.) el
+   * grid de cards empieza inmediatamente después de un `<h1>` corto — en
+   * viewports angostos el LCP real de esas rutas es la primera imagen del
+   * grid, no el título (medido, ver docs/audit-performance-2026-08.md
+   * sección 3). El caller (la página de listado) es quien sabe si esta
+   * card es de las primeras visibles sin scroll; por eso esto es una prop
+   * explícita y no una decisión interna de este componente.
+   */
+  priority?: boolean
   className?: string
 }
 
@@ -149,7 +161,7 @@ const CATEGORY_FALLBACK_LABEL: Partial<Record<EntityType, string>> = {
   [EntityType.TRAILER]: 'Sin miniatura verificada',
 }
 
-export function EntityImage({ entity, image, variant = 'thumbnail', className }: EntityImageProps) {
+export function EntityImage({ entity, image, variant = 'thumbnail', priority = false, className }: EntityImageProps) {
   const resolved = image ?? null
   const isAvatar = variant === 'avatar'
   /** Marca visual de que la FOTO (no la entidad) es una recreación no
@@ -197,6 +209,8 @@ export function EntityImage({ entity, image, variant = 'thumbnail', className }:
               fill
               sizes={SIZES[variant]}
               quality={QUALITY[variant]}
+              priority={priority}
+              loading={priority ? undefined : 'lazy'}
               className={cn('object-cover', variant === 'portrait' ? 'card-media-image-static' : 'card-media-image')}
             />
           )}
