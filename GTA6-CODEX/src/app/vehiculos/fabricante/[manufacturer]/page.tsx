@@ -119,7 +119,7 @@ export default async function ManufacturerHubPage({ params }: PageProps) {
           </div>
         </Reveal>
 
-        <Reveal className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal className="stagger grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
           {vehicles.map((vehicle) => (
             <EntityCard
               key={vehicle.slug}

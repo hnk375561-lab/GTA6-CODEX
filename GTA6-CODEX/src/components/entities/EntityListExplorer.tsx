@@ -496,7 +496,17 @@ export function EntityListExplorer({
           ))}
         </div>
       ) : (
-        <div className={cn('grid gap-6 sm:grid-cols-2 lg:grid-cols-3', compareSlugs.length > 0 && 'pb-24')}>
+        <div
+          className={cn(
+            'grid gap-6',
+            // Vehículos: 5 columnas en desktop (pedido explícito de catálogo
+            // denso tipo "showroom"). El resto de categorías mantiene el
+            // grid original de 3 columnas — sus cards tienen más texto
+            // (descripción, facts) y a 5 columnas quedarían ilegibles.
+            isVehicleList ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5' : 'sm:grid-cols-2 lg:grid-cols-3',
+            compareSlugs.length > 0 && 'pb-24',
+          )}
+        >
           {visibleEntities.map((entity, i) => (
             <Reveal key={entity.slug} delay={(i % 6) * 80} className="entity-card-viewport">
               <EntityCard

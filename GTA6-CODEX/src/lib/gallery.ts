@@ -3,6 +3,27 @@ import { EntityType } from '@/types'
 import { getEntitiesByType } from './entities'
 import { resolveEntityImage, ENTITY_IMAGE_CATEGORIES } from './images'
 import { getMediaAssets, resolveMediaRender } from './media'
+import imageSourceManifest from '../../real-images-manifest.json'
+
+/**
+ * ILUSTRACIONES GENERADAS POR IA (no capturas oficiales de Rockstar)
+ * ====================================================================
+ * `real-images-manifest.json` es el registro de trazabilidad de sourcing
+ * de imágenes (ver docs/internal/IMAGE_CATALOG.md) y ya distingue, entrada
+ * por entrada, `sourceType: 'rockstar-official' | 'secondary-reliable' |
+ * 'ai-generated-illustration'`. Se deriva acá un lookup `type/slug` de las
+ * entradas IA para que la galería pueda: (a) mostrarlas con el badge
+ * 'nuestro' ya existente (`STATUS_LABELS.nuestro === 'Recreación no
+ * oficial (IA)'`, ver entity-labels.ts) en vez de heredar el status
+ * editorial de la entidad (que certifica que la UBICACIÓN existe en el
+ * juego, no que la FOTO sea oficial — son dos cosas distintas), y (b)
+ * ordenarlas siempre al final del grid, después de todo el material real.
+ */
+const AI_ILLUSTRATION_KEYS = new Set(
+  (imageSourceManifest as Array<{ category: string; slug: string; sourceType: string }>)
+    .filter((entry) => entry.sourceType === 'ai-generated-illustration')
+    .map((entry) => `${entry.category}/${entry.slug}`)
+)
 
 /**
  * SISTEMA DE GALERÍA — AGREGACIÓN DE ASSETS REALES
@@ -176,6 +197,7 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
 
       const key = `${entity.type}/${entity.slug}`
       const trailerAppearances = trailerIndex.get(key) || []
+      const isAiIllustration = AI_ILLUSTRATION_KEYS.has(key)
 
       items.push({
         id: key,
@@ -185,11 +207,17 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
         description: entity.description,
         categorySlug: entity.type,
         categoryLabel: CATEGORY_LABELS[entity.type] || entity.type,
-        status: entity.status,
+        // El status de la card de galería describe la IMAGEN, no la entidad:
+        // si la foto es una ilustración IA, se muestra 'nuestro' sin importar
+        // si la entidad en sí está 'confirmado' en el juego (son preguntas
+        // distintas — ver nota de AI_ILLUSTRATION_KEYS arriba).
+        status: isAiIllustration ? 'nuestro' : entity.status,
         href: `/${entity.type}/${entity.slug}`,
         entityType: entity.type,
         entitySlug: entity.slug,
-        credit: entity.image?.credit || 'Rockstar Games — material oficial (aportado por captura verificada)',
+        credit: isAiIllustration
+          ? 'Ilustración generada por IA — no oficial, no proviene de Rockstar Games'
+          : entity.image?.credit || 'Rockstar Games — material oficial (aportado por captura verificada)',
         sourceNote: entity.evidence?.note,
         tags: entity.tags,
         featured: entity.featured,
@@ -246,6 +274,13 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
   }
 
   return items.sort((a, b) => {
+    // Recreaciones IA siempre al final, sean de la categoría que sean: todo
+    // el material real (oficial de Rockstar o fuente secundaria confiable)
+    // va primero. Dentro de cada uno de esos dos grupos se mantiene el
+    // orden anterior (destacados primero, luego categoría, luego título).
+    const aIsAi = a.status === 'nuestro'
+    const bIsAi = b.status === 'nuestro'
+    if (aIsAi !== bIsAi) return aIsAi ? 1 : -1
     if (!!a.featured !== !!b.featured) return a.featured ? -1 : 1
     if (a.categorySlug !== b.categorySlug) return a.categorySlug.localeCompare(b.categorySlug, 'es')
     return a.title.localeCompare(b.title, 'es')
