@@ -49,7 +49,7 @@ function listCategories() {
 function listEntityFiles(categoryDir) {
   return fs
     .readdirSync(categoryDir)
-    .filter((f) => f.endsWith('.json') && !f.startsWith('__'))
+    .filter((f) => f.endsWith('.json') && !f.startsWith('__') && f !== 'template.json')
     .sort()
 }
 
