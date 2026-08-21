@@ -10,11 +10,21 @@ interface LeonidaMapExplorerProps {
 
 /**
  * Leaflet necesita `window`/`document` al montarse, así que el mapa en sí
- * (`LeonidaMapCanvas`) se carga únicamente en el cliente, sin server-side
- * rendering, para evitar errores de hidratación en Next.js.
+ * se carga únicamente en el cliente, sin server-side rendering, para evitar
+ * errores de hidratación en Next.js.
+ *
+ * V1 vs V2: por defecto se usa V1 (estable, en producción desde siempre).
+ * V2 agrega clustering de marcadores y un panel de filtros más completo.
+ * Se activa con NEXT_PUBLIC_MAP_V2=true en el entorno (ver .env.local o
+ * las env vars del proyecto en Vercel) sin tocar código.
  */
+const useMapV2 = process.env.NEXT_PUBLIC_MAP_V2 === 'true'
+
 const LeonidaMapCanvas = dynamic(
-  () => import('./LeonidaMapCanvas').then((mod) => mod.LeonidaMapCanvas),
+  () =>
+    useMapV2
+      ? import('./LeonidaMapCanvasV2').then((mod) => mod.LeonidaMapCanvasV2)
+      : import('./LeonidaMapCanvas').then((mod) => mod.LeonidaMapCanvas),
   {
     ssr: false,
     loading: () => (
