@@ -1,4 +1,4 @@
-﻿# 🎮 GTA6-ZONA: The Ultimate Grand Theft Auto VI Encyclopedia
+# ?? GTA6-ZONA: The Ultimate Grand Theft Auto VI Encyclopedia
 
 > **A comprehensive, multimedia-rich encyclopedia of Grand Theft Auto VI** with a curated database, high-resolution assets, editorial analysis, and community intelligence.
 
@@ -9,42 +9,42 @@
 ![License](https://img.shields.io/badge/license-see%20LICENSE-lightgrey)
 ![Node](https://img.shields.io/badge/node-18%2B-green)
 
-[🌐 Live Website](https://gta-6-zona.vercel.app) • [📚 Documentation](#-documentation) • [🚀 Quick Start](#-quick-start) • [🤝 Contributing](#-contributing)
+[?? Live Website](https://gta-6-zona.vercel.app) � [?? Documentation](#-documentation) � [?? Quick Start](#-quick-start) � [?? Contributing](#-contributing)
 
 </div>
 
-> **⚠️ Pendiente de dominio propio:** el sitio corre actualmente sobre el dominio de
-> preview de Vercel (`gta-6-zona.vercel.app`), no sobre un dominio de producción propio.
+> **?? Pendiente de dominio propio:** el sitio corre actualmente sobre el dominio de
+> preview de Vercel (`gta-6-zona.vercel.app`), no sobre un dominio de producci�n propio.
 > `vercel.json` (`NEXT_PUBLIC_SITE_URL`) y el link de arriba deben actualizarse cuando se
 > configure un dominio propio, y debe aclararse en cualquier acuerdo de transferencia si
 > el dominio se incluye o no.
 >
-> **⚠️ Ver también:** [`LEGAL_RISK_DISCLOSURE.md`](./LEGAL_RISK_DISCLOSURE.md) — riesgo
+> **?? Ver tambi�n:** [`LEGAL_RISK_DISCLOSURE.md`](./LEGAL_RISK_DISCLOSURE.md) � riesgo
 > legal conocido y no resuelto sobre el uso de assets visuales oficiales de Rockstar
 > Games / Take-Two Interactive en `public/images/`.
 
 ---
 
-## 📖 Table of Contents
+## ?? Table of Contents
 
-- [🎯 Overview](#-overview)
-- [✨ Features](#-features)
-- [📊 Current Content](#-current-content)
-- [🏗️ Architecture](#-architecture)
-- [🚀 Quick Start](#-quick-start)
-- [📚 Documentation](#-documentation)
-- [🛠️ Development](#-development)
-- [📦 Content Structure](#-content-structure)
-- [🔄 Workflows](#-workflows)
-- [🤝 Contributing](#-contributing)
-- [📋 Roadmap](#-roadmap)
-- [🔗 Resources](#-resources)
-- [❓ FAQ](#-faq)
-- [📜 License](#-license)
+- [?? Overview](#-overview)
+- [? Features](#-features)
+- [?? Current Content](#-current-content)
+- [??? Architecture](#-architecture)
+- [?? Quick Start](#-quick-start)
+- [?? Documentation](#-documentation)
+- [??? Development](#-development)
+- [?? Content Structure](#-content-structure)
+- [?? Workflows](#-workflows)
+- [?? Contributing](#-contributing)
+- [?? Roadmap](#-roadmap)
+- [?? Resources](#-resources)
+- [? FAQ](#-faq)
+- [?? License](#-license)
 
 ---
 
-## 🎯 Overview
+## ?? Overview
 
 **GTA6-ZONA** is a community-driven encyclopedia dedicated to documenting everything known about **Grand Theft Auto VI**. It combines a structured content database (vehicles, characters, locations, businesses, trailers, and more) with a modern web frontend, an image processing pipeline, and a set of integrity-verification scripts to keep the data trustworthy as new official information is released.
 
@@ -54,45 +54,45 @@ The project is built for two audiences:
 
 ---
 
-## ✨ Features
+## ? Features
 
 **Content**
-- ✅ Structured, evidence-sourced entries for vehicles, characters, locations, businesses, and trailers
-- ✅ High-resolution images (WebP, 1600×900) for every documented entity
-- ✅ Cross-referenced entity relationships (e.g. character ↔ vehicle ↔ location)
+- ? Structured, evidence-sourced entries for vehicles, characters, locations, businesses, and trailers
+- ? High-resolution images (WebP, 1600�900) for every documented entity
+- ? Cross-referenced entity relationships (e.g. character ? vehicle ? location)
 
 **Platform**
-- ✅ Fast fuzzy search across the entire database
-- ✅ SEO-optimized routes for every entity page
-- ✅ Responsive design for desktop and mobile
+- ? Fast fuzzy search across the entire database
+- ? SEO-optimized routes for every entity page
+- ? Responsive design for desktop and mobile
 
 **Data Quality**
-- ✅ Evidence-level tagging (A/B/C/D) for every fact
-- ✅ Primary source citation on every entry
-- ✅ Automated integrity, relation, media, and SEO verification scripts
+- ? Evidence-level tagging (A/B/C/D) for every fact
+- ? Primary source citation on every entry
+- ? Automated integrity, relation, media, and SEO verification scripts
 
 **Community**
-- ✅ Clear contribution templates for new content
-- ✅ Documented workflows for common tasks
-- ✅ Transparent roadmap
+- ? Clear contribution templates for new content
+- ? Documented workflows for common tasks
+- ? Transparent roadmap
 
 ---
 
-## 📊 Current Content
+## ?? Current Content
 
 | Category | Count | Status | Image Coverage |
 |----------|-------|--------|-----------------|
-| 🚗 **Vehicles** | **62** | 50% Complete | 19/57 real images (38 pending) |
-| 📍 **Locations** | **21** | 40% Complete | Partial coverage, expanding |
-| 👤 **Characters** | **17** | 55% Complete | Protagonists, antagonists, supporting cast |
-| 🏢 **Businesses** | **13** | 35% Complete | Shops, tattoo parlors, services |
-| 🎬 **Trailers** | **2** | 100% Complete | Official Rockstar trailers indexed |
-| 🔫 **Weapons** | **13** | In Progress | 13/25+ target, evidencia A/B/C completa |
-| 🎮 **Other Content** | Multiple | In Progress | Weapons, gangs, radio stations |
+| ?? **Vehicles** | **62** | 50% Complete | 19/57 real images (38 pending) |
+| ?? **Locations** | **21** | 40% Complete | Partial coverage, expanding |
+| ?? **Characters** | **17** | 55% Complete | Protagonists, antagonists, supporting cast |
+| ?? **Businesses** | **13** | 35% Complete | Shops, tattoo parlors, services |
+| ?? **Trailers** | **2** | 100% Complete | Official Rockstar trailers indexed |
+| ?? **Weapons** | **13** | In Progress | 13/25+ target, evidencia A/B/C completa |
+| ?? **Other Content** | Multiple | In Progress | Weapons, gangs, radio stations |
 
 ---
 
-## 🏗️ Architecture
+## ??? Architecture
 
 ### Tech Stack
 
@@ -110,44 +110,44 @@ The project is built for two audiences:
 
 ```
 GTA6-ZONA/
-├── 📁 public/
-│   └── images/
-│       └── entities/
-│           ├── vehiculos/              # Vehicle images (WebP, 1600×900)
-│           ├── personajes/             # Character portraits
-│           ├── ubicaciones/            # Location screenshots
-│           └── negocios/               # Business establishment photos
-│
-├── 📁 src/
-│   ├── app/                            # Next.js app router
-│   ├── components/                     # React components
-│   ├── content/                        # Content database (JSON)
-│   │   ├── vehiculos/                  # Vehicle JSON files
-│   │   ├── personajes/                 # Character data
-│   │   ├── ubicaciones/                # Location data
-│   │   ├── negocios/                   # Business data
-│   │   └── trailers/                   # Trailer index with timestamps
-│   ├── lib/                            # Utilities & helpers
-│   │   ├── images.ts                   # Image processing logic
-│   │   ├── search.ts                   # Search functionality
-│   │   └── relations.ts                # Entity relationship resolver
-│   └── styles/                         # Global styles
-│
-├── 📁 scripts/
-│   ├── process-images.mjs              # Image pipeline (resize, compress)
-│   ├── verify-content-integrity.mjs    # Data validation
-│   ├── verify-relations-integrity.mjs  # Cross-reference validation
-│   ├── verify-media-integrity.mjs      # Image file validation
-│   ├── verify-seo-routes.mjs           # SEO metadata verification
-│   ├── verify-tailwind-config.mjs      # CSS utility validation
-│   └── media-sync.mjs                  # Media synchronization
-│
-└── README.md
++-- ?? public/
+�   +-- images/
+�       +-- entities/
+�           +-- vehiculos/              # Vehicle images (WebP, 1600�900)
+�           +-- personajes/             # Character portraits
+�           +-- ubicaciones/            # Location screenshots
+�           +-- negocios/               # Business establishment photos
+�
++-- ?? src/
+�   +-- app/                            # Next.js app router
+�   +-- components/                     # React components
+�   +-- content/                        # Content database (JSON)
+�   �   +-- vehiculos/                  # Vehicle JSON files
+�   �   +-- personajes/                 # Character data
+�   �   +-- ubicaciones/                # Location data
+�   �   +-- negocios/                   # Business data
+�   �   +-- trailers/                   # Trailer index with timestamps
+�   +-- lib/                            # Utilities & helpers
+�   �   +-- images.ts                   # Image processing logic
+�   �   +-- search.ts                   # Search functionality
+�   �   +-- relations.ts                # Entity relationship resolver
+�   +-- styles/                         # Global styles
+�
++-- ?? scripts/
+�   +-- process-images.mjs              # Image pipeline (resize, compress)
+�   +-- verify-content-integrity.mjs    # Data validation
+�   +-- verify-relations-integrity.mjs  # Cross-reference validation
+�   +-- verify-media-integrity.mjs      # Image file validation
+�   +-- verify-seo-routes.mjs           # SEO metadata verification
+�   +-- verify-tailwind-config.mjs      # CSS utility validation
+�   +-- media-sync.mjs                  # Media synchronization
+�
++-- README.md
 ```
 
 ---
 
-## 🚀 Quick Start
+## ?? Quick Start
 
 ### Prerequisites
 - Node.js 18+ (LTS recommended)
@@ -178,33 +178,33 @@ npm run dev
 ### First Commands
 
 ```bash
-# 🔍 Verify all content integrity
+# ?? Verify all content integrity
 npm run verify:content
 
-# 📊 Check SEO metadata
+# ?? Check SEO metadata
 npm run verify:seo
 
-# 🔗 Validate entity relationships
+# ?? Validate entity relationships
 npm run verify:relations
 
-# 📸 Process & optimize new images
+# ?? Process & optimize new images
 npm run process-images:apply
 
-# 🏗️ Build for production
+# ??? Build for production
 npm run build && npm start
 ```
 
 ---
 
-## 📚 Documentation
+## ?? Documentation
 
-- `CONTRIBUTING.md` — Guidelines for adding or editing content
-- `TROUBLESHOOTING.md` — Common issues and fixes
-- `src/content/*/template.json` — Templates for each content type
+- `CONTRIBUTING.md` � Guidelines for adding or editing content
+- `TROUBLESHOOTING.md` � Common issues and fixes
+- `src/content/*/template.json` � Templates for each content type
 
 ---
 
-## 🛠️ Development
+## ??? Development
 
 Recommended workflow while developing locally:
 
@@ -217,7 +217,7 @@ npm run verify:content # Validate content database
 
 ---
 
-## 📦 Content Structure
+## ?? Content Structure
 
 Every content entry is a JSON file following a consistent schema. Example (simplified):
 
@@ -236,21 +236,21 @@ Every content entry is a JSON file following a consistent schema. Example (simpl
 
 Follow these templates:
 
-- 🚗 New Vehicle: copy `src/content/vehiculos/template.json`
-- 👤 New Character: copy `src/content/personajes/template.json`
-- 📍 New Location: copy `src/content/ubicaciones/template.json`
-- 🏢 New Business: copy `src/content/negocios/template.json`
+- ?? New Vehicle: copy `src/content/vehiculos/template.json`
+- ?? New Character: copy `src/content/personajes/template.json`
+- ?? New Location: copy `src/content/ubicaciones/template.json`
+- ?? New Business: copy `src/content/negocios/template.json`
 
 All content requires:
-- ✅ Slug (lowercase, hyphenated)
-- ✅ Title & description
-- ✅ Evidence level (A/B/C/D)
-- ✅ Primary source citation
-- ✅ Image (WebP, 1600×900)
+- ? Slug (lowercase, hyphenated)
+- ? Title & description
+- ? Evidence level (A/B/C/D)
+- ? Primary source citation
+- ? Image (WebP, 1600�900)
 
 ---
 
-## 🔄 Workflows
+## ?? Workflows
 
 ### Adding a New Vehicle
 
@@ -284,12 +284,12 @@ ls -lh public/images/entities/vehiculos/*.webp
 
 # 4. Commit
 git add public/images/entities/vehiculos/
-git commit -m "✨ Add vehicle images"
+git commit -m "? Add vehicle images"
 ```
 
 ---
 
-## 🤝 Contributing
+## ?? Contributing
 
 Contributions are welcome! Please:
 
@@ -303,41 +303,41 @@ See `CONTRIBUTING.md` for full guidelines.
 
 ---
 
-## 📋 Roadmap
+## ?? Roadmap
 
-### Phase 1: Foundation ✅ (August 2026)
+### Phase 1: Foundation ? (August 2026)
 - [x] Core Next.js setup
 - [x] Content database structure
 - [x] Image pipeline
 - [x] Initial vehicle catalog (57)
 - [x] Verification scripts
 
-### Phase 2: Expansion 🚀 (August–September 2026)
+### Phase 2: Expansion ?? (August�September 2026)
 - [ ] Complete vehicle images (38 pending)
 - [ ] Expand character database (20+ total)
 - [ ] Add weapon catalog (13/25+ complete)
 - [ ] Map & district details
 - [ ] Business/service directory
 
-### Phase 3: Enhancement 🎯 (September–October 2026)
+### Phase 3: Enhancement ?? (September�October 2026)
 - [ ] Advanced search filters
 - [ ] Community submission review flow
 
-### Phase 4: Polish ✨ (October–November 2026)
+### Phase 4: Polish ? (October�November 2026)
 - [ ] Performance optimization
 - [ ] Accessibility audit
 - [ ] Full mobile QA
 
 ---
 
-## 🔗 Resources
+## ?? Resources
 
-- Official GTA VI announcements — Rockstar Games
-- Repository issue tracker — for bugs and content requests
+- Official GTA VI announcements � Rockstar Games
+- Repository issue tracker � for bugs and content requests
 
 ---
 
-## ❓ FAQ
+## ? FAQ
 
 **Q: Can I use this content in my project?**
 A: Yes, with proper attribution to Rockstar Games and this repository.
@@ -349,13 +349,13 @@ A: See `CONTRIBUTING.md` for detailed guidelines.
 A: Continuously, as new official information is released.
 
 **Q: Can I deploy this myself?**
-A: Yes — fork the repo and deploy to Vercel (recommended).
+A: Yes � fork the repo and deploy to Vercel (recommended).
 
 **Q: Are there known issues?**
 A: Check `TROUBLESHOOTING.md` or open an issue.
 
 ---
 
-## 📜 License
+## ?? License
 
 This project documents publicly available information about Grand Theft Auto VI. All trademarks, characters, and official media belong to Rockstar Games / Take-Two Interactive. Original code and curated content in this repository are provided under the license specified in `LICENSE`.
