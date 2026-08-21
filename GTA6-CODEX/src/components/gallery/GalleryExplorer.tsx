@@ -55,6 +55,22 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
 
   const isFiltering = debouncedQuery.trim().length > 0 || category !== 'todas'
 
+  /** Mismo patrón que el listado de Vehículos (`EntityListExplorer`): la
+   *  galería agrega imágenes de TODOS los tipos de entidad + key art +
+   *  videos, así que es el grid más grande del sitio — fácilmente 100+
+   *  tiles montados de una sin este tope. `content-visibility: auto` en
+   *  `.gallery-tile-viewport` (globals.css) ya evita pintar los que están
+   *  fuera de pantalla; esto además reduce cuántos existen en el DOM. */
+  const PAGE_SIZE = 40
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE)
+  }, [filtered])
+
+  const visibleItems = filtered.slice(0, visibleCount)
+  const hasMore = visibleCount < filtered.length
+
   const openLightbox = useCallback(
     (item: GalleryItem) => {
       const idx = filtered.findIndex((i) => i.id === item.id)
@@ -186,14 +202,27 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-5 lg:gap-2.5">
-          {filtered.map((item, i) => (
+          {visibleItems.map((item, i) => (
             <Reveal
               key={item.id}
               delay={(i % 8) * 60}
+              className="gallery-tile-viewport"
             >
               <GalleryTile item={item} featured={!!item.featured} onOpen={() => openLightbox(item)} />
             </Reveal>
           ))}
+        </div>
+      )}
+
+      {hasMore && (
+        <div className="mt-8 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
+            className="rounded-full border border-gta-border px-5 py-2.5 text-sm font-semibold text-gta-text-secondary transition-colors hover:border-gta-accent hover:text-gta-accent"
+          >
+            Cargar más ({filtered.length - visibleCount} restantes)
+          </button>
         </div>
       )}
 

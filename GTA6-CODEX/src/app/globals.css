@@ -367,6 +367,17 @@ a:hover .logo-mark {
   contain-intrinsic-size: 0 96px;
 }
 
+/* --- /galeria: mismo problema que Vehículos pero más grande todavía —
+   agrega imágenes de TODOS los tipos de entidad + key art + videos, así
+   que fácilmente supera el centenar de tiles en un único grid. Cada tile
+   es más liviano que EntityCard (sin blur/glow permanentes), pero la
+   cantidad de nodos por sí sola ya cuesta layout/paint durante el scroll
+   sin este corte. */
+.gallery-tile-viewport {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 220px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     animation: none !important;
