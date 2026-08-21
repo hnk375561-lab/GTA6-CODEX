@@ -20,6 +20,22 @@ const nextConfig = {
     return config
   },
   headers: async () => {
+    // CSP en modo Report-Only a propósito: permite medir qué bloquearía
+    // sin romper nada en producción (GA, thumbnails de YouTube, y los
+    // propios estilos/scripts inline que ya usa Next). Una vez confirmado
+    // en los reportes que no hay falsos positivos, cambiar el nombre del
+    // header a 'Content-Security-Policy' (sin '-Report-Only') para que
+    // bloquee de verdad.
+    const csp = [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: https://img.youtube.com https://i.ytimg.com",
+      "frame-src https://www.youtube.com",
+      "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com",
+      "font-src 'self' data:",
+    ].join('; ')
+
     return [
       {
         source: '/:path*',
@@ -35,6 +51,18 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin'
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload'
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()'
+          },
+          {
+            key: 'Content-Security-Policy-Report-Only',
+            value: csp
           }
         ]
       }

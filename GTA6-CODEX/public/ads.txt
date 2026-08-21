@@ -2,7 +2,7 @@
 #
 # Pasos para AdSense:
 # 1. Andá a https://www.google.com/adsense → "Comenzar ahora" → creá cuenta con
-#    uruspotcdu@gmail.com (o el email que uses para el sitio).
+#    el email que uses para administrar el sitio.
 # 2. Agregá el sitio (dominio de producción, no el de Vercel de preview).
 # 3. Google te da un Publisher ID con formato pub-0000000000000000. Cuando lo
 #    tengas, configurá la variable de entorno NEXT_PUBLIC_ADSENSE_CLIENT_ID
