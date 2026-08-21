@@ -294,20 +294,30 @@ export default async function HomePage() {
               <span className="hero-pill-dot" aria-hidden="true" />
               Expediente no oficial <span className="hero-pill-sep">·</span> Leonida
             </p>
-            <h1 className="hero-title hero-title-accent mx-auto max-w-4xl font-display text-5xl font-bold leading-tight sm:text-7xl">
-              <span className="hero-title-word hero-title-word--mark" aria-label="GTA6">
+            <h1 className="hero-title hero-title-accent mx-auto max-w-4xl font-display font-bold leading-[0.9]">
+              <span
+                className="hero-title-word hero-title-word--mark text-6xl sm:text-8xl"
+                aria-label="GTA6"
+              >
                 {['G', 'T', 'A', '6'].map((ch, i) => (
                   <span
                     key={i}
                     className="hero-title-letter"
                     aria-hidden="true"
-                    style={{ ['--letter-delay' as string]: `${40 + i * 55}ms` }}
+                    style={{
+                      ['--letter-delay' as string]: `${40 + i * 55}ms`,
+                      /* Zigzag en vez de una única inclinación uniforme:
+                         cada letra cae desde su propio ángulo (par/impar)
+                         en lugar de todas desde -4deg — mismo timing,
+                         trazo menos "en fila". */
+                      ['--letter-rotate' as string]: i % 2 === 0 ? '-4deg' : '4deg',
+                    }}
                   >
                     {ch}
                   </span>
                 ))}
-              </span>{' '}
-              <span className="hero-title-word hero-title-word--label">
+              </span>
+              <span className="hero-title-word hero-title-word--label mt-2 text-xl sm:mt-3 sm:text-3xl">
                 Zona<span className="hero-title-cursor" aria-hidden="true">_</span>
               </span>
             </h1>
@@ -317,7 +327,7 @@ export default async function HomePage() {
                 <span className="hero-subtitle-rotate">
                   <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gta-text" />
                 </span>{' '}
-                de GTA6, clasificado
+                de GTA6, <span className="font-semibold text-gta-text">clasificado</span>
               </span>{' '}
               <span className="hero-subtitle-line" style={{ ['--line-delay' as string]: '180ms' }}>
                 por nivel de evidencia — para que sepas de un vistazo qué es oficial y qué es rumor.
@@ -326,35 +336,13 @@ export default async function HomePage() {
           </Reveal>
 
           <Reveal delay={150}>
-            {/* Un solo CTA de botón acá a propósito: antes había un segundo
-                botón "Buscar en el Zona" apuntando al mismo /buscar que el
-                QuickSearchForm de abajo — dos affordances distintas para la
-                misma acción, una al lado de la otra, diluían cuál era la
-                principal. El buscador real (con input) ya cubre ese caso
-                mejor que un botón que aterriza en una página vacía. */}
-            <div className="mt-10 flex justify-center">
-              <Link
-                href="/personajes"
-                className="btn-primary hero-cta inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
-              >
-                <span className="hero-cta-label">Entrar al expediente</span>
-                <span className="hero-cta-arrow" aria-hidden="true">→</span>
-              </Link>
-            </div>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <div className="hero-search-wrap mt-5">
-              <QuickSearchForm />
-            </div>
-          </Reveal>
-
-          <Reveal delay={250}>
-            {/* mt-12 (antes mt-10): el strip de stats es un bloque de
-                naturaleza distinta (datos, no acción) — más separación acá
-                refuerza que cerró el bloque de "acción" de arriba (CTA +
-                buscador) antes de pasar al de "cifras". */}
-            <div className="hero-stat-strip glass-surface mx-auto mt-12 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 rounded-xl border border-gta-border/70 px-8 py-5">
+            {/* El strip de cifras ahora abre el bloque de abajo, antes del
+                CTA: las cifras hacen de credencial ("esto no es una promesa
+                vacía, hay X entradas documentadas") antes de pedir la
+                acción, en vez de quedar como cierre después del botón y el
+                buscador. Mismo contenido, mismo <Reveal>, solo cambia el
+                orden en el que entra. */}
+            <div className="hero-stat-strip glass-surface mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 rounded-xl border border-gta-border/70 px-8 py-5">
               {HERO_STAT_TYPES.map((type, i) => (
                 <div
                   key={type}
@@ -385,6 +373,30 @@ export default async function HomePage() {
                   {totalCount === 1 ? 'Entrada total' : 'Entradas totales'}
                 </span>
               </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={200}>
+            {/* Un solo CTA de botón acá a propósito: antes había un segundo
+                botón "Buscar en el Zona" apuntando al mismo /buscar que el
+                QuickSearchForm de abajo — dos affordances distintas para la
+                misma acción, una al lado de la otra, diluían cuál era la
+                principal. El buscador real (con input) ya cubre ese caso
+                mejor que un botón que aterriza en una página vacía. */}
+            <div className="mt-10 flex justify-center">
+              <Link
+                href="/personajes"
+                className="btn-primary hero-cta inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
+              >
+                <span className="hero-cta-label">Entrar al expediente</span>
+                <span className="hero-cta-arrow" aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </Reveal>
+
+          <Reveal delay={250}>
+            <div className="hero-search-wrap mt-5">
+              <QuickSearchForm />
             </div>
           </Reveal>
         </div>
