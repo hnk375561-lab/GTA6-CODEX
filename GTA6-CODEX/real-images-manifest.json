@@ -103,5 +103,40 @@
     "sourceUrl": null,
     "sourceType": "ai-generated-illustration",
     "note": "NO es una captura oficial de Rockstar. Ilustracion generada por IA (herramienta externa del usuario, no Rockstar), comisionada para representar el Tisha-Wocka Flea Market (mercado de marcas bootleg mencionado en texto oficial junto al Trailer 2). Revisada y aprobada manualmente antes de subir. Nota de calidad: un cartel de fondo del centro comercial vecino salio parcialmente ilegible (artefacto tipico de IA con texto), pero esta fuera de foco y no afecta el elemento principal. Reemplaza el placeholder generico. Si Rockstar publica una captura oficial, debe reemplazarse por esa fuente primaria."
+  },
+  {
+    "category": "misiones",
+    "slug": "liberacion-lucia",
+    "sourceUrl": null,
+    "sourceType": "ai-generated-illustration",
+    "note": "NO es una captura oficial de Rockstar. Es una ilustracion tipo 'poster' generada por IA (plantilla con numero de mision, titulo y badge de estado quemados directamente en el archivo de imagen), no un frame extraido de un trailer oficial. Verificado visualmente: el badge quemado en el propio archivo dice 'NUESTRO', aunque el campo status de la entidad (que certifica que la escena narrativa esta confirmada en el Trailer 1, no que esta imagen especifica sea oficial) diga 'confirmado' — son dos cosas distintas. Agregado a este manifest el 21 ago 2026 para que la galeria la ordene junto al resto de recreaciones no oficiales, no junto al material real de Rockstar."
+  },
+  {
+    "category": "misiones",
+    "slug": "persecucion-huida",
+    "sourceUrl": null,
+    "sourceType": "ai-generated-illustration",
+    "note": "NO es una captura oficial de Rockstar. Misma plantilla 'poster' generada por IA que liberacion-lucia (numero + titulo + badge quemados en el archivo). El badge quemado en el archivo dice 'NUESTRO'. Agregado a este manifest el 21 ago 2026 por el mismo motivo."
+  },
+  {
+    "category": "misiones",
+    "slug": "robo-tienda-conveniencia",
+    "sourceUrl": null,
+    "sourceType": "ai-generated-illustration",
+    "note": "NO es una captura oficial de Rockstar. Misma plantilla 'poster' generada por IA (numero + titulo + badge quemados en el archivo). El badge quemado en el archivo dice 'RUMOR'. Agregado a este manifest el 21 ago 2026 por el mismo motivo."
+  },
+  {
+    "category": "misiones",
+    "slug": "noche-jack-of-hearts",
+    "sourceUrl": null,
+    "sourceType": "ai-generated-illustration",
+    "note": "NO es una captura oficial de Rockstar. Misma plantilla 'poster' generada por IA (numero + titulo + badge quemados en el archivo). El badge quemado en el archivo dice 'RUMOR' (coincide con el status de la entidad, pero de todas formas es una ilustracion IA, no una captura real). Agregado a este manifest el 21 ago 2026 por el mismo motivo."
+  },
+  {
+    "category": "misiones",
+    "slug": "persecucion-acuatica-cayos",
+    "sourceUrl": null,
+    "sourceType": "ai-generated-illustration",
+    "note": "NO es una captura oficial de Rockstar. Misma plantilla 'poster' generada por IA (numero + titulo + badge quemados en el archivo). El badge quemado en el archivo dice 'NUESTRO'. Agregado a este manifest el 21 ago 2026 por el mismo motivo."
   }
 ]
