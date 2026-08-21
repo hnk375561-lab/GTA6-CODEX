@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
 import type { Metadata } from 'next'
@@ -177,7 +178,19 @@ export default async function EntityTypePage({ params }: PageProps) {
               const coverArt = resolveMediaRender(getCoverArtVideoAsset()!)
               return (
                 <Card className="overflow-hidden !p-0">
-                  <VideoEmbed videoSrc={coverArt.videoSrc!} title={coverArt.title} className="!rounded-none !border-0" />
+                  {coverArt.renderAs === 'video' && coverArt.videoSrc ? (
+                    <VideoEmbed videoSrc={coverArt.videoSrc} title={coverArt.title} className="!rounded-none !border-0" />
+                  ) : coverArt.renderAs === 'image' && coverArt.thumbnailSrc ? (
+                    <div className="relative aspect-video w-full overflow-hidden">
+                      <Image
+                        src={coverArt.thumbnailSrc}
+                        alt={coverArt.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 1024px"
+                      />
+                    </div>
+                  ) : null}
                   <CardBody>
                     <p className="text-sm text-gta-text-secondary">{coverArt.title}</p>
                   </CardBody>

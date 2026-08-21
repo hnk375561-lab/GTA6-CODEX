@@ -3,6 +3,14 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ['image/avif', 'image/webp'],
+    // Miniaturas de YouTube usadas por <YouTubeEmbed> (facade de los
+    // tráilers migrados desde el Vercel Blob externo caído). Sin esto,
+    // next/image lanza "hostname not configured" y el componente nunca
+    // llega a renderizar nada.
+    remotePatterns: [
+      { protocol: 'https', hostname: 'img.youtube.com' },
+      { protocol: 'https', hostname: 'i.ytimg.com' },
+    ],
     // Next.js 15.5+ ya no acepta 'quality' como opción global; ahora hay
     // que declarar explícitamente qué valores de quality están permitidos
     // vía 'qualities'. Estos son los valores usados por los distintos
