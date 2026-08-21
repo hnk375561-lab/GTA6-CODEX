@@ -45,6 +45,19 @@ export const LEONIDA_ZONE_COORDS: Record<string, LeonidaZoneCoords> = {
 }
 
 /**
+ * "Área de espera" para las ubicaciones del catálogo que TODAVÍA no tienen
+ * ningún dato confirmado que las sitúe en alguna de las 5 zonas reportadas.
+ * A propósito está en pleno Golfo de México, lejos de cualquier tierra firme
+ * y de cualquiera de las 5 zonas — así el mapa nunca sugiere, ni por
+ * accidente, que estas ubicaciones están confirmadas en algún punto
+ * geográfico real. Es solo un estante visual para no dejarlas invisibles.
+ */
+export const LEONIDA_UNZONED_HOLDING = {
+  center: [25.1, -85.6] as [number, number],
+  radiusMeters: 95000,
+}
+
+/**
  * Dispersa los pines de ubicaciones dentro de una zona en un pequeño arco
  * alrededor de su centro, en grados de lat/lng — misma idea que el
  * `pinOffset` del diagrama SVG anterior, pero para coordenadas reales.
@@ -61,32 +74,29 @@ export function locationPinOffset(
 }
 
 /**
- * Calcula el rectángulo (bounding box) que contiene las 5 zonas completas
- * (centro + radio de cada círculo), con un margen extra para que las
- * etiquetas no queden pegadas al borde del mapa. Se usa para encuadrar el
- * mapa automáticamente al cargar, sin depender de un zoom fijo que podría
- * quedar demasiado cerca (zonas pisándose) o demasiado lejos según la
- * pantalla del usuario.
- */
-/**
  * Zoom "cómodo" al volar hacia una zona puntual (búsqueda o click en un chip),
  * más cerrado que el encuadre general de las 5 zonas para que se note el
  * cambio de foco.
  */
 export const LEONIDA_ZONE_FLY_ZOOM = 8.3
 
-export function getLeonidaZonesBounds(paddingFactor = 1.35): {
-  south: number
-  north: number
-  west: number
-  east: number
-} {
+/**
+ * Calcula el rectángulo (bounding box) que contiene un conjunto de círculos
+ * (centro + radio), con un margen extra para que las etiquetas no queden
+ * pegadas al borde del mapa. Se usa para encuadrar el mapa automáticamente
+ * al cargar, sin depender de un zoom fijo que podría quedar demasiado cerca
+ * (zonas pisándose) o demasiado lejos según la pantalla del usuario.
+ */
+function boundsFromCircles(
+  circles: Array<{ center: [number, number]; radiusMeters: number }>,
+  paddingFactor: number
+): { south: number; north: number; west: number; east: number } {
   let south = Infinity
   let north = -Infinity
   let west = Infinity
   let east = -Infinity
 
-  for (const { center, radiusMeters } of Object.values(LEONIDA_ZONE_COORDS)) {
+  for (const { center, radiusMeters } of circles) {
     const [lat, lng] = center
     const dLat = (radiusMeters * paddingFactor) / 110574
     const latRad = (lat * Math.PI) / 180
@@ -99,4 +109,27 @@ export function getLeonidaZonesBounds(paddingFactor = 1.35): {
   }
 
   return { south, north, west, east }
+}
+
+/** Encuadre de las 5 zonas reportadas únicamente (sin el área de espera). */
+export function getLeonidaZonesBounds(paddingFactor = 1.35): {
+  south: number
+  north: number
+  west: number
+  east: number
+} {
+  return boundsFromCircles(Object.values(LEONIDA_ZONE_COORDS), paddingFactor)
+}
+
+/** Encuadre "mapa completo": las 5 zonas + el área de espera de ubicaciones sin zona. */
+export function getLeonidaFullMapBounds(paddingFactor = 1.35): {
+  south: number
+  north: number
+  west: number
+  east: number
+} {
+  return boundsFromCircles(
+    [...Object.values(LEONIDA_ZONE_COORDS), LEONIDA_UNZONED_HOLDING],
+    paddingFactor
+  )
 }

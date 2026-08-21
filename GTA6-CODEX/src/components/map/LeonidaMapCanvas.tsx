@@ -11,11 +11,15 @@ import { STATUS_LABELS } from '@/lib/entity-labels'
 import { LEONIDA_ZONES, LEONIDA_ZONES_SOURCE, type LeonidaZone } from '@/lib/leonida-zones'
 import {
   LEONIDA_MAP_VIEW,
+  LEONIDA_UNZONED_HOLDING,
   LEONIDA_ZONE_COORDS,
   LEONIDA_ZONE_FLY_ZOOM,
-  getLeonidaZonesBounds,
+  getLeonidaFullMapBounds,
   locationPinOffset,
 } from '@/lib/leonida-map-coordinates'
+
+/** Id "virtual" para el área de espera de ubicaciones sin zona — no es una de las 5 zonas reportadas. */
+const UNZONED_HOLDING_ID = '__unzoned__'
 
 interface LeonidaMapCanvasProps {
   locations: Entity[]
@@ -36,7 +40,7 @@ function truncate(text: string, max: number): string {
   return `${text.slice(0, max).trimEnd()}…`
 }
 
-const pinIcon = (variant: 'default' | 'active') =>
+const pinIcon = (variant: 'default' | 'active' | 'unzoned') =>
   L.divIcon({
     className: 'leonida-pin',
     html: `<span class="leonida-pin__dot leonida-pin__dot--${variant}"></span>`,
@@ -44,10 +48,10 @@ const pinIcon = (variant: 'default' | 'active') =>
     iconAnchor: [11, 11],
   })
 
-const ZONES_BOUNDS = getLeonidaZonesBounds()
-const ZONES_LATLNG_BOUNDS: L.LatLngBoundsExpression = [
-  [ZONES_BOUNDS.south, ZONES_BOUNDS.west],
-  [ZONES_BOUNDS.north, ZONES_BOUNDS.east],
+const FULL_BOUNDS = getLeonidaFullMapBounds()
+const FULL_LATLNG_BOUNDS: L.LatLngBoundsExpression = [
+  [FULL_BOUNDS.south, FULL_BOUNDS.west],
+  [FULL_BOUNDS.north, FULL_BOUNDS.east],
 ]
 
 /** Cierra el detalle de zona al clickear el mapa fuera de cualquier círculo. */
@@ -69,10 +73,10 @@ function MapBoundsController({ onReady }: { onReady: (controls: MapControls) => 
 
   useEffect(() => {
     const recenter = () => {
-      map.fitBounds(ZONES_LATLNG_BOUNDS, { padding: [24, 24] })
+      map.fitBounds(FULL_LATLNG_BOUNDS, { padding: [24, 24] })
     }
     const flyToZone = (zoneId: string) => {
-      const coords = LEONIDA_ZONE_COORDS[zoneId]
+      const coords = zoneId === UNZONED_HOLDING_ID ? LEONIDA_UNZONED_HOLDING : LEONIDA_ZONE_COORDS[zoneId]
       if (!coords) return
       map.flyTo(coords.center, LEONIDA_ZONE_FLY_ZOOM, { duration: 0.8 })
     }
@@ -140,6 +144,7 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
   const activeZone: LeonidaZone | null = activeZoneId
     ? LEONIDA_ZONES.find((z) => z.id === activeZoneId) ?? null
     : null
+  const isUnzonedHoldingActive = activeZoneId === UNZONED_HOLDING_ID
 
   // Escape cierra la pantalla completa, y evita que la página de fondo scrollee mientras está activa.
   useEffect(() => {
@@ -165,11 +170,7 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
     setSearchQuery('')
     setSearchOpen(false)
     const zone = zoneByLocationSlug.get(loc.slug)
-    if (zone) {
-      goToZone(zone.id)
-    } else {
-      setActiveZoneId(null)
-    }
+    goToZone(zone ? zone.id : UNZONED_HOLDING_ID)
   }
 
   return (
@@ -291,6 +292,19 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                 </button>
               )
             })}
+            {unzonedLocations.length > 0 && (
+              <button
+                type="button"
+                onClick={() => goToZone(UNZONED_HOLDING_ID)}
+                className={`leonida-chip leonida-chip--unzoned ${
+                  isUnzonedHoldingActive ? 'leonida-chip--active' : ''
+                }`}
+              >
+                <span className="leonida-chip__dot" aria-hidden="true" />
+                Sin zona asignada
+                <span className="leonida-chip__count">{unzonedLocations.length}</span>
+              </button>
+            )}
           </div>
 
           <div className="mb-3 mt-3 flex flex-wrap items-center gap-2 rounded-lg border border-gta-border bg-gta-darker/70 px-3 py-2 text-xs text-gta-text-secondary">
@@ -428,15 +442,90 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                   </Fragment>
                 )
               })}
+
+              {unzonedLocations.length > 0 && (
+                <Fragment>
+                  <Circle
+                    center={LEONIDA_UNZONED_HOLDING.center}
+                    radius={LEONIDA_UNZONED_HOLDING.radiusMeters}
+                    pathOptions={{
+                      color: isUnzonedHoldingActive ? '#ff7ec4' : '#6b5d7d',
+                      weight: isUnzonedHoldingActive ? 3 : 1.5,
+                      fillColor: isUnzonedHoldingActive ? '#ff7ec4' : '#6b5d7d',
+                      fillOpacity: isUnzonedHoldingActive ? 0.2 : 0.06,
+                      dashArray: '4 6',
+                    }}
+                    eventHandlers={{
+                      click: (e) => {
+                        L.DomEvent.stopPropagation(e)
+                        setActiveZoneId(isUnzonedHoldingActive ? null : UNZONED_HOLDING_ID)
+                      },
+                    }}
+                  >
+                    <Tooltip
+                      direction="center"
+                      permanent
+                      className={`leonida-zone-tooltip leonida-zone-tooltip--unzoned ${
+                        isUnzonedHoldingActive ? 'leonida-zone-tooltip--active' : ''
+                      }`}
+                      opacity={1}
+                    >
+                      <span className="leonida-zone-tooltip__row">
+                        <span className="leonida-zone-tooltip__name">Sin zona asignada</span>
+                        <span className="leonida-zone-tooltip__position">ilustrativo</span>
+                      </span>
+                      <span className="leonida-zone-tooltip__status leonida-zone-tooltip__status--unconfirmed">
+                        ⚠ {unzonedLocations.length} ubicación{unzonedLocations.length === 1 ? '' : 'es'} sin zona
+                        confirmada
+                      </span>
+                      <span className="leonida-zone-tooltip__cta">Tocá para ver el detalle →</span>
+                    </Tooltip>
+                  </Circle>
+
+                  {unzonedLocations.map((loc, i) => {
+                    const { dLat, dLng } = locationPinOffset(i, unzonedLocations.length, 0.55)
+                    const pos: [number, number] = [
+                      LEONIDA_UNZONED_HOLDING.center[0] + dLat,
+                      LEONIDA_UNZONED_HOLDING.center[1] + dLng,
+                    ]
+                    return (
+                      <Marker key={loc.slug} position={pos} icon={pinIcon('unzoned')}>
+                        <Tooltip direction="top" offset={[0, -10]}>
+                          {loc.title}
+                        </Tooltip>
+                        <Popup className="leonida-pin-popup leonida-pin-popup--unzoned" closeButton minWidth={220} maxWidth={260}>
+                          <div className="leonida-pin-popup__inner">
+                            <div className="leonida-pin-popup__head">
+                              <span className="leonida-pin-popup__title">{loc.title}</span>
+                              <Badge variant="status" status={loc.status}>
+                                {STATUS_LABELS[loc.status as keyof typeof STATUS_LABELS] || loc.status}
+                              </Badge>
+                            </div>
+                            <p className="leonida-pin-popup__unzoned-note">
+                              ⚠ Sin zona confirmada — posición ilustrativa, no real.
+                            </p>
+                            {loc.description && (
+                              <p className="leonida-pin-popup__desc">{truncate(loc.description, 150)}</p>
+                            )}
+                            <Link href={`/${entityType}/${loc.slug}`} className="leonida-pin-popup__link">
+                              Ver ficha completa →
+                            </Link>
+                          </div>
+                        </Popup>
+                      </Marker>
+                    )
+                  })}
+                </Fragment>
+              )}
             </MapContainer>
 
             <button
               type="button"
               onClick={() => controlsRef.current?.recenter()}
               className="leonida-recenter-btn"
-              aria-label="Volver a mostrar las 5 zonas completas"
+              aria-label="Volver a mostrar el mapa completo"
             >
-              ⤢ Ver las 5 zonas
+              ⤢ Ver mapa completo
             </button>
 
             {!isFullscreen && (
@@ -482,6 +571,14 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                   <span className="inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-gta-gold" />
                   Punto dorado = ubicación catalogada — tocalo para ver un resumen
                 </span>
+                <span className="inline-flex items-center gap-1.5 sm:col-span-2">
+                  <span
+                    className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
+                    style={{ backgroundColor: 'rgba(107,93,125,0.5)', border: '1.5px dashed #6b5d7d' }}
+                  />
+                  Punto gris en el Golfo (recuadro punteado, alejado de tierra) = ubicaciones sin zona confirmada
+                  todavía — no representa una posición real dentro del juego, es solo para que no queden ocultas
+                </span>
               </div>
             </div>
           )}
@@ -494,7 +591,8 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
               <p className="mt-1 text-sm text-gta-text-secondary">
                 Tocá una zona del mapa (o un chip de arriba) para ver su detalle. Estas {unzonedLocations.length}{' '}
                 ubicaciones del catálogo no tienen todavía un dato confirmado que las sitúe en alguna de las 5 zonas
-                reportadas.
+                reportadas — por eso también aparecen agrupadas en un recuadro punteado en pleno Golfo de México,
+                lejos de tierra firme, y no dentro de ninguna zona real.
               </p>
               <ul className="mt-4 space-y-2">
                 {unzonedLocations.map((loc) => (

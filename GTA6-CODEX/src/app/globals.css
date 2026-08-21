@@ -1800,6 +1800,17 @@ a:hover .logo-mark {
   box-shadow: 0 0 14px rgba(255, 126, 196, 1);
 }
 
+.leonida-pin__dot--unzoned {
+  background: #6b5d7d;
+  border: 2px dashed #050308;
+  box-shadow: 0 0 5px rgba(107, 93, 125, 0.6);
+}
+
+.leonida-pin:hover .leonida-pin__dot--unzoned {
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(107, 93, 125, 0.9);
+}
+
 .leonida-zone-tooltip {
   background: rgba(5, 3, 8, 0.9) !important;
   border: 1px solid #453163 !important;
@@ -1871,6 +1882,14 @@ a:hover .logo-mark {
   color: #ffcc4d;
 }
 
+.leonida-zone-tooltip--unzoned {
+  border-color: #6b5d7d !important;
+}
+
+.leonida-zone-tooltip--unzoned .leonida-zone-tooltip__status--unconfirmed {
+  color: #b3a3c4;
+}
+
 /* Popup de ubicación al tocar un pin */
 .leonida-pin-popup .leaflet-popup-content-wrapper {
   background: #140f20;
@@ -1923,6 +1942,13 @@ a:hover .logo-mark {
   font-size: 12px;
   line-height: 1.5;
   color: #b3a3c4;
+  margin: 0;
+}
+
+.leonida-pin-popup__unzoned-note {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #ffcc4d;
   margin: 0;
 }
 
@@ -2115,6 +2141,14 @@ a:hover .logo-mark {
 .leonida-chip--pending .leonida-chip__dot {
   background: transparent;
   border: 1.5px dashed #6b5d7d;
+}
+
+.leonida-chip--unzoned {
+  border-style: dashed;
+}
+
+.leonida-chip--unzoned .leonida-chip__dot {
+  background: #6b5d7d;
 }
 
 .leonida-chip__count {
