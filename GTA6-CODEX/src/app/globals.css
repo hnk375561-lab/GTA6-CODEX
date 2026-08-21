@@ -1935,3 +1935,203 @@ a:hover .logo-mark {
 .leonida-pin-popup__link:hover {
   color: #ff7ec4;
 }
+
+/* Botón de pantalla completa (flotante sobre el mapa o en la cabecera del overlay) */
+.leonida-fullscreen-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: rgba(5, 3, 8, 0.85);
+  border: 1px solid #453163;
+  color: #f5eff9;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.leonida-fullscreen-btn:hover {
+  border-color: #22d3ee;
+  color: #22d3ee;
+  background: rgba(34, 211, 238, 0.1);
+}
+
+.leonida-fullscreen-btn--float {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+}
+
+/* Barra de estadísticas encima del mapa */
+.leonida-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-radius: 10px;
+  border: 1px solid #2a2138;
+  background: rgba(20, 15, 32, 0.6);
+  padding: 8px 10px;
+}
+
+.leonida-stat__value {
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #f5eff9;
+  line-height: 1.1;
+}
+
+.leonida-stat__label {
+  font-size: 10.5px;
+  color: #88799a;
+  line-height: 1.3;
+}
+
+.leonida-stat--confirmed .leonida-stat__value {
+  color: #22d3ee;
+}
+
+.leonida-stat--gold .leonida-stat__value {
+  color: #f0c274;
+}
+
+/* Buscador de ubicaciones */
+.leonida-search-wrap {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.leonida-search-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #2a2138;
+  background: rgba(20, 15, 32, 0.6);
+  padding: 9px 12px;
+  font-size: 13px;
+  color: #f5eff9;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.leonida-search-input::placeholder {
+  color: #6b5d7d;
+}
+
+.leonida-search-input:focus {
+  border-color: #22d3ee;
+}
+
+.leonida-search-results {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  max-height: 260px;
+  overflow-y: auto;
+  border-radius: 10px;
+  border: 1px solid #2a2138;
+  background: #140f20;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.leonida-search-empty {
+  padding: 10px 12px;
+  font-size: 12px;
+  color: #88799a;
+}
+
+.leonida-search-result {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 9px 12px;
+  font-size: 13px;
+  color: #f5eff9;
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(42, 33, 56, 0.6);
+  transition: background-color 0.15s ease;
+}
+
+.leonida-search-result:last-child {
+  border-bottom: none;
+}
+
+.leonida-search-result:hover {
+  background: rgba(34, 211, 238, 0.08);
+}
+
+.leonida-search-result__zone {
+  flex-shrink: 0;
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #88799a;
+}
+
+/* Chips de zona (navegación rápida, también en pantallas donde tocar un círculo chico es difícil) */
+.leonida-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.leonida-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 9999px;
+  border: 1px solid #2a2138;
+  background: rgba(20, 15, 32, 0.6);
+  padding: 6px 10px 6px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #d8cfe4;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.leonida-chip__dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #453163;
+}
+
+.leonida-chip--confirmed .leonida-chip__dot {
+  background: #22d3ee;
+  box-shadow: 0 0 5px rgba(34, 211, 238, 0.8);
+}
+
+.leonida-chip--pending .leonida-chip__dot {
+  background: transparent;
+  border: 1.5px dashed #6b5d7d;
+}
+
+.leonida-chip__count {
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1px 6px;
+  font-size: 10.5px;
+  color: #b3a3c4;
+}
+
+.leonida-chip:hover {
+  border-color: #ff7ec4;
+  color: #f5eff9;
+}
+
+.leonida-chip--active {
+  border-color: #ff7ec4;
+  background: rgba(255, 126, 196, 0.12);
+  color: #f5eff9;
+}

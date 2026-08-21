@@ -68,6 +68,13 @@ export function locationPinOffset(
  * quedar demasiado cerca (zonas pisándose) o demasiado lejos según la
  * pantalla del usuario.
  */
+/**
+ * Zoom "cómodo" al volar hacia una zona puntual (búsqueda o click en un chip),
+ * más cerrado que el encuadre general de las 5 zonas para que se note el
+ * cambio de foco.
+ */
+export const LEONIDA_ZONE_FLY_ZOOM = 8.3
+
 export function getLeonidaZonesBounds(paddingFactor = 1.35): {
   south: number
   north: number
