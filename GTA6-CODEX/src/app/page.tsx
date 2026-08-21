@@ -317,6 +317,28 @@ export default async function HomePage() {
                 </>
               )}
             </p>
+
+            {/* Última filtración, en vivo, antes del título — el hero
+                antes era 100% branding estático ("expediente clasificado")
+                sin ningún gancho de contenido real hasta bajar a la
+                sección de noticias, muy por debajo del fold. `latestNews[0]`
+                ya se calculaba más abajo para esa sección; acá se reusa el
+                mismo dato (misma fuente de verdad, ningún duplicado) para
+                darle al hero algo concreto que mostrar: el titular más
+                reciente, con link directo a la ficha. */}
+            {latestNews[0] && (
+              <Link
+                href={`/${latestNews[0].type}/${latestNews[0].slug}`}
+                className="hero-news-flash glass-surface mx-auto mb-6 inline-flex max-w-full items-center gap-2.5 rounded-full border border-gta-border/70 px-4 py-2 text-left hover:-translate-y-0.5 hover:border-gta-accent/60"
+              >
+                <span className="hero-news-flash-badge shrink-0 rounded-full bg-gta-accent px-2.5 py-0.5 text-[0.65rem] font-bold uppercase tracking-wide text-gta-darker">
+                  Última filtración
+                </span>
+                <span className="truncate text-sm text-gta-text-secondary">{latestNews[0].title}</span>
+                <span className="hero-news-flash-arrow shrink-0 text-gta-accent" aria-hidden="true">→</span>
+              </Link>
+            )}
+
             <h1 className="hero-title mx-auto max-w-3xl font-display font-bold leading-[1.08]">
               <span className="hero-mark" aria-hidden="true">
                 GTA6 <span className="hero-mark-sep">·</span> Zona

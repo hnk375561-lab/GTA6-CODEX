@@ -1027,6 +1027,34 @@ a:hover .logo-mark {
   transform: rotate(-1.5deg) translateX(-8px);
 }
 
+/* --- Flash de última filtración: mismo lenguaje visual que el resto del
+   hero (glass-surface, borde sutil que se enciende en acento al hover),
+   pero como link real en vez de badge decorativo. El texto del titular
+   se trunca con ellipsis porque su longitud es contenido real y variable
+   (no un string de diseño), así que nunca puede asumirse corto. --- */
+.hero-news-flash {
+  transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hero-news-flash:hover {
+  box-shadow: 0 0 20px -10px var(--c-pink);
+}
+
+.hero-news-flash-arrow {
+  transition: transform 220ms ease;
+}
+
+.hero-news-flash:hover .hero-news-flash-arrow {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-news-flash,
+  .hero-news-flash-arrow {
+    transition: none !important;
+  }
+}
+
 /* --- Título: "GTA6" letra por letra (cada carácter es su propio nodo,
    con --letter-delay seteado inline desde el .map en page.tsx) y "Zona"
    como palabra completa con tracking más abierto — dos ritmos de
