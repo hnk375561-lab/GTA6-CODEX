@@ -37,3 +37,7 @@ next-env.d.ts
 /assets-originals/
 /incoming/
 /incoming-images/
+
+# Archivos de proceso interno / debug de CI (no son parte del producto)
+/.ci-debug/
+/.trigger-poster-gen
