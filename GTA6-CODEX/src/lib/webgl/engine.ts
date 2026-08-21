@@ -433,6 +433,25 @@ export class GTA6ZonaWebGLEngine {
   private ambientFrameCounter = 0
   private readonly tmpProjectVec = new THREE.Vector3()
 
+  // --- Degradación adaptativa de rendimiento -----------------------------
+  /**
+   * `detectQualityProfile` clasifica el tier SOLO por ancho de viewport y
+   * tipo de puntero — no por capacidad real de la GPU. Un desktop con
+   * gráficos integrados (muy común) cae en tier 'high' igual que una
+   * máquina con GPU dedicada, y arrastra bokeh (profundidad de campo) +
+   * bloom + antialiasing + DPR 2 aunque no pueda sostenerlo a 60fps.
+   * Estos campos miden el tiempo real de frame y, si está sostenidamente
+   * por debajo de un umbral aceptable, degradan el motor en vivo — una
+   * sola vez, sin volver a subir, para no generar parpadeo de calidad.
+   */
+  private lastFrameTimestamp = 0
+  private readonly frameTimeSamples: number[] = []
+  private perfDowngraded = false
+  /** Umbral: promedio sostenido por debajo de ~24fps (41.6ms/frame). */
+  private static readonly SLOW_FRAME_MS = 41.6
+  /** Cuántas muestras (~frames) evaluar antes de decidir degradar. */
+  private static readonly PERF_SAMPLE_WINDOW = 90
+
   constructor(canvas: HTMLCanvasElement, opts: { reducedMotion: boolean }) {
     this.reducedMotion = opts.reducedMotion
     this.quality = detectQualityProfile(opts.reducedMotion)
@@ -1468,6 +1487,65 @@ export class GTA6ZonaWebGLEngine {
     })
   }
 
+  /**
+   * Se llama una vez por frame desde `loop()` con el tiempo real transcurrido
+   * (medido con `performance.now()`, no con `this.clock`, que se pausa/ajusta
+   * y no refleja el costo real de renderizado). Acumula una ventana móvil de
+   * muestras y, si el promedio indica que el hardware no sostiene un frame
+   * rate aceptable, degrada la calidad una sola vez (no oscila).
+   */
+  private trackFrameTimeAndMaybeDowngrade(now: number) {
+    if (this.perfDowngraded || this.reducedMotion) return
+    if (this.lastFrameTimestamp === 0) {
+      this.lastFrameTimestamp = now
+      return
+    }
+    const frameMs = now - this.lastFrameTimestamp
+    this.lastFrameTimestamp = now
+    // Frames anómalos (tab en segundo plano recién recuperado, primer
+    // frame tras un resize, etc.) no deben contaminar el promedio.
+    if (frameMs <= 0 || frameMs > 250) return
+
+    this.frameTimeSamples.push(frameMs)
+    if (this.frameTimeSamples.length < GTA6ZonaWebGLEngine.PERF_SAMPLE_WINDOW) return
+
+    const avg =
+      this.frameTimeSamples.reduce((sum, v) => sum + v, 0) / this.frameTimeSamples.length
+    this.frameTimeSamples.length = 0
+
+    if (avg > GTA6ZonaWebGLEngine.SLOW_FRAME_MS) {
+      this.applyPerfDowngrade()
+    }
+  }
+
+  /**
+   * Un solo escalón de degradación, aplicado en vivo y de forma permanente
+   * para la sesión: apaga el paso más caro (bokeh/profundidad de campo),
+   * recorta el bloom y baja el pixel ratio a 1. No reconstruye geometría
+   * (dust/fireflies/mist quedan con el conteo original) para no arriesgar
+   * un salto visual brusco — el objetivo es recuperar fluidez, no vaciar
+   * la escena.
+   */
+  private applyPerfDowngrade() {
+    this.perfDowngraded = true
+
+    if (this.bokehPass) {
+      this.composer.removePass(this.bokehPass)
+      this.bokehPass.dispose()
+      this.bokehPass = null
+    }
+
+    // `quality` es `readonly` (no se puede reasignar el objeto), pero sus
+    // propiedades sí son mutables — el resto del loop y `handleResize` ya
+    // leen estos valores en cada frame/resize, así que mutarlos in-place
+    // basta para que el resto del motor reaccione sin cambios adicionales.
+    this.quality.enableBokeh = false
+    this.quality.bloomScale = Math.min(this.quality.bloomScale, 0.5)
+    this.quality.maxDpr = 1
+
+    this.handleResize()
+  }
+
   /** Encuadre coreografiado: funde continuamente entre los `SHOTS`, en vez de ruido sin fin. */
   private computeShotFrame(elapsed: number): { pos: THREE.Vector3; look: THREE.Vector3; fovBias: number } {
     return computeCameraShotFrame(elapsed, this.totalShotDuration)
@@ -1641,6 +1719,7 @@ export class GTA6ZonaWebGLEngine {
 
       for (const update of this.updaters) update(elapsed, delta, intro)
 
+      this.trackFrameTimeAndMaybeDowngrade(performance.now())
       this.composer.render()
 
       // Motor → DOM: cada 3 frames alcanza de sobra para que las cards y el
