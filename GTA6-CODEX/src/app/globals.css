@@ -728,29 +728,59 @@ a:hover .logo-mark {
   font-variant-numeric: tabular-nums;
 }
 
-/* --- Stagger genérico para listas de hijos directos --- */
+/* --- Stagger genérico para listas de hijos directos ---
+   Antes esto animaba con `animation` puro apenas el nodo se pintaba —
+   es decir, ni bien cargaba la página, sin importar si la grilla estaba
+   debajo del pliegue. Para cuando el usuario scrolleaba hasta ahí, la
+   animación ya había terminado hacía rato: se veía "muerta" comparada
+   con el resto del sitio, que sí usa `<Reveal>` (IntersectionObserver).
+   Ahora `.stagger` se usa siempre junto con `<Reveal>` (mismo nodo,
+   `<Reveal className="stagger ...">`) y la animación queda gateada por
+   `.reveal-visible` — recién corre cuando la grilla entra en pantalla,
+   igual que todo lo demás. */
 .stagger > * {
   opacity: 0;
+}
+
+.reveal-visible.stagger > * {
   animation: word-rise 560ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-.stagger > *:nth-child(1) {
+.reveal-visible.stagger > *:nth-child(1) {
   animation-delay: 60ms;
 }
-.stagger > *:nth-child(2) {
-  animation-delay: 140ms;
+.reveal-visible.stagger > *:nth-child(2) {
+  animation-delay: 120ms;
 }
-.stagger > *:nth-child(3) {
-  animation-delay: 220ms;
+.reveal-visible.stagger > *:nth-child(3) {
+  animation-delay: 180ms;
 }
-.stagger > *:nth-child(4) {
+.reveal-visible.stagger > *:nth-child(4) {
+  animation-delay: 240ms;
+}
+.reveal-visible.stagger > *:nth-child(5) {
   animation-delay: 300ms;
 }
-.stagger > *:nth-child(5) {
-  animation-delay: 380ms;
+.reveal-visible.stagger > *:nth-child(6) {
+  animation-delay: 360ms;
 }
-.stagger > *:nth-child(6) {
-  animation-delay: 460ms;
+.reveal-visible.stagger > *:nth-child(7) {
+  animation-delay: 420ms;
+}
+.reveal-visible.stagger > *:nth-child(8) {
+  animation-delay: 480ms;
+}
+.reveal-visible.stagger > *:nth-child(9) {
+  animation-delay: 540ms;
+}
+.reveal-visible.stagger > *:nth-child(10) {
+  animation-delay: 600ms;
+}
+.reveal-visible.stagger > *:nth-child(11) {
+  animation-delay: 660ms;
+}
+.reveal-visible.stagger > *:nth-child(n + 12) {
+  animation-delay: 720ms;
 }
 
 @keyframes word-rise {
@@ -761,6 +791,13 @@ a:hover .logo-mark {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger > * {
+    opacity: 1 !important;
+    animation: none !important;
   }
 }
 

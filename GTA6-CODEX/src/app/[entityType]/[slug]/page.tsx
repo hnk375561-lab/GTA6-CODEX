@@ -177,13 +177,13 @@ export default async function EntityPage({ params }: PageProps) {
       </Reveal>
 
       {entity.tags && entity.tags.length > 0 && (
-        <div className="stagger mt-5 flex flex-wrap gap-2">
+        <Reveal className="stagger mt-5 flex flex-wrap gap-2" delay={250}>
           {entity.tags.map((tag) => (
             <Badge key={tag} variant="tag">
               {tag}
             </Badge>
           ))}
-        </div>
+        </Reveal>
       )}
     </>
   )

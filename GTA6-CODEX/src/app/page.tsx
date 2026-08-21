@@ -441,7 +441,7 @@ export default async function HomePage() {
             <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">Explorá por sección</h2>
           </Reveal>
 
-          <div className="stagger grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <Reveal className="stagger grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {categories.map((type, i) => {
               const density = Math.max(6, Math.round((countsByType[type] / maxCategoryCount) * 100))
               const accent = CATEGORY_ACCENT[type]
@@ -493,7 +493,7 @@ export default async function HomePage() {
                 </Link>
               )
             })}
-          </div>
+          </Reveal>
 
           <Reveal className="mt-10 text-center">
             <Link
@@ -528,7 +528,7 @@ export default async function HomePage() {
               </Link>
             </Reveal>
 
-            <div className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Reveal className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((entity, i) => (
                 <EntityCard
                   key={`${entity.type}-${entity.slug}`}
@@ -540,7 +540,7 @@ export default async function HomePage() {
                   className={i === 0 ? 'sm:col-span-2' : undefined}
                 />
               ))}
-            </div>
+            </Reveal>
           </div>
         </SceneSection>
       )}
@@ -580,7 +580,7 @@ export default async function HomePage() {
             </p>
           </Reveal>
 
-          <div className="stagger grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal className="stagger grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {EVIDENCE_LEVELS.map((level) => (
               <Card key={level.label} className="h-full">
                 <span
@@ -593,7 +593,7 @@ export default async function HomePage() {
                 <p className="text-sm text-gta-text-secondary">{level.description}</p>
               </Card>
             ))}
-          </div>
+          </Reveal>
         </div>
       </SceneSection>
 
@@ -618,7 +618,7 @@ export default async function HomePage() {
               </Link>
             </Reveal>
 
-            <div className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Reveal className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {latestNews.map((entity) => (
                 <EntityCard
                   key={`${entity.type}-${entity.slug}`}
@@ -626,7 +626,7 @@ export default async function HomePage() {
                   image={latestNewsImages[entity.slug]}
                 />
               ))}
-            </div>
+            </Reveal>
 
             <Reveal className="mt-8 text-center sm:hidden">
               <Link
