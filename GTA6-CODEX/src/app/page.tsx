@@ -290,16 +290,31 @@ export default async function HomePage() {
         <div className="hero-vignette" aria-hidden="true" />
         <div className="hero-cinematic container-max relative text-center">
           <Reveal>
-            <p className="hero-pill mb-4">
+            <p className="hero-pill hero-pill-stamp mb-4">
               <span className="hero-pill-dot" aria-hidden="true" />
               Expediente no oficial <span className="hero-pill-sep">·</span> Leonida
             </p>
             <h1 className="hero-title hero-title-accent mx-auto max-w-4xl font-display text-5xl font-bold leading-tight sm:text-7xl">
-              <span className="hero-title-word hero-title-word--mark">GTA6</span>{' '}
+              <span className="hero-title-word hero-title-word--mark" aria-label="GTA6">
+                {['G', 'T', 'A', '6'].map((ch, i) => (
+                  <span
+                    key={i}
+                    className="hero-title-letter"
+                    aria-hidden="true"
+                    style={{ ['--letter-delay' as string]: `${40 + i * 55}ms` }}
+                  >
+                    {ch}
+                  </span>
+                ))}
+              </span>{' '}
               <span className="hero-title-word hero-title-word--label">Zona</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-gta-text-secondary sm:text-xl">
-              Cada <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gta-text" /> de GTA6, clasificado
+              Cada{' '}
+              <span className="hero-subtitle-rotate">
+                <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gta-text" />
+              </span>{' '}
+              de GTA6, clasificado
               por nivel de evidencia — para que sepas de un vistazo qué es oficial y qué es rumor.
             </p>
           </Reveal>
@@ -314,9 +329,10 @@ export default async function HomePage() {
             <div className="mt-10 flex justify-center">
               <Link
                 href="/personajes"
-                className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
+                className="btn-primary hero-cta inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
               >
-                Entrar al expediente
+                <span className="hero-cta-label">Entrar al expediente</span>
+                <span className="hero-cta-arrow" aria-hidden="true">→</span>
               </Link>
             </div>
           </Reveal>
