@@ -94,6 +94,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/mapa"
+                  className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
+                >
+                  Mapa
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/privacidad"
                   className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
                 >
