@@ -451,9 +451,9 @@ export class GTA6ZonaWebGLEngine {
   private static readonly SLOW_FRAME_MS = 33.3
   /** Cuántas muestras (~frames) evaluar antes de decidir degradar. Antes
    *  eran 90 (hasta ~6s de mal rendimiento sostenido antes de corregir,
-   *  con el umbral viejo de 24fps); 45 reacciona en ~1.5-2s sin volverse
-   *  tan sensible como para degradar por un par de frames sueltos. */
-  private static readonly PERF_SAMPLE_WINDOW = 45
+   *  con el umbral viejo de 24fps); 30 reacciona en ~1s sin volverse tan
+   *  sensible como para degradar por un par de frames sueltos. */
+  private static readonly PERF_SAMPLE_WINDOW = 30
 
   constructor(canvas: HTMLCanvasElement, opts: { reducedMotion: boolean }) {
     this.reducedMotion = opts.reducedMotion
@@ -1442,10 +1442,31 @@ export class GTA6ZonaWebGLEngine {
 
   private handleScroll = () => {
     this.scrollTarget = computeScrollTarget()
+    this.updatePausedState()
   }
 
   private handleVisibility = () => {
-    this.paused = isDocumentHidden()
+    this.updatePausedState()
+  }
+
+  /**
+   * El canvas WebGL es un fondo fijo a pantalla completa, visible detrás
+   * de TODO el sitio (el wrapper de contenido en `layout.tsx` no tiene
+   * fondo propio) — no solo detrás del hero. Eso significa que, sin esto,
+   * el motor sigue renderizando escena completa + 6 passes de
+   * postprocessing indefinidamente aunque el usuario esté leyendo texto
+   * varias pantallas más abajo, donde el fondo 3D ya no aporta nada
+   * (tapado por cards, texto y overlays). Combinado con `backdrop-filter`
+   * en las cards de categoría (que resamplean ese fondo animado en cada
+   * frame), esto era el mayor costo real de la sección "Explorá por
+   * sección". Se pausa el loop entero (congela el último frame, sin
+   * seguir gastando GPU) apenas se pasa ~1.15 alturas de viewport, y se
+   * reanuda solo si el usuario vuelve a subir cerca del hero.
+   */
+  private updatePausedState() {
+    const scrolledPastHero =
+      typeof window !== 'undefined' && window.scrollY > window.innerHeight * 1.15
+    this.paused = isDocumentHidden() || scrolledPastHero
   }
 
   /**

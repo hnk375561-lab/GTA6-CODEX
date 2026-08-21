@@ -344,7 +344,7 @@ export function EntityCard({
   if (layout === 'row') {
     return (
       <Link href={`/${entity.type}/${entity.slug}`} className={cn('group block', className)}>
-        <div className="flex items-center gap-4 rounded-xl border border-gta-border bg-gta-card/90 p-3 shadow-gta-sm backdrop-blur-[2px] transition-colors duration-300 hover:border-gta-accent/60 hover:shadow-gta-md sm:p-4">
+        <div className="flex items-center gap-4 rounded-xl border border-gta-border bg-gta-card p-3 shadow-gta-sm transition-colors duration-300 hover:border-gta-accent/60 hover:shadow-gta-md sm:p-4">
           {compareEnabled && (
             <CompareCheckbox
               checked={compareChecked}

@@ -148,7 +148,7 @@ export async function TrailerScenes({ trailer }: TrailerScenesProps) {
                     (delay creciente y acotado) para que la lista larga de
                     escenas del Trailer 2 no aparezca toda de golpe. */}
                 <Reveal direction="left" delay={Math.min(i * 40, 320)}>
-                  <div className="scene-card group/scene overflow-hidden rounded-xl border border-gta-border bg-gta-card/60 backdrop-blur-[2px] transition-colors duration-300 hover:border-gta-accent/45 hover:bg-gta-surface-elevated/50">
+                  <div className="scene-card group/scene overflow-hidden rounded-xl border border-gta-border bg-gta-card transition-colors duration-300 hover:border-gta-accent/45 hover:bg-gta-surface-elevated">
                     <div className="flex flex-col gap-4 p-4 sm:flex-row sm:items-start sm:gap-5 sm:p-5">
                       {visiblePoster.length > 0 && (
                         <div

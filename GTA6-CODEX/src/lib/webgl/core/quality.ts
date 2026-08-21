@@ -41,14 +41,14 @@ export function detectQualityProfile(reducedMotion: boolean): QualityProfile {
   if (mobile) {
     return {
       tier: 'medium',
-      maxDpr: 1.35,
-      dustCount: 260,
-      fireflyCount: 35,
-      mistCount: 90,
-      trafficCount: 9,
+      maxDpr: 1.15,
+      dustCount: 160,
+      fireflyCount: 20,
+      mistCount: 55,
+      trafficCount: 6,
       enableBokeh: false,
-      bloomScale: 0.75,
-      hazeLayers: 2,
+      bloomScale: 0.65,
+      hazeLayers: 1,
     }
   }
   return {
@@ -57,11 +57,11 @@ export function detectQualityProfile(reducedMotion: boolean): QualityProfile {
     // DPR 1 (y eso, multiplicado por 6 passes de postprocessing, es el
     // mayor costo individual del motor). 1.5 sigue viéndose nítido y baja
     // ese costo a la mitad sin downgrade audible en la mayoría de pantallas.
-    maxDpr: 1.5,
-    dustCount: 340,
-    fireflyCount: 55,
-    mistCount: 120,
-    trafficCount: 10,
+    maxDpr: 1.25,
+    dustCount: 200,
+    fireflyCount: 30,
+    mistCount: 70,
+    trafficCount: 7,
     // El detector de tier solo mira ancho de viewport y tipo de puntero,
     // no la GPU real: un desktop con gráficos integrados (muy común) caía
     // en 'high' igual que una máquina con GPU dedicada y arrastraba
@@ -69,7 +69,7 @@ export function detectQualityProfile(reducedMotion: boolean): QualityProfile {
     // primer frame. Se apaga por default acá; `applyPerfDowngrade` en
     // engine.ts ya no tiene que reaccionar tarde para sacarlo.
     enableBokeh: false,
-    bloomScale: 0.85,
+    bloomScale: 0.7,
     hazeLayers: 2,
   }
 }

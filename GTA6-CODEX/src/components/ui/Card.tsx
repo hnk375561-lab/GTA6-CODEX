@@ -17,7 +17,7 @@ export function Card({ children, className = '', hoverable = false }: CardProps)
   return (
     <div
       className={`
-        rounded-xl border border-gta-border bg-gta-card/90 p-6 shadow-gta-sm backdrop-blur-[2px]
+        rounded-xl border border-gta-border bg-gta-card p-6 shadow-gta-sm
         ${hoverClass}
         ${className}
       `}
