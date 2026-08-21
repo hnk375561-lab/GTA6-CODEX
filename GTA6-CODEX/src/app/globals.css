@@ -868,6 +868,79 @@ a:hover .logo-mark {
   box-shadow: 0 0 8px 1px rgba(255, 47, 143, 0.7);
 }
 
+/* --- Pill: leve respiro tipográfico alrededor del separador "·", para
+   que "Expediente no oficial" y "Leonida" no se sientan pegados al
+   punto medio. Puramente kerning, no toca layout. --- */
+.hero-pill-sep {
+  margin: 0 0.15em;
+  opacity: 0.6;
+}
+
+/* --- Título: "GTA6" y "Zona" como dos trazos tipográficos distintos
+   (tracking apretado vs. abierto) en vez de una sola palabra compuesta,
+   y con una entrada escalonada muy sutil — una palabra se asienta un
+   toque antes que la otra en vez de aparecer las dos a la vez. Se apoya
+   en la misma clase `.reveal-visible` que ya alterna <Reveal> por
+   IntersectionObserver (cero JS nuevo). En reposo (sin JS / reduced
+   motion) el título es legible igual, solo sin el desfase. --- */
+.hero-title-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 650ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.hero-title-word--mark {
+  letter-spacing: -0.01em;
+  transition-delay: 40ms;
+}
+
+.hero-title-word--label {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition-delay: 180ms;
+}
+
+.reveal-visible .hero-title-word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-word {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* --- Stat strip del hero: las 5 cifras entraban todas a la vez con el
+   <Reveal delay={250}> que envuelve el bloque entero. Acá se agrega un
+   desfase mínimo por ítem (--stat-delay, seteado inline desde el .map
+   en page.tsx) para que aparezcan en cascada — mismo trigger
+   (.reveal-visible), sin IntersectionObserver adicional. --- */
+.hero-stat-item {
+  opacity: 0;
+  transform: translateY(8px) scale(0.97);
+  transition: opacity 550ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 550ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--stat-delay, 0ms);
+}
+
+.reveal-visible .hero-stat-item {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stat-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 /* --- Hero rediseño: kicker, título con gradiente animado, CTA primario
    con glow y capas cinematográficas (scanlines + viñeta). Todo puramente
    decorativo (aria-hidden en las capas) y desactivado por completo con

@@ -292,10 +292,11 @@ export default async function HomePage() {
           <Reveal>
             <p className="hero-pill mb-4">
               <span className="hero-pill-dot" aria-hidden="true" />
-              Expediente no oficial · Leonida
+              Expediente no oficial <span className="hero-pill-sep">·</span> Leonida
             </p>
             <h1 className="hero-title hero-title-accent mx-auto max-w-4xl font-display text-5xl font-bold leading-tight sm:text-7xl">
-              GTA6 Zona
+              <span className="hero-title-word hero-title-word--mark">GTA6</span>{' '}
+              <span className="hero-title-word hero-title-word--label">Zona</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-gta-text-secondary sm:text-xl">
               Cada <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gta-text" /> de GTA6, clasificado
@@ -332,8 +333,12 @@ export default async function HomePage() {
                 refuerza que cerró el bloque de "acción" de arriba (CTA +
                 buscador) antes de pasar al de "cifras". */}
             <div className="glass-surface mx-auto mt-12 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 rounded-xl border border-gta-border/70 px-8 py-5">
-              {HERO_STAT_TYPES.map((type) => (
-                <div key={type} className="flex flex-col items-center gap-0.5 px-2">
+              {HERO_STAT_TYPES.map((type, i) => (
+                <div
+                  key={type}
+                  className="hero-stat-item flex flex-col items-center gap-0.5 px-2"
+                  style={{ ['--stat-delay' as string]: `${i * 70}ms` }}
+                >
                   <span className="font-display text-2xl font-bold text-gta-text sm:text-3xl">
                     <CountUp end={countsByType[type] ?? 0} />
                   </span>
@@ -343,7 +348,10 @@ export default async function HomePage() {
                 </div>
               ))}
               <div className="hidden h-10 w-px bg-gta-border sm:block" aria-hidden="true" />
-              <div className="flex flex-col items-center gap-0.5 px-2">
+              <div
+                className="hero-stat-item flex flex-col items-center gap-0.5 px-2"
+                style={{ ['--stat-delay' as string]: `${HERO_STAT_TYPES.length * 70}ms` }}
+              >
                 <span className="font-display text-2xl font-bold text-gta-accent-strong sm:text-3xl">
                   <CountUp end={totalCount} />
                 </span>
