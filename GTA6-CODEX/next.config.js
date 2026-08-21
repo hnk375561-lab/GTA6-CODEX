@@ -3,7 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ['image/avif', 'image/webp'],
-    quality: 75,
+    // Next.js 15.5+ ya no acepta 'quality' como opción global; ahora hay
+    // que declarar explícitamente qué valores de quality están permitidos
+    // vía 'qualities'. Estos son los valores usados por los distintos
+    // componentes <Image> del proyecto (EntityImage, GalleryExplorer,
+    // MediaCarousel, CompareExplorer, VehicleCompareSheet, SimpleLightbox).
+    qualities: [75, 90, 92, 94, 95, 97, 100],
     minimumCacheTTL: 31536000,
     deviceSizes: [320, 640, 1024, 1440, 1920, 2560],
     imageSizes: [256, 384, 512, 640, 750, 828, 1024],
