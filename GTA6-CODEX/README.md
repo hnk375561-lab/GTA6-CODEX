@@ -9,9 +9,19 @@
 ![License](https://img.shields.io/badge/license-see%20LICENSE-lightgrey)
 ![Node](https://img.shields.io/badge/node-18%2B-green)
 
-[🌐 Live Website](#) • [📚 Documentation](#-documentation) • [🚀 Quick Start](#-quick-start) • [🤝 Contributing](#-contributing)
+[🌐 Live Website](https://gta-6-zona.vercel.app) • [📚 Documentation](#-documentation) • [🚀 Quick Start](#-quick-start) • [🤝 Contributing](#-contributing)
 
 </div>
+
+> **⚠️ Pendiente de dominio propio:** el sitio corre actualmente sobre el dominio de
+> preview de Vercel (`gta-6-zona.vercel.app`), no sobre un dominio de producción propio.
+> `vercel.json` (`NEXT_PUBLIC_SITE_URL`) y el link de arriba deben actualizarse cuando se
+> configure un dominio propio, y debe aclararse en cualquier acuerdo de transferencia si
+> el dominio se incluye o no.
+>
+> **⚠️ Ver también:** [`LEGAL_RISK_DISCLOSURE.md`](./LEGAL_RISK_DISCLOSURE.md) — riesgo
+> legal conocido y no resuelto sobre el uso de assets visuales oficiales de Rockstar
+> Games / Take-Two Interactive en `public/images/`.
 
 ---
 
