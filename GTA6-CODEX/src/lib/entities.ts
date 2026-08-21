@@ -143,7 +143,7 @@ function loadEntitiesByTypeSync(type: EntityType): Entity[] {
     return []
   }
 
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith('.json'))
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith('.json') && f !== 'template.json')
   const entities: Entity[] = []
 
   for (const file of files) {
