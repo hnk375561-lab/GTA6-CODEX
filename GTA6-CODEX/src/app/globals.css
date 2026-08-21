@@ -1764,14 +1764,15 @@ a:hover .logo-mark {
 }
 
 .leonida-zone-tooltip {
-  background: rgba(5, 3, 8, 0.85) !important;
+  background: rgba(5, 3, 8, 0.9) !important;
   border: 1px solid #453163 !important;
   color: #f5eff9 !important;
-  font-weight: 600;
   font-size: 10.5px;
-  padding: 3px 8px !important;
-  border-radius: 9999px !important;
+  padding: 5px 10px !important;
+  border-radius: 10px !important;
   box-shadow: none !important;
+  text-align: center;
+  line-height: 1.5;
 }
 
 .leonida-zone-tooltip::before {
@@ -1780,4 +1781,105 @@ a:hover .logo-mark {
 
 .leaflet-tooltip.leonida-zone-tooltip {
   pointer-events: none;
+}
+
+.leonida-zone-tooltip__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.leonida-zone-tooltip__name {
+  font-weight: 700;
+}
+
+.leonida-zone-tooltip__position {
+  font-size: 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #88799a;
+}
+
+.leonida-zone-tooltip__status {
+  display: block;
+  margin-top: 2px;
+  font-size: 9.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.leonida-zone-tooltip__status--confirmed {
+  color: #22d3ee;
+}
+
+.leonida-zone-tooltip__status--unconfirmed {
+  color: #ffcc4d;
+}
+
+/* Popup de ubicación al tocar un pin */
+.leonida-pin-popup .leaflet-popup-content-wrapper {
+  background: #140f20;
+  color: #f5eff9;
+  border: 1px solid #2a2138;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.leonida-pin-popup .leaflet-popup-tip {
+  background: #140f20;
+  border: 1px solid #2a2138;
+  box-shadow: none;
+}
+
+.leonida-pin-popup .leaflet-popup-content {
+  margin: 10px 12px;
+}
+
+.leonida-pin-popup .leaflet-popup-close-button {
+  color: #88799a !important;
+}
+
+.leonida-pin-popup .leaflet-popup-close-button:hover {
+  color: #ff7ec4 !important;
+}
+
+.leonida-pin-popup__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.leonida-pin-popup__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.leonida-pin-popup__title {
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #f5eff9;
+}
+
+.leonida-pin-popup__desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #b3a3c4;
+  margin: 0;
+}
+
+.leonida-pin-popup__link {
+  font-size: 12px;
+  font-weight: 600;
+  color: #22d3ee;
+}
+
+.leonida-pin-popup__link:hover {
+  color: #ff7ec4;
 }

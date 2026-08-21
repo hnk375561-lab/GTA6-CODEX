@@ -4,9 +4,10 @@ import 'leaflet/dist/leaflet.css'
 import { Fragment, useMemo, useState } from 'react'
 import Link from 'next/link'
 import L from 'leaflet'
-import { MapContainer, TileLayer, Circle, Marker, Tooltip, useMapEvents } from 'react-leaflet'
+import { MapContainer, TileLayer, Circle, Marker, Tooltip, Popup, useMapEvents } from 'react-leaflet'
 import type { Entity, EntityType } from '@/types'
 import { Badge } from '@/components/ui/Badge'
+import { STATUS_LABELS } from '@/lib/entity-labels'
 import { LEONIDA_ZONES, LEONIDA_ZONES_SOURCE, type LeonidaZone } from '@/lib/leonida-zones'
 import { LEONIDA_MAP_VIEW, LEONIDA_ZONE_COORDS, locationPinOffset } from '@/lib/leonida-map-coordinates'
 
@@ -17,6 +18,11 @@ interface LeonidaMapCanvasProps {
 
 function findLocation(locations: Entity[], slug: string): Entity | undefined {
   return locations.find((loc) => loc.slug === slug)
+}
+
+function truncate(text: string, max: number): string {
+  if (text.length <= max) return text
+  return `${text.slice(0, max).trimEnd()}…`
 }
 
 const pinIcon = (variant: 'default' | 'active') =>
@@ -110,7 +116,21 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                     }}
                   >
                     <Tooltip direction="center" permanent className="leonida-zone-tooltip" opacity={1}>
-                      {zone.leakName}
+                      <span className="leonida-zone-tooltip__row">
+                        <span className="leonida-zone-tooltip__name">{zone.leakName}</span>
+                        <span className="leonida-zone-tooltip__position">{zone.position}</span>
+                      </span>
+                      <span
+                        className={`leonida-zone-tooltip__status ${
+                          hasLocations
+                            ? 'leonida-zone-tooltip__status--confirmed'
+                            : 'leonida-zone-tooltip__status--unconfirmed'
+                        }`}
+                      >
+                        {hasLocations
+                          ? `✓ ${zoneLocations.length} ubicación${zoneLocations.length === 1 ? '' : 'es'} confirmada${zoneLocations.length === 1 ? '' : 's'}`
+                          : '⚠ sin ubicaciones confirmadas'}
+                      </span>
                     </Tooltip>
                   </Circle>
 
@@ -122,6 +142,22 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                         <Tooltip direction="top" offset={[0, -6]}>
                           {loc.title}
                         </Tooltip>
+                        <Popup className="leonida-pin-popup" closeButton minWidth={220} maxWidth={260}>
+                          <div className="leonida-pin-popup__inner">
+                            <div className="leonida-pin-popup__head">
+                              <span className="leonida-pin-popup__title">{loc.title}</span>
+                              <Badge variant="status" status={loc.status}>
+                                {STATUS_LABELS[loc.status as keyof typeof STATUS_LABELS] || loc.status}
+                              </Badge>
+                            </div>
+                            {loc.description && (
+                              <p className="leonida-pin-popup__desc">{truncate(loc.description, 150)}</p>
+                            )}
+                            <Link href={`/${entityType}/${loc.slug}`} className="leonida-pin-popup__link">
+                              Ver ficha completa →
+                            </Link>
+                          </div>
+                        </Popup>
                       </Marker>
                     )
                   })}
@@ -131,18 +167,31 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
           </MapContainer>
         </div>
 
-        <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gta-text-tertiary">
+        <div className="mt-4 grid grid-cols-1 gap-x-5 gap-y-2 text-xs text-gta-text-tertiary sm:grid-cols-2">
           <span className="inline-flex items-center gap-1.5">
-            <span className="inline-block h-2.5 w-2.5 rounded-full border border-gta-accent-orange/50 bg-gta-accent-orange/20" />
-            Zona con al menos una ubicación confirmada
+            <span
+              className="inline-block h-2.5 w-2.5 rounded-full"
+              style={{ backgroundColor: 'rgba(34,211,238,0.2)', border: '1.5px solid #22d3ee' }}
+            />
+            Círculo cian = zona con al menos una ubicación confirmada
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="inline-block h-2.5 w-4 rounded-sm border border-dashed border-gta-border-strong" />
-            Zona sin ubicaciones confirmadas todavía
+            <span
+              className="inline-block h-2.5 w-4 rounded-sm"
+              style={{ border: '1.5px dashed #453163' }}
+            />
+            Círculo gris punteado = zona reportada, sin confirmar todavía
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <span
+              className="inline-block h-2.5 w-2.5 rounded-full"
+              style={{ backgroundColor: 'rgba(255,126,196,0.25)', border: '1.5px solid #ff7ec4' }}
+            />
+            Círculo rosa = zona seleccionada (mostrando su detalle a la derecha)
           </span>
           <span className="inline-flex items-center gap-1.5">
             <span className="inline-block h-2.5 w-2.5 rounded-full bg-gta-gold" />
-            Ubicación catalogada
+            Punto dorado = ubicación catalogada — tocalo para ver un resumen
           </span>
         </div>
       </div>
