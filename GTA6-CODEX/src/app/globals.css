@@ -878,30 +878,50 @@ a:hover .logo-mark {
   }
 }
 
+/* --- Dot del pill: el glow pulsante NO anima box-shadow directamente
+   (eso fuerza repaint en CPU cada frame, indefinidamente, mientras el
+   hero está en pantalla — nada gratis con el motor WebGL + las
+   variables --scene-* ya escribiéndose ~20x/s encima). En vez de eso,
+   el box-shadow "pico" queda fijo en un ::after aparte y lo que se
+   anima es su opacity + transform: scale — ambas propiedades corren en
+   el compositor (GPU), sin tocar layout ni paint por frame. --- */
 .hero-pill-dot {
+  position: relative;
   width: 6px;
   height: 6px;
   border-radius: 9999px;
   background: var(--c-pink);
   box-shadow: 0 0 8px 1px rgba(255, 47, 143, 0.7);
+}
+
+.hero-pill-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  box-shadow: 0 0 12px 3px rgba(255, 47, 143, 0.9);
+  opacity: 0;
+  transform: scale(0.85);
   animation: hero-pill-dot-pulse 2600ms ease-in-out infinite;
+  will-change: opacity, transform;
 }
 
 @keyframes hero-pill-dot-pulse {
   0%,
   100% {
-    box-shadow: 0 0 8px 1px rgba(255, 47, 143, 0.7);
-    transform: scale(1);
+    opacity: 0;
+    transform: scale(0.85);
   }
   50% {
-    box-shadow: 0 0 12px 3px rgba(255, 47, 143, 0.9);
+    opacity: 1;
     transform: scale(1.15);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-pill-dot {
+  .hero-pill-dot::after {
     animation: none !important;
+    opacity: 0 !important;
   }
 }
 
@@ -1202,55 +1222,83 @@ a:hover .logo-mark {
 }
 
 /* --- Contenedor del stat strip: respiración muy sutil en el borde
-   (glow que sube y baja de intensidad), para que el bloque de cifras
-   no quede completamente inerte una vez terminó su cascada de
-   entrada. Amplitud chica a propósito — es ambiente, no protagonismo. --- */
+   (glow que sube y baja de intensidad). Mismo criterio que el dot del
+   pill: el box-shadow "pico" vive fijo en un ::after y solo se anima
+   su opacity — compositor, no CPU por frame, corriendo indefinidamente
+   mientras el hero esté en pantalla. --- */
 .hero-stat-strip {
+  position: relative;
+}
+
+.hero-stat-strip::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 22px -8px rgba(34, 211, 238, 0.25);
+  opacity: 0;
+  pointer-events: none;
   animation: hero-stat-strip-breathe 5000ms ease-in-out infinite;
+  will-change: opacity;
 }
 
 @keyframes hero-stat-strip-breathe {
   0%,
   100% {
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
+    opacity: 0;
   }
   50% {
-    box-shadow: 0 0 22px -8px rgba(34, 211, 238, 0.25);
+    opacity: 1;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-stat-strip {
+  .hero-stat-strip::after {
     animation: none !important;
+    opacity: 0 !important;
   }
 }
 
-/* --- CTA primario: sombra que respira muy suave en reposo, para que
-   el único botón de acción del hero se sienta "listo" sin necesitar
-   hover — mismo criterio de amplitud chica que el stat strip. Se
-   detiene al hover (la transición de :hover ya definida toma el
-   control ahí). --- */
+/* --- CTA primario: sombra que respira muy suave en reposo, mismo
+   arreglo de performance — el pico de glow es un ::after estático que
+   solo anima opacity (GPU), en vez de recalcular box-shadow del botón
+   entero cada frame. Se pausa al hover, que ya trae su propio glow
+   vía .btn-primary:hover. --- */
 .hero-cta {
-  animation: hero-cta-breathe 3400ms ease-in-out infinite;
+  position: relative;
 }
 
-.hero-cta:hover {
+.hero-cta::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.4), 0 12px 32px -8px rgba(255, 47, 143, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  animation: hero-cta-breathe 3400ms ease-in-out infinite;
+  will-change: opacity;
+}
+
+.hero-cta:hover::after {
   animation-play-state: paused;
+  opacity: 0;
 }
 
 @keyframes hero-cta-breathe {
   0%,
   100% {
-    box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.3), 0 10px 28px -10px rgba(255, 47, 143, 0.55);
+    opacity: 0;
   }
   50% {
-    box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.4), 0 12px 32px -8px rgba(255, 47, 143, 0.7);
+    opacity: 1;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-cta {
+  .hero-cta::after {
     animation: none !important;
+    opacity: 0 !important;
   }
 }
 
