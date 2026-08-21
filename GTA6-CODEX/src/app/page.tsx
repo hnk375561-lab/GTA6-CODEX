@@ -294,45 +294,21 @@ export default async function HomePage() {
               <span className="hero-pill-dot" aria-hidden="true" />
               Expediente no oficial <span className="hero-pill-sep">·</span> Leonida
             </p>
-            <h1 className="hero-title hero-title-accent mx-auto max-w-4xl font-display font-bold leading-[0.9]">
-              <span
-                className="hero-title-word hero-title-word--mark text-6xl sm:text-8xl"
-                aria-label="GTA6"
-              >
-                {['G', 'T', 'A', '6'].map((ch, i) => (
-                  <span
-                    key={i}
-                    className="hero-title-letter"
-                    aria-hidden="true"
-                    style={{
-                      ['--letter-delay' as string]: `${40 + i * 55}ms`,
-                      /* Zigzag en vez de una única inclinación uniforme:
-                         cada letra cae desde su propio ángulo (par/impar)
-                         en lugar de todas desde -4deg — mismo timing,
-                         trazo menos "en fila". */
-                      ['--letter-rotate' as string]: i % 2 === 0 ? '-4deg' : '4deg',
-                    }}
-                  >
-                    {ch}
-                  </span>
-                ))}
+            <h1 className="hero-title mx-auto max-w-3xl font-display font-bold leading-[1.08]">
+              <span className="hero-mark" aria-hidden="true">
+                GTA6 <span className="hero-mark-sep">·</span> Zona
               </span>
-              <span className="hero-title-word hero-title-word--label mt-2 text-xl sm:mt-3 sm:text-3xl">
-                Zona<span className="hero-title-cursor" aria-hidden="true">_</span>
-              </span>
-            </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-gta-text-secondary sm:text-xl">
-              <span className="hero-subtitle-line" style={{ ['--line-delay' as string]: '80ms' }}>
+              <span className="hero-title-line hero-title-line--main mt-5 block text-4xl sm:text-5xl lg:text-6xl">
                 Cada{' '}
                 <span className="hero-subtitle-rotate">
-                  <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gta-text" />
+                  <WordRotate words={HERO_SUBTITLE_WORDS} className="hero-title-highlight" />
                 </span>{' '}
-                de GTA6, <span className="font-semibold text-gta-text">clasificado</span>
-              </span>{' '}
-              <span className="hero-subtitle-line" style={{ ['--line-delay' as string]: '180ms' }}>
+                de GTA6, <span className="hero-title-highlight">clasificado</span>
+              </span>
+              <span className="hero-title-line hero-title-line--sub mt-5 block font-sans text-lg font-normal text-gta-text-secondary sm:text-xl">
                 por nivel de evidencia — para que sepas de un vistazo qué es oficial y qué es rumor.
               </span>
-            </p>
+            </h1>
           </Reveal>
 
           <Reveal delay={150}>
@@ -386,7 +362,7 @@ export default async function HomePage() {
             <div className="mt-10 flex justify-center">
               <Link
                 href="/personajes"
-                className="btn-primary hero-cta inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
+                className="btn-primary hero-cta inline-flex items-center justify-center rounded-lg px-9 py-4 text-base font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
               >
                 <span className="hero-cta-label">Entrar al expediente</span>
                 <span className="hero-cta-arrow" aria-hidden="true">→</span>
