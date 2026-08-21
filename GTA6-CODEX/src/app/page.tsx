@@ -307,7 +307,9 @@ export default async function HomePage() {
                   </span>
                 ))}
               </span>{' '}
-              <span className="hero-title-word hero-title-word--label">Zona</span>
+              <span className="hero-title-word hero-title-word--label">
+                Zona<span className="hero-title-cursor" aria-hidden="true">_</span>
+              </span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-gta-text-secondary sm:text-xl">
               Cada{' '}
@@ -363,7 +365,11 @@ export default async function HomePage() {
                   </span>
                 </div>
               ))}
-              <div className="hidden h-10 w-px bg-gta-border sm:block" aria-hidden="true" />
+              <div
+                className="hero-stat-divider hidden h-10 w-px bg-gta-border sm:block"
+                style={{ ['--stat-delay' as string]: `${HERO_STAT_TYPES.length * 70}ms` }}
+                aria-hidden="true"
+              />
               <div
                 className="hero-stat-item flex flex-col items-center gap-0.5 px-2"
                 style={{ ['--stat-delay' as string]: `${HERO_STAT_TYPES.length * 70}ms` }}
@@ -383,6 +389,7 @@ export default async function HomePage() {
             foco ni altera el orden de tabulación. Se aquieta solo con
             prefers-reduced-motion (ver `.hero-scroll-cue` en globals.css). */}
         <div className="hero-scroll-cue" aria-hidden="true">
+          <span className="hero-scroll-cue-label">Desplazate</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 5v14M5 12l7 7 7-7" />
           </svg>
