@@ -23,6 +23,7 @@ const NAV_LINKS = [
   { href: `/${EntityType.TRAILER}`, label: 'Trailers' },
   { href: '/comparar', label: 'Comparar' },
   { href: '/galeria', label: 'Galería' },
+  { href: '/mapa', label: 'Mapa' },
 ]
 
 /**
