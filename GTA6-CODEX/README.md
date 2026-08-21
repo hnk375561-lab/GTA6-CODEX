@@ -1,4 +1,4 @@
-# 🎮 GTA6-ZONA: The Ultimate Grand Theft Auto VI Encyclopedia
+﻿# 🎮 GTA6-ZONA: The Ultimate Grand Theft Auto VI Encyclopedia
 
 > **A comprehensive, multimedia-rich encyclopedia of Grand Theft Auto VI** with a curated database, high-resolution assets, editorial analysis, and community intelligence.
 
@@ -82,11 +82,12 @@ The project is built for two audiences:
 
 | Category | Count | Status | Image Coverage |
 |----------|-------|--------|-----------------|
-| 🚗 **Vehicles** | **57** | 50% Complete | 19/57 real images (38 pending) |
-| 📍 **Locations** | **32** | 40% Complete | Partial coverage, expanding |
-| 👤 **Characters** | **18** | 55% Complete | Protagonists, antagonists, supporting cast |
-| 🏢 **Businesses** | **24** | 35% Complete | Shops, tattoo parlors, services |
+| 🚗 **Vehicles** | **62** | 50% Complete | 19/57 real images (38 pending) |
+| 📍 **Locations** | **21** | 40% Complete | Partial coverage, expanding |
+| 👤 **Characters** | **17** | 55% Complete | Protagonists, antagonists, supporting cast |
+| 🏢 **Businesses** | **13** | 35% Complete | Shops, tattoo parlors, services |
 | 🎬 **Trailers** | **2** | 100% Complete | Official Rockstar trailers indexed |
+| 🔫 **Weapons** | **13** | In Progress | 13/25+ target, evidencia A/B/C completa |
 | 🎮 **Other Content** | Multiple | In Progress | Weapons, gangs, radio stations |
 
 ---
@@ -314,7 +315,7 @@ See `CONTRIBUTING.md` for full guidelines.
 ### Phase 2: Expansion 🚀 (August–September 2026)
 - [ ] Complete vehicle images (38 pending)
 - [ ] Expand character database (20+ total)
-- [ ] Add weapon catalog (25+)
+- [ ] Add weapon catalog (13/25+ complete)
 - [ ] Map & district details
 - [ ] Business/service directory
 
