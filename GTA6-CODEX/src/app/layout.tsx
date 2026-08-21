@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { TrendingBar } from '@/components/layout/TrendingBar'
@@ -100,6 +101,12 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        {/* Vercel Analytics: no usa cookies ni almacenamiento persistente
+            (a diferencia de GA4), por lo que no requiere pasar por
+            ConsentBanner. Solo reporta datos si el sitio está deployado
+            en Vercel con Analytics habilitado en el dashboard del
+            proyecto; en cualquier otro entorno es un no-op silencioso. */}
+        <Analytics />
       </body>
     </html>
   )
