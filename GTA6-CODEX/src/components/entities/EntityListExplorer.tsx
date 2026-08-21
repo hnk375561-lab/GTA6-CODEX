@@ -113,6 +113,17 @@ export function EntityListExplorer({
   } = useVehicleCompare(entities)
   const isVehicleList = type === EntityType.VEHICLE
 
+  /** Tope de tarjetas montadas a la vez ("cargar más" en vez de renderizar
+   *  todo el listado de una). Listados chicos (la mayoría de los tipos,
+   *  ≤21 hoy) nunca llegan a mostrar el botón — solo importa para
+   *  Vehículos (62 hoy, el listado más grande por lejos), donde montar
+   *  las 62 cards de una implica 62 capas de blur + animación + glow
+   *  reactivo al motor WebGL compitiendo por el mismo frame de scroll.
+   *  Complementa (no reemplaza) el `content-visibility: auto` de
+   *  `.entity-card-viewport`: menos DOM real además de menos pintado. */
+  const PAGE_SIZE = 24
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+
   // Mantiene la URL al día con el estado actual de filtros (debounced en
   // el caso de la búsqueda, vía `debouncedQuery`, para no reescribir la
   // URL en cada tecla). Cada filtro en su valor "por defecto" se omite de
@@ -185,6 +196,17 @@ export function EntityListExplorer({
       ),
     [entities, debouncedQuery, status, selectedClass, selectedTags, sortBy, relationCountBySlug, fuse]
   )
+
+  // Vuelve a la primera página cada vez que cambia el conjunto filtrado
+  // real (nueva búsqueda/filtro/orden) — nunca en cada render, `filtered`
+  // solo cambia de referencia cuando `filterAndSortEntities` produce un
+  // resultado distinto (ver sus deps arriba).
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE)
+  }, [filtered])
+
+  const visibleEntities = filtered.slice(0, visibleCount)
+  const hasMore = visibleCount < filtered.length
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]))
@@ -456,8 +478,8 @@ export function EntityListExplorer({
         </div>
       ) : isVehicleList && viewMode === 'catalogo' ? (
         <div className={cn('space-y-2', compareSlugs.length > 0 && 'pb-24')}>
-          {filtered.map((entity, i) => (
-            <Reveal key={entity.slug} delay={(i % 8) * 40}>
+          {visibleEntities.map((entity, i) => (
+            <Reveal key={entity.slug} delay={(i % 8) * 40} className="entity-card-viewport entity-card-viewport--row">
               <EntityCard
                 entity={entity}
                 image={imageBySlug?.[`${entity.type}/${entity.slug}`]}
@@ -475,8 +497,8 @@ export function EntityListExplorer({
         </div>
       ) : (
         <div className={cn('grid gap-6 sm:grid-cols-2 lg:grid-cols-3', compareSlugs.length > 0 && 'pb-24')}>
-          {filtered.map((entity, i) => (
-            <Reveal key={entity.slug} delay={(i % 6) * 80}>
+          {visibleEntities.map((entity, i) => (
+            <Reveal key={entity.slug} delay={(i % 6) * 80} className="entity-card-viewport">
               <EntityCard
                 entity={entity}
                 image={imageBySlug?.[`${entity.type}/${entity.slug}`]}
@@ -490,6 +512,18 @@ export function EntityListExplorer({
               />
             </Reveal>
           ))}
+        </div>
+      )}
+
+      {hasMore && (
+        <div className="mt-8 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
+            className="rounded-full border border-gta-border px-5 py-2.5 text-sm font-semibold text-gta-text-secondary transition-colors hover:border-gta-accent hover:text-gta-accent"
+          >
+            Cargar más ({filtered.length - visibleCount} restantes)
+          </button>
         </div>
       )}
 

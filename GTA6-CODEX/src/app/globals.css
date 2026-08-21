@@ -342,6 +342,31 @@ a:hover .logo-mark {
   transform: translateY(0) translateX(0) scale(1);
 }
 
+/* --- Listados grandes de entidades (ej. Vehículos: 62 tarjetas, el
+   listado más grande del sitio) ---
+   Cada EntityCard combina backdrop-blur, una animación CSS infinita
+   ("respiración" de la imagen) y un borde con degradado sincronizado en
+   tiempo real al motor WebGL de fondo (variables --scene-* actualizadas
+   ~20 veces por segundo). Con pocas cards eso es imperceptible; con 60+
+   montadas a la vez el navegador termina recalculando estilo/pintando
+   decenas de capas compuestas en cada frame de scroll, incluso para las
+   que no están a la vista — de ahí el lag reportado específicamente en
+   /vehiculos.
+   `content-visibility: auto` le dice al navegador que puede saltarse por
+   completo el trabajo de layout/paint de una card mientras esté fuera
+   del viewport (aprox.), sin cambiar nada visualmente ni romper el
+   IntersectionObserver de <Reveal> (siguen disparando normalmente).
+   `contain-intrinsic-size` evita que la página salte de alto mientras el
+   navegador todavía no conoce el tamaño real de una card salteada. */
+.entity-card-viewport {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 460px;
+}
+
+.entity-card-viewport--row {
+  contain-intrinsic-size: 0 96px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     animation: none !important;
