@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import { EntityType } from '@/types'
+import type { Entity } from '@/types'
 import { getEntitiesByType } from '@/lib/entities'
+import { MAP_CATEGORY_TYPES } from '@/lib/map-entities'
 import { LeonidaMapExplorer } from '@/components/map/LeonidaMapExplorer'
 import { Reveal } from '@/components/ui/Reveal'
 
@@ -24,20 +25,21 @@ export const metadata: Metadata = {
 }
 
 export default async function MapaPage() {
-  const locations = await getEntitiesByType(EntityType.LOCATION)
+  const entitiesByCategory = await Promise.all(MAP_CATEGORY_TYPES.map((type) => getEntitiesByType(type)))
+  const entities: Entity[] = entitiesByCategory.flat()
 
   return (
     <div className="mx-auto max-w-7xl px-[var(--gutter-width)] py-10 md:py-14">
       <Reveal>
         <h1 className="font-display text-3xl font-bold text-gta-text md:text-4xl">Mapa de Leonida</h1>
         <p className="mt-2 max-w-2xl text-gta-text-secondary">
-          Un mapa interactivo de las 5 zonas reportadas en la filtración CYBERLEEK, cruzado con las ubicaciones de
-          Leonida que Rockstar ya confirmó en material oficial. No es el mapa real del juego.
+          Un mapa interactivo de las 5 zonas reportadas en la filtración CYBERLEEK, cruzado con ubicaciones, armas,
+          vehículos, misiones y objetos ya catalogados. No es el mapa real del juego.
         </p>
       </Reveal>
 
       <div className="mt-8">
-        <LeonidaMapExplorer locations={locations} entityType={EntityType.LOCATION} />
+        <LeonidaMapExplorer entities={entities} />
       </div>
     </div>
   )

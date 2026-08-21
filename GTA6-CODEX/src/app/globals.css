@@ -1775,13 +1775,17 @@ a:hover .logo-mark {
 }
 
 .leonida-pin__dot {
-  display: block;
-  width: 16px;
-  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
   border-radius: 9999px;
   background: #f0c274;
   border: 2px solid #050308;
   box-shadow: 0 0 6px rgba(240, 194, 116, 0.7);
+  font-size: 9px;
+  line-height: 1;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   cursor: pointer;
 }
@@ -1791,25 +1795,9 @@ a:hover .logo-mark {
   box-shadow: 0 0 12px rgba(240, 194, 116, 0.95);
 }
 
-.leonida-pin__dot--active {
-  background: #ff7ec4;
-  box-shadow: 0 0 8px rgba(255, 126, 196, 0.9);
-}
-
-.leonida-pin:hover .leonida-pin__dot--active {
-  box-shadow: 0 0 14px rgba(255, 126, 196, 1);
-}
-
-.leonida-pin__dot--unzoned {
-  background: #6b5d7d;
-  border: 2px dashed #050308;
-  box-shadow: 0 0 5px rgba(107, 93, 125, 0.6);
-}
-
-.leonida-pin:hover .leonida-pin__dot--unzoned {
-  transform: scale(1.3);
-  box-shadow: 0 0 10px rgba(107, 93, 125, 0.9);
-}
+/* Colores por categoría y por estado (activo/sin zona) se aplican inline
+   vía `style` desde LeonidaMapCanvas.tsx (ver `pinIcon`), así que no hace
+   falta un modificador por categoría acá — solo el estado visual genérico. */
 
 .leonida-zone-tooltip {
   background: rgba(5, 3, 8, 0.9) !important;
@@ -2168,4 +2156,66 @@ a:hover .logo-mark {
   border-color: #ff7ec4;
   background: rgba(255, 126, 196, 0.12);
   color: #f5eff9;
+}
+
+/* Filtros por categoría (armas, vehículos, misiones, objetos, ubicaciones):
+   mismo lenguaje visual que los chips de zona, pero el color de acento es
+   dinámico por categoría vía la variable `--category-color`. */
+.leonida-category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.leonida-category-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 9999px;
+  border: 1.5px solid #453163;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  background: transparent;
+  color: #b3a3c4;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease, opacity 0.15s ease;
+}
+
+.leonida-category-chip__glyph {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.leonida-category-chip__count {
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1px 6px;
+  font-size: 10.5px;
+  color: inherit;
+}
+
+.leonida-category-chip--on {
+  border-color: var(--category-color, #ff7ec4);
+  color: #f5eff9;
+  background: color-mix(in srgb, var(--category-color, #ff7ec4) 14%, transparent);
+}
+
+.leonida-category-chip--off {
+  opacity: 0.55;
+}
+
+.leonida-category-chip--off:hover {
+  opacity: 0.85;
+  color: #f5eff9;
+}
+
+.leonida-pin-popup__category {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 2px;
 }

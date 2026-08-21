@@ -1,12 +1,11 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import type { Entity, EntityType } from '@/types'
+import type { Entity } from '@/types'
 
 interface LeonidaMapExplorerProps {
-  /** Todas las entidades de tipo `ubicaciones`, para resolver título/slug de cada pin. */
-  locations: Entity[]
-  entityType: EntityType
+  /** Todas las entidades mapeables (ubicaciones, armas, vehículos, misiones, objetos). */
+  entities: Entity[]
 }
 
 /**
@@ -29,6 +28,6 @@ const LeonidaMapCanvas = dynamic(
   }
 )
 
-export function LeonidaMapExplorer({ locations, entityType }: LeonidaMapExplorerProps) {
-  return <LeonidaMapCanvas locations={locations} entityType={entityType} />
+export function LeonidaMapExplorer({ entities }: LeonidaMapExplorerProps) {
+  return <LeonidaMapCanvas entities={entities} />
 }

@@ -1,11 +1,12 @@
 'use client'
 
 import 'leaflet/dist/leaflet.css'
-import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import Link from 'next/link'
 import L from 'leaflet'
 import { MapContainer, TileLayer, Circle, Marker, Tooltip, Popup, useMap, useMapEvents } from 'react-leaflet'
-import type { Entity, EntityType } from '@/types'
+import type { Entity } from '@/types'
+import { EntityType } from '@/types'
 import { Badge } from '@/components/ui/Badge'
 import { STATUS_LABELS } from '@/lib/entity-labels'
 import { LEONIDA_ZONES, LEONIDA_ZONES_SOURCE, type LeonidaZone } from '@/lib/leonida-zones'
@@ -17,13 +18,20 @@ import {
   getLeonidaFullMapBounds,
   locationPinOffset,
 } from '@/lib/leonida-map-coordinates'
+import {
+  MAP_CATEGORIES,
+  MAP_CATEGORY_TYPES,
+  getMapCategoryConfig,
+  resolveEntityLocationSlug,
+  type MapCategoryConfig,
+} from '@/lib/map-entities'
 
-/** Id "virtual" para el área de espera de ubicaciones sin zona — no es una de las 5 zonas reportadas. */
+/** Id "virtual" para el área de espera de entidades sin zona — no es una de las 5 zonas reportadas. */
 const UNZONED_HOLDING_ID = '__unzoned__'
 
 interface LeonidaMapCanvasProps {
-  locations: Entity[]
-  entityType: EntityType
+  /** Todas las entidades mapeables: ubicaciones, armas, vehículos, misiones, objetos. */
+  entities: Entity[]
 }
 
 interface MapControls {
@@ -31,8 +39,12 @@ interface MapControls {
   flyToZone: (zoneId: string) => void
 }
 
-function findLocation(locations: Entity[], slug: string): Entity | undefined {
-  return locations.find((loc) => loc.slug === slug)
+/** Agrupa una lista de entidades por categoría, en el orden de MAP_CATEGORIES, sin grupos vacíos. */
+function groupByCategory(list: Entity[]): { category: MapCategoryConfig; items: Entity[] }[] {
+  return MAP_CATEGORIES.map((category) => ({
+    category,
+    items: list.filter((e) => e.type === category.type),
+  })).filter((group) => group.items.length > 0)
 }
 
 function truncate(text: string, max: number): string {
@@ -40,13 +52,31 @@ function truncate(text: string, max: number): string {
   return `${text.slice(0, max).trimEnd()}…`
 }
 
-const pinIcon = (variant: 'default' | 'active' | 'unzoned') =>
-  L.divIcon({
+function hexToRgba(hex: string, alpha: number): string {
+  const clean = hex.replace('#', '')
+  const r = parseInt(clean.slice(0, 2), 16)
+  const g = parseInt(clean.slice(2, 4), 16)
+  const b = parseInt(clean.slice(4, 6), 16)
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}
+
+/**
+ * Ícono de pin por categoría: cada tipo de entidad (ubicación, arma,
+ * vehículo, misión, objeto) tiene su propio color y glifo, para que se
+ * pueda distinguir de un vistazo qué hay en el mapa sin necesitar el
+ * panel de filtros abierto. El estado `active` (zona seleccionada) siempre
+ * pisa el color de categoría con el rosa de selección, igual que antes.
+ */
+const pinIcon = (category: MapCategoryConfig, variant: 'default' | 'active' | 'unzoned') => {
+  const color = variant === 'active' ? '#ff7ec4' : variant === 'unzoned' ? '#6b5d7d' : category.color
+  const dashed = variant === 'unzoned' ? 'border-style:dashed;' : ''
+  return L.divIcon({
     className: 'leonida-pin',
-    html: `<span class="leonida-pin__dot leonida-pin__dot--${variant}"></span>`,
+    html: `<span class="leonida-pin__dot" style="background:${color};box-shadow:0 0 6px ${hexToRgba(color, 0.7)};${dashed}">${category.glyph}</span>`,
     iconSize: [22, 22],
     iconAnchor: [11, 11],
   })
+}
 
 const FULL_BOUNDS = getLeonidaFullMapBounds()
 const FULL_LATLNG_BOUNDS: L.LatLngBoundsExpression = [
@@ -105,13 +135,18 @@ function MapResizeOnFullscreen({ isFullscreen }: { isFullscreen: boolean }) {
   return null
 }
 
-export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProps) {
+export function LeonidaMapCanvas({ entities }: LeonidaMapCanvasProps) {
   const [activeZoneId, setActiveZoneId] = useState<string | null>(null)
   const [hoverZoneId, setHoverZoneId] = useState<string | null>(null)
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [searchOpen, setSearchOpen] = useState(false)
+  const [activeCategories, setActiveCategories] = useState<Set<EntityType>>(
+    () => new Set(MAP_CATEGORY_TYPES)
+  )
   const controlsRef = useRef<MapControls | null>(null)
+
+  const locations = useMemo(() => entities.filter((e) => e.type === EntityType.LOCATION), [entities])
 
   const zoneByLocationSlug = useMemo(() => {
     const map = new Map<string, LeonidaZone>()
@@ -140,6 +175,38 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
     if (q.length < 2) return []
     return locations.filter((loc) => loc.title.toLowerCase().includes(q)).slice(0, 7)
   }, [locations, searchQuery])
+
+  const toggleCategory = (type: EntityType) => {
+    setActiveCategories((prev) => {
+      const next = new Set(prev)
+      if (next.has(type)) next.delete(type)
+      else next.add(type)
+      return next
+    })
+  }
+
+  /**
+   * Agrupa TODAS las entidades filtrables (no solo ubicaciones) por zona.
+   * Una entidad que no es `ubicaciones` se ubica resolviendo su relación
+   * hacia una ubicación catalogada (`resolveEntityLocationSlug`) y viendo
+   * a qué zona pertenece esa ubicación. Si no hay relación resuelta, o la
+   * ubicación relacionada tampoco tiene zona, cae en el área de espera.
+   */
+  const entitiesByZone = useMemo(() => {
+    const map = new Map<string, Entity[]>()
+    for (const entity of entities) {
+      if (!activeCategories.has(entity.type)) continue
+      const locationSlug = resolveEntityLocationSlug(entity)
+      const zone = locationSlug ? zoneByLocationSlug.get(locationSlug) : undefined
+      const key = zone ? zone.id : UNZONED_HOLDING_ID
+      const bucket = map.get(key)
+      if (bucket) bucket.push(entity)
+      else map.set(key, [entity])
+    }
+    return map
+  }, [entities, activeCategories, zoneByLocationSlug])
+
+  const unzonedEntities = entitiesByZone.get(UNZONED_HOLDING_ID) ?? []
 
   const activeZone: LeonidaZone | null = activeZoneId
     ? LEONIDA_ZONES.find((z) => z.id === activeZoneId) ?? null
@@ -307,6 +374,30 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
             )}
           </div>
 
+          {/* Filtros por categoría: togglean qué tipos de entidad se muestran como pines en el mapa. */}
+          <div className="leonida-category-filters" role="group" aria-label="Filtrar por categoría">
+            {MAP_CATEGORIES.map((category) => {
+              const count = entities.filter((e) => e.type === category.type).length
+              const isOn = activeCategories.has(category.type)
+              return (
+                <button
+                  key={category.type}
+                  type="button"
+                  onClick={() => toggleCategory(category.type)}
+                  aria-pressed={isOn}
+                  className={`leonida-category-chip ${isOn ? 'leonida-category-chip--on' : 'leonida-category-chip--off'}`}
+                  style={isOn ? ({ '--category-color': category.color } as CSSProperties) : undefined}
+                >
+                  <span className="leonida-category-chip__glyph" aria-hidden="true">
+                    {category.glyph}
+                  </span>
+                  {category.label}
+                  <span className="leonida-category-chip__count">{count}</span>
+                </button>
+              )
+            })}
+          </div>
+
           <div className="mb-3 mt-3 flex flex-wrap items-center gap-2 rounded-lg border border-gta-border bg-gta-darker/70 px-3 py-2 text-xs text-gta-text-secondary">
             <span className="font-semibold text-gta-text">Cómo se usa:</span>
             <span className="inline-flex items-center gap-1">
@@ -320,14 +411,14 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
               <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-gta-gold/20 text-[10px] font-bold text-gta-gold">
                 2
               </span>
-              tocá un punto dorado para ver el resumen de esa ubicación
+              tocá un pin para ver el resumen de esa entidad
             </span>
             <span className="text-gta-border-strong">·</span>
             <span className="inline-flex items-center gap-1">
               <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-gta-accent-strong/20 text-[10px] font-bold text-gta-accent-strong">
                 3
               </span>
-              usá el buscador para saltar directo a una ubicación
+              usá los filtros de categoría para mostrar u ocultar tipos de contenido
             </span>
           </div>
 
@@ -360,9 +451,7 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                 const isActive = zone.id === activeZoneId
                 const isHover = zone.id === hoverZoneId
                 const hasLocations = zone.locationSlugs.length > 0
-                const zoneLocations = zone.locationSlugs
-                  .map((slug) => findLocation(locations, slug))
-                  .filter((loc): loc is Entity => Boolean(loc))
+                const zoneEntities = entitiesByZone.get(zone.id) ?? []
 
                 const color = isActive ? '#ff7ec4' : isHover ? '#ff2f8f' : hasLocations ? '#22d3ee' : '#453163'
 
@@ -405,33 +494,41 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                           }`}
                         >
                           {hasLocations
-                            ? `✓ ${zoneLocations.length} ubicación${zoneLocations.length === 1 ? '' : 'es'} confirmada${zoneLocations.length === 1 ? '' : 's'}`
+                            ? `✓ ${zoneEntities.length} entidad${zoneEntities.length === 1 ? '' : 'es'} catalogada${zoneEntities.length === 1 ? '' : 's'}`
                             : '⚠ sin ubicaciones confirmadas'}
                         </span>
                         <span className="leonida-zone-tooltip__cta">Tocá para ver el detalle →</span>
                       </Tooltip>
                     </Circle>
 
-                    {zoneLocations.map((loc, i) => {
-                      const { dLat, dLng } = locationPinOffset(i, zoneLocations.length)
+                    {zoneEntities.map((entity, i) => {
+                      const { dLat, dLng } = locationPinOffset(i, zoneEntities.length)
                       const pos: [number, number] = [coords.center[0] + dLat, coords.center[1] + dLng]
+                      const category = getMapCategoryConfig(entity.type)
                       return (
-                        <Marker key={loc.slug} position={pos} icon={pinIcon(isActive ? 'active' : 'default')}>
+                        <Marker
+                          key={entity.slug}
+                          position={pos}
+                          icon={pinIcon(category, isActive ? 'active' : 'default')}
+                        >
                           <Tooltip direction="top" offset={[0, -10]}>
-                            {loc.title}
+                            {entity.title}
                           </Tooltip>
                           <Popup className="leonida-pin-popup" closeButton minWidth={220} maxWidth={260}>
                             <div className="leonida-pin-popup__inner">
                               <div className="leonida-pin-popup__head">
-                                <span className="leonida-pin-popup__title">{loc.title}</span>
-                                <Badge variant="status" status={loc.status}>
-                                  {STATUS_LABELS[loc.status as keyof typeof STATUS_LABELS] || loc.status}
+                                <span className="leonida-pin-popup__title">{entity.title}</span>
+                                <Badge variant="status" status={entity.status}>
+                                  {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
                                 </Badge>
                               </div>
-                              {loc.description && (
-                                <p className="leonida-pin-popup__desc">{truncate(loc.description, 150)}</p>
+                              <span className="leonida-pin-popup__category" style={{ color: category.color }}>
+                                {category.glyph} {category.label}
+                              </span>
+                              {entity.description && (
+                                <p className="leonida-pin-popup__desc">{truncate(entity.description, 150)}</p>
                               )}
-                              <Link href={`/${entityType}/${loc.slug}`} className="leonida-pin-popup__link">
+                              <Link href={`/${entity.type}/${entity.slug}`} className="leonida-pin-popup__link">
                                 Ver ficha completa →
                               </Link>
                             </div>
@@ -443,7 +540,7 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                 )
               })}
 
-              {unzonedLocations.length > 0 && (
+              {unzonedEntities.length > 0 && (
                 <Fragment>
                   <Circle
                     center={LEONIDA_UNZONED_HOLDING.center}
@@ -475,39 +572,43 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                         <span className="leonida-zone-tooltip__position">ilustrativo</span>
                       </span>
                       <span className="leonida-zone-tooltip__status leonida-zone-tooltip__status--unconfirmed">
-                        ⚠ {unzonedLocations.length} ubicación{unzonedLocations.length === 1 ? '' : 'es'} sin zona
+                        ⚠ {unzonedEntities.length} entidad{unzonedEntities.length === 1 ? '' : 'es'} sin zona
                         confirmada
                       </span>
                       <span className="leonida-zone-tooltip__cta">Tocá para ver el detalle →</span>
                     </Tooltip>
                   </Circle>
 
-                  {unzonedLocations.map((loc, i) => {
-                    const { dLat, dLng } = locationPinOffset(i, unzonedLocations.length, 0.55)
+                  {unzonedEntities.map((entity, i) => {
+                    const { dLat, dLng } = locationPinOffset(i, unzonedEntities.length, 0.55)
                     const pos: [number, number] = [
                       LEONIDA_UNZONED_HOLDING.center[0] + dLat,
                       LEONIDA_UNZONED_HOLDING.center[1] + dLng,
                     ]
+                    const category = getMapCategoryConfig(entity.type)
                     return (
-                      <Marker key={loc.slug} position={pos} icon={pinIcon('unzoned')}>
+                      <Marker key={entity.slug} position={pos} icon={pinIcon(category, 'unzoned')}>
                         <Tooltip direction="top" offset={[0, -10]}>
-                          {loc.title}
+                          {entity.title}
                         </Tooltip>
                         <Popup className="leonida-pin-popup leonida-pin-popup--unzoned" closeButton minWidth={220} maxWidth={260}>
                           <div className="leonida-pin-popup__inner">
                             <div className="leonida-pin-popup__head">
-                              <span className="leonida-pin-popup__title">{loc.title}</span>
-                              <Badge variant="status" status={loc.status}>
-                                {STATUS_LABELS[loc.status as keyof typeof STATUS_LABELS] || loc.status}
+                              <span className="leonida-pin-popup__title">{entity.title}</span>
+                              <Badge variant="status" status={entity.status}>
+                                {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
                               </Badge>
                             </div>
+                            <span className="leonida-pin-popup__category" style={{ color: category.color }}>
+                              {category.glyph} {category.label}
+                            </span>
                             <p className="leonida-pin-popup__unzoned-note">
                               ⚠ Sin zona confirmada — posición ilustrativa, no real.
                             </p>
-                            {loc.description && (
-                              <p className="leonida-pin-popup__desc">{truncate(loc.description, 150)}</p>
+                            {entity.description && (
+                              <p className="leonida-pin-popup__desc">{truncate(entity.description, 150)}</p>
                             )}
-                            <Link href={`/${entityType}/${loc.slug}`} className="leonida-pin-popup__link">
+                            <Link href={`/${entity.type}/${entity.slug}`} className="leonida-pin-popup__link">
                               Ver ficha completa →
                             </Link>
                           </div>
@@ -587,25 +688,34 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
         <div className="overflow-y-auto rounded-xl border border-gta-border bg-gta-card p-4 md:p-6">
           {!activeZone ? (
             <div>
-              <h3 className="font-display text-lg font-semibold text-gta-text">Ubicaciones sin zona asignada</h3>
+              <h3 className="font-display text-lg font-semibold text-gta-text">Sin zona asignada</h3>
               <p className="mt-1 text-sm text-gta-text-secondary">
-                Tocá una zona del mapa (o un chip de arriba) para ver su detalle. Estas {unzonedLocations.length}{' '}
-                ubicaciones del catálogo no tienen todavía un dato confirmado que las sitúe en alguna de las 5 zonas
-                reportadas — por eso también aparecen agrupadas en un recuadro punteado en pleno Golfo de México,
-                lejos de tierra firme, y no dentro de ninguna zona real.
+                Tocá una zona del mapa (o un chip de arriba) para ver su detalle. Estas {unzonedEntities.length}{' '}
+                entidades del catálogo (de las categorías activas) no tienen todavía un dato confirmado que las
+                sitúe en alguna de las 5 zonas reportadas — por eso también aparecen agrupadas en un recuadro
+                punteado en pleno Golfo de México, lejos de tierra firme, y no dentro de ninguna zona real.
               </p>
-              <ul className="mt-4 space-y-2">
-                {unzonedLocations.map((loc) => (
-                  <li key={loc.slug}>
-                    <Link
-                      href={`/${entityType}/${loc.slug}`}
-                      className="text-sm text-gta-text transition-colors hover:text-gta-accent-strong"
-                    >
-                      {loc.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              {groupByCategory(unzonedEntities).map(({ category, items }) => (
+                <div key={category.type} className="mt-4">
+                  <h4 className="flex items-center gap-1.5 text-sm font-semibold text-gta-text">
+                    <span aria-hidden="true">{category.glyph}</span>
+                    {category.label}
+                    <span className="text-gta-text-tertiary">({items.length})</span>
+                  </h4>
+                  <ul className="mt-2 space-y-2">
+                    {items.map((entity) => (
+                      <li key={entity.slug}>
+                        <Link
+                          href={`/${entity.type}/${entity.slug}`}
+                          className="text-sm text-gta-text transition-colors hover:text-gta-accent-strong"
+                        >
+                          {entity.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           ) : (
             <div>
@@ -619,37 +729,51 @@ export function LeonidaMapCanvas({ locations, entityType }: LeonidaMapCanvasProp
                 {activeZone.sourceNote}
               </div>
 
-              <h4 className="mt-4 text-sm font-semibold text-gta-text">Ubicaciones catalogadas en esta zona</h4>
-              {activeZone.locationSlugs.length === 0 ? (
-                <p className="mt-1 text-sm text-gta-text-secondary">
-                  Ninguna todavía — sin dato oficial confirmado que ubique alguna ficha del catálogo acá.
-                </p>
-              ) : (
-                <ul className="mt-2 space-y-2">
-                  {activeZone.locationSlugs.map((slug) => {
-                    const loc = findLocation(locations, slug)
-                    if (!loc) return null
-                    return (
-                      <li key={slug} className="flex items-center gap-2">
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-gta-gold" aria-hidden="true" />
-                        <Link
-                          href={`/${entityType}/${slug}`}
-                          className="text-sm text-gta-text transition-colors hover:text-gta-accent-strong"
-                        >
-                          {loc.title}
-                        </Link>
-                      </li>
-                    )
-                  })}
-                </ul>
-              )}
+              <h4 className="mt-4 text-sm font-semibold text-gta-text">Catalogado en esta zona</h4>
+              {(() => {
+                const zoneEntities = entitiesByZone.get(activeZone.id) ?? []
+                if (zoneEntities.length === 0) {
+                  return (
+                    <p className="mt-1 text-sm text-gta-text-secondary">
+                      Nada todavía en las categorías activas — sin dato oficial confirmado que ubique alguna ficha
+                      del catálogo acá.
+                    </p>
+                  )
+                }
+                return groupByCategory(zoneEntities).map(({ category, items }) => (
+                  <div key={category.type} className="mt-3">
+                    <h5 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-gta-text-tertiary">
+                      <span aria-hidden="true">{category.glyph}</span>
+                      {category.label}
+                      <span>({items.length})</span>
+                    </h5>
+                    <ul className="mt-1.5 space-y-2">
+                      {items.map((entity) => (
+                        <li key={entity.slug} className="flex items-center gap-2">
+                          <span
+                            className="inline-block h-1.5 w-1.5 rounded-full"
+                            style={{ backgroundColor: category.color }}
+                            aria-hidden="true"
+                          />
+                          <Link
+                            href={`/${entity.type}/${entity.slug}`}
+                            className="text-sm text-gta-text transition-colors hover:text-gta-accent-strong"
+                          >
+                            {entity.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))
+              })()}
 
               <button
                 type="button"
                 onClick={() => setActiveZoneId(null)}
                 className="mt-4 text-xs font-semibold text-gta-accent-orange transition-colors hover:text-gta-accent-strong"
               >
-                ← Ver ubicaciones sin zona asignada
+                ← Ver entidades sin zona asignada
               </button>
             </div>
           )}
