@@ -322,6 +322,21 @@ a:hover .logo-mark {
   transition: opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
     transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
   transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* will-change solo mientras el elemento todavía no se reveló: es el
+   pre-aviso al navegador de que "esto va a animar pronto", útil antes
+   del disparo. Una vez que <Reveal> agrega `.reveal-visible` (via
+   IntersectionObserver, dispara una sola vez con `once=true` por
+   default) se saca el hint — si no, cada elemento revelado queda
+   promovido a su propia capa de composición en GPU para siempre. En
+   listados grandes (ej. /vehiculos con 62 <EntityCard>, cada una
+   envuelta en <Reveal>) eso son decenas de capas permanentes por una
+   animación de 700ms que ya terminó. El costo de sacarlo en el mismo
+   instante que empieza la transición es, como mucho, un frame perdido
+   al arrancar cada reveal — imperceptible comparado con layers GPU
+   acumulándose el resto de la sesión. */
+.reveal:not(.reveal-visible) {
   will-change: transform, opacity;
 }
 
