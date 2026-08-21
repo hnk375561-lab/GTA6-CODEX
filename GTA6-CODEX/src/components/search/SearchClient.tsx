@@ -412,7 +412,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
           {results.length > 0 && (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {results.map((entity) => (
-                <Link key={`${entity.type}-${entity.slug}`} href={`/${entity.type}/${entity.slug}`} className="group block h-full">
+                <Link key={`${entity.type}-${entity.slug}`} href={`/${entity.type}/${entity.slug}`} className="search-result-viewport group block h-full">
                   <Card hoverable className="h-full">
                     <CardBody className="flex gap-3">
                       <EntityImage entity={entity} image={imageBySlug?.[`${entity.type}/${entity.slug}`]} variant="avatar" className="h-12 w-12" />

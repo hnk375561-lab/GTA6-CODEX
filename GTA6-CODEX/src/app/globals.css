@@ -367,6 +367,15 @@ a:hover .logo-mark {
   contain-intrinsic-size: 0 96px;
 }
 
+/* --- /buscar: resultados ya acotados a 60 (ver SearchClient), pero cada
+   card sigue trayendo blur + animación de respiración en su avatar —
+   mismo tratamiento por consistencia, tamaño intrínseco más chico porque
+   la card de resultado de búsqueda es más compacta que EntityCard. */
+.search-result-viewport {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 108px;
+}
+
 /* --- /galeria: mismo problema que Vehículos pero más grande todavía —
    agrega imágenes de TODOS los tipos de entidad + key art + videos, así
    que fácilmente supera el centenar de tiles en un único grid. Cada tile
