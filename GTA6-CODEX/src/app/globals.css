@@ -1048,10 +1048,41 @@ a:hover .logo-mark {
   transform: translateX(3px);
 }
 
+/* Crossfade sutil del titular al rotar (key change en React remonta el
+   span, así que el keyframe corre de nuevo en cada cambio). Mismo
+   lenguaje de entrada que el resto del hero: fade + slide corto. */
+.hero-news-flash-title {
+  animation: hero-news-flash-fade 420ms ease both;
+}
+
+@keyframes hero-news-flash-fade {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-news-flash-dot {
+  background: var(--gta-border-strong, #453163);
+  transition: background-color 300ms ease, transform 300ms ease;
+}
+
+.hero-news-flash-dot[data-active='true'] {
+  background: var(--c-pink);
+  transform: scale(1.4);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-news-flash,
-  .hero-news-flash-arrow {
+  .hero-news-flash-arrow,
+  .hero-news-flash-title,
+  .hero-news-flash-dot {
     transition: none !important;
+    animation: none !important;
   }
 }
 
