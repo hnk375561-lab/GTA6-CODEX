@@ -1484,6 +1484,39 @@ a:hover .logo-mark {
   position: relative;
 }
 
+/* --- Feedback táctil real en `.hero-cta` / `.hero-cta-secondary` /
+   `.hero-countdown-chip` (corrección real, no cosmética): las tres
+   solo tenían `hover:-translate-y-0.5` (Tailwind, en el markup de
+   `page.tsx`) o `:hover` puro en CSS. En touch no existe un `:hover`
+   real — en el mejor de los casos el navegador lo simula recién
+   *después* de levantar el dedo, y en la mayoría de los casos no llega
+   a disparar antes de que ocurra la navegación. Resultado: quien usa el
+   sitio desde el celular (la mayoría del tráfico de un sitio de
+   noticias/expedientes) tocaba estos tres elementos y no recibía
+   ninguna señal visual de que el tap se había registrado, a diferencia
+   de quien usa mouse. `:active` sí dispara de forma confiable en touch
+   (al iniciar el toque) en todos los navegadores mobile, así que cubre
+   el gap sin depender de JS ni de detectar el tipo de puntero. Mismo
+   guard de `prefers-reduced-motion` que ya usa el resto del hero, para
+   no introducir un movimiento que esa preferencia pide evitar. */
+.hero-cta:active,
+.hero-cta-secondary:active {
+  transform: translateY(0.5px) scale(0.98);
+}
+
+.hero-countdown-chip:active {
+  transform: translateY(0.5px) scale(0.98);
+  box-shadow: 0 0 20px -10px var(--c-cyan, #22d3ee);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cta:active,
+  .hero-cta-secondary:active,
+  .hero-countdown-chip:active {
+    transform: none !important;
+  }
+}
+
 .hero-cta::after {
   content: '';
   position: absolute;
