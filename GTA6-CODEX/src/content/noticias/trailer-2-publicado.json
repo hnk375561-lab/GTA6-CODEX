@@ -35,6 +35,11 @@
       "targetType": "noticias",
       "targetSlug": "retraso-gta6-2025",
       "relation": "relacionada-con"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "extended-look-netflix-27-agosto",
+      "relation": "referenciada-por"
     }
   ],
   "seoTitle": "Rockstar Publica Segundo Tráiler de GTA VI con Gameplay — Noticias de GTA 6",

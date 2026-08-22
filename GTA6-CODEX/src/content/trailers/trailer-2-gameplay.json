@@ -42,6 +42,11 @@
       "targetType": "trailers",
       "targetSlug": "trailer-1-anuncio",
       "relation": "tráiler anterior"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "extended-look-netflix-27-agosto",
+      "relation": "referenciada-por"
     }
   ],
   "scenes": [

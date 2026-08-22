@@ -41,6 +41,11 @@
       "targetType": "guias",
       "targetSlug": "guia-ediciones-preorder",
       "relation": "contexto-para"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "extended-look-netflix-27-agosto",
+      "relation": "seguida-de"
     }
   ],
   "seoTitle": "Zelnick Reafirma GTA 6 para el 19 de Noviembre — Noticias de GTA 6",
