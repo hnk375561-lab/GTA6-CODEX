@@ -1088,18 +1088,42 @@ a:hover .logo-mark {
    .hero-news-flash (glass-surface, borde que se enciende en acento al
    hover), pero sin badge propio — el puntito de color hereda el accent
    del hito (mismo criterio de CATEGORY_ACCENT que usa el resto del
-   sitio) en vez de duplicar la paleta magenta/cian/dorado a mano. --- */
+   sitio) en vez de duplicar la paleta magenta/cian/dorado a mano.
+
+   `hero-countdown-chip-in`: el chip no existe en el primer paint (ver
+   comentario en `HeroCountdownChip.tsx` — devuelve `null` hasta que su
+   `useEffect` calcula los días restantes en el cliente) y aparece un
+   instante después de hidratar. La fila que lo contiene ya reserva su
+   alto (`min-h-[42px]` en `src/app/page.tsx`) para no mover el título;
+   esta animación cubre la otra mitad del problema — que no aparezca de
+   golpe (pop-in brusco) sino con el mismo fade+slide corto que ya usa
+   `.hero-news-flash-title` al rotar de titular, para que la entrada se
+   sienta parte del mismo lenguaje del hero en vez de un elemento suelto
+   que "salta" al montarse. --- */
 .hero-countdown-chip {
   transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  animation: hero-countdown-chip-in 420ms var(--ease-standard) both;
 }
 
 .hero-countdown-chip:hover {
   box-shadow: 0 0 20px -10px var(--c-cyan, #22d3ee);
 }
 
+@keyframes hero-countdown-chip-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-countdown-chip {
     transition: none !important;
+    animation: none !important;
   }
 }
 

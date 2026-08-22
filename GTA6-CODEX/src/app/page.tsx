@@ -337,8 +337,21 @@ export default async function HomePage() {
                 fold; ahora hay dos señales de contenido real y vivo
                 arriba del título. Ambos reusan datos ya calculados más
                 abajo en esta misma función (latestNews, countdownTargets)
-                — ninguna fuente de verdad nueva ni duplicada. */}
-            <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
+                — ninguna fuente de verdad nueva ni duplicada.
+
+                `min-h-[42px]`: reserva la altura de un chip (borde + py-2
+                + texto text-sm) aunque no haya ninguno montado todavía.
+                `HeroCountdownChip` es un Client Component que devuelve
+                `null` hasta que su primer `useEffect` corre en el
+                navegador (el cálculo de "cuántos días faltan" no puede
+                resolverse en build, ver su propio comentario) — sin esta
+                reserva, esa fila aparecía vacía en el primer paint y
+                "empujaba" el título hacia abajo un instante después de
+                hidratar: un salto de layout justo arriba del elemento
+                más grande del hero (el propio <h1>), el peor lugar
+                posible para uno. Con la altura reservada de entrada, el
+                chip solo hace fade-in en su lugar, sin mover nada. */}
+            <div className="mb-6 flex min-h-[42px] flex-wrap items-center justify-center gap-3">
               {latestNews.length > 0 && (
                 <HeroNewsFlash
                   items={latestNews.map((entity) => ({ slug: entity.slug, type: entity.type, title: entity.title }))}
