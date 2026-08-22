@@ -31,6 +31,7 @@ import { QuickSearchForm } from '@/components/home/QuickSearchForm'
 import { HeroScrollCue } from '@/components/home/HeroScrollCue'
 import { HeroNewsFlash } from '@/components/home/HeroNewsFlash'
 import { HeroCountdownChip } from '@/components/home/HeroCountdownChip'
+import { CinematicScroll } from '@/components/home/CinematicScroll'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateHomepageMetadata()
@@ -294,6 +295,9 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
       />
+
+      {/* Scroll cinemático — contenido 100% original, ver src/components/home/CinematicScroll.tsx */}
+      <CinematicScroll />
 
       {/* Hero */}
       <SceneSection
