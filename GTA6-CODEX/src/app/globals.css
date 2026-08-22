@@ -1075,8 +1075,26 @@ a:hover .logo-mark {
 }
 
 .hero-news-flash-dot {
+  position: relative;
   background: var(--gta-border-strong, #453163);
   transition: background-color 300ms ease, transform 300ms ease;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* Área de toque real ampliada a ~20px de lado sin tocar el tamaño visual
+   del punto (4px, WCAG 2.5.5 "target size"): un `::before` invisible
+   centrado extiende el hitbox del <button>, el mismo truco que ya usan
+   los iconos pequeños de otras partes del sitio. */
+.hero-news-flash-dot::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+}
+
+.hero-news-flash-dot:hover {
+  background: var(--gta-border-strong-hover, #6b5490);
 }
 
 .hero-news-flash-dot[data-active='true'] {
