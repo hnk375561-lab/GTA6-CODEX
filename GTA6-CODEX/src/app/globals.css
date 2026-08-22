@@ -404,10 +404,30 @@ a:hover .logo-mark {
    que fácilmente supera el centenar de tiles en un único grid. Cada tile
    es más liviano que EntityCard (sin blur/glow permanentes), pero la
    cantidad de nodos por sí sola ya cuesta layout/paint durante el scroll
-   sin este corte. */
+   sin este corte.
+
+   El estimado de altura sigue los mismos breakpoints que `.gallery-tile`
+   (160px/200px/220px + min-width 640px/1024px, ver más abajo): la grilla
+   pasa de 2 a 3 a 5 columnas y el tile tiene `aspect-ratio: 3/4`, así que
+   su altura real escala con el ancho de columna — un único valor fijo de
+   desktop (220px) para mobile hacía que el navegador estimara mal el
+   alto de los tiles fuera de viewport en pantallas chicas, con más
+   reflow del necesario durante el scroll. */
 .gallery-tile-viewport {
   content-visibility: auto;
-  contain-intrinsic-size: 0 220px;
+  contain-intrinsic-size: 0 160px;
+}
+
+@media (min-width: 640px) {
+  .gallery-tile-viewport {
+    contain-intrinsic-size: 0 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-tile-viewport {
+    contain-intrinsic-size: 0 220px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
