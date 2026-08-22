@@ -586,9 +586,12 @@ export function EntityCard({
                   hovering ? 'opacity-100' : ambientVisible ? 'opacity-35' : 'opacity-0'
                 )}
               />
-              <span className="absolute right-2 top-2 z-10 inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/60 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-0">
+              <span
+                className="absolute right-2 top-2 z-10 inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/60 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-0"
+                aria-label={`${entity.title} — clip disponible`}
+              >
                 <MiniIcon name="play" />
-                Clip
+                <span aria-hidden="true">Clip</span>
               </span>
             </>
           )}
