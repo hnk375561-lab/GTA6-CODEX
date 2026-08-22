@@ -1,6 +1,30 @@
 import { Metadata } from 'next'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
+// Autohospedadas vía @fontsource (paquetes npm con los .woff2 empaquetados,
+// sin llamada a fonts.googleapis.com/fonts.gstatic.com en build ni en
+// runtime): antes `--font-sans`/`--font-display`/`--font-mono` en
+// globals.css nombraban 'Inter'/'Space Grotesk'/'JetBrains Mono' sin que
+// esas fuentes se cargaran en ningún lado del proyecto (ni next/font, ni
+// <link>, ni @font-face propio) — el sitio entero, incluido el <h1> del
+// hero (candidato a LCP), renderizaba siempre en la fuente de sistema del
+// visitante, nunca en la tipografía diseñada. Se importan solo los pesos
+// que el CSS realmente usa (400/500/600/700, ver font-bold/font-semibold/
+// font-medium/font-normal y los font-weight explícitos en globals.css)
+// para no traer pesos muertos. Cada archivo trae `font-display: swap`
+// de fábrica, así que el texto es visible con la fuente de fallback
+// mientras carga el woff2 (sin FOIT).
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/500.css'
+import '@fontsource/inter/600.css'
+import '@fontsource/inter/700.css'
+import '@fontsource/space-grotesk/400.css'
+import '@fontsource/space-grotesk/500.css'
+import '@fontsource/space-grotesk/600.css'
+import '@fontsource/space-grotesk/700.css'
+import '@fontsource/jetbrains-mono/400.css'
+import '@fontsource/jetbrains-mono/500.css'
+import '@fontsource/jetbrains-mono/600.css'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { TrendingBar } from '@/components/layout/TrendingBar'
