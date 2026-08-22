@@ -227,7 +227,14 @@ function CompareCheckbox({
         onToggle?.()
       }}
       className={cn(
-        'flex h-6 w-6 shrink-0 items-center justify-center rounded-md border backdrop-blur-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent',
+        // El cuadrito visual sigue midiendo 24px (`h-6 w-6`, mismo aspecto
+        // de siempre), pero el hitbox real crece a 44x44 (mínimo WCAG 2.1 AA
+        // de área táctil) con un `::before` invisible centrado — evita que
+        // el ícono se vea desproporcionado en la card sin sacrificar el
+        // tamaño de toque en mobile. `z-20` lo deja por encima del link
+        // estirado que cubre toda la card (ver más abajo): sin esto, el
+        // click al checkbox terminaría navegando en vez de tildarlo.
+        'relative z-20 flex h-6 w-6 shrink-0 items-center justify-center rounded-md border backdrop-blur-sm transition-colors before:absolute before:left-1/2 before:top-1/2 before:h-11 before:w-11 before:-translate-x-1/2 before:-translate-y-1/2 before:content-[""] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent',
         checked
           ? 'border-gta-accent bg-gta-accent text-white'
           : 'border-white/25 bg-black/40 text-transparent hover:border-white/50',
@@ -356,86 +363,104 @@ export function EntityCard({
 
   if (layout === 'row') {
     return (
-      <Link href={`/${entity.type}/${entity.slug}`} className={cn('group block', className)}>
-        <div className="flex items-center gap-4 rounded-xl border border-gta-border bg-gta-card p-3 shadow-gta-sm transition-colors duration-300 hover:border-gta-accent/60 hover:shadow-gta-md sm:p-4">
-          {compareEnabled && (
-            <CompareCheckbox
-              checked={compareChecked}
-              disabled={compareDisabled}
-              onToggle={onCompareToggle}
-              title={entity.title}
-            />
+      <div
+        className={cn(
+          'group relative flex items-center gap-4 rounded-xl border border-gta-border bg-gta-card p-3 shadow-gta-sm transition-colors duration-300 hover:border-gta-accent/60 hover:shadow-gta-md sm:p-4',
+          className
+        )}
+      >
+        {/* Link "estirado": cubre toda la fila para que siga siendo
+            clickeable en cualquier punto (mismo comportamiento de antes),
+            pero ahora es HERMANO del checkbox en vez de ANCESTRO — un
+            `<button>` dentro de un `<a>` es HTML inválido (interactivo
+            dentro de interactivo) y comportamiento no estandarizado para
+            lectores de pantalla. El checkbox usa `z-20` (ver arriba) para
+            quedar por encima de este overlay `z-10` y seguir recibiendo
+            su propio click sin disparar la navegación. */}
+        <Link
+          href={`/${entity.type}/${entity.slug}`}
+          className="absolute inset-0 z-10 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gta-accent"
+        >
+          <span className="sr-only">Ver ficha de {entity.title}</span>
+        </Link>
+
+        {compareEnabled && (
+          <CompareCheckbox
+            checked={compareChecked}
+            disabled={compareDisabled}
+            onToggle={onCompareToggle}
+            title={entity.title}
+          />
+        )}
+
+        <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg sm:h-20 sm:w-28">
+          <EntityImage entity={entity} image={image} variant="thumbnail" className="h-full rounded-lg border-0" />
+          {evidenceStamp && (
+            /* Versión "solo ícono" del sello: la fila es angosta (catálogo
+               de vehículos), no hay lugar para el label de texto completo
+               que sí usa la card en grilla — el glifo solo, con el mismo
+               color por nivel, mantiene la señal sin romper el layout. */
+            <span
+              className={cn(
+                'absolute right-1 top-1 z-10 flex h-4 w-4 items-center justify-center rounded-full border font-mono text-[9px] leading-none backdrop-blur-sm',
+                evidenceStamp.className
+              )}
+              title={`Evidencia: ${evidenceStamp.shortLabel}`}
+              aria-hidden="true"
+            >
+              {evidenceStamp.icon}
+            </span>
           )}
-
-          <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg sm:h-20 sm:w-28">
-            <EntityImage entity={entity} image={image} variant="thumbnail" className="h-full rounded-lg border-0" />
-            {evidenceStamp && (
-              /* Versión "solo ícono" del sello: la fila es angosta (catálogo
-                 de vehículos), no hay lugar para el label de texto completo
-                 que sí usa la card en grilla — el glifo solo, con el mismo
-                 color por nivel, mantiene la señal sin romper el layout. */
-              <span
-                className={cn(
-                  'absolute right-1 top-1 z-10 flex h-4 w-4 items-center justify-center rounded-full border font-mono text-[9px] leading-none backdrop-blur-sm',
-                  evidenceStamp.className
-                )}
-                title={`Evidencia: ${evidenceStamp.shortLabel}`}
-                aria-hidden="true"
-              >
-                {evidenceStamp.icon}
-              </span>
-            )}
-          </div>
-
-          <div className="min-w-0 flex-1">
-            <div className="mb-1 flex flex-wrap items-center gap-2">
-              <Badge variant="status" status={entity.status}>
-                {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
-              </Badge>
-              {entity.featured && <Badge variant="tag">Destacado</Badge>}
-            </div>
-            <h2 className="truncate text-base font-bold text-gta-text transition-colors group-hover:text-gta-accent sm:text-lg">
-              {entity.title}
-            </h2>
-            <p className="hidden truncate text-xs text-gta-text-secondary sm:block">{entity.description}</p>
-          </div>
-
-          {quickFacts.length > 0 && (
-            <dl className="hidden shrink-0 flex-col gap-0.5 text-xs md:flex">
-              {quickFacts.map((fact) => (
-                <div key={fact.label} className="flex items-center gap-1.5 whitespace-nowrap">
-                  <dt className="text-gta-text-secondary">{fact.label}:</dt>
-                  <dd className="font-medium text-gta-text">{fact.value}</dd>
-                </div>
-              ))}
-            </dl>
-          )}
-
-          {entity.type === EntityType.VEHICLE && entity.performance && (
-            <div className="hidden w-32 shrink-0 gap-1 lg:grid">
-              {(['speed', 'acceleration', 'handling', 'braking'] as const).map((key) => {
-                const value = entity.performance?.[key]
-                if (!value) return null
-                return (
-                  <div key={key} className="h-1 w-full overflow-hidden rounded-full bg-gta-border" title={`${key}: ${value}`}>
-                    <div
-                      className="h-full rounded-full bg-gradient-to-r from-gta-accent to-gta-accent-orange"
-                      style={{ width: statBarWidth(value) }}
-                    />
-                  </div>
-                )
-              })}
-            </div>
-          )}
-
-          <span
-            aria-hidden="true"
-            className="hidden shrink-0 items-center gap-1 text-xs font-semibold uppercase tracking-wide text-gta-accent transition-transform duration-200 group-hover:translate-x-0.5 sm:inline-flex"
-          >
-            Ver ficha →
-          </span>
         </div>
-      </Link>
+
+        <div className="min-w-0 flex-1">
+          <div className="mb-1 flex flex-wrap items-center gap-2">
+            <Badge variant="status" status={entity.status}>
+              {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
+            </Badge>
+            {entity.featured && <Badge variant="tag">Destacado</Badge>}
+          </div>
+          <h2 className="truncate text-base font-bold text-gta-text transition-colors group-hover:text-gta-accent sm:text-lg">
+            {entity.title}
+          </h2>
+          <p className="hidden truncate text-xs text-gta-text-secondary sm:block">{entity.description}</p>
+        </div>
+
+        {quickFacts.length > 0 && (
+          <dl className="hidden shrink-0 flex-col gap-0.5 text-xs md:flex">
+            {quickFacts.map((fact) => (
+              <div key={fact.label} className="flex items-center gap-1.5 whitespace-nowrap">
+                <dt className="text-gta-text-secondary">{fact.label}:</dt>
+                <dd className="font-medium text-gta-text">{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+
+        {entity.type === EntityType.VEHICLE && entity.performance && (
+          <div className="hidden w-32 shrink-0 gap-1 lg:grid">
+            {(['speed', 'acceleration', 'handling', 'braking'] as const).map((key) => {
+              const value = entity.performance?.[key]
+              if (!value) return null
+              return (
+                <div key={key} className="h-1 w-full overflow-hidden rounded-full bg-gta-border" title={`${key}: ${value}`}>
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-gta-accent to-gta-accent-orange"
+                    style={{ width: statBarWidth(value) }}
+                  />
+                </div>
+              )
+            })}
+          </div>
+        )}
+
+        <span
+          aria-hidden="true"
+          className="hidden shrink-0 items-center gap-1 text-xs font-semibold uppercase tracking-wide text-gta-accent transition-transform duration-200 group-hover:translate-x-0.5 sm:inline-flex"
+        >
+          Ver ficha →
+        </span>
+      </div>
     )
   }
 
@@ -464,20 +489,29 @@ export function EntityCard({
   }
 
   return (
-    <Link
-      href={`/${entity.type}/${entity.slug}`}
-      className={cn('group block h-full', className)}
+    <div
+      ref={tiltRef}
+      onMouseMove={handleTiltMove}
+      onMouseLeave={handleTiltLeave}
+      className={cn(
+        'group relative h-full transition-transform duration-300 ease-out will-change-transform',
+        className
+      )}
     >
-      {/* Wrapper de inclinación 3D: transform propio (perspective + rotateX/Y
-          calculado en el mousemove), separado del translateY+glow que ya
-          aplica `.card-animated` sobre `Card` — se componen sin pisarse. */}
-      <div
-        ref={tiltRef}
-        onMouseMove={handleTiltMove}
-        onMouseLeave={handleTiltLeave}
-        className="h-full transition-transform duration-300 ease-out will-change-transform"
+      {/* Link "estirado": mismo motivo que en el layout `row` — cubre toda
+          la card para seguir siendo clickeable en cualquier punto, pero
+          como HERMANO de `Card` en vez de envolverla, para no anidar el
+          `<button>` del checkbox (más abajo, `z-20`) dentro de un `<a>`.
+          `z-10` lo deja por debajo del checkbox pero por encima del resto
+          del contenido (decorativo, no interactivo) de la card. */}
+      <Link
+        href={`/${entity.type}/${entity.slug}`}
+        className="absolute inset-0 z-10 rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gta-accent"
       >
-        <Card hoverable className={cn('flex h-full flex-col overflow-hidden !p-0', size === 'hero' && 'lg:flex-row')}>
+        <span className="sr-only">Ver ficha de {entity.title}</span>
+      </Link>
+
+      <Card hoverable className={cn('flex h-full flex-col overflow-hidden !p-0', size === 'hero' && 'lg:flex-row')}>
           <div
             ref={mediaWrapRef}
             className={cn('relative', size === 'hero' && 'lg:w-2/5 lg:shrink-0')}
@@ -650,8 +684,7 @@ export function EntityCard({
             </span>
           </div>
         </CardBody>
-        </Card>
-      </div>
-    </Link>
+      </Card>
+    </div>
   )
 }
