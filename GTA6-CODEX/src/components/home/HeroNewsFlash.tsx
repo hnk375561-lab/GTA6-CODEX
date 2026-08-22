@@ -26,6 +26,14 @@ interface HeroNewsFlashProps {
  * cambiarle el link debajo del cursor) y con prefers-reduced-motion
  * (queda fijo en el primer item, el más reciente).
  *
+ * Pausa por touch (corrección real, no cosmética): `onMouseEnter` no
+ * cubre mobile — no existe hover real en touch, así que en un teléfono
+ * la rotación seguía avanzando sola sin ninguna forma de "detenerla
+ * para leer" apoyando el dedo, a diferencia de desktop. `onTouchStart`
+ * en el contenedor pausa igual que el hover; queda pausado (mismo
+ * criterio que ya usan los dots al hacer click: una vez que el usuario
+ * interactúa, no le vuelve a cambiar el titular debajo del dedo).
+ *
  * Los puntitos de abajo (`hero-news-flash-dots`) ahora son controles
  * reales, no solo un indicador visual de "cuántos hay": antes eran
  * `<span aria-hidden>` sin ningún `onClick`, así que parecían — por
@@ -73,6 +81,7 @@ export function HeroNewsFlash({ items, intervalMs = 6000 }: HeroNewsFlashProps) 
       className="hero-news-flash glass-surface inline-flex max-w-full items-center gap-2.5 rounded-full border border-gta-border/70 px-4 py-2 hover:-translate-y-0.5 hover:border-gta-accent/60"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
+      onTouchStart={() => setPaused(true)}
     >
       <Link
         href={`/${current.type}/${current.slug}`}

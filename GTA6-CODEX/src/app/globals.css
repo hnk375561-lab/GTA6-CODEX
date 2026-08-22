@@ -888,7 +888,13 @@ a:hover .logo-mark {
    teclado. --- */
 .hero-scroll-cue {
   position: absolute;
-  bottom: 1.75rem;
+  /* `env(safe-area-inset-bottom)` cubre el home indicator de iPhone en
+     landscape (y notches equivalentes en Android): sin esto, `1.75rem`
+     fijos podían quedar parcial o totalmente tapados/superpuestos por
+     esa franja del sistema en esos dispositivos. `+ 1.75rem` conserva
+     el mismo margen de siempre en dispositivos sin safe-area (donde
+     `env()` no resuelve nada, es 0px). */
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 1.75rem);
   left: 50%;
   z-index: 2;
   display: flex;
