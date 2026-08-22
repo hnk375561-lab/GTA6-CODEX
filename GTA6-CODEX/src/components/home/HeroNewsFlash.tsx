@@ -30,9 +30,12 @@ interface HeroNewsFlashProps {
  * cubre mobile — no existe hover real en touch, así que en un teléfono
  * la rotación seguía avanzando sola sin ninguna forma de "detenerla
  * para leer" apoyando el dedo, a diferencia de desktop. `onTouchStart`
- * en el contenedor pausa igual que el hover; queda pausado (mismo
- * criterio que ya usan los dots al hacer click: una vez que el usuario
- * interactúa, no le vuelve a cambiar el titular debajo del dedo).
+ * en el contenedor pausa igual que el hover, y `onTouchEnd` la reanuda
+ * al soltar — sin esto último quedaba pausada para siempre en mobile,
+ * porque touch nunca dispara `onMouseLeave`. Los dots individuales sí
+ * dejan `paused` fijo tras un tap (ver sus propios handlers más abajo):
+ * una vez que el usuario elige un titular puntual, no se le vuelve a
+ * cambiar solo.
  *
  * Los puntitos de abajo (`hero-news-flash-dots`) ahora son controles
  * reales, no solo un indicador visual de "cuántos hay": antes eran
@@ -82,6 +85,7 @@ export function HeroNewsFlash({ items, intervalMs = 6000 }: HeroNewsFlashProps) 
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onTouchStart={() => setPaused(true)}
+      onTouchEnd={() => setPaused(false)}
     >
       <Link
         href={`/${current.type}/${current.slug}`}
