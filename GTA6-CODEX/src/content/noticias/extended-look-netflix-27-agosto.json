@@ -46,6 +46,16 @@
       "targetType": "trailers",
       "targetSlug": "trailer-2-gameplay",
       "relation": "referencia-comparativa"
+    },
+    {
+      "targetType": "guias",
+      "targetSlug": "guia-checklist-lanzamiento",
+      "relation": "referenciada-por"
+    },
+    {
+      "targetType": "guias",
+      "targetSlug": "faq-lanzamiento-gta6",
+      "relation": "fuente-de-contexto-para"
     }
   ],
   "seoTitle": "GTA 6: Extended Look se Estrena el 27 de Agosto en Netflix — Noticias de GTA 6",
