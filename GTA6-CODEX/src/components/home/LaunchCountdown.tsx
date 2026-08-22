@@ -47,7 +47,18 @@ function pad(n: number) {
 
 function formatLocalDateTime(targetIso: string): string | null {
   const d = new Date(targetIso)
-  if (Number.isNaN(d.getTime())) return null
+  if (Number.isNaN(d.getTime())) {
+    // `targetIso` viene de contenido editorial (no de un formulario), así
+    // que un valor inválido es casi siempre un typo en el JSON fuente. En
+    // producción el componente ya lo maneja bien (el bloque de fecha
+    // simplemente no se renderiza — ver `{localDateTime && (...)}` más
+    // abajo), pero sin este warning ese typo queda silencioso y nadie se
+    // entera hasta notar la fecha faltante a simple vista.
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn(`[LaunchCountdown] targetIso inválido, no se pudo formatear: "${targetIso}"`)
+    }
+    return null
+  }
   return d.toLocaleString('es-ES', {
     weekday: 'long',
     day: 'numeric',
