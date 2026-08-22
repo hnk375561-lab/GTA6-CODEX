@@ -1,0 +1,51 @@
+{
+  "slug": "filtraciones-reales-vs-fakes-ia-agosto-2026",
+  "type": "noticias",
+  "title": "Distinguir Filtraciones Reales de GTA VI de los Fakes con IA se Volvió Casi Imposible en Redes Sociales",
+  "description": "Mientras el material real de 'Cyberleek' circula por internet, una oleada paralela de clips falsos generados con inteligencia artificial —incluyendo videos de Lucia en un parque temático y otro de Jason jugando al básquet— confunde a los fans que buscan las filtraciones genuinas.",
+  "content": "A medida que la filtración de 'Cyberleek' se extendía durante la semana del 18 de agosto de 2026, un problema paralelo empezó a complicar el seguimiento del caso: la proliferación de clips falsos generados con inteligencia artificial que se hacen pasar por material filtrado auténtico de GTA VI, mezclados con los leaks reales en redes sociales.\n\n**El problema, según la prensa especializada:**\n\nSegún un reporte de Kotaku, buscar términos como 'GTA 6 leaks' en X (Twitter) devuelve una combinación de filtraciones genuinas y una gran cantidad de contenido generado con IA de mala calidad, reciclado de ciclos anteriores de rumores, que se presenta como si fuera material filtrado real. Entre los ejemplos identificados por el medio se encuentran un video que muestra a Lucia (la segunda protagonista del juego) caminando por lo que parece ser un parque de diversiones, y otro clip de Jason jugando al básquet —una escena que puede generar confusión adicional, ya que el video genuino de 'Cyberleek' del 18 de agosto también mostraba a Jason jugando al básquet, pero se trata de dos materiales completamente distintos.\n\n**Por qué es difícil distinguirlos:**\n\nSegún la nota, parte de este contenido generado con IA resulta 'bastante convincente' a primera vista o en pantallas pequeñas de celular, pero las funciones, ubicaciones y animaciones que muestra no se corresponden con nada real del juego. El riesgo señalado por los periodistas es que quienes están al tanto de la filtración real, al ver estos clips de IA, asuman que también son genuinos, lo que podría alimentar debates sobre 'contenido cortado' del juego que en realidad nunca existió.\n\n**El criterio de autenticidad más usado hasta ahora:**\n\nEn ausencia de una confirmación oficial de Rockstar, el criterio principal que la prensa y la comunidad han usado para distinguir el material genuino de 'Cyberleek' del contenido generado con IA ha sido la respuesta legal de Rockstar y Take-Two: los clips que reciben avisos de retirada DMCA se interpretan como más probablemente auténticos, mientras que el contenido de IA generalmente circula sin generar ese tipo de reclamos de derechos de autor, dado que no hay material original protegido detrás.\n\n**Recomendación de la prensa especializada:**\n\nVarios medios coinciden en recomendar a los fans tratar con extrema cautela cualquier clip individual que circule bajo la etiqueta de GTA VI durante este período, y esperar a la confirmación indirecta que representan las notificaciones DMCA o, en última instancia, al evento oficial del 27 de agosto en Netflix.",
+  "status": "confirmado",
+  "tags": [
+    "ia",
+    "deepfake",
+    "desinformacion",
+    "cyberleek",
+    "agosto-2026",
+    "verificacion",
+    "lucia",
+    "jason-duval"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-21T00:00:00Z",
+  "updatedAt": "2026-08-21T00:00:00Z",
+  "evidence": {
+    "level": "verificado",
+    "primarySource": "Kotaku — 'Real GTA 6 Leaks Are Hard To Spot In 2026 Due To All The AI Fakes' (21 de agosto de 2026)",
+    "secondarySource": "Cobertura adicional de medios hispanohablantes (Semana, MuyComputer) señalando el mismo fenómeno de falsas filtraciones históricas y recientes",
+    "note": "El fenómeno de contenido con IA está bien documentado por prensa especializada, pero por su propia naturaleza es imposible catalogar de forma exhaustiva todo el contenido falso en circulación en un momento dado; esta noticia describe el patrón general, no un inventario cerrado de clips falsos.",
+    "limitations": [
+      "No existe una lista oficial ni definitiva de qué clips son auténticos y cuáles son generados con IA",
+      "El criterio de las notificaciones DMCA como señal de autenticidad es una inferencia de la prensa, no una confirmación de Rockstar",
+      "Este fenómeno es dinámico y es probable que sigan apareciendo nuevos clips falsos hasta el evento oficial del 27 de agosto"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "noticias",
+      "targetSlug": "leak-gameplay-mapa-agosto-2026",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "cyberleek-build-jugable-mas-filtraciones",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "protagonista-de"
+    }
+  ],
+  "seoTitle": "Filtraciones Reales vs. Fakes con IA de GTA VI — Noticias de GTA 6",
+  "seoDescription": "Una oleada de clips falsos generados con inteligencia artificial se mezcla con las filtraciones reales de GTA VI en redes sociales, dificultando distinguir el material genuino."
+}
