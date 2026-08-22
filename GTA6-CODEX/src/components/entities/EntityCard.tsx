@@ -291,8 +291,21 @@ export function EntityCard({
    *  puntual) — el sello simplemente no se renderiza en ese caso. */
   const evidenceStamp = entity.evidence?.level ? EVIDENCE_STAMP_META[entity.evidence.level] : null
 
+  // Antes solo se leía `.matches` una vez al montar: si el usuario cambiaba
+  // la preferencia del sistema (o del emulador de DevTools) con la página
+  // ya abierta, el tilt 3D seguía activo hasta el próximo refresh. Con el
+  // listener `change` (mismo patrón que ya usa HeroNewsFlash para su propio
+  // reducedMotion) el estado se actualiza en vivo, y si se activa mientras
+  // la card está inclinada, se resetea el transform al toque.
   useEffect(() => {
-    setReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+    const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setReducedMotion(mql.matches)
+    const handler = (e: MediaQueryListEvent) => {
+      setReducedMotion(e.matches)
+      if (e.matches) handleTiltLeave()
+    }
+    mql.addEventListener('change', handler)
+    return () => mql.removeEventListener('change', handler)
   }, [])
 
   // Clip como media ambiental: arranca el loop (mute, sin sonido) apenas la
