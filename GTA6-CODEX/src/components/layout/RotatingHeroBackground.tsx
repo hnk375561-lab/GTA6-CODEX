@@ -26,9 +26,11 @@ import { HeroSceneSVG } from './HeroSceneSVG'
  * al array de rutas de imagen que tenía este componente antes; se
  * mantiene el mismo prop `backgrounds` por compatibilidad con el caller
  * (`src/app/page.tsx`), pero ahora sus valores son ids de variante en
- * vez de rutas de archivo.
+ * vez de rutas de archivo. Incluye las tres variantes de `HeroSceneSVG`
+ * (magenta/cian/dorado) — antes solo rotaban dos de los tres acentos
+ * oficiales del sitio.
  */
-const DEFAULT_HERO_BACKGROUNDS = ['magenta', 'cyan'] as const
+const DEFAULT_HERO_BACKGROUNDS = ['magenta', 'cyan', 'gold'] as const
 
 const ROTATE_INTERVAL_MS = 7000
 const CROSSFADE_MS = 1500
@@ -44,6 +46,15 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
   const HERO_BACKGROUNDS = backgrounds.length > 0 ? backgrounds : DEFAULT_HERO_BACKGROUNDS
   const [index, setIndex] = useState(0)
   const [reducedMotion, setReducedMotion] = useState(false)
+  // Quien navega con "Ahorro de datos" activado (Save-Data, Chrome/Android
+  // sobre todo) o con una conexión declarada como lenta (2g/slow-2g vía
+  // Network Information API) recibe la misma escena que ya se ve en el
+  // primer render: un único fondo, sin precargar el resto ni animar el
+  // crossfade/parallax. Mismo criterio que `reducedMotion` (chequeo una
+  // vez al montar + listener de cambios), pero por preferencia de datos en
+  // vez de preferencia de movimiento — la API es experimental y puede no
+  // existir, por eso todo el bloque está detrás de un guard opcional.
+  const [saveData, setSaveData] = useState(false)
   // Cuántas imágenes del array están montadas en el DOM. Arranca en 1
   // (solo la primera, con `priority`) y se completa de a una — ver el
   // efecto de abajo — en vez de montar las 5-6 de entrada: antes, al
@@ -65,12 +76,36 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
   }, [])
 
   useEffect(() => {
-    if (reducedMotion || HERO_BACKGROUNDS.length < 2) return
+    // `navigator.connection` (Network Information API) no está en todos
+    // los navegadores (notablemente Safari/iOS) — sin soporte, `nav` queda
+    // `undefined` y `saveData` se queda en `false`, el comportamiento de
+    // siempre.
+    const nav = (navigator as Navigator & {
+      connection?: {
+        saveData?: boolean
+        effectiveType?: string
+        addEventListener?: (type: 'change', listener: () => void) => void
+        removeEventListener?: (type: 'change', listener: () => void) => void
+      }
+    }).connection
+    if (!nav) return
+
+    const evaluate = () => {
+      const slowEffectiveType = nav.effectiveType === 'slow-2g' || nav.effectiveType === '2g'
+      setSaveData(Boolean(nav.saveData) || slowEffectiveType)
+    }
+    evaluate()
+    nav.addEventListener?.('change', evaluate)
+    return () => nav.removeEventListener?.('change', evaluate)
+  }, [])
+
+  useEffect(() => {
+    if (reducedMotion || saveData || HERO_BACKGROUNDS.length < 2) return
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % HERO_BACKGROUNDS.length)
     }, ROTATE_INTERVAL_MS)
     return () => clearInterval(id)
-  }, [reducedMotion, HERO_BACKGROUNDS.length])
+  }, [reducedMotion, saveData, HERO_BACKGROUNDS.length])
 
   // Precarga escalonada: monta (y por lo tanto descarga) una imagen más
   // cada 2s, muy por debajo del intervalo de rotación (7s), así que cada
@@ -79,18 +114,18 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
   // así que no tiene sentido seguir precargando fondos que no se van a
   // mostrar nunca.
   useEffect(() => {
-    if (reducedMotion) return
+    if (reducedMotion || saveData) return
     if (mountedCount >= HERO_BACKGROUNDS.length) return
     const id = setTimeout(() => {
       setMountedCount((c) => Math.min(c + 1, HERO_BACKGROUNDS.length))
     }, 2000)
     return () => clearTimeout(id)
-  }, [reducedMotion, mountedCount, HERO_BACKGROUNDS.length])
+  }, [reducedMotion, saveData, mountedCount, HERO_BACKGROUNDS.length])
 
   // Parallax de scroll (capa lejana) + parallax de cursor (profundidad sutil).
   // Un solo rAF combina ambas fuentes para no pisarse el transform entre sí.
   useEffect(() => {
-    if (reducedMotion) return
+    if (reducedMotion || saveData) return
 
     let raf = 0
     const applyTransform = () => {
@@ -137,19 +172,19 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
       window.removeEventListener('pointermove', onPointerMove)
       if (raf) cancelAnimationFrame(raf)
     }
-  }, [reducedMotion])
+  }, [reducedMotion, saveData])
 
   return (
     <div ref={rootRef} className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
       <div
         ref={layerRef}
         className="absolute inset-0"
-        style={reducedMotion ? undefined : { willChange: 'transform' }}
+        style={reducedMotion || saveData ? undefined : { willChange: 'transform' }}
       >
         {HERO_BACKGROUNDS.slice(0, mountedCount).map((variant, i) => (
           <HeroSceneSVG
             key={`${variant}-${i}`}
-            variant={variant as 'magenta' | 'cyan'}
+            variant={variant as 'magenta' | 'cyan' | 'gold'}
             instanceId={`${variant}-${i}`}
             className="absolute inset-0 h-full w-full object-cover"
             style={{

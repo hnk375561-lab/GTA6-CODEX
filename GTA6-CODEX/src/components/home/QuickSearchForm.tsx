@@ -10,6 +10,15 @@ import { useRouter } from 'next/navigation'
  * lee ese query param server-side (ver `/buscar/page.tsx`) y lo usa como
  * estado inicial de `SearchClient` — deep-linking real, no un input de
  * juguete que aterriza en una página de búsqueda vacía.
+ *
+ * Progressive enhancement: antes el `<form>` no tenía `action`/`method`
+ * ni el input un `name`, así que dependía 100% de `onSubmit` — con JS
+ * caído (falla de carga del bundle, extensión que lo bloquea, etc.) el
+ * submit no hacía nada. Ahora `action="/buscar" method="get"` + `name="q"`
+ * hacen que el navegador arme la misma URL (`/buscar?q=...`) por su
+ * cuenta si `handleSubmit` nunca llega a correr; `preventDefault()` sigue
+ * interceptando el caso normal (JS activo) para navegar con el router de
+ * Next en vez de una recarga completa.
  */
 export function QuickSearchForm() {
   const router = useRouter()
@@ -42,7 +51,13 @@ export function QuickSearchForm() {
   }, [])
 
   return (
-    <form onSubmit={handleSubmit} className="relative mx-auto w-full max-w-xl" role="search">
+    <form
+      onSubmit={handleSubmit}
+      action="/buscar"
+      method="get"
+      className="relative mx-auto w-full max-w-xl"
+      role="search"
+    >
       <svg
         className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gta-text-tertiary"
         width="16"
@@ -61,6 +76,7 @@ export function QuickSearchForm() {
       <input
         ref={inputRef}
         type="search"
+        name="q"
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Ej. Jason Duval, Vice City, Bati 801…"

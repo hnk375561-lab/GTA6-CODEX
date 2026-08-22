@@ -12,7 +12,7 @@ import {
 } from '@/lib/entities'
 import { getCharacterClipUrl, resolveEntityDisplayImage } from '@/lib/media'
 import { getBidirectionalRelationCount } from '@/lib/relations'
-import { generateHomepageMetadata, generateBreadcrumbJsonLd } from '@/lib/seo'
+import { generateHomepageMetadata, generateBreadcrumbJsonLd, generateWebsiteJsonLd } from '@/lib/seo'
 import { formatRelativeTime } from '@/lib/utils'
 import { Card } from '@/components/ui/Card'
 import { Reveal } from '@/components/ui/Reveal'
@@ -235,6 +235,11 @@ export default async function HomePage() {
   )[0]
 
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
+  // `WebSite` + `SearchAction`: describe el buscador rápido que vive en el
+  // hero (`QuickSearchForm`) para que Google pueda ofrecer un sitelinks
+  // search box. Vive acá (no en `generateHomepageMetadata`) porque es JSON-LD
+  // de página, no metadata de `<head>` — mismo patrón que `breadcrumbLd`.
+  const websiteLd = generateWebsiteJsonLd()
 
   // Resuelve, para cada fecha ancla, la noticia más reciente cuyos tags
   // coincidan con el tema — mismo criterio que ya usa `relations` en el
@@ -285,10 +290,15 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
+      />
 
       {/* Hero */}
       <SceneSection
         sceneId="home-hero"
+        htmlId="hero"
         className="hero-gleam relative overflow-hidden border-b border-gta-border py-24 sm:py-32"
       >
         <RotatingHeroBackground />
