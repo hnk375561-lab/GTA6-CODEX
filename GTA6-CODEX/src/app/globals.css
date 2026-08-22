@@ -383,7 +383,26 @@ a:hover .logo-mark {
    navegador todavía no conoce el tamaño real de una card salteada. */
 .entity-card-viewport {
   content-visibility: auto;
-  contain-intrinsic-size: 0 460px;
+  /* Estimado mobile-first: en pantallas angostas la grilla es 1-2
+     columnas y la card queda más alta (imagen a lo ancho + cuerpo
+     apilado) que en desktop, donde hay más columnas y cada card es más
+     compacta. Un único valor fijo (el de desktop) subestimaba el alto
+     real en mobile, igual que le pasaba a .gallery-tile-viewport antes
+     de sus propios breakpoints — incrementa el reflow durante el scroll
+     en vez de evitarlo. */
+  contain-intrinsic-size: 0 620px;
+}
+
+@media (min-width: 640px) {
+  .entity-card-viewport {
+    contain-intrinsic-size: 0 520px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .entity-card-viewport {
+    contain-intrinsic-size: 0 460px;
+  }
 }
 
 .entity-card-viewport--row {
@@ -396,7 +415,13 @@ a:hover .logo-mark {
    la card de resultado de búsqueda es más compacta que EntityCard. */
 .search-result-viewport {
   content-visibility: auto;
-  contain-intrinsic-size: 0 108px;
+  contain-intrinsic-size: 0 132px;
+}
+
+@media (min-width: 640px) {
+  .search-result-viewport {
+    contain-intrinsic-size: 0 108px;
+  }
 }
 
 /* --- /galeria: mismo problema que Vehículos pero más grande todavía —
