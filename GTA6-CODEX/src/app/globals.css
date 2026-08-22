@@ -1697,17 +1697,26 @@ a:hover .logo-mark {
 .hero-declass-bar {
   position: absolute;
   left: 8%;
-  height: 0.6rem;
-  border-radius: 2px;
-  background: color-mix(in srgb, #0a0712 88%, transparent);
-  box-shadow:
-    inset 0 -1px 0
-      color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 70%), #ff2f8f calc((1 - var(--scene-warmth)) * 70%)),
-    0 0 18px -8px
-      color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 55%), #ff2f8f calc((1 - var(--scene-warmth)) * 55%));
+  height: 1.1rem;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 100%), #ff2f8f calc((1 - var(--scene-warmth)) * 100%)) 0%,
+    color-mix(in srgb, #0a0712 88%, transparent) 100%
+  );
+  box-shadow: 0 0 26px -4px
+    color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 90%), #ff2f8f calc((1 - var(--scene-warmth)) * 90%));
+  /* `exit` (no `cover`): el 0% de este rango es el momento en que el hero
+     EMPIEZA a salir del viewport al scrollear — nunca antes de eso. Con
+     `cover`, si el hero entra completo en pantalla al cargar (no es más
+     alto que el viewport), su punto 0% de "cover" ya había pasado antes
+     de que el usuario tocara el scroll, así que las franjas arrancaban ya
+     en su estado final (invisibles) desde el primer frame. `exit` no
+     tiene ese problema: por definición solo puede empezar cuando el
+     usuario realmente scrollea el hero fuera de foco. */
   animation: hero-declass-strip 900ms var(--ease-premium) both;
   animation-timeline: --hero-scroll;
-  animation-range: cover 0% cover 55%;
+  animation-range: exit 0% exit 75%;
 }
 
 .hero-declass-bar--1 {
@@ -1766,7 +1775,7 @@ a:hover .logo-mark {
   -webkit-backdrop-filter: blur(6px) saturate(140%);
   animation: hero-declass-tab-in 420ms var(--ease-out-back) both;
   animation-timeline: --hero-scroll;
-  animation-range: cover 30% cover 60%;
+  animation-range: exit 25% exit 85%;
 }
 
 @keyframes hero-declass-tab-in {
