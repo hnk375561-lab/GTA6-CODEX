@@ -1,0 +1,45 @@
+{
+  "slug": "cyberleek-manifiesto-tres-exigencias",
+  "type": "noticias",
+  "title": "Cyberleek Publica un Manifiesto Formal con Tres Exigencias a Rockstar y Advierte a Toda la Industria",
+  "description": "El filtrador de GTA VI publica en su propio sitio web un documento formal ('Cyberleek Edict') con tres exigencias dirigidas a Rockstar y Take-Two, y extiende la advertencia al resto de las grandes editoras de videojuegos.",
+  "content": "Además de los clips de gameplay, durante el 20 de agosto de 2026 el actor conocido como 'Cyberleek' publicó en su propio sitio web un documento formal —al que varios medios se refieren como el 'Cyberleek Edict'— en el que detalla tres exigencias concretas dirigidas a Rockstar Games y Take-Two Interactive, y advierte que extenderá el mismo trato a cualquier otra editora que, a su criterio, incumpla estas condiciones.\n\n**Las tres exigencias del manifiesto:**\n\n1. Ningún consumidor debería pagar por un videojuego a través de tiendas digitales antes de su lanzamiento y antes de que existan análisis independientes publicados. El documento distingue esto de las reservas físicas, que sí estarían justificadas por las limitaciones de fabricación y distribución de un disco; en el mercado digital, argumenta el manifiesto, no existe escasez de unidades ni inventario limitado, por lo que las editoras mantendrían el sistema de preventa sin ofrecer ningún beneficio real al consumidor.\n2. Rechazo a contenido para un jugador que ya está presente en los archivos del juego pero bloqueado detrás de pagos adicionales ('DLC falso'), práctica que el documento describe como bloquear contenido en discos y llamarlo DLC.\n3. Exigencia de estados de 'respaldo offline' obligatorios para juegos con campaña de un jugador, de forma que el contenido para un jugador siga funcionando aunque los servidores de una compañía se apaguen en el futuro. El manifiesto cita explícitamente el cierre de servidores de un título de Ubisoft como ejemplo de lo que busca evitar.\n\n**El ultimátum:**\n\nEl documento concluye que estos tres puntos representan 'el mínimo aceptable, no el máximo', y que Cyberleek continuará interrumpiendo las operaciones de las compañías que los incumplan hasta que emitan una declaración pública y una disculpa, acompañadas de un compromiso concreto para reparar el daño causado. El manifiesto es explícito en que no aceptará 'negociaciones privadas' ni 'acuerdos silenciosos': exige que cualquier resolución sea pública.\n\n**Advertencia a toda la industria:**\n\nLa frase de cierre del documento amplía el alcance del conflicto más allá de Rockstar: 'Si Cyberleek pudo llegar hasta Rockstar, nadie está a salvo. Este es un mensaje para todas las grandes corporaciones: compórtense, o serán el próximo objetivo'. Varios medios interpretan esto como una amenaza directa de ataques similares contra otras editoras si no modifican sus prácticas comerciales.\n\n**Mención a Stop Killing Games:**\n\nEl manifiesto hace referencia al movimiento de consumidores Stop Killing Games, iniciado en 2024 tras el cierre de servidores de un juego de Ubisoft. Sin embargo, ese movimiento se distanció públicamente de Cyberleek y calificó su filtración de 'destructiva', rechazando cualquier vínculo con sus métodos.\n\n**Sin respuesta de Rockstar:**\n\nHasta la fecha, ni Rockstar Games ni Take-Two Interactive han emitido una respuesta pública a las exigencias planteadas en el manifiesto. La única acción documentada de las compañías ha sido la emisión continua de notificaciones DMCA contra el material filtrado.",
+  "status": "rumor",
+  "tags": [
+    "cyberleek",
+    "manifiesto",
+    "exigencias",
+    "agosto-2026",
+    "no-oficial",
+    "stop-killing-games",
+    "ediciones-digitales"
+  ],
+  "featured": true,
+  "createdAt": "2026-08-20T00:00:00Z",
+  "updatedAt": "2026-08-21T00:00:00Z",
+  "evidence": {
+    "level": "especulativo",
+    "primarySource": "XDA Developers — 'GTA 6 leaker's manifesto demands an apology from Rockstar over its anti-consumerism' (20-21 de agosto de 2026)",
+    "secondarySource": "Gameranx, adslzone.net y publicaciones en X citando íntegramente el documento conocido como 'Cyberleek Edict'",
+    "note": "El manifiesto es una declaración unilateral del propio filtrador publicada en un sitio web no oficial. Ni su contenido ni sus exigencias han sido confirmados, respondidos o comentados oficialmente por Rockstar Games o Take-Two Interactive.",
+    "limitations": [
+      "No existe confirmación independiente de la identidad ni la legitimidad de quien está detrás de 'Cyberleek'",
+      "El texto citado por distintos medios varía ligeramente en su traducción y redacción exacta según la fuente",
+      "Rockstar Games y Take-Two Interactive no han respondido públicamente a ninguna de las tres exigencias planteadas"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "noticias",
+      "targetSlug": "cyberleek-build-jugable-mas-filtraciones",
+      "relation": "continuación-de"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "leak-gameplay-mapa-agosto-2026",
+      "relation": "relacionada-con"
+    }
+  ],
+  "seoTitle": "El Manifiesto de Cyberleek: Tres Exigencias a Rockstar — Noticias de GTA 6",
+  "seoDescription": "Cyberleek publica un documento formal con tres exigencias a Rockstar y Take-Two sobre preventas digitales, DLC y respaldo offline, y advierte a toda la industria del videojuego."
+}

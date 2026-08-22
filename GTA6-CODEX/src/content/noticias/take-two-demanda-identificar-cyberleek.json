@@ -1,0 +1,50 @@
+{
+  "slug": "take-two-demanda-identificar-cyberleek",
+  "type": "noticias",
+  "title": "Take-Two Lleva las Filtraciones de GTA VI a la Justicia y Cita a Microsoft y Discord para Identificar a Cyberleek",
+  "description": "Take-Two Interactive presenta citaciones judiciales ante un tribunal federal dirigidas a Microsoft y Discord, buscando registros que permitan conectar las cuentas usadas por 'Cyberleek' con una identidad real.",
+  "content": "El jueves 21 de agosto de 2026, Take-Two Interactive dio el paso más contundente hasta ahora en su respuesta a la ola de filtraciones de GTA VI: presentó citaciones judiciales (subpoenas) ante un tribunal federal dirigidas a Microsoft y a Discord, en un intento por obtener información que permita identificar a la persona o grupo detrás del nombre 'Cyberleek'.\n\n**Qué pide Take-Two:**\n\nSegún la documentación presentada, la compañía solicita datos asociados a las cuentas que participaron en determinados servidores de Discord entre el 1 de junio de 2026 y la actualidad, incluyendo registros de acceso, direcciones de correo electrónico, números de teléfono, cuentas vinculadas, fechas de registro e identificadores de dispositivo. La solicitud también abarca registros de mensajes y otros datos técnicos que podrían ayudar a conectar las distintas identidades digitales utilizadas durante la filtración.\n\n**Por qué Microsoft:**\n\nMicrosoft recibió una citación separada debido a que controla varios servicios potencialmente relevantes para la investigación, entre ellos GitHub y Xbox. Take-Two solicita específicamente registros de cualquier investigación interna que Microsoft pudiera haber realizado sobre la identidad 'Cyberleek', además de otra información técnica asociada a esas plataformas.\n\n**Contexto:**\n\nEsta acción legal llega después de varios días en los que Rockstar y Take-Two se limitaron a emitir notificaciones DMCA para retirar el material filtrado de redes sociales, sin hacer ningún comunicado público sobre el incidente. El paso a instancias judiciales federales marca un cambio de estrategia: de la contención reactiva del contenido a la búsqueda activa de la identidad del responsable, lo que podría derivar en acciones legales directas contra esa persona o grupo.\n\n**Estado de la filtración en paralelo:**\n\nMientras se conocía esta noticia, 'Cyberleek' continuó publicando material adicional y no ha dado señales de detenerse pese a la acción legal. Ni Rockstar ni Take-Two han hecho declaraciones públicas más allá de lo documentado en las citaciones judiciales.",
+  "status": "confirmado",
+  "tags": [
+    "take-two",
+    "legal",
+    "cyberleek",
+    "microsoft",
+    "discord",
+    "agosto-2026",
+    "citacion-judicial"
+  ],
+  "featured": true,
+  "createdAt": "2026-08-21T00:00:00Z",
+  "updatedAt": "2026-08-21T00:00:00Z",
+  "evidence": {
+    "level": "verificado",
+    "primarySource": "Kotaku en Español — 'Take-Two lleva a los tribunales las filtraciones de GTA 6 y busca descubrir quién está detrás de Cyberleek' (21 de agosto de 2026)",
+    "secondarySource": "Cobertura adicional de medios especializados en videojuegos sobre las citaciones judiciales presentadas ante un tribunal federal",
+    "note": "La presentación de las citaciones judiciales está documentada por prensa especializada citando la documentación legal. No se ha confirmado públicamente si Microsoft o Discord ya entregaron la información solicitada, ni si esto ha derivado en la identificación real de 'Cyberleek'.",
+    "limitations": [
+      "No se conoce públicamente el resultado de las citaciones ni si Microsoft/Discord cumplirán con la solicitud",
+      "No hay confirmación de que esta acción legal haya identificado o vaya a identificar con certeza a la persona o grupo detrás de 'Cyberleek'",
+      "Rockstar Games no ha emitido comunicado público adicional relacionado con esta acción legal"
+    ]
+  },
+  "relations": [
+    {
+      "targetType": "noticias",
+      "targetSlug": "cyberleek-manifiesto-tres-exigencias",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "cyberleek-build-jugable-mas-filtraciones",
+      "relation": "continuación-de"
+    },
+    {
+      "targetType": "noticias",
+      "targetSlug": "leak-gameplay-mapa-agosto-2026",
+      "relation": "relacionada-con"
+    }
+  ],
+  "seoTitle": "Take-Two Demanda a Microsoft y Discord por las Filtraciones de GTA VI — Noticias de GTA 6",
+  "seoDescription": "Take-Two Interactive presenta citaciones judiciales federales a Microsoft y Discord para intentar identificar al responsable de las filtraciones de GTA VI conocido como 'Cyberleek'."
+}
