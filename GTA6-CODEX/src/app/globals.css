@@ -902,6 +902,13 @@ a:hover .logo-mark {
    temperatura). En reposo (--scene-intro: 1, sin motor) es invisible. --- */
 .hero-gleam {
   isolation: isolate;
+  /* Publica el progreso de scroll del propio hero como named view-timeline
+     nativo (`--hero-scroll`), sin listeners: `.hero-declass` de más abajo
+     se ata a esta misma línea de tiempo. Puramente aditivo — ningún otro
+     selector lee `--hero-scroll`, así que esto no cambia nada del layout
+     ni de la coreografía `--scene-intro` existente. */
+  view-timeline-name: --hero-scroll;
+  view-timeline-axis: block;
 }
 
 .hero-gleam > .hero-gleam-sweep {
@@ -1659,6 +1666,146 @@ a:hover .logo-mark {
   pointer-events: none;
   z-index: 1;
   background: radial-gradient(ellipse 80% 60% at 50% 40%, transparent 40%, rgba(3, 2, 6, 0.7) 100%);
+}
+
+/* --- Hero: "declasificación" al scrollear ------------------------------
+   Traduce el gesto del pill "Expediente no oficial · clasificado" a
+   movimiento: tres franjas de redacción (estética de documento tachado)
+   viven en el margen superior del hero, sobre el fondo WebGL pero SIEMPRE
+   debajo del contenido real (mismo z-index:1 que scanlines/vignette) —
+   nunca tapan el título, el CTA ni el buscador. A medida que el usuario
+   scrollea y el hero sale de foco, las franjas se despegan hacia los
+   costados y un sello de "nivel de acceso" se asienta en su lugar.
+
+   Motor: `animation-timeline: --hero-scroll` (definido en `.hero-gleam`
+   arriba) — el progreso viene de cuánto del propio `#hero` sigue en
+   viewport, resuelto por el compositor en cada frame. Cero listeners de
+   scroll, cero recálculo de layout en el hilo principal: el mismo tipo de
+   costo (cercano a cero) que ya tienen `--scene-intro`/`--scene-kick`
+   cuando el motor WebGL está inactivo, pero sin depender de JS en absoluto
+   para este layer puntual. Por diseño, en reposo (antes de scrollear) las
+   franjas están en su lugar y el sello oculto — es decir, sin soporte de
+   scroll-driven animations (ver @supports abajo) el hero simplemente se ve
+   "sellado" de forma estática, nunca roto a medio camino. --- */
+.hero-declass {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-declass-bar {
+  position: absolute;
+  left: 8%;
+  height: 0.6rem;
+  border-radius: 2px;
+  background: color-mix(in srgb, #0a0712 88%, transparent);
+  box-shadow:
+    inset 0 -1px 0
+      color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 70%), #ff2f8f calc((1 - var(--scene-warmth)) * 70%)),
+    0 0 18px -8px
+      color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 55%), #ff2f8f calc((1 - var(--scene-warmth)) * 55%));
+  animation: hero-declass-strip 900ms var(--ease-premium) both;
+  animation-timeline: --hero-scroll;
+  animation-range: cover 0% cover 55%;
+}
+
+.hero-declass-bar--1 {
+  top: 9%;
+  width: min(38%, 17rem);
+  --declass-exit-x: -60vw;
+  --declass-exit-rot: -8deg;
+}
+
+.hero-declass-bar--2 {
+  top: 14.5%;
+  left: 14%;
+  width: min(24%, 11rem);
+  --declass-exit-x: 55vw;
+  --declass-exit-rot: 6deg;
+  animation-delay: 40ms;
+}
+
+.hero-declass-bar--3 {
+  top: 20%;
+  width: min(30%, 13rem);
+  --declass-exit-x: -50vw;
+  --declass-exit-rot: -5deg;
+  animation-delay: 80ms;
+}
+
+@keyframes hero-declass-strip {
+  from {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(var(--declass-exit-x)) rotate(var(--declass-exit-rot));
+  }
+}
+
+/* Sello "nivel de acceso": el mismo lenguaje visual que `.hero-pill`
+   (chip oscuro + mono + glow por `--scene-warmth`), asentándose recién
+   cuando las franjas terminan de despegarse — el payoff del gesto. */
+.hero-declass-tab {
+  position: absolute;
+  bottom: 16%;
+  right: 5%;
+  transform: rotate(-3deg);
+  border-radius: 0.375rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: color-mix(in srgb, #140f20 78%, transparent);
+  padding: 0.3rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b3a3c4;
+  backdrop-filter: blur(6px) saturate(140%);
+  -webkit-backdrop-filter: blur(6px) saturate(140%);
+  animation: hero-declass-tab-in 420ms var(--ease-out-back) both;
+  animation-timeline: --hero-scroll;
+  animation-range: cover 30% cover 60%;
+}
+
+@keyframes hero-declass-tab-in {
+  from {
+    opacity: 0;
+    transform: rotate(-3deg) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-3deg) translateY(0);
+  }
+}
+
+@supports not (animation-timeline: scroll()) {
+  .hero-declass-bar {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-declass-tab {
+    animation: none;
+    opacity: 1;
+    transform: rotate(-3deg) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-declass-bar {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-declass-tab {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: rotate(-3deg) translateY(0) !important;
+  }
 }
 
 /* --- Secciones post-hero: badges de categoría. Mismo lenguaje visual

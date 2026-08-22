@@ -312,6 +312,21 @@ export default async function HomePage() {
             (aria-hidden, no interactivo) — no altera layout ni foco. */}
         <div className="hero-scanlines" aria-hidden="true" />
         <div className="hero-vignette" aria-hidden="true" />
+        {/* "Declasificación": franjas de redacción atadas al view-timeline
+            nativo de #hero (--hero-scroll, publicado por `.hero-gleam` en
+            globals.css) — se despegan solas a medida que el hero sale de
+            foco al scrollear, cero JS de por medio. Viven en el margen
+            superior del hero y quedan por debajo del contenido real
+            (z-index:1, igual que scanlines/vignette): decorativas
+            (aria-hidden) y nunca tapan el título, el CTA ni el buscador.
+            Ver el comentario largo en globals.css para el detalle del
+            fallback estático (@supports / prefers-reduced-motion). */}
+        <div className="hero-declass" aria-hidden="true">
+          <span className="hero-declass-bar hero-declass-bar--1" />
+          <span className="hero-declass-bar hero-declass-bar--2" />
+          <span className="hero-declass-bar hero-declass-bar--3" />
+          <span className="hero-declass-tab">Nivel de acceso: público</span>
+        </div>
         <div className="hero-cinematic container-max relative text-center">
           <Reveal>
             <p className="hero-pill hero-pill-stamp mb-4">
