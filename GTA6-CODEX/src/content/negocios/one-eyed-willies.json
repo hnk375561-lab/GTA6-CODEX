@@ -15,17 +15,27 @@
   ],
   "featured": false,
   "createdAt": "2026-08-19T00:00:00Z",
-  "updatedAt": "2026-08-19T00:00:00Z",
+  "updatedAt": "2026-08-22T00:00:00Z",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games — página oficial de detalle de la Ultimate Edition de GTA VI (24 de junio de 2026)",
     "secondarySource": "Cobertura de Shacknews, Insider Gaming y GamerFuzion reproduciendo la descripción oficial",
-    "note": "Nombre y descripción de servicio confirmados directamente por Rockstar. La ubicación exacta en Lake Leonida se toma de la cobertura de GamerFuzion, que cita el texto oficial; no aparece coordenada específica en el material publicado por Rockstar."
+    "note": "Nombre y descripción de servicio confirmados directamente por Rockstar. La ubicación exacta en Lake Leonida se toma de la cobertura de GamerFuzion, que cita el texto oficial; no aparece coordenada específica en el material publicado por Rockstar. Backfill (22 ago 2026): se agrega la relación 'relacionada-con' hacia personajes/jason-duval y personajes/lucia-caminos con el termino mas debil disponible en el vocabulario del proyecto, mismo criterio que Rideout Customs: Rockstar no los nombra explicitamente aca, la relacion se justifica solo por tratarse de un juego de un unico jugador controlando a ambos protagonistas."
   },
   "relations": [
     {
       "targetType": "negocios",
       "targetSlug": "rideout-customs",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
       "relation": "relacionada-con"
     }
   ],

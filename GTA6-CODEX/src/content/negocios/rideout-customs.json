@@ -15,12 +15,12 @@
   ],
   "featured": false,
   "createdAt": "2026-08-19T00:00:00Z",
-  "updatedAt": "2026-08-19T00:00:00Z",
+  "updatedAt": "2026-08-22T00:00:00Z",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games — página oficial de detalle de la Ultimate Edition de GTA VI (24 de junio de 2026)",
     "secondarySource": "Cobertura de Shacknews, Insider Gaming, GamerFuzion y Dualshockers reproduciendo la descripción oficial",
-    "note": "Nombre, ubicación (Stockyard) y descripción de servicio confirmados directamente por Rockstar como parte del desglose de contenido de la Ultimate Edition."
+    "note": "Nombre, ubicación (Stockyard) y descripción de servicio confirmados directamente por Rockstar como parte del desglose de contenido de la Ultimate Edition. Backfill (22 ago 2026): se agrega la relación 'relacionada-con' hacia personajes/jason-duval y personajes/lucia-caminos con el termino mas debil disponible en el vocabulario del proyecto; a diferencia de Stock 305 o Electric Fang, Rockstar no los nombra explicitamente en la descripcion de este local, y la relacion se justifica solo porque GTA VI es de un unico jugador controlando a ambos protagonistas, por lo que cualquier vehiculo personalizado aqui pertenece a Jason o Lucia. No se sube a una relacion mas fuerte por falta de mencion nominal oficial."
   },
   "relations": [
     {
@@ -31,6 +31,16 @@
     {
       "targetType": "negocios",
       "targetSlug": "one-eyed-willies",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
       "relation": "relacionada-con"
     }
   ],

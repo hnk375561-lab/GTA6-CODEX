@@ -15,18 +15,28 @@
   ],
   "featured": false,
   "createdAt": "2026-08-19T00:00:00Z",
-  "updatedAt": "2026-08-19T00:00:00Z",
+  "updatedAt": "2026-08-22T00:00:00Z",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "Rockstar Games — página oficial de detalle de la Ultimate Edition de GTA VI (24 de junio de 2026)",
     "secondarySource": "Cobertura de Insider Gaming, Driffle y GamerFuzion reproduciendo la descripción oficial y el crédito a FAILE",
-    "note": "Nombre, ubicación (Stockyard), cantidad de diseños y colaboración con FAILE confirmados directamente por Rockstar."
+    "note": "Nombre, ubicación (Stockyard), cantidad de diseños y colaboración con FAILE confirmados directamente por Rockstar. Backfill (22 ago 2026): se agrega la relación 'relacionada-con' hacia personajes/jason-duval y personajes/lucia-caminos, ya que la descripción oficial de Rockstar los nombra explícitamente como los destinatarios de los tatuajes; la relación faltaba pese a estar respaldada por el propio texto de 'content'."
   },
   "relations": [
     {
       "targetType": "ubicaciones",
       "targetSlug": "stockyard",
       "relation": "located_in"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "jason-duval",
+      "relation": "relacionada-con"
+    },
+    {
+      "targetType": "personajes",
+      "targetSlug": "lucia-caminos",
+      "relation": "relacionada-con"
     }
   ],
   "seoTitle": "Electric Fang Tattoo Parlor — Tatuajería en GTA 6",
