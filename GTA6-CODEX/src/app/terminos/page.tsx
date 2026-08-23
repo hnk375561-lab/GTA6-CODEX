@@ -38,24 +38,26 @@ export default function TermsPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-gta-text">2. Naturaleza del sitio</h2>
           <p>
-            {SITE_NAME} es un proyecto editorial independiente, no oficial y sin
-            fines de lucro comercial afiliado. No está asociado, respaldado ni
-            patrocinado por Rockstar Games, Take-Two Interactive Software, Inc.,
-            ni ninguna de sus subsidiarias. Grand Theft Auto, GTA y todos los
-            nombres, personajes e imágenes relacionados son marcas registradas
-            y propiedad de sus respectivos dueños.
+            {SITE_NAME} es un proyecto editorial independiente dedicado a fichas
+            técnicas y comparación de autos y motos. No está asociado,
+            respaldado ni patrocinado por ninguna marca, fabricante o
+            concesionaria mencionada en el sitio. Los nombres, logos y marcas
+            de los vehículos citados son propiedad de sus respectivos
+            fabricantes y se mencionan únicamente con fines informativos.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-gta-text">3. Contenido del sitio</h2>
           <p>
-            El contenido editorial (textos, análisis, organización de la
-            información) es original y de nuestra autoría. Las imágenes,
-            logos y material promocional que pertenecen a Rockstar Games o
-            Take-Two se usan con fines informativos y de comentario editorial,
-            citando la fuente cuando corresponde. Si sos titular de derechos
-            sobre algún material y querés que lo retiremos, escribinos a{' '}
+            El contenido editorial (textos, fichas técnicas, comparativas,
+            organización de la información) es original y de nuestra autoría,
+            elaborado a partir de especificaciones públicas del fabricante y
+            prensa especializada, citando la fuente cuando corresponde. Las
+            imágenes utilizadas son de stock libre de derechos o fotografía
+            propia — no usamos material oficial de marca sin licencia. Si sos
+            titular de derechos sobre algún material y querés que lo
+            retiremos, escribinos a{' '}
             <a
               href="mailto:uruspotcdu@gmail.com"
               className="link-underline text-gta-accent-strong transition-colors hover:text-gta-accent"
@@ -79,10 +81,12 @@ export default function TermsPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-gta-text">5. Precisión de la información</h2>
           <p>
-            Documentamos información pública y, en muchos casos, no confirmada
-            oficialmente (rumores, filtraciones, análisis). Cada entrada indica
-            su nivel de evidencia. No garantizamos que todo el contenido sea
-            exacto o esté siempre actualizado.
+            Documentamos especificaciones técnicas, precios y datos de
+            vehículos a partir de fuentes públicas del fabricante y prensa
+            especializada. Cada ficha indica su fuente y fecha de
+            actualización. Los precios y specs pueden variar según el mercado
+            y el momento de consulta; no garantizamos que todo el contenido
+            esté siempre actualizado.
           </p>
         </section>
 

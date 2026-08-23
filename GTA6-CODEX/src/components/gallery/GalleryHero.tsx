@@ -33,12 +33,11 @@ export function GalleryHero({ total, categoryCount }: GalleryHeroProps) {
             Archivo visual
           </p>
           <h1 className="max-w-2xl text-4xl font-bold tracking-tightest text-gta-text sm:text-6xl">
-            Galería <span className="text-gradient-vice">Leonida</span>
+            Galería <span className="text-gradient-vice">de autos</span>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-gta-text-secondary sm:text-lg">
-            Fotografía oficial y material promocional de Grand Theft Auto VI, organizado por
-            personajes, ubicaciones y key art — cada imagen conectada con su ficha, su evidencia y,
-            cuando existe, la escena de tráiler donde aparece.
+            Fotografía de stock y propia de autos y motos, organizada por marca y modelo — cada
+            imagen conectada con su ficha técnica.
           </p>
           <div className="mt-8 flex flex-wrap gap-6 text-sm text-gta-text-secondary">
             <div>

@@ -5,7 +5,7 @@ import { ENTITY_TYPE_LABELS } from './entity-labels'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 
 const SITE_DESCRIPTION =
-  'Un wiki editorial de Grand Theft Auto 6, clasificado por nivel de evidencia — descubrí qué es oficial y qué es rumor sobre personajes, vehículos, ubicaciones y misiones.'
+  'Fichas técnicas y comparador de autos y motos, con specs reales del fabricante — encontrá y compará precio, motor y prestaciones antes de comprar.'
 
 /**
  * Tipo de Schema.org más específico por EntityType, para JSON-LD con mejor
@@ -91,8 +91,8 @@ export function generateEntityMetadata(entity: Entity, ogImage?: EntityOgImage |
  */
 /**
  * Descripciones de listado por tipo de entidad (roadmap, prioridad
- * "Bajo": micro-copy variada en vez de "Explora N {categoría} en GTA 6
- * Zona" repetido igual para las 12 categorías). Cada función recibe el
+ * "Bajo": micro-copy variada en vez de "Explora N {categoría} en AutoFicha"
+ * repetido igual para todas las categorías). Cada función recibe el
  * conteo real y arma una oración específica de esa categoría — nada de
  * relleno genérico, solo variar la forma en que se presenta el mismo
  * dato real (`count`).
@@ -135,7 +135,7 @@ export function generateHomepageMetadata(): Metadata {
   const image = `${SITE_URL}/og-image.png`
 
   return {
-    title: `${SITE_NAME} | Wiki Editorial de Grand Theft Auto 6`,
+    title: `${SITE_NAME} | Fichas Técnicas y Comparador de Autos`,
     description: SITE_DESCRIPTION,
     metadataBase: new URL(SITE_URL),
     alternates: {

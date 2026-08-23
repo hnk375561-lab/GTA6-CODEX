@@ -30,10 +30,9 @@ export default function PrivacyPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-gta-text">1. Quiénes somos</h2>
           <p>
-            {SITE_NAME} ({SITE_URL}) es un sitio editorial independiente, sin fines
-            oficiales, dedicado a documentar información pública sobre el videojuego
-            Grand Theft Auto VI. Esta política explica qué datos recopilamos cuando
-            visitás el sitio y cómo los usamos.
+            {SITE_NAME} ({SITE_URL}) es un sitio editorial independiente dedicado a
+            fichas técnicas y comparación de autos y motos. Esta política explica
+            qué datos recopilamos cuando visitás el sitio y cómo los usamos.
           </p>
         </section>
 

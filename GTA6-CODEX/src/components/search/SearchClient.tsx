@@ -14,6 +14,7 @@ import { useSyncedSearchParams } from '@/lib/hooks/useSyncedSearchParams'
 import { cn } from '@/lib/utils'
 import { STATUS_LABELS } from '@/lib/entity-labels'
 import { vehiclePerformanceScore, hasPerformanceData } from '@/lib/vehicle-performance'
+import { SITE_NAME } from '@/config/site'
 
 type StatusFilter = 'todos' | keyof typeof STATUS_LABELS
 
@@ -73,16 +74,17 @@ const TYPE_LABELS: Record<EntityType, string> = {
   trailers: 'Trailers',
 } as Record<EntityType, string>
 
-// Solo las categorías con más volumen de contenido se ofrecen como accesos
-// rápidos antes de escribir — evita saturar el estado inicial con 12 chips.
-const QUICK_TYPES: EntityType[] = [
-  'personajes' as EntityType,
-  'vehiculos' as EntityType,
-  'ubicaciones' as EntityType,
-  'misiones' as EntityType,
-  'organizaciones' as EntityType,
-  'trailers' as EntityType,
-]
+// Antes esta lista era fija (categorías del sitio de GTA6 con más volumen).
+// Ahora se calcula dinámicamente a partir de `counts` — solo se muestran
+// categorías que realmente tienen contenido cargado, para no mostrar chips
+// de acceso rápido con "0 entradas" cuando el sitio recién tiene una sola
+// categoría (vehiculos) con fichas.
+function getQuickTypes(counts: Record<EntityType, number>): EntityType[] {
+  return (Object.keys(counts) as EntityType[])
+    .filter((type) => counts[type] > 0)
+    .sort((a, b) => counts[b] - counts[a])
+    .slice(0, 6)
+}
 
 export function SearchClient({ entities, counts, imageBySlug, relationCountBySlug, initialQuery }: SearchClientProps) {
   // Estado inicial: `initialQuery` llega resuelto del servidor desde
@@ -92,6 +94,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
   // (ver `useSyncedSearchParams`).
   const { searchParams, updateParams } = useSyncedSearchParams()
   const [query, setQuery] = useState(initialQuery ?? searchParams.get('q') ?? '')
+  const quickTypes = useMemo(() => getQuickTypes(counts), [counts])
   const [activeType, setActiveType] = useState<EntityType | 'todos'>(() => {
     const raw = searchParams.get('tipo')
     return raw && raw in TYPE_LABELS ? (raw as EntityType) : 'todos'
@@ -253,9 +256,9 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Buscar personajes, vehículos, ubicaciones..."
+          placeholder="Buscar autos, motos, marcas..."
           autoFocus
-          aria-label="Buscar en GTA6 Zona"
+          aria-label={`Buscar en ${SITE_NAME}`}
           className="glass-surface w-full rounded-xl border border-gta-border py-4 pl-12 pr-12 text-lg text-gta-text placeholder:text-gta-text-tertiary transition-all focus:border-gta-accent focus:shadow-glow-pink focus:outline-none"
         />
         {query && (
@@ -278,7 +281,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
             {entities.length} entidades documentadas — escribí un nombre, o entrá directo por categoría.
           </p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {QUICK_TYPES.map((type) => (
+            {quickTypes.map((type) => (
               <Link
                 key={type}
                 href={`/${type}`}

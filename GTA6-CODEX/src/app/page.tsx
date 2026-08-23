@@ -66,7 +66,7 @@ const HERO_STAT_TYPES: EntityType[] = [
  * "clasificado" que sigue en la oración concuerda con "GTA6", no con
  * esta palabra.
  */
-const HERO_SUBTITLE_WORDS = ['personaje', 'vehículo', 'ubicación', 'misión']
+const HERO_SUBTITLE_WORDS = ['auto', 'moto', 'ficha técnica', 'comparativa']
 
 const CATEGORY_ORDER: EntityType[] = [
   EntityType.CHARACTER,
@@ -123,7 +123,7 @@ const EVIDENCE_LEVELS: Array<{
   {
     icon: '✓',
     label: 'Oficial',
-    description: 'Confirmado por Rockstar Games en un comunicado, tráiler o material propio.',
+    description: 'Confirmado por ficha técnica oficial del fabricante o comunicado de prensa.',
     className: 'border-emerald-400/25 bg-emerald-500/10 text-emerald-300',
   },
   {
@@ -143,53 +143,6 @@ const EVIDENCE_LEVELS: Array<{
     label: 'Especulativo',
     description: 'Teoría o rumor razonable, marcado como tal, sin evidencia sólida detrás — todavía.',
     className: 'border-gta-accent-warning/25 bg-gta-accent-warning/10 text-gta-accent-warning',
-  },
-]
-
-/**
- * Definición estática de las dos fechas ancla del proyecto (mejora 1.3 del
- * análisis) — el evento "Extended Look" de Netflix y el lanzamiento del
- * juego. Las fechas en sí (día, hora ET) están confirmadas por Rockstar/
- * Take-Two (ver `noticias/extended-look-netflix-27-agosto` y
- * `noticias/zelnick-reafirma-fecha-marketing-verano`), así que viven acá
- * como dato fijo — igual que cualquier otro hecho confirmado del sitio, no
- * es un valor inventado. La noticia "más relevante" de cada una sí se
- * resuelve dinámicamente en `HomePage` a partir de `allNews`, para no
- * hardcodear un slug que quede desactualizado en cuanto salga una noticia
- * más nueva sobre el mismo tema.
- */
-const COUNTDOWN_DEFS: Array<{
-  id: string
-  label: string
-  detail: string
-  targetIso: string
-  pendingLabel: string
-  reachedLabel: string
-  accent: string
-  newsTags: string[]
-}> = [
-  {
-    id: 'netflix-extended-look',
-    label: '"An Extended Look" en Netflix',
-    detail: '3:00 pm ET en Netflix · 9:00 pm ET en YouTube y el sitio oficial (acceso libre)',
-    // 3pm ET del 27 de agosto de 2026 = 19:00 UTC (EDT, UTC-4, vigente en agosto).
-    targetIso: '2026-08-27T15:00:00-04:00',
-    pendingLabel: 'Evento pendiente',
-    reachedLabel: 'Ya disponible',
-    accent: '#22d3ee',
-    newsTags: ['netflix', 'extended-look'],
-  },
-  {
-    id: 'lanzamiento-gta6',
-    label: 'Lanzamiento de GTA VI',
-    detail: 'PlayStation 5 y Xbox Series X|S — sin fecha de PC anunciada',
-    // Sin horario global confirmado por Rockstar: se cuenta a medianoche
-    // en la zona horaria de quien mira la página (ver nota en el tipo).
-    targetIso: '2026-11-19T00:00:00',
-    pendingLabel: 'Preventa abierta',
-    reachedLabel: 'Ya disponible',
-    accent: '#f0c274',
-    newsTags: ['fecha-lanzamiento', 'lanzamiento', 'retraso'],
   },
 ]
 
@@ -242,27 +195,12 @@ export default async function HomePage() {
   // de página, no metadata de `<head>` — mismo patrón que `breadcrumbLd`.
   const websiteLd = generateWebsiteJsonLd()
 
-  // Resuelve, para cada fecha ancla, la noticia más reciente cuyos tags
-  // coincidan con el tema — mismo criterio que ya usa `relations` en el
-  // contenido para conectar entidades, aplicado acá a nivel de tags en vez
-  // de a un slug hardcodeado.
-  const countdownTargets: CountdownTarget[] = COUNTDOWN_DEFS.map((def) => {
-    const relatedNews = [...allNews]
-      .filter((n) => n.tags?.some((tag) => def.newsTags.includes(tag)))
-      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())[0]
-
-    return {
-      id: def.id,
-      label: def.label,
-      detail: def.detail,
-      targetIso: def.targetIso,
-      pendingLabel: def.pendingLabel,
-      reachedLabel: def.reachedLabel,
-      accent: def.accent,
-      newsHref: relatedNews ? `/noticias/${relatedNews.slug}` : undefined,
-      newsLabel: relatedNews ? `Última noticia: ${relatedNews.title}` : undefined,
-    }
-  })
+  // El sitio ya no tiene fechas ancla de lanzamiento de juego que contar
+  // (era específico de GTA6). Se deja el array vacío en vez de borrar todo
+  // el bloque condicional de abajo, para reutilizar `LaunchCountdown` /
+  // `HeroCountdownChip` el día que haya una fecha real que anunciar en el
+  // nicho de autos (ej. un salón del automóvil o el lanzamiento de un modelo).
+  const countdownTargets: CountdownTarget[] = []
 
   // Conteo de conexiones incluyendo relaciones inferidas/bidireccionales
   // para las cards de Destacados (Fase 8, hallazgo [7]) — mismo criterio
@@ -335,7 +273,7 @@ export default async function HomePage() {
           <Reveal>
             <p className="hero-pill hero-pill-stamp mb-4">
               <span className="hero-pill-dot" aria-hidden="true" />
-              Expediente no oficial <span className="hero-pill-sep">·</span> Leonida
+              Fichas técnicas <span className="hero-pill-sep">·</span> Argentina
               {/* Señal de frescura real, no un "actualizado hoy" fijo en
                   el copy: `mostRecentUpdate` es el updatedAt más reciente
                   entre TODAS las entidades del sitio (`getMostRecentUpdate`
@@ -381,17 +319,17 @@ export default async function HomePage() {
 
             <h1 className="hero-title mx-auto max-w-3xl font-display font-bold leading-[1.08]">
               <span className="hero-mark" aria-hidden="true">
-                GTA6 <span className="hero-mark-sep">·</span> Zona
+                Auto <span className="hero-mark-sep">·</span> Ficha
               </span>
               <span className="hero-title-line hero-title-line--main mt-5 block text-4xl sm:text-5xl lg:text-6xl">
                 Cada{' '}
                 <span className="hero-subtitle-rotate">
                   <WordRotate words={HERO_SUBTITLE_WORDS} className="hero-title-highlight" />
                 </span>{' '}
-                de GTA6, <span className="hero-title-highlight">clasificado</span>
+                a un <span className="hero-title-highlight">clic</span>
               </span>
               <span className="hero-title-line hero-title-line--sub mt-5 block font-sans text-lg font-normal text-gta-text-secondary sm:text-xl">
-                por nivel de evidencia — para que sepas de un vistazo qué es oficial y qué es rumor.
+                specs reales del fabricante — para que compares antes de comprar.
               </span>
             </h1>
           </Reveal>
@@ -446,10 +384,10 @@ export default async function HomePage() {
                 mejor que un botón que aterriza en una página vacía. */}
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/personajes"
+                href="/vehiculos"
                 className="btn-primary hero-cta inline-flex items-center justify-center rounded-lg px-9 py-4 text-base font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
               >
-                <span className="hero-cta-label">Entrar al expediente</span>
+                <span className="hero-cta-label">Ver fichas de autos</span>
                 <span className="hero-cta-arrow" aria-hidden="true">→</span>
               </Link>
               {/* CTA secundario condicionado a datos reales: solo aparece

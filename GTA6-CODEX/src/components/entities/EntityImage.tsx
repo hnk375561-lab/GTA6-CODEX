@@ -219,7 +219,7 @@ export function EntityImage({ entity, image, variant = 'thumbnail', priority = f
           {!isAvatar && isAiImage && (
             <span
               className="absolute bottom-2 left-2 z-10 inline-flex items-center gap-1 rounded-full border border-cyan-400/40 bg-black/70 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-cyan-300 backdrop-blur-sm"
-              title="Recreación generada con IA — no es material oficial de Rockstar Games"
+              title="Recreación generada con IA — no es material oficial del fabricante"
             >
               IA
             </span>
@@ -252,7 +252,7 @@ export function EntityImage({ entity, image, variant = 'thumbnail', priority = f
           {!isAvatar && (
             <span
               className="absolute bottom-2 left-2 z-10 inline-flex items-center gap-1 rounded-full border border-cyan-400/40 bg-black/70 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-cyan-300 backdrop-blur-sm"
-              title="Recreación generada con IA — no es material oficial de Rockstar Games"
+              title="Recreación generada con IA — no es material oficial del fabricante"
             >
               IA
             </span>

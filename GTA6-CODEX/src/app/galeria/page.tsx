@@ -7,7 +7,7 @@ import { SITE_NAME, SITE_URL } from '@/config/site'
 export async function generateMetadata(): Promise<Metadata> {
   const items = await getGalleryItems()
   const title = `Galería | ${SITE_NAME}`
-  const description = `Explorá ${items.length} imágenes oficiales de Grand Theft Auto VI: personajes, ubicaciones y key art, con evidencia y conexión a tráilers.`
+  const description = `Explorá ${items.length} imágenes de autos y motos, organizadas por marca y modelo.`
 
   return {
     title,
@@ -36,9 +36,8 @@ export default async function GaleriaPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ImageGallery',
-    name: 'Galería — GTA6 Zona',
-    description:
-      'Fotografía oficial y material promocional de Grand Theft Auto VI: personajes, ubicaciones y key art.',
+    name: `Galería — ${SITE_NAME}`,
+    description: 'Fotografía de stock y propia de autos y motos, organizada por marca y modelo.',
     url: `${SITE_URL}/galeria`,
     numberOfItems: items.length,
   }

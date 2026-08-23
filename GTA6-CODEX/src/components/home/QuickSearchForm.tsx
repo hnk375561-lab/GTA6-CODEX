@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { SITE_NAME } from '@/config/site'
 
 /**
  * Barra de búsqueda compacta para la home. No reimplementa el buscador
@@ -79,8 +80,8 @@ export function QuickSearchForm() {
         name="q"
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        placeholder="Ej. Jason Duval, Vice City, Bati 801…"
-        aria-label="Búsqueda rápida en GTA6 Zona. Atajo: tecla oblicua"
+        placeholder="Ej. Toyota Corolla, BMW GS 310…"
+        aria-label={`Búsqueda rápida en ${SITE_NAME}. Atajo: tecla oblicua`}
         className="glass-surface w-full rounded-xl border border-gta-border py-3.5 pl-11 pr-24 text-sm text-gta-text placeholder:text-gta-text-tertiary transition-all focus:border-gta-accent focus:shadow-glow-pink focus:outline-none sm:text-base"
       />
       {/* Indicador del atajo de teclado: se oculta solo mientras el input

@@ -11,8 +11,8 @@ import { SITE_NAME, SITE_URL } from '@/config/site'
 // que heredaba en silencio los del layout raíz: el canonical y el og:url
 // servidos en producción para /buscar apuntaban a la home, no a /buscar
 // (mismo patrón ya usado en /galeria — ver src/app/galeria/page.tsx).
-const TITLE = 'Buscar | GTA6 Zona'
-const DESCRIPTION = 'Busca personajes, vehículos, ubicaciones, misiones y más en GTA6 Zona.'
+const TITLE = `Buscar | ${SITE_NAME}`
+const DESCRIPTION = `Busca autos y motos por marca, modelo o segmento en ${SITE_NAME}.`
 
 export const metadata: Metadata = {
   title: TITLE,

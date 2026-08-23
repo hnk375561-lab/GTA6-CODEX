@@ -13,8 +13,7 @@ import {
   isValidUrl,
 } from '@/lib/seo'
 
-const SITE_URL = 'https://gta-6-zona.vercel.app'
-const SITE_NAME = 'GTA6 Zona'
+import { SITE_NAME, SITE_URL } from '@/config/site'
 
 const mockEntity: Entity = {
   slug: 'tommy-vercetti',
@@ -160,7 +159,7 @@ describe('generateListMetadata', () => {
     const metaVehicle = generateListMetadata(EntityType.VEHICLE, 5)
     expect(metaCharacter.description).not.toBe(metaVehicle.description)
     expect(metaCharacter.description).toContain('personajes')
-    expect(metaVehicle.description).toContain('vehículos')
+    expect(metaVehicle.description).toContain('autos y motos')
   })
 
   it('cae a descripción genérica si tipo no tiene map específico', () => {
@@ -181,12 +180,12 @@ describe('generateHomepageMetadata', () => {
   it('genera metadata para la homepage', () => {
     const metadata = generateHomepageMetadata()
     expect(metadata.title).toContain(SITE_NAME)
-    expect(metadata.title).toContain('Grand Theft Auto 6')
+    expect(metadata.title).toContain('Comparador de Autos')
   })
 
   it('usa descripción del sitio', () => {
     const metadata = generateHomepageMetadata()
-    expect(metadata.description).toContain('wiki editorial')
+    expect(metadata.description).toContain('Fichas técnicas')
   })
 
   it('canonical apunta a SITE_URL sin path', () => {
