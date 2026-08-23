@@ -12,16 +12,16 @@
   "manufacturer": "Alfa Romeo",
   "class": "SUV premium",
   "customizable": false,
-  "power": "280 hp",
-  "price": "USD 52.000",
-  "consumo": "Pendiente de enriquecimiento",
+  "power": "280 hp @ motor 2.0L turbo I4, 306 lb-ft de torque",
+  "price": "USD 53.245 (base, 2026)",
+  "consumo": "22 mpg ciudad / 28 mpg ruta (EPA)",
   "dimensiones": "Pendiente de enriquecimiento",
   "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
-    "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ]
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.alfaromeousa.com/models/stelvio",
+    "secondarySource": "https://www.truecar.com/overview/alfa-romeo/stelvio/",
+    "note": "Para el año modelo 2026 la gama se consolidó en una única configuración base con paquetes opcionales; se discontinuó la versión Quadrifoglio de producción regular en EE.UU. (solo edición limitada 'Collezione' de 63 unidades con entrega 2027).",
+    "limitations": []
   },
   "performance": {
     "speed": "Pendiente de enriquecimiento",

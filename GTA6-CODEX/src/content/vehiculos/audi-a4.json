@@ -12,15 +12,17 @@
   "manufacturer": "Audi",
   "class": "Sedán ejecutivo",
   "customizable": false,
-  "power": "201 hp",
-  "price": "USD 45.000",
+  "power": "201 hp aprox. (motor 2.0 TFSI, último año en EE.UU.)",
+  "price": "Discontinuado en EE.UU. (2025 fue el último año-modelo); sigue vigente en India/Europa con precio local (ej. India desde ₹53,4 lakh)",
   "consumo": "Pendiente de enriquecimiento",
   "dimensiones": "Pendiente de enriquecimiento",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.cargurus.com/research/articles/2025-audi-a4-pricing-specs-release-date",
+    "secondarySource": "https://ackodrive.com/cars/audi-a4/",
+    "note": "En el mercado de EE.UU., Audi discontinuó el A4 tras el año-modelo 2025, reemplazándolo por una variante del A5. El modelo sigue vendiéndose bajo el nombre A4 en otros mercados (India, Europa), con specs/precio propios de cada región.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Status varía fuertemente por mercado (discontinuado en EE.UU., vigente en India/Europa); precio no unificable en una sola cifra global"
     ]
   },
   "performance": {
