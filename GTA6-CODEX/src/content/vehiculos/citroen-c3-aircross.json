@@ -1,0 +1,26 @@
+{
+  "slug": "citroen-c3-aircross",
+  "type": "vehiculos",
+  "title": "Citroën C3 Aircross",
+  "description": "SUV del segmento B, producido en Mercosur, con opcion de configuracion para 7 pasajeros.",
+  "status": "confirmado",
+  "tags": ["suv", "citroen", "economico"],
+  "featured": false,
+  "manufacturer": "Citroën",
+  "class": "SUV compacto",
+  "customizable": false,
+  "power": "120 hp",
+  "price": "ARS 36.710.000 (version VTi Live, entrada de gama)",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://autofichas.com.ar/citroen/c3-aircross/"
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-23T22:19:24.158453Z"
+}

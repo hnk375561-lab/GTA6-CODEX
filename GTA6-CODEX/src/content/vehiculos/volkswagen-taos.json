@@ -1,0 +1,26 @@
+{
+  "slug": "volkswagen-taos",
+  "type": "vehiculos",
+  "title": "Volkswagen Taos",
+  "description": "SUV del segmento C, restyling MY2026 con cambio de origen a Mexico, plataforma MQB A.",
+  "status": "confirmado",
+  "tags": ["suv", "volkswagen"],
+  "featured": false,
+  "manufacturer": "Volkswagen",
+  "class": "SUV mediano",
+  "customizable": false,
+  "power": "150 hp",
+  "price": "ARS 54.200.000 (version Comfortline)",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.16valvulas.com.ar/nueva-volkswagen-taos-my2026-lanzamiento-en-argentina-desde-54-200-000/"
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-23T22:19:24.158453Z"
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "peugeot-408",
+  "type": "vehiculos",
+  "title": "Peugeot 408",
+  "description": "Crossover fastback importado de Francia, version unica GT, regreso del nombre 408 al mercado argentino tras su etapa como sedan.",
+  "status": "confirmado",
+  "tags": ["crossover", "peugeot", "fastback"],
+  "featured": false,
+  "manufacturer": "Peugeot",
+  "class": "Crossover fastback",
+  "customizable": false,
+  "power": "215 hp",
+  "price": "USD 52.200",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.autodataar.com/nota-nuevo-peugeot-408-precio--motor-y-equipamiento-en-argentina-65035"
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-23T22:19:24.158453Z"
+}
