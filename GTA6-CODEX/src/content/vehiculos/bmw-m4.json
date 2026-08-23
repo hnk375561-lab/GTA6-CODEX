@@ -1,0 +1,32 @@
+{
+  "slug": "bmw-m4",
+  "type": "vehiculos",
+  "title": "BMW M4",
+  "description": "Coupé deportivo de alto rendimiento de BMW M, motor 3.0 biturbo.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "bmw"
+  ],
+  "featured": false,
+  "manufacturer": "BMW",
+  "class": "Deportivo",
+  "customizable": false,
+  "power": "503 hp",
+  "price": "USD 78.000",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "respaldado",
+    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "limitations": [
+      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+    ]
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-23T23:06:25.164Z"
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "suzuki-gsx-r750",
+  "type": "vehiculos",
+  "title": "Suzuki GSX-R750",
+  "description": "Deportiva histórica de Suzuki, tetracilíndrica en línea de 750cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "suzuki"
+  ],
+  "featured": false,
+  "manufacturer": "Suzuki",
+  "class": "Moto deportiva",
+  "customizable": false,
+  "power": "148 hp",
+  "price": "USD 13.100",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "respaldado",
+    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "limitations": [
+      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+    ]
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-23T23:06:25.164Z"
+}

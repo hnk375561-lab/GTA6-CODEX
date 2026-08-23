@@ -1,0 +1,32 @@
+{
+  "slug": "ktm-1290-super-adventure",
+  "type": "vehiculos",
+  "title": "KTM 1290 Super Adventure",
+  "description": "Moto aventura de alta cilindrada de KTM, motor V-twin LC8 de 1301cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "ktm"
+  ],
+  "featured": false,
+  "manufacturer": "KTM",
+  "class": "Moto aventura",
+  "customizable": false,
+  "power": "160 hp",
+  "price": "USD 22.000",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "respaldado",
+    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "limitations": [
+      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+    ]
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-23T23:08:07.679Z"
+}

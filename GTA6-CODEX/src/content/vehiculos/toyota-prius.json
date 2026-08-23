@@ -1,0 +1,32 @@
+{
+  "slug": "toyota-prius",
+  "type": "vehiculos",
+  "title": "Toyota Prius",
+  "description": "Pionero de los híbridos, quinta generación con diseño mucho más deportivo.",
+  "status": "confirmado",
+  "tags": [
+    "hibrido",
+    "toyota"
+  ],
+  "featured": false,
+  "manufacturer": "Toyota",
+  "class": "Sedán híbrido",
+  "customizable": false,
+  "power": "196 hp (híbrido)",
+  "price": "USD 28.000",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "respaldado",
+    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "limitations": [
+      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+    ]
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-23T23:06:25.164Z"
+}

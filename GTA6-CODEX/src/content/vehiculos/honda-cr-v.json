@@ -1,0 +1,32 @@
+{
+  "slug": "honda-cr-v",
+  "type": "vehiculos",
+  "title": "Honda CR-V",
+  "description": "SUV compacto best-seller global de Honda, disponible en versiones nafta e híbrida.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "honda"
+  ],
+  "featured": false,
+  "manufacturer": "Honda",
+  "class": "SUV compacto",
+  "customizable": false,
+  "power": "190 hp",
+  "price": "USD 30.500",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "respaldado",
+    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "limitations": [
+      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+    ]
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-23T23:06:25.164Z"
+}

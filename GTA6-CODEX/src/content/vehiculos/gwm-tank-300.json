@@ -1,0 +1,32 @@
+{
+  "slug": "gwm-tank-300",
+  "type": "vehiculos",
+  "title": "GWM Tank 300",
+  "description": "SUV 4x4 de estilo retro de Great Wall Motors, con versión híbrida enchufable.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "gwm"
+  ],
+  "featured": false,
+  "manufacturer": "GWM",
+  "class": "SUV 4x4",
+  "customizable": false,
+  "power": "224 hp (híbrido)",
+  "price": "USD 35.000",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "respaldado",
+    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "limitations": [
+      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+    ]
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-23T23:08:07.679Z"
+}

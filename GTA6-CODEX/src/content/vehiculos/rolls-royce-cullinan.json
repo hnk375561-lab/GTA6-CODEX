@@ -1,0 +1,32 @@
+{
+  "slug": "rolls-royce-cullinan",
+  "type": "vehiculos",
+  "title": "Rolls-Royce Cullinan",
+  "description": "SUV de ultralujo de Rolls-Royce, motor V12 biturbo.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "rolls-royce"
+  ],
+  "featured": false,
+  "manufacturer": "Rolls-Royce",
+  "class": "SUV de ultralujo",
+  "customizable": false,
+  "power": "563 hp",
+  "price": "USD 380.000",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "respaldado",
+    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "limitations": [
+      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+    ]
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-23T23:08:07.679Z"
+}

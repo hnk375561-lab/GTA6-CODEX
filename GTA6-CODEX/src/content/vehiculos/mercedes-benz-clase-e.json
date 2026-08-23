@@ -1,0 +1,32 @@
+{
+  "slug": "mercedes-benz-clase-e",
+  "type": "vehiculos",
+  "title": "Mercedes-Benz Clase E",
+  "description": "Sedán ejecutivo de Mercedes-Benz, gama media-alta de la marca.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "mercedes-benz"
+  ],
+  "featured": false,
+  "manufacturer": "Mercedes-Benz",
+  "class": "Sedán ejecutivo",
+  "customizable": false,
+  "power": "255 hp",
+  "price": "USD 62.000",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "respaldado",
+    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "limitations": [
+      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+    ]
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-23T23:06:25.164Z"
+}
