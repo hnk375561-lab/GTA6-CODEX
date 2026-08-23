@@ -1,0 +1,30 @@
+{
+  "slug": "honda-cb190r",
+  "type": "vehiculos",
+  "title": "Honda CB190R 2.0",
+  "description": "Naked streetfighter de baja cilindrada de Honda, renovada en 2026 con tablero TFT, luces full LED y ABS de doble canal.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "honda"
+  ],
+  "featured": false,
+  "manufacturer": "Honda",
+  "class": "Moto naked",
+  "customizable": false,
+  "power": "16.3 hp @ 8500 rpm",
+  "price": "ARS 5.867.000",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://motos.honda.com.ar/modelos/cb190r-2-0",
+    "note": "Precio de lista sugerido vigente 01/07/2026 al 31/07/2026 según sitio oficial de Honda Motos Argentina."
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:30:00.000000Z",
+  "updatedAt": "2026-08-23T22:30:00.000000Z"
+}

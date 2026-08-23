@@ -1,0 +1,34 @@
+{
+  "slug": "suzuki-vitara",
+  "type": "vehiculos",
+  "title": "Suzuki Vitara",
+  "description": "SUV compacto de Suzuki, versión GLX 1.4T con tracción y caja automática, vendido oficialmente en Argentina.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "suzuki"
+  ],
+  "featured": false,
+  "manufacturer": "Suzuki",
+  "class": "SUV compacto",
+  "customizable": false,
+  "power": "140 hp (aprox., motor 1.4 BoosterJet turbo)",
+  "price": "No confirmado en fuente oficial argentina",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.v6.com.ar/suzuki/vitara",
+    "note": "Venta en Argentina confirmada por listado de versiones 2022-2026 (GLX 1.4T AT) en V6 Marketplace. Potencia tomada de especificación global del motor 1.4 BoosterJet (no verificada específicamente para la versión argentina). Precio no encontrado en fuente oficial ni de prensa reciente para el mercado argentino.",
+    "limitations": [
+      "Precio de lista en Argentina no confirmado",
+      "Potencia extrapolada de mercados internacionales"
+    ]
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:30:00.000000Z",
+  "updatedAt": "2026-08-23T22:30:00.000000Z"
+}

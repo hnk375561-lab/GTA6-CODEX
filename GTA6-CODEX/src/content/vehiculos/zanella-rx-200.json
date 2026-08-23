@@ -1,0 +1,35 @@
+{
+  "slug": "zanella-rx-200",
+  "type": "vehiculos",
+  "title": "Zanella RX 200 Next",
+  "description": "Moto naked de la marca argentina Zanella, motor monocilíndrico de 197cc, caja de 6 velocidades.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "zanella",
+    "argentina"
+  ],
+  "featured": false,
+  "manufacturer": "Zanella",
+  "class": "Moto naked",
+  "customizable": false,
+  "power": "15.4 hp @ 8000 rpm",
+  "price": "ARS 1.744.993 - 2.094.993 (aprox., listados de concesionaria oficial Motozuni)",
+  "consumo": "33.3 km/l (declarado por fabricante)",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://plan-gobierno.org/plan-gobierno-motos/zanella/rx-200-next/",
+    "secondarySource": "https://listado.mercadolibre.com.ar/zanella-rx-200",
+    "note": "Ficha técnica de motor y consumo tomada de página del Plan Gobierno de Motos (que reproduce datos de fábrica); precio no confirmado en fuente oficial de Zanella, tomado de listados de concesionaria oficial en Mercado Libre.",
+    "limitations": [
+      "Precio de lista oficial no confirmado directamente en zanella.com.ar"
+    ]
+  },
+  "performance": {
+    "speed": "140 km/h",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:30:00.000000Z",
+  "updatedAt": "2026-08-23T22:30:00.000000Z"
+}

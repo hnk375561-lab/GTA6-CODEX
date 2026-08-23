@@ -1,0 +1,30 @@
+{
+  "slug": "peugeot-3008",
+  "type": "vehiculos",
+  "title": "Peugeot 3008 GT",
+  "description": "SUV mediano fastback de Peugeot, tercera generación, fabricado en Sochaux (Francia) sobre plataforma STLA Medium, comercializado en Argentina exclusivamente en versión GT.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "peugeot"
+  ],
+  "featured": false,
+  "manufacturer": "Peugeot",
+  "class": "SUV mediano",
+  "customizable": false,
+  "power": "180 hp (motor 1.6 THP turbo)",
+  "price": "USD 53.200 - 54.500",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "4540 x 1890 x 1640 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.peugeot.com.ar/gama/nuevo-3008.html",
+    "note": "Motor y potencia confirmados en sitio oficial de Peugeot Argentina; precio de lanzamiento según prensa especializada (16valvulas.com.ar, autofichas.com.ar)."
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:30:00.000000Z",
+  "updatedAt": "2026-08-23T22:30:00.000000Z"
+}
