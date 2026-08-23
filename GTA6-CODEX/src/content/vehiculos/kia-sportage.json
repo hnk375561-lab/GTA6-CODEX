@@ -1,0 +1,28 @@
+{
+  "slug": "kia-sportage",
+  "type": "vehiculos",
+  "title": "Kia Sportage",
+  "description": "SUV mediana de Kia, disponible en versiones nafta, diésel e híbrida.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "kia",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:26.800Z",
+  "updatedAt": "2026-08-23T18:31:26.800Z",
+  "manufacturer": "Kia",
+  "class": "SUV",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (190 km/h)",
+    "acceleration": "Media (0-100 km/h en 9.5s)"
+  },
+  "power": "150 hp",
+  "price": "USD 31.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.kia.com/ar/vehiculos/sportage/"
+  }
+}

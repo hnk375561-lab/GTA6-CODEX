@@ -1,0 +1,28 @@
+{
+  "slug": "peugeot-208",
+  "type": "vehiculos",
+  "title": "Peugeot 208",
+  "description": "Hatchback compacto de Peugeot, diseño i-Cockpit, motores 1.6L o turbo 1.2L.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "peugeot",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:27.335Z",
+  "updatedAt": "2026-08-23T18:31:27.335Z",
+  "manufacturer": "Peugeot",
+  "class": "Hatchback",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (185 km/h)",
+    "acceleration": "Media (0-100 km/h en 10.2s)"
+  },
+  "power": "115 hp",
+  "price": "USD 20.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.peugeot.com.ar/gama/nuevo-208.html"
+  }
+}

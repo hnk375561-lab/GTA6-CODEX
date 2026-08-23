@@ -1,0 +1,28 @@
+{
+  "slug": "toyota-hilux",
+  "type": "vehiculos",
+  "title": "Toyota Hilux",
+  "description": "Pickup grande de Toyota, motor turbodiésel 2.8L, referencia de robustez en el segmento.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "toyota",
+    "diesel"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:27.868Z",
+  "updatedAt": "2026-08-23T18:31:27.868Z",
+  "manufacturer": "Toyota",
+  "class": "Pickup",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 10.4s)"
+  },
+  "power": "204 hp",
+  "price": "USD 45.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.toyota.com.ar/hilux"
+  }
+}

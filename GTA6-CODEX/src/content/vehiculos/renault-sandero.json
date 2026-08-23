@@ -1,0 +1,28 @@
+{
+  "slug": "renault-sandero",
+  "type": "vehiculos",
+  "title": "Renault Sandero",
+  "description": "Hatchback compacto de Renault, motores 1.6L de 16v, orientado a la relación precio-equipamiento.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "renault",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:31.429Z",
+  "updatedAt": "2026-08-23T18:31:31.429Z",
+  "manufacturer": "Renault",
+  "class": "Hatchback",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (175 km/h)",
+    "acceleration": "Media (0-100 km/h en 11.5s)"
+  },
+  "power": "113 hp",
+  "price": "USD 16.500",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.renault.com.ar/sandero"
+  }
+}

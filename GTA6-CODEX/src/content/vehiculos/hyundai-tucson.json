@@ -1,0 +1,28 @@
+{
+  "slug": "hyundai-tucson",
+  "type": "vehiculos",
+  "title": "Hyundai Tucson",
+  "description": "SUV mediana de Hyundai, motor 2.0L o 1.6L turbo, diseño renovado con parrilla oculta.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "hyundai",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:26.530Z",
+  "updatedAt": "2026-08-23T18:31:26.530Z",
+  "manufacturer": "Hyundai",
+  "class": "SUV",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (195 km/h)",
+    "acceleration": "Media (0-100 km/h en 9.9s)"
+  },
+  "power": "156 hp",
+  "price": "USD 32.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.hyundai.com/ar/es/modelos/tucson.html"
+  }
+}

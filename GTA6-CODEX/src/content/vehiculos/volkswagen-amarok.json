@@ -1,0 +1,28 @@
+{
+  "slug": "volkswagen-amarok",
+  "type": "vehiculos",
+  "title": "Volkswagen Amarok",
+  "description": "Pickup grande de Volkswagen, motor V6 3.0L TDI de 258 hp en su tope de gama.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "volkswagen",
+    "diesel"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:28.422Z",
+  "updatedAt": "2026-08-23T18:31:28.422Z",
+  "manufacturer": "Volkswagen",
+  "class": "Pickup",
+  "customizable": false,
+  "performance": {
+    "speed": "Alta (193 km/h)",
+    "acceleration": "Media-Alta (0-100 km/h en 7.8s)"
+  },
+  "power": "258 hp",
+  "price": "USD 52.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.vw.com.ar/amarok"
+  }
+}

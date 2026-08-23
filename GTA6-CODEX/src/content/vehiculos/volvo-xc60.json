@@ -1,0 +1,29 @@
+{
+  "slug": "volvo-xc60",
+  "type": "vehiculos",
+  "title": "Volvo XC60",
+  "description": "SUV premium de Volvo, motor 2.0L turbo, foco fuerte en seguridad activa.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "volvo",
+    "premium",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:31.747Z",
+  "updatedAt": "2026-08-23T18:31:31.747Z",
+  "manufacturer": "Volvo",
+  "class": "SUV premium",
+  "customizable": false,
+  "performance": {
+    "speed": "Media-Alta (210 km/h)",
+    "acceleration": "Alta (0-100 km/h en 6.9s)"
+  },
+  "power": "250 hp",
+  "price": "USD 75.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.volvocars.com/ar/cars/xc60/"
+  }
+}

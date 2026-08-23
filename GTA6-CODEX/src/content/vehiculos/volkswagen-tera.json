@@ -1,0 +1,28 @@
+{
+  "slug": "volkswagen-tera",
+  "type": "vehiculos",
+  "title": "Volkswagen T-Cross",
+  "description": "SUV compacta de Volkswagen, motor 1.0L TSI turbo de 128 hp.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "volkswagen",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:25.343Z",
+  "updatedAt": "2026-08-23T18:31:25.343Z",
+  "manufacturer": "Volkswagen",
+  "class": "SUV compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (178 km/h)",
+    "acceleration": "Media (0-100 km/h en 10.9s)"
+  },
+  "power": "128 hp",
+  "price": "USD 24.500",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.vw.com.ar/t-cross"
+  }
+}

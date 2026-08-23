@@ -1,0 +1,28 @@
+{
+  "slug": "bmw-gs-310",
+  "type": "vehiculos",
+  "title": "BMW G 310 GS",
+  "description": "Moto trail de BMW, monocilíndrico 313cc, pensada para uso mixto ciudad-ruta.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "bmw",
+    "trail"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:30.892Z",
+  "updatedAt": "2026-08-23T18:31:30.892Z",
+  "manufacturer": "BMW",
+  "class": "Moto trail",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (143 km/h)",
+    "acceleration": "Media (0-100 km/h en 7.3s)"
+  },
+  "power": "34 hp",
+  "price": "USD 8.200",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.bmw-motorrad.com.ar/g-310-gs"
+  }
+}

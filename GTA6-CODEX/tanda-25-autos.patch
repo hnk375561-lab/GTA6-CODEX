@@ -1,0 +1,857 @@
+diff --git a/GTA6-CODEX/src/content/vehiculos/audi-q3.json b/GTA6-CODEX/src/content/vehiculos/audi-q3.json
+new file mode 100644
+index 0000000..be5b50e
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/audi-q3.json
+@@ -0,0 +1,29 @@
++{
++  "slug": "audi-q3",
++  "type": "vehiculos",
++  "title": "Audi Q3",
++  "description": "SUV premium compacta de Audi, motor 1.4L TFSI turbo, plataforma compartida con el grupo VW.",
++  "status": "confirmado",
++  "tags": [
++    "suv",
++    "audi",
++    "premium",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:32.112Z",
++  "updatedAt": "2026-08-23T18:31:32.112Z",
++  "manufacturer": "Audi",
++  "class": "SUV premium compacta",
++  "customizable": false,
++  "performance": {
++    "speed": "Alta (210 km/h)",
++    "acceleration": "Media-Alta (0-100 km/h en 8.9s)"
++  },
++  "power": "150 hp",
++  "price": "USD 55.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.audi.com.ar/ar/web/es/modelos/q3/q3.html"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/bmw-gs-310.json b/GTA6-CODEX/src/content/vehiculos/bmw-gs-310.json
+new file mode 100644
+index 0000000..b744218
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/bmw-gs-310.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "bmw-gs-310",
++  "type": "vehiculos",
++  "title": "BMW G 310 GS",
++  "description": "Moto trail de BMW, monocilíndrico 313cc, pensada para uso mixto ciudad-ruta.",
++  "status": "confirmado",
++  "tags": [
++    "moto",
++    "bmw",
++    "trail"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:30.892Z",
++  "updatedAt": "2026-08-23T18:31:30.892Z",
++  "manufacturer": "BMW",
++  "class": "Moto trail",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (143 km/h)",
++    "acceleration": "Media (0-100 km/h en 7.3s)"
++  },
++  "power": "34 hp",
++  "price": "USD 8.200",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.bmw-motorrad.com.ar/g-310-gs"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/bmw-serie-3.json b/GTA6-CODEX/src/content/vehiculos/bmw-serie-3.json
+new file mode 100644
+index 0000000..1683c43
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/bmw-serie-3.json
+@@ -0,0 +1,29 @@
++{
++  "slug": "bmw-serie-3",
++  "type": "vehiculos",
++  "title": "BMW Serie 3",
++  "description": "Sedán premium de BMW, motor 2.0L turbo de 4 cilindros, tracción trasera.",
++  "status": "confirmado",
++  "tags": [
++    "sedan",
++    "bmw",
++    "premium",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:25.977Z",
++  "updatedAt": "2026-08-23T18:31:25.977Z",
++  "manufacturer": "BMW",
++  "class": "Sedán premium",
++  "customizable": false,
++  "performance": {
++    "speed": "Alta (250 km/h)",
++    "acceleration": "Alta (0-100 km/h en 5.8s)"
++  },
++  "power": "255 hp",
++  "price": "USD 58.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.bmw.com.ar/es/all-models/3-series/sedan/2022/bmw-3-series-sedan.html"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/byd-dolphin.json b/GTA6-CODEX/src/content/vehiculos/byd-dolphin.json
+new file mode 100644
+index 0000000..60524fa
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/byd-dolphin.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "byd-dolphin",
++  "type": "vehiculos",
++  "title": "BYD Dolphin",
++  "description": "Hatchback 100% eléctrico de BYD, batería Blade LFP, uno de los eléctricos más vendidos a nivel global.",
++  "status": "confirmado",
++  "tags": [
++    "hatchback",
++    "byd",
++    "electrico"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:28.972Z",
++  "updatedAt": "2026-08-23T18:31:28.972Z",
++  "manufacturer": "BYD",
++  "class": "Hatchback eléctrico",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (150 km/h)",
++    "acceleration": "Media (0-100 km/h en 12.3s)"
++  },
++  "power": "95 hp",
++  "price": "USD 26.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.byd.com/la/car/dolphin"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/chevrolet-bolt-ev.json b/GTA6-CODEX/src/content/vehiculos/chevrolet-bolt-ev.json
+new file mode 100644
+index 0000000..1628a66
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/chevrolet-bolt-ev.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "chevrolet-bolt-ev",
++  "type": "vehiculos",
++  "title": "Chevrolet Bolt EV",
++  "description": "Hatchback 100% eléctrico de Chevrolet, orientado a uso urbano con buena autonomía.",
++  "status": "confirmado",
++  "tags": [
++    "hatchback",
++    "chevrolet",
++    "electrico"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:29.250Z",
++  "updatedAt": "2026-08-23T18:31:29.250Z",
++  "manufacturer": "Chevrolet",
++  "class": "Hatchback eléctrico",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (150 km/h)",
++    "acceleration": "Media-Alta (0-100 km/h en 6.5s)"
++  },
++  "power": "200 hp",
++  "price": "USD 29.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.chevrolet.com/electric/bolt-ev"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/chevrolet-camaro.json b/GTA6-CODEX/src/content/vehiculos/chevrolet-camaro.json
+new file mode 100644
+index 0000000..228f613
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/chevrolet-camaro.json
+@@ -0,0 +1,29 @@
++{
++  "slug": "chevrolet-camaro",
++  "type": "vehiculos",
++  "title": "Chevrolet Camaro",
++  "description": "Cupé deportivo de Chevrolet, disponible con motor V6 o V8, rival histórico del Mustang.",
++  "status": "confirmado",
++  "tags": [
++    "deportivo",
++    "chevrolet",
++    "muscle-car",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:30.088Z",
++  "updatedAt": "2026-08-23T18:31:30.088Z",
++  "manufacturer": "Chevrolet",
++  "class": "Deportivo",
++  "customizable": false,
++  "performance": {
++    "speed": "Muy alta (250 km/h)",
++    "acceleration": "Alta (0-100 km/h en 4.0s)"
++  },
++  "power": "455 hp",
++  "price": "USD 70.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.chevrolet.com/performance/camaro"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/chevrolet-s10.json b/GTA6-CODEX/src/content/vehiculos/chevrolet-s10.json
+new file mode 100644
+index 0000000..1d1ad0f
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/chevrolet-s10.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "chevrolet-s10",
++  "type": "vehiculos",
++  "title": "Chevrolet S10",
++  "description": "Pickup grande de Chevrolet, motor turbodiésel 2.8L Duramax de 200 hp.",
++  "status": "confirmado",
++  "tags": [
++    "pickup",
++    "chevrolet",
++    "diesel"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:28.141Z",
++  "updatedAt": "2026-08-23T18:31:28.141Z",
++  "manufacturer": "Chevrolet",
++  "class": "Pickup",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (175 km/h)",
++    "acceleration": "Media (0-100 km/h en 10.6s)"
++  },
++  "power": "200 hp",
++  "price": "USD 44.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.chevrolet.com.ar/s10-pickup"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/citroen-c3.json b/GTA6-CODEX/src/content/vehiculos/citroen-c3.json
+new file mode 100644
+index 0000000..b023403
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/citroen-c3.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "citroen-c3",
++  "type": "vehiculos",
++  "title": "Citroën C3",
++  "description": "Hatchback compacto de Citroën, plataforma CMP, suspensión con Progressive Hydraulic Cushions.",
++  "status": "confirmado",
++  "tags": [
++    "hatchback",
++    "citroen",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:27.601Z",
++  "updatedAt": "2026-08-23T18:31:27.601Z",
++  "manufacturer": "Citroën",
++  "class": "Hatchback",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (175 km/h)",
++    "acceleration": "Media (0-100 km/h en 11.2s)"
++  },
++  "power": "115 hp",
++  "price": "USD 18.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.citroen.com.ar/c3.html"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/fiat-cronos.json b/GTA6-CODEX/src/content/vehiculos/fiat-cronos.json
+new file mode 100644
+index 0000000..0caa016
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/fiat-cronos.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "fiat-cronos",
++  "type": "vehiculos",
++  "title": "Fiat Cronos",
++  "description": "Sedán compacto de Fiat, uno de los más vendidos de Argentina, motores 1.3L o 1.8L.",
++  "status": "confirmado",
++  "tags": [
++    "sedan",
++    "fiat",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:31.161Z",
++  "updatedAt": "2026-08-23T18:31:31.161Z",
++  "manufacturer": "Fiat",
++  "class": "Sedán",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (175 km/h)",
++    "acceleration": "Media (0-100 km/h en 11s)"
++  },
++  "power": "101 hp",
++  "price": "USD 17.500",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.fiat.com.ar/cronos"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/ford-mustang.json b/GTA6-CODEX/src/content/vehiculos/ford-mustang.json
+new file mode 100644
+index 0000000..1463922
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/ford-mustang.json
+@@ -0,0 +1,29 @@
++{
++  "slug": "ford-mustang",
++  "type": "vehiculos",
++  "title": "Ford Mustang",
++  "description": "Cupé deportivo de Ford, motor V8 5.0L de 480 hp en su versión GT, ícono del muscle car.",
++  "status": "confirmado",
++  "tags": [
++    "deportivo",
++    "ford",
++    "muscle-car",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:29.815Z",
++  "updatedAt": "2026-08-23T18:31:29.815Z",
++  "manufacturer": "Ford",
++  "class": "Deportivo",
++  "customizable": false,
++  "performance": {
++    "speed": "Muy alta (250 km/h)",
++    "acceleration": "Alta (0-100 km/h en 4.3s)"
++  },
++  "power": "480 hp",
++  "price": "USD 68.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.ford.com/cars/mustang/"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/honda-civic-type-r.json b/GTA6-CODEX/src/content/vehiculos/honda-civic-type-r.json
+new file mode 100644
+index 0000000..5bd4bc3
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/honda-civic-type-r.json
+@@ -0,0 +1,29 @@
++{
++  "slug": "honda-civic-type-r",
++  "type": "vehiculos",
++  "title": "Honda Civic Type R",
++  "description": "Hatchback deportivo de Honda, motor turbo 2.0L VTEC de 315 hp, tracción delantera.",
++  "status": "confirmado",
++  "tags": [
++    "hatchback",
++    "honda",
++    "deportivo",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:29.529Z",
++  "updatedAt": "2026-08-23T18:31:29.529Z",
++  "manufacturer": "Honda",
++  "class": "Hatchback deportivo",
++  "customizable": false,
++  "performance": {
++    "speed": "Muy alta (275 km/h)",
++    "acceleration": "Alta (0-100 km/h en 5.4s)"
++  },
++  "power": "315 hp",
++  "price": "USD 45.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://automobiles.honda.com/civic-type-r"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/hyundai-tucson.json b/GTA6-CODEX/src/content/vehiculos/hyundai-tucson.json
+new file mode 100644
+index 0000000..0448f20
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/hyundai-tucson.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "hyundai-tucson",
++  "type": "vehiculos",
++  "title": "Hyundai Tucson",
++  "description": "SUV mediana de Hyundai, motor 2.0L o 1.6L turbo, diseño renovado con parrilla oculta.",
++  "status": "confirmado",
++  "tags": [
++    "suv",
++    "hyundai",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:26.530Z",
++  "updatedAt": "2026-08-23T18:31:26.530Z",
++  "manufacturer": "Hyundai",
++  "class": "SUV",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (195 km/h)",
++    "acceleration": "Media (0-100 km/h en 9.9s)"
++  },
++  "power": "156 hp",
++  "price": "USD 32.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.hyundai.com/ar/es/modelos/tucson.html"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/kawasaki-ninja-400.json b/GTA6-CODEX/src/content/vehiculos/kawasaki-ninja-400.json
+new file mode 100644
+index 0000000..7943a5f
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/kawasaki-ninja-400.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "kawasaki-ninja-400",
++  "type": "vehiculos",
++  "title": "Kawasaki Ninja 400",
++  "description": "Moto deportiva de Kawasaki, motor bicilíndrico 399cc, popular como primera moto deportiva.",
++  "status": "confirmado",
++  "tags": [
++    "moto",
++    "kawasaki",
++    "deportiva"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:30.628Z",
++  "updatedAt": "2026-08-23T18:31:30.628Z",
++  "manufacturer": "Kawasaki",
++  "class": "Moto deportiva",
++  "customizable": false,
++  "performance": {
++    "speed": "Media-Alta (170 km/h)",
++    "acceleration": "Media-Alta (0-100 km/h en 5.9s)"
++  },
++  "power": "45 hp",
++  "price": "USD 6.800",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.kawasaki.com/en-us/motorcycle/ninja/sport/ninja-400"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/kia-sportage.json b/GTA6-CODEX/src/content/vehiculos/kia-sportage.json
+new file mode 100644
+index 0000000..3f93c89
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/kia-sportage.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "kia-sportage",
++  "type": "vehiculos",
++  "title": "Kia Sportage",
++  "description": "SUV mediana de Kia, disponible en versiones nafta, diésel e híbrida.",
++  "status": "confirmado",
++  "tags": [
++    "suv",
++    "kia",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:26.800Z",
++  "updatedAt": "2026-08-23T18:31:26.800Z",
++  "manufacturer": "Kia",
++  "class": "SUV",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (190 km/h)",
++    "acceleration": "Media (0-100 km/h en 9.5s)"
++  },
++  "power": "150 hp",
++  "price": "USD 31.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.kia.com/ar/vehiculos/sportage/"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/mercedes-benz-clase-c.json b/GTA6-CODEX/src/content/vehiculos/mercedes-benz-clase-c.json
+new file mode 100644
+index 0000000..6677e88
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/mercedes-benz-clase-c.json
+@@ -0,0 +1,29 @@
++{
++  "slug": "mercedes-benz-clase-c",
++  "type": "vehiculos",
++  "title": "Mercedes-Benz Clase C",
++  "description": "Sedán premium de Mercedes-Benz, motor 2.0L turbo, equipamiento tecnológico de gama alta.",
++  "status": "confirmado",
++  "tags": [
++    "sedan",
++    "mercedes-benz",
++    "premium",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:26.254Z",
++  "updatedAt": "2026-08-23T18:31:26.254Z",
++  "manufacturer": "Mercedes-Benz",
++  "class": "Sedán premium",
++  "customizable": false,
++  "performance": {
++    "speed": "Alta (250 km/h)",
++    "acceleration": "Alta (0-100 km/h en 6.0s)"
++  },
++  "power": "204 hp",
++  "price": "USD 62.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.mercedes-benz.com.ar/passengercars/models/sedan/c-class.html"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/nissan-versa.json b/GTA6-CODEX/src/content/vehiculos/nissan-versa.json
+new file mode 100644
+index 0000000..a3a7fff
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/nissan-versa.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "nissan-versa",
++  "type": "vehiculos",
++  "title": "Nissan Versa",
++  "description": "Sedán compacto de Nissan, motor 1.6L, orientado a relación precio-equipamiento.",
++  "status": "confirmado",
++  "tags": [
++    "sedan",
++    "nissan",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:27.069Z",
++  "updatedAt": "2026-08-23T18:31:27.069Z",
++  "manufacturer": "Nissan",
++  "class": "Sedán",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (175 km/h)",
++    "acceleration": "Media (0-100 km/h en 11s)"
++  },
++  "power": "106 hp",
++  "price": "USD 18.500",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.nissan.com.ar/vehiculos/nuevos/versa.html"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/peugeot-208.json b/GTA6-CODEX/src/content/vehiculos/peugeot-208.json
+new file mode 100644
+index 0000000..33214ef
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/peugeot-208.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "peugeot-208",
++  "type": "vehiculos",
++  "title": "Peugeot 208",
++  "description": "Hatchback compacto de Peugeot, diseño i-Cockpit, motores 1.6L o turbo 1.2L.",
++  "status": "confirmado",
++  "tags": [
++    "hatchback",
++    "peugeot",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:27.335Z",
++  "updatedAt": "2026-08-23T18:31:27.335Z",
++  "manufacturer": "Peugeot",
++  "class": "Hatchback",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (185 km/h)",
++    "acceleration": "Media (0-100 km/h en 10.2s)"
++  },
++  "power": "115 hp",
++  "price": "USD 20.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.peugeot.com.ar/gama/nuevo-208.html"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/renault-kangoo.json b/GTA6-CODEX/src/content/vehiculos/renault-kangoo.json
+new file mode 100644
+index 0000000..579a596
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/renault-kangoo.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "renault-kangoo",
++  "type": "vehiculos",
++  "title": "Renault Kangoo",
++  "description": "Furgón utilitario de Renault, motor 1.6L de 16v, usado como vehículo comercial.",
++  "status": "confirmado",
++  "tags": [
++    "utilitario",
++    "renault",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:25.693Z",
++  "updatedAt": "2026-08-23T18:31:25.693Z",
++  "manufacturer": "Renault",
++  "class": "Utilitario",
++  "customizable": false,
++  "performance": {
++    "speed": "Baja (155 km/h)",
++    "acceleration": "Baja (0-100 km/h en 13.5s)"
++  },
++  "power": "105 hp",
++  "price": "USD 19.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.renault.com.ar/kangoo"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/renault-sandero.json b/GTA6-CODEX/src/content/vehiculos/renault-sandero.json
+new file mode 100644
+index 0000000..d1b55aa
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/renault-sandero.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "renault-sandero",
++  "type": "vehiculos",
++  "title": "Renault Sandero",
++  "description": "Hatchback compacto de Renault, motores 1.6L de 16v, orientado a la relación precio-equipamiento.",
++  "status": "confirmado",
++  "tags": [
++    "hatchback",
++    "renault",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:31.429Z",
++  "updatedAt": "2026-08-23T18:31:31.429Z",
++  "manufacturer": "Renault",
++  "class": "Hatchback",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (175 km/h)",
++    "acceleration": "Media (0-100 km/h en 11.5s)"
++  },
++  "power": "113 hp",
++  "price": "USD 16.500",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.renault.com.ar/sandero"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/tesla-model-y.json b/GTA6-CODEX/src/content/vehiculos/tesla-model-y.json
+new file mode 100644
+index 0000000..7efc328
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/tesla-model-y.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "tesla-model-y",
++  "type": "vehiculos",
++  "title": "Tesla Model Y",
++  "description": "SUV eléctrica de Tesla basada en la plataforma del Model 3, mayor espacio de carga.",
++  "status": "confirmado",
++  "tags": [
++    "suv",
++    "tesla",
++    "electrico"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:28.694Z",
++  "updatedAt": "2026-08-23T18:31:28.694Z",
++  "manufacturer": "Tesla",
++  "class": "SUV eléctrica",
++  "customizable": false,
++  "performance": {
++    "speed": "Alta (217 km/h)",
++    "acceleration": "Alta (0-100 km/h en 5.0s)"
++  },
++  "power": "384 hp (Long Range)",
++  "price": "USD 47.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.tesla.com/modely"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/toyota-hilux.json b/GTA6-CODEX/src/content/vehiculos/toyota-hilux.json
+new file mode 100644
+index 0000000..da42c30
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/toyota-hilux.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "toyota-hilux",
++  "type": "vehiculos",
++  "title": "Toyota Hilux",
++  "description": "Pickup grande de Toyota, motor turbodiésel 2.8L, referencia de robustez en el segmento.",
++  "status": "confirmado",
++  "tags": [
++    "pickup",
++    "toyota",
++    "diesel"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:27.868Z",
++  "updatedAt": "2026-08-23T18:31:27.868Z",
++  "manufacturer": "Toyota",
++  "class": "Pickup",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (180 km/h)",
++    "acceleration": "Media (0-100 km/h en 10.4s)"
++  },
++  "power": "204 hp",
++  "price": "USD 45.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.toyota.com.ar/hilux"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/volkswagen-amarok.json b/GTA6-CODEX/src/content/vehiculos/volkswagen-amarok.json
+new file mode 100644
+index 0000000..9644ed9
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/volkswagen-amarok.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "volkswagen-amarok",
++  "type": "vehiculos",
++  "title": "Volkswagen Amarok",
++  "description": "Pickup grande de Volkswagen, motor V6 3.0L TDI de 258 hp en su tope de gama.",
++  "status": "confirmado",
++  "tags": [
++    "pickup",
++    "volkswagen",
++    "diesel"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:28.422Z",
++  "updatedAt": "2026-08-23T18:31:28.422Z",
++  "manufacturer": "Volkswagen",
++  "class": "Pickup",
++  "customizable": false,
++  "performance": {
++    "speed": "Alta (193 km/h)",
++    "acceleration": "Media-Alta (0-100 km/h en 7.8s)"
++  },
++  "power": "258 hp",
++  "price": "USD 52.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.vw.com.ar/amarok"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/volkswagen-tera.json b/GTA6-CODEX/src/content/vehiculos/volkswagen-tera.json
+new file mode 100644
+index 0000000..bce7389
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/volkswagen-tera.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "volkswagen-tera",
++  "type": "vehiculos",
++  "title": "Volkswagen T-Cross",
++  "description": "SUV compacta de Volkswagen, motor 1.0L TSI turbo de 128 hp.",
++  "status": "confirmado",
++  "tags": [
++    "suv",
++    "volkswagen",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:25.343Z",
++  "updatedAt": "2026-08-23T18:31:25.343Z",
++  "manufacturer": "Volkswagen",
++  "class": "SUV compacta",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (178 km/h)",
++    "acceleration": "Media (0-100 km/h en 10.9s)"
++  },
++  "power": "128 hp",
++  "price": "USD 24.500",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.vw.com.ar/t-cross"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/volvo-xc60.json b/GTA6-CODEX/src/content/vehiculos/volvo-xc60.json
+new file mode 100644
+index 0000000..53e50f8
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/volvo-xc60.json
+@@ -0,0 +1,29 @@
++{
++  "slug": "volvo-xc60",
++  "type": "vehiculos",
++  "title": "Volvo XC60",
++  "description": "SUV premium de Volvo, motor 2.0L turbo, foco fuerte en seguridad activa.",
++  "status": "confirmado",
++  "tags": [
++    "suv",
++    "volvo",
++    "premium",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:31.747Z",
++  "updatedAt": "2026-08-23T18:31:31.747Z",
++  "manufacturer": "Volvo",
++  "class": "SUV premium",
++  "customizable": false,
++  "performance": {
++    "speed": "Media-Alta (210 km/h)",
++    "acceleration": "Alta (0-100 km/h en 6.9s)"
++  },
++  "power": "250 hp",
++  "price": "USD 75.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.volvocars.com/ar/cars/xc60/"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/yamaha-mt-07.json b/GTA6-CODEX/src/content/vehiculos/yamaha-mt-07.json
+new file mode 100644
+index 0000000..f3a0dfa
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/yamaha-mt-07.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "yamaha-mt-07",
++  "type": "vehiculos",
++  "title": "Yamaha MT-07",
++  "description": "Moto naked de Yamaha, motor bicilíndrico CP2 689cc, muy elegida por relación peso-potencia.",
++  "status": "confirmado",
++  "tags": [
++    "moto",
++    "yamaha",
++    "naked"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:31:30.363Z",
++  "updatedAt": "2026-08-23T18:31:30.363Z",
++  "manufacturer": "Yamaha",
++  "class": "Moto naked",
++  "customizable": false,
++  "performance": {
++    "speed": "Media-Alta (215 km/h)",
++    "acceleration": "Alta (0-100 km/h en 3.7s)"
++  },
++  "power": "73 hp",
++  "price": "USD 9.500",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.yamahamotor.com.ar/mt-07"
++  }
++}

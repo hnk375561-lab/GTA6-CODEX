@@ -1,0 +1,28 @@
+{
+  "slug": "nissan-versa",
+  "type": "vehiculos",
+  "title": "Nissan Versa",
+  "description": "Sedán compacto de Nissan, motor 1.6L, orientado a relación precio-equipamiento.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "nissan",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:27.069Z",
+  "updatedAt": "2026-08-23T18:31:27.069Z",
+  "manufacturer": "Nissan",
+  "class": "Sedán",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (175 km/h)",
+    "acceleration": "Media (0-100 km/h en 11s)"
+  },
+  "power": "106 hp",
+  "price": "USD 18.500",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.nissan.com.ar/vehiculos/nuevos/versa.html"
+  }
+}

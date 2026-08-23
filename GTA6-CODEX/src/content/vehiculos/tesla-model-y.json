@@ -1,0 +1,28 @@
+{
+  "slug": "tesla-model-y",
+  "type": "vehiculos",
+  "title": "Tesla Model Y",
+  "description": "SUV eléctrica de Tesla basada en la plataforma del Model 3, mayor espacio de carga.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "tesla",
+    "electrico"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:28.694Z",
+  "updatedAt": "2026-08-23T18:31:28.694Z",
+  "manufacturer": "Tesla",
+  "class": "SUV eléctrica",
+  "customizable": false,
+  "performance": {
+    "speed": "Alta (217 km/h)",
+    "acceleration": "Alta (0-100 km/h en 5.0s)"
+  },
+  "power": "384 hp (Long Range)",
+  "price": "USD 47.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.tesla.com/modely"
+  }
+}

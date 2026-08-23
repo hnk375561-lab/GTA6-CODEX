@@ -1,0 +1,28 @@
+{
+  "slug": "kawasaki-ninja-400",
+  "type": "vehiculos",
+  "title": "Kawasaki Ninja 400",
+  "description": "Moto deportiva de Kawasaki, motor bicilíndrico 399cc, popular como primera moto deportiva.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "kawasaki",
+    "deportiva"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:30.628Z",
+  "updatedAt": "2026-08-23T18:31:30.628Z",
+  "manufacturer": "Kawasaki",
+  "class": "Moto deportiva",
+  "customizable": false,
+  "performance": {
+    "speed": "Media-Alta (170 km/h)",
+    "acceleration": "Media-Alta (0-100 km/h en 5.9s)"
+  },
+  "power": "45 hp",
+  "price": "USD 6.800",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.kawasaki.com/en-us/motorcycle/ninja/sport/ninja-400"
+  }
+}

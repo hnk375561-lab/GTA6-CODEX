@@ -1,0 +1,28 @@
+{
+  "slug": "citroen-c3",
+  "type": "vehiculos",
+  "title": "Citroën C3",
+  "description": "Hatchback compacto de Citroën, plataforma CMP, suspensión con Progressive Hydraulic Cushions.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "citroen",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:27.601Z",
+  "updatedAt": "2026-08-23T18:31:27.601Z",
+  "manufacturer": "Citroën",
+  "class": "Hatchback",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (175 km/h)",
+    "acceleration": "Media (0-100 km/h en 11.2s)"
+  },
+  "power": "115 hp",
+  "price": "USD 18.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.citroen.com.ar/c3.html"
+  }
+}

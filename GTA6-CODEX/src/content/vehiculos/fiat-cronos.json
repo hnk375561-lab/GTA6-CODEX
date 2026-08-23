@@ -1,0 +1,28 @@
+{
+  "slug": "fiat-cronos",
+  "type": "vehiculos",
+  "title": "Fiat Cronos",
+  "description": "Sedán compacto de Fiat, uno de los más vendidos de Argentina, motores 1.3L o 1.8L.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "fiat",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:31.161Z",
+  "updatedAt": "2026-08-23T18:31:31.161Z",
+  "manufacturer": "Fiat",
+  "class": "Sedán",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (175 km/h)",
+    "acceleration": "Media (0-100 km/h en 11s)"
+  },
+  "power": "101 hp",
+  "price": "USD 17.500",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.fiat.com.ar/cronos"
+  }
+}

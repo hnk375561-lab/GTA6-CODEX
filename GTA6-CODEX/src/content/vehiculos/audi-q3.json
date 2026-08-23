@@ -1,0 +1,29 @@
+{
+  "slug": "audi-q3",
+  "type": "vehiculos",
+  "title": "Audi Q3",
+  "description": "SUV premium compacta de Audi, motor 1.4L TFSI turbo, plataforma compartida con el grupo VW.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "audi",
+    "premium",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:32.112Z",
+  "updatedAt": "2026-08-23T18:31:32.112Z",
+  "manufacturer": "Audi",
+  "class": "SUV premium compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "Alta (210 km/h)",
+    "acceleration": "Media-Alta (0-100 km/h en 8.9s)"
+  },
+  "power": "150 hp",
+  "price": "USD 55.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.audi.com.ar/ar/web/es/modelos/q3/q3.html"
+  }
+}

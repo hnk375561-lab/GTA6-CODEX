@@ -1,0 +1,28 @@
+{
+  "slug": "yamaha-mt-07",
+  "type": "vehiculos",
+  "title": "Yamaha MT-07",
+  "description": "Moto naked de Yamaha, motor bicilíndrico CP2 689cc, muy elegida por relación peso-potencia.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "yamaha",
+    "naked"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:30.363Z",
+  "updatedAt": "2026-08-23T18:31:30.363Z",
+  "manufacturer": "Yamaha",
+  "class": "Moto naked",
+  "customizable": false,
+  "performance": {
+    "speed": "Media-Alta (215 km/h)",
+    "acceleration": "Alta (0-100 km/h en 3.7s)"
+  },
+  "power": "73 hp",
+  "price": "USD 9.500",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.yamahamotor.com.ar/mt-07"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "chevrolet-camaro",
+  "type": "vehiculos",
+  "title": "Chevrolet Camaro",
+  "description": "Cupé deportivo de Chevrolet, disponible con motor V6 o V8, rival histórico del Mustang.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "chevrolet",
+    "muscle-car",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:30.088Z",
+  "updatedAt": "2026-08-23T18:31:30.088Z",
+  "manufacturer": "Chevrolet",
+  "class": "Deportivo",
+  "customizable": false,
+  "performance": {
+    "speed": "Muy alta (250 km/h)",
+    "acceleration": "Alta (0-100 km/h en 4.0s)"
+  },
+  "power": "455 hp",
+  "price": "USD 70.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.chevrolet.com/performance/camaro"
+  }
+}

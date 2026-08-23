@@ -1,0 +1,29 @@
+{
+  "slug": "honda-civic-type-r",
+  "type": "vehiculos",
+  "title": "Honda Civic Type R",
+  "description": "Hatchback deportivo de Honda, motor turbo 2.0L VTEC de 315 hp, tracción delantera.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "honda",
+    "deportivo",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:29.529Z",
+  "updatedAt": "2026-08-23T18:31:29.529Z",
+  "manufacturer": "Honda",
+  "class": "Hatchback deportivo",
+  "customizable": false,
+  "performance": {
+    "speed": "Muy alta (275 km/h)",
+    "acceleration": "Alta (0-100 km/h en 5.4s)"
+  },
+  "power": "315 hp",
+  "price": "USD 45.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://automobiles.honda.com/civic-type-r"
+  }
+}

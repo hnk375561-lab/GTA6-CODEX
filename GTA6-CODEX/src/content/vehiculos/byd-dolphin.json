@@ -1,0 +1,28 @@
+{
+  "slug": "byd-dolphin",
+  "type": "vehiculos",
+  "title": "BYD Dolphin",
+  "description": "Hatchback 100% eléctrico de BYD, batería Blade LFP, uno de los eléctricos más vendidos a nivel global.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "byd",
+    "electrico"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:28.972Z",
+  "updatedAt": "2026-08-23T18:31:28.972Z",
+  "manufacturer": "BYD",
+  "class": "Hatchback eléctrico",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (150 km/h)",
+    "acceleration": "Media (0-100 km/h en 12.3s)"
+  },
+  "power": "95 hp",
+  "price": "USD 26.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.byd.com/la/car/dolphin"
+  }
+}

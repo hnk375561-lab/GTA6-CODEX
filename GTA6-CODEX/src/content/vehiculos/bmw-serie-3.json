@@ -1,0 +1,29 @@
+{
+  "slug": "bmw-serie-3",
+  "type": "vehiculos",
+  "title": "BMW Serie 3",
+  "description": "Sedán premium de BMW, motor 2.0L turbo de 4 cilindros, tracción trasera.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "bmw",
+    "premium",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:25.977Z",
+  "updatedAt": "2026-08-23T18:31:25.977Z",
+  "manufacturer": "BMW",
+  "class": "Sedán premium",
+  "customizable": false,
+  "performance": {
+    "speed": "Alta (250 km/h)",
+    "acceleration": "Alta (0-100 km/h en 5.8s)"
+  },
+  "power": "255 hp",
+  "price": "USD 58.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.bmw.com.ar/es/all-models/3-series/sedan/2022/bmw-3-series-sedan.html"
+  }
+}

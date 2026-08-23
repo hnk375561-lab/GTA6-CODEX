@@ -1,0 +1,28 @@
+{
+  "slug": "renault-kangoo",
+  "type": "vehiculos",
+  "title": "Renault Kangoo",
+  "description": "Furgón utilitario de Renault, motor 1.6L de 16v, usado como vehículo comercial.",
+  "status": "confirmado",
+  "tags": [
+    "utilitario",
+    "renault",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:25.693Z",
+  "updatedAt": "2026-08-23T18:31:25.693Z",
+  "manufacturer": "Renault",
+  "class": "Utilitario",
+  "customizable": false,
+  "performance": {
+    "speed": "Baja (155 km/h)",
+    "acceleration": "Baja (0-100 km/h en 13.5s)"
+  },
+  "power": "105 hp",
+  "price": "USD 19.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.renault.com.ar/kangoo"
+  }
+}
