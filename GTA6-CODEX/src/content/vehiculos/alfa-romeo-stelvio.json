@@ -15,18 +15,18 @@
   "power": "280 hp @ motor 2.0L turbo I4, 306 lb-ft de torque",
   "price": "USD 53.245 (base, 2026)",
   "consumo": "22 mpg ciudad / 28 mpg ruta (EPA)",
-  "dimensiones": "Pendiente de enriquecimiento",
+  "dimensiones": "4.687 mm largo x 1.903 mm ancho x 1.648 mm alto, distancia entre ejes 2.818 mm",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.alfaromeousa.com/models/stelvio",
-    "secondarySource": "https://www.truecar.com/overview/alfa-romeo/stelvio/",
+    "secondarySource": "https://www.carsguide.com.au/alfa-romeo/stelvio/speed",
     "note": "Para el año modelo 2026 la gama se consolidó en una única configuración base con paquetes opcionales; se discontinuó la versión Quadrifoglio de producción regular en EE.UU. (solo edición limitada 'Collezione' de 63 unidades con entrega 2027).",
     "limitations": []
   },
   "performance": {
-    "speed": "Pendiente de enriquecimiento",
-    "acceleration": "Pendiente de enriquecimiento"
+    "speed": "230 km/h",
+    "acceleration": "0-100 km/h en 5.7s (0-60 mph en 5.5s, cifra oficial)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-23T23:06:25.164Z"
+  "updatedAt": "2026-08-24T01:45:00.000Z"
 }

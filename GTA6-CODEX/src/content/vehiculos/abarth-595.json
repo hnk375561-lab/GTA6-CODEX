@@ -14,21 +14,22 @@
   "customizable": false,
   "power": "165 hp (últimas unidades 2024-2026, motor 1.4 T-Jet)",
   "price": "EUR 31.500 (último precio de lista antes de discontinuarse) / GBP 23.225 (Reino Unido)",
-  "consumo": "Pendiente de enriquecimiento",
-  "dimensiones": "Pendiente de enriquecimiento",
+  "consumo": "6.0 l/100km combinado (versión Turismo 1.4 T-Jet 165 hp)",
+  "dimensiones": "3.657 mm largo x 1.627 mm ancho x 1.485 mm alto, distancia entre ejes 2.300 mm",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.topgear.com/car-reviews/abarth/595",
-    "secondarySource": "https://en.actualidadmotor.com/Car/abarth/Abarth-595/",
+    "secondarySource": "https://www.auto-data.net/en/abarth-595-facelift-2016-turismo-1.4-t-jet-165hp-24709",
     "note": "Modelo discontinuado: producción en masa en Europa cesó a mediados de 2024. El sitio oficial abarth.com ya no lo lista entre los modelos vigentes (solo aparece en sección de clientes existentes), reemplazado por el Abarth 600e y 500e eléctricos.",
     "limitations": [
-      "Modelo fuera de producción; no hay unidades 0km disponibles en la mayoría de los mercados"
+      "Modelo fuera de producción; no hay unidades 0km disponibles en la mayoría de los mercados",
+      "Cifras de consumo/prestaciones corresponden a la versión Turismo (165 hp); la Competizione (180 hp) difiere levemente"
     ]
   },
   "performance": {
-    "speed": "Pendiente de enriquecimiento",
-    "acceleration": "Pendiente de enriquecimiento"
+    "speed": "218 km/h",
+    "acceleration": "0-100 km/h en 7.3s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-23T23:08:07.679Z"
+  "updatedAt": "2026-08-24T01:45:00.000Z"
 }

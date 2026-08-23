@@ -14,19 +14,19 @@
   "customizable": false,
   "power": "503 hp",
   "price": "USD 78.000",
-  "consumo": "Pendiente de enriquecimiento",
-  "dimensiones": "Pendiente de enriquecimiento",
+  "consumo": "9.9-10.2 l/100km combinado (versión Competition)",
+  "dimensiones": "4.794 mm largo x 1.887 mm ancho x 1.393 mm alto, distancia entre ejes 2.857 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
-    "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ]
+    "primarySource": "https://www.auto-data.net/en/bmw-m4-g82-competition-3.0-510hp-steptronic-41300",
+    "secondarySource": "https://www.cardekho.com/bmw/m4-competition/specs",
+    "note": "Cifras corresponden a la versión M4 Competition (G82, 503 hp SAE / 510 PS ECE), la variante de mayor volumen de venta sobre el M4 base (473 hp).",
+    "limitations": []
   },
   "performance": {
-    "speed": "Pendiente de enriquecimiento",
-    "acceleration": "Pendiente de enriquecimiento"
+    "speed": "250 km/h (limitada electrónicamente)",
+    "acceleration": "0-100 km/h en 3.9s"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-23T23:06:25.164Z"
+  "updatedAt": "2026-08-24T01:45:00.000Z"
 }

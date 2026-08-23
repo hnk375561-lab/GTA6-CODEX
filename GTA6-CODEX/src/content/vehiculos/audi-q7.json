@@ -14,19 +14,19 @@
   "customizable": false,
   "power": "335 hp",
   "price": "USD 62.000",
-  "consumo": "Pendiente de enriquecimiento",
-  "dimensiones": "Pendiente de enriquecimiento",
+  "consumo": "8.7 l/100km combinado (versión 55 TFSI V6 335 hp)",
+  "dimensiones": "5.063 mm largo x 1.970 mm ancho x 1.741 mm alto, distancia entre ejes 2.994 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
-    "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ]
+    "primarySource": "https://motoreu.com/audi-q7-55-tfsi-mpg-fuel-consumption-technical-specifications-176357",
+    "secondarySource": "https://www.auto-data.net/en/audi-q7-model-517",
+    "note": "Cifras corresponden a la versión Audi Q7 55 TFSI quattro (V6 3.0 turbo, 335 hp/340 PS), la variante de gasolina más vendida de la gama.",
+    "limitations": []
   },
   "performance": {
-    "speed": "Pendiente de enriquecimiento",
-    "acceleration": "Pendiente de enriquecimiento"
+    "speed": "250 km/h (limitada electrónicamente)",
+    "acceleration": "0-100 km/h en 5.9s"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-23T23:06:25.164Z"
+  "updatedAt": "2026-08-24T01:45:00.000Z"
 }

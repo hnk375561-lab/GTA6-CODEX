@@ -14,19 +14,21 @@
   "customizable": false,
   "power": "220 hp @ 13.100 rpm (motor V4 de 1099cc)",
   "price": "USD 19.499 (RSV4 1100 base) - USD 26.749 (Factory 1100)",
-  "consumo": "Pendiente de enriquecimiento",
-  "dimensiones": "Pendiente de enriquecimiento",
+  "consumo": "6.5 l/100km combinado aprox. (referencia de segmento superbike, no publicado oficialmente por Aprilia)",
+  "dimensiones": "2.035 mm largo x 735 mm ancho x 1.105 mm alto, distancia entre ejes 1.435 mm, altura de asiento 845 mm",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.aprilia.com/us_EN/models/rsv4/",
     "secondarySource": "https://www.motorcycle.com/specs/aprilia/sport/2026/rsv4/1100/detail.html",
     "note": "Gama 2026 presentada en noviembre 2025: RSV4 1100 base y RSV4 Factory 1100 (con suspensión Öhlins Smart EC 2.0).",
-    "limitations": []
+    "limitations": [
+      "Consumo y aceleración exacta son estimaciones de prensa especializada, no cifra oficial de Aprilia (las superbikes no suelen publicar consumo homologado)"
+    ]
   },
   "performance": {
-    "speed": "Pendiente de enriquecimiento",
-    "acceleration": "Pendiente de enriquecimiento"
+    "speed": "305 km/h aprox.",
+    "acceleration": "0-100 km/h en 3.0s aprox. (0-60 mph en 3.1s, prueba independiente de Cycle World sobre la Factory; el modelo base comparte motor)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-23T23:08:07.679Z"
+  "updatedAt": "2026-08-24T01:45:00.000Z"
 }
