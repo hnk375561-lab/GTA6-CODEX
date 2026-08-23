@@ -5,9 +5,7 @@ import { getEntityImageMap } from '@/lib/media'
 import { getBidirectionalRelationCount } from '@/lib/relations'
 import { SearchClient } from '@/components/search/SearchClient'
 import { Reveal } from '@/components/ui/Reveal'
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
-const SITE_NAME = 'GTA6 Zona'
+import { SITE_NAME, SITE_URL } from '@/config/site'
 
 // Antes esta página no definía `alternates`, `openGraph` ni `twitter`, así
 // que heredaba en silencio los del layout raíz: el canonical y el og:url

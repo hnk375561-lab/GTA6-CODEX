@@ -92,10 +92,10 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-3">
           <div className="logo-mark flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-gta-accent to-gta-accent-orange shadow-glow-pink">
-            <span className="font-display text-xs font-bold tracking-tight text-gta-darker">GTA</span>
+            <span className="font-display text-xs font-bold tracking-tight text-gta-darker">A</span>
           </div>
           <span className="hidden font-display text-base font-semibold tracking-tight text-gta-text transition-colors duration-300 group-hover:text-gta-accent-strong sm:inline">
-            GTA6 <span className="text-gradient-vice">Zona</span>
+            Auto<span className="text-gradient-vice">Ficha</span>
           </span>
         </Link>
 

@@ -34,7 +34,7 @@ import { WebGLBackground } from '@/components/webgl/WebGLBackground'
 import { SceneAmbientBridge } from '@/components/webgl/SceneAmbientBridge'
 import { ConsentBanner } from '@/components/layout/ConsentBanner'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/config/site'
 // GA4 solo se activa si hay un ID real configurado. Sin esto, un build sin
 // NEXT_PUBLIC_GA_ID enviaría eventos a un ID placeholder inexistente.
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID
@@ -47,33 +47,22 @@ const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'GTA6 Zona | Wiki Editorial de Grand Theft Auto 6',
+  title: `${SITE_NAME} | ${SITE_TAGLINE}`,
   description:
-    'Exploración comprensiva de GTA 6: personajes, vehículos, ubicaciones, misiones y más. Información verificada, rumores y análisis profundo.',
-  keywords: [
-    'GTA6',
-    'Grand Theft Auto 6',
-    'wiki',
-    'personajes',
-    'vehículos',
-    'ubicaciones',
-    'misiones',
-  ],
+    'Fichas técnicas de autos y motos con specs reales por fabricante, comparador lado a lado y buscador. Datos con fuente primaria.',
+  keywords: ['autos', 'motos', 'fichas técnicas', 'comparador de autos', 'specs', 'precio autos'],
   openGraph: {
     type: 'website',
     locale: 'es_ES',
     url: SITE_URL,
-    siteName: 'GTA6 Zona',
-    title: 'GTA6 Zona | Wiki Editorial de Grand Theft Auto 6',
-    description:
-      'Exploración comprensiva de GTA 6: personajes, vehículos, ubicaciones, misiones y más.',
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} | ${SITE_TAGLINE}`,
+    description: 'Fichas técnicas de autos y motos con specs reales, comparador lado a lado y buscador.',
   },
   twitter: {
     card: 'summary_large_image',
-    creator: '@gta6zona',
-    title: 'GTA6 Zona',
-    description:
-      'Exploración comprensiva de GTA 6: personajes, vehículos, ubicaciones, misiones y más.',
+    title: SITE_NAME,
+    description: 'Fichas técnicas de autos y motos con specs reales, comparador lado a lado y buscador.',
   },
   robots: {
     index: true,

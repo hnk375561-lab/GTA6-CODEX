@@ -1,0 +1,28 @@
+{
+  "slug": "tesla-model-3",
+  "type": "vehiculos",
+  "title": "Tesla Model 3",
+  "description": "Sedán 100% eléctrico de Tesla, tracción trasera, autonomía de largo alcance.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "tesla",
+    "electrico"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:33.524Z",
+  "updatedAt": "2026-08-23T18:01:33.524Z",
+  "manufacturer": "Tesla",
+  "class": "Sedán",
+  "customizable": false,
+  "performance": {
+    "speed": "Alta (225 km/h)",
+    "acceleration": "Muy alta (0-100 km/h en 3.3s en versión Performance)"
+  },
+  "power": "283 hp (RWD)",
+  "price": "USD 42.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.tesla.com/model3"
+  }
+}

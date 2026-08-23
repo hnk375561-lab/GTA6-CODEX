@@ -1,0 +1,28 @@
+{
+  "slug": "toyota-rav4",
+  "type": "vehiculos",
+  "title": "Toyota RAV4",
+  "description": "SUV compacta de Toyota, disponible en versión híbrida, motor 2.5L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "toyota",
+    "hibrido"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:33.800Z",
+  "updatedAt": "2026-08-23T18:01:33.800Z",
+  "manufacturer": "Toyota",
+  "class": "SUV",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 8.1s)"
+  },
+  "power": "203 hp",
+  "price": "USD 29.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.toyota.com/rav4/"
+  }
+}

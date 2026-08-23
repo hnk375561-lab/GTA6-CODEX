@@ -1,0 +1,28 @@
+{
+  "slug": "ford-ranger",
+  "type": "vehiculos",
+  "title": "Ford Ranger",
+  "description": "Pickup mediana de Ford, motor 2.0L biturbo diésel de 200 hp.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "ford",
+    "diesel"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:33.241Z",
+  "updatedAt": "2026-08-23T18:01:33.241Z",
+  "manufacturer": "Ford",
+  "class": "Pickup",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (170 km/h)",
+    "acceleration": "Media (0-100 km/h en 10s)"
+  },
+  "power": "200 hp",
+  "price": "USD 38.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ford.com/trucks/ranger/"
+  }
+}

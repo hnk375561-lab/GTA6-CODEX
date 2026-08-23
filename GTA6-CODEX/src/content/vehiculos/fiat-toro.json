@@ -1,0 +1,28 @@
+{
+  "slug": "fiat-toro",
+  "type": "vehiculos",
+  "title": "Fiat Toro",
+  "description": "Pickup mediana de Fiat, motor turbo 1.8L o 2.0L diésel, popular en Argentina y Brasil.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "fiat",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:35.107Z",
+  "updatedAt": "2026-08-23T18:01:35.107Z",
+  "manufacturer": "Fiat",
+  "class": "Pickup",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 10s)"
+  },
+  "power": "175 hp",
+  "price": "USD 31.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.fiat.com.ar/toro"
+  }
+}

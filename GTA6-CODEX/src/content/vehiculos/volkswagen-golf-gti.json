@@ -1,0 +1,29 @@
+{
+  "slug": "volkswagen-golf-gti",
+  "type": "vehiculos",
+  "title": "Volkswagen Golf GTI",
+  "description": "Hatchback deportivo de Volkswagen, motor turbo 2.0L TSI de 245 hp.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "volkswagen",
+    "deportivo",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:32.940Z",
+  "updatedAt": "2026-08-23T18:01:32.940Z",
+  "manufacturer": "Volkswagen",
+  "class": "Hatchback",
+  "customizable": false,
+  "performance": {
+    "speed": "Alta (250 km/h)",
+    "acceleration": "Alta (0-100 km/h en 6.2s)"
+  },
+  "power": "245 hp",
+  "price": "USD 32.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.vw.com/en/models/golf-gti.html"
+  }
+}

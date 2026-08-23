@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import { getGalleryItems, getGalleryCategoryCounts } from '@/lib/gallery'
 import { GalleryHero } from '@/components/gallery/GalleryHero'
 import { GalleryExplorer } from '@/components/gallery/GalleryExplorer'
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
-const SITE_NAME = 'GTA6 Zona'
+import { SITE_NAME, SITE_URL } from '@/config/site'
 
 export async function generateMetadata(): Promise<Metadata> {
   const items = await getGalleryItems()

@@ -3,27 +3,19 @@ import { EntityType } from '@/types'
 import { getEntitiesByType } from './entities'
 import { resolveEntityImage, ENTITY_IMAGE_CATEGORIES } from './images'
 import { getMediaAssets, resolveMediaRender } from './media'
-import imageSourceManifest from '../../real-images-manifest.json'
 
 /**
- * ILUSTRACIONES GENERADAS POR IA (no capturas oficiales de Rockstar)
- * ====================================================================
- * `real-images-manifest.json` es el registro de trazabilidad de sourcing
- * de imágenes (ver docs/internal/IMAGE_CATALOG.md) y ya distingue, entrada
- * por entrada, `sourceType: 'rockstar-official' | 'secondary-reliable' |
- * 'ai-generated-illustration'`. Se deriva acá un lookup `type/slug` de las
- * entradas IA para que la galería pueda: (a) mostrarlas con el badge
- * 'nuestro' ya existente (`STATUS_LABELS.nuestro === 'Recreación no
- * oficial (IA)'`, ver entity-labels.ts) en vez de heredar el status
- * editorial de la entidad (que certifica que la UBICACIÓN existe en el
- * juego, no que la FOTO sea oficial — son dos cosas distintas), y (b)
- * ordenarlas siempre al final del grid, después de todo el material real.
+ * El registro `real-images-manifest.json` (trazabilidad de sourcing de
+ * imágenes oficiales de Rockstar/GTA6) se eliminó junto con el resto del
+ * contenido de GTA6 — ver plan de migración. Con él se fue también el
+ * distingo "ilustración IA vs. oficial", que no aplica al nicho de autos
+ * (acá las fotos son stock libre de derechos o propias, no key art de
+ * un juego). Si en el futuro hace falta distinguir tipos de fuente de
+ * imagen otra vez, se puede reintroducir vía el campo `image.source` que
+ * ya existe en el schema de cada entidad (`ImageProvenanceSchema`), sin
+ * necesidad de un manifest aparte.
  */
-const AI_ILLUSTRATION_KEYS = new Set(
-  (imageSourceManifest as Array<{ category: string; slug: string; sourceType: string }>)
-    .filter((entry) => entry.sourceType === 'ai-generated-illustration')
-    .map((entry) => `${entry.category}/${entry.slug}`)
-)
+const AI_ILLUSTRATION_KEYS = new Set<string>()
 
 /**
  * SISTEMA DE GALERÍA — AGREGACIÓN DE ASSETS REALES
@@ -80,74 +72,22 @@ export interface GalleryItem {
 
 /**
  * Key art / fondos que no pertenecen a una entidad individual.
- * Metadata y procedencia tomadas directamente de los comentarios de
- * `RotatingHeroBackground.tsx` y de `IMAGE_CATALOG.md` (rondas 6-8):
- * cada nota de crédito acá es trazable a ese material, no inventada.
+ *
+ * El key art original acá era material promocional oficial de Rockstar
+ * Games para GTA6 (portadas, postales "Visit Leonida", packs temáticos) —
+ * se eliminó junto con los archivos de imagen que referenciaba (ver plan
+ * de migración). No hay equivalente directo para un sitio de autos: no
+ * existe "key art" de fabricante que podamos usar del mismo modo sin caer
+ * en el mismo problema (fotos de marca sin licencia). Queda vacío a
+ * propósito — si en el futuro se suma un asset de portada propio, entra
+ * acá como una entrada nueva.
  */
-const KEY_ART: Array<Omit<GalleryItem, 'categorySlug' | 'categoryLabel' | 'trailerAppearances'>> = [
-  {
-    id: 'key-art-boxart-sunset',
-    src: '/images/heroes/hero-gta6-boxart-sunset.webp',
-    alt: 'Key art oficial de portada de GTA VI, con Jason Duval y Lucia Caminos frente a Vice City al atardecer',
-    title: 'Portada oficial — Jason y Lucia',
-    description:
-      'Key art oficial de portada de Grand Theft Auto VI: Jason Duval y Lucia Caminos frente al skyline de Vice City al atardecer. La pieza más reconocible del material promocional del juego.',
-    credit: 'Rockstar Games — key art oficial de portada',
-    featured: true,
-  },
-  {
-    id: 'key-art-port-gellhorn',
-    src: '/images/heroes/hero-port-gellhorn-postcard.webp',
-    alt: 'Postal promocional oficial "Visit Leonida" de Port Gellhorn',
-    title: 'Postal "Visit Leonida" — Port Gellhorn',
-    description:
-      'Material promocional oficial de la campaña "Visit Leonida", ambientado en el pueblo costero de Port Gellhorn: composición panorámica sin personajes en primer plano.',
-    credit: 'Rockstar Games — material promocional "Visit Leonida"',
-  },
-  {
-    id: 'key-art-vintage-dock',
-    src: '/images/heroes/hero-vintage-dock-sunset.webp',
-    alt: 'Key art del Vintage Vice City Pack, pareja junto a un Declasse Stanier en un muelle al atardecer',
-    title: 'Vintage Vice City Pack — muelle al atardecer',
-    description:
-      'Key art oficial del Vintage Vice City Pack: una pareja junto a un Declasse Stanier en un muelle, con la luz cálida del atardecer.',
-    credit: 'Rockstar Games — Vintage Vice City Pack',
-  },
-  {
-    id: 'key-art-vintage-hotel',
-    src: '/images/heroes/hero-vintage-hotel-neon.webp',
-    alt: 'Key art del Vintage Vice City Pack frente al letrero de neón del Ocean View Hotel',
-    title: 'Vintage Vice City Pack — neón del Ocean View Hotel',
-    description:
-      'Key art oficial del Vintage Vice City Pack frente al letrero de neón del Ocean View Hotel, con la iluminación nocturna característica del pack.',
-    credit: 'Rockstar Games — Vintage Vice City Pack',
-  },
-  {
-    id: 'key-art-vice-sunset',
-    src: '/images/heroes/hero-vice-sunset.webp',
-    alt: 'Panorámica oficial de Vice City al atardecer',
-    title: 'Vice City al atardecer',
-    description:
-      'Panorámica oficial de Vice City al atardecer, uno de los fondos originales usados en el hero del sitio.',
-    credit: 'Rockstar Games — material oficial',
-  },
-  {
-    id: 'key-art-vi-logo',
-    src: '/images/heroes/hero-vi-logo.webp',
-    alt: 'Presentación oficial del logotipo de Grand Theft Auto VI',
-    title: 'Logo oficial de GTA VI',
-    description: 'Pieza de branding oficial usada en la presentación y el anuncio de Grand Theft Auto VI.',
-    credit: 'Rockstar Games — material oficial',
-  },
-]
+const KEY_ART: Array<Omit<GalleryItem, 'categorySlug' | 'categoryLabel' | 'trailerAppearances'>> = []
 
 const CATEGORY_LABELS: Partial<Record<EntityType, string>> = {
-  [EntityType.CHARACTER]: 'Personajes',
-  [EntityType.LOCATION]: 'Ubicaciones',
   [EntityType.VEHICLE]: 'Vehículos',
-  [EntityType.FACTION]: 'Organizaciones',
+  [EntityType.LOCATION]: 'Ubicaciones',
   [EntityType.BUSINESS]: 'Negocios',
-  [EntityType.OBJECT]: 'Objetos',
 }
 
 /**
@@ -215,9 +155,7 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
         href: `/${entity.type}/${entity.slug}`,
         entityType: entity.type,
         entitySlug: entity.slug,
-        credit: isAiIllustration
-          ? 'Ilustración generada por IA — no oficial, no proviene de Rockstar Games'
-          : entity.image?.credit || 'Rockstar Games — material oficial (aportado por captura verificada)',
+        credit: isAiIllustration ? 'Ilustración generada por IA' : entity.image?.credit || 'Fuente propia',
         sourceNote: entity.evidence?.note,
         tags: entity.tags,
         featured: entity.featured,

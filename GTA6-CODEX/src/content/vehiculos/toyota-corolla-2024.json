@@ -1,0 +1,28 @@
+{
+  "slug": "toyota-corolla-2024",
+  "type": "vehiculos",
+  "title": "Toyota Corolla 2024",
+  "description": "Sedán compacto de Toyota, generación XII, motor 2.0L de 4 cilindros.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "toyota",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:32.194Z",
+  "updatedAt": "2026-08-23T18:01:32.194Z",
+  "manufacturer": "Toyota",
+  "class": "Sedán",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 10.1s)"
+  },
+  "power": "169 hp",
+  "price": "USD 24.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.toyota.com/corolla/"
+  }
+}

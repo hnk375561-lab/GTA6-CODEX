@@ -31,7 +31,7 @@
  *   node scripts/verify-content-integrity.mjs
  *
  * Agrega y remueve un archivo de fixture temporal en
- * src/content/personajes/ — nunca lo deja en el repo, incluso si el
+ * src/content/vehiculos/ — nunca lo deja en el repo, incluso si el
  * script falla a mitad de camino (try/finally).
  * ============================================================
  */
@@ -40,12 +40,12 @@ import fs from 'node:fs'
 import path from 'node:path'
 import assert from 'node:assert/strict'
 
-const CONTENT_DIR = path.join(process.cwd(), 'src', 'content', 'personajes')
+const CONTENT_DIR = path.join(process.cwd(), 'src', 'content', 'vehiculos')
 const FIXTURE_PATH = path.join(CONTENT_DIR, '__verify-content-integrity-fixture.json')
 
 const BAD_ENTITY = {
   slug: '__verify-content-integrity-fixture',
-  type: 'personajes',
+  type: 'vehiculos',
   title: 'Fixture temporal de verificación — no debería quedar en el repo',
   description: 'Fixture temporal de scripts/verify-content-integrity.mjs',
   status: 'nuestro',

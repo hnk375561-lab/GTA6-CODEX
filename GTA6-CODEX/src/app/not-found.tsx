@@ -11,7 +11,7 @@ export default function NotFound() {
           <div className="text-gradient-vice mb-4 font-display text-8xl font-bold sm:text-9xl">404</div>
           <h1 className="mb-2 text-3xl font-bold text-gta-text sm:text-4xl">Página no encontrada</h1>
           <p className="mb-8 text-lg text-gta-text-secondary">
-            Parece que esta ubicación no existe en el código de GTA 6.
+            Parece que esta página no existe.
           </p>
         </div>
 

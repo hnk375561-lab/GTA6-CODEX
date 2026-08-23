@@ -1,7 +1,7 @@
 {
-  "name": "gta6-zona",
+  "name": "autoficha",
   "version": "0.1.0",
-  "description": "GTA6 Zona - Un wiki editorial de primer nivel sobre Grand Theft Auto 6",
+  "description": "AutoFicha - Fichas técnicas de autos y motos con comparador y buscador",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -67,6 +67,7 @@
     "postcss": "^8.4.32",
     "sharp": "^0.35.3",
     "tailwindcss": "^3.4.0",
+    "tsx": "^4.23.12",
     "vitest": "^4.1.11"
   }
 }

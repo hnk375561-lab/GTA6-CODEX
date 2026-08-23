@@ -1,0 +1,28 @@
+{
+  "slug": "jeep-compass",
+  "type": "vehiculos",
+  "title": "Jeep Compass",
+  "description": "SUV mediana de Jeep, motor turbo 1.3L de 170 hp, con opción 4x4.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "jeep",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:34.851Z",
+  "updatedAt": "2026-08-23T18:01:34.851Z",
+  "manufacturer": "Jeep",
+  "class": "SUV",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (190 km/h)",
+    "acceleration": "Media (0-100 km/h en 9.5s)"
+  },
+  "power": "170 hp",
+  "price": "USD 33.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.jeep.com/compass.html"
+  }
+}

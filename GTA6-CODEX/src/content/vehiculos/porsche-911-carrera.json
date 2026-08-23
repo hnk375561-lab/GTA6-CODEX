@@ -1,0 +1,28 @@
+{
+  "slug": "porsche-911-carrera",
+  "type": "vehiculos",
+  "title": "Porsche 911 Carrera",
+  "description": "Deportivo icónico de Porsche, motor bóxer 6 cilindros de 379 hp.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "porsche",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:34.332Z",
+  "updatedAt": "2026-08-23T18:01:34.332Z",
+  "manufacturer": "Porsche",
+  "class": "Deportivo",
+  "customizable": false,
+  "performance": {
+    "speed": "Muy alta (293 km/h)",
+    "acceleration": "Muy alta (0-100 km/h en 4.2s)"
+  },
+  "power": "379 hp",
+  "price": "USD 118.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.porsche.com/international/models/911/911-models/carrera/"
+  }
+}

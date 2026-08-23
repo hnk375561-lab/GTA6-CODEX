@@ -8,9 +8,7 @@ import { getVehiclesByManufacturer } from '@/lib/vehicle-manufacturers'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { EntityCard } from '@/components/entities/EntityCard'
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
-const SITE_NAME = 'GTA6 Zona'
+import { SITE_NAME, SITE_URL } from '@/config/site'
 
 interface PageProps {
   params: Promise<{ manufacturer: string }>
@@ -22,7 +20,7 @@ interface PageProps {
  * existe en cada ficha de vehículo (`manufacturer`), así que esta página
  * no agrega contenido editorial nuevo — solo expone una vista ya
  * soportada por el modelo de datos, útil tanto para navegación como para
- * SEO de cola larga ("vehículos Vapid GTA 6").
+ * SEO de cola larga ("fichas técnicas Toyota").
  */
 
 export async function generateStaticParams() {
@@ -36,8 +34,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const entry = map.get(manufacturer)
   if (!entry) return {}
 
-  const title = `Vehículos ${entry.label} en GTA 6 — ${SITE_NAME}`
-  const description = `Explorá los ${entry.vehicles.length} vehículos de ${entry.label} documentados en GTA 6 Zona, con estado de confirmación y evidencia por unidad.`
+  const title = `Vehículos ${entry.label} — ${SITE_NAME}`
+  const description = `Explorá los ${entry.vehicles.length} vehículos de ${entry.label} documentados, con fuente y ficha técnica por unidad.`
   const url = `${SITE_URL}/vehiculos/fabricante/${manufacturer}`
 
   return {

@@ -16,12 +16,12 @@ export function Footer() {
           <div>
             <div className="mb-4 flex items-center gap-2.5">
               <div className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-gta-accent to-gta-accent-orange">
-                <span className="font-display text-[10px] font-bold text-gta-darker">GTA</span>
+                <span className="font-display text-[10px] font-bold text-gta-darker">A</span>
               </div>
-              <h3 className="font-display text-lg font-semibold text-gta-text">GTA6 Zona</h3>
+              <h3 className="font-display text-lg font-semibold text-gta-text">AutoFicha</h3>
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-gta-text-secondary">
-              Un wiki editorial de primer nivel sobre Grand Theft Auto 6. Información verificada, rumores y análisis.
+              Fichas técnicas de autos y motos con specs reales, comparador lado a lado y fuente por cada dato.
             </p>
           </div>
 
@@ -132,15 +132,10 @@ export function Footer() {
         <Reveal delay={150} className="relative mt-10 space-y-3 pt-8 text-center text-gta-text-tertiary">
           <div className="section-divider absolute inset-x-0 top-0" aria-hidden="true" />
           <p className="mx-auto max-w-2xl text-xs leading-relaxed">
-            GTA6 Zona es un proyecto editorial independiente y no oficial. No está
-            afiliado, respaldado ni patrocinado por Rockstar Games ni Take-Two
-            Interactive Software, Inc. Grand Theft Auto, GTA y las imágenes,
-            personajes y marcas relacionadas son propiedad de sus respectivos
-            dueños y se usan aquí con fines informativos y de comentario editorial.
+            AutoFicha es un proyecto editorial independiente. Las marcas y nombres de fabricantes mencionados
+            pertenecen a sus respectivos dueños y se citan aquí con fines informativos y de comparación técnica.
           </p>
-          <p className="font-mono text-xs tracking-wide">
-            © {currentYear} GTA6 Zona. Not affiliated with Rockstar Games or Take-Two Interactive.
-          </p>
+          <p className="font-mono text-xs tracking-wide">© {currentYear} AutoFicha.</p>
         </Reveal>
       </div>
     </footer>

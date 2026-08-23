@@ -2,9 +2,8 @@ import { Entity, EntityType } from '@/types'
 import type { MediaAsset } from '@/types/media'
 import { Metadata } from 'next'
 import { ENTITY_TYPE_LABELS } from './entity-labels'
+import { SITE_NAME, SITE_URL } from '@/config/site'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
-const SITE_NAME = 'GTA6 Zona'
 const SITE_DESCRIPTION =
   'Un wiki editorial de Grand Theft Auto 6, clasificado por nivel de evidencia — descubrí qué es oficial y qué es rumor sobre personajes, vehículos, ubicaciones y misiones.'
 
@@ -99,37 +98,17 @@ export function generateEntityMetadata(entity: Entity, ogImage?: EntityOgImage |
  * dato real (`count`).
  */
 const LIST_DESCRIPTION_BY_TYPE: Partial<Record<EntityType, (count: number, label: string) => string>> = {
-  [EntityType.CHARACTER]: (count) =>
-    `${count} personajes de GTA 6 documentados: protagonistas, secundarios y facciones, con estado de confirmación y fuente por cada uno.`,
   [EntityType.VEHICLE]: (count) =>
-    `${count} vehículos de GTA 6 catalogados por fabricante, clase y rendimiento — desde autos clásicos hasta motos y embarcaciones.`,
-  [EntityType.LOCATION]: (count) =>
-    `${count} ubicaciones de Leonida y Vice City en GTA 6, con contexto geográfico y qué tan confirmadas están.`,
-  [EntityType.MISSION]: (count) =>
-    `${count} misiones de GTA 6 documentadas sin spoilers mayores, con su nivel de evidencia y fuente.`,
-  [EntityType.WEAPON]: (count) =>
-    `${count} armas de GTA 6 identificadas en material oficial, con su estado de confirmación.`,
-  [EntityType.ACTIVITY]: (count) =>
-    `${count} actividades y mecánicas de GTA 6 documentadas, desde el mundo abierto hasta sistemas de juego.`,
-  [EntityType.FACTION]: (count) =>
-    `${count} organizaciones y facciones de GTA 6, de bandas criminales a fuerzas del orden en Leonida.`,
-  [EntityType.BUSINESS]: (count) =>
-    `${count} negocios de GTA 6 documentados, reales o ficticios dentro del universo del juego.`,
-  [EntityType.OBJECT]: (count) =>
-    `${count} objetos y elementos de GTA 6 catalogados, de utilería del mundo a ítems relevantes.`,
-  [EntityType.NEWS]: (count) =>
-    `${count} noticias de GTA 6, del anuncio oficial a las últimas actualizaciones de Rockstar y Take-Two.`,
-  [EntityType.GUIDE]: (count) =>
-    `${count} guías de GTA 6: sistemas, mecánicas, geografía y estrategia, basadas en información oficial confirmada.`,
-  [EntityType.TRAILER]: (count) =>
-    `${count} trailers oficiales de GTA 6, escena por escena, con lo confirmado y lo especulado en cada una.`,
+    `${count} fichas técnicas de autos y motos, catalogadas por fabricante, clase y rendimiento, con fuente por cada dato.`,
+  [EntityType.LOCATION]: (count) => `${count} concesionarias y puntos de interés documentados.`,
+  [EntityType.BUSINESS]: (count) => `${count} negocios del rubro automotor documentados.`,
 }
 
 export function generateListMetadata(type: EntityType, count: number): Metadata {
   const label = ENTITY_TYPE_LABELS[type] || type
   const title = `${label} | ${SITE_NAME}`
   const description =
-    LIST_DESCRIPTION_BY_TYPE[type]?.(count, label) ?? `Explora ${count} ${label.toLowerCase()} en GTA 6 Zona`
+    LIST_DESCRIPTION_BY_TYPE[type]?.(count, label) ?? `Explorá ${count} ${label.toLowerCase()} en ${SITE_NAME}`
   const url = `${SITE_URL}/${type}`
 
   return {

@@ -1,0 +1,3232 @@
+diff --git a/GTA6-CODEX/package-lock.json b/GTA6-CODEX/package-lock.json
+index 48c9987..abf2873 100644
+--- a/GTA6-CODEX/package-lock.json
++++ b/GTA6-CODEX/package-lock.json
+@@ -1,11 +1,11 @@
+ {
+-  "name": "gta6-zona",
++  "name": "autoficha",
+   "version": "0.1.0",
+   "lockfileVersion": 3,
+   "requires": true,
+   "packages": {
+     "": {
+-      "name": "gta6-zona",
++      "name": "autoficha",
+       "version": "0.1.0",
+       "dependencies": {
+         "@fontsource/inter": "^5.3.0",
+@@ -50,6 +50,7 @@
+         "postcss": "^8.4.32",
+         "sharp": "^0.35.3",
+         "tailwindcss": "^3.4.0",
++        "tsx": "^4.23.12",
+         "vitest": "^4.1.11"
+       }
+     },
+@@ -335,6 +336,448 @@
+         "tslib": "^2.4.0"
+       }
+     },
++    "node_modules/@esbuild/aix-ppc64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/aix-ppc64/-/aix-ppc64-0.28.2.tgz",
++      "integrity": "sha512-XExcO+dvLKvVtNTibSTBej1NCAbaGhWn9Ww1ZPx80qsahhPFe/8jgWP0IchNe0F3HwkU7n8ejhH8bjonqht8mQ==",
++      "cpu": [
++        "ppc64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "aix"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/android-arm": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/android-arm/-/android-arm-0.28.2.tgz",
++      "integrity": "sha512-kXXoiPVVGQcnIYGOeaovwOURpniDBpSq4A03qkQ+BMQqtGG6HYap3xne9C1O1yo4TR3qxlCX5IqqmX6fFo2Lqg==",
++      "cpu": [
++        "arm"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "android"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/android-arm64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/android-arm64/-/android-arm64-0.28.2.tgz",
++      "integrity": "sha512-5YfKeeI8qWfBZIX+u2xZC3Zlb3Os/gLS2sbEKM+I4ZOcsWmHS2WLysCcQZDAFRslDUU5Oiq44gf6PYN1vGwG5A==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "android"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/android-x64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/android-x64/-/android-x64-0.28.2.tgz",
++      "integrity": "sha512-O387ite7SzUyCcy3JQX4P4bLtEA7bLLkx+esve5JHnyYfNTxcVpXZo9jhdB0lTKN44gztELTdU7nS8Nr16Fs1Q==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "android"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/darwin-arm64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.28.2.tgz",
++      "integrity": "sha512-n4KqkOQrraxHJcgjM1RvwbigfQKIKJVpM7xp+KsxiyUSrRdIXnt73VhrPAx0fV44hgfmIVKjxMN9J1t5jySVkw==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "darwin"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/darwin-x64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.28.2.tgz",
++      "integrity": "sha512-uq6suIWYP37qzGddBKPw5QEQPi6HiLGsO7UmkpfyaYNQ3D+rN6w6WfwH+nuqcGXWvawGwxOEroO4YGnFh95azw==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "darwin"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/freebsd-arm64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/freebsd-arm64/-/freebsd-arm64-0.28.2.tgz",
++      "integrity": "sha512-n+I0BTSRIoy+d6RPKnEVwql5UwBJolytvY4mAOIEJorKlqgPII8ix6slVVrfZ5Tnj7glIZvloylbB/EJPMWEXw==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "freebsd"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/freebsd-x64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/freebsd-x64/-/freebsd-x64-0.28.2.tgz",
++      "integrity": "sha512-78XJTJkvPs0kz2w61301PJjXl4g7q3JqiYMZ/M/yVI73EHBrCRTgkhu9oqG7vPqq+a/yadEW8aD+agKlk5xrmg==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "freebsd"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/linux-arm": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-arm/-/linux-arm-0.28.2.tgz",
++      "integrity": "sha512-XlDnu2q5yoqems+xay6wSAcg9DDD7K9RLKZEBOMZm3ckNpJBvOX20tSfby8KfrrhINDyv9V2YVZKY/SpoGJI8w==",
++      "cpu": [
++        "arm"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/linux-arm64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-arm64/-/linux-arm64-0.28.2.tgz",
++      "integrity": "sha512-pW4AC0P3it8c7do9MVM4p51FzHzdM/TZrerurgRcHJ2WTa1VQ1CIq18xncfpBJw4ojkiZZrKW2yIBWBP92j6Ug==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/linux-ia32": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-ia32/-/linux-ia32-0.28.2.tgz",
++      "integrity": "sha512-CYbnj78HsIeA+DhgUKgFCfvNsTHFhMMrinUrMZpDXJXKN8T3XViTZ/+wtHeVxEWY8ewSzTFN+nRmSwO2tZaLUQ==",
++      "cpu": [
++        "ia32"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/linux-loong64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-loong64/-/linux-loong64-0.28.2.tgz",
++      "integrity": "sha512-buwkd8nsph4R+ajRvw0qM5Hja/TXQow3ptzWO2EbG/cqcIkHloRrdlBtQlshyYGTNFvfkfJ5tpPLVkY4DtsPfQ==",
++      "cpu": [
++        "loong64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/linux-mips64el": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-mips64el/-/linux-mips64el-0.28.2.tgz",
++      "integrity": "sha512-ZVykbDyk7519VwiNb9Lcj9m8XM6v5V9uKPvrEMkkEedVewf+0itkhahp4HDpgERXhwLRpWFypsGbG/J8s0QjJA==",
++      "cpu": [
++        "mips64el"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/linux-ppc64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-ppc64/-/linux-ppc64-0.28.2.tgz",
++      "integrity": "sha512-CAXl+Dtd9UUuJd8pKKdwh6MLm3MUMiqMPmhZ3tTSXPqfyQ3vDl6R5hZdZ/kYojK4ofXtdfSv1tFq8XzWx3heNQ==",
++      "cpu": [
++        "ppc64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/linux-riscv64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-riscv64/-/linux-riscv64-0.28.2.tgz",
++      "integrity": "sha512-GeXCej4IQtU1B+QlDV8W/RRvbzI3O/Stss+/bCXv4lZls5WGRtu2a+3JkA3i4qIUlMXpcHebWpF8AkJhATowuA==",
++      "cpu": [
++        "riscv64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/linux-s390x": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-s390x/-/linux-s390x-0.28.2.tgz",
++      "integrity": "sha512-3H1weTYZPxt/WOhByszQZybS9w5lKzUn1FDMsgEChbHWQwHYQQRfBxgCcZvPhjHfKyJjIievvMmEUawJrdY9Dg==",
++      "cpu": [
++        "s390x"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/linux-x64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.28.2.tgz",
++      "integrity": "sha512-4xTZr1FUmSoQW4XIWmit3tzQrUTZM+N3P0XV8xROKYF50XfI7xeO90+1bZvNwxIufQ9hDQVRJH5YhgPVF8A/HQ==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/netbsd-arm64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/netbsd-arm64/-/netbsd-arm64-0.28.2.tgz",
++      "integrity": "sha512-sSATRjPeDBg3pdgHoQfoYBob11Kk1FGa9lui5RIHZCoCkJa9QKlvl3/vKz2usCmYYjs7ymJR/2Nnsqe+Hjt5nw==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "netbsd"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/netbsd-x64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/netbsd-x64/-/netbsd-x64-0.28.2.tgz",
++      "integrity": "sha512-lqnzCV+mM0gIADaKihiCg6ifgfU2L3h5E33rNQBN1Y4MaVGnzryzmvvf7UHxprpQdE8hpqLolJ9Rl+SkIRDpyw==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "netbsd"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/openbsd-arm64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/openbsd-arm64/-/openbsd-arm64-0.28.2.tgz",
++      "integrity": "sha512-AL2qJILH7lNjrDmCQDvdxMfAUIv8KMNZOvrwAQ8i8//ntL9FflhOyMJ8OZSMBb8/AWXe3/5v5S20y3zCoZWKoQ==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "openbsd"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/openbsd-x64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/openbsd-x64/-/openbsd-x64-0.28.2.tgz",
++      "integrity": "sha512-QtiuPytchRyC4rwUKhexJdQKvDuZ6hWloi3igqPQNUJCS1/v9EiO3UTOXR6A3FoMo4fnAKbWJdqaIwhOzh8qEw==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "openbsd"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/openharmony-arm64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/openharmony-arm64/-/openharmony-arm64-0.28.2.tgz",
++      "integrity": "sha512-WkhYDmpTjLvGlScA1rwjRUmhl4k8oXR3cIbtqWmELgU/dFeHHlEllxDvdWcNJV9rbzCexB5vz8gtNewWLgCT7Q==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "openharmony"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/sunos-x64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/sunos-x64/-/sunos-x64-0.28.2.tgz",
++      "integrity": "sha512-GPMSkTOtMnv2U2F8gxe4Io6qmVs+YKyp832Etqqxr0hFngmXQ3rzwytelm3GIn7T4VviRUlf3sOgBOiTdvaf7g==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "sunos"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/win32-arm64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/win32-arm64/-/win32-arm64-0.28.2.tgz",
++      "integrity": "sha512-PIhhEkE9uPBleRBrQEJpUn7MBnibZzbGzYWPmY3x+YoVg/95zbjB4CxPPOQ8l5tYYM4mMaCthF8/1DIfBQQyWQ==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "win32"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/win32-ia32": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/win32-ia32/-/win32-ia32-0.28.2.tgz",
++      "integrity": "sha512-YmJbfTlvU7Sdn9BB+4PRES4oB6pxgS37MAONj+hBr/cpXS1aBPKXxNnDbu+QCWPj0o9dgyxeq79g6c5P8KeuYA==",
++      "cpu": [
++        "ia32"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "win32"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/@esbuild/win32-x64": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.28.2.tgz",
++      "integrity": "sha512-5ebpxr3nWMzrL/rnUI755Jkuee0bHL/Gq0WTF9lvcpv73wAp5eu8MfBUgWK9bhWvZjj7yX8etf/8tI8Ney695g==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "win32"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
+     "node_modules/@eslint-community/eslint-utils": {
+       "version": "4.10.1",
+       "resolved": "https://registry.npmjs.org/@eslint-community/eslint-utils/-/eslint-utils-4.10.1.tgz",
+@@ -4678,6 +5121,48 @@
+         "url": "https://github.com/sponsors/ljharb"
+       }
+     },
++    "node_modules/esbuild": {
++      "version": "0.28.2",
++      "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.28.2.tgz",
++      "integrity": "sha512-HKVLS8dvII+xoKW9kmqxbRKrnWEXfJJr/FZhhJmiqIB0e053QNYFqOBouTMO/k5sID4MvCiUCvv8b9M4h32wIA==",
++      "dev": true,
++      "hasInstallScript": true,
++      "license": "MIT",
++      "bin": {
++        "esbuild": "bin/esbuild"
++      },
++      "engines": {
++        "node": ">=18"
++      },
++      "optionalDependencies": {
++        "@esbuild/aix-ppc64": "0.28.2",
++        "@esbuild/android-arm": "0.28.2",
++        "@esbuild/android-arm64": "0.28.2",
++        "@esbuild/android-x64": "0.28.2",
++        "@esbuild/darwin-arm64": "0.28.2",
++        "@esbuild/darwin-x64": "0.28.2",
++        "@esbuild/freebsd-arm64": "0.28.2",
++        "@esbuild/freebsd-x64": "0.28.2",
++        "@esbuild/linux-arm": "0.28.2",
++        "@esbuild/linux-arm64": "0.28.2",
++        "@esbuild/linux-ia32": "0.28.2",
++        "@esbuild/linux-loong64": "0.28.2",
++        "@esbuild/linux-mips64el": "0.28.2",
++        "@esbuild/linux-ppc64": "0.28.2",
++        "@esbuild/linux-riscv64": "0.28.2",
++        "@esbuild/linux-s390x": "0.28.2",
++        "@esbuild/linux-x64": "0.28.2",
++        "@esbuild/netbsd-arm64": "0.28.2",
++        "@esbuild/netbsd-x64": "0.28.2",
++        "@esbuild/openbsd-arm64": "0.28.2",
++        "@esbuild/openbsd-x64": "0.28.2",
++        "@esbuild/openharmony-arm64": "0.28.2",
++        "@esbuild/sunos-x64": "0.28.2",
++        "@esbuild/win32-arm64": "0.28.2",
++        "@esbuild/win32-ia32": "0.28.2",
++        "@esbuild/win32-x64": "0.28.2"
++      }
++    },
+     "node_modules/escalade": {
+       "version": "3.2.0",
+       "resolved": "https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz",
+@@ -10708,6 +11193,25 @@
+       "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==",
+       "license": "0BSD"
+     },
++    "node_modules/tsx": {
++      "version": "4.23.12",
++      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.23.12.tgz",
++      "integrity": "sha512-FDf4L4sYzKtzWYhU/Xm0AQFdTjdIxNo9ElTf2mxXM6k8YMHXzYUe4yODVaXP4V9uMFbVg8c0qyBccK2OOxb45Q==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "esbuild": "~0.28.0"
++      },
++      "bin": {
++        "tsx": "dist/cli.mjs"
++      },
++      "engines": {
++        "node": ">=18.0.0"
++      },
++      "optionalDependencies": {
++        "fsevents": "~2.3.3"
++      }
++    },
+     "node_modules/type-check": {
+       "version": "0.4.0",
+       "resolved": "https://registry.npmjs.org/type-check/-/type-check-0.4.0.tgz",
+diff --git a/GTA6-CODEX/package.json b/GTA6-CODEX/package.json
+index 5ce9e66..8dacb89 100644
+--- a/GTA6-CODEX/package.json
++++ b/GTA6-CODEX/package.json
+@@ -1,7 +1,7 @@
+ {
+-  "name": "gta6-zona",
++  "name": "autoficha",
+   "version": "0.1.0",
+-  "description": "GTA6 Zona - Un wiki editorial de primer nivel sobre Grand Theft Auto 6",
++  "description": "AutoFicha - Fichas técnicas de autos y motos con comparador y buscador",
+   "private": true,
+   "scripts": {
+     "dev": "next dev",
+@@ -67,6 +67,7 @@
+     "postcss": "^8.4.32",
+     "sharp": "^0.35.3",
+     "tailwindcss": "^3.4.0",
++    "tsx": "^4.23.12",
+     "vitest": "^4.1.11"
+   }
+ }
+diff --git a/GTA6-CODEX/scripts/new-vehicle.mjs b/GTA6-CODEX/scripts/new-vehicle.mjs
+new file mode 100644
+index 0000000..381531e
+--- /dev/null
++++ b/GTA6-CODEX/scripts/new-vehicle.mjs
+@@ -0,0 +1,185 @@
++#!/usr/bin/env node
++/**
++ * scripts/new-vehicle.mjs
++ * ============================================================
++ * Automatiza la carga de una ficha de vehículo nueva en
++ * src/content/vehiculos/{slug}.json, sin escribir el JSON a mano.
++ *
++ * Por qué existe: cargar autos de a uno editando JSON en el editor es
++ * lento y propenso a error de schema (slug repetido, falta un campo
++ * obligatorio, updatedAt mal formado -> tira el build entero, ver
++ * verify-content-integrity.mjs). Este script arma la entidad completa,
++ * la valida contra el mismo VehicleSchema (Zod) que usa el build en
++ * runtime, y recién ahí escribe el archivo — si falla la validación,
++ * no se escribe nada.
++ *
++ * USO (todo por flags, pensado para scriptearlo en lote):
++ *   node scripts/new-vehicle.mjs \
++ *     --slug toyota-corolla-2024 \
++ *     --title "Toyota Corolla 2024" \
++ *     --manufacturer Toyota \
++ *     --class Sedán \
++ *     --description "Sedán compacto de Toyota, generación XII." \
++ *     --speed "180 km/h" \
++ *     --acceleration "0-100 km/h en 10.1s" \
++ *     --power "170 hp" \
++ *     --price "USD 24.000" \
++ *     --source "https://www.toyota.com/corolla/" \
++ *     --tags sedan,toyota,combustion \
++ *     --status confirmado
++ *
++ * También acepta --json '<entidad completa>' para casos que necesiten
++ * campos no cubiertos por flags simples.
++ *
++ * Campos libres (price, power, etc.) no están en el VehicleSchema
++ * tipado a propósito: BaseEntitySchema no usa .strict(), así que Zod
++ * permite claves extra sin rechazarlas — el mismo criterio que ya usan
++ * los GenericEntity del motor (ver schemas.ts). Esto deja lugar para
++ * sumar specs propias del nicho de autos (precio, potencia, segmento)
++ * sin tener que tocar el schema cada vez.
++ */
++
++import fs from 'fs'
++import path from 'path'
++import { fileURLToPath } from 'url'
++
++const __dirname = path.dirname(fileURLToPath(import.meta.url))
++const ROOT = path.join(__dirname, '..')
++const CONTENT_DIR = path.join(ROOT, 'src', 'content', 'vehiculos')
++
++function parseArgs(argv) {
++  const args = {}
++  for (let i = 0; i < argv.length; i++) {
++    const arg = argv[i]
++    if (!arg.startsWith('--')) continue
++    const key = arg.slice(2)
++    const next = argv[i + 1]
++    if (next === undefined || next.startsWith('--')) {
++      args[key] = true
++    } else {
++      args[key] = next
++      i++
++    }
++  }
++  return args
++}
++
++function slugify(value) {
++  return value
++    .toLowerCase()
++    .normalize('NFD')
++    .replace(/[\u0300-\u036f]/g, '')
++    .replace(/[^a-z0-9]+/g, '-')
++    .replace(/^-+|-+$/g, '')
++}
++
++function fail(message) {
++  console.error(`✗ ${message}`)
++  process.exit(1)
++}
++
++async function main() {
++  const args = parseArgs(process.argv.slice(2))
++
++  let entity
++  if (args.json) {
++    try {
++      entity = JSON.parse(args.json)
++    } catch (err) {
++      fail(`--json no es JSON válido: ${err.message}`)
++    }
++  } else {
++    if (!args.title) fail('--title es obligatorio (o pasá --json con la entidad completa)')
++    if (!args.description) fail('--description es obligatorio')
++
++    const slug = args.slug ? slugify(args.slug) : slugify(args.title)
++    const now = new Date().toISOString()
++    const tags = args.tags
++      ? String(args.tags)
++          .split(',')
++          .map((t) => t.trim())
++          .filter(Boolean)
++      : []
++
++    entity = {
++      slug,
++      type: 'vehiculos',
++      title: args.title,
++      description: args.description,
++      status: args.status || 'confirmado',
++      tags,
++      featured: args.featured === 'true',
++      createdAt: now,
++      updatedAt: now,
++      manufacturer: args.manufacturer,
++      class: args.class,
++      customizable: false,
++      performance: {
++        speed: args.speed,
++        acceleration: args.acceleration,
++        handling: args.handling,
++        braking: args.braking,
++      },
++      // Specs libres propias del nicho de autos (no están en el schema
++      // tipado a propósito — ver comentario de arriba). Solo se agregan
++      // si vinieron por flag, para no ensuciar el JSON con `undefined`.
++      ...(args.power ? { power: args.power } : {}),
++      ...(args.price ? { price: args.price } : {}),
++      ...(args.year ? { year: args.year } : {}),
++      ...(args.fuel ? { fuel: args.fuel } : {}),
++      evidence: args.source
++        ? {
++            level: 'oficial-nombrado',
++            primarySource: args.source,
++          }
++        : undefined,
++    }
++
++    // Limpiar undefined dentro de performance (Zod .optional() no
++    // acepta `undefined` explícito como valor de propiedad presente en
++    // algunos casos límite del `.strict()` de sub-schemas; más simple
++    // sacarlos directamente).
++    for (const key of Object.keys(entity.performance)) {
++      if (entity.performance[key] === undefined) delete entity.performance[key]
++    }
++    if (Object.keys(entity.performance).length === 0) delete entity.performance
++    if (entity.evidence === undefined) delete entity.evidence
++  }
++
++  // Validación contra el mismo schema Zod que usa el motor en runtime.
++  // Import dinámico porque el proyecto es TS y este script corre con
++  // node plano: se apoya en tsx/ts-node si está disponible, si no cae a
++  // una validación mínima manual (mejor que nada, nunca bloquea el flujo
++  // por falta de tooling).
++  let VehicleSchema
++  try {
++    const tsxRegister = await import('tsx/esm/api')
++    tsxRegister.register()
++    ;({ VehicleSchema } = await import(path.join(ROOT, 'src', 'types', 'schemas.ts')))
++  } catch {
++    VehicleSchema = null
++  }
++
++  if (VehicleSchema) {
++    const result = VehicleSchema.safeParse(entity)
++    if (!result.success) {
++      fail(`La entidad no valida contra VehicleSchema:\n${result.error.message}`)
++    }
++  } else {
++    // Validación mínima de respaldo si tsx no está instalado.
++    for (const field of ['slug', 'type', 'title', 'description', 'status', 'createdAt', 'updatedAt']) {
++      if (!entity[field]) fail(`Falta el campo obligatorio "${field}" (validación mínima, sin Zod disponible)`)
++    }
++  }
++
++  if (!fs.existsSync(CONTENT_DIR)) fs.mkdirSync(CONTENT_DIR, { recursive: true })
++  const outPath = path.join(CONTENT_DIR, `${entity.slug}.json`)
++  if (fs.existsSync(outPath) && !args.force) {
++    fail(`Ya existe ${outPath} — usá --force para sobreescribir`)
++  }
++
++  fs.writeFileSync(outPath, JSON.stringify(entity, null, 2) + '\n')
++  console.log(`✓ Creado src/content/vehiculos/${entity.slug}.json`)
++}
++
++main()
+diff --git a/GTA6-CODEX/scripts/verify-content-integrity.mjs b/GTA6-CODEX/scripts/verify-content-integrity.mjs
+index 2eacbe8..2d24c29 100644
+--- a/GTA6-CODEX/scripts/verify-content-integrity.mjs
++++ b/GTA6-CODEX/scripts/verify-content-integrity.mjs
+@@ -31,7 +31,7 @@
+  *   node scripts/verify-content-integrity.mjs
+  *
+  * Agrega y remueve un archivo de fixture temporal en
+- * src/content/personajes/ — nunca lo deja en el repo, incluso si el
++ * src/content/vehiculos/ — nunca lo deja en el repo, incluso si el
+  * script falla a mitad de camino (try/finally).
+  * ============================================================
+  */
+@@ -40,12 +40,12 @@ import fs from 'node:fs'
+ import path from 'node:path'
+ import assert from 'node:assert/strict'
+ 
+-const CONTENT_DIR = path.join(process.cwd(), 'src', 'content', 'personajes')
++const CONTENT_DIR = path.join(process.cwd(), 'src', 'content', 'vehiculos')
+ const FIXTURE_PATH = path.join(CONTENT_DIR, '__verify-content-integrity-fixture.json')
+ 
+ const BAD_ENTITY = {
+   slug: '__verify-content-integrity-fixture',
+-  type: 'personajes',
++  type: 'vehiculos',
+   title: 'Fixture temporal de verificación — no debería quedar en el repo',
+   description: 'Fixture temporal de scripts/verify-content-integrity.mjs',
+   status: 'nuestro',
+diff --git a/GTA6-CODEX/src/app/buscar/page.tsx b/GTA6-CODEX/src/app/buscar/page.tsx
+index 0235933..553a4ca 100644
+--- a/GTA6-CODEX/src/app/buscar/page.tsx
++++ b/GTA6-CODEX/src/app/buscar/page.tsx
+@@ -5,9 +5,7 @@ import { getEntityImageMap } from '@/lib/media'
+ import { getBidirectionalRelationCount } from '@/lib/relations'
+ import { SearchClient } from '@/components/search/SearchClient'
+ import { Reveal } from '@/components/ui/Reveal'
+-
+-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+-const SITE_NAME = 'GTA6 Zona'
++import { SITE_NAME, SITE_URL } from '@/config/site'
+ 
+ // Antes esta página no definía `alternates`, `openGraph` ni `twitter`, así
+ // que heredaba en silencio los del layout raíz: el canonical y el og:url
+diff --git a/GTA6-CODEX/src/app/comparar/page.tsx b/GTA6-CODEX/src/app/comparar/page.tsx
+index 9166fd7..13183ed 100644
+--- a/GTA6-CODEX/src/app/comparar/page.tsx
++++ b/GTA6-CODEX/src/app/comparar/page.tsx
+@@ -5,14 +5,12 @@ import { getEntitiesByType } from '@/lib/entities'
+ import { getEntityImageMap } from '@/lib/media'
+ import { CompareExplorer } from '@/components/entities/CompareExplorer'
+ import { Reveal } from '@/components/ui/Reveal'
+-
+-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+-const SITE_NAME = 'GTA6 Zona'
++import { SITE_NAME, SITE_URL } from '@/config/site'
+ 
+ export const metadata: Metadata = {
+   title: `Comparar vehículos | ${SITE_NAME}`,
+   description:
+-    'Compará hasta 3 vehículos de GTA 6 lado a lado: fabricante, clase, rendimiento y más, en una sola tabla.',
++    'Compará hasta 3 autos o motos lado a lado: fabricante, clase, rendimiento y más, en una sola tabla.',
+   metadataBase: new URL(SITE_URL),
+   alternates: {
+     canonical: `${SITE_URL}/comparar`,
+@@ -20,7 +18,7 @@ export const metadata: Metadata = {
+   openGraph: {
+     type: 'website',
+     title: `Comparar vehículos | ${SITE_NAME}`,
+-    description: 'Compará hasta 3 vehículos de GTA 6 lado a lado: fabricante, clase, rendimiento y más.',
++    description: 'Compará hasta 3 autos o motos lado a lado: fabricante, clase, rendimiento y más.',
+     url: `${SITE_URL}/comparar`,
+     siteName: SITE_NAME,
+   },
+@@ -60,7 +58,7 @@ export default async function CompararPage() {
+             Comparar <span className="text-gradient-vice">vehículos</span>
+           </h1>
+           <p className="mt-2 text-sm text-gta-text-secondary sm:text-base">
+-            Elegí hasta 3 vehículos confirmados de GTA 6 y compará fabricante, clase, rendimiento y más, lado a
++            Elegí hasta 3 autos o motos y compará fabricante, clase, rendimiento y más, lado a
+             lado.
+           </p>
+         </div>
+diff --git a/GTA6-CODEX/src/app/galeria/page.tsx b/GTA6-CODEX/src/app/galeria/page.tsx
+index 9aab9ee..1481fea 100644
+--- a/GTA6-CODEX/src/app/galeria/page.tsx
++++ b/GTA6-CODEX/src/app/galeria/page.tsx
+@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
+ import { getGalleryItems, getGalleryCategoryCounts } from '@/lib/gallery'
+ import { GalleryHero } from '@/components/gallery/GalleryHero'
+ import { GalleryExplorer } from '@/components/gallery/GalleryExplorer'
+-
+-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+-const SITE_NAME = 'GTA6 Zona'
++import { SITE_NAME, SITE_URL } from '@/config/site'
+ 
+ export async function generateMetadata(): Promise<Metadata> {
+   const items = await getGalleryItems()
+diff --git a/GTA6-CODEX/src/app/layout.tsx b/GTA6-CODEX/src/app/layout.tsx
+index e420e23..6b7e509 100644
+--- a/GTA6-CODEX/src/app/layout.tsx
++++ b/GTA6-CODEX/src/app/layout.tsx
+@@ -34,7 +34,7 @@ import { WebGLBackground } from '@/components/webgl/WebGLBackground'
+ import { SceneAmbientBridge } from '@/components/webgl/SceneAmbientBridge'
+ import { ConsentBanner } from '@/components/layout/ConsentBanner'
+ 
+-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
++import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/config/site'
+ // GA4 solo se activa si hay un ID real configurado. Sin esto, un build sin
+ // NEXT_PUBLIC_GA_ID enviaría eventos a un ID placeholder inexistente.
+ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID
+@@ -47,33 +47,22 @@ const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID
+ 
+ export const metadata: Metadata = {
+   metadataBase: new URL(SITE_URL),
+-  title: 'GTA6 Zona | Wiki Editorial de Grand Theft Auto 6',
++  title: `${SITE_NAME} | ${SITE_TAGLINE}`,
+   description:
+-    'Exploración comprensiva de GTA 6: personajes, vehículos, ubicaciones, misiones y más. Información verificada, rumores y análisis profundo.',
+-  keywords: [
+-    'GTA6',
+-    'Grand Theft Auto 6',
+-    'wiki',
+-    'personajes',
+-    'vehículos',
+-    'ubicaciones',
+-    'misiones',
+-  ],
++    'Fichas técnicas de autos y motos con specs reales por fabricante, comparador lado a lado y buscador. Datos con fuente primaria.',
++  keywords: ['autos', 'motos', 'fichas técnicas', 'comparador de autos', 'specs', 'precio autos'],
+   openGraph: {
+     type: 'website',
+     locale: 'es_ES',
+     url: SITE_URL,
+-    siteName: 'GTA6 Zona',
+-    title: 'GTA6 Zona | Wiki Editorial de Grand Theft Auto 6',
+-    description:
+-      'Exploración comprensiva de GTA 6: personajes, vehículos, ubicaciones, misiones y más.',
++    siteName: SITE_NAME,
++    title: `${SITE_NAME} | ${SITE_TAGLINE}`,
++    description: 'Fichas técnicas de autos y motos con specs reales, comparador lado a lado y buscador.',
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    creator: '@gta6zona',
+-    title: 'GTA6 Zona',
+-    description:
+-      'Exploración comprensiva de GTA 6: personajes, vehículos, ubicaciones, misiones y más.',
++    title: SITE_NAME,
++    description: 'Fichas técnicas de autos y motos con specs reales, comparador lado a lado y buscador.',
+   },
+   robots: {
+     index: true,
+diff --git a/GTA6-CODEX/src/app/manifest.ts b/GTA6-CODEX/src/app/manifest.ts
+index 1a9cf09..685f538 100644
+--- a/GTA6-CODEX/src/app/manifest.ts
++++ b/GTA6-CODEX/src/app/manifest.ts
+@@ -1,12 +1,13 @@
+ import type { MetadataRoute } from 'next'
++import { SITE_NAME, SITE_TAGLINE } from '@/config/site'
+ /**
+  * Genera /manifest.webmanifest (convención nativa del App Router).
+  */
+ export default function manifest(): MetadataRoute.Manifest {
+   return {
+-    name: 'GTA6 Zona | Wiki Editorial de Grand Theft Auto 6',
+-    short_name: 'GTA6 Zona',
+-    description: 'Wiki editorial de Grand Theft Auto 6: personajes, vehículos, ubicaciones y misiones clasificados por nivel de evidencia.',
++    name: `${SITE_NAME} | ${SITE_TAGLINE}`,
++    short_name: SITE_NAME,
++    description: 'Fichas técnicas de autos y motos con specs reales, comparador lado a lado y buscador.',
+     start_url: '/',
+     display: 'standalone',
+     background_color: '#0b0b0f',
+diff --git a/GTA6-CODEX/src/app/mapa/page.tsx b/GTA6-CODEX/src/app/mapa/page.tsx
+index fe476c9..496325b 100644
+--- a/GTA6-CODEX/src/app/mapa/page.tsx
++++ b/GTA6-CODEX/src/app/mapa/page.tsx
+@@ -1,46 +1,35 @@
+ import type { Metadata } from 'next'
+-import type { Entity } from '@/types'
+-import { getEntitiesByType } from '@/lib/entities'
+-import { MAP_CATEGORY_TYPES } from '@/lib/map-entities'
+-import { LeonidaMapExplorer } from '@/components/map/LeonidaMapExplorer'
+ import { Reveal } from '@/components/ui/Reveal'
+-
+-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+-const SITE_NAME = 'GTA6 Zona'
++import { SITE_NAME, SITE_URL } from '@/config/site'
+ 
+ export const metadata: Metadata = {
+-  title: `Mapa de Leonida (no oficial) | ${SITE_NAME}`,
+-  description:
+-    'Mapa esquemático no oficial de Leonida por condados, basado en la cobertura de la filtración CYBERLEEK, con las ubicaciones de GTA 6 ya confirmadas por Rockstar.',
++  title: `Mapa | ${SITE_NAME}`,
++  description: 'Mapa de concesionarias y puntos de interés — en construcción.',
+   metadataBase: new URL(SITE_URL),
+   alternates: { canonical: `${SITE_URL}/mapa` },
+-  openGraph: {
+-    type: 'website',
+-    title: `Mapa de Leonida (no oficial) | ${SITE_NAME}`,
+-    description:
+-      'Mapa esquemático no oficial de Leonida por condados, basado en la filtración CYBERLEEK, cruzado con las ubicaciones confirmadas del catálogo.',
+-    url: `${SITE_URL}/mapa`,
+-    siteName: SITE_NAME,
+-  },
+ }
+ 
+-export default async function MapaPage() {
+-  const entitiesByCategory = await Promise.all(MAP_CATEGORY_TYPES.map((type) => getEntitiesByType(type)))
+-  const entities: Entity[] = entitiesByCategory.flat()
+-
++/**
++ * El mapa interactivo original (LeonidaMapExplorer/LeonidaMapCanvas, en
++ * src/components/map/) modelaba las 5 zonas ficticias de Leonida a partir
++ * de datos que ya no existen en el repo (leonida-zones.ts,
++ * leonida-map-coordinates.ts — eliminados junto al resto del contenido de
++ * GTA6). El componente Leaflet en sí (proyección, clustering, popups) es
++ * reutilizable tal cual está para un mapa real (ej. "concesionarias cerca
++ * tuyo"), pero necesita datos geográficos reales, no ficticios — por eso
++ * queda pausado acá (Fase 5 del plan de migración) en vez de fabricar
++ * coordenadas de relleno.
++ */
++export default function MapaPage() {
+   return (
+-    <div className="mx-auto max-w-7xl px-[var(--gutter-width)] py-10 md:py-14">
++    <div className="mx-auto max-w-3xl px-[var(--gutter-width)] py-16 text-center md:py-24">
+       <Reveal>
+-        <h1 className="font-display text-3xl font-bold text-gta-text md:text-4xl">Mapa de Leonida</h1>
+-        <p className="mt-2 max-w-2xl text-gta-text-secondary">
+-          Un mapa interactivo de las 5 zonas reportadas en la filtración CYBERLEEK, cruzado con ubicaciones, armas,
+-          vehículos, misiones y objetos ya catalogados. No es el mapa real del juego.
++        <h1 className="font-display text-3xl font-bold text-gta-text md:text-4xl">Mapa en construcción</h1>
++        <p className="mt-4 text-gta-text-secondary">
++          Estamos preparando un mapa de concesionarias y puntos de interés con datos reales. El motor de mapa
++          interactivo (Leaflet) ya está listo — solo falta cargar la geografía real para activarlo.
+         </p>
+       </Reveal>
+-
+-      <div className="mt-8">
+-        <LeonidaMapExplorer entities={entities} />
+-      </div>
+     </div>
+   )
+ }
+diff --git a/GTA6-CODEX/src/app/not-found.tsx b/GTA6-CODEX/src/app/not-found.tsx
+index 71735a2..8070ae0 100644
+--- a/GTA6-CODEX/src/app/not-found.tsx
++++ b/GTA6-CODEX/src/app/not-found.tsx
+@@ -11,7 +11,7 @@ export default function NotFound() {
+           <div className="text-gradient-vice mb-4 font-display text-8xl font-bold sm:text-9xl">404</div>
+           <h1 className="mb-2 text-3xl font-bold text-gta-text sm:text-4xl">Página no encontrada</h1>
+           <p className="mb-8 text-lg text-gta-text-secondary">
+-            Parece que esta ubicación no existe en el código de GTA 6.
++            Parece que esta página no existe.
+           </p>
+         </div>
+ 
+diff --git a/GTA6-CODEX/src/app/privacidad/page.tsx b/GTA6-CODEX/src/app/privacidad/page.tsx
+index 49d013b..24160f9 100644
+--- a/GTA6-CODEX/src/app/privacidad/page.tsx
++++ b/GTA6-CODEX/src/app/privacidad/page.tsx
+@@ -1,8 +1,6 @@
+ import type { Metadata } from 'next'
+ import { Reveal } from '@/components/ui/Reveal'
+-
+-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+-const SITE_NAME = 'GTA6 Zona'
++import { SITE_NAME, SITE_URL } from '@/config/site'
+ 
+ export const metadata: Metadata = {
+   title: `Política de Privacidad | ${SITE_NAME}`,
+diff --git a/GTA6-CODEX/src/app/terminos/page.tsx b/GTA6-CODEX/src/app/terminos/page.tsx
+index 96d3b9d..66dd44e 100644
+--- a/GTA6-CODEX/src/app/terminos/page.tsx
++++ b/GTA6-CODEX/src/app/terminos/page.tsx
+@@ -1,8 +1,6 @@
+ import type { Metadata } from 'next'
+ import { Reveal } from '@/components/ui/Reveal'
+-
+-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+-const SITE_NAME = 'GTA6 Zona'
++import { SITE_NAME, SITE_URL } from '@/config/site'
+ 
+ export const metadata: Metadata = {
+   title: `Términos de Uso | ${SITE_NAME}`,
+diff --git a/GTA6-CODEX/src/app/vehiculos/fabricante/[manufacturer]/page.tsx b/GTA6-CODEX/src/app/vehiculos/fabricante/[manufacturer]/page.tsx
+index 5d70d75..90c022d 100644
+--- a/GTA6-CODEX/src/app/vehiculos/fabricante/[manufacturer]/page.tsx
++++ b/GTA6-CODEX/src/app/vehiculos/fabricante/[manufacturer]/page.tsx
+@@ -8,9 +8,7 @@ import { getVehiclesByManufacturer } from '@/lib/vehicle-manufacturers'
+ import { Reveal } from '@/components/ui/Reveal'
+ import { CategoryIcon } from '@/components/ui/CategoryIcon'
+ import { EntityCard } from '@/components/entities/EntityCard'
+-
+-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+-const SITE_NAME = 'GTA6 Zona'
++import { SITE_NAME, SITE_URL } from '@/config/site'
+ 
+ interface PageProps {
+   params: Promise<{ manufacturer: string }>
+@@ -22,7 +20,7 @@ interface PageProps {
+  * existe en cada ficha de vehículo (`manufacturer`), así que esta página
+  * no agrega contenido editorial nuevo — solo expone una vista ya
+  * soportada por el modelo de datos, útil tanto para navegación como para
+- * SEO de cola larga ("vehículos Vapid GTA 6").
++ * SEO de cola larga ("fichas técnicas Toyota").
+  */
+ 
+ export async function generateStaticParams() {
+@@ -36,8 +34,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+   const entry = map.get(manufacturer)
+   if (!entry) return {}
+ 
+-  const title = `Vehículos ${entry.label} en GTA 6 — ${SITE_NAME}`
+-  const description = `Explorá los ${entry.vehicles.length} vehículos de ${entry.label} documentados en GTA 6 Zona, con estado de confirmación y evidencia por unidad.`
++  const title = `Vehículos ${entry.label} — ${SITE_NAME}`
++  const description = `Explorá los ${entry.vehicles.length} vehículos de ${entry.label} documentados, con fuente y ficha técnica por unidad.`
+   const url = `${SITE_URL}/vehiculos/fabricante/${manufacturer}`
+ 
+   return {
+diff --git a/GTA6-CODEX/src/components/layout/Footer.tsx b/GTA6-CODEX/src/components/layout/Footer.tsx
+index 2659fc4..7026cb4 100644
+--- a/GTA6-CODEX/src/components/layout/Footer.tsx
++++ b/GTA6-CODEX/src/components/layout/Footer.tsx
+@@ -16,12 +16,12 @@ export function Footer() {
+           <div>
+             <div className="mb-4 flex items-center gap-2.5">
+               <div className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-gta-accent to-gta-accent-orange">
+-                <span className="font-display text-[10px] font-bold text-gta-darker">GTA</span>
++                <span className="font-display text-[10px] font-bold text-gta-darker">A</span>
+               </div>
+-              <h3 className="font-display text-lg font-semibold text-gta-text">GTA6 Zona</h3>
++              <h3 className="font-display text-lg font-semibold text-gta-text">AutoFicha</h3>
+             </div>
+             <p className="max-w-xs text-sm leading-relaxed text-gta-text-secondary">
+-              Un wiki editorial de primer nivel sobre Grand Theft Auto 6. Información verificada, rumores y análisis.
++              Fichas técnicas de autos y motos con specs reales, comparador lado a lado y fuente por cada dato.
+             </p>
+           </div>
+ 
+@@ -132,15 +132,10 @@ export function Footer() {
+         <Reveal delay={150} className="relative mt-10 space-y-3 pt-8 text-center text-gta-text-tertiary">
+           <div className="section-divider absolute inset-x-0 top-0" aria-hidden="true" />
+           <p className="mx-auto max-w-2xl text-xs leading-relaxed">
+-            GTA6 Zona es un proyecto editorial independiente y no oficial. No está
+-            afiliado, respaldado ni patrocinado por Rockstar Games ni Take-Two
+-            Interactive Software, Inc. Grand Theft Auto, GTA y las imágenes,
+-            personajes y marcas relacionadas son propiedad de sus respectivos
+-            dueños y se usan aquí con fines informativos y de comentario editorial.
+-          </p>
+-          <p className="font-mono text-xs tracking-wide">
+-            © {currentYear} GTA6 Zona. Not affiliated with Rockstar Games or Take-Two Interactive.
++            AutoFicha es un proyecto editorial independiente. Las marcas y nombres de fabricantes mencionados
++            pertenecen a sus respectivos dueños y se citan aquí con fines informativos y de comparación técnica.
+           </p>
++          <p className="font-mono text-xs tracking-wide">© {currentYear} AutoFicha.</p>
+         </Reveal>
+       </div>
+     </footer>
+diff --git a/GTA6-CODEX/src/components/layout/Header.tsx b/GTA6-CODEX/src/components/layout/Header.tsx
+index f71e386..b3261f2 100644
+--- a/GTA6-CODEX/src/components/layout/Header.tsx
++++ b/GTA6-CODEX/src/components/layout/Header.tsx
+@@ -92,10 +92,10 @@ export function Header() {
+         {/* Logo */}
+         <Link href="/" className="group flex items-center gap-3">
+           <div className="logo-mark flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-gta-accent to-gta-accent-orange shadow-glow-pink">
+-            <span className="font-display text-xs font-bold tracking-tight text-gta-darker">GTA</span>
++            <span className="font-display text-xs font-bold tracking-tight text-gta-darker">A</span>
+           </div>
+           <span className="hidden font-display text-base font-semibold tracking-tight text-gta-text transition-colors duration-300 group-hover:text-gta-accent-strong sm:inline">
+-            GTA6 <span className="text-gradient-vice">Zona</span>
++            Auto<span className="text-gradient-vice">Ficha</span>
+           </span>
+         </Link>
+ 
+diff --git a/GTA6-CODEX/src/components/map/LeonidaMapCanvas.tsx b/GTA6-CODEX/src/components/map/LeonidaMapCanvas.tsx
+deleted file mode 100644
+index e899178..0000000
+--- a/GTA6-CODEX/src/components/map/LeonidaMapCanvas.tsx
++++ /dev/null
+@@ -1,784 +0,0 @@
+-'use client'
+-
+-import 'leaflet/dist/leaflet.css'
+-import { Fragment, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
+-import Link from 'next/link'
+-import L from 'leaflet'
+-import { MapContainer, TileLayer, Circle, Marker, Tooltip, Popup, useMap, useMapEvents } from 'react-leaflet'
+-import type { Entity } from '@/types'
+-import { EntityType } from '@/types'
+-import { Badge } from '@/components/ui/Badge'
+-import { STATUS_LABELS } from '@/lib/entity-labels'
+-import { LEONIDA_ZONES, LEONIDA_ZONES_SOURCE, type LeonidaZone } from '@/lib/leonida-zones'
+-import {
+-  LEONIDA_MAP_VIEW,
+-  LEONIDA_UNZONED_HOLDING,
+-  LEONIDA_ZONE_COORDS,
+-  LEONIDA_ZONE_FLY_ZOOM,
+-  getLeonidaFullMapBounds,
+-  locationPinOffset,
+-} from '@/lib/leonida-map-coordinates'
+-import {
+-  MAP_CATEGORIES,
+-  MAP_CATEGORY_TYPES,
+-  getMapCategoryConfig,
+-  resolveEntityLocationSlug,
+-  type MapCategoryConfig,
+-} from '@/lib/map-entities'
+-
+-/** Id "virtual" para el área de espera de entidades sin zona — no es una de las 5 zonas reportadas. */
+-const UNZONED_HOLDING_ID = '__unzoned__'
+-
+-interface LeonidaMapCanvasProps {
+-  /** Todas las entidades mapeables: ubicaciones, armas, vehículos, misiones, objetos. */
+-  entities: Entity[]
+-}
+-
+-interface MapControls {
+-  recenter: () => void
+-  flyToZone: (zoneId: string) => void
+-}
+-
+-/** Agrupa una lista de entidades por categoría, en el orden de MAP_CATEGORIES, sin grupos vacíos. */
+-function groupByCategory(list: Entity[]): { category: MapCategoryConfig; items: Entity[] }[] {
+-  return MAP_CATEGORIES.map((category) => ({
+-    category,
+-    items: list.filter((e) => e.type === category.type),
+-  })).filter((group) => group.items.length > 0)
+-}
+-
+-function truncate(text: string, max: number): string {
+-  if (text.length <= max) return text
+-  return `${text.slice(0, max).trimEnd()}…`
+-}
+-
+-function hexToRgba(hex: string, alpha: number): string {
+-  const clean = hex.replace('#', '')
+-  const r = parseInt(clean.slice(0, 2), 16)
+-  const g = parseInt(clean.slice(2, 4), 16)
+-  const b = parseInt(clean.slice(4, 6), 16)
+-  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+-}
+-
+-/**
+- * Ícono de pin por categoría: cada tipo de entidad (ubicación, arma,
+- * vehículo, misión, objeto) tiene su propio color y glifo, para que se
+- * pueda distinguir de un vistazo qué hay en el mapa sin necesitar el
+- * panel de filtros abierto. El estado `active` (zona seleccionada) siempre
+- * pisa el color de categoría con el rosa de selección, igual que antes.
+- */
+-const pinIcon = (category: MapCategoryConfig, variant: 'default' | 'active' | 'unzoned') => {
+-  const color = variant === 'active' ? '#ff7ec4' : variant === 'unzoned' ? '#6b5d7d' : category.color
+-  const dashed = variant === 'unzoned' ? 'border-style:dashed;' : ''
+-  return L.divIcon({
+-    className: 'leonida-pin',
+-    html: `<span class="leonida-pin__dot" style="background:${color};box-shadow:0 0 6px ${hexToRgba(color, 0.7)};${dashed}">${category.glyph}</span>`,
+-    iconSize: [22, 22],
+-    iconAnchor: [11, 11],
+-  })
+-}
+-
+-const FULL_BOUNDS = getLeonidaFullMapBounds()
+-const FULL_LATLNG_BOUNDS: L.LatLngBoundsExpression = [
+-  [FULL_BOUNDS.south, FULL_BOUNDS.west],
+-  [FULL_BOUNDS.north, FULL_BOUNDS.east],
+-]
+-
+-/** Cierra el detalle de zona al clickear el mapa fuera de cualquier círculo. */
+-function MapClickHandler({ onClear }: { onClear: () => void }) {
+-  useMapEvents({ click: () => onClear() })
+-  return null
+-}
+-
+-/**
+- * Encuadra automáticamente las 5 zonas al montar el mapa (sin depender de un
+- * zoom fijo que se amontona en pantallas chicas) y vuelve a ajustar el
+- * tamaño del mapa cuando cambia el layout (por ejemplo al rotar el celular,
+- * o al entrar/salir de pantalla completa). También expone al padre, vía
+- * `onReady`, la función de recentrado y la de "volar" hacia una zona puntual
+- * (usada por el buscador y por los chips de zona).
+- */
+-function MapBoundsController({ onReady }: { onReady: (controls: MapControls) => void }) {
+-  const map = useMap()
+-
+-  useEffect(() => {
+-    const recenter = () => {
+-      map.fitBounds(FULL_LATLNG_BOUNDS, { padding: [24, 24] })
+-    }
+-    const flyToZone = (zoneId: string) => {
+-      const coords = zoneId === UNZONED_HOLDING_ID ? LEONIDA_UNZONED_HOLDING : LEONIDA_ZONE_COORDS[zoneId]
+-      if (!coords) return
+-      map.flyTo(coords.center, LEONIDA_ZONE_FLY_ZOOM, { duration: 0.8 })
+-    }
+-
+-    recenter()
+-    onReady({ recenter, flyToZone })
+-
+-    const handleResize = () => {
+-      map.invalidateSize()
+-    }
+-    window.addEventListener('resize', handleResize)
+-    return () => window.removeEventListener('resize', handleResize)
+-    // eslint-disable-next-line react-hooks/exhaustive-deps
+-  }, [map])
+-
+-  return null
+-}
+-
+-/** Vuelve a calcular el tamaño del mapa cuando cambia entre modo normal y pantalla completa. */
+-function MapResizeOnFullscreen({ isFullscreen }: { isFullscreen: boolean }) {
+-  const map = useMap()
+-  useEffect(() => {
+-    const id = window.setTimeout(() => map.invalidateSize(), 260)
+-    return () => window.clearTimeout(id)
+-  }, [isFullscreen, map])
+-  return null
+-}
+-
+-export function LeonidaMapCanvas({ entities }: LeonidaMapCanvasProps) {
+-  const [activeZoneId, setActiveZoneId] = useState<string | null>(null)
+-  const [hoverZoneId, setHoverZoneId] = useState<string | null>(null)
+-  const [isFullscreen, setIsFullscreen] = useState(false)
+-  const [searchQuery, setSearchQuery] = useState('')
+-  const [searchOpen, setSearchOpen] = useState(false)
+-  const [activeCategories, setActiveCategories] = useState<Set<EntityType>>(
+-    () => new Set(MAP_CATEGORY_TYPES)
+-  )
+-  const controlsRef = useRef<MapControls | null>(null)
+-
+-  const locations = useMemo(() => entities.filter((e) => e.type === EntityType.LOCATION), [entities])
+-
+-  const zoneByLocationSlug = useMemo(() => {
+-    const map = new Map<string, LeonidaZone>()
+-    for (const zone of LEONIDA_ZONES) {
+-      for (const slug of zone.locationSlugs) map.set(slug, zone)
+-    }
+-    return map
+-  }, [])
+-
+-  const unzonedLocations = useMemo(
+-    () => locations.filter((loc) => !zoneByLocationSlug.has(loc.slug)),
+-    [locations, zoneByLocationSlug]
+-  )
+-
+-  const confirmedZonesCount = useMemo(
+-    () => LEONIDA_ZONES.filter((z) => z.locationSlugs.length > 0).length,
+-    []
+-  )
+-  const totalLocatedCount = useMemo(
+-    () => LEONIDA_ZONES.reduce((sum, z) => sum + z.locationSlugs.length, 0),
+-    []
+-  )
+-
+-  const searchResults = useMemo(() => {
+-    const q = searchQuery.trim().toLowerCase()
+-    if (q.length < 2) return []
+-    return locations.filter((loc) => loc.title.toLowerCase().includes(q)).slice(0, 7)
+-  }, [locations, searchQuery])
+-
+-  const toggleCategory = (type: EntityType) => {
+-    setActiveCategories((prev) => {
+-      const next = new Set(prev)
+-      if (next.has(type)) next.delete(type)
+-      else next.add(type)
+-      return next
+-    })
+-  }
+-
+-  /**
+-   * Agrupa TODAS las entidades filtrables (no solo ubicaciones) por zona.
+-   * Una entidad que no es `ubicaciones` se ubica resolviendo su relación
+-   * hacia una ubicación catalogada (`resolveEntityLocationSlug`) y viendo
+-   * a qué zona pertenece esa ubicación. Si no hay relación resuelta, o la
+-   * ubicación relacionada tampoco tiene zona, cae en el área de espera.
+-   */
+-  const entitiesByZone = useMemo(() => {
+-    const map = new Map<string, Entity[]>()
+-    for (const entity of entities) {
+-      if (!activeCategories.has(entity.type)) continue
+-      const locationSlug = resolveEntityLocationSlug(entity)
+-      const zone = locationSlug ? zoneByLocationSlug.get(locationSlug) : undefined
+-      const key = zone ? zone.id : UNZONED_HOLDING_ID
+-      const bucket = map.get(key)
+-      if (bucket) bucket.push(entity)
+-      else map.set(key, [entity])
+-    }
+-    return map
+-  }, [entities, activeCategories, zoneByLocationSlug])
+-
+-  const unzonedEntities = entitiesByZone.get(UNZONED_HOLDING_ID) ?? []
+-
+-  const activeZone: LeonidaZone | null = activeZoneId
+-    ? LEONIDA_ZONES.find((z) => z.id === activeZoneId) ?? null
+-    : null
+-  const isUnzonedHoldingActive = activeZoneId === UNZONED_HOLDING_ID
+-
+-  // Escape cierra la pantalla completa, y evita que la página de fondo scrollee mientras está activa.
+-  useEffect(() => {
+-    if (!isFullscreen) return
+-    const previousOverflow = document.body.style.overflow
+-    document.body.style.overflow = 'hidden'
+-    const handleKey = (e: KeyboardEvent) => {
+-      if (e.key === 'Escape') setIsFullscreen(false)
+-    }
+-    window.addEventListener('keydown', handleKey)
+-    return () => {
+-      document.body.style.overflow = previousOverflow
+-      window.removeEventListener('keydown', handleKey)
+-    }
+-  }, [isFullscreen])
+-
+-  const goToZone = (zoneId: string) => {
+-    setActiveZoneId((current) => (current === zoneId ? current : zoneId))
+-    controlsRef.current?.flyToZone(zoneId)
+-  }
+-
+-  const handleSearchSelect = (loc: Entity) => {
+-    setSearchQuery('')
+-    setSearchOpen(false)
+-    const zone = zoneByLocationSlug.get(loc.slug)
+-    goToZone(zone ? zone.id : UNZONED_HOLDING_ID)
+-  }
+-
+-  return (
+-    <div
+-      className={
+-        isFullscreen
+-          ? 'fixed inset-0 z-[100] flex flex-col gap-3 overflow-y-auto bg-gta-darker p-3 md:gap-4 md:p-5'
+-          : ''
+-      }
+-    >
+-      {isFullscreen && (
+-        <div className="flex items-center justify-between gap-3">
+-          <p className="text-sm font-semibold text-gta-text">Mapa de Leonida — pantalla completa</p>
+-          <button
+-            type="button"
+-            onClick={() => setIsFullscreen(false)}
+-            className="leonida-fullscreen-btn"
+-            aria-label="Salir de pantalla completa"
+-          >
+-            ✕ Cerrar
+-          </button>
+-        </div>
+-      )}
+-
+-      <div className={isFullscreen ? 'grid gap-4 lg:grid-cols-[1.7fr_1fr]' : 'grid gap-6 lg:grid-cols-[1.7fr_1fr]'}>
+-        <div className="relative flex flex-col overflow-hidden rounded-xl border border-gta-border bg-gta-card p-4 md:p-6">
+-          {!isFullscreen && (
+-            <div className="mb-3 flex flex-wrap items-start gap-2 rounded-lg border border-gta-accent-warning/25 bg-gta-accent-warning/10 px-3 py-2.5 text-xs leading-relaxed text-gta-accent-warning">
+-              <span aria-hidden="true" className="mt-0.5">
+-                ⚠
+-              </span>
+-              <span>
+-                Mapa real de Florida usado como referencia — las zonas y posiciones están basadas en la cobertura
+-                periodística de la filtración CYBERLEEK ({LEONIDA_ZONES_SOURCE.leakDate}), no en un mapa confirmado
+-                por Rockstar Games ni en coordenadas reales del juego.
+-              </span>
+-            </div>
+-          )}
+-
+-          {/* Barra de estadísticas: da una lectura instantánea del estado del mapa sin tener que clickear nada */}
+-          <div className="mb-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+-            <div className="leonida-stat">
+-              <span className="leonida-stat__value">5</span>
+-              <span className="leonida-stat__label">zonas reportadas</span>
+-            </div>
+-            <div className="leonida-stat leonida-stat--confirmed">
+-              <span className="leonida-stat__value">{confirmedZonesCount}</span>
+-              <span className="leonida-stat__label">con ubicaciones</span>
+-            </div>
+-            <div className="leonida-stat leonida-stat--gold">
+-              <span className="leonida-stat__value">{totalLocatedCount}</span>
+-              <span className="leonida-stat__label">ubicaciones en zona</span>
+-            </div>
+-            <div className="leonida-stat">
+-              <span className="leonida-stat__value">{unzonedLocations.length}</span>
+-              <span className="leonida-stat__label">sin zona asignada</span>
+-            </div>
+-          </div>
+-
+-          {/* Buscador: encontrá una ubicación por nombre y volá directo a su zona */}
+-          <div className="leonida-search-wrap">
+-            <input
+-              type="text"
+-              value={searchQuery}
+-              onChange={(e) => {
+-                setSearchQuery(e.target.value)
+-                setSearchOpen(true)
+-              }}
+-              onFocus={() => setSearchOpen(true)}
+-              onBlur={() => window.setTimeout(() => setSearchOpen(false), 120)}
+-              placeholder="Buscar una ubicación… (ej. Port Gellhorn)"
+-              className="leonida-search-input"
+-              aria-label="Buscar ubicación en el mapa"
+-            />
+-            {searchOpen && searchQuery.trim().length >= 2 && (
+-              <div className="leonida-search-results">
+-                {searchResults.length === 0 ? (
+-                  <p className="leonida-search-empty">Sin resultados para “{searchQuery}”.</p>
+-                ) : (
+-                  searchResults.map((loc) => {
+-                    const zone = zoneByLocationSlug.get(loc.slug)
+-                    return (
+-                      <button
+-                        key={loc.slug}
+-                        type="button"
+-                        onMouseDown={(e) => e.preventDefault()}
+-                        onClick={() => handleSearchSelect(loc)}
+-                        className="leonida-search-result"
+-                      >
+-                        <span>{loc.title}</span>
+-                        <span className="leonida-search-result__zone">
+-                          {zone ? zone.leakName : 'sin zona asignada'}
+-                        </span>
+-                      </button>
+-                    )
+-                  })
+-                )}
+-              </div>
+-            )}
+-          </div>
+-
+-          {/* Chips de zona: navegación directa, y refuerza que los círculos del mapa son clickeables */}
+-          <div className="leonida-chip-row">
+-            {LEONIDA_ZONES.map((zone) => {
+-              const hasLocations = zone.locationSlugs.length > 0
+-              const isActive = zone.id === activeZoneId
+-              return (
+-                <button
+-                  key={zone.id}
+-                  type="button"
+-                  onClick={() => goToZone(zone.id)}
+-                  className={`leonida-chip ${isActive ? 'leonida-chip--active' : ''} ${
+-                    hasLocations ? 'leonida-chip--confirmed' : 'leonida-chip--pending'
+-                  }`}
+-                >
+-                  <span className="leonida-chip__dot" aria-hidden="true" />
+-                  {zone.leakName}
+-                  <span className="leonida-chip__count">{hasLocations ? zone.locationSlugs.length : '—'}</span>
+-                </button>
+-              )
+-            })}
+-            {unzonedLocations.length > 0 && (
+-              <button
+-                type="button"
+-                onClick={() => goToZone(UNZONED_HOLDING_ID)}
+-                className={`leonida-chip leonida-chip--unzoned ${
+-                  isUnzonedHoldingActive ? 'leonida-chip--active' : ''
+-                }`}
+-              >
+-                <span className="leonida-chip__dot" aria-hidden="true" />
+-                Sin zona asignada
+-                <span className="leonida-chip__count">{unzonedLocations.length}</span>
+-              </button>
+-            )}
+-          </div>
+-
+-          {/* Filtros por categoría: togglean qué tipos de entidad se muestran como pines en el mapa. */}
+-          <div className="leonida-category-filters" role="group" aria-label="Filtrar por categoría">
+-            {MAP_CATEGORIES.map((category) => {
+-              const count = entities.filter((e) => e.type === category.type).length
+-              const isOn = activeCategories.has(category.type)
+-              return (
+-                <button
+-                  key={category.type}
+-                  type="button"
+-                  onClick={() => toggleCategory(category.type)}
+-                  aria-pressed={isOn}
+-                  className={`leonida-category-chip ${isOn ? 'leonida-category-chip--on' : 'leonida-category-chip--off'}`}
+-                  style={isOn ? ({ '--category-color': category.color } as CSSProperties) : undefined}
+-                >
+-                  <span className="leonida-category-chip__glyph" aria-hidden="true">
+-                    {category.glyph}
+-                  </span>
+-                  {category.label}
+-                  <span className="leonida-category-chip__count">{count}</span>
+-                </button>
+-              )
+-            })}
+-          </div>
+-
+-          <div className="mb-3 mt-3 flex flex-wrap items-center gap-2 rounded-lg border border-gta-border bg-gta-darker/70 px-3 py-2 text-xs text-gta-text-secondary">
+-            <span className="font-semibold text-gta-text">Cómo se usa:</span>
+-            <span className="inline-flex items-center gap-1">
+-              <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-gta-accent-orange/20 text-[10px] font-bold text-gta-accent-orange">
+-                1
+-              </span>
+-              tocá un círculo o un chip para ver el detalle de esa zona
+-            </span>
+-            <span className="text-gta-border-strong">·</span>
+-            <span className="inline-flex items-center gap-1">
+-              <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-gta-gold/20 text-[10px] font-bold text-gta-gold">
+-                2
+-              </span>
+-              tocá un pin para ver el resumen de esa entidad
+-            </span>
+-            <span className="text-gta-border-strong">·</span>
+-            <span className="inline-flex items-center gap-1">
+-              <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-gta-accent-strong/20 text-[10px] font-bold text-gta-accent-strong">
+-                3
+-              </span>
+-              usá los filtros de categoría para mostrar u ocultar tipos de contenido
+-            </span>
+-          </div>
+-
+-          <div
+-            className={`leonida-leaflet-wrap relative w-full overflow-hidden rounded-lg border border-gta-border-strong/60 ${
+-              isFullscreen
+-                ? 'h-[58vh] min-h-[360px] sm:h-[64vh] lg:h-[72vh]'
+-                : 'h-[440px] sm:h-[560px] md:h-[640px] lg:h-[720px]'
+-            }`}
+-          >
+-            <MapContainer
+-              center={LEONIDA_MAP_VIEW.center}
+-              zoom={LEONIDA_MAP_VIEW.zoom}
+-              minZoom={5}
+-              maxZoom={LEONIDA_MAP_VIEW.maxZoom}
+-              scrollWheelZoom
+-              style={{ height: '100%', width: '100%', background: '#050308' }}
+-            >
+-              <TileLayer
+-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+-                url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+-              />
+-              <MapClickHandler onClear={() => setActiveZoneId(null)} />
+-              <MapBoundsController onReady={(controls) => (controlsRef.current = controls)} />
+-              <MapResizeOnFullscreen isFullscreen={isFullscreen} />
+-
+-              {LEONIDA_ZONES.map((zone) => {
+-                const coords = LEONIDA_ZONE_COORDS[zone.id]
+-                if (!coords) return null
+-                const isActive = zone.id === activeZoneId
+-                const isHover = zone.id === hoverZoneId
+-                const hasLocations = zone.locationSlugs.length > 0
+-                const zoneEntities = entitiesByZone.get(zone.id) ?? []
+-
+-                const color = isActive ? '#ff7ec4' : isHover ? '#ff2f8f' : hasLocations ? '#22d3ee' : '#453163'
+-
+-                return (
+-                  <Fragment key={zone.id}>
+-                    <Circle
+-                      center={coords.center}
+-                      radius={coords.radiusMeters}
+-                      pathOptions={{
+-                        color,
+-                        weight: isActive ? 3 : 1.5,
+-                        fillColor: color,
+-                        fillOpacity: isActive ? 0.24 : isHover ? 0.16 : hasLocations ? 0.1 : 0.04,
+-                        dashArray: hasLocations ? undefined : '6 5',
+-                      }}
+-                      eventHandlers={{
+-                        click: (e) => {
+-                          L.DomEvent.stopPropagation(e)
+-                          setActiveZoneId(isActive ? null : zone.id)
+-                        },
+-                        mouseover: () => setHoverZoneId(zone.id),
+-                        mouseout: () => setHoverZoneId((current) => (current === zone.id ? null : current)),
+-                      }}
+-                    >
+-                      <Tooltip
+-                        direction="center"
+-                        permanent
+-                        className={`leonida-zone-tooltip ${isActive ? 'leonida-zone-tooltip--active' : ''}`}
+-                        opacity={1}
+-                      >
+-                        <span className="leonida-zone-tooltip__row">
+-                          <span className="leonida-zone-tooltip__name">{zone.leakName}</span>
+-                          <span className="leonida-zone-tooltip__position">{zone.position}</span>
+-                        </span>
+-                        <span
+-                          className={`leonida-zone-tooltip__status ${
+-                            hasLocations
+-                              ? 'leonida-zone-tooltip__status--confirmed'
+-                              : 'leonida-zone-tooltip__status--unconfirmed'
+-                          }`}
+-                        >
+-                          {hasLocations
+-                            ? `✓ ${zoneEntities.length} entidad${zoneEntities.length === 1 ? '' : 'es'} catalogada${zoneEntities.length === 1 ? '' : 's'}`
+-                            : '⚠ sin ubicaciones confirmadas'}
+-                        </span>
+-                        <span className="leonida-zone-tooltip__cta">Tocá para ver el detalle →</span>
+-                      </Tooltip>
+-                    </Circle>
+-
+-                    {zoneEntities.map((entity, i) => {
+-                      const { dLat, dLng } = locationPinOffset(i, zoneEntities.length)
+-                      const pos: [number, number] = [coords.center[0] + dLat, coords.center[1] + dLng]
+-                      const category = getMapCategoryConfig(entity.type)
+-                      return (
+-                        <Marker
+-                          key={entity.slug}
+-                          position={pos}
+-                          icon={pinIcon(category, isActive ? 'active' : 'default')}
+-                        >
+-                          <Tooltip direction="top" offset={[0, -10]}>
+-                            {entity.title}
+-                          </Tooltip>
+-                          <Popup className="leonida-pin-popup" closeButton minWidth={220} maxWidth={260}>
+-                            <div className="leonida-pin-popup__inner">
+-                              <div className="leonida-pin-popup__head">
+-                                <span className="leonida-pin-popup__title">{entity.title}</span>
+-                                <Badge variant="status" status={entity.status}>
+-                                  {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
+-                                </Badge>
+-                              </div>
+-                              <span className="leonida-pin-popup__category" style={{ color: category.color }}>
+-                                {category.glyph} {category.label}
+-                              </span>
+-                              {entity.description && (
+-                                <p className="leonida-pin-popup__desc">{truncate(entity.description, 150)}</p>
+-                              )}
+-                              <Link href={`/${entity.type}/${entity.slug}`} className="leonida-pin-popup__link">
+-                                Ver ficha completa →
+-                              </Link>
+-                            </div>
+-                          </Popup>
+-                        </Marker>
+-                      )
+-                    })}
+-                  </Fragment>
+-                )
+-              })}
+-
+-              {unzonedEntities.length > 0 && (
+-                <Fragment>
+-                  <Circle
+-                    center={LEONIDA_UNZONED_HOLDING.center}
+-                    radius={LEONIDA_UNZONED_HOLDING.radiusMeters}
+-                    pathOptions={{
+-                      color: isUnzonedHoldingActive ? '#ff7ec4' : '#6b5d7d',
+-                      weight: isUnzonedHoldingActive ? 3 : 1.5,
+-                      fillColor: isUnzonedHoldingActive ? '#ff7ec4' : '#6b5d7d',
+-                      fillOpacity: isUnzonedHoldingActive ? 0.2 : 0.06,
+-                      dashArray: '4 6',
+-                    }}
+-                    eventHandlers={{
+-                      click: (e) => {
+-                        L.DomEvent.stopPropagation(e)
+-                        setActiveZoneId(isUnzonedHoldingActive ? null : UNZONED_HOLDING_ID)
+-                      },
+-                    }}
+-                  >
+-                    <Tooltip
+-                      direction="center"
+-                      permanent
+-                      className={`leonida-zone-tooltip leonida-zone-tooltip--unzoned ${
+-                        isUnzonedHoldingActive ? 'leonida-zone-tooltip--active' : ''
+-                      }`}
+-                      opacity={1}
+-                    >
+-                      <span className="leonida-zone-tooltip__row">
+-                        <span className="leonida-zone-tooltip__name">Sin zona asignada</span>
+-                        <span className="leonida-zone-tooltip__position">ilustrativo</span>
+-                      </span>
+-                      <span className="leonida-zone-tooltip__status leonida-zone-tooltip__status--unconfirmed">
+-                        ⚠ {unzonedEntities.length} entidad{unzonedEntities.length === 1 ? '' : 'es'} sin zona
+-                        confirmada
+-                      </span>
+-                      <span className="leonida-zone-tooltip__cta">Tocá para ver el detalle →</span>
+-                    </Tooltip>
+-                  </Circle>
+-
+-                  {unzonedEntities.map((entity, i) => {
+-                    const { dLat, dLng } = locationPinOffset(i, unzonedEntities.length, 0.55)
+-                    const pos: [number, number] = [
+-                      LEONIDA_UNZONED_HOLDING.center[0] + dLat,
+-                      LEONIDA_UNZONED_HOLDING.center[1] + dLng,
+-                    ]
+-                    const category = getMapCategoryConfig(entity.type)
+-                    return (
+-                      <Marker key={entity.slug} position={pos} icon={pinIcon(category, 'unzoned')}>
+-                        <Tooltip direction="top" offset={[0, -10]}>
+-                          {entity.title}
+-                        </Tooltip>
+-                        <Popup className="leonida-pin-popup leonida-pin-popup--unzoned" closeButton minWidth={220} maxWidth={260}>
+-                          <div className="leonida-pin-popup__inner">
+-                            <div className="leonida-pin-popup__head">
+-                              <span className="leonida-pin-popup__title">{entity.title}</span>
+-                              <Badge variant="status" status={entity.status}>
+-                                {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
+-                              </Badge>
+-                            </div>
+-                            <span className="leonida-pin-popup__category" style={{ color: category.color }}>
+-                              {category.glyph} {category.label}
+-                            </span>
+-                            <p className="leonida-pin-popup__unzoned-note">
+-                              ⚠ Sin zona confirmada — posición ilustrativa, no real.
+-                            </p>
+-                            {entity.description && (
+-                              <p className="leonida-pin-popup__desc">{truncate(entity.description, 150)}</p>
+-                            )}
+-                            <Link href={`/${entity.type}/${entity.slug}`} className="leonida-pin-popup__link">
+-                              Ver ficha completa →
+-                            </Link>
+-                          </div>
+-                        </Popup>
+-                      </Marker>
+-                    )
+-                  })}
+-                </Fragment>
+-              )}
+-            </MapContainer>
+-
+-            <button
+-              type="button"
+-              onClick={() => controlsRef.current?.recenter()}
+-              className="leonida-recenter-btn"
+-              aria-label="Volver a mostrar el mapa completo"
+-            >
+-              ⤢ Ver mapa completo
+-            </button>
+-
+-            {!isFullscreen && (
+-              <button
+-                type="button"
+-                onClick={() => setIsFullscreen(true)}
+-                className="leonida-fullscreen-btn leonida-fullscreen-btn--float"
+-                aria-label="Expandir el mapa a pantalla completa"
+-              >
+-                ⛶ Pantalla completa
+-              </button>
+-            )}
+-          </div>
+-
+-          {!isFullscreen && (
+-            <div className="mt-4 rounded-lg border border-gta-border bg-gta-darker/50 p-3">
+-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gta-text-tertiary">
+-                Cómo leer este mapa
+-              </p>
+-              <div className="grid grid-cols-1 gap-x-5 gap-y-2 text-xs text-gta-text-tertiary sm:grid-cols-2">
+-                <span className="inline-flex items-center gap-1.5">
+-                  <span
+-                    className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
+-                    style={{ backgroundColor: 'rgba(34,211,238,0.2)', border: '1.5px solid #22d3ee' }}
+-                  />
+-                  Círculo cian = zona con al menos una ubicación confirmada
+-                </span>
+-                <span className="inline-flex items-center gap-1.5">
+-                  <span
+-                    className="inline-block h-2.5 w-4 shrink-0 rounded-sm"
+-                    style={{ border: '1.5px dashed #453163' }}
+-                  />
+-                  Círculo gris punteado = zona reportada, sin confirmar todavía
+-                </span>
+-                <span className="inline-flex items-center gap-1.5">
+-                  <span
+-                    className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
+-                    style={{ backgroundColor: 'rgba(255,126,196,0.25)', border: '1.5px solid #ff7ec4' }}
+-                  />
+-                  Círculo rosa = zona seleccionada (mostrando su detalle a la derecha)
+-                </span>
+-                <span className="inline-flex items-center gap-1.5">
+-                  <span className="inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-gta-gold" />
+-                  Punto dorado = ubicación catalogada — tocalo para ver un resumen
+-                </span>
+-                <span className="inline-flex items-center gap-1.5 sm:col-span-2">
+-                  <span
+-                    className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
+-                    style={{ backgroundColor: 'rgba(107,93,125,0.5)', border: '1.5px dashed #6b5d7d' }}
+-                  />
+-                  Punto gris en el Golfo (recuadro punteado, alejado de tierra) = ubicaciones sin zona confirmada
+-                  todavía — no representa una posición real dentro del juego, es solo para que no queden ocultas
+-                </span>
+-              </div>
+-            </div>
+-          )}
+-        </div>
+-
+-        <div className="overflow-y-auto rounded-xl border border-gta-border bg-gta-card p-4 md:p-6">
+-          {!activeZone ? (
+-            <div>
+-              <h3 className="font-display text-lg font-semibold text-gta-text">Sin zona asignada</h3>
+-              <p className="mt-1 text-sm text-gta-text-secondary">
+-                Tocá una zona del mapa (o un chip de arriba) para ver su detalle. Estas {unzonedEntities.length}{' '}
+-                entidades del catálogo (de las categorías activas) no tienen todavía un dato confirmado que las
+-                sitúe en alguna de las 5 zonas reportadas — por eso también aparecen agrupadas en un recuadro
+-                punteado en pleno Golfo de México, lejos de tierra firme, y no dentro de ninguna zona real.
+-              </p>
+-              {groupByCategory(unzonedEntities).map(({ category, items }) => (
+-                <div key={category.type} className="mt-4">
+-                  <h4 className="flex items-center gap-1.5 text-sm font-semibold text-gta-text">
+-                    <span aria-hidden="true">{category.glyph}</span>
+-                    {category.label}
+-                    <span className="text-gta-text-tertiary">({items.length})</span>
+-                  </h4>
+-                  <ul className="mt-2 space-y-2">
+-                    {items.map((entity) => (
+-                      <li key={entity.slug}>
+-                        <Link
+-                          href={`/${entity.type}/${entity.slug}`}
+-                          className="text-sm text-gta-text transition-colors hover:text-gta-accent-strong"
+-                        >
+-                          {entity.title}
+-                        </Link>
+-                      </li>
+-                    ))}
+-                  </ul>
+-                </div>
+-              ))}
+-            </div>
+-          ) : (
+-            <div>
+-              <div className="mb-2 flex items-center justify-between gap-2">
+-                <h3 className="font-display text-lg font-semibold text-gta-text">{activeZone.leakName}</h3>
+-                <Badge variant="default">{activeZone.position}</Badge>
+-              </div>
+-              <p className="text-sm text-gta-text-secondary">{activeZone.description}</p>
+-
+-              <div className="mt-4 rounded-lg border border-gta-border bg-gta-darker/60 p-3 text-xs text-gta-text-tertiary">
+-                {activeZone.sourceNote}
+-              </div>
+-
+-              <h4 className="mt-4 text-sm font-semibold text-gta-text">Catalogado en esta zona</h4>
+-              {(() => {
+-                const zoneEntities = entitiesByZone.get(activeZone.id) ?? []
+-                if (zoneEntities.length === 0) {
+-                  return (
+-                    <p className="mt-1 text-sm text-gta-text-secondary">
+-                      Nada todavía en las categorías activas — sin dato oficial confirmado que ubique alguna ficha
+-                      del catálogo acá.
+-                    </p>
+-                  )
+-                }
+-                return groupByCategory(zoneEntities).map(({ category, items }) => (
+-                  <div key={category.type} className="mt-3">
+-                    <h5 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-gta-text-tertiary">
+-                      <span aria-hidden="true">{category.glyph}</span>
+-                      {category.label}
+-                      <span>({items.length})</span>
+-                    </h5>
+-                    <ul className="mt-1.5 space-y-2">
+-                      {items.map((entity) => (
+-                        <li key={entity.slug} className="flex items-center gap-2">
+-                          <span
+-                            className="inline-block h-1.5 w-1.5 rounded-full"
+-                            style={{ backgroundColor: category.color }}
+-                            aria-hidden="true"
+-                          />
+-                          <Link
+-                            href={`/${entity.type}/${entity.slug}`}
+-                            className="text-sm text-gta-text transition-colors hover:text-gta-accent-strong"
+-                          >
+-                            {entity.title}
+-                          </Link>
+-                        </li>
+-                      ))}
+-                    </ul>
+-                  </div>
+-                ))
+-              })()}
+-
+-              <button
+-                type="button"
+-                onClick={() => setActiveZoneId(null)}
+-                className="mt-4 text-xs font-semibold text-gta-accent-orange transition-colors hover:text-gta-accent-strong"
+-              >
+-                ← Ver entidades sin zona asignada
+-              </button>
+-            </div>
+-          )}
+-        </div>
+-      </div>
+-    </div>
+-  )
+-}
+diff --git a/GTA6-CODEX/src/components/map/LeonidaMapCanvasV2.tsx b/GTA6-CODEX/src/components/map/LeonidaMapCanvasV2.tsx
+deleted file mode 100644
+index 370ee1b..0000000
+--- a/GTA6-CODEX/src/components/map/LeonidaMapCanvasV2.tsx
++++ /dev/null
+@@ -1,618 +0,0 @@
+-'use client'
+-
+-/**
+- * VERSIÓN MEJORADA del LeonidaMapCanvas
+- *
+- * Cambios principales:
+- * - MarkerCluster para agrupar ubicaciones (vía react-leaflet-cluster,
+- *   el único wrapper de leaflet.markercluster compatible con react-leaflet 5
+- *   + React 19 — leaflet.markercluster en sí es un plugin vanilla de Leaflet
+- *   y no expone un componente de React)
+- * - Filtros avanzados (categorías, zonas)
+- * - Zoom automático post-filtro
+- * - Mejor manejo de estado
+- * - Estadísticas en vivo
+- *
+- * Activación: ver `LeonidaMapExplorer.tsx` — se activa con la env var
+- * NEXT_PUBLIC_MAP_V2=true. Por defecto sigue corriendo V1.
+- */
+-
+-import 'leaflet/dist/leaflet.css'
+-import 'react-leaflet-cluster/dist/assets/MarkerCluster.css'
+-import 'react-leaflet-cluster/dist/assets/MarkerCluster.Default.css'
+-import '@/styles/leaflet-cluster.css'
+-
+-import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
+-import Link from 'next/link'
+-import L from 'leaflet'
+-import MarkerClusterGroup from 'react-leaflet-cluster'
+-import { MapContainer, TileLayer, Circle, Marker, Tooltip, Popup, useMap, useMapEvents } from 'react-leaflet'
+-import type { Entity } from '@/types'
+-import { EntityType } from '@/types'
+-import { Badge } from '@/components/ui/Badge'
+-import { STATUS_LABELS } from '@/lib/entity-labels'
+-import { LEONIDA_ZONES, type LeonidaZone } from '@/lib/leonida-zones'
+-import {
+-  LEONIDA_MAP_VIEW,
+-  LEONIDA_UNZONED_HOLDING,
+-  LEONIDA_ZONE_COORDS,
+-  LEONIDA_ZONE_FLY_ZOOM,
+-  getLeonidaFullMapBounds,
+-  locationPinOffset,
+-} from '@/lib/leonida-map-coordinates'
+-import {
+-  MAP_CATEGORIES,
+-  MAP_CATEGORY_TYPES,
+-  getMapCategoryConfig,
+-  resolveEntityLocationSlug,
+-  type MapCategoryConfig,
+-} from '@/lib/map-entities'
+-
+-const UNZONED_HOLDING_ID = '__unzoned__'
+-
+-interface MapFilters {
+-  categories: Set<EntityType>
+-  zones: Set<string>
+-  searchQuery: string
+-}
+-
+-interface MapControls {
+-  recenter: () => void
+-  flyToZone: (zoneId: string) => void
+-}
+-
+-interface MapStats {
+-  totalVisible: number
+-  byCategory: Record<string, number>
+-}
+-
+-function groupByCategory(list: Entity[]): { category: MapCategoryConfig; items: Entity[] }[] {
+-  return MAP_CATEGORIES.map((category) => ({
+-    category,
+-    items: list.filter((e) => e.type === category.type),
+-  })).filter((group) => group.items.length > 0)
+-}
+-
+-function truncate(text: string, max: number): string {
+-  if (text.length <= max) return text
+-  return `${text.slice(0, max).trimEnd()}…`
+-}
+-
+-/** Ícono SVG por categoría — reemplaza el emoji plano del V1 por un pin con sombra. */
+-const createCategoryPin = (category: MapCategoryConfig, variant: 'default' | 'active' | 'unzoned') => {
+-  const color = variant === 'active' ? '#ff7ec4' : variant === 'unzoned' ? '#6b5d7d' : category.color
+-
+-  const svg = `<svg width="32" height="40" viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg">
+-    <defs>
+-      <filter id="shadow">
+-        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+-      </filter>
+-    </defs>
+-    <path d="M16 2C9.4 2 4 7.4 4 14c0 8 12 22 12 22s12-14 12-22c0-6.6-5.4-12-12-12z"
+-          fill="${color}"
+-          stroke="white"
+-          stroke-width="2"
+-          filter="url(#shadow)"/>
+-    <text x="16" y="14" text-anchor="middle" font-size="14" fill="white" font-weight="bold" dominant-baseline="central">
+-      ${category.glyph}
+-    </text>
+-  </svg>`
+-
+-  return L.divIcon({
+-    className: 'category-pin',
+-    html: svg,
+-    iconSize: [32, 40],
+-    iconAnchor: [16, 40],
+-    popupAnchor: [0, -40],
+-  })
+-}
+-
+-const FULL_BOUNDS = getLeonidaFullMapBounds()
+-const FULL_LATLNG_BOUNDS: L.LatLngBoundsExpression = [
+-  [FULL_BOUNDS.south, FULL_BOUNDS.west],
+-  [FULL_BOUNDS.north, FULL_BOUNDS.east],
+-]
+-
+-function MapClickHandler({ onClear }: { onClear: () => void }) {
+-  useMapEvents({ click: () => onClear() })
+-  return null
+-}
+-
+-/**
+- * Igual que en V1: recentra al montar y expone los controles al padre.
+- * El callback `onReady` se pasa por ref (no por dependencia del efecto)
+- * a propósito — es una función nueva en cada render del padre, así que
+- * incluirla en el array de deps re-dispara `recenter()` en cada render
+- * y hace que el mapa "salte" solo. Ese era un bug real de la primera
+- * versión de este archivo, corregido acá.
+- */
+-function MapBoundsController({ onReady }: { onReady: (controls: MapControls) => void }) {
+-  const map = useMap()
+-  const onReadyRef = useRef(onReady)
+-  onReadyRef.current = onReady
+-
+-  useEffect(() => {
+-    const recenter = () => {
+-      map.fitBounds(FULL_LATLNG_BOUNDS, { padding: [24, 24] })
+-    }
+-    const flyToZone = (zoneId: string) => {
+-      const coords = zoneId === UNZONED_HOLDING_ID ? LEONIDA_UNZONED_HOLDING : LEONIDA_ZONE_COORDS[zoneId]
+-      if (!coords) return
+-      map.flyTo(coords.center, LEONIDA_ZONE_FLY_ZOOM, { duration: 0.8 })
+-    }
+-
+-    recenter()
+-    onReadyRef.current({ recenter, flyToZone })
+-
+-    const handleResize = () => {
+-      map.invalidateSize()
+-    }
+-    window.addEventListener('resize', handleResize)
+-    return () => window.removeEventListener('resize', handleResize)
+-  }, [map])
+-
+-  return null
+-}
+-
+-function MapResizeOnFullscreen({ isFullscreen }: { isFullscreen: boolean }) {
+-  const map = useMap()
+-  useEffect(() => {
+-    const id = window.setTimeout(() => map.invalidateSize(), 260)
+-    return () => window.clearTimeout(id)
+-  }, [isFullscreen, map])
+-  return null
+-}
+-
+-export function LeonidaMapCanvasV2({ entities }: { entities: Entity[] }) {
+-  const [activeZoneId, setActiveZoneId] = useState<string | null>(null)
+-  const [isFullscreen, setIsFullscreen] = useState(false)
+-  const [searchQuery, setSearchQuery] = useState('')
+-  const [searchOpen, setSearchOpen] = useState(false)
+-
+-  const [filters, setFilters] = useState<MapFilters>({
+-    categories: new Set(MAP_CATEGORY_TYPES),
+-    zones: new Set(LEONIDA_ZONES.map((z) => z.id)),
+-    searchQuery: '',
+-  })
+-
+-  const controlsRef = useRef<MapControls | null>(null)
+-
+-  const locations = useMemo(() => entities.filter((e) => e.type === EntityType.LOCATION), [entities])
+-
+-  const zoneByLocationSlug = useMemo(() => {
+-    const map = new Map<string, LeonidaZone>()
+-    for (const zone of LEONIDA_ZONES) {
+-      for (const slug of zone.locationSlugs) map.set(slug, zone)
+-    }
+-    return map
+-  }, [])
+-
+-  const filteredEntities = useMemo(() => {
+-    let result = entities
+-
+-    if (filters.categories.size > 0) {
+-      result = result.filter((e) => filters.categories.has(e.type))
+-    }
+-
+-    if (filters.searchQuery.trim()) {
+-      const q = filters.searchQuery.toLowerCase()
+-      result = result.filter((e) => e.title.toLowerCase().includes(q))
+-    }
+-
+-    if (filters.zones.size > 0) {
+-      result = result.filter((e) => {
+-        if (e.type === EntityType.LOCATION) {
+-          const zone = zoneByLocationSlug.get(e.slug)
+-          return zone && filters.zones.has(zone.id)
+-        }
+-        const locationSlug = resolveEntityLocationSlug(e)
+-        if (!locationSlug) return true
+-        const zone = zoneByLocationSlug.get(locationSlug)
+-        return zone && filters.zones.has(zone.id)
+-      })
+-    }
+-
+-    return result
+-  }, [entities, filters, zoneByLocationSlug])
+-
+-  const mapStats = useMemo((): MapStats => {
+-    const stats: MapStats = {
+-      totalVisible: filteredEntities.length,
+-      byCategory: {},
+-    }
+-    for (const category of MAP_CATEGORIES) {
+-      stats.byCategory[category.type] = filteredEntities.filter((e) => e.type === category.type).length
+-    }
+-    return stats
+-  }, [filteredEntities])
+-
+-  const toggleCategory = (type: EntityType) => {
+-    setFilters((prev) => {
+-      const next = new Set(prev.categories)
+-      if (next.has(type)) next.delete(type)
+-      else next.add(type)
+-      return { ...prev, categories: next }
+-    })
+-  }
+-
+-  const toggleZone = (zoneId: string) => {
+-    setFilters((prev) => {
+-      const next = new Set(prev.zones)
+-      if (next.has(zoneId)) next.delete(zoneId)
+-      else next.add(zoneId)
+-      return { ...prev, zones: next }
+-    })
+-  }
+-
+-  const clearAllFilters = () => {
+-    setFilters({
+-      categories: new Set(MAP_CATEGORY_TYPES),
+-      zones: new Set(LEONIDA_ZONES.map((z) => z.id)),
+-      searchQuery: '',
+-    })
+-  }
+-
+-  const handleSearch = (query: string) => {
+-    setSearchQuery(query)
+-    setFilters((prev) => ({ ...prev, searchQuery: query }))
+-  }
+-
+-  const activeZone =
+-    activeZoneId && activeZoneId !== UNZONED_HOLDING_ID
+-      ? LEONIDA_ZONES.find((z) => z.id === activeZoneId) ?? null
+-      : null
+-
+-  const entitiesByZone = useMemo(() => {
+-    const map = new Map<string, Entity[]>()
+-    for (const zone of LEONIDA_ZONES) map.set(zone.id, [])
+-    for (const entity of filteredEntities) {
+-      const locationSlug =
+-        entity.type === EntityType.LOCATION ? entity.slug : resolveEntityLocationSlug(entity)
+-      if (!locationSlug) continue
+-      const zone = zoneByLocationSlug.get(locationSlug)
+-      if (zone) map.get(zone.id)?.push(entity)
+-    }
+-    return map
+-  }, [filteredEntities, zoneByLocationSlug])
+-
+-  const searchResults = useMemo(() => {
+-    const q = searchQuery.trim().toLowerCase()
+-    if (q.length < 2) return []
+-    return locations.filter((loc) => loc.title.toLowerCase().includes(q)).slice(0, 7)
+-  }, [locations, searchQuery])
+-
+-  const hasActiveFilters =
+-    filters.searchQuery.trim().length > 0 ||
+-    filters.categories.size < MAP_CATEGORY_TYPES.length ||
+-    filters.zones.size < LEONIDA_ZONES.length
+-
+-  return (
+-    <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
+-      <div className={`relative ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}>
+-        {isFullscreen && (
+-          <button
+-            type="button"
+-            onClick={() => setIsFullscreen(false)}
+-            className="leonida-fullscreen-btn absolute right-4 top-4 z-10"
+-            aria-label="Salir de pantalla completa"
+-          >
+-            ✕ Cerrar
+-          </button>
+-        )}
+-
+-        <div
+-          className="relative overflow-hidden rounded-xl border border-gta-border bg-gta-darker"
+-          style={{ height: isFullscreen ? '100vh' : '520px' }}
+-        >
+-          {/* Panel de filtros */}
+-          <div className="max-h-32 space-y-2 overflow-y-auto border-b border-gta-border bg-gta-card p-3">
+-            <div className="leonida-search-wrap">
+-              <input
+-                type="text"
+-                placeholder="Buscar una ubicación… (mín. 2 caracteres)"
+-                value={searchQuery}
+-                onChange={(e) => handleSearch(e.target.value)}
+-                onFocus={() => setSearchOpen(true)}
+-                onBlur={() => window.setTimeout(() => setSearchOpen(false), 120)}
+-                className="leonida-search-input"
+-                aria-label="Buscar ubicación en el mapa"
+-              />
+-              {searchOpen && searchQuery.trim().length >= 2 && (
+-                <div className="leonida-search-results">
+-                  {searchResults.length === 0 ? (
+-                    <p className="leonida-search-empty">Sin resultados para “{searchQuery}”.</p>
+-                  ) : (
+-                    searchResults.map((loc) => (
+-                      <button
+-                        key={loc.slug}
+-                        type="button"
+-                        onMouseDown={(e) => e.preventDefault()}
+-                        onClick={() => {
+-                          handleSearch(loc.title)
+-                          setSearchOpen(false)
+-                        }}
+-                        className="leonida-search-result"
+-                      >
+-                        <span>{loc.title}</span>
+-                      </button>
+-                    ))
+-                  )}
+-                </div>
+-              )}
+-            </div>
+-
+-            <div className="flex flex-wrap gap-2">
+-              {MAP_CATEGORIES.map((category) => (
+-                <button
+-                  key={category.type}
+-                  type="button"
+-                  onClick={() => toggleCategory(category.type)}
+-                  aria-pressed={filters.categories.has(category.type)}
+-                  className={`leonida-category-chip ${
+-                    filters.categories.has(category.type) ? 'leonida-category-chip--on' : 'leonida-category-chip--off'
+-                  }`}
+-                >
+-                  <span aria-hidden="true">{category.glyph}</span> {category.label}
+-                </button>
+-              ))}
+-            </div>
+-
+-            <div className="leonida-chip-row">
+-              {LEONIDA_ZONES.map((zone) => (
+-                <button
+-                  key={zone.id}
+-                  type="button"
+-                  onClick={() => toggleZone(zone.id)}
+-                  className={`leonida-chip ${filters.zones.has(zone.id) ? 'leonida-chip--active' : ''}`}
+-                >
+-                  {zone.leakName}
+-                </button>
+-              ))}
+-            </div>
+-
+-            <div className="flex items-center justify-between text-xs text-gta-text-tertiary">
+-              <span>📊 {mapStats.totalVisible} resultados</span>
+-              {hasActiveFilters && (
+-                <button
+-                  type="button"
+-                  onClick={clearAllFilters}
+-                  className="text-gta-accent transition-colors hover:text-gta-accent-strong"
+-                >
+-                  Limpiar filtros
+-                </button>
+-              )}
+-            </div>
+-          </div>
+-
+-          {filteredEntities.length === 0 && (
+-            <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/50">
+-              <div className="rounded border border-gta-border bg-gta-card p-4 text-center">
+-                <p className="mb-2 text-gta-text">⚠ Sin resultados para los filtros actuales</p>
+-                <button
+-                  type="button"
+-                  onClick={clearAllFilters}
+-                  className="text-sm text-gta-accent hover:text-gta-accent-strong"
+-                >
+-                  Mostrar todo
+-                </button>
+-              </div>
+-            </div>
+-          )}
+-
+-          <MapContainer
+-            center={LEONIDA_MAP_VIEW.center}
+-            zoom={LEONIDA_MAP_VIEW.zoom}
+-            minZoom={5}
+-            maxZoom={LEONIDA_MAP_VIEW.maxZoom}
+-            scrollWheelZoom
+-            className="h-full"
+-            style={{ background: '#050308' }}
+-          >
+-            <TileLayer
+-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+-              url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+-            />
+-
+-            <MapBoundsController onReady={(controls) => (controlsRef.current = controls)} />
+-            <MapResizeOnFullscreen isFullscreen={isFullscreen} />
+-            <MapClickHandler onClear={() => setActiveZoneId(null)} />
+-
+-            {Array.from(filters.zones).map((zoneId) => {
+-              const zone = LEONIDA_ZONES.find((z) => z.id === zoneId)
+-              if (!zone) return null
+-              const coords = LEONIDA_ZONE_COORDS[zone.id]
+-              if (!coords) return null
+-
+-              const isActive = activeZoneId === zone.id
+-              const color = isActive ? '#ff7ec4' : '#22d3ee'
+-              const dashArray = zone.locationSlugs.length > 0 ? undefined : '5, 5'
+-
+-              return (
+-                <Circle
+-                  key={zone.id}
+-                  center={coords.center}
+-                  radius={coords.radiusMeters}
+-                  pathOptions={{
+-                    color,
+-                    fill: true,
+-                    fillColor: color,
+-                    fillOpacity: isActive ? 0.25 : 0.1,
+-                    weight: isActive ? 2 : 1.5,
+-                    dashArray,
+-                  }}
+-                  eventHandlers={{
+-                    click: (e) => {
+-                      L.DomEvent.stopPropagation(e)
+-                      setActiveZoneId(isActive ? null : zone.id)
+-                    },
+-                  }}
+-                >
+-                  <Tooltip>{zone.leakName}</Tooltip>
+-                </Circle>
+-              )
+-            })}
+-
+-            {filteredEntities.length > 0 && (
+-              <MarkerClusterGroup
+-                maxClusterRadius={80}
+-                iconCreateFunction={(cluster) => {
+-                  const childCount = cluster.getChildCount()
+-                  const size = childCount > 100 ? 40 : childCount > 10 ? 35 : 30
+-                  return L.divIcon({
+-                    html: `<div style="background:#ff7ec4;border:2px solid white;border-radius:50%;width:${size}px;height:${size}px;display:flex;align-items:center;justify-content:center;font-weight:bold;color:white;font-size:12px;">${childCount}</div>`,
+-                    iconSize: [size, size],
+-                    className: 'marker-cluster',
+-                  })
+-                }}
+-              >
+-                {filteredEntities.map((entity) => {
+-                  const category = getMapCategoryConfig(entity.type)
+-                  let coords: [number, number] | null = null
+-
+-                  if (entity.type === EntityType.LOCATION) {
+-                    const zone = zoneByLocationSlug.get(entity.slug)
+-                    if (zone) {
+-                      const zoneCoords = LEONIDA_ZONE_COORDS[zone.id]
+-                      const offset = locationPinOffset(
+-                        zone.locationSlugs.indexOf(entity.slug),
+-                        zone.locationSlugs.length
+-                      )
+-                      coords = [zoneCoords.center[0] + offset.dLat, zoneCoords.center[1] + offset.dLng]
+-                    }
+-                  } else {
+-                    const locationSlug = resolveEntityLocationSlug(entity)
+-                    if (locationSlug) {
+-                      const zone = zoneByLocationSlug.get(locationSlug)
+-                      if (zone) {
+-                        const zoneCoords = LEONIDA_ZONE_COORDS[zone.id]
+-                        const offset = locationPinOffset(0, 1)
+-                        coords = [zoneCoords.center[0] + offset.dLat, zoneCoords.center[1] + offset.dLng]
+-                      }
+-                    }
+-                  }
+-
+-                  if (!coords) return null
+-
+-                  return (
+-                    <Marker
+-                      key={`${entity.type}-${entity.slug}`}
+-                      position={coords}
+-                      icon={createCategoryPin(category, 'default')}
+-                    >
+-                      <Popup className="leonida-pin-popup">
+-                        <div className="leonida-pin-popup__inner">
+-                          <div className="leonida-pin-popup__head">
+-                            <span className="leonida-pin-popup__title">{entity.title}</span>
+-                            <Badge variant="status" status={entity.status}>
+-                              {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
+-                            </Badge>
+-                          </div>
+-                          <span className="leonida-pin-popup__category" style={{ color: category.color }}>
+-                            {category.glyph} {category.label}
+-                          </span>
+-                          {entity.description && (
+-                            <p className="leonida-pin-popup__desc">{truncate(entity.description, 150)}</p>
+-                          )}
+-                          <Link href={`/${entity.type}/${entity.slug}`} className="leonida-pin-popup__link">
+-                            Ver ficha completa →
+-                          </Link>
+-                        </div>
+-                      </Popup>
+-                    </Marker>
+-                  )
+-                })}
+-              </MarkerClusterGroup>
+-            )}
+-          </MapContainer>
+-
+-          <button
+-            type="button"
+-            onClick={() => controlsRef.current?.recenter()}
+-            className="leonida-recenter-btn absolute bottom-4 left-4 z-10"
+-            aria-label="Volver a mostrar el mapa completo"
+-          >
+-            ⤢ Ver mapa completo
+-          </button>
+-
+-          {!isFullscreen && (
+-            <button
+-              type="button"
+-              onClick={() => setIsFullscreen(true)}
+-              className="leonida-fullscreen-btn absolute bottom-4 right-4 z-10"
+-              aria-label="Expandir el mapa a pantalla completa"
+-            >
+-              ⛶ Pantalla completa
+-            </button>
+-          )}
+-        </div>
+-      </div>
+-
+-      <div className="max-h-[520px] overflow-y-auto rounded-xl border border-gta-border bg-gta-card p-4 md:p-6">
+-        {!activeZone ? (
+-          <div>
+-            <h3 className="font-display text-lg font-semibold text-gta-text">Información</h3>
+-            <div className="mt-3 space-y-2 text-sm text-gta-text-secondary">
+-              {MAP_CATEGORIES.map((category) => (
+-                <p key={category.type}>
+-                  {category.glyph} {mapStats.byCategory[category.type] || 0} {category.label.toLowerCase()}
+-                </p>
+-              ))}
+-            </div>
+-            <p className="mt-4 text-xs text-gta-text-tertiary">Tocá una zona del mapa para ver su detalle</p>
+-          </div>
+-        ) : (
+-          <div>
+-            <div className="mb-2 flex items-center justify-between gap-2">
+-              <h3 className="font-display text-lg font-semibold text-gta-text">{activeZone.leakName}</h3>
+-              <Badge variant="default">{activeZone.position}</Badge>
+-            </div>
+-            <p className="text-sm text-gta-text-secondary">{activeZone.description}</p>
+-
+-            <div className="mt-3 rounded-lg border border-gta-border bg-gta-darker/60 p-2 text-xs text-gta-text-tertiary">
+-              {activeZone.sourceNote}
+-            </div>
+-
+-            <h4 className="mt-4 text-sm font-semibold text-gta-text">Catalogado en esta zona</h4>
+-            {(() => {
+-              const zoneEntities = entitiesByZone.get(activeZone.id) ?? []
+-              if (zoneEntities.length === 0) {
+-                return <p className="mt-2 text-xs text-gta-text-secondary">Nada en las categorías activas</p>
+-              }
+-              return groupByCategory(zoneEntities).map(({ category, items }) => (
+-                <div key={category.type} className="mt-3">
+-                  <h5 className="flex items-center gap-1.5 text-xs font-semibold uppercase text-gta-text-tertiary">
+-                    <span aria-hidden="true">{category.glyph}</span>
+-                    {category.label}
+-                    <span>({items.length})</span>
+-                  </h5>
+-                  <ul className="mt-1.5 space-y-1">
+-                    {items.map((entity) => (
+-                      <li key={entity.slug}>
+-                        <Fragment>
+-                          <Link
+-                            href={`/${entity.type}/${entity.slug}`}
+-                            className="text-xs text-gta-text transition-colors hover:text-gta-accent-strong"
+-                          >
+-                            {entity.title}
+-                          </Link>
+-                        </Fragment>
+-                      </li>
+-                    ))}
+-                  </ul>
+-                </div>
+-              ))
+-            })()}
+-
+-            <button
+-              type="button"
+-              onClick={() => setActiveZoneId(null)}
+-              className="mt-4 text-xs font-semibold text-gta-accent-orange transition-colors hover:text-gta-accent-strong"
+-            >
+-              ← Volver
+-            </button>
+-          </div>
+-        )}
+-      </div>
+-    </div>
+-  )
+-}
+diff --git a/GTA6-CODEX/src/components/map/LeonidaMapExplorer.tsx b/GTA6-CODEX/src/components/map/LeonidaMapExplorer.tsx
+deleted file mode 100644
+index 8a6039e..0000000
+--- a/GTA6-CODEX/src/components/map/LeonidaMapExplorer.tsx
++++ /dev/null
+@@ -1,43 +0,0 @@
+-'use client'
+-
+-import dynamic from 'next/dynamic'
+-import type { Entity } from '@/types'
+-
+-interface LeonidaMapExplorerProps {
+-  /** Todas las entidades mapeables (ubicaciones, armas, vehículos, misiones, objetos). */
+-  entities: Entity[]
+-}
+-
+-/**
+- * Leaflet necesita `window`/`document` al montarse, así que el mapa en sí
+- * se carga únicamente en el cliente, sin server-side rendering, para evitar
+- * errores de hidratación en Next.js.
+- *
+- * V1 vs V2: por defecto se usa V1 (estable, en producción desde siempre).
+- * V2 agrega clustering de marcadores y un panel de filtros más completo.
+- * Se activa con NEXT_PUBLIC_MAP_V2=true en el entorno (ver .env.local o
+- * las env vars del proyecto en Vercel) sin tocar código.
+- */
+-const useMapV2 = process.env.NEXT_PUBLIC_MAP_V2 === 'true'
+-
+-const LeonidaMapCanvas = dynamic(
+-  () =>
+-    useMapV2
+-      ? import('./LeonidaMapCanvasV2').then((mod) => mod.LeonidaMapCanvasV2)
+-      : import('./LeonidaMapCanvas').then((mod) => mod.LeonidaMapCanvas),
+-  {
+-    ssr: false,
+-    loading: () => (
+-      <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
+-        <div className="flex h-[520px] items-center justify-center rounded-xl border border-gta-border bg-gta-card text-sm text-gta-text-tertiary">
+-          Cargando mapa…
+-        </div>
+-        <div className="rounded-xl border border-gta-border bg-gta-card p-4 md:p-6" />
+-      </div>
+-    ),
+-  }
+-)
+-
+-export function LeonidaMapExplorer({ entities }: LeonidaMapExplorerProps) {
+-  return <LeonidaMapCanvas entities={entities} />
+-}
+diff --git a/GTA6-CODEX/src/config/site.ts b/GTA6-CODEX/src/config/site.ts
+new file mode 100644
+index 0000000..36d7754
+--- /dev/null
++++ b/GTA6-CODEX/src/config/site.ts
+@@ -0,0 +1,13 @@
++/**
++ * Fuente única de verdad para el nombre y la URL del sitio.
++ *
++ * Antes cada page.tsx definía su propia constante local `SITE_NAME =
++ * 'GTA6 Zona'` (10+ copias idénticas). Eso significaba que rebrandear el
++ * sitio era un find-and-replace riesgoso en vez de un cambio en un solo
++ * lugar. Este módulo reemplaza todas esas copias.
++ */
++export const SITE_NAME = 'AutoFicha'
++
++export const SITE_TAGLINE = 'Fichas técnicas y comparador de autos y motos'
++
++export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://autoficha.vercel.app'
+diff --git a/GTA6-CODEX/src/content/vehiculos/chevrolet-onix.json b/GTA6-CODEX/src/content/vehiculos/chevrolet-onix.json
+new file mode 100644
+index 0000000..3bb60b3
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/chevrolet-onix.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "chevrolet-onix",
++  "type": "vehiculos",
++  "title": "Chevrolet Onix",
++  "description": "Hatchback compacto de Chevrolet, motor 1.0L turbo de 116 hp, uno de los más vendidos de la región.",
++  "status": "confirmado",
++  "tags": [
++    "hatchback",
++    "chevrolet",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:01:34.590Z",
++  "updatedAt": "2026-08-23T18:01:34.590Z",
++  "manufacturer": "Chevrolet",
++  "class": "Hatchback",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (180 km/h)",
++    "acceleration": "Media (0-100 km/h en 10.5s)"
++  },
++  "power": "116 hp",
++  "price": "USD 17.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.chevrolet.com.ar/onix"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/fiat-toro.json b/GTA6-CODEX/src/content/vehiculos/fiat-toro.json
+new file mode 100644
+index 0000000..714da37
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/fiat-toro.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "fiat-toro",
++  "type": "vehiculos",
++  "title": "Fiat Toro",
++  "description": "Pickup mediana de Fiat, motor turbo 1.8L o 2.0L diésel, popular en Argentina y Brasil.",
++  "status": "confirmado",
++  "tags": [
++    "pickup",
++    "fiat",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:01:35.107Z",
++  "updatedAt": "2026-08-23T18:01:35.107Z",
++  "manufacturer": "Fiat",
++  "class": "Pickup",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (180 km/h)",
++    "acceleration": "Media (0-100 km/h en 10s)"
++  },
++  "power": "175 hp",
++  "price": "USD 31.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.fiat.com.ar/toro"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/ford-ranger.json b/GTA6-CODEX/src/content/vehiculos/ford-ranger.json
+new file mode 100644
+index 0000000..3b68c0b
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/ford-ranger.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "ford-ranger",
++  "type": "vehiculos",
++  "title": "Ford Ranger",
++  "description": "Pickup mediana de Ford, motor 2.0L biturbo diésel de 200 hp.",
++  "status": "confirmado",
++  "tags": [
++    "pickup",
++    "ford",
++    "diesel"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:01:33.241Z",
++  "updatedAt": "2026-08-23T18:01:33.241Z",
++  "manufacturer": "Ford",
++  "class": "Pickup",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (170 km/h)",
++    "acceleration": "Media (0-100 km/h en 10s)"
++  },
++  "power": "200 hp",
++  "price": "USD 38.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.ford.com/trucks/ranger/"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/honda-cb500f.json b/GTA6-CODEX/src/content/vehiculos/honda-cb500f.json
+new file mode 100644
+index 0000000..fd62e18
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/honda-cb500f.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "honda-cb500f",
++  "type": "vehiculos",
++  "title": "Honda CB500F",
++  "description": "Moto naked de Honda, motor bicilíndrico de 471cc, ideal para uso urbano y ruta.",
++  "status": "confirmado",
++  "tags": [
++    "moto",
++    "honda",
++    "naked"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:01:34.065Z",
++  "updatedAt": "2026-08-23T18:01:34.065Z",
++  "manufacturer": "Honda",
++  "class": "Moto",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (170 km/h)",
++    "acceleration": "Media-Alta (0-100 km/h en 5.5s)"
++  },
++  "power": "47 hp",
++  "price": "USD 7.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://powersports.honda.com/street/naked/cb500f"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/jeep-compass.json b/GTA6-CODEX/src/content/vehiculos/jeep-compass.json
+new file mode 100644
+index 0000000..b6abc1f
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/jeep-compass.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "jeep-compass",
++  "type": "vehiculos",
++  "title": "Jeep Compass",
++  "description": "SUV mediana de Jeep, motor turbo 1.3L de 170 hp, con opción 4x4.",
++  "status": "confirmado",
++  "tags": [
++    "suv",
++    "jeep",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:01:34.851Z",
++  "updatedAt": "2026-08-23T18:01:34.851Z",
++  "manufacturer": "Jeep",
++  "class": "SUV",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (190 km/h)",
++    "acceleration": "Media (0-100 km/h en 9.5s)"
++  },
++  "power": "170 hp",
++  "price": "USD 33.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.jeep.com/compass.html"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/porsche-911-carrera.json b/GTA6-CODEX/src/content/vehiculos/porsche-911-carrera.json
+new file mode 100644
+index 0000000..f1d8e4a
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/porsche-911-carrera.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "porsche-911-carrera",
++  "type": "vehiculos",
++  "title": "Porsche 911 Carrera",
++  "description": "Deportivo icónico de Porsche, motor bóxer 6 cilindros de 379 hp.",
++  "status": "confirmado",
++  "tags": [
++    "deportivo",
++    "porsche",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:01:34.332Z",
++  "updatedAt": "2026-08-23T18:01:34.332Z",
++  "manufacturer": "Porsche",
++  "class": "Deportivo",
++  "customizable": false,
++  "performance": {
++    "speed": "Muy alta (293 km/h)",
++    "acceleration": "Muy alta (0-100 km/h en 4.2s)"
++  },
++  "power": "379 hp",
++  "price": "USD 118.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.porsche.com/international/models/911/911-models/carrera/"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/tesla-model-3.json b/GTA6-CODEX/src/content/vehiculos/tesla-model-3.json
+new file mode 100644
+index 0000000..3ed971e
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/tesla-model-3.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "tesla-model-3",
++  "type": "vehiculos",
++  "title": "Tesla Model 3",
++  "description": "Sedán 100% eléctrico de Tesla, tracción trasera, autonomía de largo alcance.",
++  "status": "confirmado",
++  "tags": [
++    "sedan",
++    "tesla",
++    "electrico"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:01:33.524Z",
++  "updatedAt": "2026-08-23T18:01:33.524Z",
++  "manufacturer": "Tesla",
++  "class": "Sedán",
++  "customizable": false,
++  "performance": {
++    "speed": "Alta (225 km/h)",
++    "acceleration": "Muy alta (0-100 km/h en 3.3s en versión Performance)"
++  },
++  "power": "283 hp (RWD)",
++  "price": "USD 42.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.tesla.com/model3"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/toyota-corolla-2024.json b/GTA6-CODEX/src/content/vehiculos/toyota-corolla-2024.json
+new file mode 100644
+index 0000000..fc81708
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/toyota-corolla-2024.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "toyota-corolla-2024",
++  "type": "vehiculos",
++  "title": "Toyota Corolla 2024",
++  "description": "Sedán compacto de Toyota, generación XII, motor 2.0L de 4 cilindros.",
++  "status": "confirmado",
++  "tags": [
++    "sedan",
++    "toyota",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:01:32.194Z",
++  "updatedAt": "2026-08-23T18:01:32.194Z",
++  "manufacturer": "Toyota",
++  "class": "Sedán",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (180 km/h)",
++    "acceleration": "Media (0-100 km/h en 10.1s)"
++  },
++  "power": "169 hp",
++  "price": "USD 24.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.toyota.com/corolla/"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/toyota-rav4.json b/GTA6-CODEX/src/content/vehiculos/toyota-rav4.json
+new file mode 100644
+index 0000000..0316980
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/toyota-rav4.json
+@@ -0,0 +1,28 @@
++{
++  "slug": "toyota-rav4",
++  "type": "vehiculos",
++  "title": "Toyota RAV4",
++  "description": "SUV compacta de Toyota, disponible en versión híbrida, motor 2.5L.",
++  "status": "confirmado",
++  "tags": [
++    "suv",
++    "toyota",
++    "hibrido"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:01:33.800Z",
++  "updatedAt": "2026-08-23T18:01:33.800Z",
++  "manufacturer": "Toyota",
++  "class": "SUV",
++  "customizable": false,
++  "performance": {
++    "speed": "Media (180 km/h)",
++    "acceleration": "Media (0-100 km/h en 8.1s)"
++  },
++  "power": "203 hp",
++  "price": "USD 29.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.toyota.com/rav4/"
++  }
++}
+diff --git a/GTA6-CODEX/src/content/vehiculos/volkswagen-golf-gti.json b/GTA6-CODEX/src/content/vehiculos/volkswagen-golf-gti.json
+new file mode 100644
+index 0000000..cd998f3
+--- /dev/null
++++ b/GTA6-CODEX/src/content/vehiculos/volkswagen-golf-gti.json
+@@ -0,0 +1,29 @@
++{
++  "slug": "volkswagen-golf-gti",
++  "type": "vehiculos",
++  "title": "Volkswagen Golf GTI",
++  "description": "Hatchback deportivo de Volkswagen, motor turbo 2.0L TSI de 245 hp.",
++  "status": "confirmado",
++  "tags": [
++    "hatchback",
++    "volkswagen",
++    "deportivo",
++    "combustion"
++  ],
++  "featured": false,
++  "createdAt": "2026-08-23T18:01:32.940Z",
++  "updatedAt": "2026-08-23T18:01:32.940Z",
++  "manufacturer": "Volkswagen",
++  "class": "Hatchback",
++  "customizable": false,
++  "performance": {
++    "speed": "Alta (250 km/h)",
++    "acceleration": "Alta (0-100 km/h en 6.2s)"
++  },
++  "power": "245 hp",
++  "price": "USD 32.000",
++  "evidence": {
++    "level": "oficial-nombrado",
++    "primarySource": "https://www.vw.com/en/models/golf-gti.html"
++  }
++}
+diff --git a/GTA6-CODEX/src/lib/gallery.ts b/GTA6-CODEX/src/lib/gallery.ts
+index b62ab67..db25305 100644
+--- a/GTA6-CODEX/src/lib/gallery.ts
++++ b/GTA6-CODEX/src/lib/gallery.ts
+@@ -3,27 +3,19 @@ import { EntityType } from '@/types'
+ import { getEntitiesByType } from './entities'
+ import { resolveEntityImage, ENTITY_IMAGE_CATEGORIES } from './images'
+ import { getMediaAssets, resolveMediaRender } from './media'
+-import imageSourceManifest from '../../real-images-manifest.json'
+ 
+ /**
+- * ILUSTRACIONES GENERADAS POR IA (no capturas oficiales de Rockstar)
+- * ====================================================================
+- * `real-images-manifest.json` es el registro de trazabilidad de sourcing
+- * de imágenes (ver docs/internal/IMAGE_CATALOG.md) y ya distingue, entrada
+- * por entrada, `sourceType: 'rockstar-official' | 'secondary-reliable' |
+- * 'ai-generated-illustration'`. Se deriva acá un lookup `type/slug` de las
+- * entradas IA para que la galería pueda: (a) mostrarlas con el badge
+- * 'nuestro' ya existente (`STATUS_LABELS.nuestro === 'Recreación no
+- * oficial (IA)'`, ver entity-labels.ts) en vez de heredar el status
+- * editorial de la entidad (que certifica que la UBICACIÓN existe en el
+- * juego, no que la FOTO sea oficial — son dos cosas distintas), y (b)
+- * ordenarlas siempre al final del grid, después de todo el material real.
++ * El registro `real-images-manifest.json` (trazabilidad de sourcing de
++ * imágenes oficiales de Rockstar/GTA6) se eliminó junto con el resto del
++ * contenido de GTA6 — ver plan de migración. Con él se fue también el
++ * distingo "ilustración IA vs. oficial", que no aplica al nicho de autos
++ * (acá las fotos son stock libre de derechos o propias, no key art de
++ * un juego). Si en el futuro hace falta distinguir tipos de fuente de
++ * imagen otra vez, se puede reintroducir vía el campo `image.source` que
++ * ya existe en el schema de cada entidad (`ImageProvenanceSchema`), sin
++ * necesidad de un manifest aparte.
+  */
+-const AI_ILLUSTRATION_KEYS = new Set(
+-  (imageSourceManifest as Array<{ category: string; slug: string; sourceType: string }>)
+-    .filter((entry) => entry.sourceType === 'ai-generated-illustration')
+-    .map((entry) => `${entry.category}/${entry.slug}`)
+-)
++const AI_ILLUSTRATION_KEYS = new Set<string>()
+ 
+ /**
+  * SISTEMA DE GALERÍA — AGREGACIÓN DE ASSETS REALES
+@@ -80,74 +72,22 @@ export interface GalleryItem {
+ 
+ /**
+  * Key art / fondos que no pertenecen a una entidad individual.
+- * Metadata y procedencia tomadas directamente de los comentarios de
+- * `RotatingHeroBackground.tsx` y de `IMAGE_CATALOG.md` (rondas 6-8):
+- * cada nota de crédito acá es trazable a ese material, no inventada.
++ *
++ * El key art original acá era material promocional oficial de Rockstar
++ * Games para GTA6 (portadas, postales "Visit Leonida", packs temáticos) —
++ * se eliminó junto con los archivos de imagen que referenciaba (ver plan
++ * de migración). No hay equivalente directo para un sitio de autos: no
++ * existe "key art" de fabricante que podamos usar del mismo modo sin caer
++ * en el mismo problema (fotos de marca sin licencia). Queda vacío a
++ * propósito — si en el futuro se suma un asset de portada propio, entra
++ * acá como una entrada nueva.
+  */
+-const KEY_ART: Array<Omit<GalleryItem, 'categorySlug' | 'categoryLabel' | 'trailerAppearances'>> = [
+-  {
+-    id: 'key-art-boxart-sunset',
+-    src: '/images/heroes/hero-gta6-boxart-sunset.webp',
+-    alt: 'Key art oficial de portada de GTA VI, con Jason Duval y Lucia Caminos frente a Vice City al atardecer',
+-    title: 'Portada oficial — Jason y Lucia',
+-    description:
+-      'Key art oficial de portada de Grand Theft Auto VI: Jason Duval y Lucia Caminos frente al skyline de Vice City al atardecer. La pieza más reconocible del material promocional del juego.',
+-    credit: 'Rockstar Games — key art oficial de portada',
+-    featured: true,
+-  },
+-  {
+-    id: 'key-art-port-gellhorn',
+-    src: '/images/heroes/hero-port-gellhorn-postcard.webp',
+-    alt: 'Postal promocional oficial "Visit Leonida" de Port Gellhorn',
+-    title: 'Postal "Visit Leonida" — Port Gellhorn',
+-    description:
+-      'Material promocional oficial de la campaña "Visit Leonida", ambientado en el pueblo costero de Port Gellhorn: composición panorámica sin personajes en primer plano.',
+-    credit: 'Rockstar Games — material promocional "Visit Leonida"',
+-  },
+-  {
+-    id: 'key-art-vintage-dock',
+-    src: '/images/heroes/hero-vintage-dock-sunset.webp',
+-    alt: 'Key art del Vintage Vice City Pack, pareja junto a un Declasse Stanier en un muelle al atardecer',
+-    title: 'Vintage Vice City Pack — muelle al atardecer',
+-    description:
+-      'Key art oficial del Vintage Vice City Pack: una pareja junto a un Declasse Stanier en un muelle, con la luz cálida del atardecer.',
+-    credit: 'Rockstar Games — Vintage Vice City Pack',
+-  },
+-  {
+-    id: 'key-art-vintage-hotel',
+-    src: '/images/heroes/hero-vintage-hotel-neon.webp',
+-    alt: 'Key art del Vintage Vice City Pack frente al letrero de neón del Ocean View Hotel',
+-    title: 'Vintage Vice City Pack — neón del Ocean View Hotel',
+-    description:
+-      'Key art oficial del Vintage Vice City Pack frente al letrero de neón del Ocean View Hotel, con la iluminación nocturna característica del pack.',
+-    credit: 'Rockstar Games — Vintage Vice City Pack',
+-  },
+-  {
+-    id: 'key-art-vice-sunset',
+-    src: '/images/heroes/hero-vice-sunset.webp',
+-    alt: 'Panorámica oficial de Vice City al atardecer',
+-    title: 'Vice City al atardecer',
+-    description:
+-      'Panorámica oficial de Vice City al atardecer, uno de los fondos originales usados en el hero del sitio.',
+-    credit: 'Rockstar Games — material oficial',
+-  },
+-  {
+-    id: 'key-art-vi-logo',
+-    src: '/images/heroes/hero-vi-logo.webp',
+-    alt: 'Presentación oficial del logotipo de Grand Theft Auto VI',
+-    title: 'Logo oficial de GTA VI',
+-    description: 'Pieza de branding oficial usada en la presentación y el anuncio de Grand Theft Auto VI.',
+-    credit: 'Rockstar Games — material oficial',
+-  },
+-]
++const KEY_ART: Array<Omit<GalleryItem, 'categorySlug' | 'categoryLabel' | 'trailerAppearances'>> = []
+ 
+ const CATEGORY_LABELS: Partial<Record<EntityType, string>> = {
+-  [EntityType.CHARACTER]: 'Personajes',
+-  [EntityType.LOCATION]: 'Ubicaciones',
+   [EntityType.VEHICLE]: 'Vehículos',
+-  [EntityType.FACTION]: 'Organizaciones',
++  [EntityType.LOCATION]: 'Ubicaciones',
+   [EntityType.BUSINESS]: 'Negocios',
+-  [EntityType.OBJECT]: 'Objetos',
+ }
+ 
+ /**
+@@ -215,9 +155,7 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
+         href: `/${entity.type}/${entity.slug}`,
+         entityType: entity.type,
+         entitySlug: entity.slug,
+-        credit: isAiIllustration
+-          ? 'Ilustración generada por IA — no oficial, no proviene de Rockstar Games'
+-          : entity.image?.credit || 'Rockstar Games — material oficial (aportado por captura verificada)',
++        credit: isAiIllustration ? 'Ilustración generada por IA' : entity.image?.credit || 'Fuente propia',
+         sourceNote: entity.evidence?.note,
+         tags: entity.tags,
+         featured: entity.featured,
+diff --git a/GTA6-CODEX/src/lib/map-entities.ts b/GTA6-CODEX/src/lib/map-entities.ts
+deleted file mode 100644
+index 9c9c92f..0000000
+--- a/GTA6-CODEX/src/lib/map-entities.ts
++++ /dev/null
+@@ -1,68 +0,0 @@
+-/**
+- * Configuración de categorías para el mapa interactivo de Leonida y
+- * resolución de zona para entidades que NO son de tipo `ubicaciones`
+- * (armas, vehículos, misiones, objetos).
+- *
+- * El mapa histórico solo mostraba `ubicaciones`, que ya vienen pre-asignadas
+- * a una zona en `leonida-zones.ts` (`locationSlugs`). Para el resto de
+- * entidades no hay asignación directa a zona: lo que sí existe es su
+- * `relations` hacia una ubicación (`targetType: 'ubicaciones'`), o en el
+- * caso puntual de vehículos, el campo `locations` (slugs de ubicación).
+- * Estas funciones resuelven esa cadena: entidad -> slug de ubicación ->
+- * zona de esa ubicación (si la ubicación está asignada a alguna).
+- */
+-
+-import type { Entity, EntityRelation } from '@/types'
+-import { EntityType } from '@/types'
+-
+-export interface MapCategoryConfig {
+-  type: EntityType
+-  /** Etiqueta corta para chips/checkboxes de filtro. */
+-  label: string
+-  /** Color de acento del pin y del check activo (hex). */
+-  color: string
+-  /** Glifo mostrado dentro del pin — sin dependencias de íconos externos. */
+-  glyph: string
+-}
+-
+-/**
+- * Categorías habilitadas en el mapa, en el orden en que se muestran los
+- * filtros. Agregar una nueva categoría acá es suficiente para que aparezca
+- * como filtro y con su propio ícono — siempre que sus entidades tengan
+- * `relations` hacia una `ubicaciones` (o, en vehículos, `locations`).
+- */
+-export const MAP_CATEGORIES: MapCategoryConfig[] = [
+-  { type: EntityType.LOCATION, label: 'Ubicaciones', color: '#e8b95c', glyph: '📍' },
+-  { type: EntityType.WEAPON, label: 'Armas', color: '#ff5c5c', glyph: '🔫' },
+-  { type: EntityType.VEHICLE, label: 'Vehículos', color: '#22d3ee', glyph: '🚗' },
+-  { type: EntityType.MISSION, label: 'Misiones', color: '#ff7ec4', glyph: '🎯' },
+-  { type: EntityType.OBJECT, label: 'Objetos', color: '#a78bfa', glyph: '🎒' },
+-]
+-
+-export const MAP_CATEGORY_TYPES = MAP_CATEGORIES.map((c) => c.type)
+-
+-export function getMapCategoryConfig(type: EntityType): MapCategoryConfig {
+-  return MAP_CATEGORIES.find((c) => c.type === type) ?? MAP_CATEGORIES[0]
+-}
+-
+-/**
+- * Devuelve el primer slug de `ubicaciones` relacionado con una entidad,
+- * o `null` si no tiene ninguna relación (o campo `locations`) que apunte
+- * a una ubicación catalogada.
+- */
+-export function resolveEntityLocationSlug(entity: Entity): string | null {
+-  if (entity.type === EntityType.LOCATION) return entity.slug
+-
+-  const relations = (entity.relations ?? []) as EntityRelation[]
+-  const locationRelation = relations.find((r) => r.targetType === EntityType.LOCATION)
+-  if (locationRelation) return locationRelation.targetSlug
+-
+-  // Los vehículos, además de `relations`, suelen listar ubicaciones en un
+-  // campo propio (`locations: string[]`) — se usa como respaldo.
+-  const maybeLocations = (entity as { locations?: unknown }).locations
+-  if (Array.isArray(maybeLocations) && typeof maybeLocations[0] === 'string') {
+-    return maybeLocations[0]
+-  }
+-
+-  return null
+-}
+diff --git a/GTA6-CODEX/src/lib/seo.ts b/GTA6-CODEX/src/lib/seo.ts
+index 87e41f5..bcc2a64 100644
+--- a/GTA6-CODEX/src/lib/seo.ts
++++ b/GTA6-CODEX/src/lib/seo.ts
+@@ -2,9 +2,8 @@ import { Entity, EntityType } from '@/types'
+ import type { MediaAsset } from '@/types/media'
+ import { Metadata } from 'next'
+ import { ENTITY_TYPE_LABELS } from './entity-labels'
++import { SITE_NAME, SITE_URL } from '@/config/site'
+ 
+-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+-const SITE_NAME = 'GTA6 Zona'
+ const SITE_DESCRIPTION =
+   'Un wiki editorial de Grand Theft Auto 6, clasificado por nivel de evidencia — descubrí qué es oficial y qué es rumor sobre personajes, vehículos, ubicaciones y misiones.'
+ 
+@@ -99,37 +98,17 @@ export function generateEntityMetadata(entity: Entity, ogImage?: EntityOgImage |
+  * dato real (`count`).
+  */
+ const LIST_DESCRIPTION_BY_TYPE: Partial<Record<EntityType, (count: number, label: string) => string>> = {
+-  [EntityType.CHARACTER]: (count) =>
+-    `${count} personajes de GTA 6 documentados: protagonistas, secundarios y facciones, con estado de confirmación y fuente por cada uno.`,
+   [EntityType.VEHICLE]: (count) =>
+-    `${count} vehículos de GTA 6 catalogados por fabricante, clase y rendimiento — desde autos clásicos hasta motos y embarcaciones.`,
+-  [EntityType.LOCATION]: (count) =>
+-    `${count} ubicaciones de Leonida y Vice City en GTA 6, con contexto geográfico y qué tan confirmadas están.`,
+-  [EntityType.MISSION]: (count) =>
+-    `${count} misiones de GTA 6 documentadas sin spoilers mayores, con su nivel de evidencia y fuente.`,
+-  [EntityType.WEAPON]: (count) =>
+-    `${count} armas de GTA 6 identificadas en material oficial, con su estado de confirmación.`,
+-  [EntityType.ACTIVITY]: (count) =>
+-    `${count} actividades y mecánicas de GTA 6 documentadas, desde el mundo abierto hasta sistemas de juego.`,
+-  [EntityType.FACTION]: (count) =>
+-    `${count} organizaciones y facciones de GTA 6, de bandas criminales a fuerzas del orden en Leonida.`,
+-  [EntityType.BUSINESS]: (count) =>
+-    `${count} negocios de GTA 6 documentados, reales o ficticios dentro del universo del juego.`,
+-  [EntityType.OBJECT]: (count) =>
+-    `${count} objetos y elementos de GTA 6 catalogados, de utilería del mundo a ítems relevantes.`,
+-  [EntityType.NEWS]: (count) =>
+-    `${count} noticias de GTA 6, del anuncio oficial a las últimas actualizaciones de Rockstar y Take-Two.`,
+-  [EntityType.GUIDE]: (count) =>
+-    `${count} guías de GTA 6: sistemas, mecánicas, geografía y estrategia, basadas en información oficial confirmada.`,
+-  [EntityType.TRAILER]: (count) =>
+-    `${count} trailers oficiales de GTA 6, escena por escena, con lo confirmado y lo especulado en cada una.`,
++    `${count} fichas técnicas de autos y motos, catalogadas por fabricante, clase y rendimiento, con fuente por cada dato.`,
++  [EntityType.LOCATION]: (count) => `${count} concesionarias y puntos de interés documentados.`,
++  [EntityType.BUSINESS]: (count) => `${count} negocios del rubro automotor documentados.`,
+ }
+ 
+ export function generateListMetadata(type: EntityType, count: number): Metadata {
+   const label = ENTITY_TYPE_LABELS[type] || type
+   const title = `${label} | ${SITE_NAME}`
+   const description =
+-    LIST_DESCRIPTION_BY_TYPE[type]?.(count, label) ?? `Explora ${count} ${label.toLowerCase()} en GTA 6 Zona`
++    LIST_DESCRIPTION_BY_TYPE[type]?.(count, label) ?? `Explorá ${count} ${label.toLowerCase()} en ${SITE_NAME}`
+   const url = `${SITE_URL}/${type}`
+ 
+   return {

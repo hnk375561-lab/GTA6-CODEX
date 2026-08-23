@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { Reveal } from '@/components/ui/Reveal'
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
-const SITE_NAME = 'GTA6 Zona'
+import { SITE_NAME, SITE_URL } from '@/config/site'
 
 export const metadata: Metadata = {
   title: `Términos de Uso | ${SITE_NAME}`,

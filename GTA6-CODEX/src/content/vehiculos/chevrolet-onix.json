@@ -1,0 +1,28 @@
+{
+  "slug": "chevrolet-onix",
+  "type": "vehiculos",
+  "title": "Chevrolet Onix",
+  "description": "Hatchback compacto de Chevrolet, motor 1.0L turbo de 116 hp, uno de los más vendidos de la región.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "chevrolet",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:34.590Z",
+  "updatedAt": "2026-08-23T18:01:34.590Z",
+  "manufacturer": "Chevrolet",
+  "class": "Hatchback",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 10.5s)"
+  },
+  "power": "116 hp",
+  "price": "USD 17.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.chevrolet.com.ar/onix"
+  }
+}
