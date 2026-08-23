@@ -1,0 +1,26 @@
+{
+  "slug": "jeep-wrangler",
+  "type": "vehiculos",
+  "title": "Jeep Wrangler",
+  "description": "SUV todoterreno icónico, tracción 4x4, puertas desmontables y techo removible.",
+  "status": "confirmado",
+  "tags": ["suv", "jeep", "4x4", "todoterreno"],
+  "featured": false,
+  "manufacturer": "Jeep",
+  "class": "SUV todoterreno",
+  "customizable": false,
+  "power": "272 hp",
+  "price": "USD 89.900",
+  "consumo": "No informado por el fabricante para Argentina",
+  "dimensiones": "4710 x 1800 x 1850 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://elcerokm.com/jeep/wrangler"
+  },
+  "performance": {
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-23T22:19:24.158453Z"
+}

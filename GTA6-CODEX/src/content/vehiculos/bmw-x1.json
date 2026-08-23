@@ -1,0 +1,26 @@
+{
+  "slug": "bmw-x1",
+  "type": "vehiculos",
+  "title": "BMW X1",
+  "description": "SUV compacto premium del Segmento C, con motorizaciones mild-hybrid y versiones eléctricas iX1.",
+  "status": "confirmado",
+  "tags": ["suv", "bmw", "premium", "compacto"],
+  "featured": false,
+  "manufacturer": "BMW",
+  "class": "SUV compacto premium",
+  "customizable": false,
+  "power": "163 hp (sDrive20d Efficient MildHybrid)",
+  "price": "USD 44.900",
+  "consumo": "5.1 l/100km (WLTP)",
+  "dimensiones": "4500 x 1845 x 1642 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.16valvulas.com.ar/nueva-bmw-x1-sdrive20d-efficient-lanzamiento-en-argentina-desde-us-44-900/"
+  },
+  "performance": {
+    "speed": "210 km/h",
+    "acceleration": "0-100 km/h en 8.5s"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-23T22:19:24.158453Z"
+}
