@@ -12,15 +12,17 @@
   "manufacturer": "Tesla",
   "class": "Pickup eléctrica",
   "customizable": false,
-  "power": "600 hp (dual motor)",
-  "price": "USD 79.990",
-  "consumo": "Pendiente de enriquecimiento",
+  "power": "600 hp aprox. (Dual Motor/Premium) / 800+ hp (Cyberbeast tri-motor)",
+  "price": "USD 69.990 (base AWD) a USD 99.990 (Cyberbeast)",
+  "consumo": "Autonomía EPA ~325 millas (320 en Cyberbeast)",
   "dimensiones": "Pendiente de enriquecimiento",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.cars.com/articles/how-much-is-the-2026-tesla-cybertruck-526071/",
+    "secondarySource": "https://www.autoblog.com/cars/tesla/cybertruck/2026",
+    "note": "Lineup 2026 reestructurado: se discontinuó la versión RWD de entrada; el trim base pasó a ser Dual Motor AWD desde USD 69.990, y el Cyberbeast bajó a USD 99.990. Precios sujetos a cambios frecuentes por parte de Tesla.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Tesla cambia precios de este modelo con mucha frecuencia; verificar en tesla.com antes de publicar como definitivo"
     ]
   },
   "performance": {

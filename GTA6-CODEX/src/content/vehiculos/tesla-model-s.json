@@ -12,15 +12,17 @@
   "manufacturer": "Tesla",
   "class": "Sedán eléctrico",
   "customizable": false,
-  "power": "670 hp",
-  "price": "USD 74.900",
-  "consumo": "Pendiente de enriquecimiento",
+  "power": "670 hp (Dual Motor) / 1020 hp (Plaid)",
+  "price": "USD 111.380 (precio final antes de discontinuarse, 2026)",
+  "consumo": "Autonomía EPA 309-410 millas según versión",
   "dimensiones": "Pendiente de enriquecimiento",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.edmunds.com/tesla/model-s/",
+    "secondarySource": "https://www.cars.com/research/tesla-model_s-2026/",
+    "note": "Tesla anunció en enero de 2026 el fin de producción del Model S; el precio subió a USD 111.380 en su etapa final antes de discontinuarse. No se encontró página oficial vigente en tesla.com (consistente con la discontinuación).",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Modelo discontinuado durante 2026; verificar disponibilidad de unidades remanentes antes de publicar como vigente"
     ]
   },
   "performance": {
