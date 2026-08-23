@@ -1,0 +1,30 @@
+{
+  "slug": "nissan-sentra",
+  "type": "vehiculos",
+  "title": "Nissan Sentra",
+  "description": "Sedán compacto de Nissan, motor 2.0L naturalmente aspirado.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "nissan",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Nissan",
+  "class": "Sedán",
+  "customizable": false,
+  "power": "149 hp",
+  "price": "USD 23.000",
+  "consumo": "7.5 l/100km (mixto)",
+  "dimensiones": "4641 x 1815 x 1450 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.nissan.com.ar/vehiculos/sentra.html"
+  },
+  "performance": {
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 9.8s"
+  },
+  "createdAt": "2026-08-23T21:59:04.821675Z",
+  "updatedAt": "2026-08-23T21:59:04.821675Z"
+}

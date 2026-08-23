@@ -1,0 +1,30 @@
+{
+  "slug": "volkswagen-saveiro",
+  "type": "vehiculos",
+  "title": "Volkswagen Saveiro",
+  "description": "Pickup compacta de Volkswagen, muy popular en Argentina y Brasil por su relación carga/consumo.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "volkswagen",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Volkswagen",
+  "class": "Pickup compacta",
+  "customizable": false,
+  "power": "110 hp",
+  "price": "USD 21.000",
+  "consumo": "7.5 l/100km (mixto)",
+  "dimensiones": "4482 x 1751 x 1610 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.vw.com.ar/es/modelos/saveiro.html"
+  },
+  "performance": {
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 12.0s"
+  },
+  "createdAt": "2026-08-23T21:59:07.889585Z",
+  "updatedAt": "2026-08-23T21:59:07.889585Z"
+}

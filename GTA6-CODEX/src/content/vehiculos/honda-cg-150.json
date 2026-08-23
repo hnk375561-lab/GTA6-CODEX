@@ -1,0 +1,29 @@
+{
+  "slug": "honda-cg-150",
+  "type": "vehiculos",
+  "title": "Honda CG 150",
+  "description": "Una de las motos más vendidas de Latinoamérica en su segmento, motor monocilíndrico de 150cc, muy usada como vehículo de trabajo.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "honda",
+    "utilitaria"
+  ],
+  "featured": false,
+  "manufacturer": "Honda",
+  "class": "Moto utilitaria",
+  "customizable": false,
+  "power": "13.5 hp",
+  "price": "USD 2.600",
+  "consumo": "2.2 l/100km",
+  "dimensiones": "2016 x 736 x 1076 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.honda.com.ar/motos/cg-150"
+  },
+  "performance": {
+    "speed": "105 km/h"
+  },
+  "createdAt": "2026-08-23T21:59:10.642893Z",
+  "updatedAt": "2026-08-23T21:59:10.642893Z"
+}

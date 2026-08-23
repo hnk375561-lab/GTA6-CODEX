@@ -1,0 +1,31 @@
+{
+  "slug": "lexus-nx",
+  "type": "vehiculos",
+  "title": "Lexus NX",
+  "description": "SUV premium compacta de Lexus, disponible en versión híbrida (NX 350h).",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "lexus",
+    "premium",
+    "hibrido"
+  ],
+  "featured": false,
+  "manufacturer": "Lexus",
+  "class": "SUV premium compacta",
+  "customizable": false,
+  "power": "239 hp",
+  "price": "USD 55.000",
+  "consumo": "6.0 l/100km (híbrida, mixto)",
+  "dimensiones": "4660 x 1865 x 1660 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.lexus.com.ar/nx"
+  },
+  "performance": {
+    "speed": "200 km/h",
+    "acceleration": "0-100 km/h en 7.2s (híbrida)"
+  },
+  "createdAt": "2026-08-23T21:59:02.350462Z",
+  "updatedAt": "2026-08-23T21:59:02.350462Z"
+}

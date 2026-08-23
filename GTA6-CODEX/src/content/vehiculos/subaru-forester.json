@@ -1,0 +1,31 @@
+{
+  "slug": "subaru-forester",
+  "type": "vehiculos",
+  "title": "Subaru Forester",
+  "description": "SUV mediana de Subaru con tracción integral simétrica de serie, motor boxer 2.5L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "subaru",
+    "combustion",
+    "4x4"
+  ],
+  "featured": false,
+  "manufacturer": "Subaru",
+  "class": "SUV",
+  "customizable": false,
+  "power": "182 hp",
+  "price": "USD 38.000",
+  "consumo": "9.8 l/100km (mixto)",
+  "dimensiones": "4640 x 1815 x 1730 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.subaru.com.ar/forester"
+  },
+  "performance": {
+    "speed": "190 km/h",
+    "acceleration": "0-100 km/h en 9.5s"
+  },
+  "createdAt": "2026-08-23T21:59:01.784761Z",
+  "updatedAt": "2026-08-23T21:59:01.784761Z"
+}

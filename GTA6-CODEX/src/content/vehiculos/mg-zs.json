@@ -1,0 +1,31 @@
+{
+  "slug": "mg-zs",
+  "type": "vehiculos",
+  "title": "MG ZS",
+  "description": "SUV compacta china de MG Motor, motor 1.5L naturalmente aspirado, también disponible en versión eléctrica (MG ZS EV).",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "mg",
+    "china",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "MG",
+  "class": "SUV compacta",
+  "customizable": false,
+  "power": "116 hp",
+  "price": "USD 21.000",
+  "consumo": "7.0 l/100km (mixto)",
+  "dimensiones": "4323 x 1809 x 1649 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.mgmotor.com.ar/zs"
+  },
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 10.5s"
+  },
+  "createdAt": "2026-08-23T21:59:10.087305Z",
+  "updatedAt": "2026-08-23T21:59:10.087305Z"
+}

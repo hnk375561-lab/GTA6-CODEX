@@ -1,0 +1,31 @@
+{
+  "slug": "cupra-formentor",
+  "type": "vehiculos",
+  "title": "Cupra Formentor",
+  "description": "SUV coupé deportiva de Cupra (marca de SEAT), motor turbo 2.0L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "cupra",
+    "deportivo",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Cupra",
+  "class": "SUV coupé deportiva",
+  "customizable": false,
+  "power": "245 hp",
+  "price": "USD 48.000",
+  "consumo": "8.2 l/100km (mixto)",
+  "dimensiones": "4450 x 1839 x 1528 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.cupraofficial.com.ar/formentor"
+  },
+  "performance": {
+    "speed": "230 km/h",
+    "acceleration": "0-100 km/h en 6.6s"
+  },
+  "createdAt": "2026-08-23T21:59:09.542585Z",
+  "updatedAt": "2026-08-23T21:59:09.542585Z"
+}

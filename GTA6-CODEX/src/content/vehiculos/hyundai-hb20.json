@@ -1,0 +1,30 @@
+{
+  "slug": "hyundai-hb20",
+  "type": "vehiculos",
+  "title": "Hyundai HB20",
+  "description": "Hatchback compacto de Hyundai, producido en Brasil, motor 1.0L turbo o 1.6L.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "hyundai",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Hyundai",
+  "class": "Hatchback",
+  "customizable": false,
+  "power": "120 hp",
+  "price": "USD 18.500",
+  "consumo": "6.9 l/100km (mixto)",
+  "dimensiones": "3995 x 1735 x 1480 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.hyundai.com.ar/hb20"
+  },
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 10.9s"
+  },
+  "createdAt": "2026-08-23T21:59:05.966220Z",
+  "updatedAt": "2026-08-23T21:59:05.966220Z"
+}

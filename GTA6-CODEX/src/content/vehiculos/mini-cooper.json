@@ -1,0 +1,31 @@
+{
+  "slug": "mini-cooper",
+  "type": "vehiculos",
+  "title": "Mini Cooper",
+  "description": "Hatchback premium de Mini (grupo BMW), motor turbo 1.5L o 2.0L según versión.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "mini",
+    "premium",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Mini",
+  "class": "Hatchback premium",
+  "customizable": false,
+  "power": "178 hp",
+  "price": "USD 38.000",
+  "consumo": "6.5 l/100km (mixto)",
+  "dimensiones": "3876 x 1727 x 1414 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.mini.com.ar/cooper"
+  },
+  "performance": {
+    "speed": "210 km/h",
+    "acceleration": "0-100 km/h en 7.7s"
+  },
+  "createdAt": "2026-08-23T21:59:08.997896Z",
+  "updatedAt": "2026-08-23T21:59:08.997896Z"
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "isuzu-d-max",
+  "type": "vehiculos",
+  "title": "Isuzu D-Max",
+  "description": "Pickup mediana de Isuzu, motor turbodiésel 3.0L, conocida por su durabilidad.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "isuzu",
+    "diesel",
+    "4x4"
+  ],
+  "featured": false,
+  "manufacturer": "Isuzu",
+  "class": "Pickup",
+  "customizable": false,
+  "power": "163 hp",
+  "price": "USD 38.000",
+  "consumo": "8.0 l/100km (mixto)",
+  "dimensiones": "5265 x 1870 x 1800 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.isuzu.com.ar/d-max"
+  },
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.8s"
+  },
+  "createdAt": "2026-08-23T21:59:03.999490Z",
+  "updatedAt": "2026-08-23T21:59:03.999490Z"
+}

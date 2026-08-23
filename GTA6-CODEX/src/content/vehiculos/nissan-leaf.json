@@ -1,0 +1,30 @@
+{
+  "slug": "nissan-leaf",
+  "type": "vehiculos",
+  "title": "Nissan Leaf",
+  "description": "Hatchback 100% eléctrico de Nissan, uno de los pioneros del segmento.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "electrico",
+    "nissan"
+  ],
+  "featured": false,
+  "manufacturer": "Nissan",
+  "class": "Hatchback eléctrico",
+  "customizable": false,
+  "power": "147 hp",
+  "price": "USD 32.000",
+  "consumo": "15 kWh/100km",
+  "dimensiones": "4490 x 1788 x 1565 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.nissan.com.ar/vehiculos/leaf.html"
+  },
+  "performance": {
+    "speed": "157 km/h",
+    "acceleration": "0-100 km/h en 7.9s"
+  },
+  "createdAt": "2026-08-23T21:59:05.094837Z",
+  "updatedAt": "2026-08-23T21:59:05.094837Z"
+}

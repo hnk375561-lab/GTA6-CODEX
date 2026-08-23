@@ -1,0 +1,30 @@
+{
+  "slug": "skoda-kushaq",
+  "type": "vehiculos",
+  "title": "Skoda Kushaq",
+  "description": "SUV compacta de Skoda (grupo Volkswagen), motor turbo 1.0L o 1.5L TSI.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "skoda",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Skoda",
+  "class": "SUV compacta",
+  "customizable": false,
+  "power": "115 hp",
+  "price": "USD 26.000",
+  "consumo": "7.1 l/100km (mixto)",
+  "dimensiones": "4225 x 1760 x 1612 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.skoda.com.ar/kushaq"
+  },
+  "performance": {
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 10.3s"
+  },
+  "createdAt": "2026-08-23T21:59:12.340520Z",
+  "updatedAt": "2026-08-23T21:59:12.340520Z"
+}

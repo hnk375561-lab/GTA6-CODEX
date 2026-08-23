@@ -1,0 +1,30 @@
+{
+  "slug": "fiat-500",
+  "type": "vehiculos",
+  "title": "Fiat 500",
+  "description": "Hatchback urbano de diseño retro de Fiat, también disponible en versión 100% eléctrica.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "fiat",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Fiat",
+  "class": "Hatchback",
+  "customizable": false,
+  "power": "95 hp",
+  "price": "USD 23.000",
+  "consumo": "6.0 l/100km (mixto)",
+  "dimensiones": "3632 x 1627 x 1518 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.fiat.com.ar/500"
+  },
+  "performance": {
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 10.5s"
+  },
+  "createdAt": "2026-08-23T21:59:07.332517Z",
+  "updatedAt": "2026-08-23T21:59:07.332517Z"
+}

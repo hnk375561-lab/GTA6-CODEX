@@ -1,0 +1,31 @@
+{
+  "slug": "jac-t40",
+  "type": "vehiculos",
+  "title": "JAC T40",
+  "description": "Pickup compacta china de JAC Motors, motor 1.5L turbo.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "jac",
+    "china",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "JAC",
+  "class": "Pickup compacta",
+  "customizable": false,
+  "power": "136 hp",
+  "price": "USD 22.000",
+  "consumo": "7.8 l/100km (mixto)",
+  "dimensiones": "5075 x 1900 x 1755 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.jacmotors.com.ar/t40"
+  },
+  "performance": {
+    "speed": "165 km/h",
+    "acceleration": "0-100 km/h en 12.5s"
+  },
+  "createdAt": "2026-08-23T21:59:09.812750Z",
+  "updatedAt": "2026-08-23T21:59:09.812750Z"
+}

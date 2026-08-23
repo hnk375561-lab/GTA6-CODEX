@@ -1,0 +1,30 @@
+{
+  "slug": "ram-1500",
+  "type": "vehiculos",
+  "title": "RAM 1500",
+  "description": "Pickup full-size de RAM, suspensión trasera neumática opcional, motor V8 HEMI 5.7L.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "ram",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "RAM",
+  "class": "Pickup grande",
+  "customizable": false,
+  "power": "395 hp",
+  "price": "USD 60.000",
+  "consumo": "13.0 l/100km (mixto)",
+  "dimensiones": "5822 x 2017 x 1930 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ramtrucks.com/1500.html"
+  },
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 6.3s"
+  },
+  "createdAt": "2026-08-23T21:59:03.451886Z",
+  "updatedAt": "2026-08-23T21:59:03.451886Z"
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "toyota-etios",
+  "type": "vehiculos",
+  "title": "Toyota Etios",
+  "description": "Sedán compacto de entrada de Toyota, motor 1.5L, orientado a costo de mantenimiento bajo.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "toyota",
+    "economico",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Toyota",
+  "class": "Sedán económico",
+  "customizable": false,
+  "power": "90 hp",
+  "price": "USD 17.000",
+  "consumo": "6.9 l/100km (mixto)",
+  "dimensiones": "4265 x 1695 x 1490 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.toyota.com.ar/etios"
+  },
+  "performance": {
+    "speed": "165 km/h",
+    "acceleration": "0-100 km/h en 12.9s"
+  },
+  "createdAt": "2026-08-23T21:59:12.065294Z",
+  "updatedAt": "2026-08-23T21:59:12.065294Z"
+}

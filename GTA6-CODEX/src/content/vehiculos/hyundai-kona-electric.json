@@ -1,0 +1,30 @@
+{
+  "slug": "hyundai-kona-electric",
+  "type": "vehiculos",
+  "title": "Hyundai Kona Eléctrico",
+  "description": "SUV compacta 100% eléctrica de Hyundai.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "electrico",
+    "hyundai"
+  ],
+  "featured": false,
+  "manufacturer": "Hyundai",
+  "class": "SUV eléctrica",
+  "customizable": false,
+  "power": "201 hp",
+  "price": "USD 42.000",
+  "consumo": "16 kWh/100km",
+  "dimensiones": "4355 x 1825 x 1575 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.hyundai.com.ar/kona-electrico"
+  },
+  "performance": {
+    "speed": "172 km/h",
+    "acceleration": "0-100 km/h en 7.9s"
+  },
+  "createdAt": "2026-08-23T21:59:06.238471Z",
+  "updatedAt": "2026-08-23T21:59:06.238471Z"
+}

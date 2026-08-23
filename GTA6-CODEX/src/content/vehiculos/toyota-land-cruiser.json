@@ -1,0 +1,32 @@
+{
+  "slug": "toyota-land-cruiser",
+  "type": "vehiculos",
+  "title": "Toyota Land Cruiser",
+  "description": "SUV 4x4 de gama alta de Toyota, referencia histórica en todoterrenos, motor turbodiésel V6.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "toyota",
+    "diesel",
+    "4x4",
+    "premium"
+  ],
+  "featured": false,
+  "manufacturer": "Toyota",
+  "class": "SUV 4x4",
+  "customizable": false,
+  "power": "309 hp",
+  "price": "USD 90.000",
+  "consumo": "10.5 l/100km (mixto)",
+  "dimensiones": "4950 x 1980 x 1925 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.toyota.com.ar/land-cruiser"
+  },
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 9.9s"
+  },
+  "createdAt": "2026-08-23T21:59:02.907844Z",
+  "updatedAt": "2026-08-23T21:59:02.907844Z"
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "chevrolet-silverado",
+  "type": "vehiculos",
+  "title": "Chevrolet Silverado",
+  "description": "Pickup full-size de Chevrolet, motor V8 5.3L o Duramax turbodiésel según versión.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "chevrolet",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Chevrolet",
+  "class": "Pickup grande",
+  "customizable": false,
+  "power": "355 hp",
+  "price": "USD 58.000",
+  "consumo": "12.8 l/100km (mixto)",
+  "dimensiones": "5890 x 2030 x 1920 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.chevrolet.com.ar/silverado"
+  },
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 6.5s"
+  },
+  "createdAt": "2026-08-23T21:59:03.723060Z",
+  "updatedAt": "2026-08-23T21:59:03.723060Z"
+}

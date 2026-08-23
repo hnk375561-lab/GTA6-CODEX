@@ -1,0 +1,28 @@
+{
+  "slug": "yamaha-fazer-250",
+  "type": "vehiculos",
+  "title": "Yamaha Fazer 250",
+  "description": "Moto naked de cilindrada media de Yamaha, motor monocilíndrico de 250cc, muy usada en trayectos urbanos e interurbanos.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "yamaha"
+  ],
+  "featured": false,
+  "manufacturer": "Yamaha",
+  "class": "Moto naked",
+  "customizable": false,
+  "power": "21 hp",
+  "price": "USD 5.000",
+  "consumo": "3.3 l/100km",
+  "dimensiones": "2085 x 750 x 1090 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.yamaha-motor.com.ar/fazer-250"
+  },
+  "performance": {
+    "speed": "140 km/h"
+  },
+  "createdAt": "2026-08-23T21:59:11.215408Z",
+  "updatedAt": "2026-08-23T21:59:11.215408Z"
+}

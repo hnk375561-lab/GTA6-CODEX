@@ -1,0 +1,30 @@
+{
+  "slug": "hyundai-creta",
+  "type": "vehiculos",
+  "title": "Hyundai Creta",
+  "description": "SUV compacta de Hyundai, uno de los modelos más vendidos de su segmento en Latinoamérica.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "hyundai",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Hyundai",
+  "class": "SUV compacta",
+  "customizable": false,
+  "power": "120 hp",
+  "price": "USD 25.000",
+  "consumo": "7.4 l/100km (mixto)",
+  "dimensiones": "4315 x 1790 x 1635 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.hyundai.com.ar/creta"
+  },
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.8s"
+  },
+  "createdAt": "2026-08-23T21:59:05.686502Z",
+  "updatedAt": "2026-08-23T21:59:05.686502Z"
+}

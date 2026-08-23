@@ -1,0 +1,30 @@
+{
+  "slug": "peugeot-partner",
+  "type": "vehiculos",
+  "title": "Peugeot Partner",
+  "description": "Furgón utilitario de Peugeot, versión de pasajeros y de carga disponibles.",
+  "status": "confirmado",
+  "tags": [
+    "utilitario",
+    "peugeot",
+    "diesel"
+  ],
+  "featured": false,
+  "manufacturer": "Peugeot",
+  "class": "Utilitario",
+  "customizable": false,
+  "power": "115 hp",
+  "price": "USD 24.000",
+  "consumo": "6.5 l/100km (mixto, diesel)",
+  "dimensiones": "4403 x 1817 x 1806 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.peugeot.com.ar/gama-peugeot/partner/"
+  },
+  "performance": {
+    "speed": "160 km/h",
+    "acceleration": "0-100 km/h en 13.5s"
+  },
+  "createdAt": "2026-08-23T21:59:08.449854Z",
+  "updatedAt": "2026-08-23T21:59:08.449854Z"
+}

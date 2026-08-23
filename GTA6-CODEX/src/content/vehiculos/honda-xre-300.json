@@ -1,0 +1,29 @@
+{
+  "slug": "honda-xre-300",
+  "type": "vehiculos",
+  "title": "Honda XRE 300",
+  "description": "Moto enduro/adventure de entrada de Honda, motor monocilíndrico de 300cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "honda",
+    "enduro"
+  ],
+  "featured": false,
+  "manufacturer": "Honda",
+  "class": "Moto enduro",
+  "customizable": false,
+  "power": "27 hp",
+  "price": "USD 6.500",
+  "consumo": "3.0 l/100km",
+  "dimensiones": "2160 x 815 x 1289 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.honda.com.ar/motos/xre-300"
+  },
+  "performance": {
+    "speed": "140 km/h"
+  },
+  "createdAt": "2026-08-23T21:59:10.925515Z",
+  "updatedAt": "2026-08-23T21:59:10.925515Z"
+}

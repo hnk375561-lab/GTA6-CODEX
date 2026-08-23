@@ -1,0 +1,30 @@
+{
+  "slug": "fiat-strada",
+  "type": "vehiculos",
+  "title": "Fiat Strada",
+  "description": "Pickup compacta de Fiat, líder de su segmento en varios países de la región, motor turbo 1.3L.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "fiat",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Fiat",
+  "class": "Pickup compacta",
+  "customizable": false,
+  "power": "107 hp",
+  "price": "USD 20.000",
+  "consumo": "6.8 l/100km (mixto)",
+  "dimensiones": "4498 x 1735 x 1650 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.fiat.com.ar/strada"
+  },
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.0s"
+  },
+  "createdAt": "2026-08-23T21:59:07.061130Z",
+  "updatedAt": "2026-08-23T21:59:07.061130Z"
+}

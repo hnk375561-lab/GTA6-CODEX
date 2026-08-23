@@ -1,0 +1,29 @@
+{
+  "slug": "ktm-duke-390",
+  "type": "vehiculos",
+  "title": "KTM Duke 390",
+  "description": "Moto naked deportiva de KTM, motor monocilíndrico de 373cc, orientada a un público más deportivo.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "ktm",
+    "deportiva"
+  ],
+  "featured": false,
+  "manufacturer": "KTM",
+  "class": "Moto naked deportiva",
+  "customizable": false,
+  "power": "44 hp",
+  "price": "USD 7.500",
+  "consumo": "3.8 l/100km",
+  "dimensiones": "2124 x 830 x 1180 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ktm.com.ar/duke-390"
+  },
+  "performance": {
+    "speed": "170 km/h"
+  },
+  "createdAt": "2026-08-23T21:59:11.788966Z",
+  "updatedAt": "2026-08-23T21:59:11.788966Z"
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "kia-seltos",
+  "type": "vehiculos",
+  "title": "Kia Seltos",
+  "description": "SUV compacta de Kia, motor 1.6L o turbo 1.4L según versión.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "kia",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Kia",
+  "class": "SUV compacta",
+  "customizable": false,
+  "power": "140 hp",
+  "price": "USD 27.000",
+  "consumo": "7.8 l/100km (mixto)",
+  "dimensiones": "4365 x 1800 x 1615 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.kia.com.ar/seltos"
+  },
+  "performance": {
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 9.9s"
+  },
+  "createdAt": "2026-08-23T21:59:05.413464Z",
+  "updatedAt": "2026-08-23T21:59:05.413464Z"
+}

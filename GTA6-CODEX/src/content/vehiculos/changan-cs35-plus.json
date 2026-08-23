@@ -1,0 +1,31 @@
+{
+  "slug": "changan-cs35-plus",
+  "type": "vehiculos",
+  "title": "Changan CS35 Plus",
+  "description": "SUV compacta china de Changan, motor turbo 1.4L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "changan",
+    "china",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Changan",
+  "class": "SUV compacta",
+  "customizable": false,
+  "power": "140 hp",
+  "price": "USD 20.000",
+  "consumo": "7.5 l/100km (mixto)",
+  "dimensiones": "4335 x 1825 x 1660 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.changan.com.ar/cs35-plus"
+  },
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.0s"
+  },
+  "createdAt": "2026-08-23T21:59:10.362177Z",
+  "updatedAt": "2026-08-23T21:59:10.362177Z"
+}

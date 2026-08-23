@@ -1,0 +1,30 @@
+{
+  "slug": "ford-f-150",
+  "type": "vehiculos",
+  "title": "Ford F-150",
+  "description": "Pickup full-size de Ford, la más vendida de Estados Unidos, con motorizaciones V6 EcoBoost hasta V8.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "ford",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Ford",
+  "class": "Pickup grande",
+  "customizable": false,
+  "power": "400 hp",
+  "price": "USD 55.000",
+  "consumo": "12.5 l/100km (mixto)",
+  "dimensiones": "5890 x 2029 x 1958 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ford.com/trucks/f150/"
+  },
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 5.8s (V6 EcoBoost)"
+  },
+  "createdAt": "2026-08-23T21:59:03.178078Z",
+  "updatedAt": "2026-08-23T21:59:03.178078Z"
+}

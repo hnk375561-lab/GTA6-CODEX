@@ -1,0 +1,30 @@
+{
+  "slug": "toyota-corolla-cross",
+  "type": "vehiculos",
+  "title": "Toyota Corolla Cross",
+  "description": "SUV compacta de Toyota sobre plataforma del Corolla, disponible en versión híbrida.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "toyota",
+    "hibrido"
+  ],
+  "featured": false,
+  "manufacturer": "Toyota",
+  "class": "SUV compacta",
+  "customizable": false,
+  "power": "122 hp",
+  "price": "USD 30.000",
+  "consumo": "5.0 l/100km (híbrida, mixto)",
+  "dimensiones": "4460 x 1825 x 1620 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.toyota.com.ar/corolla-cross"
+  },
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 9.5s (híbrida)"
+  },
+  "createdAt": "2026-08-23T21:59:04.271737Z",
+  "updatedAt": "2026-08-23T21:59:04.271737Z"
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "volkswagen-t-cross",
+  "type": "vehiculos",
+  "title": "Volkswagen T-Cross",
+  "description": "SUV compacta de Volkswagen sobre plataforma MQB, motor turbo 1.0L o 1.4L TSI.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "volkswagen",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Volkswagen",
+  "class": "SUV compacta",
+  "customizable": false,
+  "power": "128 hp",
+  "price": "USD 27.000",
+  "consumo": "7.2 l/100km (mixto)",
+  "dimensiones": "4199 x 1760 x 1584 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.vw.com.ar/es/modelos/t-cross.html"
+  },
+  "performance": {
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 10.0s"
+  },
+  "createdAt": "2026-08-23T21:59:07.608786Z",
+  "updatedAt": "2026-08-23T21:59:07.608786Z"
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "honda-fit",
+  "type": "vehiculos",
+  "title": "Honda Fit",
+  "description": "Hatchback compacto de Honda, conocido por su habitabilidad interior (asientos Magic Seat).",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "honda",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Honda",
+  "class": "Hatchback",
+  "customizable": false,
+  "power": "126 hp",
+  "price": "USD 20.000",
+  "consumo": "6.8 l/100km (mixto)",
+  "dimensiones": "4090 x 1695 x 1515 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.honda.com.ar/autos/fit"
+  },
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.5s"
+  },
+  "createdAt": "2026-08-23T21:59:04.543405Z",
+  "updatedAt": "2026-08-23T21:59:04.543405Z"
+}

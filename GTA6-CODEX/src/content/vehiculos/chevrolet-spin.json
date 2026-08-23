@@ -1,0 +1,30 @@
+{
+  "slug": "chevrolet-spin",
+  "type": "vehiculos",
+  "title": "Chevrolet Spin",
+  "description": "Minivan/monovolumen de Chevrolet de 7 asientos, motor 1.8L.",
+  "status": "confirmado",
+  "tags": [
+    "minivan",
+    "chevrolet",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Chevrolet",
+  "class": "Minivan",
+  "customizable": false,
+  "power": "106 hp",
+  "price": "USD 22.000",
+  "consumo": "8.0 l/100km (mixto)",
+  "dimensiones": "4405 x 1810 x 1665 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.chevrolet.com.ar/spin"
+  },
+  "performance": {
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 12.8s"
+  },
+  "createdAt": "2026-08-23T21:59:08.164677Z",
+  "updatedAt": "2026-08-23T21:59:08.164677Z"
+}

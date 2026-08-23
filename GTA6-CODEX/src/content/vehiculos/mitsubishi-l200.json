@@ -1,0 +1,31 @@
+{
+  "slug": "mitsubishi-l200",
+  "type": "vehiculos",
+  "title": "Mitsubishi L200",
+  "description": "Pickup mediana de Mitsubishi, motor turbodiésel 2.4L, tracción 4x4 Super Select.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "mitsubishi",
+    "diesel",
+    "4x4"
+  ],
+  "featured": false,
+  "manufacturer": "Mitsubishi",
+  "class": "Pickup",
+  "customizable": false,
+  "power": "178 hp",
+  "price": "USD 42.000",
+  "consumo": "8.5 l/100km (mixto)",
+  "dimensiones": "5305 x 1815 x 1795 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.mitsubishi-motors.com.ar/l200"
+  },
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.5s"
+  },
+  "createdAt": "2026-08-23T21:59:02.058147Z",
+  "updatedAt": "2026-08-23T21:59:02.058147Z"
+}

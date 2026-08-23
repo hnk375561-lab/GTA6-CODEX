@@ -1,0 +1,31 @@
+{
+  "slug": "land-rover-defender",
+  "type": "vehiculos",
+  "title": "Land Rover Defender",
+  "description": "SUV 4x4 premium de Land Rover, chasis monocasco, motores desde 4 hasta 6 cilindros.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "land-rover",
+    "premium",
+    "4x4"
+  ],
+  "featured": false,
+  "manufacturer": "Land Rover",
+  "class": "SUV 4x4 premium",
+  "customizable": false,
+  "power": "296 hp",
+  "price": "USD 85.000",
+  "consumo": "11.5 l/100km (mixto)",
+  "dimensiones": "4758 x 1996 x 1967 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.landrover.com.ar/defender"
+  },
+  "performance": {
+    "speed": "195 km/h",
+    "acceleration": "0-100 km/h en 8.9s"
+  },
+  "createdAt": "2026-08-23T21:59:02.633748Z",
+  "updatedAt": "2026-08-23T21:59:02.633748Z"
+}

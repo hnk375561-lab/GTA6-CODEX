@@ -1,0 +1,31 @@
+{
+  "slug": "renault-logan",
+  "type": "vehiculos",
+  "title": "Renault Logan",
+  "description": "Sedán compacto de entrada de Renault, motor 1.6L, foco en espacio y bajo costo de mantenimiento.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "renault",
+    "economico",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Renault",
+  "class": "Sedán económico",
+  "customizable": false,
+  "power": "105 hp",
+  "price": "USD 16.000",
+  "consumo": "7.0 l/100km (mixto)",
+  "dimensiones": "4368 x 1734 x 1583 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.renault.com.ar/vehiculos/logan.html"
+  },
+  "performance": {
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 12.5s"
+  },
+  "createdAt": "2026-08-23T21:59:06.785891Z",
+  "updatedAt": "2026-08-23T21:59:06.785891Z"
+}

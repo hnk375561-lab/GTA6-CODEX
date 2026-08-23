@@ -1,0 +1,30 @@
+{
+  "slug": "mercedes-benz-sprinter",
+  "type": "vehiculos",
+  "title": "Mercedes-Benz Sprinter",
+  "description": "Furgón grande de Mercedes-Benz, base para transporte de pasajeros, carga y camperización, motor turbodiésel.",
+  "status": "confirmado",
+  "tags": [
+    "furgon",
+    "mercedes-benz",
+    "diesel"
+  ],
+  "featured": false,
+  "manufacturer": "Mercedes-Benz",
+  "class": "Furgón",
+  "customizable": false,
+  "power": "163 hp",
+  "price": "USD 55.000",
+  "consumo": "9.5 l/100km (mixto)",
+  "dimensiones": "5926 x 1993 x 2427 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.mercedes-benz.com.ar/vans/sprinter"
+  },
+  "performance": {
+    "speed": "160 km/h",
+    "acceleration": "0-100 km/h en 14.0s"
+  },
+  "createdAt": "2026-08-23T21:59:08.724580Z",
+  "updatedAt": "2026-08-23T21:59:08.724580Z"
+}

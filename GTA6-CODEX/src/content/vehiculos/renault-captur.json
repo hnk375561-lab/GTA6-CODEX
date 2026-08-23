@@ -1,0 +1,30 @@
+{
+  "slug": "renault-captur",
+  "type": "vehiculos",
+  "title": "Renault Captur",
+  "description": "SUV compacta de Renault, motor 1.3L turbo o 1.6L naturalmente aspirado.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "renault",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Renault",
+  "class": "SUV compacta",
+  "customizable": false,
+  "power": "150 hp",
+  "price": "USD 26.000",
+  "consumo": "7.6 l/100km (mixto)",
+  "dimensiones": "4227 x 1813 x 1576 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.renault.com.ar/vehiculos/captur.html"
+  },
+  "performance": {
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 10.5s"
+  },
+  "createdAt": "2026-08-23T21:59:06.516209Z",
+  "updatedAt": "2026-08-23T21:59:06.516209Z"
+}

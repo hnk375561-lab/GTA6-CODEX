@@ -1,0 +1,30 @@
+{
+  "slug": "mazda-cx-5",
+  "type": "vehiculos",
+  "title": "Mazda CX-5",
+  "description": "SUV mediana de Mazda con motor 2.5L Skyactiv-G, tracción integral opcional.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "mazda",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Mazda",
+  "class": "SUV",
+  "customizable": false,
+  "power": "187 hp",
+  "price": "USD 32.000",
+  "consumo": "9.2 l/100km (mixto)",
+  "dimensiones": "4575 x 1845 x 1680 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.mazda.com.ar/vehiculos/cx-5/"
+  },
+  "performance": {
+    "speed": "195 km/h",
+    "acceleration": "0-100 km/h en 9.0s"
+  },
+  "createdAt": "2026-08-23T21:59:01.491247Z",
+  "updatedAt": "2026-08-23T21:59:01.491247Z"
+}

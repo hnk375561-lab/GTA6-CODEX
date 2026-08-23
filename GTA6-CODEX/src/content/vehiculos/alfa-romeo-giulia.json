@@ -1,0 +1,31 @@
+{
+  "slug": "alfa-romeo-giulia",
+  "type": "vehiculos",
+  "title": "Alfa Romeo Giulia",
+  "description": "Sedán deportivo premium de Alfa Romeo, tracción trasera, motor turbo 2.0L de 4 cilindros.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "alfa-romeo",
+    "premium",
+    "deportivo"
+  ],
+  "featured": false,
+  "manufacturer": "Alfa Romeo",
+  "class": "Sedán deportivo premium",
+  "customizable": false,
+  "power": "280 hp",
+  "price": "USD 60.000",
+  "consumo": "8.0 l/100km (mixto)",
+  "dimensiones": "4643 x 1860 x 1436 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.alfaromeo.com.ar/giulia"
+  },
+  "performance": {
+    "speed": "230 km/h",
+    "acceleration": "0-100 km/h en 5.7s"
+  },
+  "createdAt": "2026-08-23T21:59:09.269759Z",
+  "updatedAt": "2026-08-23T21:59:09.269759Z"
+}
