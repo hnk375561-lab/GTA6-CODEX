@@ -1,0 +1,26 @@
+{
+  "slug": "chery-tiggo-8-pro",
+  "type": "vehiculos",
+  "title": "Chery Tiggo 8 Pro",
+  "description": "SUV de siete plazas del segmento D, tope de gama de Chery en Argentina, comercializado por Grupo Corven.",
+  "status": "confirmado",
+  "tags": ["suv", "chery", "china", "7-plazas"],
+  "featured": false,
+  "manufacturer": "Chery",
+  "class": "SUV grande",
+  "customizable": false,
+  "power": "186 hp",
+  "price": "USD 44.800",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://minutomotor.com.ar/chery-actualizo-sus-precios-en-argentina/"
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-23T22:19:24.158453Z"
+}

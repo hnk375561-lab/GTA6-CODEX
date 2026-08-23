@@ -1,0 +1,26 @@
+{
+  "slug": "bajaj-rouser-ns200",
+  "type": "vehiculos",
+  "title": "Bajaj Rouser NS200",
+  "description": "Moto naked deportiva, ensamblada en Argentina por Grupo Corven, una de las mas vendidas en el segmento 200cc.",
+  "status": "confirmado",
+  "tags": ["moto", "bajaj", "naked"],
+  "featured": false,
+  "manufacturer": "Bajaj",
+  "class": "Moto naked 200cc",
+  "customizable": false,
+  "power": "23.5 hp a 9500 rpm",
+  "price": "ARS 4.539.990",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.monkeymotor.net/2024/05/bajaj-rouser-ns160-ns200-precio-argentina.html"
+  },
+  "performance": {
+    "speed": "151 km/h",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-23T22:19:24.158453Z"
+}

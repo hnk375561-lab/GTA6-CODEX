@@ -1,0 +1,26 @@
+{
+  "slug": "toyota-yaris-cross",
+  "type": "vehiculos",
+  "title": "Toyota Yaris Cross",
+  "description": "SUV B-SUV con versiones nafteras e hibridas, primer hibrido de Toyota en este segmento en Argentina, fabricado en Brasil.",
+  "status": "confirmado",
+  "tags": ["suv", "toyota", "hibrido"],
+  "featured": false,
+  "manufacturer": "Toyota",
+  "class": "SUV compacto",
+  "customizable": false,
+  "power": "106 hp (version naftera XLI/XEI/SEG)",
+  "price": "ARS 41.464.000 (version XLI)",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://autoblog.com.ar/lanzamiento-toyota-yaris-cross-2026/"
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-23T22:19:24.158453Z"
+}

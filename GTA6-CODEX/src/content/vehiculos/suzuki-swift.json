@@ -1,0 +1,26 @@
+{
+  "slug": "suzuki-swift",
+  "type": "vehiculos",
+  "title": "Suzuki Swift",
+  "description": "Hatchback del segmento B con sistema mild-hybrid SHVS, importado de Japon, con beneficio impositivo por ser vehiculo electrificado.",
+  "status": "confirmado",
+  "tags": ["hatchback", "suzuki", "hibrido"],
+  "featured": false,
+  "manufacturer": "Suzuki",
+  "class": "Hatchback compacto",
+  "customizable": false,
+  "power": "80 hp",
+  "price": "USD 20.900 (version GLX Manual)",
+  "consumo": "23.8 km/l (mixto)",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://autoblog.com.ar/lanzamiento-suzuki-swift-hybrid/"
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-23T22:19:24.158453Z"
+}

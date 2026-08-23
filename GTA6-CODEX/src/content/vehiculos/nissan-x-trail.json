@@ -1,0 +1,26 @@
+{
+  "slug": "nissan-x-trail",
+  "type": "vehiculos",
+  "title": "Nissan X-Trail",
+  "description": "SUV familiar del segmento C, disponible en version naftera Exclusive y version electrificada e-POWER con tecnologia e-4ORCE.",
+  "status": "confirmado",
+  "tags": ["suv", "nissan"],
+  "featured": false,
+  "manufacturer": "Nissan",
+  "class": "SUV mediano",
+  "customizable": false,
+  "power": "181 hp (version Exclusive naftera)",
+  "price": "ARS 56.990.000",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "Pendiente de enriquecimiento",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.nissan.com.ar/vehiculos/nuevos/nueva-xtrail.html"
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-23T22:19:24.158453Z"
+}

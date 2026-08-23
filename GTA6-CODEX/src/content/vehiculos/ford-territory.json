@@ -2,27 +2,25 @@
   "slug": "ford-territory",
   "type": "vehiculos",
   "title": "Ford Territory",
-  "description": "SUV mediana de Ford, motor turbo 1.5L.",
+  "description": "SUV del segmento C importado desde China, con version naftera EcoBoost y version hibrida Trend, principal rival del Corolla Cross.",
   "status": "confirmado",
-  "tags": [
-    "suv",
-    "ford",
-    "combustion"
-  ],
+  "tags": ["suv", "ford", "hibrido"],
   "featured": false,
-  "createdAt": "2026-08-23T21:41:30.473Z",
-  "updatedAt": "2026-08-23T21:41:30.473Z",
   "manufacturer": "Ford",
-  "class": "SUV",
+  "class": "SUV mediano",
   "customizable": false,
-  "performance": {
-    "speed": "180 km/h",
-    "acceleration": "0-100 km/h en 10.3s"
-  },
-  "power": "143 hp",
-  "price": "USD 28.000",
+  "power": "185 hp (version 1.8T SEL/Titanium)",
+  "price": "ARS 48.110.210 (version SEL)",
+  "consumo": "7.1 l/100km (mixto)",
+  "dimensiones": "4685 x 2177 x 1706 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.ford.com.ar/suvs/nueva-territory/"
-  }
+    "primarySource": "https://autofichas.com.ar/ford/territory/"
+  },
+  "performance": {
+    "speed": "Pendiente de enriquecimiento",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-23T22:19:24.158453Z"
 }

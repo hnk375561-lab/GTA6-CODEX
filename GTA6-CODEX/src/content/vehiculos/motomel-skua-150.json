@@ -1,0 +1,26 @@
+{
+  "slug": "motomel-skua-150",
+  "type": "vehiculos",
+  "title": "Motomel Skua 150",
+  "description": "Moto trail on/off fabricada en Argentina, una de las mas vendidas de su segmento por relacion precio-versatilidad.",
+  "status": "confirmado",
+  "tags": ["moto", "motomel", "trail", "argentina"],
+  "featured": false,
+  "manufacturer": "Motomel",
+  "class": "Moto trail 150cc",
+  "customizable": false,
+  "power": "11.4 hp a 8350 rpm",
+  "price": "No informado por el fabricante (consultar en concesionario)",
+  "consumo": "Pendiente de enriquecimiento",
+  "dimensiones": "770 x 900 x 2100 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://motomel.com.ar/productos/skua-150/"
+  },
+  "performance": {
+    "speed": "100 km/h",
+    "acceleration": "Pendiente de enriquecimiento"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-23T22:19:24.158453Z"
+}
