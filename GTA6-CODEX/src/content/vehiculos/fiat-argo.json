@@ -1,0 +1,28 @@
+{
+  "slug": "fiat-argo",
+  "type": "vehiculos",
+  "title": "Fiat Argo",
+  "description": "Hatchback compacto de Fiat, misma plataforma que el Cronos.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "fiat",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:29.948Z",
+  "updatedAt": "2026-08-23T21:41:29.948Z",
+  "manufacturer": "Fiat",
+  "class": "Hatchback",
+  "customizable": false,
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.5s"
+  },
+  "power": "101 hp",
+  "price": "USD 18.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.fiat.com.ar/argo"
+  }
+}

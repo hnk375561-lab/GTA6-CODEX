@@ -1,0 +1,27 @@
+{
+  "slug": "honda-wave-110",
+  "type": "vehiculos",
+  "title": "Honda Wave 110",
+  "description": "Moto utilitaria semiautomática, una de las más vendidas de Latinoamérica, motor de 110cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "honda",
+    "utilitaria"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:34.107Z",
+  "updatedAt": "2026-08-23T21:41:34.107Z",
+  "manufacturer": "Honda",
+  "class": "Moto utilitaria",
+  "customizable": false,
+  "performance": {
+    "speed": "95 km/h"
+  },
+  "power": "8.6 hp",
+  "price": "USD 2.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.honda.com.ar/motos/wave-110"
+  }
+}

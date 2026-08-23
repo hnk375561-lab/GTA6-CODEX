@@ -1,0 +1,29 @@
+{
+  "slug": "chery-tiggo-7-pro",
+  "type": "vehiculos",
+  "title": "Chery Tiggo 7 Pro",
+  "description": "SUV mediana china de Chery, motor turbo 1.5L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "chery",
+    "china",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:33.336Z",
+  "updatedAt": "2026-08-23T21:41:33.336Z",
+  "manufacturer": "Chery",
+  "class": "SUV",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.7s"
+  },
+  "power": "147 hp",
+  "price": "USD 27.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.chery.com.ar/tiggo-7-pro"
+  }
+}

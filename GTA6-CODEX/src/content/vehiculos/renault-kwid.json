@@ -1,0 +1,29 @@
+{
+  "slug": "renault-kwid",
+  "type": "vehiculos",
+  "title": "Renault Kwid",
+  "description": "Hatchback urbano de entrada de Renault, motor 1.0L.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "renault",
+    "combustion",
+    "economico"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:29.424Z",
+  "updatedAt": "2026-08-23T21:41:29.424Z",
+  "manufacturer": "Renault",
+  "class": "Hatchback económico",
+  "customizable": false,
+  "performance": {
+    "speed": "150 km/h",
+    "acceleration": "0-100 km/h en 14.5s"
+  },
+  "power": "68 hp",
+  "price": "USD 13.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.renault.com.ar/vehiculos/kwid.html"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "nissan-kicks",
+  "type": "vehiculos",
+  "title": "Nissan Kicks",
+  "description": "SUV compacta de Nissan, motor 1.6L naturalmente aspirado.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "nissan",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:30.994Z",
+  "updatedAt": "2026-08-23T21:41:30.994Z",
+  "manufacturer": "Nissan",
+  "class": "SUV compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.3s"
+  },
+  "power": "114 hp",
+  "price": "USD 24.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.nissan.com.ar/vehiculos/nuevo-kicks.html"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "chevrolet-tracker",
+  "type": "vehiculos",
+  "title": "Chevrolet Tracker",
+  "description": "SUV compacta de Chevrolet, motor turbo 1.2L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "chevrolet",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:30.210Z",
+  "updatedAt": "2026-08-23T21:41:30.210Z",
+  "manufacturer": "Chevrolet",
+  "class": "SUV compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.5s"
+  },
+  "power": "132 hp",
+  "price": "USD 25.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.chevrolet.com.ar/tracker"
+  }
+}

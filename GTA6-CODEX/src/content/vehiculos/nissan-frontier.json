@@ -1,0 +1,28 @@
+{
+  "slug": "nissan-frontier",
+  "type": "vehiculos",
+  "title": "Nissan Frontier",
+  "description": "Pickup mediana de Nissan, motor turbodiésel 2.3L.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "nissan",
+    "diesel"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:31.256Z",
+  "updatedAt": "2026-08-23T21:41:31.256Z",
+  "manufacturer": "Nissan",
+  "class": "Pickup",
+  "customizable": false,
+  "performance": {
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 10.9s"
+  },
+  "power": "190 hp",
+  "price": "USD 40.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.nissan.com.ar/vehiculos/frontier.html"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "fiat-pulse",
+  "type": "vehiculos",
+  "title": "Fiat Pulse",
+  "description": "SUV compacta de Fiat sobre la misma plataforma que el Cronos/Argo, motor turbo 1.0L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "fiat",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:29.687Z",
+  "updatedAt": "2026-08-23T21:41:29.687Z",
+  "manufacturer": "Fiat",
+  "class": "SUV compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 11.0s"
+  },
+  "power": "130 hp",
+  "price": "USD 22.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.fiat.com.ar/pulse"
+  }
+}

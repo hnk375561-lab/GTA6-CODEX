@@ -1,0 +1,28 @@
+{
+  "slug": "honda-city",
+  "type": "vehiculos",
+  "title": "Honda City",
+  "description": "Sedán compacto de Honda, motor 1.5L.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "honda",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:31.780Z",
+  "updatedAt": "2026-08-23T21:41:31.780Z",
+  "manufacturer": "Honda",
+  "class": "Sedán",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.4s"
+  },
+  "power": "121 hp",
+  "price": "USD 21.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.honda.com.ar/autos/city"
+  }
+}

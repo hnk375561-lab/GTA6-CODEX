@@ -1,0 +1,28 @@
+{
+  "slug": "suzuki-fronx",
+  "type": "vehiculos",
+  "title": "Suzuki Fronx",
+  "description": "SUV coupé compacta de Suzuki, motor 1.2L o turbo 1.0L Boosterjet.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "suzuki",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:32.809Z",
+  "updatedAt": "2026-08-23T21:41:32.809Z",
+  "manufacturer": "Suzuki",
+  "class": "SUV compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.5s"
+  },
+  "power": "99 hp",
+  "price": "USD 20.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.suzuki.com.ar/fronx"
+  }
+}

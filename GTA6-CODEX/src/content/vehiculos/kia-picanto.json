@@ -1,0 +1,29 @@
+{
+  "slug": "kia-picanto",
+  "type": "vehiculos",
+  "title": "Kia Picanto",
+  "description": "Hatchback urbano de entrada de Kia, motor 1.0L o 1.2L.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "kia",
+    "economico",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:32.554Z",
+  "updatedAt": "2026-08-23T21:41:32.554Z",
+  "manufacturer": "Kia",
+  "class": "Hatchback económico",
+  "customizable": false,
+  "performance": {
+    "speed": "155 km/h",
+    "acceleration": "0-100 km/h en 13.4s"
+  },
+  "power": "84 hp",
+  "price": "USD 15.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.kia.com.ar/picanto"
+  }
+}

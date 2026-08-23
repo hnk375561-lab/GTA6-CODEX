@@ -1,0 +1,28 @@
+{
+  "slug": "peugeot-2008",
+  "type": "vehiculos",
+  "title": "Peugeot 2008",
+  "description": "SUV compacta de Peugeot con motor turbo 1.2L PureTech.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "peugeot",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:28.858Z",
+  "updatedAt": "2026-08-23T21:41:28.858Z",
+  "manufacturer": "Peugeot",
+  "class": "SUV compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "188 km/h",
+    "acceleration": "0-100 km/h en 10.9s"
+  },
+  "power": "130 hp",
+  "price": "USD 27.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.peugeot.com.ar/gama-peugeot/2008/"
+  }
+}

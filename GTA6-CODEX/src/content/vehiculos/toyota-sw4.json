@@ -1,0 +1,29 @@
+{
+  "slug": "toyota-sw4",
+  "type": "vehiculos",
+  "title": "Toyota SW4",
+  "description": "SUV 4x4 de Toyota basada en la plataforma de la Hilux, motor turbodiésel 2.8L. Se comercializa como Fortuner en otros mercados.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "toyota",
+    "diesel",
+    "4x4"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:32.048Z",
+  "updatedAt": "2026-08-23T21:41:32.048Z",
+  "manufacturer": "Toyota",
+  "class": "SUV 4x4",
+  "customizable": false,
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 10.2s"
+  },
+  "power": "204 hp",
+  "price": "USD 55.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.toyota.com.ar/sw4"
+  }
+}

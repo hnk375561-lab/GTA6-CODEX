@@ -1,0 +1,28 @@
+{
+  "slug": "ford-territory",
+  "type": "vehiculos",
+  "title": "Ford Territory",
+  "description": "SUV mediana de Ford, motor turbo 1.5L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "ford",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:30.473Z",
+  "updatedAt": "2026-08-23T21:41:30.473Z",
+  "manufacturer": "Ford",
+  "class": "SUV",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.3s"
+  },
+  "power": "143 hp",
+  "price": "USD 28.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ford.com.ar/suvs/nueva-territory/"
+  }
+}

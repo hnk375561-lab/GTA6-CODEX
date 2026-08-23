@@ -1,0 +1,29 @@
+{
+  "slug": "haval-h6",
+  "type": "vehiculos",
+  "title": "Haval H6",
+  "description": "SUV mediana china de Haval (grupo GWM), motor turbo 1.5L o 2.0L, también disponible en versión híbrida (HEV).",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "haval",
+    "china",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:33.076Z",
+  "updatedAt": "2026-08-23T21:41:33.076Z",
+  "manufacturer": "Haval",
+  "class": "SUV",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 9.5s"
+  },
+  "power": "184 hp",
+  "price": "USD 33.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.gwm.com.ar/haval-h6"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "honda-hr-v",
+  "type": "vehiculos",
+  "title": "Honda HR-V",
+  "description": "SUV compacta de Honda, motor 1.5L o 2.0L según mercado.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "honda",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:31.522Z",
+  "updatedAt": "2026-08-23T21:41:31.522Z",
+  "manufacturer": "Honda",
+  "class": "SUV compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.5s"
+  },
+  "power": "143 hp",
+  "price": "USD 27.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.honda.com.ar/autos/hr-v"
+  }
+}

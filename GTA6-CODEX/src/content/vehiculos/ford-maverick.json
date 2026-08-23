@@ -1,0 +1,28 @@
+{
+  "slug": "ford-maverick",
+  "type": "vehiculos",
+  "title": "Ford Maverick",
+  "description": "Pickup compacta de Ford, disponible con motorización híbrida.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "ford",
+    "hibrido"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:30.736Z",
+  "updatedAt": "2026-08-23T21:41:30.736Z",
+  "manufacturer": "Ford",
+  "class": "Pickup compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 11.0s (versión híbrida)"
+  },
+  "power": "191 hp",
+  "price": "USD 32.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ford.com/maverick/"
+  }
+}

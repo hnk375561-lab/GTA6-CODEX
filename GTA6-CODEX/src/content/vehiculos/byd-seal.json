@@ -1,0 +1,28 @@
+{
+  "slug": "byd-seal",
+  "type": "vehiculos",
+  "title": "BYD Seal",
+  "description": "Sedán eléctrico de BYD sobre la plataforma e-Platform 3.0.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "electrico",
+    "byd"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:33.593Z",
+  "updatedAt": "2026-08-23T21:41:33.593Z",
+  "manufacturer": "BYD",
+  "class": "Sedán eléctrico",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 5.9s"
+  },
+  "power": "313 hp",
+  "price": "USD 45.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.byd.com/ar/car/seal"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "renault-duster",
+  "type": "vehiculos",
+  "title": "Renault Duster",
+  "description": "SUV mediana de Renault, motor 1.3L turbo o 1.6L naturalmente aspirado.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "renault",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:29.126Z",
+  "updatedAt": "2026-08-23T21:41:29.126Z",
+  "manufacturer": "Renault",
+  "class": "SUV",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.7s"
+  },
+  "power": "150 hp",
+  "price": "USD 24.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.renault.com.ar/vehiculos/duster.html"
+  }
+}

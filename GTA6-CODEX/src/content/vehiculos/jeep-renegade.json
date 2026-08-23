@@ -1,0 +1,28 @@
+{
+  "slug": "jeep-renegade",
+  "type": "vehiculos",
+  "title": "Jeep Renegade",
+  "description": "SUV compacta de Jeep, motor turbo 1.3L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "jeep",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:32.310Z",
+  "updatedAt": "2026-08-23T21:41:32.310Z",
+  "manufacturer": "Jeep",
+  "class": "SUV compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 9.8s"
+  },
+  "power": "177 hp",
+  "price": "USD 26.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.jeep.com.ar/renegade"
+  }
+}

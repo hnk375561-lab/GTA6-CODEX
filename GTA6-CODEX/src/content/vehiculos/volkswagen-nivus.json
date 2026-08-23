@@ -1,0 +1,28 @@
+{
+  "slug": "volkswagen-nivus",
+  "type": "vehiculos",
+  "title": "Volkswagen Nivus",
+  "description": "SUV coupé compacta de Volkswagen sobre plataforma MQB, motor turbo 1.0L o 1.4L TSI.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "volkswagen",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:28.597Z",
+  "updatedAt": "2026-08-23T21:41:28.597Z",
+  "manufacturer": "Volkswagen",
+  "class": "SUV coupé compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "188 km/h",
+    "acceleration": "0-100 km/h en 10.2s"
+  },
+  "power": "128 hp",
+  "price": "USD 26.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.vw.com.ar/es/modelos/nivus.html"
+  }
+}

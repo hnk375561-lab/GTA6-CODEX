@@ -1,0 +1,28 @@
+{
+  "slug": "toyota-yaris",
+  "type": "vehiculos",
+  "title": "Toyota Yaris",
+  "description": "Hatchback compacto de Toyota, motor 1.5L de 4 cilindros.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "toyota",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:28.060Z",
+  "updatedAt": "2026-08-23T21:41:28.060Z",
+  "manufacturer": "Toyota",
+  "class": "Hatchback",
+  "customizable": false,
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.8s"
+  },
+  "power": "106 hp",
+  "price": "USD 19.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.toyota.com/yaris/"
+  }
+}

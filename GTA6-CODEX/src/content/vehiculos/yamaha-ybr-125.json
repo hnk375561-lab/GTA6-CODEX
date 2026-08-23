@@ -1,0 +1,26 @@
+{
+  "slug": "yamaha-ybr-125",
+  "type": "vehiculos",
+  "title": "Yamaha YBR 125",
+  "description": "Moto de calle económica, motor monocilíndrico de 125cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "yamaha"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:34.410Z",
+  "updatedAt": "2026-08-23T21:41:34.410Z",
+  "manufacturer": "Yamaha",
+  "class": "Moto",
+  "customizable": false,
+  "performance": {
+    "speed": "105 km/h"
+  },
+  "power": "11 hp",
+  "price": "USD 2.800",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.yamaha-motor.com.ar/ybr-125"
+  }
+}

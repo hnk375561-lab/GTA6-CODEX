@@ -1,0 +1,28 @@
+{
+  "slug": "volkswagen-polo",
+  "type": "vehiculos",
+  "title": "Volkswagen Polo",
+  "description": "Hatchback compacto de Volkswagen sobre plataforma MQB.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "volkswagen",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:28.346Z",
+  "updatedAt": "2026-08-23T21:41:28.346Z",
+  "manufacturer": "Volkswagen",
+  "class": "Hatchback",
+  "customizable": false,
+  "performance": {
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 10.5s"
+  },
+  "power": "110 hp",
+  "price": "USD 20.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.vw.com.ar/es/modelos/polo.html"
+  }
+}

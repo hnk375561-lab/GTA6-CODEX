@@ -1,0 +1,27 @@
+{
+  "slug": "zanella-rx-150",
+  "type": "vehiculos",
+  "title": "Zanella RX 150",
+  "description": "Moto naked económica de la marca argentina Zanella, motor monocilíndrico de 150cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "zanella",
+    "argentina"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:33.849Z",
+  "updatedAt": "2026-08-23T21:41:33.849Z",
+  "manufacturer": "Zanella",
+  "class": "Moto",
+  "customizable": false,
+  "performance": {
+    "speed": "110 km/h"
+  },
+  "power": "12.5 hp",
+  "price": "USD 2.400",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.zanella.com.ar/rx-150"
+  }
+}
