@@ -56,7 +56,7 @@ export function CategoryCardMedia({ previews }: CategoryCardMediaProps) {
           {extras.map((preview, index) => (
             <div
               key={preview.src}
-              className="relative h-9 w-9 overflow-hidden rounded-full border-2 border-gta-darker/80 shadow-md"
+              className="relative h-9 w-9 overflow-hidden rounded-full border-2 border-auto-darker/80 shadow-md"
               style={{
                 transform: `rotate(${index === 0 ? -6 : 6}deg)`,
                 zIndex: extras.length - index,

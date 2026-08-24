@@ -240,7 +240,7 @@ export function EntityListExplorer({
       <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="relative w-full sm:max-w-sm">
           <svg
-            className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-gta-text-tertiary"
+            className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-auto-text-tertiary"
             width="16"
             height="16"
             viewBox="0 0 24 24"
@@ -260,14 +260,14 @@ export function EntityListExplorer({
             onChange={(e) => setQuery(e.target.value)}
             placeholder={`Buscar en ${typeLabel.toLowerCase()}...`}
             aria-label={`Buscar en ${typeLabel}`}
-            className="glass-surface w-full rounded-lg border border-gta-border py-2.5 pl-10 pr-9 text-sm text-gta-text placeholder:text-gta-text-tertiary transition-all focus:border-gta-accent focus:shadow-glow-pink focus:outline-none"
+            className="glass-surface w-full rounded-lg border border-auto-border py-2.5 pl-10 pr-9 text-sm text-auto-text placeholder:text-auto-text-tertiary transition-all focus:border-auto-accent focus:shadow-glow-pink focus:outline-none"
           />
           {query && (
             <button
               type="button"
               onClick={() => setQuery('')}
               aria-label="Limpiar búsqueda"
-              className="absolute right-2.5 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-md text-gta-text-secondary transition-colors hover:bg-gta-surface-elevated hover:text-gta-text"
+              className="absolute right-2.5 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-md text-auto-text-secondary transition-colors hover:bg-auto-surface-elevated hover:text-auto-text"
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                 <path d="M18 6 6 18M6 6l12 12" />
@@ -277,16 +277,16 @@ export function EntityListExplorer({
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
-          <label className="flex items-center gap-2 text-xs text-gta-text-secondary">
-            <span className="hidden uppercase tracking-wide text-gta-text-tertiary sm:inline">Orden</span>
+          <label className="flex items-center gap-2 text-xs text-auto-text-secondary">
+            <span className="hidden uppercase tracking-wide text-auto-text-tertiary sm:inline">Orden</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as SortOption)}
               aria-label="Ordenar resultados"
-              className="rounded-lg border border-gta-border bg-gta-card/60 px-3 py-2 text-xs font-semibold text-gta-text transition-colors hover:border-gta-border-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent"
+              className="rounded-lg border border-auto-border bg-auto-card/60 px-3 py-2 text-xs font-semibold text-auto-text transition-colors hover:border-auto-border-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
             >
               {sortOptions.map((option) => (
-                <option key={option} value={option} className="bg-gta-card text-gta-text">
+                <option key={option} value={option} className="bg-auto-card text-auto-text">
                   {SORT_LABELS[option]}
                 </option>
               ))}
@@ -295,7 +295,7 @@ export function EntityListExplorer({
 
           {isVehicleList && (
             <div
-              className="flex items-center gap-0.5 rounded-lg border border-gta-border bg-gta-card/60 p-0.5"
+              className="flex items-center gap-0.5 rounded-lg border border-auto-border bg-auto-card/60 p-0.5"
               role="group"
               aria-label="Tipo de vista"
             >
@@ -307,8 +307,8 @@ export function EntityListExplorer({
                 className={cn(
                   'flex h-7 w-7 items-center justify-center rounded-md transition-colors',
                   viewMode === 'grid'
-                    ? 'bg-gta-accent/15 text-gta-accent'
-                    : 'text-gta-text-secondary hover:text-gta-text'
+                    ? 'bg-auto-accent/15 text-auto-accent'
+                    : 'text-auto-text-secondary hover:text-auto-text'
                 )}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -326,8 +326,8 @@ export function EntityListExplorer({
                 className={cn(
                   'flex h-7 w-7 items-center justify-center rounded-md transition-colors',
                   viewMode === 'catalogo'
-                    ? 'bg-gta-accent/15 text-gta-accent'
-                    : 'text-gta-text-secondary hover:text-gta-text'
+                    ? 'bg-auto-accent/15 text-auto-accent'
+                    : 'text-auto-text-secondary hover:text-auto-text'
                 )}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
@@ -348,11 +348,11 @@ export function EntityListExplorer({
           filtro vive en un único nivel con su propia etiqueta y un borde
           superior que lo desprende visualmente de la fila de utilidad. */}
       <div
-        className="mb-6 flex flex-wrap items-center gap-2 border-t border-gta-border pt-4"
+        className="mb-6 flex flex-wrap items-center gap-2 border-t border-auto-border pt-4"
         role="group"
         aria-label="Filtrar resultados"
       >
-        <span className="text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+        <span className="text-[11px] font-semibold uppercase tracking-wide text-auto-text-tertiary">
           Filtros
         </span>
 
@@ -365,18 +365,18 @@ export function EntityListExplorer({
             className={cn(
               'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
               status === key
-                ? 'border-gta-accent bg-gta-accent/15 text-gta-accent'
-                : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
+                ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
+                : 'border-auto-border text-auto-text-secondary hover:border-auto-border-strong hover:text-auto-text'
             )}
           >
             {key === 'todos' ? 'Todos' : STATUS_LABELS[key]}
-            <span className="ml-1.5 text-gta-text-secondary/80">{counts[key]}</span>
+            <span className="ml-1.5 text-auto-text-secondary/80">{counts[key]}</span>
           </button>
         ))}
 
         {classOptions.length > 0 && (
           <>
-            <span className="ml-1 text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+            <span className="ml-1 text-[11px] font-semibold uppercase tracking-wide text-auto-text-tertiary">
               Clase
             </span>
             {classOptions.map(({ value, count }) => (
@@ -386,14 +386,14 @@ export function EntityListExplorer({
                 onClick={() => setSelectedClass((prev) => (prev === value ? null : value))}
                 aria-pressed={selectedClass === value}
                 className={cn(
-                  'rounded-full border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent',
+                  'rounded-full border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                   selectedClass === value
-                    ? 'border-gta-accent-orange bg-gta-accent-orange/15 text-gta-accent-orange'
-                    : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
+                    ? 'border-auto-accent-orange bg-auto-accent-orange/15 text-auto-accent-orange'
+                    : 'border-auto-border text-auto-text-secondary hover:border-auto-border-strong hover:text-auto-text'
                 )}
               >
                 {value.replace(/-/g, ' ')}
-                <span className="ml-1 text-gta-text-secondary/80">{count}</span>
+                <span className="ml-1 text-auto-text-secondary/80">{count}</span>
               </button>
             ))}
           </>
@@ -401,7 +401,7 @@ export function EntityListExplorer({
 
         {tagOptions.length > 0 && (
           <>
-            <span className="ml-1 text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+            <span className="ml-1 text-[11px] font-semibold uppercase tracking-wide text-auto-text-tertiary">
               Tags
             </span>
             {tagOptions.map(({ tag, count }) => (
@@ -411,14 +411,14 @@ export function EntityListExplorer({
                 onClick={() => toggleTag(tag)}
                 aria-pressed={selectedTags.includes(tag)}
                 className={cn(
-                  'rounded-full border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent',
+                  'rounded-full border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                   selectedTags.includes(tag)
-                    ? 'border-gta-accent bg-gta-accent/15 text-gta-accent'
-                    : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
+                    ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
+                    : 'border-auto-border text-auto-text-secondary hover:border-auto-border-strong hover:text-auto-text'
                 )}
               >
                 {tag.replace(/-/g, ' ')}
-                <span className="ml-1 text-gta-text-secondary/80">{count}</span>
+                <span className="ml-1 text-auto-text-secondary/80">{count}</span>
               </button>
             ))}
           </>
@@ -428,7 +428,7 @@ export function EntityListExplorer({
           <button
             type="button"
             onClick={clearAttributeFilters}
-            className="ml-1 flex items-center gap-1 rounded-full border border-transparent px-3 py-1 text-[11px] font-semibold text-gta-text-secondary transition-colors hover:text-gta-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent"
+            className="ml-1 flex items-center gap-1 rounded-full border border-transparent px-3 py-1 text-[11px] font-semibold text-auto-text-secondary transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
           >
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
               <path d="M18 6 6 18M6 6l12 12" />
@@ -439,37 +439,37 @@ export function EntityListExplorer({
       </div>
 
       {isFiltering && (
-        <p className="mb-5 text-sm text-gta-text-secondary" aria-live="polite">
+        <p className="mb-5 text-sm text-auto-text-secondary" aria-live="polite">
           {filtered.length} {filtered.length === 1 ? 'resultado' : 'resultados'}
           {query.trim() && <> para &ldquo;{query}&rdquo;</>}
         </p>
       )}
 
       {filtered.length === 0 ? (
-        <div className="rounded-lg border border-gta-border bg-gta-surface px-6 py-10 text-center">
+        <div className="rounded-lg border border-auto-border bg-auto-surface px-6 py-10 text-center">
           {entities.length === 0 ? (
             <>
-              <p className="mb-1 font-semibold text-gta-text">
+              <p className="mb-1 font-semibold text-auto-text">
                 Todavía no hay {typeLabel.toLowerCase()} documentados
               </p>
-              <p className="mb-4 text-sm text-gta-text-secondary">
+              <p className="mb-4 text-sm text-auto-text-secondary">
                 Esta categoría está vacía por ahora — estamos incorporando contenido a medida que se
                 confirma. Volvé pronto.
               </p>
-              <Link href="/" className="text-sm font-semibold text-gta-accent hover:underline">
+              <Link href="/" className="text-sm font-semibold text-auto-accent hover:underline">
                 Explorar otras categorías
               </Link>
             </>
           ) : (
             <>
-              <p className="mb-1 font-semibold text-gta-text">Sin resultados</p>
-              <p className="mb-4 text-sm text-gta-text-secondary">
+              <p className="mb-1 font-semibold text-auto-text">Sin resultados</p>
+              <p className="mb-4 text-sm text-auto-text-secondary">
                 Probá con otro término de búsqueda o quitá el filtro de estado.
               </p>
               <button
                 type="button"
                 onClick={clearAllFilters}
-                className="text-sm font-semibold text-gta-accent hover:underline"
+                className="text-sm font-semibold text-auto-accent hover:underline"
               >
                 Limpiar filtros
               </button>
@@ -530,7 +530,7 @@ export function EntityListExplorer({
           <button
             type="button"
             onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
-            className="rounded-full border border-gta-border px-5 py-2.5 text-sm font-semibold text-gta-text-secondary transition-colors hover:border-gta-accent hover:text-gta-accent"
+            className="rounded-full border border-auto-border px-5 py-2.5 text-sm font-semibold text-auto-text-secondary transition-colors hover:border-auto-accent hover:text-auto-accent"
           >
             Cargar más ({filtered.length - visibleCount} restantes)
           </button>

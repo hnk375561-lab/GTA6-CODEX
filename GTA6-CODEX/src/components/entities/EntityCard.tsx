@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { Entity, EntityType, Trailer } from '@/types'
+import { Entity, EntityType } from '@/types'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
@@ -97,15 +97,6 @@ function MiniIcon({ name }: { name: 'clock' | 'calendar' | 'link' | 'play' | 'sc
  * esos 7 tipos (Fase 8, etapa A).
  */
 function getQuickFacts(entity: Entity): Array<{ label: string; value: string }> {
-  if (entity.type === EntityType.CHARACTER) {
-    const facts: Array<{ label: string; value: string }> = []
-    if (entity.faction) facts.push({ label: 'Facción', value: entity.faction })
-    if (entity.alias && entity.alias.length > 0) {
-      facts.push({ label: 'Alias', value: entity.alias[0] })
-    }
-    return facts
-  }
-
   if (entity.type === EntityType.VEHICLE) {
     const facts: Array<{ label: string; value: string }> = []
     if (entity.manufacturer) facts.push({ label: 'Fabricante', value: entity.manufacturer })
@@ -113,27 +104,7 @@ function getQuickFacts(entity: Entity): Array<{ label: string; value: string }> 
     return facts
   }
 
-  if (entity.type === EntityType.LOCATION) {
-    const facts: Array<{ label: string; value: string }> = []
-    if (entity.region) facts.push({ label: 'Región', value: entity.region })
-    if (entity.district) facts.push({ label: 'Distrito', value: entity.district })
-    return facts
-  }
-
-  if (entity.type === EntityType.MISSION) {
-    const facts: Array<{ label: string; value: string }> = []
-    if (entity.giver) facts.push({ label: 'Encargado por', value: entity.giver })
-    if (entity.reward) facts.push({ label: 'Recompensa', value: entity.reward })
-    return facts
-  }
-
-  // Trailer ya tiene su propio bloque de datos dedicado más abajo en la
-  // card (escenas, duración, fecha) — un quick-fact genérico acá sería
-  // redundante/ruido, mismo criterio que ya usa `EntityMetadata`.
-  if (entity.type === EntityType.TRAILER) return []
-
-  // Resto de tipos (hoy: armas, actividades, organizaciones, negocios,
-  // objetos, noticias, guías — los 7 `GenericEntity` sin rama propia
+  // Resto de tipos (hoy: noticias, guías — `GenericEntity` sin rama propia
   // arriba): hasta 2 campos data-driven, reutilizando exactamente la
   // misma heurística que ya alimenta la ficha técnica completa en
   // `EntityMetadata`/`GenericEntityMetadata` (ver `lib/entity-fields.ts`).
@@ -234,9 +205,9 @@ function CompareCheckbox({
         // tamaño de toque en mobile. `z-20` lo deja por encima del link
         // estirado que cubre toda la card (ver más abajo): sin esto, el
         // click al checkbox terminaría navegando en vez de tildarlo.
-        'relative z-20 flex h-6 w-6 shrink-0 items-center justify-center rounded-md border backdrop-blur-sm transition-colors before:absolute before:left-1/2 before:top-1/2 before:h-11 before:w-11 before:-translate-x-1/2 before:-translate-y-1/2 before:content-[""] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent',
+        'relative z-20 flex h-6 w-6 shrink-0 items-center justify-center rounded-md border backdrop-blur-sm transition-colors before:absolute before:left-1/2 before:top-1/2 before:h-11 before:w-11 before:-translate-x-1/2 before:-translate-y-1/2 before:content-[""] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
         checked
-          ? 'border-gta-accent bg-gta-accent text-white'
+          ? 'border-auto-accent bg-auto-accent text-white'
           : 'border-white/25 bg-black/40 text-transparent hover:border-white/50',
         disabled && !checked && 'cursor-not-allowed opacity-40'
       )}
@@ -286,8 +257,6 @@ export function EntityCard({
    *  translateY + glow) para no pisar esa transición existente: acá se
    *  compone un `perspective()+rotateX+rotateY` en un wrapper propio. */
   const tiltRef = useRef<HTMLDivElement>(null)
-  const isTrailer = entity.type === EntityType.TRAILER && 'scenes' in entity
-  const trailer = isTrailer ? (entity as Trailer) : null
   const quickFacts = getQuickFacts(entity)
   const resolvedRelationCount = relationCount ?? entity.relations?.length ?? 0
   const resolvedTypeLabel = typeLabel ?? ENTITY_TYPE_LABELS[entity.type]
@@ -365,7 +334,7 @@ export function EntityCard({
     return (
       <div
         className={cn(
-          'group relative flex items-center gap-4 rounded-xl border border-gta-border bg-gta-card p-3 shadow-gta-sm transition-colors duration-300 hover:border-gta-accent/60 hover:shadow-gta-md sm:p-4',
+          'group relative flex items-center gap-4 rounded-xl border border-auto-border bg-auto-card p-3 shadow-auto-sm transition-colors duration-300 hover:border-auto-accent/60 hover:shadow-auto-md sm:p-4',
           className
         )}
       >
@@ -379,7 +348,7 @@ export function EntityCard({
             su propio click sin disparar la navegación. */}
         <Link
           href={`/${entity.type}/${entity.slug}`}
-          className="absolute inset-0 z-10 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gta-accent"
+          className="absolute inset-0 z-10 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
         >
           <span className="sr-only">Ver ficha de {entity.title}</span>
         </Link>
@@ -420,18 +389,18 @@ export function EntityCard({
             </Badge>
             {entity.featured && <Badge variant="tag">Destacado</Badge>}
           </div>
-          <h2 className="truncate text-base font-bold text-gta-text transition-colors group-hover:text-gta-accent sm:text-lg">
+          <h2 className="truncate text-base font-bold text-auto-text transition-colors group-hover:text-auto-accent sm:text-lg">
             {entity.title}
           </h2>
-          <p className="hidden truncate text-xs text-gta-text-secondary sm:block">{entity.description}</p>
+          <p className="hidden truncate text-xs text-auto-text-secondary sm:block">{entity.description}</p>
         </div>
 
         {quickFacts.length > 0 && (
           <dl className="hidden shrink-0 flex-col gap-0.5 text-xs md:flex">
             {quickFacts.map((fact) => (
               <div key={fact.label} className="flex items-center gap-1.5 whitespace-nowrap">
-                <dt className="text-gta-text-secondary">{fact.label}:</dt>
-                <dd className="font-medium text-gta-text">{fact.value}</dd>
+                <dt className="text-auto-text-secondary">{fact.label}:</dt>
+                <dd className="font-medium text-auto-text">{fact.value}</dd>
               </div>
             ))}
           </dl>
@@ -443,9 +412,9 @@ export function EntityCard({
               const value = entity.performance?.[key]
               if (!value) return null
               return (
-                <div key={key} className="h-1 w-full overflow-hidden rounded-full bg-gta-border" title={`${key}: ${value}`}>
+                <div key={key} className="h-1 w-full overflow-hidden rounded-full bg-auto-border" title={`${key}: ${value}`}>
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-gta-accent to-gta-accent-orange"
+                    className="h-full rounded-full bg-gradient-to-r from-auto-accent to-auto-accent-orange"
                     style={{ width: statBarWidth(value) }}
                   />
                 </div>
@@ -456,7 +425,7 @@ export function EntityCard({
 
         <span
           aria-hidden="true"
-          className="hidden shrink-0 items-center gap-1 text-xs font-semibold uppercase tracking-wide text-gta-accent transition-transform duration-200 group-hover:translate-x-0.5 sm:inline-flex"
+          className="hidden shrink-0 items-center gap-1 text-xs font-semibold uppercase tracking-wide text-auto-accent transition-transform duration-200 group-hover:translate-x-0.5 sm:inline-flex"
         >
           Ver ficha →
         </span>
@@ -506,7 +475,7 @@ export function EntityCard({
           del contenido (decorativo, no interactivo) de la card. */}
       <Link
         href={`/${entity.type}/${entity.slug}`}
-        className="absolute inset-0 z-10 rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gta-accent"
+        className="absolute inset-0 z-10 rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
       >
         <span className="sr-only">Ver ficha de {entity.title}</span>
       </Link>
@@ -533,7 +502,7 @@ export function EntityCard({
               la lectura "expediente" de la card. Ancla siempre a la misma
               posición (top-0 left-5) para que el grid no "salte" entre
               tarjetas con y sin otros overlays. */}
-          <span className="absolute left-5 top-0 z-10 inline-flex items-center gap-1.5 rounded-b-lg border border-t-0 border-gta-border-strong bg-gta-darker px-3 py-1.5 font-mono text-[10px] uppercase tracking-wide text-gta-text-tertiary transition-colors duration-300 group-hover:border-gta-accent group-hover:text-gta-accent-strong">
+          <span className="absolute left-5 top-0 z-10 inline-flex items-center gap-1.5 rounded-b-lg border border-t-0 border-auto-border-strong bg-auto-darker px-3 py-1.5 font-mono text-[10px] uppercase tracking-wide text-auto-text-tertiary transition-colors duration-300 group-hover:border-auto-accent group-hover:text-auto-accent-strong">
             <CategoryIcon type={entity.type} className="h-2.5 w-2.5" />
             {resolvedTypeLabel}
           </span>
@@ -617,18 +586,18 @@ export function EntityCard({
             <Badge variant="status" status={entity.status}>
               {STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status}
             </Badge>
-            <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+            <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-auto-text-tertiary">
               <CategoryIcon type={entity.type} className="h-3 w-3" />
               {resolvedTypeLabel}
             </span>
             {entity.featured && <Badge variant="tag">Destacado</Badge>}
           </div>
 
-          <h2 className={cn('font-bold text-gta-text transition-colors group-hover:text-gta-accent', size === 'hero' ? 'text-2xl sm:text-3xl' : 'text-xl')}>
+          <h2 className={cn('font-bold text-auto-text transition-colors group-hover:text-auto-accent', size === 'hero' ? 'text-2xl sm:text-3xl' : 'text-xl')}>
             {entity.title}
           </h2>
 
-          <p className={cn('text-gta-text-secondary', size === 'hero' ? 'line-clamp-4 text-[15px] sm:text-base' : 'line-clamp-3 text-sm')}>
+          <p className={cn('text-auto-text-secondary', size === 'hero' ? 'line-clamp-4 text-[15px] sm:text-base' : 'line-clamp-3 text-sm')}>
             {entity.description}
           </p>
 
@@ -637,20 +606,20 @@ export function EntityCard({
                simple divisor) + columnas separadas por hairline + valores en
                mono con tabular-nums, mismo lenguaje que EvidenceBlock en la
                ficha completa (Fase "Expediente", punto 1). */
-            <dl className="grid grid-flow-col auto-cols-fr divide-x divide-gta-border border-y border-dashed border-gta-border-strong py-2.5">
+            <dl className="grid grid-flow-col auto-cols-fr divide-x divide-auto-border border-y border-dashed border-auto-border-strong py-2.5">
               {quickFacts.map((fact) => (
                 <div key={fact.label} className="min-w-0 px-3 first:pl-0">
-                  <dt className="mb-0.5 truncate font-mono text-[9px] uppercase tracking-wide text-gta-text-tertiary">
+                  <dt className="mb-0.5 truncate font-mono text-[9px] uppercase tracking-wide text-auto-text-tertiary">
                     {fact.label}
                   </dt>
-                  <dd className="truncate font-mono text-xs font-medium tabular-nums text-gta-text">{fact.value}</dd>
+                  <dd className="truncate font-mono text-xs font-medium tabular-nums text-auto-text">{fact.value}</dd>
                 </div>
               ))}
             </dl>
           )}
 
           {isTrailer && trailer && (
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-gta-border pt-3 text-xs text-gta-text-secondary">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-auto-border pt-3 text-xs text-auto-text-secondary">
               <span className="inline-flex items-center gap-1">
                 <MiniIcon name="scenes" />
                 {trailer.scenes.length} escenas
@@ -672,16 +641,16 @@ export function EntityCard({
             </div>
           )}
 
-          <div className="mt-auto flex items-center justify-between gap-2 border-t border-gta-border pt-3">
+          <div className="mt-auto flex items-center justify-between gap-2 border-t border-auto-border pt-3">
             {resolvedRelationCount > 0 ? (
-              <span className="inline-flex items-center gap-1.5 text-xs text-gta-text-secondary">
+              <span className="inline-flex items-center gap-1.5 text-xs text-auto-text-secondary">
                 <MiniIcon name="link" />
                 {resolvedRelationCount} {resolvedRelationCount === 1 ? 'conexión' : 'conexiones'}
               </span>
             ) : (
               <span aria-hidden="true" />
             )}
-            <span className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold uppercase tracking-wide text-gta-accent transition-transform duration-200 group-hover:translate-x-0.5">
+            <span className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold uppercase tracking-wide text-auto-accent transition-transform duration-200 group-hover:translate-x-0.5">
               Ver ficha
               <span aria-hidden="true">→</span>
             </span>

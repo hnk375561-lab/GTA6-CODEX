@@ -13,13 +13,13 @@ export function StatBar({ label, value }: { label: string; value?: string }) {
   return (
     <div>
       <div className="mb-1 flex items-center justify-between text-xs">
-        <span className="text-gta-text-secondary">{label}</span>
-        <span className="font-medium text-gta-text">{value}</span>
+        <span className="text-auto-text-secondary">{label}</span>
+        <span className="font-medium text-auto-text">{value}</span>
       </div>
       {scale !== null && (
-        <div className="h-1.5 w-full overflow-hidden rounded-full bg-gta-border">
+        <div className="h-1.5 w-full overflow-hidden rounded-full bg-auto-border">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-gta-accent to-gta-accent-orange transition-[width] duration-700 ease-[var(--ease-premium)]"
+            className="h-full rounded-full bg-gradient-to-r from-auto-accent to-auto-accent-orange transition-[width] duration-700 ease-[var(--ease-premium)]"
             style={{ width: `${(scale / 5) * 100}%` }}
           />
         </div>

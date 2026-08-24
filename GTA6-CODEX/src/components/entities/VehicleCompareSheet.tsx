@@ -34,17 +34,17 @@ export function VehicleCompareBar({ selected, imageBySlug, onRemove, onClear, on
       role="region"
       aria-label="Comparador de vehículos"
     >
-      <div className="glass-surface flex w-full max-w-2xl flex-wrap items-center gap-3 rounded-2xl border border-gta-border bg-gta-card/95 p-3 shadow-gta-md backdrop-blur-md sm:gap-4 sm:p-4">
+      <div className="glass-surface flex w-full max-w-2xl flex-wrap items-center gap-3 rounded-2xl border border-auto-border bg-auto-card/95 p-3 shadow-auto-md backdrop-blur-md sm:gap-4 sm:p-4">
         <div className="flex flex-1 items-center gap-2">
           {selected.map((v) => {
             const img = imageBySlug?.[`vehiculos/${v.slug}`]
             return (
               <div key={v.slug} className="group relative">
-                <div className="h-11 w-11 shrink-0 overflow-hidden rounded-lg border border-gta-border bg-gta-surface sm:h-12 sm:w-12">
+                <div className="h-11 w-11 shrink-0 overflow-hidden rounded-lg border border-auto-border bg-auto-surface sm:h-12 sm:w-12">
                   {img?.src ? (
                     <Image src={img.src} alt={v.title} width={48} height={48} className="h-full w-full object-cover" />
                   ) : (
-                    <div className="flex h-full w-full items-center justify-center text-[9px] font-semibold uppercase text-gta-text-tertiary">
+                    <div className="flex h-full w-full items-center justify-center text-[9px] font-semibold uppercase text-auto-text-tertiary">
                       {v.title.slice(0, 2)}
                     </div>
                   )}
@@ -53,7 +53,7 @@ export function VehicleCompareBar({ selected, imageBySlug, onRemove, onClear, on
                   type="button"
                   onClick={() => onRemove(v.slug)}
                   aria-label={`Quitar ${v.title} de la comparación`}
-                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-gta-border bg-gta-dark text-gta-text-secondary opacity-0 transition-opacity hover:text-gta-accent group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none"
+                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-auto-border bg-auto-dark text-auto-text-secondary opacity-0 transition-opacity hover:text-auto-accent group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none"
                 >
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />
@@ -62,7 +62,7 @@ export function VehicleCompareBar({ selected, imageBySlug, onRemove, onClear, on
               </div>
             )
           })}
-          <span className="ml-1 text-xs text-gta-text-secondary">
+          <span className="ml-1 text-xs text-auto-text-secondary">
             {selected.length}/{MAX_COMPARE} seleccionados
           </span>
         </div>
@@ -71,7 +71,7 @@ export function VehicleCompareBar({ selected, imageBySlug, onRemove, onClear, on
           <button
             type="button"
             onClick={onClear}
-            className="rounded-lg px-3 py-2 text-xs font-semibold text-gta-text-secondary transition-colors hover:text-gta-text"
+            className="rounded-lg px-3 py-2 text-xs font-semibold text-auto-text-secondary transition-colors hover:text-auto-text"
           >
             Limpiar
           </button>
@@ -79,7 +79,7 @@ export function VehicleCompareBar({ selected, imageBySlug, onRemove, onClear, on
             type="button"
             onClick={onOpen}
             disabled={selected.length < 2}
-            className="rounded-lg bg-gta-accent px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-glow-pink transition-transform disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none enabled:hover:scale-[1.03]"
+            className="rounded-lg bg-auto-accent px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-glow-pink transition-transform disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none enabled:hover:scale-[1.03]"
           >
             Comparar
           </button>
@@ -125,7 +125,7 @@ export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: Vehicle
           const img = imageBySlug?.[`vehiculos/${v.slug}`]
           return (
             <div key={v.slug} className="flex flex-col">
-              <div className="relative mb-3 aspect-[4/3] overflow-hidden rounded-xl border border-gta-border bg-gta-surface">
+              <div className="relative mb-3 aspect-[4/3] overflow-hidden rounded-xl border border-auto-border bg-auto-surface">
                 {img?.src ? (
                   <Image
                     src={img.src}
@@ -140,7 +140,7 @@ export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: Vehicle
                     className="object-cover"
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center text-xs text-gta-text-tertiary">
+                  <div className="flex h-full w-full items-center justify-center text-xs text-auto-text-tertiary">
                     Sin imagen
                   </div>
                 )}
@@ -159,22 +159,22 @@ export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: Vehicle
               </div>
               <Link
                 href={`/vehiculos/${v.slug}`}
-                className="mb-1 line-clamp-2 text-sm font-bold text-gta-text transition-colors hover:text-gta-accent"
+                className="mb-1 line-clamp-2 text-sm font-bold text-auto-text transition-colors hover:text-auto-accent"
               >
                 {v.title}
               </Link>
               {v.manufacturer && (
-                <p className="text-xs text-gta-text-secondary">{v.manufacturer}</p>
+                <p className="text-xs text-auto-text-secondary">{v.manufacturer}</p>
               )}
             </div>
           )
         })}
       </div>
 
-      <div className="mt-6 space-y-5 border-t border-gta-border pt-5">
+      <div className="mt-6 space-y-5 border-t border-auto-border pt-5">
         <CompareRow label="Clase">
           {vehicles.map((v) => (
-            <span key={v.slug} className="text-sm capitalize text-gta-text">
+            <span key={v.slug} className="text-sm capitalize text-auto-text">
               {v.class ? v.class.replace(/-/g, ' ') : '—'}
             </span>
           ))}
@@ -182,7 +182,7 @@ export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: Vehicle
 
         <CompareRow label="Personalizable">
           {vehicles.map((v) => (
-            <span key={v.slug} className="text-sm text-gta-text">
+            <span key={v.slug} className="text-sm text-auto-text">
               {v.customizable ? 'Sí' : v.customizable === false ? 'No' : '—'}
             </span>
           ))}
@@ -194,7 +194,7 @@ export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: Vehicle
               <div key={v.slug}>
                 <StatBar label={row.label} value={v.performance?.[row.key]} />
                 {!v.performance?.[row.key] && (
-                  <span className="text-xs text-gta-text-tertiary">Sin dato</span>
+                  <span className="text-xs text-auto-text-tertiary">Sin dato</span>
                 )}
               </div>
             ))}
@@ -203,7 +203,7 @@ export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: Vehicle
 
         <CompareRow label="Conducido por">
           {vehicles.map((v) => (
-            <span key={v.slug} className="text-sm text-gta-text">
+            <span key={v.slug} className="text-sm text-auto-text">
               {v.driven_by && v.driven_by.length > 0 ? v.driven_by.join(', ') : '—'}
             </span>
           ))}
@@ -246,23 +246,23 @@ export function VehicleCompareSheet({ open, vehicles, imageBySlug, onClose, onRe
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-gta-dark/80 backdrop-blur-sm sm:items-center sm:p-6"
+      className="fixed inset-0 z-50 flex items-end justify-center bg-auto-dark/80 backdrop-blur-sm sm:items-center sm:p-6"
       role="dialog"
       aria-modal="true"
       aria-label="Comparador de vehículos"
       onClick={onClose}
     >
       <div
-        className="max-h-[92vh] w-full max-w-4xl overflow-y-auto rounded-t-2xl border border-gta-border bg-gta-card shadow-gta-md sm:rounded-2xl"
+        className="max-h-[92vh] w-full max-w-4xl overflow-y-auto rounded-t-2xl border border-auto-border bg-auto-card shadow-auto-md sm:rounded-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-gta-border bg-gta-card/95 px-5 py-4 backdrop-blur-md">
-          <h2 className="text-lg font-bold text-gta-text">Comparar vehículos</h2>
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-auto-border bg-auto-card/95 px-5 py-4 backdrop-blur-md">
+          <h2 className="text-lg font-bold text-auto-text">Comparar vehículos</h2>
           <button
             type="button"
             onClick={onClose}
             aria-label="Cerrar comparador"
-            className="flex h-8 w-8 items-center justify-center rounded-lg text-gta-text-secondary transition-colors hover:bg-gta-surface-elevated hover:text-gta-text"
+            className="flex h-8 w-8 items-center justify-center rounded-lg text-auto-text-secondary transition-colors hover:bg-auto-surface-elevated hover:text-auto-text"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
               <path d="M18 6 6 18M6 6l12 12" />
@@ -289,7 +289,7 @@ function CompareRow({
 }) {
   return (
     <div>
-      <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">{label}</p>
+      <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-auto-text-tertiary">{label}</p>
       <div
         className={cn('grid gap-4', align === 'center' && 'items-center')}
         style={{ gridTemplateColumns: `repeat(${Array.isArray(children) ? children.length : 1}, minmax(0, 1fr))` }}

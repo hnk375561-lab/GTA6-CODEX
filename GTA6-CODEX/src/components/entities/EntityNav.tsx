@@ -53,47 +53,47 @@ export async function EntityNav({ type, currentSlug }: EntityNavProps) {
 
   const typeLabelLower = ENTITY_TYPE_LABELS[type].toLowerCase()
   const focusRing =
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gta-dark'
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent focus-visible:ring-offset-2 focus-visible:ring-offset-auto-dark'
 
   return (
     <nav
       aria-label={`Navegación entre ${typeLabelLower}`}
-      className="grid grid-cols-1 items-stretch gap-3 border-t border-gta-border pt-8 sm:grid-cols-[1fr_auto_1fr] sm:gap-4"
+      className="grid grid-cols-1 items-stretch gap-3 border-t border-auto-border pt-8 sm:grid-cols-[1fr_auto_1fr] sm:gap-4"
     >
       {prev ? (
         <Link
           href={`/${type}/${prev.slug}`}
-          className={`group flex flex-col justify-center rounded-xl border border-gta-border bg-gta-card/60 px-5 py-4 transition-colors hover:border-gta-accent/60 hover:bg-gta-darker/60 ${focusRing}`}
+          className={`group flex flex-col justify-center rounded-xl border border-auto-border bg-auto-card/60 px-5 py-4 transition-colors hover:border-auto-accent/60 hover:bg-auto-darker/60 ${focusRing}`}
         >
-          <span className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+          <span className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-auto-text-tertiary">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m15 18-6-6 6-6" />
             </svg>
             Anterior
           </span>
-          <span className="font-display text-sm font-semibold text-gta-text transition-colors group-hover:text-gta-accent-strong">
+          <span className="font-display text-sm font-semibold text-auto-text transition-colors group-hover:text-auto-accent-strong">
             {prev.title}
           </span>
         </Link>
       ) : (
         <div
           aria-disabled="true"
-          className="flex cursor-not-allowed flex-col justify-center rounded-xl border border-gta-border/40 bg-gta-card/20 px-5 py-4 opacity-40"
+          className="flex cursor-not-allowed flex-col justify-center rounded-xl border border-auto-border/40 bg-auto-card/20 px-5 py-4 opacity-40"
         >
-          <span className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+          <span className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-auto-text-tertiary">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m15 18-6-6 6-6" />
             </svg>
             Anterior
           </span>
-          <span className="font-display text-sm font-semibold text-gta-text-tertiary">
+          <span className="font-display text-sm font-semibold text-auto-text-tertiary">
             No hay {typeLabelLower} anterior
           </span>
         </div>
       )}
 
-      <div className="flex items-center justify-center rounded-xl border border-gta-border/60 bg-gta-surface/40 px-4 py-4 text-center">
-        <span className="font-mono text-xs text-gta-text-secondary" aria-label={`Posición ${index + 1} de ${sorted.length}`}>
+      <div className="flex items-center justify-center rounded-xl border border-auto-border/60 bg-auto-surface/40 px-4 py-4 text-center">
+        <span className="font-mono text-xs text-auto-text-secondary" aria-label={`Posición ${index + 1} de ${sorted.length}`}>
           {index + 1} / {sorted.length}
         </span>
       </div>
@@ -101,30 +101,30 @@ export async function EntityNav({ type, currentSlug }: EntityNavProps) {
       {next ? (
         <Link
           href={`/${type}/${next.slug}`}
-          className={`group flex flex-col items-end justify-center rounded-xl border border-gta-border bg-gta-card/60 px-5 py-4 text-right transition-colors hover:border-gta-accent/60 hover:bg-gta-darker/60 ${focusRing}`}
+          className={`group flex flex-col items-end justify-center rounded-xl border border-auto-border bg-auto-card/60 px-5 py-4 text-right transition-colors hover:border-auto-accent/60 hover:bg-auto-darker/60 ${focusRing}`}
         >
-          <span className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+          <span className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-auto-text-tertiary">
             Siguiente
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m9 18 6-6-6-6" />
             </svg>
           </span>
-          <span className="font-display text-sm font-semibold text-gta-text transition-colors group-hover:text-gta-accent-strong">
+          <span className="font-display text-sm font-semibold text-auto-text transition-colors group-hover:text-auto-accent-strong">
             {next.title}
           </span>
         </Link>
       ) : (
         <div
           aria-disabled="true"
-          className="flex cursor-not-allowed flex-col items-end justify-center rounded-xl border border-gta-border/40 bg-gta-card/20 px-5 py-4 text-right opacity-40"
+          className="flex cursor-not-allowed flex-col items-end justify-center rounded-xl border border-auto-border/40 bg-auto-card/20 px-5 py-4 text-right opacity-40"
         >
-          <span className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+          <span className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-auto-text-tertiary">
             Siguiente
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m9 18 6-6-6-6" />
             </svg>
           </span>
-          <span className="font-display text-sm font-semibold text-gta-text-tertiary">
+          <span className="font-display text-sm font-semibold text-auto-text-tertiary">
             No hay {typeLabelLower} siguiente
           </span>
         </div>

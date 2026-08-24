@@ -22,12 +22,12 @@ const LEVEL_META: Record<EvidenceLevel, { label: string; icon: string; className
   respaldado: {
     label: 'Respaldado por fuentes secundarias',
     icon: '◈',
-    className: 'border-gta-accent-orange/25 bg-gta-accent-orange/10 text-gta-accent-orange',
+    className: 'border-auto-accent-orange/25 bg-auto-accent-orange/10 text-auto-accent-orange',
   },
   especulativo: {
     label: 'Especulativo',
     icon: '?',
-    className: 'border-gta-accent-warning/25 bg-gta-accent-warning/10 text-gta-accent-warning',
+    className: 'border-auto-accent-warning/25 bg-auto-accent-warning/10 text-auto-accent-warning',
   },
 }
 
@@ -44,11 +44,11 @@ export function EvidenceBlock({ evidence }: EvidenceBlockProps) {
   const meta = LEVEL_META[evidence.level as EvidenceLevel] ?? {
     label: evidence.level,
     icon: '·',
-    className: 'border-gta-border bg-gta-card text-gta-text-secondary',
+    className: 'border-auto-border bg-auto-card text-auto-text-secondary',
   }
 
   return (
-    <div className="rounded-lg border border-gta-border bg-gta-darker/60 p-4">
+    <div className="rounded-lg border border-auto-border bg-auto-darker/60 p-4">
       <div className="mb-3 flex items-center gap-2">
         <span
           className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold ${meta.className}`}
@@ -61,25 +61,25 @@ export function EvidenceBlock({ evidence }: EvidenceBlockProps) {
       <dl className="space-y-2.5 text-sm">
         {evidence.primarySource && (
           <div>
-            <dt className="mb-0.5 text-xs font-semibold uppercase tracking-wide text-gta-text-secondary">
+            <dt className="mb-0.5 text-xs font-semibold uppercase tracking-wide text-auto-text-secondary">
               Fuente primaria
             </dt>
-            <dd className="text-gta-text">{evidence.primarySource}</dd>
+            <dd className="text-auto-text">{evidence.primarySource}</dd>
           </div>
         )}
         {evidence.secondarySource && (
           <div>
-            <dt className="mb-0.5 text-xs font-semibold uppercase tracking-wide text-gta-text-secondary">
+            <dt className="mb-0.5 text-xs font-semibold uppercase tracking-wide text-auto-text-secondary">
               Fuente secundaria
             </dt>
-            <dd className="text-gta-text-secondary">{evidence.secondarySource}</dd>
+            <dd className="text-auto-text-secondary">{evidence.secondarySource}</dd>
           </div>
         )}
       </dl>
 
       {evidence.note && (
-        <details className="group mt-3 border-t border-gta-border pt-3">
-          <summary className="cursor-pointer list-none text-xs font-semibold text-gta-accent transition-colors hover:text-gta-accent-orange">
+        <details className="group mt-3 border-t border-auto-border pt-3">
+          <summary className="cursor-pointer list-none text-xs font-semibold text-auto-accent transition-colors hover:text-auto-accent-orange">
             <span className="inline-flex items-center gap-1">
               Nota de auditoría
               <span className="inline-block transition-transform duration-300 group-open:rotate-90">
@@ -87,13 +87,13 @@ export function EvidenceBlock({ evidence }: EvidenceBlockProps) {
               </span>
             </span>
           </summary>
-          <p className="mt-2 text-xs leading-relaxed text-gta-text-secondary">{evidence.note}</p>
+          <p className="mt-2 text-xs leading-relaxed text-auto-text-secondary">{evidence.note}</p>
         </details>
       )}
 
       {evidence.limitations && evidence.limitations.length > 0 && (
-        <details className="group mt-3 border-t border-gta-border pt-3">
-          <summary className="cursor-pointer list-none text-xs font-semibold text-gta-accent-warning transition-colors hover:text-gta-accent-orange">
+        <details className="group mt-3 border-t border-auto-border pt-3">
+          <summary className="cursor-pointer list-none text-xs font-semibold text-auto-accent-warning transition-colors hover:text-auto-accent-orange">
             <span className="inline-flex items-center gap-1">
               Limitaciones conocidas
               <span className="inline-block transition-transform duration-300 group-open:rotate-90">
@@ -101,10 +101,10 @@ export function EvidenceBlock({ evidence }: EvidenceBlockProps) {
               </span>
             </span>
           </summary>
-          <ul className="mt-2 space-y-1.5 text-xs leading-relaxed text-gta-text-secondary">
+          <ul className="mt-2 space-y-1.5 text-xs leading-relaxed text-auto-text-secondary">
             {evidence.limitations.map((item, i) => (
               <li key={i} className="flex gap-2">
-                <span className="mt-0.5 text-gta-accent-warning/70" aria-hidden="true">
+                <span className="mt-0.5 text-auto-accent-warning/70" aria-hidden="true">
                   ·
                 </span>
                 <span>{item}</span>

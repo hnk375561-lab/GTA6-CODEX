@@ -60,23 +60,23 @@ export function ConsentBanner({ gaId }: { gaId: string }) {
         <div
           role="dialog"
           aria-label="Consentimiento de cookies"
-          className="fixed inset-x-0 bottom-0 z-[200] border-t border-gta-border bg-gta-darker/95 px-4 py-4 backdrop-blur-sm sm:px-6"
+          className="fixed inset-x-0 bottom-0 z-[200] border-t border-auto-border bg-auto-darker/95 px-4 py-4 backdrop-blur-sm sm:px-6"
         >
           <div className="container-max flex flex-col items-center justify-between gap-3 sm:flex-row">
-            <p className="text-sm text-gta-text-secondary">
+            <p className="text-sm text-auto-text-secondary">
               Usamos cookies analíticas para entender cómo se usa el sitio. Podés aceptarlas o rechazarlas —
               el sitio funciona igual en ambos casos.
             </p>
             <div className="flex shrink-0 gap-3">
               <button
                 onClick={() => decide('rejected')}
-                className="rounded-lg border border-gta-border px-4 py-2 text-sm font-semibold text-gta-text-secondary transition-colors hover:text-gta-text"
+                className="rounded-lg border border-auto-border px-4 py-2 text-sm font-semibold text-auto-text-secondary transition-colors hover:text-auto-text"
               >
                 Rechazar
               </button>
               <button
                 onClick={() => decide('accepted')}
-                className="btn-primary rounded-lg px-4 py-2 text-sm font-semibold text-gta-darker"
+                className="btn-primary rounded-lg px-4 py-2 text-sm font-semibold text-auto-darker"
               >
                 Aceptar
               </button>

@@ -238,7 +238,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
     <div>
       <div className="relative mb-6">
         <svg
-          className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gta-text-tertiary"
+          className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-auto-text-tertiary"
           width="18"
           height="18"
           viewBox="0 0 24 24"
@@ -259,14 +259,14 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
           placeholder="Buscar autos, motos, marcas..."
           autoFocus
           aria-label={`Buscar en ${SITE_NAME}`}
-          className="glass-surface w-full rounded-xl border border-gta-border py-4 pl-12 pr-12 text-lg text-gta-text placeholder:text-gta-text-tertiary transition-all focus:border-gta-accent focus:shadow-glow-pink focus:outline-none"
+          className="glass-surface w-full rounded-xl border border-auto-border py-4 pl-12 pr-12 text-lg text-auto-text placeholder:text-auto-text-tertiary transition-all focus:border-auto-accent focus:shadow-glow-pink focus:outline-none"
         />
         {query && (
           <button
             type="button"
             onClick={() => setQuery('')}
             aria-label="Limpiar búsqueda"
-            className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md text-gta-text-secondary transition-colors hover:bg-gta-surface-elevated hover:text-gta-text"
+            className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md text-auto-text-secondary transition-colors hover:bg-auto-surface-elevated hover:text-auto-text"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
               <path d="M18 6 6 18M6 6l12 12" />
@@ -277,7 +277,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
 
       {!query.trim() ? (
         <div>
-          <p className="mb-4 text-sm text-gta-text-secondary">
+          <p className="mb-4 text-sm text-auto-text-secondary">
             {entities.length} entidades documentadas — escribí un nombre, o entrá directo por categoría.
           </p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -285,16 +285,16 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
               <Link
                 key={type}
                 href={`/${type}`}
-                className="group flex items-center gap-3 rounded-lg border border-gta-border bg-gta-surface/60 px-4 py-3.5 transition-colors hover:border-gta-accent/50 hover:bg-gta-surface-elevated"
+                className="group flex items-center gap-3 rounded-lg border border-auto-border bg-auto-surface/60 px-4 py-3.5 transition-colors hover:border-auto-accent/50 hover:bg-auto-surface-elevated"
               >
-                <div className="category-icon-badge flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-gta-accent">
+                <div className="category-icon-badge flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-auto-accent">
                   <CategoryIcon type={type} className="h-4 w-4" />
                 </div>
                 <div className="min-w-0">
-                  <p className="truncate text-sm font-semibold text-gta-text group-hover:text-gta-accent">
+                  <p className="truncate text-sm font-semibold text-auto-text group-hover:text-auto-accent">
                     {TYPE_LABELS[type]}
                   </p>
-                  <p className="text-xs text-gta-text-secondary">{counts[type] ?? 0} entradas</p>
+                  <p className="text-xs text-auto-text-secondary">{counts[type] ?? 0} entradas</p>
                 </div>
               </Link>
             ))}
@@ -310,11 +310,11 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
               className={cn(
                 'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
                 activeType === 'todos'
-                  ? 'border-gta-accent bg-gta-accent/15 text-gta-accent'
-                  : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
+                  ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
+                  : 'border-auto-border text-auto-text-secondary hover:border-auto-border-strong hover:text-auto-text'
               )}
             >
-              Todos <span className="ml-1 text-gta-text-secondary/80">{rawResults.length}</span>
+              Todos <span className="ml-1 text-auto-text-secondary/80">{rawResults.length}</span>
             </button>
             {Array.from(typeCountsInResults.entries()).map(([type, count]) => (
               <button
@@ -325,26 +325,26 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
                 className={cn(
                   'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
                   activeType === type
-                    ? 'border-gta-accent bg-gta-accent/15 text-gta-accent'
-                    : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
+                    ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
+                    : 'border-auto-border text-auto-text-secondary hover:border-auto-border-strong hover:text-auto-text'
                 )}
               >
-                {TYPE_LABELS[type]} <span className="ml-1 text-gta-text-secondary/80">{count}</span>
+                {TYPE_LABELS[type]} <span className="ml-1 text-auto-text-secondary/80">{count}</span>
               </button>
             ))}
           </div>
 
           <div className="mb-5 flex flex-wrap items-center gap-3">
-            <label className="flex items-center gap-2 text-xs text-gta-text-secondary">
-              <span className="hidden uppercase tracking-wide text-gta-text-tertiary sm:inline">Orden</span>
+            <label className="flex items-center gap-2 text-xs text-auto-text-secondary">
+              <span className="hidden uppercase tracking-wide text-auto-text-tertiary sm:inline">Orden</span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
                 aria-label="Ordenar resultados"
-                className="rounded-lg border border-gta-border bg-gta-card/60 px-3 py-2 text-xs font-semibold text-gta-text transition-colors hover:border-gta-border-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent"
+                className="rounded-lg border border-auto-border bg-auto-card/60 px-3 py-2 text-xs font-semibold text-auto-text transition-colors hover:border-auto-border-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
               >
                 {sortOptions.map((option) => (
-                  <option key={option} value={option} className="bg-gta-card text-gta-text">
+                  <option key={option} value={option} className="bg-auto-card text-auto-text">
                     {SORT_LABELS[option]}
                   </option>
                 ))}
@@ -361,8 +361,8 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
                   className={cn(
                     'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
                     status === key
-                      ? 'border-gta-accent bg-gta-accent/15 text-gta-accent'
-                      : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
+                      ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
+                      : 'border-auto-border text-auto-text-secondary hover:border-auto-border-strong hover:text-auto-text'
                   )}
                 >
                   {key === 'todos' ? 'Todos los estados' : STATUS_LABELS[key]}
@@ -373,7 +373,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
 
           {tagOptions.length > 0 && (
             <div className="mb-5 flex flex-wrap items-center gap-2" role="group" aria-label="Filtrar por tag">
-              <span className="text-[11px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+              <span className="text-[11px] font-semibold uppercase tracking-wide text-auto-text-tertiary">
                 Tags
               </span>
               {tagOptions.map(({ tag, count }) => (
@@ -383,21 +383,21 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
                   onClick={() => toggleTag(tag)}
                   aria-pressed={selectedTags.includes(tag)}
                   className={cn(
-                    'rounded-full border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent',
+                    'rounded-full border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                     selectedTags.includes(tag)
-                      ? 'border-gta-accent bg-gta-accent/15 text-gta-accent'
-                      : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
+                      ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
+                      : 'border-auto-border text-auto-text-secondary hover:border-auto-border-strong hover:text-auto-text'
                   )}
                 >
                   {tag.replace(/-/g, ' ')}
-                  <span className="ml-1 text-gta-text-secondary/80">{count}</span>
+                  <span className="ml-1 text-auto-text-secondary/80">{count}</span>
                 </button>
               ))}
               {hasAttributeFilters && (
                 <button
                   type="button"
                   onClick={clearAttributeFilters}
-                  className="ml-1 flex items-center gap-1 rounded-full border border-transparent px-3 py-1 text-[11px] font-semibold text-gta-text-secondary transition-colors hover:text-gta-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gta-accent"
+                  className="ml-1 flex items-center gap-1 rounded-full border border-transparent px-3 py-1 text-[11px] font-semibold text-auto-text-secondary transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
                 >
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />
@@ -408,7 +408,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
             </div>
           )}
 
-          <p className="mb-4 text-sm text-gta-text-secondary" aria-live="polite">
+          <p className="mb-4 text-sm text-auto-text-secondary" aria-live="polite">
             {results.length} {results.length === 1 ? 'resultado' : 'resultados'} para &ldquo;{query}&rdquo;
           </p>
 
@@ -426,10 +426,10 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
                             {entity.status}
                           </Badge>
                         </div>
-                        <h3 className="mb-1 truncate font-bold text-gta-text transition-colors group-hover:text-gta-accent">
+                        <h3 className="mb-1 truncate font-bold text-auto-text transition-colors group-hover:text-auto-accent">
                           {entity.title}
                         </h3>
-                        <p className="line-clamp-2 text-sm text-gta-text-secondary">{entity.description}</p>
+                        <p className="line-clamp-2 text-sm text-auto-text-secondary">{entity.description}</p>
                       </div>
                     </CardBody>
                   </Card>
@@ -439,11 +439,11 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
           )}
 
           {results.length === 0 && (
-            <div className="rounded-lg border border-gta-border bg-gta-surface px-6 py-10 text-center">
-              <p className="mb-1 font-semibold text-gta-text">
+            <div className="rounded-lg border border-auto-border bg-auto-surface px-6 py-10 text-center">
+              <p className="mb-1 font-semibold text-auto-text">
                 Sin resultados para &ldquo;{query}&rdquo;
               </p>
-              <p className="mb-4 text-sm text-gta-text-secondary">
+              <p className="mb-4 text-sm text-auto-text-secondary">
                 {activeType !== 'todos' || hasAttributeFilters
                   ? 'Probá quitando algún filtro, o revisá que el nombre esté bien escrito.'
                   : 'Puede que el nombre esté escrito distinto o que todavía no esté documentado.'}
@@ -453,7 +453,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
                   <button
                     type="button"
                     onClick={() => setActiveType('todos')}
-                    className="text-sm font-semibold text-gta-accent hover:underline"
+                    className="text-sm font-semibold text-auto-accent hover:underline"
                   >
                     Quitar filtro de categoría
                   </button>
@@ -462,13 +462,13 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
                   <button
                     type="button"
                     onClick={clearAttributeFilters}
-                    className="text-sm font-semibold text-gta-accent hover:underline"
+                    className="text-sm font-semibold text-auto-accent hover:underline"
                   >
                     Limpiar estado/orden/tags
                   </button>
                 )}
                 {activeType === 'todos' && !hasAttributeFilters && (
-                  <Link href="/" className="text-sm font-semibold text-gta-accent hover:underline">
+                  <Link href="/" className="text-sm font-semibold text-auto-accent hover:underline">
                     Volver al inicio y explorar por categoría
                   </Link>
                 )}

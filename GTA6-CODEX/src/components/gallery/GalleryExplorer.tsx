@@ -105,7 +105,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="relative w-full sm:max-w-sm">
           <svg
-            className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-gta-text-tertiary"
+            className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-auto-text-tertiary"
             width="16"
             height="16"
             viewBox="0 0 24 24"
@@ -125,14 +125,14 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Buscar en la galería..."
             aria-label="Buscar en la galería"
-            className="glass-surface w-full rounded-lg border border-gta-border py-2.5 pl-10 pr-9 text-sm text-gta-text placeholder:text-gta-text-tertiary transition-all focus:border-gta-accent focus:shadow-glow-pink focus:outline-none"
+            className="glass-surface w-full rounded-lg border border-auto-border py-2.5 pl-10 pr-9 text-sm text-auto-text placeholder:text-auto-text-tertiary transition-all focus:border-auto-accent focus:shadow-glow-pink focus:outline-none"
           />
           {query && (
             <button
               type="button"
               onClick={() => setQuery('')}
               aria-label="Limpiar búsqueda"
-              className="absolute right-2.5 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-md text-gta-text-secondary transition-colors hover:bg-gta-surface-elevated hover:text-gta-text"
+              className="absolute right-2.5 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-md text-auto-text-secondary transition-colors hover:bg-auto-surface-elevated hover:text-auto-text"
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                 <path d="M18 6 6 18M6 6l12 12" />
@@ -149,12 +149,12 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
             className={cn(
               'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
               category === 'todas'
-                ? 'border-gta-accent bg-gta-accent/15 text-gta-accent'
-                : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
+                ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
+                : 'border-auto-border text-auto-text-secondary hover:border-auto-border-strong hover:text-auto-text'
             )}
           >
             Todas
-            <span className="ml-1.5 text-gta-text-secondary/80">{items.length}</span>
+            <span className="ml-1.5 text-auto-text-secondary/80">{items.length}</span>
           </button>
           {categories.map((c) => (
             <button
@@ -165,28 +165,28 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
               className={cn(
                 'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
                 category === c.slug
-                  ? 'border-gta-accent bg-gta-accent/15 text-gta-accent'
-                  : 'border-gta-border text-gta-text-secondary hover:border-gta-border-strong hover:text-gta-text'
+                  ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
+                  : 'border-auto-border text-auto-text-secondary hover:border-auto-border-strong hover:text-auto-text'
               )}
             >
               {c.label}
-              <span className="ml-1.5 text-gta-text-secondary/80">{c.count}</span>
+              <span className="ml-1.5 text-auto-text-secondary/80">{c.count}</span>
             </button>
           ))}
         </div>
       </div>
 
       {isFiltering && (
-        <p className="mb-5 text-sm text-gta-text-secondary" aria-live="polite">
+        <p className="mb-5 text-sm text-auto-text-secondary" aria-live="polite">
           {filtered.length} {filtered.length === 1 ? 'resultado' : 'resultados'}
           {query.trim() && <> para &ldquo;{query}&rdquo;</>}
         </p>
       )}
 
       {filtered.length === 0 ? (
-        <div className="rounded-lg border border-gta-border bg-gta-surface px-6 py-14 text-center">
-          <p className="mb-1 font-semibold text-gta-text">Sin resultados</p>
-          <p className="mb-4 text-sm text-gta-text-secondary">
+        <div className="rounded-lg border border-auto-border bg-auto-surface px-6 py-14 text-center">
+          <p className="mb-1 font-semibold text-auto-text">Sin resultados</p>
+          <p className="mb-4 text-sm text-auto-text-secondary">
             Probá con otro término de búsqueda o quitá el filtro de categoría.
           </p>
           <button
@@ -195,7 +195,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
               setQuery('')
               setCategory('todas')
             }}
-            className="text-sm font-semibold text-gta-accent hover:underline"
+            className="text-sm font-semibold text-auto-accent hover:underline"
           >
             Limpiar filtros
           </button>
@@ -219,7 +219,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
           <button
             type="button"
             onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
-            className="rounded-full border border-gta-border px-5 py-2.5 text-sm font-semibold text-gta-text-secondary transition-colors hover:border-gta-accent hover:text-gta-accent"
+            className="rounded-full border border-auto-border px-5 py-2.5 text-sm font-semibold text-auto-text-secondary transition-colors hover:border-auto-accent hover:text-auto-accent"
           >
             Cargar más ({filtered.length - visibleCount} restantes)
           </button>
@@ -255,7 +255,7 @@ function GalleryTile({
       onClick={onOpen}
       data-featured={featured}
       className={cn(
-        'gallery-tile group relative block h-full w-full overflow-hidden rounded-xl border border-gta-border bg-gta-card text-left flex flex-col'
+        'gallery-tile group relative block h-full w-full overflow-hidden rounded-xl border border-auto-border bg-auto-card text-left flex flex-col'
       )}
       aria-label={`Ampliar imagen: ${item.title}`}
     >
@@ -270,7 +270,7 @@ function GalleryTile({
             className="gallery-tile-image w-full h-full"
           />
         ) : item.kind === 'video' ? (
-          <div className="w-full h-full bg-gradient-to-br from-gta-surface-elevated via-gta-darker to-black" aria-hidden="true" />
+          <div className="w-full h-full bg-gradient-to-br from-auto-surface-elevated via-auto-darker to-black" aria-hidden="true" />
         ) : (
           <Image
             src={item.src}
@@ -297,7 +297,7 @@ function GalleryTile({
       </div>
 
       {/* Contenedor de texto - siempre visible */}
-      <div className="px-4 py-3 bg-gradient-to-t from-gta-darker/80 to-transparent">
+      <div className="px-4 py-3 bg-gradient-to-t from-auto-darker/80 to-transparent">
         <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
           {item.status && (
             <Badge variant="status" status={item.status}>
@@ -306,7 +306,7 @@ function GalleryTile({
           )}
           <Badge variant="tag">{item.categoryLabel}</Badge>
         </div>
-        <p className="font-display text-xs font-semibold leading-tight text-gta-text drop-shadow-md line-clamp-2">
+        <p className="font-display text-xs font-semibold leading-tight text-auto-text drop-shadow-md line-clamp-2">
           {item.title}
         </p>
       </div>
@@ -375,7 +375,7 @@ function GalleryLightbox({
         type="button"
         onClick={onClose}
         aria-label="Cerrar visor"
-        className="glass-surface absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-gta-border text-gta-text transition-colors hover:border-gta-accent hover:text-gta-accent-strong sm:right-6 sm:top-6"
+        className="glass-surface absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-auto-border text-auto-text transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:right-6 sm:top-6"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
           <path d="M18 6 6 18M6 6l12 12" />
@@ -391,7 +391,7 @@ function GalleryLightbox({
               onPrev()
             }}
             aria-label="Imagen anterior"
-            className="glass-surface absolute left-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-gta-border text-gta-text transition-colors hover:border-gta-accent hover:text-gta-accent-strong sm:left-6"
+            className="glass-surface absolute left-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-auto-border text-auto-text transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:left-6"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m15 18-6-6 6-6" />
@@ -404,7 +404,7 @@ function GalleryLightbox({
               onNext()
             }}
             aria-label="Imagen siguiente"
-            className="glass-surface absolute right-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-gta-border text-gta-text transition-colors hover:border-gta-accent hover:text-gta-accent-strong sm:right-6"
+            className="glass-surface absolute right-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-auto-border text-auto-text transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:right-6"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m9 18 6-6-6-6" />
@@ -414,10 +414,10 @@ function GalleryLightbox({
       )}
 
       <div
-        className="gallery-lightbox-panel glass-surface relative z-10 grid max-h-[90vh] w-full max-w-7xl grid-cols-1 overflow-hidden rounded-2xl border border-gta-border shadow-gta-xl md:grid-cols-[1.6fr_1fr]"
+        className="gallery-lightbox-panel glass-surface relative z-10 grid max-h-[90vh] w-full max-w-7xl grid-cols-1 overflow-hidden rounded-2xl border border-auto-border shadow-auto-xl md:grid-cols-[1.6fr_1fr]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative min-h-[55vh] bg-gta-darker md:min-h-[80vh]">
+        <div className="relative min-h-[55vh] bg-auto-darker md:min-h-[80vh]">
           {item.kind === 'video' && item.videoEmbedId ? (
             <div className="flex h-full w-full items-center p-4">
               <YouTubeEmbed embedId={item.videoEmbedId} title={item.title} thumbnailSrc={item.src} autoLoad />
@@ -450,25 +450,25 @@ function GalleryLightbox({
             {item.featured && <Badge variant="tag">Destacado</Badge>}
           </div>
 
-          <h2 className="font-display text-xl font-bold text-gta-text">{item.title}</h2>
-          <p className="mt-2 text-sm leading-relaxed text-gta-text-secondary">{item.description}</p>
+          <h2 className="font-display text-xl font-bold text-auto-text">{item.title}</h2>
+          <p className="mt-2 text-sm leading-relaxed text-auto-text-secondary">{item.description}</p>
 
-          <dl className="mt-5 space-y-3 border-t border-gta-border pt-4 text-sm">
+          <dl className="mt-5 space-y-3 border-t border-auto-border pt-4 text-sm">
             <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-gta-text-tertiary">Procedencia</dt>
-              <dd className="mt-1 text-gta-text-secondary">{item.credit}</dd>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-auto-text-tertiary">Procedencia</dt>
+              <dd className="mt-1 text-auto-text-secondary">{item.credit}</dd>
             </div>
             {item.sourceNote && (
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-gta-text-tertiary">Nota de evidencia</dt>
-                <dd className="mt-1 text-gta-text-secondary">{item.sourceNote}</dd>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-auto-text-tertiary">Nota de evidencia</dt>
+                <dd className="mt-1 text-auto-text-secondary">{item.sourceNote}</dd>
               </div>
             )}
           </dl>
 
           {item.trailerAppearances.length > 0 && (
-            <div className="mt-5 border-t border-gta-border pt-4">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gta-text-tertiary">
+            <div className="mt-5 border-t border-auto-border pt-4">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-auto-text-tertiary">
                 Aparece en tráiler
               </p>
               <ul className="space-y-2">
@@ -476,13 +476,13 @@ function GalleryLightbox({
                   <li key={`${app.trailerSlug}-${app.sceneId}`}>
                     <Link
                       href={`/trailers/${app.trailerSlug}#${app.sceneId}`}
-                      className="group flex items-start gap-2 rounded-lg border border-gta-border bg-gta-card/60 px-3 py-2 transition-colors hover:border-gta-accent/60"
+                      className="group flex items-start gap-2 rounded-lg border border-auto-border bg-auto-card/60 px-3 py-2 transition-colors hover:border-auto-accent/60"
                     >
-                      <span className="scene-timestamp mt-0.5 shrink-0 font-mono text-[10px] font-semibold text-gta-dark">
+                      <span className="scene-timestamp mt-0.5 shrink-0 font-mono text-[10px] font-semibold text-auto-dark">
                         {app.timestamp}
                       </span>
-                      <span className="text-xs text-gta-text-secondary transition-colors group-hover:text-gta-text">
-                        <span className="font-medium text-gta-text">{app.trailerTitle}</span>
+                      <span className="text-xs text-auto-text-secondary transition-colors group-hover:text-auto-text">
+                        <span className="font-medium text-auto-text">{app.trailerTitle}</span>
                         {' — '}
                         {app.sceneTitle}
                       </span>
@@ -494,11 +494,11 @@ function GalleryLightbox({
           )}
 
           {item.tags && item.tags.length > 0 && (
-            <div className="mt-5 flex flex-wrap gap-1.5 border-t border-gta-border pt-4">
+            <div className="mt-5 flex flex-wrap gap-1.5 border-t border-auto-border pt-4">
               {item.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-gta-border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-gta-text-secondary"
+                  className="rounded-full border border-auto-border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-auto-text-secondary"
                 >
                   {tag}
                 </span>
@@ -509,7 +509,7 @@ function GalleryLightbox({
           {item.href && (
             <Link
               href={item.href}
-              className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-gta-accent hover:underline"
+              className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-auto-accent hover:underline"
             >
               Ver ficha completa
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -518,7 +518,7 @@ function GalleryLightbox({
             </Link>
           )}
 
-          <p className="mt-auto pt-6 text-xs text-gta-text-tertiary">
+          <p className="mt-auto pt-6 text-xs text-auto-text-tertiary">
             {index + 1} / {total}
           </p>
         </div>

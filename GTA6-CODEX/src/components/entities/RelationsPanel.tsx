@@ -46,8 +46,8 @@ export function RelationsPanel({ related }: RelationsPanelProps) {
     <div className="space-y-5">
       {Array.from(groups.entries()).map(([label, entities]) => (
         <div key={label}>
-          <h3 className="mb-2.5 flex items-center gap-1.5 font-mono text-xs font-semibold uppercase tracking-wide text-gta-accent">
-            <span className="h-1 w-1 rounded-full bg-gta-accent" aria-hidden="true" />
+          <h3 className="mb-2.5 flex items-center gap-1.5 font-mono text-xs font-semibold uppercase tracking-wide text-auto-accent">
+            <span className="h-1 w-1 rounded-full bg-auto-accent" aria-hidden="true" />
             {label}
           </h3>
           <ul className="space-y-2">
@@ -55,7 +55,7 @@ export function RelationsPanel({ related }: RelationsPanelProps) {
               <li key={`${e.type}-${e.slug}`}>
                 <Link
                   href={`/${e.type}/${e.slug}`}
-                  className="group -mx-2 flex items-center gap-3 rounded-md border border-dashed border-transparent px-2 py-2 transition-colors duration-200 hover:border-gta-border-strong hover:bg-gta-darker/40"
+                  className="group -mx-2 flex items-center gap-3 rounded-md border border-dashed border-transparent px-2 py-2 transition-colors duration-200 hover:border-auto-border-strong hover:bg-auto-darker/40"
                 >
                   <EntityImage
                     entity={e}
@@ -64,7 +64,7 @@ export function RelationsPanel({ related }: RelationsPanelProps) {
                     className="h-11 w-11 shrink-0 transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="flex min-w-0 flex-col gap-1.5">
-                    <span className="link-underline truncate text-sm text-gta-text group-hover:text-gta-accent">
+                    <span className="link-underline truncate text-sm text-auto-text group-hover:text-auto-accent">
                       {e.title}
                     </span>
                     {/* font-mono: mismo lenguaje que la pestaña de categoría
@@ -77,7 +77,7 @@ export function RelationsPanel({ related }: RelationsPanelProps) {
                   </div>
                   <span
                     aria-hidden="true"
-                    className="ml-auto shrink-0 text-gta-text-secondary/40 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-gta-accent group-hover:opacity-100"
+                    className="ml-auto shrink-0 text-auto-text-secondary/40 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-auto-accent group-hover:opacity-100"
                   >
                     →
                   </span>

@@ -11,13 +11,13 @@ interface CardProps {
 
 export function Card({ children, className = '', hoverable = false }: CardProps) {
   const hoverClass = hoverable
-    ? 'card-animated hover:border-gta-accent/60 hover:shadow-gta-md'
+    ? 'card-animated hover:border-auto-accent/60 hover:shadow-auto-md'
     : 'transition-colors duration-300'
 
   return (
     <div
       className={`
-        rounded-xl border border-gta-border bg-gta-card p-6 shadow-gta-sm
+        rounded-xl border border-auto-border bg-auto-card p-6 shadow-auto-sm
         ${hoverClass}
         ${className}
       `}
@@ -37,7 +37,7 @@ interface CardHeaderProps {
 }
 
 export function CardHeader({ children, className = '' }: CardHeaderProps) {
-  return <div className={`border-b border-gta-border pb-4 ${className}`}>{children}</div>
+  return <div className={`border-b border-auto-border pb-4 ${className}`}>{children}</div>
 }
 
 interface CardBodyProps {
@@ -55,5 +55,5 @@ interface CardFooterProps {
 }
 
 export function CardFooter({ children, className = '' }: CardFooterProps) {
-  return <div className={`border-t border-gta-border pt-4 ${className}`}>{children}</div>
+  return <div className={`border-t border-auto-border pt-4 ${className}`}>{children}</div>
 }

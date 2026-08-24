@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { EntityType, type Trailer } from '@/types'
+import { EntityType } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
-import { getMediaForTrailer, resolveEntityDisplayImage } from '@/lib/media'
+import { resolveEntityDisplayImage } from '@/lib/media'
 import { getBidirectionalRelatedEntitiesWithLabel } from '@/lib/relations'
 import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo'
 import { Card, CardBody } from '@/components/ui/Card'
@@ -16,10 +16,7 @@ import { EntityHeaderBackground } from '@/components/entities/EntityHeaderBackgr
 import { EntitySectionHeading } from '@/components/entities/EntitySectionHeading'
 import { EntityImage } from '@/components/entities/EntityImage'
 import { EntityContent } from '@/components/entities/EntityContent'
-import { TrailerScenes } from '@/components/entities/TrailerScenes'
-import { TrailerStats } from '@/components/entities/TrailerStats'
 import { EntityNav } from '@/components/entities/EntityNav'
-import { TrailerPlayer } from '@/components/media/TrailerPlayer'
 import { MediaCarousel } from '@/components/media/MediaCarousel'
 import { getMediaForEntity } from '@/lib/media'
 import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
@@ -34,18 +31,9 @@ interface PageProps {
 const VALID_TYPES = Object.values(EntityType) as string[]
 
 const TYPE_LABELS: Record<EntityType, string> = {
-  [EntityType.CHARACTER]: 'Personajes',
   [EntityType.VEHICLE]: 'Vehículos',
-  [EntityType.LOCATION]: 'Ubicaciones',
-  [EntityType.MISSION]: 'Misiones',
-  [EntityType.WEAPON]: 'Armas',
-  [EntityType.ACTIVITY]: 'Actividades',
-  [EntityType.FACTION]: 'Organizaciones',
-  [EntityType.BUSINESS]: 'Negocios',
-  [EntityType.OBJECT]: 'Objetos',
   [EntityType.NEWS]: 'Noticias',
   [EntityType.GUIDE]: 'Guías',
-  [EntityType.TRAILER]: 'Trailers',
 }
 
 const STATUS_LABELS = {
@@ -61,12 +49,7 @@ const STATUS_LABELS = {
  * de multiplicar variantes.
  */
 const CLASSIFICATION_LABELS: Partial<Record<EntityType, string>> = {
-  [EntityType.CHARACTER]: 'Identidad · Dossier',
-  [EntityType.LOCATION]: 'Territorio · Ubicación',
-  [EntityType.FACTION]: 'Organización · Autoridad',
-  [EntityType.BUSINESS]: 'Negocio · Establecimiento',
   [EntityType.VEHICLE]: 'Vehículo · Fabricante',
-  [EntityType.TRAILER]: 'Material Oficial · Archivo',
 }
 
 export async function generateStaticParams() {
@@ -111,10 +94,7 @@ export default async function EntityPage({ params }: PageProps) {
   const relatedMedia = getMediaForEntity(entity).filter(
     (asset) => asset.id !== `entity-portrait-${type}-${entity.slug}`
   )
-  const jsonLd = generateEntityJsonLd(
-    entity,
-    type === EntityType.TRAILER ? getMediaForTrailer(entity.slug) : null
-  )
+  const jsonLd = generateEntityJsonLd(entity, null)
   const breadcrumbLd = generateBreadcrumbJsonLd([
     { label: 'Inicio', url: '/' },
     { label: TYPE_LABELS[type], url: `/${type}` },
@@ -138,34 +118,34 @@ export default async function EntityPage({ params }: PageProps) {
   const headerContent = (
     <>
       <nav
-        className="mb-6 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-sm text-gta-text-secondary animate-fade-in"
+        className="mb-6 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-sm text-auto-text-secondary animate-fade-in"
         aria-label="Breadcrumb"
       >
         <div>
-          <Link href="/" className="link-underline transition-colors hover:text-gta-accent">
+          <Link href="/" className="link-underline transition-colors hover:text-auto-accent">
             Inicio
           </Link>
           <span className="mx-2">/</span>
-          <Link href={`/${type}`} className="link-underline transition-colors hover:text-gta-accent">
+          <Link href={`/${type}`} className="link-underline transition-colors hover:text-auto-accent">
             {TYPE_LABELS[type]}
           </Link>
           <span className="mx-2">/</span>
-          <span className="inline-block max-w-[50vw] truncate align-bottom text-gta-text sm:max-w-none">
+          <span className="inline-block max-w-[50vw] truncate align-bottom text-auto-text sm:max-w-none">
             {entity.title}
           </span>
         </div>
-        <code className="hidden shrink-0 font-mono text-[11px] text-gta-text-secondary/80 sm:inline-block">
+        <code className="hidden shrink-0 font-mono text-[11px] text-auto-text-secondary/80 sm:inline-block">
           {type}/{entity.slug}
         </code>
       </nav>
 
-      <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gta-accent/80">
-        <span className="h-px w-4 bg-gta-accent/40" aria-hidden="true" />
+      <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-auto-accent/80">
+        <span className="h-px w-4 bg-auto-accent/40" aria-hidden="true" />
         {classificationLabel}
       </div>
 
       <div className="mb-3 flex flex-wrap items-center gap-3">
-        <h1 className="text-4xl font-bold text-gta-text sm:text-5xl">{entity.title}</h1>
+        <h1 className="text-4xl font-bold text-auto-text sm:text-5xl">{entity.title}</h1>
         <Badge variant="status" status={entity.status}>
           {statusLabel}
         </Badge>
@@ -173,7 +153,7 @@ export default async function EntityPage({ params }: PageProps) {
       </div>
 
       <Reveal delay={200}>
-        <p className="max-w-3xl text-lg text-gta-text-secondary">{entity.description}</p>
+        <p className="max-w-3xl text-lg text-auto-text-secondary">{entity.description}</p>
       </Reveal>
 
       {entity.tags && entity.tags.length > 0 && (
@@ -211,16 +191,16 @@ export default async function EntityPage({ params }: PageProps) {
           contenedor estático, sin efecto de seguimiento de puntero. */}
       <SceneSection
         sceneId="entity-header"
-        className="relative overflow-hidden border-b border-gta-border bg-gradient-to-b from-gta-card to-gta-dark py-10 sm:py-14"
+        className="relative overflow-hidden border-b border-auto-border bg-gradient-to-b from-auto-card to-auto-dark py-10 sm:py-14"
       >
         <EntityHeaderBackground type={type} evidenceLevel={entity.evidence?.level} />
         <div className="container-max relative">
           <span
-            className="pointer-events-none absolute -left-1 -top-1 hidden h-5 w-5 border-l border-t border-gta-accent/25 sm:block"
+            className="pointer-events-none absolute -left-1 -top-1 hidden h-5 w-5 border-l border-t border-auto-accent/25 sm:block"
             aria-hidden="true"
           />
           <span
-            className="pointer-events-none absolute -bottom-1 -right-1 hidden h-5 w-5 border-b border-r border-gta-accent-orange/20 sm:block"
+            className="pointer-events-none absolute -bottom-1 -right-1 hidden h-5 w-5 border-b border-r border-auto-accent-orange/20 sm:block"
             aria-hidden="true"
           />
           {entity.featured ? (
@@ -236,7 +216,7 @@ export default async function EntityPage({ params }: PageProps) {
               {headerContent}
             </MagicCard>
           ) : (
-            <div className="rounded-lg border border-gta-border bg-gta-surface/60 p-6 sm:p-8">
+            <div className="rounded-lg border border-auto-border bg-auto-surface/60 p-6 sm:p-8">
               {headerContent}
             </div>
           )}
@@ -246,27 +226,11 @@ export default async function EntityPage({ params }: PageProps) {
       {/* Content */}
       <SceneSection sceneId="entity-content" className="py-12 sm:py-16">
         <div className="container-max">
-          {type === EntityType.TRAILER && 'scenes' in entity && (
-            <Reveal className="mb-10">
-              <TrailerStats trailer={entity as Trailer} />
-            </Reveal>
-          )}
-
           <div className="grid gap-8 lg:grid-cols-3">
           <div className="space-y-6 lg:col-span-2">
-            {type === EntityType.TRAILER && 'scenes' in entity && (
-              <Reveal direction="left">
-                <TrailerPlayer trailer={entity as Trailer} />
-              </Reveal>
-            )}
-            {type === EntityType.TRAILER && 'scenes' in entity && (
-              <Reveal direction="left">
-                <TrailerScenes trailer={entity as Trailer} />
-              </Reveal>
-            )}
             {entity.content ? (
               <Reveal direction="left">
-                <Card className={entity.featured ? 'shadow-gta-sm border-gta-accent/30' : 'shadow-gta-sm'}>
+                <Card className={entity.featured ? 'shadow-auto-sm border-auto-accent/30' : 'shadow-auto-sm'}>
                   <CardBody>
                     <EntityContent content={entity.content} />
                   </CardBody>
@@ -274,9 +238,9 @@ export default async function EntityPage({ params }: PageProps) {
               </Reveal>
             ) : (
               <Reveal direction="left">
-                <Card className="shadow-gta-sm">
+                <Card className="shadow-auto-sm">
                   <CardBody>
-                    <p className="text-gta-text-secondary">
+                    <p className="text-auto-text-secondary">
                       Todavía no hay contenido editorial extendido para esta entrada.
                     </p>
                   </CardBody>
@@ -300,7 +264,7 @@ export default async function EntityPage({ params }: PageProps) {
 
             {entity.evidence && (
               <Reveal direction="right">
-                <Card className="shadow-gta-sm">
+                <Card className="shadow-auto-sm">
                   <CardBody>
                     <EntitySectionHeading label="Evidencia" index={evidenceIndex} />
                     <EvidenceBlock evidence={entity.evidence} />
@@ -315,7 +279,7 @@ export default async function EntityPage({ params }: PageProps) {
 
             {related.length > 0 && (
               <Reveal direction="right" delay={150}>
-                <Card className="shadow-gta-sm">
+                <Card className="shadow-auto-sm">
                   <CardBody>
                     <EntitySectionHeading label="Relacionado" index={relatedIndex} />
                     <RelationsPanel related={related} />
@@ -325,21 +289,21 @@ export default async function EntityPage({ params }: PageProps) {
             )}
 
             <Reveal direction="right" delay={220}>
-              <Card className="shadow-gta-sm">
+              <Card className="shadow-auto-sm">
                 <CardBody>
                   <EntitySectionHeading label="Información" index={infoIndex} />
                   <dl className="space-y-2 text-sm">
                     <div className="flex justify-between gap-4">
-                      <dt className="text-gta-text-secondary">Categoría</dt>
-                      <dd className="text-gta-text">{TYPE_LABELS[type]}</dd>
+                      <dt className="text-auto-text-secondary">Categoría</dt>
+                      <dd className="text-auto-text">{TYPE_LABELS[type]}</dd>
                     </div>
                     <div className="flex justify-between gap-4">
-                      <dt className="text-gta-text-secondary">Estado</dt>
-                      <dd className="text-gta-text">{statusLabel}</dd>
+                      <dt className="text-auto-text-secondary">Estado</dt>
+                      <dd className="text-auto-text">{statusLabel}</dd>
                     </div>
                     <div className="flex justify-between gap-4">
-                      <dt className="text-gta-text-secondary">Actualizado</dt>
-                      <dd className="text-gta-text">
+                      <dt className="text-auto-text-secondary">Actualizado</dt>
+                      <dd className="text-auto-text">
                         {new Date(entity.updatedAt).toLocaleDateString('es-ES', {
                           year: 'numeric',
                           month: 'long',

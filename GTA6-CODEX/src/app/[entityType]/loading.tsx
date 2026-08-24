@@ -9,12 +9,12 @@
 export default function Loading() {
   return (
     <div className="container-max py-16">
-      <div className="mb-10 h-10 w-64 animate-pulse rounded-lg bg-gta-border/60" />
+      <div className="mb-10 h-10 w-64 animate-pulse rounded-lg bg-auto-border/60" />
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {Array.from({ length: 12 }).map((_, i) => (
           <div
             key={i}
-            className="aspect-[16/9] animate-pulse rounded-xl bg-gta-border/60"
+            className="aspect-[16/9] animate-pulse rounded-xl bg-auto-border/60"
           />
         ))}
       </div>

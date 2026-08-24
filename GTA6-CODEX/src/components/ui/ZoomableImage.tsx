@@ -47,7 +47,7 @@ export function ZoomableImage({ resetKey, wrapperClassName, className, alt, ...i
       </div>
 
       <div
-        className="zoomable-image-controls glass-surface absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center gap-1 rounded-full border border-gta-border p-1 sm:bottom-5"
+        className="zoomable-image-controls glass-surface absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center gap-1 rounded-full border border-auto-border p-1 sm:bottom-5"
         onClick={(e) => e.stopPropagation()}
         onDoubleClick={(e) => e.stopPropagation()}
         onPointerDown={(e) => e.stopPropagation()}
@@ -57,7 +57,7 @@ export function ZoomableImage({ resetKey, wrapperClassName, className, alt, ...i
           onClick={zoomOut}
           disabled={scale <= minScale + 0.01}
           aria-label="Alejar imagen"
-          className="flex h-9 w-9 items-center justify-center rounded-full text-gta-text transition-colors hover:bg-gta-surface-elevated hover:text-gta-accent-strong disabled:pointer-events-none disabled:opacity-35"
+          className="flex h-9 w-9 items-center justify-center rounded-full text-auto-text transition-colors hover:bg-auto-surface-elevated hover:text-auto-accent-strong disabled:pointer-events-none disabled:opacity-35"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
             <circle cx="11" cy="11" r="7" />
@@ -65,7 +65,7 @@ export function ZoomableImage({ resetKey, wrapperClassName, className, alt, ...i
           </svg>
         </button>
 
-        <span className="min-w-[3.2rem] text-center font-mono text-[11px] font-semibold tabular-nums text-gta-text-secondary" aria-live="polite">
+        <span className="min-w-[3.2rem] text-center font-mono text-[11px] font-semibold tabular-nums text-auto-text-secondary" aria-live="polite">
           {Math.round(scale * 100)}%
         </span>
 
@@ -74,7 +74,7 @@ export function ZoomableImage({ resetKey, wrapperClassName, className, alt, ...i
           onClick={zoomIn}
           disabled={scale >= maxScale - 0.01}
           aria-label="Ampliar imagen"
-          className="flex h-9 w-9 items-center justify-center rounded-full text-gta-text transition-colors hover:bg-gta-surface-elevated hover:text-gta-accent-strong disabled:pointer-events-none disabled:opacity-35"
+          className="flex h-9 w-9 items-center justify-center rounded-full text-auto-text transition-colors hover:bg-auto-surface-elevated hover:text-auto-accent-strong disabled:pointer-events-none disabled:opacity-35"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
             <circle cx="11" cy="11" r="7" />
@@ -84,12 +84,12 @@ export function ZoomableImage({ resetKey, wrapperClassName, className, alt, ...i
 
         {isZoomed && (
           <>
-            <span className="mx-0.5 h-5 w-px bg-gta-border" aria-hidden="true" />
+            <span className="mx-0.5 h-5 w-px bg-auto-border" aria-hidden="true" />
             <button
               type="button"
               onClick={reset}
               aria-label="Restablecer zoom"
-              className="flex h-9 w-9 items-center justify-center rounded-full text-gta-text transition-colors hover:bg-gta-surface-elevated hover:text-gta-accent-strong"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-auto-text transition-colors hover:bg-auto-surface-elevated hover:text-auto-accent-strong"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5" />

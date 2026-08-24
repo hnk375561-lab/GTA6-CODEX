@@ -31,7 +31,7 @@ function prefersReducedData(): boolean {
  * pesado de toda la home (three.js + ~2000 líneas de escena/shaders/
  * postprocessing) y su costo de GPU es continuo mientras el hero está en
  * pantalla, no un gasto puntual. El `<canvas>` queda transparente y se ve
- * el fondo estático (`bg-gta-dark` en layout.tsx) — la misma degradación
+ * el fondo estático (`bg-auto-dark` en layout.tsx) — la misma degradación
  * elegante que ya aplica `detectQualityProfile` para el tier 'low', solo
  * que acá directamente no hay descarga ni motor que degradar.
  */

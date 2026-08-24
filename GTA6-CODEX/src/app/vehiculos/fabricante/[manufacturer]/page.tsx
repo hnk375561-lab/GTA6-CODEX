@@ -76,32 +76,32 @@ export default async function ManufacturerHubPage({ params }: PageProps) {
   }
 
   return (
-    <section className="relative overflow-hidden border-b border-gta-border py-12 sm:py-16">
+    <section className="relative overflow-hidden border-b border-auto-border py-12 sm:py-16">
       <div className="list-header-glow" aria-hidden="true" />
       <div className="container-max relative">
         <Reveal className="mb-10">
-          <nav className="mb-4 text-sm text-gta-text-secondary" aria-label="Breadcrumb">
-            <Link href="/" className="link-underline transition-colors hover:text-gta-accent">
+          <nav className="mb-4 text-sm text-auto-text-secondary" aria-label="Breadcrumb">
+            <Link href="/" className="link-underline transition-colors hover:text-auto-accent">
               Inicio
             </Link>
             <span className="mx-2">/</span>
-            <Link href="/vehiculos" className="link-underline transition-colors hover:text-gta-accent">
+            <Link href="/vehiculos" className="link-underline transition-colors hover:text-auto-accent">
               Vehículos
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-gta-text">{label}</span>
+            <span className="text-auto-text">{label}</span>
           </nav>
 
           <div className="flex items-center gap-4">
-            <div className="category-icon-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-xl text-gta-accent">
+            <div className="category-icon-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-xl text-auto-accent">
               <CategoryIcon type={EntityType.VEHICLE} className="h-6 w-6" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold text-gta-text">Vehículos {label}</h1>
-              <p className="mt-1 text-gta-text-secondary">
+              <h1 className="text-4xl font-bold text-auto-text">Vehículos {label}</h1>
+              <p className="mt-1 text-auto-text-secondary">
                 {vehicles.length} {vehicles.length === 1 ? 'vehículo documentado' : 'vehículos documentados'}
                 {vehicles.length > 0 && (
-                  <span className="text-gta-text-secondary/80">
+                  <span className="text-auto-text-secondary/80">
                     {' · '}
                     {[
                       statusCounts.confirmado > 0 && `${statusCounts.confirmado} confirmado${statusCounts.confirmado === 1 ? '' : 's'}`,

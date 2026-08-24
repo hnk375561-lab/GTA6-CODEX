@@ -32,8 +32,8 @@ export function VideoEmbed({ videoSrc, title, ambient = false, autoLoad = false,
   const [failed, setFailed] = useState(false)
 
   const fallback = (
-    <div className={cn('relative flex aspect-video w-full items-center justify-center rounded-xl bg-gta-darker px-6 text-center', className)}>
-      <p className="text-sm text-gta-text-secondary">No se pudo cargar este vídeo. Probá nuevamente más tarde.</p>
+    <div className={cn('relative flex aspect-video w-full items-center justify-center rounded-xl bg-auto-darker px-6 text-center', className)}>
+      <p className="text-sm text-auto-text-secondary">No se pudo cargar este vídeo. Probá nuevamente más tarde.</p>
     </div>
   )
 
@@ -80,7 +80,7 @@ export function VideoEmbed({ videoSrc, title, ambient = false, autoLoad = false,
       type="button"
       onClick={() => setLoaded(true)}
       className={cn(
-        'group relative aspect-video w-full overflow-hidden rounded-xl border border-gta-border bg-gta-darker',
+        'group relative aspect-video w-full overflow-hidden rounded-xl border border-auto-border bg-auto-darker',
         className
       )}
       aria-label={`Reproducir: ${title}`}
@@ -91,14 +91,14 @@ export function VideoEmbed({ videoSrc, title, ambient = false, autoLoad = false,
           garantizar cero descargas antes del click — y evitar que varias
           tarjetas de clips arranquen la descarga a la vez al cargar la
           página — es no crear el elemento hasta que el usuario interactúa. */}
-      <span className="absolute inset-0 flex items-center justify-center bg-gta-dark/30 transition-colors group-hover:bg-gta-dark/10">
-        <span className="media-play-button flex h-16 w-16 items-center justify-center rounded-full bg-gta-accent/90 shadow-gta-lg transition-transform duration-200 group-hover:scale-110">
+      <span className="absolute inset-0 flex items-center justify-center bg-auto-dark/30 transition-colors group-hover:bg-auto-dark/10">
+        <span className="media-play-button flex h-16 w-16 items-center justify-center rounded-full bg-auto-accent/90 shadow-auto-lg transition-transform duration-200 group-hover:scale-110">
           <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7 fill-white">
             <path d="M8 5v14l11-7z" />
           </svg>
         </span>
       </span>
-      <span className="absolute bottom-0 left-0 right-0 truncate bg-gradient-to-t from-gta-dark/90 to-transparent px-3 pb-2 pt-6 text-left text-sm font-medium text-gta-text">
+      <span className="absolute bottom-0 left-0 right-0 truncate bg-gradient-to-t from-auto-dark/90 to-transparent px-3 pb-2 pt-6 text-left text-sm font-medium text-auto-text">
         {title}
       </span>
     </button>

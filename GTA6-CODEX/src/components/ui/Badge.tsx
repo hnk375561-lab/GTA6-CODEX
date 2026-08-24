@@ -10,8 +10,8 @@ interface BadgeProps {
 
 const statusStyles: Record<InformationStatus, string> = {
   confirmado: 'bg-emerald-500/10 text-emerald-300 border border-emerald-400/25',
-  rumor: 'bg-gta-accent-warning/10 text-gta-accent-warning border border-gta-accent-warning/30',
-  nuestro: 'bg-gta-accent-orange/10 text-gta-accent-orange border border-gta-accent-orange/30',
+  rumor: 'bg-auto-accent-warning/10 text-auto-accent-warning border border-auto-accent-warning/30',
+  nuestro: 'bg-auto-accent-orange/10 text-auto-accent-orange border border-auto-accent-orange/30',
 }
 
 export function Badge({
@@ -20,12 +20,12 @@ export function Badge({
   children,
   className = '',
 }: BadgeProps) {
-  let style = 'bg-gta-surface-elevated/80 text-gta-text-secondary border border-gta-border'
+  let style = 'bg-auto-surface-elevated/80 text-auto-text-secondary border border-auto-border'
 
   if (variant === 'status' && status) {
     style = statusStyles[status]
   } else if (variant === 'tag') {
-    style = 'bg-gta-accent/15 text-gta-accent-strong border border-gta-accent/35'
+    style = 'bg-auto-accent/15 text-auto-accent-strong border border-auto-accent/35'
   }
 
   return (

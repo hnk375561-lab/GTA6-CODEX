@@ -70,11 +70,11 @@ export function HeroCountdownChip({ targets }: HeroCountdownChipProps) {
   return (
     <Link
       href="#countdown"
-      className="hero-countdown-chip glass-surface inline-flex items-center gap-2 rounded-full border border-gta-border/70 px-4 py-2 text-sm text-gta-text-secondary hover:-translate-y-0.5 hover:border-gta-accent/60"
+      className="hero-countdown-chip glass-surface inline-flex items-center gap-2 rounded-full border border-auto-border/70 px-4 py-2 text-sm text-auto-text-secondary hover:-translate-y-0.5 hover:border-auto-accent/60"
     >
       <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: nearest.accent }} aria-hidden="true" />
       <span>
-        Faltan <strong className="font-display font-bold text-gta-text">{daysLeft}</strong>{' '}
+        Faltan <strong className="font-display font-bold text-auto-text">{daysLeft}</strong>{' '}
         {daysLeft === 1 ? 'día' : 'días'} para {nearest.label.toLowerCase()}
       </span>
     </Link>

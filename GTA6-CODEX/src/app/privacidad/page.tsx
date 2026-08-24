@@ -14,21 +14,21 @@ export default function PrivacyPage() {
   return (
     <div className="container-narrow py-16 sm:py-20">
       <Reveal>
-        <p className="eyebrow mb-4 text-xs font-semibold uppercase text-gta-accent-strong">
+        <p className="eyebrow mb-4 text-xs font-semibold uppercase text-auto-accent-strong">
           Legal
         </p>
-        <h1 className="mb-8 text-3xl font-bold text-gta-text sm:text-4xl">
+        <h1 className="mb-8 text-3xl font-bold text-auto-text sm:text-4xl">
           Política de Privacidad
         </h1>
       </Reveal>
 
-      <Reveal delay={100} className="stagger prose-legal max-w-none space-y-8 text-gta-text-secondary/80">
-        <p className="text-sm text-gta-text-tertiary">
+      <Reveal delay={100} className="stagger prose-legal max-w-none space-y-8 text-auto-text-secondary/80">
+        <p className="text-sm text-auto-text-tertiary">
           Última actualización: agosto de 2026
         </p>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gta-text">1. Quiénes somos</h2>
+          <h2 className="text-xl font-semibold text-auto-text">1. Quiénes somos</h2>
           <p>
             {SITE_NAME} ({SITE_URL}) es un sitio editorial independiente dedicado a
             fichas técnicas y comparación de autos y motos. Esta política explica
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gta-text">2. Datos que recopilamos</h2>
+          <h2 className="text-xl font-semibold text-auto-text">2. Datos que recopilamos</h2>
           <p>
             Usamos Google Analytics para entender cómo se usa el sitio (páginas
             visitadas, tiempo de permanencia, ubicación aproximada por país/ciudad,
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gta-text">3. Cookies</h2>
+          <h2 className="text-xl font-semibold text-auto-text">3. Cookies</h2>
           <p>
             El sitio puede usar cookies técnicas (necesarias para el funcionamiento)
             y cookies analíticas (Google Analytics). Podés bloquear o eliminar
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gta-text">4. Terceros</h2>
+          <h2 className="text-xl font-semibold text-auto-text">4. Terceros</h2>
           <p>
             No vendemos ni compartimos datos personales con terceros con fines
             comerciales propios. Los únicos terceros que procesan datos son
@@ -73,13 +73,13 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gta-text">5. Tus derechos</h2>
+          <h2 className="text-xl font-semibold text-auto-text">5. Tus derechos</h2>
           <p>
             Podés solicitar información sobre los datos que tenemos asociados a tu
             visita, o pedir que dejemos de procesarlos, escribiéndonos a{' '}
             <a
               href="mailto:uruspotcdu@gmail.com"
-              className="link-underline text-gta-accent-strong transition-colors hover:text-gta-accent"
+              className="link-underline text-auto-accent-strong transition-colors hover:text-auto-accent"
             >
               uruspotcdu@gmail.com
             </a>
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gta-text">6. Cambios a esta política</h2>
+          <h2 className="text-xl font-semibold text-auto-text">6. Cambios a esta política</h2>
           <p>
             Podemos actualizar esta política cuando cambien nuestras prácticas
             (por ejemplo, al sumar publicidad o nuevos servicios). La fecha de

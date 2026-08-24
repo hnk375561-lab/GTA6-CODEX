@@ -44,18 +44,18 @@ export async function TrendingBar() {
   if (trending.length === 0) return null
 
   return (
-    <div className="glass-surface border-b border-gta-border/60">
+    <div className="glass-surface border-b border-auto-border/60">
       <div className="mx-auto flex max-w-7xl items-center gap-3 overflow-x-auto px-4 py-2.5 sm:px-6 lg:px-8">
-        <span className="eyebrow shrink-0 text-[11px] font-semibold uppercase tracking-[0.25em] text-gta-accent">
+        <span className="eyebrow shrink-0 text-[11px] font-semibold uppercase tracking-[0.25em] text-auto-accent">
           Tendencia
         </span>
         <ul className="flex shrink-0 items-center gap-3 whitespace-nowrap text-sm">
           {trending.map((entity, i) => (
             <li key={`${entity.type}-${entity.slug}`} className="flex items-center gap-3">
-              {i > 0 && <span className="text-gta-text-tertiary/60" aria-hidden="true">·</span>}
+              {i > 0 && <span className="text-auto-text-tertiary/60" aria-hidden="true">·</span>}
               <Link
                 href={getEntityPath(entity.type, entity.slug)}
-                className="link-underline font-medium text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
+                className="link-underline font-medium text-auto-text-secondary transition-colors hover:text-auto-accent-strong"
               >
                 {entity.title}
               </Link>

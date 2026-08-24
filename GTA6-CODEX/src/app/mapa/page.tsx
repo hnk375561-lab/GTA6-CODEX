@@ -24,8 +24,8 @@ export default function MapaPage() {
   return (
     <div className="mx-auto max-w-3xl px-[var(--gutter-width)] py-16 text-center md:py-24">
       <Reveal>
-        <h1 className="font-display text-3xl font-bold text-gta-text md:text-4xl">Mapa en construcción</h1>
-        <p className="mt-4 text-gta-text-secondary">
+        <h1 className="font-display text-3xl font-bold text-auto-text md:text-4xl">Mapa en construcción</h1>
+        <p className="mt-4 text-auto-text-secondary">
           Estamos preparando un mapa de concesionarias y puntos de interés con datos reales. El motor de mapa
           interactivo (Leaflet) ya está listo — solo falta cargar la geografía real para activarlo.
         </p>

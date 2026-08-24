@@ -45,12 +45,12 @@ describe('EVIDENCE_STAMP_META', () => {
 
   it('respaldado tiene estilo naranja', () => {
     const className = EVIDENCE_STAMP_META.respaldado.className
-    expect(className).toContain('gta-accent-orange')
+    expect(className).toContain('auto-accent-orange')
   })
 
   it('especulativo tiene estilo warning (amarillo/naranja)', () => {
     const className = EVIDENCE_STAMP_META.especulativo.className
-    expect(className).toContain('gta-accent-warning')
+    expect(className).toContain('auto-accent-warning')
   })
 
   it('los iconos oficial-visual son simétricos (◎ igual)', () => {

@@ -46,11 +46,11 @@ export const EVIDENCE_STAMP_META: Record<EvidenceLevel, EvidenceStampMeta> = {
   respaldado: {
     icon: '◈',
     shortLabel: 'Respaldado',
-    className: 'border-gta-accent-orange/25 bg-gta-accent-orange/10 text-gta-accent-orange',
+    className: 'border-auto-accent-orange/25 bg-auto-accent-orange/10 text-auto-accent-orange',
   },
   especulativo: {
     icon: '?',
     shortLabel: 'Especulativo',
-    className: 'border-gta-accent-warning/25 bg-gta-accent-warning/10 text-gta-accent-warning',
+    className: 'border-auto-accent-warning/25 bg-auto-accent-warning/10 text-auto-accent-warning',
   },
 }

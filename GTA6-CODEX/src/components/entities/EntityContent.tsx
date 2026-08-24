@@ -49,36 +49,36 @@ const markdownComponents: Components = {
   h2: ({ children, id }) => (
     <h2
       id={id}
-      className="scroll-mt-24 mb-3 mt-8 flex items-center gap-2.5 text-lg font-bold text-gta-text first:mt-0"
+      className="scroll-mt-24 mb-3 mt-8 flex items-center gap-2.5 text-lg font-bold text-auto-text first:mt-0"
     >
-      <span className="h-4 w-1 shrink-0 rounded-full bg-gta-accent" aria-hidden="true" />
+      <span className="h-4 w-1 shrink-0 rounded-full bg-auto-accent" aria-hidden="true" />
       {children}
     </h2>
   ),
   h3: ({ children, id }) => (
-    <h3 id={id} className="scroll-mt-24 mb-2.5 mt-6 text-base font-semibold text-gta-text">
+    <h3 id={id} className="scroll-mt-24 mb-2.5 mt-6 text-base font-semibold text-auto-text">
       {children}
     </h3>
   ),
   p: ({ children }) => (
-    <p className="mb-4 leading-relaxed text-gta-text-secondary last:mb-0">{children}</p>
+    <p className="mb-4 leading-relaxed text-auto-text-secondary last:mb-0">{children}</p>
   ),
-  strong: ({ children }) => <strong className="font-semibold text-gta-text">{children}</strong>,
-  em: ({ children }) => <em className="text-gta-text-secondary">{children}</em>,
+  strong: ({ children }) => <strong className="font-semibold text-auto-text">{children}</strong>,
+  em: ({ children }) => <em className="text-auto-text-secondary">{children}</em>,
   ul: ({ children }) => (
-    <ul className="mb-4 ml-1 list-outside list-disc space-y-1.5 pl-4 marker:text-gta-accent last:mb-0">
+    <ul className="mb-4 ml-1 list-outside list-disc space-y-1.5 pl-4 marker:text-auto-accent last:mb-0">
       {children}
     </ul>
   ),
   ol: ({ children }) => (
-    <ol className="mb-4 ml-1 list-outside list-decimal space-y-1.5 pl-4 marker:font-semibold marker:text-gta-accent last:mb-0">
+    <ol className="mb-4 ml-1 list-outside list-decimal space-y-1.5 pl-4 marker:font-semibold marker:text-auto-accent last:mb-0">
       {children}
     </ol>
   ),
-  li: ({ children }) => <li className="leading-relaxed text-gta-text-secondary">{children}</li>,
+  li: ({ children }) => <li className="leading-relaxed text-auto-text-secondary">{children}</li>,
   a: ({ href, children }) => {
     const isInternal = href?.startsWith('/')
-    const className = 'link-underline font-medium text-gta-accent transition-colors hover:text-gta-accent-strong'
+    const className = 'link-underline font-medium text-auto-accent transition-colors hover:text-auto-accent-strong'
     if (isInternal && href) {
       return (
         <Link href={href} className={className}>
@@ -93,29 +93,29 @@ const markdownComponents: Components = {
     )
   },
   blockquote: ({ children }) => (
-    <blockquote className="mb-4 rounded-r-md border-l-2 border-gta-accent/60 bg-gta-surface-elevated/50 py-2 pl-4 pr-3 text-gta-text-secondary italic last:mb-0">
+    <blockquote className="mb-4 rounded-r-md border-l-2 border-auto-accent/60 bg-auto-surface-elevated/50 py-2 pl-4 pr-3 text-auto-text-secondary italic last:mb-0">
       {children}
     </blockquote>
   ),
-  hr: () => <hr className="my-6 border-gta-border" />,
+  hr: () => <hr className="my-6 border-auto-border" />,
   code: ({ children }) => (
-    <code className="rounded bg-gta-surface-elevated px-1.5 py-0.5 font-mono text-[0.85em] text-gta-accent-strong">
+    <code className="rounded bg-auto-surface-elevated px-1.5 py-0.5 font-mono text-[0.85em] text-auto-accent-strong">
       {children}
     </code>
   ),
   table: ({ children }) => (
-    <div className="mb-4 overflow-x-auto rounded-lg border border-gta-border last:mb-0">
+    <div className="mb-4 overflow-x-auto rounded-lg border border-auto-border last:mb-0">
       <table className="w-full text-left text-sm">{children}</table>
     </div>
   ),
-  thead: ({ children }) => <thead className="bg-gta-surface-elevated">{children}</thead>,
+  thead: ({ children }) => <thead className="bg-auto-surface-elevated">{children}</thead>,
   th: ({ children }) => (
-    <th className="border-b border-gta-border px-3 py-2 text-xs font-semibold uppercase tracking-wide text-gta-text-tertiary">
+    <th className="border-b border-auto-border px-3 py-2 text-xs font-semibold uppercase tracking-wide text-auto-text-tertiary">
       {children}
     </th>
   ),
   td: ({ children }) => (
-    <td className="border-b border-gta-border/60 px-3 py-2 text-gta-text-secondary last:border-b-0">{children}</td>
+    <td className="border-b border-auto-border/60 px-3 py-2 text-auto-text-secondary last:border-b-0">{children}</td>
   ),
 }
 
@@ -131,9 +131,9 @@ function ContentToc({ headings }: { headings: TocHeading[] }) {
   return (
     <nav
       aria-label="Índice de la ficha"
-      className="mb-6 rounded-lg border border-gta-border bg-gta-surface-elevated/40 px-4 py-3.5"
+      className="mb-6 rounded-lg border border-auto-border bg-auto-surface-elevated/40 px-4 py-3.5"
     >
-      <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gta-text-tertiary">
+      <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-auto-text-tertiary">
         En esta ficha
       </p>
       <ol className="space-y-1.5">
@@ -141,9 +141,9 @@ function ContentToc({ headings }: { headings: TocHeading[] }) {
           <li key={h.id} className={cn(h.depth === 3 && 'ml-4')}>
             <a
               href={`#${h.id}`}
-              className="group flex items-baseline gap-2 text-sm text-gta-text-secondary transition-colors hover:text-gta-accent"
+              className="group flex items-baseline gap-2 text-sm text-auto-text-secondary transition-colors hover:text-auto-accent"
             >
-              <span className="font-mono text-[10px] tabular-nums text-gta-accent/60 group-hover:text-gta-accent">
+              <span className="font-mono text-[10px] tabular-nums text-auto-accent/60 group-hover:text-auto-accent">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <span className="link-underline">{h.text}</span>

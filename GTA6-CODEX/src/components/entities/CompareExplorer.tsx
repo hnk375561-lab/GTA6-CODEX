@@ -92,15 +92,15 @@ export function CompareExplorer({ vehicles, imageBySlug }: CompareExplorerProps)
       {/* --- Comparación activa --- */}
       <section aria-label="Comparación seleccionada">
         {selectedVehicles.length >= 2 ? (
-          <div className="glass-surface rounded-2xl border border-gta-border bg-gta-card p-5 sm:p-6">
+          <div className="glass-surface rounded-2xl border border-auto-border bg-auto-card p-5 sm:p-6">
             <div className="mb-5 flex items-center justify-between">
-              <h2 className="text-lg font-bold text-gta-text">
+              <h2 className="text-lg font-bold text-auto-text">
                 Comparando {selectedVehicles.length}/{MAX_COMPARE}
               </h2>
               <button
                 type="button"
                 onClick={clear}
-                className="rounded-lg px-3 py-1.5 text-xs font-semibold text-gta-text-secondary transition-colors hover:text-gta-text"
+                className="rounded-lg px-3 py-1.5 text-xs font-semibold text-auto-text-secondary transition-colors hover:text-auto-text"
               >
                 Limpiar
               </button>
@@ -108,13 +108,13 @@ export function CompareExplorer({ vehicles, imageBySlug }: CompareExplorerProps)
             <VehicleCompareTable vehicles={selectedVehicles} imageBySlug={imageBySlug} onRemove={toggle} />
           </div>
         ) : (
-          <div className="glass-surface flex flex-col items-center justify-center rounded-2xl border border-dashed border-gta-border bg-gta-card/60 px-6 py-12 text-center">
-            <p className="text-sm font-semibold text-gta-text">
+          <div className="glass-surface flex flex-col items-center justify-center rounded-2xl border border-dashed border-auto-border bg-auto-card/60 px-6 py-12 text-center">
+            <p className="text-sm font-semibold text-auto-text">
               {selectedVehicles.length === 0
                 ? 'Elegí al menos 2 vehículos para comparar'
                 : 'Elegí 1 vehículo más para comparar'}
             </p>
-            <p className="mt-1 text-xs text-gta-text-secondary">
+            <p className="mt-1 text-xs text-auto-text-secondary">
               Seleccioná hasta {MAX_COMPARE} de la lista de abajo. La comparación se arma acá mismo.
             </p>
             {selectedVehicles.length === 1 && (
@@ -135,8 +135,8 @@ export function CompareExplorer({ vehicles, imageBySlug }: CompareExplorerProps)
       {/* --- Selector --- */}
       <section aria-label="Elegir vehículos">
         <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="text-base font-bold text-gta-text">
-            Todos los vehículos <span className="text-gta-text-tertiary">({filteredVehicles.length})</span>
+          <h2 className="text-base font-bold text-auto-text">
+            Todos los vehículos <span className="text-auto-text-tertiary">({filteredVehicles.length})</span>
           </h2>
           <div className="relative w-full sm:w-72">
             <svg
@@ -149,7 +149,7 @@ export function CompareExplorer({ vehicles, imageBySlug }: CompareExplorerProps)
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"
-              className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gta-text-tertiary"
+              className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-auto-text-tertiary"
             >
               <circle cx="11" cy="11" r="7" />
               <path d="m21 21-4.3-4.3" />
@@ -159,7 +159,7 @@ export function CompareExplorer({ vehicles, imageBySlug }: CompareExplorerProps)
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Buscar por nombre, fabricante o clase…"
-              className="w-full rounded-lg border border-gta-border bg-gta-surface py-2 pl-8 pr-3 text-sm text-gta-text placeholder:text-gta-text-tertiary focus:border-gta-accent focus:outline-none"
+              className="w-full rounded-lg border border-auto-border bg-auto-surface py-2 pl-8 pr-3 text-sm text-auto-text placeholder:text-auto-text-tertiary focus:border-auto-accent focus:outline-none"
               aria-label="Buscar vehículos"
             />
           </div>
@@ -183,7 +183,7 @@ export function CompareExplorer({ vehicles, imageBySlug }: CompareExplorerProps)
         </div>
 
         {filteredVehicles.length === 0 && (
-          <p className="py-10 text-center text-sm text-gta-text-secondary">
+          <p className="py-10 text-center text-sm text-auto-text-secondary">
             Sin resultados para &ldquo;{query}&rdquo;.
           </p>
         )}
@@ -212,14 +212,14 @@ function VehiclePickerTile({
       disabled={disabled}
       aria-pressed={selected}
       className={cn(
-        'group relative overflow-hidden rounded-xl border bg-gta-surface text-left transition-all',
+        'group relative overflow-hidden rounded-xl border bg-auto-surface text-left transition-all',
         selected
-          ? 'border-gta-accent shadow-glow-pink'
-          : 'border-gta-border hover:border-gta-accent/60',
-        disabled && 'cursor-not-allowed opacity-40 hover:border-gta-border'
+          ? 'border-auto-accent shadow-glow-pink'
+          : 'border-auto-border hover:border-auto-accent/60',
+        disabled && 'cursor-not-allowed opacity-40 hover:border-auto-border'
       )}
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-gta-dark">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-auto-dark">
         {image?.src ? (
           <Image
             src={image.src}
@@ -230,14 +230,14 @@ function VehiclePickerTile({
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center text-[10px] text-gta-text-tertiary">
+          <div className="flex h-full w-full items-center justify-center text-[10px] text-auto-text-tertiary">
             Sin imagen
           </div>
         )}
         <div
           className={cn(
             'absolute right-1.5 top-1.5 flex h-5 w-5 items-center justify-center rounded-full border text-white transition-colors',
-            selected ? 'border-gta-accent bg-gta-accent' : 'border-white/30 bg-black/50'
+            selected ? 'border-auto-accent bg-auto-accent' : 'border-white/30 bg-black/50'
           )}
           aria-hidden="true"
         >
@@ -249,9 +249,9 @@ function VehiclePickerTile({
         </div>
       </div>
       <div className="p-2">
-        <p className="line-clamp-1 text-xs font-semibold text-gta-text">{vehicle.title}</p>
+        <p className="line-clamp-1 text-xs font-semibold text-auto-text">{vehicle.title}</p>
         {vehicle.manufacturer && (
-          <p className="line-clamp-1 text-[10px] text-gta-text-secondary">{vehicle.manufacturer}</p>
+          <p className="line-clamp-1 text-[10px] text-auto-text-secondary">{vehicle.manufacturer}</p>
         )}
       </div>
     </button>

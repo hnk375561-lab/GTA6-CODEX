@@ -15,8 +15,8 @@ function Field({ label, value }: { label: string; value?: string | null }) {
   if (!value) return null
   return (
     <div className="flex items-baseline justify-between gap-4">
-      <dt className="font-mono text-[10px] uppercase tracking-wide text-gta-text-tertiary">{label}</dt>
-      <dd className="truncate text-right font-mono text-xs font-medium tabular-nums text-gta-text">{value}</dd>
+      <dt className="font-mono text-[10px] uppercase tracking-wide text-auto-text-tertiary">{label}</dt>
+      <dd className="truncate text-right font-mono text-xs font-medium tabular-nums text-auto-text">{value}</dd>
     </div>
   )
 }
@@ -25,12 +25,12 @@ function ListField({ label, items }: { label: string; items?: string[] }) {
   if (!items || items.length === 0) return null
   return (
     <div>
-      <dt className="mb-1.5 font-mono text-[10px] uppercase tracking-wide text-gta-text-tertiary">{label}</dt>
+      <dt className="mb-1.5 font-mono text-[10px] uppercase tracking-wide text-auto-text-tertiary">{label}</dt>
       <dd className="flex flex-wrap gap-1.5">
         {items.map((item) => (
           <span
             key={item}
-            className="rounded-md border border-dashed border-gta-border-strong bg-gta-darker px-2 py-0.5 font-mono text-xs text-gta-text"
+            className="rounded-md border border-dashed border-auto-border-strong bg-auto-darker px-2 py-0.5 font-mono text-xs text-auto-text"
           >
             {item}
           </span>
@@ -58,7 +58,7 @@ function GenericEntityMetadata({ entity }: { entity: Record<string, unknown> }) 
   return withCard(
     <div className="space-y-3">
       {textFields.length > 0 && (
-        <dl className="space-y-2 border-y border-dashed border-gta-border-strong py-2.5">
+        <dl className="space-y-2 border-y border-dashed border-auto-border-strong py-2.5">
           {textFields.map((field) => (
             <Field key={field.label} label={field.label} value={field.value as string} />
           ))}
@@ -83,7 +83,7 @@ interface EntityMetadataProps {
 function withCard(body: ReactNode | null) {
   if (!body) return null
   return (
-    <Card className="shadow-gta-sm">
+    <Card className="shadow-auto-sm">
       <CardBody>
         <EntitySectionHeading label="Ficha técnica" />
         {body}
@@ -103,14 +103,14 @@ export function EntityMetadata({ entity }: EntityMetadataProps) {
     return withCard(
       <div className="space-y-4">
         {hasBasics && (
-          <dl className="space-y-2 border-y border-dashed border-gta-border-strong py-2.5">
+          <dl className="space-y-2 border-y border-dashed border-auto-border-strong py-2.5">
             <Field label="Fabricante" value={entity.manufacturer} />
             <Field label="Clase" value={entity.class} />
             <Field label="Personalizable" value={entity.customizable ? 'Sí' : undefined} />
           </dl>
         )}
         {hasPerformance && (
-          <div className="space-y-3 border-t border-dashed border-gta-border-strong pt-3">
+          <div className="space-y-3 border-t border-dashed border-auto-border-strong pt-3">
             <StatBar label="Velocidad" value={entity.performance?.speed} />
             <StatBar label="Aceleración" value={entity.performance?.acceleration} />
             <StatBar label="Manejo" value={entity.performance?.handling} />
@@ -129,13 +129,13 @@ export function EntityMetadata({ entity }: EntityMetadataProps) {
 
     return withCard(
       <div className="space-y-3">
-        <dl className="space-y-2 border-y border-dashed border-gta-border-strong py-2.5">
+        <dl className="space-y-2 border-y border-dashed border-auto-border-strong py-2.5">
           <Field label="Facción" value={entity.faction} />
           <Field label="Actor de voz" value={entity.voice_actor} />
         </dl>
         <ListField label="Alias" items={entity.alias} />
         {hasAppearance && (
-          <dl className="space-y-2 border-t border-dashed border-gta-border-strong pt-3">
+          <dl className="space-y-2 border-t border-dashed border-auto-border-strong pt-3">
             <Field label="Edad" value={entity.appearance?.age} />
             <Field label="Altura" value={entity.appearance?.height} />
             <Field label="Contextura" value={entity.appearance?.build} />
@@ -165,19 +165,19 @@ export function EntityMetadata({ entity }: EntityMetadataProps) {
 
     return withCard(
       <div className="space-y-3">
-        <dl className="space-y-2 border-y border-dashed border-gta-border-strong py-2.5">
+        <dl className="space-y-2 border-y border-dashed border-auto-border-strong py-2.5">
           <Field label="Distrito" value={loc.district} />
           <Field label="Región" value={loc.region} />
         </dl>
         <ListField label="Puntos de interés" items={loc.points_of_interest} />
         <ListField label="Negocios" items={loc.businesses} />
         {hasEnvironment && (
-          <div className="space-y-2 border-t border-dashed border-gta-border-strong pt-3">
+          <div className="space-y-2 border-t border-dashed border-auto-border-strong pt-3">
             <Field label="Clima" value={loc.environment?.climate} />
             <ListField label="Fauna confirmada" items={loc.environment?.fauna} />
             <ListField label="Eventos ambientales confirmados" items={loc.environment?.naturalEvents} />
             {loc.environment?.unconfirmedNote && (
-              <p className="text-xs italic leading-relaxed text-gta-text-secondary/80">
+              <p className="text-xs italic leading-relaxed text-auto-text-secondary/80">
                 {loc.environment.unconfirmedNote}
               </p>
             )}
@@ -199,7 +199,7 @@ export function EntityMetadata({ entity }: EntityMetadataProps) {
 
     return withCard(
       <div className="space-y-3">
-        <dl className="space-y-2 border-y border-dashed border-gta-border-strong py-2.5">
+        <dl className="space-y-2 border-y border-dashed border-auto-border-strong py-2.5">
           <Field label="Encargado por" value={mission.giver} />
           <Field label="Tipo" value={mission.mission_type} />
           <Field label="Recompensa" value={mission.reward} />

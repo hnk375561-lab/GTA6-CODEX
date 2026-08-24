@@ -1,11 +1,10 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { EntityType, type Entity } from '@/types'
 import { getEntitiesByType } from '@/lib/entities'
-import { getCoverArtVideoAsset, resolveMediaRender, getCharacterClipUrl, getEntityImageMap } from '@/lib/media'
+import { getEntityImageMap } from '@/lib/media'
 import { getBidirectionalRelationCount } from '@/lib/relations'
 import { generateListMetadata } from '@/lib/seo'
 import { getVehiclesByManufacturer } from '@/lib/vehicle-manufacturers'
@@ -14,7 +13,6 @@ import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { Card, CardBody } from '@/components/ui/Card'
 import { EntityListExplorer } from '@/components/entities/EntityListExplorer'
 import { EntityCard } from '@/components/entities/EntityCard'
-import { VideoEmbed } from '@/components/media/VideoEmbed'
 
 interface PageProps {
   params: Promise<{ entityType: string }>
@@ -61,18 +59,9 @@ function EntityListExplorerFallback({
 const VALID_TYPES = Object.values(EntityType) as string[]
 
 const TYPE_LABELS: Record<EntityType, string> = {
-  [EntityType.CHARACTER]: 'Personajes',
   [EntityType.VEHICLE]: 'Vehículos',
-  [EntityType.LOCATION]: 'Ubicaciones',
-  [EntityType.MISSION]: 'Misiones',
-  [EntityType.WEAPON]: 'Armas',
-  [EntityType.ACTIVITY]: 'Actividades',
-  [EntityType.FACTION]: 'Organizaciones',
-  [EntityType.BUSINESS]: 'Negocios',
-  [EntityType.OBJECT]: 'Objetos',
   [EntityType.NEWS]: 'Noticias',
   [EntityType.GUIDE]: 'Guías',
-  [EntityType.TRAILER]: 'Trailers',
 }
 
 const STATUS_LABELS = {
@@ -122,20 +111,20 @@ export default async function EntityTypePage({ params }: PageProps) {
   const entityImageMap = getEntityImageMap(entities)
 
   return (
-    <section className="relative overflow-hidden border-b border-gta-border py-12 sm:py-16">
+    <section className="relative overflow-hidden border-b border-auto-border py-12 sm:py-16">
       <div className="list-header-glow" aria-hidden="true" />
       <div className="container-max relative">
         <Reveal className="mb-10">
-          <nav className="mb-6 text-sm text-gta-text-secondary" aria-label="Breadcrumb">
-            <Link href="/" className="link-underline transition-colors hover:text-gta-accent">
+          <nav className="mb-6 text-sm text-auto-text-secondary" aria-label="Breadcrumb">
+            <Link href="/" className="link-underline transition-colors hover:text-auto-accent">
               Inicio
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-gta-text">{label}</span>
+            <span className="text-auto-text">{label}</span>
           </nav>
 
           <div className="flex items-center gap-4">
-            <div className="category-icon-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-xl text-gta-accent">
+            <div className="category-icon-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-xl text-auto-accent">
               <CategoryIcon type={type} className="h-6 w-6" />
             </div>
             <div>
@@ -143,17 +132,17 @@ export default async function EntityTypePage({ params }: PageProps) {
                   (Categorías, Destacados) — antes esta página era la única
                   que saltaba directo al h1 sin ese primer escalón, así que
                   el título no se leía como parte del mismo sistema. */}
-              <p className="eyebrow mb-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+              <p className="eyebrow mb-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                 Catálogo
               </p>
-              <h1 className="text-4xl font-bold leading-tight text-gta-text">{label}</h1>
+              <h1 className="text-4xl font-bold leading-tight text-auto-text">{label}</h1>
               {/* text-sm (antes heredaba el tamaño base de <p>): la metadata
                   de conteo es información de apoyo, no debería competir en
                   peso visual con el h1 que tiene justo arriba. */}
-              <p className="mt-2 text-sm text-gta-text-secondary">
+              <p className="mt-2 text-sm text-auto-text-secondary">
                 {entities.length} {entities.length === 1 ? 'entrada documentada' : 'entradas documentadas'}
                 {entities.length > 0 && (
-                  <span className="text-gta-text-secondary/80">
+                  <span className="text-auto-text-secondary/80">
                     {' · '}
                     {[
                       statusCounts.confirmado > 0 && `${statusCounts.confirmado} ${STATUS_LABELS.confirmado.toLowerCase()}`,
@@ -169,37 +158,6 @@ export default async function EntityTypePage({ params }: PageProps) {
           </div>
         </Reveal>
 
-        {/* Portada oficial en video: solo en el listado de Trailers, no
-            reemplaza ningún contenido existente — se agrega arriba del
-            explorador de la lista. */}
-        {type === EntityType.TRAILER && getCoverArtVideoAsset() && (
-          <Reveal className="mb-10">
-            {(() => {
-              const coverArt = resolveMediaRender(getCoverArtVideoAsset()!)
-              return (
-                <Card className="overflow-hidden !p-0">
-                  {coverArt.renderAs === 'video' && coverArt.videoSrc ? (
-                    <VideoEmbed videoSrc={coverArt.videoSrc} title={coverArt.title} className="!rounded-none !border-0" />
-                  ) : coverArt.renderAs === 'image' && coverArt.thumbnailSrc ? (
-                    <div className="relative aspect-video w-full overflow-hidden">
-                      <Image
-                        src={coverArt.thumbnailSrc}
-                        alt={coverArt.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 1024px"
-                      />
-                    </div>
-                  ) : null}
-                  <CardBody>
-                    <p className="text-sm text-gta-text-secondary">{coverArt.title}</p>
-                  </CardBody>
-                </Card>
-              )
-            })()}
-          </Reveal>
-        )}
-
         {/* Índice de fabricantes (roadmap punto 4, agregación por
             atributo): solo en el listado de Vehículos, único tipo con
             `manufacturer` en su schema. Enlaza a las páginas hub en
@@ -214,7 +172,7 @@ export default async function EntityTypePage({ params }: PageProps) {
               return (
                 <Card>
                   <CardBody>
-                    <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gta-text-secondary">
+                    <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-auto-text-secondary">
                       Explorar por fabricante
                     </h2>
                     <div className="flex flex-wrap gap-2">
@@ -222,10 +180,10 @@ export default async function EntityTypePage({ params }: PageProps) {
                         <Link
                           key={group.slug}
                           href={`/vehiculos/fabricante/${group.slug}`}
-                          className="rounded-full border border-gta-border px-3 py-1.5 text-sm text-gta-text-secondary transition-colors hover:border-gta-accent hover:text-gta-accent"
+                          className="rounded-full border border-auto-border px-3 py-1.5 text-sm text-auto-text-secondary transition-colors hover:border-auto-accent hover:text-auto-accent"
                         >
                           {group.label}
-                          <span className="ml-1.5 text-gta-text-secondary/80">{group.vehicles.length}</span>
+                          <span className="ml-1.5 text-auto-text-secondary/80">{group.vehicles.length}</span>
                         </Link>
                       ))}
                     </div>
@@ -250,15 +208,6 @@ export default async function EntityTypePage({ params }: PageProps) {
             typeLabel={label}
             imageBySlug={entityImageMap}
             relationCountBySlug={relationCountBySlug}
-            clipUrlBySlug={
-              type === EntityType.CHARACTER
-                ? Object.fromEntries(
-                    entities
-                      .map((e) => [e.slug, getCharacterClipUrl(e.slug)] as const)
-                      .filter((pair): pair is [string, string] => Boolean(pair[1]))
-                  )
-                : undefined
-            }
           />
         </Suspense>
       </div>

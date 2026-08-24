@@ -29,16 +29,16 @@ export default function Error({
     <div className="flex min-h-[80vh] items-center justify-center">
       <div className="container-narrow py-20 text-center">
         <div className="mb-8">
-          <p className="eyebrow mb-4 text-xs font-semibold uppercase text-gta-accent-strong">
+          <p className="eyebrow mb-4 text-xs font-semibold uppercase text-auto-accent-strong">
             Expediente · Error
           </p>
           <div className="text-gradient-vice mb-4 font-display text-8xl font-bold sm:text-9xl">
             !
           </div>
-          <h1 className="mb-2 text-3xl font-bold text-gta-text sm:text-4xl">
+          <h1 className="mb-2 text-3xl font-bold text-auto-text sm:text-4xl">
             Algo salió mal
           </h1>
-          <p className="mb-8 text-lg text-gta-text-secondary">
+          <p className="mb-8 text-lg text-auto-text-secondary">
             Hubo un error al cargar esta página. Podés intentar de nuevo o volver al inicio.
           </p>
         </div>
@@ -47,13 +47,13 @@ export default function Error({
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => reset()}
-              className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
+              className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-auto-darker transition-all hover:-translate-y-0.5"
             >
               Reintentar
             </button>
             <Link
               href="/"
-              className="link-underline text-gta-accent-strong transition-colors hover:text-gta-accent"
+              className="link-underline text-auto-accent-strong transition-colors hover:text-auto-accent"
             >
               Volver a Inicio
             </Link>

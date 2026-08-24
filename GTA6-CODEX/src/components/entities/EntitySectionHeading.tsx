@@ -21,12 +21,12 @@ export function EntitySectionHeading({ label, index }: EntitySectionHeadingProps
   return (
     <div className="mb-4 flex items-center gap-3">
       {index != null && (
-        <span className="font-mono text-[11px] tabular-nums text-gta-accent/70">
+        <span className="font-mono text-[11px] tabular-nums text-auto-accent/70">
           {String(index).padStart(2, '0')}
         </span>
       )}
-      <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-gta-text">{label}</h2>
-      <span className="h-px flex-1 bg-gta-border" aria-hidden="true" />
+      <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-auto-text">{label}</h2>
+      <span className="h-px flex-1 bg-auto-border" aria-hidden="true" />
     </div>
   )
 }

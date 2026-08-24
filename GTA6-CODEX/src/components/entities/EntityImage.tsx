@@ -96,7 +96,7 @@ const QUALITY: Record<NonNullable<EntityImageProps['variant']>, number> = {
  * (grid + acento de color), sin representar a ninguna entidad concreta.
  */
 function CategoryGlyph({ type, size = 'default' }: { type: EntityType; size?: 'default' | 'sm' }) {
-  const cls = size === 'sm' ? 'h-4 w-4 stroke-gta-accent/50' : 'h-10 w-10 stroke-gta-accent/50'
+  const cls = size === 'sm' ? 'h-4 w-4 stroke-auto-accent/50' : 'h-10 w-10 stroke-auto-accent/50'
   switch (type) {
     case EntityType.CHARACTER:
       return (
@@ -182,7 +182,7 @@ export function EntityImage({ entity, image, variant = 'thumbnail', priority = f
   const mediaContent = (
     <div
       className={cn(
-        'card-media relative shrink-0 overflow-hidden rounded-lg border border-gta-border bg-gta-dark',
+        'card-media relative shrink-0 overflow-hidden rounded-lg border border-auto-border bg-auto-dark',
         isAvatar && 'card-media--avatar rounded-md',
         ASPECT[variant],
         className
@@ -241,7 +241,7 @@ export function EntityImage({ entity, image, variant = 'thumbnail', priority = f
             <CategoryGlyph type={entity.type} size={isAvatar ? 'sm' : 'default'} />
           </div>
           {!isAvatar && (
-            <span className="relative text-[10px] font-medium uppercase tracking-wider text-gta-text-secondary/80">
+            <span className="relative text-[10px] font-medium uppercase tracking-wider text-auto-text-secondary/80">
               {CATEGORY_FALLBACK_LABEL[entity.type] ?? 'Sin imagen verificada'}
             </span>
           )}

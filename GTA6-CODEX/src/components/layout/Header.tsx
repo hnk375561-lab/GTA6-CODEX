@@ -40,15 +40,15 @@ export function Header() {
   }, [menuOpen])
 
   return (
-    <header className="glass-surface sticky top-0 z-50 w-full border-b border-gta-border/80 shadow-[0_1px_0_0_rgba(255,255,255,0.03)]">
+    <header className="glass-surface sticky top-0 z-50 w-full border-b border-auto-border/80 shadow-[0_1px_0_0_rgba(255,255,255,0.03)]">
       <div className="section-divider absolute inset-x-0 bottom-0" aria-hidden="true" />
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-3">
-          <div className="logo-mark flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-gta-accent to-gta-accent-orange shadow-glow-pink">
-            <span className="font-display text-xs font-bold tracking-tight text-gta-darker">A</span>
+          <div className="logo-mark flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-auto-accent to-auto-accent-orange shadow-glow-pink">
+            <span className="font-display text-xs font-bold tracking-tight text-auto-darker">A</span>
           </div>
-          <span className="hidden font-display text-base font-semibold tracking-tight text-gta-text transition-colors duration-300 group-hover:text-gta-accent-strong sm:inline">
+          <span className="hidden font-display text-base font-semibold tracking-tight text-auto-text transition-colors duration-300 group-hover:text-auto-accent-strong sm:inline">
             Auto<span className="text-gradient-vice">Ficha</span>
           </span>
         </Link>
@@ -59,7 +59,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="link-underline text-sm font-medium text-gta-text-secondary transition-colors hover:text-gta-accent-strong focus-visible:text-gta-accent-strong"
+              className="link-underline text-sm font-medium text-auto-text-secondary transition-colors hover:text-auto-accent-strong focus-visible:text-auto-accent-strong"
             >
               {link.label}
             </Link>
@@ -71,7 +71,7 @@ export function Header() {
           <Link
             href="/buscar"
             aria-label="Buscar"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-gta-border text-gta-text-secondary transition-all hover:border-gta-accent hover:text-gta-accent-strong hover:shadow-glow-pink focus-visible:border-gta-accent focus-visible:text-gta-accent"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-auto-border text-auto-text-secondary transition-all hover:border-auto-accent hover:text-auto-accent-strong hover:shadow-glow-pink focus-visible:border-auto-accent focus-visible:text-auto-accent"
           >
             <svg
               width="16"
@@ -95,7 +95,7 @@ export function Header() {
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-gta-border text-gta-text-secondary transition-all hover:border-gta-accent hover:text-gta-accent-strong hover:shadow-glow-pink focus-visible:border-gta-accent focus-visible:text-gta-accent md:hidden"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-auto-border text-auto-text-secondary transition-all hover:border-auto-accent hover:text-auto-accent-strong hover:shadow-glow-pink focus-visible:border-auto-accent focus-visible:text-auto-accent md:hidden"
           >
             <svg
               width="16"
@@ -123,14 +123,14 @@ export function Header() {
         id="mobile-nav"
         aria-label="Navegación móvil"
         hidden={!menuOpen}
-        className="glass-surface border-t border-gta-border px-4 py-3 md:hidden"
+        className="glass-surface border-t border-auto-border px-4 py-3 md:hidden"
       >
         <ul className="flex flex-col">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="block rounded-md px-2 py-3 text-base font-medium text-gta-text-secondary transition-colors hover:bg-gta-surface-elevated hover:text-gta-accent-strong focus-visible:bg-gta-surface-elevated focus-visible:text-gta-accent"
+                className="block rounded-md px-2 py-3 text-base font-medium text-auto-text-secondary transition-colors hover:bg-auto-surface-elevated hover:text-auto-accent-strong focus-visible:bg-auto-surface-elevated focus-visible:text-auto-accent"
               >
                 {link.label}
               </Link>

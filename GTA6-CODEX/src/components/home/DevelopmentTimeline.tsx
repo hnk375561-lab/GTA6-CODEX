@@ -37,13 +37,13 @@ export function DevelopmentTimeline({ events }: { events: TimelineEvent[] }) {
   return (
     <div className="relative mx-auto max-w-3xl">
       <div
-        className="absolute bottom-0 left-[15px] top-0 w-px bg-gta-border sm:left-[19px]"
+        className="absolute bottom-0 left-[15px] top-0 w-px bg-auto-border sm:left-[19px]"
         aria-hidden="true"
       />
       {events.map(({ entity, date, accent }, i) => (
         <Reveal key={`${entity.type}-${entity.slug}`} delay={i * 60} className="relative pb-10 pl-10 last:pb-0 sm:pl-14">
           <span
-            className="absolute left-0 top-1 flex h-[31px] w-[31px] shrink-0 items-center justify-center rounded-full border-2 bg-gta-darker sm:h-[39px] sm:w-[39px]"
+            className="absolute left-0 top-1 flex h-[31px] w-[31px] shrink-0 items-center justify-center rounded-full border-2 bg-auto-darker sm:h-[39px] sm:w-[39px]"
             style={{ borderColor: accent }}
             aria-hidden="true"
           >
@@ -51,11 +51,11 @@ export function DevelopmentTimeline({ events }: { events: TimelineEvent[] }) {
           </span>
 
           <Link href={`/${entity.type}/${entity.slug}`} className="group block">
-            <p className="mb-1 text-xs font-semibold uppercase tracking-[0.15em] text-gta-text-tertiary">
+            <p className="mb-1 text-xs font-semibold uppercase tracking-[0.15em] text-auto-text-tertiary">
               {formatEventDate(date)}
             </p>
             <div className="mb-1.5 flex flex-wrap items-center gap-2">
-              <h3 className="font-bold text-gta-text transition-colors group-hover:text-gta-accent">
+              <h3 className="font-bold text-auto-text transition-colors group-hover:text-auto-accent">
                 {entity.title}
               </h3>
               <Badge variant="status" status={entity.status}>
@@ -63,7 +63,7 @@ export function DevelopmentTimeline({ events }: { events: TimelineEvent[] }) {
               </Badge>
               {entity.type === EntityType.TRAILER && <Badge variant="tag">Tráiler</Badge>}
             </div>
-            <p className="line-clamp-2 text-sm text-gta-text-secondary">{entity.description}</p>
+            <p className="line-clamp-2 text-sm text-auto-text-secondary">{entity.description}</p>
           </Link>
         </Reveal>
       ))}

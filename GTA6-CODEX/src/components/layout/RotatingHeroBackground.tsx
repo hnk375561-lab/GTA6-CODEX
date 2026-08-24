@@ -194,8 +194,8 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
           />
         ))}
       </div>
-      {/* Overlay: mantiene el contraste del contenido y el tono gta-dark del resto del sitio */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gta-dark/75 via-gta-dark/55 to-gta-dark" />
+      {/* Overlay: mantiene el contraste del contenido y el tono auto-dark del resto del sitio */}
+      <div className="absolute inset-0 bg-gradient-to-b from-auto-dark/75 via-auto-dark/55 to-auto-dark" />
     </div>
   )
 }

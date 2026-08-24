@@ -14,21 +14,21 @@ export default function TermsPage() {
   return (
     <div className="container-narrow py-16 sm:py-20">
       <Reveal>
-        <p className="eyebrow mb-4 text-xs font-semibold uppercase text-gta-accent-strong">
+        <p className="eyebrow mb-4 text-xs font-semibold uppercase text-auto-accent-strong">
           Legal
         </p>
-        <h1 className="mb-8 text-3xl font-bold text-gta-text sm:text-4xl">
+        <h1 className="mb-8 text-3xl font-bold text-auto-text sm:text-4xl">
           Términos de Uso
         </h1>
       </Reveal>
 
-      <Reveal delay={100} className="stagger prose-legal max-w-none space-y-8 text-gta-text-secondary/80">
-        <p className="text-sm text-gta-text-tertiary">
+      <Reveal delay={100} className="stagger prose-legal max-w-none space-y-8 text-auto-text-secondary/80">
+        <p className="text-sm text-auto-text-tertiary">
           Última actualización: agosto de 2026
         </p>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gta-text">1. Aceptación</h2>
+          <h2 className="text-xl font-semibold text-auto-text">1. Aceptación</h2>
           <p>
             Al usar {SITE_NAME} ({SITE_URL}) aceptás estos términos. Si no estás de
             acuerdo, te pedimos que no uses el sitio.
@@ -36,7 +36,7 @@ export default function TermsPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gta-text">2. Naturaleza del sitio</h2>
+          <h2 className="text-xl font-semibold text-auto-text">2. Naturaleza del sitio</h2>
           <p>
             {SITE_NAME} es un proyecto editorial independiente dedicado a fichas
             técnicas y comparación de autos y motos. No está asociado,
@@ -48,7 +48,7 @@ export default function TermsPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gta-text">3. Contenido del sitio</h2>
+          <h2 className="text-xl font-semibold text-auto-text">3. Contenido del sitio</h2>
           <p>
             El contenido editorial (textos, fichas técnicas, comparativas,
             organización de la información) es original y de nuestra autoría,
@@ -60,7 +60,7 @@ export default function TermsPage() {
             retiremos, escribinos a{' '}
             <a
               href="mailto:uruspotcdu@gmail.com"
-              className="link-underline text-gta-accent-strong transition-colors hover:text-gta-accent"
+              className="link-underline text-auto-accent-strong transition-colors hover:text-auto-accent"
             >
               uruspotcdu@gmail.com
             </a>{' '}
@@ -69,7 +69,7 @@ export default function TermsPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gta-text">4. Uso permitido</h2>
+          <h2 className="text-xl font-semibold text-auto-text">4. Uso permitido</h2>
           <p>
             Podés navegar y compartir enlaces al sitio libremente. No está
             permitido reproducir el contenido editorial de forma masiva sin
@@ -79,7 +79,7 @@ export default function TermsPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gta-text">5. Precisión de la información</h2>
+          <h2 className="text-xl font-semibold text-auto-text">5. Precisión de la información</h2>
           <p>
             Documentamos especificaciones técnicas, precios y datos de
             vehículos a partir de fuentes públicas del fabricante y prensa
@@ -91,7 +91,7 @@ export default function TermsPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gta-text">6. Publicidad y monetización</h2>
+          <h2 className="text-xl font-semibold text-auto-text">6. Publicidad y monetización</h2>
           <p>
             El sitio puede mostrar publicidad de terceros (como Google AdSense)
             o enlaces de afiliados para sostener su mantenimiento. Esto no
@@ -100,13 +100,13 @@ export default function TermsPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gta-text">7. Contacto</h2>
+          <h2 className="text-xl font-semibold text-auto-text">7. Contacto</h2>
           <p>
             Para consultas, reportes de errores o solicitudes de retiro de
             contenido, escribinos a{' '}
             <a
               href="mailto:uruspotcdu@gmail.com"
-              className="link-underline text-gta-accent-strong transition-colors hover:text-gta-accent"
+              className="link-underline text-auto-accent-strong transition-colors hover:text-auto-accent"
             >
               uruspotcdu@gmail.com
             </a>

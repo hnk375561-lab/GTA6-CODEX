@@ -96,13 +96,13 @@ const EVIDENCE_LEVELS: Array<{
     icon: '◈',
     label: 'Respaldado',
     description: 'Sin confirmación oficial directa, pero sostenido por fuentes secundarias solventes.',
-    className: 'border-gta-accent-orange/25 bg-gta-accent-orange/10 text-gta-accent-orange',
+    className: 'border-auto-accent-orange/25 bg-auto-accent-orange/10 text-auto-accent-orange',
   },
   {
     icon: '?',
     label: 'Especulativo',
     description: 'Teoría o rumor razonable, marcado como tal, sin evidencia sólida detrás — todavía.',
-    className: 'border-gta-accent-warning/25 bg-gta-accent-warning/10 text-gta-accent-warning',
+    className: 'border-auto-accent-warning/25 bg-auto-accent-warning/10 text-auto-accent-warning',
   },
 ]
 
@@ -190,7 +190,7 @@ export default async function HomePage() {
       <SceneSection
         sceneId="home-hero"
         htmlId="hero"
-        className="hero-gleam relative overflow-hidden border-b border-gta-border py-24 sm:py-32"
+        className="hero-gleam relative overflow-hidden border-b border-auto-border py-24 sm:py-32"
       >
         <RotatingHeroBackground />
         {/* Sweep de luz sincronizado con el motor WebGL (ángulo/temperatura
@@ -277,7 +277,7 @@ export default async function HomePage() {
                 </span>{' '}
                 a un <span className="hero-title-highlight">clic</span>
               </span>
-              <span className="hero-title-line hero-title-line--sub mt-5 block font-sans text-lg font-normal text-gta-text-secondary sm:text-xl">
+              <span className="hero-title-line hero-title-line--sub mt-5 block font-sans text-lg font-normal text-auto-text-secondary sm:text-xl">
                 specs reales del fabricante — para que compares antes de comprar.
               </span>
             </h1>
@@ -290,23 +290,23 @@ export default async function HomePage() {
                 acción, en vez de quedar como cierre después del botón y el
                 buscador. Mismo contenido, mismo <Reveal>, solo cambia el
                 orden en el que entra. */}
-            <div className="hero-stat-strip glass-surface mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 rounded-xl border border-gta-border/70 px-8 py-5">
+            <div className="hero-stat-strip glass-surface mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 rounded-xl border border-auto-border/70 px-8 py-5">
               {HERO_STAT_TYPES.map((type, i) => (
                 <div
                   key={type}
                   className="hero-stat-item flex flex-col items-center gap-0.5 px-2"
                   style={{ ['--stat-delay' as string]: `${i * 70}ms` }}
                 >
-                  <span className="font-display text-2xl font-bold text-gta-text sm:text-3xl">
+                  <span className="font-display text-2xl font-bold text-auto-text sm:text-3xl">
                     <CountUp end={countsByType[type] ?? 0} />
                   </span>
-                  <span className="text-xs uppercase tracking-[0.15em] text-gta-text-tertiary">
+                  <span className="text-xs uppercase tracking-[0.15em] text-auto-text-tertiary">
                     {ENTITY_TYPE_LABELS[type]}
                   </span>
                 </div>
               ))}
               <div
-                className="hero-stat-divider hidden h-10 w-px bg-gta-border sm:block"
+                className="hero-stat-divider hidden h-10 w-px bg-auto-border sm:block"
                 style={{ ['--stat-delay' as string]: `${HERO_STAT_TYPES.length * 70}ms` }}
                 aria-hidden="true"
               />
@@ -314,10 +314,10 @@ export default async function HomePage() {
                 className="hero-stat-item flex flex-col items-center gap-0.5 px-2"
                 style={{ ['--stat-delay' as string]: `${HERO_STAT_TYPES.length * 70}ms` }}
               >
-                <span className="font-display text-2xl font-bold text-gta-accent-strong sm:text-3xl">
+                <span className="font-display text-2xl font-bold text-auto-accent-strong sm:text-3xl">
                   <CountUp end={totalCount} />
                 </span>
-                <span className="text-xs uppercase tracking-[0.15em] text-gta-text-tertiary">
+                <span className="text-xs uppercase tracking-[0.15em] text-auto-text-tertiary">
                   {totalCount === 1 ? 'Entrada total' : 'Entradas totales'}
                 </span>
               </div>
@@ -334,14 +334,14 @@ export default async function HomePage() {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/vehiculos"
-                className="btn-primary hero-cta inline-flex items-center justify-center rounded-lg px-9 py-4 text-base font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
+                className="btn-primary hero-cta inline-flex items-center justify-center rounded-lg px-9 py-4 text-base font-semibold text-auto-darker transition-all hover:-translate-y-0.5"
               >
                 <span className="hero-cta-label">Ver fichas de autos</span>
                 <span className="hero-cta-arrow" aria-hidden="true">→</span>
               </Link>
               <Link
                 href="/comparar"
-                className="btn-secondary hero-cta-secondary inline-flex items-center justify-center gap-2 rounded-lg px-7 py-4 text-base font-semibold text-gta-text transition-all hover:-translate-y-0.5"
+                className="btn-secondary hero-cta-secondary inline-flex items-center justify-center gap-2 rounded-lg px-7 py-4 text-base font-semibold text-auto-text transition-all hover:-translate-y-0.5"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4" />
@@ -370,14 +370,14 @@ export default async function HomePage() {
 
       {/* Cuenta regresiva / Estado del lanzamiento */}
       {countdownTargets.length > 0 && (
-        <SceneSection sceneId="home-countdown" htmlId="countdown" className="border-b border-gta-border py-16 sm:py-20">
+        <SceneSection sceneId="home-countdown" htmlId="countdown" className="border-b border-auto-border py-16 sm:py-20">
           <div className="container-max">
             <Reveal className="mx-auto mb-10 max-w-2xl text-center">
-              <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+              <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                 Cuenta regresiva
               </p>
-              <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">Estado del lanzamiento</h2>
-              <p className="mt-4 text-gta-text-secondary">
+              <h2 className="text-3xl font-bold text-auto-text sm:text-4xl">Estado del lanzamiento</h2>
+              <p className="mt-4 text-auto-text-secondary">
                 Las dos fechas que definen el momento del proyecto ahora mismo, en un solo lugar.
               </p>
             </Reveal>
@@ -388,13 +388,13 @@ export default async function HomePage() {
       )}
 
       {/* Categorías */}
-      <SceneSection sceneId="home-categories" className="border-b border-gta-border py-16 sm:py-20">
+      <SceneSection sceneId="home-categories" className="border-b border-auto-border py-16 sm:py-20">
         <div className="container-max">
           <Reveal className="mb-10 text-center">
-            <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+            <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
               Categorías
             </p>
-            <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">Explorá por sección</h2>
+            <h2 className="text-3xl font-bold text-auto-text sm:text-4xl">Explorá por sección</h2>
           </Reveal>
 
           <Reveal className="stagger grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
@@ -414,7 +414,7 @@ export default async function HomePage() {
                   >
                     <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden">
                       <CategoryCardMedia previews={categoryPreviews[type]} />
-                      <div className="category-icon-badge absolute left-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-lg text-gta-accent">
+                      <div className="category-icon-badge absolute left-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-lg text-auto-accent">
                         <CategoryIcon type={type} className="h-5 w-5" />
                       </div>
                       <span className="category-card-corner category-card-corner--tl" aria-hidden="true" />
@@ -430,8 +430,8 @@ export default async function HomePage() {
                     </div>
 
                     <div className="relative z-10 flex flex-1 flex-col gap-2 px-5 py-4">
-                      <p className="font-semibold text-gta-text">{ENTITY_TYPE_LABELS[type]}</p>
-                      <p className="text-sm text-gta-text-secondary">
+                      <p className="font-semibold text-auto-text">{ENTITY_TYPE_LABELS[type]}</p>
+                      <p className="text-sm text-auto-text-secondary">
                         {countsByType[type]}{' '}
                         {countsByType[type] === 1 ? 'entrada' : 'entradas'}
                       </p>
@@ -454,7 +454,7 @@ export default async function HomePage() {
           <Reveal className="mt-10 text-center">
             <Link
               href="/buscar"
-              className="link-underline inline-flex items-center gap-1.5 text-sm font-semibold text-gta-accent transition-colors hover:text-gta-accent-strong"
+              className="link-underline inline-flex items-center gap-1.5 text-sm font-semibold text-auto-accent transition-colors hover:text-auto-accent-strong"
             >
               Ver las {totalCount} entradas del expediente
               <span aria-hidden="true">→</span>
@@ -469,16 +469,16 @@ export default async function HomePage() {
           <div className="container-max">
             <Reveal className="mb-10 flex items-end justify-between gap-4">
               <div>
-                <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+                <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                   Destacados
                 </p>
-                <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">
+                <h2 className="text-3xl font-bold text-auto-text sm:text-4xl">
                   Lo más relevante del expediente
                 </h2>
               </div>
               <Link
                 href="/galeria"
-                className="link-underline hidden shrink-0 text-sm font-semibold text-gta-accent transition-colors hover:text-gta-accent-strong sm:inline-block"
+                className="link-underline hidden shrink-0 text-sm font-semibold text-auto-accent transition-colors hover:text-auto-accent-strong sm:inline-block"
               >
                 Ver galería completa
               </Link>
@@ -503,16 +503,16 @@ export default async function HomePage() {
 
       {/* Línea de tiempo del desarrollo */}
       {timelineEvents.length > 0 && (
-        <SceneSection sceneId="home-timeline" className="border-t border-gta-border py-16 sm:py-20">
+        <SceneSection sceneId="home-timeline" className="border-t border-auto-border py-16 sm:py-20">
           <div className="container-max">
             <Reveal className="mx-auto mb-12 max-w-2xl text-center">
-              <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+              <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                 Cronología
               </p>
-              <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">
+              <h2 className="text-3xl font-bold text-auto-text sm:text-4xl">
                 Línea de tiempo del desarrollo
               </h2>
-              <p className="mt-4 text-gta-text-secondary">
+              <p className="mt-4 text-auto-text-secondary">
                 Del anuncio a hoy, cada hito oficial y cada tráiler documentado, en orden.
               </p>
             </Reveal>
@@ -523,14 +523,14 @@ export default async function HomePage() {
       )}
 
       {/* Cómo verificamos */}
-      <SceneSection sceneId="home-evidence" className="border-t border-gta-border py-16 sm:py-20">
+      <SceneSection sceneId="home-evidence" className="border-t border-auto-border py-16 sm:py-20">
         <div className="container-max">
           <Reveal className="mx-auto mb-10 max-w-2xl text-center">
-            <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+            <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
               Metodología
             </p>
-            <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">Cómo verificamos la información</h2>
-            <p className="mt-4 text-gta-text-secondary">
+            <h2 className="text-3xl font-bold text-auto-text sm:text-4xl">Cómo verificamos la información</h2>
+            <p className="mt-4 text-auto-text-secondary">
               Cada entrada del expediente lleva su propio nivel de evidencia a la vista, en vez
               de mezclar confirmación oficial con rumor sin distinción. Así se ve en cada ficha:
             </p>
@@ -545,8 +545,8 @@ export default async function HomePage() {
                 >
                   {level.icon}
                 </span>
-                <p className="mb-1.5 font-semibold text-gta-text">{level.label}</p>
-                <p className="text-sm text-gta-text-secondary">{level.description}</p>
+                <p className="mb-1.5 font-semibold text-auto-text">{level.label}</p>
+                <p className="text-sm text-auto-text-secondary">{level.description}</p>
               </Card>
             ))}
           </Reveal>
@@ -555,20 +555,20 @@ export default async function HomePage() {
 
       {/* Últimas noticias */}
       {latestNews.length > 0 && (
-        <SceneSection sceneId="home-news" className="border-t border-gta-border py-16 sm:py-20">
+        <SceneSection sceneId="home-news" className="border-t border-auto-border py-16 sm:py-20">
           <div className="container-max">
             <Reveal className="mb-10 flex items-end justify-between gap-4">
               <div>
-                <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gta-accent">
+                <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                   Últimas noticias
                 </p>
-                <h2 className="text-3xl font-bold text-gta-text sm:text-4xl">
+                <h2 className="text-3xl font-bold text-auto-text sm:text-4xl">
                   Novedades del desarrollo
                 </h2>
               </div>
               <Link
                 href="/noticias"
-                className="link-underline hidden shrink-0 text-sm font-semibold text-gta-accent transition-colors hover:text-gta-accent-strong sm:inline-block"
+                className="link-underline hidden shrink-0 text-sm font-semibold text-auto-accent transition-colors hover:text-auto-accent-strong sm:inline-block"
               >
                 Ver todas las noticias
               </Link>
@@ -587,7 +587,7 @@ export default async function HomePage() {
             <Reveal className="mt-8 text-center sm:hidden">
               <Link
                 href="/noticias"
-                className="link-underline inline-flex items-center gap-1.5 text-sm font-semibold text-gta-accent transition-colors hover:text-gta-accent-strong"
+                className="link-underline inline-flex items-center gap-1.5 text-sm font-semibold text-auto-accent transition-colors hover:text-auto-accent-strong"
               >
                 Ver todas las noticias
                 <span aria-hidden="true">→</span>
@@ -598,27 +598,27 @@ export default async function HomePage() {
       )}
 
       {/* CTA final */}
-      <SceneSection sceneId="home-cta" className="border-t border-gta-border py-16 sm:py-24">
+      <SceneSection sceneId="home-cta" className="border-t border-auto-border py-16 sm:py-24">
         <div className="container-max text-center">
           <Reveal>
-            <div className="glass-surface mx-auto max-w-2xl rounded-2xl border border-gta-border/70 px-8 py-12 sm:px-14">
+            <div className="glass-surface mx-auto max-w-2xl rounded-2xl border border-auto-border/70 px-8 py-12 sm:px-14">
               <h2 className="text-gradient-vice font-display text-3xl font-bold sm:text-4xl">
                 ¿Buscás algo puntual?
               </h2>
-              <p className="mx-auto mt-4 max-w-lg text-gta-text-secondary">
+              <p className="mx-auto mt-4 max-w-lg text-auto-text-secondary">
                 Personajes, vehículos, misiones, ubicaciones o tráilers: todo el expediente es
                 buscable, con su nivel de evidencia siempre visible.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                 <Link
                   href="/buscar"
-                  className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-gta-darker transition-all hover:-translate-y-0.5"
+                  className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-auto-darker transition-all hover:-translate-y-0.5"
                 >
                   Buscar en el Zona
                 </Link>
                 <Link
                   href="/galeria"
-                  className="inline-flex items-center justify-center rounded-lg border border-gta-border bg-gta-surface/60 px-8 py-3.5 font-semibold text-gta-text transition-all hover:-translate-y-0.5 hover:border-gta-accent/50"
+                  className="inline-flex items-center justify-center rounded-lg border border-auto-border bg-auto-surface/60 px-8 py-3.5 font-semibold text-auto-text transition-all hover:-translate-y-0.5 hover:border-auto-accent/50"
                 >
                   Ver galería
                 </Link>

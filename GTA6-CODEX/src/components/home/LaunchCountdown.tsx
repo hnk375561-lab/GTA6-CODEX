@@ -111,7 +111,7 @@ function CountdownCard({ target }: { target: CountdownTarget }) {
   const localDateTime = formatLocalDateTime(target.targetIso)
 
   return (
-    <div className="countdown-card glass-surface relative overflow-hidden rounded-2xl border border-gta-border p-6 sm:p-8">
+    <div className="countdown-card glass-surface relative overflow-hidden rounded-2xl border border-auto-border p-6 sm:p-8">
       <span
         className="countdown-card-glow pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-25 blur-3xl"
         style={{ background: target.accent }}
@@ -121,27 +121,27 @@ function CountdownCard({ target }: { target: CountdownTarget }) {
       <div className="relative">
         <div className="mb-2 flex items-center gap-2">
           <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: target.accent }} aria-hidden="true" />
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gta-text-tertiary">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-auto-text-tertiary">
             {reached ? target.reachedLabel : target.pendingLabel}
           </p>
         </div>
 
-        <h3 className="mb-1 font-display text-xl font-bold text-gta-text sm:text-2xl">{target.label}</h3>
-        {target.detail && <p className="mb-5 text-sm text-gta-text-secondary">{target.detail}</p>}
+        <h3 className="mb-1 font-display text-xl font-bold text-auto-text sm:text-2xl">{target.label}</h3>
+        {target.detail && <p className="mb-5 text-sm text-auto-text-secondary">{target.detail}</p>}
 
         {!mounted ? (
           <div className="mb-5 grid grid-cols-4 gap-2 sm:gap-3" aria-hidden="true">
             {['Días', 'Hs', 'Min', 'Seg'].map((label) => (
-              <div key={label} className="rounded-xl border border-gta-border bg-gta-card/60 py-3 text-center">
-                <span className="block font-mono text-2xl font-bold text-gta-text-tertiary sm:text-3xl">--</span>
-                <span className="text-[10px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+              <div key={label} className="rounded-xl border border-auto-border bg-auto-card/60 py-3 text-center">
+                <span className="block font-mono text-2xl font-bold text-auto-text-tertiary sm:text-3xl">--</span>
+                <span className="text-[10px] font-semibold uppercase tracking-wide text-auto-text-tertiary">
                   {label}
                 </span>
               </div>
             ))}
           </div>
         ) : reached ? (
-          <p className="mb-5 rounded-xl border border-gta-border bg-gta-card/60 px-4 py-3.5 text-sm font-semibold text-gta-text">
+          <p className="mb-5 rounded-xl border border-auto-border bg-auto-card/60 px-4 py-3.5 text-sm font-semibold text-auto-text">
             {target.reachedLabel}
           </p>
         ) : (
@@ -152,11 +152,11 @@ function CountdownCard({ target }: { target: CountdownTarget }) {
               { value: timeLeft!.minutes, label: 'Min' },
               { value: timeLeft!.seconds, label: 'Seg' },
             ].map(({ value, label }) => (
-              <div key={label} className="rounded-xl border border-gta-border bg-gta-card/60 py-3 text-center" aria-hidden="true">
-                <span className="block font-mono text-2xl font-bold tabular-nums text-gta-text sm:text-3xl">
+              <div key={label} className="rounded-xl border border-auto-border bg-auto-card/60 py-3 text-center" aria-hidden="true">
+                <span className="block font-mono text-2xl font-bold tabular-nums text-auto-text sm:text-3xl">
                   {pad(value)}
                 </span>
-                <span className="text-[10px] font-semibold uppercase tracking-wide text-gta-text-tertiary">
+                <span className="text-[10px] font-semibold uppercase tracking-wide text-auto-text-tertiary">
                   {label}
                 </span>
               </div>
@@ -165,7 +165,7 @@ function CountdownCard({ target }: { target: CountdownTarget }) {
         )}
 
         {localDateTime && (
-          <p className="mb-4 text-xs text-gta-text-tertiary">
+          <p className="mb-4 text-xs text-auto-text-tertiary">
             {reached ? 'Fue el' : 'Llega el'} {localDateTime} <span className="opacity-70">(tu hora local)</span>
           </p>
         )}
@@ -173,7 +173,7 @@ function CountdownCard({ target }: { target: CountdownTarget }) {
         {target.newsHref && target.newsLabel && (
           <Link
             href={target.newsHref}
-            className="link-underline group inline-flex items-start gap-1.5 text-sm font-semibold text-gta-accent transition-colors hover:text-gta-accent-strong"
+            className="link-underline group inline-flex items-start gap-1.5 text-sm font-semibold text-auto-accent transition-colors hover:text-auto-accent-strong"
           >
             <span className="line-clamp-2">{target.newsLabel}</span>
             <span className="shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>

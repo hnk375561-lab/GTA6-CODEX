@@ -36,7 +36,7 @@ function CompareExplorerFallback() {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
       {Array.from({ length: 10 }).map((_, i) => (
-        <div key={i} className="aspect-[4/3] animate-pulse rounded-xl border border-gta-border bg-gta-surface" />
+        <div key={i} className="aspect-[4/3] animate-pulse rounded-xl border border-auto-border bg-auto-surface" />
       ))}
     </div>
   )
@@ -54,10 +54,10 @@ export default async function CompararPage() {
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
       <Reveal>
         <div className="mb-8 max-w-2xl">
-          <h1 className="font-display text-2xl font-bold text-gta-text sm:text-3xl">
+          <h1 className="font-display text-2xl font-bold text-auto-text sm:text-3xl">
             Comparar <span className="text-gradient-vice">vehículos</span>
           </h1>
-          <p className="mt-2 text-sm text-gta-text-secondary sm:text-base">
+          <p className="mt-2 text-sm text-auto-text-secondary sm:text-base">
             Elegí hasta 3 autos o motos y compará fabricante, clase, rendimiento y más, lado a
             lado.
           </p>

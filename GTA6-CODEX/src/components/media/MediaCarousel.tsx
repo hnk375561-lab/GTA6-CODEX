@@ -30,7 +30,7 @@ export function MediaCarousel({ title, assets }: MediaCarouselProps) {
   return (
     <Card>
       <CardHeader>
-        <h3 className="text-sm font-semibold uppercase tracking-wide text-gta-text-secondary">{title}</h3>
+        <h3 className="text-sm font-semibold uppercase tracking-wide text-auto-text-secondary">{title}</h3>
       </CardHeader>
       <CardBody className="!py-0">
         <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 pt-4 -mx-1 px-1">
@@ -41,7 +41,7 @@ export function MediaCarousel({ title, assets }: MediaCarouselProps) {
               ) : rendered.renderAs === 'video' ? (
                 <VideoEmbed videoSrc={rendered.videoSrc!} title={rendered.title} />
               ) : (
-                <div className="group relative aspect-video w-full overflow-hidden rounded-lg bg-gta-darker">
+                <div className="group relative aspect-video w-full overflow-hidden rounded-lg bg-auto-darker">
                   <Image
                     src={rendered.thumbnailSrc}
                     alt={rendered.title}
@@ -63,8 +63,8 @@ export function MediaCarousel({ title, assets }: MediaCarouselProps) {
             const body = (
               <div className="media-carousel-item w-56 flex-shrink-0 snap-start">
                 <div className="media-carousel-item-frame overflow-hidden">{content}</div>
-                <p className="mt-2.5 truncate text-sm font-medium text-gta-text">{rendered.title}</p>
-                {asset.credit && <p className="truncate text-xs text-gta-text-tertiary">{asset.credit}</p>}
+                <p className="mt-2.5 truncate text-sm font-medium text-auto-text">{rendered.title}</p>
+                {asset.credit && <p className="truncate text-xs text-auto-text-tertiary">{asset.credit}</p>}
               </div>
             )
 
