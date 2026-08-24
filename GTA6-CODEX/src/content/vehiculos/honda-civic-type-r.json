@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.529Z",
-  "updatedAt": "2026-08-23T18:31:29.529Z",
+  "updatedAt": "2026-08-24T02:30:00.000Z",
   "manufacturer": "Honda",
   "class": "Hatchback deportivo",
   "customizable": false,
@@ -22,8 +22,15 @@
   },
   "power": "315 hp",
   "price": "USD 45.000",
+  "consumo": "8.2-8.7 l/100km combinado (WLTP, motor turbo 2.0L VTEC, caja manual de 6 velocidades)",
+  "dimensiones": "4.595-4.606 mm largo x 1.890 mm ancho x 1.407 mm alto, distancia entre ejes 2.735 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://automobiles.honda.com/civic-type-r"
+    "primarySource": "https://automobiles.honda.com/civic-type-r",
+    "secondarySource": "https://www.carexpert.com.au/honda/civic/2025-type-r-josksfag20250819",
+    "note": "El Civic Type R (generación FL5) se produce entre 2022 y 2027 y solo está disponible con caja manual y tracción delantera.",
+    "limitations": [
+      "El consumo en modo Sport/+R puede duplicarse respecto al ciclo combinado, según pruebas independientes (hasta 14.9 l/100km)"
+    ]
   }
 }

@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.815Z",
-  "updatedAt": "2026-08-23T18:31:29.815Z",
+  "updatedAt": "2026-08-24T02:30:00.000Z",
   "manufacturer": "Ford",
   "class": "Deportivo",
   "customizable": false,
@@ -22,8 +22,15 @@
   },
   "power": "480 hp",
   "price": "USD 68.000",
+  "consumo": "12.9 l/100km combinado (motor V8 5.0L Ti-VCT, versión GT)",
+  "dimensiones": "4.811 mm largo x 1.916 mm ancho x 1.408 mm alto, distancia entre ejes 2.719 mm (versión GT Fastback)",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.ford.com/cars/mustang/"
+    "primarySource": "https://www.ford.com/cars/mustang/",
+    "secondarySource": "https://www.carexpert.com.au/ford/mustang/2026-gt-jogkwafw20250825",
+    "note": "El Mustang GT también está disponible con escape activo opcional (486 hp) y en carrocerías Fastback y Convertible; existe además la variante extrema Dark Horse y la GTD de 815 hp.",
+    "limitations": [
+      "El consumo combinado corresponde al ciclo de homologación australiano/WLTP; el ciclo EPA de EE.UU. reporta cifras distintas (16/24 mpg ciudad/ruta)"
+    ]
   }
 }

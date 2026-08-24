@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.194Z",
-  "updatedAt": "2026-08-23T18:01:32.194Z",
+  "updatedAt": "2026-08-24T02:30:00.000Z",
   "manufacturer": "Toyota",
   "class": "Sedán",
   "customizable": false,
@@ -21,8 +21,15 @@
   },
   "power": "169 hp",
   "price": "USD 24.000",
+  "consumo": "6.9 l/100km combinado (34 mpg EPA combinado, versión XSE 2.0L con CVT)",
+  "dimensiones": "4.630 mm largo x 1.781 mm ancho x 1.435 mm alto, distancia entre ejes 2.700 mm (versión sedán XSE)",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.toyota.com/corolla/"
+    "primarySource": "https://www.toyota.com/corolla/",
+    "secondarySource": "https://www.truedelta.com/Toyota-Corolla/specs-266-2024&r=3",
+    "note": "También existe la variante Corolla Hybrid (motor 1.8L), con consumo muy inferior (hasta 4.7 l/100km combinado según EPA).",
+    "limitations": [
+      "Cifras correspondientes a la versión a gasolina 2.0L; la versión Hybrid tiene consumo y dimensiones ligeramente distintas"
+    ]
   }
 }

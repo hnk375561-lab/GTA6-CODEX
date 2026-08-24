@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.088Z",
-  "updatedAt": "2026-08-23T18:31:30.088Z",
+  "updatedAt": "2026-08-24T02:30:00.000Z",
   "manufacturer": "Chevrolet",
   "class": "Deportivo",
   "customizable": false,
@@ -22,8 +22,16 @@
   },
   "power": "455 hp",
   "price": "USD 70.000",
+  "consumo": "≈12.4 l/100km combinado estimado (19 mpg EPA, versión SS V8 6.2L)",
+  "dimensiones": "4.783 mm largo x 1.897 mm ancho x 1.349 mm alto, distancia entre ejes 2.812 mm (versión SS V8)",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.chevrolet.com/performance/camaro"
+    "primarySource": "https://www.chevrolet.com/performance/camaro",
+    "secondarySource": "https://www.truedelta.com/Chevrolet-Camaro/specs-499-2024&r=4",
+    "note": "Modelo discontinuado: la producción de la sexta generación del Camaro finalizó en diciembre de 2023, siendo 2024 el último año modelo (incluyó una edición especial 'Collector's Edition'). Chevrolet no ofrece actualmente una versión 2025/2026 vigente en el mercado.",
+    "limitations": [
+      "No hay unidades 0km disponibles en la mayoría de los mercados; el mercado actual es de stock remanente y usados",
+      "GM ha insinuado un posible regreso futuro del nombre Camaro (incluyendo rumores de una versión eléctrica), pero sin fecha ni producto confirmado"
+    ]
   }
 }

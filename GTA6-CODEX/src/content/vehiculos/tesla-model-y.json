@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.694Z",
-  "updatedAt": "2026-08-23T18:31:28.694Z",
+  "updatedAt": "2026-08-24T02:30:00.000Z",
   "manufacturer": "Tesla",
   "class": "SUV eléctrica",
   "customizable": false,
@@ -21,8 +21,15 @@
   },
   "power": "384 hp (Long Range)",
   "price": "USD 47.000",
+  "consumo": "15.3 kWh/100km (consumo oficial WLTP, versión Long Range AWD)",
+  "dimensiones": "4.790 mm largo x 1.982 mm ancho (sin espejos, 2.129 mm con espejos extendidos) x 1.624 mm alto, distancia entre ejes 2.890 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.tesla.com/modely"
+    "primarySource": "https://www.tesla.com/modely",
+    "secondarySource": "https://www.tesla.com/en_jo/modely",
+    "note": "Existe además una versión Standard RWD más económica y una variante alargada 'Model Y L' de 6/7 plazas en algunos mercados.",
+    "limitations": [
+      "El consumo real varía según clima, velocidad y tamaño de llanta"
+    ]
   }
 }

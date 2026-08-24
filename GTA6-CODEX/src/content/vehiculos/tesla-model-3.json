@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.524Z",
-  "updatedAt": "2026-08-23T18:01:33.524Z",
+  "updatedAt": "2026-08-24T02:30:00.000Z",
   "manufacturer": "Tesla",
   "class": "Sedán",
   "customizable": false,
@@ -21,8 +21,15 @@
   },
   "power": "283 hp (RWD)",
   "price": "USD 42.000",
+  "consumo": "13.0 kWh/100km (consumo oficial WLTP, versión RWD estándar; 14.3 kWh/100km en versión Premium AWD)",
+  "dimensiones": "4.720 mm largo x 1.850 mm ancho (sin espejos, 2.089 mm con espejos extendidos) x 1.440-1.442 mm alto, distancia entre ejes 2.875 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.tesla.com/model3"
+    "primarySource": "https://www.tesla.com/model3",
+    "secondarySource": "https://www.tesla.com/en_SA/model3",
+    "note": "Cifras correspondientes al rediseño 'Highland' del Model 3, vigente desde 2024.",
+    "limitations": [
+      "El consumo real varía según clima, velocidad y tamaño de llanta"
+    ]
   }
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.800Z",
-  "updatedAt": "2026-08-23T18:01:33.800Z",
+  "updatedAt": "2026-08-24T02:30:00.000Z",
   "manufacturer": "Toyota",
   "class": "SUV",
   "customizable": false,
@@ -21,8 +21,15 @@
   },
   "power": "203 hp",
   "price": "USD 29.000",
+  "consumo": "7.8 l/100km combinado (30 mpg EPA, versión XLE FWD 2.5L a gasolina)",
+  "dimensiones": "4.600 mm largo x 1.855 mm ancho (1.854 mm con espejos) x 1.685 mm alto, distancia entre ejes 2.690 mm (versión XLE a gasolina)",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.toyota.com/rav4/"
+    "primarySource": "https://www.toyota.com/rav4/",
+    "secondarySource": "https://www.kbb.com/toyota/rav4/2024/xle",
+    "note": "A partir del año modelo 2026, Toyota rediseñó el RAV4 y pasó a ofrecerlo exclusivamente como híbrido (HEV/PHEV) con 226-236 hp según versión; las cifras de potencia (203 hp) y consumo de esta ficha corresponden a la generación anterior con motor 2.5L exclusivamente a gasolina.",
+    "limitations": [
+      "Las cifras no reflejan la generación 2026, totalmente híbrida y con mejor eficiencia (hasta 43-48 mpg combinado)"
+    ]
   }
 }

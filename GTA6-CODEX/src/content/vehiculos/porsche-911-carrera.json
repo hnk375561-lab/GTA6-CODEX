@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.332Z",
-  "updatedAt": "2026-08-23T18:01:34.332Z",
+  "updatedAt": "2026-08-24T02:30:00.000Z",
   "manufacturer": "Porsche",
   "class": "Deportivo",
   "customizable": false,
@@ -21,8 +21,15 @@
   },
   "power": "379 hp",
   "price": "USD 118.000",
+  "consumo": "9.1 l/100km combinado (WLTP, versión Carrera 992.2 con caja PDK)",
+  "dimensiones": "4.519 mm largo x 1.852 mm ancho x 1.298 mm alto, distancia entre ejes 2.450 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.porsche.com/international/models/911/911-models/carrera/"
+    "primarySource": "https://www.porsche.com/international/models/911/911-models/carrera/",
+    "secondarySource": "https://www.carexpert.co.nz/porsche/911/2026-carrera-3l-coupe-rwd-petrol-automatic-jjo8fowk20260201",
+    "note": "La generación 992.2 (año modelo 2026) eleva la potencia del Carrera base a 389 hp frente a los 379 hp de la generación 992.1 registrada en este ficha.",
+    "limitations": [
+      "El consumo WLTP combinado exacto varía según neumáticos, transmisión (PDK vs manual) y equipamiento opcional (Sport Chrono, etc.)"
+    ]
   }
 }

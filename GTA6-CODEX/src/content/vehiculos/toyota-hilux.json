@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.868Z",
-  "updatedAt": "2026-08-23T18:31:27.868Z",
+  "updatedAt": "2026-08-24T02:30:00.000Z",
   "manufacturer": "Toyota",
   "class": "Pickup",
   "customizable": false,
@@ -21,8 +21,15 @@
   },
   "power": "204 hp",
   "price": "USD 45.000",
+  "consumo": "7.5-8.5 l/100km combinado (motor turbodiésel 2.8L GD-6, según versión y tracción)",
+  "dimensiones": "5.325 mm largo x 1.855 mm ancho x 1.815 mm alto, distancia entre ejes 3.085 mm (versión Doble Cabina)",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.toyota.com.ar/hilux"
+    "primarySource": "https://www.toyota.com.ar/hilux",
+    "secondarySource": "https://kobemotor.es/fichas-tecnicas/hilux/medidas-y-dimensiones/",
+    "note": "Las dimensiones y el consumo varían según la carrocería (Cabina Simple, Extra o Doble) y si es 4x2 o 4x4; las versiones 4x4 consumen más que las 4x2.",
+    "limitations": [
+      "Cifras de consumo aproximadas: pueden variar según mercado, normativa de homologación local y equipamiento"
+    ]
   }
 }

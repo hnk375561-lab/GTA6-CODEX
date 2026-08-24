@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.940Z",
-  "updatedAt": "2026-08-23T18:01:32.940Z",
+  "updatedAt": "2026-08-24T02:30:00.000Z",
   "manufacturer": "Volkswagen",
   "class": "Hatchback",
   "customizable": false,
@@ -22,8 +22,15 @@
   },
   "power": "245 hp",
   "price": "USD 32.000",
+  "consumo": "7.4 l/100km combinado (versión 245 hp con caja DSG)",
+  "dimensiones": "4.284 mm largo x 1.789 mm ancho x 1.456 mm alto, distancia entre ejes 2.636 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.vw.com/en/models/golf-gti.html"
+    "primarySource": "https://www.vw.com/en/models/golf-gti.html",
+    "secondarySource": "https://www.auto-data.net/en/volkswagen-golf-viii-gti-2.0-tsi-245hp-dsg-41336",
+    "note": "Corresponde a la octava generación (Mk8) del Golf GTI; existen variantes de mayor potencia como el GTI Clubsport y el Golf R (con tracción integral).",
+    "limitations": [
+      "El consumo puede variar levemente entre versión pre-facelift (2020-2024) y facelift (2024-presente)"
+    ]
   }
 }
