@@ -29,26 +29,45 @@
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
   "updatedAt": "2026-08-24T01:16:06.478Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "8 velocidades Tiptronic (automática)",
+  "traccion": "Integral quattro (AWD) de serie",
+  "peso": "2.055 kg (55 TFSI V6) - 2.800 kg (55 TFSIe híbrido enchufable)",
+  "tipoMotor": "Gasolina turbo V6 (mild-hybrid) / Híbrido enchufable TFSIe",
+  "potenciaKW": "250 kW / 340 hp (55 TFSI V6)",
+  "capacidadTanque": "85 litros",
+  "tiempoRecorrido": "5.9s 0-100 km/h (55 TFSI) / 5.7s (55 TFSIe)",
+  "anoProduccion": "2019-presente (4ª generación, código 4M), con facelift en 2024",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "Latinoamérica",
+    "China",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "7 plazas de serie",
+    "Suspensión neumática adaptativa (opcional)",
+    "Audi pre sense",
+    "Climatizador de 4 zonas",
+    "Asistente de conducción adaptativo",
+    "Pantalla digital MMI touch"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "cilindrada": "2.995 cc (3.0 V6 turbo)",
+  "emisiones": "CO2 229 g/km (55 TFSI V6) / 57 g/km (55 TFSIe híbrido, cifra combinada PHEV)",
+  "tipo": "SUV premium grande (7 plazas)",
+  "asientos": 7,
+  "baul": "865 litros (mín., 5 plazas) - 2.050 litros (asientos abatidos)",
+  "maleteroMin": "865 litros",
+  "generacion": "Cuarta generación (4M), lanzada en 2019, con facelift en 2024",
+  "anoLanzamiento": 2019,
+  "colores": [
+    "Blanco Ibis",
+    "Negro Mythos Metalizado",
+    "Gris Daytona",
+    "Azul Navarra",
+    "Plata Florett Metalizado",
+    "Marrón Terra"
+  ]
 }

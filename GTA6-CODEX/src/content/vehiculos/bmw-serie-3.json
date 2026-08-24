@@ -26,26 +26,45 @@
     "level": "oficial-nombrado",
     "primarySource": "https://www.bmw.com.ar/es/all-models/3-series/sedan/2022/bmw-3-series-sedan.html"
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "transmision": "8 velocidades automática (Steptronic)",
+  "traccion": "Trasera (RWD) o xDrive (AWD) según versión",
+  "peso": "1.526-1.620 kg (según motorización)",
+  "tipoMotor": "Gasolina turbo (opción híbrida enchufable 330e disponible)",
+  "potenciaKW": "135-190 kW (184-258 hp según motorización)",
+  "capacidadTanque": "59 litros",
+  "tiempoRecorrido": "5.7s-7.1s 0-100 km/h (según motorización)",
+  "anoProduccion": "2019-presente (generación G20), con facelift en 2022",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "Estados Unidos",
+    "China",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "BMW TwinPower Turbo",
+    "Sistemas inteligentes de asistencia al conductor",
+    "BMW Live Cockpit digital",
+    "Control de tracción dinámico",
+    "Faros LED adaptativos",
+    "Opción híbrida enchufable (330e)"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "cilindrada": "1.998 cc (2.0 turbo, 4 cilindros)",
+  "emisiones": "CO2 158-166 g/km (WLTP, versión 330i xDrive)",
+  "tipo": "Sedán premium",
+  "asientos": 5,
+  "baul": "480 litros",
+  "maleteroMin": "480 litros",
+  "generacion": "Séptima generación (G20), lanzada en 2019, con facelift en 2022",
+  "anoLanzamiento": 2019,
+  "colores": [
+    "Alpine White",
+    "Black Sapphire Metallic",
+    "Mineral Grey Metallic",
+    "Portimao Blue Metallic",
+    "Skyscraper Grey",
+    "Sunset Orange"
+  ]
 }
