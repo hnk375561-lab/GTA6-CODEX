@@ -1,361 +1,283 @@
-# ?? GTA6-ZONA: The Ultimate Grand Theft Auto VI Encyclopedia
+# 🚗 AutoFicha: Fichas Técnicas y Comparador de Autos y Motos
 
-> **A comprehensive, multimedia-rich encyclopedia of Grand Theft Auto VI** with a curated database, high-resolution assets, editorial analysis, and community intelligence.
+> **Un catálogo global de vehículos** con fichas técnicas reales, comparador
+> lado a lado y una fuente citada detrás de cada dato.
 
 <div align="center">
 
 ![Last Update](https://img.shields.io/badge/last%20update-August%202026-blue)
-![Status](https://img.shields.io/badge/status-active%20development-brightgreen)
-![License](https://img.shields.io/badge/license-see%20LICENSE-lightgrey)
+![Status](https://img.shields.io/badge/status-en%20pivote%20activo-orange)
+![License](https://img.shields.io/badge/license-ver%20LICENSE-lightgrey)
 ![Node](https://img.shields.io/badge/node-18%2B-green)
 
-[?? Live Website](https://gta-6-zona.vercel.app) � [?? Documentation](#-documentation) � [?? Quick Start](#-quick-start) � [?? Contributing](#-contributing)
+[🌐 Sitio en vivo](https://autoficha.vercel.app) · [📖 Documentación](#-documentación) · [🚀 Quick Start](#-quick-start) · [🤝 Contribuir](#-contribuir)
 
 </div>
 
-> **?? Pendiente de dominio propio:** el sitio corre actualmente sobre el dominio de
-> preview de Vercel (`gta-6-zona.vercel.app`), no sobre un dominio de producci�n propio.
-> `vercel.json` (`NEXT_PUBLIC_SITE_URL`) y el link de arriba deben actualizarse cuando se
-> configure un dominio propio, y debe aclararse en cualquier acuerdo de transferencia si
-> el dominio se incluye o no.
->
-> **?? Ver tambi�n:** [`LEGAL_RISK_DISCLOSURE.md`](./LEGAL_RISK_DISCLOSURE.md) � riesgo
-> legal conocido y no resuelto sobre el uso de assets visuales oficiales de Rockstar
-> Games / Take-Two Interactive en `public/images/`.
+> **📌 Este repo viene de un pivote.** Hasta agosto de 2026 este proyecto era
+> una enciclopedia de fans sobre *Grand Theft Auto VI* ("GTA6 Zona"). Se
+> descartó por completo esa idea y el repo se reconvirtió en **AutoFicha**:
+> un catálogo real de vehículos, sin ninguna relación con Rockstar Games,
+> Take-Two Interactive ni el juego. Quedan resabios de esa migración
+> (nombres de archivo, tokens de diseño, contenido a limpiar) — están
+> documentados en la sección [Estado del pivote](#-estado-del-pivote-qué-falta)
+> para que cualquiera que entre al repo sepa exactamente qué es legado y qué
+> es la dirección real del proyecto.
 
 ---
 
-## ?? Table of Contents
+## 📋 Tabla de Contenidos
 
-- [?? Overview](#-overview)
-- [? Features](#-features)
-- [?? Current Content](#-current-content)
-- [??? Architecture](#-architecture)
-- [?? Quick Start](#-quick-start)
-- [?? Documentation](#-documentation)
-- [??? Development](#-development)
-- [?? Content Structure](#-content-structure)
-- [?? Workflows](#-workflows)
-- [?? Contributing](#-contributing)
-- [?? Roadmap](#-roadmap)
-- [?? Resources](#-resources)
-- [? FAQ](#-faq)
-- [?? License](#-license)
+- [🎯 Visión](#-visión)
+- [✨ Qué hay hoy](#-qué-hay-hoy)
+- [🗺️ Estrategia: global primero, después por país](#️-estrategia-global-primero-después-por-país)
+- [🏗️ Arquitectura](#️-arquitectura)
+- [🚀 Quick Start](#-quick-start)
+- [📄 Estructura de contenido](#-estructura-de-contenido)
+- [🩺 Estado del pivote (qué falta)](#-estado-del-pivote-qué-falta)
+- [🤝 Contribuir](#-contribuir)
+- [📚 Documentación](#-documentación)
+- [❓ FAQ](#-faq)
+- [📜 Licencia](#-licencia)
 
 ---
 
-## ?? Overview
+## 🎯 Visión
 
-**GTA6-ZONA** is a community-driven encyclopedia dedicated to documenting everything known about **Grand Theft Auto VI**. It combines a structured content database (vehicles, characters, locations, businesses, trailers, and more) with a modern web frontend, an image processing pipeline, and a set of integrity-verification scripts to keep the data trustworthy as new official information is released.
+**AutoFicha** es un catálogo de vehículos (autos y motos) con fichas técnicas
+verificables: cada dato relevante (potencia, precio, consumo, dimensiones,
+etc.) cita su fuente y un nivel de confianza explícito, en vez de presentarse
+como verdad absoluta sin origen. La idea no es competir con un foro o una
+wiki genérica, sino ser la referencia rápida y comparable: "quiero saber los
+datos reales de este auto, y de dónde salen".
 
-The project is built for two audiences:
-- **Players and fans** looking for a reliable, well-organized reference.
-- **Contributors and developers** who want to help expand and maintain the database.
+Pensado para dos públicos:
+- **Compradores y curiosos** que buscan una ficha confiable y comparable
+  antes de decidir.
+- **Colaboradores** que quieran sumar o corregir fichas siguiendo un
+  esquema de datos consistente.
 
----
+## ✨ Qué hay hoy
 
-## ? Features
+| Categoría | Cantidad | Detalle |
+|-----------|----------|---------|
+| 🚗 **Vehículos** | **250** fichas activas | Autos, SUVs, pickups y motos de **75 fabricantes** distintos |
+| 🌍 **Cobertura** | Global | Marcas europeas, americanas, japonesas, coreanas, chinas (BYD, Chery, BAIC, Changan, GWM...) e indias (Bajaj, Mahindra) conviven en el mismo catálogo |
+| 🔎 **Evidencia** | 126 "oficial-nombrado" + 124 "respaldado" | Todo dato tiene fuente primaria citada — ver [niveles de evidencia](#niveles-de-evidencia) |
+| 📰 **Noticias / Guías** | Tipos habilitados, sin contenido aún | Sección lista en el código, pendiente de primer contenido real |
 
-**Content**
-- ? Structured, evidence-sourced entries for vehicles, characters, locations, businesses, and trailers
-- ? High-resolution images (WebP, 1600�900) for every documented entity
-- ? Cross-referenced entity relationships (e.g. character ? vehicle ? location)
+## 🗺️ Estrategia: global primero, después por país
 
-**Platform**
-- ? Fast fuzzy search across the entire database
-- ? SEO-optimized routes for every entity page
-- ? Responsive design for desktop and mobile
+El criterio de expansión de contenido, de cara a quien sume fichas, es:
 
-**Data Quality**
-- ? Evidence-level tagging (A/B/C/D) for every fact
-- ? Primary source citation on every entry
-- ? Automated integrity, relation, media, and SEO verification scripts
+1. **Fase actual — catálogo global:** ampliar la cobertura de modelos y
+   fabricantes a nivel mundial, con specs y precios de referencia
+   internacional (o del mercado más relevante de cada modelo cuando el
+   precio varía fuerte por región — ya pasa hoy, ver ejemplo del Audi A4
+   más abajo).
+2. **Fase siguiente — profundización por país:** una vez que la cobertura
+   global sea sólida, sumar capas específicas por mercado: precio local,
+   variantes/versiones que solo se venden en ese país, red de
+   concesionarios (el mapa interactivo con Leaflet ya está listo en el
+   código, solo falta la geografía real — ver `src/app/mapa/page.tsx`),
+   e impuestos/patentamiento cuando aplique.
 
-**Community**
-- ? Clear contribution templates for new content
-- ? Documented workflows for common tasks
-- ? Transparent roadmap
+Esto ya se refleja en el modelo de datos: el campo `mercados` de cada
+vehículo es un array (`["Europa", "India", "Latinoamérica", ...]`) pensado
+para ese quiebre futuro entre "cobertura global" y "detalle por país".
 
----
+## 🏗️ Arquitectura
 
-## ?? Current Content
+### Stack técnico
 
-| Category | Count | Status | Image Coverage |
-|----------|-------|--------|-----------------|
-| ?? **Vehicles** | **62** | 50% Complete | 19/57 real images (38 pending) |
-| ?? **Locations** | **21** | 40% Complete | Partial coverage, expanding |
-| ?? **Characters** | **17** | 55% Complete | Protagonists, antagonists, supporting cast |
-| ?? **Businesses** | **13** | 35% Complete | Shops, tattoo parlors, services |
-| ?? **Trailers** | **2** | 100% Complete | Official Rockstar trailers indexed |
-| ?? **Weapons** | **13** | In Progress | 13/25+ target, evidencia A/B/C completa |
-| ?? **Other Content** | Multiple | In Progress | Weapons, gangs, radio stations |
-
----
-
-## ??? Architecture
-
-### Tech Stack
-
-| Layer | Technology |
-|-------|------------|
+| Capa | Tecnología |
+|------|------------|
 | Frontend | Next.js 15 + React 19 + TypeScript 5 |
-| Styling | Tailwind CSS 3 + Typography Plugin |
-| 3D Graphics | Three.js (r185) |
-| Data Validation | Zod 4 |
-| Search | Fuse.js 7 (fuzzy search) |
-| Build | Turbopack (Next.js native) |
-| Deployment | Vercel (optimized for Next.js) |
+| Estilos | Tailwind CSS 3 + plugin Typography |
+| Fondo 3D del hero | Three.js (r185) |
+| Validación de datos | Zod 4 |
+| Búsqueda | Fuse.js 7 (fuzzy search) |
+| Mapa (pausado, listo para reactivar) | Leaflet + clustering |
+| Tests | Vitest |
+| Deploy | Vercel |
 
-### Directory Structure
+### Estructura de directorios
 
 ```
-GTA6-ZONA/
-+-- ?? public/
-�   +-- images/
-�       +-- entities/
-�           +-- vehiculos/              # Vehicle images (WebP, 1600�900)
-�           +-- personajes/             # Character portraits
-�           +-- ubicaciones/            # Location screenshots
-�           +-- negocios/               # Business establishment photos
-�
-+-- ?? src/
-�   +-- app/                            # Next.js app router
-�   +-- components/                     # React components
-�   +-- content/                        # Content database (JSON)
-�   �   +-- vehiculos/                  # Vehicle JSON files
-�   �   +-- personajes/                 # Character data
-�   �   +-- ubicaciones/                # Location data
-�   �   +-- negocios/                   # Business data
-�   �   +-- trailers/                   # Trailer index with timestamps
-�   +-- lib/                            # Utilities & helpers
-�   �   +-- images.ts                   # Image processing logic
-�   �   +-- search.ts                   # Search functionality
-�   �   +-- relations.ts                # Entity relationship resolver
-�   +-- styles/                         # Global styles
-�
-+-- ?? scripts/
-�   +-- process-images.mjs              # Image pipeline (resize, compress)
-�   +-- verify-content-integrity.mjs    # Data validation
-�   +-- verify-relations-integrity.mjs  # Cross-reference validation
-�   +-- verify-media-integrity.mjs      # Image file validation
-�   +-- verify-seo-routes.mjs           # SEO metadata verification
-�   +-- verify-tailwind-config.mjs      # CSS utility validation
-�   +-- media-sync.mjs                  # Media synchronization
-�
-+-- README.md
+AutoFicha/
+├── 📁 public/
+│   └── images/entities/vehiculos/   # Imágenes de vehículos (WebP)
+│
+├── 📁 src/
+│   ├── app/                         # Next.js app router
+│   │   ├── [entityType]/            # Rutas dinámicas: /vehiculos, /noticias, /guias
+│   │   ├── vehiculos/fabricante/    # Listado por fabricante
+│   │   ├── comparar/                # Comparador lado a lado
+│   │   ├── galeria/                 # Galería de imágenes
+│   │   └── mapa/                    # Mapa (pausado — ver docs/)
+│   ├── components/                  # Componentes React
+│   ├── content/                     # Base de datos de contenido (JSON)
+│   │   └── vehiculos/               # 250 fichas de vehículos
+│   ├── lib/                         # Utilidades (entities, search, relations, seo)
+│   └── types/                       # Contratos TS + schemas Zod
+│
+├── scripts/
+│   ├── verify-content-integrity.mjs # Validación de datos
+│   ├── verify-relations-integrity.mjs
+│   ├── verify-seo-routes.mjs
+│   ├── audit-evidence-coverage.mjs  # Cobertura de fuentes citadas
+│   └── process-images.mjs           # Pipeline de imágenes
+│
+└── README.md
 ```
 
----
+## 🚀 Quick Start
 
-## ?? Quick Start
-
-### Prerequisites
-- Node.js 18+ (LTS recommended)
-- npm 9+ or yarn 4+
+### Requisitos
+- Node.js 18+ (LTS recomendado)
+- npm 9+
 - Git 2.30+
-- ~1.2GB disk space
 
-### Installation
+### Instalación
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/hnk375561-lab/GTA6-ZONA.git
-cd GTA6-ZONA
+# 1. Cloná el repositorio
+git clone https://github.com/hnk375561-lab/GTA6-CODEX.git
+cd GTA6-CODEX/GTA6-CODEX
 
-# 2. Install dependencies
+# 2. Instalá dependencias
 npm install
 
-# 3. Verify installation
+# 3. Verificá tipos (importante ahora mismo: el pivote de tipos no se
+#    corrió todavía contra un build real, ver "Estado del pivote" abajo)
 npm run type-check
 
-# 4. Start development server
+# 4. Levantá el servidor de desarrollo
 npm run dev
 
-# 5. Open browser
-# Navigate to http://localhost:3000
+# 5. Abrí http://localhost:3000
 ```
 
-### First Commands
+### Comandos útiles
 
 ```bash
-# ?? Verify all content integrity
-npm run verify:content
-
-# ?? Check SEO metadata
-npm run verify:seo
-
-# ?? Validate entity relationships
-npm run verify:relations
-
-# ?? Process & optimize new images
-npm run process-images:apply
-
-# ??? Build for production
-npm run build && npm start
+npm run verify:content    # Valida integridad del contenido
+npm run verify:relations  # Valida relaciones entre entidades
+npm run verify:seo        # Verifica metadata SEO
+npm run audit:evidence    # Audita cobertura de fuentes citadas
+npm run test               # Corre tests (Vitest)
+npm run check:unused       # Detecta código/exports sin usar (knip)
 ```
 
----
+## 📄 Estructura de contenido
 
-## ?? Documentation
-
-- `CONTRIBUTING.md` � Guidelines for adding or editing content
-- `TROUBLESHOOTING.md` � Common issues and fixes
-- `src/content/*/template.json` � Templates for each content type
-
----
-
-## ??? Development
-
-Recommended workflow while developing locally:
-
-```bash
-npm run dev            # Start dev server with hot reload
-npm run type-check     # TypeScript validation
-npm run lint           # Lint the codebase
-npm run verify:content # Validate content database
-```
-
----
-
-## ?? Content Structure
-
-Every content entry is a JSON file following a consistent schema. Example (simplified):
+Cada vehículo es un archivo JSON en `src/content/vehiculos/{slug}.json`.
+Campos reales usados hoy (tomado de una ficha existente, `audi-a4.json`):
 
 ```json
 {
-  "slug": "example-vehicle",
-  "title": "Example Vehicle",
-  "description": "Short description of the entity.",
-  "evidenceLevel": "A",
-  "primarySource": "https://source-url.example",
-  "image": "example-vehicle.webp"
+  "slug": "audi-a4",
+  "type": "vehiculos",
+  "title": "Audi A4",
+  "description": "Sedán ejecutivo compacto de Audi, tracción quattro opcional.",
+  "status": "confirmado",
+  "manufacturer": "Audi",
+  "class": "Sedán ejecutivo",
+  "power": "201 hp aprox. (motor 2.0 TFSI, último año en EE.UU.)",
+  "price": "Discontinuado en EE.UU. (2025); vigente en India/Europa",
+  "mercados": ["Europa", "India", "Latinoamérica (incl. Argentina, México)"],
+  "performance": { "speed": "241 km/h", "acceleration": "0-100 km/h en 7.3s" },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.cargurus.com/research/articles/...",
+    "note": "Discontinuado en EE.UU. tras 2025; sigue vigente en otros mercados.",
+    "limitations": ["Status varía fuertemente por mercado..."]
+  }
 }
 ```
 
-### Adding New Content?
+El `Vehicle` de TypeScript (`src/types/entity.ts`) define un set mínimo de
+campos con forma fija (`manufacturer`, `class`, `performance`, etc.); el
+resto de las claves que ves en los JSON reales (`transmision`, `potenciaKW`,
+`equipamiento`, `colores`, etc.) son adicionales y se validan de forma
+abierta, no contra un schema estricto — así una ficha puede tener más o
+menos detalle sin romper el build.
 
-Follow these templates:
+### Niveles de evidencia
 
-- ?? New Vehicle: copy `src/content/vehiculos/template.json`
-- ?? New Character: copy `src/content/personajes/template.json`
-- ?? New Location: copy `src/content/ubicaciones/template.json`
-- ?? New Business: copy `src/content/negocios/template.json`
+Cada ficha declara qué tan sólida es la fuente de sus datos:
 
-All content requires:
-- ? Slug (lowercase, hyphenated)
-- ? Title & description
-- ? Evidence level (A/B/C/D)
-- ? Primary source citation
-- ? Image (WebP, 1600�900)
+| Nivel | Significado | Uso actual |
+|-------|-------------|------------|
+| `oficial-nombrado` | Confirmado por ficha técnica oficial del fabricante | 126 fichas |
+| `oficial-visual` | Visible en material oficial, sin confirmación textual | — |
+| `oficial-visual-multifuente` | Igual al anterior, con más de una fuente oficial | — |
+| `respaldado` | Sin confirmación oficial directa, pero con fuentes secundarias solventes | 124 fichas |
+| `especulativo` | Rumor o estimación razonable, marcado como tal | — |
 
----
+## 🩺 Estado del pivote (qué falta)
 
-## ?? Workflows
+Este repo viene de reconvertir un proyecto sobre GTA VI. Ya se hizo el
+pivote de más impacto (tipos de entidad, contenido real de vehículos,
+navegación, home), pero quedan cabos sueltos conocidos — se listan acá para
+que no haya sorpresas:
 
-### Adding a New Vehicle
+- [ ] **`npm run type-check` sin correr contra el pivote más reciente** —
+  correrlo y arreglar lo que salga es el primer paso antes de seguir
+  sumando features.
+- [ ] **`src/app/[entityType]/page.tsx` y `[slug]/page.tsx`** todavía tienen
+  labels/condicionales de tipos de entidad que ya no existen (`Personajes`,
+  `Trailers`, etc.).
+- [ ] **Componentes huérfanos** de tráilers (`TrailerScenes.tsx`,
+  `TrailerStats.tsx`, `TrailerPlayer.tsx`) y del mapa ficticio
+  (`LeonidaMapCanvas.tsx`, `LeonidaMapExplorer.tsx`) — no se usan pero
+  siguen en el repo.
+- [ ] **Tokens de diseño `gta-*`** en Tailwind (`gta-accent`, `gta-border`,
+  etc.) y nombres como `vice-sunset` — funcionan, pero el nombre no tiene
+  sentido para este proyecto.
+- [ ] **250 archivos `.json.rej`** en `src/content/vehiculos/` — parches
+  rechazados de una migración de datos anterior, sin uso, para borrar.
+- [ ] **0 fichas marcadas como `featured`** — la sección "Destacados" de
+  la home no tiene qué mostrar todavía.
+- [ ] **`vercel.json`** apunta a un dominio viejo (`gta-6-zona.vercel.app`)
+  en vez de `autoficha.vercel.app`.
+- [ ] **Nombre del repositorio en GitHub** sigue siendo `GTA6-CODEX`.
 
-```bash
-# 1. Create JSON file
-cat > src/content/vehiculos/new-vehicle.json << 'EOF'
-{ "slug": "new-vehicle", "title": "New Vehicle", "evidenceLevel": "B" }
-EOF
+## 🤝 Contribuir
 
-# 2. Add image
-cp new-vehicle.webp public/images/entities/vehiculos/
+Ver [`CONTRIBUTING.md`](./CONTRIBUTING.md) para la guía completa. En
+resumen:
 
-# 3. Verify
-npm run verify:content
+1. Forkeá el repositorio
+2. Creá una rama (`git checkout -b feature/mi-aporte`)
+3. Para contenido nuevo, seguí la estructura de [`src/content/README.md`](./src/content/README.md)
+4. Corré `npm run verify:content` antes de abrir el PR
+5. Abrí el Pull Request describiendo el cambio
 
-# 4. Preview
-npm run dev
-```
+## 📚 Documentación
 
-### Processing New Images
+- [`CONTRIBUTING.md`](./CONTRIBUTING.md) — cómo agregar o editar contenido
+- [`TROUBLESHOOTING.md`](./TROUBLESHOOTING.md) — problemas comunes y cómo resolverlos
+- [`src/content/README.md`](./src/content/README.md) — esquema completo de datos
 
-```bash
-# 1. Add images
-cp *.jpg incoming-images/vehiculos/
+## ❓ FAQ
 
-# 2. Run pipeline
-npm run process-images:apply
+**P: ¿Por qué el repo se sigue llamando GTA6-CODEX?**
+R: Es un resabio del pivote — está en la lista de pendientes de arriba.
+El contenido y el código ya no tienen relación con GTA VI.
 
-# 3. Check output
-ls -lh public/images/entities/vehiculos/*.webp
+**P: ¿Puedo usar este contenido en mi proyecto?**
+R: Ver [`LICENSE`](./LICENSE) — el repositorio no tiene licencia abierta
+por defecto.
 
-# 4. Commit
-git add public/images/entities/vehiculos/
-git commit -m "? Add vehicle images"
-```
+**P: ¿Cómo agrego un vehículo nuevo?**
+R: Ver [`src/content/README.md`](./src/content/README.md) para el formato
+exacto y [`CONTRIBUTING.md`](./CONTRIBUTING.md) para el flujo de PR.
 
----
+**P: ¿De dónde salen los datos?**
+R: De fuentes públicas por vehículo (fabricante, prensa especializada) —
+cada ficha cita su fuente primaria en el campo `evidence.primarySource`.
 
-## ?? Contributing
+## 📜 Licencia
 
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create a branch (`git checkout -b feature/my-contribution`)
-3. Follow the content templates above
-4. Run `npm run verify:content` before opening a PR
-5. Open a Pull Request describing your changes
-
-See `CONTRIBUTING.md` for full guidelines.
-
----
-
-## ?? Roadmap
-
-### Phase 1: Foundation ? (August 2026)
-- [x] Core Next.js setup
-- [x] Content database structure
-- [x] Image pipeline
-- [x] Initial vehicle catalog (57)
-- [x] Verification scripts
-
-### Phase 2: Expansion ?? (August�September 2026)
-- [ ] Complete vehicle images (38 pending)
-- [ ] Expand character database (20+ total)
-- [ ] Add weapon catalog (13/25+ complete)
-- [ ] Map & district details
-- [ ] Business/service directory
-
-### Phase 3: Enhancement ?? (September�October 2026)
-- [ ] Advanced search filters
-- [ ] Community submission review flow
-
-### Phase 4: Polish ? (October�November 2026)
-- [ ] Performance optimization
-- [ ] Accessibility audit
-- [ ] Full mobile QA
-
----
-
-## ?? Resources
-
-- Official GTA VI announcements � Rockstar Games
-- Repository issue tracker � for bugs and content requests
-
----
-
-## ? FAQ
-
-**Q: Can I use this content in my project?**
-A: Yes, with proper attribution to Rockstar Games and this repository.
-
-**Q: How do I add new content?**
-A: See `CONTRIBUTING.md` for detailed guidelines.
-
-**Q: How often is content updated?**
-A: Continuously, as new official information is released.
-
-**Q: Can I deploy this myself?**
-A: Yes � fork the repo and deploy to Vercel (recommended).
-
-**Q: Are there known issues?**
-A: Check `TROUBLESHOOTING.md` or open an issue.
-
----
-
-## ?? License
-
-This project documents publicly available information about Grand Theft Auto VI. All trademarks, characters, and official media belong to Rockstar Games / Take-Two Interactive. Original code and curated content in this repository are provided under the license specified in `LICENSE`.
+Ver [`LICENSE`](./LICENSE).
