@@ -2,7 +2,6 @@ import Link from 'next/link'
 import type { CSSProperties } from 'react'
 import type { Metadata } from 'next'
 import { EntityType } from '@/types'
-import type { Trailer } from '@/types'
 import {
   getFeaturedEntities,
   getEntityCount,
@@ -10,7 +9,7 @@ import {
   getEntitiesByType,
   getMostRecentUpdate,
 } from '@/lib/entities'
-import { getCharacterClipUrl, resolveEntityDisplayImage } from '@/lib/media'
+import { resolveEntityDisplayImage } from '@/lib/media'
 import { getBidirectionalRelationCount } from '@/lib/relations'
 import { generateHomepageMetadata, generateBreadcrumbJsonLd, generateWebsiteJsonLd } from '@/lib/seo'
 import { formatRelativeTime } from '@/lib/utils'
@@ -38,25 +37,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Orden editorial de las tarjetas de categoría en la home: primero las 5
- * categorías núcleo (quiénes, dónde, con qué se mueven, misiones, material
- * oficial), el resto (armas, actividades, organizaciones, negocios,
- * objetos, noticias, guías) después, en el mismo orden que ya usa el menú
- * de navegación (`Header.tsx` / `Footer.tsx`).
+ * Tipos que se destacan en el stat strip del hero, alimentados por
+ * `countsByType` real (no números hardcodeados), con el total del sitio
+ * (`totalCount`) como valor destacado extra en el color de acento.
  */
-/**
- * Los 4 tipos que se destacan en el stat strip del hero — mismo criterio
- * que el mockup original ("Vehicles / Characters / Locations /
- * Businesses" al pie), pero alimentado por `countsByType` real en vez de
- * números hardcodeados, y con el total del sitio (`totalCount`) como
- * quinto valor destacado en el color de acento.
- */
-const HERO_STAT_TYPES: EntityType[] = [
-  EntityType.CHARACTER,
-  EntityType.VEHICLE,
-  EntityType.LOCATION,
-  EntityType.BUSINESS,
-]
+const HERO_STAT_TYPES: EntityType[] = [EntityType.VEHICLE, EntityType.NEWS, EntityType.GUIDE]
 
 /**
  * Mismas cuatro palabras que ya formaban la lista estática del subtítulo
@@ -68,42 +53,17 @@ const HERO_STAT_TYPES: EntityType[] = [
  */
 const HERO_SUBTITLE_WORDS = ['auto', 'moto', 'ficha técnica', 'comparativa']
 
-const CATEGORY_ORDER: EntityType[] = [
-  EntityType.CHARACTER,
-  EntityType.LOCATION,
-  EntityType.VEHICLE,
-  EntityType.MISSION,
-  EntityType.TRAILER,
-  EntityType.WEAPON,
-  EntityType.ACTIVITY,
-  EntityType.FACTION,
-  EntityType.BUSINESS,
-  EntityType.OBJECT,
-  EntityType.NEWS,
-  EntityType.GUIDE,
-]
+const CATEGORY_ORDER: EntityType[] = [EntityType.VEHICLE, EntityType.NEWS, EntityType.GUIDE]
 
 /**
- * Color de acento por categoría — mismo trío de la paleta "Leonida
- * Nights" ya existente (magenta / cian / dorado), asignado por tipo de
- * contenido en vez de rotar al azar: gente y facciones en magenta
- * (el acento "humano" del sitio), lugares y material audiovisual en
- * cian (frío/espacial), objetos y economía del mundo en dorado. Da
- * identidad reconocible por sección sin introducir ningún color nuevo.
+ * Color de acento por categoría — mismo trío de acentos ya existente
+ * (magenta / cian / dorado): vehículos en dorado (el acento "premium" del
+ * sitio), noticias en magenta, guías en cian.
  */
 const CATEGORY_ACCENT: Record<EntityType, string> = {
-  [EntityType.CHARACTER]: '#ff2f8f',
-  [EntityType.FACTION]: '#ff2f8f',
-  [EntityType.MISSION]: '#ff2f8f',
-  [EntityType.NEWS]: '#ff2f8f',
-  [EntityType.LOCATION]: '#22d3ee',
-  [EntityType.TRAILER]: '#22d3ee',
-  [EntityType.GUIDE]: '#22d3ee',
   [EntityType.VEHICLE]: '#f0c274',
-  [EntityType.WEAPON]: '#f0c274',
-  [EntityType.ACTIVITY]: '#f0c274',
-  [EntityType.BUSINESS]: '#f0c274',
-  [EntityType.OBJECT]: '#f0c274',
+  [EntityType.NEWS]: '#ff2f8f',
+  [EntityType.GUIDE]: '#22d3ee',
 }
 
 /**
@@ -147,12 +107,11 @@ const EVIDENCE_LEVELS: Array<{
 ]
 
 export default async function HomePage() {
-  const [featured, totalCount, countsByType, allNews, allTrailers, mostRecentUpdate] = await Promise.all([
+  const [featured, totalCount, countsByType, allNews, mostRecentUpdate] = await Promise.all([
     getFeaturedEntities(6),
     getEntityCount(),
     getEntityCountsByType(),
     getEntitiesByType(EntityType.NEWS),
-    getEntitiesByType(EntityType.TRAILER),
     getMostRecentUpdate(),
   ])
 
@@ -166,27 +125,17 @@ export default async function HomePage() {
     latestNews.map((entity) => [entity.slug, resolveEntityDisplayImage(entity)])
   )
 
-  // Línea de tiempo del desarrollo: noticias + tráilers combinados, en
-  // orden cronológico ascendente (a diferencia de "Últimas noticias",
-  // que es descendente). Los tráilers usan `releaseDate` (fecha de
-  // publicación real del video); las noticias usan `createdAt` (fecha
-  // del evento que documentan) — ambos campos ya existen en el contenido,
-  // no se deriva ni inventa ninguna fecha nueva.
-  const timelineEvents: TimelineEvent[] = [...allNews, ...allTrailers]
+  // Línea de tiempo: noticias en orden cronológico ascendente (a diferencia
+  // de "Últimas noticias", que es descendente), usando `createdAt` (fecha
+  // del evento que documentan) — campo que ya existe en el contenido, no
+  // se deriva ni inventa ninguna fecha nueva.
+  const timelineEvents: TimelineEvent[] = [...allNews]
     .map((entity) => ({
       entity,
-      date: entity.type === EntityType.TRAILER ? (entity as Trailer).releaseDate : entity.createdAt,
+      date: entity.createdAt,
       accent: CATEGORY_ACCENT[entity.type],
     }))
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-
-  // Tráiler más reciente por fecha real de publicación (`releaseDate`),
-  // para el CTA secundario del hero ("Ver tráiler oficial"). Mismo criterio
-  // cronológico que ya usa `timelineEvents` más abajo — no se marca ningún
-  // tráiler como "destacado" a mano, es simplemente el último publicado.
-  const latestTrailer = (allTrailers as Trailer[]).sort(
-    (a, b) => new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
-  )[0]
 
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
   // `WebSite` + `SearchAction`: describe el buscador rápido que vive en el
@@ -273,7 +222,7 @@ export default async function HomePage() {
           <Reveal>
             <p className="hero-pill hero-pill-stamp mb-4">
               <span className="hero-pill-dot" aria-hidden="true" />
-              Fichas técnicas <span className="hero-pill-sep">·</span> Argentina
+              Fichas técnicas <span className="hero-pill-sep">·</span> Cobertura global
               {/* Señal de frescura real, no un "actualizado hoy" fijo en
                   el copy: `mostRecentUpdate` es el updatedAt más reciente
                   entre TODAS las entidades del sitio (`getMostRecentUpdate`
@@ -390,21 +339,15 @@ export default async function HomePage() {
                 <span className="hero-cta-label">Ver fichas de autos</span>
                 <span className="hero-cta-arrow" aria-hidden="true">→</span>
               </Link>
-              {/* CTA secundario condicionado a datos reales: solo aparece
-                  si hay al menos un tráiler cargado, y apunta al último
-                  publicado (`latestTrailer`, calculado arriba) — nunca a
-                  un slug hardcodeado que podría quedar obsoleto. */}
-              {latestTrailer && (
-                <Link
-                  href={`/trailers/${latestTrailer.slug}`}
-                  className="btn-secondary hero-cta-secondary inline-flex items-center justify-center gap-2 rounded-lg px-7 py-4 text-base font-semibold text-gta-text transition-all hover:-translate-y-0.5"
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <polygon points="6 3 20 12 6 21 6 3" />
-                  </svg>
-                  Ver tráiler oficial
-                </Link>
-              )}
+              <Link
+                href="/comparar"
+                className="btn-secondary hero-cta-secondary inline-flex items-center justify-center gap-2 rounded-lg px-7 py-4 text-base font-semibold text-gta-text transition-all hover:-translate-y-0.5"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4" />
+                </svg>
+                Comparar vehículos
+              </Link>
             </div>
           </Reveal>
 
@@ -547,7 +490,7 @@ export default async function HomePage() {
                   key={`${entity.type}-${entity.slug}`}
                   entity={entity}
                   image={resolveEntityDisplayImage(entity)}
-                  clipUrl={entity.type === EntityType.CHARACTER ? getCharacterClipUrl(entity.slug) : undefined}
+                  clipUrl={undefined}
                   relationCount={featuredRelationCounts[entity.slug]}
                   size={i === 0 ? 'hero' : 'default'}
                   className={i === 0 ? 'sm:col-span-2' : undefined}

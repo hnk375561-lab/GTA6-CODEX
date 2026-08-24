@@ -11,18 +11,9 @@
  */
 
 export enum EntityType {
-  CHARACTER = 'personajes',
   VEHICLE = 'vehiculos',
-  LOCATION = 'ubicaciones',
-  MISSION = 'misiones',
-  WEAPON = 'armas',
-  ACTIVITY = 'actividades',
-  FACTION = 'organizaciones',
-  BUSINESS = 'negocios',
-  OBJECT = 'objetos',
   NEWS = 'noticias',
   GUIDE = 'guias',
-  TRAILER = 'trailers',
 }
 
 export type InformationStatus = 'confirmado' | 'rumor' | 'nuestro'
@@ -77,19 +68,6 @@ export interface BaseEntity {
   image?: ImageProvenance
 }
 
-export interface Character extends BaseEntity {
-  type: EntityType.CHARACTER
-  alias?: string[]
-  faction?: string | null
-  voice_actor?: string
-  appearance?: {
-    age?: string
-    height?: string
-    build?: string
-    characteristics?: string
-  }
-}
-
 export interface Vehicle extends BaseEntity {
   type: EntityType.VEHICLE
   manufacturer?: string
@@ -105,71 +83,20 @@ export interface Vehicle extends BaseEntity {
   }
 }
 
-export interface Location extends BaseEntity {
-  type: EntityType.LOCATION
-  district?: string | null
-  region?: string | null
-  coordinates?: { x: number; y: number }
-  points_of_interest?: string[]
-  missions?: string[]
-  businesses?: string[]
-  environment?: {
-    climate?: string
-    fauna?: string[]
-    naturalEvents?: string[]
-    unconfirmedNote?: string
-  }
-}
-
-export interface Mission extends BaseEntity {
-  type: EntityType.MISSION
-  giver?: string
-  mission_type?: string
-  reward?: string
-  objectives?: string[]
-  location?: string
-  characters_involved?: string[]
-  prerequisite?: string
-}
-
-export interface TrailerScene {
-  id: string
-  timestamp: string
-  title: string
-  description: string
-  relations?: EntityRelation[]
-  status?: InformationStatus
-}
-
-export interface Trailer extends BaseEntity {
-  type: EntityType.TRAILER
-  releaseDate: string
-  officialUrl?: string
-  durationSeconds?: number
-  scenes: TrailerScene[]
-}
-
 /**
- * Entidades sin contrato TS propio más allá de BaseEntity: armas,
- * actividades, organizaciones, negocios, objetos, noticias, guías.
- * Su forma es intencionalmente abierta; `GenericEntityMetadata`
+ * Entidades sin contrato TS propio más allá de BaseEntity: noticias y
+ * guías (de compra/comparativas de autos y motos). Su forma es
+ * intencionalmente abierta; `GenericEntityMetadata`
  * (`src/components/entities/EntityMetadata.tsx`) renderiza sus campos
  * propios de forma data-driven a partir de las claves no reservadas por
  * `BaseEntity`.
  */
 export interface GenericEntity extends BaseEntity {
-  type:
-    | EntityType.WEAPON
-    | EntityType.ACTIVITY
-    | EntityType.FACTION
-    | EntityType.BUSINESS
-    | EntityType.OBJECT
-    | EntityType.NEWS
-    | EntityType.GUIDE
+  type: EntityType.NEWS | EntityType.GUIDE
   [key: string]: unknown
 }
 
-export type Entity = Character | Vehicle | Location | Mission | Trailer | GenericEntity
+export type Entity = Vehicle | GenericEntity
 
 export interface EntityTypeConfig {
   type: EntityType

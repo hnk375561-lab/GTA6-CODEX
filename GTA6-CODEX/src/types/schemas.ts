@@ -97,36 +97,13 @@ export const BaseEntitySchema = z.object({
 export type ValidatedBaseEntity = z.infer<typeof BaseEntitySchema>
 
 /**
- * Schemas por tipo para las entidades con contrato propio más allá de
- * BaseEntity (ver interfaces homónimas en `src/types/entity.ts`). Mismo
- * criterio que ya usaba `TrailerSchema` más abajo: `BaseEntitySchema.extend`
- * + `type` fijado a un literal. Los 7 `GenericEntity` (armas, actividades,
- * organizaciones, negocios, objetos, noticias, guias) no tienen schema
- * propio a propósito — su contrato es intencionalmente abierto
- * (`[key: string]: unknown`), así que validan solo contra `BaseEntitySchema`.
+ * Schema por tipo para la entidad con contrato propio más allá de
+ * BaseEntity (ver interfaz homónima en `src/types/entity.ts`):
+ * `BaseEntitySchema.extend` + `type` fijado a un literal. Los `GenericEntity`
+ * (noticias, guías) no tienen schema propio a propósito — su contrato es
+ * intencionalmente abierto (`[key: string]: unknown`), así que validan solo
+ * contra `BaseEntitySchema`.
  */
-export const CharacterSchema = BaseEntitySchema.extend({
-  type: z.literal(EntityType.CHARACTER),
-  alias: z.array(z.string()).optional(),
-  // .nullish() (no solo .optional()): contenido real usa `"faction": null`
-  // explícito, no solo el campo ausente, para personajes sin facción
-  // conocida. Mismo criterio para district/region en LocationSchema.
-  faction: z.string().nullish(),
-  voice_actor: z.string().optional(),
-  appearance: z
-    .object({
-      age: z.string().optional(),
-      height: z.string().optional(),
-      build: z.string().optional(),
-      characteristics: z.string().optional(),
-    })
-    .optional(),
-})
-
-export function safeParseCharacter(entity: unknown) {
-  return CharacterSchema.safeParse(entity)
-}
-
 export const VehicleSchema = BaseEntitySchema.extend({
   type: z.literal(EntityType.VEHICLE),
   manufacturer: z.string().optional(),
@@ -146,72 +123,6 @@ export const VehicleSchema = BaseEntitySchema.extend({
 
 export function safeParseVehicle(entity: unknown) {
   return VehicleSchema.safeParse(entity)
-}
-
-export const LocationSchema = BaseEntitySchema.extend({
-  type: z.literal(EntityType.LOCATION),
-  district: z.string().nullish(),
-  region: z.string().nullish(),
-  coordinates: z.object({ x: z.number(), y: z.number() }).optional(),
-  points_of_interest: z.array(z.string()).optional(),
-  missions: z.array(z.string()).optional(),
-  businesses: z.array(z.string()).optional(),
-  environment: z
-    .object({
-      climate: z.string().optional(),
-      fauna: z.array(z.string()).optional(),
-      naturalEvents: z.array(z.string()).optional(),
-      unconfirmedNote: z.string().optional(),
-    })
-    .optional(),
-})
-
-export function safeParseLocation(entity: unknown) {
-  return LocationSchema.safeParse(entity)
-}
-
-export const MissionSchema = BaseEntitySchema.extend({
-  type: z.literal(EntityType.MISSION),
-  giver: z.string().optional(),
-  mission_type: z.string().optional(),
-  reward: z.string().optional(),
-  objectives: z.array(z.string()).optional(),
-  location: z.string().optional(),
-  characters_involved: z.array(z.string()).optional(),
-  prerequisite: z.string().optional(),
-})
-
-export function safeParseMission(entity: unknown) {
-  return MissionSchema.safeParse(entity)
-}
-
-/**
- * Schema de una escena dentro de un Trailer (ver `TrailerScene` en entity.ts).
- */
-export const TrailerSceneSchema = z.object({
-  id: z.string().min(1),
-  timestamp: z.string().min(1),
-  title: z.string().min(1),
-  description: z.string().min(1),
-  relations: z.array(EntityRelationSchema).optional(),
-  status: InformationStatusSchema.optional(),
-})
-
-/**
- * Schema completo de un Trailer: BaseEntitySchema + campos propios.
- * Se valida por separado (en vez de sumarlo al schema base genérico)
- * porque `scenes` es obligatorio solo para este tipo.
- */
-export const TrailerSchema = BaseEntitySchema.extend({
-  type: z.literal(EntityType.TRAILER),
-  releaseDate: z.string().min(1, 'releaseDate requerido'),
-  officialUrl: z.string().url().optional(),
-  durationSeconds: z.number().positive().optional(),
-  scenes: z.array(TrailerSceneSchema).min(1, 'un trailer necesita al menos una escena'),
-})
-
-export function safeParseTrailer(entity: unknown) {
-  return TrailerSchema.safeParse(entity)
 }
 
 /**

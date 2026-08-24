@@ -1,0 +1,777 @@
+diff --git a/GTA6-CODEX/src/app/page.tsx b/GTA6-CODEX/src/app/page.tsx
+index 4562488..b2c5408 100644
+--- a/GTA6-CODEX/src/app/page.tsx
++++ b/GTA6-CODEX/src/app/page.tsx
+@@ -2,7 +2,6 @@ import Link from 'next/link'
+ import type { CSSProperties } from 'react'
+ import type { Metadata } from 'next'
+ import { EntityType } from '@/types'
+-import type { Trailer } from '@/types'
+ import {
+   getFeaturedEntities,
+   getEntityCount,
+@@ -10,7 +9,7 @@ import {
+   getEntitiesByType,
+   getMostRecentUpdate,
+ } from '@/lib/entities'
+-import { getCharacterClipUrl, resolveEntityDisplayImage } from '@/lib/media'
++import { resolveEntityDisplayImage } from '@/lib/media'
+ import { getBidirectionalRelationCount } from '@/lib/relations'
+ import { generateHomepageMetadata, generateBreadcrumbJsonLd, generateWebsiteJsonLd } from '@/lib/seo'
+ import { formatRelativeTime } from '@/lib/utils'
+@@ -38,25 +37,11 @@ export async function generateMetadata(): Promise<Metadata> {
+ }
+ 
+ /**
+- * Orden editorial de las tarjetas de categoría en la home: primero las 5
+- * categorías núcleo (quiénes, dónde, con qué se mueven, misiones, material
+- * oficial), el resto (armas, actividades, organizaciones, negocios,
+- * objetos, noticias, guías) después, en el mismo orden que ya usa el menú
+- * de navegación (`Header.tsx` / `Footer.tsx`).
++ * Tipos que se destacan en el stat strip del hero, alimentados por
++ * `countsByType` real (no números hardcodeados), con el total del sitio
++ * (`totalCount`) como valor destacado extra en el color de acento.
+  */
+-/**
+- * Los 4 tipos que se destacan en el stat strip del hero — mismo criterio
+- * que el mockup original ("Vehicles / Characters / Locations /
+- * Businesses" al pie), pero alimentado por `countsByType` real en vez de
+- * números hardcodeados, y con el total del sitio (`totalCount`) como
+- * quinto valor destacado en el color de acento.
+- */
+-const HERO_STAT_TYPES: EntityType[] = [
+-  EntityType.CHARACTER,
+-  EntityType.VEHICLE,
+-  EntityType.LOCATION,
+-  EntityType.BUSINESS,
+-]
++const HERO_STAT_TYPES: EntityType[] = [EntityType.VEHICLE, EntityType.NEWS, EntityType.GUIDE]
+ 
+ /**
+  * Mismas cuatro palabras que ya formaban la lista estática del subtítulo
+@@ -68,42 +53,17 @@ const HERO_STAT_TYPES: EntityType[] = [
+  */
+ const HERO_SUBTITLE_WORDS = ['auto', 'moto', 'ficha técnica', 'comparativa']
+ 
+-const CATEGORY_ORDER: EntityType[] = [
+-  EntityType.CHARACTER,
+-  EntityType.LOCATION,
+-  EntityType.VEHICLE,
+-  EntityType.MISSION,
+-  EntityType.TRAILER,
+-  EntityType.WEAPON,
+-  EntityType.ACTIVITY,
+-  EntityType.FACTION,
+-  EntityType.BUSINESS,
+-  EntityType.OBJECT,
+-  EntityType.NEWS,
+-  EntityType.GUIDE,
+-]
++const CATEGORY_ORDER: EntityType[] = [EntityType.VEHICLE, EntityType.NEWS, EntityType.GUIDE]
+ 
+ /**
+- * Color de acento por categoría — mismo trío de la paleta "Leonida
+- * Nights" ya existente (magenta / cian / dorado), asignado por tipo de
+- * contenido en vez de rotar al azar: gente y facciones en magenta
+- * (el acento "humano" del sitio), lugares y material audiovisual en
+- * cian (frío/espacial), objetos y economía del mundo en dorado. Da
+- * identidad reconocible por sección sin introducir ningún color nuevo.
++ * Color de acento por categoría — mismo trío de acentos ya existente
++ * (magenta / cian / dorado): vehículos en dorado (el acento "premium" del
++ * sitio), noticias en magenta, guías en cian.
+  */
+ const CATEGORY_ACCENT: Record<EntityType, string> = {
+-  [EntityType.CHARACTER]: '#ff2f8f',
+-  [EntityType.FACTION]: '#ff2f8f',
+-  [EntityType.MISSION]: '#ff2f8f',
++  [EntityType.VEHICLE]: '#f0c274',
+   [EntityType.NEWS]: '#ff2f8f',
+-  [EntityType.LOCATION]: '#22d3ee',
+-  [EntityType.TRAILER]: '#22d3ee',
+   [EntityType.GUIDE]: '#22d3ee',
+-  [EntityType.VEHICLE]: '#f0c274',
+-  [EntityType.WEAPON]: '#f0c274',
+-  [EntityType.ACTIVITY]: '#f0c274',
+-  [EntityType.BUSINESS]: '#f0c274',
+-  [EntityType.OBJECT]: '#f0c274',
+ }
+ 
+ /**
+@@ -147,12 +107,11 @@ const EVIDENCE_LEVELS: Array<{
+ ]
+ 
+ export default async function HomePage() {
+-  const [featured, totalCount, countsByType, allNews, allTrailers, mostRecentUpdate] = await Promise.all([
++  const [featured, totalCount, countsByType, allNews, mostRecentUpdate] = await Promise.all([
+     getFeaturedEntities(6),
+     getEntityCount(),
+     getEntityCountsByType(),
+     getEntitiesByType(EntityType.NEWS),
+-    getEntitiesByType(EntityType.TRAILER),
+     getMostRecentUpdate(),
+   ])
+ 
+@@ -166,28 +125,18 @@ export default async function HomePage() {
+     latestNews.map((entity) => [entity.slug, resolveEntityDisplayImage(entity)])
+   )
+ 
+-  // Línea de tiempo del desarrollo: noticias + tráilers combinados, en
+-  // orden cronológico ascendente (a diferencia de "Últimas noticias",
+-  // que es descendente). Los tráilers usan `releaseDate` (fecha de
+-  // publicación real del video); las noticias usan `createdAt` (fecha
+-  // del evento que documentan) — ambos campos ya existen en el contenido,
+-  // no se deriva ni inventa ninguna fecha nueva.
+-  const timelineEvents: TimelineEvent[] = [...allNews, ...allTrailers]
++  // Línea de tiempo: noticias en orden cronológico ascendente (a diferencia
++  // de "Últimas noticias", que es descendente), usando `createdAt` (fecha
++  // del evento que documentan) — campo que ya existe en el contenido, no
++  // se deriva ni inventa ninguna fecha nueva.
++  const timelineEvents: TimelineEvent[] = [...allNews]
+     .map((entity) => ({
+       entity,
+-      date: entity.type === EntityType.TRAILER ? (entity as Trailer).releaseDate : entity.createdAt,
++      date: entity.createdAt,
+       accent: CATEGORY_ACCENT[entity.type],
+     }))
+     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+ 
+-  // Tráiler más reciente por fecha real de publicación (`releaseDate`),
+-  // para el CTA secundario del hero ("Ver tráiler oficial"). Mismo criterio
+-  // cronológico que ya usa `timelineEvents` más abajo — no se marca ningún
+-  // tráiler como "destacado" a mano, es simplemente el último publicado.
+-  const latestTrailer = (allTrailers as Trailer[]).sort(
+-    (a, b) => new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
+-  )[0]
+-
+   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
+   // `WebSite` + `SearchAction`: describe el buscador rápido que vive en el
+   // hero (`QuickSearchForm`) para que Google pueda ofrecer un sitelinks
+@@ -273,7 +222,7 @@ export default async function HomePage() {
+           <Reveal>
+             <p className="hero-pill hero-pill-stamp mb-4">
+               <span className="hero-pill-dot" aria-hidden="true" />
+-              Fichas técnicas <span className="hero-pill-sep">·</span> Argentina
++              Fichas técnicas <span className="hero-pill-sep">·</span> Cobertura global
+               {/* Señal de frescura real, no un "actualizado hoy" fijo en
+                   el copy: `mostRecentUpdate` es el updatedAt más reciente
+                   entre TODAS las entidades del sitio (`getMostRecentUpdate`
+@@ -390,21 +339,15 @@ export default async function HomePage() {
+                 <span className="hero-cta-label">Ver fichas de autos</span>
+                 <span className="hero-cta-arrow" aria-hidden="true">→</span>
+               </Link>
+-              {/* CTA secundario condicionado a datos reales: solo aparece
+-                  si hay al menos un tráiler cargado, y apunta al último
+-                  publicado (`latestTrailer`, calculado arriba) — nunca a
+-                  un slug hardcodeado que podría quedar obsoleto. */}
+-              {latestTrailer && (
+-                <Link
+-                  href={`/trailers/${latestTrailer.slug}`}
+-                  className="btn-secondary hero-cta-secondary inline-flex items-center justify-center gap-2 rounded-lg px-7 py-4 text-base font-semibold text-gta-text transition-all hover:-translate-y-0.5"
+-                >
+-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+-                    <polygon points="6 3 20 12 6 21 6 3" />
+-                  </svg>
+-                  Ver tráiler oficial
+-                </Link>
+-              )}
++              <Link
++                href="/comparar"
++                className="btn-secondary hero-cta-secondary inline-flex items-center justify-center gap-2 rounded-lg px-7 py-4 text-base font-semibold text-gta-text transition-all hover:-translate-y-0.5"
++              >
++                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
++                  <path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4" />
++                </svg>
++                Comparar vehículos
++              </Link>
+             </div>
+           </Reveal>
+ 
+@@ -547,7 +490,7 @@ export default async function HomePage() {
+                   key={`${entity.type}-${entity.slug}`}
+                   entity={entity}
+                   image={resolveEntityDisplayImage(entity)}
+-                  clipUrl={entity.type === EntityType.CHARACTER ? getCharacterClipUrl(entity.slug) : undefined}
++                  clipUrl={undefined}
+                   relationCount={featuredRelationCounts[entity.slug]}
+                   size={i === 0 ? 'hero' : 'default'}
+                   className={i === 0 ? 'sm:col-span-2' : undefined}
+diff --git a/GTA6-CODEX/src/components/layout/Footer.tsx b/GTA6-CODEX/src/components/layout/Footer.tsx
+index 7026cb4..ccd9c93 100644
+--- a/GTA6-CODEX/src/components/layout/Footer.tsx
++++ b/GTA6-CODEX/src/components/layout/Footer.tsx
+@@ -29,14 +29,6 @@ export function Footer() {
+           <div>
+             <h3 className="eyebrow mb-4 text-xs font-semibold uppercase text-gta-accent-strong">Categorías</h3>
+             <ul className="space-y-2 text-sm">
+-              <li>
+-                <Link
+-                  href={`/${EntityType.CHARACTER}`}
+-                  className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
+-                >
+-                  Personajes
+-                </Link>
+-              </li>
+               <li>
+                 <Link
+                   href={`/${EntityType.VEHICLE}`}
+@@ -47,18 +39,18 @@ export function Footer() {
+               </li>
+               <li>
+                 <Link
+-                  href={`/${EntityType.LOCATION}`}
++                  href={`/${EntityType.NEWS}`}
+                   className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
+                 >
+-                  Ubicaciones
++                  Noticias
+                 </Link>
+               </li>
+               <li>
+                 <Link
+-                  href={`/${EntityType.MISSION}`}
++                  href={`/${EntityType.GUIDE}`}
+                   className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
+                 >
+-                  Misiones
++                  Guías
+                 </Link>
+               </li>
+             </ul>
+@@ -86,10 +78,10 @@ export function Footer() {
+               </li>
+               <li>
+                 <Link
+-                  href={`/${EntityType.TRAILER}`}
++                  href="/comparar"
+                   className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
+                 >
+-                  Trailers
++                  Comparar
+                 </Link>
+               </li>
+               <li>
+diff --git a/GTA6-CODEX/src/components/layout/Header.tsx b/GTA6-CODEX/src/components/layout/Header.tsx
+index b3261f2..852154d 100644
+--- a/GTA6-CODEX/src/components/layout/Header.tsx
++++ b/GTA6-CODEX/src/components/layout/Header.tsx
+@@ -1,89 +1,43 @@
+ 'use client'
+ 
+-import { useEffect, useRef, useState } from 'react'
++import { useEffect, useState } from 'react'
+ import Link from 'next/link'
+ import { usePathname } from 'next/navigation'
+ import { EntityType } from '@/types'
+-import { CategoryIcon } from '@/components/ui/CategoryIcon'
+-import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
+-import { cn } from '@/lib/utils'
+ 
+ /**
+- * Enlaces siempre visibles en la barra: las 5 categorías "núcleo" del
+- * expediente (quiénes, dónde, con qué se mueven, misiones, material
+- * oficial — mismo criterio editorial que ya define `CATEGORY_ORDER` en
+- * `app/page.tsx`) más las dos secciones transversales que no son un tipo
+- * de entidad (Comparar, Galería).
++ * Enlaces siempre visibles en la barra: la categoría núcleo del sitio
++ * (Vehículos) más las secciones transversales que no son un tipo de
++ * entidad (Comparar, Galería, Mapa).
+  */
+ const NAV_LINKS = [
+-  { href: `/${EntityType.CHARACTER}`, label: 'Personajes' },
+-  { href: `/${EntityType.LOCATION}`, label: 'Ubicaciones' },
+   { href: `/${EntityType.VEHICLE}`, label: 'Vehículos' },
+-  { href: `/${EntityType.MISSION}`, label: 'Misiones' },
+-  { href: `/${EntityType.TRAILER}`, label: 'Trailers' },
++  { href: `/${EntityType.NEWS}`, label: 'Noticias' },
++  { href: `/${EntityType.GUIDE}`, label: 'Guías' },
+   { href: '/comparar', label: 'Comparar' },
+   { href: '/galeria', label: 'Galería' },
+   { href: '/mapa', label: 'Mapa' },
+ ]
+ 
+-/**
+- * "El resto" de las categorías (armas, actividades, organizaciones,
+- * negocios, objetos, noticias, guías) — exactamente el mismo grupo y
+- * orden que el comentario de `CATEGORY_ORDER` en `app/page.tsx` ya
+- * describía como "el resto... en el mismo orden que ya usa el menú de
+- * navegación", solo que el menú nunca había llegado a reflejarlo (ver
+- * punto 2.4 del análisis). Hasta ahora, estas 5 primeras solo eran
+- * alcanzables por búsqueda o por relación cruzada desde otra ficha.
+- * Viven en el dropdown "Más categorías" en vez de sumarse en línea a
+- * `NAV_LINKS` para no volver ilegible la barra en desktop.
+- */
+-const NAV_MORE: Array<{ type: EntityType; href: string }> = [
+-  { type: EntityType.WEAPON, href: `/${EntityType.WEAPON}` },
+-  { type: EntityType.ACTIVITY, href: `/${EntityType.ACTIVITY}` },
+-  { type: EntityType.FACTION, href: `/${EntityType.FACTION}` },
+-  { type: EntityType.BUSINESS, href: `/${EntityType.BUSINESS}` },
+-  { type: EntityType.OBJECT, href: `/${EntityType.OBJECT}` },
+-  { type: EntityType.NEWS, href: `/${EntityType.NEWS}` },
+-  { type: EntityType.GUIDE, href: `/${EntityType.GUIDE}` },
+-]
+-
+ export function Header() {
+   const [menuOpen, setMenuOpen] = useState(false)
+-  const [moreOpen, setMoreOpen] = useState(false)
+-  const moreRef = useRef<HTMLDivElement>(null)
+   const pathname = usePathname()
+ 
+-  const isMoreActive = NAV_MORE.some((item) => pathname?.startsWith(item.href))
+-
+-  // Cierra ambos menús al navegar y al presionar Escape.
++  // Cierra el menú móvil al navegar y al presionar Escape.
+   useEffect(() => {
+     setMenuOpen(false)
+-    setMoreOpen(false)
+   }, [pathname])
+ 
+   useEffect(() => {
+-    if (!menuOpen && !moreOpen) return
++    if (!menuOpen) return
+     const onKeyDown = (e: KeyboardEvent) => {
+       if (e.key === 'Escape') {
+         setMenuOpen(false)
+-        setMoreOpen(false)
+       }
+     }
+     document.addEventListener('keydown', onKeyDown)
+     return () => document.removeEventListener('keydown', onKeyDown)
+-  }, [menuOpen, moreOpen])
+-
+-  // Cierra el dropdown "Más categorías" al clickear fuera de él.
+-  useEffect(() => {
+-    if (!moreOpen) return
+-    const onPointerDown = (e: MouseEvent) => {
+-      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+-        setMoreOpen(false)
+-      }
+-    }
+-    document.addEventListener('mousedown', onPointerDown)
+-    return () => document.removeEventListener('mousedown', onPointerDown)
+-  }, [moreOpen])
++  }, [menuOpen])
+ 
+   return (
+     <header className="glass-surface sticky top-0 z-50 w-full border-b border-gta-border/80 shadow-[0_1px_0_0_rgba(255,255,255,0.03)]">
+@@ -110,60 +64,6 @@ export function Header() {
+               {link.label}
+             </Link>
+           ))}
+-
+-          <div className="relative" ref={moreRef}>
+-            <button
+-              type="button"
+-              onClick={() => setMoreOpen((v) => !v)}
+-              aria-expanded={moreOpen}
+-              aria-haspopup="true"
+-              aria-controls="nav-more-panel"
+-              className={cn(
+-                'flex items-center gap-1 text-sm font-medium transition-colors focus-visible:text-gta-accent-strong',
+-                isMoreActive ? 'text-gta-accent-strong' : 'text-gta-text-secondary hover:text-gta-accent-strong'
+-              )}
+-            >
+-              Más categorías
+-              <svg
+-                width="12"
+-                height="12"
+-                viewBox="0 0 24 24"
+-                fill="none"
+-                stroke="currentColor"
+-                strokeWidth="2.4"
+-                strokeLinecap="round"
+-                strokeLinejoin="round"
+-                aria-hidden="true"
+-                className={cn('transition-transform duration-200', moreOpen && 'rotate-180')}
+-              >
+-                <path d="m6 9 6 6 6-6" />
+-              </svg>
+-            </button>
+-
+-            {moreOpen && (
+-              <div
+-                id="nav-more-panel"
+-                role="menu"
+-                aria-label="Más categorías"
+-                className="glass-surface absolute right-0 top-full z-50 mt-2 w-60 rounded-xl border border-gta-border p-1.5 shadow-gta-xl"
+-              >
+-                <ul className="flex flex-col gap-0.5">
+-                  {NAV_MORE.map((item) => (
+-                    <li key={item.href} role="none">
+-                      <Link
+-                        href={item.href}
+-                        role="menuitem"
+-                        className="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm font-medium text-gta-text-secondary transition-colors hover:bg-gta-surface-elevated hover:text-gta-accent-strong"
+-                      >
+-                        <CategoryIcon type={item.type} className="h-4 w-4 shrink-0 text-gta-accent" />
+-                        {ENTITY_TYPE_LABELS[item.type]}
+-                      </Link>
+-                    </li>
+-                  ))}
+-                </ul>
+-              </div>
+-            )}
+-          </div>
+         </nav>
+ 
+         {/* Búsqueda y menú móvil */}
+@@ -237,24 +137,6 @@ export function Header() {
+             </li>
+           ))}
+         </ul>
+-
+-        <div className="my-2 h-px bg-gta-border" aria-hidden="true" />
+-        <p className="px-2 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-gta-text-tertiary">
+-          Más categorías
+-        </p>
+-        <ul className="flex flex-col">
+-          {NAV_MORE.map((item) => (
+-            <li key={item.href}>
+-              <Link
+-                href={item.href}
+-                className="flex items-center gap-2.5 rounded-md px-2 py-3 text-base font-medium text-gta-text-secondary transition-colors hover:bg-gta-surface-elevated hover:text-gta-accent-strong focus-visible:bg-gta-surface-elevated focus-visible:text-gta-accent"
+-              >
+-                <CategoryIcon type={item.type} className="h-4 w-4 shrink-0 text-gta-accent" />
+-                {ENTITY_TYPE_LABELS[item.type]}
+-              </Link>
+-            </li>
+-          ))}
+-        </ul>
+       </nav>
+     </header>
+   )
+diff --git a/GTA6-CODEX/src/lib/entities.ts b/GTA6-CODEX/src/lib/entities.ts
+index 8856858..2e7de6a 100644
+--- a/GTA6-CODEX/src/lib/entities.ts
++++ b/GTA6-CODEX/src/lib/entities.ts
+@@ -1,39 +1,20 @@
+ import fs from 'fs'
+ import path from 'path'
+ import { Entity, EntityType, BaseEntity } from '@/types'
+-import {
+-  safeParseEntity,
+-  safeParseTrailer,
+-  safeParseCharacter,
+-  safeParseVehicle,
+-  safeParseLocation,
+-  safeParseMission,
+-} from '@/types/schemas'
++import { safeParseEntity, safeParseVehicle } from '@/types/schemas'
+ import { clearRelationCache } from './relations'
+ 
+ /**
+  * Validación adicional específica de tipo, para entidades cuyo contrato
+- * va más allá de BaseEntity (ej. Trailer requiere `scenes`; Vehicle tiene
+- * `performance` con forma propia). Se ejecuta después de `validateEntity`
+- * (que ya garantiza el contrato base) y solo agrega chequeos extra; nunca
+- * afloja lo que `validateEntity` ya exige. Los 7 `GenericEntity` (armas,
+- * actividades, organizaciones, negocios, objetos, noticias, guias) no
+- * tienen caso acá a propósito: ya quedan cubiertos por `validateEntity`
+- * (BaseEntitySchema) y su contrato es intencionalmente abierto.
++ * va más allá de BaseEntity (Vehicle tiene `performance` con forma propia).
++ * Se ejecuta después de `validateEntity` (que ya garantiza el contrato
++ * base) y solo agrega chequeos extra; nunca afloja lo que `validateEntity`
++ * ya exige. Los `GenericEntity` (noticias, guias) no tienen caso acá a
++ * propósito: ya quedan cubiertos por `validateEntity` (BaseEntitySchema)
++ * y su contrato es intencionalmente abierto.
+  */
+ function validateTypeSpecific(type: EntityType, entity: unknown, contextLabel: string): boolean {
+-  const result =
+-    type === EntityType.TRAILER
+-      ? safeParseTrailer(entity)
+-      : type === EntityType.CHARACTER
+-        ? safeParseCharacter(entity)
+-        : type === EntityType.VEHICLE
+-          ? safeParseVehicle(entity)
+-          : type === EntityType.LOCATION
+-            ? safeParseLocation(entity)
+-            : type === EntityType.MISSION
+-              ? safeParseMission(entity)
+-              : null
++  const result = type === EntityType.VEHICLE ? safeParseVehicle(entity) : null
+ 
+   if (result && !result.success) {
+     console.warn(`[entities] Entidad inválida (${type}) en ${contextLabel}: ${result.error.message}`)
+diff --git a/GTA6-CODEX/src/lib/entity-labels.ts b/GTA6-CODEX/src/lib/entity-labels.ts
+index ea333dd..c1c59ee 100644
+--- a/GTA6-CODEX/src/lib/entity-labels.ts
++++ b/GTA6-CODEX/src/lib/entity-labels.ts
+@@ -10,37 +10,17 @@ import type { InformationStatus } from '@/types'
+  * tipo de entidad en varios lugares distintos.
+  */
+ export const ENTITY_TYPE_LABELS: Record<EntityType, string> = {
+-  [EntityType.CHARACTER]: 'Personajes',
+   [EntityType.VEHICLE]: 'Vehículos',
+-  [EntityType.LOCATION]: 'Ubicaciones',
+-  [EntityType.MISSION]: 'Misiones',
+-  [EntityType.WEAPON]: 'Armas',
+-  [EntityType.ACTIVITY]: 'Actividades',
+-  [EntityType.FACTION]: 'Organizaciones',
+-  [EntityType.BUSINESS]: 'Negocios',
+-  [EntityType.OBJECT]: 'Objetos',
+   [EntityType.NEWS]: 'Noticias',
+   [EntityType.GUIDE]: 'Guías',
+-  [EntityType.TRAILER]: 'Trailers',
+ }
+ 
+ /**
+- * Orden editorial preferido al agrupar relaciones de escena por tipo:
+- * primero quiénes (personajes), después dónde (ubicaciones) y qué
+- * (vehículos/armas/objetos), el resto al final. Los tipos no listados
+- * caen al final en el orden en que aparecen.
++ * Orden editorial preferido al agrupar relaciones por tipo: primero el
++ * vehículo en sí, después noticias y guías relacionadas.
+  */
+ export const ENTITY_TYPE_GROUP_ORDER: EntityType[] = [
+-  EntityType.CHARACTER,
+-  EntityType.LOCATION,
+   EntityType.VEHICLE,
+-  EntityType.WEAPON,
+-  EntityType.ACTIVITY,
+-  EntityType.FACTION,
+-  EntityType.OBJECT,
+-  EntityType.BUSINESS,
+-  EntityType.MISSION,
+-  EntityType.TRAILER,
+   EntityType.NEWS,
+   EntityType.GUIDE,
+ ]
+diff --git a/GTA6-CODEX/src/types/entity.ts b/GTA6-CODEX/src/types/entity.ts
+index 26db36d..dd3c874 100644
+--- a/GTA6-CODEX/src/types/entity.ts
++++ b/GTA6-CODEX/src/types/entity.ts
+@@ -11,18 +11,9 @@
+  */
+ 
+ export enum EntityType {
+-  CHARACTER = 'personajes',
+   VEHICLE = 'vehiculos',
+-  LOCATION = 'ubicaciones',
+-  MISSION = 'misiones',
+-  WEAPON = 'armas',
+-  ACTIVITY = 'actividades',
+-  FACTION = 'organizaciones',
+-  BUSINESS = 'negocios',
+-  OBJECT = 'objetos',
+   NEWS = 'noticias',
+   GUIDE = 'guias',
+-  TRAILER = 'trailers',
+ }
+ 
+ export type InformationStatus = 'confirmado' | 'rumor' | 'nuestro'
+@@ -77,19 +68,6 @@ export interface BaseEntity {
+   image?: ImageProvenance
+ }
+ 
+-export interface Character extends BaseEntity {
+-  type: EntityType.CHARACTER
+-  alias?: string[]
+-  faction?: string | null
+-  voice_actor?: string
+-  appearance?: {
+-    age?: string
+-    height?: string
+-    build?: string
+-    characteristics?: string
+-  }
+-}
+-
+ export interface Vehicle extends BaseEntity {
+   type: EntityType.VEHICLE
+   manufacturer?: string
+@@ -105,71 +83,20 @@ export interface Vehicle extends BaseEntity {
+   }
+ }
+ 
+-export interface Location extends BaseEntity {
+-  type: EntityType.LOCATION
+-  district?: string | null
+-  region?: string | null
+-  coordinates?: { x: number; y: number }
+-  points_of_interest?: string[]
+-  missions?: string[]
+-  businesses?: string[]
+-  environment?: {
+-    climate?: string
+-    fauna?: string[]
+-    naturalEvents?: string[]
+-    unconfirmedNote?: string
+-  }
+-}
+-
+-export interface Mission extends BaseEntity {
+-  type: EntityType.MISSION
+-  giver?: string
+-  mission_type?: string
+-  reward?: string
+-  objectives?: string[]
+-  location?: string
+-  characters_involved?: string[]
+-  prerequisite?: string
+-}
+-
+-export interface TrailerScene {
+-  id: string
+-  timestamp: string
+-  title: string
+-  description: string
+-  relations?: EntityRelation[]
+-  status?: InformationStatus
+-}
+-
+-export interface Trailer extends BaseEntity {
+-  type: EntityType.TRAILER
+-  releaseDate: string
+-  officialUrl?: string
+-  durationSeconds?: number
+-  scenes: TrailerScene[]
+-}
+-
+ /**
+- * Entidades sin contrato TS propio más allá de BaseEntity: armas,
+- * actividades, organizaciones, negocios, objetos, noticias, guías.
+- * Su forma es intencionalmente abierta; `GenericEntityMetadata`
++ * Entidades sin contrato TS propio más allá de BaseEntity: noticias y
++ * guías (de compra/comparativas de autos y motos). Su forma es
++ * intencionalmente abierta; `GenericEntityMetadata`
+  * (`src/components/entities/EntityMetadata.tsx`) renderiza sus campos
+  * propios de forma data-driven a partir de las claves no reservadas por
+  * `BaseEntity`.
+  */
+ export interface GenericEntity extends BaseEntity {
+-  type:
+-    | EntityType.WEAPON
+-    | EntityType.ACTIVITY
+-    | EntityType.FACTION
+-    | EntityType.BUSINESS
+-    | EntityType.OBJECT
+-    | EntityType.NEWS
+-    | EntityType.GUIDE
++  type: EntityType.NEWS | EntityType.GUIDE
+   [key: string]: unknown
+ }
+ 
+-export type Entity = Character | Vehicle | Location | Mission | Trailer | GenericEntity
++export type Entity = Vehicle | GenericEntity
+ 
+ export interface EntityTypeConfig {
+   type: EntityType
+diff --git a/GTA6-CODEX/src/types/schemas.ts b/GTA6-CODEX/src/types/schemas.ts
+index 7941c9a..9f22778 100644
+--- a/GTA6-CODEX/src/types/schemas.ts
++++ b/GTA6-CODEX/src/types/schemas.ts
+@@ -97,36 +97,13 @@ export const BaseEntitySchema = z.object({
+ export type ValidatedBaseEntity = z.infer<typeof BaseEntitySchema>
+ 
+ /**
+- * Schemas por tipo para las entidades con contrato propio más allá de
+- * BaseEntity (ver interfaces homónimas en `src/types/entity.ts`). Mismo
+- * criterio que ya usaba `TrailerSchema` más abajo: `BaseEntitySchema.extend`
+- * + `type` fijado a un literal. Los 7 `GenericEntity` (armas, actividades,
+- * organizaciones, negocios, objetos, noticias, guias) no tienen schema
+- * propio a propósito — su contrato es intencionalmente abierto
+- * (`[key: string]: unknown`), así que validan solo contra `BaseEntitySchema`.
++ * Schema por tipo para la entidad con contrato propio más allá de
++ * BaseEntity (ver interfaz homónima en `src/types/entity.ts`):
++ * `BaseEntitySchema.extend` + `type` fijado a un literal. Los `GenericEntity`
++ * (noticias, guías) no tienen schema propio a propósito — su contrato es
++ * intencionalmente abierto (`[key: string]: unknown`), así que validan solo
++ * contra `BaseEntitySchema`.
+  */
+-export const CharacterSchema = BaseEntitySchema.extend({
+-  type: z.literal(EntityType.CHARACTER),
+-  alias: z.array(z.string()).optional(),
+-  // .nullish() (no solo .optional()): contenido real usa `"faction": null`
+-  // explícito, no solo el campo ausente, para personajes sin facción
+-  // conocida. Mismo criterio para district/region en LocationSchema.
+-  faction: z.string().nullish(),
+-  voice_actor: z.string().optional(),
+-  appearance: z
+-    .object({
+-      age: z.string().optional(),
+-      height: z.string().optional(),
+-      build: z.string().optional(),
+-      characteristics: z.string().optional(),
+-    })
+-    .optional(),
+-})
+-
+-export function safeParseCharacter(entity: unknown) {
+-  return CharacterSchema.safeParse(entity)
+-}
+-
+ export const VehicleSchema = BaseEntitySchema.extend({
+   type: z.literal(EntityType.VEHICLE),
+   manufacturer: z.string().optional(),
+@@ -148,72 +125,6 @@ export function safeParseVehicle(entity: unknown) {
+   return VehicleSchema.safeParse(entity)
+ }
+ 
+-export const LocationSchema = BaseEntitySchema.extend({
+-  type: z.literal(EntityType.LOCATION),
+-  district: z.string().nullish(),
+-  region: z.string().nullish(),
+-  coordinates: z.object({ x: z.number(), y: z.number() }).optional(),
+-  points_of_interest: z.array(z.string()).optional(),
+-  missions: z.array(z.string()).optional(),
+-  businesses: z.array(z.string()).optional(),
+-  environment: z
+-    .object({
+-      climate: z.string().optional(),
+-      fauna: z.array(z.string()).optional(),
+-      naturalEvents: z.array(z.string()).optional(),
+-      unconfirmedNote: z.string().optional(),
+-    })
+-    .optional(),
+-})
+-
+-export function safeParseLocation(entity: unknown) {
+-  return LocationSchema.safeParse(entity)
+-}
+-
+-export const MissionSchema = BaseEntitySchema.extend({
+-  type: z.literal(EntityType.MISSION),
+-  giver: z.string().optional(),
+-  mission_type: z.string().optional(),
+-  reward: z.string().optional(),
+-  objectives: z.array(z.string()).optional(),
+-  location: z.string().optional(),
+-  characters_involved: z.array(z.string()).optional(),
+-  prerequisite: z.string().optional(),
+-})
+-
+-export function safeParseMission(entity: unknown) {
+-  return MissionSchema.safeParse(entity)
+-}
+-
+-/**
+- * Schema de una escena dentro de un Trailer (ver `TrailerScene` en entity.ts).
+- */
+-export const TrailerSceneSchema = z.object({
+-  id: z.string().min(1),
+-  timestamp: z.string().min(1),
+-  title: z.string().min(1),
+-  description: z.string().min(1),
+-  relations: z.array(EntityRelationSchema).optional(),
+-  status: InformationStatusSchema.optional(),
+-})
+-
+-/**
+- * Schema completo de un Trailer: BaseEntitySchema + campos propios.
+- * Se valida por separado (en vez de sumarlo al schema base genérico)
+- * porque `scenes` es obligatorio solo para este tipo.
+- */
+-export const TrailerSchema = BaseEntitySchema.extend({
+-  type: z.literal(EntityType.TRAILER),
+-  releaseDate: z.string().min(1, 'releaseDate requerido'),
+-  officialUrl: z.string().url().optional(),
+-  durationSeconds: z.number().positive().optional(),
+-  scenes: z.array(TrailerSceneSchema).min(1, 'un trailer necesita al menos una escena'),
+-})
+-
+-export function safeParseTrailer(entity: unknown) {
+-  return TrailerSchema.safeParse(entity)
+-}
+-
+ /**
+  * Valida un valor desconocido (JSON parseado) contra el contrato base.
+  * Devuelve `{ success: true, data }` o `{ success: false, error }` con el

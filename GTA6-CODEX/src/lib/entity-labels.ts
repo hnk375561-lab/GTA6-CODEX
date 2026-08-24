@@ -10,37 +10,17 @@ import type { InformationStatus } from '@/types'
  * tipo de entidad en varios lugares distintos.
  */
 export const ENTITY_TYPE_LABELS: Record<EntityType, string> = {
-  [EntityType.CHARACTER]: 'Personajes',
   [EntityType.VEHICLE]: 'Vehículos',
-  [EntityType.LOCATION]: 'Ubicaciones',
-  [EntityType.MISSION]: 'Misiones',
-  [EntityType.WEAPON]: 'Armas',
-  [EntityType.ACTIVITY]: 'Actividades',
-  [EntityType.FACTION]: 'Organizaciones',
-  [EntityType.BUSINESS]: 'Negocios',
-  [EntityType.OBJECT]: 'Objetos',
   [EntityType.NEWS]: 'Noticias',
   [EntityType.GUIDE]: 'Guías',
-  [EntityType.TRAILER]: 'Trailers',
 }
 
 /**
- * Orden editorial preferido al agrupar relaciones de escena por tipo:
- * primero quiénes (personajes), después dónde (ubicaciones) y qué
- * (vehículos/armas/objetos), el resto al final. Los tipos no listados
- * caen al final en el orden en que aparecen.
+ * Orden editorial preferido al agrupar relaciones por tipo: primero el
+ * vehículo en sí, después noticias y guías relacionadas.
  */
 export const ENTITY_TYPE_GROUP_ORDER: EntityType[] = [
-  EntityType.CHARACTER,
-  EntityType.LOCATION,
   EntityType.VEHICLE,
-  EntityType.WEAPON,
-  EntityType.ACTIVITY,
-  EntityType.FACTION,
-  EntityType.OBJECT,
-  EntityType.BUSINESS,
-  EntityType.MISSION,
-  EntityType.TRAILER,
   EntityType.NEWS,
   EntityType.GUIDE,
 ]

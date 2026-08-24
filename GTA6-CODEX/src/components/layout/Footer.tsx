@@ -31,14 +31,6 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href={`/${EntityType.CHARACTER}`}
-                  className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
-                >
-                  Personajes
-                </Link>
-              </li>
-              <li>
-                <Link
                   href={`/${EntityType.VEHICLE}`}
                   className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
                 >
@@ -47,18 +39,18 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href={`/${EntityType.LOCATION}`}
+                  href={`/${EntityType.NEWS}`}
                   className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
                 >
-                  Ubicaciones
+                  Noticias
                 </Link>
               </li>
               <li>
                 <Link
-                  href={`/${EntityType.MISSION}`}
+                  href={`/${EntityType.GUIDE}`}
                   className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
                 >
-                  Misiones
+                  Guías
                 </Link>
               </li>
             </ul>
@@ -86,10 +78,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href={`/${EntityType.TRAILER}`}
+                  href="/comparar"
                   className="link-underline text-gta-text-secondary transition-colors hover:text-gta-accent-strong"
                 >
-                  Trailers
+                  Comparar
                 </Link>
               </li>
               <li>

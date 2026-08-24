@@ -1,39 +1,20 @@
 import fs from 'fs'
 import path from 'path'
 import { Entity, EntityType, BaseEntity } from '@/types'
-import {
-  safeParseEntity,
-  safeParseTrailer,
-  safeParseCharacter,
-  safeParseVehicle,
-  safeParseLocation,
-  safeParseMission,
-} from '@/types/schemas'
+import { safeParseEntity, safeParseVehicle } from '@/types/schemas'
 import { clearRelationCache } from './relations'
 
 /**
  * Validación adicional específica de tipo, para entidades cuyo contrato
- * va más allá de BaseEntity (ej. Trailer requiere `scenes`; Vehicle tiene
- * `performance` con forma propia). Se ejecuta después de `validateEntity`
- * (que ya garantiza el contrato base) y solo agrega chequeos extra; nunca
- * afloja lo que `validateEntity` ya exige. Los 7 `GenericEntity` (armas,
- * actividades, organizaciones, negocios, objetos, noticias, guias) no
- * tienen caso acá a propósito: ya quedan cubiertos por `validateEntity`
- * (BaseEntitySchema) y su contrato es intencionalmente abierto.
+ * va más allá de BaseEntity (Vehicle tiene `performance` con forma propia).
+ * Se ejecuta después de `validateEntity` (que ya garantiza el contrato
+ * base) y solo agrega chequeos extra; nunca afloja lo que `validateEntity`
+ * ya exige. Los `GenericEntity` (noticias, guias) no tienen caso acá a
+ * propósito: ya quedan cubiertos por `validateEntity` (BaseEntitySchema)
+ * y su contrato es intencionalmente abierto.
  */
 function validateTypeSpecific(type: EntityType, entity: unknown, contextLabel: string): boolean {
-  const result =
-    type === EntityType.TRAILER
-      ? safeParseTrailer(entity)
-      : type === EntityType.CHARACTER
-        ? safeParseCharacter(entity)
-        : type === EntityType.VEHICLE
-          ? safeParseVehicle(entity)
-          : type === EntityType.LOCATION
-            ? safeParseLocation(entity)
-            : type === EntityType.MISSION
-              ? safeParseMission(entity)
-              : null
+  const result = type === EntityType.VEHICLE ? safeParseVehicle(entity) : null
 
   if (result && !result.success) {
     console.warn(`[entities] Entidad inválida (${type}) en ${contextLabel}: ${result.error.message}`)
