@@ -1,0 +1,105 @@
+name: Generate media posters
+
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - 'GTA6-CODEX/.trigger-poster-gen'
+
+permissions:
+  contents: write
+
+jobs:
+  posters:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Generate posters and update JSON
+        working-directory: GTA6-CODEX
+        run: |
+          set +e
+          mkdir -p public/images/entities/media
+          : > /tmp/poster-gen-errors.log
+          OK=0
+          FAIL=0
+
+          declare -A ITEMS=(
+            ["clip-boobie-ike"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Boobie_Ike_Video_Clip.mp4|2"
+            ["clip-brian-heder"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Brian_Heder_Video_Clip.mp4|2"
+            ["clip-cal-hampton"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Cal_Hampton_Video_Clip.mp4|2"
+            ["clip-drequan-priest"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/DreQuan_Priest_Video_Clip.mp4|2"
+            ["clip-jason-duval"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Jason_Duval_Video_Clip.mp4|2"
+            ["clip-lucia-caminos"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Lucia_Caminos_Video_Clip.mp4|2"
+            ["clip-raul-bautista"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Raul_Bautista_Video_Clip.mp4|2"
+            ["clip-real-dimez"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/Real_Dimez_Video_Clip.mp4|2"
+            ["trailer-trailer-1-anuncio"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/GTAVI_Trailer_1.mp4|5"
+            ["trailer-trailer-2-gameplay"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/GTAVI_Trailer_2.mp4|5"
+            ["video-cover-art-landscape"]="https://s3chif0bjki32ktf.public.blob.vercel-storage.com/GTA6%20MEDIA/GTAVI_Official_Cover_Art_Landscape.mp4|1"
+          )
+
+          for id in "${!ITEMS[@]}"; do
+            IFS='|' read -r url seek <<< "${ITEMS[$id]}"
+            out="public/images/entities/media/${id}.webp"
+            echo "== $id (seek ${seek}s) =="
+            ffmpeg -hide_banner -loglevel warning -y \
+              -reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5 \
+              -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" \
+              -i "$url" -ss "$seek" -frames:v 1 -c:v libwebp -q:v 82 "$out" \
+              2>> /tmp/poster-gen-errors.log
+
+            if [ ! -s "$out" ]; then
+              echo "-- retry $id via curl+ffmpeg (local file) --" >> /tmp/poster-gen-errors.log
+              tmp_mp4="/tmp/${id}.mp4"
+              curl -sL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" \
+                -e "https://gta6-codex.vercel.app/" \
+                -o "$tmp_mp4" "$url" 2>> /tmp/poster-gen-errors.log
+              if [ -s "$tmp_mp4" ]; then
+                ffmpeg -hide_banner -loglevel warning -y -i "$tmp_mp4" -ss "$seek" -frames:v 1 -c:v libwebp -q:v 82 "$out" 2>> /tmp/poster-gen-errors.log
+              fi
+              rm -f "$tmp_mp4"
+            fi
+
+            if [ ! -s "$out" ]; then
+              echo "FALLO generando $id (ver /tmp/poster-gen-errors.log)" | tee -a /tmp/poster-gen-errors.log
+              FAIL=$((FAIL+1))
+              rm -f "$out"
+              continue
+            fi
+
+            node -e "
+              const fs = require('fs');
+              const path = 'src/content/media/${id}.json';
+              const obj = JSON.parse(fs.readFileSync(path, 'utf8'));
+              obj.posterUrl = '/images/entities/media/${id}.webp';
+              fs.writeFileSync(path, JSON.stringify(obj, null, 2) + '\n');
+            "
+            OK=$((OK+1))
+          done
+
+          echo "OK=$OK FAIL=$FAIL"
+          echo "OK=$OK" >> "$GITHUB_ENV"
+          echo "FAIL=$FAIL" >> "$GITHUB_ENV"
+          if [ "$FAIL" -gt 0 ]; then
+            mkdir -p .ci-debug
+            cp /tmp/poster-gen-errors.log .ci-debug/poster-gen-errors.log
+          fi
+          exit 0
+
+      - name: Commit and push
+        if: always()
+        working-directory: GTA6-CODEX
+        run: |
+          git config user.name "gta6-codex-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/images/entities/media src/content/media .ci-debug 2>/dev/null || true
+          git diff --cached --quiet && echo "Nada para commitear" && exit 0
+          git commit -m "feat(media): genera posters de trailers/clips/cover-art via ffmpeg (GitHub Actions) [OK=${OK:-?} FAIL=${FAIL:-?}]"
+          git push origin main
