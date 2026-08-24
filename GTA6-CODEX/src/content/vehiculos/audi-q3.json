@@ -26,24 +26,44 @@
     "level": "oficial-nombrado",
     "primarySource": "https://www.audi.com.ar/ar/web/es/modelos/q3/q3.html"
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "6-7 velocidades S tronic (automática de doble embrague)",
+  "traccion": "Delantera (FWD) o quattro (AWD) según motorización",
+  "peso": "1.480-1.570 kg",
+  "tipoMotor": "Gasolina turbo (opción híbrida enchufable TFSIe disponible en Europa)",
+  "potenciaKW": "110 kW / 150 hp (1.4/2.0 TFSI base)",
+  "capacidadTanque": "58-64 litros",
+  "tiempoRecorrido": "8.9s 0-100 km/h",
+  "anoProduccion": "2018-presente (2ª generación), con opción TFSIe híbrida enchufable",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Latinoamérica (incl. México, Argentina)",
+    "China",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Asistente de arranque en pendiente",
+    "Control de estabilidad",
+    "Sistema start/stop",
+    "Anclajes ISOFIX y Top Tether",
+    "Múltiples airbags (frontales, laterales, cabeza)",
+    "Alarma antirrobo"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "cilindrada": "1.395 cc (35 TFSI) / 1.984 cc (40/45 TFSI)",
+  "emisiones": "CO2 131-159 g/km (según motorización; versión TFSIe híbrida: 37-47 g/km)",
+  "tipo": "SUV premium compacta",
+  "asientos": 5,
+  "baul": "460 litros (mín.) - 1.365 litros (asientos abatidos)",
+  "maleteroMin": "460 litros",
+  "generacion": "Segunda generación, lanzada en 2018",
+  "anoLanzamiento": 2018,
+  "colores": [
+    "Blanco Ibis",
+    "Negro Mythos Metalizado",
+    "Gris Nano",
+    "Azul Turbo",
+    "Rojo Tango",
+    "Plata Florett Metalizado"
+  ]
 }

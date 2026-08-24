@@ -29,26 +29,47 @@
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
   "updatedAt": "2026-08-24T01:16:06.475Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "transmision": "8 velocidades automática (ZF)",
+  "traccion": "Trasera (RWD) con diferencial electrónico trasero",
+  "peso": "1.788 kg",
+  "tipoMotor": "Gasolina, V8 biturbo (motor M177 de origen Mercedes-AMG)",
+  "potenciaKW": "500 kW / 680 PS / 671 hp @ 6.000 rpm",
+  "capacidadTanque": "No confirmado con precisión oficial (rango típico de la plataforma DB11/DB12: 78-84 litros)",
+  "tiempoRecorrido": "3.6s 0-100 km/h (0-60 mph en 3.5s, cifra oficial)",
+  "anoProduccion": "2023-presente (1ª generación, sucesor del DB11)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Reino Unido",
+    "Estados Unidos",
+    "Medio Oriente",
+    "Asia-Pacífico"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Suspensión adaptativa inteligente",
+    "5 modos de conducción (Wet, GT, Sport, Sport+, Individual)",
+    "Frenos opcionales carbocerámicos",
+    "Dirección asistida eléctrica",
+    "Apple CarPlay y Android Auto",
+    "Programa de personalización Q by Aston Martin"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17"
+  "neumaticos": "275 mm delantero (llanta 21\")",
+  "cilindrada": "3.982 cc (4.0 V8 biturbo)",
+  "emisiones": "CO2 278 g/km (cifra oficial combinada, Reino Unido)",
+  "tipo": "Gran turismo (coupé 2+2)",
+  "asientos": 4,
+  "baul": "262 litros",
+  "maleteroMin": "262 litros",
+  "generacion": "Primera generación, sucesor del DB11, lanzado en 2023",
+  "anoLanzamiento": 2023,
+  "colores": [
+    "Jet Black",
+    "Onyx Black",
+    "China Grey",
+    "Titanium Grey",
+    "Aston Martin Racing Green",
+    "Ghillies Green",
+    "Plasma Blue",
+    "Lunar White"
+  ]
 }

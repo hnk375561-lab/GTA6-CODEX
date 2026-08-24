@@ -31,25 +31,41 @@
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
   "updatedAt": "2026-08-24T01:16:06.474Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "transmision": "6 velocidades manual secuencial, embrague húmedo",
+  "traccion": "Trasera por cadena",
+  "peso": "202 kg (Factory) / aprox. 199 kg (base), en orden de marcha",
+  "tipoMotor": "Gasolina, V4 65° de alto rendimiento",
+  "potenciaKW": "162 kW / 220 hp @ 13.100 rpm",
+  "capacidadTanque": "18.5 litros",
+  "tiempoRecorrido": "3.0s aprox. 0-100 km/h (prueba independiente Cycle World)",
+  "anoProduccion": "2021-presente (motor 1100cc); actualización Euro5+ en 2025",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia"
+    "Estados Unidos",
+    "Latinoamérica",
+    "Asia-Pacífico"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Paquete electrónico APRC (control tracción, wheelie, engine brake)",
+    "ABS con función cornering",
+    "Suspensión Öhlins Smart EC 2.0 (Factory)",
+    "Pinzas de freno Brembo Hypure",
+    "Control crucero (ACC)",
+    "Pantalla TFT"
   ],
   "consumoEtiqueta": "C",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70-17 (delantero) / 200/55-17 (trasero)",
+  "cilindrada": "1.099 cc (V4 65°)",
+  "emisiones": "No publicado oficialmente (motocicleta homologada Euro5+; sin cifra WLTP equivalente publicada por Aprilia)",
+  "tipo": "Motocicleta superdeportiva",
+  "asientos": 2,
+  "baul": "Sin baúl (moto deportiva, sin espacio de carga)",
+  "maleteroMin": "N/A",
+  "generacion": "Generación con motor 1100cc (desde 2021), actualización Euro5+ 2025",
+  "anoLanzamiento": 2021,
+  "colores": [
+    "Negro Aprilia",
+    "Librea racing roja/negra",
+    "Colores especiales de temporada (varían por año en la versión Factory)"
+  ]
 }

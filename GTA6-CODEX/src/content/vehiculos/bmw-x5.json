@@ -14,41 +14,60 @@
   "customizable": false,
   "power": "375 hp",
   "price": "USD 68.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "consumo": "8.5-9.9 l/100km combinado WLTP (xDrive40i)",
+  "dimensiones": "4.935 mm largo x 2.004 mm ancho x 1.745 mm alto, distancia entre ejes 2.975 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
-    "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ]
+    "primarySource": "https://www.bmw.es/es/coches-bmw/x/bmw-x5/datos-tecnicos-bmw-x5.html",
+    "secondarySource": "https://www.encycarpedia.com/es/bmw/23-x5-xdrive40i-suv",
+    "note": "Corrige carga de datos anterior que dejaba explícitamente 'sin verificar con fuente puntual' potencia, precio y dimensiones (estas últimas eran incorrectas: indicaban 4.200x1.800x1.500mm, muy por debajo de las medidas reales del X5).",
+    "limitations": []
   },
   "performance": {
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "speed": "236 km/h (limitada electrónicamente)",
+    "acceleration": "0-100 km/h en 5.5s (xDrive40i)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
   "updatedAt": "2026-08-24T01:16:06.484Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "8 velocidades automática (Steptronic)",
+  "traccion": "Integral xDrive (AWD) de serie",
+  "peso": "2.135-2.400 kg (según motorización)",
+  "tipoMotor": "Gasolina turbo 6 cilindros en línea (opción diésel e híbrida enchufable)",
+  "potenciaKW": "280 kW / 380 hp @ 5.200 rpm (xDrive40i)",
+  "capacidadTanque": "80-83 litros (según motorización)",
+  "tiempoRecorrido": "5.5s 0-100 km/h (xDrive40i)",
+  "anoProduccion": "2018-presente (generación G05), con facelift en 2023",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "Argentina",
+    "China",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "BMW xDrive integral",
+    "Suspensión adaptativa",
+    "Faros LED adaptativos",
+    "BMW Live Cockpit Professional",
+    "Sistemas de asistencia al conductor",
+    "3ª fila de asientos opcional"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "cilindrada": "2.998 cc (3.0 turbo 6 cilindros, xDrive40i)",
+  "emisiones": "CO2 193-224 g/km (WLTP, xDrive40i)",
+  "tipo": "SUV premium mediano-grande",
+  "asientos": 5,
+  "baul": "650 litros (mín.) - 1.870 litros (asientos abatidos)",
+  "maleteroMin": "650 litros",
+  "generacion": "Cuarta generación (G05), lanzada en 2018, con facelift en 2023",
+  "anoLanzamiento": 2018,
+  "colores": [
+    "Alpine White",
+    "Black Sapphire Metallic",
+    "Carbon Black",
+    "Phytonic Blue Metallic",
+    "Dravit Grey Metallic",
+    "Tanzanite Blue"
+  ]
 }

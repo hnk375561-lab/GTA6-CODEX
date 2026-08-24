@@ -32,26 +32,44 @@
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
   "updatedAt": "2026-08-24T01:16:06.476Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "transmision": "7 velocidades S tronic (automática de doble embrague)",
+  "traccion": "Delantera (FWD) o quattro (AWD) según motorización",
+  "peso": "1.530-1.725 kg (según versión y equipamiento)",
+  "tipoMotor": "Gasolina turbo, mild-hybrid 12V",
+  "potenciaKW": "140-186 kW (190-252 hp según motorización 40/45 TFSI)",
+  "capacidadTanque": "54 litros",
+  "tiempoRecorrido": "5.8s-7.3s 0-100 km/h (según motorización y tracción)",
+  "anoProduccion": "2015-presente (generación B9, con facelift 2019); discontinuado en EE.UU. tras el año-modelo 2025",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "India",
+    "Latinoamérica (incl. Argentina, México)",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Audi Drive Select",
+    "Faros LED",
+    "Asistente de estacionamiento delantero y trasero",
+    "Cámara de reversa",
+    "Airbags laterales y de cabeza",
+    "Dirección progresiva"
   ],
   "consumoEtiqueta": "B",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "cilindrada": "1.984 cc (2.0 TFSI, 4 cilindros en línea)",
+  "emisiones": "CO2 134-165 g/km (según ciclo y motorización, NEDC/WLTP)",
+  "tipo": "Sedán ejecutivo compacto",
+  "asientos": 5,
+  "baul": "460 litros (berlina) / 495 litros (Avant)",
+  "maleteroMin": "460 litros",
+  "generacion": "Quinta generación (B9), lanzada en 2015, con facelift en 2019",
+  "anoLanzamiento": 2015,
+  "colores": [
+    "Blanco Ibis",
+    "Negro Mythos Metalizado",
+    "Gris Manhattan Metalizado",
+    "Azul Turbo",
+    "Rojo Tango",
+    "Plata Florett Metalizado"
+  ]
 }

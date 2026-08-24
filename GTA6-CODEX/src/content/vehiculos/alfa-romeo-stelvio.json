@@ -29,26 +29,46 @@
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
   "updatedAt": "2026-08-24T01:16:06.473Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "8 velocidades automática (ZF)",
+  "traccion": "Tracción total Q4 (AWD) de serie en la mayoría de versiones; RWD disponible en trim Sprint (mercados con gama completa)",
+  "peso": "1.660 kg (base) - 1.830 kg (Quadrifoglio, discontinuada en EE.UU. salvo edición limitada Collezione)",
+  "tipoMotor": "Gasolina turbo (4 cilindros) / V6 biturbo (Quadrifoglio)",
+  "potenciaKW": "206 kW / 280 hp (base) - 373 kW / 505 hp (Quadrifoglio)",
+  "capacidadTanque": "64 litros",
+  "tiempoRecorrido": "5.7s (base) - 3.6s (Quadrifoglio) 0-100 km/h",
+  "anoProduccion": "2016-presente (1ª generación, Tipo 949)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "Canadá",
+    "Latinoamérica (incl. Argentina)",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Faros LED matrix adaptivos",
+    "Pantalla central 8.8\"/12.3\"",
+    "Climatizador bizona automático",
+    "Asientos delanteros calefactables",
+    "Control crucero activo con asistente de carril",
+    "Sensores de aparcamiento delanteros y traseros",
+    "Portón de maletero eléctrico"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17"
+  "neumaticos": "235/60R18 (base) hasta 255/40R21 del. / 285/35R21 tras. (Quadrifoglio)",
+  "cilindrada": "1.995 cc (motor base turbo 4 cilindros) / 2.891 cc (V6 biturbo Quadrifoglio)",
+  "emisiones": "CO2 152-204 g/km (WLTP, gama sin Quadrifoglio)",
+  "tipo": "SUV",
+  "asientos": 5,
+  "baul": "525 litros (hasta 1.600 litros con asientos traseros abatidos)",
+  "maleteroMin": "525 litros",
+  "generacion": "Primera generación (Tipo 949), lanzada en 2016, con facelift en 2020",
+  "anoLanzamiento": 2016,
+  "colores": [
+    "Alfa White",
+    "Alfa Rosso",
+    "Vulcano Black Metallic",
+    "Vesuvio Gray Metallic",
+    "Moonlight Gray Metallic",
+    "Misano Blue Metallic"
+  ]
 }
