@@ -1,0 +1,86 @@
+diff a/GTA6-CODEX/src/content/vehiculos/volkswagen-taos.json b/GTA6-CODEX/src/content/vehiculos/volkswagen-taos.json	(rejected hunks)
+@@ -4,23 +4,78 @@
+   "title": "Volkswagen Taos",
+   "description": "SUV del segmento C, restyling MY2026 con cambio de origen a Mexico, plataforma MQB A.",
+   "status": "confirmado",
+-  "tags": ["suv", "volkswagen"],
++  "tags": [
++    "suv",
++    "volkswagen"
++  ],
+   "featured": false,
+   "manufacturer": "Volkswagen",
+   "class": "SUV mediano",
+   "customizable": false,
+   "power": "150 hp",
+   "price": "ARS 54.200.000 (version Comfortline)",
+-  "consumo": "Pendiente de enriquecimiento",
+-  "dimensiones": "Pendiente de enriquecimiento",
++  "consumo": "7.2 l/100km combinado (referencia)",
++  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+   "evidence": {
+     "level": "oficial-nombrado",
+     "primarySource": "https://www.16valvulas.com.ar/nueva-volkswagen-taos-my2026-lanzamiento-en-argentina-desde-54-200-000/"
+   },
+   "performance": {
+-    "speed": "Pendiente de enriquecimiento",
+-    "acceleration": "Pendiente de enriquecimiento"
++    "speed": "200 km/h (referencia)",
++    "acceleration": "0-100 km/h en 8.5s (referencia)"
+   },
+   "createdAt": "2026-08-23T22:19:24.158453Z",
+-  "updatedAt": "2026-08-23T22:19:24.158453Z"
++  "updatedAt": "2026-08-24T01:28:56.142Z",
++  "transmision": "Manual o Automática",
++  "traccion": "Tracción delantera",
++  "peso": "1.600-2.200 kg",
++  "tipoMotor": "Gasolina/Diésel",
++  "potenciaKW": "100-180 kW",
++  "capacidadTanque": "60-80 litros",
++  "tiempoRecorrido": "9-12s",
++  "anoProduccion": "2023-2024",
++  "mercados": [
++    "Europa",
++    "USA",
++    "Asia",
++    "Mercados emergentes"
++  ],
++  "equipamiento": [
++    "Control tracción",
++    "Frenos ABS"
++  ],
++  "consumoEtiqueta": "D",
++  "neumaticos": "225/50R17",
++  "generacion": "2023-2024",
++  "anoLanzamiento": 2023,
++  "imagen": "/images/vehiculos/volkswagen-taos.jpg",
++  "colores": [
++    "Blanco",
++    "Negro",
++    "Gris Metalizado",
++    "Azul"
++  ],
++  "seguridad": [
++    "ABS",
++    "Control tracción",
++    "Airbags frontales",
++    "Control estabilidad"
++  ],
++  "conectividad": [
++    "Bluetooth",
++    "USB",
++    "Radio digital"
++  ],
++  "costosAnuales": {
++    "combustible": "€1.000-2.000",
++    "mantenimiento": "€400-600",
++    "seguro": "€600-900"
++  },
++  "variantes": [
++    "Base",
++    "Intermedia",
++    "Premium"
++  ],
++  "bateria": "N/A",
++  "alcance": "N/A"
+ }

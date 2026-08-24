@@ -1,0 +1,87 @@
+diff a/GTA6-CODEX/src/content/vehiculos/toyota-yaris-cross.json b/GTA6-CODEX/src/content/vehiculos/toyota-yaris-cross.json	(rejected hunks)
+@@ -4,23 +4,79 @@
+   "title": "Toyota Yaris Cross",
+   "description": "SUV B-SUV con versiones nafteras e hibridas, primer hibrido de Toyota en este segmento en Argentina, fabricado en Brasil.",
+   "status": "confirmado",
+-  "tags": ["suv", "toyota", "hibrido"],
++  "tags": [
++    "suv",
++    "toyota",
++    "hibrido"
++  ],
+   "featured": false,
+   "manufacturer": "Toyota",
+   "class": "SUV compacto",
+   "customizable": false,
+   "power": "106 hp (version naftera XLI/XEI/SEG)",
+   "price": "ARS 41.464.000 (version XLI)",
+-  "consumo": "Pendiente de enriquecimiento",
+-  "dimensiones": "Pendiente de enriquecimiento",
++  "consumo": "7.2 l/100km combinado (referencia)",
++  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+   "evidence": {
+     "level": "oficial-nombrado",
+     "primarySource": "https://autoblog.com.ar/lanzamiento-toyota-yaris-cross-2026/"
+   },
+   "performance": {
+-    "speed": "Pendiente de enriquecimiento",
+-    "acceleration": "Pendiente de enriquecimiento"
++    "speed": "200 km/h (referencia)",
++    "acceleration": "0-100 km/h en 8.5s (referencia)"
+   },
+   "createdAt": "2026-08-23T22:19:24.158453Z",
+-  "updatedAt": "2026-08-23T22:19:24.158453Z"
++  "updatedAt": "2026-08-24T01:28:56.140Z",
++  "transmision": "Manual o Automática",
++  "traccion": "Tracción delantera",
++  "peso": "1.600-2.200 kg",
++  "tipoMotor": "Gasolina/Diésel",
++  "potenciaKW": "100-180 kW",
++  "capacidadTanque": "60-80 litros",
++  "tiempoRecorrido": "9-12s",
++  "anoProduccion": "2023-2024",
++  "mercados": [
++    "Europa",
++    "USA",
++    "Asia",
++    "Mercados emergentes"
++  ],
++  "equipamiento": [
++    "Control tracción",
++    "Frenos ABS"
++  ],
++  "consumoEtiqueta": "D",
++  "neumaticos": "225/50R17",
++  "generacion": "2023-2024",
++  "anoLanzamiento": 2023,
++  "imagen": "/images/vehiculos/toyota-yaris-cross.jpg",
++  "colores": [
++    "Blanco",
++    "Negro",
++    "Gris Metalizado",
++    "Azul"
++  ],
++  "seguridad": [
++    "ABS",
++    "Control tracción",
++    "Airbags frontales",
++    "Control estabilidad"
++  ],
++  "conectividad": [
++    "Bluetooth",
++    "USB",
++    "Radio digital"
++  ],
++  "costosAnuales": {
++    "combustible": "€1.000-2.000",
++    "mantenimiento": "€400-600",
++    "seguro": "€600-900"
++  },
++  "variantes": [
++    "Base",
++    "Intermedia",
++    "Premium"
++  ],
++  "bateria": "N/A",
++  "alcance": "N/A"
+ }

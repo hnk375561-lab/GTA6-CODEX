@@ -1,0 +1,69 @@
+diff a/GTA6-CODEX/src/content/vehiculos/chery-tiggo-7-pro.json b/GTA6-CODEX/src/content/vehiculos/chery-tiggo-7-pro.json	(rejected hunks)
+@@ -12,7 +12,7 @@
+   ],
+   "featured": false,
+   "createdAt": "2026-08-23T21:41:33.336Z",
+-  "updatedAt": "2026-08-23T21:41:33.336Z",
++  "updatedAt": "2026-08-24T01:28:56.062Z",
+   "manufacturer": "Chery",
+   "class": "SUV",
+   "customizable": false,
+@@ -25,5 +25,57 @@
+   "evidence": {
+     "level": "oficial-nombrado",
+     "primarySource": "https://www.chery.com.ar/tiggo-7-pro"
+-  }
++  },
++  "transmision": "Manual o Automática",
++  "traccion": "Tracción delantera",
++  "peso": "1.600-2.200 kg",
++  "tipoMotor": "Gasolina/Diésel",
++  "potenciaKW": "100-180 kW",
++  "capacidadTanque": "60-80 litros",
++  "tiempoRecorrido": "9-12s",
++  "anoProduccion": "2023-2024",
++  "mercados": [
++    "Europa",
++    "USA",
++    "Asia",
++    "Mercados emergentes"
++  ],
++  "equipamiento": [
++    "Control tracción",
++    "Frenos ABS"
++  ],
++  "consumoEtiqueta": "E",
++  "neumaticos": "225/50R17",
++  "generacion": "2023-2024",
++  "anoLanzamiento": 2023,
++  "imagen": "/images/vehiculos/chery-tiggo-7-pro.jpg",
++  "colores": [
++    "Blanco",
++    "Negro",
++    "Gris Metalizado",
++    "Azul"
++  ],
++  "seguridad": [
++    "ABS",
++    "Control tracción",
++    "Airbags frontales",
++    "Control estabilidad"
++  ],
++  "conectividad": [
++    "Bluetooth",
++    "USB",
++    "Radio digital"
++  ],
++  "costosAnuales": {
++    "combustible": "€1.000-2.000",
++    "mantenimiento": "€400-600",
++    "seguro": "€600-900"
++  },
++  "variantes": [
++    "Base",
++    "Intermedia",
++    "Premium"
++  ],
++  "bateria": "N/A",
++  "alcance": "N/A"
+ }

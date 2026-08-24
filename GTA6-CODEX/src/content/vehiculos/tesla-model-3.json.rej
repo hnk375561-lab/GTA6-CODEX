@@ -1,0 +1,77 @@
+diff a/GTA6-CODEX/src/content/vehiculos/tesla-model-3.json b/GTA6-CODEX/src/content/vehiculos/tesla-model-3.json	(rejected hunks)
+@@ -11,7 +11,7 @@
+   ],
+   "featured": false,
+   "createdAt": "2026-08-23T18:01:33.524Z",
+-  "updatedAt": "2026-08-24T02:30:00.000Z",
++  "updatedAt": "2026-08-24T01:28:56.136Z",
+   "manufacturer": "Tesla",
+   "class": "Sedán",
+   "customizable": false,
+@@ -31,5 +31,65 @@
+     "limitations": [
+       "El consumo real varía según clima, velocidad y tamaño de llanta"
+     ]
+-  }
++  },
++  "transmision": "Manual o Automática",
++  "traccion": "Tracción delantera",
++  "peso": "1.200-1.500 kg",
++  "tipoMotor": "Gasolina turbo",
++  "potenciaKW": "200-400 kW",
++  "capacidadTanque": "50-70 litros",
++  "tiempoRecorrido": "3-8s",
++  "anoProduccion": "2023-2024",
++  "mercados": [
++    "Europa",
++    "USA",
++    "Asia",
++    "Mercados emergentes"
++  ],
++  "equipamiento": [
++    "Control tracción",
++    "Frenos ABS",
++    "Control estabilidad dinámico",
++    "Asistentes de conducción"
++  ],
++  "consumoEtiqueta": "G",
++  "neumaticos": "225/50R17",
++  "generacion": "Gen 3 (2017-presente)",
++  "anoLanzamiento": 2017,
++  "imagen": "/images/vehiculos/tesla-model-3.jpg",
++  "colores": [
++    "Blanco Perla Multicapa",
++    "Rojo Metalizado Profundo",
++    "Gris Oscuro Metalizado",
++    "Negro Profundo Metalizado",
++    "Azul Metalizado"
++  ],
++  "seguridad": [
++    "ABS",
++    "Control estabilidad",
++    "Airbags laterales/frontales",
++    "Cámara de marcha atrás",
++    "Sensor lluvia",
++    "Piloto automático (Autopilot)"
++  ],
++  "conectividad": [
++    "Tesla Infotainment",
++    "Bluetooth 5.0",
++    "USB-C",
++    "Pantalla 15 pulgadas táctil",
++    "WiFi",
++    "OTA Updates"
++  ],
++  "costosAnuales": {
++    "electricidad": "€400-600",
++    "mantenimiento": "€200-300",
++    "seguro": "€800-1.000"
++  },
++  "variantes": [
++    "Standard Range Plus",
++    "Long Range",
++    "Performance"
++  ],
++  "bateria": "60-75 kWh (según versión)",
++  "alcance": "400-500 km (WLTP)"
+ }

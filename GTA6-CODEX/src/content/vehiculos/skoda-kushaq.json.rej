@@ -1,0 +1,60 @@
+diff a/GTA6-CODEX/src/content/vehiculos/skoda-kushaq.json b/GTA6-CODEX/src/content/vehiculos/skoda-kushaq.json	(rejected hunks)
+@@ -26,5 +26,57 @@
+     "acceleration": "0-100 km/h en 10.3s"
+   },
+   "createdAt": "2026-08-23T21:59:12.340520Z",
+-  "updatedAt": "2026-08-23T21:59:12.340520Z"
++  "updatedAt": "2026-08-24T01:28:56.133Z",
++  "transmision": "Manual o Automática",
++  "traccion": "Tracción delantera",
++  "peso": "1.600-2.200 kg",
++  "tipoMotor": "Gasolina/Diésel",
++  "potenciaKW": "100-180 kW",
++  "capacidadTanque": "60-80 litros",
++  "tiempoRecorrido": "9-12s",
++  "anoProduccion": "2023-2024",
++  "mercados": [
++    "Europa",
++    "USA",
++    "Asia",
++    "Mercados emergentes"
++  ],
++  "equipamiento": [
++    "Control tracción",
++    "Frenos ABS"
++  ],
++  "consumoEtiqueta": "D",
++  "neumaticos": "225/50R17",
++  "generacion": "2023-2024",
++  "anoLanzamiento": 2023,
++  "imagen": "/images/vehiculos/skoda-kushaq.jpg",
++  "colores": [
++    "Blanco",
++    "Negro",
++    "Gris Metalizado",
++    "Azul"
++  ],
++  "seguridad": [
++    "ABS",
++    "Control tracción",
++    "Airbags frontales",
++    "Control estabilidad"
++  ],
++  "conectividad": [
++    "Bluetooth",
++    "USB",
++    "Radio digital"
++  ],
++  "costosAnuales": {
++    "combustible": "€1.000-2.000",
++    "mantenimiento": "€400-600",
++    "seguro": "€600-900"
++  },
++  "variantes": [
++    "Base",
++    "Intermedia",
++    "Premium"
++  ],
++  "bateria": "N/A",
++  "alcance": "N/A"
+ }

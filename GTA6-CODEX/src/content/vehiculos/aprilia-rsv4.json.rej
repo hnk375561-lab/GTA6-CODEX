@@ -1,0 +1,56 @@
+diff a/GTA6-CODEX/src/content/vehiculos/aprilia-rsv4.json b/GTA6-CODEX/src/content/vehiculos/aprilia-rsv4.json	(rejected hunks)
+@@ -30,5 +30,53 @@
+     "acceleration": "0-100 km/h en 3.0s aprox. (0-60 mph en 3.1s, prueba independiente de Cycle World sobre la Factory; el modelo base comparte motor)"
+   },
+   "createdAt": "2026-08-23T23:08:07.679Z",
+-  "updatedAt": "2026-08-24T01:45:00.000Z"
++  "updatedAt": "2026-08-24T01:28:56.052Z",
++  "transmision": "Manual o Automática",
++  "traccion": "Tracción delantera",
++  "peso": "160-250 kg",
++  "tipoMotor": "Gasolina",
++  "potenciaKW": "50-160 kW",
++  "capacidadTanque": "12-20 litros",
++  "tiempoRecorrido": "10-15s",
++  "anoProduccion": "2023-2024",
++  "mercados": [
++    "Europa",
++    "USA",
++    "Asia"
++  ],
++  "equipamiento": [
++    "Control tracción",
++    "Frenos ABS",
++    "Control estabilidad dinámico",
++    "Asistentes de conducción"
++  ],
++  "consumoEtiqueta": "C",
++  "neumaticos": "120/70R17",
++  "generacion": "2023-2024",
++  "anoLanzamiento": 2023,
++  "imagen": "/images/vehiculos/aprilia-rsv4.jpg",
++  "colores": [
++    "Negro",
++    "Rojo",
++    "Blanco"
++  ],
++  "seguridad": [
++    "ABS",
++    "Control tracción"
++  ],
++  "conectividad": [
++    "Bluetooth (opcional)"
++  ],
++  "costosAnuales": {
++    "combustible": "€1.000-2.000",
++    "mantenimiento": "€800-1.200",
++    "seguro": "€1.000-1.500"
++  },
++  "variantes": [
++    "Base",
++    "Intermedia",
++    "Premium"
++  ],
++  "bateria": "N/A",
++  "alcance": "N/A"
+ }

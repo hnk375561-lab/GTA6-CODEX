@@ -1,0 +1,54 @@
+diff a/GTA6-CODEX/src/content/vehiculos/yamaha-fazer-250.json b/GTA6-CODEX/src/content/vehiculos/yamaha-fazer-250.json	(rejected hunks)
+@@ -24,5 +24,51 @@
+     "speed": "140 km/h"
+   },
+   "createdAt": "2026-08-23T21:59:11.215408Z",
+-  "updatedAt": "2026-08-23T21:59:11.215408Z"
++  "updatedAt": "2026-08-24T01:28:56.144Z",
++  "transmision": "Manual o Automática",
++  "traccion": "Tracción delantera",
++  "peso": "160-250 kg",
++  "tipoMotor": "Gasolina",
++  "potenciaKW": "50-160 kW",
++  "capacidadTanque": "12-20 litros",
++  "tiempoRecorrido": "10-15s",
++  "anoProduccion": "2023-2024",
++  "mercados": [
++    "Europa",
++    "USA",
++    "Asia"
++  ],
++  "equipamiento": [
++    "Control tracción",
++    "Frenos ABS"
++  ],
++  "consumoEtiqueta": "A",
++  "neumaticos": "120/70R17",
++  "generacion": "2023-2024",
++  "anoLanzamiento": 2023,
++  "imagen": "/images/vehiculos/yamaha-fazer-250.jpg",
++  "colores": [
++    "Negro",
++    "Rojo",
++    "Blanco"
++  ],
++  "seguridad": [
++    "ABS",
++    "Control tracción"
++  ],
++  "conectividad": [
++    "Bluetooth (opcional)"
++  ],
++  "costosAnuales": {
++    "combustible": "€1.000-2.000",
++    "mantenimiento": "€400-600",
++    "seguro": "€600-900"
++  },
++  "variantes": [
++    "Base",
++    "Intermedia",
++    "Premium"
++  ],
++  "bateria": "N/A",
++  "alcance": "N/A"
+ }

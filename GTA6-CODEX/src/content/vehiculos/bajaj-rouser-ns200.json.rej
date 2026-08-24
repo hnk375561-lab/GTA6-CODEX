@@ -1,0 +1,54 @@
+diff a/GTA6-CODEX/src/content/vehiculos/bajaj-rouser-ns200.json b/GTA6-CODEX/src/content/vehiculos/bajaj-rouser-ns200.json	(rejected hunks)
+@@ -26,5 +26,51 @@
+     "acceleration": "0-100 km/h en 10.3s aprox."
+   },
+   "createdAt": "2026-08-23T22:19:24.158453Z",
+-  "updatedAt": "2026-08-24T01:45:00.000Z"
++  "updatedAt": "2026-08-24T01:28:56.055Z",
++  "transmision": "Manual o Automática",
++  "traccion": "Tracción delantera",
++  "peso": "160-250 kg",
++  "tipoMotor": "Gasolina",
++  "potenciaKW": "50-160 kW",
++  "capacidadTanque": "12-20 litros",
++  "tiempoRecorrido": "10-15s",
++  "anoProduccion": "2023-2024",
++  "mercados": [
++    "Europa",
++    "USA",
++    "Asia"
++  ],
++  "equipamiento": [
++    "Control tracción",
++    "Frenos ABS"
++  ],
++  "consumoEtiqueta": "A",
++  "neumaticos": "120/70R17",
++  "generacion": "2023-2024",
++  "anoLanzamiento": 2023,
++  "imagen": "/images/vehiculos/bajaj-rouser-ns200.jpg",
++  "colores": [
++    "Negro",
++    "Rojo",
++    "Blanco"
++  ],
++  "seguridad": [
++    "ABS",
++    "Control tracción"
++  ],
++  "conectividad": [
++    "Bluetooth (opcional)"
++  ],
++  "costosAnuales": {
++    "combustible": "€1.000-2.000",
++    "mantenimiento": "€400-600",
++    "seguro": "€600-900"
++  },
++  "variantes": [
++    "Base",
++    "Intermedia",
++    "Premium"
++  ],
++  "bateria": "N/A",
++  "alcance": "N/A"
+ }
