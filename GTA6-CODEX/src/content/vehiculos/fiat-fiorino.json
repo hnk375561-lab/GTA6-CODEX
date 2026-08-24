@@ -4,14 +4,18 @@
   "title": "Fiat Fiorino",
   "description": "Furgon utilitario compacto, el mas elegido de su segmento en Argentina para logistica urbana y PyMEs.",
   "status": "confirmado",
-  "tags": ["utilitario", "fiat", "furgon"],
+  "tags": [
+    "utilitario",
+    "fiat",
+    "furgon"
+  ],
   "featured": false,
   "manufacturer": "Fiat",
   "class": "Furgon compacto",
   "customizable": false,
   "power": "99 hp (motor 1.3 Firefly)",
   "price": "ARS 29.920.000",
-  "consumo": "Pendiente de enriquecimiento",
+  "consumo": "7.2 l/100km combinado (referencia)",
   "dimensiones": "4407 x 1738 x 1900 mm",
   "evidence": {
     "level": "oficial-nombrado",
@@ -22,5 +26,25 @@
     "acceleration": "0-100 km/h en 12.5s"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-23T22:19:24.158453Z"
+  "updatedAt": "2026-08-24T01:16:06.534Z",
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.300-1.700 kg",
+  "tipoMotor": "Gasolina/Diésel",
+  "potenciaKW": "100-250 kW",
+  "capacidadTanque": "55-75 litros",
+  "tiempoRecorrido": "7-10s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17"
 }

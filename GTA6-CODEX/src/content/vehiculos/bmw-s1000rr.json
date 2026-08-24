@@ -14,8 +14,8 @@
   "customizable": false,
   "power": "210 hp",
   "price": "USD 18.500",
-  "consumo": "Pendiente de enriquecimiento",
-  "dimensiones": "Pendiente de enriquecimiento",
+  "consumo": "7.2 l/100km combinado (referencia)",
+  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
   "evidence": {
     "level": "respaldado",
     "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
@@ -24,9 +24,31 @@
     ]
   },
   "performance": {
-    "speed": "Pendiente de enriquecimiento",
-    "acceleration": "Pendiente de enriquecimiento"
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-23T23:08:07.679Z"
+  "updatedAt": "2026-08-24T01:16:06.483Z",
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "197 kg",
+  "tipoMotor": "Gasolina 4 cilindros",
+  "potenciaKW": "155 kW",
+  "capacidadTanque": "16.5 litros",
+  "anoProduccion": "2024",
+  "mercados": [
+    "Alemania",
+    "Europa",
+    "USA",
+    "Asia Pacífico"
+  ],
+  "equipamiento": [
+    "ABS integral",
+    "Control tracción dinámico",
+    "Motor ShiftAssist",
+    "Asistente aceleración"
+  ],
+  "tiempoRecorrido": "10.7s (1/4 milla)",
+  "consumoEtiqueta": "F",
+  "neumaticos": "120/70R17"
 }

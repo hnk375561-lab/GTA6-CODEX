@@ -28,5 +28,33 @@
     "acceleration": "0-100 km/h en 3.9s"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-24T01:45:00.000Z"
+  "updatedAt": "2026-08-24T01:16:06.482Z",
+  "transmision": "Automática 8 velocidades Steptronic M",
+  "traccion": "Tracción total inteligente M xDrive",
+  "cilindrada": "2.993 cc",
+  "emisiones": "CO2 215 g/km (WLTP)",
+  "tipo": "Coupé",
+  "asientos": 4,
+  "baul": "405 litros",
+  "peso": "1.560 kg",
+  "tipoMotor": "Gasolina turbo bimotor",
+  "potenciaKW": "373 kW",
+  "capacidadTanque": "59 litros",
+  "anoProduccion": "2023",
+  "mercados": [
+    "Alemania",
+    "USA",
+    "Europa",
+    "Asia"
+  ],
+  "equipamiento": [
+    "M Sport Package",
+    "Suspensión M adaptativa",
+    "Control dinámico M",
+    "Frenos cerámica M"
+  ],
+  "tiempoRecorrido": "10.8s",
+  "consumoEtiqueta": "F",
+  "neumaticos": "275/35R20",
+  "maleteroMin": "405 litros"
 }

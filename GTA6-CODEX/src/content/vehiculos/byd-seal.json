@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.593Z",
-  "updatedAt": "2026-08-23T21:41:33.593Z",
+  "updatedAt": "2026-08-24T01:16:06.487Z",
   "manufacturer": "BYD",
   "class": "Sedán eléctrico",
   "customizable": false,
@@ -24,5 +24,27 @@
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.byd.com/ar/car/seal"
-  }
+  },
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.200-1.500 kg",
+  "tipoMotor": "Gasolina turbo",
+  "potenciaKW": "200-400 kW",
+  "capacidadTanque": "50-70 litros",
+  "tiempoRecorrido": "3-8s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17"
 }

@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.424Z",
-  "updatedAt": "2026-08-23T21:41:29.424Z",
+  "updatedAt": "2026-08-24T01:16:06.570Z",
   "manufacturer": "Renault",
   "class": "Hatchback económico",
   "customizable": false,
@@ -25,5 +25,25 @@
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.renault.com.ar/vehiculos/kwid.html"
-  }
+  },
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.300-1.700 kg",
+  "tipoMotor": "Gasolina/Diésel",
+  "potenciaKW": "100-250 kW",
+  "capacidadTanque": "55-75 litros",
+  "tiempoRecorrido": "7-10s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17"
 }

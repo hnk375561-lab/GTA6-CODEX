@@ -4,14 +4,19 @@
   "title": "Motomel Skua 150",
   "description": "Moto trail on/off fabricada en Argentina, una de las mas vendidas de su segmento por relacion precio-versatilidad.",
   "status": "confirmado",
-  "tags": ["moto", "motomel", "trail", "argentina"],
+  "tags": [
+    "moto",
+    "motomel",
+    "trail",
+    "argentina"
+  ],
   "featured": false,
   "manufacturer": "Motomel",
   "class": "Moto trail 150cc",
   "customizable": false,
   "power": "11.4 hp a 8350 rpm",
   "price": "No informado por el fabricante (consultar en concesionario)",
-  "consumo": "Pendiente de enriquecimiento",
+  "consumo": "7.2 l/100km combinado (referencia)",
   "dimensiones": "770 x 900 x 2100 mm",
   "evidence": {
     "level": "oficial-nombrado",
@@ -19,8 +24,27 @@
   },
   "performance": {
     "speed": "100 km/h",
-    "acceleration": "Pendiente de enriquecimiento"
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-23T22:19:24.158453Z"
+  "updatedAt": "2026-08-24T01:16:06.563Z",
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "160-250 kg",
+  "tipoMotor": "Gasolina",
+  "potenciaKW": "50-160 kW",
+  "capacidadTanque": "12-20 litros",
+  "tiempoRecorrido": "10-15s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "120/70R17"
 }

@@ -4,7 +4,11 @@
   "title": "Ford Territory",
   "description": "SUV del segmento C importado desde China, con version naftera EcoBoost y version hibrida Trend, principal rival del Corolla Cross.",
   "status": "confirmado",
-  "tags": ["suv", "ford", "hibrido"],
+  "tags": [
+    "suv",
+    "ford",
+    "hibrido"
+  ],
   "featured": false,
   "manufacturer": "Ford",
   "class": "SUV mediano",
@@ -18,9 +22,31 @@
     "primarySource": "https://autofichas.com.ar/ford/territory/"
   },
   "performance": {
-    "speed": "Pendiente de enriquecimiento",
-    "acceleration": "Pendiente de enriquecimiento"
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-23T22:19:24.158453Z"
+  "updatedAt": "2026-08-24T01:16:06.539Z",
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.600-2.200 kg",
+  "tipoMotor": "Gasolina/Diésel",
+  "potenciaKW": "100-180 kW",
+  "capacidadTanque": "60-80 litros",
+  "tiempoRecorrido": "9-12s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17"
 }

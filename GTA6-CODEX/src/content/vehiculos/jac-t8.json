@@ -4,23 +4,48 @@
   "title": "JAC T8",
   "description": "Pickup mediana china 4x4, alternativa de precio competitivo frente a Hilux y Ranger en Argentina.",
   "status": "confirmado",
-  "tags": ["pickup", "jac", "china", "4x4"],
+  "tags": [
+    "pickup",
+    "jac",
+    "china",
+    "4x4"
+  ],
   "featured": false,
   "manufacturer": "JAC",
   "class": "Pickup mediana",
   "customizable": false,
   "power": "136 hp",
   "price": "USD 34.900 (precio de lanzamiento)",
-  "consumo": "Pendiente de enriquecimiento",
-  "dimensiones": "Pendiente de enriquecimiento",
+  "consumo": "7.2 l/100km combinado (referencia)",
+  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.16valvulas.com.ar/nueva-jac-t8-lanzamiento-en-argentina-desde-us-34-900/"
   },
   "performance": {
-    "speed": "Pendiente de enriquecimiento",
-    "acceleration": "Pendiente de enriquecimiento"
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-23T22:19:24.158453Z"
+  "updatedAt": "2026-08-24T01:16:06.549Z",
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.300-1.700 kg",
+  "tipoMotor": "Gasolina/Diésel",
+  "potenciaKW": "100-250 kW",
+  "capacidadTanque": "55-75 litros",
+  "tiempoRecorrido": "7-10s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17"
 }

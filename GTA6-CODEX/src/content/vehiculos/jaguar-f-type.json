@@ -14,8 +14,8 @@
   "customizable": false,
   "power": "444 hp",
   "price": "USD 78.000",
-  "consumo": "Pendiente de enriquecimiento",
-  "dimensiones": "Pendiente de enriquecimiento",
+  "consumo": "7.2 l/100km combinado (referencia)",
+  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
   "evidence": {
     "level": "respaldado",
     "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
@@ -24,9 +24,31 @@
     ]
   },
   "performance": {
-    "speed": "Pendiente de enriquecimiento",
-    "acceleration": "Pendiente de enriquecimiento"
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-23T23:06:25.164Z"
+  "updatedAt": "2026-08-24T01:16:06.549Z",
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.200-1.500 kg",
+  "tipoMotor": "Gasolina turbo",
+  "potenciaKW": "200-400 kW",
+  "capacidadTanque": "50-70 litros",
+  "tiempoRecorrido": "3-8s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17"
 }

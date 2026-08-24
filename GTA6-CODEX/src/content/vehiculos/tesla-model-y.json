@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.694Z",
-  "updatedAt": "2026-08-24T02:30:00.000Z",
+  "updatedAt": "2026-08-24T01:16:06.576Z",
   "manufacturer": "Tesla",
   "class": "SUV eléctrica",
   "customizable": false,
@@ -31,5 +31,27 @@
     "limitations": [
       "El consumo real varía según clima, velocidad y tamaño de llanta"
     ]
-  }
+  },
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.600-2.200 kg",
+  "tipoMotor": "Gasolina/Diésel",
+  "potenciaKW": "100-180 kW",
+  "capacidadTanque": "60-80 litros",
+  "tiempoRecorrido": "9-12s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17"
 }

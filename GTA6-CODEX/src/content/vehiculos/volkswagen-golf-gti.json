@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.940Z",
-  "updatedAt": "2026-08-24T02:30:00.000Z",
+  "updatedAt": "2026-08-24T01:16:06.581Z",
   "manufacturer": "Volkswagen",
   "class": "Hatchback",
   "customizable": false,
@@ -32,5 +32,27 @@
     "limitations": [
       "El consumo puede variar levemente entre versión pre-facelift (2020-2024) y facelift (2024-presente)"
     ]
-  }
+  },
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.200-1.500 kg",
+  "tipoMotor": "Gasolina turbo",
+  "potenciaKW": "200-400 kW",
+  "capacidadTanque": "50-70 litros",
+  "tiempoRecorrido": "3-8s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17"
 }

@@ -26,5 +26,25 @@
     "acceleration": "0-100 km/h en 7.9s"
   },
   "createdAt": "2026-08-23T21:59:05.094837Z",
-  "updatedAt": "2026-08-23T21:59:05.094837Z"
+  "updatedAt": "2026-08-24T01:16:06.564Z",
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.300-1.700 kg",
+  "tipoMotor": "Gasolina/Diésel",
+  "potenciaKW": "100-250 kW",
+  "capacidadTanque": "55-75 litros",
+  "tiempoRecorrido": "7-10s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17"
 }

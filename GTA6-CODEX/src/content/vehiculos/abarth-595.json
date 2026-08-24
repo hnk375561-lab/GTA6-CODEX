@@ -31,5 +31,32 @@
     "acceleration": "0-100 km/h en 7.3s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-24T01:45:00.000Z"
+  "updatedAt": "2026-08-24T01:16:06.448Z",
+  "transmision": "5 velocidades manual / 6 velocidades automática TcT",
+  "traccion": "Tracción delantera",
+  "cilindrada": "1.368 cc",
+  "emisiones": "CO2 138-145 g/km",
+  "tipo": "Hatchback",
+  "asientos": 5,
+  "baul": "185 litros",
+  "peso": "1.100 kg",
+  "tipoMotor": "Gasolina turbo",
+  "potenciaKW": "121 kW",
+  "capacidadTanque": "40 litros",
+  "anoProduccion": "2024",
+  "mercados": [
+    "Italia",
+    "Europa Occidental",
+    "Reino Unido"
+  ],
+  "equipamiento": [
+    "Aire acondicionado",
+    "Control tracción",
+    "Frenado ABS",
+    "Airbags frontales"
+  ],
+  "tiempoRecorrido": "N/A",
+  "consumoEtiqueta": "D",
+  "neumaticos": "205/45R17",
+  "maleteroMin": "185 litros"
 }

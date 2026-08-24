@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.800Z",
-  "updatedAt": "2026-08-24T02:30:00.000Z",
+  "updatedAt": "2026-08-24T01:16:06.579Z",
   "manufacturer": "Toyota",
   "class": "SUV",
   "customizable": false,
@@ -31,5 +31,27 @@
     "limitations": [
       "Las cifras no reflejan la generación 2026, totalmente híbrida y con mejor eficiencia (hasta 43-48 mpg combinado)"
     ]
-  }
+  },
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.600-2.200 kg",
+  "tipoMotor": "Gasolina/Diésel",
+  "potenciaKW": "100-180 kW",
+  "capacidadTanque": "60-80 litros",
+  "tiempoRecorrido": "9-12s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17"
 }

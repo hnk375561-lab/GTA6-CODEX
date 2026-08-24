@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.194Z",
-  "updatedAt": "2026-08-24T02:30:00.000Z",
+  "updatedAt": "2026-08-24T01:16:06.577Z",
   "manufacturer": "Toyota",
   "class": "Sedán",
   "customizable": false,
@@ -31,5 +31,27 @@
     "limitations": [
       "Cifras correspondientes a la versión a gasolina 2.0L; la versión Hybrid tiene consumo y dimensiones ligeramente distintas"
     ]
-  }
+  },
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.300-1.700 kg",
+  "tipoMotor": "Gasolina/Diésel",
+  "potenciaKW": "100-250 kW",
+  "capacidadTanque": "55-75 litros",
+  "tiempoRecorrido": "7-10s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "C",
+  "neumaticos": "225/50R17"
 }

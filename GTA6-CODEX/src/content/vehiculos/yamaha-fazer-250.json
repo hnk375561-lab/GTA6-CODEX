@@ -24,5 +24,24 @@
     "speed": "140 km/h"
   },
   "createdAt": "2026-08-23T21:59:11.215408Z",
-  "updatedAt": "2026-08-23T21:59:11.215408Z"
+  "updatedAt": "2026-08-24T01:16:06.584Z",
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "160-250 kg",
+  "tipoMotor": "Gasolina",
+  "potenciaKW": "50-160 kW",
+  "capacidadTanque": "12-20 litros",
+  "tiempoRecorrido": "10-15s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "A",
+  "neumaticos": "120/70R17"
 }

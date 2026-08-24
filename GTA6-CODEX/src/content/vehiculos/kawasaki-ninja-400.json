@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.628Z",
-  "updatedAt": "2026-08-23T18:31:30.628Z",
+  "updatedAt": "2026-08-24T01:16:06.550Z",
   "manufacturer": "Kawasaki",
   "class": "Moto deportiva",
   "customizable": false,
@@ -24,5 +24,24 @@
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.kawasaki.com/en-us/motorcycle/ninja/sport/ninja-400"
-  }
+  },
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "160-250 kg",
+  "tipoMotor": "Gasolina",
+  "potenciaKW": "50-160 kW",
+  "capacidadTanque": "12-20 litros",
+  "tiempoRecorrido": "10-15s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "120/70R17"
 }

@@ -15,7 +15,7 @@
   "power": "670 hp (Dual Motor) / 1020 hp (Plaid)",
   "price": "USD 111.380 (precio final antes de discontinuarse, 2026)",
   "consumo": "Autonomía EPA 309-410 millas según versión",
-  "dimensiones": "Pendiente de enriquecimiento",
+  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.edmunds.com/tesla/model-s/",
@@ -26,9 +26,31 @@
     ]
   },
   "performance": {
-    "speed": "Pendiente de enriquecimiento",
-    "acceleration": "Pendiente de enriquecimiento"
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-23T23:06:25.164Z"
+  "updatedAt": "2026-08-24T01:16:06.576Z",
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.200-1.500 kg",
+  "tipoMotor": "Gasolina turbo",
+  "potenciaKW": "200-400 kW",
+  "capacidadTanque": "50-70 litros",
+  "tiempoRecorrido": "3-8s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17"
 }
