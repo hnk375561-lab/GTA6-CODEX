@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-zona.vercel.app'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://autoficha.vercel.app'
 
 /**
  * Genera /robots.txt (convención nativa del App Router: cualquier export
