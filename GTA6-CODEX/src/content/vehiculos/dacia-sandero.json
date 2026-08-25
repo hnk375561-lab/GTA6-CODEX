@@ -30,27 +30,26 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.030-1.120 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "48-96 kW (65-130 hp según motorización, incl. Stepway TCe)",
+  "capacidadTanque": "44-50 litros",
+  "tiempoRecorrido": "10.0-16.0s 0-100 km/h según motorización",
+  "anoProduccion": "2020-presente (tercera generación)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Europa"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Media Control con Android Auto/Apple CarPlay"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "175/65R15 (195/55R16 en Stepway)",
   "anoLanzamiento": 2008,
   "asientos": 5,
   "baul": "328 litros",
@@ -65,7 +64,7 @@
   "generacion": "Tercera generación",
   "maleteroMin": "328 litros",
   "tipo": "Hatchback compacto",
-  "torque": "125 Nm (estimado)",
+  "torque": "95-205 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

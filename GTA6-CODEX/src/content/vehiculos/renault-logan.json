@@ -29,27 +29,28 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:06.785891Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.020-1.090 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "55-75 kW (75-102 hp)",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "11.5-14.0s 0-100 km/h",
+  "anoProduccion": "2021-presente (tercera generación en Argentina/Brasil)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "Brasil",
+    "Europa del Este (como Dacia Logan)"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Multimedia Easy Link"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "175/70R14 (185/65R15 en versiones superiores)",
   "anoLanzamiento": 2004,
   "asientos": 5,
   "baul": "510 litros",
@@ -64,7 +65,7 @@
   "generacion": "Segunda generación (facelift)",
   "maleteroMin": "510 litros",
   "tipo": "Sedán compacto",
-  "torque": "150 Nm (estimado)",
+  "torque": "118-148 Nm",
   "suspension": "McPherson delantera / multilink o eje de torsión trasero",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

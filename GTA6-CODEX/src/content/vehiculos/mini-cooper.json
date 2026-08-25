@@ -29,29 +29,28 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:08.997896Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.150-1.500 kg (incl. versión eléctrica Cooper SE)",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "75-170 kW (102-231 hp según versión, incl. JCW y eléctrica)",
+  "capacidadTanque": "37-40 litros (versión combustión)",
+  "tiempoRecorrido": "5.9-9.9s 0-100 km/h según motorización",
+  "anoProduccion": "2024-presente (nueva generación F66/J01)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Pantalla circular OLED",
+    "MINI Experience Modes"
   ],
   "consumoEtiqueta": "C",
-  "neumaticos": "225/50R17",
+  "neumaticos": "195/55R16 (205/45R18 en JCW)",
   "anoLanzamiento": 2001,
   "asientos": 4,
   "baul": "210 litros",
@@ -66,7 +65,7 @@
   "generacion": "Cuarta generación",
   "maleteroMin": "210 litros",
   "tipo": "Hatchback compacto premium",
-  "torque": "390 Nm (estimado)",
+  "torque": "170-380 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

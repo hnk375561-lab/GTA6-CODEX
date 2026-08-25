@@ -30,27 +30,27 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.030-1.090 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "51-63 kW (69-85 hp)",
+  "capacidadTanque": "37 litros",
+  "tiempoRecorrido": "12.0-14.5s 0-100 km/h",
+  "anoProduccion": "2011-presente (tercera generación)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Start&Stop"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "165/70R14 (185/65R15 en versión Cross)",
   "anoLanzamiento": 1980,
   "asientos": 5,
   "baul": "225 litros",
@@ -65,7 +65,7 @@
   "generacion": "Tercera generación (facelift)",
   "maleteroMin": "225 litros",
   "tipo": "City car",
-  "torque": "100 Nm (estimado)",
+  "torque": "102-145 Nm",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

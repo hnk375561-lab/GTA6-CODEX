@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.240-1.360 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "83-90 kW (113-122 hp)",
+  "capacidadTanque": "36 litros",
+  "tiempoRecorrido": "11.5-13.0s 0-100 km/h",
+  "anoProduccion": "2016-presente (segunda generación)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Japón"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Honda Sensing",
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Puertas correderas eléctricas"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "185/65R15",
   "anoLanzamiento": 2008,
-  "asientos": 7,
+  "asientos": 6,
   "baul": "384 litros (3 filas en uso)",
   "cilindrada": "1.5 aspirado o híbrido",
   "colores": [
@@ -64,7 +64,7 @@
   "generacion": "Segunda generación (facelift)",
   "maleteroMin": "384 litros",
   "tipo": "Minivan compacta (7 plazas)",
-  "torque": "170 Nm (estimado)",
+  "torque": "155 Nm",
   "suspension": "McPherson delantera / eje semi-independiente trasero, prioriza confort de marcha",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

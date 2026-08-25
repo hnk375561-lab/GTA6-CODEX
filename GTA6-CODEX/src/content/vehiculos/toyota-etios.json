@@ -29,27 +29,27 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:12.065294Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "980-1.055 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "66-79 kW (90-107 hp, 1.3 o 1.5)",
+  "capacidadTanque": "45 litros",
+  "tiempoRecorrido": "11.5-13.5s 0-100 km/h",
+  "anoProduccion": "2012-2021 (discontinuado, producción en Brasil/India)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Brasil",
+    "Argentina",
+    "India"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Frenos ABS",
+    "Control de estabilidad (ESC, versiones superiores)",
+    "Doble airbag frontal"
   ],
   "consumoEtiqueta": "C",
-  "neumaticos": "225/50R17",
+  "neumaticos": "175/65R14",
   "anoLanzamiento": 2012,
   "asientos": 5,
   "baul": "595 litros (sedán)",
@@ -64,7 +64,7 @@
   "generacion": "Primera generación (discontinuado)",
   "maleteroMin": "595 litros",
   "tipo": "Hatchback/Sedán compacto",
-  "torque": "130 Nm (estimado)",
+  "torque": "132-140 Nm",
   "suspension": "McPherson delantera / multilink o eje de torsión trasero",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

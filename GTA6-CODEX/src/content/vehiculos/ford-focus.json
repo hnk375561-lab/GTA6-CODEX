@@ -30,29 +30,28 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.320-1.450 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "92-134 kW (125-182 hp según motor)",
+  "capacidadTanque": "52 litros",
+  "tiempoRecorrido": "8.0-10.5s 0-100 km/h",
+  "anoProduccion": "2018-2025 (cuarta generación, según mercado)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "China"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Ford SYNC",
+    "Control de crucero adaptativo"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "205/60R16 (225/40R18 en versión ST)",
   "anoLanzamiento": 1998,
   "asientos": 5,
   "baul": "375 litros",
@@ -67,7 +66,7 @@
   "generacion": "Cuarta generación (discontinuado en Europa 2025)",
   "maleteroMin": "375 litros",
   "tipo": "Hatchback compacto",
-  "torque": "215 Nm (estimado)",
+  "torque": "200-320 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

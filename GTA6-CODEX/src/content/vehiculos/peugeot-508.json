@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.395-1.620 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "96-165 kW (130-225 hp según versión, incl. híbrido enchufable)",
+  "capacidadTanque": "53-56 litros",
+  "tiempoRecorrido": "7.3-10.8s 0-100 km/h según motorización",
+  "anoProduccion": "2018-presente (con facelift 2023)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Peugeot i-Cockpit",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Faros LED Matrix",
+    "Control de crucero adaptativo"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/55R17 (235/40R19 en versión GT)",
   "anoLanzamiento": 2010,
   "asientos": 5,
   "baul": "487 litros",
@@ -67,7 +67,7 @@
   "generacion": "Segunda generación (facelift)",
   "maleteroMin": "487 litros",
   "tipo": "Sedán ejecutivo",
-  "torque": "260 Nm (estimado)",
+  "torque": "250-360 Nm según motorización",
   "suspension": "McPherson delantera / multilink o eje de torsión trasero",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

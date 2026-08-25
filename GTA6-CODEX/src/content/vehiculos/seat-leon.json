@@ -30,27 +30,27 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.245-1.435 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "81-221 kW (110-300 hp según versión, incl. Cupra)",
+  "capacidadTanque": "45-50 litros",
+  "tiempoRecorrido": "5.7-11.5s 0-100 km/h según motorización",
+  "anoProduccion": "2020-presente (cuarta generación)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Europa"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Control de crucero adaptativo",
+    "Faros LED"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "205/55R16 (235/35R19 en Cupra)",
   "anoLanzamiento": 1999,
   "asientos": 5,
   "baul": "380 litros",
@@ -65,7 +65,7 @@
   "generacion": "Cuarta generación (facelift)",
   "maleteroMin": "380 litros",
   "tipo": "Hatchback compacto",
-  "torque": "210 Nm (estimado)",
+  "torque": "200-400 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

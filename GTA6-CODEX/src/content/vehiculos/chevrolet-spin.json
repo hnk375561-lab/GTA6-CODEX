@@ -28,27 +28,28 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:08.164677Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.220-1.300 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "84-106 kW (114-144 hp)",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "11.0-13.0s 0-100 km/h",
+  "anoProduccion": "2012-presente",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "Brasil"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "MyLink 7\"",
+    "Tercera fila de asientos"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17",
+  "neumaticos": "185/65R15",
   "anoLanzamiento": 2012,
   "asientos": 7,
   "baul": "126 litros (3 filas en uso)",
@@ -63,7 +64,7 @@
   "generacion": "Primera generación (facelift)",
   "maleteroMin": "126 litros",
   "tipo": "Minivan/SUV 7 plazas",
-  "torque": "170 Nm (estimado)",
+  "torque": "146-215 Nm según motorización",
   "suspension": "McPherson delantera / eje semi-independiente trasero, prioriza confort de marcha",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

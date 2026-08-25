@@ -28,27 +28,29 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.190-1.280 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "77-110 kW (105-150 hp según motor 1.6, 1.0 TSI o 1.4 TSI)",
+  "capacidadTanque": "45-52 litros",
+  "tiempoRecorrido": "8.7-11.5s 0-100 km/h según motorización",
+  "anoProduccion": "2018-presente (con facelift 2023)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "Brasil",
+    "India"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "VW Digital Cockpit",
+    "Central multimedia con carplay/android auto inalámbrico"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17",
+  "neumaticos": "195/55R16 (205/45R17 en versión GTS)",
   "anoLanzamiento": 2017,
   "asientos": 5,
   "baul": "521 litros",
@@ -63,7 +65,7 @@
   "generacion": "Primera generación (facelift 2023)",
   "maleteroMin": "521 litros",
   "tipo": "Sedán compacto",
-  "torque": "145 Nm (estimado)",
+  "torque": "170-250 Nm según motorización",
   "suspension": "McPherson delantera / multilink o eje de torsión trasero",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

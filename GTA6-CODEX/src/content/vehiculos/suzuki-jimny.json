@@ -30,27 +30,29 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "traccion": "4x4 conectable con caja reductora",
+  "peso": "1.090-1.135 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "63-75 kW (85-102 hp, 1.5L)",
+  "capacidadTanque": "40 litros",
+  "tiempoRecorrido": "12.5-13.2s 0-100 km/h",
+  "anoProduccion": "2018-presente (cuarta generación)",
   "mercados": [
+    "Japón",
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "India"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Tracción 4x4 con reductora ALLGRIP PRO",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Bloqueo de diferencial (versiones off-road)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "195/80R15",
   "anoLanzamiento": 1970,
   "asientos": 5,
   "baul": "211 litros (versión 5 puertas)",
@@ -65,7 +67,7 @@
   "generacion": "Cuarta generación",
   "maleteroMin": "211 litros",
   "tipo": "SUV off-road compacto",
-  "torque": "155 Nm (estimado)",
+  "torque": "130 Nm",
   "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

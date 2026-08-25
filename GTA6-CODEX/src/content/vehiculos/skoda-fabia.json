@@ -30,27 +30,26 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.115-1.230 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "48-110 kW (65-150 hp según motorización)",
+  "capacidadTanque": "45-50 litros",
+  "tiempoRecorrido": "8.6-16.0s 0-100 km/h según motorización",
+  "anoProduccion": "2021-presente (cuarta generación)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Europa"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Škoda Virtual Cockpit (opcional)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "185/60R15 (205/45R17 en Monte Carlo)",
   "anoLanzamiento": 1999,
   "asientos": 5,
   "baul": "380 litros",
@@ -65,7 +64,7 @@
   "generacion": "Cuarta generación",
   "maleteroMin": "380 litros",
   "tipo": "Hatchback compacto",
-  "torque": "135 Nm (estimado)",
+  "torque": "95-250 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

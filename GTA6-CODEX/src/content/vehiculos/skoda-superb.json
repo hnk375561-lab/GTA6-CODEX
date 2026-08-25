@@ -30,27 +30,28 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.470-1.750 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "110-195 kW (150-265 hp según versión, incl. híbrido enchufable)",
+  "capacidadTanque": "50-66 litros",
+  "tiempoRecorrido": "5.6-9.9s 0-100 km/h según motorización",
+  "anoProduccion": "2023-presente (cuarta generación)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Europa"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Matrix LED",
+    "Control de crucero adaptativo",
+    "Asientos con memoria"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/55R17 (235/40R19 en Sportline)",
   "anoLanzamiento": 2001,
   "asientos": 5,
   "baul": "645 litros",
@@ -65,7 +66,7 @@
   "generacion": "Cuarta generación",
   "maleteroMin": "645 litros",
   "tipo": "Sedán/familiar ejecutivo",
-  "torque": "220 Nm (estimado)",
+  "torque": "250-400 Nm según motorización",
   "suspension": "McPherson delantera / multilink o eje de torsión trasero",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

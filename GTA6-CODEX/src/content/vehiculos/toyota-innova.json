@@ -30,27 +30,29 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.755-1.855 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "102-110 kW (139-150 hp, diésel 2.4 o gasolina 2.7)",
+  "capacidadTanque": "55-65 litros",
+  "tiempoRecorrido": "11.5-13.5s 0-100 km/h",
+  "anoProduccion": "2015-presente (segunda generación)",
   "mercados": [
-    "Europa",
-    "USA",
     "Asia",
-    "Mercados emergentes"
+    "Medio Oriente",
+    "América Latina"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "7 airbags",
+    "Tercera fila de asientos"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/60R16 o 225/50R18",
   "anoLanzamiento": 2004,
   "asientos": 7,
   "baul": "300 litros (3 filas en uso)",
@@ -64,7 +66,7 @@
   "generacion": "Tercera generación (Zenix)",
   "maleteroMin": "300 litros",
   "tipo": "Minivan/SUV (7 plazas)",
-  "torque": "220 Nm (estimado)",
+  "torque": "245-343 Nm (versión diésel)",
   "suspension": "McPherson delantera / eje semi-independiente trasero, prioriza confort de marcha",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

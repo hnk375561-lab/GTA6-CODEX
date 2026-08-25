@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.470-1.600 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "146-151 kW (192-204 hp, incl. híbrido)",
+  "capacidadTanque": "48 litros",
+  "tiempoRecorrido": "7.1-8.2s 0-100 km/h según motorización",
+  "anoProduccion": "2023-presente (undécima generación)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "Japón"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Honda Sensing",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Pantalla táctil de 12.3\"",
+    "Control de crucero adaptativo"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "225/50R17 (235/40R19 en Touring)",
   "anoLanzamiento": 1976,
   "asientos": 5,
   "baul": "473 litros",
@@ -67,7 +67,7 @@
   "generacion": "Undécima generación",
   "maleteroMin": "473 litros",
   "tipo": "Sedán mediano",
-  "torque": "280 Nm (estimado)",
+  "torque": "260-335 Nm según motorización",
   "suspension": "McPherson delantera / multilink o eje de torsión trasero",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

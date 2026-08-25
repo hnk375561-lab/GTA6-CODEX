@@ -29,27 +29,28 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "940-1.010 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "53-56 kW (72-76 hp)",
+  "capacidadTanque": "43 litros",
+  "tiempoRecorrido": "13.5-15.0s 0-100 km/h",
+  "anoProduccion": "2016-presente",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "Brasil",
+    "América Latina"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Dirección asistida eléctrica",
+    "Cámara de reversa (versiones Trekking)"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17",
+  "neumaticos": "175/65R14 (175/60R15 en versión Trekking)",
   "anoLanzamiento": 2016,
   "asientos": 5,
   "baul": "235 litros",
@@ -63,7 +64,7 @@
   "generacion": "Primera generación (facelift)",
   "maleteroMin": "235 litros",
   "tipo": "City car / hatchback compacto",
-  "torque": "100 Nm (estimado)",
+  "torque": "104 Nm",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

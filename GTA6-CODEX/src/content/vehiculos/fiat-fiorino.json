@@ -28,27 +28,27 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.100-1.400 kg (vehículo vacío / con carga)",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "63-66 kW (85-90 hp)",
+  "capacidadTanque": "48 litros",
+  "tiempoRecorrido": "13.0-15.0s 0-100 km/h",
+  "anoProduccion": "2007-presente (Fiorino III)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "Brasil",
+    "Europa (como Fiat Fiorino/Qubo)"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Frenos ABS",
+    "Distribución electrónica de frenado (EBD)",
+    "Dirección asistida"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "175/70R14",
   "anoLanzamiento": 1988,
   "asientos": 2,
   "baul": "Caja de carga 2.500 litros aprox.",
@@ -61,7 +61,7 @@
   "generacion": "Tercera generación",
   "maleteroMin": "N/A (furgón)",
   "tipo": "Furgoneta pequeña / utilitario",
-  "torque": "160 Nm (estimado)",
+  "torque": "127-145 Nm",
   "suspension": "McPherson delantera / eje semi-independiente trasero, prioriza confort de marcha",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [
@@ -73,7 +73,7 @@
   "garantia": "3 años / 100.000 km, variable según mercado (estimado)",
   "radioGiro": "5.9 m (estimado)",
   "relacionPesoPotencia": "30.0 kg/hp (calculado a partir de peso y potencia declarados)",
-  "capacidadCarga": "700 kg (estimado)",
+  "capacidadCarga": "610-650 kg aprox.",
   "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
   "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",

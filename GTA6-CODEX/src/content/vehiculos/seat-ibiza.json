@@ -30,27 +30,26 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.055-1.180 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "59-110 kW (80-150 hp según motorización, incl. FR)",
+  "capacidadTanque": "40-45 litros",
+  "tiempoRecorrido": "7.9-13.5s 0-100 km/h según motorización",
+  "anoProduccion": "2017-presente (quinta generación, con facelift 2021)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Europa"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "SEAT Digital Cockpit (versiones superiores)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "185/60R15 (215/45R17 en FR)",
   "anoLanzamiento": 1984,
   "asientos": 5,
   "baul": "355 litros",
@@ -65,7 +64,7 @@
   "generacion": "Quinta generación (facelift)",
   "maleteroMin": "355 litros",
   "tipo": "Hatchback compacto",
-  "torque": "135 Nm (estimado)",
+  "torque": "115-250 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

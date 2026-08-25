@@ -30,27 +30,29 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.070-1.220 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "48-96 kW (65-130 hp según motorización)",
+  "capacidadTanque": "42-47 litros",
+  "tiempoRecorrido": "9.5-16.0s 0-100 km/h según motorización",
+  "anoProduccion": "2019-presente (quinta generación)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "Brasil"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Easy Link multimedia",
+    "Cámara de reversa"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "185/65R15 (205/45R17 en versión RS Line)",
   "anoLanzamiento": 1990,
   "asientos": 5,
   "baul": "391 litros",
@@ -65,7 +67,7 @@
   "generacion": "Quinta generación (facelift)",
   "maleteroMin": "391 litros",
   "tipo": "Hatchback compacto",
-  "torque": "125 Nm (estimado)",
+  "torque": "95-240 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

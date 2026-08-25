@@ -30,29 +30,30 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.325-1.420 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "112-164 kW (152-223 hp, híbrido 2.0)",
+  "capacidadTanque": "43 litros",
+  "tiempoRecorrido": "6.7-7.7s 0-100 km/h (quinta generación)",
+  "anoProduccion": "2023-presente (quinta generación)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Japón",
+    "Estados Unidos",
+    "Europa"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Toyota Safety Sense 3.0",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Modo EV",
+    "Cámara 360°"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "195/50R19 o 215/45R19",
   "anoLanzamiento": 1997,
   "asientos": 5,
   "baul": "284 litros",
@@ -67,7 +68,7 @@
   "generacion": "Quinta generación",
   "maleteroMin": "284 litros",
   "tipo": "Hatchback híbrido",
-  "torque": "285 Nm (estimado)",
+  "torque": "208 Nm (motor eléctrico) + par combinado del sistema híbrido",
   "suspension": "McPherson delantera / multilink o eje de torsión trasero",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

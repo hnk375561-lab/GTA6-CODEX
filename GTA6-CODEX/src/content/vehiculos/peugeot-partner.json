@@ -28,27 +28,27 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:08.449854Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.300-1.550 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "55-96 kW (75-130 hp, diésel BlueHDi)",
+  "capacidadTanque": "60 litros",
+  "tiempoRecorrido": "11.0-14.0s 0-100 km/h",
+  "anoProduccion": "2018-presente (tercera generación)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Sensores de estacionamiento",
+    "Puertas correderas laterales"
   ],
   "consumoEtiqueta": "C",
-  "neumaticos": "225/50R17",
+  "neumaticos": "195/65R16",
   "anoLanzamiento": 1996,
   "asientos": 5,
   "baul": "775 litros (versión pasajeros)",
@@ -61,7 +61,7 @@
   "generacion": "Tercera generación",
   "maleteroMin": "775 litros",
   "tipo": "Furgoneta / utilitario",
-  "torque": "185 Nm (estimado)",
+  "torque": "180-300 Nm según motorización",
   "suspension": "McPherson delantera / eje semi-independiente trasero, prioriza confort de marcha",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [
@@ -73,7 +73,7 @@
   "garantia": "3 años / 100.000 km, variable según mercado (estimado)",
   "radioGiro": "5.9 m (estimado)",
   "relacionPesoPotencia": "13.0 kg/hp (calculado a partir de peso y potencia declarados)",
-  "capacidadCarga": "700 kg (estimado)",
+  "capacidadCarga": "650-1.000 kg aprox.",
   "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
   "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
