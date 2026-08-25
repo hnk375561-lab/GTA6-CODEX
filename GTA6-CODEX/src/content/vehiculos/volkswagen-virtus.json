@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T03:49:51.000Z",
+  "updatedAt": "2026-08-25T03:58:37.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -75,5 +75,7 @@
     "Cámara de reversa"
   ],
   "garantia": "3 años / 100.000 km, variable según mercado (estimado)",
-  "radioGiro": "5.4 m (estimado)"
+  "radioGiro": "5.4 m (estimado)",
+  "relacionPesoPotencia": "29.4 kg/hp (calculado a partir de peso y potencia declarados)",
+  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)"
 }

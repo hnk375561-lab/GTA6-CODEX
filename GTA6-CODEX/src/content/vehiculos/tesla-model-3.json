@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.524Z",
-  "updatedAt": "2026-08-25T03:49:51.000Z",
+  "updatedAt": "2026-08-25T03:58:37.000Z",
   "manufacturer": "Tesla",
   "class": "Sedán",
   "customizable": false,
@@ -85,5 +85,7 @@
   "capacidadBateria": "60-82 kWh según versión",
   "autonomia": "430-629 km (WLTP, estimado)",
   "tiempoCarga": "Supercharger 10-80% en ~15-25 min (estimado)",
-  "radioGiro": "5.4 m (estimado)"
+  "radioGiro": "5.4 m (estimado)",
+  "relacionPesoPotencia": "4.8 kg/hp (calculado a partir de peso y potencia declarados)",
+  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)"
 }

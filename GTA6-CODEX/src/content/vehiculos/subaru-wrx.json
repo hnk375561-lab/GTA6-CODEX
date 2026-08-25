@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:49:51.000Z",
+  "updatedAt": "2026-08-25T03:58:37.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -82,5 +82,7 @@
     "Alerta de punto ciego"
   ],
   "garantia": "3 años / 100.000 km (estimado)",
-  "radioGiro": "5.6 m (estimado)"
+  "radioGiro": "5.6 m (estimado)",
+  "relacionPesoPotencia": "5.0 kg/hp (calculado a partir de peso y potencia declarados)",
+  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)"
 }

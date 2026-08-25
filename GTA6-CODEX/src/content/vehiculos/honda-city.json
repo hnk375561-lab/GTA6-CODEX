@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:31.780Z",
-  "updatedAt": "2026-08-25T03:49:51.000Z",
+  "updatedAt": "2026-08-25T03:58:37.000Z",
   "manufacturer": "Honda",
   "class": "Sedán",
   "customizable": false,
@@ -75,5 +75,8 @@
     "Cámara de reversa"
   ],
   "garantia": "2 años sin límite de kilometraje (estimado)",
-  "radioGiro": "5.4 m (estimado)"
+  "radioGiro": "5.4 m (estimado)",
+  "relacionPesoPotencia": "12.4 kg/hp (calculado a partir de peso y potencia declarados)",
+  "potenciaLitro": "81 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)"
 }

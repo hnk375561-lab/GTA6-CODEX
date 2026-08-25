@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:39:47.000Z",
+  "updatedAt": "2026-08-25T03:58:37.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -71,5 +71,7 @@
     "Control de tracción",
     "Modos de conducción con control de potencia"
   ],
-  "garantia": "2 años sin límite de kilometraje (estimado)"
+  "garantia": "2 años sin límite de kilometraje (estimado)",
+  "relacionPesoPotencia": "3.1 kg/hp (calculado a partir de peso y potencia declarados)",
+  "potenciaLitro": "103 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

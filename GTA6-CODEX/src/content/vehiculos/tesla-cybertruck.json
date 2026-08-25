@@ -32,7 +32,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:49:51.000Z",
+  "updatedAt": "2026-08-25T03:58:37.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -81,5 +81,8 @@
   "autonomia": "547 km (EPA, Dual Motor, estimado)",
   "tiempoCarga": "Supercharger, ~15 min para autonomía significativa (estimado)",
   "alturaLibrePiso": "220 mm (estimado)",
-  "radioGiro": "6.4 m (estimado)"
+  "radioGiro": "6.4 m (estimado)",
+  "relacionPesoPotencia": "1.9 kg/hp (calculado a partir de peso y potencia declarados)",
+  "capacidadCarga": "900 kg (estimado)",
+  "neumaticoRepuesto": "Rueda de auxilio de tamaño completo (estimado, varía por versión)"
 }

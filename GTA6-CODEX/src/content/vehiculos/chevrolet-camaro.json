@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.088Z",
-  "updatedAt": "2026-08-25T03:49:51.000Z",
+  "updatedAt": "2026-08-25T03:58:37.000Z",
   "manufacturer": "Chevrolet",
   "class": "Deportivo",
   "customizable": false,
@@ -87,5 +87,7 @@
     "Alerta de punto ciego"
   ],
   "garantia": "3 años / 60.000 km integral, tren motriz hasta 5 años / 100.000 km (estimado)",
-  "radioGiro": "5.6 m (estimado)"
+  "radioGiro": "5.6 m (estimado)",
+  "relacionPesoPotencia": "3.0 kg/hp (calculado a partir de peso y potencia declarados)",
+  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)"
 }

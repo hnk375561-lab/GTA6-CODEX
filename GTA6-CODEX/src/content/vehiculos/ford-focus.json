@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:49:51.000Z",
+  "updatedAt": "2026-08-25T03:58:37.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -77,5 +77,7 @@
     "Anclajes ISOFIX"
   ],
   "garantia": "3 años / 60.000 km integral, tren motriz hasta 5 años / 100.000 km (estimado)",
-  "radioGiro": "5.0 m (estimado)"
+  "radioGiro": "5.0 m (estimado)",
+  "relacionPesoPotencia": "9.7 kg/hp (calculado a partir de peso y potencia declarados)",
+  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)"
 }

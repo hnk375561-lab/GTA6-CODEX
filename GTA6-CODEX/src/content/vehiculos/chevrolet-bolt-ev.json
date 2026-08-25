@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.250Z",
-  "updatedAt": "2026-08-25T03:49:51.000Z",
+  "updatedAt": "2026-08-25T03:58:37.000Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback eléctrico",
   "customizable": false,
@@ -78,5 +78,7 @@
   "capacidadBateria": "65 kWh",
   "autonomia": "417 km (EPA, estimado)",
   "tiempoCarga": "DC rápida (máx. ~55 kW) 10-80% en ~1h; AC 11 kW en ~7h (estimado)",
-  "radioGiro": "5.0 m (estimado)"
+  "radioGiro": "5.0 m (estimado)",
+  "relacionPesoPotencia": "7.5 kg/hp (calculado a partir de peso y potencia declarados)",
+  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)"
 }

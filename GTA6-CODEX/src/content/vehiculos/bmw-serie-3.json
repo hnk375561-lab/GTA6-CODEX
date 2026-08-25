@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.977Z",
-  "updatedAt": "2026-08-25T03:49:51.000Z",
+  "updatedAt": "2026-08-25T03:58:37.000Z",
   "manufacturer": "BMW",
   "class": "Sedán premium",
   "customizable": false,
@@ -86,5 +86,8 @@
     "Alerta de punto ciego"
   ],
   "garantia": "4 años / 100.000 km, cobertura premium (estimado)",
-  "radioGiro": "5.4 m (estimado)"
+  "radioGiro": "5.4 m (estimado)",
+  "relacionPesoPotencia": "6.2 kg/hp (calculado a partir de peso y potencia declarados)",
+  "potenciaLitro": "128 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)"
 }
