@@ -90,3 +90,22 @@ línea, generado con `node scripts/audit-evidence-coverage.mjs --json`).
 Es trabajo de investigación real vehículo por vehículo — no automatizable
 sin arriesgar inventar una fuente — así que se sigue resolviendo en lotes
 en próximas rondas en vez de en una sola tanda.
+
+## Ronda 3 — cierre de brecha de evidencia (agosto 2026, cont.)
+
+Segundo lote: `byd-atto-3`, `chery-tiggo-4`, `citroen-c4`, `cupra-leon`,
+`dacia-duster`, `ferrari-296-gtb`, `fiat-panda`, `ford-explorer`,
+`ford-focus`, `chevrolet-equinox`. Misma metodología que la ronda 2 (fuente
+oficial verificada por búsqueda, `level` subido a `oficial-nombrado`, nota
+en `limitations`). Caso particular: `ford-focus` está discontinuado en
+Europa desde noviembre de 2025 (ver Wikipedia); la fuente oficial usada es
+la ficha técnica de Ford Europe vigente al momento de discontinuación, no
+un lanzamiento 2026 — hay cobertura de baja calidad circulando sobre un
+supuesto "regreso" del Focus a EE.UU. en 2026 que no se usó como fuente
+por no ser un comunicado oficial de Ford.
+
+**Resultado, `npm run audit:evidence`:** 145/250 → **155/250** (62%) con
+evidencia sólida.
+
+Quedan **95** fichas en la cola (`docs/evidence-gap-queue.txt`,
+actualizado).

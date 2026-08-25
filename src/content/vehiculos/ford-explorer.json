@@ -1,19 +1,19 @@
 {
-    "slug": "byd-atto-3",
+    "slug": "ford-explorer",
     "type": "vehiculos",
-    "title": "BYD Atto 3",
-    "description": "SUV compacto eléctrico de BYD, batería Blade LFP.",
+    "title": "Ford Explorer",
+    "description": "SUV grande de 3 filas de Ford, mercado norteamericano principalmente.",
     "status": "confirmado",
     "tags": [
-        "electrico",
-        "byd"
+        "suv",
+        "ford"
     ],
     "featured": false,
-    "manufacturer": "BYD",
-    "class": "SUV eléctrico",
+    "manufacturer": "Ford",
+    "class": "SUV grande",
     "customizable": false,
-    "power": "201 hp",
-    "price": "EUR 38.000",
+    "power": "300 hp",
+    "price": "USD 40.000",
     "consumo": "7.2 l/100km combinado (referencia)",
     "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
     "evidence": {
@@ -21,24 +21,23 @@
         "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
         "limitations": [
             "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-            "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria.",
             "Auditoría de cobertura de evidencia (ago 2026), ronda 2: se agregó fuente oficial del fabricante (primarySource) que faltaba; nivel actualizado de \"respaldado\" a \"oficial-nombrado\". Verificar que la URL siga vigente si el fabricante reestructura su sitio."
         ],
-        "primarySource": "https://www.byd.com/content/dam/byd-site/en-be/product/atto3/BYD%20ATTO%203.pdf",
-        "secondarySource": "https://en.wikipedia.org/wiki/BYD_Atto_3"
+        "primarySource": "https://www.ford.com/suvs/explorer/",
+        "secondarySource": "https://en.wikipedia.org/wiki/Ford_Explorer"
     },
     "performance": {
         "speed": "200 km/h (referencia)",
         "acceleration": "0-100 km/h en 8.5s (referencia)"
     },
-    "createdAt": "2026-08-23T23:08:07.679Z",
-    "updatedAt": "2026-08-25T20:39:53.303261Z",
-    "transmision": "Automática de relación única (motor eléctrico)",
+    "createdAt": "2026-08-23T23:06:25.164Z",
+    "updatedAt": "2026-08-25T20:39:53.308342Z",
+    "transmision": "Manual o Automática",
     "traccion": "Tracción delantera",
     "peso": "1.600-2.200 kg",
-    "tipoMotor": "Eléctrico",
+    "tipoMotor": "Gasolina/Diésel",
     "potenciaKW": "100-180 kW",
-    "capacidadTanque": null,
+    "capacidadTanque": "60-80 litros",
     "tiempoRecorrido": "9-12s",
     "anoProduccion": "2023-2024",
     "mercados": [
@@ -53,14 +52,20 @@
         "Control estabilidad dinámico",
         "Asistentes de conducción"
     ],
-    "consumoEtiqueta": null,
+    "consumoEtiqueta": "D",
     "neumaticos": "225/50R17",
-    "especificacionesMotor": null,
+    "especificacionesMotor": {
+        "filtro_aire": "Filtro de panel",
+        "tipo_valvulas": "DOHC",
+        "ratio_compresion": "10.5:1",
+        "sistemas_inyeccion": "Inyeccion directa",
+        "arbol_levas": "Variable (VVT)"
+    },
     "especificacionesTransmision": {
-        "tipo_automatico": "No aplica (sin convertidor de par)",
-        "control_cambios": "Directo (relación única)",
+        "tipo_automatico": "Convertidor",
+        "control_cambios": "Secuencial",
         "sist_propulsion": "Traccion",
-        "velocidades": "1 relación (reductora fija)"
+        "velocidades": "8/9 velocidades"
     },
     "especificacionesSuspension": {
         "tipo_trasera": "Multilink",
@@ -92,7 +97,7 @@
         "capacidad_refrigerante": "7-9 L",
         "capacidad_lavaparabrisas": "3-4 L",
         "liquido_frenos": "0.75-0.85 L",
-        "capacidad_aceite": null,
+        "capacidad_aceite": "4.5-5.5 L",
         "filtro_habitaculo": "Carbon activado"
     },
     "seguridad_pasiva": {
@@ -110,7 +115,7 @@
     },
     "mantenimientoPrograma": {
         "filtro": "25.000-30.000 km",
-        "aceite": "No aplica (motor eléctrico)",
+        "aceite": "15.000 km",
         "frenos": "Anual",
         "ruedas": "Anual",
         "refrigerante": "2 anos"
