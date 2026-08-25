@@ -59,12 +59,6 @@
     "consumoEtiqueta":  "F",
     "neumaticos":  "275/35R20",
     "maleteroMin":  "405 litros",
-    "aerodinÃ¡mica":  {
-                          "defectores_aire":  "Canales de aire lateral bajo carroceria",
-                          "spoiler_trasero":  "Integrado en porton",
-                          "area_frontal":  "2.2-2.4 m2 (estimado)",
-                          "coeficiente_arrastre":  "Cx 0.27-0.32 (sedan)"
-                      },
     "especificacionesMotor":  {
                                   "filtro_aire":  "Filtro de panel",
                                   "tipo_valvulas":  "DOHC",
@@ -137,5 +131,8 @@
                                  "ciego":  "BSM",
                                  "parking":  "8-12 sensores",
                                  "crucero":  "ACC"
-                             }
+                             },
+    "generacion":  null,
+    "anoLanzamiento":  null,
+    "colores":  []
 }

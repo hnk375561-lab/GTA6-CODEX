@@ -47,12 +47,6 @@
                      ],
     "consumoEtiqueta":  "E",
     "neumaticos":  "225/50R17",
-    "aerodinÃ¡mica":  {
-                          "defectores_aire":  "Canales de aire lateral bajo carroceria",
-                          "spoiler_trasero":  "Integrado en porton",
-                          "area_frontal":  "2.2-2.4 m2 (estimado)",
-                          "coeficiente_arrastre":  "Cx 0.27-0.32 (sedan)"
-                      },
     "especificacionesMotor":  {
                                   "filtro_aire":  "Filtro de panel",
                                   "tipo_valvulas":  "DOHC",
@@ -125,5 +119,16 @@
                                  "ciego":  "BSM",
                                  "parking":  "8-12 sensores",
                                  "crucero":  "ACC"
-                             }
+                             },
+    "consumo":  null,
+    "dimensiones":  null,
+    "cilindrada":  null,
+    "emisiones":  null,
+    "tipo":  null,
+    "asientos":  null,
+    "baul":  null,
+    "maleteroMin":  null,
+    "generacion":  null,
+    "anoLanzamiento":  null,
+    "colores":  []
 }
