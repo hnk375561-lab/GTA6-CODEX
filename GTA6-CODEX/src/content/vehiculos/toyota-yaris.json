@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.060Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:33:18.000Z",
   "manufacturer": "Toyota",
   "class": "Hatchback",
   "customizable": false,
@@ -90,5 +90,7 @@
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
   "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
   "paisOrigen": "Japón",
-  "numeroPuertas": "5 puertas (3 en versiones deportivas/compactas)"
+  "numeroPuertas": "5 puertas (3 en versiones deportivas/compactas)",
+  "calificacionSeguridad": "2 estrellas Latin NCAP (2025) — protección de ocupante adulto 77%, infantil 69%; penalizado por falta de asistencia de velocidad y AEB",
+  "fuenteSeguridad": "https://www.16valvulas.com.ar/latin-ncap-solo-dos-estrellas-para-los-toyota-yaris-y-yaris-cross/"
 }

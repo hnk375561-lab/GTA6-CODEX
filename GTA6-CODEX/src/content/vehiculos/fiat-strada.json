@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:07.061130Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:33:18.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Delantera (FWD)",
   "peso": "1.150-1.300 kg",
@@ -90,5 +90,7 @@
   "tapiceria": "Tela",
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
   "paisOrigen": "Italia",
-  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple"
+  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple",
+  "calificacionSeguridad": "1 estrella Latin NCAP (2022)",
+  "fuenteSeguridad": "https://noticias.autocosmos.com.mx/2023/12/15/la-fiat-pulse-suma-apenas-dos-estrellas-de-seguridad"
 }

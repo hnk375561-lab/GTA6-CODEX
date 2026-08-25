@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.161Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:33:18.000Z",
   "manufacturer": "Fiat",
   "class": "Sedán",
   "customizable": false,
@@ -91,5 +91,7 @@
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
   "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
   "paisOrigen": "Italia",
-  "numeroPuertas": "4 puertas"
+  "numeroPuertas": "4 puertas",
+  "calificacionSeguridad": "3 estrellas ocupante adulto / 4 estrellas ocupante infantil Latin NCAP — protección débil en el pecho ante impacto lateral, estructura algo inestable",
+  "fuenteSeguridad": "https://infonegocios.biz/y-ademas/asi-evaluo-latin-ncap-a-fiat-argo-cronos-y-toyota-etios"
 }

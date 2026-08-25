@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.687Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:33:18.000Z",
   "manufacturer": "Fiat",
   "class": "SUV compacta",
   "customizable": false,
@@ -90,5 +90,7 @@
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
   "capacidadRemolque": "1.200-1.500 kg (estimado)",
   "paisOrigen": "Italia",
-  "numeroPuertas": "5 puertas"
+  "numeroPuertas": "5 puertas",
+  "calificacionSeguridad": "2 estrellas Latin NCAP (2023) — 67% ocupante adulto, 56% ocupante infantil, con 4 airbags y ESC de serie pero sin ADAS",
+  "fuenteSeguridad": "https://www.latinncap.com/es/area-de-prensa/noticia/8657af8f5cb908/ultimo-resultado-del-2023-de-latin-ncap-fiat-pulse-logra-dos-estrellas"
 }

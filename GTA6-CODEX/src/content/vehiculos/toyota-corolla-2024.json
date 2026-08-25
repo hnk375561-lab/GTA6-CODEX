@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.194Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:33:18.000Z",
   "manufacturer": "Toyota",
   "class": "Sedán",
   "customizable": false,
@@ -99,5 +99,7 @@
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
   "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
   "paisOrigen": "Japón",
-  "numeroPuertas": "4 puertas"
+  "numeroPuertas": "4 puertas",
+  "calificacionSeguridad": "4 estrellas Latin NCAP (auditoría 2024 sobre unidad mexicana; bajó desde 5 estrellas obtenidas en el test original de 2022 por menor cobertura de airbags de cortina)",
+  "fuenteSeguridad": "https://www.latinncap.com/es/area-de-prensa/noticia/85df0f1fee906c"
 }
