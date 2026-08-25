@@ -225,6 +225,20 @@ que no haya sorpresas:
 - [ ] **0 fichas marcadas como `featured`** — la sección "Destacados" de
   la home no tiene qué mostrar todavía.
 - [ ] **Nombre del repositorio en GitHub** sigue siendo `GTA6-CODEX`.
+- [ ] **Cero fotos reales de vehículos** — `public/images/entities/vehiculos/`
+  está vacío. Hay un pipeline para poblarlo sin infringir copyright:
+  `npm run generate:manifest-commons:write` busca en Wikimedia Commons una
+  foto con licencia libre (CC0/CC-BY/CC-BY-SA) por vehículo y genera
+  `real-images-manifest.json`; el workflow manual **"Generar manifest de
+  imágenes desde Wikimedia Commons"** (en Actions) corre esto y abre un PR
+  para revisión humana antes de mergear (la búsqueda es por texto y puede
+  traer el modelo/año equivocado, hay que confirmar cada foto a mano). La
+  cobertura no llega al 100% — autos muy nuevos o de nicho suelen no tener
+  foto libre en Commons todavía; esos quedan pendientes de resolver por
+  otra vía (kit de prensa oficial con permiso, banco de fotos con licencia
+  comercial, o ilustración). Una vez el manifest está aprobado y mergeado,
+  `npm run process-images:apply` baja y procesa las imágenes reales a
+  `public/images/entities/vehiculos/`.
 
 <details>
 <summary>Resuelto (verificado, ya no aplica)</summary>
