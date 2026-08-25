@@ -9,12 +9,14 @@ sin autorización expresa por escrito del titular, salvo lo permitido por
 un acuerdo de licencia o cesión firmado por separado (por ejemplo, un
 contrato de compraventa del repositorio).
 
-NOTA IMPORTANTE PARA CUALQUIER COMPRADOR/CESIONARIO: este repositorio
-incluye, a la fecha de este archivo, referencias e imágenes derivadas de
-material promocional de Grand Theft Auto VI, propiedad de Rockstar Games y
-Take-Two Interactive Software, Inc. Esta licencia NO cubre ni transfiere
-ningún derecho sobre esas marcas o ese material — su uso está sujeto a las
-políticas de Rockstar Games / Take-Two y puede requerir su eliminación o
-reemplazo antes de cualquier uso comercial. Ver LEGAL_RISK_DISCLOSURE.md,
-en la raíz de este repositorio, para el detalle completo antes de operar
-sobre este repositorio.
+NOTA SOBRE ORIGEN DEL PROYECTO: este repositorio nació como un pivote de
+un fan-site de Grand Theft Auto VI. El contenido que dependía de material
+promocional de Rockstar Games / Take-Two Interactive Software, Inc. (key
+art, boxart, logos) fue eliminado del código — ver el historial documentado
+en `src/lib/gallery.ts` y `src/components/layout/RotatingHeroBackground.tsx`.
+Rockstar Games y Take-Two no tienen relación con este proyecto ni con
+"AutoFicha", y esta licencia no otorga ni pretende otorgar ningún derecho
+sobre sus marcas. Cualquier comprador o cesionario debe verificar por su
+cuenta, antes de operar comercialmente, que no queden referencias
+residuales a esas marcas en nombres de archivo, comentarios de código o
+metadatos del repositorio.
