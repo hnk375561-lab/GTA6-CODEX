@@ -1,57 +1,136 @@
-{
-  "slug": "porsche-911-carrera",
-  "type": "vehiculos",
-  "title": "Porsche 911 Carrera",
-  "description": "Deportivo icónico de Porsche, motor bóxer 6 cilindros de 379 hp.",
-  "status": "confirmado",
-  "tags": [
-    "deportivo",
-    "porsche",
-    "combustion"
-  ],
-  "featured": false,
-  "createdAt": "2026-08-23T18:01:34.332Z",
-  "updatedAt": "2026-08-24T01:16:06.568Z",
-  "manufacturer": "Porsche",
-  "class": "Deportivo",
-  "customizable": false,
-  "performance": {
-    "speed": "Muy alta (293 km/h)",
-    "acceleration": "Muy alta (0-100 km/h en 4.2s)"
-  },
-  "power": "379 hp",
-  "price": "USD 118.000",
-  "consumo": "9.1 l/100km combinado (WLTP, versión Carrera 992.2 con caja PDK)",
-  "dimensiones": "4.519 mm largo x 1.852 mm ancho x 1.298 mm alto, distancia entre ejes 2.450 mm",
-  "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.porsche.com/international/models/911/911-models/carrera/",
-    "secondarySource": "https://www.carexpert.co.nz/porsche/911/2026-carrera-3l-coupe-rwd-petrol-automatic-jjo8fowk20260201",
-    "note": "La generación 992.2 (año modelo 2026) eleva la potencia del Carrera base a 389 hp frente a los 379 hp de la generación 992.1 registrada en este ficha.",
-    "limitations": [
-      "El consumo WLTP combinado exacto varía según neumáticos, transmisión (PDK vs manual) y equipamiento opcional (Sport Chrono, etc.)"
-    ]
-  },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
-  "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
-  ],
-  "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
-  ],
-  "consumoEtiqueta": "F",
-  "neumaticos": "225/50R17"
+﻿{
+    "slug":  "porsche-911-carrera",
+    "type":  "vehiculos",
+    "title":  "Porsche 911 Carrera",
+    "description":  "Deportivo icónico de Porsche, motor bóxer 6 cilindros de 379 hp.",
+    "status":  "confirmado",
+    "tags":  [
+                 "deportivo",
+                 "porsche",
+                 "combustion"
+             ],
+    "featured":  false,
+    "createdAt":  "2026-08-23T18:01:34.332Z",
+    "updatedAt":  "2026-08-25T06:11:22.8046729Z",
+    "manufacturer":  "Porsche",
+    "class":  "Deportivo",
+    "customizable":  false,
+    "performance":  {
+                        "speed":  "Muy alta (293 km/h)",
+                        "acceleration":  "Muy alta (0-100 km/h en 4.2s)"
+                    },
+    "power":  "379 hp",
+    "price":  "USD 118.000",
+    "consumo":  "9.1 l/100km combinado (WLTP, versión Carrera 992.2 con caja PDK)",
+    "dimensiones":  "4.519 mm largo x 1.852 mm ancho x 1.298 mm alto, distancia entre ejes 2.450 mm",
+    "evidence":  {
+                     "level":  "oficial-nombrado",
+                     "primarySource":  "https://www.porsche.com/international/models/911/911-models/carrera/",
+                     "secondarySource":  "https://www.carexpert.co.nz/porsche/911/2026-carrera-3l-coupe-rwd-petrol-automatic-jjo8fowk20260201",
+                     "note":  "La generación 992.2 (año modelo 2026) eleva la potencia del Carrera base a 389 hp frente a los 379 hp de la generación 992.1 registrada en este ficha.",
+                     "limitations":  [
+                                         "El consumo WLTP combinado exacto varía según neumáticos, transmisión (PDK vs manual) y equipamiento opcional (Sport Chrono, etc.)"
+                                     ]
+                 },
+    "transmision":  "Manual o Automática",
+    "traccion":  "Tracción delantera",
+    "peso":  "1.200-1.500 kg",
+    "tipoMotor":  "Gasolina turbo",
+    "potenciaKW":  "200-400 kW",
+    "capacidadTanque":  "50-70 litros",
+    "tiempoRecorrido":  "3-8s",
+    "anoProduccion":  "2023-2024",
+    "mercados":  [
+                     "Europa",
+                     "USA",
+                     "Asia",
+                     "Mercados emergentes"
+                 ],
+    "equipamiento":  [
+                         "Control tracción",
+                         "Frenos ABS",
+                         "Control estabilidad dinámico",
+                         "Asistentes de conducción"
+                     ],
+    "consumoEtiqueta":  "F",
+    "neumaticos":  "225/50R17",
+    "aerodinÃ¡mica":  {
+                          "defectores_aire":  "Canales de aire lateral bajo carroceria",
+                          "spoiler_trasero":  "Integrado en porton",
+                          "area_frontal":  "2.2-2.4 m2 (estimado)",
+                          "coeficiente_arrastre":  "Cx 0.27-0.32 (sedan)"
+                      },
+    "especificacionesMotor":  {
+                                  "filtro_aire":  "Filtro de panel",
+                                  "tipo_valvulas":  "DOHC",
+                                  "ratio_compresion":  "10.5:1",
+                                  "sistemas_inyeccion":  "Inyeccion directa",
+                                  "arbol_levas":  "Variable (VVT)"
+                              },
+    "especificacionesTransmision":  {
+                                        "tipo_automatico":  "Convertidor",
+                                        "control_cambios":  "Secuencial",
+                                        "sist_propulsion":  "Traccion",
+                                        "velocidades":  "8/9 velocidades"
+                                    },
+    "especificacionesSuspension":  {
+                                       "tipo_trasera":  "Multilink",
+                                       "barra_estabilizadora":  "26/20 mm",
+                                       "tipo_delantera":  "MacPherson",
+                                       "amortiguadores":  "Doble tubo",
+                                       "recorrido_vertical":  "+-150 mm"
+                                   },
+    "especificacionesRuedas":  {
+                                   "offset":  "+35 a +45 mm",
+                                   "indice_velocidad":  "T/V",
+                                   "indice_carga":  "91",
+                                   "profundidad_surcos":  "1.6 mm",
+                                   "pcd":  "5x114.3"
+                               },
+    "especificacionesDireccion":  {
+                                      "tipo_asistencia":  "Electrica progresiva",
+                                      "sistema_control":  "Control electronico",
+                                      "angulo_max_giro":  "32-35 grados",
+                                      "vueltas_calador":  "2.5-3.0"
+                                  },
+    "aerodinámica":  {
+                         "defectores_aire":  "Canales laterales",
+                         "spoiler_trasero":  "Integrado",
+                         "area_frontal":  "2.2-2.4 m2",
+                         "coeficiente_arrastre":  "Cx 0.27-0.32"
+                     },
+    "capacidadesAdicionales":  {
+                                   "capacidad_refrigerante":  "7-9 L",
+                                   "capacidad_lavaparabrisas":  "3-4 L",
+                                   "liquido_frenos":  "0.75-0.85 L",
+                                   "capacidad_aceite":  "4.5-5.5 L",
+                                   "filtro_habitaculo":  "Carbon activado"
+                               },
+    "seguridad_pasiva":  {
+                             "respaldos":  "Reforzados",
+                             "zonas":  "Deformacion",
+                             "cinturones":  "Pre-tensores",
+                             "estructura":  "Vigas laterales",
+                             "cristales":  "Laminado/Templado"
+                         },
+    "climatizacionAvanzada":  {
+                                  "control":  "Trizona",
+                                  "modo":  "Recirculacion",
+                                  "filtro":  "Carbon",
+                                  "desempanante":  "Trasero/Lateral"
+                              },
+    "mantenimientoPrograma":  {
+                                  "filtro":  "25.000-30.000 km",
+                                  "aceite":  "15.000 km",
+                                  "frenos":  "Anual",
+                                  "ruedas":  "Anual",
+                                  "refrigerante":  "2 anos"
+                              },
+    "sistemasInteligentes":  {
+                                 "frenado":  "AEB",
+                                 "carril":  "LDW",
+                                 "ciego":  "BSM",
+                                 "parking":  "8-12 sensores",
+                                 "crucero":  "ACC"
+                             }
 }

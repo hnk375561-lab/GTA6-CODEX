@@ -1,0 +1,1270 @@
+diff --git a/src/app/globals.css b/src/app/globals.css
+index ec51a0a..6b6a979 100644
+--- a/src/app/globals.css
++++ b/src/app/globals.css
+@@ -43,8 +43,8 @@
+   --transition-slow: var(--dur-slow) var(--ease-standard);
+ 
+   /* --- Paleta de acentos crudos (uso en gradientes/color-mix) ---
+-     Mismos valores que tailwind.config.js (gta-accent / gta-accent-orange
+-     / gta-gold), centralizados acá para las fórmulas CSS de abajo. */
++     Mismos valores que tailwind.config.js (auto-accent / auto-accent-orange
++     / auto-gold), centralizados acá para las fórmulas CSS de abajo. */
+   --c-pink: #ff2f8f;
+   --c-pink-soft: #ff7ec4;
+   --c-cyan: #22d3ee;
+@@ -87,7 +87,7 @@ html {
+ }
+ 
+ body {
+-  @apply bg-gta-dark text-gta-text antialiased;
++  @apply bg-auto-dark text-auto-text antialiased;
+   font-family: var(--font-sans);
+   font-feature-settings: 'ss01' 1, 'cv05' 1;
+   text-rendering: optimizeLegibility;
+@@ -106,14 +106,14 @@ body {
+    plano de color perfectamente limpio — el detalle que separa "interfaz
+    plana" de "cinematográfico". 100% decorativo, no bloquea interacción,
+    se apaga con reduced-motion (queda estático, no anima). */
+-.gta-atmosphere {
++.auto-atmosphere {
+   position: fixed;
+   inset: 0;
+   z-index: 1;
+   pointer-events: none;
+ }
+ 
+-.gta-atmosphere::before {
++.auto-atmosphere::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+@@ -123,7 +123,7 @@ body {
+   background-size: 180px 180px;
+ }
+ 
+-.gta-atmosphere::after {
++.auto-atmosphere::after {
+   content: '';
+   position: absolute;
+   inset: 0;
+@@ -139,7 +139,7 @@ h3,
+ h4,
+ h5,
+ h6 {
+-  @apply font-bold text-gta-text;
++  @apply font-bold text-auto-text;
+   font-family: var(--font-display);
+   letter-spacing: -0.02em;
+   line-height: 1.08;
+@@ -170,7 +170,7 @@ h6 {
+ }
+ 
+ p {
+-  @apply text-gta-text-secondary;
++  @apply text-auto-text-secondary;
+   line-height: 1.65;
+ }
+ 
+@@ -188,7 +188,7 @@ a {
+ 
+ /* Links */
+ a:not(.no-style) {
+-  @apply text-gta-accent hover:text-gta-accent-strong underline-offset-4;
++  @apply text-auto-accent hover:text-auto-accent-strong underline-offset-4;
+ }
+ 
+ /* --- Texto en gradiente Vice (magenta → rosa → cian), reutilizable en
+@@ -215,7 +215,7 @@ a:not(.no-style) {
+ }
+ 
+ ::-webkit-scrollbar-track {
+-  @apply bg-gta-darker;
++  @apply bg-auto-darker;
+ }
+ 
+ ::-webkit-scrollbar-thumb {
+@@ -1134,7 +1134,7 @@ a:hover .logo-mark {
+ 
+ .hero-news-flash-dot {
+   position: relative;
+-  background: var(--gta-border-strong, #453163);
++  background: var(--auto-border-strong, #453163);
+   transition: background-color 300ms ease, transform 300ms ease;
+   padding: 0;
+   border: none;
+@@ -1152,7 +1152,7 @@ a:hover .logo-mark {
+ }
+ 
+ .hero-news-flash-dot:hover {
+-  background: var(--gta-border-strong-hover, #6b5490);
++  background: var(--auto-border-strong-hover, #6b5490);
+ }
+ 
+ .hero-news-flash-dot[data-active='true'] {
+@@ -1267,7 +1267,7 @@ a:hover .logo-mark {
+    mismo rol que cumplían antes el <h1> y el <p> por separado, ahora
+    unificadas en un solo <h1> semántico. */
+ .hero-title-line--main {
+-  color: var(--gta-text, #f5eff9);
++  color: var(--auto-text, #f5eff9);
+ }
+ 
+ .hero-title-line--sub {
+@@ -1632,7 +1632,7 @@ a:hover .logo-mark {
+ }
+ 
+ .btn-secondary {
+-  border: 1.5px solid var(--gta-border-strong, #453163);
++  border: 1.5px solid var(--auto-border-strong, #453163);
+   background: color-mix(in srgb, #140f20 55%, transparent);
+   backdrop-filter: blur(6px);
+   -webkit-backdrop-filter: blur(6px);
+@@ -1831,8 +1831,8 @@ a:hover .logo-mark {
+ 
+ .group:hover .category-icon-badge,
+ .group:focus-visible .category-icon-badge {
+-  border-color: var(--gta-corner-color, #ff2f8f);
+-  box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.15), 0 0 24px -6px var(--gta-corner-color, #ff2f8f);
++  border-color: var(--auto-corner-color, #ff2f8f);
++  box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.15), 0 0 24px -6px var(--auto-corner-color, #ff2f8f);
+ }
+ 
+ /* --- Franjas de censura: la card arranca como un documento
+@@ -1854,13 +1854,13 @@ a:hover .logo-mark {
+ .category-card-redaction--top {
+   top: 0;
+   height: 24%;
+-  border-bottom: 1px solid var(--gta-corner-color, #ff2f8f);
++  border-bottom: 1px solid var(--auto-corner-color, #ff2f8f);
+ }
+ 
+ .category-card-redaction--bottom {
+   bottom: 0;
+   height: 16%;
+-  border-top: 1px solid var(--gta-corner-color, #ff2f8f);
++  border-top: 1px solid var(--auto-corner-color, #ff2f8f);
+ }
+ 
+ .group:hover .category-card-redaction--top,
+@@ -1883,7 +1883,7 @@ a:hover .logo-mark {
+   font-weight: 600;
+   letter-spacing: 0.12em;
+   text-transform: uppercase;
+-  color: var(--gta-corner-color, #ff2f8f);
++  color: var(--auto-corner-color, #ff2f8f);
+   opacity: 0.8;
+   white-space: nowrap;
+ }
+@@ -1908,7 +1908,7 @@ a:hover .logo-mark {
+   font-size: 3.5rem;
+   font-weight: 700;
+   line-height: 1;
+-  color: var(--gta-corner-color, var(--c-pink));
++  color: var(--auto-corner-color, var(--c-pink));
+   opacity: 0.07;
+   pointer-events: none;
+   z-index: 1;
+@@ -1928,7 +1928,7 @@ a:hover .logo-mark {
+   position: absolute;
+   width: 16px;
+   height: 16px;
+-  border: 0 solid var(--gta-corner-color, #ff2f8f);
++  border: 0 solid var(--auto-corner-color, #ff2f8f);
+   opacity: 0;
+   z-index: 2;
+   pointer-events: none;
+@@ -1990,7 +1990,7 @@ a:hover .logo-mark {
+ .category-card-meter-fill {
+   height: 100%;
+   border-radius: inherit;
+-  background: linear-gradient(90deg, var(--gta-accent-strong, #ff7ec4), var(--gta-accent-orange, #22d3ee));
++  background: linear-gradient(90deg, var(--auto-accent-strong, #ff7ec4), var(--auto-accent-orange, #22d3ee));
+   transition: width 900ms var(--ease-premium);
+ }
+ 
+@@ -2258,7 +2258,7 @@ a:hover .logo-mark {
+ /* --- Navegador rápido de escenas (TrailerScenes) --- */
+ .scene-nav-rail {
+   scrollbar-width: thin;
+-  scrollbar-color: var(--gta-border-strong, #453163) transparent;
++  scrollbar-color: var(--auto-border-strong, #453163) transparent;
+ }
+ 
+ .scene-nav-chip {
+@@ -2269,7 +2269,7 @@ a:hover .logo-mark {
+   gap: 0.15rem;
+   min-width: 3.25rem;
+   border-radius: 0.6rem;
+-  border: 1px solid var(--gta-border, #2a2138);
++  border: 1px solid var(--auto-border, #2a2138);
+   background: color-mix(in srgb, #140f20 70%, transparent);
+   padding: 0.4rem 0.6rem;
+   text-decoration: none;
+@@ -2279,7 +2279,7 @@ a:hover .logo-mark {
+ 
+ .scene-nav-chip:hover,
+ .scene-nav-chip:focus-visible {
+-  border-color: color-mix(in srgb, var(--c-pink) 55%, var(--gta-border-strong, #453163));
++  border-color: color-mix(in srgb, var(--c-pink) 55%, var(--auto-border-strong, #453163));
+   background: color-mix(in srgb, #1b1430 85%, transparent);
+   transform: translateY(-1px);
+ }
+@@ -2288,14 +2288,14 @@ a:hover .logo-mark {
+   font-family: var(--font-mono);
+   font-size: 9px;
+   font-weight: 600;
+-  color: color-mix(in srgb, var(--c-cyan) 70%, var(--gta-text-secondary, #b3a3c4));
++  color: color-mix(in srgb, var(--c-cyan) 70%, var(--auto-text-secondary, #b3a3c4));
+ }
+ 
+ .scene-nav-chip-time {
+   font-family: var(--font-mono);
+   font-size: 11px;
+   font-weight: 600;
+-  color: var(--gta-text, #f5eff9);
++  color: var(--auto-text, #f5eff9);
+   white-space: nowrap;
+ }
+ 
+@@ -2422,7 +2422,7 @@ a:hover .logo-mark {
+   font-family: var(--font-mono);
+   font-size: 10px;
+   font-weight: 600;
+-  color: var(--gta-text, #f5eff9);
++  color: var(--auto-text, #f5eff9);
+   background: color-mix(in srgb, #050308 62%, transparent);
+   backdrop-filter: blur(6px);
+   border: 1px solid color-mix(in srgb, var(--c-pink) 35%, transparent);
+@@ -2471,7 +2471,7 @@ a:hover .logo-mark {
+ .gallery-tile[data-featured="true"] {
+   aspect-ratio: 1 / 1;
+   border-width: 2px;
+-  border-color: color-mix(in srgb, var(--c-pink) 40%, var(--gta-border-strong, #453163));
++  border-color: color-mix(in srgb, var(--c-pink) 40%, var(--auto-border-strong, #453163));
+ }
+ 
+ @media (min-width: 640px) {
+@@ -2489,7 +2489,7 @@ a:hover .logo-mark {
+ .gallery-tile:hover,
+ .gallery-tile:focus-visible {
+   transform: translateY(-3px);
+-  border-color: color-mix(in srgb, var(--c-pink) 55%, var(--gta-border-strong, #453163));
++  border-color: color-mix(in srgb, var(--c-pink) 55%, var(--auto-border-strong, #453163));
+   box-shadow: 0 18px 36px -18px rgba(0, 0, 0, 0.75), 0 0 30px -14px rgba(255, 47, 143, 0.35);
+ }
+ 
+@@ -2526,7 +2526,7 @@ a:hover .logo-mark {
+   align-items: center;
+   justify-content: center;
+   border-radius: 9999px;
+-  color: var(--gta-text, #f5eff9);
++  color: var(--auto-text, #f5eff9);
+   background: color-mix(in srgb, #140f20 65%, transparent);
+   backdrop-filter: blur(6px);
+   opacity: 0;
+@@ -2612,7 +2612,7 @@ a:hover .logo-mark {
+     background-image: none;
+   }
+ 
+-  .gta-atmosphere {
++  .auto-atmosphere {
+     display: none !important;
+   }
+ 
+diff --git a/src/app/layout.tsx b/src/app/layout.tsx
+index bbefb6f..fb666ec 100644
+--- a/src/app/layout.tsx
++++ b/src/app/layout.tsx
+@@ -105,8 +105,8 @@ export default function RootLayout({
+         <WebGLBackground />
+         <SceneAmbientBridge />
+         {/* Grano fílmico + viñeta: capa atmosférica entre el canvas WebGL
+-            (z-0) y el contenido (z-10). Ver .gta-atmosphere en globals.css. */}
+-        <div className="gta-atmosphere" aria-hidden="true" />
++            (z-0) y el contenido (z-10). Ver .auto-atmosphere en globals.css. */}
++        <div className="auto-atmosphere" aria-hidden="true" />
+         <div className="relative z-10 flex min-h-screen flex-1 flex-col">
+           <Header />
+           <TrendingBar />
+diff --git a/src/app/page.tsx b/src/app/page.tsx
+index 27a8665..86016f8 100644
+--- a/src/app/page.tsx
++++ b/src/app/page.tsx
+@@ -406,7 +406,7 @@ export default async function HomePage() {
+                   key={type}
+                   href={`/${type}`}
+                   className="group category-card block h-full"
+-                  style={{ '--gta-corner-color': accent } as CSSProperties}
++                  style={{ '--auto-corner-color': accent } as CSSProperties}
+                 >
+                   <Card
+                     hoverable
+diff --git a/src/components/entities/EntityCard.tsx b/src/components/entities/EntityCard.tsx
+index 328e32c..284e7e3 100644
+--- a/src/components/entities/EntityCard.tsx
++++ b/src/components/entities/EntityCard.tsx
+@@ -21,13 +21,6 @@ function statBarWidth(value?: string): string {
+   return scale !== null ? `${(scale / 5) * 100}%` : '0%'
+ }
+ 
+-function formatTrailerDuration(seconds?: number): string | null {
+-  if (!seconds || seconds <= 0) return null
+-  const m = Math.floor(seconds / 60)
+-  const s = seconds % 60
+-  return `${m}:${String(s).padStart(2, '0')}`
+-}
+-
+ /** Un ícono SVG mínimo, lineal, mismo lenguaje que CategoryIcon — no hay
+  *  ícono de "reloj/calendario/link" en ese archivo (son solo por categoría),
+  *  así que estos quedan acá, locales al card, en vez de agrandar ese
+@@ -565,20 +558,6 @@ export function EntityCard({
+             </>
+           )}
+ 
+-          {isTrailer && trailer && (
+-            <div className="trailer-card-overlay">
+-              <span className="trailer-card-overlay-chip">
+-                <MiniIcon name="scenes" />
+-                {trailer.scenes.length} escenas
+-              </span>
+-              {formatTrailerDuration(trailer.durationSeconds) && (
+-                <span className="trailer-card-overlay-chip">
+-                  <MiniIcon name="clock" />
+-                  {formatTrailerDuration(trailer.durationSeconds)}
+-                </span>
+-              )}
+-            </div>
+-          )}
+         </div>
+ 
+         <CardBody className={cn('flex flex-1 flex-col gap-3', size === 'hero' ? 'p-6 sm:p-8 lg:justify-center' : 'p-6')}>
+@@ -618,28 +597,6 @@ export function EntityCard({
+             </dl>
+           )}
+ 
+-          {isTrailer && trailer && (
+-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-auto-border pt-3 text-xs text-auto-text-secondary">
+-              <span className="inline-flex items-center gap-1">
+-                <MiniIcon name="scenes" />
+-                {trailer.scenes.length} escenas
+-              </span>
+-              {formatTrailerDuration(trailer.durationSeconds) && (
+-                <span className="inline-flex items-center gap-1">
+-                  <MiniIcon name="clock" />
+-                  {formatTrailerDuration(trailer.durationSeconds)}
+-                </span>
+-              )}
+-              <span className="inline-flex items-center gap-1">
+-                <MiniIcon name="calendar" />
+-                {new Date(trailer.releaseDate).toLocaleDateString('es-ES', {
+-                  year: 'numeric',
+-                  month: 'short',
+-                  day: 'numeric',
+-                })}
+-              </span>
+-            </div>
+-          )}
+ 
+           <div className="mt-auto flex items-center justify-between gap-2 border-t border-auto-border pt-3">
+             {resolvedRelationCount > 0 ? (
+diff --git a/src/components/entities/EntityHeaderBackground.tsx b/src/components/entities/EntityHeaderBackground.tsx
+index 7ecb20a..fd5ac97 100644
+--- a/src/components/entities/EntityHeaderBackground.tsx
++++ b/src/components/entities/EntityHeaderBackground.tsx
+@@ -19,14 +19,9 @@ interface EntityHeaderBackgroundProps {
+  * (Nivel 4 del sistema de motion: "entidad extremadamente importante").
+  *
+  * Un solo lenguaje visual común (grid + glow + scanline, todos ya usados en
+- * el resto del sitio) con una variación de énfasis por categoría en vez de
+- * seis fondos completamente distintos:
+- *  - Personaje    → glow ambiental (retrato / presencia)
+- *  - Vehículo     → grid técnico + sweep de escaneo horizontal
+- *  - Ubicación    → grid amplio tipo mapa + marcas de coordenadas
+- *  - Organización → líneas diagonales tenues tipo "expediente"
+- *  - Negocio      → líneas horizontales tenues tipo "libro de registro"
+- *  - Resto        → glow genérico, sin acento adicional
++ * el resto del sitio) con una variación de énfasis por categoría:
++ *  - Vehículo → grid técnico + sweep de escaneo horizontal
++ *  - Resto (noticia/guía) → glow genérico, sin acento adicional
+  *
+  * 100% CSS/SVG, sin canvas ni JS: coste ~cero incluso repetido en varias
+  * fichas, y no compite con el contenido (opacidades muy bajas).
+@@ -46,22 +41,6 @@ export function EntityHeaderBackground({ type, evidenceLevel }: EntityHeaderBack
+             <div className="entity-bg-scan" />
+           </>
+         )}
+-
+-        {type === EntityType.LOCATION && (
+-          <>
+-            <GridPattern width={56} height={56} className="entity-bg-grid entity-bg-grid--wide" />
+-            <svg className="entity-bg-coords" viewBox="0 0 100 100" preserveAspectRatio="none">
+-              <path d="M0 8 H6 M2 4 V12" />
+-              <path d="M100 8 H94 M98 4 V12" />
+-              <path d="M0 92 H6 M2 88 V96" />
+-              <path d="M100 92 H94 M98 88 V96" />
+-            </svg>
+-          </>
+-        )}
+-
+-        {type === EntityType.FACTION && <div className="entity-bg-dossier" />}
+-
+-        {type === EntityType.BUSINESS && <div className="entity-bg-ledger" />}
+       </div>
+ 
+       {/* Sello de evidencia — no es decorativo (por eso vive fuera del div
+diff --git a/src/components/entities/EntityImage.tsx b/src/components/entities/EntityImage.tsx
+index 04924d5..e9ccf95 100644
+--- a/src/components/entities/EntityImage.tsx
++++ b/src/components/entities/EntityImage.tsx
+@@ -98,13 +98,6 @@ const QUALITY: Record<NonNullable<EntityImageProps['variant']>, number> = {
+ function CategoryGlyph({ type, size = 'default' }: { type: EntityType; size?: 'default' | 'sm' }) {
+   const cls = size === 'sm' ? 'h-4 w-4 stroke-auto-accent/50' : 'h-10 w-10 stroke-auto-accent/50'
+   switch (type) {
+-    case EntityType.CHARACTER:
+-      return (
+-        <svg viewBox="0 0 48 48" className={cls} fill="none" strokeWidth="1.5" aria-hidden="true">
+-          <circle cx="24" cy="17" r="8" />
+-          <path d="M8 40c2-9 9-14 16-14s14 5 16 14" />
+-        </svg>
+-      )
+     case EntityType.VEHICLE:
+       return (
+         <svg viewBox="0 0 48 48" className={cls} fill="none" strokeWidth="1.5" aria-hidden="true">
+@@ -114,35 +107,6 @@ function CategoryGlyph({ type, size = 'default' }: { type: EntityType; size?: 'd
+           <circle cx="34" cy="39" r="3" />
+         </svg>
+       )
+-    case EntityType.LOCATION:
+-      return (
+-        <svg viewBox="0 0 48 48" className={cls} fill="none" strokeWidth="1.5" aria-hidden="true">
+-          <path d="M24 44s14-13.5 14-24a14 14 0 1 0-28 0c0 10.5 14 24 14 24z" />
+-          <circle cx="24" cy="20" r="5" />
+-        </svg>
+-      )
+-    case EntityType.FACTION:
+-      return (
+-        <svg viewBox="0 0 48 48" className={cls} fill="none" strokeWidth="1.5" aria-hidden="true">
+-          <path d="M24 4l16 6v10c0 12-7 20-16 24C15 40 8 32 8 20V10z" />
+-          <path d="M17 24l5 5 9-10" />
+-        </svg>
+-      )
+-    case EntityType.BUSINESS:
+-      return (
+-        <svg viewBox="0 0 48 48" className={cls} fill="none" strokeWidth="1.5" aria-hidden="true">
+-          <path d="M6 18l3-10h30l3 10" />
+-          <path d="M6 18v22h36V18" />
+-          <path d="M18 40V26h12v14" />
+-        </svg>
+-      )
+-    case EntityType.TRAILER:
+-      return (
+-        <svg viewBox="0 0 48 48" className={cls} fill="none" strokeWidth="1.5" aria-hidden="true">
+-          <rect x="5" y="10" width="38" height="28" rx="3" />
+-          <path d="M20 18l11 6-11 6z" />
+-        </svg>
+-      )
+     default:
+       return (
+         <svg viewBox="0 0 48 48" className={cls} fill="none" strokeWidth="1.5" aria-hidden="true">
+@@ -153,12 +117,7 @@ function CategoryGlyph({ type, size = 'default' }: { type: EntityType; size?: 'd
+ }
+ 
+ const CATEGORY_FALLBACK_LABEL: Partial<Record<EntityType, string>> = {
+-  [EntityType.CHARACTER]: 'Sin imagen verificada',
+   [EntityType.VEHICLE]: 'Sin imagen verificada',
+-  [EntityType.LOCATION]: 'Sin imagen verificada',
+-  [EntityType.FACTION]: 'Sin imagen verificada',
+-  [EntityType.BUSINESS]: 'Sin imagen verificada',
+-  [EntityType.TRAILER]: 'Sin miniatura verificada',
+ }
+ 
+ export function EntityImage({ entity, image, variant = 'thumbnail', priority = false, className }: EntityImageProps) {
+diff --git a/src/components/entities/EntityListExplorer.tsx b/src/components/entities/EntityListExplorer.tsx
+index 9ead89b..13b0fd2 100644
+--- a/src/components/entities/EntityListExplorer.tsx
++++ b/src/components/entities/EntityListExplorer.tsx
+@@ -30,9 +30,10 @@ interface EntityListExplorerProps {
+   type: EntityType
+   entities: Entity[]
+   typeLabel: string
+-  /** slug → URL de clip (mp4), hoy solo relevante para personajes con clip
+-   *  registrado (ver getCharacterClipUrl en lib/media.ts). El caller server
+-   *  (`[entityType]/page.tsx`) resuelve este mapa una sola vez. */
++  /** slug → URL de clip (mp4) — mapa genérico opcional, hoy sin fuente de
++   *  datos activa (no hay assets `kind: 'clip'` vinculados a vehículos).
++   *  El caller server (`[entityType]/page.tsx`) resuelve este mapa una
++   *  sola vez si en el futuro se agrega esa fuente. */
+   clipUrlBySlug?: Record<string, string>
+   /** type/slug → imagen ya resuelta (ver `getEntityImageMap` en `@/lib/media.ts`).
+    *  Este componente es `'use client'`, así que no puede resolver imágenes
+diff --git a/src/components/entities/EntityMetadata.tsx b/src/components/entities/EntityMetadata.tsx
+index a7b054c..c46dc4f 100644
+--- a/src/components/entities/EntityMetadata.tsx
++++ b/src/components/entities/EntityMetadata.tsx
+@@ -122,100 +122,7 @@ export function EntityMetadata({ entity }: EntityMetadataProps) {
+     )
+   }
+ 
+-  if (entity.type === EntityType.CHARACTER) {
+-    const hasAlias = entity.alias && entity.alias.length > 0
+-    const hasAppearance = entity.appearance && Object.values(entity.appearance).some(Boolean)
+-    if (!hasAlias && !entity.faction && !entity.voice_actor && !hasAppearance) return null
+-
+-    return withCard(
+-      <div className="space-y-3">
+-        <dl className="space-y-2 border-y border-dashed border-auto-border-strong py-2.5">
+-          <Field label="Facción" value={entity.faction} />
+-          <Field label="Actor de voz" value={entity.voice_actor} />
+-        </dl>
+-        <ListField label="Alias" items={entity.alias} />
+-        {hasAppearance && (
+-          <dl className="space-y-2 border-t border-dashed border-auto-border-strong pt-3">
+-            <Field label="Edad" value={entity.appearance?.age} />
+-            <Field label="Altura" value={entity.appearance?.height} />
+-            <Field label="Contextura" value={entity.appearance?.build} />
+-            <Field label="Rasgos" value={entity.appearance?.characteristics} />
+-          </dl>
+-        )}
+-      </div>
+-    )
+-  }
+-
+-  if (entity.type === EntityType.LOCATION) {
+-    const loc = entity as Extract<Entity, { type: EntityType.LOCATION }>
+-    const hasEnvironment =
+-      loc.environment &&
+-      (loc.environment.climate ||
+-        loc.environment.fauna?.length ||
+-        loc.environment.naturalEvents?.length ||
+-        loc.environment.unconfirmedNote)
+-    if (
+-      !loc.district &&
+-      !loc.region &&
+-      !loc.points_of_interest?.length &&
+-      !loc.businesses?.length &&
+-      !hasEnvironment
+-    )
+-      return null
+-
+-    return withCard(
+-      <div className="space-y-3">
+-        <dl className="space-y-2 border-y border-dashed border-auto-border-strong py-2.5">
+-          <Field label="Distrito" value={loc.district} />
+-          <Field label="Región" value={loc.region} />
+-        </dl>
+-        <ListField label="Puntos de interés" items={loc.points_of_interest} />
+-        <ListField label="Negocios" items={loc.businesses} />
+-        {hasEnvironment && (
+-          <div className="space-y-2 border-t border-dashed border-auto-border-strong pt-3">
+-            <Field label="Clima" value={loc.environment?.climate} />
+-            <ListField label="Fauna confirmada" items={loc.environment?.fauna} />
+-            <ListField label="Eventos ambientales confirmados" items={loc.environment?.naturalEvents} />
+-            {loc.environment?.unconfirmedNote && (
+-              <p className="text-xs italic leading-relaxed text-auto-text-secondary/80">
+-                {loc.environment.unconfirmedNote}
+-              </p>
+-            )}
+-          </div>
+-        )}
+-      </div>
+-    )
+-  }
+-
+-  if (entity.type === EntityType.MISSION) {
+-    const mission = entity as Extract<Entity, { type: EntityType.MISSION }>
+-    if (
+-      !mission.giver &&
+-      !mission.reward &&
+-      !mission.mission_type &&
+-      !mission.objectives?.length
+-    )
+-      return null
+-
+-    return withCard(
+-      <div className="space-y-3">
+-        <dl className="space-y-2 border-y border-dashed border-auto-border-strong py-2.5">
+-          <Field label="Encargado por" value={mission.giver} />
+-          <Field label="Tipo" value={mission.mission_type} />
+-          <Field label="Recompensa" value={mission.reward} />
+-        </dl>
+-        <ListField label="Objetivos" items={mission.objectives} />
+-        <ListField label="Personajes involucrados" items={mission.characters_involved} />
+-      </div>
+-    )
+-  }
+-
+-  // Trailer ya tiene componentes dedicados (TrailerStats, TrailerScenes)
+-  // que muestran su estructura propia en otra parte de la ficha; una
+-  // ficha técnica genérica acá sería redundante/ruido visual.
+-  if (entity.type === EntityType.TRAILER) return null
+-
+-  // Cualquier otro tipo (hoy, los 7 GenericEntity) usa el renderizador
++  // Cualquier otro tipo (hoy, NEWS y GUIDE) usa el renderizador
+   // genérico: no requiere una rama nueva acá para mostrar sus campos.
+   return <GenericEntityMetadata entity={entity as unknown as Record<string, unknown>} />
+ }
+diff --git a/src/components/entities/EntityNav.tsx b/src/components/entities/EntityNav.tsx
+index f35bef7..9ec5308 100644
+--- a/src/components/entities/EntityNav.tsx
++++ b/src/components/entities/EntityNav.tsx
+@@ -1,5 +1,4 @@
+ import Link from 'next/link'
+-import type { Trailer } from '@/types'
+ import { EntityType } from '@/types'
+ import { getEntitiesByType } from '@/lib/entities'
+ import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
+@@ -14,18 +13,12 @@ interface EntityNavProps {
+ 
+ /**
+  * Navegación anterior/siguiente universal entre fichas del MISMO tipo de
+- * entidad (Fase 8, etapa B — generalización de la navegación que antes
+- * existía solo para trailers vía `TrailerNav`, ahora removido en favor de
+- * este componente único).
++ * entidad.
+  *
+- * Orden:
+- *  - Trailer mantiene su orden editorial ya establecido (`releaseDate`
+- *    real, cronológico de publicación) — el mismo criterio que ya usaba
+- *    `TrailerNav`, sin cambios de comportamiento para ese tipo.
+- *  - El resto de tipos usa orden alfabético por `title` (mismo criterio
+- *    con el que `getEntitiesByType`/`loadEntitiesByTypeSync` ya deja las
+- *    entidades ordenadas antes de cachearlas — se reordena acá de forma
+- *    explícita para no depender implícitamente de ese detalle interno).
++ * Orden: alfabético por `title` (mismo criterio con el que
++ * `getEntitiesByType`/`loadEntitiesByTypeSync` ya deja las entidades
++ * ordenadas antes de cachearlas — se reordena acá de forma explícita para
++ * no depender implícitamente de ese detalle interno).
+  *
+  * Sin loop artificial: en el primer/último elemento del tipo, ese lado se
+  * muestra deshabilitado (no un link, `aria-disabled`) en vez de enrollar
+@@ -36,14 +29,7 @@ interface EntityNavProps {
+ export async function EntityNav({ type, currentSlug }: EntityNavProps) {
+   const entities = await getEntitiesByType(type)
+ 
+-  const sorted =
+-    type === EntityType.TRAILER
+-      ? [...entities].sort(
+-          (a, b) =>
+-            new Date((a as Trailer).releaseDate).getTime() -
+-            new Date((b as Trailer).releaseDate).getTime()
+-        )
+-      : [...entities].sort((a, b) => a.title.localeCompare(b.title, 'es'))
++  const sorted = [...entities].sort((a, b) => a.title.localeCompare(b.title, 'es'))
+ 
+   const index = sorted.findIndex((e) => e.slug === currentSlug)
+   if (index === -1 || sorted.length < 2) return null
+diff --git a/src/components/entities/RelationsPanel.tsx b/src/components/entities/RelationsPanel.tsx
+index 30f6ea8..cf07cad 100644
+--- a/src/components/entities/RelationsPanel.tsx
++++ b/src/components/entities/RelationsPanel.tsx
+@@ -7,18 +7,9 @@ import { resolveEntityDisplayImage } from '@/lib/media'
+ import { CategoryIcon } from '@/components/ui/CategoryIcon'
+ 
+ const TYPE_LABELS: Record<EntityType, string> = {
+-  [EntityType.CHARACTER]: 'Personajes',
+   [EntityType.VEHICLE]: 'Vehículos',
+-  [EntityType.LOCATION]: 'Ubicaciones',
+-  [EntityType.MISSION]: 'Misiones',
+-  [EntityType.WEAPON]: 'Armas',
+-  [EntityType.ACTIVITY]: 'Actividades',
+-  [EntityType.FACTION]: 'Organizaciones',
+-  [EntityType.BUSINESS]: 'Negocios',
+-  [EntityType.OBJECT]: 'Objetos',
+   [EntityType.NEWS]: 'Noticias',
+   [EntityType.GUIDE]: 'Guías',
+-  [EntityType.TRAILER]: 'Trailers',
+ }
+ 
+ interface RelationsPanelProps {
+diff --git a/src/components/gallery/GalleryExplorer.tsx b/src/components/gallery/GalleryExplorer.tsx
+index 1eacbf2..7162cdd 100644
+--- a/src/components/gallery/GalleryExplorer.tsx
++++ b/src/components/gallery/GalleryExplorer.tsx
+@@ -466,33 +466,6 @@ function GalleryLightbox({
+             )}
+           </dl>
+ 
+-          {item.trailerAppearances.length > 0 && (
+-            <div className="mt-5 border-t border-auto-border pt-4">
+-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-auto-text-tertiary">
+-                Aparece en tráiler
+-              </p>
+-              <ul className="space-y-2">
+-                {item.trailerAppearances.map((app) => (
+-                  <li key={`${app.trailerSlug}-${app.sceneId}`}>
+-                    <Link
+-                      href={`/trailers/${app.trailerSlug}#${app.sceneId}`}
+-                      className="group flex items-start gap-2 rounded-lg border border-auto-border bg-auto-card/60 px-3 py-2 transition-colors hover:border-auto-accent/60"
+-                    >
+-                      <span className="scene-timestamp mt-0.5 shrink-0 font-mono text-[10px] font-semibold text-auto-dark">
+-                        {app.timestamp}
+-                      </span>
+-                      <span className="text-xs text-auto-text-secondary transition-colors group-hover:text-auto-text">
+-                        <span className="font-medium text-auto-text">{app.trailerTitle}</span>
+-                        {' — '}
+-                        {app.sceneTitle}
+-                      </span>
+-                    </Link>
+-                  </li>
+-                ))}
+-              </ul>
+-            </div>
+-          )}
+-
+           {item.tags && item.tags.length > 0 && (
+             <div className="mt-5 flex flex-wrap gap-1.5 border-t border-auto-border pt-4">
+               {item.tags.map((tag) => (
+diff --git a/src/components/home/DevelopmentTimeline.tsx b/src/components/home/DevelopmentTimeline.tsx
+index 0bcdcc8..5a81863 100644
+--- a/src/components/home/DevelopmentTimeline.tsx
++++ b/src/components/home/DevelopmentTimeline.tsx
+@@ -1,5 +1,4 @@
+ import Link from 'next/link'
+-import { EntityType } from '@/types'
+ import type { Entity } from '@/types'
+ import { Badge } from '@/components/ui/Badge'
+ import { Reveal } from '@/components/ui/Reveal'
+@@ -61,7 +60,6 @@ export function DevelopmentTimeline({ events }: { events: TimelineEvent[] }) {
+               <Badge variant="status" status={entity.status}>
+                 {STATUS_LABELS[entity.status]}
+               </Badge>
+-              {entity.type === EntityType.TRAILER && <Badge variant="tag">Tráiler</Badge>}
+             </div>
+             <p className="line-clamp-2 text-sm text-auto-text-secondary">{entity.description}</p>
+           </Link>
+diff --git a/src/components/layout/TrendingBar.tsx b/src/components/layout/TrendingBar.tsx
+index 60554dd..3ecd8e1 100644
+--- a/src/components/layout/TrendingBar.tsx
++++ b/src/components/layout/TrendingBar.tsx
+@@ -7,13 +7,12 @@ import { getAllEntities, getEntityPath } from '@/lib/entities'
+  * que el "trending: X · Y · Z" del mockup original, pero alimentada por
+  * datos reales (`getFeaturedEntities`) en vez de texto hardcodeado.
+  *
+- * Se restringe a tipos "con gancho" (personajes, vehículos, ubicaciones,
+- * facciones) a propósito: la home ya tiene una sección "Destacados" más
+- * abajo que usa el mismo `getFeaturedEntities`, así que traer los mismos
+- * 6 resultados acá los duplicaría arriba y abajo de la misma página.
+- * Filtrando por tipo se obtiene una selección distinta y además más
+- * parecida al tono de un ticker de "trending" (nombres propios, no
+- * guías o noticias).
++ * Se restringe al tipo "con gancho" (vehículos) a propósito: la home ya
++ * tiene una sección "Destacados" más abajo que usa el mismo
++ * `getFeaturedEntities`, así que traer los mismos 6 resultados acá los
++ * duplicaría arriba y abajo de la misma página. Filtrando por tipo se
++ * obtiene una selección distinta y además más parecida al tono de un
++ * ticker de "trending" (nombres propios, no guías o noticias).
+  *
+  * Server component puro: no necesita estado ni interactividad, así que
+  * no suma JS al bundle del cliente. Se corta a `LIMIT` entradas y se
+@@ -21,21 +20,15 @@ import { getAllEntities, getEntityPath } from '@/lib/entities'
+  * empujar el contenido hacia abajo en pantallas chicas.
+  */
+ const LIMIT = 6
+-const TRENDING_TYPES = new Set<EntityType>([
+-  EntityType.CHARACTER,
+-  EntityType.VEHICLE,
+-  EntityType.LOCATION,
+-  EntityType.FACTION,
+-])
++const TRENDING_TYPES = new Set<EntityType>([EntityType.VEHICLE])
+ 
+ export async function TrendingBar() {
+-  // Se filtra por tipo ANTES de cortar a LIMIT (no al revés): guías,
+-  // noticias y misiones son casi siempre lo más "reciente" del archivo
+-  // (fechas de lanzamiento, actualizaciones editoriales), así que un
+-  // top-N genérico por fecha las gana casi todas y deja afuera a los
+-  // personajes/vehículos/ubicaciones que sí queremos acá. Se recorre
+-  // todo el universo una vez — barato, `getAllEntities` ya está cacheado
+-  // en memoria por request.
++  // Se filtra por tipo ANTES de cortar a LIMIT (no al revés): guías y
++  // noticias son casi siempre lo más "reciente" del archivo (fechas de
++  // actualización editorial), así que un top-N genérico por fecha las
++  // gana casi todas y deja afuera a los vehículos que sí queremos acá.
++  // Se recorre todo el universo una vez — barato, `getAllEntities` ya
++  // está cacheado en memoria por request.
+   const all = await getAllEntities()
+   const trending = all
+     .filter((e) => e.featured && TRENDING_TYPES.has(e.type))
+diff --git a/src/components/ui/CategoryIcon.tsx b/src/components/ui/CategoryIcon.tsx
+index e58fe78..57339a8 100644
+--- a/src/components/ui/CategoryIcon.tsx
++++ b/src/components/ui/CategoryIcon.tsx
+@@ -13,12 +13,6 @@ type CategoryIconProps = {
+  * grosor de línea, mismos remates, mismo lenguaje visual "Leonida Nights".
+  */
+ const PATHS: Partial<Record<EntityType, ReactNode>> = {
+-  [EntityType.CHARACTER]: (
+-    <>
+-      <circle cx="12" cy="8" r="3.5" />
+-      <path d="M4.5 20c1.4-3.8 4.3-5.8 7.5-5.8s6.1 2 7.5 5.8" />
+-    </>
+-  ),
+   [EntityType.VEHICLE]: (
+     <>
+       <path d="M4 16V12.5L6 7.5C6.3 6.7 7 6.2 7.9 6.2h8.2c.9 0 1.6.5 1.9 1.3l2 5v4" />
+@@ -27,25 +21,6 @@ const PATHS: Partial<Record<EntityType, ReactNode>> = {
+       <circle cx="17" cy="16" r="1.4" />
+     </>
+   ),
+-  [EntityType.LOCATION]: (
+-    <>
+-      <path d="M12 21c4-4.2 6.5-7.9 6.5-11A6.5 6.5 0 0 0 5.5 10c0 3.1 2.5 6.8 6.5 11Z" />
+-      <circle cx="12" cy="10" r="2.2" />
+-    </>
+-  ),
+-  [EntityType.TRAILER]: (
+-    <>
+-      <rect x="3.5" y="5.5" width="17" height="13" rx="1.6" />
+-      <path d="M9.7 9.3v5.4l4.6-2.7-4.6-2.7Z" />
+-    </>
+-  ),
+-  [EntityType.MISSION]: (
+-    <>
+-      <circle cx="12" cy="12" r="7.5" />
+-      <circle cx="12" cy="12" r="3.2" />
+-      <circle cx="12" cy="12" r="0.6" fill="currentColor" stroke="none" />
+-    </>
+-  ),
+   [EntityType.NEWS]: (
+     <>
+       <rect x="4" y="4.5" width="16" height="15" rx="1.4" />
+@@ -58,37 +33,6 @@ const PATHS: Partial<Record<EntityType, ReactNode>> = {
+       <path d="M20 5.2c-1.6-.9-3.6-1.2-5.5-.7-1 .3-1.9.8-2.5 1.5v13c.6-.7 1.5-1.2 2.5-1.5 1.9-.5 3.9-.2 5.5.7V5.2Z" />
+     </>
+   ),
+-  [EntityType.WEAPON]: (
+-    <>
+-      <path d="M3.5 14.5 13 5c.6-.6 1.6-.6 2.2 0l3.3 3.3c.6.6.6 1.6 0 2.2L9 20l-3.2-1.3L3.5 14.5Z" />
+-      <path d="M12.5 7.5l4 4M9.5 18.5l-4-4" />
+-    </>
+-  ),
+-  [EntityType.ACTIVITY]: (
+-    <>
+-      <circle cx="12" cy="12" r="8.5" />
+-      <path d="M12 7v5l3.2 2" />
+-    </>
+-  ),
+-  [EntityType.FACTION]: (
+-    <>
+-      <path d="M12 3.5 19 6.5v5.2c0 5-3 8.7-7 9.8-4-1.1-7-4.8-7-9.8V6.5L12 3.5Z" />
+-      <path d="M8.7 12.3l2.3 2.3 4.3-4.6" />
+-    </>
+-  ),
+-  [EntityType.BUSINESS]: (
+-    <>
+-      <path d="M4 9.5 5.6 4.5h12.8L20 9.5" />
+-      <path d="M4.5 9.5v9.8h15V9.5" />
+-      <path d="M9.5 19.3v-5.6h5v5.6" />
+-    </>
+-  ),
+-  [EntityType.OBJECT]: (
+-    <>
+-      <rect x="5" y="5" width="14" height="14" rx="1.6" />
+-      <path d="M5 9.5h14M9.5 5v14" />
+-    </>
+-  ),
+ }
+ 
+ export function CategoryIcon({ type, className }: CategoryIconProps) {
+diff --git a/src/components/webgl/EntityAtmosphereBridge.tsx b/src/components/webgl/EntityAtmosphereBridge.tsx
+index 78a9ac0..c509cfb 100644
+--- a/src/components/webgl/EntityAtmosphereBridge.tsx
++++ b/src/components/webgl/EntityAtmosphereBridge.tsx
+@@ -16,28 +16,19 @@ import { useEntityAtmosphere } from '@/lib/hooks/useEntityAtmosphere'
+  * que este componente nunca duplica esa responsabilidad.
+  *
+  * --------------------------------------------------------------------------
+- * Mejora real (no cosmética): 7 de 12 categorías vivían en un ambiente mudo
++ * Post-pivote: 1 de 3 categorías tiene atmósfera propia en las tablas
+  * --------------------------------------------------------------------------
+- * El sitio tiene 12 `EntityType` (ver `@/types`), pero `engine.ts` solo sabe
+- * diferenciar atmósfera para 5 en sus tablas `CATEGORY_WARMTH` /
+- * `CATEGORY_PACE` / `CATEGORY_FRAME`: personajes, organizaciones, negocios,
+- * vehículos, ubicaciones. Para las 7 restantes (armas, misiones,
+- * actividades, objetos, noticias, guías, trailers) esas tablas no tienen
+- * entrada, así que cada lookup caía en su fallback neutro (`?? 0` / `?? 1`
+- * / `?? 0`) — visualmente indistinguibles entre sí y de "sin ficha
+- * montada". El motor sabe expresar esa diferencia (por eso existen las
+- * tablas); lo que faltaba era decirle a cuál de las 5 categorías conocidas
+- * se parece cada una en espíritu — sin tocar `engine.ts`.
++ * El sitio ahora tiene 3 `EntityType` (ver `@/types`): vehículos, noticias,
++ * guías. Pero `engine.ts` (tablas `CATEGORY_WARMTH` / `CATEGORY_PACE` /
++ * `CATEGORY_FRAME` en `config/scene.ts`) solo tiene entrada para
++ * `vehiculos` — quedó así del pivote de personajes/organizaciones/etc.
++ * Sin alias, noticias y guías caerían en el fallback neutro (`?? 0` /
++ * `?? 1`), visualmente indistinguibles entre sí y de "sin ficha montada".
+  *
+- * `CATEGORY_ALIAS` hace exactamente eso, puertas adentro de este archivo:
+- * antes de publicar la atmósfera, cada categoría sin tabla propia se
+- * traduce a la categoría reconocida más cercana en tono narrativo:
+- *
+- *  - armas, objetos       → vehículos   (catálogo técnico, frío, preciso)
+- *  - misiones, noticias   → organizaciones (voz institucional/editorial)
+- *  - actividades, trailers→ personajes  (contenido vivido/cinematográfico,
+- *                                        cálido y centrado en personas)
+- *  - guías                → ubicaciones (orientación espacial, contemplativa)
++ * `CATEGORY_ALIAS` resuelve esto: como el catálogo es 100% de vehículos
++ * (noticias y guías también son, en espíritu, contenido "de catálogo
++ * técnico" sobre autos), las tres categorías comparten hoy la misma
++ * atmósfera de vehículos en vez de caer en el fallback neutro.
+  *
+  * Es un `Record<EntityType, EntityType>` exhaustivo a propósito: si el
+  * proyecto agrega un `EntityType` nuevo el día de mañana, TypeScript deja
+@@ -88,26 +79,17 @@ export interface EntityAtmosphereBridgeProps {
+ 
+ /**
+  * Traduce cada `EntityType` a la categoría que `engine.ts` sabe diferenciar
+- * (`CATEGORY_WARMTH`/`CATEGORY_PACE`/`CATEGORY_FRAME`). Las 5 reconocidas se
+- * mapean a sí mismas; las otras 7 heredan la atmósfera de la más afín en
+- * tono. Ver documentación del archivo para el razonamiento completo.
++ * (`CATEGORY_WARMTH`/`CATEGORY_PACE`/`CATEGORY_FRAME` en `config/scene.ts`,
++ * que hoy solo tienen entrada para `vehiculos`). Las tres categorías del
++ * sitio se mapean a vehículos — ver documentación del archivo.
+  *
+  * `Record<EntityType, EntityType>` exhaustivo: agregar un `EntityType` sin
+  * agregar su entrada acá rompe el `tsc` de este archivo a propósito.
+  */
+ const CATEGORY_ALIAS: Record<EntityType, EntityType> = {
+-  [EntityType.CHARACTER]: EntityType.CHARACTER,
+-  [EntityType.FACTION]: EntityType.FACTION,
+-  [EntityType.BUSINESS]: EntityType.BUSINESS,
+   [EntityType.VEHICLE]: EntityType.VEHICLE,
+-  [EntityType.LOCATION]: EntityType.LOCATION,
+-  [EntityType.WEAPON]: EntityType.VEHICLE,
+-  [EntityType.OBJECT]: EntityType.VEHICLE,
+-  [EntityType.MISSION]: EntityType.FACTION,
+-  [EntityType.NEWS]: EntityType.FACTION,
+-  [EntityType.ACTIVITY]: EntityType.CHARACTER,
+-  [EntityType.TRAILER]: EntityType.CHARACTER,
+-  [EntityType.GUIDE]: EntityType.LOCATION,
++  [EntityType.NEWS]: EntityType.VEHICLE,
++  [EntityType.GUIDE]: EntityType.VEHICLE,
+ }
+ 
+ function EntityAtmosphereBridgeComponent({ category, status, featured }: EntityAtmosphereBridgeProps) {
+diff --git a/src/lib/gallery.ts b/src/lib/gallery.ts
+index db25305..0e60333 100644
+--- a/src/lib/gallery.ts
++++ b/src/lib/gallery.ts
+@@ -1,4 +1,3 @@
+-import type { Trailer } from '@/types'
+ import { EntityType } from '@/types'
+ import { getEntitiesByType } from './entities'
+ import { resolveEntityImage, ENTITY_IMAGE_CATEGORIES } from './images'
+@@ -37,14 +36,6 @@ const AI_ILLUSTRATION_KEYS = new Set<string>()
+  * sin tocar este archivo).
+  */
+ 
+-export interface GalleryTrailerAppearance {
+-  trailerSlug: string
+-  trailerTitle: string
+-  sceneId: string
+-  sceneTitle: string
+-  timestamp: string
+-}
+-
+ export interface GalleryItem {
+   id: string
+   /** 'image' (default, retrocompatible) o 'video' — un asset de video embebido (hoy, YouTube). */
+@@ -63,7 +54,6 @@ export interface GalleryItem {
+   sourceNote?: string
+   tags?: string[]
+   featured?: boolean
+-  trailerAppearances: GalleryTrailerAppearance[]
+   /** Solo si kind === 'video': ID de embed de YouTube, para reproducir en el lightbox. */
+   videoEmbedId?: string
+   /** Solo si kind === 'video' directo: URL resuelta para el reproductor nativo. */
+@@ -82,42 +72,10 @@ export interface GalleryItem {
+  * propósito — si en el futuro se suma un asset de portada propio, entra
+  * acá como una entrada nueva.
+  */
+-const KEY_ART: Array<Omit<GalleryItem, 'categorySlug' | 'categoryLabel' | 'trailerAppearances'>> = []
++const KEY_ART: Array<Omit<GalleryItem, 'categorySlug' | 'categoryLabel'>> = []
+ 
+ const CATEGORY_LABELS: Partial<Record<EntityType, string>> = {
+   [EntityType.VEHICLE]: 'Vehículos',
+-  [EntityType.LOCATION]: 'Ubicaciones',
+-  [EntityType.BUSINESS]: 'Negocios',
+-}
+-
+-/**
+- * Indexa qué entidades aparecen en qué escenas de trailer, reutilizando
+- * las mismas `relations` que ya conecta `TrailerScenes.tsx`. Esto es lo
+- * que habilita, en la galería, mostrar "aparece en Trailer 1, escena 03"
+- * junto a una foto de personaje/ubicación sin duplicar el modelo de datos.
+- */
+-async function buildTrailerAppearanceIndex(): Promise<Map<string, GalleryTrailerAppearance[]>> {
+-  const index = new Map<string, GalleryTrailerAppearance[]>()
+-  const trailers = (await getEntitiesByType(EntityType.TRAILER)) as Trailer[]
+-
+-  for (const trailer of trailers) {
+-    for (const scene of trailer.scenes) {
+-      for (const rel of scene.relations || []) {
+-        const key = `${rel.targetType}/${rel.targetSlug}`
+-        const appearance: GalleryTrailerAppearance = {
+-          trailerSlug: trailer.slug,
+-          trailerTitle: trailer.title,
+-          sceneId: scene.id,
+-          sceneTitle: scene.title,
+-          timestamp: scene.timestamp,
+-        }
+-        if (!index.has(key)) index.set(key, [])
+-        index.get(key)!.push(appearance)
+-      }
+-    }
+-  }
+-
+-  return index
+ }
+ 
+ /**
+@@ -126,7 +84,6 @@ async function buildTrailerAppearanceIndex(): Promise<Map<string, GalleryTrailer
+  * alfabéticamente dentro de cada categoría.
+  */
+ export async function getGalleryItems(): Promise<GalleryItem[]> {
+-  const trailerIndex = await buildTrailerAppearanceIndex()
+   const items: GalleryItem[] = []
+ 
+   for (const type of ENTITY_IMAGE_CATEGORIES) {
+@@ -136,7 +93,6 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
+       if (!resolved) continue
+ 
+       const key = `${entity.type}/${entity.slug}`
+-      const trailerAppearances = trailerIndex.get(key) || []
+       const isAiIllustration = AI_ILLUSTRATION_KEYS.has(key)
+ 
+       items.push({
+@@ -159,7 +115,6 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
+         sourceNote: entity.evidence?.note,
+         tags: entity.tags,
+         featured: entity.featured,
+-        trailerAppearances,
+       })
+     }
+   }
+@@ -169,24 +124,18 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
+       ...art,
+       categorySlug: 'key-art',
+       categoryLabel: 'Key Art',
+-      trailerAppearances: [],
+     })
+   }
+ 
+-  // Videos de tráiler del Media Registry: se listan en la galería como
++  // Videos editoriales del Media Registry: se listan en la galería como
+   // tarjetas 'video' (miniatura de YouTube, reproducción en el lightbox),
+   // en vez de necesitar una categoría/pipeline aparte de "videos".
+-  const trailerEntities = (await getEntitiesByType(EntityType.TRAILER)) as Trailer[]
+-  const trailerBySlug = new Map(trailerEntities.map((t) => [t.slug, t]))
+-
+   for (const asset of getMediaAssets()) {
+-    if (!['trailer', 'video', 'clip', 'artwork'].includes(asset.kind)) continue
++    if (!['video', 'clip', 'artwork'].includes(asset.kind)) continue
+     const rendered = resolveMediaRender(asset)
+     if (rendered.renderAs !== 'youtube' && rendered.renderAs !== 'video') continue
+ 
+-    const trailerSlug = asset.relations?.trailer?.trailerSlug
+     const entityRelation = asset.relations?.entities?.[0]
+-    const trailerEntity = trailerSlug ? trailerBySlug.get(trailerSlug) : undefined
+ 
+     items.push({
+       id: asset.id,
+@@ -194,18 +143,15 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
+       src: rendered.thumbnailSrc,
+       alt: rendered.title,
+       title: rendered.title,
+-      description: trailerEntity?.description || asset.description || '',
+-      categorySlug: asset.kind === 'clip' ? 'clips' : asset.kind === 'artwork' ? 'key-art' : 'trailers',
+-      categoryLabel: asset.kind === 'clip' ? 'Clips' : asset.kind === 'artwork' ? 'Key Art' : 'Trailers',
+-      status: trailerEntity?.status,
+-      href: trailerSlug ? `/trailers/${trailerSlug}` : entityRelation ? `/${entityRelation.entityType}/${entityRelation.entitySlug}` : undefined,
+-      entityType: trailerSlug ? EntityType.TRAILER : entityRelation?.entityType,
+-      entitySlug: trailerSlug || entityRelation?.entitySlug,
++      description: asset.description || '',
++      categorySlug: asset.kind === 'clip' ? 'clips' : asset.kind === 'artwork' ? 'key-art' : 'videos',
++      categoryLabel: asset.kind === 'clip' ? 'Clips' : asset.kind === 'artwork' ? 'Key Art' : 'Videos',
++      href: entityRelation ? `/${entityRelation.entityType}/${entityRelation.entitySlug}` : undefined,
++      entityType: entityRelation?.entityType,
++      entitySlug: entityRelation?.entitySlug,
+       credit: asset.credit || asset.source.provider,
+       sourceNote: asset.source.hotlinkNote,
+       tags: asset.tags,
+-      featured: trailerEntity?.featured,
+-      trailerAppearances: [],
+       videoEmbedId: rendered.embedId,
+       videoSrc: rendered.videoSrc,
+     })
+diff --git a/src/lib/media.ts b/src/lib/media.ts
+index 73ce7ae..0fdebaf 100644
+--- a/src/lib/media.ts
++++ b/src/lib/media.ts
+@@ -1,7 +1,6 @@
+ import fs from 'fs'
+ import path from 'path'
+-import type { Entity, Trailer } from '@/types'
+-import { EntityType } from '@/types'
++import type { Entity } from '@/types'
+ import type { MediaAsset, RenderableMedia } from '@/types/media'
+ import { safeParseMediaAsset } from '@/types/schemas'
+ import type { ResolvedDisplayImage, ResolvedEntityImage } from './images'
+@@ -11,10 +10,8 @@ import { resolveEntityImage } from './images'
+ /**
+  * Registro editorial de media.
+  *
+- * La fuente de verdad son los JSON de `src/content/media/`. Los trailers
+- * antiguos siguen pudiendo derivarse desde `officialUrl` como fallback: así
+- * una entidad trailer nueva no pierde reproductor antes de tener su ficha de
+- * media editorial. Los clips y la portada ya no viven hardcodeados aquí.
++ * La fuente de verdad son los JSON de `src/content/media/`. Los clips y la
++ * portada ya no viven hardcodeados aquí.
+  */
+ const MEDIA_DIR = path.join(process.cwd(), 'src', 'content', 'media')
+ const CACHE_ENABLED = process.env.NODE_ENV === 'production'
+@@ -66,68 +63,19 @@ export function clearMediaCache(): void {
+   mediaCache = null
+ }
+ 
+-function fallbackTrailerAsset(trailer: Trailer): MediaAsset | null {
+-  const url = trailer.officialUrl
+-  if (!url || !isDirectVideoUrl(url)) return null
+-  return {
+-    id: `trailer-${trailer.slug}`,
+-    kind: 'trailer',
+-    title: trailer.title,
+-    description: trailer.description,
+-    status: trailer.status === 'confirmado' ? 'verified' : 'unverified',
+-    credit: 'Rockstar Games — material oficial',
+-    source: {
+-      provider: 'Vercel Blob Storage',
+-      type: 'vercel-blob',
+-      originalUrl: url,
+-      hotlinkAllowed: true,
+-      hotlinkNote: 'Archivo de vídeo público ya usado por la ficha oficial del tráiler.',
+-      retrievedAt: trailer.updatedAt,
+-    },
+-    relations: { trailer: { trailerSlug: trailer.slug } },
+-    createdAt: trailer.createdAt,
+-    updatedAt: trailer.updatedAt,
+-  }
+-}
+-
+-/** Todos los assets editoriales, más fallback compatible para trailers sin ficha media. */
++/** Todos los assets editoriales. */
+ export function getMediaAssets(): MediaAsset[] {
+-  const editorial = readEditorialMedia()
+-  const trailerSlugs = new Set(
+-    editorial.flatMap((asset) => (asset.relations?.trailer ? [asset.relations.trailer.trailerSlug] : []))
+-  )
+-  const fallback = (getEntitiesByTypeSync(EntityType.TRAILER) as Trailer[])
+-    .filter((trailer) => !trailerSlugs.has(trailer.slug))
+-    .map(fallbackTrailerAsset)
+-    .filter((asset): asset is MediaAsset => asset !== null)
+-
+-  return [...editorial, ...fallback]
+-}
+-
+-export function getMediaForTrailer(trailerSlug: string): MediaAsset | null {
+-  return getMediaAssets().find((asset) => asset.relations?.trailer?.trailerSlug === trailerSlug) || null
++  return readEditorialMedia()
+ }
+ 
+ export function getCoverArtVideoAsset(): MediaAsset | null {
+   return getMediaAssets().find((asset) => asset.tags?.includes('cover-art')) || null
+ }
+ 
+-export function resolveTrailerThumbnail(trailer: Trailer): { src: string; alt: string } | null {
+-  const asset = getMediaForTrailer(trailer.slug)
+-  const rendered = asset ? resolveMediaRender(asset) : null
+-  if (!rendered || rendered.renderAs !== 'youtube' || !rendered.thumbnailSrc) return null
+-  return { src: rendered.thumbnailSrc, alt: trailer.title }
+-}
+-
+ /** Server-only: resuelve archivos locales antes de serializar props a clientes. */
+ export function resolveEntityDisplayImage(entity: Entity): ResolvedDisplayImage | null {
+   const local = resolveEntityImage(entity)
+   if (local) return { src: local.src, alt: local.alt, remote: false }
+-
+-  if (entity.type === EntityType.TRAILER) {
+-    const remote = resolveTrailerThumbnail(entity as Trailer)
+-    if (remote) return { ...remote, remote: true }
+-  }
+   return null
+ }
+ 
+@@ -161,26 +109,11 @@ function hasEntityRelation(asset: MediaAsset, entity: Entity): boolean {
+   )
+ }
+ 
+-function trailerFeaturesEntity(asset: MediaAsset, entity: Entity): boolean {
+-  const trailerSlug = asset.relations?.trailer?.trailerSlug
+-  if (!trailerSlug) return false
+-  const trailer = (getEntitiesByTypeSync(EntityType.TRAILER) as Trailer[]).find((item) => item.slug === trailerSlug)
+-  if (!trailer) return false
+-
+-  const sceneId = asset.relations?.trailer?.sceneId
+-  const scenes = sceneId ? trailer.scenes.filter((scene) => scene.id === sceneId) : trailer.scenes
+-  return scenes.some((scene) =>
+-    (scene.relations || []).some(
+-      (relation) => relation.targetType === entity.type && relation.targetSlug === entity.slug
+-    )
+-  )
+-}
+-
+-/** Assets editoriales vinculados de forma explícita o por escenas de trailer. */
++/** Assets editoriales vinculados explícitamente a la entidad. */
+ export function getEditorialMediaForEntity(entity: Entity, limit = 12): MediaAsset[] {
+   const seen = new Set<string>()
+   return getMediaAssets()
+-    .filter((asset) => hasEntityRelation(asset, entity) || trailerFeaturesEntity(asset, entity))
++    .filter((asset) => hasEntityRelation(asset, entity))
+     .filter((asset) => (seen.has(asset.id) ? false : (seen.add(asset.id), true)))
+     .slice(0, limit)
+ }
+@@ -226,13 +159,3 @@ export function getMediaForEntity(entity: Entity, limit = 12): MediaAsset[] {
+   }
+   return items.slice(0, limit)
+ }
+-
+-export function getCharacterClipUrl(entitySlug: string): string | null {
+-  const clip = getMediaAssets().find(
+-    (asset) => asset.kind === 'clip' && (asset.relations?.entities || []).some(
+-      (relation) => relation.entityType === EntityType.CHARACTER && relation.entitySlug === entitySlug
+-    )
+-  )
+-  const rendered = clip ? resolveMediaRender(clip) : null
+-  return rendered?.renderAs === 'video' ? rendered.videoSrc || null : null
+-}
+diff --git a/src/lib/seo.ts b/src/lib/seo.ts
+index 192c129..1c4d0d3 100644
+--- a/src/lib/seo.ts
++++ b/src/lib/seo.ts
+@@ -14,14 +14,9 @@ const SITE_DESCRIPTION =
+  * a 'Thing' (ver `SCHEMA_TYPE_BY_ENTITY_TYPE[type] || 'Thing'` abajo).
+  */
+ const SCHEMA_TYPE_BY_ENTITY_TYPE: Partial<Record<EntityType, string>> = {
+-  [EntityType.CHARACTER]: 'Person',
+   [EntityType.VEHICLE]: 'Vehicle',
+-  [EntityType.LOCATION]: 'Place',
+-  [EntityType.FACTION]: 'Organization',
+-  [EntityType.BUSINESS]: 'Organization',
+   [EntityType.NEWS]: 'NewsArticle',
+   [EntityType.GUIDE]: 'Article',
+-  [EntityType.TRAILER]: 'VideoObject',
+ }
+ 
+ /**
+@@ -100,8 +95,11 @@ export function generateEntityMetadata(entity: Entity, ogImage?: EntityOgImage |
+ const LIST_DESCRIPTION_BY_TYPE: Partial<Record<EntityType, (count: number, label: string) => string>> = {
+   [EntityType.VEHICLE]: (count) =>
+     `${count} fichas técnicas de autos y motos, catalogadas por fabricante, clase y rendimiento, con fuente por cada dato.`,
+-  [EntityType.LOCATION]: (count) => `${count} concesionarias y puntos de interés documentados.`,
+-  [EntityType.BUSINESS]: (count) => `${count} negocios del rubro automotor documentados.`,
++  // LOCATION/BUSINESS quedan comentadas (no corresponden a ningún
++  // EntityType real hoy) para cuando se implemente el mapa de
++  // concesionarias — ver sección 4 de PENDIENTES_PIVOTE.txt:
++  // [EntityType.LOCATION]: (count) => `${count} concesionarias y puntos de interés documentados.`,
++  // [EntityType.BUSINESS]: (count) => `${count} negocios del rubro automotor documentados.`,
+ }
+ 
+ export function generateListMetadata(type: EntityType, count: number): Metadata {

@@ -57,7 +57,7 @@ describe('computeStatusCounts', () => {
 
 describe('getRelationCount', () => {
   it('prioriza el mapa resuelto en servidor sobre entity.relations', () => {
-    const entity = makeVehicle({ slug: 'a', title: 'A', relations: [{ targetType: EntityType.LOCATION, targetSlug: 'x', relation: 'aparece-en' }] })
+    const entity = makeVehicle({ slug: 'a', title: 'A', relations: [{ targetType: EntityType.NEWS, targetSlug: 'x', relation: 'aparece-en' }] })
     expect(getRelationCount(entity, { a: 7 })).toBe(7)
   })
 
@@ -66,8 +66,8 @@ describe('getRelationCount', () => {
       slug: 'a',
       title: 'A',
       relations: [
-        { targetType: EntityType.LOCATION, targetSlug: 'x', relation: 'aparece-en' },
-        { targetType: EntityType.CHARACTER, targetSlug: 'y', relation: 'conducido-por' },
+        { targetType: EntityType.NEWS, targetSlug: 'x', relation: 'aparece-en' },
+        { targetType: EntityType.GUIDE, targetSlug: 'y', relation: 'conducido-por' },
       ],
     })
     expect(getRelationCount(entity)).toBe(2)
@@ -115,7 +115,7 @@ describe('computeTagOptions', () => {
 describe('computeClassOptions', () => {
   it('devuelve vacío para tipos que no son Vehículo', () => {
     const entities: Entity[] = [makeVehicle({ slug: 'a', title: 'A', class: 'sedan' })]
-    expect(computeClassOptions(entities, EntityType.CHARACTER)).toEqual([])
+    expect(computeClassOptions(entities, EntityType.NEWS)).toEqual([])
   })
 
   it('agrupa por clase solo si aparece 2+ veces, para EntityType.VEHICLE', () => {
@@ -134,7 +134,7 @@ describe('computeSortOptions', () => {
   })
 
   it('agrega "connections" solo si alguna entidad tiene conexiones', () => {
-    const withConnections = [makeVehicle({ slug: 'a', title: 'A', relations: [{ targetType: EntityType.LOCATION, targetSlug: 'x', relation: 'r' }] })]
+    const withConnections = [makeVehicle({ slug: 'a', title: 'A', relations: [{ targetType: EntityType.NEWS, targetSlug: 'x', relation: 'r' }] })]
     const withoutConnections = [makeVehicle({ slug: 'a', title: 'A', relations: [] })]
     expect(computeSortOptions(withConnections, undefined, false)).toContain('connections')
     expect(computeSortOptions(withoutConnections, undefined, false)).not.toContain('connections')

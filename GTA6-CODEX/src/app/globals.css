@@ -1831,8 +1831,13 @@ a:hover .logo-mark {
 
 .group:hover .category-icon-badge,
 .group:focus-visible .category-icon-badge {
+<<<<<<< HEAD
   border-color: var(--auto-corner-color, #ff2f8f);
   box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.15), 0 0 24px -6px var(--auto-corner-color, #ff2f8f);
+=======
+  border-color: var(--auto-accent, #ff2f8f);
+  box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.15), 0 0 24px -6px var(--auto-accent, #ff2f8f);
+>>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
 }
 
 /* --- Franjas de censura: la card arranca como un documento
@@ -1854,13 +1859,21 @@ a:hover .logo-mark {
 .category-card-redaction--top {
   top: 0;
   height: 24%;
+<<<<<<< HEAD
   border-bottom: 1px solid var(--auto-corner-color, #ff2f8f);
+=======
+  border-bottom: 1px solid var(--auto-accent, #ff2f8f);
+>>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
 }
 
 .category-card-redaction--bottom {
   bottom: 0;
   height: 16%;
+<<<<<<< HEAD
   border-top: 1px solid var(--auto-corner-color, #ff2f8f);
+=======
+  border-top: 1px solid var(--auto-accent, #ff2f8f);
+>>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
 }
 
 .group:hover .category-card-redaction--top,
@@ -1883,7 +1896,11 @@ a:hover .logo-mark {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+<<<<<<< HEAD
   color: var(--auto-corner-color, #ff2f8f);
+=======
+  color: var(--auto-accent, #ff2f8f);
+>>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
   opacity: 0.8;
   white-space: nowrap;
 }
@@ -1908,7 +1925,11 @@ a:hover .logo-mark {
   font-size: 3.5rem;
   font-weight: 700;
   line-height: 1;
+<<<<<<< HEAD
   color: var(--auto-corner-color, var(--c-pink));
+=======
+  color: var(--auto-accent, var(--c-pink));
+>>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
   opacity: 0.07;
   pointer-events: none;
   z-index: 1;
@@ -1928,7 +1949,11 @@ a:hover .logo-mark {
   position: absolute;
   width: 16px;
   height: 16px;
+<<<<<<< HEAD
   border: 0 solid var(--auto-corner-color, #ff2f8f);
+=======
+  border: 0 solid var(--auto-accent, #ff2f8f);
+>>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
   opacity: 0;
   z-index: 2;
   pointer-events: none;

@@ -1,57 +1,136 @@
-{
-  "slug": "toyota-corolla-2024",
-  "type": "vehiculos",
-  "title": "Toyota Corolla 2024",
-  "description": "Sedán compacto de Toyota, generación XII, motor 2.0L de 4 cilindros.",
-  "status": "confirmado",
-  "tags": [
-    "sedan",
-    "toyota",
-    "combustion"
-  ],
-  "featured": false,
-  "createdAt": "2026-08-23T18:01:32.194Z",
-  "updatedAt": "2026-08-24T01:16:06.577Z",
-  "manufacturer": "Toyota",
-  "class": "Sedán",
-  "customizable": false,
-  "performance": {
-    "speed": "Media (180 km/h)",
-    "acceleration": "Media (0-100 km/h en 10.1s)"
-  },
-  "power": "169 hp",
-  "price": "USD 24.000",
-  "consumo": "6.9 l/100km combinado (34 mpg EPA combinado, versión XSE 2.0L con CVT)",
-  "dimensiones": "4.630 mm largo x 1.781 mm ancho x 1.435 mm alto, distancia entre ejes 2.700 mm (versión sedán XSE)",
-  "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.toyota.com/corolla/",
-    "secondarySource": "https://www.truedelta.com/Toyota-Corolla/specs-266-2024&r=3",
-    "note": "También existe la variante Corolla Hybrid (motor 1.8L), con consumo muy inferior (hasta 4.7 l/100km combinado según EPA).",
-    "limitations": [
-      "Cifras correspondientes a la versión a gasolina 2.0L; la versión Hybrid tiene consumo y dimensiones ligeramente distintas"
-    ]
-  },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
-  "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
-  ],
-  "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
-  ],
-  "consumoEtiqueta": "C",
-  "neumaticos": "225/50R17"
+﻿{
+    "slug":  "toyota-corolla-2024",
+    "type":  "vehiculos",
+    "title":  "Toyota Corolla 2024",
+    "description":  "Sedán compacto de Toyota, generación XII, motor 2.0L de 4 cilindros.",
+    "status":  "confirmado",
+    "tags":  [
+                 "sedan",
+                 "toyota",
+                 "combustion"
+             ],
+    "featured":  false,
+    "createdAt":  "2026-08-23T18:01:32.194Z",
+    "updatedAt":  "2026-08-25T06:11:23.0208162Z",
+    "manufacturer":  "Toyota",
+    "class":  "Sedán",
+    "customizable":  false,
+    "performance":  {
+                        "speed":  "Media (180 km/h)",
+                        "acceleration":  "Media (0-100 km/h en 10.1s)"
+                    },
+    "power":  "169 hp",
+    "price":  "USD 24.000",
+    "consumo":  "6.9 l/100km combinado (34 mpg EPA combinado, versión XSE 2.0L con CVT)",
+    "dimensiones":  "4.630 mm largo x 1.781 mm ancho x 1.435 mm alto, distancia entre ejes 2.700 mm (versión sedán XSE)",
+    "evidence":  {
+                     "level":  "oficial-nombrado",
+                     "primarySource":  "https://www.toyota.com/corolla/",
+                     "secondarySource":  "https://www.truedelta.com/Toyota-Corolla/specs-266-2024\u0026r=3",
+                     "note":  "También existe la variante Corolla Hybrid (motor 1.8L), con consumo muy inferior (hasta 4.7 l/100km combinado según EPA).",
+                     "limitations":  [
+                                         "Cifras correspondientes a la versión a gasolina 2.0L; la versión Hybrid tiene consumo y dimensiones ligeramente distintas"
+                                     ]
+                 },
+    "transmision":  "Manual o Automática",
+    "traccion":  "Tracción delantera",
+    "peso":  "1.300-1.700 kg",
+    "tipoMotor":  "Gasolina/Diésel",
+    "potenciaKW":  "100-250 kW",
+    "capacidadTanque":  "55-75 litros",
+    "tiempoRecorrido":  "7-10s",
+    "anoProduccion":  "2023-2024",
+    "mercados":  [
+                     "Europa",
+                     "USA",
+                     "Asia",
+                     "Mercados emergentes"
+                 ],
+    "equipamiento":  [
+                         "Control tracción",
+                         "Frenos ABS",
+                         "Control estabilidad dinámico",
+                         "Asistentes de conducción"
+                     ],
+    "consumoEtiqueta":  "C",
+    "neumaticos":  "225/50R17",
+    "aerodinÃ¡mica":  {
+                          "defectores_aire":  "Canales de aire lateral bajo carroceria",
+                          "spoiler_trasero":  "Integrado en porton",
+                          "area_frontal":  "2.2-2.4 m2 (estimado)",
+                          "coeficiente_arrastre":  "Cx 0.27-0.32 (sedan)"
+                      },
+    "especificacionesMotor":  {
+                                  "filtro_aire":  "Filtro de panel",
+                                  "tipo_valvulas":  "DOHC",
+                                  "ratio_compresion":  "10.5:1",
+                                  "sistemas_inyeccion":  "Inyeccion directa",
+                                  "arbol_levas":  "Variable (VVT)"
+                              },
+    "especificacionesTransmision":  {
+                                        "tipo_automatico":  "Convertidor",
+                                        "control_cambios":  "Secuencial",
+                                        "sist_propulsion":  "Traccion",
+                                        "velocidades":  "8/9 velocidades"
+                                    },
+    "especificacionesSuspension":  {
+                                       "tipo_trasera":  "Multilink",
+                                       "barra_estabilizadora":  "26/20 mm",
+                                       "tipo_delantera":  "MacPherson",
+                                       "amortiguadores":  "Doble tubo",
+                                       "recorrido_vertical":  "+-150 mm"
+                                   },
+    "especificacionesRuedas":  {
+                                   "offset":  "+35 a +45 mm",
+                                   "indice_velocidad":  "T/V",
+                                   "indice_carga":  "91",
+                                   "profundidad_surcos":  "1.6 mm",
+                                   "pcd":  "5x114.3"
+                               },
+    "especificacionesDireccion":  {
+                                      "tipo_asistencia":  "Electrica progresiva",
+                                      "sistema_control":  "Control electronico",
+                                      "angulo_max_giro":  "32-35 grados",
+                                      "vueltas_calador":  "2.5-3.0"
+                                  },
+    "aerodinámica":  {
+                         "defectores_aire":  "Canales laterales",
+                         "spoiler_trasero":  "Integrado",
+                         "area_frontal":  "2.2-2.4 m2",
+                         "coeficiente_arrastre":  "Cx 0.27-0.32"
+                     },
+    "capacidadesAdicionales":  {
+                                   "capacidad_refrigerante":  "7-9 L",
+                                   "capacidad_lavaparabrisas":  "3-4 L",
+                                   "liquido_frenos":  "0.75-0.85 L",
+                                   "capacidad_aceite":  "4.5-5.5 L",
+                                   "filtro_habitaculo":  "Carbon activado"
+                               },
+    "seguridad_pasiva":  {
+                             "respaldos":  "Reforzados",
+                             "zonas":  "Deformacion",
+                             "cinturones":  "Pre-tensores",
+                             "estructura":  "Vigas laterales",
+                             "cristales":  "Laminado/Templado"
+                         },
+    "climatizacionAvanzada":  {
+                                  "control":  "Trizona",
+                                  "modo":  "Recirculacion",
+                                  "filtro":  "Carbon",
+                                  "desempanante":  "Trasero/Lateral"
+                              },
+    "mantenimientoPrograma":  {
+                                  "filtro":  "25.000-30.000 km",
+                                  "aceite":  "15.000 km",
+                                  "frenos":  "Anual",
+                                  "ruedas":  "Anual",
+                                  "refrigerante":  "2 anos"
+                              },
+    "sistemasInteligentes":  {
+                                 "frenado":  "AEB",
+                                 "carril":  "LDW",
+                                 "ciego":  "BSM",
+                                 "parking":  "8-12 sensores",
+                                 "crucero":  "ACC"
+                             }
 }

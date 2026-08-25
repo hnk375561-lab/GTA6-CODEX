@@ -7,12 +7,21 @@ import { getAllEntities, getEntityPath } from '@/lib/entities'
  * que el "trending: X · Y · Z" del mockup original, pero alimentada por
  * datos reales (`getFeaturedEntities`) en vez de texto hardcodeado.
  *
+<<<<<<< HEAD
  * Se restringe a tipos "con gancho" (vehículos) a propósito: la home ya
  * tiene una sección "Destacados" más abajo que usa el mismo
  * `getFeaturedEntities`, así que traer los mismos 6 resultados acá los
  * duplicaría arriba y abajo de la misma página. Filtrando por tipo se
  * obtiene una selección distinta y además más parecida al tono de un
  * ticker de "trending" (fichas concretas, no guías o noticias).
+=======
+ * Se restringe a vehículos a propósito: la home ya tiene una sección
+ * "Destacados" más abajo que usa el mismo `getFeaturedEntities`, así que
+ * traer los mismos resultados acá los duplicaría arriba y abajo de la
+ * misma página. Filtrando por tipo se obtiene una selección distinta y
+ * además más parecida al tono de un ticker de "trending" (nombres
+ * propios, no guías o noticias).
+>>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
  *
  * Server component puro: no necesita estado ni interactividad, así que
  * no suma JS al bundle del cliente. Se corta a `LIMIT` entradas y se

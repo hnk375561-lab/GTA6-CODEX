@@ -1,0 +1,2577 @@
+diff --git a/apply-enrich-clean.ps1 b/apply-enrich-clean.ps1
+index 5913731..f4ef26b 100644
+--- a/apply-enrich-clean.ps1
++++ b/apply-enrich-clean.ps1
+@@ -94,7 +94,7 @@ $errores = 0
+ foreach ($archivo in $archivos) {
+     try {
+         $rutaArchivo = $archivo.FullName
+-        $contenido = Get-Content -Path $rutaArchivo -Raw -Encoding UTF8
++        $contenido = Get-Content -Path $rutaArchivo -Raw -Encoding utf8NoBOM
+         $vehiculo = $contenido | ConvertFrom-Json
+ 
+         if (-not $vehiculo.especificacionesMotor) {
+@@ -114,7 +114,7 @@ foreach ($archivo in $archivos) {
+         $vehiculo.updatedAt = (Get-Date -AsUTC -Format 'o')
+ 
+         $jsonFormato = $vehiculo | ConvertTo-Json -Depth 100
+-        Set-Content -Path $rutaArchivo -Value $jsonFormato -Encoding UTF8
++        Set-Content -Path $rutaArchivo -Value $jsonFormato -Encoding utf8NoBOM
+ 
+         $procesados++
+         if ($procesados % 50 -eq 0) {
+diff --git a/apply-enrich-v2.ps1 b/apply-enrich-v2.ps1
+index e707ee2..4f5973e 100644
+--- a/apply-enrich-v2.ps1
++++ b/apply-enrich-v2.ps1
+@@ -94,7 +94,7 @@ $errores = 0
+ foreach ($archivo in $archivos) {
+     try {
+         $rutaArchivo = $archivo.FullName
+-        $contenido = Get-Content -Path $rutaArchivo -Raw -Encoding UTF8
++        $contenido = Get-Content -Path $rutaArchivo -Raw -Encoding utf8NoBOM
+         $vehiculo = $contenido | ConvertFrom-Json
+ 
+         if (-not $vehiculo.especificacionesMotor) {
+@@ -115,7 +115,7 @@ foreach ($archivo in $archivos) {
+         $vehiculo.updatedAt = $ahora
+ 
+         $jsonFormato = $vehiculo | ConvertTo-Json -Depth 100
+-        Set-Content -Path $rutaArchivo -Value $jsonFormato -Encoding UTF8
++        Set-Content -Path $rutaArchivo -Value $jsonFormato -Encoding utf8NoBOM
+ 
+         $procesados++
+         if ($procesados % 50 -eq 0) {
+diff --git a/apply-enrich.ps1 b/apply-enrich.ps1
+index b3dbc18..ddef130 100644
+--- a/apply-enrich.ps1
++++ b/apply-enrich.ps1
+@@ -140,7 +140,7 @@ foreach ($archivo in $archivos) {
+ 
+         # Guardar con formato JSON bonito
+         $jsonFormato = $vehiculo | ConvertTo-Json -Depth 100
+-        Set-Content -Path $rutaArchivo -Value $jsonFormato -Encoding UTF8
++        Set-Content -Path $rutaArchivo -Value $jsonFormato -Encoding utf8NoBOM
+ 
+         $procesados++
+         if ($procesados % 50 -eq 0) {
+diff --git a/src/content/vehiculos/abarth-595.json b/src/content/vehiculos/abarth-595.json
+index 8a88d65..c46b1f0 100644
+--- a/src/content/vehiculos/abarth-595.json
++++ b/src/content/vehiculos/abarth-595.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "abarth-595",
+     "type":  "vehiculos",
+     "title":  "Abarth 595",
+diff --git a/src/content/vehiculos/alfa-romeo-giulia.json b/src/content/vehiculos/alfa-romeo-giulia.json
+index 7e907d6..38e6bc2 100644
+--- a/src/content/vehiculos/alfa-romeo-giulia.json
++++ b/src/content/vehiculos/alfa-romeo-giulia.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "alfa-romeo-giulia",
+     "type":  "vehiculos",
+     "title":  "Alfa Romeo Giulia",
+diff --git a/src/content/vehiculos/alfa-romeo-stelvio.json b/src/content/vehiculos/alfa-romeo-stelvio.json
+index 49debd5..5c6db21 100644
+--- a/src/content/vehiculos/alfa-romeo-stelvio.json
++++ b/src/content/vehiculos/alfa-romeo-stelvio.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "alfa-romeo-stelvio",
+     "type":  "vehiculos",
+     "title":  "Alfa Romeo Stelvio",
+diff --git a/src/content/vehiculos/aprilia-rsv4.json b/src/content/vehiculos/aprilia-rsv4.json
+index 3a7ff27..2ad5a38 100644
+--- a/src/content/vehiculos/aprilia-rsv4.json
++++ b/src/content/vehiculos/aprilia-rsv4.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "aprilia-rsv4",
+     "type":  "vehiculos",
+     "title":  "Aprilia RSV4",
+diff --git a/src/content/vehiculos/aston-martin-db12.json b/src/content/vehiculos/aston-martin-db12.json
+index edfb95e..91b2726 100644
+--- a/src/content/vehiculos/aston-martin-db12.json
++++ b/src/content/vehiculos/aston-martin-db12.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "aston-martin-db12",
+     "type":  "vehiculos",
+     "title":  "Aston Martin DB12",
+diff --git a/src/content/vehiculos/audi-a4.json b/src/content/vehiculos/audi-a4.json
+index e586b97..0948209 100644
+--- a/src/content/vehiculos/audi-a4.json
++++ b/src/content/vehiculos/audi-a4.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "audi-a4",
+     "type":  "vehiculos",
+     "title":  "Audi A4",
+diff --git a/src/content/vehiculos/audi-q3.json b/src/content/vehiculos/audi-q3.json
+index 12b99f2..ed8d772 100644
+--- a/src/content/vehiculos/audi-q3.json
++++ b/src/content/vehiculos/audi-q3.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "audi-q3",
+     "type":  "vehiculos",
+     "title":  "Audi Q3",
+diff --git a/src/content/vehiculos/audi-q5.json b/src/content/vehiculos/audi-q5.json
+index fec5316..da209d8 100644
+--- a/src/content/vehiculos/audi-q5.json
++++ b/src/content/vehiculos/audi-q5.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "audi-q5",
+     "type":  "vehiculos",
+     "title":  "Audi Q5",
+diff --git a/src/content/vehiculos/audi-q7.json b/src/content/vehiculos/audi-q7.json
+index d27f6d9..66c9a08 100644
+--- a/src/content/vehiculos/audi-q7.json
++++ b/src/content/vehiculos/audi-q7.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "audi-q7",
+     "type":  "vehiculos",
+     "title":  "Audi Q7",
+diff --git a/src/content/vehiculos/baic-x55.json b/src/content/vehiculos/baic-x55.json
+index 4336a96..dec62c4 100644
+--- a/src/content/vehiculos/baic-x55.json
++++ b/src/content/vehiculos/baic-x55.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "baic-x55",
+     "type":  "vehiculos",
+     "title":  "BAIC X55",
+diff --git a/src/content/vehiculos/bajaj-rouser-ns200.json b/src/content/vehiculos/bajaj-rouser-ns200.json
+index 60dbffb..95aed76 100644
+--- a/src/content/vehiculos/bajaj-rouser-ns200.json
++++ b/src/content/vehiculos/bajaj-rouser-ns200.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "bajaj-rouser-ns200",
+     "type":  "vehiculos",
+     "title":  "Bajaj Rouser NS200",
+diff --git a/src/content/vehiculos/bentley-continental-gt.json b/src/content/vehiculos/bentley-continental-gt.json
+index 4a8824f..a9959b5 100644
+--- a/src/content/vehiculos/bentley-continental-gt.json
++++ b/src/content/vehiculos/bentley-continental-gt.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "bentley-continental-gt",
+     "type":  "vehiculos",
+     "title":  "Bentley Continental GT",
+diff --git a/src/content/vehiculos/bmw-gs-310.json b/src/content/vehiculos/bmw-gs-310.json
+index 6cd0f65..61458ca 100644
+--- a/src/content/vehiculos/bmw-gs-310.json
++++ b/src/content/vehiculos/bmw-gs-310.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "bmw-gs-310",
+     "type":  "vehiculos",
+     "title":  "BMW G 310 GS",
+diff --git a/src/content/vehiculos/bmw-m4.json b/src/content/vehiculos/bmw-m4.json
+index 4119f87..d583d20 100644
+--- a/src/content/vehiculos/bmw-m4.json
++++ b/src/content/vehiculos/bmw-m4.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "bmw-m4",
+     "type":  "vehiculos",
+     "title":  "BMW M4",
+diff --git a/src/content/vehiculos/bmw-r1250gs.json b/src/content/vehiculos/bmw-r1250gs.json
+index c2e4b61..ecc55cf 100644
+--- a/src/content/vehiculos/bmw-r1250gs.json
++++ b/src/content/vehiculos/bmw-r1250gs.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "bmw-r1250gs",
+     "type":  "vehiculos",
+     "title":  "BMW R1250GS",
+diff --git a/src/content/vehiculos/bmw-s1000rr.json b/src/content/vehiculos/bmw-s1000rr.json
+index b8d342d..729d100 100644
+--- a/src/content/vehiculos/bmw-s1000rr.json
++++ b/src/content/vehiculos/bmw-s1000rr.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "bmw-s1000rr",
+     "type":  "vehiculos",
+     "title":  "BMW S1000RR",
+diff --git a/src/content/vehiculos/bmw-serie-3.json b/src/content/vehiculos/bmw-serie-3.json
+index dd09137..965cba6 100644
+--- a/src/content/vehiculos/bmw-serie-3.json
++++ b/src/content/vehiculos/bmw-serie-3.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "bmw-serie-3",
+     "type":  "vehiculos",
+     "title":  "BMW Serie 3",
+diff --git a/src/content/vehiculos/bmw-x1.json b/src/content/vehiculos/bmw-x1.json
+index 5b38e5f..d0dacfe 100644
+--- a/src/content/vehiculos/bmw-x1.json
++++ b/src/content/vehiculos/bmw-x1.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "bmw-x1",
+     "type":  "vehiculos",
+     "title":  "BMW X1",
+diff --git a/src/content/vehiculos/bmw-x5.json b/src/content/vehiculos/bmw-x5.json
+index c68a8a5..7637a9b 100644
+--- a/src/content/vehiculos/bmw-x5.json
++++ b/src/content/vehiculos/bmw-x5.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "bmw-x5",
+     "type":  "vehiculos",
+     "title":  "BMW X5",
+diff --git a/src/content/vehiculos/byd-atto-3.json b/src/content/vehiculos/byd-atto-3.json
+index bbd708a..8086599 100644
+--- a/src/content/vehiculos/byd-atto-3.json
++++ b/src/content/vehiculos/byd-atto-3.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "byd-atto-3",
+     "type":  "vehiculos",
+     "title":  "BYD Atto 3",
+diff --git a/src/content/vehiculos/byd-dolphin-mini.json b/src/content/vehiculos/byd-dolphin-mini.json
+index 1d227f4..5cf8cc5 100644
+--- a/src/content/vehiculos/byd-dolphin-mini.json
++++ b/src/content/vehiculos/byd-dolphin-mini.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "byd-dolphin-mini",
+     "type":  "vehiculos",
+     "title":  "BYD Dolphin Mini",
+diff --git a/src/content/vehiculos/byd-dolphin.json b/src/content/vehiculos/byd-dolphin.json
+index 4f24a8f..5a3e69c 100644
+--- a/src/content/vehiculos/byd-dolphin.json
++++ b/src/content/vehiculos/byd-dolphin.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "byd-dolphin",
+     "type":  "vehiculos",
+     "title":  "BYD Dolphin",
+diff --git a/src/content/vehiculos/byd-han.json b/src/content/vehiculos/byd-han.json
+index e27e8ca..f58f2f6 100644
+--- a/src/content/vehiculos/byd-han.json
++++ b/src/content/vehiculos/byd-han.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "byd-han",
+     "type":  "vehiculos",
+     "title":  "BYD Han",
+diff --git a/src/content/vehiculos/byd-seal.json b/src/content/vehiculos/byd-seal.json
+index f27da82..5840596 100644
+--- a/src/content/vehiculos/byd-seal.json
++++ b/src/content/vehiculos/byd-seal.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "byd-seal",
+     "type":  "vehiculos",
+     "title":  "BYD Seal",
+diff --git a/src/content/vehiculos/byd-tang.json b/src/content/vehiculos/byd-tang.json
+index 4a25e13..044ade9 100644
+--- a/src/content/vehiculos/byd-tang.json
++++ b/src/content/vehiculos/byd-tang.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "byd-tang",
+     "type":  "vehiculos",
+     "title":  "BYD Tang",
+diff --git a/src/content/vehiculos/changan-cs35-plus.json b/src/content/vehiculos/changan-cs35-plus.json
+index c6329f9..f15d625 100644
+--- a/src/content/vehiculos/changan-cs35-plus.json
++++ b/src/content/vehiculos/changan-cs35-plus.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "changan-cs35-plus",
+     "type":  "vehiculos",
+     "title":  "Changan CS35 Plus",
+diff --git a/src/content/vehiculos/chery-omoda-5.json b/src/content/vehiculos/chery-omoda-5.json
+index 36c09ad..ca69ec0 100644
+--- a/src/content/vehiculos/chery-omoda-5.json
++++ b/src/content/vehiculos/chery-omoda-5.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chery-omoda-5",
+     "type":  "vehiculos",
+     "title":  "Chery Omoda 5",
+diff --git a/src/content/vehiculos/chery-tiggo-4.json b/src/content/vehiculos/chery-tiggo-4.json
+index f9ef049..e113046 100644
+--- a/src/content/vehiculos/chery-tiggo-4.json
++++ b/src/content/vehiculos/chery-tiggo-4.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chery-tiggo-4",
+     "type":  "vehiculos",
+     "title":  "Chery Tiggo 4",
+diff --git a/src/content/vehiculos/chery-tiggo-7-pro.json b/src/content/vehiculos/chery-tiggo-7-pro.json
+index f40d7db..69aa696 100644
+--- a/src/content/vehiculos/chery-tiggo-7-pro.json
++++ b/src/content/vehiculos/chery-tiggo-7-pro.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chery-tiggo-7-pro",
+     "type":  "vehiculos",
+     "title":  "Chery Tiggo 7 Pro",
+diff --git a/src/content/vehiculos/chery-tiggo-8-pro.json b/src/content/vehiculos/chery-tiggo-8-pro.json
+index 6eb761e..053217f 100644
+--- a/src/content/vehiculos/chery-tiggo-8-pro.json
++++ b/src/content/vehiculos/chery-tiggo-8-pro.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chery-tiggo-8-pro",
+     "type":  "vehiculos",
+     "title":  "Chery Tiggo 8 Pro",
+diff --git a/src/content/vehiculos/chevrolet-bolt-ev.json b/src/content/vehiculos/chevrolet-bolt-ev.json
+index 60e6187..1c5e84e 100644
+--- a/src/content/vehiculos/chevrolet-bolt-ev.json
++++ b/src/content/vehiculos/chevrolet-bolt-ev.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chevrolet-bolt-ev",
+     "type":  "vehiculos",
+     "title":  "Chevrolet Bolt EV",
+diff --git a/src/content/vehiculos/chevrolet-camaro.json b/src/content/vehiculos/chevrolet-camaro.json
+index 9b44361..43b469e 100644
+--- a/src/content/vehiculos/chevrolet-camaro.json
++++ b/src/content/vehiculos/chevrolet-camaro.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chevrolet-camaro",
+     "type":  "vehiculos",
+     "title":  "Chevrolet Camaro",
+diff --git a/src/content/vehiculos/chevrolet-corvette.json b/src/content/vehiculos/chevrolet-corvette.json
+index 3a57cb8..41aec01 100644
+--- a/src/content/vehiculos/chevrolet-corvette.json
++++ b/src/content/vehiculos/chevrolet-corvette.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chevrolet-corvette",
+     "type":  "vehiculos",
+     "title":  "Chevrolet Corvette",
+diff --git a/src/content/vehiculos/chevrolet-equinox.json b/src/content/vehiculos/chevrolet-equinox.json
+index 09b31c4..d429198 100644
+--- a/src/content/vehiculos/chevrolet-equinox.json
++++ b/src/content/vehiculos/chevrolet-equinox.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chevrolet-equinox",
+     "type":  "vehiculos",
+     "title":  "Chevrolet Equinox",
+diff --git a/src/content/vehiculos/chevrolet-montana.json b/src/content/vehiculos/chevrolet-montana.json
+index 791c444..9e046bf 100644
+--- a/src/content/vehiculos/chevrolet-montana.json
++++ b/src/content/vehiculos/chevrolet-montana.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chevrolet-montana",
+     "type":  "vehiculos",
+     "title":  "Chevrolet Montana",
+diff --git a/src/content/vehiculos/chevrolet-onix.json b/src/content/vehiculos/chevrolet-onix.json
+index dd5b944..d0f7035 100644
+--- a/src/content/vehiculos/chevrolet-onix.json
++++ b/src/content/vehiculos/chevrolet-onix.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chevrolet-onix",
+     "type":  "vehiculos",
+     "title":  "Chevrolet Onix",
+diff --git a/src/content/vehiculos/chevrolet-s10.json b/src/content/vehiculos/chevrolet-s10.json
+index c68f38c..aad4d3b 100644
+--- a/src/content/vehiculos/chevrolet-s10.json
++++ b/src/content/vehiculos/chevrolet-s10.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chevrolet-s10",
+     "type":  "vehiculos",
+     "title":  "Chevrolet S10",
+diff --git a/src/content/vehiculos/chevrolet-silverado.json b/src/content/vehiculos/chevrolet-silverado.json
+index 52ec408..abac09f 100644
+--- a/src/content/vehiculos/chevrolet-silverado.json
++++ b/src/content/vehiculos/chevrolet-silverado.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chevrolet-silverado",
+     "type":  "vehiculos",
+     "title":  "Chevrolet Silverado",
+diff --git a/src/content/vehiculos/chevrolet-spin.json b/src/content/vehiculos/chevrolet-spin.json
+index 57dd67e..e35a1cf 100644
+--- a/src/content/vehiculos/chevrolet-spin.json
++++ b/src/content/vehiculos/chevrolet-spin.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chevrolet-spin",
+     "type":  "vehiculos",
+     "title":  "Chevrolet Spin",
+diff --git a/src/content/vehiculos/chevrolet-tracker.json b/src/content/vehiculos/chevrolet-tracker.json
+index 94797a4..9615e86 100644
+--- a/src/content/vehiculos/chevrolet-tracker.json
++++ b/src/content/vehiculos/chevrolet-tracker.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chevrolet-tracker",
+     "type":  "vehiculos",
+     "title":  "Chevrolet Tracker",
+diff --git a/src/content/vehiculos/chevrolet-trailblazer.json b/src/content/vehiculos/chevrolet-trailblazer.json
+index 8986e0e..3ad8ef6 100644
+--- a/src/content/vehiculos/chevrolet-trailblazer.json
++++ b/src/content/vehiculos/chevrolet-trailblazer.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "chevrolet-trailblazer",
+     "type":  "vehiculos",
+     "title":  "Chevrolet Trailblazer",
+diff --git a/src/content/vehiculos/citroen-c3-aircross.json b/src/content/vehiculos/citroen-c3-aircross.json
+index effdf4d..b83431a 100644
+--- a/src/content/vehiculos/citroen-c3-aircross.json
++++ b/src/content/vehiculos/citroen-c3-aircross.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "citroen-c3-aircross",
+     "type":  "vehiculos",
+     "title":  "Citroën C3 Aircross",
+diff --git a/src/content/vehiculos/citroen-c3.json b/src/content/vehiculos/citroen-c3.json
+index 2f25600..0935718 100644
+--- a/src/content/vehiculos/citroen-c3.json
++++ b/src/content/vehiculos/citroen-c3.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "citroen-c3",
+     "type":  "vehiculos",
+     "title":  "Citroën C3",
+diff --git a/src/content/vehiculos/citroen-c4.json b/src/content/vehiculos/citroen-c4.json
+index 51bcdcb..0aadd97 100644
+--- a/src/content/vehiculos/citroen-c4.json
++++ b/src/content/vehiculos/citroen-c4.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "citroen-c4",
+     "type":  "vehiculos",
+     "title":  "Citroën C4",
+diff --git a/src/content/vehiculos/cupra-formentor.json b/src/content/vehiculos/cupra-formentor.json
+index 6ae77dc..9289a1f 100644
+--- a/src/content/vehiculos/cupra-formentor.json
++++ b/src/content/vehiculos/cupra-formentor.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "cupra-formentor",
+     "type":  "vehiculos",
+     "title":  "Cupra Formentor",
+diff --git a/src/content/vehiculos/cupra-leon.json b/src/content/vehiculos/cupra-leon.json
+index e17aa1a..90ae220 100644
+--- a/src/content/vehiculos/cupra-leon.json
++++ b/src/content/vehiculos/cupra-leon.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "cupra-leon",
+     "type":  "vehiculos",
+     "title":  "Cupra León",
+diff --git a/src/content/vehiculos/dacia-duster.json b/src/content/vehiculos/dacia-duster.json
+index aaac2db..5acbcfe 100644
+--- a/src/content/vehiculos/dacia-duster.json
++++ b/src/content/vehiculos/dacia-duster.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "dacia-duster",
+     "type":  "vehiculos",
+     "title":  "Dacia Duster",
+diff --git a/src/content/vehiculos/dacia-sandero.json b/src/content/vehiculos/dacia-sandero.json
+index 7b302fc..8354890 100644
+--- a/src/content/vehiculos/dacia-sandero.json
++++ b/src/content/vehiculos/dacia-sandero.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "dacia-sandero",
+     "type":  "vehiculos",
+     "title":  "Dacia Sandero",
+diff --git a/src/content/vehiculos/ducati-monster.json b/src/content/vehiculos/ducati-monster.json
+index 7f63176..0ff0972 100644
+--- a/src/content/vehiculos/ducati-monster.json
++++ b/src/content/vehiculos/ducati-monster.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ducati-monster",
+     "type":  "vehiculos",
+     "title":  "Ducati Monster",
+diff --git a/src/content/vehiculos/ducati-panigale-v4.json b/src/content/vehiculos/ducati-panigale-v4.json
+index 19cfd56..d06ebe1 100644
+--- a/src/content/vehiculos/ducati-panigale-v4.json
++++ b/src/content/vehiculos/ducati-panigale-v4.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ducati-panigale-v4",
+     "type":  "vehiculos",
+     "title":  "Ducati Panigale V4",
+diff --git a/src/content/vehiculos/ferrari-296-gtb.json b/src/content/vehiculos/ferrari-296-gtb.json
+index e14fffa..120c851 100644
+--- a/src/content/vehiculos/ferrari-296-gtb.json
++++ b/src/content/vehiculos/ferrari-296-gtb.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ferrari-296-gtb",
+     "type":  "vehiculos",
+     "title":  "Ferrari 296 GTB",
+diff --git a/src/content/vehiculos/fiat-500.json b/src/content/vehiculos/fiat-500.json
+index cc059b2..917db16 100644
+--- a/src/content/vehiculos/fiat-500.json
++++ b/src/content/vehiculos/fiat-500.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "fiat-500",
+     "type":  "vehiculos",
+     "title":  "Fiat 500",
+diff --git a/src/content/vehiculos/fiat-argo.json b/src/content/vehiculos/fiat-argo.json
+index e5f02d3..ef23990 100644
+--- a/src/content/vehiculos/fiat-argo.json
++++ b/src/content/vehiculos/fiat-argo.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "fiat-argo",
+     "type":  "vehiculos",
+     "title":  "Fiat Argo",
+diff --git a/src/content/vehiculos/fiat-cronos.json b/src/content/vehiculos/fiat-cronos.json
+index 8f1e784..6a56c0a 100644
+--- a/src/content/vehiculos/fiat-cronos.json
++++ b/src/content/vehiculos/fiat-cronos.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "fiat-cronos",
+     "type":  "vehiculos",
+     "title":  "Fiat Cronos",
+diff --git a/src/content/vehiculos/fiat-fiorino.json b/src/content/vehiculos/fiat-fiorino.json
+index 979eb5a..6ed8ddd 100644
+--- a/src/content/vehiculos/fiat-fiorino.json
++++ b/src/content/vehiculos/fiat-fiorino.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "fiat-fiorino",
+     "type":  "vehiculos",
+     "title":  "Fiat Fiorino",
+diff --git a/src/content/vehiculos/fiat-mobi.json b/src/content/vehiculos/fiat-mobi.json
+index 972f79c..5e00feb 100644
+--- a/src/content/vehiculos/fiat-mobi.json
++++ b/src/content/vehiculos/fiat-mobi.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "fiat-mobi",
+     "type":  "vehiculos",
+     "title":  "Fiat Mobi",
+diff --git a/src/content/vehiculos/fiat-panda.json b/src/content/vehiculos/fiat-panda.json
+index 546778e..35f8692 100644
+--- a/src/content/vehiculos/fiat-panda.json
++++ b/src/content/vehiculos/fiat-panda.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "fiat-panda",
+     "type":  "vehiculos",
+     "title":  "Fiat Panda",
+diff --git a/src/content/vehiculos/fiat-pulse.json b/src/content/vehiculos/fiat-pulse.json
+index c22a9a2..8fbec55 100644
+--- a/src/content/vehiculos/fiat-pulse.json
++++ b/src/content/vehiculos/fiat-pulse.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "fiat-pulse",
+     "type":  "vehiculos",
+     "title":  "Fiat Pulse",
+diff --git a/src/content/vehiculos/fiat-strada.json b/src/content/vehiculos/fiat-strada.json
+index fb81a33..01fd265 100644
+--- a/src/content/vehiculos/fiat-strada.json
++++ b/src/content/vehiculos/fiat-strada.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "fiat-strada",
+     "type":  "vehiculos",
+     "title":  "Fiat Strada",
+diff --git a/src/content/vehiculos/fiat-toro.json b/src/content/vehiculos/fiat-toro.json
+index 07b8b4f..121972f 100644
+--- a/src/content/vehiculos/fiat-toro.json
++++ b/src/content/vehiculos/fiat-toro.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "fiat-toro",
+     "type":  "vehiculos",
+     "title":  "Fiat Toro",
+diff --git a/src/content/vehiculos/ford-bronco-sport.json b/src/content/vehiculos/ford-bronco-sport.json
+index 8de4627..f8e15b3 100644
+--- a/src/content/vehiculos/ford-bronco-sport.json
++++ b/src/content/vehiculos/ford-bronco-sport.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ford-bronco-sport",
+     "type":  "vehiculos",
+     "title":  "Ford Bronco Sport",
+diff --git a/src/content/vehiculos/ford-explorer.json b/src/content/vehiculos/ford-explorer.json
+index 30e1ad8..d4f9aab 100644
+--- a/src/content/vehiculos/ford-explorer.json
++++ b/src/content/vehiculos/ford-explorer.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ford-explorer",
+     "type":  "vehiculos",
+     "title":  "Ford Explorer",
+diff --git a/src/content/vehiculos/ford-f-150.json b/src/content/vehiculos/ford-f-150.json
+index 6467d90..8ef6de6 100644
+--- a/src/content/vehiculos/ford-f-150.json
++++ b/src/content/vehiculos/ford-f-150.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ford-f-150",
+     "type":  "vehiculos",
+     "title":  "Ford F-150",
+diff --git a/src/content/vehiculos/ford-focus.json b/src/content/vehiculos/ford-focus.json
+index f5e9b6a..91942b8 100644
+--- a/src/content/vehiculos/ford-focus.json
++++ b/src/content/vehiculos/ford-focus.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ford-focus",
+     "type":  "vehiculos",
+     "title":  "Ford Focus",
+diff --git a/src/content/vehiculos/ford-maverick.json b/src/content/vehiculos/ford-maverick.json
+index 4e08be1..4614404 100644
+--- a/src/content/vehiculos/ford-maverick.json
++++ b/src/content/vehiculos/ford-maverick.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ford-maverick",
+     "type":  "vehiculos",
+     "title":  "Ford Maverick",
+diff --git a/src/content/vehiculos/ford-mustang.json b/src/content/vehiculos/ford-mustang.json
+index e183c46..242d7a8 100644
+--- a/src/content/vehiculos/ford-mustang.json
++++ b/src/content/vehiculos/ford-mustang.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ford-mustang",
+     "type":  "vehiculos",
+     "title":  "Ford Mustang",
+diff --git a/src/content/vehiculos/ford-puma.json b/src/content/vehiculos/ford-puma.json
+index ed0bc68..1b17282 100644
+--- a/src/content/vehiculos/ford-puma.json
++++ b/src/content/vehiculos/ford-puma.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ford-puma",
+     "type":  "vehiculos",
+     "title":  "Ford Puma",
+diff --git a/src/content/vehiculos/ford-ranger.json b/src/content/vehiculos/ford-ranger.json
+index 0fc8498..b4b3568 100644
+--- a/src/content/vehiculos/ford-ranger.json
++++ b/src/content/vehiculos/ford-ranger.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ford-ranger",
+     "type":  "vehiculos",
+     "title":  "Ford Ranger",
+diff --git a/src/content/vehiculos/ford-territory.json b/src/content/vehiculos/ford-territory.json
+index 2e06d12..2dbcf16 100644
+--- a/src/content/vehiculos/ford-territory.json
++++ b/src/content/vehiculos/ford-territory.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ford-territory",
+     "type":  "vehiculos",
+     "title":  "Ford Territory",
+diff --git a/src/content/vehiculos/geely-coolray.json b/src/content/vehiculos/geely-coolray.json
+index b0a2f8a..f764506 100644
+--- a/src/content/vehiculos/geely-coolray.json
++++ b/src/content/vehiculos/geely-coolray.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "geely-coolray",
+     "type":  "vehiculos",
+     "title":  "Geely Coolray",
+diff --git a/src/content/vehiculos/genesis-gv70.json b/src/content/vehiculos/genesis-gv70.json
+index 9355814..265ff07 100644
+--- a/src/content/vehiculos/genesis-gv70.json
++++ b/src/content/vehiculos/genesis-gv70.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "genesis-gv70",
+     "type":  "vehiculos",
+     "title":  "Genesis GV70",
+diff --git a/src/content/vehiculos/gwm-poer.json b/src/content/vehiculos/gwm-poer.json
+index 8cd9b22..4e37ea0 100644
+--- a/src/content/vehiculos/gwm-poer.json
++++ b/src/content/vehiculos/gwm-poer.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "gwm-poer",
+     "type":  "vehiculos",
+     "title":  "GWM Poer",
+diff --git a/src/content/vehiculos/gwm-tank-300.json b/src/content/vehiculos/gwm-tank-300.json
+index edc7b83..15efd18 100644
+--- a/src/content/vehiculos/gwm-tank-300.json
++++ b/src/content/vehiculos/gwm-tank-300.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "gwm-tank-300",
+     "type":  "vehiculos",
+     "title":  "GWM Tank 300",
+diff --git a/src/content/vehiculos/harley-davidson-iron-883.json b/src/content/vehiculos/harley-davidson-iron-883.json
+index 7357093..9bb9889 100644
+--- a/src/content/vehiculos/harley-davidson-iron-883.json
++++ b/src/content/vehiculos/harley-davidson-iron-883.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "harley-davidson-iron-883",
+     "type":  "vehiculos",
+     "title":  "Harley-Davidson Iron 883",
+diff --git a/src/content/vehiculos/harley-davidson-street-glide.json b/src/content/vehiculos/harley-davidson-street-glide.json
+index 0774140..574fd39 100644
+--- a/src/content/vehiculos/harley-davidson-street-glide.json
++++ b/src/content/vehiculos/harley-davidson-street-glide.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "harley-davidson-street-glide",
+     "type":  "vehiculos",
+     "title":  "Harley-Davidson Street Glide",
+diff --git a/src/content/vehiculos/haval-h6.json b/src/content/vehiculos/haval-h6.json
+index de0773e..dac45fa 100644
+--- a/src/content/vehiculos/haval-h6.json
++++ b/src/content/vehiculos/haval-h6.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "haval-h6",
+     "type":  "vehiculos",
+     "title":  "Haval H6",
+diff --git a/src/content/vehiculos/haval-jolion.json b/src/content/vehiculos/haval-jolion.json
+index f88b627..78a187f 100644
+--- a/src/content/vehiculos/haval-jolion.json
++++ b/src/content/vehiculos/haval-jolion.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "haval-jolion",
+     "type":  "vehiculos",
+     "title":  "GWM Haval Jolion",
+diff --git a/src/content/vehiculos/honda-accord.json b/src/content/vehiculos/honda-accord.json
+index 46ddf55..1ad7daf 100644
+--- a/src/content/vehiculos/honda-accord.json
++++ b/src/content/vehiculos/honda-accord.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-accord",
+     "type":  "vehiculos",
+     "title":  "Honda Accord",
+diff --git a/src/content/vehiculos/honda-africa-twin.json b/src/content/vehiculos/honda-africa-twin.json
+index fff147f..f03ba75 100644
+--- a/src/content/vehiculos/honda-africa-twin.json
++++ b/src/content/vehiculos/honda-africa-twin.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-africa-twin",
+     "type":  "vehiculos",
+     "title":  "Honda Africa Twin",
+diff --git a/src/content/vehiculos/honda-cb190r.json b/src/content/vehiculos/honda-cb190r.json
+index 6b4211a..623a6dd 100644
+--- a/src/content/vehiculos/honda-cb190r.json
++++ b/src/content/vehiculos/honda-cb190r.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-cb190r",
+     "type":  "vehiculos",
+     "title":  "Honda CB190R 2.0",
+diff --git a/src/content/vehiculos/honda-cb500f.json b/src/content/vehiculos/honda-cb500f.json
+index 62c337d..923d433 100644
+--- a/src/content/vehiculos/honda-cb500f.json
++++ b/src/content/vehiculos/honda-cb500f.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-cb500f",
+     "type":  "vehiculos",
+     "title":  "Honda CB500F",
+diff --git a/src/content/vehiculos/honda-cbr600rr.json b/src/content/vehiculos/honda-cbr600rr.json
+index 8253b0b..028179c 100644
+--- a/src/content/vehiculos/honda-cbr600rr.json
++++ b/src/content/vehiculos/honda-cbr600rr.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-cbr600rr",
+     "type":  "vehiculos",
+     "title":  "Honda CBR600RR",
+diff --git a/src/content/vehiculos/honda-cg-150.json b/src/content/vehiculos/honda-cg-150.json
+index b27ef87..4d56186 100644
+--- a/src/content/vehiculos/honda-cg-150.json
++++ b/src/content/vehiculos/honda-cg-150.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-cg-150",
+     "type":  "vehiculos",
+     "title":  "Honda CG 150",
+diff --git a/src/content/vehiculos/honda-city.json b/src/content/vehiculos/honda-city.json
+index 7e73f3e..0dcfa61 100644
+--- a/src/content/vehiculos/honda-city.json
++++ b/src/content/vehiculos/honda-city.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-city",
+     "type":  "vehiculos",
+     "title":  "Honda City",
+diff --git a/src/content/vehiculos/honda-civic-type-r.json b/src/content/vehiculos/honda-civic-type-r.json
+index f3189bf..8f924c9 100644
+--- a/src/content/vehiculos/honda-civic-type-r.json
++++ b/src/content/vehiculos/honda-civic-type-r.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-civic-type-r",
+     "type":  "vehiculos",
+     "title":  "Honda Civic Type R",
+diff --git a/src/content/vehiculos/honda-cr-v.json b/src/content/vehiculos/honda-cr-v.json
+index 81580d1..d29ae93 100644
+--- a/src/content/vehiculos/honda-cr-v.json
++++ b/src/content/vehiculos/honda-cr-v.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-cr-v",
+     "type":  "vehiculos",
+     "title":  "Honda CR-V",
+diff --git a/src/content/vehiculos/honda-fit.json b/src/content/vehiculos/honda-fit.json
+index 3dff798..811df9a 100644
+--- a/src/content/vehiculos/honda-fit.json
++++ b/src/content/vehiculos/honda-fit.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-fit",
+     "type":  "vehiculos",
+     "title":  "Honda Fit",
+diff --git a/src/content/vehiculos/honda-freed.json b/src/content/vehiculos/honda-freed.json
+index e6743db..3a45c6a 100644
+--- a/src/content/vehiculos/honda-freed.json
++++ b/src/content/vehiculos/honda-freed.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-freed",
+     "type":  "vehiculos",
+     "title":  "Honda Freed",
+diff --git a/src/content/vehiculos/honda-hr-v.json b/src/content/vehiculos/honda-hr-v.json
+index 2ae76c8..d6c99ea 100644
+--- a/src/content/vehiculos/honda-hr-v.json
++++ b/src/content/vehiculos/honda-hr-v.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-hr-v",
+     "type":  "vehiculos",
+     "title":  "Honda HR-V",
+diff --git a/src/content/vehiculos/honda-pcx-150.json b/src/content/vehiculos/honda-pcx-150.json
+index 15a9f8f..98054c8 100644
+--- a/src/content/vehiculos/honda-pcx-150.json
++++ b/src/content/vehiculos/honda-pcx-150.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-pcx-150",
+     "type":  "vehiculos",
+     "title":  "Honda PCX 150",
+diff --git a/src/content/vehiculos/honda-wave-110.json b/src/content/vehiculos/honda-wave-110.json
+index b53a3df..4098da5 100644
+--- a/src/content/vehiculos/honda-wave-110.json
++++ b/src/content/vehiculos/honda-wave-110.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-wave-110",
+     "type":  "vehiculos",
+     "title":  "Honda Wave 110",
+diff --git a/src/content/vehiculos/honda-xr250-tornado.json b/src/content/vehiculos/honda-xr250-tornado.json
+index e98288a..3a6abae 100644
+--- a/src/content/vehiculos/honda-xr250-tornado.json
++++ b/src/content/vehiculos/honda-xr250-tornado.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-xr250-tornado",
+     "type":  "vehiculos",
+     "title":  "Honda XR 250 Tornado",
+diff --git a/src/content/vehiculos/honda-xre-300.json b/src/content/vehiculos/honda-xre-300.json
+index 74d1da0..a0f9cfa 100644
+--- a/src/content/vehiculos/honda-xre-300.json
++++ b/src/content/vehiculos/honda-xre-300.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "honda-xre-300",
+     "type":  "vehiculos",
+     "title":  "Honda XRE 300",
+diff --git a/src/content/vehiculos/hyundai-creta.json b/src/content/vehiculos/hyundai-creta.json
+index 470751e..d9639ac 100644
+--- a/src/content/vehiculos/hyundai-creta.json
++++ b/src/content/vehiculos/hyundai-creta.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "hyundai-creta",
+     "type":  "vehiculos",
+     "title":  "Hyundai Creta",
+diff --git a/src/content/vehiculos/hyundai-elantra.json b/src/content/vehiculos/hyundai-elantra.json
+index fc6c005..d933e67 100644
+--- a/src/content/vehiculos/hyundai-elantra.json
++++ b/src/content/vehiculos/hyundai-elantra.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "hyundai-elantra",
+     "type":  "vehiculos",
+     "title":  "Hyundai Elantra",
+diff --git a/src/content/vehiculos/hyundai-hb20.json b/src/content/vehiculos/hyundai-hb20.json
+index 0901cff..49723d3 100644
+--- a/src/content/vehiculos/hyundai-hb20.json
++++ b/src/content/vehiculos/hyundai-hb20.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "hyundai-hb20",
+     "type":  "vehiculos",
+     "title":  "Hyundai HB20",
+diff --git a/src/content/vehiculos/hyundai-ioniq-5.json b/src/content/vehiculos/hyundai-ioniq-5.json
+index 19ca6f1..0b68be4 100644
+--- a/src/content/vehiculos/hyundai-ioniq-5.json
++++ b/src/content/vehiculos/hyundai-ioniq-5.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "hyundai-ioniq-5",
+     "type":  "vehiculos",
+     "title":  "Hyundai Ioniq 5",
+diff --git a/src/content/vehiculos/hyundai-kona-electric.json b/src/content/vehiculos/hyundai-kona-electric.json
+index f033366..3e4da73 100644
+--- a/src/content/vehiculos/hyundai-kona-electric.json
++++ b/src/content/vehiculos/hyundai-kona-electric.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "hyundai-kona-electric",
+     "type":  "vehiculos",
+     "title":  "Hyundai Kona Eléctrico",
+diff --git a/src/content/vehiculos/hyundai-santa-fe.json b/src/content/vehiculos/hyundai-santa-fe.json
+index 77f5c28..a296013 100644
+--- a/src/content/vehiculos/hyundai-santa-fe.json
++++ b/src/content/vehiculos/hyundai-santa-fe.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "hyundai-santa-fe",
+     "type":  "vehiculos",
+     "title":  "Hyundai Santa Fe",
+diff --git a/src/content/vehiculos/hyundai-tucson.json b/src/content/vehiculos/hyundai-tucson.json
+index 85bfd73..9415707 100644
+--- a/src/content/vehiculos/hyundai-tucson.json
++++ b/src/content/vehiculos/hyundai-tucson.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "hyundai-tucson",
+     "type":  "vehiculos",
+     "title":  "Hyundai Tucson",
+diff --git a/src/content/vehiculos/isuzu-d-max.json b/src/content/vehiculos/isuzu-d-max.json
+index add4c65..eb71585 100644
+--- a/src/content/vehiculos/isuzu-d-max.json
++++ b/src/content/vehiculos/isuzu-d-max.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "isuzu-d-max",
+     "type":  "vehiculos",
+     "title":  "Isuzu D-Max",
+diff --git a/src/content/vehiculos/isuzu-mu-x.json b/src/content/vehiculos/isuzu-mu-x.json
+index 3fd73d3..c5a90b9 100644
+--- a/src/content/vehiculos/isuzu-mu-x.json
++++ b/src/content/vehiculos/isuzu-mu-x.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "isuzu-mu-x",
+     "type":  "vehiculos",
+     "title":  "Isuzu MU-X",
+diff --git a/src/content/vehiculos/jac-js6.json b/src/content/vehiculos/jac-js6.json
+index 5b09351..f6bf4f2 100644
+--- a/src/content/vehiculos/jac-js6.json
++++ b/src/content/vehiculos/jac-js6.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "jac-js6",
+     "type":  "vehiculos",
+     "title":  "JAC JS6",
+diff --git a/src/content/vehiculos/jac-t40.json b/src/content/vehiculos/jac-t40.json
+index 1a0c39d..21f0f9a 100644
+--- a/src/content/vehiculos/jac-t40.json
++++ b/src/content/vehiculos/jac-t40.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "jac-t40",
+     "type":  "vehiculos",
+     "title":  "JAC T40",
+diff --git a/src/content/vehiculos/jac-t8.json b/src/content/vehiculos/jac-t8.json
+index fd779e6..cfdd078 100644
+--- a/src/content/vehiculos/jac-t8.json
++++ b/src/content/vehiculos/jac-t8.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "jac-t8",
+     "type":  "vehiculos",
+     "title":  "JAC T8",
+diff --git a/src/content/vehiculos/jaguar-f-type.json b/src/content/vehiculos/jaguar-f-type.json
+index 3f8b35c..2f443d3 100644
+--- a/src/content/vehiculos/jaguar-f-type.json
++++ b/src/content/vehiculos/jaguar-f-type.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "jaguar-f-type",
+     "type":  "vehiculos",
+     "title":  "Jaguar F-Type",
+diff --git a/src/content/vehiculos/jeep-compass.json b/src/content/vehiculos/jeep-compass.json
+index e46181a..e3e301d 100644
+--- a/src/content/vehiculos/jeep-compass.json
++++ b/src/content/vehiculos/jeep-compass.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "jeep-compass",
+     "type":  "vehiculos",
+     "title":  "Jeep Compass",
+diff --git a/src/content/vehiculos/jeep-grand-cherokee.json b/src/content/vehiculos/jeep-grand-cherokee.json
+index 601a4ef..ce02796 100644
+--- a/src/content/vehiculos/jeep-grand-cherokee.json
++++ b/src/content/vehiculos/jeep-grand-cherokee.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "jeep-grand-cherokee",
+     "type":  "vehiculos",
+     "title":  "Jeep Grand Cherokee",
+diff --git a/src/content/vehiculos/jeep-renegade.json b/src/content/vehiculos/jeep-renegade.json
+index e096b84..9e37f16 100644
+--- a/src/content/vehiculos/jeep-renegade.json
++++ b/src/content/vehiculos/jeep-renegade.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "jeep-renegade",
+     "type":  "vehiculos",
+     "title":  "Jeep Renegade",
+diff --git a/src/content/vehiculos/jeep-wrangler.json b/src/content/vehiculos/jeep-wrangler.json
+index 3a4b38c..57dfed7 100644
+--- a/src/content/vehiculos/jeep-wrangler.json
++++ b/src/content/vehiculos/jeep-wrangler.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "jeep-wrangler",
+     "type":  "vehiculos",
+     "title":  "Jeep Wrangler",
+diff --git a/src/content/vehiculos/kawasaki-ninja-400.json b/src/content/vehiculos/kawasaki-ninja-400.json
+index 16c53b0..27f459b 100644
+--- a/src/content/vehiculos/kawasaki-ninja-400.json
++++ b/src/content/vehiculos/kawasaki-ninja-400.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "kawasaki-ninja-400",
+     "type":  "vehiculos",
+     "title":  "Kawasaki Ninja 400",
+diff --git a/src/content/vehiculos/kawasaki-ninja-650.json b/src/content/vehiculos/kawasaki-ninja-650.json
+index 5a2e783..845b1e9 100644
+--- a/src/content/vehiculos/kawasaki-ninja-650.json
++++ b/src/content/vehiculos/kawasaki-ninja-650.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "kawasaki-ninja-650",
+     "type":  "vehiculos",
+     "title":  "Kawasaki Ninja 650",
+diff --git a/src/content/vehiculos/kawasaki-z900.json b/src/content/vehiculos/kawasaki-z900.json
+index dd85547..da749ba 100644
+--- a/src/content/vehiculos/kawasaki-z900.json
++++ b/src/content/vehiculos/kawasaki-z900.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "kawasaki-z900",
+     "type":  "vehiculos",
+     "title":  "Kawasaki Z900",
+diff --git a/src/content/vehiculos/kia-ev6.json b/src/content/vehiculos/kia-ev6.json
+index 43c4e9d..c6a759f 100644
+--- a/src/content/vehiculos/kia-ev6.json
++++ b/src/content/vehiculos/kia-ev6.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "kia-ev6",
+     "type":  "vehiculos",
+     "title":  "Kia EV6",
+diff --git a/src/content/vehiculos/kia-picanto.json b/src/content/vehiculos/kia-picanto.json
+index f04a8df..de93101 100644
+--- a/src/content/vehiculos/kia-picanto.json
++++ b/src/content/vehiculos/kia-picanto.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "kia-picanto",
+     "type":  "vehiculos",
+     "title":  "Kia Picanto",
+diff --git a/src/content/vehiculos/kia-rio.json b/src/content/vehiculos/kia-rio.json
+index 6aa9e1d..dac4102 100644
+--- a/src/content/vehiculos/kia-rio.json
++++ b/src/content/vehiculos/kia-rio.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "kia-rio",
+     "type":  "vehiculos",
+     "title":  "Kia Rio",
+diff --git a/src/content/vehiculos/kia-seltos.json b/src/content/vehiculos/kia-seltos.json
+index 36bc121..8347142 100644
+--- a/src/content/vehiculos/kia-seltos.json
++++ b/src/content/vehiculos/kia-seltos.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "kia-seltos",
+     "type":  "vehiculos",
+     "title":  "Kia Seltos",
+diff --git a/src/content/vehiculos/kia-sorento.json b/src/content/vehiculos/kia-sorento.json
+index 265ebba..4737bbb 100644
+--- a/src/content/vehiculos/kia-sorento.json
++++ b/src/content/vehiculos/kia-sorento.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "kia-sorento",
+     "type":  "vehiculos",
+     "title":  "Kia Sorento",
+diff --git a/src/content/vehiculos/kia-sportage.json b/src/content/vehiculos/kia-sportage.json
+index 4643625..2d29b21 100644
+--- a/src/content/vehiculos/kia-sportage.json
++++ b/src/content/vehiculos/kia-sportage.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "kia-sportage",
+     "type":  "vehiculos",
+     "title":  "Kia Sportage",
+diff --git a/src/content/vehiculos/ktm-1290-super-adventure.json b/src/content/vehiculos/ktm-1290-super-adventure.json
+index 9c15146..1ac5bda 100644
+--- a/src/content/vehiculos/ktm-1290-super-adventure.json
++++ b/src/content/vehiculos/ktm-1290-super-adventure.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ktm-1290-super-adventure",
+     "type":  "vehiculos",
+     "title":  "KTM 1290 Super Adventure",
+diff --git a/src/content/vehiculos/ktm-duke-390.json b/src/content/vehiculos/ktm-duke-390.json
+index 46e5c17..5bcd337 100644
+--- a/src/content/vehiculos/ktm-duke-390.json
++++ b/src/content/vehiculos/ktm-duke-390.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ktm-duke-390",
+     "type":  "vehiculos",
+     "title":  "KTM Duke 390",
+diff --git a/src/content/vehiculos/lamborghini-urus.json b/src/content/vehiculos/lamborghini-urus.json
+index c927d9d..8684301 100644
+--- a/src/content/vehiculos/lamborghini-urus.json
++++ b/src/content/vehiculos/lamborghini-urus.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "lamborghini-urus",
+     "type":  "vehiculos",
+     "title":  "Lamborghini Urus",
+diff --git a/src/content/vehiculos/land-rover-defender.json b/src/content/vehiculos/land-rover-defender.json
+index 6f42a98..92134c6 100644
+--- a/src/content/vehiculos/land-rover-defender.json
++++ b/src/content/vehiculos/land-rover-defender.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "land-rover-defender",
+     "type":  "vehiculos",
+     "title":  "Land Rover Defender",
+diff --git a/src/content/vehiculos/land-rover-discovery.json b/src/content/vehiculos/land-rover-discovery.json
+index 667aaff..c14bc4f 100644
+--- a/src/content/vehiculos/land-rover-discovery.json
++++ b/src/content/vehiculos/land-rover-discovery.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "land-rover-discovery",
+     "type":  "vehiculos",
+     "title":  "Land Rover Discovery",
+diff --git a/src/content/vehiculos/land-rover-range-rover.json b/src/content/vehiculos/land-rover-range-rover.json
+index 559e1bd..4843be3 100644
+--- a/src/content/vehiculos/land-rover-range-rover.json
++++ b/src/content/vehiculos/land-rover-range-rover.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "land-rover-range-rover",
+     "type":  "vehiculos",
+     "title":  "Land Rover Range Rover",
+diff --git a/src/content/vehiculos/lexus-lx.json b/src/content/vehiculos/lexus-lx.json
+index 23744df..df8ba8c 100644
+--- a/src/content/vehiculos/lexus-lx.json
++++ b/src/content/vehiculos/lexus-lx.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "lexus-lx",
+     "type":  "vehiculos",
+     "title":  "Lexus LX",
+diff --git a/src/content/vehiculos/lexus-nx.json b/src/content/vehiculos/lexus-nx.json
+index 93c74a2..347d8c7 100644
+--- a/src/content/vehiculos/lexus-nx.json
++++ b/src/content/vehiculos/lexus-nx.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "lexus-nx",
+     "type":  "vehiculos",
+     "title":  "Lexus NX",
+diff --git a/src/content/vehiculos/lexus-rx.json b/src/content/vehiculos/lexus-rx.json
+index 8fe5b49..96509a8 100644
+--- a/src/content/vehiculos/lexus-rx.json
++++ b/src/content/vehiculos/lexus-rx.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "lexus-rx",
+     "type":  "vehiculos",
+     "title":  "Lexus RX",
+diff --git a/src/content/vehiculos/mahindra-scorpio-n.json b/src/content/vehiculos/mahindra-scorpio-n.json
+index fee606c..5c5ace8 100644
+--- a/src/content/vehiculos/mahindra-scorpio-n.json
++++ b/src/content/vehiculos/mahindra-scorpio-n.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mahindra-scorpio-n",
+     "type":  "vehiculos",
+     "title":  "Mahindra Scorpio-N",
+diff --git a/src/content/vehiculos/mahindra-thar.json b/src/content/vehiculos/mahindra-thar.json
+index ad07aa1..75d9d48 100644
+--- a/src/content/vehiculos/mahindra-thar.json
++++ b/src/content/vehiculos/mahindra-thar.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mahindra-thar",
+     "type":  "vehiculos",
+     "title":  "Mahindra Thar",
+diff --git a/src/content/vehiculos/maserati-grecale.json b/src/content/vehiculos/maserati-grecale.json
+index ca84ab9..a133605 100644
+--- a/src/content/vehiculos/maserati-grecale.json
++++ b/src/content/vehiculos/maserati-grecale.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "maserati-grecale",
+     "type":  "vehiculos",
+     "title":  "Maserati Grecale",
+diff --git a/src/content/vehiculos/mazda-3.json b/src/content/vehiculos/mazda-3.json
+index e123e37..5037576 100644
+--- a/src/content/vehiculos/mazda-3.json
++++ b/src/content/vehiculos/mazda-3.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mazda-3",
+     "type":  "vehiculos",
+     "title":  "Mazda 3",
+diff --git a/src/content/vehiculos/mazda-cx-30.json b/src/content/vehiculos/mazda-cx-30.json
+index 821dc11..65a246b 100644
+--- a/src/content/vehiculos/mazda-cx-30.json
++++ b/src/content/vehiculos/mazda-cx-30.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mazda-cx-30",
+     "type":  "vehiculos",
+     "title":  "Mazda CX-30",
+diff --git a/src/content/vehiculos/mazda-cx-5.json b/src/content/vehiculos/mazda-cx-5.json
+index 869f73a..33fa296 100644
+--- a/src/content/vehiculos/mazda-cx-5.json
++++ b/src/content/vehiculos/mazda-cx-5.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mazda-cx-5",
+     "type":  "vehiculos",
+     "title":  "Mazda CX-5",
+diff --git a/src/content/vehiculos/mclaren-artura.json b/src/content/vehiculos/mclaren-artura.json
+index 111d4a4..16082fb 100644
+--- a/src/content/vehiculos/mclaren-artura.json
++++ b/src/content/vehiculos/mclaren-artura.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mclaren-artura",
+     "type":  "vehiculos",
+     "title":  "McLaren Artura",
+diff --git a/src/content/vehiculos/mercedes-benz-clase-c.json b/src/content/vehiculos/mercedes-benz-clase-c.json
+index 33c19f6..4380a28 100644
+--- a/src/content/vehiculos/mercedes-benz-clase-c.json
++++ b/src/content/vehiculos/mercedes-benz-clase-c.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mercedes-benz-clase-c",
+     "type":  "vehiculos",
+     "title":  "Mercedes-Benz Clase C",
+diff --git a/src/content/vehiculos/mercedes-benz-clase-e.json b/src/content/vehiculos/mercedes-benz-clase-e.json
+index 6b3410a..252284a 100644
+--- a/src/content/vehiculos/mercedes-benz-clase-e.json
++++ b/src/content/vehiculos/mercedes-benz-clase-e.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mercedes-benz-clase-e",
+     "type":  "vehiculos",
+     "title":  "Mercedes-Benz Clase E",
+diff --git a/src/content/vehiculos/mercedes-benz-glc.json b/src/content/vehiculos/mercedes-benz-glc.json
+index 29c7d39..cece0d5 100644
+--- a/src/content/vehiculos/mercedes-benz-glc.json
++++ b/src/content/vehiculos/mercedes-benz-glc.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mercedes-benz-glc",
+     "type":  "vehiculos",
+     "title":  "Mercedes-Benz GLC",
+diff --git a/src/content/vehiculos/mercedes-benz-gle.json b/src/content/vehiculos/mercedes-benz-gle.json
+index 4bb4168..3676c61 100644
+--- a/src/content/vehiculos/mercedes-benz-gle.json
++++ b/src/content/vehiculos/mercedes-benz-gle.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mercedes-benz-gle",
+     "type":  "vehiculos",
+     "title":  "Mercedes-Benz GLE",
+diff --git a/src/content/vehiculos/mercedes-benz-sprinter.json b/src/content/vehiculos/mercedes-benz-sprinter.json
+index c1e81c3..9ec3602 100644
+--- a/src/content/vehiculos/mercedes-benz-sprinter.json
++++ b/src/content/vehiculos/mercedes-benz-sprinter.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mercedes-benz-sprinter",
+     "type":  "vehiculos",
+     "title":  "Mercedes-Benz Sprinter",
+diff --git a/src/content/vehiculos/mg-hs.json b/src/content/vehiculos/mg-hs.json
+index 66a25aa..e52a7ca 100644
+--- a/src/content/vehiculos/mg-hs.json
++++ b/src/content/vehiculos/mg-hs.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mg-hs",
+     "type":  "vehiculos",
+     "title":  "MG HS",
+diff --git a/src/content/vehiculos/mg-zs.json b/src/content/vehiculos/mg-zs.json
+index b73835f..e1d9cee 100644
+--- a/src/content/vehiculos/mg-zs.json
++++ b/src/content/vehiculos/mg-zs.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mg-zs",
+     "type":  "vehiculos",
+     "title":  "MG ZS",
+diff --git a/src/content/vehiculos/mg4.json b/src/content/vehiculos/mg4.json
+index 8c6cfe9..b0e11db 100644
+--- a/src/content/vehiculos/mg4.json
++++ b/src/content/vehiculos/mg4.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mg4",
+     "type":  "vehiculos",
+     "title":  "MG4 Electric",
+diff --git a/src/content/vehiculos/mini-cooper.json b/src/content/vehiculos/mini-cooper.json
+index 4ede07b..09f5e1c 100644
+--- a/src/content/vehiculos/mini-cooper.json
++++ b/src/content/vehiculos/mini-cooper.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mini-cooper",
+     "type":  "vehiculos",
+     "title":  "Mini Cooper",
+diff --git a/src/content/vehiculos/mini-countryman.json b/src/content/vehiculos/mini-countryman.json
+index 6e2c3b6..53b6f5f 100644
+--- a/src/content/vehiculos/mini-countryman.json
++++ b/src/content/vehiculos/mini-countryman.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mini-countryman",
+     "type":  "vehiculos",
+     "title":  "Mini Countryman",
+diff --git a/src/content/vehiculos/mitsubishi-l200.json b/src/content/vehiculos/mitsubishi-l200.json
+index 86d4a5c..5ff25bf 100644
+--- a/src/content/vehiculos/mitsubishi-l200.json
++++ b/src/content/vehiculos/mitsubishi-l200.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mitsubishi-l200",
+     "type":  "vehiculos",
+     "title":  "Mitsubishi L200",
+diff --git a/src/content/vehiculos/mitsubishi-outlander.json b/src/content/vehiculos/mitsubishi-outlander.json
+index 668ffef..5e28c3e 100644
+--- a/src/content/vehiculos/mitsubishi-outlander.json
++++ b/src/content/vehiculos/mitsubishi-outlander.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mitsubishi-outlander",
+     "type":  "vehiculos",
+     "title":  "Mitsubishi Outlander",
+diff --git a/src/content/vehiculos/mitsubishi-triton.json b/src/content/vehiculos/mitsubishi-triton.json
+index 6466e23..e36b67b 100644
+--- a/src/content/vehiculos/mitsubishi-triton.json
++++ b/src/content/vehiculos/mitsubishi-triton.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "mitsubishi-triton",
+     "type":  "vehiculos",
+     "title":  "Mitsubishi Triton",
+diff --git a/src/content/vehiculos/motomel-skua-150.json b/src/content/vehiculos/motomel-skua-150.json
+index 7ca054e..9c55de7 100644
+--- a/src/content/vehiculos/motomel-skua-150.json
++++ b/src/content/vehiculos/motomel-skua-150.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "motomel-skua-150",
+     "type":  "vehiculos",
+     "title":  "Motomel Skua 150",
+diff --git a/src/content/vehiculos/nio-et5.json b/src/content/vehiculos/nio-et5.json
+index e76728c..cffd344 100644
+--- a/src/content/vehiculos/nio-et5.json
++++ b/src/content/vehiculos/nio-et5.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "nio-et5",
+     "type":  "vehiculos",
+     "title":  "NIO ET5",
+diff --git a/src/content/vehiculos/nissan-frontier.json b/src/content/vehiculos/nissan-frontier.json
+index b6a8f31..bbf192d 100644
+--- a/src/content/vehiculos/nissan-frontier.json
++++ b/src/content/vehiculos/nissan-frontier.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "nissan-frontier",
+     "type":  "vehiculos",
+     "title":  "Nissan Frontier",
+diff --git a/src/content/vehiculos/nissan-gt-r.json b/src/content/vehiculos/nissan-gt-r.json
+index 2e2a707..d9a2900 100644
+--- a/src/content/vehiculos/nissan-gt-r.json
++++ b/src/content/vehiculos/nissan-gt-r.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "nissan-gt-r",
+     "type":  "vehiculos",
+     "title":  "Nissan GT-R",
+diff --git a/src/content/vehiculos/nissan-kicks.json b/src/content/vehiculos/nissan-kicks.json
+index 0b45bc0..449109e 100644
+--- a/src/content/vehiculos/nissan-kicks.json
++++ b/src/content/vehiculos/nissan-kicks.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "nissan-kicks",
+     "type":  "vehiculos",
+     "title":  "Nissan Kicks",
+diff --git a/src/content/vehiculos/nissan-leaf.json b/src/content/vehiculos/nissan-leaf.json
+index 7ba1dd9..bd50fd2 100644
+--- a/src/content/vehiculos/nissan-leaf.json
++++ b/src/content/vehiculos/nissan-leaf.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "nissan-leaf",
+     "type":  "vehiculos",
+     "title":  "Nissan Leaf",
+diff --git a/src/content/vehiculos/nissan-navara.json b/src/content/vehiculos/nissan-navara.json
+index 7e6f5c9..7cdba27 100644
+--- a/src/content/vehiculos/nissan-navara.json
++++ b/src/content/vehiculos/nissan-navara.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "nissan-navara",
+     "type":  "vehiculos",
+     "title":  "Nissan Navara",
+diff --git a/src/content/vehiculos/nissan-qashqai.json b/src/content/vehiculos/nissan-qashqai.json
+index 20e596f..9d65b1e 100644
+--- a/src/content/vehiculos/nissan-qashqai.json
++++ b/src/content/vehiculos/nissan-qashqai.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "nissan-qashqai",
+     "type":  "vehiculos",
+     "title":  "Nissan Qashqai",
+diff --git a/src/content/vehiculos/nissan-sentra.json b/src/content/vehiculos/nissan-sentra.json
+index b5ae03a..cb4c53d 100644
+--- a/src/content/vehiculos/nissan-sentra.json
++++ b/src/content/vehiculos/nissan-sentra.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "nissan-sentra",
+     "type":  "vehiculos",
+     "title":  "Nissan Sentra",
+diff --git a/src/content/vehiculos/nissan-versa.json b/src/content/vehiculos/nissan-versa.json
+index b506d63..a40fb8c 100644
+--- a/src/content/vehiculos/nissan-versa.json
++++ b/src/content/vehiculos/nissan-versa.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "nissan-versa",
+     "type":  "vehiculos",
+     "title":  "Nissan Versa",
+diff --git a/src/content/vehiculos/nissan-x-trail.json b/src/content/vehiculos/nissan-x-trail.json
+index 0344774..2650d3b 100644
+--- a/src/content/vehiculos/nissan-x-trail.json
++++ b/src/content/vehiculos/nissan-x-trail.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "nissan-x-trail",
+     "type":  "vehiculos",
+     "title":  "Nissan X-Trail",
+diff --git a/src/content/vehiculos/opel-astra.json b/src/content/vehiculos/opel-astra.json
+index 25a7d86..49fab42 100644
+--- a/src/content/vehiculos/opel-astra.json
++++ b/src/content/vehiculos/opel-astra.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "opel-astra",
+     "type":  "vehiculos",
+     "title":  "Opel Astra",
+diff --git a/src/content/vehiculos/opel-corsa.json b/src/content/vehiculos/opel-corsa.json
+index ede624f..7b8bfdb 100644
+--- a/src/content/vehiculos/opel-corsa.json
++++ b/src/content/vehiculos/opel-corsa.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "opel-corsa",
+     "type":  "vehiculos",
+     "title":  "Opel Corsa",
+diff --git a/src/content/vehiculos/perodua-myvi.json b/src/content/vehiculos/perodua-myvi.json
+index 34a921d..aeefa4a 100644
+--- a/src/content/vehiculos/perodua-myvi.json
++++ b/src/content/vehiculos/perodua-myvi.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "perodua-myvi",
+     "type":  "vehiculos",
+     "title":  "Perodua Myvi",
+diff --git a/src/content/vehiculos/peugeot-2008.json b/src/content/vehiculos/peugeot-2008.json
+index 3abd320..a1088dc 100644
+--- a/src/content/vehiculos/peugeot-2008.json
++++ b/src/content/vehiculos/peugeot-2008.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "peugeot-2008",
+     "type":  "vehiculos",
+     "title":  "Peugeot 2008",
+diff --git a/src/content/vehiculos/peugeot-208.json b/src/content/vehiculos/peugeot-208.json
+index 32e79d7..199e2c0 100644
+--- a/src/content/vehiculos/peugeot-208.json
++++ b/src/content/vehiculos/peugeot-208.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "peugeot-208",
+     "type":  "vehiculos",
+     "title":  "Peugeot 208",
+diff --git a/src/content/vehiculos/peugeot-3008.json b/src/content/vehiculos/peugeot-3008.json
+index 7d7a017..e8e5e4e 100644
+--- a/src/content/vehiculos/peugeot-3008.json
++++ b/src/content/vehiculos/peugeot-3008.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "peugeot-3008",
+     "type":  "vehiculos",
+     "title":  "Peugeot 3008 GT",
+diff --git a/src/content/vehiculos/peugeot-408.json b/src/content/vehiculos/peugeot-408.json
+index 387db24..8c002bb 100644
+--- a/src/content/vehiculos/peugeot-408.json
++++ b/src/content/vehiculos/peugeot-408.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "peugeot-408",
+     "type":  "vehiculos",
+     "title":  "Peugeot 408",
+diff --git a/src/content/vehiculos/peugeot-5008.json b/src/content/vehiculos/peugeot-5008.json
+index 768d579..46616c7 100644
+--- a/src/content/vehiculos/peugeot-5008.json
++++ b/src/content/vehiculos/peugeot-5008.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "peugeot-5008",
+     "type":  "vehiculos",
+     "title":  "Peugeot 5008",
+diff --git a/src/content/vehiculos/peugeot-508.json b/src/content/vehiculos/peugeot-508.json
+index b35b76a..3b94a89 100644
+--- a/src/content/vehiculos/peugeot-508.json
++++ b/src/content/vehiculos/peugeot-508.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "peugeot-508",
+     "type":  "vehiculos",
+     "title":  "Peugeot 508",
+diff --git a/src/content/vehiculos/peugeot-partner.json b/src/content/vehiculos/peugeot-partner.json
+index 6fac7b3..2ef1ce1 100644
+--- a/src/content/vehiculos/peugeot-partner.json
++++ b/src/content/vehiculos/peugeot-partner.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "peugeot-partner",
+     "type":  "vehiculos",
+     "title":  "Peugeot Partner",
+diff --git a/src/content/vehiculos/piaggio-liberty.json b/src/content/vehiculos/piaggio-liberty.json
+index c67bf63..ace40d4 100644
+--- a/src/content/vehiculos/piaggio-liberty.json
++++ b/src/content/vehiculos/piaggio-liberty.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "piaggio-liberty",
+     "type":  "vehiculos",
+     "title":  "Piaggio Liberty",
+diff --git a/src/content/vehiculos/porsche-911-carrera.json b/src/content/vehiculos/porsche-911-carrera.json
+index 8233d02..30d3713 100644
+--- a/src/content/vehiculos/porsche-911-carrera.json
++++ b/src/content/vehiculos/porsche-911-carrera.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "porsche-911-carrera",
+     "type":  "vehiculos",
+     "title":  "Porsche 911 Carrera",
+diff --git a/src/content/vehiculos/porsche-cayenne.json b/src/content/vehiculos/porsche-cayenne.json
+index 908dc86..2fa5276 100644
+--- a/src/content/vehiculos/porsche-cayenne.json
++++ b/src/content/vehiculos/porsche-cayenne.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "porsche-cayenne",
+     "type":  "vehiculos",
+     "title":  "Porsche Cayenne",
+diff --git a/src/content/vehiculos/porsche-taycan.json b/src/content/vehiculos/porsche-taycan.json
+index 8e4868d..e2a2eca 100644
+--- a/src/content/vehiculos/porsche-taycan.json
++++ b/src/content/vehiculos/porsche-taycan.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "porsche-taycan",
+     "type":  "vehiculos",
+     "title":  "Porsche Taycan",
+diff --git a/src/content/vehiculos/proton-x50.json b/src/content/vehiculos/proton-x50.json
+index b5af5b4..2839672 100644
+--- a/src/content/vehiculos/proton-x50.json
++++ b/src/content/vehiculos/proton-x50.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "proton-x50",
+     "type":  "vehiculos",
+     "title":  "Proton X50",
+diff --git a/src/content/vehiculos/ram-1500.json b/src/content/vehiculos/ram-1500.json
+index 2cbb75c..c04e9e9 100644
+--- a/src/content/vehiculos/ram-1500.json
++++ b/src/content/vehiculos/ram-1500.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "ram-1500",
+     "type":  "vehiculos",
+     "title":  "RAM 1500",
+diff --git a/src/content/vehiculos/renault-arkana.json b/src/content/vehiculos/renault-arkana.json
+index e5398ea..644eebe 100644
+--- a/src/content/vehiculos/renault-arkana.json
++++ b/src/content/vehiculos/renault-arkana.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "renault-arkana",
+     "type":  "vehiculos",
+     "title":  "Renault Arkana",
+diff --git a/src/content/vehiculos/renault-captur.json b/src/content/vehiculos/renault-captur.json
+index d87187c..0139723 100644
+--- a/src/content/vehiculos/renault-captur.json
++++ b/src/content/vehiculos/renault-captur.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "renault-captur",
+     "type":  "vehiculos",
+     "title":  "Renault Captur",
+diff --git a/src/content/vehiculos/renault-clio.json b/src/content/vehiculos/renault-clio.json
+index ce32f11..0b49b90 100644
+--- a/src/content/vehiculos/renault-clio.json
++++ b/src/content/vehiculos/renault-clio.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "renault-clio",
+     "type":  "vehiculos",
+     "title":  "Renault Clio",
+diff --git a/src/content/vehiculos/renault-duster.json b/src/content/vehiculos/renault-duster.json
+index 78796e4..d9ccea4 100644
+--- a/src/content/vehiculos/renault-duster.json
++++ b/src/content/vehiculos/renault-duster.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "renault-duster",
+     "type":  "vehiculos",
+     "title":  "Renault Duster",
+diff --git a/src/content/vehiculos/renault-kangoo.json b/src/content/vehiculos/renault-kangoo.json
+index 58832f4..5bbaaf7 100644
+--- a/src/content/vehiculos/renault-kangoo.json
++++ b/src/content/vehiculos/renault-kangoo.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "renault-kangoo",
+     "type":  "vehiculos",
+     "title":  "Renault Kangoo",
+diff --git a/src/content/vehiculos/renault-kwid.json b/src/content/vehiculos/renault-kwid.json
+index ab38226..e110025 100644
+--- a/src/content/vehiculos/renault-kwid.json
++++ b/src/content/vehiculos/renault-kwid.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "renault-kwid",
+     "type":  "vehiculos",
+     "title":  "Renault Kwid",
+diff --git a/src/content/vehiculos/renault-logan.json b/src/content/vehiculos/renault-logan.json
+index 36e796e..c8b834c 100644
+--- a/src/content/vehiculos/renault-logan.json
++++ b/src/content/vehiculos/renault-logan.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "renault-logan",
+     "type":  "vehiculos",
+     "title":  "Renault Logan",
+diff --git a/src/content/vehiculos/renault-megane-e-tech.json b/src/content/vehiculos/renault-megane-e-tech.json
+index f972ee0..2fb1332 100644
+--- a/src/content/vehiculos/renault-megane-e-tech.json
++++ b/src/content/vehiculos/renault-megane-e-tech.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "renault-megane-e-tech",
+     "type":  "vehiculos",
+     "title":  "Renault Mégane E-Tech",
+diff --git a/src/content/vehiculos/renault-sandero.json b/src/content/vehiculos/renault-sandero.json
+index 4b8b465..aadfdb9 100644
+--- a/src/content/vehiculos/renault-sandero.json
++++ b/src/content/vehiculos/renault-sandero.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "renault-sandero",
+     "type":  "vehiculos",
+     "title":  "Renault Sandero",
+diff --git a/src/content/vehiculos/rolls-royce-cullinan.json b/src/content/vehiculos/rolls-royce-cullinan.json
+index 8bd5a24..198eb20 100644
+--- a/src/content/vehiculos/rolls-royce-cullinan.json
++++ b/src/content/vehiculos/rolls-royce-cullinan.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "rolls-royce-cullinan",
+     "type":  "vehiculos",
+     "title":  "Rolls-Royce Cullinan",
+diff --git a/src/content/vehiculos/royal-enfield-classic-350.json b/src/content/vehiculos/royal-enfield-classic-350.json
+index 1088bd8..a88ec02 100644
+--- a/src/content/vehiculos/royal-enfield-classic-350.json
++++ b/src/content/vehiculos/royal-enfield-classic-350.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "royal-enfield-classic-350",
+     "type":  "vehiculos",
+     "title":  "Royal Enfield Classic 350",
+diff --git a/src/content/vehiculos/royal-enfield-himalayan.json b/src/content/vehiculos/royal-enfield-himalayan.json
+index 950b8e8..e779a89 100644
+--- a/src/content/vehiculos/royal-enfield-himalayan.json
++++ b/src/content/vehiculos/royal-enfield-himalayan.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "royal-enfield-himalayan",
+     "type":  "vehiculos",
+     "title":  "Royal Enfield Himalayan",
+diff --git a/src/content/vehiculos/seat-ibiza.json b/src/content/vehiculos/seat-ibiza.json
+index 3118313..7ac88e3 100644
+--- a/src/content/vehiculos/seat-ibiza.json
++++ b/src/content/vehiculos/seat-ibiza.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "seat-ibiza",
+     "type":  "vehiculos",
+     "title":  "SEAT Ibiza",
+diff --git a/src/content/vehiculos/seat-leon.json b/src/content/vehiculos/seat-leon.json
+index 9db47f5..b46cee1 100644
+--- a/src/content/vehiculos/seat-leon.json
++++ b/src/content/vehiculos/seat-leon.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "seat-leon",
+     "type":  "vehiculos",
+     "title":  "SEAT León",
+diff --git a/src/content/vehiculos/skoda-fabia.json b/src/content/vehiculos/skoda-fabia.json
+index 68a9824..8b16137 100644
+--- a/src/content/vehiculos/skoda-fabia.json
++++ b/src/content/vehiculos/skoda-fabia.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "skoda-fabia",
+     "type":  "vehiculos",
+     "title":  "Skoda Fabia",
+diff --git a/src/content/vehiculos/skoda-kushaq.json b/src/content/vehiculos/skoda-kushaq.json
+index c7fe4d0..a05b677 100644
+--- a/src/content/vehiculos/skoda-kushaq.json
++++ b/src/content/vehiculos/skoda-kushaq.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "skoda-kushaq",
+     "type":  "vehiculos",
+     "title":  "Skoda Kushaq",
+diff --git a/src/content/vehiculos/skoda-superb.json b/src/content/vehiculos/skoda-superb.json
+index e769bc3..927cf15 100644
+--- a/src/content/vehiculos/skoda-superb.json
++++ b/src/content/vehiculos/skoda-superb.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "skoda-superb",
+     "type":  "vehiculos",
+     "title":  "Skoda Superb",
+diff --git a/src/content/vehiculos/smart-1.json b/src/content/vehiculos/smart-1.json
+index 5e87c95..141cfd8 100644
+--- a/src/content/vehiculos/smart-1.json
++++ b/src/content/vehiculos/smart-1.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "smart-1",
+     "type":  "vehiculos",
+     "title":  "Smart #1",
+diff --git a/src/content/vehiculos/subaru-forester.json b/src/content/vehiculos/subaru-forester.json
+index 094b36b..9400ee4 100644
+--- a/src/content/vehiculos/subaru-forester.json
++++ b/src/content/vehiculos/subaru-forester.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "subaru-forester",
+     "type":  "vehiculos",
+     "title":  "Subaru Forester",
+diff --git a/src/content/vehiculos/subaru-impreza.json b/src/content/vehiculos/subaru-impreza.json
+index 03d6bf8..050e565 100644
+--- a/src/content/vehiculos/subaru-impreza.json
++++ b/src/content/vehiculos/subaru-impreza.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "subaru-impreza",
+     "type":  "vehiculos",
+     "title":  "Subaru Impreza",
+diff --git a/src/content/vehiculos/subaru-wrx.json b/src/content/vehiculos/subaru-wrx.json
+index d1d813d..b289eb4 100644
+--- a/src/content/vehiculos/subaru-wrx.json
++++ b/src/content/vehiculos/subaru-wrx.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "subaru-wrx",
+     "type":  "vehiculos",
+     "title":  "Subaru WRX",
+diff --git a/src/content/vehiculos/suzuki-baleno.json b/src/content/vehiculos/suzuki-baleno.json
+index f5b0e8a..419388d 100644
+--- a/src/content/vehiculos/suzuki-baleno.json
++++ b/src/content/vehiculos/suzuki-baleno.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "suzuki-baleno",
+     "type":  "vehiculos",
+     "title":  "Suzuki Baleno",
+diff --git a/src/content/vehiculos/suzuki-fronx.json b/src/content/vehiculos/suzuki-fronx.json
+index 2f1a6eb..5d0ef0a 100644
+--- a/src/content/vehiculos/suzuki-fronx.json
++++ b/src/content/vehiculos/suzuki-fronx.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "suzuki-fronx",
+     "type":  "vehiculos",
+     "title":  "Suzuki Fronx",
+diff --git a/src/content/vehiculos/suzuki-gsx-r750.json b/src/content/vehiculos/suzuki-gsx-r750.json
+index 0ce57eb..f619cfa 100644
+--- a/src/content/vehiculos/suzuki-gsx-r750.json
++++ b/src/content/vehiculos/suzuki-gsx-r750.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "suzuki-gsx-r750",
+     "type":  "vehiculos",
+     "title":  "Suzuki GSX-R750",
+diff --git a/src/content/vehiculos/suzuki-jimny.json b/src/content/vehiculos/suzuki-jimny.json
+index aa45211..c6a7067 100644
+--- a/src/content/vehiculos/suzuki-jimny.json
++++ b/src/content/vehiculos/suzuki-jimny.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "suzuki-jimny",
+     "type":  "vehiculos",
+     "title":  "Suzuki Jimny",
+diff --git a/src/content/vehiculos/suzuki-swift.json b/src/content/vehiculos/suzuki-swift.json
+index 6218884..bffa412 100644
+--- a/src/content/vehiculos/suzuki-swift.json
++++ b/src/content/vehiculos/suzuki-swift.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "suzuki-swift",
+     "type":  "vehiculos",
+     "title":  "Suzuki Swift",
+diff --git a/src/content/vehiculos/suzuki-vitara.json b/src/content/vehiculos/suzuki-vitara.json
+index 932d3c8..5b944f9 100644
+--- a/src/content/vehiculos/suzuki-vitara.json
++++ b/src/content/vehiculos/suzuki-vitara.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "suzuki-vitara",
+     "type":  "vehiculos",
+     "title":  "Suzuki Vitara",
+diff --git a/src/content/vehiculos/tata-nexon.json b/src/content/vehiculos/tata-nexon.json
+index dec7219..7c55b43 100644
+--- a/src/content/vehiculos/tata-nexon.json
++++ b/src/content/vehiculos/tata-nexon.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "tata-nexon",
+     "type":  "vehiculos",
+     "title":  "Tata Nexon",
+diff --git a/src/content/vehiculos/tesla-cybertruck.json b/src/content/vehiculos/tesla-cybertruck.json
+index 411ed14..178284d 100644
+--- a/src/content/vehiculos/tesla-cybertruck.json
++++ b/src/content/vehiculos/tesla-cybertruck.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "tesla-cybertruck",
+     "type":  "vehiculos",
+     "title":  "Tesla Cybertruck",
+diff --git a/src/content/vehiculos/tesla-model-3.json b/src/content/vehiculos/tesla-model-3.json
+index 03b97ae..df3fab8 100644
+--- a/src/content/vehiculos/tesla-model-3.json
++++ b/src/content/vehiculos/tesla-model-3.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "tesla-model-3",
+     "type":  "vehiculos",
+     "title":  "Tesla Model 3",
+diff --git a/src/content/vehiculos/tesla-model-s.json b/src/content/vehiculos/tesla-model-s.json
+index 39a1492..8d7338a 100644
+--- a/src/content/vehiculos/tesla-model-s.json
++++ b/src/content/vehiculos/tesla-model-s.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "tesla-model-s",
+     "type":  "vehiculos",
+     "title":  "Tesla Model S",
+diff --git a/src/content/vehiculos/tesla-model-x.json b/src/content/vehiculos/tesla-model-x.json
+index 12208aa..49b5628 100644
+--- a/src/content/vehiculos/tesla-model-x.json
++++ b/src/content/vehiculos/tesla-model-x.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "tesla-model-x",
+     "type":  "vehiculos",
+     "title":  "Tesla Model X",
+diff --git a/src/content/vehiculos/tesla-model-y.json b/src/content/vehiculos/tesla-model-y.json
+index ece185f..b1a6c67 100644
+--- a/src/content/vehiculos/tesla-model-y.json
++++ b/src/content/vehiculos/tesla-model-y.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "tesla-model-y",
+     "type":  "vehiculos",
+     "title":  "Tesla Model Y",
+diff --git a/src/content/vehiculos/toyota-alphard.json b/src/content/vehiculos/toyota-alphard.json
+index 82a9be8..3a0ffae 100644
+--- a/src/content/vehiculos/toyota-alphard.json
++++ b/src/content/vehiculos/toyota-alphard.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-alphard",
+     "type":  "vehiculos",
+     "title":  "Toyota Alphard",
+diff --git a/src/content/vehiculos/toyota-camry.json b/src/content/vehiculos/toyota-camry.json
+index d366b32..0141c18 100644
+--- a/src/content/vehiculos/toyota-camry.json
++++ b/src/content/vehiculos/toyota-camry.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-camry",
+     "type":  "vehiculos",
+     "title":  "Toyota Camry",
+diff --git a/src/content/vehiculos/toyota-corolla-2024.json b/src/content/vehiculos/toyota-corolla-2024.json
+index fadcb67..4fd2620 100644
+--- a/src/content/vehiculos/toyota-corolla-2024.json
++++ b/src/content/vehiculos/toyota-corolla-2024.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-corolla-2024",
+     "type":  "vehiculos",
+     "title":  "Toyota Corolla 2024",
+diff --git a/src/content/vehiculos/toyota-corolla-cross.json b/src/content/vehiculos/toyota-corolla-cross.json
+index a9826ad..67af066 100644
+--- a/src/content/vehiculos/toyota-corolla-cross.json
++++ b/src/content/vehiculos/toyota-corolla-cross.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-corolla-cross",
+     "type":  "vehiculos",
+     "title":  "Toyota Corolla Cross",
+diff --git a/src/content/vehiculos/toyota-etios.json b/src/content/vehiculos/toyota-etios.json
+index 78c1d76..8dcd8bd 100644
+--- a/src/content/vehiculos/toyota-etios.json
++++ b/src/content/vehiculos/toyota-etios.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-etios",
+     "type":  "vehiculos",
+     "title":  "Toyota Etios",
+diff --git a/src/content/vehiculos/toyota-gr86.json b/src/content/vehiculos/toyota-gr86.json
+index 024b7b5..3ce7706 100644
+--- a/src/content/vehiculos/toyota-gr86.json
++++ b/src/content/vehiculos/toyota-gr86.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-gr86",
+     "type":  "vehiculos",
+     "title":  "Toyota GR86",
+diff --git a/src/content/vehiculos/toyota-hilux.json b/src/content/vehiculos/toyota-hilux.json
+index 228c74e..219fc00 100644
+--- a/src/content/vehiculos/toyota-hilux.json
++++ b/src/content/vehiculos/toyota-hilux.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-hilux",
+     "type":  "vehiculos",
+     "title":  "Toyota Hilux",
+diff --git a/src/content/vehiculos/toyota-innova.json b/src/content/vehiculos/toyota-innova.json
+index 4c6d3b4..e1dc520 100644
+--- a/src/content/vehiculos/toyota-innova.json
++++ b/src/content/vehiculos/toyota-innova.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-innova",
+     "type":  "vehiculos",
+     "title":  "Toyota Innova",
+diff --git a/src/content/vehiculos/toyota-land-cruiser-prado.json b/src/content/vehiculos/toyota-land-cruiser-prado.json
+index a623de4..2c3a444 100644
+--- a/src/content/vehiculos/toyota-land-cruiser-prado.json
++++ b/src/content/vehiculos/toyota-land-cruiser-prado.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-land-cruiser-prado",
+     "type":  "vehiculos",
+     "title":  "Toyota Land Cruiser Prado",
+diff --git a/src/content/vehiculos/toyota-land-cruiser.json b/src/content/vehiculos/toyota-land-cruiser.json
+index 44146b0..df8713c 100644
+--- a/src/content/vehiculos/toyota-land-cruiser.json
++++ b/src/content/vehiculos/toyota-land-cruiser.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-land-cruiser",
+     "type":  "vehiculos",
+     "title":  "Toyota Land Cruiser",
+diff --git a/src/content/vehiculos/toyota-prius.json b/src/content/vehiculos/toyota-prius.json
+index 333be8b..ae5c24c 100644
+--- a/src/content/vehiculos/toyota-prius.json
++++ b/src/content/vehiculos/toyota-prius.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-prius",
+     "type":  "vehiculos",
+     "title":  "Toyota Prius",
+diff --git a/src/content/vehiculos/toyota-rav4.json b/src/content/vehiculos/toyota-rav4.json
+index 6218314..b286c3b 100644
+--- a/src/content/vehiculos/toyota-rav4.json
++++ b/src/content/vehiculos/toyota-rav4.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-rav4",
+     "type":  "vehiculos",
+     "title":  "Toyota RAV4",
+diff --git a/src/content/vehiculos/toyota-sw4.json b/src/content/vehiculos/toyota-sw4.json
+index 0b95067..8f1856e 100644
+--- a/src/content/vehiculos/toyota-sw4.json
++++ b/src/content/vehiculos/toyota-sw4.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-sw4",
+     "type":  "vehiculos",
+     "title":  "Toyota SW4",
+diff --git a/src/content/vehiculos/toyota-yaris-cross.json b/src/content/vehiculos/toyota-yaris-cross.json
+index 6baba68..c8a8156 100644
+--- a/src/content/vehiculos/toyota-yaris-cross.json
++++ b/src/content/vehiculos/toyota-yaris-cross.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-yaris-cross",
+     "type":  "vehiculos",
+     "title":  "Toyota Yaris Cross",
+diff --git a/src/content/vehiculos/toyota-yaris.json b/src/content/vehiculos/toyota-yaris.json
+index b143dc9..3819b1d 100644
+--- a/src/content/vehiculos/toyota-yaris.json
++++ b/src/content/vehiculos/toyota-yaris.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "toyota-yaris",
+     "type":  "vehiculos",
+     "title":  "Toyota Yaris",
+diff --git a/src/content/vehiculos/triumph-bonneville-t120.json b/src/content/vehiculos/triumph-bonneville-t120.json
+index 58e8139..70ffb59 100644
+--- a/src/content/vehiculos/triumph-bonneville-t120.json
++++ b/src/content/vehiculos/triumph-bonneville-t120.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "triumph-bonneville-t120",
+     "type":  "vehiculos",
+     "title":  "Triumph Bonneville T120",
+diff --git a/src/content/vehiculos/triumph-street-triple.json b/src/content/vehiculos/triumph-street-triple.json
+index c44593a..56e7b8f 100644
+--- a/src/content/vehiculos/triumph-street-triple.json
++++ b/src/content/vehiculos/triumph-street-triple.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "triumph-street-triple",
+     "type":  "vehiculos",
+     "title":  "Triumph Street Triple",
+diff --git a/src/content/vehiculos/vespa-primavera.json b/src/content/vehiculos/vespa-primavera.json
+index 46c30d7..68e05c3 100644
+--- a/src/content/vehiculos/vespa-primavera.json
++++ b/src/content/vehiculos/vespa-primavera.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "vespa-primavera",
+     "type":  "vehiculos",
+     "title":  "Vespa Primavera",
+diff --git a/src/content/vehiculos/volkswagen-amarok.json b/src/content/vehiculos/volkswagen-amarok.json
+index 8b0da0a..76a3ada 100644
+--- a/src/content/vehiculos/volkswagen-amarok.json
++++ b/src/content/vehiculos/volkswagen-amarok.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volkswagen-amarok",
+     "type":  "vehiculos",
+     "title":  "Volkswagen Amarok",
+diff --git a/src/content/vehiculos/volkswagen-golf-gti.json b/src/content/vehiculos/volkswagen-golf-gti.json
+index fd274a4..903d787 100644
+--- a/src/content/vehiculos/volkswagen-golf-gti.json
++++ b/src/content/vehiculos/volkswagen-golf-gti.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volkswagen-golf-gti",
+     "type":  "vehiculos",
+     "title":  "Volkswagen Golf GTI",
+diff --git a/src/content/vehiculos/volkswagen-id-4.json b/src/content/vehiculos/volkswagen-id-4.json
+index 18586f4..7b2f18a 100644
+--- a/src/content/vehiculos/volkswagen-id-4.json
++++ b/src/content/vehiculos/volkswagen-id-4.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volkswagen-id-4",
+     "type":  "vehiculos",
+     "title":  "Volkswagen ID.4",
+diff --git a/src/content/vehiculos/volkswagen-nivus.json b/src/content/vehiculos/volkswagen-nivus.json
+index 9e2cde1..99eee56 100644
+--- a/src/content/vehiculos/volkswagen-nivus.json
++++ b/src/content/vehiculos/volkswagen-nivus.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volkswagen-nivus",
+     "type":  "vehiculos",
+     "title":  "Volkswagen Nivus",
+diff --git a/src/content/vehiculos/volkswagen-polo.json b/src/content/vehiculos/volkswagen-polo.json
+index 3d6d4c1..45626ec 100644
+--- a/src/content/vehiculos/volkswagen-polo.json
++++ b/src/content/vehiculos/volkswagen-polo.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volkswagen-polo",
+     "type":  "vehiculos",
+     "title":  "Volkswagen Polo",
+diff --git a/src/content/vehiculos/volkswagen-saveiro.json b/src/content/vehiculos/volkswagen-saveiro.json
+index 54a617a..d55ecbb 100644
+--- a/src/content/vehiculos/volkswagen-saveiro.json
++++ b/src/content/vehiculos/volkswagen-saveiro.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volkswagen-saveiro",
+     "type":  "vehiculos",
+     "title":  "Volkswagen Saveiro",
+diff --git a/src/content/vehiculos/volkswagen-t-cross.json b/src/content/vehiculos/volkswagen-t-cross.json
+index 8de3bd1..e5f44ed 100644
+--- a/src/content/vehiculos/volkswagen-t-cross.json
++++ b/src/content/vehiculos/volkswagen-t-cross.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volkswagen-t-cross",
+     "type":  "vehiculos",
+     "title":  "Volkswagen T-Cross",
+diff --git a/src/content/vehiculos/volkswagen-taos.json b/src/content/vehiculos/volkswagen-taos.json
+index 33cd225..e694f41 100644
+--- a/src/content/vehiculos/volkswagen-taos.json
++++ b/src/content/vehiculos/volkswagen-taos.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volkswagen-taos",
+     "type":  "vehiculos",
+     "title":  "Volkswagen Taos",
+diff --git a/src/content/vehiculos/volkswagen-tera.json b/src/content/vehiculos/volkswagen-tera.json
+index 04cebaf..96fdb64 100644
+--- a/src/content/vehiculos/volkswagen-tera.json
++++ b/src/content/vehiculos/volkswagen-tera.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volkswagen-tera",
+     "type":  "vehiculos",
+     "title":  "Volkswagen T-Cross",
+diff --git a/src/content/vehiculos/volkswagen-tiguan.json b/src/content/vehiculos/volkswagen-tiguan.json
+index 5331c1d..4806dc2 100644
+--- a/src/content/vehiculos/volkswagen-tiguan.json
++++ b/src/content/vehiculos/volkswagen-tiguan.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volkswagen-tiguan",
+     "type":  "vehiculos",
+     "title":  "Volkswagen Tiguan",
+diff --git a/src/content/vehiculos/volkswagen-virtus.json b/src/content/vehiculos/volkswagen-virtus.json
+index 40e7135..a9dfbaa 100644
+--- a/src/content/vehiculos/volkswagen-virtus.json
++++ b/src/content/vehiculos/volkswagen-virtus.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volkswagen-virtus",
+     "type":  "vehiculos",
+     "title":  "Volkswagen Virtus",
+diff --git a/src/content/vehiculos/volvo-s60.json b/src/content/vehiculos/volvo-s60.json
+index 42a7a85..51570da 100644
+--- a/src/content/vehiculos/volvo-s60.json
++++ b/src/content/vehiculos/volvo-s60.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volvo-s60",
+     "type":  "vehiculos",
+     "title":  "Volvo S60",
+diff --git a/src/content/vehiculos/volvo-xc60.json b/src/content/vehiculos/volvo-xc60.json
+index cb200b2..2f2bbce 100644
+--- a/src/content/vehiculos/volvo-xc60.json
++++ b/src/content/vehiculos/volvo-xc60.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volvo-xc60",
+     "type":  "vehiculos",
+     "title":  "Volvo XC60",
+diff --git a/src/content/vehiculos/volvo-xc90.json b/src/content/vehiculos/volvo-xc90.json
+index 94db7eb..7dc958c 100644
+--- a/src/content/vehiculos/volvo-xc90.json
++++ b/src/content/vehiculos/volvo-xc90.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "volvo-xc90",
+     "type":  "vehiculos",
+     "title":  "Volvo XC90",
+diff --git a/src/content/vehiculos/wuling-mini-ev.json b/src/content/vehiculos/wuling-mini-ev.json
+index 5a8fcbe..59e6fed 100644
+--- a/src/content/vehiculos/wuling-mini-ev.json
++++ b/src/content/vehiculos/wuling-mini-ev.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "wuling-mini-ev",
+     "type":  "vehiculos",
+     "title":  "Wuling Hongguang Mini EV",
+diff --git a/src/content/vehiculos/xiaomi-su7.json b/src/content/vehiculos/xiaomi-su7.json
+index 9cb6fca..af4a2be 100644
+--- a/src/content/vehiculos/xiaomi-su7.json
++++ b/src/content/vehiculos/xiaomi-su7.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "xiaomi-su7",
+     "type":  "vehiculos",
+     "title":  "Xiaomi SU7",
+diff --git a/src/content/vehiculos/yamaha-fazer-250.json b/src/content/vehiculos/yamaha-fazer-250.json
+index 4c04ec5..7e2f97f 100644
+--- a/src/content/vehiculos/yamaha-fazer-250.json
++++ b/src/content/vehiculos/yamaha-fazer-250.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "yamaha-fazer-250",
+     "type":  "vehiculos",
+     "title":  "Yamaha Fazer 250",
+diff --git a/src/content/vehiculos/yamaha-mt-07.json b/src/content/vehiculos/yamaha-mt-07.json
+index fe611b1..ee0ce84 100644
+--- a/src/content/vehiculos/yamaha-mt-07.json
++++ b/src/content/vehiculos/yamaha-mt-07.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "yamaha-mt-07",
+     "type":  "vehiculos",
+     "title":  "Yamaha MT-07",
+diff --git a/src/content/vehiculos/yamaha-nmax.json b/src/content/vehiculos/yamaha-nmax.json
+index 5417ff3..8c856b1 100644
+--- a/src/content/vehiculos/yamaha-nmax.json
++++ b/src/content/vehiculos/yamaha-nmax.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "yamaha-nmax",
+     "type":  "vehiculos",
+     "title":  "Yamaha NMAX",
+diff --git a/src/content/vehiculos/yamaha-r1.json b/src/content/vehiculos/yamaha-r1.json
+index c796154..e38039f 100644
+--- a/src/content/vehiculos/yamaha-r1.json
++++ b/src/content/vehiculos/yamaha-r1.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "yamaha-r1",
+     "type":  "vehiculos",
+     "title":  "Yamaha R1",
+diff --git a/src/content/vehiculos/yamaha-tenere-700.json b/src/content/vehiculos/yamaha-tenere-700.json
+index 89b38b9..cdccad3 100644
+--- a/src/content/vehiculos/yamaha-tenere-700.json
++++ b/src/content/vehiculos/yamaha-tenere-700.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "yamaha-tenere-700",
+     "type":  "vehiculos",
+     "title":  "Yamaha Ténéré 700",
+diff --git a/src/content/vehiculos/yamaha-ybr-125.json b/src/content/vehiculos/yamaha-ybr-125.json
+index f411fcd..df3a13e 100644
+--- a/src/content/vehiculos/yamaha-ybr-125.json
++++ b/src/content/vehiculos/yamaha-ybr-125.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "yamaha-ybr-125",
+     "type":  "vehiculos",
+     "title":  "Yamaha YBR 125",
+diff --git a/src/content/vehiculos/zanella-rx-150.json b/src/content/vehiculos/zanella-rx-150.json
+index e6a7a20..a8b2016 100644
+--- a/src/content/vehiculos/zanella-rx-150.json
++++ b/src/content/vehiculos/zanella-rx-150.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "zanella-rx-150",
+     "type":  "vehiculos",
+     "title":  "Zanella RX 150",
+diff --git a/src/content/vehiculos/zanella-rx-200.json b/src/content/vehiculos/zanella-rx-200.json
+index 1c31b20..fa96140 100644
+--- a/src/content/vehiculos/zanella-rx-200.json
++++ b/src/content/vehiculos/zanella-rx-200.json
+@@ -1,4 +1,4 @@
+-﻿{
++{
+     "slug":  "zanella-rx-200",
+     "type":  "vehiculos",
+     "title":  "Zanella RX 200 Next",
+diff --git a/src/lib/entities.ts b/src/lib/entities.ts
+index 2e7de6a..6d54818 100644
+--- a/src/lib/entities.ts
++++ b/src/lib/entities.ts
+@@ -129,7 +129,14 @@ function loadEntitiesByTypeSync(type: EntityType): Entity[] {
+ 
+   for (const file of files) {
+     try {
+-      const raw = fs.readFileSync(path.join(dir, file), 'utf-8')
++      // Defensivo: algunos archivos se guardaron con BOM UTF-8 (EF BB BF),
++      // típico de `Out-File`/`Set-Content` en PowerShell en Windows.
++      // `JSON.parse` no tolera el BOM y tira SyntaxError, lo que hacía que
++      // esta entidad quedara silenciosamente excluida del build (ver
++      // catch de abajo, que solo hace console.warn). Se lo saca antes de
++      // parsear para que un archivo futuro con BOM no vuelva a colar este
++      // bug sin que nada lo note.
++      const raw = fs.readFileSync(path.join(dir, file), 'utf-8').replace(/^\uFEFF/, '')
+       const parsed = JSON.parse(raw)
+ 
+       if (!validateEntity(parsed)) {
