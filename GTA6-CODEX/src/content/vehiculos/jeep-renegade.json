@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.310Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:37:50.000Z",
   "manufacturer": "Jeep",
   "class": "SUV compacta",
   "customizable": false,
@@ -90,5 +90,7 @@
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
   "capacidadRemolque": "1.200-1.500 kg (estimado)",
   "paisOrigen": "Estados Unidos",
-  "numeroPuertas": "5 puertas"
+  "numeroPuertas": "5 puertas",
+  "calificacionSeguridad": "1 estrella Latin NCAP (unidad brasileña pre-facelift, test 2024) — 48.71% ocupante adulto; el mismo modelo había obtenido 5 estrellas en 2015 bajo un protocolo mucho menos exigente",
+  "fuenteSeguridad": "https://www.rutamotor.com/latin-ncap-certifica-con-solo-una-estrella-en-seguridad-al-renegade-y-denuncia-a/"
 }

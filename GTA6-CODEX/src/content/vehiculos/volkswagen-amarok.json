@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.422Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:37:50.000Z",
   "manufacturer": "Volkswagen",
   "class": "Pickup",
   "customizable": false,
@@ -91,5 +91,7 @@
   "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
   "paisOrigen": "Alemania",
-  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple"
+  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple",
+  "calificacionSeguridad": "3 estrellas Latin NCAP (Nueva Amarok, test 2024)",
+  "fuenteSeguridad": "https://www.latinncap.com/es/area-de-prensa/noticia/8675ae6a2343de"
 }

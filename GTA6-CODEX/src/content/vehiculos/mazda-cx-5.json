@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:01.491247Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:37:50.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.550-1.700 kg",
@@ -95,5 +95,7 @@
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
   "capacidadRemolque": "1.500-2.000 kg (estimado)",
   "paisOrigen": "Japón",
-  "numeroPuertas": "5 puertas"
+  "numeroPuertas": "5 puertas",
+  "calificacionSeguridad": "5 estrellas Euro NCAP (2025, generación nueva) — no evaluado directamente por Latin NCAP, por lo que este resultado corresponde al protocolo europeo",
+  "fuenteSeguridad": "https://es.mazda-press.com/news/2025/5-estrellas-euro-ncap-para-el-nuevo-mazda-cx-5-/"
 }
