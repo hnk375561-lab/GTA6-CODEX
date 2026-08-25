@@ -70,12 +70,17 @@ if (!fs.existsSync(cssDir)) {
 
   // Muestra representativa de clases que dependen de tokens definidos en
   // theme.extend y que la app usa activamente (colores, shadows, radius).
+  // Actualizado tras el pivote de diseño "Leonida Nights": los tokens
+  // gta-* se eliminaron de tailwind.config.js y el código real usa
+  // prefijo auto-* (ver `colors` en tailwind.config.js). Lista tomada de
+  // los usos más frecuentes en src/components y src/app.
   const expectedClasses = [
-    '.bg-gta-dark',
-    '.text-gta-accent',
-    '.border-gta-border',
-    '.shadow-gta-sm',
-    'hover\\:shadow-gta-md', // Card.tsx usa hover:shadow-gta-md, no la variante base
+    '.bg-auto-card',
+    '.text-auto-text',
+    '.text-auto-text-secondary',
+    '.border-auto-border',
+    '.text-auto-accent',
+    '.shadow-auto-sm',
     '.rounded-lg',
     '.rounded-md',
   ]
