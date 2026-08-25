@@ -8,7 +8,7 @@
                  "deportivo",
                  "nissan"
              ],
-    "featured":  false,
+    "featured":  true,
     "manufacturer":  "Nissan",
     "class":  "Deportivo",
     "customizable":  false,

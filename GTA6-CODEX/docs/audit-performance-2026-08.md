@@ -70,17 +70,15 @@ razonamiento vale para la **home** (hay un hero de texto grande antes de
 Destacados). Pero en `/[entityType]` (ej. `/vehiculos`) el `<h1>` del
 título es corto y el grid de 62 cards empieza inmediatamente después —
 en viewports angostos es bastante plausible que el LCP real ahí sea la
-imagen de la primera card, no el `<h1>`, y esa imagen no tiene `priority`
-ni `fetchPriority="high"`.
+imagen de la primera card, no el `<h1>`.
 
-No lo marco como bug porque no lo medí — es exactamente el tipo de cosa
-que un Lighthouse real (o el Performance panel de Chrome) contesta en 30
-segundos y que ninguna lectura de código puede confirmar con certeza. Si
-cuando hagas el ítem 3 (`npm run dev` + mirar) el LCP de `/vehiculos`
-resulta ser esa primera imagen, la solución es puntual: pasar
-`priority` a la primera card del grid en `EntityListExplorer`/`EntityCard`
-(o `fetchPriority="high"` sin `priority` si no querés que next/image la
-excluya de lazy-loading global).
+**Actualización (25 ago 2026): fix aplicado.** `EntityListExplorer` ahora
+pasa `priority={i < 5}` a las primeras 5 cards del grid (ver el componente
+para el detalle) — `EntityImage` ya soportaba la prop, faltaba que el
+caller se la pasara. Sigue sin medirse con Lighthouse real (ver ítem 3);
+esto resuelve la causa que este análisis estático identificó como
+sospechosa, pero no reemplaza la medición real de LCP/CLS/INP en un
+navegador.
 
 ## 4. Fuera de este análisis estático
 

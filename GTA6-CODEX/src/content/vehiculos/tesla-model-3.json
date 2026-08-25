@@ -9,7 +9,7 @@
                  "tesla",
                  "electrico"
              ],
-    "featured":  false,
+    "featured":  true,
     "createdAt":  "2026-08-23T18:01:33.524Z",
     "updatedAt":  "2026-08-25T06:11:22.9892553Z",
     "manufacturer":  "Tesla",

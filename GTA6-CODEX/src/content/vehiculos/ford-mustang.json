@@ -10,7 +10,7 @@
                  "muscle-car",
                  "combustion"
              ],
-    "featured":  false,
+    "featured":  true,
     "createdAt":  "2026-08-23T18:31:29.815Z",
     "updatedAt":  "2026-08-25T06:11:22.2429538Z",
     "manufacturer":  "Ford",

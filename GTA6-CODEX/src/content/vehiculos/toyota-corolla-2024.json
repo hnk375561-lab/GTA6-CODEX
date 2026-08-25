@@ -9,7 +9,7 @@
                  "toyota",
                  "combustion"
              ],
-    "featured":  false,
+    "featured":  true,
     "createdAt":  "2026-08-23T18:01:32.194Z",
     "updatedAt":  "2026-08-25T06:11:23.0208162Z",
     "manufacturer":  "Toyota",

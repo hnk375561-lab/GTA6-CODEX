@@ -222,8 +222,6 @@ pivote de más impacto (tipos de entidad, contenido real de vehículos,
 navegación, home), pero quedan cabos sueltos conocidos — se listan acá para
 que no haya sorpresas:
 
-- [ ] **0 fichas marcadas como `featured`** — la sección "Destacados" de
-  la home no tiene qué mostrar todavía.
 - [ ] **Nombre del repositorio en GitHub** sigue siendo `GTA6-CODEX`.
 - [ ] **Cero fotos reales de vehículos** — `public/images/entities/vehiculos/`
   está vacío. Hay un pipeline para poblarlo sin infringir copyright:

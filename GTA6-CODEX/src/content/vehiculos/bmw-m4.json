@@ -8,7 +8,7 @@
                  "deportivo",
                  "bmw"
              ],
-    "featured":  false,
+    "featured":  true,
     "manufacturer":  "BMW",
     "class":  "Deportivo",
     "customizable":  false,

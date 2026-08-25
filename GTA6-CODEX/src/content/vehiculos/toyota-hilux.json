@@ -9,7 +9,7 @@
                  "toyota",
                  "diesel"
              ],
-    "featured":  false,
+    "featured":  true,
     "createdAt":  "2026-08-23T18:31:27.868Z",
     "updatedAt":  "2026-08-25T06:11:23.0468370Z",
     "manufacturer":  "Toyota",
