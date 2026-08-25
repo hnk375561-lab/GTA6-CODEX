@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.048Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:43:52.000Z",
   "manufacturer": "Toyota",
   "class": "SUV 4x4",
   "customizable": false,
@@ -96,5 +96,7 @@
   "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
   "capacidadRemolque": "1.800-2.200 kg (estimado)",
   "paisOrigen": "Japón",
-  "numeroPuertas": "5 puertas"
+  "numeroPuertas": "5 puertas",
+  "calificacionSeguridad": "5 estrellas Latin NCAP (2019, con base Hilux) — 7 airbags y ESC de serie",
+  "fuenteSeguridad": "https://noticias.autocosmos.com.mx/2019/08/22/toyota-hilux-recibe-5-estrellas-en-pruebas-de-impacto-de-latin-ncap"
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.800Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:43:52.000Z",
   "manufacturer": "Toyota",
   "class": "SUV",
   "customizable": false,
@@ -100,5 +100,7 @@
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
   "capacidadRemolque": "1.500-2.000 kg (estimado)",
   "paisOrigen": "Japón",
-  "numeroPuertas": "5 puertas"
+  "numeroPuertas": "5 puertas",
+  "calificacionSeguridad": "5 estrellas Latin NCAP (2019, quinta generación) — 93% ocupante adulto, resultado coincidente con las 5 estrellas obtenidas en Euro NCAP",
+  "fuenteSeguridad": "https://www.latercera.com/mtonline/noticia/toyota-rav4-5-latin-ncap/666446-2/"
 }
