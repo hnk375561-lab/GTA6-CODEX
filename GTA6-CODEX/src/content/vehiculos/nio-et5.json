@@ -30,27 +30,28 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "traccion": "Integral (AWD), doble motor",
+  "peso": "2.045-2.150 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "240-360 kW (326-489 hp, doble motor)",
+  "capacidadTanque": "N/A (eléctrico, batería de 75-150 kWh, con intercambio de batería NIO Power Swap)",
+  "tiempoRecorrido": "3.9-4.3s 0-100 km/h",
+  "anoProduccion": "2022-presente",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "China",
+    "Europa"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "NIO Pilot (asistencia avanzada)",
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Suspensión neumática adaptativa"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "235/45R19 (245/40R20 opcional)",
   "anoLanzamiento": 2022,
   "asientos": 5,
   "baul": "386 litros",
@@ -65,7 +66,7 @@
   "generacion": "Primera generación",
   "maleteroMin": "386 litros",
   "tipo": "Sedán eléctrico",
-  "torque": "750 Nm (estimado)",
+  "torque": "700 Nm (combinado, doble motor)",
   "suspension": "McPherson delantera / multilink o eje de torsión trasero",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

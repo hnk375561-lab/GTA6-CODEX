@@ -28,27 +28,29 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:04.821675Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.270-1.340 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "111 kW (149 hp, 2.0L)",
+  "capacidadTanque": "47-51 litros",
+  "tiempoRecorrido": "8.4-9.5s 0-100 km/h",
+  "anoProduccion": "2020-presente (octava generación)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "México",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Nissan Safety Shield 360",
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Cámara de reversa"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "205/65R16 (215/50R17 en versión SR)",
   "anoLanzamiento": 1982,
   "asientos": 5,
   "baul": "428 litros",
@@ -63,7 +65,7 @@
   "generacion": "Octava generación (facelift)",
   "maleteroMin": "428 litros",
   "tipo": "Sedán compacto",
-  "torque": "215 Nm (estimado)",
+  "torque": "178 Nm",
   "suspension": "McPherson delantera / multilink o eje de torsión trasero",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

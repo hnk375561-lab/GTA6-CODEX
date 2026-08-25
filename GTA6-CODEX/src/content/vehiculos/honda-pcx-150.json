@@ -30,31 +30,32 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "131-133 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "9.5-11 kW (13-15 hp, motor 150cc)",
+  "capacidadTanque": "8.1 litros",
+  "tiempoRecorrido": "N/A (scooter, velocidad máxima 100-105 km/h)",
+  "anoProduccion": "2018-presente (versión actual)",
   "mercados": [
-    "Europa",
-    "USA",
     "Asia",
-    "Mercados emergentes"
+    "América Latina",
+    "Europa"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Frenos combinados CBS",
+    "ABS en rueda delantera (versión ABS)",
+    "Sistema Idling Stop",
+    "Smart Key"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "100/80-14 delantero, 120/70-13 trasero",
   "anoLanzamiento": 2010,
   "asientos": 2,
   "baul": "30 litros (bajo asiento)",
-  "cilindrada": "149.3 cc, monocilíndrico",
+  "cilindrada": "149.3 cc, monocilíndrico 4 tiempos",
   "colores": [
     "Blanco Perlado",
     "Negro Mate",
@@ -64,7 +65,7 @@
   "generacion": "Tercera generación (facelift)",
   "maleteroMin": "30 litros",
   "tipo": "Scooter",
-  "torque": "15 Nm (estimado)",
+  "torque": "13.4 Nm",
   "suspension": "Horquilla telescópica delantera / amortiguadores traseros convencionales",
   "frenos": "Disco delantero simple, disco trasero, ABS de serie",
   "seguridad": [

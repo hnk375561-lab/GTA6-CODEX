@@ -30,30 +30,32 @@
     "braking": "100-0 km/h en 40 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
+  "peso": "365-380 kg",
   "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "63-71 kW (86-96 hp, motor Milwaukee-Eight 107/114)",
+  "capacidadTanque": "22.7 litros",
+  "tiempoRecorrido": "4.5-5.0s 0-100 km/h",
+  "anoProduccion": "2014-presente (con actualizaciones, plataforma Milwaukee-Eight desde 2017)",
   "mercados": [
+    "Estados Unidos",
     "Europa",
-    "USA",
-    "Asia"
+    "América Latina"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Frenos ABS",
+    "Control de tracción",
+    "Infoentretenimiento Boom! Box GTS",
+    "Fairing con carenado batwing"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "120/70R17",
+  "neumaticos": "130/60B19 delantero, 180/55B18 trasero",
   "anoLanzamiento": 2006,
   "asientos": 2,
   "baul": "Alforjas rígidas de fábrica, capacidad variable",
-  "cilindrada": "1.868 cc, Milwaukee-Eight V-twin",
+  "cilindrada": "1.746-1.868 cc, V-twin Milwaukee-Eight",
   "colores": [
     "Negro Vivid",
     "Blanco Stone",
@@ -63,7 +65,7 @@
   "generacion": "Familia Touring (facelift 2024)",
   "maleteroMin": "Alforjas de fábrica",
   "tipo": "Touring / Bagger",
-  "torque": "95 Nm (estimado)",
+  "torque": "150-165 Nm",
   "suspension": "Horquilla telescópica delantera / doble amortiguador trasero",
   "frenos": "Disco delantero simple, disco trasero, ABS de serie",
   "seguridad": [

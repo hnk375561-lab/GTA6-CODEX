@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.550-1.750 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "125-250 kW (170-340 hp según versión, incl. XPower)",
+  "capacidadTanque": "N/A (eléctrico, batería de 51-77 kWh)",
+  "tiempoRecorrido": "3.8-7.9s 0-100 km/h según versión",
+  "anoProduccion": "2022-presente",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "China",
+    "Argentina"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "MG Pilot",
+    "Carga rápida DC hasta 150 kW"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/50R17 (235/40R18 en XPower)",
   "anoLanzamiento": 2022,
   "asientos": 5,
   "baul": "363 litros",
@@ -67,7 +67,7 @@
   "generacion": "Primera generación",
   "maleteroMin": "363 litros",
   "tipo": "Hatchback eléctrico",
-  "torque": "375 Nm (estimado)",
+  "torque": "250-600 Nm según versión",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

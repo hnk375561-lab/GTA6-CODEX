@@ -30,27 +30,25 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "665-750 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "20-30 kW (27-41 hp, motor eléctrico)",
+  "capacidadTanque": "N/A (eléctrico, batería de 9.3-17.3 kWh)",
+  "tiempoRecorrido": "13.0-15.0s 0-50 km/h (vehículo urbano de baja velocidad)",
+  "anoProduccion": "2020-presente",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "China"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Frenos ABS",
+    "Control de estabilidad (ESC, versiones superiores)",
+    "Doble airbag frontal"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "145/70R12",
   "anoLanzamiento": 2020,
   "asientos": 4,
   "baul": "80 litros aprox.",
@@ -65,7 +63,7 @@
   "generacion": "Primera generación (facelift)",
   "maleteroMin": "80 litros aprox.",
   "tipo": "City car eléctrico",
-  "torque": "60 Nm (estimado)",
+  "torque": "85 Nm",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

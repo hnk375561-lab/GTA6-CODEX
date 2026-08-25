@@ -29,27 +29,29 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:09.812750Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "traccion": "Delantera (FWD)",
+  "peso": "1.400-1.550 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "112-124 kW (152-169 hp, gasolina turbo 1.5)",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "9.5-11.0s 0-100 km/h",
+  "anoProduccion": "2023-presente",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "China",
+    "América Latina"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Central multimedia táctil",
+    "Cámara de reversa"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/60R17",
   "anoLanzamiento": 2020,
   "asientos": 5,
   "baul": "Caja de carga aprox. 1.485 x 1.530 mm",
@@ -63,7 +65,7 @@
   "generacion": "Primera generación",
   "maleteroMin": "N/A (pick-up)",
   "tipo": "Pick-up compacta",
-  "torque": "240 Nm (estimado)",
+  "torque": "230-260 Nm",
   "suspension": "McPherson o doble horquilla delantera / ballestas traseras",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

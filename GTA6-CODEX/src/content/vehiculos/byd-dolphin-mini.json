@@ -30,27 +30,27 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.130-1.200 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "55-75 kW (75-102 hp, motor eléctrico)",
+  "capacidadTanque": "N/A (eléctrico, batería Blade LFP de 30-38 kWh)",
+  "tiempoRecorrido": "9.0-11.5s 0-100 km/h",
+  "anoProduccion": "2023-presente",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "China",
+    "América Latina"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Pantalla táctil giratoria",
+    "Carga rápida DC"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "175/65R15",
   "anoLanzamiento": 2023,
   "asientos": 4,
   "baul": "225 litros",
@@ -65,7 +65,7 @@
   "generacion": "Primera generación",
   "maleteroMin": "225 litros",
   "tipo": "Hatchback eléctrico urbano",
-  "torque": "165 Nm (estimado)",
+  "torque": "135-180 Nm",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

@@ -30,31 +30,32 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "127-131 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "9-11 kW (12-15 hp, motor 155cc)",
+  "capacidadTanque": "7.1 litros",
+  "tiempoRecorrido": "N/A (scooter, velocidad máxima 100-105 km/h)",
+  "anoProduccion": "2020-presente (versión actual)",
   "mercados": [
-    "Europa",
-    "USA",
     "Asia",
-    "Mercados emergentes"
+    "América Latina",
+    "Europa"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Frenos ABS de doble canal",
+    "Sistema Start&Stop",
+    "Smart Key",
+    "Panel TFT conectado"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "110/70-13 delantero, 130/70-13 trasero",
   "anoLanzamiento": 2015,
   "asientos": 2,
   "baul": "23 litros (bajo asiento)",
-  "cilindrada": "155 cc, monocilíndrico",
+  "cilindrada": "155 cc, monocilíndrico 4 tiempos VVA",
   "colores": [
     "Negro Mate",
     "Gris",
@@ -64,7 +65,7 @@
   "generacion": "Segunda generación (facelift)",
   "maleteroMin": "23 litros",
   "tipo": "Scooter",
-  "torque": "15 Nm (estimado)",
+  "torque": "13.9 Nm",
   "suspension": "Horquilla telescópica delantera / amortiguadores traseros convencionales",
   "frenos": "Disco delantero simple, disco trasero, ABS de serie",
   "seguridad": [

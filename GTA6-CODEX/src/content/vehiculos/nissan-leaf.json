@@ -28,27 +28,29 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:05.094837Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.580-1.760 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "110-160 kW (150-217 hp, motor eléctrico)",
+  "capacidadTanque": "N/A (eléctrico, batería de 40 o 62 kWh)",
+  "tiempoRecorrido": "6.9-7.9s 0-100 km/h",
+  "anoProduccion": "2017-presente (segunda generación)",
   "mercados": [
+    "Japón",
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "ProPILOT Assist",
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "e-Pedal"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17",
+  "neumaticos": "205/55R16 (215/50R17 en versión e+)",
   "anoLanzamiento": 2010,
   "asientos": 5,
   "baul": "435 litros",
@@ -63,7 +65,7 @@
   "generacion": "Segunda generación",
   "maleteroMin": "435 litros",
   "tipo": "Hatchback eléctrico",
-  "torque": "325 Nm (estimado)",
+  "torque": "320-340 Nm",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

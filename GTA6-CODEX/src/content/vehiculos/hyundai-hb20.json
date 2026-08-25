@@ -28,27 +28,27 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:05.966220Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.020-1.100 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "59-92 kW (80-125 hp según motorización turbo)",
+  "capacidadTanque": "45-50 litros",
+  "tiempoRecorrido": "9.8-13.0s 0-100 km/h según motorización",
+  "anoProduccion": "2019-presente (con facelift 2022)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Brasil",
+    "Argentina"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Central multimedia con carplay/android auto"
   ],
   "consumoEtiqueta": "C",
-  "neumaticos": "225/50R17",
+  "neumaticos": "185/60R15 (195/50R16 en versiones superiores)",
   "anoLanzamiento": 2012,
   "asientos": 5,
   "baul": "300 litros",
@@ -63,7 +63,7 @@
   "generacion": "Segunda generación (facelift 2023)",
   "maleteroMin": "300 litros",
   "tipo": "Hatchback compacto",
-  "torque": "170 Nm (estimado)",
+  "torque": "127-172 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

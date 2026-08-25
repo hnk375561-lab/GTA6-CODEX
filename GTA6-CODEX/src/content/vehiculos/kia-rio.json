@@ -30,27 +30,29 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "1.050-1.130 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "62-88 kW (84-120 hp)",
+  "capacidadTanque": "45 litros",
+  "tiempoRecorrido": "9.9-11.5s 0-100 km/h",
+  "anoProduccion": "2017-presente (cuarta generación)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "Asia"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Kia Drive Wise",
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Cámara de reversa"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "185/65R15 (195/55R16 en versiones superiores)",
   "anoLanzamiento": 2000,
   "asientos": 5,
   "baul": "325 litros",
@@ -65,7 +67,7 @@
   "generacion": "Cuarta generación (facelift)",
   "maleteroMin": "325 litros",
   "tipo": "Hatchback/Sedán compacto",
-  "torque": "170 Nm (estimado)",
+  "torque": "115-172 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

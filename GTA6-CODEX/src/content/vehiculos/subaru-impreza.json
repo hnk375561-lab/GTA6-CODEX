@@ -30,29 +30,27 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "traccion": "Integral simétrica AWD de serie",
+  "peso": "1.420-1.500 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "121-134 kW (164-182 hp, 2.0 o 2.5)",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "8.2-9.9s 0-100 km/h según motorización",
+  "anoProduccion": "2023-presente (sexta generación)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "Japón"
   ],
   "equipamiento": [
-    "Control tracción",
+    "EyeSight Driver Assist",
+    "Tracción integral simétrica AWD de serie",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "205/55R17 (225/40R18 en RS)",
   "anoLanzamiento": 1992,
   "asientos": 5,
   "baul": "291 litros",
@@ -67,7 +65,7 @@
   "generacion": "Sexta generación",
   "maleteroMin": "291 litros",
   "tipo": "Hatchback/Sedán compacto",
-  "torque": "255 Nm (estimado)",
+  "torque": "178-238 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

@@ -30,31 +30,31 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
+  "peso": "116-130 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "potenciaKW": "8-9 kW (11-12 hp, motor 125-150cc)",
+  "capacidadTanque": "8.0 litros",
+  "tiempoRecorrido": "N/A (scooter, velocidad máxima 95-100 km/h)",
+  "anoProduccion": "2013-presente (con actualizaciones)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "América Latina",
+    "Asia"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Frenos ABS/ASR",
+    "Sistema Start&Stop",
+    "Instrumental digital"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "110/70-12 delantero, 120/70-12 trasero",
   "anoLanzamiento": 2013,
   "asientos": 2,
   "baul": "12 litros (bajo asiento)",
-  "cilindrada": "150 cc, monocilíndrico",
+  "cilindrada": "125 cc o 150 cc, monocilíndrico 4 tiempos",
   "colores": [
     "Rojo Dragon",
     "Azul Vivace",
@@ -65,7 +65,7 @@
   "generacion": "Vigente con actualizaciones",
   "maleteroMin": "12 litros",
   "tipo": "Scooter",
-  "torque": "15 Nm (estimado)",
+  "torque": "10.7-12 Nm",
   "suspension": "Horquilla telescópica delantera / amortiguadores traseros convencionales",
   "frenos": "Disco delantero simple, disco trasero, ABS de serie",
   "seguridad": [
