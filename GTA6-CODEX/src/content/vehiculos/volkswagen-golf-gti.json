@@ -12,13 +12,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.940Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Volkswagen",
   "class": "Hatchback",
   "customizable": false,
   "performance": {
     "speed": "Alta (250 km/h)",
-    "acceleration": "Alta (0-100 km/h en 6.2s)"
+    "acceleration": "Alta (0-100 km/h en 6.2s)",
+    "handling": "Manejo ágil, dirección liviana, pensado para maniobrabilidad en ciudad.",
+    "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "power": "245 hp",
   "price": "USD 32.000",
@@ -68,5 +70,6 @@
   "emisiones": "CO2 aprox. 165 g/km",
   "generacion": "Octava generación (facelift)",
   "maleteroMin": "374 litros",
-  "tipo": "Hatchback deportivo"
+  "tipo": "Hatchback deportivo",
+  "torque": "345 Nm (estimado)"
 }

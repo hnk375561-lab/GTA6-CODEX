@@ -22,10 +22,12 @@
     "primarySource": "https://www.honda.com.ar/motos/cg-150"
   },
   "performance": {
-    "speed": "105 km/h"
+    "speed": "105 km/h",
+    "handling": "Manejo liviano y ágil, pensado para uso urbano diario.",
+    "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:10.642893Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -58,5 +60,6 @@
   "emisiones": "CO2 aprox. 50 g/km",
   "generacion": "Vigente con actualizaciones periódicas",
   "maleteroMin": "N/A",
-  "tipo": "Moto de calle / street"
+  "tipo": "Moto de calle / street",
+  "torque": "10 Nm (estimado)"
 }

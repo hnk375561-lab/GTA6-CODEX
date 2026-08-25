@@ -12,13 +12,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:32.112Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Audi",
   "class": "SUV premium compacta",
   "customizable": false,
   "performance": {
     "speed": "Alta (210 km/h)",
-    "acceleration": "Media-Alta (0-100 km/h en 8.9s)"
+    "acceleration": "Media-Alta (0-100 km/h en 8.9s)",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "150 hp",
   "price": "USD 55.000",
@@ -67,5 +69,6 @@
     "Plata Florett Metalizado"
   ],
   "consumo": "7-7.5 l/100km aprox.",
-  "dimensiones": "4.484 mm largo x 1.856 mm ancho x 1.616 mm alto, distancia entre ejes 2.680 mm"
+  "dimensiones": "4.484 mm largo x 1.856 mm ancho x 1.616 mm alto, distancia entre ejes 2.680 mm",
+  "torque": "230 Nm (estimado)"
 }

@@ -25,10 +25,12 @@
   },
   "performance": {
     "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "handling": "Dirección precisa y muy directa, alto nivel de agarre en curva, chasis calibrado para uso deportivo.",
+    "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -64,5 +66,6 @@
   "emisiones": "0 g/km",
   "generacion": "Primera generación (facelift 2024)",
   "maleteroMin": "407 litros",
-  "tipo": "Sedán/gran turismo eléctrico"
+  "tipo": "Sedán/gran turismo eléctrico",
+  "torque": "885 Nm (estimado)"
 }

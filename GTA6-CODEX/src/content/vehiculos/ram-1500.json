@@ -23,10 +23,12 @@
   },
   "performance": {
     "speed": "180 km/h",
-    "acceleration": "0-100 km/h en 6.3s"
+    "acceleration": "0-100 km/h en 6.3s",
+    "handling": "Dirección más pesada y suspensión orientada a carga; estable en ruta pero con respuesta menos ágil en curvas.",
+    "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:03.451886Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -62,5 +64,6 @@
   "emisiones": "CO2 aprox. 300 g/km (V8)",
   "generacion": "Quinta generación (DT/DS, facelift)",
   "maleteroMin": "N/A (pick-up)",
-  "tipo": "Pick-up full size"
+  "tipo": "Pick-up full size",
+  "torque": "870 Nm (estimado)"
 }

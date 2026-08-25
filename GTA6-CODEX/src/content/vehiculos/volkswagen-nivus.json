@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.597Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Volkswagen",
   "class": "SUV coupé compacta",
   "customizable": false,
   "performance": {
     "speed": "188 km/h",
-    "acceleration": "0-100 km/h en 10.2s"
+    "acceleration": "0-100 km/h en 10.2s",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "128 hp",
   "price": "USD 26.000",
@@ -60,5 +62,6 @@
   "emisiones": "CO2 aprox. 135 g/km",
   "generacion": "Primera generación",
   "maleteroMin": "415 litros",
-  "tipo": "SUV coupé compacto"
+  "tipo": "SUV coupé compacto",
+  "torque": "200 Nm (estimado)"
 }

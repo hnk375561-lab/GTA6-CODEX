@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.593Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "BYD",
   "class": "Sedán eléctrico",
   "customizable": false,
   "performance": {
     "speed": "180 km/h",
-    "acceleration": "0-100 km/h en 5.9s"
+    "acceleration": "0-100 km/h en 5.9s",
+    "handling": "Manejo ágil y predecible, adecuado tanto para uso urbano como de ruta.",
+    "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "power": "313 hp",
   "price": "USD 45.000",
@@ -62,5 +64,6 @@
   "emisiones": "0 g/km (eléctrico puro)",
   "generacion": "Primera generación (plataforma e-Platform 3.0)",
   "maleteroMin": "400 litros (+53 litros frunk)",
-  "tipo": "Sedán eléctrico"
+  "tipo": "Sedán eléctrico",
+  "torque": "690 Nm (estimado)"
 }

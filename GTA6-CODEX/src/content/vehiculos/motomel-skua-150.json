@@ -24,10 +24,12 @@
   },
   "performance": {
     "speed": "100 km/h",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "handling": "Estabilidad en terrenos mixtos, suspensión de largo recorrido, manejo versátil on/off-road.",
+    "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -59,5 +61,6 @@
   "emisiones": "CO2 aprox. 58 g/km",
   "generacion": "Vigente con actualizaciones",
   "maleteroMin": "N/A",
-  "tipo": "Moto trail"
+  "tipo": "Moto trail",
+  "torque": "10 Nm (estimado)"
 }

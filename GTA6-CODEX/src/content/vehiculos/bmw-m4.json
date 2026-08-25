@@ -25,10 +25,12 @@
   },
   "performance": {
     "speed": "250 km/h (limitada electrónicamente)",
-    "acceleration": "0-100 km/h en 3.9s"
+    "acceleration": "0-100 km/h en 3.9s",
+    "handling": "Dirección precisa y muy directa, alto nivel de agarre en curva, chasis calibrado para uso deportivo.",
+    "braking": "100-0 km/h en 30 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Automática 8 velocidades Steptronic M",
   "traccion": "Tracción total inteligente M xDrive",
   "cilindrada": "2.993 cc",
@@ -64,5 +66,6 @@
     "Azul San Marino"
   ],
   "generacion": "Sexta generación (G82, facelift LCI)",
-  "anoLanzamiento": 2020
+  "anoLanzamiento": 2020,
+  "torque": "680 Nm (estimado)"
 }

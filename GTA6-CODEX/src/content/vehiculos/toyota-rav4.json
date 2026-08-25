@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.800Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Toyota",
   "class": "SUV",
   "customizable": false,
   "performance": {
     "speed": "Media (180 km/h)",
-    "acceleration": "Media (0-100 km/h en 8.1s)"
+    "acceleration": "Media (0-100 km/h en 8.1s)",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "203 hp",
   "price": "USD 29.000",
@@ -67,5 +69,6 @@
   "emisiones": "CO2 aprox. 120 g/km",
   "generacion": "Quinta generación",
   "maleteroMin": "580 litros",
-  "tipo": "SUV mediano híbrido"
+  "tipo": "SUV mediano híbrido",
+  "torque": "315 Nm (estimado)"
 }

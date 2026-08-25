@@ -12,13 +12,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.529Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Honda",
   "class": "Hatchback deportivo",
   "customizable": false,
   "performance": {
     "speed": "Muy alta (275 km/h)",
-    "acceleration": "Alta (0-100 km/h en 5.4s)"
+    "acceleration": "Alta (0-100 km/h en 5.4s)",
+    "handling": "Dirección precisa y muy directa, alto nivel de agarre en curva, chasis calibrado para uso deportivo.",
+    "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "power": "315 hp",
   "price": "USD 45.000",
@@ -67,5 +69,6 @@
   "emisiones": "CO2 aprox. 195 g/km",
   "generacion": "Sexta generación (FL5)",
   "maleteroMin": "410 litros",
-  "tipo": "Hatchback deportivo de altas prestaciones"
+  "tipo": "Hatchback deportivo de altas prestaciones",
+  "torque": "425 Nm (estimado)"
 }

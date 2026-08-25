@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.948Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Fiat",
   "class": "Hatchback",
   "customizable": false,
   "performance": {
     "speed": "175 km/h",
-    "acceleration": "0-100 km/h en 11.5s"
+    "acceleration": "0-100 km/h en 11.5s",
+    "handling": "Manejo ágil, dirección liviana, pensado para maniobrabilidad en ciudad.",
+    "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "power": "101 hp",
   "price": "USD 18.000",
@@ -60,5 +62,6 @@
   "emisiones": "CO2 aprox. 140 g/km",
   "generacion": "Primera generación (plataforma Fiat Mobi/Argo)",
   "maleteroMin": "300 litros",
-  "tipo": "Hatchback compacto"
+  "tipo": "Hatchback compacto",
+  "torque": "140 Nm (estimado)"
 }

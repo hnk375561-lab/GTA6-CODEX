@@ -12,13 +12,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.554Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Kia",
   "class": "Hatchback económico",
   "customizable": false,
   "performance": {
     "speed": "155 km/h",
-    "acceleration": "0-100 km/h en 13.4s"
+    "acceleration": "0-100 km/h en 13.4s",
+    "handling": "Manejo ágil, dirección liviana, pensado para maniobrabilidad en ciudad.",
+    "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "power": "84 hp",
   "price": "USD 15.000",
@@ -61,5 +63,6 @@
   "emisiones": "CO2 aprox. 120 g/km",
   "generacion": "Cuarta generación",
   "maleteroMin": "255 litros",
-  "tipo": "City car / hatchback compacto"
+  "tipo": "City car / hatchback compacto",
+  "torque": "120 Nm (estimado)"
 }

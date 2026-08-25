@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.524Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Tesla",
   "class": "Sedán",
   "customizable": false,
   "performance": {
     "speed": "Alta (225 km/h)",
-    "acceleration": "Muy alta (0-100 km/h en 3.3s en versión Performance)"
+    "acceleration": "Muy alta (0-100 km/h en 3.3s en versión Performance)",
+    "handling": "Manejo ágil y predecible, adecuado tanto para uso urbano como de ruta.",
+    "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "power": "283 hp (RWD)",
   "price": "USD 42.000",
@@ -67,5 +69,6 @@
   "emisiones": "0 g/km",
   "generacion": "Primera generación (facelift Highland)",
   "maleteroMin": "425 litros",
-  "tipo": "Sedán eléctrico"
+  "tipo": "Sedán eléctrico",
+  "torque": "625 Nm (estimado)"
 }

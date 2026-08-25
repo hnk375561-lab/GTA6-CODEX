@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.694Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Tesla",
   "class": "SUV eléctrica",
   "customizable": false,
   "performance": {
     "speed": "Alta (217 km/h)",
-    "acceleration": "Alta (0-100 km/h en 5.0s)"
+    "acceleration": "Alta (0-100 km/h en 5.0s)",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "384 hp (Long Range)",
   "price": "USD 47.000",
@@ -67,5 +69,6 @@
   "emisiones": "0 g/km",
   "generacion": "Primera generación (facelift Juniper 2025)",
   "maleteroMin": "854 litros",
-  "tipo": "SUV eléctrico compacto"
+  "tipo": "SUV eléctrico compacto",
+  "torque": "845 Nm (estimado)"
 }

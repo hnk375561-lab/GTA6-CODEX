@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.851Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Jeep",
   "class": "SUV",
   "customizable": false,
   "performance": {
     "speed": "Media (190 km/h)",
-    "acceleration": "Media (0-100 km/h en 9.5s)"
+    "acceleration": "Media (0-100 km/h en 9.5s)",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "170 hp",
   "price": "USD 33.000",
@@ -62,5 +64,6 @@
   "emisiones": "CO2 aprox. 165 g/km",
   "generacion": "Segunda generación",
   "maleteroMin": "438 litros",
-  "tipo": "SUV compacto"
+  "tipo": "SUV compacto",
+  "torque": "265 Nm (estimado)"
 }

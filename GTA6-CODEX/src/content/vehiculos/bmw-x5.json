@@ -25,10 +25,12 @@
   },
   "performance": {
     "speed": "236 km/h (limitada electrónicamente)",
-    "acceleration": "0-100 km/h en 5.5s (xDrive40i)"
+    "acceleration": "0-100 km/h en 5.5s (xDrive40i)",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-24T01:16:06.484Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "8 velocidades automática (Steptronic)",
   "traccion": "Integral xDrive (AWD) de serie",
   "peso": "2.135-2.400 kg (según motorización)",
@@ -69,5 +71,6 @@
     "Phytonic Blue Metallic",
     "Dravit Grey Metallic",
     "Tanzanite Blue"
-  ]
+  ],
+  "torque": "580 Nm (estimado)"
 }

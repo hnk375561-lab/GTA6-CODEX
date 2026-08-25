@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.687Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Fiat",
   "class": "SUV compacta",
   "customizable": false,
   "performance": {
     "speed": "180 km/h",
-    "acceleration": "0-100 km/h en 11.0s"
+    "acceleration": "0-100 km/h en 11.0s",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "130 hp",
   "price": "USD 22.000",
@@ -60,5 +62,6 @@
   "emisiones": "CO2 aprox. 140 g/km",
   "generacion": "Primera generación",
   "maleteroMin": "370 litros",
-  "tipo": "SUV compacto/coupé"
+  "tipo": "SUV compacto/coupé",
+  "torque": "200 Nm (estimado)"
 }

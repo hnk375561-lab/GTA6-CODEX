@@ -12,13 +12,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.977Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "BMW",
   "class": "Sedán premium",
   "customizable": false,
   "performance": {
     "speed": "Alta (250 km/h)",
-    "acceleration": "Alta (0-100 km/h en 5.8s)"
+    "acceleration": "Alta (0-100 km/h en 5.8s)",
+    "handling": "Manejo ágil y predecible, adecuado tanto para uso urbano como de ruta.",
+    "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "power": "255 hp",
   "price": "USD 58.000",
@@ -68,5 +70,6 @@
     "Sunset Orange"
   ],
   "consumo": "6.5-7 l/100km aprox.",
-  "dimensiones": "4.719 mm largo x 1.827 mm ancho x 1.442 mm alto, distancia entre ejes 2.851 mm"
+  "dimensiones": "4.719 mm largo x 1.827 mm ancho x 1.442 mm alto, distancia entre ejes 2.851 mm",
+  "torque": "370 Nm (estimado)"
 }

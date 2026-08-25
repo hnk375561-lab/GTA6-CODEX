@@ -27,10 +27,12 @@
   },
   "performance": {
     "speed": "305 km/h aprox.",
-    "acceleration": "0-100 km/h en 3.0s aprox. (0-60 mph en 3.1s, prueba independiente de Cycle World sobre la Factory; el modelo base comparte motor)"
+    "acceleration": "0-100 km/h en 3.0s aprox. (0-60 mph en 3.1s, prueba independiente de Cycle World sobre la Factory; el modelo base comparte motor)",
+    "handling": "Chasis muy ágil orientado a pista, respuesta de dirección inmediata, geometría deportiva.",
+    "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-24T01:16:06.474Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "6 velocidades manual secuencial, embrague húmedo",
   "traccion": "Trasera por cadena",
   "peso": "202 kg (Factory) / aprox. 199 kg (base), en orden de marcha",
@@ -67,5 +69,6 @@
     "Negro Aprilia",
     "Librea racing roja/negra",
     "Colores especiales de temporada (varían por año en la versión Factory)"
-  ]
+  ],
+  "torque": "185 Nm (estimado)"
 }

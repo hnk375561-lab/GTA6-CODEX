@@ -25,10 +25,12 @@
   },
   "performance": {
     "speed": "180 km/h",
-    "acceleration": "0-100 km/h en 9.9s"
+    "acceleration": "0-100 km/h en 9.9s",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:02.907844Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -64,5 +66,6 @@
   "emisiones": "CO2 aprox. 215 g/km",
   "generacion": "Sexta generación (300)",
   "maleteroMin": "175 litros",
-  "tipo": "SUV grande off-road (7 plazas)"
+  "tipo": "SUV grande off-road (7 plazas)",
+  "torque": "480 Nm (estimado)"
 }

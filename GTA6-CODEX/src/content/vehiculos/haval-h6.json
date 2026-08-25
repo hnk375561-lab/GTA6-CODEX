@@ -12,13 +12,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.076Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Haval",
   "class": "SUV",
   "customizable": false,
   "performance": {
     "speed": "180 km/h",
-    "acceleration": "0-100 km/h en 9.5s"
+    "acceleration": "0-100 km/h en 9.5s",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "184 hp",
   "price": "USD 33.000",
@@ -63,5 +65,6 @@
   "emisiones": "CO2 aprox. 165 g/km",
   "generacion": "Tercera generación",
   "maleteroMin": "600 litros",
-  "tipo": "SUV mediano"
+  "tipo": "SUV mediano",
+  "torque": "285 Nm (estimado)"
 }

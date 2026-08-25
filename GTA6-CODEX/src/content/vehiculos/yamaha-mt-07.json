@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.363Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Yamaha",
   "class": "Moto naked",
   "customizable": false,
   "performance": {
     "speed": "Media-Alta (215 km/h)",
-    "acceleration": "Alta (0-100 km/h en 3.7s)"
+    "acceleration": "Alta (0-100 km/h en 3.7s)",
+    "handling": "Manejo ágil y versátil, buen equilibrio entre ciudad y ruta.",
+    "braking": "100-0 km/h en 36 m aprox. (estimado)"
   },
   "power": "73 hp",
   "price": "USD 9.500",
@@ -58,5 +60,6 @@
   "emisiones": "CO2 aprox. 93 g/km",
   "generacion": "Tercera generación",
   "maleteroMin": "N/A",
-  "tipo": "Naked/Roadster"
+  "tipo": "Naked/Roadster",
+  "torque": "70 Nm (estimado)"
 }

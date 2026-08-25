@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.250Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback eléctrico",
   "customizable": false,
   "performance": {
     "speed": "Media (150 km/h)",
-    "acceleration": "Media-Alta (0-100 km/h en 6.5s)"
+    "acceleration": "Media-Alta (0-100 km/h en 6.5s)",
+    "handling": "Manejo ágil, dirección liviana, pensado para maniobrabilidad en ciudad.",
+    "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "power": "200 hp",
   "price": "USD 29.000",
@@ -62,5 +64,6 @@
   "emisiones": "0 g/km (eléctrico puro)",
   "generacion": "Segunda generación (facelift 2022), discontinuado en 2023",
   "maleteroMin": "479 litros",
-  "tipo": "Hatchback eléctrico"
+  "tipo": "Hatchback eléctrico",
+  "torque": "440 Nm (estimado)"
 }

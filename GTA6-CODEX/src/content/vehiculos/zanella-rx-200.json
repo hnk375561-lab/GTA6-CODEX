@@ -28,10 +28,12 @@
   },
   "performance": {
     "speed": "140 km/h",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "handling": "Manejo ágil y versátil, buen equilibrio entre ciudad y ruta.",
+    "braking": "100-0 km/h en 36 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -63,5 +65,6 @@
   "emisiones": "CO2 aprox. 62 g/km",
   "generacion": "Vigente con actualizaciones",
   "maleteroMin": "N/A",
-  "tipo": "Moto de calle / street"
+  "tipo": "Moto de calle / street",
+  "torque": "15 Nm (estimado)"
 }

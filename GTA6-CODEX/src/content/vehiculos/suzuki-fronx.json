@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.809Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Suzuki",
   "class": "SUV compacta",
   "customizable": false,
   "performance": {
     "speed": "180 km/h",
-    "acceleration": "0-100 km/h en 10.5s"
+    "acceleration": "0-100 km/h en 10.5s",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "99 hp",
   "price": "USD 20.000",
@@ -60,5 +62,6 @@
   "emisiones": "CO2 aprox. 125 g/km",
   "generacion": "Primera generación",
   "maleteroMin": "308 litros",
-  "tipo": "SUV compacto / crossover"
+  "tipo": "SUV compacto / crossover",
+  "torque": "155 Nm (estimado)"
 }

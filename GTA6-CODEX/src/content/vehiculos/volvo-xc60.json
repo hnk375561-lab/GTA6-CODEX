@@ -12,13 +12,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.747Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Volvo",
   "class": "SUV premium",
   "customizable": false,
   "performance": {
     "speed": "Media-Alta (210 km/h)",
-    "acceleration": "Alta (0-100 km/h en 6.9s)"
+    "acceleration": "Alta (0-100 km/h en 6.9s)",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "250 hp",
   "price": "USD 75.000",
@@ -63,5 +65,6 @@
   "emisiones": "CO2 aprox. 44 g/km (híbrido enchufable, ciclo WLTP)",
   "generacion": "Segunda generación (facelift 2022)",
   "maleteroMin": "483 litros",
-  "tipo": "SUV premium mediano"
+  "tipo": "SUV premium mediano",
+  "torque": "390 Nm (estimado)"
 }

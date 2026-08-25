@@ -24,10 +24,12 @@
   },
   "performance": {
     "speed": "200 km/h",
-    "acceleration": "0-100 km/h en 7.2s (híbrida)"
+    "acceleration": "0-100 km/h en 7.2s (híbrida)",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:02.350462Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -63,5 +65,6 @@
   "emisiones": "CO2 aprox. 155 g/km",
   "generacion": "Segunda generación",
   "maleteroMin": "520 litros",
-  "tipo": "SUV premium compacto"
+  "tipo": "SUV premium compacto",
+  "torque": "370 Nm (estimado)"
 }

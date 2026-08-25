@@ -11,12 +11,14 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:34.107Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Honda",
   "class": "Moto utilitaria",
   "customizable": false,
   "performance": {
-    "speed": "95 km/h"
+    "speed": "95 km/h",
+    "handling": "Manejo liviano y ágil, pensado para uso urbano diario.",
+    "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "power": "8.6 hp",
   "price": "USD 2.000",
@@ -58,5 +60,6 @@
   "emisiones": "CO2 aprox. 45 g/km",
   "generacion": "Vigente desde 1995, múltiples actualizaciones",
   "maleteroMin": "N/A",
-  "tipo": "Moto utilitaria/underbone"
+  "tipo": "Moto utilitaria/underbone",
+  "torque": "5 Nm (estimado)"
 }

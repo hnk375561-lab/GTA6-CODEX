@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:35.107Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Fiat",
   "class": "Pickup",
   "customizable": false,
   "performance": {
     "speed": "Media (180 km/h)",
-    "acceleration": "Media (0-100 km/h en 10s)"
+    "acceleration": "Media (0-100 km/h en 10s)",
+    "handling": "Dirección más pesada y suspensión orientada a carga; estable en ruta pero con respuesta menos ágil en curvas.",
+    "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "power": "175 hp",
   "price": "USD 31.000",
@@ -62,5 +64,6 @@
   "emisiones": "CO2 aprox. 210 g/km",
   "generacion": "Primera generación (facelift 2021)",
   "maleteroMin": "N/A (pick-up)",
-  "tipo": "Pick-up mediana"
+  "tipo": "Pick-up mediana",
+  "torque": "305 Nm (estimado)"
 }

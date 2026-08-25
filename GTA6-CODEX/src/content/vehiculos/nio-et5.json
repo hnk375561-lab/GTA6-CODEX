@@ -25,10 +25,12 @@
   },
   "performance": {
     "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "handling": "Manejo ágil y predecible, adecuado tanto para uso urbano como de ruta.",
+    "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -62,5 +64,6 @@
   "emisiones": "0 g/km",
   "generacion": "Primera generación",
   "maleteroMin": "386 litros",
-  "tipo": "Sedán eléctrico"
+  "tipo": "Sedán eléctrico",
+  "torque": "750 Nm (estimado)"
 }

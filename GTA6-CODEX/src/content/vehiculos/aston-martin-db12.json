@@ -25,10 +25,12 @@
   },
   "performance": {
     "speed": "325 km/h",
-    "acceleration": "0-100 km/h en 3.6s"
+    "acceleration": "0-100 km/h en 3.6s",
+    "handling": "Dirección precisa y muy directa, alto nivel de agarre en curva, chasis calibrado para uso deportivo.",
+    "braking": "100-0 km/h en 32 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-24T01:16:06.475Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "8 velocidades automática (ZF)",
   "traccion": "Trasera (RWD) con diferencial electrónico trasero",
   "peso": "1.788 kg",
@@ -71,5 +73,6 @@
     "Ghillies Green",
     "Plasma Blue",
     "Lunar White"
-  ]
+  ],
+  "torque": "920 Nm (estimado)"
 }

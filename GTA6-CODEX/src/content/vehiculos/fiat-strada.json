@@ -23,10 +23,12 @@
   },
   "performance": {
     "speed": "175 km/h",
-    "acceleration": "0-100 km/h en 11.0s"
+    "acceleration": "0-100 km/h en 11.0s",
+    "handling": "Dirección más pesada y suspensión orientada a carga; estable en ruta pero con respuesta menos ágil en curvas.",
+    "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:07.061130Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -60,5 +62,6 @@
   "emisiones": "CO2 aprox. 150 g/km",
   "generacion": "Tercera generación",
   "maleteroMin": "N/A (pick-up)",
-  "tipo": "Pick-up compacta"
+  "tipo": "Pick-up compacta",
+  "torque": "185 Nm (estimado)"
 }

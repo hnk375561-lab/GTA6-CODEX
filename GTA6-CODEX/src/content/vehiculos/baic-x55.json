@@ -27,10 +27,12 @@
   },
   "performance": {
     "speed": "200 km/h",
-    "acceleration": "0-100 km/h en 7.84s"
+    "acceleration": "0-100 km/h en 7.84s",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -66,5 +68,6 @@
   "emisiones": "CO2 aprox. 160 g/km",
   "generacion": "Primera generación",
   "maleteroMin": "410 litros",
-  "tipo": "SUV compacto"
+  "tipo": "SUV compacto",
+  "torque": "285 Nm (estimado)"
 }

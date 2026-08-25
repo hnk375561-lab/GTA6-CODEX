@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.429Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Renault",
   "class": "Hatchback",
   "customizable": false,
   "performance": {
     "speed": "Media (175 km/h)",
-    "acceleration": "Media (0-100 km/h en 11.5s)"
+    "acceleration": "Media (0-100 km/h en 11.5s)",
+    "handling": "Manejo ágil, dirección liviana, pensado para maniobrabilidad en ciudad.",
+    "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "power": "113 hp",
   "price": "USD 16.500",
@@ -60,5 +62,6 @@
   "emisiones": "CO2 aprox. 135 g/km",
   "generacion": "Tercera generación",
   "maleteroMin": "320 litros",
-  "tipo": "Hatchback compacto"
+  "tipo": "Hatchback compacto",
+  "torque": "160 Nm (estimado)"
 }

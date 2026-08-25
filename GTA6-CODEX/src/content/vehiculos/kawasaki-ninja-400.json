@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.628Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Kawasaki",
   "class": "Moto deportiva",
   "customizable": false,
   "performance": {
     "speed": "Media-Alta (170 km/h)",
-    "acceleration": "Media-Alta (0-100 km/h en 5.9s)"
+    "acceleration": "Media-Alta (0-100 km/h en 5.9s)",
+    "handling": "Chasis muy ágil orientado a pista, respuesta de dirección inmediata, geometría deportiva.",
+    "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "power": "45 hp",
   "price": "USD 6.800",
@@ -58,5 +60,6 @@
   "emisiones": "CO2 aprox. 78 g/km",
   "generacion": "Segunda generación",
   "maleteroMin": "N/A",
-  "tipo": "Deportiva"
+  "tipo": "Deportiva",
+  "torque": "40 Nm (estimado)"
 }

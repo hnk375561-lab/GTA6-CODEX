@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.310Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Jeep",
   "class": "SUV compacta",
   "customizable": false,
   "performance": {
     "speed": "185 km/h",
-    "acceleration": "0-100 km/h en 9.8s"
+    "acceleration": "0-100 km/h en 9.8s",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "177 hp",
   "price": "USD 26.000",
@@ -62,5 +64,6 @@
   "emisiones": "CO2 aprox. 160 g/km",
   "generacion": "Primera generación (facelift 2022)",
   "maleteroMin": "351 litros",
-  "tipo": "SUV compacto"
+  "tipo": "SUV compacto",
+  "torque": "275 Nm (estimado)"
 }

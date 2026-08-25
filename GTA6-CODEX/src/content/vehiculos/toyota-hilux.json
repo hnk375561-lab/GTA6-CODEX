@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.868Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Toyota",
   "class": "Pickup",
   "customizable": false,
   "performance": {
     "speed": "Media (180 km/h)",
-    "acceleration": "Media (0-100 km/h en 10.4s)"
+    "acceleration": "Media (0-100 km/h en 10.4s)",
+    "handling": "Dirección más pesada y suspensión orientada a carga; estable en ruta pero con respuesta menos ágil en curvas.",
+    "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "power": "204 hp",
   "price": "USD 45.000",
@@ -67,5 +69,6 @@
   "emisiones": "CO2 aprox. 210 g/km",
   "generacion": "Octava generación (facelift)",
   "maleteroMin": "N/A (pick-up)",
-  "tipo": "Pick-up mediana"
+  "tipo": "Pick-up mediana",
+  "torque": "355 Nm (estimado)"
 }

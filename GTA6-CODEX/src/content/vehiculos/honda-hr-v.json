@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:31.522Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Honda",
   "class": "SUV compacta",
   "customizable": false,
   "performance": {
     "speed": "180 km/h",
-    "acceleration": "0-100 km/h en 10.5s"
+    "acceleration": "0-100 km/h en 10.5s",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "143 hp",
   "price": "USD 27.000",
@@ -60,5 +62,6 @@
   "emisiones": "CO2 aprox. 155 g/km",
   "generacion": "Tercera generación",
   "maleteroMin": "437 litros",
-  "tipo": "SUV compacto"
+  "tipo": "SUV compacto",
+  "torque": "220 Nm (estimado)"
 }

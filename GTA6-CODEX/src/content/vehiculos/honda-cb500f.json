@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.065Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Honda",
   "class": "Moto",
   "customizable": false,
   "performance": {
     "speed": "Media (170 km/h)",
-    "acceleration": "Media-Alta (0-100 km/h en 5.5s)"
+    "acceleration": "Media-Alta (0-100 km/h en 5.5s)",
+    "handling": "Manejo ágil y versátil, buen equilibrio entre ciudad y ruta.",
+    "braking": "100-0 km/h en 36 m aprox. (estimado)"
   },
   "power": "47 hp",
   "price": "USD 7.000",
@@ -58,5 +60,6 @@
   "emisiones": "CO2 aprox. 80 g/km",
   "generacion": "Segunda generación (facelift 2019)",
   "maleteroMin": "N/A",
-  "tipo": "Naked/Roadster"
+  "tipo": "Naked/Roadster",
+  "torque": "45 Nm (estimado)"
 }

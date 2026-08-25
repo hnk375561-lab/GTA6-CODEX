@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.693Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Renault",
   "class": "Utilitario",
   "customizable": false,
   "performance": {
     "speed": "Baja (155 km/h)",
-    "acceleration": "Baja (0-100 km/h en 13.5s)"
+    "acceleration": "Baja (0-100 km/h en 13.5s)",
+    "handling": "Prioriza estabilidad y confort de marcha sobre agilidad, dirección suave.",
+    "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "power": "105 hp",
   "price": "USD 19.000",
@@ -60,5 +62,6 @@
   "emisiones": "CO2 aprox. 165 g/km",
   "generacion": "Tercera generación",
   "maleteroMin": "775 litros",
-  "tipo": "Furgoneta / utilitario"
+  "tipo": "Furgoneta / utilitario",
+  "torque": "230 Nm (estimado)"
 }

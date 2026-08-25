@@ -24,10 +24,12 @@
   },
   "performance": {
     "speed": "170 km/h",
-    "acceleration": "0-100 km/h en 12.5s"
+    "acceleration": "0-100 km/h en 12.5s",
+    "handling": "Manejo ágil y predecible, adecuado tanto para uso urbano como de ruta.",
+    "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:06.785891Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -61,5 +63,6 @@
   "emisiones": "CO2 aprox. 150 g/km",
   "generacion": "Segunda generación (facelift)",
   "maleteroMin": "510 litros",
-  "tipo": "Sedán compacto"
+  "tipo": "Sedán compacto",
+  "torque": "150 Nm (estimado)"
 }

@@ -22,10 +22,12 @@
     "primarySource": "https://www.royalenfield.com.ar/himalayan"
   },
   "performance": {
-    "speed": "135 km/h"
+    "speed": "135 km/h",
+    "handling": "Estabilidad en terrenos mixtos, suspensión de largo recorrido, manejo versátil on/off-road.",
+    "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:11.515889Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -57,5 +59,6 @@
   "emisiones": "CO2 aprox. 70 g/km",
   "generacion": "Segunda generación (2024)",
   "maleteroMin": "N/A",
-  "tipo": "Moto trail/adventure"
+  "tipo": "Moto trail/adventure",
+  "torque": "25 Nm (estimado)"
 }

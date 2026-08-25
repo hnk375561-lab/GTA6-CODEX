@@ -23,10 +23,12 @@
   },
   "performance": {
     "speed": "160 km/h",
-    "acceleration": "0-100 km/h en 14.0s"
+    "acceleration": "0-100 km/h en 14.0s",
+    "handling": "Prioriza estabilidad y confort de marcha sobre agilidad, dirección suave.",
+    "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:08.724580Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -61,5 +63,6 @@
   "emisiones": "CO2 aprox. 220 g/km",
   "generacion": "Tercera generación (facelift)",
   "maleteroMin": "N/A (furgón)",
-  "tipo": "Furgón grande / utilitario"
+  "tipo": "Furgón grande / utilitario",
+  "torque": "360 Nm (estimado)"
 }

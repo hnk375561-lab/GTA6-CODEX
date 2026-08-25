@@ -25,10 +25,12 @@
   },
   "performance": {
     "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -64,5 +66,6 @@
   "emisiones": "CO2 aprox. 150 g/km",
   "generacion": "Tercera generación (facelift 2024)",
   "maleteroMin": "504 litros",
-  "tipo": "SUV compacto"
+  "tipo": "SUV compacto",
+  "torque": "245 Nm (estimado)"
 }

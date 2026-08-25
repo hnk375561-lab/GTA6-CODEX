@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.141Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Chevrolet",
   "class": "Pickup",
   "customizable": false,
   "performance": {
     "speed": "Media (175 km/h)",
-    "acceleration": "Media (0-100 km/h en 10.6s)"
+    "acceleration": "Media (0-100 km/h en 10.6s)",
+    "handling": "Dirección más pesada y suspensión orientada a carga; estable en ruta pero con respuesta menos ágil en curvas.",
+    "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "power": "200 hp",
   "price": "USD 44.000",
@@ -62,5 +64,6 @@
   "emisiones": "CO2 aprox. 230 g/km",
   "generacion": "Segunda generación (facelift 2022)",
   "maleteroMin": "N/A (pick-up)",
-  "tipo": "Pick-up mediana"
+  "tipo": "Pick-up mediana",
+  "torque": "350 Nm (estimado)"
 }

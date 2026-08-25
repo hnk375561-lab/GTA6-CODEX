@@ -27,10 +27,12 @@
   },
   "performance": {
     "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -66,5 +68,6 @@
   "emisiones": "0 g/km",
   "generacion": "Primera generación (facelift 2021)",
   "maleteroMin": "357 litros",
-  "tipo": "SUV eléctrico grande (7 plazas)"
+  "tipo": "SUV eléctrico grande (7 plazas)",
+  "torque": "1475 Nm (estimado)"
 }

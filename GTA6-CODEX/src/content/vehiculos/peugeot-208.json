@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.335Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Peugeot",
   "class": "Hatchback",
   "customizable": false,
   "performance": {
     "speed": "Media (185 km/h)",
-    "acceleration": "Media (0-100 km/h en 10.2s)"
+    "acceleration": "Media (0-100 km/h en 10.2s)",
+    "handling": "Manejo ágil, dirección liviana, pensado para maniobrabilidad en ciudad.",
+    "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "power": "115 hp",
   "price": "USD 20.000",
@@ -60,5 +62,6 @@
   "emisiones": "CO2 aprox. 125 g/km",
   "generacion": "Segunda generación (facelift 2023)",
   "maleteroMin": "311 litros",
-  "tipo": "Hatchback compacto"
+  "tipo": "Hatchback compacto",
+  "torque": "255 Nm (estimado)"
 }

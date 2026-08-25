@@ -10,12 +10,14 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:34.410Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Yamaha",
   "class": "Moto",
   "customizable": false,
   "performance": {
-    "speed": "105 km/h"
+    "speed": "105 km/h",
+    "handling": "Manejo ágil y versátil, buen equilibrio entre ciudad y ruta.",
+    "braking": "100-0 km/h en 36 m aprox. (estimado)"
   },
   "power": "11 hp",
   "price": "USD 2.800",
@@ -56,5 +58,6 @@
   "emisiones": "CO2 aprox. 55 g/km",
   "generacion": "Vigente desde 2000, múltiples actualizaciones",
   "maleteroMin": "N/A",
-  "tipo": "Moto de calle / street"
+  "tipo": "Moto de calle / street",
+  "torque": "10 Nm (estimado)"
 }

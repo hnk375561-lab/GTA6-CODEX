@@ -24,10 +24,12 @@
   },
   "performance": {
     "speed": "195 km/h",
-    "acceleration": "0-100 km/h en 8.9s"
+    "acceleration": "0-100 km/h en 8.9s",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:02.633748Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -63,5 +65,6 @@
   "emisiones": "CO2 aprox. 210 g/km",
   "generacion": "Segunda generación (L663, facelift 2023)",
   "maleteroMin": "857 litros",
-  "tipo": "SUV off-road"
+  "tipo": "SUV off-road",
+  "torque": "460 Nm (estimado)"
 }

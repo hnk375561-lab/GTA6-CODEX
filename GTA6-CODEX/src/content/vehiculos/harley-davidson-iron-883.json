@@ -25,10 +25,12 @@
   },
   "performance": {
     "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "handling": "Posición de manejo relajada, estable en ruta a velocidad crucero, giro más pesado a baja velocidad.",
+    "braking": "100-0 km/h en 40 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -59,5 +61,6 @@
   "emisiones": "CO2 aprox. 110 g/km",
   "generacion": "Familia Sportster (descontinuada en 2022, reemplazada por Nightster)",
   "maleteroMin": "N/A",
-  "tipo": "Cruiser"
+  "tipo": "Cruiser",
+  "torque": "50 Nm (estimado)"
 }

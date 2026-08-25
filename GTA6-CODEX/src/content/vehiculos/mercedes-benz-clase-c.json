@@ -12,13 +12,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.254Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Mercedes-Benz",
   "class": "Sedán premium",
   "customizable": false,
   "performance": {
     "speed": "Alta (250 km/h)",
-    "acceleration": "Alta (0-100 km/h en 6.0s)"
+    "acceleration": "Alta (0-100 km/h en 6.0s)",
+    "handling": "Manejo ágil y predecible, adecuado tanto para uso urbano como de ruta.",
+    "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "power": "204 hp",
   "price": "USD 62.000",
@@ -63,5 +65,6 @@
   "emisiones": "CO2 aprox. 155 g/km",
   "generacion": "Sexta generación (W206)",
   "maleteroMin": "455 litros",
-  "tipo": "Sedán ejecutivo compacto"
+  "tipo": "Sedán ejecutivo compacto",
+  "torque": "295 Nm (estimado)"
 }

@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.530Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Hyundai",
   "class": "SUV",
   "customizable": false,
   "performance": {
     "speed": "Media (195 km/h)",
-    "acceleration": "Media (0-100 km/h en 9.9s)"
+    "acceleration": "Media (0-100 km/h en 9.9s)",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "156 hp",
   "price": "USD 32.000",
@@ -62,5 +64,6 @@
   "emisiones": "CO2 aprox. 175 g/km",
   "generacion": "Cuarta generación (facelift 2024)",
   "maleteroMin": "620 litros",
-  "tipo": "SUV compacto"
+  "tipo": "SUV compacto",
+  "torque": "240 Nm (estimado)"
 }

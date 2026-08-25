@@ -23,10 +23,12 @@
   },
   "performance": {
     "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "handling": "Manejo ágil y predecible, adecuado tanto para uso urbano como de ruta.",
+    "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -62,5 +64,6 @@
   "emisiones": "CO2 aprox. 145 g/km",
   "generacion": "Primera generación",
   "maleteroMin": "536 litros",
-  "tipo": "SUV coupé fastback"
+  "tipo": "SUV coupé fastback",
+  "torque": "310 Nm (estimado)"
 }

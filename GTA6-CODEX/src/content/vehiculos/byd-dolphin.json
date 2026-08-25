@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.972Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "BYD",
   "class": "Hatchback eléctrico",
   "customizable": false,
   "performance": {
     "speed": "Media (150 km/h)",
-    "acceleration": "Media (0-100 km/h en 12.3s)"
+    "acceleration": "Media (0-100 km/h en 12.3s)",
+    "handling": "Manejo ágil, dirección liviana, pensado para maniobrabilidad en ciudad.",
+    "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "power": "95 hp",
   "price": "USD 26.000",
@@ -60,5 +62,6 @@
   "emisiones": "0 g/km (eléctrico puro)",
   "generacion": "Primera generación (plataforma e-Platform 3.0)",
   "maleteroMin": "345 litros",
-  "tipo": "Hatchback eléctrico"
+  "tipo": "Hatchback eléctrico",
+  "torque": "210 Nm (estimado)"
 }

@@ -11,12 +11,14 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.849Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Zanella",
   "class": "Moto",
   "customizable": false,
   "performance": {
-    "speed": "110 km/h"
+    "speed": "110 km/h",
+    "handling": "Manejo ágil y versátil, buen equilibrio entre ciudad y ruta.",
+    "braking": "100-0 km/h en 36 m aprox. (estimado)"
   },
   "power": "12.5 hp",
   "price": "USD 2.400",
@@ -58,5 +60,6 @@
   "emisiones": "CO2 aprox. 58 g/km",
   "generacion": "Vigente desde 2015, con actualizaciones",
   "maleteroMin": "N/A",
-  "tipo": "Moto de calle / street"
+  "tipo": "Moto de calle / street",
+  "torque": "10 Nm (estimado)"
 }

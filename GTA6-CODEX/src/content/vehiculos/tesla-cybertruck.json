@@ -27,10 +27,12 @@
   },
   "performance": {
     "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "handling": "Dirección más pesada y suspensión orientada a carga; estable en ruta pero con respuesta menos ágil en curvas.",
+    "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -63,5 +65,6 @@
   "emisiones": "0 g/km",
   "generacion": "Primera generación",
   "maleteroMin": "N/A (pick-up)",
-  "tipo": "Pick-up eléctrica"
+  "tipo": "Pick-up eléctrica",
+  "torque": "1320 Nm (estimado)"
 }

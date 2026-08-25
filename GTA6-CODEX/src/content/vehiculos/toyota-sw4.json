@@ -12,13 +12,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.048Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Toyota",
   "class": "SUV 4x4",
   "customizable": false,
   "performance": {
     "speed": "175 km/h",
-    "acceleration": "0-100 km/h en 10.2s"
+    "acceleration": "0-100 km/h en 10.2s",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "204 hp",
   "price": "USD 55.000",
@@ -63,5 +65,6 @@
   "emisiones": "CO2 aprox. 235 g/km",
   "generacion": "Cuarta generación",
   "maleteroMin": "200 litros",
-  "tipo": "SUV mediano/grande (7 plazas)"
+  "tipo": "SUV mediano/grande (7 plazas)",
+  "torque": "315 Nm (estimado)"
 }

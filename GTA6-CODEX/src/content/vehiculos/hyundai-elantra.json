@@ -25,10 +25,12 @@
   },
   "performance": {
     "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "handling": "Manejo ágil y predecible, adecuado tanto para uso urbano como de ruta.",
+    "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -62,5 +64,6 @@
   "emisiones": "CO2 aprox. 150 g/km",
   "generacion": "Séptima generación (facelift 2024)",
   "maleteroMin": "474 litros",
-  "tipo": "Sedán compacto"
+  "tipo": "Sedán compacto",
+  "torque": "215 Nm (estimado)"
 }

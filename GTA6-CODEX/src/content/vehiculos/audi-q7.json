@@ -25,10 +25,12 @@
   },
   "performance": {
     "speed": "250 km/h (limitada electrónicamente)",
-    "acceleration": "0-100 km/h en 5.9s"
+    "acceleration": "0-100 km/h en 5.9s",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-24T01:16:06.478Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "8 velocidades Tiptronic (automática)",
   "traccion": "Integral quattro (AWD) de serie",
   "peso": "2.055 kg (55 TFSI V6) - 2.800 kg (55 TFSIe híbrido enchufable)",
@@ -69,5 +71,6 @@
     "Azul Navarra",
     "Plata Florett Metalizado",
     "Marrón Terra"
-  ]
+  ],
+  "torque": "520 Nm (estimado)"
 }

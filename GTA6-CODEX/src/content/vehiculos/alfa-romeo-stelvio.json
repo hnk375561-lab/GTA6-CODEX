@@ -25,10 +25,12 @@
   },
   "performance": {
     "speed": "230 km/h",
-    "acceleration": "0-100 km/h en 5.7s (0-60 mph en 5.5s, cifra oficial)"
+    "acceleration": "0-100 km/h en 5.7s (0-60 mph en 5.5s, cifra oficial)",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-24T01:16:06.473Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "transmision": "8 velocidades automática (ZF)",
   "traccion": "Tracción total Q4 (AWD) de serie en la mayoría de versiones; RWD disponible en trim Sprint (mercados con gama completa)",
   "peso": "1.660 kg (base) - 1.830 kg (Quadrifoglio, discontinuada en EE.UU. salvo edición limitada Collezione)",
@@ -70,5 +72,6 @@
     "Vesuvio Gray Metallic",
     "Moonlight Gray Metallic",
     "Misano Blue Metallic"
-  ]
+  ],
+  "torque": "435 Nm (estimado)"
 }

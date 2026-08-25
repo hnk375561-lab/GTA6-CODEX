@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.590Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback",
   "customizable": false,
   "performance": {
     "speed": "Media (180 km/h)",
-    "acceleration": "Media (0-100 km/h en 10.5s)"
+    "acceleration": "Media (0-100 km/h en 10.5s)",
+    "handling": "Manejo ágil, dirección liviana, pensado para maniobrabilidad en ciudad.",
+    "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "power": "116 hp",
   "price": "USD 17.000",
@@ -60,5 +62,6 @@
   "emisiones": "CO2 aprox. 130 g/km",
   "generacion": "Segunda generación (plataforma GEM)",
   "maleteroMin": "303 litros",
-  "tipo": "Hatchback compacto"
+  "tipo": "Hatchback compacto",
+  "torque": "160 Nm (estimado)"
 }

@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.194Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Toyota",
   "class": "Sedán",
   "customizable": false,
   "performance": {
     "speed": "Media (180 km/h)",
-    "acceleration": "Media (0-100 km/h en 10.1s)"
+    "acceleration": "Media (0-100 km/h en 10.1s)",
+    "handling": "Manejo ágil y predecible, adecuado tanto para uso urbano como de ruta.",
+    "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "power": "169 hp",
   "price": "USD 24.000",
@@ -67,5 +69,6 @@
   "emisiones": "CO2 aprox. 100 g/km",
   "generacion": "Duodécima generación",
   "maleteroMin": "470 litros",
-  "tipo": "Sedán compacto"
+  "tipo": "Sedán compacto",
+  "torque": "245 Nm (estimado)"
 }

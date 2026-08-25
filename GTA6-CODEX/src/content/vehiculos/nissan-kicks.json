@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.994Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Nissan",
   "class": "SUV compacta",
   "customizable": false,
   "performance": {
     "speed": "175 km/h",
-    "acceleration": "0-100 km/h en 11.3s"
+    "acceleration": "0-100 km/h en 11.3s",
+    "handling": "Buen equilibrio entre confort y maniobrabilidad, comportamiento predecible en ciudad y ruta.",
+    "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "power": "114 hp",
   "price": "USD 24.000",
@@ -60,5 +62,6 @@
   "emisiones": "CO2 aprox. 150 g/km",
   "generacion": "Segunda generación",
   "maleteroMin": "432 litros",
-  "tipo": "SUV compacto"
+  "tipo": "SUV compacto",
+  "torque": "175 Nm (estimado)"
 }

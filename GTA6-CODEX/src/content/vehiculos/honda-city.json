@@ -11,13 +11,15 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:31.780Z",
-  "updatedAt": "2026-08-25T00:00:00.000Z",
+  "updatedAt": "2026-08-25T03:30:22.000Z",
   "manufacturer": "Honda",
   "class": "Sedán",
   "customizable": false,
   "performance": {
     "speed": "180 km/h",
-    "acceleration": "0-100 km/h en 10.4s"
+    "acceleration": "0-100 km/h en 10.4s",
+    "handling": "Manejo ágil y predecible, adecuado tanto para uso urbano como de ruta.",
+    "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "power": "121 hp",
   "price": "USD 21.000",
@@ -60,5 +62,6 @@
   "emisiones": "CO2 aprox. 145 g/km",
   "generacion": "Séptima generación",
   "maleteroMin": "519 litros",
-  "tipo": "Sedán compacto"
+  "tipo": "Sedán compacto",
+  "torque": "175 Nm (estimado)"
 }
