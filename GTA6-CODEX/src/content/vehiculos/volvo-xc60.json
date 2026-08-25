@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.747Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "manufacturer": "Volvo",
   "class": "SUV premium",
   "customizable": false,
@@ -87,5 +87,7 @@
   "neumaticoRepuesto": "Rueda de auxilio de tamaño completo (estimado, varía por versión)",
   "iluminacion": "Faros full LED de serie, con luces diurnas LED (versiones premium con faros Matrix/adaptativos)",
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
-  "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)"
+  "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
+  "seoTitle": "Volvo XC60 — Ficha técnica, precio y specs",
+  "seoDescription": "SUV premium de Volvo, motor 2.0L turbo, foco fuerte en seguridad activa. Potencia: 250 hp. Precio: USD 75.000."
 }

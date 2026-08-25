@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.972Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "manufacturer": "BYD",
   "class": "Hatchback eléctrico",
   "customizable": false,
@@ -81,5 +81,7 @@
   "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
   "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
-  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión"
+  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
+  "seoTitle": "BYD Dolphin — Ficha técnica, precio y specs",
+  "seoDescription": "Hatchback 100% eléctrico de BYD, batería Blade LFP, uno de los eléctricos más vendidos a nivel global. Potencia: 95 hp. Precio: USD 26.000."
 }

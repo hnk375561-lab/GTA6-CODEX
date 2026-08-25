@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.529Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "manufacturer": "Honda",
   "class": "Hatchback deportivo",
   "customizable": false,
@@ -90,5 +90,7 @@
   "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
   "iluminacion": "Faros full LED de serie, con luces diurnas LED (versiones premium con faros Matrix/adaptativos)",
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
-  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión"
+  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
+  "seoTitle": "Honda Civic Type R — Ficha técnica, precio y specs",
+  "seoDescription": "Hatchback deportivo de Honda, motor turbo 2.0L VTEC de 315 hp, tracción delantera. Potencia: 315 hp. Precio: USD 45.000."
 }

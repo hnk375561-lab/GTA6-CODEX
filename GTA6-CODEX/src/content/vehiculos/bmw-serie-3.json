@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.977Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "manufacturer": "BMW",
   "class": "Sedán premium",
   "customizable": false,
@@ -92,5 +92,7 @@
   "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
   "iluminacion": "Faros full LED de serie, con luces diurnas LED (versiones premium con faros Matrix/adaptativos)",
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
-  "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)"
+  "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
+  "seoTitle": "BMW Serie 3 — Ficha técnica, precio y specs",
+  "seoDescription": "Sedán premium de BMW, motor 2.0L turbo de 4 cilindros, tracción trasera. Potencia: 255 hp. Precio: USD 58.000."
 }

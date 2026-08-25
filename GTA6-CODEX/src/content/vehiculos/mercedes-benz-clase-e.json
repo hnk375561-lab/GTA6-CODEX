@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -87,5 +87,7 @@
   "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
   "iluminacion": "Faros full LED de serie, con luces diurnas LED (versiones premium con faros Matrix/adaptativos)",
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
-  "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)"
+  "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
+  "seoTitle": "Mercedes-Benz Clase E — Ficha técnica, precio y specs",
+  "seoDescription": "Sedán ejecutivo de Mercedes-Benz, gama media-alta de la marca. Potencia: 255 hp. Precio: USD 62.000."
 }

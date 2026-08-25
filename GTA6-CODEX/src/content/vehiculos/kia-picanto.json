@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.554Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "manufacturer": "Kia",
   "class": "Hatchback económico",
   "customizable": false,
@@ -79,5 +79,7 @@
   "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
   "iluminacion": "Faros halógenos de serie (LED disponible como opcional en versiones superiores)",
   "infoentretenimiento": "Pantalla táctil de 7-8\", Apple CarPlay y Android Auto (alámbricos en versiones base)",
-  "climatizacion": "Aire acondicionado manual (climatizador automático disponible en versiones superiores)"
+  "climatizacion": "Aire acondicionado manual (climatizador automático disponible en versiones superiores)",
+  "seoTitle": "Kia Picanto — Ficha técnica, precio y specs",
+  "seoDescription": "Hatchback urbano de entrada de Kia, motor 1.0L o 1.2L. Potencia: 84 hp. Precio: USD 15.000."
 }

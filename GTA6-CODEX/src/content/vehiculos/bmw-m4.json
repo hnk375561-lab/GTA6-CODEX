@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 30 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "transmision": "Automática 8 velocidades Steptronic M",
   "traccion": "Tracción total inteligente M xDrive",
   "cilindrada": "2.993 cc",
@@ -88,5 +88,7 @@
   "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
   "iluminacion": "Faros full LED de serie, con luces diurnas LED (versiones premium con faros Matrix/adaptativos)",
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
-  "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)"
+  "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
+  "seoTitle": "BMW M4 — Ficha técnica, precio y specs",
+  "seoDescription": "Coupé deportivo de alto rendimiento de BMW M, motor 3.0 biturbo. Potencia: 503 hp. Precio: USD 78.000."
 }

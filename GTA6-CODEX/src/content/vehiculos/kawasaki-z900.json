@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 36 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -74,5 +74,7 @@
   "relacionPesoPotencia": "1.6 kg/hp (calculado a partir de peso y potencia declarados)",
   "potenciaLitro": "132 hp/L (calculado a partir de cilindrada y potencia declaradas)",
   "iluminacion": "Faros LED o halógenos según versión",
-  "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas"
+  "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas",
+  "seoTitle": "Kawasaki Z900 — Ficha técnica, precio y specs",
+  "seoDescription": "Naked de cilindrada media-alta de Kawasaki, motor tetracilíndrico en línea de 948cc. Potencia: 125 hp. Precio: USD 9.500."
 }

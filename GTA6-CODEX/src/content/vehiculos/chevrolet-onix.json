@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.590Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback",
   "customizable": false,
@@ -79,5 +79,7 @@
   "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
   "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
-  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión"
+  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
+  "seoTitle": "Chevrolet Onix — Ficha técnica, precio y specs",
+  "seoDescription": "Hatchback compacto de Chevrolet, motor 1.0L turbo de 116 hp, uno de los más vendidos de la región. Potencia: 116 hp. Precio: USD 17.000."
 }

@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "transmision": "8 velocidades automática (ZF)",
   "traccion": "Tracción total Q4 (AWD) de serie en la mayoría de versiones; RWD disponible en trim Sprint (mercados con gama completa)",
   "peso": "1.660 kg (base) - 1.830 kg (Quadrifoglio, discontinuada en EE.UU. salvo edición limitada Collezione)",
@@ -95,5 +95,7 @@
   "neumaticoRepuesto": "Rueda de auxilio de tamaño completo (estimado, varía por versión)",
   "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
-  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión"
+  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
+  "seoTitle": "Alfa Romeo Stelvio — Ficha técnica, precio y specs",
+  "seoDescription": "SUV premium deportivo de Alfa Romeo, comparte plataforma con el Giulia. Potencia: 280 hp @ motor 2.0L turbo I4, 306 lb-ft de torque."
 }

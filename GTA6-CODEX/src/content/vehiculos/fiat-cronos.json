@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.161Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "manufacturer": "Fiat",
   "class": "Sedán",
   "customizable": false,
@@ -80,5 +80,7 @@
   "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
   "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
-  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión"
+  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
+  "seoTitle": "Fiat Cronos — Ficha técnica, precio y specs",
+  "seoDescription": "Sedán compacto de Fiat, uno de los más vendidos de Argentina, motores 1.3L o 1.8L. Potencia: 101 hp. Precio: USD 17.500."
 }

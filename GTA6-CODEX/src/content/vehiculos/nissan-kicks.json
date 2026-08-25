@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.994Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "manufacturer": "Nissan",
   "class": "SUV compacta",
   "customizable": false,
@@ -82,5 +82,7 @@
   "neumaticoRepuesto": "Rueda de auxilio de tamaño completo (estimado, varía por versión)",
   "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
-  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión"
+  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
+  "seoTitle": "Nissan Kicks — Ficha técnica, precio y specs",
+  "seoDescription": "SUV compacta de Nissan, motor 1.6L naturalmente aspirado. Potencia: 114 hp. Precio: USD 24.000."
 }

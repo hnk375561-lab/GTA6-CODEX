@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.363Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "manufacturer": "Yamaha",
   "class": "Moto naked",
   "customizable": false,
@@ -72,5 +72,7 @@
   "relacionPesoPotencia": "2.8 kg/hp (calculado a partir de peso y potencia declarados)",
   "potenciaLitro": "106 hp/L (calculado a partir de cilindrada y potencia declaradas)",
   "iluminacion": "Faros LED o halógenos según versión",
-  "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas"
+  "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas",
+  "seoTitle": "Yamaha MT-07 — Ficha técnica, precio y specs",
+  "seoDescription": "Moto naked de Yamaha, motor bicilíndrico CP2 689cc, muy elegida por relación peso-potencia. Potencia: 73 hp. Precio: USD 9.500."
 }

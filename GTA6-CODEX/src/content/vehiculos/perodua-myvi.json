@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -80,5 +80,7 @@
   "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
   "iluminacion": "Faros halógenos de serie (LED disponible como opcional en versiones superiores)",
   "infoentretenimiento": "Pantalla táctil de 7-8\", Apple CarPlay y Android Auto (alámbricos en versiones base)",
-  "climatizacion": "Aire acondicionado manual (climatizador automático disponible en versiones superiores)"
+  "climatizacion": "Aire acondicionado manual (climatizador automático disponible en versiones superiores)",
+  "seoTitle": "Perodua Myvi — Ficha técnica, precio y specs",
+  "seoDescription": "Hatchback urbano más vendido de Malasia. Potencia: 98 hp. Precio: USD 13.000."
 }

@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:09.812750Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -81,5 +81,7 @@
   "neumaticoRepuesto": "Rueda de auxilio de tamaño completo (estimado, varía por versión)",
   "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
-  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión"
+  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
+  "seoTitle": "JAC T40 — Ficha técnica, precio y specs",
+  "seoDescription": "Pickup compacta china de JAC Motors, motor 1.5L turbo. Potencia: 136 hp. Precio: USD 22.000."
 }

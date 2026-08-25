@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -91,5 +91,7 @@
   "neumaticoRepuesto": "Rueda de auxilio de tamaño completo (estimado, varía por versión)",
   "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
-  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión"
+  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
+  "seoTitle": "Kia EV6 — Ficha técnica, precio y specs",
+  "seoDescription": "Crossover eléctrico de Kia sobre la misma plataforma E-GMP que el Ioniq 5. Potencia: 225 hp. Precio: USD 44.000."
 }

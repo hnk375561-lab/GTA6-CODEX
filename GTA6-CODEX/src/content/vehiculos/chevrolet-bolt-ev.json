@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.250Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback eléctrico",
   "customizable": false,
@@ -83,5 +83,7 @@
   "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
   "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
-  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión"
+  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
+  "seoTitle": "Chevrolet Bolt EV — Ficha técnica, precio y specs",
+  "seoDescription": "Hatchback 100% eléctrico de Chevrolet, orientado a uso urbano con buena autonomía. Potencia: 200 hp. Precio: USD 29.000."
 }

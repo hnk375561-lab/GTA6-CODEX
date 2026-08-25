@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.593Z",
-  "updatedAt": "2026-08-25T03:59:20.000Z",
+  "updatedAt": "2026-08-25T04:00:59.000Z",
   "manufacturer": "BYD",
   "class": "Sedán eléctrico",
   "customizable": false,
@@ -85,5 +85,7 @@
   "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
   "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
-  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión"
+  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
+  "seoTitle": "BYD Seal — Ficha técnica, precio y specs",
+  "seoDescription": "Sedán eléctrico de BYD sobre la plataforma e-Platform 3.0. Potencia: 313 hp. Precio: USD 45.000."
 }
