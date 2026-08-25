@@ -17,18 +17,11 @@ interface EntityNavProps {
  * existía solo para trailers vía `TrailerNav`, ahora removido en favor de
  * este componente único).
  *
-<<<<<<< HEAD
  * Orden:
  *  - Orden alfabético por `title` (mismo criterio con el que
  *    `getEntitiesByType`/`loadEntitiesByTypeSync` ya deja las entidades
  *    ordenadas antes de cachearlas — se reordena acá de forma explícita
  *    para no depender implícitamente de ese detalle interno).
-=======
- * Orden: alfabético por `title` (mismo criterio con el que
- * `getEntitiesByType`/`loadEntitiesByTypeSync` ya deja las entidades
- * ordenadas antes de cachearlas — se reordena acá de forma explícita para
- * no depender implícitamente de ese detalle interno).
->>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
  *
  * Sin loop artificial: en el primer/último elemento del tipo, ese lado se
  * muestra deshabilitado (no un link, `aria-disabled`) en vez de enrollar

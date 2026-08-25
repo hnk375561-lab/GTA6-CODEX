@@ -406,11 +406,7 @@ export default async function HomePage() {
                   key={type}
                   href={`/${type}`}
                   className="group category-card block h-full"
-<<<<<<< HEAD
                   style={{ '--auto-corner-color': accent } as CSSProperties}
-=======
-                  style={{ '--auto-accent': accent } as CSSProperties}
->>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
                 >
                   <Card
                     hoverable

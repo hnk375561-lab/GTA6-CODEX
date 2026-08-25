@@ -122,12 +122,7 @@ export function EntityMetadata({ entity }: EntityMetadataProps) {
     )
   }
 
-<<<<<<< HEAD
   // Cualquier otro tipo (hoy, NEWS/GUIDE) usa el renderizador genérico: no
   // requiere una rama nueva acá para mostrar sus campos.
-=======
-  // Cualquier otro tipo (hoy, NEWS/GUIDE) usa el renderizador genérico:
-  // no requiere una rama nueva acá para mostrar sus campos.
->>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
   return <GenericEntityMetadata entity={entity as unknown as Record<string, unknown>} />
 }

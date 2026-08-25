@@ -19,16 +19,10 @@ interface EntityHeaderBackgroundProps {
  * (Nivel 4 del sistema de motion: "entidad extremadamente importante").
  *
  * Un solo lenguaje visual común (grid + glow + scanline, todos ya usados en
-<<<<<<< HEAD
  * el resto del sitio) con una variación de énfasis por categoría en vez de
  * fondos completamente distintos:
  *  - Vehículo → grid técnico + sweep de escaneo horizontal
  *  - Resto (Noticia/Guía) → glow genérico, sin acento adicional
-=======
- * el resto del sitio) con una variación de énfasis por categoría:
- *  - Vehículo → grid técnico + sweep de escaneo horizontal
- *  - Resto (noticias, guías) → glow genérico, sin acento adicional
->>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
  *
  * 100% CSS/SVG, sin canvas ni JS: coste ~cero incluso repetido en varias
  * fichas, y no compite con el contenido (opacidades muy bajas).
@@ -48,10 +42,6 @@ export function EntityHeaderBackground({ type, evidenceLevel }: EntityHeaderBack
             <div className="entity-bg-scan" />
           </>
         )}
-<<<<<<< HEAD
-
-=======
->>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
       </div>
 
       {/* Sello de evidencia — no es decorativo (por eso vive fuera del div

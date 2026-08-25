@@ -21,10 +21,6 @@ function statBarWidth(value?: string): string {
   return scale !== null ? `${(scale / 5) * 100}%` : '0%'
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
 /** Un ícono SVG mínimo, lineal, mismo lenguaje que CategoryIcon — no hay
  *  ícono de "reloj/calendario/link" en ese archivo (son solo por categoría),
  *  así que estos quedan acá, locales al card, en vez de agrandar ese
@@ -600,10 +596,6 @@ export function EntityCard({
             </dl>
           )}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 383d86035c30fb11f951da26f17c64f3f9594fe8
           <div className="mt-auto flex items-center justify-between gap-2 border-t border-auto-border pt-3">
             {resolvedRelationCount > 0 ? (
               <span className="inline-flex items-center gap-1.5 text-xs text-auto-text-secondary">
