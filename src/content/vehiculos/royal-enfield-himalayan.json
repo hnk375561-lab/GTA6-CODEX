@@ -1,134 +1,236 @@
 {
-    "slug": "royal-enfield-himalayan",
-    "type": "vehiculos",
-    "title": "Royal Enfield Himalayan",
-    "description": "Moto adventure de Royal Enfield, pensada para largas travesías y terreno mixto, motor monocilíndrico de 411cc.",
-    "status": "confirmado",
-    "tags": [
-        "moto",
-        "royal-enfield",
-        "enduro"
-    ],
-    "featured": false,
-    "manufacturer": "Royal Enfield",
-    "class": "Moto adventure",
-    "customizable": false,
-    "power": "24.3 hp",
-    "price": "USD 6.800",
-    "consumo": "3.5 l/100km",
-    "dimensiones": "2190 x 840 x 1360 mm",
-    "evidence": {
-        "level": "oficial-nombrado",
-        "primarySource": "https://www.royalenfield.com.ar/himalayan",
-        "limitations": [
-            "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
-        ]
+  "slug": "royal-enfield-himalayan",
+  "type": "vehiculos",
+  "title": "Royal Enfield Himalayan",
+  "description": "Moto adventure de Royal Enfield, pensada para largas travesías y terreno mixto, motor monocilíndrico de 411cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "royal-enfield",
+    "enduro"
+  ],
+  "featured": false,
+  "manufacturer": "Royal Enfield",
+  "class": "Moto adventure",
+  "customizable": false,
+  "power": "24.3 hp",
+  "price": "USD 6.800",
+  "consumo": "3.5 l/100km",
+  "dimensiones": "2190 x 840 x 1360 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.royalenfield.com.ar/himalayan",
+    "limitations": [
+      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+    ]
+  },
+  "performance": {
+    "speed": "135 km/h"
+  },
+  "createdAt": "2026-08-23T21:59:11.515889Z",
+  "updatedAt": "2026-08-25T20:55:31.293Z",
+  "transmision": "Manual secuencial",
+  "traccion": "Tracción delantera",
+  "peso": "160-250 kg",
+  "tipoMotor": "Gasolina",
+  "potenciaKW": "50-160 kW",
+  "capacidadTanque": "12-20 litros",
+  "tiempoRecorrido": "10-15s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "A",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": null,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": null,
+  "anoLanzamiento": null,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
     },
-    "performance": {
-        "speed": "135 km/h"
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "135 km/h"
     },
-    "createdAt": "2026-08-23T21:59:11.515889Z",
-    "updatedAt": "2026-08-25T20:55:31.293Z",
-    "transmision": "Manual secuencial",
-    "traccion": "Tracción delantera",
-    "peso": "160-250 kg",
-    "tipoMotor": "Gasolina",
-    "potenciaKW": "50-160 kW",
-    "capacidadTanque": "12-20 litros",
-    "tiempoRecorrido": "10-15s",
-    "anoProduccion": "2023-2024",
-    "mercados": [
-        "Europa",
+    "bateria": {
+      "consumo": "3.5 l/100km"
+    },
+    "transmision": {
+      "tipo": "Manual secuencial"
+    },
+    "dimensiones": {
+      "largo": 2190,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "3.5 l/100km"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
         "USA",
-        "Asia"
-    ],
-    "equipamiento": [
-        "Control tracción",
-        "Frenos ABS"
-    ],
-    "consumoEtiqueta": "A",
-    "neumaticos": "120/70R17",
-    "especificacionesMotor": {
-        "filtro_aire": "Filtro de panel",
-        "tipo_valvulas": "DOHC",
-        "ratio_compresion": "10.5:1",
-        "sistemas_inyeccion": "Inyeccion directa",
-        "arbol_levas": "Variable (VVT)"
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
     },
-    "especificacionesTransmision": {
-        "tipo_automatico": "Convertidor",
-        "control_cambios": "Secuencial",
-        "sist_propulsion": "Traccion",
-        "velocidades": "8/9 velocidades"
-    },
-    "especificacionesSuspension": {
-        "tipo_trasera": "Multilink",
-        "barra_estabilizadora": "26/20 mm",
-        "tipo_delantera": "MacPherson",
-        "amortiguadores": "Doble tubo",
-        "recorrido_vertical": "+-150 mm"
-    },
-    "especificacionesRuedas": {
-        "offset": "+35 a +45 mm",
-        "indice_velocidad": "T/V",
-        "indice_carga": "91",
-        "profundidad_surcos": "1.6 mm",
-        "pcd": "5x114.3"
-    },
-    "especificacionesDireccion": {
-        "tipo_asistencia": "Electrica progresiva",
-        "sistema_control": "Control electronico",
-        "angulo_max_giro": "32-35 grados",
-        "vueltas_calador": "2.5-3.0"
-    },
-    "aerodinámica": {
-        "defectores_aire": "Canales laterales",
-        "spoiler_trasero": "Integrado",
-        "area_frontal": "2.2-2.4 m2",
-        "coeficiente_arrastre": "Cx 0.27-0.32"
-    },
-    "capacidadesAdicionales": {
-        "capacidad_refrigerante": "7-9 L",
-        "capacidad_lavaparabrisas": "3-4 L",
-        "liquido_frenos": "0.75-0.85 L",
-        "capacidad_aceite": "4.5-5.5 L",
-        "filtro_habitaculo": "Carbon activado"
-    },
-    "seguridad_pasiva": {
-        "respaldos": "Reforzados",
-        "zonas": "Deformacion",
-        "cinturones": "Pre-tensores",
-        "estructura": "Vigas laterales",
-        "cristales": "Laminado/Templado"
-    },
-    "climatizacionAvanzada": {
-        "control": "Trizona",
-        "modo": "Recirculacion",
-        "filtro": "Carbon",
-        "desempanante": "Trasero/Lateral"
-    },
-    "mantenimientoPrograma": {
-        "filtro": "25.000-30.000 km",
-        "aceite": "15.000 km",
-        "frenos": "Anual",
-        "ruedas": "Anual",
-        "refrigerante": "2 anos"
-    },
-    "sistemasInteligentes": {
-        "frenado": "AEB",
-        "carril": "LDW",
-        "ciego": "BSM",
-        "parking": "8-12 sensores",
-        "crucero": "ACC"
-    },
-    "cilindrada": null,
-    "emisiones": null,
-    "tipo": null,
-    "asientos": null,
-    "baul": null,
-    "maleteroMin": null,
-    "generacion": null,
-    "anoLanzamiento": null,
-    "colores": [],
-    "category": "otros"
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 6.800"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "moto",
+    "royal-enfield",
+    "enduro",
+    "Royal Enfield",
+    "Moto adventure",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ]
 }

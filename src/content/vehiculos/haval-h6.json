@@ -1,136 +1,238 @@
 {
-    "slug": "haval-h6",
-    "type": "vehiculos",
-    "title": "Haval H6",
-    "description": "SUV mediana china de Haval (grupo GWM), motor turbo 1.5L o 2.0L, también disponible en versión híbrida (HEV).",
-    "status": "confirmado",
-    "tags": [
-        "suv",
-        "haval",
-        "china",
-        "combustion"
-    ],
-    "featured": false,
-    "createdAt": "2026-08-23T21:41:33.076Z",
-    "updatedAt": "2026-08-25T06:11:22.3053105Z",
-    "manufacturer": "Haval",
-    "class": "SUV",
-    "customizable": false,
-    "performance": {
-        "speed": "180 km/h",
-        "acceleration": "0-100 km/h en 9.5s"
+  "slug": "haval-h6",
+  "type": "vehiculos",
+  "title": "Haval H6",
+  "description": "SUV mediana china de Haval (grupo GWM), motor turbo 1.5L o 2.0L, también disponible en versión híbrida (HEV).",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "haval",
+    "china",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:33.076Z",
+  "updatedAt": "2026-08-25T06:11:22.3053105Z",
+  "manufacturer": "Haval",
+  "class": "SUV",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 9.5s"
+  },
+  "power": "184 hp",
+  "price": "USD 33.000",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.gwm.com.ar/haval-h6"
+  },
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.600-2.200 kg",
+  "tipoMotor": "Gasolina/Diésel",
+  "potenciaKW": "100-180 kW",
+  "capacidadTanque": "60-80 litros",
+  "tiempoRecorrido": "9-12s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "consumo": null,
+  "dimensiones": null,
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": null,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": null,
+  "anoLanzamiento": null,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
     },
-    "power": "184 hp",
-    "price": "USD 33.000",
-    "evidence": {
-        "level": "oficial-nombrado",
-        "primarySource": "https://www.gwm.com.ar/haval-h6"
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "180 km/h",
+      "acceleration": "0-100 km/h en 9.5s"
     },
-    "transmision": "Manual o Automática",
-    "traccion": "Tracción delantera",
-    "peso": "1.600-2.200 kg",
-    "tipoMotor": "Gasolina/Diésel",
-    "potenciaKW": "100-180 kW",
-    "capacidadTanque": "60-80 litros",
-    "tiempoRecorrido": "9-12s",
-    "anoProduccion": "2023-2024",
-    "mercados": [
-        "Europa",
+    "bateria": {},
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": null
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
         "USA",
-        "Asia",
-        "Mercados emergentes"
-    ],
-    "equipamiento": [
-        "Control tracción",
-        "Frenos ABS",
-        "Control estabilidad dinámico",
-        "Asistentes de conducción"
-    ],
-    "consumoEtiqueta": "E",
-    "neumaticos": "225/50R17",
-    "especificacionesMotor": {
-        "filtro_aire": "Filtro de panel",
-        "tipo_valvulas": "DOHC",
-        "ratio_compresion": "10.5:1",
-        "sistemas_inyeccion": "Inyeccion directa",
-        "arbol_levas": "Variable (VVT)"
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
     },
-    "especificacionesTransmision": {
-        "tipo_automatico": "Convertidor",
-        "control_cambios": "Secuencial",
-        "sist_propulsion": "Traccion",
-        "velocidades": "8/9 velocidades"
-    },
-    "especificacionesSuspension": {
-        "tipo_trasera": "Multilink",
-        "barra_estabilizadora": "26/20 mm",
-        "tipo_delantera": "MacPherson",
-        "amortiguadores": "Doble tubo",
-        "recorrido_vertical": "+-150 mm"
-    },
-    "especificacionesRuedas": {
-        "offset": "+35 a +45 mm",
-        "indice_velocidad": "T/V",
-        "indice_carga": "91",
-        "profundidad_surcos": "1.6 mm",
-        "pcd": "5x114.3"
-    },
-    "especificacionesDireccion": {
-        "tipo_asistencia": "Electrica progresiva",
-        "sistema_control": "Control electronico",
-        "angulo_max_giro": "32-35 grados",
-        "vueltas_calador": "2.5-3.0"
-    },
-    "aerodinámica": {
-        "defectores_aire": "Canales laterales",
-        "spoiler_trasero": "Integrado",
-        "area_frontal": "2.2-2.4 m2",
-        "coeficiente_arrastre": "Cx 0.27-0.32"
-    },
-    "capacidadesAdicionales": {
-        "capacidad_refrigerante": "7-9 L",
-        "capacidad_lavaparabrisas": "3-4 L",
-        "liquido_frenos": "0.75-0.85 L",
-        "capacidad_aceite": "4.5-5.5 L",
-        "filtro_habitaculo": "Carbon activado"
-    },
-    "seguridad_pasiva": {
-        "respaldos": "Reforzados",
-        "zonas": "Deformacion",
-        "cinturones": "Pre-tensores",
-        "estructura": "Vigas laterales",
-        "cristales": "Laminado/Templado"
-    },
-    "climatizacionAvanzada": {
-        "control": "Trizona",
-        "modo": "Recirculacion",
-        "filtro": "Carbon",
-        "desempanante": "Trasero/Lateral"
-    },
-    "mantenimientoPrograma": {
-        "filtro": "25.000-30.000 km",
-        "aceite": "15.000 km",
-        "frenos": "Anual",
-        "ruedas": "Anual",
-        "refrigerante": "2 anos"
-    },
-    "sistemasInteligentes": {
-        "frenado": "AEB",
-        "carril": "LDW",
-        "ciego": "BSM",
-        "parking": "8-12 sensores",
-        "crucero": "ACC"
-    },
-    "consumo": null,
-    "dimensiones": null,
-    "cilindrada": null,
-    "emisiones": null,
-    "tipo": null,
-    "asientos": null,
-    "baul": null,
-    "maleteroMin": null,
-    "generacion": null,
-    "anoLanzamiento": null,
-    "colores": [],
-    "category": "otros"
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 33.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "haval",
+    "china",
+    "combustion",
+    "Haval",
+    "SUV",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ]
 }

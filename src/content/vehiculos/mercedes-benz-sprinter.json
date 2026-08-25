@@ -1,135 +1,238 @@
 {
-    "slug": "mercedes-benz-sprinter",
-    "type": "vehiculos",
-    "title": "Mercedes-Benz Sprinter",
-    "description": "Furgón grande de Mercedes-Benz, base para transporte de pasajeros, carga y camperización, motor turbodiésel.",
-    "status": "confirmado",
-    "tags": [
-        "furgon",
-        "mercedes-benz",
-        "diesel"
-    ],
-    "featured": false,
-    "manufacturer": "Mercedes-Benz",
-    "class": "Furgón",
-    "customizable": false,
-    "power": "163 hp",
-    "price": "USD 55.000",
-    "consumo": "9.5 l/100km (mixto)",
-    "dimensiones": "5926 x 1993 x 2427 mm",
-    "evidence": {
-        "level": "oficial-nombrado",
-        "primarySource": "https://www.mercedes-benz.com.ar/vans/sprinter"
+  "slug": "mercedes-benz-sprinter",
+  "type": "vehiculos",
+  "title": "Mercedes-Benz Sprinter",
+  "description": "Furgón grande de Mercedes-Benz, base para transporte de pasajeros, carga y camperización, motor turbodiésel.",
+  "status": "confirmado",
+  "tags": [
+    "furgon",
+    "mercedes-benz",
+    "diesel"
+  ],
+  "featured": false,
+  "manufacturer": "Mercedes-Benz",
+  "class": "Furgón",
+  "customizable": false,
+  "power": "163 hp",
+  "price": "USD 55.000",
+  "consumo": "9.5 l/100km (mixto)",
+  "dimensiones": "5926 x 1993 x 2427 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.mercedes-benz.com.ar/vans/sprinter"
+  },
+  "performance": {
+    "speed": "160 km/h",
+    "acceleration": "0-100 km/h en 14.0s"
+  },
+  "createdAt": "2026-08-23T21:59:08.724580Z",
+  "updatedAt": "2026-08-25T06:11:22.6404082Z",
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.300-1.700 kg",
+  "tipoMotor": "Gasolina/Diésel",
+  "potenciaKW": "100-250 kW",
+  "capacidadTanque": "55-75 litros",
+  "tiempoRecorrido": "7-10s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "F",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": null,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": null,
+  "anoLanzamiento": null,
+  "colores": [],
+  "category": "ejecutivo",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
     },
-    "performance": {
-        "speed": "160 km/h",
-        "acceleration": "0-100 km/h en 14.0s"
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "160 km/h",
+      "acceleration": "0-100 km/h en 14.0s"
     },
-    "createdAt": "2026-08-23T21:59:08.724580Z",
-    "updatedAt": "2026-08-25T06:11:22.6404082Z",
-    "transmision": "Manual o Automática",
-    "traccion": "Tracción delantera",
-    "peso": "1.300-1.700 kg",
-    "tipoMotor": "Gasolina/Diésel",
-    "potenciaKW": "100-250 kW",
-    "capacidadTanque": "55-75 litros",
-    "tiempoRecorrido": "7-10s",
-    "anoProduccion": "2023-2024",
-    "mercados": [
-        "Europa",
+    "bateria": {
+      "consumo": "9.5 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 5926,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "9.5 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
         "USA",
-        "Asia",
-        "Mercados emergentes"
-    ],
-    "equipamiento": [
-        "Control tracción",
-        "Frenos ABS",
-        "Control estabilidad dinámico",
-        "Asistentes de conducción"
-    ],
-    "consumoEtiqueta": "F",
-    "neumaticos": "225/50R17",
-    "especificacionesMotor": {
-        "filtro_aire": "Filtro de panel",
-        "tipo_valvulas": "DOHC",
-        "ratio_compresion": "10.5:1",
-        "sistemas_inyeccion": "Inyeccion directa",
-        "arbol_levas": "Variable (VVT)"
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
     },
-    "especificacionesTransmision": {
-        "tipo_automatico": "Convertidor",
-        "control_cambios": "Secuencial",
-        "sist_propulsion": "Traccion",
-        "velocidades": "8/9 velocidades"
-    },
-    "especificacionesSuspension": {
-        "tipo_trasera": "Multilink",
-        "barra_estabilizadora": "26/20 mm",
-        "tipo_delantera": "MacPherson",
-        "amortiguadores": "Doble tubo",
-        "recorrido_vertical": "+-150 mm"
-    },
-    "especificacionesRuedas": {
-        "offset": "+35 a +45 mm",
-        "indice_velocidad": "T/V",
-        "indice_carga": "91",
-        "profundidad_surcos": "1.6 mm",
-        "pcd": "5x114.3"
-    },
-    "especificacionesDireccion": {
-        "tipo_asistencia": "Electrica progresiva",
-        "sistema_control": "Control electronico",
-        "angulo_max_giro": "32-35 grados",
-        "vueltas_calador": "2.5-3.0"
-    },
-    "aerodinámica": {
-        "defectores_aire": "Canales laterales",
-        "spoiler_trasero": "Integrado",
-        "area_frontal": "2.2-2.4 m2",
-        "coeficiente_arrastre": "Cx 0.27-0.32"
-    },
-    "capacidadesAdicionales": {
-        "capacidad_refrigerante": "7-9 L",
-        "capacidad_lavaparabrisas": "3-4 L",
-        "liquido_frenos": "0.75-0.85 L",
-        "capacidad_aceite": "4.5-5.5 L",
-        "filtro_habitaculo": "Carbon activado"
-    },
-    "seguridad_pasiva": {
-        "respaldos": "Reforzados",
-        "zonas": "Deformacion",
-        "cinturones": "Pre-tensores",
-        "estructura": "Vigas laterales",
-        "cristales": "Laminado/Templado"
-    },
-    "climatizacionAvanzada": {
-        "control": "Trizona",
-        "modo": "Recirculacion",
-        "filtro": "Carbon",
-        "desempanante": "Trasero/Lateral"
-    },
-    "mantenimientoPrograma": {
-        "filtro": "25.000-30.000 km",
-        "aceite": "15.000 km",
-        "frenos": "Anual",
-        "ruedas": "Anual",
-        "refrigerante": "2 anos"
-    },
-    "sistemasInteligentes": {
-        "frenado": "AEB",
-        "carril": "LDW",
-        "ciego": "BSM",
-        "parking": "8-12 sensores",
-        "crucero": "ACC"
-    },
-    "cilindrada": null,
-    "emisiones": null,
-    "tipo": null,
-    "asientos": null,
-    "baul": null,
-    "maleteroMin": null,
-    "generacion": null,
-    "anoLanzamiento": null,
-    "colores": [],
-    "category": "ejecutivo"
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 55.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "furgon",
+    "mercedes-benz",
+    "diesel",
+    "Mercedes-Benz",
+    "Furgón",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ]
 }

@@ -1,149 +1,251 @@
 {
-    "slug": "aston-martin-db12",
-    "type": "vehiculos",
-    "title": "Aston Martin DB12",
-    "description": "Gran turismo británico de Aston Martin, motor V8 biturbo Mercedes-AMG.",
-    "status": "confirmado",
-    "tags": [
-        "deportivo",
-        "aston-martin"
-    ],
-    "featured": false,
-    "manufacturer": "Aston Martin",
-    "class": "Gran turismo",
-    "customizable": false,
-    "power": "680 PS / 671 hp @ 6000 rpm (800 Nm de torque)",
-    "price": "USD 262.000 aprox. (variante DB12 S: USD 690 hp, desde ~USD 270.000)",
-    "consumo": "12.2 l/100km combinado (cifra oficial UK)",
-    "dimensiones": "4.725 mm largo x 1.980 mm ancho (sin espejos) x 1.295 mm alto, distancia entre ejes 2.805 mm",
-    "evidence": {
-        "level": "oficial-nombrado",
-        "primarySource": "https://www.astonmartin.com/en/models/db12/specification",
-        "secondarySource": "https://en.wikipedia.org/wiki/Aston_Martin_DB12",
-        "note": "Existe variante DB12 S (690 hp) más orientada a prestaciones, además del DB12 base. 0-100 km/h en 3.6s, velocidad máxima 325 km/h según ficha oficial.",
-        "limitations": []
+  "slug": "aston-martin-db12",
+  "type": "vehiculos",
+  "title": "Aston Martin DB12",
+  "description": "Gran turismo británico de Aston Martin, motor V8 biturbo Mercedes-AMG.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "aston-martin"
+  ],
+  "featured": false,
+  "manufacturer": "Aston Martin",
+  "class": "Gran turismo",
+  "customizable": false,
+  "power": "680 PS / 671 hp @ 6000 rpm (800 Nm de torque)",
+  "price": "USD 262.000 aprox. (variante DB12 S: USD 690 hp, desde ~USD 270.000)",
+  "consumo": "12.2 l/100km combinado (cifra oficial UK)",
+  "dimensiones": "4.725 mm largo x 1.980 mm ancho (sin espejos) x 1.295 mm alto, distancia entre ejes 2.805 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.astonmartin.com/en/models/db12/specification",
+    "secondarySource": "https://en.wikipedia.org/wiki/Aston_Martin_DB12",
+    "note": "Existe variante DB12 S (690 hp) más orientada a prestaciones, además del DB12 base. 0-100 km/h en 3.6s, velocidad máxima 325 km/h según ficha oficial.",
+    "limitations": []
+  },
+  "performance": {
+    "speed": "325 km/h",
+    "acceleration": "0-100 km/h en 3.6s"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-25T06:11:21.8643489Z",
+  "transmision": "8 velocidades automática (ZF)",
+  "traccion": "Trasera (RWD) con diferencial electrónico trasero",
+  "peso": "1.788 kg",
+  "tipoMotor": "Gasolina, V8 biturbo (motor M177 de origen Mercedes-AMG)",
+  "potenciaKW": "500 kW / 680 PS / 671 hp @ 6.000 rpm",
+  "capacidadTanque": "No confirmado con precisión oficial (rango típico de la plataforma DB11/DB12: 78-84 litros)",
+  "tiempoRecorrido": "3.6s 0-100 km/h (0-60 mph en 3.5s, cifra oficial)",
+  "anoProduccion": "2023-presente (1ª generación, sucesor del DB11)",
+  "mercados": [
+    "Europa",
+    "Reino Unido",
+    "Estados Unidos",
+    "Medio Oriente",
+    "Asia-Pacífico"
+  ],
+  "equipamiento": [
+    "Suspensión adaptativa inteligente",
+    "5 modos de conducción (Wet, GT, Sport, Sport+, Individual)",
+    "Frenos opcionales carbocerámicos",
+    "Dirección asistida eléctrica",
+    "Apple CarPlay y Android Auto",
+    "Programa de personalización Q by Aston Martin"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "275 mm delantero (llanta 21\")",
+  "cilindrada": "3.982 cc (4.0 V8 biturbo)",
+  "emisiones": "CO2 278 g/km (cifra oficial combinada, Reino Unido)",
+  "tipo": "Gran turismo (coupé 2+2)",
+  "asientos": 4,
+  "baul": "262 litros",
+  "maleteroMin": "262 litros",
+  "generacion": "Primera generación, sucesor del DB11, lanzado en 2023",
+  "anoLanzamiento": 2023,
+  "colores": [
+    "Jet Black",
+    "Onyx Black",
+    "China Grey",
+    "Titanium Grey",
+    "Aston Martin Racing Green",
+    "Ghillies Green",
+    "Plasma Blue",
+    "Lunar White"
+  ],
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
     },
-    "performance": {
-        "speed": "325 km/h",
-        "acceleration": "0-100 km/h en 3.6s"
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "325 km/h",
+      "acceleration": "0-100 km/h en 3.6s"
     },
-    "createdAt": "2026-08-23T23:08:07.679Z",
-    "updatedAt": "2026-08-25T06:11:21.8643489Z",
-    "transmision": "8 velocidades automática (ZF)",
-    "traccion": "Trasera (RWD) con diferencial electrónico trasero",
-    "peso": "1.788 kg",
-    "tipoMotor": "Gasolina, V8 biturbo (motor M177 de origen Mercedes-AMG)",
-    "potenciaKW": "500 kW / 680 PS / 671 hp @ 6.000 rpm",
-    "capacidadTanque": "No confirmado con precisión oficial (rango típico de la plataforma DB11/DB12: 78-84 litros)",
-    "tiempoRecorrido": "3.6s 0-100 km/h (0-60 mph en 3.5s, cifra oficial)",
-    "anoProduccion": "2023-presente (1ª generación, sucesor del DB11)",
-    "mercados": [
-        "Europa",
-        "Reino Unido",
-        "Estados Unidos",
-        "Medio Oriente",
-        "Asia-Pacífico"
-    ],
-    "equipamiento": [
-        "Suspensión adaptativa inteligente",
-        "5 modos de conducción (Wet, GT, Sport, Sport+, Individual)",
-        "Frenos opcionales carbocerámicos",
-        "Dirección asistida eléctrica",
-        "Apple CarPlay y Android Auto",
-        "Programa de personalización Q by Aston Martin"
-    ],
-    "consumoEtiqueta": "G",
-    "neumaticos": "275 mm delantero (llanta 21\")",
-    "cilindrada": "3.982 cc (4.0 V8 biturbo)",
-    "emisiones": "CO2 278 g/km (cifra oficial combinada, Reino Unido)",
-    "tipo": "Gran turismo (coupé 2+2)",
-    "asientos": 4,
-    "baul": "262 litros",
-    "maleteroMin": "262 litros",
-    "generacion": "Primera generación, sucesor del DB11, lanzado en 2023",
-    "anoLanzamiento": 2023,
-    "colores": [
-        "Jet Black",
-        "Onyx Black",
-        "China Grey",
-        "Titanium Grey",
-        "Aston Martin Racing Green",
-        "Ghillies Green",
-        "Plasma Blue",
-        "Lunar White"
-    ],
-    "especificacionesMotor": {
-        "filtro_aire": "Filtro de panel",
-        "tipo_valvulas": "DOHC",
-        "ratio_compresion": "10.5:1",
-        "sistemas_inyeccion": "Inyeccion directa",
-        "arbol_levas": "Variable (VVT)"
+    "bateria": {
+      "consumo": "12.2 l/100km combinado (cifra oficial UK)"
     },
-    "especificacionesTransmision": {
-        "tipo_automatico": "Convertidor",
-        "control_cambios": "Secuencial",
-        "sist_propulsion": "Traccion",
-        "velocidades": "8/9 velocidades"
+    "transmision": {
+      "tipo": "8 velocidades automática (ZF)"
     },
-    "especificacionesSuspension": {
-        "tipo_trasera": "Multilink",
-        "barra_estabilizadora": "26/20 mm",
-        "tipo_delantera": "MacPherson",
-        "amortiguadores": "Doble tubo",
-        "recorrido_vertical": "+-150 mm"
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
     },
-    "especificacionesRuedas": {
-        "offset": "+35 a +45 mm",
-        "indice_velocidad": "T/V",
-        "indice_carga": "91",
-        "profundidad_surcos": "1.6 mm",
-        "pcd": "5x114.3"
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "12.2 l/100km combinado (cifra oficial UK)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
     },
-    "especificacionesDireccion": {
-        "tipo_asistencia": "Electrica progresiva",
-        "sistema_control": "Control electronico",
-        "angulo_max_giro": "32-35 grados",
-        "vueltas_calador": "2.5-3.0"
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
     },
-    "aerodinámica": {
-        "defectores_aire": "Canales laterales",
-        "spoiler_trasero": "Integrado",
-        "area_frontal": "2.2-2.4 m2",
-        "coeficiente_arrastre": "Cx 0.27-0.32"
-    },
-    "capacidadesAdicionales": {
-        "capacidad_refrigerante": "7-9 L",
-        "capacidad_lavaparabrisas": "3-4 L",
-        "liquido_frenos": "0.75-0.85 L",
-        "capacidad_aceite": "4.5-5.5 L",
-        "filtro_habitaculo": "Carbon activado"
-    },
-    "seguridad_pasiva": {
-        "respaldos": "Reforzados",
-        "zonas": "Deformacion",
-        "cinturones": "Pre-tensores",
-        "estructura": "Vigas laterales",
-        "cristales": "Laminado/Templado"
-    },
-    "climatizacionAvanzada": {
-        "control": "Trizona",
-        "modo": "Recirculacion",
-        "filtro": "Carbon",
-        "desempanante": "Trasero/Lateral"
-    },
-    "mantenimientoPrograma": {
-        "filtro": "25.000-30.000 km",
-        "aceite": "15.000 km",
-        "frenos": "Anual",
-        "ruedas": "Anual",
-        "refrigerante": "2 anos"
-    },
-    "sistemasInteligentes": {
-        "frenado": "AEB",
-        "carril": "LDW",
-        "ciego": "BSM",
-        "parking": "8-12 sensores",
-        "crucero": "ACC"
-    },
-    "category": "otros"
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 262.000 aprox. (variante DB12 S: USD 690 hp, desde ~USD 270.000)"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "deportivo",
+    "aston-martin",
+    "Aston Martin",
+    "Gran turismo",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ]
 }

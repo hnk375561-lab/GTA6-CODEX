@@ -1,137 +1,247 @@
 {
-    "slug": "bmw-m4",
-    "type": "vehiculos",
-    "title": "BMW M4",
-    "description": "Coupé deportivo de alto rendimiento de BMW M, motor 3.0 biturbo.",
-    "status": "confirmado",
-    "tags": [
-        "deportivo",
-        "bmw"
+  "slug": "bmw-m4",
+  "type": "vehiculos",
+  "title": "BMW M4",
+  "description": "Coupé deportivo de alto rendimiento de BMW M, motor 3.0 biturbo.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "bmw"
+  ],
+  "featured": true,
+  "manufacturer": "BMW",
+  "class": "Deportivo",
+  "customizable": false,
+  "power": "503 hp",
+  "price": "USD 78.000",
+  "consumo": "9.9-10.2 l/100km combinado (versión Competition)",
+  "dimensiones": "4.794 mm largo x 1.887 mm ancho x 1.393 mm alto, distancia entre ejes 2.857 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.auto-data.net/en/bmw-m4-g82-competition-3.0-510hp-steptronic-41300",
+    "secondarySource": "https://www.cardekho.com/bmw/m4-competition/specs",
+    "note": "Cifras corresponden a la versión M4 Competition (G82, 503 hp SAE / 510 PS ECE), la variante de mayor volumen de venta sobre el M4 base (473 hp).",
+    "limitations": []
+  },
+  "performance": {
+    "speed": "250 km/h (limitada electrónicamente)",
+    "acceleration": "0-100 km/h en 3.9s"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-25T06:11:21.9200699Z",
+  "transmision": "Automática 8 velocidades Steptronic M",
+  "traccion": "Tracción total inteligente M xDrive",
+  "cilindrada": "2.993 cc",
+  "emisiones": "CO2 215 g/km (WLTP)",
+  "tipo": "Coupé",
+  "asientos": 4,
+  "baul": "405 litros",
+  "peso": "1.560 kg",
+  "tipoMotor": "Gasolina turbo bimotor",
+  "potenciaKW": "373 kW",
+  "capacidadTanque": "59 litros",
+  "anoProduccion": "2023",
+  "mercados": [
+    "Alemania",
+    "USA",
+    "Europa",
+    "Asia"
+  ],
+  "equipamiento": [
+    "M Sport Package",
+    "Suspensión M adaptativa",
+    "Control dinámico M",
+    "Frenos cerámica M"
+  ],
+  "tiempoRecorrido": "10.8s",
+  "consumoEtiqueta": "F",
+  "neumaticos": "275/35R20",
+  "maleteroMin": "405 litros",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "generacion": null,
+  "anoLanzamiento": null,
+  "colores": [],
+  "category": "deportivo",
+  "gallery": {
+    "images": {
+      "exterior": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/2021_BMW_M440i_xDrive_Sedan%2C_front_11.22.21.jpg/1280px-2021_BMW_M440i_xDrive_Sedan%2C_front_11.22.21.jpg"
+      ],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [
+      {
+        "id": "video_id",
+        "title": "Performance",
+        "channel": "BMW"
+      }
     ],
-    "featured": true,
-    "manufacturer": "BMW",
-    "class": "Deportivo",
-    "customizable": false,
-    "power": "503 hp",
-    "price": "USD 78.000",
-    "consumo": "9.9-10.2 l/100km combinado (versión Competition)",
-    "dimensiones": "4.794 mm largo x 1.887 mm ancho x 1.393 mm alto, distancia entre ejes 2.857 mm",
-    "evidence": {
-        "level": "respaldado",
-        "primarySource": "https://www.auto-data.net/en/bmw-m4-g82-competition-3.0-510hp-steptronic-41300",
-        "secondarySource": "https://www.cardekho.com/bmw/m4-competition/specs",
-        "note": "Cifras corresponden a la versión M4 Competition (G82, 503 hp SAE / 510 PS ECE), la variante de mayor volumen de venta sobre el M4 base (473 hp).",
-        "limitations": []
+    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/2021_BMW_M440i_xDrive_Sedan%2C_front_11.22.21.jpg/1280px-2021_BMW_M440i_xDrive_Sedan%2C_front_11.22.21.jpg"
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "250 km/h (limitada electrónicamente)",
+      "acceleration": "0-100 km/h en 3.9s"
     },
-    "performance": {
-        "speed": "250 km/h (limitada electrónicamente)",
-        "acceleration": "0-100 km/h en 3.9s"
+    "bateria": {
+      "consumo": "9.9-10.2 l/100km combinado (versión Competition)"
     },
-    "createdAt": "2026-08-23T23:06:25.164Z",
-    "updatedAt": "2026-08-25T06:11:21.9200699Z",
-    "transmision": "Automática 8 velocidades Steptronic M",
-    "traccion": "Tracción total inteligente M xDrive",
-    "cilindrada": "2.993 cc",
-    "emisiones": "CO2 215 g/km (WLTP)",
-    "tipo": "Coupé",
-    "asientos": 4,
-    "baul": "405 litros",
-    "peso": "1.560 kg",
-    "tipoMotor": "Gasolina turbo bimotor",
-    "potenciaKW": "373 kW",
-    "capacidadTanque": "59 litros",
-    "anoProduccion": "2023",
-    "mercados": [
+    "transmision": {
+      "tipo": "Automática 8 velocidades Steptronic M"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "9.9-10.2 l/100km combinado (versión Competition)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
         "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
         "USA",
-        "Europa",
-        "Asia"
-    ],
-    "equipamiento": [
-        "M Sport Package",
-        "Suspensión M adaptativa",
-        "Control dinámico M",
-        "Frenos cerámica M"
-    ],
-    "tiempoRecorrido": "10.8s",
-    "consumoEtiqueta": "F",
-    "neumaticos": "275/35R20",
-    "maleteroMin": "405 litros",
-    "especificacionesMotor": {
-        "filtro_aire": "Filtro de panel",
-        "tipo_valvulas": "DOHC",
-        "ratio_compresion": "10.5:1",
-        "sistemas_inyeccion": "Inyeccion directa",
-        "arbol_levas": "Variable (VVT)"
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
     },
-    "especificacionesTransmision": {
-        "tipo_automatico": "Convertidor",
-        "control_cambios": "Secuencial",
-        "sist_propulsion": "Traccion",
-        "velocidades": "8/9 velocidades"
-    },
-    "especificacionesSuspension": {
-        "tipo_trasera": "Multilink",
-        "barra_estabilizadora": "26/20 mm",
-        "tipo_delantera": "MacPherson",
-        "amortiguadores": "Doble tubo",
-        "recorrido_vertical": "+-150 mm"
-    },
-    "especificacionesRuedas": {
-        "offset": "+35 a +45 mm",
-        "indice_velocidad": "T/V",
-        "indice_carga": "91",
-        "profundidad_surcos": "1.6 mm",
-        "pcd": "5x114.3"
-    },
-    "especificacionesDireccion": {
-        "tipo_asistencia": "Electrica progresiva",
-        "sistema_control": "Control electronico",
-        "angulo_max_giro": "32-35 grados",
-        "vueltas_calador": "2.5-3.0"
-    },
-    "aerodinámica": {
-        "defectores_aire": "Canales laterales",
-        "spoiler_trasero": "Integrado",
-        "area_frontal": "2.2-2.4 m2",
-        "coeficiente_arrastre": "Cx 0.27-0.32"
-    },
-    "capacidadesAdicionales": {
-        "capacidad_refrigerante": "7-9 L",
-        "capacidad_lavaparabrisas": "3-4 L",
-        "liquido_frenos": "0.75-0.85 L",
-        "capacidad_aceite": "4.5-5.5 L",
-        "filtro_habitaculo": "Carbon activado"
-    },
-    "seguridad_pasiva": {
-        "respaldos": "Reforzados",
-        "zonas": "Deformacion",
-        "cinturones": "Pre-tensores",
-        "estructura": "Vigas laterales",
-        "cristales": "Laminado/Templado"
-    },
-    "climatizacionAvanzada": {
-        "control": "Trizona",
-        "modo": "Recirculacion",
-        "filtro": "Carbon",
-        "desempanante": "Trasero/Lateral"
-    },
-    "mantenimientoPrograma": {
-        "filtro": "25.000-30.000 km",
-        "aceite": "15.000 km",
-        "frenos": "Anual",
-        "ruedas": "Anual",
-        "refrigerante": "2 anos"
-    },
-    "sistemasInteligentes": {
-        "frenado": "AEB",
-        "carril": "LDW",
-        "ciego": "BSM",
-        "parking": "8-12 sensores",
-        "crucero": "ACC"
-    },
-    "generacion": null,
-    "anoLanzamiento": null,
-    "colores": [],
-    "category": "deportivo"
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 78.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "deportivo",
+    "bmw",
+    "BMW",
+    "Deportivo",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ]
 }
