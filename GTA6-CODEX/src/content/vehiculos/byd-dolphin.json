@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.972Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "manufacturer": "BYD",
   "class": "Hatchback eléctrico",
   "customizable": false,
@@ -63,5 +63,14 @@
   "generacion": "Primera generación (plataforma e-Platform 3.0)",
   "maleteroMin": "345 litros",
   "tipo": "Hatchback eléctrico",
-  "torque": "210 Nm (estimado)"
+  "torque": "210 Nm (estimado)",
+  "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
+  "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX"
+  ],
+  "garantia": "6 años / 150.000 km, garantía extendida de fábrica (estimado)"
 }

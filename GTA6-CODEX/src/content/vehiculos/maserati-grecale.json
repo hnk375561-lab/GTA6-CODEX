@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 43 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -67,5 +67,20 @@
   "generacion": "Primera generación",
   "maleteroMin": "535 litros",
   "tipo": "SUV premium mediano",
-  "torque": "725 Nm (estimado)"
+  "torque": "725 Nm (estimado)",
+  "suspension": "McPherson o doble horquilla delantera / eje multilink trasero, calibrada para confort y capacidad de carga",
+  "frenos": "Discos ventilados delanteros, discos (o tambores en versiones base) traseros, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX",
+    "Airbags laterales y de cortina",
+    "Cámara de reversa",
+    "Frenado autónomo de emergencia",
+    "Control de crucero adaptativo",
+    "Alerta de punto ciego"
+  ],
+  "garantia": "4 años / 100.000 km, cobertura premium (estimado)",
+  "capacidadRemolque": "2500 kg (estimado)"
 }

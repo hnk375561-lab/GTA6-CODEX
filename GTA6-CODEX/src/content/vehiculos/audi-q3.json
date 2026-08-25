@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:32.112Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "manufacturer": "Audi",
   "class": "SUV premium compacta",
   "customizable": false,
@@ -70,5 +70,19 @@
   ],
   "consumo": "7-7.5 l/100km aprox.",
   "dimensiones": "4.484 mm largo x 1.856 mm ancho x 1.616 mm alto, distancia entre ejes 2.680 mm",
-  "torque": "230 Nm (estimado)"
+  "torque": "230 Nm (estimado)",
+  "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
+  "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX",
+    "Airbags laterales y de cortina",
+    "Cámara de reversa",
+    "Frenado autónomo de emergencia",
+    "Control de crucero adaptativo",
+    "Alerta de punto ciego"
+  ],
+  "garantia": "4 años / 100.000 km, cobertura premium (estimado)"
 }

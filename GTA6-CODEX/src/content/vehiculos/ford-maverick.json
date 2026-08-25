@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.736Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "manufacturer": "Ford",
   "class": "Pickup compacta",
   "customizable": false,
@@ -65,5 +65,15 @@
   "generacion": "Primera generación",
   "maleteroMin": "N/A (pick-up)",
   "tipo": "Pick-up compacta",
-  "torque": "335 Nm (estimado)"
+  "torque": "335 Nm (estimado)",
+  "suspension": "McPherson o doble horquilla delantera / ballestas traseras",
+  "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX"
+  ],
+  "garantia": "3 años / 60.000 km integral, tren motriz hasta 5 años / 100.000 km (estimado)",
+  "capacidadRemolque": "1600 kg (estimado)"
 }

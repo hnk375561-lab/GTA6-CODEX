@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 30 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "transmision": "Automática 8 velocidades Steptronic M",
   "traccion": "Tracción total inteligente M xDrive",
   "cilindrada": "2.993 cc",
@@ -67,5 +67,19 @@
   ],
   "generacion": "Sexta generación (G82, facelift LCI)",
   "anoLanzamiento": 2020,
-  "torque": "680 Nm (estimado)"
+  "torque": "680 Nm (estimado)",
+  "suspension": "McPherson delantera / multilink trasera, calibración deportiva de rigidez elevada",
+  "frenos": "Discos ventilados perforados en las 4 ruedas cerámicos (carbono-cerámica), ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX",
+    "Airbags laterales y de cortina",
+    "Cámara de reversa",
+    "Frenado autónomo de emergencia",
+    "Control de crucero adaptativo",
+    "Alerta de punto ciego"
+  ],
+  "garantia": "4 años / 100.000 km, cobertura premium (estimado)"
 }

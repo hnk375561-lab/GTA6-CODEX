@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.628Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:47.000Z",
   "manufacturer": "Kawasaki",
   "class": "Moto deportiva",
   "customizable": false,
@@ -61,5 +61,13 @@
   "generacion": "Segunda generación",
   "maleteroMin": "N/A",
   "tipo": "Deportiva",
-  "torque": "40 Nm (estimado)"
+  "torque": "40 Nm (estimado)",
+  "suspension": "Horquilla telescópica invertida delantera / monoamortiguador trasero ajustable",
+  "frenos": "Doble disco delantero flotante de alto rendimiento, disco trasero, ABS de serie en modo pista/calle",
+  "seguridad": [
+    "ABS de serie",
+    "Control de tracción",
+    "Modos de conducción con control de potencia"
+  ],
+  "garantia": "2 años sin límite de kilometraje (estimado)"
 }

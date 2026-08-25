@@ -32,7 +32,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -67,5 +67,16 @@
   "generacion": "Cuarta generación (facelift)",
   "maleteroMin": "375 litros",
   "tipo": "SUV compacto",
-  "torque": "215 Nm (estimado)"
+  "torque": "215 Nm (estimado)",
+  "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
+  "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX",
+    "Airbags laterales y de cortina",
+    "Cámara de reversa"
+  ],
+  "garantia": "2 años sin límite de kilometraje (estimado)"
 }

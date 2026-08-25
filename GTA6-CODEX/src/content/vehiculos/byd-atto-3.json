@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -67,5 +67,19 @@
   "generacion": "Primera generación",
   "maleteroMin": "440 litros",
   "tipo": "SUV eléctrico compacto",
-  "torque": "440 Nm (estimado)"
+  "torque": "440 Nm (estimado)",
+  "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
+  "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX",
+    "Airbags laterales y de cortina",
+    "Cámara de reversa",
+    "Frenado autónomo de emergencia",
+    "Control de crucero adaptativo",
+    "Alerta de punto ciego"
+  ],
+  "garantia": "6 años / 150.000 km, garantía extendida de fábrica (estimado)"
 }

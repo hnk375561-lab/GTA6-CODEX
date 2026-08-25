@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.141Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "manufacturer": "Chevrolet",
   "class": "Pickup",
   "customizable": false,
@@ -65,5 +65,15 @@
   "generacion": "Segunda generación (facelift 2022)",
   "maleteroMin": "N/A (pick-up)",
   "tipo": "Pick-up mediana",
-  "torque": "350 Nm (estimado)"
+  "torque": "350 Nm (estimado)",
+  "suspension": "Doble horquilla delantera / ballestas o eje rígido trasero, orientada a carga y off-road",
+  "frenos": "Discos ventilados delanteros, discos (o tambores en versiones base) traseros, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX"
+  ],
+  "garantia": "3 años / 60.000 km integral, tren motriz hasta 5 años / 100.000 km (estimado)",
+  "capacidadRemolque": "2800 kg (estimado)"
 }

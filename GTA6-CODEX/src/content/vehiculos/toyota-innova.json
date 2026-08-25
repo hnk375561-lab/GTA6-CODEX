@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -64,5 +64,14 @@
   "generacion": "Tercera generación (Zenix)",
   "maleteroMin": "300 litros",
   "tipo": "Minivan/SUV (7 plazas)",
-  "torque": "220 Nm (estimado)"
+  "torque": "220 Nm (estimado)",
+  "suspension": "McPherson delantera / eje semi-independiente trasero, prioriza confort de marcha",
+  "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX"
+  ],
+  "garantia": "3 años / 100.000 km (estimado)"
 }

@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:03.178078Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -65,5 +65,15 @@
   "generacion": "Décima cuarta generación (facelift 2024)",
   "maleteroMin": "N/A (pick-up)",
   "tipo": "Pick-up full size",
-  "torque": "700 Nm (estimado)"
+  "torque": "700 Nm (estimado)",
+  "suspension": "Doble horquilla delantera / ballestas multihoja trasera, alta capacidad de carga",
+  "frenos": "Discos ventilados delanteros, discos (o tambores en versiones base) traseros, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX"
+  ],
+  "garantia": "3 años / 60.000 km integral, tren motriz hasta 5 años / 100.000 km (estimado)",
+  "capacidadRemolque": "3500 kg (estimado)"
 }

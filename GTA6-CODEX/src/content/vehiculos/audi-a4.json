@@ -33,7 +33,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "transmision": "7 velocidades S tronic (automática de doble embrague)",
   "traccion": "Delantera (FWD) o quattro (AWD) según motorización",
   "peso": "1.530-1.725 kg (según versión y equipamiento)",
@@ -74,5 +74,19 @@
     "Rojo Tango",
     "Plata Florett Metalizado"
   ],
-  "torque": "290 Nm (estimado)"
+  "torque": "290 Nm (estimado)",
+  "suspension": "McPherson delantera / multilink o eje de torsión trasero",
+  "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX",
+    "Airbags laterales y de cortina",
+    "Cámara de reversa",
+    "Frenado autónomo de emergencia",
+    "Control de crucero adaptativo",
+    "Alerta de punto ciego"
+  ],
+  "garantia": "4 años / 100.000 km, cobertura premium (estimado)"
 }

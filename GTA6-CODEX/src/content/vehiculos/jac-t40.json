@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:09.812750Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -63,5 +63,15 @@
   "generacion": "Primera generación",
   "maleteroMin": "N/A (pick-up)",
   "tipo": "Pick-up compacta",
-  "torque": "240 Nm (estimado)"
+  "torque": "240 Nm (estimado)",
+  "suspension": "McPherson o doble horquilla delantera / ballestas traseras",
+  "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX"
+  ],
+  "garantia": "6 años / 150.000 km, garantía extendida de fábrica (estimado)",
+  "capacidadRemolque": "1600 kg (estimado)"
 }

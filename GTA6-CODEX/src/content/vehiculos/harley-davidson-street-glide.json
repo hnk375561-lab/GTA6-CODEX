@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 40 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -63,5 +63,11 @@
   "generacion": "Familia Touring (facelift 2024)",
   "maleteroMin": "Alforjas de fábrica",
   "tipo": "Touring / Bagger",
-  "torque": "95 Nm (estimado)"
+  "torque": "95 Nm (estimado)",
+  "suspension": "Horquilla telescópica delantera / doble amortiguador trasero",
+  "frenos": "Disco delantero simple, disco trasero, ABS de serie",
+  "seguridad": [
+    "ABS de serie"
+  ],
+  "garantia": "3 años / 100.000 km, variable según mercado (estimado)"
 }

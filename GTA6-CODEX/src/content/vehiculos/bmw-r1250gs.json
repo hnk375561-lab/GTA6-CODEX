@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:47.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -63,5 +63,12 @@
   "generacion": "Cuarta generación (facelift 2023)",
   "maleteroMin": "N/A",
   "tipo": "Moto trail/adventure",
-  "torque": "135 Nm (estimado)"
+  "torque": "135 Nm (estimado)",
+  "suspension": "Horquilla telescópica de largo recorrido / monoamortiguador trasero ajustable",
+  "frenos": "Doble disco delantero, disco trasero, ABS de serie desconectable para uso off-road",
+  "seguridad": [
+    "ABS de serie",
+    "Control de tracción"
+  ],
+  "garantia": "4 años / 100.000 km, cobertura premium (estimado)"
 }

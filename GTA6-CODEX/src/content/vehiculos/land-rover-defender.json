@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:02.633748Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -66,5 +66,19 @@
   "generacion": "Segunda generación (L663, facelift 2023)",
   "maleteroMin": "857 litros",
   "tipo": "SUV off-road",
-  "torque": "460 Nm (estimado)"
+  "torque": "460 Nm (estimado)",
+  "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
+  "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX",
+    "Airbags laterales y de cortina",
+    "Cámara de reversa",
+    "Frenado autónomo de emergencia",
+    "Control de crucero adaptativo",
+    "Alerta de punto ciego"
+  ],
+  "garantia": "4 años / 100.000 km, cobertura premium (estimado)"
 }

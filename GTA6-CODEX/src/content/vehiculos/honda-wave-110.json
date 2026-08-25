@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:34.107Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "manufacturer": "Honda",
   "class": "Moto utilitaria",
   "customizable": false,
@@ -61,5 +61,11 @@
   "generacion": "Vigente desde 1995, múltiples actualizaciones",
   "maleteroMin": "N/A",
   "tipo": "Moto utilitaria/underbone",
-  "torque": "5 Nm (estimado)"
+  "torque": "5 Nm (estimado)",
+  "suspension": "Horquilla telescópica delantera / amortiguadores traseros convencionales",
+  "frenos": "Disco delantero simple, disco trasero, ABS de serie",
+  "seguridad": [
+    "ABS de serie"
+  ],
+  "garantia": "2 años sin límite de kilometraje (estimado)"
 }

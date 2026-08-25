@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.161Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "manufacturer": "Fiat",
   "class": "Sedán",
   "customizable": false,
@@ -63,5 +63,16 @@
   "generacion": "Primera generación",
   "maleteroMin": "525 litros",
   "tipo": "Sedán compacto",
-  "torque": "145 Nm (estimado)"
+  "torque": "145 Nm (estimado)",
+  "suspension": "McPherson delantera / multilink o eje de torsión trasero",
+  "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX",
+    "Airbags laterales y de cortina",
+    "Cámara de reversa"
+  ],
+  "garantia": "3 años / 100.000 km, variable según mercado (estimado)"
 }

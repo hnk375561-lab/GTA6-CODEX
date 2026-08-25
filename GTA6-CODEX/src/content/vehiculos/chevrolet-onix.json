@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.590Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback",
   "customizable": false,
@@ -63,5 +63,14 @@
   "generacion": "Segunda generación (plataforma GEM)",
   "maleteroMin": "303 litros",
   "tipo": "Hatchback compacto",
-  "torque": "160 Nm (estimado)"
+  "torque": "160 Nm (estimado)",
+  "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
+  "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX"
+  ],
+  "garantia": "3 años / 60.000 km integral, tren motriz hasta 5 años / 100.000 km (estimado)"
 }

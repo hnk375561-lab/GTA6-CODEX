@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:47.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -64,5 +64,12 @@
   "generacion": "Tercera generación (facelift)",
   "maleteroMin": "N/A",
   "tipo": "Moto trail/adventure",
-  "torque": "160 Nm (estimado)"
+  "torque": "160 Nm (estimado)",
+  "suspension": "Horquilla telescópica de largo recorrido / monoamortiguador trasero ajustable",
+  "frenos": "Doble disco delantero, disco trasero, ABS de serie desconectable para uso off-road",
+  "seguridad": [
+    "ABS de serie",
+    "Control de tracción"
+  ],
+  "garantia": "2 años sin límite de kilometraje (estimado)"
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.065Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "manufacturer": "Honda",
   "class": "Moto",
   "customizable": false,
@@ -61,5 +61,11 @@
   "generacion": "Segunda generación (facelift 2019)",
   "maleteroMin": "N/A",
   "tipo": "Naked/Roadster",
-  "torque": "45 Nm (estimado)"
+  "torque": "45 Nm (estimado)",
+  "suspension": "Horquilla telescópica delantera / amortiguadores traseros convencionales",
+  "frenos": "Disco delantero simple, disco trasero, ABS de serie",
+  "seguridad": [
+    "ABS de serie"
+  ],
+  "garantia": "2 años sin límite de kilometraje (estimado)"
 }

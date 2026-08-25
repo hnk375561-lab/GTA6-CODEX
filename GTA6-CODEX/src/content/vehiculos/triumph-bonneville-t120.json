@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 36 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -63,5 +63,11 @@
   "generacion": "Segunda generación (facelift)",
   "maleteroMin": "N/A",
   "tipo": "Cruiser/clásica",
-  "torque": "75 Nm (estimado)"
+  "torque": "75 Nm (estimado)",
+  "suspension": "Horquilla telescópica delantera / amortiguadores traseros convencionales",
+  "frenos": "Disco delantero simple, disco trasero, ABS de serie",
+  "seguridad": [
+    "ABS de serie"
+  ],
+  "garantia": "2 años sin límite de kilometraje (estimado)"
 }

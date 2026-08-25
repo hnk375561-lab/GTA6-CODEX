@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.363Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "manufacturer": "Yamaha",
   "class": "Moto naked",
   "customizable": false,
@@ -61,5 +61,12 @@
   "generacion": "Tercera generación",
   "maleteroMin": "N/A",
   "tipo": "Naked/Roadster",
-  "torque": "70 Nm (estimado)"
+  "torque": "70 Nm (estimado)",
+  "suspension": "Horquilla telescópica delantera / monoamortiguador trasero",
+  "frenos": "Disco delantero simple, disco trasero, ABS de serie",
+  "seguridad": [
+    "ABS de serie",
+    "Control de tracción"
+  ],
+  "garantia": "2 años sin límite de kilometraje (estimado)"
 }

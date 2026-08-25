@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.815Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "manufacturer": "Ford",
   "class": "Deportivo",
   "customizable": false,
@@ -71,5 +71,19 @@
   "generacion": "Séptima generación (S650)",
   "maleteroMin": "382 litros",
   "tipo": "Muscle car / deportivo",
-  "torque": "650 Nm (estimado)"
+  "torque": "650 Nm (estimado)",
+  "suspension": "McPherson delantera / multilink trasera, calibración deportiva de rigidez elevada",
+  "frenos": "Discos ventilados perforados en las 4 ruedas, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX",
+    "Airbags laterales y de cortina",
+    "Cámara de reversa",
+    "Frenado autónomo de emergencia",
+    "Control de crucero adaptativo",
+    "Alerta de punto ciego"
+  ],
+  "garantia": "3 años / 60.000 km integral, tren motriz hasta 5 años / 100.000 km (estimado)"
 }

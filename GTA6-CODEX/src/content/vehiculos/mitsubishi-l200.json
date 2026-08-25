@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:02.058147Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -66,5 +66,15 @@
   "generacion": "Sexta generación (Triton en otros mercados)",
   "maleteroMin": "N/A (pick-up)",
   "tipo": "Pick-up mediana",
-  "torque": "310 Nm (estimado)"
+  "torque": "310 Nm (estimado)",
+  "suspension": "Doble horquilla delantera / ballestas o eje rígido trasero, orientada a carga y off-road",
+  "frenos": "Discos ventilados delanteros, discos (o tambores en versiones base) traseros, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX"
+  ],
+  "garantia": "3 años / 100.000 km (estimado)",
+  "capacidadRemolque": "2800 kg (estimado)"
 }

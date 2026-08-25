@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.554Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "manufacturer": "Kia",
   "class": "Hatchback económico",
   "customizable": false,
@@ -64,5 +64,14 @@
   "generacion": "Cuarta generación",
   "maleteroMin": "255 litros",
   "tipo": "City car / hatchback compacto",
-  "torque": "120 Nm (estimado)"
+  "torque": "120 Nm (estimado)",
+  "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
+  "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX"
+  ],
+  "garantia": "5 años / 100.000 km, extensible hasta 7 años según mercado (estimado)"
 }

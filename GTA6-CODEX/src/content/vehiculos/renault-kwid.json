@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.424Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "manufacturer": "Renault",
   "class": "Hatchback económico",
   "customizable": false,
@@ -64,5 +64,14 @@
   "generacion": "Primera generación (facelift 2022)",
   "maleteroMin": "300 litros",
   "tipo": "City car / crossover compacto",
-  "torque": "95 Nm (estimado)"
+  "torque": "95 Nm (estimado)",
+  "suspension": "McPherson delantera / eje de torsión trasero, calibración urbana",
+  "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX"
+  ],
+  "garantia": "3 años / 100.000 km, variable según mercado (estimado)"
 }

@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:32.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -67,5 +67,19 @@
   "generacion": "Primera generación",
   "maleteroMin": "380 litros",
   "tipo": "Hatchback deportivo",
-  "torque": "405 Nm (estimado)"
+  "torque": "405 Nm (estimado)",
+  "suspension": "McPherson delantera / multilink trasera, calibración deportiva de rigidez elevada",
+  "frenos": "Discos ventilados perforados en las 4 ruedas, ABS y EBD de serie",
+  "seguridad": [
+    "ABS",
+    "Control de estabilidad (ESC)",
+    "Airbags frontales",
+    "Anclajes ISOFIX",
+    "Airbags laterales y de cortina",
+    "Cámara de reversa",
+    "Frenado autónomo de emergencia",
+    "Control de crucero adaptativo",
+    "Alerta de punto ciego"
+  ],
+  "garantia": "3 años / 100.000 km, variable según mercado (estimado)"
 }

@@ -27,7 +27,7 @@
     "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:11.788966Z",
-  "updatedAt": "2026-08-25T03:30:22.000Z",
+  "updatedAt": "2026-08-25T03:39:47.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -59,5 +59,13 @@
   "generacion": "Tercera generación",
   "maleteroMin": "N/A",
   "tipo": "Naked/Street",
-  "torque": "35 Nm (estimado)"
+  "torque": "35 Nm (estimado)",
+  "suspension": "Horquilla telescópica invertida delantera / monoamortiguador trasero ajustable",
+  "frenos": "Doble disco delantero flotante de alto rendimiento, disco trasero, ABS de serie en modo pista/calle",
+  "seguridad": [
+    "ABS de serie",
+    "Control de tracción",
+    "Modos de conducción con control de potencia"
+  ],
+  "garantia": "2 años sin límite de kilometraje (estimado)"
 }
