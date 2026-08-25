@@ -30,7 +30,7 @@
     "acceleration": "0-100 km/h en 7.2s (híbrida)"
   },
   "createdAt": "2026-08-23T21:59:02.350462Z",
-  "updatedAt": "2026-08-25T20:55:31.289Z",
+  "updatedAt": "2026-08-25T22:37:04.423Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -239,5 +239,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Lexus NX - SUV premium compacta Lexus. 200 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Lexus NX",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Lexus"
+    },
+    "vehicleType": "SUV premium compacta",
+    "fuelType": "Gasolina + sistema híbrido",
+    "speed": "200 km/h",
+    "acceleration": "0-100 km/h en 7.2s (híbrida)",
+    "price": "USD 55.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV premium compacta de Lexus, disponible en versión híbrida (NX 350h)."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.423Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.948Z",
-  "updatedAt": "2026-08-25T06:11:22.1697773Z",
+  "updatedAt": "2026-08-25T22:37:04.367Z",
   "manufacturer": "Fiat",
   "class": "Hatchback",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Fiat Argo - Hatchback Fiat. 175 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Fiat Argo",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Fiat"
+    },
+    "vehicleType": "Hatchback",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.5s",
+    "price": "USD 18.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback compacto de Fiat, misma plataforma que el Cronos."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.367Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

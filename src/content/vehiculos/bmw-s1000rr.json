@@ -31,7 +31,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T20:55:31.275Z",
+  "updatedAt": "2026-08-25T22:37:04.315Z",
   "transmision": "Manual secuencial",
   "traccion": "Tracción delantera",
   "peso": "197 kg",
@@ -244,5 +244,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "BMW S1000RR - Moto superdeportiva BMW. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "BMW S1000RR",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "BMW"
+    },
+    "vehicleType": "Moto superdeportiva",
+    "fuelType": "Gasolina 4 cilindros",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 18.500",
+    "availability": "https://schema.org/InStock",
+    "description": "Superdeportiva insignia de BMW Motorrad, tetracilíndrica en línea de 999cc."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.315Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

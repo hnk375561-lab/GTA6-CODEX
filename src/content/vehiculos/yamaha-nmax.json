@@ -29,7 +29,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T20:55:31.297Z",
+  "updatedAt": "2026-08-25T22:37:04.506Z",
   "transmision": "Automática (CVT)",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Yamaha NMAX - Scooter Yamaha. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Yamaha NMAX",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Yamaha"
+    },
+    "vehicleType": "Scooter",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 3.900",
+    "availability": "https://schema.org/InStock",
+    "description": "Scooter urbana deportiva de Yamaha, muy popular en el sudeste asiático y Latinoamérica."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.506Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

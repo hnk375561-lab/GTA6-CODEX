@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.161Z",
-  "updatedAt": "2026-08-25T06:11:22.1747764Z",
+  "updatedAt": "2026-08-25T22:37:04.368Z",
   "manufacturer": "Fiat",
   "class": "Sedán",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Fiat Cronos - Sedán Fiat. Media (175 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Fiat Cronos",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Fiat"
+    },
+    "vehicleType": "Sedán",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (175 km/h)",
+    "acceleration": "Media (0-100 km/h en 11s)",
+    "price": "USD 17.500",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán compacto de Fiat, uno de los más vendidos de Argentina, motores 1.3L o 1.8L."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.368Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

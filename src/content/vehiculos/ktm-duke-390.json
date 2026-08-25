@@ -28,7 +28,7 @@
     "speed": "170 km/h"
   },
   "createdAt": "2026-08-23T21:59:11.788966Z",
-  "updatedAt": "2026-08-25T20:55:31.289Z",
+  "updatedAt": "2026-08-25T22:37:04.419Z",
   "transmision": "Manual secuencial",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -232,5 +232,33 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "KTM Duke 390 - Moto naked deportiva KTM. 170 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "KTM Duke 390",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "KTM"
+    },
+    "vehicleType": "Moto naked deportiva",
+    "fuelType": "Gasolina",
+    "speed": "170 km/h",
+    "price": "USD 7.500",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto naked deportiva de KTM, motor monocilíndrico de 373cc, orientada a un público más deportivo."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.419Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

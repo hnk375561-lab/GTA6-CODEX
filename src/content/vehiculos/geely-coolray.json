@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T06:11:22.2655727Z",
+  "updatedAt": "2026-08-25T22:37:04.382Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -235,5 +235,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Geely Coolray - SUV compacto Geely. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Geely Coolray",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Geely"
+    },
+    "vehicleType": "SUV compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 20.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacto turbo de Geely, uno de los modelos de mayor volumen de exportación de la marca."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.382Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

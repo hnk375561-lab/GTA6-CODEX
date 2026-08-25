@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.800Z",
-  "updatedAt": "2026-08-25T06:11:22.5336645Z",
+  "updatedAt": "2026-08-25T22:37:04.418Z",
   "manufacturer": "Kia",
   "class": "SUV",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Kia Sportage - SUV Kia. Media (190 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Kia Sportage",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Kia"
+    },
+    "vehicleType": "SUV",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (190 km/h)",
+    "acceleration": "Media (0-100 km/h en 9.5s)",
+    "price": "USD 31.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediana de Kia, disponible en versiones nafta, diésel e híbrida."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.418Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

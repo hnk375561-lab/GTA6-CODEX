@@ -27,7 +27,7 @@
     "acceleration": "No informado por el fabricante para Argentina"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T06:11:22.1862893Z",
+  "updatedAt": "2026-08-25T22:37:04.370Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Fiat Mobi - City car Fiat. No informado por el fabricante para Argentina con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Fiat Mobi",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Fiat"
+    },
+    "vehicleType": "City car",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina",
+    "price": "ARS 27.070.000 (versión Trekking)",
+    "availability": "https://schema.org/InStock",
+    "description": "City car del segmento A, la puerta de entrada más accesible de Fiat en Argentina, fabricado en Brasil."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.370Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

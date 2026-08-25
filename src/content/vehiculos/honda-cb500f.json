@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.065Z",
-  "updatedAt": "2026-08-25T20:55:31.285Z",
+  "updatedAt": "2026-08-25T22:37:04.392Z",
   "manufacturer": "Honda",
   "class": "Moto",
   "customizable": false,
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Honda CB500F - Moto Honda. Media (170 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Honda CB500F",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Honda"
+    },
+    "vehicleType": "Moto",
+    "fuelType": "Gasolina",
+    "speed": "Media (170 km/h)",
+    "acceleration": "Media-Alta (0-100 km/h en 5.5s)",
+    "price": "USD 7.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto naked de Honda, motor bicilíndrico de 471cc, ideal para uso urbano y ruta."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.392Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

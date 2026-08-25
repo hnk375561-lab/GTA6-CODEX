@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 12.5s"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T06:11:22.1792873Z",
+  "updatedAt": "2026-08-25T22:37:04.369Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Fiat Fiorino - Furgon compacto Fiat. 165 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Fiat Fiorino",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Fiat"
+    },
+    "vehicleType": "Furgon compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "165 km/h",
+    "acceleration": "0-100 km/h en 12.5s",
+    "price": "ARS 29.920.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Furgon utilitario compacto, el mas elegido de su segmento en Argentina para logistica urbana y PyMEs."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.369Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

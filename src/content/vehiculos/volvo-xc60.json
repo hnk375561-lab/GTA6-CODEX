@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.747Z",
-  "updatedAt": "2026-08-25T06:11:23.1907757Z",
+  "updatedAt": "2026-08-25T22:37:04.502Z",
   "manufacturer": "Volvo",
   "class": "SUV premium",
   "customizable": false,
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Volvo XC60 - SUV premium Volvo. Media-Alta (210 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Volvo XC60",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Volvo"
+    },
+    "vehicleType": "SUV premium",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media-Alta (210 km/h)",
+    "acceleration": "Alta (0-100 km/h en 6.9s)",
+    "price": "USD 75.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV premium de Volvo, motor 2.0L turbo, foco fuerte en seguridad activa."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.502Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

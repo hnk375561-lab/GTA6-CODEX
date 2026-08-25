@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.597Z",
-  "updatedAt": "2026-08-25T06:11:23.1382401Z",
+  "updatedAt": "2026-08-25T22:37:04.497Z",
   "manufacturer": "Volkswagen",
   "class": "SUV coupé compacta",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Volkswagen Nivus - SUV coupé compacta Volkswagen. 188 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Volkswagen Nivus",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Volkswagen"
+    },
+    "vehicleType": "SUV coupé compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "188 km/h",
+    "acceleration": "0-100 km/h en 10.2s",
+    "price": "USD 26.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV coupé compacta de Volkswagen sobre plataforma MQB, motor turbo 1.0L o 1.4L TSI."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.497Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

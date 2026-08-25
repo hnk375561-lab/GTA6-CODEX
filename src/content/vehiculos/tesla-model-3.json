@@ -11,7 +11,7 @@
   ],
   "featured": true,
   "createdAt": "2026-08-23T18:01:33.524Z",
-  "updatedAt": "2026-08-25T20:55:31.294Z",
+  "updatedAt": "2026-08-25T22:37:04.478Z",
   "manufacturer": "Tesla",
   "class": "Sedán",
   "customizable": false,
@@ -289,5 +289,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Tesla Model 3 - Sedán Tesla. Alta (225 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Tesla Model 3",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Tesla"
+    },
+    "vehicleType": "Sedán",
+    "fuelType": "Eléctrico",
+    "speed": "Alta (225 km/h)",
+    "acceleration": "Muy alta (0-100 km/h en 3.3s en versión Performance)",
+    "price": "USD 42.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán 100% eléctrico de Tesla, tracción trasera, autonomía de largo alcance."
+  },
+  "relations": {
+    "successor": "tesla-model-3-gen2",
+    "equivalent": "bmw-i4",
+    "predecessor": null
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.478Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

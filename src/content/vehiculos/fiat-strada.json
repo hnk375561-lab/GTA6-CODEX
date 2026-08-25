@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 11.0s"
   },
   "createdAt": "2026-08-23T21:59:07.061130Z",
-  "updatedAt": "2026-08-25T06:11:22.2043297Z",
+  "updatedAt": "2026-08-25T22:37:04.373Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Fiat Strada - Pickup compacta Fiat. 175 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Fiat Strada",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Fiat"
+    },
+    "vehicleType": "Pickup compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.0s",
+    "price": "USD 20.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup compacta de Fiat, líder de su segmento en varios países de la región, motor turbo 1.3L."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.373Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

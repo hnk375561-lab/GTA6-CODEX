@@ -30,7 +30,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T06:11:22.2189084Z",
+  "updatedAt": "2026-08-25T22:37:04.376Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -243,5 +243,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Ford Explorer - SUV grande Ford. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Ford Explorer",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Ford"
+    },
+    "vehicleType": "SUV grande",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 40.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV grande de 3 filas de Ford, mercado norteamericano principalmente."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.376Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

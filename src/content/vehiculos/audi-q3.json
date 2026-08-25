@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:32.112Z",
-  "updatedAt": "2026-08-25T06:11:21.8748694Z",
+  "updatedAt": "2026-08-25T22:37:04.302Z",
   "manufacturer": "Audi",
   "class": "SUV premium compacta",
   "customizable": false,
@@ -243,5 +243,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Audi Q3 - SUV premium compacta Audi. Alta (210 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Audi Q3",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Audi"
+    },
+    "vehicleType": "SUV premium compacta",
+    "fuelType": "Gasolina turbo (opción híbrida enchufable TFSIe disponible en Europa)",
+    "speed": "Alta (210 km/h)",
+    "acceleration": "Media-Alta (0-100 km/h en 8.9s)",
+    "price": "USD 55.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV premium compacta de Audi, motor 1.4L TFSI turbo, plataforma compartida con el grupo VW."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.302Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

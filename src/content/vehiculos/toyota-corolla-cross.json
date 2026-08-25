@@ -29,7 +29,7 @@
     "acceleration": "0-100 km/h en 9.5s (híbrida)"
   },
   "createdAt": "2026-08-23T21:59:04.271737Z",
-  "updatedAt": "2026-08-25T20:55:31.295Z",
+  "updatedAt": "2026-08-25T22:37:04.485Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -235,5 +235,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Toyota Corolla Cross - SUV compacta Toyota. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Toyota Corolla Cross",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Toyota"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina + sistema híbrido",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 9.5s (híbrida)",
+    "price": "USD 30.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Toyota sobre plataforma del Corolla, disponible en versión híbrida."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.485Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 11.0s"
   },
   "createdAt": "2026-08-23T21:59:10.362177Z",
-  "updatedAt": "2026-08-25T06:11:22.0046385Z",
+  "updatedAt": "2026-08-25T22:37:04.323Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Changan CS35 Plus - SUV compacta Changan. 175 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Changan CS35 Plus",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Changan"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.0s",
+    "price": "USD 20.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta china de Changan, motor turbo 1.4L."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.323Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

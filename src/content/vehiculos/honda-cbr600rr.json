@@ -29,7 +29,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T20:55:31.286Z",
+  "updatedAt": "2026-08-25T22:37:04.392Z",
   "transmision": "Manual secuencial",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -233,5 +233,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Honda CBR600RR - Moto deportiva Honda. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Honda CBR600RR",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Honda"
+    },
+    "vehicleType": "Moto deportiva",
+    "fuelType": "Gasolina",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 12.200",
+    "availability": "https://schema.org/InStock",
+    "description": "Deportiva de cilindrada media de Honda, tetracilíndrica en línea de 599cc."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.392Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

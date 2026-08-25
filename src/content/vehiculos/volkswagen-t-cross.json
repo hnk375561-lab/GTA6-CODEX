@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 10.0s"
   },
   "createdAt": "2026-08-23T21:59:07.608786Z",
-  "updatedAt": "2026-08-25T06:11:23.1547696Z",
+  "updatedAt": "2026-08-25T22:37:04.499Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Volkswagen T-Cross - SUV compacta Volkswagen. 185 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Volkswagen T-Cross",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Volkswagen"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 10.0s",
+    "price": "USD 27.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Volkswagen sobre plataforma MQB, motor turbo 1.0L o 1.4L TSI."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.499Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

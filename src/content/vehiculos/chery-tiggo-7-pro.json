@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.336Z",
-  "updatedAt": "2026-08-25T06:11:22.0235221Z",
+  "updatedAt": "2026-08-25T22:37:04.326Z",
   "manufacturer": "Chery",
   "class": "SUV",
   "customizable": false,
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Chery Tiggo 7 Pro - SUV Chery. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chery Tiggo 7 Pro",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chery"
+    },
+    "vehicleType": "SUV",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.7s",
+    "price": "USD 27.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediana china de Chery, motor turbo 1.5L."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.326Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

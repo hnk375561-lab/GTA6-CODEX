@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.210Z",
-  "updatedAt": "2026-08-25T06:11:22.0841349Z",
+  "updatedAt": "2026-08-25T22:37:04.358Z",
   "manufacturer": "Chevrolet",
   "class": "SUV compacta",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Chevrolet Tracker - SUV compacta Chevrolet. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chevrolet Tracker",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chevrolet"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.5s",
+    "price": "USD 25.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Chevrolet, motor turbo 1.2L."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.358Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

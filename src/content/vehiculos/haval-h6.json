@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.076Z",
-  "updatedAt": "2026-08-25T06:11:22.3053105Z",
+  "updatedAt": "2026-08-25T22:37:04.388Z",
   "manufacturer": "Haval",
   "class": "SUV",
   "customizable": false,
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Haval H6 - SUV Haval. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Haval H6",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Haval"
+    },
+    "vehicleType": "SUV",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 9.5s",
+    "price": "USD 33.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediana china de Haval (grupo GWM), motor turbo 1.5L o 2.0L, también disponible en versión híbrida (HEV)."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.388Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

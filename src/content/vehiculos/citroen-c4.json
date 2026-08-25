@@ -30,7 +30,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T06:11:22.1217081Z",
+  "updatedAt": "2026-08-25T22:37:04.361Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -235,5 +235,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Citroën C4 - Hatchback/SUV coupé Citroën. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Citroën C4",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Citroën"
+    },
+    "vehicleType": "Hatchback/SUV coupé",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "EUR 27.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Compacto de Citroën con silueta de SUV coupé, también disponible en versión eléctrica ë-C4."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.361Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

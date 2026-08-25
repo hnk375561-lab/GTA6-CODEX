@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.424Z",
-  "updatedAt": "2026-08-25T06:11:22.8589793Z",
+  "updatedAt": "2026-08-25T22:37:04.460Z",
   "manufacturer": "Renault",
   "class": "Hatchback económico",
   "customizable": false,
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Renault Kwid - Hatchback económico Renault. 150 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Renault Kwid",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Renault"
+    },
+    "vehicleType": "Hatchback económico",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "150 km/h",
+    "acceleration": "0-100 km/h en 14.5s",
+    "price": "USD 13.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback urbano de entrada de Renault, motor 1.0L."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.460Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

@@ -26,7 +26,7 @@
     "acceleration": "No informado por el fabricante para Argentina"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T06:11:21.8810011Z",
+  "updatedAt": "2026-08-25T22:37:04.303Z",
   "transmision": "7-8 velocidades S tronic (automática de doble embrague)",
   "traccion": "Integral quattro (AWD) de serie",
   "peso": "1.910-2.245 kg (según motorización)",
@@ -244,5 +244,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Audi Q5 - SUV mediano premium Audi. No informado por el fabricante para Argentina con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Audi Q5",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Audi"
+    },
+    "vehicleType": "SUV mediano premium",
+    "fuelType": "Gasolina turbo / Diésel TDI / Híbrido enchufable (Q5 e-hybrid)",
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina",
+    "price": "USD 86.700",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediano premium del Segmento D, tracción integral quattro, importado desde México a Argentina."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.303Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

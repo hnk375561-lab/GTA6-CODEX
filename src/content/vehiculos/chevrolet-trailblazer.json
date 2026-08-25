@@ -27,7 +27,7 @@
     "acceleration": "No informado por el fabricante para Argentina"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T06:11:22.1051586Z",
+  "updatedAt": "2026-08-25T22:37:04.359Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -236,5 +236,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Chevrolet Trailblazer - SUV grande Chevrolet. No informado por el fabricante para Argentina con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chevrolet Trailblazer",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chevrolet"
+    },
+    "vehicleType": "SUV grande",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina",
+    "price": "ARS 71.900.000 (versión High Country)",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV grande de tres filas para 7 pasajeros, motor turbodiésel, tracción 4x4 con reductora, fabricado en Brasil."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.359Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

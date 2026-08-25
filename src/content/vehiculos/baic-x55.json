@@ -30,7 +30,7 @@
     "acceleration": "0-100 km/h en 7.84s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T06:11:21.8925206Z",
+  "updatedAt": "2026-08-25T22:37:04.306Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -237,5 +237,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "BAIC X55 - SUV compacto BAIC. 200 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "BAIC X55",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "BAIC"
+    },
+    "vehicleType": "SUV compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h",
+    "acceleration": "0-100 km/h en 7.84s",
+    "price": "USD 18.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacto de BAIC Motor para mercados de exportación."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.306Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

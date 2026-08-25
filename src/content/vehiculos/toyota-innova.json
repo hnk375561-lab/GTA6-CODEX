@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T06:11:23.0543598Z",
+  "updatedAt": "2026-08-25T22:37:04.488Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -233,5 +233,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Toyota Innova - Minivan Toyota. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Toyota Innova",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Toyota"
+    },
+    "vehicleType": "Minivan",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 24.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Minivan/MPV de Toyota muy popular en el sudeste asiático."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.488Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

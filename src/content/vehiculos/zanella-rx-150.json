@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.849Z",
-  "updatedAt": "2026-08-25T20:55:31.298Z",
+  "updatedAt": "2026-08-25T22:37:04.509Z",
   "manufacturer": "Zanella",
   "class": "Moto",
   "customizable": false,
@@ -230,5 +230,33 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Zanella RX 150 - Moto Zanella. 110 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Zanella RX 150",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Zanella"
+    },
+    "vehicleType": "Moto",
+    "fuelType": "Gasolina",
+    "speed": "110 km/h",
+    "price": "USD 2.400",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto naked económica de la marca argentina Zanella, motor monocilíndrico de 150cc."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.509Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

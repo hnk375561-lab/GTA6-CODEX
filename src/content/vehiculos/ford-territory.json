@@ -29,7 +29,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T20:55:31.284Z",
+  "updatedAt": "2026-08-25T22:37:04.381Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -243,5 +243,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Ford Territory - SUV mediano Ford. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Ford Territory",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Ford"
+    },
+    "vehicleType": "SUV mediano",
+    "fuelType": "Gasolina + sistema híbrido",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "ARS 48.110.210 (version SEL)",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV del segmento C importado desde China, con version naftera EcoBoost y version hibrida Trend, principal rival del Corolla Cross."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.381Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

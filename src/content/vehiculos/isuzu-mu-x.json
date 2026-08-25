@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T06:11:22.4424954Z",
+  "updatedAt": "2026-08-25T22:37:04.407Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -235,5 +235,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Isuzu MU-X - SUV 4x4 grande Isuzu. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Isuzu MU-X",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Isuzu"
+    },
+    "vehicleType": "SUV 4x4 grande",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 40.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV 4x4 grande de Isuzu basado en el chasis de la pickup D-Max."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.407Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

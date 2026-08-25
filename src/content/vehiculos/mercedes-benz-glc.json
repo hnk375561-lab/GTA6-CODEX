@@ -26,7 +26,7 @@
     "acceleration": "No informado por el fabricante para Argentina"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T06:11:22.6298907Z",
+  "updatedAt": "2026-08-25T22:37:04.432Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Mercedes-Benz GLC - SUV mediano premium Mercedes-Benz. No informado por el fabricante para Argentina con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Mercedes-Benz GLC",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Mercedes-Benz"
+    },
+    "vehicleType": "SUV mediano premium",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina",
+    "price": "USD 119.900",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediano premium, motor mild-hybrid, referente de ventas de Mercedes-Benz en el segmento."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.432Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

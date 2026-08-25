@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T06:11:22.6338885Z",
+  "updatedAt": "2026-08-25T22:37:04.432Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -235,5 +235,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Mercedes-Benz GLE - SUV premium Mercedes-Benz. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Mercedes-Benz GLE",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Mercedes-Benz"
+    },
+    "vehicleType": "SUV premium",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 68.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV premium mediano-grande de Mercedes-Benz."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.432Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

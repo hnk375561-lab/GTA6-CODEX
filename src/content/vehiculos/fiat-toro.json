@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:35.107Z",
-  "updatedAt": "2026-08-25T06:11:22.2098534Z",
+  "updatedAt": "2026-08-25T22:37:04.374Z",
   "manufacturer": "Fiat",
   "class": "Pickup",
   "customizable": false,
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Fiat Toro - Pickup Fiat. Media (180 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Fiat Toro",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Fiat"
+    },
+    "vehicleType": "Pickup",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 10s)",
+    "price": "USD 31.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup mediana de Fiat, motor turbo 1.8L o 2.0L diésel, popular en Argentina y Brasil."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.374Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

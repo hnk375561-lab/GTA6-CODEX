@@ -29,7 +29,7 @@
     "acceleration": "0-100 km/h en 7.9s"
   },
   "createdAt": "2026-08-23T21:59:06.238471Z",
-  "updatedAt": "2026-08-25T20:55:31.287Z",
+  "updatedAt": "2026-08-25T22:37:04.404Z",
   "transmision": "Automática de relación única (motor eléctrico)",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -231,5 +231,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Hyundai Kona Eléctrico - SUV eléctrica Hyundai. 172 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Hyundai Kona Eléctrico",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Hyundai"
+    },
+    "vehicleType": "SUV eléctrica",
+    "fuelType": "Eléctrico",
+    "speed": "172 km/h",
+    "acceleration": "0-100 km/h en 7.9s",
+    "price": "USD 42.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta 100% eléctrica de Hyundai."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.404Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

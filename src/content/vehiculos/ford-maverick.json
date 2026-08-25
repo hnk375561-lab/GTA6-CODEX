@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.736Z",
-  "updatedAt": "2026-08-25T20:55:31.283Z",
+  "updatedAt": "2026-08-25T22:37:04.378Z",
   "manufacturer": "Ford",
   "class": "Pickup compacta",
   "customizable": false,
@@ -241,5 +241,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Ford Maverick - Pickup compacta Ford. 170 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Ford Maverick",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Ford"
+    },
+    "vehicleType": "Pickup compacta",
+    "fuelType": "Gasolina + sistema híbrido",
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 11.0s (versión híbrida)",
+    "price": "USD 32.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup compacta de Ford, disponible con motorización híbrida."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.378Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

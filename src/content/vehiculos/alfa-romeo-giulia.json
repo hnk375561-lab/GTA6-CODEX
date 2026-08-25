@@ -29,7 +29,7 @@
     "acceleration": "0-100 km/h en 5.7s (base) / 3.6s (Quadrifoglio)"
   },
   "createdAt": "2026-08-23T21:59:09.269759Z",
-  "updatedAt": "2026-08-25T06:11:21.8463081Z",
+  "updatedAt": "2026-08-25T22:37:04.289Z",
   "transmision": "8 velocidades automática (ZF)",
   "traccion": "Tracción trasera (RWD), Q4 (AWD) opcional",
   "peso": "1.660 kg (base) - 1.830 kg (Quadrifoglio)",
@@ -250,5 +250,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Alfa Romeo Giulia - Sedán deportivo premium Alfa Romeo. 230 km/h (base) / 307 km/h (Quadrifoglio) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Alfa Romeo Giulia",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Alfa Romeo"
+    },
+    "vehicleType": "Sedán deportivo premium",
+    "fuelType": "Gasolina turbo (4 cilindros) / V6 biturbo (Quadrifoglio)",
+    "speed": "230 km/h (base) / 307 km/h (Quadrifoglio)",
+    "acceleration": "0-100 km/h en 5.7s (base) / 3.6s (Quadrifoglio)",
+    "price": "USD 60.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán deportivo premium de Alfa Romeo, tracción trasera, motor turbo 2.0L de 4 cilindros."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.289Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

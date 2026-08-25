@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 5.9s"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T06:11:21.8859980Z",
+  "updatedAt": "2026-08-25T22:37:04.304Z",
   "transmision": "8 velocidades Tiptronic (automática)",
   "traccion": "Integral quattro (AWD) de serie",
   "peso": "2.055 kg (55 TFSI V6) - 2.800 kg (55 TFSIe híbrido enchufable)",
@@ -245,5 +245,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Audi Q7 - SUV premium Audi. 250 km/h (limitada electrónicamente) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Audi Q7",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Audi"
+    },
+    "vehicleType": "SUV premium",
+    "fuelType": "Gasolina turbo V6 (mild-hybrid) / Híbrido enchufable TFSIe",
+    "speed": "250 km/h (limitada electrónicamente)",
+    "acceleration": "0-100 km/h en 5.9s",
+    "price": "USD 62.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV premium grande de Audi de 7 plazas, plataforma MLB Evo."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.304Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

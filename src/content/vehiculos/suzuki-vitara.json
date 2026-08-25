@@ -30,7 +30,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-25T06:11:22.9682201Z",
+  "updatedAt": "2026-08-25T22:37:04.476Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -235,5 +235,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Suzuki Vitara - SUV compacto Suzuki. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Suzuki Vitara",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Suzuki"
+    },
+    "vehicleType": "SUV compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "No confirmado en fuente oficial argentina",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacto de Suzuki, versión GLX 1.4T con tracción y caja automática, vendido oficialmente en Argentina."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.476Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

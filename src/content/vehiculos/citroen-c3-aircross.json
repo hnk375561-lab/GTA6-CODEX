@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T06:11:22.1101956Z",
+  "updatedAt": "2026-08-25T22:37:04.360Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Citroën C3 Aircross - SUV compacto Citroën. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Citroën C3 Aircross",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Citroën"
+    },
+    "vehicleType": "SUV compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "ARS 36.710.000 (version VTi Live, entrada de gama)",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV del segmento B, producido en Mercosur, con opcion de configuracion para 7 pasajeros."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.360Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

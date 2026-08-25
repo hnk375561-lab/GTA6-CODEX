@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 5.8s (V6 EcoBoost)"
   },
   "createdAt": "2026-08-23T21:59:03.178078Z",
-  "updatedAt": "2026-08-25T06:11:22.2259082Z",
+  "updatedAt": "2026-08-25T22:37:04.377Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -240,5 +240,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Ford F-150 - Pickup grande Ford. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Ford F-150",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Ford"
+    },
+    "vehicleType": "Pickup grande",
+    "fuelType": "Gasolina turbo",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 5.8s (V6 EcoBoost)",
+    "price": "USD 55.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup full-size de Ford, la más vendida de Estados Unidos, con motorizaciones V6 EcoBoost hasta V8."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.377Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.800Z",
-  "updatedAt": "2026-08-25T20:55:31.295Z",
+  "updatedAt": "2026-08-25T22:37:04.491Z",
   "manufacturer": "Toyota",
   "class": "SUV",
   "customizable": false,
@@ -240,5 +240,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Toyota RAV4 - SUV Toyota. Media (180 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Toyota RAV4",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Toyota"
+    },
+    "vehicleType": "SUV",
+    "fuelType": "Gasolina + sistema híbrido",
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 8.1s)",
+    "price": "USD 29.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Toyota, disponible en versión híbrida, motor 2.5L."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.491Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

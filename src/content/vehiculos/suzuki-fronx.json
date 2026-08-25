@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.809Z",
-  "updatedAt": "2026-08-25T06:11:22.9466799Z",
+  "updatedAt": "2026-08-25T22:37:04.472Z",
   "manufacturer": "Suzuki",
   "class": "SUV compacta",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Suzuki Fronx - SUV compacta Suzuki. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Suzuki Fronx",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Suzuki"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.5s",
+    "price": "USD 20.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV coupé compacta de Suzuki, motor 1.2L o turbo 1.0L Boosterjet."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.472Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

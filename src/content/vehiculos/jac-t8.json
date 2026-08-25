@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T06:11:22.4585300Z",
+  "updatedAt": "2026-08-25T22:37:04.409Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "JAC T8 - Pickup mediana JAC. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "JAC T8",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "JAC"
+    },
+    "vehicleType": "Pickup mediana",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 34.900 (precio de lanzamiento)",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup mediana china 4x4, alternativa de precio competitivo frente a Hilux y Ranger en Argentina."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.409Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

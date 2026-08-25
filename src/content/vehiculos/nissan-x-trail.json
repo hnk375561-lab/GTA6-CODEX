@@ -25,7 +25,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T06:11:22.7391052Z",
+  "updatedAt": "2026-08-25T22:37:04.446Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Nissan X-Trail - SUV mediano Nissan. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Nissan X-Trail",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Nissan"
+    },
+    "vehicleType": "SUV mediano",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "ARS 56.990.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV familiar del segmento C, disponible en version naftera Exclusive y version electrificada e-POWER con tecnologia e-4ORCE."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.446Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

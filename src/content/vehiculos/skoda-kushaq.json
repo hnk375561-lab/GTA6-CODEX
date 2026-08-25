@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 10.3s"
   },
   "createdAt": "2026-08-23T21:59:12.340520Z",
-  "updatedAt": "2026-08-25T06:11:22.9102120Z",
+  "updatedAt": "2026-08-25T22:37:04.467Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Skoda Kushaq - SUV compacta Skoda. 185 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Skoda Kushaq",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Skoda"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 10.3s",
+    "price": "USD 26.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Skoda (grupo Volkswagen), motor turbo 1.0L o 1.5L TSI."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.467Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

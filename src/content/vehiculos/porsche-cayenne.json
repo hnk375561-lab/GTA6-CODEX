@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T06:11:22.8097699Z",
+  "updatedAt": "2026-08-25T22:37:04.454Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -235,5 +235,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Porsche Cayenne - SUV deportivo Porsche. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Porsche Cayenne",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Porsche"
+    },
+    "vehicleType": "SUV deportivo",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 82.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV deportivo de Porsche, tercera generación con base MLB Evo."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.454Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

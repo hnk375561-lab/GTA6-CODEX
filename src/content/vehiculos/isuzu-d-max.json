@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 11.8s"
   },
   "createdAt": "2026-08-23T21:59:03.999490Z",
-  "updatedAt": "2026-08-25T06:11:22.4374781Z",
+  "updatedAt": "2026-08-25T22:37:04.406Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -236,5 +236,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Isuzu D-Max - Pickup Isuzu. 175 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Isuzu D-Max",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Isuzu"
+    },
+    "vehicleType": "Pickup",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.8s",
+    "price": "USD 38.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup mediana de Isuzu, motor turbodiésel 3.0L, conocida por su durabilidad."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.406Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

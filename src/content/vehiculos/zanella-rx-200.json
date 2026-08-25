@@ -32,7 +32,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-25T20:55:31.298Z",
+  "updatedAt": "2026-08-25T22:37:04.510Z",
   "transmision": "Manual secuencial",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -237,5 +237,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Zanella RX 200 Next - Moto naked Zanella. 140 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Zanella RX 200 Next",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Zanella"
+    },
+    "vehicleType": "Moto naked",
+    "fuelType": "Gasolina",
+    "speed": "140 km/h",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "ARS 1.744.993 - 2.094.993 (aprox., listados de concesionaria oficial Motozuni)",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto naked de la marca argentina Zanella, motor monocilíndrico de 197cc, caja de 6 velocidades."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.510Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

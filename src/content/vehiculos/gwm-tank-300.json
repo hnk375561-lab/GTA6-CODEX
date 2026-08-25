@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T06:11:22.2827550Z",
+  "updatedAt": "2026-08-25T22:37:04.385Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -235,5 +235,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "GWM Tank 300 - SUV 4x4 GWM. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "GWM Tank 300",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "GWM"
+    },
+    "vehicleType": "SUV 4x4",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 35.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV 4x4 de estilo retro de Great Wall Motors, con versión híbrida enchufable."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.385Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

@@ -30,7 +30,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T20:55:31.290Z",
+  "updatedAt": "2026-08-25T22:37:04.439Z",
   "transmision": "Manual secuencial",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -236,5 +236,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Motomel Skua 150 - Moto trail 150cc Motomel. 100 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Motomel Skua 150",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Motomel"
+    },
+    "vehicleType": "Moto trail 150cc",
+    "fuelType": "Gasolina",
+    "speed": "100 km/h",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "No informado por el fabricante (consultar en concesionario)",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto trail on/off fabricada en Argentina, una de las mas vendidas de su segmento por relacion precio-versatilidad."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.439Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

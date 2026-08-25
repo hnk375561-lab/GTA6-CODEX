@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 12.0s"
   },
   "createdAt": "2026-08-23T21:59:07.889585Z",
-  "updatedAt": "2026-08-25T06:11:23.1487661Z",
+  "updatedAt": "2026-08-25T22:37:04.498Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Volkswagen Saveiro - Pickup compacta Volkswagen. 170 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Volkswagen Saveiro",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Volkswagen"
+    },
+    "vehicleType": "Pickup compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 12.0s",
+    "price": "USD 21.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup compacta de Volkswagen, muy popular en Argentina y Brasil por su relación carga/consumo."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.498Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

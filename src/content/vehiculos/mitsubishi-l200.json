@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 10.5s"
   },
   "createdAt": "2026-08-23T21:59:02.058147Z",
-  "updatedAt": "2026-08-25T06:11:22.6729349Z",
+  "updatedAt": "2026-08-25T22:37:04.436Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -236,5 +236,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Mitsubishi L200 - Pickup Mitsubishi. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Mitsubishi L200",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Mitsubishi"
+    },
+    "vehicleType": "Pickup",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.5s",
+    "price": "USD 42.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup mediana de Mitsubishi, motor turbodiésel 2.4L, tracción 4x4 Super Select."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.436Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

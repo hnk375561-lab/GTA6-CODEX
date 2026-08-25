@@ -30,7 +30,7 @@
     "acceleration": "0-100 km/h en 3.0s aprox. (0-60 mph en 3.1s, prueba independiente de Cycle World sobre la Factory; el modelo base comparte motor)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T06:11:21.8583364Z",
+  "updatedAt": "2026-08-25T22:37:04.292Z",
   "transmision": "6 velocidades manual secuencial, embrague húmedo",
   "traccion": "Trasera por cadena",
   "peso": "202 kg (Factory) / aprox. 199 kg (base), en orden de marcha",
@@ -243,5 +243,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Aprilia RSV4 - Moto superdeportiva Aprilia. 305 km/h aprox. con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Aprilia RSV4",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Aprilia"
+    },
+    "vehicleType": "Moto superdeportiva",
+    "fuelType": "Gasolina, V4 65° de alto rendimiento",
+    "speed": "305 km/h aprox.",
+    "acceleration": "0-100 km/h en 3.0s aprox. (0-60 mph en 3.1s, prueba independiente de Cycle World sobre la Factory; el modelo base comparte motor)",
+    "price": "USD 19.499 (RSV4 1100 base) - USD 26.749 (Factory 1100)",
+    "availability": "https://schema.org/InStock",
+    "description": "Superdeportiva de Aprilia, motor V4 de 1099cc."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.292Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

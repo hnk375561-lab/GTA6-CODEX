@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 5.7s (0-60 mph en 5.5s, cifra oficial)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T06:11:21.8538315Z",
+  "updatedAt": "2026-08-25T22:37:04.291Z",
   "transmision": "8 velocidades automática (ZF)",
   "traccion": "Tracción total Q4 (AWD) de serie en la mayoría de versiones; RWD disponible en trim Sprint (mercados con gama completa)",
   "peso": "1.660 kg (base) - 1.830 kg (Quadrifoglio, discontinuada en EE.UU. salvo edición limitada Collezione)",
@@ -246,5 +246,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Alfa Romeo Stelvio - SUV premium Alfa Romeo. 230 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Alfa Romeo Stelvio",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Alfa Romeo"
+    },
+    "vehicleType": "SUV premium",
+    "fuelType": "Gasolina turbo (4 cilindros) / V6 biturbo (Quadrifoglio)",
+    "speed": "230 km/h",
+    "acceleration": "0-100 km/h en 5.7s (0-60 mph en 5.5s, cifra oficial)",
+    "price": "USD 53.245 (base, 2026)",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV premium deportivo de Alfa Romeo, comparte plataforma con el Giulia."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.291Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

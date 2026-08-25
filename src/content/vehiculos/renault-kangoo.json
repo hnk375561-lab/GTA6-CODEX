@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.693Z",
-  "updatedAt": "2026-08-25T06:11:22.8544687Z",
+  "updatedAt": "2026-08-25T22:37:04.460Z",
   "manufacturer": "Renault",
   "class": "Utilitario",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Renault Kangoo - Utilitario Renault. Baja (155 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Renault Kangoo",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Renault"
+    },
+    "vehicleType": "Utilitario",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Baja (155 km/h)",
+    "acceleration": "Baja (0-100 km/h en 13.5s)",
+    "price": "USD 19.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Furgón utilitario de Renault, motor 1.6L de 16v, usado como vehículo comercial."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.460Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

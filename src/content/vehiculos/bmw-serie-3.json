@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.977Z",
-  "updatedAt": "2026-08-25T06:11:21.9400106Z",
+  "updatedAt": "2026-08-25T22:37:04.316Z",
   "manufacturer": "BMW",
   "class": "Sedán premium",
   "customizable": false,
@@ -250,5 +250,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "BMW Serie 3 - Sedán premium BMW. Alta (250 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "BMW Serie 3",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "BMW"
+    },
+    "vehicleType": "Sedán premium",
+    "fuelType": "Gasolina turbo (opción híbrida enchufable 330e disponible)",
+    "speed": "Alta (250 km/h)",
+    "acceleration": "Alta (0-100 km/h en 5.8s)",
+    "price": "USD 58.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán premium de BMW, motor 2.0L turbo de 4 cilindros, tracción trasera."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.316Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

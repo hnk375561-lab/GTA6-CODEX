@@ -29,7 +29,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T20:55:31.284Z",
+  "updatedAt": "2026-08-25T22:37:04.387Z",
   "transmision": "Manual secuencial",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -233,5 +233,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Harley-Davidson Street Glide - Moto touring Harley-Davidson. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Harley-Davidson Street Glide",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Harley-Davidson"
+    },
+    "vehicleType": "Moto touring",
+    "fuelType": "Gasolina",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 22.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto touring de la familia Grand American Touring de Harley-Davidson."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.387Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

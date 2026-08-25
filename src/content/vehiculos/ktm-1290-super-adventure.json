@@ -29,7 +29,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T20:55:31.289Z",
+  "updatedAt": "2026-08-25T22:37:04.419Z",
   "transmision": "Manual secuencial",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -235,5 +235,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "KTM 1290 Super Adventure - Moto aventura KTM. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "KTM 1290 Super Adventure",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "KTM"
+    },
+    "vehicleType": "Moto aventura",
+    "fuelType": "Gasolina",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 22.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto aventura de alta cilindrada de KTM, motor V-twin LC8 de 1301cc."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.419Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 6.3s"
   },
   "createdAt": "2026-08-23T21:59:03.451886Z",
-  "updatedAt": "2026-08-25T06:11:22.8249015Z",
+  "updatedAt": "2026-08-25T22:37:04.456Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "RAM 1500 - Pickup grande RAM. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "RAM 1500",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "RAM"
+    },
+    "vehicleType": "Pickup grande",
+    "fuelType": "Gasolina turbo",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 6.3s",
+    "price": "USD 60.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup full-size de RAM, suspensión trasera neumática opcional, motor V8 HEMI 5.7L."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.456Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

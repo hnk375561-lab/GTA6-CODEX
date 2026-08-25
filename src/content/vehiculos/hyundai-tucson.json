@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.530Z",
-  "updatedAt": "2026-08-25T06:11:22.4309630Z",
+  "updatedAt": "2026-08-25T22:37:04.405Z",
   "manufacturer": "Hyundai",
   "class": "SUV",
   "customizable": false,
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Hyundai Tucson - SUV Hyundai. Media (195 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Hyundai Tucson",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Hyundai"
+    },
+    "vehicleType": "SUV",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (195 km/h)",
+    "acceleration": "Media (0-100 km/h en 9.9s)",
+    "price": "USD 32.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediana de Hyundai, motor 2.0L o 1.6L turbo, diseño renovado con parrilla oculta."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.405Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

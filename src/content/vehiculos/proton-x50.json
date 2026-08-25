@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T06:11:22.8199021Z",
+  "updatedAt": "2026-08-25T22:37:04.455Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -235,5 +235,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Proton X50 - SUV compacto Proton. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Proton X50",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Proton"
+    },
+    "vehicleType": "SUV compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 22.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacto malayo basado en el Geely Binyue."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.455Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

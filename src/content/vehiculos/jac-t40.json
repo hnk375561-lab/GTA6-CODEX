@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 12.5s"
   },
   "createdAt": "2026-08-23T21:59:09.812750Z",
-  "updatedAt": "2026-08-25T06:11:22.4530223Z",
+  "updatedAt": "2026-08-25T22:37:04.408Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "JAC T40 - Pickup compacta JAC. 165 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "JAC T40",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "JAC"
+    },
+    "vehicleType": "Pickup compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "165 km/h",
+    "acceleration": "0-100 km/h en 12.5s",
+    "price": "USD 22.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup compacta china de JAC Motors, motor 1.5L turbo."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.408Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

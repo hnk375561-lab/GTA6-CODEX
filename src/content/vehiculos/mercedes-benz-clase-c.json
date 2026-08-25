@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.254Z",
-  "updatedAt": "2026-08-25T06:11:22.6193754Z",
+  "updatedAt": "2026-08-25T22:37:04.430Z",
   "manufacturer": "Mercedes-Benz",
   "class": "Sedán premium",
   "customizable": false,
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Mercedes-Benz Clase C - Sedán premium Mercedes-Benz. Alta (250 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Mercedes-Benz Clase C",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Mercedes-Benz"
+    },
+    "vehicleType": "Sedán premium",
+    "fuelType": "Gasolina turbo",
+    "speed": "Alta (250 km/h)",
+    "acceleration": "Alta (0-100 km/h en 6.0s)",
+    "price": "USD 62.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán premium de Mercedes-Benz, motor 2.0L turbo, equipamiento tecnológico de gama alta."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.430Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

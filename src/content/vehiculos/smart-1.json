@@ -29,7 +29,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T20:55:31.293Z",
+  "updatedAt": "2026-08-25T22:37:04.468Z",
   "transmision": "Automática de relación única (motor eléctrico)",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Smart #1 - SUV eléctrico Smart. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Smart #1",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Smart"
+    },
+    "vehicleType": "SUV eléctrico",
+    "fuelType": "Eléctrico",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "EUR 38.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV eléctrico compacto de Smart, desarrollado junto a Geely."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.468Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

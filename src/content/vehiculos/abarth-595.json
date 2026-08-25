@@ -31,7 +31,7 @@
     "acceleration": "0-100 km/h en 7.3s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T06:11:21.8262688Z",
+  "updatedAt": "2026-08-25T22:37:04.272Z",
   "transmision": "5 velocidades manual / 6 velocidades automática TcT",
   "traccion": "Tracción delantera",
   "cilindrada": "1.368 cc",
@@ -237,5 +237,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Abarth 595 - Hatchback deportivo Abarth. 218 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Abarth 595",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Abarth"
+    },
+    "vehicleType": "Hatchback deportivo",
+    "fuelType": "Gasolina turbo",
+    "speed": "218 km/h",
+    "acceleration": "0-100 km/h en 7.3s",
+    "price": "EUR 31.500 (último precio de lista antes de discontinuarse) / GBP 23.225 (Reino Unido)",
+    "availability": "https://schema.org/InStock",
+    "description": "Versión deportiva del Fiat 500 bajo la marca de alto rendimiento Abarth."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.272Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

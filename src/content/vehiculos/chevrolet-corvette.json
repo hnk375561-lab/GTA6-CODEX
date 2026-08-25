@@ -30,7 +30,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T06:11:22.0455539Z",
+  "updatedAt": "2026-08-25T22:37:04.335Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -239,5 +239,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Chevrolet Corvette - Deportivo Chevrolet. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chevrolet Corvette",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chevrolet"
+    },
+    "vehicleType": "Deportivo",
+    "fuelType": "Gasolina turbo",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 68.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Deportivo icónico americano, primera generación de motor central (C8)."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.335Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

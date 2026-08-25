@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 6.5s"
   },
   "createdAt": "2026-08-23T21:59:03.723060Z",
-  "updatedAt": "2026-08-25T06:11:22.0736139Z",
+  "updatedAt": "2026-08-25T22:37:04.355Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Chevrolet Silverado - Pickup grande Chevrolet. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chevrolet Silverado",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chevrolet"
+    },
+    "vehicleType": "Pickup grande",
+    "fuelType": "Gasolina turbo",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 6.5s",
+    "price": "USD 58.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup full-size de Chevrolet, motor V8 5.3L o Duramax turbodiésel según versión."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.355Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

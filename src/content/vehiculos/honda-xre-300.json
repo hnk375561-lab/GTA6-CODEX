@@ -28,7 +28,7 @@
     "speed": "140 km/h"
   },
   "createdAt": "2026-08-23T21:59:10.925515Z",
-  "updatedAt": "2026-08-25T20:55:31.287Z",
+  "updatedAt": "2026-08-25T22:37:04.401Z",
   "transmision": "Manual secuencial",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -232,5 +232,33 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Honda XRE 300 - Moto enduro Honda. 140 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Honda XRE 300",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Honda"
+    },
+    "vehicleType": "Moto enduro",
+    "fuelType": "Gasolina",
+    "speed": "140 km/h",
+    "price": "USD 6.500",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto enduro/adventure de entrada de Honda, motor monocilíndrico de 300cc."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.401Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

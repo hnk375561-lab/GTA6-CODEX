@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.593Z",
-  "updatedAt": "2026-08-25T20:55:31.276Z",
+  "updatedAt": "2026-08-25T22:37:04.322Z",
   "manufacturer": "BYD",
   "class": "Sedán eléctrico",
   "customizable": false,
@@ -229,5 +229,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "BYD Seal - Sedán eléctrico BYD. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "BYD Seal",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "BYD"
+    },
+    "vehicleType": "Sedán eléctrico",
+    "fuelType": "Eléctrico",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 5.9s",
+    "price": "USD 45.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán eléctrico de BYD sobre la plataforma e-Platform 3.0."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.322Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

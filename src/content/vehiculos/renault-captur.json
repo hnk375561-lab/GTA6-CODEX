@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 10.5s"
   },
   "createdAt": "2026-08-23T21:59:06.516209Z",
-  "updatedAt": "2026-08-25T06:11:22.8379356Z",
+  "updatedAt": "2026-08-25T22:37:04.457Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Renault Captur - SUV compacta Renault. 185 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Renault Captur",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Renault"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 10.5s",
+    "price": "USD 26.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Renault, motor 1.3L turbo o 1.6L naturalmente aspirado."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.457Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

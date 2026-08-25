@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.858Z",
-  "updatedAt": "2026-08-25T06:11:22.7599673Z",
+  "updatedAt": "2026-08-25T22:37:04.449Z",
   "manufacturer": "Peugeot",
   "class": "SUV compacta",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Peugeot 2008 - SUV compacta Peugeot. 188 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Peugeot 2008",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Peugeot"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "188 km/h",
+    "acceleration": "0-100 km/h en 10.9s",
+    "price": "USD 27.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Peugeot con motor turbo 1.2L PureTech."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.449Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

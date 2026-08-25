@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.994Z",
-  "updatedAt": "2026-08-25T06:11:22.7095561Z",
+  "updatedAt": "2026-08-25T22:37:04.442Z",
   "manufacturer": "Nissan",
   "class": "SUV compacta",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Nissan Kicks - SUV compacta Nissan. 175 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Nissan Kicks",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Nissan"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.3s",
+    "price": "USD 24.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Nissan, motor 1.6L naturalmente aspirado."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.442Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

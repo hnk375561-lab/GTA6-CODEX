@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 7.7s"
   },
   "createdAt": "2026-08-23T21:59:08.997896Z",
-  "updatedAt": "2026-08-25T06:11:22.6604264Z",
+  "updatedAt": "2026-08-25T22:37:04.435Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -236,5 +236,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Mini Cooper - Hatchback premium Mini. 210 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Mini Cooper",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Mini"
+    },
+    "vehicleType": "Hatchback premium",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "210 km/h",
+    "acceleration": "0-100 km/h en 7.7s",
+    "price": "USD 38.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback premium de Mini (grupo BMW), motor turbo 1.5L o 2.0L según versión."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.435Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:34.107Z",
-  "updatedAt": "2026-08-25T20:55:31.287Z",
+  "updatedAt": "2026-08-25T22:37:04.399Z",
   "manufacturer": "Honda",
   "class": "Moto utilitaria",
   "customizable": false,
@@ -230,5 +230,33 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Honda Wave 110 - Moto utilitaria Honda. 95 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Honda Wave 110",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Honda"
+    },
+    "vehicleType": "Moto utilitaria",
+    "fuelType": "Gasolina",
+    "speed": "95 km/h",
+    "price": "USD 2.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto utilitaria semiautomática, una de las más vendidas de Latinoamérica, motor de 110cc."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.399Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

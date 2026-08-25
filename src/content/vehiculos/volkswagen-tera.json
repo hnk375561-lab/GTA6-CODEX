@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.343Z",
-  "updatedAt": "2026-08-25T06:11:23.1662987Z",
+  "updatedAt": "2026-08-25T22:37:04.500Z",
   "manufacturer": "Volkswagen",
   "class": "SUV compacta",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Volkswagen T-Cross - SUV compacta Volkswagen. Media (178 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Volkswagen T-Cross",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Volkswagen"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (178 km/h)",
+    "acceleration": "Media (0-100 km/h en 10.9s)",
+    "price": "USD 24.500",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Volkswagen, motor 1.0L TSI turbo de 128 hp."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.500Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

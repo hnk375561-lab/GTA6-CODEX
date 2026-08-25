@@ -11,7 +11,7 @@
   ],
   "featured": true,
   "createdAt": "2026-08-23T18:01:32.194Z",
-  "updatedAt": "2026-08-25T06:11:23.0208162Z",
+  "updatedAt": "2026-08-25T22:37:04.484Z",
   "manufacturer": "Toyota",
   "class": "Sedán",
   "customizable": false,
@@ -239,5 +239,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Toyota Corolla 2024 - Sedán Toyota. Media (180 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Toyota Corolla 2024",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Toyota"
+    },
+    "vehicleType": "Sedán",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 10.1s)",
+    "price": "USD 24.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán compacto de Toyota, generación XII, motor 2.0L de 4 cilindros."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.484Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

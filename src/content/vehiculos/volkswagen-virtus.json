@@ -26,7 +26,7 @@
     "acceleration": "No informado por el fabricante para Argentina"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T06:11:23.1791348Z",
+  "updatedAt": "2026-08-25T22:37:04.501Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Volkswagen Virtus - Sedán compacto Volkswagen. No informado por el fabricante para Argentina con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Volkswagen Virtus",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Volkswagen"
+    },
+    "vehicleType": "Sedán compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina",
+    "price": "No informado por el fabricante para Argentina",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán del segmento B, hermano de plataforma del VW Polo, con motorizaciones TSI de 1.0L y 1.6L."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.501Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

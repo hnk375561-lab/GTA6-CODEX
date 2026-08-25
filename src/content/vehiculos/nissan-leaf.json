@@ -29,7 +29,7 @@
     "acceleration": "0-100 km/h en 7.9s"
   },
   "createdAt": "2026-08-23T21:59:05.094837Z",
-  "updatedAt": "2026-08-25T20:55:31.291Z",
+  "updatedAt": "2026-08-25T22:37:04.442Z",
   "transmision": "Automática de relación única (motor eléctrico)",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -229,5 +229,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Nissan Leaf - Hatchback eléctrico Nissan. 157 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Nissan Leaf",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Nissan"
+    },
+    "vehicleType": "Hatchback eléctrico",
+    "fuelType": "Eléctrico",
+    "speed": "157 km/h",
+    "acceleration": "0-100 km/h en 7.9s",
+    "price": "USD 32.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback 100% eléctrico de Nissan, uno de los pioneros del segmento."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.442Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.363Z",
-  "updatedAt": "2026-08-25T20:55:31.297Z",
+  "updatedAt": "2026-08-25T22:37:04.506Z",
   "manufacturer": "Yamaha",
   "class": "Moto naked",
   "customizable": false,
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Yamaha MT-07 - Moto naked Yamaha. Media-Alta (215 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Yamaha MT-07",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Yamaha"
+    },
+    "vehicleType": "Moto naked",
+    "fuelType": "Gasolina",
+    "speed": "Media-Alta (215 km/h)",
+    "acceleration": "Alta (0-100 km/h en 3.7s)",
+    "price": "USD 9.500",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto naked de Yamaha, motor bicilíndrico CP2 689cc, muy elegida por relación peso-potencia."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.506Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

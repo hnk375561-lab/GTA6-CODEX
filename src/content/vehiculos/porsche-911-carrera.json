@@ -11,7 +11,7 @@
   ],
   "featured": true,
   "createdAt": "2026-08-23T18:01:34.332Z",
-  "updatedAt": "2026-08-25T06:11:22.8046729Z",
+  "updatedAt": "2026-08-25T22:37:04.453Z",
   "manufacturer": "Porsche",
   "class": "Deportivo",
   "customizable": false,
@@ -239,5 +239,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Porsche 911 Carrera - Deportivo Porsche. Muy alta (293 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Porsche 911 Carrera",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Porsche"
+    },
+    "vehicleType": "Deportivo",
+    "fuelType": "Gasolina turbo",
+    "speed": "Muy alta (293 km/h)",
+    "acceleration": "Muy alta (0-100 km/h en 4.2s)",
+    "price": "USD 118.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Deportivo icónico de Porsche, motor bóxer 6 cilindros de 379 hp."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.453Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.346Z",
-  "updatedAt": "2026-08-25T06:11:23.1422511Z",
+  "updatedAt": "2026-08-25T22:37:04.498Z",
   "manufacturer": "Volkswagen",
   "class": "Hatchback",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Volkswagen Polo - Hatchback Volkswagen. 185 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Volkswagen Polo",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Volkswagen"
+    },
+    "vehicleType": "Hatchback",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 10.5s",
+    "price": "USD 20.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback compacto de Volkswagen sobre plataforma MQB."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.498Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

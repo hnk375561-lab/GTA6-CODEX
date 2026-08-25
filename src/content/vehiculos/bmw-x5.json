@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 5.5s (xDrive40i)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T06:11:21.9575354Z",
+  "updatedAt": "2026-08-25T22:37:04.318Z",
   "transmision": "8 velocidades automática (Steptronic)",
   "traccion": "Integral xDrive (AWD) de serie",
   "peso": "2.135-2.400 kg (según motorización)",
@@ -251,5 +251,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "BMW X5 - SUV premium BMW. 236 km/h (limitada electrónicamente) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "BMW X5",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "BMW"
+    },
+    "vehicleType": "SUV premium",
+    "fuelType": "Gasolina turbo 6 cilindros en línea (opción diésel e híbrida enchufable)",
+    "speed": "236 km/h (limitada electrónicamente)",
+    "acceleration": "0-100 km/h en 5.5s (xDrive40i)",
+    "price": "USD 68.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV premium mediano-grande de BMW, plataforma CLAR compartida con Serie 7."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.318Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

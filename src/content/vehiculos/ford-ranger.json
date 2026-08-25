@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.241Z",
-  "updatedAt": "2026-08-25T06:11:22.2550529Z",
+  "updatedAt": "2026-08-25T22:37:04.381Z",
   "manufacturer": "Ford",
   "class": "Pickup",
   "customizable": false,
@@ -238,5 +238,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Ford Ranger - Pickup Ford. Media (170 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Ford Ranger",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Ford"
+    },
+    "vehicleType": "Pickup",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (170 km/h)",
+    "acceleration": "Media (0-100 km/h en 10s)",
+    "price": "USD 38.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup mediana de Ford, motor 2.0L biturbo diésel de 200 hp."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.381Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

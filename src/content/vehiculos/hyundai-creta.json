@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 10.8s"
   },
   "createdAt": "2026-08-23T21:59:05.686502Z",
-  "updatedAt": "2026-08-25T06:11:22.3994112Z",
+  "updatedAt": "2026-08-25T22:37:04.401Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Hyundai Creta - SUV compacta Hyundai. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Hyundai Creta",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Hyundai"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.8s",
+    "price": "USD 25.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Hyundai, uno de los modelos más vendidos de su segmento en Latinoamérica."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.401Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

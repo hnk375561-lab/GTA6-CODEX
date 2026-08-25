@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:31.256Z",
-  "updatedAt": "2026-08-25T06:11:22.7000403Z",
+  "updatedAt": "2026-08-25T22:37:04.440Z",
   "manufacturer": "Nissan",
   "class": "Pickup",
   "customizable": false,
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Nissan Frontier - Pickup Nissan. 170 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Nissan Frontier",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Nissan"
+    },
+    "vehicleType": "Pickup",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 10.9s",
+    "price": "USD 40.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup mediana de Nissan, motor turbodiésel 2.3L."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.440Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

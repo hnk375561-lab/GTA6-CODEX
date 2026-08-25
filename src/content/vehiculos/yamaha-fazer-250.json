@@ -27,7 +27,7 @@
     "speed": "140 km/h"
   },
   "createdAt": "2026-08-23T21:59:11.215408Z",
-  "updatedAt": "2026-08-25T20:55:31.297Z",
+  "updatedAt": "2026-08-25T22:37:04.505Z",
   "transmision": "Manual secuencial",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -230,5 +230,33 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Yamaha Fazer 250 - Moto naked Yamaha. 140 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Yamaha Fazer 250",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Yamaha"
+    },
+    "vehicleType": "Moto naked",
+    "fuelType": "Gasolina",
+    "speed": "140 km/h",
+    "price": "USD 5.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto naked de cilindrada media de Yamaha, motor monocilíndrico de 250cc, muy usada en trayectos urbanos e interurbanos."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.505Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

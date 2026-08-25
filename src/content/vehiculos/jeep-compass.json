@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.851Z",
-  "updatedAt": "2026-08-25T06:11:22.4696989Z",
+  "updatedAt": "2026-08-25T22:37:04.410Z",
   "manufacturer": "Jeep",
   "class": "SUV",
   "customizable": false,
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Jeep Compass - SUV Jeep. Media (190 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Jeep Compass",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Jeep"
+    },
+    "vehicleType": "SUV",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (190 km/h)",
+    "acceleration": "Media (0-100 km/h en 9.5s)",
+    "price": "USD 33.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediana de Jeep, motor turbo 1.3L de 170 hp, con opción 4x4."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.410Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

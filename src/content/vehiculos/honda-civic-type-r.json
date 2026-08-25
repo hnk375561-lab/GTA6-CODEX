@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.529Z",
-  "updatedAt": "2026-08-25T06:11:22.3514867Z",
+  "updatedAt": "2026-08-25T22:37:04.394Z",
   "manufacturer": "Honda",
   "class": "Hatchback deportivo",
   "customizable": false,
@@ -241,5 +241,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Honda Civic Type R - Hatchback deportivo Honda. Muy alta (275 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Honda Civic Type R",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Honda"
+    },
+    "vehicleType": "Hatchback deportivo",
+    "fuelType": "Gasolina turbo",
+    "speed": "Muy alta (275 km/h)",
+    "acceleration": "Alta (0-100 km/h en 5.4s)",
+    "price": "USD 45.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback deportivo de Honda, motor turbo 2.0L VTEC de 315 hp, tracción delantera."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.394Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

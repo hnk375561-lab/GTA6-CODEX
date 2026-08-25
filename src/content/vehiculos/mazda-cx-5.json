@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 9.0s"
   },
   "createdAt": "2026-08-23T21:59:01.491247Z",
-  "updatedAt": "2026-08-25T06:11:22.6109007Z",
+  "updatedAt": "2026-08-25T22:37:04.429Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Mazda CX-5 - SUV Mazda. 195 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Mazda CX-5",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Mazda"
+    },
+    "vehicleType": "SUV",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "195 km/h",
+    "acceleration": "0-100 km/h en 9.0s",
+    "price": "USD 32.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediana de Mazda con motor 2.5L Skyactiv-G, tracción integral opcional."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.429Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

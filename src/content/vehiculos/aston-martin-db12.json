@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 3.6s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T06:11:21.8643489Z",
+  "updatedAt": "2026-08-25T22:37:04.298Z",
   "transmision": "8 velocidades automática (ZF)",
   "traccion": "Trasera (RWD) con diferencial electrónico trasero",
   "peso": "1.788 kg",
@@ -247,5 +247,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Aston Martin DB12 - Gran turismo Aston Martin. 325 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Aston Martin DB12",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Aston Martin"
+    },
+    "vehicleType": "Gran turismo",
+    "fuelType": "Gasolina, V8 biturbo (motor M177 de origen Mercedes-AMG)",
+    "speed": "325 km/h",
+    "acceleration": "0-100 km/h en 3.6s",
+    "price": "USD 262.000 aprox. (variante DB12 S: USD 690 hp, desde ~USD 270.000)",
+    "availability": "https://schema.org/InStock",
+    "description": "Gran turismo británico de Aston Martin, motor V8 biturbo Mercedes-AMG."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.298Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

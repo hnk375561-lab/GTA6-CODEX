@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.694Z",
-  "updatedAt": "2026-08-25T20:55:31.294Z",
+  "updatedAt": "2026-08-25T22:37:04.481Z",
   "manufacturer": "Tesla",
   "class": "SUV eléctrica",
   "customizable": false,
@@ -240,5 +240,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Tesla Model Y - SUV eléctrica Tesla. Alta (217 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Tesla Model Y",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Tesla"
+    },
+    "vehicleType": "SUV eléctrica",
+    "fuelType": "Eléctrico",
+    "speed": "Alta (217 km/h)",
+    "acceleration": "Alta (0-100 km/h en 5.0s)",
+    "price": "USD 47.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV eléctrica de Tesla basada en la plataforma del Model 3, mayor espacio de carga."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.481Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

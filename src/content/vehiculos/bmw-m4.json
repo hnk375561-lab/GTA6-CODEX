@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 3.9s"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T06:11:21.9200699Z",
+  "updatedAt": "2026-08-25T22:37:04.314Z",
   "transmision": "Automática 8 velocidades Steptronic M",
   "traccion": "Tracción total inteligente M xDrive",
   "cilindrada": "2.993 cc",
@@ -243,5 +243,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "BMW M4 - Deportivo BMW. 250 km/h (limitada electrónicamente) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "BMW M4",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "BMW"
+    },
+    "vehicleType": "Deportivo",
+    "fuelType": "Gasolina turbo bimotor",
+    "speed": "250 km/h (limitada electrónicamente)",
+    "acceleration": "0-100 km/h en 3.9s",
+    "price": "USD 78.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Coupé deportivo de alto rendimiento de BMW M, motor 3.0 biturbo."
+  },
+  "relations": {
+    "successor": "bmw-m4-g83",
+    "equivalent": "mercedes-amg-c63",
+    "competitor": "audi-rs4"
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.314Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

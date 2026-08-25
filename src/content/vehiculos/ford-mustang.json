@@ -12,7 +12,7 @@
   ],
   "featured": true,
   "createdAt": "2026-08-23T18:31:29.815Z",
-  "updatedAt": "2026-08-25T06:11:22.2429538Z",
+  "updatedAt": "2026-08-25T22:37:04.379Z",
   "manufacturer": "Ford",
   "class": "Deportivo",
   "customizable": false,
@@ -253,5 +253,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Ford Mustang - Deportivo Ford. Muy alta (250 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Ford Mustang",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Ford"
+    },
+    "vehicleType": "Deportivo",
+    "fuelType": "Gasolina turbo",
+    "speed": "Muy alta (250 km/h)",
+    "acceleration": "Alta (0-100 km/h en 4.3s)",
+    "price": "USD 68.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Cupé deportivo de Ford, motor V8 5.0L de 480 hp en su versión GT, ícono del muscle car."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": "chevrolet-camaro",
+    "competitor": "dodge-charger"
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.379Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

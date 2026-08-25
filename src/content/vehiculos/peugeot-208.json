@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.335Z",
-  "updatedAt": "2026-08-25T06:11:22.7649708Z",
+  "updatedAt": "2026-08-25T22:37:04.449Z",
   "manufacturer": "Peugeot",
   "class": "Hatchback",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Peugeot 208 - Hatchback Peugeot. Media (185 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Peugeot 208",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Peugeot"
+    },
+    "vehicleType": "Hatchback",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (185 km/h)",
+    "acceleration": "Media (0-100 km/h en 10.2s)",
+    "price": "USD 20.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback compacto de Peugeot, diseño i-Cockpit, motores 1.6L o turbo 1.2L."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.449Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

@@ -10,7 +10,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:34.410Z",
-  "updatedAt": "2026-08-25T20:55:31.298Z",
+  "updatedAt": "2026-08-25T22:37:04.509Z",
   "manufacturer": "Yamaha",
   "class": "Moto",
   "customizable": false,
@@ -228,5 +228,33 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Yamaha YBR 125 - Moto Yamaha. 105 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Yamaha YBR 125",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Yamaha"
+    },
+    "vehicleType": "Moto",
+    "fuelType": "Gasolina",
+    "speed": "105 km/h",
+    "price": "USD 2.800",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto de calle económica, motor monocilíndrico de 125cc."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.509Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.554Z",
-  "updatedAt": "2026-08-25T06:11:22.5146224Z",
+  "updatedAt": "2026-08-25T22:37:04.415Z",
   "manufacturer": "Kia",
   "class": "Hatchback económico",
   "customizable": false,
@@ -232,5 +232,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Kia Picanto - Hatchback económico Kia. 155 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Kia Picanto",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Kia"
+    },
+    "vehicleType": "Hatchback económico",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "155 km/h",
+    "acceleration": "0-100 km/h en 13.4s",
+    "price": "USD 15.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback urbano de entrada de Kia, motor 1.0L o 1.2L."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.415Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

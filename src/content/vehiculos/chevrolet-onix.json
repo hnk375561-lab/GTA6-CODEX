@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.590Z",
-  "updatedAt": "2026-08-25T06:11:22.0641023Z",
+  "updatedAt": "2026-08-25T22:37:04.351Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Chevrolet Onix - Hatchback Chevrolet. Media (180 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chevrolet Onix",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chevrolet"
+    },
+    "vehicleType": "Hatchback",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 10.5s)",
+    "price": "USD 17.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback compacto de Chevrolet, motor 1.0L turbo de 116 hp, uno de los más vendidos de la región."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.351Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

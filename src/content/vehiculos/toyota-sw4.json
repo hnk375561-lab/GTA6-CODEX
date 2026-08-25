@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.048Z",
-  "updatedAt": "2026-08-25T06:11:23.0854376Z",
+  "updatedAt": "2026-08-25T22:37:04.491Z",
   "manufacturer": "Toyota",
   "class": "SUV 4x4",
   "customizable": false,
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Toyota SW4 - SUV 4x4 Toyota. 175 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Toyota SW4",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Toyota"
+    },
+    "vehicleType": "SUV 4x4",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 10.2s",
+    "price": "USD 55.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV 4x4 de Toyota basada en la plataforma de la Hilux, motor turbodiésel 2.8L. Se comercializa como Fortuner en otros mercados."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.491Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

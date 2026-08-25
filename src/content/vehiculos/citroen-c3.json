@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.601Z",
-  "updatedAt": "2026-08-25T06:11:22.1141976Z",
+  "updatedAt": "2026-08-25T22:37:04.360Z",
   "manufacturer": "Citroën",
   "class": "Hatchback",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Citroën C3 - Hatchback Citroën. Media (175 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Citroën C3",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Citroën"
+    },
+    "vehicleType": "Hatchback",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (175 km/h)",
+    "acceleration": "Media (0-100 km/h en 11.2s)",
+    "price": "USD 18.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback compacto de Citroën, plataforma CMP, suspensión con Progressive Hydraulic Cushions."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.360Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

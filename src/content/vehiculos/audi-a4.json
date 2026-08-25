@@ -31,7 +31,7 @@
     "acceleration": "0-100 km/h en 7.3s"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T06:11:21.8698664Z",
+  "updatedAt": "2026-08-25T22:37:04.300Z",
   "transmision": "7 velocidades S tronic (automática de doble embrague)",
   "traccion": "Delantera (FWD) o quattro (AWD) según motorización",
   "peso": "1.530-1.725 kg (según versión y equipamiento)",
@@ -247,5 +247,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Audi A4 - Sedán ejecutivo Audi. 241 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Audi A4",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Audi"
+    },
+    "vehicleType": "Sedán ejecutivo",
+    "fuelType": "Gasolina turbo, mild-hybrid 12V",
+    "speed": "241 km/h",
+    "acceleration": "0-100 km/h en 7.3s",
+    "price": "Discontinuado en EE.UU. (2025 fue el último año-modelo); sigue vigente en India/Europa con precio local (ej. India desde ₹53,4 lakh)",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán ejecutivo compacto de Audi, tracción quattro opcional."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.300Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

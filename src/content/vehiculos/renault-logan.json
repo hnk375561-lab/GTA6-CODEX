@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 12.5s"
   },
   "createdAt": "2026-08-23T21:59:06.785891Z",
-  "updatedAt": "2026-08-25T06:11:22.8639879Z",
+  "updatedAt": "2026-08-25T22:37:04.461Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -234,5 +234,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Renault Logan - Sedán económico Renault. 170 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Renault Logan",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Renault"
+    },
+    "vehicleType": "Sedán económico",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 12.5s",
+    "price": "USD 16.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán compacto de entrada de Renault, motor 1.6L, foco en espacio y bajo costo de mantenimiento."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.461Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }

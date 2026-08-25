@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.060Z",
-  "updatedAt": "2026-08-25T06:11:23.0990359Z",
+  "updatedAt": "2026-08-25T22:37:04.493Z",
   "manufacturer": "Toyota",
   "class": "Hatchback",
   "customizable": false,
@@ -230,5 +230,34 @@
     "especificaciones",
     "precio",
     "review"
-  ]
+  ],
+  "metaDescription": "Toyota Yaris - Hatchback Toyota. 175 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Toyota Yaris",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Toyota"
+    },
+    "vehicleType": "Hatchback",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.8s",
+    "price": "USD 19.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback compacto de Toyota, motor 1.5L de 4 cilindros."
+  },
+  "relations": {
+    "successor": null,
+    "equivalent": [],
+    "competitor": []
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.493Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true
 }
