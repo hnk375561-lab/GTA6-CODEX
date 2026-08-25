@@ -520,6 +520,13 @@ export function EntityListExplorer({
                 compareChecked={compareSlugs.includes(entity.slug)}
                 onCompareToggle={() => toggleCompare(entity.slug)}
                 compareDisabled={!compareSlugs.includes(entity.slug) && compareSlugs.length >= MAX_COMPARE}
+                // Solo las primeras cards del grid, las que están sin scroll
+                // en la mayoría de viewports (el grid de vehiculos llega a 5
+                // columnas en xl — ver docs/audit-performance-2026-08.md
+                // sección 3, donde queda marcado como "sospecha sin medir").
+                // EntityImage ya soportaba esta prop; lo que faltaba era que
+                // el caller (acá) se la pasara a alguna card.
+                priority={i < 5}
               />
             </Reveal>
           ))}
