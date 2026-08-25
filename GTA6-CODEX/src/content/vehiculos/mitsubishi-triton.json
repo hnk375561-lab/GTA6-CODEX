@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:43:11.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Trasera (4x2) o 4x4 Super Select según versión",
   "peso": "1.900-2.150 kg",
@@ -92,5 +92,7 @@
   "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
   "paisOrigen": "Japón",
-  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple"
+  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple",
+  "calificacionSeguridad": "5 estrellas Latin NCAP (2024) — 89.89% ocupante adulto, 91.16% ocupante infantil, 86.51% protección a peatones",
+  "fuenteSeguridad": "https://www.latinncap.com/es/area-de-prensa/noticia/867486d2875ab5"
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.590Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:43:11.000Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback",
   "customizable": false,
@@ -89,5 +89,7 @@
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
   "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
   "paisOrigen": "Estados Unidos",
-  "numeroPuertas": "5 puertas (3 en versiones deportivas/compactas)"
+  "numeroPuertas": "5 puertas (3 en versiones deportivas/compactas)",
+  "calificacionSeguridad": "5 estrellas Latin NCAP (New Onix Plus/Hatchback, generación actual) — con Latin NCAP Advanced Award por protección a peatones",
+  "fuenteSeguridad": "https://www.latinncap.com/es/area-de-prensa/noticia/85d7a4df7c8e87"
 }

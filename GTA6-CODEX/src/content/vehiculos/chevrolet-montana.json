@@ -27,7 +27,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:43:11.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Delantera (FWD)",
   "peso": "1.220-1.290 kg",
@@ -88,5 +88,7 @@
   "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
   "paisOrigen": "Estados Unidos",
-  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple"
+  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple",
+  "calificacionSeguridad": "3 estrellas Latin NCAP (2024) — 79.18% ocupante adulto, 71.08% ocupante infantil",
+  "fuenteSeguridad": "https://www.16valvulas.com.ar/latin-ncap-la-chevrolet-montana-logro-3-estrellas-en-el-crash-test/"
 }
