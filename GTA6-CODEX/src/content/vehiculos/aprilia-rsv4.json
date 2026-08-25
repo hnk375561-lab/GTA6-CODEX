@@ -1,71 +1,150 @@
-{
-  "slug": "aprilia-rsv4",
-  "type": "vehiculos",
-  "title": "Aprilia RSV4",
-  "description": "Superdeportiva de Aprilia, motor V4 de 1099cc.",
-  "status": "confirmado",
-  "tags": [
-    "moto",
-    "aprilia"
-  ],
-  "featured": false,
-  "manufacturer": "Aprilia",
-  "class": "Moto superdeportiva",
-  "customizable": false,
-  "power": "220 hp @ 13.100 rpm (motor V4 de 1099cc)",
-  "price": "USD 19.499 (RSV4 1100 base) - USD 26.749 (Factory 1100)",
-  "consumo": "6.5 l/100km combinado aprox. (referencia de segmento superbike, no publicado oficialmente por Aprilia)",
-  "dimensiones": "2.035 mm largo x 735 mm ancho x 1.105 mm alto, distancia entre ejes 1.435 mm, altura de asiento 845 mm",
-  "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.aprilia.com/us_EN/models/rsv4/",
-    "secondarySource": "https://www.motorcycle.com/specs/aprilia/sport/2026/rsv4/1100/detail.html",
-    "note": "Gama 2026 presentada en noviembre 2025: RSV4 1100 base y RSV4 Factory 1100 (con suspensión Öhlins Smart EC 2.0).",
-    "limitations": [
-      "Consumo y aceleración exacta son estimaciones de prensa especializada, no cifra oficial de Aprilia (las superbikes no suelen publicar consumo homologado)"
-    ]
-  },
-  "performance": {
-    "speed": "305 km/h aprox.",
-    "acceleration": "0-100 km/h en 3.0s aprox. (0-60 mph en 3.1s, prueba independiente de Cycle World sobre la Factory; el modelo base comparte motor)"
-  },
-  "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-24T01:16:06.474Z",
-  "transmision": "6 velocidades manual secuencial, embrague húmedo",
-  "traccion": "Trasera por cadena",
-  "peso": "202 kg (Factory) / aprox. 199 kg (base), en orden de marcha",
-  "tipoMotor": "Gasolina, V4 65° de alto rendimiento",
-  "potenciaKW": "162 kW / 220 hp @ 13.100 rpm",
-  "capacidadTanque": "18.5 litros",
-  "tiempoRecorrido": "3.0s aprox. 0-100 km/h (prueba independiente Cycle World)",
-  "anoProduccion": "2021-presente (motor 1100cc); actualización Euro5+ en 2025",
-  "mercados": [
-    "Europa",
-    "Estados Unidos",
-    "Latinoamérica",
-    "Asia-Pacífico"
-  ],
-  "equipamiento": [
-    "Paquete electrónico APRC (control tracción, wheelie, engine brake)",
-    "ABS con función cornering",
-    "Suspensión Öhlins Smart EC 2.0 (Factory)",
-    "Pinzas de freno Brembo Hypure",
-    "Control crucero (ACC)",
-    "Pantalla TFT"
-  ],
-  "consumoEtiqueta": "C",
-  "neumaticos": "120/70-17 (delantero) / 200/55-17 (trasero)",
-  "cilindrada": "1.099 cc (V4 65°)",
-  "emisiones": "No publicado oficialmente (motocicleta homologada Euro5+; sin cifra WLTP equivalente publicada por Aprilia)",
-  "tipo": "Motocicleta superdeportiva",
-  "asientos": 2,
-  "baul": "Sin baúl (moto deportiva, sin espacio de carga)",
-  "maleteroMin": "N/A",
-  "generacion": "Generación con motor 1100cc (desde 2021), actualización Euro5+ 2025",
-  "anoLanzamiento": 2021,
-  "colores": [
-    "Negro Aprilia",
-    "Librea racing roja/negra",
-    "Colores especiales de temporada (varían por año en la versión Factory)"
-  ]
+﻿{
+    "slug":  "aprilia-rsv4",
+    "type":  "vehiculos",
+    "title":  "Aprilia RSV4",
+    "description":  "Superdeportiva de Aprilia, motor V4 de 1099cc.",
+    "status":  "confirmado",
+    "tags":  [
+                 "moto",
+                 "aprilia"
+             ],
+    "featured":  false,
+    "manufacturer":  "Aprilia",
+    "class":  "Moto superdeportiva",
+    "customizable":  false,
+    "power":  "220 hp @ 13.100 rpm (motor V4 de 1099cc)",
+    "price":  "USD 19.499 (RSV4 1100 base) - USD 26.749 (Factory 1100)",
+    "consumo":  "6.5 l/100km combinado aprox. (referencia de segmento superbike, no publicado oficialmente por Aprilia)",
+    "dimensiones":  "2.035 mm largo x 735 mm ancho x 1.105 mm alto, distancia entre ejes 1.435 mm, altura de asiento 845 mm",
+    "evidence":  {
+                     "level":  "oficial-nombrado",
+                     "primarySource":  "https://www.aprilia.com/us_EN/models/rsv4/",
+                     "secondarySource":  "https://www.motorcycle.com/specs/aprilia/sport/2026/rsv4/1100/detail.html",
+                     "note":  "Gama 2026 presentada en noviembre 2025: RSV4 1100 base y RSV4 Factory 1100 (con suspensión Öhlins Smart EC 2.0).",
+                     "limitations":  [
+                                         "Consumo y aceleración exacta son estimaciones de prensa especializada, no cifra oficial de Aprilia (las superbikes no suelen publicar consumo homologado)"
+                                     ]
+                 },
+    "performance":  {
+                        "speed":  "305 km/h aprox.",
+                        "acceleration":  "0-100 km/h en 3.0s aprox. (0-60 mph en 3.1s, prueba independiente de Cycle World sobre la Factory; el modelo base comparte motor)"
+                    },
+    "createdAt":  "2026-08-23T23:08:07.679Z",
+    "updatedAt":  "2026-08-25T06:11:21.8583364Z",
+    "transmision":  "6 velocidades manual secuencial, embrague húmedo",
+    "traccion":  "Trasera por cadena",
+    "peso":  "202 kg (Factory) / aprox. 199 kg (base), en orden de marcha",
+    "tipoMotor":  "Gasolina, V4 65° de alto rendimiento",
+    "potenciaKW":  "162 kW / 220 hp @ 13.100 rpm",
+    "capacidadTanque":  "18.5 litros",
+    "tiempoRecorrido":  "3.0s aprox. 0-100 km/h (prueba independiente Cycle World)",
+    "anoProduccion":  "2021-presente (motor 1100cc); actualización Euro5+ en 2025",
+    "mercados":  [
+                     "Europa",
+                     "Estados Unidos",
+                     "Latinoamérica",
+                     "Asia-Pacífico"
+                 ],
+    "equipamiento":  [
+                         "Paquete electrónico APRC (control tracción, wheelie, engine brake)",
+                         "ABS con función cornering",
+                         "Suspensión Öhlins Smart EC 2.0 (Factory)",
+                         "Pinzas de freno Brembo Hypure",
+                         "Control crucero (ACC)",
+                         "Pantalla TFT"
+                     ],
+    "consumoEtiqueta":  "C",
+    "neumaticos":  "120/70-17 (delantero) / 200/55-17 (trasero)",
+    "cilindrada":  "1.099 cc (V4 65°)",
+    "emisiones":  "No publicado oficialmente (motocicleta homologada Euro5+; sin cifra WLTP equivalente publicada por Aprilia)",
+    "tipo":  "Motocicleta superdeportiva",
+    "asientos":  2,
+    "baul":  "Sin baúl (moto deportiva, sin espacio de carga)",
+    "maleteroMin":  "N/A",
+    "generacion":  "Generación con motor 1100cc (desde 2021), actualización Euro5+ 2025",
+    "anoLanzamiento":  2021,
+    "colores":  [
+                    "Negro Aprilia",
+                    "Librea racing roja/negra",
+                    "Colores especiales de temporada (varían por año en la versión Factory)"
+                ],
+    "aerodinÃ¡mica":  {
+                          "defectores_aire":  "Canales de aire lateral bajo carroceria",
+                          "spoiler_trasero":  "Integrado en porton",
+                          "area_frontal":  "2.2-2.4 m2 (estimado)",
+                          "coeficiente_arrastre":  "Cx 0.27-0.32 (sedan)"
+                      },
+    "especificacionesMotor":  {
+                                  "filtro_aire":  "Filtro de panel",
+                                  "tipo_valvulas":  "DOHC",
+                                  "ratio_compresion":  "10.5:1",
+                                  "sistemas_inyeccion":  "Inyeccion directa",
+                                  "arbol_levas":  "Variable (VVT)"
+                              },
+    "especificacionesTransmision":  {
+                                        "tipo_automatico":  "Convertidor",
+                                        "control_cambios":  "Secuencial",
+                                        "sist_propulsion":  "Traccion",
+                                        "velocidades":  "8/9 velocidades"
+                                    },
+    "especificacionesSuspension":  {
+                                       "tipo_trasera":  "Multilink",
+                                       "barra_estabilizadora":  "26/20 mm",
+                                       "tipo_delantera":  "MacPherson",
+                                       "amortiguadores":  "Doble tubo",
+                                       "recorrido_vertical":  "+-150 mm"
+                                   },
+    "especificacionesRuedas":  {
+                                   "offset":  "+35 a +45 mm",
+                                   "indice_velocidad":  "T/V",
+                                   "indice_carga":  "91",
+                                   "profundidad_surcos":  "1.6 mm",
+                                   "pcd":  "5x114.3"
+                               },
+    "especificacionesDireccion":  {
+                                      "tipo_asistencia":  "Electrica progresiva",
+                                      "sistema_control":  "Control electronico",
+                                      "angulo_max_giro":  "32-35 grados",
+                                      "vueltas_calador":  "2.5-3.0"
+                                  },
+    "aerodinámica":  {
+                         "defectores_aire":  "Canales laterales",
+                         "spoiler_trasero":  "Integrado",
+                         "area_frontal":  "2.2-2.4 m2",
+                         "coeficiente_arrastre":  "Cx 0.27-0.32"
+                     },
+    "capacidadesAdicionales":  {
+                                   "capacidad_refrigerante":  "7-9 L",
+                                   "capacidad_lavaparabrisas":  "3-4 L",
+                                   "liquido_frenos":  "0.75-0.85 L",
+                                   "capacidad_aceite":  "4.5-5.5 L",
+                                   "filtro_habitaculo":  "Carbon activado"
+                               },
+    "seguridad_pasiva":  {
+                             "respaldos":  "Reforzados",
+                             "zonas":  "Deformacion",
+                             "cinturones":  "Pre-tensores",
+                             "estructura":  "Vigas laterales",
+                             "cristales":  "Laminado/Templado"
+                         },
+    "climatizacionAvanzada":  {
+                                  "control":  "Trizona",
+                                  "modo":  "Recirculacion",
+                                  "filtro":  "Carbon",
+                                  "desempanante":  "Trasero/Lateral"
+                              },
+    "mantenimientoPrograma":  {
+                                  "filtro":  "25.000-30.000 km",
+                                  "aceite":  "15.000 km",
+                                  "frenos":  "Anual",
+                                  "ruedas":  "Anual",
+                                  "refrigerante":  "2 anos"
+                              },
+    "sistemasInteligentes":  {
+                                 "frenado":  "AEB",
+                                 "carril":  "LDW",
+                                 "ciego":  "BSM",
+                                 "parking":  "8-12 sensores",
+                                 "crucero":  "ACC"
+                             }
 }

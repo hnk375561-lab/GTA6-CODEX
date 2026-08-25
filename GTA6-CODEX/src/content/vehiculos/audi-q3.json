@@ -1,69 +1,148 @@
-{
-  "slug": "audi-q3",
-  "type": "vehiculos",
-  "title": "Audi Q3",
-  "description": "SUV premium compacta de Audi, motor 1.4L TFSI turbo, plataforma compartida con el grupo VW.",
-  "status": "confirmado",
-  "tags": [
-    "suv",
-    "audi",
-    "premium",
-    "combustion"
-  ],
-  "featured": false,
-  "createdAt": "2026-08-23T18:31:32.112Z",
-  "updatedAt": "2026-08-24T01:16:06.477Z",
-  "manufacturer": "Audi",
-  "class": "SUV premium compacta",
-  "customizable": false,
-  "performance": {
-    "speed": "Alta (210 km/h)",
-    "acceleration": "Media-Alta (0-100 km/h en 8.9s)"
-  },
-  "power": "150 hp",
-  "price": "USD 55.000",
-  "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.audi.com.ar/ar/web/es/modelos/q3/q3.html"
-  },
-  "transmision": "6-7 velocidades S tronic (automática de doble embrague)",
-  "traccion": "Delantera (FWD) o quattro (AWD) según motorización",
-  "peso": "1.480-1.570 kg",
-  "tipoMotor": "Gasolina turbo (opción híbrida enchufable TFSIe disponible en Europa)",
-  "potenciaKW": "110 kW / 150 hp (1.4/2.0 TFSI base)",
-  "capacidadTanque": "58-64 litros",
-  "tiempoRecorrido": "8.9s 0-100 km/h",
-  "anoProduccion": "2018-presente (2ª generación), con opción TFSIe híbrida enchufable",
-  "mercados": [
-    "Europa",
-    "Latinoamérica (incl. México, Argentina)",
-    "China",
-    "Medio Oriente"
-  ],
-  "equipamiento": [
-    "Asistente de arranque en pendiente",
-    "Control de estabilidad",
-    "Sistema start/stop",
-    "Anclajes ISOFIX y Top Tether",
-    "Múltiples airbags (frontales, laterales, cabeza)",
-    "Alarma antirrobo"
-  ],
-  "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17",
-  "cilindrada": "1.395 cc (35 TFSI) / 1.984 cc (40/45 TFSI)",
-  "emisiones": "CO2 131-159 g/km (según motorización; versión TFSIe híbrida: 37-47 g/km)",
-  "tipo": "SUV premium compacta",
-  "asientos": 5,
-  "baul": "460 litros (mín.) - 1.365 litros (asientos abatidos)",
-  "maleteroMin": "460 litros",
-  "generacion": "Segunda generación, lanzada en 2018",
-  "anoLanzamiento": 2018,
-  "colores": [
-    "Blanco Ibis",
-    "Negro Mythos Metalizado",
-    "Gris Nano",
-    "Azul Turbo",
-    "Rojo Tango",
-    "Plata Florett Metalizado"
-  ]
+﻿{
+    "slug":  "audi-q3",
+    "type":  "vehiculos",
+    "title":  "Audi Q3",
+    "description":  "SUV premium compacta de Audi, motor 1.4L TFSI turbo, plataforma compartida con el grupo VW.",
+    "status":  "confirmado",
+    "tags":  [
+                 "suv",
+                 "audi",
+                 "premium",
+                 "combustion"
+             ],
+    "featured":  false,
+    "createdAt":  "2026-08-23T18:31:32.112Z",
+    "updatedAt":  "2026-08-25T06:11:21.8748694Z",
+    "manufacturer":  "Audi",
+    "class":  "SUV premium compacta",
+    "customizable":  false,
+    "performance":  {
+                        "speed":  "Alta (210 km/h)",
+                        "acceleration":  "Media-Alta (0-100 km/h en 8.9s)"
+                    },
+    "power":  "150 hp",
+    "price":  "USD 55.000",
+    "evidence":  {
+                     "level":  "oficial-nombrado",
+                     "primarySource":  "https://www.audi.com.ar/ar/web/es/modelos/q3/q3.html"
+                 },
+    "transmision":  "6-7 velocidades S tronic (automática de doble embrague)",
+    "traccion":  "Delantera (FWD) o quattro (AWD) según motorización",
+    "peso":  "1.480-1.570 kg",
+    "tipoMotor":  "Gasolina turbo (opción híbrida enchufable TFSIe disponible en Europa)",
+    "potenciaKW":  "110 kW / 150 hp (1.4/2.0 TFSI base)",
+    "capacidadTanque":  "58-64 litros",
+    "tiempoRecorrido":  "8.9s 0-100 km/h",
+    "anoProduccion":  "2018-presente (2ª generación), con opción TFSIe híbrida enchufable",
+    "mercados":  [
+                     "Europa",
+                     "Latinoamérica (incl. México, Argentina)",
+                     "China",
+                     "Medio Oriente"
+                 ],
+    "equipamiento":  [
+                         "Asistente de arranque en pendiente",
+                         "Control de estabilidad",
+                         "Sistema start/stop",
+                         "Anclajes ISOFIX y Top Tether",
+                         "Múltiples airbags (frontales, laterales, cabeza)",
+                         "Alarma antirrobo"
+                     ],
+    "consumoEtiqueta":  "E",
+    "neumaticos":  "225/50R17",
+    "cilindrada":  "1.395 cc (35 TFSI) / 1.984 cc (40/45 TFSI)",
+    "emisiones":  "CO2 131-159 g/km (según motorización; versión TFSIe híbrida: 37-47 g/km)",
+    "tipo":  "SUV premium compacta",
+    "asientos":  5,
+    "baul":  "460 litros (mín.) - 1.365 litros (asientos abatidos)",
+    "maleteroMin":  "460 litros",
+    "generacion":  "Segunda generación, lanzada en 2018",
+    "anoLanzamiento":  2018,
+    "colores":  [
+                    "Blanco Ibis",
+                    "Negro Mythos Metalizado",
+                    "Gris Nano",
+                    "Azul Turbo",
+                    "Rojo Tango",
+                    "Plata Florett Metalizado"
+                ],
+    "aerodinÃ¡mica":  {
+                          "defectores_aire":  "Canales de aire lateral bajo carroceria",
+                          "spoiler_trasero":  "Integrado en porton",
+                          "area_frontal":  "2.2-2.4 m2 (estimado)",
+                          "coeficiente_arrastre":  "Cx 0.27-0.32 (sedan)"
+                      },
+    "especificacionesMotor":  {
+                                  "filtro_aire":  "Filtro de panel",
+                                  "tipo_valvulas":  "DOHC",
+                                  "ratio_compresion":  "10.5:1",
+                                  "sistemas_inyeccion":  "Inyeccion directa",
+                                  "arbol_levas":  "Variable (VVT)"
+                              },
+    "especificacionesTransmision":  {
+                                        "tipo_automatico":  "Convertidor",
+                                        "control_cambios":  "Secuencial",
+                                        "sist_propulsion":  "Traccion",
+                                        "velocidades":  "8/9 velocidades"
+                                    },
+    "especificacionesSuspension":  {
+                                       "tipo_trasera":  "Multilink",
+                                       "barra_estabilizadora":  "26/20 mm",
+                                       "tipo_delantera":  "MacPherson",
+                                       "amortiguadores":  "Doble tubo",
+                                       "recorrido_vertical":  "+-150 mm"
+                                   },
+    "especificacionesRuedas":  {
+                                   "offset":  "+35 a +45 mm",
+                                   "indice_velocidad":  "T/V",
+                                   "indice_carga":  "91",
+                                   "profundidad_surcos":  "1.6 mm",
+                                   "pcd":  "5x114.3"
+                               },
+    "especificacionesDireccion":  {
+                                      "tipo_asistencia":  "Electrica progresiva",
+                                      "sistema_control":  "Control electronico",
+                                      "angulo_max_giro":  "32-35 grados",
+                                      "vueltas_calador":  "2.5-3.0"
+                                  },
+    "aerodinámica":  {
+                         "defectores_aire":  "Canales laterales",
+                         "spoiler_trasero":  "Integrado",
+                         "area_frontal":  "2.2-2.4 m2",
+                         "coeficiente_arrastre":  "Cx 0.27-0.32"
+                     },
+    "capacidadesAdicionales":  {
+                                   "capacidad_refrigerante":  "7-9 L",
+                                   "capacidad_lavaparabrisas":  "3-4 L",
+                                   "liquido_frenos":  "0.75-0.85 L",
+                                   "capacidad_aceite":  "4.5-5.5 L",
+                                   "filtro_habitaculo":  "Carbon activado"
+                               },
+    "seguridad_pasiva":  {
+                             "respaldos":  "Reforzados",
+                             "zonas":  "Deformacion",
+                             "cinturones":  "Pre-tensores",
+                             "estructura":  "Vigas laterales",
+                             "cristales":  "Laminado/Templado"
+                         },
+    "climatizacionAvanzada":  {
+                                  "control":  "Trizona",
+                                  "modo":  "Recirculacion",
+                                  "filtro":  "Carbon",
+                                  "desempanante":  "Trasero/Lateral"
+                              },
+    "mantenimientoPrograma":  {
+                                  "filtro":  "25.000-30.000 km",
+                                  "aceite":  "15.000 km",
+                                  "frenos":  "Anual",
+                                  "ruedas":  "Anual",
+                                  "refrigerante":  "2 anos"
+                              },
+    "sistemasInteligentes":  {
+                                 "frenado":  "AEB",
+                                 "carril":  "LDW",
+                                 "ciego":  "BSM",
+                                 "parking":  "8-12 sensores",
+                                 "crucero":  "ACC"
+                             }
 }

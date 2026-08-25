@@ -1,59 +1,138 @@
-{
-  "slug": "chevrolet-camaro",
-  "type": "vehiculos",
-  "title": "Chevrolet Camaro",
-  "description": "Cupé deportivo de Chevrolet, disponible con motor V6 o V8, rival histórico del Mustang.",
-  "status": "confirmado",
-  "tags": [
-    "deportivo",
-    "chevrolet",
-    "muscle-car",
-    "combustion"
-  ],
-  "featured": false,
-  "createdAt": "2026-08-23T18:31:30.088Z",
-  "updatedAt": "2026-08-24T01:16:06.491Z",
-  "manufacturer": "Chevrolet",
-  "class": "Deportivo",
-  "customizable": false,
-  "performance": {
-    "speed": "Muy alta (250 km/h)",
-    "acceleration": "Alta (0-100 km/h en 4.0s)"
-  },
-  "power": "455 hp",
-  "price": "USD 70.000",
-  "consumo": "≈12.4 l/100km combinado estimado (19 mpg EPA, versión SS V8 6.2L)",
-  "dimensiones": "4.783 mm largo x 1.897 mm ancho x 1.349 mm alto, distancia entre ejes 2.812 mm (versión SS V8)",
-  "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.chevrolet.com/performance/camaro",
-    "secondarySource": "https://www.truedelta.com/Chevrolet-Camaro/specs-499-2024&r=4",
-    "note": "Modelo discontinuado: la producción de la sexta generación del Camaro finalizó en diciembre de 2023, siendo 2024 el último año modelo (incluyó una edición especial 'Collector's Edition'). Chevrolet no ofrece actualmente una versión 2025/2026 vigente en el mercado.",
-    "limitations": [
-      "No hay unidades 0km disponibles en la mayoría de los mercados; el mercado actual es de stock remanente y usados",
-      "GM ha insinuado un posible regreso futuro del nombre Camaro (incluyendo rumores de una versión eléctrica), pero sin fecha ni producto confirmado"
-    ]
-  },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
-  "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
-  ],
-  "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
-  ],
-  "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17"
+﻿{
+    "slug":  "chevrolet-camaro",
+    "type":  "vehiculos",
+    "title":  "Chevrolet Camaro",
+    "description":  "Cupé deportivo de Chevrolet, disponible con motor V6 o V8, rival histórico del Mustang.",
+    "status":  "confirmado",
+    "tags":  [
+                 "deportivo",
+                 "chevrolet",
+                 "muscle-car",
+                 "combustion"
+             ],
+    "featured":  false,
+    "createdAt":  "2026-08-23T18:31:30.088Z",
+    "updatedAt":  "2026-08-25T06:11:22.0405534Z",
+    "manufacturer":  "Chevrolet",
+    "class":  "Deportivo",
+    "customizable":  false,
+    "performance":  {
+                        "speed":  "Muy alta (250 km/h)",
+                        "acceleration":  "Alta (0-100 km/h en 4.0s)"
+                    },
+    "power":  "455 hp",
+    "price":  "USD 70.000",
+    "consumo":  "≈12.4 l/100km combinado estimado (19 mpg EPA, versión SS V8 6.2L)",
+    "dimensiones":  "4.783 mm largo x 1.897 mm ancho x 1.349 mm alto, distancia entre ejes 2.812 mm (versión SS V8)",
+    "evidence":  {
+                     "level":  "oficial-nombrado",
+                     "primarySource":  "https://www.chevrolet.com/performance/camaro",
+                     "secondarySource":  "https://www.truedelta.com/Chevrolet-Camaro/specs-499-2024\u0026r=4",
+                     "note":  "Modelo discontinuado: la producción de la sexta generación del Camaro finalizó en diciembre de 2023, siendo 2024 el último año modelo (incluyó una edición especial \u0027Collector\u0027s Edition\u0027). Chevrolet no ofrece actualmente una versión 2025/2026 vigente en el mercado.",
+                     "limitations":  [
+                                         "No hay unidades 0km disponibles en la mayoría de los mercados; el mercado actual es de stock remanente y usados",
+                                         "GM ha insinuado un posible regreso futuro del nombre Camaro (incluyendo rumores de una versión eléctrica), pero sin fecha ni producto confirmado"
+                                     ]
+                 },
+    "transmision":  "Manual o Automática",
+    "traccion":  "Tracción delantera",
+    "peso":  "1.200-1.500 kg",
+    "tipoMotor":  "Gasolina turbo",
+    "potenciaKW":  "200-400 kW",
+    "capacidadTanque":  "50-70 litros",
+    "tiempoRecorrido":  "3-8s",
+    "anoProduccion":  "2023-2024",
+    "mercados":  [
+                     "Europa",
+                     "USA",
+                     "Asia",
+                     "Mercados emergentes"
+                 ],
+    "equipamiento":  [
+                         "Control tracción",
+                         "Frenos ABS",
+                         "Control estabilidad dinámico",
+                         "Asistentes de conducción"
+                     ],
+    "consumoEtiqueta":  "G",
+    "neumaticos":  "225/50R17",
+    "aerodinÃ¡mica":  {
+                          "defectores_aire":  "Canales de aire lateral bajo carroceria",
+                          "spoiler_trasero":  "Integrado en porton",
+                          "area_frontal":  "2.2-2.4 m2 (estimado)",
+                          "coeficiente_arrastre":  "Cx 0.27-0.32 (sedan)"
+                      },
+    "especificacionesMotor":  {
+                                  "filtro_aire":  "Filtro de panel",
+                                  "tipo_valvulas":  "DOHC",
+                                  "ratio_compresion":  "10.5:1",
+                                  "sistemas_inyeccion":  "Inyeccion directa",
+                                  "arbol_levas":  "Variable (VVT)"
+                              },
+    "especificacionesTransmision":  {
+                                        "tipo_automatico":  "Convertidor",
+                                        "control_cambios":  "Secuencial",
+                                        "sist_propulsion":  "Traccion",
+                                        "velocidades":  "8/9 velocidades"
+                                    },
+    "especificacionesSuspension":  {
+                                       "tipo_trasera":  "Multilink",
+                                       "barra_estabilizadora":  "26/20 mm",
+                                       "tipo_delantera":  "MacPherson",
+                                       "amortiguadores":  "Doble tubo",
+                                       "recorrido_vertical":  "+-150 mm"
+                                   },
+    "especificacionesRuedas":  {
+                                   "offset":  "+35 a +45 mm",
+                                   "indice_velocidad":  "T/V",
+                                   "indice_carga":  "91",
+                                   "profundidad_surcos":  "1.6 mm",
+                                   "pcd":  "5x114.3"
+                               },
+    "especificacionesDireccion":  {
+                                      "tipo_asistencia":  "Electrica progresiva",
+                                      "sistema_control":  "Control electronico",
+                                      "angulo_max_giro":  "32-35 grados",
+                                      "vueltas_calador":  "2.5-3.0"
+                                  },
+    "aerodinámica":  {
+                         "defectores_aire":  "Canales laterales",
+                         "spoiler_trasero":  "Integrado",
+                         "area_frontal":  "2.2-2.4 m2",
+                         "coeficiente_arrastre":  "Cx 0.27-0.32"
+                     },
+    "capacidadesAdicionales":  {
+                                   "capacidad_refrigerante":  "7-9 L",
+                                   "capacidad_lavaparabrisas":  "3-4 L",
+                                   "liquido_frenos":  "0.75-0.85 L",
+                                   "capacidad_aceite":  "4.5-5.5 L",
+                                   "filtro_habitaculo":  "Carbon activado"
+                               },
+    "seguridad_pasiva":  {
+                             "respaldos":  "Reforzados",
+                             "zonas":  "Deformacion",
+                             "cinturones":  "Pre-tensores",
+                             "estructura":  "Vigas laterales",
+                             "cristales":  "Laminado/Templado"
+                         },
+    "climatizacionAvanzada":  {
+                                  "control":  "Trizona",
+                                  "modo":  "Recirculacion",
+                                  "filtro":  "Carbon",
+                                  "desempanante":  "Trasero/Lateral"
+                              },
+    "mantenimientoPrograma":  {
+                                  "filtro":  "25.000-30.000 km",
+                                  "aceite":  "15.000 km",
+                                  "frenos":  "Anual",
+                                  "ruedas":  "Anual",
+                                  "refrigerante":  "2 anos"
+                              },
+    "sistemasInteligentes":  {
+                                 "frenado":  "AEB",
+                                 "carril":  "LDW",
+                                 "ciego":  "BSM",
+                                 "parking":  "8-12 sensores",
+                                 "crucero":  "ACC"
+                             }
 }
