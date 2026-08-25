@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.977Z",
-  "updatedAt": "2026-08-25T03:58:37.000Z",
+  "updatedAt": "2026-08-25T03:59:20.000Z",
   "manufacturer": "BMW",
   "class": "Sedán premium",
   "customizable": false,
@@ -89,5 +89,8 @@
   "radioGiro": "5.4 m (estimado)",
   "relacionPesoPotencia": "6.2 kg/hp (calculado a partir de peso y potencia declarados)",
   "potenciaLitro": "128 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)"
+  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
+  "iluminacion": "Faros full LED de serie, con luces diurnas LED (versiones premium con faros Matrix/adaptativos)",
+  "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
+  "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)"
 }

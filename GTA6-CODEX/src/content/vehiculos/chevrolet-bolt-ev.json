@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.250Z",
-  "updatedAt": "2026-08-25T03:58:37.000Z",
+  "updatedAt": "2026-08-25T03:59:20.000Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback eléctrico",
   "customizable": false,
@@ -80,5 +80,8 @@
   "tiempoCarga": "DC rápida (máx. ~55 kW) 10-80% en ~1h; AC 11 kW en ~7h (estimado)",
   "radioGiro": "5.0 m (estimado)",
   "relacionPesoPotencia": "7.5 kg/hp (calculado a partir de peso y potencia declarados)",
-  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)"
+  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
+  "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
+  "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
+  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión"
 }

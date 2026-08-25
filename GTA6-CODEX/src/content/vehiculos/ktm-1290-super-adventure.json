@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T03:58:37.000Z",
+  "updatedAt": "2026-08-25T03:59:20.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -73,5 +73,7 @@
   ],
   "garantia": "2 años sin límite de kilometraje (estimado)",
   "relacionPesoPotencia": "1.3 kg/hp (calculado a partir de peso y potencia declarados)",
-  "potenciaLitro": "123 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "123 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "iluminacion": "Faros LED o halógenos según versión",
+  "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas"
 }

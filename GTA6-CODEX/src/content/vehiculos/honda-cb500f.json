@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.065Z",
-  "updatedAt": "2026-08-25T03:58:37.000Z",
+  "updatedAt": "2026-08-25T03:59:20.000Z",
   "manufacturer": "Honda",
   "class": "Moto",
   "customizable": false,
@@ -69,5 +69,7 @@
   ],
   "garantia": "2 años sin límite de kilometraje (estimado)",
   "relacionPesoPotencia": "4.4 kg/hp (calculado a partir de peso y potencia declarados)",
-  "potenciaLitro": "100 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "100 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "iluminacion": "Faros LED o halógenos según versión",
+  "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas"
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.069Z",
-  "updatedAt": "2026-08-25T03:58:37.000Z",
+  "updatedAt": "2026-08-25T03:59:20.000Z",
   "manufacturer": "Nissan",
   "class": "Sedán",
   "customizable": false,
@@ -78,5 +78,8 @@
   "radioGiro": "5.4 m (estimado)",
   "relacionPesoPotencia": "14.2 kg/hp (calculado a partir de peso y potencia declarados)",
   "potenciaLitro": "66 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)"
+  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
+  "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
+  "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
+  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión"
 }

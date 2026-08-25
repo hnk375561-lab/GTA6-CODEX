@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.554Z",
-  "updatedAt": "2026-08-25T03:58:37.000Z",
+  "updatedAt": "2026-08-25T03:59:20.000Z",
   "manufacturer": "Kia",
   "class": "Hatchback económico",
   "customizable": false,
@@ -76,5 +76,8 @@
   "garantia": "5 años / 100.000 km, extensible hasta 7 años según mercado (estimado)",
   "radioGiro": "5.0 m (estimado)",
   "relacionPesoPotencia": "17.9 kg/hp (calculado a partir de peso y potencia declarados)",
-  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)"
+  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
+  "iluminacion": "Faros halógenos de serie (LED disponible como opcional en versiones superiores)",
+  "infoentretenimiento": "Pantalla táctil de 7-8\", Apple CarPlay y Android Auto (alámbricos en versiones base)",
+  "climatizacion": "Aire acondicionado manual (climatizador automático disponible en versiones superiores)"
 }

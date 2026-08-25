@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:58:37.000Z",
+  "updatedAt": "2026-08-25T03:59:20.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -85,5 +85,8 @@
   "alturaLibrePiso": "190 mm (estimado)",
   "radioGiro": "5.7 m (estimado)",
   "relacionPesoPotencia": "9.9 kg/hp (calculado a partir de peso y potencia declarados)",
-  "neumaticoRepuesto": "Rueda de auxilio de tamaño completo (estimado, varía por versión)"
+  "neumaticoRepuesto": "Rueda de auxilio de tamaño completo (estimado, varía por versión)",
+  "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",
+  "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
+  "climatizacion": "Climatizador automático de una zona, con opción bizona según versión"
 }

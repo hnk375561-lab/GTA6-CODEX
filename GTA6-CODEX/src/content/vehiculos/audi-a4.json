@@ -33,7 +33,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:58:37.000Z",
+  "updatedAt": "2026-08-25T03:59:20.000Z",
   "transmision": "7 velocidades S tronic (automática de doble embrague)",
   "traccion": "Delantera (FWD) o quattro (AWD) según motorización",
   "peso": "1.530-1.725 kg (según versión y equipamiento)",
@@ -92,5 +92,8 @@
   "radioGiro": "5.4 m (estimado)",
   "relacionPesoPotencia": "16.0 kg/hp (calculado a partir de peso y potencia declarados)",
   "potenciaLitro": "51 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)"
+  "neumaticoRepuesto": "Rueda de auxilio temporal ('galleta') o kit reparador según versión (estimado)",
+  "iluminacion": "Faros full LED de serie, con luces diurnas LED (versiones premium con faros Matrix/adaptativos)",
+  "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
+  "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)"
 }
