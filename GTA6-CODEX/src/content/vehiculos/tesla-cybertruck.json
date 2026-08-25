@@ -32,7 +32,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:12:31.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -93,5 +93,7 @@
   "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
   "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
   "paisOrigen": "Estados Unidos",
-  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple"
+  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple",
+  "calificacionSeguridad": "5 estrellas NHTSA (4 estrellas en vuelco, riesgo 12.4%); IIHS Top Safety Pick+ (unidades fabricadas desde abril 2025)",
+  "fuenteSeguridad": "https://www.forbes.com/sites/sashalekach/2025/12/16/tesla-cybertruck-earns-highest-safety-rating-in-last-iihs-test-for-2025/"
 }

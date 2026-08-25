@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.529Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:12:31.000Z",
   "manufacturer": "Honda",
   "class": "Hatchback deportivo",
   "customizable": false,
@@ -98,5 +98,7 @@
   "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
   "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
   "paisOrigen": "Japón",
-  "numeroPuertas": "2 puertas"
+  "numeroPuertas": "2 puertas",
+  "calificacionSeguridad": "5 estrellas Euro NCAP (rating heredado del Civic estándar, generación 2017; la calificación original expiró en 2024 por antigüedad del protocolo)",
+  "fuenteSeguridad": "https://www.thecarexpert.co.uk/honda-civic-type-r-2017/"
 }

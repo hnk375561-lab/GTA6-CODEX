@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.940Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:12:31.000Z",
   "manufacturer": "Volkswagen",
   "class": "Hatchback",
   "customizable": false,
@@ -94,5 +94,7 @@
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
   "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
   "paisOrigen": "Alemania",
-  "numeroPuertas": "5 puertas (3 en versiones deportivas/compactas)"
+  "numeroPuertas": "5 puertas (3 en versiones deportivas/compactas)",
+  "calificacionSeguridad": "5 estrellas Euro NCAP (comparte carrocería y equipamiento de seguridad con el Golf estándar)",
+  "fuenteSeguridad": "https://www.autoexpress.co.uk/volkswagen/golf/63695/gti-hatchback/reliability"
 }

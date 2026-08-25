@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.868Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:12:31.000Z",
   "manufacturer": "Toyota",
   "class": "Pickup",
   "customizable": false,
@@ -97,5 +97,7 @@
   "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
   "paisOrigen": "Japón",
-  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple"
+  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple",
+  "calificacionSeguridad": "5 estrellas ANCAP (variantes actualizadas desde mayo/agosto 2019; nueva generación y versión BEV también con 5 estrellas en 2025-2026)",
+  "fuenteSeguridad": "https://www.ancap.com.au/safety-ratings/toyota/hilux/cad396"
 }

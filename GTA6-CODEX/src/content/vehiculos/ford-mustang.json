@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.815Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:12:31.000Z",
   "manufacturer": "Ford",
   "class": "Deportivo",
   "customizable": false,
@@ -100,5 +100,7 @@
   "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
   "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
   "paisOrigen": "Estados Unidos",
-  "numeroPuertas": "2 puertas"
+  "numeroPuertas": "2 puertas",
+  "calificacionSeguridad": "2 estrellas Euro NCAP (test 2024, generación S650) — la calificación más baja para un fabricante mayor en casi una década",
+  "fuenteSeguridad": "https://www.carthrottle.com/news/ford-mustang-records-shock-two-star-euro-ncap-safety-score"
 }

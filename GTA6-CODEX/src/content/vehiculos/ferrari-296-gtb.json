@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:12:31.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -96,5 +96,7 @@
   "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
   "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
   "paisOrigen": "Italia",
-  "numeroPuertas": "2 puertas"
+  "numeroPuertas": "2 puertas",
+  "calificacionSeguridad": "No evaluado por Euro NCAP (supercar de muy bajo volumen y alta exclusividad, no sujeto a ensayo obligatorio)",
+  "fuenteSeguridad": "https://www.thecarexpert.co.uk/ferrari-296-2022/"
 }
