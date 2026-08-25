@@ -232,7 +232,12 @@ export async function getEntity(type: EntityType, slug: string): Promise<Entity 
 
   if (fs.existsSync(filePath)) {
     try {
-      const raw = fs.readFileSync(filePath, 'utf-8')
+      // Mismo defensivo que en `loadEntitiesByTypeSync`: este path lee el
+      // mismo tipo de archivo directamente del disco, así que necesita la
+      // misma protección contra un BOM UTF-8 al inicio (ver comentario más
+      // arriba para el detalle del bug que esto previene).
+      const rawFile = fs.readFileSync(filePath, 'utf-8')
+      const raw = rawFile.replace(/^\uFEFF/, '')
       const parsed = JSON.parse(raw)
       if (validateEntity(parsed) && validateTypeSpecific(type, parsed, `${type}/${slug}.json`)) {
         // Mismo chequeo bloqueante que `loadEntitiesByTypeSync`: este path

@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+defaults:
+  run:
+    working-directory: GTA6-CODEX
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: GTA6-CODEX/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type-check
+        run: npm run type-check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests
+        run: npm test
+
+      # Chequeo de regresión para el bug del BOM UTF-8: si el catálogo de
+      # vehículos colapsa (por un BOM, un cambio en el loader, en el
+      # validador Zod, etc.) este paso falla el pipeline en vez de dejar
+      # pasar un build "verde" con el sitio vacío.
+      - name: Verify minimum entity count (anti-catálogo-vacío)
+        run: npm run verify:min-count
+
+      - name: Verify content integrity
+        run: npm run verify:content
+
+      - name: Verify relations integrity
+        run: npm run verify:relations
+
+      - name: Verify reserved entity keys
+        run: npm run verify:reserved-keys
+
+      - name: Verify media integrity
+        run: npm run verify:media
+
+      - name: Verify SEO routes
+        run: npm run verify:seo
+
+      - name: Build
+        run: npm run build

@@ -140,7 +140,7 @@ foreach ($archivo in $archivos) {
 
         # Guardar con formato JSON bonito
         $jsonFormato = $vehiculo | ConvertTo-Json -Depth 100
-        Set-Content -Path $rutaArchivo -Value $jsonFormato -Encoding UTF8
+        Set-Content -Path $rutaArchivo -Value $jsonFormato -Encoding utf8NoBOM
 
         $procesados++
         if ($procesados % 50 -eq 0) {

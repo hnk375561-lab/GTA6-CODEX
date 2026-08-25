@@ -94,7 +94,7 @@ $errores = 0
 foreach ($archivo in $archivos) {
     try {
         $rutaArchivo = $archivo.FullName
-        $contenido = Get-Content -Path $rutaArchivo -Raw -Encoding UTF8
+        $contenido = Get-Content -Path $rutaArchivo -Raw -Encoding utf8NoBOM
         $vehiculo = $contenido | ConvertFrom-Json
 
         if (-not $vehiculo.especificacionesMotor) {
@@ -114,7 +114,7 @@ foreach ($archivo in $archivos) {
         $vehiculo.updatedAt = (Get-Date -AsUTC -Format 'o')
 
         $jsonFormato = $vehiculo | ConvertTo-Json -Depth 100
-        Set-Content -Path $rutaArchivo -Value $jsonFormato -Encoding UTF8
+        Set-Content -Path $rutaArchivo -Value $jsonFormato -Encoding utf8NoBOM
 
         $procesados++
         if ($procesados % 50 -eq 0) {
