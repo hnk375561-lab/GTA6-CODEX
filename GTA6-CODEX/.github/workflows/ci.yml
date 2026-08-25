@@ -40,6 +40,9 @@ jobs:
       - name: Tests
         run: npm test
 
+      - name: Cantidad mínima de entidades cargadas
+        run: npm run verify:min-count
+
       - name: Integridad de contenido
         run: npm run verify:content
 
