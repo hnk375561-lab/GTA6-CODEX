@@ -222,26 +222,41 @@ pivote de más impacto (tipos de entidad, contenido real de vehículos,
 navegación, home), pero quedan cabos sueltos conocidos — se listan acá para
 que no haya sorpresas:
 
-- [ ] **`npm run type-check` sin correr contra el pivote más reciente** —
-  correrlo y arreglar lo que salga es el primer paso antes de seguir
-  sumando features.
-- [ ] **`src/app/[entityType]/page.tsx` y `[slug]/page.tsx`** todavía tienen
-  labels/condicionales de tipos de entidad que ya no existen (`Personajes`,
-  `Trailers`, etc.).
-- [ ] **Componentes huérfanos** de tráilers (`TrailerScenes.tsx`,
-  `TrailerStats.tsx`, `TrailerPlayer.tsx`) y del mapa ficticio
-  (`LeonidaMapCanvas.tsx`, `LeonidaMapExplorer.tsx`) — no se usan pero
-  siguen en el repo.
-- [ ] **Tokens de diseño `gta-*`** en Tailwind (`gta-accent`, `gta-border`,
-  etc.) y nombres como `vice-sunset` — funcionan, pero el nombre no tiene
-  sentido para este proyecto.
-- [ ] **250 archivos `.json.rej`** en `src/content/vehiculos/` — parches
-  rechazados de una migración de datos anterior, sin uso, para borrar.
 - [ ] **0 fichas marcadas como `featured`** — la sección "Destacados" de
   la home no tiene qué mostrar todavía.
-- [ ] **`vercel.json`** apunta a un dominio viejo (`gta-6-zona.vercel.app`)
-  en vez de `autoficha.vercel.app`.
 - [ ] **Nombre del repositorio en GitHub** sigue siendo `GTA6-CODEX`.
+
+<details>
+<summary>Resuelto (verificado, ya no aplica)</summary>
+
+Esta lista tenía 8 ítems y se auditó el repo real contra cada uno
+(no solo lo que decía este archivo). Los siguientes 6 ya no existen y
+se sacaron de la lista de arriba para no hacerle perder tiempo a la
+próxima persona buscando algo que no está:
+
+- `npm run type-check` corre limpio contra el código actual.
+- `src/app/[entityType]/page.tsx` y `[slug]/page.tsx` no tienen labels
+  ni condicionales de tipos de entidad viejos (`Personajes`, `Trailers`).
+- No quedan componentes huérfanos de tráilers ni del mapa ficticio
+  (`TrailerScenes.tsx`, `TrailerStats.tsx`, `TrailerPlayer.tsx`,
+  `LeonidaMapCanvas.tsx`, `LeonidaMapExplorer.tsx`) en el repo.
+- `tailwind.config.js` no tiene tokens `gta-*` — usa la paleta
+  `auto-*` ("Leonida Nights"). El script `verify:tailwind`, que
+  todavía comparaba contra los tokens viejos y por eso fallaba
+  siempre, se actualizó para chequear los tokens reales.
+- No quedan archivos `.json.rej` en `src/content/vehiculos/`.
+- `vercel.json` ya apunta a `https://autoficha.vercel.app`, no al
+  dominio viejo.
+
+Además, un bug real que **no** estaba en esta lista se encontró y
+corrigió en la auditoría: los 250 JSON de `src/content/vehiculos/`
+tenían BOM UTF-8, lo que hacía fallar `JSON.parse` en silencio y
+dejaba el catálogo con 0 vehículos en producción pese a que todos los
+checks de CI pasaban en verde. Ver el historial de commits para el
+detalle; ahora hay un check (`npm run verify:min-count`) que falla si
+esto vuelve a pasar.
+
+</details>
 
 ## 🤝 Contribuir
 
