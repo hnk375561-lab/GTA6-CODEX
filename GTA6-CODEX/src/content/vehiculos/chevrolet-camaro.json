@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.088Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Chevrolet",
   "class": "Deportivo",
   "customizable": false,
@@ -94,5 +94,7 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Chevrolet Camaro — Ficha técnica, precio y specs",
-  "seoDescription": "Cupé deportivo de Chevrolet, disponible con motor V6 o V8, rival histórico del Mustang. Potencia: 455 hp. Precio: USD 70.000."
+  "seoDescription": "Cupé deportivo de Chevrolet, disponible con motor V6 o V8, rival histórico del Mustang. Potencia: 455 hp. Precio: USD 70.000.",
+  "potenciaLitro": "228 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "120 mm (estimado)"
 }

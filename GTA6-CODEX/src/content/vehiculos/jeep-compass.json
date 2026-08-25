@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.851Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Jeep",
   "class": "SUV",
   "customizable": false,
@@ -87,5 +87,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Jeep Compass — Ficha técnica, precio y specs",
-  "seoDescription": "SUV mediana de Jeep, motor turbo 1.3L de 170 hp, con opción 4x4. Potencia: 170 hp. Precio: USD 33.000."
+  "seoDescription": "SUV mediana de Jeep, motor turbo 1.3L de 170 hp, con opción 4x4. Potencia: 170 hp. Precio: USD 33.000.",
+  "potenciaLitro": "131 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

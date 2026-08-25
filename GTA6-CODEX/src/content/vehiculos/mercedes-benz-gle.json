@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "2.150-2.500 kg",
@@ -90,5 +90,6 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Mercedes-Benz GLE — Ficha técnica, precio y specs",
-  "seoDescription": "SUV premium mediano-grande de Mercedes-Benz. Potencia: 255 hp. Precio: USD 68.000."
+  "seoDescription": "SUV premium mediano-grande de Mercedes-Benz. Potencia: 255 hp. Precio: USD 68.000.",
+  "potenciaLitro": "85 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 43 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Trasera (4x2) o 4x4 conectable según versión",
   "peso": "1.955-2.100 kg",
@@ -90,5 +90,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Isuzu MU-X — Ficha técnica, precio y specs",
-  "seoDescription": "SUV 4x4 grande de Isuzu basado en el chasis de la pickup D-Max. Potencia: 190 hp (diésel). Precio: USD 40.000."
+  "seoDescription": "SUV 4x4 grande de Isuzu basado en el chasis de la pickup D-Max. Potencia: 190 hp (diésel). Precio: USD 40.000.",
+  "potenciaLitro": "100 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

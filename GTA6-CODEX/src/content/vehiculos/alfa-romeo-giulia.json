@@ -31,7 +31,7 @@
     "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:09.269759Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "8 velocidades automática (ZF)",
   "traccion": "Tracción trasera (RWD), Q4 (AWD) opcional",
   "peso": "1.660 kg (base) - 1.830 kg (Quadrifoglio)",
@@ -98,5 +98,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Alfa Romeo Giulia — Ficha técnica, precio y specs",
-  "seoDescription": "Sedán deportivo premium de Alfa Romeo, tracción trasera, motor turbo 2.0L de 4 cilindros. Potencia: 280 hp. Precio: USD 60.000."
+  "seoDescription": "Sedán deportivo premium de Alfa Romeo, tracción trasera, motor turbo 2.0L de 4 cilindros. Potencia: 280 hp. Precio: USD 60.000.",
+  "alturaLibrePiso": "120 mm (estimado)"
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.530Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Hyundai",
   "class": "SUV",
   "customizable": false,
@@ -89,5 +89,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Hyundai Tucson — Ficha técnica, precio y specs",
-  "seoDescription": "SUV mediana de Hyundai, motor 2.0L o 1.6L turbo, diseño renovado con parrilla oculta. Potencia: 156 hp. Precio: USD 32.000."
+  "seoDescription": "SUV mediana de Hyundai, motor 2.0L o 1.6L turbo, diseño renovado con parrilla oculta. Potencia: 156 hp. Precio: USD 32.000.",
+  "potenciaLitro": "78 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

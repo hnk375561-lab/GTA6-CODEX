@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.920-2.150 kg",
@@ -90,5 +90,6 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Lexus RX — Ficha técnica, precio y specs",
-  "seoDescription": "SUV premium mediano de Lexus, principal modelo en volumen de la marca. Potencia: 275 hp (híbrido). Precio: USD 48.000."
+  "seoDescription": "SUV premium mediano de Lexus, principal modelo en volumen de la marca. Potencia: 275 hp (híbrido). Precio: USD 48.000.",
+  "potenciaLitro": "115 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

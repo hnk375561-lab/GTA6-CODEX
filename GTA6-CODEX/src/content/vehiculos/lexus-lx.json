@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 43 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "4x4 permanente con reductora",
   "peso": "2.630-2.700 kg",
@@ -91,5 +91,6 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Lexus LX — Ficha técnica, precio y specs",
-  "seoDescription": "SUV de lujo full-size de Lexus, comparte base con el Toyota Land Cruiser. Potencia: 409 hp. Precio: USD 90.000."
+  "seoDescription": "SUV de lujo full-size de Lexus, comparte base con el Toyota Land Cruiser. Potencia: 409 hp. Precio: USD 90.000.",
+  "potenciaLitro": "120 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

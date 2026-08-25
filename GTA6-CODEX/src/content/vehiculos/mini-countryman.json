@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.500-1.985 kg (incl. eléctrica)",
@@ -86,5 +86,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Mini Countryman — Ficha técnica, precio y specs",
-  "seoDescription": "SUV compacto de Mini, el modelo más grande de la gama. Potencia: 201 hp. Precio: EUR 35.000."
+  "seoDescription": "SUV compacto de Mini, el modelo más grande de la gama. Potencia: 201 hp. Precio: EUR 35.000.",
+  "potenciaLitro": "134 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

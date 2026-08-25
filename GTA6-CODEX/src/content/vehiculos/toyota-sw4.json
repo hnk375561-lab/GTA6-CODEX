@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.048Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Toyota",
   "class": "SUV 4x4",
   "customizable": false,
@@ -90,5 +90,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Toyota SW4 — Ficha técnica, precio y specs",
-  "seoDescription": "SUV 4x4 de Toyota basada en la plataforma de la Hilux, motor turbodiésel 2.8L. Se comercializa como Fortuner en otros mercados. Potencia: 204 hp."
+  "seoDescription": "SUV 4x4 de Toyota basada en la plataforma de la Hilux, motor turbodiésel 2.8L. Se comercializa como Fortuner en otros mercados. Potencia: 204 hp.",
+  "potenciaLitro": "73 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

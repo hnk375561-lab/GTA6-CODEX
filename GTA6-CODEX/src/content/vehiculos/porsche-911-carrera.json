@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.332Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Porsche",
   "class": "Deportivo",
   "customizable": false,
@@ -92,5 +92,7 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Porsche 911 Carrera — Ficha técnica, precio y specs",
-  "seoDescription": "Deportivo icónico de Porsche, motor bóxer 6 cilindros de 379 hp. Potencia: 379 hp. Precio: USD 118.000."
+  "seoDescription": "Deportivo icónico de Porsche, motor bóxer 6 cilindros de 379 hp. Potencia: 379 hp. Precio: USD 118.000.",
+  "potenciaLitro": "126 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "120 mm (estimado)"
 }

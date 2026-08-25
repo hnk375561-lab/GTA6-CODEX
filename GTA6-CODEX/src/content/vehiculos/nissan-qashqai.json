@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.400-1.700 kg",
@@ -86,5 +86,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Nissan Qashqai — Ficha técnica, precio y specs",
-  "seoDescription": "SUV compacto europeo de Nissan, con motorización e-Power (eléctrico con generador a nafta). Potencia: 158 hp. Precio: EUR 29.700."
+  "seoDescription": "SUV compacto europeo de Nissan, con motorización e-Power (eléctrico con generador a nafta). Potencia: 158 hp. Precio: EUR 29.700.",
+  "potenciaLitro": "122 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

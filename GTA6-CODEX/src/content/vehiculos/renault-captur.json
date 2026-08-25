@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:06.516209Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg (incl. híbrido E-Tech)",
@@ -84,5 +84,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Renault Captur — Ficha técnica, precio y specs",
-  "seoDescription": "SUV compacta de Renault, motor 1.3L turbo o 1.6L naturalmente aspirado. Potencia: 150 hp. Precio: USD 26.000."
+  "seoDescription": "SUV compacta de Renault, motor 1.3L turbo o 1.6L naturalmente aspirado. Potencia: 150 hp. Precio: USD 26.000.",
+  "potenciaLitro": "150 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

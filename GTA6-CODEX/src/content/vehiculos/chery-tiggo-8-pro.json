@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 43 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -90,5 +90,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Chery Tiggo 8 Pro — Ficha técnica, precio y specs",
-  "seoDescription": "SUV de siete plazas del segmento D, tope de gama de Chery en Argentina, comercializado por Grupo Corven. Potencia: 186 hp. Precio: USD 44.800."
+  "seoDescription": "SUV de siete plazas del segmento D, tope de gama de Chery en Argentina, comercializado por Grupo Corven. Potencia: 186 hp. Precio: USD 44.800.",
+  "potenciaLitro": "116 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

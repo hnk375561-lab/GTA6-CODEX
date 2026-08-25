@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.241Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Ford",
   "class": "Pickup",
   "customizable": false,
@@ -88,5 +88,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Ford Ranger — Ficha técnica, precio y specs",
-  "seoDescription": "Pickup mediana de Ford, motor 2.0L biturbo diésel de 200 hp. Potencia: 200 hp. Precio: USD 38.000."
+  "seoDescription": "Pickup mediana de Ford, motor 2.0L biturbo diésel de 200 hp. Potencia: 200 hp. Precio: USD 38.000.",
+  "potenciaLitro": "100 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "4x4 conectable con reductora",
   "peso": "1.480-1.720 kg",
@@ -84,5 +84,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Mahindra Thar — Ficha técnica, precio y specs",
-  "seoDescription": "4x4 compacto de estilo off-road de Mahindra, popular en India. Potencia: 150 hp (diésel). Precio: USD 15.000."
+  "seoDescription": "4x4 compacto de estilo off-road de Mahindra, popular en India. Potencia: 150 hp (diésel). Precio: USD 15.000.",
+  "potenciaLitro": "75 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

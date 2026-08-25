@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 32 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "8 velocidades automática (ZF)",
   "traccion": "Trasera (RWD) con diferencial electrónico trasero",
   "peso": "1.788 kg",
@@ -97,5 +97,6 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Aston Martin DB12 — Ficha técnica, precio y specs",
-  "seoDescription": "Gran turismo británico de Aston Martin, motor V8 biturbo Mercedes-AMG. Potencia: 680 PS / 671 hp @ 6000 rpm (800 Nm de torque)."
+  "seoDescription": "Gran turismo británico de Aston Martin, motor V8 biturbo Mercedes-AMG. Potencia: 680 PS / 671 hp @ 6000 rpm (800 Nm de torque).",
+  "alturaLibrePiso": "120 mm (estimado)"
 }

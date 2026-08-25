@@ -27,7 +27,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.400-1.550 kg",
@@ -88,5 +88,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Volkswagen Taos — Ficha técnica, precio y specs",
-  "seoDescription": "SUV del segmento C, restyling MY2026 con cambio de origen a Mexico, plataforma MQB A. Potencia: 150 hp. Precio: ARS 54.200.000 (version Comfortline)."
+  "seoDescription": "SUV del segmento C, restyling MY2026 con cambio de origen a Mexico, plataforma MQB A. Potencia: 150 hp. Precio: ARS 54.200.000 (version Comfortline).",
+  "potenciaLitro": "107 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

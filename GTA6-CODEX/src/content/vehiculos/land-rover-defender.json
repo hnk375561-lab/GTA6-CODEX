@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:02.633748Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "4x4 permanente con reductora",
   "peso": "2.100-2.500 kg",
@@ -89,5 +89,6 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Land Rover Defender — Ficha técnica, precio y specs",
-  "seoDescription": "SUV 4x4 premium de Land Rover, chasis monocasco, motores desde 4 hasta 6 cilindros. Potencia: 296 hp. Precio: USD 85.000."
+  "seoDescription": "SUV 4x4 premium de Land Rover, chasis monocasco, motores desde 4 hasta 6 cilindros. Potencia: 296 hp. Precio: USD 85.000.",
+  "potenciaLitro": "148 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

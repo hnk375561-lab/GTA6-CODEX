@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -89,5 +89,7 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Subaru WRX — Ficha técnica, precio y specs",
-  "seoDescription": "Sedán deportivo turbo de tracción integral, versión de calle del rally car. Potencia: 271 hp. Precio: USD 33.500."
+  "seoDescription": "Sedán deportivo turbo de tracción integral, versión de calle del rally car. Potencia: 271 hp. Precio: USD 33.500.",
+  "potenciaLitro": "113 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "120 mm (estimado)"
 }

@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:05.966220Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.020-1.100 kg",
@@ -80,5 +80,7 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Hyundai HB20 — Ficha técnica, precio y specs",
-  "seoDescription": "Hatchback compacto de Hyundai, producido en Brasil, motor 1.0L turbo o 1.6L. Potencia: 120 hp. Precio: USD 18.500."
+  "seoDescription": "Hatchback compacto de Hyundai, producido en Brasil, motor 1.0L turbo o 1.6L. Potencia: 120 hp. Precio: USD 18.500.",
+  "potenciaLitro": "120 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "145 mm (estimado)"
 }

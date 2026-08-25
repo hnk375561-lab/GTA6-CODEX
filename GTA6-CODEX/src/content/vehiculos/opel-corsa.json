@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.090-1.530 kg (incl. versión eléctrica Corsa-e)",
@@ -81,5 +81,7 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Opel Corsa — Ficha técnica, precio y specs",
-  "seoDescription": "Compacto europeo de Opel (Stellantis), también disponible en versión eléctrica. Potencia: 100 hp. Precio: EUR 20.000."
+  "seoDescription": "Compacto europeo de Opel (Stellantis), también disponible en versión eléctrica. Potencia: 100 hp. Precio: EUR 20.000.",
+  "potenciaLitro": "83 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "145 mm (estimado)"
 }

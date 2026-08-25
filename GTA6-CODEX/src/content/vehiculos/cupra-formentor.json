@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:09.542585Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -89,5 +89,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Cupra Formentor — Ficha técnica, precio y specs",
-  "seoDescription": "SUV coupé deportiva de Cupra (marca de SEAT), motor turbo 2.0L. Potencia: 245 hp. Precio: USD 48.000."
+  "seoDescription": "SUV coupé deportiva de Cupra (marca de SEAT), motor turbo 2.0L. Potencia: 245 hp. Precio: USD 48.000.",
+  "potenciaLitro": "163 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

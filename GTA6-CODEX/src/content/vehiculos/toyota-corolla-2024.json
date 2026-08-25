@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.194Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Toyota",
   "class": "Sedán",
   "customizable": false,
@@ -92,5 +92,7 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Toyota Corolla 2024 — Ficha técnica, precio y specs",
-  "seoDescription": "Sedán compacto de Toyota, generación XII, motor 2.0L de 4 cilindros. Potencia: 169 hp. Precio: USD 24.000."
+  "seoDescription": "Sedán compacto de Toyota, generación XII, motor 2.0L de 4 cilindros. Potencia: 169 hp. Precio: USD 24.000.",
+  "potenciaLitro": "94 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "135 mm (estimado)"
 }

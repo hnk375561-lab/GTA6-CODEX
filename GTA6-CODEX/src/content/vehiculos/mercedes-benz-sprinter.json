@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:08.724580Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Trasera (RWD) o tracción integral 4x4 según versión",
   "peso": "2.200-2.700 kg (según versión y batalla)",
@@ -88,5 +88,7 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Mercedes-Benz Sprinter — Ficha técnica, precio y specs",
-  "seoDescription": "Furgón grande de Mercedes-Benz, base para transporte de pasajeros, carga y camperización, motor turbodiésel. Potencia: 163 hp. Precio: USD 55.000."
+  "seoDescription": "Furgón grande de Mercedes-Benz, base para transporte de pasajeros, carga y camperización, motor turbodiésel. Potencia: 163 hp. Precio: USD 55.000.",
+  "potenciaLitro": "82 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "155 mm (estimado)"
 }

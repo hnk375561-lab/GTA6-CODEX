@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 43 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -90,5 +90,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Chevrolet Trailblazer — Ficha técnica, precio y specs",
-  "seoDescription": "SUV grande de tres filas para 7 pasajeros, motor turbodiésel, tracción 4x4 con reductora, fabricado en Brasil. Potencia: 207 hp."
+  "seoDescription": "SUV grande de tres filas para 7 pasajeros, motor turbodiésel, tracción 4x4 con reductora, fabricado en Brasil. Potencia: 207 hp.",
+  "potenciaLitro": "74 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

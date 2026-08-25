@@ -32,7 +32,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.075-1.235 kg",
@@ -88,5 +88,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Suzuki Vitara — Ficha técnica, precio y specs",
-  "seoDescription": "SUV compacto de Suzuki, versión GLX 1.4T con tracción y caja automática, vendido oficialmente en Argentina. Potencia: 140 hp (aprox., motor 1.4 BoosterJet tu..."
+  "seoDescription": "SUV compacto de Suzuki, versión GLX 1.4T con tracción y caja automática, vendido oficialmente en Argentina. Potencia: 140 hp (aprox., motor 1.4 BoosterJet tu...",
+  "potenciaLitro": "100 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

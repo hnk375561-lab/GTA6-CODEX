@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Trasera (4x2) o 4x4 conectable según versión",
   "peso": "1.930-2.100 kg",
@@ -88,5 +88,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Nissan Navara — Ficha técnica, precio y specs",
-  "seoDescription": "Pickup mediana de Nissan (también conocida como Frontier en otros mercados). Potencia: 190 hp (diésel). Precio: USD 32.000."
+  "seoDescription": "Pickup mediana de Nissan (también conocida como Frontier en otros mercados). Potencia: 190 hp (diésel). Precio: USD 32.000.",
+  "potenciaLitro": "83 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

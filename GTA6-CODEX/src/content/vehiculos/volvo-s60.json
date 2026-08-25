@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-1.850 kg",
@@ -88,5 +88,7 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Volvo S60 — Ficha técnica, precio y specs",
-  "seoDescription": "Sedán ejecutivo de Volvo, fabricado en Carolina del Sur (EE.UU.). Potencia: 250 hp. Precio: USD 43.000."
+  "seoDescription": "Sedán ejecutivo de Volvo, fabricado en Carolina del Sur (EE.UU.). Potencia: 250 hp. Precio: USD 43.000.",
+  "potenciaLitro": "125 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "135 mm (estimado)"
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.524Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Tesla",
   "class": "Sedán",
   "customizable": false,
@@ -92,5 +92,6 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Tesla Model 3 — Ficha técnica, precio y specs",
-  "seoDescription": "Sedán 100% eléctrico de Tesla, tracción trasera, autonomía de largo alcance. Potencia: 283 hp (RWD). Precio: USD 42.000."
+  "seoDescription": "Sedán 100% eléctrico de Tesla, tracción trasera, autonomía de largo alcance. Potencia: 283 hp (RWD). Precio: USD 42.000.",
+  "alturaLibrePiso": "135 mm (estimado)"
 }

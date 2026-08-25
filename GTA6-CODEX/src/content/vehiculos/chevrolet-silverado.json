@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:03.723060Z",
-  "updatedAt": "2026-08-25T04:10:36.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "2.100-2.400 kg (verificado, según cabina y configuración)",
@@ -87,5 +87,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Chevrolet Silverado — Ficha técnica, precio y specs",
-  "seoDescription": "Pickup full-size de Chevrolet, motor V8 5.3L o Duramax turbodiésel según versión. Potencia: 355 hp. Precio: USD 58.000."
+  "seoDescription": "Pickup full-size de Chevrolet, motor V8 5.3L o Duramax turbodiésel según versión. Potencia: 355 hp. Precio: USD 58.000.",
+  "potenciaLitro": "67 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

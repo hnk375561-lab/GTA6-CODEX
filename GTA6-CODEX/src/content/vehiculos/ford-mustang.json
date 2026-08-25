@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.815Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Ford",
   "class": "Deportivo",
   "customizable": false,
@@ -93,5 +93,7 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Ford Mustang — Ficha técnica, precio y specs",
-  "seoDescription": "Cupé deportivo de Ford, motor V8 5.0L de 480 hp en su versión GT, ícono del muscle car. Potencia: 480 hp. Precio: USD 68.000."
+  "seoDescription": "Cupé deportivo de Ford, motor V8 5.0L de 480 hp en su versión GT, ícono del muscle car. Potencia: 480 hp. Precio: USD 68.000.",
+  "potenciaLitro": "209 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "120 mm (estimado)"
 }

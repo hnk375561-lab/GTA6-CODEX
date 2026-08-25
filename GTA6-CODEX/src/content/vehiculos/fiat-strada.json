@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:07.061130Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Delantera (FWD)",
   "peso": "1.150-1.300 kg",
@@ -85,5 +85,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Fiat Strada — Ficha técnica, precio y specs",
-  "seoDescription": "Pickup compacta de Fiat, líder de su segmento en varios países de la región, motor turbo 1.3L. Potencia: 107 hp. Precio: USD 20.000."
+  "seoDescription": "Pickup compacta de Fiat, líder de su segmento en varios países de la región, motor turbo 1.3L. Potencia: 107 hp. Precio: USD 20.000.",
+  "potenciaLitro": "82 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

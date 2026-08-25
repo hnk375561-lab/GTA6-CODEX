@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:08.449854Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.550 kg",
@@ -79,5 +79,7 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Peugeot Partner — Ficha técnica, precio y specs",
-  "seoDescription": "Furgón utilitario de Peugeot, versión de pasajeros y de carga disponibles. Potencia: 115 hp. Precio: USD 24.000."
+  "seoDescription": "Furgón utilitario de Peugeot, versión de pasajeros y de carga disponibles. Potencia: 115 hp. Precio: USD 24.000.",
+  "potenciaLitro": "72 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "155 mm (estimado)"
 }

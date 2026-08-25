@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.254Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Mercedes-Benz",
   "class": "Sedán premium",
   "customizable": false,
@@ -88,5 +88,7 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Mercedes-Benz Clase C — Ficha técnica, precio y specs",
-  "seoDescription": "Sedán premium de Mercedes-Benz, motor 2.0L turbo, equipamiento tecnológico de gama alta. Potencia: 204 hp. Precio: USD 62.000."
+  "seoDescription": "Sedán premium de Mercedes-Benz, motor 2.0L turbo, equipamiento tecnológico de gama alta. Potencia: 204 hp. Precio: USD 62.000.",
+  "potenciaLitro": "136 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "135 mm (estimado)"
 }

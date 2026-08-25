@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.240-1.360 kg",
@@ -82,5 +82,7 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Honda Freed — Ficha técnica, precio y specs",
-  "seoDescription": "Minivan compacta japonesa de Honda. Potencia: 106 hp (híbrido). Precio: USD 20.000."
+  "seoDescription": "Minivan compacta japonesa de Honda. Potencia: 106 hp (híbrido). Precio: USD 20.000.",
+  "potenciaLitro": "71 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "155 mm (estimado)"
 }

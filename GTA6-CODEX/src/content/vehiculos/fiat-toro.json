@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:35.107Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Fiat",
   "class": "Pickup",
   "customizable": false,
@@ -84,5 +84,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Fiat Toro — Ficha técnica, precio y specs",
-  "seoDescription": "Pickup mediana de Fiat, motor turbo 1.8L o 2.0L diésel, popular en Argentina y Brasil. Potencia: 175 hp. Precio: USD 31.000."
+  "seoDescription": "Pickup mediana de Fiat, motor turbo 1.8L o 2.0L diésel, popular en Argentina y Brasil. Potencia: 175 hp. Precio: USD 31.000.",
+  "potenciaLitro": "135 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

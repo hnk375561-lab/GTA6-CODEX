@@ -32,7 +32,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -89,5 +89,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "BAIC X55 — Ficha técnica, precio y specs",
-  "seoDescription": "SUV compacto de BAIC Motor para mercados de exportación. Potencia: 185 hp @ 5.500 rpm (motor 1.5T, 305 Nm). Precio: USD 18.000."
+  "seoDescription": "SUV compacto de BAIC Motor para mercados de exportación. Potencia: 185 hp @ 5.500 rpm (motor 1.5T, 305 Nm). Precio: USD 18.000.",
+  "potenciaLitro": "123 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

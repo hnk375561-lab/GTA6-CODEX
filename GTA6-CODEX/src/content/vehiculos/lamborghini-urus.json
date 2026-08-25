@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Integral (AWD) permanente",
   "peso": "2.150-2.200 kg",
@@ -90,5 +90,6 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Lamborghini Urus — Ficha técnica, precio y specs",
-  "seoDescription": "SUV deportivo de altas prestaciones de Lamborghini, motor V8 biturbo. Potencia: 657 hp. Precio: USD 240.000."
+  "seoDescription": "SUV deportivo de altas prestaciones de Lamborghini, motor V8 biturbo. Potencia: 657 hp. Precio: USD 240.000.",
+  "potenciaLitro": "164 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

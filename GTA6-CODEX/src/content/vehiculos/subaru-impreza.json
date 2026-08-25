@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Integral simétrica AWD de serie",
   "peso": "1.420-1.500 kg",
@@ -82,5 +82,7 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Subaru Impreza — Ficha técnica, precio y specs",
-  "seoDescription": "Compacto de tracción integral simétrica de Subaru. Potencia: 182 hp. Precio: USD 24.000."
+  "seoDescription": "Compacto de tracción integral simétrica de Subaru. Potencia: 182 hp. Precio: USD 24.000.",
+  "potenciaLitro": "91 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "145 mm (estimado)"
 }

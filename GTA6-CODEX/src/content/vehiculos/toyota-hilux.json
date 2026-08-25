@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.868Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Toyota",
   "class": "Pickup",
   "customizable": false,
@@ -92,5 +92,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Toyota Hilux — Ficha técnica, precio y specs",
-  "seoDescription": "Pickup grande de Toyota, motor turbodiésel 2.8L, referencia de robustez en el segmento. Potencia: 204 hp. Precio: USD 45.000."
+  "seoDescription": "Pickup grande de Toyota, motor turbodiésel 2.8L, referencia de robustez en el segmento. Potencia: 204 hp. Precio: USD 45.000.",
+  "potenciaLitro": "85 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

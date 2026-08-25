@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.330-1.420 kg",
@@ -87,5 +87,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Chery Omoda 5 — Ficha técnica, precio y specs",
-  "seoDescription": "SUV compacto de Chery orientado a exportación, con diseño futurista. Potencia: 145 hp. Precio: EUR 24.500."
+  "seoDescription": "SUV compacto de Chery orientado a exportación, con diseño futurista. Potencia: 145 hp. Precio: EUR 24.500.",
+  "potenciaLitro": "97 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

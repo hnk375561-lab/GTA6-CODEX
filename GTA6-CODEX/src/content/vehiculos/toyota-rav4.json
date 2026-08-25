@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.800Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Toyota",
   "class": "SUV",
   "customizable": false,
@@ -94,5 +94,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Toyota RAV4 — Ficha técnica, precio y specs",
-  "seoDescription": "SUV compacta de Toyota, disponible en versión híbrida, motor 2.5L. Potencia: 203 hp. Precio: USD 29.000."
+  "seoDescription": "SUV compacta de Toyota, disponible en versión híbrida, motor 2.5L. Potencia: 203 hp. Precio: USD 29.000.",
+  "potenciaLitro": "102 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

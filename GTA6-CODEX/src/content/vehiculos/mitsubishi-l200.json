@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:02.058147Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Trasera (4x2) o 4x4 Super Select según versión",
   "peso": "1.845-2.030 kg",
@@ -86,5 +86,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Mitsubishi L200 — Ficha técnica, precio y specs",
-  "seoDescription": "Pickup mediana de Mitsubishi, motor turbodiésel 2.4L, tracción 4x4 Super Select. Potencia: 178 hp. Precio: USD 42.000."
+  "seoDescription": "Pickup mediana de Mitsubishi, motor turbodiésel 2.4L, tracción 4x4 Super Select. Potencia: 178 hp. Precio: USD 42.000.",
+  "potenciaLitro": "74 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

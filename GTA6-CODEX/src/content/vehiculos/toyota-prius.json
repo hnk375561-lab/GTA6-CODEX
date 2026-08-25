@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.325-1.420 kg",
@@ -87,5 +87,7 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Toyota Prius — Ficha técnica, precio y specs",
-  "seoDescription": "Pionero de los híbridos, quinta generación con diseño mucho más deportivo. Potencia: 196 hp (híbrido). Precio: USD 28.000."
+  "seoDescription": "Pionero de los híbridos, quinta generación con diseño mucho más deportivo. Potencia: 196 hp (híbrido). Precio: USD 28.000.",
+  "potenciaLitro": "98 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "135 mm (estimado)"
 }

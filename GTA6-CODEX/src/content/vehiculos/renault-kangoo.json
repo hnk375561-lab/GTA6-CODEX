@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.693Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Renault",
   "class": "Utilitario",
   "customizable": false,
@@ -82,5 +82,7 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Renault Kangoo — Ficha técnica, precio y specs",
-  "seoDescription": "Furgón utilitario de Renault, motor 1.6L de 16v, usado como vehículo comercial. Potencia: 105 hp. Precio: USD 19.000."
+  "seoDescription": "Furgón utilitario de Renault, motor 1.6L de 16v, usado como vehículo comercial. Potencia: 105 hp. Precio: USD 19.000.",
+  "potenciaLitro": "66 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "155 mm (estimado)"
 }

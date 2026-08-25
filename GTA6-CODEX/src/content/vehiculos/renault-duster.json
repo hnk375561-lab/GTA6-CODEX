@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.126Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "manufacturer": "Renault",
   "class": "SUV",
   "customizable": false,
@@ -87,5 +87,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Renault Duster — Ficha técnica, precio y specs",
-  "seoDescription": "SUV mediana de Renault, motor 1.3L turbo o 1.6L naturalmente aspirado. Potencia: 150 hp. Precio: USD 24.000."
+  "seoDescription": "SUV mediana de Renault, motor 1.3L turbo o 1.6L naturalmente aspirado. Potencia: 150 hp. Precio: USD 24.000.",
+  "potenciaLitro": "115 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

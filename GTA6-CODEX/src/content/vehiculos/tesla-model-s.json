@@ -32,7 +32,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -91,5 +91,6 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Tesla Model S — Ficha técnica, precio y specs",
-  "seoDescription": "Sedán eléctrico insignia de Tesla, versión Plaid supera los 1000 hp. Potencia: 670 hp (Dual Motor) / 1020 hp (Plaid)."
+  "seoDescription": "Sedán eléctrico insignia de Tesla, versión Plaid supera los 1000 hp. Potencia: 670 hp (Dual Motor) / 1020 hp (Plaid).",
+  "alturaLibrePiso": "135 mm (estimado)"
 }

@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -84,5 +84,7 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Peugeot 408 — Ficha técnica, precio y specs",
-  "seoDescription": "Crossover fastback importado de Francia, version unica GT, regreso del nombre 408 al mercado argentino tras su etapa como sedan. Potencia: 215 hp."
+  "seoDescription": "Crossover fastback importado de Francia, version unica GT, regreso del nombre 408 al mercado argentino tras su etapa como sedan. Potencia: 215 hp.",
+  "potenciaLitro": "179 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "alturaLibrePiso": "165 mm (estimado)"
 }

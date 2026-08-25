@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 43 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -91,5 +91,6 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Maserati Grecale — Ficha técnica, precio y specs",
-  "seoDescription": "SUV de lujo de Maserati, plataforma compartida con Alfa Romeo Stelvio. Potencia: 330 hp. Precio: USD 68.000."
+  "seoDescription": "SUV de lujo de Maserati, plataforma compartida con Alfa Romeo Stelvio. Potencia: 330 hp. Precio: USD 68.000.",
+  "potenciaLitro": "165 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }

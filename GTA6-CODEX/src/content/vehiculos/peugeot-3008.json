@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:45:52.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -88,5 +88,6 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Peugeot 3008 GT — Ficha técnica, precio y specs",
-  "seoDescription": "SUV mediano fastback de Peugeot, tercera generación, fabricado en Sochaux (Francia) sobre plataforma STLA Medium, comercializado en Argentina exclusivamente..."
+  "seoDescription": "SUV mediano fastback de Peugeot, tercera generación, fabricado en Sochaux (Francia) sobre plataforma STLA Medium, comercializado en Argentina exclusivamente...",
+  "potenciaLitro": "150 hp/L (calculado a partir de cilindrada y potencia declaradas)"
 }
