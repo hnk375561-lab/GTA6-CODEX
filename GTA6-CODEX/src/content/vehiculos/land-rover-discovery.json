@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 43 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "4x4 permanente con reductora",
   "peso": "2.150-2.450 kg",
@@ -91,5 +91,7 @@
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Land Rover Discovery — Ficha técnica, precio y specs",
   "seoDescription": "SUV grande de 7 plazas de Land Rover con fuerte capacidad off-road. Potencia: 300 hp. Precio: USD 62.000.",
-  "potenciaLitro": "100 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "100 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
+  "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)"
 }

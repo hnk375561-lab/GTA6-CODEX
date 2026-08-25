@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.747Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Volvo",
   "class": "SUV premium",
   "customizable": false,
@@ -90,5 +90,8 @@
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Volvo XC60 — Ficha técnica, precio y specs",
   "seoDescription": "SUV premium de Volvo, motor 2.0L turbo, foco fuerte en seguridad activa. Potencia: 250 hp. Precio: USD 75.000.",
-  "potenciaLitro": "125 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "125 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
+  "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
+  "capacidadRemolque": "1.800-2.200 kg (estimado)"
 }

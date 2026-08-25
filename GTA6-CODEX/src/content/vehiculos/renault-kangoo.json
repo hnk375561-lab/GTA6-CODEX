@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.693Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Renault",
   "class": "Utilitario",
   "customizable": false,
@@ -84,5 +84,8 @@
   "seoTitle": "Renault Kangoo — Ficha técnica, precio y specs",
   "seoDescription": "Furgón utilitario de Renault, motor 1.6L de 16v, usado como vehículo comercial. Potencia: 105 hp. Precio: USD 19.000.",
   "potenciaLitro": "66 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "alturaLibrePiso": "155 mm (estimado)"
+  "alturaLibrePiso": "155 mm (estimado)",
+  "tapiceria": "Tela",
+  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
+  "capacidadRemolque": "1.500 kg (estimado)"
 }

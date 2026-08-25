@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:32.112Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Audi",
   "class": "SUV premium compacta",
   "customizable": false,
@@ -94,5 +94,8 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Audi Q3 — Ficha técnica, precio y specs",
-  "seoDescription": "SUV premium compacta de Audi, motor 1.4L TFSI turbo, plataforma compartida con el grupo VW. Potencia: 150 hp. Precio: USD 55.000."
+  "seoDescription": "SUV premium compacta de Audi, motor 1.4L TFSI turbo, plataforma compartida con el grupo VW. Potencia: 150 hp. Precio: USD 55.000.",
+  "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
+  "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
+  "capacidadRemolque": "1.800-2.200 kg (estimado)"
 }

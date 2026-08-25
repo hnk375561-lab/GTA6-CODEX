@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:49:36.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "108-118 kg",
@@ -79,5 +79,7 @@
   "seoDescription": "Scooter urbana de acceso de Piaggio, orientada a movilidad diaria. Potencia: 12.7 hp (125cc). Precio: EUR 3.700.",
   "refrigeracion": "Aire",
   "alturaAsiento": "780 mm (estimado)",
-  "tipoArranque": "Eléctrico"
+  "tipoArranque": "Eléctrico",
+  "velocidades": "Automática CVT",
+  "embrague": "Automático centrífugo (CVT)"
 }

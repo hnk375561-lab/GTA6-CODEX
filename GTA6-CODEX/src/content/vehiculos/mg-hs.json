@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.470-1.660 kg",
@@ -88,5 +88,8 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "MG HS — Ficha técnica, precio y specs",
   "seoDescription": "SUV compacto de MG, con opción de motor turbo o híbrido enchufable. Potencia: 162 hp. Precio: EUR 28.000.",
-  "potenciaLitro": "108 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "108 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
+  "capacidadRemolque": "1.200-1.500 kg (estimado)"
 }

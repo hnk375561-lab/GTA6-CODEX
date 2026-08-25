@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.470-1.750 kg",
@@ -87,5 +87,8 @@
   "seoTitle": "Skoda Superb — Ficha técnica, precio y specs",
   "seoDescription": "Sedán/wagon grande de Skoda, tope de gama de la marca checa. Potencia: 150 hp. Precio: EUR 34.000.",
   "potenciaLitro": "100 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "alturaLibrePiso": "135 mm (estimado)"
+  "alturaLibrePiso": "135 mm (estimado)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
 }

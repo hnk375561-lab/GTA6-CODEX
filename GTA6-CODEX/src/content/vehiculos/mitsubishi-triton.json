@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Trasera (4x2) o 4x4 Super Select según versión",
   "peso": "1.900-2.150 kg",
@@ -88,5 +88,7 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Mitsubishi Triton — Ficha técnica, precio y specs",
   "seoDescription": "Pickup mediana de Mitsubishi (también conocida como L200 en Europa). Potencia: 201 hp (diésel). Precio: USD 30.000.",
-  "potenciaLitro": "84 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "84 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)"
 }

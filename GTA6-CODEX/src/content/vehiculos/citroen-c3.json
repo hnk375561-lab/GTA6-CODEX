@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.601Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Citroën",
   "class": "Hatchback",
   "customizable": false,
@@ -84,5 +84,8 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Citroën C3 — Ficha técnica, precio y specs",
   "seoDescription": "Hatchback compacto de Citroën, plataforma CMP, suspensión con Progressive Hydraulic Cushions. Potencia: 115 hp. Precio: USD 18.000.",
-  "alturaLibrePiso": "145 mm (estimado)"
+  "alturaLibrePiso": "145 mm (estimado)",
+  "tapiceria": "Tela",
+  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
 }

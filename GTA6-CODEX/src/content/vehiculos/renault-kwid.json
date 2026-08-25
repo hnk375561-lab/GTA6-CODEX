@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.424Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Renault",
   "class": "Hatchback económico",
   "customizable": false,
@@ -84,5 +84,8 @@
   "climatizacion": "Aire acondicionado manual (climatizador automático disponible en versiones superiores)",
   "seoTitle": "Renault Kwid — Ficha técnica, precio y specs",
   "seoDescription": "Hatchback urbano de entrada de Renault, motor 1.0L. Potencia: 68 hp. Precio: USD 13.000.",
-  "alturaLibrePiso": "145 mm (estimado)"
+  "alturaLibrePiso": "145 mm (estimado)",
+  "tapiceria": "Tela",
+  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
 }

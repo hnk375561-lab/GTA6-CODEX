@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.065Z",
-  "updatedAt": "2026-08-25T04:49:36.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Honda",
   "class": "Moto",
   "customizable": false,
@@ -76,5 +76,7 @@
   "seoDescription": "Moto naked de Honda, motor bicilíndrico de 471cc, ideal para uso urbano y ruta. Potencia: 47 hp. Precio: USD 7.000.",
   "refrigeracion": "Líquida",
   "alturaAsiento": "785 mm",
-  "tipoArranque": "Eléctrico"
+  "tipoArranque": "Eléctrico",
+  "velocidades": "6 velocidades",
+  "embrague": "Multidisco en baño de aceite, antirrebote"
 }

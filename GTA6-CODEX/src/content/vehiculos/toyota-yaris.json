@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.060Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Toyota",
   "class": "Hatchback",
   "customizable": false,
@@ -85,5 +85,8 @@
   "seoTitle": "Toyota Yaris — Ficha técnica, precio y specs",
   "seoDescription": "Hatchback compacto de Toyota, motor 1.5L de 4 cilindros. Potencia: 106 hp. Precio: USD 19.000.",
   "potenciaLitro": "82 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "alturaLibrePiso": "145 mm (estimado)"
+  "alturaLibrePiso": "145 mm (estimado)",
+  "tapiceria": "Tela",
+  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
 }

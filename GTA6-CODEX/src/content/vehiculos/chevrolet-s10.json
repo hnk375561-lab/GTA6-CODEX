@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.141Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Chevrolet",
   "class": "Pickup",
   "customizable": false,
@@ -86,5 +86,7 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Chevrolet S10 — Ficha técnica, precio y specs",
-  "seoDescription": "Pickup grande de Chevrolet, motor turbodiésel 2.8L Duramax de 200 hp. Potencia: 200 hp. Precio: USD 44.000."
+  "seoDescription": "Pickup grande de Chevrolet, motor turbodiésel 2.8L Duramax de 200 hp. Potencia: 200 hp. Precio: USD 44.000.",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)"
 }

@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:03.999490Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Trasera (4x2) o 4x4 conectable según versión",
   "peso": "1.870-2.080 kg",
@@ -87,5 +87,7 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Isuzu D-Max — Ficha técnica, precio y specs",
   "seoDescription": "Pickup mediana de Isuzu, motor turbodiésel 3.0L, conocida por su durabilidad. Potencia: 163 hp. Precio: USD 38.000.",
-  "potenciaLitro": "86 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "86 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)"
 }

@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:06.238471Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.700-1.800 kg",
@@ -91,5 +91,8 @@
   "infoentretenimiento": "Pantalla táctil de 8-10\", Apple CarPlay y Android Auto de serie",
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Hyundai Kona Eléctrico — Ficha técnica, precio y specs",
-  "seoDescription": "SUV compacta 100% eléctrica de Hyundai. Potencia: 201 hp. Precio: USD 42.000."
+  "seoDescription": "SUV compacta 100% eléctrica de Hyundai. Potencia: 201 hp. Precio: USD 42.000.",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
+  "capacidadRemolque": "1.500-2.000 kg (estimado)"
 }

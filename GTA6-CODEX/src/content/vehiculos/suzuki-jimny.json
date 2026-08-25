@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "4x4 conectable con caja reductora",
   "peso": "1.090-1.135 kg",
@@ -88,5 +88,8 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Suzuki Jimny — Ficha técnica, precio y specs",
   "seoDescription": "4x4 compacto icónico de Suzuki, chasis de largueros y reductora. Potencia: 101 hp. Precio: USD 24.500.",
-  "potenciaLitro": "67 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "67 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Tela",
+  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
+  "capacidadRemolque": "1.200-1.500 kg (estimado)"
 }

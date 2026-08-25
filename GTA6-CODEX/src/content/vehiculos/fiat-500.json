@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:07.332517Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.035-1.145 kg (según versión gasolina o 500e eléctrico)",
@@ -86,5 +86,8 @@
   "seoTitle": "Fiat 500 — Ficha técnica, precio y specs",
   "seoDescription": "Hatchback urbano de diseño retro de Fiat, también disponible en versión 100% eléctrica. Potencia: 95 hp. Precio: USD 23.000.",
   "potenciaLitro": "106 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "alturaLibrePiso": "145 mm (estimado)"
+  "alturaLibrePiso": "145 mm (estimado)",
+  "tapiceria": "Tela",
+  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
 }

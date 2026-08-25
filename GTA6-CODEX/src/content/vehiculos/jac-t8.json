@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Trasera (4x2) o 4x4 conectable según versión",
   "peso": "1.940-2.050 kg",
@@ -85,5 +85,7 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "JAC T8 — Ficha técnica, precio y specs",
   "seoDescription": "Pickup mediana china 4x4, alternativa de precio competitivo frente a Hilux y Ranger en Argentina. Potencia: 136 hp. Precio: USD 34.900 (precio de lanzamiento).",
-  "potenciaLitro": "68 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "68 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)"
 }

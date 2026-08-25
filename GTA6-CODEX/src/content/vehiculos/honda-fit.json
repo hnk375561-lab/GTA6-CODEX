@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:04.543405Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.030-1.130 kg",
@@ -83,5 +83,8 @@
   "seoTitle": "Honda Fit — Ficha técnica, precio y specs",
   "seoDescription": "Hatchback compacto de Honda, conocido por su habitabilidad interior (asientos Magic Seat). Potencia: 126 hp. Precio: USD 20.000.",
   "potenciaLitro": "84 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "alturaLibrePiso": "145 mm (estimado)"
+  "alturaLibrePiso": "145 mm (estimado)",
+  "tapiceria": "Tela",
+  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
 }

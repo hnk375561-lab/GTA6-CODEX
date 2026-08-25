@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.070-1.220 kg",
@@ -86,5 +86,8 @@
   "seoTitle": "Renault Clio — Ficha técnica, precio y specs",
   "seoDescription": "Hatchback compacto europeo de Renault, uno de los más vendidos históricos de Europa. Potencia: 90 hp. Precio: EUR 18.500.",
   "potenciaLitro": "90 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "alturaLibrePiso": "145 mm (estimado)"
+  "alturaLibrePiso": "145 mm (estimado)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
 }

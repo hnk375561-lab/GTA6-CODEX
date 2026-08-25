@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.755-1.855 kg",
@@ -86,5 +86,8 @@
   "seoTitle": "Toyota Innova — Ficha técnica, precio y specs",
   "seoDescription": "Minivan/MPV de Toyota muy popular en el sudeste asiático. Potencia: 136 hp (diésel). Precio: USD 24.000.",
   "potenciaLitro": "68 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "alturaLibrePiso": "155 mm (estimado)"
+  "alturaLibrePiso": "155 mm (estimado)",
+  "tapiceria": "Tela",
+  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
+  "capacidadRemolque": "1.500 kg (estimado)"
 }

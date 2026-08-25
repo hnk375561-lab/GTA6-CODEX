@@ -32,7 +32,7 @@
     "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:49:36.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "6 velocidades manual secuencial, embrague húmedo",
   "traccion": "Trasera por cadena",
   "peso": "202 kg (Factory) / aprox. 199 kg (base), en orden de marcha",
@@ -87,5 +87,7 @@
   "seoDescription": "Superdeportiva de Aprilia, motor V4 de 1099cc. Potencia: 220 hp @ 13.100 rpm (motor V4 de 1099cc).",
   "refrigeracion": "Líquida",
   "alturaAsiento": "845 mm",
-  "tipoArranque": "Eléctrico"
+  "tipoArranque": "Eléctrico",
+  "velocidades": "6 velocidades",
+  "embrague": "Multidisco en baño de aceite, antirrebote (slipper)"
 }

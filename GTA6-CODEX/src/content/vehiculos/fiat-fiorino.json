@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.100-1.400 kg (vehículo vacío / con carga)",
@@ -81,5 +81,8 @@
   "seoTitle": "Fiat Fiorino — Ficha técnica, precio y specs",
   "seoDescription": "Furgon utilitario compacto, el mas elegido de su segmento en Argentina para logistica urbana y PyMEs. Potencia: 99 hp (motor 1.3 Firefly).",
   "potenciaLitro": "71 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "alturaLibrePiso": "155 mm (estimado)"
+  "alturaLibrePiso": "155 mm (estimado)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
+  "capacidadRemolque": "1.500 kg (estimado)"
 }

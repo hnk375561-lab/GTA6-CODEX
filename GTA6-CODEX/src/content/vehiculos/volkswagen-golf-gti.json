@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.940Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Volkswagen",
   "class": "Hatchback",
   "customizable": false,
@@ -89,5 +89,8 @@
   "seoTitle": "Volkswagen Golf GTI — Ficha técnica, precio y specs",
   "seoDescription": "Hatchback deportivo de Volkswagen, motor turbo 2.0L TSI de 245 hp. Potencia: 245 hp. Precio: USD 32.000.",
   "potenciaLitro": "122 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "alturaLibrePiso": "145 mm (estimado)"
+  "alturaLibrePiso": "145 mm (estimado)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
 }

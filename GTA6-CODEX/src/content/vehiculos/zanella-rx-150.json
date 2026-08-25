@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.849Z",
-  "updatedAt": "2026-08-25T04:49:36.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Zanella",
   "class": "Moto",
   "customizable": false,
@@ -76,5 +76,7 @@
   "seoDescription": "Moto naked económica de la marca argentina Zanella, motor monocilíndrico de 150cc. Potencia: 12.5 hp. Precio: USD 2.400.",
   "refrigeracion": "Aire",
   "alturaAsiento": "780 mm (estimado)",
-  "tipoArranque": "Eléctrico"
+  "tipoArranque": "Eléctrico",
+  "velocidades": "5 velocidades (estimado)",
+  "embrague": "Multidisco en baño de aceite"
 }

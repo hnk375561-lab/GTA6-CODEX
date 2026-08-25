@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.628Z",
-  "updatedAt": "2026-08-25T04:49:36.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Kawasaki",
   "class": "Moto deportiva",
   "customizable": false,
@@ -78,5 +78,7 @@
   "seoDescription": "Moto deportiva de Kawasaki, motor bicilíndrico 399cc, popular como primera moto deportiva. Potencia: 45 hp. Precio: USD 6.800.",
   "refrigeracion": "Líquida",
   "alturaAsiento": "785 mm",
-  "tipoArranque": "Eléctrico"
+  "tipoArranque": "Eléctrico",
+  "velocidades": "6 velocidades",
+  "embrague": "Multidisco en baño de aceite, antirrebote"
 }

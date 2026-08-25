@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "665-750 kg",
@@ -84,5 +84,8 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Wuling Hongguang Mini EV — Ficha técnica, precio y specs",
   "seoDescription": "Microcar eléctrico urbano chino, uno de los más vendidos del mundo en su categoría. Potencia: 27 hp. Precio: USD 5.000.",
-  "alturaLibrePiso": "130 mm (estimado)"
+  "alturaLibrePiso": "130 mm (estimado)",
+  "tapiceria": "Tela",
+  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
 }

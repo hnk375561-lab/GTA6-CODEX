@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.736Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Ford",
   "class": "Pickup compacta",
   "customizable": false,
@@ -86,5 +86,7 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Ford Maverick — Ficha técnica, precio y specs",
   "seoDescription": "Pickup compacta de Ford, disponible con motorización híbrida. Potencia: 191 hp. Precio: USD 32.000.",
-  "potenciaLitro": "76 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "76 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)"
 }

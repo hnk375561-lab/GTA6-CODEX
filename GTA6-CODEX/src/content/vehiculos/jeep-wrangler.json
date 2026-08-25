@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "4x4 conectable con reductora",
   "peso": "1.900-2.300 kg",
@@ -89,5 +89,8 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Jeep Wrangler — Ficha técnica, precio y specs",
   "seoDescription": "SUV todoterreno icónico, tracción 4x4, puertas desmontables y techo removible. Potencia: 272 hp. Precio: USD 89.900.",
-  "potenciaLitro": "136 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "136 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
+  "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
+  "capacidadRemolque": "1.500-2.000 kg (estimado)"
 }

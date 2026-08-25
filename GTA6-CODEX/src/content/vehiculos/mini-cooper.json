@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:08.997896Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.150-1.500 kg (incl. versión eléctrica Cooper SE)",
@@ -84,5 +84,8 @@
   "seoTitle": "Mini Cooper — Ficha técnica, precio y specs",
   "seoDescription": "Hatchback premium de Mini (grupo BMW), motor turbo 1.5L o 2.0L según versión. Potencia: 178 hp. Precio: USD 38.000.",
   "potenciaLitro": "119 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "alturaLibrePiso": "145 mm (estimado)"
+  "alturaLibrePiso": "145 mm (estimado)",
+  "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
+  "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
 }

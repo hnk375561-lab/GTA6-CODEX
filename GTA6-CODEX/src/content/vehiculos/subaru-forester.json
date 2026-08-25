@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:01.784761Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -90,5 +90,8 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Subaru Forester — Ficha técnica, precio y specs",
   "seoDescription": "SUV mediana de Subaru con tracción integral simétrica de serie, motor boxer 2.5L. Potencia: 182 hp. Precio: USD 38.000.",
-  "potenciaLitro": "73 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "73 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
+  "capacidadRemolque": "1.500-2.000 kg (estimado)"
 }

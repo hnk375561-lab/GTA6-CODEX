@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 36 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:49:36.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -77,5 +77,7 @@
   "seoDescription": "Moto naked deportiva, ensamblada en Argentina por Grupo Corven, una de las mas vendidas en el segmento 200cc. Potencia: 23.5 hp a 9500 rpm.",
   "refrigeracion": "Líquida",
   "alturaAsiento": "805 mm (estimado)",
-  "tipoArranque": "Eléctrico"
+  "tipoArranque": "Eléctrico",
+  "velocidades": "6 velocidades",
+  "embrague": "Multidisco en baño de aceite"
 }

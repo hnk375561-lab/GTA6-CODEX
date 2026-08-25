@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.210Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Chevrolet",
   "class": "SUV compacta",
   "customizable": false,
@@ -84,5 +84,8 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Chevrolet Tracker — Ficha técnica, precio y specs",
   "seoDescription": "SUV compacta de Chevrolet, motor turbo 1.2L. Potencia: 132 hp. Precio: USD 25.000.",
-  "potenciaLitro": "132 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "132 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Tela",
+  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
+  "capacidadRemolque": "1.200-1.500 kg (estimado)"
 }

@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.254Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Mercedes-Benz",
   "class": "Sedán premium",
   "customizable": false,
@@ -90,5 +90,8 @@
   "seoTitle": "Mercedes-Benz Clase C — Ficha técnica, precio y specs",
   "seoDescription": "Sedán premium de Mercedes-Benz, motor 2.0L turbo, equipamiento tecnológico de gama alta. Potencia: 204 hp. Precio: USD 62.000.",
   "potenciaLitro": "136 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "alturaLibrePiso": "135 mm (estimado)"
+  "alturaLibrePiso": "135 mm (estimado)",
+  "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
+  "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
 }

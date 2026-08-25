@@ -27,7 +27,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:10.642893Z",
-  "updatedAt": "2026-08-25T04:49:36.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -76,5 +76,7 @@
   "seoDescription": "Una de las motos más vendidas de Latinoamérica en su segmento, motor monocilíndrico de 150cc, muy usada como vehículo de trabajo. Potencia: 13.5 hp.",
   "refrigeracion": "Aire",
   "alturaAsiento": "757 mm (estimado)",
-  "tipoArranque": "Eléctrico"
+  "tipoArranque": "Eléctrico",
+  "velocidades": "5 velocidades",
+  "embrague": "Multidisco en baño de aceite"
 }

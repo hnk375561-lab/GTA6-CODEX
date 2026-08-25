@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.694Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Tesla",
   "class": "SUV eléctrica",
   "customizable": false,
@@ -96,5 +96,8 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Tesla Model Y — Ficha técnica, precio y specs",
-  "seoDescription": "SUV eléctrica de Tesla basada en la plataforma del Model 3, mayor espacio de carga. Potencia: 384 hp (Long Range). Precio: USD 47.000."
+  "seoDescription": "SUV eléctrica de Tesla basada en la plataforma del Model 3, mayor espacio de carga. Potencia: 384 hp (Long Range). Precio: USD 47.000.",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
+  "capacidadRemolque": "1.500-2.000 kg (estimado)"
 }

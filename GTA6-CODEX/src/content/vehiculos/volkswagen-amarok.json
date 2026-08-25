@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.422Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Volkswagen",
   "class": "Pickup",
   "customizable": false,
@@ -87,5 +87,7 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Volkswagen Amarok — Ficha técnica, precio y specs",
   "seoDescription": "Pickup grande de Volkswagen, motor V6 3.0L TDI de 258 hp en su tope de gama. Potencia: 258 hp. Precio: USD 52.000.",
-  "potenciaLitro": "129 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "129 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)"
 }

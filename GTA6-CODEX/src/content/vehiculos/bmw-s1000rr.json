@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:49:36.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "197 kg",
@@ -83,5 +83,7 @@
   "seoDescription": "Superdeportiva insignia de BMW Motorrad, tetracilíndrica en línea de 999cc. Potencia: 210 hp. Precio: USD 18.500.",
   "refrigeracion": "Líquida",
   "alturaAsiento": "824 mm",
-  "tipoArranque": "Eléctrico"
+  "tipoArranque": "Eléctrico",
+  "velocidades": "6 velocidades, quickshifter opcional/de serie según versión",
+  "embrague": "Multidisco en baño de aceite, antirrebote"
 }

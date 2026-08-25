@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:12.065294Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "980-1.055 kg",
@@ -85,5 +85,8 @@
   "seoTitle": "Toyota Etios — Ficha técnica, precio y specs",
   "seoDescription": "Sedán compacto de entrada de Toyota, motor 1.5L, orientado a costo de mantenimiento bajo. Potencia: 90 hp. Precio: USD 17.000.",
   "potenciaLitro": "60 hp/L (calculado a partir de cilindrada y potencia declaradas)",
-  "alturaLibrePiso": "135 mm (estimado)"
+  "alturaLibrePiso": "135 mm (estimado)",
+  "tapiceria": "Tela",
+  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
 }

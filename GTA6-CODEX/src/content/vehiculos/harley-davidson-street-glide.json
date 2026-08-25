@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 40 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:49:36.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "365-380 kg",
@@ -80,5 +80,7 @@
   "seoDescription": "Moto touring de la familia Grand American Touring de Harley-Davidson. Potencia: 89 hp. Precio: USD 22.000.",
   "refrigeracion": "Aire/aceite",
   "alturaAsiento": "739 mm",
-  "tipoArranque": "Eléctrico"
+  "tipoArranque": "Eléctrico",
+  "velocidades": "6 velocidades",
+  "embrague": "Multidisco en baño de aceite"
 }

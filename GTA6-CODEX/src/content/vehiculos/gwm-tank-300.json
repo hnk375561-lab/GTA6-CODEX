@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -91,5 +91,8 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "GWM Tank 300 — Ficha técnica, precio y specs",
   "seoDescription": "SUV 4x4 de estilo retro de Great Wall Motors, con versión híbrida enchufable. Potencia: 224 hp (híbrido). Precio: USD 35.000.",
-  "potenciaLitro": "112 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "112 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
+  "capacidadRemolque": "1.800-2.200 kg (estimado)"
 }

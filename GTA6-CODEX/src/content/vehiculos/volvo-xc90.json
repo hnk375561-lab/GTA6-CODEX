@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 43 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "2.000-2.300 kg",
@@ -93,5 +93,7 @@
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Volvo XC90 — Ficha técnica, precio y specs",
   "seoDescription": "SUV grande de 7 plazas de Volvo, buque insignia de la marca sueca. Potencia: 455 hp (híbrido). Precio: USD 60.000.",
-  "potenciaLitro": "228 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "228 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
+  "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)"
 }

@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.310-1.470 kg",
@@ -87,5 +87,8 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Mazda CX-30 — Ficha técnica, precio y specs",
   "seoDescription": "SUV compacto sobre la plataforma del Mazda 3, con opción de motor turbo 2.5. Potencia: 191 hp (turbo). Precio: USD 25.500.",
-  "potenciaLitro": "96 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "96 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Tela",
+  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
+  "capacidadRemolque": "1.200-1.500 kg (estimado)"
 }

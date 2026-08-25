@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:49:36.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -79,5 +79,7 @@
   "seoDescription": "Moto aventura mediana de Yamaha, bicilíndrica paralela CP2 de 689cc. Potencia: 72 hp. Precio: USD 10.900.",
   "refrigeracion": "Líquida",
   "alturaAsiento": "875 mm",
-  "tipoArranque": "Eléctrico"
+  "tipoArranque": "Eléctrico",
+  "velocidades": "6 velocidades",
+  "embrague": "Multidisco en baño de aceite, asistido y antirrebote"
 }

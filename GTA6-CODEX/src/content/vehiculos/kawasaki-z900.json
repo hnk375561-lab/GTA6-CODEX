@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 36 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:49:36.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -79,5 +79,7 @@
   "seoDescription": "Naked de cilindrada media-alta de Kawasaki, motor tetracilíndrico en línea de 948cc. Potencia: 125 hp. Precio: USD 9.500.",
   "refrigeracion": "Líquida",
   "alturaAsiento": "795 mm",
-  "tipoArranque": "Eléctrico"
+  "tipoArranque": "Eléctrico",
+  "velocidades": "6 velocidades",
+  "embrague": "Multidisco en baño de aceite, antirrebote"
 }

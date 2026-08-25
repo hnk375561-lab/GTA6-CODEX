@@ -33,7 +33,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "7 velocidades S tronic (automática de doble embrague)",
   "traccion": "Delantera (FWD) o quattro (AWD) según motorización",
   "peso": "1.530-1.725 kg (según versión y equipamiento)",
@@ -98,5 +98,8 @@
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Audi A4 — Ficha técnica, precio y specs",
   "seoDescription": "Sedán ejecutivo compacto de Audi, tracción quattro opcional. Potencia: 201 hp aprox. (motor 2.0 TFSI, último año en EE.UU.).",
-  "alturaLibrePiso": "135 mm (estimado)"
+  "alturaLibrePiso": "135 mm (estimado)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
 }

@@ -32,7 +32,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -95,5 +95,8 @@
   "infoentretenimiento": "Pantalla táctil de 10-14\", Apple CarPlay y Android Auto inalámbricos, navegación integrada",
   "climatizacion": "Climatizador automático bizona (o trizona en versiones superiores)",
   "seoTitle": "Tesla Model X — Ficha técnica, precio y specs",
-  "seoDescription": "SUV eléctrico de Tesla con puertas traseras tipo halcón. Potencia: 670 hp (Dual Motor) / 1020 hp (Plaid)."
+  "seoDescription": "SUV eléctrico de Tesla con puertas traseras tipo halcón. Potencia: 670 hp (Dual Motor) / 1020 hp (Plaid).",
+  "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
+  "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
+  "capacidadRemolque": "1.500-2.000 kg (estimado)"
 }

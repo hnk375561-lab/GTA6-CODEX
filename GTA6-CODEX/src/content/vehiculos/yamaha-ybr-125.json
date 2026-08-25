@@ -10,7 +10,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:34.410Z",
-  "updatedAt": "2026-08-25T04:49:36.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "manufacturer": "Yamaha",
   "class": "Moto",
   "customizable": false,
@@ -74,5 +74,7 @@
   "seoDescription": "Moto de calle económica, motor monocilíndrico de 125cc. Potencia: 11 hp. Precio: USD 2.800.",
   "refrigeracion": "Aire",
   "alturaAsiento": "780 mm (estimado)",
-  "tipoArranque": "Eléctrico"
+  "tipoArranque": "Eléctrico",
+  "velocidades": "5 velocidades",
+  "embrague": "Multidisco en baño de aceite"
 }

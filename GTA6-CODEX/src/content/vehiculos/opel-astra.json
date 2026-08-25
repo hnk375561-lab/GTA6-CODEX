@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:45:52.000Z",
+  "updatedAt": "2026-08-25T04:55:35.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.320-1.700 kg (incl. eléctrico)",
@@ -89,5 +89,8 @@
   "climatizacion": "Climatizador automático de una zona, con opción bizona según versión",
   "seoTitle": "Opel Astra — Ficha técnica, precio y specs",
   "seoDescription": "Compacto de Opel, plataforma EMP2 compartida con Peugeot 308. Potencia: 130 hp. Precio: EUR 26.000.",
-  "potenciaLitro": "108 hp/L (calculado a partir de cilindrada y potencia declaradas)"
+  "potenciaLitro": "108 hp/L (calculado a partir de cilindrada y potencia declaradas)",
+  "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
+  "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
+  "capacidadRemolque": "1.500-2.000 kg (estimado)"
 }
