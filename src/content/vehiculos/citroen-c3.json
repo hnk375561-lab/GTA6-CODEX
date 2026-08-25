@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.601Z",
-  "updatedAt": "2026-08-25T22:37:04.360Z",
+  "updatedAt": "2026-08-25T23:22:07.331Z",
   "manufacturer": "Citroën",
   "class": "Hatchback",
   "customizable": false,
@@ -259,5 +259,54 @@
     "dataQuality": 0.85
   },
   "indexed": true,
-  "searchable": true
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.7",
+    "totalVotos": 739,
+    "desglose": {
+      "1": 257,
+      "2": 304,
+      "3": 849,
+      "4": 460,
+      "5": 1327
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

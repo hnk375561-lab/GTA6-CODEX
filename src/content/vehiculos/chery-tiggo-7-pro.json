@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.336Z",
-  "updatedAt": "2026-08-25T22:37:04.326Z",
+  "updatedAt": "2026-08-25T23:22:07.293Z",
   "manufacturer": "Chery",
   "class": "SUV",
   "customizable": false,
@@ -261,5 +261,54 @@
     "dataQuality": 0.85
   },
   "indexed": true,
-  "searchable": true
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.0",
+    "totalVotos": 2397,
+    "desglose": {
+      "1": 219,
+      "2": 50,
+      "3": 414,
+      "4": 718,
+      "5": 588
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 180
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

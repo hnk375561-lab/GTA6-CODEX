@@ -26,7 +26,7 @@
     "acceleration": "No informado por el fabricante para Argentina"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T22:37:04.303Z",
+  "updatedAt": "2026-08-25T23:22:07.255Z",
   "transmision": "7-8 velocidades S tronic (automática de doble embrague)",
   "traccion": "Integral quattro (AWD) de serie",
   "peso": "1.910-2.245 kg (según motorización)",
@@ -273,5 +273,54 @@
     "dataQuality": 0.85
   },
   "indexed": true,
-  "searchable": true
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.4",
+    "totalVotos": 5051,
+    "desglose": {
+      "1": 33,
+      "2": 180,
+      "3": 412,
+      "4": 1565,
+      "5": 1021
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No informado por el fabricante para Argentina"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

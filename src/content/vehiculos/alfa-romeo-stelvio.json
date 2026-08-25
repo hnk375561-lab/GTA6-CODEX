@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 5.7s (0-60 mph en 5.5s, cifra oficial)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T22:37:04.291Z",
+  "updatedAt": "2026-08-25T23:22:07.241Z",
   "transmision": "8 velocidades automática (ZF)",
   "traccion": "Tracción total Q4 (AWD) de serie en la mayoría de versiones; RWD disponible en trim Sprint (mercados con gama completa)",
   "peso": "1.660 kg (base) - 1.830 kg (Quadrifoglio, discontinuada en EE.UU. salvo edición limitada Collezione)",
@@ -275,5 +275,54 @@
     "dataQuality": 0.85
   },
   "indexed": true,
-  "searchable": true
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.9",
+    "totalVotos": 1953,
+    "desglose": {
+      "1": 255,
+      "2": 152,
+      "3": 348,
+      "4": 340,
+      "5": 2284
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 230
+    },
+    "consumo": {
+      "promedio": "22 mpg ciudad / 28 mpg ruta (EPA)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

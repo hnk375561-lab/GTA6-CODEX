@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 4.8s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T22:37:04.309Z",
+  "updatedAt": "2026-08-25T23:22:07.267Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -264,5 +264,54 @@
     "dataQuality": 0.85
   },
   "indexed": true,
-  "searchable": true
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.1",
+    "totalVotos": 4669,
+    "desglose": {
+      "1": 110,
+      "2": 119,
+      "3": 644,
+      "4": 1005,
+      "5": 1653
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 303
+    },
+    "consumo": {
+      "promedio": "10.6 l/100km combinado (ciclo NEDC, versión V8 542 hp)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

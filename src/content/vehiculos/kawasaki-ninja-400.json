@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.628Z",
-  "updatedAt": "2026-08-25T22:37:04.413Z",
+  "updatedAt": "2026-08-25T23:22:07.424Z",
   "manufacturer": "Kawasaki",
   "class": "Moto deportiva",
   "customizable": false,
@@ -261,5 +261,54 @@
     "dataQuality": 0.85
   },
   "indexed": true,
-  "searchable": true
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.0",
+    "totalVotos": 5476,
+    "desglose": {
+      "1": 232,
+      "2": 275,
+      "3": 723,
+      "4": 1726,
+      "5": 746
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

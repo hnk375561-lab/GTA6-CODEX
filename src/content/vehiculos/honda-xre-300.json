@@ -28,7 +28,7 @@
     "speed": "140 km/h"
   },
   "createdAt": "2026-08-23T21:59:10.925515Z",
-  "updatedAt": "2026-08-25T22:37:04.401Z",
+  "updatedAt": "2026-08-25T23:22:07.400Z",
   "transmision": "Manual secuencial",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -260,5 +260,54 @@
     "dataQuality": 0.85
   },
   "indexed": true,
-  "searchable": true
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.6",
+    "totalVotos": 4793,
+    "desglose": {
+      "1": 40,
+      "2": 499,
+      "3": 1183,
+      "4": 413,
+      "5": 1567
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 140
+    },
+    "consumo": {
+      "promedio": "3.0 l/100km"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

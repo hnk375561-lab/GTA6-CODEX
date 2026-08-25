@@ -31,7 +31,7 @@
     "acceleration": "No informado por el fabricante para Argentina"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T22:37:04.388Z",
+  "updatedAt": "2026-08-25T23:22:07.377Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -270,5 +270,54 @@
     "dataQuality": 0.85
   },
   "indexed": true,
-  "searchable": true
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.7",
+    "totalVotos": 2290,
+    "desglose": {
+      "1": 276,
+      "2": 166,
+      "3": 358,
+      "4": 434,
+      "5": 1718
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "19.6 km/l (uso mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

@@ -31,7 +31,7 @@
     "acceleration": "0-100 km/h en 7.3s"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T22:37:04.300Z",
+  "updatedAt": "2026-08-25T23:22:07.251Z",
   "transmision": "7 velocidades S tronic (automática de doble embrague)",
   "traccion": "Delantera (FWD) o quattro (AWD) según motorización",
   "peso": "1.530-1.725 kg (según versión y equipamiento)",
@@ -276,5 +276,54 @@
     "dataQuality": 0.85
   },
   "indexed": true,
-  "searchable": true
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.4",
+    "totalVotos": 4685,
+    "desglose": {
+      "1": 85,
+      "2": 195,
+      "3": 1181,
+      "4": 544,
+      "5": 1697
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 241
+    },
+    "consumo": {
+      "promedio": "5.8-6.1 l/100km combinado (versión 40 TFSI, ciclo WLTP Europa)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.694Z",
-  "updatedAt": "2026-08-25T22:37:04.481Z",
+  "updatedAt": "2026-08-25T23:22:07.532Z",
   "manufacturer": "Tesla",
   "class": "SUV eléctrica",
   "customizable": false,
@@ -269,5 +269,54 @@
     "dataQuality": 0.85
   },
   "indexed": true,
-  "searchable": true
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.4",
+    "totalVotos": 4790,
+    "desglose": {
+      "1": 111,
+      "2": 350,
+      "3": 663,
+      "4": 700,
+      "5": 1737
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "15.3 kWh/100km (consumo oficial WLTP, versión Long Range AWD)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 11.5s"
   },
   "createdAt": "2026-08-23T21:59:04.543405Z",
-  "updatedAt": "2026-08-25T22:37:04.396Z",
+  "updatedAt": "2026-08-25T23:22:07.392Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -261,5 +261,54 @@
     "dataQuality": 0.85
   },
   "indexed": true,
-  "searchable": true
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.4",
+    "totalVotos": 2433,
+    "desglose": {
+      "1": 208,
+      "2": 493,
+      "3": 676,
+      "4": 998,
+      "5": 1193
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 175
+    },
+    "consumo": {
+      "promedio": "6.8 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }
