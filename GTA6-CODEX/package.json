@@ -23,7 +23,9 @@
     "verify:tailwind": "node scripts/verify-tailwind-config.mjs",
     "verify:reserved-keys": "node scripts/verify-reserved-entity-keys.mjs",
     "check:unused": "knip",
-    "sync:media": "node scripts/media-sync.mjs"
+    "sync:media": "node scripts/media-sync.mjs",
+    "generate:manifest-commons": "node scripts/generate-manifest-from-commons.mjs",
+    "generate:manifest-commons:write": "node scripts/generate-manifest-from-commons.mjs --write"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",
