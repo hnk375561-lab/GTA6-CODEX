@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import type { Trailer } from '@/types'
 import { EntityType } from '@/types'
 import { getEntitiesByType } from '@/lib/entities'
 import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
@@ -18,14 +17,10 @@ interface EntityNavProps {
  * existía solo para trailers vía `TrailerNav`, ahora removido en favor de
  * este componente único).
  *
- * Orden:
- *  - Trailer mantiene su orden editorial ya establecido (`releaseDate`
- *    real, cronológico de publicación) — el mismo criterio que ya usaba
- *    `TrailerNav`, sin cambios de comportamiento para ese tipo.
- *  - El resto de tipos usa orden alfabético por `title` (mismo criterio
- *    con el que `getEntitiesByType`/`loadEntitiesByTypeSync` ya deja las
- *    entidades ordenadas antes de cachearlas — se reordena acá de forma
- *    explícita para no depender implícitamente de ese detalle interno).
+ * Orden: alfabético por `title` (mismo criterio con el que
+ * `getEntitiesByType`/`loadEntitiesByTypeSync` ya deja las entidades
+ * ordenadas antes de cachearlas — se reordena acá de forma explícita para
+ * no depender implícitamente de ese detalle interno).
  *
  * Sin loop artificial: en el primer/último elemento del tipo, ese lado se
  * muestra deshabilitado (no un link, `aria-disabled`) en vez de enrollar
@@ -36,14 +31,7 @@ interface EntityNavProps {
 export async function EntityNav({ type, currentSlug }: EntityNavProps) {
   const entities = await getEntitiesByType(type)
 
-  const sorted =
-    type === EntityType.TRAILER
-      ? [...entities].sort(
-          (a, b) =>
-            new Date((a as Trailer).releaseDate).getTime() -
-            new Date((b as Trailer).releaseDate).getTime()
-        )
-      : [...entities].sort((a, b) => a.title.localeCompare(b.title, 'es'))
+  const sorted = [...entities].sort((a, b) => a.title.localeCompare(b.title, 'es'))
 
   const index = sorted.findIndex((e) => e.slug === currentSlug)
   if (index === -1 || sorted.length < 2) return null

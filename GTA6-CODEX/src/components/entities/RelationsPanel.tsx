@@ -7,18 +7,9 @@ import { resolveEntityDisplayImage } from '@/lib/media'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 
 const TYPE_LABELS: Record<EntityType, string> = {
-  [EntityType.CHARACTER]: 'Personajes',
   [EntityType.VEHICLE]: 'Vehículos',
-  [EntityType.LOCATION]: 'Ubicaciones',
-  [EntityType.MISSION]: 'Misiones',
-  [EntityType.WEAPON]: 'Armas',
-  [EntityType.ACTIVITY]: 'Actividades',
-  [EntityType.FACTION]: 'Organizaciones',
-  [EntityType.BUSINESS]: 'Negocios',
-  [EntityType.OBJECT]: 'Objetos',
   [EntityType.NEWS]: 'Noticias',
   [EntityType.GUIDE]: 'Guías',
-  [EntityType.TRAILER]: 'Trailers',
 }
 
 interface RelationsPanelProps {

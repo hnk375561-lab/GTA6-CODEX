@@ -98,13 +98,6 @@ const QUALITY: Record<NonNullable<EntityImageProps['variant']>, number> = {
 function CategoryGlyph({ type, size = 'default' }: { type: EntityType; size?: 'default' | 'sm' }) {
   const cls = size === 'sm' ? 'h-4 w-4 stroke-auto-accent/50' : 'h-10 w-10 stroke-auto-accent/50'
   switch (type) {
-    case EntityType.CHARACTER:
-      return (
-        <svg viewBox="0 0 48 48" className={cls} fill="none" strokeWidth="1.5" aria-hidden="true">
-          <circle cx="24" cy="17" r="8" />
-          <path d="M8 40c2-9 9-14 16-14s14 5 16 14" />
-        </svg>
-      )
     case EntityType.VEHICLE:
       return (
         <svg viewBox="0 0 48 48" className={cls} fill="none" strokeWidth="1.5" aria-hidden="true">
@@ -112,35 +105,6 @@ function CategoryGlyph({ type, size = 'default' }: { type: EntityType; size?: 'd
           <rect x="4" y="30" width="40" height="9" rx="2" />
           <circle cx="14" cy="39" r="3" />
           <circle cx="34" cy="39" r="3" />
-        </svg>
-      )
-    case EntityType.LOCATION:
-      return (
-        <svg viewBox="0 0 48 48" className={cls} fill="none" strokeWidth="1.5" aria-hidden="true">
-          <path d="M24 44s14-13.5 14-24a14 14 0 1 0-28 0c0 10.5 14 24 14 24z" />
-          <circle cx="24" cy="20" r="5" />
-        </svg>
-      )
-    case EntityType.FACTION:
-      return (
-        <svg viewBox="0 0 48 48" className={cls} fill="none" strokeWidth="1.5" aria-hidden="true">
-          <path d="M24 4l16 6v10c0 12-7 20-16 24C15 40 8 32 8 20V10z" />
-          <path d="M17 24l5 5 9-10" />
-        </svg>
-      )
-    case EntityType.BUSINESS:
-      return (
-        <svg viewBox="0 0 48 48" className={cls} fill="none" strokeWidth="1.5" aria-hidden="true">
-          <path d="M6 18l3-10h30l3 10" />
-          <path d="M6 18v22h36V18" />
-          <path d="M18 40V26h12v14" />
-        </svg>
-      )
-    case EntityType.TRAILER:
-      return (
-        <svg viewBox="0 0 48 48" className={cls} fill="none" strokeWidth="1.5" aria-hidden="true">
-          <rect x="5" y="10" width="38" height="28" rx="3" />
-          <path d="M20 18l11 6-11 6z" />
         </svg>
       )
     default:
@@ -153,12 +117,7 @@ function CategoryGlyph({ type, size = 'default' }: { type: EntityType; size?: 'd
 }
 
 const CATEGORY_FALLBACK_LABEL: Partial<Record<EntityType, string>> = {
-  [EntityType.CHARACTER]: 'Sin imagen verificada',
   [EntityType.VEHICLE]: 'Sin imagen verificada',
-  [EntityType.LOCATION]: 'Sin imagen verificada',
-  [EntityType.FACTION]: 'Sin imagen verificada',
-  [EntityType.BUSINESS]: 'Sin imagen verificada',
-  [EntityType.TRAILER]: 'Sin miniatura verificada',
 }
 
 export function EntityImage({ entity, image, variant = 'thumbnail', priority = false, className }: EntityImageProps) {

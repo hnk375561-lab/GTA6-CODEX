@@ -7,13 +7,12 @@ import { getAllEntities, getEntityPath } from '@/lib/entities'
  * que el "trending: X · Y · Z" del mockup original, pero alimentada por
  * datos reales (`getFeaturedEntities`) en vez de texto hardcodeado.
  *
- * Se restringe a tipos "con gancho" (personajes, vehículos, ubicaciones,
- * facciones) a propósito: la home ya tiene una sección "Destacados" más
- * abajo que usa el mismo `getFeaturedEntities`, así que traer los mismos
- * 6 resultados acá los duplicaría arriba y abajo de la misma página.
- * Filtrando por tipo se obtiene una selección distinta y además más
- * parecida al tono de un ticker de "trending" (nombres propios, no
- * guías o noticias).
+ * Se restringe a vehículos a propósito: la home ya tiene una sección
+ * "Destacados" más abajo que usa el mismo `getFeaturedEntities`, así que
+ * traer los mismos resultados acá los duplicaría arriba y abajo de la
+ * misma página. Filtrando por tipo se obtiene una selección distinta y
+ * además más parecida al tono de un ticker de "trending" (nombres
+ * propios, no guías o noticias).
  *
  * Server component puro: no necesita estado ni interactividad, así que
  * no suma JS al bundle del cliente. Se corta a `LIMIT` entradas y se
@@ -21,12 +20,7 @@ import { getAllEntities, getEntityPath } from '@/lib/entities'
  * empujar el contenido hacia abajo en pantallas chicas.
  */
 const LIMIT = 6
-const TRENDING_TYPES = new Set<EntityType>([
-  EntityType.CHARACTER,
-  EntityType.VEHICLE,
-  EntityType.LOCATION,
-  EntityType.FACTION,
-])
+const TRENDING_TYPES = new Set<EntityType>([EntityType.VEHICLE])
 
 export async function TrendingBar() {
   // Se filtra por tipo ANTES de cortar a LIMIT (no al revés): guías,

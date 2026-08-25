@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { EntityType } from '@/types'
 import type { Entity } from '@/types'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
@@ -61,7 +60,6 @@ export function DevelopmentTimeline({ events }: { events: TimelineEvent[] }) {
               <Badge variant="status" status={entity.status}>
                 {STATUS_LABELS[entity.status]}
               </Badge>
-              {entity.type === EntityType.TRAILER && <Badge variant="tag">Tráiler</Badge>}
             </div>
             <p className="line-clamp-2 text-sm text-auto-text-secondary">{entity.description}</p>
           </Link>

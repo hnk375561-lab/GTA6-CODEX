@@ -16,30 +16,20 @@ import { useEntityAtmosphere } from '@/lib/hooks/useEntityAtmosphere'
  * que este componente nunca duplica esa responsabilidad.
  *
  * --------------------------------------------------------------------------
- * Mejora real (no cosmética): 7 de 12 categorías vivían en un ambiente mudo
+ * Por qué existe `CATEGORY_ALIAS`
  * --------------------------------------------------------------------------
- * El sitio tiene 12 `EntityType` (ver `@/types`), pero `engine.ts` solo sabe
- * diferenciar atmósfera para 5 en sus tablas `CATEGORY_WARMTH` /
- * `CATEGORY_PACE` / `CATEGORY_FRAME`: personajes, organizaciones, negocios,
- * vehículos, ubicaciones. Para las 7 restantes (armas, misiones,
- * actividades, objetos, noticias, guías, trailers) esas tablas no tienen
- * entrada, así que cada lookup caía en su fallback neutro (`?? 0` / `?? 1`
- * / `?? 0`) — visualmente indistinguibles entre sí y de "sin ficha
- * montada". El motor sabe expresar esa diferencia (por eso existen las
- * tablas); lo que faltaba era decirle a cuál de las 5 categorías conocidas
- * se parece cada una en espíritu — sin tocar `engine.ts`.
+ * `engine.ts` diferencia atmósfera en sus tablas `CATEGORY_WARMTH` /
+ * `CATEGORY_PACE` / `CATEGORY_FRAME` usando claves heredadas del catálogo
+ * original (personajes, organizaciones, negocios, vehículos, ubicaciones).
+ * El sitio hoy solo tiene 3 `EntityType` (ver `@/types`): vehículos,
+ * noticias, guías. `CATEGORY_ALIAS` traduce cada uno a la clave de esas
+ * tablas más afín en tono narrativo, sin tocar `engine.ts`:
  *
- * `CATEGORY_ALIAS` hace exactamente eso, puertas adentro de este archivo:
- * antes de publicar la atmósfera, cada categoría sin tabla propia se
- * traduce a la categoría reconocida más cercana en tono narrativo:
+ *  - vehículos → vehículos      (catálogo técnico, frío, preciso — mapeo directo)
+ *  - noticias  → organizaciones (voz institucional/editorial)
+ *  - guías     → ubicaciones    (orientación espacial, contemplativa)
  *
- *  - armas, objetos       → vehículos   (catálogo técnico, frío, preciso)
- *  - misiones, noticias   → organizaciones (voz institucional/editorial)
- *  - actividades, trailers→ personajes  (contenido vivido/cinematográfico,
- *                                        cálido y centrado en personas)
- *  - guías                → ubicaciones (orientación espacial, contemplativa)
- *
- * Es un `Record<EntityType, EntityType>` exhaustivo a propósito: si el
+ * Es un `Record<EntityType, string>` exhaustivo a propósito: si el
  * proyecto agrega un `EntityType` nuevo el día de mañana, TypeScript deja
  * de compilar hasta que se decida su alias acá — no puede quedar ninguna
  * categoría nueva cayendo de nuevo en el fallback neutro por omisión.
@@ -87,27 +77,18 @@ export interface EntityAtmosphereBridgeProps {
 }
 
 /**
- * Traduce cada `EntityType` a la categoría que `engine.ts` sabe diferenciar
- * (`CATEGORY_WARMTH`/`CATEGORY_PACE`/`CATEGORY_FRAME`). Las 5 reconocidas se
- * mapean a sí mismas; las otras 7 heredan la atmósfera de la más afín en
- * tono. Ver documentación del archivo para el razonamiento completo.
+ * Traduce cada `EntityType` a la clave que `engine.ts` sabe diferenciar en
+ * `CATEGORY_WARMTH`/`CATEGORY_PACE`/`CATEGORY_FRAME` (claves heredadas del
+ * catálogo original: 'vehiculos', 'organizaciones', 'ubicaciones', etc. —
+ * ver documentación del archivo para el razonamiento de cada alias).
  *
- * `Record<EntityType, EntityType>` exhaustivo: agregar un `EntityType` sin
+ * `Record<EntityType, string>` exhaustivo: agregar un `EntityType` sin
  * agregar su entrada acá rompe el `tsc` de este archivo a propósito.
  */
-const CATEGORY_ALIAS: Record<EntityType, EntityType> = {
-  [EntityType.CHARACTER]: EntityType.CHARACTER,
-  [EntityType.FACTION]: EntityType.FACTION,
-  [EntityType.BUSINESS]: EntityType.BUSINESS,
-  [EntityType.VEHICLE]: EntityType.VEHICLE,
-  [EntityType.LOCATION]: EntityType.LOCATION,
-  [EntityType.WEAPON]: EntityType.VEHICLE,
-  [EntityType.OBJECT]: EntityType.VEHICLE,
-  [EntityType.MISSION]: EntityType.FACTION,
-  [EntityType.NEWS]: EntityType.FACTION,
-  [EntityType.ACTIVITY]: EntityType.CHARACTER,
-  [EntityType.TRAILER]: EntityType.CHARACTER,
-  [EntityType.GUIDE]: EntityType.LOCATION,
+const CATEGORY_ALIAS: Record<EntityType, string> = {
+  [EntityType.VEHICLE]: 'vehiculos',
+  [EntityType.NEWS]: 'organizaciones',
+  [EntityType.GUIDE]: 'ubicaciones',
 }
 
 function EntityAtmosphereBridgeComponent({ category, status, featured }: EntityAtmosphereBridgeProps) {
