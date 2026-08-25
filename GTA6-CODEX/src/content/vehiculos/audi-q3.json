@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:32.112Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "manufacturer": "Audi",
   "class": "SUV premium compacta",
   "customizable": false,
@@ -97,5 +97,7 @@
   "seoDescription": "SUV premium compacta de Audi, motor 1.4L TFSI turbo, plataforma compartida con el grupo VW. Potencia: 150 hp. Precio: USD 55.000.",
   "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
   "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
-  "capacidadRemolque": "1.800-2.200 kg (estimado)"
+  "capacidadRemolque": "1.800-2.200 kg (estimado)",
+  "paisOrigen": "Alemania",
+  "numeroPuertas": "5 puertas"
 }

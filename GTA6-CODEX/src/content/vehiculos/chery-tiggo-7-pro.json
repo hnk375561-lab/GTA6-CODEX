@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.336Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "manufacturer": "Chery",
   "class": "SUV",
   "customizable": false,
@@ -93,5 +93,7 @@
   "seoDescription": "SUV mediana china de Chery, motor turbo 1.5L. Potencia: 147 hp. Precio: USD 27.000.",
   "tapiceria": "Tela",
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
-  "capacidadRemolque": "1.500-2.000 kg (estimado)"
+  "capacidadRemolque": "1.500-2.000 kg (estimado)",
+  "paisOrigen": "China",
+  "numeroPuertas": "5 puertas"
 }

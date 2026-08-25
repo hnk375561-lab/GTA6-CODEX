@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "2.050-2.200 kg",
@@ -96,5 +96,7 @@
   "seoDescription": "SUV eléctrico de Volkswagen sobre plataforma MEB dedicada. Potencia: 201 hp. Precio: USD 40.000.",
   "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
-  "capacidadRemolque": "1.500-2.000 kg (estimado)"
+  "capacidadRemolque": "1.500-2.000 kg (estimado)",
+  "paisOrigen": "Alemania",
+  "numeroPuertas": "5 puertas"
 }

@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "940-1.010 kg",
@@ -86,5 +86,7 @@
   "alturaLibrePiso": "130 mm (estimado)",
   "tapiceria": "Tela",
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
-  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
+  "paisOrigen": "Italia",
+  "numeroPuertas": "3-5 puertas según versión"
 }

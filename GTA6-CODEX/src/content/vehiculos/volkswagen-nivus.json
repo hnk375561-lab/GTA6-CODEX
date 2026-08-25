@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.597Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "manufacturer": "Volkswagen",
   "class": "SUV coupé compacta",
   "customizable": false,
@@ -89,5 +89,7 @@
   "seoDescription": "SUV coupé compacta de Volkswagen sobre plataforma MQB, motor turbo 1.0L o 1.4L TSI. Potencia: 128 hp. Precio: USD 26.000.",
   "tapiceria": "Tela",
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
-  "capacidadRemolque": "1.500-2.000 kg (estimado)"
+  "capacidadRemolque": "1.500-2.000 kg (estimado)",
+  "paisOrigen": "Alemania",
+  "numeroPuertas": "2 puertas"
 }

@@ -10,7 +10,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:34.410Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "manufacturer": "Yamaha",
   "class": "Moto",
   "customizable": false,
@@ -76,5 +76,6 @@
   "alturaAsiento": "780 mm (estimado)",
   "tipoArranque": "Eléctrico",
   "velocidades": "5 velocidades",
-  "embrague": "Multidisco en baño de aceite"
+  "embrague": "Multidisco en baño de aceite",
+  "paisOrigen": "Japón"
 }

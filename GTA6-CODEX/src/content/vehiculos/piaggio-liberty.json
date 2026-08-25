@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "108-118 kg",
@@ -81,5 +81,6 @@
   "alturaAsiento": "780 mm (estimado)",
   "tipoArranque": "Eléctrico",
   "velocidades": "Automática CVT",
-  "embrague": "Automático centrífugo (CVT)"
+  "embrague": "Automático centrífugo (CVT)",
+  "paisOrigen": "Italia"
 }

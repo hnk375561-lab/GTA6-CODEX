@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "2.000-2.200 kg",
@@ -90,5 +90,7 @@
   "alturaLibrePiso": "155 mm (estimado)",
   "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
   "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
-  "capacidadRemolque": "1.500 kg (estimado)"
+  "capacidadRemolque": "1.500 kg (estimado)",
+  "paisOrigen": "Japón",
+  "numeroPuertas": "4-5 puertas"
 }

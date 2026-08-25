@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -92,5 +92,7 @@
   "potenciaLitro": "150 hp/L (calculado a partir de cilindrada y potencia declaradas)",
   "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
-  "capacidadRemolque": "1.800-2.200 kg (estimado)"
+  "capacidadRemolque": "1.800-2.200 kg (estimado)",
+  "paisOrigen": "Francia",
+  "numeroPuertas": "5 puertas"
 }

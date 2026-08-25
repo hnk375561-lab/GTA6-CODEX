@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.994Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "manufacturer": "Nissan",
   "class": "SUV compacta",
   "customizable": false,
@@ -89,5 +89,7 @@
   "seoDescription": "SUV compacta de Nissan, motor 1.6L naturalmente aspirado. Potencia: 114 hp. Precio: USD 24.000.",
   "tapiceria": "Tela",
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
-  "capacidadRemolque": "1.200-1.500 kg (estimado)"
+  "capacidadRemolque": "1.200-1.500 kg (estimado)",
+  "paisOrigen": "Japón",
+  "numeroPuertas": "5 puertas"
 }

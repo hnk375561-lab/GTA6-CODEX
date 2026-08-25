@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.977Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "manufacturer": "BMW",
   "class": "Sedán premium",
   "customizable": false,
@@ -98,5 +98,7 @@
   "alturaLibrePiso": "135 mm (estimado)",
   "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
   "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
-  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
+  "paisOrigen": "Alemania",
+  "numeroPuertas": "4 puertas"
 }

@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:06.238471Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.700-1.800 kg",
@@ -94,5 +94,7 @@
   "seoDescription": "SUV compacta 100% eléctrica de Hyundai. Potencia: 201 hp. Precio: USD 42.000.",
   "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
-  "capacidadRemolque": "1.500-2.000 kg (estimado)"
+  "capacidadRemolque": "1.500-2.000 kg (estimado)",
+  "paisOrigen": "Corea del Sur",
+  "numeroPuertas": "5 puertas"
 }

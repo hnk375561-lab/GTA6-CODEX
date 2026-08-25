@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.524Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "manufacturer": "Tesla",
   "class": "Sedán",
   "customizable": false,
@@ -96,5 +96,7 @@
   "alturaLibrePiso": "135 mm (estimado)",
   "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
-  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
+  "paisOrigen": "Estados Unidos",
+  "numeroPuertas": "4 puertas"
 }

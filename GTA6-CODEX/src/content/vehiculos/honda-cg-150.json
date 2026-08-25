@@ -27,7 +27,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:10.642893Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -78,5 +78,6 @@
   "alturaAsiento": "757 mm (estimado)",
   "tipoArranque": "Eléctrico",
   "velocidades": "5 velocidades",
-  "embrague": "Multidisco en baño de aceite"
+  "embrague": "Multidisco en baño de aceite",
+  "paisOrigen": "Japón"
 }

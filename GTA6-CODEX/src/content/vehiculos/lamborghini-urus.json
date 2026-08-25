@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Integral (AWD) permanente",
   "peso": "2.150-2.200 kg",
@@ -94,5 +94,7 @@
   "potenciaLitro": "164 hp/L (calculado a partir de cilindrada y potencia declaradas)",
   "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
   "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
-  "capacidadRemolque": "1.500-2.000 kg (estimado)"
+  "capacidadRemolque": "1.500-2.000 kg (estimado)",
+  "paisOrigen": "Italia",
+  "numeroPuertas": "2 puertas"
 }

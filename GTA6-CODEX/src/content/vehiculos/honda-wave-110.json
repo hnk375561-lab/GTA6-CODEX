@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:34.107Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "manufacturer": "Honda",
   "class": "Moto utilitaria",
   "customizable": false,
@@ -78,5 +78,6 @@
   "alturaAsiento": "756 mm (estimado)",
   "tipoArranque": "Eléctrico",
   "velocidades": "4 velocidades",
-  "embrague": "Automático centrífugo"
+  "embrague": "Automático centrífugo",
+  "paisOrigen": "Japón"
 }

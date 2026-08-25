@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:05.966220Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.020-1.100 kg",
@@ -85,5 +85,7 @@
   "alturaLibrePiso": "145 mm (estimado)",
   "tapiceria": "Tela",
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
-  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
+  "paisOrigen": "Corea del Sur",
+  "numeroPuertas": "5 puertas (3 en versiones deportivas/compactas)"
 }

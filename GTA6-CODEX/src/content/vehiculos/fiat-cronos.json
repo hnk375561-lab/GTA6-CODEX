@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.161Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "manufacturer": "Fiat",
   "class": "Sedán",
   "customizable": false,
@@ -89,5 +89,7 @@
   "alturaLibrePiso": "135 mm (estimado)",
   "tapiceria": "Tela",
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
-  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie"
+  "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
+  "paisOrigen": "Italia",
+  "numeroPuertas": "4 puertas"
 }

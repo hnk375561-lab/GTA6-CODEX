@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:07.889585Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Delantera (FWD)",
   "peso": "1.180-1.290 kg",
@@ -86,5 +86,7 @@
   "seoDescription": "Pickup compacta de Volkswagen, muy popular en Argentina y Brasil por su relación carga/consumo. Potencia: 110 hp. Precio: USD 21.000.",
   "potenciaLitro": "69 hp/L (calculado a partir de cilindrada y potencia declaradas)",
   "tapiceria": "Tela",
-  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)"
+  "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
+  "paisOrigen": "Alemania",
+  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple"
 }

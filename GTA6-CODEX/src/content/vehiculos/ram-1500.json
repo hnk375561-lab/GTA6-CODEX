@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:03.451886Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -88,5 +88,7 @@
   "seoDescription": "Pickup full-size de RAM, suspensión trasera neumática opcional, motor V8 HEMI 5.7L. Potencia: 395 hp. Precio: USD 60.000.",
   "potenciaLitro": "110 hp/L (calculado a partir de cilindrada y potencia declaradas)",
   "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
-  "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)"
+  "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
+  "paisOrigen": "Estados Unidos",
+  "numeroPuertas": "4 puertas (doble cabina) — 2 en versiones cabina simple"
 }

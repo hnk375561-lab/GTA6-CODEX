@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Delantera (FWD) o 4x4 según versión",
   "peso": "1.200-1.400 kg",
@@ -88,5 +88,7 @@
   "potenciaLitro": "130 hp/L (calculado a partir de cilindrada y potencia declaradas)",
   "tapiceria": "Tela con inserciones de cuero ecológico (según versión)",
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
-  "capacidadRemolque": "1.200-1.500 kg (estimado)"
+  "capacidadRemolque": "1.200-1.500 kg (estimado)",
+  "paisOrigen": "Rumania",
+  "numeroPuertas": "5 puertas"
 }

@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 43 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -94,5 +94,7 @@
   "seoDescription": "SUV de ultralujo de Rolls-Royce, motor V12 biturbo. Potencia: 563 hp. Precio: USD 380.000.",
   "potenciaLitro": "83 hp/L (calculado a partir de cilindrada y potencia declaradas)",
   "tapiceria": "Cuero (natural o ecológico según versión y mercado)",
-  "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)"
+  "cantidadAirbags": "8-10 (frontales, laterales, cortina y rodilla) (estimado)",
+  "paisOrigen": "Reino Unido (bajo grupo BMW)",
+  "numeroPuertas": "5 puertas"
 }

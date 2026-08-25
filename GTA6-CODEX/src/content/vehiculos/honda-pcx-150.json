@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "131-133 kg",
@@ -82,5 +82,6 @@
   "alturaAsiento": "764 mm",
   "tipoArranque": "Eléctrico",
   "velocidades": "Automática CVT",
-  "embrague": "Automático centrífugo (CVT)"
+  "embrague": "Automático centrífugo (CVT)",
+  "paisOrigen": "Japón"
 }

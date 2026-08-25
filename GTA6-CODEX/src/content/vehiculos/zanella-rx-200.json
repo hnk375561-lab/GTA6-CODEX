@@ -33,7 +33,7 @@
     "braking": "100-0 km/h en 36 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -84,5 +84,6 @@
   "alturaAsiento": "800 mm (estimado)",
   "tipoArranque": "Eléctrico",
   "velocidades": "5 velocidades (estimado)",
-  "embrague": "Multidisco en baño de aceite"
+  "embrague": "Multidisco en baño de aceite",
+  "paisOrigen": "Argentina"
 }

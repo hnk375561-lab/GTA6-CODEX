@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.210Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "manufacturer": "Chevrolet",
   "class": "SUV compacta",
   "customizable": false,
@@ -87,5 +87,7 @@
   "potenciaLitro": "132 hp/L (calculado a partir de cilindrada y potencia declaradas)",
   "tapiceria": "Tela",
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
-  "capacidadRemolque": "1.200-1.500 kg (estimado)"
+  "capacidadRemolque": "1.200-1.500 kg (estimado)",
+  "paisOrigen": "Estados Unidos",
+  "numeroPuertas": "5 puertas"
 }

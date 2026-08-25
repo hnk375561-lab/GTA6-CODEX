@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:55:35.000Z",
+  "updatedAt": "2026-08-25T04:57:57.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -81,5 +81,6 @@
   "alturaAsiento": "850 mm (ajustable 830-870 mm)",
   "tipoArranque": "Eléctrico",
   "velocidades": "6 velocidades (opción DCT automática de doble embrague)",
-  "embrague": "Multidisco en baño de aceite (o DCT según versión)"
+  "embrague": "Multidisco en baño de aceite (o DCT según versión)",
+  "paisOrigen": "Japón"
 }
