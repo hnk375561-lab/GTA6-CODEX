@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.800Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:37:13.000Z",
   "manufacturer": "Kia",
   "class": "SUV",
   "customizable": false,
@@ -95,5 +95,7 @@
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
   "capacidadRemolque": "1.500-2.000 kg (estimado)",
   "paisOrigen": "Corea del Sur",
-  "numeroPuertas": "5 puertas"
+  "numeroPuertas": "5 puertas",
+  "calificacionSeguridad": "5 estrellas Latin NCAP (All-new Sportage NQ5) — cuarto modelo Kia en alcanzar 5 estrellas junto a K3, K4 y EV4",
+  "fuenteSeguridad": "https://www.hyundaimotorgroup.com/en/news/CONT0000000000196847"
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.994Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:37:13.000Z",
   "manufacturer": "Nissan",
   "class": "SUV compacta",
   "customizable": false,
@@ -91,5 +91,7 @@
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
   "capacidadRemolque": "1.200-1.500 kg (estimado)",
   "paisOrigen": "Japón",
-  "numeroPuertas": "5 puertas"
+  "numeroPuertas": "5 puertas",
+  "calificacionSeguridad": "5 estrellas Latin NCAP (Nuevo Kicks, 2025) — 90.32% ocupante adulto, 91.84% ocupante infantil, ADAS de serie",
+  "fuenteSeguridad": "https://www.latinncap.com/es/area-de-prensa/noticia/867dabf4c5557f"
 }

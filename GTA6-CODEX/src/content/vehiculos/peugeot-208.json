@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.335Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:37:13.000Z",
   "manufacturer": "Peugeot",
   "class": "Hatchback",
   "customizable": false,
@@ -89,5 +89,7 @@
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
   "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
   "paisOrigen": "Francia",
-  "numeroPuertas": "5 puertas (3 en versiones deportivas/compactas)"
+  "numeroPuertas": "5 puertas (3 en versiones deportivas/compactas)",
+  "calificacionSeguridad": "2 estrellas Latin NCAP (2021) — 51.53% ocupante adulto, 54.92% ocupante infantil; fabricado en Argentina sin bolsas de aire laterales de cabeza de serie",
+  "fuenteSeguridad": "https://www.latinncap.com/es/area-de-prensa/noticia/861b357c5a9ff9"
 }

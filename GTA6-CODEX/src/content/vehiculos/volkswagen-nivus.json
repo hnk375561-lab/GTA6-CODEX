@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.597Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:37:13.000Z",
   "manufacturer": "Volkswagen",
   "class": "SUV coupé compacta",
   "customizable": false,
@@ -91,5 +91,7 @@
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
   "capacidadRemolque": "1.500-2.000 kg (estimado)",
   "paisOrigen": "Alemania",
-  "numeroPuertas": "2 puertas"
+  "numeroPuertas": "2 puertas",
+  "calificacionSeguridad": "5 estrellas Latin NCAP — 92.47% ocupante adulto, 91.57% ocupante infantil",
+  "fuenteSeguridad": "https://www.latinncap.com/es/area-de-prensa/noticia/86321f8c46147b"
 }

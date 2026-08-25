@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:37:13.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.400-1.700 kg",
@@ -92,5 +92,7 @@
   "cantidadAirbags": "6 (frontales, laterales y de cortina) (estimado)",
   "capacidadRemolque": "1.200-1.500 kg (estimado)",
   "paisOrigen": "Japón",
-  "numeroPuertas": "5 puertas"
+  "numeroPuertas": "5 puertas",
+  "calificacionSeguridad": "5 estrellas Latin NCAP — 93.65% ocupante adulto, 92.02% ocupante infantil",
+  "fuenteSeguridad": "https://www.latinncap.com/es/area-de-prensa/noticia/86373e91487d78"
 }

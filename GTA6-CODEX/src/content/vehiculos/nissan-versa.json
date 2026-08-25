@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.069Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:37:13.000Z",
   "manufacturer": "Nissan",
   "class": "Sedán",
   "customizable": false,
@@ -91,5 +91,7 @@
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
   "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
   "paisOrigen": "Japón",
-  "numeroPuertas": "4 puertas"
+  "numeroPuertas": "4 puertas",
+  "calificacionSeguridad": "3 estrellas ocupante adulto Latin NCAP (test de auditoría; el resultado original de 2015 había sido 4 estrellas adulto/2 infantil, pero bajó tras reevaluación)",
+  "fuenteSeguridad": "https://www.latinncap.com/es/area-de-prensa/noticia/8585842031279f"
 }

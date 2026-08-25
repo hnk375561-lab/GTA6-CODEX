@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.429Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:37:13.000Z",
   "manufacturer": "Renault",
   "class": "Hatchback",
   "customizable": false,
@@ -88,5 +88,7 @@
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
   "capacidadRemolque": "No especificada por el fabricante / no apta para remolque de serie",
   "paisOrigen": "Francia",
-  "numeroPuertas": "5 puertas (3 en versiones deportivas/compactas)"
+  "numeroPuertas": "5 puertas (3 en versiones deportivas/compactas)",
+  "calificacionSeguridad": "0 estrellas Latin NCAP (test 2024, protocolo vigente) — resultado válido para Sandero/Logan/Stepway producidos en Argentina, Brasil y Colombia; solo 4 airbags y sin ESC estándar en todos los mercados",
+  "fuenteSeguridad": "https://noticias.autocosmos.com.ar/2024/12/04/asi-les-fue-a-los-renault-sandero-stepway-y-logan-en-latin-ncap"
 }

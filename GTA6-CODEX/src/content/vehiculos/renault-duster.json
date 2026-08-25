@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.126Z",
-  "updatedAt": "2026-08-25T04:57:57.000Z",
+  "updatedAt": "2026-08-25T05:37:13.000Z",
   "manufacturer": "Renault",
   "class": "SUV",
   "customizable": false,
@@ -93,5 +93,7 @@
   "cantidadAirbags": "2 (frontales) — hasta 6 en versiones tope de gama (estimado)",
   "capacidadRemolque": "1.500-2.000 kg (estimado)",
   "paisOrigen": "Francia",
-  "numeroPuertas": "5 puertas"
+  "numeroPuertas": "5 puertas",
+  "calificacionSeguridad": "0 estrellas Latin NCAP (Nueva Duster fabricada en Brasil, test bajo protocolo 2020) — 29.47% ocupante adulto, sin airbags laterales de cuerpo ni de cabeza de serie",
+  "fuenteSeguridad": "https://www.16valvulas.com.ar/latin-ncap-cero-estrellas-para-la-duster-brasilena-y-la-respuesta-de-renault/"
 }
