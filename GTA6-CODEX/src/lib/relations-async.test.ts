@@ -67,56 +67,56 @@ beforeEach(() => {
 
 describe('getBidirectionalRelations', () => {
   it('incluye las relaciones directas de la entidad', async () => {
-    const vice = makeEntity(EntityType.LOCATION, 'vice-city')
-    const lucia = makeEntity(EntityType.CHARACTER, 'lucia', [
-      rel(EntityType.LOCATION, 'vice-city', 'ubicado_en'),
+    const vehiculoEjemplo = makeEntity(EntityType.VEHICLE, 'toyota-corolla')
+    const noticiaEjemplo = makeEntity(EntityType.NEWS, 'noticia-ejemplo', [
+      rel(EntityType.VEHICLE, 'toyota-corolla', 'ubicado_en'),
     ])
-    setupDataset([vice, lucia])
+    setupDataset([vehiculoEjemplo, noticiaEjemplo])
 
-    const result = await getBidirectionalRelations(lucia)
-    expect(result).toEqual([rel(EntityType.LOCATION, 'vice-city', 'ubicado_en')])
+    const result = await getBidirectionalRelations(noticiaEjemplo)
+    expect(result).toEqual([rel(EntityType.VEHICLE, 'toyota-corolla', 'ubicado_en')])
   })
 
   it('infiere una relación inversa cuando otra entidad apunta a esta pero no al revés', async () => {
-    // leonida (ubicación) no declara relations propias, pero 2 personajes
+    // guiaEjemplo (ubicación) no declara relations propias, pero 2 noticias
     // apuntan a ella con "ubicado_en" -> deben aparecer como inferidas.
-    const leonida = makeEntity(EntityType.LOCATION, 'leonida')
-    const lucia = makeEntity(EntityType.CHARACTER, 'lucia', [
-      rel(EntityType.LOCATION, 'leonida', 'ubicado_en'),
+    const guiaEjemplo = makeEntity(EntityType.VEHICLE, 'guia-ejemplo')
+    const noticiaEjemplo = makeEntity(EntityType.NEWS, 'noticia-ejemplo', [
+      rel(EntityType.VEHICLE, 'guia-ejemplo', 'ubicado_en'),
     ])
-    const jason = makeEntity(EntityType.CHARACTER, 'jason', [
-      rel(EntityType.LOCATION, 'leonida', 'ubicado_en'),
+    const noticiaEjemplo2 = makeEntity(EntityType.NEWS, 'noticia-ejemplo-2', [
+      rel(EntityType.VEHICLE, 'guia-ejemplo', 'ubicado_en'),
     ])
-    setupDataset([leonida, lucia, jason])
+    setupDataset([guiaEjemplo, noticiaEjemplo, noticiaEjemplo2])
 
-    const result = await getBidirectionalRelations(leonida)
+    const result = await getBidirectionalRelations(guiaEjemplo)
     expect(result).toHaveLength(2)
     expect(result).toEqual(
       expect.arrayContaining([
-        { targetType: EntityType.CHARACTER, targetSlug: 'lucia', relation: 'ubicado_en', direction: 'from' },
-        { targetType: EntityType.CHARACTER, targetSlug: 'jason', relation: 'ubicado_en', direction: 'from' },
+        { targetType: EntityType.NEWS, targetSlug: 'noticia-ejemplo', relation: 'ubicado_en', direction: 'from' },
+        { targetType: EntityType.NEWS, targetSlug: 'noticia-ejemplo-2', relation: 'ubicado_en', direction: 'from' },
       ])
     )
   })
 
   it('no duplica una relación inferida que ya está declarada explícitamente', async () => {
-    const vice = makeEntity(EntityType.LOCATION, 'vice-city', [
-      rel(EntityType.CHARACTER, 'lucia', 'aparece_en'),
+    const vehiculoEjemplo = makeEntity(EntityType.VEHICLE, 'toyota-corolla', [
+      rel(EntityType.NEWS, 'noticia-ejemplo', 'aparece_en'),
     ])
-    const lucia = makeEntity(EntityType.CHARACTER, 'lucia', [
-      rel(EntityType.LOCATION, 'vice-city', 'ubicado_en'),
+    const noticiaEjemplo = makeEntity(EntityType.NEWS, 'noticia-ejemplo', [
+      rel(EntityType.VEHICLE, 'toyota-corolla', 'ubicado_en'),
     ])
-    setupDataset([vice, lucia])
+    setupDataset([vehiculoEjemplo, noticiaEjemplo])
 
-    const result = await getBidirectionalRelations(vice)
-    // vice-city ya declara explícitamente la relación con lucia, así que
+    const result = await getBidirectionalRelations(vehiculoEjemplo)
+    // vehiculoEjemplo ya declara explícitamente la relación con noticiaEjemplo, así que
     // no debe agregarse una segunda vez como inferida.
     expect(result).toHaveLength(1)
-    expect(result[0]).toEqual(rel(EntityType.CHARACTER, 'lucia', 'aparece_en'))
+    expect(result[0]).toEqual(rel(EntityType.NEWS, 'noticia-ejemplo', 'aparece_en'))
   })
 
   it('no se relaciona consigo misma aunque comparta type+slug', async () => {
-    const self = makeEntity(EntityType.CHARACTER, 'lucia')
+    const self = makeEntity(EntityType.NEWS, 'noticia-ejemplo')
     setupDataset([self])
 
     const result = await getBidirectionalRelations(self)
@@ -124,7 +124,7 @@ describe('getBidirectionalRelations', () => {
   })
 
   it('devuelve array vacío cuando no hay relaciones directas ni inferidas', async () => {
-    const solo = makeEntity(EntityType.OBJECT, 'llavero')
+    const solo = makeEntity(EntityType.GUIDE, 'guia-suelta')
     setupDataset([solo])
 
     const result = await getBidirectionalRelations(solo)
@@ -132,50 +132,50 @@ describe('getBidirectionalRelations', () => {
   })
 
   it('cachea el resultado: la segunda llamada no vuelve a recorrer getEntitiesByType', async () => {
-    const vice = makeEntity(EntityType.LOCATION, 'vice-city')
-    const lucia = makeEntity(EntityType.CHARACTER, 'lucia', [
-      rel(EntityType.LOCATION, 'vice-city', 'ubicado_en'),
+    const vehiculoEjemplo = makeEntity(EntityType.VEHICLE, 'toyota-corolla')
+    const noticiaEjemplo = makeEntity(EntityType.NEWS, 'noticia-ejemplo', [
+      rel(EntityType.VEHICLE, 'toyota-corolla', 'ubicado_en'),
     ])
-    setupDataset([vice, lucia])
+    setupDataset([vehiculoEjemplo, noticiaEjemplo])
 
-    await getBidirectionalRelations(lucia)
+    await getBidirectionalRelations(noticiaEjemplo)
     const callsAfterFirst = mockedGetEntitiesByType.mock.calls.length
     expect(callsAfterFirst).toBeGreaterThan(0)
 
-    await getBidirectionalRelations(lucia)
+    await getBidirectionalRelations(noticiaEjemplo)
     expect(mockedGetEntitiesByType.mock.calls.length).toBe(callsAfterFirst)
   })
 
   it('clearRelationCache invalida el caché y fuerza un recálculo', async () => {
-    const vice = makeEntity(EntityType.LOCATION, 'vice-city')
-    const lucia = makeEntity(EntityType.CHARACTER, 'lucia', [
-      rel(EntityType.LOCATION, 'vice-city', 'ubicado_en'),
+    const vehiculoEjemplo = makeEntity(EntityType.VEHICLE, 'toyota-corolla')
+    const noticiaEjemplo = makeEntity(EntityType.NEWS, 'noticia-ejemplo', [
+      rel(EntityType.VEHICLE, 'toyota-corolla', 'ubicado_en'),
     ])
-    setupDataset([vice, lucia])
+    setupDataset([vehiculoEjemplo, noticiaEjemplo])
 
-    await getBidirectionalRelations(lucia)
+    await getBidirectionalRelations(noticiaEjemplo)
     const callsAfterFirst = mockedGetEntitiesByType.mock.calls.length
 
     clearRelationCache()
-    await getBidirectionalRelations(lucia)
+    await getBidirectionalRelations(noticiaEjemplo)
     expect(mockedGetEntitiesByType.mock.calls.length).toBeGreaterThan(callsAfterFirst)
   })
 })
 
 describe('getBidirectionalRelationCount', () => {
   it('cuenta relaciones directas + inferidas sin resolver entidades completas', async () => {
-    const leonida = makeEntity(EntityType.LOCATION, 'leonida')
-    const lucia = makeEntity(EntityType.CHARACTER, 'lucia', [
-      rel(EntityType.LOCATION, 'leonida', 'ubicado_en'),
+    const guiaEjemplo = makeEntity(EntityType.VEHICLE, 'guia-ejemplo')
+    const noticiaEjemplo = makeEntity(EntityType.NEWS, 'noticia-ejemplo', [
+      rel(EntityType.VEHICLE, 'guia-ejemplo', 'ubicado_en'),
     ])
-    setupDataset([leonida, lucia])
+    setupDataset([guiaEjemplo, noticiaEjemplo])
 
-    const count = await getBidirectionalRelationCount(leonida)
+    const count = await getBidirectionalRelationCount(guiaEjemplo)
     expect(count).toBe(1)
   })
 
   it('devuelve 0 cuando no hay relaciones', async () => {
-    const solo = makeEntity(EntityType.OBJECT, 'llavero')
+    const solo = makeEntity(EntityType.GUIDE, 'guia-suelta')
     setupDataset([solo])
 
     expect(await getBidirectionalRelationCount(solo)).toBe(0)
@@ -184,91 +184,91 @@ describe('getBidirectionalRelationCount', () => {
 
 describe('getBidirectionalRelatedEntitiesWithLabel', () => {
   it('resuelve entidades relacionadas (directas e inferidas) con su label', async () => {
-    const leonida = makeEntity(EntityType.LOCATION, 'leonida')
-    const lucia = makeEntity(EntityType.CHARACTER, 'lucia', [
-      rel(EntityType.LOCATION, 'leonida', 'ubicado_en'),
+    const guiaEjemplo = makeEntity(EntityType.VEHICLE, 'guia-ejemplo')
+    const noticiaEjemplo = makeEntity(EntityType.NEWS, 'noticia-ejemplo', [
+      rel(EntityType.VEHICLE, 'guia-ejemplo', 'ubicado_en'),
     ])
-    setupDataset([leonida, lucia])
+    setupDataset([guiaEjemplo, noticiaEjemplo])
 
-    const result = await getBidirectionalRelatedEntitiesWithLabel(leonida)
+    const result = await getBidirectionalRelatedEntitiesWithLabel(guiaEjemplo)
     expect(result).toHaveLength(1)
-    expect(result[0].entity.slug).toBe('lucia')
+    expect(result[0].entity.slug).toBe('noticia-ejemplo')
     expect(result[0].relation).toBe('ubicado_en')
   })
 
   it('omite relaciones cuyo target no existe (entidad borrada/rota)', async () => {
-    const lucia = makeEntity(EntityType.CHARACTER, 'lucia', [
-      rel(EntityType.LOCATION, 'ciudad-inexistente', 'ubicado_en'),
+    const noticiaEjemplo = makeEntity(EntityType.NEWS, 'noticia-ejemplo', [
+      rel(EntityType.VEHICLE, 'vehiculo-inexistente', 'ubicado_en'),
     ])
-    setupDataset([lucia])
+    setupDataset([noticiaEjemplo])
 
-    const result = await getBidirectionalRelatedEntitiesWithLabel(lucia)
+    const result = await getBidirectionalRelatedEntitiesWithLabel(noticiaEjemplo)
     expect(result).toEqual([])
   })
 
   it('respeta el límite pasado como parámetro', async () => {
-    const vice = makeEntity(EntityType.LOCATION, 'vice-city')
-    const leonida = makeEntity(EntityType.LOCATION, 'leonida')
-    const lucia = makeEntity(EntityType.CHARACTER, 'lucia', [
-      rel(EntityType.LOCATION, 'vice-city', 'ubicado_en'),
-      rel(EntityType.LOCATION, 'leonida', 'aparece_en'),
+    const vehiculoEjemplo = makeEntity(EntityType.VEHICLE, 'toyota-corolla')
+    const guiaEjemplo = makeEntity(EntityType.VEHICLE, 'guia-ejemplo')
+    const noticiaEjemplo = makeEntity(EntityType.NEWS, 'noticia-ejemplo', [
+      rel(EntityType.VEHICLE, 'toyota-corolla', 'ubicado_en'),
+      rel(EntityType.VEHICLE, 'guia-ejemplo', 'aparece_en'),
     ])
-    setupDataset([vice, leonida, lucia])
+    setupDataset([vehiculoEjemplo, guiaEjemplo, noticiaEjemplo])
 
-    const result = await getBidirectionalRelatedEntitiesWithLabel(lucia, 1)
+    const result = await getBidirectionalRelatedEntitiesWithLabel(noticiaEjemplo, 1)
     expect(result).toHaveLength(1)
   })
 })
 
 describe('detectCircularRelations', () => {
   it('detecta una auto-referencia directa (A -> A)', async () => {
-    const a = makeEntity(EntityType.CHARACTER, 'a', [
-      rel(EntityType.CHARACTER, 'a', 'amigo_de'),
+    const a = makeEntity(EntityType.NEWS, 'a', [
+      rel(EntityType.NEWS, 'a', 'amigo_de'),
     ])
     setupDataset([a])
 
     const circular = await detectCircularRelations(a)
-    expect(circular).toEqual([rel(EntityType.CHARACTER, 'a', 'amigo_de')])
+    expect(circular).toEqual([rel(EntityType.NEWS, 'a', 'amigo_de')])
   })
 
   it('detecta un ciclo corto A -> B -> A', async () => {
-    const a = makeEntity(EntityType.CHARACTER, 'a', [
-      rel(EntityType.CHARACTER, 'b', 'amigo_de'),
+    const a = makeEntity(EntityType.NEWS, 'a', [
+      rel(EntityType.NEWS, 'b', 'amigo_de'),
     ])
-    const b = makeEntity(EntityType.CHARACTER, 'b', [
-      rel(EntityType.CHARACTER, 'a', 'amigo_de'),
+    const b = makeEntity(EntityType.NEWS, 'b', [
+      rel(EntityType.NEWS, 'a', 'amigo_de'),
     ])
     setupDataset([a, b])
 
     const circular = await detectCircularRelations(a)
-    expect(circular).toEqual([rel(EntityType.CHARACTER, 'b', 'amigo_de')])
+    expect(circular).toEqual([rel(EntityType.NEWS, 'b', 'amigo_de')])
   })
 
   it('detecta un ciclo más largo A -> B -> C -> A dentro de maxDepth', async () => {
-    const a = makeEntity(EntityType.CHARACTER, 'a', [
-      rel(EntityType.CHARACTER, 'b', 'amigo_de'),
+    const a = makeEntity(EntityType.NEWS, 'a', [
+      rel(EntityType.NEWS, 'b', 'amigo_de'),
     ])
-    const b = makeEntity(EntityType.CHARACTER, 'b', [
-      rel(EntityType.CHARACTER, 'c', 'amigo_de'),
+    const b = makeEntity(EntityType.NEWS, 'b', [
+      rel(EntityType.NEWS, 'c', 'amigo_de'),
     ])
-    const c = makeEntity(EntityType.CHARACTER, 'c', [
-      rel(EntityType.CHARACTER, 'a', 'amigo_de'),
+    const c = makeEntity(EntityType.NEWS, 'c', [
+      rel(EntityType.NEWS, 'a', 'amigo_de'),
     ])
     setupDataset([a, b, c])
 
     const circular = await detectCircularRelations(a, 5)
-    expect(circular).toEqual([rel(EntityType.CHARACTER, 'b', 'amigo_de')])
+    expect(circular).toEqual([rel(EntityType.NEWS, 'b', 'amigo_de')])
   })
 
   it('no reporta ciclo si el camino de vuelta excede maxDepth', async () => {
-    const a = makeEntity(EntityType.CHARACTER, 'a', [
-      rel(EntityType.CHARACTER, 'b', 'amigo_de'),
+    const a = makeEntity(EntityType.NEWS, 'a', [
+      rel(EntityType.NEWS, 'b', 'amigo_de'),
     ])
-    const b = makeEntity(EntityType.CHARACTER, 'b', [
-      rel(EntityType.CHARACTER, 'c', 'amigo_de'),
+    const b = makeEntity(EntityType.NEWS, 'b', [
+      rel(EntityType.NEWS, 'c', 'amigo_de'),
     ])
-    const c = makeEntity(EntityType.CHARACTER, 'c', [
-      rel(EntityType.CHARACTER, 'a', 'amigo_de'),
+    const c = makeEntity(EntityType.NEWS, 'c', [
+      rel(EntityType.NEWS, 'a', 'amigo_de'),
     ])
     setupDataset([a, b, c])
 
@@ -279,13 +279,13 @@ describe('detectCircularRelations', () => {
   })
 
   it('no reporta ciclo cuando las relaciones forman un camino sin retorno (DAG)', async () => {
-    const a = makeEntity(EntityType.CHARACTER, 'a', [
-      rel(EntityType.CHARACTER, 'b', 'amigo_de'),
+    const a = makeEntity(EntityType.NEWS, 'a', [
+      rel(EntityType.NEWS, 'b', 'amigo_de'),
     ])
-    const b = makeEntity(EntityType.CHARACTER, 'b', [
-      rel(EntityType.CHARACTER, 'c', 'amigo_de'),
+    const b = makeEntity(EntityType.NEWS, 'b', [
+      rel(EntityType.NEWS, 'c', 'amigo_de'),
     ])
-    const c = makeEntity(EntityType.CHARACTER, 'c')
+    const c = makeEntity(EntityType.NEWS, 'c')
     setupDataset([a, b, c])
 
     const circular = await detectCircularRelations(a)
@@ -293,7 +293,7 @@ describe('detectCircularRelations', () => {
   })
 
   it('devuelve array vacío cuando la entidad no tiene relations', async () => {
-    const solo = makeEntity(EntityType.OBJECT, 'llavero')
+    const solo = makeEntity(EntityType.GUIDE, 'guia-suelta')
     setupDataset([solo])
 
     expect(await detectCircularRelations(solo)).toEqual([])
@@ -302,14 +302,14 @@ describe('detectCircularRelations', () => {
   it('no entra en loop infinito con un ciclo que no incluye al nodo de partida', async () => {
     // a -> b -> c -> b (ciclo entre b y c, sin volver nunca a "a").
     // El DFS debe cortar por `visited` y terminar sin colgarse.
-    const a = makeEntity(EntityType.CHARACTER, 'a', [
-      rel(EntityType.CHARACTER, 'b', 'amigo_de'),
+    const a = makeEntity(EntityType.NEWS, 'a', [
+      rel(EntityType.NEWS, 'b', 'amigo_de'),
     ])
-    const b = makeEntity(EntityType.CHARACTER, 'b', [
-      rel(EntityType.CHARACTER, 'c', 'amigo_de'),
+    const b = makeEntity(EntityType.NEWS, 'b', [
+      rel(EntityType.NEWS, 'c', 'amigo_de'),
     ])
-    const c = makeEntity(EntityType.CHARACTER, 'c', [
-      rel(EntityType.CHARACTER, 'b', 'amigo_de'),
+    const c = makeEntity(EntityType.NEWS, 'c', [
+      rel(EntityType.NEWS, 'b', 'amigo_de'),
     ])
     setupDataset([a, b, c])
 
@@ -318,14 +318,14 @@ describe('detectCircularRelations', () => {
   })
 
   it('evalúa cada relación directa de forma independiente (una en ciclo, otra no)', async () => {
-    const a = makeEntity(EntityType.CHARACTER, 'a', [
-      rel(EntityType.CHARACTER, 'a', 'amigo_de'), // auto-referencia: ciclo
-      rel(EntityType.CHARACTER, 'd', 'amigo_de'), // sin retorno: no es ciclo
+    const a = makeEntity(EntityType.NEWS, 'a', [
+      rel(EntityType.NEWS, 'a', 'amigo_de'), // auto-referencia: ciclo
+      rel(EntityType.NEWS, 'd', 'amigo_de'), // sin retorno: no es ciclo
     ])
-    const d = makeEntity(EntityType.CHARACTER, 'd')
+    const d = makeEntity(EntityType.NEWS, 'd')
     setupDataset([a, d])
 
     const circular = await detectCircularRelations(a)
-    expect(circular).toEqual([rel(EntityType.CHARACTER, 'a', 'amigo_de')])
+    expect(circular).toEqual([rel(EntityType.NEWS, 'a', 'amigo_de')])
   })
 })
