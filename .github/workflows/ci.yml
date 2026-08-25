@@ -60,3 +60,9 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      # Corre DESPUÉS del build porque necesita el CSS ya compilado en
+      # .next/static/css para confirmar que las clases auto-* (tokens del
+      # theme actual) siguen generándose.
+      - name: Verify Tailwind config
+        run: npm run verify:tailwind
