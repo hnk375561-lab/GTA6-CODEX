@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.800Z",
-  "updatedAt": "2026-08-24T01:16:06.553Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Kia",
   "class": "SUV",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1993,
+  "asientos": 5,
+  "baul": "587 litros",
+  "cilindrada": "1.6 turbo o 2.0 aspirado",
+  "colores": [
+    "Blanco Clear",
+    "Gris Sparkling",
+    "Negro Aurora",
+    "Verde Terracota"
+  ],
+  "consumo": "7-8 l/100km aprox.",
+  "dimensiones": "4.660 mm largo x 1.865 mm ancho x 1.650 mm alto, distancia entre ejes 2.680 mm",
+  "emisiones": "CO2 aprox. 170 g/km",
+  "generacion": "Quinta generación",
+  "maleteroMin": "587 litros",
+  "tipo": "SUV compacto"
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.948Z",
-  "updatedAt": "2026-08-24T01:16:06.534Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Fiat",
   "class": "Hatchback",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2017,
+  "asientos": 5,
+  "baul": "300 litros",
+  "cilindrada": "1.0, 1.3 o 1.8 (Firefly)",
+  "colores": [
+    "Blanco Banchisa",
+    "Rojo Alerta",
+    "Gris Cinza",
+    "Negro Vulcano"
+  ],
+  "consumo": "6.5-8 l/100km aprox.",
+  "dimensiones": "4.104 mm largo x 1.746 mm ancho x 1.478 mm alto, distancia entre ejes 2.519 mm",
+  "emisiones": "CO2 aprox. 140 g/km",
+  "generacion": "Primera generación (plataforma Fiat Mobi/Argo)",
+  "maleteroMin": "300 litros",
+  "tipo": "Hatchback compacto"
 }

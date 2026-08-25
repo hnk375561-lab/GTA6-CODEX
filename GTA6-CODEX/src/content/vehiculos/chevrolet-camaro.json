@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.088Z",
-  "updatedAt": "2026-08-24T01:16:06.491Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Chevrolet",
   "class": "Deportivo",
   "customizable": false,
@@ -55,5 +55,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1966,
+  "asientos": 4,
+  "baul": "270 litros",
+  "cilindrada": "2.0 turbo, 3.6 V6 o 6.2 V8",
+  "colores": [
+    "Blanco Summit",
+    "Negro",
+    "Rojo Garnet",
+    "Amarillo Bumblebee"
+  ],
+  "emisiones": "CO2 aprox. 280 g/km (V8)",
+  "generacion": "Sexta generación (discontinuado tras 2024)",
+  "maleteroMin": "270 litros",
+  "tipo": "Muscle car / deportivo"
 }

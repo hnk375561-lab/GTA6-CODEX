@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.972Z",
-  "updatedAt": "2026-08-24T01:16:06.486Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "BYD",
   "class": "Hatchback eléctrico",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2021,
+  "asientos": 5,
+  "baul": "345 litros",
+  "cilindrada": "N/A (eléctrico)",
+  "colores": [
+    "Blanco Ártico",
+    "Gris Urban",
+    "Azul Surf",
+    "Amarillo Sunflower"
+  ],
+  "consumo": "Eléctrico: 12.7-13.7 kWh/100km",
+  "dimensiones": "4.290 mm largo x 1.770 mm ancho x 1.570 mm alto, distancia entre ejes 2.700 mm",
+  "emisiones": "0 g/km (eléctrico puro)",
+  "generacion": "Primera generación (plataforma e-Platform 3.0)",
+  "maleteroMin": "345 litros",
+  "tipo": "Hatchback eléctrico"
 }

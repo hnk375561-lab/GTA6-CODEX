@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 9.0s"
   },
   "createdAt": "2026-08-23T21:59:01.491247Z",
-  "updatedAt": "2026-08-24T01:16:06.557Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -48,5 +48,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "F",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2012,
+  "asientos": 5,
+  "baul": "510 litros",
+  "cilindrada": "2.0 o 2.5 aspirado/turbo",
+  "colores": [
+    "Blanco Snowflake Pearl",
+    "Rojo Soul",
+    "Gris Machine",
+    "Azul Eterna"
+  ],
+  "emisiones": "CO2 aprox. 160 g/km",
+  "generacion": "Segunda generación (facelift)",
+  "maleteroMin": "510 litros",
+  "tipo": "SUV mediano"
 }

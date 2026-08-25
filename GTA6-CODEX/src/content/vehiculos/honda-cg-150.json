@@ -25,7 +25,7 @@
     "speed": "105 km/h"
   },
   "createdAt": "2026-08-23T21:59:10.642893Z",
-  "updatedAt": "2026-08-24T01:16:06.542Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -44,5 +44,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "A",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70R17",
+  "anoLanzamiento": 2004,
+  "asientos": 2,
+  "baul": "N/A (moto)",
+  "cilindrada": "149.1 cc, monocilíndrico",
+  "colores": [
+    "Rojo",
+    "Negro",
+    "Azul",
+    "Plata"
+  ],
+  "emisiones": "CO2 aprox. 50 g/km",
+  "generacion": "Vigente con actualizaciones periódicas",
+  "maleteroMin": "N/A",
+  "tipo": "Moto de calle / street"
 }

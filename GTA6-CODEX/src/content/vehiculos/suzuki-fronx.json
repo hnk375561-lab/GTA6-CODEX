@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.809Z",
-  "updatedAt": "2026-08-24T01:16:06.574Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Suzuki",
   "class": "SUV compacta",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2023,
+  "asientos": 5,
+  "baul": "308 litros",
+  "cilindrada": "1.2 aspirado o 1.0 turbo mild-hybrid",
+  "colores": [
+    "Blanco Perla",
+    "Azul Océano",
+    "Gris Grafito",
+    "Amarillo Splash"
+  ],
+  "consumo": "5.5-6 l/100km aprox.",
+  "dimensiones": "3.995 mm largo x 1.765 mm ancho x 1.550 mm alto, distancia entre ejes 2.520 mm",
+  "emisiones": "CO2 aprox. 125 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "308 litros",
+  "tipo": "SUV compacto / crossover"
 }

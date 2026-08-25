@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.800Z",
-  "updatedAt": "2026-08-24T01:16:06.579Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Toyota",
   "class": "SUV",
   "customizable": false,
@@ -53,5 +53,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1994,
+  "asientos": 5,
+  "baul": "580 litros",
+  "cilindrada": "2.0/2.5 híbrido o híbrido enchufable",
+  "colores": [
+    "Blanco Perla",
+    "Gris Óxido",
+    "Negro",
+    "Azul"
+  ],
+  "emisiones": "CO2 aprox. 120 g/km",
+  "generacion": "Quinta generación",
+  "maleteroMin": "580 litros",
+  "tipo": "SUV mediano híbrido"
 }

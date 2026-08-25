@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-24T01:16:06.549Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -47,5 +47,18 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2019,
+  "asientos": 5,
+  "baul": "Caja de carga aprox. 1.520 x 1.560 mm",
+  "cilindrada": "2.0 turbo diésel",
+  "colores": [
+    "Blanco",
+    "Gris",
+    "Negro"
+  ],
+  "emisiones": "CO2 aprox. 215 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "N/A (pick-up)",
+  "tipo": "Pick-up mediana"
 }

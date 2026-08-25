@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:32.112Z",
-  "updatedAt": "2026-08-24T01:16:06.477Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Audi",
   "class": "SUV premium compacta",
   "customizable": false,
@@ -65,5 +65,7 @@
     "Azul Turbo",
     "Rojo Tango",
     "Plata Florett Metalizado"
-  ]
+  ],
+  "consumo": "7-7.5 l/100km aprox.",
+  "dimensiones": "4.484 mm largo x 1.856 mm ancho x 1.616 mm alto, distancia entre ejes 2.680 mm"
 }

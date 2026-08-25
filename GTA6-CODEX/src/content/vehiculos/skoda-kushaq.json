@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 10.3s"
   },
   "createdAt": "2026-08-23T21:59:12.340520Z",
-  "updatedAt": "2026-08-24T01:16:06.573Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -46,5 +46,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2021,
+  "asientos": 5,
+  "baul": "385 litros",
+  "cilindrada": "1.0 o 1.5 turbo",
+  "colores": [
+    "Blanco",
+    "Rojo",
+    "Gris",
+    "Negro"
+  ],
+  "emisiones": "CO2 aprox. 135 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "385 litros",
+  "tipo": "SUV compacto"
 }

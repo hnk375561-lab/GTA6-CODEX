@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 10.5s"
   },
   "createdAt": "2026-08-23T21:59:07.332517Z",
-  "updatedAt": "2026-08-24T01:16:06.534Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -46,5 +46,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "C",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2007,
+  "asientos": 4,
+  "baul": "185 litros",
+  "cilindrada": "0.9 turbo o eléctrico (500e)",
+  "colores": [
+    "Blanco Bianco",
+    "Rojo Passione",
+    "Beige Cappuccino",
+    "Verde Menta"
+  ],
+  "emisiones": "CO2 aprox. 110 g/km",
+  "generacion": "Tercera generación (facelift)",
+  "maleteroMin": "185 litros",
+  "tipo": "City car"
 }

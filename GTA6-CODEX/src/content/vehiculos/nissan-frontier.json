@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:31.256Z",
-  "updatedAt": "2026-08-24T01:16:06.563Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Nissan",
   "class": "Pickup",
   "customizable": false,
@@ -46,5 +46,21 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1997,
+  "asientos": 5,
+  "baul": "Caja de carga 1.510 x 1.560 mm aprox. (cabina doble)",
+  "cilindrada": "2.3 biturbo diésel",
+  "colores": [
+    "Blanco Perla",
+    "Negro Ébano",
+    "Gris Galaxy",
+    "Naranja Monarch"
+  ],
+  "consumo": "8.5-10 l/100km aprox.",
+  "dimensiones": "5.400 mm largo x 1.850 mm ancho x 1.855 mm alto, distancia entre ejes 3.150 mm",
+  "emisiones": "CO2 aprox. 225 g/km",
+  "generacion": "Cuarta generación",
+  "maleteroMin": "N/A (pick-up)",
+  "tipo": "Pick-up mediana"
 }

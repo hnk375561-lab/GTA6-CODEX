@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-24T01:16:06.519Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -50,5 +50,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2020,
+  "asientos": 5,
+  "baul": "380 litros",
+  "cilindrada": "1.5, 2.0 turbo o híbrido enchufable",
+  "colores": [
+    "Gris Graphene",
+    "Negro Midnight",
+    "Azul Petrol",
+    "Blanco"
+  ],
+  "emisiones": "CO2 aprox. 150 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "380 litros",
+  "tipo": "Hatchback deportivo"
 }

@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 12.0s"
   },
   "createdAt": "2026-08-23T21:59:07.889585Z",
-  "updatedAt": "2026-08-24T01:16:06.581Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -46,5 +46,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1982,
+  "asientos": 5,
+  "baul": "Caja de carga 1.360 x 1.550 mm aprox. (cabina doble)",
+  "cilindrada": "1.6 aspirado",
+  "colores": [
+    "Blanco Candy",
+    "Gris Platinum",
+    "Rojo Flash",
+    "Negro Deep"
+  ],
+  "emisiones": "CO2 aprox. 155 g/km",
+  "generacion": "Sexta generación (facelift)",
+  "maleteroMin": "N/A (pick-up)",
+  "tipo": "Pick-up compacta"
 }

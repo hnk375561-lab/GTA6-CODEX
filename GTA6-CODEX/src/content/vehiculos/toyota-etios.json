@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 12.9s"
   },
   "createdAt": "2026-08-23T21:59:12.065294Z",
-  "updatedAt": "2026-08-24T01:16:06.577Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -47,5 +47,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "C",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2012,
+  "asientos": 5,
+  "baul": "595 litros (sedán)",
+  "cilindrada": "1.5 aspirado",
+  "colores": [
+    "Blanco Perla",
+    "Plata Metálico",
+    "Rojo",
+    "Negro"
+  ],
+  "emisiones": "CO2 aprox. 140 g/km",
+  "generacion": "Primera generación (discontinuado)",
+  "maleteroMin": "595 litros",
+  "tipo": "Hatchback/Sedán compacto"
 }

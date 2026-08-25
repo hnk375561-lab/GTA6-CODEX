@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 11.8s"
   },
   "createdAt": "2026-08-23T21:59:03.999490Z",
-  "updatedAt": "2026-08-24T01:16:06.548Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -49,5 +49,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2002,
+  "asientos": 5,
+  "baul": "Caja de carga 1.552 x 1.530 mm aprox. (cabina doble)",
+  "cilindrada": "1.9 o 3.0 turbo diésel",
+  "colores": [
+    "Blanco",
+    "Gris",
+    "Negro",
+    "Naranja"
+  ],
+  "emisiones": "CO2 aprox. 210 g/km",
+  "generacion": "Tercera generación",
+  "maleteroMin": "N/A (pick-up)",
+  "tipo": "Pick-up mediana"
 }

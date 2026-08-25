@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 6.3s"
   },
   "createdAt": "2026-08-23T21:59:03.451886Z",
-  "updatedAt": "2026-08-24T01:16:06.569Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -48,5 +48,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1981,
+  "asientos": 5,
+  "baul": "Caja de carga 1.712 x 1.687 mm aprox.",
+  "cilindrada": "3.6 V6, 5.7 V8 HEMI o eléctrico (REV)",
+  "colores": [
+    "Blanco Bright",
+    "Negro Diamante",
+    "Gris Billet",
+    "Rojo Flame"
+  ],
+  "emisiones": "CO2 aprox. 300 g/km (V8)",
+  "generacion": "Quinta generación (DT/DS, facelift)",
+  "maleteroMin": "N/A (pick-up)",
+  "tipo": "Pick-up full size"
 }

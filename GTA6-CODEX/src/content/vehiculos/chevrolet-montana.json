@@ -25,7 +25,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-24T01:16:06.500Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -45,5 +45,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2003,
+  "asientos": 5,
+  "baul": "Caja de carga 1.290 x 1.222 mm aprox.",
+  "cilindrada": "1.2 turbo",
+  "colores": [
+    "Blanco",
+    "Rojo",
+    "Gris Grafite",
+    "Negro"
+  ],
+  "emisiones": "CO2 aprox. 140 g/km",
+  "generacion": "Segunda generación (basada en Chevrolet Tracker)",
+  "maleteroMin": "N/A (pick-up)",
+  "tipo": "Pick-up compacta"
 }

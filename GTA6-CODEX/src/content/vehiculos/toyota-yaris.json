@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.060Z",
-  "updatedAt": "2026-08-24T01:16:06.580Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Toyota",
   "class": "Hatchback",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1999,
+  "asientos": 5,
+  "baul": "286 litros (hatchback) / 470 litros (sedán)",
+  "cilindrada": "1.3 o 1.5 aspirado",
+  "colores": [
+    "Blanco Perla",
+    "Plata Metálico",
+    "Gris Óxido",
+    "Rojo"
+  ],
+  "consumo": "6-6.5 l/100km aprox.",
+  "dimensiones": "4.145 mm largo x 1.745 mm ancho x 1.475 mm alto, distancia entre ejes 2.560 mm",
+  "emisiones": "CO2 aprox. 140 g/km",
+  "generacion": "Cuarta generación",
+  "maleteroMin": "286 litros",
+  "tipo": "Hatchback/Sedán compacto"
 }

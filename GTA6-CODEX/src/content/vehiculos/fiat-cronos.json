@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.161Z",
-  "updatedAt": "2026-08-24T01:16:06.534Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Fiat",
   "class": "Sedán",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2018,
+  "asientos": 5,
+  "baul": "525 litros",
+  "cilindrada": "1.3 o 1.8 (Firefly)",
+  "colores": [
+    "Blanco Banchisa",
+    "Gris Cinza",
+    "Rojo Alerta",
+    "Negro Vulcano"
+  ],
+  "consumo": "7-8.5 l/100km aprox.",
+  "dimensiones": "4.493 mm largo x 1.750 mm ancho x 1.510 mm alto, distancia entre ejes 2.519 mm",
+  "emisiones": "CO2 aprox. 150 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "525 litros",
+  "tipo": "Sedán compacto"
 }

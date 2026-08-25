@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.076Z",
-  "updatedAt": "2026-08-24T01:16:06.541Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Haval",
   "class": "SUV",
   "customizable": false,
@@ -47,5 +47,21 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2021,
+  "asientos": 5,
+  "baul": "600 litros",
+  "cilindrada": "1.5 turbo (1.498 cc) o híbrido",
+  "colores": [
+    "Blanco Perla",
+    "Negro Ébano",
+    "Gris Meteorito",
+    "Azul"
+  ],
+  "consumo": "7-7.5 l/100km aprox.",
+  "dimensiones": "4.653 mm largo x 1.886 mm ancho x 1.730 mm alto, distancia entre ejes 2.720 mm",
+  "emisiones": "CO2 aprox. 165 g/km",
+  "generacion": "Tercera generación",
+  "maleteroMin": "600 litros",
+  "tipo": "SUV mediano"
 }

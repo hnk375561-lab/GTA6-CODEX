@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-24T01:16:06.483Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "197 kg",
@@ -50,5 +50,18 @@
   ],
   "tiempoRecorrido": "10.7s (1/4 milla)",
   "consumoEtiqueta": "F",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70R17",
+  "anoLanzamiento": 2009,
+  "asientos": 2,
+  "baul": "N/A (moto)",
+  "cilindrada": "999 cc, 4 cilindros en línea",
+  "colores": [
+    "Racing Red",
+    "Negro Storm",
+    "Blanco M"
+  ],
+  "emisiones": "CO2 aprox. 100 g/km",
+  "generacion": "Tercera generación (facelift 2023)",
+  "maleteroMin": "N/A",
+  "tipo": "Deportiva superbike"
 }

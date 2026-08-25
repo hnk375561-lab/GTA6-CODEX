@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 4.8s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-24T01:16:06.481Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -50,5 +50,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2003,
+  "asientos": 4,
+  "baul": "358 litros",
+  "cilindrada": "4.0 V8 biturbo o W12 biturbo",
+  "colores": [
+    "Negro Beluga",
+    "Blanco Ice",
+    "Verde British Racing",
+    "Plata Moonbeam"
+  ],
+  "emisiones": "CO2 aprox. 280 g/km",
+  "generacion": "Tercera generación",
+  "maleteroMin": "358 litros",
+  "tipo": "Gran turismo de lujo"
 }

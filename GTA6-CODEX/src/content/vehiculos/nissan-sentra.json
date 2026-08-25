@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 9.8s"
   },
   "createdAt": "2026-08-23T21:59:04.821675Z",
-  "updatedAt": "2026-08-24T01:16:06.565Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -46,5 +46,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1982,
+  "asientos": 5,
+  "baul": "428 litros",
+  "cilindrada": "2.0 aspirado",
+  "colores": [
+    "Blanco Perla",
+    "Negro Ébano",
+    "Plata Brillante",
+    "Rojo Fórmula"
+  ],
+  "emisiones": "CO2 aprox. 155 g/km",
+  "generacion": "Octava generación (facelift)",
+  "maleteroMin": "428 litros",
+  "tipo": "Sedán compacto"
 }

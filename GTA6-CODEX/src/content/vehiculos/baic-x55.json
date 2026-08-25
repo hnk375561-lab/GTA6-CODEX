@@ -30,7 +30,7 @@
     "acceleration": "0-100 km/h en 7.84s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-24T01:16:06.479Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -52,5 +52,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2019,
+  "asientos": 5,
+  "baul": "410 litros",
+  "cilindrada": "1.5 turbo",
+  "colores": [
+    "Blanco",
+    "Gris",
+    "Rojo",
+    "Negro"
+  ],
+  "emisiones": "CO2 aprox. 160 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "410 litros",
+  "tipo": "SUV compacto"
 }

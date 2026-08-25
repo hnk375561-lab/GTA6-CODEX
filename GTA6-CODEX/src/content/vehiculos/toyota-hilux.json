@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.868Z",
-  "updatedAt": "2026-08-24T01:16:06.578Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Toyota",
   "class": "Pickup",
   "customizable": false,
@@ -53,5 +53,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1968,
+  "asientos": 5,
+  "baul": "Caja de carga 1.525 x 1.540 mm aprox. (cabina doble)",
+  "cilindrada": "2.4 o 2.8 turbo diésel",
+  "colores": [
+    "Blanco Perla",
+    "Gris Plata",
+    "Negro",
+    "Naranja"
+  ],
+  "emisiones": "CO2 aprox. 210 g/km",
+  "generacion": "Octava generación (facelift)",
+  "maleteroMin": "N/A (pick-up)",
+  "tipo": "Pick-up mediana"
 }

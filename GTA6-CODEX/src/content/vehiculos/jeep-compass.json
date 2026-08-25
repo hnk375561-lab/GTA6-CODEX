@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.851Z",
-  "updatedAt": "2026-08-24T01:16:06.549Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Jeep",
   "class": "SUV",
   "customizable": false,
@@ -46,5 +46,21 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2006,
+  "asientos": 5,
+  "baul": "438 litros",
+  "cilindrada": "1.3 turbo o 2.0 turbo diésel",
+  "colores": [
+    "Blanco Vívido",
+    "Negro Diamante",
+    "Gris Cargo",
+    "Rojo"
+  ],
+  "consumo": "7-9 l/100km aprox.",
+  "dimensiones": "4.404 mm largo x 1.874 mm ancho x 1.629 mm alto, distancia entre ejes 2.636 mm",
+  "emisiones": "CO2 aprox. 165 g/km",
+  "generacion": "Segunda generación",
+  "maleteroMin": "438 litros",
+  "tipo": "SUV compacto"
 }

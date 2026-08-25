@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.849Z",
-  "updatedAt": "2026-08-24T01:16:06.585Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Zanella",
   "class": "Moto",
   "customizable": false,
@@ -42,5 +42,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70R17",
+  "anoLanzamiento": 2015,
+  "asientos": 2,
+  "baul": "N/A (moto, sin baúl de fábrica)",
+  "cilindrada": "149.5 cc, monocilíndrico 4 tiempos",
+  "colores": [
+    "Negro",
+    "Rojo",
+    "Azul",
+    "Blanco"
+  ],
+  "consumo": "2.3-2.6 l/100km aprox.",
+  "dimensiones": "2.020 mm largo x 780 mm ancho x 1.080 mm alto, distancia entre ejes 1.290 mm",
+  "emisiones": "CO2 aprox. 58 g/km",
+  "generacion": "Vigente desde 2015, con actualizaciones",
+  "maleteroMin": "N/A",
+  "tipo": "Moto de calle / street"
 }

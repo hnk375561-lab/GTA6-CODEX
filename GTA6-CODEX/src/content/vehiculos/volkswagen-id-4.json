@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-24T01:16:06.581Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -50,5 +50,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2020,
+  "asientos": 5,
+  "baul": "543 litros",
+  "cilindrada": "N/A (eléctrico)",
+  "colores": [
+    "Blanco Candy",
+    "Gris Platinum",
+    "Azul Biscay",
+    "Negro Deep"
+  ],
+  "emisiones": "0 g/km",
+  "generacion": "Primera generación (facelift)",
+  "maleteroMin": "543 litros",
+  "tipo": "SUV eléctrico mediano"
 }

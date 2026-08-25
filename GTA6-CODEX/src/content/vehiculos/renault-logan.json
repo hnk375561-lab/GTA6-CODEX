@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 12.5s"
   },
   "createdAt": "2026-08-23T21:59:06.785891Z",
-  "updatedAt": "2026-08-24T01:16:06.570Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -47,5 +47,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2004,
+  "asientos": 5,
+  "baul": "510 litros",
+  "cilindrada": "1.6 aspirado",
+  "colores": [
+    "Blanco Glacial",
+    "Gris Cassiopée",
+    "Negro Nácar",
+    "Bordo"
+  ],
+  "emisiones": "CO2 aprox. 150 g/km",
+  "generacion": "Segunda generación (facelift)",
+  "maleteroMin": "510 litros",
+  "tipo": "Sedán compacto"
 }

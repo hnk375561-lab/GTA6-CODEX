@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.628Z",
-  "updatedAt": "2026-08-24T01:16:06.550Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Kawasaki",
   "class": "Moto deportiva",
   "customizable": false,
@@ -43,5 +43,20 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70R17",
+  "anoLanzamiento": 2018,
+  "asientos": 2,
+  "baul": "N/A (moto, sin baúl de fábrica)",
+  "cilindrada": "399 cc, bicilíndrico paralelo",
+  "colores": [
+    "Verde Lima",
+    "Negro",
+    "Blanco/Gris"
+  ],
+  "consumo": "3.3 l/100km aprox.",
+  "dimensiones": "1.990 mm largo x 710 mm ancho x 1.120 mm alto, distancia entre ejes 1.370 mm",
+  "emisiones": "CO2 aprox. 78 g/km",
+  "generacion": "Segunda generación",
+  "maleteroMin": "N/A",
+  "tipo": "Deportiva"
 }

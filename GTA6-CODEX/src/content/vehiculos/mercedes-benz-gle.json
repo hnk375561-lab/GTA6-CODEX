@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-24T01:16:06.560Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -50,5 +50,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1997,
+  "asientos": 7,
+  "baul": "630 litros (3 filas en uso)",
+  "cilindrada": "3.0 turbo mild-hybrid o híbrido enchufable",
+  "colores": [
+    "Blanco Polar",
+    "Negro Obsidiana",
+    "Gris Selenita",
+    "Marrón"
+  ],
+  "emisiones": "CO2 aprox. 200 g/km",
+  "generacion": "Segunda generación (facelift)",
+  "maleteroMin": "630 litros",
+  "tipo": "SUV grande (7 plazas)"
 }

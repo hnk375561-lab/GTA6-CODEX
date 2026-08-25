@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 9.9s"
   },
   "createdAt": "2026-08-23T21:59:05.413464Z",
-  "updatedAt": "2026-08-24T01:16:06.552Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -46,5 +46,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2019,
+  "asientos": 5,
+  "baul": "433 litros",
+  "cilindrada": "1.6 aspirado o turbo",
+  "colores": [
+    "Blanco Clear",
+    "Gris Sparkling",
+    "Naranja Volcanic",
+    "Negro Aurora"
+  ],
+  "emisiones": "CO2 aprox. 155 g/km",
+  "generacion": "Primera generación (facelift 2023)",
+  "maleteroMin": "433 litros",
+  "tipo": "SUV compacto"
 }

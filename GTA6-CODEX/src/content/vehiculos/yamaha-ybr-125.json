@@ -10,7 +10,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:34.410Z",
-  "updatedAt": "2026-08-24T01:16:06.585Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Yamaha",
   "class": "Moto",
   "customizable": false,
@@ -41,5 +41,20 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70R17",
+  "anoLanzamiento": 2000,
+  "asientos": 2,
+  "baul": "N/A (moto, sin baúl de fábrica)",
+  "cilindrada": "124.8 cc, monocilíndrico 4 tiempos",
+  "colores": [
+    "Negro",
+    "Rojo",
+    "Azul"
+  ],
+  "consumo": "2.2-2.5 l/100km aprox.",
+  "dimensiones": "2.020 mm largo x 745 mm ancho x 1.075 mm alto, distancia entre ejes 1.290 mm",
+  "emisiones": "CO2 aprox. 55 g/km",
+  "generacion": "Vigente desde 2000, múltiples actualizaciones",
+  "maleteroMin": "N/A",
+  "tipo": "Moto de calle / street"
 }

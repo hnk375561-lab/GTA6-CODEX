@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 6.6s"
   },
   "createdAt": "2026-08-23T21:59:09.542585Z",
-  "updatedAt": "2026-08-24T01:16:06.519Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -49,5 +49,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2020,
+  "asientos": 5,
+  "baul": "420 litros",
+  "cilindrada": "1.5, 2.0 turbo o híbrido enchufable",
+  "colores": [
+    "Gris Graphene",
+    "Negro Midnight",
+    "Azul Petrol",
+    "Plata"
+  ],
+  "emisiones": "CO2 aprox. 150 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "420 litros",
+  "tipo": "SUV coupé deportivo"
 }

@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 11.5s"
   },
   "createdAt": "2026-08-23T21:59:04.543405Z",
-  "updatedAt": "2026-08-24T01:16:06.543Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -46,5 +46,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "C",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2001,
+  "asientos": 5,
+  "baul": "304 litros",
+  "cilindrada": "1.5 aspirado o híbrido",
+  "colores": [
+    "Blanco Platino",
+    "Rojo Ígneo",
+    "Gris Meteoro",
+    "Azul"
+  ],
+  "emisiones": "CO2 aprox. 130 g/km",
+  "generacion": "Cuarta generación (Jazz en Europa)",
+  "maleteroMin": "304 litros",
+  "tipo": "Hatchback compacto"
 }

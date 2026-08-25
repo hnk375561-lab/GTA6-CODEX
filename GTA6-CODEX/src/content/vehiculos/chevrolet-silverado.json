@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 6.5s"
   },
   "createdAt": "2026-08-23T21:59:03.723060Z",
-  "updatedAt": "2026-08-24T01:16:06.509Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -48,5 +48,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1998,
+  "asientos": 5,
+  "baul": "Caja de carga 1.727 x 1.727 mm aprox.",
+  "cilindrada": "5.3 V8 o 6.2 V8",
+  "colores": [
+    "Blanco Summit",
+    "Negro",
+    "Gris Satin",
+    "Rojo Cajun"
+  ],
+  "emisiones": "CO2 aprox. 320 g/km",
+  "generacion": "Quinta generación (facelift 2025)",
+  "maleteroMin": "N/A (pick-up)",
+  "tipo": "Pick-up full size"
 }

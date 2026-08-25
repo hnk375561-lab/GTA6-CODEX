@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.994Z",
-  "updatedAt": "2026-08-24T01:16:06.564Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Nissan",
   "class": "SUV compacta",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2016,
+  "asientos": 5,
+  "baul": "432 litros",
+  "cilindrada": "1.6 aspirado (1.598 cc)",
+  "colores": [
+    "Blanco Perla",
+    "Negro Ébano",
+    "Gris Galaxy",
+    "Rojo Fórmula"
+  ],
+  "consumo": "6.5-7 l/100km aprox.",
+  "dimensiones": "4.295 mm largo x 1.760 mm ancho x 1.590 mm alto, distancia entre ejes 2.620 mm",
+  "emisiones": "CO2 aprox. 150 g/km",
+  "generacion": "Segunda generación",
+  "maleteroMin": "432 litros",
+  "tipo": "SUV compacto"
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.858Z",
-  "updatedAt": "2026-08-24T01:16:06.566Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Peugeot",
   "class": "SUV compacta",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2013,
+  "asientos": 5,
+  "baul": "405 litros",
+  "cilindrada": "1.2 turbo (PureTech) o eléctrico",
+  "colores": [
+    "Blanco Nácar",
+    "Negro Perla",
+    "Gris Artense",
+    "Naranja Vertigo"
+  ],
+  "consumo": "5.5-6.5 l/100km aprox.",
+  "dimensiones": "4.300 mm largo x 1.770 mm ancho x 1.530 mm alto, distancia entre ejes 2.605 mm",
+  "emisiones": "CO2 aprox. 130 g/km",
+  "generacion": "Segunda generación",
+  "maleteroMin": "405 litros",
+  "tipo": "SUV compacto"
 }

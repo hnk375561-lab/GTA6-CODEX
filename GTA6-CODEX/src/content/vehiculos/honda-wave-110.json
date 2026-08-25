@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:34.107Z",
-  "updatedAt": "2026-08-24T01:16:06.545Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Honda",
   "class": "Moto utilitaria",
   "customizable": false,
@@ -42,5 +42,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70R17",
+  "anoLanzamiento": 1995,
+  "asientos": 2,
+  "baul": "N/A (moto, sin baúl de fábrica)",
+  "cilindrada": "109.1 cc, monocilíndrico 4 tiempos",
+  "colores": [
+    "Rojo",
+    "Negro",
+    "Azul",
+    "Blanco"
+  ],
+  "consumo": "1.8-2 l/100km aprox.",
+  "dimensiones": "1.900 mm largo x 700 mm ancho x 1.070 mm alto, distancia entre ejes 1.230 mm",
+  "emisiones": "CO2 aprox. 45 g/km",
+  "generacion": "Vigente desde 1995, múltiples actualizaciones",
+  "maleteroMin": "N/A",
+  "tipo": "Moto utilitaria/underbone"
 }

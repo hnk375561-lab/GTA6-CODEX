@@ -28,7 +28,7 @@
     "acceleration": "No informado por el fabricante para Argentina"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-24T01:16:06.541Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -50,5 +50,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2020,
+  "asientos": 5,
+  "baul": "337 litros",
+  "cilindrada": "1.5 turbo o híbrido",
+  "colores": [
+    "Blanco",
+    "Negro",
+    "Gris",
+    "Rojo"
+  ],
+  "emisiones": "CO2 aprox. 155 g/km",
+  "generacion": "Primera generación (facelift)",
+  "maleteroMin": "337 litros",
+  "tipo": "SUV compacto"
 }

@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 10.5s"
   },
   "createdAt": "2026-08-23T21:59:02.058147Z",
-  "updatedAt": "2026-08-24T01:16:06.562Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -49,5 +49,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1978,
+  "asientos": 5,
+  "baul": "Caja de carga 1.520 x 1.470 mm aprox. (cabina doble)",
+  "cilindrada": "2.4 turbo diésel",
+  "colores": [
+    "Blanco",
+    "Gris",
+    "Negro",
+    "Naranja"
+  ],
+  "emisiones": "CO2 aprox. 200 g/km",
+  "generacion": "Sexta generación (Triton en otros mercados)",
+  "maleteroMin": "N/A (pick-up)",
+  "tipo": "Pick-up mediana"
 }

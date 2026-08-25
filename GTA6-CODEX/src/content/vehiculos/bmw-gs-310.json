@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.892Z",
-  "updatedAt": "2026-08-24T01:16:06.481Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "BMW",
   "class": "Moto trail",
   "customizable": false,
@@ -43,5 +43,20 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70R17",
+  "anoLanzamiento": 2017,
+  "asientos": 2,
+  "baul": "N/A (moto, sin baúl de fábrica; admite valijas opcionales)",
+  "cilindrada": "313 cc, monocilíndrico 4 tiempos",
+  "colores": [
+    "Blanco Rallye",
+    "Negro Triple",
+    "Racing Blue"
+  ],
+  "consumo": "3.3 l/100km aprox.",
+  "dimensiones": "2.150 mm largo x 832 mm ancho x 1.400 mm alto, distancia entre ejes 1.420 mm",
+  "emisiones": "CO2 aprox. 77 g/km",
+  "generacion": "Segunda generación (facelift 2021)",
+  "maleteroMin": "N/A",
+  "tipo": "Moto trail"
 }

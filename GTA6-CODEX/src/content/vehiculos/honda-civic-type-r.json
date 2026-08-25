@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.529Z",
-  "updatedAt": "2026-08-24T01:16:06.543Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Honda",
   "class": "Hatchback deportivo",
   "customizable": false,
@@ -54,5 +54,18 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1997,
+  "asientos": 5,
+  "baul": "410 litros",
+  "cilindrada": "2.0 turbo (K20C1)",
+  "colores": [
+    "Blanco Championship",
+    "Rojo Rallye",
+    "Negro Cristal"
+  ],
+  "emisiones": "CO2 aprox. 195 g/km",
+  "generacion": "Sexta generación (FL5)",
+  "maleteroMin": "410 litros",
+  "tipo": "Hatchback deportivo de altas prestaciones"
 }

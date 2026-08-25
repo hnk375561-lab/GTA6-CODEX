@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-24T01:16:06.567Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -48,5 +48,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2008,
+  "asientos": 5,
+  "baul": "520 litros",
+  "cilindrada": "1.2 turbo, híbrido o eléctrico (E-3008)",
+  "colores": [
+    "Blanco Nácar",
+    "Negro Perla",
+    "Gris Artense",
+    "Verde Olivine"
+  ],
+  "emisiones": "CO2 aprox. 150 g/km",
+  "generacion": "Tercera generación",
+  "maleteroMin": "520 litros",
+  "tipo": "SUV mediano"
 }

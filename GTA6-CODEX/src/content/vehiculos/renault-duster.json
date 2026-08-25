@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.126Z",
-  "updatedAt": "2026-08-24T01:16:06.570Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Renault",
   "class": "SUV",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2010,
+  "asientos": 5,
+  "baul": "411 litros",
+  "cilindrada": "1.3 turbo o 1.6 aspirado",
+  "colores": [
+    "Blanco Glacial",
+    "Gris Cassiopée",
+    "Naranja Atacama",
+    "Negro Nácar"
+  ],
+  "consumo": "7-8.5 l/100km aprox.",
+  "dimensiones": "4.341 mm largo x 1.804 mm ancho x 1.693 mm alto, distancia entre ejes 2.673 mm",
+  "emisiones": "CO2 aprox. 155 g/km",
+  "generacion": "Tercera generación",
+  "maleteroMin": "411 litros",
+  "tipo": "SUV compacto"
 }

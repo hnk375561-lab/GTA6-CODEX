@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.346Z",
-  "updatedAt": "2026-08-24T01:16:06.581Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Volkswagen",
   "class": "Hatchback",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1975,
+  "asientos": 5,
+  "baul": "300 litros",
+  "cilindrada": "1.0 turbo (TSI) o 1.6 aspirado",
+  "colores": [
+    "Blanco Candy",
+    "Gris Platinum",
+    "Rojo Flash",
+    "Negro Deep"
+  ],
+  "consumo": "6-6.5 l/100km aprox.",
+  "dimensiones": "4.100 mm largo x 1.751 mm ancho x 1.470 mm alto, distancia entre ejes 2.566 mm",
+  "emisiones": "CO2 aprox. 135 g/km",
+  "generacion": "Sexta generación (versión sudamericana)",
+  "maleteroMin": "300 litros",
+  "tipo": "Hatchback compacto"
 }

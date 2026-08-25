@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.687Z",
-  "updatedAt": "2026-08-24T01:16:06.536Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Fiat",
   "class": "SUV compacta",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2021,
+  "asientos": 5,
+  "baul": "370 litros",
+  "cilindrada": "1.0 turbo (999 cc) o 1.3",
+  "colores": [
+    "Blanco Banchisa",
+    "Gris Cinza",
+    "Verde Sherwood",
+    "Vermelho"
+  ],
+  "consumo": "6.5-7.5 l/100km aprox.",
+  "dimensiones": "4.222 mm largo x 1.760 mm ancho x 1.560 mm alto, distancia entre ejes 2.519 mm",
+  "emisiones": "CO2 aprox. 140 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "370 litros",
+  "tipo": "SUV compacto/coupé"
 }

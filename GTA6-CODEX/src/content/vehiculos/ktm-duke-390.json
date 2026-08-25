@@ -25,7 +25,7 @@
     "speed": "170 km/h"
   },
   "createdAt": "2026-08-23T21:59:11.788966Z",
-  "updatedAt": "2026-08-24T01:16:06.553Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -44,5 +44,17 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "A",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70R17",
+  "anoLanzamiento": 2013,
+  "asientos": 2,
+  "baul": "N/A (moto)",
+  "cilindrada": "399 cc, monocilíndrico",
+  "colores": [
+    "Naranja KTM",
+    "Negro"
+  ],
+  "emisiones": "CO2 aprox. 75 g/km",
+  "generacion": "Tercera generación",
+  "maleteroMin": "N/A",
+  "tipo": "Naked/Street"
 }

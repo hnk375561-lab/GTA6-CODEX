@@ -24,7 +24,7 @@
     "speed": "140 km/h"
   },
   "createdAt": "2026-08-23T21:59:11.215408Z",
-  "updatedAt": "2026-08-24T01:16:06.584Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -43,5 +43,18 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "A",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70R17",
+  "anoLanzamiento": 2007,
+  "asientos": 2,
+  "baul": "N/A (moto)",
+  "cilindrada": "249 cc, monocilíndrico",
+  "colores": [
+    "Azul",
+    "Negro",
+    "Rojo"
+  ],
+  "emisiones": "CO2 aprox. 65 g/km",
+  "generacion": "Vigente con actualizaciones",
+  "maleteroMin": "N/A",
+  "tipo": "Naked/Street"
 }

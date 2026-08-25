@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:35.107Z",
-  "updatedAt": "2026-08-24T01:16:06.537Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Fiat",
   "class": "Pickup",
   "customizable": false,
@@ -46,5 +46,21 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2016,
+  "asientos": 5,
+  "baul": "Caja de carga 1.397 x 1.556 mm aprox. (cabina doble)",
+  "cilindrada": "1.3 turbo, 1.8 o 2.0 turbo diésel",
+  "colores": [
+    "Blanco Banchisa",
+    "Rojo Alerta",
+    "Gris Cinza",
+    "Negro Vulcano"
+  ],
+  "consumo": "8-11 l/100km aprox.",
+  "dimensiones": "4.940 mm largo x 1.850 mm ancho x 1.690 mm alto, distancia entre ejes 2.980 mm",
+  "emisiones": "CO2 aprox. 210 g/km",
+  "generacion": "Primera generación (facelift 2021)",
+  "maleteroMin": "N/A (pick-up)",
+  "tipo": "Pick-up mediana"
 }

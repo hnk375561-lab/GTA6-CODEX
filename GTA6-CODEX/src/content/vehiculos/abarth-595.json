@@ -31,7 +31,7 @@
     "acceleration": "0-100 km/h en 7.3s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-24T01:16:06.448Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "5 velocidades manual / 6 velocidades automática TcT",
   "traccion": "Tracción delantera",
   "cilindrada": "1.368 cc",
@@ -58,5 +58,13 @@
   "tiempoRecorrido": "N/A",
   "consumoEtiqueta": "D",
   "neumaticos": "205/45R17",
-  "maleteroMin": "185 litros"
+  "maleteroMin": "185 litros",
+  "colores": [
+    "Blanco Campovolo",
+    "Rojo Abarth",
+    "Negro Scorpione",
+    "Gris Grigio"
+  ],
+  "generacion": "Tercera generación (basada en Fiat 500, facelift final)",
+  "anoLanzamiento": 2016
 }

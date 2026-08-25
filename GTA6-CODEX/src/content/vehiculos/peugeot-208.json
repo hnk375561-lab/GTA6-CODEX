@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.335Z",
-  "updatedAt": "2026-08-24T01:16:06.566Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Peugeot",
   "class": "Hatchback",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2012,
+  "asientos": 5,
+  "baul": "311 litros",
+  "cilindrada": "1.2 turbo (PureTech) o eléctrico",
+  "colores": [
+    "Blanco Nácar",
+    "Negro Perla",
+    "Gris Artense",
+    "Rojo Elixir"
+  ],
+  "consumo": "5.5-6 l/100km aprox.",
+  "dimensiones": "4.055 mm largo x 1.745 mm ancho x 1.430 mm alto, distancia entre ejes 2.540 mm",
+  "emisiones": "CO2 aprox. 125 g/km",
+  "generacion": "Segunda generación (facelift 2023)",
+  "maleteroMin": "311 litros",
+  "tipo": "Hatchback compacto"
 }

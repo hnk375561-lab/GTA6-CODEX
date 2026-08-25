@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.593Z",
-  "updatedAt": "2026-08-24T01:16:06.487Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "BYD",
   "class": "Sedán eléctrico",
   "customizable": false,
@@ -46,5 +46,21 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2022,
+  "asientos": 5,
+  "baul": "400 litros",
+  "cilindrada": "N/A (eléctrico)",
+  "colores": [
+    "Blanco Cósmico",
+    "Negro Atlantis",
+    "Gris Vulcano",
+    "Azul Skiing"
+  ],
+  "consumo": "Eléctrico: 15.9 kWh/100km aprox.",
+  "dimensiones": "4.800 mm largo x 1.875 mm ancho x 1.460 mm alto, distancia entre ejes 2.920 mm",
+  "emisiones": "0 g/km (eléctrico puro)",
+  "generacion": "Primera generación (plataforma e-Platform 3.0)",
+  "maleteroMin": "400 litros (+53 litros frunk)",
+  "tipo": "Sedán eléctrico"
 }

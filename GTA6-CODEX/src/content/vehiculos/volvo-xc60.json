@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.747Z",
-  "updatedAt": "2026-08-24T01:16:06.583Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Volvo",
   "class": "SUV premium",
   "customizable": false,
@@ -47,5 +47,21 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2008,
+  "asientos": 5,
+  "baul": "483 litros",
+  "cilindrada": "2.0 turbo, mild-hybrid o híbrido enchufable",
+  "colores": [
+    "Blanco Crystal",
+    "Negro Onyx",
+    "Gris Pebble",
+    "Azul Denim"
+  ],
+  "consumo": "Híbrido enchufable: 2 l/100km aprox. (ciclo combinado con motor eléctrico)",
+  "dimensiones": "4.708 mm largo x 1.902 mm ancho x 1.658 mm alto, distancia entre ejes 2.865 mm",
+  "emisiones": "CO2 aprox. 44 g/km (híbrido enchufable, ciclo WLTP)",
+  "generacion": "Segunda generación (facelift 2022)",
+  "maleteroMin": "483 litros",
+  "tipo": "SUV premium mediano"
 }

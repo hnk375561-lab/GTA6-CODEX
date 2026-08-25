@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 8.5s"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-24T01:16:06.483Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -49,5 +49,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "B",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2009,
+  "asientos": 5,
+  "baul": "490 litros",
+  "cilindrada": "1.5-2.0 turbo o eléctrico (iX1)",
+  "colores": [
+    "Blanco Alpine",
+    "Negro Zafiro",
+    "Gris Skyscraper",
+    "Azul Portimao"
+  ],
+  "emisiones": "CO2 aprox. 150 g/km",
+  "generacion": "Tercera generación (U11)",
+  "maleteroMin": "490 litros",
+  "tipo": "SUV compacto premium"
 }

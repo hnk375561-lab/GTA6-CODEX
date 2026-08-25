@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 9.5s (híbrida)"
   },
   "createdAt": "2026-08-23T21:59:04.271737Z",
-  "updatedAt": "2026-08-24T01:16:06.577Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -46,5 +46,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "B",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2021,
+  "asientos": 5,
+  "baul": "440 litros",
+  "cilindrada": "2.0 aspirado o híbrido",
+  "colores": [
+    "Blanco Perla",
+    "Gris Óxido",
+    "Negro",
+    "Rojo"
+  ],
+  "emisiones": "CO2 aprox. 140 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "440 litros",
+  "tipo": "SUV compacto"
 }

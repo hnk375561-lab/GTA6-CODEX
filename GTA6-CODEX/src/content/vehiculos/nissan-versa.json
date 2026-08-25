@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.069Z",
-  "updatedAt": "2026-08-24T01:16:06.565Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Nissan",
   "class": "Sedán",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2011,
+  "asientos": 5,
+  "baul": "416 litros",
+  "cilindrada": "1.6 aspirado (1.598 cc)",
+  "colores": [
+    "Blanco Perla",
+    "Plata Brillante",
+    "Gris Galaxy",
+    "Rojo Fórmula"
+  ],
+  "consumo": "6.5-7 l/100km aprox.",
+  "dimensiones": "4.425 mm largo x 1.730 mm ancho x 1.500 mm alto, distancia entre ejes 2.600 mm",
+  "emisiones": "CO2 aprox. 150 g/km",
+  "generacion": "Tercera generación",
+  "maleteroMin": "416 litros",
+  "tipo": "Sedán compacto"
 }

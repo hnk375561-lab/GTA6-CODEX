@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 9.5s"
   },
   "createdAt": "2026-08-23T21:59:01.784761Z",
-  "updatedAt": "2026-08-24T01:16:06.573Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -49,5 +49,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "F",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1997,
+  "asientos": 5,
+  "baul": "509 litros",
+  "cilindrada": "2.5 aspirado híbrido leve (e-Boxer)",
+  "colores": [
+    "Blanco Crystal",
+    "Gris Magnetita",
+    "Verde Jasper",
+    "Azul Horizon"
+  ],
+  "emisiones": "CO2 aprox. 160 g/km",
+  "generacion": "Sexta generación",
+  "maleteroMin": "509 litros",
+  "tipo": "SUV compacto"
 }

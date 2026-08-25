@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.977Z",
-  "updatedAt": "2026-08-24T01:16:06.483Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "BMW",
   "class": "Sedán premium",
   "customizable": false,
@@ -66,5 +66,7 @@
     "Portimao Blue Metallic",
     "Skyscraper Grey",
     "Sunset Orange"
-  ]
+  ],
+  "consumo": "6.5-7 l/100km aprox.",
+  "dimensiones": "4.719 mm largo x 1.827 mm ancho x 1.442 mm alto, distancia entre ejes 2.851 mm"
 }

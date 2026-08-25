@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-24T01:16:06.538Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -50,5 +50,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1998,
+  "asientos": 5,
+  "baul": "375 litros",
+  "cilindrada": "1.0 EcoBoost o 1.5",
+  "colores": [
+    "Blanco Frozen",
+    "Gris Meteor",
+    "Azul Chrome",
+    "Rojo Race"
+  ],
+  "emisiones": "CO2 aprox. 130 g/km",
+  "generacion": "Cuarta generación (discontinuado en Europa 2025)",
+  "maleteroMin": "375 litros",
+  "tipo": "Hatchback compacto"
 }

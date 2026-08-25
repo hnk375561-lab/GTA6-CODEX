@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.554Z",
-  "updatedAt": "2026-08-24T01:16:06.551Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Kia",
   "class": "Hatchback económico",
   "customizable": false,
@@ -45,5 +45,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2004,
+  "asientos": 5,
+  "baul": "255 litros",
+  "cilindrada": "1.0 o 1.2 aspirado",
+  "colores": [
+    "Blanco Clear",
+    "Rojo Signal",
+    "Gris Silky",
+    "Azul Celeste"
+  ],
+  "consumo": "5.5-6 l/100km aprox.",
+  "dimensiones": "3.595 mm largo x 1.595 mm ancho x 1.485 mm alto, distancia entre ejes 2.400 mm",
+  "emisiones": "CO2 aprox. 120 g/km",
+  "generacion": "Cuarta generación",
+  "maleteroMin": "255 litros",
+  "tipo": "City car / hatchback compacto"
 }

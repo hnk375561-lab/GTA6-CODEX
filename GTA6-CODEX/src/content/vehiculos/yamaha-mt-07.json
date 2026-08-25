@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.363Z",
-  "updatedAt": "2026-08-24T01:16:06.584Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Yamaha",
   "class": "Moto naked",
   "customizable": false,
@@ -43,5 +43,20 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70R17",
+  "anoLanzamiento": 2014,
+  "asientos": 2,
+  "baul": "N/A (moto, sin baúl de fábrica)",
+  "cilindrada": "689 cc, bicilíndrico paralelo (CP2)",
+  "colores": [
+    "Azul Icon",
+    "Negro Tech",
+    "Gris Storm"
+  ],
+  "consumo": "4 l/100km aprox.",
+  "dimensiones": "2.075 mm largo x 745 mm ancho x 1.090 mm alto, distancia entre ejes 1.400 mm",
+  "emisiones": "CO2 aprox. 93 g/km",
+  "generacion": "Tercera generación",
+  "maleteroMin": "N/A",
+  "tipo": "Naked/Roadster"
 }

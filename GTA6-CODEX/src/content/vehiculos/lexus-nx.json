@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 7.2s (híbrida)"
   },
   "createdAt": "2026-08-23T21:59:02.350462Z",
-  "updatedAt": "2026-08-24T01:16:06.555Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -49,5 +49,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "C",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2014,
+  "asientos": 5,
+  "baul": "520 litros",
+  "cilindrada": "2.4 turbo, híbrido o híbrido enchufable",
+  "colores": [
+    "Blanco Perla",
+    "Negro Ónix",
+    "Gris Grafito",
+    "Azul Nebula"
+  ],
+  "emisiones": "CO2 aprox. 155 g/km",
+  "generacion": "Segunda generación",
+  "maleteroMin": "520 litros",
+  "tipo": "SUV premium compacto"
 }

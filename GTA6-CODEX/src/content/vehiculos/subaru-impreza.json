@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-24T01:16:06.574Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -50,5 +50,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1992,
+  "asientos": 5,
+  "baul": "291 litros",
+  "cilindrada": "2.0 o 2.5 aspirado",
+  "colores": [
+    "Blanco Crystal",
+    "Azul WR",
+    "Gris Magnetita",
+    "Negro"
+  ],
+  "emisiones": "CO2 aprox. 155 g/km",
+  "generacion": "Sexta generación",
+  "maleteroMin": "291 litros",
+  "tipo": "Hatchback/Sedán compacto"
 }

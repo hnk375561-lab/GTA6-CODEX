@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 10.0s"
   },
   "createdAt": "2026-08-23T21:59:07.608786Z",
-  "updatedAt": "2026-08-24T01:16:06.581Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -46,5 +46,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2018,
+  "asientos": 5,
+  "baul": "420 litros",
+  "cilindrada": "1.0 o 1.4 turbo",
+  "colores": [
+    "Blanco Candy",
+    "Gris Platinum",
+    "Naranja Energetic",
+    "Negro Deep"
+  ],
+  "emisiones": "CO2 aprox. 135 g/km",
+  "generacion": "Primera generación (facelift)",
+  "maleteroMin": "420 litros",
+  "tipo": "SUV compacto"
 }

@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.815Z",
-  "updatedAt": "2026-08-24T01:16:06.538Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Ford",
   "class": "Deportivo",
   "customizable": false,
@@ -54,5 +54,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1964,
+  "asientos": 4,
+  "baul": "382 litros",
+  "cilindrada": "2.3 EcoBoost turbo o 5.0 V8",
+  "colores": [
+    "Blanco Oxford",
+    "Negro Ágata",
+    "Rojo Race",
+    "Amarillo Grabber"
+  ],
+  "emisiones": "CO2 aprox. 280 g/km (V8)",
+  "generacion": "Séptima generación (S650)",
+  "maleteroMin": "382 litros",
+  "tipo": "Muscle car / deportivo"
 }

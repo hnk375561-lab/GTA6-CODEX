@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.336Z",
-  "updatedAt": "2026-08-24T01:16:06.490Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Chery",
   "class": "SUV",
   "customizable": false,
@@ -45,5 +45,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2020,
+  "asientos": 5,
+  "baul": "546 litros",
+  "cilindrada": "1.5 turbo (1.498 cc)",
+  "colores": [
+    "Blanco",
+    "Negro",
+    "Gris",
+    "Rojo"
+  ],
+  "consumo": "7.5 l/100km aprox.",
+  "dimensiones": "4.500 mm largo x 1.860 mm ancho x 1.702 mm alto, distancia entre ejes 2.670 mm",
+  "emisiones": "CO2 aprox. 175 g/km",
+  "generacion": "Segunda generación",
+  "maleteroMin": "546 litros",
+  "tipo": "SUV compacto"
 }

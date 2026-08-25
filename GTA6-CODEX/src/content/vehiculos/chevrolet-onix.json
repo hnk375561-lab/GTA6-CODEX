@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.590Z",
-  "updatedAt": "2026-08-24T01:16:06.504Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2019,
+  "asientos": 5,
+  "baul": "303 litros",
+  "cilindrada": "1.0 turbo (999 cc) o 1.0 aspirado",
+  "colores": [
+    "Blanco Summit",
+    "Rojo",
+    "Gris Grafite",
+    "Azul"
+  ],
+  "consumo": "6.5-7 l/100km aprox.",
+  "dimensiones": "4.180 mm largo x 1.730 mm ancho x 1.470 mm alto, distancia entre ejes 2.570 mm",
+  "emisiones": "CO2 aprox. 130 g/km",
+  "generacion": "Segunda generación (plataforma GEM)",
+  "maleteroMin": "303 litros",
+  "tipo": "Hatchback compacto"
 }

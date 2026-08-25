@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.736Z",
-  "updatedAt": "2026-08-24T01:16:06.538Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Ford",
   "class": "Pickup compacta",
   "customizable": false,
@@ -46,5 +46,21 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2021,
+  "asientos": 5,
+  "baul": "Caja de carga 1.542 x 1.320 mm aprox.",
+  "cilindrada": "2.5 híbrido o 2.0 EcoBoost turbo",
+  "colores": [
+    "Blanco Oxford",
+    "Azul Área 51",
+    "Gris Cactus",
+    "Negro Ágata"
+  ],
+  "consumo": "Híbrido: 5.5-6 l/100km aprox.",
+  "dimensiones": "5.075 mm largo x 1.859 mm ancho x 1.740 mm alto, distancia entre ejes 3.076 mm",
+  "emisiones": "CO2 aprox. 130 g/km (híbrido)",
+  "generacion": "Primera generación",
+  "maleteroMin": "N/A (pick-up)",
+  "tipo": "Pick-up compacta"
 }

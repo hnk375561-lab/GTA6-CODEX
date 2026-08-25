@@ -30,7 +30,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-24T01:16:06.575Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -50,5 +50,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1988,
+  "asientos": 5,
+  "baul": "375 litros",
+  "cilindrada": "1.4 turbo mild-hybrid",
+  "colores": [
+    "Blanco Perla",
+    "Rojo",
+    "Gris",
+    "Azul"
+  ],
+  "emisiones": "CO2 aprox. 140 g/km",
+  "generacion": "Cuarta generación (facelift)",
+  "maleteroMin": "375 litros",
+  "tipo": "SUV compacto"
 }

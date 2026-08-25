@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.065Z",
-  "updatedAt": "2026-08-24T01:16:06.542Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Honda",
   "class": "Moto",
   "customizable": false,
@@ -43,5 +43,20 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70R17",
+  "anoLanzamiento": 2013,
+  "asientos": 2,
+  "baul": "N/A (moto, sin baúl de fábrica)",
+  "cilindrada": "471 cc, bicilíndrico paralelo",
+  "colores": [
+    "Rojo Grand Prix",
+    "Negro Mate",
+    "Gris Plata"
+  ],
+  "consumo": "3.5 l/100km aprox.",
+  "dimensiones": "2.080 mm largo x 780 mm ancho x 1.050 mm alto, distancia entre ejes 1.410 mm",
+  "emisiones": "CO2 aprox. 80 g/km",
+  "generacion": "Segunda generación (facelift 2019)",
+  "maleteroMin": "N/A",
+  "tipo": "Naked/Roadster"
 }

@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-24T01:16:06.540Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -50,5 +50,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2020,
+  "asientos": 5,
+  "baul": "503 litros",
+  "cilindrada": "2.5 turbo, 3.5 V6 turbo o eléctrico",
+  "colores": [
+    "Blanco Uyuni",
+    "Negro Nero",
+    "Gris Makalu",
+    "Verde Mallorca"
+  ],
+  "emisiones": "CO2 aprox. 165 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "503 litros",
+  "tipo": "SUV premium mediano"
 }

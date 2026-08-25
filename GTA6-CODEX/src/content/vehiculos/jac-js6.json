@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-24T01:16:06.548Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -48,5 +48,18 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2020,
+  "asientos": 5,
+  "baul": "410 litros",
+  "cilindrada": "1.5 turbo",
+  "colores": [
+    "Blanco",
+    "Gris",
+    "Rojo"
+  ],
+  "emisiones": "CO2 aprox. 155 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "410 litros",
+  "tipo": "SUV compacto"
 }

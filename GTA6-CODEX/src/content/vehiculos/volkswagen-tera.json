@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.343Z",
-  "updatedAt": "2026-08-24T01:16:06.582Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Volkswagen",
   "class": "SUV compacta",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2024,
+  "asientos": 5,
+  "baul": "380 litros aprox.",
+  "cilindrada": "1.0 turbo (TSI, 999 cc)",
+  "colores": [
+    "Blanco Candy",
+    "Gris Platinum",
+    "Naranja Energetic",
+    "Negro Deep"
+  ],
+  "consumo": "6-6.5 l/100km aprox.",
+  "dimensiones": "4.223 mm largo x 1.760 mm ancho x 1.550 mm alto, distancia entre ejes 2.566 mm",
+  "emisiones": "CO2 aprox. 135 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "380 litros aprox.",
+  "tipo": "SUV compacto"
 }

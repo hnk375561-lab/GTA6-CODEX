@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.332Z",
-  "updatedAt": "2026-08-24T01:16:06.568Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Porsche",
   "class": "Deportivo",
   "customizable": false,
@@ -53,5 +53,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "F",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1963,
+  "asientos": 4,
+  "baul": "132 litros (frontal)",
+  "cilindrada": "3.0 6 cilindros bóxer biturbo",
+  "colores": [
+    "Blanco Carrara",
+    "Negro",
+    "Rojo Guards",
+    "Gris GT"
+  ],
+  "emisiones": "CO2 aprox. 210 g/km",
+  "generacion": "Octava generación (992, facelift)",
+  "maleteroMin": "132 litros",
+  "tipo": "Deportivo/gran turismo"
 }

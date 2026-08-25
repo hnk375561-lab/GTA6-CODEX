@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 10.8s"
   },
   "createdAt": "2026-08-23T21:59:05.686502Z",
-  "updatedAt": "2026-08-24T01:16:06.545Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -46,5 +46,19 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2014,
+  "asientos": 5,
+  "baul": "433 litros",
+  "cilindrada": "1.5 o 1.6 turbo",
+  "colores": [
+    "Blanco Polar",
+    "Gris Titan",
+    "Negro Fantasma",
+    "Rojo"
+  ],
+  "emisiones": "CO2 aprox. 155 g/km",
+  "generacion": "Segunda generación (facelift)",
+  "maleteroMin": "433 litros",
+  "tipo": "SUV compacto"
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.210Z",
-  "updatedAt": "2026-08-24T01:16:06.516Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Chevrolet",
   "class": "SUV compacta",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2020,
+  "asientos": 5,
+  "baul": "393 litros",
+  "cilindrada": "1.0 o 1.2 turbo",
+  "colores": [
+    "Blanco",
+    "Gris Grafite",
+    "Rojo",
+    "Azul"
+  ],
+  "consumo": "6.8-7.2 l/100km aprox.",
+  "dimensiones": "4.264 mm largo x 1.792 mm ancho x 1.652 mm alto, distancia entre ejes 2.570 mm",
+  "emisiones": "CO2 aprox. 150 g/km",
+  "generacion": "Segunda generación (plataforma GEM)",
+  "maleteroMin": "393 litros",
+  "tipo": "SUV compacto"
 }

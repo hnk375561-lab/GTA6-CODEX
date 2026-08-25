@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-24T01:16:06.585Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -47,5 +47,18 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70R17",
+  "anoLanzamiento": 2019,
+  "asientos": 2,
+  "baul": "N/A (moto, admite maletas opcionales)",
+  "cilindrada": "689 cc, bicilíndrico paralelo (CP2)",
+  "colores": [
+    "Azul Icon",
+    "Negro Tech",
+    "Blanco Rally"
+  ],
+  "emisiones": "CO2 aprox. 105 g/km",
+  "generacion": "Primera generación (facelift Explore)",
+  "maleteroMin": "N/A",
+  "tipo": "Moto trail/adventure"
 }

@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 8.9s"
   },
   "createdAt": "2026-08-23T21:59:02.633748Z",
-  "updatedAt": "2026-08-24T01:16:06.554Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -49,5 +49,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1983,
+  "asientos": 5,
+  "baul": "857 litros",
+  "cilindrada": "2.0 o 3.0 turbo, o híbrido enchufable",
+  "colores": [
+    "Blanco Fuji",
+    "Verde Pangea",
+    "Gris Carpathian",
+    "Naranja Tasman"
+  ],
+  "emisiones": "CO2 aprox. 210 g/km",
+  "generacion": "Segunda generación (L663, facelift 2023)",
+  "maleteroMin": "857 litros",
+  "tipo": "SUV off-road"
 }

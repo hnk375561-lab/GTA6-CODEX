@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 12.5s"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-24T01:16:06.534Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -46,5 +46,17 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1988,
+  "asientos": 2,
+  "baul": "Caja de carga 2.500 litros aprox.",
+  "cilindrada": "1.4 aspirado",
+  "colores": [
+    "Blanco Banchisa",
+    "Gris Cinza"
+  ],
+  "emisiones": "CO2 aprox. 145 g/km",
+  "generacion": "Tercera generación",
+  "maleteroMin": "N/A (furgón)",
+  "tipo": "Furgoneta pequeña / utilitario"
 }

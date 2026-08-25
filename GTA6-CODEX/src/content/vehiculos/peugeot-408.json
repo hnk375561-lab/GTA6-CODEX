@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-24T01:16:06.567Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -48,5 +48,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2022,
+  "asientos": 5,
+  "baul": "536 litros",
+  "cilindrada": "1.2 turbo o híbrido enchufable",
+  "colores": [
+    "Blanco Nácar",
+    "Negro Perla",
+    "Gris Artense",
+    "Naranja Vertigo"
+  ],
+  "emisiones": "CO2 aprox. 145 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "536 litros",
+  "tipo": "SUV coupé fastback"
 }

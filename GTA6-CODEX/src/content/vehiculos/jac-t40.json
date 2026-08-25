@@ -27,7 +27,7 @@
     "acceleration": "0-100 km/h en 12.5s"
   },
   "createdAt": "2026-08-23T21:59:09.812750Z",
-  "updatedAt": "2026-08-24T01:16:06.548Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -47,5 +47,18 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2020,
+  "asientos": 5,
+  "baul": "Caja de carga aprox. 1.485 x 1.530 mm",
+  "cilindrada": "2.0 aspirado",
+  "colores": [
+    "Blanco",
+    "Gris",
+    "Naranja"
+  ],
+  "emisiones": "CO2 aprox. 190 g/km",
+  "generacion": "Primera generación",
+  "maleteroMin": "N/A (pick-up)",
+  "tipo": "Pick-up compacta"
 }

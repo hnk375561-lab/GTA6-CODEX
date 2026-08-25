@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:31.522Z",
-  "updatedAt": "2026-08-24T01:16:06.544Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Honda",
   "class": "SUV compacta",
   "customizable": false,
@@ -44,5 +44,21 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1998,
+  "asientos": 5,
+  "baul": "437 litros",
+  "cilindrada": "1.5 turbo o 2.0 aspirado",
+  "colores": [
+    "Blanco Platino",
+    "Negro Cristal",
+    "Gris Meteoro",
+    "Azul Ancestral"
+  ],
+  "consumo": "7-7.5 l/100km aprox.",
+  "dimensiones": "4.330 mm largo x 1.790 mm ancho x 1.590 mm alto, distancia entre ejes 2.610 mm",
+  "emisiones": "CO2 aprox. 155 g/km",
+  "generacion": "Tercera generación",
+  "maleteroMin": "437 litros",
+  "tipo": "SUV compacto"
 }

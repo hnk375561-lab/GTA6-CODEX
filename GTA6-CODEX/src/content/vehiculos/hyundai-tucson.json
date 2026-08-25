@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.530Z",
-  "updatedAt": "2026-08-24T01:16:06.547Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Hyundai",
   "class": "SUV",
   "customizable": false,
@@ -46,5 +46,21 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2004,
+  "asientos": 5,
+  "baul": "620 litros",
+  "cilindrada": "2.0 aspirado o 1.6 turbo",
+  "colores": [
+    "Blanco Perla",
+    "Gris Titan",
+    "Negro Fantasma",
+    "Azul Amazon"
+  ],
+  "consumo": "7.5-8 l/100km aprox.",
+  "dimensiones": "4.640 mm largo x 1.865 mm ancho x 1.665 mm alto, distancia entre ejes 2.680 mm",
+  "emisiones": "CO2 aprox. 175 g/km",
+  "generacion": "Cuarta generación (facelift 2024)",
+  "maleteroMin": "620 litros",
+  "tipo": "SUV compacto"
 }

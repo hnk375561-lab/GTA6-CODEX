@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-24T01:16:06.576Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -50,5 +50,18 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2002,
+  "asientos": 7,
+  "baul": "470 litros (3 filas en uso)",
+  "cilindrada": "2.5 híbrido",
+  "colores": [
+    "Blanco Perla",
+    "Negro",
+    "Plata Metálico"
+  ],
+  "emisiones": "CO2 aprox. 130 g/km",
+  "generacion": "Cuarta generación",
+  "maleteroMin": "470 litros",
+  "tipo": "Minivan de lujo (7 plazas)"
 }

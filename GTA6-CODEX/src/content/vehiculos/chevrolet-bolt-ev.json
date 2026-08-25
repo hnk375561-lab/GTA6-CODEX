@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.250Z",
-  "updatedAt": "2026-08-24T01:16:06.491Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback eléctrico",
   "customizable": false,
@@ -46,5 +46,21 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 2016,
+  "asientos": 5,
+  "baul": "479 litros",
+  "cilindrada": "N/A (eléctrico)",
+  "colores": [
+    "Blanco Summit",
+    "Negro Mosaic",
+    "Azul Bright",
+    "Rojo Cherry"
+  ],
+  "consumo": "Eléctrico: 16.9 kWh/100km aprox.",
+  "dimensiones": "4.127 mm largo x 1.765 mm ancho x 1.607 mm alto, distancia entre ejes 2.600 mm",
+  "emisiones": "0 g/km (eléctrico puro)",
+  "generacion": "Segunda generación (facelift 2022), discontinuado en 2023",
+  "maleteroMin": "479 litros",
+  "tipo": "Hatchback eléctrico"
 }

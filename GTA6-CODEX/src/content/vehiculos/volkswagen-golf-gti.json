@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.940Z",
-  "updatedAt": "2026-08-24T01:16:06.581Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Volkswagen",
   "class": "Hatchback",
   "customizable": false,
@@ -54,5 +54,19 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1976,
+  "asientos": 5,
+  "baul": "374 litros",
+  "cilindrada": "2.0 turbo (TSI)",
+  "colores": [
+    "Blanco Puro",
+    "Negro Profundo",
+    "Rojo Tornado",
+    "Gris Urano"
+  ],
+  "emisiones": "CO2 aprox. 165 g/km",
+  "generacion": "Octava generación (facelift)",
+  "maleteroMin": "374 litros",
+  "tipo": "Hatchback deportivo"
 }

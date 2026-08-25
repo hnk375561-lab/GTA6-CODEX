@@ -28,7 +28,7 @@
     "acceleration": "0-100 km/h en 3.9s"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-24T01:16:06.482Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Automática 8 velocidades Steptronic M",
   "traccion": "Tracción total inteligente M xDrive",
   "cilindrada": "2.993 cc",
@@ -56,5 +56,13 @@
   "tiempoRecorrido": "10.8s",
   "consumoEtiqueta": "F",
   "neumaticos": "275/35R20",
-  "maleteroMin": "405 litros"
+  "maleteroMin": "405 litros",
+  "colores": [
+    "Blanco Alpine",
+    "Negro Zafiro",
+    "Verde Isle of Man",
+    "Azul San Marino"
+  ],
+  "generacion": "Sexta generación (G82, facelift LCI)",
+  "anoLanzamiento": 2020
 }

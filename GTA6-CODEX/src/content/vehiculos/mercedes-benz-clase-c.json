@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.254Z",
-  "updatedAt": "2026-08-24T01:16:06.560Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "manufacturer": "Mercedes-Benz",
   "class": "Sedán premium",
   "customizable": false,
@@ -47,5 +47,21 @@
     "Asistentes de conducción"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1993,
+  "asientos": 5,
+  "baul": "455 litros",
+  "cilindrada": "1.5-2.0 turbo, mild-hybrid",
+  "colores": [
+    "Blanco Polar",
+    "Negro Obsidiana",
+    "Gris Selenita",
+    "Azul Spectral"
+  ],
+  "consumo": "6-7 l/100km aprox.",
+  "dimensiones": "4.751 mm largo x 1.820 mm ancho x 1.437 mm alto, distancia entre ejes 2.865 mm",
+  "emisiones": "CO2 aprox. 155 g/km",
+  "generacion": "Sexta generación (W206)",
+  "maleteroMin": "455 litros",
+  "tipo": "Sedán ejecutivo compacto"
 }

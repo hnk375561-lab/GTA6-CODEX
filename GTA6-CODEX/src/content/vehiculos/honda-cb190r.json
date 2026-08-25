@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-24T01:16:06.542Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -45,5 +45,18 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "120/70R17"
+  "neumaticos": "120/70R17",
+  "anoLanzamiento": 2016,
+  "asientos": 2,
+  "baul": "N/A (moto)",
+  "cilindrada": "184.4 cc, monocilíndrico",
+  "colores": [
+    "Rojo",
+    "Negro",
+    "Azul"
+  ],
+  "emisiones": "CO2 aprox. 60 g/km",
+  "generacion": "Primera generación (versión LatAm)",
+  "maleteroMin": "N/A",
+  "tipo": "Naked/Street"
 }

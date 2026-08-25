@@ -26,7 +26,7 @@
     "acceleration": "0-100 km/h en 13.5s"
   },
   "createdAt": "2026-08-23T21:59:08.449854Z",
-  "updatedAt": "2026-08-24T01:16:06.567Z",
+  "updatedAt": "2026-08-25T00:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -46,5 +46,17 @@
     "Frenos ABS"
   ],
   "consumoEtiqueta": "C",
-  "neumaticos": "225/50R17"
+  "neumaticos": "225/50R17",
+  "anoLanzamiento": 1996,
+  "asientos": 5,
+  "baul": "775 litros (versión pasajeros)",
+  "cilindrada": "1.6 aspirado o 1.5 diésel",
+  "colores": [
+    "Blanco Banquise",
+    "Gris Artense"
+  ],
+  "emisiones": "CO2 aprox. 165 g/km",
+  "generacion": "Tercera generación",
+  "maleteroMin": "775 litros",
+  "tipo": "Furgoneta / utilitario"
 }
