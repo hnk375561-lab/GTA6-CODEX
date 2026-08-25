@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 36 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:49:36.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -75,5 +75,8 @@
   "iluminacion": "Faros LED o halógenos según versión",
   "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas",
   "seoTitle": "Triumph Bonneville T120 — Ficha técnica, precio y specs",
-  "seoDescription": "Moto de estilo clásico de Triumph, motor bicilíndrico paralelo de 1200cc. Potencia: 80 hp. Precio: USD 12.500."
+  "seoDescription": "Moto de estilo clásico de Triumph, motor bicilíndrico paralelo de 1200cc. Potencia: 80 hp. Precio: USD 12.500.",
+  "refrigeracion": "Líquida",
+  "alturaAsiento": "790 mm",
+  "tipoArranque": "Eléctrico"
 }

@@ -29,7 +29,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:49:36.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -75,5 +75,8 @@
   "iluminacion": "Faros LED o halógenos según versión",
   "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas",
   "seoTitle": "Motomel Skua 150 — Ficha técnica, precio y specs",
-  "seoDescription": "Moto trail on/off fabricada en Argentina, una de las mas vendidas de su segmento por relacion precio-versatilidad. Potencia: 11.4 hp a 8350 rpm."
+  "seoDescription": "Moto trail on/off fabricada en Argentina, una de las mas vendidas de su segmento por relacion precio-versatilidad. Potencia: 11.4 hp a 8350 rpm.",
+  "refrigeracion": "Aire",
+  "alturaAsiento": "830 mm (estimado)",
+  "tipoArranque": "Eléctrico"
 }

@@ -27,7 +27,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:10.925515Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:49:36.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -73,5 +73,8 @@
   "iluminacion": "Faros LED o halógenos según versión",
   "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas",
   "seoTitle": "Honda XRE 300 — Ficha técnica, precio y specs",
-  "seoDescription": "Moto enduro/adventure de entrada de Honda, motor monocilíndrico de 300cc. Potencia: 27 hp. Precio: USD 6.500."
+  "seoDescription": "Moto enduro/adventure de entrada de Honda, motor monocilíndrico de 300cc. Potencia: 27 hp. Precio: USD 6.500.",
+  "refrigeracion": "Líquida",
+  "alturaAsiento": "830 mm (estimado)",
+  "tipoArranque": "Eléctrico"
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.892Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:49:36.000Z",
   "manufacturer": "BMW",
   "class": "Moto trail",
   "customizable": false,
@@ -74,5 +74,8 @@
   "iluminacion": "Faros full LED de serie",
   "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas",
   "seoTitle": "BMW G 310 GS — Ficha técnica, precio y specs",
-  "seoDescription": "Moto trail de BMW, monocilíndrico 313cc, pensada para uso mixto ciudad-ruta. Potencia: 34 hp. Precio: USD 8.200."
+  "seoDescription": "Moto trail de BMW, monocilíndrico 313cc, pensada para uso mixto ciudad-ruta. Potencia: 34 hp. Precio: USD 8.200.",
+  "refrigeracion": "Líquida",
+  "alturaAsiento": "835 mm (780 mm con asiento bajo opcional)",
+  "tipoArranque": "Eléctrico"
 }

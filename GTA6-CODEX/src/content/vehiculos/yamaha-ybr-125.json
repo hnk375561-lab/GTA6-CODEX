@@ -10,7 +10,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:34.410Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:49:36.000Z",
   "manufacturer": "Yamaha",
   "class": "Moto",
   "customizable": false,
@@ -71,5 +71,8 @@
   "iluminacion": "Faros LED o halógenos según versión",
   "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas",
   "seoTitle": "Yamaha YBR 125 — Ficha técnica, precio y specs",
-  "seoDescription": "Moto de calle económica, motor monocilíndrico de 125cc. Potencia: 11 hp. Precio: USD 2.800."
+  "seoDescription": "Moto de calle económica, motor monocilíndrico de 125cc. Potencia: 11 hp. Precio: USD 2.800.",
+  "refrigeracion": "Aire",
+  "alturaAsiento": "780 mm (estimado)",
+  "tipoArranque": "Eléctrico"
 }

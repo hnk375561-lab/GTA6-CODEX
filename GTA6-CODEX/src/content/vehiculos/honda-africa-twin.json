@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:49:36.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -76,5 +76,8 @@
   "iluminacion": "Faros LED o halógenos según versión",
   "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas",
   "seoTitle": "Honda Africa Twin — Ficha técnica, precio y specs",
-  "seoDescription": "Moto aventura grande de Honda, bicilíndrica paralela de 1084cc. Potencia: 101 hp. Precio: USD 15.000."
+  "seoDescription": "Moto aventura grande de Honda, bicilíndrica paralela de 1084cc. Potencia: 101 hp. Precio: USD 15.000.",
+  "refrigeracion": "Líquida",
+  "alturaAsiento": "850 mm (ajustable 830-870 mm)",
+  "tipoArranque": "Eléctrico"
 }

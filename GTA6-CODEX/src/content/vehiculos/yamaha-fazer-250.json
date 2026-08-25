@@ -26,7 +26,7 @@
     "braking": "100-0 km/h en 36 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:11.215408Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:49:36.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -72,5 +72,8 @@
   "iluminacion": "Faros LED o halógenos según versión",
   "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas",
   "seoTitle": "Yamaha Fazer 250 — Ficha técnica, precio y specs",
-  "seoDescription": "Moto naked de cilindrada media de Yamaha, motor monocilíndrico de 250cc, muy usada en trayectos urbanos e interurbanos. Potencia: 21 hp. Precio: USD 5.000."
+  "seoDescription": "Moto naked de cilindrada media de Yamaha, motor monocilíndrico de 250cc, muy usada en trayectos urbanos e interurbanos. Potencia: 21 hp. Precio: USD 5.000.",
+  "refrigeracion": "Aire/aceite",
+  "alturaAsiento": "790 mm (estimado)",
+  "tipoArranque": "Eléctrico"
 }

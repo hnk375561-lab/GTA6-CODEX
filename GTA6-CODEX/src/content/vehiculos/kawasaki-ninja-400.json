@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.628Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:49:36.000Z",
   "manufacturer": "Kawasaki",
   "class": "Moto deportiva",
   "customizable": false,
@@ -75,5 +75,8 @@
   "iluminacion": "Faros full LED de serie",
   "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas",
   "seoTitle": "Kawasaki Ninja 400 — Ficha técnica, precio y specs",
-  "seoDescription": "Moto deportiva de Kawasaki, motor bicilíndrico 399cc, popular como primera moto deportiva. Potencia: 45 hp. Precio: USD 6.800."
+  "seoDescription": "Moto deportiva de Kawasaki, motor bicilíndrico 399cc, popular como primera moto deportiva. Potencia: 45 hp. Precio: USD 6.800.",
+  "refrigeracion": "Líquida",
+  "alturaAsiento": "785 mm",
+  "tipoArranque": "Eléctrico"
 }

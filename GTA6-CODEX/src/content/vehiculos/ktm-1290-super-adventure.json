@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:49:36.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -77,5 +77,8 @@
   "iluminacion": "Faros LED o halógenos según versión",
   "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas",
   "seoTitle": "KTM 1290 Super Adventure — Ficha técnica, precio y specs",
-  "seoDescription": "Moto aventura de alta cilindrada de KTM, motor V-twin LC8 de 1301cc. Potencia: 160 hp. Precio: USD 22.000."
+  "seoDescription": "Moto aventura de alta cilindrada de KTM, motor V-twin LC8 de 1301cc. Potencia: 160 hp. Precio: USD 22.000.",
+  "refrigeracion": "Líquida",
+  "alturaAsiento": "849 mm (ajustable hasta 869 mm)",
+  "tipoArranque": "Eléctrico"
 }

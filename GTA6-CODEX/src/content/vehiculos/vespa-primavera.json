@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T05:00:00.000Z",
+  "updatedAt": "2026-08-25T04:49:36.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "116-130 kg",
@@ -77,5 +77,8 @@
   "iluminacion": "Faros LED o halógenos según versión",
   "infoentretenimiento": "Tablero digital, algunos modelos con conectividad Bluetooth para navegación/llamadas",
   "seoTitle": "Vespa Primavera — Ficha técnica, precio y specs",
-  "seoDescription": "Scooter clásica italiana de Piaggio, ícono del diseño urbano europeo. Potencia: 14 hp (150cc). Precio: EUR 5.000."
+  "seoDescription": "Scooter clásica italiana de Piaggio, ícono del diseño urbano europeo. Potencia: 14 hp (150cc). Precio: EUR 5.000.",
+  "refrigeracion": "Aire (versiones i-Get 150 con asistencia líquida parcial)",
+  "alturaAsiento": "775 mm (estimado)",
+  "tipoArranque": "Eléctrico"
 }
