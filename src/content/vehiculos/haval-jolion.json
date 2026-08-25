@@ -31,7 +31,7 @@
         "acceleration": "No informado por el fabricante para Argentina"
     },
     "createdAt": "2026-08-23T22:19:24.158453Z",
-    "updatedAt": "2026-08-25T20:04:56.262Z",
+    "updatedAt": "2026-08-25T20:55:31.285Z",
     "transmision": "Manual o Automática",
     "traccion": "Tracción delantera",
     "peso": "1.600-2.200 kg",
@@ -135,5 +135,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "otros"
 }

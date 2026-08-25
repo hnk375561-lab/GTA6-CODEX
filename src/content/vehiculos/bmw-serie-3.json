@@ -1,0 +1,146 @@
+{
+    "slug": "bmw-serie-3",
+    "type": "vehiculos",
+    "title": "BMW Serie 3",
+    "description": "Sedán premium de BMW, motor 2.0L turbo de 4 cilindros, tracción trasera.",
+    "status": "confirmado",
+    "tags": [
+        "sedan",
+        "bmw",
+        "premium",
+        "combustion"
+    ],
+    "featured": false,
+    "createdAt": "2026-08-23T18:31:25.977Z",
+    "updatedAt": "2026-08-25T06:11:21.9400106Z",
+    "manufacturer": "BMW",
+    "class": "Sedán premium",
+    "customizable": false,
+    "performance": {
+        "speed": "Alta (250 km/h)",
+        "acceleration": "Alta (0-100 km/h en 5.8s)"
+    },
+    "power": "255 hp",
+    "price": "USD 58.000",
+    "evidence": {
+        "level": "oficial-nombrado",
+        "primarySource": "https://www.bmw.com.ar/es/all-models/3-series/sedan/2022/bmw-3-series-sedan.html"
+    },
+    "transmision": "8 velocidades automática (Steptronic)",
+    "traccion": "Trasera (RWD) o xDrive (AWD) según versión",
+    "peso": "1.526-1.620 kg (según motorización)",
+    "tipoMotor": "Gasolina turbo (opción híbrida enchufable 330e disponible)",
+    "potenciaKW": "135-190 kW (184-258 hp según motorización)",
+    "capacidadTanque": "59 litros",
+    "tiempoRecorrido": "5.7s-7.1s 0-100 km/h (según motorización)",
+    "anoProduccion": "2019-presente (generación G20), con facelift en 2022",
+    "mercados": [
+        "Europa",
+        "Argentina",
+        "Estados Unidos",
+        "China",
+        "Medio Oriente"
+    ],
+    "equipamiento": [
+        "BMW TwinPower Turbo",
+        "Sistemas inteligentes de asistencia al conductor",
+        "BMW Live Cockpit digital",
+        "Control de tracción dinámico",
+        "Faros LED adaptativos",
+        "Opción híbrida enchufable (330e)"
+    ],
+    "consumoEtiqueta": "E",
+    "neumaticos": "225/50R17",
+    "cilindrada": "1.998 cc (2.0 turbo, 4 cilindros)",
+    "emisiones": "CO2 158-166 g/km (WLTP, versión 330i xDrive)",
+    "tipo": "Sedán premium",
+    "asientos": 5,
+    "baul": "480 litros",
+    "maleteroMin": "480 litros",
+    "generacion": "Séptima generación (G20), lanzada en 2019, con facelift en 2022",
+    "anoLanzamiento": 2019,
+    "colores": [
+        "Alpine White",
+        "Black Sapphire Metallic",
+        "Mineral Grey Metallic",
+        "Portimao Blue Metallic",
+        "Skyscraper Grey",
+        "Sunset Orange"
+    ],
+    "especificacionesMotor": {
+        "filtro_aire": "Filtro de panel",
+        "tipo_valvulas": "DOHC",
+        "ratio_compresion": "10.5:1",
+        "sistemas_inyeccion": "Inyeccion directa",
+        "arbol_levas": "Variable (VVT)"
+    },
+    "especificacionesTransmision": {
+        "tipo_automatico": "Convertidor",
+        "control_cambios": "Secuencial",
+        "sist_propulsion": "Traccion",
+        "velocidades": "8/9 velocidades"
+    },
+    "especificacionesSuspension": {
+        "tipo_trasera": "Multilink",
+        "barra_estabilizadora": "26/20 mm",
+        "tipo_delantera": "MacPherson",
+        "amortiguadores": "Doble tubo",
+        "recorrido_vertical": "+-150 mm"
+    },
+    "especificacionesRuedas": {
+        "offset": "+35 a +45 mm",
+        "indice_velocidad": "T/V",
+        "indice_carga": "91",
+        "profundidad_surcos": "1.6 mm",
+        "pcd": "5x114.3"
+    },
+    "especificacionesDireccion": {
+        "tipo_asistencia": "Electrica progresiva",
+        "sistema_control": "Control electronico",
+        "angulo_max_giro": "32-35 grados",
+        "vueltas_calador": "2.5-3.0"
+    },
+    "aerodinámica": {
+        "defectores_aire": "Canales laterales",
+        "spoiler_trasero": "Integrado",
+        "area_frontal": "2.2-2.4 m2",
+        "coeficiente_arrastre": "Cx 0.27-0.32"
+    },
+    "capacidadesAdicionales": {
+        "capacidad_refrigerante": "7-9 L",
+        "capacidad_lavaparabrisas": "3-4 L",
+        "liquido_frenos": "0.75-0.85 L",
+        "capacidad_aceite": "4.5-5.5 L",
+        "filtro_habitaculo": "Carbon activado"
+    },
+    "seguridad_pasiva": {
+        "respaldos": "Reforzados",
+        "zonas": "Deformacion",
+        "cinturones": "Pre-tensores",
+        "estructura": "Vigas laterales",
+        "cristales": "Laminado/Templado"
+    },
+    "climatizacionAvanzada": {
+        "control": "Trizona",
+        "modo": "Recirculacion",
+        "filtro": "Carbon",
+        "desempanante": "Trasero/Lateral"
+    },
+    "mantenimientoPrograma": {
+        "filtro": "25.000-30.000 km",
+        "aceite": "15.000 km",
+        "frenos": "Anual",
+        "ruedas": "Anual",
+        "refrigerante": "2 anos"
+    },
+    "sistemasInteligentes": {
+        "frenado": "AEB",
+        "carril": "LDW",
+        "ciego": "BSM",
+        "parking": "8-12 sensores",
+        "crucero": "ACC"
+    },
+    "consumo": null,
+    "dimensiones": null,
+    "category": "otros"
+}

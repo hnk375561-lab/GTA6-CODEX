@@ -11,7 +11,7 @@
     ],
     "featured": false,
     "createdAt": "2026-08-23T21:41:34.107Z",
-    "updatedAt": "2026-08-25T20:04:56.264Z",
+    "updatedAt": "2026-08-25T20:55:31.287Z",
     "manufacturer": "Honda",
     "class": "Moto utilitaria",
     "customizable": false,
@@ -129,5 +129,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "motocicleta"
 }

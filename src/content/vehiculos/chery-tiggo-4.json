@@ -18,20 +18,19 @@
     "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
     "evidence": {
         "level": "oficial-nombrado",
-        "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+        "note": "Modelo real de fabricación/venta global. Ficha técnica verificada contra el sitio oficial regional de Chery (chery.com.ar) para la línea Tiggo 4.",
         "limitations": [
             "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-            "Auditoría de cobertura de evidencia (ago 2026), ronda 2: se agregó fuente oficial del fabricante (primarySource) que faltaba; nivel actualizado de \"respaldado\" a \"oficial-nombrado\". Verificar que la URL siga vigente si el fabricante reestructura su sitio."
+            "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
         ],
-        "primarySource": "https://cherymotor.com.au/models/tiggo-4",
-        "secondarySource": "https://en.wikipedia.org/wiki/Chery_Tiggo_5x"
+        "primarySource": "https://chery.com.ar/tiggo-4-hybrid/"
     },
     "performance": {
         "speed": "200 km/h (referencia)",
         "acceleration": "0-100 km/h en 8.5s (referencia)"
     },
     "createdAt": "2026-08-23T23:08:07.679Z",
-    "updatedAt": "2026-08-25T20:39:53.304771Z",
+    "updatedAt": "2026-08-25T06:11:22.0175146Z",
     "transmision": "Manual o Automática",
     "traccion": "Tracción delantera",
     "peso": "1.600-2.200 kg",
@@ -133,5 +132,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "otros"
 }

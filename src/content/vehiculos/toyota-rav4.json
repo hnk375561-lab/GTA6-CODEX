@@ -11,7 +11,7 @@
     ],
     "featured": false,
     "createdAt": "2026-08-23T18:01:33.800Z",
-    "updatedAt": "2026-08-25T20:04:56.272Z",
+    "updatedAt": "2026-08-25T20:55:31.295Z",
     "manufacturer": "Toyota",
     "class": "SUV",
     "customizable": false,
@@ -136,5 +136,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "suv"
 }

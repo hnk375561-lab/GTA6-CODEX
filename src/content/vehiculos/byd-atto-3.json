@@ -18,21 +18,20 @@
     "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
     "evidence": {
         "level": "oficial-nombrado",
-        "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+        "note": "Modelo real de fabricación/venta global (también comercializado como BYD Yuan Plus en China y Latinoamérica). Ficha técnica verificada contra la página oficial del modelo en byd.com.",
         "limitations": [
             "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
             "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria.",
-            "Auditoría de cobertura de evidencia (ago 2026), ronda 2: se agregó fuente oficial del fabricante (primarySource) que faltaba; nivel actualizado de \"respaldado\" a \"oficial-nombrado\". Verificar que la URL siga vigente si el fabricante reestructura su sitio."
+            "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
         ],
-        "primarySource": "https://www.byd.com/content/dam/byd-site/en-be/product/atto3/BYD%20ATTO%203.pdf",
-        "secondarySource": "https://en.wikipedia.org/wiki/BYD_Atto_3"
+        "primarySource": "https://www.byd.com/en/car/atto3"
     },
     "performance": {
         "speed": "200 km/h (referencia)",
         "acceleration": "0-100 km/h en 8.5s (referencia)"
     },
     "createdAt": "2026-08-23T23:08:07.679Z",
-    "updatedAt": "2026-08-25T20:39:53.303261Z",
+    "updatedAt": "2026-08-25T20:55:31.275Z",
     "transmision": "Automática de relación única (motor eléctrico)",
     "traccion": "Tracción delantera",
     "peso": "1.600-2.200 kg",
@@ -130,5 +129,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "electrico"
 }

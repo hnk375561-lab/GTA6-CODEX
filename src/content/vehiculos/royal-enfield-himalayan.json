@@ -28,7 +28,7 @@
         "speed": "135 km/h"
     },
     "createdAt": "2026-08-23T21:59:11.515889Z",
-    "updatedAt": "2026-08-25T20:04:56.270Z",
+    "updatedAt": "2026-08-25T20:55:31.293Z",
     "transmision": "Manual secuencial",
     "traccion": "Tracción delantera",
     "peso": "160-250 kg",
@@ -129,5 +129,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "otros"
 }

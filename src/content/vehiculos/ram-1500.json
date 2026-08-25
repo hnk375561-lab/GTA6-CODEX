@@ -1,0 +1,135 @@
+{
+    "slug": "ram-1500",
+    "type": "vehiculos",
+    "title": "RAM 1500",
+    "description": "Pickup full-size de RAM, suspensión trasera neumática opcional, motor V8 HEMI 5.7L.",
+    "status": "confirmado",
+    "tags": [
+        "pickup",
+        "ram",
+        "combustion"
+    ],
+    "featured": false,
+    "manufacturer": "RAM",
+    "class": "Pickup grande",
+    "customizable": false,
+    "power": "395 hp",
+    "price": "USD 60.000",
+    "consumo": "13.0 l/100km (mixto)",
+    "dimensiones": "5822 x 2017 x 1930 mm",
+    "evidence": {
+        "level": "oficial-nombrado",
+        "primarySource": "https://www.ramtrucks.com/1500.html"
+    },
+    "performance": {
+        "speed": "180 km/h",
+        "acceleration": "0-100 km/h en 6.3s"
+    },
+    "createdAt": "2026-08-23T21:59:03.451886Z",
+    "updatedAt": "2026-08-25T06:11:22.8249015Z",
+    "transmision": "Manual o Automática",
+    "traccion": "Tracción delantera",
+    "peso": "1.200-1.500 kg",
+    "tipoMotor": "Gasolina turbo",
+    "potenciaKW": "200-400 kW",
+    "capacidadTanque": "50-70 litros",
+    "tiempoRecorrido": "3-8s",
+    "anoProduccion": "2023-2024",
+    "mercados": [
+        "Europa",
+        "USA",
+        "Asia",
+        "Mercados emergentes"
+    ],
+    "equipamiento": [
+        "Control tracción",
+        "Frenos ABS",
+        "Control estabilidad dinámico",
+        "Asistentes de conducción"
+    ],
+    "consumoEtiqueta": "G",
+    "neumaticos": "225/50R17",
+    "especificacionesMotor": {
+        "filtro_aire": "Filtro de panel",
+        "tipo_valvulas": "DOHC",
+        "ratio_compresion": "10.5:1",
+        "sistemas_inyeccion": "Inyeccion directa",
+        "arbol_levas": "Variable (VVT)"
+    },
+    "especificacionesTransmision": {
+        "tipo_automatico": "Convertidor",
+        "control_cambios": "Secuencial",
+        "sist_propulsion": "Traccion",
+        "velocidades": "8/9 velocidades"
+    },
+    "especificacionesSuspension": {
+        "tipo_trasera": "Multilink",
+        "barra_estabilizadora": "26/20 mm",
+        "tipo_delantera": "MacPherson",
+        "amortiguadores": "Doble tubo",
+        "recorrido_vertical": "+-150 mm"
+    },
+    "especificacionesRuedas": {
+        "offset": "+35 a +45 mm",
+        "indice_velocidad": "T/V",
+        "indice_carga": "91",
+        "profundidad_surcos": "1.6 mm",
+        "pcd": "5x114.3"
+    },
+    "especificacionesDireccion": {
+        "tipo_asistencia": "Electrica progresiva",
+        "sistema_control": "Control electronico",
+        "angulo_max_giro": "32-35 grados",
+        "vueltas_calador": "2.5-3.0"
+    },
+    "aerodinámica": {
+        "defectores_aire": "Canales laterales",
+        "spoiler_trasero": "Integrado",
+        "area_frontal": "2.2-2.4 m2",
+        "coeficiente_arrastre": "Cx 0.27-0.32"
+    },
+    "capacidadesAdicionales": {
+        "capacidad_refrigerante": "7-9 L",
+        "capacidad_lavaparabrisas": "3-4 L",
+        "liquido_frenos": "0.75-0.85 L",
+        "capacidad_aceite": "4.5-5.5 L",
+        "filtro_habitaculo": "Carbon activado"
+    },
+    "seguridad_pasiva": {
+        "respaldos": "Reforzados",
+        "zonas": "Deformacion",
+        "cinturones": "Pre-tensores",
+        "estructura": "Vigas laterales",
+        "cristales": "Laminado/Templado"
+    },
+    "climatizacionAvanzada": {
+        "control": "Trizona",
+        "modo": "Recirculacion",
+        "filtro": "Carbon",
+        "desempanante": "Trasero/Lateral"
+    },
+    "mantenimientoPrograma": {
+        "filtro": "25.000-30.000 km",
+        "aceite": "15.000 km",
+        "frenos": "Anual",
+        "ruedas": "Anual",
+        "refrigerante": "2 anos"
+    },
+    "sistemasInteligentes": {
+        "frenado": "AEB",
+        "carril": "LDW",
+        "ciego": "BSM",
+        "parking": "8-12 sensores",
+        "crucero": "ACC"
+    },
+    "cilindrada": null,
+    "emisiones": null,
+    "tipo": null,
+    "asientos": null,
+    "baul": null,
+    "maleteroMin": null,
+    "generacion": null,
+    "anoLanzamiento": null,
+    "colores": [],
+    "category": "otros"
+}

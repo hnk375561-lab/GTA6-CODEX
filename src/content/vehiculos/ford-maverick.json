@@ -11,7 +11,7 @@
     ],
     "featured": false,
     "createdAt": "2026-08-23T21:41:30.736Z",
-    "updatedAt": "2026-08-25T20:04:56.261Z",
+    "updatedAt": "2026-08-25T20:55:31.283Z",
     "manufacturer": "Ford",
     "class": "Pickup compacta",
     "customizable": false,
@@ -133,5 +133,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "otros"
 }

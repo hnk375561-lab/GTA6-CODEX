@@ -11,7 +11,7 @@
     ],
     "featured": false,
     "createdAt": "2026-08-23T18:31:29.250Z",
-    "updatedAt": "2026-08-25T20:04:56.257Z",
+    "updatedAt": "2026-08-25T20:55:31.281Z",
     "manufacturer": "Chevrolet",
     "class": "Hatchback eléctrico",
     "customizable": false,
@@ -127,5 +127,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "otros"
 }

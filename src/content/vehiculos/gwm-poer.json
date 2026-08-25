@@ -1,0 +1,137 @@
+{
+    "slug": "gwm-poer",
+    "type": "vehiculos",
+    "title": "GWM Poer",
+    "description": "Pickup mediana de Great Wall Motors, orientada a exportación.",
+    "status": "confirmado",
+    "tags": [
+        "pickup",
+        "gwm"
+    ],
+    "featured": false,
+    "manufacturer": "GWM",
+    "class": "Pickup mediana",
+    "customizable": false,
+    "power": "163 hp (diésel)",
+    "price": "USD 28.000",
+    "consumo": "7.2 l/100km combinado (referencia)",
+    "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+    "evidence": {
+        "level": "respaldado",
+        "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+        "limitations": [
+            "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+        ]
+    },
+    "performance": {
+        "speed": "200 km/h (referencia)",
+        "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "createdAt": "2026-08-23T23:08:07.679Z",
+    "updatedAt": "2026-08-25T06:11:22.2777132Z",
+    "transmision": "Manual o Automática",
+    "traccion": "Tracción delantera",
+    "peso": "1.300-1.700 kg",
+    "tipoMotor": "Gasolina/Diésel",
+    "potenciaKW": "100-250 kW",
+    "capacidadTanque": "55-75 litros",
+    "tiempoRecorrido": "7-10s",
+    "anoProduccion": "2023-2024",
+    "mercados": [
+        "Europa",
+        "USA",
+        "Asia",
+        "Mercados emergentes"
+    ],
+    "equipamiento": [
+        "Control tracción",
+        "Frenos ABS",
+        "Control estabilidad dinámico",
+        "Asistentes de conducción"
+    ],
+    "consumoEtiqueta": "D",
+    "neumaticos": "225/50R17",
+    "especificacionesMotor": {
+        "filtro_aire": "Filtro de panel",
+        "tipo_valvulas": "DOHC",
+        "ratio_compresion": "10.5:1",
+        "sistemas_inyeccion": "Inyeccion directa",
+        "arbol_levas": "Variable (VVT)"
+    },
+    "especificacionesTransmision": {
+        "tipo_automatico": "Convertidor",
+        "control_cambios": "Secuencial",
+        "sist_propulsion": "Traccion",
+        "velocidades": "8/9 velocidades"
+    },
+    "especificacionesSuspension": {
+        "tipo_trasera": "Multilink",
+        "barra_estabilizadora": "26/20 mm",
+        "tipo_delantera": "MacPherson",
+        "amortiguadores": "Doble tubo",
+        "recorrido_vertical": "+-150 mm"
+    },
+    "especificacionesRuedas": {
+        "offset": "+35 a +45 mm",
+        "indice_velocidad": "T/V",
+        "indice_carga": "91",
+        "profundidad_surcos": "1.6 mm",
+        "pcd": "5x114.3"
+    },
+    "especificacionesDireccion": {
+        "tipo_asistencia": "Electrica progresiva",
+        "sistema_control": "Control electronico",
+        "angulo_max_giro": "32-35 grados",
+        "vueltas_calador": "2.5-3.0"
+    },
+    "aerodinámica": {
+        "defectores_aire": "Canales laterales",
+        "spoiler_trasero": "Integrado",
+        "area_frontal": "2.2-2.4 m2",
+        "coeficiente_arrastre": "Cx 0.27-0.32"
+    },
+    "capacidadesAdicionales": {
+        "capacidad_refrigerante": "7-9 L",
+        "capacidad_lavaparabrisas": "3-4 L",
+        "liquido_frenos": "0.75-0.85 L",
+        "capacidad_aceite": "4.5-5.5 L",
+        "filtro_habitaculo": "Carbon activado"
+    },
+    "seguridad_pasiva": {
+        "respaldos": "Reforzados",
+        "zonas": "Deformacion",
+        "cinturones": "Pre-tensores",
+        "estructura": "Vigas laterales",
+        "cristales": "Laminado/Templado"
+    },
+    "climatizacionAvanzada": {
+        "control": "Trizona",
+        "modo": "Recirculacion",
+        "filtro": "Carbon",
+        "desempanante": "Trasero/Lateral"
+    },
+    "mantenimientoPrograma": {
+        "filtro": "25.000-30.000 km",
+        "aceite": "15.000 km",
+        "frenos": "Anual",
+        "ruedas": "Anual",
+        "refrigerante": "2 anos"
+    },
+    "sistemasInteligentes": {
+        "frenado": "AEB",
+        "carril": "LDW",
+        "ciego": "BSM",
+        "parking": "8-12 sensores",
+        "crucero": "ACC"
+    },
+    "cilindrada": null,
+    "emisiones": null,
+    "tipo": null,
+    "asientos": null,
+    "baul": null,
+    "maleteroMin": null,
+    "generacion": null,
+    "anoLanzamiento": null,
+    "colores": [],
+    "category": "otros"
+}

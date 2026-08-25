@@ -29,7 +29,7 @@
         "acceleration": "0-100 km/h en 8.5s (referencia)"
     },
     "createdAt": "2026-08-23T22:30:00.000000Z",
-    "updatedAt": "2026-08-25T20:04:56.262Z",
+    "updatedAt": "2026-08-25T20:55:31.285Z",
     "transmision": "Manual secuencial",
     "traccion": "Tracción delantera",
     "peso": "160-250 kg",
@@ -130,5 +130,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "motocicleta"
 }

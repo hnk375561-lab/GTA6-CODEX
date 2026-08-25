@@ -29,7 +29,7 @@
         "acceleration": "0-100 km/h en 8.5s (referencia)"
     },
     "createdAt": "2026-08-23T23:06:25.164Z",
-    "updatedAt": "2026-08-25T20:04:56.269Z",
+    "updatedAt": "2026-08-25T20:55:31.292Z",
     "transmision": "Automática de relación única (motor eléctrico)",
     "traccion": "Tracción delantera",
     "peso": "1.200-1.500 kg",
@@ -127,5 +127,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "super-deportivo"
 }

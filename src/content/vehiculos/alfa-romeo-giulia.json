@@ -1,0 +1,150 @@
+{
+    "slug": "alfa-romeo-giulia",
+    "type": "vehiculos",
+    "title": "Alfa Romeo Giulia",
+    "description": "Sedán deportivo premium de Alfa Romeo, tracción trasera, motor turbo 2.0L de 4 cilindros.",
+    "status": "confirmado",
+    "tags": [
+        "sedan",
+        "alfa-romeo",
+        "premium",
+        "deportivo"
+    ],
+    "featured": false,
+    "manufacturer": "Alfa Romeo",
+    "class": "Sedán deportivo premium",
+    "customizable": false,
+    "power": "280 hp",
+    "price": "USD 60.000",
+    "consumo": "8.0 l/100km (mixto)",
+    "dimensiones": "4643 x 1860 x 1436 mm",
+    "evidence": {
+        "level": "respaldado",
+        "primarySource": "https://www.alfaromeo.es/modelos/giulia",
+        "secondarySource": "https://www.truedelta.com/-Giulia/specs-1346-2024",
+        "note": "Specs de la gama Giulia MY24/MY26 (motor base turbo 2.0L 4 cil. y variante Quadrifoglio V6 biturbo, esta última discontinuada en la gama 2025). Datos de maletero y emisiones tomados del sitio oficial europeo (ciclo WLTP)."
+    },
+    "performance": {
+        "speed": "230 km/h (base) / 307 km/h (Quadrifoglio)",
+        "acceleration": "0-100 km/h en 5.7s (base) / 3.6s (Quadrifoglio)"
+    },
+    "createdAt": "2026-08-23T21:59:09.269759Z",
+    "updatedAt": "2026-08-25T06:11:21.8463081Z",
+    "transmision": "8 velocidades automática (ZF)",
+    "traccion": "Tracción trasera (RWD), Q4 (AWD) opcional",
+    "peso": "1.660 kg (base) - 1.830 kg (Quadrifoglio)",
+    "tipoMotor": "Gasolina turbo (4 cilindros) / V6 biturbo (Quadrifoglio)",
+    "potenciaKW": "206 kW / 280 hp (base) - 373 kW / 505 hp (Quadrifoglio)",
+    "capacidadTanque": "58 litros",
+    "tiempoRecorrido": "5.7s (base) - 3.6s (Quadrifoglio) 0-100 km/h",
+    "anoProduccion": "2016-presente (2ª generación, Tipo 952)",
+    "mercados": [
+        "Europa",
+        "Estados Unidos",
+        "Canadá",
+        "Latinoamérica (incl. Argentina)",
+        "Medio Oriente"
+    ],
+    "equipamiento": [
+        "Frenos Brembo",
+        "Faros LED matrix adaptivos",
+        "Pantalla central 8.8\"/12.3\"",
+        "Climatizador bizona",
+        "Asientos de cuero",
+        "Sistema de audio Harman Kardon (opcional)",
+        "Control crucero adaptativo",
+        "Asistente de mantenimiento de carril"
+    ],
+    "consumoEtiqueta": "E",
+    "neumaticos": "225/50R17 (base) hasta 245/35R19 del. / 285/30R19 tras. (Quadrifoglio)",
+    "cilindrada": "1.995 cc (motor base turbo 4 cilindros) / 2.891 cc (V6 biturbo Quadrifoglio)",
+    "emisiones": "CO2 130-183 g/km (WLTP, según motorización)",
+    "tipo": "Sedán deportivo",
+    "asientos": 5,
+    "baul": "480 litros",
+    "maleteroMin": "480 litros",
+    "generacion": "Segunda generación (Tipo 952), lanzada en 2016, con facelift en 2020",
+    "anoLanzamiento": 2016,
+    "colores": [
+        "Alfa White",
+        "Alfa Rosso",
+        "Vulcano Black Metallic",
+        "Vesuvio Gray Metallic",
+        "Moonlight Gray Metallic",
+        "Misano Blue Metallic"
+    ],
+    "especificacionesMotor": {
+        "filtro_aire": "Filtro de panel",
+        "tipo_valvulas": "DOHC",
+        "ratio_compresion": "10.5:1",
+        "sistemas_inyeccion": "Inyeccion directa",
+        "arbol_levas": "Variable (VVT)"
+    },
+    "especificacionesTransmision": {
+        "tipo_automatico": "Convertidor",
+        "control_cambios": "Secuencial",
+        "sist_propulsion": "Traccion",
+        "velocidades": "8/9 velocidades"
+    },
+    "especificacionesSuspension": {
+        "tipo_trasera": "Multilink",
+        "barra_estabilizadora": "26/20 mm",
+        "tipo_delantera": "MacPherson",
+        "amortiguadores": "Doble tubo",
+        "recorrido_vertical": "+-150 mm"
+    },
+    "especificacionesRuedas": {
+        "offset": "+35 a +45 mm",
+        "indice_velocidad": "T/V",
+        "indice_carga": "91",
+        "profundidad_surcos": "1.6 mm",
+        "pcd": "5x114.3"
+    },
+    "especificacionesDireccion": {
+        "tipo_asistencia": "Electrica progresiva",
+        "sistema_control": "Control electronico",
+        "angulo_max_giro": "32-35 grados",
+        "vueltas_calador": "2.5-3.0"
+    },
+    "aerodinámica": {
+        "defectores_aire": "Canales laterales",
+        "spoiler_trasero": "Integrado",
+        "area_frontal": "2.2-2.4 m2",
+        "coeficiente_arrastre": "Cx 0.27-0.32"
+    },
+    "capacidadesAdicionales": {
+        "capacidad_refrigerante": "7-9 L",
+        "capacidad_lavaparabrisas": "3-4 L",
+        "liquido_frenos": "0.75-0.85 L",
+        "capacidad_aceite": "4.5-5.5 L",
+        "filtro_habitaculo": "Carbon activado"
+    },
+    "seguridad_pasiva": {
+        "respaldos": "Reforzados",
+        "zonas": "Deformacion",
+        "cinturones": "Pre-tensores",
+        "estructura": "Vigas laterales",
+        "cristales": "Laminado/Templado"
+    },
+    "climatizacionAvanzada": {
+        "control": "Trizona",
+        "modo": "Recirculacion",
+        "filtro": "Carbon",
+        "desempanante": "Trasero/Lateral"
+    },
+    "mantenimientoPrograma": {
+        "filtro": "25.000-30.000 km",
+        "aceite": "15.000 km",
+        "frenos": "Anual",
+        "ruedas": "Anual",
+        "refrigerante": "2 anos"
+    },
+    "sistemasInteligentes": {
+        "frenado": "AEB",
+        "carril": "LDW",
+        "ciego": "BSM",
+        "parking": "8-12 sensores",
+        "crucero": "ACC"
+    },
+    "category": "otros"
+}

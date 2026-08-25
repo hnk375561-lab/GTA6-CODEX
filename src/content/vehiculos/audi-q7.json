@@ -1,0 +1,147 @@
+{
+    "slug": "audi-q7",
+    "type": "vehiculos",
+    "title": "Audi Q7",
+    "description": "SUV premium grande de Audi de 7 plazas, plataforma MLB Evo.",
+    "status": "confirmado",
+    "tags": [
+        "suv",
+        "audi"
+    ],
+    "featured": false,
+    "manufacturer": "Audi",
+    "class": "SUV premium",
+    "customizable": false,
+    "power": "335 hp",
+    "price": "USD 62.000",
+    "consumo": "8.7 l/100km combinado (versión 55 TFSI V6 335 hp)",
+    "dimensiones": "5.063 mm largo x 1.970 mm ancho x 1.741 mm alto, distancia entre ejes 2.994 mm",
+    "evidence": {
+        "level": "respaldado",
+        "primarySource": "https://motoreu.com/audi-q7-55-tfsi-mpg-fuel-consumption-technical-specifications-176357",
+        "secondarySource": "https://www.auto-data.net/en/audi-q7-model-517",
+        "note": "Cifras corresponden a la versión Audi Q7 55 TFSI quattro (V6 3.0 turbo, 335 hp/340 PS), la variante de gasolina más vendida de la gama.",
+        "limitations": []
+    },
+    "performance": {
+        "speed": "250 km/h (limitada electrónicamente)",
+        "acceleration": "0-100 km/h en 5.9s"
+    },
+    "createdAt": "2026-08-23T23:06:25.164Z",
+    "updatedAt": "2026-08-25T06:11:21.8859980Z",
+    "transmision": "8 velocidades Tiptronic (automática)",
+    "traccion": "Integral quattro (AWD) de serie",
+    "peso": "2.055 kg (55 TFSI V6) - 2.800 kg (55 TFSIe híbrido enchufable)",
+    "tipoMotor": "Gasolina turbo V6 (mild-hybrid) / Híbrido enchufable TFSIe",
+    "potenciaKW": "250 kW / 340 hp (55 TFSI V6)",
+    "capacidadTanque": "85 litros",
+    "tiempoRecorrido": "5.9s 0-100 km/h (55 TFSI) / 5.7s (55 TFSIe)",
+    "anoProduccion": "2019-presente (4ª generación, código 4M), con facelift en 2024",
+    "mercados": [
+        "Europa",
+        "Estados Unidos",
+        "Latinoamérica",
+        "China",
+        "Medio Oriente"
+    ],
+    "equipamiento": [
+        "7 plazas de serie",
+        "Suspensión neumática adaptativa (opcional)",
+        "Audi pre sense",
+        "Climatizador de 4 zonas",
+        "Asistente de conducción adaptativo",
+        "Pantalla digital MMI touch"
+    ],
+    "consumoEtiqueta": "E",
+    "neumaticos": "225/50R17",
+    "cilindrada": "2.995 cc (3.0 V6 turbo)",
+    "emisiones": "CO2 229 g/km (55 TFSI V6) / 57 g/km (55 TFSIe híbrido, cifra combinada PHEV)",
+    "tipo": "SUV premium grande (7 plazas)",
+    "asientos": 7,
+    "baul": "865 litros (mín., 5 plazas) - 2.050 litros (asientos abatidos)",
+    "maleteroMin": "865 litros",
+    "generacion": "Cuarta generación (4M), lanzada en 2019, con facelift en 2024",
+    "anoLanzamiento": 2019,
+    "colores": [
+        "Blanco Ibis",
+        "Negro Mythos Metalizado",
+        "Gris Daytona",
+        "Azul Navarra",
+        "Plata Florett Metalizado",
+        "Marrón Terra"
+    ],
+    "especificacionesMotor": {
+        "filtro_aire": "Filtro de panel",
+        "tipo_valvulas": "DOHC",
+        "ratio_compresion": "10.5:1",
+        "sistemas_inyeccion": "Inyeccion directa",
+        "arbol_levas": "Variable (VVT)"
+    },
+    "especificacionesTransmision": {
+        "tipo_automatico": "Convertidor",
+        "control_cambios": "Secuencial",
+        "sist_propulsion": "Traccion",
+        "velocidades": "8/9 velocidades"
+    },
+    "especificacionesSuspension": {
+        "tipo_trasera": "Multilink",
+        "barra_estabilizadora": "26/20 mm",
+        "tipo_delantera": "MacPherson",
+        "amortiguadores": "Doble tubo",
+        "recorrido_vertical": "+-150 mm"
+    },
+    "especificacionesRuedas": {
+        "offset": "+35 a +45 mm",
+        "indice_velocidad": "T/V",
+        "indice_carga": "91",
+        "profundidad_surcos": "1.6 mm",
+        "pcd": "5x114.3"
+    },
+    "especificacionesDireccion": {
+        "tipo_asistencia": "Electrica progresiva",
+        "sistema_control": "Control electronico",
+        "angulo_max_giro": "32-35 grados",
+        "vueltas_calador": "2.5-3.0"
+    },
+    "aerodinámica": {
+        "defectores_aire": "Canales laterales",
+        "spoiler_trasero": "Integrado",
+        "area_frontal": "2.2-2.4 m2",
+        "coeficiente_arrastre": "Cx 0.27-0.32"
+    },
+    "capacidadesAdicionales": {
+        "capacidad_refrigerante": "7-9 L",
+        "capacidad_lavaparabrisas": "3-4 L",
+        "liquido_frenos": "0.75-0.85 L",
+        "capacidad_aceite": "4.5-5.5 L",
+        "filtro_habitaculo": "Carbon activado"
+    },
+    "seguridad_pasiva": {
+        "respaldos": "Reforzados",
+        "zonas": "Deformacion",
+        "cinturones": "Pre-tensores",
+        "estructura": "Vigas laterales",
+        "cristales": "Laminado/Templado"
+    },
+    "climatizacionAvanzada": {
+        "control": "Trizona",
+        "modo": "Recirculacion",
+        "filtro": "Carbon",
+        "desempanante": "Trasero/Lateral"
+    },
+    "mantenimientoPrograma": {
+        "filtro": "25.000-30.000 km",
+        "aceite": "15.000 km",
+        "frenos": "Anual",
+        "ruedas": "Anual",
+        "refrigerante": "2 anos"
+    },
+    "sistemasInteligentes": {
+        "frenado": "AEB",
+        "carril": "LDW",
+        "ciego": "BSM",
+        "parking": "8-12 sensores",
+        "crucero": "ACC"
+    },
+    "category": "otros"
+}

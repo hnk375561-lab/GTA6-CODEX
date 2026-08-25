@@ -10,7 +10,7 @@
     ],
     "featured": false,
     "createdAt": "2026-08-23T21:41:34.410Z",
-    "updatedAt": "2026-08-25T20:04:56.274Z",
+    "updatedAt": "2026-08-25T20:55:31.298Z",
     "manufacturer": "Yamaha",
     "class": "Moto",
     "customizable": false,
@@ -128,5 +128,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "motocicleta"
 }

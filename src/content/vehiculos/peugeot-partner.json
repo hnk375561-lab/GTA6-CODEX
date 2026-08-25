@@ -1,0 +1,133 @@
+{
+    "slug": "peugeot-partner",
+    "type": "vehiculos",
+    "title": "Peugeot Partner",
+    "description": "Furgón utilitario de Peugeot, versión de pasajeros y de carga disponibles.",
+    "status": "confirmado",
+    "tags": [
+        "utilitario",
+        "peugeot",
+        "diesel"
+    ],
+    "featured": false,
+    "manufacturer": "Peugeot",
+    "class": "Utilitario",
+    "customizable": false,
+    "power": "115 hp",
+    "price": "USD 24.000",
+    "consumo": "6.5 l/100km (mixto, diesel)",
+    "dimensiones": "4403 x 1817 x 1806 mm",
+    "evidence": {
+        "level": "oficial-nombrado",
+        "primarySource": "https://www.peugeot.com.ar/gama-peugeot/partner/"
+    },
+    "performance": {
+        "speed": "160 km/h",
+        "acceleration": "0-100 km/h en 13.5s"
+    },
+    "createdAt": "2026-08-23T21:59:08.449854Z",
+    "updatedAt": "2026-08-25T06:11:22.7931510Z",
+    "transmision": "Manual o Automática",
+    "traccion": "Tracción delantera",
+    "peso": "1.300-1.700 kg",
+    "tipoMotor": "Gasolina/Diésel",
+    "potenciaKW": "100-250 kW",
+    "capacidadTanque": "55-75 litros",
+    "tiempoRecorrido": "7-10s",
+    "anoProduccion": "2023-2024",
+    "mercados": [
+        "Europa",
+        "USA",
+        "Asia",
+        "Mercados emergentes"
+    ],
+    "equipamiento": [
+        "Control tracción",
+        "Frenos ABS"
+    ],
+    "consumoEtiqueta": "C",
+    "neumaticos": "225/50R17",
+    "especificacionesMotor": {
+        "filtro_aire": "Filtro de panel",
+        "tipo_valvulas": "DOHC",
+        "ratio_compresion": "10.5:1",
+        "sistemas_inyeccion": "Inyeccion directa",
+        "arbol_levas": "Variable (VVT)"
+    },
+    "especificacionesTransmision": {
+        "tipo_automatico": "Convertidor",
+        "control_cambios": "Secuencial",
+        "sist_propulsion": "Traccion",
+        "velocidades": "8/9 velocidades"
+    },
+    "especificacionesSuspension": {
+        "tipo_trasera": "Multilink",
+        "barra_estabilizadora": "26/20 mm",
+        "tipo_delantera": "MacPherson",
+        "amortiguadores": "Doble tubo",
+        "recorrido_vertical": "+-150 mm"
+    },
+    "especificacionesRuedas": {
+        "offset": "+35 a +45 mm",
+        "indice_velocidad": "T/V",
+        "indice_carga": "91",
+        "profundidad_surcos": "1.6 mm",
+        "pcd": "5x114.3"
+    },
+    "especificacionesDireccion": {
+        "tipo_asistencia": "Electrica progresiva",
+        "sistema_control": "Control electronico",
+        "angulo_max_giro": "32-35 grados",
+        "vueltas_calador": "2.5-3.0"
+    },
+    "aerodinámica": {
+        "defectores_aire": "Canales laterales",
+        "spoiler_trasero": "Integrado",
+        "area_frontal": "2.2-2.4 m2",
+        "coeficiente_arrastre": "Cx 0.27-0.32"
+    },
+    "capacidadesAdicionales": {
+        "capacidad_refrigerante": "7-9 L",
+        "capacidad_lavaparabrisas": "3-4 L",
+        "liquido_frenos": "0.75-0.85 L",
+        "capacidad_aceite": "4.5-5.5 L",
+        "filtro_habitaculo": "Carbon activado"
+    },
+    "seguridad_pasiva": {
+        "respaldos": "Reforzados",
+        "zonas": "Deformacion",
+        "cinturones": "Pre-tensores",
+        "estructura": "Vigas laterales",
+        "cristales": "Laminado/Templado"
+    },
+    "climatizacionAvanzada": {
+        "control": "Trizona",
+        "modo": "Recirculacion",
+        "filtro": "Carbon",
+        "desempanante": "Trasero/Lateral"
+    },
+    "mantenimientoPrograma": {
+        "filtro": "25.000-30.000 km",
+        "aceite": "15.000 km",
+        "frenos": "Anual",
+        "ruedas": "Anual",
+        "refrigerante": "2 anos"
+    },
+    "sistemasInteligentes": {
+        "frenado": "AEB",
+        "carril": "LDW",
+        "ciego": "BSM",
+        "parking": "8-12 sensores",
+        "crucero": "ACC"
+    },
+    "cilindrada": null,
+    "emisiones": null,
+    "tipo": null,
+    "asientos": null,
+    "baul": null,
+    "maleteroMin": null,
+    "generacion": null,
+    "anoLanzamiento": null,
+    "colores": [],
+    "category": "otros"
+}

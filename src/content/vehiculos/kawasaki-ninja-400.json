@@ -11,7 +11,7 @@
     ],
     "featured": false,
     "createdAt": "2026-08-23T18:31:30.628Z",
-    "updatedAt": "2026-08-25T20:04:56.265Z",
+    "updatedAt": "2026-08-25T20:55:31.288Z",
     "manufacturer": "Kawasaki",
     "class": "Moto deportiva",
     "customizable": false,
@@ -130,5 +130,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "motocicleta"
 }

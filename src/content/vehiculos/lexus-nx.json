@@ -30,7 +30,7 @@
         "acceleration": "0-100 km/h en 7.2s (híbrida)"
     },
     "createdAt": "2026-08-23T21:59:02.350462Z",
-    "updatedAt": "2026-08-25T20:04:56.266Z",
+    "updatedAt": "2026-08-25T20:55:31.289Z",
     "transmision": "Manual o Automática",
     "traccion": "Tracción delantera",
     "peso": "1.600-2.200 kg",
@@ -134,5 +134,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "otros"
 }

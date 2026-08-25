@@ -29,7 +29,7 @@
         "acceleration": "0-100 km/h en 8.5s (referencia)"
     },
     "createdAt": "2026-08-23T23:08:07.679Z",
-    "updatedAt": "2026-08-25T20:04:56.252Z",
+    "updatedAt": "2026-08-25T20:55:31.275Z",
     "transmision": "Automática de relación única (motor eléctrico)",
     "traccion": "Tracción delantera",
     "peso": "1.300-1.700 kg",
@@ -125,5 +125,6 @@
     "maleteroMin": null,
     "generacion": null,
     "anoLanzamiento": null,
-    "colores": []
+    "colores": [],
+    "category": "auto-pequeño"
 }
