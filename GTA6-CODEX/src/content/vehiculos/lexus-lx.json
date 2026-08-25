@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 43 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "traccion": "4x4 permanente con reductora",
+  "peso": "2.630-2.700 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "305 kW (409 hp)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2022-presente (basada en Land Cruiser 300)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Medio Oriente",
+    "Estados Unidos",
+    "Japón"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Lexus Safety System+",
+    "Multi-Terrain Select",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "265/60R18 (265/50R22 opcional)",
   "anoLanzamiento": 1996,
   "asientos": 7,
   "baul": "181 litros (3 filas en uso)",
@@ -67,7 +67,7 @@
   "generacion": "Tercera generación",
   "maleteroMin": "181 litros",
   "tipo": "SUV de lujo grande (7 plazas)",
-  "torque": "675 Nm (estimado)",
+  "torque": "650 Nm (V6 twin-turbo)",
   "suspension": "McPherson o doble horquilla delantera / eje multilink trasero, calibrada para confort y capacidad de carga",
   "frenos": "Discos ventilados delanteros, discos (o tambores en versiones base) traseros, ABS y EBD de serie",
   "seguridad": [

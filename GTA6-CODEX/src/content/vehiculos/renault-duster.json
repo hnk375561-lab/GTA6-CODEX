@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.126Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "manufacturer": "Renault",
   "class": "SUV",
   "customizable": false,
@@ -28,25 +28,26 @@
     "primarySource": "https://www.renault.com.ar/vehiculos/duster.html"
   },
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "traccion": "Delantera (FWD) o 4x4 según versión",
+  "peso": "1.145-1.320 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "84-114 kW (114-155 hp)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2018-presente (segunda generación, con facelift)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "Brasil",
+    "Europa (como Dacia Duster)"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Multimedia Easy Link"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/65R16 (215/60R17 en versiones superiores)",
   "anoLanzamiento": 2010,
   "asientos": 5,
   "baul": "411 litros",
@@ -63,7 +64,7 @@
   "generacion": "Tercera generación",
   "maleteroMin": "411 litros",
   "tipo": "SUV compacto",
-  "torque": "230 Nm (estimado)",
+  "torque": "170-250 Nm según motorización",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

@@ -28,29 +28,29 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.800-2.150 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "150-280 kW (204-381 hp según versión)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2022-presente (segunda generación, incl. híbrida enchufable)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "China"
   ],
   "equipamiento": [
-    "Control tracción",
+    "MBUX",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "4MATIC (versiones AWD)"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17",
+  "neumaticos": "235/60R18 (265/40R21 opcional)",
   "anoLanzamiento": 2015,
   "asientos": 5,
   "baul": "620 litros",
@@ -65,7 +65,7 @@
   "generacion": "Segunda generación",
   "maleteroMin": "620 litros",
   "tipo": "SUV premium mediano",
-  "torque": "400 Nm (estimado)",
+  "torque": "370-560 Nm según versión (incl. PHEV)",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

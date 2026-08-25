@@ -30,27 +30,27 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.310-1.550 kg (incl. eléctrico)",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "74-115 kW (100-156 hp)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2020-presente (incl. ë-C4 eléctrico)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Citroën Advanced Comfort",
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "205/60R16 (215/50R18 en versiones superiores)",
   "anoLanzamiento": 2004,
   "asientos": 5,
   "baul": "380 litros",
@@ -65,7 +65,7 @@
   "generacion": "Tercera generación",
   "maleteroMin": "380 litros",
   "tipo": "Hatchback/SUV coupé",
-  "torque": "300 Nm (estimado)",
+  "torque": "205-260 Nm según motorización",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

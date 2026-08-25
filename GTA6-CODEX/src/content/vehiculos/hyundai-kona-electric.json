@@ -28,29 +28,29 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:06.238471Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.700-1.800 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "99-160 kW (135-217 hp según batería 48.4/65.4 kWh)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2023-presente (segunda generación)",
   "mercados": [
+    "Corea del Sur",
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Hyundai SmartSense",
+    "Carga rápida DC",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/55R19 (235/45R19 en versión N Line)",
   "anoLanzamiento": 2018,
   "asientos": 5,
   "baul": "466 litros",
@@ -65,7 +65,7 @@
   "generacion": "Segunda generación",
   "maleteroMin": "466 litros",
   "tipo": "SUV eléctrico compacto",
-  "torque": "440 Nm (estimado)",
+  "torque": "255 Nm",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

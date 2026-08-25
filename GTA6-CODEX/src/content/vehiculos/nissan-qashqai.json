@@ -30,29 +30,28 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.400-1.700 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "96-157 kW (130-213 hp según versión)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2021-presente (con motor e-Power)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Reino Unido"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Nissan Safety Shield 360",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "ProPILOT Assist"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/65R17 (235/45R20 opcional)",
   "anoLanzamiento": 2006,
   "asientos": 5,
   "baul": "504 litros",
@@ -67,7 +66,7 @@
   "generacion": "Tercera generación (facelift 2024)",
   "maleteroMin": "504 litros",
   "tipo": "SUV compacto",
-  "torque": "245 Nm (estimado)",
+  "torque": "250-330 Nm según versión",
   "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

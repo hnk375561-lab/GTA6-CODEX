@@ -30,29 +30,26 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.865-2.130 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "96-114 kW (130-155 hp)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2022-presente",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "India"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "6 airbags (versiones superiores)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "245/65R17 (255/60R18 en versiones superiores)",
   "anoLanzamiento": 2022,
   "asientos": 7,
   "baul": "235 litros (3 filas en uso)",
@@ -67,7 +64,7 @@
   "generacion": "Primera generación",
   "maleteroMin": "235 litros",
   "tipo": "SUV grande (7 plazas)",
-  "torque": "310 Nm (estimado)",
+  "torque": "320-400 Nm según motorización",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

@@ -30,29 +30,28 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
+  "peso": "1.600-1.850 kg",
   "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
+  "potenciaKW": "140-330 kW (190-449 hp según versión)",
   "capacidadTanque": "50-70 litros",
   "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2018-presente",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Volvo Pilot Assist",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "City Safety"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "225/50R17 (235/35R20 en Polestar Engineered)",
   "anoLanzamiento": 2000,
   "asientos": 5,
   "baul": "442 litros",
@@ -67,7 +66,7 @@
   "generacion": "Tercera generación",
   "maleteroMin": "442 litros",
   "tipo": "Sedán ejecutivo compacto",
-  "torque": "360 Nm (estimado)",
+  "torque": "300-680 Nm según motorización",
   "suspension": "McPherson delantera / multilink o eje de torsión trasero",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

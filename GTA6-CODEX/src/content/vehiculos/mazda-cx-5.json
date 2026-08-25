@@ -28,29 +28,30 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:01.491247Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.550-1.700 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "143-140 kW (194-187 hp según motorización gasolina o diésel)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2017-presente (con facelift 2024)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Japón",
+    "Estados Unidos",
+    "Argentina",
+    "Europa"
   ],
   "equipamiento": [
-    "Control tracción",
+    "i-Activsense",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "i-Activ AWD (opcional)"
   ],
   "consumoEtiqueta": "F",
-  "neumaticos": "225/50R17",
+  "neumaticos": "225/65R17 (225/55R19 en versiones superiores)",
   "anoLanzamiento": 2012,
   "asientos": 5,
   "baul": "510 litros",
@@ -65,7 +66,7 @@
   "generacion": "Segunda generación (facelift)",
   "maleteroMin": "510 litros",
   "tipo": "SUV mediano",
-  "torque": "290 Nm (estimado)",
+  "torque": "213-420 Nm según motorización",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

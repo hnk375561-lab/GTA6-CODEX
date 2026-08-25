@@ -29,29 +29,28 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "traccion": "4x4 conectable con reductora",
+  "peso": "1.900-2.300 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "197-280 kW (268-380 hp según versión, incl. 392 V8)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2018-presente (JL, con facelift 2024, incl. 4xe híbrido enchufable)",
   "mercados": [
+    "Estados Unidos",
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC desactivable)",
+    "Bloqueo de diferencial Rock-Trac (Rubicon)"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17",
+  "neumaticos": "245/75R17 (285/70R17 en Rubicon)",
   "anoLanzamiento": 1986,
   "asientos": 5,
   "baul": "533 litros",
@@ -66,7 +65,7 @@
   "generacion": "Cuarta generación (JL, facelift 2024)",
   "maleteroMin": "533 litros",
   "tipo": "SUV off-road",
-  "torque": "420 Nm (estimado)",
+  "torque": "347-637 Nm según motorización (incl. 4xe)",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

@@ -27,27 +27,30 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.400-1.550 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "110-140 kW (150-190 hp)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2021-presente",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "Argentina",
+    "Brasil"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "VW Digital Cockpit",
+    "Cámara de reversa",
+    "Control de crucero adaptativo"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "205/65R16 (235/45R19 en Highline)",
   "anoLanzamiento": 2021,
   "asientos": 5,
   "baul": "498 litros",
@@ -62,7 +65,7 @@
   "generacion": "Primera generación",
   "maleteroMin": "498 litros",
   "tipo": "SUV compacto",
-  "torque": "230 Nm (estimado)",
+  "torque": "250-350 Nm según motorización",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

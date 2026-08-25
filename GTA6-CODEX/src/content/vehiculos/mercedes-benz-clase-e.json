@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
+  "peso": "1.780-2.100 kg",
   "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
+  "potenciaKW": "150-500 kW (204-680 hp según versión, incl. AMG E 53)",
   "capacidadTanque": "50-70 litros",
   "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2023-presente (con nueva generación W214)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "China"
   ],
   "equipamiento": [
-    "Control tracción",
+    "MBUX con pantalla superscreen",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "4MATIC (versiones AWD)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "225/60R17 (255/35R21 opcional)",
   "anoLanzamiento": 1993,
   "asientos": 5,
   "baul": "540 litros",
@@ -67,7 +67,7 @@
   "generacion": "Sexta generación (W214)",
   "maleteroMin": "540 litros",
   "tipo": "Sedán ejecutivo",
-  "torque": "370 Nm (estimado)",
+  "torque": "360-750 Nm según motorización (incl. híbrida enchufable)",
   "suspension": "McPherson delantera / multilink o eje de torsión trasero",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

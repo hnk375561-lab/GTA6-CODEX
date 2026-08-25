@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.700-1.980 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "137-172 kW (185-234 hp según versión)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2023-presente (quinta generación, con nuevo diseño cuadrado)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Corea del Sur",
+    "Estados Unidos",
+    "Argentina"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Hyundai SmartSense",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "HTRAC (AWD)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "235/60R18 (255/45R20 en versiones superiores)",
   "anoLanzamiento": 2000,
   "asientos": 7,
   "baul": "628 litros (3 filas en uso)",
@@ -67,7 +67,7 @@
   "generacion": "Quinta generación",
   "maleteroMin": "628 litros",
   "tipo": "SUV grande (7 plazas)",
-  "torque": "295 Nm (estimado)",
+  "torque": "264-421 Nm según versión (incl. híbrida)",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

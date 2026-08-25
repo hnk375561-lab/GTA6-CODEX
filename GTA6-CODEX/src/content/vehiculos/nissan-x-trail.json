@@ -27,29 +27,29 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.650-1.850 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "116-157 kW (157-213 hp según versión e-Power)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2022-presente (con motor e-Power)",
   "mercados": [
+    "Japón",
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Nissan Safety Shield 360",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "ProPILOT Assist"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "235/60R18 (255/45R20 opcional)",
   "anoLanzamiento": 2000,
   "asientos": 7,
   "baul": "200 litros (3 filas en uso)",
@@ -64,7 +64,7 @@
   "generacion": "Cuarta generación",
   "maleteroMin": "200 litros",
   "tipo": "SUV mediano (7 plazas)",
-  "torque": "280 Nm (estimado)",
+  "torque": "330 Nm (versión e-Power)",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

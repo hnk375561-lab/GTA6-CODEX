@@ -30,27 +30,28 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "traccion": "Delantera (FWD)",
+  "peso": "1.450-1.550 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "137 kW (186 hp, 1.5 turbo)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2023-presente",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "China"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Cámara de reversa",
+    "Central multimedia táctil"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/55R18",
   "anoLanzamiento": 2020,
   "asientos": 5,
   "baul": "410 litros",
@@ -64,7 +65,7 @@
   "generacion": "Primera generación",
   "maleteroMin": "410 litros",
   "tipo": "SUV compacto",
-  "torque": "230 Nm (estimado)",
+  "torque": "230 Nm",
   "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

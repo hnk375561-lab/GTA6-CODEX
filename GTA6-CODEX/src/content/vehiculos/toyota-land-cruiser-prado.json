@@ -30,29 +30,31 @@
     "braking": "100-0 km/h en 43 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "traccion": "4x4 permanente con reductora",
+  "peso": "2.150-2.400 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "150-200 kW (204-272 hp según versión)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2024-presente (nueva generación, basada en plataforma TNGA-F)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Japón",
+    "Medio Oriente",
+    "Argentina",
+    "Asia"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Toyota Safety Sense",
+    "Multi-Terrain Select",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Bloqueo de diferencial"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "265/65R18 (265/60R20 opcional)",
   "anoLanzamiento": 1984,
   "asientos": 7,
   "baul": "182 litros (3 filas en uso)",
@@ -67,7 +69,7 @@
   "generacion": "Quinta generación (250)",
   "maleteroMin": "182 litros",
   "tipo": "SUV grande off-road (7 plazas)",
-  "torque": "270 Nm (estimado)",
+  "torque": "500-700 Nm según motorización (turbodiésel o híbrido)",
   "suspension": "McPherson o doble horquilla delantera / eje multilink trasero, calibrada para confort y capacidad de carga",
   "frenos": "Discos ventilados delanteros, discos (o tambores en versiones base) traseros, ABS y EBD de serie",
   "seguridad": [

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.851Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "manufacturer": "Jeep",
   "class": "SUV",
   "customizable": false,
@@ -29,26 +29,25 @@
   },
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.480-1.650 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "110-176 kW (150-240 hp según versión, incl. 4xe)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2022-presente (con facelift)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Brasil",
+    "Argentina"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Selec-Terrain (versiones 4x4)"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/60R17 (225/55R18 en Trailhawk)",
   "anoLanzamiento": 2006,
   "asientos": 5,
   "baul": "438 litros",
@@ -65,7 +64,7 @@
   "generacion": "Segunda generación",
   "maleteroMin": "438 litros",
   "tipo": "SUV compacto",
-  "torque": "265 Nm (estimado)",
+  "torque": "200-380 Nm según motorización",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

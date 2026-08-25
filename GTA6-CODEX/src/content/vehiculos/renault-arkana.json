@@ -30,27 +30,30 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.350-1.560 kg (incl. híbrido E-Tech)",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "84-117 kW (114-160 hp)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "Brasil",
+    "Rusia"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Easy Link 9.3\"",
+    "Techo estilo coupé"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "205/55R19 (versión E-Tech híbrida usa 215/55R18)",
   "anoLanzamiento": 2019,
   "asientos": 5,
   "baul": "480 litros",
@@ -65,7 +68,7 @@
   "generacion": "Primera generación (facelift)",
   "maleteroMin": "480 litros",
   "tipo": "SUV coupé compacto",
-  "torque": "215 Nm (estimado)",
+  "torque": "148-260 Nm según motorización",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

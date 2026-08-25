@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.858Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "manufacturer": "Peugeot",
   "class": "SUV compacta",
   "customizable": false,
@@ -29,24 +29,26 @@
   },
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.185-1.530 kg (incl. e-2008 eléctrico)",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "75-115 kW (102-156 hp según versión)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2019-presente (con facelift 2023)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "Brasil"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Peugeot i-Cockpit",
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Cámara de reversa"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17",
+  "neumaticos": "205/60R16 (215/50R18 en GT)",
   "anoLanzamiento": 2013,
   "asientos": 5,
   "baul": "405 litros",
@@ -63,7 +65,7 @@
   "generacion": "Segunda generación",
   "maleteroMin": "405 litros",
   "tipo": "SUV compacto",
-  "torque": "285 Nm (estimado)",
+  "torque": "205-260 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

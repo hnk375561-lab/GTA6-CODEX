@@ -30,29 +30,28 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.500-1.985 kg (incl. eléctrica)",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "110-230 kW (150-313 hp según versión)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2024-presente (tercera generación, incl. eléctrica Countryman E)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Pantalla circular OLED",
+    "MINI Experience Modes"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/60R17 (225/45R19 en JCW)",
   "anoLanzamiento": 2010,
   "asientos": 5,
   "baul": "450 litros",
@@ -67,7 +66,7 @@
   "generacion": "Tercera generación",
   "maleteroMin": "450 litros",
   "tipo": "SUV compacto premium",
-  "torque": "440 Nm (estimado)",
+  "torque": "250-380 Nm según versión (incl. eléctrica)",
   "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

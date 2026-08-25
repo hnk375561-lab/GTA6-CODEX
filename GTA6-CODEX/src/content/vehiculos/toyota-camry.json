@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
+  "peso": "1.590-1.700 kg",
   "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
+  "potenciaKW": "175-185 kW (232 hp sistema combinado, según tracción)",
   "capacidadTanque": "50-70 litros",
   "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2024-presente (novena generación, 100% híbrida)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "Japón",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Toyota Safety Sense 3.0",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Sistema híbrido de quinta generación"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/55R18 (235/40R19 en XSE)",
   "anoLanzamiento": 1982,
   "asientos": 5,
   "baul": "428 litros",
@@ -67,7 +67,7 @@
   "generacion": "Novena generación",
   "maleteroMin": "428 litros",
   "tipo": "Sedán mediano híbrido",
-  "torque": "325 Nm (estimado)",
+  "torque": "221 Nm (motor de combustión) + par eléctrico combinado",
   "suspension": "McPherson delantera / multilink o eje de torsión trasero",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

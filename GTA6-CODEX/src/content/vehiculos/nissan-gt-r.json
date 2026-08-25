@@ -30,29 +30,28 @@
     "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
+  "traccion": "Integral (AWD) ATTESA E-TS",
+  "peso": "1.740-1.760 kg",
   "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
+  "potenciaKW": "419-441 kW (570-600 hp según versión)",
   "capacidadTanque": "50-70 litros",
   "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2007-presente (con actualizaciones, R35, producción limitada final)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Japón",
+    "Estados Unidos",
+    "Europa"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de tracción",
+    "Frenos Brembo",
+    "ATTESA E-TS AWD",
+    "Control de estabilidad (ESC)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "255/40R20 delantero, 285/35R20 trasero",
   "anoLanzamiento": 2007,
   "asientos": 4,
   "baul": "315 litros",
@@ -67,7 +66,7 @@
   "generacion": "Sexta generación (R35, discontinuado 2024/25)",
   "maleteroMin": "315 litros",
   "tipo": "Deportivo/superdeportivo",
-  "torque": "765 Nm (estimado)",
+  "torque": "637-660 Nm según versión (Nismo)",
   "suspension": "McPherson delantera / multilink trasera, calibración deportiva de rigidez elevada",
   "frenos": "Discos ventilados perforados en las 4 ruedas, ABS y EBD de serie",
   "seguridad": [

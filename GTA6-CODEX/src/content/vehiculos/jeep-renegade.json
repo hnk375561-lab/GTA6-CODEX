@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.310Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "manufacturer": "Jeep",
   "class": "SUV compacta",
   "customizable": false,
@@ -29,26 +29,25 @@
   },
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.325-1.570 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "88-129 kW (120-175 hp según motorización)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2018-presente (con facelift 2022)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Brasil",
+    "Argentina"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Selec-Terrain (Trailhawk)"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/60R17 (225/50R18 en Trailhawk)",
   "anoLanzamiento": 2014,
   "asientos": 5,
   "baul": "351 litros",
@@ -65,7 +64,7 @@
   "generacion": "Primera generación (facelift 2022)",
   "maleteroMin": "351 litros",
   "tipo": "SUV compacto",
-  "torque": "275 Nm (estimado)",
+  "torque": "200-270 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

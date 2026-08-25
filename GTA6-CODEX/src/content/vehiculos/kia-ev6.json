@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.800-2.100 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "125-430 kW (168-577 hp según versión, batería 58-84 kWh)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2021-presente (con facelift 2024)",
   "mercados": [
+    "Corea del Sur",
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Kia Drive Wise",
+    "Carga rápida DC hasta 258 kW (800V)",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "235/55R19 (255/45R20 en GT-Line/GT)",
   "anoLanzamiento": 2021,
   "asientos": 5,
   "baul": "480 litros",
@@ -67,7 +67,7 @@
   "generacion": "Primera generación (facelift 2024)",
   "maleteroMin": "480 litros",
   "tipo": "SUV eléctrico mediano",
-  "torque": "495 Nm (estimado)",
+  "torque": "350-740 Nm según versión (incl. GT)",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

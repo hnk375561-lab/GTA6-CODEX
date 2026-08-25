@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.809Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "manufacturer": "Suzuki",
   "class": "SUV compacta",
   "customizable": false,
@@ -29,24 +29,25 @@
   },
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "955-1.015 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "67-77 kW (91-104 hp)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2023-presente",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "India",
+    "África",
+    "América Latina"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Cámara de reversa"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17",
+  "neumaticos": "195/60R17 (215/55R17 en versión turbo)",
   "anoLanzamiento": 2023,
   "asientos": 5,
   "baul": "308 litros",
@@ -63,7 +64,7 @@
   "generacion": "Primera generación",
   "maleteroMin": "308 litros",
   "tipo": "SUV compacto / crossover",
-  "torque": "155 Nm (estimado)",
+  "torque": "113-138 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

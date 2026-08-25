@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "2.150-2.500 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "183-330 kW (249-449 hp según versión)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2019-presente (con facelift 2023)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "China"
   ],
   "equipamiento": [
-    "Control tracción",
+    "MBUX",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Suspensión neumática AIRMATIC (opcional)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "255/50R20 (285/40R22 opcional)",
   "anoLanzamiento": 1997,
   "asientos": 7,
   "baul": "630 litros (3 filas en uso)",
@@ -67,7 +67,7 @@
   "generacion": "Segunda generación (facelift)",
   "maleteroMin": "630 litros",
   "tipo": "SUV grande (7 plazas)",
-  "torque": "395 Nm (estimado)",
+  "torque": "400-750 Nm según motorización",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

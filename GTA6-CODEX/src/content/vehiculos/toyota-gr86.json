@@ -30,29 +30,27 @@
     "braking": "100-0 km/h en 34 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
+  "peso": "1.270-1.290 kg",
   "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
+  "potenciaKW": "172 kW (228 hp, boxer 2.4)",
   "capacidadTanque": "50-70 litros",
   "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2021-presente (segunda generación)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Japón",
+    "Estados Unidos",
+    "Europa"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Frenos ABS con modo Track",
+    "Control de estabilidad (ESC desactivable)",
+    "Torque Vectoring asistido por frenos"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "215/40R18 (215/40R18 Michelin PS4)",
   "anoLanzamiento": 2012,
   "asientos": 4,
   "baul": "237 litros",
@@ -67,7 +65,7 @@
   "generacion": "Segunda generación",
   "maleteroMin": "237 litros",
   "tipo": "Deportivo",
-  "torque": "310 Nm (estimado)",
+  "torque": "250 Nm",
   "suspension": "McPherson delantera / multilink trasera, calibración deportiva de rigidez elevada",
   "frenos": "Discos ventilados perforados en las 4 ruedas, ABS y EBD de serie",
   "seguridad": [

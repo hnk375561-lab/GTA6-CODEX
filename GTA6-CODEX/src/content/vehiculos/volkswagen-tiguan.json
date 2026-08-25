@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.550-1.850 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "110-200 kW (150-272 hp según versión)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2024-presente (tercera generación)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "Estados Unidos"
   ],
   "equipamiento": [
-    "Control tracción",
+    "VW Digital Cockpit Pro",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Control de crucero adaptativo"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "235/55R18 (255/40R21 en R-Line)",
   "anoLanzamiento": 2007,
   "asientos": 5,
   "baul": "652 litros",
@@ -67,7 +67,7 @@
   "generacion": "Tercera generación",
   "maleteroMin": "652 litros",
   "tipo": "SUV compacto",
-  "torque": "285 Nm (estimado)",
+  "torque": "250-400 Nm según motorización (incl. híbrida enchufable)",
   "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

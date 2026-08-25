@@ -29,29 +29,29 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:02.633748Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "traccion": "4x4 permanente con reductora",
+  "peso": "2.100-2.500 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "147-390 kW (200-530 hp según versión, incl. V8)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2020-presente (nueva generación)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Terrain Response 2",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Vadeo hasta 900 mm"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17",
+  "neumaticos": "255/65R19 (275/45R22 opcional)",
   "anoLanzamiento": 1983,
   "asientos": 5,
   "baul": "857 litros",
@@ -66,7 +66,7 @@
   "generacion": "Segunda generación (L663, facelift 2023)",
   "maleteroMin": "857 litros",
   "tipo": "SUV off-road",
-  "torque": "460 Nm (estimado)",
+  "torque": "365-750 Nm según motorización",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

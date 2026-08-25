@@ -30,29 +30,31 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:02.907844Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "traccion": "4x4 permanente con reductora",
+  "peso": "2.500-2.700 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "227-305 kW (309-415 hp según versión)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2021-presente (serie 300)",
   "mercados": [
-    "Europa",
-    "USA",
+    "Medio Oriente",
+    "Japón",
     "Asia",
-    "Mercados emergentes"
+    "Argentina"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Toyota Safety Sense",
+    "Multi-Terrain Select",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Suspensión KDSS"
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17",
+  "neumaticos": "265/65R18 (275/50R21 opcional)",
   "anoLanzamiento": 1951,
   "asientos": 7,
   "baul": "175 litros (3 filas en uso)",
@@ -67,7 +69,7 @@
   "generacion": "Sexta generación (300)",
   "maleteroMin": "175 litros",
   "tipo": "SUV grande off-road (7 plazas)",
-  "torque": "480 Nm (estimado)",
+  "torque": "430-700 Nm según motorización (V6 twin-turbo gasolina o diésel)",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

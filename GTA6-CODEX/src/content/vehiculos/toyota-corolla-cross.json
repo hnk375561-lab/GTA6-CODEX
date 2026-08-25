@@ -28,27 +28,30 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:04.271737Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.400-1.500 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "121-135 kW (169-196 hp incl. híbrido)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2021-presente",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "Argentina",
+    "Brasil",
+    "Asia"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Toyota Safety Sense 2.5",
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Cámara de reversa"
   ],
   "consumoEtiqueta": "B",
-  "neumaticos": "225/50R17",
+  "neumaticos": "205/65R16 (225/50R18 en XSE)",
   "anoLanzamiento": 2021,
   "asientos": 5,
   "baul": "440 litros",
@@ -63,7 +66,7 @@
   "generacion": "Primera generación",
   "maleteroMin": "440 litros",
   "tipo": "SUV compacto",
-  "torque": "190 Nm (estimado)",
+  "torque": "185-206 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

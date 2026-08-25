@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.920-2.150 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "184-227 kW (250-309 hp según versión)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2022-presente (quinta generación, incl. híbrida enchufable)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Japón",
+    "Estados Unidos",
+    "Europa"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Lexus Safety System+ 3.0",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "E-Four (AWD)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "235/65R18 (235/50R21 opcional)",
   "anoLanzamiento": 1998,
   "asientos": 5,
   "baul": "612 litros",
@@ -67,7 +67,7 @@
   "generacion": "Quinta generación",
   "maleteroMin": "612 litros",
   "tipo": "SUV premium mediano",
-  "torque": "425 Nm (estimado)",
+  "torque": "270-460 Nm según versión (incl. PHEV)",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

@@ -30,29 +30,30 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
+  "peso": "2.000-2.200 kg",
   "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
+  "potenciaKW": "140-140 kW (190 hp, 2.5 híbrido o 2.4 turbo)",
   "capacidadTanque": "50-70 litros",
   "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2023-presente (cuarta generación)",
   "mercados": [
-    "Europa",
-    "USA",
+    "Japón",
     "Asia",
-    "Mercados emergentes"
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Toyota Safety Sense",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Puertas correderas eléctricas",
+    "Asientos captain reclinables"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "235/50R19",
   "anoLanzamiento": 2002,
   "asientos": 7,
   "baul": "470 litros (3 filas en uso)",
@@ -66,7 +67,7 @@
   "generacion": "Cuarta generación",
   "maleteroMin": "470 litros",
   "tipo": "Minivan de lujo (7 plazas)",
-  "torque": "530 Nm (estimado)",
+  "torque": "239-270 Nm según versión (incl. híbrida)",
   "suspension": "McPherson delantera / eje semi-independiente trasero, prioriza confort de marcha",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

@@ -31,29 +31,30 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:10:36.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.560-1.700 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "142-158 kW (193-215 hp según versión)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2023-presente (sexta generación, incl. híbrida e:HEV)",
   "mercados": [
+    "Japón",
+    "Estados Unidos",
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Honda Sensing",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Real Time AWD (opcional)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "235/65R18 (235/60R18 en versiones superiores)",
   "anoLanzamiento": 1995,
   "asientos": 5,
   "baul": "589 litros",
@@ -68,7 +69,7 @@
   "generacion": "Sexta generación",
   "maleteroMin": "589 litros",
   "tipo": "SUV mediano",
-  "torque": "243 Nm entre 1.700-5.000 rpm (1.5L turbo, verificado)",
+  "torque": "203-335 Nm según versión (incl. híbrida)",
   "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

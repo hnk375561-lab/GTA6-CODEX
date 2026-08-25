@@ -28,27 +28,29 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:05.686502Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "peso": "1.230-1.330 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "85-110 kW (115-150 hp)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2022-presente (segunda generación)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "India",
+    "Argentina",
+    "Brasil"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Hyundai SmartSense",
+    "Control de tracción",
+    "Frenos ABS",
+    "Control de estabilidad (ESC)",
+    "Cámara de reversa"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "205/65R16 (215/60R17 en versiones superiores)",
   "anoLanzamiento": 2014,
   "asientos": 5,
   "baul": "433 litros",
@@ -63,7 +65,7 @@
   "generacion": "Segunda generación (facelift)",
   "maleteroMin": "433 litros",
   "tipo": "SUV compacto",
-  "torque": "185 Nm (estimado)",
+  "torque": "144-192 Nm según motorización",
   "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

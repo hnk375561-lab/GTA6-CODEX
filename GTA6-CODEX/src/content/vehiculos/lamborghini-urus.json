@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "traccion": "Integral (AWD) permanente",
+  "peso": "2.150-2.200 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "471-489 kW (641-666 hp según versión)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2018-presente (con facelift Urus S/Performante)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "Medio Oriente",
+    "China"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de tracción",
+    "Frenos carbono-cerámicos",
+    "Control de estabilidad (ESC)",
+    "Modos de manejo ANIMA"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "285/45R21 (325/35R23 opcional)",
   "anoLanzamiento": 2017,
   "asientos": 5,
   "baul": "616 litros",
@@ -67,7 +67,7 @@
   "generacion": "Primera generación (facelift Performante/SE)",
   "maleteroMin": "616 litros",
   "tipo": "SUV superdeportivo",
-  "torque": "1020 Nm (estimado)",
+  "torque": "650-850 Nm según versión",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

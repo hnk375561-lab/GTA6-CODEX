@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.048Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "manufacturer": "Toyota",
   "class": "SUV 4x4",
   "customizable": false,
@@ -29,27 +29,28 @@
     "primarySource": "https://www.toyota.com.ar/sw4"
   },
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "traccion": "Trasera (4x2) o 4x4 conectable según versión",
+  "peso": "2.000-2.150 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "110-150 kW (150-204 hp)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2015-presente (basada en Hilux, con facelift)",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Argentina",
+    "Brasil",
+    "Asia (como Fortuner)"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Toyota Safety Sense",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "7 asientos",
+    "Bloqueo de diferencial trasero"
   ],
   "consumoEtiqueta": "E",
-  "neumaticos": "225/50R17",
+  "neumaticos": "265/60R18",
   "anoLanzamiento": 1998,
   "asientos": 7,
   "baul": "200 litros (3ra fila en uso) / 1.080 litros (abatida)",
@@ -66,7 +67,7 @@
   "generacion": "Cuarta generación",
   "maleteroMin": "200 litros",
   "tipo": "SUV mediano/grande (7 plazas)",
-  "torque": "315 Nm (estimado)",
+  "torque": "400-500 Nm según motorización diésel",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

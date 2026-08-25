@@ -30,29 +30,28 @@
     "braking": "100-0 km/h en 43 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "traccion": "Trasera (4x2) o 4x4 conectable según versión",
+  "peso": "1.955-2.100 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "110-140 kW (150-190 hp)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2021-presente (segunda generación)",
   "mercados": [
-    "Europa",
-    "USA",
     "Asia",
-    "Mercados emergentes"
+    "Australia",
+    "Argentina"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Isuzu Advanced Driving Assist",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "255/60R18",
   "anoLanzamiento": 2013,
   "asientos": 7,
   "baul": "235 litros (3 filas en uso)",
@@ -67,7 +66,7 @@
   "generacion": "Segunda generación",
   "maleteroMin": "235 litros",
   "tipo": "SUV grande (7 plazas)",
-  "torque": "315 Nm (estimado)",
+  "torque": "350-450 Nm según motorización diésel",
   "suspension": "McPherson o doble horquilla delantera / eje multilink trasero, calibrada para confort y capacidad de carga",
   "frenos": "Discos ventilados delanteros, discos (o tambores en versiones base) traseros, ABS y EBD de serie",
   "seguridad": [

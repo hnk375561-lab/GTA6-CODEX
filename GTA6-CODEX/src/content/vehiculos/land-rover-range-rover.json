@@ -30,29 +30,29 @@
     "braking": "100-0 km/h en 43 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T05:00:00.000Z",
   "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "traccion": "4x4 permanente con reductora",
+  "peso": "2.400-2.700 kg",
   "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "221-390 kW (300-530 hp según versión)",
   "capacidadTanque": "60-80 litros",
   "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2022-presente (quinta generación, incl. híbrida enchufable)",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Estados Unidos",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
+    "Terrain Response 2",
+    "Control de tracción",
     "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de estabilidad (ESC)",
+    "Suspensión neumática adaptativa"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "255/55R20 (275/40R23 opcional)",
   "anoLanzamiento": 1970,
   "asientos": 5,
   "baul": "818 litros",
@@ -67,7 +67,7 @@
   "generacion": "Quinta generación",
   "maleteroMin": "818 litros",
   "tipo": "SUV de lujo grande",
-  "torque": "660 Nm (estimado)",
+  "torque": "400-750 Nm según motorización",
   "suspension": "McPherson o doble horquilla delantera / eje multilink trasero, calibrada para confort y capacidad de carga",
   "frenos": "Discos ventilados delanteros, discos (o tambores en versiones base) traseros, ABS y EBD de serie",
   "seguridad": [
