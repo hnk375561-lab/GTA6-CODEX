@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.851Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "manufacturer": "Jeep",
   "class": "SUV",
   "customizable": false,
@@ -79,5 +79,7 @@
     "Control de crucero adaptativo",
     "Alerta de punto ciego"
   ],
-  "garantia": "3 años / 60.000 km integral, tren motriz hasta 5 años / 100.000 km (estimado)"
+  "garantia": "3 años / 60.000 km integral, tren motriz hasta 5 años / 100.000 km (estimado)",
+  "alturaLibrePiso": "190 mm (estimado)",
+  "radioGiro": "5.7 m (estimado)"
 }

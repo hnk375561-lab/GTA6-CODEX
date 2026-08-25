@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.250Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback eléctrico",
   "customizable": false,
@@ -74,5 +74,9 @@
     "Airbags frontales",
     "Anclajes ISOFIX"
   ],
-  "garantia": "3 años / 60.000 km integral, tren motriz hasta 5 años / 100.000 km (estimado)"
+  "garantia": "3 años / 60.000 km integral, tren motriz hasta 5 años / 100.000 km (estimado)",
+  "capacidadBateria": "65 kWh",
+  "autonomia": "417 km (EPA, estimado)",
+  "tiempoCarga": "DC rápida (máx. ~55 kW) 10-80% en ~1h; AC 11 kW en ~7h (estimado)",
+  "radioGiro": "5.0 m (estimado)"
 }

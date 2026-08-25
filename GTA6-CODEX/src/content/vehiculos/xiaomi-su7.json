@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 38 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -78,5 +78,9 @@
     "Airbags laterales y de cortina",
     "Cámara de reversa"
   ],
-  "garantia": "6 años / 150.000 km, garantía extendida de fábrica (estimado)"
+  "garantia": "6 años / 150.000 km, garantía extendida de fábrica (estimado)",
+  "capacidadBateria": "73.6-101 kWh según versión",
+  "autonomia": "628-830 km (CLTC, estimado)",
+  "tiempoCarga": "DC ultrarrápida 800V (versión Max), 10-80% en ~19 min (estimado)",
+  "radioGiro": "5.4 m (estimado)"
 }

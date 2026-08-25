@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.194Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "manufacturer": "Toyota",
   "class": "Sedán",
   "customizable": false,
@@ -81,5 +81,6 @@
     "Airbags laterales y de cortina",
     "Cámara de reversa"
   ],
-  "garantia": "3 años / 100.000 km (estimado)"
+  "garantia": "3 años / 100.000 km (estimado)",
+  "radioGiro": "5.4 m (estimado)"
 }

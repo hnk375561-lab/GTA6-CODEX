@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.524Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "manufacturer": "Tesla",
   "class": "Sedán",
   "customizable": false,
@@ -81,5 +81,9 @@
     "Airbags laterales y de cortina",
     "Cámara de reversa"
   ],
-  "garantia": "3 años / 100.000 km, variable según mercado (estimado)"
+  "garantia": "3 años / 100.000 km, variable según mercado (estimado)",
+  "capacidadBateria": "60-82 kWh según versión",
+  "autonomia": "430-629 km (WLTP, estimado)",
+  "tiempoCarga": "Supercharger 10-80% en ~15-25 min (estimado)",
+  "radioGiro": "5.4 m (estimado)"
 }

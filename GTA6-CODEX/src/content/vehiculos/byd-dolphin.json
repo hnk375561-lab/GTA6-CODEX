@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.972Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "manufacturer": "BYD",
   "class": "Hatchback eléctrico",
   "customizable": false,
@@ -72,5 +72,9 @@
     "Airbags frontales",
     "Anclajes ISOFIX"
   ],
-  "garantia": "6 años / 150.000 km, garantía extendida de fábrica (estimado)"
+  "garantia": "6 años / 150.000 km, garantía extendida de fábrica (estimado)",
+  "capacidadBateria": "44.9-60.5 kWh según versión",
+  "autonomia": "340-420 km (WLTP, estimado)",
+  "tiempoCarga": "DC rápida 30-80% en ~30-40 min (estimado)",
+  "radioGiro": "5.0 m (estimado)"
 }

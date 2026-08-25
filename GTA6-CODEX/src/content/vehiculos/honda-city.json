@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:31.780Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "manufacturer": "Honda",
   "class": "Sedán",
   "customizable": false,
@@ -74,5 +74,6 @@
     "Airbags laterales y de cortina",
     "Cámara de reversa"
   ],
-  "garantia": "2 años sin límite de kilometraje (estimado)"
+  "garantia": "2 años sin límite de kilometraje (estimado)",
+  "radioGiro": "5.4 m (estimado)"
 }

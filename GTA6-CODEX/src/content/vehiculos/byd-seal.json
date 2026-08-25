@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.593Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "manufacturer": "BYD",
   "class": "Sedán eléctrico",
   "customizable": false,
@@ -76,5 +76,9 @@
     "Airbags laterales y de cortina",
     "Cámara de reversa"
   ],
-  "garantia": "6 años / 150.000 km, garantía extendida de fábrica (estimado)"
+  "garantia": "6 años / 150.000 km, garantía extendida de fábrica (estimado)",
+  "capacidadBateria": "61-82.5 kWh según versión",
+  "autonomia": "460-570 km (CLTC, estimado)",
+  "tiempoCarga": "DC rápida 30-80% en ~26 min (estimado)",
+  "radioGiro": "5.4 m (estimado)"
 }

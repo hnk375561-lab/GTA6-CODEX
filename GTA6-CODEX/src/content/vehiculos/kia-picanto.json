@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.554Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "manufacturer": "Kia",
   "class": "Hatchback económico",
   "customizable": false,
@@ -73,5 +73,6 @@
     "Airbags frontales",
     "Anclajes ISOFIX"
   ],
-  "garantia": "5 años / 100.000 km, extensible hasta 7 años según mercado (estimado)"
+  "garantia": "5 años / 100.000 km, extensible hasta 7 años según mercado (estimado)",
+  "radioGiro": "5.0 m (estimado)"
 }

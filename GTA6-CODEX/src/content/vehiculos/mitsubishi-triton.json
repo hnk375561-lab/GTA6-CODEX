@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 44 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -77,5 +77,7 @@
     "Anclajes ISOFIX"
   ],
   "garantia": "3 años / 100.000 km (estimado)",
-  "capacidadRemolque": "2800 kg (estimado)"
+  "capacidadRemolque": "2800 kg (estimado)",
+  "alturaLibrePiso": "220 mm (estimado)",
+  "radioGiro": "6.4 m (estimado)"
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.800Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "manufacturer": "Kia",
   "class": "SUV",
   "customizable": false,
@@ -77,5 +77,7 @@
     "Control de crucero adaptativo",
     "Alerta de punto ciego"
   ],
-  "garantia": "5 años / 100.000 km, extensible hasta 7 años según mercado (estimado)"
+  "garantia": "5 años / 100.000 km, extensible hasta 7 años según mercado (estimado)",
+  "alturaLibrePiso": "190 mm (estimado)",
+  "radioGiro": "5.7 m (estimado)"
 }

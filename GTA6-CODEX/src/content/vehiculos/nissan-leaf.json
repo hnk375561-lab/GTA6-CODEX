@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T21:59:05.094837Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -72,5 +72,9 @@
     "Airbags frontales",
     "Anclajes ISOFIX"
   ],
-  "garantia": "3 años / 100.000 km (estimado)"
+  "garantia": "3 años / 100.000 km (estimado)",
+  "capacidadBateria": "40-59 kWh (versión e+)",
+  "autonomia": "270-385 km (WLTP, estimado)",
+  "tiempoCarga": "DC (CHAdeMO) 80% en ~60 min; AC 6.6 kW en ~7-11h (estimado)",
+  "radioGiro": "5.0 m (estimado)"
 }

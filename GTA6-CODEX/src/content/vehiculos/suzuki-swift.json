@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 37 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -72,5 +72,6 @@
     "Airbags frontales",
     "Anclajes ISOFIX"
   ],
-  "garantia": "2 años sin límite de kilometraje (estimado)"
+  "garantia": "2 años sin límite de kilometraje (estimado)",
+  "radioGiro": "5.0 m (estimado)"
 }

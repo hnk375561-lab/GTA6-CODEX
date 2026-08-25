@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -79,5 +79,7 @@
     "Control de crucero adaptativo",
     "Alerta de punto ciego"
   ],
-  "garantia": "3 años / 100.000 km, variable según mercado (estimado)"
+  "garantia": "3 años / 100.000 km, variable según mercado (estimado)",
+  "alturaLibrePiso": "190 mm (estimado)",
+  "radioGiro": "5.7 m (estimado)"
 }

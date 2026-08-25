@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -78,5 +78,7 @@
     "Airbags laterales y de cortina",
     "Cámara de reversa"
   ],
-  "garantia": "3 años / 100.000 km (estimado)"
+  "garantia": "3 años / 100.000 km (estimado)",
+  "alturaLibrePiso": "175 mm (estimado)",
+  "radioGiro": "5.5 m (estimado)"
 }

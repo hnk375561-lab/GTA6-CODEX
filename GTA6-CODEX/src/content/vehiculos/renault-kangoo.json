@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.693Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "manufacturer": "Renault",
   "class": "Utilitario",
   "customizable": false,
@@ -72,5 +72,6 @@
     "Airbags frontales",
     "Anclajes ISOFIX"
   ],
-  "garantia": "3 años / 100.000 km, variable según mercado (estimado)"
+  "garantia": "3 años / 100.000 km, variable según mercado (estimado)",
+  "radioGiro": "5.9 m (estimado)"
 }

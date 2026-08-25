@@ -28,7 +28,7 @@
     "braking": "100-0 km/h en 41 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "transmision": "7-8 velocidades S tronic (automática de doble embrague)",
   "traccion": "Integral quattro (AWD) de serie",
   "peso": "1.910-2.245 kg (según motorización)",
@@ -84,5 +84,7 @@
     "Control de crucero adaptativo",
     "Alerta de punto ciego"
   ],
-  "garantia": "4 años / 100.000 km, cobertura premium (estimado)"
+  "garantia": "4 años / 100.000 km, cobertura premium (estimado)",
+  "alturaLibrePiso": "190 mm (estimado)",
+  "radioGiro": "5.7 m (estimado)"
 }

@@ -30,7 +30,7 @@
     "braking": "100-0 km/h en 30 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "transmision": "Automática 8 velocidades Steptronic M",
   "traccion": "Tracción total inteligente M xDrive",
   "cilindrada": "2.993 cc",
@@ -81,5 +81,6 @@
     "Control de crucero adaptativo",
     "Alerta de punto ciego"
   ],
-  "garantia": "4 años / 100.000 km, cobertura premium (estimado)"
+  "garantia": "4 años / 100.000 km, cobertura premium (estimado)",
+  "radioGiro": "5.6 m (estimado)"
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.736Z",
-  "updatedAt": "2026-08-25T03:39:32.000Z",
+  "updatedAt": "2026-08-25T03:49:51.000Z",
   "manufacturer": "Ford",
   "class": "Pickup compacta",
   "customizable": false,
@@ -75,5 +75,7 @@
     "Anclajes ISOFIX"
   ],
   "garantia": "3 años / 60.000 km integral, tren motriz hasta 5 años / 100.000 km (estimado)",
-  "capacidadRemolque": "1600 kg (estimado)"
+  "capacidadRemolque": "1600 kg (estimado)",
+  "alturaLibrePiso": "220 mm (estimado)",
+  "radioGiro": "6.4 m (estimado)"
 }
