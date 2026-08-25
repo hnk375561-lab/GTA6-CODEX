@@ -14,14 +14,9 @@ const SITE_DESCRIPTION =
  * a 'Thing' (ver `SCHEMA_TYPE_BY_ENTITY_TYPE[type] || 'Thing'` abajo).
  */
 const SCHEMA_TYPE_BY_ENTITY_TYPE: Partial<Record<EntityType, string>> = {
-  [EntityType.CHARACTER]: 'Person',
   [EntityType.VEHICLE]: 'Vehicle',
-  [EntityType.LOCATION]: 'Place',
-  [EntityType.FACTION]: 'Organization',
-  [EntityType.BUSINESS]: 'Organization',
   [EntityType.NEWS]: 'NewsArticle',
   [EntityType.GUIDE]: 'Article',
-  [EntityType.TRAILER]: 'VideoObject',
 }
 
 /**
@@ -100,8 +95,12 @@ export function generateEntityMetadata(entity: Entity, ogImage?: EntityOgImage |
 const LIST_DESCRIPTION_BY_TYPE: Partial<Record<EntityType, (count: number, label: string) => string>> = {
   [EntityType.VEHICLE]: (count) =>
     `${count} fichas técnicas de autos y motos, catalogadas por fabricante, clase y rendimiento, con fuente por cada dato.`,
-  [EntityType.LOCATION]: (count) => `${count} concesionarias y puntos de interés documentados.`,
-  [EntityType.BUSINESS]: (count) => `${count} negocios del rubro automotor documentados.`,
+  // Sin entrada para EntityType.LOCATION/BUSINESS: esos tipos ya no existen
+  // en el catálogo actual (solo VEHICLE/NEWS/GUIDE). Las descripciones que
+  // había acá ("concesionarias...", "negocios del rubro automotor...")
+  // podrían ser útiles cuando se implemente el mapa de concesionarias (ver
+  // /mapa, "en construcción"), pero hoy no corresponden a ningún tipo real
+  // — se retoman ahí si ese tipo se agrega al enum.
 }
 
 export function generateListMetadata(type: EntityType, count: number): Metadata {

@@ -30,9 +30,10 @@ interface EntityListExplorerProps {
   type: EntityType
   entities: Entity[]
   typeLabel: string
-  /** slug → URL de clip (mp4), hoy solo relevante para personajes con clip
-   *  registrado (ver getCharacterClipUrl en lib/media.ts). El caller server
-   *  (`[entityType]/page.tsx`) resuelve este mapa una sola vez. */
+  /** slug → URL de clip (mp4). Ningún caller pobla este mapa hoy (el
+   *  soporte era específico de personajes, tipo eliminado en el pivote a
+   *  AutoFicha); queda como prop opcional por si se reintroduce media de
+   *  clip para vehículos más adelante. */
   clipUrlBySlug?: Record<string, string>
   /** type/slug → imagen ya resuelta (ver `getEntityImageMap` en `@/lib/media.ts`).
    *  Este componente es `'use client'`, así que no puede resolver imágenes

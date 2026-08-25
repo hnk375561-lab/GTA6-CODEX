@@ -21,12 +21,6 @@ function statBarWidth(value?: string): string {
   return scale !== null ? `${(scale / 5) * 100}%` : '0%'
 }
 
-function formatTrailerDuration(seconds?: number): string | null {
-  if (!seconds || seconds <= 0) return null
-  const m = Math.floor(seconds / 60)
-  const s = seconds % 60
-  return `${m}:${String(s).padStart(2, '0')}`
-}
 
 /** Un ícono SVG mínimo, lineal, mismo lenguaje que CategoryIcon — no hay
  *  ícono de "reloj/calendario/link" en ese archivo (son solo por categoría),
@@ -564,21 +558,6 @@ export function EntityCard({
               </span>
             </>
           )}
-
-          {isTrailer && trailer && (
-            <div className="trailer-card-overlay">
-              <span className="trailer-card-overlay-chip">
-                <MiniIcon name="scenes" />
-                {trailer.scenes.length} escenas
-              </span>
-              {formatTrailerDuration(trailer.durationSeconds) && (
-                <span className="trailer-card-overlay-chip">
-                  <MiniIcon name="clock" />
-                  {formatTrailerDuration(trailer.durationSeconds)}
-                </span>
-              )}
-            </div>
-          )}
         </div>
 
         <CardBody className={cn('flex flex-1 flex-col gap-3', size === 'hero' ? 'p-6 sm:p-8 lg:justify-center' : 'p-6')}>
@@ -618,28 +597,6 @@ export function EntityCard({
             </dl>
           )}
 
-          {isTrailer && trailer && (
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-auto-border pt-3 text-xs text-auto-text-secondary">
-              <span className="inline-flex items-center gap-1">
-                <MiniIcon name="scenes" />
-                {trailer.scenes.length} escenas
-              </span>
-              {formatTrailerDuration(trailer.durationSeconds) && (
-                <span className="inline-flex items-center gap-1">
-                  <MiniIcon name="clock" />
-                  {formatTrailerDuration(trailer.durationSeconds)}
-                </span>
-              )}
-              <span className="inline-flex items-center gap-1">
-                <MiniIcon name="calendar" />
-                {new Date(trailer.releaseDate).toLocaleDateString('es-ES', {
-                  year: 'numeric',
-                  month: 'short',
-                  day: 'numeric',
-                })}
-              </span>
-            </div>
-          )}
 
           <div className="mt-auto flex items-center justify-between gap-2 border-t border-auto-border pt-3">
             {resolvedRelationCount > 0 ? (

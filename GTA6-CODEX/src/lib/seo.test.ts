@@ -16,10 +16,10 @@ import {
 import { SITE_NAME, SITE_URL } from '@/config/site'
 
 const mockEntity: Entity = {
-  slug: 'tommy-vercetti',
-  type: EntityType.CHARACTER,
-  title: 'Tommy Vercetti',
-  description: 'Protagonista de GTA 6',
+  slug: 'toyota-corolla',
+  type: EntityType.VEHICLE,
+  title: 'Toyota Corolla',
+  description: 'Ficha técnica del Toyota Corolla',
   status: 'confirmado',
   createdAt: new Date('2024-01-01').toISOString(),
   updatedAt: new Date('2024-01-15').toISOString(),
@@ -29,7 +29,7 @@ const mockMediaAsset: MediaAsset = {
   id: 'media-1',
   type: 'image',
   source: {
-    localPath: '/images/tommy.jpg',
+    localPath: '/images/toyota-corolla.jpg',
     originalUrl: undefined,
   },
   createdAt: new Date('2024-01-01').toISOString(),
@@ -46,10 +46,10 @@ describe('generateEntityMetadata', () => {
   it('usa seoTitle si está disponible en lugar de title', () => {
     const entityWithSeoTitle: Entity = {
       ...mockEntity,
-      seoTitle: 'Tommy - Protagonista Custom',
+      seoTitle: 'Corolla - Ficha Custom',
     }
     const metadata = generateEntityMetadata(entityWithSeoTitle)
-    expect(metadata.title).toContain('Tommy - Protagonista Custom')
+    expect(metadata.title).toContain('Corolla - Ficha Custom')
   })
 
   it('usa seoDescription si está disponible', () => {
@@ -69,7 +69,7 @@ describe('generateEntityMetadata', () => {
   })
 
   it('incluye og:image remota si se proporciona ogImage remota', () => {
-    const ogImage = { src: 'https://example.com/image.jpg', alt: 'Tommy', remote: true }
+    const ogImage = { src: 'https://example.com/image.jpg', alt: 'Corolla', remote: true }
     const metadata = generateEntityMetadata(mockEntity, ogImage)
     const ogImages = metadata.openGraph?.images
     expect(ogImages).toBeDefined()
@@ -80,11 +80,11 @@ describe('generateEntityMetadata', () => {
   })
 
   it('prepende SITE_URL a og:image local', () => {
-    const ogImage = { src: '/images/tommy.jpg', alt: 'Tommy', remote: false }
+    const ogImage = { src: '/images/toyota-corolla.jpg', alt: 'Corolla', remote: false }
     const metadata = generateEntityMetadata(mockEntity, ogImage)
     const ogImages = metadata.openGraph?.images
     if (Array.isArray(ogImages)) {
-      expect((ogImages[0] as any).url).toBe(`${SITE_URL}/images/tommy.jpg`)
+      expect((ogImages[0] as any).url).toBe(`${SITE_URL}/images/toyota-corolla.jpg`)
     }
   })
 
@@ -97,7 +97,7 @@ describe('generateEntityMetadata', () => {
   })
 
   it('no fija width/height para og:image local (aspect ratio variable)', () => {
-    const ogImage = { src: '/images/tommy.jpg', alt: 'Tommy', remote: false }
+    const ogImage = { src: '/images/toyota-corolla.jpg', alt: 'Corolla', remote: false }
     const metadata = generateEntityMetadata(mockEntity, ogImage)
     const ogImages = metadata.openGraph?.images
     if (Array.isArray(ogImages)) {
@@ -144,8 +144,8 @@ describe('generateEntityMetadata', () => {
 
 describe('generateListMetadata', () => {
   it('genera metadata para listado de entidades', () => {
-    const metadata = generateListMetadata(EntityType.CHARACTER, 42)
-    expect(metadata.title).toContain('Personajes')
+    const metadata = generateListMetadata(EntityType.VEHICLE, 42)
+    expect(metadata.title).toContain('Vehículos')
     expect(metadata.description).toContain('42')
   })
 
@@ -155,23 +155,22 @@ describe('generateListMetadata', () => {
   })
 
   it('usa descripción específica por tipo si existe', () => {
-    const metaCharacter = generateListMetadata(EntityType.CHARACTER, 5)
     const metaVehicle = generateListMetadata(EntityType.VEHICLE, 5)
-    expect(metaCharacter.description).not.toBe(metaVehicle.description)
-    expect(metaCharacter.description).toContain('personajes')
+    const metaNews = generateListMetadata(EntityType.NEWS, 5)
+    expect(metaVehicle.description).not.toBe(metaNews.description)
     expect(metaVehicle.description).toContain('autos y motos')
   })
 
-  it('cae a descripción genérica si tipo no tiene map específico', () => {
-    // Si hubiera un tipo sin map, usaría el fallback "Explora N {label}"
-    // Pero todos los tipos están mapeados en LIST_DESCRIPTION_BY_TYPE
-    const metadata = generateListMetadata(EntityType.CHARACTER, 10)
+  it('cae a descripción genérica para tipos sin map específico', () => {
+    // NEWS/GUIDE no tienen entrada en LIST_DESCRIPTION_BY_TYPE, así que
+    // caen al fallback "Explora N {label}".
+    const metadata = generateListMetadata(EntityType.NEWS, 10)
     expect(metadata.description).toBeDefined()
     expect(metadata.description?.length).toBeGreaterThan(0)
   })
 
   it('openGraph type es "website" para listas', () => {
-    const metadata = generateListMetadata(EntityType.LOCATION, 20)
+    const metadata = generateListMetadata(EntityType.GUIDE, 20)
     expect((metadata.openGraph as any)?.type).toBe('website')
   })
 })
@@ -212,34 +211,22 @@ describe('generateEntityJsonLd', () => {
     expect(jsonLd['@type']).toBeDefined()
   })
 
-  it('mapea EntityType.CHARACTER a "Person"', () => {
-    const character: Entity = { ...mockEntity, type: EntityType.CHARACTER }
-    const jsonLd = generateEntityJsonLd(character) as any
-    expect(jsonLd['@type']).toBe('Person')
-  })
-
   it('mapea EntityType.VEHICLE a "Vehicle"', () => {
     const vehicle: Entity = { ...mockEntity, type: EntityType.VEHICLE }
     const jsonLd = generateEntityJsonLd(vehicle) as any
     expect(jsonLd['@type']).toBe('Vehicle')
   })
 
-  it('mapea EntityType.LOCATION a "Place"', () => {
-    const location: Entity = { ...mockEntity, type: EntityType.LOCATION }
-    const jsonLd = generateEntityJsonLd(location) as any
-    expect(jsonLd['@type']).toBe('Place')
+  it('mapea EntityType.NEWS a "NewsArticle"', () => {
+    const news: Entity = { ...mockEntity, type: EntityType.NEWS }
+    const jsonLd = generateEntityJsonLd(news) as any
+    expect(jsonLd['@type']).toBe('NewsArticle')
   })
 
-  it('mapea EntityType.TRAILER a "VideoObject"', () => {
-    const trailer: Entity = { ...mockEntity, type: EntityType.TRAILER } as any
-    const jsonLd = generateEntityJsonLd(trailer) as any
-    expect(jsonLd['@type']).toBe('VideoObject')
-  })
-
-  it('cae a "Thing" para tipos sin mapeo específico', () => {
-    const unknown: Entity = { ...mockEntity, type: EntityType.OBJECT } as any
-    const jsonLd = generateEntityJsonLd(unknown) as any
-    expect(jsonLd['@type']).toBe('Thing')
+  it('mapea EntityType.GUIDE a "Article"', () => {
+    const guide: Entity = { ...mockEntity, type: EntityType.GUIDE }
+    const jsonLd = generateEntityJsonLd(guide) as any
+    expect(jsonLd['@type']).toBe('Article')
   })
 
   it('incluye nombre, descripción y URL de la entidad', () => {
@@ -255,25 +242,6 @@ describe('generateEntityJsonLd', () => {
     expect(jsonLd.dateModified).toBe(mockEntity.updatedAt)
   })
 
-  it('enriquece VideoObject con contentUrl y duration si hay media', () => {
-    const trailer: Entity = { ...mockEntity, type: EntityType.TRAILER } as any
-    const mediaWithUrl: MediaAsset = {
-      ...mockMediaAsset,
-      duration: 120,
-      source: { localPath: undefined, originalUrl: 'https://example.com/video.mp4' },
-    } as any
-    const jsonLd = generateEntityJsonLd(trailer, mediaWithUrl) as any
-    expect(jsonLd.contentUrl).toBe('https://example.com/video.mp4')
-    expect(jsonLd.duration).toBe('PT120S')
-  })
-
-  it('no enriquece VideoObject sin media', () => {
-    const trailer: Entity = { ...mockEntity, type: EntityType.TRAILER } as any
-    const jsonLd = generateEntityJsonLd(trailer) as any
-    expect(jsonLd.contentUrl).toBeUndefined()
-    expect(jsonLd.duration).toBeUndefined()
-  })
-
   it('respeta inLanguage: "es"', () => {
     const jsonLd = generateEntityJsonLd(mockEntity) as any
     expect(jsonLd.inLanguage).toBe('es')
@@ -284,8 +252,8 @@ describe('generateBreadcrumbJsonLd', () => {
   it('genera BreadcrumbList con estructura correcta', () => {
     const items = [
       { label: 'Inicio', url: SITE_URL },
-      { label: 'Personajes', url: `${SITE_URL}/personajes` },
-      { label: 'Tommy', url: `${SITE_URL}/personajes/tommy` },
+      { label: 'Vehículos', url: `${SITE_URL}/vehiculos` },
+      { label: 'Toyota Corolla', url: `${SITE_URL}/vehiculos/toyota-corolla` },
     ]
     const jsonLd = generateBreadcrumbJsonLd(items) as any
     expect(jsonLd['@context']).toBe('https://schema.org')
@@ -325,13 +293,13 @@ describe('generateBreadcrumbJsonLd', () => {
 
 describe('getCanonicalUrl', () => {
   it('construye URL canónica correcta', () => {
-    const url = getCanonicalUrl('personajes', 'tommy-vercetti')
-    expect(url).toBe(`${SITE_URL}/personajes/tommy-vercetti`)
+    const url = getCanonicalUrl('vehiculos', 'toyota-corolla')
+    expect(url).toBe(`${SITE_URL}/vehiculos/toyota-corolla`)
   })
 
   it('funciona con cualquier tipo y slug', () => {
-    const url = getCanonicalUrl('vehiculos', 'sabreur')
-    expect(url).toBe(`${SITE_URL}/vehiculos/sabreur`)
+    const url = getCanonicalUrl('vehiculos', 'ford-f-150')
+    expect(url).toBe(`${SITE_URL}/vehiculos/ford-f-150`)
   })
 })
 

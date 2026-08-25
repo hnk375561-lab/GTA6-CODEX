@@ -1,4 +1,3 @@
-import type { Trailer } from '@/types'
 import { EntityType } from '@/types'
 import { getEntitiesByType } from './entities'
 import { resolveEntityImage, ENTITY_IMAGE_CATEGORIES } from './images'
@@ -86,38 +85,6 @@ const KEY_ART: Array<Omit<GalleryItem, 'categorySlug' | 'categoryLabel' | 'trail
 
 const CATEGORY_LABELS: Partial<Record<EntityType, string>> = {
   [EntityType.VEHICLE]: 'Vehículos',
-  [EntityType.LOCATION]: 'Ubicaciones',
-  [EntityType.BUSINESS]: 'Negocios',
-}
-
-/**
- * Indexa qué entidades aparecen en qué escenas de trailer, reutilizando
- * las mismas `relations` que ya conecta `TrailerScenes.tsx`. Esto es lo
- * que habilita, en la galería, mostrar "aparece en Trailer 1, escena 03"
- * junto a una foto de personaje/ubicación sin duplicar el modelo de datos.
- */
-async function buildTrailerAppearanceIndex(): Promise<Map<string, GalleryTrailerAppearance[]>> {
-  const index = new Map<string, GalleryTrailerAppearance[]>()
-  const trailers = (await getEntitiesByType(EntityType.TRAILER)) as Trailer[]
-
-  for (const trailer of trailers) {
-    for (const scene of trailer.scenes) {
-      for (const rel of scene.relations || []) {
-        const key = `${rel.targetType}/${rel.targetSlug}`
-        const appearance: GalleryTrailerAppearance = {
-          trailerSlug: trailer.slug,
-          trailerTitle: trailer.title,
-          sceneId: scene.id,
-          sceneTitle: scene.title,
-          timestamp: scene.timestamp,
-        }
-        if (!index.has(key)) index.set(key, [])
-        index.get(key)!.push(appearance)
-      }
-    }
-  }
-
-  return index
 }
 
 /**
@@ -126,7 +93,6 @@ async function buildTrailerAppearanceIndex(): Promise<Map<string, GalleryTrailer
  * alfabéticamente dentro de cada categoría.
  */
 export async function getGalleryItems(): Promise<GalleryItem[]> {
-  const trailerIndex = await buildTrailerAppearanceIndex()
   const items: GalleryItem[] = []
 
   for (const type of ENTITY_IMAGE_CATEGORIES) {
@@ -136,7 +102,6 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
       if (!resolved) continue
 
       const key = `${entity.type}/${entity.slug}`
-      const trailerAppearances = trailerIndex.get(key) || []
       const isAiIllustration = AI_ILLUSTRATION_KEYS.has(key)
 
       items.push({
@@ -159,7 +124,7 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
         sourceNote: entity.evidence?.note,
         tags: entity.tags,
         featured: entity.featured,
-        trailerAppearances,
+        trailerAppearances: [],
       })
     }
   }
@@ -173,20 +138,17 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
     })
   }
 
-  // Videos de tráiler del Media Registry: se listan en la galería como
-  // tarjetas 'video' (miniatura de YouTube, reproducción en el lightbox),
-  // en vez de necesitar una categoría/pipeline aparte de "videos".
-  const trailerEntities = (await getEntitiesByType(EntityType.TRAILER)) as Trailer[]
-  const trailerBySlug = new Map(trailerEntities.map((t) => [t.slug, t]))
-
+  // Assets de video del Media Registry (clips, artwork): se listan en la
+  // galería como tarjetas 'video' (miniatura, reproducción en el
+  // lightbox), en vez de necesitar una categoría/pipeline aparte de
+  // "videos". El pivote a AutoFicha eliminó el tipo de entidad `Trailer`,
+  // así que este registro ya no distingue esa categoría de asset.
   for (const asset of getMediaAssets()) {
-    if (!['trailer', 'video', 'clip', 'artwork'].includes(asset.kind)) continue
+    if (!['video', 'clip', 'artwork'].includes(asset.kind)) continue
     const rendered = resolveMediaRender(asset)
     if (rendered.renderAs !== 'youtube' && rendered.renderAs !== 'video') continue
 
-    const trailerSlug = asset.relations?.trailer?.trailerSlug
     const entityRelation = asset.relations?.entities?.[0]
-    const trailerEntity = trailerSlug ? trailerBySlug.get(trailerSlug) : undefined
 
     items.push({
       id: asset.id,
@@ -194,17 +156,17 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
       src: rendered.thumbnailSrc,
       alt: rendered.title,
       title: rendered.title,
-      description: trailerEntity?.description || asset.description || '',
-      categorySlug: asset.kind === 'clip' ? 'clips' : asset.kind === 'artwork' ? 'key-art' : 'trailers',
-      categoryLabel: asset.kind === 'clip' ? 'Clips' : asset.kind === 'artwork' ? 'Key Art' : 'Trailers',
-      status: trailerEntity?.status,
-      href: trailerSlug ? `/trailers/${trailerSlug}` : entityRelation ? `/${entityRelation.entityType}/${entityRelation.entitySlug}` : undefined,
-      entityType: trailerSlug ? EntityType.TRAILER : entityRelation?.entityType,
-      entitySlug: trailerSlug || entityRelation?.entitySlug,
+      description: asset.description || '',
+      categorySlug: asset.kind === 'clip' ? 'clips' : 'key-art',
+      categoryLabel: asset.kind === 'clip' ? 'Clips' : 'Key Art',
+      status: undefined,
+      href: entityRelation ? `/${entityRelation.entityType}/${entityRelation.entitySlug}` : undefined,
+      entityType: entityRelation?.entityType,
+      entitySlug: entityRelation?.entitySlug,
       credit: asset.credit || asset.source.provider,
       sourceNote: asset.source.hotlinkNote,
       tags: asset.tags,
-      featured: trailerEntity?.featured,
+      featured: false,
       trailerAppearances: [],
       videoEmbedId: rendered.embedId,
       videoSrc: rendered.videoSrc,
