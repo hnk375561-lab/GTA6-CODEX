@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.868Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:10:36.000Z",
   "manufacturer": "Toyota",
   "class": "Pickup",
   "customizable": false,
@@ -29,14 +29,14 @@
     "level": "oficial-nombrado",
     "primarySource": "https://www.toyota.com.ar/hilux",
     "secondarySource": "https://kobemotor.es/fichas-tecnicas/hilux/medidas-y-dimensiones/",
-    "note": "Las dimensiones y el consumo varían según la carrocería (Cabina Simple, Extra o Doble) y si es 4x2 o 4x4; las versiones 4x4 consumen más que las 4x2.",
+    "note": "Las dimensiones y el consumo varían según la carrocería (Cabina Simple, Extra o Doble) y si es 4x2 o 4x4; las versiones 4x4 consumen más que las 4x2. Torque y peso verificados para la versión 2.8 turbodiésel con transmisión automática.",
     "limitations": [
       "Cifras de consumo aproximadas: pueden variar según mercado, normativa de homologación local y equipamiento"
     ]
   },
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
+  "peso": "2.055-2.360 kg (verificado, según cabina y equipamiento)",
   "tipoMotor": "Gasolina turbo",
   "potenciaKW": "200-400 kW",
   "capacidadTanque": "50-70 litros",
@@ -70,7 +70,7 @@
   "generacion": "Octava generación (facelift)",
   "maleteroMin": "N/A (pick-up)",
   "tipo": "Pick-up mediana",
-  "torque": "355 Nm (estimado)",
+  "torque": "500 Nm entre 1.600-2.800 rpm (versión 2.8 automática, verificado)",
   "suspension": "Doble horquilla delantera / ballestas o eje rígido trasero, orientada a carga y off-road",
   "frenos": "Discos ventilados delanteros, discos (o tambores en versiones base) traseros, ABS y EBD de serie",
   "seguridad": [
@@ -83,7 +83,7 @@
   "capacidadRemolque": "2800 kg (estimado)",
   "alturaLibrePiso": "220 mm (estimado)",
   "radioGiro": "6.4 m (estimado)",
-  "relacionPesoPotencia": "6.6 kg/hp (calculado a partir de peso y potencia declarados)",
+  "relacionPesoPotencia": "10.8 kg/hp (calculado a partir de peso y potencia declarados)",
   "capacidadCarga": "900 kg (estimado)",
   "neumaticoRepuesto": "Rueda de auxilio de tamaño completo (estimado, varía por versión)",
   "iluminacion": "Faros LED o halógenos según versión, luces diurnas LED de serie",

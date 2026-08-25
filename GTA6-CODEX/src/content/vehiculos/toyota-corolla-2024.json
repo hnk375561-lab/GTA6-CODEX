@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.194Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:10:36.000Z",
   "manufacturer": "Toyota",
   "class": "Sedán",
   "customizable": false,
@@ -29,7 +29,7 @@
     "level": "oficial-nombrado",
     "primarySource": "https://www.toyota.com/corolla/",
     "secondarySource": "https://www.truedelta.com/Toyota-Corolla/specs-266-2024&r=3",
-    "note": "También existe la variante Corolla Hybrid (motor 1.8L), con consumo muy inferior (hasta 4.7 l/100km combinado según EPA).",
+    "note": "También existe la variante Corolla Hybrid (motor 1.8L), con consumo muy inferior (hasta 4.7 l/100km combinado según EPA). Torque verificado: 2.0L (169 hp) entrega 205 Nm a 4.400 rpm.",
     "limitations": [
       "Cifras correspondientes a la versión a gasolina 2.0L; la versión Hybrid tiene consumo y dimensiones ligeramente distintas"
     ]
@@ -70,7 +70,7 @@
   "generacion": "Duodécima generación",
   "maleteroMin": "470 litros",
   "tipo": "Sedán compacto",
-  "torque": "245 Nm (estimado)",
+  "torque": "205 Nm a 4.400 rpm (151 lb-ft, versión gasolina 2.0L, verificado)",
   "suspension": "McPherson delantera / multilink o eje de torsión trasero",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

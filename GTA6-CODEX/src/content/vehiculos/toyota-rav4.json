@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.800Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:10:36.000Z",
   "manufacturer": "Toyota",
   "class": "SUV",
   "customizable": false,
@@ -29,7 +29,7 @@
     "level": "oficial-nombrado",
     "primarySource": "https://www.toyota.com/rav4/",
     "secondarySource": "https://www.kbb.com/toyota/rav4/2024/xle",
-    "note": "A partir del año modelo 2026, Toyota rediseñó el RAV4 y pasó a ofrecerlo exclusivamente como híbrido (HEV/PHEV) con 226-236 hp según versión; las cifras de potencia (203 hp) y consumo de esta ficha corresponden a la generación anterior con motor 2.5L exclusivamente a gasolina.",
+    "note": "A partir del año modelo 2026, Toyota rediseñó el RAV4 y pasó a ofrecerlo exclusivamente como híbrido (HEV/PHEV) con 226-236 hp según versión; las cifras de potencia (203 hp) y consumo de esta ficha corresponden a la generación anterior con motor 2.5L exclusivamente a gasolina. Torque verificado para la versión 2.5L a gasolina (203 hp): 249 Nm a 5.000 rpm.",
     "limitations": [
       "Las cifras no reflejan la generación 2026, totalmente híbrida y con mejor eficiencia (hasta 43-48 mpg combinado)"
     ]
@@ -70,7 +70,7 @@
   "generacion": "Quinta generación",
   "maleteroMin": "580 litros",
   "tipo": "SUV mediano híbrido",
-  "torque": "315 Nm (estimado)",
+  "torque": "249 Nm a 5.000 rpm (2.5L 203 hp, verificado)",
   "suspension": "McPherson delantera / multilink trasera, orientada a confort con buen control en curva",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [

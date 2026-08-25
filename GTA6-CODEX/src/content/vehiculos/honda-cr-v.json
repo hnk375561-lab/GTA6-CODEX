@@ -18,10 +18,11 @@
   "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico. Torque verificado para la versión 1.5L turbo (190 hp): 243 Nm.",
     "limitations": [
       "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ]
+    ],
+    "secondarySource": "https://www.truedelta.com/Honda-CR-V/specs-110-2022&r=2"
   },
   "performance": {
     "speed": "200 km/h (referencia)",
@@ -30,7 +31,7 @@
     "braking": "100-0 km/h en 39 m aprox. (estimado)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T04:00:59.000Z",
+  "updatedAt": "2026-08-25T04:10:36.000Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.600-2.200 kg",
@@ -67,7 +68,7 @@
   "generacion": "Sexta generación",
   "maleteroMin": "589 litros",
   "tipo": "SUV mediano",
-  "torque": "295 Nm (estimado)",
+  "torque": "243 Nm entre 1.700-5.000 rpm (1.5L turbo, verificado)",
   "suspension": "McPherson delantera / eje de torsión o multilink trasero, enfocada en uso urbano",
   "frenos": "Discos delanteros ventilados, discos o tambores traseros según versión, ABS y EBD de serie",
   "seguridad": [
