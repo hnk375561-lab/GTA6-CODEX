@@ -129,7 +129,15 @@ function loadEntitiesByTypeSync(type: EntityType): Entity[] {
 
   for (const file of files) {
     try {
-      const raw = fs.readFileSync(path.join(dir, file), 'utf-8')
+      // Defensivo: algunos archivos (p.ej. generados en Windows con
+      // PowerShell `Out-File`/`Set-Content`) pueden llevar un BOM UTF-8
+      // (`EF BB BF`) al inicio. `JSON.parse` no lo tolera y tira
+      // `SyntaxError`, lo que hacía que la entidad se descartara en
+      // silencio (ver catch de abajo) sin romper el build. Se lo saca
+      // acá para que un archivo futuro con BOM no vuelva a colar este
+      // bug sin que nadie se entere.
+      const rawFile = fs.readFileSync(path.join(dir, file), 'utf-8')
+      const raw = rawFile.replace(/^\uFEFF/, '')
       const parsed = JSON.parse(raw)
 
       if (!validateEntity(parsed)) {
