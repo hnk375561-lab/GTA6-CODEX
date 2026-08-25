@@ -1,19 +1,19 @@
 {
-    "slug": "bmw-r1250gs",
+    "slug": "chevrolet-corvette",
     "type": "vehiculos",
-    "title": "BMW R1250GS",
-    "description": "Moto aventura grande de referencia de BMW, motor bóxer bicilíndrico de 1254cc.",
+    "title": "Chevrolet Corvette",
+    "description": "Deportivo icónico americano, primera generación de motor central (C8).",
     "status": "confirmado",
     "tags": [
-        "moto",
-        "bmw"
+        "deportivo",
+        "chevrolet"
     ],
     "featured": false,
-    "manufacturer": "BMW",
-    "class": "Moto aventura",
+    "manufacturer": "Chevrolet",
+    "class": "Deportivo",
     "customizable": false,
-    "power": "136 hp",
-    "price": "USD 19.700",
+    "power": "495 hp",
+    "price": "USD 68.000",
     "consumo": "7.2 l/100km combinado (referencia)",
     "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
     "evidence": {
@@ -21,37 +21,39 @@
         "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
         "limitations": [
             "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-            "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial.",
             "Auditoría de cobertura de evidencia (ago 2026): se agregó fuente oficial del fabricante (primarySource) que faltaba; nivel actualizado de \"respaldado\" a \"oficial-nombrado\". Verificar que la URL siga vigente si el fabricante reestructura su sitio."
         ],
-        "primarySource": "https://www.bmw-motorrad.com/en/models/adventure/r1250gs/technicaldata.html",
-        "secondarySource": "https://en.wikipedia.org/wiki/BMW_R1250GS"
+        "primarySource": "https://www.chevrolet.com/performance/corvette",
+        "secondarySource": "https://en.wikipedia.org/wiki/Chevrolet_Corvette"
     },
     "performance": {
         "speed": "200 km/h (referencia)",
         "acceleration": "0-100 km/h en 8.5s (referencia)"
     },
     "createdAt": "2026-08-23T23:06:25.164Z",
-    "updatedAt": "2026-08-25T20:26:06.121476Z",
-    "transmision": "Manual secuencial",
+    "updatedAt": "2026-08-25T20:26:06.125270Z",
+    "transmision": "Manual o Automática",
     "traccion": "Tracción delantera",
-    "peso": "160-250 kg",
-    "tipoMotor": "Gasolina",
-    "potenciaKW": "50-160 kW",
-    "capacidadTanque": "12-20 litros",
-    "tiempoRecorrido": "10-15s",
+    "peso": "1.200-1.500 kg",
+    "tipoMotor": "Gasolina turbo",
+    "potenciaKW": "200-400 kW",
+    "capacidadTanque": "50-70 litros",
+    "tiempoRecorrido": "3-8s",
     "anoProduccion": "2023-2024",
     "mercados": [
         "Europa",
         "USA",
-        "Asia"
+        "Asia",
+        "Mercados emergentes"
     ],
     "equipamiento": [
         "Control tracción",
-        "Frenos ABS"
+        "Frenos ABS",
+        "Control estabilidad dinámico",
+        "Asistentes de conducción"
     ],
     "consumoEtiqueta": "D",
-    "neumaticos": "120/70R17",
+    "neumaticos": "225/50R17",
     "especificacionesMotor": {
         "filtro_aire": "Filtro de panel",
         "tipo_valvulas": "DOHC",

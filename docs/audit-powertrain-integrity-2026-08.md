@@ -65,9 +65,28 @@ mergear.
 
 - Completar specs reales de batería/autonomía/tiempos de carga para los 24
   EVs (hoy quedan campos en `null` en vez de un dato inventado).
-- 111 de las 250 fichas tienen `evidence.level` pero sin
-  `primarySource`/`secondarySource` (detectado por
-  `npm run audit:evidence`, preexistente a este fix).
 - Verificar variante puntual de transmisión de cada moto contra ficha
   oficial (el fix aplicó un default correcto por categoría, no el dato
   exacto del modelo).
+
+## Ronda 2 — cierre de brecha de evidencia (agosto 2026, cont.)
+
+De las 111 fichas con `evidence.level` pero sin `primarySource`/
+`secondarySource` detectadas por `npm run audit:evidence`, se cerraron 6 en
+esta ronda con fuente oficial del fabricante verificada por búsqueda (no
+inventada): `bmw-r1250gs`, `bmw-s1000rr`, `ducati-monster`,
+`ducati-panigale-v4`, `chevrolet-corvette`, `toyota-camry`. En los 6 casos
+se subió `level` de `"respaldado"` a `"oficial-nombrado"` porque la fuente
+agregada es la ficha técnica propia del fabricante, y se dejó nota en
+`evidence.limitations` avisando que conviene revalidar la URL si el
+fabricante reestructura su sitio.
+
+**Resultado, `npm run audit:evidence`:** 139/250 → **145/250** (58%) con
+evidencia sólida.
+
+Quedan **105** fichas en la cola, listadas en
+[`docs/evidence-gap-queue.txt`](./evidence-gap-queue.txt) (un slug por
+línea, generado con `node scripts/audit-evidence-coverage.mjs --json`).
+Es trabajo de investigación real vehículo por vehículo — no automatizable
+sin arriesgar inventar una fuente — así que se sigue resolviendo en lotes
+en próximas rondas en vez de en una sola tanda.
