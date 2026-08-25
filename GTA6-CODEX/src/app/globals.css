@@ -43,8 +43,8 @@
   --transition-slow: var(--dur-slow) var(--ease-standard);
 
   /* --- Paleta de acentos crudos (uso en gradientes/color-mix) ---
-     Mismos valores que tailwind.config.js (gta-accent / gta-accent-orange
-     / gta-gold), centralizados acá para las fórmulas CSS de abajo. */
+     Mismos valores que tailwind.config.js (auto-accent / auto-accent-orange
+     / auto-gold), centralizados acá para las fórmulas CSS de abajo. */
   --c-pink: #ff2f8f;
   --c-pink-soft: #ff7ec4;
   --c-cyan: #22d3ee;
@@ -87,7 +87,7 @@ html {
 }
 
 body {
-  @apply bg-gta-dark text-gta-text antialiased;
+  @apply bg-auto-dark text-auto-text antialiased;
   font-family: var(--font-sans);
   font-feature-settings: 'ss01' 1, 'cv05' 1;
   text-rendering: optimizeLegibility;
@@ -106,14 +106,14 @@ body {
    plano de color perfectamente limpio — el detalle que separa "interfaz
    plana" de "cinematográfico". 100% decorativo, no bloquea interacción,
    se apaga con reduced-motion (queda estático, no anima). */
-.gta-atmosphere {
+.auto-atmosphere {
   position: fixed;
   inset: 0;
   z-index: 1;
   pointer-events: none;
 }
 
-.gta-atmosphere::before {
+.auto-atmosphere::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -123,7 +123,7 @@ body {
   background-size: 180px 180px;
 }
 
-.gta-atmosphere::after {
+.auto-atmosphere::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -139,7 +139,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-bold text-gta-text;
+  @apply font-bold text-auto-text;
   font-family: var(--font-display);
   letter-spacing: -0.02em;
   line-height: 1.08;
@@ -170,7 +170,7 @@ h6 {
 }
 
 p {
-  @apply text-gta-text-secondary;
+  @apply text-auto-text-secondary;
   line-height: 1.65;
 }
 
@@ -188,7 +188,7 @@ a {
 
 /* Links */
 a:not(.no-style) {
-  @apply text-gta-accent hover:text-gta-accent-strong underline-offset-4;
+  @apply text-auto-accent hover:text-auto-accent-strong underline-offset-4;
 }
 
 /* --- Texto en gradiente Vice (magenta → rosa → cian), reutilizable en
@@ -215,7 +215,7 @@ a:not(.no-style) {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gta-darker;
+  @apply bg-auto-darker;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -1134,7 +1134,7 @@ a:hover .logo-mark {
 
 .hero-news-flash-dot {
   position: relative;
-  background: var(--gta-border-strong, #453163);
+  background: var(--auto-border-strong, #453163);
   transition: background-color 300ms ease, transform 300ms ease;
   padding: 0;
   border: none;
@@ -1152,7 +1152,7 @@ a:hover .logo-mark {
 }
 
 .hero-news-flash-dot:hover {
-  background: var(--gta-border-strong-hover, #6b5490);
+  background: var(--auto-border-strong-hover, #6b5490);
 }
 
 .hero-news-flash-dot[data-active='true'] {
@@ -1267,7 +1267,7 @@ a:hover .logo-mark {
    mismo rol que cumplían antes el <h1> y el <p> por separado, ahora
    unificadas en un solo <h1> semántico. */
 .hero-title-line--main {
-  color: var(--gta-text, #f5eff9);
+  color: var(--auto-text, #f5eff9);
 }
 
 .hero-title-line--sub {
@@ -1632,7 +1632,7 @@ a:hover .logo-mark {
 }
 
 .btn-secondary {
-  border: 1.5px solid var(--gta-border-strong, #453163);
+  border: 1.5px solid var(--auto-border-strong, #453163);
   background: color-mix(in srgb, #140f20 55%, transparent);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -1831,8 +1831,8 @@ a:hover .logo-mark {
 
 .group:hover .category-icon-badge,
 .group:focus-visible .category-icon-badge {
-  border-color: var(--gta-corner-color, #ff2f8f);
-  box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.15), 0 0 24px -6px var(--gta-corner-color, #ff2f8f);
+  border-color: var(--auto-accent, #ff2f8f);
+  box-shadow: 0 0 0 1px rgba(255, 47, 143, 0.15), 0 0 24px -6px var(--auto-accent, #ff2f8f);
 }
 
 /* --- Franjas de censura: la card arranca como un documento
@@ -1854,13 +1854,13 @@ a:hover .logo-mark {
 .category-card-redaction--top {
   top: 0;
   height: 24%;
-  border-bottom: 1px solid var(--gta-corner-color, #ff2f8f);
+  border-bottom: 1px solid var(--auto-accent, #ff2f8f);
 }
 
 .category-card-redaction--bottom {
   bottom: 0;
   height: 16%;
-  border-top: 1px solid var(--gta-corner-color, #ff2f8f);
+  border-top: 1px solid var(--auto-accent, #ff2f8f);
 }
 
 .group:hover .category-card-redaction--top,
@@ -1883,7 +1883,7 @@ a:hover .logo-mark {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gta-corner-color, #ff2f8f);
+  color: var(--auto-accent, #ff2f8f);
   opacity: 0.8;
   white-space: nowrap;
 }
@@ -1908,7 +1908,7 @@ a:hover .logo-mark {
   font-size: 3.5rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--gta-corner-color, var(--c-pink));
+  color: var(--auto-accent, var(--c-pink));
   opacity: 0.07;
   pointer-events: none;
   z-index: 1;
@@ -1928,7 +1928,7 @@ a:hover .logo-mark {
   position: absolute;
   width: 16px;
   height: 16px;
-  border: 0 solid var(--gta-corner-color, #ff2f8f);
+  border: 0 solid var(--auto-accent, #ff2f8f);
   opacity: 0;
   z-index: 2;
   pointer-events: none;
@@ -1990,7 +1990,7 @@ a:hover .logo-mark {
 .category-card-meter-fill {
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--gta-accent-strong, #ff7ec4), var(--gta-accent-orange, #22d3ee));
+  background: linear-gradient(90deg, var(--auto-accent-strong, #ff7ec4), var(--auto-accent-orange, #22d3ee));
   transition: width 900ms var(--ease-premium);
 }
 
@@ -2258,7 +2258,7 @@ a:hover .logo-mark {
 /* --- Navegador rápido de escenas (TrailerScenes) --- */
 .scene-nav-rail {
   scrollbar-width: thin;
-  scrollbar-color: var(--gta-border-strong, #453163) transparent;
+  scrollbar-color: var(--auto-border-strong, #453163) transparent;
 }
 
 .scene-nav-chip {
@@ -2269,7 +2269,7 @@ a:hover .logo-mark {
   gap: 0.15rem;
   min-width: 3.25rem;
   border-radius: 0.6rem;
-  border: 1px solid var(--gta-border, #2a2138);
+  border: 1px solid var(--auto-border, #2a2138);
   background: color-mix(in srgb, #140f20 70%, transparent);
   padding: 0.4rem 0.6rem;
   text-decoration: none;
@@ -2279,7 +2279,7 @@ a:hover .logo-mark {
 
 .scene-nav-chip:hover,
 .scene-nav-chip:focus-visible {
-  border-color: color-mix(in srgb, var(--c-pink) 55%, var(--gta-border-strong, #453163));
+  border-color: color-mix(in srgb, var(--c-pink) 55%, var(--auto-border-strong, #453163));
   background: color-mix(in srgb, #1b1430 85%, transparent);
   transform: translateY(-1px);
 }
@@ -2288,14 +2288,14 @@ a:hover .logo-mark {
   font-family: var(--font-mono);
   font-size: 9px;
   font-weight: 600;
-  color: color-mix(in srgb, var(--c-cyan) 70%, var(--gta-text-secondary, #b3a3c4));
+  color: color-mix(in srgb, var(--c-cyan) 70%, var(--auto-text-secondary, #b3a3c4));
 }
 
 .scene-nav-chip-time {
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
-  color: var(--gta-text, #f5eff9);
+  color: var(--auto-text, #f5eff9);
   white-space: nowrap;
 }
 
@@ -2422,7 +2422,7 @@ a:hover .logo-mark {
   font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 600;
-  color: var(--gta-text, #f5eff9);
+  color: var(--auto-text, #f5eff9);
   background: color-mix(in srgb, #050308 62%, transparent);
   backdrop-filter: blur(6px);
   border: 1px solid color-mix(in srgb, var(--c-pink) 35%, transparent);
@@ -2471,7 +2471,7 @@ a:hover .logo-mark {
 .gallery-tile[data-featured="true"] {
   aspect-ratio: 1 / 1;
   border-width: 2px;
-  border-color: color-mix(in srgb, var(--c-pink) 40%, var(--gta-border-strong, #453163));
+  border-color: color-mix(in srgb, var(--c-pink) 40%, var(--auto-border-strong, #453163));
 }
 
 @media (min-width: 640px) {
@@ -2489,7 +2489,7 @@ a:hover .logo-mark {
 .gallery-tile:hover,
 .gallery-tile:focus-visible {
   transform: translateY(-3px);
-  border-color: color-mix(in srgb, var(--c-pink) 55%, var(--gta-border-strong, #453163));
+  border-color: color-mix(in srgb, var(--c-pink) 55%, var(--auto-border-strong, #453163));
   box-shadow: 0 18px 36px -18px rgba(0, 0, 0, 0.75), 0 0 30px -14px rgba(255, 47, 143, 0.35);
 }
 
@@ -2526,7 +2526,7 @@ a:hover .logo-mark {
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
-  color: var(--gta-text, #f5eff9);
+  color: var(--auto-text, #f5eff9);
   background: color-mix(in srgb, #140f20 65%, transparent);
   backdrop-filter: blur(6px);
   opacity: 0;
@@ -2612,7 +2612,7 @@ a:hover .logo-mark {
     background-image: none;
   }
 
-  .gta-atmosphere {
+  .auto-atmosphere {
     display: none !important;
   }
 
