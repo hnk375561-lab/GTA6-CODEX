@@ -1,138 +1,133 @@
 {
-    "slug":  "tesla-model-s",
-    "type":  "vehiculos",
-    "title":  "Tesla Model S",
-    "description":  "Sedán eléctrico insignia de Tesla, versión Plaid supera los 1000 hp.",
-    "status":  "confirmado",
-    "tags":  [
-                 "electrico",
-                 "tesla"
-             ],
-    "featured":  false,
-    "manufacturer":  "Tesla",
-    "class":  "Sedán eléctrico",
-    "customizable":  false,
-    "power":  "670 hp (Dual Motor) / 1020 hp (Plaid)",
-    "price":  "USD 111.380 (precio final antes de discontinuarse, 2026)",
-    "consumo":  "Autonomía EPA 309-410 millas según versión",
-    "dimensiones":  "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
-    "evidence":  {
-                     "level":  "respaldado",
-                     "primarySource":  "https://www.edmunds.com/tesla/model-s/",
-                     "secondarySource":  "https://www.cars.com/research/tesla-model_s-2026/",
-                     "note":  "Tesla anunció en enero de 2026 el fin de producción del Model S; el precio subió a USD 111.380 en su etapa final antes de discontinuarse. No se encontró página oficial vigente en tesla.com (consistente con la discontinuación).",
-                     "limitations":  [
-                                         "Modelo discontinuado durante 2026; verificar disponibilidad de unidades remanentes antes de publicar como vigente"
-                                     ]
-                 },
-    "performance":  {
-                        "speed":  "200 km/h (referencia)",
-                        "acceleration":  "0-100 km/h en 8.5s (referencia)"
-                    },
-    "createdAt":  "2026-08-23T23:06:25.164Z",
-    "updatedAt":  "2026-08-25T06:11:22.9942625Z",
-    "transmision":  "Manual o Automática",
-    "traccion":  "Tracción delantera",
-    "peso":  "1.200-1.500 kg",
-    "tipoMotor":  "Gasolina turbo",
-    "potenciaKW":  "200-400 kW",
-    "capacidadTanque":  "50-70 litros",
-    "tiempoRecorrido":  "3-8s",
-    "anoProduccion":  "2023-2024",
-    "mercados":  [
-                     "Europa",
-                     "USA",
-                     "Asia",
-                     "Mercados emergentes"
-                 ],
-    "equipamiento":  [
-                         "Control tracción",
-                         "Frenos ABS",
-                         "Control estabilidad dinámico",
-                         "Asistentes de conducción"
-                     ],
-    "consumoEtiqueta":  "G",
-    "neumaticos":  "225/50R17",
-    "especificacionesMotor":  {
-                                  "filtro_aire":  "Filtro de panel",
-                                  "tipo_valvulas":  "DOHC",
-                                  "ratio_compresion":  "10.5:1",
-                                  "sistemas_inyeccion":  "Inyeccion directa",
-                                  "arbol_levas":  "Variable (VVT)"
-                              },
-    "especificacionesTransmision":  {
-                                        "tipo_automatico":  "Convertidor",
-                                        "control_cambios":  "Secuencial",
-                                        "sist_propulsion":  "Traccion",
-                                        "velocidades":  "8/9 velocidades"
-                                    },
-    "especificacionesSuspension":  {
-                                       "tipo_trasera":  "Multilink",
-                                       "barra_estabilizadora":  "26/20 mm",
-                                       "tipo_delantera":  "MacPherson",
-                                       "amortiguadores":  "Doble tubo",
-                                       "recorrido_vertical":  "+-150 mm"
-                                   },
-    "especificacionesRuedas":  {
-                                   "offset":  "+35 a +45 mm",
-                                   "indice_velocidad":  "T/V",
-                                   "indice_carga":  "91",
-                                   "profundidad_surcos":  "1.6 mm",
-                                   "pcd":  "5x114.3"
-                               },
-    "especificacionesDireccion":  {
-                                      "tipo_asistencia":  "Electrica progresiva",
-                                      "sistema_control":  "Control electronico",
-                                      "angulo_max_giro":  "32-35 grados",
-                                      "vueltas_calador":  "2.5-3.0"
-                                  },
-    "aerodinámica":  {
-                         "defectores_aire":  "Canales laterales",
-                         "spoiler_trasero":  "Integrado",
-                         "area_frontal":  "2.2-2.4 m2",
-                         "coeficiente_arrastre":  "Cx 0.27-0.32"
-                     },
-    "capacidadesAdicionales":  {
-                                   "capacidad_refrigerante":  "7-9 L",
-                                   "capacidad_lavaparabrisas":  "3-4 L",
-                                   "liquido_frenos":  "0.75-0.85 L",
-                                   "capacidad_aceite":  "4.5-5.5 L",
-                                   "filtro_habitaculo":  "Carbon activado"
-                               },
-    "seguridad_pasiva":  {
-                             "respaldos":  "Reforzados",
-                             "zonas":  "Deformacion",
-                             "cinturones":  "Pre-tensores",
-                             "estructura":  "Vigas laterales",
-                             "cristales":  "Laminado/Templado"
-                         },
-    "climatizacionAvanzada":  {
-                                  "control":  "Trizona",
-                                  "modo":  "Recirculacion",
-                                  "filtro":  "Carbon",
-                                  "desempanante":  "Trasero/Lateral"
-                              },
-    "mantenimientoPrograma":  {
-                                  "filtro":  "25.000-30.000 km",
-                                  "aceite":  "15.000 km",
-                                  "frenos":  "Anual",
-                                  "ruedas":  "Anual",
-                                  "refrigerante":  "2 anos"
-                              },
-    "sistemasInteligentes":  {
-                                 "frenado":  "AEB",
-                                 "carril":  "LDW",
-                                 "ciego":  "BSM",
-                                 "parking":  "8-12 sensores",
-                                 "crucero":  "ACC"
-                             },
-    "cilindrada":  null,
-    "emisiones":  null,
-    "tipo":  null,
-    "asientos":  null,
-    "baul":  null,
-    "maleteroMin":  null,
-    "generacion":  null,
-    "anoLanzamiento":  null,
-    "colores":  []
+    "slug": "tesla-model-s",
+    "type": "vehiculos",
+    "title": "Tesla Model S",
+    "description": "Sedán eléctrico insignia de Tesla, versión Plaid supera los 1000 hp.",
+    "status": "confirmado",
+    "tags": [
+        "electrico",
+        "tesla"
+    ],
+    "featured": false,
+    "manufacturer": "Tesla",
+    "class": "Sedán eléctrico",
+    "customizable": false,
+    "power": "670 hp (Dual Motor) / 1020 hp (Plaid)",
+    "price": "USD 111.380 (precio final antes de discontinuarse, 2026)",
+    "consumo": "Autonomía EPA 309-410 millas según versión",
+    "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+    "evidence": {
+        "level": "respaldado",
+        "primarySource": "https://www.edmunds.com/tesla/model-s/",
+        "secondarySource": "https://www.cars.com/research/tesla-model_s-2026/",
+        "note": "Tesla anunció en enero de 2026 el fin de producción del Model S; el precio subió a USD 111.380 en su etapa final antes de discontinuarse. No se encontró página oficial vigente en tesla.com (consistente con la discontinuación).",
+        "limitations": [
+            "Modelo discontinuado durante 2026; verificar disponibilidad de unidades remanentes antes de publicar como vigente",
+            "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+        ]
+    },
+    "performance": {
+        "speed": "200 km/h (referencia)",
+        "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "createdAt": "2026-08-23T23:06:25.164Z",
+    "updatedAt": "2026-08-25T20:55:31.294Z",
+    "transmision": "Automática de relación única (motor eléctrico)",
+    "traccion": "Tracción delantera",
+    "peso": "1.200-1.500 kg",
+    "tipoMotor": "Eléctrico",
+    "potenciaKW": "200-400 kW",
+    "capacidadTanque": null,
+    "tiempoRecorrido": "3-8s",
+    "anoProduccion": "2023-2024",
+    "mercados": [
+        "Europa",
+        "USA",
+        "Asia",
+        "Mercados emergentes"
+    ],
+    "equipamiento": [
+        "Control tracción",
+        "Frenos ABS",
+        "Control estabilidad dinámico",
+        "Asistentes de conducción"
+    ],
+    "consumoEtiqueta": null,
+    "neumaticos": "225/50R17",
+    "especificacionesMotor": null,
+    "especificacionesTransmision": {
+        "tipo_automatico": "No aplica (sin convertidor de par)",
+        "control_cambios": "Directo (relación única)",
+        "sist_propulsion": "Traccion",
+        "velocidades": "1 relación (reductora fija)"
+    },
+    "especificacionesSuspension": {
+        "tipo_trasera": "Multilink",
+        "barra_estabilizadora": "26/20 mm",
+        "tipo_delantera": "MacPherson",
+        "amortiguadores": "Doble tubo",
+        "recorrido_vertical": "+-150 mm"
+    },
+    "especificacionesRuedas": {
+        "offset": "+35 a +45 mm",
+        "indice_velocidad": "T/V",
+        "indice_carga": "91",
+        "profundidad_surcos": "1.6 mm",
+        "pcd": "5x114.3"
+    },
+    "especificacionesDireccion": {
+        "tipo_asistencia": "Electrica progresiva",
+        "sistema_control": "Control electronico",
+        "angulo_max_giro": "32-35 grados",
+        "vueltas_calador": "2.5-3.0"
+    },
+    "aerodinámica": {
+        "defectores_aire": "Canales laterales",
+        "spoiler_trasero": "Integrado",
+        "area_frontal": "2.2-2.4 m2",
+        "coeficiente_arrastre": "Cx 0.27-0.32"
+    },
+    "capacidadesAdicionales": {
+        "capacidad_refrigerante": "7-9 L",
+        "capacidad_lavaparabrisas": "3-4 L",
+        "liquido_frenos": "0.75-0.85 L",
+        "capacidad_aceite": null,
+        "filtro_habitaculo": "Carbon activado"
+    },
+    "seguridad_pasiva": {
+        "respaldos": "Reforzados",
+        "zonas": "Deformacion",
+        "cinturones": "Pre-tensores",
+        "estructura": "Vigas laterales",
+        "cristales": "Laminado/Templado"
+    },
+    "climatizacionAvanzada": {
+        "control": "Trizona",
+        "modo": "Recirculacion",
+        "filtro": "Carbon",
+        "desempanante": "Trasero/Lateral"
+    },
+    "mantenimientoPrograma": {
+        "filtro": "25.000-30.000 km",
+        "aceite": "No aplica (motor eléctrico)",
+        "frenos": "Anual",
+        "ruedas": "Anual",
+        "refrigerante": "2 anos"
+    },
+    "sistemasInteligentes": {
+        "frenado": "AEB",
+        "carril": "LDW",
+        "ciego": "BSM",
+        "parking": "8-12 sensores",
+        "crucero": "ACC"
+    },
+    "cilindrada": null,
+    "emisiones": null,
+    "tipo": null,
+    "asientos": null,
+    "baul": null,
+    "maleteroMin": null,
+    "generacion": null,
+    "anoLanzamiento": null,
+    "colores": []
 }
