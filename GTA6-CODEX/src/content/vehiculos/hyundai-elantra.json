@@ -12,49 +12,55 @@
   "manufacturer": "Hyundai",
   "class": "Sedán compacto",
   "customizable": false,
-  "power": "147 hp",
-  "price": "USD 22.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "147 hp (110 kW) a 6.200 rpm",
+  "price": "USD 21.625 (SE, referencia mercado US)",
+  "consumo": "6.7 l/100km combinado (35 mpg EPA combinado)",
+  "dimensiones": "4.677 mm largo x 1.826 mm ancho x 1.415 mm alto, distancia entre ejes 2.720 mm",
   "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "oficial-nombrado",
+    "note": "Cifras de la versión SE base (2.0L atmosférico, IVT/CVT), mercado US. Existen variantes N Line (turbo 1.6L, 201hp) y N (turbo 2.0L, 276hp) con precio y prestaciones muy superiores.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ]
+      "Versión HEV (híbrida, 1.6L, 104 hp) disponible con precio y consumo distintos",
+      "Precio varía según trim (SE/SEL/Limited/N Line/N) y mercado"
+    ],
+    "primarySource": "https://www.hyundainews.com/assets/documents/original/57216-2024ElantraSpecs092123A.pdf",
+    "secondarySource": "https://www.kbb.com/hyundai/elantra/2024/specs/"
   },
   "performance": {
-    "speed": "200 km/h (referencia)",
+    "speed": "190 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.402Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-26T07:35:35.926Z",
+  "transmision": "IVT (CVT de variables) 8 velocidades simuladas",
+  "traccion": "Delantera",
+  "peso": "1.301 kg (curb weight)",
+  "tipoMotor": "Gasolina atmosférico 4 cilindros, DOHC",
+  "potenciaKW": "110 kW",
+  "capacidadTanque": "47 litros",
+  "tiempoRecorrido": "8.5s",
+  "anoProduccion": "2024",
   "mercados": [
-    "Europa",
     "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Canadá",
+    "Corea del Sur (como Avante)",
+    "Latinoamérica",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Hyundai SmartSense (frenado autónomo, ACC, LKA)",
+    "Pantalla táctil 8\"",
+    "Apple CarPlay / Android Auto",
+    "Cámara de retroceso"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "195/65 R15",
   "especificacionesMotor": {
     "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "tipo_valvulas": "DOHC 16 válvulas",
+    "ratio_compresion": "12.5:1",
+    "sistemas_inyeccion": "Inyección multipunto (MPI)",
+    "arbol_levas": "Doble (DOHC)"
   },
   "especificacionesTransmision": {
     "tipo_automatico": "Convertidor",
@@ -122,16 +128,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.999 cc",
   "emisiones": null,
-  "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "tipo": "Sedán compacto",
+  "asientos": 5,
+  "baul": "402 litros (14.2 ft³)",
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Séptima generación (CN7, 2021-presente)",
+  "anoLanzamiento": "2020",
   "colores": [],
-  "category": "sedan",
+  "category": "vehiculo",
   "gallery": {
     "images": {
       "exterior": [],
@@ -183,9 +189,10 @@
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "elantra",
+    "avante"
   ],
-  "metaDescription": "Hyundai Elantra - Sedán compacto Hyundai. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Hyundai Elantra - Sedán compacto de 147 hp, séptima generación. Especificaciones, precio y disponibilidad, ago 2026.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
@@ -195,17 +202,17 @@
       "name": "Hyundai"
     },
     "vehicleType": "Sedán compacto",
-    "fuelType": "Gasolina/Diésel",
-    "speed": "200 km/h (referencia)",
+    "fuelType": "Gasolina",
+    "speed": "190 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)",
-    "price": "USD 22.000",
+    "price": "USD 21.625",
     "availability": "https://schema.org/InStock",
-    "description": "Sedán compacto de Hyundai, también vendido como Avante en Corea."
+    "description": "Sedán compacto de Hyundai, también vendido como Avante en Corea, séptima generación."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.402Z",
-    "dataQuality": 0.85
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-26T07:35:35.925Z",
+    "dataQuality": 0.9
   },
   "indexed": true,
   "searchable": true,
@@ -222,5 +229,21 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.hyundainews.com/assets/documents/original/57216-2024ElantraSpecs092123A.pdf",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.kbb.com/hyundai/elantra/2024/specs/",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Lote 6 (ago 2026): datos del trim SE base MY2024, mercado US.",
+    "dataQuality": 0.9
   }
 }

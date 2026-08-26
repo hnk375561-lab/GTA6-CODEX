@@ -1,9 +1,3 @@
-hyundai-elantra
-hyundai-santa-fe
-isuzu-mu-x
-jac-js6
-jaguar-f-type
-kawasaki-z900
 kia-ev6
 kia-sorento
 ktm-1290-super-adventure

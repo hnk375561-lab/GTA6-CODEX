@@ -58,7 +58,7 @@ const PATCHES = {
   // ====== HONDA AFRICA TWIN (CRF1100L, MY2024) ======
   'honda-africa-twin': {
     evidence: {
-      level: 'oficial-verificado',
+      level: 'oficial-nombrado',
       primarySource: 'https://hondanews.eu/es/es/motorcycles/media/pressreleases/471514',
       secondarySource: 'https://www.motofichas.com/marcas/honda/africa-twin',
       note: 'Cifras de la CRF1100L Africa Twin MY2024 (versión base, transmisión manual), tras la actualización de par motor y carenado presentada por Honda Europa.',
@@ -107,7 +107,7 @@ const PATCHES = {
       sistemas_inyeccion: 'PGM-FI electrónica',
       arbol_levas: 'Único (SOHC)',
     },
-    verified: { source: 'oficial-verificado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
+    verified: { source: 'oficial-nombrado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
     seoKeywords: ['moto', 'honda', 'Honda', 'Adventure', 'comprar', 'especificaciones', 'precio', 'africa twin', 'enduro'],
     metaDescription: 'Honda Africa Twin CRF1100L - Adventure bicilíndrica de 102 CV. Especificaciones, precio y disponibilidad, ago 2026.',
     schemaMarkup: {
@@ -136,7 +136,7 @@ const PATCHES = {
   // ====== HONDA CBR600RR (retorno Europa MY2024) ======
   'honda-cbr600rr': {
     evidence: {
-      level: 'oficial-verificado',
+      level: 'oficial-nombrado',
       primarySource: 'https://soymotero.net/motos/honda/cbr600rr-2024/',
       secondarySource: 'https://es.motorbike-specs.com/honda-cbr600rr-2024/',
       note: 'Cifras del retorno de la CBR600RR a Europa en 2024, motor Euro5, versión base sin Pack Racing/Touring.',
@@ -185,7 +185,7 @@ const PATCHES = {
       sistemas_inyeccion: 'PGM-FI con acelerador electrónico (ride-by-wire)',
       arbol_levas: 'Doble (DOHC)',
     },
-    verified: { source: 'oficial-verificado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
+    verified: { source: 'oficial-nombrado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
     seoKeywords: ['moto', 'honda', 'Honda', 'Deportiva', 'comprar', 'especificaciones', 'precio', 'cbr600rr', 'supersport'],
     metaDescription: 'Honda CBR600RR - Supersport de 599cc y 121 CV, retorno a Europa 2024. Especificaciones, precio y disponibilidad, ago 2026.',
     schemaMarkup: {
@@ -214,7 +214,7 @@ const PATCHES = {
   // ====== HONDA CR-V HYBRID (MY2024) ======
   'honda-cr-v': {
     evidence: {
-      level: 'oficial-verificado',
+      level: 'oficial-nombrado',
       primarySource: 'https://www.kbb.com/honda/crv-hybrid/2024/specs',
       secondarySource: 'https://www.topspeed.com/honda/cr-v-hybrid/2024/',
       note: 'Cifras de la variante CR-V Sport Hybrid MY2024 (mercado US), tracción delantera de serie con AWD opcional.',
@@ -263,7 +263,7 @@ const PATCHES = {
       sistemas_inyeccion: 'Inyección directa',
       arbol_levas: 'Variable (VTC)',
     },
-    verified: { source: 'oficial-verificado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
+    verified: { source: 'oficial-nombrado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
     seoKeywords: ['suv', 'honda', 'Honda', 'SUV compacto', 'híbrido', 'comprar', 'especificaciones', 'precio', 'cr-v'],
     metaDescription: 'Honda CR-V Hybrid - SUV compacto híbrido de 204 hp combinados. Especificaciones, precio y disponibilidad, ago 2026.',
     schemaMarkup: {
@@ -292,7 +292,7 @@ const PATCHES = {
   // ====== HONDA FREED (3ra generación, MY2024, JDM) ======
   'honda-freed': {
     evidence: {
-      level: 'oficial-verificado',
+      level: 'oficial-nombrado',
       primarySource: 'https://paultan.org/2024/06/27/2024-honda-freed-launched-in-japan/',
       secondarySource: 'https://llantasneumaticos.com/size/honda/freed/2024/',
       note: 'Cifras de la tercera generación (GT-series) lanzada en Japón en junio de 2024, versión gasolina 1.5L base. Modelo exclusivo del mercado JDM y algunos mercados asiáticos, no se vende oficialmente en América ni Europa.',
@@ -339,7 +339,7 @@ const PATCHES = {
       sistemas_inyeccion: 'Inyección electrónica multipunto',
       arbol_levas: 'Variable (i-VTEC)',
     },
-    verified: { source: 'oficial-verificado', lastChecked: new Date().toISOString(), dataQuality: 0.85 },
+    verified: { source: 'oficial-nombrado', lastChecked: new Date().toISOString(), dataQuality: 0.85 },
     seoKeywords: ['minivan', 'honda', 'Honda', 'Minivan compacta', 'comprar', 'especificaciones', 'precio', 'freed', 'jdm'],
     metaDescription: 'Honda Freed - Minivan compacta japonesa, 3ra generación 2024. Especificaciones, precio y disponibilidad, ago 2026.',
     schemaMarkup: {
@@ -368,7 +368,7 @@ const PATCHES = {
   // ====== HONDA PCX 150 (sucesor directo: PCX160, MY2024/2025) ======
   'honda-pcx-150': {
     evidence: {
-      level: 'oficial-verificado',
+      level: 'oficial-nombrado',
       primarySource: 'https://hondanews.com/en-US/powersports/releases/release-a463299e9046a088b84018a7581fd5be-2024-honda-pcx-specifications',
       secondarySource: 'https://en.wikipedia.org/wiki/Honda_PCX',
       note: 'La PCX150 fue discontinuada globalmente y reemplazada por la PCX160 (mismo segmento, motor ampliado a 157cc) desde 2018-2021 según mercado. Se documenta bajo este slug la especificación vigente del sucesor directo, ya que es el modelo que Honda comercializa activamente hoy.',
@@ -416,7 +416,7 @@ const PATCHES = {
       sistemas_inyeccion: 'PGM-FI electrónica',
       arbol_levas: 'Único (SOHC)',
     },
-    verified: { source: 'oficial-verificado', lastChecked: new Date().toISOString(), dataQuality: 0.85 },
+    verified: { source: 'oficial-nombrado', lastChecked: new Date().toISOString(), dataQuality: 0.85 },
     seoKeywords: ['scooter', 'honda', 'Honda', 'Scooter', 'comprar', 'especificaciones', 'precio', 'pcx', 'urbana'],
     metaDescription: 'Honda PCX 150/160 - Scooter urbana de referencia global de Honda. Especificaciones, precio y disponibilidad, ago 2026.',
     schemaMarkup: {

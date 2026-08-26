@@ -24,7 +24,7 @@
   "consumo": "9.3 l/100km combinado (WLTP, PDK)",
   "dimensiones": "4.519 mm largo x 1.852 mm ancho x 1.298 mm alto, distancia entre ejes 2.450 mm",
   "evidence": {
-    "level": "oficial-verificado",
+    "level": "oficial-nombrado",
     "primarySource": "https://www.porsche.com/international/models/911/911-models/carrera/",
     "secondarySource": "https://www.kbb.com/porsche/911/2024/",
     "note": "Cifras de la variante Carrera base (RWD, 8 vel. PDK), generación 992. Existen versiones S, GTS, Turbo y Turbo S con potencias sensiblemente mayores.",
@@ -281,7 +281,7 @@
     "description": "Deportivo icónico de Porsche, motor bóxer 6 cilindros de 379 hp."
   },
   "verified": {
-    "source": "oficial-verificado",
+    "source": "oficial-nombrado",
     "lastChecked": "2026-08-26T06:58:15.123Z",
     "dataQuality": 0.9
   },

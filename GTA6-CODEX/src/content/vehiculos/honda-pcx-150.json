@@ -17,7 +17,7 @@
   "consumo": "2.1 l/100km combinado (referencia fabricante)",
   "dimensiones": "1.925 mm largo x 745 mm ancho x 1.105 mm alto, distancia entre ejes 1.320 mm",
   "evidence": {
-    "level": "oficial-verificado",
+    "level": "oficial-nombrado",
     "note": "La PCX150 fue discontinuada globalmente y reemplazada por la PCX160 (mismo segmento, motor ampliado a 157cc) desde 2018-2021 según mercado. Se documenta bajo este slug la especificación vigente del sucesor directo, ya que es el modelo que Honda comercializa activamente hoy.",
     "limitations": [
       "El modelo \"PCX150\" original (motor 150cc) ya no se fabrica en la mayoría de mercados",
@@ -211,7 +211,7 @@
     "description": "Scooter urbana de Honda, una de las más vendidas del segmento en el mundo; sucesor vigente PCX160."
   },
   "verified": {
-    "source": "oficial-verificado",
+    "source": "oficial-nombrado",
     "lastChecked": "2026-08-26T07:28:17.766Z",
     "dataQuality": 0.85
   },

@@ -25,7 +25,7 @@
   "consumo": "8.7 l/100km combinado (WLTP)",
   "dimensiones": "4.290 mm largo x 1.789 mm ancho x 1.474 mm alto, distancia entre ejes 2.631 mm",
   "evidence": {
-    "level": "oficial-verificado",
+    "level": "oficial-nombrado",
     "primarySource": "https://www.vw.com/en/models/golf-gti.html",
     "secondarySource": "https://www.kbb.com/volkswagen/golf-gti/2024/",
     "note": "Cifras de la generación Mk8, motor EA888 evo4 2.0 TSI. El modelo 2025 en USA pasó a transmisión DSG exclusiva (sin manual).",
@@ -282,7 +282,7 @@
     "description": "Hatchback deportivo de Volkswagen, motor turbo 2.0L TSI de 245 hp."
   },
   "verified": {
-    "source": "oficial-verificado",
+    "source": "oficial-nombrado",
     "lastChecked": "2026-08-26T06:58:15.123Z",
     "dataQuality": 0.9
   },

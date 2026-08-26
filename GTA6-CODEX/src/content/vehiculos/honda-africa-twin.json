@@ -17,7 +17,7 @@
   "consumo": "5.4 l/100km combinado (referencia fabricante)",
   "dimensiones": "2.330 mm largo x 960 mm ancho x 1.475 mm alto, distancia entre ejes 1.575 mm",
   "evidence": {
-    "level": "oficial-verificado",
+    "level": "oficial-nombrado",
     "note": "Cifras de la CRF1100L Africa Twin MY2024 (versión base, transmisión manual), tras la actualización de par motor y carenado presentada por Honda Europa.",
     "limitations": [
       "La versión Adventure Sports tiene rueda delantera de 19\", suspensión más corta y precio superior",
@@ -213,7 +213,7 @@
     "description": "Moto adventure de referencia global de Honda, bicilíndrica 1084cc."
   },
   "verified": {
-    "source": "oficial-verificado",
+    "source": "oficial-nombrado",
     "lastChecked": "2026-08-26T07:28:17.753Z",
     "dataQuality": 0.9
   },

@@ -25,7 +25,7 @@
   "consumo": "11.7 l/100km combinado (EPA, versión GT automática)",
   "dimensiones": "4.811 mm largo x 1.916 mm ancho x 1.394 mm alto, distancia entre ejes 2.720 mm",
   "evidence": {
-    "level": "oficial-verificado",
+    "level": "oficial-nombrado",
     "primarySource": "https://www.ford.com/cars/mustang/",
     "secondarySource": "https://www.motor1.com/reviews/678478/2024-mustang-gt-review/",
     "note": "Cifras de la variante GT V8 5.0L (Coyote), generación S650 lanzada en 2024. La versión Dark Horse alcanza 500 hp.",
@@ -277,7 +277,7 @@
     "description": "Cupé deportivo de Ford, motor V8 5.0L de 480 hp en su versión GT, ícono del muscle car."
   },
   "verified": {
-    "source": "oficial-verificado",
+    "source": "oficial-nombrado",
     "lastChecked": "2026-08-26T06:58:15.123Z",
     "dataQuality": 0.9
   },

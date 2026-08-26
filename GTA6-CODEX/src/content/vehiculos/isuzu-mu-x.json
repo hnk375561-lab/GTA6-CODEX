@@ -12,51 +12,57 @@
   "manufacturer": "Isuzu",
   "class": "SUV 4x4 grande",
   "customizable": false,
-  "power": "190 hp (diésel)",
-  "price": "USD 40.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "140 kW (188 hp / 190 CV) a 3.600 rpm",
+  "price": "USD 42.000 (LS-U 4x4, referencia mercado Asia-Pacífico)",
+  "consumo": "8.5 l/100km combinado (referencia fabricante)",
+  "dimensiones": "4.850 mm largo x 1.870 mm ancho x 1.845 mm alto, distancia entre ejes 2.845 mm",
   "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "oficial-nombrado",
+    "note": "Cifras de la versión 3.0L turbodiésel 4x4 (motor 4JJ3-TCX), la configuración de mayor volumen en mercados de Asia-Pacífico, Latinoamérica y África. Basado en el chasis de la pickup D-Max.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ]
+      "Existen versiones 4x2 con precio menor",
+      "Precio y equipamiento varían fuerte por país de venta",
+      "No se vende oficialmente en Europa Occidental ni Norteamérica"
+    ],
+    "primarySource": "https://www.isuzu.com.py/mu-x/",
+    "secondarySource": "https://vamos.es/ficha-tecnica/isuzu-mu-x-automatico/"
   },
   "performance": {
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "speed": "180 km/h (referencia)",
+    "acceleration": "0-100 km/h en 11.0s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.411Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-26T07:35:35.931Z",
+  "transmision": "Automática 6 velocidades (Rev-Tronic secuencial)",
+  "traccion": "4x4 selectable con reductora (Terrain Command)",
+  "peso": "2.075 kg",
+  "tipoMotor": "Diésel turbo 4 cilindros en línea (4JJ3-TCX)",
+  "potenciaKW": "140 kW",
+  "capacidadTanque": "65 litros",
+  "tiempoRecorrido": "11.0s",
+  "anoProduccion": "2024",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Sudeste Asiático",
+    "Australia",
+    "Latinoamérica",
+    "África",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Isuzu Intelligent Driver Assistance (IDAS)",
+    "Cámara de retroceso",
+    "Control de descenso en pendientes",
+    "Bloqueo de diferencial trasero (según versión)",
+    "Asientos de cuero (LS-U/LS-U+)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "265/60 R18",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "filtro_aire": "Filtro de panel de alto flujo",
+    "tipo_valvulas": "DOHC 16 válvulas",
+    "ratio_compresion": "15.7:1",
+    "sistemas_inyeccion": "Common-rail directa",
+    "arbol_levas": "Fijo (sin VVT en el diésel)"
   },
   "especificacionesTransmision": {
     "tipo_automatico": "Convertidor",
@@ -124,16 +130,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
-  "emisiones": null,
-  "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "cilindrada": "2.999 cc",
+  "emisiones": "CO2 220 g/km (referencia)",
+  "tipo": "SUV 4x4 grande",
+  "asientos": 7,
+  "baul": "311 litros (3ra fila arriba) / hasta 1.830 litros (asientos abatidos)",
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación (2020-presente)",
+  "anoLanzamiento": "2020",
   "colores": [],
-  "category": "otros",
+  "category": "vehiculo",
   "gallery": {
     "images": {
       "exterior": [],
@@ -181,13 +187,14 @@
     "suv",
     "isuzu",
     "Isuzu",
-    "SUV 4x4 grande",
+    "SUV 4x4",
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "mu-x",
+    "diesel"
   ],
-  "metaDescription": "Isuzu MU-X - SUV 4x4 grande Isuzu. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Isuzu MU-X - SUV 4x4 grande basado en la D-Max, motor turbodiésel de 190 CV. Especificaciones, precio y disponibilidad, ago 2026.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
@@ -196,17 +203,17 @@
       "@type": "Organization",
       "name": "Isuzu"
     },
-    "vehicleType": "SUV 4x4 grande",
-    "fuelType": "Gasolina/Diésel",
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)",
-    "price": "USD 40.000",
+    "vehicleType": "SUV 4x4",
+    "fuelType": "Diésel turbo",
+    "speed": "180 km/h (referencia)",
+    "acceleration": "0-100 km/h en 11.0s (referencia)",
+    "price": "USD 42.000",
     "availability": "https://schema.org/InStock",
-    "description": "SUV 4x4 grande de Isuzu basado en el chasis de la pickup D-Max."
+    "description": "SUV 4x4 grande de Isuzu basado en el chasis de la pickup D-Max, tercera generación."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.407Z",
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-26T07:35:35.925Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +231,21 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.isuzu.com.py/mu-x/",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://vamos.es/ficha-tecnica/isuzu-mu-x-automatico/",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Lote 6 (ago 2026): datos de la versión LS-U 4x4 3.0L, mercado Asia-Pacífico/Latinoamérica.",
+    "dataQuality": 0.85
   }
 }

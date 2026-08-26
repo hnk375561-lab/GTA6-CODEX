@@ -11,6 +11,29 @@ entradas se agrupan por fecha en vez de por número de versión.
 
 _Sin cambios pendientes de publicar todavía. Las próximas entradas van acá arriba._
 
+## [2026-08-26] — Enriquecimiento lote 6 + fix de nivel de evidencia inválido
+
+### Cambiado
+- Enriquecidas 6 fichas con datos reales verificados: `hyundai-elantra`,
+  `hyundai-santa-fe`, `isuzu-mu-x`, `jac-js6`, `jaguar-f-type`,
+  `kawasaki-z900`.
+- Nuevo script `scripts/apply-enrich-lote6.mjs`.
+- `docs/evidence-gap-queue.txt` actualizado (6 slugs removidos de la cola).
+
+### Corregido
+- **Bug de datos:** los lotes 4 y 5 (10 fichas: `toyota-hilux`,
+  `ford-mustang`, `porsche-911-carrera`, `ferrari-296-gtb`,
+  `volkswagen-golf-gti`, `honda-africa-twin`, `honda-cbr600rr`,
+  `honda-cr-v`, `honda-freed`, `honda-pcx-150`) usaban
+  `evidence.level: "oficial-verificado"`, un valor que **no existe** en
+  el enum de `src/types/entity.ts` (`oficial-nombrado` /
+  `oficial-visual` / `oficial-visual-multifuente` / `respaldado` /
+  `especulativo`). `scripts/audit-evidence-coverage.mjs` las contaba
+  como "level inválido", ocultando su evidencia real. Corregido a
+  `oficial-nombrado` en las 16 fichas afectadas y en los scripts de
+  lote 4/5/6.
+- Cobertura de evidencia sólida: 155/250 → **196/250 (78%)**.
+
 ## [2026-08-26] — Enriquecimiento lote 5 (gama Honda)
 
 ### Cambiado

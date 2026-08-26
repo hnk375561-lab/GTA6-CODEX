@@ -59,7 +59,7 @@ const PATCHES = {
   // ====== TOYOTA HILUX (versión SR 2.8L turbodiésel, generación VIII facelift 2024) ======
   'toyota-hilux': {
     evidence: {
-      level: 'oficial-verificado',
+      level: 'oficial-nombrado',
       primarySource: 'https://www.toyota.com.au/hilux',
       secondarySource: 'https://www.carexpert.com.au/toyota/hilux/2024-sr-jo8gwkgk20240220',
       note: 'Cifras de la variante SR 2.8L turbodiésel 4x4 (150 kW / 500 Nm), la configuración de volumen intermedio-alto en mercados globales (Asia, Oceanía, Latinoamérica, África).',
@@ -156,7 +156,7 @@ const PATCHES = {
       availability: 'https://schema.org/InStock',
       description: 'Pickup grande de Toyota, motor turbodiésel 2.8L, referencia de robustez en el segmento.',
     },
-    verified: { source: 'oficial-verificado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
+    verified: { source: 'oficial-nombrado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
     audit: {
       sources: [
         { url: 'https://www.toyota.com.au/hilux', type: 'oficial', verificado: true },
@@ -173,7 +173,7 @@ const PATCHES = {
   // ====== FORD MUSTANG GT (S650, motor Coyote 5.0L V8) ======
   'ford-mustang': {
     evidence: {
-      level: 'oficial-verificado',
+      level: 'oficial-nombrado',
       primarySource: 'https://www.ford.com/cars/mustang/',
       secondarySource: 'https://www.motor1.com/reviews/678478/2024-mustang-gt-review/',
       note: 'Cifras de la variante GT V8 5.0L (Coyote), generación S650 lanzada en 2024. La versión Dark Horse alcanza 500 hp.',
@@ -267,7 +267,7 @@ const PATCHES = {
       availability: 'https://schema.org/InStock',
       description: 'Cupé deportivo de Ford, motor V8 5.0L de 480 hp en su versión GT, ícono del muscle car.',
     },
-    verified: { source: 'oficial-verificado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
+    verified: { source: 'oficial-nombrado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
     audit: {
       sources: [
         { url: 'https://www.ford.com/cars/mustang/', type: 'oficial', verificado: true },
@@ -284,7 +284,7 @@ const PATCHES = {
   // ====== PORSCHE 911 CARRERA (992, base, biturbo 3.0L bóxer) ======
   'porsche-911-carrera': {
     evidence: {
-      level: 'oficial-verificado',
+      level: 'oficial-nombrado',
       primarySource: 'https://www.porsche.com/international/models/911/911-models/carrera/',
       secondarySource: 'https://www.kbb.com/porsche/911/2024/',
       note: 'Cifras de la variante Carrera base (RWD, 8 vel. PDK), generación 992. Existen versiones S, GTS, Turbo y Turbo S con potencias sensiblemente mayores.',
@@ -380,7 +380,7 @@ const PATCHES = {
       availability: 'https://schema.org/InStock',
       description: 'Deportivo icónico de Porsche, motor bóxer 6 cilindros de 379 hp.',
     },
-    verified: { source: 'oficial-verificado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
+    verified: { source: 'oficial-nombrado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
     audit: {
       sources: [
         { url: 'https://www.porsche.com/international/models/911/911-models/carrera/', type: 'oficial', verificado: true },
@@ -397,7 +397,7 @@ const PATCHES = {
   // ====== FERRARI 296 GTB (híbrido enchufable V6 + eléctrico) ======
   'ferrari-296-gtb': {
     evidence: {
-      level: 'oficial-verificado',
+      level: 'oficial-nombrado',
       primarySource: 'https://www.ferrari.com/en-EN/auto/296-gtb',
       secondarySource: 'https://www.kbb.com/ferrari/296-gtb/2025/specs/',
       note: 'Primer Ferrari de calle con motor V6 (desde los Dino de los años 60-70). Potencia combinada motor térmico + eléctrico.',
@@ -491,7 +491,7 @@ const PATCHES = {
       availability: 'https://schema.org/InStock',
       description: 'Deportivo híbrido enchufable de motor central de Ferrari, V6 biturbo + eléctrico.',
     },
-    verified: { source: 'oficial-verificado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
+    verified: { source: 'oficial-nombrado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
     audit: {
       sources: [
         { url: 'https://www.ferrari.com/en-EN/auto/296-gtb', type: 'oficial', verificado: true },
@@ -508,7 +508,7 @@ const PATCHES = {
   // ====== VOLKSWAGEN GOLF GTI Mk8 (hot hatch turbo 2.0L TSI) ======
   'volkswagen-golf-gti': {
     evidence: {
-      level: 'oficial-verificado',
+      level: 'oficial-nombrado',
       primarySource: 'https://www.vw.com/en/models/golf-gti.html',
       secondarySource: 'https://www.kbb.com/volkswagen/golf-gti/2024/',
       note: 'Cifras de la generación Mk8, motor EA888 evo4 2.0 TSI. El modelo 2025 en USA pasó a transmisión DSG exclusiva (sin manual).',
@@ -602,7 +602,7 @@ const PATCHES = {
       availability: 'https://schema.org/InStock',
       description: 'Hatchback deportivo de Volkswagen, motor turbo 2.0L TSI de 245 hp.',
     },
-    verified: { source: 'oficial-verificado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
+    verified: { source: 'oficial-nombrado', lastChecked: new Date().toISOString(), dataQuality: 0.9 },
     audit: {
       sources: [
         { url: 'https://www.vw.com/en/models/golf-gti.html', type: 'oficial', verificado: true },

@@ -12,51 +12,57 @@
   "manufacturer": "Jaguar",
   "class": "Deportivo",
   "customizable": false,
-  "power": "444 hp",
-  "price": "USD 78.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "444 hp (331 kW) a 6.500 rpm",
+  "price": "USD 77.900 (P450 R-Dynamic Coupé, referencia mercado US)",
+  "consumo": "12.4 l/100km combinado (19 mpg EPA combinado)",
+  "dimensiones": "4.470 mm largo x 1.923 mm ancho x 1.311 mm alto, distancia entre ejes 2.622 mm",
   "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "oficial-nombrado",
+    "note": "Cifras del trim P450 R-Dynamic (motor V8 sobrealimentado 5.0L), coupé, RWD. 2024 fue el último año de producción del F-Type antes de su discontinuación. Existe versión P575 R/R75 (575 hp, AWD) con precio y prestaciones superiores.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ]
+      "Modelo discontinuado tras el año modelo 2024; no hay sucesor directo confirmado con motor de combustión",
+      "Versión convertible cuesta USD 2.000 adicionales sobre el coupé",
+      "Precio varía fuerte según trim (R-Dynamic/75/R75)"
+    ],
+    "primarySource": "https://www.kbb.com/jaguar/f-type/2024/specs/",
+    "secondarySource": "https://www.cars.com/research/jaguar-f_type-2024/"
   },
   "performance": {
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "speed": "285 km/h (referencia)",
+    "acceleration": "0-100 km/h en 4.4s"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.416Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-26T07:35:35.932Z",
+  "transmision": "Automática 8 velocidades con paddle shifters",
+  "traccion": "Trasera (AWD en versiones 75/R75)",
+  "peso": "1.665 kg (curb weight, coupé RWD)",
+  "tipoMotor": "V8 sobrealimentado (supercharged), gasolina",
+  "potenciaKW": "331 kW",
+  "capacidadTanque": "66 litros",
+  "tiempoRecorrido": "4.4s",
+  "anoProduccion": "2024 (último año de producción)",
   "mercados": [
-    "Europa",
     "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Europa",
+    "Reino Unido",
+    "Medio Oriente",
+    "Japón"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Suspensión adaptativa electrónica",
+    "Pantalla táctil 10\"",
+    "Sistema de audio premium Meridian",
+    "Control de crucero adaptativo",
+    "Asientos calefaccionados con memoria"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "255/35 R20 (delantero) / 295/30 R20 (trasero)",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "filtro_aire": "Filtro de alto flujo",
+    "tipo_valvulas": "DOHC 32 válvulas",
+    "ratio_compresion": "9.5:1",
+    "sistemas_inyeccion": "Inyección directa con supercharger",
+    "arbol_levas": "Doble (DOHC) por bancada"
   },
   "especificacionesTransmision": {
     "tipo_automatico": "Convertidor",
@@ -124,16 +130,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "4.999 cc",
   "emisiones": null,
-  "tipo": null,
-  "asientos": null,
+  "tipo": "Coupé/roadster deportivo",
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda mitad de ciclo (2020-2024), ediciones especiales 75/R75",
+  "anoLanzamiento": "2013",
   "colores": [],
-  "category": "otros",
+  "category": "vehiculo",
   "gallery": {
     "images": {
       "exterior": [],
@@ -181,13 +187,14 @@
     "deportivo",
     "jaguar",
     "Jaguar",
-    "Deportivo",
+    "Coupé deportivo",
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "f-type",
+    "v8"
   ],
-  "metaDescription": "Jaguar F-Type - Deportivo Jaguar. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Jaguar F-Type P450 R-Dynamic - Deportivo V8 sobrealimentado de 444 hp, último año de producción 2024. Especificaciones, precio y disponibilidad, ago 2026.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
@@ -196,18 +203,18 @@
       "@type": "Organization",
       "name": "Jaguar"
     },
-    "vehicleType": "Deportivo",
-    "fuelType": "Gasolina turbo",
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)",
-    "price": "USD 78.000",
-    "availability": "https://schema.org/InStock",
-    "description": "Coupé/roadster deportivo de Jaguar, discontinuado al final de su ciclo."
+    "vehicleType": "Coupé deportivo",
+    "fuelType": "Gasolina",
+    "speed": "285 km/h (referencia)",
+    "acceleration": "0-100 km/h en 4.4s",
+    "price": "USD 77.900",
+    "availability": "https://schema.org/Discontinued",
+    "description": "Coupé/roadster deportivo de Jaguar, discontinuado tras el año modelo 2024."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.409Z",
-    "dataQuality": 0.85
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-26T07:35:35.925Z",
+    "dataQuality": 0.9
   },
   "indexed": true,
   "searchable": true,
@@ -224,5 +231,21 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.kbb.com/jaguar/f-type/2024/specs/",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://www.cars.com/research/jaguar-f_type-2024/",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Lote 6 (ago 2026): datos del trim P450 R-Dynamic Coupé, último año de producción (MY2024).",
+    "dataQuality": 0.9
   }
 }

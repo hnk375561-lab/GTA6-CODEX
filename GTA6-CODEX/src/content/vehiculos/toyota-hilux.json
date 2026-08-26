@@ -24,7 +24,7 @@
   "consumo": "8.0 l/100km combinado (ciclo WLTP, versión SR 4x4)",
   "dimensiones": "5.320 mm largo x 1.855 mm ancho x 1.815 mm alto, distancia entre ejes 3.085 mm",
   "evidence": {
-    "level": "oficial-verificado",
+    "level": "oficial-nombrado",
     "primarySource": "https://www.toyota.com.au/hilux",
     "secondarySource": "https://www.carexpert.com.au/toyota/hilux/2024-sr-jo8gwkgk20240220",
     "note": "Cifras de la variante SR 2.8L turbodiésel 4x4 (150 kW / 500 Nm), la configuración de volumen intermedio-alto en mercados globales (Asia, Oceanía, Latinoamérica, África).",
@@ -295,7 +295,7 @@
     "description": "Pickup grande de Toyota, motor turbodiésel 2.8L, referencia de robustez en el segmento."
   },
   "verified": {
-    "source": "oficial-verificado",
+    "source": "oficial-nombrado",
     "lastChecked": "2026-08-26T06:58:15.106Z",
     "dataQuality": 0.9
   },

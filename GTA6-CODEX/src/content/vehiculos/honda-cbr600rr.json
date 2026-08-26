@@ -17,7 +17,7 @@
   "consumo": "5.9 l/100km combinado (referencia)",
   "dimensiones": "2.030 mm largo x 685 mm ancho x 1.125 mm alto, distancia entre ejes 1.375 mm",
   "evidence": {
-    "level": "oficial-verificado",
+    "level": "oficial-nombrado",
     "note": "Cifras del retorno de la CBR600RR a Europa en 2024, motor Euro5, versión base sin Pack Racing/Touring.",
     "limitations": [
       "Precio varía según país (11.699–13.200 EUR según mercado y año)",
@@ -211,7 +211,7 @@
     "description": "Supersport de cilindrada media de Honda, tetracilíndrica 599cc, retorno a Europa 2024."
   },
   "verified": {
-    "source": "oficial-verificado",
+    "source": "oficial-nombrado",
     "lastChecked": "2026-08-26T07:28:17.766Z",
     "dataQuality": 0.9
   },

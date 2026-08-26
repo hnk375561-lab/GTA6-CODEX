@@ -17,7 +17,7 @@
   "consumo": "7.2 l/100km combinado WLTP (18 mpg EPA) + modo 100% eléctrico",
   "dimensiones": "4.565 mm largo x 1.958 mm ancho x 1.187 mm alto, distancia entre ejes 2.600 mm",
   "evidence": {
-    "level": "oficial-verificado",
+    "level": "oficial-nombrado",
     "note": "Primer Ferrari de calle con motor V6 (desde los Dino de los años 60-70). Potencia combinada motor térmico + eléctrico.",
     "limitations": [
       "Precio de referencia es MSRP base en USA, sube considerablemente con opciones (Assetto Fiorano, etc.)",
@@ -274,7 +274,7 @@
     "description": "Deportivo híbrido enchufable de motor central de Ferrari, V6 biturbo + eléctrico."
   },
   "verified": {
-    "source": "oficial-verificado",
+    "source": "oficial-nombrado",
     "lastChecked": "2026-08-26T06:58:15.123Z",
     "dataQuality": 0.9
   },

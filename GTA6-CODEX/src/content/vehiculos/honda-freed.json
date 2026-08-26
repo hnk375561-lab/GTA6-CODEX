@@ -17,7 +17,7 @@
   "consumo": "5.5 l/100km combinado (ciclo WLTC, referencia)",
   "dimensiones": "4.310 mm largo x 1.695 mm ancho x 1.755 mm alto, distancia entre ejes 2.740 mm",
   "evidence": {
-    "level": "oficial-verificado",
+    "level": "oficial-nombrado",
     "note": "Cifras de la tercera generación (GT-series) lanzada en Japón en junio de 2024, versión gasolina 1.5L base. Modelo exclusivo del mercado JDM y algunos mercados asiáticos, no se vende oficialmente en América ni Europa.",
     "limitations": [
       "No comercializado oficialmente fuera de Japón/Asia; precio en otros mercados es de importación",
@@ -208,7 +208,7 @@
     "description": "Minivan compacta japonesa de Honda, tercera generación lanzada en 2024, exclusiva del mercado JDM."
   },
   "verified": {
-    "source": "oficial-verificado",
+    "source": "oficial-nombrado",
     "lastChecked": "2026-08-26T07:28:17.766Z",
     "dataQuality": 0.85
   },

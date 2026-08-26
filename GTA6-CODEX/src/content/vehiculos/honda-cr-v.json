@@ -17,7 +17,7 @@
   "consumo": "6.3 l/100km combinado (37 mpg EPA combinado)",
   "dimensiones": "4.694 mm largo x 1.867 mm ancho x 1.682 mm alto, distancia entre ejes 2.701 mm",
   "evidence": {
-    "level": "oficial-verificado",
+    "level": "oficial-nombrado",
     "note": "Cifras de la variante CR-V Sport Hybrid MY2024 (mercado US), tracción delantera de serie con AWD opcional.",
     "limitations": [
       "Existe versión no híbrida con motor turbo 1.5L (190 hp) a precio menor",
@@ -212,7 +212,7 @@
     "description": "SUV compacto híbrido best-seller global de Honda, sexta generación (2023-presente)."
   },
   "verified": {
-    "source": "oficial-verificado",
+    "source": "oficial-nombrado",
     "lastChecked": "2026-08-26T07:28:17.766Z",
     "dataQuality": 0.9
   },
