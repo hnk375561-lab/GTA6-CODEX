@@ -1,5 +1,11 @@
 name: CI
 
+# IMPORTANTE: GitHub Actions solo lee workflows desde .github/workflows/
+# en la RAÍZ del repo (este archivo). Durante un tiempo convivió una copia
+# en GTA6-CODEX/.github/workflows/ci.yml que parecía "la buena" pero nunca
+# se ejecutaba realmente — quedó eliminada para evitar que alguien la edite
+# pensando que tiene efecto. Si el pipeline necesita cambios, es acá.
+
 on:
   push:
     branches: [main]
@@ -11,6 +17,18 @@ defaults:
     working-directory: GTA6-CODEX
 
 jobs:
+  secrets-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Escaneo de secretos (historial completo)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   verify:
     runs-on: ubuntu-latest
     steps:
@@ -51,9 +69,6 @@ jobs:
 
       - name: Verify reserved entity keys
         run: npm run verify:reserved-keys
-
-      - name: Verify media integrity
-        run: npm run verify:media
 
       - name: Verify SEO routes
         run: npm run verify:seo

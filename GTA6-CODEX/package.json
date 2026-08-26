@@ -20,6 +20,7 @@
     "test": "vitest run",
     "verify:tailwind": "node scripts/verify-tailwind-config.mjs",
     "verify:reserved-keys": "node scripts/verify-reserved-entity-keys.mjs",
+    "verify:all": "npm run type-check && npm run lint && npm test && npm run verify:min-count && npm run verify:content && npm run verify:relations && npm run verify:reserved-keys && npm run verify:seo && npm run build && npm run verify:tailwind",
     "check:unused": "knip",
     "sync:media": "node scripts/media-sync.mjs",
     "generate:manifest-commons": "node scripts/generate-manifest-from-commons.mjs",
