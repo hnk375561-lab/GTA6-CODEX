@@ -2,7 +2,6 @@
 import { describe, expect, it } from 'vitest'
 import { EntityType } from '@/types'
 import type { Entity } from '@/types'
-import type { MediaAsset } from '@/types/media'
 import {
   generateEntityMetadata,
   generateListMetadata,
@@ -23,16 +22,6 @@ const mockEntity: Entity = {
   status: 'confirmado',
   createdAt: new Date('2024-01-01').toISOString(),
   updatedAt: new Date('2024-01-15').toISOString(),
-} as any
-
-const mockMediaAsset: MediaAsset = {
-  id: 'media-1',
-  type: 'image',
-  source: {
-    localPath: '/images/toyota-corolla.jpg',
-    originalUrl: undefined,
-  },
-  createdAt: new Date('2024-01-01').toISOString(),
 } as any
 
 describe('generateEntityMetadata', () => {

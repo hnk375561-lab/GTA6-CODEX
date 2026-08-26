@@ -89,6 +89,26 @@ export function Header() {
             </svg>
           </Link>
 
+          <Link
+            href="/favoritos"
+            aria-label="Favoritos"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-auto-border text-auto-text-secondary transition-all hover:border-auto-accent hover:text-auto-accent-strong hover:shadow-glow-pink focus-visible:border-auto-accent focus-visible:text-auto-accent"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 20.5s-7.5-4.6-10-9.2C.5 8 1.8 4.5 5 3.4c2.2-.8 4.4.1 5.6 2 .3.5.4.7.4.7s.1-.2.4-.7c1.2-1.9 3.4-2.8 5.6-2 3.2 1.1 4.5 4.6 3 7.9-2.5 4.6-10 9.2-10 9.2Z" />
+            </svg>
+          </Link>
+
           <button
             type="button"
             onClick={() => setMenuOpen((v) => !v)}

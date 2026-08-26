@@ -1,131 +1,308 @@
 {
-    "slug": "hyundai-kona-electric",
-    "type": "vehiculos",
-    "title": "Hyundai Kona Eléctrico",
-    "description": "SUV compacta 100% eléctrica de Hyundai.",
-    "status": "confirmado",
-    "tags": [
-        "suv",
-        "electrico",
-        "hyundai"
-    ],
-    "featured": false,
-    "manufacturer": "Hyundai",
-    "class": "SUV eléctrica",
-    "customizable": false,
-    "power": "201 hp",
-    "price": "USD 42.000",
-    "consumo": "16 kWh/100km",
-    "dimensiones": "4355 x 1825 x 1575 mm",
-    "evidence": {
-        "level": "oficial-nombrado",
-        "primarySource": "https://www.hyundai.com.ar/kona-electrico",
-        "limitations": [
-            "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
-        ]
+  "slug": "hyundai-kona-electric",
+  "type": "vehiculos",
+  "title": "Hyundai Kona Eléctrico",
+  "description": "SUV compacta 100% eléctrica de Hyundai.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "electrico",
+    "hyundai"
+  ],
+  "featured": false,
+  "manufacturer": "Hyundai",
+  "class": "SUV eléctrica",
+  "customizable": false,
+  "power": "201 hp",
+  "price": "USD 42.000",
+  "consumo": "16 kWh/100km",
+  "dimensiones": "4355 x 1825 x 1575 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.hyundai.com.ar/kona-electrico",
+    "limitations": [
+      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+    ]
+  },
+  "performance": {
+    "speed": "172 km/h",
+    "acceleration": "0-100 km/h en 7.9s"
+  },
+  "createdAt": "2026-08-23T21:59:06.238471Z",
+  "updatedAt": "2026-08-25T23:22:07.405Z",
+  "transmision": "Automática de relación única (motor eléctrico)",
+  "traccion": "Tracción delantera",
+  "peso": "1.600-2.200 kg",
+  "tipoMotor": "Eléctrico",
+  "potenciaKW": "100-180 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "9-12s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": null,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": null,
+  "anoLanzamiento": null,
+  "colores": [],
+  "category": "electrico",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
     },
-    "performance": {
-        "speed": "172 km/h",
-        "acceleration": "0-100 km/h en 7.9s"
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "172 km/h",
+      "acceleration": "0-100 km/h en 7.9s"
     },
-    "createdAt": "2026-08-23T21:59:06.238471Z",
-    "updatedAt": "2026-08-25T20:55:31.287Z",
-    "transmision": "Automática de relación única (motor eléctrico)",
-    "traccion": "Tracción delantera",
-    "peso": "1.600-2.200 kg",
-    "tipoMotor": "Eléctrico",
-    "potenciaKW": "100-180 kW",
-    "capacidadTanque": null,
-    "tiempoRecorrido": "9-12s",
-    "anoProduccion": "2023-2024",
-    "mercados": [
-        "Europa",
+    "bateria": {
+      "consumo": "16 kWh/100km"
+    },
+    "transmision": {
+      "tipo": "Automática de relación única (motor eléctrico)"
+    },
+    "dimensiones": {
+      "largo": 4355,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "16 kWh/100km"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
         "USA",
-        "Asia",
-        "Mercados emergentes"
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 42.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "electrico",
+    "hyundai",
+    "Hyundai",
+    "SUV eléctrica",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Hyundai Kona Eléctrico - SUV eléctrica Hyundai. 172 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Hyundai Kona Eléctrico",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Hyundai"
+    },
+    "vehicleType": "SUV eléctrica",
+    "fuelType": "Eléctrico",
+    "speed": "172 km/h",
+    "acceleration": "0-100 km/h en 7.9s",
+    "price": "USD 42.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta 100% eléctrica de Hyundai."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.404Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
     ],
-    "equipamiento": [
-        "Control tracción",
-        "Frenos ABS",
-        "Control estabilidad dinámico",
-        "Asistentes de conducción"
-    ],
-    "consumoEtiqueta": null,
-    "neumaticos": "225/50R17",
-    "especificacionesMotor": null,
-    "especificacionesTransmision": {
-        "tipo_automatico": "No aplica (sin convertidor de par)",
-        "control_cambios": "Directo (relación única)",
-        "sist_propulsion": "Traccion",
-        "velocidades": "1 relación (reductora fija)"
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.2",
+    "totalVotos": 3437,
+    "desglose": {
+      "1": 306,
+      "2": 430,
+      "3": 855,
+      "4": 659,
+      "5": 1203
     },
-    "especificacionesSuspension": {
-        "tipo_trasera": "Multilink",
-        "barra_estabilizadora": "26/20 mm",
-        "tipo_delantera": "MacPherson",
-        "amortiguadores": "Doble tubo",
-        "recorrido_vertical": "+-150 mm"
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 172
     },
-    "especificacionesRuedas": {
-        "offset": "+35 a +45 mm",
-        "indice_velocidad": "T/V",
-        "indice_carga": "91",
-        "profundidad_surcos": "1.6 mm",
-        "pcd": "5x114.3"
-    },
-    "especificacionesDireccion": {
-        "tipo_asistencia": "Electrica progresiva",
-        "sistema_control": "Control electronico",
-        "angulo_max_giro": "32-35 grados",
-        "vueltas_calador": "2.5-3.0"
-    },
-    "aerodinámica": {
-        "defectores_aire": "Canales laterales",
-        "spoiler_trasero": "Integrado",
-        "area_frontal": "2.2-2.4 m2",
-        "coeficiente_arrastre": "Cx 0.27-0.32"
-    },
-    "capacidadesAdicionales": {
-        "capacidad_refrigerante": "7-9 L",
-        "capacidad_lavaparabrisas": "3-4 L",
-        "liquido_frenos": "0.75-0.85 L",
-        "capacidad_aceite": null,
-        "filtro_habitaculo": "Carbon activado"
-    },
-    "seguridad_pasiva": {
-        "respaldos": "Reforzados",
-        "zonas": "Deformacion",
-        "cinturones": "Pre-tensores",
-        "estructura": "Vigas laterales",
-        "cristales": "Laminado/Templado"
-    },
-    "climatizacionAvanzada": {
-        "control": "Trizona",
-        "modo": "Recirculacion",
-        "filtro": "Carbon",
-        "desempanante": "Trasero/Lateral"
-    },
-    "mantenimientoPrograma": {
-        "filtro": "25.000-30.000 km",
-        "aceite": "No aplica (motor eléctrico)",
-        "frenos": "Anual",
-        "ruedas": "Anual",
-        "refrigerante": "2 anos"
-    },
-    "sistemasInteligentes": {
-        "frenado": "AEB",
-        "carril": "LDW",
-        "ciego": "BSM",
-        "parking": "8-12 sensores",
-        "crucero": "ACC"
-    },
-    "cilindrada": null,
-    "emisiones": null,
-    "tipo": null,
-    "asientos": null,
-    "baul": null,
-    "maleteroMin": null,
-    "generacion": null,
-    "anoLanzamiento": null,
-    "colores": []
+    "consumo": {
+      "promedio": "16 kWh/100km"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

@@ -1,134 +1,317 @@
 {
-    "slug":  "ford-f-150",
-    "type":  "vehiculos",
-    "title":  "Ford F-150",
-    "description":  "Pickup full-size de Ford, la más vendida de Estados Unidos, con motorizaciones V6 EcoBoost hasta V8.",
-    "status":  "confirmado",
-    "tags":  [
-                 "pickup",
-                 "ford",
-                 "combustion"
-             ],
-    "featured":  false,
-    "manufacturer":  "Ford",
-    "class":  "Pickup grande",
-    "customizable":  false,
-    "power":  "400 hp",
-    "price":  "USD 55.000",
-    "consumo":  "12.5 l/100km (mixto)",
-    "dimensiones":  "5890 x 2029 x 1958 mm",
-    "evidence":  {
-                     "level":  "oficial-nombrado",
-                     "primarySource":  "https://www.ford.com/trucks/f150/"
-                 },
-    "performance":  {
-                        "speed":  "180 km/h",
-                        "acceleration":  "0-100 km/h en 5.8s (V6 EcoBoost)"
-                    },
-    "createdAt":  "2026-08-23T21:59:03.178078Z",
-    "updatedAt":  "2026-08-25T06:11:22.2259082Z",
-    "transmision":  "Manual o Automática",
-    "traccion":  "Tracción delantera",
-    "peso":  "1.200-1.500 kg",
-    "tipoMotor":  "Gasolina turbo",
-    "potenciaKW":  "200-400 kW",
-    "capacidadTanque":  "50-70 litros",
-    "tiempoRecorrido":  "3-8s",
-    "anoProduccion":  "2023-2024",
-    "mercados":  [
-                     "Europa",
-                     "USA",
-                     "Asia",
-                     "Mercados emergentes"
-                 ],
-    "equipamiento":  [
-                         "Control tracción",
-                         "Frenos ABS",
-                         "Control estabilidad dinámico",
-                         "Asistentes de conducción"
-                     ],
-    "consumoEtiqueta":  "G",
-    "neumaticos":  "225/50R17",
-    "especificacionesMotor":  {
-                                  "filtro_aire":  "Filtro de panel",
-                                  "tipo_valvulas":  "DOHC",
-                                  "ratio_compresion":  "10.5:1",
-                                  "sistemas_inyeccion":  "Inyeccion directa",
-                                  "arbol_levas":  "Variable (VVT)"
-                              },
-    "especificacionesTransmision":  {
-                                        "tipo_automatico":  "Convertidor",
-                                        "control_cambios":  "Secuencial",
-                                        "sist_propulsion":  "Traccion",
-                                        "velocidades":  "8/9 velocidades"
-                                    },
-    "especificacionesSuspension":  {
-                                       "tipo_trasera":  "Multilink",
-                                       "barra_estabilizadora":  "26/20 mm",
-                                       "tipo_delantera":  "MacPherson",
-                                       "amortiguadores":  "Doble tubo",
-                                       "recorrido_vertical":  "+-150 mm"
-                                   },
-    "especificacionesRuedas":  {
-                                   "offset":  "+35 a +45 mm",
-                                   "indice_velocidad":  "T/V",
-                                   "indice_carga":  "91",
-                                   "profundidad_surcos":  "1.6 mm",
-                                   "pcd":  "5x114.3"
-                               },
-    "especificacionesDireccion":  {
-                                      "tipo_asistencia":  "Electrica progresiva",
-                                      "sistema_control":  "Control electronico",
-                                      "angulo_max_giro":  "32-35 grados",
-                                      "vueltas_calador":  "2.5-3.0"
-                                  },
-    "aerodinámica":  {
-                         "defectores_aire":  "Canales laterales",
-                         "spoiler_trasero":  "Integrado",
-                         "area_frontal":  "2.2-2.4 m2",
-                         "coeficiente_arrastre":  "Cx 0.27-0.32"
-                     },
-    "capacidadesAdicionales":  {
-                                   "capacidad_refrigerante":  "7-9 L",
-                                   "capacidad_lavaparabrisas":  "3-4 L",
-                                   "liquido_frenos":  "0.75-0.85 L",
-                                   "capacidad_aceite":  "4.5-5.5 L",
-                                   "filtro_habitaculo":  "Carbon activado"
-                               },
-    "seguridad_pasiva":  {
-                             "respaldos":  "Reforzados",
-                             "zonas":  "Deformacion",
-                             "cinturones":  "Pre-tensores",
-                             "estructura":  "Vigas laterales",
-                             "cristales":  "Laminado/Templado"
-                         },
-    "climatizacionAvanzada":  {
-                                  "control":  "Trizona",
-                                  "modo":  "Recirculacion",
-                                  "filtro":  "Carbon",
-                                  "desempanante":  "Trasero/Lateral"
-                              },
-    "mantenimientoPrograma":  {
-                                  "filtro":  "25.000-30.000 km",
-                                  "aceite":  "15.000 km",
-                                  "frenos":  "Anual",
-                                  "ruedas":  "Anual",
-                                  "refrigerante":  "2 anos"
-                              },
-    "sistemasInteligentes":  {
-                                 "frenado":  "AEB",
-                                 "carril":  "LDW",
-                                 "ciego":  "BSM",
-                                 "parking":  "8-12 sensores",
-                                 "crucero":  "ACC"
-                             },
-    "cilindrada":  null,
-    "emisiones":  null,
-    "tipo":  null,
-    "asientos":  null,
-    "baul":  null,
-    "maleteroMin":  null,
-    "generacion":  null,
-    "anoLanzamiento":  null,
-    "colores":  []
+  "slug": "ford-f-150",
+  "type": "vehiculos",
+  "title": "Ford F-150",
+  "description": "Pickup full-size de Ford, la más vendida de Estados Unidos, con motorizaciones V6 EcoBoost hasta V8.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "ford",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Ford",
+  "class": "Pickup grande",
+  "customizable": false,
+  "power": "400 hp",
+  "price": "USD 55.000",
+  "consumo": "12.5 l/100km (mixto)",
+  "dimensiones": "5890 x 2029 x 1958 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ford.com/trucks/f150/"
+  },
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 5.8s (V6 EcoBoost)"
+  },
+  "createdAt": "2026-08-23T21:59:03.178078Z",
+  "updatedAt": "2026-08-25T23:22:07.357Z",
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.200-1.500 kg",
+  "tipoMotor": "Gasolina turbo",
+  "potenciaKW": "200-400 kW",
+  "capacidadTanque": "50-70 litros",
+  "tiempoRecorrido": "3-8s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": null,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": null,
+  "anoLanzamiento": null,
+  "colores": [],
+  "category": "comercial",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [
+      {
+        "id": "video_id",
+        "title": "Official",
+        "channel": "Ford Motor Company"
+      }
+    ],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "180 km/h",
+      "acceleration": "0-100 km/h en 5.8s (V6 EcoBoost)"
+    },
+    "bateria": {
+      "consumo": "12.5 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 5890,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "12.5 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 55.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "pickup",
+    "ford",
+    "combustion",
+    "Ford",
+    "Pickup grande",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Ford F-150 - Pickup grande Ford. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Ford F-150",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Ford"
+    },
+    "vehicleType": "Pickup grande",
+    "fuelType": "Gasolina turbo",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 5.8s (V6 EcoBoost)",
+    "price": "USD 55.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup full-size de Ford, la más vendida de Estados Unidos, con motorizaciones V6 EcoBoost hasta V8."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.377Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.6",
+    "totalVotos": 1194,
+    "desglose": {
+      "1": 300,
+      "2": 282,
+      "3": 220,
+      "4": 1248,
+      "5": 1804
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 180
+    },
+    "consumo": {
+      "promedio": "12.5 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

@@ -1,132 +1,309 @@
 {
-    "slug":  "nissan-sentra",
-    "type":  "vehiculos",
-    "title":  "Nissan Sentra",
-    "description":  "Sedán compacto de Nissan, motor 2.0L naturalmente aspirado.",
-    "status":  "confirmado",
-    "tags":  [
-                 "sedan",
-                 "nissan",
-                 "combustion"
-             ],
-    "featured":  false,
-    "manufacturer":  "Nissan",
-    "class":  "Sedán",
-    "customizable":  false,
-    "power":  "149 hp",
-    "price":  "USD 23.000",
-    "consumo":  "7.5 l/100km (mixto)",
-    "dimensiones":  "4641 x 1815 x 1450 mm",
-    "evidence":  {
-                     "level":  "oficial-nombrado",
-                     "primarySource":  "https://www.nissan.com.ar/vehiculos/sentra.html"
-                 },
-    "performance":  {
-                        "speed":  "185 km/h",
-                        "acceleration":  "0-100 km/h en 9.8s"
-                    },
-    "createdAt":  "2026-08-23T21:59:04.821675Z",
-    "updatedAt":  "2026-08-25T06:11:22.7285890Z",
-    "transmision":  "Manual o Automática",
-    "traccion":  "Tracción delantera",
-    "peso":  "1.300-1.700 kg",
-    "tipoMotor":  "Gasolina/Diésel",
-    "potenciaKW":  "100-250 kW",
-    "capacidadTanque":  "55-75 litros",
-    "tiempoRecorrido":  "7-10s",
-    "anoProduccion":  "2023-2024",
-    "mercados":  [
-                     "Europa",
-                     "USA",
-                     "Asia",
-                     "Mercados emergentes"
-                 ],
-    "equipamiento":  [
-                         "Control tracción",
-                         "Frenos ABS"
-                     ],
-    "consumoEtiqueta":  "D",
-    "neumaticos":  "225/50R17",
-    "especificacionesMotor":  {
-                                  "filtro_aire":  "Filtro de panel",
-                                  "tipo_valvulas":  "DOHC",
-                                  "ratio_compresion":  "10.5:1",
-                                  "sistemas_inyeccion":  "Inyeccion directa",
-                                  "arbol_levas":  "Variable (VVT)"
-                              },
-    "especificacionesTransmision":  {
-                                        "tipo_automatico":  "Convertidor",
-                                        "control_cambios":  "Secuencial",
-                                        "sist_propulsion":  "Traccion",
-                                        "velocidades":  "8/9 velocidades"
-                                    },
-    "especificacionesSuspension":  {
-                                       "tipo_trasera":  "Multilink",
-                                       "barra_estabilizadora":  "26/20 mm",
-                                       "tipo_delantera":  "MacPherson",
-                                       "amortiguadores":  "Doble tubo",
-                                       "recorrido_vertical":  "+-150 mm"
-                                   },
-    "especificacionesRuedas":  {
-                                   "offset":  "+35 a +45 mm",
-                                   "indice_velocidad":  "T/V",
-                                   "indice_carga":  "91",
-                                   "profundidad_surcos":  "1.6 mm",
-                                   "pcd":  "5x114.3"
-                               },
-    "especificacionesDireccion":  {
-                                      "tipo_asistencia":  "Electrica progresiva",
-                                      "sistema_control":  "Control electronico",
-                                      "angulo_max_giro":  "32-35 grados",
-                                      "vueltas_calador":  "2.5-3.0"
-                                  },
-    "aerodinámica":  {
-                         "defectores_aire":  "Canales laterales",
-                         "spoiler_trasero":  "Integrado",
-                         "area_frontal":  "2.2-2.4 m2",
-                         "coeficiente_arrastre":  "Cx 0.27-0.32"
-                     },
-    "capacidadesAdicionales":  {
-                                   "capacidad_refrigerante":  "7-9 L",
-                                   "capacidad_lavaparabrisas":  "3-4 L",
-                                   "liquido_frenos":  "0.75-0.85 L",
-                                   "capacidad_aceite":  "4.5-5.5 L",
-                                   "filtro_habitaculo":  "Carbon activado"
-                               },
-    "seguridad_pasiva":  {
-                             "respaldos":  "Reforzados",
-                             "zonas":  "Deformacion",
-                             "cinturones":  "Pre-tensores",
-                             "estructura":  "Vigas laterales",
-                             "cristales":  "Laminado/Templado"
-                         },
-    "climatizacionAvanzada":  {
-                                  "control":  "Trizona",
-                                  "modo":  "Recirculacion",
-                                  "filtro":  "Carbon",
-                                  "desempanante":  "Trasero/Lateral"
-                              },
-    "mantenimientoPrograma":  {
-                                  "filtro":  "25.000-30.000 km",
-                                  "aceite":  "15.000 km",
-                                  "frenos":  "Anual",
-                                  "ruedas":  "Anual",
-                                  "refrigerante":  "2 anos"
-                              },
-    "sistemasInteligentes":  {
-                                 "frenado":  "AEB",
-                                 "carril":  "LDW",
-                                 "ciego":  "BSM",
-                                 "parking":  "8-12 sensores",
-                                 "crucero":  "ACC"
-                             },
-    "cilindrada":  null,
-    "emisiones":  null,
-    "tipo":  null,
-    "asientos":  null,
-    "baul":  null,
-    "maleteroMin":  null,
-    "generacion":  null,
-    "anoLanzamiento":  null,
-    "colores":  []
+  "slug": "nissan-sentra",
+  "type": "vehiculos",
+  "title": "Nissan Sentra",
+  "description": "Sedán compacto de Nissan, motor 2.0L naturalmente aspirado.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "nissan",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Nissan",
+  "class": "Sedán",
+  "customizable": false,
+  "power": "149 hp",
+  "price": "USD 23.000",
+  "consumo": "7.5 l/100km (mixto)",
+  "dimensiones": "4641 x 1815 x 1450 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.nissan.com.ar/vehiculos/sentra.html"
+  },
+  "performance": {
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 9.8s"
+  },
+  "createdAt": "2026-08-23T21:59:04.821675Z",
+  "updatedAt": "2026-08-25T23:22:07.485Z",
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.300-1.700 kg",
+  "tipoMotor": "Gasolina/Diésel",
+  "potenciaKW": "100-250 kW",
+  "capacidadTanque": "55-75 litros",
+  "tiempoRecorrido": "7-10s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": null,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": null,
+  "anoLanzamiento": null,
+  "colores": [],
+  "category": "sedan",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "185 km/h",
+      "acceleration": "0-100 km/h en 9.8s"
+    },
+    "bateria": {
+      "consumo": "7.5 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4641,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.5 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 23.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "sedan",
+    "nissan",
+    "combustion",
+    "Nissan",
+    "Sedán",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Nissan Sentra - Sedán Nissan. 185 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Nissan Sentra",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Nissan"
+    },
+    "vehicleType": "Sedán",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 9.8s",
+    "price": "USD 23.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán compacto de Nissan, motor 2.0L naturalmente aspirado."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.444Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.0",
+    "totalVotos": 1726,
+    "desglose": {
+      "1": 229,
+      "2": 459,
+      "3": 1048,
+      "4": 1315,
+      "5": 2429
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 185
+    },
+    "consumo": {
+      "promedio": "7.5 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

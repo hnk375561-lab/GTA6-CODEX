@@ -23,6 +23,7 @@ import {
   computeTagOptions,
   filterAndSortEntities,
 } from '@/lib/entity-list-filters'
+import { computePowerBounds } from '@/lib/vehicle-power'
 
 type ViewMode = 'grid' | 'catalogo'
 
@@ -89,6 +90,14 @@ export function EntityListExplorer({
     return raw ? raw.split(',').filter(Boolean) : []
   })
   const [selectedClass, setSelectedClass] = useState<string | null>(() => searchParams.get('clase'))
+  const [powerRange, setPowerRange] = useState<[number, number] | null>(() => {
+    const raw = searchParams.get('potencia')
+    if (!raw) return null
+    const [minRaw, maxRaw] = raw.split(',')
+    const min = Number(minRaw)
+    const max = Number(maxRaw)
+    return Number.isFinite(min) && Number.isFinite(max) ? [min, max] : null
+  })
   const debouncedQuery = useDebouncedValue(query, 200)
 
   // Vista tipo catálogo (filas compactas) vs. grilla de cards. Solo se
@@ -137,6 +146,7 @@ export function EntityListExplorer({
       orden: sortBy !== 'default' ? sortBy : null,
       tags: selectedTags.length > 0 ? selectedTags.join(',') : null,
       clase: selectedClass,
+      potencia: powerRange ? `${powerRange[0]},${powerRange[1]}` : null,
       vista: isVehicleList && viewMode !== 'grid' ? viewMode : null,
     })
     // updateParams se omite adrede: se recrea cuando cambian los
@@ -144,7 +154,7 @@ export function EntityListExplorer({
     // dispararía el efecto en un loop innecesario sin cambiar el
     // resultado — solo nos interesa reaccionar a cambios reales de filtro.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedQuery, status, sortBy, selectedTags, selectedClass, viewMode, isVehicleList])
+  }, [debouncedQuery, status, sortBy, selectedTags, selectedClass, powerRange, viewMode, isVehicleList])
 
   const counts = useMemo(() => computeStatusCounts(entities), [entities])
 
@@ -175,6 +185,12 @@ export function EntityListExplorer({
   // únicos por entidad, así que no aportan un filtro real).
   const classOptions = useMemo(() => computeClassOptions(entities, type), [entities, type])
 
+  // Rango de potencia (hp) disponible entre los vehículos de este
+  // listado — `null` si el tipo no es Vehículo o si no hay suficientes
+  // vehículos con `power` parseable como para que un filtro de rango
+  // aporte algo real (ver `computePowerBounds`).
+  const powerBounds = useMemo(() => computePowerBounds(entities, type), [entities, type])
+
   // "default" respeta el orden ya recibido (relevancia de Fuse mientras se
   // busca; orden alfabético natural del servidor el resto del tiempo) —
   // nunca se reordena de más sin que el usuario elija un criterio. El
@@ -192,10 +208,11 @@ export function EntityListExplorer({
           selectedTags,
           sortBy,
           relationCountBySlug,
+          powerRange,
         },
         fuse
       ),
-    [entities, debouncedQuery, status, selectedClass, selectedTags, sortBy, relationCountBySlug, fuse]
+    [entities, debouncedQuery, status, selectedClass, selectedTags, sortBy, relationCountBySlug, powerRange, fuse]
   )
 
   // Vuelve a la primera página cada vez que cambia el conjunto filtrado
@@ -213,7 +230,7 @@ export function EntityListExplorer({
     setSelectedTags((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]))
   }
 
-  const hasActiveFilters = status !== 'todos' || selectedTags.length > 0 || selectedClass !== null
+  const hasActiveFilters = status !== 'todos' || selectedTags.length > 0 || selectedClass !== null || powerRange !== null
 
   const clearAllFilters = () => {
     setQuery('')
@@ -221,12 +238,14 @@ export function EntityListExplorer({
     setSortBy('default')
     setSelectedTags([])
     setSelectedClass(null)
+    setPowerRange(null)
   }
 
   const clearAttributeFilters = () => {
     setStatus('todos')
     setSelectedTags([])
     setSelectedClass(null)
+    setPowerRange(null)
   }
 
   // Toda card de listado lleva media (imagen local, miniatura de trailer o
@@ -397,6 +416,61 @@ export function EntityListExplorer({
                 <span className="ml-1 text-auto-text-secondary/80">{count}</span>
               </button>
             ))}
+          </>
+        )}
+
+        {powerBounds && (
+          <>
+            <span className="ml-1 text-[11px] font-semibold uppercase tracking-wide text-auto-text-tertiary">
+              Potencia (hp)
+            </span>
+            <div className="flex items-center gap-1.5">
+              <input
+                type="number"
+                inputMode="numeric"
+                min={powerBounds.min}
+                max={powerRange?.[1] ?? powerBounds.max}
+                step={10}
+                value={powerRange?.[0] ?? powerBounds.min}
+                onChange={(e) => {
+                  const next = Number(e.target.value)
+                  if (!Number.isFinite(next)) return
+                  const currentMax = powerRange?.[1] ?? powerBounds.max
+                  setPowerRange([Math.min(next, currentMax), currentMax])
+                }}
+                aria-label="Potencia mínima en hp"
+                className="w-16 rounded-lg border border-auto-border bg-auto-card/60 px-2 py-1 text-[11px] font-semibold text-auto-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+              />
+              <span className="text-[11px] text-auto-text-tertiary">–</span>
+              <input
+                type="number"
+                inputMode="numeric"
+                min={powerRange?.[0] ?? powerBounds.min}
+                max={powerBounds.max}
+                step={10}
+                value={powerRange?.[1] ?? powerBounds.max}
+                onChange={(e) => {
+                  const next = Number(e.target.value)
+                  if (!Number.isFinite(next)) return
+                  const currentMin = powerRange?.[0] ?? powerBounds.min
+                  setPowerRange([currentMin, Math.max(next, currentMin)])
+                }}
+                aria-label="Potencia máxima en hp"
+                className="w-16 rounded-lg border border-auto-border bg-auto-card/60 px-2 py-1 text-[11px] font-semibold text-auto-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+              />
+              {powerRange && (
+                <button
+                  type="button"
+                  onClick={() => setPowerRange(null)}
+                  aria-label="Quitar filtro de potencia"
+                  className="flex h-5 w-5 items-center justify-center rounded-full text-auto-text-secondary transition-colors hover:text-auto-accent"
+                >
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                    <path d="M18 6 6 18M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
+            </div>
           </>
         )}
 

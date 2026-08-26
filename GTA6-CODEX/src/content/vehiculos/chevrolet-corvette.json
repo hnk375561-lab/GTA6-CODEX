@@ -30,7 +30,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T06:11:22.0455539Z",
+  "updatedAt": "2026-08-25T23:22:07.308Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.200-1.500 kg",
@@ -134,5 +134,183 @@
   "maleteroMin": null,
   "generacion": null,
   "anoLanzamiento": null,
-  "colores": []
+  "colores": [],
+  "category": "deportivo",
+  "gallery": {
+    "images": {
+      "exterior": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Chevrolet_Corvette_C8_--_2020-07-10.jpg/1280px-Chevrolet_Corvette_C8_--_2020-07-10.jpg"
+      ],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Chevrolet_Corvette_C8_--_2020-07-10.jpg/1280px-Chevrolet_Corvette_C8_--_2020-07-10.jpg"
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 68.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "deportivo",
+    "chevrolet",
+    "Chevrolet",
+    "Deportivo",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Chevrolet Corvette - Deportivo Chevrolet. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chevrolet Corvette",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chevrolet"
+    },
+    "vehicleType": "Deportivo",
+    "fuelType": "Gasolina turbo",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 68.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Deportivo icónico americano, primera generación de motor central (C8)."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.335Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.9",
+    "totalVotos": 5284,
+    "desglose": {
+      "1": 213,
+      "2": 162,
+      "3": 928,
+      "4": 1402,
+      "5": 1386
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

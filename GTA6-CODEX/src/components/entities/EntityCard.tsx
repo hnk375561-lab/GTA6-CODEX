@@ -7,6 +7,7 @@ import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { EntityImage } from '@/components/entities/EntityImage'
+import { WishlistButton } from '@/components/ui/WishlistButton'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { ENTITY_TYPE_LABELS, STATUS_LABELS } from '@/lib/entity-labels'
 import { getGenericQuickFacts } from '@/lib/entity-fields'
@@ -416,6 +417,8 @@ export function EntityCard({
           </div>
         )}
 
+        <WishlistButton type={entity.type} slug={entity.slug} title={entity.title} />
+
         <span
           aria-hidden="true"
           className="hidden shrink-0 items-center gap-1 text-xs font-semibold uppercase tracking-wide text-auto-accent transition-transform duration-200 group-hover:translate-x-0.5 sm:inline-flex"
@@ -526,6 +529,15 @@ export function EntityCard({
               />
             </div>
           )}
+
+          {/* bottom-3 right-3: esquina libre en todos los tipos de card —
+              el sello de evidencia vive arriba a la derecha (top-3) y el
+              checkbox de comparación arriba a la izquierda (top-9), así que
+              la esquina inferior derecha de la imagen queda disponible sin
+              chocar con ningún overlay existente. */}
+          <div className="absolute bottom-3 right-3 z-10">
+            <WishlistButton type={entity.type} slug={entity.slug} title={entity.title} />
+          </div>
 
           {clipUrl && (
             <>

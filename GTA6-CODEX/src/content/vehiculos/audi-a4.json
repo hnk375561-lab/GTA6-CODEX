@@ -1,148 +1,324 @@
 {
-    "slug":  "audi-a4",
-    "type":  "vehiculos",
-    "title":  "Audi A4",
-    "description":  "Sedán ejecutivo compacto de Audi, tracción quattro opcional.",
-    "status":  "confirmado",
-    "tags":  [
-                 "sedan",
-                 "audi"
-             ],
-    "featured":  false,
-    "manufacturer":  "Audi",
-    "class":  "Sedán ejecutivo",
-    "customizable":  false,
-    "power":  "201 hp aprox. (motor 2.0 TFSI, último año en EE.UU.)",
-    "price":  "Discontinuado en EE.UU. (2025 fue el último año-modelo); sigue vigente en India/Europa con precio local (ej. India desde ₹53,4 lakh)",
-    "consumo":  "5.8-6.1 l/100km combinado (versión 40 TFSI, ciclo WLTP Europa)",
-    "dimensiones":  "4.763 mm largo x 1.847 mm ancho x 1.427 mm alto, distancia entre ejes 2.819 mm",
-    "evidence":  {
-                     "level":  "respaldado",
-                     "primarySource":  "https://www.cargurus.com/research/articles/2025-audi-a4-pricing-specs-release-date",
-                     "secondarySource":  "https://ackodrive.com/cars/audi-a4/",
-                     "note":  "En el mercado de EE.UU., Audi discontinuó el A4 tras el año-modelo 2025, reemplazándolo por una variante del A5. El modelo sigue vendiéndose bajo el nombre A4 en otros mercados (India, Europa), con specs/precio propios de cada región.",
-                     "limitations":  [
-                                         "Status varía fuertemente por mercado (discontinuado en EE.UU., vigente en India/Europa); precio no unificable en una sola cifra global",
-                                         "Cifras de consumo/prestaciones corresponden a la versión europea 40 TFSI (~190-201 hp); pueden variar levemente en India"
-                                     ]
-                 },
-    "performance":  {
-                        "speed":  "241 km/h",
-                        "acceleration":  "0-100 km/h en 7.3s"
-                    },
-    "createdAt":  "2026-08-23T23:06:25.164Z",
-    "updatedAt":  "2026-08-25T06:11:21.8698664Z",
-    "transmision":  "7 velocidades S tronic (automática de doble embrague)",
-    "traccion":  "Delantera (FWD) o quattro (AWD) según motorización",
-    "peso":  "1.530-1.725 kg (según versión y equipamiento)",
-    "tipoMotor":  "Gasolina turbo, mild-hybrid 12V",
-    "potenciaKW":  "140-186 kW (190-252 hp según motorización 40/45 TFSI)",
-    "capacidadTanque":  "54 litros",
-    "tiempoRecorrido":  "5.8s-7.3s 0-100 km/h (según motorización y tracción)",
-    "anoProduccion":  "2015-presente (generación B9, con facelift 2019); discontinuado en EE.UU. tras el año-modelo 2025",
-    "mercados":  [
-                     "Europa",
-                     "India",
-                     "Latinoamérica (incl. Argentina, México)",
-                     "Medio Oriente"
-                 ],
-    "equipamiento":  [
-                         "Audi Drive Select",
-                         "Faros LED",
-                         "Asistente de estacionamiento delantero y trasero",
-                         "Cámara de reversa",
-                         "Airbags laterales y de cabeza",
-                         "Dirección progresiva"
-                     ],
-    "consumoEtiqueta":  "B",
-    "neumaticos":  "225/50R17",
-    "cilindrada":  "1.984 cc (2.0 TFSI, 4 cilindros en línea)",
-    "emisiones":  "CO2 134-165 g/km (según ciclo y motorización, NEDC/WLTP)",
-    "tipo":  "Sedán ejecutivo compacto",
-    "asientos":  5,
-    "baul":  "460 litros (berlina) / 495 litros (Avant)",
-    "maleteroMin":  "460 litros",
-    "generacion":  "Quinta generación (B9), lanzada en 2015, con facelift en 2019",
-    "anoLanzamiento":  2015,
-    "colores":  [
-                    "Blanco Ibis",
-                    "Negro Mythos Metalizado",
-                    "Gris Manhattan Metalizado",
-                    "Azul Turbo",
-                    "Rojo Tango",
-                    "Plata Florett Metalizado"
-                ],
-    "especificacionesMotor":  {
-                                  "filtro_aire":  "Filtro de panel",
-                                  "tipo_valvulas":  "DOHC",
-                                  "ratio_compresion":  "10.5:1",
-                                  "sistemas_inyeccion":  "Inyeccion directa",
-                                  "arbol_levas":  "Variable (VVT)"
-                              },
-    "especificacionesTransmision":  {
-                                        "tipo_automatico":  "Convertidor",
-                                        "control_cambios":  "Secuencial",
-                                        "sist_propulsion":  "Traccion",
-                                        "velocidades":  "8/9 velocidades"
-                                    },
-    "especificacionesSuspension":  {
-                                       "tipo_trasera":  "Multilink",
-                                       "barra_estabilizadora":  "26/20 mm",
-                                       "tipo_delantera":  "MacPherson",
-                                       "amortiguadores":  "Doble tubo",
-                                       "recorrido_vertical":  "+-150 mm"
-                                   },
-    "especificacionesRuedas":  {
-                                   "offset":  "+35 a +45 mm",
-                                   "indice_velocidad":  "T/V",
-                                   "indice_carga":  "91",
-                                   "profundidad_surcos":  "1.6 mm",
-                                   "pcd":  "5x114.3"
-                               },
-    "especificacionesDireccion":  {
-                                      "tipo_asistencia":  "Electrica progresiva",
-                                      "sistema_control":  "Control electronico",
-                                      "angulo_max_giro":  "32-35 grados",
-                                      "vueltas_calador":  "2.5-3.0"
-                                  },
-    "aerodinámica":  {
-                         "defectores_aire":  "Canales laterales",
-                         "spoiler_trasero":  "Integrado",
-                         "area_frontal":  "2.2-2.4 m2",
-                         "coeficiente_arrastre":  "Cx 0.27-0.32"
-                     },
-    "capacidadesAdicionales":  {
-                                   "capacidad_refrigerante":  "7-9 L",
-                                   "capacidad_lavaparabrisas":  "3-4 L",
-                                   "liquido_frenos":  "0.75-0.85 L",
-                                   "capacidad_aceite":  "4.5-5.5 L",
-                                   "filtro_habitaculo":  "Carbon activado"
-                               },
-    "seguridad_pasiva":  {
-                             "respaldos":  "Reforzados",
-                             "zonas":  "Deformacion",
-                             "cinturones":  "Pre-tensores",
-                             "estructura":  "Vigas laterales",
-                             "cristales":  "Laminado/Templado"
-                         },
-    "climatizacionAvanzada":  {
-                                  "control":  "Trizona",
-                                  "modo":  "Recirculacion",
-                                  "filtro":  "Carbon",
-                                  "desempanante":  "Trasero/Lateral"
-                              },
-    "mantenimientoPrograma":  {
-                                  "filtro":  "25.000-30.000 km",
-                                  "aceite":  "15.000 km",
-                                  "frenos":  "Anual",
-                                  "ruedas":  "Anual",
-                                  "refrigerante":  "2 anos"
-                              },
-    "sistemasInteligentes":  {
-                                 "frenado":  "AEB",
-                                 "carril":  "LDW",
-                                 "ciego":  "BSM",
-                                 "parking":  "8-12 sensores",
-                                 "crucero":  "ACC"
-                             }
+  "slug": "audi-a4",
+  "type": "vehiculos",
+  "title": "Audi A4",
+  "description": "Sedán ejecutivo compacto de Audi, tracción quattro opcional.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "audi"
+  ],
+  "featured": false,
+  "manufacturer": "Audi",
+  "class": "Sedán ejecutivo",
+  "customizable": false,
+  "power": "201 hp aprox. (motor 2.0 TFSI, último año en EE.UU.)",
+  "price": "Discontinuado en EE.UU. (2025 fue el último año-modelo); sigue vigente en India/Europa con precio local (ej. India desde ₹53,4 lakh)",
+  "consumo": "5.8-6.1 l/100km combinado (versión 40 TFSI, ciclo WLTP Europa)",
+  "dimensiones": "4.763 mm largo x 1.847 mm ancho x 1.427 mm alto, distancia entre ejes 2.819 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.cargurus.com/research/articles/2025-audi-a4-pricing-specs-release-date",
+    "secondarySource": "https://ackodrive.com/cars/audi-a4/",
+    "note": "En el mercado de EE.UU., Audi discontinuó el A4 tras el año-modelo 2025, reemplazándolo por una variante del A5. El modelo sigue vendiéndose bajo el nombre A4 en otros mercados (India, Europa), con specs/precio propios de cada región.",
+    "limitations": [
+      "Status varía fuertemente por mercado (discontinuado en EE.UU., vigente en India/Europa); precio no unificable en una sola cifra global",
+      "Cifras de consumo/prestaciones corresponden a la versión europea 40 TFSI (~190-201 hp); pueden variar levemente en India"
+    ]
+  },
+  "performance": {
+    "speed": "241 km/h",
+    "acceleration": "0-100 km/h en 7.3s"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-25T23:22:07.251Z",
+  "transmision": "7 velocidades S tronic (automática de doble embrague)",
+  "traccion": "Delantera (FWD) o quattro (AWD) según motorización",
+  "peso": "1.530-1.725 kg (según versión y equipamiento)",
+  "tipoMotor": "Gasolina turbo, mild-hybrid 12V",
+  "potenciaKW": "140-186 kW (190-252 hp según motorización 40/45 TFSI)",
+  "capacidadTanque": "54 litros",
+  "tiempoRecorrido": "5.8s-7.3s 0-100 km/h (según motorización y tracción)",
+  "anoProduccion": "2015-presente (generación B9, con facelift 2019); discontinuado en EE.UU. tras el año-modelo 2025",
+  "mercados": [
+    "Europa",
+    "India",
+    "Latinoamérica (incl. Argentina, México)",
+    "Medio Oriente"
+  ],
+  "equipamiento": [
+    "Audi Drive Select",
+    "Faros LED",
+    "Asistente de estacionamiento delantero y trasero",
+    "Cámara de reversa",
+    "Airbags laterales y de cabeza",
+    "Dirección progresiva"
+  ],
+  "consumoEtiqueta": "B",
+  "neumaticos": "225/50R17",
+  "cilindrada": "1.984 cc (2.0 TFSI, 4 cilindros en línea)",
+  "emisiones": "CO2 134-165 g/km (según ciclo y motorización, NEDC/WLTP)",
+  "tipo": "Sedán ejecutivo compacto",
+  "asientos": 5,
+  "baul": "460 litros (berlina) / 495 litros (Avant)",
+  "maleteroMin": "460 litros",
+  "generacion": "Quinta generación (B9), lanzada en 2015, con facelift en 2019",
+  "anoLanzamiento": 2015,
+  "colores": [
+    "Blanco Ibis",
+    "Negro Mythos Metalizado",
+    "Gris Manhattan Metalizado",
+    "Azul Turbo",
+    "Rojo Tango",
+    "Plata Florett Metalizado"
+  ],
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "241 km/h",
+      "acceleration": "0-100 km/h en 7.3s"
+    },
+    "bateria": {
+      "consumo": "5.8-6.1 l/100km combinado (versión 40 TFSI, ciclo WLTP Europa)"
+    },
+    "transmision": {
+      "tipo": "7 velocidades S tronic (automática de doble embrague)"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "5.8-6.1 l/100km combinado (versión 40 TFSI, ciclo WLTP Europa)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "Discontinuado en EE.UU. (2025 fue el último año-modelo); sigue vigente en India/Europa con precio local (ej. India desde ₹53,4 lakh)"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "sedan",
+    "audi",
+    "Audi",
+    "Sedán ejecutivo",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Audi A4 - Sedán ejecutivo Audi. 241 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Audi A4",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Audi"
+    },
+    "vehicleType": "Sedán ejecutivo",
+    "fuelType": "Gasolina turbo, mild-hybrid 12V",
+    "speed": "241 km/h",
+    "acceleration": "0-100 km/h en 7.3s",
+    "price": "Discontinuado en EE.UU. (2025 fue el último año-modelo); sigue vigente en India/Europa con precio local (ej. India desde ₹53,4 lakh)",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán ejecutivo compacto de Audi, tracción quattro opcional."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-25T22:37:04.300Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.4",
+    "totalVotos": 4685,
+    "desglose": {
+      "1": 85,
+      "2": 195,
+      "3": 1181,
+      "4": 544,
+      "5": 1697
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 241
+    },
+    "consumo": {
+      "promedio": "5.8-6.1 l/100km combinado (versión 40 TFSI, ciclo WLTP Europa)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

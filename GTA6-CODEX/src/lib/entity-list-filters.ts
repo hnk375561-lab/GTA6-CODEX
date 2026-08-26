@@ -2,6 +2,7 @@ import Fuse from 'fuse.js'
 import { EntityType, type Entity, type Vehicle } from '@/types'
 import { STATUS_LABELS } from '@/lib/entity-labels'
 import { vehiclePerformanceScore, hasPerformanceData } from '@/lib/vehicle-performance'
+import { parsePowerHp } from '@/lib/vehicle-power'
 
 export type StatusFilter = 'todos' | keyof typeof STATUS_LABELS
 
@@ -99,6 +100,10 @@ export interface FilterEntitiesParams {
   selectedTags: string[]
   sortBy: SortOption
   relationCountBySlug?: Record<string, number>
+  /** [min, max] en hp. Solo tiene efecto sobre Vehículos (el resto de
+   *  tipos no tiene `power`, así que cualquier filtro los excluiría por
+   *  completo por error). `null` = sin filtro (comportamiento anterior). */
+  powerRange?: [number, number] | null
 }
 
 /** Instancia un Fuse.js sobre el set de entidades, con la misma
@@ -121,7 +126,7 @@ export function buildFuse(entities: Entity[]): Fuse<Entity> {
  *  aislada y reutilizable si en el futuro se necesita el mismo pipeline
  *  fuera de EntityListExplorer (ej. en un futuro filtrado server-side). */
 export function filterAndSortEntities(params: FilterEntitiesParams, fuse?: Fuse<Entity>): Entity[] {
-  const { entities, query, status, selectedClass, selectedTags, sortBy, relationCountBySlug } = params
+  const { entities, query, status, selectedClass, selectedTags, sortBy, relationCountBySlug, powerRange } = params
   const trimmedQuery = query.trim()
 
   let base = trimmedQuery ? (fuse ?? buildFuse(entities)).search(trimmedQuery).map((r) => r.item) : entities
@@ -130,6 +135,13 @@ export function filterAndSortEntities(params: FilterEntitiesParams, fuse?: Fuse<
   if (selectedClass) base = base.filter((e) => (e as Vehicle).class === selectedClass)
   if (selectedTags.length > 0) {
     base = base.filter((e) => e.tags?.some((tag) => selectedTags.includes(tag)))
+  }
+  if (powerRange) {
+    const [min, max] = powerRange
+    base = base.filter((e) => {
+      const hp = parsePowerHp(e as Vehicle)
+      return hp !== null && hp >= min && hp <= max
+    })
   }
 
   if (sortBy === 'az') {

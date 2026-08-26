@@ -10,7 +10,7 @@ import { SITE_NAME, SITE_URL } from '@/config/site'
 export const metadata: Metadata = {
   title: `Comparar vehículos | ${SITE_NAME}`,
   description:
-    'Compará hasta 3 autos o motos lado a lado: fabricante, clase, rendimiento y más, en una sola tabla.',
+    'Compará hasta 5 autos o motos lado a lado: fabricante, clase, rendimiento y más, en una sola tabla.',
   metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: `${SITE_URL}/comparar`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: `Comparar vehículos | ${SITE_NAME}`,
-    description: 'Compará hasta 3 autos o motos lado a lado: fabricante, clase, rendimiento y más.',
+    description: 'Compará hasta 5 autos o motos lado a lado: fabricante, clase, rendimiento y más.',
     url: `${SITE_URL}/comparar`,
     siteName: SITE_NAME,
   },
@@ -58,7 +58,7 @@ export default async function CompararPage() {
             Comparar <span className="text-gradient-vice">vehículos</span>
           </h1>
           <p className="mt-2 text-sm text-auto-text-secondary sm:text-base">
-            Elegí hasta 3 autos o motos y compará fabricante, clase, rendimiento y más, lado a
+            Elegí hasta 5 autos o motos y compará fabricante, clase, rendimiento y más, lado a
             lado.
           </p>
         </div>

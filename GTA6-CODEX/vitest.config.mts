@@ -29,6 +29,16 @@ export default defineConfig({
     include: ['src/**/*.test.ts', 'src/**/*.test.tsx'],
     environment: 'node',
     setupFiles: ['./vitest.setup.ts'],
+    // `pool: 'forks'` en vez del default `'threads'`: en Windows, el pool de
+    // threads deja un handle abierto del servicio interno de esbuild/Vite
+    // que a veces no se libera al terminar los tests ("close timed out
+    // after 10000ms ... something prevents Vite server from exiting"),
+    // aunque todos los tests hayan pasado. Es un problema conocido de
+    // Vitest con ese pool en Windows (no de este proyecto ni de estos
+    // tests) — correr cada archivo de test en un proceso hijo real
+    // (`fork`) en vez de un worker thread evita que ese handle sobreviva
+    // al cierre y el comando `vitest run` termina limpio.
+    pool: 'forks',
   },
   resolve: {
     alias: {

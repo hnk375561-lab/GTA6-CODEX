@@ -260,4 +260,71 @@ describe('filterAndSortEntities', () => {
     })
     expect(result).toEqual([])
   })
+
+  describe('filtro de potencia (powerRange)', () => {
+    const withPower: Vehicle[] = [
+      makeVehicle({ slug: 'low', title: 'Low Power', power: '90 hp' }),
+      makeVehicle({ slug: 'mid', title: 'Mid Power', power: '250 hp' }),
+      makeVehicle({ slug: 'high', title: 'High Power', power: '500 hp' }),
+      // Sin `power` — debe quedar afuera de cualquier filtro activo, nunca
+      // asumirse "adentro" de un rango que no se puede confirmar.
+      makeVehicle({ slug: 'unknown', title: 'Unknown Power' }),
+    ]
+
+    it('sin powerRange (null), no filtra por potencia', () => {
+      const result = filterAndSortEntities({
+        entities: withPower,
+        query: '',
+        status: 'todos',
+        selectedClass: null,
+        selectedTags: [],
+        sortBy: 'default',
+        powerRange: null,
+      })
+      expect(result.map((e) => e.slug)).toEqual(['low', 'mid', 'high', 'unknown'])
+    })
+
+    it('filtra dejando solo los vehículos dentro del rango [min, max]', () => {
+      const result = filterAndSortEntities({
+        entities: withPower,
+        query: '',
+        status: 'todos',
+        selectedClass: null,
+        selectedTags: [],
+        sortBy: 'default',
+        powerRange: [100, 300],
+      })
+      expect(result.map((e) => e.slug)).toEqual(['mid'])
+    })
+
+    it('excluye vehículos sin power parseable cuando el filtro está activo', () => {
+      const result = filterAndSortEntities({
+        entities: withPower,
+        query: '',
+        status: 'todos',
+        selectedClass: null,
+        selectedTags: [],
+        sortBy: 'default',
+        powerRange: [0, 1000],
+      })
+      expect(result.map((e) => e.slug)).toEqual(['low', 'mid', 'high'])
+    })
+
+    it('combina con otros filtros (estado + potencia)', () => {
+      const mixedStatus: Vehicle[] = [
+        makeVehicle({ slug: 'a', title: 'A', power: '200 hp', status: 'confirmado' }),
+        makeVehicle({ slug: 'b', title: 'B', power: '210 hp', status: 'rumor' }),
+      ]
+      const result = filterAndSortEntities({
+        entities: mixedStatus,
+        query: '',
+        status: 'confirmado',
+        selectedClass: null,
+        selectedTags: [],
+        sortBy: 'default',
+        powerRange: [0, 1000],
+      })
+      expect(result.map((e) => e.slug)).toEqual(['a'])
+    })
+  })
 })

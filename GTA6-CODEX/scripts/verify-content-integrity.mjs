@@ -61,11 +61,31 @@ function main() {
   fs.writeFileSync(FIXTURE_PATH, JSON.stringify(BAD_ENTITY, null, 2))
 
   try {
-    const result = spawnSync('npx', ['next', 'build'], {
+    // Todo el comando va en un solo string (sin array de `args` separado):
+    // Node emite el warning de deprecación DEP0190 si se combina
+    // `shell: true` con un array de `args`, porque en general no puede
+    // garantizar que esos argumentos se escapen bien para la shell de turno.
+    // Acá no hay ningún dato dinámico ni entrada de usuario en el comando —
+    // es un string fijo — así que no hay riesgo de seguridad real, pero se
+    // pasa como string único igual para seguir la recomendación de Node y
+    // no imprimir el warning en cada corrida.
+    const result = spawnSync('npx next build', {
       encoding: 'utf-8',
       env: { ...process.env },
+      // En Windows, `npx` es `npx.cmd`, no un ejecutable nativo: spawnSync
+      // no puede lanzarlo sin pasar por una shell. Sin `shell: true` acá,
+      // el spawn falla con ENOENT y `result.status` queda en `null` (nunca
+      // en 0 ni en un código de error real), lo que rompía este chequeo en
+      // Windows aunque `next build` en sí funcionara perfecto corrido a mano.
+      shell: true,
     })
     const output = `${result.stdout || ''}${result.stderr || ''}`
+
+    if (result.error) {
+      throw new Error(
+        `No se pudo lanzar "npx next build" (spawn falló antes de correr nada): ${result.error.message}`
+      )
+    }
 
     assert.equal(
       result.status,

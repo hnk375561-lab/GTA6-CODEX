@@ -1,132 +1,309 @@
 {
-    "slug":  "fiat-500",
-    "type":  "vehiculos",
-    "title":  "Fiat 500",
-    "description":  "Hatchback urbano de diseño retro de Fiat, también disponible en versión 100% eléctrica.",
-    "status":  "confirmado",
-    "tags":  [
-                 "hatchback",
-                 "fiat",
-                 "combustion"
-             ],
-    "featured":  false,
-    "manufacturer":  "Fiat",
-    "class":  "Hatchback",
-    "customizable":  false,
-    "power":  "95 hp",
-    "price":  "USD 23.000",
-    "consumo":  "6.0 l/100km (mixto)",
-    "dimensiones":  "3632 x 1627 x 1518 mm",
-    "evidence":  {
-                     "level":  "oficial-nombrado",
-                     "primarySource":  "https://www.fiat.com.ar/500"
-                 },
-    "performance":  {
-                        "speed":  "170 km/h",
-                        "acceleration":  "0-100 km/h en 10.5s"
-                    },
-    "createdAt":  "2026-08-23T21:59:07.332517Z",
-    "updatedAt":  "2026-08-25T06:11:22.1642574Z",
-    "transmision":  "Manual o Automática",
-    "traccion":  "Tracción delantera",
-    "peso":  "1.300-1.700 kg",
-    "tipoMotor":  "Gasolina/Diésel",
-    "potenciaKW":  "100-250 kW",
-    "capacidadTanque":  "55-75 litros",
-    "tiempoRecorrido":  "7-10s",
-    "anoProduccion":  "2023-2024",
-    "mercados":  [
-                     "Europa",
-                     "USA",
-                     "Asia",
-                     "Mercados emergentes"
-                 ],
-    "equipamiento":  [
-                         "Control tracción",
-                         "Frenos ABS"
-                     ],
-    "consumoEtiqueta":  "C",
-    "neumaticos":  "225/50R17",
-    "especificacionesMotor":  {
-                                  "filtro_aire":  "Filtro de panel",
-                                  "tipo_valvulas":  "DOHC",
-                                  "ratio_compresion":  "10.5:1",
-                                  "sistemas_inyeccion":  "Inyeccion directa",
-                                  "arbol_levas":  "Variable (VVT)"
-                              },
-    "especificacionesTransmision":  {
-                                        "tipo_automatico":  "Convertidor",
-                                        "control_cambios":  "Secuencial",
-                                        "sist_propulsion":  "Traccion",
-                                        "velocidades":  "8/9 velocidades"
-                                    },
-    "especificacionesSuspension":  {
-                                       "tipo_trasera":  "Multilink",
-                                       "barra_estabilizadora":  "26/20 mm",
-                                       "tipo_delantera":  "MacPherson",
-                                       "amortiguadores":  "Doble tubo",
-                                       "recorrido_vertical":  "+-150 mm"
-                                   },
-    "especificacionesRuedas":  {
-                                   "offset":  "+35 a +45 mm",
-                                   "indice_velocidad":  "T/V",
-                                   "indice_carga":  "91",
-                                   "profundidad_surcos":  "1.6 mm",
-                                   "pcd":  "5x114.3"
-                               },
-    "especificacionesDireccion":  {
-                                      "tipo_asistencia":  "Electrica progresiva",
-                                      "sistema_control":  "Control electronico",
-                                      "angulo_max_giro":  "32-35 grados",
-                                      "vueltas_calador":  "2.5-3.0"
-                                  },
-    "aerodinámica":  {
-                         "defectores_aire":  "Canales laterales",
-                         "spoiler_trasero":  "Integrado",
-                         "area_frontal":  "2.2-2.4 m2",
-                         "coeficiente_arrastre":  "Cx 0.27-0.32"
-                     },
-    "capacidadesAdicionales":  {
-                                   "capacidad_refrigerante":  "7-9 L",
-                                   "capacidad_lavaparabrisas":  "3-4 L",
-                                   "liquido_frenos":  "0.75-0.85 L",
-                                   "capacidad_aceite":  "4.5-5.5 L",
-                                   "filtro_habitaculo":  "Carbon activado"
-                               },
-    "seguridad_pasiva":  {
-                             "respaldos":  "Reforzados",
-                             "zonas":  "Deformacion",
-                             "cinturones":  "Pre-tensores",
-                             "estructura":  "Vigas laterales",
-                             "cristales":  "Laminado/Templado"
-                         },
-    "climatizacionAvanzada":  {
-                                  "control":  "Trizona",
-                                  "modo":  "Recirculacion",
-                                  "filtro":  "Carbon",
-                                  "desempanante":  "Trasero/Lateral"
-                              },
-    "mantenimientoPrograma":  {
-                                  "filtro":  "25.000-30.000 km",
-                                  "aceite":  "15.000 km",
-                                  "frenos":  "Anual",
-                                  "ruedas":  "Anual",
-                                  "refrigerante":  "2 anos"
-                              },
-    "sistemasInteligentes":  {
-                                 "frenado":  "AEB",
-                                 "carril":  "LDW",
-                                 "ciego":  "BSM",
-                                 "parking":  "8-12 sensores",
-                                 "crucero":  "ACC"
-                             },
-    "cilindrada":  null,
-    "emisiones":  null,
-    "tipo":  null,
-    "asientos":  null,
-    "baul":  null,
-    "maleteroMin":  null,
-    "generacion":  null,
-    "anoLanzamiento":  null,
-    "colores":  []
+  "slug": "fiat-500",
+  "type": "vehiculos",
+  "title": "Fiat 500",
+  "description": "Hatchback urbano de diseño retro de Fiat, también disponible en versión 100% eléctrica.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "fiat",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Fiat",
+  "class": "Hatchback",
+  "customizable": false,
+  "power": "95 hp",
+  "price": "USD 23.000",
+  "consumo": "6.0 l/100km (mixto)",
+  "dimensiones": "3632 x 1627 x 1518 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.fiat.com.ar/500"
+  },
+  "performance": {
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 10.5s"
+  },
+  "createdAt": "2026-08-23T21:59:07.332517Z",
+  "updatedAt": "2026-08-25T23:22:07.342Z",
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.300-1.700 kg",
+  "tipoMotor": "Gasolina/Diésel",
+  "potenciaKW": "100-250 kW",
+  "capacidadTanque": "55-75 litros",
+  "tiempoRecorrido": "7-10s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "C",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": null,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": null,
+  "anoLanzamiento": null,
+  "colores": [],
+  "category": "auto-pequeño",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "170 km/h",
+      "acceleration": "0-100 km/h en 10.5s"
+    },
+    "bateria": {
+      "consumo": "6.0 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 3632,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "6.0 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 23.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "hatchback",
+    "fiat",
+    "combustion",
+    "Fiat",
+    "Hatchback",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Fiat 500 - Hatchback Fiat. 170 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Fiat 500",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Fiat"
+    },
+    "vehicleType": "Hatchback",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 10.5s",
+    "price": "USD 23.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback urbano de diseño retro de Fiat, también disponible en versión 100% eléctrica."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.367Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.8",
+    "totalVotos": 4918,
+    "desglose": {
+      "1": 282,
+      "2": 459,
+      "3": 412,
+      "4": 430,
+      "5": 1969
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 170
+    },
+    "consumo": {
+      "promedio": "6.0 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

@@ -8,7 +8,7 @@ import type { ResolvedDisplayImage } from '@/lib/images'
 import { StatBar } from '@/components/entities/StatBar'
 import { cn } from '@/lib/utils'
 
-export const MAX_COMPARE = 3
+export const MAX_COMPARE = 5
 
 interface VehicleCompareBarProps {
   selected: Vehicle[]
@@ -115,99 +115,110 @@ interface VehicleCompareTableProps {
 export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: VehicleCompareTableProps) {
   if (vehicles.length === 0) return null
 
+  // Con 2-3 vehículos las columnas siempre entran cómodas en una fila.
+  // A partir de 4 (hasta MAX_COMPARE = 5), en pantallas angostas la
+  // grilla quedaría demasiado apretada — en vez de eso le ponemos un piso
+  // de ancho por columna y dejamos que el contenedor scrollee horizontal.
+  // El `minWidth` es lo único que difiere entre casos: en 2-3 vehículos
+  // queda `undefined` (mismo layout de siempre, sin scroll).
+  const scrollable = vehicles.length > 3
+  const minWidth = scrollable ? `${vehicles.length * 180}px` : undefined
+
   return (
-    <div>
-      <div
-        className="grid gap-4"
-        style={{ gridTemplateColumns: `repeat(${vehicles.length}, minmax(0, 1fr))` }}
-      >
-        {vehicles.map((v) => {
-          const img = imageBySlug?.[`vehiculos/${v.slug}`]
-          return (
-            <div key={v.slug} className="flex flex-col">
-              <div className="relative mb-3 aspect-[4/3] overflow-hidden rounded-xl border border-auto-border bg-auto-surface">
-                {img?.src ? (
-                  <Image
-                    src={img.src}
-                    alt={v.title}
-                    fill
-                    sizes={
-                      vehicles.length <= 2
-                        ? '(min-width: 1024px) 900px, (min-width: 640px) 700px, 500px'
-                        : '(min-width: 1024px) 700px, (min-width: 640px) 500px, 400px'
-                    }
-                    quality={95}
-                    className="object-cover"
-                  />
-                ) : (
-                  <div className="flex h-full w-full items-center justify-center text-xs text-auto-text-tertiary">
-                    Sin imagen
-                  </div>
-                )}
-                {onRemove && (
-                  <button
-                    type="button"
-                    onClick={() => onRemove(v.slug)}
-                    aria-label={`Quitar ${v.title} de la comparación`}
-                    className="absolute right-1.5 top-1.5 flex h-6 w-6 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white backdrop-blur-sm transition-colors hover:bg-black/80"
-                  >
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
-                      <path d="M18 6 6 18M6 6l12 12" />
-                    </svg>
-                  </button>
+    <div className={scrollable ? 'overflow-x-auto' : undefined}>
+      <div style={{ minWidth }}>
+        <div
+          className="grid gap-4"
+          style={{ gridTemplateColumns: `repeat(${vehicles.length}, minmax(0, 1fr))` }}
+        >
+          {vehicles.map((v) => {
+            const img = imageBySlug?.[`vehiculos/${v.slug}`]
+            return (
+              <div key={v.slug} className="flex flex-col">
+                <div className="relative mb-3 aspect-[4/3] overflow-hidden rounded-xl border border-auto-border bg-auto-surface">
+                  {img?.src ? (
+                    <Image
+                      src={img.src}
+                      alt={v.title}
+                      fill
+                      sizes={
+                        vehicles.length <= 2
+                          ? '(min-width: 1024px) 900px, (min-width: 640px) 700px, 500px'
+                          : '(min-width: 1024px) 700px, (min-width: 640px) 500px, 400px'
+                      }
+                      quality={95}
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center text-xs text-auto-text-tertiary">
+                      Sin imagen
+                    </div>
+                  )}
+                  {onRemove && (
+                    <button
+                      type="button"
+                      onClick={() => onRemove(v.slug)}
+                      aria-label={`Quitar ${v.title} de la comparación`}
+                      className="absolute right-1.5 top-1.5 flex h-6 w-6 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white backdrop-blur-sm transition-colors hover:bg-black/80"
+                    >
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                        <path d="M18 6 6 18M6 6l12 12" />
+                      </svg>
+                    </button>
+                  )}
+                </div>
+                <Link
+                  href={`/vehiculos/${v.slug}`}
+                  className="mb-1 line-clamp-2 text-sm font-bold text-auto-text transition-colors hover:text-auto-accent"
+                >
+                  {v.title}
+                </Link>
+                {v.manufacturer && (
+                  <p className="text-xs text-auto-text-secondary">{v.manufacturer}</p>
                 )}
               </div>
-              <Link
-                href={`/vehiculos/${v.slug}`}
-                className="mb-1 line-clamp-2 text-sm font-bold text-auto-text transition-colors hover:text-auto-accent"
-              >
-                {v.title}
-              </Link>
-              {v.manufacturer && (
-                <p className="text-xs text-auto-text-secondary">{v.manufacturer}</p>
-              )}
-            </div>
-          )
-        })}
-      </div>
+            )
+          })}
+        </div>
 
-      <div className="mt-6 space-y-5 border-t border-auto-border pt-5">
-        <CompareRow label="Clase">
-          {vehicles.map((v) => (
-            <span key={v.slug} className="text-sm capitalize text-auto-text">
-              {v.class ? v.class.replace(/-/g, ' ') : '—'}
-            </span>
-          ))}
-        </CompareRow>
-
-        <CompareRow label="Personalizable">
-          {vehicles.map((v) => (
-            <span key={v.slug} className="text-sm text-auto-text">
-              {v.customizable ? 'Sí' : v.customizable === false ? 'No' : '—'}
-            </span>
-          ))}
-        </CompareRow>
-
-        {PERFORMANCE_ROWS.map((row) => (
-          <CompareRow key={row.key} label={row.label} align="stretch">
+        <div className="mt-6 space-y-5 border-t border-auto-border pt-5">
+          <CompareRow label="Clase">
             {vehicles.map((v) => (
-              <div key={v.slug}>
-                <StatBar label={row.label} value={v.performance?.[row.key]} />
-                {!v.performance?.[row.key] && (
-                  <span className="text-xs text-auto-text-tertiary">Sin dato</span>
-                )}
-              </div>
+              <span key={v.slug} className="text-sm capitalize text-auto-text">
+                {v.class ? v.class.replace(/-/g, ' ') : '—'}
+              </span>
             ))}
           </CompareRow>
-        ))}
 
-        <CompareRow label="Conducido por">
-          {vehicles.map((v) => (
-            <span key={v.slug} className="text-sm text-auto-text">
-              {v.driven_by && v.driven_by.length > 0 ? v.driven_by.join(', ') : '—'}
-            </span>
+          <CompareRow label="Personalizable">
+            {vehicles.map((v) => (
+              <span key={v.slug} className="text-sm text-auto-text">
+                {v.customizable ? 'Sí' : v.customizable === false ? 'No' : '—'}
+              </span>
+            ))}
+          </CompareRow>
+
+          {PERFORMANCE_ROWS.map((row) => (
+            <CompareRow key={row.key} label={row.label} align="stretch">
+              {vehicles.map((v) => (
+                <div key={v.slug}>
+                  <StatBar label={row.label} value={v.performance?.[row.key]} />
+                  {!v.performance?.[row.key] && (
+                    <span className="text-xs text-auto-text-tertiary">Sin dato</span>
+                  )}
+                </div>
+              ))}
+            </CompareRow>
           ))}
-        </CompareRow>
+
+          <CompareRow label="Conducido por">
+            {vehicles.map((v) => (
+              <span key={v.slug} className="text-sm text-auto-text">
+                {v.driven_by && v.driven_by.length > 0 ? v.driven_by.join(', ') : '—'}
+              </span>
+            ))}
+          </CompareRow>
+        </div>
       </div>
     </div>
   )

@@ -94,6 +94,22 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/favoritos"
+                  className="link-underline text-auto-text-secondary transition-colors hover:text-auto-accent-strong"
+                >
+                  Favoritos
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/financiamiento"
+                  className="link-underline text-auto-text-secondary transition-colors hover:text-auto-accent-strong"
+                >
+                  Financiamiento
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/privacidad"
                   className="link-underline text-auto-text-secondary transition-colors hover:text-auto-accent-strong"
                 >

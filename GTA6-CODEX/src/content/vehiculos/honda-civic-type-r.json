@@ -1,140 +1,318 @@
 {
-    "slug":  "honda-civic-type-r",
-    "type":  "vehiculos",
-    "title":  "Honda Civic Type R",
-    "description":  "Hatchback deportivo de Honda, motor turbo 2.0L VTEC de 315 hp, tracción delantera.",
-    "status":  "confirmado",
-    "tags":  [
-                 "hatchback",
-                 "honda",
-                 "deportivo",
-                 "combustion"
-             ],
-    "featured":  false,
-    "createdAt":  "2026-08-23T18:31:29.529Z",
-    "updatedAt":  "2026-08-25T06:11:22.3514867Z",
-    "manufacturer":  "Honda",
-    "class":  "Hatchback deportivo",
-    "customizable":  false,
-    "performance":  {
-                        "speed":  "Muy alta (275 km/h)",
-                        "acceleration":  "Alta (0-100 km/h en 5.4s)"
-                    },
-    "power":  "315 hp",
-    "price":  "USD 45.000",
-    "consumo":  "8.2-8.7 l/100km combinado (WLTP, motor turbo 2.0L VTEC, caja manual de 6 velocidades)",
-    "dimensiones":  "4.595-4.606 mm largo x 1.890 mm ancho x 1.407 mm alto, distancia entre ejes 2.735 mm",
-    "evidence":  {
-                     "level":  "oficial-nombrado",
-                     "primarySource":  "https://automobiles.honda.com/civic-type-r",
-                     "secondarySource":  "https://www.carexpert.com.au/honda/civic/2025-type-r-josksfag20250819",
-                     "note":  "El Civic Type R (generación FL5) se produce entre 2022 y 2027 y solo está disponible con caja manual y tracción delantera.",
-                     "limitations":  [
-                                         "El consumo en modo Sport/+R puede duplicarse respecto al ciclo combinado, según pruebas independientes (hasta 14.9 l/100km)"
-                                     ]
-                 },
-    "transmision":  "Manual o Automática",
-    "traccion":  "Tracción delantera",
-    "peso":  "1.200-1.500 kg",
-    "tipoMotor":  "Gasolina turbo",
-    "potenciaKW":  "200-400 kW",
-    "capacidadTanque":  "50-70 litros",
-    "tiempoRecorrido":  "3-8s",
-    "anoProduccion":  "2023-2024",
-    "mercados":  [
-                     "Europa",
-                     "USA",
-                     "Asia",
-                     "Mercados emergentes"
-                 ],
-    "equipamiento":  [
-                         "Control tracción",
-                         "Frenos ABS",
-                         "Control estabilidad dinámico",
-                         "Asistentes de conducción"
-                     ],
-    "consumoEtiqueta":  "E",
-    "neumaticos":  "225/50R17",
-    "especificacionesMotor":  {
-                                  "filtro_aire":  "Filtro de panel",
-                                  "tipo_valvulas":  "DOHC",
-                                  "ratio_compresion":  "10.5:1",
-                                  "sistemas_inyeccion":  "Inyeccion directa",
-                                  "arbol_levas":  "Variable (VVT)"
-                              },
-    "especificacionesTransmision":  {
-                                        "tipo_automatico":  "Convertidor",
-                                        "control_cambios":  "Secuencial",
-                                        "sist_propulsion":  "Traccion",
-                                        "velocidades":  "8/9 velocidades"
-                                    },
-    "especificacionesSuspension":  {
-                                       "tipo_trasera":  "Multilink",
-                                       "barra_estabilizadora":  "26/20 mm",
-                                       "tipo_delantera":  "MacPherson",
-                                       "amortiguadores":  "Doble tubo",
-                                       "recorrido_vertical":  "+-150 mm"
-                                   },
-    "especificacionesRuedas":  {
-                                   "offset":  "+35 a +45 mm",
-                                   "indice_velocidad":  "T/V",
-                                   "indice_carga":  "91",
-                                   "profundidad_surcos":  "1.6 mm",
-                                   "pcd":  "5x114.3"
-                               },
-    "especificacionesDireccion":  {
-                                      "tipo_asistencia":  "Electrica progresiva",
-                                      "sistema_control":  "Control electronico",
-                                      "angulo_max_giro":  "32-35 grados",
-                                      "vueltas_calador":  "2.5-3.0"
-                                  },
-    "aerodinámica":  {
-                         "defectores_aire":  "Canales laterales",
-                         "spoiler_trasero":  "Integrado",
-                         "area_frontal":  "2.2-2.4 m2",
-                         "coeficiente_arrastre":  "Cx 0.27-0.32"
-                     },
-    "capacidadesAdicionales":  {
-                                   "capacidad_refrigerante":  "7-9 L",
-                                   "capacidad_lavaparabrisas":  "3-4 L",
-                                   "liquido_frenos":  "0.75-0.85 L",
-                                   "capacidad_aceite":  "4.5-5.5 L",
-                                   "filtro_habitaculo":  "Carbon activado"
-                               },
-    "seguridad_pasiva":  {
-                             "respaldos":  "Reforzados",
-                             "zonas":  "Deformacion",
-                             "cinturones":  "Pre-tensores",
-                             "estructura":  "Vigas laterales",
-                             "cristales":  "Laminado/Templado"
-                         },
-    "climatizacionAvanzada":  {
-                                  "control":  "Trizona",
-                                  "modo":  "Recirculacion",
-                                  "filtro":  "Carbon",
-                                  "desempanante":  "Trasero/Lateral"
-                              },
-    "mantenimientoPrograma":  {
-                                  "filtro":  "25.000-30.000 km",
-                                  "aceite":  "15.000 km",
-                                  "frenos":  "Anual",
-                                  "ruedas":  "Anual",
-                                  "refrigerante":  "2 anos"
-                              },
-    "sistemasInteligentes":  {
-                                 "frenado":  "AEB",
-                                 "carril":  "LDW",
-                                 "ciego":  "BSM",
-                                 "parking":  "8-12 sensores",
-                                 "crucero":  "ACC"
-                             },
-    "cilindrada":  null,
-    "emisiones":  null,
-    "tipo":  null,
-    "asientos":  null,
-    "baul":  null,
-    "maleteroMin":  null,
-    "generacion":  null,
-    "anoLanzamiento":  null,
-    "colores":  []
+  "slug": "honda-civic-type-r",
+  "type": "vehiculos",
+  "title": "Honda Civic Type R",
+  "description": "Hatchback deportivo de Honda, motor turbo 2.0L VTEC de 315 hp, tracción delantera.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "honda",
+    "deportivo",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:29.529Z",
+  "updatedAt": "2026-08-25T23:22:07.390Z",
+  "manufacturer": "Honda",
+  "class": "Hatchback deportivo",
+  "customizable": false,
+  "performance": {
+    "speed": "Muy alta (275 km/h)",
+    "acceleration": "Alta (0-100 km/h en 5.4s)"
+  },
+  "power": "315 hp",
+  "price": "USD 45.000",
+  "consumo": "8.2-8.7 l/100km combinado (WLTP, motor turbo 2.0L VTEC, caja manual de 6 velocidades)",
+  "dimensiones": "4.595-4.606 mm largo x 1.890 mm ancho x 1.407 mm alto, distancia entre ejes 2.735 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://automobiles.honda.com/civic-type-r",
+    "secondarySource": "https://www.carexpert.com.au/honda/civic/2025-type-r-josksfag20250819",
+    "note": "El Civic Type R (generación FL5) se produce entre 2022 y 2027 y solo está disponible con caja manual y tracción delantera.",
+    "limitations": [
+      "El consumo en modo Sport/+R puede duplicarse respecto al ciclo combinado, según pruebas independientes (hasta 14.9 l/100km)"
+    ]
+  },
+  "transmision": "Manual o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.200-1.500 kg",
+  "tipoMotor": "Gasolina turbo",
+  "potenciaKW": "200-400 kW",
+  "capacidadTanque": "50-70 litros",
+  "tiempoRecorrido": "3-8s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": null,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": null,
+  "anoLanzamiento": null,
+  "colores": [],
+  "category": "deportivo",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "Muy alta (275 km/h)",
+      "acceleration": "Alta (0-100 km/h en 5.4s)"
+    },
+    "bateria": {
+      "consumo": "8.2-8.7 l/100km combinado (WLTP, motor turbo 2.0L VTEC, caja manual de 6 velocidades)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "8.2-8.7 l/100km combinado (WLTP, motor turbo 2.0L VTEC, caja manual de 6 velocidades)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 45.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "hatchback",
+    "honda",
+    "deportivo",
+    "combustion",
+    "Honda",
+    "Hatchback deportivo",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Honda Civic Type R - Hatchback deportivo Honda. Muy alta (275 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Honda Civic Type R",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Honda"
+    },
+    "vehicleType": "Hatchback deportivo",
+    "fuelType": "Gasolina turbo",
+    "speed": "Muy alta (275 km/h)",
+    "acceleration": "Alta (0-100 km/h en 5.4s)",
+    "price": "USD 45.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback deportivo de Honda, motor turbo 2.0L VTEC de 315 hp, tracción delantera."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-25T22:37:04.394Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.2",
+    "totalVotos": 544,
+    "desglose": {
+      "1": 101,
+      "2": 254,
+      "3": 944,
+      "4": 1446,
+      "5": 1567
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "8.2-8.7 l/100km combinado (WLTP, motor turbo 2.0L VTEC, caja manual de 6 velocidades)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  }
 }

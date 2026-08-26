@@ -75,6 +75,12 @@ export interface Vehicle extends BaseEntity {
   driven_by?: string[]
   locations?: string[]
   customizable?: boolean
+  /** Texto libre tipo "255 hp" o "200 hp (2.0 TFSI base)". Siempre
+   *  presente en el contenido real (250/250 fichas a la fecha), pero
+   *  sigue siendo texto libre — ver `parsePowerHp` en
+   *  `@/lib/vehicle-power.ts` para extraer el número de forma segura en
+   *  vez de castear/parsear en cada lugar que lo necesite. */
+  power?: string
   performance?: {
     speed?: string
     acceleration?: string
