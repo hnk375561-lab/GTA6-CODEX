@@ -17,19 +17,21 @@
   "consumo": "7.2 l/100km combinado (referencia)",
   "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
   "evidence": {
-    "level": "respaldado",
+    "level": "oficial-nombrado",
     "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
     "limitations": [
       "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
-    ]
+      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial.",
+      "Ronda evidencia (ago 2026, lote 3/95): fuente oficial del fabricante verificada por búsqueda antes de subir el nivel de evidencia. Sitio oficial de Harley-Davidson confirma motor Milwaukee-Eight de 117 pulgadas cúbicas (1923cc) en la gama actual del Street Glide; la cifra de potencia de esta ficha es de referencia y varía por año-modelo/mercado (última generación homologa ~107 hp / 175 Nm)."
+    ],
+    "primarySource": "https://www.harley-davidson.com/us/en/motorcycles/street-glide.html"
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.373Z",
+  "updatedAt": "2026-08-26T05:49:19.145Z",
   "transmision": "Manual secuencial",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -203,8 +205,8 @@
     "description": "Moto touring de la familia Grand American Touring de Harley-Davidson."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.387Z",
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-26T05:49:19.145Z",
     "dataQuality": 0.85
   },
   "indexed": true,

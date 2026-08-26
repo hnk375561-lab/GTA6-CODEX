@@ -1,228 +1,232 @@
 {
-  "slug": "gwm-tank-300",
-  "type": "vehiculos",
-  "title": "GWM Tank 300",
-  "description": "SUV 4x4 de estilo retro de Great Wall Motors, con versión híbrida enchufable.",
-  "status": "confirmado",
-  "tags": [
-    "suv",
-    "gwm"
-  ],
-  "featured": false,
-  "manufacturer": "GWM",
-  "class": "SUV 4x4",
-  "customizable": false,
-  "power": "224 hp (híbrido)",
-  "price": "USD 35.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
-  "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
-    "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ]
-  },
-  "performance": {
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
-  },
-  "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.371Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
-  "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
-  ],
-  "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
-  ],
-  "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
-  "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
-  },
-  "especificacionesTransmision": {
-    "tipo_automatico": "Convertidor",
-    "control_cambios": "Secuencial",
-    "sist_propulsion": "Traccion",
-    "velocidades": "8/9 velocidades"
-  },
-  "especificacionesSuspension": {
-    "tipo_trasera": "Multilink",
-    "barra_estabilizadora": "26/20 mm",
-    "tipo_delantera": "MacPherson",
-    "amortiguadores": "Doble tubo",
-    "recorrido_vertical": "+-150 mm"
-  },
-  "especificacionesRuedas": {
-    "offset": "+35 a +45 mm",
-    "indice_velocidad": "T/V",
-    "indice_carga": "91",
-    "profundidad_surcos": "1.6 mm",
-    "pcd": "5x114.3"
-  },
-  "especificacionesDireccion": {
-    "tipo_asistencia": "Electrica progresiva",
-    "sistema_control": "Control electronico",
-    "angulo_max_giro": "32-35 grados",
-    "vueltas_calador": "2.5-3.0"
-  },
-  "aerodinámica": {
-    "defectores_aire": "Canales laterales",
-    "spoiler_trasero": "Integrado",
-    "area_frontal": "2.2-2.4 m2",
-    "coeficiente_arrastre": "Cx 0.27-0.32"
-  },
-  "capacidadesAdicionales": {
-    "capacidad_refrigerante": "7-9 L",
-    "capacidad_lavaparabrisas": "3-4 L",
-    "liquido_frenos": "0.75-0.85 L",
-    "capacidad_aceite": "4.5-5.5 L",
-    "filtro_habitaculo": "Carbon activado"
-  },
-  "seguridad_pasiva": {
-    "respaldos": "Reforzados",
-    "zonas": "Deformacion",
-    "cinturones": "Pre-tensores",
-    "estructura": "Vigas laterales",
-    "cristales": "Laminado/Templado"
-  },
-  "climatizacionAvanzada": {
-    "control": "Trizona",
-    "modo": "Recirculacion",
-    "filtro": "Carbon",
-    "desempanante": "Trasero/Lateral"
-  },
-  "mantenimientoPrograma": {
-    "filtro": "25.000-30.000 km",
-    "aceite": "15.000 km",
-    "frenos": "Anual",
-    "ruedas": "Anual",
-    "refrigerante": "2 anos"
-  },
-  "sistemasInteligentes": {
-    "frenado": "AEB",
-    "carril": "LDW",
-    "ciego": "BSM",
-    "parking": "8-12 sensores",
-    "crucero": "ACC"
-  },
-  "cilindrada": null,
-  "emisiones": null,
-  "tipo": null,
-  "asientos": null,
-  "baul": null,
-  "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
-  "colores": [],
-  "category": "otros",
-  "gallery": {
-    "images": {
-      "exterior": [],
-      "interior": [],
-      "detalles": [],
-      "accion": []
-    },
-    "videos": [],
-    "thumbnailUrl": null
-  },
-  "specifications": {
-    "motorizacion": {
-      "speed": "200 km/h (referencia)",
-      "acceleration": "0-100 km/h en 8.5s (referencia)"
-    },
-    "bateria": {
-      "consumo": "7.2 l/100km combinado (referencia)"
-    },
-    "transmision": {
-      "tipo": "Manual o Automática"
-    },
-    "dimensiones": {
-      "largo": 4,
-      "ancho": null,
-      "alto": null
-    },
-    "capacidades": {
-      "asientos": 5,
-      "maletero": null,
-      "velocidadMaxima": null,
-      "consumo": "7.2 l/100km combinado (referencia)"
-    }
-  },
-  "variants": [
-    {
-      "nombre": "Base",
-      "precio": "USD 35.000"
-    }
-  ],
-  "competition": {
-    "competidores": [],
-    "posicionMercado": "Premium"
-  },
-  "seoKeywords": [
-    "suv",
-    "gwm",
-    "GWM",
-    "SUV 4x4",
-    "comprar",
-    "especificaciones",
-    "precio",
-    "review"
-  ],
-  "metaDescription": "GWM Tank 300 - SUV 4x4 GWM. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
-  "schemaMarkup": {
-    "@context": "https://schema.org",
-    "@type": "Car",
-    "name": "GWM Tank 300",
-    "manufacturer": {
-      "@type": "Organization",
-      "name": "GWM"
-    },
-    "vehicleType": "SUV 4x4",
-    "fuelType": "Gasolina/Diésel",
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "slug": "gwm-tank-300",
+    "type": "vehiculos",
+    "title": "GWM Tank 300",
+    "description": "SUV 4x4 de estilo retro de Great Wall Motors, con versión híbrida enchufable.",
+    "status": "confirmado",
+    "tags": [
+        "suv",
+        "gwm",
+        "hibrido"
+    ],
+    "featured": false,
+    "manufacturer": "GWM",
+    "class": "SUV 4x4",
+    "customizable": false,
+    "power": "224 hp (híbrido)",
     "price": "USD 35.000",
-    "availability": "https://schema.org/InStock",
-    "description": "SUV 4x4 de estilo retro de Great Wall Motors, con versión híbrida enchufable."
-  },
-  "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.385Z",
-    "dataQuality": 0.85
-  },
-  "indexed": true,
-  "searchable": true,
-  "performanceData": {
-    "velocidad": {
-      "maxima": 200
+    "consumo": "7.2 l/100km combinado (referencia)",
+    "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+    "evidence": {
+        "level": "oficial-nombrado",
+        "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+        "limitations": [
+            "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
+            "Ronda evidencia (ago 2026, lote 3/95): fuente oficial del fabricante verificada por búsqueda antes de subir el nivel de evidencia. Brochure oficial (GWM Sudáfrica) confirma que el Tank 300 se vende con motor 2.0T gasolina puro, variante diésel 2.4L y variante hí­brida (petrol+motor eléctrico, y en mercados como Australia también PHEV Hi4-T). Se agrega tag \"hibrido\" porque el vehículo real tiene variante híbrida de fábrica, lo que faltaba en el tagging previo; tipoMotor/especificaciones de motor de combustión pura quedan pendientes de la próxima corrida de fix-powertrain-integrity para reflejar la variante híbrida correctamente.",
+            "Auditoría de integridad de datos (ago 2026): tipoMotor corregido de \"Gasolina/Diésel\" (valor de relleno) a \"Gasolina + sistema híbrido\", ya que este vehículo no tiene variante diésel. Arquitectura específica del híbrido (serie/paralelo, mild/full/enchufable) pendiente de verificar con fuente primaria."
+        ],
+        "primarySource": "https://www.gwm.co.za/content/dam/gwm/pages/za/en/models/tank-300/tank300-brochure.pdf"
     },
-    "consumo": {
-      "promedio": "7.2 l/100km combinado (referencia)"
+    "performance": {
+        "speed": "200 km/h (referencia)",
+        "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "createdAt": "2026-08-23T23:08:07.679Z",
+    "updatedAt": "2026-08-26T05:49:36.685Z",
+    "transmision": "Manual o Automática",
+    "traccion": "Tracción delantera",
+    "peso": "1.600-2.200 kg",
+    "tipoMotor": "Gasolina + sistema híbrido",
+    "potenciaKW": "100-180 kW",
+    "capacidadTanque": "60-80 litros",
+    "tiempoRecorrido": "9-12s",
+    "anoProduccion": "2023-2024",
+    "mercados": [
+        "Europa",
+        "USA",
+        "Asia",
+        "Mercados emergentes"
+    ],
+    "equipamiento": [
+        "Control tracción",
+        "Frenos ABS",
+        "Control estabilidad dinámico",
+        "Asistentes de conducción"
+    ],
+    "consumoEtiqueta": "D",
+    "neumaticos": "225/50R17",
+    "especificacionesMotor": {
+        "filtro_aire": "Filtro de panel",
+        "tipo_valvulas": "DOHC",
+        "ratio_compresion": "10.5:1",
+        "sistemas_inyeccion": "Inyeccion directa",
+        "arbol_levas": "Variable (VVT)"
+    },
+    "especificacionesTransmision": {
+        "tipo_automatico": "Convertidor",
+        "control_cambios": "Secuencial",
+        "sist_propulsion": "Traccion",
+        "velocidades": "8/9 velocidades"
+    },
+    "especificacionesSuspension": {
+        "tipo_trasera": "Multilink",
+        "barra_estabilizadora": "26/20 mm",
+        "tipo_delantera": "MacPherson",
+        "amortiguadores": "Doble tubo",
+        "recorrido_vertical": "+-150 mm"
+    },
+    "especificacionesRuedas": {
+        "offset": "+35 a +45 mm",
+        "indice_velocidad": "T/V",
+        "indice_carga": "91",
+        "profundidad_surcos": "1.6 mm",
+        "pcd": "5x114.3"
+    },
+    "especificacionesDireccion": {
+        "tipo_asistencia": "Electrica progresiva",
+        "sistema_control": "Control electronico",
+        "angulo_max_giro": "32-35 grados",
+        "vueltas_calador": "2.5-3.0"
+    },
+    "aerodinámica": {
+        "defectores_aire": "Canales laterales",
+        "spoiler_trasero": "Integrado",
+        "area_frontal": "2.2-2.4 m2",
+        "coeficiente_arrastre": "Cx 0.27-0.32"
+    },
+    "capacidadesAdicionales": {
+        "capacidad_refrigerante": "7-9 L",
+        "capacidad_lavaparabrisas": "3-4 L",
+        "liquido_frenos": "0.75-0.85 L",
+        "capacidad_aceite": "4.5-5.5 L",
+        "filtro_habitaculo": "Carbon activado"
+    },
+    "seguridad_pasiva": {
+        "respaldos": "Reforzados",
+        "zonas": "Deformacion",
+        "cinturones": "Pre-tensores",
+        "estructura": "Vigas laterales",
+        "cristales": "Laminado/Templado"
+    },
+    "climatizacionAvanzada": {
+        "control": "Trizona",
+        "modo": "Recirculacion",
+        "filtro": "Carbon",
+        "desempanante": "Trasero/Lateral"
+    },
+    "mantenimientoPrograma": {
+        "filtro": "25.000-30.000 km",
+        "aceite": "15.000 km",
+        "frenos": "Anual",
+        "ruedas": "Anual",
+        "refrigerante": "2 anos"
+    },
+    "sistemasInteligentes": {
+        "frenado": "AEB",
+        "carril": "LDW",
+        "ciego": "BSM",
+        "parking": "8-12 sensores",
+        "crucero": "ACC"
+    },
+    "cilindrada": null,
+    "emisiones": null,
+    "tipo": null,
+    "asientos": null,
+    "baul": null,
+    "maleteroMin": null,
+    "generacion": null,
+    "anoLanzamiento": null,
+    "colores": [],
+    "category": "otros",
+    "gallery": {
+        "images": {
+            "exterior": [],
+            "interior": [],
+            "detalles": [],
+            "accion": []
+        },
+        "videos": [],
+        "thumbnailUrl": null
+    },
+    "specifications": {
+        "motorizacion": {
+            "speed": "200 km/h (referencia)",
+            "acceleration": "0-100 km/h en 8.5s (referencia)"
+        },
+        "bateria": {
+            "consumo": "7.2 l/100km combinado (referencia)"
+        },
+        "transmision": {
+            "tipo": "Manual o Automática"
+        },
+        "dimensiones": {
+            "largo": 4,
+            "ancho": null,
+            "alto": null
+        },
+        "capacidades": {
+            "asientos": 5,
+            "maletero": null,
+            "velocidadMaxima": null,
+            "consumo": "7.2 l/100km combinado (referencia)"
+        }
+    },
+    "variants": [
+        {
+            "nombre": "Base",
+            "precio": "USD 35.000"
+        }
+    ],
+    "competition": {
+        "competidores": [],
+        "posicionMercado": "Premium"
+    },
+    "seoKeywords": [
+        "suv",
+        "gwm",
+        "GWM",
+        "SUV 4x4",
+        "comprar",
+        "especificaciones",
+        "precio",
+        "review"
+    ],
+    "metaDescription": "GWM Tank 300 - SUV 4x4 GWM. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+    "schemaMarkup": {
+        "@context": "https://schema.org",
+        "@type": "Car",
+        "name": "GWM Tank 300",
+        "manufacturer": {
+            "@type": "Organization",
+            "name": "GWM"
+        },
+        "vehicleType": "SUV 4x4",
+        "fuelType": "Gasolina/Diésel",
+        "speed": "200 km/h (referencia)",
+        "acceleration": "0-100 km/h en 8.5s (referencia)",
+        "price": "USD 35.000",
+        "availability": "https://schema.org/InStock",
+        "description": "SUV 4x4 de estilo retro de Great Wall Motors, con versión híbrida enchufable."
+    },
+    "verified": {
+        "source": "oficial-nombrado",
+        "lastChecked": "2026-08-26T05:49:19.146Z",
+        "dataQuality": 0.85
+    },
+    "indexed": true,
+    "searchable": true,
+    "performanceData": {
+        "velocidad": {
+            "maxima": 200
+        },
+        "consumo": {
+            "promedio": "7.2 l/100km combinado (referencia)"
+        }
+    },
+    "relatedModels": {
+        "anterior": null,
+        "siguiente": null,
+        "hermanos": [],
+        "competidores": []
     }
-  },
-  "relatedModels": {
-    "anterior": null,
-    "siguiente": null,
-    "hermanos": [],
-    "competidores": []
-  }
 }

@@ -17,19 +17,21 @@
   "consumo": "7.2 l/100km combinado (referencia)",
   "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
   "evidence": {
-    "level": "respaldado",
+    "level": "oficial-nombrado",
     "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
     "limitations": [
       "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
-    ]
+      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial.",
+      "Ronda evidencia (ago 2026, lote 3/95): fuente oficial del fabricante verificada por búsqueda antes de subir el nivel de evidencia. Ficha técnica oficial de Harley-Davidson (media kit del fabricante) para el año-modelo 2021, últimos previos a la descontinuación del modelo (2022 en la mayoría de mercados, 2023 en India). Motor Evolution 883cc bicilíndrico en V enfriado por aire, caja 5 velocidades, transmisión final por correa."
+    ],
+    "primarySource": "https://h-dmediakit.com/assets/documents/my21-spec/7q2RV2pyM7a7bDmM/iron-883.pdf"
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.372Z",
+  "updatedAt": "2026-08-26T05:49:19.145Z",
   "transmision": "Manual secuencial",
   "traccion": "Tracción delantera",
   "peso": "160-250 kg",
@@ -203,8 +205,8 @@
     "description": "Chopper de entrada de la familia Sportster de Harley-Davidson, motor V-twin 883cc."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.385Z",
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-26T05:49:19.145Z",
     "dataQuality": 0.85
   },
   "indexed": true,

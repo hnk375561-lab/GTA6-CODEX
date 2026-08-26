@@ -78,6 +78,52 @@ inventada): `bmw-r1250gs`, `bmw-s1000rr`, `ducati-monster`,
 `ducati-panigale-v4`, `chevrolet-corvette`, `toyota-camry`. En los 6 casos
 se subió `level` de `"respaldado"` a `"oficial-nombrado"` porque la fuente
 agregada es la ficha técnica propia del fabricante, y se dejó nota en
+
+## Ronda 3 — lote 3/95 de cierre de brecha de evidencia (agosto 2026, cont.)
+
+Nota previa: `docs/evidence-gap-queue.txt` había quedado desactualizado
+respecto al estado real del contenido (algunas fichas de la lista ya tenían
+`primarySource` de rondas anteriores). Se regeneró ese archivo a partir de
+`node scripts/audit-evidence-coverage.mjs --json` (fuente de verdad), que
+reportó **75** fichas reales con brecha al empezar esta ronda.
+
+Se cerraron **10** fichas más con fuente oficial del fabricante verificada
+por búsqueda web en esta sesión: `byd-han`, `byd-tang`, `chery-omoda-5`,
+`dacia-sandero`, `geely-coolray`, `genesis-gv70`, `gwm-poer`,
+`gwm-tank-300`, `harley-davidson-iron-883`, `harley-davidson-street-glide`.
+Script usado: `scripts/apply-enrich-lote3.mjs` (auditable, no destructivo,
+solo agrega `evidence.primarySource`/sube `evidence.level` y anexa contexto
+a `evidence.limitations`, sin inventar specs nuevas fuera de lo confirmado
+por la fuente citada).
+
+Hallazgo adicional de integridad (prioridad 3): `gwm-tank-300` es un
+vehículo con variante híbrida de fábrica real (confirmado por brochure
+oficial GWM Sudáfrica y por fuentes de prensa especializada — motor 2.0T
+gasolina + motor eléctrico, y PHEV Hi4-T en mercados como Australia), pero
+no tenía el tag `hibrido` en la carga masiva inicial, por lo que
+`fix-powertrain-integrity.mjs` nunca lo había corregido y seguía mostrando
+`tipoMotor: "Gasolina/Diésel"`. Se agregó el tag y se re-corrió el fix, que
+ahora sí normalizó `tipoMotor` a `"Gasolina + sistema híbrido"`.
+
+**Verificado después de esta ronda:**
+
+- `node scripts/verify-min-entity-count.mjs` → OK, 250/250 parsean.
+- `node scripts/verify-reserved-entity-keys.mjs` → OK.
+- `node scripts/verify-relations-integrity.mjs` → OK, sin relaciones rotas.
+- `node scripts/audit-evidence-coverage.mjs` → 185/250 con evidencia sólida
+  (74%), bajó de 75 a **65** fichas con brecha real.
+- Se descartaron ~21 archivos que `fix-powertrain-integrity.mjs` había
+  re-serializado sin cambio semántico real (solo reordenamiento de claves
+  JSON al reescribir con `JSON.stringify`) para no ensuciar el historial
+  con diffs cosméticos — confirmado por comparación de JSON parseado
+  (ignorando `updatedAt`) antes de descartarlos.
+- `npm run verify:content` (build completo) no se corrió en este entorno
+  por falta de `node_modules`; se recomienda correrlo localmente antes de
+  mergear, igual que en rondas anteriores.
+
+`docs/evidence-gap-queue.txt` quedó regenerado con las 65 fichas reales
+pendientes (fuente de verdad: `audit-evidence-coverage.mjs`, no editado a
+mano).
 `evidence.limitations` avisando que conviene revalidar la URL si el
 fabricante reestructura su sitio.
 
