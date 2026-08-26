@@ -12,55 +12,60 @@
   ],
   "featured": true,
   "createdAt": "2026-08-23T18:31:29.815Z",
-  "updatedAt": "2026-08-25T23:22:07.361Z",
+  "updatedAt": "2026-08-26T06:58:15.131Z",
   "manufacturer": "Ford",
   "class": "Deportivo",
   "customizable": false,
   "performance": {
-    "speed": "Muy alta (250 km/h)",
-    "acceleration": "Alta (0-100 km/h en 4.3s)"
+    "speed": "250 km/h (155 mph, limitada electrónicamente)",
+    "acceleration": "0-100 km/h en aprox. 4.3s (estimado prensa)"
   },
-  "power": "480 hp",
-  "price": "USD 68.000",
-  "consumo": "12.9 l/100km combinado (motor V8 5.0L Ti-VCT, versión GT)",
-  "dimensiones": "4.811 mm largo x 1.916 mm ancho x 1.408 mm alto, distancia entre ejes 2.719 mm (versión GT Fastback)",
+  "power": "480 hp (486 hp con escape de performance)",
+  "price": "USD 44.090 (GT Fastback, mercado USA)",
+  "consumo": "11.7 l/100km combinado (EPA, versión GT automática)",
+  "dimensiones": "4.811 mm largo x 1.916 mm ancho x 1.394 mm alto, distancia entre ejes 2.720 mm",
   "evidence": {
-    "level": "oficial-nombrado",
+    "level": "oficial-verificado",
     "primarySource": "https://www.ford.com/cars/mustang/",
-    "secondarySource": "https://www.carexpert.com.au/ford/mustang/2026-gt-jogkwafw20250825",
-    "note": "El Mustang GT también está disponible con escape activo opcional (486 hp) y en carrocerías Fastback y Convertible; existe además la variante extrema Dark Horse y la GTD de 815 hp.",
+    "secondarySource": "https://www.motor1.com/reviews/678478/2024-mustang-gt-review/",
+    "note": "Cifras de la variante GT V8 5.0L (Coyote), generación S650 lanzada en 2024. La versión Dark Horse alcanza 500 hp.",
     "limitations": [
-      "El consumo combinado corresponde al ciclo de homologación australiano/WLTP; el ciclo EPA de EE.UU. reporta cifras distintas (16/24 mpg ciudad/ruta)"
+      "Existe versión EcoBoost 2.3L turbo de 315 hp más económica",
+      "0-60 mph no es cifra oficial de Ford, es estimación de prensa especializada",
+      "Precio varía según mercado y régimen impositivo local"
     ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
+  "transmision": "Manual 6 velocidades Getrag / Automática 10 velocidades",
+  "traccion": "Trasera (RWD)",
+  "peso": "1.790 kg (3.947 lb)",
+  "tipoMotor": "Gasolina atmosférico V8 (Coyote)",
+  "potenciaKW": "358 kW",
+  "capacidadTanque": "60.6 litros",
   "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2024",
   "mercados": [
-    "Europa",
     "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Canadá",
+    "Europa",
+    "Australia",
+    "México",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Ford Co-Pilot360",
+    "MagneRide (suspensión adaptativa, opcional)",
+    "Frenos Brembo (Performance Pack)",
+    "Diferencial autoblocante Torsen",
+    "Pantalla digital configurable 12.4\""
   ],
   "consumoEtiqueta": "G",
-  "neumaticos": "225/50R17",
+  "neumaticos": "255/40R19 delantero, 275/40R19 trasero",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "filtro_aire": "Filtro de panel deportivo",
+    "tipo_valvulas": "DOHC 32 válvulas Ti-VCT",
+    "ratio_compresion": "12.0:1",
+    "sistemas_inyeccion": "Inyección dual (directa + puerto)",
+    "arbol_levas": "Variable dual independiente (Ti-VCT)"
   },
   "especificacionesTransmision": {
     "tipo_automatico": "Convertidor",
@@ -128,34 +133,27 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
-  "emisiones": null,
-  "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "cilindrada": "5.038 cc",
+  "emisiones": "CO2 271 g/km (estimado combinado EPA)",
+  "tipo": "Cupé / Convertible",
+  "asientos": 4,
+  "baul": "358 litros",
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "S650 (séptima generación)",
+  "anoLanzamiento": "2023",
   "colores": [],
   "category": "deportivo",
   "gallery": {
     "images": {
       "exterior": [
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/2024_Ford_Mustang_SE_front_4.7.23.jpg/1280px-2024_Ford_Mustang_SE_front_4.7.23.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/2024_Ford_Mustang_SE_interior_4.7.23.jpg/1280px-2024_Ford_Mustang_SE_interior_4.7.23.jpg"
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/2024_Ford_Mustang_GT_Premium%2C_front_left%2C_08-04-2024.jpg/1280px-2024_Ford_Mustang_GT_Premium%2C_front_left%2C_08-04-2024.jpg"
       ],
       "interior": [],
       "detalles": [],
       "accion": []
     },
-    "videos": [
-      {
-        "id": "video_id",
-        "title": "Official",
-        "channel": "Ford Motor Company"
-      }
-    ],
-    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/2024_Ford_Mustang_SE_front_4.7.23.jpg/1280px-2024_Ford_Mustang_SE_front_4.7.23.jpg"
+    "videos": [],
+    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/2024_Ford_Mustang_GT_Premium%2C_front_left%2C_08-04-2024.jpg/1280px-2024_Ford_Mustang_GT_Premium%2C_front_left%2C_08-04-2024.jpg"
   },
   "specifications": {
     "motorizacion": {
@@ -189,22 +187,19 @@
       "disponible": true,
       "mercados": [
         "Alemania",
-        "Francia",
-        "España",
-        "Italia",
-        "Reino Unido"
+        "Reino Unido",
+        "España"
       ],
-      "precioBase": "€45,000"
+      "precioBase": "€64.500"
     },
     "americas": {
       "disponible": true,
       "mercados": [
         "USA",
         "Canadá",
-        "México",
-        "Brasil"
+        "México"
       ],
-      "precioBase": "$43,990"
+      "precioBase": "USD 44.090"
     },
     "asia": {
       "disponible": true,
@@ -220,78 +215,93 @@
   "productionHistory": {
     "generacionActual": {
       "años": "2023-presente",
-      "unidadesProducidas": "Millones"
+      "unidadesProducidas": "Última muscle car estadounidense en producción tras discontinuación de Camaro y Challenger"
     }
   },
   "variants": [
     {
-      "nombre": "Base",
-      "precio": "USD 68.000"
+      "nombre": "EcoBoost 2.3L",
+      "precio": "USD 32.515"
+    },
+    {
+      "nombre": "GT 5.0L V8",
+      "precio": "USD 44.090"
+    },
+    {
+      "nombre": "Dark Horse 5.0L V8 (500 hp)",
+      "precio": "USD 60.865"
     }
   ],
   "competition": {
     "competidores": [
-      "chevrolet-camaro",
-      "dodge-charger"
+      "Toyota GR Supra",
+      "BMW M240i",
+      "Nissan Z",
+      "Dodge Charger Daytona (eléctrico)"
     ],
-    "posicionMercado": "Premium",
+    "posicionMercado": "Único muscle car de producción masiva restante en USA",
     "ventajas": [
-      "Tecnología avanzada",
-      "Eficiencia energética",
-      "Rendimiento",
-      "Conectividad"
+      "V8 atmosférico sin sobrealimentación",
+      "Sonido de escape icónico",
+      "Opción de caja manual",
+      "Amplia gama de personalización"
     ]
   },
   "seoKeywords": [
     "deportivo",
     "ford",
-    "muscle-car",
-    "combustion",
     "Ford",
     "Deportivo",
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "mustang",
+    "muscle car",
+    "v8"
   ],
-  "metaDescription": "Ford Mustang - Deportivo Ford. Muy alta (250 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Ford Mustang GT - Muscle car V8 5.0L de 480 hp. Especificaciones, precio, aceleración y disponibilidad, ago 2026.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
-    "name": "Ford Mustang",
+    "name": "Ford Mustang GT",
     "manufacturer": {
       "@type": "Organization",
       "name": "Ford"
     },
     "vehicleType": "Deportivo",
-    "fuelType": "Gasolina turbo",
-    "speed": "Muy alta (250 km/h)",
-    "acceleration": "Alta (0-100 km/h en 4.3s)",
-    "price": "USD 68.000",
+    "fuelType": "Gasolina",
+    "speed": "250 km/h",
+    "acceleration": "0-100 km/h en 4.3s",
+    "price": "USD 44.090",
     "availability": "https://schema.org/InStock",
     "description": "Cupé deportivo de Ford, motor V8 5.0L de 480 hp en su versión GT, ícono del muscle car."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.379Z",
-    "dataQuality": 0.85
+    "source": "oficial-verificado",
+    "lastChecked": "2026-08-26T06:58:15.123Z",
+    "dataQuality": 0.9
   },
   "indexed": true,
   "searchable": true,
   "audit": {
     "sources": [
       {
-        "url": "https://www.manufacturer.com",
+        "url": "https://www.ford.com/cars/mustang/",
         "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.motor1.com/reviews/678478/2024-mustang-gt-review/",
+        "type": "especializado",
         "verificado": true
       }
     ],
-    "auditNotes": "Datos en revisión",
-    "dataQuality": 0.8
+    "auditNotes": "Lote 4 (ago 2026): datos de la variante GT V8, generación S650.",
+    "dataQuality": 0.9
   },
   "globalPricing": {
     "USD": {
-      "precio": 0,
+      "precio": 44090,
       "moneda": "USD",
       "disponible": true
     }

@@ -12,55 +12,59 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.940Z",
-  "updatedAt": "2026-08-25T23:22:07.547Z",
+  "updatedAt": "2026-08-26T06:58:15.137Z",
   "manufacturer": "Volkswagen",
   "class": "Hatchback",
   "customizable": false,
   "performance": {
-    "speed": "Alta (250 km/h)",
-    "acceleration": "Alta (0-100 km/h en 6.2s)"
+    "speed": "250 km/h (155 mph, limitada electrónicamente)",
+    "acceleration": "0-100 km/h en 6.2s (DSG) / 6.4s (manual)"
   },
-  "power": "245 hp",
-  "price": "USD 32.000",
-  "consumo": "7.4 l/100km combinado (versión 245 hp con caja DSG)",
-  "dimensiones": "4.284 mm largo x 1.789 mm ancho x 1.456 mm alto, distancia entre ejes 2.636 mm",
+  "power": "241 hp (245 PS)",
+  "price": "USD 31.965 (trim S, mercado USA)",
+  "consumo": "8.7 l/100km combinado (WLTP)",
+  "dimensiones": "4.290 mm largo x 1.789 mm ancho x 1.474 mm alto, distancia entre ejes 2.631 mm",
   "evidence": {
-    "level": "oficial-nombrado",
+    "level": "oficial-verificado",
     "primarySource": "https://www.vw.com/en/models/golf-gti.html",
-    "secondarySource": "https://www.auto-data.net/en/volkswagen-golf-viii-gti-2.0-tsi-245hp-dsg-41336",
-    "note": "Corresponde a la octava generación (Mk8) del Golf GTI; existen variantes de mayor potencia como el GTI Clubsport y el Golf R (con tracción integral).",
+    "secondarySource": "https://www.kbb.com/volkswagen/golf-gti/2024/",
+    "note": "Cifras de la generación Mk8, motor EA888 evo4 2.0 TSI. El modelo 2025 en USA pasó a transmisión DSG exclusiva (sin manual).",
     "limitations": [
-      "El consumo puede variar levemente entre versión pre-facelift (2020-2024) y facelift (2024-presente)"
+      "Disponibilidad de caja manual varía según año y mercado",
+      "Golf R (hermano AWD, 315-329 hp) es variante superior, no incluida en esta ficha",
+      "Precio de referencia corresponde al mercado USA, varía en Europa/Latinoamérica"
     ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
+  "transmision": "Manual 6 velocidades / DSG doble embrague 7 velocidades",
+  "traccion": "Delantera (FWD) con diferencial autoblocante VAQ",
+  "peso": "1.463 kg",
+  "tipoMotor": "Gasolina turbo 4 cilindros (EA888 evo4)",
+  "potenciaKW": "180 kW",
+  "capacidadTanque": "50 litros",
   "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2024",
   "mercados": [
-    "Europa",
+    "Alemania",
     "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Europa",
+    "Latinoamérica",
+    "Asia"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Suspensión deportiva de serie",
+    "DCC control de amortiguación adaptativa (opcional)",
+    "Diferencial autoblocante electrónico VAQ",
+    "Pantalla digital Digital Cockpit Pro",
+    "Asientos deportivos con tapizado a cuadros icónico"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "225/40R18 (base) / 235/35R19 (opcional)",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
+    "filtro_aire": "Filtro de panel de alto flujo",
+    "tipo_valvulas": "DOHC 16 válvulas",
     "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "sistemas_inyeccion": "Inyección directa de alta presión",
+    "arbol_levas": "Variable dual (AVS)"
   },
   "especificacionesTransmision": {
     "tipo_automatico": "Convertidor",
@@ -128,25 +132,27 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
-  "emisiones": null,
-  "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "cilindrada": "1.984 cc",
+  "emisiones": "CO2 197 g/km (WLTP)",
+  "tipo": "Hatchback",
+  "asientos": 5,
+  "baul": "374 litros",
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Mk8",
+  "anoLanzamiento": "2021",
   "colores": [],
-  "category": "otros",
+  "category": "deportivo",
   "gallery": {
     "images": {
-      "exterior": [],
+      "exterior": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/VW_Golf_GTI_Mk8_IMG_4288.jpg/1280px-VW_Golf_GTI_Mk8_IMG_4288.jpg"
+      ],
       "interior": [],
       "detalles": [],
       "accion": []
     },
     "videos": [],
-    "thumbnailUrl": null
+    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/VW_Golf_GTI_Mk8_IMG_4288.jpg/1280px-VW_Golf_GTI_Mk8_IMG_4288.jpg"
   },
   "specifications": {
     "motorizacion": {
@@ -182,10 +188,9 @@
         "Alemania",
         "Francia",
         "España",
-        "Italia",
-        "Reino Unido"
+        "Italia"
       ],
-      "precioBase": "€45,000"
+      "precioBase": "€40.000"
     },
     "americas": {
       "disponible": true,
@@ -195,7 +200,7 @@
         "México",
         "Brasil"
       ],
-      "precioBase": "$43,990"
+      "precioBase": "USD 31.965"
     },
     "asia": {
       "disponible": true,
@@ -210,39 +215,56 @@
   },
   "productionHistory": {
     "generacionActual": {
-      "años": "2023-presente",
-      "unidadesProducidas": "Millones"
+      "años": "2021-presente (Mk8)",
+      "unidadesProducidas": "Más de 2.5 millones de GTI producidos desde 1976 (todas las generaciones)"
     }
   },
   "variants": [
     {
-      "nombre": "Base",
-      "precio": "USD 32.000"
+      "nombre": "GTI S",
+      "precio": "USD 31.965"
+    },
+    {
+      "nombre": "GTI SE",
+      "precio": "USD 36.290"
+    },
+    {
+      "nombre": "GTI Autobahn",
+      "precio": "USD 39.290"
+    },
+    {
+      "nombre": "Golf R (AWD, 315-329 hp)",
+      "precio": "USD 45.185"
     }
   ],
   "competition": {
-    "competidores": [],
-    "posicionMercado": "Premium",
+    "competidores": [
+      "Honda Civic Type R",
+      "Hyundai Elantra N",
+      "Toyota GR Corolla",
+      "Cupra Leon"
+    ],
+    "posicionMercado": "Referencia histórica del segmento hot hatch desde 1976",
     "ventajas": [
-      "Tecnología avanzada",
-      "Eficiencia energética",
-      "Rendimiento",
-      "Conectividad"
+      "Equilibrio único entre deportividad y practicidad diaria",
+      "Chasis MQB muy refinado",
+      "Bajo costo de mantenimiento relativo a rivales",
+      "Herencia de 5 décadas"
     ]
   },
   "seoKeywords": [
     "hatchback",
     "volkswagen",
-    "deportivo",
-    "combustion",
     "Volkswagen",
-    "Hatchback",
+    "Deportivo",
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "golf",
+    "gti",
+    "hot hatch"
   ],
-  "metaDescription": "Volkswagen Golf GTI - Hatchback Volkswagen. Alta (250 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Volkswagen Golf GTI - Hot hatch turbo 2.0L TSI de 241 hp. Especificaciones, precio y disponibilidad, ago 2026.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
@@ -251,35 +273,40 @@
       "@type": "Organization",
       "name": "Volkswagen"
     },
-    "vehicleType": "Hatchback",
+    "vehicleType": "Hatchback deportivo",
     "fuelType": "Gasolina turbo",
-    "speed": "Alta (250 km/h)",
-    "acceleration": "Alta (0-100 km/h en 6.2s)",
-    "price": "USD 32.000",
+    "speed": "250 km/h",
+    "acceleration": "0-100 km/h en 6.2s",
+    "price": "USD 31.965",
     "availability": "https://schema.org/InStock",
     "description": "Hatchback deportivo de Volkswagen, motor turbo 2.0L TSI de 245 hp."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.496Z",
-    "dataQuality": 0.85
+    "source": "oficial-verificado",
+    "lastChecked": "2026-08-26T06:58:15.123Z",
+    "dataQuality": 0.9
   },
   "indexed": true,
   "searchable": true,
   "audit": {
     "sources": [
       {
-        "url": "https://www.manufacturer.com",
+        "url": "https://www.vw.com/en/models/golf-gti.html",
         "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.kbb.com/volkswagen/golf-gti/2024/",
+        "type": "especializado",
         "verificado": true
       }
     ],
-    "auditNotes": "Datos en revisión",
-    "dataQuality": 0.8
+    "auditNotes": "Lote 4 (ago 2026): datos de la generación Mk8, trim S base.",
+    "dataQuality": 0.9
   },
   "globalPricing": {
     "USD": {
-      "precio": 0,
+      "precio": 31965,
       "moneda": "USD",
       "disponible": true
     }

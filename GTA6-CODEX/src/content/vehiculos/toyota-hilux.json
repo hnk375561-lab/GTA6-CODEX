@@ -11,55 +11,61 @@
   ],
   "featured": true,
   "createdAt": "2026-08-23T18:31:27.868Z",
-  "updatedAt": "2026-08-25T23:22:07.536Z",
+  "updatedAt": "2026-08-26T06:58:15.124Z",
   "manufacturer": "Toyota",
   "class": "Pickup",
   "customizable": false,
   "performance": {
-    "speed": "Media (180 km/h)",
-    "acceleration": "Media (0-100 km/h en 10.4s)"
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 10.1s (manual) / 10.7s (automática)"
   },
-  "power": "204 hp",
-  "price": "USD 45.000",
-  "consumo": "7.5-8.5 l/100km combinado (motor turbodiésel 2.8L GD-6, según versión y tracción)",
-  "dimensiones": "5.325 mm largo x 1.855 mm ancho x 1.815 mm alto, distancia entre ejes 3.085 mm (versión Doble Cabina)",
+  "power": "150 kW (201 hp)",
+  "price": "USD 33.500 (SR 4x4 doble cabina, referencia mercado global)",
+  "consumo": "8.0 l/100km combinado (ciclo WLTP, versión SR 4x4)",
+  "dimensiones": "5.320 mm largo x 1.855 mm ancho x 1.815 mm alto, distancia entre ejes 3.085 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.toyota.com.ar/hilux",
-    "secondarySource": "https://kobemotor.es/fichas-tecnicas/hilux/medidas-y-dimensiones/",
-    "note": "Las dimensiones y el consumo varían según la carrocería (Cabina Simple, Extra o Doble) y si es 4x2 o 4x4; las versiones 4x4 consumen más que las 4x2.",
+    "level": "oficial-verificado",
+    "primarySource": "https://www.toyota.com.au/hilux",
+    "secondarySource": "https://www.carexpert.com.au/toyota/hilux/2024-sr-jo8gwkgk20240220",
+    "note": "Cifras de la variante SR 2.8L turbodiésel 4x4 (150 kW / 500 Nm), la configuración de volumen intermedio-alto en mercados globales (Asia, Oceanía, Latinoamérica, África).",
     "limitations": [
-      "Cifras de consumo aproximadas: pueden variar según mercado, normativa de homologación local y equipamiento"
+      "Existen variantes con motor 2.4L (110 kW) y 4.0L V6 gasolina (165 kW) según mercado",
+      "Precio y equipamiento varían fuertemente por país de venta",
+      "Cifras de aceleración y consumo son de homologación, no de manejo real"
     ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
+  "transmision": "Automática 6 velocidades / Manual 6 velocidades",
+  "traccion": "4x4 selectable con reductora",
+  "peso": "1.985 kg",
+  "tipoMotor": "Diésel turbo 4 cilindros en línea (1GD-FTV)",
+  "potenciaKW": "150 kW",
+  "capacidadTanque": "80 litros",
   "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2024",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Tailandia (producción)",
+    "Argentina",
+    "Brasil",
+    "Sudáfrica",
+    "Australia",
+    "Sudeste Asiático",
+    "Medio Oriente"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Toyota Safety Sense",
+    "Cámara de retroceso",
+    "Pantalla táctil 8\"",
+    "Control de descenso en pendientes",
+    "Bloqueo de diferencial trasero (según versión)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "225/70 R17",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "filtro_aire": "Filtro de panel de alto flujo",
+    "tipo_valvulas": "DOHC 16 válvulas",
+    "ratio_compresion": "15.6:1",
+    "sistemas_inyeccion": "Common-rail directa",
+    "arbol_levas": "Fijo (sin VVT en el diésel)"
   },
   "especificacionesTransmision": {
     "tipo_automatico": "Convertidor",
@@ -127,25 +133,27 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
-  "emisiones": null,
-  "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "cilindrada": "2.755 cc",
+  "emisiones": "CO2 212 g/km (WLTP)",
+  "tipo": "Pickup doble cabina",
+  "asientos": 5,
+  "baul": "Caja de carga 1.570 x 1.645 x 495 mm (largo x ancho x profundidad)",
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "VIII (facelift 2024)",
+  "anoLanzamiento": "2015",
   "colores": [],
-  "category": "comercial",
+  "category": "pickup",
   "gallery": {
     "images": {
-      "exterior": [],
+      "exterior": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/2021_Toyota_Hilux_Invincible_X_Automatic_2.8.jpg/1280px-2021_Toyota_Hilux_Invincible_X_Automatic_2.8.jpg"
+      ],
       "interior": [],
       "detalles": [],
       "accion": []
     },
     "videos": [],
-    "thumbnailUrl": null
+    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/2021_Toyota_Hilux_Invincible_X_Automatic_2.8.jpg/1280px-2021_Toyota_Hilux_Invincible_X_Automatic_2.8.jpg"
   },
   "specifications": {
     "motorizacion": {
@@ -189,58 +197,87 @@
     "americas": {
       "disponible": true,
       "mercados": [
-        "USA",
-        "Canadá",
+        "Argentina",
+        "Brasil",
         "México",
-        "Brasil"
+        "Colombia",
+        "Perú"
       ],
-      "precioBase": "$43,990"
+      "precioBase": "USD 32.000"
     },
     "asia": {
       "disponible": true,
       "mercados": [
-        "China",
-        "Japón",
-        "Corea del Sur",
-        "Hong Kong"
+        "Tailandia",
+        "Indonesia",
+        "Filipinas",
+        "Malasia"
       ],
-      "precioBase": "¥298,000"
+      "precioBase": "USD 28.000"
+    },
+    "africa": {
+      "disponible": true,
+      "mercados": [
+        "Sudáfrica",
+        "Kenia",
+        "Nigeria"
+      ],
+      "precioBase": "USD 35.000"
     }
   },
   "productionHistory": {
     "generacionActual": {
-      "años": "2023-presente",
-      "unidadesProducidas": "Millones"
+      "años": "2015-presente (facelift 2024)",
+      "unidadesProducidas": "Más de 20 millones desde 1968 (todas las generaciones)"
     }
   },
   "variants": [
     {
-      "nombre": "Base",
+      "nombre": "Workmate 2.4L 4x2",
+      "precio": "USD 25.000"
+    },
+    {
+      "nombre": "SR 2.8L 4x4",
+      "precio": "USD 33.500"
+    },
+    {
+      "nombre": "GR Sport 2.8L 4x4",
       "precio": "USD 45.000"
+    },
+    {
+      "nombre": "GR Sport V6 4.0L gasolina",
+      "precio": "USD 47.000"
     }
   ],
   "competition": {
-    "competidores": [],
-    "posicionMercado": "Premium",
+    "competidores": [
+      "Ford Ranger",
+      "Volkswagen Amarok",
+      "Nissan Frontier",
+      "Mitsubishi L200",
+      "Isuzu D-Max"
+    ],
+    "posicionMercado": "Líder histórico del segmento pickup mediana global",
     "ventajas": [
-      "Tecnología avanzada",
-      "Eficiencia energética",
-      "Rendimiento",
-      "Conectividad"
+      "Fiabilidad y bajo costo de mantenimiento",
+      "Red de repuestos global",
+      "Capacidad off-road probada",
+      "Alto valor de reventa"
     ]
   },
   "seoKeywords": [
     "pickup",
     "toyota",
-    "diesel",
     "Toyota",
     "Pickup",
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "hilux",
+    "diesel",
+    "4x4"
   ],
-  "metaDescription": "Toyota Hilux - Pickup Toyota. Media (180 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Toyota Hilux - Pickup mediana diésel 2.8L turbo, 150 kW. Especificaciones, precio, consumo y disponibilidad por mercado, ago 2026.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
@@ -250,34 +287,39 @@
       "name": "Toyota"
     },
     "vehicleType": "Pickup",
-    "fuelType": "Gasolina turbo",
-    "speed": "Media (180 km/h)",
-    "acceleration": "Media (0-100 km/h en 10.4s)",
-    "price": "USD 45.000",
+    "fuelType": "Diésel turbo",
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 10.1s",
+    "price": "USD 33.500",
     "availability": "https://schema.org/InStock",
     "description": "Pickup grande de Toyota, motor turbodiésel 2.8L, referencia de robustez en el segmento."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.487Z",
-    "dataQuality": 0.85
+    "source": "oficial-verificado",
+    "lastChecked": "2026-08-26T06:58:15.106Z",
+    "dataQuality": 0.9
   },
   "indexed": true,
   "searchable": true,
   "audit": {
     "sources": [
       {
-        "url": "https://www.manufacturer.com",
+        "url": "https://www.toyota.com.au/hilux",
         "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.carexpert.com.au/toyota/hilux/2024-sr-jo8gwkgk20240220",
+        "type": "especializado",
         "verificado": true
       }
     ],
-    "auditNotes": "Datos en revisión",
-    "dataQuality": 0.8
+    "auditNotes": "Lote 4 (ago 2026): datos de la variante SR 2.8L turbodiésel, la más representativa en mercados globales.",
+    "dataQuality": 0.9
   },
   "globalPricing": {
     "USD": {
-      "precio": 0,
+      "precio": 33500,
       "moneda": "USD",
       "disponible": true
     }

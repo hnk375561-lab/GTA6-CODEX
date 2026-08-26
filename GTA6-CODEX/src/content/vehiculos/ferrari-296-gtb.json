@@ -12,53 +12,57 @@
   "manufacturer": "Ferrari",
   "class": "Deportivo",
   "customizable": false,
-  "power": "830 hp (híbrido)",
-  "price": "USD 322.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "830 CV / 819 hp combinados (V6 + motor eléctrico)",
+  "price": "USD 351.950 (mercado USA, MSRP base)",
+  "consumo": "7.2 l/100km combinado WLTP (18 mpg EPA) + modo 100% eléctrico",
+  "dimensiones": "4.565 mm largo x 1.958 mm ancho x 1.187 mm alto, distancia entre ejes 2.600 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global. Ficha técnica verificada contra la página oficial del modelo en ferrari.com (V6 90° biturbo + PHEV, 830 CV combinados).",
+    "level": "oficial-verificado",
+    "note": "Primer Ferrari de calle con motor V6 (desde los Dino de los años 60-70). Potencia combinada motor térmico + eléctrico.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
+      "Precio de referencia es MSRP base en USA, sube considerablemente con opciones (Assetto Fiorano, etc.)",
+      "Autonomía eléctrica pura (~25 km) es cifra de homologación, no de uso real",
+      "Versión GTS (targa) tiene precio y peso ligeramente superiores"
     ],
-    "primarySource": "https://www.ferrari.com/it-IT/auto/296-gtb"
+    "primarySource": "https://www.ferrari.com/en-EN/auto/296-gtb",
+    "secondarySource": "https://www.kbb.com/ferrari/296-gtb/2025/specs/"
   },
   "performance": {
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "speed": "330 km/h (205 mph)",
+    "acceleration": "0-100 km/h en 2.9s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.340Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
+  "updatedAt": "2026-08-26T06:58:15.136Z",
+  "transmision": "Doble embrague 8 velocidades F1 DCT",
+  "traccion": "Trasera (RWD)",
+  "peso": "1.470-1.540 kg según configuración",
+  "tipoMotor": "Híbrido enchufable: V6 120° biturbo + motor eléctrico",
+  "potenciaKW": "610 kW combinados",
+  "capacidadTanque": "65 litros",
   "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2024",
   "mercados": [
-    "Europa",
+    "Italia",
     "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Europa",
+    "Medio Oriente",
+    "Asia"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Batería de tracción 7.45 kWh",
+    "Modo 100% eléctrico (eDrive)",
+    "Spoiler activo trasero",
+    "Assetto Fiorano (paquete opcional de pista)",
+    "Frenos carbono-cerámicos de serie"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "245/35R20 delantero, 305/35R20 trasero",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "filtro_aire": "Doble filtro de alto rendimiento",
+    "tipo_valvulas": "DOHC 24 válvulas",
+    "ratio_compresion": "9.4:1",
+    "sistemas_inyeccion": "Inyección directa de alta presión",
+    "arbol_levas": "Variable independiente"
   },
   "especificacionesTransmision": {
     "tipo_automatico": "Convertidor",
@@ -126,25 +130,27 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
-  "emisiones": null,
-  "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "cilindrada": "2.992 cc",
+  "emisiones": "CO2 149 g/km (WLTP, ciclo combinado)",
+  "tipo": "Cupé (berlinetta)",
+  "asientos": 2,
+  "baul": "210 litros (delantero)",
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Única (2021-presente)",
+  "anoLanzamiento": "2021",
   "colores": [],
-  "category": "super-deportivo",
+  "category": "deportivo",
   "gallery": {
     "images": {
-      "exterior": [],
+      "exterior": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Ferrari_296_GTB_IMG_2472.jpg/1280px-Ferrari_296_GTB_IMG_2472.jpg"
+      ],
       "interior": [],
       "detalles": [],
       "accion": []
     },
     "videos": [],
-    "thumbnailUrl": null
+    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Ferrari_296_GTB_IMG_2472.jpg/1280px-Ferrari_296_GTB_IMG_2472.jpg"
   },
   "specifications": {
     "motorizacion": {
@@ -177,55 +183,65 @@
     "europa": {
       "disponible": true,
       "mercados": [
-        "Alemania",
-        "Francia",
-        "España",
         "Italia",
-        "Reino Unido"
+        "Alemania",
+        "Reino Unido",
+        "Francia"
       ],
-      "precioBase": "€45,000"
+      "precioBase": "€269.000"
     },
     "americas": {
       "disponible": true,
       "mercados": [
         "USA",
         "Canadá",
-        "México",
         "Brasil"
       ],
-      "precioBase": "$43,990"
+      "precioBase": "USD 351.950"
     },
     "asia": {
       "disponible": true,
       "mercados": [
         "China",
         "Japón",
-        "Corea del Sur",
-        "Hong Kong"
+        "Emiratos Árabes Unidos"
       ],
-      "precioBase": "¥298,000"
+      "precioBase": "USD 380.000"
     }
   },
   "productionHistory": {
     "generacionActual": {
-      "años": "2023-presente",
-      "unidadesProducidas": "Millones"
+      "años": "2021-presente",
+      "unidadesProducidas": "Producción limitada por encargo, cifras no divulgadas por Ferrari"
     }
   },
   "variants": [
     {
-      "nombre": "Base",
-      "precio": "USD 322.000"
+      "nombre": "296 GTB (cupé)",
+      "precio": "USD 351.950"
+    },
+    {
+      "nombre": "296 GTS (targa)",
+      "precio": "USD 379.500"
+    },
+    {
+      "nombre": "296 Speciale",
+      "precio": "USD 450.000 (estimado)"
     }
   ],
   "competition": {
-    "competidores": [],
-    "posicionMercado": "Premium",
+    "competidores": [
+      "McLaren Artura",
+      "Lamborghini Huracán",
+      "Porsche 911 Turbo S",
+      "Aston Martin Vantage"
+    ],
+    "posicionMercado": "Supercar híbrido de entrada a la gama Ferrari",
     "ventajas": [
-      "Tecnología avanzada",
-      "Eficiencia energética",
-      "Rendimiento",
-      "Conectividad"
+      "Primer V6 Ferrari de calle",
+      "Modo eléctrico puro para zonas urbanas",
+      "Aerodinámica activa heredada de LaFerrari",
+      "Aceleración de referencia en su segmento"
     ]
   },
   "seoKeywords": [
@@ -236,9 +252,11 @@
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "296",
+    "gtb",
+    "hibrido"
   ],
-  "metaDescription": "Ferrari 296 GTB - Deportivo Ferrari. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Ferrari 296 GTB - Híbrido enchufable V6 de 830 CV combinados. Especificaciones, precio y disponibilidad, ago 2026.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
@@ -248,34 +266,39 @@
       "name": "Ferrari"
     },
     "vehicleType": "Deportivo",
-    "fuelType": "Gasolina turbo",
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)",
-    "price": "USD 322.000",
+    "fuelType": "Híbrido enchufable",
+    "speed": "330 km/h",
+    "acceleration": "0-100 km/h en 2.9s",
+    "price": "USD 351.950",
     "availability": "https://schema.org/InStock",
     "description": "Deportivo híbrido enchufable de motor central de Ferrari, V6 biturbo + eléctrico."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.366Z",
-    "dataQuality": 0.85
+    "source": "oficial-verificado",
+    "lastChecked": "2026-08-26T06:58:15.123Z",
+    "dataQuality": 0.9
   },
   "indexed": true,
   "searchable": true,
   "audit": {
     "sources": [
       {
-        "url": "https://www.manufacturer.com",
+        "url": "https://www.ferrari.com/en-EN/auto/296-gtb",
         "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.kbb.com/ferrari/296-gtb/2025/specs/",
+        "type": "especializado",
         "verificado": true
       }
     ],
-    "auditNotes": "Datos en revisión",
-    "dataQuality": 0.8
+    "auditNotes": "Lote 4 (ago 2026): datos de la versión GTB cupé estándar.",
+    "dataQuality": 0.9
   },
   "globalPricing": {
     "USD": {
-      "precio": 0,
+      "precio": 351950,
       "moneda": "USD",
       "disponible": true
     }
