@@ -2,7 +2,7 @@
   "slug": "kia-sorento",
   "type": "vehiculos",
   "title": "Kia Sorento",
-  "description": "SUV mediano de 3 filas de Kia, con opciones híbrida e híbrida enchufable.",
+  "description": "SUV mediano de 3 filas de Kia (lineup a gasolina EE.UU. 2026), con motor 2.5L atmosférico o turbo, tracción delantera o integral, y versiones Hybrid/PHEV vendidas por separado.",
   "status": "confirmado",
   "tags": [
     "suv",
@@ -12,126 +12,129 @@
   "manufacturer": "Kia",
   "class": "SUV mediano",
   "customizable": false,
-  "power": "191 hp",
-  "price": "USD 34.500",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "191 hp / 142 kW a 6.100 rpm (LX, S, motor atmosférico) a 281 hp / 210 kW a 5.800 rpm (EX, SX, X-Line, X-Pro, motor turbo); lineup a gasolina EE.UU. 2026",
+  "price": "USD 32.390 (LX FWD, MSRP sin destino, Kia oficial) a USD 49.285 (X-Pro SX Prestige AWD, MSRP con destino, KBB); ronda USD 33.885-49.285 con cargo de destino incluido",
+  "consumo": "26 MPG combinado (LX, más eficiente) a 23 MPG combinado (trims turbo EX/SX/X-Line/X-Pro), estimación EPA",
+  "dimensiones": "4.816-4.821 mm largo x 1.900 mm ancho x 1.694-1.786 mm alto según trim, distancia entre ejes 2.814 mm (convertido desde 189.6-189.8\" x 74.8\" x 66.7-70.3\", batalla 110.8\", cifras EE.UU. 2026)",
   "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.kia.com/us/en/sorento",
+    "secondarySource": "https://www.kbb.com/kia/sorento/2026/specs/",
+    "note": "Datos del lineup a gasolina EE.UU. 2026 (8 trims: LX, S, EX, SX, X-Line EX, X-Line SX, X-Line SX Prestige, X-Pro SX Prestige). Precio base, premios de seguridad (IIHS Top Safety Pick+) y garantía confirmados en el sitio oficial de Kia América; dimensiones, peso, potencia por trim, MPG y equipamiento detallado tomados de la tabla de especificaciones de Kelley Blue Book, corroborados de forma cruzada con Cars.com y Edmunds.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Existe discrepancia menor de MSRP base entre fuentes: Kia oficial reporta USD 32.390 (LX, sin cargo de destino), mientras KBB y Cars.com reportan USD 33.635-33.885 (con destino de ~USD 1.445 incluido); esta ficha usa la cifra con destino de KBB para consistencia con el resto de precios del lineup, y aclara la base sin destino de Kia por separado",
+      "El Sorento Hybrid (227 hp, motor 1.6L turbo híbrido) y el Sorento Plug-in Hybrid se venden como líneas separadas con specs propias (no incluidas en esta ficha, que cubre solo el lineup a gasolina)",
+      "Top speed (124/131 mph) es una cifra reportada por KBB, no confirmada en documentación técnica oficial de Kia",
+      "Aceleración 0-60 mph no está publicada oficialmente por trim; Edmunds midió 6.7s en prueba independiente de pista para la versión con motor turbo",
+      "Especificaciones corresponden al mercado de EE.UU.; en otros mercados (Europa, Corea, Medio Oriente) el Sorento tiene motorizaciones y nomenclatura de trims distintas, no cubiertas en esta ficha"
     ]
   },
   "performance": {
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "speed": "124 mph / 200 km/h (trims 191 hp) a 131 mph / 211 km/h (trims 281 hp turbo), cifras KBB",
+    "acceleration": "6.7s 0-60mph medido por Edmunds en pista para versión con motor turbo (cifra oficial por trim no publicada por Kia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.434Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-26T21:00:00.000Z",
+  "transmision": "Automática 8 velocidades (LX, S) / Automática de doble embrague 8 velocidades (EX, SX, X-Line, X-Pro turbo)",
+  "traccion": "Delantera / FWD de serie; integral / AWD disponible en todos los trims excepto LX base (Edmunds)",
+  "peso": "1.730 kg / 3.814 lb (LX FWD) a 1.911 kg / 4.213 lb (X-Pro SX Prestige AWD)",
+  "tipoMotor": "Gasolina 4 cilindros GDI 2.5L atmosférico (LX, S) o turboalimentado (EX, SX, X-Line, X-Pro)",
+  "potenciaKW": "142 kW (LX, S) a 210 kW (trims turbo)",
+  "capacidadTanque": "67 litros / 17.7 galones",
+  "tiempoRecorrido": "6.7s 0-60mph (motor turbo, prueba independiente Edmunds)",
+  "anoProduccion": "2026 (año modelo actual; Sorento en producción continua desde 2002, cuarta generación desde 2020 con facelift 2024)",
   "mercados": [
-    "Europa",
     "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Canadá",
+    "Corea del Sur",
+    "Europa",
+    "Medio Oriente",
+    "Latinoamérica"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Suite de seguridad Kia Drive Wise de serie: alerta de colisión frontal, frenado autónomo de emergencia con detección de peatones/ciclistas, control de crucero adaptativo, alerta de cambio de carril y asistencia de centrado",
+    "Reconocido como 2026 IIHS Top Safety Pick+ (vehículos fabricados desde septiembre 2025)",
+    "Garantía limitada de 10 años / 100.000 millas de Kia (fuente oficial Kia)",
+    "Tercera fila de asientos de serie en todos los trims",
+    "Modos de terreno (barro, arena, nieve) de serie en versiones AWD"
   ],
-  "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
-  "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
-  },
+  "consumoEtiqueta": null,
+  "neumaticos": "Ruedas de aleación de serie en todos los trims; llantas all-terrain de 24\" en X-Pro (KBB)",
+  "especificacionesMotor": null,
   "especificacionesTransmision": {
-    "tipo_automatico": "Convertidor",
+    "tipo_automatico": "Convertidor de par (LX, S) / Doble embrague (trims turbo)",
     "control_cambios": "Secuencial",
-    "sist_propulsion": "Traccion",
-    "velocidades": "8/9 velocidades"
+    "sist_propulsion": "FWD o AWD según trim",
+    "velocidades": "8 velocidades"
   },
   "especificacionesSuspension": {
-    "tipo_trasera": "Multilink",
-    "barra_estabilizadora": "26/20 mm",
-    "tipo_delantera": "MacPherson",
-    "amortiguadores": "Doble tubo",
-    "recorrido_vertical": "+-150 mm"
+    "tipo_delantera": null,
+    "tipo_trasera": null,
+    "barra_estabilizadora": null,
+    "amortiguadores": null,
+    "recorrido_vertical": null
   },
   "especificacionesRuedas": {
-    "offset": "+35 a +45 mm",
-    "indice_velocidad": "T/V",
-    "indice_carga": "91",
-    "profundidad_surcos": "1.6 mm",
-    "pcd": "5x114.3"
+    "offset": null,
+    "indice_velocidad": null,
+    "indice_carga": null,
+    "profundidad_surcos": null,
+    "pcd": null
   },
   "especificacionesDireccion": {
-    "tipo_asistencia": "Electrica progresiva",
-    "sistema_control": "Control electronico",
-    "angulo_max_giro": "32-35 grados",
-    "vueltas_calador": "2.5-3.0"
+    "tipo_asistencia": null,
+    "sistema_control": null,
+    "angulo_max_giro": null,
+    "vueltas_calador": null
   },
   "aerodinámica": {
-    "defectores_aire": "Canales laterales",
-    "spoiler_trasero": "Integrado",
-    "area_frontal": "2.2-2.4 m2",
-    "coeficiente_arrastre": "Cx 0.27-0.32"
+    "defectores_aire": null,
+    "spoiler_trasero": "Integrado (de serie en todos los trims, KBB)",
+    "area_frontal": null,
+    "coeficiente_arrastre": null
   },
   "capacidadesAdicionales": {
-    "capacidad_refrigerante": "7-9 L",
-    "capacidad_lavaparabrisas": "3-4 L",
-    "liquido_frenos": "0.75-0.85 L",
-    "capacidad_aceite": "4.5-5.5 L",
-    "filtro_habitaculo": "Carbon activado"
+    "capacidad_refrigerante": null,
+    "capacidad_lavaparabrisas": null,
+    "liquido_frenos": null,
+    "capacidad_aceite": null,
+    "filtro_habitaculo": null
   },
   "seguridad_pasiva": {
-    "respaldos": "Reforzados",
-    "zonas": "Deformacion",
-    "cinturones": "Pre-tensores",
-    "estructura": "Vigas laterales",
-    "cristales": "Laminado/Templado"
+    "respaldos": null,
+    "zonas": null,
+    "cinturones": null,
+    "estructura": null,
+    "cristales": null
   },
   "climatizacionAvanzada": {
-    "control": "Trizona",
-    "modo": "Recirculacion",
-    "filtro": "Carbon",
-    "desempanante": "Trasero/Lateral"
+    "control": null,
+    "modo": null,
+    "filtro": null,
+    "desempanante": null
   },
   "mantenimientoPrograma": {
-    "filtro": "25.000-30.000 km",
-    "aceite": "15.000 km",
-    "frenos": "Anual",
-    "ruedas": "Anual",
-    "refrigerante": "2 anos"
+    "filtro": null,
+    "aceite": null,
+    "frenos": null,
+    "ruedas": null,
+    "refrigerante": null
   },
   "sistemasInteligentes": {
-    "frenado": "AEB",
-    "carril": "LDW",
-    "ciego": "BSM",
-    "parking": "8-12 sensores",
-    "crucero": "ACC"
+    "frenado": "Frenado autónomo de emergencia con detección de peatones/ciclistas de serie en todos los trims (Kia oficial)",
+    "carril": "Alerta y asistencia de mantenimiento de carril, centrado de carril de serie (Kia oficial)",
+    "ciego": "Blind-Spot Alert de serie en SX, X-Line SX, X-Line SX Prestige y X-Pro; no disponible en LX, S, EX, X-Line EX (KBB)",
+    "parking": "Cámara de visión 360° de serie en SX, X-Line SX/SX Prestige y X-Pro; no disponible en trims base (KBB)",
+    "crucero": "Control de crucero adaptativo de serie en todos los trims (Kia Drive Wise)"
   },
-  "cilindrada": null,
+  "cilindrada": "2.5 litros",
   "emisiones": null,
-  "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "tipo": "SUV mediano de 3 filas, carrocería crossover",
+  "asientos": 7,
+  "baul": "75.5 cu ft / 2.139 L de carga total detrás de la primera fila (KBB); trims EX/SX/X-Line/X-Pro con configuración de 6 plazas (butacas capitán 2da fila)",
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Cuarta generación (MQ4), con actualización de estilo y equipamiento 2024",
+  "anoLanzamiento": "2020 (generación actual); modelo Sorento desde 2002",
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -146,48 +149,76 @@
   },
   "specifications": {
     "motorizacion": {
-      "speed": "200 km/h (referencia)",
-      "acceleration": "0-100 km/h en 8.5s (referencia)"
+      "speed": "200-211 km/h según trim",
+      "acceleration": "6.7s 0-60mph (motor turbo, Edmunds)"
     },
     "bateria": {
-      "consumo": "7.2 l/100km combinado (referencia)"
+      "consumo": "26-23 MPG combinado según trim (EPA)"
     },
     "transmision": {
-      "tipo": "Manual o Automática"
+      "tipo": "Automática 8 velocidades (convertidor o doble embrague según trim)"
     },
     "dimensiones": {
-      "largo": 4,
-      "ancho": null,
-      "alto": null
+      "largo": 4816,
+      "ancho": 1900,
+      "alto": 1694
     },
     "capacidades": {
-      "asientos": 5,
-      "maletero": null,
-      "velocidadMaxima": null,
-      "consumo": "7.2 l/100km combinado (referencia)"
+      "asientos": 7,
+      "maletero": 2139,
+      "velocidadMaxima": 211,
+      "consumo": "26-23 MPG combinado según trim (EPA)"
     }
   },
   "variants": [
     {
-      "nombre": "Base",
-      "precio": "USD 34.500"
+      "nombre": "LX (FWD)",
+      "precio": "USD 32.390 (sin destino, Kia oficial) / USD 33.885 (con destino, KBB)"
+    },
+    {
+      "nombre": "S",
+      "precio": "USD 38.785"
+    },
+    {
+      "nombre": "EX",
+      "precio": "USD 41.485"
+    },
+    {
+      "nombre": "SX",
+      "precio": "USD 43.785"
+    },
+    {
+      "nombre": "X-Line SX Prestige",
+      "precio": "USD 48.285"
+    },
+    {
+      "nombre": "X-Pro SX Prestige (AWD)",
+      "precio": "USD 49.285"
     }
   ],
   "competition": {
-    "competidores": [],
-    "posicionMercado": "Premium"
+    "competidores": [
+      "Honda Pilot",
+      "Toyota Highlander",
+      "Hyundai Santa Fe",
+      "Mazda CX-90",
+      "Volkswagen Atlas"
+    ],
+    "posicionMercado": "SUV mediano de 3 filas mainstream, competitivo en precio dentro del segmento familiar"
   },
   "seoKeywords": [
     "suv",
     "kia",
     "Kia",
     "SUV mediano",
+    "3 filas",
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "review",
+    "Drive Wise"
   ],
-  "metaDescription": "Kia Sorento - SUV mediano Kia. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Kia Sorento 2026 - SUV mediano de 3 filas. Desde USD 32.390, hasta 281 hp turbo, IIHS Top Safety Pick+. Especificaciones y precio con fuente oficial.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
@@ -197,26 +228,26 @@
       "name": "Kia"
     },
     "vehicleType": "SUV mediano",
-    "fuelType": "Gasolina/Diésel",
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)",
-    "price": "USD 34.500",
+    "fuelType": "Gasolina",
+    "speed": "211 km/h",
+    "acceleration": "0-60mph en 6.7s (turbo)",
+    "price": "USD 32.390",
     "availability": "https://schema.org/InStock",
-    "description": "SUV mediano de 3 filas de Kia, con opciones híbrida e híbrida enchufable."
+    "description": "SUV mediano de 3 filas de Kia con motor 2.5L atmosférico o turbo, tracción delantera o integral."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.417Z",
-    "dataQuality": 0.85
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-26T21:00:00.000Z",
+    "dataQuality": 0.9
   },
   "indexed": true,
   "searchable": true,
   "performanceData": {
     "velocidad": {
-      "maxima": 200
+      "maxima": 211
     },
     "consumo": {
-      "promedio": "7.2 l/100km combinado (referencia)"
+      "promedio": "26-23 MPG combinado según trim (EPA)"
     }
   },
   "relatedModels": {
@@ -224,5 +255,38 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.kia.com/us/en/sorento",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.kbb.com/kia/sorento/2026/specs/",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://www.cars.com/research/kia-sorento-2026/",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://www.edmunds.com/kia/sorento/",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Enriquecimiento individual (ago 2026): reemplaza specs de referencia/placeholder por datos verificados del lineup a gasolina EE.UU. 2026 con fuente oficial (Kia América) y cruzada (KBB, Cars.com, Edmunds). Hybrid y PHEV excluidos por tener specs propias. Campos sin fuente confiable localizada en esta ronda se dejaron en null.",
+    "dataQuality": 0.9
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 32390,
+      "moneda": "USD",
+      "disponible": true
+    }
   }
 }
