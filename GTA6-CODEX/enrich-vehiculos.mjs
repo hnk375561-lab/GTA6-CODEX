@@ -29,7 +29,7 @@ import path from "node:path";
 
 const VEHICULOS_DIR = "src/content/vehiculos";
 const API_KEY = process.env.GEMINI_API_KEY;
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash-lite";
+const MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash-lite";
 const LIMIT = process.env.LIMIT ? parseInt(process.env.LIMIT, 10) : Infinity;
 const ONLY = process.env.ONLY || "all"; // "all" | "needsBoth" | "needsContentOnly"
 const DELAY_MS = 4500; // ~13 req/min, seguro bajo el límite gratuito de 15 RPM
