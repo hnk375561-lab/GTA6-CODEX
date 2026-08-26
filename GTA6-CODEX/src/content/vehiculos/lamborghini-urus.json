@@ -2,7 +2,7 @@
   "slug": "lamborghini-urus",
   "type": "vehiculos",
   "title": "Lamborghini Urus",
-  "description": "SUV deportivo de altas prestaciones de Lamborghini, motor V8 biturbo.",
+  "description": "Super SUV de Lamborghini, actualmente en su versión híbrida enchufable Urus SE (800 CV combinados), sucesora del Urus/Urus S/Performante 100% gasolina descontinuados.",
   "status": "confirmado",
   "tags": [
     "suv",
@@ -12,45 +12,53 @@
   "manufacturer": "Lamborghini",
   "class": "SUV deportivo",
   "customizable": false,
-  "power": "657 hp",
-  "price": "USD 240.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "800 CV / 588 kW combinados (motor V8 4.0L biturbo + motor eléctrico) — Urus SE",
+  "price": "USD 246.495 (MSRP EE.UU., Urus SE 2026)",
+  "consumo": "20 MPG EPA combinado solo gasolina / 48 MPGe combinado gasolina+electricidad (Urus SE)",
+  "dimensiones": "5.112 mm largo x 2.018 mm ancho x 1.638 mm alto, distancia entre ejes 3.003 mm",
   "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.lamborghini.com/es-en/modelos/urus/urus-se",
+    "secondarySource": "https://en.wikipedia.org/wiki/Lamborghini_Urus",
+    "note": "Datos de potencia, velocidad máxima y aceleración tomados directamente de la ficha técnica oficial de Lamborghini.com para el Urus SE (versión PHEV vigente en el catálogo actual de la marca). Dimensiones, peso y capacidad de maletero corroborados con prensa especializada (Motor1, Wikipedia) ya que Lamborghini.com no publica esos datos en su tabla web pública. Precio de referencia (MSRP EE.UU.) tomado de Cars.com.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Lamborghini.com no publica en su ficha técnica web dimensiones exteriores, peso ni capacidad de maletero; esos datos provienen de prensa especializada (Motor1, Wikipedia), no de la fuente primaria oficial",
+      "El Urus original 100% gasolina (650 CV, 2018) y las versiones Urus S / Urus Performante (666 CV) fueron discontinuadas: el catálogo actual de Lamborghini solo ofrece el Urus SE (800 CV) y el Urus SE Performante (812 CV), ambos híbridos enchufables",
+      "El precio de USD 246.495 es el MSRP base reportado por Cars.com para EE.UU.; el precio final varía fuertemente según personalización (concesionarios reportan unidades configuradas por encima de USD 300.000-370.000) y por mercado/impuestos locales",
+      "Neumáticos y algunas especificaciones de suspensión/frenos son de referencia genérica de la gama, no confirmadas puntualmente para la configuración base"
     ]
   },
   "performance": {
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "speed": "312 km/h (Urus SE)",
+    "acceleration": "0-100 km/h en 3,4s (Urus SE)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
   "updatedAt": "2026-08-25T23:22:07.440Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática de convertidor de par, 8 velocidades (ZF 8HP)",
+  "traccion": "Integral permanente (AWD)",
+  "peso": "2.504 kg (Urus SE, en orden de marcha)",
+  "tipoMotor": "V8 4.0L biturbo gasolina + motor eléctrico síncrono (PHEV) — Urus SE",
+  "potenciaKW": "588 kW combinados (Urus SE)",
+  "capacidadTanque": "75 litros (gasolina) + batería de iones de litio 25,9 kWh",
+  "tiempoRecorrido": "0-100 km/h en 3,4s (Urus SE) / 3,3s (Urus SE Performante)",
+  "anoProduccion": "2017-presente (Urus SE desde 2024/2025, año modelo)",
   "mercados": [
     "Europa",
     "USA",
+    "Medio Oriente",
     "Asia",
-    "Mercados emergentes"
+    "Latinoamérica"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de tracción integral (AWD)",
+    "Frenos de disco carbono-cerámicos (opcionales/de serie según versión)",
+    "Suspensión neumática adaptativa",
+    "Eje trasero direccional",
+    "Modo 100% eléctrico (Urus SE)",
+    "Asistentes de conducción avanzados"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "285/40 R22 delanteros - 325/35 R22 traseros (referencia, varía según llanta configurada)",
   "especificacionesMotor": {
     "filtro_aire": "Filtro de panel",
     "tipo_valvulas": "DOHC",
@@ -124,14 +132,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
-  "emisiones": null,
-  "tipo": null,
-  "asientos": null,
-  "baul": null,
-  "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "cilindrada": "3.996 cm³ (V8 biturbo)",
+  "emisiones": "Reducidas hasta 80% respecto al Urus 100% gasolina (Urus SE, modo híbrido)",
+  "tipo": "SUV deportivo / Super SUV híbrido enchufable",
+  "asientos": 5,
+  "baul": 616,
+  "maleteroMin": 574,
+  "generacion": "Segunda etapa (Urus SE, PHEV) — primera generación fue 100% gasolina (2018-2024)",
+  "anoLanzamiento": 2017,
   "colores": [],
   "category": "super-deportivo",
   "gallery": {
@@ -146,31 +154,37 @@
   },
   "specifications": {
     "motorizacion": {
-      "speed": "200 km/h (referencia)",
-      "acceleration": "0-100 km/h en 8.5s (referencia)"
+      "speed": "312 km/h (Urus SE)",
+      "acceleration": "0-100 km/h en 3,4s (Urus SE)"
     },
     "bateria": {
-      "consumo": "7.2 l/100km combinado (referencia)"
+      "capacidad": "25,9 kWh (iones de litio, Urus SE)",
+      "autonomia_electrica": "~60 km (Urus SE, ciclo WLTP)",
+      "velocidad_maxima_electrica": "130 km/h (modo 100% eléctrico)"
     },
     "transmision": {
-      "tipo": "Manual o Automática"
+      "tipo": "Automática de convertidor de par, 8 velocidades (ZF 8HP)"
     },
     "dimensiones": {
-      "largo": 4,
-      "ancho": null,
-      "alto": null
+      "largo": 5112,
+      "ancho": 2018,
+      "alto": 1638
     },
     "capacidades": {
       "asientos": 5,
-      "maletero": null,
-      "velocidadMaxima": null,
-      "consumo": "7.2 l/100km combinado (referencia)"
+      "maletero": 616,
+      "velocidadMaxima": 312,
+      "consumo": "20 MPG EPA (solo gasolina) / 48 MPGe (híbrido)"
     }
   },
   "variants": [
     {
-      "nombre": "Base",
-      "precio": "USD 240.000"
+      "nombre": "Urus SE",
+      "precio": "USD 246.495 (MSRP EE.UU.)"
+    },
+    {
+      "nombre": "Urus SE Performante",
+      "precio": "Superior al Urus SE base (812 CV, foco en pista)"
     }
   ],
   "competition": {
@@ -187,7 +201,7 @@
     "precio",
     "review"
   ],
-  "metaDescription": "Lamborghini Urus - SUV deportivo Lamborghini. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Lamborghini Urus SE - Super SUV híbrido enchufable de Lamborghini con 800 CV combinados, 312 km/h y 0-100 km/h en 3,4s. Descubre especificaciones, precio e historia.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
@@ -197,26 +211,26 @@
       "name": "Lamborghini"
     },
     "vehicleType": "SUV deportivo",
-    "fuelType": "Gasolina/Diésel",
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)",
-    "price": "USD 240.000",
+    "fuelType": "Gasolina + Eléctrico (PHEV)",
+    "speed": "312 km/h",
+    "acceleration": "0-100 km/h en 3,4s",
+    "price": "USD 246.495",
     "availability": "https://schema.org/InStock",
-    "description": "SUV deportivo de altas prestaciones de Lamborghini, motor V8 biturbo."
+    "description": "Super SUV híbrido enchufable de altas prestaciones de Lamborghini, motor V8 biturbo + motor eléctrico."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.420Z",
-    "dataQuality": 0.85
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-26T00:00:00.000Z",
+    "dataQuality": 0.9
   },
   "indexed": true,
   "searchable": true,
   "performanceData": {
     "velocidad": {
-      "maxima": 200
+      "maxima": 312
     },
     "consumo": {
-      "promedio": "7.2 l/100km combinado (referencia)"
+      "promedio": "20 MPG EPA (solo gasolina) / 48 MPGe (híbrido)"
     }
   },
   "relatedModels": {
@@ -224,5 +238,39 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 246495,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.lamborghini.com/es-en/modelos/urus/urus-se",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Lamborghini_Urus",
+        "type": "referencia",
+        "verificado": true
+      },
+      {
+        "url": "https://www.cars.com/research/lamborghini-urus/",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://es.motor1.com/news/706213/lamborghini-urus-dimensiones-maletero-suv/",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Enriquecimiento individual (ago 2026): reemplaza specs de referencia/placeholder por datos verificados del Urus SE, versión vigente en el catálogo oficial de Lamborghini (el Urus 100% gasolina original fue discontinuado). Fuente oficial para potencia/velocidad/aceleración; prensa especializada para dimensiones, peso y maletero (no publicados por Lamborghini.com).",
+    "dataQuality": 0.9
+  },
+  "content": "## Historia: del LM002 al Super SUV más vendido de Lamborghini\n\nEl Urus, presentado en diciembre de 2017 como modelo 2018, no fue el primer SUV de Lamborghini: ese honor le corresponde al LM002 (1986-1993), un vehículo militar-civil de líneas angulares y motor V12. Pero el Urus sí fue el primero pensado desde el inicio como un producto de volumen, construido sobre la plataforma MLB Evo del Grupo Volkswagen que comparte con el Audi Q7/Q8, el Porsche Cayenne y el Bentley Bentayga.\n\nEl resultado comercial superó cualquier expectativa: el Urus se convirtió rápidamente en el modelo más vendido de la marca, superando en unidades anuales a todos los superdeportivos de la gama (Huracán, Aventador/Revuelto) combinados en varios ejercicios, y llevando a Lamborghini a superar por primera vez las 10.000 unidades vendidas en un año.\n\n## La transición a Urus SE: el primer Super SUV híbrido enchufable\n\nTras varios años con la fórmula 100% gasolina (Urus original de 650 CV, luego Urus S y Urus Performante de 666 CV, ambos con el V8 4.0 biturbo compartido con otros modelos del Grupo Volkswagen), Lamborghini discontinuó la línea puramente térmica y la reemplazó por el Urus SE, presentado como el siguiente paso de la marca hacia la hibridación total de toda su gama (el mismo camino que siguieron el Revuelto y el Temerario).\n\nEl Urus SE combina el V8 biturbo con un motor eléctrico y una batería de iones de litio de 25,9 kWh, alcanzando 800 CV combinados y reduciendo emisiones hasta en un 80% respecto al modelo puramente gasolina. Puede circular en modo 100% eléctrico hasta 130 km/h con una autonomía homologada de unos 60 km, lo suficiente para calificar en varios mercados europeos con etiquetas ambientales preferenciales (como la etiqueta CERO de la DGT en España).\n\n## Urus SE Performante: la versión más extrema\n\nEn julio de 2026 Lamborghini presentó el Urus SE Performante, la variante más radical de la gama: 812 CV y 1.000 Nm combinados, 32 kg menos que el Urus SE gracias al uso extensivo de fibra de carbono y titanio, y una relación peso/potencia de 3 kg por CV. Estrena además la suspensión neumática de doble cámara AURA, que reduce el balanceo en conducción deportiva en un 55%, y conserva el modo Rally heredado del Urus original para uso en superficies sueltas.\n\n## Curiosidades\n\n- El Urus toma su nombre de un uro (Bos primigenius), un bovino salvaje ya extinto que fue ancestro del ganado doméstico moderno — siguiendo la tradición de Lamborghini de nombrar sus modelos con referencias al mundo del toro de lidia.\n- Es el primer vehículo utilitario deportivo (SUV de altas prestaciones) fabricado íntegramente por Lamborghini bajo esa denominación específica de \"Super SUV\", un término que la propia marca acuñó para diferenciarlo de otros SUV de lujo.\n- El maletero varía según la configuración de asientos: 574 litros en la versión de 4 plazas (con consola central individual trasera) y 616 litros en la de 5 plazas, ampliable hasta 1.596 litros abatiendo la segunda fila.\n- El Urus se ensambla en la planta de Sant'Agata Bolognese (Italia), la misma donde se producen el Huracán/Temerario y el Aventador/Revuelto, tras una ampliación de las instalaciones de 80.000 a 160.000 m² pensada específicamente para absorber su volumen de producción.\n\n## Competencia y posicionamiento\n\nEl Urus compite en el segmento de SUV de altísimas prestaciones (Super SUV) junto al Aston Martin DBX707, el Bentley Bentayga, el Porsche Cayenne Turbo GT y, en menor medida, el Ferrari Purosangue. Dentro de ese grupo se diferencia por compartir plataforma técnica con modelos del Grupo Volkswagen (a diferencia de Ferrari o Aston Martin, que desarrollan sus SUV sobre plataformas propias), lo que le permitió llegar al mercado más rápido y a un costo de desarrollo menor, sin resignar las cifras de rendimiento que definen a la categoría."
 }
