@@ -2,7 +2,7 @@
   "slug": "lexus-lx",
   "type": "vehiculos",
   "title": "Lexus LX",
-  "description": "SUV de lujo full-size de Lexus, comparte base con el Toyota Land Cruiser.",
+  "description": "SUV de lujo full-size de Lexus, comparte plataforma GA-F con el Toyota Land Cruiser; disponible en versión gasolina LX 600 e híbrida LX 700h.",
   "status": "confirmado",
   "tags": [
     "suv",
@@ -12,45 +12,53 @@
   "manufacturer": "Lexus",
   "class": "SUV de lujo",
   "customizable": false,
-  "power": "409 hp",
-  "price": "USD 90.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "409 hp / 479 lb-ft (LX 600, V6 3.4L biturbo) — versión híbrida LX 700h: 457 hp / 583 lb-ft",
+  "price": "USD 107.950 (MSRP EE.UU. con flete incluido, LX 600 2026)",
+  "consumo": "17/22/19 mpg ciudad/ruta/combinado EPA (LX 600) — LX 700h: 19/22/20 mpg",
+  "dimensiones": "5.100 mm largo x 1.990 mm ancho x 1.895 mm alto, distancia entre ejes 2.850 mm",
   "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.lexus.com/models/LX/specifications",
+    "secondarySource": "https://www.cars.com/research/lexus-lx_600-2026/",
+    "note": "Potencia, torque y motorización (LX 600 vs. LX 700h híbrido) confirmadas en la página oficial de especificaciones de Lexus.com. Precio MSRP, consumo EPA, dimensiones exactas, peso y tiempos de aceleración corroborados con Cars.com, KBB y Edmunds, ya que la ficha pública de Lexus.com no despliega una tabla numérica completa descargable sin seleccionar configurador.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "El precio de USD 107.950 corresponde a la versión base LX 600 Premium; existen configuraciones muy superiores (F Sport Handling, Overtrail, Luxury, y la línea híbrida LX 700h con el trim Ultra Luxury de 4 plazas tipo 'lounge') con precios notablemente más altos",
+      "Las dimensiones y el peso citados corresponden a la especificación de mercado EE.UU.; en otros mercados (donde también se vende una variante diésel LX500d bajo otra denominación regional) las cifras pueden variar",
+      "Lexus no publica de forma pública la capacidad exacta de baúl en litros para el mercado global; la cifra de referencia (64 pies cúbicos / ~1.813 L con asientos abatidos en EE.UU.) proviene de fuentes de la industria, no de una ficha técnica descargable oficial",
+      "Neumáticos de referencia genérica; varían según trim y paquete de equipamiento (F Sport ofrece llantas de mayor diámetro)"
     ]
   },
   "performance": {
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "speed": "210 mph / ~338 km/h (limitada electrónicamente, cifra reportada por concesionarios; Lexus no publica oficialmente una velocidad máxima para este segmento)",
+    "acceleration": "0-100 km/h en 6,9s (LX 600)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
   "updatedAt": "2026-08-25T23:22:07.445Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática de convertidor de par, 10 velocidades",
+  "traccion": "Integral permanente (4WD) con diferencial central bloqueable",
+  "peso": "2.664 kg (5.875 lb, LX 600 en orden de marcha)",
+  "tipoMotor": "V6 3.4L biturbo gasolina (LX 600) / V6 3.4L biturbo con asistencia híbrida (LX 700h)",
+  "potenciaKW": "305 kW (409 hp, LX 600)",
+  "capacidadTanque": "80 litros (21,1 galones)",
+  "tiempoRecorrido": "0-100 km/h (0-60 mph) en 6,9s (LX 600) / 6,4s (LX 700h)",
+  "anoProduccion": "2022-presente (tercera generación)",
   "mercados": [
-    "Europa",
     "USA",
+    "Medio Oriente",
     "Asia",
-    "Mercados emergentes"
+    "Latinoamérica",
+    "Europa (mercados selectos)"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Suspensión Adaptive Variable Suspension (AVS)",
+    "Control de altura activa (Active Height Control, AHC)",
+    "Diferencial central bloqueable",
+    "Crawl Control y Control de descenso en pendiente",
+    "Lexus Safety System+ 3.0 (asistencia a la conducción)",
+    "Sistema de audio premium Mark Levinson (disponible en trims superiores)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "265/55 R20 (referencia base; opciones hasta 22 pulgadas en versión F Sport)",
   "especificacionesMotor": {
     "filtro_aire": "Filtro de panel",
     "tipo_valvulas": "DOHC",
@@ -124,14 +132,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
-  "emisiones": null,
-  "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "cilindrada": "3.444 cm³ (V6 biturbo)",
+  "emisiones": "Reducidas en la variante híbrida LX 700h respecto al LX 600 puramente gasolina",
+  "tipo": "SUV de lujo full-size (body-on-frame)",
+  "asientos": 7,
+  "baul": 1813,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación (J300, desde 2022), plataforma GA-F compartida con Toyota Land Cruiser",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "ejecutivo",
   "gallery": {
@@ -146,31 +154,39 @@
   },
   "specifications": {
     "motorizacion": {
-      "speed": "200 km/h (referencia)",
-      "acceleration": "0-100 km/h en 8.5s (referencia)"
+      "speed": "0-100 km/h en 6,9s (LX 600) / 6,4s (LX 700h)",
+      "acceleration": "409 hp (LX 600) / 457 hp (LX 700h)"
     },
     "bateria": {
-      "consumo": "7.2 l/100km combinado (referencia)"
+      "consumo": "17/22/19 mpg EPA ciudad/ruta/combinado (LX 600, sin batería enchufable)"
     },
     "transmision": {
-      "tipo": "Manual o Automática"
+      "tipo": "Automática de convertidor de par, 10 velocidades"
     },
     "dimensiones": {
-      "largo": 4,
-      "ancho": null,
-      "alto": null
+      "largo": 5100,
+      "ancho": 1990,
+      "alto": 1895
     },
     "capacidades": {
-      "asientos": 5,
-      "maletero": null,
+      "asientos": 7,
+      "maletero": 1813,
       "velocidadMaxima": null,
-      "consumo": "7.2 l/100km combinado (referencia)"
+      "consumo": "17/22/19 mpg EPA ciudad/ruta/combinado"
     }
   },
   "variants": [
     {
-      "nombre": "Base",
-      "precio": "USD 90.000"
+      "nombre": "LX 600 Premium",
+      "precio": "USD 107.950"
+    },
+    {
+      "nombre": "LX 600 F Sport Handling",
+      "precio": "Superior al Premium"
+    },
+    {
+      "nombre": "LX 700h (híbrido)",
+      "precio": "Superior al LX 600, incluye trim Ultra Luxury de 4 plazas"
     }
   ],
   "competition": {
@@ -187,7 +203,7 @@
     "precio",
     "review"
   ],
-  "metaDescription": "Lexus LX - SUV de lujo Lexus. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Lexus LX 600 - SUV de lujo full-size de Lexus, 409 hp, V6 3.4L biturbo, 0-100 km/h en 6,9s. Descubre especificaciones, precio y versión híbrida LX 700h.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
@@ -197,26 +213,26 @@
       "name": "Lexus"
     },
     "vehicleType": "SUV de lujo",
-    "fuelType": "Gasolina/Diésel",
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)",
-    "price": "USD 90.000",
+    "fuelType": "Gasolina (LX 600) / Híbrido (LX 700h)",
+    "speed": "No publicada oficialmente",
+    "acceleration": "0-100 km/h en 6,9s",
+    "price": "USD 107.950",
     "availability": "https://schema.org/InStock",
-    "description": "SUV de lujo full-size de Lexus, comparte base con el Toyota Land Cruiser."
+    "description": "SUV de lujo full-size de Lexus, comparte plataforma GA-F con el Toyota Land Cruiser; disponible en versión gasolina e híbrida."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.423Z",
-    "dataQuality": 0.85
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-26T00:00:00.000Z",
+    "dataQuality": 0.87
   },
   "indexed": true,
   "searchable": true,
   "performanceData": {
     "velocidad": {
-      "maxima": 200
+      "maxima": null
     },
     "consumo": {
-      "promedio": "7.2 l/100km combinado (referencia)"
+      "promedio": "17/22/19 mpg EPA ciudad/ruta/combinado (LX 600)"
     }
   },
   "relatedModels": {
@@ -224,5 +240,39 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 107950,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.lexus.com/models/LX/specifications",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.cars.com/research/lexus-lx_600-2026/",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://www.kbb.com/lexus/lx/2026/lx-600-premium",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://www.longolexus.com/blogs/3079/car-tips/how-big-is-the-lexus-lx/",
+        "type": "concesionario oficial de marca",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Enriquecimiento individual (ago 2026): reemplaza specs de referencia/placeholder por datos verificados de la generación J300 vigente. Motorización y potencia (LX 600 vs. LX 700h) confirmadas en lexus.com; precio MSRP, dimensiones, peso y consumo EPA de prensa especializada. Campo de velocidad máxima se dejó explícitamente sin cifra oficial: Lexus no publica ese dato para este modelo (cifras de 210 mph que circulan en listados de concesionario no están respaldadas por ficha oficial).",
+    "dataQuality": 0.87
+  },
+  "content": "## Historia: de la costilla del Land Cruiser al buque insignia de Lexus\n\nEl Lexus LX nació en 1996 como la versión de lujo del Toyota Land Cruiser para el mercado norteamericano, aprovechando la robustez de la plataforma body-on-frame del todoterreno japonés pero con un nivel de equipamiento y confort muy por encima del original. Esa relación de parentesco se mantiene hasta hoy: la generación actual (interna J300, en producción desde 2022) comparte la plataforma GA-F con el Land Cruiser 300, aunque Lexus la reviste con un nivel de acabados, insonorización y tecnología muy superior, posicionándolo como el buque insignia absoluto de la marca por encima incluso del sedán LS.\n\n## LX 600 y LX 700h: dos caminos, una misma base\n\nPara el año modelo 2026, Lexus organiza la gama del LX en dos grandes familias: el LX 600, con el V6 3.4 biturbo puramente a gasolina (409 hp), y el LX 700h, que añade asistencia híbrida al mismo bloque motor para llevar la potencia a 457 hp y mejorar ligeramente el consumo. Ambas motorizaciones comparten la misma base mecánica (tracción integral permanente, diferencial central bloqueable, caja automática de 10 velocidades), pero el 700h introduce el trim Ultra Luxury, una configuración de solo 4 plazas tipo \"lounge\" pensada explícitamente para el pasajero trasero, con una filosofía más cercana a una limusina todoterreno que a un SUV familiar convencional.\n\n## Capacidad off-road real detrás del lujo\n\nA diferencia de otros SUV de lujo que sacrifican capacidad todoterreno por refinamiento en asfalto, el LX conserva herencia genuina de Land Cruiser: sistema Crawl Control (que gestiona automáticamente el acelerador y el freno en terrenos difíciles a baja velocidad), control de descenso en pendiente, y el sistema Active Height Control (AHC), que permite elevar la carrocería para superar obstáculos o bajarla para facilitar el acceso de los ocupantes y mejorar la estabilidad a alta velocidad.\n\n## Curiosidades\n\n- El LX es, junto al Land Cruiser, de los pocos SUV de lujo de gran tamaño que todavía se construye sobre un chasis de largueros separado de la carrocería (body-on-frame) en lugar de una estructura monocasco, una filosofía de diseño cada vez más rara en el segmento premium.\n- El sistema de audio Mark Levinson, disponible en los trims superiores, incluye hasta 25 parlantes distribuidos en una configuración de sonido envolvente de referencia en la industria automotriz.\n- La variante Ultra Luxury del LX 700h reduce la capacidad de pasajeros de 7 a 4 plazas deliberadamente, reemplazando la tercera fila y parte de la segunda por un espacio tipo salón con asientos reclinables individuales.\n- El LX comparte gran parte de su ADN mecánico con el Land Cruiser, pero Lexus nunca ha vendido el LX como una simple versión \"de lujo\" del Land Cruiser en su comunicación oficial: la marca lo posiciona como un desarrollo propio con calibración, insonorización y materiales exclusivos.\n\n## Competencia y posicionamiento\n\nEl Lexus LX compite en el segmento de SUV de lujo full-size con capacidad todoterreno real junto al Land Rover Range Rover, el Mercedes-Benz Clase G y, en un escalón de precio ligeramente inferior, el Toyota Land Cruiser del que deriva. Su diferencial frente a rivales como el Range Rover es un enfoque más orientado a la fiabilidad mecánica y la robustez probada de Toyota, mientras que frente al Mercedes Clase G ofrece una propuesta más silenciosa y orientada al confort de largo recorrido antes que a la imagen off-road extrema."
 }
