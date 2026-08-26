@@ -2,131 +2,140 @@
   "slug": "kia-ev6",
   "type": "vehiculos",
   "title": "Kia EV6",
-  "description": "Crossover eléctrico de Kia sobre la misma plataforma E-GMP que el Ioniq 5.",
+  "description": "Crossover eléctrico de Kia sobre la plataforma dedicada E-GMP (800V), compartida con el Hyundai Ioniq 5. Disponible con tracción trasera o integral, batería de 63 o 84 kWh y carga ultrarrápida.",
   "status": "confirmado",
   "tags": [
     "electrico",
-    "kia"
+    "kia",
+    "suv",
+    "crossover"
   ],
   "featured": false,
   "manufacturer": "Kia",
   "class": "SUV eléctrico",
   "customizable": false,
-  "power": "225 hp",
-  "price": "USD 44.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "167 hp / 125 kW (Light RWD, motor único) a 320 hp / 239 kW (Light Long Range, Wind y GT-Line, AWD doble motor); lineup EE.UU. 2026",
+  "price": "USD 39.445 (Light RWD) a USD 54.545 (GT-Line AWD), MSRP EE.UU. 2026 sin destino ni cargos de concesionario",
+  "consumo": "115 MPGe combinado (Light RWD, más eficiente) a 97 MPGe combinado (GT-Line AWD con rines de 20\"), estimación EPA",
+  "dimensiones": "4.694 mm largo x 1.880 mm ancho x 1.544 mm alto, distancia entre ejes 2.901 mm (convertido desde 184.8\" x 74\" x 60.8\", batalla 114.2\", cifras EE.UU. 2026)",
   "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.kia.com/us/en/ev6",
+    "secondarySource": "https://www.kbb.com/kia/ev6/2026/specs/",
+    "note": "Datos del lineup EE.UU. 2026 (4 trims: Light, Light Long Range, Wind, GT-Line). Precio, garantía, tracción y equipamiento de serie confirmados en el sitio oficial de Kia América; dimensiones, peso, batería, potencia y aceleración por trim tomados de la tabla de especificaciones de Kelley Blue Book, corroborada de forma cruzada con Cars.com, Edmunds y U.S. News.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "El EV6 GT de alto rendimiento (601 hp, generación anterior) fue discontinuado para el año modelo 2026 y no está incluido en esta ficha (fuente: Edmunds)",
+      "Edmunds reporta un MSRP inicial ligeramente distinto (USD 37.900) al de KBB y Cars.com (USD 39.445) para el trim Light; se usa la cifra de KBB/Cars.com por estar corroborada por dos fuentes independientes",
+      "Especificaciones corresponden al mercado de EE.UU.; en Europa, Reino Unido y otros mercados el EV6 tiene una configuración de batería y trims distinta (p. ej. batería única de 84 kWh, nomenclatura de trims 'Air/GT-Line/GT'), no cubierta en esta ficha",
+      "Cifras de 0-60 mph son oficiales de fábrica reportadas por KBB; Edmunds midió 4.9s en prueba independiente de pista para la versión GT-Line AWD (vs. 5.0s oficial)",
+      "Capacidad de carga (baúl, frunk) corresponde a la generación actual (facelift 2025+) según pruebas independientes de U.S. News e itemfits.com, no a la ficha técnica oficial de Kia"
     ]
   },
   "performance": {
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "speed": "115 mph / 185 km/h (Light RWD) a 117 mph / 188 km/h (trims AWD)",
+    "acceleration": "8.3s 0-60mph (Light RWD) a 5.0s 0-60mph (trims AWD 320 hp); Edmunds midió 4.9s en pista para GT-Line AWD"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.429Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
+  "updatedAt": "2026-08-26T19:02:10.000Z",
+  "transmision": "Automática de relación única (reductora fija, sin caja de cambios ni convertidor de par)",
+  "traccion": "Trasera / RWD (trim Light) o integral / AWD doble motor (Light Long Range, Wind, GT-Line)",
+  "peso": "1.874 kg / 4.132 lb (Light RWD) a 2.100 kg / 4.630 lb (trims AWD)",
   "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-180 kW",
+  "potenciaKW": "125 kW (Light RWD) a 239 kW (trims AWD)",
   "capacidadTanque": null,
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "8.3s 0-60mph (Light RWD) a 5.0s 0-60mph (AWD), cifras oficiales EE.UU.",
+  "anoProduccion": "2026 (año modelo actual; EV6 en producción continua desde 2021, con actualización de batería y estilo en 2025)",
   "mercados": [
-    "Europa",
     "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Europa",
+    "Reino Unido",
+    "Corea del Sur",
+    "Australia"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Pantalla táctil de 12.3\" y cluster digital de 12.3\" de serie",
+    "Apple CarPlay y Android Auto inalámbricos de serie",
+    "Carga inalámbrica de celular y 5 puertos USB de serie",
+    "Control de crucero adaptativo y asistentes de conducción de serie",
+    "Suspensión trasera multilink de serie; AWD disponible con bomba de calor"
   ],
   "consumoEtiqueta": null,
-  "neumaticos": "225/50R17",
+  "neumaticos": "19 pulgadas (Light, Light Long Range, Wind) o 20 pulgadas (GT-Line, según Cars.com)",
   "especificacionesMotor": null,
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",
-    "sist_propulsion": "Traccion",
+    "sist_propulsion": "RWD o AWD según trim",
     "velocidades": "1 relación (reductora fija)"
   },
   "especificacionesSuspension": {
-    "tipo_trasera": "Multilink",
-    "barra_estabilizadora": "26/20 mm",
-    "tipo_delantera": "MacPherson",
-    "amortiguadores": "Doble tubo",
-    "recorrido_vertical": "+-150 mm"
+    "tipo_delantera": "MacPherson strut con brazo inferior (fuente: Velocity Journal / EVKX, corroborado por Kia oficial)",
+    "tipo_trasera": "Multilink (confirmado por Kia oficial: 'multi-link rear suspension')",
+    "barra_estabilizadora": null,
+    "amortiguadores": null,
+    "recorrido_vertical": null
   },
   "especificacionesRuedas": {
-    "offset": "+35 a +45 mm",
-    "indice_velocidad": "T/V",
-    "indice_carga": "91",
-    "profundidad_surcos": "1.6 mm",
-    "pcd": "5x114.3"
+    "offset": null,
+    "indice_velocidad": null,
+    "indice_carga": null,
+    "profundidad_surcos": null,
+    "pcd": null
   },
   "especificacionesDireccion": {
-    "tipo_asistencia": "Electrica progresiva",
-    "sistema_control": "Control electronico",
-    "angulo_max_giro": "32-35 grados",
-    "vueltas_calador": "2.5-3.0"
+    "tipo_asistencia": null,
+    "sistema_control": null,
+    "angulo_max_giro": null,
+    "vueltas_calador": null
   },
   "aerodinámica": {
-    "defectores_aire": "Canales laterales",
-    "spoiler_trasero": "Integrado",
-    "area_frontal": "2.2-2.4 m2",
-    "coeficiente_arrastre": "Cx 0.27-0.32"
+    "defectores_aire": null,
+    "spoiler_trasero": "Integrado, con diseño trasero tipo 'duck tail' orientado a reducir arrastre",
+    "area_frontal": null,
+    "coeficiente_arrastre": "Cd ~0.28 (cifra reportada por Kia y corroborada por múltiples fuentes secundarias, no confirmada con documento técnico oficial en esta ronda)"
   },
   "capacidadesAdicionales": {
-    "capacidad_refrigerante": "7-9 L",
-    "capacidad_lavaparabrisas": "3-4 L",
-    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_refrigerante": null,
+    "capacidad_lavaparabrisas": null,
+    "liquido_frenos": null,
     "capacidad_aceite": null,
-    "filtro_habitaculo": "Carbon activado"
+    "filtro_habitaculo": null
   },
   "seguridad_pasiva": {
-    "respaldos": "Reforzados",
-    "zonas": "Deformacion",
-    "cinturones": "Pre-tensores",
-    "estructura": "Vigas laterales",
-    "cristales": "Laminado/Templado"
+    "respaldos": null,
+    "zonas": null,
+    "cinturones": null,
+    "estructura": null,
+    "cristales": null
   },
   "climatizacionAvanzada": {
-    "control": "Trizona",
-    "modo": "Recirculacion",
-    "filtro": "Carbon",
-    "desempanante": "Trasero/Lateral"
+    "control": "Bizona automática de serie (Cars.com)",
+    "modo": null,
+    "filtro": null,
+    "desempanante": null
   },
   "mantenimientoPrograma": {
-    "filtro": "25.000-30.000 km",
+    "filtro": null,
     "aceite": "No aplica (motor eléctrico)",
-    "frenos": "Anual",
-    "ruedas": "Anual",
-    "refrigerante": "2 anos"
+    "frenos": null,
+    "ruedas": null,
+    "refrigerante": null
   },
   "sistemasInteligentes": {
-    "frenado": "AEB",
-    "carril": "LDW",
-    "ciego": "BSM",
-    "parking": "8-12 sensores",
-    "crucero": "ACC"
+    "frenado": "Sistema de advertencia de colisión y frenado autónomo de serie en todos los trims (KBB)",
+    "carril": "Highway Driving Assist 2 disponible en trims superiores (Wind, GT-Line; U.S. News)",
+    "ciego": "Blind-Spot Alert de serie en todos los trims (KBB)",
+    "parking": "Cámara de visión 360° de serie en trims Wind y GT-Line; no disponible en Light (KBB)",
+    "crucero": "Control crucero adaptativo de serie, con asistencia de navegación disponible en trims superiores (Cars.com)"
   },
   "cilindrada": null,
-  "emisiones": null,
-  "tipo": null,
-  "asientos": null,
-  "baul": null,
-  "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "emisiones": "0 g/km CO2 en uso directo (vehículo 100% eléctrico); las emisiones asociadas dependen de la matriz de generación eléctrica de cada mercado",
+  "tipo": "Crossover eléctrico de carrocería tipo hatchback/SUV compacto",
+  "asientos": 5,
+  "baul": "691 L / 24.4 ft³ tras la segunda fila (1.422 L / 50.2 ft³ con asientos abatidos) + frunk de 20 L / 0.7 ft³ (fuentes: U.S. News, itemfits.com; cifras de la generación actual post-2025)",
+  "maleteroMin": "691 L / 24.4 ft³",
+  "generacion": "Primera generación (E-GMP), con actualización de batería, estilo y carga NACS en 2025",
+  "anoLanzamiento": "2021",
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -141,48 +150,67 @@
   },
   "specifications": {
     "motorizacion": {
-      "speed": "200 km/h (referencia)",
-      "acceleration": "0-100 km/h en 8.5s (referencia)"
+      "speed": "185-188 km/h según trim",
+      "acceleration": "8.3s a 5.0s 0-60mph según trim"
     },
     "bateria": {
-      "consumo": "7.2 l/100km combinado (referencia)"
+      "consumo": "62.9 kWh (Light) o 84 kWh (Light Long Range, Wind, GT-Line); carga 10-80% en ~18 min con cargador DC de 350 kW (Kia oficial)"
     },
     "transmision": {
       "tipo": "Automática de relación única (motor eléctrico)"
     },
     "dimensiones": {
-      "largo": 4,
-      "ancho": null,
-      "alto": null
+      "largo": 4694,
+      "ancho": 1880,
+      "alto": 1544
     },
     "capacidades": {
       "asientos": 5,
-      "maletero": null,
-      "velocidadMaxima": null,
-      "consumo": "7.2 l/100km combinado (referencia)"
+      "maletero": 691,
+      "velocidadMaxima": 188,
+      "consumo": "115-97 MPGe combinado según trim (EPA)"
     }
   },
   "variants": [
     {
-      "nombre": "Base",
-      "precio": "USD 44.000"
+      "nombre": "Light (RWD)",
+      "precio": "USD 39.445"
+    },
+    {
+      "nombre": "Light Long Range (AWD)",
+      "precio": "USD 46.745"
+    },
+    {
+      "nombre": "Wind (AWD)",
+      "precio": "USD 50.345"
+    },
+    {
+      "nombre": "GT-Line (AWD)",
+      "precio": "USD 54.545"
     }
   ],
   "competition": {
-    "competidores": [],
-    "posicionMercado": "Premium"
+    "competidores": [
+      "Hyundai Ioniq 5",
+      "Tesla Model Y",
+      "Ford Mustang Mach-E",
+      "Volkswagen ID.4"
+    ],
+    "posicionMercado": "Crossover eléctrico premium-accesible, posicionado entre compactos y medianos"
   },
   "seoKeywords": [
     "electrico",
     "kia",
     "Kia",
     "SUV eléctrico",
+    "crossover",
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "review",
+    "E-GMP"
   ],
-  "metaDescription": "Kia EV6 - SUV eléctrico Kia. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Kia EV6 2026 - Crossover eléctrico sobre plataforma E-GMP. Desde USD 39.445, hasta 320 hp y carga 10-80% en 18 min. Especificaciones y precio con fuente oficial.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
@@ -193,25 +221,58 @@
     },
     "vehicleType": "SUV eléctrico",
     "fuelType": "Eléctrico",
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)",
-    "price": "USD 44.000",
+    "speed": "188 km/h",
+    "acceleration": "0-60mph en 5.0s (AWD)",
+    "price": "USD 39.445",
     "availability": "https://schema.org/InStock",
-    "description": "Crossover eléctrico de Kia sobre la misma plataforma E-GMP que el Ioniq 5."
+    "description": "Crossover eléctrico de Kia sobre la plataforma dedicada E-GMP (800V), compartida con el Hyundai Ioniq 5."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.415Z",
-    "dataQuality": 0.85
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-26T19:02:10.000Z",
+    "dataQuality": 0.92
   },
   "indexed": true,
   "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.kia.com/us/en/ev6",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.kbb.com/kia/ev6/2026/specs/",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://www.edmunds.com/kia/ev6/",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://cars.usnews.com/cars-trucks/kia/ev6/interior",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Enriquecimiento individual (ago 2026): reemplaza specs de referencia/placeholder por datos verificados del lineup EE.UU. 2026 con fuente oficial (Kia América) y cruzada (KBB, Edmunds, Cars.com, U.S. News). Campos sin fuente confiable localizada en esta ronda se dejaron en null en vez de completarse con estimaciones.",
+    "dataQuality": 0.92
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 39445,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
   "performanceData": {
     "velocidad": {
-      "maxima": 200
+      "maxima": 188
     },
     "consumo": {
-      "promedio": "7.2 l/100km combinado (referencia)"
+      "promedio": "115-97 MPGe combinado según trim (EPA)"
     }
   },
   "relatedModels": {
