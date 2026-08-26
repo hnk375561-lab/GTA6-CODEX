@@ -29,7 +29,7 @@ import path from "node:path";
 
 const VEHICULOS_DIR = "src/content/vehiculos";
 const API_KEY = process.env.GEMINI_API_KEY;
-const MODEL = process.env.GEMINI_MODEL || "gemini-flash-latest";
+const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash-lite";
 const LIMIT = process.env.LIMIT ? parseInt(process.env.LIMIT, 10) : Infinity;
 const ONLY = process.env.ONLY || "all"; // "all" | "needsBoth" | "needsContentOnly"
 const DELAY_MS = 4500; // ~13 req/min, seguro bajo el límite gratuito de 15 RPM
@@ -125,7 +125,7 @@ Reglas estrictas:
 
 // --- 3. Llamada a la API de Gemini con Google Search grounding -----------
 
-async function callGemini(prompt) {
+async function callGemini(prompt, attempt = 1) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
   const body = {
     contents: [{ role: "user", parts: [{ text: prompt }] }],
@@ -140,6 +140,15 @@ async function callGemini(prompt) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
+
+  if (res.status === 429 && attempt < 3) {
+    // Backoff progresivo: puede ser un pico de RPM (recuperable) o RPD
+    // agotado (no recuperable en el dia). Reintentamos un par de veces
+    // por las dudas antes de rendirnos con este archivo puntual.
+    const waitMs = 20000 * attempt;
+    await sleep(waitMs);
+    return callGemini(prompt, attempt + 1);
+  }
 
   if (!res.ok) {
     const text = await res.text();
