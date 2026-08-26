@@ -35,12 +35,9 @@ const nextConfig = {
     return config
   },
   headers: async () => {
-    // CSP en modo Report-Only a propósito: permite medir qué bloquearía
-    // sin romper nada en producción (GA, thumbnails de YouTube, y los
-    // propios estilos/scripts inline que ya usa Next). Una vez confirmado
-    // en los reportes que no hay falsos positivos, cambiar el nombre del
-    // header a 'Content-Security-Policy' (sin '-Report-Only') para que
-    // bloquee de verdad.
+    // CSP en modo enforcement. Se validó contra los reportes de la fase
+    // Report-Only (GA, thumbnails de YouTube, estilos/scripts inline de
+    // Next) sin falsos positivos, así que ahora bloquea de verdad.
     const csp = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
@@ -76,7 +73,7 @@ const nextConfig = {
             value: 'camera=(), microphone=(), geolocation=()'
           },
           {
-            key: 'Content-Security-Policy-Report-Only',
+            key: 'Content-Security-Policy',
             value: csp
           }
         ]
