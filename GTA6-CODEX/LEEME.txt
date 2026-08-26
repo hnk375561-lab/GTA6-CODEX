@@ -1,0 +1,28 @@
+fix8 — limpieza de datos fabricados en 95 fichas de vehículos
+
+Qué hace: en las 95 fichas de src/content/vehiculos/ que el propio audit:evidence
+marca como "sin fuente verificada" (evidence.level = respaldado, sin primarySource),
+una carga masiva anterior había agregado además otros 6 campos con datos inventados
+que aparentaban estar verificados. Confirmado comparando varias fichas entre sí:
+eran IDÉNTICOS entre modelos totalmente distintos (ej. Ford Puma y Porsche Cayenne
+con el mismo precio en los mismos 15 países, mismo puntaje de seguridad, mismas
+4.163 vs 3.630 "reseñas de usuario" con comentarios genéricos idénticos).
+
+Campos eliminados de las 95 fichas:
+- audit          (URL placeholder "https://www.manufacturer.com" marcada verificado:true)
+- globalPricing   (precio: 0 en todas)
+- userRatings     (reseñas/comentarios fabricados, idénticos entre modelos)
+- safety          (mismo puntaje EuroNCAP en todas)
+- availability    (mismos 15 mercados y mismos 3 precios en TODAS, sin importar el auto)
+- productionHistory (mismo texto "2023-presente / Millones" en todas)
+- competition.ventajas (misma lista de 4 palabras en todas; se mantiene competidores/posicionMercado)
+
+Se mantuvo intacto el resto de cada ficha (variants, schemaMarkup.price, specifications,
+etc.) porque esos sí varían por vehículo y no mostraron el patrón de relleno.
+
+Esto NO cierra la brecha de evidencia (sigue en 95/250 según audit:evidence) — es
+limpieza de datos engañosos, no investigación de fuente primaria real. Eso queda
+como el próximo paso, ficha por ficha o en lotes.
+
+Verificado en verde después del cambio: tsc, lint, 197/197 tests, verify:content,
+verify:min-count, verify:relations, verify:reserved-keys, build (345 páginas).

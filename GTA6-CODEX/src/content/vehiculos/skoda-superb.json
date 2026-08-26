@@ -165,49 +165,6 @@
       "consumo": "7.2 l/100km combinado (referencia)"
     }
   },
-  "safety": {
-    "euroNCAP": "★★★★☆",
-    "puntaje": 85
-  },
-  "availability": {
-    "europa": {
-      "disponible": true,
-      "mercados": [
-        "Alemania",
-        "Francia",
-        "España",
-        "Italia",
-        "Reino Unido"
-      ],
-      "precioBase": "€45,000"
-    },
-    "americas": {
-      "disponible": true,
-      "mercados": [
-        "USA",
-        "Canadá",
-        "México",
-        "Brasil"
-      ],
-      "precioBase": "$43,990"
-    },
-    "asia": {
-      "disponible": true,
-      "mercados": [
-        "China",
-        "Japón",
-        "Corea del Sur",
-        "Hong Kong"
-      ],
-      "precioBase": "¥298,000"
-    }
-  },
-  "productionHistory": {
-    "generacionActual": {
-      "años": "2023-presente",
-      "unidadesProducidas": "Millones"
-    }
-  },
   "variants": [
     {
       "nombre": "Base",
@@ -216,13 +173,7 @@
   ],
   "competition": {
     "competidores": [],
-    "posicionMercado": "Premium",
-    "ventajas": [
-      "Tecnología avanzada",
-      "Eficiencia energética",
-      "Rendimiento",
-      "Conectividad"
-    ]
+    "posicionMercado": "Premium"
   },
   "seoKeywords": [
     "sedan",
@@ -258,41 +209,6 @@
   },
   "indexed": true,
   "searchable": true,
-  "audit": {
-    "sources": [
-      {
-        "url": "https://www.manufacturer.com",
-        "type": "oficial",
-        "verificado": true
-      }
-    ],
-    "auditNotes": "Datos en revisión",
-    "dataQuality": 0.8
-  },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
-  "userRatings": {
-    "promedio": "3.6",
-    "totalVotos": 5061,
-    "desglose": {
-      "1": 88,
-      "2": 294,
-      "3": 1074,
-      "4": 1172,
-      "5": 2392
-    },
-    "comentariosDestacados": [
-      "Excelente relación calidad-precio",
-      "Muy buena aceleración y manejo",
-      "Confortable para viajes largos",
-      "Tecnología moderna y intuitiva"
-    ]
-  },
   "performanceData": {
     "velocidad": {
       "maxima": 200
