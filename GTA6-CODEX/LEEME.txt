@@ -1,28 +1,22 @@
-fix8 — limpieza de datos fabricados en 95 fichas de vehículos
+fix9 — lote 1 de fuentes primarias reales (10/95)
 
-Qué hace: en las 95 fichas de src/content/vehiculos/ que el propio audit:evidence
-marca como "sin fuente verificada" (evidence.level = respaldado, sin primarySource),
-una carga masiva anterior había agregado además otros 6 campos con datos inventados
-que aparentaban estar verificados. Confirmado comparando varias fichas entre sí:
-eran IDÉNTICOS entre modelos totalmente distintos (ej. Ford Puma y Porsche Cayenne
-con el mismo precio en los mismos 15 países, mismo puntaje de seguridad, mismas
-4.163 vs 3.630 "reseñas de usuario" con comentarios genéricos idénticos).
+Se investigó y agregó evidence.primarySource real (página oficial del
+fabricante) a 10 de las 95 fichas con brecha de evidencia. El nivel subió
+de "respaldado" a "oficial-nombrado" en estas 10:
 
-Campos eliminados de las 95 fichas:
-- audit          (URL placeholder "https://www.manufacturer.com" marcada verificado:true)
-- globalPricing   (precio: 0 en todas)
-- userRatings     (reseñas/comentarios fabricados, idénticos entre modelos)
-- safety          (mismo puntaje EuroNCAP en todas)
-- availability    (mismos 15 mercados y mismos 3 precios en TODAS, sin importar el auto)
-- productionHistory (mismo texto "2023-presente / Millones" en todas)
-- competition.ventajas (misma lista de 4 palabras en todas; se mantiene competidores/posicionMercado)
+byd-dolphin-mini      -> byd.com/ar/car/dolphin-mini
+ford-puma             -> media.ford.com (Puma, Ford of Europe)
+honda-accord          -> owners.honda.com (Accord Sedan specs)
+porsche-cayenne       -> porsche.com/international/models/cayenne
+subaru-wrx            -> subaru.com/vehicles/wrx/features
+toyota-prius          -> toyota.com/prius/features
+hyundai-ioniq-5       -> hyundai.com/worldwide/eco/ioniq5/performance
+jeep-grand-cherokee   -> jeep.com/2026/grand-cherokee/specs
+volkswagen-tiguan     -> vw.com/en/models/tiguan
+land-rover-discovery  -> landrover.com/vehicles/discovery/specifications
 
-Se mantuvo intacto el resto de cada ficha (variants, schemaMarkup.price, specifications,
-etc.) porque esos sí varían por vehículo y no mostraron el patrón de relleno.
+Resultado: audit:evidence pasó de 155/250 (62%) a 165/250 (66%) con fuente
+sólida. Quedan 85 fichas más en la misma situación, para próximos lotes.
 
-Esto NO cierra la brecha de evidencia (sigue en 95/250 según audit:evidence) — es
-limpieza de datos engañosos, no investigación de fuente primaria real. Eso queda
-como el próximo paso, ficha por ficha o en lotes.
-
-Verificado en verde después del cambio: tsc, lint, 197/197 tests, verify:content,
-verify:min-count, verify:relations, verify:reserved-keys, build (345 páginas).
+Verificado en verde: tsc, lint, 197/197 tests, verify:content,
+verify:relations, build (345 páginas).

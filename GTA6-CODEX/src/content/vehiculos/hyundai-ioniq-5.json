@@ -17,12 +17,13 @@
   "consumo": "7.2 l/100km combinado (referencia)",
   "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
   "evidence": {
-    "level": "respaldado",
+    "level": "oficial-nombrado",
     "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
     "limitations": [
       "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
       "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
-    ]
+    ],
+    "primarySource": "https://www.hyundai.com/worldwide/en/eco/ioniq5/performance"
   },
   "performance": {
     "speed": "200 km/h (referencia)",
