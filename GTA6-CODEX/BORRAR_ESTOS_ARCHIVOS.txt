@@ -1,0 +1,8 @@
+Este fix también requiere BORRAR (no copiar) estos dos archivos si todavía existen en tu repo local:
+
+scripts/verify-media-integrity.mjs
+scripts/verify-media-integrity.test.mjs
+
+Son scripts huérfanos que validaban src/content/media/, un tipo de contenido
+del proyecto GTA VI viejo que ya no existe en AutoFicha. Por eso el CI
+fallaba: el workflow corría verify:media contra una carpeta inexistente.

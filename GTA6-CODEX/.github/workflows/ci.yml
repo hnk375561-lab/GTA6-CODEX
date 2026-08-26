@@ -49,9 +49,6 @@ jobs:
       - name: Integridad de relaciones
         run: npm run verify:relations
 
-      - name: Integridad de media
-        run: npm run verify:media
-
       - name: Rutas SEO
         run: npm run verify:seo
 

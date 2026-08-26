@@ -17,8 +17,6 @@
     "audit:evidence": "node scripts/audit-evidence-coverage.mjs",
     "verify:relations": "node scripts/verify-relations-integrity.mjs",
     "verify:relations:selftest": "node scripts/verify-relations-integrity.mjs --self-test",
-    "verify:media": "node scripts/verify-media-integrity.mjs",
-    "test:media": "node --test scripts/verify-media-integrity.test.mjs",
     "test": "vitest run",
     "verify:tailwind": "node scripts/verify-tailwind-config.mjs",
     "verify:reserved-keys": "node scripts/verify-reserved-entity-keys.mjs",
