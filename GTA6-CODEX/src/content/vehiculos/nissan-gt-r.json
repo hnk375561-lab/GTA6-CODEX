@@ -17,11 +17,12 @@
   "consumo": "7.2 l/100km combinado (referencia)",
   "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
   "evidence": {
-    "level": "respaldado",
+    "level": "oficial-nombrado",
     "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
     "limitations": [
       "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ]
+    ],
+    "primarySource": "https://www.nissanusa.com/interactivebrochures/sportscars/gtr/nissan-gt-r/index.html"
   },
   "performance": {
     "speed": "200 km/h (referencia)",

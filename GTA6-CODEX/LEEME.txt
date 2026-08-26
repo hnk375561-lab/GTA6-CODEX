@@ -1,22 +1,18 @@
-fix9 — lote 1 de fuentes primarias reales (10/95)
+fix10 — lote 2 de fuentes primarias reales (10/95, van 20/95 totales)
 
-Se investigó y agregó evidence.primarySource real (página oficial del
-fabricante) a 10 de las 95 fichas con brecha de evidencia. El nivel subió
-de "respaldado" a "oficial-nombrado" en estas 10:
+kia-rio                   -> eu-www.kia.com/eut/new-cars/rio/specifications
+mazda-3                   -> mazdausa.com/vehicles/mazda3-sedan
+nissan-gt-r                -> nissanusa.com (interactive brochure GT-R)
+mclaren-artura             -> cars.mclaren.com/us_en/artura
+volvo-xc90                 -> volvocars.com/us/cars/xc90/specifications
+suzuki-jimny                -> globalsuzuki.com/automobile/lineup/jimny
+mercedes-benz-gle           -> la.mercedes-benz.com (GLE SUV V167 specifications)
+kawasaki-ninja-650           -> kawasaki.com/en-us/motorcycle/ninja/sport/ninja-650
+royal-enfield-classic-350    -> royalenfield.com/us/en/motorcycles/classic-350
+mini-countryman              -> mini.com (new MINI Countryman)
 
-byd-dolphin-mini      -> byd.com/ar/car/dolphin-mini
-ford-puma             -> media.ford.com (Puma, Ford of Europe)
-honda-accord          -> owners.honda.com (Accord Sedan specs)
-porsche-cayenne       -> porsche.com/international/models/cayenne
-subaru-wrx            -> subaru.com/vehicles/wrx/features
-toyota-prius          -> toyota.com/prius/features
-hyundai-ioniq-5       -> hyundai.com/worldwide/eco/ioniq5/performance
-jeep-grand-cherokee   -> jeep.com/2026/grand-cherokee/specs
-volkswagen-tiguan     -> vw.com/en/models/tiguan
-land-rover-discovery  -> landrover.com/vehicles/discovery/specifications
-
-Resultado: audit:evidence pasó de 155/250 (62%) a 165/250 (66%) con fuente
-sólida. Quedan 85 fichas más en la misma situación, para próximos lotes.
+Resultado: audit:evidence pasó de 165/250 (66%) a 175/250 (70%) con fuente
+sólida. Quedan 75 fichas más, para próximos lotes.
 
 Verificado en verde: tsc, lint, 197/197 tests, verify:content,
 verify:relations, build (345 páginas).
