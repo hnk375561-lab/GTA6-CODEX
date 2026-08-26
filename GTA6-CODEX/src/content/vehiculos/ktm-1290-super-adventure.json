@@ -2,7 +2,7 @@
   "slug": "ktm-1290-super-adventure",
   "type": "vehiculos",
   "title": "KTM 1290 Super Adventure",
-  "description": "Moto aventura de alta cilindrada de KTM, motor V-twin LC8 de 1301cc.",
+  "description": "Moto aventura de alta cilindrada de KTM (versión S, discontinuada tras el año modelo 2024), motor V-twin LC8 de 1.301cc y 160 hp, suspensión semi-activa WP y Control de Crucero Adaptativo por radar. Sucedida por la KTM 1390 Super Adventure.",
   "status": "confirmado",
   "tags": [
     "moto",
@@ -12,126 +12,136 @@
   "manufacturer": "KTM",
   "class": "Moto aventura",
   "customizable": false,
-  "power": "160 hp",
-  "price": "USD 22.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "160 hp / 119 kW (cifra de fábrica ampliamente reportada; KTM oficial no publica hp en su ficha técnica web, solo par motor)",
+  "price": "USD 20.999 + USD 750 de flete (MSRP oficial KTM EE.UU., último año modelo 2024, antes de discontinuación)",
+  "consumo": "No publicado en L/100km por KTM; emisiones de CO2 declaradas en 125 g/km (ciclo homologación KTM)",
+  "dimensiones": "Distancia entre ejes 1.557 mm, altura de asiento 849/869 mm ajustable, altura libre al piso 223 mm (ficha técnica oficial KTM, dimensiones de largo/ancho total no publicadas por el fabricante)",
   "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ktm.com/en-us/models/adventure/2024-ktm-1290-superadventures/technical-specifications.html",
+    "secondarySource": "https://www.cycleworld.com/ktm/1290-super-adventure-s/",
+    "note": "Datos de la versión S, último año modelo oficial (2024) antes de que KTM discontinuara la línea 1290 Super Adventure y la reemplazara por la 1390 Super Adventure (2026+). Ficha técnica de motor, chasis, suspensión y dimensiones tomada directamente de la página oficial de especificaciones de KTM EE.UU.; potencia en hp (no publicada por KTM en esa tabla, que solo indica torque) y precio corroborados con Cycle World y fuentes de la industria (160 hp / 138 Nm es la cifra consistentemente reportada desde el lanzamiento de esta generación).",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+      "KTM discontinuó la 1290 Super Adventure S y R después del año modelo 2024; el modelo ya no figura en el catálogo actual de KTM (reemplazado por la 1390 Super Adventure S/R, con motor de mayor cilindrada). Esta ficha documenta la última generación oficialmente vendida",
+      "La ficha técnica oficial de KTM no publica la cifra de potencia en hp/kW en su tabla web (solo listra torque de 138 Nm); la cifra de 160 hp es la reportada de forma consistente por KTM en materiales de prensa y corroborada por toda la prensa especializada (Cycle World, Wikipedia, Autoevolution)",
+      "Peso publicado por KTM es 'sin combustible' (227 kg); el peso en orden de marcha con tanque lleno (23 L) ronda los 245-250 kg según pruebas independientes de prensa especializada",
+      "Dimensiones de largo y ancho total no están publicadas por KTM; solo se documentan distancia entre ejes, altura de asiento y altura libre al piso",
+      "El precio de USD 20.999 + USD 750 de flete corresponde al mercado de EE.UU.; en otros mercados (Europa, India, Latinoamérica) el precio y la disponibilidad varían sensiblemente"
     ]
   },
   "performance": {
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "speed": "Velocidad máxima no publicada oficialmente por KTM",
+    "acceleration": "Aceleración 0-100 km/h no publicada oficialmente por KTM; estimaciones de prensa especializada la ubican en torno a 3.3-3.5s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.436Z",
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-26T22:00:00.000Z",
+  "transmision": "Manual secuencial 6 velocidades (caja PANKL), embrague antirrebote PASC",
+  "traccion": "Trasera (cadena 525 X-Ring)",
+  "peso": "227 kg sin combustible (ficha oficial KTM); ~245-250 kg en orden de marcha con tanque lleno, según prensa especializada",
+  "tipoMotor": "Gasolina, V-twin LC8 75°, 4 tiempos, DOHC 4 válvulas por cilindro, doble encendido",
+  "potenciaKW": "119 kW (160 hp, cifra de prensa/fábrica; no listada por KTM en su tabla web)",
+  "capacidadTanque": "23 litros (tanque de 3 celdas con tapa de combustible electrónica)",
+  "tiempoRecorrido": "~3.3-3.5s 0-100 km/h (estimación de prensa especializada, no publicada oficialmente por KTM)",
+  "anoProduccion": "2015-2024 (línea 1290 Super Adventure); 2024 fue el último año modelo antes de ser reemplazada por la 1390 Super Adventure",
   "mercados": [
-    "Europa",
     "USA",
-    "Asia"
+    "Europa",
+    "India",
+    "Latinoamérica",
+    "Australia"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Control de Crucero Adaptativo (ACC) por radar, desarrollado junto a Bosch — de serie en la versión S",
+    "Suspensión semi-activa WP SAT (Semi-Active Technology) con 200 mm de recorrido delantero y trasero",
+    "Pantalla TFT de 7 pulgadas, orientable, con conectividad Bluetooth (KTM Connect)",
+    "Sistema keyless KTM Race On con tecnología anti relay attack (ARA)",
+    "Frenos Brembo (discos de 320 mm delanteros, 267 mm trasero) con ABS de curva Bosch MSC",
+    "Modos de manejo Rain, Street, Sport y Offroad; modo Rally opcional",
+    "Garantía de fabricante de hasta 4 años en unidades vendidas desde feb. 2025 (KTM oficial)"
   ],
-  "consumoEtiqueta": "D",
-  "neumaticos": "120/70R17",
+  "consumoEtiqueta": null,
+  "neumaticos": "Neumáticos MITAS Terra Force-R desarrollados específicamente para el modelo (KTM oficial)",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "filtro_aire": "Filtro con nervaduras verticales, acceso mediante 4 tornillos (KTM oficial)",
+    "tipo_valvulas": "DOHC 4 válvulas por cilindro con seguidores de leva recubiertos en DLC",
+    "ratio_compresion": null,
+    "sistemas_inyeccion": "Ride-by-wire (control electrónico de acelerador)",
+    "arbol_levas": "Doble árbol de levas en cabeza (DOHC) por cilindro"
   },
   "especificacionesTransmision": {
-    "tipo_automatico": "Convertidor",
-    "control_cambios": "Secuencial",
-    "sist_propulsion": "Traccion",
-    "velocidades": "8/9 velocidades"
+    "tipo_automatico": "No aplica (manual)",
+    "control_cambios": "Secuencial 6 velocidades, Quickshifter+ opcional",
+    "sist_propulsion": "RWD (trasera)",
+    "velocidades": "6 velocidades"
   },
   "especificacionesSuspension": {
-    "tipo_trasera": "Multilink",
-    "barra_estabilizadora": "26/20 mm",
-    "tipo_delantera": "MacPherson",
-    "amortiguadores": "Doble tubo",
-    "recorrido_vertical": "+-150 mm"
+    "tipo_delantera": "WP SAT (semi-activa) invertida de 48 mm, 200 mm de recorrido",
+    "tipo_trasera": "WP SAT (semi-activa), 200 mm de recorrido",
+    "barra_estabilizadora": null,
+    "amortiguadores": "Semi-activos con válvulas magnéticas electrónicas (SCU)",
+    "recorrido_vertical": "200 mm delantero y trasero (KTM oficial)"
   },
   "especificacionesRuedas": {
-    "offset": "+35 a +45 mm",
-    "indice_velocidad": "T/V",
-    "indice_carga": "91",
-    "profundidad_surcos": "1.6 mm",
-    "pcd": "5x114.3"
+    "offset": null,
+    "indice_velocidad": null,
+    "indice_carga": null,
+    "profundidad_surcos": null,
+    "pcd": null
   },
   "especificacionesDireccion": {
-    "tipo_asistencia": "Electrica progresiva",
-    "sistema_control": "Control electronico",
-    "angulo_max_giro": "32-35 grados",
-    "vueltas_calador": "2.5-3.0"
+    "tipo_asistencia": null,
+    "sistema_control": null,
+    "angulo_max_giro": null,
+    "vueltas_calador": null
   },
   "aerodinámica": {
-    "defectores_aire": "Canales laterales",
-    "spoiler_trasero": "Integrado",
-    "area_frontal": "2.2-2.4 m2",
-    "coeficiente_arrastre": "Cx 0.27-0.32"
+    "defectores_aire": "Parabrisas ajustable en altura (55 mm) desarrollado en túnel de viento",
+    "spoiler_trasero": null,
+    "area_frontal": null,
+    "coeficiente_arrastre": null
   },
   "capacidadesAdicionales": {
-    "capacidad_refrigerante": "7-9 L",
-    "capacidad_lavaparabrisas": "3-4 L",
-    "liquido_frenos": "0.75-0.85 L",
-    "capacidad_aceite": "4.5-5.5 L",
-    "filtro_habitaculo": "Carbon activado"
+    "capacidad_refrigerante": null,
+    "capacidad_lavaparabrisas": null,
+    "liquido_frenos": null,
+    "capacidad_aceite": null,
+    "filtro_habitaculo": null
   },
   "seguridad_pasiva": {
-    "respaldos": "Reforzados",
-    "zonas": "Deformacion",
-    "cinturones": "Pre-tensores",
-    "estructura": "Vigas laterales",
-    "cristales": "Laminado/Templado"
+    "respaldos": null,
+    "zonas": null,
+    "cinturones": null,
+    "estructura": null,
+    "cristales": null
   },
   "climatizacionAvanzada": {
-    "control": "Trizona",
-    "modo": "Recirculacion",
-    "filtro": "Carbon",
-    "desempanante": "Trasero/Lateral"
+    "control": null,
+    "modo": null,
+    "filtro": null,
+    "desempanante": null
   },
   "mantenimientoPrograma": {
-    "filtro": "25.000-30.000 km",
-    "aceite": "15.000 km",
-    "frenos": "Anual",
-    "ruedas": "Anual",
-    "refrigerante": "2 anos"
+    "filtro": null,
+    "aceite": "Intervalo de servicio de 15.000 km (KTM oficial)",
+    "frenos": null,
+    "ruedas": null,
+    "refrigerante": null
   },
   "sistemasInteligentes": {
-    "frenado": "AEB",
-    "carril": "LDW",
-    "ciego": "BSM",
-    "parking": "8-12 sensores",
-    "crucero": "ACC"
+    "frenado": "ABS de curva Bosch MSC (Motorcycle Stability Control), sensor de inclinación de 6 ejes",
+    "carril": "No aplica (motocicleta)",
+    "ciego": "No aplica (motocicleta)",
+    "parking": "No aplica (motocicleta)",
+    "crucero": "Control de Crucero Adaptativo (ACC) por radar, de 30 a 150 km/h, con 5 niveles de distancia de seguimiento (KTM oficial)"
   },
-  "cilindrada": null,
-  "emisiones": null,
-  "tipo": null,
-  "asientos": null,
+  "cilindrada": "1.301 cc",
+  "emisiones": "125 g/km CO2 (ciclo de homologación KTM)",
+  "tipo": "Moto aventura / adventure touring de alta cilindrada",
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación (2021+), última evolución de la línea 1290 antes de la 1390 Super Adventure",
+  "anoLanzamiento": "2015 (línea 1290 Super Adventure); generación actual (3ra) desde 2021",
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -146,36 +156,45 @@
   },
   "specifications": {
     "motorizacion": {
-      "speed": "200 km/h (referencia)",
-      "acceleration": "0-100 km/h en 8.5s (referencia)"
+      "speed": "No publicada oficialmente",
+      "acceleration": "~3.3-3.5s 0-100 km/h (estimación de prensa)"
     },
     "bateria": {
-      "consumo": "7.2 l/100km combinado (referencia)"
+      "consumo": "No publicado en L/100km por KTM"
     },
     "transmision": {
-      "tipo": "Manual secuencial"
+      "tipo": "Manual secuencial 6 velocidades"
     },
     "dimensiones": {
-      "largo": 4,
+      "largo": null,
       "ancho": null,
       "alto": null
     },
     "capacidades": {
-      "asientos": 5,
+      "asientos": 2,
       "maletero": null,
       "velocidadMaxima": null,
-      "consumo": "7.2 l/100km combinado (referencia)"
+      "consumo": "No publicado en L/100km por KTM"
     }
   },
   "variants": [
     {
-      "nombre": "Base",
-      "precio": "USD 22.000"
+      "nombre": "1290 Super Adventure S",
+      "precio": "USD 20.999 + USD 750 flete"
+    },
+    {
+      "nombre": "1290 Super Adventure R",
+      "precio": "USD 20.999 + USD 750 flete (mismo precio base que la S)"
     }
   ],
   "competition": {
-    "competidores": [],
-    "posicionMercado": "Premium"
+    "competidores": [
+      "BMW R1300GS",
+      "Ducati Multistrada V4",
+      "Triumph Tiger 1200",
+      "Honda Africa Twin"
+    ],
+    "posicionMercado": "Moto aventura premium de alta cilindrada, orientada al segmento sport-touring dentro de las adventure bikes de más de 1000cc"
   },
   "seoKeywords": [
     "moto",
@@ -185,9 +204,11 @@
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "review",
+    "V-twin",
+    "LC8"
   ],
-  "metaDescription": "KTM 1290 Super Adventure - Moto aventura KTM. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "KTM 1290 Super Adventure S - Moto aventura V-twin LC8 de 1.301cc, 160 hp. Desde USD 20.999. Especificaciones oficiales, precio y equipamiento.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
@@ -198,25 +219,25 @@
     },
     "vehicleType": "Moto aventura",
     "fuelType": "Gasolina",
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)",
-    "price": "USD 22.000",
-    "availability": "https://schema.org/InStock",
-    "description": "Moto aventura de alta cilindrada de KTM, motor V-twin LC8 de 1301cc."
+    "speed": "No publicada oficialmente",
+    "acceleration": "~3.3-3.5s 0-100 km/h (estimación)",
+    "price": "USD 20.999",
+    "availability": "https://schema.org/Discontinued",
+    "description": "Moto aventura de alta cilindrada de KTM, motor V-twin LC8 de 1.301cc, discontinuada tras el año modelo 2024."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.419Z",
-    "dataQuality": 0.85
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-26T22:00:00.000Z",
+    "dataQuality": 0.88
   },
   "indexed": true,
   "searchable": true,
   "performanceData": {
     "velocidad": {
-      "maxima": 200
+      "maxima": null
     },
     "consumo": {
-      "promedio": "7.2 l/100km combinado (referencia)"
+      "promedio": "No publicado en L/100km por KTM"
     }
   },
   "relatedModels": {
@@ -224,5 +245,39 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.ktm.com/en-us/models/adventure/2024-ktm-1290-superadventures/technical-specifications.html",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.ktm.com/en-us/models/adventure/2024-ktm-1290-superadventures.html",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.cycleworld.com/ktm/1290-super-adventure-s/",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/KTM_1290_Super_Adventure",
+        "type": "referencia",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Enriquecimiento individual (ago 2026): reemplaza specs de referencia/placeholder por datos verificados del último año modelo oficial (2024, versión S) con fuente oficial KTM (ficha técnica web) y corroboración de prensa especializada. Se documenta explícitamente la discontinuación del modelo y su sucesor (1390 Super Adventure). Campos sin fuente confiable localizada se dejaron en null.",
+    "dataQuality": 0.88
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 20999,
+      "moneda": "USD",
+      "disponible": false
+    }
+  },
+  "content": "## Historia y evolución de la gama\n\nLa KTM 1290 Super Adventure nace en 2015 como evolución directa de la 1190 Adventure, incorporando por primera vez el motor LC8 de 1.301cc y una cantidad de electrónica hasta entonces inédita en la categoría: ABS de curva, control de crucero, regulación de deslizamiento del motor y asistencia de arranque en pendiente.\n\nLa versión que documenta esta ficha corresponde a la tercera generación (2021 en adelante, con el año modelo 2024 como su última iteración oficial en el catálogo de KTM), que trajo consigo un rediseño completo de ergonomía y chasis: cuadro más corto, subchasis nuevo, motor rotado dos grados hacia adelante y una revisión completa de la suspensión semi-activa WP.\n\n## El fin de la línea 1290 y la llegada de la 1390\n\nTras el año modelo 2024, KTM discontinuó tanto la versión S como la R de la 1290 Super Adventure. Su sucesora es la KTM 1390 Super Adventure, que debutó con un motor de mayor cilindrada y una nueva generación de electrónica. Esto convierte a la 1290 en el último capítulo de una plataforma que definió, durante casi una década, el estándar de tecnología en motos de aventura de gran cilindrada.\n\n## Tecnología de vanguardia: el radar que cambió las motos de aventura\n\nUno de los hitos técnicos más relevantes de esta generación fue la incorporación del Control de Crucero Adaptativo (ACC) desarrollado junto a Bosch, una de las primeras implementaciones de esta tecnología —habitual en autos— en una motocicleta de producción. El sistema usa un sensor de radar frontal para \"engancharse\" al vehículo de adelante y mantener una distancia de seguimiento configurable, ajustando la velocidad automáticamente en carretera.\n\n## Curiosidades\n\n- El motor LC8 de esta generación redujo peso respecto a su predecesor sin sacrificar potencia: las paredes del block se adelgazaron casi 1 kg gracias a mejoras de fundición.\n- La suspensión semi-activa WP SAT permite ajustar el amortiguamiento delantero y trasero desde la pantalla TFT, en tiempo real y mientras se conduce, sin necesidad de detenerse.\n- El sistema de arranque sin llave \"KTM Race On\" incorpora tecnología anti-relay-attack (ARA), pensada para dificultar el robo mediante amplificación de señal del llavero, una vulnerabilidad común en sistemas keyless de otros fabricantes.\n- El tanque de combustible de 23 litros tiene un diseño de tres celdas (una central y dos laterales) e incluye un compartimento de almacenamiento con puerto USB, un guiño directo a la KTM 990 Adventure original.\n- Los neumáticos MITAS Terra Force-R fueron desarrollados específicamente para este modelo, en colaboración directa entre KTM y el fabricante checo.\n\n## Competencia y posicionamiento\n\nDentro del segmento de motos aventura de gran cilindrada (+1000cc), la 1290 Super Adventure compitió directamente con la BMW R1250GS (hoy R1300GS), la Ducati Multistrada V4 y la Triumph Tiger 1200, diferenciándose por un enfoque más deportivo y una electrónica considerada, en su momento, de las más avanzadas de la categoría."
 }
