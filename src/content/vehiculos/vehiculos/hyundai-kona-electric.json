@@ -1,0 +1,131 @@
+{
+    "slug": "hyundai-kona-electric",
+    "type": "vehiculos",
+    "title": "Hyundai Kona Eléctrico",
+    "description": "SUV compacta 100% eléctrica de Hyundai.",
+    "status": "confirmado",
+    "tags": [
+        "suv",
+        "electrico",
+        "hyundai"
+    ],
+    "featured": false,
+    "manufacturer": "Hyundai",
+    "class": "SUV eléctrica",
+    "customizable": false,
+    "power": "201 hp",
+    "price": "USD 42.000",
+    "consumo": "16 kWh/100km",
+    "dimensiones": "4355 x 1825 x 1575 mm",
+    "evidence": {
+        "level": "oficial-nombrado",
+        "primarySource": "https://www.hyundai.com.ar/kona-electrico",
+        "limitations": [
+            "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+        ]
+    },
+    "performance": {
+        "speed": "172 km/h",
+        "acceleration": "0-100 km/h en 7.9s"
+    },
+    "createdAt": "2026-08-23T21:59:06.238471Z",
+    "updatedAt": "2026-08-25T20:55:31.287Z",
+    "transmision": "Automática de relación única (motor eléctrico)",
+    "traccion": "Tracción delantera",
+    "peso": "1.600-2.200 kg",
+    "tipoMotor": "Eléctrico",
+    "potenciaKW": "100-180 kW",
+    "capacidadTanque": null,
+    "tiempoRecorrido": "9-12s",
+    "anoProduccion": "2023-2024",
+    "mercados": [
+        "Europa",
+        "USA",
+        "Asia",
+        "Mercados emergentes"
+    ],
+    "equipamiento": [
+        "Control tracción",
+        "Frenos ABS",
+        "Control estabilidad dinámico",
+        "Asistentes de conducción"
+    ],
+    "consumoEtiqueta": null,
+    "neumaticos": "225/50R17",
+    "especificacionesMotor": null,
+    "especificacionesTransmision": {
+        "tipo_automatico": "No aplica (sin convertidor de par)",
+        "control_cambios": "Directo (relación única)",
+        "sist_propulsion": "Traccion",
+        "velocidades": "1 relación (reductora fija)"
+    },
+    "especificacionesSuspension": {
+        "tipo_trasera": "Multilink",
+        "barra_estabilizadora": "26/20 mm",
+        "tipo_delantera": "MacPherson",
+        "amortiguadores": "Doble tubo",
+        "recorrido_vertical": "+-150 mm"
+    },
+    "especificacionesRuedas": {
+        "offset": "+35 a +45 mm",
+        "indice_velocidad": "T/V",
+        "indice_carga": "91",
+        "profundidad_surcos": "1.6 mm",
+        "pcd": "5x114.3"
+    },
+    "especificacionesDireccion": {
+        "tipo_asistencia": "Electrica progresiva",
+        "sistema_control": "Control electronico",
+        "angulo_max_giro": "32-35 grados",
+        "vueltas_calador": "2.5-3.0"
+    },
+    "aerodinámica": {
+        "defectores_aire": "Canales laterales",
+        "spoiler_trasero": "Integrado",
+        "area_frontal": "2.2-2.4 m2",
+        "coeficiente_arrastre": "Cx 0.27-0.32"
+    },
+    "capacidadesAdicionales": {
+        "capacidad_refrigerante": "7-9 L",
+        "capacidad_lavaparabrisas": "3-4 L",
+        "liquido_frenos": "0.75-0.85 L",
+        "capacidad_aceite": null,
+        "filtro_habitaculo": "Carbon activado"
+    },
+    "seguridad_pasiva": {
+        "respaldos": "Reforzados",
+        "zonas": "Deformacion",
+        "cinturones": "Pre-tensores",
+        "estructura": "Vigas laterales",
+        "cristales": "Laminado/Templado"
+    },
+    "climatizacionAvanzada": {
+        "control": "Trizona",
+        "modo": "Recirculacion",
+        "filtro": "Carbon",
+        "desempanante": "Trasero/Lateral"
+    },
+    "mantenimientoPrograma": {
+        "filtro": "25.000-30.000 km",
+        "aceite": "No aplica (motor eléctrico)",
+        "frenos": "Anual",
+        "ruedas": "Anual",
+        "refrigerante": "2 anos"
+    },
+    "sistemasInteligentes": {
+        "frenado": "AEB",
+        "carril": "LDW",
+        "ciego": "BSM",
+        "parking": "8-12 sensores",
+        "crucero": "ACC"
+    },
+    "cilindrada": null,
+    "emisiones": null,
+    "tipo": null,
+    "asientos": null,
+    "baul": null,
+    "maleteroMin": null,
+    "generacion": null,
+    "anoLanzamiento": null,
+    "colores": []
+}

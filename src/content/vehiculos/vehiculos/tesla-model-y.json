@@ -1,0 +1,134 @@
+{
+    "slug": "tesla-model-y",
+    "type": "vehiculos",
+    "title": "Tesla Model Y",
+    "description": "SUV eléctrica de Tesla basada en la plataforma del Model 3, mayor espacio de carga.",
+    "status": "confirmado",
+    "tags": [
+        "suv",
+        "tesla",
+        "electrico"
+    ],
+    "featured": false,
+    "createdAt": "2026-08-23T18:31:28.694Z",
+    "updatedAt": "2026-08-25T20:55:31.294Z",
+    "manufacturer": "Tesla",
+    "class": "SUV eléctrica",
+    "customizable": false,
+    "performance": {
+        "speed": "Alta (217 km/h)",
+        "acceleration": "Alta (0-100 km/h en 5.0s)"
+    },
+    "power": "384 hp (Long Range)",
+    "price": "USD 47.000",
+    "consumo": "15.3 kWh/100km (consumo oficial WLTP, versión Long Range AWD)",
+    "dimensiones": "4.790 mm largo x 1.982 mm ancho (sin espejos, 2.129 mm con espejos extendidos) x 1.624 mm alto, distancia entre ejes 2.890 mm",
+    "evidence": {
+        "level": "oficial-nombrado",
+        "primarySource": "https://www.tesla.com/modely",
+        "secondarySource": "https://www.tesla.com/en_jo/modely",
+        "note": "Existe además una versión Standard RWD más económica y una variante alargada 'Model Y L' de 6/7 plazas en algunos mercados.",
+        "limitations": [
+            "El consumo real varía según clima, velocidad y tamaño de llanta",
+            "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+        ]
+    },
+    "transmision": "Automática de relación única (motor eléctrico)",
+    "traccion": "Tracción delantera",
+    "peso": "1.600-2.200 kg",
+    "tipoMotor": "Eléctrico",
+    "potenciaKW": "100-180 kW",
+    "capacidadTanque": null,
+    "tiempoRecorrido": "9-12s",
+    "anoProduccion": "2023-2024",
+    "mercados": [
+        "Europa",
+        "USA",
+        "Asia",
+        "Mercados emergentes"
+    ],
+    "equipamiento": [
+        "Control tracción",
+        "Frenos ABS",
+        "Control estabilidad dinámico",
+        "Asistentes de conducción"
+    ],
+    "consumoEtiqueta": null,
+    "neumaticos": "225/50R17",
+    "especificacionesMotor": null,
+    "especificacionesTransmision": {
+        "tipo_automatico": "No aplica (sin convertidor de par)",
+        "control_cambios": "Directo (relación única)",
+        "sist_propulsion": "Traccion",
+        "velocidades": "1 relación (reductora fija)"
+    },
+    "especificacionesSuspension": {
+        "tipo_trasera": "Multilink",
+        "barra_estabilizadora": "26/20 mm",
+        "tipo_delantera": "MacPherson",
+        "amortiguadores": "Doble tubo",
+        "recorrido_vertical": "+-150 mm"
+    },
+    "especificacionesRuedas": {
+        "offset": "+35 a +45 mm",
+        "indice_velocidad": "T/V",
+        "indice_carga": "91",
+        "profundidad_surcos": "1.6 mm",
+        "pcd": "5x114.3"
+    },
+    "especificacionesDireccion": {
+        "tipo_asistencia": "Electrica progresiva",
+        "sistema_control": "Control electronico",
+        "angulo_max_giro": "32-35 grados",
+        "vueltas_calador": "2.5-3.0"
+    },
+    "aerodinámica": {
+        "defectores_aire": "Canales laterales",
+        "spoiler_trasero": "Integrado",
+        "area_frontal": "2.2-2.4 m2",
+        "coeficiente_arrastre": "Cx 0.27-0.32"
+    },
+    "capacidadesAdicionales": {
+        "capacidad_refrigerante": "7-9 L",
+        "capacidad_lavaparabrisas": "3-4 L",
+        "liquido_frenos": "0.75-0.85 L",
+        "capacidad_aceite": null,
+        "filtro_habitaculo": "Carbon activado"
+    },
+    "seguridad_pasiva": {
+        "respaldos": "Reforzados",
+        "zonas": "Deformacion",
+        "cinturones": "Pre-tensores",
+        "estructura": "Vigas laterales",
+        "cristales": "Laminado/Templado"
+    },
+    "climatizacionAvanzada": {
+        "control": "Trizona",
+        "modo": "Recirculacion",
+        "filtro": "Carbon",
+        "desempanante": "Trasero/Lateral"
+    },
+    "mantenimientoPrograma": {
+        "filtro": "25.000-30.000 km",
+        "aceite": "No aplica (motor eléctrico)",
+        "frenos": "Anual",
+        "ruedas": "Anual",
+        "refrigerante": "2 anos"
+    },
+    "sistemasInteligentes": {
+        "frenado": "AEB",
+        "carril": "LDW",
+        "ciego": "BSM",
+        "parking": "8-12 sensores",
+        "crucero": "ACC"
+    },
+    "cilindrada": null,
+    "emisiones": null,
+    "tipo": null,
+    "asientos": null,
+    "baul": null,
+    "maleteroMin": null,
+    "generacion": null,
+    "anoLanzamiento": null,
+    "colores": []
+}

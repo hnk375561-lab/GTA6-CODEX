@@ -1,0 +1,138 @@
+{
+    "slug":  "abarth-595",
+    "type":  "vehiculos",
+    "title":  "Abarth 595",
+    "description":  "Versión deportiva del Fiat 500 bajo la marca de alto rendimiento Abarth.",
+    "status":  "confirmado",
+    "tags":  [
+                 "deportivo",
+                 "abarth"
+             ],
+    "featured":  false,
+    "manufacturer":  "Abarth",
+    "class":  "Hatchback deportivo",
+    "customizable":  false,
+    "power":  "165 hp (últimas unidades 2024-2026, motor 1.4 T-Jet)",
+    "price":  "EUR 31.500 (último precio de lista antes de discontinuarse) / GBP 23.225 (Reino Unido)",
+    "consumo":  "6.0 l/100km combinado (versión Turismo 1.4 T-Jet 165 hp)",
+    "dimensiones":  "3.657 mm largo x 1.627 mm ancho x 1.485 mm alto, distancia entre ejes 2.300 mm",
+    "evidence":  {
+                     "level":  "respaldado",
+                     "primarySource":  "https://www.topgear.com/car-reviews/abarth/595",
+                     "secondarySource":  "https://www.auto-data.net/en/abarth-595-facelift-2016-turismo-1.4-t-jet-165hp-24709",
+                     "note":  "Modelo discontinuado: producción en masa en Europa cesó a mediados de 2024. El sitio oficial abarth.com ya no lo lista entre los modelos vigentes (solo aparece en sección de clientes existentes), reemplazado por el Abarth 600e y 500e eléctricos.",
+                     "limitations":  [
+                                         "Modelo fuera de producción; no hay unidades 0km disponibles en la mayoría de los mercados",
+                                         "Cifras de consumo/prestaciones corresponden a la versión Turismo (165 hp); la Competizione (180 hp) difiere levemente"
+                                     ]
+                 },
+    "performance":  {
+                        "speed":  "218 km/h",
+                        "acceleration":  "0-100 km/h en 7.3s"
+                    },
+    "createdAt":  "2026-08-23T23:08:07.679Z",
+    "updatedAt":  "2026-08-25T06:11:21.8262688Z",
+    "transmision":  "5 velocidades manual / 6 velocidades automática TcT",
+    "traccion":  "Tracción delantera",
+    "cilindrada":  "1.368 cc",
+    "emisiones":  "CO2 138-145 g/km",
+    "tipo":  "Hatchback",
+    "asientos":  5,
+    "baul":  "185 litros",
+    "peso":  "1.100 kg",
+    "tipoMotor":  "Gasolina turbo",
+    "potenciaKW":  "121 kW",
+    "capacidadTanque":  "40 litros",
+    "anoProduccion":  "2024",
+    "mercados":  [
+                     "Italia",
+                     "Europa Occidental",
+                     "Reino Unido"
+                 ],
+    "equipamiento":  [
+                         "Aire acondicionado",
+                         "Control tracción",
+                         "Frenado ABS",
+                         "Airbags frontales"
+                     ],
+    "tiempoRecorrido":  "N/A",
+    "consumoEtiqueta":  "D",
+    "neumaticos":  "205/45R17",
+    "maleteroMin":  "185 litros",
+    "especificacionesMotor":  {
+                                  "filtro_aire":  "Filtro de panel",
+                                  "tipo_valvulas":  "DOHC",
+                                  "ratio_compresion":  "10.5:1",
+                                  "sistemas_inyeccion":  "Inyeccion directa",
+                                  "arbol_levas":  "Variable (VVT)"
+                              },
+    "especificacionesTransmision":  {
+                                        "tipo_automatico":  "Convertidor",
+                                        "control_cambios":  "Secuencial",
+                                        "sist_propulsion":  "Traccion",
+                                        "velocidades":  "8/9 velocidades"
+                                    },
+    "especificacionesSuspension":  {
+                                       "tipo_trasera":  "Multilink",
+                                       "barra_estabilizadora":  "26/20 mm",
+                                       "tipo_delantera":  "MacPherson",
+                                       "amortiguadores":  "Doble tubo",
+                                       "recorrido_vertical":  "+-150 mm"
+                                   },
+    "especificacionesRuedas":  {
+                                   "offset":  "+35 a +45 mm",
+                                   "indice_velocidad":  "T/V",
+                                   "indice_carga":  "91",
+                                   "profundidad_surcos":  "1.6 mm",
+                                   "pcd":  "5x114.3"
+                               },
+    "especificacionesDireccion":  {
+                                      "tipo_asistencia":  "Electrica progresiva",
+                                      "sistema_control":  "Control electronico",
+                                      "angulo_max_giro":  "32-35 grados",
+                                      "vueltas_calador":  "2.5-3.0"
+                                  },
+    "aerodinámica":  {
+                         "defectores_aire":  "Canales laterales",
+                         "spoiler_trasero":  "Integrado",
+                         "area_frontal":  "2.2-2.4 m2",
+                         "coeficiente_arrastre":  "Cx 0.27-0.32"
+                     },
+    "capacidadesAdicionales":  {
+                                   "capacidad_refrigerante":  "7-9 L",
+                                   "capacidad_lavaparabrisas":  "3-4 L",
+                                   "liquido_frenos":  "0.75-0.85 L",
+                                   "capacidad_aceite":  "4.5-5.5 L",
+                                   "filtro_habitaculo":  "Carbon activado"
+                               },
+    "seguridad_pasiva":  {
+                             "respaldos":  "Reforzados",
+                             "zonas":  "Deformacion",
+                             "cinturones":  "Pre-tensores",
+                             "estructura":  "Vigas laterales",
+                             "cristales":  "Laminado/Templado"
+                         },
+    "climatizacionAvanzada":  {
+                                  "control":  "Trizona",
+                                  "modo":  "Recirculacion",
+                                  "filtro":  "Carbon",
+                                  "desempanante":  "Trasero/Lateral"
+                              },
+    "mantenimientoPrograma":  {
+                                  "filtro":  "25.000-30.000 km",
+                                  "aceite":  "15.000 km",
+                                  "frenos":  "Anual",
+                                  "ruedas":  "Anual",
+                                  "refrigerante":  "2 anos"
+                              },
+    "sistemasInteligentes":  {
+                                 "frenado":  "AEB",
+                                 "carril":  "LDW",
+                                 "ciego":  "BSM",
+                                 "parking":  "8-12 sensores",
+                                 "crucero":  "ACC"
+                             },
+    "generacion":  null,
+    "anoLanzamiento":  null,
+    "colores":  []
+}
