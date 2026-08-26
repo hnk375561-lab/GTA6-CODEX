@@ -1,8 +1,3 @@
-honda-africa-twin
-honda-cbr600rr
-honda-cr-v
-honda-freed
-honda-pcx-150
 hyundai-elantra
 hyundai-santa-fe
 isuzu-mu-x

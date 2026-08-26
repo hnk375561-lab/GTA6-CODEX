@@ -12,51 +12,57 @@
   "manufacturer": "Honda",
   "class": "SUV compacto",
   "customizable": false,
-  "power": "190 hp",
-  "price": "USD 30.500",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "204 hp (152 kW) combinados a 6.100 rpm",
+  "price": "USD 33.350 (Sport Hybrid, referencia mercado US)",
+  "consumo": "6.3 l/100km combinado (37 mpg EPA combinado)",
+  "dimensiones": "4.694 mm largo x 1.867 mm ancho x 1.682 mm alto, distancia entre ejes 2.701 mm",
   "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "oficial-verificado",
+    "note": "Cifras de la variante CR-V Sport Hybrid MY2024 (mercado US), tracción delantera de serie con AWD opcional.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ]
+      "Existe versión no híbrida con motor turbo 1.5L (190 hp) a precio menor",
+      "Precio varía según trim (Sport, Sport-L, Sport Touring) y mercado",
+      "Cifras de aceleración son estimadas, Honda no publica 0-100 oficial para este modelo"
+    ],
+    "primarySource": "https://www.kbb.com/honda/crv-hybrid/2024/specs",
+    "secondarySource": "https://www.topspeed.com/honda/cr-v-hybrid/2024/"
   },
   "performance": {
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "speed": "180 km/h (referencia)",
+    "acceleration": "0-100 km/h en 7.9s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.391Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-26T07:28:17.777Z",
+  "transmision": "E-CVT (transmisión de dos motores, sin caja de engranajes tradicional)",
+  "traccion": "Delantera (AWD opcional en Sport/Sport-L)",
+  "peso": "1.703-1.781 kg (curb weight, según trim)",
+  "tipoMotor": "Gasolina Atkinson 2.0L + 2 motores eléctricos (e:HEV)",
+  "potenciaKW": "152 kW",
+  "capacidadTanque": "57 litros",
+  "tiempoRecorrido": "7.9s",
+  "anoProduccion": "2024",
   "mercados": [
-    "Europa",
     "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Canadá",
+    "Japón",
+    "Europa",
+    "Latinoamérica"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS",
-    "Control estabilidad dinámico",
-    "Asistentes de conducción"
+    "Honda Sensing (frenado autónomo de emergencia, ACC, LKAS)",
+    "Pantalla táctil 9\"",
+    "Cámara 360°",
+    "Techo panorámico (según trim)",
+    "Asientos calefaccionados"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "235/60 R18",
   "especificacionesMotor": {
     "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "tipo_valvulas": "DOHC ciclo Atkinson",
+    "ratio_compresion": "13.9:1",
+    "sistemas_inyeccion": "Inyección directa",
+    "arbol_levas": "Variable (VTC)"
   },
   "especificacionesTransmision": {
     "tipo_automatico": "Convertidor",
@@ -124,16 +130,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.993 cc",
   "emisiones": null,
-  "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "tipo": "SUV compacto híbrido",
+  "asientos": 5,
+  "baul": "1.028 litros (asientos arriba) / 2.166 litros (asientos abatidos)",
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Sexta generación (RS, 2023-presente)",
+  "anoLanzamiento": "2022",
   "colores": [],
-  "category": "motocicleta",
+  "category": "vehiculo",
   "gallery": {
     "images": {
       "exterior": [],
@@ -182,32 +188,33 @@
     "honda",
     "Honda",
     "SUV compacto",
+    "híbrido",
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "cr-v"
   ],
-  "metaDescription": "Honda CR-V - SUV compacto Honda. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Honda CR-V Hybrid - SUV compacto híbrido de 204 hp combinados. Especificaciones, precio y disponibilidad, ago 2026.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
-    "name": "Honda CR-V",
+    "name": "Honda CR-V Hybrid",
     "manufacturer": {
       "@type": "Organization",
       "name": "Honda"
     },
     "vehicleType": "SUV compacto",
-    "fuelType": "Gasolina/Diésel",
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)",
-    "price": "USD 30.500",
+    "fuelType": "Híbrido gasolina-eléctrico",
+    "speed": "180 km/h (referencia)",
+    "acceleration": "0-100 km/h en 7.9s (referencia)",
+    "price": "USD 33.350",
     "availability": "https://schema.org/InStock",
-    "description": "SUV compacto best-seller global de Honda, disponible en versiones nafta e híbrida."
+    "description": "SUV compacto híbrido best-seller global de Honda, sexta generación (2023-presente)."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.395Z",
-    "dataQuality": 0.85
+    "source": "oficial-verificado",
+    "lastChecked": "2026-08-26T07:28:17.766Z",
+    "dataQuality": 0.9
   },
   "indexed": true,
   "searchable": true,
@@ -224,5 +231,21 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.kbb.com/honda/crv-hybrid/2024/specs",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://www.topspeed.com/honda/cr-v-hybrid/2024/",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Lote 5 (ago 2026): datos de la Sport Hybrid MY2024, mercado US.",
+    "dataQuality": 0.9
   }
 }

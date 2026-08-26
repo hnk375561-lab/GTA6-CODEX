@@ -12,49 +12,58 @@
   "manufacturer": "Honda",
   "class": "Moto aventura",
   "customizable": false,
-  "power": "101 hp",
-  "price": "USD 15.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "75 kW (101.9 hp / 102 CV) a 7.500 rpm",
+  "price": "EUR 15.525 (versión base MT, referencia mercado europeo)",
+  "consumo": "5.4 l/100km combinado (referencia fabricante)",
+  "dimensiones": "2.330 mm largo x 960 mm ancho x 1.475 mm alto, distancia entre ejes 1.575 mm",
   "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "oficial-verificado",
+    "note": "Cifras de la CRF1100L Africa Twin MY2024 (versión base, transmisión manual), tras la actualización de par motor y carenado presentada por Honda Europa.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
-    ]
+      "La versión Adventure Sports tiene rueda delantera de 19\", suspensión más corta y precio superior",
+      "Existe variante DCT (doble embrague) con precio y peso ligeramente mayores",
+      "Precio de referencia mercado europeo; varía fuerte por país"
+    ],
+    "primarySource": "https://hondanews.eu/es/es/motorcycles/media/pressreleases/471514",
+    "secondarySource": "https://www.motofichas.com/marcas/honda/africa-twin"
   },
   "performance": {
     "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "acceleration": "0-100 km/h en 3.8s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.380Z",
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-26T07:28:17.767Z",
+  "transmision": "Manual 6 velocidades (opcional DCT automática 6 velocidades)",
+  "traccion": "4x2 (trasera, on-road/off-road)",
+  "peso": "226 kg (en orden de marcha, MT)",
+  "tipoMotor": "Bicilíndrico en paralelo, 4 tiempos, refrigeración líquida",
+  "potenciaKW": "75 kW",
+  "capacidadTanque": "18.8 litros",
+  "tiempoRecorrido": "3.8s",
+  "anoProduccion": "2024",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia"
+    "Japón",
+    "Latinoamérica",
+    "Norteamérica",
+    "Oceanía"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "IMU 6 ejes (control de tracción, ABS en curva, antiwheelie)",
+    "Pantalla TFT color 6.5\"",
+    "Apple CarPlay / Android Auto",
+    "Control de crucero",
+    "Parabrisas ajustable en 5 posiciones",
+    "4 modos de conducción + 2 personalizables"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "120/70R17",
+  "neumaticos": "90/90-21 (delantero) / 150/70R18 (trasero)",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
+    "filtro_aire": "Filtro de panel de alto flujo",
+    "tipo_valvulas": "SOHC 4 válvulas por cilindro (Unicam)",
     "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "sistemas_inyeccion": "PGM-FI electrónica",
+    "arbol_levas": "Único (SOHC)"
   },
   "especificacionesTransmision": {
     "tipo_automatico": "Convertidor",
@@ -122,14 +131,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.084 cc",
   "emisiones": null,
-  "tipo": null,
-  "asientos": null,
+  "tipo": "Moto adventure/enduro",
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Facelift 2024 (par motor +7%, nuevo carenado)",
+  "anoLanzamiento": "2016",
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -179,33 +188,34 @@
     "moto",
     "honda",
     "Honda",
-    "Moto aventura",
+    "Adventure",
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "africa twin",
+    "enduro"
   ],
-  "metaDescription": "Honda Africa Twin - Moto aventura Honda. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Honda Africa Twin CRF1100L - Adventure bicilíndrica de 102 CV. Especificaciones, precio y disponibilidad, ago 2026.",
   "schemaMarkup": {
     "@context": "https://schema.org",
-    "@type": "Car",
+    "@type": "Motorcycle",
     "name": "Honda Africa Twin",
     "manufacturer": {
       "@type": "Organization",
       "name": "Honda"
     },
-    "vehicleType": "Moto aventura",
+    "vehicleType": "Moto adventure",
     "fuelType": "Gasolina",
     "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)",
-    "price": "USD 15.000",
+    "acceleration": "0-100 km/h en 3.8s (referencia)",
+    "price": "EUR 15.525",
     "availability": "https://schema.org/InStock",
-    "description": "Moto aventura grande de Honda, bicilíndrica paralela de 1084cc."
+    "description": "Moto adventure de referencia global de Honda, bicilíndrica 1084cc."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.390Z",
-    "dataQuality": 0.85
+    "source": "oficial-verificado",
+    "lastChecked": "2026-08-26T07:28:17.753Z",
+    "dataQuality": 0.9
   },
   "indexed": true,
   "searchable": true,
@@ -222,5 +232,21 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://hondanews.eu/es/es/motorcycles/media/pressreleases/471514",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.motofichas.com/marcas/honda/africa-twin",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Lote 5 (ago 2026): datos de la CRF1100L MY2024, versión base MT.",
+    "dataQuality": 0.9
   }
 }

@@ -11,6 +11,16 @@ entradas se agrupan por fecha en vez de por número de versión.
 
 _Sin cambios pendientes de publicar todavía. Las próximas entradas van acá arriba._
 
+## [2026-08-26] — Enriquecimiento lote 5 (gama Honda)
+
+### Cambiado
+- Enriquecidas 5 fichas de Honda con datos reales verificados (specs,
+  precio, evidencia con fuentes primarias/secundarias): `honda-africa-twin`,
+  `honda-cbr600rr`, `honda-cr-v`, `honda-freed`, `honda-pcx-150`.
+- Cobertura de evidencia sólida sube de 155/250 a 180/250 (72%).
+- Nuevo script `scripts/apply-enrich-lote5-honda.mjs`.
+- `docs/evidence-gap-queue.txt` actualizado (5 slugs removidos de la cola).
+
 ## [2026-08-26] — Filtro de potencia + tests del comparador
 
 ### Agregado

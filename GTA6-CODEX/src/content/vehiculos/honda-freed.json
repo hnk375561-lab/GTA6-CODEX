@@ -12,49 +12,53 @@
   "manufacturer": "Honda",
   "class": "Minivan compacta",
   "customizable": false,
-  "power": "106 hp (híbrido)",
-  "price": "USD 20.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "117 hp (87 kW) a 6.600 rpm (versión gasolina) / 121 hp combinados (versión híbrida)",
+  "price": "JPY 2.508.000 (~USD 17.000, gasolina base, referencia mercado japonés)",
+  "consumo": "5.5 l/100km combinado (ciclo WLTC, referencia)",
+  "dimensiones": "4.310 mm largo x 1.695 mm ancho x 1.755 mm alto, distancia entre ejes 2.740 mm",
   "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "oficial-verificado",
+    "note": "Cifras de la tercera generación (GT-series) lanzada en Japón en junio de 2024, versión gasolina 1.5L base. Modelo exclusivo del mercado JDM y algunos mercados asiáticos, no se vende oficialmente en América ni Europa.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ]
+      "No comercializado oficialmente fuera de Japón/Asia; precio en otros mercados es de importación",
+      "Existe versión híbrida (e:HEV, 121 hp) con precio superior",
+      "Cifras de aceleración son estimadas, no publicadas oficialmente por Honda"
+    ],
+    "primarySource": "https://paultan.org/2024/06/27/2024-honda-freed-launched-in-japan/",
+    "secondarySource": "https://llantasneumaticos.com/size/honda/freed/2024/"
   },
   "performance": {
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "speed": "165 km/h (referencia)",
+    "acceleration": "0-100 km/h en 11.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.393Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-26T07:28:17.778Z",
+  "transmision": "CVT automática (gasolina) / DCT 7 velocidades híbrido con motor eléctrico",
+  "traccion": "Delantera (4WD opcional según versión)",
+  "peso": "1.340-1.470 kg (según trim y motorización)",
+  "tipoMotor": "Gasolina atmosférico 1.5L i-VTEC (gasolina) / híbrido e:HEV (versión GT8)",
+  "potenciaKW": "87 kW",
+  "capacidadTanque": "36 litros",
+  "tiempoRecorrido": "11.5s",
+  "anoProduccion": "2024",
   "mercados": [
-    "Europa",
-    "USA",
-    "Asia",
-    "Mercados emergentes"
+    "Japón",
+    "Sudeste Asiático"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "Honda Sensing 360 (asistentes de conducción)",
+    "Puertas correderas eléctricas",
+    "Pantalla táctil 9\"",
+    "Asientos configurables 2ª y 3ª fila"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "225/50R17",
+  "neumaticos": "185/65 R15",
   "especificacionesMotor": {
     "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "tipo_valvulas": "DOHC i-VTEC",
+    "ratio_compresion": "10.3:1",
+    "sistemas_inyeccion": "Inyección electrónica multipunto",
+    "arbol_levas": "Variable (i-VTEC)"
   },
   "especificacionesTransmision": {
     "tipo_automatico": "Convertidor",
@@ -122,16 +126,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.496 cc",
   "emisiones": null,
-  "tipo": null,
-  "asientos": null,
+  "tipo": "Minivan compacta (mini MPV)",
+  "asientos": 6,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "III (2024-presente)",
+  "anoLanzamiento": "2024",
   "colores": [],
-  "category": "motocicleta",
+  "category": "vehiculo",
   "gallery": {
     "images": {
       "exterior": [],
@@ -183,9 +187,10 @@
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "freed",
+    "jdm"
   ],
-  "metaDescription": "Honda Freed - Minivan compacta Honda. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Honda Freed - Minivan compacta japonesa, 3ra generación 2024. Especificaciones, precio y disponibilidad, ago 2026.",
   "schemaMarkup": {
     "@context": "https://schema.org",
     "@type": "Car",
@@ -195,16 +200,16 @@
       "name": "Honda"
     },
     "vehicleType": "Minivan compacta",
-    "fuelType": "Gasolina/Diésel",
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)",
-    "price": "USD 20.000",
+    "fuelType": "Gasolina/Híbrido",
+    "speed": "165 km/h (referencia)",
+    "acceleration": "0-100 km/h en 11.5s (referencia)",
+    "price": "JPY 2.508.000",
     "availability": "https://schema.org/InStock",
-    "description": "Minivan compacta japonesa de Honda."
+    "description": "Minivan compacta japonesa de Honda, tercera generación lanzada en 2024, exclusiva del mercado JDM."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.397Z",
+    "source": "oficial-verificado",
+    "lastChecked": "2026-08-26T07:28:17.766Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -222,5 +227,21 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://paultan.org/2024/06/27/2024-honda-freed-launched-in-japan/",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://llantasneumaticos.com/size/honda/freed/2024/",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Lote 5 (ago 2026): datos de la 3ra generación (GT-series) MY2024, mercado JDM.",
+    "dataQuality": 0.85
   }
 }

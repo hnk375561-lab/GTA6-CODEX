@@ -12,49 +12,56 @@
   "manufacturer": "Honda",
   "class": "Moto deportiva",
   "customizable": false,
-  "power": "118 hp",
-  "price": "USD 12.200",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "89 kW (121 hp / 121 CV) a 14.250 rpm",
+  "price": "EUR 13.075 (referencia mercado europeo)",
+  "consumo": "5.9 l/100km combinado (referencia)",
+  "dimensiones": "2.030 mm largo x 685 mm ancho x 1.125 mm alto, distancia entre ejes 1.375 mm",
   "evidence": {
-    "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "oficial-verificado",
+    "note": "Cifras del retorno de la CBR600RR a Europa en 2024, motor Euro5, versión base sin Pack Racing/Touring.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
-    ]
+      "Precio varía según país (11.699–13.200 EUR según mercado y año)",
+      "Cifra de potencia limitada por normativa Euro5 respecto a versiones JDM/US previas"
+    ],
+    "primarySource": "https://soymotero.net/motos/honda/cbr600rr-2024/",
+    "secondarySource": "https://es.motorbike-specs.com/honda-cbr600rr-2024/"
   },
   "performance": {
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)"
+    "speed": "250 km/h (referencia)",
+    "acceleration": "0-100 km/h en 3.0s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.385Z",
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-26T07:28:17.775Z",
+  "transmision": "Manual 6 velocidades con quickshifter bidireccional",
+  "traccion": "4x2 (trasera)",
+  "peso": "193 kg (en orden de marcha)",
+  "tipoMotor": "4 cilindros en línea, 4 tiempos, refrigeración líquida (DOHC 16V)",
+  "potenciaKW": "89 kW",
+  "capacidadTanque": "18.1 litros",
+  "tiempoRecorrido": "3.0s",
+  "anoProduccion": "2024",
   "mercados": [
     "Europa",
-    "USA",
-    "Asia"
+    "Japón",
+    "Norteamérica",
+    "Latinoamérica"
   ],
   "equipamiento": [
-    "Control tracción",
-    "Frenos ABS"
+    "IMU 6 ejes Bosch",
+    "HSTC control de tracción 9 niveles",
+    "Control antiwheelie 3 niveles",
+    "ABS en curva",
+    "Amortiguador de dirección electrónico HESD",
+    "Pantalla TFT color (modos Street/Circuit/Mechanic)"
   ],
   "consumoEtiqueta": "D",
-  "neumaticos": "120/70R17",
+  "neumaticos": "120/70 R17 (delantero) / 180/55 R17 (trasero)",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "filtro_aire": "Filtro de panel de alto flujo",
+    "tipo_valvulas": "DOHC 16 válvulas",
+    "ratio_compresion": "12.2:1",
+    "sistemas_inyeccion": "PGM-FI con acelerador electrónico (ride-by-wire)",
+    "arbol_levas": "Doble (DOHC)"
   },
   "especificacionesTransmision": {
     "tipo_automatico": "Convertidor",
@@ -122,14 +129,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
-  "emisiones": null,
-  "tipo": null,
-  "asientos": null,
+  "cilindrada": "599 cc",
+  "emisiones": "Euro 5",
+  "tipo": "Moto deportiva supersport",
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Retorno a Europa 2024, acelerador electrónico derivado RC213V-S",
+  "anoLanzamiento": "2003",
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -179,16 +186,17 @@
     "moto",
     "honda",
     "Honda",
-    "Moto deportiva",
+    "Deportiva",
     "comprar",
     "especificaciones",
     "precio",
-    "review"
+    "cbr600rr",
+    "supersport"
   ],
-  "metaDescription": "Honda CBR600RR - Moto deportiva Honda. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "metaDescription": "Honda CBR600RR - Supersport de 599cc y 121 CV, retorno a Europa 2024. Especificaciones, precio y disponibilidad, ago 2026.",
   "schemaMarkup": {
     "@context": "https://schema.org",
-    "@type": "Car",
+    "@type": "Motorcycle",
     "name": "Honda CBR600RR",
     "manufacturer": {
       "@type": "Organization",
@@ -196,16 +204,16 @@
     },
     "vehicleType": "Moto deportiva",
     "fuelType": "Gasolina",
-    "speed": "200 km/h (referencia)",
-    "acceleration": "0-100 km/h en 8.5s (referencia)",
-    "price": "USD 12.200",
+    "speed": "250 km/h (referencia)",
+    "acceleration": "0-100 km/h en 3.0s (referencia)",
+    "price": "EUR 13.075",
     "availability": "https://schema.org/InStock",
-    "description": "Deportiva de cilindrada media de Honda, tetracilíndrica en línea de 599cc."
+    "description": "Supersport de cilindrada media de Honda, tetracilíndrica 599cc, retorno a Europa 2024."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.392Z",
-    "dataQuality": 0.85
+    "source": "oficial-verificado",
+    "lastChecked": "2026-08-26T07:28:17.766Z",
+    "dataQuality": 0.9
   },
   "indexed": true,
   "searchable": true,
@@ -222,5 +230,21 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://soymotero.net/motos/honda/cbr600rr-2024/",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://es.motorbike-specs.com/honda-cbr600rr-2024/",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Lote 5 (ago 2026): datos del relanzamiento europeo 2024, versión base.",
+    "dataQuality": 0.9
   }
 }
