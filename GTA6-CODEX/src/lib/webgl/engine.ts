@@ -485,19 +485,29 @@ export class GTA6ZonaWebGLEngine {
     this.buildFarSkyline()
     this.buildNeonSigns()
     this.buildHorizonSun()
-    this.buildLightShaft()
     this.buildAtmosphericHaze()
-    this.buildTrafficStreaks()
-    this.buildStreetTraffic()
-    this.buildDistantMovement()
-    this.buildStreetSignals()
-    this.buildDust()
-    this.buildFireflies()
     this.buildHumidityMist()
-    this.buildImageBillboards()
     this.buildFocalTower()
-    this.buildAirEvents()
-    this.buildBirds()
+    // Simplificación "fondo limpio": las capas de abajo quedan
+    // deshabilitadas a propósito. Todas eran movimiento/parpadeo en
+    // primer o segundo plano (tráfico, polvo, luciérnagas, fotos de
+    // billboards, aves, eventos aéreos, semáforos) que compite
+    // visualmente con el texto real de cada página — el sitio muestra
+    // este fondo detrás de TODO el contenido, no solo del hero, así que
+    // cualquier movimiento chico ahí se nota al leer specs/artículos.
+    // Se dejan las llamadas comentadas (no borradas) para poder
+    // reactivar cualquiera puntualmente sin reescribir nada — cada
+    // build*() sigue intacto en su propio archivo scene/*.ts.
+    // this.buildLightShaft()
+    // this.buildTrafficStreaks()
+    // this.buildStreetTraffic()
+    // this.buildDistantMovement()
+    // this.buildStreetSignals()
+    // this.buildDust()
+    // this.buildFireflies()
+    // this.buildImageBillboards()
+    // this.buildAirEvents()
+    // this.buildBirds()
 
     const { composer, bloomPass, bokehPass, gradePass, fxaaPass } = createPostProcessingPipeline({
       renderer: this.renderer,
