@@ -380,15 +380,45 @@ export class AutoFichaWebGLEngine {
   private readonly totalShotDuration: number
   private startTime = 0
 
-  private dustUniforms!: {
+  /**
+   * "Fondo limpio": `buildDust()` está deshabilitado a propósito (ver
+   * comentario en el constructor), pero el loop de `start()` sigue
+   * escribiendo `this.dustUniforms.time`/`mouseNDC`/`mouseStrength`/
+   * `introFade` en cada frame sin condicional — es más simple mantener esas
+   * cuatro líneas del loop intactas (por si `buildDust()` se reactiva algún
+   * día) que agregar un guard ahí. Para eso, `dustUniforms` necesita un
+   * valor real desde la declaración en vez de `!` (definite assignment):
+   * con `!`, sin `buildDust()`, quedaba `undefined` y esas escrituras
+   * tiraban `TypeError` en el primer frame — el mismo tipo de fallo
+   * silencioso que describe `assertFullyInitialized()` más abajo, solo que
+   * ahí ni siquiera se llegaba a esa guarda porque el constructor ya
+   * fallaba antes. Con un default acá, esas escrituras son no-ops inocuos
+   * (no hay material de polvo escuchando estos uniforms mientras
+   * `buildDust()` esté comentado).
+   */
+  private dustUniforms: {
     time: { value: number }
     mouseNDC: { value: THREE.Vector2 }
     mouseStrength: { value: number }
     warmLightPos: { value: THREE.Vector3 }
     coolLightPos: { value: THREE.Vector3 }
     introFade: { value: number }
+  } = {
+    time: { value: 0 },
+    mouseNDC: { value: new THREE.Vector2() },
+    mouseStrength: { value: 0 },
+    warmLightPos: { value: new THREE.Vector3() },
+    coolLightPos: { value: new THREE.Vector3() },
+    introFade: { value: 0 },
   }
   private roadUniforms!: { time: { value: number }; introFade: { value: number } }
+  /**
+   * A diferencia de `dustUniforms`, nada fuera de `buildLightShaft()` lee
+   * `shaftUniforms` (su propio `updater` se registra en `this.updaters`
+   * únicamente dentro de ese método) — con `buildLightShaft()` deshabilitado
+   * por "fondo limpio", `shaftUniforms` simplemente no hace falta, así que
+   * no está en `assertFullyInitialized()` (ver esa guarda más abajo).
+   */
   private shaftUniforms!: { time: { value: number }; introFade: { value: number } }
   /** Texturas de los billboards con imágenes reales de GTA VI — liberadas en `dispose()`. */
   private imageTextures: THREE.Texture[] = []
@@ -597,23 +627,30 @@ export class AutoFichaWebGLEngine {
 
   /**
    * Guarda de invariante de construcción. Los campos declarados con `!`
-   * arriba (`skyUniforms`, `dustUniforms`, `roadUniforms`, `shaftUniforms`,
-   * `keyLight`, `fillLight`, `fog`) se asignan de forma síncrona dentro de
-   * los `buildXxx()`/`setupXxx()` que se llaman más arriba, en orden fijo.
-   * Nada en el compilador impone ese orden: un refactor futuro que
-   * reordene, condicione o elimine una de esas llamadas dejaría el motor a
-   * medio construir sin ningún error hasta el primer frame de render
-   * (acceso a `undefined` propagándose como `NaN` en uniforms, o un
-   * crash silencioso). Esta guarda convierte esa clase de bug en un error
-   * inmediato y explícito en el constructor, con el campo exacto que
-   * falta, en vez de un fallo diferido e imposible de rastrear.
+   * arriba (`skyUniforms`, `roadUniforms`, `keyLight`, `fillLight`, `fog`)
+   * se asignan de forma síncrona dentro de los `buildXxx()`/`setupXxx()`
+   * que se llaman más arriba, en orden fijo. Nada en el compilador impone
+   * ese orden: un refactor futuro que reordene, condicione o elimine una
+   * de esas llamadas dejaría el motor a medio construir sin ningún error
+   * hasta el primer frame de render (acceso a `undefined` propagándose
+   * como `NaN` en uniforms, o un crash silencioso). Esta guarda convierte
+   * esa clase de bug en un error inmediato y explícito en el constructor,
+   * con el campo exacto que falta, en vez de un fallo diferido e
+   * imposible de rastrear.
+   *
+   * `dustUniforms` y `shaftUniforms` NO están acá a propósito: son las dos
+   * capas que "fondo limpio" deshabilita (`buildDust()`/`buildLightShaft()`
+   * comentados más arriba en el constructor). `dustUniforms` tiene su
+   * propio default en la declaración del campo (ver ese comentario) así
+   * que nunca es `null`/`undefined`; `shaftUniforms` no lo necesita porque
+   * nada fuera de `buildLightShaft()` lo lee. Incluir cualquiera de los dos
+   * acá volvería a romper el constructor apenas estas capas estén
+   * deshabilitadas — exactamente el bug que esta guarda tenía antes.
    */
   private assertFullyInitialized(): void {
     const required: Array<[string, unknown]> = [
       ['skyUniforms', this.skyUniforms],
-      ['dustUniforms', this.dustUniforms],
       ['roadUniforms', this.roadUniforms],
-      ['shaftUniforms', this.shaftUniforms],
       ['keyLight', this.keyLight],
       ['fillLight', this.fillLight],
       ['fog', this.fog],

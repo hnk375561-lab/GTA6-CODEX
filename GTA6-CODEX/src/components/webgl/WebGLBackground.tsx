@@ -81,14 +81,28 @@ export function WebGLBackground() {
 
     const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
 
-    import('@/lib/webgl/engine').then(({ AutoFichaWebGLEngine }) => {
-      if (cancelled || !canvasRef.current) return
-      engine = new AutoFichaWebGLEngine(canvasRef.current, {
-        reducedMotion: mql.matches,
-        returningVisitor: hasSeenIntroThisSession(),
+    import('@/lib/webgl/engine')
+      .then(({ AutoFichaWebGLEngine }) => {
+        if (cancelled || !canvasRef.current) return
+        engine = new AutoFichaWebGLEngine(canvasRef.current, {
+          reducedMotion: mql.matches,
+          returningVisitor: hasSeenIntroThisSession(),
+        })
+        engine.start()
       })
-      engine.start()
-    })
+      .catch((error) => {
+        // Sin este catch, cualquier excepción acá (falla al importar el
+        // chunk del motor, o una excepción síncrona en el constructor —
+        // p.ej. `assertFullyInitialized()` más abajo en engine.ts) quedaba
+        // completamente silenciosa: la promesa rechazada no tenía handler,
+        // el canvas se quedaba transparente para siempre y no había ni un
+        // log en consola para diagnosticarlo. Degradación elegante: se
+        // loguea el error y se deja el fondo estático (`bg-auto-dark` en
+        // layout.tsx, visible detrás de este canvas transparente) en vez
+        // de un fallo mudo.
+        if (cancelled) return
+        console.error('[WebGLBackground] No se pudo inicializar el motor, se degrada a fondo estático:', error)
+      })
 
     const handleReducedMotionChange = (e: MediaQueryListEvent) => {
       engine?.setReducedMotion(e.matches)
