@@ -1268,6 +1268,39 @@ a:hover .logo-mark {
   }
 }
 
+/* --- Capítulo 3.1 de la Biblia del Scroll: reveal por palabra (usado por
+   <RevealText />) — hermano de `.hero-title-word` de arriba, misma idea
+   pero de propósito general (cualquier <h1>/<h2>/<p> de texto plano, no
+   solo el titular del hero) y con un timing variable en vez de fijo:
+   `--word-interval` lo calcula `<RevealText />` en JS a partir de
+   `--scroll-speed` en el instante del trigger (scroll rápido = cascada
+   corta, scroll lento = cascada larga), y `--word-index` (una custom
+   property numérica, sin unidad) lo trae cada <span> inline. `calc()`
+   multiplica ambos acá para armar el `transition-delay` real — el único
+   cálculo que vive en CSS en vez de JS, para no tener que escribir un
+   delay distinto en cada span desde React. */
+.reveal-text-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 550ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 550ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--word-index, 0) * var(--word-interval, 46ms));
+}
+
+.reveal-text-visible .reveal-text-word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-text-word {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 /* --- Rediseño sobrio del hero: "GTA6 · Zona" pasa a ser una firma
    chica y muda (mismo trato tipográfico que el pill de arriba: mono,
    tracking abierto, color secundario) en vez de la pieza más grande

@@ -15,6 +15,7 @@ import { generateHomepageMetadata, generateBreadcrumbJsonLd, generateWebsiteJson
 import { formatRelativeTime } from '@/lib/utils'
 import { Card } from '@/components/ui/Card'
 import { Reveal } from '@/components/ui/Reveal'
+import { RevealText } from '@/components/ui/RevealText'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { CountUp } from '@/components/ui/CountUp'
 import { WordRotate } from '@/components/ui/WordRotate'
@@ -389,7 +390,7 @@ export default async function HomePage() {
               <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                 Cuenta regresiva
               </p>
-              <h2 className="text-3xl font-bold text-auto-text sm:text-4xl">Estado del lanzamiento</h2>
+              <RevealText as="h2" className="text-3xl font-bold text-auto-text sm:text-4xl" text="Estado del lanzamiento" />
               <p className="mt-4 text-auto-text-secondary">
                 Las dos fechas que definen el momento del proyecto ahora mismo, en un solo lugar.
               </p>
@@ -407,7 +408,7 @@ export default async function HomePage() {
             <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
               Categorías
             </p>
-            <h2 className="text-3xl font-bold text-auto-text sm:text-4xl">Explorá por sección</h2>
+            <RevealText as="h2" className="text-3xl font-bold text-auto-text sm:text-4xl" text="Explorá por sección" />
           </Reveal>
 
           <Reveal className="stagger grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
@@ -485,9 +486,11 @@ export default async function HomePage() {
                 <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                   Destacados
                 </p>
-                <h2 className="text-3xl font-bold text-auto-text sm:text-4xl">
-                  Lo más relevante del expediente
-                </h2>
+                <RevealText
+                  as="h2"
+                  className="text-3xl font-bold text-auto-text sm:text-4xl"
+                  text="Lo más relevante del expediente"
+                />
               </div>
               <Link
                 href="/galeria"
@@ -522,9 +525,11 @@ export default async function HomePage() {
               <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                 Cronología
               </p>
-              <h2 className="text-3xl font-bold text-auto-text sm:text-4xl">
-                Línea de tiempo del desarrollo
-              </h2>
+              <RevealText
+                as="h2"
+                className="text-3xl font-bold text-auto-text sm:text-4xl"
+                text="Línea de tiempo del desarrollo"
+              />
               <p className="mt-4 text-auto-text-secondary">
                 Del anuncio a hoy, cada hito oficial y cada tráiler documentado, en orden.
               </p>
@@ -542,7 +547,11 @@ export default async function HomePage() {
             <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
               Metodología
             </p>
-            <h2 className="text-3xl font-bold text-auto-text sm:text-4xl">Cómo verificamos la información</h2>
+            <RevealText
+              as="h2"
+              className="text-3xl font-bold text-auto-text sm:text-4xl"
+              text="Cómo verificamos la información"
+            />
             <p className="mt-4 text-auto-text-secondary">
               Cada entrada del expediente lleva su propio nivel de evidencia a la vista, en vez
               de mezclar confirmación oficial con rumor sin distinción. Así se ve en cada ficha:
@@ -575,9 +584,11 @@ export default async function HomePage() {
                 <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                   Últimas noticias
                 </p>
-                <h2 className="text-3xl font-bold text-auto-text sm:text-4xl">
-                  Novedades del desarrollo
-                </h2>
+                <RevealText
+                  as="h2"
+                  className="text-3xl font-bold text-auto-text sm:text-4xl"
+                  text="Novedades del desarrollo"
+                />
               </div>
               <Link
                 href="/noticias"
@@ -615,9 +626,11 @@ export default async function HomePage() {
         <div className="container-max text-center">
           <Reveal>
             <div className="glass-surface mx-auto max-w-2xl rounded-2xl border border-auto-border/70 px-8 py-12 sm:px-14">
-              <h2 className="text-gradient-vice font-display text-3xl font-bold sm:text-4xl">
-                ¿Buscás algo puntual?
-              </h2>
+              <RevealText
+                as="h2"
+                className="text-gradient-vice font-display text-3xl font-bold sm:text-4xl"
+                text="¿Buscás algo puntual?"
+              />
               <p className="mx-auto mt-4 max-w-lg text-auto-text-secondary">
                 Personajes, vehículos, misiones, ubicaciones o tráilers: todo el expediente es
                 buscable, con su nivel de evidencia siempre visible.
