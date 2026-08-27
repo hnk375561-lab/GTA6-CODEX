@@ -1725,7 +1725,7 @@ export class AutoFichaWebGLEngine {
 
       // Coreografía de cámara + parallax de cursor + dolly de scroll + apertura de escena.
       const frame = this.computeShotFrame(elapsed)
-      const dolly = frame.pos.clone().add(new THREE.Vector3(0, 0, -this.scrollProgress * 6))
+      const dolly = frame.pos.clone().add(new THREE.Vector3(0, 0, -this.scrollProgress * 9))
       const targetPos = introStartPos.clone().lerp(dolly, intro)
       this.camera.position.lerp(targetPos, this.reducedMotion ? 1 : 0.06)
       this.camera.position.x += this.pointer.x * 1.4
@@ -1752,7 +1752,7 @@ export class AutoFichaWebGLEngine {
       // se sale de este rango, pero queda protegido si en el futuro se
       // agregan categorías/estados con valores más extremos.
       const targetFov = THREE.MathUtils.clamp(
-        this.baseFov + frame.fovBias + this.scrollProgress * 5 + this.sceneMood * 4 + this.entityFrame * 3.2,
+        this.baseFov + frame.fovBias + this.scrollProgress * 7 + this.sceneMood * 4 + this.entityFrame * 3.2,
         20,
         65
       )
@@ -1773,7 +1773,7 @@ export class AutoFichaWebGLEngine {
         // El focus cambia con scrollProgress (movimiento del usuario dentro del sitio)
         // Y TAMBIÉN con scrollVelocity (qué tan rápido se mueve).
         // Scroll rápido desenfoca más (simula que el ojo no llega a enfocar).
-        const focusBase = 22 - this.scrollProgress * 7
+        const focusBase = 22 - this.scrollProgress * 9
         const focusVelocityAdj = this.scrollVelocity * 15
         this.bokehPass.materialBokeh.uniforms.focus.value =
           focusBase + focusVelocityAdj
@@ -1781,17 +1781,21 @@ export class AutoFichaWebGLEngine {
 
       // Capítulo 2.1 de la Biblia del Scroll — parallax factorizado por
       // capa: lo lejano se mueve poco con el scroll, lo cercano mucho,
-      // como profundidad física real. `SCROLL_PARALLAX_AMPLITUDE` conserva
-      // la magnitud total que tenía el offset único anterior
-      // (`scrollProgress * 0.6`, ver diff de esta fase) para no alterar el
-      // rango visual ya calibrado; lo que cambia es cómo se reparte entre
-      // capas. `FAR_GROUP_SCROLL_FACTOR` es el factor base de `farGroup`
+      // como profundidad física real. `SCROLL_PARALLAX_AMPLITUDE` arrancó
+      // en 0.6 (magnitud heredada del offset único que reemplazó, ver
+      // diff de esa fase); Cap.2.6 la sube a 0.85 (+~40%) junto con el
+      // resto del rango de movimiento ligado a `scrollProgress` (dolly,
+      // FOV, rotación de `midGroup`, foco del bokeh) para que la escena
+      // responda con más amplitud real al scroll, no solo el fondo 2D del
+      // hero — lo que cambia acá es cómo se reparte entre capas, ese
+      // reparto no se tocó. `FAR_GROUP_SCROLL_FACTOR` es el factor base de
+      // `farGroup`
       // (equivalente a "skyline lejano" en la tabla del capítulo); cada
       // *ScrollGroup anidado suma solo la DIFERENCIA entre su factor
       // objetivo y ese base, ya que hereda el base al ser hijo de
       // `farGroup`. Ver comentario en la declaración de los campos
       // `*ScrollGroup` para el porqué de esta jerarquía.
-      const SCROLL_PARALLAX_AMPLITUDE = 0.6
+      const SCROLL_PARALLAX_AMPLITUDE = 0.85
       const FAR_GROUP_SCROLL_FACTOR = 0.15 // skyline lejano
       const scrollOffset = this.scrollProgress * SCROLL_PARALLAX_AMPLITUDE
 
@@ -1808,7 +1812,7 @@ export class AutoFichaWebGLEngine {
       this.streetTrafficScrollGroup.position.x = -scrollOffset * (0.9 - FAR_GROUP_SCROLL_FACTOR) // tráfico, sobre la carretera
       this.midGroup.position.x = this.pointer.x * 1.1
       this.midGroup.position.y = -this.pointer.y * 0.7
-      this.midGroup.rotation.y = this.scrollProgress * 0.35
+      this.midGroup.rotation.y = this.scrollProgress * 0.5
       this.nearGroup.position.x = this.pointer.x * 2.1
       this.nearGroup.position.y = -this.pointer.y * 1.3
 
