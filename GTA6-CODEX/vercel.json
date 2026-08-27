@@ -1,5 +1,6 @@
 {
   "buildCommand": "next build",
+  "installCommand": "npm install",
   "framework": "nextjs",
   "env": {
     "NEXT_PUBLIC_SITE_URL": "https://autoficha.vercel.app"
