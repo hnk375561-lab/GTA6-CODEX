@@ -13,15 +13,16 @@
   "manufacturer": "Hyundai",
   "class": "SUV eléctrica",
   "customizable": false,
-  "power": "201 hp",
-  "price": "USD 42.000",
-  "consumo": "16 kWh/100km",
+  "power": "218 hp (versión Long Range)",
+  "price": "USD 41.000 (referencia internacional)",
+  "consumo": "14.7 kWh/100km",
   "dimensiones": "4355 x 1825 x 1575 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.hyundai.com.ar/kona-electrico",
+    "primarySource": "https://www.hyundai.com.ar",
+    "note": "Se actualizaron los datos técnicos específicos para la segunda generación del Hyundai Kona Eléctrico, incluyendo capacidad del baúl, potencia de la versión de autonomía extendida, peso en orden de marcha y consumo homologado bajo ciclo WLTP.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "Los precios y especificaciones exactas pueden variar según el mercado de importación y el nivel de acabado disponible (Standard Range vs Long Range)."
     ]
   },
   "performance": {
@@ -29,15 +30,15 @@
     "acceleration": "0-100 km/h en 7.9s"
   },
   "createdAt": "2026-08-23T21:59:06.238471Z",
-  "updatedAt": "2026-08-25T23:22:07.405Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-180 kW",
+  "updatedAt": "2026-08-27T01:46:40.114Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Delantera",
+  "peso": "1.740 kg",
+  "tipoMotor": "Sincrónico de imanes permanentes",
+  "potenciaKW": "160 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "7.8s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,11 +123,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 466,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (SX2)",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "electrico",
   "gallery": {
@@ -251,7 +252,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.404Z",
+    "lastChecked": "2026-08-27T01:46:40.114Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -304,5 +305,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Hyundai Kona irrumpió en el mercado global en 2017 como una apuesta fresca dentro del segmento de los B-SUV. Desde sus inicios, la marca surcoreana entendió que la electrificación jugaría un papel fundamental en el futuro de la movilidad, por lo que el desarrollo del modelo contempló desde la mesa de diseño versiones completamente eléctricas (EV), híbridas y de combustión interna. Esta estrategia permitió que el Kona se ganara rápidamente el respeto de la crítica y de los consumidores por ofrecer una dinámica alegre y una autonomía competitiva sin sacrificar la versatilidad urbana que caracteriza a los utilitarios deportivos compactos.\n\n## Un hito o generación relevante\nLa llegada de la segunda generación (conocida internamente como la plataforma SX2) marcó un punto de inflexión absoluto para el Kona Eléctrico. A diferencia de la primera iteración —que compartía arquitectura estructural con variantes térmicas—, esta nueva generación fue concebida primero como un vehículo eléctrico y luego adaptada para los demás sistemas de propulsión. Esto se traduce en una distancia entre ejes ampliada, un piso completamente plano que maximiza el espacio interior para los pasajeros y una ganancia notable en la capacidad de carga del baúl, que ahora alcanza los 466 litros. Asimismo, el diseño exterior evolucionó hacia líneas más futuristas y aerodinámicas, destacándose por la firma lumínica frontal horizontal denominada 'Seamless Horizon Lamp'.\n\n## Curiosidades\nUno de los aspectos más interesantes del Kona Eléctrico de nueva generación es su enfoque tecnológico centrado en la interfaz de usuario y la eficiencia energética. Incorpora el sistema de frenado regenerativo inteligente, el cual ajusta automáticamente la retención del vehículo basándose en las condiciones del tráfico delantero detectadas por los sensores de radar y cámaras. Además, cuenta con la tecnología V2L (Vehicle-to-Load), que transforma al SUV en una batería rodante capaz de suministrar energía eléctrica de 230V a dispositivos externos, desde electrodomésticos hasta bicicletas eléctricas, convirtiéndolo en un aliado ideal para escapadas al aire libre.\n\n## Competencia y posicionamiento\nEn el mercado global de los SUV compactos 100% eléctricos, el Hyundai Kona Eléctrico compite directamente contra referentes consolidados como el Chevrolet Bolt EUV, el Kia Niro EV (su hermano de grupo) y las versiones de entrada de modelos como el Tesla Model Y o el Peugeot e-2008. Se posiciona en un punto de equilibrio muy atractivo dentro del segmento generalista superior: ofrece acabados y asistencias a la conducción (ADAS) propias de categorías más altas, manteniendo una propuesta de valor enfocada en la eficiencia de uso diario y una autonomía real que supera los 450 kilómetros en su variante de mayor capacidad de batería, lo que lo consolida como un vehículo sumamente versátil tanto para la ciudad como para trayectos ruteros."
 }

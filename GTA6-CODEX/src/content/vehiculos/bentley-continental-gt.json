@@ -13,30 +13,32 @@
   "class": "Gran turismo de lujo",
   "customizable": false,
   "power": "542 hp",
-  "price": "USD 235.000",
-  "consumo": "10.6 l/100km combinado (ciclo NEDC, versión V8 542 hp)",
-  "dimensiones": "4.806 mm largo x 1.945 mm ancho x 1.407 mm alto, distancia entre ejes 2.758 mm",
+  "price": "USD 235.000 (MSRP referencia)",
+  "consumo": "11.8 l/100km combinado (WLTP)",
+  "dimensiones": "4.850 mm largo x 1.966 mm ancho x 1.405 mm alto",
   "evidence": {
     "level": "respaldado",
-    "primarySource": "https://www.autoevolution.com/cars/bentley-continental-gt-v8-2019.html",
     "secondarySource": "https://www.ultimatespecs.com/car-specs/Bentley/63701/Bentley-Continental-GT-2-V8.html",
-    "note": "Cifras corresponden a la 3ra generación (2018-2024), versión V8 4.0 biturbo de 542 hp/550 PS (existe también variante W12 de mayor potencia).",
-    "limitations": []
+    "note": "Se verificaron las especificaciones generales de la tercera generación del Bentley Continental GT V8, incluyendo dimensiones, motorización biturbo y capacidades prestacionales a partir de datos técnicos consolidados de la industria.",
+    "limitations": [
+      "Los precios varían sustancialmente según los programas de personalización Mulliner y los mercados de importación.",
+      "Las cifras de consumo y emisiones dependen de las normativas regionales (WLTP/EPA)."
+    ]
   },
   "performance": {
     "speed": "303 km/h",
     "acceleration": "0-100 km/h en 4.8s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.267Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:31:34.921Z",
+  "transmision": "Automática de doble embrague de 8 velocidades",
+  "traccion": "Integral en las cuatro ruedas (AWD)",
+  "peso": "2.165 kg",
+  "tipoMotor": "Gasolina 4.0L V8 biturbo",
+  "potenciaKW": "404 kW",
+  "capacidadTanque": "90 litros",
+  "tiempoRecorrido": "3.5s - 4.0s",
+  "anoProduccion": "2018-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "3.996 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 4,
+  "baul": 358,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2018,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -255,7 +257,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.309Z",
+    "lastChecked": "2026-08-27T01:31:34.921Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -308,5 +310,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\n\nEl Bentley Continental GT representa desde su irrupción inicial en el mercado global el pináculo de los grandes turismos de alto rendimiento. Concebido bajo el paraguas del Grupo Volkswagen tras la adquisición de la marca británica, este modelo redefinió el concepto clásico de un coupé de lujo británico al fusionar la artesanía tradicional de Crewe con tecnología de vanguardia y arquitectura alemana. La primera generación, lanzada a principios de los años 2000, sentó las bases comerciales y de diseño de la marca moderna, convirtiéndose rápidamente en un éxito rotundo de ventas que multiplicó exponencialmente la producción histórica de la compañía.\n\n## Un hito o generación relevante\n\nLa tercera generación del Bentley Continental GT, introducida comercialmente a partir de 2018, constituye el salto tecnológico y dinámico más importante en la trayectoria del modelo. Desarrollada sobre la plataforma MSB del grupo (compartida con otros exponentes de altas prestaciones), esta iteración incorporó un chasis de aluminio avanzado, suspensión neumática activa de tres cámaras y un sistema eléctrico de 48 voltios para el control dinámico de rolido (Bentley Dynamic Ride). Esta arquitectura permitió mitigar el peso inercial propio de un vehículo de su categoría, logrando una agilidad en curvas sin precedentes para un gran turismo de su porte, sin sacrificar un ápice del confort de marcha legendario que caracteriza a la firma.\n\n## Curiosidades\n\nA pesar de su enfoque señorial y su peso orientado al confort supremo, el Bentley Continental GT posee una rica historia en el automovilismo y pruebas de resistencia extrema. Versiones especiales preparadas para competición han competido y ganado en exigentes escenarios como la subida en cuesta de Pikes Peak, batiendo récords en la categoría de producción. Asimismo, cada unidad requiere de semanas de trabajo artesanal intensivo en la planta de Crewe, donde se emplean maderas nobles de tala sostenible, cueros seleccionados a mano que demandan hasta doce hides diferentes por vehículo, y costuras que pueden tomar días enteros en completarse por operarios especializados.\n\n## Competencia y posicionamiento\n\nEn el mercado global de los automóviles de ultra lujo, el Continental GT ocupa una posición sumamente exclusiva que combina la usabilidad diaria de un coupé rutero con prestaciones propias de un superdeportivo. Entre sus competidores directos se encuentran coupés de alta gama como el Aston Martin DB12, el Mercedes-Benz Clase S Coupé (en sus variantes históricas) o incluso versiones tope de gama de marcas como Ferrari y Rolls-Royce (en su enfoque de exclusividad, aunque con un talante más dinámico). Frente a ellos, el Bentley se destaca por ofrecer una tracción integral sumamente efectiva en cualquier condición climática, un aislamiento acústico sobresaliente y una versatilidad de cabina de configuración 2+2 que lo posiciona como la opción predilecta para viajes transcontinentales a altas velocidades sostenidas."
 }

@@ -12,32 +12,33 @@
   "manufacturer": "Mercedes-Benz",
   "class": "SUV premium",
   "customizable": false,
-  "power": "255 hp",
-  "price": "USD 68.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "367 CV",
+  "price": "USD 70.000 (MSRP referencia global, varía según mercado e impuestos)",
+  "consumo": "8.3 - 9.4 l/100km combinado",
+  "dimensiones": "4.924 mm largo x 1.947 mm ancho x 1.797 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "respaldado",
+    "primarySource": "https://www.auto-data.net/es/mercedes-benz-gle-suv-v167-gle-450-367hp-eq-boost-4matic-g-tronic-35268",
+    "note": "Se actualizaron las especificaciones técnicas de la cuarta generación (V167) tomando como referencia principal la versión GLE 450 4MATIC (367 CV con tecnología EQ Boost), validando datos de potencia, cilindrada, consumo y dimensiones a partir de fichas técnicas especializadas y catálogos oficiales de la marca.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ],
-    "primarySource": "https://www.la.mercedes-benz.com/es/passengercars/mercedes-benz-cars/models/gle/suv-v167/specifications.html"
+      "Los precios varían sustancialmente según los mercados locales, aranceles de importación e impuestos vigentes.",
+      "Las cifras de consumo y aceleración pueden presentar ligeras variaciones dependiendo del equipamiento opcional y las condiciones de homologación regionales."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.462Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T02:59:05.903Z",
+  "transmision": "Automática 9G-TRONIC",
+  "traccion": "Tracción integral 4MATIC",
+  "peso": "2.165 kg",
+  "tipoMotor": "Gasolina / Mild-Hybrid (EQ Boost)",
+  "potenciaKW": "270 kW",
+  "capacidadTanque": "85 litros",
+  "tiempoRecorrido": "0-100 km/h en 5.7s",
+  "anoProduccion": "2019-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -125,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.999 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 630,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "V167 (Cuarta generación)",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "ejecutivo",
   "gallery": {
@@ -207,7 +208,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.432Z",
+    "lastChecked": "2026-08-27T02:59:05.903Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -225,5 +226,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Mercedes-Benz GLE es la evolución directa de una de las apuestas más influyentes de la marca alemana en el segmento de los SUV de lujo. Concebido originalmente bajo la denominación Clase M (ML) a finales de la década de 1990, este vehículo sentó los cimientos de lo que hoy conocemos como el mercado global de todoterrenos prémium orientados al confort de marcha superior y al asfalto. Con la reestructuración de nombres adoptada por la firma de Stuttgart hace unos años, la Clase M adoptó la denominación GLE, alineando su jerarquía de manera directa con la icónica Clase E dentro de la familia de sedanes.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la trayectoria de este modelo llegó con el desembarco de la cuarta generación, identificada internamente bajo el código V167. Presentada formalmente en los mercados internacionales a partir de 2019, esta entrega introdujo una revolución tecnológica profunda al incorporar el sistema de infoentretenimiento MBUX con pantallas duales de alta resolución y control por voz avanzado. Asimismo, esta etapa marcó la masificación de los sistemas de electrificación ligera (Mild-Hybrid de 48V con tecnología EQ Boost) y opciones de suspensión hidroneumática verdaderamente inteligentes como el E-Active Body Control, capaz de escanear el camino en tiempo real para optimizar el comportamiento dinámico y el aislamiento de la cabina.\n\n## Curiosidades\n¿Sabías que el antecesor espiritual del GLE, el Clase M, fue el primer vehículo de pasajeros de Mercedes-Benz fabricado fuera de Alemania? La planta de Tuscaloosa, en el estado de Alabama (Estados Unidos), fue inaugurada en 1997 exclusivamente para su producción, transformándose en un polo industrial estratégico que hasta el día de hoy abastece a gran parte del planeta con esta familia de SUV. Además, el GLE fue uno de los pioneros en popularizar las siluetas de tipo SUV coupé, abriendo camino a variantes de líneas más estilizadas y deportivas que hoy dominan las preferencias de los compradores más exigentes.\n\n## Competencia y posicionamiento\nEn el mercado global, el Mercedes-Benz GLE compite de manera directa y encarnizada dentro del segmento de los SUV medianos-grandes de lujo frente a referentes alemanes de peso como el BMW X5 y el Audi Q7, así como alternativas de enfoque más dinámico como el Porsche Cayenne o el Volvo XC90. Su posicionamiento dentro de la gama del fabricante se ubica estratégicamente un escalón por encima del GLC y por debajo del imponente GLS de siete plazas. El GLE se destaca tradicionalmente por ofrecer un equilibrio sobresaliente entre refinamiento interior, un aislamiento acústico de primer nivel, tecnología de asistencia a la conducción de vanguardia y una dinámica rutera que prioriza el confort absoluto de sus pasajeros por sobre las pretensiones deportivas extremas."
 }

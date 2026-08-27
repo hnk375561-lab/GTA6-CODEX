@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.250Z",
-  "updatedAt": "2026-08-25T23:22:07.296Z",
+  "updatedAt": "2026-08-27T01:35:08.867Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback eléctrico",
   "customizable": false,
@@ -19,23 +19,24 @@
     "speed": "Media (150 km/h)",
     "acceleration": "Media-Alta (0-100 km/h en 6.5s)"
   },
-  "power": "200 hp",
-  "price": "USD 29.000",
+  "power": "200 hp (150 kW)",
+  "price": "USD 26.500 (MSRP EE.UU. base)",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.chevrolet.com/electric/bolt-ev",
+    "note": "Se verificaron las especificaciones técnicas oficiales del Chevrolet Bolt EV correspondientes a su última etapa de producción con batería de 65 kWh y motor de 200 hp.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "El modelo finalizó su producción en 2023 para dar paso a la plataforma Ultium, aunque GM anunció el retorno del nombre Bolt para futuros modelos económicos."
     ]
   },
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-250 kW",
+  "transmision": "Automática de relación única",
+  "traccion": "Delantera (FWD)",
+  "peso": "1625 kg",
+  "tipoMotor": "Motor síncrono de imanes permanentes",
+  "potenciaKW": "150 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "6.5s",
+  "anoProduccion": "2017-2023",
   "mercados": [
     "Europa",
     "USA",
@@ -117,16 +118,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
+  "consumo": "16 kWh / 100 km",
+  "dimensiones": "4161 x 1765 x 1610 mm",
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 478,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ª generación (reestyling 2022)",
+  "anoLanzamiento": 2016,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -249,7 +250,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.328Z",
+    "lastChecked": "2026-08-27T01:35:08.867Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -302,5 +303,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Chevrolet Bolt EV marcó un antes y un después en la estrategia de electrificación de General Motors. Presentado en forma de prototipo en 2015 y lanzado al mercado estadounidense a finales de 2016 como modelo 2017, este hatchback compacto fue concebido desde cero como un vehículo 100% eléctrico y no como una adaptación de un modelo con motor de combustión interna tradicional. Su objetivo principal era romper la barrera psicológica y económica de los autos eléctricos de largo alcance, ofreciendo una opción accesible para el uso diario sin resignar autonomía.\n\n## Un hito o generación relevante\nEl hito más importante en la trayectoria del Bolt EV llegó con la actualización profunda introducida para el año modelo 2022. En esta renovación, Chevrolet no solo rediseñó por completo el exterior y el interior —otorgándole un aspecto mucho más moderno, tecnológico y con materiales de mejor calidad en la cabina—, sino que también ajustó agresivamente su política de precios. Con una baja considerable en su valor de entrada con respecto a la primera serie, se posicionó momentáneamente como uno de los vehículos eléctricos con mejor relación autonomía-precio del mercado norteamericano. Además, se complementó con la variante Bolt EUV, una versión de carrocería ligeramente más alargada y formato SUV compacto.\n\n## Curiosidades\nUna de las características más destacadas del Chevrolet Bolt EV es su manejo enfocado en la conducción con un solo pedal (\"One-Pedal Driving\"). Mediante una calibración muy precisa del sistema de frenado regenerativo, el conductor puede acelerar y detener casi por completo el vehículo utilizando únicamente el pedal del acelerador, lo que maximiza la recuperación de energía en entornos urbanos con tráfico denso. Asimismo, su arquitectura mecánica permitió alojar el paquete de baterías en formato de \"skateboard\" bajo el piso de la cabina, logrando un aprovechamiento del espacio interior inusual para un vehículo de poco más de 4,1 metros de largo.\n\n## Competencia y posicionamiento\nEn términos de mercado, el Chevrolet Bolt EV compitió directamente contra vehículos como el Nissan Leaf, el Tesla Model 3 en sus versiones de acceso (aunque este último con un enfoque más aspiracional) y posteriormente contra los crossovers compactos basados en plataformas dedicadas de marcas generalistas. Su fuerte posicionamiento inicial residió en ofrecer más de 400 kilómetros de autonomía real por carga a un precio muy competitivo, convirtiéndose en una herramienta fundamental para la adopción masiva de la movilidad eléctrica en flotas urbanas y usuarios particulares en Norteamérica."
 }

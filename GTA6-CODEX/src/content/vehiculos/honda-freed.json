@@ -12,31 +12,31 @@
   "manufacturer": "Honda",
   "class": "Minivan compacta",
   "customizable": false,
-  "power": "117 hp (87 kW) a 6.600 rpm (versión gasolina) / 121 hp combinados (versión híbrida)",
-  "price": "JPY 2.508.000 (~USD 17.000, gasolina base, referencia mercado japonés)",
-  "consumo": "5.5 l/100km combinado (ciclo WLTC, referencia)",
-  "dimensiones": "4.310 mm largo x 1.695 mm ancho x 1.755 mm alto, distancia entre ejes 2.740 mm",
+  "power": "117 hp (87 kW) a 6.600 rpm (gasolina) / 121 hp combinados (híbrido e:HEV)",
+  "price": "JPY 2.508.000 (~USD 17.000, referencia mercado japonés)",
+  "consumo": "5.5 l/100km combinado (ciclo WLTC)",
+  "dimensiones": "4.310 mm largo x 1.695 mm ancho x 1.755 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Cifras de la tercera generación (GT-series) lanzada en Japón en junio de 2024, versión gasolina 1.5L base. Modelo exclusivo del mercado JDM y algunos mercados asiáticos, no se vende oficialmente en América ni Europa.",
-    "limitations": [
-      "No comercializado oficialmente fuera de Japón/Asia; precio en otros mercados es de importación",
-      "Existe versión híbrida (e:HEV, 121 hp) con precio superior",
-      "Cifras de aceleración son estimadas, no publicadas oficialmente por Honda"
-    ],
     "primarySource": "https://paultan.org/2024/06/27/2024-honda-freed-launched-in-japan/",
-    "secondarySource": "https://llantasneumaticos.com/size/honda/freed/2024/"
+    "secondarySource": "https://llantasneumaticos.com/size/honda/freed/2024/",
+    "note": "Se verificaron las especificaciones técnicas, dimensiones y motorizaciones de la tercera generación del Honda Freed lanzada en Japón en junio de 2024, incluyendo las variantes de gasolina y el sistema híbrido e:HEV.",
+    "limitations": [
+      "Modelo enfocado principalmente en el mercado JDM y selectos países asiáticos",
+      "Cifras de aceleración son estimaciones basadas en configuraciones mecánicas similares",
+      "Los precios fuera de Japón corresponden a valores de importación y pueden variar considerablemente"
+    ]
   },
   "performance": {
     "speed": "165 km/h (referencia)",
     "acceleration": "0-100 km/h en 11.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-26T07:28:17.778Z",
-  "transmision": "CVT automática (gasolina) / DCT 7 velocidades híbrido con motor eléctrico",
+  "updatedAt": "2026-08-27T01:45:01.456Z",
+  "transmision": "CVT automática (gasolina) / e:HEV transmisión eléctrica de una velocidad / DCT híbrido",
   "traccion": "Delantera (4WD opcional según versión)",
-  "peso": "1.340-1.470 kg (según trim y motorización)",
-  "tipoMotor": "Gasolina atmosférico 1.5L i-VTEC (gasolina) / híbrido e:HEV (versión GT8)",
+  "peso": "1.340-1.470 kg",
+  "tipoMotor": "Gasolina 1.5L i-VTEC / Híbrido e:HEV",
   "potenciaKW": "87 kW",
   "capacidadTanque": "36 litros",
   "tiempoRecorrido": "11.5s",
@@ -132,8 +132,8 @@
   "asientos": 6,
   "baul": null,
   "maleteroMin": null,
-  "generacion": "III (2024-presente)",
-  "anoLanzamiento": "2024",
+  "generacion": "III",
+  "anoLanzamiento": 2024,
   "colores": [],
   "category": "vehiculo",
   "gallery": {
@@ -209,7 +209,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T07:28:17.766Z",
+    "lastChecked": "2026-08-27T01:45:01.456Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -243,5 +243,6 @@
     ],
     "auditNotes": "Lote 5 (ago 2026): datos de la 3ra generación (GT-series) MY2024, mercado JDM.",
     "dataQuality": 0.85
-  }
+  },
+  "content": "## Historia del modelo\nEl Honda Freed es una de las minivans compactas más exitosas y versátiles dentro del mercado japonés (JDM). Introducido originalmente en 2008 como un reemplazo directo del Honda Mobilio, el Freed logró capturar rápidamente la atención de las familias urbanas gracias a su inteligente aprovechamiento del espacio interior en una huella exterior muy contenida. A lo largo de sus dos primeras generaciones, el modelo se consolidó como un referente de practicidad, ofreciendo configuraciones de asientos flexibles y un acceso sumamente cómodo mediante puertas corredizas traseras, una característica indispensable en los congestionados centros urbanos de Japón.\n\n## Un hito o generación relevante\nLa llegada de la tercera generación a mediados de 2024 marcó un punto de inflexión absoluto para la gama Freed. Con un diseño exterior completamente renovado que adopta líneas más limpias, cuadradas y modernas, esta iteración busca maximizar la visibilidad y el volumen interior útil. Se estructuró en dos grandes variantes estéticas y de uso: la Freed Air, enfocada en la elegancia y el confort familiar tradicional, y la Freed Crosstar, que introduce un aspecto aventurero con protecciones plásticas en la carrocería, barras de techo y una estética aventurera tipo crossover. En el plano mecánico, esta generación incorporó de serie las mejoras del sistema híbrido e:HEV de doble motor de Honda, logrando una eficiencia de combustible sobresaliente y una respuesta mucho más refinada al acelerar, además de sumar el paquete integral de asistencias a la conducción Honda Sensing 360.\n\n## Curiosidades\nUna de las genialidades de diseño del Honda Freed es su capacidad para albergar hasta seis o siete pasajeros en un vehículo que apenas supera los 4.3 metros de largo, dimensiones equivalentes a las de un hatchback mediano tradicional. Para lograr esto, los ingenieros de Honda rediseñaron por completo la plataforma, optimizando el tanque de combustible ubicado bajo los asientos delanteros y logrando un piso completamente plano. Además, la tercera generación introdujo asientos en la tercera fila notablemente más ligeros y fáciles de plegar hacia los laterales, simplificando la tarea de modular el espacio de carga sin requerir un gran esfuerzo físico por parte del usuario.\n\n## Competencia y posicionamiento\nDentro del mercado japonés, el Honda Freed compite directamente contra vehículos consagrados como el Toyota Sienta y, en menor medida, propuestas de mayor tamaño como el Nissan Serena. Su posicionamiento dentro de la categoría de las mini MPVs es de carácter familiar pero con un fuerte enfoque tecnológico y de eficiencia. Si bien no cuenta con intenciones de comercialización oficial masiva en los mercados de Occidente o América Latina, su reputación de vehículo extremadamente fiable, ahorrador y sumamente práctico lo mantiene en la mira de los entusiastas de los vehículos importados de nicho y de la cultura JDM."
 }

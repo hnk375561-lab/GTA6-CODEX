@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.060Z",
-  "updatedAt": "2026-08-25T23:22:07.543Z",
+  "updatedAt": "2026-08-27T03:13:15.198Z",
   "manufacturer": "Toyota",
   "class": "Hatchback",
   "customizable": false,
@@ -19,20 +19,24 @@
     "speed": "175 km/h",
     "acceleration": "0-100 km/h en 11.8s"
   },
-  "power": "106 hp",
-  "price": "USD 19.000",
+  "power": "107 CV",
+  "price": "ARS / USD de referencia regional (según mercado y versión)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.toyota.com/yaris/"
+    "level": "respaldado",
+    "primarySource": "https://jorgeferro.com/modelo/yaris",
+    "note": "Se verificaron las especificaciones técnicas para el mercado latinoamericano con motorización 1.5L Dual VVT-i de 107 CV, transmisión CVT/manual, capacidad de tanque de 40 litros y equipamiento de seguridad mediante la red de concesionarios oficiales y sitio de Toyota Argentina.",
+    "limitations": [
+      "Las especificaciones exactas, capacidades del baúl y niveles de equipamiento varían según si se trata de la silueta hatchback o sedán, así como entre los distintos mercados de la región."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 6 marchas o Automática CVT",
+  "traccion": "Delantera",
+  "peso": "1115 kg",
+  "tipoMotor": "Gasolina atmosférico 1.5L Dual VVT-i",
+  "potenciaKW": "79 kW",
+  "capacidadTanque": "40 litros",
+  "tiempoRecorrido": "0-100 km/h en 11.8s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +122,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "Aprox. 5.5 a 6.0 l/100 km (ciclo mixto estimado)",
+  "dimensiones": "4145 x 1730 x 1475 mm (Hatchback Mercosur aprox.)",
+  "cilindrada": "1496 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 310,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Cuarta generación (versión regional Mercosur)",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -249,8 +253,8 @@
     "description": "Hatchback compacto de Toyota, motor 1.5L de 4 cilindros."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.493Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:13:15.198Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +307,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Toyota Yaris es uno de los vehículos compactos más exitosos y longevos de la marca japonesa a nivel global. Nacido a finales de la década de 1990 como el sucesor natural del emblemático Starlet, el Yaris se ganó rápidamente una reputación envidiable basada en su agilidad urbana, su bajísimo consumo de combustible y, por sobre todas las cosas, una confiabilidad mecánica a toda prueba. A lo largo de las décadas, el modelo evolucionó desde un pequeño monovolumen y hatchback de líneas simpáticas hasta transformarse en un exponente moderno, adaptando variantes específicas para las regiones emergentes y adoptando plataformas globales en los mercados más desarrollados.\n\n## Un hito y generación relevante\nPara el mercado latinoamericano, un hito fundamental fue la consolidación de la producción regional en la planta de Sorocaba, en Brasil, desde donde abastece a gran parte de Sudamérica. La actualización estética y de equipamiento introducida en los últimos años marcó un punto de inflexión, especialmente en materia de seguridad activa y pasiva. La incorporación progresiva de tecnologías de asistencia a la conducción agrupadas bajo Toyota Safety Sense (en versiones superiores) y la estandarización de componentes clave demostró el compromiso de la marca por democratizar la seguridad en el segmento B, un apartado históricamente relegado en los vehículos compactos más accesibles de la región.\n\n## Curiosidades\nUna de las curiosidades más interesantes del Toyota Yaris es la dualidad de su oferta global. Mientras que en Europa y Japón el Yaris se comercializa sobre la avanzada plataforma GA-B y cuenta con motorizaciones híper eficientes (incluyendo variantes híbridas de última generación y la radical versión deportiva GR Yaris de tracción integral), en los mercados de América Latina se optó por una estrategia adaptada a las necesidades locales, utilizando una evolución de la plataforma previa para garantizar robustez ante caminos exigentes y costos de producción competitivos, sin sacrificar el confort de marcha ni la conectividad moderna con sistemas como Apple CarPlay y Android Auto.\n\n## Competencia y posicionamiento\nEn el competitivo segmento de los autos compactos, el Toyota Yaris compite directamente contra pesos pesados de la industria en la región como el Chevrolet Onix, el Volkswagen Polo, el Fiat Argo y el Peugeot 208. Su posicionamiento en el mercado se sustenta en pilares muy claros: no busca ser el vehículo más radical en términos de diseño deportivo ni el más económico de entrada de gama, sino posicionarse como la opción racional por excelencia. Los usuarios lo eligen principalmente por la sólida reputación de la red de postventa de Toyota, el excelente valor de reventa en el mercado de usados y la tranquilidad de contar con un producto mecánicamente sencillo, duradero y de bajo mantenimiento diario."
 }

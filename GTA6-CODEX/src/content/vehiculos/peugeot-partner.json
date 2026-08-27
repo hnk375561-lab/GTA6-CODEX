@@ -13,28 +13,33 @@
   "manufacturer": "Peugeot",
   "class": "Utilitario",
   "customizable": false,
-  "power": "115 hp",
-  "price": "USD 24.000",
-  "consumo": "6.5 l/100km (mixto, diesel)",
-  "dimensiones": "4403 x 1817 x 1806 mm",
+  "power": "98 CV",
+  "price": "ARS 103.990.000 (referencia mercado local Argentina)",
+  "consumo": "6.0 l/100km (mixto, HDi)",
+  "dimensiones": "4380 x 1810 x 1801 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.peugeot.com.ar/gama-peugeot/partner/"
+    "level": "respaldado",
+    "secondarySource": "https://www.scribd.com/document/515028838/Ficha-Tecnica-Partner-Vu-Sept-2017-1",
+    "note": "Se verificaron los precios de referencia en el mercado argentino y las especificaciones técnicas del motor 1.6 HDi provisto localmente, junto a las dimensiones del modelo fabricado en El Palomar.",
+    "limitations": [
+      "Los precios varían constantemente debido a la inflación y contexto macroeconómico local.",
+      "Las capacidades de carga pueden oscilar según la versión exacta (Furgón vs. Patagónica)."
+    ]
   },
   "performance": {
     "speed": "160 km/h",
     "acceleration": "0-100 km/h en 13.5s"
   },
   "createdAt": "2026-08-23T21:59:08.449854Z",
-  "updatedAt": "2026-08-25T23:22:07.501Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T03:04:45.198Z",
+  "transmision": "Manual de 5 marchas",
+  "traccion": "Delantera",
+  "peso": "1385 kg",
+  "tipoMotor": "Diésel",
+  "potenciaKW": "72 kW",
+  "capacidadTanque": "60 litros",
+  "tiempoRecorrido": "0-100 km/h en 13.5s",
+  "anoProduccion": "1998-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1560 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 3000,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Primera generación (con profundos restylings regionales en Sudamérica)",
+  "anoLanzamiento": 1998,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -251,8 +256,8 @@
     "description": "Furgón utilitario de Peugeot, versión de pasajeros y de carga disponibles."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.452Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:04:45.198Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +310,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Peugeot Partner es uno de los vehículos utilitarios más emblemáticos y de mayor trayectoria en el mercado automotriz argentino y regional. Desarrollada originalmente en conjunto con el grupo PSA, la Partner fue concebida desde sus inicios para cubrir una doble necesidad: el transporte eficiente de cargas urbanas y el uso familiar recreativo, dando origen a exitosas variantes de pasajeros como la línea Patagónica.\n\nEn Argentina, este modelo se convirtió en un verdadero pilar para flotas corporativas, PyMEs y trabajadores independientes, destacándose por su robustez mecánica y una destacable versatilidad interior. A lo largo de las décadas, su producción ininterrumpida en la planta industrial de El Palomar, en la provincia de Buenos Aires, consolidó un vínculo estrecho de confianza con el consumidor local, que valora la facilidad para conseguir repuestos y la probada durabilidad de sus componentes bajo un uso intensivo.\n\n## Un hito o generación relevante\nEl hito más importante en la historia comercial y técnica de la Peugeot Partner en el Mercosur fue la incorporación de la motorización turbodiésel HDi de 1.6 litros. Este propulsor marcó un punto de inflexión en términos de eficiencia de combustible y autonomía para el segmento de utilitarios livianos en el país. Con esta mecánica, el modelo logró posicionarse como una herramienta de trabajo altamente rentable, reduciendo drásticamente los costos operativos diarios en comparación con las motorizaciones nafteras tradicionales o los antiguos motores diésel atmosféricos.\n\n## Curiosidades\nUna de las características más particulares de la Peugeot Partner en la región es su longevidad productiva. Mientras que en los mercados europeos el modelo evolucionó rápidamente hacia nuevas generaciones con plataformas globales actualizadas, en Sudamérica la primera generación —acompañada por profundos restylings estéticos en su frontal, ópticas y habitáculo— se mantuvo vigente durante décadas gracias a su constante y sólida aceptación comercial.\n\nAdemás, su espacio interior maximizado y el portón trasero de doble hoja han servido como base para incontables adaptaciones comerciales, desde ambulancias de baja complejidad y vehículos de reparto urbano hasta conversiones de tipo motorhome realizadas por entusiastas del caravaning.\n\n## Competencia y posicionamiento\nEn el mercado argentino, la Peugeot Partner compite de manera directa con su hermana de plataforma, la Citroën Berlingo (con la que comparte casi la totalidad de su arquitectura y componentes mecánicos), además de medirse frente a furgones compactos como la Renault Kangoo y la Fiat Fiorino.\n\nSu posicionamiento comercial se apoya en una excelente relación costo-beneficio, una capacidad volumétrica muy generosa en relación a su tamaño exterior y una red de posventa sumamente extensa. Si bien no incorpora las asistencias avanzadas a la conducción de los vehículos de última generación importados, su sencillez estructural, resistencia al trabajo pesado y bajo costo de mantenimiento la sostienen como una de las elecciones predilectas dentro del rubro utilitario."
 }

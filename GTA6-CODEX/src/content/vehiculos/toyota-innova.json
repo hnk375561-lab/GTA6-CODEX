@@ -12,15 +12,17 @@
   "manufacturer": "Toyota",
   "class": "Minivan",
   "customizable": false,
-  "power": "136 hp (diésel)",
-  "price": "USD 24.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "174 hp (2.4L turbodiésel) / 186 hp (sistema híbrido)",
+  "price": "USD 30.000 (referencia mercado asiático)",
+  "consumo": "6.5 l/100km combinado",
+  "dimensiones": "4.750 mm largo x 1.850 mm ancho x 1.795 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.toyota.com",
+    "note": "Datos técnicos basados en las especificaciones globales de la Toyota Innova (generaciones recientes con motores 2.4L turbodiésel y variantes híbridas en mercados como sudeste asiático e India).",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "El precio es orientativo y varía según el mercado de comercialización.",
+      "No se comercializa oficialmente en Argentina bajo el nombre Innova en la actualidad."
     ]
   },
   "performance": {
@@ -28,15 +30,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.536Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:28:01.206Z",
+  "transmision": "Automática de 6 marchas o e-CVT",
+  "traccion": "Tracción delantera (FWD)",
+  "peso": "1.600-1.750 kg",
+  "tipoMotor": "Turbodiésel / Híbrido (Gasolina)",
+  "potenciaKW": "128 kW (diésel) / 137 kW (híbrido)",
+  "capacidadTanque": "52 litros",
+  "tiempoRecorrido": "11.0s (0-100 km/h)",
+  "anoProduccion": "2016-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.393 cc (2.4L) / 1.987 cc (2.0L Híbrido)",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 7,
+  "baul": 300,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "2da generación (AN140)",
+  "anoLanzamiento": 2016,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -204,7 +206,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.488Z",
+    "lastChecked": "2026-08-27T01:28:01.206Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -222,5 +224,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Toyota Innova es un vehículo multipropósito (MPV) desarrollado principalmente para mercados emergentes, con un éxito rotundo en países del sudeste asiático como Indonesia, Tailandia, Filipinas e India. Heredera espiritual de la exitosa familia de vehículos comerciales livianos de la marca sobre el chassi IMV (la misma plataforma que comparten la pick-up Hilux y el SUV SW4 en sus versiones anteriores y variantes orientadas a trabajo), la Innova evolucionó desde un enfoque puramente utilitario hacia un vehículo familiar de pasajeros con altas prestaciones de confort.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de la Innova se dio con la introducción de su segunda generación (y las subsecuentes actualizaciones profundas como la Innova Zenix / Innova Hycross). En esta etapa, el modelo dejó parcialmente de lado el chasis de largueros tradicional para adoptar una arquitectura monocasco basada en la plataforma TNGA (Toyota New Global Architecture) en sus variantes más modernas. Esto permitió incorporar trenes motrices electrificados, específicamente sistemas híbridos autorecargables (HEV), marcando un salto cualitativo en términos de refinamiento de marcha, reducción de emisiones y eficiencia de combustible para un vehículo de gran porte destinado al transporte de hasta siete u ocho pasajeros.\n\n## Curiosidades\nA pesar de no tener presencia comercial bajo ese nombre en el mercado argentino actual, la plataforma mecánica de la Innova comparte una enorme cantidad de componentes con la exitosa familia IMV de Toyota. En muchos mercados, la Innova es considerada el vehículo por excelencia para flotas corporativas ejecutivas y familias numerosas debido a su legendaria confiabilidad mecánica, robustez ante caminos difíciles y un valor de reventa sumamente estable. Su interior destaca por soluciones prácticas de modularidad en las filas de asientos y múltiples espacios portaobjetos.\n\n## Competencia y posicionamiento\nEn los mercados donde opera, la Toyota Innova compite directamente contra monovolúmenes y grandes crossovers orientados al transporte familiar de pasajeros, tales como la Hyundai Staria (en versiones de menor capacidad), la Kia Carnival y diversos SUV de tres hileras de asientos derivados de pick-ups. Su posicionamiento se ubica en un punto de equilibrio entre la durabilidad propia de un vehículo de trabajo y las comodidades de un sedán o SUV mediano, priorizando la habitabilidad interior, la seguridad activa con paquetes como Toyota Safety Sense en sus versiones tope de gama, y un costo de mantenimiento previsible."
 }

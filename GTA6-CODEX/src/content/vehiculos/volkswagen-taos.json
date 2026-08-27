@@ -14,26 +14,30 @@
   "customizable": false,
   "power": "150 hp",
   "price": "ARS 54.200.000 (version Comfortline)",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "consumo": "7.5 l/100km combinado",
+  "dimensiones": "4.468 mm largo x 1.841 mm ancho x 1.636 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.16valvulas.com.ar/nueva-volkswagen-taos-my2026-lanzamiento-en-argentina-desde-54-200-000/"
+    "level": "respaldado",
+    "primarySource": "https://www.16valvulas.com.ar/nueva-volkswagen-taos-my2026-lanzamiento-en-argentina-desde-54-200-000/",
+    "note": "Se verificó el precio de lanzamiento para la versión Comfortline en Argentina (MY2026) y las especificaciones técnicas generales del motor 1.4 TSI y dimensiones basadas en la plataforma MQB.",
+    "limitations": [
+      "Algunas especificaciones exactas del restyling MY2026 para la región pueden sufrir ajustes según el equipamiento final de importación desde México."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T23:22:07.551Z",
-  "transmision": "Manual o Automática",
+  "updatedAt": "2026-08-27T02:02:41.082Z",
+  "transmision": "Automática Tiptronic de 6 marchas",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "peso": "1.425 kg",
+  "tipoMotor": "Naftero",
+  "potenciaKW": "110 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "9.3s",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -119,14 +123,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.395 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 498,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra generación (Restyling MY2026)",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -249,8 +253,8 @@
     "description": "SUV del segmento C, restyling MY2026 con cambio de origen a Mexico, plataforma MQB A."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.499Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:02:41.082Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +307,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Volkswagen Taos se introdujo en el mercado latinoamericano en 2021 como una apuesta clave de la marca alemana para el competitivo segmento de los SUV medianos (segmento C). Desarrollado sobre la modular plataforma MQB A, el modelo se posicionó rápidamente entre los productos de mayor volumen fabricados inicialmente en la planta de General Pacheco, Argentina, para abastecer a toda la región. Con el correr de los años, el modelo consolidó su presencia gracias a un equilibrio muy valorado entre habitabilidad, confort de marcha y tecnología aplicada a la seguridad.\n\n## Un hito o generación relevante\nUn punto de inflexión significativo en la trayectoria comercial del SUV se da con la actualización correspondiente al MY2026. En esta etapa, el Volkswagen Taos implementa un restyling profundo que no solo renueva su impronta estética exterior y la digitalización de su habitáculo, sino que también introduce un cambio estratégico en su origen de fabricación para ciertos mercados, pasando a producirse en México. Esta evolución busca optimizar los estándares globales de manufactura y la disponibilidad de componentes tecnológicos avanzados para la región.\n\n## Curiosidades\nUna de las características más destacadas del Volkswagen Taos desde sus inicios ha sido la optimización de su espacio interior en relación con sus dimensiones exteriores. A pesar de ubicarse por debajo de la Tiguan en términos de tamaño, el aprovechamiento de la plataforma MQB permitió configurar un baúl de casi 500 litros y un espacio para las piernas en las plazas traseras que compite directamente con vehículos de segmentos superiores. Asimismo, el motor 1.4 TSI (Turbo Stratified Injection) se ha convertido en uno de los propulsores más confiables y masivos del grupo Volkswagen, equilibrando una respuesta ágil en baja con consumos sumamente contenidos en ruta.\n\n## Competencia y posicionamiento\nEn el mercado automotor sudamericano, el Volkswagen Taos compite de manera directa contra referentes consolidados del segmento C como el Jeep Compass, el Toyota Corolla Cross y el Ford Territory. Su posicionamiento dentro de la oferta de la marca se ubica como el escalón intermedio ideal entre los SUV compactos (como el T-Cross o Nivus) y los vehículos de mayor porte. Se destaca frente a sus rivales por ofrecer un comportamiento dinámico de estirpe europea, una dirección asistida de gran precisión y un paquete completo de asistencias a la conducción (ADAS) que prioriza la seguridad familiar en trayectos urbanos y de ruta."
 }

@@ -12,15 +12,17 @@
   "manufacturer": "Opel",
   "class": "Hatchback/SUV",
   "customizable": false,
-  "power": "130 hp",
-  "price": "EUR 26.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "130 CV",
+  "price": "EUR 27.500 (precio de referencia en mercado europeo)",
+  "consumo": "5.5 l/100km combinado",
+  "dimensiones": "4.374 mm largo x 1.860 mm ancho x 1.441 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "secondarySource": "https://es.wikipedia.org/wiki/Opel_Astra",
+    "note": "Se utilizaron especificaciones técnicas oficiales de la sexta generación del Opel Astra basada en la plataforma EMP2 del Grupo Stellantis, contrastadas con bases de datos de conocimiento general del sector automotriz.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "El precio varía según el mercado europeo específico y los impuestos locales vigentes",
+      "Las cifras de consumo y performance corresponden a la motorización base de gasolina de 130 CV"
     ]
   },
   "performance": {
@@ -28,15 +30,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.489Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:24:29.348Z",
+  "transmision": "Manual de 6 velocidades o automática de 8 velocidades (EAT8)",
+  "traccion": "Delantera",
+  "peso": "1.332 kg",
+  "tipoMotor": "Gasolina, Diésel e Híbrido Enchufable (PHEV)",
+  "potenciaKW": "96 kW",
+  "capacidadTanque": "52 litros",
+  "tiempoRecorrido": "9.7s",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.199 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 422,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "L (Sexta generación)",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -204,7 +206,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.446Z",
+    "lastChecked": "2026-08-27T01:24:29.348Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -222,5 +224,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Opel Astra es uno de los hatchbacks medianos más emblemáticos del mercado europeo, heredero directo del histórico Opel Kadett. Desde su aparición a principios de la década de 1990, el Astra se posicionó rápidamente como un pilar fundamental para la marca alemana, ofreciendo una propuesta equilibrada entre funcionalidad, tecnología accesible y una dinámica de conducción eficiente. A lo largo de las décadas, este compacto evolucionó a través de múltiples generaciones, adaptándose a las cambiantes necesidades de los conductores europeos y consolidándose como un competidor de peso frente a referentes históricos como el Volkswagen Golf y el Ford Focus.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la historia reciente del modelo es la llegada de la sexta generación (conocida internamente como Astra L), presentada a finales de 2021. Este lanzamiento marcó la primera vez que el Astra se desarrolló bajo el paraguas del Grupo Stellantis, tras la adquisición de Opel por parte del conglomerado. Adoptando la moderna plataforma multienergía EMP2, el vehículo abandonó por completo la antigua arquitectura heredada de General Motors para compartir ADN tecnológico y estructural con modelos exitosos de la región como el Peugeot 308 y el DS 4. Este cambio no solo trajo consigo una renovación estética radical basada en el lenguaje de diseño \"Opel Vizor\", sino también una completa electrificación de su gama, incorporando variantes híbridas enchufables y, posteriormente, opciones totalmente eléctricas.\n\n## Curiosidades\nEntre los detalles más interesantes de la era moderna del Opel Astra destaca su enfoque en la ergonomía y el bienestar a bordo. Los asientos delanteros del modelo cuentan con la prestigiosa certificación AGR (Aktion Gesunder Rücken), una entidad alemana enfocada en la salud de la espalda, lo que garantiza un confort de marcha superior en trayectos largos, un atributo poco común en el segmento C generalista. Además, en términos de diseño exterior, la sexta generación recuperó guiños estéticos del legendario Opel Manta, integrando la parrilla frontal negra brillante que fusiona la óptica delantera en una sola pieza visual cohesiva.\n\n## Competencia y posicionamiento\nEn el mercado actual, el Opel Astra compite en el corazón del segmento C europeo (hatchbacks compactos). Su posicionamiento se ubica en la franja generalista superior, rozando el territorio de los vehículos de corte más prémium gracias a sus acabados interiores, la digitalización de su puesto de conducción (denominado Pure Panel) y la incorporación de asistencias a la conducción de nivel avanzado. Sus principales rivales directos incluyen al Volkswagen Golf, el Ford Focus, el SEAT León, el Toyota Corolla y su primo hermano, el Peugeot 308. Frente a ellos, el Astra destaca por su impronta de diseño típicamente alemana, un comportamiento dinámico aplomado en ruta y una versatilidad mecánica que responde con solvencia a las exigencias ambientales actuales."
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:31.256Z",
-  "updatedAt": "2026-08-25T23:22:07.478Z",
+  "updatedAt": "2026-08-27T03:00:24.804Z",
   "manufacturer": "Nissan",
   "class": "Pickup",
   "customizable": false,
@@ -19,20 +19,26 @@
     "speed": "170 km/h",
     "acceleration": "0-100 km/h en 10.9s"
   },
-  "power": "190 hp",
-  "price": "USD 40.000",
+  "power": "160 CV o 190 CV",
+  "price": "Desde $62.200.700 (Precio sugerido al público en mercado argentino según versión)",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.nissan.com.ar/vehiculos/frontier.html"
+    "primarySource": "https://www.nissan.com.ar/vehiculos/nuevos/frontier/versiones.html",
+    "secondarySource": "https://www.nissan.com.ar/vehiculos/nuevos/frontier.html",
+    "note": "Se verificaron los precios de referencia para el mercado argentino en el sitio oficial de Nissan Argentina, así como las especificaciones principales de la plataforma D23.",
+    "limitations": [
+      "Los precios de lista varían constantemente según la actualización impositiva y comercial de cada mercado local.",
+      "Los consumos exactos dependen estrictamente de las condiciones de carga, terreno, presión de neumáticos y estilo de conducción."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 6 velocidades o Automática de 7 velocidades",
+  "traccion": "4x2 o 4x4 con reductora",
+  "peso": "1900 - 2150 kg",
+  "tipoMotor": "Diésel (Turbodiésel 2.3L)",
+  "potenciaKW": "118 kW (160 CV) y 140 kW (190 CV)",
+  "capacidadTanque": "80 litros",
+  "tiempoRecorrido": "Aprox. 11 segundos (0-100 km/h)",
+  "anoProduccion": "2015-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,16 +126,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "Aprox. 7.5 - 8.5 L/100 km en ruta/mixto",
+  "dimensiones": "5260 x 1850 x 1820 mm",
+  "cilindrada": "2298 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 5,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "D23",
+  "anoLanzamiento": 2015,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -252,7 +258,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.440Z",
+    "lastChecked": "2026-08-27T03:00:24.804Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +311,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Nissan Frontier cuenta con una trayectoria de larga data a nivel global dentro del segmento de vehículos comerciales livianos de la marca japonesa. Concebida para soportar exigencias severas, se consolidó rápidamente como una herramienta confiable tanto para labores agropecuarias e industriales como para el uso cotidiano en ciudad o ruta. Con la adopción de la plataforma global D23, la Frontier dio un salto evolutivo clave, mejorando sustancialmente su rigidez estructural, la insonorización del habitáculo y la adopción de tecnologías de asistencia a la conducción orientadas a mitigar la fatiga en trayectos prolongados.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto para la inserción de la Nissan Frontier en el Cono Sur fue la radicación de su línea de producción en la planta industrial de Santa Isabel, ubicada en Córdoba, Argentina. Desde este complejo automotriz, la pick-up se convirtió en un producto estratégico de exportación regional. Asimismo, la incorporación de un esquema de suspensión trasera multilink con resortes helicoidales —en lugar de los clásicos elásticos longitudinales que dominan el segmento— significó una auténtica revolución técnica. Esta arquitectura le otorga un andar refinado y aplomado, propio de un SUV de pasajeros, sin comprometer las capacidades de carga útil ni las aptitudes de arrastre profundo bajo exigencia.\n\n## Curiosidades\nMientras que en América Latina, gran parte de Asia y Oceanía se comercializa bajo el nombre de Nissan Frontier, en los mercados de Europa y Sudáfrica se la conoce históricamente como Nissan Navara. Esta divergencia en la denominación responde a estrategias comerciales y al posicionamiento que la marca busca en cada territorio. No obstante, comparte la misma columna vertebral de ingeniería, siendo fabricada en múltiples polos industriales globales bajo estrictos estándares de calidad que se adaptan a las normativas de emisiones y seguridad de cada región en particular.\n\n## Competencia y posicionamiento\nEn el mercado regional de camionetas medianas, la Nissan Frontier compite en un segmento sumamente disputado frente a rivales directos como la Toyota Hilux, la Ford Ranger, la Volkswagen Amarok y la Chevrolet S10. Se posiciona comercialmente como una alternativa muy equilibrada, destacándose por una excelente relación precio-producto, un motor turbodiésel de 2.3 litros —disponible tanto en configuraciones de turbo simple como biturbo— y un paquete tecnológico englobado bajo el concepto de seguridad activa que le permite mantenerse como una de las opciones más competitivas del mercado argentino y latinoamericano."
 }

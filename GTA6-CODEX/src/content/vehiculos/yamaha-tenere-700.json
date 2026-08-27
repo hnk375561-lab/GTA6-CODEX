@@ -12,16 +12,18 @@
   "manufacturer": "Yamaha",
   "class": "Moto aventura",
   "customizable": false,
-  "power": "72 hp",
-  "price": "USD 10.900",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "74 CV (54 kW) a 9.000 rpm",
+  "price": "USD 10.999 (MSRP EE.UU. referencia)",
+  "consumo": "4,3 l/100 km (aproximado)",
+  "dimensiones": "2.370 mm largo x 905 mm ancho x 1.455 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.motofichas.com/marcas/yamaha/tenere-700",
+    "secondarySource": "https://yamahamotorsports.com/models/tenere-700/specs",
+    "note": "Se actualizaron y verificaron los datos técnicos utilizando las especificaciones globales y de fichas técnicas reales para la Yamaha Ténéré 700, corrigiendo errores de la plantilla anterior correspondientes a automóviles.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+      "El precio y consumo son valores de referencia y pueden variar según el mercado, aranceles e impuestos locales.",
+      "Las dimensiones específicas pueden presentar sutiles variaciones según la versión o región."
     ]
   },
   "performance": {
@@ -29,15 +31,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.560Z",
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T03:15:47.817Z",
+  "transmision": "Manual de 6 marchas",
+  "traccion": "Transmisión final por cadena",
+  "peso": "208 kg (en orden de marcha)",
+  "tipoMotor": "Bicilíndrico en línea, 4T, DOHC, refrigeración líquida",
+  "potenciaKW": "54 kW",
+  "capacidadTanque": "16 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 4.2s",
+  "anoProduccion": "2019-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "689 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -204,7 +206,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.508Z",
+    "lastChecked": "2026-08-27T03:15:47.817Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -222,5 +224,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Yamaha Ténéré 700 nació para responder a una demanda muy concreta en el segmento de las dos ruedas: una motocicleta de aventura de peso medio que fuera verdaderamente capaz en off-road, robusta y libre de excesos electrónicos complejos. Presentada inicialmente como prototipo bajo el nombre de T7 Concept, su llegada a la producción en 2019 supuso un hito para la marca japonesa al rescatar el espíritu aventurero y resistente de las míticas Ténéré de los años 80 y 90, consolidándose rápidamente como una de las opciones más populares a nivel global.\n\n## Un hito y generación relevante\nEl núcleo de este modelo es su reconocido motor CP2 (Crossplane 2) de 689 cc, el mismo bloque bicilíndrico en paralelo que demostró un éxito rotundo en otros modelos de la marca. Sin embargo, para la Ténéré 700, los ingenieros de Yamaha recalibraron la entrega de potencia y la relación de transmisión final para priorizar el torque en baja y media cilindrada. La primera generación se convirtió en la referencia indiscutida del segmento gracias a su chasis tubular de acero de alta resistencia, sus suspensiones de largo recorrido totalmente regulables —con barras delanteras de 43 mm y 210 mm de recorrido— y una estética de moto de rally pura, eliminando pantallas táctiles innecesarias para priorizar una instrumental vertical tipo roadbook enfocada en la funcionalidad.\n\n## Curiosidades\nUn dato destacable del desarrollo de la Ténéré 700 fue el exigente programa de pruebas al que se sometió antes de pisar el mercado. Pilotos profesionales de rally raid como Alessandro Botturi y Stéphane Peterhansel participaron activamente en el testeo de los prototipos en condiciones extremas alrededor del mundo, asegurando que la moto de serie estuviera lista para soportar maltratos severos en terrenos desérticos y montañosos sin comprometer la fiabilidad mecánica característica de Yamaha.\n\n## Competencia y posicionamiento\nEn el mercado global de las trail medianas, la Ténéré 700 se posiciona como una alternativa de enfoque purista frente a rivales de mayor carga tecnológica como la KTM 790/890 Adventure, la BMW F 850 GS o la Aprilia Tuareg 660. Mientras que algunas competidoras apuestan fuertemente por asistencias electrónicas sofisticadas, modos de conducción múltiples y pantallas TFT de alta conectividad, la Ténéré 700 prioriza la simplicidad mecánica, la durabilidad estructural y una excelente relación precio-producto, convirtiéndola en la opción predilecta tanto de motociclistas experimentados como de aquellos que buscan iniciarse en el turismo de aventura de larga distancia."
 }

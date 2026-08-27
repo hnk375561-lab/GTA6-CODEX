@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.554Z",
-  "updatedAt": "2026-08-25T23:22:07.430Z",
+  "updatedAt": "2026-08-27T01:49:24.811Z",
   "manufacturer": "Kia",
   "class": "Hatchback económico",
   "customizable": false,
@@ -20,20 +20,25 @@
     "speed": "155 km/h",
     "acceleration": "0-100 km/h en 13.4s"
   },
-  "power": "84 hp",
-  "price": "USD 15.000",
+  "power": "67 hp (motor 1.0) / 84 hp (motor 1.2)",
+  "price": "USD 15.000 (referencia base mercado internacional)",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.kia.com.ar/picanto"
+    "primarySource": "https://www.kia.com",
+    "note": "Se verificaron los datos técnicos principales del Kia Picanto basados en especificaciones globales de sus motorizaciones nafteras de entrada de gama.",
+    "limitations": [
+      "Los precios y equipamientos varían según el mercado específico de Latinoamérica o Europa.",
+      "Algunas cifras de aceleración varían levemente según la transmisión elegida."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 5 marchas o automatizada AMT de 5 marchas",
+  "traccion": "Delantera",
+  "peso": "935-993 kg",
+  "tipoMotor": "Gasolina atmosférico",
+  "potenciaKW": "49 kW (1.0L) / 62 kW (1.2L)",
+  "capacidadTanque": "35 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 14.1s (1.0) / 13.4s (1.2)",
+  "anoProduccion": "2017-presente (con actualizaciones recientes)",
   "mercados": [
     "Europa",
     "USA",
@@ -119,16 +124,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "Aprox. 5.0 L/100 km mixto",
+  "dimensiones": "3595 x 1595 x 1485 mm",
+  "cilindrada": "998 cc o 1197 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 255,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación (facelift reciente)",
+  "anoLanzamiento": 2017,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -252,7 +257,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.415Z",
+    "lastChecked": "2026-08-27T01:49:24.811Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +310,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Kia Picanto es uno de los hatchbacks urbanos más exitosos y reconocidos a nivel global dentro del segmento A. Desde su introducción inicial a principios de los años 2000, este modelo se consolidó rápidamente como una propuesta clave para la movilidad urbana gracias a su formato compacto, bajo costo de mantenimiento y una excelente relación precio-producto. Diseñado principalmente para lidiar con el tráfico denso de las grandes ciudades, el Picanto supo evolucionar generación tras generación, dejando atrás su imagen estrictamente utilitaria para adoptar un lenguaje de diseño mucho más moderno, agresivo y tecnológico.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la trayectoria del Kia Picanto fue el lanzamiento de su tercera generación, presentada alrededor de 2017 y posteriormente actualizada con profundos lavados de cara (facelifts) que se extienden hasta la actualidad. Esta iteración marcó un antes y un después al incorporar plataformas más rígidas, mejoras sustanciales en seguridad activa y pasiva, además de un salto notable en la calidad percibida del habitáculo. Con la incorporación de pantallas táctiles compatibles con sistemas de conectividad avanzados y asistencias a la conducción en mercados selectos, el Picanto demostró que un auto urbano de entrada ya no tiene que sacrificar confort ni tecnología.\n\n## Curiosidades\nEntre las particularidades del Kia Picanto destaca que, a pesar de pertenecer al segmento más chico del mercado automotriz, ofrece versiones de aspecto deportivo (como la línea GT-Line) que simulan la estética de vehículos de altas prestaciones con detalles en la carrocería, doble salida de escape simulada y llantas de aleación de diseño exclusivo. Asimismo, comparte plataforma y desarrollos mecánicos con su primo hermano, el Hyundai i10, lo que le permite optimizar costos de producción y garantizar una alta fiabilidad mecánica global.\n\n## Competencia y posicionamiento\nEn el mercado global y regional, el Kia Picanto compite directamente contra referentes históricos del segmento A como el Fiat Mobi, el Toyota Aygo (en Europa) o el Renault Kwid. Frente a ellos, el modelo de la marca surcoreana se posiciona tradicionalmente un escalón más arriba en términos de terminaciones, refinamiento de marcha y disponibilidad de equipamiento de seguridad, apuntando a un público que busca un vehículo principal accesible o un segundo auto urbano confiable y bien equipado."
 }

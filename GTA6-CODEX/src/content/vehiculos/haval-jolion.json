@@ -15,15 +15,16 @@
   "manufacturer": "GWM (Haval)",
   "class": "SUV compacto",
   "customizable": false,
-  "power": "190 hp combinados (Jolion Pro HEV)",
-  "price": "USD 29.900",
+  "power": "190 hp",
+  "price": "USD 29.900 (mercado argentino)",
   "consumo": "19.6 km/l (uso mixto)",
-  "dimensiones": "No informado por el fabricante para Argentina",
+  "dimensiones": "4472 x 1841 x 1619 mm",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.16valvulas.com.ar/lanzamiento-gwm-jolion-pro-hev-hibrido-desde-us-29-900/",
+    "note": "Se verificaron las especificaciones principales para el mercado argentino del GWM Haval Jolion Pro HEV según el lanzamiento oficial informado en medios especializados de la región.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): tipoMotor corregido de \"Gasolina/Diésel\" (valor de relleno) a \"Gasolina + sistema híbrido\", ya que este vehículo no tiene variante diésel. Arquitectura específica del híbrido (serie/paralelo, mild/full/enchufable) pendiente de verificar con fuente primaria."
+      "Algunas cotas exactas de trochas o capacidades secundarias pueden variar según el mercado de exportación y la homologación local."
     ]
   },
   "performance": {
@@ -31,15 +32,15 @@
     "acceleration": "No informado por el fabricante para Argentina"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T23:22:07.377Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina + sistema híbrido",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:43:12.575Z",
+  "transmision": "Automática DHT (Dedicated Hybrid Transmission)",
+  "traccion": "Delantera",
+  "peso": "1425 kg",
+  "tipoMotor": "1.5L atmosférico de ciclo Atkinson + motor eléctrico (HEV)",
+  "potenciaKW": "140 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "8.5 s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -127,14 +128,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1499 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 400,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ª generación (facelift / Jolion Pro)",
+  "anoLanzamiento": 2024,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -261,7 +262,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.388Z",
+    "lastChecked": "2026-08-27T01:43:12.575Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -314,5 +315,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl GWM Haval Jolion se introdujo originalmente a nivel global como el sucesor natural del exitoso Haval H2, un SUV compacto que le permitió a la marca consolidar su presencia fuera de China. Con el correr de los años y la rápida expansión del gigante automotriz Great Wall Motor (GWM) hacia los mercados internacionales, la familia Jolion evolucionó para incorporar nuevas tecnologías de electrificación. La variante Jolion Pro HEV representa un paso adelante en la estrategia de la compañía, adaptándose a las demandas de movilidad sostenible en regiones emergentes y consolidándose como una opción atractiva dentro del segmento B/C de SUV.\n\n## Un hito o generación relevante\nEl desembarco de la variante híbrida autorrecargable (HEV) equipada con la transmisión DHT (Dedicated Hybrid Transmission) marca un hito fundamental para la gama en Sudamérica. A diferencia de las motorizaciones térmicas tradicionales que caracterizaron sus inicios, este sistema combina un motor naftero de ciclo Atkinson con un propulsor eléctrico para ofrecer una respuesta dinámica optimizada y consumos sumamente contenidos en el ámbito urbano, donde el vehículo puede operar en modo 100% eléctrico en diversas situaciones de tráfico denso.\n\n## Curiosidades\nA pesar de ser un vehículo de origen asiático, el diseño y la calibración global del Haval Jolion han sido pensados para competir de igual a igual con marcas tradicionales europeas, japonesas y estadounidenses. Su denominación 'Jolion' proviene de un juego de palabras fonético en inglés que busca evocar conceptos de alegría y dinamismo ('Joy + Lion'), reflejando la filosofía juvenil y moderna con la que la marca bautiza a sus productos más dinámicos orientados a nuevas generaciones de conductores.\n\n## Competencia y posicionamiento\nEn el mercado regional, el GWM Haval Jolion Pro HEV se posiciona de manera muy competitiva gracias a una agresiva estrategia de precios de entrada (desde USD 29.900 al momento de su lanzamiento en Argentina) para un vehículo con tecnología híbrida. Su principal competencia proviene de los SUV compactos más consagrados del segmento generalista, tanto de origen Mercosur como extrazona (provenientes principalmente de Brasil y otras terminales asiáticas), destacándose frente a ellos por ofrecer un nivel de equipamiento tecnológico elevado y una notable eficiencia en consumo de combustible sin requerir infraestructura de carga externa."
 }

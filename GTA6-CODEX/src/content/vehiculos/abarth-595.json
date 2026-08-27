@@ -12,18 +12,18 @@
   "manufacturer": "Abarth",
   "class": "Hatchback deportivo",
   "customizable": false,
-  "power": "165 hp (últimas unidades 2024-2026, motor 1.4 T-Jet)",
-  "price": "EUR 31.500 (último precio de lista antes de discontinuarse) / GBP 23.225 (Reino Unido)",
-  "consumo": "6.0 l/100km combinado (versión Turismo 1.4 T-Jet 165 hp)",
-  "dimensiones": "3.657 mm largo x 1.627 mm ancho x 1.485 mm alto, distancia entre ejes 2.300 mm",
+  "power": "165 hp",
+  "price": "EUR 31.500 (último precio de lista antes de discontinuarse)",
+  "consumo": "6.0 l/100km combinado",
+  "dimensiones": "3657 x 1627 x 1485 mm",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.topgear.com/car-reviews/abarth/595",
     "secondarySource": "https://www.auto-data.net/en/abarth-595-facelift-2016-turismo-1.4-t-jet-165hp-24709",
-    "note": "Modelo discontinuado: producción en masa en Europa cesó a mediados de 2024. El sitio oficial abarth.com ya no lo lista entre los modelos vigentes (solo aparece en sección de clientes existentes), reemplazado por el Abarth 600e y 500e eléctricos.",
+    "note": "Datos verificados a través de TopGear y Auto-Data sobre la versión Turismo del Abarth 595 con motor 1.4 T-Jet de 165 hp.",
     "limitations": [
-      "Modelo fuera de producción; no hay unidades 0km disponibles en la mayoría de los mercados",
-      "Cifras de consumo/prestaciones corresponden a la versión Turismo (165 hp); la Competizione (180 hp) difiere levemente"
+      "Modelo fuera de producción; la producción en masa en Europa cesó a mediados de 2024",
+      "Las cifras corresponden principalmente a la versión Turismo de 165 hp, existiendo variantes como la Competizione de 180 hp"
     ]
   },
   "performance": {
@@ -31,15 +31,15 @@
     "acceleration": "0-100 km/h en 7.3s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.224Z",
-  "transmision": "5 velocidades manual / 6 velocidades automática TcT",
-  "traccion": "Tracción delantera",
-  "cilindrada": "1.368 cc",
+  "updatedAt": "2026-08-27T01:29:49.110Z",
+  "transmision": "5 velocidades manual / 6 velocidades automática TCT",
+  "traccion": "Trantera",
+  "cilindrada": "1368 cc",
   "emisiones": "CO2 138-145 g/km",
   "tipo": "Hatchback",
   "asientos": 5,
-  "baul": "185 litros",
-  "peso": "1.100 kg",
+  "baul": 185,
+  "peso": "1100 kg",
   "tipoMotor": "Gasolina turbo",
   "potenciaKW": "121 kW",
   "capacidadTanque": "40 litros",
@@ -55,7 +55,7 @@
     "Frenado ABS",
     "Airbags frontales"
   ],
-  "tiempoRecorrido": "N/A",
+  "tiempoRecorrido": "0-100 km/h en 7.3s",
   "consumoEtiqueta": "D",
   "neumaticos": "205/45R17",
   "maleteroMin": "185 litros",
@@ -132,8 +132,8 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Restyling facelift 2016",
+  "anoLanzamiento": 2016,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -257,7 +257,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.272Z",
+    "lastChecked": "2026-08-27T01:29:49.110Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -310,5 +310,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Abarth 595 representa la evolución moderna y radical del icónico utilitario italiano, reinterpretado por el sello de alto rendimiento fundado por Carlo Abarth. Tomando como base al exitoso Fiat 500, la firma del escorpión logró insuflar una personalidad puramente deportiva a un formato compacto urbano, transformándolo en un auténtico hot hatch de bolsillo que conquistó a entusiastas en todo el mundo.\n\n## Un hito y generación relevante\nUno de los hitos más significativos en la trayectoria reciente del modelo fue la actualización profunda introducida en 2016, conocida comúnmente como su etapa de facelift. Esta evolución no solo refrescó la estética exterior con paragolpes más agresivos y ópticas optimizadas, sino que también estandarizó mejoras mecánicas sustanciales. Versiones como la Turismo elevaron la potencia de su bloque 1.4 T-Jet hasta los 165 hp, mientras que las variantes más radicales escalaron hasta los 180 hp. Este período consolidó al 595 como una referencia indiscutida en cuanto a deportividad accesible dentro del segmento A.\n\n## Curiosidades\nA pesar de sus reducidas dimensiones —con apenas algo más de 3,6 metros de largo—, el Abarth 595 destaca por ofrecer una experiencia de conducción visceral y directa, caracterizada por el inconfundible y ronco sonido de su sistema de escape deportivo con doble salida. Asimismo, su habitáculo combina detalles de competición con la tecnología justa y necesaria, manteniendo un peso pluma cercano a los 1.100 kg que favorece notablemente su agilidad en tramos revirados.\n\n## Competencia y posicionamiento\nEn el mercado europeo y global, el Abarth 595 se posicionó como un hot hatch urbano premium de nicho, sin rivales directos de idéntico concepto clásico de combustión tras la retirada paulatina de otros urbanos deportivos. Su enfoque se centró en clientes que buscaban exclusividad, estética agresiva y dinamismo puro. Actualmente, tras el cese de su producción masiva a mediados de 2024, el modelo deja atrás una era dorada de motores térmicos puros para dar paso a la nueva generación electrificada de la marca, encabezada por los Abarth 500e y 600e."
 }

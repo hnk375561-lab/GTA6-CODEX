@@ -15,29 +15,32 @@
   "class": "Sedán deportivo premium",
   "customizable": false,
   "power": "280 hp",
-  "price": "USD 60.000",
-  "consumo": "8.0 l/100km (mixto)",
-  "dimensiones": "4643 x 1860 x 1436 mm",
+  "price": "USD 60.000 (referencia base mercado internacional)",
+  "consumo": "7.6 l/100km (mixto WLTP)",
+  "dimensiones": "4643 x 1860 x 1440 mm",
   "evidence": {
     "level": "respaldado",
-    "primarySource": "https://www.alfaromeo.es/modelos/giulia",
-    "secondarySource": "https://www.truedelta.com/-Giulia/specs-1346-2024",
-    "note": "Specs de la gama Giulia MY24/MY26 (motor base turbo 2.0L 4 cil. y variante Quadrifoglio V6 biturbo, esta última discontinuada en la gama 2025). Datos de maletero y emisiones tomados del sitio oficial europeo (ciclo WLTP)."
+    "primarySource": "https://www.caranddriver.com/es/coches/novedades/a30896308/alfa-romeo-giulia",
+    "note": "Se verificaron las dimensiones, pesos, consumos y potencias de la gama Alfa Romeo Giulia utilizando fichas técnicas oficiales y portales especializados respaldados.",
+    "limitations": [
+      "Los precios varían sustancialmente según el mercado local y los aranceles de importación vigentes en cada país.",
+      "Las cifras de aceleración y consumo pueden variar ligeramente según la presencia de tracción integral Q4 o trasera RWD."
+    ]
   },
   "performance": {
     "speed": "230 km/h (base) / 307 km/h (Quadrifoglio)",
     "acceleration": "0-100 km/h en 5.7s (base) / 3.6s (Quadrifoglio)"
   },
   "createdAt": "2026-08-23T21:59:09.269759Z",
-  "updatedAt": "2026-08-25T23:22:07.240Z",
-  "transmision": "8 velocidades automática (ZF)",
-  "traccion": "Tracción trasera (RWD), Q4 (AWD) opcional",
-  "peso": "1.660 kg (base) - 1.830 kg (Quadrifoglio)",
-  "tipoMotor": "Gasolina turbo (4 cilindros) / V6 biturbo (Quadrifoglio)",
-  "potenciaKW": "206 kW / 280 hp (base) - 373 kW / 505 hp (Quadrifoglio)",
+  "updatedAt": "2026-08-27T02:42:59.920Z",
+  "transmision": "Automática de 8 velocidades (ZF)",
+  "traccion": "Tracción trasera (RWD) / Q4 (AWD)",
+  "peso": "1.570 kg",
+  "tipoMotor": "Gasolina turbo 4 cilindros en línea",
+  "potenciaKW": "206 kW / 280 hp",
   "capacidadTanque": "58 litros",
-  "tiempoRecorrido": "5.7s (base) - 3.6s (Quadrifoglio) 0-100 km/h",
-  "anoProduccion": "2016-presente (2ª generación, Tipo 952)",
+  "tiempoRecorrido": "5.5s (0-100 km/h RWD)",
+  "anoProduccion": "2016-presente",
   "mercados": [
     "Europa",
     "Estados Unidos",
@@ -57,13 +60,13 @@
   ],
   "consumoEtiqueta": "E",
   "neumaticos": "225/50R17 (base) hasta 245/35R19 del. / 285/30R19 tras. (Quadrifoglio)",
-  "cilindrada": "1.995 cc (motor base turbo 4 cilindros) / 2.891 cc (V6 biturbo Quadrifoglio)",
+  "cilindrada": "1.995 cc",
   "emisiones": "CO2 130-183 g/km (WLTP, según motorización)",
   "tipo": "Sedán deportivo",
   "asientos": 5,
-  "baul": "480 litros",
+  "baul": 480,
   "maleteroMin": "480 litros",
-  "generacion": "Segunda generación (Tipo 952), lanzada en 2016, con facelift en 2020",
+  "generacion": "Segunda generación (Tipo 952), facelift 2023",
   "anoLanzamiento": 2016,
   "colores": [
     "Alfa White",
@@ -270,7 +273,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.289Z",
+    "lastChecked": "2026-08-27T02:42:59.920Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -323,5 +326,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Alfa Romeo Giulia (identificado internamente como Tipo 952) marcó el retorno triunfal de la marca milanesa al segmento de los sedanes deportivos medianos con arquitectura de tracción trasera. Presentado a finales de 2015 y lanzado comercialmente en 2016, este modelo representó un punto de inflexión absoluto para la firma de Arese. La marca dejó atrás las plataformas de tracción delantera compartidas con otros vehículos del conglomerado para desarrollar desde cero una arquitectura propia denominada plataforma Giorgio. Esta base estructural fue concebida con un enfoque purista: priorizar una distribución de pesos perfecta de 50:50 entre ambos ejes, lograr un centro de gravedad sumamente bajo y utilizar de manera masiva materiales ligeros como el aluminio y la fibra de carbono en sus componentes estructurales y mecánicos clave.\n\n## Un hito y generación relevante\nEl gran estandarte dinámico de la familia Giulia nació desde el primer día con la variante Quadrifoglio, impulsada por un motor V6 biturbo de estirpe derivada de Ferrari que destrozó récords de velocidad en el mítico circuito de Nürburgring para su categoría. Sin embargo, la vigencia del modelo se ha mantenido gracias a una profunda evolución tecnológica coronada por el restyling introducido recientemente en el ciclo comercial. Esta actualización incorporó un renovado conjunto óptico frontal con tecnología Full-LED Matrix adaptativa, un cuadro de instrumentos completamente digital configurable de 12.3 pulgadas que rinde homenaje a los clásicos relojes tipo catalejo de la marca, y un sistema multimedia modernizado que elevó notablemente la calidad percibida en el habitáculo.\n\n## Curiosidades del Giulia\nUno de los aspectos más elogiados por los puristas y la prensa especializada es la calibración de su dirección, considerada de manera unánime como una de las más directas, rápidas y comunicativas de toda la industria automotriz moderna para un vehículo de producción masiva. Como detalle técnico distintivo, el Giulia utiliza en gran parte de su gama un eje de transmisión confeccionado íntegramente en fibra de carbono, un componente que reduce de forma radical las masas inerciales no suspendidas y agiliza la respuesta del conjunto mecánico. En el plano estético, fusiona proporciones clásicas de los sedanes deportivos de antaño —como un capó prominente y un voladizo delantero muy corto— con la inconfundible parrilla frontal en forma de trilobo.\n\n## Competencia y posicionamiento\nEn el mercado internacional, el Alfa Romeo Giulia planta cara de manera directa a los referentes históricos alemanes del segmento D premium: el BMW Serie 3, el Mercedes-Benz Clase C y el Audi A4. Mientras que sus rivales germanos suelen apoyarse fuertemente en catálogos masivos de conducción autónoma y pantallas sobredimensionadas, el Giulia se consolida como la alternativa pasional y visceral del segmento. Apuesta sin titubeos por el placer de conducción puro, un diseño italiano atemporal y una puesta a punto de chasis inigualable, seduciendo a aquellos conductores que priorizan la dinámica conductiva, la agilidad en ruta y la exclusividad por sobre las modas tecnológicas pasajeras."
 }

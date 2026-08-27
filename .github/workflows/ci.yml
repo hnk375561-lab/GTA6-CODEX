@@ -12,6 +12,17 @@ on:
   pull_request:
     branches: [main]
 
+# Serializa las corridas de CI en la misma rama: si dos pushes llegan
+# casi juntos (por ejemplo, varios PRs de Dependabot mergeando o
+# corridas manuales seguidas), la segunda cancela a la primera en vez
+# de correr en paralelo. Se sospecha que corridas simultaneas competian
+# por el mismo cache de npm (misma key, mismo lockfile) y de ahi salio
+# un fallo intermitente en "Unit tests" (visto una vez en ~10 corridas,
+# justo en medio de una rafaga de PRs de Dependabot).
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 defaults:
   run:
     working-directory: GTA6-CODEX
@@ -52,7 +63,25 @@ jobs:
         run: npm run lint
 
       - name: Unit tests
-        run: npm test
+        id: unit_tests
+        continue-on-error: true
+        run: npm test 2>&1 | tee /tmp/unit-tests-output.txt
+
+      # Diagnostico permanente: si "Unit tests" falla, vuelca el output
+      # completo al Job Summary (legible via API/UI sin depender del
+      # blob storage de logs) antes de cortar el pipeline. El fallo es
+      # intermitente (visto ~3 de 15 corridas) asi que hace falta
+      # capturarlo la proxima vez que pase.
+      - name: Diagnostico Unit tests si falla
+        if: always()
+        run: |
+          if [ "${{ steps.unit_tests.outcome }}" = "failure" ]; then
+            echo '## FALLO en "npm test"' >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            tail -c 60000 /tmp/unit-tests-output.txt >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
 
       # Chequeo de regresión para el bug del BOM UTF-8: si el catálogo de
       # vehículos colapsa (por un BOM, un cambio en el loader, en el
@@ -72,6 +101,12 @@ jobs:
 
       - name: Verify SEO routes
         run: npm run verify:seo
+
+      # Falla el pipeline si alguna ficha nueva quedo sin evidence
+      # (primarySource/secondarySource) o sin contenido - asi nadie
+      # mergea una ficha "pelada" sin darse cuenta.
+      - name: Audit evidence coverage
+        run: npm run audit:evidence
 
       - name: Build
         run: npm run build

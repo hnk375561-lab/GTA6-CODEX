@@ -13,15 +13,16 @@
   "manufacturer": "Bajaj",
   "class": "Moto naked 200cc",
   "customizable": false,
-  "power": "23.5 hp a 9500 rpm",
+  "power": "24.5 CV a 9750 rpm",
   "price": "ARS 4.539.990",
-  "consumo": "2.5-2.9 l/100km (equivalente a 35-40 km/l reportado)",
-  "dimensiones": "2.017 mm largo x 804 mm ancho x 1.075 mm alto, distancia entre ejes 1.363 mm, altura de asiento 805 mm",
+  "consumo": "approx. 2.8 l/100km (35-40 km/l)",
+  "dimensiones": "2017 x 804 x 1075 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.monkeymotor.net/2024/05/bajaj-rouser-ns160-ns200-precio-argentina.html",
+    "primarySource": "https://www.monkeymotor.net/2024/05/bajaj-rouser-ns200-precio-argentina.html",
+    "note": "Se verificaron las especificaciones técnicas principales de la Bajaj Rouser NS200, incluyendo su potencia de 24.5 CV, motor monocilíndrico DTS-i de 199.5 cc y su ensamblaje local en Argentina a través del Grupo Corven.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+      "Auditoría de integridad de datos: los valores genéricos de automóviles fueron corregidos por especificaciones reales de motocicleta."
     ]
   },
   "performance": {
@@ -29,15 +30,15 @@
     "acceleration": "0-100 km/h en 10.3s aprox."
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T23:22:07.263Z",
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:31:23.782Z",
+  "transmision": "Manual de 6 velocidades",
+  "traccion": "Trasera (por cadena)",
+  "peso": "152 kg (en orden de marcha)",
+  "tipoMotor": "Monocilíndrico de 4 tiempos, 4 válvulas, DTS-i, refrigeración líquida",
+  "potenciaKW": "18 kW",
+  "capacidadTanque": "12 litros",
+  "tiempoRecorrido": "0-100 km/h en 10.3s aprox.",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +123,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "199.5 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "NS200 (Evolución con horquilla invertida y ABS doble canal en versiones recientes)",
+  "anoLanzamiento": 2012,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -254,7 +255,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.308Z",
+    "lastChecked": "2026-08-27T01:31:23.782Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -307,5 +308,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Bajaj Rouser NS200 (conocida como Pulsar NS200 en otros mercados internacionales) representa uno de los mayores éxitos comerciales de la firma india Bajaj Auto en el segmento de baja y mediana cilindrada. Lanzada originalmente a principios de la década de 2010, esta naked deportiva introdujo un concepto de diseño agresivo y anguloso que rompió con los moldes conservadores de las motocicletas utilitarias tradicionales. Su llegada a la región latinoamericana supuso un punto de inflexión, destacándose rápidamente por ofrecer una estética moderna y prestaciones deportivas accesibles.\n\n## Un hito o generación relevante\nUn hito fundamental para la consolidación de la Rouser NS200 en el Cono Sur fue su incorporación al régimen de ensamblaje nacional en Argentina de la mano del Grupo Corven. Esta alianza estratégica permitió no sólo estabilizar el abastecimiento de unidades en el mercado local, sino también asegurar una red de posventa y disponibilidad de repuestos muy sólida. A lo largo de su evolución, la NS200 ha incorporado mejoras significativas respecto a sus primeras versiones, destacándose la adopción de frenos con sistema antibloqueo (ABS) —en configuraciones de canal simple o doble según el año— y, más recientemente, la implementación de suspensiones delanteras con horquilla invertida que mejoran de manera notable el comportamiento dinámico y la estabilidad en curvas.\n\n## Curiosidades\nEntre las particularidades técnicas que distinguen a la Rouser NS200 se encuentra su característico sistema de encendido DTS-i (Digital Triple Spark Ignition), que utiliza tres bujías por cilindro. Esta tecnología patentada por Bajaj busca optimizar la combustión de la mezcla aire-combustible, logrando un equilibrio muy interesante entre un rendimiento alegre en altas revoluciones y una eficiencia de combustible adecuada para el uso urbano diario. Además, su chasis perimetral de acero prensado, desarrollado con tecnologías de análisis por elementos finitos, le otorga una rigidez torsional inusual para su categoría, asemejándola al comportamiento de motocicletas de cilindradas superiores.\n\n## Competencia y posicionamiento\nEn el mercado argentino, la Bajaj Rouser NS200 se posiciona firmemente como una de las referentes indiscutibles dentro del segmento naked de 200 cc. Compite de forma directa contra modelos de marcas establecidas como la Yamaha FZ25, la KTM Duke 200 (con la cual comparte sinergias corporativas a través del holding indio) y diversas opciones de origen asiático que intentan ganarterreno en la franja deportiva de entrada. Su principal ventaja competitiva radica en una relación precio-producto muy favorable, combinando una potencia cercana a los 24.5 caballos de fuerza con un mantenimiento relativamente sencillo y un diseño que sigue luciendo actual frente a propuestas más recientes."
 }

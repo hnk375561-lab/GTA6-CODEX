@@ -13,30 +13,32 @@
   "class": "SUV premium",
   "customizable": false,
   "power": "375 hp",
-  "price": "USD 68.000",
+  "price": "USD 68.000 (MSRP base de referencia internacional)",
   "consumo": "8.5-9.9 l/100km combinado WLTP (xDrive40i)",
-  "dimensiones": "4.935 mm largo x 2.004 mm ancho x 1.745 mm alto, distancia entre ejes 2.975 mm",
+  "dimensiones": "4.935 mm x 2.004 mm x 1.745 mm",
   "evidence": {
     "level": "respaldado",
-    "primarySource": "https://www.bmw.es/es/coches-bmw/x/bmw-x5/datos-tecnicos-bmw-x5.html",
-    "secondarySource": "https://www.encycarpedia.com/es/bmw/23-x5-xdrive40i-suv",
-    "note": "Corrige carga de datos anterior que dejaba explícitamente 'sin verificar con fuente puntual' potencia, precio y dimensiones (estas últimas eran incorrectas: indicaban 4.200x1.800x1.500mm, muy por debajo de las medidas reales del X5).",
-    "limitations": []
+    "secondarySource": "https://www.km77.com/coches/bmw/x5/2023/estandar/estandar/x5-xdrive30d/datos",
+    "note": "Se validaron las dimensiones oficiales de la plataforma G05 (4.935 mm de largo y 2.004 mm de ancho) utilizando datos de km77, junto con la gama de motorizaciones y características generales de la familia X5 en la web oficial de BMW. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "limitations": [
+      "Los precios varían sustancialmente según los mercados de destino, impuestos locales y opcionales de equipamiento.",
+      "Las cifras de consumo y prestaciones pueden diferir según la motorización específica (gasolina, diésel o híbrida enchufable)."
+    ]
   },
   "performance": {
     "speed": "236 km/h (limitada electrónicamente)",
     "acceleration": "0-100 km/h en 5.5s (xDrive40i)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.279Z",
-  "transmision": "8 velocidades automática (Steptronic)",
+  "updatedAt": "2026-08-27T02:44:47.856Z",
+  "transmision": "Automática Steptronic de 8 velocidades",
   "traccion": "Integral xDrive (AWD) de serie",
-  "peso": "2.135-2.400 kg (según motorización)",
-  "tipoMotor": "Gasolina turbo 6 cilindros en línea (opción diésel e híbrida enchufable)",
-  "potenciaKW": "280 kW / 380 hp @ 5.200 rpm (xDrive40i)",
-  "capacidadTanque": "80-83 litros (según motorización)",
-  "tiempoRecorrido": "5.5s 0-100 km/h (xDrive40i)",
-  "anoProduccion": "2018-presente (generación G05), con facelift en 2023",
+  "peso": "2.135-2.400 kg",
+  "tipoMotor": "Gasolina turbo 6 cilindros en línea",
+  "potenciaKW": "280 kW / 375 hp @ 5.200 rpm",
+  "capacidadTanque": "83 litros",
+  "tiempoRecorrido": "0-100 km/h en 5.5s",
+  "anoProduccion": "2018-presente",
   "mercados": [
     "Europa",
     "Estados Unidos",
@@ -54,13 +56,13 @@
   ],
   "consumoEtiqueta": "D",
   "neumaticos": "225/50R17",
-  "cilindrada": "2.998 cc (3.0 turbo 6 cilindros, xDrive40i)",
+  "cilindrada": "2.998 cc",
   "emisiones": "CO2 193-224 g/km (WLTP, xDrive40i)",
   "tipo": "SUV premium mediano-grande",
   "asientos": 5,
-  "baul": "650 litros (mín.) - 1.870 litros (asientos abatidos)",
+  "baul": 650,
   "maleteroMin": "650 litros",
-  "generacion": "Cuarta generación (G05), lanzada en 2018, con facelift en 2023",
+  "generacion": "Cuarta generación (G05)",
   "anoLanzamiento": 2018,
   "colores": [
     "Alpine White",
@@ -271,7 +273,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.318Z",
+    "lastChecked": "2026-08-27T02:44:47.856Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -324,5 +326,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl BMW X5 es ampliamente reconocido como el pionero que transformó el segmento de los SUV de lujo de gran tamaño. Desde la introducción de su primera generación a finales de los años 90, la marca alemana rediseñó el concepto de los vehículos de tracción integral al dotarlos de un comportamiento dinámico en ruta comparable al de un sedán ejecutivo, sin sacrificar la versatilidad de uso. A lo largo de las décadas, este modelo se consolidó como uno de los pilares fundamentales y de mayor volumen comercial para la firma de Múnich a nivel global.\n\n## Un hito o generación relevante\nLa cuarta generación del BMW X5, desarrollada bajo el código interno G05 y presentada originalmente en 2018, marcó un salto cualitativo y tecnológico de gran envergadura. Desarrollada sobre la moderna plataforma modular CLAR —compartida con los máximos exponentes de la marca como la Serie 7—, esta iteración aportó una rigidez estructural notablemente superior gracias al empleo mixto de aceros de alta resistencia y aluminio. El rediseño posterior aplicado en 2023 modernizó su impronta estética con conjuntos ópticos más afilados, la incorporación de las pantallas curvas con el sistema operativo BMW iDrive más reciente, y una optimización profunda de sus mecánicas térmicas y electrificadas.\n\n## Curiosidades\nUna de las particularidades más interesantes en la historia del BMW X5 es que su centro de producción mundial no se encuentra en Alemania. Desde su génesis, la planta que la marca posee en Spartanburg, Carolina del Sur (Estados Unidos), opera como el polo industrial exclusivo para la fabricación de toda la familia de modelos X, exportando unidades a más de 140 países. Asimismo, el X5 fue el vehículo que inauguró el concepto bautizado por la compañía como SAV (*Sports Activity Vehicle*), priorizando de manera deliberada el dinamismo sobre asfalto por encima de las aptitudes puramente off-road.\n\n## Competencia y posicionamiento\nDentro del mercado global, el BMW X5 se ubica de lleno en el corazón de la categoría de los SUV premium medianos-garandes. Su rivalidad más directa e histórica se libra contra los principales exponentes de la industria alemana, tales como el Mercedes-Benz GLE y el Audi Q7, además de alternativas de lujo como el Volvo XC90 y el Porsche Cayenne. El X5 se distingue en este selecto grupo apostando por un equilibrio dinámico superior, donde la agilidad en curvas y la precisión de la dirección sobresalen frente a propuestas de enfoque más tradicionalmente confortable."
 }

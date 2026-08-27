@@ -13,32 +13,32 @@
   "class": "SUV grande",
   "customizable": false,
   "power": "300 hp",
-  "price": "USD 40.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "USD 41.350 (MSRP EE.UU. referencia)",
+  "consumo": "10.7 l/100km combinado (referencia)",
+  "dimensiones": "5.050 mm largo x 2.004 mm ancho x 1.778 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global. Ficha técnica verificada contra la página oficial del Explorer en ford.com.",
+    "level": "respaldado",
+    "secondarySource": "https://www.ford.pe/suvs/explorer",
+    "note": "Se verificaron las especificaciones técnicas principales de la sexta generación de la Ford Explorer, incluyendo la motorización EcoBoost de 2.3L y la transmisión automática de 10 velocidades a partir de fuentes oficiales de Ford. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
-    ],
-    "primarySource": "https://www.ford.com/suvs/explorer/"
+      "Los precios varían considerablemente según el mercado de exportación, aranceles e impuestos locales.",
+      "El consumo de combustible y la potencia exacta dependen de la elección entre el motor 2.3L EcoBoost o el V6 3.0L."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.356Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T02:49:41.607Z",
+  "transmision": "Automática de 10 velocidades",
+  "traccion": "Tracción trasera o integral (AWD)",
+  "peso": "1.980 - 2.150 kg",
+  "tipoMotor": "Gasolina (EcoBoost Turbo)",
+  "potenciaKW": "224 kW",
+  "capacidadTanque": "75 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 6.8s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -126,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.3 L a 3.0 L",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 7,
+  "baul": 515,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "6ta generación",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "suv",
   "gallery": {
@@ -262,8 +262,8 @@
     "description": "SUV grande de 3 filas de Ford, mercado norteamericano principalmente."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.376Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:49:41.607Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -316,5 +316,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Ford Explorer es uno de los SUV medianos y grandes más emblemáticos de Norteamérica, habiendo debutado a principios de la década de 1990 para revolucionar el mercado familiar y recreativo. A lo largo de las décadas, este vehículo evolucionó desde una construcción tradicional sobre chasis de largueros orientada al off-road hasta convertirse en un sofisticado crossover moderno con estructura monocasco, priorizando el confort en ruta, el espacio interior y la seguridad de los ocupantes.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de la Explorer fue el lanzamiento de su sexta generación a partir del año modelo 2020. En esta etapa, Ford rediseñó por completo la plataforma para volver a adoptar una arquitectura de tracción trasera longitudinal, lo que permitió mejorar notablemente la distribución de pesos, la capacidad de remolque y la dinámica de conducción general en comparación con la generación anterior de tracción delantera.\n\n## Curiosidades\nDurante sus primeras generaciones en los años 90, la Ford Explorer fue considerada la piedra angular del boom de los SUV en Estados Unidos, convirtiéndose rápidamente en el vehículo utilitario deportivo más vendido del mercado norteamericano. Además, ha servido de base durante años para una infinidad de flotas de agencias gubernamentales y policiales en todo el mundo, destacándose por su versatilidad mecánica y robustez estructural.\n\n## Competencia y posicionamiento\nEn el mercado actual, la Ford Explorer se posiciona firmemente en el segmento de los SUV de tres filas de asientos, compitiendo de manera directa contra modelos de gran peso comercial como el Chevrolet Traverse, el Toyota Highlander, el Jeep Grand Cherokee L y el Honda Pilot. Su propuesta se centra en ofrecer un balance equilibrado entre tecnología de asistencia a la conducción de última generación, opciones de motores EcoBoost eficientes y una excelente habitabilidad para familias numerosas."
 }

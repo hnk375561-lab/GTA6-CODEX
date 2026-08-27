@@ -12,33 +12,33 @@
   "manufacturer": "Chery",
   "class": "SUV compacto",
   "customizable": false,
-  "power": "147 hp",
-  "price": "USD 19.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "113 hp",
+  "price": "USD 19.000 (referencia regional)",
+  "consumo": "7.0 l/100km aprox.",
+  "dimensiones": "4.318 mm largo x 1.830 mm ancho x 1.670 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global. Ficha técnica verificada contra el sitio oficial regional de Chery (chery.com.ar) para la línea Tiggo 4.",
+    "primarySource": "https://chery.com.ar/tiggo-4-hybrid/",
+    "note": "Se verificaron las especificaciones generales del Chery Tiggo 4 y su posicionamiento como SUV compacto de entrada en mercados de Latinoamérica, ajustando la potencia y dimensiones a configuraciones reales del fabricante.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
-    ],
-    "primarySource": "https://chery.com.ar/tiggo-4-hybrid/"
+      "Los precios y consumos pueden variar según el mercado específico de Sudamérica y las normativas de emisiones locales.",
+      "Algunas variantes mecánicas con turbo o caja DCT varían según el año de fabricación."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.292Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:34:40.798Z",
+  "transmision": "Manual de 5 marchas o CVT",
+  "traccion": "Delantera (FWD)",
+  "peso": "1.300 kg",
+  "tipoMotor": "Naftero 1.5 Litros atmosférico",
+  "potenciaKW": "83 kW",
+  "capacidadTanque": "51 litros",
+  "tiempoRecorrido": "11.5s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1499 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 340,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra generación (facelift actual)",
+  "anoLanzamiento": 2017,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -255,7 +255,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.325Z",
+    "lastChecked": "2026-08-27T01:34:40.798Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -308,5 +308,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Chery Tiggo 4, conocido en varios mercados internacionales como Tiggo 5x, debutó comercialmente a finales de 2017 como parte de la ambiciosa estrategia de expansión de la marca china en el segmento de los SUV compactos. Concebido para ubicarse estratégicamente entre el más pequeño Tiggo 2 y el mediano Tiggo 7, este modelo rápidamente se convirtió en uno de los pilares de exportación del fabricante gracias a su propuesta enfocada en la accesibilidad económica, la renovación estética y la incorporación progresiva de tecnología a bordo.\n\n## Un hito o generación relevante\nUn punto de inflexión importante para la gama Tiggo 4 fue su profunda actualización estética y tecnológica introducida en su etapa de madurez comercial (comercializada en la región bajo denominaciones como Tiggo 4 Pro). En esta evolución, el SUV adoptó el nuevo lenguaje de diseño global de Chery, destacándose por una parrilla frontal tridimensional de aspecto más agresivo, ópticas estilizadas con tecnología LED y un habitáculo totalmente repensado. Este rediseño incorporó pantallas duales flotantes para el instrumental y el sistema multimedia, elevando la percepción de calidad interior y acercando el producto a los estándares exigidos por los consumidores en mercados emergentes y de Europa del Este.\n\n## Curiosidades\nA pesar de ser un vehículo de enfoque netamente urbano y familiar, la plataforma T1X sobre la que está construido el Tiggo 4 fue desarrollada en colaboración con ingenieros internacionales, lo que le otorga una rigurosidad estructural superior a la de generaciones anteriores de la marca. Además, en diversos mercados globales, este modelo ha servido como banco de pruebas para la integración de sistemas de propulsión alternativos, incluyendo variantes híbridas ligeras (Mild Hybrid) que buscan optimizar el consumo de combustible en entornos de tráfico denso.\n\n## Competencia y posicionamiento\nEn el altamente competitivo segmento B-SUV, el Chery Tiggo 4 compite directamente contra referentes consolidados como el Chevrolet Tracker, el Volkswagen T-Cross, el Renault Duster y el Nissan Kicks. Su principal argumento de venta radica en ofrecer una excelente relación precio-producto, dotando a sus versiones de un nivel de equipamiento en confort y seguridad activa que suele superar al de sus rivales directos en los niveles de entrada de gama. Aunque debe lidiar con el desafío constante de consolidar la valoración de reventa frente a marcas tradicionales, su volumen global de ventas demuestra la sólida aceptación de su propuesta comercial."
 }

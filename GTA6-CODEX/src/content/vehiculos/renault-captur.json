@@ -13,28 +13,34 @@
   "manufacturer": "Renault",
   "class": "SUV compacta",
   "customizable": false,
-  "power": "150 hp",
-  "price": "USD 26.000",
-  "consumo": "7.6 l/100km (mixto)",
-  "dimensiones": "4227 x 1813 x 1576 mm",
+  "power": "115 CV",
+  "price": "Desde 22.935 € (MSRP regional en España)",
+  "consumo": "4.6 - 6.5 l/100km (mixto según motorización)",
+  "dimensiones": "4227 x 1797 x 1576 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.renault.com.ar/vehiculos/captur.html"
+    "level": "respaldado",
+    "primarySource": "https://www.carwow.es/renault/captur/caracteristicas-tecnicas",
+    "secondarySource": "https://www.renault.es/hibridos/captur/ficha-tecnica.html",
+    "note": "Se verificaron las especificaciones generales, dimensiones, precios y datos técnicos a partir de las fuentes oficiales de Carwow España y Renault España para las versiones actualizadas de Renault Captur.",
+    "limitations": [
+      "Las especificaciones exactas pueden variar según el mercado regional (Europa vs. Mercosur)",
+      "Los precios de referencia son estimados de catálogo y pueden diferir de los concesionarios locales"
+    ]
   },
   "performance": {
     "speed": "185 km/h",
     "acceleration": "0-100 km/h en 10.5s"
   },
   "createdAt": "2026-08-23T21:59:06.516209Z",
-  "updatedAt": "2026-08-25T23:22:07.511Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T03:05:51.716Z",
+  "transmision": "Automática / Manual",
+  "traccion": "Delantera",
+  "peso": "1.250 - 1.350 kg",
+  "tipoMotor": "Nafta / Híbrido",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "48 litros",
+  "tiempoRecorrido": "10.5s",
+  "anoProduccion": "2013-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1332 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 400,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -251,8 +257,8 @@
     "description": "SUV compacta de Renault, motor 1.3L turbo o 1.6L naturalmente aspirado."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.457Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:05:51.716Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +311,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Renault Captur nació en 2013 como una apuesta firme de la marca del rombo para capitalizar el auge mundial de los SUV compactos del segmento B. Tomando como base la exitosa plataforma del Renault Clio, el Captur logró diferenciarse rápidamente gracias a una propuesta estética fresca, orientada fuertemente al público urbano que buscaba una posición de manejo elevada sin resignar agilidad en el tránsito diario.\n\nDesde su lanzamiento comercial, el modelo se posicionó como uno de los vehículos más vendidos de su categoría en el mercado europeo, destacándose por su versatilidad interior, su carrocería bi-tono y un nivel de personalización estético muy valorado por los compradores más jóvenes que buscaban distinción en las calles.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la trayectoria del modelo llegó con la presentación de su segunda generación en 2019. Este salto generacional no fue meramente estético, sino estructural y tecnológico. Construido sobre la moderna plataforma modular CMF-B de la Alianza Renault-Nissan-Mitsubishi, el nuevo Captur creció levemente en dimensiones, mejoró notablemente la calidad percibida de los materiales en el habitáculo e incorporó asistencias avanzadas a la conducción (ADAS) y mecánicas electrificadas, incluyendo versiones híbridas completas E-Tech.\n\nEn paralelo, en mercados emergentes como Latinoamérica, el modelo mantuvo una evolución particular combinando la estética europea con plataformas regionales, adaptando posteriormente impulsores modernos y tecnologías orientadas al confort y la seguridad de los usuarios sudamericanos.\n\n## Curiosidades\nUna de las características más interesantes del Renault Captur desde sus inicios fue la introducción masiva de la pintura exterior bi-tono en los segmentos generalistas, una tendencia que luego imitarían prácticamente todos sus competidores directos. Además, en su interior, incorporó soluciones prácticas muy ingeniosas como la banqueta trasera corrediza que permite ampliar el espacio para las piernas o ganar un valioso volumen adicional en el baúl según la necesidad del momento de viaje.\n\n## Competencia y posicionamiento\nDentro del competitivo segmento B-SUV, el Renault Captur compite mano a mano con pesos pesados de la industria automotriz como el Volkswagen T-Cross, el Peugeot 2008, el Chevrolet Tracker y el Nissan Kicks. Su posicionamiento dentro de la gama de la marca se ubica un escalón por encima del Renault Duster —siendo el Captur un producto de carácter más refinado, urbano y rutero, mientras que el Duster prioriza la robustez y el uso off-road ligero—. El Captur se destaca frente a sus rivales por su diseño dinámico, el confort de marcha en ruta y una oferta mecánica eficiente que logra un excelente equilibrio entre prestaciones y consumos reducidos."
 }

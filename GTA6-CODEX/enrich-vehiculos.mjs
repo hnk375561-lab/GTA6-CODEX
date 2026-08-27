@@ -29,7 +29,7 @@ import path from "node:path";
 
 const VEHICULOS_DIR = "src/content/vehiculos";
 const API_KEY = process.env.GEMINI_API_KEY;
-const MODEL = process.env.GEMINI_MODEL || "gemini-flash-latest";
+const MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash-lite";
 const LIMIT = process.env.LIMIT ? parseInt(process.env.LIMIT, 10) : Infinity;
 const ONLY = process.env.ONLY || "all"; // "all" | "needsBoth" | "needsContentOnly"
 const DELAY_MS = 4500; // ~13 req/min, seguro bajo el límite gratuito de 15 RPM
@@ -125,7 +125,7 @@ Reglas estrictas:
 
 // --- 3. Llamada a la API de Gemini con Google Search grounding -----------
 
-async function callGemini(prompt) {
+async function callGemini(prompt, attempt = 1) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
   const body = {
     contents: [{ role: "user", parts: [{ text: prompt }] }],
@@ -143,6 +143,23 @@ async function callGemini(prompt) {
 
   if (!res.ok) {
     const text = await res.text();
+    if (res.status === 429) {
+      const isDailyQuota = /exceeded your current quota|RESOURCE_EXHAUSTED|per day|RPD/i.test(text);
+      if (isDailyQuota) {
+        // Cuota diaria agotada: reintentar no sirve de nada hasta el reset.
+        // Marcamos esto para que el loop principal aborte enseguida en vez
+        // de moler horas contra un 429 que no se va a resolver solo.
+        const err = new Error(`QUOTA_DIARIA_AGOTADA: Gemini API 429: ${text.slice(0, 300)}`);
+        err.isDailyQuotaExhausted = true;
+        throw err;
+      }
+      if (attempt < 3) {
+        // Pico transitorio de RPM (no de cuota diaria): esto si vale la
+        // pena reintentar con backoff corto.
+        await sleep(8000 * attempt);
+        return callGemini(prompt, attempt + 1);
+      }
+    }
     throw new Error(`Gemini API ${res.status}: ${text.slice(0, 500)}`);
   }
 
@@ -248,6 +265,15 @@ async function main() {
       console.log("✗ " + err.message.slice(0, 150));
       fail++;
       await log({ file: filename, status: "error", error: String(err.message).slice(0, 500) });
+
+      if (err.isDailyQuotaExhausted) {
+        console.log(
+          `\n⛔ Cuota diaria de Gemini agotada en el archivo ${i + 1}/${queue.length}. ` +
+          `Abortando el resto de la cola para no perder horas reintentando en vano. ` +
+          `Volve a correr este mismo workflow despues del reset diario (~05:00 hora Argentina).`
+        );
+        break;
+      }
     }
 
     if (i < queue.length - 1) await sleep(DELAY_MS);

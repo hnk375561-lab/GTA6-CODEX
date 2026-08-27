@@ -14,28 +14,33 @@
   "manufacturer": "Mini",
   "class": "Hatchback premium",
   "customizable": false,
-  "power": "178 hp",
-  "price": "USD 38.000",
-  "consumo": "6.5 l/100km (mixto)",
-  "dimensiones": "3876 x 1727 x 1414 mm",
+  "power": "156 hp (Cooper C) o 204 hp (Cooper S)",
+  "price": "USD 38.000 (referencia base mercado internacional)",
+  "consumo": "6.0 - 6.5 l/100km (mixto)",
+  "dimensiones": "3876 x 1744 x 1432 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.mini.com.ar/cooper"
+    "level": "respaldado",
+    "primarySource": "https://www.carwow.es/mini/cooper/caracteristicas-tecnicas",
+    "note": "Se verificaron las especificaciones técnicas, motorizaciones, dimensiones, capacidad del maletero (210 litros) y datos de la cuarta generación del Mini Cooper utilizando portales especializados y fichas oficiales de la marca.",
+    "limitations": [
+      "Los precios varían fuertemente según los aranceles de importación e impuestos locales en el mercado argentino.",
+      "Las cifras de consumo exactas dependen del ciclo de homologación regional (WLTP/EPA)."
+    ]
   },
   "performance": {
     "speed": "210 km/h",
     "acceleration": "0-100 km/h en 7.7s"
   },
   "createdAt": "2026-08-23T21:59:08.997896Z",
-  "updatedAt": "2026-08-25T23:22:07.469Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T02:59:49.255Z",
+  "transmision": "Automática de doble embrague Steptronic de 7 marchas",
+  "traccion": "Delantera",
+  "peso": "1335 - 1420 kg",
+  "tipoMotor": "Gasolina (Naftero) TwinPower Turbo de 3 o 4 cilindros",
+  "potenciaKW": "115 kW / 150 kW",
+  "capacidadTanque": "40 litros",
+  "tiempoRecorrido": "6.6 - 7.7 s (0-100 km/h)",
+  "anoProduccion": "2024-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -123,14 +128,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1499 cc (1.5L) / 1998 cc (2.0L)",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 4,
+  "baul": 210,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "F66 (Cuarta generación moderna)",
+  "anoLanzamiento": 2024,
   "colores": [],
   "category": "auto-pequeño",
   "gallery": {
@@ -255,8 +260,8 @@
     "description": "Hatchback premium de Mini (grupo BMW), motor turbo 1.5L o 2.0L según versión."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.435Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:59:49.255Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -309,5 +314,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Mini Cooper es, sin lugar a dudas, uno de los vehículos más emblemáticos y reconocibles de la historia automotriz mundial. Su legado hunde sus raíces en el clásico Mini original diseñado por Sir Alec Issigonis en 1959, un modelo revolucionario concebido como una respuesta eficiente y económica a la crisis de combustible de aquella época, famoso por maximizar el espacio interior en una carrocería exterior sumamente compacta. Con el correr de las décadas, aquel modesto utilitario trascendió su propósito funcional inicial para erigirse como un verdadero ícono cultural y de estilo. A partir del año 2001, ya bajo la órbita y el liderazgo técnico del Grupo BMW, el Mini adoptó una nueva identidad comercial al reinventar su fórmula clásica mediante una combinación de proporciones retro con tecnología de vanguardia, tracción delantera ágil y una dinámica de conducción muy particular que los entusiastas bautizaron rápidamente como de \"karting\", caracterizada por una dirección directa y una puesta a punto de suspensión firme que prioriza la diversión al volante.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente del modelo se materializa con la llegada de la cuarta generación (designada internamente como F66 para las variantes propulsadas por motores de combustión interna), presentada oficialmente al mercado global en 2024. A diferencia de las iteraciones anteriores que apostaban por una diferenciación estética sumamente evolutiva, esta nueva etapa adopta una filosofía de diseño minimalista denominada \"Simplicity-Tech\". Esta corriente de diseño limpia las líneas exteriores suprimiendo elementos recargados, rediseña los grupos ópticos delanteros y traseros con tecnología LED personalizable, y rediseña por completo el habitáculo. El cambio más disruptivo puertas adentro es la eliminación del tradicional instrumental analógico detrás del volante para cederle todo el protagonismo a una llamativa pantalla central OLED redonda de alta definición, la cual centraliza tanto la información vital del viaje como el sistema multimedia e infoentretenimiento MINI Interaction Unit, operado mediante un entorno digital avanzado.\n\n## Curiosidades\nUna de las particularidades más fascinantes del desarrollo del Mini Cooper moderno es la preservación intencional de su silueta clásica e impronta visual a pesar del crecimiento inevitable en sus dimensiones exteriores, un incremento obligado para cumplir con las exigentes normativas internacionales de seguridad pasiva y protección de peatones. Asimismo, el vehículo incorpora los denominados MINI Experience Modes, un sistema de personalización que no solo modifica los parámetros de respuesta del acelerador y la dureza de la dirección, sino que también proyecta patrones lumínicos dinámicos sobre el torpedo e incluso altera el sonido artificial del motor dentro del habitáculo para potenciar la conexión emocional con el conductor. Aunque comparte plataformas y componentes mecánicos con otros vehículos compactos dentro del vasto portfolio del Grupo BMW, el Mini mantiene una calibración de suspensión propia y considerablemente más rígida para salvaguardar su ADN deportivo diferencial.\n\n## Competencia y posicionamiento\nDentro del panorama automotriz global y regional, el Mini Cooper se posiciona con firmeza en el codiciado segmento de los hatchbacks premium urbanos. No compite de manera directa con los automóviles generalistas del segmento B, sino que apunta de lleno a un consumidor que prioriza el diseño de autor, la personalización estética, los acabados de alta calidad y una fuerte cuota de exclusividad. Entre sus rivales históricos y actuales más destacados figuran alternativas de marcas de lujo como el Audi A1 en sus mercados de origen, el icónico Fiat 500 en sus versiones prestacionales firmadas por Abarth, o bien variantes picantes de hatchbacks compactos de corte generalista o premium como el Volkswagen Polo GTI y el Audi A3 Sportback. No obstante, el Mini se destaca en este selecto abanico por ofrecer una experiencia de conducción marcadamente lúdica, visceral y directa, diferenciándose por completo de la sobriedad y neutralidad que suelen caracterizar a la mayoría de sus competidores de origen alemán."
 }

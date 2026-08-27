@@ -12,33 +12,33 @@
   "manufacturer": "Dacia",
   "class": "Hatchback",
   "customizable": false,
-  "power": "90 hp",
-  "price": "EUR 13.500",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "101 CV - 122 CV",
+  "price": "EUR 13.490 - 18.040 (referencia base España)",
+  "consumo": "5.3 l/100km combinado",
+  "dimensiones": "4.100 mm largo x 1.850 mm ancho x 1.620 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "respaldado",
+    "primarySource": "https://charlamotor.app/coches/dacia/sandero.html",
+    "note": "Se verificaron las especificaciones técnicas generales y de precios basadas en datos del configurador oficial y fuentes especializadas de motor en España.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Ronda evidencia (ago 2026, lote 3/95): fuente oficial del fabricante verificada por búsqueda antes de subir el nivel de evidencia. Configurador oficial (Dacia UK) confirma motor TCe 100 (100 hp DIN / 74 kW, 200 Nm, caja manual, tracción delantera) como referencia de gama; existen otras motorizaciones (SCe, ECO-G GLP, Bi-Fuel) según mercado."
-    ],
-    "primarySource": "https://www.dacia.co.uk/vehicles/sandero/compare.html"
+      "Los precios pueden variar según el mercado europeo específico y los impuestos locales.",
+      "Las cifras de aceleración y consumo varían levemente según la elección entre la caja manual o automática o el uso de GLP."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-26T05:49:19.144Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T02:47:58.540Z",
+  "transmision": "Manual de 5 o 6 velocidades / Automática",
+  "traccion": "Delantera",
+  "peso": "1.039 - 1.150 kg",
+  "tipoMotor": "Gasolina / GLP",
+  "potenciaKW": "67 - 90 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "11.7s",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "999 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 328,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -205,8 +205,8 @@
     "description": "Hatchback low-cost de Dacia, auto más vendido a particulares en Europa varios años."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T05:49:19.144Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:47:58.540Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +224,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Dacia Sandero nació como una jugada estratégica del Grupo Renault para ofrecer un vehículo accesible, robusto y funcional bajo la marca rumana Dacia. Desde su introducción al mercado europeo a mediados de los años 2000, el hatchback compacto logró capturar la atención de los compradores que priorizaban la relación precio-producto por encima de los lujos superfluos. Utilizando componentes y plataformas probadas de la alianza Renault-Nissan, el Sandero se convirtió rápidamente en un pilar fundamental para la democratización de la movilidad moderna en Europa.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante en la historia reciente del modelo llegó con la presentación de su tercera generación. Construido sobre la moderna plataforma modular CMF-B, el Sandero dio un salto cuántico en términos de diseño, seguridad y refinamiento general. Atrás quedó la imagen estrictamente austera de las primeras ediciones; esta iteración introdujo líneas más marcadas, iluminación LED distintiva, una estructura notablemente más rígida y una cabina con mejores terminaciones tecnológicas, manteniendo al mismo tiempo su competitivo posicionamiento económico que lo catapultó al puesto de auto más vendido a particulares en Europa de forma consecutiva durante varios años.\n\n## Curiosidades\nUna de las claves del éxito del Dacia Sandero es su inteligente gestión de costos, logrando ofrecer lo esencial sin sacrificar la fiabilidad mecánica. Además de su versión hatchback convencional, la gama incluye la variante Sandero Stepway, con estética aventurera, mayor despeje del suelo y suspensiones reforzadas que se adaptan con soltura tanto al asfalto urbano como a caminos secundarios en mal estado. Curiosamente, en muchos mercados fuera de Europa (como Latinoamérica), el modelo se comercializa directamente bajo el rombo de Renault, consolidándose también como un éxito rotundo de ventas en la región bajo distintas denominaciones y motorizaciones locales.\n\n## Competencia y posicionamiento\nEn el competitivo segmento B europeo, el Dacia Sandero compite de manera directa contra hatchbacks generalistas consagrados como el Peugeot 208, el Opel Corsa y el propio Renault Clio. Sin embargo, su posicionamiento estratégico apunta a un nicho único: ofrecer dimensiones interiores y espacio de baúl comparables a los de vehículos de categorías superiores, pero con una franja de precios típica de segmentos inferiores. Esta fórmula imbatible le permite atraer tanto a clientes que buscan su primer vehículo 0 km como a familias que necesitan un segundo auto versátil y económico de mantener."
 }

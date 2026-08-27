@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:32.940Z",
-  "updatedAt": "2026-08-26T06:58:15.137Z",
+  "updatedAt": "2026-08-27T02:00:41.682Z",
   "manufacturer": "Volkswagen",
   "class": "Hatchback",
   "customizable": false,
@@ -21,27 +21,27 @@
     "acceleration": "0-100 km/h en 6.2s (DSG) / 6.4s (manual)"
   },
   "power": "241 hp (245 PS)",
-  "price": "USD 31.965 (trim S, mercado USA)",
+  "price": "USD 31.965 (MSRP mercado USA, trim S)",
   "consumo": "8.7 l/100km combinado (WLTP)",
-  "dimensiones": "4.290 mm largo x 1.789 mm ancho x 1.474 mm alto, distancia entre ejes 2.631 mm",
+  "dimensiones": "4.290 mm x 1.789 mm x 1.474 mm",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.vw.com/en/models/golf-gti.html",
     "secondarySource": "https://www.kbb.com/volkswagen/golf-gti/2024/",
-    "note": "Cifras de la generación Mk8, motor EA888 evo4 2.0 TSI. El modelo 2025 en USA pasó a transmisión DSG exclusiva (sin manual).",
+    "note": "Datos verificados correspondientes a la octava generación (Mk8) del Volkswagen Golf GTI con motor EA888 evo4 de 2.0 litros TSI.",
     "limitations": [
-      "Disponibilidad de caja manual varía según año y mercado",
-      "Golf R (hermano AWD, 315-329 hp) es variante superior, no incluida en esta ficha",
-      "Precio de referencia corresponde al mercado USA, varía en Europa/Latinoamérica"
+      "La disponibilidad de la transmisión manual varía según el año y el mercado regional",
+      "El precio de referencia corresponde al mercado de EE. UU. y puede diferir sustancialmente en Europa o Latinoamérica",
+      "Las cifras de rendimiento pueden variar ligeramente según las normativas de homologación locales (WLTP vs EPA)"
     ]
   },
-  "transmision": "Manual 6 velocidades / DSG doble embrague 7 velocidades",
+  "transmision": "Manual de 6 velocidades / Automática DSG de doble embrague y 7 velocidades",
   "traccion": "Delantera (FWD) con diferencial autoblocante VAQ",
   "peso": "1.463 kg",
   "tipoMotor": "Gasolina turbo 4 cilindros (EA888 evo4)",
   "potenciaKW": "180 kW",
   "capacidadTanque": "50 litros",
-  "tiempoRecorrido": "3-8s",
+  "tiempoRecorrido": "0-100 km/h en 6.2s (DSG) / 6.4s (manual)",
   "anoProduccion": "2024",
   "mercados": [
     "Alemania",
@@ -136,10 +136,10 @@
   "emisiones": "CO2 197 g/km (WLTP)",
   "tipo": "Hatchback",
   "asientos": 5,
-  "baul": "374 litros",
+  "baul": 374,
   "maleteroMin": null,
   "generacion": "Mk8",
-  "anoLanzamiento": "2021",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "deportivo",
   "gallery": {
@@ -283,7 +283,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T06:58:15.123Z",
+    "lastChecked": "2026-08-27T02:00:41.682Z",
     "dataQuality": 0.9
   },
   "indexed": true,
@@ -341,5 +341,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Volkswagen Golf GTI es considerado de manera indiscutida el pionero y máximo referente del segmento de los \"hot hatches\" o hatchbacks deportivos a nivel mundial. Su historia comenzó en 1976, cuando la marca alemana decidió tomar un vehículo familiar compacto y dotarlo de un temperamento rabioso, una puesta a punto específica de suspensión y una estética sobria pero diferencial que incluía los clásicos detalles en rojo y los asientos con tapizado a cuadros. Lo que nació como un proyecto casi experimental y de tirada limitada se transformó en un fenómeno de masas, dando origen a una estirpe de deportivos accesibles que cautivaron a entusiastas de todas las edades durante casi cinco décadas.\n\n## Un hito y generación relevante: La llegada de la octava generación (Mk8)\nCon el lanzamiento de la octava generación, el Golf GTI reafirmó su vigencia en un mercado automotor fuertemente inclinado hacia los SUV y la electrificación. Estéticamente, el Mk8 adoptó una impronta mucho más afilada y tecnológica, incorporando una firma lumínica frontal led que cruza toda la parrilla y entradas de aire de diseño poligonal. En el plano mecánico, esta generación consolidó el uso del motor EA888 evo4 de 2.0 litros turboalimentado, elevando su potencia hasta los 245 caballos de fuerza (241 hp) y perfeccionando el chasis con la introducción del sistema de control dinámico de dinámica vehicular, el cual gestiona de manera centralizada el diferencial autoblocante electrónico VAQ y la amortiguación adaptativa DCC para maximizar el paso por curva sin resignar el confort en el uso diario.\n\n## Curiosidades\nUna de las curiosidades más interesantes del Golf GTI a lo largo de su historia es que su concepción original fue un proyecto clandestino. Un grupo de ingenieros y directivos de Volkswagen comenzó a desarrollarlo fuera del horario laboral oficial en 1974, temiendo que la directiva de la empresa rechazara la idea de un Golf deportivo. Cuando finalmente se lo presentaron al consejo de administración, el prototipo superó todas las expectativas y recibió luz verde inmediata. Otro detalle icónico que perdura hasta el día de hoy es la famosa perilla de cambios con forma de pelota de golf, un guiño retro que se convirtió en una tradición inquebrantable para las versiones manuales.\n\n## Competencia y posicionamiento\nEn el mercado actual, el Volkswagen Golf GTI compite en un nicho sumamente selecto y apasionante contra rivales de la talla del Honda Civic Type R, el Toyota GR Corolla, el Hyundai Elantra N y su pariente cercano, el Cupra León. Frente a ellos, el GTI se posiciona históricamente no como el más radical o extremo en una pista de carreras, sino como el rey indiscutido del equilibrio: ofrece un nivel de refinamiento interior superior, una versatilidad inigualable para el uso cotidiano, costos de mantenimiento más contenidos y una herencia cultural que pocos fabricantes pueden replicar. Es el auto deportivo que cumple con todo: divertido los fines de semana y perfectamente dócil para ir a trabajar los lunes."
 }

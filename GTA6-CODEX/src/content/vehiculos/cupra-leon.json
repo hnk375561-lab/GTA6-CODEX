@@ -12,33 +12,33 @@
   "manufacturer": "Cupra",
   "class": "Hatchback deportivo",
   "customizable": false,
-  "power": "300 hp",
-  "price": "EUR 38.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "300 CV",
+  "price": "EUR 42.000 (referencia mercado europeo)",
+  "consumo": "7.5 l/100km combinado",
+  "dimensiones": "4.368 mm largo x 1.799 mm ancho x 1.456 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global. Ficha técnica verificada contra la página oficial del León en cupraofficial.es.",
+    "primarySource": "https://www.cupraofficial.es/coches/leon",
+    "note": "Se actualizaron los datos técnicos de potencia, dimensiones, aceleración y motorización basándose en las especificaciones oficiales de la gama Cupra León de alta performance.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
-    ],
-    "primarySource": "https://www.cupraofficial.es/coches/leon"
+      "Los precios pueden variar según el mercado europeo o impuestos locales",
+      "Las cifras de consumo y performance corresponden a la variante tope de gama de 300 CV"
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.334Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:37:28.822Z",
+  "transmision": "Automática de doble embrague (DSG) de 7 velocidades",
+  "traccion": "Delantera o integral (4Drive según versión)",
+  "peso": "1.490 kg",
+  "tipoMotor": "Gasolina 2.0 TSI turbo",
+  "potenciaKW": "221 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "4.9s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -126,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1984 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 380,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Cuarta generación (KL)",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -257,7 +257,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.362Z",
+    "lastChecked": "2026-08-27T01:37:28.822Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -310,5 +310,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Cupra León marca un punto de inflexión fundamental en la historia automotriz contemporánea al erigirse como el primer modelo en portar con orgullo el emblema de Cupra de manera independiente, desvinculándose de la denominación SEAT Sport que tradicionalmente abanderaba a los hatchbacks más picantes del conglomerado de Volkswagen en Martorell. Aunque comparte plataforma (MQB Evo) y sinergias mecánicas con sus primos del Grupo Vgg, el Cupra León busca diferenciarse con una identidad visual mucho más agresiva, marcada por detalles en color cobre distintivos, tomas de aire sobredimensionadas y una puesta a punto de chasis orientada netamente al dinamismo y al placer de conducción.\n\n## Un hito o generación relevante\nLa cuarta generación del León (conocida internamente como la plataforma KL) introdujo en 2020 la electrificación ligera y variantes híbridas enchufables (e-HYBRID) dentro de la gama de altas prestaciones, logrando equilibrar de manera notable las normativas de emisiones cada vez más estrictas de la Unión Europea con la deportividad visceral que los entusiastas esperan de la marca. Sin embargo, la variante pura de combustión equipada con el bloque 2.0 TSI de 300 CV y tracción delantera (o hasta 310 CV con la carrocería Familiar/Sportstourer y tracción integral 4Drive) sigue siendo el estandarte dinámico de la familia, incorporando diferencial autoblocante delantero y una dirección progresiva de tacto quirúrgico.\n\n## Curiosidades\nUna de las características más llamativas del habitáculo del Cupra León es la incorporación de los botones satelitales en el volante —inspirados directamente en el mundo de la competición— que permiten encender el motor y alternar entre los modos de conducción (incluyendo el modo Cupra extremo) sin apartar las manos del aro. Asimismo, la paleta cromática exclusiva de la marca, encabezada por tonos mate como el Gris Petrol o el Azul Enceladus, le otorga una presencia visual en la calle que pocas veces se ve en un hatchback mediano de producción en serie.\n\n## Competencia y posicionamiento\nEn el mercado global, el Cupra León compite de manera directa contra pesos pesados consagrados del segmento C deportivo, como el Volkswagen Golf GTI y el radical Golf R, el Ford Focus ST, el Honda Civic Type R y el Hyundai i30 N. Se posiciona dentro de un escalón de corte semi-premium o generalista aspiracional, ofreciendo un nivel de acabados interiores muy cuidado, infoentretenimiento de última generación y una dinámica de marcha que combina la usabilidad diaria con una efectividad en tramos revirados digna de vehículos de categorías superiores."
 }

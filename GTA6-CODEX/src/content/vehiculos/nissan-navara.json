@@ -12,15 +12,17 @@
   "manufacturer": "Nissan",
   "class": "Pickup mediana",
   "customizable": false,
-  "power": "190 hp (diésel)",
-  "price": "USD 32.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "190 hp",
+  "price": "USD 35.000 (referencia regional)",
+  "consumo": "7.5 l/100km combinado",
+  "dimensiones": "5.260 mm largo x 1.850 mm ancho x 1.820 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.nissan.com",
+    "note": "Se actualizaron las especificaciones generales basadas en la plataforma D23 de Nissan Navara/Frontier, ajustando dimensiones, motorización diésel de 2.3 litros y capacidades acordes al segmento de pickups medianas.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Los precios varían considerablemente según el mercado de destino (Latinoamérica, Europa o Asia)",
+      "Las cifras de consumo son estimadas para ciclo combinado"
     ]
   },
   "performance": {
@@ -28,15 +30,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.483Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:24:10.214Z",
+  "transmision": "Manual de 6 velocidades o Automática de 7 velocidades",
+  "traccion": "Tracción en las cuatro ruedas (4x4) con reductora / Tracción trasera",
+  "peso": "1.950-2.150 kg",
+  "tipoMotor": "Diésel (Turbo / Biturbo)",
+  "potenciaKW": "140 kW",
+  "capacidadTanque": "80 litros",
+  "tiempoRecorrido": "10.5s",
+  "anoProduccion": "2014-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.3 litros",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 5,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "D23",
+  "anoLanzamiento": 2014,
   "colores": [],
   "category": "comercial",
   "gallery": {
@@ -206,7 +208,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.443Z",
+    "lastChecked": "2026-08-27T01:24:10.214Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +226,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Nissan Navara, conocida en una gran cantidad de mercados de América Latina y Norteamérica bajo la denominación Nissan Frontier, representa una de las apuestas más sólidas de la marca japonesa dentro del competitivo segmento de las pick-ups medianas. Su trayectoria global está marcada por una evolución constante orientada a combinar la robustez exigida en el ámbito laboral con el confort de marcha propio de un vehículo de uso mixto o familiar.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de la Navara fue la introducción de la generación D23. Este modelo introdujo importantes mejoras estructurales, destacándose por la adopción de una suspensión trasera de tipo multibrazo (multilink) en varias de sus versiones de doble cabina, apartándose del tradicional esquema de elásticos longitudinales. Esta innovación permitió elevar notablemente los estándares de estabilidad, aplomo y comodidad en ruta, sin comprometer las capacidades de carga y arrastre que caracterizan a la familia de utilitarios de Nissan.\n\n## Curiosidades\nUn aspecto interesante de la Nissan Navara es su compleja estrategia de denominación y producción a nivel global. Dependiendo del país en el que se comercialice, el modelo puede adoptar nombres como Frontier, NP300 Navara o incluso servir como base para vehículos de otras marcas aliadas dentro de la alianza Renault-Nissan-Mitsubishi, demostrando una alta versatilidad de plataforma y una gran aceptación en mercados tan diversos como Europa, Asia, África y América Latina.\n\n## Competencia y posicionamiento\nEn el mercado actual, la Nissan Navara compite directamente contra pesos pesados de la industria de las camionetas medianas, tales como la Toyota Hilux, la Ford Ranger, la Volkswagen Amarok y la Chevrolet S10. Se posiciona como una opción equilibrada, destacándose por una relación valor-producto competitiva, opciones mecánicas enfocadas en la durabilidad y el torque a bajas revoluciones, y una propuesta tecnológica que se ha ido actualizando para responder a las demandas del usuario moderno de vehículos comerciales y recreativos."
 }

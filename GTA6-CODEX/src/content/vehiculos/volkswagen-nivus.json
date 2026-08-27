@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.597Z",
-  "updatedAt": "2026-08-25T23:22:07.549Z",
+  "updatedAt": "2026-08-27T03:13:43.592Z",
   "manufacturer": "Volkswagen",
   "class": "SUV coupé compacta",
   "customizable": false,
@@ -19,20 +19,25 @@
     "speed": "188 km/h",
     "acceleration": "0-100 km/h en 10.2s"
   },
-  "power": "128 hp",
-  "price": "USD 26.000",
+  "power": "116 CV",
+  "price": "ARS 34.434.250 (Referencia mercado argentino, febrero 2026)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.vw.com.ar/es/modelos/nivus.html"
+    "level": "respaldado",
+    "primarySource": "https://autofichas.com.ar/volkswagen/nivus",
+    "note": "Se verificaron las especificaciones técnicas, precios de lista actualizados para el mercado argentino en febrero de 2026 y la incorporación de tecnologías de seguridad y diseño para los modelos recientes.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y el mercado local en Argentina.",
+      "Algunos equipamientos pueden variar según la versión disponible."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática Tiptronic de 6 marchas",
+  "traccion": "Delantera",
+  "peso": "1199 kg",
+  "tipoMotor": "Nafta 1.0 200 TSI (Turbo)",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "52 litros",
+  "tiempoRecorrido": "10.2s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +123,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "6.8 l/100km mixto",
+  "dimensiones": "4266 x 1757 x 1493 mm",
+  "cilindrada": "999 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 415,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Primera generación (Mk1)",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -249,8 +254,8 @@
     "description": "SUV coupé compacta de Volkswagen sobre plataforma MQB, motor turbo 1.0L o 1.4L TSI."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.497Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:13:43.592Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +308,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Volkswagen Nivus se ha ganado un lugar muy particular dentro del mercado automotor regional gracias a una propuesta que supo combinar con acierto la silueta típica de un SUV con la caída de techo propia de una coupé. Desarrollado íntegramente en Sudamérica sobre la exitosa plataforma modular MQB —la misma que da vida a otros exponentes de peso como el Polo y el T-Cross—, este modelo nació con el objetivo claro de captar a un público más joven y dinámico. La marca alemana apostó fuerte por un formato que rompía con los moldes tradicionales de los utilitarios deportivos compactos, ofreciendo una estética más osada sin resignar la practicidad que se le exige a un vehículo de uso diario en las grandes ciudades.\n\n## Un hito o generación relevante\nUno de los puntos de inflexión más importantes en la trayectoria del Nivus fue su irrupción en el mercado a mediados de 2020. En plena pandemia global, Volkswagen eligió un formato de presentación completamente digital y regional que marcó tendencia en la industria. Además de su silueta vanguardista, el modelo se convirtió en el pionero absoluto en incorporar el sistema de infoentretenimiento VW Play, diseñado íntegramente en América Latina. Con los años, la plataforma ha sabido mantenerse vigente incorporando actualizaciones estéticas en su frontal —alineándose con los nuevos códigos lumínicos de la marca— y reforzando su oferta en seguridad activa con la incorporación de asistencias a la conducción de nivel superior, como el control de velocidad crucero adaptativo y el freno autónomo de emergencia dentro del concepto Travel Assist.\n\n## Curiosidades\nA pesar de contar con una línea de techo marcadamente inclinada que simula la de un vehículo deportivo de dos puertas, los ingenieros de Volkswagen lograron resolver de manera sobresaliente el aprovechamiento del espacio interior. Contrariamente a lo que se suele especular con este tipo de siluetas, el Nivus ofrece una capacidad de baúl de unos respetables 415 litros, una cifra sumamente competitiva dentro del segmento B-SUV que lo pone a la par de vehículos de formato más tradicional. En el plano mecánico, su motorización naftera turboalimentada de tres cilindros (conocida comercialmente como 200 TSI) demuestra que los bloques de baja cilindrada pueden entregar una respuesta ágil y un torque generoso desde bajas revoluciones, logrando un equilibrio muy elogiado entre agilidad urbana y contención en el consumo de combustible.\n\n## Competencia y posicionamiento\nDentro del nutrido segmento de los SUV compactos, el Volkswagen Nivus ocupa un lugar de carácter aspiracional y emocional. Mientras que su hermano de gama, el T-Cross, prioriza las formas cuadradas para maximizar la habitabilidad vertical, el Nivus juega la carta del diseño y la diferenciación estética. En el mercado argentino y regional compite de manera directa contra alternativas de marcas rivales como el Fiat Pulse —que adoptó una receta similar—, además de medirse con las versiones de entrada de otros SUV generalistas. Su gran diferencial radica en la conjunción de una dinámica de conducción refinada, calidades interiores percibidas como superiores al promedio de la categoría, y un paquete tecnológico que lo posiciona como una de las opciones más inteligentes y equipadas del segmento."
 }

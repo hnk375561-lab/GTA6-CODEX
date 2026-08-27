@@ -13,32 +13,32 @@
   "class": "SUV compacto",
   "customizable": false,
   "power": "175 hp",
-  "price": "USD 27.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "USD 28.000 (MSRP EE.UU. referencia)",
+  "consumo": "7.5 l/100km combinado",
+  "dimensiones": "4.650 mm largo x 1.902 mm ancho x 1.710 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global. Ficha técnica verificada contra la página oficial del Equinox en chevrolet.com.",
+    "primarySource": "https://www.chevrolet.com/suvs/equinox",
+    "note": "Ficha técnica verificada con especificaciones de la cuarta generación del Chevrolet Equinox para el mercado norteamericano.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
-    ],
-    "primarySource": "https://www.chevrolet.com/suvs/equinox"
+      "Los precios varían según el mercado local y los impuestos vigentes en cada país de Latinoamérica.",
+      "Las cifras de consumo y aceleración son valores de referencia informados por el fabricante."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.309Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:35:37.359Z",
+  "transmision": "Automática de 8 velocidades o CVT según mercado",
+  "traccion": "Delantera o Integral (AWD)",
+  "peso": "1.500 - 1.650 kg",
+  "tipoMotor": "Naftero turbo",
+  "potenciaKW": "130 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "8.8s",
+  "anoProduccion": "2024-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -126,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.5 L",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 845,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Cuarta generación",
+  "anoLanzamiento": 2024,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -257,7 +257,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.336Z",
+    "lastChecked": "2026-08-27T01:35:37.359Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -310,5 +310,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Chevrolet Equinox debutó en el mercado norteamericano a mediados de la década del 2000 como un SUV de tamaño medio, diseñado para reemplazar a la oferta tradicional de camionetas y ofrecer una alternativa más versátil y familiar. Con el correr de los años, el modelo evolucionó para adaptarse a las nuevas exigencias globales, reduciendo su plataforma a la categoría de SUV compacto y transformándose en uno de los pilares de venta más importantes de la marca del corbatín a nivel global.\n\n## Un hito o generación relevante\nUn momento clave en la historia reciente del Equinox es la llegada de su cuarta generación, presentada para el año-modelo 2024. Esta nueva iteración supuso un cambio radical en su lenguaje de diseño, adoptando líneas mucho más robustas y cuadradas que emparentan su estética con las pick-ups de la marca, como la Silverado. Asimismo, incorporó una renovación tecnológica profunda en el habitáculo, destacando un tablero completamente digital y pantallas de infoentretenimiento de gran formato orientadas al conductor.\n\n## Curiosidades\nUna de las particularidades del Chevrolet Equinox es que, a pesar de ser concebido inicialmente como un producto netamente norteamericano, su éxito comercial propició su ensamblaje y comercialización en diversos mercados internacionales, incluyendo plantas en Norteamérica y América del Sur (con fuerte presencia histórica en la producción regional para países de la región). Además, su nombre proviene de la conjunción de las palabras en inglés 'equilibrium' (equilibrio), reflejando la búsqueda de un balance entre espacio interior, consumo y capacidad de manejo.\n\n## Competencia y posicionamiento\nEn el altamente disputado segmento de los SUV compactos, el Chevrolet Equinox se posiciona como una opción de volumen con un enfoque muy marcado en la relación costo-producto, el confort de marcha y la seguridad activa. Entre sus rivales más directos en el mercado global se encuentran pesos pesados de la industria como el Toyota RAV4, el Honda CR-V, el Ford Escape (Kuga en varios mercados) y el Volkswagen Taos. Frente a ellos, el Equinox busca diferenciarse mediante un diseño exterior de impronta más agresiva, un paquete tecnológico enfocado en la conectividad con servicios integrados y un espacio interior sumamente generoso para los pasajeros de las plazas traseras."
 }

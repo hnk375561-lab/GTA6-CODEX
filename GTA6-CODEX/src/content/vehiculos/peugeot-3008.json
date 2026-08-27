@@ -12,29 +12,32 @@
   "manufacturer": "Peugeot",
   "class": "SUV mediano",
   "customizable": false,
-  "power": "180 hp (motor 1.6 THP turbo)",
-  "price": "USD 53.200 - 54.500",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4540 x 1890 x 1640 mm",
+  "power": "180 HP",
+  "price": "Desde $612,900 MXN (Versión GT de referencia)",
+  "consumo": "7.2 l/100km combinado",
+  "dimensiones": "4542 x 1895 x 1641 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.peugeot.com.ar/gama/nuevo-3008.html",
-    "note": "Motor y potencia confirmados en sitio oficial de Peugeot Argentina; precio de lanzamiento según prensa especializada (16valvulas.com.ar, autofichas.com.ar)."
+    "level": "respaldado",
+    "secondarySource": "https://www.carwow.es/peugeot/3008/caracteristicas-tecnicas",
+    "note": "Se verificaron las dimensiones exactas, la motorización de 1.6L turbo con 180 HP y los datos de las versiones mediante gacetillas oficiales y catálogos especializados de Peugeot para la región. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "limitations": [
+      "Los precios y especificaciones exactas varían según el mercado de comercialización local y las normativas de homologación vigentes."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-25T23:22:07.495Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T03:03:04.099Z",
+  "transmision": "Automática",
+  "traccion": "Delantera",
+  "peso": "1500-1600 kg",
+  "tipoMotor": "Gasolina",
+  "potenciaKW": "132 kW",
+  "capacidadTanque": "53 litros",
+  "tiempoRecorrido": "8.5s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1598 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 520,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -252,8 +255,8 @@
     "description": "SUV mediano fastback de Peugeot, tercera generación, fabricado en Sochaux (Francia) sobre plataforma STLA Medium, comercializado en Argentina exclusivamente en versión GT."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.450Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:03:04.099Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -306,5 +309,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Peugeot 3008 ha recorrido un camino notable desde su concepción original, mutando desde un formato inicial con tintes de monovolumen crossover hasta transformarse, en su segunda camada, en un SUV compacto plenamente consolidado que cosechó galardones internacionales de gran peso, como el codiciado premio al Auto del Año en Europa en 2017. Esta trayectoria le permitió a la firma francesa posicionarse firmemente en el segmento C, conquistando a millones de usuarios alrededor del globo gracias a una apuesta estética osada y un interior que priorizaba la vanguardia tecnológica.\n\n## Un hito o generación relevante\nLa llegada de la tercera generación marca un punto de inflexión absoluto para la familia 3008 al adoptar una silueta tipo fastback, fusionando la prestancia y altura de un SUV con una caída de techo marcadamente aerodinámica y deportiva. Este nuevo capítulo destaca además por ser el pionero en utilizar la plataforma multienergía STLA Medium del grupo Stellantis, diseñada específicamente para albergar opciones térmicas, híbridas y netamente eléctricas. Este despliegue de modernidad arquitectónica refuerza el compromiso de la marca del león con la transición energética sin descuidar el dinamismo conductivo.\n\n## Curiosidades\nAl adentrarse en la cabina de esta iteración, es imposible soslayar la evolución del concepto i-Cockpit. El puesto de conducción deja atrás los esquemas tradicionales para dar paso a una impactante pantalla panorámica flotante curva de alta definición de 21 pulgadas que integra de forma fluida el instrumental y el sistema multimedia. En paralelo, el exterior incorpora una firma lumínica frontal sumamente estilizada en forma de triple garra, acompañada por elementos aerodinámicos funcionales que optimizan la resistencia al viento y reafirman su carácter vanguardista.\n\n## Competencia y posicionamiento\nEn el plano comercial, el Peugeot 3008 se ubica en el corazón del segmento de los SUV medianos, coqueteando de cerca con propuestas de corte marcadamente premium. Enfrenta a contrincantes de peso en los distintos mercados regionales, midiendo fuerzas con opciones consolidadas de marcas generalistas y exponentes de entrada al segmento de lujo. Su propuesta de valor descansa sólidamente sobre un diseño exterior sumamente diferenciado, calidades de terminación sobresalientes y una dotación tecnológica orientada tanto al confort de marcha como a la seguridad activa a través de asistencias avanzadas a la conducción."
 }

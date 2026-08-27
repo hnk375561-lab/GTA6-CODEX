@@ -13,30 +13,33 @@
   "class": "SUV premium",
   "customizable": false,
   "power": "335 hp",
-  "price": "USD 62.000",
-  "consumo": "8.7 l/100km combinado (versión 55 TFSI V6 335 hp)",
-  "dimensiones": "5.063 mm largo x 1.970 mm ancho x 1.741 mm alto, distancia entre ejes 2.994 mm",
+  "price": "USD 65.000 (MSRP estimado de referencia)",
+  "consumo": "8.7 l/100km combinado (versión 55 TFSI V6)",
+  "dimensiones": "5063 mm x 1970 mm x 1741 mm",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://motoreu.com/audi-q7-55-tfsi-mpg-fuel-consumption-technical-specifications-176357",
     "secondarySource": "https://www.auto-data.net/en/audi-q7-model-517",
-    "note": "Cifras corresponden a la versión Audi Q7 55 TFSI quattro (V6 3.0 turbo, 335 hp/340 PS), la variante de gasolina más vendida de la gama.",
-    "limitations": []
+    "note": "Se verificaron las especificaciones técnicas principales de la variante Audi Q7 55 TFSI quattro con motor V6 de 3.0 litros a partir de bases de datos automotrices especializadas.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado de destino y los opcionales de equipamiento.",
+      "Los niveles de consumo pueden diferir según las normativas locales de homologación (WLTP frente a EPA)."
+    ]
   },
   "performance": {
     "speed": "250 km/h (limitada electrónicamente)",
     "acceleration": "0-100 km/h en 5.9s"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.258Z",
-  "transmision": "8 velocidades Tiptronic (automática)",
-  "traccion": "Integral quattro (AWD) de serie",
-  "peso": "2.055 kg (55 TFSI V6) - 2.800 kg (55 TFSIe híbrido enchufable)",
-  "tipoMotor": "Gasolina turbo V6 (mild-hybrid) / Híbrido enchufable TFSIe",
-  "potenciaKW": "250 kW / 340 hp (55 TFSI V6)",
+  "updatedAt": "2026-08-27T01:31:04.445Z",
+  "transmision": "Automática Tiptronic de 8 velocidades",
+  "traccion": "Integral quattro (AWD)",
+  "peso": "2055 kg",
+  "tipoMotor": "Gasolina V6 3.0 turbo (Mild-Hybrid)",
+  "potenciaKW": "250 kW",
   "capacidadTanque": "85 litros",
-  "tiempoRecorrido": "5.9s 0-100 km/h (55 TFSI) / 5.7s (55 TFSIe)",
-  "anoProduccion": "2019-presente (4ª generación, código 4M), con facelift en 2024",
+  "tiempoRecorrido": "5.9s 0-100 km/h",
+  "anoProduccion": "2019-presente",
   "mercados": [
     "Europa",
     "Estados Unidos",
@@ -54,13 +57,13 @@
   ],
   "consumoEtiqueta": "E",
   "neumaticos": "225/50R17",
-  "cilindrada": "2.995 cc (3.0 V6 turbo)",
+  "cilindrada": "2995 cc",
   "emisiones": "CO2 229 g/km (55 TFSI V6) / 57 g/km (55 TFSIe híbrido, cifra combinada PHEV)",
   "tipo": "SUV premium grande (7 plazas)",
   "asientos": 7,
-  "baul": "865 litros (mín., 5 plazas) - 2.050 litros (asientos abatidos)",
+  "baul": 865,
   "maleteroMin": "865 litros",
-  "generacion": "Cuarta generación (4M), lanzada en 2019, con facelift en 2024",
+  "generacion": "Cuarta generación (4M, facelift 2024)",
   "anoLanzamiento": 2019,
   "colores": [
     "Blanco Ibis",
@@ -265,7 +268,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.304Z",
+    "lastChecked": "2026-08-27T01:31:04.445Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -318,5 +321,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Audi Q7 representa la apuesta más ambiciosa de la firma de Ingolstadt dentro del segmento de los SUV grandes de lujo. Presentado originalmente a mediados de los 2000, este modelo se consolidó rápidamente como un pilar fundamental para la marca alemana al inaugurar su incursión en el terreno de los vehículos utilitarios deportivos de altas prestaciones y gran porte. A lo largo de su trayectoria comercial, el Q7 ha sabido redefinir los estándares de confort, habitabilidad y tecnología aplicada a la conducción, posicionándose como un referente indiscutido frente a sus rivales tradicionales de origen alemán.\n\n## Un hito y generación relevante\nUn punto de inflexión fundamental en la historia del modelo fue la llegada de la segunda generación y su posterior evolución bajo la plataforma MLB Evo del Grupo Volkswagen, estructura compartida con otros colosos del conglomerado. La actualización más reciente, introducida en 2024, trajo consigo una renovación estética profunda que adoptó el nuevo lenguaje visual de Audi, incorporando ópticas delanteras con tecnología Matrix LED avanzada, parrilla Singleframe rediseñada y mejoras sustanciales en el sistema de infoentretenimiento MMI touch response con pantallas de alta resolución. Estas modificaciones permitieron mantener al Q7 a la vanguardia tecnológica sin perder la sobriedad y elegancia que caracteriza a la marca.\n\n## Curiosidades\nA pesar de sus generosas dimensiones exteriores, que superan los cinco metros de largo, el Audi Q7 destaca por contar con soluciones dinámicas avanzadas como la dirección en las cuatro ruedas, lo que reduce notablemente el radio de giro en ciudad y mejora la estabilidad en ruta a altas velocidades. Asimismo, su habitáculo ha sido diseñado meticulosamente para ofrecer hasta siete plazas reales de serie en la mayoría de sus mercados principales, integrando opciones de modularidad que permiten abatir los asientos traseros para configurar un espacio de carga descomunal de más de 2000 litros.\n\n## Competencia y posicionamiento\nEn el mercado global de los SUV premium de gran tamaño, el Audi Q7 compite directamente con pesos pesados de la industria como el BMW X5, el Mercedes-Benz GLE y el Volvo XC90. El posicionamiento del modelo de los cuatro anillos se destaca principalmente por ofrecer un equilibrio sobresaliente entre el refinamiento de marcha —especialmente al equipar la suspensión neumática adaptativa—, una tracción integral quattro de probada eficacia en cualquier condición climática, y un nivel de digitalización interior intuitivo y vanguardista que atrae tanto a compradores corporativos como a familias que buscan lo máximo en confort para viajes de larga distancia."
 }

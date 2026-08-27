@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:33.241Z",
-  "updatedAt": "2026-08-25T23:22:07.364Z",
+  "updatedAt": "2026-08-27T02:52:33.474Z",
   "manufacturer": "Ford",
   "class": "Pickup",
   "customizable": false,
@@ -19,20 +19,25 @@
     "speed": "Media (170 km/h)",
     "acceleration": "Media (0-100 km/h en 10s)"
   },
-  "power": "200 hp",
-  "price": "USD 38.000",
+  "power": "210 CV (versión 2.0L Bi-Turbo) / hasta 250 CV (V6 3.0L)",
+  "price": "USD 45.000 (referencia regional aproximada)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.ford.com/trucks/ranger/"
+    "level": "respaldado",
+    "secondarySource": "https://www.ford.com/trucks/ranger",
+    "note": "Se verificaron las especificaciones técnicas principales de la Ford Ranger de nueva generación utilizando la ficha técnica oficial para Argentina y especificaciones de la plataforma global de Ford. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "limitations": [
+      "Los precios varían fuertemente según el mercado regional, impuestos y aranceles locales.",
+      "El consumo exacto depende de la versión de transmisión y tipo de tracción seleccionada (4x2 o 4x4)."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 6 velocidades o Automática de 10 velocidades",
+  "traccion": "Tracción 4x2 o 4x4 con alta y baja",
+  "peso": "2100 - 2350 kg",
+  "tipoMotor": "Diésel 2.0L Bi-Turbo / V6 3.0L Diésel",
+  "potenciaKW": "154 kW (2.0L Bi-Turbo) / 184 kW (V6)",
+  "capacidadTanque": "80 litros",
+  "tiempoRecorrido": "10.5s (0-100 km/h)",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,16 +125,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "8.5 a 9.5 l/100km mixto aprox. según motorización",
+  "dimensiones": "5370 x 1918 x 1884 mm",
+  "cilindrada": "1996 cc (Bi-Turbo) / 2993 cc (V6)",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 5,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Nueva generación (P703)",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "suv",
   "gallery": {
@@ -257,8 +262,8 @@
     "description": "Pickup mediana de Ford, motor 2.0L biturbo diésel de 200 hp."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.381Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:52:33.474Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -311,5 +316,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Ford Ranger es una de las pick-ups medianas con mayor trayectoria y reconocimiento a nivel global. Nacida originalmente como un modelo enfocado fuertemente en el mercado norteamericano durante la década de 1980, con el correr de los años evolucionó hacia una plataforma global concebida para adaptarse con solidez a las exigencias del trabajo pesado, flotas comerciales y uso recreativo por igual. A lo largo de las décadas, la Ranger se ganó una reputación sólida basada en la robustez de sus chasis, su capacidad de carga y una constante evolución mecánica que la mantuvo siempre competitiva dentro de su categoría.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de la Ranger fue el desarrollo de su plataforma global de nueva generación (conocida internamente como P703). Este desarrollo introdujo mejoras sustanciales en materia de rigidez torsional, refinamiento de marcha y, sobre todo, una integración tecnológica sin precedentes en su segmento. La incorporación de motorizaciones avanzadas como el bloque 2.0L Bi-Turbo diésel y la potente opción V6 3.0L, combinadas con transmisiones automáticas de 10 marchas, marcó un salto de calidad rotundo frente a las generaciones pasadas, acercando el confort de marcha de una SUV moderna al mundo de las camionetas utilitarias.\n\n## Curiosidades\nUna de las particularidades más destacadas de la Ford Ranger es su alto nivel de federalización industrial y su adaptación a los mercados regionales. Se produce en plantas estratégicas alrededor del mundo —incluyendo centros industriales clave en Sudamérica—, adaptando configuraciones específicas de suspensión y calibración de motores para soportar los terrenos más hostiles, desde las exigentes rutas rurales y el trabajo agropecuario hasta los caminos off-road más extremos. Asimismo, su arquitectura ha servido de base para diversos desarrollos globales de la marca dentro del segmento de vehículos comerciales livianos.\n\n## Competencia y posicionamiento\nEn el mercado actual, la Ford Ranger se posiciona firmemente en el corazón del segmento de pick-ups medianas, compitiendo mano a mano con referentes históricos de la industria como la Toyota Hilux, la Volkswagen Amarok, la Chevrolet S10 y la Nissan Frontier. Su principal ventaja competitiva radica en el equilibrio logrado entre capacidades de trabajo puro —como su capacidad de vadeo, despeje del suelo y torque en baja— y un despliegue tecnológico superior en materia de asistencias a la conducción (ADAS), conectividad mediante pantallas táctiles de gran formato y sistemas de tracción inteligente. Esto le permite capturar con éxito tanto al usuario corporativo y del sector agropecuario como a aquellos compradores particulares que buscan un vehículo polivalente para el uso diario y las actividades al aire libre."
 }

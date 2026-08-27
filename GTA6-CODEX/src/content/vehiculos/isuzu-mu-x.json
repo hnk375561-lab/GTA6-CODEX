@@ -12,29 +12,29 @@
   "manufacturer": "Isuzu",
   "class": "SUV 4x4 grande",
   "customizable": false,
-  "power": "140 kW (188 hp / 190 CV) a 3.600 rpm",
-  "price": "USD 42.000 (LS-U 4x4, referencia mercado Asia-Pacífico)",
-  "consumo": "8.5 l/100km combinado (referencia fabricante)",
+  "power": "140 kW (190 CV) a 3.600 rpm",
+  "price": "USD 42.000 (referencia mercado Asia-Pacífico)",
+  "consumo": "8.5 l/100km combinado",
   "dimensiones": "4.850 mm largo x 1.870 mm ancho x 1.845 mm alto, distancia entre ejes 2.845 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Cifras de la versión 3.0L turbodiésel 4x4 (motor 4JJ3-TCX), la configuración de mayor volumen en mercados de Asia-Pacífico, Latinoamérica y África. Basado en el chasis de la pickup D-Max.",
-    "limitations": [
-      "Existen versiones 4x2 con precio menor",
-      "Precio y equipamiento varían fuerte por país de venta",
-      "No se vende oficialmente en Europa Occidental ni Norteamérica"
-    ],
     "primarySource": "https://www.isuzu.com.py/mu-x/",
-    "secondarySource": "https://vamos.es/ficha-tecnica/isuzu-mu-x-automatico/"
+    "secondarySource": "https://vamos.es/ficha-tecnica/isuzu-mu-x-automatico/",
+    "note": "Se verificaron las especificaciones técnicas del motor 3.0L 4JJ3-TCX, dimensiones y capacidades de la versión LS-U 4x4, utilizando como base la información oficial de Isuzu y portales especializados.",
+    "limitations": [
+      "Existen versiones 4x2 con precios y configuraciones menores",
+      "Los precios y el equipamiento varían fuertemente según el país de comercialización",
+      "No se comercializa oficialmente en Europa Occidental ni en Norteamérica"
+    ]
   },
   "performance": {
     "speed": "180 km/h (referencia)",
     "acceleration": "0-100 km/h en 11.0s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-26T07:35:35.931Z",
-  "transmision": "Automática 6 velocidades (Rev-Tronic secuencial)",
-  "traccion": "4x4 selectable con reductora (Terrain Command)",
+  "updatedAt": "2026-08-27T01:47:19.960Z",
+  "transmision": "Automática de 6 velocidades (Rev-Tronic secuencial)",
+  "traccion": "4x4 conectable con reductora (Terrain Command)",
   "peso": "2.075 kg",
   "tipoMotor": "Diésel turbo 4 cilindros en línea (4JJ3-TCX)",
   "potenciaKW": "140 kW",
@@ -134,10 +134,10 @@
   "emisiones": "CO2 220 g/km (referencia)",
   "tipo": "SUV 4x4 grande",
   "asientos": 7,
-  "baul": "311 litros (3ra fila arriba) / hasta 1.830 litros (asientos abatidos)",
+  "baul": 311,
   "maleteroMin": null,
   "generacion": "Tercera generación (2020-presente)",
-  "anoLanzamiento": "2020",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "vehiculo",
   "gallery": {
@@ -213,7 +213,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T07:35:35.925Z",
+    "lastChecked": "2026-08-27T01:47:19.960Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -247,5 +247,6 @@
     ],
     "auditNotes": "Lote 6 (ago 2026): datos de la versión LS-U 4x4 3.0L, mercado Asia-Pacífico/Latinoamérica.",
     "dataQuality": 0.85
-  }
+  },
+  "content": "## Historia del modelo\nEl Isuzu MU-X es un SUV grande de tipo todoterreno que hunde sus raíces en la sólida trayectoria de la marca japonesa en el desarrollo de vehículos comerciales y pickups. Heredero espiritual de los antiguos Isuzu MU y Trooper, el MU-X adopta la plataforma de largueros y travesaños de la exitosa pickup Isuzu D-Max. Esta arquitectura de bastidor independiente le otorga una robustez estructural ideal para el uso intensivo fuera del camino y para soportar exigentes tareas de arrastre, diferenciándose claramente de los SUV basados en monocasco.\n\n## Un hito o generación relevante\nLa tercera generación del Isuzu MU-X, presentada globalmente en 2020, marcó un punto de inflexión radical frente a sus predecesores. En esta etapa, el modelo dejó atrás definitivamente la percepción de ser un simple vehículo utilitario carrozado para adoptar un enfoque mucho más sofisticado. Incorporó un diseño exterior más aerodinámico y moderno, mejoras sustanciales en la calidad percibida del habitáculo, y un despliegue tecnológico inédito para la marca. Entre las novedades más destacadas de esta generación se encuentra la incorporación del conjunto de asistencias a la conducción denominado Isuzu Intelligent Driver Assistance (IDAS), elevando los estándares de seguridad activa para competir de tú a tú en los mercados internacionales.\n\n## Curiosidades\nA pesar de no contar con la misma penetración mediática en Occidente que sus rivales norteamericanos o europeos, el Isuzu MU-X goza de una reputación envidiable de indestructibilidad en regiones donde la fiabilidad mecánica es el factor de compra primordial. Una de sus grandes virtudes es el motor turbodiésel de 3.0 litros (código 4JJ3-TCX), un bloque reconocido mundialmente por su durabilidad extrema y su capacidad para operar en condiciones climáticas y geográficas muy adversas. Además, comparte gran parte de su arquitectura mecánica con la D-Max, lo que facilita enormemente la disponibilidad de repuestos y accesorios de personalización todoterreno en los mercados de Asia-Pacífico y Latinoamérica.\n\n## Competencia y posicionamiento\nEn el plano comercial, el Isuzu MU-X compite en el segmento de los SUV medianos y grandes derivados de pickups, un nicho altamente disputado especialmente en mercados como Australia, el sudeste asiático y varios países de Latinoamérica. Sus principales rivales directos son vehículos como el Toyota Hilux SW4 (conocido simplemente como Fortuner en otros mercados), el Mitsubishi Pajero Sport, el Ford Everest y el Chevrolet Trailblazer. Frente a ellos, el MU-X se posiciona como una opción de excelente relación precio-producto, destacándose por su chasis de alta resistencia, su sistema de tracción 4x4 con reductora (Terrain Command) y un enfoque que prioriza la durabilidad mecánica por encima de los lujos superfluos, sin dejar de ofrecer acabados de categoría en sus versiones tope de gama."
 }

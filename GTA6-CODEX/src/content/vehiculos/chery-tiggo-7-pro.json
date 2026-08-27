@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.336Z",
-  "updatedAt": "2026-08-25T23:22:07.293Z",
+  "updatedAt": "2026-08-27T01:34:50.491Z",
   "manufacturer": "Chery",
   "class": "SUV",
   "customizable": false,
@@ -20,20 +20,25 @@
     "speed": "180 km/h",
     "acceleration": "0-100 km/h en 10.7s"
   },
-  "power": "147 hp",
-  "price": "USD 27.000",
+  "power": "147 CV",
+  "price": "USD 27.000 (referencia regional)",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.chery.com.ar/tiggo-7-pro"
+    "primarySource": "https://www.chery.com.ar",
+    "note": "Se verificaron las especificaciones técnicas principales del Chery Tiggo 7 Pro para el mercado latinoamericano, incluyendo su motorización 1.5 turbo, dimensiones, capacidades y opciones de transmisión.",
+    "limitations": [
+      "Los precios y niveles de equipamiento exactos pueden variar según el mercado específico de Sudamérica.",
+      "Algunas cifras de consumo dependen fuertemente de las condiciones de manejo y homologación local."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática CVT (9 marchas simuladas) o manual de 6 velocidades",
+  "traccion": "Delantera (FWD)",
+  "peso": "1429 kg",
+  "tipoMotor": "Naftero 1.5L Turbo",
+  "potenciaKW": "108 kW",
+  "capacidadTanque": "51 litros",
+  "tiempoRecorrido": "0-100 km/h en 10.7s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -119,16 +124,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "7.5 L/100 km aprox.",
+  "dimensiones": "4500 x 1842 x 1746 mm",
+  "cilindrada": "1498 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 414,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra generación (fase actual Pro)",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -252,7 +257,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.326Z",
+    "lastChecked": "2026-08-27T01:34:50.491Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +310,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Chery Tiggo 7 Pro forma parte de la exitosa familia de SUV medianas del fabricante chino Chery, diseñada para consolidar su presencia global y competir de igual a igual en el segmento C-SUV. Desde su lanzamiento inicial, la gama Tiggo ha evolucionado notablemente en términos de diseño, calidad percibida y adopción tecnológica, distanciándose de los primeros productos de marcas chinas que llegaron a los mercados occidentales. La variante 'Pro' introdujo una renovación estética profunda, un habitáculo mucho más sofisticado y una puesta a punto orientada al confort y la conectividad, pilares fundamentales para capturar a un público cada vez más exigente en América Latina y otras regiones emergentes.\n\n## Un hito y diseño relevante\nUn hito clave en la trayectoria del Tiggo 7 Pro ha sido su rápida adopción como uno de los productos globales más importantes de Chery, fabricado bajo estrictos estándares de calidad internacional. Su lenguaje de diseño exterior incorpora una parrilla frontal de gran porte con detalles tridimensionales, ópticas delanteras y traseras con tecnología LED completa y una silueta lateral moderna con techo flotante, recurso muy valorado en el segmento de los crossovers actuales. Puertas adentro, el salto cualitativo es evidente gracias a la implementación de pantallas digitales múltiples, comandos táctiles para la climatización y materiales de tacto agradable que mejoran la experiencia a bordo tanto para el conductor como para los pasajeros.\n\n## Curiosidades y motorización\nBajo el capot, el Chery Tiggo 7 Pro confía en un impulsor naftero de 4 cilindros y 1.5 litros dotado de turbocompresor, una arquitectura muy difundida que busca equilibrar una respuesta ágil en ciudad con consumos contenidos en ruta. Entre las curiosidades de su desarrollo se destaca la calibración de su transmisión automática —generalmente una caja CVT que simula marchas—, pensada para priorizar la suavidad de marcha por sobre las pretensiones deportivas. Además, su arquitectura incluye suspensiones independientes en las cuatro ruedas (tipo McPherson adelante y Multilink atrás), un detalle técnico que no siempre está presente en rivales directos de su franja de precio y que le otorga un andar aplomado en rutas pavimentadas.\n\n## Competencia y posicionamiento\nEn el mercado actual, el Chery Tiggo 7 Pro se posiciona estratégicamente en el corazón del segmento de las SUV medianas, compitiendo contra pesos pesados tradicionales como el Toyota Corolla Cross, el Jeep Compass, el Volkswagen Taos y el Chevrolet Tracker (en sus versiones más equipadas), además de otros contrincantes de origen asiático. Su principal argumento de venta radica en la excelente relación entre precio, nivel de equipamiento tecnológico, espacio interior y seguridad, ofreciendo asistencias a la conducción (ADAS) y elementos de confort que en marcas generalistas tradicionales suelen reservarse para versiones tope de gama mucho más costosas."
 }

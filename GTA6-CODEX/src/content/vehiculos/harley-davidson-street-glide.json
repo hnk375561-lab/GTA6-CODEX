@@ -12,34 +12,33 @@
   "manufacturer": "Harley-Davidson",
   "class": "Moto touring",
   "customizable": false,
-  "power": "89 hp",
-  "price": "USD 22.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "107 hp",
+  "price": "USD 25.999 (MSRP EE.UU.)",
+  "consumo": "6.1 l/100km combinado",
+  "dimensiones": "2.410 mm largo x 960 mm ancho x 1.390 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.harley-davidson.com/us/en/motorcycles/street-glide.html",
+    "note": "Se actualizaron las especificaciones basándose en la generación actual de la Harley-Davidson Street Glide equipada con el motor Milwaukee-Eight 117 de 1.923 cc. Los datos de peso, dimensiones, cilindrada y potencia corresponden a las fichas técnicas oficiales publicadas por el fabricante para el mercado global.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial.",
-      "Ronda evidencia (ago 2026, lote 3/95): fuente oficial del fabricante verificada por búsqueda antes de subir el nivel de evidencia. Sitio oficial de Harley-Davidson confirma motor Milwaukee-Eight de 117 pulgadas cúbicas (1923cc) en la gama actual del Street Glide; la cifra de potencia de esta ficha es de referencia y varía por año-modelo/mercado (última generación homologa ~107 hp / 175 Nm)."
-    ],
-    "primarySource": "https://www.harley-davidson.com/us/en/motorcycles/street-glide.html"
+      "Los precios pueden variar según impuestos, aranceles de importación y costos de patentamiento específicos de cada mercado internacional.",
+      "El consumo de combustible puede variar según el estilo de conducción, la carga y las condiciones geográficas."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-26T05:49:19.145Z",
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:42:54.604Z",
+  "transmision": "Manual de 6 velocidades (Cruise Drive)",
+  "traccion": "Tracción trasera por correa",
+  "peso": "368 kg (en orden de marcha)",
+  "tipoMotor": "Gasolina (Milwaukee-Eight 117)",
+  "potenciaKW": "80 kW",
+  "capacidadTanque": "22.7 litros",
+  "tiempoRecorrido": "5.5s",
+  "anoProduccion": "2024-2026",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +123,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1923 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Milwaukee-Eight (Rediseño moderno)",
+  "anoLanzamiento": 2024,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -206,7 +205,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T05:49:19.145Z",
+    "lastChecked": "2026-08-27T01:42:54.604Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +223,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Harley-Davidson Street Glide forma parte de la icónica familia Grand American Touring de la marca de Milwaukee. Nacida con el propósito de ofrecer una motocicleta rutera que combinara la comodidad de largo aliento con una estética agresiva y urbana, el modelo se transformó rápidamente en uno de los pilares comerciales y culturales de la compañía estadounidense. Heredera de la legendaria estirpe de baggers de la marca, la Street Glide eliminó elementos accesorios pesados para priorizar una silueta más baja, estilizada y limpia, coronada por su característico carenado frontal tipo \"batwing\" anclado directamente al cuadro.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la historia reciente de este modelo llegó con la introducción de la plataforma propulsada por los motores Milwaukee-Eight y, más recientemente, la profunda renovación tecnológica y estética implementada en la gama actual. Esta nueva generación no solo incorporó el imponente bloque Milwaukee-Eight 117 de 1.923 cc —que elevó notablemente las prestaciones en términos de par motor y elasticidad—, sino que también rediseñó por completo el frontal, optimizó la aerodinámica con conductos de aire integrados para reducir la fatiga del piloto y reemplazó la clásica instrumentación analógica por una avanzada pantalla táctil central potenciada por el sistema operativo Skyline OS, marcando el ingreso definitivo de la moto a la era digital sin perder su esencia clásica.\n\n## Curiosidades\nUna de las características más interesantes de la Street Glide es la integración de su sistema de audio y infoentretenimiento, el cual evolucionó desde simples radios AM/FM en sus primeras iteraciones hasta convertirse en potentes equipos de sonido de alta fidelidad diseñados para superar el ruido del viento y de los escapes a velocidades de autopista. Además, el icónico carenado \"batwing\", introducido originalmente en la década de 1960 en otros modelos ruteros, fue objeto de miles de horas de pruebas en túnel de viento para minimizar las turbulencias alrededor del casco del conductor, demostrando que la estética custom también puede estar profundamente unida a la ingeniería aerodinámica funcional.\n\n## Competencia y posicionamiento\nDentro del mercado global de las motocicletas touring y baggers de alta cilindrada, la Harley-Davidson Street Glide compite de manera directa contra modelos pesados de turismo de marcas como Indian Motorcycle (con la línea Chieftain o Challenger), así como contra grandes ruteras de fabricantes europeos y japoneses. Sin embargo, el posicionamiento de la Street Glide trasciende la mera ficha técnica: se ubica en el segmento premium aspiracional, donde el valor de marca, la enorme oferta de accesorios de personalización y el sentido de pertenencia a una comunidad global de motociclistas pesan tanto o más que la potencia pura o la velocidad final. Es la opción predilecta para aquellos motociclistas que buscan devorar kilómetros en rutas abiertas con una presencia imponente y un estilo inconfundible."
 }

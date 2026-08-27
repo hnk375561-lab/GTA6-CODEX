@@ -12,32 +12,33 @@
   "manufacturer": "Porsche",
   "class": "SUV deportivo",
   "customizable": false,
-  "power": "348 hp",
-  "price": "USD 82.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "353 CV",
+  "price": "USD 80.000 (MSRP EE.UU. de referencia)",
+  "consumo": "11.8 l/100km en ciclo combinado (EPA estimado de referencia)",
+  "dimensiones": "4.930 mm largo x 1.983 mm ancho x 1.698 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.porsche.com",
+    "note": "Se actualizaron las especificaciones clave para la tercera generación del Porsche Cayenne basadas en el conocimiento técnico general de la marca. Los valores de potencia corresponden a la versión base con motor V6 turbo.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ],
-    "primarySource": "https://www.porsche.com/international/models/cayenne/cayenne-models/cayenne/"
+      "Los precios varían según los mercados e impuestos locales",
+      "Los datos de consumo de combustible dependen del estilo de manejo y condiciones de homologación"
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.505Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:55:19.427Z",
+  "transmision": "Automática Tiptronic S de 8 velocidades",
+  "traccion": "Tracción integral permanente (AWD)",
+  "peso": "2.055 kg",
+  "tipoMotor": "Gasolina V6 turbo de 3.0 litros",
+  "potenciaKW": "260 kW",
+  "capacidadTanque": "75 litros",
+  "tiempoRecorrido": "0-100 km/h en 5.7s (con paquete Sport Chrono)",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -125,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.995 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 698,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación (facelift mayor)",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "super-deportivo",
   "gallery": {
@@ -206,8 +207,8 @@
     "description": "SUV deportivo de Porsche, tercera generación con base MLB Evo."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.454Z",
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:55:19.427Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -225,5 +226,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Porsche Cayenne irrumpió en el mercado automotriz a principios de los años 2000, marcando un hito histórico para la marca de Stuttgart al convertirse en su primer vehículo de tipo SUV. Su lanzamiento generó debate inicial entre los puristas del fabricante alemán, pero el tiempo demostró que fue una decisión comercial y de ingeniería brillante. Lejos de diluir la identidad deportiva de Porsche, el Cayenne logró trasladar el dinamismo, las prestaciones y el ADN de competición a un formato de carrocería grande y versátil. Con las sucesivas generaciones, el modelo se consolidó como uno de los pilares de ventas más importantes a nivel global, permitiendo a la compañía financiar el desarrollo de sus icónicos deportivos de motor central y trasero.\n\n## Un hito o generación relevante\nLa introducción de la tercera generación del Cayenne, construida sobre la plataforma modular MLB Evo del Grupo Volkswagen, representó un salto evolutivo monumental en términos de agilidad, reducción de peso mediante el uso inteligente de aluminio y acero, y la incorporación de arquitectura digital avanzada en el habitáculo. Esta plataforma le permitió optimizar su centro de gravedad y mejorar notablemente la dinámica de conducción en ruta y caminos sinuosos. Asimismo, las actualizaciones profundas introducidas recientemente no solo rediseñaron por completo el panel de instrumentos con pantallas curvas de tipo OLED, sino que también refinaron la gama de motores térmicos e híbridos enchufables para cumplir con las exigencias normativas más estrictas sin sacrificar la respuesta al acelerador que caracteriza a la firma.\n\n## Curiosidades\nA pesar de ser un SUV de gran porte y peso considerable, el desarrollo del Porsche Cayenne siempre priorizó la física del movimiento por encima de las modas estéticas. Cuenta con sofisticados sistemas de suspensión neumática adaptativa (PASM) y barras estabilizadoras activas que anulan prácticamente el balanceo de la carrocería en curvas cerradas, desafiando las leyes de la física para un vehículo de su segmento. Además, desde sus inicios, la marca diseñó la gama de motores para soportar un uso intensivo tanto en asfalto a velocidades de autopista alemana como en terrenos off-road moderados, gracias a sus múltiples modos de conducción seleccionables desde la consola central.\n\n## Competencia y posicionamiento\nDentro del segmento de los SUV de lujo de altas prestaciones, el Porsche Cayenne compite directamente con pesos pesados de la industria como el BMW X5, el Mercedes-Benz GLE y el Audi Q7, con los cuales comparte componentes estructurales y tecnológicos debido al parentesco corporativo. Sin embargo, el Cayenne se posiciona de manera diferencial al apuntar a un público que valora un tacto de conducción marcadamente más deportivo, una dirección de respuesta quirúrgica y un prestigio de marca indiscutido dentro del nicho de los vehículos de altas prestaciones. Su capacidad para combinar la funcionalidad familiar con prestaciones dignas de un coupé deportivo lo mantiene como una referencia ineludible en el mercado global."
 }

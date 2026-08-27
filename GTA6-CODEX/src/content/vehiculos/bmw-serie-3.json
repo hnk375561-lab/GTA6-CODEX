@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.977Z",
-  "updatedAt": "2026-08-25T23:22:07.276Z",
+  "updatedAt": "2026-08-27T02:44:31.099Z",
   "manufacturer": "BMW",
   "class": "Sedán premium",
   "customizable": false,
@@ -20,20 +20,25 @@
     "speed": "Alta (250 km/h)",
     "acceleration": "Alta (0-100 km/h en 5.8s)"
   },
-  "power": "255 hp",
-  "price": "USD 58.000",
+  "power": "258 hp",
+  "price": "USD 45.000 (MSRP EE.UU.)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.bmw.com.ar/es/all-models/3-series/sedan/2022/bmw-3-series-sedan.html"
+    "level": "respaldado",
+    "secondarySource": "https://www.km77.com/coches/bmw/serie-3/2024/datos",
+    "note": "Se verificaron las especificaciones técnicas y dimensiones globales para la séptima generación del BMW Serie 3 (G20) a través de bases de datos especializadas y portales oficiales. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado local, impuestos y aranceles de importación en Argentina.",
+      "Las cifras de consumo y aceleración pueden variar según la versión específica (320i, 330i o variantes xDrive)."
+    ]
   },
-  "transmision": "8 velocidades automática (Steptronic)",
-  "traccion": "Trasera (RWD) o xDrive (AWD) según versión",
-  "peso": "1.526-1.620 kg (según motorización)",
-  "tipoMotor": "Gasolina turbo (opción híbrida enchufable 330e disponible)",
-  "potenciaKW": "135-190 kW (184-258 hp según motorización)",
+  "transmision": "Automática de 8 velocidades (Steptronic)",
+  "traccion": "Trasera (RWD) o xDrive (AWD)",
+  "peso": "1.526 kg",
+  "tipoMotor": "Gasolina 2.0L TwinPower Turbo de 4 cilindros",
+  "potenciaKW": "190 kW",
   "capacidadTanque": "59 litros",
-  "tiempoRecorrido": "5.7s-7.1s 0-100 km/h (según motorización)",
-  "anoProduccion": "2019-presente (generación G20), con facelift en 2022",
+  "tiempoRecorrido": "5.8s (0-100 km/h)",
+  "anoProduccion": "2019-presente",
   "mercados": [
     "Europa",
     "Argentina",
@@ -51,13 +56,13 @@
   ],
   "consumoEtiqueta": "E",
   "neumaticos": "225/50R17",
-  "cilindrada": "1.998 cc (2.0 turbo, 4 cilindros)",
+  "cilindrada": "1.998 cc",
   "emisiones": "CO2 158-166 g/km (WLTP, versión 330i xDrive)",
   "tipo": "Sedán premium",
   "asientos": 5,
-  "baul": "480 litros",
+  "baul": 480,
   "maleteroMin": "480 litros",
-  "generacion": "Séptima generación (G20), lanzada en 2019, con facelift en 2022",
+  "generacion": "Séptima generación (G20)",
   "anoLanzamiento": 2019,
   "colores": [
     "Alpine White",
@@ -140,8 +145,8 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
+  "consumo": "6.5 L/100 km (mixto WLTP)",
+  "dimensiones": "4713 x 1827 x 1440 mm",
   "category": "otros",
   "gallery": {
     "images": {
@@ -269,8 +274,8 @@
     "description": "Sedán premium de BMW, motor 2.0L turbo de 4 cilindros, tracción trasera."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.316Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:44:31.099Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -323,5 +328,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl BMW Serie 3 es el pilar fundamental sobre el cual se sostiene la reputación de deportividad y dinamismo de la marca bávara. Desde el lanzamiento de su primera generación en 1975, este sedán compacto ejecutivo redefinió lo que un conductor podía esperar de un vehículo de tracción trasera enfocado en el uso diario. A lo largo de las décadas, evolucionó a través de iteraciones icónicas que consolidaron su estatus como la referencia indiscutida del segmento frente a una competencia histórica muy reñida.\n\n## Un hito o generación relevante\nLa séptima generación, conocida bajo el código interno G20 y lanzada comercialmente en 2019 con posteriores actualizaciones estéticas y tecnológicas, representa un salto evolutivo clave. Construido sobre la plataforma modular CLAR, el G20 logró una notable reducción de peso y un incremento sustancial en la rigidez torsional respecto a su predecesor. Esto se traduce en una agilidad superior en curvas y un confort de marcha optimizado, complementado por la integración del sistema BMW Live Cockpit y asistencias a la conducción de última generación, todo sin perder el tradicional reparto de pesos equilibrado.\n\n## Curiosidades\nA pesar de la fama histórica de los motores de seis cilindros en línea de la marca, las variantes de cuatro cilindros sobrealimentadas mediante tecnología TwinPower Turbo —como el bloque presente en las versiones 320i y 330i— se han consolidado como el verdadero corazón comercial y de ingeniería del modelo. Logran un equilibrio sobresaliente entre consumos contenidos en ruta y una entrega de torque inmediata desde bajas revoluciones, manteniendo viva la esencia dinámica en mercados globales muy diversos.\n\n## Competencia y posicionamiento\nEn el mercado automotriz actual, el BMW Serie 3 ocupa un rol estratégico como el sedán ejecutivo de espíritu más marcadamente deportivo. Se posiciona de manera directa frente a contrincantes de origen alemán como el Mercedes-Benz Clase C y el Audi A4. Mientras que el Clase C suele priorizar el confort de marcha y el lujo clásico, y el Audi A4 apuesta fuertemente por la tracción integral y la sobriedad tecnológica, el Serie 3 mantiene su liderazgo apostando firmemente por el tacto de dirección, la precisión del chasis y una experiencia general orientada al conductor exigente."
 }

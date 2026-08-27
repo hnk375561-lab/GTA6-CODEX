@@ -13,32 +13,31 @@
   "class": "Hatchback eléctrico",
   "customizable": false,
   "power": "75 hp",
-  "price": "USD 17.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "USD 17.000 (referencia regional)",
+  "consumo": "Aprox. 11-12 kWh/100 km",
+  "dimensiones": "3.780 mm largo x 1.715 mm ancho x 1.540 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.byd.com/ar/car/dolphin-mini",
+    "note": "Se ajustaron los datos erróneos de la carga masiva inicial (que incluían valores de motores de combustión y dimensiones de un segmento superior) por las especificaciones reales del BYD Dolphin Mini / Seagull basadas en la plataforma e-Platform 3.0.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
-    ],
-    "primarySource": "https://www.byd.com/ar/car/dolphin-mini"
+      "El precio y la autonomía exacta pueden variar según el mercado de importación y la capacidad de batería seleccionada (Blade Battery de 30 kWh o 38 kWh)."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.282Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-250 kW",
+  "updatedAt": "2026-08-27T01:33:36.419Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Delantera",
+  "peso": "1.160 - 1.240 kg",
+  "tipoMotor": "Eléctrico síncrono de imanes permanentes",
+  "potenciaKW": "55 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "0-100 km/h en aprox. 14.9s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -121,11 +120,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 4,
+  "baul": 230,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra generación (Plataforma e-Platform 3.0)",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "auto-pequeño",
   "gallery": {
@@ -199,8 +198,8 @@
     "description": "Eléctrico urbano de entrada de BYD, comercializado en varios mercados como Seagull/Dolphin Mini."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.320Z",
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:33:36.419Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -218,5 +217,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl BYD Dolphin Mini, conocido globalmente en varios mercados de exportación y en su país de origen como BYD Seagull, representa la apuesta más ambiciosa de la marca china para democratizar la movilidad eléctrica urbana a nivel global. Presentado oficialmente en el Salón del Automóvil de Shanghái en abril de 2023, este citycar se convirtió rápidamente en un fenómeno de ventas gracias a su enfoque disruptivo que combina tecnología de punta con un costo de adquisición sumamente competitivo para los estándares de los vehículos cero emisiones.\n\n## Un hito o generación relevante\nEl gran hito tecnológico detrás del Dolphin Mini es la utilización de la avanzada e-Platform 3.0 desarrollada íntegramente por BYD, así como la incorporación de su famosa batería Blade (de tipo LFP - fosfato de hierro y litio), reconocida mundialmente por sus excelentes estándares de seguridad frente a incendios y su alta durabilidad a lo largo de los ciclos de carga. Con este modelo, la marca logró trasladar componentes y asistencias de seguridad típicos de segmentos superiores hacia el segmento de entrada de gama urbano.\n\n## Curiosidades\nUna de las curiosidades más notables del desarrollo del Dolphin Mini es su lenguaje de diseño, bautizado internamente como «estética marina», el cual busca emular las líneas dinámicas de una gaviota en vuelo (de ahí su nombre original Seagull). Además, a pesar de sus contenidas dimensiones exteriores (por debajo de los 3,8 metros de largo), el aprovechamiento del espacio interior gracias a su distancia entre ejes optimizada para plataformas puramente eléctricas permite acomodar cómodamente a cuatro adultos, sorprendiendo gratamente en el uso diario metropolitano.\n\n## Competencia y posicionamiento\nEn el plano internacional, el BYD Dolphin Mini compite directamente contra una nueva ola de vehículos urbanos eléctricos económicos, tales como el Dacia Spring en Europa o diversos hatchbacks compactos eléctricos en los mercados asiáticos y de América Latina. Su posicionamiento estratégico busca captar a conductores urbanos que buscan su primer vehículo ecológico o un segundo auto para la ciudad, ofreciendo un balance muy atractivo entre costo operativo ultra bajo, dimensiones idóneas para el tráfico denso y un nivel de equipamiento tecnológico que redefine las expectativas de su categoría."
 }

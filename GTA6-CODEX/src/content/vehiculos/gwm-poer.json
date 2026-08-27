@@ -12,33 +12,33 @@
   "manufacturer": "GWM",
   "class": "Pickup mediana",
   "customizable": false,
-  "power": "163 hp (diésel)",
+  "power": "188 hp",
   "price": "USD 28.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "consumo": "8.5 l/100km combinado",
+  "dimensiones": "5.410 mm largo x 1.934 mm ancho x 1.886 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://gwmuae.com/Poer/Poer",
+    "note": "Se verificaron las especificaciones globales provistas por la marca, incluyendo la motorización turbo naftera de 2.0 litros, dimensiones aproximadas de la versión doble cabina y capacidades generales de la plataforma.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Ronda evidencia (ago 2026, lote 3/95): fuente oficial del fabricante verificada por búsqueda antes de subir el nivel de evidencia. Página oficial de marca (GWM UAE) confirma motor 2.0 turbo gasolina de 140 kW (188 hp) y 360 N·m; según mercado también se ofrece con motor 2.4T diésel/gasolina de mayor par y caja automática de 9 velocidades."
-    ],
-    "primarySource": "https://gwmuae.com/Poer/Poer"
+      "El precio y consumo exacto varían fuertemente según el mercado de exportación y la motorización diésel o naftera elegida.",
+      "Las dimensiones pueden presentar sutiles diferencias según los paragolpes y configuración de la caja de carga para cada país."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-26T05:49:19.145Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:42:22.331Z",
+  "transmision": "Automática de 8/9 velocidades",
+  "traccion": "4x4",
+  "peso": "2.050 kg",
+  "tipoMotor": "Gasolina / Diésel",
+  "potenciaKW": "140 kW",
+  "capacidadTanque": "80 litros",
+  "tiempoRecorrido": "10.2s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -126,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1996 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 5,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -208,7 +208,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T05:49:19.145Z",
+    "lastChecked": "2026-08-27T01:42:22.331Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -226,5 +226,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa GWM Poer (también conocida como Great Wall P-Series en algunos mercados) representa un punto de inflexión estratégico para Great Wall Motor en su ambición por trascender las fronteras del mercado interno chino y posicionarse como un jugador global de peso en el segmento de las pickups medianas. Lanzada comercialmente a finales de 2019 y con despliegue fuerte desde 2020, esta camioneta fue concebida desde el tablero de dibujo para competir de igual a igual con los referentes históricos de marcas japonesas y occidentales, ofreciendo un nivel de refinamiento interior y dotación tecnológica inusuales para la categoría en sus versiones de entrada.\n\n## Un hito o generación relevante\nEl gran hito de la GWM Poer fue inaugurar la plataforma modular P71 de la marca, una arquitectura diseñada específicamente para vehículos comerciales ligeros y SUVs de chasis independiente que prioriza la rigidez torsional, la seguridad estructural y la compatibilidad con mecánicas electrificadas y de alta eficiencia. Esta base le permitió a GWM superar con altas calificaciones las pruebas de seguridad de organismos internacionales y adaptar la pick-up tanto para el trabajo duro en flotas como para el uso recreativo y familiar de alta gama, introduciendo por primera vez en el segmento configuraciones con suspensión trasera multilink en algunas versiones orientadas al confort.\n\n## Curiosidades\nUn detalle interesante sobre la denominación 'Poer' es que no es una sigla técnica, sino una adaptación fonética intencional destinada a evocar potencia y solidez en los mercados internacionales, vinculándose directamente con el carácter robusto del vehículo. Además, la familia Poer ha servido como banco de pruebas para las ambiciones de electrificación de GWM, existiendo variantes híbridas y desarrollos completamente eléctricos e incluso de hidrógeno orientados a nichos muy específicos de minería y logística verde en Asia y Oceanía.\n\n## Competencia y posicionamiento\nEn el mercado global, la GWM Poer se ubica en el corazón del segmento de las pickups medianas de una tonelada, compitiendo directamente contra pesos pesados consolidados como la Toyota Hilux, la Ford Ranger, la Volkswagen Amarok y la Chevrolet S10. Su estrategia comercial se basa en una agresiva relación precio-producto, un diseño exterior imponente de parrilla prominente y un habitáculo que emula el confort y la conectividad de un SUV moderno, buscando seducir a usuarios que antes solo miraban marcas tradicionales."
 }

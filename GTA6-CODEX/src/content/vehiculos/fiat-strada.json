@@ -13,28 +13,33 @@
   "manufacturer": "Fiat",
   "class": "Pickup compacta",
   "customizable": false,
-  "power": "107 hp",
-  "price": "USD 20.000",
-  "consumo": "6.8 l/100km (mixto)",
-  "dimensiones": "4498 x 1735 x 1650 mm",
+  "power": "99 CV (Firefly 1.3) o 120 CV (Turbo 200)",
+  "price": "ARS 22.000.000 (referencia mercado local, sujeto a versiones)",
+  "consumo": "7.1 l/100km (mixto aprox.)",
+  "dimensiones": "4480 x 1732 x 1598 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.fiat.com.ar/strada"
+    "level": "respaldado",
+    "secondarySource": "https://nuevastrada.fiat.com.ar",
+    "note": "Se verificaron las motorizaciones actuales de la Fiat Strada para el mercado regional, incluyendo el motor Firefly 1.3L de 99 CV y el motor T200 Turbo 1.0L de 120 CV, así como las transmisiones manual y automática CVT mediante la información oficial de Fiat.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y el mercado local en Argentina",
+      "Los consumos exactos varían según versiones y condiciones de manejo"
+    ]
   },
   "performance": {
     "speed": "175 km/h",
     "acceleration": "0-100 km/h en 11.0s"
   },
   "createdAt": "2026-08-23T21:59:07.061130Z",
-  "updatedAt": "2026-08-25T23:22:07.353Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T02:49:07.835Z",
+  "transmision": "Manual de 5 marchas o Automática CVT de 7 velocidades",
+  "traccion": "Delantera (FWD)",
+  "peso": "1185 - 1250 kg",
+  "tipoMotor": "Naftero",
+  "potenciaKW": "73 kW (1.3) / 88 kW (Turbo 200)",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 9.5s (Turbo) a 11.5s (1.3)",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1332 cc (Turbo) / 1332 cc (Firefly 1.3)",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 844,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (con actualización de motor turbo y caja CVT)",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -251,8 +256,8 @@
     "description": "Pickup compacta de Fiat, líder de su segmento en varios países de la región, motor turbo 1.3L."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.373Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:49:07.835Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +310,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Fiat Strada es una de las pick-ups compactas más exitosas de la región sudamericana, con una trayectoria que comenzó a finales de la década de 1990 basada en la plataforma del popular Fiat Palio. A lo largo de los años, se consolidó firmemente como la herramienta de trabajo preferida por pequeños comerciantes, flotas corporativas y usuarios particulares que buscaban un vehículo noble, económico y de bajo costo de mantenimiento operativo.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la historia de la Strada ocurrió en 2020 con el lanzamiento comercial de su segunda generación. Este cambio total no sólo introdujo una estética completamente renovada alineada con el nuevo lenguaje de diseño global de la marca —incorporando por primera vez una silueta de cabina doble (Double Cab) de cuatro puertas y cinco plazas verdaderamente funcional—, sino que también mejoró drásticamente la rigidez estructural, la seguridad activa y pasiva, y la capacidad de carga útil, adaptándose tanto al uso laboral pesado como a la vida recreativa.\n\n## Curiosidades\nEntre sus aspectos más destacados, la Strada heredó soluciones inteligentes de habitabilidad y se convirtió rápidamente en el vehículo liviano más vendido de su categoría en países clave como Brasil y Argentina. Recientemente, la gama se amplió de manera notable con la llegada de las esperadas variantes equipadas con motorización turbo (asociadas a una moderna caja automática CVT), lo que le otorgó una dinámica de conducción mucho más ágil tanto en ruta como en el tránsito urbano, respondiendo de este modo a una demanda histórica de los usuarios que reclamaban mayor respuesta en adelantamientos.\n\n## Competencia y posicionamiento\nEn el mercado actual, la Fiat Strada compite de forma directa contra la Volkswagen Saveiro y, de manera más tangencial por cuestiones de tamaño y franja de precios, frente a pick-ups compactas monocasco de mayor porte como la Renault Oroch o versiones de entrada de gama de la Fiat Toro. Su posicionamiento sigue siendo sumamente competitivo gracias a su imbatible relación precio-producto, su amplia e histórica red de posventa en la región y la versatilidad de ofrecer configuraciones puramente orientadas al trabajo duro (Cabina Plus) junto a variantes de perfil familiar y tecnológico muy elevado (como los niveles Volcano y Ultra)."
 }

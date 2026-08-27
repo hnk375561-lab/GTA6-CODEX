@@ -12,15 +12,17 @@
   "manufacturer": "Mahindra",
   "class": "4x4 compacto",
   "customizable": false,
-  "power": "150 hp (diésel)",
-  "price": "USD 15.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "130 hp (Diésel) / 150 hp (Gasolina)",
+  "price": "USD 15.000 (Referencia mercado indio)",
+  "consumo": "12-15 km/l (aprox. 7-8 l/100km)",
+  "dimensiones": "3.985 mm largo x 1.820 mm ancho x 1.844 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://auto.mahindra.com/suv/thar",
+    "note": "Se utilizaron especificaciones técnicas de conocimiento general para la segunda generación del Mahindra Thar, incluyendo opciones de motorización mHawk y mStallion, dimensiones aproximadas y configuraciones de transmisión.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Los precios exactos varían según el mercado de exportación e impuestos locales.",
+      "Algunas cifras de rendimiento y aceleración son estimaciones basadas en pruebas de la prensa especializada."
     ]
   },
   "performance": {
@@ -28,15 +30,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.451Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:12:29.876Z",
+  "transmision": "Manual de 6 velocidades o Automática de 6 velocidades",
+  "traccion": "Tracción en las cuatro ruedas (4x4 con reductora)",
+  "peso": "1.750 kg",
+  "tipoMotor": "Turbo diésel mHawk / Gasolina mStallion",
+  "potenciaKW": "97 kW / 112 kW",
+  "capacidadTanque": "57 litros",
+  "tiempoRecorrido": "No publicado oficialmente",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.184 cc (diésel) / 1.997 cc (gasolina)",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 4,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -204,7 +206,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.426Z",
+    "lastChecked": "2026-08-27T01:12:29.876Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -222,5 +224,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Mahindra Thar es un vehículo todoterreno icónico fabricado por el gigante automotriz indio Mahindra & Mahindra. Su linaje se remonta indirectamente a los vehículos todoterreno de la Segunda Guerra Mundial y a los antiguos Jeep producidos bajo licencia en India desde la década de 1940 a través de Mahindra & Mahindra. El Thar original se lanzó al mercado en 2010 con el objetivo de capturar la esencia de los rústicos vehículos utilitarios clásicos de la marca, modernizándolos ligeramente para cumplir con las normativas vigentes y satisfacer tanto a entusiastas del off-road como a usuarios rurales.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la historia del modelo ocurrió en octubre de 2020, con la presentación de la segunda generación del Mahindra Thar. Este nuevo modelo marcó una evolución radical al dejar atrás la plataforma utilitaria y austera de su predecesor para adoptar un chasis completamente nuevo, una suspensión delantera independiente y opciones de motores mucho más refinados, tanto nafteros (mStallion) como diésel (mHawk). Además, introdujo por primera vez un nivel de confort, seguridad y tecnología interior (como infoentretenimiento con conectividad moderna y opciones de transmisión automática) que lo transformó en un vehículo apto tanto para la aventura extrema como para el uso diario en ciudad.\n\n## Curiosidades\nEl diseño exterior del Thar guarda un inconfundible parecido estético con los todoterrenos clásicos norteamericanos, lo que en su momento generó debates legales y atención mediática internacional sobre su silueta cuadrada, su parrilla frontal de barras verticales y sus guardabarros prominentes. A pesar de esto, el Thar se convirtió rápidamente en un fenómeno cultural en India, donde las listas de espera tras su lanzamiento superaron los varios meses debido a la alta demanda. Es considerado un vehículo de culto para los amantes del todoterreno extremo gracias a sus ángulos de ataque y salida generosos, su robusto sistema de tracción en las cuatro ruedas con caja reductora y su capacidad para vadear ríos poco profundos sin modificaciones complejas.\n\n## Competencia y posicionamiento\nEn el mercado indio y en ciertos mercados de exportación emergentes donde tiene presencia, el Mahindra Thar compite directamente en el segmento de los 4x4 compactos de estilo purista. Su principal rival histórico y comercial es el Force Gurkha, y más recientemente se enfrenta a la versión de cinco puertas de otros todoterrenos globales que han ingresado a su categoría. Se posiciona como una opción accesible, robusta y altamente capaz fuera del asfalto, ofreciendo una alternativa económica frente a los todoterrenos tradicionales de marcas prémium o generalistas occidentales."
 }

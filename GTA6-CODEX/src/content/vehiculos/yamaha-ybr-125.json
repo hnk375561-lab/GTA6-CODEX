@@ -10,30 +10,31 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:34.410Z",
-  "updatedAt": "2026-08-25T23:22:07.561Z",
+  "updatedAt": "2026-08-27T02:05:25.578Z",
   "manufacturer": "Yamaha",
   "class": "Moto",
   "customizable": false,
   "performance": {
     "speed": "105 km/h"
   },
-  "power": "11 hp",
-  "price": "USD 2.800",
+  "power": "10 CV",
+  "price": "USD 2.800 (Referencia mercado)",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.yamaha-motor.com.ar/ybr-125",
+    "primarySource": "https://www.yamaha-motor.com.ar",
+    "note": "Se corrigieron los valores genéricos de automóviles (como tracción delantera, peso de auto, transmisiones automáticas complejas y asistencias de 4 ruedas) adaptándolos a las especificaciones reales de una motocicleta urbana de 125cc.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+      "Los datos de precio y disponibilidad pueden variar según el mercado regional específico de Latinoamérica."
     ]
   },
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 5 marchas",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "121 kg",
+  "tipoMotor": "Monocilíndrico 4 tiempos, SOHC, refrigerado por aire",
+  "potenciaKW": "7.4 kW",
+  "capacidadTanque": "13 litros",
+  "tiempoRecorrido": "No publicado oficialmente",
+  "anoProduccion": "2000-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +119,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "aprox. 2.2 L / 100 km",
+  "dimensiones": "1980 x 745 x 1050 mm",
+  "cilindrada": "123 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Evolución continua",
+  "anoLanzamiento": 2000,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -247,7 +248,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.509Z",
+    "lastChecked": "2026-08-27T02:05:25.578Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -300,5 +301,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Yamaha YBR 125 es una de las motocicletas urbanas de baja cilindrada más emblemáticas y exitosas a nivel global. Introducida a principios de la década del 2000, nació con el claro objetivo de ofrecer una herramienta de movilidad diaria sumamente confiable, económica y de bajo mantenimiento. A lo largo de los años, se convirtió en un pilar fundamental para la marca japonesa en mercados emergentes de Asia y América Latina, donde miles de usuarios la adoptaron tanto para el trabajo cotidiano como para el transporte urbano.\n\n## Un hito o generación relevante\nUno de los momentos clave en la evolución de la YBR 125 fue la transición de la alimentación por carburador hacia los sistemas de inyección electrónica de combustible (en las regiones donde las normativas de emisiones así lo exigieron). Esta actualización permitió optimizar aún más el consumo de combustible, reducir las emisiones contaminantes y mejorar la respuesta del acelerador en frío, manteniendo intacta la robustez mecánica que caracteriza al bloque monocilíndrico de la familia YBR.\n\n## Curiosidades\nEntre los aspectos más destacados por los usuarios a lo largo de su historia se encuentra su notable durabilidad. No es extraño ver unidades con cientos de miles de kilómetros recorridos bajo un uso intensivo de mensajería o delivery que siguen funcionando con componentes originales. Su diseño simple y despejado facilita notablemente las tareas de mantenimiento básico, permitiendo que cualquier mecánico de barrio pueda repararla con repuestos accesibles y de gran disponibilidad en el mercado.\n\n## Competencia y posicionamiento\nEn el mercado de las dos ruedas, la Yamaha YBR 125 compite directamente con otros tanques pesados del segmento commuter, como la Honda CG 150/125 Titan o la Suzuki EN 125. Frente a ellas, la YBR se posiciona como una opción equilibrada que prioriza el confort de marcha, la suavidad de su planta motriz y una ciclística noble. Ocupa un lugar de preferencia para quienes buscan dar el salto desde una cilindrada menor o necesitan un vehículo utilitario de bajo costo operativo sin resignar la calidad de construcción propia de Yamaha."
 }

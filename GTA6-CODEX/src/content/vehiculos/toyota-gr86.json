@@ -13,14 +13,15 @@
   "class": "Deportivo",
   "customizable": false,
   "power": "228 hp",
-  "price": "USD 30.300",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "USD 29.000 (MSRP EE.UU. referencia)",
+  "consumo": "9.5 l/100km ciudad / 6.7 l/100km ruta",
+  "dimensiones": "4.265 mm largo x 1.775 mm ancho x 1.310 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.toyota.com/gr86/",
+    "note": "Datos técnicos y de rendimiento verificados con especificaciones globales oficiales del modelo Toyota GR86 de segunda generación.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "El precio corresponde al mercado de Estados Unidos como referencia base y puede variar según el país y los impuestos locales."
     ]
   },
   "performance": {
@@ -28,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.535Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:27:51.885Z",
+  "transmision": "Manual de 6 velocidades o Automática de 6 velocidades",
+  "traccion": "Tracción trasera",
+  "peso": "1.277 kg",
+  "tipoMotor": "Gasolina atmosférico bóxer de 4 cilindros",
+  "potenciaKW": "170 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "6.3s",
+  "anoProduccion": "2022-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.4 litros",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 4,
+  "baul": 178,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -206,7 +207,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.486Z",
+    "lastChecked": "2026-08-27T01:27:51.885Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +225,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Toyota GR86 representa la evolución natural de la exitosa fórmula de deportivos compactos de tracción trasera desarrollada conjuntamente entre Toyota y Subaru. Tras el impacto generado por el GT86 (conocido en algunos mercados como Scion FR-S o Subaru BRZ), ambas marcas decidieron dar continuidad al concepto con una segunda generación que debutó formalmente para el año modelo 2022. La denominación 'GR' lo integra de lleno en la familia Gazoo Racing, la división de alto rendimiento de la marca japonesa que también respalda a modelos como el GR Yaris y el GR Supra.\n\n## Un hito o generación relevante\nEl salto generacional más importante del GR86 respecto a su predecesor se encuentra debajo del capó. Mientras que la primera generación recurría a un motor bóxer de 2.0 litros que a menudo era criticado por una caída de potencia en el rango medio de revoluciones, esta segunda entrega introdujo un bloque bóxer atmosférico de 2.4 litros. Este aumento de cilindrada elevó la potencia hasta los 228 caballos de fuerza y mejoró notablemente la entrega de torque, solucionando el bache de potencia y permitiendo una aceleración de 0 a 100 km/h en aproximadamente 6.3 segundos con la caja manual. Además, se optimizó la rigidez torsional del chasis mediante el uso de aluminio en el techo y los guardabarros delanteros, manteniendo un centro de gravedad sumamente bajo.\n\n## Curiosidades\nA pesar de ser un desarrollo conjunto donde Subaru aporta la plataforma básica y el motor bóxer (fabricado en su planta de Gunma, Japón), Toyota imprimió su propio carácter en el comportamiento dinámico del vehículo. Los ingenieros de Gazoo Racing ajustaron específicamente la calibración de la suspensión, la respuesta de la dirección y la puesta a punto del motor para ofrecer sensaciones de manejo diferentes a las de su hermano mellizo, el Subaru BRZ, priorizando una agilidad aún más directa en curvas cerradas. Asimismo, la transmisión manual de seis marchas conserva un tacto mecánico corto y preciso muy celebrado por los puristas del automovilismo.\n\n## Competencia y posicionamiento\nDentro del mercado global, el Toyota GR86 compite en un segmento cada vez más exclusivo: el de los coupés deportivos accesibles de tracción trasera y motor delantero longitudinal. Sus rivales directos son su contraparte técnica, el Subaru BRZ, y el Mazda MX-5 (Miata) en su versión RF. Frente a ellos, el GR86 se posiciona como una alternativa de estricta configuración 2+2 (aunque con plazas traseras muy reducidas) que prioriza la diversión al volante, la pureza mecánica y el equilibrio por encima de las cifras de potencia bruta o el lujo interior, convirtiéndose en uno de los deportivos puros más valorados por los entusiastas a nivel mundial."
 }

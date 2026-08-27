@@ -12,15 +12,17 @@
   "manufacturer": "Subaru",
   "class": "Hatchback",
   "customizable": false,
-  "power": "182 hp",
-  "price": "USD 24.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "152 hp (motor 2.0) / 182 hp (motor 2.5)",
+  "price": "USD 24.000 (MSRP base estimado de referencia)",
+  "consumo": "7.8 l/100km combinado",
+  "dimensiones": "4.475 mm largo x 1.780 mm ancho x 1.480 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.subaru.com",
+    "note": "Se actualizaron las especificaciones generales basadas en la sexta generación del Subaru Impreza presentada para el mercado global, destacando la adopción de motores bóxer de 2.0 y 2.5 litros, tracción Symmetrical AWD de serie y transmisión Lineartronic CVT.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Los precios y consumos varían según el mercado específico de comercialización y la normativa local de homologación",
+      "Las cifras de aceleración son estimaciones de referencia para la versión estándar de acceso"
     ]
   },
   "performance": {
@@ -28,15 +30,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.522Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:27:03.331Z",
+  "transmision": "Automática CVT (Lineartronic)",
+  "traccion": "Tracción integral simétrica (Symmetrical AWD)",
+  "peso": "1.400 - 1.480 kg",
+  "tipoMotor": "Gasolina (Bóxer atmosférico)",
+  "potenciaKW": "113 kW (2.0) / 135 kW (2.5)",
+  "capacidadTanque": "63 litros",
+  "tiempoRecorrido": "9.0 - 9.5s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.995 cc / 2.498 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 555,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Sexta generación",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -206,7 +208,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.470Z",
+    "lastChecked": "2026-08-27T01:27:03.331Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +226,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Subaru Impreza es uno de los vehículos más emblemáticos de la marca japonesa, con una trayectoria que comenzó a principios de la década de 1990. Concebido inicialmente como un reemplazo más compacto y accesible para el Leone, el Impreza rápidamente trascendió su rol de vehículo utilitario gracias a su exitosa participación en el Campeonato Mundial de Rally (WRC). A lo largo de las décadas, el modelo ha evolucionado a través de múltiples generaciones, adaptándose a las exigencias cambiantes del mercado global sin perder su identidad fundamental: la combinación de motores de disposición horizontal (bóxer) y un sistema de tracción integral permanente.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente del Impreza fue la introducción de la plataforma global de Subaru (Subaru Global Platform - SGP) en su quinta generación, la cual se refinó notablemente en la sexta generación lanzada en 2023. Esta arquitectura mejoró de manera radical la rigidez torsional del chasis, redujo el centro de gravedad y optimizó el aislamiento acústico y la respuesta dinámica general. Con esta base, el Impreza consolidó su reputación no solo como un vehículo seguro y durable, sino también como uno de los hatchbacks compactos con mejor comportamiento dinámico y aplomo en ruta de su categoría.\n\n## Curiosidades\nUna de las características más singulares del Subaru Impreza es la persistencia en el uso de motores con arquitectura bóxer (de cilindros opuestos horizontalmente), una configuración mecánica que comparte prácticamente en exclusiva con la marca Porsche dentro de la industria automotriz masiva. Esto permite un centro de gravedad sumamente bajo, lo que beneficia directamente la estabilidad en curvas y el equilibrio general del vehículo. Además, el sistema de tracción integral simétrica (Symmetrical AWD) está diseñado con una disposición longitudinal completamente simétrica, lo que garantiza una distribución de pesos sumamente equilibrada entre ambos lados del chasis, algo poco común en vehículos compactos de tracción total.\n\n## Competencia y posicionamiento\nEn el mercado global de los vehículos compactos, el Subaru Impreza compite directamente con referentes tradicionales del segmento C como el Honda Civic, el Toyota Corolla y el Mazda 3. Mientras que muchos de sus rivales ofrecen configuraciones de tracción delantera como opción predeterminada, el Impreza se posiciona como una alternativa distintiva al incluir la tracción integral simétrica de serie en la gran mayoría de los mercados donde se comercializa. Su enfoque prioriza la seguridad activa, la durabilidad mecánica y el confort de marcha en condiciones climáticas adversas, atrayendo a conductores que valoran la versatilidad y la tracción total por encima de las prestaciones puramente deportivas que en el pasado caracterizaban a sus variantes más vitaminadas."
 }

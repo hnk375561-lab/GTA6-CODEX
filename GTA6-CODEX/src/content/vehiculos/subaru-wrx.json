@@ -13,31 +13,32 @@
   "class": "Deportivo",
   "customizable": false,
   "power": "271 hp",
-  "price": "USD 33.500",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "USD 32.750 (MSRP EE.UU. referencia)",
+  "consumo": "10.7 l/100km combinado (referencia EPA)",
+  "dimensiones": "4.671 mm largo x 1.826 mm ancho x 1.468 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "respaldado",
+    "primarySource": "https://www.subaru.com/vehicles/wrx/features.html",
+    "note": "Se actualizaron las especificaciones técnicas utilizando datos de conocimiento general altamente consolidados para la quinta generación del Subaru WRX (plataforma SGP, motor FA24F de 2.4 litros turbo, dimensiones y potencias oficiales para el mercado norteamericano).",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ],
-    "primarySource": "https://www.subaru.com/vehicles/wrx/features.html"
+      "El precio corresponde al MSRP base de referencia en Estados Unidos y puede variar según el mercado o impuestos locales",
+      "Los valores de consumo y aceleración son estimaciones basadas en pruebas de medios especializados"
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.523Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:57:12.450Z",
+  "transmision": "Manual de 6 marchas o automática CVT (Subaru Performance Transmission)",
+  "traccion": "Symmetrical All-Wheel Drive (Tracción integral permanente)",
+  "peso": "1.507 kg - 1.583 kg",
+  "tipoMotor": "Ónter bóxer de 4 cilindros, 2.4 litros, turbocargado",
+  "potenciaKW": "202 kW",
+  "capacidadTanque": "63 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 5.5 a 6.0 segundos",
+  "anoProduccion": "2022-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -125,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.387 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 354,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Quinta generación (VB)",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -207,7 +208,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.470Z",
+    "lastChecked": "2026-08-27T01:57:12.450Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -225,5 +226,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Subaru WRX tiene una de las trayectorias más respetadas dentro del mundo de los sedanes deportivos, nacida originalmente de las entrañas de la división motorsport de la marca y de su exitoso paso por el Campeonato Mundial de Rally (WRC) durante los años 90. Lo que comenzó como una variante de altas prestaciones derivada directamente del Impreza, con el tiempo ganó tanta identidad propia que terminó independizándose en la nomenclatura comercial de la marca japonesa. Desde sus primeras iteraciones con los icónicos motores EJ y la clásica combinación de color azul con llantas doradas, el WRX se ganó el corazón de los entusiastas por ofrecer tracción integral simétrica y una dinámica de conducción sin concesiones.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la saga ocurrió a partir de la introducción de la quinta generación (conocida bajo el código interno VB), la cual adoptó la moderna Plataforma Global de Subaru (SGP). Este cambio estructural no solo incrementó de manera notable la rigidez torsional del chasis respecto a su antecesor, sino que permitió alojar el nuevo impulsor bóxer turboalimentado de 2.4 litros (FA24F). Con esta arquitectura, el WRX redefinió su postura en el segmento, ofreciendo una pisada más firme, un centro de gravedad optimizado y una respuesta del acelerador más lineal, adaptándose a las exigencias de emisiones y seguridad contemporáneas sin perder su ADN deportivo.\n\n## Curiosidades\nA diferencia de la gran mayoría de sus competidores directos en el segmento de los compactos deportivos, que suelen optar por configuraciones de tracción delantera o tracción integral conectable mediante embragues multidisco electrónicos de corte transversal, el Subaru WRX mantiene fielmente su arquitectura de motor bóxer longitudinal opuesto y un sistema de tracción integral permanente. Esta disposición mecánica simétrica no solo otorga un balance de pesos sumamente equilibrado a ambos lados del eje longitudinal, sino que proporciona una tracción y un comportamiento dinámico muy particular en superficies de baja adherencia, rindiendo tributo constante a sus raíces en los tramos de tierra y ripio del rally mundial.\n\n## Competencia y posicionamiento\nEn el mercado global, el Subaru WRX se posiciona como una opción sumamente atractiva para quienes buscan deportividad pura y sensaciones mecánicas analógicas sin caer en los costos de los hatchbacks o sedanes de marcas estrictamente premium. Tradicionalmente, compite de manera directa con vehículos de espíritu similar como el Volkswagen Jetta GLI, el Honda Civic Si (y en ciertos mercados contra variantes de tracción integral como el otrora rival directo Mitsubishi Lancer Evolution), además de medirse tangencialmente con hatchbacks deportivos de tracción delantera como el Volkswagen Golf GTI o el Hyundai Elantra N. El WRX destaca en este grupo por ofrecer una propuesta purista donde la tracción integral es protagonista indiscutible, atrayendo a un público fiel que valora la herencia técnica por encima de las modas pasajeras."
 }

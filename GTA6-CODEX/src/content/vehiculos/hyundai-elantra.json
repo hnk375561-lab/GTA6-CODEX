@@ -12,29 +12,29 @@
   "manufacturer": "Hyundai",
   "class": "Sedán compacto",
   "customizable": false,
-  "power": "147 hp (110 kW) a 6.200 rpm",
+  "power": "147 hp a 6.200 rpm",
   "price": "USD 21.625 (SE, referencia mercado US)",
-  "consumo": "6.7 l/100km combinado (35 mpg EPA combinado)",
-  "dimensiones": "4.677 mm largo x 1.826 mm ancho x 1.415 mm alto, distancia entre ejes 2.720 mm",
+  "consumo": "6.7 l/100km combinado",
+  "dimensiones": "4.677 mm x 1.826 mm x 1.415 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Cifras de la versión SE base (2.0L atmosférico, IVT/CVT), mercado US. Existen variantes N Line (turbo 1.6L, 201hp) y N (turbo 2.0L, 276hp) con precio y prestaciones muy superiores.",
-    "limitations": [
-      "Versión HEV (híbrida, 1.6L, 104 hp) disponible con precio y consumo distintos",
-      "Precio varía según trim (SE/SEL/Limited/N Line/N) y mercado"
-    ],
     "primarySource": "https://www.hyundainews.com/assets/documents/original/57216-2024ElantraSpecs092123A.pdf",
-    "secondarySource": "https://www.kbb.com/hyundai/elantra/2024/specs/"
+    "secondarySource": "https://www.kbb.com/hyundai/elantra/2024/specs/",
+    "note": "Se verificaron las especificaciones técnicas del Hyundai Elantra versión SE base para el mercado estadounidense correspondientes al año modelo 2024.",
+    "limitations": [
+      "Las cifras corresponden exclusivamente al motor atmosférico 2.0L de la versión base SE.",
+      "Las variantes deportivas N Line, N y la opción híbrida HEV poseen motorizaciones, precios y consumos diferentes."
+    ]
   },
   "performance": {
     "speed": "190 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-26T07:35:35.926Z",
-  "transmision": "IVT (CVT de variables) 8 velocidades simuladas",
+  "updatedAt": "2026-08-27T01:46:09.096Z",
+  "transmision": "IVT (CVT inteligente) de 8 velocidades simuladas",
   "traccion": "Delantera",
-  "peso": "1.301 kg (curb weight)",
+  "peso": "1.301 kg",
   "tipoMotor": "Gasolina atmosférico 4 cilindros, DOHC",
   "potenciaKW": "110 kW",
   "capacidadTanque": "47 litros",
@@ -132,9 +132,9 @@
   "emisiones": null,
   "tipo": "Sedán compacto",
   "asientos": 5,
-  "baul": "402 litros (14.2 ft³)",
+  "baul": 402,
   "maleteroMin": null,
-  "generacion": "Séptima generación (CN7, 2021-presente)",
+  "generacion": "Séptima generación (CN7)",
   "anoLanzamiento": "2020",
   "colores": [],
   "category": "vehiculo",
@@ -211,7 +211,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T07:35:35.925Z",
+    "lastChecked": "2026-08-27T01:46:09.096Z",
     "dataQuality": 0.9
   },
   "indexed": true,
@@ -245,5 +245,6 @@
     ],
     "auditNotes": "Lote 6 (ago 2026): datos del trim SE base MY2024, mercado US.",
     "dataQuality": 0.9
-  }
+  },
+  "content": "## Historia del modelo\nEl Hyundai Elantra es uno de los pilares fundamentales dentro de la oferta global de la marca surcoreana. Desde su introducción inicial en la década de 1990 como reemplazo del Hyundai Stellar, este sedán compacto ha recorrido un largo camino de evolución, pasando de ser un vehículo económico y utilitario a convertirse en un referente de diseño, tecnología y eficiencia dentro de su segmento. A lo largo de las décadas, el modelo ha sabido ganarse la confianza de millones de conductores en todo el mundo, consolidándose como uno de los vehículos más vendidos de la compañía a nivel global.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la trayectoria del modelo fue la llegada de su séptima generación (conocida bajo el código interno CN7), presentada a finales de 2020 para el año modelo 2021 y extendida hasta la actualidad. Esta entrega rompió con los moldes tradicionales de sobriedad que solían imperar en el segmento de los sedanes compactos gracias al lenguaje de diseño denominado \"Sensuous Sportiness\" ( Deportividad Sensual). Con líneas angulosas marcadas, superficies tridimensionales complejas y una silueta de estilo fastback con la línea del techo marcadamente descendente, el Elantra demostró que un sedán de volumen podía adoptar una estética arriesgada y vanguardista sin resignar la funcionalidad diaria.\n\n## Curiosidades\nUna de las particularidades más interesantes del Hyundai Elantra es su dualidad de nombres según el mercado en el que se comercialice. Mientras que en la mayor parte de Occidente se lo conoce bajo la denominación Elantra, en su mercado doméstico de Corea del Sur y en ciertos países de Asia se lo comercializa bajo el nombre de Hyundai Avante. Asimismo, la arquitectura de esta séptima generación permitió el desarrollo de variantes sumamente extremas como el Elantra N, una versión de altas prestaciones desarrollada por la división deportiva N de la marca que compite de igual a igual con hatchbacks deportivos tradicionales y que ha recibido elogios de la prensa especializada por su dinámica de conducción en pista.\n\n## Competencia y posicionamiento\nEn el mercado global, el Hyundai Elantra compite en uno de los segmentos más disputados de la industria automotriz: el de los sedanes compactos. Sus rivales directos históricos incluyen a pesos pesados de la industria como el Toyota Corolla, el Honda Civic, el Nissan Sentra y el Volkswagen Jetta. Para destacar frente a semejante competencia, el sedán coreano se posiciona ofreciendo una excelente relación valor-precio, una dotación tecnológica muy completa desde sus versiones de entrada —que incluye asistencias avanzadas a la conducción bajo el paraguas de Hyundai SmartSense— y una propuesta de diseño que apunta a un público que busca diferenciarse del promedio sin necesidad de acceder a marcas de carácter premium."
 }

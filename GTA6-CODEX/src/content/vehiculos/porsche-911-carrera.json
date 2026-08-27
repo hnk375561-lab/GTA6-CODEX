@@ -11,7 +11,7 @@
   ],
   "featured": true,
   "createdAt": "2026-08-23T18:01:34.332Z",
-  "updatedAt": "2026-08-26T06:58:15.135Z",
+  "updatedAt": "2026-08-27T01:55:09.990Z",
   "manufacturer": "Porsche",
   "class": "Deportivo",
   "customizable": false,
@@ -22,16 +22,15 @@
   "power": "379 hp (283 kW)",
   "price": "USD 114.400 (Carrera Coupe, mercado USA)",
   "consumo": "9.3 l/100km combinado (WLTP, PDK)",
-  "dimensiones": "4.519 mm largo x 1.852 mm ancho x 1.298 mm alto, distancia entre ejes 2.450 mm",
+  "dimensiones": "4.519 mm x 1.852 mm x 1.298 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.porsche.com/international/models/911/911-models/carrera/",
+    "level": "respaldado",
     "secondarySource": "https://www.kbb.com/porsche/911/2024/",
-    "note": "Cifras de la variante Carrera base (RWD, 8 vel. PDK), generación 992. Existen versiones S, GTS, Turbo y Turbo S con potencias sensiblemente mayores.",
+    "note": "Cifras verificadas de la variante Porsche 911 Carrera base generación 992, con motor bóxer biturbo de 3.0 litros.",
     "limitations": [
-      "Con paquete Sport Chrono la aceleración mejora hasta 0.2s",
-      "Versión con caja manual 7 velocidades disponible en algunos mercados, ligeramente más lenta",
-      "Precio de referencia es MSRP base sin opciones"
+      "Con paquete Sport Chrono la aceleración de 0 a 100 km/h mejora hasta 0.2s",
+      "La disponibilidad de caja manual de 7 velocidades varía según el mercado",
+      "El precio de referencia corresponde al MSRP base de Estados Unidos sin opcionales"
     ]
   },
   "transmision": "PDK doble embrague 8 velocidades / Manual 7 velocidades (opcional)",
@@ -40,7 +39,7 @@
   "tipoMotor": "Gasolina biturbo bóxer 6 cilindros",
   "potenciaKW": "283 kW",
   "capacidadTanque": "67 litros",
-  "tiempoRecorrido": "3-8s",
+  "tiempoRecorrido": "4.2s",
   "anoProduccion": "2024",
   "mercados": [
     "Alemania",
@@ -136,10 +135,10 @@
   "emisiones": "CO2 210 g/km (WLTP)",
   "tipo": "Cupé",
   "asientos": 4,
-  "baul": "132 litros (delantero) + espacio trasero",
+  "baul": 132,
   "maleteroMin": null,
   "generacion": "992 (octava generación)",
-  "anoLanzamiento": "2019",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "deportivo",
   "gallery": {
@@ -281,8 +280,8 @@
     "description": "Deportivo icónico de Porsche, motor bóxer 6 cilindros de 379 hp."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T06:58:15.123Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:55:09.990Z",
     "dataQuality": 0.9
   },
   "indexed": true,
@@ -340,5 +339,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Porsche 911 es, sin lugar a dudas, uno de los deportivos más emblemáticos y longevos de la historia automotriz mundial. Desde su presentación oficial en el Salón del Automóvil de Fráncfort en 1963 (inicialmente concebido como 901), este modelo ha mantenido una filosofía de diseño y arquitectura inconfundible: motor bóxer ubicado en la parte trasera y una silueta fastback de líneas fluidas. A lo largo de las décadas, el 911 ha evolucionado desde los puristas modelos refrigerados por aire hasta la sofisticación tecnológica de los motores turboalimentados actuales, consolidándose como el estándar de oro contra el que se miden todos los deportivos de altas prestaciones.\n\n## Un hito o generación relevante\nLa octava generación, conocida internamente bajo el código 992 (lanzada comercialmente en 2019), representa un punto de inflexión en la dinastía de Stuttgart. El 992 adoptó una carrocería más ancha de manera uniforme para todas sus versiones de acceso y uso extensivo de aluminio en su construcción para contener el peso. En el corazón de esta generación se encuentra una evolución magistral del bloque bóxer de 6 cilindros y 3.0 litros con doble turbocompresor, que en el modelo Carrera base entrega unos contundentes 379 hp y 331 lb-pie de torque. Acoplado a la rapidísima transmisión de doble embrague PDK de 8 velocidades, este conjunto propulsor garantiza una respuesta inmediata al acelerador y una eficiencia notable en condiciones de uso mixto.\n\n## Curiosidades\nA pesar de su tremendo rendimiento en circuito, capaz de superar los 290 km/h, el Porsche 911 siempre ha destacado por una cualidad inusual en su segmento: su altísima usabilidad diaria. Su habitáculo 2+2 ofrece la practicidad justa para trayectos cotidianos, complementado por un baúl delantero de 132 litros. Además, se estima que más del 70% de todos los Porsche 911 fabricados desde 1963 aún continúan en funcionamiento en la actualidad, una prueba fehaciente de la calidad de construcción alemana y de la durabilidad legendaria de su ingeniería mecánica.\n\n## Competencia y posicionamiento\nEn el mercado global de los deportivos de lujo, el Porsche 911 Carrera ocupa un lugar privilegiado como la referencia histórica indiscutida. Si bien compite directamente contra colosos de la talla del Chevrolet Corvette Z06, el Mercedes-AMG GT y el Aston Martin Vantage, el 911 se distingue por ofrecer un equilibrio casi perfecto entre confort de marcha para viajes largos y dinamismo puro en conducción deportiva. Su retención de valor a lo largo del tiempo y su herencia ininterrumpida de más de seis décadas lo convierten no solo en un objeto de deseo, sino en una inversión sólida dentro del mundo del motor."
 }

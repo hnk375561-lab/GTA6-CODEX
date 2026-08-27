@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.076Z",
-  "updatedAt": "2026-08-25T23:22:07.375Z",
+  "updatedAt": "2026-08-27T02:52:55.641Z",
   "manufacturer": "Haval",
   "class": "SUV",
   "customizable": false,
@@ -20,20 +20,25 @@
     "speed": "180 km/h",
     "acceleration": "0-100 km/h en 9.5s"
   },
-  "power": "184 hp",
-  "price": "USD 33.000",
+  "power": "201 hp a 235 hp (según motorización 1.5L Turbo o 2.0L Turbo; versiones híbridas HEV/PHEV con potencia combinada superior)",
+  "price": "Desde aprox. USD 33.000 (referencia regional según mercado latinoamericano)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.gwm.com.ar/haval-h6"
+    "level": "respaldado",
+    "primarySource": "https://www.gwm-mx.com/es/models/haval-h6-2026",
+    "note": "Se verificaron las especificaciones técnicas, potencias para motores de gasolina e híbridos/PHEV, así como los precios y configuraciones de transmisión en portales oficiales de GWM y lanzamientos regionales recientes.",
+    "limitations": [
+      "Las cifras exactas de potencia, torque y consumo varían según la motorización elegida (gasolina, HEV o PHEV) y el mercado de destino.",
+      "La disponibilidad de tracción integral (AWD/4x4) está reservada para las variantes híbridas o tope de gama."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática de doble embrague (DCT) de 7 o 9 velocidades",
+  "traccion": "Delantera (FWD) o Total (AWD/4x4 según versión HEV/PHEV)",
+  "peso": "1610 kg",
+  "tipoMotor": "Gasolina 1.5L Turbo o 2.0L Turbo (opciones HEV híbridas y PHEV enchufables disponibles)",
+  "potenciaKW": "150 kW",
+  "capacidadTanque": "61 litros",
+  "tiempoRecorrido": "0-100 km/h en 7.5s a 8.3s (hasta 4.8s en la versión PHEV de alto rendimiento)",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -121,16 +126,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "Aprox. 7.5 L/100 km promedio para motores a combustión (con alta eficiencia en versiones híbridas)",
+  "dimensiones": "4683 x 1886 x 1730 mm",
+  "cilindrada": "1499 cc / 1998 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 600,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -253,8 +258,8 @@
     "description": "SUV mediana china de Haval (grupo GWM), motor turbo 1.5L o 2.0L, también disponible en versión híbrida (HEV)."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.388Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:52:55.641Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -307,5 +312,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Haval H6 es un auténtico pilar dentro de la estrategia global de Great Wall Motor (GWM) y de su marca especializada en SUV, Haval. Desde su aparición inicial en el mercado chino, este modelo conquistó rápidamente los rankings de ventas gracias a una propuesta que priorizaba el espacio interior, la robustez y una relación de precio muy competitiva frente a rivales tradicionales. Con el paso de los años, la marca apostó fuertemente por la internacionalización, llevando el H6 a mercados exigentes de Asia, Sudamérica, Europa del Este y Oceanía. Esta expansión vino acompañada de una evolución constante en términos de calidad percibida, diseño y adopción de tecnologías de electrificación, transformando al H6 de un utilitario accesible a un referente tecnológico dentro del segmento de los C-SUV.\n\n## Un hito o generación relevante\nEl punto de inflexión definitivo en la historia del Haval H6 llegó con el debut de su tercera generación. Este salto generacional introdujo la avanzada plataforma modular global L.E.M.O.N. desarrollada por GWM, la cual permitió reducir significativamente el peso total del vehículo a la vez que incrementó la rigidez torsional y los estándares de seguridad pasiva y activa. Estéticamente, este cambio generacional rompió con las líneas conservadoras del pasado para adoptar un lenguaje de diseño mucho más audaz y contemporáneo, caracterizado por una gran parrilla frontal integrada, ópticas delanteras y traseras con tecnología LED y un habitáculo minimalista donde predominan las pantallas digitales de alta resolución y comandos táctiles.\n\n## Curiosidades\nUno de los aspectos más destacados del Haval H6 es su tremenda versatilidad mecánica a escala global. Mientras que en mercados de origen y en varias regiones de exportación se comercializa con bloques nafteros turboalimentados de 1.5L y 2.0L, la plataforma también fue diseñada desde cero para albergar tecnologías de propulsión ecológicas. Esto permitió el desarrollo de exitosas variantes híbridas convencionales (HEV) e híbridas enchufables (PHEV), siendo esta última capaz de entregar cifras de potencia combinada sorprendentes —que superan los 300 hp en ciertos mercados— sin descuidar la eficiencia urbana.\n\n## Competencia y posicionamiento\nDentro de la franja de los SUV medianos (segmento C), el Haval H6 se posiciona como una alternativa de altísimo valor frente a pesos pesados de la industria automotriz como el Toyota RAV4, el Honda CR-V, el Volkswagen Taos y el Jeep Compass. Mientras que los competidores tradicionales suelen apoyarse en su trayectoria histórica, el H6 ataca el mercado ofreciendo una dotación de equipamiento de confort, asistencias a la conducción (ADAS) y conectividad muy superior por un precio sumamente competitivo. De este modo, apunta directamente a un consumidor moderno que busca tecnología de punta, habitabilidad generosa y un andar confortable para el uso diario y los viajes largos."
 }

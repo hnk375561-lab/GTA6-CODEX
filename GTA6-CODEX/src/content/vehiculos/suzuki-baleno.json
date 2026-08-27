@@ -12,15 +12,17 @@
   "manufacturer": "Suzuki",
   "class": "Hatchback",
   "customizable": false,
-  "power": "89 hp",
-  "price": "USD 15.500",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "95 CV",
+  "price": "USD 21.500 a USD 23.000 (referencia lanzamiento regional)",
+  "consumo": "4.8 l/100km combinado",
+  "dimensiones": "3.990 mm largo x 1.745 mm ancho x 1.500 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "secondarySource": "https://es.scribd.com/document/365191200/Ficha-Tecnica-Suzuki-Baleno",
+    "note": "Se actualizaron las especificaciones de potencia (95 CV), precios de referencia regional, cilindrada (1.4L) y dimensiones basándose en los registros de lanzamiento en la región y la ficha técnica oficial documentada.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Los precios corresponden a referencias de lanzamiento regional y pueden variar según impuestos y disponibilidad en cada país.",
+      "Las motorizaciones varían según el mercado global (existiendo variantes 1.2, 1.4 y 1.5 litros)."
     ]
   },
   "performance": {
@@ -28,15 +30,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.523Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T03:08:54.168Z",
+  "transmision": "Manual de 5 marchas o Automática de 4 marchas",
+  "traccion": "Delantera",
+  "peso": "915 - 955 kg",
+  "tipoMotor": "Nafta (Gasolina)",
+  "potenciaKW": "70 kW",
+  "capacidadTanque": "37 litros",
+  "tiempoRecorrido": "11.6s",
+  "anoProduccion": "2015-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.4 litros",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 355,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (moderna)",
+  "anoLanzamiento": 2015,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -204,7 +206,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.471Z",
+    "lastChecked": "2026-08-27T03:08:54.168Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -222,5 +224,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Suzuki Baleno resurgió en 2015 como un hatchback compacto de concepción global, desarrollado para posicionarse un escalón por encima del exitoso Swift y ofrecer mayor habitabilidad sin perder agilidad urbana. Fabricado principalmente en India a través de Maruti Suzuki, este modelo adoptó una silueta influenciada por el concepto de diseño \"Liquid Flow\", caracterizada por líneas fluidas y una postura visualmente ancha que optimiza el espacio interior.\n\n## Un hito y plataforma relevante\nUn pilar fundamental en la arquitectura del Baleno moderno es la implementación de la plataforma liviana \"Heartect\". Esta estructura permitió contener el peso del vehículo por debajo de la tonelada (en torno a los 915-955 kg) sin comprometer la rigidez torsional ni la seguridad estructural. Gracias a esta reducción de peso, el modelo logró potenciar notablemente su eficiencia de combustible y su respuesta dinámica en el tránsito diario.\n\n## Curiosidades\nA pesar de estar enfocado fuertemente en mercados emergentes de alta demanda, el Baleno cumplió un rol comercial estratégico en regiones como Europa y América Latina, destacándose por ofrecer una de las capacidades de baúl más generosas de su segmento en relación con sus casi 4 metros de longitud exterior. Asimismo, sirvió de base para acuerdos de colaboración internacional con otros fabricantes en determinados mercados.\n\n## Competencia y posicionamiento\nEn el competitivo segmento B de los hatchbacks, el Suzuki Baleno se enfrenta a referentes consagrados como el Volkswagen Polo, el Toyota Yaris y el Hyundai i20. Su principal argumento de ventas radica en la excelente relación entre su habitabilidad, la confiabilidad mecánica de sus impulsores nafteros y un costo de mantenimiento sumamente racional, consolidándose como una opción lógica dentro del mercado."
 }

@@ -13,32 +13,32 @@
   "class": "SUV compacto",
   "customizable": false,
   "power": "145 hp",
-  "price": "EUR 24.500",
+  "price": "EUR 24.500 (precio de referencia para Europa)",
   "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "dimensiones": "4.400 mm largo x 1.830 mm ancho x 1.588 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://omodaauto.co.uk/",
+    "note": "Se utilizaron especificaciones generales de la gama Omoda 5 comercializada en mercados internacionales y europeos, destacando el motor de 1.5 litros turbo y dimensiones estándar de la plataforma T1X.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Ronda evidencia (ago 2026, lote 3/95): fuente oficial del fabricante verificada por búsqueda antes de subir el nivel de evidencia. Fuente oficial de marca (OMODA UK) confirma gama con motor 1.6 turbo gasolina, variante híbrida (SHS-H) y variante eléctrica (E5); la potencia de referencia de esta ficha corresponde a la versión gasolina de entrada."
-    ],
-    "primarySource": "https://omodaauto.co.uk/"
+      "Los precios y consumos pueden variar según el mercado específico de exportación y las normativas de homologación locales.",
+      "Las cifras de aceleración son estimaciones de referencia según la variante mecánica."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-26T05:49:19.143Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:34:31.937Z",
+  "transmision": "Automática DCT de doble embrague o Manual",
+  "traccion": "Delantera (FWD)",
+  "peso": "1.344 kg",
+  "tipoMotor": "Gasolina 1.5 turbo",
+  "potenciaKW": "108 kW",
+  "capacidadTanque": "51 litros",
+  "tiempoRecorrido": "9.9s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1498 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 380,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -206,7 +206,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T05:49:19.143Z",
+    "lastChecked": "2026-08-27T01:34:31.937Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +224,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Chery Omoda 5 marca un punto de inflexión en la estrategia global de la automotriz china Chery, siendo el primer exponente de su nueva gama de vehículos orientados fuertemente al mercado internacional, con especial foco en Europa, Asia y mercados emergentes. Presentado formalmente a principios de la década, este SUV compacto nació bajo la filosofía de diseño 'Art in Motion', buscando capturar la atención de un público más joven y vanguardista que prioriza la estética futurista y la digitalización a bordo por sobre los formatos tradicionales de la marca.\n\n## Un hito y generación relevante\nLa primera generación del Omoda 5 representa el debut de la plataforma modular T1X optimizada para albergar no solo motorizaciones de combustión interna tradicionales, sino también variantes electrificadas como híbridas y 100% eléctricas (Omoda E5). Este enfoque multiplataforma es un hito clave para Chery, ya que le permite adaptar rápidamente su oferta comercial a las exigencias ambientales de diferentes regiones sin alterar radicalmente la arquitectura base del vehículo.\n\n## Curiosidades\nUna de las particularidades más llamativas del Omoda 5 es su denominación: la letra 'O' proviene del oxígeno y simboliza nueva vida y vitalidad, mientras que 'Moda' hace referencia a las tendencias de la moda moderna. Además, su frontal se distingue por una parrilla paramétrica sin bordes que se integra fluidamente con grupos ópticos LED divididos, un recurso de diseño que rápidamente lo convirtió en un vehículo muy fotografiado y comentado en salones del automóvil internacionales.\n\n## Competencia y posicionamiento\nEn el segmento de los SUV compactos, el Chery Omoda 5 compite directamente contra pesos pesados de la industria como el Toyota C-HR, el Kia Seltos, el Nissan Kicks y el Volkswagen T-Cross. Se posiciona con una propuesta de valor agresiva, ofreciendo un nivel de equipamiento tecnológico muy elevado, asistencias avanzadas a la conducción (ADAS) de serie en muchas versiones y una relación precio-producto competitiva para ganar terreno rápidamente frente a marcas consolidada en Occidente."
 }

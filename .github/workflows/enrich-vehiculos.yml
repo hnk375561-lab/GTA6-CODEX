@@ -1,0 +1,73 @@
+name: Enriquecer fichas de vehiculos (Gemini)
+
+# Corre el enriquecimiento automatico contra src/content/vehiculos usando
+# la API de Gemini con Google Search grounding. Manual a proposito
+# (workflow_dispatch): asi se puede lanzar por tandas y revisar el diff
+# en el commit resultante antes de que se acumulen muchos cambios.
+#
+# Requiere el secret GEMINI_API_KEY configurado en:
+#   Settings -> Secrets and variables -> Actions -> New repository secret
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Cantidad maxima de fichas a procesar en esta corrida"
+        required: false
+        default: "20"
+      only:
+        description: "all | needsBoth | needsContentOnly"
+        required: false
+        default: "all"
+  schedule:
+    # Corre solo, todos los lunes 06:00 UTC. Como el script solo toca
+    # fichas que aun no tienen evidence/content completos, si ya esta
+    # todo enriquecido simplemente no hay nada para commitear ese dia.
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    working-directory: GTA6-CODEX
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Correr enriquecimiento
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          LIMIT: ${{ github.event.inputs.limit || '30' }}
+          ONLY: ${{ github.event.inputs.only || 'all' }}
+        run: node enrich-vehiculos-v3.mjs
+
+      - name: Commit y push de las fichas actualizadas
+        if: always()
+        run: |
+          git config user.name "gta6-codex-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/content/vehiculos enrichment-log.jsonl 2>/dev/null || true
+          git diff --cached --quiet && echo "Nada para commitear" && exit 0
+          git commit -m "feat(vehiculos): enriquecimiento automatico via Gemini (LIMIT=${LIMIT:-?} ONLY=${ONLY:-?}) [GitHub Actions]"
+          git push origin main
+
+      - name: Subir log de la corrida
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: enrichment-log
+          path: GTA6-CODEX/enrichment-log.jsonl
+          if-no-files-found: ignore

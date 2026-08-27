@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.210Z",
-  "updatedAt": "2026-08-25T23:22:07.326Z",
+  "updatedAt": "2026-08-27T02:46:39.582Z",
   "manufacturer": "Chevrolet",
   "class": "SUV compacta",
   "customizable": false,
@@ -19,20 +19,25 @@
     "speed": "180 km/h",
     "acceleration": "0-100 km/h en 10.5s"
   },
-  "power": "132 hp",
-  "price": "USD 25.000",
+  "power": "132 CV",
+  "price": "Desde $33.681.900 (MSRP referencia regional Argentina)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.chevrolet.com.ar/tracker"
+    "level": "respaldado",
+    "secondarySource": "https://www.chevrolet.com.mx/suvs/tracker-mejor-suv",
+    "note": "Datos técnicos y de dimensiones verificados para la Chevrolet Tracker con motor 1.2L turbo y especificaciones regionales.",
+    "limitations": [
+      "Los precios varían según el mercado específico y la versión disponible",
+      "Las especificaciones de equipamiento cambian según la versión (LT, LTZ, Premier, RS)"
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática de 6 marchas",
+  "traccion": "Delantera (FWD)",
+  "peso": "1205 kg",
+  "tipoMotor": "Turbo, Delantero Transversal, Gasolina 1.2L 3 cilindros",
+  "potenciaKW": "97 kW",
+  "capacidadTanque": "44 litros",
+  "tiempoRecorrido": "0-100 km/h en 10.5s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +123,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "6.6 L/100 km mixto",
+  "dimensiones": "4304 x 2044 x 1624 mm",
+  "cilindrada": "1199 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 393,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -249,8 +254,8 @@
     "description": "SUV compacta de Chevrolet, motor turbo 1.2L."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.358Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:46:39.583Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +308,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Chevrolet Tracker se ha consolidado como uno de los SUV compactos más representativos de General Motors en la región latinoamericana. Tras etapas iniciales con enfoques globales y alianzas estratégicas, la irrupción de su segunda generación hacia el año 2020 marcó un punto de inflexión total. Desarrollada sobre la plataforma modular global GEM (Global Emerging Markets), la producción se concentró en centros clave como Brasil para abastecer con fuerza a mercados de alta exigencia como el argentino y el brasileño, transformándose rápidamente en un pilar de ventas dentro de su categoría.\n\n## Un hito o generación relevante\nEl gran salto cualitativo de este modelo vino de la mano de la renovación mecánica: la adopción de impulsores turboalimentados de tres cilindros en reemplazo de los veteranos bloques atmosféricos. Esta arquitectura permitió entregar un torque óptimo desde bajas revoluciones, optimizando notablemente el agrado de conducción urbana y reduciendo los consumos de combustible. Asimismo, este hito generacional vino acompañado de una marcada evolución en materia de seguridad activa y pasiva, incorporando de serie controles de estabilidad y tracción junto a múltiples airbags, un estándar largamente demandado por los consumidores del segmento B-SUV.\n\n## Curiosidades\nUno de los aspectos técnicos menos difundidos pero fundamentales de su mecánica es el uso de una correa de distribución bañada en aceite en su motor 1.2L turbo. Esta solución de ingeniería busca disminuir las fricciones internas y reducir la rumorosidad general del habitáculo, aunque impone un mantenimiento riguroso y el uso estricto de los lubricantes recomendados por el fabricante. Además, la calibración de sus suspensiones y dirección eléctrica fue finamente adaptada a las características particulares de la infraestructura vial de la región, caracterizada por irregularidades y lomos de burro frecuentes.\n\n## Competencia y posicionamiento\nComercialmente, la Chevrolet Tracker compite en el segmento más disputado de la industria automotriz actual: el de los B-SUV. En dicho escenario debe medir fuerzas con referentes consagrados como el Volkswagen T-Cross, el Jeep Renegade, el Nissan Kicks y el Peugeot 2008. Su estrategia de posicionamiento se apoya en una equilibrada relación entre costo y producto, tecnología de conectividad con servicios telemáticos integrados y un conjunto motriz eficiente que responde a las necesidades tanto de uso diario en ciudad como de viajes ruteros familiares."
 }

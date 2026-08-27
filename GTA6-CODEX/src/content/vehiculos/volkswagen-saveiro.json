@@ -13,28 +13,33 @@
   "manufacturer": "Volkswagen",
   "class": "Pickup compacta",
   "customizable": false,
-  "power": "110 hp",
-  "price": "USD 21.000",
-  "consumo": "7.5 l/100km (mixto)",
-  "dimensiones": "4482 x 1751 x 1610 mm",
+  "power": "116 CV",
+  "price": "ARS 22.000.000 (referencia mercado local)",
+  "consumo": "7.8 l/100km (mixto)",
+  "dimensiones": "4491 x 1721 x 1589 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.vw.com.ar/es/modelos/saveiro.html"
+    "primarySource": "https://www.vw.com.ar/es/modelos/saveiro.html",
+    "note": "Se verificaron las especificaciones técnicas principales del motor MSI 1.6 de 116 CV, dimensiones y capacidades de carga basadas en la oferta actual para el mercado argentino.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y disponibilidad en concesionarios oficiales.",
+      "Algunos datos de consumos específicos en ruta pueden variar según la carga transportada."
+    ]
   },
   "performance": {
     "speed": "170 km/h",
     "acceleration": "0-100 km/h en 12.0s"
   },
   "createdAt": "2026-08-23T21:59:07.889585Z",
-  "updatedAt": "2026-08-25T23:22:07.550Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T02:02:20.037Z",
+  "transmision": "Manual de 5 marchas",
+  "traccion": "Delantera",
+  "peso": "1107 kg",
+  "tipoMotor": "Nafta",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "10.1s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.598 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 692,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Facelift de tercera generación",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -252,7 +257,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.498Z",
+    "lastChecked": "2026-08-27T02:02:20.037Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +310,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\n\nLa Volkswagen Saveiro es una de las pick-ups compactas más emblemáticas del mercado sudamericano. Nacida en Brasil a principios de la década de 1980, este utilitario derivado de la familia del Volkswagen Gol se ganó rápidamente la confianza de trabajadores, PyMEs y usuarios particulares gracias a su robustez mecánica y una excelente relación entre capacidad de carga y costos de mantenimiento. A lo largo de las décadas, la Saveiro evolucionó a la par de las sucesivas generaciones del Gol, adaptando su diseño exterior, mejorando su habitáculo y sumando tecnologías orientadas tanto al confort como a la seguridad.\n\n## Un hito o generación relevante\n\nUn punto de inflexión muy importante en la historia reciente de la Saveiro se dio con la introducción de su tercera generación profundamente estilizada y, más recientemente, la actualización mayor lanzada hacia 2023/2024. En esta última etapa, el modelo adoptó un lenguaje de diseño frontal alineado con los últimos SUV y vehículos globales de la marca alemana, incorporando líneas más musculosas, ópticas rasgadas y una estética general que refuerza su espíritu aventurero —especialmente en las versiones más equipadas como la franja Robust o la tope de gama Extreme—, sin descuidar jamás su enfoque primordial como herramienta de trabajo versátil.\n\n## Curiosidades\n\nUna de las características más interesantes de la Volkswagen Saveiro a lo largo de su trayectoria comercial en Argentina y Brasil es que logró trascender el uso estrictamente laboral. Si bien fue concebida para el transporte de mercaderías livianas, su dinámica de conducción —heredada directamente de un hatchback compacto— hizo que muchos usuarios la elijan como vehículo de uso diario e incluso recreativo. Además, mecánicamente se convirtió en un verdadero referente de durabilidad gracias al uso de motorizaciones sumamente probadas, como el clásico impulsor naftero aspirado de 1.6 litros, capaz de soportar tratos exigentes con una red de posventa sumamente extendida y accesible en toda la región.\n\n## Competencia y posicionamiento\n\nEn el segmento de las pick-ups compactas, la Volkswagen Saveiro compite históricamente cara a cara con la exitosa Fiat Strada, que durante años ha liderado las ventas en su categoría en la región. Mientras que la competidora italiana ha apostado por innovaciones estructurales recientes y opciones de motorización más variadas, la Saveiro mantiene una propuesta basada en la simplicidad mecánica, la confiabilidad estructural de su chasis, una caja de carga muy generosa en volumen y una robustez general que la consolida como una de las opciones más racionales y de mejor valor de reventa en el mercado argentino."
 }

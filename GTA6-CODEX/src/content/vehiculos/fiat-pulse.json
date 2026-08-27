@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.687Z",
-  "updatedAt": "2026-08-25T23:22:07.351Z",
+  "updatedAt": "2026-08-27T01:39:22.820Z",
   "manufacturer": "Fiat",
   "class": "SUV compacta",
   "customizable": false,
@@ -19,20 +19,25 @@
     "speed": "180 km/h",
     "acceleration": "0-100 km/h en 11.0s"
   },
-  "power": "130 hp",
-  "price": "USD 22.000",
+  "power": "120 CV",
+  "price": "ARS 24.000.000 (referencia mercado argentino)",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.fiat.com.ar/pulse"
+    "primarySource": "https://www.fiat.com.ar",
+    "note": "Se verificaron las especificaciones técnicas oficiales del Fiat Pulse comercializado en el mercado argentino, incluyendo el motor Turbo 200 de 1.0L, capacidades y dimensiones basadas en fichas técnicas de Stellantis.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y disponibilidad de los concesionarios en Argentina.",
+      "Algunos datos de consumo exacto dependen de la homologación específica por versión (Drive o Impetus)."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática tipo CVT (simula 7 marchas) o Manual de 5 velocidades",
+  "traccion": "Delantera",
+  "peso": "1187 kg",
+  "tipoMotor": "Nafta (Turbo 1.0L 3 cilindros T3)",
+  "potenciaKW": "88 kW",
+  "capacidadTanque": "47 litros",
+  "tiempoRecorrido": "0-100 km/h en 10.2s",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +123,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "6.5 l/100 km mixto aprox.",
+  "dimensiones": "4099 x 1777 x 1545 mm",
+  "cilindrada": "999 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 370,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -250,7 +255,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.372Z",
+    "lastChecked": "2026-08-27T01:39:22.820Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +308,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Fiat Pulse nació como un proyecto clave para la marca italiana en la región sudamericana, desarrollado íntegramente en el Centro de Diseño de Stellantis en Betim, Brasil. Presentado inicialmente a mediados de 2021 tras una campaña de expectativa donde el público votó su nombre (superando a opciones como Dobi y Tuo), este SUV compacto llegó para posicionarse en uno de los segmentos más dinámicos y disputados del mercado automotriz regional. Construido sobre la nueva plataforma MLA —una evolución profunda de la arquitectura MP1 utilizada en el Argo y el Cronos—, el Pulse significó un salto tecnológico y de calidad fundamental para Fiat en su reconversión de gama.\n\n## Un hito o generación relevante\nEl hito más importante en la breve pero intensa trayectoria del Fiat Pulse fue la introducción de la motorización Turbo 200 (1.0 litros turbo de tres cilindros) junto con la caja automática CVT. Este conjunto mecánico no solo marcó el debut de la nueva familia de motores turboalimentados de origen GSE (Global Small Engine) en la región, sino que también le permitió a la marca ofrecer un balance óptimo entre prestaciones deportivas y eficiencia en el consumo de combustible. Asimismo, el lanzamiento de la variante deportiva firmada por Abarth consolidó al Pulse como un producto versátil capaz de atender tanto a familias jóvenes como a entusiastas del rendimiento.\n\n## Curiosidades\nUna de las particularidades más interesantes del desarrollo del Fiat Pulse fue su proceso de validación. Antes de su lanzamiento comercial, Fiat sometió a mulas de prueba y prototipos a condiciones extremas en climas tan diversos como el calor abrasador del nordeste brasileño y el frío patagónico en Argentina. Además, el sistema multimedia con pantallas de hasta 10.1 pulgadas y conectividad inalámbrica para Android Auto y Apple CarPlay fue diseñado para ofrecer una interfaz sumamente intuitiva, integrándose profundamente con la plataforma de servicios conectados Fiat Connect////Me.\n\n## Competencia y posicionamiento\nEn el mercado argentino y regional, el Fiat Pulse compite directamente en el segmento de los B-SUV contra referentes consolidados como el Volkswagen Nivus (con el cual comparte una silueta de estilo crossover/coupé muy marcada), el Chevrolet Tracker, el Renault Captur y el Peugeot 2008. El posicionamiento de Pulse se destaca por ofrecer una excelente relación precio-producto, un diseño exterior atractivo con estética aventurera, despeje del suelo elevado (19.6 cm) y un nivel de seguridad activa muy competitivo que incluye asistencias a la conducción (ADAS) como frenado autónomo de emergencia y alerta de cambio involuntario de carril en sus versiones más equipadas."
 }

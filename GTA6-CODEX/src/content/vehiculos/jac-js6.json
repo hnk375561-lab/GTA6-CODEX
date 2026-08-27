@@ -14,25 +14,24 @@
   "customizable": false,
   "power": "181 hp (135 kW) a 4.850-5.500 rpm",
   "price": "USD 27.000 (versión gasolina turbo, referencia mercado Latinoamérica)",
-  "consumo": "6.5 l/100km combinado (15.3 km/l, referencia fabricante)",
-  "dimensiones": "4.605 mm largo x 1.890 mm ancho x 1.700 mm alto, distancia entre ejes 2.720 mm",
+  "consumo": "6.5 l/100km combinado (referencia fabricante)",
+  "dimensiones": "4.605 mm largo x 1.890 mm ancho x 1.700 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Cifras de la versión gasolina turbo 1.5L (184 hp), variante de exportación vendida en Latinoamérica bajo el nombre JS6. Existe también versión PHEV (híbrido enchufable) con especificaciones y precio distintos, comercializada principalmente en Argentina.",
-    "limitations": [
-      "Precio de referencia varía fuerte por país (impuestos de importación en Latinoamérica)",
-      "La versión PHEV tiene motor 1.5L (110CV) + eléctrico (204CV combinados) y autonomía EV de hasta 120km NEDC",
-      "Cifras de aceleración son estimadas, no publicadas oficialmente"
-    ],
     "primarySource": "https://www.motoresjac.com.gt/vehiculos-jac/jac-suvs/suv-jac-js6/",
-    "secondarySource": "https://en.wikipedia.org/wiki/JAC_QX"
+    "secondarySource": "https://en.wikipedia.org/wiki/JAC_QX",
+    "note": "Cifras verificadas para la versión a gasolina turbo 1.5L comercializada en mercados de exportación latinoamericanos bajo la denominación JS6.",
+    "limitations": [
+      "El precio varía significativamente según el país debido a políticas arancelarias e impuestos de importación.",
+      "Las cifras de aceleración son estimadas y varían según la versión y las condiciones de prueba."
+    ]
   },
   "performance": {
     "speed": "190 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.8s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-26T07:35:35.931Z",
+  "updatedAt": "2026-08-27T01:47:28.623Z",
   "transmision": "DCT (doble embrague) 7 velocidades",
   "traccion": "Delantera",
   "peso": "1.550 kg (referencia)",
@@ -133,10 +132,10 @@
   "emisiones": null,
   "tipo": "SUV compacto",
   "asientos": 5,
-  "baul": "455 litros",
+  "baul": 455,
   "maleteroMin": null,
-  "generacion": "Plataforma JAC GSE (2021-presente, también conocida como Sehol QX)",
-  "anoLanzamiento": "2021",
+  "generacion": "Plataforma JAC GSE (2021-presente)",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "vehiculo",
   "gallery": {
@@ -212,7 +211,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T07:35:35.925Z",
+    "lastChecked": "2026-08-27T01:47:28.623Z",
     "dataQuality": 0.8
   },
   "indexed": true,
@@ -246,5 +245,6 @@
     ],
     "auditNotes": "Lote 6 (ago 2026): datos de la versión gasolina turbo 1.5L, mercado de exportación Latinoamérica.",
     "dataQuality": 0.8
-  }
+  },
+  "content": "## Historia del modelo y desarrollo\nEl JAC JS6 representa un paso adelante en la estrategia de expansión global de JAC Motors dentro del segmento de los SUV compactos. Este modelo está construido sobre la plataforma modular JAC GSE, introducida originalmente en el mercado chino bajo la denominación Sehol QX. Con un enfoque claro en la modernización de la gama de productos de la marca, el JS6 combina un diseño exterior vanguardista con una propuesta tecnológica orientada a satisfacer las demandas de los consumidores internacionales en mercados emergentes y de exportación.\n\n## Un hito y generación relevante\nLanzado comercialmente a partir de 2021, este vehículo marca la consolidación de JAC en el desarrollo de motorizaciones turboalimentadas de alta eficiencia y transmisiones de doble embrague de nueva generación. La adopción de la plataforma GSE permitió mejorar significativamente la rigidez estructural, la seguridad pasiva y la integración de sistemas avanzados de asistencia a la conducción (ADAS), posicionándose como uno de los productos más sofisticados jamás fabricados por la compañía para el mercado externo.\n\n## Curiosidades y diseño\nUno de los aspectos más llamativos del JAC JS6 es su arquitectura interior, que destaca por incorporar una pantalla dual panorámica de 12.3 pulgadas orientada al conductor, reduciendo al mínimo la presencia de botones físicos tradicionales. Su diseño exterior adopta ópticas divididas y líneas afiladas que siguen las tendencias estéticas globales de los SUV medianos y compactos. Además, en ciertos mercados internacionales comparte componentes mecánicos y estructurales con alianzas estratégicas del grupo automotriz en China.\n\n## Competencia y posicionamiento\nDentro del mercado de los SUV compactos, el JAC JS6 compite directamente con referentes de peso regional como el Haval H6, el Chery Tiggo 7 Pro y el Geely Azkara. Su estrategia se basa en ofrecer un nivel de equipamiento de confort elevado, acabados interiores de apariencia cuidada y una mecánica equilibrada basada en el motor 1.5 litros GDI de 181 caballos, apuntando a un segmento que busca una relación precio-producto competitiva frente a marcas tradicionales consolidadas."
 }

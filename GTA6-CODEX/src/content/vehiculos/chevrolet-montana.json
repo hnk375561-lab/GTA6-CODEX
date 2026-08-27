@@ -12,28 +12,33 @@
   "manufacturer": "Chevrolet",
   "class": "Pickup compacta",
   "customizable": false,
-  "power": "132 hp",
-  "price": "ARS 34.037.900 (version LT, linea 2026)",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "132 CV",
+  "price": "ARS 34.037.900 (versión LT, línea 2026)",
+  "consumo": "aprox. 14.3 km/l en ruta / 11.5 km/l en ciudad (motor 1.2 Turbo)",
+  "dimensiones": "4.710 mm largo x 1.798 mm ancho x 1.659 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://news.chevrolet.com.ar/newsroom.detail.html/Pages/news/ar/es/2025/aug/0209-montana02.html"
+    "primarySource": "https://news.chevrolet.com.ar/newsroom.detail.html/Pages/news/ar/es/2025/aug/0209-montana02.html",
+    "note": "Se verificaron las especificaciones técnicas principales de la Chevrolet Montana fabricada sobre la plataforma GEM, incluyendo su motorización 1.2 Turbo de 132 CV, dimensiones de la carrocería y capacidad de carga de la caja Multi-Flex.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y la disponibilidad de versiones en el mercado argentino.",
+      "Algunos datos de performance exacta dependen de la variante específica y las condiciones de prueba."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T23:22:07.312Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:35:47.427Z",
+  "transmision": "Manual de 6 marchas o Automática de 6 velocidades",
+  "traccion": "Delantera (FWD)",
+  "peso": "aprox. 1.310 kg",
+  "tipoMotor": "Naftero 1.2 Turbo de 3 cilindros (Ecotec)",
+  "potenciaKW": "97 kW",
+  "capacidadTanque": "44 litros",
+  "tiempoRecorrido": "aprox. 10.5s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -119,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.199 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 680,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -250,7 +255,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.347Z",
+    "lastChecked": "2026-08-27T01:35:47.427Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +308,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Chevrolet Montana es una histórica denominación dentro del portfolio regional de General Motors. En sus dos primeras generaciones, nacidas en Brasil, se trató de una pick-up liviana basada en la arquitectura de los compactos populares de la marca (primero el Corsa C y luego el Agile), orientada fuertemente al trabajo cotidiano y con una cabina simple. Sin embargo, para su tercera generación lanzada en Sudamérica a principios de 2023, Chevrolet decidió dar un golpe de timón radical, transformándola en una **pickup compacta de doble cabina** basada en la plataforma modular GEM (Global Emerging Markets), la misma arquitectura que da vida a la exitosa SUV Chevrolet Tracker.\n\n## Un hito o generación relevante\nEl gran punto de inflexión para la Montana ocurrió con este cambio conceptual hacia el segmento de las SUP (Sport Utility Pickup), compitiendo de igual a igual en un nicho que popularizó la Fiat Toro en la región. Esta nueva generación priorizó el confort de marcha, la seguridad estructural y la versatilidad urbana sin perder las capacidades de carga esenciales. Un elemento distintivo de esta etapa es el desarrollo de la **caja de carga Multi-Flex**, diseñada específicamente para funcionar como un enorme baúl hermético combinada con una completa gama de accesorios originales que permiten modular el espacio según las necesidades del usuario.\n\n## Curiosidades\nDurante su desarrollo, el equipo de ingeniería de General Motors en Sudamérica realizó más de mil entrevistas a usuarios de diferentes segmentos en Brasil, Argentina y otros mercados emergentes para entender qué buscaban realmente. El resultado fue un vehículo que mide un poco menos de 4,8 metros de largo (más acotada que una pick-up mediana tradicional como la S10, pero más rutera y espaciosa que las pick-ups chicas tradicionales), logrando un radio de giro ideal para el uso diario en ciudad. Además, adopta la estética frontal desdoblada con luces principales ubicadas en los paragolpes, un lenguaje de diseño global de la marca del corbatín.\n\n## Competencia y posicionamiento\nLa Chevrolet Montana se posiciona en el competitivo segmento de las pick-ups compactas intermedias en América Latina. Su principal rival histórica y de mercado es la Fiat Toro, aunque también disputa espacio con la Renault Oroch y, en mercados más amplios, con propuestas como la Ford Maverick. Se destaca frente a ellas por ofrecer una dinámica de conducción muy similar a la de un SUV mediano, un consumo contenido gracias a su eficiente motorización tricilíndrica turbonagada de 1.2 litros, y un nivel de conectividad sobresaliente con el sistema MyLink compatible con Android Auto y Apple CarPlay sin conexión de cables en sus versiones más equipadas, además de contar con asistencias a la conducción que refuerzan su atractivo familiar y laboral."
 }

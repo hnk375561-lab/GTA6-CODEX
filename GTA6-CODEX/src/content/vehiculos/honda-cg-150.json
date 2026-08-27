@@ -13,30 +13,32 @@
   "manufacturer": "Honda",
   "class": "Moto utilitaria",
   "customizable": false,
-  "power": "13.5 hp",
+  "power": "13.1 CV",
   "price": "USD 2.600",
-  "consumo": "2.2 l/100km",
-  "dimensiones": "2016 x 736 x 1076 mm",
+  "consumo": "2.6 l/100km (aprox. 38 km/l)",
+  "dimensiones": "2025 x 745 x 1055 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.honda.com.ar/motos/cg-150",
+    "level": "respaldado",
+    "primarySource": "https://fichamotos.com.ar/fichas/honda/cg-150",
+    "secondarySource": "https://motos0km.com.ar/fichas-tecnicas/honda/titan-cg-150",
+    "note": "Se actualizaron los datos específicos de la Honda CG 150 utilizando registros y fichas técnicas locales de Argentina (FichaMotos y Motos0km), contrastando cilindrada de 149.2 cc, potencia cercana a los 13.1 CV, consumo estimado de 38 km/l y dimensiones oficiales de la plataforma comercializada en la región.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+      "Las especificaciones exactas como el peso en orden de marcha vs en seco (112 kg en seco / 143 kg según registro de fichas comerciales completas) y sistemas de alimentación (carburador vs versiones posteriores con inyección en otros mercados) pueden presentar leves variantes según el año de fabricación específico."
     ]
   },
   "performance": {
     "speed": "105 km/h"
   },
   "createdAt": "2026-08-23T21:59:10.642893Z",
-  "updatedAt": "2026-08-25T23:22:07.387Z",
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
+  "updatedAt": "2026-08-27T02:53:20.703Z",
+  "transmision": "Manual de 5 marchas",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "143 kg",
+  "tipoMotor": "Monocilíndrico 4 tiempos, OHC, refrigerado por aire",
+  "potenciaKW": "9.6 kW",
+  "capacidadTanque": "14.1 litros",
   "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "anoProduccion": "2003-2018 (Discontinuada en Argentina, sucedida por GLH 150)",
   "mercados": [
     "Europa",
     "USA",
@@ -121,14 +123,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "149.2 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Evoluciones regionales múltiples (Titan)",
+  "anoLanzamiento": 2003,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -250,8 +252,8 @@
     "description": "Una de las motos más vendidas de Latinoamérica en su segmento, motor monocilíndrico de 150cc, muy usada como vehículo de trabajo."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.393Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:53:20.703Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -304,5 +306,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\n\nLa Honda CG 150 representa un eslabón fundamental dentro de la legendaria e incombustible estirpe de motocicletas CG de la marca japonesa. Heredera directa de la histórica CG 125 que conquistó el mundo a partir de la década de 1970, la variante de 150 cc nació para dar respuesta a la demanda de los usuarios urbanos y laborales que exigían una dosis extra de torque y potencia sin sacrificar la legendaria economía de combustible que caracteriza a la plataforma. En el mercado argentino y en gran parte de Latinoamérica, este modelo se consolidó rápidamente como una herramienta de trabajo indispensable, marcando una época dorada para repartidores, cadetes y trabajadores independientes que necesitaban un vehículo capaz de soportar el castigo diario del tránsito intenso con un mantenimiento mínimo y una confiabilidad a toda prueba.\n\n## Un hito y su arquitectura mecánica\n\nEl verdadero hito de la Honda CG 150 radica en la simplicidad y robustez de su arquitectura mecánica. Equipada con un motor monocilíndrico de 4 tiempos y 149.2 cc con tecnología OHC (Overhead Camshaft) y refrigeración por aire, esta motocicleta prioriza una entrega de potencia muy lineal y aprovechable en baja y media vuelta. Generalmente alimentada por un confiable sistema de carburación y asistida por un encendido CDI con avance electrónico, se acopla a una transmisión manual de 5 velocidades de suave accionar. Su chasis tipo diamante, combinado con suspensiones de recorrido correcto —una horquilla telescópica delantera y un basculante trasero con doble amortiguador—, le otorgan una agilidad sobresaliente para sortear baches, calles empedradas y embotellamientos urbanos con absoluta soltura.\n\n## Curiosidades y arraigo cultural\n\nEn la cultura urbana de la región, la Honda CG 150 es considerada un auténtico objeto de culto utilitario. Su apodo más famoso, \"Titan\", acompaña a una reputación de durabilidad casi indestructible que pasa de generación en generación entre motociclistas. Una de sus virtudes más celebradas es su bajísimo consumo de combustible, que ronda habitualmente los 2.6 litros cada 100 kilómetros (equivalente a unos 38 km/l), permitiendo una autonomía destacable gracias a su tanque de combustible de generosa capacidad. Asimismo, la enorme disponibilidad de repuestos, tanto originales como alternativos, garantiza que cualquier eventualidad mecánica se resuelva de manera rápida y económica en cualquier rincón del país, evitando largas estadías en el taller.\n\n## Competencia y posicionamiento\n\nDentro del segmento de las motocicletas utilitarias de baja cilindrada, la Honda CG 150 compite de forma directa contra una multitud de opciones de origen asiático y alternativas de marcas generalistas consolidadas en el mercado local (tales como la Yamaha YBR o diversos exponentes importados). A pesar de la intensa competencia y de haber cedido su lugar en los concesionarios oficiales a sucesoras más modernas como la Honda GLH 150, la CG 150 mantiene un valor de reventa envidiable y un prestigio inalterable. No busca deslumbrar con lujos tecnológicos ni diseño vanguardista, sino revalidar día a día su título de aliada incondicional del trabajo cotidiano, destacando por su lógica racional y su durabilidad a largo plazo."
 }

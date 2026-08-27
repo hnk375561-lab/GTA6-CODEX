@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.747Z",
-  "updatedAt": "2026-08-25T23:22:07.554Z",
+  "updatedAt": "2026-08-27T03:14:28.292Z",
   "manufacturer": "Volvo",
   "class": "SUV premium",
   "customizable": false,
@@ -20,20 +20,25 @@
     "speed": "Media-Alta (210 km/h)",
     "acceleration": "Alta (0-100 km/h en 6.9s)"
   },
-  "power": "250 hp",
-  "price": "USD 75.000",
+  "power": "250 hp (B5 Mild Hybrid) / 310 hp (B6) / 455 hp (Recharge T8 Plug-in Hybrid)",
+  "price": "Desde aprox. €56.851 - €72.410 (MSRP de referencia en Europa) / $1,299,900 MXN (versión híbrida enchufable en México)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.volvocars.com/ar/cars/xc60/"
+    "level": "respaldado",
+    "primarySource": "https://www.carwow.es/volvo/xc60/caracteristicas-tecnicas",
+    "note": "Se verificaron las horquillas de precios y configuraciones europeas mediante Carwow, las especificaciones de la plataforma híbrida en el sitio oficial de Volvo México, y los consumos homologados de la gama mediante KM77.",
+    "limitations": [
+      "Los precios varían fuertemente según aranceles de importación, impuestos locales y costos de patentamiento en cada región de Sudamérica y Europa.",
+      "El equipamiento de serie y opcional depende de los niveles de acabado disponibles en cada mercado (Core, Plus, Ultimate)."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática de 8 velocidades (Geartronic)",
+  "traccion": "AWD (Tracción en las cuatro ruedas) o FWD según mercado/versión",
+  "peso": "1800 - 2150 kg",
+  "tipoMotor": "Gasolina Turbo Mild Hybrid y Híbrido Enchufable (Recharge T8)",
+  "potenciaKW": "184 kW (B5) a 335 kW (T8)",
+  "capacidadTanque": "71 litros",
+  "tiempoRecorrido": "0-100 km/h en 4.8s (T8) a 6.9s (B5)",
+  "anoProduccion": "2017-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -121,16 +126,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "Combinado WLTP desde 5.8 l/100 km (según versión) hasta híbridos enchufables con gestión eléctrica eficiente",
+  "dimensiones": "4708 x 1900 x 1658 mm",
+  "cilindrada": "1969 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 483,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (SPA)",
+  "anoLanzamiento": 2017,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -253,8 +258,8 @@
     "description": "SUV premium de Volvo, motor 2.0L turbo, foco fuerte en seguridad activa."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.502Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:14:28.292Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -307,5 +312,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Volvo XC60 se consolidó desde su estreno original como un pilar fundamental en la estrategia global de la marca sueca dentro del segmento de los SUV medianos de lujo. La primera generación marcó un antes y un después en materia de protección familiar y diseño escandinavo. No obstante, fue con la llegada de su segunda etapa comercial en 2017, desarrollada sobre la plataforma modular Scalable Product Architecture (SPA), cuando el modelo dio el salto definitivo hacia la vanguardia tecnológica, logrando galardones internacionales de la talla del World Car of the Year en 2018.\n\n## Un hito y generación relevante\nLa irrupción de esta segunda generación representó una evolución radical tanto en el lenguaje estético exterior e interior como en la transición hacia la electrificación total de su gama. Con el paso de los años, Volvo redujo drásticamente la oferta de bloques diésel tradicionales para priorizar alternativas Mild Hybrid (MHEV) y sofisticados sistemas híbridos enchufables (PHEV bajo la denominación Recharge). Esto permitió combinar un rendimiento dinámico sobresaliente con una notable disminución en los niveles de emisiones de CO2 y consumos homologados muy competitivos frente a sus rivales directos.\n\n## Curiosidades\nUno de los aspectos más distintivos del Volvo XC60 es la obsesión histórica de la firma por la seguridad activa y pasiva. Fue pionero en integrar de serie asistencias avanzadas como el frenado autónomo de emergencia con detección de peatones y ciclistas, además de sistemas de mitigación de salidas de vía. Asimismo, en mercados clave de Europa y Norteamérica, sus variantes híbridas enchufables se han ganado una sólida reputación por permitir un uso diario puramente eléctrico en trayectos urbanos cotidianos, sin renunciar a la autonomía necesaria para largos viajes ruteros.\n\n## Competencia y posicionamiento\nEn el plano de los SUV premium medianos, el Volvo XC60 compite de manera directa contra los referentes alemanes tradicionales como el BMW X3, el Audi Q5 y el Mercedes-Benz GLC, además de opciones como el Lexus NX. Su propuesta comercial se desmarca de la sobriedad alemana al apostar por un lujo de corte minimalista y escandinavo, donde se prioriza el bienestar a bordo, la ergonomía de sus asientos ergonómicos, materiales de alta calidad y un sistema de infoentretenimiento desarrollado junto a Google (Android Automotive OS)."
 }

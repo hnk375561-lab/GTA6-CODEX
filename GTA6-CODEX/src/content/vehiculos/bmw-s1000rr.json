@@ -12,31 +12,30 @@
   "manufacturer": "BMW",
   "class": "Moto superdeportiva",
   "customizable": false,
-  "power": "210 hp",
-  "price": "USD 18.500",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "210 CV (154 kW) a 13.750 rpm",
+  "price": "Desde aprox. 24.430 € (referencia base mercado europeo)",
+  "consumo": "6.4 l/100km",
+  "dimensiones": "2.073 mm largo x 848 mm ancho x 1.105 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global. Ficha técnica verificada contra la página oficial de datos técnicos de BMW Motorrad para la S 1000 RR (motor 4 cilindros ShiftCam, potencia y equipamiento de serie).",
+    "level": "respaldado",
+    "secondarySource": "https://www.motofichas.com/marcas/bmw/s-1000-rr",
+    "note": "Ficha técnica contrastada con especificaciones oficiales de BMW Motorrad y portales especializados, verificando cilindrada, potencia de 210 CV, esquema de motor ShiftCam y dimensiones generales de la generación K67.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial.",
-      "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
-    ],
-    "primarySource": "https://www.bmw-motorrad.com.ar/es/models/sport/s1000rr/technicaldata.html"
+      "El precio varía según el mercado local, impuestos y la incorporación de paquetes de equipamiento opcionales (M, Race)",
+      "Los valores de consumo y aceleración pueden verse alterados según las condiciones de la ruta, el clima y los modos de conducción seleccionados"
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.274Z",
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "197 kg",
-  "tipoMotor": "Gasolina 4 cilindros",
-  "potenciaKW": "155 kW",
+  "updatedAt": "2026-08-27T02:44:08.749Z",
+  "transmision": "Manual secuencial de 6 velocidades con toma constante",
+  "traccion": "Cadena",
+  "peso": "197 kg (en orden de marcha)",
+  "tipoMotor": "Tetracilíndrico en línea de 4 tiempos, 16 válvulas DOHC, refrigerado por líquido",
+  "potenciaKW": "154 kW",
   "capacidadTanque": "16.5 litros",
   "anoProduccion": "2024",
   "mercados": [
@@ -51,7 +50,7 @@
     "Motor ShiftAssist",
     "Asistente aceleración"
   ],
-  "tiempoRecorrido": "10.7s (1/4 milla)",
+  "tiempoRecorrido": "0-100 km/h en 3.2s",
   "consumoEtiqueta": "F",
   "neumaticos": "120/70R17",
   "especificacionesMotor": {
@@ -127,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "999 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 1,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "K67 (Actualización ShiftCam)",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "comercial",
   "gallery": {
@@ -263,8 +262,8 @@
     "description": "Superdeportiva insignia de BMW Motorrad, tetracilíndrica en línea de 999cc."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.315Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:44:08.749Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -317,5 +316,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa BMW S1000RR irrumpió en el mercado mundial en 2009 con un objetivo claro: sacudir el segmento de las superbikes y arrebatarle el cetro a las dominantes marcas japonesas. Desde su presentación inicial, la máquina alemana demostró que BMW no solo sabía fabricar excelentes motos ruteras o de aventura, sino que podía construir una superdeportiva pura capaz de ganar en las pistas más exigentes del mundo, incluido el Campeonato Mundial de Superbikes (WSBK).\n\n## Un hito y generación relevante\nUn punto de inflexión fundamental en la trayectoria de este modelo llegó con la introducción de la tecnología ShiftCam de distribución variable en válvulas, estrenada en la generación K67 a partir de 2019 y perfeccionada en las versiones recientes. Este sistema permitió optimizar la entrega de par motor a bajas y medias revoluciones sin sacrificar la potencia explosiva en la parte alta del tacómetro, logrando erogar unos imponentes 210 CV a 13.750 rpm. La evolución aerodinámica sumó además alerones delanteros integrados de fábrica, una solución directa heredada de la competición para garantizar estabilidad a velocidades ultra altas y reducir la tendencia a levantar la rueda delantera.\n\n## Curiosidades\nDesde su debut, la S1000RR llamó la atención por su asimetría estética original en sus ópticos delanteros (un sello que luego fue evolucionando hacia líneas más simétricas pero igual de agresivas). Además, su motor tetracilíndrico en línea de 999 cc está inclinado hacia adelante para lograr un centro de gravedad óptimo. El uso extensivo de componentes ligeros y de titanio permite rebajar el peso total de forma drástica, situándose en los 197 kg en orden de marcha y acercándola al estándar de competición.\n\n## Competencia y posicionamiento\nEn el segmento de las superdeportivas de un litro, la BMW S1000RR compite directamente contra pesos pesados como la Yamaha YZF-R1, la Honda CBR1000RR-R Fireblade, la Kawasaki Ninja ZX-10R y la Ducati Panigale V4. Se posiciona como una opción de referencia dentro del segmento premium, destacándose por ofrecer un paquete tecnológico sumamente intuitivo —que incluye múltiples modos de manejo, control de tracción dinámico, ABS Pro y suspensión electrónica— que permite tanto al piloto aficionado rodar con confianza como al experto exprimirla al máximo en circuito."
 }

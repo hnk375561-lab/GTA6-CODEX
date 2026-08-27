@@ -12,28 +12,33 @@
   "manufacturer": "Nissan",
   "class": "SUV mediano",
   "customizable": false,
-  "power": "181 hp (version Exclusive naftera)",
+  "power": "201 hp / 150 kW (versión e-POWER)",
   "price": "ARS 56.990.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "consumo": "5.8 l/100km combinado (e-POWER)",
+  "dimensiones": "4.680 mm largo x 1.840 mm ancho x 1.725 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.nissan.com.ar/vehiculos/nuevos/nueva-xtrail.html"
+    "primarySource": "https://www.nissan.com.ar/vehiculos/nuevos/nueva-xtrail.html",
+    "note": "Se verificaron las especificaciones técnicas globales y para el mercado argentino de la cuarta generación de Nissan X-Trail, incluyendo la variante e-POWER y tracción e-4ORCE.",
+    "limitations": [
+      "Los precios en pesos argentinos pueden variar según ajustes de mercado y disponibilidad de versiones.",
+      "Algunas cifras de performance varían ligeramente entre los mercados de exportación."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T23:22:07.488Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:54:05.496Z",
+  "transmision": "Automática (e-POWER / Xtronic CVT)",
+  "traccion": "Integral e-4ORCE o Delantera según versión",
+  "peso": "1.720 - 1.870 kg",
+  "tipoMotor": "Híbrido (e-POWER) / Naftero",
+  "potenciaKW": "150 kW (e-POWER)",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "7.0 - 8.0s (0-100 km/h)",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -121,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.498 cc (Turbo e-POWER)",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 7,
+  "baul": 485,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Cuarta generación (T33)",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -252,7 +257,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.446Z",
+    "lastChecked": "2026-08-27T01:54:05.496Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +310,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Nissan X-Trail es uno de los SUV medianos más emblemáticos a nivel global dentro del segmento C. Desde su introducción inicial a principios de los años 2000, este modelo se consolidó rápidamente como una opción robusta para familias y entusiastas de la aventura ligera, combinando la versatilidad de un vehículo utilitario deportivo con el confort de marcha característico de un sedán. A lo largo de las décadas, la X-Trail ha evolucionado desde sus raíces más utilitarias y cuadradas hacia líneas mucho más aerodinámicas, estilizadas y tecnológicamente avanzadas.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de la X-Trail es la llegada de su cuarta generación (conocida bajo el código interno T33) y la introducción de la innovadora tecnología e-POWER junto con el sistema de tracción integral e-4ORCE. A diferencia de los híbridos tradicionales, el sistema e-POWER de Nissan utiliza un motor eléctrico para impulsar directamente las ruedas del vehículo, mientras que un motor naftero de combustión interna actúa exclusivamente como un generador dedicado a recargar la batería. Esto permite ofrecer una respuesta instantánea al acelerador, un andar marcadamente silencioso y una eficiencia de combustible destacada sin necesidad de enchufar el vehículo a la red eléctrica.\n\n## Curiosidades\nEntre los aspectos más interesantes de la cuarta generación destaca el sistema e-4ORCE, una tecnología de tracción integral eléctrica heredada y adaptada del conocimiento en vehículos 100% eléctricos de la marca japonesa. Este sistema gestiona de manera independiente la potencia y el frenado de cada una de las cuatro ruedas, logrando un control sumamente preciso en superficies resbaladizas, minimizando el cabeceo del vehículo al frenar y maximizando el confort de todos los ocupantes a bordo. Además, la X-Trail ofrece en muchos de sus mercados internacionales una configuración de tres filas de asientos, manteniendo una huella exterior relativamente compacta para facilitar su uso en entornos urbanos.\n\n## Competencia y posicionamiento\nEn el mercado actual, la Nissan X-Trail se posiciona en el competitivo segmento de los SUV medianos, compitiendo directamente contra referentes consagrados como el Toyota RAV4, el Honda CR-V, el Volkswagen Taos y el Ford Territory. Frente a ellos, la propuesta de valor de Nissan se centra fuertemente en su nivel de equipamiento tecnológico, las asistencias avanzadas a la conducción (Nissan Intelligent Mobility) y, especialmente, en el diferencial que aporta la motorización electrificada e-POWER. Es una alternativa ideal para quienes buscan dar el salto hacia la movilidad electrificada sin depender de la infraestructura de carga pública en trayectos largos."
 }

@@ -12,33 +12,36 @@
   "manufacturer": "BMW",
   "class": "Deportivo",
   "customizable": false,
-  "power": "503 hp",
-  "price": "USD 78.000",
-  "consumo": "9.9-10.2 l/100km combinado (versión Competition)",
-  "dimensiones": "4.794 mm largo x 1.887 mm ancho x 1.393 mm alto, distancia entre ejes 2.857 mm",
+  "power": "510 hp (503 hp SAE)",
+  "price": "USD 76.200 (precio base aproximado MSRP EE.UU. para versión base; versiones Competition superan los USD 80.000)",
+  "consumo": "9.9 - 10.2 l/100 km combinado (WLTP)",
+  "dimensiones": "4.794 mm x 1.887 mm x 1.393 mm",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.auto-data.net/en/bmw-m4-g82-competition-3.0-510hp-steptronic-41300",
     "secondarySource": "https://www.cardekho.com/bmw/m4-competition/specs",
-    "note": "Cifras corresponden a la versión M4 Competition (G82, 503 hp SAE / 510 PS ECE), la variante de mayor volumen de venta sobre el M4 base (473 hp).",
-    "limitations": []
+    "note": "Se verificaron las especificaciones técnicas principales del BMW M4 G82 (versión Competition con motor S58 de 3.0 litros biturbo). Los datos de potencia, dimensiones y rendimiento corresponden a los registros oficiales de la marca y bases de datos automotrices.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado local, impuestos y opciones de personalización configuradas.",
+      "El consumo de combustible puede diferir según el estilo de conducción y las condiciones de homologación regionales (WLTP vs EPA)."
+    ]
   },
   "performance": {
     "speed": "250 km/h (limitada electrónicamente)",
     "acceleration": "0-100 km/h en 3.9s"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.271Z",
-  "transmision": "Automática 8 velocidades Steptronic M",
-  "traccion": "Tracción total inteligente M xDrive",
+  "updatedAt": "2026-08-27T01:32:01.618Z",
+  "transmision": "Automática de 8 velocidades Steptronic M con Drivelogic (o manual de 6 marchas según mercado)",
+  "traccion": "Tracción trasera (versión base/Competition) o tracción total inteligente M xDrive (Competition xDrive)",
   "cilindrada": "2.993 cc",
   "emisiones": "CO2 215 g/km (WLTP)",
   "tipo": "Coupé",
   "asientos": 4,
-  "baul": "405 litros",
-  "peso": "1.560 kg",
-  "tipoMotor": "Gasolina turbo bimotor",
-  "potenciaKW": "373 kW",
+  "baul": 440,
+  "peso": "1.725 kg a 1.800 kg según variante y equipamiento",
+  "tipoMotor": "Gasolina 6 cilindros en línea, 3.0 litros biturbo (S58)",
+  "potenciaKW": "375 kW (510 PS)",
   "capacidadTanque": "59 litros",
   "anoProduccion": "2023",
   "mercados": [
@@ -53,7 +56,7 @@
     "Control dinámico M",
     "Frenos cerámica M"
   ],
-  "tiempoRecorrido": "10.8s",
+  "tiempoRecorrido": "3.9 segundos (0-100 km/h para M4 Competition xDrive)",
   "consumoEtiqueta": "F",
   "neumaticos": "275/35R20",
   "maleteroMin": "405 litros",
@@ -130,8 +133,8 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "G82",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "deportivo",
   "gallery": {
@@ -263,7 +266,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.314Z",
+    "lastChecked": "2026-08-27T01:32:01.618Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -316,5 +319,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\n\nEl BMW M4 nació como la evolución natural de la icónica estirpe de coupés deportivos de altas prestaciones de la marca bávara, separando formalmente la nomenclatura de la Serie 3 coupé a partir de la generación F82 en 2014. Desde entonces, el M4 se ha consolidado como uno de los referentes indiscutidos dentro del segmento de los deportivos compactos de lujo, heredando décadas de desarrollo en competición por parte de la división BMW M. Con el lanzamiento de la generación G82, la marca llevó la fórmula un paso más adelante, introduciendo un diseño sumamente agresivo y polarizante —liderado por la imponente parrilla de doble riñón vertical— junto con una arquitectura mecánica profundamente revisada que prioriza tanto la rigidez estructural como la entrega de potencia descomunal.\n\n## Un hito o generación relevante\n\nLa introducción de la generación G82 (y su variante de carrocería convertible G83) marcó un punto de inflexión absoluto en la historia del modelo al incorporar por primera vez en la historia del M4 el sistema de tracción integral inteligente M xDrive en sus versiones Competition. Tradicionalmente fieles a la propulsión trasera pura, los ingenieros de BMW M lograron desarrollar un esquema de tracción en las cuatro ruedas con polarización trasera y un diferencial activo M que no diluye el carácter lúdico y dinámico del vehículo, permitiendo además gestionar de manera mucho más eficiente los más de 500 caballos de fuerza que emanan de su motor.\n\n## Curiosidades\n\nBajo el capó del M4 actual late el afamado motor S58, un bloque de 6 cilindros en línea con tecnología TwinPower Turbo que comparte arquitectura con los vehículos de competición GT3 de la marca. Una de las curiosidades técnicas más destacadas de este propulsor es su sistema de refrigeración inspirado directamente en las pistas, diseñado para soportar tandas de circuito exigentes sin fatiga térmica. Asimismo, a diferencia de la tendencia generalizada hacia la electrificación total, BMW mantuvo viva la opción de una transmisión manual de 6 velocidades en ciertos mercados para las versiones de acceso, un guiño directo a los puristas que buscan una conexión análoga con la conducción deportiva.\n\n## Competencia y posicionamiento\n\nEn el mercado global, el BMW M4 compite directamente en la cúspide de los coupés deportivos de altas prestaciones frente a rivales de peso pesado como el Mercedes-AMG C 63 Coupé (y sus evoluciones híbridas recientes) y el Audi RS 5 Coupé. El posicionamiento del M4 destaca por ofrecer una dualidad de personalidad muy marcada: es capaz de comportarse como un rutero sumamente tecnológico y cómodo para el uso diario, pero se transforma en un devorador de circuitos despiadado al activar los modos de manejo más extremos. Su combinación de potencia bruta, precisión quirúrgica en el tren delantero y una conectividad de vanguardia lo mantienen como uno de los productos más deseados y cotizados de su categoría."
 }

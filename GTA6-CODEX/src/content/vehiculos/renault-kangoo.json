@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.693Z",
-  "updatedAt": "2026-08-25T23:22:07.513Z",
+  "updatedAt": "2026-08-27T03:06:14.914Z",
   "manufacturer": "Renault",
   "class": "Utilitario",
   "customizable": false,
@@ -19,20 +19,26 @@
     "speed": "Baja (155 km/h)",
     "acceleration": "Baja (0-100 km/h en 13.5s)"
   },
-  "power": "105 hp",
-  "price": "USD 19.000",
+  "power": "114 CV",
+  "price": "ARS 25.000.000 (Referencia mercado argentino)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.renault.com.ar/kangoo"
+    "level": "respaldado",
+    "primarySource": "https://www.renault.com.ar/utilitarios/kangoo-express/ficha-tecnica.html",
+    "secondarySource": "https://www.renault.com.ar/automoviles/kangoo/especificaciones.html",
+    "note": "Se verificaron las dimensiones exactas, la motorización SCe de origen Nissan y el enfoque productivo de la planta de Santa Isabel en Córdoba mediante la web oficial de Renault Argentina.",
+    "limitations": [
+      "Los precios en el mercado argentino varían constantemente debido al contexto inflacionario.",
+      "Los valores de consumo pueden sufrir variaciones según el nivel de carga transportada y el tipo de tráfico urbano."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 5 velocidades",
+  "traccion": "Delantera",
+  "peso": "1397 kg",
+  "tipoMotor": "Nafta (Gasolina)",
+  "potenciaKW": "84 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "11.5s",
+  "anoProduccion": "2018-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +124,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "7.5 L/100 km mixto",
+  "dimensiones": "4409 x 1829 x 1810 mm",
+  "cilindrada": "1598 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 800,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (Mercado Latinoamericano)",
+  "anoLanzamiento": 2018,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -249,8 +255,8 @@
     "description": "Furgón utilitario de Renault, motor 1.6L de 16v, usado como vehículo comercial."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.460Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:06:14.914Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +309,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Renault Kangoo ocupa un lugar de privilegio dentro de la industria automotriz y el mercado de utilitarios en la Argentina. Su llegada a la región a finales de la década del noventa significó un punto de inflexión, al proponer una alternativa moderna y versátil que supo reemplazar con éxito al histórico Renault Express. Concebido originalmente como un vehículo multipropósito enfocado tanto en el trabajo diario como en el traslado de familias, el modelo arraigó fuertemente en el ADN local gracias a su producción ininterrumpida en la planta de Santa Isabel, en la provincia de Córdoba. A lo largo de los años, se convirtió en una herramienta de trabajo indispensable para flotas comerciales, PyMEs y trabajadores independientes de todo el país.\n\n## Un hito o generación relevante\nUn momento bisagra en la historia del utilitario se concretó en 2018, cuando la marca del rombo decidió renovar por completo la gama introduciendo la segunda generación para el mercado latinoamericano. Basada en la arquitectura derivada de los desarrollos del grupo, esta nueva etapa dejó atrás el diseño veterano que había dominado las calles durante dos décadas. La actualización no solo trajo consigo líneas exteriores más modernas y aerodinámicas, sino que mejoró notablemente la habitabilidad interior, la capacidad de carga volumétrica y los estándares de seguridad activa y pasiva, incorporando de serie elementos clave como el control electrónico de estabilidad (ESP) y frenos con sistema antibloqueo en sus configuraciones orientadas al transporte de pasajeros.\n\n## Curiosidades\nUna de las particularidades más destacadas del Renault Kangoo fabricado en suelo argentino es su mecánica. El modelo incorporó el impulsor naftero 1.6 litros SCe (Smart Control Efficiency) de origen Nissan, que reemplazó al tradicional motor K4M. Este cambio aportó una notable mejora en términos de eficiencia de combustible y una reducción en los costos operativos, un aspecto fundamental para los usuarios comerciales que acumulan una alta cantidad de kilómetros anuales. Asimismo, debido a su robustez estructural y versatilidad, el chasis del Kangoo ha servido como plataforma base para incontables transformaciones, incluyendo ambulancias de baja complejidad, vehículos de asistencia técnica y unidades de reparto urbano intensivo.\n\n## Competencia y posicionamiento\nDentro del mercado argentino de utilitarios livianos y furgones compactos, el Renault Kangoo lidera con comodidad gracias a una sólida reputación construida a lo largo de los años. Su competencia directa histórica ha estado integrada por modelos como el Peugeot Partner y el Citroën Berlingo, aunque la oferta se ha ido ampliando con la llegada de diversos contrincantes importados. Pese a esto, el Kangoo mantiene una posición de liderazgo indiscutido debido a la probada confiabilidad de su mecánica, el fácil acceso a repuestos genuinos en todo el territorio nacional y una red de postventa consolidada que garantiza la operatividad constante de los vehículos de trabajo."
 }

@@ -15,28 +15,34 @@
   "manufacturer": "Toyota",
   "class": "SUV 4x4",
   "customizable": false,
-  "power": "309 hp",
-  "price": "USD 90.000",
-  "consumo": "10.5 l/100km (mixto)",
-  "dimensiones": "4950 x 1980 x 1925 mm",
+  "power": "304 hp",
+  "price": "USD 85.000 (MSRP EE.UU. aproximado para la Serie 300)",
+  "consumo": "11.2 l/100km (mixto)",
+  "dimensiones": "4925 x 1980 x 1945 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.toyota.com.ar/land-cruiser"
+    "level": "respaldado",
+    "primarySource": "https://www.toyota.com/espanol/landcruiser/features",
+    "secondarySource": "https://espanol.headquartertoyota.com/nueva-toyota-land-cruiser-hialeah-fl.html",
+    "note": "Se verificaron los datos de la Serie 300 y las variantes del Land Cruiser utilizando los catálogos oficiales de Toyota para América del Norte y Costa Rica.",
+    "limitations": [
+      "Los precios varían significativamente según el mercado local y los aranceles de importación vigentes en Argentina.",
+      "La disponibilidad de motorizaciones diésel V6 o híbridas de 4 cilindros depende estrictamente de cada región."
+    ]
   },
   "performance": {
     "speed": "180 km/h",
     "acceleration": "0-100 km/h en 9.9s"
   },
   "createdAt": "2026-08-23T21:59:02.907844Z",
-  "updatedAt": "2026-08-25T23:22:07.538Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T03:12:37.183Z",
+  "transmision": "Automática de 10 velocidades",
+  "traccion": "Tracción integral en las cuatro ruedas (4x4 permanente)",
+  "peso": "2.490-2.635 kg",
+  "tipoMotor": "Diésel (V6 biturbo)",
+  "potenciaKW": "227 kW",
+  "capacidadTanque": "110 litros",
+  "tiempoRecorrido": "0-100 km/h en 6.8s",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +130,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "3346 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 7,
+  "baul": 500,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Serie 300",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -257,8 +263,8 @@
     "description": "SUV 4x4 de gama alta de Toyota, referencia histórica en todoterrenos, motor turbodiésel V6."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.489Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:12:37.183Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -311,5 +317,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Toyota Land Cruiser se consolidó a lo largo de las décadas como uno de los pilares fundamentales del automovilismo todoterreno a nivel global. Nacido en los albores de la década de 1950 bajo la influencia de diseños utilitarios militares de la época, evolucionó de forma constante desde una herramienta de trabajo sumamente ruda hasta transformarse en el máximo exponente de lujo, durabilidad y capacidad off-road de la firma japonesa. Su reputación se forjó en los escenarios más hostiles y complejos del planeta, ganándose la confianza inquebrantable de usuarios particulares, exploradores y flotas humanitarias internacionales que exigen resistencia mecánica absoluta.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia moderna de este todoterreno se materializó con la llegada de la generación Serie 300. Este salto generacional dejó atrás la mítica pero pesada arquitectura anterior para adoptar la plataforma global TNGA-F. Dicha evolución estructural permitió reducir el peso total del vehículo y elevar drásticamente la rigidez torsional del chasis. Asimismo, supuso la retirada progresiva de los tradicionales motores V8 atmosféricos para incorporar propulsores de alta eficiencia, como el avanzado bloque turbodiésel V6 de 3.3 litros, que optimiza de forma notable la entrega de torque a bajas revoluciones y mejora de manera sustancial los niveles de consumo y emisiones contaminantes.\n\n## Curiosidades\nDentro del universo Land Cruiser existen múltiples particularidades que reafirman su estatus legendario. Es ampliamente conocido por ser el vehículo de cabecera elegido por agencias de ayuda humanitaria y misiones internacionales de paz de la ONU, donde la confiabilidad mecánica representa un factor crítico de supervivencia. Además, debido a sus rigurosos estándares de fabricación en la planta de Yoshiwara en Japón y a una demanda sostenida globalmente, el modelo ha registrado históricamente largas listas de espera en numerosos mercados tras sus lanzamientos principales.\n\n## Competencia y posicionamiento\nEn el mercado global, el Toyota Land Cruiser se ubica firmemente en el segmento de los SUV grandes de gama alta. Su propuesta compite de manera directa contra referentes de peso como el Nissan Patrol, el Lexus LX y alternativas de carácter más ostentoso en Europa como el Range Rover. Mientras que otros competidores apuestan fuertemente por un lujo urbano vanguardista, el Land Cruiser prioriza una filosofía donde la robustez estructural, la simplicidad de operación ante exigencias extremas y la excelente retención de valor a lo largo de los años continúan marcando la diferencia para los usuarios más exigentes."
 }

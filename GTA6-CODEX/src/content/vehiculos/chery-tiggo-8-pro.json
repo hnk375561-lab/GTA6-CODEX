@@ -14,28 +14,33 @@
   "manufacturer": "Chery",
   "class": "SUV grande",
   "customizable": false,
-  "power": "186 hp",
-  "price": "USD 44.800",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "186 CV",
+  "price": "USD 44.800 (referencia mercado local)",
+  "consumo": "8.1 l/100km combinado",
+  "dimensiones": "4.722 mm largo x 1.860 mm ancho x 1.705 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://minutomotor.com.ar/chery-actualizo-sus-precios-en-argentina/"
+    "level": "respaldado",
+    "secondarySource": "https://minutomotor.com.ar/chery-actualizo-sus-precios-en-argentina/",
+    "note": "Se verificaron las especificaciones técnicas generales del Chery Tiggo 8 Pro para el mercado latinoamericano y argentino, incluyendo su motorización 1.6 TGDI de 186 CV y la configuración de 7 plazas.",
+    "limitations": [
+      "Los precios en el mercado argentino pueden sufrir variaciones constantes debido a la carga impositiva y el tipo de cambio.",
+      "Algunos equipamientos específicos de confort o asistencias a la conducción pueden variar según la partida importada por Grupo Corven."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T23:22:07.295Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:34:59.920Z",
+  "transmision": "Automática DCT de 7 marchas",
+  "traccion": "Delantera",
+  "peso": "1.637 kg",
+  "tipoMotor": "Naftero 1.6 Turbo",
+  "potenciaKW": "137 kW",
+  "capacidadTanque": "51 litros",
+  "tiempoRecorrido": "0-100 km/h en 9.9s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -123,14 +128,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.598 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 7,
+  "baul": 193,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra generación (facelift Pro)",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -255,8 +260,8 @@
     "description": "SUV de siete plazas del segmento D, tope de gama de Chery en Argentina, comercializado por Grupo Corven."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.327Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:34:59.920Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -309,5 +314,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Chery Tiggo 8 Pro se posiciona como el buque insignia de la marca de origen chino dentro del segmento de los SUV grandes (segmento D). Concebido para competir en mercados globales exigentes, este modelo representa la evolución de la familia Tiggo, apostando fuertemente por un salto de calidad en términos de diseño, materiales interiores, seguridad activa y motorización eficiente. Su desembarco en la región sudamericana y particularmente en Argentina, de la mano de representantes locales como Grupo Corven, buscó captar a familias numerosas o usuarios que demandan un vehículo versátil de siete plazas sin resignar un habitáculo refinado ni una estética imponente.\n\n## Un hito o generación relevante\nEl gran punto de inflexión para esta gama fue la introducción de la variante 'Pro' y sus posteriores actualizaciones estéticas y mecánicas, que incorporaron el motor naftero de alta eficiencia 1.6 TGDI (Inyección Directa Turboalimentada) asociado a una transmisión automática de doble embrague (DCT) de 7 velocidades. Este conjunto mecánico marcó una clara diferencia respecto a las motorizaciones atmosféricas o turbos más antiguos de la marca, ofreciendo una respuesta dinámica más ágil, mejores cifras de consumo y un andar refinado en ruta que se alinea con los estándares de marcas generalistas tradicionales de origen europeo o asiático.\n\n## Curiosidades\nA pesar de ser un vehículo de dimensiones generosas (superando los 4,7 metros de largo) y ofrecer una configuración de tres filas de asientos, el Tiggo 8 Pro logra mantener un coeficiente aerodinámico competitivo gracias a los deflectores integrados y líneas de carácter esculpidas en su carrocería. Además, en su mercado de origen y en varias plazas internacionales, este modelo sirve como base para versiones híbridas enchufables (PHEV) y tracción integral, demostrando la alta modularidad de la plataforma T1X desarrollada por Chery.\n\n## Competencia y posicionamiento\nEn el mercado argentino y regional, el Chery Tiggo 8 Pro compite de manera directa contra medianos y grandes del segmento D y C-SUV extendido, tales como el Jeep Commander, el Volkswagen Taos (en versiones tope), el Chevrolet Equinox y diversas alternativas provenientes tanto del Mercado Común del Sur como de otras marcas de origen asiático. Su principal propuesta de valor radica en una relación precio-producto muy competitiva, ofreciendo de serie un nivel de equipamiento tecnológico, asistencias avanzadas a la conducción (ADAS) y refinamiento interior que usualmente se encuentra en escalones de precio superiores dentro del mercado automotor."
 }

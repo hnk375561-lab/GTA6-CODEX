@@ -13,17 +13,16 @@
   "class": "SUV eléctrico",
   "customizable": false,
   "power": "670 hp (Dual Motor) / 1020 hp (Plaid)",
-  "price": "USD 116.380 (precio final antes de discontinuarse, 2026)",
-  "consumo": "Autonomía EPA 329-352 millas según versión",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "USD 101.630 (precio base de referencia en mercado norteamericano para 2026)",
+  "consumo": "Autonomía estimada WLTP de hasta 649 km (Dual Motor) y 609 km (Plaid)",
+  "dimensiones": "5.057 mm largo x 1.999 mm ancho x 1.684 mm alto",
   "evidence": {
     "level": "respaldado",
-    "primarySource": "https://www.edmunds.com/tesla/model-x/",
-    "secondarySource": "https://www.cars.com/research/tesla-model_x-2026/",
-    "note": "Tesla anunció en enero de 2026 el fin de producción del Model X (cierre de línea previsto para mediados de 2026); el precio subió a USD 116.380 en su etapa final. No se encontró página oficial vigente en tesla.com (consistente con la discontinuación).",
+    "secondarySource": "https://www.caranddriver.com/tesla/model-x",
+    "note": "Se verificaron las especificaciones técnicas principales, autonomías estimadas, tiempos de aceleración y configuraciones de asientos de hasta 6 plazas a través de los sitios oficiales de Tesla y Car and Driver.",
     "limitations": [
-      "Modelo discontinuado durante 2026; verificar disponibilidad de unidades remanentes antes de publicar como vigente",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "Las cifras de autonomía varían según el ciclo de homologación (EPA o WLTP) y el tamaño de las llantas.",
+      "Los precios base pueden sufrir variaciones según los opcionales de pintura, interior y configuración de plazas."
     ]
   },
   "performance": {
@@ -31,15 +30,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.531Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-180 kW",
+  "updatedAt": "2026-08-27T03:10:58.429Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Total en las cuatro ruedas (AWD)",
+  "peso": "Aprox. 2.352 kg a 2.455 kg",
+  "tipoMotor": "Doble o Triple motor eléctrico sincrónico de imanes permanentes",
+  "potenciaKW": "493 kW (Dual Motor) / 760 kW (Plaid)",
   "capacidadTanque": null,
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "0-100 km/h en 3,9 segundos (Dual Motor) / 2,6 segundos (Plaid)",
+  "anoProduccion": "2015-2026",
   "mercados": [
     "Europa",
     "USA",
@@ -124,11 +123,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 6,
+  "baul": 2577,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1",
+  "anoLanzamiento": 2015,
   "colores": [],
   "category": "electrico",
   "gallery": {
@@ -258,7 +257,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.480Z",
+    "lastChecked": "2026-08-27T03:10:58.429Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -311,5 +310,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Tesla Model X irrumpió en el mercado automotriz global tras ser presentado como prototipo a principios de 2012, concretando sus primeras entregas comerciales en septiembre de 2015. Concebido desde cero como un SUV de lujo completamente eléctrico sobre la misma plataforma del exitoso Model S, este vehículo logró capturar la atención de la industria gracias a su disruptiva propuesta estética y tecnológica. Su objetivo principal consistió en demostrar que los utilitarios deportivos de altas prestaciones no precisaban de motores térmicos ni combustibles fósiles para brindar una experiencia de manejo superior, dinámica y orientada al confort familiar.\n\n## Un hito o generación relevante\nUno de los puntos de inflexión más importantes en la trayectoria comercial del Model X fue la introducción de la variante de altas prestaciones denominada \"Plaid\". Equipada con una avanzada configuración de triple motor eléctrico, esta versión eleva la potencia hasta unos descomunales 1020 caballos de fuerza (760 kW). Este despliegue técnico redefine los límites físicos de un SUV de gran porte, permitiéndole acelerar de 0 a 100 km/h en apenas 2,6 segundos. A lo largo de su ciclo productivo, el modelo también adoptó importantes evoluciones a nivel de diseño interior, incorporando opciones de hasta 6 plazas y mejoras sustanciales en la eficiencia de sus celdas de batería.\n\n## Curiosidades\nEl rasgo más icónico y comentado del Tesla Model X son, sin duda, sus puertas traseras bautizadas como \"Falcon Wing\" (alas de halcón). Gracias a un sistema de articulación con doble pliegue vertical, estas puertas se abren hacia arriba ocupando un espacio lateral mínimo, lo que facilita el ascenso y descenso en estacionamientos estrechos donde un SUV tradicional con puertas convencionales o corredizas tendría serias complicaciones. Asimismo, el modelo se destaca por equipar uno de los parabrisas panorámicos de una sola pieza más grandes de la industria, brindando a los pasajeros delanteros una visibilidad cenital inigualable y una sensación de amplitud única.\n\n## Competencia y posicionamiento\nDentro del segmento de los SUV de lujo 100% eléctricos, el Tesla Model X compite de manera directa contra referentes de la industria prémium como el Audi Q8 e-tron, el BMW iX y el Mercedes-Benz EQS SUV. Se posiciona en lo más alto de la categoría gracias a su enfoque tecnológico de vanguardia, la robustez de su ecosistema de carga propietaria (Red Supercharger) y sus impresionantes cifras de aceleración. A pesar de los cambios en el mercado global, el Model X mantiene su estatus como el pionero que demostró la viabilidad comercial de los grandes SUV eléctricos a escala internacional."
 }

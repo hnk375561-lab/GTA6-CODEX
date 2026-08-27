@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.851Z",
-  "updatedAt": "2026-08-25T23:22:07.418Z",
+  "updatedAt": "2026-08-27T01:48:06.686Z",
   "manufacturer": "Jeep",
   "class": "SUV",
   "customizable": false,
@@ -19,20 +19,26 @@
     "speed": "Media (190 km/h)",
     "acceleration": "Media (0-100 km/h en 9.5s)"
   },
-  "power": "170 hp",
-  "price": "USD 33.000",
+  "power": "175 CV",
+  "price": "USD 38.000 (MSRP regional referencia)",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.jeep.com/compass.html"
+    "primarySource": "https://www.jeep.com",
+    "secondarySource": "https://www.jeep.com.ar",
+    "note": "Se verificaron las especificaciones técnicas globales y regionales para el motor T270 turbo nafta de 1.3 litros, dimensiones y capacidades del Jeep Compass actual.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado de Latinoamérica o Europa y los impuestos locales.",
+      "Las cifras de consumo exactas dependen de la homologación específica (WLTP o EPA) y el tipo de tracción seleccionada."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática de 6 o 9 marchas",
+  "traccion": "Delantera (4x2) o Integral (4x4)",
+  "peso": "1535 - 1710 kg",
+  "tipoMotor": "Nafta (Gasolina) 1.3L Turbo T270",
+  "potenciaKW": "128 kW (175 CV)",
+  "capacidadTanque": "60 litros",
+  "tiempoRecorrido": "0-100 km/h en 9.7 segundos",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,16 +126,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "Aprox. 7.5 L/100 km mixto (motor T270)",
+  "dimensiones": "4398 x 1819 x 1635 mm",
+  "cilindrada": "1332 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 440,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (restyling)",
+  "anoLanzamiento": 2016,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -252,7 +258,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.410Z",
+    "lastChecked": "2026-08-27T01:48:06.686Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +311,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Jeep Compass nació en 2006 como una apuesta de la marca norteamericana dentro del segmento de los SUV compactos, buscando ofrecer una alternativa más urbana y accesible en comparación con el tradicional Cherokee. A lo largo de su primera generación, el modelo adoptó un enfoque estético más cercano al de un turismo elevado que no terminó de convencer a los puristas del todoterreno. Sin embargo, todo cambió radicalmente con la llegada de su segunda generación en 2016. Desarrollado bajo la órbita del grupo FCA (hoy parte de Stellantis), el nuevo Compass supuso un salto cuántico en términos de diseño, calidad percibida, seguridad y comportamiento dinámico, convirtiéndose rápidamente en un producto de carácter global.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante para la gama actual del Jeep Compass fue el profundo restyling introducido a partir de 2021 (y consolidado en los años siguientes). Más allá de sutiles retoques estéticos en su carrocería —como la clásica parrilla de siete ranuras rediseñada y ópticas LED más afiladas—, la gran revolución ocurrió puertas adentro. El habitáculo fue completamente modernizado para adoptar un tablero totalmente digital configurable y un sistema multimedia flotante de gran tamaño compatible con conectividad inalámbrica. Asimismo, este hito tecnológico vino acompañado de la incorporación de la familia de motores turboalimentados de alta eficiencia, destacando el impulsor naftero T270 de 1.3 litros y 175 caballos de fuerza, el cual reemplazó de manera definitiva a los veteranos bloques atmosféricos y optimizó notablemente los consumos en ruta y ciudad.\n\n## Curiosidades\nA pesar de ser un vehículo de concepción netamente urbana, el Jeep Compass mantiene vivo el ADN de la marca gracias a versiones con tracción integral (4x4) altamente capaces, especialmente en los mercados del Mercosur donde se produce localmente en la planta de Pernambuco, Brasil. Una curiosidad de su producción regional es que abastece a gran parte de Sudamérica, adaptándose tanto a las exigencias de caminos off-road moderados como al uso diario familiar. Además, el Compass fue uno de los primeros vehículos de su categoría en incorporar de serie asistencias avanzadas a la conducción (ADAS) en sus acabados superiores, democratizando tecnologías que antes estaban reservadas exclusivamente para segmentos de alta gama.\n\n## Competencia y posicionamiento\nEn el mercado actual, el Jeep Compass se posiciona firmemente en el corazón del competitivo segmento de los C-SUV. Debe medirse cara a cara con pesos pesados de la industria como el Toyota Corolla Cross, el Volkswagen Taos, el Ford Territory y el Chevrolet Equinox, además de rivalizar con opciones de corte más aspiracional provenientes de marcas europeas. Su principal ventaja competitiva radica en el equilibrio logrado entre el prestigio y la mística de la marca Jeep, un nivel de confort de marcha sobresaliente gracias a sus suspensiones independientes en ambos ejes, y una dotación de seguridad muy completa. Aunque no es el vehículo más enfocado al ahorro extremo de combustible, su propuesta de diseño robusto, habitabilidad y versatilidad lo mantienen como uno de los referentes indiscutidos de su categoría a nivel internacional."
 }
