@@ -127,7 +127,19 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 120% 90% at 50% 45%, transparent 45%, rgba(3, 2, 6, 0.55) 100%);
+  /* Antes: transparent 45%, rgba(3,2,6,0.55) 100% — dejaba una zona
+     central grande sin oscurecer, pensada para el hero. Como este fondo
+     corre detrás de TODO el contenido (no solo el hero), ese centro
+     "limpio" es justo donde suele caer el texto de lectura en el resto
+     de las páginas. Se sube el oscurecido base (0.34 en el centro) y se
+     angosta el radio transparente para dar contraste consistente en
+     toda la página, sin perder el efecto de viñeta hacia los bordes. */
+  background: radial-gradient(
+    ellipse 120% 90% at 50% 45%,
+    rgba(3, 2, 6, 0.34) 0%,
+    rgba(3, 2, 6, 0.46) 55%,
+    rgba(3, 2, 6, 0.68) 100%
+  );
 }
 
 /* ============================================================
