@@ -38,6 +38,7 @@ import { ConsentBanner } from '@/components/layout/ConsentBanner'
 import { LenisProvider } from '@/lib/scroll/lenis-provider'
 import { PageTransitionBridge } from '@/components/layout/PageTransitionBridge'
 import { ScrollRestorationBridge } from '@/components/layout/ScrollRestorationBridge'
+import { OverscrollBounceBridge } from '@/components/layout/OverscrollBounceBridge'
 
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/config/site'
 // GA4 solo se activa si hay un ID real configurado. Sin esto, un build sin
@@ -110,6 +111,7 @@ export default function RootLayout({
         <LenisProvider />
         <ScrollRestorationBridge />
         <PageTransitionBridge />
+        <OverscrollBounceBridge />
         <WebGLBackground />
         <SceneAmbientBridge />
         <ScrollTelemetryBridge />
@@ -118,7 +120,11 @@ export default function RootLayout({
         {/* Grano fílmico + viñeta: capa atmosférica entre el canvas WebGL
             (z-0) y el contenido (z-10). Ver .auto-atmosphere en globals.css. */}
         <div className="auto-atmosphere" aria-hidden="true" />
-        <div className="relative z-10 flex min-h-screen flex-1 flex-col">
+        {/* id="page-content": ancla para OverscrollBounceBridge (Cap. 8.2),
+            que aplica un transform elástico transitorio acá al pegar contra
+            los extremos del scroll — nunca sobre el propio scrollTop del
+            documento (ver ese archivo para el porqué). */}
+        <div id="page-content" className="relative z-10 flex min-h-screen flex-1 flex-col">
           <Header />
           <TrendingBar />
           <main id="main-content" className="flex-1">

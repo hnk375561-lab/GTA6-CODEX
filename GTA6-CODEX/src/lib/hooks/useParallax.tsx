@@ -70,7 +70,18 @@ export function useParallax<T extends HTMLElement>(
         scrollProgress = Math.max(0, Math.min(1, progress))
       }
 
-      const offset = scrollProgress * factor * windowHeight * -1
+      // Capítulo 1.1 (fases con nombre) aplicado acá: en "invitación" (CTA
+      // final, ver ScrollTelemetryBridge/data-scroll-phase) el parallax se
+      // atenúa a 40% de su intensidad normal — mismo criterio que ya se
+      // usó en el grano reactivo a velocidad (globals.css): ese tramo está
+      // pensado para que la persona lea tranquila, no para que el fondo
+      // siga "trabajando" a intensidad completa. `getAttribute` es una
+      // lectura sincrónica barata, sin costo real dentro de un handler de
+      // scroll ya throttleado por el propio evento del navegador.
+      const phase = document.documentElement.getAttribute('data-scroll-phase')
+      const phaseDamping = phase === 'invitacion' ? 0.4 : 1
+
+      const offset = scrollProgress * factor * phaseDamping * windowHeight * -1
       element.style.setProperty('--parallax-offset', `${offset}px`)
     }
 
