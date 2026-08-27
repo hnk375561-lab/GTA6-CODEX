@@ -507,7 +507,7 @@ export default async function HomePage() {
 
             <Reveal className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((entity, i) => (
-                <ParallaxElement key={`${entity.type}-${entity.slug}`} factor={0.15}>
+                <ParallaxElement key={`${entity.type}-${entity.slug}`} factor={0.15} scaleFactor={0.05}>
                   <EntityCard
                     entity={entity}
                     image={resolveEntityDisplayImage(entity)}
@@ -606,7 +606,7 @@ export default async function HomePage() {
 
             <Reveal className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {latestNews.map((entity) => (
-                <ParallaxElement key={`${entity.type}-${entity.slug}`} factor={0.15}>
+                <ParallaxElement key={`${entity.type}-${entity.slug}`} factor={0.15} scaleFactor={0.05}>
                   <EntityCard
                     entity={entity}
                     image={latestNewsImages[entity.slug]}

@@ -65,6 +65,11 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
   const layerRef = useRef<HTMLDivElement>(null)
   const rootRef = useRef<HTMLDivElement>(null)
   const scrollOffset = useRef(0)
+  // Progreso crudo (0..1) del scroll a través del hero, separado de
+  // `scrollOffset` (que ya viene multiplicado por SCROLL_PARALLAX_STRENGTH
+  // y por el alto de la sección, en px de traslado). Se usa para el scale
+  // dinámico de abajo, que necesita el 0..1 sin esas conversiones.
+  const scrollProgress = useRef(0)
   const pointerOffset = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
@@ -133,7 +138,15 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
       if (layer) {
         const ty = scrollOffset.current + pointerOffset.current.y
         const tx = pointerOffset.current.x
-        layer.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(1.08)`
+        // La escala base (1.08) existía solo como margen de seguridad para
+        // que el translate por parallax/cursor nunca deje ver un borde
+        // vacío de la capa. Ahora crece con `scrollProgress` (hasta 1.18):
+        // el fondo se acerca de verdad mientras el hero sale de pantalla,
+        // en vez de quedarse fijo en zoom mientras solo se desliza — el
+        // efecto "cámara avanzando hacia la escena" que le falta al hero
+        // frente a una referencia como el scroll de rockstargames.com/VI.
+        const scale = 1.08 + scrollProgress.current * 0.1
+        layer.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${scale})`
       }
       raf = 0
     }
@@ -147,6 +160,7 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
       const rect = root.getBoundingClientRect()
       // Progreso 0 (sección arriba del todo) → 1 (sección salió por arriba)
       const progress = Math.min(Math.max(-rect.top / Math.max(rect.height, 1), 0), 1)
+      scrollProgress.current = progress
       scrollOffset.current = progress * rect.height * SCROLL_PARALLAX_STRENGTH
       schedule()
     }
