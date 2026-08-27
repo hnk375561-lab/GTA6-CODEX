@@ -21,7 +21,6 @@ import { WordRotate } from '@/components/ui/WordRotate'
 import { CategoryCardMedia } from '@/components/ui/CategoryCardMedia'
 import { EntityCard } from '@/components/entities/EntityCard'
 import { getCategoryPreviewImages } from '@/lib/images'
-import { RotatingHeroBackground } from '@/components/layout/RotatingHeroBackground'
 import { SceneSection } from '@/components/webgl/SceneSection'
 import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
 import { DevelopmentTimeline, type TimelineEvent } from '@/components/home/DevelopmentTimeline'
@@ -30,7 +29,6 @@ import { QuickSearchForm } from '@/components/home/QuickSearchForm'
 import { HeroScrollCue } from '@/components/home/HeroScrollCue'
 import { HeroNewsFlash } from '@/components/home/HeroNewsFlash'
 import { HeroCountdownChip } from '@/components/home/HeroCountdownChip'
-import { CinematicScroll } from '@/components/home/CinematicScroll'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateHomepageMetadata()
@@ -183,16 +181,12 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
       />
 
-      {/* Scroll cinemático — contenido 100% original, ver src/components/home/CinematicScroll.tsx */}
-      <CinematicScroll />
-
       {/* Hero */}
       <SceneSection
         sceneId="home-hero"
         htmlId="hero"
         className="hero-gleam relative overflow-hidden border-b border-auto-border py-24 sm:py-32"
       >
-        <RotatingHeroBackground />
         {/* Sweep de luz sincronizado con el motor WebGL (ángulo/temperatura
             reales de la escena 3D, no un brillo inventado aparte) — ver
             `.hero-gleam` en globals.css. En reposo (motor sin cargar) es
