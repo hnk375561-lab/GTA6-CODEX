@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Lenis from 'lenis'
+import { webglSceneBus } from '@/lib/webgl/scene-bus'
 
 /**
  * Scroll con inercia estilo rockstargames.com/VI.
@@ -62,6 +63,21 @@ export function LenisProvider() {
     })
 
     window.__lenis = lenis
+
+    // `webglSceneBus.setScrollProgress(progress, velocity)` existía en el bus
+    // desde antes (ver scene-bus.ts), documentado como "canal nuevo, listo
+    // para un futuro hook de layout — hoy ningún archivo lo publica
+    // todavía". Este es ese hook: cada tick de Lenis publica el progreso
+    // global de página (0..1) y la velocidad instantánea real de scroll
+    // (no una derivada diferida de una posición ya suavizada). Puramente
+    // aditivo — nadie consumía este canal antes, así que conectarlo no
+    // cambia el comportamiento de ningún componente existente. Motor WebGL
+    // y cualquier componente DOM futuro (ScrollTelemetryBridge, headers,
+    // indicadores) pueden ahora leer `webglSceneBus.getSnapshot().scroll`
+    // o suscribirse con `webglSceneBus.subscribe(...)`.
+    lenis.on('scroll', (instance) => {
+      webglSceneBus.setScrollProgress(instance.progress, instance.velocity)
+    })
 
     function raf(time: number) {
       lenis.raf(time)
