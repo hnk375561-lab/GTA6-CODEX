@@ -15,6 +15,7 @@
     "verify:content": "node scripts/verify-content-integrity.mjs",
     "verify:min-count": "node scripts/verify-min-entity-count.mjs",
     "audit:evidence": "node scripts/audit-evidence-coverage.mjs",
+    "check:evidence-links": "node scripts/check-evidence-links.mjs",
     "verify:relations": "node scripts/verify-relations-integrity.mjs",
     "verify:relations:selftest": "node scripts/verify-relations-integrity.mjs --self-test",
     "test": "vitest run",
