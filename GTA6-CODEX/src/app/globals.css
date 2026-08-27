@@ -1829,6 +1829,148 @@ a:hover .logo-mark {
   }
 }
 
+/* --- Hero: dispersión tipográfica de fondo -------------------------------
+   Reemplaza al viejo `CinematicScroll` (retirado por completo): shards de
+   texto con términos reales de ficha técnica, no branding inventado, que
+   viven como capa decorativa del ÚNICO fondo del hero (detrás del
+   contenido real, z-index:1 — igual que `.hero-declass`/scanlines/
+   vignette). En reposo están asentados, en su lugar; al scrollear el hero
+   fuera de foco se dispersan hacia afuera, cada uno con su propio destino
+   (`--shard-x`/`--shard-y`/`--shard-rot`), como si el "documento" del hero
+   se deshojara.
+
+   Mismo motor que `.hero-declass-bar` arriba, por la misma razón: la línea
+   de tiempo nativa `--hero-scroll` (`view-timeline-name` en `.hero-gleam`)
+   en vez de un `scroll` listener + rAF propio — el defecto real que tenía
+   `CinematicScroll` (loop de animación aislado, sin relación con el resto
+   de la página). Cero costo en el hilo principal cuando el navegador
+   soporta scroll-driven animations; en reposo elegante en caso contrario
+   (ver `@supports`/`prefers-reduced-motion` abajo, mismo criterio que
+   `.hero-declass-bar`). --- */
+.hero-word-shards {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-word-shard {
+  position: absolute;
+  max-width: min(46vw, 15rem);
+  border: 1px solid color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 100%), #ff2f8f calc((1 - var(--scene-warmth)) * 100%));
+  border-radius: 4px;
+  padding: 0.3rem 0.65rem;
+  background: color-mix(in srgb, #0a0712 70%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 100%), #ff2f8f calc((1 - var(--scene-warmth)) * 100%));
+  opacity: 0.6;
+  animation: hero-shard-disperse 1100ms var(--ease-premium) both;
+  animation-timeline: --hero-scroll;
+  /* Mismo `exit` que `.hero-declass-bar`: arranca justo cuando el hero
+     empieza a salir de foco al scrollear, nunca antes de tocar el scroll
+     (ver la nota sobre `exit` vs. `cover` en `.hero-declass-bar`). Rango
+     un poco más largo (100% vs. 75%) para que el último shard siga
+     dispersándose mientras entra la siguiente sección — refuerzo visual
+     del gesto, no la señal principal de scroll del fondo (esa la maneja
+     ahora `computeHeroScrollTarget` en el motor WebGL, ver engine.ts). */
+  animation-range: exit 0% exit 100%;
+}
+
+.hero-word-shard--1 {
+  top: 12%;
+  left: 6%;
+  --shard-x: -18vw;
+  --shard-y: -14vh;
+  --shard-rot: -10deg;
+}
+
+.hero-word-shard--2 {
+  top: 22%;
+  right: 8%;
+  --shard-x: 20vw;
+  --shard-y: -10vh;
+  --shard-rot: 7deg;
+  animation-delay: 30ms;
+}
+
+.hero-word-shard--3 {
+  bottom: 30%;
+  left: 10%;
+  --shard-x: -16vw;
+  --shard-y: 12vh;
+  --shard-rot: 6deg;
+  animation-delay: 60ms;
+}
+
+.hero-word-shard--4 {
+  bottom: 22%;
+  right: 12%;
+  --shard-x: 22vw;
+  --shard-y: 14vh;
+  --shard-rot: -8deg;
+  animation-delay: 90ms;
+}
+
+.hero-word-shard--5 {
+  top: 48%;
+  left: 3%;
+  --shard-x: -24vw;
+  --shard-y: 2vh;
+  --shard-rot: -4deg;
+  animation-delay: 120ms;
+}
+
+.hero-word-shard--6 {
+  top: 46%;
+  right: 3%;
+  --shard-x: 24vw;
+  --shard-y: -2vh;
+  --shard-rot: 5deg;
+  animation-delay: 150ms;
+}
+
+@keyframes hero-shard-disperse {
+  from {
+    opacity: 0.6;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: translate(var(--shard-x), var(--shard-y)) rotate(var(--shard-rot));
+  }
+}
+
+@supports not (animation-timeline: scroll()) {
+  .hero-word-shard {
+    animation: none;
+    opacity: 0.6;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-word-shard {
+    animation: none !important;
+    opacity: 0.6 !important;
+    transform: none !important;
+  }
+}
+
+/* Ocupan más espacio del que un hero angosto puede darles sin pisar el
+   título/CTA — se ocultan por debajo del breakpoint donde `hero-title`
+   pasa a una sola columna angosta (mismo criterio que ya usa el resto del
+   hero para simplificar en mobile). */
+@media (max-width: 640px) {
+  .hero-word-shards {
+    display: none;
+  }
+}
+
 /* --- Secciones post-hero: badges de categoría. Mismo lenguaje visual
    que el hero (gradiente rosa->cian, glow sutil), sin agregar colores
    nuevos a la paleta. --- */

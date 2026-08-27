@@ -212,6 +212,25 @@ export default async function HomePage() {
           <span className="hero-declass-bar hero-declass-bar--3" />
           <span className="hero-declass-tab">Nivel de acceso: público</span>
         </div>
+        {/* Dispersión tipográfica de fondo: reemplazo directo del viejo
+            bloque `CinematicScroll` retirado (shards de palabras que se
+            separaban al scrollear con un rAF propio, desconectado de este
+            hero). Mismo espíritu visual, contenido 100% del propio sitio
+            (términos de ficha técnica reales, no branding inventado), y
+            mismo motor cero-JS que ya usa `.hero-declass` un poco más
+            arriba: `animation-timeline: --hero-scroll` (publicado por
+            `.hero-gleam`). Vive por debajo del contenido real (z-index:1,
+            igual que declass/scanlines/vignette) y nunca compite con el
+            título, el CTA ni el buscador. Fallback estático documentado
+            junto a `.hero-word-shard` en globals.css. */}
+        <div className="hero-word-shards" aria-hidden="true">
+          <span className="hero-word-shard hero-word-shard--1">Potencia</span>
+          <span className="hero-word-shard hero-word-shard--2">0-100 km/h</span>
+          <span className="hero-word-shard hero-word-shard--3">Torque</span>
+          <span className="hero-word-shard hero-word-shard--4">Tracción</span>
+          <span className="hero-word-shard hero-word-shard--5">Consumo</span>
+          <span className="hero-word-shard hero-word-shard--6">Ficha verificada</span>
+        </div>
         <div className="hero-cinematic container-max relative text-center">
           <Reveal>
             <p className="hero-pill hero-pill-stamp mb-4">
