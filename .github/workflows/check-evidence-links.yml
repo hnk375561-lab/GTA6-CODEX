@@ -1,9 +1,17 @@
 name: Chequear links de evidencia
 
-# Corre scripts/check-evidence-links.mjs contra src/content/vehiculos:
-# revisa que primarySource/secondarySource sigan respondiendo. Si algo
-# se cayo con el tiempo, abre (o actualiza) un Issue en vez de fallar
-# en silencio - asi alguien puede re-enriquecer esas fichas puntuales.
+# Corre scripts/check-evidence-links.mjs --fix contra src/content/vehiculos:
+# revisa que primarySource/secondarySource sigan respondiendo. Si algo se
+# cayo con el tiempo:
+#   1. Limpia esa evidencia rota (--fix) y commitea el cambio.
+#   2. Dispara enrich-vehiculos.yml automaticamente (ONLY=needsBoth) para
+#      que esas fichas puntuales se re-completen solas con Gemini/Tavily.
+#   3. Abre (o actualiza) un Issue informativo, ya no como pedido de accion
+#      manual sino como registro de lo que se auto-corrigio.
+#
+# Bucle cerrado: nadie tiene que entrar a mano a arreglar nada, salvo que
+# una fuente quede rota de forma persistente (eso se ve en el historial
+# de Issues, que no se cierran solos).
 #
 # Corre solo, todos los dias 1 de cada mes, y tambien se puede disparar
 # a mano desde la pestana Actions.
@@ -18,8 +26,9 @@ defaults:
     working-directory: GTA6-CODEX
 
 permissions:
-  contents: read
+  contents: write
   issues: write
+  actions: write # necesario para disparar enrich-vehiculos.yml via API
 
 jobs:
   check-links:
@@ -27,16 +36,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Correr link-checker
+      - name: Correr link-checker (con auto-fix)
         id: check
         continue-on-error: true
-        run: node scripts/check-evidence-links.mjs
+        run: node scripts/check-evidence-links.mjs --fix
 
       - name: Subir reporte como artifact
         if: always()
@@ -45,6 +56,34 @@ jobs:
           name: broken-links-report
           path: GTA6-CODEX/broken-links-report.json
           if-no-files-found: ignore
+
+      - name: Commitear fichas con evidencia limpiada
+        id: commit
+        if: steps.check.outcome == 'failure'
+        run: |
+          git config user.name "gta6-codex-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/content/vehiculos
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "chore(vehiculos): limpia evidence con URLs rotas [check-evidence-links --fix]"
+            git push origin main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Disparar re-enriquecimiento automatico
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: "enrich-vehiculos.yml",
+              ref: "main",
+              inputs: { only: "needsBoth", limit: "50" },
+            });
 
       - name: Armar cuerpo del Issue
         if: steps.check.outcome == 'failure'
@@ -64,12 +103,11 @@ jobs:
                   console.log('  - ' + f.file + ' → ' + f.field);
                 }
               }
+              if (r.fixedFiles && r.fixedFiles.length > 0) {
+                console.log('');
+                console.log('✅ Auto-corregido: se limpio evidence en ' + r.fixedFiles.length + ' ficha(s) y se disparo enrich-vehiculos.yml (ONLY=needsBoth) para re-completarlas solas. No hace falta accion manual salvo que la proxima corrida mensual vuelva a marcar el mismo archivo (fuente rota de forma persistente).');
+              }
             "
-            echo ""
-            echo "Accion sugerida: re-correr el enriquecimiento sobre esas fichas puntuales"
-            echo "(por ejemplo borrando su campo \`evidence\` y disparando"
-            echo "\`enrich-vehiculos.yml\` con \`only=needsBoth\`), o reemplazar la URL a mano"
-            echo "si encontras la fuente movida a otra direccion."
             echo 'EOF'
           } >> "$GITHUB_OUTPUT"
 
