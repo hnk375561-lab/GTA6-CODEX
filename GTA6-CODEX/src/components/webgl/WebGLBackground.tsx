@@ -34,6 +34,19 @@ function prefersReducedData(): boolean {
  * el fondo estático (`bg-auto-dark` en layout.tsx) — la misma degradación
  * elegante que ya aplica `detectQualityProfile` para el tier 'low', solo
  * que acá directamente no hay descarga ni motor que degradar.
+ *
+ * Capítulo 6.3 — persistencia entre páginas (auditado, no requirió cambio)
+ * Este componente se monta en `app/layout.tsx`, el ÚNICO `layout.tsx` del
+ * proyecto (no hay layouts anidados ni `template.tsx` en `src/app`), fuera
+ * de `{children}`. En App Router de Next.js eso significa que React lo
+ * mantiene montado a través de navegaciones entre rutas — `{children}` es
+ * lo único que se reemplaza, este `<canvas>` y la instancia de
+ * `AutoFichaWebGLEngine` que contiene NUNCA se desmontan ni reinstancian
+ * al navegar. El ciclo día/noche y el mood de la escena ya persisten solos;
+ * no había nada que arreglar acá. `data-webgl-canvas` (ver abajo) es la
+ * única adición: un identificador para que `PageTransitionBridge` (6.1/6.2)
+ * pueda ubicar este canvas y tomarle una foto congelada al navegar, sin
+ * acoplarse a la instancia del motor.
  */
 export function WebGLBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -70,6 +83,7 @@ export function WebGLBackground() {
   return (
     <canvas
       ref={canvasRef}
+      data-webgl-canvas="true"
       className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-80"
       aria-hidden="true"
     />
