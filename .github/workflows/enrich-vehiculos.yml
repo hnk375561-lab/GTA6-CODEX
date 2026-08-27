@@ -44,9 +44,10 @@ jobs:
       - name: Correr enriquecimiento
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
           LIMIT: ${{ github.event.inputs.limit }}
           ONLY: ${{ github.event.inputs.only }}
-        run: node enrich-vehiculos-v2.mjs
+        run: node enrich-vehiculos-v3.mjs
 
       - name: Commit y push de las fichas actualizadas
         if: always()
