@@ -36,6 +36,8 @@ import { ChoreoTelemetryBridge } from '@/components/webgl/ChoreoTelemetryBridge'
 import { ElasticCursor } from '@/components/ui/ElasticCursor'
 import { ConsentBanner } from '@/components/layout/ConsentBanner'
 import { LenisProvider } from '@/lib/scroll/lenis-provider'
+import { PageTransitionBridge } from '@/components/layout/PageTransitionBridge'
+import { ScrollRestorationBridge } from '@/components/layout/ScrollRestorationBridge'
 
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/config/site'
 // GA4 solo se activa si hay un ID real configurado. Sin esto, un build sin
@@ -106,6 +108,8 @@ export default function RootLayout({
           />
         )}
         <LenisProvider />
+        <ScrollRestorationBridge />
+        <PageTransitionBridge />
         <WebGLBackground />
         <SceneAmbientBridge />
         <ScrollTelemetryBridge />

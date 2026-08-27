@@ -413,6 +413,10 @@ export class AutoFichaWebGLEngine {
    */
   private lifecycle: 'idle' | 'running' | 'disposed' = 'idle'
   private reducedMotion: boolean
+  /** Capítulo 8.4 — visitante recurrente (sessionStorage ya marcó que vio
+   *  la apertura en esta sesión de navegador). Solo acorta `introDuration`
+   *  más abajo; no toca ninguna otra rama del motor ni de calidad. */
+  private returningVisitor: boolean
   private paused = false
   /** Referencia al loop para poder retomarlo tras `webglcontextrestored`
    *  sin duplicar su lógica (ver `handleContextLost`/`handleContextRestored`). */
@@ -483,8 +487,9 @@ export class AutoFichaWebGLEngine {
    *  sensible como para degradar por un par de frames sueltos. */
   private static readonly PERF_SAMPLE_WINDOW = 30
 
-  constructor(canvas: HTMLCanvasElement, opts: { reducedMotion: boolean }) {
+  constructor(canvas: HTMLCanvasElement, opts: { reducedMotion: boolean; returningVisitor?: boolean }) {
     this.reducedMotion = opts.reducedMotion
+    this.returningVisitor = opts.returningVisitor ?? false
     this.quality = detectQualityProfile(opts.reducedMotion)
     this.totalShotDuration = SHOTS.reduce((sum, s) => sum + s.duration, 0)
 
@@ -1658,7 +1663,11 @@ export class AutoFichaWebGLEngine {
     // Entrada deliberada: arranca desde un encuadre alto y distante (como
     // una toma aérea) y desciende hacia el primer plano — una "llegada",
     // no un simple crossfade. reducedMotion la colapsa casi a un corte.
-    const introDuration = this.reducedMotion ? 0.4 : 3.1
+    // Capítulo 8.4: un visitante que ya vio la apertura en esta sesión de
+    // navegador (sessionStorage, ver WebGLBackground) no necesita la toma
+    // aérea completa de 3.1s cada vez que navega — 1.1s alcanza para que
+    // la escena no "aparezca" en seco, sin repetir el show ceremonioso.
+    const introDuration = this.reducedMotion ? 0.4 : this.returningVisitor ? 1.1 : 3.1
     const introStartPos = SHOTS[0].pos.clone().add(new THREE.Vector3(-2.5, 8.5, 21))
 
     const loop = () => {

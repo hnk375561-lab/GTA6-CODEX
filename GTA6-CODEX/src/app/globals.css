@@ -258,19 +258,59 @@ a:not(.no-style) {
   color: #fff;
 }
 
-/* Scrollbar */
+/* --- Capítulo 6.2: fundido entre páginas ---
+   Overlay SIEMPRE montado (a diferencia de un modal que aparece/desaparece
+   del DOM), a propósito: así el navegador ya tiene un frame previo pintado
+   con opacity:0 cuando `PageTransitionBridge` cambia el atributo de fase,
+   y la transición de opacity tiene un "desde" real que animar — montar el
+   div ya en su estado final (como pasaría si esto condicionara el render
+   con un `return null`) no dispara transición, solo aparece de golpe.
+
+   z-[60]: por encima de TODO lo demás en la página, incluido el header
+   sticky (z-50) y el cursor elástico (z-50, Capítulo 4.3) — tiene que
+   tapar el viewport completo durante el swap de ruta, cursor incluido.
+
+   `background-image` (el frame congelado del canvas WebGL) lo escribe el
+   propio componente por `style` inline, ya que es una foto tomada en el
+   momento, no algo expresable en CSS estático. Sin foto (fallback si
+   `toDataURL` falla), queda el `background-color` liso de acá. */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0;
+  @apply bg-auto-dark;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 220ms ease-out;
+}
+
+.page-transition-overlay[data-nav-transition-phase='exiting'] {
+  opacity: 1;
+}
+
+.page-transition-overlay[data-nav-transition-phase='entering'],
+.page-transition-overlay[data-nav-transition-phase='idle'] {
+  opacity: 0;
+}
+
+/* Scrollbar — Capítulo 8.1: más fina y sin track visible, fundida con el
+   fondo en vez de tener un carril marcado (el track anterior en
+   bg-auto-darker se notaba como una franja sólida contra el fondo con
+   ruido/atmósfera). El thumb queda como el único elemento visible. */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-auto-darker;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 9999px;
-  border: 2px solid #050308;
+  border: none;
   background: linear-gradient(180deg, var(--c-pink), #7c3f6b);
   transition: background var(--transition-base);
 }
@@ -280,7 +320,7 @@ a:not(.no-style) {
 }
 
 * {
-  scrollbar-color: var(--c-pink) #0a0712;
+  scrollbar-color: var(--c-pink) transparent;
   scrollbar-width: thin;
 }
 

@@ -22,6 +22,27 @@ function prefersReducedData(): boolean {
 }
 
 /**
+ * Capítulo 8.4 — primera visita vs. visita recurrente.
+ * `sessionStorage` (no `localStorage`: el show de apertura completo vuelve
+ * a tener sentido en una sesión de navegador nueva, no solo "la primera
+ * vez en la vida del visitante") marca si ya se vio la coreografía de
+ * apertura. Se lee y se marca en el mismo tick para que una recarga
+ * inmediata de la misma pestaña ya cuente como "recurrente".
+ */
+function hasSeenIntroThisSession(): boolean {
+  if (typeof window === 'undefined') return false
+  try {
+    const seen = window.sessionStorage.getItem('af-intro-seen') === '1'
+    window.sessionStorage.setItem('af-intro-seen', '1')
+    return seen
+  } catch {
+    // Modo privado o storage bloqueado: degradar a "primera visita" siempre
+    // (el show completo) en vez de romper el render del fondo.
+    return false
+  }
+}
+
+/**
  * Capa WebGL de fondo, fija a toda la ventana, detrás del contenido
  * (ver layout.tsx: z-0 aquí, z-10 en el wrapper de contenido).
  * El motor (Three.js) se carga de forma perezosa y solo en cliente.
@@ -64,6 +85,7 @@ export function WebGLBackground() {
       if (cancelled || !canvasRef.current) return
       engine = new AutoFichaWebGLEngine(canvasRef.current, {
         reducedMotion: mql.matches,
+        returningVisitor: hasSeenIntroThisSession(),
       })
       engine.start()
     })
