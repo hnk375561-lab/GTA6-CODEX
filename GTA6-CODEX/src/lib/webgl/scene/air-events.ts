@@ -1,5 +1,5 @@
 /**
- * Air events builder for the GTA6 Zona WebGL engine.
+ * Air events builder for the AutoFicha WebGL engine.
  * Avión comercial lejano cruzando el cielo, muy por encima del skyline
  * (`scene/far-skyline.ts`, tope ~y=5) y de los haces de neón
  * (`scene/light-shaft.ts`, y=6..8), para no cruzarse con ellos.

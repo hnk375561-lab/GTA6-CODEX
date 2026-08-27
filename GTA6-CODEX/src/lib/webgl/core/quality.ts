@@ -1,5 +1,5 @@
 /**
- * Quality profile configuration for the GTA6 Zona WebGL engine.
+ * Quality profile configuration for the AutoFicha WebGL engine.
  * Handles device detection and quality settings adaptation.
  *
  * "Synth Noir Intensificado" — pase 2: `trafficCount` bajado en los tres

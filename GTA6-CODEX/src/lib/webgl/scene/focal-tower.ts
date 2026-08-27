@@ -1,5 +1,5 @@
 /**
- * Focal tower builder for the GTA6 Zona WebGL engine.
+ * Focal tower builder for the AutoFicha WebGL engine.
  * Torre Art Deco de vidrio con anillos neón y baliza — el foco visual del
  * plano cercano (`nearGroup`).
  *

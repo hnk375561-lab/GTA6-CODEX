@@ -1,5 +1,5 @@
 /**
- * Horizon sun builder for the GTA6 Zona WebGL engine.
+ * Horizon sun builder for the AutoFicha WebGL engine.
  * Sol/luna bajo de horizonte con bandas cortadas — el atardecer de Miami
  * detrás del skyline.
  *

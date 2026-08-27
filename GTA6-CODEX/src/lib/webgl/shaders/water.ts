@@ -1,5 +1,5 @@
 /**
- * Water shaders for the GTA6 Zona WebGL engine.
+ * Water shaders for the AutoFicha WebGL engine.
  * Leonida bay with reflective water, waves, and distant city lights.
  */
 

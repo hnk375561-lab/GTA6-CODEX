@@ -1,5 +1,5 @@
 /**
- * Dust particles builder for the GTA6 Zona WebGL engine.
+ * Dust particles builder for the AutoFicha WebGL engine.
  * Partículas de polvo/bruma en el plano medio, reactivas a la luz cálida
  * (`keyLight`) y fría (`fillLight`), y al puntero (`mouseNDC`/`mouseStrength`,
  * actualizados en el loop de `start()` en `engine.ts`).

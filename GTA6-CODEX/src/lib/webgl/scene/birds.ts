@@ -1,5 +1,5 @@
 /**
- * Birds builder for the GTA6 Zona WebGL engine.
+ * Birds builder for the AutoFicha WebGL engine.
  * Bandadas pequeñas de aves lejanas en el plano medio-alto de `farGroup`,
  * por debajo del avión de `scene/air-events.ts` (y=15) y mezcladas con la
  * franja superior del skyline/haces de neón.

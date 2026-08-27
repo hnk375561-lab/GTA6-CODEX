@@ -1,5 +1,5 @@
 /**
- * Sky dome builder for the GTA6 Zona WebGL engine.
+ * Sky dome builder for the AutoFicha WebGL engine.
  * Creates the procedural sky dome with day/night cycle integration.
  */
 
