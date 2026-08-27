@@ -324,6 +324,34 @@ export class AutoFichaWebGLEngine {
   private nearGroup: THREE.Group
   private skyGroup: THREE.Group
 
+  /**
+   * Capítulo 2.1 de la Biblia del Scroll — parallax factorizado por capa.
+   *
+   * Antes de esto, `farGroup` completo (far-skyline + birds + neon-signs +
+   * road + street-traffic + fireflies/traffic-streaks/etc.) se movía como
+   * un solo bloque con un único factor de `scrollProgress` (ver el loop de
+   * `start()`, línea ~1717 previa a este cambio). Físicamente incorrecto:
+   * lo lejano debería moverse poco, lo cercano mucho, con el mismo scroll.
+   *
+   * Estos cinco sub-grupos viven ANIDADOS dentro de `farGroup` (no la
+   * reemplazan): heredan el parallax de mouse ya calibrado de `farGroup`
+   * (`pointer.x * 0.4`, etc.) intacto, y encima reciben su propio offset
+   * adicional de `scrollProgress`, calculado como la DIFERENCIA entre su
+   * factor objetivo (tabla `SCROLL_LAYER_FACTORS` más abajo) y el factor
+   * base de `farGroup` (0.15, que ya cubre correctamente far-skyline por
+   * quedar exactamente en ese valor — de ahí que far-skyline no necesite
+   * su propio sub-grupo). Este delta se aplica en el loop de `start()`.
+   *
+   * `skyGroup` no necesita sub-grupo propio: solo contiene el sky dome
+   * (relación 1:1), así que su factor (0.05, casi estático) se aplica
+   * directo sobre `skyGroup.position.x` junto a su parallax de mouse
+   * existente.
+   */
+  private birdsScrollGroup: THREE.Group
+  private neonScrollGroup: THREE.Group
+  private roadScrollGroup: THREE.Group
+  private streetTrafficScrollGroup: THREE.Group
+
   private readonly quality: QualityProfile
   private dayPhase = 0.42
   private dayPhaseTarget = 0.42
@@ -476,6 +504,15 @@ export class AutoFichaWebGLEngine {
     this.nearGroup = new THREE.Group()
     this.skyGroup = new THREE.Group()
     this.scene.add(this.skyGroup, this.farGroup, this.midGroup, this.nearGroup)
+
+    // Capítulo 2.1 — sub-grupos de parallax factorizado (ver comentario en
+    // la declaración de estos campos, arriba). Anidados en `farGroup` para
+    // heredar su parallax de mouse sin duplicar esa lógica.
+    this.birdsScrollGroup = new THREE.Group()
+    this.neonScrollGroup = new THREE.Group()
+    this.roadScrollGroup = new THREE.Group()
+    this.streetTrafficScrollGroup = new THREE.Group()
+    this.farGroup.add(this.birdsScrollGroup, this.neonScrollGroup, this.roadScrollGroup, this.streetTrafficScrollGroup)
 
     this.setupEnvironment()
     this.buildSkyDome()
@@ -700,8 +737,12 @@ export class AutoFichaWebGLEngine {
    * visual.
    */
   private buildNeonSigns() {
+    // Capítulo 2.1 — `neonScrollGroup` en vez de `farGroup` directo: le da
+    // a los letreros de neón su propio factor de parallax de scroll (0.6),
+    // distinto del resto de `farGroup`. El parallax de mouse lo sigue
+    // heredando de `farGroup` sin cambios.
     const updater = buildNeonSignsScene({
-      farGroup: this.farGroup,
+      farGroup: this.neonScrollGroup,
       quality: this.quality,
     })
 
@@ -919,7 +960,10 @@ export class AutoFichaWebGLEngine {
    * solo se lee su valor ya actualizado del frame, nunca se lo escribe.
    */
   private buildRoad() {
-    const { uniforms, updater } = buildRoadScene({ farGroup: this.farGroup })
+    // Capítulo 2.1 — `roadScrollGroup` en vez de `farGroup` directo: la
+    // carretera es la capa más cercana (factor 1.0, "se mueve con el
+    // usuario"), la que más se despega del resto de `farGroup`.
+    const { uniforms, updater } = buildRoadScene({ farGroup: this.roadScrollGroup })
     this.roadUniforms = uniforms
 
     this.updaters.push((elapsed, delta, intro) =>
@@ -959,6 +1003,10 @@ export class AutoFichaWebGLEngine {
    * loop de animación.
    */
   private buildFarSkyline() {
+    // Capítulo 2.1 — se queda en `farGroup` directo a propósito: su factor
+    // objetivo (0.15) es exactamente el factor base que ahora tiene
+    // `farGroup` (ver comentario en la declaración de los *ScrollGroup),
+    // así que no necesita un sub-grupo propio para lograrlo.
     const { updater, windowUpdaters } = buildFarSkylineScene({
       farGroup: this.farGroup,
       quality: this.quality,
@@ -1131,8 +1179,12 @@ export class AutoFichaWebGLEngine {
    * sin tocar `start()`/el loop de animación.
    */
   private buildStreetTraffic() {
+    // Capítulo 2.1 — `streetTrafficScrollGroup` en vez de `farGroup`
+    // directo: el tráfico vive sobre la carretera, factor 0.9 (casi tan
+    // cerca como `road`, levemente detrás para dar separación de
+    // profundidad en vez de solaparse 1:1 con el asfalto).
     const updater = buildStreetTrafficScene({
-      farGroup: this.farGroup,
+      farGroup: this.streetTrafficScrollGroup,
       quality: this.quality,
     })
 
@@ -1420,8 +1472,10 @@ export class AutoFichaWebGLEngine {
    * arriba (no-op en low-end, resuelto dentro del builder).
    */
   private buildBirds() {
+    // Capítulo 2.1 — `birdsScrollGroup` en vez de `farGroup` directo: las
+    // aves reciben su propio factor de parallax de scroll (0.25).
     const updater = buildBirdsScene({
-      farGroup: this.farGroup,
+      farGroup: this.birdsScrollGroup,
       quality: this.quality,
     })
 
@@ -1709,13 +1763,33 @@ export class AutoFichaWebGLEngine {
         this.bokehPass.materialBokeh.uniforms.focus.value = 22 - this.scrollProgress * 7
       }
 
-      this.skyGroup.position.x = -this.pointer.x * 0.15
+      // Capítulo 2.1 de la Biblia del Scroll — parallax factorizado por
+      // capa: lo lejano se mueve poco con el scroll, lo cercano mucho,
+      // como profundidad física real. `SCROLL_PARALLAX_AMPLITUDE` conserva
+      // la magnitud total que tenía el offset único anterior
+      // (`scrollProgress * 0.6`, ver diff de esta fase) para no alterar el
+      // rango visual ya calibrado; lo que cambia es cómo se reparte entre
+      // capas. `FAR_GROUP_SCROLL_FACTOR` es el factor base de `farGroup`
+      // (equivalente a "skyline lejano" en la tabla del capítulo); cada
+      // *ScrollGroup anidado suma solo la DIFERENCIA entre su factor
+      // objetivo y ese base, ya que hereda el base al ser hijo de
+      // `farGroup`. Ver comentario en la declaración de los campos
+      // `*ScrollGroup` para el porqué de esta jerarquía.
+      const SCROLL_PARALLAX_AMPLITUDE = 0.6
+      const FAR_GROUP_SCROLL_FACTOR = 0.15 // skyline lejano
+      const scrollOffset = this.scrollProgress * SCROLL_PARALLAX_AMPLITUDE
+
+      this.skyGroup.position.x = -this.pointer.x * 0.15 - scrollOffset * 0.05 // cielo/estrellas, casi estático
       this.skyGroup.position.y = this.pointer.y * 0.1
       this.skyGroup.rotation.y = elapsed * 0.002
 
       // Parallax real por profundidad de plano.
-      this.farGroup.position.x = -this.pointer.x * 0.4 - this.scrollProgress * 0.6
+      this.farGroup.position.x = -this.pointer.x * 0.4 - scrollOffset * FAR_GROUP_SCROLL_FACTOR
       this.farGroup.position.y = this.pointer.y * 0.25
+      this.birdsScrollGroup.position.x = -scrollOffset * (0.25 - FAR_GROUP_SCROLL_FACTOR) // aves/tráfico aéreo
+      this.neonScrollGroup.position.x = -scrollOffset * (0.6 - FAR_GROUP_SCROLL_FACTOR) // letreros de neón
+      this.roadScrollGroup.position.x = -scrollOffset * (1.0 - FAR_GROUP_SCROLL_FACTOR) // carretera/asfalto
+      this.streetTrafficScrollGroup.position.x = -scrollOffset * (0.9 - FAR_GROUP_SCROLL_FACTOR) // tráfico, sobre la carretera
       this.midGroup.position.x = this.pointer.x * 1.1
       this.midGroup.position.y = -this.pointer.y * 0.7
       this.midGroup.rotation.y = this.scrollProgress * 0.35
