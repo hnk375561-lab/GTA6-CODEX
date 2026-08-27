@@ -140,6 +140,22 @@ body {
     rgba(3, 2, 6, 0.46) 55%,
     rgba(3, 2, 6, 0.68) 100%
   );
+  /* --scroll-speed (0..1) la publica `ScrollTelemetryBridge` a partir de
+     la velocidad REAL de Lenis (`LenisProvider`), no de una posición
+     diferida — sube instantáneo al arrancar un scroll fuerte y decae solo
+     con la propia inercia de Lenis, sin manejar decay acá. Un fling
+     rápido "abre" levemente la viñeta (más brillo, más saturación) en
+     TODA la página, no solo en el hero — el motor WebGL se pausa fuera de
+     su rango por diseño (ver `HERO_SCROLL_RANGE_VH`), así que esta es la
+     única señal ligada a scroll que sigue viva el resto del recorrido.
+     Sutil a propósito: es una respuesta "se siente", no un efecto que se
+     note como tal. `--scroll-speed` no se define en :root a propósito —
+     el fallback del calc() cubre el instante antes de que el bridge
+     monte, y así ningún elemento queda promovido a capa de compositor
+     antes de que haya scroll real. */
+  transition: filter 220ms ease-out;
+  filter: brightness(calc(1 + var(--scroll-speed, 0) * 0.1))
+    saturate(calc(1 + var(--scroll-speed, 0) * 0.12));
 }
 
 /* ============================================================
@@ -2776,6 +2792,16 @@ a:hover .logo-mark {
 @media (prefers-reduced-motion: reduce) {
   .zoomable-image-controls {
     animation: none !important;
+  }
+
+  /* `LenisProvider` no se instancia con reduced-motion, así que
+     `--scroll-speed` nunca se mueve de su fallback (0) y este filter ya
+     sería un no-op — se fija explícito igual, por la misma disciplina de
+     "declarar la intención, no confiar en que otra pieza del sistema se
+     porte bien" que ya sigue el resto de este archivo. */
+  .auto-atmosphere::after {
+    filter: none;
+    transition: none;
   }
 }
 
