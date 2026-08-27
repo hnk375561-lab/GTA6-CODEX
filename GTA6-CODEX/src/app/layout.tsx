@@ -32,6 +32,7 @@ import { Footer } from '@/components/layout/Footer'
 import { WebGLBackground } from '@/components/webgl/WebGLBackground'
 import { SceneAmbientBridge } from '@/components/webgl/SceneAmbientBridge'
 import { ScrollTelemetryBridge } from '@/components/webgl/ScrollTelemetryBridge'
+import { ElasticCursor } from '@/components/ui/ElasticCursor'
 import { ConsentBanner } from '@/components/layout/ConsentBanner'
 import { LenisProvider } from '@/lib/scroll/lenis-provider'
 
@@ -107,6 +108,7 @@ export default function RootLayout({
         <WebGLBackground />
         <SceneAmbientBridge />
         <ScrollTelemetryBridge />
+        <ElasticCursor />
         {/* Grano fílmico + viñeta: capa atmosférica entre el canvas WebGL
             (z-0) y el contenido (z-10). Ver .auto-atmosphere en globals.css. */}
         <div className="auto-atmosphere" aria-hidden="true" />

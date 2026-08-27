@@ -117,7 +117,13 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.05;
+  /* Capítulo 4.4: grano más agresivo en pico de velocidad.
+     La opacity base (0.05) reacciona a --scroll-speed: en scroll rápido
+     sube a 0.095 (0.05 + 1.0 * 0.045), haciendo el grano más visible.
+     Simula "fricción visual" en el momento del fling, sin cambiar la
+     estructura del grano mismo — es puramente aditivo sobre lo que estaba. */
+  opacity: calc(0.05 + var(--scroll-speed, 0) * 0.045);
+  transition: opacity 180ms ease-out;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 180px 180px;
@@ -2215,6 +2221,66 @@ a:hover .logo-mark {
   border-radius: inherit;
   background: linear-gradient(90deg, var(--auto-accent-strong, #ff7ec4), var(--auto-accent-orange, #22d3ee));
   transition: width 900ms var(--ease-premium);
+}
+
+/* ============================================================
+   Capítulo 4 — Respuesta física a la velocidad de scroll
+   Motion blur direccional + Hover suppression + Cursor reactivo
+   ============================================================ */
+
+/* 4.1) MOTION BLUR DIRECCIONAL en scroll rápido
+   Imágenes y cards que cumplen dos condiciones reciben blur:
+   1. El usuario está scrolleando rápido (--scroll-speed > 0)
+   2. El viewport no está "quieto"
+   El blur es vertical (dirección del scroll en web) y sutil (1-3px máx).
+   Al frenar, decay smooth de 180ms. */
+
+img,
+.card-media-image {
+  /* Aplicar blur direccional en scroll rápido. El factor 0.03 convierte
+     --scroll-speed (0..1) a un rango de 0..3px de blur vertical. La
+     transición larga (180ms) suaviza el decay al frenar. */
+  filter: blur(calc(var(--scroll-speed, 0) * 3px));
+  transition: filter 180ms ease-out;
+}
+
+/* 4.2) HOVER SUPPRESSION en scroll rápido
+   Si --scroll-speed > 0.4 (scroll rápido), desactivar transiciones de
+   hover en cards para evitar "parpadeo" con el cursor pasando de refilón.
+   El umbral 0.4 se elige porque es donde el blur visual (1.2px) ya es
+   notorio pero no incapacitante. Bajo ese umbral, hover responde normal. */
+
+@supports (--scroll-speed: 0) {
+  /* Si scroll es rápido (--scroll-speed > 0.4), las transiciones de hover
+     en cards se desactivan temporalmente. Sin este, un card que recibe
+     hover rápido mientras el usuario scrollea se ve "saltarina". */
+  .card-animated {
+    transition: transform calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 250ms) var(--ease-standard),
+      border-color calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 300ms) var(--ease-standard),
+      box-shadow calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 300ms) var(--ease-standard);
+  }
+
+  .card-animated:hover {
+    transition: transform calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 250ms) var(--ease-standard),
+      border-color calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 300ms) var(--ease-standard),
+      box-shadow calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 300ms) var(--ease-standard);
+  }
+}
+
+/* 4.4) Grano + cromática vistos arriba en .auto-atmosphere
+   Ya está manejado en la sección de .auto-atmosphere::before y ::after */
+
+/* Accessibility: respetar prefers-reduced-motion en todo el capítulo 4 */
+@media (prefers-reduced-motion: reduce) {
+  img,
+  .card-media-image {
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .card-animated {
+    transition: none !important;
+  }
 }
 
 /* ============================================================
