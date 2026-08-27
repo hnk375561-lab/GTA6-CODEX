@@ -566,16 +566,18 @@ export default async function HomePage() {
 
           <Reveal className="stagger grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {EVIDENCE_LEVELS.map((level) => (
-              <Card key={level.label} className="h-full">
-                <span
-                  className={`mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full border text-base font-semibold ${level.className}`}
-                  aria-hidden="true"
-                >
-                  {level.icon}
-                </span>
-                <p className="mb-1.5 font-semibold text-auto-text">{level.label}</p>
-                <p className="text-sm text-auto-text-secondary">{level.description}</p>
-              </Card>
+              <ParallaxElement key={level.label} factor={0.1} scaleFactor={0.04}>
+                <Card className="h-full">
+                  <span
+                    className={`mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full border text-base font-semibold ${level.className}`}
+                    aria-hidden="true"
+                  >
+                    {level.icon}
+                  </span>
+                  <p className="mb-1.5 font-semibold text-auto-text">{level.label}</p>
+                  <p className="text-sm text-auto-text-secondary">{level.description}</p>
+                </Card>
+              </ParallaxElement>
             ))}
           </Reveal>
         </div>
@@ -631,7 +633,7 @@ export default async function HomePage() {
       {/* CTA final */}
       <SceneSection sceneId="home-cta" className="border-t border-auto-border py-16 sm:py-24">
         <div className="container-max text-center">
-          <Reveal>
+          <Reveal direction="curtain">
             <div className="glass-surface mx-auto max-w-2xl rounded-2xl border border-auto-border/70 px-8 py-12 sm:px-14">
               <RevealText
                 as="h2"
