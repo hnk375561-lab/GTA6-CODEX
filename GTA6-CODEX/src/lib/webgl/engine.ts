@@ -19,7 +19,7 @@ import {
 import { computeShotFrame as computeCameraShotFrame } from './core/camera-shots'
 import { createEnvironment } from './core/environment'
 import { createPostProcessingPipeline } from './core/postprocessing'
-import { computePointerTarget, computeScrollTarget } from './core/input'
+import { computePointerTarget, computeHeroScrollTarget, HERO_SCROLL_RANGE_VH } from './core/input'
 import { computeSceneBusStateUpdate } from './core/scene-bus-adapter'
 import { lerpCyclic01, smootherstep } from './utils/math'
 import { SHOTS, ROAD_FLOW_WRAP } from './config/scene'
@@ -1451,7 +1451,7 @@ export class AutoFichaWebGLEngine {
   }
 
   private handleScroll = () => {
-    this.scrollTarget = computeScrollTarget()
+    this.scrollTarget = computeHeroScrollTarget()
     this.updatePausedState()
   }
 
@@ -1470,12 +1470,16 @@ export class AutoFichaWebGLEngine {
    * en las cards de categoría (que resamplean ese fondo animado en cada
    * frame), esto era el mayor costo real de la sección "Explorá por
    * sección". Se pausa el loop entero (congela el último frame, sin
-   * seguir gastando GPU) apenas se pasa ~1.15 alturas de viewport, y se
-   * reanuda solo si el usuario vuelve a subir cerca del hero.
+   * seguir gastando GPU) apenas se pasa `HERO_SCROLL_RANGE_VH` alturas de
+   * viewport, y se reanuda solo si el usuario vuelve a subir cerca del
+   * hero. Es el MISMO rango contra el que `computeHeroScrollTarget`
+   * normaliza `scrollProgress` (ver `core/input.ts`): dentro de ese rango
+   * la dispersión de cámara/capas recorre su 0..1 completo; más allá, el
+   * motor ya está pausado y no importa.
    */
   private updatePausedState() {
     const scrolledPastHero =
-      typeof window !== 'undefined' && window.scrollY > window.innerHeight * 1.15
+      typeof window !== 'undefined' && window.scrollY > window.innerHeight * HERO_SCROLL_RANGE_VH
     this.paused = isDocumentHidden() || scrolledPastHero
   }
 
