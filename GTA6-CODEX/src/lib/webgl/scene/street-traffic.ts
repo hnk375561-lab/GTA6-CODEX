@@ -48,7 +48,7 @@ export function buildStreetTraffic(options: StreetTrafficBuilderOptions): Update
   // trafficCount porque estos vehículos tienen cuerpo (más geometría/
   // draw calls por unidad) y están más cerca de cámara, donde menos
   // unidades ya leen como "calle viva".
-  const COUNT = quality.tier === 'low' ? 0 : quality.tier === 'medium' ? 4 : 7
+  const COUNT = quality.tier === 'low' ? 0 : quality.tier === 'medium' ? 2 : 3
 
   const bodyGeometry = new THREE.BoxGeometry(1.6, 0.62, 3.4)
   const cabinGeometry = new THREE.BoxGeometry(1.3, 0.42, 1.6)
