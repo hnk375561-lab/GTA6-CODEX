@@ -1,5 +1,5 @@
 /**
- * Lights builder for the GTA6 Zona WebGL engine.
+ * Lights builder for the AutoFicha WebGL engine.
  * Luz ambiental + luz clave (magenta neón) + luz de relleno (cian neón),
  * con el ciclo día/noche y la niebla de la escena acoplados al mismo
  * `updater`.

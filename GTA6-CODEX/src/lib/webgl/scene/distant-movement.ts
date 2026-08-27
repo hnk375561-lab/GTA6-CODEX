@@ -1,5 +1,5 @@
 /**
- * Distant movement builder for the GTA6 Zona WebGL engine.
+ * Distant movement builder for the AutoFicha WebGL engine.
  * Siluetas de bote cruzando lentamente el horizonte de la bahía de
  * Leonida (mismo plano que `scene/water.ts`, `farGroup`), como
  * profundidad/vida ambiental de fondo sin competir con la torre focal.

@@ -1,5 +1,5 @@
 /**
- * Road builder for the GTA6 Zona WebGL engine.
+ * Road builder for the AutoFicha WebGL engine.
  * Carretera nocturna: horizonte, no decoración — atmósfera y fuga de
  * perspectiva.
  *

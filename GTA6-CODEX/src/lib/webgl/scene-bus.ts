@@ -84,7 +84,7 @@ export interface EntityAtmosphere {
 /**
  * "Ambiente" real de la escena 3D en el frame actual — la mitad del puente
  * que va MOTOR → DOM (el resto del archivo es UI → motor). Publicado por
- * `GTA6ZonaWebGLEngine` en su loop de render y consumido por
+ * `AutoFichaWebGLEngine` en su loop de render y consumido por
  * `SceneAmbientBridge`, que lo escribe como variables CSS en `<html>` para
  * que cards, hero y demás superficies reaccionen a la MISMA luz, textura y
  * "pulso" que ve la escena — no a un brillo CSS inventado aparte.

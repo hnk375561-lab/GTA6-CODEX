@@ -1,5 +1,5 @@
 /**
- * Road shaders for the GTA6 Zona WebGL engine.
+ * Road shaders for the AutoFicha WebGL engine.
  * Wet road with asphalt, specular puddles, and heat shimmer.
  */
 

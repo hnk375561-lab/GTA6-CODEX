@@ -133,7 +133,7 @@ import { buildImageBillboardsScene } from './scene/image-billboards'
 import { buildLightsScene } from './scene/lights'
 
 /**
- * GTA6ZonaWebGLEngine — v5 "Vice City, no una demo abstracta de Three.js"
+ * AutoFichaWebGLEngine — v5 "Vice City, no una demo abstracta de Three.js"
  * ---------------------------------------------------------------------------
  * Reescritura de dirección artística: la escena deja de ser un objeto de
  * vidrio genérico flotando entre partículas y pasa a ser, sin ambigüedad,
@@ -305,7 +305,7 @@ type SceneUpdater = (elapsed: number, delta: number, intro: number) => void
 // Shaders — extraídos a ./shaders/*.ts (ver imports arriba)
 // ---------------------------------------------------------------------------
 
-export class GTA6ZonaWebGLEngine {
+export class AutoFichaWebGLEngine {
   private renderer: THREE.WebGLRenderer
   private scene: THREE.Scene
   private camera: THREE.PerspectiveCamera
@@ -579,7 +579,7 @@ export class GTA6ZonaWebGLEngine {
     const missing = required.filter(([, value]) => value == null).map(([name]) => name)
     if (missing.length > 0) {
       throw new Error(
-        `GTA6ZonaWebGLEngine: construcción incompleta, falta inicializar: ${missing.join(', ')}. ` +
+        `AutoFichaWebGLEngine: construcción incompleta, falta inicializar: ${missing.join(', ')}. ` +
           'Revisar el orden de las llamadas a buildXxx()/setupXxx() en el constructor.'
       )
     }
@@ -1541,13 +1541,13 @@ export class GTA6ZonaWebGLEngine {
     if (frameMs <= 0 || frameMs > 250) return
 
     this.frameTimeSamples.push(frameMs)
-    if (this.frameTimeSamples.length < GTA6ZonaWebGLEngine.PERF_SAMPLE_WINDOW) return
+    if (this.frameTimeSamples.length < AutoFichaWebGLEngine.PERF_SAMPLE_WINDOW) return
 
     const avg =
       this.frameTimeSamples.reduce((sum, v) => sum + v, 0) / this.frameTimeSamples.length
     this.frameTimeSamples.length = 0
 
-    if (avg > GTA6ZonaWebGLEngine.SLOW_FRAME_MS) {
+    if (avg > AutoFichaWebGLEngine.SLOW_FRAME_MS) {
       this.applyPerfDowngrade()
     }
   }

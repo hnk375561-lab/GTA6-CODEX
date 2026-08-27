@@ -1,5 +1,5 @@
 /**
- * Particle shaders for the GTA6 Zona WebGL engine.
+ * Particle shaders for the AutoFicha WebGL engine.
  * Dust, fireflies, mist, haze, and billboard shaders.
  */
 

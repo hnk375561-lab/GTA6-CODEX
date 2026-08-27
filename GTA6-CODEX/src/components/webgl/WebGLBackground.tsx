@@ -42,14 +42,14 @@ export function WebGLBackground() {
     if (!canvasRef.current) return
     if (prefersReducedData()) return
 
-    let engine: import('@/lib/webgl/engine').GTA6ZonaWebGLEngine | null = null
+    let engine: import('@/lib/webgl/engine').AutoFichaWebGLEngine | null = null
     let cancelled = false
 
     const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
 
-    import('@/lib/webgl/engine').then(({ GTA6ZonaWebGLEngine }) => {
+    import('@/lib/webgl/engine').then(({ AutoFichaWebGLEngine }) => {
       if (cancelled || !canvasRef.current) return
-      engine = new GTA6ZonaWebGLEngine(canvasRef.current, {
+      engine = new AutoFichaWebGLEngine(canvasRef.current, {
         reducedMotion: mql.matches,
       })
       engine.start()

@@ -1,5 +1,5 @@
 /**
- * Lifecycle orchestration for the GTA6 Zona WebGL engine.
+ * Lifecycle orchestration for the AutoFicha WebGL engine.
  *
  * Este módulo NO contiene el loop de animación (cámara, uniforms, día/noche,
  * parallax) — eso permanece en `engine.ts` (closure `loop` dentro de
@@ -11,7 +11,7 @@
  *
  * Cada función es una transcripción literal, verificada línea por línea,
  * del método privado equivalente que existía inline en
- * `GTA6ZonaWebGLEngine` (ver comentario sobre cada una). No reemplaza ni
+ * `AutoFichaWebGLEngine` (ver comentario sobre cada una). No reemplaza ni
  * reutiliza la implementación paralela y no verificada que este archivo
  * tenía antes (`createLifecycleState` / `createAnimationLoop`): esa
  * reimplementación del loop usaba un `Updater` de 11 parámetros que no
@@ -29,7 +29,7 @@ import { FXAAPass } from 'three/examples/jsm/postprocessing/FXAAPass.js'
 import type { QualityProfile } from './quality'
 
 /**
- * Proviene del constructor de `GTA6ZonaWebGLEngine` (creación inline de
+ * Proviene del constructor de `AutoFichaWebGLEngine` (creación inline de
  * `this.renderer`). Mismas opciones, mismo orden de configuración
  * (`setClearColor` → `setPixelRatio` → `toneMapping` →
  * `toneMappingExposure` → `outputColorSpace`) que antes vivía inline.
@@ -60,7 +60,7 @@ export interface ResizeTargets {
 }
 
 /**
- * Proviene de `handleResize` en `GTA6ZonaWebGLEngine`. Mismo cálculo de
+ * Proviene de `handleResize` en `AutoFichaWebGLEngine`. Mismo cálculo de
  * `width`/`height`/`pixelRatio` a partir de `window.*` y mismas llamadas
  * de propagación a cámara/renderer/composer/passes, en el mismo orden.
  */
@@ -82,7 +82,7 @@ export function resizeRendererAndPasses(targets: ResizeTargets): void {
 }
 
 /**
- * Proviene de `handleVisibility` en `GTA6ZonaWebGLEngine`. Misma
+ * Proviene de `handleVisibility` en `AutoFichaWebGLEngine`. Misma
  * condición (`document.hidden`); el llamador sigue siendo responsable de
  * asignar el resultado a `this.paused`.
  */
@@ -96,7 +96,7 @@ export interface ContextLostResult {
 }
 
 /**
- * Proviene de `handleContextLost` en `GTA6ZonaWebGLEngine`. Mismo
+ * Proviene de `handleContextLost` en `AutoFichaWebGLEngine`. Mismo
  * `event.preventDefault()` (necesario para que el navegador le dé al
  * motor la oportunidad de recuperar el contexto) + misma cancelación del
  * frame en vuelo. El llamador asigna `contextLost`/`rafId` sobre `this`.
@@ -117,7 +117,7 @@ export interface ContextRestoredParams {
 }
 
 /**
- * Proviene de `handleContextRestored` en `GTA6ZonaWebGLEngine`. Mismo
+ * Proviene de `handleContextRestored` en `AutoFichaWebGLEngine`. Mismo
  * criterio de reanudación (`lifecycle === 'running' && rafId === null &&
  * loopFn`) — Three.js re-crea los recursos de GPU derivados del contexto
  * por su cuenta, acá solo hace falta retomar el mismo `loopFn` ya
@@ -141,7 +141,7 @@ export interface DisposeSceneResourcesParams {
 }
 
 /**
- * Proviene del cuerpo de `dispose()` en `GTA6ZonaWebGLEngine` (la parte
+ * Proviene del cuerpo de `dispose()` en `AutoFichaWebGLEngine` (la parte
  * de liberación de recursos GPU, no la de estado de la propia instancia:
  * `rafId`/`loopFn`/`abortController`/`unsubscribeSceneBus` siguen
  * gestionándose en `engine.ts`). Mismo recorrido de `scene.traverse`
