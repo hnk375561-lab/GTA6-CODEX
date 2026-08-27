@@ -1,50 +1,15 @@
 /**
- * Focal tower builder for the AutoFicha WebGL engine.
- * Torre Art Deco de vidrio con anillos neón y baliza — el foco visual del
- * plano cercano (`nearGroup`).
+ * Vehicle wireframes builder for the AutoFicha WebGL engine.
+ * Reemplazo de la torre Art Deco de vidrio por siluetas wireframe de
+ * vehículos genéricos (sedán, SUV, pickup, moto) que cruzan lentamente la
+ * escena en distintas profundidades, como capas de "despiece" técnico —
+ * refuerza que el catálogo es multi-categoría, sin atar la identidad
+ * visual a una marca o país concreto.
  *
- * Fase 8.13 — geometría (`CylinderGeometry`/`TorusGeometry`/`ConeGeometry`),
- * material (`MeshPhysicalMaterial` con `onBeforeCompile` para el jitter de
- * vértices por `uTime`), luces (`PointLight` de la baliza), colores,
- * posiciones, escalas y cálculos de jitter idénticos a la versión inline
- * anterior de `buildFocalTower()` en `engine.ts`; solo se movieron acá
- * (`buildFocalTowerScene`). Igual que en las Fases 8.1–8.12, el `updater`
- * que devuelve esta función usa la firma común de 11 parámetros de
- * `scene/*.ts` (ver `Updater` en `./sky`), incompatible con `SceneUpdater`
- * de este motor — el wrapper en `engine.ts` (`buildFocalTower()`) se
- * encarga de envolverlo en un closure de 3 parámetros que lee
- * `this.entityPace`/`this.entityUnrest`/`this.entityPresence` en cada
- * frame, igual que el resto de builders migrados.
- *
- * Auditoría previa a esta migración: existía una implementación
- * desconectada equivalente en `scene/tower.ts` (`buildFocalTower`, sin
- * usar en `engine.ts`). Se comparó línea por línea contra el inline real:
- * misma geometría (`CylinderGeometry(tier.radius, tier.radius * 1.08,
- * tier.height, 6)` por tier, `TorusGeometry(tier.radius * 1.12, 0.035, 8,
- * 24)` por anillo, `ConeGeometry(0.32, 2.6, 6)` para la aguja), mismo
- * material de vidrio (`MeshPhysicalMaterial` con los mismos
- * `roughness`/`metalness`/`transmission`/`thickness`/`ior`/`clearcoat`/
- * `clearcoatRoughness`/`envMapIntensity`/`attenuationDistance`) y mismo
- * `onBeforeCompile` (mismo reemplazo de `#include <common>` y
- * `#include <begin_vertex>`, misma fórmula de `n`), mismos `tiers`
- * (radios/alturas/tints), mismos colores de anillo alternados
- * (`0x22d3ee`/`0xff2d78`), misma baliza (`PointLight(0xff2d78, 8, 16, 2)`)
- * y mismo `updater` (mismo `paceInfluence`, mismo jitter de anillos por
- * `entityUnrest`, mismo jitter de intensidad de la baliza) — resultó
- * equivalente en todo lo sustantivo. La única diferencia real era
- * defensiva: `scene/tower.ts` envolvía `entityPace`/`entityUnrest`/
- * `entityPresence` con fallbacks `(entityPace || 1)`/`(entityUnrest || 0)`/
- * `(entityPresence || 0)` que la versión inline en producción no tiene
- * (lee `this.entityPace`/`this.entityUnrest`/`this.entityPresence`
- * directamente, sin fallback, porque esos campos de la clase siempre
- * están inicializados). Siguiendo el mismo criterio que en las Fases
- * 8.6/8.11/8.12 (no reutilizar código paralelo aunque sea equivalente),
- * no se importó desde `scene/tower.ts`: se transcribió mecánicamente a
- * este archivo nuevo, `scene/focal-tower.ts`, sin los fallbacks
- * defensivos (para conservar el comportamiento exacto del inline real),
- * manteniendo el patrón de módulo autocontenido por builder usado en las
- * Fases 8.1–8.12. `scene/tower.ts` fue eliminado en la Fase 8.19 (código
- * muerto, ya migrado y sin conectar).
+ * Mantiene la misma interfaz pública (`FocalTowerBuilderOptions`,
+ * `buildFocalTowerScene`, nombre de archivo `scene/focal-tower.ts`) que
+ * la versión anterior para no tocar el wiring de `engine.ts` (que sigue
+ * llamando a `buildFocalTower()` → `buildFocalTowerScene()` sin cambios).
  */
 
 import * as THREE from 'three'
@@ -54,113 +19,126 @@ export interface FocalTowerBuilderOptions {
   nearGroup: THREE.Group
 }
 
+type VehicleKind = 'sedan' | 'suv' | 'pickup' | 'moto'
+
+interface VehicleSpec {
+  kind: VehicleKind
+  scale: number
+  laneY: number
+  laneZ: number
+  speed: number
+  startX: number
+  color: number
+}
+
 /**
- * Construye la torre focal Art Deco (vidrio + anillos neón + baliza)
- * sobre `nearGroup`. Genera el `THREE.Group` con los tiers de vidrio
- * (`MeshPhysicalMaterial`), los anillos y la baliza (`PointLight`).
- * Devuelve un único `updater: Updater` que anima rotación, jitter de
- * anillos y parpadeo de la baliza según pace/unrest/presence.
+ * Construye una silueta wireframe paramétrica y genérica para `kind`
+ * (cajas + ruedas, sin curvas de marca), usando `EdgesGeometry` para que
+ * solo se dibujen las aristas — look de plano técnico, no de modelo
+ * renderizado.
+ */
+function buildVehicleWireframe(kind: VehicleKind, color: number): THREE.Group {
+  const group = new THREE.Group()
+  const edgeMat = new THREE.LineBasicMaterial({
+    color,
+    transparent: true,
+    opacity: 0.85,
+    depthWrite: false,
+  })
+
+  const addEdges = (geometry: THREE.BufferGeometry, position: [number, number, number]) => {
+    const edges = new THREE.EdgesGeometry(geometry)
+    const mesh = new THREE.LineSegments(edges, edgeMat)
+    mesh.position.set(...position)
+    group.add(mesh)
+    return mesh
+  }
+
+  const addWheel = (x: number, z: number) => {
+    const wheel = new THREE.CylinderGeometry(0.35, 0.35, 0.28, 10)
+    wheel.rotateZ(Math.PI / 2)
+    addEdges(wheel, [x, -0.55, z])
+  }
+
+  if (kind === 'sedan') {
+    addEdges(new THREE.BoxGeometry(4.2, 0.7, 1.7), [0, -0.15, 0])
+    addEdges(new THREE.BoxGeometry(2.0, 0.65, 1.5), [-0.2, 0.55, 0])
+    addWheel(-1.4, 0.85)
+    addWheel(-1.4, -0.85)
+    addWheel(1.4, 0.85)
+    addWheel(1.4, -0.85)
+  } else if (kind === 'suv') {
+    addEdges(new THREE.BoxGeometry(4.4, 1.0, 1.85), [0, 0.05, 0])
+    addEdges(new THREE.BoxGeometry(2.6, 0.8, 1.65), [-0.1, 0.85, 0])
+    addWheel(-1.5, 0.92)
+    addWheel(-1.5, -0.92)
+    addWheel(1.5, 0.92)
+    addWheel(1.5, -0.92)
+  } else if (kind === 'pickup') {
+    addEdges(new THREE.BoxGeometry(2.3, 0.75, 1.8), [-0.9, 0.0, 0])
+    addEdges(new THREE.BoxGeometry(1.9, 0.6, 1.75), [-1.5, 0.7, 0])
+    addEdges(new THREE.BoxGeometry(2.0, 0.55, 1.75), [1.2, -0.05, 0])
+    addWheel(-1.7, 0.95)
+    addWheel(-1.7, -0.95)
+    addWheel(1.5, 0.95)
+    addWheel(1.5, -0.95)
+  } else {
+    // moto
+    addEdges(new THREE.BoxGeometry(1.8, 0.35, 0.4), [0, -0.2, 0])
+    addEdges(new THREE.CylinderGeometry(0.02, 0.25, 0.9, 8), [0.55, 0.35, 0])
+    addWheel(-0.85, 0)
+    addWheel(0.85, 0)
+  }
+
+  return group
+}
+
+/**
+ * Construye las siluetas wireframe de vehículos que cruzan `nearGroup`
+ * en distintos carriles de profundidad. Devuelve un único
+ * `updater: Updater` que anima el desplazamiento en X (con wrap-around),
+ * el fade de intro y una leve variación de opacidad por "unrest" —
+ * mismo rol que el jitter/parpadeo de la torre anterior, aplicado a un
+ * elemento distinto.
  */
 export function buildFocalTowerScene(options: FocalTowerBuilderOptions): Updater {
   const { nearGroup } = options
 
-  const group = new THREE.Group()
-  const shaderRef = { uTime: { value: 0 } }
-
-  const makeGlassMaterial = (tint: number) => {
-    const material = new THREE.MeshPhysicalMaterial({
-      color: 0xf5eaff,
-      roughness: 0.05,
-      metalness: 0,
-      transmission: 1,
-      thickness: 2.2,
-      ior: 1.4,
-      clearcoat: 1,
-      clearcoatRoughness: 0.08,
-      envMapIntensity: 1.6,
-      attenuationColor: new THREE.Color(tint),
-      attenuationDistance: 3,
-    })
-    material.onBeforeCompile = (shader) => {
-      shader.uniforms.uTime = shaderRef.uTime
-      shader.vertexShader = shader.vertexShader
-        .replace(
-          '#include <common>',
-          `#include <common>
-           uniform float uTime;`
-        )
-        .replace(
-          '#include <begin_vertex>',
-          `#include <begin_vertex>
-           float n = sin(position.x * 1.4 + uTime * 0.4) * cos(position.y * 0.6 + uTime * 0.3) * sin(position.z * 1.4 + uTime * 0.35);
-           transformed += normal * n * 0.045;`
-        )
-    }
-    return material
-  }
-
-  const tiers = [
-    { radius: 2.5, height: 7, tint: 0xff2d78 },
-    { radius: 1.7, height: 3.4, tint: 0x22d3ee },
-    { radius: 1.0, height: 2.4, tint: 0xff2d78 },
+  // Paleta "Blueprint Drift": grafito/blanco con un acento ámbar sutil
+  // para diferenciar carriles, en vez del rosa/cian saturado anterior.
+  const specs: VehicleSpec[] = [
+    { kind: 'sedan', scale: 1.0, laneY: 0.4, laneZ: -1.5, speed: 0.05, startX: -6, color: 0xd8dfe6 },
+    { kind: 'suv', scale: 1.05, laneY: 1.9, laneZ: -4.5, speed: 0.035, startX: 8, color: 0xc8b98a },
+    { kind: 'pickup', scale: 1.0, laneY: -1.1, laneZ: 1.2, speed: 0.06, startX: -10, color: 0xd8dfe6 },
+    { kind: 'moto', scale: 1.4, laneY: -2.6, laneZ: 3.0, speed: 0.08, startX: 5, color: 0xc8b98a },
   ]
 
-  let y = -13
-  const trimRings: { mat: THREE.MeshBasicMaterial; jitterFreq: number; phaseOffset: number }[] = []
-  tiers.forEach((tier, i) => {
-    const geometry = new THREE.CylinderGeometry(tier.radius, tier.radius * 1.08, tier.height, 6)
-    const material = makeGlassMaterial(tier.tint)
-    const mesh = new THREE.Mesh(geometry, material)
-    mesh.position.y = y + tier.height / 2
-    group.add(mesh)
-    y += tier.height
+  const bounds = 16
 
-    const ringColor = i % 2 === 0 ? 0x22d3ee : 0xff2d78
-    const ringMat = new THREE.MeshBasicMaterial({
-      color: ringColor,
-      transparent: true,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-    })
-    const ring = new THREE.Mesh(new THREE.TorusGeometry(tier.radius * 1.12, 0.035, 8, 24), ringMat)
-    ring.rotation.x = Math.PI / 2
-    ring.position.y = y
-    group.add(ring)
-    // Se cachea el material del anillo (no el `Mesh`) porque el updater
-    // solo necesita `ring.material` en cada frame — evita re-acceder a
-    // esa propiedad y volver a castear a `MeshBasicMaterial` por anillo,
-    // por frame. `jitterFreq`/`phaseOffset` tampoco dependen de ningún
-    // valor que cambie por frame (solo de `i`, fijo para este anillo):
-    // se calculan una sola vez acá en vez de en cada frame.
-    trimRings.push({ mat: ringMat, jitterFreq: 5.2 + i * 1.3, phaseOffset: i * 1.7 })
+  const vehicles: {
+    group: THREE.Group
+    mat: THREE.LineBasicMaterial
+    speed: number
+    baseOpacity: number
+  }[] = []
+
+  specs.forEach((spec) => {
+    const veh = buildVehicleWireframe(spec.kind, spec.color)
+    veh.scale.setScalar(spec.scale)
+    veh.position.set(spec.startX, spec.laneY, spec.laneZ)
+    veh.rotation.y = Math.PI / 2
+    nearGroup.add(veh)
+
+    // Se cachea el material compartido de la silueta (todas las
+    // LineSegments del grupo usan la misma instancia de material) para
+    // no tener que recorrer `veh.children` en cada frame del updater.
+    const mat = (veh.children[0] as THREE.LineSegments).material as THREE.LineBasicMaterial
+
+    vehicles.push({ group: veh, mat, speed: spec.speed, baseOpacity: 0.85 })
   })
 
-  const spire = new THREE.Mesh(
-    new THREE.ConeGeometry(0.32, 2.6, 6),
-    new THREE.MeshPhysicalMaterial({
-      color: 0xffffff,
-      metalness: 0.9,
-      roughness: 0.2,
-      emissive: 0xff2d78,
-      emissiveIntensity: 0.4,
-    })
-  )
-  spire.position.y = y + 1.3
-  group.add(spire)
-
-  const beacon = new THREE.PointLight(0xff2d78, 8, 16, 2)
-  beacon.position.y = y + 2.6
-  group.add(beacon)
-
-  group.position.set(-3.2, 0.4, -1.5)
-  nearGroup.add(group)
-
-  // Referencia cacheada al uniform de tiempo (evita re-atravesar
-  // `shaderRef.uTime` en cada frame).
-  const uTimeUniform = shaderRef.uTime
-
   const updater: Updater = (
-    elapsed,
+    _elapsed,
     delta,
     intro,
     _dayPhase,
@@ -172,23 +150,15 @@ export function buildFocalTowerScene(options: FocalTowerBuilderOptions): Updater
     _pointerIntent,
     entityPresence
   ) => {
-    uTimeUniform.value = elapsed
-    // Rotación moderada por "pace": la torre nunca se detiene del todo
-    // (sigue viva en una ficha de ubicación), pero acompaña con más
-    // energía una ficha de vehículo. Se amortigua a la mitad para que no
-    // se sienta como un mecanismo, solo como un matiz de ritmo.
     const paceInfluence = 1 + (entityPace - 1) * 0.5
-    group.rotation.y += delta * (0.045 + entityPresence * 0.02) * paceInfluence * intro
+    vehicles.forEach((v) => {
+      v.group.position.x += delta * v.speed * paceInfluence * (0.6 + entityPresence * 0.4) * intro
+      if (v.group.position.x > bounds) v.group.position.x = -bounds
 
-    // "unrest" (derivado del estado editorial: confirmado/rumor/nuestro)
-    // desestabiliza el parpadeo — rumor tiembla con armónicos extra,
-    // confirmado queda con un pulso limpio. Determinista, no aleatorio.
-    trimRings.forEach((ring) => {
-      const jitter = entityUnrest * Math.sin(elapsed * ring.jitterFreq) * 0.25
-      ring.mat.opacity = 0.6 + 0.4 * Math.sin(elapsed * 0.8 + ring.phaseOffset) + jitter
+      // Leve variación de opacidad por "unrest" — un dato inestable
+      // titila un poco, uno confirmado queda estable — determinista.
+      v.mat.opacity = v.baseOpacity * intro * (1 - entityUnrest * 0.15)
     })
-    const beaconJitter = entityUnrest * Math.sin(elapsed * 7.1) * 4
-    beacon.intensity = 6 + Math.max(0, Math.sin(elapsed * 1.6)) * 10 + beaconJitter
   }
 
   return updater

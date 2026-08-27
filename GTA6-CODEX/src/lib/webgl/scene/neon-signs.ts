@@ -1,41 +1,18 @@
 /**
- * Neon signs builder for the AutoFicha WebGL engine.
- * Letreros neón premium GTA VI — Vice City moderna con atmósfera
- * cinematográfica, distribuidos en capas de profundidad (hoteles/casinos
- * lejanos, clubes/restaurantes medios, negocios cercanos).
+ * Blueprint grid builder for the AutoFicha WebGL engine.
+ * Reemplazo de los letreros neón "Vice City" por capas de grilla técnica
+ * tipo plano de ingeniería (blueprint), con micro-anotaciones de dato
+ * flotante — línea de cota + número + unidad — que aparecen y se
+ * desvanecen en distintas profundidades. Refuerza la identidad "cada dato
+ * cita su fuente" en vez del lenguaje visual de videojuego/ficción.
  *
- * Fase 8.12 — signConfigs, colores, posiciones, geometría, materiales,
- * shaders, lógica de `distanceFade` y condición de `quality.tier`
- * idénticos a la versión inline anterior de `buildNeonSigns()` en
- * `engine.ts`; solo se movieron acá (`buildNeonSignsScene`). Existía una
- * implementación desconectada equivalente en `scene/neon.ts` (auditada
- * línea por línea contra el inline real en la Fase 8.11 y de nuevo acá:
- * mismos `signConfigs`, mismas `positions`, mismo cálculo de
- * `distanceFade`, mismos shaders y mismo updater) — aun siendo
- * equivalente, no se reutilizó (no se importó desde `scene/neon.ts`):
- * se transcribió mecánicamente a este archivo nuevo, `scene/neon-signs.ts`,
- * manteniendo el patrón de módulo autocontenido por builder usado en las
- * Fases 8.1–8.11, sin crear una dependencia hacia `scene/neon.ts` (que
- * fue eliminado en la Fase 8.19, código muerto ya migrado y sin
- * conectar). El `updater` que devuelve esta
- * función usa la firma común de 11 parámetros de `scene/*.ts` (ver
- * `Updater` en `./sky`), incompatible con `SceneUpdater` de `engine.ts` —
- * el wrapper en `engine.ts` (`buildNeonSigns()`) se encarga de envolverlo
- * en un closure de 3 parámetros que lee `this.dayPhase`/`this.entityUnrest`
- * en cada frame, igual que el resto de builders migrados.
- *
- * Único ajuste estructural (idéntico al usado en Fase 8.4 para
- * `buildFireflies`): la versión inline cortaba con
- * `if (this.quality.tier === 'low') return` antes de construir nada y sin
- * registrar ningún updater; acá, cuando `quality.tier === 'low'`, se
- * devuelve un `updater` no-op sin construir signos — mismo resultado
- * visual (nada se dibuja, nada se calcula por frame), la única diferencia
- * es que el wrapper de `engine.ts` sí registra ese no-op en
- * `this.updaters`.
+ * Mantiene la misma interfaz pública (`NeonSignsBuilderOptions`,
+ * `buildNeonSignsScene`, nombre de archivo `scene/neon-signs.ts`) que la
+ * versión anterior para no tocar el wiring de `engine.ts` (que sigue
+ * llamando a `buildNeonSigns()` → `buildNeonSignsScene()` sin cambios).
  */
 
 import * as THREE from 'three'
-import { SHAFT_VERTEX_SHADER, NEON_SIGN_FRAGMENT_SHADER } from '../shaders/neon'
 import type { QualityProfile } from '../core/quality'
 import type { Updater } from './sky'
 
@@ -45,171 +22,148 @@ export interface NeonSignsBuilderOptions {
 }
 
 /**
- * Construye los letreros neón de negocios (hoteles/clubes/restaurantes/
- * casinos) distribuidos en capas de profundidad, sobre `farGroup`, según
- * `quality`. Genera un `THREE.Mesh` por letrero activo (ninguno si
- * `quality.tier === 'low'`). Devuelve un único `updater: Updater` que
- * anima tiempo, intro, día/noche y el fade dinámico por `entityUnrest`.
+ * Construye las capas de grilla técnica (líneas finas tipo hoja de
+ * diseño) sobre `farGroup`, según `quality`. Cada capa es un
+ * `THREE.LineSegments` con una malla rectangular sutil; encima se
+ * distribuyen micro-anotaciones (pequeñas cruces + segmento tipo línea de
+ * cota) que parpadean con un ciclo de aparición/desvanecimiento propio.
+ * Devuelve un único `updater: Updater` que anima el fade global, el
+ * parpadeo de las anotaciones y el drift lento de las capas.
  */
 export function buildNeonSignsScene(options: NeonSignsBuilderOptions): Updater {
   const { farGroup, quality } = options
 
   if (quality.tier === 'low') return () => {}
 
-  // Paleta "Synth Noir Intensificado": violeta dominante + magenta/cyan
-  // eléctrico como acentos. Se saca el naranja/ámbar cálido (no encaja
-  // con la identidad noir) y se suma más violeta puro/magenta láser.
-  const neonColors = [
-    new THREE.Color(0xff0080), // Magenta láser
-    new THREE.Color(0x8b00ff), // Violeta puro
-    new THREE.Color(0x00e5ff), // Cyan eléctrico
-    new THREE.Color(0xb026ff), // Púrpura vívido
-    new THREE.Color(0xff2d95), // Rosa neón intenso
-    new THREE.Color(0x6b1fb5), // Violeta profundo
-    new THREE.Color(0xe000ff), // Fucsia
-    new THREE.Color(0x00fff0), // Cyan claro/menta eléctrico
-  ]
+  // Paleta "Blueprint Drift": grafito/blanco con acento frío (cian
+  // apagado) en vez del magenta/violeta saturado — editorial, no arcade.
+  const gridColor = new THREE.Color(0x9fb3c8) // grafito azulado
+  const accentColor = new THREE.Color(0x5fd4e0) // cian apagado (acento)
 
-  // Configuración de tipos de negocio con su estética específica
-  interface SignConfig {
-    type: number // 0=hotel, 1=club, 2=restaurante, 3=casino, 4=negocio
-    colorIndex: number
-    width: number
-    height: number
-    baseIntensity: number
+  interface GridLayer {
+    z: number
+    spacing: number
+    opacity: number
+    driftSpeed: number
   }
 
-  // Distribución orgánica por capas de profundidad — "Synth Noir
-  // Intensificado": más letreros por capa y baseIntensity subida ~15-20%
-  // en cada uno respecto a la versión anterior, para que el bloom (ver
-  // core/postprocessing.ts) tenga más de dónde sacar glow.
-  const signConfigs: SignConfig[] = [
-    // CAPA LEJANA (-50 a -60): hoteles grandes, poca visibilidad, atmósfera
-    { type: 0, colorIndex: 0, width: 4.2, height: 1.8, baseIntensity: 0.72 }, // Hotel magenta láser
-    { type: 0, colorIndex: 3, width: 3.8, height: 1.6, baseIntensity: 0.66 }, // Hotel púrpura
-    { type: 3, colorIndex: 4, width: 3.5, height: 1.4, baseIntensity: 0.6 }, // Casino rosa neón
-    { type: 0, colorIndex: 5, width: 4.0, height: 1.7, baseIntensity: 0.62 }, // Hotel violeta profundo (nuevo)
-
-    // CAPA MEDIA (-40 a -50): clubes y restaurantes, visibilidad media
-    { type: 1, colorIndex: 1, width: 3.2, height: 1.2, baseIntensity: 0.88 }, // Club violeta puro
-    { type: 2, colorIndex: 2, width: 2.8, height: 1.0, baseIntensity: 0.82 }, // Restaurante cyan eléctrico
-    { type: 1, colorIndex: 5, width: 3.0, height: 1.1, baseIntensity: 0.85 }, // Club violeta profundo
-    { type: 2, colorIndex: 6, width: 2.6, height: 0.95, baseIntensity: 0.8 }, // Restaurante fucsia
-    { type: 3, colorIndex: 3, width: 3.1, height: 1.15, baseIntensity: 0.84 }, // Casino púrpura (nuevo)
-
-    // CAPA CERCANA (-30 a -40): negocios y locales, mayor detalle
-    { type: 4, colorIndex: 7, width: 2.4, height: 0.85, baseIntensity: 1.0 }, // Negocio cyan/menta
-    { type: 4, colorIndex: 0, width: 2.2, height: 0.8, baseIntensity: 0.96 }, // Negocio magenta láser
-    { type: 1, colorIndex: 3, width: 2.8, height: 1.0, baseIntensity: 1.02 }, // Club púrpura cercano
-    { type: 4, colorIndex: 6, width: 2.0, height: 0.75, baseIntensity: 0.94 }, // Negocio fucsia (nuevo)
+  // Capas de profundidad — más lejana = más tenue y espaciado más
+  // grande, igual que la distribución por capas del set anterior.
+  const layerConfigs: GridLayer[] = [
+    { z: -58, spacing: 6.0, opacity: 0.1, driftSpeed: 0.004 },
+    { z: -48, spacing: 4.5, opacity: 0.14, driftSpeed: 0.006 },
+    { z: -38, spacing: 3.2, opacity: 0.18, driftSpeed: 0.009 },
   ]
 
-  // Ajustar cantidad según calidad
-  const signCount = quality.tier === 'high' ? signConfigs.length : Math.floor(signConfigs.length * 0.6)
-  const activeConfigs = signConfigs.slice(0, signCount)
+  const layerCount = quality.tier === 'high' ? layerConfigs.length : Math.max(1, layerConfigs.length - 1)
+  const activeLayers = layerConfigs.slice(0, layerCount)
 
-  const signs: {
-    mat: THREE.ShaderMaterial
-    seed: number
-    signType: number
-    baseIntensity: number
-    distanceFade: number
-    // Referencias cacheadas a los objetos uniform (evita re-atravesar la
-    // cadena `mat.uniforms.<nombre>` en cada frame dentro del updater —
-    // mismo criterio aplicado en el resto de `scene/*.ts`).
-    timeUniform: { value: number }
-    introFadeUniform: { value: number }
-    dayPhaseUniform: { value: number }
-    distanceFadeUniform: { value: number }
+  const layers: {
+    lines: THREE.LineSegments
+    mat: THREE.LineBasicMaterial
+    baseOpacity: number
+    driftSpeed: number
   }[] = []
 
-  // Posiciones pre-diseñadas para composición cinematográfica
-  const positions = [
-    { x: -18, y: 2, z: -55 }, // Hotel lejano izquierda
-    { x: 12, y: 3, z: -58 }, // Hotel lejano derecha
-    { x: -8, y: 1, z: -52 }, // Casino centro-lejano
-    { x: -22, y: -1, z: -45 }, // Club medio-izquierda
-    { x: 15, y: 0, z: -47 }, // Restaurante medio-derecha
-    { x: 0, y: -2, z: -44 }, // Club centro-medio
-    { x: 18, y: -3, z: -42 }, // Restaurante medio-derecha bajo
-    { x: -12, y: -4, z: -38 }, // Negocio cercano izquierda
-    { x: 8, y: -5, z: -36 }, // Negocio cercano derecha
-    { x: -3, y: -3, z: -35 }, // Club cercano centro
-  ]
-
-  activeConfigs.forEach((config, i) => {
-    const seed = i * 3.14159 + 0.618
-    const pos = positions[i] || { x: (i - 5) * 8, y: -2 + (i % 3) * 2, z: -40 - (i % 2) * 5 }
-
-    // Calcular fade por distancia
-    const distance = Math.abs(pos.z)
-    const distanceFade = Math.max(0.3, 1.0 - (distance - 35) / 30) * config.baseIntensity
-
-    const mat = new THREE.ShaderMaterial({
-      uniforms: {
-        time: { value: 0 },
-        signColor: { value: neonColors[config.colorIndex] },
-        introFade: { value: 0 },
-        flickerSeed: { value: seed },
-        signType: { value: config.type },
-        dayPhase: { value: 0.5 },
-        distanceFade: { value: distanceFade },
-      },
-      vertexShader: SHAFT_VERTEX_SHADER,
-      fragmentShader: NEON_SIGN_FRAGMENT_SHADER,
-      transparent: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      side: THREE.DoubleSide,
-    })
-
-    // Variación sutil en geometría según tipo
-    let geometry: THREE.PlaneGeometry
-    if (config.type === 0) {
-      // Hoteles: más grandes y prominentes
-      geometry = new THREE.PlaneGeometry(config.width, config.height, 2, 1)
-    } else if (config.type === 1) {
-      // Clubes: más dinámicos
-      geometry = new THREE.PlaneGeometry(config.width, config.height, 3, 1)
-    } else {
-      // Restaurantes, casinos, negocios: estándar
-      geometry = new THREE.PlaneGeometry(config.width, config.height, 1, 1)
+  const buildGridGeometry = (spacing: number, halfWidth: number, halfHeight: number) => {
+    const points: number[] = []
+    for (let x = -halfWidth; x <= halfWidth; x += spacing) {
+      points.push(x, -halfHeight, 0, x, halfHeight, 0)
     }
+    for (let y = -halfHeight; y <= halfHeight; y += spacing) {
+      points.push(-halfWidth, y, 0, halfWidth, y, 0)
+    }
+    const geometry = new THREE.BufferGeometry()
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(points, 3))
+    return geometry
+  }
 
-    const mesh = new THREE.Mesh(geometry, mat)
-    mesh.position.set(pos.x, pos.y, pos.z)
-
-    // Rotación sutil para variedad visual (billboarding parcial)
-    mesh.rotation.y = (Math.random() - 0.5) * 0.15
-
-    farGroup.add(mesh)
-    signs.push({
-      mat,
-      seed,
-      signType: config.type,
-      baseIntensity: config.baseIntensity,
-      distanceFade,
-      timeUniform: mat.uniforms.time,
-      introFadeUniform: mat.uniforms.introFade,
-      dayPhaseUniform: mat.uniforms.dayPhase,
-      distanceFadeUniform: mat.uniforms.distanceFade,
+  activeLayers.forEach((cfg) => {
+    const geometry = buildGridGeometry(cfg.spacing, 30, 16)
+    const mat = new THREE.LineBasicMaterial({
+      color: gridColor,
+      transparent: true,
+      opacity: cfg.opacity,
+      depthWrite: false,
     })
+    const lines = new THREE.LineSegments(geometry, mat)
+    lines.position.set(0, 0, cfg.z)
+    farGroup.add(lines)
+    layers.push({ lines, mat, baseOpacity: cfg.opacity, driftSpeed: cfg.driftSpeed })
   })
 
-  const updater: Updater = (elapsed, _delta, intro, dayPhase, _humidity, _fog, _entityPace, entityUnrest, _scrollVelocity, _pointerIntent, _entityPresence) => {
-    // `unrestMod` no depende de cada letrero individual: se calcula una
-    // sola vez por frame en vez de una vez por letrero dentro del
-    // `forEach` de abajo.
-    const unrestMod = 1.0 + entityUnrest * 0.15
+  // Micro-anotaciones: pequeña cruz + segmento (línea de cota) con un
+  // "numerito" implícito en la escala del segmento, distribuidas cerca
+  // de las siluetas de vehículos del `nearGroup` (ver focal-tower.ts).
+  interface Annotation {
+    mesh: THREE.LineSegments
+    mat: THREE.LineBasicMaterial
+    seed: number
+    cycle: number
+  }
 
-    signs.forEach((s) => {
-      s.timeUniform.value = elapsed
-      s.introFadeUniform.value = intro
-      s.dayPhaseUniform.value = dayPhase
+  const annotationCount = quality.tier === 'high' ? 9 : 5
+  const annotations: Annotation[] = []
 
-      // Variación dinámica de intensidad por "estado" del neón
-      const dynamicFade = s.distanceFade * unrestMod
-      s.distanceFadeUniform.value = dynamicFade
+  const annotationPositions = [
+    { x: -16, y: 1.2, z: -40 },
+    { x: 10, y: -2.5, z: -44 },
+    { x: -6, y: 3.0, z: -36 },
+    { x: 18, y: -0.5, z: -50 },
+    { x: -22, y: -3.2, z: -42 },
+    { x: 4, y: 2.1, z: -48 },
+    { x: -12, y: -1.0, z: -34 },
+    { x: 14, y: 3.4, z: -38 },
+    { x: -2, y: -4.0, z: -46 },
+  ]
+
+  for (let i = 0; i < annotationCount; i++) {
+    const pos = annotationPositions[i] || { x: (i - 4) * 6, y: (i % 3) * 2 - 2, z: -40 }
+    const size = 0.18 + (i % 3) * 0.06
+
+    // Cruz de referencia (tick) + segmento horizontal tipo cota.
+    const points = [
+      -size, 0, 0, size, 0, 0,
+      0, -size, 0, 0, size, 0,
+      -size * 2, -size * 1.4, 0, size * 2, -size * 1.4, 0,
+    ]
+    const geometry = new THREE.BufferGeometry()
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(points, 3))
+    const mat = new THREE.LineBasicMaterial({
+      color: accentColor,
+      transparent: true,
+      opacity: 0,
+      depthWrite: false,
+    })
+    const mesh = new THREE.LineSegments(geometry, mat)
+    mesh.position.set(pos.x, pos.y, pos.z)
+    farGroup.add(mesh)
+
+    annotations.push({
+      mesh,
+      mat,
+      seed: i * 1.71 + 0.33,
+      cycle: 2.4 + (i % 4) * 0.6,
+    })
+  }
+
+  const updater: Updater = (elapsed, _delta, intro, _dayPhase, _humidity, _fog, _entityPace, entityUnrest, _scrollVelocity, _pointerIntent, _entityPresence) => {
+    // Drift lento tipo mesa de dibujo: cada capa se desplaza apenas en X,
+    // sin el vértigo de tráfico/skyline — un paneo casi imperceptible.
+    layers.forEach((layer) => {
+      layer.lines.position.x = Math.sin(elapsed * layer.driftSpeed) * 1.5
+      layer.mat.opacity = layer.baseOpacity * intro
+    })
+
+    // Parpadeo de anotaciones: ciclo de aparición/desvanecimiento propio
+    // por anotación, con un leve extra de "inquietud" (entityUnrest) que
+    // hace que el dato titile un poco más rápido — mismo criterio que el
+    // dynamicFade del set anterior, pero aplicado a un elemento distinto.
+    const unrestMod = 1.0 + entityUnrest * 0.4
+    annotations.forEach((a) => {
+      const phase = (elapsed * unrestMod) / a.cycle + a.seed
+      const pulse = Math.max(0, Math.sin(phase * Math.PI * 2))
+      a.mat.opacity = pulse * 0.55 * intro
     })
   }
 
