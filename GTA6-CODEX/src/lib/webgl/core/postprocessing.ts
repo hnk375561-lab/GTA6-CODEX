@@ -83,11 +83,16 @@ export function createPostProcessingPipeline(params: PostProcessingParams): Post
     composer.addPass(bokehPass)
   }
 
+  // "Synth Noir Intensificado": strength y radius subidos, threshold
+  // bajado — con más letreros/intensidad en scene/neon-signs.ts, esto
+  // hace que el glow se note bien pero sigue escalando por
+  // quality.bloomScale (perfiles bajos de calidad no se ven afectados
+  // desproporcionadamente).
   const bloomPass = new UnrealBloomPass(
     new THREE.Vector2(1, 1),
-    0.85 * quality.bloomScale,
-    0.55,
-    0.16
+    1.15 * quality.bloomScale,
+    0.65,
+    0.12
   )
   composer.addPass(bloomPass)
 
