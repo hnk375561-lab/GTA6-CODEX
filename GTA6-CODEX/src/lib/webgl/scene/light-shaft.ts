@@ -58,7 +58,7 @@ export function buildLightShaftScene(
   const uniforms: LightShaftUniforms = { time: { value: 0 }, introFade: { value: 0 } }
   const geometry = new THREE.PlaneGeometry(14, 46, 1, 1)
   const material = new THREE.ShaderMaterial({
-    uniforms: { ...uniforms, shaftColor: { value: new THREE.Color(0xff5fa8) } },
+    uniforms: { ...uniforms, shaftColor: { value: new THREE.Color(0x979797) } },
     vertexShader: SHAFT_VERTEX_SHADER,
     fragmentShader: SHAFT_FRAGMENT_SHADER,
     transparent: true,
@@ -79,7 +79,7 @@ export function buildLightShaftScene(
     const shaft2 = new THREE.Mesh(
       geometry.clone(),
       new THREE.ShaderMaterial({
-        uniforms: { ...uniforms, shaftColor: { value: new THREE.Color(0x22d3ee) } },
+        uniforms: { ...uniforms, shaftColor: { value: new THREE.Color(0xa1a1a1) } },
         vertexShader: SHAFT_VERTEX_SHADER,
         fragmentShader: SHAFT_FRAGMENT_SHADER,
         transparent: true,

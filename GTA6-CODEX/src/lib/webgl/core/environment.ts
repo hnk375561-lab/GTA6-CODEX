@@ -40,9 +40,9 @@ export function createEnvironment(renderer: THREE.WebGLRenderer, scene: THREE.Sc
       // Cielo nocturno de Vice City: zenit añil, banda de horizonte en
       // magenta (contaminación lumínica de la ciudad) y suelo oscuro
       // tibio — esto se ve reflejado/refractado en el vidrio de la torre.
-      colorTop: { value: new THREE.Color(0x1c1140) },
-      colorMid: { value: new THREE.Color(0xff3d78) },
-      colorBottom: { value: new THREE.Color(0x0a0612) },
+      colorTop: { value: new THREE.Color(0x1a1a1a) },
+      colorMid: { value: new THREE.Color(0x7e7e7e) },
+      colorBottom: { value: new THREE.Color(0x090909) },
     },
     vertexShader: `
       varying vec3 vPos;

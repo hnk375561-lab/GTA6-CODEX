@@ -100,15 +100,15 @@ export interface LightsBuildResult {
 export function buildLightsScene(options: LightsBuilderOptions): LightsBuildResult {
   const { scene, fog } = options
 
-  const ambient = new THREE.AmbientLight(0x3a2350, 0.5)
+  const ambient = new THREE.AmbientLight(0x2f2f2f, 0.5)
   scene.add(ambient)
 
   // Luz cálida = neón magenta (marquesina/rótulo), luz fría = neón cian.
-  const keyLight = new THREE.PointLight(0xff2d78, 55, 70, 2)
+  const keyLight = new THREE.PointLight(0x747474, 55, 70, 2)
   keyLight.position.set(9, 5, 12)
   scene.add(keyLight)
 
-  const fillLight = new THREE.PointLight(0x22d3ee, 32, 70, 2)
+  const fillLight = new THREE.PointLight(0xa1a1a1, 32, 70, 2)
   fillLight.position.set(-11, -3, 6)
   scene.add(fillLight)
 
@@ -136,7 +136,7 @@ export function buildLightsScene(options: LightsBuilderOptions): LightsBuildResu
     keyLightPosition.x = 9 + Math.sin(elapsed * 0.09) * 3
     keyLightPosition.y = 5 + Math.cos(elapsed * 0.07) * 2
 
-    const fogColor = lerpDayColor(dayPhase, 0x3a1830, 0x1c0f28, 0x142038)
+    const fogColor = lerpDayColor(dayPhase, 0x252525, 0x161616, 0x1f1f1f)
     fogColorRef.setHex(fogColor)
   }
 

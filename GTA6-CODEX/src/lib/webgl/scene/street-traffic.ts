@@ -52,7 +52,7 @@ export function buildStreetTraffic(options: StreetTrafficBuilderOptions): Update
 
   const bodyGeometry = new THREE.BoxGeometry(1.6, 0.62, 3.4)
   const cabinGeometry = new THREE.BoxGeometry(1.3, 0.42, 1.6)
-  const bodyMaterial = new THREE.MeshBasicMaterial({ color: 0x0a0612, fog: true })
+  const bodyMaterial = new THREE.MeshBasicMaterial({ color: 0x090909, fog: true })
   const lightGeometry = new THREE.PlaneGeometry(0.34, 0.3)
 
   const vehicles: Vehicle[] = []
@@ -68,7 +68,7 @@ export function buildStreetTraffic(options: StreetTrafficBuilderOptions): Update
     cabin.position.set(0, 0.5, -0.2)
     group.add(cabin)
 
-    const lightColor = oncoming ? 0xfff2d6 : 0xff2d4d
+    const lightColor = oncoming ? 0xf3f3f3 : 0x6f6f6f
     const lightMaterial = new THREE.MeshBasicMaterial({
       color: lightColor,
       transparent: true,

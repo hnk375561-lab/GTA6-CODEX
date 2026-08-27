@@ -37,8 +37,8 @@ export function buildFarSkyline(
 ): { updater: Updater; windowUpdaters: Updater[] } {
   const { farGroup, quality } = options
 
-  const silhouetteMat = new THREE.MeshBasicMaterial({ color: 0x0a0612, fog: true, transparent: true, opacity: 0.92 })
-  const windowColors = [0xffd166, 0x22d3ee, 0xff3d81]
+  const silhouetteMat = new THREE.MeshBasicMaterial({ color: 0x090909, fog: true, transparent: true, opacity: 0.92 })
+  const windowColors = [0xd3d3d3, 0xa1a1a1, 0x7f7f7f]
   const shapes: THREE.Object3D[] = []
   const windowUpdaters: Updater[] = []
 

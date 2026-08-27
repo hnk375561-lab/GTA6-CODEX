@@ -74,8 +74,8 @@ export function buildDust(
   const material = new THREE.ShaderMaterial({
     uniforms: {
       ...uniforms,
-      warmColor: { value: new THREE.Color(0xff6fa8) },
-      coolColor: { value: new THREE.Color(0x22d3ee) },
+      warmColor: { value: new THREE.Color(0xa1a1a1) },
+      coolColor: { value: new THREE.Color(0xa1a1a1) },
     },
     vertexShader: DUST_VERTEX_SHADER,
     fragmentShader: DUST_FRAGMENT_SHADER,

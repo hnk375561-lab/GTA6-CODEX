@@ -83,17 +83,20 @@ export function createPostProcessingPipeline(params: PostProcessingParams): Post
     composer.addPass(bokehPass)
   }
 
-  // "Fondo limpio": strength/radius bajados y threshold subido respecto
-  // a la versión "Synth Noir Intensificado" anterior (1.15/0.65/0.12).
-  // El glow generalizado competía con la legibilidad del texto real de
-  // cada página (el canvas corre detrás de TODO el contenido, no solo
-  // del hero). Sigue escalando por quality.bloomScale, así que los
-  // perfiles de calidad bajos no se ven afectados desproporcionadamente.
+  // "Fondo limpio, blanco y negro": segunda vuelta de tuning tras
+  // desaturar toda la paleta a escala de grises. Un bloom pensado para
+  // magenta/cian neón (strength 0.55, threshold 0.22) sobre una escena
+  // en grises se siente igual de "encendido" -- el bloom no sabe de
+  // color, solo de brillo -- así que sin bajarlo el resultado es un
+  // fondo gris que sigue gritando en vez de acompañar. strength/radius
+  // bajados y threshold subido otra vez para que solo el detalle más
+  // brillante (el haz de luz central) tenga un halo sutil. Sigue
+  // escalando por quality.bloomScale.
   const bloomPass = new UnrealBloomPass(
     new THREE.Vector2(1, 1),
-    0.55 * quality.bloomScale,
-    0.45,
-    0.22
+    0.32 * quality.bloomScale,
+    0.4,
+    0.32
   )
   composer.addPass(bloomPass)
 

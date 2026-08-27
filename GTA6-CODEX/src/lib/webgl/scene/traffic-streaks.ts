@@ -29,7 +29,7 @@ export function buildTrafficStreaks(options: TrafficStreaksBuilderOptions): Upda
 
   for (let i = 0; i < COUNT; i++) {
     const oncoming = i % 2 === 0
-    const color = oncoming ? 0xfff2d6 : 0xff2d4d
+    const color = oncoming ? 0xf3f3f3 : 0x6f6f6f
     const material = new THREE.MeshBasicMaterial({
       color,
       transparent: true,

@@ -43,7 +43,7 @@ export function buildDistantMovement(options: DistantMovementBuilderOptions): Up
 
   const COUNT = quality.tier === 'high' ? 4 : 2
 
-  const silhouetteMat = new THREE.MeshBasicMaterial({ color: 0x0a0612, fog: true, transparent: true, opacity: 0.85 })
+  const silhouetteMat = new THREE.MeshBasicMaterial({ color: 0x090909, fog: true, transparent: true, opacity: 0.85 })
   const hullGeometry = new THREE.BoxGeometry(2.4, 0.35, 0.6)
   const cabinGeometry = new THREE.BoxGeometry(0.6, 0.4, 0.4)
 

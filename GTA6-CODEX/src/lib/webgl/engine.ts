@@ -526,7 +526,7 @@ export class AutoFichaWebGLEngine {
     this.renderer = createRenderer(canvas, this.quality)
 
     this.scene = new THREE.Scene()
-    this.fog = new THREE.FogExp2(0x1c0f28, this.baseFogDensity)
+    this.fog = new THREE.FogExp2(0x161616, this.baseFogDensity)
     this.scene.fog = this.fog
 
     this.camera = new THREE.PerspectiveCamera(this.baseFov, 1, 0.1, 100)
@@ -2081,7 +2081,7 @@ export class AutoFichaWebGLEngine {
  *    (`0, -2 + i * 2.5, -18 - i * 12`), mismo `ShaderMaterial` (mismos
  *    shaders, `transparent`/`depthWrite`/`blending`/`side`) y mismos
  *    uniforms (`time`, `introFade`, `hazeColor` alternando
- *    `0x6a2878`/`0x284868`, `layerSeed: i * 1.73`) que la versión inline
+ *    `0x454545`/`0x424242`, `layerSeed: i * 1.73`) que la versión inline
  *    anterior. No existía ni `atmospheric-haze.ts` previo ni código
  *    muerto relacionado en `scene/particles.ts` — se auditó antes de
  *    escribir y se confirmó que el módulo se crea desde cero, sin
@@ -2106,7 +2106,7 @@ export class AutoFichaWebGLEngine {
  *    compartida entre todos los streaks), mismas posiciones iniciales
  *    (`laneX` según `oncoming`, `y = -12.55`, `z = -60 + Math.random() * 90`,
  *    `rotation.x = -Math.PI / 2`), mismo `MeshBasicMaterial` (mismo
- *    `color` alternando `0xfff2d6`/`0xff2d4d`, `transparent`/`opacity`/
+ *    `color` alternando `0xf3f3f3`/`0x6f6f6f`, `transparent`/`opacity`/
  *    `blending`/`depthWrite`) y mismas velocidades
  *    (`14 + Math.random() * 10`) que la versión inline anterior. Este
  *    builder no usa `ShaderMaterial`/uniforms ni `ROAD_FLOW_WRAP`/
@@ -2136,7 +2136,7 @@ export class AutoFichaWebGLEngine {
  *    versión inline —, `aSize`), mismo `ShaderMaterial` (mismos shaders,
  *    `transparent`/`depthWrite`/`blending`), mismos uniforms (`time`,
  *    `mouseNDC`, `mouseStrength`, `warmLightPos`, `coolLightPos`,
- *    `introFade`, `warmColor: 0xff6fa8`, `coolColor: 0x22d3ee`) y mismo
+ *    `introFade`, `warmColor: 0xa1a1a1`, `coolColor: 0xa1a1a1`) y mismo
  *    `updater` (`points.rotation.y = elapsed * 0.008` + copiar
  *    `keyLight`/`fillLight` en `warmLightPos`/`coolLightPos`) que la
  *    versión inline anterior. A diferencia de las Fases 8.1–8.6, este

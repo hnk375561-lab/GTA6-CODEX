@@ -47,8 +47,8 @@ export function buildHorizonSunScene(options: HorizonSunBuilderOptions): Updater
   const material = new THREE.ShaderMaterial({
     uniforms: {
       ...uniforms,
-      coreColor: { value: new THREE.Color(0xff5b7c) },
-      rimColor: { value: new THREE.Color(0xffb04d) },
+      coreColor: { value: new THREE.Color(0x909090) },
+      rimColor: { value: new THREE.Color(0xbcbcbc) },
     },
     vertexShader: SUN_VERTEX_SHADER,
     fragmentShader: SUN_FRAGMENT_SHADER,
@@ -78,8 +78,8 @@ export function buildHorizonSunScene(options: HorizonSunBuilderOptions): Updater
     introFadeUniform.value = intro
     const dayLift = 0.5 + 0.5 * Math.cos(dayPhase * Math.PI * 2)
     sunPosition.y = 4.5 + dayLift * 2.5
-    coreColorValue.setHex(lerpDayColor(dayPhase, 0xff5b7c, 0xff3d78, 0xff9060))
-    rimColorValue.setHex(lerpDayColor(dayPhase, 0xffb04d, 0xff6088, 0x88b0ff))
+    coreColorValue.setHex(lerpDayColor(dayPhase, 0x909090, 0x7e7e7e, 0xacacac))
+    rimColorValue.setHex(lerpDayColor(dayPhase, 0xbcbcbc, 0x949494, 0xadadad))
   }
 
   return updater

@@ -37,8 +37,8 @@ export function buildNeonSignsScene(options: NeonSignsBuilderOptions): Updater {
 
   // Paleta "Blueprint Drift": grafito/blanco con acento frío (cian
   // apagado) en vez del magenta/violeta saturado — editorial, no arcade.
-  const gridColor = new THREE.Color(0x9fb3c8) // grafito azulado
-  const accentColor = new THREE.Color(0x5fd4e0) // cian apagado (acento)
+  const gridColor = new THREE.Color(0xafafaf) // grafito azulado
+  const accentColor = new THREE.Color(0xb2b2b2) // cian apagado (acento)
 
   interface GridLayer {
     z: number

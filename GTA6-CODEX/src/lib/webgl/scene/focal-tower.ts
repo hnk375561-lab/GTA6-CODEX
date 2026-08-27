@@ -107,10 +107,10 @@ export function buildFocalTowerScene(options: FocalTowerBuilderOptions): Updater
   // Paleta "Blueprint Drift": grafito/blanco con un acento ámbar sutil
   // para diferenciar carriles, en vez del rosa/cian saturado anterior.
   const specs: VehicleSpec[] = [
-    { kind: 'sedan', scale: 1.0, laneY: 0.4, laneZ: -1.5, speed: 0.05, startX: -6, color: 0xd8dfe6 },
-    { kind: 'suv', scale: 1.05, laneY: 1.9, laneZ: -4.5, speed: 0.035, startX: 8, color: 0xc8b98a },
-    { kind: 'pickup', scale: 1.0, laneY: -1.1, laneZ: 1.2, speed: 0.06, startX: -10, color: 0xd8dfe6 },
-    { kind: 'moto', scale: 1.4, laneY: -2.6, laneZ: 3.0, speed: 0.08, startX: 5, color: 0xc8b98a },
+    { kind: 'sedan', scale: 1.0, laneY: 0.4, laneZ: -1.5, speed: 0.05, startX: -6, color: 0xdedede },
+    { kind: 'suv', scale: 1.05, laneY: 1.9, laneZ: -4.5, speed: 0.035, startX: 8, color: 0xb8b8b8 },
+    { kind: 'pickup', scale: 1.0, laneY: -1.1, laneZ: 1.2, speed: 0.06, startX: -10, color: 0xdedede },
+    { kind: 'moto', scale: 1.4, laneY: -2.6, laneZ: 3.0, speed: 0.08, startX: 5, color: 0xb8b8b8 },
   ]
 
   const bounds = 16

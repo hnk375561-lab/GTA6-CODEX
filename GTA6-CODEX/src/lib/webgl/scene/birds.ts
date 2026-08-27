@@ -94,7 +94,7 @@ export function buildBirds(options: BirdsBuilderOptions): Updater {
   birdGeometry.setIndex([0, 1, 2])
 
   const birdMaterial = new THREE.MeshBasicMaterial({
-    color: 0x0a0612,
+    color: 0x090909,
     fog: true,
     transparent: true,
     opacity: 0.75,

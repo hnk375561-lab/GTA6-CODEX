@@ -42,7 +42,7 @@ export function buildAtmosphericHaze(options: AtmosphericHazeBuilderOptions): At
       uniforms: {
         time: { value: 0 },
         introFade: { value: 0 },
-        hazeColor: { value: new THREE.Color(i % 2 === 0 ? 0x6a2878 : 0x284868) },
+        hazeColor: { value: new THREE.Color(i % 2 === 0 ? 0x454545 : 0x424242) },
         layerSeed: { value: i * 1.73 },
       },
       vertexShader: HAZE_VERTEX_SHADER,

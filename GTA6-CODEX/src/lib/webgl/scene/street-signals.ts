@@ -5,9 +5,9 @@
  *
  * Paleta: cian/magenta (la ya establecida en toda la escena, ver
  * `focal-tower.ts`/`light-shaft.ts`/`neon-signs.ts` — colores de anillo
- * 0x22d3ee/0xff2d78), no rojo/ámbar/verde literal. Se evita el rojo
+ * 0xa1a1a1/0x747474), no rojo/ámbar/verde literal. Se evita el rojo
  * literal en particular porque `street-traffic.ts` ya usa rojo
- * (0xff2d4d) para las luces de freno de los vehículos; un semáforo rojo
+ * (0x6f6f6f) para las luces de freno de los vehículos; un semáforo rojo
  * al lado competiría semánticamente con esa lectura.
  *
  * Ciclo de color determinista por `elapsed` (no aleatorio) — mismo
@@ -26,7 +26,7 @@ export interface StreetSignalsBuilderOptions {
 }
 
 const CYCLE_PERIOD = 6 // segundos por ciclo completo de 3 colores
-const COLORS = [0x22d3ee, 0xff2d78, 0x22d3ee] // cian → magenta → cian
+const COLORS = [0xa1a1a1, 0x747474, 0xa1a1a1] // cian → magenta → cian
 
 interface Signal {
   discMaterials: THREE.MeshBasicMaterial[]
@@ -50,7 +50,7 @@ export function buildStreetSignals(options: StreetSignalsBuilderOptions): Update
 
   const COUNT = quality.tier === 'high' ? 3 : 2
 
-  const poleMat = new THREE.MeshBasicMaterial({ color: 0x0a0612, fog: true })
+  const poleMat = new THREE.MeshBasicMaterial({ color: 0x090909, fog: true })
   const poleGeometry = new THREE.CylinderGeometry(0.045, 0.06, 3.2, 6)
   const boxGeometry = new THREE.BoxGeometry(0.22, 0.6, 0.16)
   const discGeometry = new THREE.CircleGeometry(0.07, 12)

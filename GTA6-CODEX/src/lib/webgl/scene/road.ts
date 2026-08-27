@@ -74,8 +74,8 @@ export function buildRoadScene(
     uniforms: {
       ...uniforms,
       flow: { value: 0 },
-      colorA: { value: new THREE.Color(0x22d3ee) },
-      colorB: { value: new THREE.Color(0xff2d78) },
+      colorA: { value: new THREE.Color(0xa1a1a1) },
+      colorB: { value: new THREE.Color(0x747474) },
       humidity: { value: 0.45 },
       heatShimmer: { value: 0.0 },
     },

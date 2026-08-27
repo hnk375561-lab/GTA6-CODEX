@@ -76,7 +76,7 @@ export function buildAirEvents(options: AirEventsBuilderOptions): Updater {
   const opacity = quality.tier === 'medium' ? 0.55 : 0.9
   const crossPeriod = quality.tier === 'medium' ? 100 : 70
 
-  const silhouetteMat = new THREE.MeshBasicMaterial({ color: 0x0a0612, fog: true, transparent: true, opacity })
+  const silhouetteMat = new THREE.MeshBasicMaterial({ color: 0x090909, fog: true, transparent: true, opacity })
 
   const group = new THREE.Group()
 
