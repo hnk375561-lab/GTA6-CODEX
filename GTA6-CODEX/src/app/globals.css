@@ -1747,6 +1747,40 @@ a:hover .logo-mark {
   opacity: var(--scene-intro);
   transition: opacity 600ms ease;
   font-family: var(--font-display);
+  /* Pin de cámara al salir del hero: el título se achica y sube
+     levemente mientras el resto de la sección se retira, en vez de
+     desaparecer plano junto con el fondo — el gesto de "la cámara se
+     aleja del título" que tiene el scroll de referencia (VI). Comparte
+     la misma --hero-scroll (`view-timeline-name` en `.hero-gleam`) que
+     ya usa `.hero-declass-bar`, así que no agrega ningún listener
+     nuevo. A propósito NO toca `opacity` acá: esa propiedad ya la
+     controla la transición de entrada de arriba (`--scene-intro`), y
+     una animation con `fill: both` sobre la misma propiedad pisaría el
+     fade-in inicial (fase "backwards" del fill se dispara antes de que
+     el usuario llegue a scrollear). Transform es una propiedad
+     completamente aparte, así que ambos mecanismos conviven sin
+     pelearse por quién manda. */
+  animation: hero-title-pin 700ms var(--ease-premium) both;
+  animation-timeline: --hero-scroll;
+  animation-range: exit 0% exit 65%;
+  transform-origin: 50% 15%;
+  will-change: transform, opacity;
+}
+
+@keyframes hero-title-pin {
+  from {
+    transform: scale(1) translateY(0);
+  }
+  to {
+    transform: scale(0.88) translateY(-22px);
+  }
+}
+
+@supports not (animation-timeline: scroll()) {
+  .hero-title {
+    animation: none;
+    transform: none;
+  }
 }
 
 /* --- Botones: lenguaje único para todo el sitio (hero, formularios,
