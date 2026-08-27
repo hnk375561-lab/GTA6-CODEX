@@ -63,7 +63,25 @@ jobs:
         run: npm run lint
 
       - name: Unit tests
-        run: npm test
+        id: unit_tests
+        continue-on-error: true
+        run: npm test 2>&1 | tee /tmp/unit-tests-output.txt
+
+      # Diagnostico permanente: si "Unit tests" falla, vuelca el output
+      # completo al Job Summary (legible via API/UI sin depender del
+      # blob storage de logs) antes de cortar el pipeline. El fallo es
+      # intermitente (visto ~3 de 15 corridas) asi que hace falta
+      # capturarlo la proxima vez que pase.
+      - name: Diagnostico Unit tests si falla
+        if: always()
+        run: |
+          if [ "${{ steps.unit_tests.outcome }}" = "failure" ]; then
+            echo '## FALLO en "npm test"' >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            tail -c 60000 /tmp/unit-tests-output.txt >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
 
       # Chequeo de regresión para el bug del BOM UTF-8: si el catálogo de
       # vehículos colapsa (por un BOM, un cambio en el loader, en el
