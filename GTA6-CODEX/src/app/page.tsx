@@ -20,6 +20,7 @@ import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { CountUp } from '@/components/ui/CountUp'
 import { WordRotate } from '@/components/ui/WordRotate'
 import { CategoryCardMedia } from '@/components/ui/CategoryCardMedia'
+import { ParallaxElement } from '@/lib/hooks/useParallax'
 import { EntityCard } from '@/components/entities/EntityCard'
 import { getCategoryPreviewImages } from '@/lib/images'
 import { SceneSection } from '@/components/webgl/SceneSection'
@@ -426,7 +427,7 @@ export default async function HomePage() {
                     hoverable
                     className="relative flex h-full flex-col overflow-hidden !p-0 text-center"
                   >
-                    <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden">
+                    <ParallaxElement factor={0.2} className="relative aspect-[4/3] w-full shrink-0 overflow-hidden">
                       <CategoryCardMedia previews={categoryPreviews[type]} />
                       <div className="category-icon-badge absolute left-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-lg text-auto-accent">
                         <CategoryIcon type={type} className="h-5 w-5" />
@@ -441,7 +442,7 @@ export default async function HomePage() {
                         </span>
                       </div>
                       <div className="category-card-redaction category-card-redaction--bottom" aria-hidden="true" />
-                    </div>
+                    </ParallaxElement>
 
                     <div className="relative z-10 flex flex-1 flex-col gap-2 px-5 py-4">
                       <p className="font-semibold text-auto-text">{ENTITY_TYPE_LABELS[type]}</p>
@@ -502,15 +503,16 @@ export default async function HomePage() {
 
             <Reveal className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((entity, i) => (
-                <EntityCard
-                  key={`${entity.type}-${entity.slug}`}
-                  entity={entity}
-                  image={resolveEntityDisplayImage(entity)}
-                  clipUrl={undefined}
-                  relationCount={featuredRelationCounts[entity.slug]}
-                  size={i === 0 ? 'hero' : 'default'}
-                  className={i === 0 ? 'sm:col-span-2' : undefined}
-                />
+                <ParallaxElement key={`${entity.type}-${entity.slug}`} factor={0.15}>
+                  <EntityCard
+                    entity={entity}
+                    image={resolveEntityDisplayImage(entity)}
+                    clipUrl={undefined}
+                    relationCount={featuredRelationCounts[entity.slug]}
+                    size={i === 0 ? 'hero' : 'default'}
+                    className={i === 0 ? 'sm:col-span-2' : undefined}
+                  />
+                </ParallaxElement>
               ))}
             </Reveal>
           </div>
@@ -600,11 +602,12 @@ export default async function HomePage() {
 
             <Reveal className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {latestNews.map((entity) => (
-                <EntityCard
-                  key={`${entity.type}-${entity.slug}`}
-                  entity={entity}
-                  image={latestNewsImages[entity.slug]}
-                />
+                <ParallaxElement key={`${entity.type}-${entity.slug}`} factor={0.15}>
+                  <EntityCard
+                    entity={entity}
+                    image={latestNewsImages[entity.slug]}
+                  />
+                </ParallaxElement>
               ))}
             </Reveal>
 

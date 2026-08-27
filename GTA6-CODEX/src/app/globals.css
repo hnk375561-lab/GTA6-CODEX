@@ -3420,3 +3420,23 @@ img,
   font-weight: 600;
   margin-top: 2px;
 }
+
+/* ============================================================
+   Capítulo 2.2 — Parallax en el DOM (no solo WebGL)
+   Parallax LIVIANO para imágenes y bloques post-hero
+   ============================================================ */
+
+/* La CSS var --parallax-offset se publica vía useParallax hook.
+   El transform está aquí para evitar especificidad issues y permitir
+   que los estilos de hover de cards se apliquen sin conflicto. */
+[style*="--parallax-offset"] {
+  will-change: transform;
+}
+
+/* Desactivar parallax bajo reduced-motion — lo maneja el hook,
+   pero esto asegura que no haya transform residual si algo falla. */
+@media (prefers-reduced-motion: reduce) {
+  [style*="--parallax-offset"] {
+    transform: none !important;
+  }
+}
