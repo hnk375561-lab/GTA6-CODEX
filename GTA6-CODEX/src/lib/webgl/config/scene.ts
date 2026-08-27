@@ -42,32 +42,14 @@ export interface ImageBillboardConfig {
   parallax: number
 }
 
-export const IMAGE_BILLBOARDS: readonly ImageBillboardConfig[] = [
-  {
-    key: 'real-dimez',
-    path: '/images/entities/personajes/real-dimez.webp',
-    width: 2.05,
-    height: 1.1,
-    color: 0xff2d78,
-    radius: 4.5,
-    baseY: -1.9,
-    speed: 0.062,
-    phase: 3.3,
-    parallax: 0.85,
-  },
-  {
-    key: 'boobie-ike',
-    path: '/images/entities/personajes/boobie-ike.webp',
-    width: 1.95,
-    height: 1.1,
-    color: 0x22d3ee,
-    radius: 4.9,
-    baseY: 2.7,
-    speed: 0.056,
-    phase: 4.6,
-    parallax: 0.7,
-  },
-] as const
+// "Synth Noir Intensificado" — pase 2: se saca el contenido con fotos
+// reales de personajes de GTA VI orbitando la torre focal (real-dimez,
+// boobie-ike). El array queda vacío a propósito: `buildImageBillboardsScene`
+// (./scene/image-billboards.ts) ya maneja un array vacío sin romper nada
+// (simplemente no crea ningún billboard, el updater queda no-op). Si en
+// el futuro se quiere volver a poner "letreros orbitando la torre", usar
+// arte/fotografía propia acá, no imágenes con la marca/likeness de GTA VI.
+export const IMAGE_BILLBOARDS: readonly ImageBillboardConfig[] = [] as const
 
 export const SECTION_MOOD: Record<string, number> = {
   hero: 0,
