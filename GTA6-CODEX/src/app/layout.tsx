@@ -32,6 +32,7 @@ import { Footer } from '@/components/layout/Footer'
 import { WebGLBackground } from '@/components/webgl/WebGLBackground'
 import { SceneAmbientBridge } from '@/components/webgl/SceneAmbientBridge'
 import { ConsentBanner } from '@/components/layout/ConsentBanner'
+import { LenisProvider } from '@/lib/scroll/lenis-provider'
 
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/config/site'
 // GA4 solo se activa si hay un ID real configurado. Sin esto, un build sin
@@ -101,6 +102,7 @@ export default function RootLayout({
             crossOrigin="anonymous"
           />
         )}
+        <LenisProvider />
         <WebGLBackground />
         <SceneAmbientBridge />
         {/* Grano fílmico + viñeta: capa atmosférica entre el canvas WebGL
