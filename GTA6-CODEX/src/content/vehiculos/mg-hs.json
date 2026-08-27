@@ -13,14 +13,15 @@
   "class": "SUV compacto",
   "customizable": false,
   "power": "162 hp",
-  "price": "EUR 28.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "EUR 28.000 (referencia mercado europeo)",
+  "consumo": "7.4 l/100km combinado",
+  "dimensiones": "4.574 mm largo x 1.876 mm ancho x 1.664 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "note": "Datos técnicos basados en las especificaciones generales para el mercado global de la primera generación del MG HS, incluyendo variantes nafteras e híbridas enchufables.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Los precios varían considerablemente según el mercado de importación y los impuestos locales.",
+      "Las cifras de consumo y aceleración pueden diferir ligeramente entre la versión naftera pura y la variante híbrida enchufable."
     ]
   },
   "performance": {
@@ -28,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.465Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:13:05.237Z",
+  "transmision": "Manual de 6 velocidades o Automática de doble embrague / DCT",
+  "traccion": "Delantera",
+  "peso": "1.550 kg",
+  "tipoMotor": "Naftero 1.5 Turbo / Híbrido enchufable (PHEV)",
+  "potenciaKW": "119 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "9.9s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.490 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 463,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra Generación",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -206,7 +207,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.433Z",
+    "lastChecked": "2026-08-27T01:13:05.237Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +225,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl MG HS es un SUV del segmento C desarrollado por el fabricante de origen británico MG Motor, actualmente bajo el ala del gigante asiático SAIC Motor. Lanzado originalmente al mercado internacional hacia finales de 2019 y principios de 2020, este modelo llegó para posicionarse como el hermano mayor del MG ZS, apuntando a un público que busca mayor habitabilidad, tecnología de punta y un nivel superior de confort sin resignar una ecuación de precio y producto muy competitiva frente a rivales tradicionales.\n\n## Un hito o generación relevante\nLa introducción de la variante híbrida enchufable (PHEV) marcó un punto de inflexión fundamental para el MG HS durante su ciclo de vida. Esta versión combinó un motor naftero turboralimentado con un propulsor eléctrico y un paquete de baterías de capacidad considerable, permitiéndole ofrecer una potencia combinada superior y la posibilidad de circular en modo 100% eléctrico en entornos urbanos. Este movimiento estratégico le abrió las puertas de manera definitiva a mercados europeos sumamente estrictos en materia de emisiones contaminantes, consolidando la presencia de la marca en el Viejo Continente.\n\n## Curiosidades\nUna de las características más destacadas del MG HS en diversos mercados es su enfoque en ofrecer un nivel de equipamiento de serie muy completo que, en marcas generalistas tradicionales, suele reservarse únicamente para las versiones tope de gama o cobrarse como opcional. Además, el diseño exterior conjuga líneas de impronta europea con parrillas frontales de gran porte que le otorgan una fuerte personalidad visual, un aspecto muy valorado por los compradores del segmento SUV compacto.\n\n## Competencia y posicionamiento\nEn el plano global, el MG HS compite de forma directa en el hipercompetitivo segmento de los C-SUV, plantándole cara a pesos pesado de la industria como el Toyota RAV4, el Kia Sportage, el Hyundai Tucson y el Volkswagen Tiguan. Su principal argumento de venta radica en su atractiva relación precio-producto, ofreciendo dimensiones generosas, una distancia entre ejes que favorece el espacio en plazas traseras y un baúl con capacidad suficiente para el uso familiar diario. Si bien en algunas plazas debe lidiar con el desafío de construir una sólida reputación a largo plazo frente a marcas con décadas de arraigo, su propuesta tecnológica y su diseño equilibrado lo han convertido en uno de los pilares de la expansión internacional de MG en los últimos años."
 }

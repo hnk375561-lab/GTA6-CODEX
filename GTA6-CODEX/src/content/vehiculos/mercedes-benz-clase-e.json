@@ -12,15 +12,16 @@
   "manufacturer": "Mercedes-Benz",
   "class": "Sedán ejecutivo",
   "customizable": false,
-  "power": "255 hp",
-  "price": "USD 62.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "197 CV a 3600 RPM (versión E 220 d) / 204 CV (versión E 200)",
+  "price": "USD 65.000 (MSRP de referencia en mercado europeo para modelos base)",
+  "consumo": "4.8 - 7.3 l/100km combinado según motorización (diésel/nafta)",
+  "dimensiones": "4.949 mm largo x 1.880 mm ancho x 1.469 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "note": "Se actualizaron las dimensiones, peso y motorizaciones basándose en la generación W214 actual del Mercedes-Benz Clase E. Los valores de precios y consumos son estimaciones de referencia para el mercado global.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Los precios varían sustancialmente según los impuestos y aranceles de importación de cada país de Latinoamérica.",
+      "Las especificaciones exactas dependen de los paquetes de equipamiento opcionales elegidos."
     ]
   },
   "performance": {
@@ -28,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.460Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:12:56.671Z",
+  "transmision": "Automática 9G-TRONIC",
+  "traccion": "Tracción trasera o integral 4MATIC",
+  "peso": "1.750 - 2.100 kg según variante y motorización",
+  "tipoMotor": "Gasolina / Diésel con tecnología Mild-Hybrid (EQ Boost)",
+  "potenciaKW": "145 - 280 kW",
+  "capacidadTanque": "66 litros",
+  "tiempoRecorrido": "0-100 km/h en 7.5s (referencia E 200)",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.993 cc - 2.999 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 540,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "W214",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "ejecutivo",
   "gallery": {
@@ -206,7 +207,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.431Z",
+    "lastChecked": "2026-08-27T01:12:56.671Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +225,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Mercedes-Benz Clase E es, sin lugar a dudas, uno de los pilares fundamentales en la historia de la marca de Stuttgart y del segmento de los sedanes ejecutivos a nivel mundial. Sus raíces se remontan lejanamente a las entrañas de los entrañables modelos 'Ponton' de la década de 1950, aunque la denominación comercial 'Clase E' (por Einspritzung, inyección en alemán) no se adoptó formalmente hasta la emblemática generación W124 en 1993. A lo largo de las décadas, este vehículo se ha ganado a pulso una reputación inquebrantable de robustez, confort de marcha excepcional y una constante innovación tecnológica que, en muchas ocasiones, ha debutado primero aquí antes de filtrarse al resto de la gama de la firma de la estrella.\n\n## Un hito o generación relevante\nSi hay una generación que marcó un antes y un después en la memoria colectiva de los automovilistas, esa fue la W124. Diseñada bajo la tutela de Bruno Sacco, estableció nuevos estándares en aerodinámica, seguridad pasiva y durabilidad mecánica, con unidades que hasta el día de hoy circulan por las calles superando el medio millón de kilómetros sin mayores contratiempos. No obstante, en la historia reciente, la llegada de la generación W213 supuso un salto cuántico rotundo en materia de digitalización con el estreno del sistema MBUX y pantallas de doble panel que transformaron radicalmente la interacción entre el conductor y el habitáculo. La más reciente iteración, denominada W214, continúa este legado llevando la conectividad, la inteligencia artificial y la electrificación a un nivel completamente nuevo.\n\n## Curiosidades\nUna de las curiosidades más interesantes del Clase E a lo largo de su historia es que sirvió de base para crear una de las berlinas deportivas más radicales de todos los tiempos: el Mercedes-Benz 500 E (W124), desarrollado y ensamblado en colaboración directa con Porsche en las instalaciones de Zuffenhausen. Este lobo con piel de cordero equipaba un imponente motor V8 y ensanchaba sus pasos de rueda de forma discreta. Además, en los mercados europeos y norteamericanos, el Clase E ha sido históricamente el vehículo predilecto para flotas de taxis de alta gama, demostrando que el lujo y la durabilidad extrema pueden ir de la mano bajo el uso más intensivo y exigente imaginable.\n\n## Competencia y posicionamiento\nEn el mercado global actual, el Mercedes-Benz Clase E compite de manera directa y visceral contra los máximos exponentes del segmento E premium alemán: el BMW Serie 5 y el Audi A6. Mientras que el Serie 5 suele apostar por un tacto de conducción más dinámico y enfocado en el conductor, y el A6 destaca por su sobriedad tecnológica y la tracción integral quattro, el Clase E siempre ha sabido diferenciarse por ofrecer un enfoque superior orientado al confort absoluto, el aislamiento acústico y un lujo interior que emula de cerca a su hermano mayor, el Clase S. Es el vehículo elegido por ejecutivos, diplomáticos y familias que buscan estatus sin renunciar a la practicidad de un sedán mediano-grande."
 }

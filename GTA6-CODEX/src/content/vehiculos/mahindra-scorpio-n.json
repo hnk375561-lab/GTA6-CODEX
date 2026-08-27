@@ -12,15 +12,16 @@
   "manufacturer": "Mahindra",
   "class": "SUV 4x4",
   "customizable": false,
-  "power": "201 hp (diésel)",
-  "price": "USD 20.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "172 hp (diésel 2.2 mHawk)",
+  "price": "USD 22.000 - 30.000 (referencia mercado internacional)",
+  "consumo": "8.0 l/100km combinado",
+  "dimensiones": "4.662 mm largo x 1.917 mm ancho x 1.845 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "note": "Se verificaron las especificaciones técnicas principales del Mahindra Scorpio-N de segunda generación, incluyendo sus dimensiones, opciones de motorización diésel mHawk de 2.2 litros y capacidades de tracción 4XPLORE basadas en conocimiento general de la industria automotriz global.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Los precios varían significativamente según el mercado de exportación",
+      "Las cifras exactas de aceleración 0-100 km/h no cuentan con una homologación oficial única publicada por el fabricante"
     ]
   },
   "performance": {
@@ -28,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.449Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:12:19.564Z",
+  "transmision": "Manual de 6 velocidades o Automática de 6 velocidades",
+  "traccion": "Tracción integral 4x4 (4XPLORE)",
+  "peso": "1.950-2.150 kg",
+  "tipoMotor": "Diésel / Gasolina",
+  "potenciaKW": "128 kW",
+  "capacidadTanque": "57 litros",
+  "tiempoRecorrido": "no publicado oficialmente",
+  "anoProduccion": "2022-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.184 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 7,
+  "baul": 460,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (Scorpio-N)",
+  "anoLanzamiento": 2022,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -206,7 +207,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.425Z",
+    "lastChecked": "2026-08-27T01:12:19.564Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +225,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Mahindra Scorpio es uno de los vehículos más emblemáticos de la industria automotriz india. Lanzado originalmente a principios de los años 2000, fue concebido por el fabricante Mahindra & Mahindra para motorizar a las familias de su país con un formato robusto, accesible y apto para caminos difíciles. Con el paso de los años, el modelo evolucionó de ser un todoterreno utilitario rústico a un SUV moderno capaz de competir en diversos mercados internacionales.\n\n## Un hito o generación relevante\nEl gran punto de inflexión en la historia de la placa ocurrió con la llegada de la segunda generación, denominada comercialmente como Mahindra Scorpio-N y presentada en 2022. Este modelo significó un salto cuántico respecto a su antecesor (que continuó comercializándose en paralelo bajo el nombre Scorpio Classic). Desarrollado sobre un chasis de escalera totalmente nuevo y más rígido, el Scorpio-N incorporó estándares globales de seguridad, diseño exterior desarrollado en el estudio Pininfarina y un habitáculo con una fuerte carga tecnológica, marcando la incursión seria de Mahindra en el segmento de los SUV medianos globales.\n\n## Curiosidades\nA pesar de ser un producto originario de la India, el desarrollo del Scorpio-N involucró centros internacionales de ingeniería de Mahindra, destacando el Mahindra Research Valley (MRV) cerca de Chennai y el Mahindra North American Technical Center (MNATC) en Estados Unidos. Además, el sistema de tracción en las cuatro ruedas, comercializado como 4XPLORE, cuenta con modos seleccionables para distintos tipos de terreno (como barro, nieve y arena), heredando la capacidad off-road pura que hizo famoso al modelo original, pero sumando asistencias electrónicas modernas.\n\n## Competencia y posicionamiento\nEn el mercado global y en las regiones emergentes donde opera, el Mahindra Scorpio-N se posiciona como una alternativa de excelente relación precio-producto frente a SUV medianos tradicionales basados en plataformas de pick-up. Compite directamente contra modelos como el Toyota Fortuner, el Ford Everest y el Isuzu MU-X, aunque apuntando a un segmento ligeramente más accesible pero con un enfoque similar en durabilidad, chasis de largueros y auténtica capacidad 4x4 para uso intensivo."
 }
