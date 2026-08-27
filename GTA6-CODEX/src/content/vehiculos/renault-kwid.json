@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.424Z",
-  "updatedAt": "2026-08-27T01:56:06.552Z",
+  "updatedAt": "2026-08-27T03:06:31.725Z",
   "manufacturer": "Renault",
   "class": "Hatchback económico",
   "customizable": false,
@@ -24,7 +24,9 @@
   "price": "ARS 18.000.000 (referencia mercado argentino)",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas del Renault Kwid para el mercado latinoamericano, incluyendo motorización 1.0 SCe de 3 cilindros, dimensiones compactas, capacidad del baúl y peso en orden de marcha.",
+    "primarySource": "https://www.renault.com.co/vehiculos/kwid.html",
+    "secondarySource": "https://www.renault.com.mx/autos-particulares/kwid/prices-offers.html?gradeCode=ENS_MDL2P1SERIELIM1",
+    "note": "Se verificaron las especificaciones técnicas del Renault Kwid para Latinoamérica, incluyendo la capacidad del baúl de 290 litros, la altura al suelo de 185 mm y las características generales del tren motriz 1.0 L en fuentes oficiales regionales.",
     "limitations": [
       "Los precios varían constantemente según la inflación y disponibilidad en el mercado argentino.",
       "Algunos equipamientos de seguridad y confort pueden variar según la versión (Zen, Intens, Outsider)."
@@ -33,10 +35,10 @@
   "transmision": "Manual de 5 marchas",
   "traccion": "Delantera",
   "peso": "770 kg",
-  "tipoMotor": "Nafta 1.0L SCe",
+  "tipoMotor": "Nafta 1.0L SCe de 3 cilindros",
   "potenciaKW": "49 kW",
   "capacidadTanque": "38 litros",
-  "tiempoRecorrido": "15.5s",
+  "tiempoRecorrido": "0-100 km/h en 14.5s",
   "anoProduccion": "2017-presente",
   "mercados": [
     "Europa",
@@ -256,7 +258,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:56:06.552Z",
+    "lastChecked": "2026-08-27T03:06:31.725Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -310,5 +312,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\n\nEl Renault Kwid se presentó originalmente en India en el año 2015, desarrollado sobre la plataforma modular CMF-A de la Alianza Renault-Nissan. Pensado desde el inicio como un vehículo global de bajo costo y gran volumen para mercados emergentes, su diseño exterior adoptó rápidamente una estética inspirada en los SUV, con una posición de manejo elevada, despeje generoso del suelo y pasarruedas marcados que llamaron la atención del público urbano.\n\nA Sudamérica llegó a finales de 2017 (fabricado en la planta de São José dos Pinhais, en Brasil), posicionándose rápidamente como el vehículo de entrada de gama de la marca del rombo en la región. Reemplazó indirectamente al veterano Clio Mío, ofreciendo una propuesta moderna enfocada en la eficiencia de combustible, la conectividad y la accesibilidad económica.\n\n## Un hito o generación relevante\n\nUn hito fundamental para la historia del Kwid en nuestra región fue su importante actualización regional introducida a principios de 2022. Esta evolución no solo retocó el diseño frontal —incorporando luces LED diurnas y una parrilla renovada—, sino que mejoró sustancialmente la dotación de seguridad de serie para cumplir con exigencias normativas y de mercado más estrictas. Entre los agregados clave se destacaron la incorporación de cuatro airbags (frontales y laterales) y el control electrónico de estabilidad (ESP) en toda la gama, un salto notable respecto a las primeras unidades comercializadas en el país.\n\n## Curiosidades\n\nDebido a su concepto de diseño, al Renault Kwid se lo suele denominar popularmente en los medios especializados como el \"SUV de los compactos\" o \"el SUV de los compactos urbanos\". Esto se debe a que, a pesar de pertenecer al segmento A (city cars), cuenta con un despeje del suelo de 185 milímetros, una cifra superior a la de varios sedanes y hatchbacks tradicionales, lo que facilita sortear lomos de burro, baches e irregularidades típicas de las calles urbanas en Argentina.\n\nAdemás, su motor de 3 cilindros y 1.0 litros prioriza la economía por sobre las prestaciones deportivas, logrando consumos sumamente contenidos tanto en ciclo urbano como en ruta.\n\n## Competencia y posicionamiento\n\nEn el mercado argentino, el Renault Kwid compite de manera directa en el segmento de entrada de gama contra modelos de marcas generalistas como el Fiat Mobi. Su principal propuesta de valor radica en la combinación de un precio competitivo, costos de mantenimiento accesibles, una estética aventurera muy atractiva para conductores jóvenes o familias unipersonales, y una altura libre al suelo que resulta muy práctica para el uso diario en ciudad."
+  "content": "## Historia del modelo\n\nEl Renault Kwid irrumpió en los mercados emergentes como un desarrollo clave de la Alianza Renault-Nissan sobre la plataforma modular CMF-A. Concebido originalmente en la India en 2015, su planteo estético y funcional buscó captar la atención de un público joven y urbano que necesitaba un vehículo compacto, económico y con una impronta visual robusta. Su desembarco en Sudamérica se concretó a finales de 2017, cuando comenzó a producirse en la planta brasileña de São José dos Pinhais para reemplazar de manera indirecta al clásico Clio Mío. Desde entonces, se consolidó como el escalón de acceso a la marca del rombo en la región, apostando fuerte por la eficiencia de combustible, la agilidad en el tránsito cotidiano y un precio de adquisición competitivo.\n\n## Un hito o generación relevante\n\nUn punto de inflexión indiscutible para la trayectoria del Kwid en los mercados latinoamericanos fue la profunda renovación introducida a principios de 2022. Esta evolución no se limitó a un rediseño estético del sector frontal —donde adoptó una parrilla más marcada y ópticas divididas con luces diurnas de LED—, sino que representó un salto cualitativo mayúsculo en materia de seguridad pasiva y activa. Ante las mayores exigencias de los consumidores y de las normativas regionales, la marca incorporó de serie elementos fundamentales como el control electrónico de estabilidad (ESP), asistente de arranque en pendientes y cuatro airbags (frontales y laterales delanteros) en todas las versiones comercializadas. Esto permitió disipar los cuestionamientos iniciales sobre la protección estructural del modelo en su fase de lanzamiento.\n\n## Curiosidades\n\nPor su particular morfología y proporciones, en el ambiente automotor se lo suele bautizar cariñosamente como el \"SUV de los compactos\". Este apodo nace de combinar dimensiones propias de un city car del segmento A con características físicas inusuales para su categoría, tales como un despeje libre al suelo de 185 milímetros y pasarruedas bien definidos. Tal altura le otorga una ventaja práctica indudable para lidiar cotidianamente con las recurrentes imperfecciones de la traza urbana, lomos de burro pronunciados y baches sin rozar los bajos del vehículo. Asimismo, su motorización naftera de 3 cilindros y 1.0 litros prioriza la contención del gasto de combustible por sobre cualquier pretensión deportiva.\n\n## Competencia y posicionamiento\n\nDentro del mercado automotor, el Renault Kwid ocupa un rol estratégico como uno de los vehículos 0 km más accesibles disponibles. Su propuesta comercial se enfoca en aquellos conductores que buscan su primer auto, flotas urbanas o bien usuarios que priorizan costos de mantenimiento muy contenidos, impuestos reducidos y una excelente agilidad para estacionar en espacios reducidos. Si bien compite de manera directa en el segmento de entrada contra contrincantes de la talla del Fiat Mobi, el modelo de Renault se destaca por ofrecer una estética aventurera muy atractiva, una capacidad de baúl de 290 litros sumamente aprovechable para su tamaño y una altura al suelo que simplifica la dinámica diaria en la ciudad."
 }

@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.076Z",
-  "updatedAt": "2026-08-27T01:43:03.560Z",
+  "updatedAt": "2026-08-27T02:52:55.641Z",
   "manufacturer": "Haval",
   "class": "SUV",
   "customizable": false,
@@ -20,23 +20,24 @@
     "speed": "180 km/h",
     "acceleration": "0-100 km/h en 9.5s"
   },
-  "power": "201 hp",
-  "price": "USD 33.000 (referencia regional)",
+  "power": "201 hp a 235 hp (según motorización 1.5L Turbo o 2.0L Turbo; versiones híbridas HEV/PHEV con potencia combinada superior)",
+  "price": "Desde aprox. USD 33.000 (referencia regional según mercado latinoamericano)",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas principales de la tercera generación del Haval H6 comercializada por Great Wall Motor en mercados de exportación.",
+    "primarySource": "https://www.gwm-mx.com/es/models/haval-h6-2026",
+    "note": "Se verificaron las especificaciones técnicas, potencias para motores de gasolina e híbridos/PHEV, así como los precios y configuraciones de transmisión en portales oficiales de GWM y lanzamientos regionales recientes.",
     "limitations": [
-      "Las cifras exactas de potencia, torque y consumo pueden variar levemente según el mercado de destino y la calibración de emisiones local.",
-      "La disponibilidad de versiones híbridas (HEV) o tracción integral (AWD) depende de la oferta específica de cada país."
+      "Las cifras exactas de potencia, torque y consumo varían según la motorización elegida (gasolina, HEV o PHEV) y el mercado de destino.",
+      "La disponibilidad de tracción integral (AWD/4x4) está reservada para las variantes híbridas o tope de gama."
     ]
   },
-  "transmision": "Automática de doble embrague (DCT) de 7 velocidades",
-  "traccion": "Delantera (FWD)",
+  "transmision": "Automática de doble embrague (DCT) de 7 o 9 velocidades",
+  "traccion": "Delantera (FWD) o Total (AWD/4x4 según versión HEV/PHEV)",
   "peso": "1610 kg",
-  "tipoMotor": "Gasolina 1.5L Turbo (opciones HEV disponibles según mercado)",
+  "tipoMotor": "Gasolina 1.5L Turbo o 2.0L Turbo (opciones HEV híbridas y PHEV enchufables disponibles)",
   "potenciaKW": "150 kW",
   "capacidadTanque": "61 litros",
-  "tiempoRecorrido": "0-100 km/h en 8.8s",
+  "tiempoRecorrido": "0-100 km/h en 7.5s a 8.3s (hasta 4.8s en la versión PHEV de alto rendimiento)",
   "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
@@ -125,9 +126,9 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": "7.5 L/100 km promedio (motor 1.5 turbo)",
+  "consumo": "Aprox. 7.5 L/100 km promedio para motores a combustión (con alta eficiencia en versiones híbridas)",
   "dimensiones": "4683 x 1886 x 1730 mm",
-  "cilindrada": "1499 cc",
+  "cilindrada": "1499 cc / 1998 cc",
   "emisiones": null,
   "tipo": null,
   "asientos": 5,
@@ -258,7 +259,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:43:03.560Z",
+    "lastChecked": "2026-08-27T02:52:55.641Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -312,5 +313,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Haval H6 es uno de los pilares fundamentales de la expansión global de Great Wall Motor (GWM) a través de su marca especializada en SUV, Haval. Desde su lanzamiento original, este modelo se consolidó rápidamente como el vehículo de su categoría más vendido en el mercado chino y comenzó a ganar un terreno muy importante en mercados emergentes de Asia, Sudamérica y Europa del Este. A lo largo de los años, el H6 evolucionó desde una propuesta utilitaria accesible hasta convertirse en un referente tecnológico dentro del segmento C-SUV, adoptando plataformas modulares más rígidas, diseños alineados con los estándares internacionales y una marcada apuesta por la electrificación mediante variantes híbridas y enchufables.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante en la historia reciente del modelo llegó con la presentación de su tercera generación. Este salto generacional introdujo la plataforma modular global L.E.M.O.N. de GWM, la cual permitió reducir significativamente el peso total del vehículo a la vez que mejoró la rigidez estructural y la seguridad pasiva. Estéticamente, esta iteración rompió con las líneas conservadoras de sus antecesores para ofrecer un lenguaje de diseño mucho más agresivo y moderno, destacándose por una parrilla frontal de gran tamaño, ópticas LED estilizadas y un interior minimalista gobernado por pantallas digitales de alta resolución y un selector de marchas rotativo.\n\n## Curiosidades\nUna de las características más interesantes del Haval H6 es cómo la marca logró posicionarlo como un producto global sin perder su identidad de origen. En su mercado doméstico, el H6 ha mantenido el liderazgo de ventas durante años consecutivos frente a competidores tradicionales de marcas japonesas, alemanas y norteamericanas. Además, GWM diseñó esta plataforma pensando específicamente en la integración de sistemas avanzados de asistencia a la conducción (ADAS) de nivel 2 y en configuraciones mecánicas electrificadas, lo que le permitió desembarcar con éxito en mercados exigentes en términos de homologación y seguridad, como Australia y Sudáfrica.\n\n## Competencia y posicionamiento\nDentro del competitivo segmento de los SUV medianos (C-SUV), el Haval H6 se posiciona como una alternativa de excelente relación valor-producto frente a pesos pesados de la industria como el Toyota RAV4, el Honda CR-V, el Volkswagen Taos y el Jeep Compass. Mientras que los rivales tradicionales suelen apoyarse en su trayectoria e imagen de marca, el H6 compite agresivamente ofreciendo una dotación de equipamiento de confort y seguridad muy superior por un precio de entrada similar o inferior, apuntando a un público que busca tecnología de punta, habitabilidad generosa y un andar confortable para viajes largos."
+  "content": "## Historia del modelo\nEl Haval H6 es un auténtico pilar dentro de la estrategia global de Great Wall Motor (GWM) y de su marca especializada en SUV, Haval. Desde su aparición inicial en el mercado chino, este modelo conquistó rápidamente los rankings de ventas gracias a una propuesta que priorizaba el espacio interior, la robustez y una relación de precio muy competitiva frente a rivales tradicionales. Con el paso de los años, la marca apostó fuertemente por la internacionalización, llevando el H6 a mercados exigentes de Asia, Sudamérica, Europa del Este y Oceanía. Esta expansión vino acompañada de una evolución constante en términos de calidad percibida, diseño y adopción de tecnologías de electrificación, transformando al H6 de un utilitario accesible a un referente tecnológico dentro del segmento de los C-SUV.\n\n## Un hito o generación relevante\nEl punto de inflexión definitivo en la historia del Haval H6 llegó con el debut de su tercera generación. Este salto generacional introdujo la avanzada plataforma modular global L.E.M.O.N. desarrollada por GWM, la cual permitió reducir significativamente el peso total del vehículo a la vez que incrementó la rigidez torsional y los estándares de seguridad pasiva y activa. Estéticamente, este cambio generacional rompió con las líneas conservadoras del pasado para adoptar un lenguaje de diseño mucho más audaz y contemporáneo, caracterizado por una gran parrilla frontal integrada, ópticas delanteras y traseras con tecnología LED y un habitáculo minimalista donde predominan las pantallas digitales de alta resolución y comandos táctiles.\n\n## Curiosidades\nUno de los aspectos más destacados del Haval H6 es su tremenda versatilidad mecánica a escala global. Mientras que en mercados de origen y en varias regiones de exportación se comercializa con bloques nafteros turboalimentados de 1.5L y 2.0L, la plataforma también fue diseñada desde cero para albergar tecnologías de propulsión ecológicas. Esto permitió el desarrollo de exitosas variantes híbridas convencionales (HEV) e híbridas enchufables (PHEV), siendo esta última capaz de entregar cifras de potencia combinada sorprendentes —que superan los 300 hp en ciertos mercados— sin descuidar la eficiencia urbana.\n\n## Competencia y posicionamiento\nDentro de la franja de los SUV medianos (segmento C), el Haval H6 se posiciona como una alternativa de altísimo valor frente a pesos pesados de la industria automotriz como el Toyota RAV4, el Honda CR-V, el Volkswagen Taos y el Jeep Compass. Mientras que los competidores tradicionales suelen apoyarse en su trayectoria histórica, el H6 ataca el mercado ofreciendo una dotación de equipamiento de confort, asistencias a la conducción (ADAS) y conectividad muy superior por un precio sumamente competitivo. De este modo, apunta directamente a un consumidor moderno que busca tecnología de punta, habitabilidad generosa y un andar confortable para el uso diario y los viajes largos."
 }

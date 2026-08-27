@@ -13,16 +13,17 @@
   "manufacturer": "Ford",
   "class": "SUV compacto",
   "customizable": false,
-  "power": "175 CV (motor 1.5 EcoBoost) / 253 CV (motor 2.0 EcoBoost)",
-  "price": "ARS 63.143.100",
-  "consumo": "8.5 l/100km en ciclo mixto (referencia)",
-  "dimensiones": "4.385 mm largo x 1.888 mm ancho x 1.786 mm alto",
+  "power": "181 hp (motor 1.5 EcoBoost) / 250 hp (motor 2.0 EcoBoost)",
+  "price": "MSRP desde USD 31,845 en mercado norteamericano / Referencia regional en Sudamérica",
+  "consumo": "Ciclo combinado aprox. 8.5 a 10.2 l/100km según motorización",
+  "dimensiones": "4.397 mm largo x 1.888 mm ancho x 1.786 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas globales y de la región para la Ford Bronco Sport, junto con los precios de referencia para el mercado argentino publicados en el reporte oficial.",
+    "secondarySource": "https://www.caranddriver.com/ford/bronco-sport",
+    "note": "Se verificaron las especificaciones técnicas globales, potencias de motores EcoBoost de 1.5L y 2.0L, dimensiones y precios base a través de los portales oficiales de Ford y Car and Driver. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
     "limitations": [
-      "Los precios en pesos argentinos pueden sufrir modificaciones constantes por contexto inflacionario y carga impositiva.",
-      "Las cifras de consumo exactas varían según la motorización (1.5 EcoBoost vs 2.0 EcoBoost)."
+      "Los precios varían según el mercado local, la carga impositiva y los aranceles de importación.",
+      "Las cifras de consumo de combustible dependen directamente del tipo de conducción y las condiciones del terreno."
     ]
   },
   "performance": {
@@ -30,14 +31,14 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-27T01:39:51.246Z",
+  "updatedAt": "2026-08-27T02:49:25.110Z",
   "transmision": "Automática de 8 marchas",
-  "traccion": "4x4 (AWD de serie)",
-  "peso": "1.580 - 1.670 kg",
-  "tipoMotor": "Nafta (Gasolina)",
-  "potenciaKW": "129 kW (1.5L) / 186 kW (2.0L)",
+  "traccion": "4WD de serie",
+  "peso": "1.587 - 1.769 kg",
+  "tipoMotor": "Nafta (Gasolina) Turbo",
+  "potenciaKW": "135 kW (1.5L) / 186 kW (2.0L)",
   "capacidadTanque": "64 litros",
-  "tiempoRecorrido": "0-100 km/h en aprox. 8.0s (versión 2.0)",
+  "tiempoRecorrido": "0-100 km/h en aprox. 8.0s (versión 2.0L)",
   "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
@@ -130,7 +131,7 @@
   "emisiones": null,
   "tipo": null,
   "asientos": 5,
-  "baul": 797,
+  "baul": 820,
   "maleteroMin": null,
   "generacion": "1ra Generación",
   "anoLanzamiento": 2020,
@@ -264,7 +265,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:39:51.246Z",
+    "lastChecked": "2026-08-27T02:49:25.110Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -318,5 +319,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nLa Ford Bronco Sport desembarcó en el mercado global para revivir el espíritu aventurero del nombre Bronco, adaptándose a los tiempos modernos mediante una silueta de SUV compacto con claras aptitudes off-road. A diferencia de su hermana mayor de carrocería sobre bastidor, la Bronco Sport utiliza una plataforma monocasco desarrollada para equilibrar el confort de marcha urbano con capacidades dinámicas fuera del asfalto muy superiores a las del promedio de su segmento. Desde su planta de producción en México, este modelo se convirtió rápidamente en un pilar estratégico para la marca en toda América Latina, destacándose por ofrecer tracción integral de serie en todas sus versiones.\n\n## Un hito o generación relevante\nEl lanzamiento mundial de la gama Bronco en 2020 marcó el regreso de una de las denominaciones más emblemáticas de Ford tras más de dos décadas de ausencia. Dentro de esta familia, la variante Sport se consolidó como el vehículo ideal para quienes buscan un diseño robusto y funcional sin resignar la agilidad cotidiana. Su arquitectura permitió incorporar tecnologías de asistencia a la conducción avanzadas (como el paquete Co-Pilot360) y sistemas de gestión de terreno conocidos como G.O.A.T. Modes (Goes Over Any type of Terrain), que configuran electrónicamente la respuesta del vehículo según la superficie.\n\n## Curiosidades\nUn detalle distintivo de la Ford Bronco Sport es la gran cantidad de guiños y 'easter eggs' ocultos en su diseño interior y exterior, tales como siluetas discretas de la Bronco clásica en los cristales y detalles de mapas topográficos en el habitáculo. Además, su diseño de portón trasero con luneta de apertura independiente fue pensado específicamente para facilitar la carga de elementos deportivos o de campamento sin necesidad de abrir todo el baúl, optimizando la versatilidad en el uso recreativo al aire libre.\n\n## Competencia y posicionamiento\nEn el mercado regional, la Ford Bronco Sport compite en el segmento de los SUV compactos medianos, enfrentándose a referentes consagrados como el Jeep Compass, Toyota RAV4 y Volkswagen Taos. Su principal argumento de diferenciación radica en su enfoque estético y funcional netamente aventurero, acompañado por motorizaciones turboalimentadas eficientes y un sistema de tracción integral permanente que la posicionan un escalón por encima de los crossovers puramente urbanos en términos de versatilidad todo terreno."
+  "content": "## Historia del modelo\nLa Ford Bronco Sport desembarcó en el mercado internacional para recuperar la esencia aventurera de la mítica familia Bronco, adaptándose a las necesidades actuales mediante una silueta de SUV compacto con claras aptitudes off-road. A diferencia de su hermana mayor de carrocería sobre bastidor, la Bronco Sport utiliza una plataforma monocasco diseñada para equilibrar el confort de marcha diario en entornos urbanos con capacidades dinámicas sobresalientes fuera del asfalto. Fabricada en México para gran parte del continente, se consolidó rápidamente como un pilar fundamental para la marca, destacándose por ofrecer tracción integral de serie en toda su gama y un enfoque marcadamente recreativo.\n\n## Un hito o generación relevante\nEl lanzamiento mundial de la gama Bronco marcó el retorno de uno de los nombres más emblemáticos de la industria automotriz norteamericana tras más de dos décadas de ausencia. Dentro de esta familia, la variante Sport se posicionó como el vehículo ideal para quienes buscan robustez estructural y funcionalidad sin resignar agilidad. Su arquitectura permitió integrar tecnologías de asistencia a la conducción de última generación y los reconocidos sistemas de gestión de terreno conocidos como G.O.A.T. Modes (Goes Over Any type of Terrain), que adaptan electrónicamente la respuesta del motor, la transmisión y el control de tracción según la superficie.\n\n## Curiosidades\nUn aspecto muy comentado de la Ford Bronco Sport es la gran cantidad de detalles y 'easter eggs' ocultos tanto en su diseño interior como exterior. Entre ellos se destacan siluetas discretas de la Bronco clásica grabadas en los cristales y tramados inspirados en mapas topográficos dentro del habitáculo. Asimismo, su portón trasero cuenta con una luneta de apertura independiente, ideada específicamente para facilitar la carga de elementos deportivos, equipaje de campamento o carga rápida sin necesidad de abrir todo el compartimiento principal.\n\n## Competencia y posicionamiento\nEn el mercado regional e internacional, la Ford Bronco Sport compite en el segmento de los SUV compactos medianos, enfrentándose cara a cara con referentes consolidados como el Jeep Compass, Toyota RAV4 y Volkswagen Taos. Su principal ventaja competitiva radica en su propuesta estética y funcional netamente aventurera, complementada por motorizaciones turboalimentadas de gran respuesta y un sistema de tracción integral permanente que la elevan por encima de los crossovers puramente urbanos en términos de versatilidad todo terreno."
 }

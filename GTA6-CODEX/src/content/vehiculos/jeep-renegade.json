@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.310Z",
-  "updatedAt": "2026-08-27T01:48:25.341Z",
+  "updatedAt": "2026-08-27T02:55:01.515Z",
   "manufacturer": "Jeep",
   "class": "SUV compacta",
   "customizable": false,
@@ -20,13 +20,15 @@
     "acceleration": "0-100 km/h en 9.8s"
   },
   "power": "175 CV",
-  "price": "USD 28.000 (MSRP regional referencia)",
+  "price": "USD 32.900 (MSRP regional referencia)",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas del motor T270 de 1.3L turbo, potencias y dimensiones estándar comercializadas en la región para el Jeep Renegade.",
+    "primarySource": "https://www.jeep.com/cr/renegade.html",
+    "secondarySource": "https://www.jeep.com.mx/renegade.html",
+    "note": "Se verificaron las especificaciones técnicas del motor T270 de 1.3L turbo y los precios de referencia para la región a través de los sitios oficiales de Jeep.",
     "limitations": [
-      "Los precios varían considerablemente según el mercado específico de Latinoamérica y Europa.",
-      "Las cifras de consumo exactas dependen de la homologación local (WLTP vs CLTC vs normativa regional)."
+      "Los precios varían considerablemente según el mercado específico de Latinoamérica.",
+      "Las cifras de consumo exactas dependen de la homologación local y condiciones de manejo."
     ]
   },
   "transmision": "Automática de 6 u 9 marchas",
@@ -35,7 +37,7 @@
   "tipoMotor": "Nafta 1.3L Turbo (T270)",
   "potenciaKW": "128 kW",
   "capacidadTanque": "55 litros",
-  "tiempoRecorrido": "8.7s",
+  "tiempoRecorrido": "9.8s",
   "anoProduccion": "2015-presente",
   "mercados": [
     "Europa",
@@ -256,7 +258,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:48:25.341Z",
+    "lastChecked": "2026-08-27T02:55:01.515Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -310,5 +312,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Jeep Renegade irrumpió en el mercado automotriz global en el año 2014 (con comercialización desde 2015) como una propuesta audaz y completamente nueva para la marca norteamericana. Desarrollado en conjunto tras la integración de Chrysler por parte de Fiat (dando lugar a FCA, hoy Stellantis), el Renegade marcó un hito fundamental: fue el primer vehículo de la marca en ser producido fuera de Estados Unidos, fabricándose principalmente en Melfi (Italia) para Europa y en Goiana (Brasil) para abastecer a todo el mercado latinoamericano.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la vida comercial del Jeep Renegade se dio con la introducción de la motorización T270 de cuatro cilindros y 1.3 litros turboalimentada, desarrollada bajo el ala de Stellantis. Esta actualización mecánica reemplazó de manera paulatina a los veteranos motores atmosféricos E.TorQ de 1.8 litros en la región y a los bloques de menor eficiencia en Europa. Con este impulsor, el SUV compacto no sólo ganó una respuesta mucho más vigorosa en baja gracias al torque de 270 Nm, sino que optimizó de forma notable los consumos de combustible en ruta y ciudad, adaptándose a las exigencias de normativas ambientales más estrictas.\n\n## Curiosidades\nDesde su fase de diseño, el Jeep Renegade estuvo lleno de guiños a la rica historia militar y aventurera de la marca. Entre los detalles más celebrados por los fanáticos se encuentran los pequeños emblemas ocultos (conocidos como \"Easter eggs\"), como la silueta del Jeep original de 1941 trepando por el parabrisas, el diseño en forma de \"X\" de las luces traseras —inspirado en los bidones de combustible metálicos (jerrycans) utilizados en la Segunda Guerra Mundial—, y texturas de mapas topográficos moldeadas en el interior de los portaobjetos.\n\n## Competencia y posicionamiento\nEn el altamente competitivo segmento de los B-SUV (SUV compactos), el Jeep Renegade ocupa un lugar de carácter singular. Mientras que la mayoría de sus rivales directos apuestan exclusivamente por un enfoque urbano y tracción delantera (como el Chevrolet Tracker, Volkswagen T-Cross, Nissan Kicks o Renault Duster), el Renegade se destaca en sus versiones superiores por ofrecer auténticas capacidades off-road, especialmente en las variantes con tracción integral (4x4) y el sello Trail Rated, destinado a los terrenos más exigentes. Esto lo posiciona como una opción de espíritu más robusto y recreativo dentro de una categoría dominada por la estética de uso netamente citadino."
+  "content": "## Historia del modelo\nEl Jeep Renegade irrumpió en el mercado automotriz global en el año 2014 (con comercialización desde 2015) como una propuesta audaz y completamente nueva para la marca norteamericana. Desarrollado tras la integración de Chrysler por parte de Fiat (dando lugar a FCA, hoy Stellantis), el Renegade marcó un hito fundamental: fue el primer vehículo de la marca en ser producido fuera de Estados Unidos, fabricándose principalmente en Melfi (Italia) para Europa y en Goiana (Brasil) para abastecer a todo el mercado latinoamericano.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la vida comercial del Jeep Renegade se dio con la introducción de la motorización T270 de cuatro cilindros y 1.3 litros turboalimentada, desarrollada bajo el ala de Stellantis. Esta actualización mecánica reemplazó de manera paulatina a los veteranos motores atmosféricos en la región y a los bloques de menor eficiencia en Europa. Con este impulsor, el SUV compacto no sólo ganó una respuesta mucho más vigorosa en baja gracias al torque, sino que optimizó de forma notable los consumos de combustible en ruta y ciudad, adaptándose a las exigencias de normativas ambientales más estrictas y ofreciendo potencias cercanas a los 175 CV.\n\n## Curiosidades\nDesde su fase de diseño, el Jeep Renegade estuvo lleno de guiños a la rica historia militar y aventurera de la marca. Entre los detalles más celebrados por los fanáticos se encuentran los pequeños emblemas ocultos (conocidos como \"Easter eggs\"), como la silueta del Jeep original de 1941 trepando por el parabrisas, el diseño en forma de \"X\" de las luces traseras —inspirado en los bidones de combustible metálicos (jerrycans) utilizados en la Segunda Guerra Mundial—, y texturas de mapas topográficos moldeadas en el interior de los portaobjetos.\n\n## Competencia y posicionamiento\nEn el altamente competitivo segmento de los B-SUV (SUV compactos), el Jeep Renegade ocupa un lugar de carácter singular. Mientras que la mayoría de sus rivales directos apuestan exclusivamente por un enfoque urbano y tracción delantera (como el Chevrolet Tracker, Volkswagen T-Cross, Nissan Kicks o Renault Duster), el Renegade se destaca en sus versiones superiores por ofrecer auténticas capacidades off-road, especialmente en las variantes con tracción integral (4x4) y el sello Trail Rated, destinado a los terrenos más exigentes. Esto lo posiciona como una opción de espíritu más robusto y recreativo dentro de una categoría dominada por la estética de uso netamente citadino."
 }

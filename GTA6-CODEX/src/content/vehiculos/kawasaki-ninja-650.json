@@ -12,16 +12,18 @@
   "manufacturer": "Kawasaki",
   "class": "Moto deportiva",
   "customizable": false,
-  "power": "68 hp",
+  "power": "68 CV",
   "price": "USD 7.899 (MSRP EE.UU.)",
-  "consumo": "4.5 l/100km",
+  "consumo": "4.3 l/100km",
   "dimensiones": "2.055 mm largo x 740 mm ancho x 1.145 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se actualizaron las especificaciones técnicas principales de la Kawasaki Ninja 650 basándose en el conocimiento general validado de la plataforma bicilíndrica de 649cc de la marca japonesa.",
+    "primarySource": "https://www.kawasaki-la.com/es-la/motocicleta/ninja/sport/ninja-650/2026-ninja-650",
+    "secondarySource": "https://www.moto1pro.com/marca-de-motos/kawasaki/kawasaki-ninja-650-2021",
+    "note": "Se verificaron las especificaciones principales de la Kawasaki Ninja 650, incluyendo la cilindrada de 649 cc, la potencia de 68 CV (50 kW) y la configuración del motor bicilíndrico en paralelo utilizando fuentes oficiales de Kawasaki y portales especializados.",
     "limitations": [
-      "El precio corresponde al mercado de Estados Unidos y puede variar según impuestos y aranceles de importación en otros países",
-      "Los datos de consumo y aceleración son estimaciones de pruebas especializadas de la industria"
+      "El precio corresponde al mercado de referencia en EE.UU. y puede variar sustancialmente según aranceles de importación e impuestos locales en otros países",
+      "Los datos de consumo y aceleración pueden variar según las condiciones de conducción, el tipo de combustible y la altitud"
     ]
   },
   "performance": {
@@ -29,14 +31,14 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:49:04.788Z",
+  "updatedAt": "2026-08-27T02:56:23.704Z",
   "transmision": "Manual de 6 velocidades",
-  "traccion": "Tracción trasera por cadena",
+  "traccion": "Trasera por cadena",
   "peso": "188 kg (en orden de marcha)",
   "tipoMotor": "Bicilíndrico en paralelo 4 tiempos, refrigeración líquida",
   "potenciaKW": "50 kW",
   "capacidadTanque": "15 litros",
-  "tiempoRecorrido": "3.8s",
+  "tiempoRecorrido": "4.0s",
   "anoProduccion": "2017-2026",
   "mercados": [
     "Europa",
@@ -204,7 +206,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:49:04.788Z",
+    "lastChecked": "2026-08-27T02:56:23.704Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -223,5 +225,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nLa Kawasaki Ninja 650 nació para ocupar un espacio estratégico dentro del segmento de cilindrada media, heredando el legado de la exitosa familia ER-6f pero con una impronta visual mucho más agresiva y puramente deportiva. Desde su introducción en el mercado global, este modelo se consolidó rápidamente como una de las opciones más equilibradas para aquellos motociclistas que buscaban dar el salto hacia motos de mayor cilindrada sin renunciar a la docilidad y a un uso cotidiano sumamente amigable.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia de la Ninja 650 ocurrió con la renovación profunda que adoptó el lenguaje de diseño 'Sugomi', alineándola estéticamente con sus hermanas mayores de la familia Ninja de alta cilindrada. Además, la incorporación de instrumental TFT a color con conectividad Bluetooth para smartphones marcó un salto tecnológico importante, modernizando la experiencia de conducción y permitiendo al usuario gestionar parámetros de la motocicleta directamente desde su dispositivo móvil.\n\n## Curiosidades\nUno de los aspectos más interesantes de la plataforma bicilíndrica en paralelo de 649cc de Kawasaki es su notable versatilidad. El motor ha sido diseñado para ofrecer una entrega de potencia muy contundente y llena de torque en el régimen bajo y medio, lo que la hace sumamente divertida en tramos revirados de montaña, a la vez que mantiene un consumo de combustible muy eficiente y una postura de manejo menos extrema que una superportiva pura de cuatro cilindros, reduciendo notablemente la fatiga en trayectos urbanos o rutas largas.\n\n## Competencia y posicionamiento\nEn el mercado global, la Kawasaki Ninja 650 compite de manera directa contra modelos de peso pesado en la categoría sport-touring de media cilindrada, tales como la Yamaha YZF-R7, la Honda CBR650R y la Suzuki GSX-8R. Se posiciona como una alternativa sumamente racional dentro del segmento: equilibra prestaciones deportivas accesibles, una excelente relación precio-calidad y costos de mantenimiento contenidos, convirtiéndola en una de las favoritas tanto para conductores experimentados que buscan una montura lógica para todos los días como para quienes recién ingresan al mundo de las deportivas de media cilindrada."
+  "content": "## Historia del modelo\nLa Kawasaki Ninja 650 nació con el propósito de cubrir un espacio clave dentro de las motocicletas de cilindrada media, tomando la posta de la conocida familia ER-6f pero con una estética mucho más agresiva y puramente deportiva. Desde su desembarco en el mercado internacional, este modelo se consolidó rápidamente como una alternativa muy equilibrada para aquellos usuarios que buscaban dar el salto hacia motos más grandes sin resignar una conducción dócil y apta para el uso diario.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la trayectoria de la Ninja 650 se dio con la adopción de las líneas inspiradas en el concepto estético 'Sugomi', alineando su diseño frontal y carenados con las referencias de alta gama de la marca. Asimismo, la incorporación del instrumental con pantalla TFT a color y conectividad mediante Bluetooth permitió sincronizar dispositivos móviles, modernizando la experiencia a bordo y facilitando el acceso a la telemetría y notificaciones de forma directa.\n\n## Curiosidades\nUno de los puntos más destacados de la plataforma bicilíndrica de 649 cc de Kawasaki es su notable versatilidad. El motor está configurado para entregar una respuesta de torque muy lineal y contundente en regímenes bajos y medios, lo que la vuelve sumamente ágil y divertida en caminos trabados, manteniendo a la vez un consumo de combustible muy contenido y una posición de manejo menos radical que las superdeportivas de cuatro cilindros, reduciendo notablemente el cansancio en trayectos urbanos o viajes largos.\n\n## Competencia y posicionamiento\nEn el mercado global, la Kawasaki Ninja 650 compite de manera directa contra modelos de peso pesado dentro del segmento sport-touring de media cilindrada, tales como la Yamaha YZF-R7, la Honda CBR650R y la Suzuki GSX-8R. Se posiciona como una opción muy racional y lógica dentro de la categoría: equilibra prestaciones deportivas accesibles, una excelente relación costo-producto y un mantenimiento previsible, transformándose en una de las favoritas tanto para conductores experimentados que buscan una montura equilibrada para todos los días como para quienes ingresan al universo de las deportivas de media cilindrada."
 }

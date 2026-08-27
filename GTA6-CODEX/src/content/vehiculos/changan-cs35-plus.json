@@ -15,15 +15,17 @@
   "class": "SUV compacta",
   "customizable": false,
   "power": "158 hp",
-  "price": "USD 22.000 (referencia regional)",
-  "consumo": "7.5 l/100km (mixto)",
+  "price": "Desde $13.490.000 (referencia Chile / mercado regional)",
+  "consumo": "aprox. 7.4 l/100km (mixto / 13.6 km/l)",
   "dimensiones": "4335 x 1825 x 1660 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones principales de la Changan CS35 Plus con motor 1.4 turbo de inyección directa y transmisión de doble embrague de 7 velocidades, dimensiones exteriores y capacidad de baúl de acuerdo a la configuración estándar para mercados de exportación.",
+    "primarySource": "https://www.derco.cl/auto/changan/cs35-plus",
+    "secondarySource": "https://changanmerida.com/modelo/cs35-plus",
+    "note": "Se verificaron las especificaciones principales y de motorización (1.4 Turbo con 158 HP, torque de 192 lb-ft / 260 Nm, transmisión DCT de 7 marchas y capacidad para 5 pasajeros) a partir de catálogos oficiales de distribuidores regionales en Hispanoamérica.",
     "limitations": [
-      "Los precios varían considerablemente según el mercado de Latinoamérica y los impuestos locales.",
-      "Algunas especificaciones de equipamiento de seguridad y asistencias a la conducción (ADAS) pueden cambiar según la versión o país de destino."
+      "Los precios varían de manera significativa según el mercado de Latinoamérica (Chile, México, etc.) y los impuestos o bonos vigentes de cada red de concesionarios.",
+      "Algunos elementos de equipamiento de seguridad activa y asistencias a la conducción pueden variar según la versión específica disponible en cada país."
     ]
   },
   "performance": {
@@ -31,11 +33,11 @@
     "acceleration": "0-100 km/h en 11.0s"
   },
   "createdAt": "2026-08-23T21:59:10.362177Z",
-  "updatedAt": "2026-08-27T01:34:23.038Z",
-  "transmision": "Automática DCT de 7 marchas",
+  "updatedAt": "2026-08-27T02:45:47.373Z",
+  "transmision": "Automática de doble embrague (DCT húmedo) de 7 velocidades",
   "traccion": "Delantera",
   "peso": "1350 kg",
-  "tipoMotor": "Naftero 1.4 Turbo",
+  "tipoMotor": "Naftero 1.4 Turbo Bluecore (16V, 4 cilindros)",
   "potenciaKW": "118 kW",
   "capacidadTanque": "53 litros",
   "tiempoRecorrido": "0-100 km/h en 11.0s",
@@ -258,7 +260,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:34:23.038Z",
+    "lastChecked": "2026-08-27T02:45:47.373Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -312,5 +314,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nLa Changan CS35 Plus se posiciona como una evolución directa de la CS35 original, un vehículo con el que la marca de origen chino buscó conquistar el segmento de los SUV subcompactos a nivel global. Mientras que el modelo inicial apuntaba a la funcionalidad básica y a un costo accesible, la variante 'Plus' representó un salto cualitativo rotundo tanto en diseño exterior como en arquitectura interior, adoptando un lenguaje estético más agresivo, líneas geométricas marcadas y un nivel de tecnología enfocado en competir de igual a igual con referentes de marcas tradicionales en mercados emergentes y de Asia.\n\n## Un hito o generación relevante\nEl punto de inflexión para esta familia de SUVs llegó con la introducción de la motorización Blue Core de 1.4 litros turbo con inyección directa, acompañada por una caja automática de doble embrague (DCT) de 7 velocidades. Esta actualización mecánica no solo le otorgó una respuesta más dinámica en ciudad y ruta, sino que también mejoró notablemente los niveles de insonorización, eficiencia de combustible y refinamiento general de marcha en comparación con los propulsores atmosféricos que equipaban a las versiones de entrada de la generación anterior.\n\n## Curiosidades\nUn aspecto llamativo de la Changan CS35 Plus es el profundo nivel de colaboración internacional que la marca implementa en su división de ingeniería y diseño. Changan cuenta con centros de I+D distribuidos en ciudades clave como Turín (Italia), Detroit (EE.UU.) y Birmingham (Reino Unido), lo que explica por qué la estética de este SUV compacto se aleja de los estereotipos tradicionales de los vehículos chinos de décadas pasadas, adoptando una impronta mucho más occidental y ergonómica. Además, en el interior, el habitáculo destaca por un panel de instrumentos completamente digital integrado con una pantalla multimedia flotante que centraliza casi todas las funciones de confort.\n\n## Competencia y posicionamiento\nEn el mercado actual, la Changan CS35 Plus compite en el hiperconectado y concurrido segmento B-SUV, frente a modelos de peso pesado como la Chevrolet Tracker, la Volkswagen T-Cross, la Nissan Kicks y la Renault Duster. Para destacar en esta categoría tan disputada, el modelo de Changan apuesta fuertemente a una relación precio-producto muy favorable, ofreciendo de serie o en sus versiones tope de gama elementos que habitualmente se reservan para segmentos superiores, tales como asistencias avanzadas a la conducción (ADAS), cámara de visión periférica de 360 grados, techo panorámico y acabados interiores con materiales de tacto blando que elevan la percepción de calidad percibida."
+  "content": "## Historia del modelo\nLa Changan CS35 Plus representa una evolución profunda respecto a la CS35 tradicional, un SUV subcompacto con el que la firma de origen chino buscó ganar terreno inicial en los mercados de exportación. Si bien el modelo primigenio priorizaba la funcionalidad elemental y un precio de entrada accesible, la variante 'Plus' marcó un salto cualitativo rotundo en términos de diseño, calidad de materiales y arquitectura general. Con una impronta visual mucho más moderna y robusta, este vehículo se posicionó rápidamente para competir de igual a igual contra los referentes tradicionales del segmento B-SUV en distintas regiones emergentes.\n\n## Un hito o generación relevante\nEl punto de inflexión técnico y comercial para esta familia de SUVs llegó con la incorporación de la familia de motores Bluecore de 1.4 litros turbo con inyección directa, acoplados a una moderna transmisión automática de doble embrague (DCT húmedo) de 7 velocidades. Esta actualización mecánica no solo optimizó la respuesta en ciudad y ruta gracias a sus 158 caballos de fuerza, sino que también mejoró de manera notable la insonorización, la eficiencia de combustible y el refinamiento de marcha en comparación con los bloques atmosféricos más antiguos.\n\n## Curiosidades\nUn detalle interesante detrás del desarrollo de la Changan CS35 Plus es la estructura global de ingeniería de la marca. Changan cuenta con centros de investigación y desarrollo distribuidos estratégicamente en ciudades clave como Turín (Italia), Detroit (Estados Unidos) y Birmingham (Reino Unido). Esto explica por qué el lenguaje de diseño exterior e interior se aleja de los estereotipos clásicos de los vehículos asiáticos de antaño, adoptando líneas de carácter occidental, ergonomía refinada y un panel digital integrado que centraliza la experiencia multimedia.\n\n## Competencia y posicionamiento\nEn el mercado actual, la Changan CS35 Plus compite en el nutrido segmento de los B-SUV frente a pesos pesados de la industria como la Chevrolet Tracker, la Volkswagen T-Cross, la Nissan Kicks y la Renault Duster. Para destacar en esta categoría tan disputada, el modelo apuesta fuertemente por una ecuación de valor muy competitiva, ofreciendo en sus versiones más equipadas asistencias avanzadas a la conducción (ADAS), cámara de visión periférica de 360 grados, techo panorámico y terminaciones interiores de tacto blando que reafirman su salto prestacional."
 }

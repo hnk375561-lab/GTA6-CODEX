@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.335Z",
-  "updatedAt": "2026-08-27T01:54:23.617Z",
+  "updatedAt": "2026-08-27T03:02:53.855Z",
   "manufacturer": "Peugeot",
   "class": "Hatchback",
   "customizable": false,
@@ -23,16 +23,17 @@
   "price": "ARS 22.000.000 (Referencia mercado local)",
   "evidence": {
     "level": "respaldado",
-    "note": "Datos verificados a partir de la gama comercializada por Peugeot en Argentina, incluyendo especificaciones del motor EC5 1.6L y dimensiones oficiales.",
+    "secondarySource": "https://www.lanacion.com.ar/autos/nuevo-peugeot-208-fabricado-argentina-conoce-ficha-nid2412266",
+    "note": "Datos verificados a partir de las fichas técnicas oficiales de Peugeot Argentina y notas de lanzamiento industrial regional.",
     "limitations": [
-      "Las cifras de consumo pueden variar según las condiciones de uso y la versión exacta (1.6L atmosférico vs turbo T200).",
+      "Las cifras de consumo pueden variar según las condiciones de uso y la versión exacta.",
       "Los precios en el mercado automotor varían constantemente según la inflación y disponibilidad."
     ]
   },
-  "transmision": "Manual de 5 marchas o Automática Tiptronic de 6 marchas",
+  "transmision": "Manual de 5 marchas o Automática CVT de 7 velocidades",
   "traccion": "Delantera",
   "peso": "1165 kg",
-  "tipoMotor": "Nafta (Gasolina)",
+  "tipoMotor": "Nafta",
   "potenciaKW": "85 kW",
   "capacidadTanque": "47 litros",
   "tiempoRecorrido": "10.2s",
@@ -123,7 +124,7 @@
     "crucero": "ACC"
   },
   "consumo": "6.2 l/100km mixto",
-  "dimensiones": "4055 x 1745 x 1435 mm",
+  "dimensiones": "4055 x 1745 x 1453 mm",
   "cilindrada": "1598 cc",
   "emisiones": null,
   "tipo": null,
@@ -254,7 +255,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:54:23.617Z",
+    "lastChecked": "2026-08-27T03:02:53.855Z",
     "dataQuality": 0.85
   },
   "indexed": true,

@@ -14,15 +14,16 @@
   "class": "SUV",
   "customizable": false,
   "power": "187 hp",
-  "price": "USD 29.300 (MSRP EE.UU.)",
+  "price": "USD 29.990 (MSRP base EE.UU.)",
   "consumo": "9.0 l/100km (mixto)",
   "dimensiones": "4575 x 1845 x 1680 mm",
   "evidence": {
-    "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas principales de la segunda generación de la Mazda CX-5 con motor Skyactiv-G 2.5L, incluyendo dimensiones, potencias y capacidades basadas en fichas técnicas oficiales globales de la marca.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.mazdaespanol.com/veh%C3%ADculos-18/cx-5",
+    "note": "Se verificaron las especificaciones técnicas principales del motor Skyactiv-G 2.5L de 187 hp, dimensiones y precios base utilizando los portales oficiales de Mazda y bases de datos técnicas de la industria.",
     "limitations": [
-      "Los precios varían considerablemente según el mercado regional y aranceles de importación.",
-      "Las cifras de consumo pueden diferir según el tipo de tracción (Delantera vs. i-Activ AWD)."
+      "Los precios varían considerablemente según el mercado regional, aranceles de importación y costos de transporte.",
+      "Las cifras exactas de consumo pueden diferir según el tipo de tracción y la homologación regional específica."
     ]
   },
   "performance": {
@@ -30,11 +31,11 @@
     "acceleration": "0-100 km/h en 9.0s"
   },
   "createdAt": "2026-08-23T21:59:01.491247Z",
-  "updatedAt": "2026-08-27T01:51:01.121Z",
-  "transmision": "Automática de 6 velocidades",
-  "traccion": "Tracción delantera o i-Activ AWD",
+  "updatedAt": "2026-08-27T02:58:25.108Z",
+  "transmision": "Automática de 6 velocidades (Skyactiv-Drive)",
+  "traccion": "i-Activ AWD (integral estándar según mercado)",
   "peso": "1588-1755 kg",
-  "tipoMotor": "Gasolina (Skyactiv-G 2.5)",
+  "tipoMotor": "Gasolina (Skyactiv-G 2.5 de 4 cilindros)",
   "potenciaKW": "139 kW",
   "capacidadTanque": "56 litros",
   "tiempoRecorrido": "9.0s",
@@ -132,7 +133,7 @@
   "asientos": 5,
   "baul": 506,
   "maleteroMin": null,
-  "generacion": "Segunda generación",
+  "generacion": "Segunda generación (con actualizaciones de gama)",
   "anoLanzamiento": 2017,
   "colores": [],
   "category": "otros",
@@ -257,8 +258,8 @@
     "description": "SUV mediana de Mazda con motor 2.5L Skyactiv-G, tracción integral opcional."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-27T01:51:01.121Z",
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T02:58:25.108Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -312,5 +313,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nLa Mazda CX-5 irrumpió en el mercado automotriz global a finales de 2011 (como modelo 2013), marcando un antes y un después para la marca japonesa al ser el primer vehículo en adoptar por completo el lenguaje de diseño 'Kodo - Alma del movimiento' y el paquete tecnológico de ingeniería 'Skyactiv'. Este conjunto buscaba optimizar tanto la eficiencia del combustible como la dinámica de conducción sin recurrir estrictamente a la electrificación en sus inicios. La primera generación logró posicionarse rápidamente como una de las referencias dentro del segmento de los SUV medianos, gracias a un tacto de conducción inusualmente ágil para su categoría y una calidad de terminaciones que empezaba a coquetear con el segmento superior.\n\n## Un hito o generación relevante\nEl salto evolutivo más significativo llegó con la presentación de la segunda generación en el Salón del Automóvil de Los Ángeles de 2016 (comercializada desde 2017). Esta iteración refinó la fórmula original: la carrocería incrementó su rigidez torsional en un 15%, se mejoró notablemente el aislamiento acústico del habitáculo y se introdujeron asistencias a la conducción más avanzadas bajo el paraguas de i-Activsense. Asimismo, mecánicamente incorporó mejoras en la gestión de los motores Skyactiv-G y, en ciertos mercados, la opción de potentes motorizaciones turboalimentadas que elevaron aún más el atractivo del modelo frente a competidores directos.\n\n## Curiosidades\nUn aspecto poco conocido pero fundamental en el desarrollo de la CX-5 es la obsesión de Mazda por la ergonomía y la conexión humano-máquina, conocida internamente como 'Jinba Ittai' (el jinete y su caballo en armonía). A diferencia de muchos rivales de la época que migraron todos sus comandos a pantallas táctiles complejas, Mazda mantuvo firmemente el control giratorio (Mazda Connect) en la consola central para evitar que el conductor apartara la vista del camino. Además, el característico color de lanzamiento de esta segunda generación, el 'Soul Red Crystal', utiliza un proceso de pintura de tres capas desarrollado específicamente para reflejar la luz de una manera que acentúa las líneas fluidas del diseño Kodo.\n\n## Competencia y posicionamiento\nEn el altamente disputado mercado de los SUV medianos, la Mazda CX-5 compite de manera directa contra pesos pesados de la industria como la Toyota RAV4, la Honda CR-V, la Volkswagen Tiguan y la Ford Escape. Mientras que algunos de sus rivales priorizan la máxima habitabilidad interior o la adopción masiva de mecánicas híbridas, Mazda ha optado por posicionar a la CX-5 en un escalón ligeramente más aspiracional o 'casi premium'. Esto se traduce en un enfoque enfocado en el agrado de manejo, materiales interiores de tacto suave muy cuidados y una estética sobria pero sofisticada, buscando seducir a conductores que valoran la experiencia al volante por encima de la mera utilidad familiar."
+  "content": "## Historia del modelo\nLa Mazda CX-5 irrumpió en el mercado automotriz global a finales de 2011, marcando un hito fundamental para la marca japonesa al ser el primer vehículo en adoptar por completo el lenguaje de diseño 'Kodo - Alma del movimiento' y el paquete tecnológico de ingeniería 'Skyactiv'. Este desarrollo integral buscaba optimizar tanto la eficiencia del combustible como la dinámica de conducción sin depender inicialmente de la electrificación. La primera generación logró posicionarse rápidamente como una de las referencias dentro del segmento de los SUV medianos, destacándose por un tacto de conducción inusualmente ágil para su categoría y una calidad de terminaciones que comenzó a coquetear con el segmento superior.\n\n## Un hito o generación relevante\nEl salto evolutivo más significativo llegó con la presentación de la segunda generación a finales de 2016 (comercializada globalmente desde 2017). Esta iteración refinó la fórmula original al incrementar la rigidez torsional de la carrocería en un 15%, mejorar notablemente el aislamiento acústico del habitáculo e introducir asistencias a la conducción más avanzadas bajo el paraguas de i-Activsense. Mecánicamente, incorporó mejoras en la gestión de los motores Skyactiv-G y opciones turboalimentadas que elevaron aún más el atractivo del modelo. Las actualizaciones recientes continúan optimizando su chasis y conectividad para mantener su vigencia frente a los estándares actuales de la industria.\n\n## Curiosidades\nUn aspecto clave en el desarrollo de la CX-5 es la obsesión de Mazda por la ergonomía y la conexión humano-máquina, conocida internamente como 'Jinba Ittai' (el jinete y su caballo en armonía). A diferencia de muchos rivales que migraron todos sus comandos a pantallas táctiles complejas, Mazda mantuvo firmemente el control giratorio en la consola central para evitar que el conductor apartara la vista del camino. Además, el característico color de lanzamiento de esta generación, el 'Soul Red Crystal', utiliza un proceso de pintura de alta complejidad desarrollado específicamente para realzar las líneas fluidas del diseño Kodo bajo cualquier condición lumínica.\n\n## Competencia y posicionamiento\nEn el altamente disputado mercado de los SUV medianos, la Mazda CX-5 compite de manera directa contra pesos pesados de la industria como la Toyota RAV4, la Honda CR-V, la Volkswagen Tiguan y la Ford Escape. Mientras que algunos de sus competidores priorizan la habitabilidad pura o la adopción masiva de mecánicas híbridas, Mazda ha optado por posicionar a la CX-5 en un escalón ligeramente más aspiracional o cercano al segmento premium. Esto se traduce en un enfoque centrado en el agrado de manejo, materiales interiores muy cuidados y una estética sofisticada, buscando seducir a conductores que valoran la experiencia al volante por encima de la mera utilidad familiar."
 }

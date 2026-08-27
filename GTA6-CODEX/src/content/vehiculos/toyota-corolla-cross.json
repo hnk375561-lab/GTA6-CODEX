@@ -14,15 +14,16 @@
   "class": "SUV compacta",
   "customizable": false,
   "power": "170 CV (térmico 2.0L) / 122 CV (sistema híbrido)",
-  "price": "ARS 35.000.000 (referencia mercado local, variante híbrida)",
+  "price": "Desde USD 25,235 (MSRP de referencia en mercado norteamericano)",
   "consumo": "4.3 l/100km (híbrido, ciclo mixto)",
   "dimensiones": "4460 x 1825 x 1620 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Se actualizaron los datos técnicos específicos para el Toyota Corolla Cross producido en la región (Brasil) y comercializado en Argentina, corrigiendo potencias, capacidades del baúl, tanque y peso según fichas técnicas oficiales de Toyota Argentina.",
+    "primarySource": "https://www.toyota.com/espanol/corollacross",
+    "note": "Se verificaron las especificaciones generales y los rangos de precios de referencia internacionales mediante las fuentes oficiales de Toyota y distribuidores autorizados en la región, manteniendo la consistencia con las fichas técnicas del modelo.",
     "limitations": [
-      "Los precios varían constantemente debido a la inflación y cargas impositivas locales en el mercado argentino.",
-      "Las cifras de aceleración y consumo pueden variar levemente según la normativa de homologación regional (CONPET/INMETRO vs WLTP)."
+      "Los precios y valores de consumo pueden variar según la región de comercialización y las normativas locales de homologación.",
+      "Las cifras de equipamiento y precios finales están sujetos a impuestos y aranceles de importación en cada mercado específico."
     ]
   },
   "performance": {
@@ -30,7 +31,7 @@
     "acceleration": "0-100 km/h en 9.5s (híbrida)"
   },
   "createdAt": "2026-08-23T21:59:04.271737Z",
-  "updatedAt": "2026-08-27T01:59:05.292Z",
+  "updatedAt": "2026-08-27T03:12:02.134Z",
   "transmision": "Automática CVT (e-CVT en híbridas)",
   "traccion": "Delantera (FWD)",
   "peso": "1390 - 1450 kg",
@@ -256,7 +257,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:59:05.292Z",
+    "lastChecked": "2026-08-27T03:12:02.134Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -310,5 +311,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Toyota Corolla Cross hizo su arribo global a mediados de 2020, presentado inicialmente en Tailandia antes de expandirse rápidamente hacia otros mercados estratégicos como América Latina y Norteamérica. Este SUV compacto nace con el objetivo de aprovechar el enorme prestigio histórico y la confiabilidad asociadas a la placa \"Corolla\", trasladando el éxito indiscutido del sedán mediano al segmento de los utilitarios deportivos, que no para de ganar terreno en el mercado automotriz global.\n\n## Un hito o generación relevante\nPara el mercado latinoamericano, un hito fundamental fue el inicio de su producción industrial en la planta de Sorocaba, en el estado de São Paulo, Brasil, desde donde se abastece a gran parte de la región, incluyendo la Argentina. Este modelo introdujo de manera masiva la tecnología híbrida autrecargable (HEV) en un segmento accesible dentro del Mercado Común del Sur, combinando un motor térmico de ciclo Atkinson de 2.0 litros con motores eléctricos compactos y una transmisión e-CVT. Esta apuesta posicionó rápidamente al Corolla Cross como uno de los SUV ecológicos más vendidos y referenciados de Sudamérica.\n\n## Curiosidades\nUna de las particularidades más interesantes del Toyota Corolla Cross es que, a pesar de compartir la plataforma modular global GA-C (TNGA) con el Corolla sedán, presenta esquemas de suspensión trasera diferentes según la versión y el mercado: mientras que las variantes naftas puras en algunos mercados utilizan suspensiones independientes de tipo multibrazo, las versiones fabricadas en la región para Sudamérica optan por un eje de barra de torsión simplificado, optimizado para ofrecer mayor durabilidad y espacio libre en el baúl sin comprometer el confort de marcha urbano.\n\n## Competencia y posicionamiento\nEn el altamente competitivo segmento C-SUV, el Toyota Corolla Cross se posiciona como una opción de enfoque racional, familiar y enficionentemente ecológico. Debe medirse permanentemente contra pesos pesados de la industria como el Jeep Compass, Volkswagen Taos, Ford Territory, Chevrolet Tracker (en los límites del segmento B/C) y el Honda HR-V. Su principal argumento de venta frente a rivales puramente térmicos radica en su bajísimo consumo urbano gracias a su sistema híbrido, respaldado además por el sólido valor de reventa y la reputación de posventa que caracteriza históricamente a la marca japonesa en el Cono Sur."
+  "content": "## Historia del modelo\nEl Toyota Corolla Cross hizo su arribo al mercado global a mediados de 2020, tras su presentación oficial en Tailandia. Este SUV compacto fue concebido para capitalizar el inmenso prestigio, la confiabilidad y la popularidad histórica asociada a la denominación «Corolla», trasladando el éxito indiscutido del sedán mediano al segmento de los utilitarios deportivos, que no ha parado de ganar terreno a nivel global.\n\n## Un hito o generación relevante\nUn hito fundamental para la consolidación del modelo en la región fue el inicio de su producción industrial en la planta de Sorocaba, en el estado de São Paulo, Brasil, desde donde se abastece de forma directa al mercado argentino y a gran parte de Sudamérica. Esta planta introdujo masivamente la tecnología híbrida autrecargable (HEV) en un segmento accesible dentro del Cono Sur, combinando un motor térmico de ciclo Atkinson de 2.0 litros con motores eléctricos compactos y una transmisión e-CVT, posicionando rápidamente al Corolla Cross como uno de los SUV ecológicos más vendidos.\n\n## Curiosidades\nUna de las particularidades más interesantes del Toyota Corolla Cross es que, a pesar de compartir la plataforma modular global GA-C (TNGA) con el Corolla sedán, presenta esquemas de suspensión trasera diferentes según el mercado y la versión: mientras que las variantes naftas puras en algunos mercados utilizan suspensiones independientes de tipo multibrazo, las versiones fabricadas en la región para Sudamérica optan por un eje de barra de torsión simplificado, optimizado para ofrecer mayor durabilidad y espacio libre en el baúl sin comprometer el confort de marcha urbano.\n\n## Competencia y posicionamiento\nEn el altamente competitivo segmento C-SUV, el Toyota Corolla Cross se posiciona como una opción de enfoque racional, familiar y de alta eficiencia energética. Debe medirse permanentemente contra referentes de la industria como el Jeep Compass, el Volkswagen Taos, el Ford Territory y el Honda HR-V. Su principal argumento de venta frente a rivales puramente térmicos radica en su bajo consumo urbano gracias a su sistema híbrido, respaldado por el sólido valor de reventa y la reputación de posventa de la marca japonesa."
 }

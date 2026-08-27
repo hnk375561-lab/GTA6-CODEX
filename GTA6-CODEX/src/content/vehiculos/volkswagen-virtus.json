@@ -19,7 +19,9 @@
   "dimensiones": "4.561 mm x 1.751 mm x 1.481 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas generales del Volkswagen Virtus para el mercado argentino, incluyendo motorizaciones TSI y MSI, capacidades del baúl y dimensiones basadas en fichas técnicas oficiales de la marca.",
+    "primarySource": "https://alravw.com/modelos/virtus_23",
+    "secondarySource": "https://www.volkswagen.com.pe/es/modelos/virtus.html",
+    "note": "Se verificaron las especificaciones técnicas generales del Volkswagen Virtus basándose en catálogos oficiales de la marca, incluyendo motorizaciones TSI y MSI, la capacidad de baúl de 521 litros y equipamiento general.",
     "limitations": [
       "Los precios exactos de lista varían mensualmente en el mercado argentino por contexto inflacionario.",
       "Algunas versiones específicas pueden tener variaciones menores en equipamiento según el año de fabricación."
@@ -30,11 +32,11 @@
     "acceleration": "No informado por el fabricante para Argentina"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-27T02:03:09.773Z",
+  "updatedAt": "2026-08-27T03:14:06.735Z",
   "transmision": "Manual de 5 marchas o automática Tiptronic de 6 velocidades",
   "traccion": "Delantera",
   "peso": "1.120 - 1.250 kg según versión",
-  "tipoMotor": "Nafta (Gasolina)",
+  "tipoMotor": "Nafta",
   "potenciaKW": "81 kW - 110 kW",
   "capacidadTanque": "52 litros",
   "tiempoRecorrido": "9.9 - 10.5 s (0-100 km/h según versión)",
@@ -256,7 +258,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T02:03:09.773Z",
+    "lastChecked": "2026-08-27T03:14:06.735Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -310,5 +312,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Volkswagen Virtus se presentó en el mercado sudamericano a fines de 2017 y comenzó a comercializarse fuertemente durante 2018. Concebido como la variante sedán del exitoso Volkswagen Polo del segmento B, este vehículo llegó para ocupar el espacio que dejaban tanto el veterano Voyage como las versiones sedán de entrada de gama, ofreciendo un salto cuantitativo y cualitativo en términos de espacio, tecnología y seguridad. Desarrollado sobre la moderna plataforma modular MQB del Grupo Volkswagen, el Virtus rápidamente se ganó el favor del público regional gracias a su habitabilidad sobresaliente y un diseño que lograba despegarse de la silueta exclusivamente hatchback de su hermano menor.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia comercial del Volkswagen Virtus en Argentina y la región ocurrió con el restyling y actualización de gama introducido hacia 2023. En esta etapa, el modelo no solo adoptó una renovación estética en su frontal —con nuevos paragolpes, ópticas delanteras con tecnología LED de serie y una parrilla rediseñada—, sino que también reestructuró por completo su oferta mecánica. La marca decidió incorporar de manera más protagonista a los impulsores turboalimentados de la familia TSI, especialmente el eficiente motor de 1.0 litros, alineándose con las tendencias globales de reducción de cilindrada (downsizing) sin sacrificar respuesta dinámica ni torque a bajas revoluciones.\n\n## Curiosidades\nUna de las características más elogiadas y comentadas del Volkswagen Virtus desde su lanzamiento ha sido su impresionante capacidad de carga. Con un baúl que cubica unos generosos 521 litros, el sedán compacto se convirtió en uno de los preferidos tanto por familias numerosas como por usuarios que realizan viajes largos de manera frecuente. Asimismo, en materia de seguridad estructural, el Virtus obtuvo en su momento excelentes calificaciones en las pruebas de choque de Latin NCAP (con los estándares vigentes de evaluación), consolidándose como uno de los vehículos más seguros fabricados en la región (en la planta de Brasil) dentro de su categoría.\n\n## Competencia y posicionamiento\nEn el mercado automotriz argentino, el Volkswagen Virtus compite de manera directa en el competitivo segmento de los sedanes compactos B. Entre sus rivales más encarnizados se encuentran el Chevrolet Onix Plus, el Fiat Cronos (producido localmente y líder en patentamientos), el Nissan Versa y el Toyota Yaris Sedán. Frente a ellos, el Virtus se posiciona con un enfoque ligeramente más aspiracional, destacando por su comportamiento dinámico de estirpe europea, la solidez de su plataforma MQB, la calidad de terminación interior y la integración tecnológica a través del tablero digital Active Info Display y los sistemas multimedia VW Play con conectividad avanzada."
+  "content": "## Historia del modelo\nEl Volkswagen Virtus se presentó en el mercado sudamericano a fines de 2017 y comenzó a comercializarse fuertemente durante 2018. Concebido como la variante sedán del exitoso Volkswagen Polo del segmento B, este vehículo llegó para ocupar el espacio que dejaban tanto el veterano Voyage como las versiones sedán de entrada de gama, ofreciendo un salto cuantitativo y cualitativo en términos de espacio, tecnología y seguridad. Desarrollado sobre la moderna plataforma modular MQB del Grupo Volkswagen, el Virtus rápidamente se ganó el favor del público regional gracias a su habitabilidad sobresaliente y un diseño que lograba despegarse de la silueta exclusivamente hatchback de su hermano menor.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia comercial del Volkswagen Virtus en Argentina y la región ocurrió con el restyling y actualización de gama introducido hacia 2023. En esta etapa, el modelo no solo adoptó una renovación estética en su frontal —con nuevos paragolpes, ópticas delanteras con tecnología LED de serie y una parrilla rediseñada—, sino que también reestructuró por completo su oferta mecánica. La marca decidió incorporar de manera más protagonista a los impulsores turboalimentados de la familia TSI, especialmente el eficiente motor de 1.0 litros, alineándose con las tendencias globales de reducción de cilindrada sin sacrificar respuesta dinámica ni torque a bajas revoluciones.\n\n## Curiosidades\nUna de las características más elogiadas y comentadas del Volkswagen Virtus desde su lanzamiento ha sido su impresionante capacidad de carga. Con un baúl que cubica unos generosos 521 litros, el sedán compacto se convirtió en uno de los preferidos tanto por familias numerosas como por usuarios que realizan viajes largos de manera frecuente. Asimismo, en materia de seguridad estructural, el Virtus obtuvo en su momento excelentes calificaciones en las pruebas de choque de Latin NCAP bajo los estándares vigentes de evaluación, consolidándose como uno de los vehículos más seguros fabricados en la región dentro de su categoría.\n\n## Competencia y posicionamiento\nEn el mercado automotriz argentino, el Volkswagen Virtus compite de manera directa en el competitivo segmento de los sedanes compactos B. Entre sus rivales más encarnizados se encuentran el Chevrolet Onix Plus, el Fiat Cronos, el Nissan Versa y el Toyota Yaris Sedán. Frente a ellos, el Virtus se posiciona con un enfoque ligeramente más aspiracional, destacando por su comportamiento dinámico de estirpe europea, la solidez de su plataforma MQB, la calidad de terminación interior y la integración tecnológica a través de tableros digitales y sistemas multimedia avanzados."
 }

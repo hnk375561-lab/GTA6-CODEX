@@ -12,13 +12,14 @@
   "manufacturer": "Volvo",
   "class": "SUV grande",
   "customizable": false,
-  "power": "455 hp (híbrido enchufable T8 Recharge)",
-  "price": "USD 70.000 (MSRP EE.UU. de referencia)",
+  "power": "455 hp (híbrido enchufable T8 Recharge) / 295 hp (B6 AWD)",
+  "price": "USD 64.645 a USD 77.645 (MSRP EE.UU. de referencia)",
   "consumo": "2.8 l/100km (mixto equivalente PHEV) / 7.2 l/100km (híbrido descargado)",
-  "dimensiones": "4.950 mm largo x 1.958 mm ancho x 1.776 mm alto",
+  "dimensiones": "4.953 mm largo x 1.933 mm ancho x 1.770 mm alto (equivalentes a 195.0 x 76.1 x 69.7 pulgadas)",
   "evidence": {
     "level": "respaldado",
-    "note": "Se actualizaron las dimensiones, peso, capacidad del baúl, cilindrada y tiempos de aceleración utilizando especificaciones estándar de fábrica de la plataforma SPA para el Volvo XC90 T8 Recharge de alta gama.",
+    "primarySource": "https://www.caranddriver.com/volvo/xc90",
+    "note": "Se actualizaron las especificaciones de dimensiones, pesos, cilindrada y potencias utilizando las fuentes de Car and Driver y Volvo Cars para las variantes B6 AWD y T8 Recharge sobre la plataforma SPA.",
     "limitations": [
       "Los precios pueden variar significativamente según el mercado de destino, aranceles e impuestos locales",
       "Las cifras de consumo de combustible en híbridos enchufables dependen fuertemente del uso de la carga eléctrica"
@@ -29,14 +30,14 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T02:03:28.354Z",
+  "updatedAt": "2026-08-27T03:14:37.907Z",
   "transmision": "Automática de 8 velocidades",
   "traccion": "AWD (Tracción integral)",
-  "peso": "2.295 kg a 2.350 kg",
-  "tipoMotor": "Gasolina 2.0L turbo e híbrido enchufable",
-  "potenciaKW": "335 kW (455 hp)",
+  "peso": "2.144 kg (4.727 lb)",
+  "tipoMotor": "Gasolina 2.0L turbo, supercargado e híbrido enchufable",
+  "potenciaKW": "335 kW (455 hp) para T8 / 220 kW (295 hp) para B6",
   "capacidadTanque": "71 litros",
-  "tiempoRecorrido": "0-100 km/h en 5.4s",
+  "tiempoRecorrido": "0-100 km/h en 5.4s (T8 Recharge)",
   "anoProduccion": "2015-presente",
   "mercados": [
     "Europa",
@@ -207,7 +208,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T02:03:28.354Z",
+    "lastChecked": "2026-08-27T03:14:37.907Z",
     "dataQuality": 0.85
   },
   "indexed": true,

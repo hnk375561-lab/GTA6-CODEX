@@ -14,15 +14,16 @@
   "class": "SUV mediano",
   "customizable": false,
   "power": "185 hp (136 kW)",
-  "price": "ARS 48.110.210 (versión SEL de referencia)",
+  "price": "ARS 48.861.930 (versión SEL de referencia según Ford Argentina)",
   "consumo": "7.1 l/100km (mixto)",
   "dimensiones": "4685 x 1935 x 1706 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones principales de la Ford Territory de segunda generación comercializada en el mercado argentino, incluyendo su motorización 1.8 EcoBoost, dimensiones y capacidad de baúl.",
+    "secondarySource": "https://www.mercadolibre.com.mx/blog/mo-catalogo-ford-territory-2025-precio-versiones-y-ficha-tecnica",
+    "note": "Se verificaron las especificaciones técnicas y los precios vigentes de las distintas versiones de la Ford Territory (como la SEL y la Trend Híbrida) directamente en el sitio oficial de Ford Argentina. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
     "limitations": [
-      "Los precios en pesos argentinos están sujetos a constantes variaciones por inflación y contexto impositivo.",
-      "La disponibilidad de versiones híbridas puede variar según los mercados de la región."
+      "Los precios en pesos argentinos están sujetos a constantes actualizaciones por inflación y modificaciones impositivas.",
+      "La disponibilidad de equipamiento o versiones específicas puede variar según el mercado regional y el stock de los concesionarios."
     ]
   },
   "performance": {
@@ -30,8 +31,8 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-27T01:41:52.577Z",
-  "transmision": "Automática de doble embrague de 7 marchas",
+  "updatedAt": "2026-08-27T02:52:43.718Z",
+  "transmision": "Automática de doble embrague húmedo de 7 marchas",
   "traccion": "Delantera (FWD)",
   "peso": "1639 kg",
   "tipoMotor": "Gasolina 1.8L EcoBoost Turbo",
@@ -264,7 +265,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:41:52.577Z",
+    "lastChecked": "2026-08-27T02:52:43.718Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -318,5 +319,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nLa Ford Territory es un SUV mediano (segmento C) que nació originalmente como resultado de la asociación estratégica entre Ford y el fabricante chino Jiangling Motors Corporation (JMC). Si bien la primera generación tuvo un enfoque comercial más acotado en determinados mercados de la región asiática y sudamericana, la segunda generación representó un salto cualitativo enorme. Presentada globalmente para renovar la oferta de la marca del óvalo en el segmento de SUV compactos y medianos, esta iteración adoptó un lenguaje de diseño mucho más alineado con la identidad global de Ford, incorporando líneas filosas, una parrilla hexagonal imponente y grupos ópticos divididos que le otorgan una estética moderna y sofisticada.\n\n## Un hito o generación relevante\nEl punto de inflexión para este modelo llegó con el desembarco de su segunda generación a los mercados de América Latina, incluyendo Argentina. A diferencia de su antecesora, esta evolución no solo retocó la estética exterior e interior, sino que estrenó una plataforma completamente nueva y reemplazó la motorización anterior por un eficiente bloque naftero 1.8 EcoBoost con inyección directa, asociado a una transmisión automática de doble embrague húmedo de 7 velocidades. Este cambio de ingeniería mejoró notablemente la respuesta dinámica, la economía de combustible y el refinamiento de marcha, posicionándola rápidamente como un producto sumamente competitivo frente a los referentes históricos del segmento.\n\n## Curiosidades\nUn dato interesante sobre la Ford Territory es su desarrollo global y su capacidad de adaptación. Aunque es producida en China bajo los estándares globales de calidad de Ford Motor Company, su puesta a punto de suspensión y chasis ha sido optimizada para responder adecuadamente a las exigencias de los caminos de la región latinoamericana. Además, en el habitáculo destaca la adopción masiva de pantallas duales integradas para el instrumental y el sistema multimedia, un recurso tecnológico que se ha vuelto el sello distintivo de su propuesta de confort interior.\n\n## Competencia y posicionamiento\nEn el mercado sudamericano, la Ford Territory compite de manera directa en el corazón del segmento C de SUV, donde se ve las caras con contrincantes pesados de la talla del Toyota Corolla Cross, el Jeep Compass, el Volkswagen Taos y el Chevrolet Equinox. Para diferenciarse, la Territory apuesta fuertemente a una relación valor-producto muy atractiva, ofreciendo de serie en sus versiones más equipadas un nivel elevado de asistencias a la conducción (ADAS) —como control crucero adaptativo, frenado autónomo de emergencia y alerta de punto ciego—, un espacio interior destacable gracias a su ancho generoso y un diseño interior que apunta directamente a un público que busca tecnología y confort sin abonar los precios de marcas consideradas estrictamente premium."
+  "content": "## Historia del modelo\nLa Ford Territory es un SUV mediano correspondiente al segmento C, concebido inicialmente como parte de la alianza estratégica entre Ford Motor Company y el fabricante asiático Jiangling Motors Corporation (JMC). Si bien su primera etapa tuvo una distribución comercial enfocada en mercados específicos de Asia y Sudamérica, la llegada de su segunda generación supuso un punto de quiebre absoluto. Este rediseño global adoptó los códigos estéticos más recientes de la marca del óvalo —caracterizados por una parrilla frontal hexagonal de gran porte, líneas dinámicas y grupos ópticos divididos—, logrando una presencia visual robusta, moderna y sofisticada que caló muy bien en el público regional.\n\n## Un hito o generación relevante\nEl verdadero punto de inflexión para el modelo en América Latina, y en particular en el mercado argentino, se materializó con la introducción de esta segunda generación. Más allá de su renovada estampa, el cambio más significativo estuvo bajo el capot: la incorporación de un impulsor naftero 1.8 litros EcoBoost con inyección directa, el cual entrega una potencia de 185 hp y se acopla de manera eficiente a una transmisión automática de doble embrague húmedo de 7 velocidades. Esta configuración mecánica mejoró de forma radical la respuesta dinámica, el confort de marcha y la eficiencia de consumo respecto a su antecesora, posicionándola de inmediato como una opción sumamente competitiva dentro de su categoría.\n\n## Curiosidades\nUn aspecto interesante sobre la Ford Territory es el riguroso proceso de adaptación al que fue sometida. Aunque se produce bajo los estrictos estándares globales de calidad de Ford en China, la puesta a punto específica de su esquema de suspensiones y dirección fue optimizada para tolerar sin inconvenientes las exigencias y particularidades de los caminos latinoamericanos. Además, su habitáculo destaca por la implementación de pantallas duales integradas de generosas dimensiones para el instrumental y el sistema multimedia, un recurso tecnológico que se convirtió en la firma distintiva de su propuesta de confort interior.\n\n## Competencia y posicionamiento\nEn el mercado automotor sudamericano, la Ford Territory compite de lleno en el corazón del segmento C de SUV, viéndose las caras con referentes de peso como el Toyota Corolla Cross, el Jeep Compass, el Volkswagen Taos y el Chevrolet Equinox. Para ganar terreno frente a estos rivales consolidados, la propuesta de valor de Ford se centra en ofrecer una excelente relación producto-precio, dotando a sus versiones de un altísimo nivel de equipamiento tecnológico y de asistencias avanzadas a la conducción (ADAS) —tales como frenado autónomo de emergencia, control de velocidad crucero adaptativo y alerta de punto ciego—, todo ello acompañado por un generoso espacio interior que prioriza el bienestar de los pasajeros en trayectos largos."
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.597Z",
-  "updatedAt": "2026-08-27T02:00:52.112Z",
+  "updatedAt": "2026-08-27T03:13:43.592Z",
   "manufacturer": "Volkswagen",
   "class": "SUV coupé compacta",
   "customizable": false,
@@ -20,13 +20,14 @@
     "acceleration": "0-100 km/h en 10.2s"
   },
   "power": "116 CV",
-  "price": "ARS 28.000.000 (Referencia mercado argentino)",
+  "price": "ARS 34.434.250 (Referencia mercado argentino, febrero 2026)",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas para el mercado argentino, incluyendo el motor 200 TSI, capacidades y dimensiones oficiales de Volkswagen.",
+    "primarySource": "https://autofichas.com.ar/volkswagen/nivus",
+    "note": "Se verificaron las especificaciones técnicas, precios de lista actualizados para el mercado argentino en febrero de 2026 y la incorporación de tecnologías de seguridad y diseño para los modelos recientes.",
     "limitations": [
       "Los precios varían constantemente según la inflación y el mercado local en Argentina.",
-      "Algunos equipamientos pueden variar según la versión (Comfortline o Highline)."
+      "Algunos equipamientos pueden variar según la versión disponible."
     ]
   },
   "transmision": "Automática Tiptronic de 6 marchas",
@@ -35,7 +36,7 @@
   "tipoMotor": "Nafta 1.0 200 TSI (Turbo)",
   "potenciaKW": "85 kW",
   "capacidadTanque": "52 litros",
-  "tiempoRecorrido": "10.6s",
+  "tiempoRecorrido": "10.2s",
   "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
@@ -254,7 +255,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T02:00:52.112Z",
+    "lastChecked": "2026-08-27T03:13:43.592Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -308,5 +309,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Volkswagen Nivus representa uno de los desarrollos regionales más exitosos de la marca alemana en Sudamérica. Concebido y diseñado íntegramente en la región por el equipo de diseño e ingeniería de Volkswagen América del Sur, este modelo rompió con los moldes tradicionales al introducir el concepto de SUV coupé en el segmento B. Su desarrollo tomó como base la afamada plataforma modular MQB, la misma que utilizan otros éxitos de ventas del grupo como el Polo y el T-Cross, pero aportando una silueta más fluida, deportiva y aerodinámica que rápidamente capturó la atención de los consumidores que buscaban diferenciarse de los formatos más clásicos y cuadrados de los SUV compactos tradicionales.\n\n## Un hito o generación relevante\nEl gran hito en la corta pero intensa historia del Nivus fue su debut mundial virtual realizado desde Brasil a mediados de 2020, en plena pandemia global, marcando un precedente en la forma de presentar nuevos vehículos en la región. A diferencia de otros productos adaptados de mercados europeos o asiáticos, el Nivus nació con el foco puesto en las necesidades del consumidor latinoamericano, destacándose por incorporar desde sus inicios una fuerte apuesta por la digitalización. Fue el encargado de estrenar en la región el sistema de infoentretenimiento VW Play, desarrollado 100% en América Latina, ofreciendo una experiencia conectada inédita para su categoría que luego se replicó en otros modelos de la marca.\n\n## Curiosidades\nUna de las características más interesantes del Volkswagen Nivus es su capacidad de carga a pesar de su silueta de tipo coupé. Contrario a lo que se podría suponer por el diseño inclinado de su luneta trasera, los ingenieros lograron diseñar un voladizo posterior que permite un baúl de respetables 415 litros, una cifra sobresaliente dentro del segmento B y comparable con vehículos de segmentos superiores. Además, bajo el capot, el motor 200 TSI (un tres cilindros turboalimentado de 1.0 litro) demuestra que la cilindrada reducida no está peleada con la agilidad, entregando un torque generoso desde bajas revoluciones que optimiza notablemente el consumo de combustible tanto en ciudad como en ruta.\n\n## Competencia y posicionamiento\nEn el competitivo mercado de los SUV compactos (segmento B-SUV), el Volkswagen Nivus se posiciona como una opción de corte más emocional y aspiracional en comparación con su hermano de gama, el T-Cross, que prioriza la modularidad y el espacio vertical. Entre sus principales competidores directos en la región se encuentran el Fiat Pulse (que adoptó una fórmula muy similar), el Renault Captur y versiones de entrada de otros SUV generalistas. El Nivus se destaca frente a ellos por su dinámica de conducción refinada, la calidad percibida de su interior, su completo paquete de asistencias a la conducción (ADAS) en las versiones más equipadas —como el frenado autónomo de emergencia y el control crucero adaptativo— y un diseño exterior que logra un equilibrio muy atractivo entre robustez urbana y elegancia deportiva."
+  "content": "## Historia del modelo\nEl Volkswagen Nivus se ha ganado un lugar muy particular dentro del mercado automotor regional gracias a una propuesta que supo combinar con acierto la silueta típica de un SUV con la caída de techo propia de una coupé. Desarrollado íntegramente en Sudamérica sobre la exitosa plataforma modular MQB —la misma que da vida a otros exponentes de peso como el Polo y el T-Cross—, este modelo nació con el objetivo claro de captar a un público más joven y dinámico. La marca alemana apostó fuerte por un formato que rompía con los moldes tradicionales de los utilitarios deportivos compactos, ofreciendo una estética más osada sin resignar la practicidad que se le exige a un vehículo de uso diario en las grandes ciudades.\n\n## Un hito o generación relevante\nUno de los puntos de inflexión más importantes en la trayectoria del Nivus fue su irrupción en el mercado a mediados de 2020. En plena pandemia global, Volkswagen eligió un formato de presentación completamente digital y regional que marcó tendencia en la industria. Además de su silueta vanguardista, el modelo se convirtió en el pionero absoluto en incorporar el sistema de infoentretenimiento VW Play, diseñado íntegramente en América Latina. Con los años, la plataforma ha sabido mantenerse vigente incorporando actualizaciones estéticas en su frontal —alineándose con los nuevos códigos lumínicos de la marca— y reforzando su oferta en seguridad activa con la incorporación de asistencias a la conducción de nivel superior, como el control de velocidad crucero adaptativo y el freno autónomo de emergencia dentro del concepto Travel Assist.\n\n## Curiosidades\nA pesar de contar con una línea de techo marcadamente inclinada que simula la de un vehículo deportivo de dos puertas, los ingenieros de Volkswagen lograron resolver de manera sobresaliente el aprovechamiento del espacio interior. Contrariamente a lo que se suele especular con este tipo de siluetas, el Nivus ofrece una capacidad de baúl de unos respetables 415 litros, una cifra sumamente competitiva dentro del segmento B-SUV que lo pone a la par de vehículos de formato más tradicional. En el plano mecánico, su motorización naftera turboalimentada de tres cilindros (conocida comercialmente como 200 TSI) demuestra que los bloques de baja cilindrada pueden entregar una respuesta ágil y un torque generoso desde bajas revoluciones, logrando un equilibrio muy elogiado entre agilidad urbana y contención en el consumo de combustible.\n\n## Competencia y posicionamiento\nDentro del nutrido segmento de los SUV compactos, el Volkswagen Nivus ocupa un lugar de carácter aspiracional y emocional. Mientras que su hermano de gama, el T-Cross, prioriza las formas cuadradas para maximizar la habitabilidad vertical, el Nivus juega la carta del diseño y la diferenciación estética. En el mercado argentino y regional compite de manera directa contra alternativas de marcas rivales como el Fiat Pulse —que adoptó una receta similar—, además de medirse con las versiones de entrada de otros SUV generalistas. Su gran diferencial radica en la conjunción de una dinámica de conducción refinada, calidades interiores percibidas como superiores al promedio de la categoría, y un paquete tecnológico que lo posiciona como una de las opciones más inteligentes y equipadas del segmento."
 }

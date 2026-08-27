@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.161Z",
-  "updatedAt": "2026-08-27T01:38:48.566Z",
+  "updatedAt": "2026-08-27T02:48:33.250Z",
   "manufacturer": "Fiat",
   "class": "Sedán",
   "customizable": false,
@@ -20,21 +20,23 @@
     "acceleration": "Media (0-100 km/h en 11s)"
   },
   "power": "99 CV",
-  "price": "ARS 20.000.000 (referencia mercado argentino)",
+  "price": "ARS 30.467.000 a 37.974.000 (referencia mercado argentino, diciembre)",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas del motor 1.3 Firefly, dimensiones y capacidades oficiales para el mercado argentino.",
+    "primarySource": "https://cronos.fiat.com.ar/noprecache/ficha-tecnica-cronos.pdf",
+    "secondarySource": "https://es.wikipedia.org/wiki/Fiat_Cronos",
+    "note": "Se verificaron las especificaciones técnicas oficiales del motor 1.3 Firefly, dimensiones y capacidades para el mercado argentino a través de la ficha técnica de Fiat y datos complementarios.",
     "limitations": [
-      "Los precios varían constantemente según la inflación y disponibilidad en concesionarios locales."
+      "Los precios varían constantemente según la inflación, la disponibilidad en concesionarios locales y los cambios en las listas oficiales."
     ]
   },
   "transmision": "Manual de 5 marchas o automática CVT",
   "traccion": "Delantera",
   "peso": "1139 kg",
-  "tipoMotor": "Naftero 1.3 Firefly",
+  "tipoMotor": "Naftero 1.3 Firefly (SOHC 8 válvulas)",
   "potenciaKW": "73 kW",
   "capacidadTanque": "48 litros",
-  "tiempoRecorrido": "11.5s",
+  "tiempoRecorrido": "13.0s",
   "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
@@ -122,7 +124,7 @@
     "crucero": "ACC"
   },
   "consumo": "6.5 l/100km mixto aprox.",
-  "dimensiones": "4357 x 1724 x 1505 mm",
+  "dimensiones": "4364 x 1724 x 1516 mm",
   "cilindrada": "1332 cc",
   "emisiones": null,
   "tipo": null,
@@ -253,7 +255,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:38:48.566Z",
+    "lastChecked": "2026-08-27T02:48:33.250Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -307,5 +309,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Fiat Cronos es un sedán compacto producido en la planta de Ferreyra, en la provincia de Córdoba, Argentina, pensado específicamente para el mercado latinoamericano. Fue presentado oficialmente a finales de 2017 y comenzó su comercialización en 2018, posicionándose rápidamente como el reemplazante natural de los veteranos Siena y Grand Siena, además de complementar la oferta del hatchback Argo, con el cual comparte plataforma y componentes estructurales.\n\n## Un hito o generación relevante\nUno de los hitos más importantes en la historia comercial del Fiat Cronos ha sido su consolidación absoluta en lo más alto de los patentamientos de la República Argentina durante varios años consecutivos (2021, 2022 y 2023). Este éxito rotundo se debió en gran medida a su alto porcentaje de integración nacional de autopiezas y a una estrategia industrial que le permitió sortear con mayor resiliencia las restricciones a las importaciones que afectaron al sector automotriz argentino en ese período. La incorporación posterior de la caja automática CVT asociada al confiable motor 1.3 Firefly marcó otro punto de inflexión, mejorando notablemente el confort de marcha en el uso urbano.\n\n## Curiosidades\nA diferencia de muchos competidores regionales que se importan desde Brasil o México, el Cronos se convirtió en un auténtico orgullo de la industria automotriz cordobesa, siendo exportado con gran suceso a diversos mercados de la región, principalmente a Brasil. A lo largo de su ciclo comercial ha recibido sutiles actualizaciones estéticas en su parrilla, llantas y logotipos de la marca, manteniendo siempre su principal carta de presentación: un generoso baúl de 525 litros que lo convirtió en el aliado indiscutido tanto para familias como para flotas corporativas y conductores de aplicaciones de viaje.\n\n## Competencia y posicionamiento\nEn el segmento de los sedanes compactos del Mercosur, el Fiat Cronos compite de manera directa contra modelos como el Chevrolet Onix Plus, el Volkswagen Virtus y el Nissan Versa. Su posicionamiento comercial se ha destacado históricamente por ofrecer una excelente relación precio-producto, convirtiéndose en la opción más accesible y lógica para quienes buscan un vehículo tres cuerpos tradicional, con bajo costo de mantenimiento, mecánica probada y una habitabilidad destacada para su categoría."
+  "content": "## Historia del modelo\nEl Fiat Cronos es un sedán compacto producido en la planta industrial de Ferreyra, en la provincia de Córdoba, Argentina, desarrollado y pensado específicamente para el mercado de América Latina. Su presentación oficial se concretó a finales de 2017 y comenzó a comercializarse formalmente en 2018, posicionándose de manera natural como el sucesor de veteranos modelos de la marca como el Siena y el Grand Siena, además de complementar la propuesta del hatchback Argo, con el que comparte tanto la plataforma como diversos componentes estructurales clave.\n\n## Un hito o generación relevante\nUno de los hitos más significativos en la trayectoria comercial del Fiat Cronos ha sido su contundente liderazgo en los patentamientos de la República Argentina, consolidándose en lo más alto del mercado durante varios años consecutivos (como 2021, 2022 y 2023). Este éxito comercial sostenido se apoyó fuertemente en un alto nivel de integración nacional de piezas y en una estrategia industrial que le permitió capear con eficacia las restricciones a las importaciones que afectaron al sector automotor argentino en dichos períodos. Asimismo, la incorporación gradual de la transmisión automática tipo CVT asociada al eficiente motor 1.3 Firefly marcó un punto de inflexión muy valorado, mejorando notablemente la experiencia de manejo y el confort de marcha en el ámbito urbano.\n\n## Curiosidades\nA diferencia de muchos competidores de su segmento que llegan importados desde Brasil o México, el Cronos se ganó un lugar como un auténtico símbolo de la industria automotriz cordobesa, siendo exportado con gran éxito a diversos países de la región, con un fuerte peso en el mercado brasileño. A lo largo de su evolución comercial, el modelo ha recibido sutiles actualizaciones estéticas en su parrilla, diseño de llantas e insignias, manteniendo intacta su principal fortaleza histórica: un generoso baúl de 525 litros de capacidad que lo transformó en el aliado indiscutido tanto para uso familiar como para flotas corporativas y conductores de aplicaciones de transporte de pasajeros.\n\n## Competencia y posicionamiento\nDentro del segmento de los sedanes compactos del Mercosur, el Fiat Cronos compite de forma directa contra referentes tradicionales como el Chevrolet Onix Plus, el Volkswagen Virtus y el Nissan Versa. Su posicionamiento comercial se ha destacado históricamente por ofrecer una excelente relación precio-producto, posicionándose como una de las alternativas más lógicas y accesibles para quienes buscan un vehículo sedán de tres cuerpos tradicional, caracterizado por un bajo costo de mantenimiento, una mecánica sumamente probada y una habitabilidad destacada para su categoría."
 }

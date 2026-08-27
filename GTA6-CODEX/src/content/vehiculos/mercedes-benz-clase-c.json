@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.254Z",
-  "updatedAt": "2026-08-27T01:51:26.585Z",
+  "updatedAt": "2026-08-27T02:58:39.122Z",
   "manufacturer": "Mercedes-Benz",
   "class": "Sedán premium",
   "customizable": false,
@@ -21,10 +21,12 @@
     "acceleration": "Alta (0-100 km/h en 6.0s)"
   },
   "power": "204 hp (C 200) / 258 hp (C 300)",
-  "price": "USD 62.000 (MSRP referencia)",
+  "price": "Precio de referencia regional (ej. Colombia desde COP 249.900.000)",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones principales de la generación W206 del Mercedes-Benz Clase C, incluyendo motorización mild-hybrid, potencias base, dimensiones y capacidades de baúl según fichas técnicas globales y regionales de la marca.",
+    "primarySource": "https://www.mercedes-benz.com.co/c-sedan",
+    "secondarySource": "https://es.wikipedia.org/wiki/Mercedes-Benz_Clase_C",
+    "note": "Se verificaron las especificaciones principales y de rendimiento del Mercedes-Benz Clase C (generación W206) cruzando información de portales oficiales regionales y fichas técnicas globales.",
     "limitations": [
       "Los precios varían considerablemente según el mercado local, impuestos y aranceles de importación vigentes en Argentina.",
       "Algunas opciones de equipamiento y motorización pueden no estar disponibles en todos los mercados de la región."
@@ -258,7 +260,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:51:26.585Z",
+    "lastChecked": "2026-08-27T02:58:39.122Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -312,5 +314,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Mercedes-Benz Clase C es uno de los pilares fundamentales dentro de la oferta global del fabricante alemán. Heredero directo del legendario 190 (W201), el Clase C nació a principios de la década de 1990 para redefinir el concepto de sedán ejecutivo compacto. Desde entonces, ha transitado por sucesivas generaciones que marcaron pauta en materia de seguridad pasiva, aerodinámica y refinamiento de marcha, convirtiéndose rápidamente en el vehículo de volumen más exitoso de la estrella de tres puntas en todo el mundo.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la historia reciente del modelo se dio con la llegada de la quinta generación (conocida internamente como W206). Presentada comercialmente a partir de 2021, esta iteración rompió esquemas al adoptar una filosofía de diseño interior y tecnológico directamente heredada de su hermano mayor, el Clase S. La incorporación de la pantalla central vertical en formato tipo tablet con el sistema MBUX de última generación, sumada a la electrificación total de su gama de motores mediante sistemas híbridos ligeros (mild-hybrid EQ Boost) y opciones híbridas enchufables, posicionó al W206 como un referente absoluto en digitalización y eficiencia dentro del segmento premium.\n\n## Curiosidades\nUna curiosidad interesante del Clase C es que, a lo largo de su historia, se ha producido en plantas ubicadas en múltiples continentes para abastecer la demanda global, destacando centros de manufactura en Alemania, China, Sudáfrica y los Estados Unidos. Además, la arquitectura del Clase C ha servido tradicionalmente como banco de pruebas para introducir tecnologías de asistencia a la conducción que luego se trasladan al resto del catálogo de Mercedes-Benz. Otro dato relevante es que, a diferencia de generaciones anteriores, el W206 apostó exclusivamente por motorizaciones de cuatro cilindros, optimizadas mediante turbocompresores y asistencia eléctrica para igualar o superar el rendimiento de los tradicionales bloques de seis cilindros.\n\n## Competencia y posicionamiento\nEn el mercado global y regional, el Mercedes-Benz Clase C compite de manera directa y visceral contra los máximos exponentes del segmento de los sedanes ejecutivos alemanes: el BMW Serie 3 y el Audi A4 (sucesor espiritual de la familia A-Series). Mientras que el Serie 3 históricamente ha priorizado las sensaciones de manejo dinámico y el tacto deportivo, y el Audi A4 destaca por su neutralidad, tracción integral quattro y sobriedad tecnológica, el Clase C se posiciona con fuerza al ofrecer un nivel superior de confort de marcha, aislamiento acústico y una presentación interior de carácter marcadamente lujoso. Esto lo convierte en el sedán preferido por aquellos usuarios que buscan un equilibrio ideal entre estatus ejecutivo, tecnología de punta y un andar sumamente relajado para trayectos urbanos y viajes en ruta."
+  "content": "## Historia del modelo\nEl Mercedes-Benz Clase C se consolidó desde su nacimiento a principios de la década de 1990 —como heredero directo del legendario 190 (W201)— en uno de los pilares fundamentales de la marca alemana. Su irrupción en el mercado redefinió por completo el concepto de sedán ejecutivo compacto, ofreciendo una combinación equilibrada de refinamiento, tecnología de vanguardia y estándares de seguridad que marcaron pauta en la industria automotriz global. A lo largo de las décadas, este modelo de volumen se convirtió rápidamente en el estandarte de ventas de la estrella de tres puntas en numerosos mercados internacionales.\n\n## Un hito o generación relevante\nUn punto de inflexión radical en la historia reciente del modelo se materializó con la llegada de la quinta generación, conocida internamente como W206 y presentada comercialmente a partir de 2021. Esta iteración rompió esquemas al adoptar una filosofía de diseño interior y digitalización directamente heredada de su hermano mayor, el Clase S. La incorporación de la pantalla central vertical en formato tipo tablet con el sistema MBUX de última generación, sumada a la electrificación total de su gama mediante sistemas híbridos ligeros (mild-hybrid EQ Boost), posicionó al W206 como un referente tecnológico indiscutido dentro del segmento premium.\n\n## Curiosidades\nUna particularidad interesante del Clase C es su estrategia de producción descentralizada, fabricándose en plantas situadas en distintos continentes (incluyendo Alemania, China, Sudáfrica y los Estados Unidos) para abastecer la demanda mundial. Asimismo, su arquitectura ha servido históricamente como banco de pruebas para introducir sistemas avanzados de asistencia a la conducción que luego se expanden al resto del catálogo de Mercedes-Benz. Cabe destacar también que, en sus iteraciones más recientes, la marca apostó fuertemente por optimizar bloques de cuatro cilindros mediante sobrealimentación y asistencia eléctrica, logrando igualar o superar el rendimiento de tradicionales motores de mayor cilindrada.\n\n## Competencia y posicionamiento\nEn el plano comercial, el Mercedes-Benz Clase C compite de forma directa contra los máximos exponentes de los sedanes ejecutivos alemanes: el BMW Serie 3 y el Audi A4. Mientras que el Serie 3 históricamente ha priorizado la dinámica deportiva y el tacto de conducción, y el Audi A4 destaca por su sobriedad y tracción integral, el Clase C se posiciona con fuerza al ofrecer un nivel superior de confort de marcha, aislamiento acústico y una atmósfera interior de carácter marcadamente lujoso. Esto lo convierte en la opción predilecta para aquellos usuarios que buscan estatus ejecutivo y un andar sumamente relajado tanto en el uso urbano como en viajes largos."
 }

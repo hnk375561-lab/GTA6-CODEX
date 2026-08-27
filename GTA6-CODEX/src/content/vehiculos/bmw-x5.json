@@ -18,9 +18,11 @@
   "dimensiones": "4.935 mm x 2.004 mm x 1.745 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Se validaron las dimensiones reales de la plataforma G05 (4.935 mm de largo), corregidas respecto a errores previos de carga, junto con la motorización xDrive40i de 375 hp y su respectiva ficha técnica oficial.",
+    "secondarySource": "https://www.km77.com/coches/bmw/x5/2023/estandar/estandar/x5-xdrive30d/datos",
+    "note": "Se validaron las dimensiones oficiales de la plataforma G05 (4.935 mm de largo y 2.004 mm de ancho) utilizando datos de km77, junto con la gama de motorizaciones y características generales de la familia X5 en la web oficial de BMW. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
     "limitations": [
-      "Los precios varían sustancialmente según los mercados de destino, impuestos locales y opcionales de equipamiento."
+      "Los precios varían sustancialmente según los mercados de destino, impuestos locales y opcionales de equipamiento.",
+      "Las cifras de consumo y prestaciones pueden diferir según la motorización específica (gasolina, diésel o híbrida enchufable)."
     ]
   },
   "performance": {
@@ -28,7 +30,7 @@
     "acceleration": "0-100 km/h en 5.5s (xDrive40i)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:33:17.759Z",
+  "updatedAt": "2026-08-27T02:44:47.856Z",
   "transmision": "Automática Steptronic de 8 velocidades",
   "traccion": "Integral xDrive (AWD) de serie",
   "peso": "2.135-2.400 kg",
@@ -271,7 +273,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:33:17.759Z",
+    "lastChecked": "2026-08-27T02:44:47.856Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -325,5 +327,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl BMW X5 es el pionero indiscutido en el segmento de los SUV de lujo de gran porte. Desde la aparición de su primera generación a finales de los años 90, la marca alemana redefinió lo que un vehículo de tracción integral podía ofrecer en términos de dinámica en ruta, combinando la versatilidad de un todoterreno con el comportamiento refinado de un sedán ejecutivo de la Serie 5. Con el paso de los años, el modelo evolucionó a través de sucesivas plataformas hasta consolidarse como uno de los pilares comerciales y tecnológicos más importantes de la firma de Múnich a nivel global.\n\n## Un hito o generación relevante\nLa cuarta generación del BMW X5, identificada bajo el código interno G05 y lanzada originalmente en 2018, representa un salto tecnológico y estructural fundamental. Construida sobre la moderna plataforma modular CLAR —compartida con los máxim exponents de la marca como la Serie 7—, esta iteración introdujo una rigidez torsional notablemente superior, el uso mixto de aceros de alta resistencia y aluminio, y una digitalización profunda de su habitáculo. El posterior rediseño (facelift) aplicado en 2023 modernizó su impronta estética con ópticas más estilizadas, la incorporación de la última evolución del sistema operativo BMW iDrive con pantallas curvas, y una optimización general de las motorizaciones electrificadas y de combustión interna, destacando el bloque de seis cilindros en línea del xDrive40i.\n\n## Curiosidades\nUna de las curiosidades más interesantes del BMW X5 es que, a diferencia de lo que muchos entusiastas suponen, su producción central no se realiza en Alemania. Desde su nacimiento, la planta de BMW en Spartanburg, ubicada en el estado de Carolina del Sur, Estados Unidos, opera como el centro mundial de manufactura para toda la familia de modelos X de la marca, exportando unidades a más de 140 países. Además, el X5 fue el vehículo que inauguró el concepto que BMW denominó originalmente como SAV (*Sports Activity Vehicle*), priorizando adrede el dinamismo sobre asfalto por encima de las capacidades extremas de vadeo o roca, anticipándose a la tendencia global del mercado automotor.\n\n## Competencia y posicionamiento\nDentro del mercado global, el BMW X5 se posiciona firmemente en el corazón del segmento de los SUV premium medianos-grandes. Su rivalidad histórica y directa se da contra pilares de la industria alemana como el Mercedes-Benz GLE y el Audi Q7, además de alternativos de lujo como el Volvo XC90 y el Porsche Cayenne. El X5 logra diferenciarse en esta selecta categoría apostando por un equilibrio dinámico superior, donde la agilidad en curvas y la respuesta de su dirección sobresalen frente a propuestas de enfoque más puramente asistido o confortable. Su repertorio tecnológico, la calidad de terminación interior y la eficiencia de sus mecánicas térmicas e híbridas lo mantienen como una referencia ineludible para compradores exigentes en Europa, Norteamérica y los principales mercados emergentes."
+  "content": "## Historia del modelo\nEl BMW X5 es ampliamente reconocido como el pionero que transformó el segmento de los SUV de lujo de gran tamaño. Desde la introducción de su primera generación a finales de los años 90, la marca alemana rediseñó el concepto de los vehículos de tracción integral al dotarlos de un comportamiento dinámico en ruta comparable al de un sedán ejecutivo, sin sacrificar la versatilidad de uso. A lo largo de las décadas, este modelo se consolidó como uno de los pilares fundamentales y de mayor volumen comercial para la firma de Múnich a nivel global.\n\n## Un hito o generación relevante\nLa cuarta generación del BMW X5, desarrollada bajo el código interno G05 y presentada originalmente en 2018, marcó un salto cualitativo y tecnológico de gran envergadura. Desarrollada sobre la moderna plataforma modular CLAR —compartida con los máximos exponentes de la marca como la Serie 7—, esta iteración aportó una rigidez estructural notablemente superior gracias al empleo mixto de aceros de alta resistencia y aluminio. El rediseño posterior aplicado en 2023 modernizó su impronta estética con conjuntos ópticos más afilados, la incorporación de las pantallas curvas con el sistema operativo BMW iDrive más reciente, y una optimización profunda de sus mecánicas térmicas y electrificadas.\n\n## Curiosidades\nUna de las particularidades más interesantes en la historia del BMW X5 es que su centro de producción mundial no se encuentra en Alemania. Desde su génesis, la planta que la marca posee en Spartanburg, Carolina del Sur (Estados Unidos), opera como el polo industrial exclusivo para la fabricación de toda la familia de modelos X, exportando unidades a más de 140 países. Asimismo, el X5 fue el vehículo que inauguró el concepto bautizado por la compañía como SAV (*Sports Activity Vehicle*), priorizando de manera deliberada el dinamismo sobre asfalto por encima de las aptitudes puramente off-road.\n\n## Competencia y posicionamiento\nDentro del mercado global, el BMW X5 se ubica de lleno en el corazón de la categoría de los SUV premium medianos-garandes. Su rivalidad más directa e histórica se libra contra los principales exponentes de la industria alemana, tales como el Mercedes-Benz GLE y el Audi Q7, además de alternativas de lujo como el Volvo XC90 y el Porsche Cayenne. El X5 se distingue en este selecto grupo apostando por un equilibrio dinámico superior, donde la agilidad en curvas y la precisión de la dirección sobresalen frente a propuestas de enfoque más tradicionalmente confortable."
 }

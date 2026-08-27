@@ -12,15 +12,16 @@
   "manufacturer": "NIO",
   "class": "Sedán eléctrico",
   "customizable": false,
-  "power": "490 hp",
-  "price": "EUR 50.000 (referencia base mercado europeo)",
+  "power": "490 CV (360 kW)",
+  "price": "EUR 48.300 (referencia base mercado europeo)",
   "consumo": "15.5 kWh/100 km",
   "dimensiones": "4.790 mm largo x 1.960 mm ancho x 1.499 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se actualizaron las especificaciones del NIO ET5 con datos reales de su configuración de doble motor, dimensiones exactas, capacidad de baúl y aceleración oficial de 0 a 100 km/h en 3.9 segundos.",
+    "secondarySource": "https://es.driveduel.de/models/nio/et5-wagon",
+    "note": "Se verificaron las especificaciones técnicas del NIO ET5 utilizando los canales oficiales de NIO y registros de mercado europeo, confirmando los 490 CV (360 kW) de potencia combinada, la aceleración de 0 a 100 km/h en 3.9 segundos y los datos de capacidad de maletero y precio base de referencia.",
     "limitations": [
-      "El precio puede variar según el mercado europeo específico y si se opta por la modalidad de suscripción de batería (BaaS)."
+      "El precio puede variar según el mercado europeo específico, los impuestos locales y si se opta por la modalidad de suscripción de batería (BaaS)."
     ]
   },
   "performance": {
@@ -28,7 +29,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-27T01:24:01.409Z",
+  "updatedAt": "2026-08-27T03:00:14.422Z",
   "transmision": "Automática de relación única",
   "traccion": "Tracción integral (AWD)",
   "peso": "2.150-2.300 kg",
@@ -198,7 +199,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:24:01.409Z",
+    "lastChecked": "2026-08-27T03:00:14.422Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -217,5 +218,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl NIO ET5 fue presentado oficialmente a fines de diciembre de 2021 durante el evento anual NIO Day, posicionándose como el segundo sedán eléctrico de la marca china y apuntando directamente al corazón del segmento D en el mercado global. Concebido como una opción más compacta y accesible que su hermano mayor el ET7, el ET5 busca captar a un público más joven y dinámico, con un enfoque muy fuerte en la tecnología de punta, la conducción autónoma y un diseño exterior marcadamente aerodinámico y deportivo.\n\n## Un hito o generación relevante\nUn aspecto fundamental en la corta pero intensa trayectoria del ET5 es la introducción y consolidación de la variante tipo familiar o rural denominada ET5 Touring (o estate), lanzada para atender las preferencias del mercado europeo donde las siluetas familiares tienen una gran aceptación. Esta variante mantuvo el esquema motriz y tecnológico del sedán, pero amplió la versatilidad de carga sin sacrificar las líneas estilizadas ni el coeficiente aerodinámico que caracteriza a la familia ET.\n\n## Curiosidades\nUna de las características más distintivas del NIO ET5 —y de toda la gama actual del fabricante— es que no depende exclusivamente de los cargadores tradicionales. El vehículo es totalmente compatible con las estaciones de intercambio rápido de baterías (Power Swap Stations) desarrolladas por la marca, lo que permite reemplazar el acumulador descargado por uno totalmente cargado en cuestión de minutos. Además, su habitáculo incorpora un sistema de asistencia virtual basado en inteligencia artificial llamado NOMI, ubicado en el centro del torpedo, capaz de interactuar de manera fluida con los pasajeros.\n\n## Competencia y posicionamiento\nEn el plano internacional, el NIO ET5 compite de manera directa contra sedanes eléctricos consolidados como el Tesla Model 3, el BMW i4 y el Polestar 2. Se posiciona dentro del segmento premium gracias a su elevado nivel de terminaciones, una arquitectura de software avanzada, capacidades de conducción autónoma asistida mediante sensores LiDAR montados en el techo y un rendimiento dinámico sobresaliente gracias a sus 490 caballos de fuerza distribuidos en sus cuatro ruedas."
+  "content": "## Historia del modelo\nEl NIO ET5 fue presentado formalmente a finales de diciembre de 2021 en el evento anual NIO Day, posicionándose rápidamente como el segundo sedán eléctrico de la firma china y apuntando de lleno al competitivo segmento D a escala global. Diseñado con una silueta que mezcla proporciones deportivas y una marcada estética tecnológica, el ET5 nació para ofrecer una alternativa más compacta y accesible que su hermano mayor, el ET7, buscando seducir a un público más joven e interesado en la conectividad avanzada, la electrificación de altas prestaciones y los sistemas de asistencia a la conducción de última generación.\n\n## Un hito o generación relevante\nUn punto de inflexión muy importante dentro de la corta pero intensa trayectoria comercial del modelo fue la introducción de la variante familiar denominada ET5 Touring (o ET5T). Lanzada al mercado europeo para responder a la alta demanda de este tipo de siluetas en dicha región, la versión familiar heredó por completo el esquema motriz, la arquitectura digital y las capacidades dinámicas del sedán, pero optimizó de manera notable la versatilidad de carga y la habitabilidad trasera sin resignar el coeficiente aerodinámico que caracteriza a la familia.\n\n## Curiosidades\nEntre los aspectos más llamativos que distinguen al NIO ET5 se encuentra su absoluta compatibilidad con el ecosistema de intercambio rápido de baterías (Power Swap Stations) de la marca, una tecnología que permite sustituir el acumulador descargado por uno completamente operativo en cuestión de minutos, eludiendo los tiempos tradicionales de recarga en postes públicos. Además, en el centro de su habitáculo minimalista destaca NOMI, un asistente virtual interactivo dotado de inteligencia artificial que sobresale por su expresividad y capacidad para gestionar funciones de confort, climatización y entretenimiento mediante comandos de voz avanzados.\n\n## Competencia y posicionamiento\nDentro del panorama automotor internacional, el NIO ET5 se posiciona de manera firme dentro del segmento de vehículos eléctricos premium. Su propuesta se enfrenta cara a cara con rivales consagrados como el Tesla Model 3, el BMW i4 y el Polestar 2. Gracias a su potente esquema de doble motor que entrega 490 caballos de fuerza, su tracción integral y una dotación tecnológica sobresaliente que incluye sensores LiDAR en el techo, el ET5 logra consolidarse como una de las alternativas más vanguardistas y dinámicas del mercado global."
 }

@@ -16,13 +16,14 @@
   "power": "204 hp",
   "price": "USD 86.700 (Precio de referencia mercado argentino)",
   "consumo": "No publicado oficialmente para Argentina",
-  "dimensiones": "4.682 x 1.893 x 1.662 mm",
+  "dimensiones": "4.717 x 1.893 x 1.662 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones generales de la tercera generación del Audi Q5, la motorización 2.0 TFSI de entrada y su llegada al mercado argentino importado desde México.",
+    "secondarySource": "https://www.mcondepremium.com/audi-q5",
+    "note": "Se verificaron los datos técnicos y dimensiones de la tercera generación del Audi Q5 (versión Advanced TFSI quattro 150 kW / 204 CV) a través de km77 y especificaciones de producción en México. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
     "limitations": [
-      "El consumo exacto homologado para el mercado local no fue informado de manera oficial al momento del lanzamiento.",
-      "Algunas cifras de dimensiones pueden variar levemente según la versión o paquete estético elegido."
+      "El consumo exacto homologado para el mercado argentino no fue publicado oficialmente al momento del lanzamiento.",
+      "Algunas especificaciones de equipamiento pueden variar según el paquete estético elegido para la región."
     ]
   },
   "performance": {
@@ -30,7 +31,7 @@
     "acceleration": "No informado por el fabricante para Argentina"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-27T01:30:54.764Z",
+  "updatedAt": "2026-08-27T02:43:21.428Z",
   "transmision": "Automática S tronic de doble embrague (7 velocidades)",
   "traccion": "Integral quattro de serie",
   "peso": "1.910 kg",
@@ -268,7 +269,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:30:54.765Z",
+    "lastChecked": "2026-08-27T02:43:21.428Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -322,5 +323,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Audi Q5 irrumpió en el mercado global a finales de la década del 2000, consolidándose rápidamente como uno de los pilares fundamentales dentro de la estrategia de expansión de la marca de los anillos en el segmento de los SUV medianos premium (Segmento D). Desde su concepción inicial, el modelo buscó trasladar las virtudes dinámicas y el refinamiento característicos de los sedanes de la marca a un formato más versátil, elevado y familiar. Con el paso de los años, el Q5 evolucionó a través de distintas generaciones, adoptando retoques estéticos profundos, mejoras sustanciales en su habitabilidad interior y una constante renovación tecnológica que lo mantuvo siempre a la vanguardia frente a sus rivales históricos de origen alemán.\n\n## Un hito y tercera generación\nUn hito trascendental en la historia comercial del modelo ha sido su consolidación como un producto de manufactura global, siendo producido en plantas estratégicas alrededor del mundo para abastecer a distintos mercados internacionales, incluyendo la llegada a la Argentina de unidades importadas directamente desde México. La tercera generación, presentada recientemente a partir del ciclo 2024, marca un punto de inflexión al introducir la plataforma PPC (Premium Platform Combustion), la cual permite una integración aún más avanzada de sistemas de propulsión electrificados, una arquitectura electrónica completamente renovada y un diseño exterior que adopta líneas más afiladas, parrilla Singleframe rediseñada y firmas lumínicas OLED personalizables tanto en la parte delantera como en la trasera.\n\n## Curiosidades\nA pesar de ser un SUV de corte marcadamente familiar y ejecutivo, el Audi Q5 ha sabido albergar bajo su capot algunas de las tecnologías mecánicas más laureadas de la ingeniería de Volkswagen Group. Históricamente, la combinación del legendario sistema de tracción integral permanente quattro con bloques sobrealimentados tanto de gasolina (TFSI) como diésel (TDI) ha demostrado una versatilidad sobresaliente en todo tipo de superficies. Además, en los últimos años, la variante híbrida enchufable (e-hybrid) demostró que el rendimiento deportivo y la reducción drástica de emisiones contaminantes pueden convivir en perfecta armonía en un vehículo de estas dimensiones, logrando una respuesta de aceleración instantánea gracias al apoyo del motor eléctrico.\n\n## Competencia y posicionamiento\nEn el mercado argentino y regional, el Audi Q5 compite de manera directa y encarnizada dentro del selecto club de los SUV medianos de marcas de lujo, midiéndose codo a codo con referentes de la talla del BMW X3 y el Mercedes-Benz GLC. Su posicionamiento se sustenta en ofrecer un equilibrio muy valorado por los usuarios del segmento: un andar sumamente aplomado y confortable para viajes largos, acabados interiores de categoría superior con materiales de tacto noble, y un despliegue tecnológico que incluye instrumentación digital avanzada y asistencias a la conducción de última generación. Todo esto le permite mantenerse como una opción sumamente atractiva para quienes buscan estatus, versatilidad diaria y refinamiento mecánico sin renunciar a la practicidad."
+  "content": "## Historia del modelo\nEl Audi Q5 irrumpió en el mercado global a finales de la década del 2000, consolidándose de inmediato como uno de los pilares fundamentales dentro de la estrategia de expansión de la firma alemana en el segmento de los SUV medianos premium (Segmento D). Desde sus inicios, el modelo buscó trasladar las virtudes dinámicas y el refinamiento de los sedanes de la marca a un formato más versátil, elevado y de uso familiar. Con el paso de los años, el Q5 evolucionó a través de sucesivas generaciones, incorporando retoques estéticos profundos, mejoras sustanciales en su habitabilidad y una constante renovación tecnológica que lo mantuvo siempre en lo más alto frente a sus competidores históricos de origen alemán.\n\n## Un hito y tercera generación\nUn hito trascendental en la trayectoria comercial de este SUV ha sido su consolidación como un producto de manufactura global, saliendo de plantas estratégicas para abastecer a diversos mercados internacionales, incluyendo la llegada a la Argentina de unidades importadas directamente desde México. La tercera generación marca un punto de inflexión absoluto al introducir la moderna plataforma PPC (Premium Platform Combustion), la cual permite una integración optimizada de sistemas de propulsión electrificados, una arquitectura electrónica completamente renovada y un diseño exterior que adopta líneas más afiladas, la flamante parrilla Singleframe y tecnologías de iluminación de última generación.\n\n## Curiosidades\nA pesar de ser un SUV de enfoque marcadamente familiar y ejecutivo, el Audi Q5 ha sabido albergar bajo su capot algunas de las tecnologías mecánicas más destacadas de la ingeniería del Grupo Volkswagen. Históricamente, la combinación de su reconocida tracción integral permanente quattro con bloques sobrealimentados TFSI ha garantizado una versatilidad sobresaliente en todo tipo de superficies y condiciones de adherencia. Además, su evolución mecánica ha demostrado cómo la eficiencia en consumos y el dinamismo deportivo pueden convivir en perfecta armonía dentro de un vehículo de estas dimensiones y peso.\n\n## Competencia y posicionamiento\nEn el mercado argentino y regional, el Audi Q5 compite de manera directa dentro del selecto club de los SUV medianos de lujo, midiéndose codo a codo con referentes de la talla del BMW X3 y el Mercedes-Benz GLC. Su posicionamiento se sustenta en ofrecer un equilibrio muy valorado por los usuarios del segmento: un andar sumamente aplomado y confortable para viajes largos, acabados interiores de categoría superior con materiales de tacto noble, y un despliegue tecnológico avanzado en materia de asistencias a la conducción. Todo esto le permite mantenerse como una alternativa sumamente atractiva para quienes buscan estatus, versatilidad diaria y refinamiento mecánico."
 }

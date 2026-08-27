@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.694Z",
-  "updatedAt": "2026-08-27T01:58:37.905Z",
+  "updatedAt": "2026-08-27T03:11:52.068Z",
   "manufacturer": "Tesla",
   "class": "SUV eléctrica",
   "customizable": false,
@@ -19,23 +19,24 @@
     "speed": "Alta (217 km/h)",
     "acceleration": "Alta (0-100 km/h en 5.0s)"
   },
-  "power": "384 hp",
-  "price": "USD 47.000 (MSRP EE.UU.)",
-  "consumo": "15.3 kWh/100km (ciclo WLTP para la versión Long Range AWD)",
+  "power": "326 hp (versión RWD) / hasta 450 CV (versión Long Range AWD)",
+  "price": "USD 46.380 (MSRP base en EE.UU.) / Desde 41.970 € en Europa",
+  "consumo": "15.3 kWh/100km (equivalente a 113 MPGe según ciclo EPA / WLTP)",
   "dimensiones": "4.751 mm x 1.921 mm x 1.624 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Se actualizaron las especificaciones técnicas del Tesla Model Y utilizando datos oficiales de la marca para la versión Long Range, incluyendo dimensiones reales, potencia aproximada, peso y tipo de tracción.",
+    "primarySource": "https://www.caranddriver.com/tesla/model-y",
+    "note": "Se verificaron las especificaciones técnicas, precios de referencia y capacidades de potencia y autonomía utilizando fuentes especializadas y fichas técnicas oficiales del Model Y.",
     "limitations": [
-      "El consumo y la autonomía varían según las condiciones climáticas, el estilo de conducción y el tamaño de las llantas.",
-      "Los precios de lista sufren modificaciones frecuentes por parte del fabricante."
+      "El consumo y la autonomía varían de manera significativa según las condiciones climáticas, el estilo de conducción y el tamaño de las llantas.",
+      "Los precios de lista sufren modificaciones frecuentes por parte del fabricante según el mercado."
     ]
   },
-  "transmision": "Automática de relación única",
-  "traccion": "Tracción integral (AWD)",
+  "transmision": "Automática de relación única (direct-drive)",
+  "traccion": "Tracción trasera (RWD) o integral (AWD)",
   "peso": "1.979 kg",
-  "tipoMotor": "Doble motor eléctrico de imanes permanentes/inducción",
-  "potenciaKW": "286 kW",
+  "tipoMotor": "Síncrono de imanes permanentes de corriente alterna (AC)",
+  "potenciaKW": "243 kW (RWD) / 335 kW (Long Range)",
   "capacidadTanque": null,
   "tiempoRecorrido": "5.0s",
   "anoProduccion": "2020-presente",
@@ -258,7 +259,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:58:37.905Z",
+    "lastChecked": "2026-08-27T03:11:52.068Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -312,5 +313,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Tesla Model Y fue presentado oficialmente a principios de 2019 y su producción comenzó en la planta de Fremont, California, a principios de 2020. Concebido como un vehículo utilitario deportivo (SUV) compacto, comparte una parte sustancial de su plataforma, componentes internos y arquitectura eléctrica con el Tesla Model 3, lo que permitió a la compañía optimizar costos de producción y acelerar su llegada al mercado global.\n\nA pocos años de su lanzamiento comercial, el Model Y logró posicionarse de manera acelerada en distintos mercados del mundo, convirtiéndose rápidamente en uno de los vehículos eléctricos más vendidos a nivel global e incluso liderando registros de patentamiento general en regiones como Europa y Norteamérica durante varios períodos.\n\n## Un hito o generación relevante\nUn hito fundamental en la trayectoria comercial y operativa del Model Y fue la expansión de su fabricación a las Gigafábricas de Tesla ubicadas en Shanghái (China), Berlín (Alemania) y Austin (Texas, EE.UU.). La apertura de estas plantas no solo incrementó de forma drástica el volumen de producción anual para abastecer la alta demanda internacional, sino que también introdujo innovaciones clave en los procesos de manufactura, tales como el uso de grandes piezas fundidas de aluminio (giga-castings) y la integración estructural de los paquetes de baterías de nueva generación en algunas de sus variantes.\n\n## Curiosidades\nA pesar de compartir aproximadamente el 75 % de sus componentes con el sedán Model 3, el Model Y ofrece un habitáculo notablemente más versátil y un volumen de carga superior, destacándose por la inclusión de un portón trasero eléctrico y un piso de baúl completamente plano. En algunos mercados específicos, la marca llegó a comercializar o anunciar variantes configuradas con tres hileras de asientos para albergar hasta siete pasajeros, un desafío considerable para un vehículo de sus dimensiones exteriores. Asimismo, el diseño de su carrocería prioriza la eficiencia aerodinámica con un coeficiente de resistencia bajo para su segmento, lo que impacta directamente en una mayor autonomía por carga.\n\n## Competencia y posicionamiento\nDentro del mercado automotriz actual, el Tesla Model Y compite en el segmento de los SUV medianos 100% eléctricos de carácter prémium. Entre sus rivales directos se encuentran modelos de marcas tradicionales y emergentes como el Volkswagen ID.4, el Ford Mustang Mach-E, el Hyundai Ioniq 5, el Kia EV6 y el Audi Q4 e-tron. \n\nEl posicionamiento del Model Y se sustenta en su sólida red de carga propietaria (Superchargers), la constante actualización inalámbrica de su software (OTA), los niveles de eficiencia energética de sus sistemas de propulsión y una interfaz interior minimalista centrada en una pantalla táctil central. Aunque enfrenta una competencia cada vez más intensa y una presión sostenida en materia de precios por parte de fabricantes tanto occidentales como asiáticos, el vehículo mantiene un estatus de referente indiscutido en la transición hacia la movilidad eléctrica masiva."
+  "content": "## Historia del modelo\nEl Tesla Model Y fue presentado oficialmente a principios de 2019 y su producción formal comenzó en la planta de Fremont, California, a principios de 2020. Concebido como un vehículo utilitario deportivo (SUV) compacto de corte familiar, este modelo comparte una proporción sustancial de su plataforma, componentes internos y arquitectura electrónica con el sedán Tesla Model 3. Esta estrategia de estandarización permitió a la compañía optimizar los costos industriales de fabricación y acelerar de forma notable su despliegue comercial en los principales mercados internacionales.\n\nA pocos años de su arribo a los concesionarios, el Model Y escaló posiciones con velocidad hasta convertirse en un fenómeno de ventas global. De hecho, ha logrado liderar registros de patentamiento general en múltiples regiones del mundo, consolidándose como uno de los automóviles 100% eléctricos más comerciales de la historia automotriz contemporánea.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la trayectoria industrial del Model Y fue la expansión masiva de su producción hacia las Gigafábricas de Tesla ubicadas en Shanghái (China), Berlín (Alemania) y Austin (Texas, EE.UU.). La puesta en marcha de estas plantas no solo multiplicó la capacidad de entrega para mitigar las listas de espera, sino que introdujo innovaciones disruptivas en la manufactura, destacando el uso de grandes piezas fundidas de aluminio (giga-castings) y la integración estructural del paquete de baterías directamente en el chasis del vehículo.\n\n## Curiosidades\nAunque hereda alrededor del 75% de las piezas del Model 3, el Model Y está optimizado para la versatilidad urbana y rutera. Ofrece un habitáculo considerablemente más amplio, un portón trasero eléctrico de apertura generosa y un piso de carga completamente plano que maximiza el volumen disponible. En el plano técnico, destaca por incorporar procesadores potentes como el chip AMD Ryzen para el sistema de infoentretenimiento, además de cuidar fuertemente su coeficiente aerodinámico para exprimir al máximo cada kilovatio-hora de su batería de ion de litio.\n\n## Competencia y posicionamiento\nEn el mercado actual, el Tesla Model Y compite de manera directa dentro del segmento de los SUV medianos totalmente eléctricos de carácter prémium. Entre sus principales rivales se encuentran referentes de la industria tradicional y nuevos actores tecnológicos, tales como el Volkswagen ID.4, el Ford Mustang Mach-E, el Hyundai Ioniq 5, el Kia EV6 y el Audi Q4 e-tron.\n\nSu posicionamiento se sostiene gracias a su ecosistema de carga propietaria (Red Supercharger), las actualizaciones constantes de software por vía inalámbrica (OTA), la eficiencia energética de sus sistemas de propulsión y una propuesta interior minimalista. A pesar de la presión en precios por parte de la competencia global, el Model Y se mantiene firme como un pilar fundamental en la transición hacia la electromovilidad masiva."
 }

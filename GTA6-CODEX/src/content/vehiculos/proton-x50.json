@@ -13,14 +13,16 @@
   "class": "SUV compacto",
   "customizable": false,
   "power": "177 hp",
-  "price": "USD 22.000 (referencia mercado asiático)",
+  "price": "RM 79,200 a RM 103,300 (referencia mercado malayo)",
   "consumo": "6.5 l/100km combinado",
   "dimensiones": "4.330 mm largo x 1.800 mm ancho x 1.609 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas generales del Proton X50 basadas en su plataforma gemela Geely Binyue y su comercialización en mercados del sudeste asiático.",
+    "primarySource": "https://en.wikipedia.org/wiki/Proton_X50",
+    "secondarySource": "https://www.proton.com/models/all-new-x50",
+    "note": "Se verificaron las especificaciones técnicas, dimensiones, pesos y rangos de precio oficiales del Proton X50 a través de Wikipedia y el sitio web oficial del fabricante.",
     "limitations": [
-      "El precio es una conversión de referencia y puede variar según el mercado de importación.",
+      "Los precios originales están expresados en Ringgit malayo (RM) y pueden variar según el mercado de importación.",
       "No disponible oficialmente en el mercado argentino."
     ]
   },
@@ -29,11 +31,11 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-27T01:25:31.172Z",
+  "updatedAt": "2026-08-27T03:05:31.199Z",
   "transmision": "Automática de 7 velocidades (DCT)",
   "traccion": "Delantera",
-  "peso": "1.370 kg",
-  "tipoMotor": "Gasolina",
+  "peso": "1.325–1.370 kg",
+  "tipoMotor": "Gasolina (Turbo)",
   "potenciaKW": "130 kW",
   "capacidadTanque": "45 litros",
   "tiempoRecorrido": "7.9s",
@@ -207,7 +209,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:25:31.172Z",
+    "lastChecked": "2026-08-27T03:05:31.199Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -226,5 +228,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Proton X50 representa un hito fundamental en la estrategia de modernización del fabricante malayo Proton, tras la adquisición de una participación mayoritaria por parte del gigante chino Geely. Lanzado oficialmente al mercado a finales de 2020, este SUV compacto nació como una adaptación directa para el mercado del sudeste asiático del exitoso Geely Binyue (también conocido como Coolray en otros mercados internacionales). El proyecto no solo implicó un cambio de emblema, sino un trabajo conjunto de ingeniería para adaptar el vehículo a la conducción con volante a la derecha y refinar la dinámica de conducción según los estándares locales exigidos por Proton.\n\n## Un hito y generación relevante\nLa primera y actual generación del Proton X50 marcó un antes y un después para la marca al introducir tecnología de propulsión avanzada y sistemas de asistencia a la conducción de nivel autónomo 2 en un segmento accesible. El hito comercial más destacable ocurrió en tiempo récord: a pocos meses de abrir sus reservas en Malasia, el modelo acumuló decenas de miles de pedidos, convirtiéndose rápidamente en el SUV más vendido de su categoría en dicho país y revitalizando la imagen corporativa de Proton frente a competidores japoneses tradicionales.\n\n## Curiosidades\nUna de las curiosidades más interesantes del Proton X50 es su corazón mecánico. Utiliza un motor de tres cilindros desarrollado conjuntamente por Volvo y Geely (grupales), lo que le otorga una respuesta en baja muy ágil y una eficiencia de combustible destacable para su categoría. Además, en su variante tope de gama, incorpora un sistema de comandos por voz avanzado que responde al lema \"Hi Proton\", capaz de controlar desde las ventanillas hasta el techo corredizo panorámico y el sistema de climatización, algo poco común en vehículos de este rango de precio.\n\n## Competencia y posicionamiento\nEn el plano de la competencia regional, el Proton X50 se posiciona firmemente en el segmento de los B-SUV, compitiendo de manera directa contra modelos consagrados como el Honda HR-V, el Toyota Corolla Cross, el Perodua Ativa y el Chery Tiggo 7 Pro en los mercados donde confluyen. Su principal estrategia de posicionamiento radica en ofrecer una relación precio-producto sumamente agresiva, combinando acabados interiores de estilo deportivo, materiales de tacto agradable y un despliegue tecnológico superior al de sus rivales directos de marcas generalistas tradicionales."
+  "content": "## Historia del modelo\nEl Proton X50 representa un hito fundamental en la estrategia de modernización del fabricante malayo Proton, tras la adquisición de una participación mayoritaria por parte del gigante chino Geely. Lanzado oficialmente al mercado a finales de 2020, este SUV compacto nació como una adaptación directa para el mercado del sudeste asiático del exitoso Geely Binyue. El proyecto no solo implicó un cambio de emblema, sino un minucioso trabajo conjunto de ingeniería para adaptar el vehículo a la conducción con volante a la derecha y refinar la dinámica de conducción según los estándares locales exigidos por Proton en la región.\n\n## Un hito y generación relevante\nLa primera y actual generación del Proton X50 marcó un antes y un después para la marca al introducir tecnología de propulsión avanzada y sistemas de asistencia a la conducción en un segmento accesible. El hito comercial más destacable ocurrió en tiempo récord: a pocos meses de abrir sus reservas en Malasia, el modelo acumuló decenas de miles de pedidos, convirtiéndose rápidamente en el SUV más vendido de su categoría en dicho país y revitalizando por completo la imagen corporativa de Proton frente a rivales tradicionales de origen japonés.\n\n## Curiosidades\nUna de las curiosidades más interesantes del Proton X50 es su conjunto motriz. Utiliza un motor turboalimentado de tres cilindros desarrollado en colaboración dentro de la órbita de Geely y Volvo, lo que le otorga una respuesta en baja muy ágil y una eficiencia de combustible destacable para su categoría. Además, en sus variantes superiores, incorpora sistemas multimedia avanzados con pantallas táctiles de gran tamaño y conectividad integral, posicionándose a la vanguardia tecnológica dentro de su rango de precio.\n\n## Competencia y posicionamiento\nEn el plano de la competencia regional, el Proton X50 se posiciona firmemente en el segmento de los B-SUV, compitiendo de manera directa contra modelos consagrados como el Honda HR-V y otros referentes del mercado asiático. Su principal estrategia de posicionamiento radica en ofrecer una relación precio-producto sumamente competitiva, combinando acabados interiores de estilo deportivo, materiales de buen tacto y un despliegue tecnológico superior al de sus rivales directos de marcas generalistas tradicionales."
 }

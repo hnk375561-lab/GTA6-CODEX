@@ -12,16 +12,18 @@
   "manufacturer": "Vespa",
   "class": "Scooter",
   "customizable": false,
-  "power": "11 CV (8 kW) a 7.750 rpm",
-  "price": "EUR 4.500 - 5.500 (referencia mercado europeo)",
+  "power": "12.9 CV a 7.750 rpm (versión 150)",
+  "price": "Desde EUR 4.300 (referencia gama Europa)",
   "consumo": "2.5 l/100km (aproximado)",
-  "dimensiones": "1.852 mm largo x 680 mm ancho x 1.170 mm alto",
+  "dimensiones": "1.852 mm largo x 735 mm ancho x 1.170 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se corrigieron los datos genéricos de automóviles (peso de 1.5 toneladas, motor V8, tracción delantera, etc.) por especificaciones reales de scooter urbano correspondientes a la Vespa Primavera 125/150.",
+    "primarySource": "https://es.scribd.com/document/831416962/FICHA-TECNICA-VespaPrimavera-150",
+    "secondarySource": "https://vespa-colombia.com/vespa-primavera-150",
+    "note": "Se verificaron las especificaciones técnicas de la Vespa Primavera 150 (cilindrada de 154.8 cc, potencia de 12.9 CV / 9.5 kW a 7.750 rpm y ancho de 735 mm) a partir de documentación oficial y sitios de la marca. Los precios europeos de entrada parten desde los 4.300 euros según la web oficial.",
     "limitations": [
-      "El precio puede variar según el mercado específico y los impuestos locales en Sudamérica o Europa.",
-      "Las cifras exactas de aceleración 0-100 km/h no aplican ni se publican oficialmente para scooters urbanos de baja cilindrada."
+      "Los precios varían de manera significativa según el mercado regional, aranceles de importación e impuestos locales.",
+      "Las cifras de aceleración de 0 a 100 km/h no forman parte de las especificaciones oficiales publicadas para scooters de baja cilindrada."
     ]
   },
   "performance": {
@@ -29,13 +31,13 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:28:39.343Z",
+  "updatedAt": "2026-08-27T03:13:28.986Z",
   "transmision": "Automática variador continuo (CVT)",
-  "traccion": "Tracción trasera (por correa)",
+  "traccion": "Tracción trasera por correa",
   "peso": "115 kg (en orden de marcha)",
   "tipoMotor": "Monocilíndrico 4 tiempos, 3 válvulas, i-get",
-  "potenciaKW": "8 kW",
-  "capacidadTanque": "7 litros - 8 litros",
+  "potenciaKW": "9.5 kW",
+  "capacidadTanque": "7 litros",
   "tiempoRecorrido": "No publicado oficialmente",
   "anoProduccion": "2013-presente",
   "mercados": [
@@ -123,7 +125,7 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": "125 cc (también existen variantes de 50 cc y 150 cc)",
+  "cilindrada": "154.8 cc (también en variantes de 50 cc)",
   "emisiones": null,
   "tipo": null,
   "asientos": 2,
@@ -205,7 +207,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:28:39.343Z",
+    "lastChecked": "2026-08-27T03:13:28.986Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +226,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nLa Vespa Primavera ocupa un lugar de privilegio en la historia de la movilidad urbana global. Introducida originalmente por primera vez en la década de 1960 por Piaggio, nació como una propuesta fresca, ágil y juvenil que revolucionó la forma en que los jóvenes se trasladaban por las ciudades europeas. Aquel modelo primigenio se convirtió rápidamente en un emblema de libertad y diseño vanguardista. Tras décadas fuera de catálogo, Piaggio decidió resucitar el espíritu de la Primavera adaptándolo a los estándares del siglo XXI, combinando la mítica carrocería monocarcasa de acero con tecnologías de propulsión de última generación y soluciones de seguridad contemporáneas.\n\n## Un hito o generación relevante\nEl relanzamiento de la Vespa Primavera en 2013 marcó un punto de inflexión para la marca italiana. Esta generación recuperó la denominación histórica incorporando mejoras estructurales significativas respecto a sus antecesoras inmediatas. La adopción de llantas de mayor diámetro (generalmente de 11 o 12 pulgadas) mejoró notablemente la estabilidad y la absorción de irregularidades en el asfalto urbano. Asimismo, la incorporación posterior de la familia de motores i-get (Italian Green Experience) representó un salto evolutivo clave en términos de reducción de emisiones, eficiencia de combustible y disminución de la rumorosidad mecánica, logrando una experiencia de conducción más refinada y respetuosa con el medio ambiente.\n\n## Curiosidades\nA diferencia de la gran mayoría de los scooters del mercado actual, que recurren masivamente a carrocerías fabricadas en plásticos y resinas sintéticas, la Vespa Primavera mantiene fielmente la tradición de utilizar un chasis monocasco de acero estampado que actúa como estructura portante. Esto no solo le otorga una rigidez torsional muy superior y una durabilidad notable, sino que también define su silueta inconfundible y su peso contenido. Otro detalle distintivo es su suspensión delantera con brazo articulado, un diseño de herencia aeronáutica que Piaggio adaptó a sus dos ruedas desde mediados del siglo pasado para facilitar el cambio de neumáticos y mejorar el comportamiento dinámico en curvas.\n\n## Competencia y posicionamiento\nDentro del mercado global de las dos ruedas, la Vespa Primavera se posiciona claramente en el segmento de scooters urbanos de corte premium y aspiracional. A diferencia de opciones de origen asiático enfocadas estrictamente en la funcionalidad económica y utilitaria, la Primavera compite en una liga donde el diseño, el estatus y el cuidado por los detalles estéticos pesan tanto o más que la ficha técnica pura. Su principal rival histórica y directa es la legendaria Lambretta (en sus reinterpretaciones modernas) y otros scooters retro de marcas europeas o asiáticas de alta gama, aunque la Primavera mantiene un valor de reventa superior y un reconocimiento de marca imbatible que la consolidan como el referente indiscutido del estilo de vida urbano europeo."
+  "content": "## Historia del modelo\nLa Vespa Primavera representa uno de los capítulos más emblemáticos y perdurables dentro del universo de la movilidad urbana global. Creada originalmente en la década de 1960 por Piaggio, nació con la firme vocación de ofrecer una alternativa de transporte fresca, ligera, dinámica y profundamente juvenil que transformó por completo la manera en que las nuevas generaciones se desplazaban por las metrópolis europeas. Aquel modelo primigenio trascendió rápidamente su condición de simple medio de transporte para erigirse como un estandarte indiscutido de libertad, estilo de vida y diseño vanguardista. Tras permanecer fuera de los catálogos comerciales durante años, la casa italiana decidió rescatar el espíritu incorruptible de la Primavera para readaptarlo por completo a las exigencias normativas, tecnológicas y estéticas del siglo XXI, fusionando con maestría su mítica carrocería monocarcasa de acero con arquitecturas motrices de última generación y estándares contemporáneos de seguridad vial.\n\n## Un hito o generación relevante\nEl relanzamiento oficial de la Vespa Primavera concretado en 2013 marcó un punto de inflexión histórico y tecnológico para la marca de Pontedera. Esta nueva generación logró rescatar el ADN estético de la estirpe clásica incorporando al mismo tiempo profundas mejoras estructurales que optimizaron de forma radical su comportamiento dinámico. La adopción de llantas de mayor diámetro en comparación con sus ancestros directos aportó una estabilidad notable y una capacidad de absorción muy superior ante las irregularidades típicas del asfalto urbano. Posteriormente, la integración de la familia de impulsores i-get (Italian Green Experience) supuso un salto evolutivo monumental en materia de eficiencia térmica, reducción drástica de emisiones contaminantes, disminución de la rumorosidad mecánica y contención del consumo de combustible, logrando una finura de marcha sin precedentes en su categoría.\n\n## Curiosidades\nA diferencia de la abrumadora mayoría de los scooters que dominan el mercado contemporáneo, los cuales recurren masivamente al empleo de paneles de plásticos inyectados y resinas sintéticas, la Vespa Primavera mantiene incólume la tradición artesanal e industrial de utilizar un chasis monocasco de acero estampado que opera como estructura portante principal. Esta solución constructiva no solo le otorga una rigidez torsional muy superior frente a la torsión y una durabilidad estructural excepcional a lo largo de los años, sino que también define por completo su silueta esbelta, su personalidad inconfundible y un peso sumamente contenido. Otro detalle mecánico de estirpe propia es su sofisticada suspensión delantera con brazo articulado, una genialidad heredada directamente de la ingeniería aeronáutica que Piaggio adaptó con éxito a sus motocicletas desde mediados del siglo pasado para simplificar las tareas de sustitución de neumáticos y garantizar una pisada impecable en el trazado de curvas.\n\n## Competencia y posicionamiento\nDentro del ecosistema global de las dos ruedas, la Vespa Primavera se ubica de manera indiscutida en la cúspide del segmento de scooters urbanos de enfoque netamente premium y aspiracional. Lejos de competir en el terreno de la funcionalidad económica pura o de las propuestas utilitarias de origen asiático, la Primavera milita en una categoría exclusiva donde el diseño estético, el prestigio histórico y el refinamiento de los acabados pesan tanto o más que las cifras puras de la ficha técnica. Si bien enfrenta la resistencia de reinterpretaciones retro de otros fabricantes y de la histórica rivalidad con firmas como Lambretta, la Vespa mantiene un valor de reventa envidiable, una red de soporte consolidada y un capital simbólico inigualable que la consagran como el máximo referente estético y funcional del transporte urbano con estilo europeo."
 }

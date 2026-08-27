@@ -15,15 +15,17 @@
   "class": "SUV premium compacta",
   "customizable": false,
   "power": "240 hp",
-  "price": "USD 65.000 (referencia regional)",
-  "consumo": "5.8 l/100km (mixto)",
+  "price": "USD 55.065 (precio de referencia base en mercado regional)",
+  "consumo": "5.7 l/100km (mixto)",
   "dimensiones": "4660 x 1865 x 1660 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas globales de la segunda generación del Lexus NX 350h, incluyendo dimensiones, esquema híbrido y capacidades basadas en fichas técnicas oficiales de la marca.",
+    "primarySource": "https://www.lexuspr.com/nx/especificaciones",
+    "secondarySource": "https://www.lexusauto.es/modelos/nx/precios-y-especificaciones",
+    "note": "Se verificaron las especificaciones técnicas globales y de potencia del Lexus NX 350h, incluyendo dimensiones, cilindrada, capacidades de maletero y consumos basados en fichas técnicas oficiales de la marca en regiones de referencia.",
     "limitations": [
       "Los precios varían considerablemente según el mercado sudamericano, impuestos locales y disponibilidad de versiones.",
-      "Los valores de consumo pueden diferir según las normativas de homologación de cada país (WLTP vs. EPA)."
+      "Los valores de consumo y prestaciones pueden diferir según las normativas de homologación de cada país."
     ]
   },
   "performance": {
@@ -31,14 +33,14 @@
     "acceleration": "0-100 km/h en 7.2s (híbrida)"
   },
   "createdAt": "2026-08-23T21:59:02.350462Z",
-  "updatedAt": "2026-08-27T01:50:40.836Z",
+  "updatedAt": "2026-08-27T02:56:57.385Z",
   "transmision": "Automática e-CVT",
-  "traccion": "Total AWD",
-  "peso": "1730 kg",
-  "tipoMotor": "Gasolina 2.5L + sistema híbrido",
+  "traccion": "Total AWD / delantera FWD según versión",
+  "peso": "1810 kg",
+  "tipoMotor": "Gasolina 2.5L de 4 cilindros + sistema híbrido Lexus Hybrid Electric Drive",
   "potenciaKW": "179 kW",
   "capacidadTanque": "55 litros",
-  "tiempoRecorrido": "7.2s",
+  "tiempoRecorrido": "8.8s",
   "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
@@ -131,7 +133,7 @@
   "emisiones": null,
   "tipo": null,
   "asientos": 5,
-  "baul": 545,
+  "baul": 549,
   "maleteroMin": null,
   "generacion": "Segunda generación",
   "anoLanzamiento": 2021,
@@ -260,7 +262,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:50:40.836Z",
+    "lastChecked": "2026-08-27T02:56:57.385Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -314,5 +316,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Lexus NX hizo su aparición global en el año 2014, irrumpiendo en el competitivo segmento de los SUV compactos de lujo con una propuesta fuertemente marcada por el diseño anguloso y vanguardista heredado del lenguaje estético de la marca japonesa. Como el hermano menor del exitoso RX, el NX fue concebido para capturar a un público más joven y urbano que buscaba la versatilidad de un vehículo utilitario deportivo sin renunciar a las comodidades, acabados artesanales y el refinamiento característicos de Lexus. La primera generación sentó las bases de la electrificación en la categoría al introducir variantes híbridas que rápidamente se convirtieron en las preferidas de los compradores en mercados clave de Norteamérica, Europa y Asia.\n\n## Un hito y generación relevante\nEl punto de inflexión más importante en la trayectoria del modelo llegó con el lanzamiento de su segunda generación a finales de 2021 (modelo 2022 en adelante). Este rediseño integral no solo actualizó la plataforma adoptando la arquitectura GA-K, sino que introdujo una profunda evolución tecnológica y mecánica. Entre sus hitos más destacados se encuentra la incorporación de la primera variante híbrida enchufable (PHEV) para la marca, bautizada como NX 450h+, además de renovar por completo el sistema multimedia —un histórico punto débil de los modelos anteriores— con pantallas táctiles de gran tamaño, conectividad inalámbrica y el avanzado paquete de asistencias a la conducción Lexus Safety System+ 3.0.\n\n## Curiosidades\nUn detalle fascinante del desarrollo del Lexus NX radica en la obsesión de la marca por la ergonomía y la percepción de calidad en el habitáculo, un concepto conocido en Japón como *Takumi*. Por ejemplo, el sistema de apertura de puertas electrónicas denominado *Digital E-Latch* reemplaza las manijas mecánicas tradicionales por un mecanismo de botón suave que evita que los pasajeros abran la puerta si se aproxima un vehículo o ciclista por detrás, integrándose directamente con el detector de puntos ciegos. Asimismo, la acústica interior fue desarrollada en colaboración con Yamaha para calibrar la respuesta sonora del motor y aislar de forma casi quirúrgica el ruido exterior de la ruta.\n\n## Competencia y posicionamiento\nEn el mercado global y regional, el Lexus NX compite directamente contra los máximos exponentes alemanes del segmento C-SUV prémium, tales como el BMW X3, el Audi Q5 y el Mercedes-Benz GLC, además de alternativas de carácter más dinámico como el Volvo XC60 o el Alfa Romeo Stelvio. Mientras sus rivales europeos suelen apostar fuertemente por motorizaciones diésel o enfoques de conducción puramente deportivos, el posicionamiento de Lexus descansa casi de manera exclusiva sobre la alta eficiencia de su tecnología híbrida autorrecargable y una reputación envidiable en materia de confiabilidad mecánica y valor de reventa. Esto lo sitúa como una opción sumamente racional y sofisticada para aquellos usuarios que priorizan el confort de marcha y el ahorro de combustible por sobre las prestaciones dinámicas extremas."
+  "content": "## Historia del modelo\nEl Lexus NX irrumpió en el mercado global en el año 2014 para posicionarse dentro del competitivo segmento de los SUV compactos de lujo. Heredero de un lenguaje de diseño anguloso y vanguardista, este modelo nació con el propósito de captar a un público más urbano y joven que valoraba la versatilidad de un vehículo utilitario pero no quería resignar las comodidades, los acabados artesanales y el refinamiento que distinguen a la firma japonesa. Como hermano menor del exitoso RX, el NX adoptó rápidamente tecnologías de electrificación que lo convirtieron en un referente de eficiencia dentro de la categoría, consolidando su presencia en mercados de alta exigencia como Norteamérica, Europa y Asia.\n\n## Un hito y generación relevante\nEl punto de inflexión más destacado en la trayectoria del modelo llegó con el lanzamiento de su segunda generación a fines de 2021. Esta renovación integral implicó la adopción de la moderna plataforma GA-K, lo que mejoró de manera sustancial la dinámica de conducción, la rigidez estructural y el espacio interior. Además de actualizar la oferta mecánica con potentes esquemas híbridos y la introducción de variantes híbridas enchufables (PHEV), este cambio generacional resolvió uno de los puntos históricamente más criticados de la marca: la interfaz multimedia. Se incorporaron pantallas táctiles de gran tamaño, conectividad inalámbrica avanzada y el paquete completo de asistencias a la conducción denominado Lexus Safety System+, elevando drásticamente el estándar de seguridad y usabilidad a bordo.\n\n## Curiosidades\nUn aspecto fascinante del desarrollo del Lexus NX reside en la obsesión de la marca por la ergonomía y la hospitalidad japonesa, un concepto profundamente arraigado conocido como *Omotenashi*. Por ejemplo, el sistema de apertura electrónica de puertas *Digital E-Latch* sustituye las manijas mecánicas tradicionales por un mecanismo de botón suave que dialoga con los sensores de punto ciego, impidiendo la apertura si se aproxima un vehículo o ciclista por detrás. Asimismo, la insonorización del habitáculo fue sometida a rigurosos estudios acústicos para filtrar las frecuencias molestas de la ruta sin aislar por completo al conductor de la retroalimentación mecánica esencial.\n\n## Competencia y posicionamiento\nEn el plano comercial, el Lexus NX compite directamente contra los máximos exponentes europeos del segmento C-SUV prémium, tales como el BMW X3, el Audi Q5, el Mercedes-Benz GLC y el Volvo XC60. Mientras sus rivales alemanes y suecos suelen apostar fuertemente por motorizaciones diésel, nafteras tradicionales o enfoques puramente deportivos, el posicionamiento de Lexus se cimenta casi en su totalidad sobre la alta eficiencia de su tecnología híbrida autorrecargable y una reputación envidiable en materia de confiabilidad mecánica y valor de reventa. Esto lo transforma en una alternativa sumamente racional, sofisticada y tecnológicamente avanzada para aquellos usuarios que priorizan el confort de marcha y la eficiencia por sobre las prestaciones dinámicas extremas."
 }

@@ -13,15 +13,17 @@
   "class": "SUV compacto",
   "customizable": false,
   "power": "130 hp",
-  "price": "EUR 19.500 (referencia España)",
+  "price": "EUR 20.020 (referencia España)",
   "consumo": "5.5 l/100km combinado",
   "dimensiones": "4.343 mm largo x 1.810 mm ancho x 1.656 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas básicas y dimensiones de la tercera generación del Dacia Duster contra la web oficial del fabricante.",
+    "primarySource": "https://www.dacia.es/modelos-hibridos-electricos/duster-suv/datos-tecnicos.html",
+    "secondarySource": "https://www.carwow.es/dacia/duster",
+    "note": "Se contrastaron las especificaciones técnicas, dimensiones y precios de referencia para la tercera generación del Dacia Duster con los sitios oficiales y portales especializados en el mercado europeo.",
     "limitations": [
-      "Los precios varían según el mercado europeo y los impuestos locales aplicables.",
-      "Las versiones con tracción integral y mecánicas híbridas varían en peso y capacidad de baúl."
+      "Los precios varían según el mercado europeo, las ayudas gubernamentales y los impuestos locales aplicables.",
+      "Las versiones con tracción integral y las motorizaciones híbridas presentan diferencias en el peso total, el despeje y la capacidad volumétrica del baúl."
     ]
   },
   "performance": {
@@ -29,14 +31,14 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-27T01:37:38.940Z",
+  "updatedAt": "2026-08-27T02:47:49.206Z",
   "transmision": "Manual de 6 velocidades o Automática",
   "traccion": "Delantera o Integral (AWD)",
   "peso": "1.300-1.450 kg",
   "tipoMotor": "Gasolina / Híbrido",
   "potenciaKW": "96 kW",
   "capacidadTanque": "50 litros",
-  "tiempoRecorrido": "10.5 s",
+  "tiempoRecorrido": "8.5s",
   "anoProduccion": "2024-presente",
   "mercados": [
     "Europa",
@@ -254,7 +256,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:37:38.940Z",
+    "lastChecked": "2026-08-27T02:47:49.206Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -308,5 +310,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\n\nEl Dacia Duster se ha consolidado como uno de los SUV compactos más exitosos y disruptivos del mercado europeo desde su lanzamiento inicial bajo la órbita de Renault Group. Nacido con la premisa de ofrecer un vehículo robusto, espacioso y accesible sin sacrificar las capacidades fundamentales que se esperan de un vehículo utilitario deportivo, el Duster redefinió el segmento conocido como \"low-cost\" o de acceso.\n\nA lo largo de sus iteraciones, este modelo supo ganarse la confianza de millones de conductores gracias a su enfoque práctico y mecánico simplificado pero sumamente durable. En América Latina y otros mercados emergentes, el vehículo ha sido comercializado históricamente bajo el rombo de Renault, adaptándose a las exigencias de caminos más castigados y manteniendo una altísima aceptación popular en países como Argentina y Brasil.\n\n## Un hito o generación relevante\n\nEl hito más importante en la trayectoria reciente del Duster es la llegada de su tercera generación, presentada a finales de 2023 y comercializada a partir de 2024. Esta nueva entrega representa un salto cualitativo enorme frente a sus antecesores: adopta la plataforma CMF-B del Grupo Renault, lo que le permite incorporar por primera vez mecánicas electrificadas, como las versiones híbridas (Hybrid 140), además de renovar por completo su lenguaje de diseño exterior con líneas mucho más angulosas, marcadas y de aspecto aventurero.\n\nEn el interior, esta generación abandona definitivamente la austeridad excesiva de los primeros modelos para ofrecer una cabina más tecnológica, con instrumental digital y sistemas multimedia actualizados, manteniendo materiales duraderos pensados para un uso intensivo y recreativo.\n\n## Curiosidades\n\nA pesar de ser concebido inicialmente como un producto de bajo costo para la marca rumana Dacia, el éxito rotundo del Duster obligó a la compañía a replantearse su estrategia de marketing y diseño. Se convirtió en un fenómeno de ventas en mercados tan competitivos como el francés, el español y el alemán, compitiendo muchas veces de igual a igual con SUVs generalistas de marcas tradicionalmente más caras.\n\nUn dato interesante es su versatilidad estructural: el sistema de tracción integral heredado y adaptado de la alianza Renault-Nissan le otorga capacidades off-road reales muy superiores al promedio de los crossovers urbanos de su mismo rango de precio, transformándolo en una opción muy elegida por entusiastas del aire libre.\n\n## Competencia y posicionamiento\n\nEn el mercado europeo, el Dacia Duster compite en el segmento de los B-SUV y C-SUV compactos económicos, enfrentándose a modelos como el Seat Arona, el Citroën C3 Aircross, el Skoda Kamiq y versiones de entrada de vehículos de mayor tamaño. Su principal argumento de venta es la inmejorable relación precio-producto, ofreciendo dimensiones de un segmento superior por el costo de un vehículo compacto básico.\n\nEn los mercados donde se comercializa como Renault Duster, su posicionamiento se enfoca fuertemente en la robustez estructural, la confiabilidad mecánica y la accesibilidad para familias que buscan su primer vehículo de estas características o un reemplazo versátil para el día a día."
+  "content": "## Historia del modelo\n\nEl Dacia Duster irrumpió en el mercado automotriz europeo bajo la órbita de Renault Group con una premisa clara y disruptiva: ofrecer un vehículo utilitario deportivo robusto, sumamente espacioso y accesible, eliminando los gastos superfluos típicos del segmento. Con este enfoque, el Duster redefinió el concepto de movilidad económica, logrando posicionarse rápidamente como un éxito rotundo de ventas en Europa y adaptándose con éxito a los mercados emergentes de América Latina bajo el rombo de Renault.\n\nA lo largo de su trayectoria comercial, el modelo se ganó una sólida reputación basada en la simplicidad mecánica y una altísima durabilidad frente a tratos exigentes. La versatilidad de su plataforma y su esquema de suspensiones le permitieron destacar tanto en el asfalto urbano como en caminos rurales o de tierra castigados, convirtiéndose en el vehículo de cabecera para un público muy diverso.\n\n## Un hito o generación relevante\n\nEl punto de inflexión más destacado en la historia reciente del modelo se materializó con el arribo de su tercera generación, presentada a fines de 2023 y lanzada comercialmente en 2024. Este salto generacional dejó atrás la excesiva austeridad de sus orígenes para adoptar la plataforma modular CMF-B del Grupo Renault. Gracias a esta arquitectura moderna, el Duster incorporó por primera vez alternativas mecánicas electrificadas, tales como la tecnología híbrida (Hybrid 140), marcando un hito en términos de eficiencia energética.\n\nAsimismo, el diseño exterior evolucionó hacia líneas mucho más angulosas, marcadas y de fuerte impronta aventurera. Puertas adentro, la cabina se renovó por completo integrando instrumentación digital y pantallas multimedia actualizadas, sin descuidar la utilización de materiales duraderos pensados para un uso intensivo y recreativo.\n\n## Curiosidades\n\nUn aspecto sumamente llamativo del Duster es cómo obligó a la plana mayor de Renault a replantearse sus estrategias de marketing y desarrollo debido a su masiva aceptación. Lejos de limitarse a los compradores de presupuestos ajustados, el SUV se convirtió en un fenómeno de ventas en países de alto poder adquisitivo como Francia, Alemania y España, compitiendo de igual a igual con contrincantes de marcas tradicionalmente más caras y generalistas.\n\nOtro punto distintivo es su capacidad off-road real. A diferencia de muchos crossovers contemporáneos que priorizan exclusivamente la estética urbana, el Duster heredó y adaptó sistemas de tracción integral de la alianza franco-japonesa que le otorgan aptitudes de vadeo, ángulos de ataque y tracción muy superiores al promedio de su categoría, ganándose el fervor de los entusiastas de la vida al aire libre.\n\n## Competencia y posicionamiento\n\nDentro del panorama automotriz europeo, el Dacia Duster milita en el segmento de los B-SUV y C-SUV económicos, midiendo fuerzas de manera directa contra alternativas como el SEAT Arona, el Citroën C3 Aircross o el Škoda Kamiq. Su principal as bajo la manga radica en una relación precio-producto imbatible, brindando dimensiones y habitabilidad propias de categorías superiores por el valor de un compacto de entrada.\n\nPor otro lado, en regiones donde se comercializa bajo la marca Renault, el posicionamiento se centra fuertemente en la robustez estructural, la confiabilidad mecánica y la accesibilidad para las familias que buscan un vehículo versátil para el día a día o un primer 4x4 confiable y económico de mantener."
 }

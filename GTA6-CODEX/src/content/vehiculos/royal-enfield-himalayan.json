@@ -13,31 +13,33 @@
   "manufacturer": "Royal Enfield",
   "class": "Moto adventure",
   "customizable": false,
-  "power": "24.3 CV",
-  "price": "USD 6.800 (Referencia mercado)",
-  "consumo": "3.5 l/100km",
-  "dimensiones": "2190 x 840 x 1360 mm",
+  "power": "40 CV",
+  "price": "ARS 10.200.000 (Referencia mercado)",
+  "consumo": "no publicado oficialmente",
+  "dimensiones": "2245 x 852 x 1316 mm",
   "evidence": {
-    "level": "respaldado",
-    "note": "Se ajustaron los valores genéricos de automóviles de la plantilla anterior por las especificaciones reales de la Royal Enfield Himalayan 411cc, incluyendo cilindrada, tipo de motor, peso en orden de marcha y capacidad del tanque según fichas técnicas oficiales de la marca.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://fichamotos.com.ar/fichas/royal-enfield/himalayan-450",
+    "secondarySource": "https://www.motociclismo.es/pruebas/royal-enfield-himalayan-450-prueba-ficha-tecnica-moto-aventura-todos_285591_102.html",
+    "note": "Se actualizaron los datos técnicos basándose en la nueva generación Royal Enfield Himalayan 450, corroborando cilindrada, potencia de 40 CV, dimensiones, peso de 196 kg y capacidad del tanque de 17 litros mediante fichas técnicas especializadas y portales oficiales de la marca.",
     "limitations": [
-      "Los datos de precio pueden variar según el mercado local y los impuestos vigentes en Argentina.",
-      "Algunas especificaciones de rendimiento como la aceleración de 0 a 100 km/h no son provistas oficialmente por el fabricante para este modelo."
+      "Los valores de precio en pesos argentinos varían constantemente debido a la inflación y la carga impositiva local.",
+      "Ciertos datos prestacionales de aceleración no son provistos de manera oficial por el fabricante."
     ]
   },
   "performance": {
     "speed": "135 km/h"
   },
   "createdAt": "2026-08-23T21:59:11.515889Z",
-  "updatedAt": "2026-08-27T01:56:44.169Z",
-  "transmision": "Manual de 5 velocidades",
+  "updatedAt": "2026-08-27T03:08:00.461Z",
+  "transmision": "Manual",
   "traccion": "Trasera por cadena",
-  "peso": "199 kg (en orden de marcha)",
-  "tipoMotor": "Monocilíndrico 4T, refrigeración por aire/aceite",
-  "potenciaKW": "17.8 kW",
-  "capacidadTanque": "15 litros",
+  "peso": "196 kg",
+  "tipoMotor": "Monocilíndrico, 4 tiempos, DOHC, 4 válvulas, refrigeración líquida",
+  "potenciaKW": "29 kW",
+  "capacidadTanque": "17 litros",
   "tiempoRecorrido": "no publicado oficialmente",
-  "anoProduccion": "2016-2023",
+  "anoProduccion": "2024-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": "411 cc",
+  "cilindrada": "452 cc",
   "emisiones": null,
   "tipo": null,
   "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": "Primera generación (LS410)",
-  "anoLanzamiento": 2016,
+  "generacion": "Segunda generación (Himalayan 450)",
+  "anoLanzamiento": 2024,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -251,8 +253,8 @@
     "description": "Moto adventure de Royal Enfield, pensada para largas travesías y terreno mixto, motor monocilíndrico de 411cc."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-27T01:56:44.169Z",
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T03:08:00.461Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -306,5 +308,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nLa Royal Enfield Himalayan marcó un hito fundamental para la marca de origen británico y radicar en la India, al representar su primera incursión genuina en el segmento de las motocicletas adventure y de doble propósito. Presentada oficialmente al mercado global a mediados de la década pasada, este modelo fue ideado específicamente para afrontar los terrenos más desafiantes y variados del mundo, tomando como principal campo de pruebas y fuente de inspiración las rutas extremas de la cordillera del Himalaya. A diferencia de las clásicas motocicletas de estilo retro y cilindrada media que caracterizaban el catálogo tradicional de la compañía, la Himalayan nació desde cero con un enfoque utilitario, robusto y preparado para largas travesías sin asfalto.\n\n## Un hito o generación relevante\nEl corazón de esta primera etapa de la Himalayan está impulsado por el motor monocilíndrico LS410 de 411 cc, un propulsor de diseño completamente nuevo en su momento que priorizaba el torque a bajas y medias revoluciones por sobre la potencia pura a altas vueltas. Este bloque mecánico se acopló a un chasis de doble cuna diseñado en colaboración con la prestigiosa firma Harris Performance. Otro de los grandes hitos de su desarrollo fue la implementación de un esquema de suspensiones de largo recorrido y una altura de asiento accesible, lo que permitió democratizar el motociclismo de aventura para usuarios de distintas estaturas y niveles de experiencia, ofreciendo una opción noble y económica frente a las grandes marcas europeas y japonesas de alta cilindrada.\n\n## Curiosidades\nEntre los detalles más interesantes de la Royal Enfield Himalayan destaca su instrumentación analógica-digital, la cual incluye una brújula integrada pensada para la navegación en rutas donde la señal de los dispositivos móviles es inexistente. Además, su diseño minimalista prescinde de elementos superfluos: el instrumental y el frontal están montados directamente sobre el chasis y no sobre la dirección, lo que reduce el peso percibido en el manillar al maniobrar en terrenos rotos o senderos de tierra. El tanque de combustible incorpora puntos de anclaje integrados para montar los clásicos bidones auxiliares o defensas de protección de fábrica, un guiño directo a los viajeros de travesía de larga distancia.\n\n## Competencia y posicionamiento\nEn el mercado global y regional, la Royal Enfield Himalayan se posiciona en el segmento de entrada a las motos de aventura (adventure-touring de media cilindrada). Compite de manera directa contra modelos de marcas generalistas que buscan ofrecer versatilidad urbana y capacidades off-road moderadas a un precio sumamente competitivo. Su principal ventaja radica en su imbatible relación costo-beneficio, una mecánica de fácil mantenimiento y una estética atemporal que atrae tanto a motoviajeros experimentados como a quienes se inician en el segmento trail, compensando una potencia contenida con una robustez estructural sobresaliente."
+  "content": "## Historia del modelo\nLa Royal Enfield Himalayan 450 representa un punto de inflexión absoluto para la emblemática marca de herencia británica. Tras el éxito rotundo de su predecesora de 411 cc, la firma decidió rediseñar por completo su concepto de moto adventure para adaptarse a las exigencias modernas del mercado global. Concebida y probada en las rutas más inhóspitas de la cordillera del Himalaya, esta nueva generación abandona los esquemas mecánicos tradicionales de la marca para adoptar una plataforma completamente nueva, enfocada en ofrecer un rendimiento superior tanto en largas travesías asfálticas como en los terrenos off-road más complejos.\n\n## Un hito o generación relevante\nEl gran salto tecnológico de esta plataforma radica en la incorporación del motor Sherpa 450, el primer propulsor con refrigeración líquida en la historia de Royal Enfield. Con una cilindrada exacta de 452 cc, distribución DOHC y 4 válvulas, entrega una potencia de 40 CV a 8.000 rpm y un par motor de 40 Nm a 5.500 rpm. Este bloque se encuentra adosado a un chasis de doble viga de acero desarrollado junto a Harris Performance, complementado por un esquema de suspensiones de largo recorrido —con horquilla invertida delantera y monoamortiguador trasero con bieleta— que aseguran una absorción de irregularidades sobresaliente y una conducción sumamente dócil.\n\n## Curiosidades\nEntre los detalles más destacados de la Himalayan 450 se encuentra su renovado panel de instrumentos circular dotado de conectividad avanzada y navegación integrada mediante mapas, eliminando la necesidad de soportes externos para dispositivos móviles. Además, su diseño frontal integra un sistema de iluminación LED completo y un tanque de combustible de 17 litros que optimiza la autonomía para los motoviajeros. Su electrónica incluye modos de conducción configurables y un sistema de frenos ABS de doble canal que puede desconectarse en la rueda trasera, un requisito indispensable para los entusiastas de la conducción off-road más pura.\n\n## Competencia y posicionamiento\nEn el mercado actual, la Royal Enfield Himalayan 450 compite de forma directa en el segmento de las trail de media cilindrada, plantando cara a opciones consagradas de marcas europeas y japonesas. Su principal fortaleza reside en una ecuación altamente competitiva entre tecnología moderna, capacidades camperas reales y un precio de referencia sumamente atractivo. De este modo, la Himalayan 450 se consolida como una alternativa robusta, versátil y preparada tanto para el uso diario en ciudad como para expediciones transcontinentales exigentes."
 }

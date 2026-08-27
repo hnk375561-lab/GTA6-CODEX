@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:31.429Z",
-  "updatedAt": "2026-08-27T01:56:24.210Z",
+  "updatedAt": "2026-08-27T03:06:53.127Z",
   "manufacturer": "Renault",
   "class": "Hatchback",
   "customizable": false,
@@ -19,21 +19,23 @@
     "speed": "Media (175 km/h)",
     "acceleration": "Media (0-100 km/h en 11.5s)"
   },
-  "power": "115 hp",
-  "price": "USD 16.500 (referencia regional)",
+  "power": "110 hp",
+  "price": "USD 16.490 (precio de referencia regional)",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones generales del Renault Sandero fabricado en la región para el mercado latinoamericano, utilizando datos de potencia, dimensiones y capacidades técnicas oficiales de la marca.",
+    "primarySource": "https://renault-yopal.loscoches.com/vehiculos-nuevos/renault-sandero.html",
+    "secondarySource": "https://www.facebook.com/RenaultEcuador/videos/sandero/437485559035684",
+    "note": "Se verificaron las especificaciones técnicas generales del Renault Sandero, incluyendo la potencia de 110 hp con motor 1.6 SCe, la capacidad del baúl de 320 litros, las opciones de transmisión manual y CVT, así como el precio de referencia regional a partir de $16.490 USD.",
     "limitations": [
-      "Los precios pueden variar según el mercado específico de Latinoamérica.",
-      "Algunas configuraciones de motor y caja dependen de la versión y el país de comercialización."
+      "Los precios y las configuraciones exactas varían según el mercado específico de comercialización en Latinoamérica.",
+      "Algunas opciones de equipamiento y asistencia a la conducción dependen de la versión elegida (Life+, Zen, Intens)."
     ]
   },
-  "transmision": "Manual de 5 marchas o automática CVT",
+  "transmision": "Manual de 5 marchas o automática CVT X-Tronic",
   "traccion": "Delantera",
   "peso": "1055 kg",
   "tipoMotor": "Nafta",
-  "potenciaKW": "85 kW",
+  "potenciaKW": "81 kW",
   "capacidadTanque": "50 litros",
   "tiempoRecorrido": "11.5s",
   "anoProduccion": "2023-presente",
@@ -130,7 +132,7 @@
   "asientos": 5,
   "baul": 320,
   "maleteroMin": null,
-  "generacion": "3ra generación (Mercosur)",
+  "generacion": "3ra generación",
   "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
@@ -254,7 +256,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:56:24.210Z",
+    "lastChecked": "2026-08-27T03:06:53.127Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -308,5 +310,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Renault Sandero es uno de los hatchbacks compactos más populares y exitosos de la industria automotriz en Sudamérica. Concebido originalmente bajo la órbita de Dacia (filial rumana de Grupo Renault), el modelo fue adaptado para llevar el rombo en la parrilla y conquistar los mercados emergentes a partir de la segunda mitad de los años 2000. Desde su llegada inicial, se posicionó rápidamente como un producto robusto, pensado específicamente para soportar las exigencias de la infraestructura vial de la región, destacándose por su andar confortable frente a baches y caminos irregulares.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia comercial del Sandero fue la llegada de su segunda generación rediseñada y, más recientemente, la adopción de la plataforma modular CMF-B en los mercados europeos (bajo la marca Dacia). En el ámbito regional de Mercosur, la tercera generación adoptó importantes mejoras estructurales, de diseño exterior con iluminación LED distintiva y un salto notable en materia de seguridad pasiva y conectividad, incorporando una pantalla multimedia flotante compatible con sistemas operativos modernos y mejorando sustancialmente la calidad percibida en el habitáculo respecto a sus antecesores.\n\n## Curiosidades\nUna de las particularidades más interesantes del ecosistema del Renault Sandero es su variante aventurera, el Sandero Stepway. Este modelo derivado popularizó un nicho que hoy es furor en el mercado: el de los hatchbacks con estética y despeje de SUV urbano. Además, en determinados mercados internacionales, el vehículo ha sabido comercializarse bajo los emblemas de Renault o Dacia de manera indistinta, demostrando una altísima versatilidad industrial que le permitió ser producido en plantas clave de Sudamérica como la de Curitiba en Brasil o Santa Isabel en Córdoba, Argentina.\n\n## Competencia y posicionamiento\nDentro del competitivo segmento B de los hatchbacks compactos, el Renault Sandero compite de forma directa contra pesos pesados de la industria como el Volkswagen Polo, el Chevrolet Onix, el Fiat Argo y el Toyota Yaris. Su principal argumento de venta histórico ha sido la excelente relación precio-producto, ofreciendo una habitabilidad interior superior a la media de su categoría, un baúl generoso para su tamaño exterior y costos de mantenimiento accesibles, lo que lo convierte en un vehículo sumamente elegido tanto por flotas corporativas como por familias que buscan su primer 0km confiable."
+  "content": "## Historia del modelo\nEl Renault Sandero se consolidó rápidamente como uno de los hatchbacks compactos más populares y exitosos del mercado sudamericano. Diseñado originalmente bajo la órbita de Dacia —la filial rumana de Grupo Renault—, el modelo fue adaptado para llevar el clásico rombo en la parrilla frontal y conquistar los mercados emergentes desde la segunda mitad de los años 2000. Desde su introducción, se posicionó como un producto robusto, pensado específicamente para soportar las exigencias de la infraestructura vial de la región, destacándose por su andar confortable frente a baches y caminos irregulares.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la trayectoria comercial del Sandero fue la evolución hacia tecnologías más modernas y plataformas optimizadas. En los mercados internacionales y regionales, la adopción de la arquitectura CMF-B aportó mejoras sustanciales en rigidez torsional y comportamiento dinámico. Con la llegada de su tercera generación, el modelo dio un salto notable en materia de diseño exterior con firmas lumínicas distintivas, seguridad pasiva y conectividad, incorporando pantallas multimedia flotantes compatibles con sistemas operativos modernos y mejorando la calidad percibida en el habitáculo respecto a sus antecesores.\n\n## Curiosidades\nUna de las particularidades más interesantes del ecosistema del Renault Sandero es el éxito rotundo de su variante aventurera, el Stepway, que popularizó un nicho convertido hoy en furor: el de los hatchbacks con estética y despeje de SUV urbano. Asimismo, en distintos mercados globales el vehículo se comercializa de manera indistinta bajo los emblemas de Renault o Dacia, demostrando una altísima versatilidad industrial que le permitió ser producido en plantas clave de Sudamérica como la de Curitiba en Brasil o Santa Isabel en Córdoba, Argentina.\n\n## Competencia y posicionamiento\nDentro del competitivo segmento B de los hatchbacks compactos, el Renault Sandero compite de forma directa contra referentes de la industria como el Volkswagen Polo, el Chevrolet Onix, el Fiat Argo y el Toyota Yaris. Su principal argumento de venta histórico radica en la excelente relación precio-producto, ofreciendo una habitabilidad interior destacada para su categoría, un baúl generoso de 320 litros y costos de mantenimiento accesibles, lo que lo convierte en un vehículo sumamente elegido tanto por flotas corporativas como por familias que buscan su primer vehículo 0 km confiable."
 }

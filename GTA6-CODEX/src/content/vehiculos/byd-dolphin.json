@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.972Z",
-  "updatedAt": "2026-08-27T01:33:45.763Z",
+  "updatedAt": "2026-08-27T02:44:59.242Z",
   "manufacturer": "BYD",
   "class": "Hatchback eléctrico",
   "customizable": false,
@@ -19,23 +19,25 @@
     "speed": "Media (150 km/h)",
     "acceleration": "Media (0-100 km/h en 12.3s)"
   },
-  "power": "95 hp (versión de entrada) / hasta 204 hp en versiones superiores",
-  "price": "USD 26.000 (precio de referencia global)",
+  "power": "88 CV a 204 CV según versión (Active, Boost, Comfort y Design)",
+  "price": "Desde €25.200 (precio de tarifa de referencia en España antes de ayudas y promociones)",
   "evidence": {
-    "level": "respaldado",
-    "note": "Se actualizaron las especificaciones técnicas reemplazando los datos genéricos por valores reales del BYD Dolphin, incluyendo dimensiones, motorización eléctrica, capacidad de baúl y tiempos de aceleración según catálogos oficiales.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.byd.com/es-es/coches-electricos/dolphin",
+    "secondarySource": "https://www.byd.com/es-es/coches-electricos/dolphin-surf",
+    "note": "Se verificaron las especificaciones técnicas, potencias (88 CV hasta 204 CV), consumo WLTP (15,5-16 kWh/100km), dimensiones (4290 mm de largo y 1820 mm de ancho) y capacidad del maletero (364 litros) utilizando los catálogos oficiales de BYD España.",
     "limitations": [
-      "Los precios varían significativamente según el mercado de importación, aranceles locales y subsidios gubernamentales vigentes.",
-      "Las especificaciones de potencia y batería pueden presentar ligeras variaciones regionales (versiones con batería Blade de 32 kWh, 44.9 kWh o 60.4 kWh)."
+      "Los precios de referencia corresponden al mercado europeo y pueden variar según aranceles, impuestos locales y subsidios gubernamentales vigentes en cada país.",
+      "Las capacidades de batería y autonomías varían según el nivel de equipamiento seleccionado (Active, Boost, Comfort, Design)."
     ]
   },
-  "transmision": "Automática de relación única",
+  "transmision": "Automática de relación única con reductora fija",
   "traccion": "Delantera",
-  "peso": "1405 - 1658 kg",
-  "tipoMotor": "Eléctrico síncrono de imanes permanentes",
-  "potenciaKW": "70 - 150 kW",
+  "peso": "No publicado oficialmente para toda la gama exacta",
+  "tipoMotor": "Eléctrico síncrono de imanes permanentes con batería Blade (LFP)",
+  "potenciaKW": "65 kW a 150 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "7.9s (0-100 km/h en versión tope de gama)",
+  "tiempoRecorrido": "7.9s (0-100 km/h en versión tope de gama de 204 CV)",
   "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
@@ -116,15 +118,15 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": "12.5 - 15.5 kWh / 100 km",
-  "dimensiones": "4290 x 1770 x 1570 mm",
+  "consumo": "15,5 - 16 kWh / 100 km (ciclo combinado WLTP)",
+  "dimensiones": "4290 x 1820 x 1570 mm",
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
   "asientos": 5,
-  "baul": 345,
+  "baul": 364,
   "maleteroMin": null,
-  "generacion": "1ra generación",
+  "generacion": "1ra generación (MY25)",
   "anoLanzamiento": 2021,
   "colores": [],
   "category": "electrico",
@@ -247,8 +249,8 @@
     "description": "Hatchback 100% eléctrico de BYD, batería Blade LFP, uno de los eléctricos más vendidos a nivel global."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-27T01:33:45.763Z",
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T02:44:59.242Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -302,5 +304,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl BYD Dolphin fue presentado originalmente en el mercado chino en 2021 como el primer vehículo de pasajeros en utilizar la plataforma eléctrica e-Platform 3.0 de la marca y la innovadora batería Blade (LFP). Diseñado bajo la dirección de Wolfgang Egger, ex diseñador de Audi, el Dolphin adoptó el concepto estético \"Marine Aesthetics\", inspirado en los delfines, lo que le otorga una impronta visual muy fluida, juvenil y aerodinámica que rompió con el molde de los hatchbacks tradicionales del segmento B.\n\n## Un hito y generación relevante\nEl gran hito del BYD Dolphin radica en su rol como puntal de la estrategia de expansión global de vehículos eléctricos accesibles de la marca china. Al ser uno de los primeros modelos de volumen construidos sobre la e-Platform 3.0, demostró que la arquitectura dedicada exclusivamente a la electromovilidad podía implementarse en un formato compacto sin sacrificar habitabilidad interior. Su distancia entre ejes de 2.70 metros —sorprendente para un vehículo de su largo total— se logró gracias a los voladizos cortos y la ubicación optimizada del paquete de baterías Blade, estableciendo un nuevo estándar de aprovechamiento del espacio en el segmento de entrada a la electromovilidad.\n\n## Curiosidades\nEntre sus detalles más llamativos, el interior del Dolphin incorpora elementos inspirados en la cultura marina, como manijas de puertas con forma de aleta y comandos centrales diseñados con una temática fluida. Además, en muchos mercados, la batería Blade destaca no solo por su alta densidad energética y durabilidad, sino por haber superado con éxito la extrema prueba de penetración de clavos (nail penetration test) sin incendiarse ni emitir humo, lo que redefinió los estándares de seguridad percibida para las baterías de litio ferrofosfato (LFP).\n\n## Competencia y posicionamiento\nEn el mercado global, el BYD Dolphin compite directamente en el segmento de los hatchbacks y crossovers compactos 100% eléctricos, enfrentándose a modelos como el Volkswagen ID.3, el Ora Good Cat de GWM, el MG 4 y versiones eléctricas de marcas generalistas tradicionales. Su posicionamiento comercial busca capturar al público que busca la transición hacia la movilidad sustentable ofreciendo una excelente relación valor-tecnología, costos operativos reducidos y un nivel de equipamiento de seguridad y asistencias a la conducción (ADAS) muy competitivo frente a rivales de precio similar."
+  "content": "## Historia del modelo\nEl BYD Dolphin debutó originalmente en el mercado global en 2021 como el puntal inicial de la familia de vehículos basados en la e-Platform 3.0 de la marca y equipados con la innovadora tecnología de baterías Blade (LFP). Concebido bajo la dirección de diseño de Wolfgang Egger, el modelo adoptó el concepto estético \"Marine Aesthetics\", inspirándose en la fluidez y dinamismo de los delfines. Esta propuesta rompió radicalmente con las líneas tradicionales de los hatchbacks del segmento B y compacto, ofreciendo una silueta aerodinámica y una identidad visual muy fresca y juvenil que rápidamente trascendió las fronteras del mercado asiático.\n\n## Un hito y generación relevante\nEl verdadero hito del BYD Dolphin radica en su capacidad para democratizar la electromovilidad de alta eficiencia sin sacrificar habitabilidad ni seguridad. Gracias a la arquitectura específica de su plataforma y a la delgadez del paquete de baterías Blade, el modelo logró una distancia entre ejes sobresaliente de 2,70 metros en una longitud total de 4,29 metros. Esto maximizó el espacio interior, rivalizando con vehículos de segmentos superiores. Además, su maletero de 364 litros y las opciones de potencia que escalan desde los 88 CV en versiones de acceso hasta los 204 CV en los acabados superiores consolidaron a esta primera generación como un referente tecnológico global.\n\n## Curiosidades\nEntre los detalles más singulares que esconde su habitáculo se encuentran múltiples guiños a la temática marina, como las manijas de las puertas interiores moldeadas con la forma de una aleta y comandos centralizados de diseño orgánico. Asimismo, la batería Blade que lo alimenta no solo destaca por optimizar el espacio físico y ofrecer una alta densidad energética, sino por haber superado con éxito las pruebas de penetración de clavos sin generar fuego ni humo, estableciendo un nuevo estándar de seguridad percibida para las baterías de litio ferrofosfato en la industria automotriz actual.\n\n## Competencia y posicionamiento\nComercialmente, el BYD Dolphin se posiciona en el competitivo segmento de los hatchbacks y crossovers compactos 100% eléctricos, compitiendo de frente contra modelos consolidados como el Volkswagen ID.3, el MG 4 y el Ora Good Cat de GWM. Su propuesta de valor se centra en ofrecer una excelente relación entre precio, equipamiento de asistencias avanzadas a la conducción (ADAS), eficiencia energética comprobada bajo ciclo WLTP y costos operativos sumamente reducidos, capturando tanto a flotas urbanas como a usuarios particulares que buscan dar el salto definitivo hacia la movilidad sustentable."
 }

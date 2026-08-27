@@ -14,15 +14,17 @@
   "class": "Minivan",
   "customizable": false,
   "power": "105 CV",
-  "price": "ARS 22.000.000 (referencia mercado argentino)",
+  "price": "ARS 36.178.900 (referencia mercado argentino)",
   "consumo": "8.3 l/100km (mixto)",
-  "dimensiones": "4428 x 1762 x 1603 mm",
+  "dimensiones": "4425 x 1764 x 1656 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas principales del Chevrolet Spin comercializado en la región Mercosur, incluyendo motorización 1.8L, capacidad de hasta 7 pasajeros y dimensiones generales según fichas de Chevrolet Argentina.",
+    "primarySource": "https://www.chevrolet.com.ar/camionetas-suv/spin-auto-familiar",
+    "secondarySource": "https://www.youtube.com/watch?v=w58c5yFVTKg",
+    "note": "Se verificaron las especificaciones técnicas principales y precios de referencia para el mercado argentino en el sitio oficial de Chevrolet Argentina y fuentes del sector automotor.",
     "limitations": [
-      "Los precios varían constantemente según la inflación y los impuestos locales en Argentina",
-      "Los niveles de equipamiento cambian según el año-modelo y versión (LS, LT, Premier)"
+      "Los precios varían constantemente según la inflación, bonificaciones y los impuestos locales en Argentina",
+      "Los niveles de equipamiento cambian según el año-modelo y versión (LT, Premier)"
     ]
   },
   "performance": {
@@ -30,11 +32,11 @@
     "acceleration": "0-100 km/h en 12.8s"
   },
   "createdAt": "2026-08-23T21:59:08.164677Z",
-  "updatedAt": "2026-08-27T01:36:22.817Z",
+  "updatedAt": "2026-08-27T02:46:29.468Z",
   "transmision": "Manual de 5 marchas o Automática de 6 marchas",
   "traccion": "Delantera",
   "peso": "1233 kg",
-  "tipoMotor": "Naftero 1.8L SPE/4",
+  "tipoMotor": "Naftero 1.8L SPE/4 ECO",
   "potenciaKW": "77 kW",
   "capacidadTanque": "53 litros",
   "tiempoRecorrido": "11.8s",
@@ -130,7 +132,7 @@
   "asientos": 7,
   "baul": 710,
   "maleteroMin": null,
-  "generacion": "Primera generación (con múltiples actualizaciones)",
+  "generacion": "Primera generación con restyling profundo (Spin 2026)",
   "anoLanzamiento": 2012,
   "colores": [],
   "category": "otros",
@@ -256,7 +258,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:36:22.817Z",
+    "lastChecked": "2026-08-27T02:46:29.468Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -310,5 +312,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Chevrolet Spin fue lanzado al mercado sudamericano en 2012 como un monovolumen compacto desarrollado principalmente en Brasil, pensado para reemplazar tanto a los veteranos Meriva y Zafira en varios mercados de la región. Su propuesta principal siempre giró en torno a la versatilidad familiar, ofreciendo un habitáculo de gran espacio y la posibilidad de contar con configuraciones de cinco o siete plazas en un formato relativamente compacto para el ámbito urbano.\n\n## Un hito o generación relevante\nA lo largo de su ciclo comercial, el modelo ha recibido diversas actualizaciones estéticas y de equipamiento para mantenerse vigente frente al auge de los SUV. Un punto de inflexión importante se dio con el restyling profundo que incorporó un diseño frontal alineado con la identidad global de la marca, mejoras significativas en seguridad (incorporando de serie control de estabilidad y múltiples airbags según los mercados) y la digitalización del puesto de conducción con el sistema multimedia MyLink.\n\n## Curiosidades\nA pesar de ser clasificado formalmente como un monovolumen o minivan, en muchos mercados de América Latina el Chevrolet Spin adoptó el rol tradicional que solían tener los familiares medianos y los vehículos utilitarios económicos para flotas de taxis o familias numerosas. Su arquitectura prioriza el despeje y la habitabilidad interior por encima de las pretensiones deportivas, logrando un volumen de carga en el baúl líder en su segmento cuando se prescinde de la tercera fila de asientos.\n\n## Competencia y posicionamiento\nEn el mercado automotriz argentino y regional, el Chevrolet Spin ocupa un nicho muy particular tras la retirada de la gran mayoría de las minivans tradicionales del segmento B. Aunque compite de manera indirecta con SUVs compactos y medianos debido a los rangos de precio, su principal fortaleza radica en la relación precio-espacio-habitabilidad, posicionándose como la opción más accesible del mercado para quienes necesitan transportar regularmente a más de cinco personas sin dar el salto a vehículos comerciales ligeros derivados de furgones."
+  "content": "## Historia del modelo\nEl Chevrolet Spin desembarcó en el mercado sudamericano en 2012 como un monovolumen compacto de desarrollo regional —principalmente gestado en Brasil— con el claro objetivo de ocupar el espacio que dejaban vehículos multipropósito muy queridos en la región como el Meriva y la Zafira. Desde sus inicios, la propuesta de la marca del corbatín se centró en ofrecer un vehículo de arquitectura versátil, capaz de priorizar la habitabilidad interior, el espacio de carga y la posibilidad de trasladar hasta siete pasajeros en una carrocería de dimensiones contenidas para el uso urbano diario.\n\n## Un hito o generación relevante\nA lo largo de más de una década de vida comercial, el modelo ha sabido reinventarse frente al avance imparable de los SUV. Un punto de inflexión fundamental en su trayectoria se materializó con la actualización profunda (como la línea 2026/2027), que no solo modernizó radicalmente su estética exterior adoptando el lenguaje visual global de Chevrolet, sino que introdujo mejoras sustanciales en materia de seguridad —incorporando asistencias avanzadas a la conducción como el frenado autónomo de emergencia y control de estabilidad de serie— y una completa digitalización del puesto de conducción con paneles táctiles integrados al sistema multimedia MyLink.\n\n## Curiosidades\nMientras que en los mercados internacionales las minivans tradicionales han perdido terreno casi por completo frente a los utilitarios deportivos, el Chevrolet Spin ha logrado consolidarse como un vehículo de múltiples roles en América Latina. No solo es un pilar fundamental para familias numerosas que buscan accesibilidad, sino que se ha ganado un lugar predilecto en flotas comerciales, taxis y servicios de transporte de pasajeros gracias a la robustez mecánica de su bloque naftero y a una capacidad de baúl que resulta prácticamente imbatible en su franja de precio cuando se prescinde de la tercera fila de asientos.\n\n## Competencia y posicionamiento\nDentro del mercado automotriz argentino, el Chevrolet Spin ocupa un nicho casi exclusivo tras la retirada de la competencia directa de otros monovolúmenes del segmento B. Si bien compite de manera transversal contra SUVs compactos debido a las franjas de cotización, su gran as bajo la manga sigue siendo la inigualable ecuación entre precio, espacio interior real y modularidad. Esto lo posiciona firmemente como la alternativa más lógica y económica para quienes necesitan transportar regularmente a más de cinco personas sin dar el salto definitivo hacia vehículos comerciales derivados de furgones."
 }

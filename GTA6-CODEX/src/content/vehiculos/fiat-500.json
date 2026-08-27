@@ -13,13 +13,14 @@
   "manufacturer": "Fiat",
   "class": "Hatchback",
   "customizable": false,
-  "power": "118 hp (versión eléctrica 500e) / 70 hp (versión híbrida ligera en Europa)",
-  "price": "USD 32.500 (MSRP referencia 500e)",
+  "power": "118 hp (versión eléctrica 500e) / 70 hp (versión híbrida ligera)",
+  "price": "Desde €20.850 (MSRP referencia en Europa)",
   "consumo": "14.9 kWh/100km (eléctrico) o 4.7 l/100km (híbrido)",
   "dimensiones": "3632 x 1683 x 1527 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Se corrigieron las especificaciones generales para reflejar las dimensiones, peso y motorización real de la tercera generación del Fiat 500 (enfocada fuertemente en la variante eléctrica 500e y la híbrida europea), descartando los datos genéricos previos de un vehículo de mayor tamaño.",
+    "primarySource": "https://www.carwow.es/fiat/500/caracteristicas-tecnicas",
+    "note": "Se verificaron las dimensiones exactas (3632 x 1683 x 1527 mm) y los rangos de precios de referencia para el mercado europeo mediante fuentes especializadas.",
     "limitations": [
       "Los precios varían considerablemente según el mercado (Europa, Norteamérica o Sudamérica)",
       "La disponibilidad de motorizaciones térmicas, híbridas o eléctricas depende estrictamente de la región"
@@ -30,7 +31,7 @@
     "acceleration": "0-100 km/h en 10.5s"
   },
   "createdAt": "2026-08-23T21:59:07.332517Z",
-  "updatedAt": "2026-08-27T01:38:30.207Z",
+  "updatedAt": "2026-08-27T02:48:10.628Z",
   "transmision": "Automática de 1 marcha (EV) / Manual de 6 marchas (Híbrido)",
   "traccion": "Tracción delantera",
   "peso": "1.365 kg (versión eléctrica con batería de 42 kWh)",
@@ -256,7 +257,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:38:30.207Z",
+    "lastChecked": "2026-08-27T02:48:10.628Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -310,5 +311,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Fiat 500 es uno de los automóviles más emblemáticos de la historia automotriz mundial. Su legado comenzó en 1957 con el legendario 'Cinquecento' original diseñado por Dante Giacosa, un vehículo económico y compacto que motorizó a la Italia de la posguerra y se convirtió en un ícono indiscutido de la cultura pop y el diseño industrial.\n\nEn 2007, coincidiendo con el 50° aniversario del modelo original, Fiat relanzó el 500 bajo una filosofía de diseño retro-moderno desarrollada por el Centro Stile Fiat. Este relanzamiento transformó al utilitario urbano en un producto de carácter aspiracional y estilo de vida, logrando un éxito comercial rotundo a nivel global y posicionándose como un referente indiscutido en el segmento A.\n\n## Un hito o generación relevante\nEl gran punto de inflexión en la historia reciente del modelo se dio en 2020 con la presentación de la tercera generación, conocida comercialmente como el Nuevo Fiat 500 o Fiat 500e. A diferencia de sus predecesores inmediatos, esta plataforma fue desarrollada desde cero como un vehículo exclusivamente eléctrico en sus versiones principales, marcando la entrada de la marca italiana en la era de la electromovilidad sin abandonar sus rasgos estéticos característicos.\n\nEl 500e introdujo proporciones ligeramente mayores para alojar el paquete de baterías bajo el piso, optimizando el espacio interior y mejorando notablemente el comportamiento dinámico gracias a un centro de gravedad más bajo. Asimismo, incorporó tecnologías de asistencia a la conducción de nivel 2 y sistemas de infoentretenimiento de última generación.\n\n## Curiosidades\nA lo largo de su trayectoria moderna, el Fiat 500 ha sido lienzo de múltiples ediciones especiales y colaboraciones con marcas de lujo y moda de alta gama, tales como Gucci, Diesel y Riva (la famosa marca de yates de lujo). Estas versiones limitadas reforzaron el estatus del modelo como un objeto de diseño más que como un simple medio de transporte urbano.\n\nAdemás, a pesar de compartir dimensiones sumamente contenidas, el diseño exterior logra mantener la silueta clásica de 'burbuja' que rinde homenaje directo al modelo de 1957, un logro estético que pocos fabricantes han podido replicar con tanta fidelidad en el siglo XXI.\n\n## Competencia y posicionamiento\nEn el mercado global, el Fiat 500 compite en el segmento de los hatchbacks urbanos pequeños de espíritu chic y urbano. Sus principales rivales históricos y modernos incluyen al MINI Cooper, el Smart Fortwo/Forfour, y más recientemente opciones eléctricas del segmento A como el Honda e, el Renault 5 E-Tech y el Dacia Spring.\n\nSin embargo, el 500 se destaca frente a sus competidores por ofrecer una propuesta de diseño emocional muy fuerte combinada con costos de operación reducidos en su variante eléctrica, ocupando un nicho donde la estética y la practicidad urbana conviven de manera equilibrada."
+  "content": "## Historia del modelo\nEl Fiat 500 es uno de los automóviles más icónicos y reconocibles de la industria automotriz global. Su rica trayectoria comenzó en 1957 con el legendario 'Cinquecento' diseñado por Dante Giacosa, un vehículo compacto y accesible que motorizó a la Italia de la posguerra y se transformó rápidamente en un símbolo indiscutido de la cultura pop, la movilidad urbana y el diseño industrial italiano.\n\nEn 2007, coincidiendo con el quincuagésimo aniversario del modelo original, la marca italiana relanzó el 500 bajo una filosofía de diseño retro-moderno desarrollada por el Centro Stile Fiat. Este relanzamiento convirtió al humilde utilitario en un producto de carácter marcadamente aspiracional y de estilo de vida, logrando un rotundo éxito comercial en todo el mundo y posicionándose como un referente absoluto dentro del segmento A de los hatchbacks urbanos.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante en la historia reciente del modelo se materializó en 2020 con la introducción de su tercera generación, comercializada globalmente como el Nuevo Fiat 500 o Fiat 500e. A diferencia de sus antecesores directos, esta arquitectura fue concebida desde una hoja en blanco exclusivamente como un vehículo eléctrico en sus variantes principales, marcando la transición definitiva de la marca hacia la electrificación sin perder los trazos estéticos característicos que lo definen.\n\nEl 500e adoptó proporciones ligeramente incrementadas para acomodar de manera óptima el paquete de baterías bajo el piso del habitáculo, lo que mejoró de forma notable el comportamiento dinámico gracias a un centro de gravedad sensiblemente más bajo. Asimismo, incorporó tecnologías de asistencia a la conducción avanzadas y sistemas multimedia de última generación, elevando la vara en materia de conectividad urbana.\n\n## Curiosidades\nA lo largo de su era moderna, el Fiat 500 ha servido como lienzo para numerosas ediciones especiales y colaboraciones exclusivas con reconocidas marcas de alta gama y de la moda internacional, tales como Gucci, Diesel y Riva (la prestigiosa firma de yates de lujo). Estas ediciones limitadas reforzaron el posicionamiento del modelo como un auténtico objeto de diseño y distinción por encima de su condición de medio de transporte.\n\nAdemás, a pesar de contar con medidas sumamente contenidas, el equipo de diseño logró preservar la silueta clásica de 'burbuja' que rinde homenaje fiel al modelo original de 1957, un logro estético sumamente complejo que pocos fabricantes han podido replicar con tanta precisión en el siglo XXI.\n\n## Competencia y posicionamiento\nDentro del mercado global, el Fiat 500 compite directamente en el segmento de los hatchbacks urbanos pequeños de espíritu chic y elegante. Entre sus rivales históricos y modernos más destacados figuran el MINI Cooper, el Smart Fortwo, y más recientemente opciones impulsadas por baterías como el Honda e, el Renault 5 E-Tech y el Dacia Spring.\n\nA pesar de la creciente competencia, el 500 se destaca frente a sus contrincantes por ofrecer una propuesta estética de alto impacto emocional combinada con costos de operación sumamente reducidos en su variante eléctrica, ocupando un nicho único donde el diseño distintivo y la practicidad urbana conviven en perfecta armonía."
 }

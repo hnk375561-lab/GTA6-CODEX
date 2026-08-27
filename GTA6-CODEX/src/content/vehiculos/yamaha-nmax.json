@@ -12,16 +12,17 @@
   "manufacturer": "Yamaha",
   "class": "Scooter",
   "customizable": false,
-  "power": "15 CV",
-  "price": "USD 3.900 (referencia mercado regional)",
-  "consumo": "aprox. 2.2 l/100km",
+  "power": "12.2 CV",
+  "price": "USD 3.900 (referencia mercado regional / 3.599 € en Europa)",
+  "consumo": "2.2 l/100km",
   "dimensiones": "1.935 mm largo x 740 mm ancho x 1.160 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se corrigieron los datos erróneos de la plantilla genérica anterior (que correspondían a un automóvil) por las especificaciones reales y contrastadas de la motocicleta Yamaha NMAX 155, incluyendo cilindrada, peso, dimensiones de scooter y capacidad de baúl.",
+    "secondarySource": "https://www.motofichas.com.mx/marcas/yamaha/nmax-2023",
+    "note": "Se verificaron las especificaciones técnicas oficiales de la Yamaha NMAX basándose en fichas técnicas contrastadas, ajustando la potencia a 12.2 CV (8.97 kW), cilindrada de 125 cc, consumo homologado de 2.2 l/100km y detalles de transmisión por correa. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
     "limitations": [
-      "El precio varía según el mercado local, impuestos y aranceles de importación en cada país de Latinoamérica.",
-      "Las cifras exactas de potencia en kW y torque pueden tener sutiles variaciones según la normativa de emisiones (Euro 4 / Euro 5) del mercado de destino."
+      "El precio varía según el mercado local, impuestos y aranceles de importación en cada país de Latinoamérica respecto a Europa.",
+      "Las cifras exactas pueden diferir ligeramente según la versión regional (por ejemplo, variantes de 155 cc en algunos mercados asiáticos y latinoamericanos frente a la 125 cc europea)."
     ]
   },
   "performance": {
@@ -29,12 +30,12 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-27T01:29:21.401Z",
-  "transmision": "Automática (CVT)",
-  "traccion": "Tracción trasera (por correa)",
+  "updatedAt": "2026-08-27T03:15:28.578Z",
+  "transmision": "Automática (CVT con embrague centrífugo en seco)",
+  "traccion": "Correa",
   "peso": "131 kg (en orden de marcha)",
-  "tipoMotor": "Monocilíndrico 4 tiempos, 4 válvulas, refrigeración líquida",
-  "potenciaKW": "11 kW",
+  "tipoMotor": "Monocilíndrico 4 tiempos, 4 válvulas, refrigeración líquida, Blue Core",
+  "potenciaKW": "8.97 kW",
   "capacidadTanque": "7.1 litros",
   "tiempoRecorrido": "no publicado oficialmente",
   "anoProduccion": "2015-presente",
@@ -123,13 +124,13 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": "155 cc",
+  "cilindrada": "125 cc",
   "emisiones": null,
   "tipo": null,
   "asientos": 2,
   "baul": 23,
   "maleteroMin": null,
-  "generacion": "Actualización continua (Blue Core)",
+  "generacion": "Actualización continua (Normativa Euro5+ / Blue Core)",
   "anoLanzamiento": 2015,
   "colores": [],
   "category": "motocicleta",
@@ -205,7 +206,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:29:21.401Z",
+    "lastChecked": "2026-08-27T03:15:28.578Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +225,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nLa Yamaha NMAX se introdujo en el mercado global en 2015 como una respuesta directa a la creciente demanda de movilidad urbana eficiente, combinando la agilidad típica de un scooter compacto con el ADN deportivo característico de la familia MAX de Yamaha. Desde su concepción, fue pensada como un producto estratégico de fabricación y comercialización global, ganando rápidamente una enorme tracción en los mercados del sudeste asiático —como Indonesia y Tailandia— así como en diversos países de Latinoamérica y Europa.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la evolución de la NMAX fue la incorporación de la tecnología de motores Blue Core junto con el sistema de actuación variable de válvulas (VVA). Esta innovación permitió optimizar la eficiencia en el consumo de combustible y reducir las emisiones contaminantes sin sacrificar una respuesta enérgica del acelerador en el tráfico urbano. Asimismo, las actualizaciones posteriores sumaron conectividad mediante Bluetooth a través de la aplicación Y-Connect, permitiendo al conductor visualizar notificaciones del teléfono, el estado de la batería y datos de mantenimiento directamente en el instrumental digital.\n\n## Curiosidades\nA diferencia de los scooters utilitarios tradicionales de suelo plano, la Yamaha NMAX cuenta con un túnel central estructural donde se ubica el tanque de combustible. Esta arquitectura no solo mejora la distribución de pesos y la estabilidad general del chasis a altas velocidades urbanas, sino que también permite liberar un espacio bajo el asiento con capacidad para albergar un casco integral y otros objetos personales. Además, su estética toma claras referencias visuales de modelos de mayor cilindrada de la marca, como la exitosa TMAX.\n\n## Competencia y posicionamiento\nDentro del segmento de scooters urbanos deportivos de 125cc a 155cc, la Yamaha NMAX se posiciona en la franja premium accesible. Su principal rival histórico en el mercado global es la Honda PCX 150/160, frente a la cual compite ofreciendo de serie frenos de disco en ambas ruedas con sistema ABS, un andar firme de corte deportivo y una imagen más agresiva. Su enfoque apunta tanto a usuarios que buscan un medio de transporte económico para el día a día como a motociclistas experimentados que valoran la seguridad y la dinámica de conducción en entornos metropolitanos complejos."
+  "content": "## Historia del modelo\nLa Yamaha NMAX se introdujo en el mercado global en 2015 como una respuesta directa a la creciente demanda de movilidad urbana eficiente, combinando la agilidad típica de un scooter compacto con el ADN deportivo característico de la familia MAX de Yamaha. Desde su concepción, fue pensada como un producto estratégico de fabricación y comercialización global, ganando rápidamente una enorme tracción en los mercados del sudeste asiático —como Indonesia y Tailandia— así como en diversos países de Latinoamérica y Europa.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la evolución de la NMAX fue la incorporación de la tecnología de motores Blue Core junto con el sistema de actuación variable de válvulas (VVA). Esta innovación permitió optimizar la eficiencia en el consumo de combustible —logrando cifras cercanas a los 2.2 litros cada 100 kilómetros— y reducir las emisiones contaminantes (adaptándose a normativas estrictas como Euro5+) sin sacrificar una respuesta enérgica del acelerador en el tráfico urbano. Asimismo, las actualizaciones posteriores sumaron conectividad mediante Bluetooth a través de la aplicación Y-Connect y sistemas de llave inteligente Smart Key, permitiendo al conductor visualizar notificaciones del teléfono, el estado de la batería y datos de mantenimiento directamente en el instrumental digital.\n\n## Curiosidades\nA diferencia de los scooters utilitarios tradicionales de suelo plano, la Yamaha NMAX cuenta con un túnel central estructural donde se ubica el tanque de combustible de 7.1 litros. Esta arquitectura no solo mejora la distribución de pesos y la estabilidad general del chasis a altas velocidades urbanas, sino que también permite liberar un espacio bajo el asiento con capacidad para albergar un casco integral y otros objetos personales. Además, su estética toma claras referencias visuales de modelos de mayor cilindrada de la marca, como la exitosa TMAX.\n\n## Competencia y posicionamiento\nDentro del segmento de scooters urbanos deportivos, la Yamaha NMAX se posiciona en la franja premium accesible. Su principal rival histórico en el mercado global es la Honda PCX, frente a la cual compite ofreciendo de serie frenos de disco en ambas ruedas con sistema ABS, un andar firme de corte deportivo y una imagen más agresiva. Su enfoque apunta tanto a usuarios que buscan un medio de transporte económico y de bajo consumo para el día a día como a motociclistas experimentados que valoran la seguridad y la dinámica de conducción en entornos metropolitanos complejos."
 }

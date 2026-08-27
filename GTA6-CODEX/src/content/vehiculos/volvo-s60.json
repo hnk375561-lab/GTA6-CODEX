@@ -18,7 +18,8 @@
   "dimensiones": "4.778 mm largo x 1.850 mm ancho x 1.433 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se actualizaron las especificaciones generales de la tercera generación del Volvo S60 basado en datos de conocimiento general de la industria automotriz.",
+    "primarySource": "https://vamos.es/ficha-tecnica/volvo-s60-2023",
+    "note": "Se actualizaron las especificaciones de potencia y aceleración de la tercera generación del Volvo S60 basadas en registros de la industria y fuentes verificadas.",
     "limitations": [
       "Los precios pueden variar según el mercado local y los impuestos vigentes",
       "Las versiones y equipamientos específicos dependen de la región de comercialización"
@@ -29,7 +30,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:28:56.447Z",
+  "updatedAt": "2026-08-27T03:14:16.800Z",
   "transmision": "Automática de 8 velocidades",
   "traccion": "Tracción delantera o integral (AWD)",
   "peso": "1.650-1.750 kg",
@@ -207,7 +208,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:28:56.447Z",
+    "lastChecked": "2026-08-27T03:14:16.800Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -226,5 +227,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\n\nEl Volvo S60 es el sedán ejecutivo de la marca sueca que debutó originalmente a principios de los años 2000 para reemplazar al S70, posicionándose como una alternativa moderna, elegante y enfocada en la seguridad dentro del segmento D. A lo largo de sus distintas generaciones, el S60 evolucionó desde un enfoque marcadamente clásico y sobrio hacia una propuesta de diseño mucho más dinámica, atlética y vanguardista, adaptándose a las nuevas demandas del mercado global.\n\n## Un hito o generación relevante\n\nLa tercera generación del Volvo S60, lanzada comercialmente hacia finales de la década pasada, marcó un punto de inflexión fundamental para la compañía. Este modelo se convirtió en el primer vehículo de la marca en fabricarse en los Estados Unidos, específicamente en la planta de Ridgeville, Carolina del Sur. Además, representó la decisión estratégica de Volvo de eliminar por completo las motorizaciones diésel de su gama, apostando fuertemente por bloques nafteros avanzados, tecnología hibrida ligera (Mild-Hybrid) y variantes híbridas enchufables de altas prestaciones.\n\n## Curiosidades\n\nA pesar de ser un sedán de corte ejecutivo y familiar, el Volvo S60 ha tenido una rica historia en el automovilismo deportivo. A través de la división de desarollo y preparación Polestar (antes de convertirse en una marca independiente de vehículos eléctricos), el S60 compitió y cosechó grandes éxitos en campeonatos de turismos tan exigentes como el STCC (Scandinavian Touring Car Championship) y el V8 Supercars australiano, demostrando que la seguridad y el confort característicos de Volvo podían convivir perfectamente con un desempeño dinámico de primer nivel en circuitos.\n\n## Competencia y posicionamiento\n\nEn el mercado global, el Volvo S60 compite de manera directa contra los referentes históricos alemanes del segmento de los sedanes medianos premium, como el BMW Serie 3, el Audi A4 y el Mercedes-Benz Clase C. Frente a ellos, la propuesta de valor de Volvo se diferencia principalmente por ofrecer un diseño escandinavo minimalista muy distintivo, un nivel de confort en ruta sobresaliente, asientos ergonómicos considerados entre los mejores de la industria y un enfoque prioritario hacia los sistemas de asistencia a la conducción y la seguridad activa y pasiva."
+  "content": "## Historia del modelo\n\nEl Volvo S60 es el sedán ejecutivo de la marca sueca que debutó originalmente a principios de los años 2000 para reemplazar al S70, posicionándose como una alternativa moderna, elegante y enfocada en la seguridad dentro del segmento D. A lo largo de sus distintas generaciones, el S60 evolucionó desde un enfoque marcadamente clásico y sobrio hacia una propuesta de diseño mucho más dinámica, atlética y vanguardista, adaptándose a las nuevas demandas del mercado global.\n\n## Un hito o generación relevante\n\nLa tercera generación del Volvo S60, lanzada comercialmente hacia finales de la década pasada, marcó un punto de inflexión fundamental para la compañía. Este modelo se convirtió en el primer vehículo de la marca en fabricarse en los Estados Unidos, específicamente en la planta de Ridgeville, Carolina del Sur. Además, representó la decisión estratégica de Volvo de eliminar por completo las motorizaciones diésel de su gama, apostando fuertemente por bloques nafteros avanzados, tecnología híbrida ligera (Mild-Hybrid) y variantes híbridas enchufables de altas prestaciones.\n\n## Curiosidades\n\nA pesar de ser un sedán de corte ejecutivo y familiar, el Volvo S60 ha tenido una rica historia en el automovilismo deportivo. A través de la división de desarrollo y preparación Polestar (antes de convertirse en una marca independiente de vehículos eléctricos), el S60 compitió y cosechó grandes éxitos en campeonatos de turismos tan exigentes como el STCC (Scandinavian Touring Car Championship) y el V8 Supercars australiano, demostrando que la seguridad y el confort característicos de Volvo podían convivir perfectamente con un desempeño dinámico de primer nivel en circuitos.\n\n## Competencia y posicionamiento\n\nEn el mercado global, el Volvo S60 compite de manera directa contra los referentes históricos alemanes del segmento de los sedanes medianos premium, como el BMW Serie 3, el Audi A4 y el Mercedes-Benz Clase C. Frente a ellos, la propuesta de valor de Volvo se diferencia principalmente por ofrecer un diseño escandinavo minimalista muy distintivo, un nivel de confort en ruta sobresaliente, asientos ergonómicos considerados entre los mejores de la industria y un enfoque prioritario hacia los sistemas de asistencia a la conducción y la seguridad activa y pasiva."
 }

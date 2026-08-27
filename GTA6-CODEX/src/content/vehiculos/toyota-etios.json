@@ -16,14 +16,15 @@
   "customizable": false,
   "power": "103 CV",
   "price": "ARS 6.500.000 (últimos precios de referencia en Argentina antes de su discontinuación)",
-  "consumo": "approx. 6.5 l/100km (mixto)",
+  "consumo": "aprox. 6.5 l/100km (mixto)",
   "dimensiones": "4265 x 1695 x 1510 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas principales del Toyota Etios fabricado en Brasil para el mercado argentino, incluyendo motorización 1.5L Dual VVT-i, potencias y capacidades de baúl para la silueta sedán.",
+    "secondarySource": "https://www.mercadolibre.com.ar/blog/mo-ficha-tecnica-toyota-etios-motor-seguridad-confort",
+    "note": "Se verificaron las especificaciones técnicas principales del Toyota Etios fabricado en Brasil para el mercado argentino a través de fichas técnicas oficiales y portales especializados, incluyendo la motorización 1.5L con tecnología Dual VVT-i de 103 CV, cilindrada de 1496 cc, torque de 137 Nm y capacidades volumétricas de carga. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
     "limitations": [
-      "El modelo fue discontinuado en su producción para la región, por lo que los precios corresponden a valores históricos de lista o usados de referencia.",
-      "Las cifras exactas de consumo pueden variar según el tipo de transmisión (manual o automática)."
+      "El modelo fue discontinuado en su producción regional, por lo que los valores de precio corresponden a referencias históricas o de mercado de usados.",
+      "Las cifras de consumo de combustible pueden presentar variaciones según el tipo de transmisión seleccionada (manual de 5 marchas o automática de 4 marchas) y las condiciones de manejo urbano o rutero."
     ]
   },
   "performance": {
@@ -31,11 +32,11 @@
     "acceleration": "0-100 km/h en 12.9s"
   },
   "createdAt": "2026-08-23T21:59:12.065294Z",
-  "updatedAt": "2026-08-27T01:59:13.908Z",
+  "updatedAt": "2026-08-27T03:12:13.200Z",
   "transmision": "Manual de 5 velocidades o Automática de 4 marchas",
   "traccion": "Delantera",
   "peso": "990-1070 kg",
-  "tipoMotor": "Gasolina",
+  "tipoMotor": "Nafta",
   "potenciaKW": "76 kW",
   "capacidadTanque": "45 litros",
   "tiempoRecorrido": "0-100 km/h en 11.5s",
@@ -258,7 +259,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:59:13.908Z",
+    "lastChecked": "2026-08-27T03:12:13.200Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -312,5 +313,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Toyota Etios nació como un proyecto global de la marca japonesa enfocado principalmente en mercados emergentes, con el objetivo de ofrecer un vehículo accesible, robusto y de bajo costo de mantenimiento. Su desarrollo priorizó la funcionalidad y la durabilidad por encima de los lujos superfluos. En Argentina, el Etios irrumpió con fuerza y rápidamente se ganó el favor del público y de las flotas comerciales gracias a su probada confiabilidad mecánica, convirtiéndose en uno de los pilares de ventas de Toyota en el segmento B durante varios años.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la vida comercial del Etios en la región ocurrió en 2016, cuando recibió una actualización profunda (facelift). En dicha renovación se mejoró notablemente la aislación acústica, se incorporó un nuevo instrumental digital, se sumó la tan esperada caja automática de 4 velocidades y, sobre todo, se introdujo el motor 1.5 litros con tecnología Dual VVT-i, el cual elevó la potencia hasta los 103 CV y mejoró de manera sustancial la eficiencia en el consumo de combustible y la respuesta dinámica en ruta.\n\n## Curiosidades\nA pesar de ser concebido desde una estética sumamente racional y criticado inicialmente en algunos mercados por la sobriedad de su diseño interior —como la ubicación central del instrumental en las primeras versiones—, el Etios se transformó en un verdadero fenómeno de culto debido a su indestructible mecánica. Es ampliamente recordado por su excelente valor de reventa en el mercado de usados argentino y por ser la herramienta de trabajo elegida por miles de taxistas y conductores de aplicaciones de movilidad urbana, quienes ponían a prueba la durabilidad del conjunto motriz superando cientos de miles de kilómetros sin mayores inconvenientes.\n\n## Competencia y posicionamiento\nDentro del competitivo segmento B del mercado automotriz argentino, el Toyota Etios compitió de manera directa contra históricos tan pesados como el Volkswagen Gol, el Chevrolet Onix, el Fiat Argo y el Renault Logan/Sandero. Mientras sus rivales apostaban fuertemente por diseños más modernos, pantallas táctiles vistosas o líneas vanguardistas desde etapas más tempranas, el Etios se posicionó firmemente en el escalón de la racionalidad pura: ganó terreno ofreciendo un habitáculo y un baúl sorprendentemente generosos para su tamaño compacto, respaldado por la sólida reputación del servicio de postventa de la marca y una garantía transferible muy valorada por el consumidor local."
+  "content": "## Historia del modelo\nEl Toyota Etios surgió como una apuesta estratégica de la marca japonesa orientada firmemente a los mercados emergentes de la región, concebido desde sus bases para ofrecer un medio de transporte accesible, mecánicamente robusto y con un costo de mantenimiento sumamente contenido. Lejos de priorizar lujos superfluos o estéticas vanguardistas, el desarrollo del Etios puso el foco en la durabilidad a largo plazo, la funcionalidad cotidiana y una alta eficiencia operativa. En el mercado argentino, el modelo impactó fuertemente desde su arribo, logrando capturar la preferencia tanto de compradores particulares que buscaban su primer vehículo 0km confiable como de flotas comerciales, posicionándose de inmediato como uno de los pilares fundamentales en el volumen de ventas de Toyota dentro del competitivo segmento B.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la trayectoria comercial del Etios en Argentina se concretó en el año 2016, momento en el que recibió una profunda actualización estética y mecánica (conocida como facelift regional). En dicha renovación se introdujo el reputado motor de 1.5 litros equipado con el sistema Dual VVT-i de variación inteligente de válvulas, elevando la potencia hasta los 103 CV y optimizando notablemente la respuesta dinámica y el consumo de combustible. Asimismo, esta evolución marcó la incorporación de una esperada caja automática de 4 velocidades, mejoras sustanciales en la aislación acústica del habitáculo y un completo rediseño del instrumental, dotando al vehículo de una propuesta mucho más madura y adaptada a las exigencias del usuario moderno.\n\n## Curiosidades\nA pesar de haber sido blanco de críticas iniciales debido a ciertas soluciones de diseño interior sumamente espartanas —como la ubicación central del cuadro de instrumentos en sus primeras etapas—, el Toyota Etios se consolidó rápidamente como un auténtico fenómeno de culto gracias a su mecánica prácticamente indestructible. Es ampliamente recordado en el mercado de usados argentino por conservar un valor de reventa sobresaliente y por constituir la herramienta de trabajo predilecta de miles de taxistas y conductores de aplicaciones de movilidad urbana, quienes sometieron al conjunto motriz a pruebas extremas superando cientos de miles de kilómetros con un nivel de desgaste mínimo y una disponibilidad mecánica admirable.\n\n## Competencia y posicionamiento\nDentro de la franja más disputada del mercado automotriz argentino, el Toyota Etios debió enfrentar a contrincantes de peso histórico como el Volkswagen Gol, el Chevrolet Onix, el Fiat Argo y la familia Logan/Sandero de Renault. Mientras sus competidores apostaban con mayor velocidad por líneas de diseño vanguardistas o pantallas multimedia de gran tamaño, el Etios se aferró a los valores tradicionales de la racionalidad pura: ofreció un habitáculo y un baúl de dimensiones sumamente generosas para su tamaño compacto, respaldado por la sólida reputación de la postventa de la marca nipona y una confiabilidad estructural que marcó un referente en su categoría."
 }

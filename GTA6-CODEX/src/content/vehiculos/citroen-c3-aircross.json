@@ -13,16 +13,17 @@
   "manufacturer": "Citroën",
   "class": "SUV compacto",
   "customizable": false,
-  "power": "115 hp",
-  "price": "ARS 36.710.000 (versión VTi Live, entrada de gama)",
-  "consumo": "Aprox. 6.5 - 7.5 l/100km combinado",
+  "power": "115 CV",
+  "price": "ARS 36.710.000 (versión VTi Live, entrada de gama de referencia)",
+  "consumo": "Urbano: 10.5 l/100km, A 100 km/h: 7.2 l/100km, A 120 km/h: 8.7 l/100km",
   "dimensiones": "4.320 mm largo x 1.720 mm ancho x 1.640 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se corrigieron los datos genéricos previos adaptándolos a las especificaciones reales del Citroën C3 Aircross fabricado en el Mercosur con motor 1.6 VTi y opción de 7 asientos.",
+    "primarySource": "https://www.16valvulas.com.ar/prueba-citroen-c3-aircross-1-6-shine",
+    "note": "Se verificaron las especificaciones técnicas, potencias y capacidades utilizando datos de pruebas especializadas y portales oficiales regionales de la marca para el motor 1.6 VTi.",
     "limitations": [
-      "Los precios varían constantemente según la inflación y el mercado en Argentina.",
-      "Las cifras de consumo exactas dependen de las condiciones de manejo y la versión."
+      "Los precios varían constantemente debido a la inflación y la dinámica del mercado automotor en Argentina.",
+      "Los valores de consumo exactos dependen de las condiciones de manejo, el tránsito y la versión seleccionada."
     ]
   },
   "performance": {
@@ -30,14 +31,14 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-27T01:36:48.916Z",
-  "transmision": "Manual de 5 marchas o Automática CVT",
+  "updatedAt": "2026-08-27T02:46:51.768Z",
+  "transmision": "Manual de 5 marchas o Automática",
   "traccion": "Tracción delantera",
-  "peso": "1.200 - 1.250 kg",
-  "tipoMotor": "Nafta (Gasolina)",
+  "peso": "1.300 kg",
+  "tipoMotor": "Nafta 4 cilindros",
   "potenciaKW": "85 kW",
-  "capacidadTanque": "47 litros",
-  "tiempoRecorrido": "11.8s",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "No publicado oficialmente",
   "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
@@ -124,7 +125,7 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": "1.6 litros (Motor EC5)",
+  "cilindrada": "1.587 cm3",
   "emisiones": null,
   "tipo": null,
   "asientos": 7,
@@ -256,7 +257,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:36:48.916Z",
+    "lastChecked": "2026-08-27T02:46:51.768Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -310,5 +311,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Citroën C3 Aircross forma parte de la ambiciosa estrategia de la marca francesa (perteneciente al grupo Stellantis) para renovar su presencia en el segmento B de los mercados emergentes, especialmente en América Latina y la India. A diferencia de su homólogo europeo, el modelo desarrollado para el Mercosur prioriza la robustez, el espacio interior y una excelente relación precio-producto, adoptando una silueta de SUV compacto que responde directamente a las preferencias de las familias modernas de la región.\n\n## Un hito y generación relevante\nEl gran hito de esta segunda generación, fabricada en el Polo Industrial de Porto Real en Brasil, es la introducción de una configuración interior de hasta siete pasajeros en un vehículo de menos de 4,5 metros de largo. Para lograrlo, Citroën implementó una solución innovadora en el segmento: una tercera fila de asientos compuesta por dos plazas individuales que pueden ser abatidas o retiradas por completo de manera sencilla, maximizando la modularidad y versatilidad interior según las necesidades de carga o transporte.\n\n## Curiosidades\nUna de las características más destacadas del C3 Aircross regional es su enfoque en el confort de marcha, heredando la clásica tradición de la marca en ofrecer suspensiones mullidas capaces de absorber con solvencia las irregularidades típicas de las calles y rutas latinoamericanas. Además, su diseño exterior combina protectores plásticos en los pasarruedas y paragolpes con una altura libre al suelo generosa, lo que refuerza su estética aventurera sin descuidar la agilidad urbana.\n\n## Competencia y posicionamiento\nEn el mercado argentino y sudamericano, el Citroën C3 Aircross compite en un segmento altamente disputado de SUVs compactos y crossovers derivados de hatchbacks. Se enfrenta a modelos como el Chevrolet Spin (con el cual comparte la particularidad de ofrecer siete plazas), el Renault Duster, el Fiat Pulse y el Volkswagen Nivus. Su principal argumento de venta es posicionarse como una de las opciones más accesibles y espaciosas para familias numerosas que buscan la estética y funcionalidad de un SUV sin incurrir en los costos de vehículos de segmentos superiores."
+  "content": "## Historia del modelo\nEl Citroën C3 Aircross forma parte de la estrategia global de la marca del doble chevrón, perteneciente al grupo Stellantis, enfocada en renovar profundamente su presencia en el segmento B de los mercados emergentes, con especial énfasis en América Latina. A diferencia de las opciones desarrolladas para el mercado europeo, la arquitectura pensada para el Mercosur prioriza la robustez estructural, la optimización del espacio interior y una destacada relación precio-producto. Su silueta de SUV compacto responde de manera directa a las demandas y preferencias de las familias modernas de la región, que buscan versatilidad urbana y estética aventurera.\n\n## Un hito y generación relevante\nEl gran diferencial de esta segunda generación, fabricada en el Polo Industrial de Porto Real en Brasil, radica en la incorporación de una configuración de hasta siete plazas en un vehículo que se mantiene por debajo de los 4,5 metros de largo. Para alcanzar este hito sin resignar habitabilidad, la marca implementó una solución modular innovadora: una tercera fila compuesta por dos asientos individuales que pueden ser abatidos por completo o retirados de forma sencilla del habitáculo. Esto permite alternar con absoluta facilidad entre una capacidad de carga sobresaliente o el transporte de pasajeros adicionales según las necesidades del momento.\n\n## Curiosidades\nUna de las marcas registradas del C3 Aircross regional es su marcado enfoque en el confort de marcha. Heredando la tradicional escuela de Citroën, el esquema de suspensiones está calibrado para ofrecer un andar mullido y confortable, capaz de absorber con solvencia las irregularidades, cunetas y baches típicos de la infraestructura vial latinoamericana. Asimismo, su diseño exterior combina de manera equilibrada molduras de protección plásticas en los pasarruedas, paragolpes robustos y una generosa altura libre al suelo, realzando su personalidad aventurera sin descuidar la agilidad indispensable para el manejo diario en entornos urbanos congestionados.\n\n## Competencia y posicionamiento\nDentro del mercado automotor argentino y sudamericano, el Citroën C3 Aircross compite en un segmento altamente disputado de SUVs compactos y crossovers derivados de plataformas regionales. Se enfrenta de manera directa a contendientes como el Chevrolet Spin (con el que comparte la particularidad distintiva de ofrecer capacidad para siete pasajeros), el Renault Duster, el Fiat Pulse y el Volkswagen Nivus. Su principal argumento de venta radica en posicionarse como una de las alternativas más accesibles y espaciosas para familias numerosas que valoran la funcionalidad, la visibilidad elevada y el diseño exterior propio de un utilitario deportivo, evitando los costos de adquisición y mantenimiento de segmentos superiores."
 }

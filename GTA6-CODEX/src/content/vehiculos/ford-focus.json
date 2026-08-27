@@ -12,16 +12,18 @@
   "manufacturer": "Ford",
   "class": "Hatchback/Sedán",
   "customizable": false,
-  "power": "155 hp",
+  "power": "155 CV",
   "price": "EUR 26.000 (referencia última generación)",
   "consumo": "5.5 - 6.5 l/100km",
   "dimensiones": "4.378 mm largo x 1.825 mm ancho x 1.471 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificó la información general del Ford Focus MK4 y su inminente cese de producción en la planta de Saarlouis hacia finales de 2025. Los valores de dimensiones, baúl y motorización corresponden a la variante hatchback de última generación.",
+    "primarySource": "https://www.rmotion.es/ford-focus",
+    "secondarySource": "https://fr.scribd.com/document/423721446/Ficha-Tecnica-Ford-Focus-2-0-Titanium-Powershift",
+    "note": "Se verificó la motorización actual del Ford Focus MK4 basada en el bloque EcoBoost de tres cilindros con potencias de hasta 155 CV, así como las especificaciones generales y dimensiones de la variante hatchback.",
     "limitations": [
-      "El precio y consumo exactos varían según el mercado europeo específico y la motorización elegida (EcoBoost híbrida ligera o diésel).",
-      "Modelo discontinuado formalmente por Ford sin un reemplazo directo dentro de la categoría de turismos tradicionales."
+      "El precio exacto y las opciones de equipamiento varían según el mercado europeo específico.",
+      "El modelo ha finalizado su ciclo de producción formal en la planta de Saarlouis hacia finales de 2025."
     ]
   },
   "performance": {
@@ -29,11 +31,11 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:40:38.227Z",
+  "updatedAt": "2026-08-27T02:50:22.926Z",
   "transmision": "Manual de 6 velocidades o Automática de 7 marchas",
   "traccion": "Delantera",
   "peso": "1.350 - 1.450 kg",
-  "tipoMotor": "Gasolina EcoBoost / Diésel EcoBlue",
+  "tipoMotor": "Gasolina 1.0 EcoBoost / Diésel EcoBlue",
   "potenciaKW": "114 kW",
   "capacidadTanque": "52 litros",
   "tiempoRecorrido": "8.9s",
@@ -262,7 +264,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:40:38.227Z",
+    "lastChecked": "2026-08-27T02:50:22.926Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -316,5 +318,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Ford Focus nació a finales de la década de 1990 como el ambicioso reemplazo del histórico Ford Escort. Su desembarco en el mercado global marcó un antes y un después para la marca del óvalo azul gracias a la introducción del lenguaje de diseño \"New Edge\" y, sobre todo, a la revolucionaria suspensión trasera independiente Control Blade. Esta arquitectura le otorgó un dinamismo de conducción inusual para un vehículo de su segmento, convirtiéndolo instantáneamente en la referencia rutera y de agilidad frente a rivales tan consagrados como el Volkswagen Golf.\n\nA lo largo de sus cuatro generaciones, el Focus supo reinventarse, adaptándose a las exigencias tecnológicas y de seguridad de cada época. Desde las versiones deportivas ST y RS que cautivaron a los entusiastas de la velocidad, hasta las variantes más racionales orientadas a flotas y uso familiar, el compacto europeo demostró una versatilidad notable que lo catapultó al éxito en ventas tanto en el Viejo Continente como en diversos mercados internacionales.\n\n## Un hito o generación relevante\nLa cuarta generación (MK4), lanzada comercialmente en 2018, representó la cúspide evolutiva del modelo antes de su despedida del mercado. Construida sobre la plataforma modular C2, esta iteración incrementó notablemente la rigidez torsional y mejoró el espacio interior, incorporando además una completa renovación tecnológica con asistencias avanzadas a la conducción (ADAS), instrumentación digital y sistemas de conectividad de última generación. Asimismo, introdujo eficientes mecánicas microhíbridas (Mild-Hybrid de 48V) asociadas al motor EcoBoost de tres cilindros, buscando equilibrar el rendimiento dinámico con normativas de emisiones cada vez más restrictivas.\n\n## Curiosidades\nUna de las características más recordadas del Ford Focus fue su fuerte arraigo en el mundo del deporte motor, particularmente en el Campeonato Mundial de Rally (WRC), donde equipos oficiales y pilotos de la talla de Colin McRae y Marcus Grönholm llevaron al modelo a lo más alto del podio en múltiples ocasiones, forjando una sólida reputación de robustez y performance bajo condiciones extremas.\n\nAdemás, el Focus fue concebido desde su génesis como un vehículo verdaderamente global: el proyecto original unificó los desarrollos europeos y norteamericanos bajo una misma filosofía de ingeniería, aunque con configuraciones estéticas y mecánicas adaptadas a los gustos de cada región.\n\n## Competencia y posicionamiento\nEn el segmento de los compactos hatchback y sedanes medianos, el Ford Focus bregó siempre en una de las categorías más disputadas de la industria automotriz. Su competencia directa incluyó a pesos pesados como el Volkswagen Golf, el Opel Astra, el SEAT León y el Toyota Corolla. \n\nPosicionado como una alternativa generalista pero con claras aspiraciones dinámicas, el Focus destacó históricamente por ofrecer un tacto de dirección superior y un paso por curva sobresaliente. Sin embargo, los cambios drásticos en las preferencias de los consumidores globales —que volcaron masivamente su preferencia hacia los SUV y crossovers— determinaron el cese de su producción en la planta alemana de Saarlouis, cerrando un capítulo dorado en la historia de los hatchbacks europeos."
+  "content": "## Historia del modelo\nEl Ford Focus irrumpió a finales de los años 90 como el ambicioso sucesor del histórico Ford Escort. Su llegada al mercado global marcó un antes y un después para la marca del óvalo gracias a la introducción de la filosofía de diseño 'New Edge' y, sobre todo, a la revolucionaria suspensión trasera independiente Control Blade. Esta solución de ingeniería le otorgó un dinamismo de conducción inédito en su categoría, convirtiéndolo instantáneamente en la referencia rutera frente a rivales tan consagrados como el Volkswagen Golf.\n\nA lo largo de sus cuatro generaciones, el Focus supo adaptarse a las exigencias tecnológicas y de seguridad de cada época. Desde las emblemáticas versiones deportivas ST y RS que cautivaron a los entusiastas de la velocidad, hasta las variantes más racionales orientadas al uso familiar y a flotas, el compacto europeo demostró una versatilidad notable que cimentó su éxito comercial tanto en Europa como en diversos mercados internacionales.\n\n## Un hito o generación relevante\nLa cuarta generación (MK4), lanzada comercialmente en 2018, representó la cúspide evolutiva del modelo antes de su despedida definitiva. Desarrollada sobre la plataforma modular C2, esta iteración incrementó significativamente la rigidez torsional y mejoró el aprovechamiento del espacio interior. Además, incorporó una completa renovación tecnológica con asistencias avanzadas a la conducción (ADAS), instrumentación digital y eficientes mecánicas microhíbridas (Mild-Hybrid de 48V) asociadas al motor EcoBoost de tres cilindros, logrando equilibrar el rendimiento dinámico con normativas anticontaminación cada vez más estrictas.\n\n## Curiosidades\nUna de las facetas más recordadas del Ford Focus fue su exitoso paso por el deporte motor, particularmente en el Campeonato Mundial de Rally (WRC). Equipos oficiales y pilotos legendarios como Colin McRae y Marcus Grönholm llevaron al modelo a lo más alto del podio en múltiples ocasiones, forjando una sólida reputación de robustez bajo exigencias extremas.\n\nAsimismo, el Focus fue concebido desde sus orígenes como un producto verdaderamente global. El proyecto original unificó los desarrollos de ingeniería europeos y norteamericanos bajo una misma plataforma estructural, adaptando posteriormente detalles estéticos y mecánicos según los gustos de cada región.\n\n## Competencia y posicionamiento\nEn el segmento de los hatchbacks compactos y sedanes medianos, el Ford Focus compitió siempre en una de las categorías más disputadas de la industria. Su rivalidad directa incluyó a pesos pesados como el Volkswagen Golf, el Opel Astra, el SEAT León y el Toyota Corolla.\n\nPosicionado como un generalista con marcadas aspiraciones dinámicas, el Focus destacó históricamente por ofrecer un tacto de dirección superior y un paso por curva sobresaliente. Sin embargo, los cambios drásticos en las preferencias de los consumidores globales —que volcaron masivamente su demanda hacia los SUV y crossovers— determinaron el cese de su producción en la planta alemana de Saarlouis, cerrando un capítulo dorado para los turismos tradicionales de la marca."
 }

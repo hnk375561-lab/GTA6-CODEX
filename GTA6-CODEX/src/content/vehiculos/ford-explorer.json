@@ -18,10 +18,11 @@
   "dimensiones": "5.050 mm largo x 2.004 mm ancho x 1.778 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se actualizaron las especificaciones basándose en la sexta generación de la Ford Explorer para el mercado norteamericano, utilizando configuraciones de motor EcoBoost de 2.3 litros y transmisión automática de 10 velocidades.",
+    "secondarySource": "https://www.ford.pe/suvs/explorer",
+    "note": "Se verificaron las especificaciones técnicas principales de la sexta generación de la Ford Explorer, incluyendo la motorización EcoBoost de 2.3L y la transmisión automática de 10 velocidades a partir de fuentes oficiales de Ford. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
     "limitations": [
-      "Los precios varían según el mercado de exportación y los impuestos locales.",
-      "El consumo de combustible depende fuertemente de la motorización elegida (2.3L o 3.0L V6)."
+      "Los precios varían considerablemente según el mercado de exportación, aranceles e impuestos locales.",
+      "El consumo de combustible y la potencia exacta dependen de la elección entre el motor 2.3L EcoBoost o el V6 3.0L."
     ]
   },
   "performance": {
@@ -29,7 +30,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:40:06.112Z",
+  "updatedAt": "2026-08-27T02:49:41.607Z",
   "transmision": "Automática de 10 velocidades",
   "traccion": "Tracción trasera o integral (AWD)",
   "peso": "1.980 - 2.150 kg",
@@ -262,7 +263,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:40:06.112Z",
+    "lastChecked": "2026-08-27T02:49:41.607Z",
     "dataQuality": 0.85
   },
   "indexed": true,

@@ -18,7 +18,8 @@
   "dimensiones": "2.207 mm largo x 952 mm ancho x 1.430 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se actualizaron los datos técnicos de la BMW R 1250 GS utilizando las especificaciones oficiales de BMW Motorrad, incluyendo el motor bóxer de 1254 cc con tecnología ShiftCam, potencia de 136 hp, dimensiones y peso en orden de marcha.",
+    "secondarySource": "https://www.motofichas.com/marcas/bmw/r-1250-gs",
+    "note": "Se actualizaron los datos técnicos de la BMW R 1250 GS utilizando las especificaciones oficiales de BMW Motorrad y fuentes especializadas de la industria, incluyendo el motor bóxer de 1254 cc con tecnología ShiftCam, potencia de 136 hp, dimensiones y peso en orden de marcha.",
     "limitations": [
       "El precio es una referencia internacional y puede variar según los impuestos y aranceles de importación locales de cada mercado en Sudamérica."
     ]
@@ -28,7 +29,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:32:17.428Z",
+  "updatedAt": "2026-08-27T02:43:50.932Z",
   "transmision": "Manual de 6 velocidades con embrague multidisco en baño de aceite",
   "traccion": "Cardán",
   "peso": "249 kg (en orden de marcha, tanque lleno)",
@@ -258,7 +259,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:32:17.428Z",
+    "lastChecked": "2026-08-27T02:43:50.932Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -312,5 +313,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nLa BMW R 1250 GS representa uno de los hitos más importantes en la historia de las motocicletas de aventura a nivel global. Como heredera directa de la exitosa familia GS que comenzó a finales de los años 70 con la legendaria R 80 G/S, este modelo consolidó la supremacía de la marca alemana en el segmento maxitraid. La introducción de la R 1250 GS marcó un punto de inflexión tecnológico al reemplazar a la anterior R 1200 GS, incorporando mejoras sustanciales en su planta motriz para mantener el liderazgo frente a una competencia cada vez más aguerrida.\n\n## Un hito o generación relevante\nEl gran salto tecnológico de esta generación fue la incorporación de la tecnología de distribución variable **BMW ShiftCam**. Este sistema permite variar los tiempos de apertura de las válvulas y la alzada en el lado de admisión, logrando una entrega de par motor sumamente lineal y contundente tanto a bajas revoluciones como en la zona alta del tacómetro. Con una cilindrada de 1.254 cc, este motor bóxer bicilíndrico entrega una potencia de 136 hp y un torque generoso de 143 Nm, optimizando al mismo tiempo el consumo de combustible y reduciendo las emisiones contaminantes en comparación con su antecesora.\n\n## Curiosidades\nA pesar de su imponente porte y un peso en orden de marcha que ronda los 249 kg, la R 1250 GS es mundialmente reconocida por su notable agilidad dinámica. Esto se debe en gran parte a su esquema de suspensiones característico: el sistema **Telelever** en el tren delantero, que separa las funciones de dirección y amortiguación, eliminando el hundimiento excesivo al frenar con fuerza. Además, su tracción por cardán libre de mantenimiento y el centro de gravedad muy bajo, producto de la disposición horizontal de sus cilindros bóxer, la convierten en una herramienta sumamente equilibrada tanto para largos viajes en ruta como para travesías off-road exigentes.\n\n## Competencia y posicionamiento\nEn el segmento de las grandes maxi-trail, la BMW R 1250 GS se posiciona como el referente histórico y el modelo a vencer. Compite de manera directa contra pesos pesados de la industria como la Ducati Multistrada V4, la KTM 1290 Super Adventure, la Triumph Tiger 1200 y la Honda CRF1100L Africa Twin Adventure Sports. Su posicionamiento de mercado se sustenta en un estatus premium consolidado durante décadas, una red de soporte global muy sólida y un paquete tecnológico de vanguardia que incluye modos de conducción Pro, control de tracción dinámico (DTC), ABS Pro con asistencia en frenada en curva y una pantalla TFT color con conectividad total."
+  "content": "## Historia del modelo\nLa BMW R 1250 GS representa uno de los hitos más importantes en la historia de las motocicletas de aventura a nivel global. Como heredera directa de la exitosa familia GS que comenzó a finales de los años 70 con la legendaria R 80 G/S, este modelo consolidó la supremacía de la marca alemana en el segmento maxitraid. La introducción de la R 1250 GS marcó un punto de inflexión tecnológico al reemplazar a la anterior R 1200 GS, incorporando mejoras sustanciales en su planta motriz para mantener el liderazgo frente a una competencia cada vez más exigente en el mercado internacional.\n\n## Un hito o generación relevante\nEl gran salto tecnológico de esta generación fue la incorporación de la tecnología de distribución variable **BMW ShiftCam**. Este sistema innovador permite variar los tiempos de apertura de las válvulas y la alzada en el lado de admisión, logrando una entrega de par motor sumamente lineal y contundente tanto a bajas revoluciones como en la zona alta del tacómetro. Con una cilindrada de 1.254 cc, este motor bóxer bicilíndrico entrega una potencia de 136 hp y un torque generoso de 143 Nm, optimizando al mismo tiempo el consumo de combustible y reduciendo las emisiones contaminantes en comparación directa con su antecesora.\n\n## Curiosidades\nA pesar de su imponente porte y un peso en orden de marcha que ronda los 249 kg, la R 1250 GS es mundialmente reconocida por su notable agilidad dinámica. Esto se debe en gran parte a su esquema de suspensiones característico: el sistema **Telelever** en el tren delantero, que separa de manera eficiente las funciones de dirección y amortiguación, eliminando el hundimiento excesivo al frenar con fuerza. Además, su tracción por cardán libre de mantenimiento y el centro de gravedad muy bajo, producto de la disposición horizontal de sus cilindros bóxer, la convierten en una herramienta sumamente equilibrada tanto para largos viajes en ruta como para travesías off-road exigentes.\n\n## Competencia y posicionamiento\nEn el segmento de las grandes maxi-trail, la BMW R 1250 GS se posiciona de forma indiscutida como el referente histórico y el modelo a vencer. Compite de manera directa contra pesos pesados de la industria como la Ducati Multistrada V4, la KTM 1290 Super Adventure, la Triumph Tiger 1200 y la Honda CRF1100L Africa Twin Adventure Sports. Su posicionamiento de mercado se sustenta en un estatus premium consolidado durante décadas, una red de soporte global muy sólida y un paquete tecnológico de vanguardia que incluye modos de conducción avanzados, control de tracción dinámico (DTC), ABS Pro con asistencia en frenada en curva y una pantalla TFT color con conectividad total."
 }

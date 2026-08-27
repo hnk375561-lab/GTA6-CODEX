@@ -19,9 +19,10 @@
   "dimensiones": "5890 x 2029 x 1958 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas principales, cotizaciones de referencia para el mercado norteamericano y las motorizaciones EcoBoost de la decimocuarta generación de la Ford F-150.",
+    "secondarySource": "https://www.ford.cl/pickups/f-150/comparar-modelos",
+    "note": "Se verificaron las motorizaciones V6 EcoBoost y V8 (como el 5.0L Ti-VCT), la transmisión automática de 10 velocidades y las especificaciones generales para los mercados de Norteamérica y Sudamérica en base a portales oficiales de Ford. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
     "limitations": [
-      "Los precios varían considerablemente según el mercado de importación y los opcionales elegidos",
+      "Los precios varían considerablemente según el mercado de importación, aranceles aduaneros y los opcionales elegidos",
       "El consumo de combustible depende directamente de la motorización seleccionada (V6, V8 o híbrida PowerBoost)"
     ]
   },
@@ -30,7 +31,7 @@
     "acceleration": "0-100 km/h en 5.8s (V6 EcoBoost)"
   },
   "createdAt": "2026-08-23T21:59:03.178078Z",
-  "updatedAt": "2026-08-27T01:40:21.709Z",
+  "updatedAt": "2026-08-27T02:49:58.420Z",
   "transmision": "Automática de 10 velocidades",
   "traccion": "Tracción integral (4x4)",
   "peso": "2.100-2.450 kg",
@@ -264,7 +265,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:40:21.709Z",
+    "lastChecked": "2026-08-27T02:49:58.420Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -318,5 +319,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nLa Ford F-150 forma parte de la legendaria familia de pickups F-Series de Ford, una línea que ha sido la columna vertebral del mercado norteamericano de vehículos comerciales y particulares durante décadas. Nacida como una evolución lógica para cubrir el espacio entre las camionetas de trabajo liviano y pesado, la F-150 se transformó con el correr de los años en un auténtico fenómeno cultural y comercial, consolidándose de manera ininterrumpida como el vehículo más vendido en los Estados Unidos por más de cuatro décadas.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de la F-150 fue la introducción masiva de carrocerías de aleación de aluminio de alta resistencia sobre un chasis de acero reforzado de alta graduación, implementada a partir de la decimotercera generación. Esta jugada audaz permitió reducir drásticamente el peso total del vehículo sin comprometer su capacidad de carga ni su robustez estructural. Asimismo, la llegada de los motores EcoBoost con turbocompresor marcó un cambio de paradigma, demostrando que bloques de menor cilindrada podían entregar curvas de torque y potencia superiores a los tradicionales motores V8, optimizando al mismo tiempo la eficiencia general.\n\n## Curiosidades\nMás allá de su indiscutido enfoque utilitario, la F-150 se ha convertido en una auténtica plataforma de innovación tecnológica para el óvalo azul. Entre sus particularidades más destacadas se encuentra el sistema Pro Power Onboard, un generador eléctrico integrado que permite extraer energía directamente de la batería o el motor de la camioneta para alimentar herramientas eléctricas, electrodomésticos o incluso una casa rodante durante un corte de luz. Además, versiones recientes han incorporado variantes totalmente eléctricas (Lightning) y mecánicas híbridas enchufables que redefinen el concepto de la fuerza bruta aplicada al transporte diario.\n\n## Competencia y posicionamiento\nEn el segmento de las pickups full-size, la Ford F-150 compite mano a mano con históricos rivales norteamericanos como la Chevrolet Silverado y la RAM 1500, además de enfrentarse a la creciente presión de fabricantes extranjeros en mercados globales. Su posicionamiento dentro del mercado se sustenta en una gama sumamente versátil que va desde configuraciones puramente laborales de flota hasta opulentas versiones tope de gama (como las líneas Platinum o Limited) que rozan el lujo de un sedán ejecutivo. Esta capacidad de adaptarse tanto al barro de un yacimiento petrolero como al asfalto urbano más exigente es la clave principal de su vigencia y liderazgo global."
+  "content": "## Historia del modelo\nLa Ford F-150 forma parte de la legendaria familia de pickups F-Series de Ford, una línea que ha sido la columna vertebral del mercado norteamericano de vehículos comerciales y particulares durante décadas. Nacida como una evolución lógica para cubrir el espacio entre las camionetas de trabajo liviano y pesado, la F-150 se transformó con el correr de los años en un auténtico fenómeno cultural y comercial, consolidándose de manera ininterrumpida como el vehículo más vendido en los Estados Unidos por más de cuatro décadas. Su capacidad para reinventarse generación tras generación le ha permitido mantenerse siempre a la vanguardia frente a las demandas cambiantes de los usuarios.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de la F-150 fue la introducción masiva de carrocerías de aleación de aluminio de alta resistencia sobre un chasis de acero reforzado de alta graduación, implementada a partir de la decimotercera generación y perfeccionada en la actual. Esta jugada audaz permitió reducir drásticamente el peso total del vehículo sin comprometer su capacidad de carga ni su robustez estructural. Asimismo, la llegada de los motores EcoBoost con turbocompresor y las variantes híbridas marcan un cambio de paradigma, demostrando que la potencia y el torque descomunales pueden convivir con una mayor eficiencia general y la mejor capacidad de remolque de su clase.\n\n## Curiosidades\nMás allá de su indiscutido enfoque utilitario, la F-150 se ha convertido en una auténtica plataforma de innovación tecnológica para el óvalo azul. Entre sus particularidades más destacadas se encuentra el sistema Pro Power Onboard, un generador eléctrico integrado que permite extraer energía directamente de la batería o el motor de la camioneta para alimentar herramientas eléctricas, electrodomésticos de camping o incluso una casa rodante durante un corte de luz. Además, versiones recientes han incorporado mecánicas híbridas y eléctricas que redefinen por completo el concepto de la fuerza bruta aplicada al transporte diario y recreativo.\n\n## Competencia y posicionamiento\nEn el segmento de las pickups full-size, la Ford F-150 compite mano a mano con históricos rivales norteamericanos como la Chevrolet Silverado y la RAM 1500, además de enfrentarse a la creciente presión de fabricantes extranjeros en mercados globales. Su posicionamiento dentro del mercado se sustenta en una gama sumamente versátil que va desde configuraciones puramente laborales de flota hasta opulentas versiones tope de gama que rozan el lujo de un sedán ejecutivo. Esta capacidad de adaptarse tanto al terreno más exigente de un yacimiento o campo como al asfalto urbano es la clave principal de su vigencia y liderazgo global indiscutido."
 }

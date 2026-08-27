@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:32.112Z",
-  "updatedAt": "2026-08-27T01:30:45.520Z",
+  "updatedAt": "2026-08-27T02:43:11.419Z",
   "manufacturer": "Audi",
   "class": "SUV premium compacta",
   "customizable": false,
@@ -21,10 +21,12 @@
     "acceleration": "Media-Alta (0-100 km/h en 8.9s)"
   },
   "power": "150 hp (110 kW)",
-  "price": "USD 55.000 (referencia mercado regional)",
+  "price": "USD 55.000 (referencia mercado regional, sujeto a variantes y aranceles locales)",
   "evidence": {
     "level": "respaldado",
-    "note": "Se utilizaron especificaciones técnicas oficiales de la marca para la motorización base 35 TFSI y dimensiones de la segunda generación.",
+    "primarySource": "https://www.mcondepremium.com/audi-q3",
+    "secondarySource": "https://www.carwow.es/audi/q3/caracteristicas-tecnicas",
+    "note": "Se verificaron las especificaciones técnicas del motor base 35 TFSI de 110 kW (150 CV) y las dimensiones generales del modelo a partir de fuentes oficiales y especializadas.",
     "limitations": [
       "Los precios varían según los mercados de Latinoamérica y los impuestos locales vigentes.",
       "Algunas opciones de equipamiento y motorizaciones varían según el país de destino."
@@ -267,7 +269,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:30:45.520Z",
+    "lastChecked": "2026-08-27T02:43:11.419Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -321,5 +323,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Audi Q3 se ha consolidado como uno de los pilares fundamentales dentro de la estrategia global de SUVs de la firma de Ingolstadt. Introducido originalmente al mercado internacional a principios de la década pasada, este SUV compacto nació con la premisa de trasladar los atributos de refinamiento, tecnología y estatus propios de los sedanes y coupés más grandes de la marca a un formato más versátil y urbano. A lo largo de su trayectoria comercial, el Q3 captó la atención de un público joven y dinámico que buscaba una posición de manejo elevada sin resignar la agilidad necesaria para el uso diario en las grandes ciudades.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante en la historia reciente del modelo se produjo con la llegada de su segunda generación en 2018. Este cambio generacional no solo representó una renovación estética profunda, adoptando el lenguaje de diseño más anguloso y agresivo de la familia Q, sino que también implicó un salto cuantitativo y cualitativo en términos de habitabilidad y arquitectura digital. Basado en la plataforma modular MQB del Grupo Volkswagen, el vehículo creció considerablemente en dimensiones respecto a su antecesor, mejorando el espacio para las piernas en las plazas traseras y ofreciendo una capacidad de baúl líder en su categoría. Asimismo, la cabina incorporó el concepto de puestos de conducción totalmente digitalizados, destacando el sistema MMI touch response y el reconocido Audi virtual cockpit.\n\n## Curiosidades\nUna de las características más interesantes del Audi Q3 es cómo logró democratizar tecnologías que antes estaban reservadas exclusivamente para los segmentos de lujo superior. Por ejemplo, su sistema de asientos traseros deslizantes y reclinables permite modular el espacio interior priorizando el confort de los pasajeros o la capacidad de carga según la necesidad del momento. Además, a nivel de ingeniería de producción, este modelo se ha fabricado en plantas estratégicas alrededor del mundo, adaptándose a las demandas específicas de mercados tan diversos como Europa, China y América Latina. En ciertos mercados internacionales, la gama también ha incorporado variantes híbridas enchufables (TFSIe), demostrando la capacidad de la plataforma para albergar tecnologías de electrificación sin sacrificar la dinámica de conducción.\n\n## Competencia y posicionamiento\nEn el segmento de los SUV premium compactos, el Audi Q3 compite mano a mano con exponentes de gran peso en la industria automotriz global, tales como el BMW X1 y el Mercedes-Benz GLA. Frente a ellos, el modelo de los cuatro anillos se posiciona fuertemente gracias a una propuesta equilibrada que destaca por la calidad percibida de sus materiales interiores, la precisión de su dirección asistida y un comportamiento dinámico refinado tanto en autopistas como en caminos sinuosos. Su propuesta tecnológica y su imagen de marca consolidada lo convierten en una de las opciones más elegidas por quienes buscan dar el salto al segmento de lujo compacto."
+  "content": "## Historia del modelo\nEl Audi Q3 se ha consolidado como un pilar fundamental dentro de la estrategia global de SUVs de la marca de Ingolstadt. Introducido originalmente a principios de la década pasada, este SUV compacto nació con la premisa de trasladar los atributos de refinamiento, tecnología y estatus propios de los sedanes y coupés más grandes de la firma a un formato más versátil y urbano. A lo largo de su trayectoria comercial, el Q3 captó rápidamente la atención de un público dinámico que buscaba una posición de manejo elevada sin resignar la agilidad necesaria para el uso diario en las grandes ciudades.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante en la historia reciente del modelo se produjo con la llegada de su segunda generación a partir de 2018. Este cambio generacional no solo representó una renovación estética profunda, adoptando el lenguaje de diseño más anguloso y robusto de la familia Q, sino que también implicó un salto cuantitativo y cualitativo en términos de habitabilidad y arquitectura digital. Basado en la plataforma modular MQB del Grupo Volkswagen, el vehículo creció considerablemente en dimensiones respecto a su antecesor, mejorando de manera notable el espacio para las piernas en las plazas traseras y ofreciendo una gran capacidad de baúl. Asimismo, la cabina incorporó el concepto de puestos de conducción totalmente digitalizados, destacando el sistema MMI touch y el reconocido Audi virtual cockpit.\n\n## Curiosidades\nUna de las características más interesantes del Audi Q3 es cómo logró democratizar soluciones que antes estaban reservadas exclusivamente para segmentos de lujo superior. Por ejemplo, su sistema de asientos traseros deslizantes y reclinables permite modular el espacio interior priorizando el confort de los pasajeros o la capacidad de carga según la necesidad del momento. Además, a nivel de ingeniería, este modelo se ha fabricado en plantas estratégicas alrededor del mundo, adaptándose a las demandas específicas de mercados muy diversos. En ciertos mercados internacionales, la gama también ha incorporado variantes mecánicas electrificadas, demostrando la versatilidad de su plataforma.\n\n## Competencia y posicionamiento\nEn el competitivo segmento de los SUV premium compactos, el Audi Q3 compite mano a mano con exponentes de gran peso en la industria automotriz global, tales como el BMW X1 y el Mercedes-Benz GLA. Frente a ellos, el modelo de los cuatro anillos se posiciona fuertemente gracias a una propuesta equilibrada que destaca por la calidad percibida de sus materiales interiores, la precisión de su dirección asistida y un comportamiento dinámico refinado tanto en autopistas como en caminos sinuosos. Su propuesta tecnológica y su marcada identidad de marca lo convierten en una de las opciones predilectas para quienes buscan dar el salto al segmento de lujo compacto."
 }

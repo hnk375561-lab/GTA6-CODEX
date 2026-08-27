@@ -18,9 +18,11 @@
   "dimensiones": "4.433 mm largo x 1.843 mm ancho x 1.656 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se actualizaron las especificaciones basándose en la tercera generación del Mini Countryman (plataforma U25), estandarizando dimensiones, capacidades y motorizaciones de referencia global.",
+    "primarySource": "https://www.caranddriver.com/es/coches/novedades/a43136120/mini-countryman-2024",
+    "secondarySource": "https://www.carwow.es/mini/countryman/caracteristicas-tecnicas",
+    "note": "Se verificaron las dimensiones exactas (longitud de 4,43 m, anchura de 1,84 m y altura de 1,65 m) y la capacidad del baúl de 460 litros basándose en la tercera generación del Mini Countryman (plataforma U25).",
     "limitations": [
-      "El precio puede variar según los impuestos y aranceles específicos de cada mercado de importación."
+      "El precio y las especificaciones exactas pueden variar según los impuestos, aranceles y paquetes de equipamiento de cada mercado de importación."
     ]
   },
   "performance": {
@@ -28,7 +30,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-27T01:52:42.197Z",
+  "updatedAt": "2026-08-27T03:00:02.201Z",
   "transmision": "Automática de doble embrague",
   "traccion": "Tracción integral ALL4",
   "peso": "1.670 kg",
@@ -206,7 +208,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:52:42.197Z",
+    "lastChecked": "2026-08-27T03:00:02.201Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -225,5 +227,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Mini Countryman irrumpió en el mercado automotriz para redefinir lo que los conductores esperaban de la marca británica propiedad de BMW. Históricamente conocida por fabricar vehículos urbanos ultracompactos, la firma dio un golpe de timón al presentar en 2010 un SUV que combinaba la estética retro y el manejo ágil característico de Mini con una carrocería sobreelevada de cuatro puertas y mayor espacio interior. Con el paso de los años, el Countryman dejó de ser una rareza dentro del catálogo para convertirse en uno de los pilares comerciales más importantes de la marca a nivel global.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la historia del modelo llegó con la introducción de su tercera generación (conocida bajo el código interno U25). Este salto generacional no solo incrementó de manera notable las dimensiones exteriores —superando holgadamente los 4.4 metros de largo—, sino que también marcó una evolución estética hacia líneas más robustas, geométricas y minimalistas. Además, esta iteración consolidó la apuesta tecnológica y de electrificación, ofreciendo variantes completamente eléctricas (E y SE ALL4) junto con eficientes opciones de combustión interna equipadas con tecnología Mild Hybrid de 48V, adaptándose así a las exigencias medioambientales más estrictas sin perder el ADN dinámico.\n\n## Curiosidades\nA pesar de ser el vehículo más grande y pesado fabricado por Mini en toda su historia, los ingenieros de la marca se esmeraron por mantener el famoso tacto de conducción estilo *go-kart*. Esto se logra gracias a una puesta a punto de suspensión específica, un centro de gravedad cuidadosamente estudiado y sistemas de tracción integral inteligente como el ALL4. Otro dato destacado es su interior, donde se prescindió del tradicional instrumental tras el volante en las versiones más modernas para concentrar toda la información en una llamativa pantalla OLED central circular, un guiño directo al diseño del Mini clásico de 1959 pero llevado al extremo de la digitalización.\n\n## Competencia y posicionamiento\nDentro del mercado global, el Mini Countryman se posiciona firmemente en el segmento de los SUV compactos de carácter premium. Compite mano a mano contra exponentes consagrados de la industria alemana como el BMW X1 (con el cual comparte plataforma y arquitectura mecánica), el Audi Q3 y el Mercedes-Benz GLA. Sin embargo, el Countryman logra diferenciarse de sus rivales directos gracias a una propuesta estética mucho más personalizable, juvenil y desenfadada, apuntando a un público que valora la distinción y el estilo de vida activo por encima de la sobriedad tradicional de los todocaminos compactos alemanes."
+  "content": "## Historia del modelo\nEl Mini Countryman marcó un antes y un después en la estrategia comercial de la icónica marca británica, perteneciente al grupo BMW. Históricamente reconocida por sus vehículos urbanos ultracompactos, la firma dio un giro radical al presentar en 2010 un SUV que combinaba la estética retro y el dinamismo característico de Mini con una carrocería sobreelevada de cuatro puertas y una habitabilidad muy superior. Con el correr de los años, este todocamino dejó de ser una apuesta de nicho para consolidarse como uno de los pilares fundamentales en las ventas globales de la compañía.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante en la trayectoria del modelo se materializó con la llegada de su tercera generación (bajo el código interno U25). Esta evolución no sólo incrementó de manera notable las dimensiones exteriores —superando los 4,43 metros de largo y ofreciendo un baúl de 460 litros—, sino que también propuso un diseño exterior mucho más robusto, minimalista y de líneas limpias. Asimismo, esta etapa marcó la consolidación definitiva de la electrificación en la gama, incorporando variantes completamente eléctricas y opciones de combustión con tecnología Mild Hybrid de 48V, adaptándose a las normativas ambientales más estrictas sin resignar el espíritu divertido al volante.\n\n## Curiosidades\nA pesar de ser el vehículo más grande y pesado fabricado por Mini en toda su historia, los ingenieros lograron preservar el característico comportamiento dinámico estilo go-kart. Esto se consigue gracias a una calibración específica de la dirección, esquemas de suspensión elaborados y sistemas de tracción integral como el ALL4. Otro detalle vanguardista en el habitáculo de las versiones más modernas es la ausencia de un cuadro de instrumentos tradicional tras el volante, reemplazado por una llamativa pantalla OLED circular en la consola central que rinde homenaje al diseño del Mini clásico de 1959 adaptado a la era digital.\n\n## Competencia y posicionamiento\nEn el mercado automotriz actual, el Mini Countryman se ubica de lleno en el segmento de los SUV compactos de perfil premium. Sus rivales directos son referentes alemanes de peso como el BMW X1 (con el que comparte arquitectura), el Audi Q3 y el Mercedes-Benz GLA. No obstante, el Countryman logra diferenciarse con soltura gracias a una propuesta estética sumamente personalizada, juvenil y de estilo de vida activo, dirigida a compradores que priorizan la exclusividad y el diseño por encima de la sobriedad tradicional de los competidores germanos."
 }
