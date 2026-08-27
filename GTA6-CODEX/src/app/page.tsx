@@ -427,7 +427,11 @@ export default async function HomePage() {
                     hoverable
                     className="relative flex h-full flex-col overflow-hidden !p-0 text-center"
                   >
-                    <ParallaxElement factor={0.2} className="relative aspect-[4/3] w-full shrink-0 overflow-hidden">
+                    <ParallaxElement
+                      factor={0.2}
+                      scaleFactor={0.14}
+                      className="relative aspect-[4/3] w-full shrink-0 overflow-hidden"
+                    >
                       <CategoryCardMedia previews={categoryPreviews[type]} />
                       <div className="category-icon-badge absolute left-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-lg text-auto-accent">
                         <CategoryIcon type={type} className="h-5 w-5" />

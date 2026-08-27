@@ -17,6 +17,18 @@ import { useEffect, useRef, ReactNode } from 'react'
 
 interface UseParallaxOptions {
   factor?: number
+  /**
+   * Capítulo 2.3 — Profundidad por escala.
+   * Además del translateY de siempre, permite que el elemento "respire"
+   * (crezca sutilmente) a medida que atraviesa el viewport, publicando
+   * --parallax-scale (1 .. 1+scaleFactor) junto a --parallax-offset. Es
+   * el mismo scrollProgress ya calculado, sin costo extra: el cover de
+   * una card o el fondo del hero ganan sensación de cámara acercándose
+   * en vez de solo desplazarse — el detalle que distingue un scroll con
+   * profundidad real de uno que solo translada capas planas.
+   * 0 (default) = comportamiento previo, sin escala.
+   */
+  scaleFactor?: number
   respectReducedMotion?: boolean
 }
 
@@ -24,7 +36,7 @@ export function useParallax<T extends HTMLElement>(
   ref: React.RefObject<T | null>,
   options: UseParallaxOptions = {}
 ) {
-  const { factor = 0.15, respectReducedMotion = true } = options
+  const { factor = 0.15, scaleFactor = 0, respectReducedMotion = true } = options
 
   useEffect(() => {
     const element = ref.current
@@ -83,6 +95,17 @@ export function useParallax<T extends HTMLElement>(
 
       const offset = scrollProgress * factor * phaseDamping * windowHeight * -1
       element.style.setProperty('--parallax-offset', `${offset}px`)
+
+      // Curva simétrica: 0 en los bordes del recorrido (elemento recién
+      // entrando o por salir), pico en el centro (1) — así el "acercamiento"
+      // se siente como que la cámara pasa CERCA del elemento y sigue de
+      // largo, no como un zoom que solo crece sin techo hasta el final.
+      if (scaleFactor > 0) {
+        const centerDistance = Math.abs(scrollProgress - 0.5) * 2 // 0 en el centro, 1 en los bordes
+        const proximity = 1 - Math.min(1, centerDistance)
+        const scale = 1 + proximity * scaleFactor * phaseDamping
+        element.style.setProperty('--parallax-scale', scale.toFixed(4))
+      }
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -93,12 +116,14 @@ export function useParallax<T extends HTMLElement>(
       observer.disconnect()
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [factor, respectReducedMotion])
+  }, [factor, scaleFactor, respectReducedMotion])
 }
 
 interface ParallaxElementProps {
   children: ReactNode
   factor?: number
+  /** Ver `UseParallaxOptions.scaleFactor`. 0 = sin escala (default). */
+  scaleFactor?: number
   className?: string
   respectReducedMotion?: boolean
 }
@@ -106,19 +131,22 @@ interface ParallaxElementProps {
 export function ParallaxElement({
   children,
   factor = 0.15,
+  scaleFactor = 0,
   className = '',
   respectReducedMotion = true,
 }: ParallaxElementProps) {
   const ref = useRef<HTMLDivElement>(null)
-  useParallax(ref, { factor, respectReducedMotion })
+  useParallax(ref, { factor, scaleFactor, respectReducedMotion })
 
   return (
     <div
       ref={ref}
       className={className}
       style={{
-        transform: 'translateY(var(--parallax-offset, 0px))',
+        transform:
+          'translateY(var(--parallax-offset, 0px)) scale(var(--parallax-scale, 1))',
         transition: 'transform 0.1s ease-out',
+        willChange: 'transform',
       }}
     >
       {children}
