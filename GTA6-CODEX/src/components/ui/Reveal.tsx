@@ -7,8 +7,10 @@ interface RevealProps {
   className?: string
   /** Retraso en ms aplicado cuando el elemento entra en pantalla */
   delay?: number
-  /** Dirección de entrada */
-  direction?: 'up' | 'left' | 'right' | 'zoom'
+  /** Dirección de entrada. 'curtain' = cortina en clip-path (ver globals.css),
+   *  para secciones donde se quiere un reveal más cinematográfico que el
+   *  fade+slide de las demás direcciones. */
+  direction?: 'up' | 'left' | 'right' | 'zoom' | 'curtain'
   /** Si es true, la animación se repite cada vez que reingresa al viewport */
   once?: boolean
 }

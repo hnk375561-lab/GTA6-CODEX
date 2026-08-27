@@ -387,7 +387,7 @@ export default async function HomePage() {
       {countdownTargets.length > 0 && (
         <SceneSection sceneId="home-countdown" htmlId="countdown" className="border-b border-auto-border py-16 sm:py-20">
           <div className="container-max">
-            <Reveal className="mx-auto mb-10 max-w-2xl text-center">
+            <Reveal className="mx-auto mb-10 max-w-2xl text-center" direction="curtain">
               <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                 Cuenta regresiva
               </p>
@@ -405,7 +405,7 @@ export default async function HomePage() {
       {/* Categorías */}
       <SceneSection sceneId="home-categories" className="border-b border-auto-border py-16 sm:py-20">
         <div className="container-max">
-          <Reveal className="mb-10 text-center">
+          <Reveal className="mb-10 text-center" direction="curtain">
             <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
               Categorías
             </p>
@@ -486,7 +486,7 @@ export default async function HomePage() {
       {featured.length > 0 && (
         <SceneSection sceneId="home-featured" className="py-16 sm:py-20">
           <div className="container-max">
-            <Reveal className="mb-10 flex items-end justify-between gap-4">
+            <Reveal className="mb-10 flex items-end justify-between gap-4" direction="curtain">
               <div>
                 <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                   Destacados
@@ -527,7 +527,7 @@ export default async function HomePage() {
       {timelineEvents.length > 0 && (
         <SceneSection sceneId="home-timeline" className="border-t border-auto-border py-16 sm:py-20">
           <div className="container-max">
-            <Reveal className="mx-auto mb-12 max-w-2xl text-center">
+            <Reveal className="mx-auto mb-12 max-w-2xl text-center" direction="curtain">
               <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                 Cronología
               </p>
@@ -549,7 +549,7 @@ export default async function HomePage() {
       {/* Cómo verificamos */}
       <SceneSection sceneId="home-evidence" className="border-t border-auto-border py-16 sm:py-20">
         <div className="container-max">
-          <Reveal className="mx-auto mb-10 max-w-2xl text-center">
+          <Reveal className="mx-auto mb-10 max-w-2xl text-center" direction="curtain">
             <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
               Metodología
             </p>
@@ -585,7 +585,7 @@ export default async function HomePage() {
       {latestNews.length > 0 && (
         <SceneSection sceneId="home-news" className="border-t border-auto-border py-16 sm:py-20">
           <div className="container-max">
-            <Reveal className="mb-10 flex items-end justify-between gap-4">
+            <Reveal className="mb-10 flex items-end justify-between gap-4" direction="curtain">
               <div>
                 <p className="eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                   Últimas noticias

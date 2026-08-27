@@ -458,6 +458,27 @@ a:hover .logo-mark {
   transform: scale(0.85);
 }
 
+/* --- Cortina (data-dir='curtain') -----------------------------------
+   En vez de fade+slide, revela el contenido con un clip-path que se
+   abre de abajo hacia arriba — el efecto "cortina" que separa un
+   scroll con secciones que solo aparecen de uno donde cada sección se
+   presenta como una escena nueva (el criterio que usa la referencia de
+   VI entre bloques grandes de contenido). Usa las mismas transiciones
+   base de `.reveal` (opacity + delay), solo cambia qué propiedad anima
+   el movimiento: clip-path en vez de transform, así que no compite con
+   ningún translate/scale que ya tenga el elemento por otro lado. */
+.reveal[data-dir='curtain'] {
+  transform: none;
+  clip-path: inset(0 0 100% 0);
+  transition: opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    clip-path 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal[data-dir='curtain'].reveal-visible {
+  clip-path: inset(0 0 0% 0);
+}
+
 .reveal.reveal-visible {
   opacity: 1;
   transform: translateY(0) translateX(0) scale(1);
@@ -559,6 +580,7 @@ a:hover .logo-mark {
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
+    clip-path: none !important;
   }
 
   /* --- Detiene toda animación infinita/ambiental del sitio ---
