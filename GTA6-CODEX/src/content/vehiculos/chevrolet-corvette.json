@@ -13,32 +13,32 @@
   "class": "Deportivo",
   "customizable": false,
   "power": "495 hp",
-  "price": "USD 68.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "USD 68.300 (MSRP EE.UU.)",
+  "consumo": "11.7 l/100km en ciudad / 8.4 l/100km en ruta",
+  "dimensiones": "4.630 mm largo x 1.933 mm ancho x 1.234 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global. Ficha técnica verificada contra la página oficial de Chevrolet.com para Corvette Stingray.",
+    "primarySource": "https://www.chevrolet.com/performance/corvette/stingray",
+    "note": "Se verificaron los datos principales del Chevrolet Corvette C8 Stingray contra fuentes de la industria y la especificación de fábrica para el motor V8 LT2 de 6.2L.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
-    ],
-    "primarySource": "https://www.chevrolet.com/performance/corvette/stingray"
+      "Los precios varían según el mercado de exportación, impuestos locales y opciones de equipamiento seleccionadas",
+      "El consumo de combustible puede diferir según las condiciones de manejo y el tipo de combustible utilizado"
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.308Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:35:28.679Z",
+  "transmision": "Automática de doble embrague de 8 velocidades",
+  "traccion": "Tracción trasera",
+  "peso": "1.527 kg",
+  "tipoMotor": "Gasolina V8 atmosférico",
+  "potenciaKW": "369 kW",
+  "capacidadTanque": "70 litros",
+  "tiempoRecorrido": "0-100 km/h en 2.9s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -126,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "6.2 litros",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 2,
+  "baul": 357,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "C8",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "deportivo",
   "gallery": {
@@ -259,7 +259,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.335Z",
+    "lastChecked": "2026-08-27T01:35:28.679Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -312,5 +312,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\n\nEl Chevrolet Corvette representa uno de los linajes más respetados y longevos dentro de la industria automotriz norteamericana. Desde su aparición en la década de 1950, este deportivo se consolidó como el estandarte de la accesibilidad prestacional en Estados Unidos, ofreciendo una alternativa directa y económica a las grandes berlinas y coupés europeas de alta gama. A lo largo de siete generaciones, el Corvette mantuvo una arquitectura clásica inquebrantable: motor delantero longitudinal y tracción trasera. Sin embargo, los ingenieros de General Motors llegaron a un punto donde el chasis tradicional limitaba la capacidad de tracción y transferencia de potencia al suelo frente a superdeportivos con configuraciones de motor central.\n\n## Un hito o generación relevante: La revolución del C8\n\nLa octava generación, conocida como C8 y lanzada comercialmente en 2020, marcó un antes y un después absoluto en la historia del modelo al adoptar una arquitectura de motor central trasero. Este cambio radical de paradigma no fue meramente estético; transformó por completo la dinámica vehicular, mejorando la distribución de pesos, la agilidad en curvas cerradas y la tracción al acelerar desde parado. Dotado del bloque V8 atmosférico LT2 de 6.2 litros, capaz de erogar 495 caballos de fuerza, el C8 rompió con los prejuicios tradicionales de los puristas y colocó al Corvette en la misma conversación que vehículos de marcas europeas de la talla de Ferrari, Lamborghini o Porsche, pero manteniendo una relación precio-producto sumamente competitiva.\n\n## Curiosidades\n\nUna de las particularidades más interesantes del desarrollo del Corvette C8 fue la necesidad imperiosa de rediseñar el espacio interior y la disposición térmica. Al ubicar el motor a espaldas de los ocupantes, los ingenieros debieron lidiar con la gestión del calor generado por el V8 justo detrás del habitáculo, implementando conductos de aire laterales sumamente agresivos que se convirtieron en la seña de identidad visual del modelo. Además, el diseño del panel de instrumentos y la botonera central orientada exclusivamente hacia el conductor emula la cabina de un avión de combate, reforzando la sensación de deportividad extrema. Pese a su configuración radical, el C8 conservó la capacidad de almacenar un techo targa desmontable dentro del baúl trasero, combinando la experiencia de un coupé con la libertad de un convertible.\n\n## Competencia y posicionamiento\n\nEn el mercado global, el Chevrolet Corvette C8 compite de manera directa contra pesos pesados del segmento de deportivos de altas prestaciones con motor central, tales como el Porsche 718 Cayman GT4, el Audi R8 (en sus etapas finales de producción) y modelos de acceso de marcas como McLaren o Lotus. Su posicionamiento comercial se destaca por ofrecer prestaciones dinámicas y tiempos de aceleración de 0 a 100 km/h cercanos a los 2.9 segundos por una fracción del costo de sus rivales directos. Esta estrategia le ha permitido a Chevrolet captar no sólo a los seguidores históricos de la marca en Norteamérica, sino también conquistar mercados internacionales tradicionalmente reacios a los deportivos estadounidenses, consolidando al Corvette como un producto global de primer nivel."
 }

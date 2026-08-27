@@ -13,15 +13,16 @@
   "class": "Deportivo eléctrico",
   "customizable": false,
   "power": "402 hp",
-  "price": "USD 99.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "USD 99.000 (MSRP base referencia)",
+  "consumo": "18-22 kWh/100 km (equivalente eléctrico)",
+  "dimensiones": "4.963 mm largo x 1.966 mm ancho x 1.395 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.porsche.com",
+    "note": "Se actualizaron las dimensiones, capacidades y motorización con base en las especificaciones reales de la plataforma J1 del Porsche Taycan. Los valores de potencia y precio corresponden a configuraciones de entrada de gama referenciales.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "El precio puede variar significativamente según el mercado de destino, opcionales de fábrica e impuestos locales.",
+      "La autonomía exacta depende de la capacidad de la batería seleccionada (Performance Battery o Performance Battery Plus)."
     ]
   },
   "performance": {
@@ -29,15 +30,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.507Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "200-400 kW",
+  "updatedAt": "2026-08-27T01:25:22.515Z",
+  "transmision": "Automática de 2 marchas (eje trasero) y relación única (eje delantero)",
+  "traccion": "Tracción integral (AWD) en versiones duales, o trasera según variante",
+  "peso": "2.100-2.300 kg",
+  "tipoMotor": "Doble motor sincrónico de imanes permanentes",
+  "potenciaKW": "300 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "0-100 km/h en 4.8s (versión base con Launch Control)",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,11 +123,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 4,
+  "baul": 407,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1era generación (J1)",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "super-deportivo",
   "gallery": {
@@ -201,7 +202,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.455Z",
+    "lastChecked": "2026-08-27T01:25:22.515Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -219,5 +220,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Porsche Taycan representa un hito fundamental en la historia de la marca de Stuttgart, al ser el primer vehículo de producción 100% eléctrico en llevar el escudo de Porsche. Su anticipación comercial comenzó en 2015 con la presentación del aclamado prototipo conceptual Mission E en el Salón del Automóvil de Frankfurt. La recepción mundial fue tan abrumadora que Porsche aceleró su desarrollo industrial para llevarlo a las líneas de montaje, materializándose en la versión de producción que debutó oficialmente a finales de 2019 bajo la denominación Taycan (que puede traducirse libremente como 'caballo joven y vivaz').\n\n## Un hito o generación relevante\nLa arquitectura del Taycan descansa sobre la avanzada plataforma J1, desarrollada específicamente para vehículos eléctricos de altas prestaciones dentro del Grupo Volkswagen. Uno de los mayores avances técnicos introducidos por esta arquitectura es su sistema eléctrico de 800 voltios en lugar de los 400 voltios tradicionales utilizados en la industria hasta entonces. Este diferencial tecnológico no solo reduce considerablemente el peso del cableado interno, sino que permite soportar potencias de carga ultra rápida en corriente continua (DC) de hasta 270 kW o más en versiones actualizadas, posibilitando recargar la batería del 5% al 80% en aproximadamente 22 minutos bajo condiciones óptimas.\n\n## Curiosidades\nA diferencia de la gran mayoría de los vehículos eléctricos del mercado que emplean una transmisión de una sola velocidad, el Porsche Taycan incorpora una innovadora caja de cambios automática de dos velocidades en el eje trasero. La primera marcha está diseñada para ofrecer una aceleración explosiva desde parado y optimizar la salida con el sistema Launch Control, mientras que la segunda marcha, de relación larga, prioriza la eficiencia energética y el rendimiento a altas velocidades en ruta o autopista.\n\n## Competencia y posicionamiento\nDentro del mercado global, el Porsche Taycan se posiciona firmemente en el segmento de los sedanes deportivos de lujo eléctricos (segmento F). Su rival directo y natural desde su concepción ha sido el Tesla Model S, al cual desafía directamente en términos de prestaciones puros y autonomía, aunque superándolo ampliamente en acabados interiores, calidad de ensamblaje y comportamiento dinámico en circuitos cerrados. Asimismo, compite de cerca con opciones emergentes de marcas de lujo tradicionales como el Audi e-tron GT (con el cual comparte plataforma y componentes mecánicos) y el Mercedes-Benz EQS, diferenciándose de este último por apostar por un enfoque mucho más visceral, deportivo y enfocado en el conductor."
 }

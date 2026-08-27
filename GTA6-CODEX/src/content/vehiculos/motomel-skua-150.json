@@ -15,14 +15,16 @@
   "class": "Moto trail 150cc",
   "customizable": false,
   "power": "11.4 hp a 8350 rpm",
-  "price": "No informado por el fabricante (consultar en concesionario)",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "770 x 900 x 2100 mm",
+  "price": "No informado oficialmente (consultar en red de concesionarios Motomel)",
+  "consumo": "aprox. 3.2 l/100km",
+  "dimensiones": "2100 x 820 x 1150 mm",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://motomel.com.ar/productos/skua-150/",
+    "note": "Se corrigieron los datos genéricos heredados de la plantilla anterior (que correspondían a un automóvil SUV mediano) por especificaciones reales y características propias de una motocicleta trail de 150cc fabricada en Argentina.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+      "Los valores exactos de aceleración de 0 a 100 km/h no son publicados de manera oficial por el fabricante para este segmento de baja cilindrada.",
+      "El precio varía constantemente según la plaza y los costos logísticos en los distintos puntos de venta del país."
     ]
   },
   "performance": {
@@ -30,15 +32,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T23:22:07.475Z",
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:53:01.545Z",
+  "transmision": "Manual de 5 marchas",
+  "traccion": "Tracción trasera (por cadena)",
+  "peso": "125 kg (en orden de marcha)",
+  "tipoMotor": "Monocilíndrico 4 tiempos",
+  "potenciaKW": "8.4 kW",
+  "capacidadTanque": "11 litros",
+  "tiempoRecorrido": "No publicado oficialmente",
+  "anoProduccion": "2008-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -123,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "149 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Evoluciones sucesivas desde su lanzamiento original",
+  "anoLanzamiento": 2008,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -256,7 +258,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.439Z",
+    "lastChecked": "2026-08-27T01:53:01.545Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -309,5 +311,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Motomel Skua 150 se ha ganado un lugar indiscutido dentro del mercado argentino de motovehículos desde su introducción. Concebida como una motocicleta de tipo trail on/off, fue pensada desde el primer día para responder a las exigencias tanto del uso urbano diario como de escapadas ocasionales por caminos de tierra y ripio. A lo largo de los años, Motomel ha actualizado estéticamente a su exitosa familia Skua, manteniendo sin embargo una base mecánica confiable y sencilla que facilita enormemente su mantenimiento en cualquier rincón del país.\n\n## Un hito y evolución relevante\nEl gran hito de la saga Skua en Argentina no radica en un único rediseño radical, sino en su constancia comercial: consolidarse de forma sostenida entre las motos de 150 cc de corte enduro/on-off más patentadas de la República Argentina. La adopción paulatina de mejoras en componentes periféricos, gráfica exterior adaptada a las tendencias actuales y revisiones en su conjunto de suspensiones y frenos han permitido que este modelo mantenga plena vigencia frente a la llegada constante de competidores importados y de origen regional.\n\n## Curiosidades\nUna de las características más interesantes de la Motomel Skua 150 es su enorme versatilidad de uso. Al estar equipada con neumáticos de doble propósito y llantas de rayos, soporta con solvencia los baches y irregularidades típicas de la infraestructura urbana latinoamericana. Asimismo, su mecánica varillera o cadenera (según la partida y evolución) prioriza el torque a bajas y medias revoluciones por sobre la velocidad final pura, haciéndola muy amigable para conductores noveles y sumamente económica en el día a día.\n\n## Competencia y posicionamiento\nDentro del competitivo segmento de las 150 cc on-off en Argentina, la Skua compite directamente con modelos de gran arraigo popular como la Keller V2 150, la Zanella ZB o RX (en sus variantes adaptadas) y diversas propuestas de marcas nacionales que ensamblan componentes importados de origen asiático. Su principal ventaja competitiva radica en la enorme disponibilidad de repuestos a lo largo y ancho del territorio argentino, sumado a una red de concesionarios y talleres mecánicos altamente familiarizados con su planta motriz, lo que asegura una postventa sumamente previsible y económica para el usuario final."
 }

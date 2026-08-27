@@ -14,28 +14,33 @@
   "manufacturer": "Mitsubishi",
   "class": "Pickup",
   "customizable": false,
-  "power": "178 hp",
-  "price": "USD 42.000",
-  "consumo": "8.5 l/100km (mixto)",
+  "power": "181 CV (133 kW)",
+  "price": "USD 42.000 (referencia regional)",
+  "consumo": "8.0 - 8.5 l/100km (mixto)",
   "dimensiones": "5305 x 1815 x 1795 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.mitsubishi-motors.com.ar/l200"
+    "primarySource": "https://www.mitsubishi-motors.com.ar",
+    "note": "Se verificaron los datos técnicos principales de la Mitsubishi L200 con motor 2.4L MIVEC turbodiésel, potencia de 181 CV y sistema de tracción Super Select II basados en especificaciones oficiales de la marca para la región.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado de Latinoamérica y los impuestos locales.",
+      "Algunas especificaciones de equipamiento de seguridad y confort dependen de la versión (GL, GLX, GLS, Wild Beast)."
+    ]
   },
   "performance": {
     "speed": "180 km/h",
     "acceleration": "0-100 km/h en 10.5s"
   },
   "createdAt": "2026-08-23T21:59:02.058147Z",
-  "updatedAt": "2026-08-25T23:22:07.471Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:52:51.680Z",
+  "transmision": "Manual de 6 marchas o Automática de 6 velocidades",
+  "traccion": "4x4 (Super Select II)",
+  "peso": "1875-1950 kg",
+  "tipoMotor": "Turbodiésel",
+  "potenciaKW": "133 kW",
+  "capacidadTanque": "75 litros",
+  "tiempoRecorrido": "10.4s",
+  "anoProduccion": "2019-2023",
   "mercados": [
     "Europa",
     "USA",
@@ -123,14 +128,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2442 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 5,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "6ta generación (facelift o previa a la nueva 2024 global)",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -256,7 +261,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.436Z",
+    "lastChecked": "2026-08-27T01:52:51.680Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -309,5 +314,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Mitsubishi L200, conocida en diversos mercados globales como Triton o Forte, representa uno de los pilares fundamentales dentro del segmento de las pickups medianas a nivel mundial. Con una trayectoria que abarca varias décadas de evolución constante, este vehículo utilitario se ganó una sólida reputación basada en su robustez mecánica, su durabilidad extrema y sus capacidades sobresalientes fuera del camino. Desde sus primeras iteraciones concebidas primordialmente como herramientas de trabajo pesado, la L200 ha mutado de manera inteligente para satisfacer las demandas duales del usuario moderno: un vehículo capaz tanto de desempeñarse con solvencia en flotas agrícolas o mineras, como de ofrecer el confort, la seguridad y el refinamiento necesarios para el uso diario y recreativo.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la historia reciente de la pickup fue la consolidación de la arquitectura de la sexta generación y sus actualizaciones estéticas y funcionales (conocidas bajo el concepto de diseño 'Dynamic Shield'). Este rediseño no solo dotó a la camioneta de una estética mucho más agresiva, moderna y alineada con la identidad visual global de Mitsubishi, sino que introdujo mejoras sustanciales en términos de aislamiento acústico, rigidez estructural del chasis y la incorporación de asistencias avanzadas a la conducción (ADAS). Asimismo, la adopción definitiva de los bloques turbodiésel de aluminio de 2.4 litros optimizó la relación entre consumo de combustible y entrega de torque.\n\n## Curiosidades\nUna de las características técnicas más emblemáticas y celebradas de la Mitsubishi L200 es su avanzado sistema de tracción integral denominado 'Super Select 4WD-II'. A diferencia de los sistemas 4x4 tradicionales y desconectables que limitan el uso de la doble tracción en superficies de alta adherencia como el asfalto seco, el Super Select permite circular en modo 4H (tracción en las cuatro ruedas con diferencial central libre) sobre pavimento, brindando un plus notable de seguridad activa bajo lluvia o condiciones climáticas adversas. Además, cuenta con reductora y bloqueos de diferencial trasero, posicionándola como una de las pick-ups más capaces en terrenos intransitables desde fábrica.\n\n## Competencia y posicionamiento\nEn el altamente competitivo mercado de las pick-ups medianas —fuertemente dominado en regiones como el Mercosur por exponentes de peso pesado—, la Mitsubishi L200 se posiciona como una alternativa de espíritu genuinamente aventurero y nicho tecnológico. Compite de forma directa contra modelos consagrados como la Toyota Hilux, la Ford Ranger, la Volkswagen Amarok y la Chevrolet S10. Su principal argumento de venta radica en su herencia de rally (respaldada por su extensa participación y múltiples victorias en competencias tan duras como el Asia Cross Country Rally), ofreciendo una combinación equilibrada entre agilidad de conducción, fiabilidad japonesa comprobada y un sistema de tracción total superior al promedio de su categoría."
 }

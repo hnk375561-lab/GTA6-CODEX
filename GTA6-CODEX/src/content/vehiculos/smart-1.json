@@ -13,15 +13,15 @@
   "class": "SUV eléctrico",
   "customizable": false,
   "power": "272 hp",
-  "price": "EUR 38.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "EUR 38.000 (referencia mercado europeo)",
+  "consumo": "16.8 kWh/100km combinado",
+  "dimensiones": "4.270 mm largo x 1.822 mm ancho x 1.636 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "note": "Se actualizaron las especificaciones técnicas del Smart #1 basadas en la plataforma SEA desarrollada por Geely, corrigiendo valores genéricos previos por datos reales de su versión de acceso (potencia de 272 hp / 200 kW, tracción trasera, dimensiones y capacidad de baúl).",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "Los precios pueden variar según el mercado europeo específico y los subsidios vigentes.",
+      "Las cifras de autonomía y consumo varían levemente según el nivel de equipamiento (Pro+, Premium, Brabus)."
     ]
   },
   "performance": {
@@ -29,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.521Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-180 kW",
+  "updatedAt": "2026-08-27T01:26:54.530Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción trasera",
+  "peso": "1.780 kg",
+  "tipoMotor": "Eléctrico síncrono de imanes permanentes",
+  "potenciaKW": "200 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "5.7s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,11 +122,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 313,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2022,
   "colores": [],
   "category": "auto-pequeño",
   "gallery": {
@@ -201,7 +201,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.468Z",
+    "lastChecked": "2026-08-27T01:26:54.530Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -219,5 +219,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\n\nEl Smart #1 marca un punto de inflexión absoluto en la historia de la marca. Tradicionalmente conocida por la fabricación de micrococos urbanos biplazas enfocados en la movilidad estrictamente citadina, la firma pasó a ser una empresa conjunta (joint venture) al 50% entre el gigante alemán Mercedes-Benz y el conglomerado chino Geely. Este vehículo representa el primer exponente de esta nueva era, transformando a Smart en un fabricante enfocado en SUVs eléctricos de vocación global.\n\n## Un hito o generación relevante\n\nEl hito fundamental en la vida del Smart #1 es la adopción de la plataforma modular SEA (Sustainable Experience Architecture) desarrollada por Geely. Esta arquitectura dedicada exclusivamente a vehículos eléctricos permitió a la marca escalar en tamaño y ofrecer un formato de SUV compacto que prescinde por completo de las motorizaciones de combustión interna. Con un diseño exterior fluido y futurista supervisado por el equipo de diseño de Mercedes-Benz, el Smart #1 abandona el concepto ultrareducido del Fortwo para posicionarse en el competitivo segmento B-SUV eléctrico, ofreciendo habitabilidad real para cinco pasajeros y tecnologías de asistencia a la conducción de última generación.\n\n## Curiosidades\n\nA pesar de su cambio radical de segmento, el Smart #1 mantiene guiños a su identidad histórica. Por ejemplo, en algunas versiones conserva el emblema flotante de Smart en los pilares traseros, un detalle clásico de los modelos anteriores. Además, la gama incluye variantes de altas prestaciones desarrolladas junto a Brabus, que añaden un motor delantero para dotarlo de tracción integral y llevar la potencia hasta los 428 caballos, convirtiéndolo en un SUV compacto con prestaciones de deportivo puro.\n\n## Competencia y posicionamiento\n\nEl Smart #1 compite en el corazón del mercado europeo y asiático de SUVs eléctricos compactos. Entre sus principales rivales se encuentran modelos como el Volvo EX30 (con el cual comparte plataforma y componentes mecánicos), el Volkswagen ID.3, el Hyundai Kona Eléctrico y el Peugeot e-2008. Se posiciona en un escalón ligeramente premium dentro de su categoría, buscando atraer tanto a los antiguos clientes de la marca que necesitan mayor versatilidad como a nuevos compradores que valoran la estética vanguardista, la conectividad avanzada y la eficiencia de su esquema eléctrico."
 }

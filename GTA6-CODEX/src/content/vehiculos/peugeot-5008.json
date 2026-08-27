@@ -12,15 +12,16 @@
   "manufacturer": "Peugeot",
   "class": "SUV grande",
   "customizable": false,
-  "power": "180 hp",
-  "price": "EUR 42.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "130 hp a 360 kW (según versión nafta, diésel o eléctrica/híbrida)",
+  "price": "EUR 40.000 (referencia mercado europeo)",
+  "consumo": "5.5 - 7.0 l/100km combinado",
+  "dimensiones": "4.710 mm largo x 1.890 mm ancho x 1.680 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "secondarySource": "https://es.wikipedia.org/wiki/Peugeot_5008",
+    "note": "Se actualizaron las dimensiones, capacidades, motorizaciones y la estructura general basándose en la evolución oficial del modelo desde su paso de monovolumen a SUV grande de 7 plazas, incluyendo la plataforma STLA Medium para las variantes electrificadas recientes.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Los precios y consumos varían considerablemente según el mercado regional y el tipo de motorización elegida (térmica, híbrida o eléctrica)."
     ]
   },
   "performance": {
@@ -28,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.498Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:24:56.238Z",
+  "transmision": "Automática de 8 velocidades (EAT8) o e-DCS6 / e-DCS7 en híbridos",
+  "traccion": "Delantera (FWD) o integral en versiones específicas",
+  "peso": "1.500 - 1.800 kg",
+  "tipoMotor": "Gasolina, Diésel, Híbrido Enchufable (PHEV) y Eléctrico (E-5008)",
+  "potenciaKW": "96 kW a 157 kW",
+  "capacidadTanque": "56 litros (versiones térmicas)",
+  "tiempoRecorrido": "0-100 km/h en aprox. 8.3 a 10.5 segundos",
+  "anoProduccion": "2017-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.2 - 2.0 litros",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 7,
+  "baul": 702,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (P87) y tercera generación (STLA Medium)",
+  "anoLanzamiento": 2017,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -206,7 +207,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.451Z",
+    "lastChecked": "2026-08-27T01:24:56.238Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +225,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Peugeot 5008 nació originalmente en 2009 como un monovolumen compacto de cinco o siete plazas, diseñado para competir en el disputado segmento familiar europeo. Sin embargo, ante el incesante crecimiento de la fiebre por los vehículos utilitarios deportivos, la marca del león tomó una decisión estratégica radical. En 2017 se lanzó la segunda generación, transformando por completo al 5008 en un SUV grande de impronta robusta, moderna y tecnológica, construido sobre la exitosa plataforma modular EMP2 del Grupo PSA. Esta jugada le permitió heredar el éxito comercial de su hermano menor, el 3008, pero estirando su carrocería para ofrecer una tercera fila de asientos independiente y escamoteable.\n\n## Un hito o generación relevante\nEl punto de inflexión más destacado en la historia reciente del modelo es la llegada de su tercera generación, presentada a comienzos de la década de 2020 y consolidada recientemente con la adopción de la plataforma multienergía STLA Medium del grupo Stellantis. Este salto tecnológico no solo redefinió la estética exterior —adoptando un lenguaje de diseño mucho más afilado, parrillas sin marco y ópticas LED en forma de garras—, sino que permitió la electrificación total de la gama. El nuevo E-5008 se convirtió así en uno de los pocos SUV grandes 100% eléctricos del mercado europeo capaz de albergar hasta siete pasajeros, marcando el rumbo de la transición energética para los vehículos familiares de gran porte de la firma francesa.\n\n## Curiosidades\nUna de las características más aplaudidas por la prensa especializada y los usuarios del Peugeot 5008 desde su era SUV es la modularidad de su habitáculo. A diferencia de muchos contrincantes que ofrecen una tercera fila testimonial, el 5008 cuenta con dos asientos individuales completamente extraíbles y plegables en el piso del baúl, lo que permite configurar el espacio interior de múltiples maneras. Además, hereda el célebre puesto de conducción i-Cockpit de Peugeot, caracterizado por un volante de diámetro reducido situado en una posición más baja y una instrumentación elevada en formato digital, generando una experiencia de manejo que prioriza la agilidad y una visual despejada.\n\n## Competencia y posicionamiento\nEn el mercado global, el Peugeot 5008 se posiciona en el segmento de los SUV grandes generalistas, apuntando directamente a familias numerosas que buscan un habitáculo versátil sin la necesidad de dar el salto a marcas de lujo. Entre sus principales competidores directos se encuentran modelos consolidados como el Skoda Kodiaq, el Volkswagen Tiguan Allspace, el Nissan X-Trail y el Renault Espace en su formato actual. El 5008 destaca frente a ellos apostando fuertemente por un diseño exterior de carácter vanguardista, calidades de terminación interiores que rozan el segmento premium y una de las ofertas mecánicas más amplias del mercado, abarcando desde opciones nafteras y diésel eficientes hasta tecnologías híbridas enchufables y propulsión 100% eléctrica."
 }

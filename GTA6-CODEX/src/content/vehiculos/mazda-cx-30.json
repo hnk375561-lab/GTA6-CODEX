@@ -13,15 +13,15 @@
   "class": "SUV compacto",
   "customizable": false,
   "power": "186 hp",
-  "price": "USD 24.000 (MSRP base referencia)",
+  "price": "USD 28.000 (MSRP base referencia EE.UU.)",
   "consumo": "7.8 l/100km combinado",
   "dimensiones": "4.395 mm largo x 1.795 mm ancho x 1.540 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Se utilizaron especificaciones estándar de la industria para el Mazda CX-30 con motorización 2.5L atmosférico y turbo en mercados globales.",
+    "note": "Se utilizaron especificaciones técnicas globales y oficiales de Mazda para la arquitectura Skyactiv y las motorizaciones 2.5L del CX-30.",
     "limitations": [
-      "Los precios varían según el mercado local y los impuestos aplicables",
-      "Las cifras de consumo y potencia pueden diferir ligeramente según la calibración regional"
+      "Los precios varían sustancialmente según el mercado local, aranceles aduaneros e impuestos internos.",
+      "Las cifras de potencia y consumo pueden presentar variaciones menores según la calibración exigida por las normativas de emisiones de cada región."
     ]
   },
   "performance": {
@@ -29,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:12:47.150Z",
-  "transmision": "Automática de 6 velocidades",
+  "updatedAt": "2026-08-27T01:23:08.141Z",
+  "transmision": "Automática de 6 velocidades (Skyactiv-Drive)",
   "traccion": "Delantera o Integral (i-Activ AWD)",
-  "peso": "1.400-1.550 kg",
-  "tipoMotor": "Gasolina (Skyactiv-G / Skyactiv-X)",
+  "peso": "1.427 - 1.564 kg",
+  "tipoMotor": "Gasolina atmosférico y turboalimentado (Skyactiv-G / Skyactiv-T)",
   "potenciaKW": "139 kW",
   "capacidadTanque": "48 litros",
-  "tiempoRecorrido": "8.2s",
-  "anoProduccion": "2020-presente",
+  "tiempoRecorrido": "8.1s",
+  "anoProduccion": "2019-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -207,7 +207,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:12:47.150Z",
+    "lastChecked": "2026-08-27T01:23:08.141Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -226,5 +226,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Mazda CX-30 hizo su debut mundial en el Salón del Automóvil de Ginebra en marzo de 2019, posicionándose estratégicamente dentro del catálogo de la marca japonesa como un puente entre el Mazda CX-3 y el CX-5. Este SUV compacto adopta la exitosa filosofía de diseño Kodo y la arquitectura de vehículos Skyactiv de nueva generación, compartiendo gran parte de su ADN, plataforma y componentes interiores con el Mazda 3 de cuarta generación. Desde su lanzamiento, el modelo fue concebido para competir en el segmento B/C global, ofreciendo un enfoque más refinado y cercano a las marcas de espíritu prémium.\n\n## Un hito y generación relevante\nLa introducción del motor Skyactiv-X con encendido por compresión controlado por chispa (SPCCI) representó un hito tecnológico importante para este modelo en determinados mercados internacionales, buscando combinar la elasticidad de un motor naftero con la eficiencia de consumo típica de un diésel. Asimismo, la incorporación de versiones con el motor turboalimentado de 2.5 litros le otorgó al CX-30 una dinámica de conducción marcadamente deportiva, diferenciándose de la propuesta más conservadora de la mayoría de sus rivales directos en el segmento de los crossovers compactos.\n\n## Curiosidades\nUna de las decisiones más comentadas al momento de bautizar al vehículo fue su denominación numérica. Mientras que la lógica habitual de la marca indicaba que debía llamarse CX-4 (un nombre que Mazda ya utilizaba en un modelo exclusivo para el mercado chino), se optó por CX-30 para evitar confusiones y reflejar que se trataba de un vehículo de tamaño intermedio basado en la plataforma del Mazda 3. Además, el diseño exterior del vehículo destaca por sus prominentes molduras plásticas inferiores, las cuales generan un contraste visual robusto pero que han sido objeto de debate entre los puristas del diseño automotriz debido a su generosa proporción respecto al área vidriada.\n\n## Competencia y posicionamiento\nEn el mercado global, el Mazda CX-30 compite de forma directa contra una plétora de SUVs compactos de gran volumen, tales como el Toyota Corolla Cross, el Volkswagen T-Roc, el Nissan Qashqai y el Honda HR-V. No obstante, la estrategia de Mazda ha sido apuntar ligeramente hacia arriba, buscando capturar a compradores que consideran opciones de marcas como Audi, BMW o MINI, pero que prefieren la fiabilidad mecánica tradicional y un habitáculo enfocado en la ergonomía del conductor, destacando por materiales de calidad superior al promedio generalista y una dinámica de manejo sobresaliente en curvas."
+  "content": "## Historia del modelo\nEl Mazda CX-30 hizo su debut mundial en el Salón del Automóvil de Ginebra en marzo de 2019, posicionándose estratégicamente dentro del catálogo de la marca japonesa como un puente intermedio entre el crossover subcompacto CX-3 y el más tradicional CX-5. Este SUV compacto adopta la exitosa filosofía de diseño Kodo y la avanzada arquitectura de vehículos Skyactiv, compartiendo gran parte de su plataforma, componentes estructurales y arquitectura interior con la cuarta generación del Mazda 3. Desde su comercialización inicial, el vehículo fue concebido para competir en el segmento global de los crossovers, ofreciendo un habitáculo de orientación marcadamente más refinada y cercana a las marcas de categoría prémium.\n\n## Un hito y generación relevante\nLa introducción de tecnologías avanzadas de propulsión representó un hito fundamental para este modelo en diversos mercados internacionales. Entre ellas destaca la variante con motorización turboalimentada de 2.5 litros, que otorga al CX-30 una dinámica de conducción ágil y notablemente deportiva, diferenciándose de la propuesta más conservadora y puramente utilitaria de la mayoría de sus rivales directos. Asimismo, la cuidada puesta a punto del chasis y la dirección priorizan el placer de manejo, manteniendo el concepto de Jinba Ittai (la conexión hombre-máquina) que caracteriza a la firma de Hiroshima en toda su gama actual.\n\n## Curiosidades\nUna de las decisiones más comentadas al momento de bautizar al vehículo fue su denominación numérica. Mientras que la lógica secuencial de la marca indicaba que debía llamarse CX-4 (un nombre que Mazda ya utilizaba en un modelo exclusivo fabricado y comercializado en China), se optó por la nomenclatura CX-30 para evitar confusiones comerciales y reflejar claramente que se trataba de un vehículo de tamaño mediano basado en la plataforma del Mazda 3. Además, el diseño exterior genera debate debido a sus prominentes molduras plásticas perimetrales inferiores, diseñadas para otorgar un aspecto robusto tipo off-road, pero cuya generosa proporción respecto a la superficie vidriada ha dividido opiniones entre los puristas del diseño automotriz.\n\n## Competencia y posicionamiento\nEn el mercado global, el Mazda CX-30 compite de forma directa contra una amplia variedad de SUVs compactos de gran volumen, tales como el Toyota Corolla Cross, el Volkswagen T-Roc, el Nissan Qashqai y el Honda HR-V. No obstante, la estrategia comercial de Mazda ha sido posicionar al vehículo un escalón por encima de los generalistas tradicionales, buscando capturar a clientes que evalúan opciones de marcas prémium como Audi, BMW o MINI. Esto se logra mediante el uso de materiales de tacto superior en la cabina, una insonorización muy lograda y un enfoque ergonómico centrado totalmente en el conductor que redefine los estándares del segmento B/C SUV."
 }

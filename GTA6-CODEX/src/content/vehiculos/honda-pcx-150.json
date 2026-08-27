@@ -12,27 +12,26 @@
   "manufacturer": "Honda",
   "class": "Scooter",
   "customizable": false,
-  "power": "11.8 kW (16 hp) a 8.500 rpm",
+  "power": "11.8 kW (16 CV) a 8.500 rpm",
   "price": "USD 4.348 (versión ABS, referencia mercado Latinoamérica)",
   "consumo": "2.1 l/100km combinado (referencia fabricante)",
-  "dimensiones": "1.925 mm largo x 745 mm ancho x 1.105 mm alto, distancia entre ejes 1.320 mm",
+  "dimensiones": "1.925 mm x 745 mm x 1.105 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "La PCX150 fue discontinuada globalmente y reemplazada por la PCX160 (mismo segmento, motor ampliado a 157cc) desde 2018-2021 según mercado. Se documenta bajo este slug la especificación vigente del sucesor directo, ya que es el modelo que Honda comercializa activamente hoy.",
+    "level": "respaldado",
+    "secondarySource": "https://en.wikipedia.org/wiki/Honda_PCX",
+    "note": "Se documentan las especificaciones del sucesor directo vigente (PCX160 con motorización de 157cc) dado que la denominación 150 original fue reemplazada a nivel global.",
     "limitations": [
-      "El modelo \"PCX150\" original (motor 150cc) ya no se fabrica en la mayoría de mercados",
-      "Precio varía fuerte por país (ejemplo: USD 4.348 aprox. en mercados latinoamericanos)",
-      "Cifras de aceleración son estimadas"
-    ],
-    "primarySource": "https://hondanews.com/en-US/powersports/releases/release-a463299e9046a088b84018a7581fd5be-2024-honda-pcx-specifications",
-    "secondarySource": "https://en.wikipedia.org/wiki/Honda_PCX"
+      "El modelo \"PCX150\" original ya no se fabrica activamente",
+      "El precio varía según el mercado de comercialización local",
+      "Las cifras de aceleración son estimadas de referencia"
+    ]
   },
   "performance": {
     "speed": "105 km/h (referencia)",
     "acceleration": "0-100 km/h en 10.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-26T07:28:17.778Z",
+  "updatedAt": "2026-08-27T01:45:20.475Z",
   "transmision": "Automática V-Matic (variador continuo por correa)",
   "traccion": "Trasera (por correa)",
   "peso": "132 kg (en orden de marcha)",
@@ -133,10 +132,10 @@
   "emisiones": null,
   "tipo": "Scooter urbana",
   "asientos": 2,
-  "baul": null,
+  "baul": 30,
   "maleteroMin": null,
   "generacion": "Sucesor: PCX160 (motor 157cc, ABS de serie)",
-  "anoLanzamiento": "2009",
+  "anoLanzamiento": 2009,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -211,8 +210,8 @@
     "description": "Scooter urbana de Honda, una de las más vendidas del segmento en el mundo; sucesor vigente PCX160."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T07:28:17.766Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:45:20.475Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -246,5 +245,6 @@
     ],
     "auditNotes": "Lote 5 (ago 2026): datos del sucesor vigente PCX160, motor 157cc.",
     "dataQuality": 0.85
-  }
+  },
+  "content": "## Historia del modelo\nLa Honda PCX es uno de los scooters urbanos más exitosos e influyentes de las últimas décadas a nivel global. Desde su introducción original en el mercado en el año 2009, este modelo de la marca japonesa se ganó el favor de los usuarios gracias a su propuesta de movilidad eficiente, diseño refinado y un enfoque completamente enfocado en la practicidad diaria. Con el paso de los años, Honda fue actualizando su plataforma mecánica y tecnológica, incorporando mejoras sustanciales en materia de seguridad, eficiencia de combustible y confort de marcha.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la trayectoria de la gama ocurrió con la evolución hacia la cilindrada de 157 cc (comercializada en muchos mercados como la evolución natural de la saga), introduciendo motores con arquitectura de 4 válvulas (eSP+) y refrigeración líquida optimizada. Esta generación no solo potenció la respuesta dinámica del scooter en entornos urbanos y de circunvalación, sino que estandarizó elementos clave como el sistema de frenos antibloqueo (ABS) en la rueda delantera y el sistema de arranque sin llave (Smart Key), elevando el estándar tecnológico de su segmento.\n\n## Curiosidades\nEntre los aspectos más destacados de la Honda PCX se encuentra la incorporación temprana de tecnologías orientadas al ahorro de combustible y la reducción de emisiones en entornos urbanos, destacándose el sistema Idling Stop (apagado automático en detenciones). Asimismo, su diseño exterior ha sabido combinar una estética de líneas fluidas con una ergonomía pensada para todo tipo de conductores, optimizando el espacio bajo el asiento para alojar un casco integral y otros objetos personales de uso cotidiano.\n\n## Competencia y posicionamiento\nDentro del mercado de las dos ruedas, la Honda PCX se posiciona firmemente en el segmento premium de los scooters urbanos de cilindrada media-baja. Su principal competencia incluye a modelos consagrados como la Yamaha NMAX 155, con la que mantiene una puja constante por el liderazgo de ventas en múltiples mercados de Latinoamérica, Europa y Asia. La propuesta de valor de la PCX se sustenta en su reputación de confiabilidad mecánica, un excelente valor de reventa, costos de mantenimiento contenidos y un andar sumamente equilibrado que la convierte en una herramienta de movilidad altamente valorada tanto por usuarios noveles como por conductores experimentados."
 }

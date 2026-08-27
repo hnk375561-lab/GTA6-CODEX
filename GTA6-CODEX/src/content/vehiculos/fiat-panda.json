@@ -14,31 +14,30 @@
   "customizable": false,
   "power": "70 hp",
   "price": "EUR 15.500",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "consumo": "aprox. 5.0 l/100km combinado",
+  "dimensiones": "3.686 mm largo x 1.643 mm ancho x 1.551 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global. Desde octubre de 2025 Fiat renombró oficialmente este modelo como 'Pandina' (para diferenciarlo del nuevo Grande Panda), manteniendo el nombre Panda en muchos mercados; ficha técnica verificada contra la página oficial fiat.it.",
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas básicas de la versión actual comercializada en Europa (renombrada comercialmente como Pandina), incluyendo su motorización híbrida ligera de 70 hp y dimensiones generales.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
-    ],
-    "primarySource": "https://www.fiat.it/modello/pandina/caratteristiche-tecniche"
+      "El precio es de referencia para el mercado europeo y puede variar según el país de patentamiento y los impuestos locales.",
+      "Los valores de consumo y aceleración corresponden a homologaciones oficiales WLTP que pueden diferir del uso real en ciudad."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.350Z",
-  "transmision": "Manual o Automática",
+  "updatedAt": "2026-08-27T01:39:14.015Z",
+  "transmision": "Manual de 6 velocidades",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "peso": "980 kg",
+  "tipoMotor": "Mild Hybrid (Gasolina)",
+  "potenciaKW": "51 kW",
+  "capacidadTanque": "35 litros",
+  "tiempoRecorrido": "14.2 segundos",
+  "anoProduccion": "2011-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +123,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "999 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 4,
+  "baul": 225,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación (actualización Pandina)",
+  "anoLanzamiento": 2011,
   "colores": [],
   "category": "auto-pequeño",
   "gallery": {
@@ -254,8 +253,8 @@
     "description": "Auto urbano de entrada de Fiat, uno de los más vendidos de Europa históricamente."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.371Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:39:14.015Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -308,5 +307,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Fiat Panda es uno de los vehículos urbanos más emblemáticos y exitosos de la industria automotriz europea. Desde su lanzamiento original diseñado por Giorgetto Giugiaro a principios de los años 80, este hatchback se ganó el reconocimiento popular por su enfoque minimalista, robustez y máxima aprovechabilidad del espacio interior. A lo largo de las décadas, el Panda supo reinventarse manteniendo siempre la misma premisa: ofrecer movilidad accesible y funcional para el día a día en las grandes ciudades, convirtiéndose en un pilar histórico dentro del segmento A en Europa.\n\n## Un hito o generación relevante\nLa tercera generación del Panda, introducida comercialmente en 2011 y actualizada de manera constante a lo largo de los años, marcó un punto de inflexión en términos de versatilidad y permanencia en el mercado. En octubre de 2025, Fiat decidió renombrar oficialmente a esta línea clásica como 'Pandina' —para diferenciarlo claramente del nuevo Grande Panda de carácter global—, dotándolo de una actualización tecnológica en materia de seguridad activa y asistencias a la conducción que le permitió seguir vigente frente a normativas europeas cada vez más estrictas.\n\n## Curiosidades\nUna de las características más célebres en la historia del Fiat Panda fue su histórica versión con tracción integral (4x4), introducida en la primera generación y presente también en iteraciones posteriores. Este pequeño urbano demostró en múltiples ocasiones ser capaz de superar en terrenos difíciles a vehículos todoterreno mucho más grandes y costosos, gracias a su bajo peso, cortos voladizos y agilidad superior en superficies complicadas como barro o nieve.\n\n## Competencia y posicionamiento\nEn el mercado europeo, el Fiat Panda compite en el segmento de los hatchbacks urbanos compactos contra modelos de gran peso como el Toyota Aygo X, el Hyundai i10 y el Kia Picanto. Su principal ventaja competitiva radica en su dilatada trayectoria comercial, una relación precio-producto altamente competitiva y una arquitectura mecánica simplificada que prioriza la economía de uso, especialmente en sus variantes con tecnología híbrida ligera (Mild Hybrid) ideales para la congestión del tráfico urbano."
 }

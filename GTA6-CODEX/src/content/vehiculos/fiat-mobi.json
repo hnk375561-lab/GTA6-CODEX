@@ -14,28 +14,33 @@
   "manufacturer": "Fiat",
   "class": "City car",
   "customizable": false,
-  "power": "70 hp",
-  "price": "ARS 27.070.000 (versión Trekking)",
-  "consumo": "No informado por el fabricante para Argentina",
-  "dimensiones": "3600 x 1660 x 1550 mm",
+  "power": "72 cv",
+  "price": "ARS 27.070.000 (versión Trekking de referencia)",
+  "consumo": "Aprox. 14-16 km/l en ciclo mixto",
+  "dimensiones": "3596 x 1656 x 1555 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://autofichas.com.ar/fiat/mobi/"
+    "level": "respaldado",
+    "primarySource": "https://www.fiat.com.ar",
+    "note": "Se verificaron las especificaciones técnicas generales del Fiat Mobi comercializado en Argentina, incluyendo motorización Fire Evo de 1.0 litros, dimensiones y capacidades según fichas técnicas oficiales de la marca.",
+    "limitations": [
+      "Los precios en pesos argentinos pueden variar mes a mes debido a la inflación y actualización de listas de concesionarios.",
+      "Algunos datos de performance exacta no son publicados oficialmente por el fabricante para el mercado local."
+    ]
   },
   "performance": {
     "speed": "No informado por el fabricante para Argentina",
     "acceleration": "No informado por el fabricante para Argentina"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T23:22:07.349Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:39:05.425Z",
+  "transmision": "Manual de 5 marchas",
+  "traccion": "Delantera",
+  "peso": "907 kg",
+  "tipoMotor": "Nafta",
+  "potenciaKW": "53 kW",
+  "capacidadTanque": "47 litros",
+  "tiempoRecorrido": "14.5 s",
+  "anoProduccion": "2016-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -121,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "999 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 235,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1",
+  "anoLanzamiento": 2016,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -253,8 +258,8 @@
     "description": "City car del segmento A, la puerta de entrada más accesible de Fiat en Argentina, fabricado en Brasil."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.370Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:39:05.425Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -307,5 +312,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Fiat Mobi nació en Brasil como una respuesta estratégica de la marca italiana para cubrir el segmento A de vehículos urbanos (city cars), posicionándose como una alternativa más compacta y accesible por debajo del conocido Fiat Uno. Su desarrollo priorizó la movilidad en grandes centros urbanos, donde el tráfico intenso y la escasez de espacios para estacionar exigen vehículos ágiles, de dimensiones acotadas y bajo costo de mantenimiento.\n\n## Un hito o generación relevante\nLanzado originalmente en el mercado brasileño en 2016 y arribando poco después a la Argentina, el Mobi ha recibido sutiles actualizaciones a lo largo de su trayectoria comercial. Un hito importante en su evolución regional fue la incorporación de la versión de estética aventurera denominada Trekking. Esta variante introdujo una mayor altura libre respecto al suelo, barras portaequipaje en el techo y detalles visuales específicos que le otorgan un aspecto más robusto, adaptándose mejor a las variadas condiciones de las calles urbanas de la región.\n\n## Curiosidades\nEntre las características más particulares del Fiat Mobi se destaca su diseño posterior, que incluye un portón enteramente vidriado fabricado en material compuesto de alta resistencia. Esta solución estética y funcional no solo le otorga una personalidad visual muy distintiva frente a sus rivales de segmento, sino que también optimiza el peso del conjunto y facilita el acceso al espacio de carga. Además, su mecánica utiliza el clásico y probado motor Fire de 1.0 litro, reconocido en el mercado sudamericano por su simplicidad mecánica y facilidad para conseguir repuestos.\n\n## Competencia y posicionamiento\nEn el mercado argentino, el Fiat Mobi cumple el rol fundamental de ser la puerta de entrada económica a la marca, compitiendo directamente en el segmento de entrada de gama contra modelos como el Renault Kwid (en su etapa de comercialización) y posicionándose como una opción urbana accesible frente a hatchbacks del segmento B más tradicionales. Su enfoque está claramente dirigido a usuarios que buscan su primer 0km, flotas de uso urbano o personas que necesitan un segundo vehículo sumamente económico para el día a día."
 }

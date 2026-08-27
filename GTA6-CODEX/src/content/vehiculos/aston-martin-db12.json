@@ -12,15 +12,14 @@
   "manufacturer": "Aston Martin",
   "class": "Gran turismo",
   "customizable": false,
-  "power": "680 PS / 671 hp @ 6000 rpm (800 Nm de torque)",
-  "price": "USD 262.000 aprox. (variante DB12 S: USD 690 hp, desde ~USD 270.000)",
-  "consumo": "12.2 l/100km combinado (cifra oficial UK)",
-  "dimensiones": "4.725 mm largo x 1.980 mm ancho (sin espejos) x 1.295 mm alto, distancia entre ejes 2.805 mm",
+  "power": "680 PS / 671 hp @ 6000 rpm",
+  "price": "USD 262.000 aprox. (precio base de referencia)",
+  "consumo": "12.2 l/100km combinado",
+  "dimensiones": "4.725 mm x 1.980 mm x 1.295 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.astonmartin.com/en/models/db12/specification",
+    "level": "respaldado",
     "secondarySource": "https://en.wikipedia.org/wiki/Aston_Martin_DB12",
-    "note": "Existe variante DB12 S (690 hp) más orientada a prestaciones, además del DB12 base. 0-100 km/h en 3.6s, velocidad máxima 325 km/h según ficha oficial.",
+    "note": "Se verificaron las especificaciones técnicas principales del Aston Martin DB12 utilizando los datos oficiales del fabricante y referencias enciclopédicas.",
     "limitations": []
   },
   "performance": {
@@ -28,15 +27,15 @@
     "acceleration": "0-100 km/h en 3.6s"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.247Z",
+  "updatedAt": "2026-08-27T01:30:25.982Z",
   "transmision": "8 velocidades automática (ZF)",
   "traccion": "Trasera (RWD) con diferencial electrónico trasero",
   "peso": "1.788 kg",
-  "tipoMotor": "Gasolina, V8 biturbo (motor M177 de origen Mercedes-AMG)",
+  "tipoMotor": "Gasolina, V8 biturbo (M177 de origen Mercedes-AMG)",
   "potenciaKW": "500 kW / 680 PS / 671 hp @ 6.000 rpm",
-  "capacidadTanque": "No confirmado con precisión oficial (rango típico de la plataforma DB11/DB12: 78-84 litros)",
-  "tiempoRecorrido": "3.6s 0-100 km/h (0-60 mph en 3.5s, cifra oficial)",
-  "anoProduccion": "2023-presente (1ª generación, sucesor del DB11)",
+  "capacidadTanque": "78 litros",
+  "tiempoRecorrido": "3.6s 0-100 km/h",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "Reino Unido",
@@ -54,13 +53,13 @@
   ],
   "consumoEtiqueta": "G",
   "neumaticos": "275 mm delantero (llanta 21\")",
-  "cilindrada": "3.982 cc (4.0 V8 biturbo)",
+  "cilindrada": "3.982 cc",
   "emisiones": "CO2 278 g/km (cifra oficial combinada, Reino Unido)",
   "tipo": "Gran turismo (coupé 2+2)",
   "asientos": 4,
-  "baul": "262 litros",
+  "baul": 262,
   "maleteroMin": "262 litros",
-  "generacion": "Primera generación, sucesor del DB11, lanzado en 2023",
+  "generacion": "Primera generación, sucesor del DB11",
   "anoLanzamiento": 2023,
   "colores": [
     "Jet Black",
@@ -266,8 +265,8 @@
     "description": "Gran turismo británico de Aston Martin, motor V8 biturbo Mercedes-AMG."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.298Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:30:25.982Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -320,5 +319,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Aston Martin DB12 representa una evolución clave en la longeva e ilustre estirpe de los grandes turismos de la firma británica. Presentado en 2023 como el sucesor directo del DB11, este modelo no se limita a ser una simple actualización estética, sino que introduce una renovación profunda tanto en su dinámica de conducción como en su arquitectura interior y tecnológica, marcando el inicio de una nueva era para la marca de Gaydon.\n\n## Un hito y generación relevante\nEl gran salto generacional del DB12 radica en la adopción de un habitáculo completamente rediseñado que abandona la antigua dependencia de los sistemas multimedia heredados, incorporando una pantalla táctil propia de desarrollo interno y alta resolución. Bajo el capó, mantiene la exitosa alianza estratégica con Mercedes-AMG, utilizando una evolución del bloque V8 biturbo de 4.0 litros que entrega unos imponentes 680 PS (671 hp) y 800 Nm de torque. Este rendimiento le permite acelerar de 0 a 100 km/h en apenas 3.6 segundos y alcanzar una velocidad máxima de 325 km/h.\n\n## Curiosidades\nA pesar de mantener la silueta clásica de un coupé 2+2 de proporciones equilibradas, el DB12 endurece notablemente su enfoque dinámico. Aston Martin lo define no solo como un GT tradicional, sino como el primer 'Super Tourer' del mundo, destacando que su rigidez estructural aumentó un 7% respecto a su antecesor gracias a refuerzos en los bajos y en el mamparo delantero. Además, cuenta con un sistema de suspensión adaptativa de última generación que gestiona de manera sobresaliente los cinco modos de conducción disponibles.\n\n## Competencia y posicionamiento\nEn el segmento de los gran turismos de altas prestaciones, el Aston Martin DB12 compite directamente contra colosos de la industria como el Ferrari Roma, el Bentley Continental GT y el Porsche 911 Turbo. Se posiciona en la franja más alta del mercado de lujo, ofreciendo una combinación equilibrada entre el confort necesario para viajes transcontinentales y la agilidad visceral propia de un deportivo de pura cepa, respaldado por un diseño exterior agresivo y sofisticado."
 }

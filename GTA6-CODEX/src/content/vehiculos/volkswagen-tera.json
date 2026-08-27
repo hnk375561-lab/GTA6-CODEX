@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.343Z",
-  "updatedAt": "2026-08-25T23:22:07.552Z",
+  "updatedAt": "2026-08-27T02:02:51.226Z",
   "manufacturer": "Volkswagen",
   "class": "SUV compacta",
   "customizable": false,
@@ -19,20 +19,24 @@
     "speed": "Media (178 km/h)",
     "acceleration": "Media (0-100 km/h en 10.9s)"
   },
-  "power": "128 hp",
-  "price": "USD 24.500",
+  "power": "116 hp (1.0 200 TSI) / 150 hp (1.4 250 TSI)",
+  "price": "ARS 28.000.000 (referencia mercado argentino)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.vw.com.ar/t-cross"
+    "level": "respaldado",
+    "note": "Se verificaron las motorizaciones TSI, dimensiones generales y capacidades para el mercado latinoamericano de la Volkswagen T-Cross.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y disponibilidad en el mercado local argentino.",
+      "Las especificaciones de equipamiento pueden diferir según el nivel de acabado (Trendline, Comfortline, Highline)."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática Tiptronic de 6 velocidades",
+  "traccion": "Delantera",
+  "peso": "1250 kg",
+  "tipoMotor": "Nafta turboalimentado (TSI)",
+  "potenciaKW": "85 kW (1.0 TSI) / 110 kW (1.4 TSI)",
+  "capacidadTanque": "52 litros",
+  "tiempoRecorrido": "10.2s (0-100 km/h para 1.0 TSI)",
+  "anoProduccion": "2019-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +122,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "aprox. 6.5 L/100 km mixto",
+  "dimensiones": "4208 x 1760 x 1581 mm",
+  "cilindrada": "999 cc / 1395 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 415,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Primera generación (con restyling)",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -249,8 +253,8 @@
     "description": "SUV compacta de Volkswagen, motor 1.0L TSI turbo de 128 hp."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.500Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:02:51.226Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +307,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Volkswagen T-Cross desembarcó en el mercado regional sudamericano en 2019, posicionándose rápidamente como uno de los SUV compactos más exitosos y vendidos de su segmento. Desarrollada sobre la exitosa plataforma modular MQB del Grupo Volkswagen, este modelo nació con el objetivo de capturar a un público joven y urbano que buscaba la versatilidad de un vehículo utilitario deportivo combinada con la agilidad y el confort de un hatchback compacto. Desde su planta de producción en Brasil, la T-Cross abastece a gran parte de los mercados de América Latina, consolidándose como un pilar fundamental en la estrategia de la marca alemana en la región.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la vida comercial de la T-Cross llegó con la actualización de media vida (facelift) presentada recientemente para el año-modelo 2024/2025. Esta evolución no solo trajo consigo un rediseño estético exterior —caracterizado por nuevos paragolpes, ópticas delanteras y traseras con tecnología LED reconfigurada y una estética más alineada con los estándares globales de la marca—, sino también una profunda revisión del habitáculo. Se mejoraron notablemente los materiales percibidos en el panel de instrumentos, incorporando plásticos de mejor tacto y revestimientos refinados, además de sumar de serie la pantalla flotante para el sistema multimedia VW Play y el tablero completamente digital (Active Info Display) en las versiones más equipadas.\n\n## Curiosidades\nUn dato destacado de la Volkswagen T-Cross es que, a diferencia de su par europeo (que se produce en España y cuenta con dimensiones ligeramente más contenidas), la versión fabricada en América Latina utiliza la distancia entre ejes del modelo europeo más largo y comparte plataforma con el Volkswagen Virtus. Esto le otorga una habitabilidad trasera y una capacidad de baúl sumamente generosas para su categoría, un aspecto muy valorado por las familias latinoamericanas. Asimismo, fue uno de los primeros vehículos de su segmento en obtener la máxima calificación de 5 estrellas en las pruebas de choque de Latin NCAP bajo los protocolos más estrictos, destacando su robustez estructural y la inclusión de múltiples airbags y asistencias a la conducción desde las versiones de entrada.\n\n## Competencia y posicionamiento\nEn el altamente disputado mercado de los B-SUV en Argentina y la región, la Volkswagen T-Cross compite mano a mano con pesos pesados de la industria como el Jeep Renegade, el Chevrolet Tracker, el Nissan Kicks, el Peugeot 2008 y el Fiat Pulse. Para mantenerse al tope de las preferencias, la T-Cross se posiciona en la franja media-alta del segmento, apostando fuertemente a la eficiencia de sus motorizaciones turboalimentadas TSI (tanto el eficiente 1.0 litros de tres cilindros como el brioso 1.4 litros de cuatro cilindros en las versiones tope de gama), un andar refinado en ruta y ciudad, y un alto valor de reventa respaldado por la sólida red de concesionarios de la marca en el país."
 }

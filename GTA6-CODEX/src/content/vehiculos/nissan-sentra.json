@@ -13,28 +13,33 @@
   "manufacturer": "Nissan",
   "class": "Sedán",
   "customizable": false,
-  "power": "149 hp",
-  "price": "USD 23.000",
-  "consumo": "7.5 l/100km (mixto)",
+  "power": "147 hp",
+  "price": "USD 25.000 (MSRP referencia)",
+  "consumo": "6.8 l/100km (mixto)",
   "dimensiones": "4641 x 1815 x 1450 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.nissan.com.ar/vehiculos/sentra.html"
+    "primarySource": "https://www.nissan.com.ar/vehiculos/sentra.html",
+    "note": "Se verificaron las especificaciones principales de motorización, dimensiones y capacidad del baúl para la octava generación del Nissan Sentra comercializada en la región.",
+    "limitations": [
+      "Los consumos y precios pueden variar levemente según el mercado específico de Latinoamérica.",
+      "Algunas cifras de performance son estimadas basadas en fichas técnicas oficiales."
+    ]
   },
   "performance": {
     "speed": "185 km/h",
     "acceleration": "0-100 km/h en 9.8s"
   },
   "createdAt": "2026-08-23T21:59:04.821675Z",
-  "updatedAt": "2026-08-25T23:22:07.485Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:53:47.534Z",
+  "transmision": "Automática CVT (Xtronic)",
+  "traccion": "Delantera",
+  "peso": "1350 kg",
+  "tipoMotor": "Naftero (Gasolina)",
+  "potenciaKW": "110 kW",
+  "capacidadTanque": "47 litros",
+  "tiempoRecorrido": "0-100 km/h en 10.2s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.0 L",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 466,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Octava generación (B18)",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "sedan",
   "gallery": {
@@ -252,7 +257,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.444Z",
+    "lastChecked": "2026-08-27T01:53:47.534Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +310,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Nissan Sentra es uno de los sedanes compactos más emblemáticos y de mayor trayectoria a nivel global dentro del segmento C. Nacido originalmente a principios de la década de 1980 como la versión norteamericana del Nissan Sunny (y conocido en otros mercados bajo distintas denominaciones como Tsuru), el Sentra supo ganarse rápidamente la confianza de los consumidores gracias a su enfoque práctico, su mecánica robusta y una excelente relación entre precio y producto. A lo largo de las décadas, el modelo evolucionó desde un vehículo utilitario y económico hacia un sedán de líneas mucho más refinadas, adoptando tecnologías de última generación tanto en materia de seguridad como de conectividad y confort.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante en la historia reciente del modelo se materializó con el lanzamiento de la octava generación (conocida internamente como plataforma B18). Presentada globalmente hacia finales de 2019 y llegando a los mercados de la región poco después, esta iteración rompió por completo con la estética conservadora de sus antecesores. Adoptó el lenguaje de diseño actual de la marca japonesa, caracterizado por la parrilla en forma de V ('V-Motion'), un techo flotante y proporciones mucho más agresivas y bajas que le otorgan una impronta deportiva indiscutible. Asimismo, este salto generacional significó la incorporación de un esquema de suspensión trasera independiente (multilink) en la gran mayoría de sus versiones, mejorando sustancialmente el comportamiento dinámico y el confort de marcha en ruta.\n\n## Curiosidades\nUna de las particularidades más interesantes del Nissan Sentra a lo largo de su historia es su versatilidad geográfica y comercial. Mientras que en los mercados de Norteamérica y Latinoamérica ha mantenido firmemente el nombre Sentra, en su mercado de origen (Japón) el modelo original evolucionó por caminos separados o fue reemplazado por otros hatchbacks y sedanes compactos. Además, en México la séptima generación convivió durante varios años con la octava bajo el nombre comercial de 'Sentra Classic' o mediante la prolongada producción del icónico Tsuru (basado en el Sentra B13), demostrando la legendaria durabilidad de su arquitectura mecánica que lo convirtió en el vehículo predilecto de flotas y taxis durante décadas.\n\n## Competencia y posicionamiento\nEn el mercado actual de sedanes compactos, el Nissan Sentra compite directamente contra pesos pesados de la industria como el Toyota Corolla, el Chevrolet Cruze (en los mercados donde aún tiene presencia), el Volkswagen Jetta y el Honda Civic. Para destacarse en un segmento fuertemente asediado por el auge de los SUV, el Sentra se posiciona ofreciendo un diseño exterior e interior de aspecto marcadamente premium, un completo paquete de asistencias a la conducción (agrupadas bajo el paraguas de Nissan Intelligent Mobility) y un habitáculo espacioso con materiales de agradable tacto. Es la opción ideal para quienes priorizan la elegancia clásica de un sedán tricuerpo sin renunciar a la eficiencia de consumo y a los estándares modernos de seguridad activa."
 }

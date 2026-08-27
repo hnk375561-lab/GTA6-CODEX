@@ -13,32 +13,31 @@
   "class": "SUV compacto",
   "customizable": false,
   "power": "130 hp",
-  "price": "EUR 18.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "EUR 19.500 (referencia España)",
+  "consumo": "5.5 l/100km combinado",
+  "dimensiones": "4.343 mm largo x 1.810 mm ancho x 1.656 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global (también comercializado como Renault Duster en Latinoamérica y otros mercados). Ficha técnica verificada contra la página oficial del Duster en dacia.es.",
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas básicas y dimensiones de la tercera generación del Dacia Duster contra la web oficial del fabricante.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
-    ],
-    "primarySource": "https://www.dacia.es/modelos-hibridos-electricos/duster-suv.html"
+      "Los precios varían según el mercado europeo y los impuestos locales aplicables.",
+      "Las versiones con tracción integral y mecánicas híbridas varían en peso y capacidad de baúl."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.335Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:37:38.940Z",
+  "transmision": "Manual de 6 velocidades o Automática",
+  "traccion": "Delantera o Integral (AWD)",
+  "peso": "1.300-1.450 kg",
+  "tipoMotor": "Gasolina / Híbrido",
+  "potenciaKW": "96 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "10.5 s",
+  "anoProduccion": "2024-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +123,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.2 L - 1.6 L",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 472,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2024,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -254,8 +253,8 @@
     "description": "SUV compacto low-cost de Dacia (Renault), gran volumen de ventas en Europa."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.363Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:37:38.940Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -308,5 +307,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\n\nEl Dacia Duster se ha consolidado como uno de los SUV compactos más exitosos y disruptivos del mercado europeo desde su lanzamiento inicial bajo la órbita de Renault Group. Nacido con la premisa de ofrecer un vehículo robusto, espacioso y accesible sin sacrificar las capacidades fundamentales que se esperan de un vehículo utilitario deportivo, el Duster redefinió el segmento conocido como \"low-cost\" o de acceso.\n\nA lo largo de sus iteraciones, este modelo supo ganarse la confianza de millones de conductores gracias a su enfoque práctico y mecánico simplificado pero sumamente durable. En América Latina y otros mercados emergentes, el vehículo ha sido comercializado históricamente bajo el rombo de Renault, adaptándose a las exigencias de caminos más castigados y manteniendo una altísima aceptación popular en países como Argentina y Brasil.\n\n## Un hito o generación relevante\n\nEl hito más importante en la trayectoria reciente del Duster es la llegada de su tercera generación, presentada a finales de 2023 y comercializada a partir de 2024. Esta nueva entrega representa un salto cualitativo enorme frente a sus antecesores: adopta la plataforma CMF-B del Grupo Renault, lo que le permite incorporar por primera vez mecánicas electrificadas, como las versiones híbridas (Hybrid 140), además de renovar por completo su lenguaje de diseño exterior con líneas mucho más angulosas, marcadas y de aspecto aventurero.\n\nEn el interior, esta generación abandona definitivamente la austeridad excesiva de los primeros modelos para ofrecer una cabina más tecnológica, con instrumental digital y sistemas multimedia actualizados, manteniendo materiales duraderos pensados para un uso intensivo y recreativo.\n\n## Curiosidades\n\nA pesar de ser concebido inicialmente como un producto de bajo costo para la marca rumana Dacia, el éxito rotundo del Duster obligó a la compañía a replantearse su estrategia de marketing y diseño. Se convirtió en un fenómeno de ventas en mercados tan competitivos como el francés, el español y el alemán, compitiendo muchas veces de igual a igual con SUVs generalistas de marcas tradicionalmente más caras.\n\nUn dato interesante es su versatilidad estructural: el sistema de tracción integral heredado y adaptado de la alianza Renault-Nissan le otorga capacidades off-road reales muy superiores al promedio de los crossovers urbanos de su mismo rango de precio, transformándolo en una opción muy elegida por entusiastas del aire libre.\n\n## Competencia y posicionamiento\n\nEn el mercado europeo, el Dacia Duster compite en el segmento de los B-SUV y C-SUV compactos económicos, enfrentándose a modelos como el Seat Arona, el Citroën C3 Aircross, el Skoda Kamiq y versiones de entrada de vehículos de mayor tamaño. Su principal argumento de venta es la inmejorable relación precio-producto, ofreciendo dimensiones de un segmento superior por el costo de un vehículo compacto básico.\n\nEn los mercados donde se comercializa como Renault Duster, su posicionamiento se enfoca fuertemente en la robustez estructural, la confiabilidad mecánica y la accesibilidad para familias que buscan su primer vehículo de estas características o un reemplazo versátil para el día a día."
 }

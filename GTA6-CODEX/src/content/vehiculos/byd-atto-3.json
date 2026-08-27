@@ -12,34 +12,33 @@
   "manufacturer": "BYD",
   "class": "SUV eléctrico",
   "customizable": false,
-  "power": "201 hp",
-  "price": "EUR 38.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "204 hp",
+  "price": "EUR 38.000 (referencia mercado europeo)",
+  "consumo": "15.6 kWh/100 km",
+  "dimensiones": "4.455 mm largo x 1.875 mm ancho x 1.615 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global (también comercializado como BYD Yuan Plus en China y Latinoamérica). Ficha técnica verificada contra la página oficial del modelo en byd.com.",
+    "primarySource": "https://www.byd.com/en/car/atto3",
+    "note": "Se actualizaron las especificaciones técnicas con datos reales y verificados del BYD Atto 3 (también conocido como Yuan Plus en otros mercados), incluyendo potencia de 150 kW (204 hp), dimensiones reales basadas en la plataforma e-Platform 3.0 y capacidad de baúl de 440 litros.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria.",
-      "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
-    ],
-    "primarySource": "https://www.byd.com/en/car/atto3"
+      "Los precios pueden variar según los aranceles de importación y subsidios vigentes en cada país de comercialización.",
+      "Las cifras de autonomía varían según el ciclo de homologación (WLTP o CLTC)."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.281Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-180 kW",
+  "updatedAt": "2026-08-27T01:33:27.693Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Delantera",
+  "peso": "1.750 kg",
+  "tipoMotor": "Eléctrico síncrono de imanes permanentes",
+  "potenciaKW": "150 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "7.3s",
+  "anoProduccion": "2022-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,11 +123,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 440,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2022,
   "colores": [],
   "category": "electrico",
   "gallery": {
@@ -252,7 +251,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.319Z",
+    "lastChecked": "2026-08-27T01:33:27.693Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +304,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl BYD Atto 3 se ha convertido en uno de los vehículos eléctricos más importantes a nivel global para el fabricante chino BYD (Build Your Dreams). Presentado internacionalmente a finales de 2021 y comercializado en mercados de Asia-Pacífico y Latinoamérica bajo el nombre de BYD Yuan Plus, este SUV compacto marcó un punto de inflexión en la estrategia de expansión masiva de la marca fuera de su mercado doméstico. El modelo inaugura una nueva era para la compañía al ser el primer SUV desarrollado íntegramente sobre la avanzada e-Platform 3.0, diseñada exclusivamente para vehículos propulsados por baterías.\n\n## Un hito o generación relevante\nEl gran diferencial técnico y comercial del Atto 3 radica en la adopción de las innovadoras baterías Blade de tipo LFP (Litio-Fierro-Fosfato). Este hito tecnológico no solo optimiza de forma notable el aprovechamiento del espacio interior y la rigidez estructural del chasis, sino que redefine los estándares de seguridad en la industria gracias a su excelente resistencia a las pruebas de penetración y control térmico extremo. Con una potencia de 150 kW (204 hp) transmitida al eje delantero y una aceleración de 0 a 100 km/h en 7,3 segundos, el Atto 3 combina agilidad urbana con un desempeño sumamente equilibrado en ruta.\n\n## Curiosidades\nEl interior del BYD Atto 3 destaca por un diseño sumamente disruptivo y lúdico, inspirado en la cultura del fitness y los gimnasios. Los paneles de las puertas incorporan cordones elásticos diseñados para simular las cuerdas de una guitarra, permitiendo a los pasajeros sujetar objetos de manera original, mientras que la selectora de marchas asemeja la empuñadura de una palanca de aceleración de una nave o embarcación. Además, cuenta con una característica pantalla táctil central giratoria de 12.8 o 15.6 pulgadas, permitiendo alternar con un simple comando entre la disposición horizontal y vertical según la preferencia de visualización del conductor.\n\n## Competencia y posicionamiento\nEn el plano internacional, el BYD Atto 3 compite en el altamente disputado segmento de los C-SUV eléctricos, enfrentándose de manera directa contra modelos consagrados como el Tesla Model Y, el Volkswagen ID.4, el Hyundai Ioniq 5 y el Kia EV6. Su posicionamiento estratégico apuesta fuertemente por ofrecer una relación precio-producto muy competitiva, un nivel de equipamiento tecnológico de serie muy completo y una alta eficiencia energética, consolidándose rápidamente como una de las opciones predilectas para los consumidores que buscan dar el salto hacia la movilidad eléctrica sin resignar confort ni espacio interior."
 }

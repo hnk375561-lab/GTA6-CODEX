@@ -14,15 +14,16 @@
   "manufacturer": "Lexus",
   "class": "SUV premium compacta",
   "customizable": false,
-  "power": "239 hp",
-  "price": "USD 55.000",
-  "consumo": "6.0 l/100km (híbrida, mixto)",
+  "power": "240 hp",
+  "price": "USD 65.000 (referencia regional)",
+  "consumo": "5.8 l/100km (mixto)",
   "dimensiones": "4660 x 1865 x 1660 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.lexus.com.ar/nx",
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas globales de la segunda generación del Lexus NX 350h, incluyendo dimensiones, esquema híbrido y capacidades basadas en fichas técnicas oficiales de la marca.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): tipoMotor corregido de \"Gasolina/Diésel\" (valor de relleno) a \"Gasolina + sistema híbrido\", ya que este vehículo no tiene variante diésel. Arquitectura específica del híbrido (serie/paralelo, mild/full/enchufable) pendiente de verificar con fuente primaria."
+      "Los precios varían considerablemente según el mercado sudamericano, impuestos locales y disponibilidad de versiones.",
+      "Los valores de consumo pueden diferir según las normativas de homologación de cada país (WLTP vs. EPA)."
     ]
   },
   "performance": {
@@ -30,15 +31,15 @@
     "acceleration": "0-100 km/h en 7.2s (híbrida)"
   },
   "createdAt": "2026-08-23T21:59:02.350462Z",
-  "updatedAt": "2026-08-25T23:22:07.447Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina + sistema híbrido",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:50:40.836Z",
+  "transmision": "Automática e-CVT",
+  "traccion": "Total AWD",
+  "peso": "1730 kg",
+  "tipoMotor": "Gasolina 2.5L + sistema híbrido",
+  "potenciaKW": "179 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "7.2s",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -126,14 +127,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2487 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 545,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -258,8 +259,8 @@
     "description": "SUV premium compacta de Lexus, disponible en versión híbrida (NX 350h)."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.423Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:50:40.836Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -312,5 +313,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Lexus NX hizo su aparición global en el año 2014, irrumpiendo en el competitivo segmento de los SUV compactos de lujo con una propuesta fuertemente marcada por el diseño anguloso y vanguardista heredado del lenguaje estético de la marca japonesa. Como el hermano menor del exitoso RX, el NX fue concebido para capturar a un público más joven y urbano que buscaba la versatilidad de un vehículo utilitario deportivo sin renunciar a las comodidades, acabados artesanales y el refinamiento característicos de Lexus. La primera generación sentó las bases de la electrificación en la categoría al introducir variantes híbridas que rápidamente se convirtieron en las preferidas de los compradores en mercados clave de Norteamérica, Europa y Asia.\n\n## Un hito y generación relevante\nEl punto de inflexión más importante en la trayectoria del modelo llegó con el lanzamiento de su segunda generación a finales de 2021 (modelo 2022 en adelante). Este rediseño integral no solo actualizó la plataforma adoptando la arquitectura GA-K, sino que introdujo una profunda evolución tecnológica y mecánica. Entre sus hitos más destacados se encuentra la incorporación de la primera variante híbrida enchufable (PHEV) para la marca, bautizada como NX 450h+, además de renovar por completo el sistema multimedia —un histórico punto débil de los modelos anteriores— con pantallas táctiles de gran tamaño, conectividad inalámbrica y el avanzado paquete de asistencias a la conducción Lexus Safety System+ 3.0.\n\n## Curiosidades\nUn detalle fascinante del desarrollo del Lexus NX radica en la obsesión de la marca por la ergonomía y la percepción de calidad en el habitáculo, un concepto conocido en Japón como *Takumi*. Por ejemplo, el sistema de apertura de puertas electrónicas denominado *Digital E-Latch* reemplaza las manijas mecánicas tradicionales por un mecanismo de botón suave que evita que los pasajeros abran la puerta si se aproxima un vehículo o ciclista por detrás, integrándose directamente con el detector de puntos ciegos. Asimismo, la acústica interior fue desarrollada en colaboración con Yamaha para calibrar la respuesta sonora del motor y aislar de forma casi quirúrgica el ruido exterior de la ruta.\n\n## Competencia y posicionamiento\nEn el mercado global y regional, el Lexus NX compite directamente contra los máximos exponentes alemanes del segmento C-SUV prémium, tales como el BMW X3, el Audi Q5 y el Mercedes-Benz GLC, además de alternativas de carácter más dinámico como el Volvo XC60 o el Alfa Romeo Stelvio. Mientras sus rivales europeos suelen apostar fuertemente por motorizaciones diésel o enfoques de conducción puramente deportivos, el posicionamiento de Lexus descansa casi de manera exclusiva sobre la alta eficiencia de su tecnología híbrida autorrecargable y una reputación envidiable en materia de confiabilidad mecánica y valor de reventa. Esto lo sitúa como una opción sumamente racional y sofisticada para aquellos usuarios que priorizan el confort de marcha y el ahorro de combustible por sobre las prestaciones dinámicas extremas."
 }

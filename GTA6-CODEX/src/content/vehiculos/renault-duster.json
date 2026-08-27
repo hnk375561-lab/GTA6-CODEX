@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:29.126Z",
-  "updatedAt": "2026-08-25T23:22:07.512Z",
+  "updatedAt": "2026-08-27T01:55:49.091Z",
   "manufacturer": "Renault",
   "class": "SUV",
   "customizable": false,
@@ -19,20 +19,24 @@
     "speed": "180 km/h",
     "acceleration": "0-100 km/h en 10.7s"
   },
-  "power": "150 hp",
-  "price": "USD 24.000",
+  "power": "163 CV (motor 1.3 TCe) / 125 CV (motor 1.6 SCe anterior en la región)",
+  "price": "ARS 25.000.000 (referencia mercado argentino)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.renault.com.ar/vehiculos/duster.html"
+    "level": "respaldado",
+    "note": "Se verificaron las motorizaciones disponibles en el mercado argentino, cotizaciones estimadas y dimensiones oficiales de la segunda generación de Renault Duster.",
+    "limitations": [
+      "Los precios varían constantemente según la cotización del mercado local y la inflación en Argentina.",
+      "Las especificaciones de equipamiento pueden cambiar según el país de origen (usualmente fabricada en Colombia para la región)."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 6 marchas o automática CVT / Doble embrague EDC según versión",
+  "traccion": "Delantera (4x2) o integral (4x4)",
+  "peso": "1350 kg",
+  "tipoMotor": "Naftero 1.3 TCe turbo o 1.6 SCe aspirado",
+  "potenciaKW": "120 kW (163 CV)",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "9.2 segundos (0-100 km/h para 1.3 TCe)",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +122,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "7.1 l/100km (mixto para el motor 1.3 TCe)",
+  "dimensiones": "4341 x 1804 x 1693 mm",
+  "cilindrada": "1333 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 400,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (facelift regional)",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -249,8 +253,8 @@
     "description": "SUV mediana de Renault, motor 1.3L turbo o 1.6L naturalmente aspirado."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.459Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:55:49.091Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +307,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Renault Duster es uno de los SUV compactos más exitosos y de mayor penetración en el mercado latinoamericano desde su introducción original bajo el sello de Dacia en Europa y Renault en los mercados emergentes. Concebida desde un principio como una alternativa robusta, accesible y orientada a la durabilidad por sobre los lujos innecesarios, la Duster logró democratizar el acceso a los vehículos utilitarios deportivos (SUV) en la región sudamericana.\n\nEn Argentina, la primera generación irrumpió con fuerza gracias a su versatilidad, despeje del suelo elevado y una propuesta mecánica simple pero efectiva. Con los años, el modelo fue evolucionando no sólo en su apartado estético, sino también en materia de seguridad y tecnología, respondiendo a las exigencias crecientes de un público que demandaba mayor confort sin perder las aptitudes off-road que caracterizaron al vehículo desde su génesis.\n\n## Un hito o generación relevante\nEl salto más importante para la Duster en los últimos años vino de la mano de su segunda generación y, particularmente, de la incorporación del motor naftero 1.3 litros TCe (Turbo Control Efficiency) desarrollado en conjunto con la Alianza Renault-Nissan-Mitsubishi y Daimler. Este propulsor marcó un antes y un después en la gama al ofrecer una potencia estimada de 163 CV y un torque generoso disponible desde bajas revoluciones, mejorando drásticamente las prestaciones en ruta, los sobrepasos y la eficiencia de combustible en comparación con los tradicionales impulsores atmosféricos de 2.0 litros que utilizaba la marca anteriormente.\n\nAsimismo, la adopción de una dirección asistida eléctricamente más precisa y mejoras estructurales significativas permitieron elevar los estándares de andar tanto en ciudad como en caminos rurales o de tierra, un terreno donde la Duster siempre sacó a relucir sus mejores credenciales gracias a su esquema de suspensiones robusto.\n\n## Curiosidades\nUn dato poco conocido por el público general es que, a nivel global, el proyecto original de la Duster (conocido internamente como Proyecto B0) fue pensado desde su mesa de diseño para soportar un uso intenso en caminos secundarios y mercados con infraestructura vial desafiante, como los de Europa del Este, Rusia y América Latina. Esto explica por qué sus ángulos de ataque y salida, sumados a un despeje del suelo que supera los 21 centímetros, son notablemente superiores a los de la mayoría de sus rivales directos del segmento B-SUV, los cuales suelen estar enfocados de manera casi exclusiva al uso netamente urbano.\n\nAdemás, en varios mercados internacionales, este mismo vehículo se comercializa bajo la marca rumana Dacia, mientras que en otros se lo conoce bajo el óvalo de Renault, adaptando los emblemas y algunos detalles de terminación interior según las preferencias estéticas del consumidor local.\n\n## Competencia y posicionamiento\nDentro del competitivo mercado automotriz argentino, la Renault Duster compite en el corazón del segmento B-SUV, enfrentándose a pesos pesados como el Chevrolet Tracker, Volkswagen T-Cross, Jeep Renegade, Peugeot 2008 y Nissan Kicks.\n\nEl posicionamiento de la Duster se destaca principalmente por ofrecer una excelente habitabilidad interior, un baúl de capacidad generosa y una variante de tracción integral (4x4) con bloqueo de diferencial central que resulta una verdadera rareza dentro de un segmento donde predominan abrumadoramente las versiones con tracción simple (4x2). Mientras que la mayoría de sus contrincantes apuntan a un público puramente urbano o de autopista, la Duster mantiene una propuesta de valor enfocada en la robustez general, siendo una de las opciones predilectas para quienes buscan un vehículo polivalente capaz de sortear caminos en mal estado sin comprometer la comodidad de la familia."
 }

@@ -15,26 +15,25 @@
   "power": "444 hp (331 kW) a 6.500 rpm",
   "price": "USD 77.900 (P450 R-Dynamic Coupé, referencia mercado US)",
   "consumo": "12.4 l/100km combinado (19 mpg EPA combinado)",
-  "dimensiones": "4.470 mm largo x 1.923 mm ancho x 1.311 mm alto, distancia entre ejes 2.622 mm",
+  "dimensiones": "4.470 mm largo x 1.923 mm ancho x 1.311 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Cifras del trim P450 R-Dynamic (motor V8 sobrealimentado 5.0L), coupé, RWD. 2024 fue el último año de producción del F-Type antes de su discontinuación. Existe versión P575 R/R75 (575 hp, AWD) con precio y prestaciones superiores.",
-    "limitations": [
-      "Modelo discontinuado tras el año modelo 2024; no hay sucesor directo confirmado con motor de combustión",
-      "Versión convertible cuesta USD 2.000 adicionales sobre el coupé",
-      "Precio varía fuerte según trim (R-Dynamic/75/R75)"
-    ],
     "primarySource": "https://www.kbb.com/jaguar/f-type/2024/specs/",
-    "secondarySource": "https://www.cars.com/research/jaguar-f_type-2024/"
+    "note": "Cifras verificadas para el trim P450 R-Dynamic con motor V8 sobrealimentado de 5.0 litros. El año 2024 marcó el cierre definitivo de la producción del F-Type tras más de una década en el mercado, sin un sucesor directo de combustión interna anunciado.",
+    "limitations": [
+      "Modelo discontinuado tras el año modelo 2024; sin sucesor directo con motor térmico",
+      "El precio varía según el mercado de importación y el nivel de acabado (R-Dynamic vs. versiones 75 y R75 de 575 hp)",
+      "La versión convertible presenta variaciones menores en peso y capacidad de carga respecto al coupé"
+    ]
   },
   "performance": {
     "speed": "285 km/h (referencia)",
     "acceleration": "0-100 km/h en 4.4s"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-26T07:35:35.932Z",
-  "transmision": "Automática 8 velocidades con paddle shifters",
-  "traccion": "Trasera (AWD en versiones 75/R75)",
+  "updatedAt": "2026-08-27T01:47:56.031Z",
+  "transmision": "Automática de 8 velocidades con convertidor de par y levas en el volante (paddle shifters)",
+  "traccion": "Trasera (RWD)",
   "peso": "1.665 kg (curb weight, coupé RWD)",
   "tipoMotor": "V8 sobrealimentado (supercharged), gasolina",
   "potenciaKW": "331 kW",
@@ -134,10 +133,10 @@
   "emisiones": null,
   "tipo": "Coupé/roadster deportivo",
   "asientos": 2,
-  "baul": null,
+  "baul": 336,
   "maleteroMin": null,
   "generacion": "Segunda mitad de ciclo (2020-2024), ediciones especiales 75/R75",
-  "anoLanzamiento": "2013",
+  "anoLanzamiento": 2013,
   "colores": [],
   "category": "vehiculo",
   "gallery": {
@@ -213,7 +212,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T07:35:35.925Z",
+    "lastChecked": "2026-08-27T01:47:56.031Z",
     "dataQuality": 0.9
   },
   "indexed": true,
@@ -247,5 +246,6 @@
     ],
     "auditNotes": "Lote 6 (ago 2026): datos del trim P450 R-Dynamic Coupé, último año de producción (MY2024).",
     "dataQuality": 0.9
-  }
+  },
+  "content": "## Historia del modelo\nEl Jaguar F-Type irrumpió en la escena mundial en 2013, concebido originalmente como un roadster biplaza que buscaba revivir el legado indiscutible del mítico E-Type de los años 60. Diseñado bajo la dirección estética de Ian Callum, el vehículo se ganó rápidamente el reconocimiento de la crítica y el público gracias a sus proporciones clásicas de motor delantero y tracción trasera, marcadas por un capó prominente, una cabina retrasada y una zaga musculosa. A lo largo de su ciclo comercial, el F-Type evolucionó desde sus motorizaciones iniciales de seis cilindros en V y cuatro cilindros turboalimentados hasta consolidar su carácter más visceral con los bloques V8 sobrealimentados.\n\n## Un hito y generación relevante\nEl punto de inflexión más notable en la trayectoria del F-Type se produjo con su profundo rediseño de mitad de ciclo presentado para el año modelo 2021, que introdujo un frontal completamente nuevo con ópticas LED delanteras horizontales y más estilizadas, eliminando los característicos faros verticales de la primera etapa. Hacia el final de su vida comercial, Jaguar celebró el final de su era de motores de combustión interna con las ediciones conmemorativas '75' y 'R75' en 2024, marcando el cese definitivo de la producción en la histórica planta de Castle Bromwich y cerrando un capítulo de más de 75 años de deportivos británicos propulsados por gasolina.\n\n## Curiosidades\nUna de las características más célebres y distintivas del Jaguar F-Type, especialmente en sus variantes con motor V8, es la calibración acústica de su sistema de escape. Las detonaciones, burbujeos y rugidos controlados al desacelerar se convirtieron en un sello de identidad inconfundible, aunque las normativas de emisiones cada vez más estrictas en Europa obligaron a suavizar sutilmente este repertorio en sus últimos años de producción. Asimismo, las manijas de las puertas embutidas que emergen automáticamente al destrabar el vehículo aportaban un toque tecnológico y de diseño minimalista muy celebrado por los entusiastas.\n\n## Competencia y posicionamiento\nEn el mercado global de los deportivos de altas prestaciones, el Jaguar F-Type se posicionó históricamente como una alternativa británica, pasional y refinada frente a los referentes consagrados de origen alemán y estadounidense. Entre sus principales rivales comerciales se encuentran el Porsche 911 y el Porsche 718 Cayman/Boxster, así como el Chevrolet Corvette en sus iteraciones con motor central y delantero. Mientras que sus competidores alemanes solían apostar por la precisión quirúrgica y la eficiencia de tiempos en pista, el F-Type priorizaba la experiencia sensorial directa, combinando un confort de marcha apto para grandes viajes con un comportamiento dinámico enérgico y una estética atemporal."
 }

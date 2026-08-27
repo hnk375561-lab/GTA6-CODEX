@@ -12,31 +12,31 @@
   "manufacturer": "Honda",
   "class": "Moto aventura",
   "customizable": false,
-  "power": "75 kW (101.9 hp / 102 CV) a 7.500 rpm",
+  "power": "75 kW (102 CV) a 7.500 rpm",
   "price": "EUR 15.525 (versión base MT, referencia mercado europeo)",
   "consumo": "5.4 l/100km combinado (referencia fabricante)",
-  "dimensiones": "2.330 mm largo x 960 mm ancho x 1.475 mm alto, distancia entre ejes 1.575 mm",
+  "dimensiones": "2.330 mm x 960 mm x 1.475 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Cifras de la CRF1100L Africa Twin MY2024 (versión base, transmisión manual), tras la actualización de par motor y carenado presentada por Honda Europa.",
-    "limitations": [
-      "La versión Adventure Sports tiene rueda delantera de 19\", suspensión más corta y precio superior",
-      "Existe variante DCT (doble embrague) con precio y peso ligeramente mayores",
-      "Precio de referencia mercado europeo; varía fuerte por país"
-    ],
     "primarySource": "https://hondanews.eu/es/es/motorcycles/media/pressreleases/471514",
-    "secondarySource": "https://www.motofichas.com/marcas/honda/africa-twin"
+    "secondarySource": "https://www.motofichas.com/marcas/honda/africa-twin",
+    "note": "Cifras verificadas para la CRF1100L Africa Twin MY2024, versión base con transmisión manual, tras las mejoras introducidas por Honda Europa en el par motor y el diseño frontal.",
+    "limitations": [
+      "La versión Adventure Sports cuenta con rueda delantera de 19\", recorridos de suspensión reducidos y un precio superior",
+      "La variante con transmisión de doble embrague (DCT) presenta un incremento en el peso final y un costo mayor",
+      "Los valores de precio son de referencia para el mercado europeo y pueden variar según el país e impuestos locales"
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 3.8s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-26T07:28:17.767Z",
-  "transmision": "Manual 6 velocidades (opcional DCT automática 6 velocidades)",
-  "traccion": "4x2 (trasera, on-road/off-road)",
-  "peso": "226 kg (en orden de marcha, MT)",
-  "tipoMotor": "Bicilíndrico en paralelo, 4 tiempos, refrigeración líquida",
+  "updatedAt": "2026-08-27T01:43:33.069Z",
+  "transmision": "Manual de 6 velocidades (opcional DCT de doble embrague)",
+  "traccion": "Cadena (on-road/off-road)",
+  "peso": "226 kg (en orden de marcha, versión base MT)",
+  "tipoMotor": "Bicilíndrico en paralelo, 4 tiempos, SOHC, refrigeración líquida",
   "potenciaKW": "75 kW",
   "capacidadTanque": "18.8 litros",
   "tiempoRecorrido": "3.8s",
@@ -137,8 +137,8 @@
   "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": "Facelift 2024 (par motor +7%, nuevo carenado)",
-  "anoLanzamiento": "2016",
+  "generacion": "Facelift 2024 (actualización de par motor y carenado)",
+  "anoLanzamiento": 2016,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -214,7 +214,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T07:28:17.753Z",
+    "lastChecked": "2026-08-27T01:43:33.069Z",
     "dataQuality": 0.9
   },
   "indexed": true,
@@ -248,5 +248,6 @@
     ],
     "auditNotes": "Lote 5 (ago 2026): datos de la CRF1100L MY2024, versión base MT.",
     "dataQuality": 0.9
-  }
+  },
+  "content": "## Historia del modelo\nLa Honda Africa Twin es uno de los nombres más emblemáticos dentro del segmento de las motocicletas de aventura. Su legado se remonta a las icónicas motos de rally NXR que dominaron el París-Dakar a finales de los años ochenta, lo que dio origen comercial a la legendaria XRV750 Africa Twin. Tras años de ausencia en el mercado, Honda rescató esta denominación en 2016 con el lanzamiento de la CRF1000L, una maxi-trail desarrollada desde cero para recuperar el espíritu dakariano combinando una excelente aptitud off-road con una gran facilidad de uso en ruta y en el día a día.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la trayectoria moderna de este modelo se produjo con la llegada de la generación CRF1100L y, más recientemente, la actualización introducida para el año 2024. En esta última evolución, la marca japonesa optimizó el propulsor bicilíndrico paralelo para entregar un 7% más de par motor en el rango bajo y medio, mejorando notablemente la respuesta al acelerador. Asimismo, se rediseñó el carenado frontal para ofrecer una mayor protección aerodinámica sin comprometer la movilidad del piloto al conducir parado sobre los estribos, consolidando a la Africa Twin como una referencia tecnológica gracias a su central inercial (IMU) de 6 ejes y su avanzada electrónica.\n\n## Curiosidades\nUno de los aspectos más destacados de la gama Africa Twin es la disponibilidad de la transmisión de doble embrague (DCT), un sistema pionero en el mundo de las motocicletas grandes que permite cambiar de marcha de forma automática o secuencial mediante pulsadores en el manillar, eliminando la maneta de embrague tradicional sin perder la sensación de control dinámico. Además, su configuración mecánica prioriza un equilibrio óptimo entre potencia y tracción, evitando caer en la carrera armamentista de cifras desmedidas para centrarse en la confiabilidad mecánica y la ergonomía en travesías de larga distancia.\n\n## Competencia y posicionamiento\nEn el mercado global de las maxi-trail, la Honda Africa Twin se posiciona en el segmento premium, compitiendo de igual a igual con pesos pesados de la industria como la BMW R 1250 GS / R 1300 GS, la KTM 1290 / 1390 Super Adventure y la Triumph Tiger 1200. A diferencia de algunas rivales que se han volcado fuertemente hacia el asfalto y la alta cilindrada asfáltica, la Africa Twin mantiene una marcada orientación hacia el uso mixto, destacando especialmente por su rueda delantera de 21 pulgadas en la versión base, lo que le otorga capacidades camperas sobresalientes y la consolida como una auténtica moto aventura pura."
 }

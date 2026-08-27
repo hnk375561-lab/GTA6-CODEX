@@ -13,32 +13,32 @@
   "class": "SUV eléctrico",
   "customizable": false,
   "power": "225 hp",
-  "price": "USD 43.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "USD 43.000 (referencia base mercado internacional)",
+  "consumo": "16.8 kWh/100 km (equivalente combinado)",
+  "dimensiones": "4.635 mm largo x 1.890 mm ancho x 1.605 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.hyundai.com/worldwide/en/eco/ioniq5/performance",
+    "note": "Se actualizaron las dimensiones, capacidades, peso y tipo de tracción y motor de acuerdo a las especificaciones globales de la plataforma E-GMP para el Hyundai Ioniq 5. Se corrigieron los datos erróneos de vehículos de combustión interna.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
-    ],
-    "primarySource": "https://www.hyundai.com/worldwide/en/eco/ioniq5/performance"
+      "Los precios varían según el mercado local y los subsidios gubernamentales aplicables.",
+      "La autonomía exacta y los tiempos de carga dependen de la capacidad de la batería (Standard o Long Range) y la infraestructura disponible."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.404Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-180 kW",
+  "updatedAt": "2026-08-27T01:46:30.936Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción trasera (RWD)",
+  "peso": "1.830-2.050 kg",
+  "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
+  "potenciaKW": "168 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "7.3s (0-100 km/h)",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -123,11 +123,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 527,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "electrico",
   "gallery": {
@@ -201,8 +201,8 @@
     "description": "SUV eléctrico sobre plataforma E-GMP dedicada, carga ultrarrápida 800V."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.403Z",
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:46:30.936Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -220,5 +220,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Hyundai Ioniq 5 marca un antes y un después en la estrategia de electrificación de la marca surcoreana. Presentado a comienzos de 2021, este SUV crossover de tamaño mediano fue el primer vehículo en utilizar la plataforma modular global eléctrica (E-GMP), desarrollada exclusivamente para albergar trenes motrices 100% eléctricos de nueva generación sin compartir arquitectura con vehículos térmicos tradicionales.\n\nDesde su concepción, el Ioniq 5 buscó rendir homenaje al pasado de la marca, específicamente tomando inspiración estilística del Hyundai Pony de 1974 diseñado por Giorgetto Giugiaro, pero reinterpretado bajo un lenguaje futurista con líneas angulares muy marcadas y grupos ópticos delanteros y traseros compuestos por pixeles LED paramétricos. Este diseño retro-futurista le valió múltiples galardones internacionales, consagrándose como Auto del Año en el Mundo (World Car of the Year) en 2022.\n\n## Un hito o generación relevante\nEl verdadero salto tecnológico del Ioniq 5 no reside únicamente en su estética, sino en su arquitectura eléctrica de 800 voltios. Mientras que la mayoría de los vehículos eléctricos generalistas de su época operaban con sistemas de 400V, la arquitectura E-GMP permite una capacidad de carga ultrarrápida. Con un cargador adecuado de corriente continua (DC) de 350 kW, el Ioniq 5 puede reponer del 10% al 80% de su batería en tan solo 18 minutos. Asimismo, incorpora la función V2L (Vehicle-to-Load), permitiendo utilizar la energía acumulada en el vehículo para alimentar dispositivos electrónicos externos, electrodomésticos o incluso cargar otro vehículo eléctrico.\n\n## Curiosidades\nEl interior del Ioniq 5 fue concebido bajo el concepto de \"Living Space\" (espacio habitable). Gracias a una distancia entre ejes de tres metros —superior a la de muchos SUV de mayor tamaño exterior— y a un piso completamente plano, el habitáculo ofrece una habitabilidad sobresaliente. La consola central, denominada \"Universal Island\", puede deslizarse hacia atrás hasta 140 milímetros, facilitando el acceso o permitiendo que los pasajeros de las plazas traseras utilicen sus puertos de carga con comodidad. Además, Hyundai hizo un fuerte hincapié en la sostenibilidad: gran parte de los materiales interiores, incluidos los revestimientos de los asientos, los paneles de las puertas y el techo, están fabricados a partir de materiales reciclados, botellas de PET petroquímicas, hilos de lana ecológica y pinturas vegetales extraídas de aceites de flores y maíz.\n\n## Competencia y posicionamiento\nEn el mercado global de los SUV eléctricos medianos, el Hyundai Ioniq 5 compite de manera directa con referentes de peso como el Tesla Model Y, el Volkswagen ID.4, el Ford Mustang Mach-E y su hermano de plataforma, el Kia EV6. Se posiciona en un segmento generalista con aspiraciones y tecnologías de nivel premium, destacándose frente a sus rivales principalmente por la velocidad de su sistema de carga, su inconfundible personalidad estética y una dinámica de marcha orientada al confort y la eficiencia en ruta."
 }

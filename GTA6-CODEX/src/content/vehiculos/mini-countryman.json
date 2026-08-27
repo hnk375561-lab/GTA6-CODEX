@@ -12,32 +12,31 @@
   "manufacturer": "Mini",
   "class": "SUV compacto",
   "customizable": false,
-  "power": "201 hp",
-  "price": "EUR 35.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "204 hp",
+  "price": "EUR 42.000 (referencia mercado europeo)",
+  "consumo": "6.5 l/100km combinado",
+  "dimensiones": "4.433 mm largo x 1.843 mm ancho x 1.656 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "respaldado",
+    "note": "Se actualizaron las especificaciones basándose en la tercera generación del Mini Countryman (plataforma U25), estandarizando dimensiones, capacidades y motorizaciones de referencia global.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ],
-    "primarySource": "https://www.mini.com/en_MS/home/new-family/new-mini-countryman.html"
+      "El precio puede variar según los impuestos y aranceles específicos de cada mercado de importación."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.470Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:52:42.197Z",
+  "transmision": "Automática de doble embrague",
+  "traccion": "Tracción integral ALL4",
+  "peso": "1.670 kg",
+  "tipoMotor": "Gasolina (Mild Hybrid) / Eléctrico",
+  "potenciaKW": "150 kW",
+  "capacidadTanque": "54 litros",
+  "tiempoRecorrido": "8.3s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -125,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.998 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 460,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "U25 (Tercera generación)",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "auto-pequeño",
   "gallery": {
@@ -207,7 +206,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.436Z",
+    "lastChecked": "2026-08-27T01:52:42.197Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -225,5 +224,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Mini Countryman irrumpió en el mercado automotriz para redefinir lo que los conductores esperaban de la marca británica propiedad de BMW. Históricamente conocida por fabricar vehículos urbanos ultracompactos, la firma dio un golpe de timón al presentar en 2010 un SUV que combinaba la estética retro y el manejo ágil característico de Mini con una carrocería sobreelevada de cuatro puertas y mayor espacio interior. Con el paso de los años, el Countryman dejó de ser una rareza dentro del catálogo para convertirse en uno de los pilares comerciales más importantes de la marca a nivel global.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la historia del modelo llegó con la introducción de su tercera generación (conocida bajo el código interno U25). Este salto generacional no solo incrementó de manera notable las dimensiones exteriores —superando holgadamente los 4.4 metros de largo—, sino que también marcó una evolución estética hacia líneas más robustas, geométricas y minimalistas. Además, esta iteración consolidó la apuesta tecnológica y de electrificación, ofreciendo variantes completamente eléctricas (E y SE ALL4) junto con eficientes opciones de combustión interna equipadas con tecnología Mild Hybrid de 48V, adaptándose así a las exigencias medioambientales más estrictas sin perder el ADN dinámico.\n\n## Curiosidades\nA pesar de ser el vehículo más grande y pesado fabricado por Mini en toda su historia, los ingenieros de la marca se esmeraron por mantener el famoso tacto de conducción estilo *go-kart*. Esto se logra gracias a una puesta a punto de suspensión específica, un centro de gravedad cuidadosamente estudiado y sistemas de tracción integral inteligente como el ALL4. Otro dato destacado es su interior, donde se prescindió del tradicional instrumental tras el volante en las versiones más modernas para concentrar toda la información en una llamativa pantalla OLED central circular, un guiño directo al diseño del Mini clásico de 1959 pero llevado al extremo de la digitalización.\n\n## Competencia y posicionamiento\nDentro del mercado global, el Mini Countryman se posiciona firmemente en el segmento de los SUV compactos de carácter premium. Compite mano a mano contra exponentes consagrados de la industria alemana como el BMW X1 (con el cual comparte plataforma y arquitectura mecánica), el Audi Q3 y el Mercedes-Benz GLA. Sin embargo, el Countryman logra diferenciarse de sus rivales directos gracias a una propuesta estética mucho más personalizable, juvenil y desenfadada, apuntando a un público que valora la distinción y el estilo de vida activo por encima de la sobriedad tradicional de los todocaminos compactos alemanes."
 }

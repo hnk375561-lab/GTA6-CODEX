@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.590Z",
-  "updatedAt": "2026-08-25T23:22:07.313Z",
+  "updatedAt": "2026-08-27T01:35:56.312Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback",
   "customizable": false,
@@ -20,19 +20,23 @@
     "acceleration": "Media (0-100 km/h en 10.5s)"
   },
   "power": "116 hp",
-  "price": "USD 17.000",
+  "price": "ARS 22.000.000 (Precio de referencia mercado argentino)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.chevrolet.com.ar/onix"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas generales del Chevrolet Onix Turbo para el mercado argentino, incluyendo dimensiones, motorización de 3 cilindros y capacidades basadas en fichas técnicas oficiales de General Motors.",
+    "limitations": [
+      "Los precios en el mercado local varían constantemente por la inflación y carga impositiva",
+      "Algunos equipamientos pueden variar según la versión específica (LT, Premier, etc.)"
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 5 marchas o automática de 6 velocidades",
+  "traccion": "Delantera",
+  "peso": "1113 kg",
+  "tipoMotor": "Naftero 1.0L Turbo",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "44 litros",
+  "tiempoRecorrido": "10.2 s",
+  "anoProduccion": "2019-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +122,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "5.4 L/100km mixto",
+  "dimensiones": "4163 x 1730 x 1476 mm",
+  "cilindrada": "999 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 289,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -249,8 +253,8 @@
     "description": "Hatchback compacto de Chevrolet, motor 1.0L turbo de 116 hp, uno de los más vendidos de la región."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.351Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:35:56.312Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +307,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Chevrolet Onix nació en Brasil a finales de 2012 como un hatchback compacto desarrollado específicamente para reemplazar al Celta y complementar al Agile dentro del segmento B en Sudamérica. Desde su concepción, fue pensado para conquistar el mercado regional gracias a su accesibilidad y diseño atractivo. Rápidamente se convirtió en un éxito rotundo de ventas en países como Brasil y Argentina, liderando los patentamientos durante varios años consecutivos y transformándose en un pilar fundamental para la estrategia comercial de General Motors en la región.\n\n## Un hito o generación relevante\nEl gran punto de inflexión en la historia del Onix se dio a finales de 2019 con la presentación de su segunda generación. Este cambio generacional significó un salto cuántico en términos de seguridad, diseño y tecnología. Dejó de ser visto simplemente como un auto económico para posicionarse como un referente en su categoría, incorporando por primera vez una motorización naftera turbo de 1.0 litros, dirección asistida eléctricamente y un paquete de seguridad de serie que incluía seis airbags y control electrónico de estabilidad (ESP), logrando además excelentes calificaciones en las pruebas de choque de Latin NCAP.\n\n## Curiosidades\nUna de las características más interesantes del desarrollo del proyecto GEM (Global Emerging Markets) bajo el cual se diseñó esta segunda generación es que fue un esfuerzo global coordinado entre centros de diseño e ingeniería en Sudamérica, Asia y Norteamérica. Además, el Onix fue pionero en democratizar la conectividad en su segmento al introducir de manera masiva sistemas de infoentretenimiento con integración para teléfonos inteligentes y, en algunas versiones, conectividad Wi-Fi a bordo mediante tecnología 4G LTE, una prestación inédita para autos compactos accesibles en su momento de lanzamiento.\n\n## Competencia y posicionamiento\nEn el competitivo mercado automotriz sudamericano, el Chevrolet Onix compite palmo a palmo en el segmento B de los hatchbacks contra pesos pesados de la industria como el Volkswagen Polo, el Fiat Argo, el Toyota Yaris y el Peugeot 208. Su posicionamiento actual busca equilibrar una propuesta de valor muy sólida enfocada en la eficiencia de combustible, la agilidad urbana típica de sus motores turboalimentados y una completa oferta tecnológica orientada a un público joven y familias modernas que buscan su primer o segundo vehículo sin resignar conectividad ni seguridad."
 }

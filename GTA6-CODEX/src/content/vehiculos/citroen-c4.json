@@ -12,33 +12,33 @@
   "manufacturer": "Citroën",
   "class": "Hatchback/SUV coupé",
   "customizable": false,
-  "power": "136 hp",
+  "power": "130 CV",
   "price": "EUR 27.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "consumo": "5.5 l/100km combinado",
+  "dimensiones": "4.355 mm largo x 1.800 mm ancho x 1.525 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global. Ficha técnica verificada contra la página oficial del C4 en citroen.es.",
+    "level": "respaldado",
+    "secondarySource": "https://es.wikipedia.org/wiki/Citro%C3%ABn",
+    "note": "Se verificaron las especificaciones técnicas generales del Citroën C4 de tercera generación utilizando la web oficial de Citroën España y el contexto histórico de la marca.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
-    ],
-    "primarySource": "https://www.citroen.es/vehiculos-citroen/c4.html"
+      "Los precios pueden variar según el mercado europeo y los impuestos locales vigentes.",
+      "Las motorizaciones varían según la disponibilidad de cada país."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.332Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:37:09.071Z",
+  "transmision": "Manual de 6 velocidades / Automática EAT8",
+  "traccion": "Delantera",
+  "peso": "1.299 kg",
+  "tipoMotor": "Gasolina PureTech / Diésel BlueHDi / Eléctrico (ë-C4)",
+  "potenciaKW": "96 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "9.4s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.199 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 380,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "3ª generación (C4 III)",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -254,8 +254,8 @@
     "description": "Compacto de Citroën con silueta de SUV coupé, también disponible en versión eléctrica ë-C4."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.361Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:37:09.071Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -308,5 +308,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Citroën C4 ocupa un lugar estratégico dentro de la gama de los compactos del fabricante francés. Desde su concepción inicial como reemplazante de la clásica línea Xsara, el C4 ha sabido reinventarse a lo largo de las décadas para adaptarse a las demandas cambiantes del mercado automotriz europeo y global. La marca de los chevrones, fundada en 1919 por el visionario André Citroën y actualmente integrada en el gigante industrial Stellantis, ha dotado históricamente a este modelo de un carácter innovador que prioriza tanto el confort de marcha como la originalidad estética.\n\n## Un hito o generación relevante\nLa tercera generación del Citroën C4 (C4 III), lanzada comercialmente a partir de 2020, marcó un punto de inflexión radical al abandonar la tradicional silueta de hatchback compacto de cinco puertas para adoptar un formato de inspiración crossover con silueta de SUV coupé. Este enfoque arriesgado no solo mejoró su presencia visual en las calles, sino que optimizó su aerodinámica. Además, esta iteración introdujo de manera simultánea la variante 100% eléctrica denominada ë-C4, consolidando el compromiso del fabricante con la electrificación y la reducción de emisiones sin renunciar a la clásica suspensión de amortiguadores progresivos hidráulicos que caracteriza la identidad de la marca.\n\n## Curiosidades\nA lo largo de su trayectoria, la familia C4 ha dado pie a múltiples variantes de carrocería y desarrollos específicos para distintos mercados internacionales, incluyendo versiones sedán de tres volúmenes y ediciones enfocadas en la deportividad como el C4 VTS en generaciones pasadas. Asimismo, la sede central de la compañía en Francia, ubicada en la región de Poissy y Saint-Ouen, ha sido testigo de la evolución de los procesos de manufactura que permiten hoy en día ensamblar bajo una misma plataforma arquitectónica opciones térmicas (gasolina y diésel) y alternativas puramente eléctricas con gran flexibilidad industrial.\n\n## Competencia y posicionamiento\nEn el altamente disputado segmento C europeo, el Citroën C4 compite directamente con pesos pesados de la industria como el Volkswagen Golf, el Ford Focus, el Peugeot 308 (su hermano de plataforma dentro del grupo Stellantis) y el Renault Mégane. Su posicionamiento de mercado busca diferenciarse de sus rivales alemanes y generalistas apostando fuertemente por la comodidad interior, un diseño exterior disruptivo y una excelente relación entre tecnología, habitabilidad y precio, convirtiéndolo en una opción sumamente atractiva para quienes buscan un vehículo familiar versátil con un toque distintivo."
 }

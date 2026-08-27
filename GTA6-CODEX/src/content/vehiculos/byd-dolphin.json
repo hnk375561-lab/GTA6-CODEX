@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.972Z",
-  "updatedAt": "2026-08-25T23:22:07.283Z",
+  "updatedAt": "2026-08-27T01:33:45.763Z",
   "manufacturer": "BYD",
   "class": "Hatchback eléctrico",
   "customizable": false,
@@ -19,23 +19,24 @@
     "speed": "Media (150 km/h)",
     "acceleration": "Media (0-100 km/h en 12.3s)"
   },
-  "power": "95 hp",
-  "price": "USD 26.000",
+  "power": "95 hp (versión de entrada) / hasta 204 hp en versiones superiores",
+  "price": "USD 26.000 (precio de referencia global)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.byd.com/la/car/dolphin",
+    "level": "respaldado",
+    "note": "Se actualizaron las especificaciones técnicas reemplazando los datos genéricos por valores reales del BYD Dolphin, incluyendo dimensiones, motorización eléctrica, capacidad de baúl y tiempos de aceleración según catálogos oficiales.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "Los precios varían significativamente según el mercado de importación, aranceles locales y subsidios gubernamentales vigentes.",
+      "Las especificaciones de potencia y batería pueden presentar ligeras variaciones regionales (versiones con batería Blade de 32 kWh, 44.9 kWh o 60.4 kWh)."
     ]
   },
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-250 kW",
+  "transmision": "Automática de relación única",
+  "traccion": "Delantera",
+  "peso": "1405 - 1658 kg",
+  "tipoMotor": "Eléctrico síncrono de imanes permanentes",
+  "potenciaKW": "70 - 150 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "7.9s (0-100 km/h en versión tope de gama)",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -115,16 +116,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
+  "consumo": "12.5 - 15.5 kWh / 100 km",
+  "dimensiones": "4290 x 1770 x 1570 mm",
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 345,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "electrico",
   "gallery": {
@@ -246,8 +247,8 @@
     "description": "Hatchback 100% eléctrico de BYD, batería Blade LFP, uno de los eléctricos más vendidos a nivel global."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.321Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:33:45.763Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -300,5 +301,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl BYD Dolphin fue presentado originalmente en el mercado chino en 2021 como el primer vehículo de pasajeros en utilizar la plataforma eléctrica e-Platform 3.0 de la marca y la innovadora batería Blade (LFP). Diseñado bajo la dirección de Wolfgang Egger, ex diseñador de Audi, el Dolphin adoptó el concepto estético \"Marine Aesthetics\", inspirado en los delfines, lo que le otorga una impronta visual muy fluida, juvenil y aerodinámica que rompió con el molde de los hatchbacks tradicionales del segmento B.\n\n## Un hito y generación relevante\nEl gran hito del BYD Dolphin radica en su rol como puntal de la estrategia de expansión global de vehículos eléctricos accesibles de la marca china. Al ser uno de los primeros modelos de volumen construidos sobre la e-Platform 3.0, demostró que la arquitectura dedicada exclusivamente a la electromovilidad podía implementarse en un formato compacto sin sacrificar habitabilidad interior. Su distancia entre ejes de 2.70 metros —sorprendente para un vehículo de su largo total— se logró gracias a los voladizos cortos y la ubicación optimizada del paquete de baterías Blade, estableciendo un nuevo estándar de aprovechamiento del espacio en el segmento de entrada a la electromovilidad.\n\n## Curiosidades\nEntre sus detalles más llamativos, el interior del Dolphin incorpora elementos inspirados en la cultura marina, como manijas de puertas con forma de aleta y comandos centrales diseñados con una temática fluida. Además, en muchos mercados, la batería Blade destaca no solo por su alta densidad energética y durabilidad, sino por haber superado con éxito la extrema prueba de penetración de clavos (nail penetration test) sin incendiarse ni emitir humo, lo que redefinió los estándares de seguridad percibida para las baterías de litio ferrofosfato (LFP).\n\n## Competencia y posicionamiento\nEn el mercado global, el BYD Dolphin compite directamente en el segmento de los hatchbacks y crossovers compactos 100% eléctricos, enfrentándose a modelos como el Volkswagen ID.3, el Ora Good Cat de GWM, el MG 4 y versiones eléctricas de marcas generalistas tradicionales. Su posicionamiento comercial busca capturar al público que busca la transición hacia la movilidad sustentable ofreciendo una excelente relación valor-tecnología, costos operativos reducidos y un nivel de equipamiento de seguridad y asistencias a la conducción (ADAS) muy competitivo frente a rivales de precio similar."
 }

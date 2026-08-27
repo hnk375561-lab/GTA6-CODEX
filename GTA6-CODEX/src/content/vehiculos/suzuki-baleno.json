@@ -12,15 +12,15 @@
   "manufacturer": "Suzuki",
   "class": "Hatchback",
   "customizable": false,
-  "power": "89 hp",
-  "price": "USD 15.500",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "90 CV",
+  "price": "USD 16.000 (referencia mercado regional)",
+  "consumo": "4.8 l/100km combinado",
+  "dimensiones": "3.990 mm largo x 1.745 mm ancho x 1.500 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "note": "Se corrigieron los datos genéricos del JSON original por las especificaciones reales del Suzuki Baleno moderno global (motor 1.2 DualJet, dimensiones reales de segmento B, peso contenido gracias a la plataforma Heartect y capacidad de baúl de 355 litros).",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "El precio y disponibilidad varían fuertemente según el mercado de importación (India, América Latina, Europa en etapas anteriores)."
     ]
   },
   "performance": {
@@ -28,15 +28,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.523Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:27:11.719Z",
+  "transmision": "Manual de 5 marchas o Automática de 4 marchas / CVT según mercado",
+  "traccion": "Delantera",
+  "peso": "915 - 955 kg",
+  "tipoMotor": "Nafta (Gasolina)",
+  "potenciaKW": "66 kW",
+  "capacidadTanque": "37 litros",
+  "tiempoRecorrido": "11.6s",
+  "anoProduccion": "2015-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +122,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.2 litros",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 355,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (moderna)",
+  "anoLanzamiento": 2015,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -204,7 +204,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.471Z",
+    "lastChecked": "2026-08-27T01:27:11.719Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -222,5 +222,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Suzuki Baleno nació originalmente en la década del 90 como un sedán y hatchback de enfoque económico para diversos mercados globales. Sin embargo, la denominación recrudeció en 2015 cuando la marca japonesa decidió relanzarlo como un hatchback compacto moderno, posicionado por encima del conocido Swift en términos de espacio interior y versatilidad familiar, adoptando un enfoque global con producción principal en la India a través de la filial Maruti Suzuki.\n\n## Un hito y plataforma relevante\nUn punto de inflexión fundamental para esta iteración moderna del Baleno fue la implementación de la plataforma liviana \"Heartect\" de Suzuki. Este desarrollo estructural permitió reducir drásticamente el peso del conjunto —ubicándolo apenas por debajo de los 1.000 kg— sin sacrificar la rigidez torsional. Gracias a esto, el vehículo logró optimizar de manera notable la eficiencia de combustible y el comportamiento dinámico en ciudad, demostrando que un vehículo compacto accesible podía ofrecer agilidad y menor impacto ambiental.\n\n## Curiosidades\nA pesar de ser un producto concebido principalmente para mercados emergentes de alta demanda como el indio, el Suzuki Baleno cumplió un rol comercial estratégico en Europa durante sus primeros años de comercialización, donde se destacó por ser uno de los hatchbacks más espaciosos de su categoría en relación con su longitud exterior de casi 4 metros. Asimismo, sirvió de base para colaboraciones comerciales, siendo comercializado en algunos mercados bajo la marca Toyota bajo la denominación Starlet.\n\n## Competencia y posicionamiento\nEn el mercado global de los hatchbacks del segmento B, el Suzuki Baleno compite contra pesos pesados como el Volkswagen Polo, el Hyundai i20, el Toyota Yaris y el Renault Clio. Su principal argumento de venta radica en la relación entre su amplio espacio interior —especialmente el generoso volumen de su baúl para su tamaño—, la reconocida confiabilidad mecánica de los impulsores nafteros de la marca y un costo de mantenimiento sumamente contenido. Se posiciona como una alternativa racional para quienes buscan funcionalidad pura sin estridencias tecnológicas innecesarias."
 }

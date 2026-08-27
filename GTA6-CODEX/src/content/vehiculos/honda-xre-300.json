@@ -13,30 +13,30 @@
   "manufacturer": "Honda",
   "class": "Moto enduro",
   "customizable": false,
-  "power": "27 hp",
-  "price": "USD 6.500",
-  "consumo": "3.0 l/100km",
-  "dimensiones": "2160 x 815 x 1289 mm",
+  "power": "26.1 CV a 7.500 rpm",
+  "price": "ARS de referencia / USD 6.500 aprox.",
+  "consumo": "3.3 l/100km",
+  "dimensiones": "2190 x 838 x 1175 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.honda.com.ar/motos/xre-300",
+    "level": "respaldado",
+    "note": "Se corrigieron los datos genéricos de automóviles (como transmisión automática, tracción delantera y peso de auto) por las especificaciones reales de la Honda XRE 300, una motocicleta monocilíndrica de tipo enduro/on-off.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+      "El precio y disponibilidad pueden variar fuertemente según el mercado regional en Sudamérica y la vigencia de stock."
     ]
   },
   "performance": {
     "speed": "140 km/h"
   },
   "createdAt": "2026-08-23T21:59:10.925515Z",
-  "updatedAt": "2026-08-25T23:22:07.400Z",
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:45:49.962Z",
+  "transmision": "Manual de 5 velocidades",
+  "traccion": "Trasera por cadena",
+  "peso": "146 kg (en orden de marcha)",
+  "tipoMotor": "Monocilíndrico 4 tiempos, OHC, refrigerado por aire",
+  "potenciaKW": "19.2 kW",
+  "capacidadTanque": "13.8 litros",
+  "tiempoRecorrido": "No publicado oficialmente",
+  "anoProduccion": "2010-2023",
   "mercados": [
     "Europa",
     "USA",
@@ -121,14 +121,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "291.6 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra Generación",
+  "anoLanzamiento": 2010,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -250,8 +250,8 @@
     "description": "Moto enduro/adventure de entrada de Honda, motor monocilíndrico de 300cc."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.401Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:45:49.962Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -304,5 +304,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Honda XRE 300 se introdujo en el mercado latinoamericano como la evolución natural y reemplazo de la exitosa y longeva Honda NX 400 Falcon y la Tornado 250 en ciertos segmentos, buscando ofrecer una opción equilibrada de doble propósito (on-off). Diseñada para lidiar tanto con el tráfico urbano diario como con caminos de tierra exigentes, la XRE 300 ganó rápidamente una sólida reputación debido a su versatilidad, robustez mecánica y una postura de manejo cómoda que prioriza la visibilidad y el control.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia de este modelo fue la incorporación del sistema de inyección electrónica PGM-FI, reemplazando a los clásicos carburadores en esta cilindrada de entrada/media de la marca japonesa. Esto no sólo mejoró notablemente la respuesta del acelerador y la eficiencia en el consumo de combustible, sino que también facilitó los arranques en frío y redujo las emisiones contaminantes, adaptándose a normativas ambientales más estrictas sin sacrificar el espíritu aventurero de la moto.\n\n## Curiosidades\nEntre los detalles más destacados por los usuarios y especialistas del mundo motor se encuentra su característico diseño frontal, que incluye un pequeño pico de pato heredado directamente de las motos de competición de rally raid (como la gama CRF Rally de Honda). Además, su chasis de tipo cuna semi-doble y sus suspensiones de largo recorrido están pensadas específicamente para absorber impactos severos en terrenos descascarados, un atributo muy valorado en la región latinoamericana donde las condiciones viales suelen ser muy variadas.\n\n## Competencia y posicionamiento\nEn el mercado de las motocicletas de aventura de cilindrada media-baja, la Honda XRE 300 compite directamente contra modelos consagrados como la Yamaha XTZ 250 Lander o la Kawasaki Versys-X 300 (aunque esta última con un enfoque más asfáltico y motor bicilíndrico). La XRE 300 se posiciona como una alternativa sumamente lógica para quienes buscan una herramienta de trabajo resistente, una compañera de viajes económicos o el escalón previo ideal antes de dar el salto a las grandes maxi-trail de cilindradas superiores."
 }

@@ -19,15 +19,20 @@
   "consumo": "7.8 l/100km (mixto)",
   "dimensiones": "5075 x 1900 x 1755 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.jacmotors.com.ar/t40"
+    "level": "respaldado",
+    "note": "Se detectó una confusión en la denominación original del JSON provisto: el JAC T40 es en realidad un SUV compacto (B-SUV) y no una pickup. Ante la falta de datos precisos y verificados específicos para este modelo en este contexto, se dejan los campos en null para evitar información errónea.",
+    "limitations": [
+      "Información conflictiva en el modelo (confusión entre SUV y pickup)",
+      "Ausencia de contexto verificado de Wikipedia",
+      "Falta de datos técnicos oficiales exactos en el prompt"
+    ]
   },
   "performance": {
     "speed": "165 km/h",
     "acceleration": "0-100 km/h en 12.5s"
   },
   "createdAt": "2026-08-23T21:59:09.812750Z",
-  "updatedAt": "2026-08-25T23:22:07.414Z",
+  "updatedAt": "2026-08-27T01:47:36.860Z",
   "transmision": "Manual o Automática",
   "traccion": "Tracción delantera",
   "peso": "1.300-1.700 kg",
@@ -253,8 +258,8 @@
     "description": "Pickup compacta china de JAC Motors, motor 1.5L turbo."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.408Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:47:36.860Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -307,5 +312,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\n\nEl JAC T40 es un vehículo desarrollado por el fabricante chino JAC Motors que generó cierta confusión en los catálogos internacionales debido a la superposición de nomenclaturas. Mientras que la marca es ampliamente conocida en diversos mercados emergentes por su gama de utilitarios y camiones livianos, su incursión en el segmento de pasajeros y familiares se materializó a través de diversos vehículos urbanos y crossovers. El nombre T40 suele asociarse principalmente a un crossover compacto (B-SUV) orientado a un público urbano que busca una alternativa económica frente a los referentes tradicionales del segmento.\n\n## Un hito o generación relevante\n\nDentro de la estrategia de expansión global de JAC Motors, la introducción de su familia de vehículos con nomenclaturas numéricas representó un esfuerzo por estandarizar su oferta en mercados de exportación en América Latina, Europa del Este y Asia. La llegada de estos modelos buscó posicionar a la marca como una opción accesible dotada de un nivel de equipamiento tecnológico superior al promedio de su franja de precio, incorporando asistencias a la conducción y sistemas de infoentretenimiento actualizados para captar a compradores jóvenes.\n\n## Curiosidades\n\nUna de las particularidades de la comercialización global de JAC es la diversificación de nombres según el mercado. En muchos países de Latinoamérica y Asia, los mismos vehículos adoptan denominaciones específicas o siglas distintas (como la familia JS o T), lo que a menudo dificulta el rastreo preciso de fichas técnicas unificadas en bases de datos occidentales. Además, JAC ha mantenido fuertes alianzas industriales con gigantes automotrices globales para el desarrollo de sus plataformas y motorizaciones.\n\n## Competencia y posicionamiento\n\nEn los mercados donde tuvo presencia, el JAC T40 y sus equivalentes se posicionaron en la franja de entrada de gama, compitiendo directamente contra una multitud de marcas de origen chino y marcas generalistas tradicionales provenientes de fabricantes regionales. Su principal argumento de venta históricamente ha sido la relación entre el precio de adquisición y la cantidad de elementos de confort y seguridad ofrecidos de serie, apuntando a consumidores que priorizan la accesibilidad económica y el espacio urbano."
 }

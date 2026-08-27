@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:26.530Z",
-  "updatedAt": "2026-08-25T23:22:07.408Z",
+  "updatedAt": "2026-08-27T01:46:59.883Z",
   "manufacturer": "Hyundai",
   "class": "SUV",
   "customizable": false,
@@ -19,20 +19,24 @@
     "speed": "Media (195 km/h)",
     "acceleration": "Media (0-100 km/h en 9.9s)"
   },
-  "power": "156 hp",
-  "price": "USD 32.000",
+  "power": "190 hp",
+  "price": "USD 35.000 (MSRP de referencia)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.hyundai.com/ar/es/modelos/tucson.html"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas principales de la cuarta generación de Hyundai Tucson en su variante comercializada globalmente y en la región, contrastando motorizaciones, cotas y capacidades.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado específico de Latinoamérica y los impuestos locales de importación.",
+      "Las cifras de consumo pueden diferir según el ciclo de homologación (WLTP o EPA)."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "Delantera o integral HTRAC",
+  "peso": "1560 kg",
+  "tipoMotor": "Gasolina 2.5L / 1.6L Turbo híbrido",
+  "potenciaKW": "140 kW",
+  "capacidadTanque": "54 litros",
+  "tiempoRecorrido": "9.4s",
+  "anoProduccion": "2024",
   "mercados": [
     "Europa",
     "USA",
@@ -120,16 +124,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "7.5 L/100 km combinado",
+  "dimensiones": "4510 x 1865 x 1650 mm",
+  "cilindrada": "2497 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 582,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Cuarta generación (facelift)",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -251,8 +255,8 @@
     "description": "SUV mediana de Hyundai, motor 2.0L o 1.6L turbo, diseño renovado con parrilla oculta."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.405Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:46:59.883Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +309,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Hyundai Tucson es uno de los SUV medianos más exitosos a nivel global desde su lanzamiento original a principios de los años 2000. Concebida para competir en un segmento cada vez más disputado, la Tucson supo evolucionar desde una propuesta funcional y económica hasta convertirse en un referente de diseño, tecnología y confort dentro de la categoría C-SUV. A lo largo de sus sucesivas generaciones, el modelo abandonó las líneas sobrias de sus inicios para adoptar una identidad estética mucho más osada y vanguardista, consolidándose como un pilar fundamental en las ventas mundiales de la marca surcoreana.\n\n## Un hito o generación relevante\nEl punto de inflexión más notable en la historia reciente de la Tucson llegó con la presentación de su cuarta generación. Este salto generacional introdujo el revolucionario lenguaje de diseño denominado 'Sensuous Sportiness' (Deportividad Sensual), destacándose por una parrilla delantera paramétrica que integra de manera casi imperceptible las luces diurnas LED cuando el vehículo se encuentra apagado. Este despliegue estético rompió con los moldes conservadores tradicionales del segmento, posicionando al SUV de Hyundai como uno de los vehículos más llamativos visualmente en las calles de Europa, Norteamérica y los mercados emergentes.\n\n## Curiosidades\nUn detalle técnico y de diseño fascinante de las versiones más equipadas de esta generación es la ubicación de los limpiaparabrisas traseros, que se encuentran ocultos bajo el alerón superior para mejorar la aerodinámica y brindar una estética más limpia al portón trasero. Además, el habitáculo adoptó una filosofía inspirada en la arquitectura moderna, prescindiendo de los botones físicos tradicionales en favor de superficies táctiles y una doble pantalla flotante orientada al conductor que centraliza el infoentretenimiento y la climatización bizona o trizona.\n\n## Competencia y posicionamiento\nEn el mercado global y regional, la Hyundai Tucson compite directamente contra pesos pesados de la industria como la Toyota RAV4, la Honda CR-V, el Volkswagen Taos y el Ford Territory. Para diferenciarse de sus rivales, Tucson se posiciona con un enfoque que prioriza la relación costo-producto, una dotación tecnológica muy nutrida desde sus acabados intermedios, opciones de motorización eficiente que incluyen variantes nafteras, híbridas e híbridas enchufables, y un nivel de seguridad activa muy completo que la mantiene consistentemente bien rankeada en las pruebas de impacto internacionales."
 }

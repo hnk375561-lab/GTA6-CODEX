@@ -13,15 +13,16 @@
   "manufacturer": "Toyota",
   "class": "SUV compacto",
   "customizable": false,
-  "power": "106 hp (version naftera XLI/XEI/SEG)",
-  "price": "ARS 41.464.000 (version XLI)",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "111 CV (versión híbrida) / 106 CV (versión naftera 1.5)",
+  "price": "ARS 41.464.000 (versión XLI de entrada de referencia)",
+  "consumo": "Aprox. 4.5 l/100km (versión híbrida en ciclo urbano)",
+  "dimensiones": "4.310 mm largo x 1.770 mm ancho x 1.615 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://autoblog.com.ar/lanzamiento-toyota-yaris-cross-2026/",
+    "level": "respaldado",
+    "note": "Se actualizaron las especificaciones basándose en la configuración regional para Sudamérica del Toyota Yaris Cross fabricado en Brasil sobre la plataforma DNGA, incluyendo las motorizaciones naftera e híbrida autorrecargable.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): tipoMotor corregido de \"Gasolina/Diésel\" (valor de relleno) a \"Gasolina + sistema híbrido\", ya que este vehículo no tiene variante diésel. Arquitectura específica del híbrido (serie/paralelo, mild/full/enchufable) pendiente de verificar con fuente primaria."
+      "Los precios en pesos argentinos están sujetos a la dinámica inflacionaria y listas oficiales de concesionarios vigentes.",
+      "Algunas cifras de aceleración exacta y consumo rutero varían según la homologación definitiva de cada mercado sudamericano."
     ]
   },
   "performance": {
@@ -29,15 +30,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T23:22:07.541Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina + sistema híbrido",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T02:00:11.781Z",
+  "transmision": "Automática e-CVT (híbrida) / Manual de 5 marchas o CVT (naftera)",
+  "traccion": "Delantera (FWD)",
+  "peso": "Aprox. 1.150 - 1.250 kg según versión",
+  "tipoMotor": "Gasolina 1.5L Dynamic Force + sistema híbrido autorrecargable",
+  "potenciaKW": "81 kW (111 CV) combinados para la variante híbrida",
+  "capacidadTanque": "42 litros",
+  "tiempoRecorrido": "Aprox. 11.0 s",
+  "anoProduccion": "2024-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -123,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.490 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 471,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Primera generación (Plataforma DNGA)",
+  "anoLanzamiento": 2024,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -254,8 +255,8 @@
     "description": "SUV B-SUV con versiones nafteras e hibridas, primer hibrido de Toyota en este segmento en Argentina, fabricado en Brasil."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.492Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:00:11.781Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -308,5 +309,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Toyota Yaris Cross representa una de las apuestas más estratégicas de la marca japonesa para el mercado latinoamericano. Desarrollado sobre la plataforma modular DNGA (Daihatsu New Global Architecture), este SUV del segmento B fue pensado para democratizar la electrificación en la región, posicionándose un escalón por debajo de modelos medianos exitosos como el Corolla Cross. Su producción regional en la planta de Sorocaba, en Brasil, marcó un hito industrial para Toyota, permitiendo abastecer con vehículos híbridos accesibles a distintos mercados de Sudamérica, incluida la Argentina.\n\n## Un hito o generación relevante\nEl gran punto de inflexión para este modelo en nuestra región es la introducción de la tecnología híbrida autorrecargable (HEV) en el segmento de los SUV compactos de entrada. Hasta su llegada, la electrificación masiva solía estar reservada a vehículos de segmentos superiores o importados extrazona con aranceles elevados. El Yaris Cross combina un motor térmico de 1.5 litros con un propulsor eléctrico alimentado por una batería autorrecargable, logrando niveles de consumo sumamente eficientes en el ámbito urbano, donde el sistema eléctrico opera una alta proporción del tiempo sin encender el motor de combustión.\n\n## Curiosidades\nUna particularidad del Yaris Cross regional respecto de su par europeo es que utiliza la mencionada plataforma DNGA, optimizada para mercados emergentes en términos de robustez estructural, despeje del suelo y costos de producción, sin sacrificar los estándares globales de seguridad que caracterizan a la marca. Además, incorpora de serie en la mayoría de sus configuraciones más altas el paquete de asistencias a la conducción Toyota Safety Sense, un diferencial clave en seguridad activa para su categoría.\n\n## Competencia y posicionamiento\nEn el mercado argentino y regional, el Toyota Yaris Cross compite en uno de los segmentos más reñidos y dinámicos de la industria: el de los B-SUV. Debe verse las caras con pesos pesados de producción regional y extrazona como el Chevrolet Tracker, Volkswagen T-Cross, Jeep Renegade, Nissan Kicks y Fiat Pulse/Fastback. Sin embargo, su principal ventaja competitiva radica en la oferta de una variante híbrida pura sin la necesidad de infraestructura de carga externa (enchufes), un argumento de peso para los usuarios que buscan reducir la huella de carbono y el gasto en combustible en el uso diario urbano."
 }

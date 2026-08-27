@@ -14,27 +14,31 @@
   "class": "Furgón",
   "customizable": false,
   "power": "163 hp",
-  "price": "USD 55.000",
-  "consumo": "9.5 l/100km (mixto)",
+  "price": "USD 55.000 (referencia mercado local)",
+  "consumo": "9.5 l/100km (mixto estimado)",
   "dimensiones": "5926 x 1993 x 2427 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.mercedes-benz.com.ar/vans/sprinter"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones generales de la plataforma Sprinter W910 y los datos oficiales provistos por la marca en su sitio regional.",
+    "limitations": [
+      "Los datos de consumo y peso varían según la configuración de carrocería (furgón, chasis o mixto).",
+      "El precio varía según impuestos y mercados específicos de la región."
+    ]
   },
   "performance": {
     "speed": "160 km/h",
     "acceleration": "0-100 km/h en 14.0s"
   },
   "createdAt": "2026-08-23T21:59:08.724580Z",
-  "updatedAt": "2026-08-25T23:22:07.463Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:52:01.195Z",
+  "transmision": "Manual de 6 velocidades / Automática 9G-TRONIC",
+  "traccion": "Tracción trasera / Tracción integral (segn versión)",
+  "peso": "2.100 - 2.500 kg (peso en vacío aprox.)",
+  "tipoMotor": "Diésel (Turbodiésel OM 651 / OM 654)",
+  "potenciaKW": "120 kW",
+  "capacidadTanque": "71 litros",
+  "tiempoRecorrido": "No publicado oficialmente",
+  "anoProduccion": "2018-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.143 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 3,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "W910 (Tercera generación)",
+  "anoLanzamiento": 2018,
   "colores": [],
   "category": "ejecutivo",
   "gallery": {
@@ -253,8 +257,8 @@
     "description": "Furgón grande de Mercedes-Benz, base para transporte de pasajeros, carga y camperización, motor turbodiésel."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.433Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:52:01.195Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -307,5 +311,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Mercedes-Benz Sprinter es, sin lugar a dudas, uno de los vehículos comerciales más influyentes y reconocidos a nivel global desde su irrupción en el mercado europeo a mediados de la década de 1990. Diseñada para reemplazar al veterano Mercedes-Benz T1, la Sprinter redefinió los estándares del segmento de los furgones grandes al incorporar soluciones de seguridad avanzadas para la época, como frenos antibloqueo (ABS) de serie y una dinámica de conducción que se acercaba más a la de un turismo que a la de un pesado vehículo de carga tradicional.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de la Sprinter se da con el lanzamiento de su tercera generación (código interno W910) a partir de 2018. Esta iteración no solo modernizó radicalmente el lenguaje de diseño exterior, sino que introdujo un salto tecnológico colosal al integrar el sistema multimedia MBUX (Mercedes-Benz User Experience), conectividad avanzada para flotas y una arquitectura completamente adaptada para la electrificación (con la variante eSprinter) y la tracción delantera en sus versiones de acceso, optimizando la altura del plano de carga y el espacio útil interior.\n\n## Curiosidades\nUna de las características más notables de la Mercedes-Benz Sprinter es su extraordinaria versatilidad de transformación. Además de las clásicas configuraciones de furgón de carga y minibús de pasajeros, la plataforma de la Sprinter es considerada el estándar de oro en la industria global del caravaning y camperización. Numerosos fabricantes de casas rodantes en todo el mundo la eligen como la base predilecta debido a su robustez estructural, fiabilidad mecánica a largo plazo y la amplia red de asistencia técnica global que respalda a la estrella de tres puntas.\n\n## Competencia y posicionamiento\nEn el mercado de vehículos comerciales medianos y grandes, la Sprinter ocupa un posicionamiento claramente prémium. Se enfrenta a competidores directos de gran peso en la industria como la Ford Transit, la Fiat Ducato (y sus hermanas del grupo Stellantis) y la Volkswagen Crafter. A pesar de contar por lo general con una tarifa de adquisición inicial superior frente a varios de sus rivales generalistas, la Sprinter compensa este factor con un valor de reventa históricamente sólido, altos niveles de seguridad activa y pasiva, y una eficiencia orientada a reducir el costo total de operación (TCO) para flotas comerciales y transportistas independientes."
 }

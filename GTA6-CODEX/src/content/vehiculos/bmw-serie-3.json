@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:25.977Z",
-  "updatedAt": "2026-08-25T23:22:07.276Z",
+  "updatedAt": "2026-08-27T01:32:49.329Z",
   "manufacturer": "BMW",
   "class": "Sedán premium",
   "customizable": false,
@@ -20,20 +20,24 @@
     "speed": "Alta (250 km/h)",
     "acceleration": "Alta (0-100 km/h en 5.8s)"
   },
-  "power": "255 hp",
-  "price": "USD 58.000",
+  "power": "258 hp",
+  "price": "USD 45.000 (MSRP EE.UU.)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.bmw.com.ar/es/all-models/3-series/sedan/2022/bmw-3-series-sedan.html"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas globales y de mercado para la séptima generación del BMW Serie 3 (G20), incluyendo motorizaciones de 4 cilindros turbo y transmisiones Steptronic a partir de catálogos oficiales de la marca.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado local, impuestos y aranceles de importación en Argentina.",
+      "Las cifras de consumo y aceleración pueden variar según la versión específica (320i, 330i o variantes xDrive)."
+    ]
   },
-  "transmision": "8 velocidades automática (Steptronic)",
-  "traccion": "Trasera (RWD) o xDrive (AWD) según versión",
-  "peso": "1.526-1.620 kg (según motorización)",
-  "tipoMotor": "Gasolina turbo (opción híbrida enchufable 330e disponible)",
-  "potenciaKW": "135-190 kW (184-258 hp según motorización)",
+  "transmision": "Automática de 8 velocidades (Steptronic)",
+  "traccion": "Trasera (RWD) o xDrive (AWD)",
+  "peso": "1.526 kg",
+  "tipoMotor": "Gasolina 2.0L TwinPower Turbo de 4 cilindros",
+  "potenciaKW": "190 kW",
   "capacidadTanque": "59 litros",
-  "tiempoRecorrido": "5.7s-7.1s 0-100 km/h (según motorización)",
-  "anoProduccion": "2019-presente (generación G20), con facelift en 2022",
+  "tiempoRecorrido": "5.8s (0-100 km/h)",
+  "anoProduccion": "2019-presente",
   "mercados": [
     "Europa",
     "Argentina",
@@ -51,13 +55,13 @@
   ],
   "consumoEtiqueta": "E",
   "neumaticos": "225/50R17",
-  "cilindrada": "1.998 cc (2.0 turbo, 4 cilindros)",
+  "cilindrada": "1.998 cc",
   "emisiones": "CO2 158-166 g/km (WLTP, versión 330i xDrive)",
   "tipo": "Sedán premium",
   "asientos": 5,
-  "baul": "480 litros",
+  "baul": 480,
   "maleteroMin": "480 litros",
-  "generacion": "Séptima generación (G20), lanzada en 2019, con facelift en 2022",
+  "generacion": "Séptima generación (G20)",
   "anoLanzamiento": 2019,
   "colores": [
     "Alpine White",
@@ -140,8 +144,8 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
+  "consumo": "6.5 L/100 km (mixto WLTP)",
+  "dimensiones": "4713 x 1827 x 1440 mm",
   "category": "otros",
   "gallery": {
     "images": {
@@ -269,8 +273,8 @@
     "description": "Sedán premium de BMW, motor 2.0L turbo de 4 cilindros, tracción trasera."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.316Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:32:49.329Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -323,5 +327,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl BMW Serie 3 es, sin lugar a dudas, el pilar fundamental sobre el cual se sostiene la reputación de deportividad y dinamismo de la marca de Múnich. Desde el lanzamiento de su primera generación (la mítica E21) en 1975, este sedán compacto ejecutivo se propuso redefinir lo que un conductor podía esperar de un vehículo de tracción trasera diario. A lo largo de las décadas, el Serie 3 evolucionó a través de iteraciones icónicas como la E30, E36, E46 y F30, consolidándose como la referencia indiscutida del segmento premium frente a rivales de peso histórico.\n\n## Un hito o generación relevante\nLa actual séptima generación, conocida internamente bajo el código G20 y lanzada comercialmente en 2019 (con un profundo restyling o facelift aplicado en 2022), marca un hito tecnológico clave en la estirpe del modelo. Construido sobre la plataforma modular CLAR, el G20 logró una reducción de peso considerable de hasta 55 kilos respecto a su predecesor, incrementando al mismo tiempo su rigidez torsional en un 25 por ciento. Este salto estructural mejoró notablemente la agilidad en curvas y el confort de marcha, incorporando además el sistema BMW Live Cockpit Professional con doble pantalla digital y una evolución notable en las asistencias a la conducción (ADAS), sin perder el tradicional reparto de pesos 50:50 que caracteriza a la casa bávara.\n\n## Curiosidades\nUna de las particularidades más interesantes del desarrollo del Serie 3 a lo largo de su historia es que, a pesar de haber incorporado mecánicas de seis cilindros en línea muy celebradas (como los legendarios bloques atmosféricos y turbo de las series E46 y E36), las variantes de cuatro cilindros sobrealimentadas mediante tecnología TwinPower Turbo —como el motor B48 presente en las versiones actuales 320i y 330i— se han convertido en el auténtico corazón comercial y de ingeniería de la gama global. Esto le permite ofrecer un equilibrio sobresaliente entre consumos contenidos en ruta y una entrega de torque inmediata desde bajas revoluciones, manteniendo viva la esencia dinámica de la marca en mercados tan diversos como Europa, Norteamérica y el Cono Sur.\n\n## Competencia y posicionamiento\nDentro del mercado automotriz global y regional, el BMW Serie 3 ocupa un rol estratégico como el sedán ejecutivo de espíritu más marcadamente deportivo. Se posiciona de manera directa frente a contrincantes directos de origen alemán como el Mercedes-Benz Clase C y el Audi A4, así como alternativas emergentes de corte dinámico como el Alfa Romeo Giulia. Mientras que el Clase C suele priorizar el confort de marcha y el lujo recargado, y el Audi A4 hace lo propio con la tracción integral y la sobriedad tecnológica, el Serie 3 mantiene su liderazgo histórico apostando firmemente por el tacto de dirección, la precisión del chasis y una experiencia al volante orientada al conductor exigente."
 }

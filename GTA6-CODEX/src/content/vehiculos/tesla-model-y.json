@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.694Z",
-  "updatedAt": "2026-08-25T23:22:07.532Z",
+  "updatedAt": "2026-08-27T01:58:37.905Z",
   "manufacturer": "Tesla",
   "class": "SUV eléctrica",
   "customizable": false,
@@ -19,28 +19,26 @@
     "speed": "Alta (217 km/h)",
     "acceleration": "Alta (0-100 km/h en 5.0s)"
   },
-  "power": "384 hp (Long Range)",
-  "price": "USD 47.000",
-  "consumo": "15.3 kWh/100km (consumo oficial WLTP, versión Long Range AWD)",
-  "dimensiones": "4.790 mm largo x 1.982 mm ancho (sin espejos, 2.129 mm con espejos extendidos) x 1.624 mm alto, distancia entre ejes 2.890 mm",
+  "power": "384 hp",
+  "price": "USD 47.000 (MSRP EE.UU.)",
+  "consumo": "15.3 kWh/100km (ciclo WLTP para la versión Long Range AWD)",
+  "dimensiones": "4.751 mm x 1.921 mm x 1.624 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.tesla.com/modely",
-    "secondarySource": "https://www.tesla.com/en_jo/modely",
-    "note": "Existe además una versión Standard RWD más económica y una variante alargada 'Model Y L' de 6/7 plazas en algunos mercados.",
+    "level": "respaldado",
+    "note": "Se actualizaron las especificaciones técnicas del Tesla Model Y utilizando datos oficiales de la marca para la versión Long Range, incluyendo dimensiones reales, potencia aproximada, peso y tipo de tracción.",
     "limitations": [
-      "El consumo real varía según clima, velocidad y tamaño de llanta",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "El consumo y la autonomía varían según las condiciones climáticas, el estilo de conducción y el tamaño de las llantas.",
+      "Los precios de lista sufren modificaciones frecuentes por parte del fabricante."
     ]
   },
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-180 kW",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción integral (AWD)",
+  "peso": "1.979 kg",
+  "tipoMotor": "Doble motor eléctrico de imanes permanentes/inducción",
+  "potenciaKW": "286 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "5.0s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -125,11 +123,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 854,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "electrico",
   "gallery": {
@@ -259,8 +257,8 @@
     "description": "SUV eléctrica de Tesla basada en la plataforma del Model 3, mayor espacio de carga."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.481Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:58:37.905Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -313,5 +311,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Tesla Model Y fue presentado oficialmente a principios de 2019 y su producción comenzó en la planta de Fremont, California, a principios de 2020. Concebido como un vehículo utilitario deportivo (SUV) compacto, comparte una parte sustancial de su plataforma, componentes internos y arquitectura eléctrica con el Tesla Model 3, lo que permitió a la compañía optimizar costos de producción y acelerar su llegada al mercado global.\n\nA pocos años de su lanzamiento comercial, el Model Y logró posicionarse de manera acelerada en distintos mercados del mundo, convirtiéndose rápidamente en uno de los vehículos eléctricos más vendidos a nivel global e incluso liderando registros de patentamiento general en regiones como Europa y Norteamérica durante varios períodos.\n\n## Un hito o generación relevante\nUn hito fundamental en la trayectoria comercial y operativa del Model Y fue la expansión de su fabricación a las Gigafábricas de Tesla ubicadas en Shanghái (China), Berlín (Alemania) y Austin (Texas, EE.UU.). La apertura de estas plantas no solo incrementó de forma drástica el volumen de producción anual para abastecer la alta demanda internacional, sino que también introdujo innovaciones clave en los procesos de manufactura, tales como el uso de grandes piezas fundidas de aluminio (giga-castings) y la integración estructural de los paquetes de baterías de nueva generación en algunas de sus variantes.\n\n## Curiosidades\nA pesar de compartir aproximadamente el 75 % de sus componentes con el sedán Model 3, el Model Y ofrece un habitáculo notablemente más versátil y un volumen de carga superior, destacándose por la inclusión de un portón trasero eléctrico y un piso de baúl completamente plano. En algunos mercados específicos, la marca llegó a comercializar o anunciar variantes configuradas con tres hileras de asientos para albergar hasta siete pasajeros, un desafío considerable para un vehículo de sus dimensiones exteriores. Asimismo, el diseño de su carrocería prioriza la eficiencia aerodinámica con un coeficiente de resistencia bajo para su segmento, lo que impacta directamente en una mayor autonomía por carga.\n\n## Competencia y posicionamiento\nDentro del mercado automotriz actual, el Tesla Model Y compite en el segmento de los SUV medianos 100% eléctricos de carácter prémium. Entre sus rivales directos se encuentran modelos de marcas tradicionales y emergentes como el Volkswagen ID.4, el Ford Mustang Mach-E, el Hyundai Ioniq 5, el Kia EV6 y el Audi Q4 e-tron. \n\nEl posicionamiento del Model Y se sustenta en su sólida red de carga propietaria (Superchargers), la constante actualización inalámbrica de su software (OTA), los niveles de eficiencia energética de sus sistemas de propulsión y una interfaz interior minimalista centrada en una pantalla táctil central. Aunque enfrenta una competencia cada vez más intensa y una presión sostenida en materia de precios por parte de fabricantes tanto occidentales como asiáticos, el vehículo mantiene un estatus de referente indiscutido en la transición hacia la movilidad eléctrica masiva."
 }

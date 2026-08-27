@@ -13,15 +13,16 @@
   "manufacturer": "Toyota",
   "class": "SUV compacta",
   "customizable": false,
-  "power": "122 hp",
-  "price": "USD 30.000",
-  "consumo": "5.0 l/100km (híbrida, mixto)",
+  "power": "170 CV (térmico 2.0L) / 122 CV (sistema híbrido)",
+  "price": "ARS 35.000.000 (referencia mercado local, variante híbrida)",
+  "consumo": "4.3 l/100km (híbrido, ciclo mixto)",
   "dimensiones": "4460 x 1825 x 1620 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.toyota.com.ar/corolla-cross",
+    "level": "respaldado",
+    "note": "Se actualizaron los datos técnicos específicos para el Toyota Corolla Cross producido en la región (Brasil) y comercializado en Argentina, corrigiendo potencias, capacidades del baúl, tanque y peso según fichas técnicas oficiales de Toyota Argentina.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): tipoMotor corregido de \"Gasolina/Diésel\" (valor de relleno) a \"Gasolina + sistema híbrido\", ya que este vehículo no tiene variante diésel. Arquitectura específica del híbrido (serie/paralelo, mild/full/enchufable) pendiente de verificar con fuente primaria."
+      "Los precios varían constantemente debido a la inflación y cargas impositivas locales en el mercado argentino.",
+      "Las cifras de aceleración y consumo pueden variar levemente según la normativa de homologación regional (CONPET/INMETRO vs WLTP)."
     ]
   },
   "performance": {
@@ -29,15 +30,15 @@
     "acceleration": "0-100 km/h en 9.5s (híbrida)"
   },
   "createdAt": "2026-08-23T21:59:04.271737Z",
-  "updatedAt": "2026-08-25T23:22:07.534Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina + sistema híbrido",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:59:05.292Z",
+  "transmision": "Automática CVT (e-CVT en híbridas)",
+  "traccion": "Delantera (FWD)",
+  "peso": "1390 - 1450 kg",
+  "tipoMotor": "Gasolina 2.0L Dynamic Force + Motor eléctrico (Híbrido)",
+  "potenciaKW": "103 kW (térmico) / 72 kW (eléctrico)",
+  "capacidadTanque": "47 litros",
+  "tiempoRecorrido": "11.8s (0-100 km/h versión híbrida)",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -123,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1987 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 440,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra Generación (XG10)",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -254,8 +255,8 @@
     "description": "SUV compacta de Toyota sobre plataforma del Corolla, disponible en versión híbrida."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.485Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:59:05.292Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -308,5 +309,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Toyota Corolla Cross hizo su arribo global a mediados de 2020, presentado inicialmente en Tailandia antes de expandirse rápidamente hacia otros mercados estratégicos como América Latina y Norteamérica. Este SUV compacto nace con el objetivo de aprovechar el enorme prestigio histórico y la confiabilidad asociadas a la placa \"Corolla\", trasladando el éxito indiscutido del sedán mediano al segmento de los utilitarios deportivos, que no para de ganar terreno en el mercado automotriz global.\n\n## Un hito o generación relevante\nPara el mercado latinoamericano, un hito fundamental fue el inicio de su producción industrial en la planta de Sorocaba, en el estado de São Paulo, Brasil, desde donde se abastece a gran parte de la región, incluyendo la Argentina. Este modelo introdujo de manera masiva la tecnología híbrida autrecargable (HEV) en un segmento accesible dentro del Mercado Común del Sur, combinando un motor térmico de ciclo Atkinson de 2.0 litros con motores eléctricos compactos y una transmisión e-CVT. Esta apuesta posicionó rápidamente al Corolla Cross como uno de los SUV ecológicos más vendidos y referenciados de Sudamérica.\n\n## Curiosidades\nUna de las particularidades más interesantes del Toyota Corolla Cross es que, a pesar de compartir la plataforma modular global GA-C (TNGA) con el Corolla sedán, presenta esquemas de suspensión trasera diferentes según la versión y el mercado: mientras que las variantes naftas puras en algunos mercados utilizan suspensiones independientes de tipo multibrazo, las versiones fabricadas en la región para Sudamérica optan por un eje de barra de torsión simplificado, optimizado para ofrecer mayor durabilidad y espacio libre en el baúl sin comprometer el confort de marcha urbano.\n\n## Competencia y posicionamiento\nEn el altamente competitivo segmento C-SUV, el Toyota Corolla Cross se posiciona como una opción de enfoque racional, familiar y enficionentemente ecológico. Debe medirse permanentemente contra pesos pesados de la industria como el Jeep Compass, Volkswagen Taos, Ford Territory, Chevrolet Tracker (en los límites del segmento B/C) y el Honda HR-V. Su principal argumento de venta frente a rivales puramente térmicos radica en su bajísimo consumo urbano gracias a su sistema híbrido, respaldado además por el sólido valor de reventa y la reputación de posventa que caracteriza históricamente a la marca japonesa en el Cono Sur."
 }

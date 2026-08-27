@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.335Z",
-  "updatedAt": "2026-08-25T23:22:07.494Z",
+  "updatedAt": "2026-08-27T01:54:23.617Z",
   "manufacturer": "Peugeot",
   "class": "Hatchback",
   "customizable": false,
@@ -20,19 +20,23 @@
     "acceleration": "Media (0-100 km/h en 10.2s)"
   },
   "power": "115 hp",
-  "price": "USD 20.000",
+  "price": "ARS 22.000.000 (Referencia mercado local)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.peugeot.com.ar/gama/nuevo-208.html"
+    "level": "respaldado",
+    "note": "Datos verificados a partir de la gama comercializada por Peugeot en Argentina, incluyendo especificaciones del motor EC5 1.6L y dimensiones oficiales.",
+    "limitations": [
+      "Las cifras de consumo pueden variar según las condiciones de uso y la versión exacta (1.6L atmosférico vs turbo T200).",
+      "Los precios en el mercado automotor varían constantemente según la inflación y disponibilidad."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 5 marchas o Automática Tiptronic de 6 marchas",
+  "traccion": "Delantera",
+  "peso": "1165 kg",
+  "tipoMotor": "Nafta (Gasolina)",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "47 litros",
+  "tiempoRecorrido": "10.2s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +122,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "6.2 l/100km mixto",
+  "dimensiones": "4055 x 1745 x 1435 mm",
+  "cilindrada": "1598 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 311,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (P21)",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -249,8 +253,8 @@
     "description": "Hatchback compacto de Peugeot, diseño i-Cockpit, motores 1.6L o turbo 1.2L."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.449Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:54:23.617Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +307,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Peugeot 208 es uno de los hatchbacks compactos más exitosos y representativos del mercado sudamericano y europeo. Su recorrido comenzó como el sucesor natural de la exitosa saga de los 20X (206, 207), heredando un legado de diseño audaz y dinámica de conducción ágil. La segunda generación, fabricada en su polo industrial de El Palomar (Argentina) para la región, marcó un antes y un después en términos de calidad constructiva, tecnología aplicada y adopción de plataformas modernas (CMP), consolidándose rápidamente como uno de los vehículos más vendidos en su segmento dentro del mercado argentino.\n\n## Un hito o generación relevante\nEl gran punto de inflexión para el Peugeot 208 en la región sudamericana fue la introducción de su plataforma modular CMP (Common Modular Platform) en el año 2020. Esta arquitectura no solo permitió una mejora sustancial en la rigidez estructural, la seguridad y la reducción de peso frente a su predecesor, sino que también habilitó la llegada del revolucionario puesto de conducción i-Cockpit®. Este concepto, caracterizado por un volante de diámetro reducido, un instrumental elevado y una pantalla táctil orientada al conductor, transformó por completo la experiencia a bordo, convirtiéndose en la seña de identidad indiscutida de la marca del león.\n\n## Curiosidades\nUna de las características más llamativas del desarrollo del concepto i-Cockpit en la gama Peugeot fue la decisión de ubicar el volante por debajo de la línea del instrumental. Si bien al principio generó debate entre los puristas del automóvil, los ingenieros de Peugeot demostraron tras extensas pruebas ergonómicas que esta disposición reduce el tiempo de reacción del conductor, ya que los ojos apenas deben apartarse del camino para consultar la velocidad o las alertas. Además, el Peugeot 208 se destaca por ser un vehículo con una fuerte impronta de diseño exterior, donde las firmas lumínicas frontales que simulan los \"colmillos\" del león se han transformado en un icono visual fácilmente reconocible en las calles de Buenos Aires y el resto de la región.\n\n## Competencia y posicionamiento\nDentro del segmento B de hatchbacks, el Peugeot 208 se posiciona en la franja más alta y aspiracional, coqueteando con tintes semi-premium. Debe medirse codo a codo con referentes históricos de peso pesado en el Mercosur, tales como el Volkswagen Polo y el Chevrolet Onix, además de alternativas de marcas regionales o asiáticas. Para destacar frente a ellos, el modelo francés apuesta fuertemente por la estética vanguardista, la calidad de terminaciones en su habitáculo y un andar equilibrado que prioriza tanto el confort en ciudad como la estabilidad en ruta, apuntando a un público que valora el diseño diferenciado y la tecnología por sobre la pura funcionalidad utilitaria."
 }

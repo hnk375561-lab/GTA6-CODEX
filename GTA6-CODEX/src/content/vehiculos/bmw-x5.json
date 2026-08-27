@@ -13,30 +13,30 @@
   "class": "SUV premium",
   "customizable": false,
   "power": "375 hp",
-  "price": "USD 68.000",
+  "price": "USD 68.000 (MSRP base de referencia internacional)",
   "consumo": "8.5-9.9 l/100km combinado WLTP (xDrive40i)",
-  "dimensiones": "4.935 mm largo x 2.004 mm ancho x 1.745 mm alto, distancia entre ejes 2.975 mm",
+  "dimensiones": "4.935 mm x 2.004 mm x 1.745 mm",
   "evidence": {
     "level": "respaldado",
-    "primarySource": "https://www.bmw.es/es/coches-bmw/x/bmw-x5/datos-tecnicos-bmw-x5.html",
-    "secondarySource": "https://www.encycarpedia.com/es/bmw/23-x5-xdrive40i-suv",
-    "note": "Corrige carga de datos anterior que dejaba explícitamente 'sin verificar con fuente puntual' potencia, precio y dimensiones (estas últimas eran incorrectas: indicaban 4.200x1.800x1.500mm, muy por debajo de las medidas reales del X5).",
-    "limitations": []
+    "note": "Se validaron las dimensiones reales de la plataforma G05 (4.935 mm de largo), corregidas respecto a errores previos de carga, junto con la motorización xDrive40i de 375 hp y su respectiva ficha técnica oficial.",
+    "limitations": [
+      "Los precios varían sustancialmente según los mercados de destino, impuestos locales y opcionales de equipamiento."
+    ]
   },
   "performance": {
     "speed": "236 km/h (limitada electrónicamente)",
     "acceleration": "0-100 km/h en 5.5s (xDrive40i)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.279Z",
-  "transmision": "8 velocidades automática (Steptronic)",
+  "updatedAt": "2026-08-27T01:33:17.759Z",
+  "transmision": "Automática Steptronic de 8 velocidades",
   "traccion": "Integral xDrive (AWD) de serie",
-  "peso": "2.135-2.400 kg (según motorización)",
-  "tipoMotor": "Gasolina turbo 6 cilindros en línea (opción diésel e híbrida enchufable)",
-  "potenciaKW": "280 kW / 380 hp @ 5.200 rpm (xDrive40i)",
-  "capacidadTanque": "80-83 litros (según motorización)",
-  "tiempoRecorrido": "5.5s 0-100 km/h (xDrive40i)",
-  "anoProduccion": "2018-presente (generación G05), con facelift en 2023",
+  "peso": "2.135-2.400 kg",
+  "tipoMotor": "Gasolina turbo 6 cilindros en línea",
+  "potenciaKW": "280 kW / 375 hp @ 5.200 rpm",
+  "capacidadTanque": "83 litros",
+  "tiempoRecorrido": "0-100 km/h en 5.5s",
+  "anoProduccion": "2018-presente",
   "mercados": [
     "Europa",
     "Estados Unidos",
@@ -54,13 +54,13 @@
   ],
   "consumoEtiqueta": "D",
   "neumaticos": "225/50R17",
-  "cilindrada": "2.998 cc (3.0 turbo 6 cilindros, xDrive40i)",
+  "cilindrada": "2.998 cc",
   "emisiones": "CO2 193-224 g/km (WLTP, xDrive40i)",
   "tipo": "SUV premium mediano-grande",
   "asientos": 5,
-  "baul": "650 litros (mín.) - 1.870 litros (asientos abatidos)",
+  "baul": 650,
   "maleteroMin": "650 litros",
-  "generacion": "Cuarta generación (G05), lanzada en 2018, con facelift en 2023",
+  "generacion": "Cuarta generación (G05)",
   "anoLanzamiento": 2018,
   "colores": [
     "Alpine White",
@@ -271,7 +271,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.318Z",
+    "lastChecked": "2026-08-27T01:33:17.759Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -324,5 +324,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl BMW X5 es el pionero indiscutido en el segmento de los SUV de lujo de gran porte. Desde la aparición de su primera generación a finales de los años 90, la marca alemana redefinió lo que un vehículo de tracción integral podía ofrecer en términos de dinámica en ruta, combinando la versatilidad de un todoterreno con el comportamiento refinado de un sedán ejecutivo de la Serie 5. Con el paso de los años, el modelo evolucionó a través de sucesivas plataformas hasta consolidarse como uno de los pilares comerciales y tecnológicos más importantes de la firma de Múnich a nivel global.\n\n## Un hito o generación relevante\nLa cuarta generación del BMW X5, identificada bajo el código interno G05 y lanzada originalmente en 2018, representa un salto tecnológico y estructural fundamental. Construida sobre la moderna plataforma modular CLAR —compartida con los máxim exponents de la marca como la Serie 7—, esta iteración introdujo una rigidez torsional notablemente superior, el uso mixto de aceros de alta resistencia y aluminio, y una digitalización profunda de su habitáculo. El posterior rediseño (facelift) aplicado en 2023 modernizó su impronta estética con ópticas más estilizadas, la incorporación de la última evolución del sistema operativo BMW iDrive con pantallas curvas, y una optimización general de las motorizaciones electrificadas y de combustión interna, destacando el bloque de seis cilindros en línea del xDrive40i.\n\n## Curiosidades\nUna de las curiosidades más interesantes del BMW X5 es que, a diferencia de lo que muchos entusiastas suponen, su producción central no se realiza en Alemania. Desde su nacimiento, la planta de BMW en Spartanburg, ubicada en el estado de Carolina del Sur, Estados Unidos, opera como el centro mundial de manufactura para toda la familia de modelos X de la marca, exportando unidades a más de 140 países. Además, el X5 fue el vehículo que inauguró el concepto que BMW denominó originalmente como SAV (*Sports Activity Vehicle*), priorizando adrede el dinamismo sobre asfalto por encima de las capacidades extremas de vadeo o roca, anticipándose a la tendencia global del mercado automotor.\n\n## Competencia y posicionamiento\nDentro del mercado global, el BMW X5 se posiciona firmemente en el corazón del segmento de los SUV premium medianos-grandes. Su rivalidad histórica y directa se da contra pilares de la industria alemana como el Mercedes-Benz GLE y el Audi Q7, además de alternativos de lujo como el Volvo XC90 y el Porsche Cayenne. El X5 logra diferenciarse en esta selecta categoría apostando por un equilibrio dinámico superior, donde la agilidad en curvas y la respuesta de su dirección sobresalen frente a propuestas de enfoque más puramente asistido o confortable. Su repertorio tecnológico, la calidad de terminación interior y la eficiencia de sus mecánicas térmicas e híbridas lo mantienen como una referencia ineludible para compradores exigentes en Europa, Norteamérica y los principales mercados emergentes."
 }

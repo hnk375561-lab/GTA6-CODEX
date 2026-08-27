@@ -13,28 +13,32 @@
   "manufacturer": "Fiat",
   "class": "Hatchback",
   "customizable": false,
-  "power": "95 hp",
-  "price": "USD 23.000",
-  "consumo": "6.0 l/100km (mixto)",
-  "dimensiones": "3632 x 1627 x 1518 mm",
+  "power": "118 hp (versión eléctrica 500e) / 70 hp (versión híbrida ligera en Europa)",
+  "price": "USD 32.500 (MSRP referencia 500e)",
+  "consumo": "14.9 kWh/100km (eléctrico) o 4.7 l/100km (híbrido)",
+  "dimensiones": "3632 x 1683 x 1527 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.fiat.com.ar/500"
+    "level": "respaldado",
+    "note": "Se corrigieron las especificaciones generales para reflejar las dimensiones, peso y motorización real de la tercera generación del Fiat 500 (enfocada fuertemente en la variante eléctrica 500e y la híbrida europea), descartando los datos genéricos previos de un vehículo de mayor tamaño.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado (Europa, Norteamérica o Sudamérica)",
+      "La disponibilidad de motorizaciones térmicas, híbridas o eléctricas depende estrictamente de la región"
+    ]
   },
   "performance": {
     "speed": "170 km/h",
     "acceleration": "0-100 km/h en 10.5s"
   },
   "createdAt": "2026-08-23T21:59:07.332517Z",
-  "updatedAt": "2026-08-25T23:22:07.342Z",
-  "transmision": "Manual o Automática",
+  "updatedAt": "2026-08-27T01:38:30.207Z",
+  "transmision": "Automática de 1 marcha (EV) / Manual de 6 marchas (Híbrido)",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "peso": "1.365 kg (versión eléctrica con batería de 42 kWh)",
+  "tipoMotor": "Eléctrico sincrónico / Nafta 1.0 FireFly Mild Hybrid",
+  "potenciaKW": "87 kW",
+  "capacidadTanque": "No aplica (Eléctrico) / 35 litros (Híbrido)",
+  "tiempoRecorrido": "0-100 km/h en 9.0s (Eléctrico)",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "No aplica (Eléctrico) / 999 cc (Híbrido)",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 4,
+  "baul": 185,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación (Nueva 500 / 500e)",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "auto-pequeño",
   "gallery": {
@@ -251,8 +255,8 @@
     "description": "Hatchback urbano de diseño retro de Fiat, también disponible en versión 100% eléctrica."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.367Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:38:30.207Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +309,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Fiat 500 es uno de los automóviles más emblemáticos de la historia automotriz mundial. Su legado comenzó en 1957 con el legendario 'Cinquecento' original diseñado por Dante Giacosa, un vehículo económico y compacto que motorizó a la Italia de la posguerra y se convirtió en un ícono indiscutido de la cultura pop y el diseño industrial.\n\nEn 2007, coincidiendo con el 50° aniversario del modelo original, Fiat relanzó el 500 bajo una filosofía de diseño retro-moderno desarrollada por el Centro Stile Fiat. Este relanzamiento transformó al utilitario urbano en un producto de carácter aspiracional y estilo de vida, logrando un éxito comercial rotundo a nivel global y posicionándose como un referente indiscutido en el segmento A.\n\n## Un hito o generación relevante\nEl gran punto de inflexión en la historia reciente del modelo se dio en 2020 con la presentación de la tercera generación, conocida comercialmente como el Nuevo Fiat 500 o Fiat 500e. A diferencia de sus predecesores inmediatos, esta plataforma fue desarrollada desde cero como un vehículo exclusivamente eléctrico en sus versiones principales, marcando la entrada de la marca italiana en la era de la electromovilidad sin abandonar sus rasgos estéticos característicos.\n\nEl 500e introdujo proporciones ligeramente mayores para alojar el paquete de baterías bajo el piso, optimizando el espacio interior y mejorando notablemente el comportamiento dinámico gracias a un centro de gravedad más bajo. Asimismo, incorporó tecnologías de asistencia a la conducción de nivel 2 y sistemas de infoentretenimiento de última generación.\n\n## Curiosidades\nA lo largo de su trayectoria moderna, el Fiat 500 ha sido lienzo de múltiples ediciones especiales y colaboraciones con marcas de lujo y moda de alta gama, tales como Gucci, Diesel y Riva (la famosa marca de yates de lujo). Estas versiones limitadas reforzaron el estatus del modelo como un objeto de diseño más que como un simple medio de transporte urbano.\n\nAdemás, a pesar de compartir dimensiones sumamente contenidas, el diseño exterior logra mantener la silueta clásica de 'burbuja' que rinde homenaje directo al modelo de 1957, un logro estético que pocos fabricantes han podido replicar con tanta fidelidad en el siglo XXI.\n\n## Competencia y posicionamiento\nEn el mercado global, el Fiat 500 compite en el segmento de los hatchbacks urbanos pequeños de espíritu chic y urbano. Sus principales rivales históricos y modernos incluyen al MINI Cooper, el Smart Fortwo/Forfour, y más recientemente opciones eléctricas del segmento A como el Honda e, el Renault 5 E-Tech y el Dacia Spring.\n\nSin embargo, el 500 se destaca frente a sus competidores por ofrecer una propuesta de diseño emocional muy fuerte combinada con costos de operación reducidos en su variante eléctrica, ocupando un nicho donde la estética y la practicidad urbana conviven de manera equilibrada."
 }

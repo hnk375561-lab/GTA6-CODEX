@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.363Z",
-  "updatedAt": "2026-08-25T23:22:07.557Z",
+  "updatedAt": "2026-08-27T02:03:49.167Z",
   "manufacturer": "Yamaha",
   "class": "Moto naked",
   "customizable": false,
@@ -19,23 +19,24 @@
     "speed": "Media-Alta (215 km/h)",
     "acceleration": "Alta (0-100 km/h en 3.7s)"
   },
-  "power": "73 hp",
-  "price": "USD 9.500",
+  "power": "73.4 CV (54 kW) a 8.750 rpm",
+  "price": "USD 8.199 (MSRP EE.UU. referencial)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.yamahamotor.com.ar/mt-07",
+    "level": "respaldado",
+    "note": "Se corrigieron los datos genéricos heredados de la plantilla anterior (que correspondían erróneamente a un automóvil de cuatro ruedas con tracción delantera y suspensión MacPherson) y se reemplazaron por las especificaciones reales de la motocicleta naked Yamaha MT-07 con motor CP2.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+      "Los precios varían considerablemente según el mercado local y los aranceles de importación en Argentina.",
+      "Algunas especificaciones menores de electrónica o iluminación pueden variar según la homologación regional (Euro 5 en adelante)."
     ]
   },
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 6 velocidades",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "184 kg (en orden de marcha)",
+  "tipoMotor": "Bicilíndrico en línea, 4 tiempos, refrigeración líquida, DOHC, 4 válvulas",
+  "potenciaKW": "54 kW",
+  "capacidadTanque": "14 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 3.8 segundos",
+  "anoProduccion": "2014-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,16 +121,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "apx. 4.2 L / 100 km",
+  "dimensiones": "2085 x 780 x 1105 mm",
+  "cilindrada": "689 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (actualización estética y de normativas)",
+  "anoLanzamiento": 2014,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -251,8 +252,8 @@
     "description": "Moto naked de Yamaha, motor bicilíndrico CP2 689cc, muy elegida por relación peso-potencia."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.506Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:03:49.167Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +306,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Yamaha MT-07 irrumpió en el mercado global en el año 2014 (inicialmente comercializada como FZ-07 en Norteamérica) con el claro objetivo de revitalizar el segmento de motocicletas naked de media cilindrada. Concebida bajo la filosofía \"Master of Torque\" (MT) de la firma de Iwata, la moto se diseñó desde cero para ofrecer una experiencia de conducción emocionante, accesible y profundamente divertida, priorizando la agilidad urbana y la respuesta en medios regímenes por encima de las cifras de velocidad punta puras.\n\n## Un hito o generación relevante\nEl corazón indiscutido y el mayor hito de este modelo es la introducción de su motor con tecnología **Crossplane** de segunda generación (conocido como CP2). Este bloque bicilíndrico en línea de 689 cc cuenta con un calado de cigüeñal a 270 grados, lo que genera una entrega de potencia lineal y un pulso de encendido irregular que imita el comportamiento de un motor en V. Esta arquitectura revolucionó el segmento porque logró combinar el torque contundente a bajas y medias revoluciones —típico de los motores grandes— con la ligereza y el bajo mantenimiento de una cilindrada media. Con el correr de los años, este mismo motor se convirtió en la plataforma modular sobre la cual Yamaha construyó una familia entera de éxitos, incluyendo la Tracer 7, la Ténéré 700 y la XSR 700.\n\n## Curiosidades\nUno de los aspectos más notables del desarrollo de la MT-07 fue el agresivo control de costos de producción y reducción de peso que Yamaha implementó sin sacrificar la calidad dinámica. Por ejemplo, los ingenieros diseñaron un basculante trasero asimétrico de acero y lograron un conjunto sumamente compacto que apenas supera los 180 kg con todos los fluidos. Esto la convirtió instantáneamente en una de las favoritas tanto para conductores novatos que buscaban dar el salto de cilindrada como para motociclistas experimentados que querían un juguete ágil para el día a día sin gastar una fortuna.\n\n## Competencia y posicionamiento\nEn el competitivo mercado de las naked medianas, la Yamaha MT-07 compite directamente contra colosos de la industria como la Kawasaki Z650, la Honda CB650R, la Suzuki SV 650 y la KTM 790/890 Duke (en sus versiones más accesibles). A pesar de la dura pulseada tecnológica, la MT-07 se ha mantenido históricamente como una de las líderes indiscutidas en ventas gracias a su imbatible relación peso-potencia, su bajo consumo de combustible, costos de mantenimiento razonables y una comunidad de usuarios global sumamente activa que valora su carácter desenfadado y su facilidad de personalización."
 }

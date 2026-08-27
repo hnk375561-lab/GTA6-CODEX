@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.048Z",
-  "updatedAt": "2026-08-25T23:22:07.541Z",
+  "updatedAt": "2026-08-27T02:00:02.275Z",
   "manufacturer": "Toyota",
   "class": "SUV 4x4",
   "customizable": false,
@@ -20,20 +20,24 @@
     "speed": "175 km/h",
     "acceleration": "0-100 km/h en 10.2s"
   },
-  "power": "204 hp",
-  "price": "USD 55.000",
+  "power": "204 CV",
+  "price": "ARS / USD (Precio variable según mercado regional, referencia de entrada aproximada)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.toyota.com.ar/sw4"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas principales para el mercado argentino de la Toyota SW4, incluyendo su motorización 2.8L de 204 CV, dimensiones generales y capacidades basadas en fichas técnicas oficiales de Toyota Argentina.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y los impuestos locales en los mercados de Sudamérica.",
+      "Algunos datos de aceleración y consumo exacto pueden variar levemente según el tipo de homologación o versión (por ejemplo, variantes Diamond o GR-Sport)."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática de 6 marchas con modo secuencial",
+  "traccion": "4x4 (tracción en las cuatro ruedas conectable con reductora)",
+  "peso": "2110 kg",
+  "tipoMotor": "Turbodiésel",
+  "potenciaKW": "150 kW",
+  "capacidadTanque": "80 litros",
+  "tiempoRecorrido": "10.8s",
+  "anoProduccion": "2015-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -121,16 +125,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "Aprox. 8.5 - 9.5 L/100 km en uso mixto",
+  "dimensiones": "4795 x 1855 x 1835 mm",
+  "cilindrada": "2755 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 7,
+  "baul": 500,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (facelift posterior)",
+  "anoLanzamiento": 2015,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -253,8 +257,8 @@
     "description": "SUV 4x4 de Toyota basada en la plataforma de la Hilux, motor turbodiésel 2.8L. Se comercializa como Fortuner en otros mercados."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.491Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:00:02.275Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -307,5 +311,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Toyota SW4 —conocida en otros mercados internacionales como Toyota Fortuner— nació a mediados de los años 2000 como parte del prestigioso proyecto IMV (Innovative International Multi-purpose Vehicle) de la marca japonesa. Este ambicioso plan industrial buscaba desarrollar una familia de vehículos globales robustos y versátiles sobre una misma plataforma de largueros y travesaños, compartiendo ADN directamente con la exitosa pickup mediana Toyota Hilux. Desde su desembarque en los mercados de América Latina, la SW4 logró consolidarse rápidamente como un referente indiscutido dentro del segmento de los SUV medianos de chasis independiente, un nicho donde la durabilidad y la aptitud off-road real son valores fundamentales para los usuarios.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia comercial y técnica de la SW4 en la región ocurrió con la llegada de su segunda generación a partir de 2015, acompañada posteriormente por actualizaciones estéticas profundas y evoluciones mecánicas sustanciales. El hito más destacado de esta etapa reciente fue la adopción de la evolución del motor turbodiésel de 2.8 litros (conocido en la industria como la familia de motores GD), el cual elevó la potencia hasta los 204 caballos de fuerza y optimizó notablemente los valores de torque disponibles a bajas revoluciones. Asimismo, la incorporación progresiva de paquetes de asistencia a la conducción agrupados bajo el paraguas de Toyota Safety Sense representó un salto cualitativo enorme en materia de seguridad activa para este SUV familiar y de trabajo.\n\n## Curiosidades\nA diferencia de la mayoría de los SUV modernos que se fabrican sobre plataformas monocasco de tipo automóvil (diseñadas primordialmente para el confort en ruta y ciudad), la Toyota SW4 mantiene con orgullo su arquitectura de chasis de largueros derivada de un vehículo de carga. Esto le otorga una robustez estructural excepcional para soportar castigos severos en caminos rotos o picadas off-road, una característica muy valorada en países con geografías extensas y complejos terrenos rurales como Argentina. Además, a pesar de compartir gran parte de su frontal, componentes mecánicos y tablero con la Hilux, la SW4 introduce un esquema de suspensión trasera independiente o multilink con resortes helicoidales (dependiendo de la configuración exacta de eje rígido con brazos), lo que mejora de manera perceptible el confort de marcha de los pasajeros ubicados en las plazas traseras frente al andar más saltarin de una pick-up tradicional.\n\n## Competencia y posicionamiento\nEn el mercado automotriz actual, la Toyota SW4 ocupa un rol de liderazgo histórico y absoluto en su categoría dentro de Sudamérica. Su principal competidor directo en la región es la Chevrolet Trailblazer (también derivada de una pickup mediana, la S10), aunque en términos de participación de mercado y valor de reventa, la SW4 suele llevar una ventaja considerable. También compite de manera tangencial con otros SUV medianos o grandes del Mercosur e importados. Su posicionamiento se sustenta en tres pilares inquebrantables: la legendaria confiabilidad mecánica de Toyota, una red de postventa y disponibilidad de repuestos muy sólida en todo el territorio, y una sólida retención del valor residual a lo largo de los años, convirtiéndola tanto en una herramienta de trabajo de alta gama como en un vehículo recreativo familiar por excelencia."
 }

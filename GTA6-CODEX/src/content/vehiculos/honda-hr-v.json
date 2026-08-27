@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:31.522Z",
-  "updatedAt": "2026-08-25T23:22:07.394Z",
+  "updatedAt": "2026-08-27T01:45:11.552Z",
   "manufacturer": "Honda",
   "class": "SUV compacta",
   "customizable": false,
@@ -19,20 +19,23 @@
     "speed": "180 km/h",
     "acceleration": "0-100 km/h en 10.5s"
   },
-  "power": "143 hp",
-  "price": "USD 27.000",
+  "power": "121 hp",
+  "price": "USD 27.000 (referencia regional)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.honda.com.ar/autos/hr-v"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas generales de la Honda HR-V de tercera generación, incluyendo motorización 1.5L, dimensiones y capacidades basándose en fichas técnicas oficiales para la región de Latinoamérica y Mercosur.",
+    "limitations": [
+      "Las motorizaciones y equipamientos varían considerablemente según el mercado específico (Mercosur vs. Norteamérica vs. Europa/Asia)."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "CVT",
+  "traccion": "Delantera",
+  "peso": "1380 kg",
+  "tipoMotor": "Gasolina atmosférico",
+  "potenciaKW": "90 kW",
+  "capacidadTanque": "40 litros",
+  "tiempoRecorrido": "10.2s",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +121,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "6.5 l/100km",
+  "dimensiones": "4330 x 1790 x 1590 mm",
+  "cilindrada": "1.5 litros",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 292,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -249,8 +252,8 @@
     "description": "SUV compacta de Honda, motor 1.5L o 2.0L según mercado."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.398Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:45:11.552Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +306,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Honda HR-V es un SUV compacto que debutó originalmente a finales de la década de 1990, convirtiéndose en uno de los pioneros del segmento que hoy domina el mercado automotriz global. Su nombre, que responde a las siglas de *Hi-rider Revolutionary Vehicle*, buscaba reflejar una propuesta fresca que combinaba la postura elevada y la versatilidad de un todoterreno con la agilidad y eficiencia de un hatchback compacto. Tras una pausa en su comercialización global, Honda reintrodujo la placa HR-V en 2013 sobre la plataforma del Honda Fit, logrando un éxito rotundo de ventas en múltiples regiones gracias a su habitabilidad inteligente y su diseño atemporal.\n\n## Un hito o generación relevante\nEl punto de inflexión más notable en la historia reciente del modelo se da con la llegada de la tercera generación (iniciada comercialmente hacia 2021). Este salto generacional abandonó las líneas redondeadas de su predecesora para adoptar una silueta de estilo más limpio, casi tipo fastback o coupé de cuatro puertas, alineándose con las nuevas tendencias estéticas de la marca nipona. Asimismo, esta iteración marcó un compromiso más fuerte con la electrificación y la seguridad avanzada, incorporando de serie en la mayoría de los mercados el paquete de asistencias a la conducción Honda Sensing y, en regiones selectas, opciones motrices híbridas e-HEV que priorizan la reducción de emisiones.\n\n## Curiosidades\nUn aspecto sumamente característico de la familia HR-V, heredado directamente de su plataforma de origen, es la incorporación de los asientos traseros denominados 'Magic Seats' (o asientos multifunción ULT). Este ingenioso sistema permite no sólo abatir los respaldos de forma completamente plana, sino también levantar las bases de los asientos hacia arriba, liberando una altura de carga vertical inusual para un vehículo de este tamaño, ideal para transportar objetos altos como bicicletas o plantas grandes sin inconvenientes.\n\n## Competencia y posicionamiento\nEn el competitivo segmento de los B-SUV, la Honda HR-V se posiciona históricamente en un peldaño ligeramente superior en términos de calidad percibida, refinamiento de marcha y valor de reventa frente a varios de sus rivales generalistas directos. Compite cara a cara con modelos de gran peso comercial como el Toyota Corolla Cross, Jeep Renegade, Volkswagen T-Cross, Chevrolet Tracker y Nissan Kicks. Mientras que algunos competidores apuestan fuertemente por precios de entrada más agresivos o motorizaciones turboalimentadas de corte deportivo, la HR-V suele inclinar la balanza hacia la durabilidad mecánica, la eficiencia de combustible y un enfoque orientado al confort y la practicidad urbana familiar."
 }

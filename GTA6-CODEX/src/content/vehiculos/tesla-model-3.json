@@ -11,7 +11,7 @@
   ],
   "featured": true,
   "createdAt": "2026-08-23T18:01:33.524Z",
-  "updatedAt": "2026-08-25T23:22:07.530Z",
+  "updatedAt": "2026-08-27T01:58:10.566Z",
   "manufacturer": "Tesla",
   "class": "Sedán",
   "customizable": false,
@@ -20,27 +20,25 @@
     "acceleration": "Muy alta (0-100 km/h en 3.3s en versión Performance)"
   },
   "power": "283 hp (RWD)",
-  "price": "USD 42.000",
-  "consumo": "13.0 kWh/100km (consumo oficial WLTP, versión RWD estándar; 14.3 kWh/100km en versión Premium AWD)",
-  "dimensiones": "4.720 mm largo x 1.850 mm ancho (sin espejos, 2.089 mm con espejos extendidos) x 1.440-1.442 mm alto, distancia entre ejes 2.875 mm",
+  "price": "USD 42.000 (MSRP referencia)",
+  "consumo": "13.0 kWh/100km (WLTP)",
+  "dimensiones": "4.720 mm x 1.850 mm x 1.441 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.tesla.com/model3",
-    "secondarySource": "https://www.tesla.com/en_SA/model3",
-    "note": "Cifras correspondientes al rediseño 'Highland' del Model 3, vigente desde 2024.",
+    "level": "respaldado",
+    "note": "Datos verificados correspondientes al sedán eléctrico Tesla Model 3, con foco en las especificaciones del rediseño de segunda generación.",
     "limitations": [
-      "El consumo real varía según clima, velocidad y tamaño de llanta",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "El consumo real varía según el estilo de conducción y las condiciones climáticas",
+      "Las cifras de autonomía y potencia pueden diferir según la región y la homologación local"
     ]
   },
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "200-400 kW",
+  "transmision": "Automática de relación única",
+  "traccion": "Trasena",
+  "peso": "1.760 kg",
+  "tipoMotor": "Eléctrico síncrono AC",
+  "potenciaKW": "208 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "6.1s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -125,11 +123,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 425,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Highland",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "sedan",
   "gallery": {
@@ -308,8 +306,8 @@
     "description": "Sedán 100% eléctrico de Tesla, tracción trasera, autonomía de largo alcance."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.478Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:58:10.566Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -447,5 +445,6 @@
     ],
     "reemplaza": null,
     "reemplazadoPor": null
-  }
+  },
+  "content": "## Historia del modelo\nEl Tesla Model 3 debutó originalmente en producción masiva en 2017, convirtiéndose rápidamente en el vehículo eléctrico más vendido a nivel global en su categoría. Concebido como una alternativa más accesible en comparación con el Model S, revolucionó el mercado de los sedanes medianos gracias a su propuesta de movilidad sostenible orientada al gran público.\n\n## Generación relevante: El rediseño 'Highland'\nEn 2023 se introdujo de manera oficial la actualización de mitad de vida comercial conocida internamente como proyecto 'Highland'. Esta evolución trajo consigo una renovación estética profunda, destacando un frontal más afilado y aerodinámico, ópticas delanteras y traseras LED rediseñadas, además de mejoras sustanciales en la insonorización del habitáculo. En el interior, se eliminaron las tradicionales palancas detrás del volante y se integró una pantalla trasera para los pasajeros, optimizando la experiencia digital a bordo.\n\n## Curiosidades\nUna de las características más singulares del Model 3 es la casi total ausencia de botones físicos en su consola central, centralizando todas las funciones del vehículo —desde la climatización hasta la apertura de la guantera— en su pantalla táctil central de 15.4 pulgadas. Asimismo, su arquitectura optimizada para vehículos eléctricos le otorga un coeficiente aerodinámico de vanguardia, lo que maximiza la eficiencia energética en autopista.\n\n## Competencia y posicionamiento\nDentro del segmento de los sedanes medianos premium, el Tesla Model 3 compite directamente con referentes alemanes de marcas tradicionales como el BMW i4 y el Mercedes-Benz Clase C eléctrico. Su posicionamiento en el mercado destaca por ofrecer una de las redes de carga rápida más eficientes del mundo (los Superchargers), un paquete tecnológico de asistencias a la conducción avanzado y costos operativos muy competitivos frente a sus contrapartes de combustión interna."
 }

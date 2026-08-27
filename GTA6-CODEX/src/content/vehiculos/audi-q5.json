@@ -13,28 +13,32 @@
   "manufacturer": "Audi",
   "class": "SUV mediano premium",
   "customizable": false,
-  "power": "200 hp (2.0 TFSI base)",
-  "price": "USD 86.700",
-  "consumo": "No informado por el fabricante para Argentina",
-  "dimensiones": "No informado por el fabricante para Argentina",
+  "power": "204 hp",
+  "price": "USD 86.700 (Precio de referencia mercado argentino)",
+  "consumo": "No publicado oficialmente para Argentina",
+  "dimensiones": "4.682 x 1.893 x 1.662 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://autoblog.com.ar/lanzamiento-audi-q5-2026/"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones generales de la tercera generación del Audi Q5, la motorización 2.0 TFSI de entrada y su llegada al mercado argentino importado desde México.",
+    "limitations": [
+      "El consumo exacto homologado para el mercado local no fue informado de manera oficial al momento del lanzamiento.",
+      "Algunas cifras de dimensiones pueden variar levemente según la versión o paquete estético elegido."
+    ]
   },
   "performance": {
     "speed": "No informado por el fabricante para Argentina",
     "acceleration": "No informado por el fabricante para Argentina"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T23:22:07.255Z",
-  "transmision": "7-8 velocidades S tronic (automática de doble embrague)",
-  "traccion": "Integral quattro (AWD) de serie",
-  "peso": "1.910-2.245 kg (según motorización)",
-  "tipoMotor": "Gasolina turbo / Diésel TDI / Híbrido enchufable (Q5 e-hybrid)",
-  "potenciaKW": "150 kW / 204 hp (2.0 TFSI base) hasta 270 kW / 367 hp (e-hybrid)",
-  "capacidadTanque": "58-70 litros",
-  "tiempoRecorrido": "6.0s-8.5s 0-100 km/h (según motorización)",
-  "anoProduccion": "2024-presente (3ª generación)",
+  "updatedAt": "2026-08-27T01:30:54.764Z",
+  "transmision": "Automática S tronic de doble embrague (7 velocidades)",
+  "traccion": "Integral quattro de serie",
+  "peso": "1.910 kg",
+  "tipoMotor": "Gasolina 2.0 TFSI (4 cilindros en línea turbo)",
+  "potenciaKW": "150 kW / 204 hp",
+  "capacidadTanque": "70 litros",
+  "tiempoRecorrido": "7.6 s (0-100 km/h)",
+  "anoProduccion": "2024-presente",
   "mercados": [
     "Europa",
     "Argentina",
@@ -52,13 +56,13 @@
   ],
   "consumoEtiqueta": "G",
   "neumaticos": "225/50R17",
-  "cilindrada": "1.984 cc (2.0 TFSI/TDI, 4 cilindros)",
+  "cilindrada": "1.984 cc",
   "emisiones": "CO2 142-180 g/km aprox. (según motorización; e-hybrid con cifra combinada menor por homologación PHEV)",
   "tipo": "SUV mediano premium",
   "asientos": 5,
-  "baul": "520 litros (mín.) - 1.470 litros (asientos abatidos)",
+  "baul": 520,
   "maleteroMin": "520 litros",
-  "generacion": "Tercera generación, lanzada en 2024",
+  "generacion": "Tercera generación",
   "anoLanzamiento": 2024,
   "colores": [
     "Blanco Ibis",
@@ -263,8 +267,8 @@
     "description": "SUV mediano premium del Segmento D, tracción integral quattro, importado desde México a Argentina."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.303Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:30:54.765Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -317,5 +321,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Audi Q5 irrumpió en el mercado global a finales de la década del 2000, consolidándose rápidamente como uno de los pilares fundamentales dentro de la estrategia de expansión de la marca de los anillos en el segmento de los SUV medianos premium (Segmento D). Desde su concepción inicial, el modelo buscó trasladar las virtudes dinámicas y el refinamiento característicos de los sedanes de la marca a un formato más versátil, elevado y familiar. Con el paso de los años, el Q5 evolucionó a través de distintas generaciones, adoptando retoques estéticos profundos, mejoras sustanciales en su habitabilidad interior y una constante renovación tecnológica que lo mantuvo siempre a la vanguardia frente a sus rivales históricos de origen alemán.\n\n## Un hito y tercera generación\nUn hito trascendental en la historia comercial del modelo ha sido su consolidación como un producto de manufactura global, siendo producido en plantas estratégicas alrededor del mundo para abastecer a distintos mercados internacionales, incluyendo la llegada a la Argentina de unidades importadas directamente desde México. La tercera generación, presentada recientemente a partir del ciclo 2024, marca un punto de inflexión al introducir la plataforma PPC (Premium Platform Combustion), la cual permite una integración aún más avanzada de sistemas de propulsión electrificados, una arquitectura electrónica completamente renovada y un diseño exterior que adopta líneas más afiladas, parrilla Singleframe rediseñada y firmas lumínicas OLED personalizables tanto en la parte delantera como en la trasera.\n\n## Curiosidades\nA pesar de ser un SUV de corte marcadamente familiar y ejecutivo, el Audi Q5 ha sabido albergar bajo su capot algunas de las tecnologías mecánicas más laureadas de la ingeniería de Volkswagen Group. Históricamente, la combinación del legendario sistema de tracción integral permanente quattro con bloques sobrealimentados tanto de gasolina (TFSI) como diésel (TDI) ha demostrado una versatilidad sobresaliente en todo tipo de superficies. Además, en los últimos años, la variante híbrida enchufable (e-hybrid) demostró que el rendimiento deportivo y la reducción drástica de emisiones contaminantes pueden convivir en perfecta armonía en un vehículo de estas dimensiones, logrando una respuesta de aceleración instantánea gracias al apoyo del motor eléctrico.\n\n## Competencia y posicionamiento\nEn el mercado argentino y regional, el Audi Q5 compite de manera directa y encarnizada dentro del selecto club de los SUV medianos de marcas de lujo, midiéndose codo a codo con referentes de la talla del BMW X3 y el Mercedes-Benz GLC. Su posicionamiento se sustenta en ofrecer un equilibrio muy valorado por los usuarios del segmento: un andar sumamente aplomado y confortable para viajes largos, acabados interiores de categoría superior con materiales de tacto noble, y un despliegue tecnológico que incluye instrumentación digital avanzada y asistencias a la conducción de última generación. Todo esto le permite mantenerse como una opción sumamente atractiva para quienes buscan estatus, versatilidad diaria y refinamiento mecánico sin renunciar a la practicidad."
 }

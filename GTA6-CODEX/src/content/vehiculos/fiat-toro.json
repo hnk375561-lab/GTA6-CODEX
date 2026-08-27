@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:35.107Z",
-  "updatedAt": "2026-08-25T23:22:07.353Z",
+  "updatedAt": "2026-08-27T01:39:42.244Z",
   "manufacturer": "Fiat",
   "class": "Pickup",
   "customizable": false,
@@ -19,20 +19,25 @@
     "speed": "Media (180 km/h)",
     "acceleration": "Media (0-100 km/h en 10s)"
   },
-  "power": "175 hp",
-  "price": "USD 31.000",
+  "power": "170 CV",
+  "price": "ARS 35.000.000 (Referencia mercado argentino)",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.fiat.com.ar/toro"
+    "primarySource": "https://www.fiat.com.ar",
+    "note": "Datos verificados sobre especificaciones técnicas oficiales de la Fiat Toro fabricada en Brasil para el mercado regional sudamericano.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y el mercado local en Argentina.",
+      "Las motorizaciones varían según el año de producción y el nivel de equipamiento (Freedom, Volcano, Ultra, Ranch)."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática de 6 o 9 marchas",
+  "traccion": "Integral 4x4 o Delantera 4x2",
+  "peso": "1680-1760 kg",
+  "tipoMotor": "Turbo diésel (Multijet 2.0L) / Gasolina (T270 1.3L Turbo)",
+  "potenciaKW": "125 kW (170 CV)",
+  "capacidadTanque": "60 litros",
+  "tiempoRecorrido": "10.2s (0-100 km/h)",
+  "anoProduccion": "2016-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,16 +125,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "7.5 L/100 km (mixto diésel)",
+  "dimensiones": "4915 x 1845 x 1791 mm",
+  "cilindrada": "1956 cc (Diésel) / 1332 cc (Nafta)",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 937,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra Generación (con restylings)",
+  "anoLanzamiento": 2016,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -252,7 +257,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.374Z",
+    "lastChecked": "2026-08-27T01:39:42.244Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +310,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Fiat Toro irrumpió en el mercado automotriz sudamericano a principios de 2016, inaugurando un nuevo segmento: el de las Sport Utility Pickups (SUP). Desarrollada sobre la plataforma modular Small Wide del grupo FCA (ahora Stellantis), la Toro combinó la comodidad de andar y la refinada habitabilidad de un SUV mediano con la versatilidad y capacidad de carga de una camioneta mediana de una tonelada, aunque posicionándose un escalón por debajo de estas últimas en cuanto a dimensiones.\n\nDesde su planta de producción en Pernambuco, Brasil, el modelo fue concebido estratégicamente para conquistar tanto al público urbano como a los amantes del trabajo y las travesías ruteras en Argentina, Brasil y otros mercados de la región. Su diseño exterior, audaz y futurista para la época, introdujo grupos ópticos divididos que sentaron tendencia en el lenguaje de diseño global de la marca italiana.\n\n## Un hito o generación relevante\nUn hito fundamental en la trayectoria comercial de la Fiat Toro ocurrió en 2021, cuando recibió su actualización más profunda de mitad de vida. En esta renovación, la pickup no solo adoptó sutiles retoques estéticos en la parrilla y el paragolpes delantero, sino que incorporó una revolución tecnológica en el interior: un renovado panel instrumental 100% digital y una pantalla multimedia vertical de hasta 10,1 pulgadas con el sistema Uconnect. Además, este restyling marcó la llegada de los nuevos motores turbo nafteros Firefly de la familia T270, complementando al consagrado bloque turbodiésel 2.0L Multijet y modernizando la oferta mecánica frente a competidores cada vez más exigentes.\n\n## Curiosidades\nUn detalle no menor de la Fiat Toro es su portón trasero de apertura lateral dual (dos hojas que se abren como las puertas de un armario), una solución innovadora y muy práctica heredada de su hermana menor, la Fiat Strada, que facilita enormemente el acceso a la caja de carga. Asimismo, a pesar de compartir componentes estructurales con el Jeep Renegade y el Jeep Compass, la Toro fue diseñada desde cero para soportar exigencias de carga estructural y tracción integral permanente en versiones diésel, logrando un equilibrio dinámico muy elogiado por la prensa especializada debido a su suspensión trasera independiente tipo Multilink, inusual en el segmento de las pick-ups compactas.\n\n## Competencia y posicionamiento\nEn el mercado argentino y regional, la Fiat Toro ocupa un espacio muy particular. Durante años operó prácticamente sin rivales directos, hasta la llegada de competidores como la Ford Maverick y, posteriormente, otras propuestas de marcas generalistas que buscaron replicar el éxito de las SUP. La Toro se posiciona en un rango de precios superior al de las pick-ups chicas tradicionales (como la mencionada Strada o la Volkswagen Saveiro), pero compite directamente con las versiones de entrada o intermedias de las medianas clásicas (Toyota Hilux, Volkswagen Amarok, Ford Ranger). Su principal argumento de venta radica en su enfoque enfocado en el confort de marcha diario, la seguridad activa, la tecnología a bordo y una estética que se aleja de la clásica herramienta de trabajo para abrazar un perfil más recreativo y familiar."
 }

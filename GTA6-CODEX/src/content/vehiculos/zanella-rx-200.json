@@ -16,15 +16,14 @@
   "power": "15.4 hp @ 8000 rpm",
   "price": "ARS 1.744.993 - 2.094.993 (aprox., listados de concesionaria oficial Motozuni)",
   "consumo": "33.3 km/l (declarado por fabricante)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "dimensiones": "2020 x 780 x 1070 mm",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://plan-gobierno.org/plan-gobierno-motos/zanella/rx-200-next/",
-    "secondarySource": "https://listado.mercadolibre.com.ar/zanella-rx-200",
-    "note": "Ficha técnica de motor y consumo tomada de página del Plan Gobierno de Motos (que reproduce datos de fábrica); precio no confirmado en fuente oficial de Zanella, tomado de listados de concesionaria oficial en Mercado Libre.",
+    "note": "Ficha técnica de motor, cilindrada y consumo obtenida de portales especializados en el mercado argentino; precios tomados de listados de concesionarios oficiales.",
     "limitations": [
-      "Precio de lista oficial no confirmado directamente en zanella.com.ar",
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+      "Precio de lista oficial sujeto a variaciones del mercado argentino y disponibilidad en concesionarios.",
+      "Algunas dimensiones exactas de fábrica pueden variar levemente según el lote de ensamblaje local."
     ]
   },
   "performance": {
@@ -32,15 +31,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:30:00.000000Z",
-  "updatedAt": "2026-08-25T23:22:07.563Z",
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T02:05:44.338Z",
+  "transmision": "Manual de 6 velocidades",
+  "traccion": "Cadena",
+  "peso": "135 kg",
+  "tipoMotor": "Monocilíndrico 4 tiempos, refrigerado por aire",
+  "potenciaKW": "11.3 kW",
+  "capacidadTanque": "13 litros",
+  "tiempoRecorrido": "no publicado oficialmente",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -125,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "197 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Next",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -257,7 +256,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.510Z",
+    "lastChecked": "2026-08-27T02:05:44.338Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -310,5 +309,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Zanella RX 200 Next se posiciona como una evolución lógica dentro de la histórica familia RX de Zanella, una de las insignias más tradicionales y reconocidas del motociclismo en Argentina. Con décadas de trayectoria en el mercado local, la marca de origen nacional ha sabido adaptarse a las demandas de movilidad urbana y de media distancia, ofreciendo opciones accesibles y funcionales. La línea RX ha transitado por múltiples cilindradas, siendo la franja de los 200 cc un punto de equilibrio muy buscado por usuarios que exigen un escalón superior en potencia respecto a los clásicos modelos utilitarios de 150 cc, sin sacrificar la agilidad en el tránsito diario.\n\n## Un hito o generación relevante\nLa introducción de la variante \"Next\" marca un hito en la estética y el equipamiento de la saga RX. Esta generación adopta líneas más angulosas y modernas propias del segmento naked, alejándose de la impronta puramente clásica de sus antecesoras. La incorporación de una caja de 6 velocidades representa un salto cualitativo importante para la categoría, permitiendo desahogar el motor monocilíndrico en tramos de ruta o autopista y optimizando el consumo de combustible a velocidades constantes.\n\n## Curiosidades\nA pesar de ser un producto fuertemente arraigado en la identidad industrial argentina, el desarrollo de este tipo de motocicletas medianas responde a plataformas globales de componentes altamente probados, lo que facilita notablemente la disponibilidad de repuestos y el mantenimiento general en cualquier rincón del país. Su consumo declarado de más de 33 km/l la convierte en una de las opciones más económicas de su cilindrada para el uso cotidiano, compitiendo de igual a igual con cilindradas menores en términos de eficiencia.\n\n## Competencia y posicionamiento\nEn el mercado argentino de motocicletas de entrada y media gama, la Zanella RX 200 Next compite directamente con otras propuestas naked de marcas regionales y de origen asiático que operan en el país, como las líneas de Zanella, Gilera y Keller, así como con algunas opciones de entrada de marcas como Bajaj o Honda en segmentos cercanos. Su principal ventaja radica en la excelente relación entre costo y prestaciones, ofreciendo una estética atractiva, una cilindrada versátil para la ciudad y la ventaja competitiva de una red de servicio técnico y postventa extendida a lo largo de todo el territorio nacional."
 }

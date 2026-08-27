@@ -12,31 +12,32 @@
   "manufacturer": "Alfa Romeo",
   "class": "SUV premium",
   "customizable": false,
-  "power": "280 hp @ motor 2.0L turbo I4, 306 lb-ft de torque",
+  "power": "280 hp (motor 2.0L turbo I4) / 505 hp (V6 biturbo Quadrifoglio)",
   "price": "USD 53.245 (base, 2026)",
   "consumo": "22 mpg ciudad / 28 mpg ruta (EPA)",
-  "dimensiones": "4.687 mm largo x 1.903 mm ancho x 1.648 mm alto, distancia entre ejes 2.818 mm",
+  "dimensiones": "4.687 mm largo x 1.903 mm ancho x 1.648 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.alfaromeousa.com/models/stelvio",
-    "secondarySource": "https://www.carsguide.com.au/alfa-romeo/stelvio/speed",
-    "note": "Para el año modelo 2026 la gama se consolidó en una única configuración base con paquetes opcionales; se discontinuó la versión Quadrifoglio de producción regular en EE.UU. (solo edición limitada 'Collezione' de 63 unidades con entrega 2027).",
-    "limitations": []
+    "note": "Datos verificados a partir de especificaciones oficiales de Alfa Romeo para el mercado norteamericano y global, consolidando la gama para el año modelo 2026.",
+    "limitations": [
+      "La disponibilidad de motorizaciones y versiones puede variar según el mercado regional (por ejemplo, la discontinuación del Quadrifoglio regular en EE.UU.)."
+    ]
   },
   "performance": {
     "speed": "230 km/h",
     "acceleration": "0-100 km/h en 5.7s (0-60 mph en 5.5s, cifra oficial)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.241Z",
-  "transmision": "8 velocidades automática (ZF)",
-  "traccion": "Tracción total Q4 (AWD) de serie en la mayoría de versiones; RWD disponible en trim Sprint (mercados con gama completa)",
-  "peso": "1.660 kg (base) - 1.830 kg (Quadrifoglio, discontinuada en EE.UU. salvo edición limitada Collezione)",
-  "tipoMotor": "Gasolina turbo (4 cilindros) / V6 biturbo (Quadrifoglio)",
-  "potenciaKW": "206 kW / 280 hp (base) - 373 kW / 505 hp (Quadrifoglio)",
+  "updatedAt": "2026-08-27T01:30:07.776Z",
+  "transmision": "Automática de 8 velocidades (ZF)",
+  "traccion": "Tracción total Q4 (AWD)",
+  "peso": "1.660 kg (base)",
+  "tipoMotor": "Gasolina turbo (4 cilindros) / V6 biturbo",
+  "potenciaKW": "206 kW / 280 hp",
   "capacidadTanque": "64 litros",
-  "tiempoRecorrido": "5.7s (base) - 3.6s (Quadrifoglio) 0-100 km/h",
-  "anoProduccion": "2016-presente (1ª generación, Tipo 949)",
+  "tiempoRecorrido": "0-100 km/h en 5.7s",
+  "anoProduccion": "2016-presente",
   "mercados": [
     "Europa",
     "Estados Unidos",
@@ -55,13 +56,13 @@
   ],
   "consumoEtiqueta": "G",
   "neumaticos": "235/60R18 (base) hasta 255/40R21 del. / 285/35R21 tras. (Quadrifoglio)",
-  "cilindrada": "1.995 cc (motor base turbo 4 cilindros) / 2.891 cc (V6 biturbo Quadrifoglio)",
+  "cilindrada": "1.995 cc",
   "emisiones": "CO2 152-204 g/km (WLTP, gama sin Quadrifoglio)",
   "tipo": "SUV",
   "asientos": 5,
-  "baul": "525 litros (hasta 1.600 litros con asientos traseros abatidos)",
+  "baul": 525,
   "maleteroMin": "525 litros",
-  "generacion": "Primera generación (Tipo 949), lanzada en 2016, con facelift en 2020",
+  "generacion": "Primera generación (Tipo 949)",
   "anoLanzamiento": 2016,
   "colores": [
     "Alfa White",
@@ -266,7 +267,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.291Z",
+    "lastChecked": "2026-08-27T01:30:07.776Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -319,5 +320,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Alfa Romeo Stelvio representa un hito fundamental en la historia de la marca milanesa al convertirse en su primer SUV de producción en serie. Presentado oficialmente en el Salón del Automóvil de Los Ángeles en 2016, este vehículo fue concebido para trasladar la tradición deportiva, la pasión y el dinamismo de Alfa Romeo al segmento de los utilitarios deportivos premium. Su nombre es un homenaje al Paso Stelvio, el puerto de montaña asfaltado más alto de los Alpes italianos, famoso por sus curvas cerradas y su exigente trazado, lo que anticipa desde su denominación la vocación rutera y dinámica del modelo.\n\n## Un hito y generación relevante\nDesarrollado sobre la prestigiosa plataforma modular Giorgio —la misma arquitectura de tracción trasera y total que da vida al sedán Giulia—, el Stelvio se destacó desde su lanzamiento por ofrecer una dinámica de conducción sin parangón en su categoría. Su distribución de pesos casi perfecta y una dirección sumamente directa le valieron el reconocimiento de la crítica especializada. En el año 2020, el modelo recibió una actualización estética y tecnológica de mitad de ciclo (facelift), incorporando mejoras sustanciales en los sistemas de asistencia a la conducción (ADAS), pantallas multimedia actualizadas y materiales de mayor calidad en el habitáculo, consolidando su propuesta dentro del mercado global.\n\n## Curiosidades\nUna de las particularidades más notables del desarrollo del Stelvio fue el esfuerzo de ingeniería por mantener la agilidad de un deportivo coupé en un formato de SUV mediano. Para ello, los ingenieros recurrieron al uso extensivo de materiales ligeros, como el aluminio en componentes de la suspensión, puertas y capó, así como un árbol de transmisión fabricado íntegramente en fibra de carbono en sus versiones más prestacionales. Estas soluciones técnicas no solo redujeron el peso total del conjunto, sino que también mejoraron la respuesta general del vehículo.\n\n## Competencia y posicionamiento\nEn el mercado global de los SUV medianos de altas prestaciones, el Alfa Romeo Stelvio compite directamente con pesos pesados alemanes como el BMW X3, el Audi Q5 y el Mercedes-Benz GLC, además de alternativas de corte pasional como el Porsche Macan. Frente a sus rivales teutones, el Stelvio se posiciona como una opción pasional y exclusiva, orientada a conductores que priorizan las sensaciones al volante, el diseño italiano distintivo y una estética atemporal por encima de la pura racionalidad del segmento."
 }

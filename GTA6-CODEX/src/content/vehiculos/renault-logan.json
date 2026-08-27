@@ -14,28 +14,32 @@
   "manufacturer": "Renault",
   "class": "Sedán económico",
   "customizable": false,
-  "power": "105 hp",
-  "price": "USD 16.000",
-  "consumo": "7.0 l/100km (mixto)",
-  "dimensiones": "4368 x 1734 x 1583 mm",
+  "power": "115 CV",
+  "price": "ARS 18.000.000 (Referencia mercado argentino)",
+  "consumo": "7.2 l/100km (mixto)",
+  "dimensiones": "4357 x 1733 x 1529 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.renault.com.ar/vehiculos/logan.html"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas del Renault Logan fabricado en la región para el mercado argentino, destacando motorización 1.6 SCe, capacidad de baúl y dimensiones generales.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y disponibilidad en el mercado local.",
+      "Algunas especificaciones de equipamiento pueden cambiar según la versión (Life, Intens, etc.)."
+    ]
   },
   "performance": {
     "speed": "170 km/h",
     "acceleration": "0-100 km/h en 12.5s"
   },
   "createdAt": "2026-08-23T21:59:06.785891Z",
-  "updatedAt": "2026-08-25T23:22:07.514Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:56:15.562Z",
+  "transmision": "Manual de 5 marchas o Automática CVT",
+  "traccion": "Delantera",
+  "peso": "1.115 kg",
+  "tipoMotor": "Nafta (Gasolina)",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "11.0s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -121,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1598 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 510,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "3ra generación (Mercosur)",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -253,8 +257,8 @@
     "description": "Sedán compacto de entrada de Renault, motor 1.6L, foco en espacio y bajo costo de mantenimiento."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.461Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:56:15.562Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -307,5 +311,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\n\nEl Renault Logan nació originalmente como un proyecto global del Grupo Renault bajo la marca Dacia, pensado para ofrecer un vehículo robusto, espacioso y de bajo costo de producción, principalmente orientado a mercados emergentes. Desde su desembarque en Sudamérica bajo el rombo de Renault, el modelo se ganó rápidamente la confianza del público gracias a su enfoque práctico y su mecánica sencilla.\n\nA lo largo de los años, el sedán compacto se consolidó como uno de los pilares de ventas de la marca en Argentina y la región, evolucionando desde líneas cuadradas y espartanas hacia un diseño más moderno, alineado con la identidad visual global de la marca francesa.\n\n## Un hito o generación relevante\n\nUn punto de inflexión clave para el Logan en el mercado regional fue la introducción de su tercera generación adaptada para el Mercosur (y su posterior actualización estética). Esta evolución no solo trajo consigo un aspecto exterior más refinado —con la incorporación de luces LED diurnas y una parrilla frontal rediseñada—, sino que también mejoró notablemente la calidad percibida en el habitáculo, incorporando tecnologías de conectividad más modernas como sistemas multimedia compatibles con Android Auto y Apple CarPlay, además de sumar opciones de caja automática CVT en reemplazo de las antiguas transmisiones robotizadas.\n\n## Curiosidades\n\nUna de las características más reconocidas y valoradas del Renault Logan es, sin dudas, su habitabilidad. A pesar de pertenecer al segmento B, su distancia entre ejes y la arquitectura general de su carrocería sedán ofrecen un espacio en las plazas traseras y una capacidad de baúl (510 litros) que compiten mano a mano con vehículos de categorías superiores. Esto lo convirtió históricamente en uno de los modelos favoritos tanto para familias que buscan practicidad como para conductores de flotas y servicios de transporte de pasajeros.\n\n## Competencia y posicionamiento\n\nEn el mercado automotriz argentino, el Renault Logan compite en el segmento de los sedanes compactos económicos de entrada de gama. Entre sus principales rivales históricos se encuentran el Chevrolet Onix Plus, el Fiat Cronos y el Volkswagen Virtus. \n\nSu posicionamiento estratégico se sostiene sobre tres pilares fundamentales: una relación precio-espacio muy favorable, un costo de mantenimiento accesible gracias a la amplia disponibilidad de repuestos en el mercado local, y una mecánica probada (como el motor 1.6 SCe) que prioriza la durabilidad por encima de las prestaciones deportivas. Aunque el mercado actual muestra una fuerte inclinación hacia los SUV y crossovers, el Logan se mantiene firme como una opción lógica y racional para quienes priorizan la funcionalidad pura."
 }

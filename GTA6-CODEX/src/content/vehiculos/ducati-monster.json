@@ -12,34 +12,33 @@
   "manufacturer": "Ducati",
   "class": "Moto naked",
   "customizable": false,
-  "power": "111 hp",
-  "price": "USD 12.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "111 CV",
+  "price": "USD 12.500 (referencia internacional)",
+  "consumo": "5,2 l/100km",
+  "dimensiones": "2.100 mm largo x 800 mm ancho x 1.050 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global. Ficha técnica verificada contra la página oficial del modelo Monster en ducati.com (motor Testastretta 11°, 937 cc).",
+    "primarySource": "https://www.ducati.com/it/it/moto/monster/monster",
+    "note": "Se verificaron las especificaciones técnicas principales de la Ducati Monster con motor Testastretta de 937cc, potencia de 111 CV y peso en seco de 166 kg según fichas oficiales de la marca.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial.",
-      "Ronda 4 (ago 2026): fuente oficial del fabricante verificada por búsqueda; conviene revalidar la URL si el fabricante reestructura su sitio."
-    ],
-    "primarySource": "https://www.ducati.com/it/it/moto/monster/monster-v2"
+      "El precio es aproximado de referencia y puede variar según el mercado local y los impuestos de importación en Argentina.",
+      "Los datos de consumo y aceleración son valores combinados de referencia."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.337Z",
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:37:58.975Z",
+  "transmision": "Manual de 6 marchas con Ducati Quick Shift up/down",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "166 kg (en orden de marcha sin combustible)",
+  "tipoMotor": "Bicilindrico en V a 90° Testastretta 11°, 4 tiempos",
+  "potenciaKW": "82 kW",
+  "capacidadTanque": "14 litros",
+  "tiempoRecorrido": "0-100 km/h en 3.5s (estimado)",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +123,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "937 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Monster (2021+)",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -255,7 +254,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.364Z",
+    "lastChecked": "2026-08-27T01:37:58.975Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -308,5 +307,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Ducati Monster es, sin lugar a dudas, uno de los modelos más emblemáticos y comerciales en la historia de la marca de Borgo Panigale. Nacida a principios de los años 90 de la mano del diseñador Miguel Angel Galluzzi, la filosofía detrás de la primera Monster era minimalista y directa: un manillar ancho, un motor potente al desnudo y el característico chasis multitubular de acero que dejaba a la vista la pura mecánica de la motocicleta. Esta fórmula dio origen al segmento de las motos *naked* deportivas, salvando económicamente a Ducati en una época compleja y convirtiéndose en un ícono de diseño industrial.\n\n## Un hito y generación relevante\nA lo largo de tres décadas, la saga Monster evolucionó desde los motores refrigerados por aire (como las clásicas M600, M750 y M900) hasta incorporar plantas motrices más avanzadas y tecnológicas con refrigeración líquida. Un punto de inflexión radical en su historia llegó con la generación presentada en 2021. Rompiendo con la tradición de más de 25 años, la marca abandonó el clásico chasis multitubular tipo trellis para adoptar un bastidor frontal de aluminio inspirado directamente en el mundo de la competición de Superbike. Este cambio estructural, sumado al motor Testastretta 11° de 937 cc, permitió reducir drásticamente el peso del conjunto, logrando una moto mucho más ágil, ligera y accesible para todo tipo de pilotos sin perder el carácter deportivo que la define.\n\n## Curiosidades\nUna de las curiosidades más interesantes de la familia Monster es cómo surgió su nombre. Durante la fase de desarrollo secreto en la fábrica, el equipo de diseño e ingeniería utilizaba componentes prestados y adaptados de otros modelos de la marca para armar el prototipo funcional. Debido a su aspecto robusto, rudo y poco convencional, los empleados comenzaron a llamarla cariñosamente \"il mostro\" (el monstruo) en el taller. El apodo caló tan hondo que la compañía decidió adoptarlo oficialmente para el lanzamiento comercial en 1992. Además, desde sus inicios, la carrocería de la Monster fue concebida casi como un lienzo en blanco, popularizando la cultura del recambio rápido de tapas de tanque y accesorios para que cada propietario pudiera personalizar su unidad.\n\n## Competencia y posicionamiento\nEn el mercado global de las motocicletas *naked* de cilindrada media-alta, la Ducati Monster se posiciona en el segmento premium. Compite de forma directa con modelos japoneses y europeos de alta gama, tales como la Yamaha MT-09, la KTM 890 Duke y la Triumph Street Triple. A diferencia de algunas de sus rivales que priorizan la pura radicalidad en circuito o una estética futurista extrema, la Monster apuesta por un equilibrio refinado entre diseño italiano atemporal, ergonomía urbana mejorada y un paquete electrónico de vanguardia que incluye control de tracción sensible a las curvas, ABS Cornering y varios modos de conducción. Esto la consolida como una opción aspiracional pero sumamente disfrutable tanto para el uso diario en ciudad como para escapadas de fin de semana en ruta."
 }

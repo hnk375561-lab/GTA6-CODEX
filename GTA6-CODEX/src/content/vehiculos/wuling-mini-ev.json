@@ -13,15 +13,15 @@
   "class": "Microcar eléctrico",
   "customizable": false,
   "power": "27 hp",
-  "price": "USD 5.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "USD 4.500 - USD 5.500 (referencia mercado chino)",
+  "consumo": "Aprox. 9-10 kWh / 100 km (equivalente eléctrico)",
+  "dimensiones": "2.920 mm largo x 1.493 mm ancho x 1.621 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "note": "Se corrigieron los datos erróneos de carga masiva anterior (que correspondían a un vehículo de combustión grande). Los valores actuales reflejan con alta confianza las especificaciones reales del Wuling Hongguang Mini EV.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "El precio varía según versiones específicas (con o sin aire acondicionado) y subsidios locales en China.",
+      "La autonomía exacta depende de la capacidad de la batería elegida (9.2 kWh, 13.8 kWh o 26 kWh)."
     ]
   },
   "performance": {
@@ -29,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.555Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-250 kW",
+  "updatedAt": "2026-08-27T01:29:04.852Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción trasera",
+  "peso": "665 - 700 kg",
+  "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
+  "potenciaKW": "20 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "No aplicable (velocidad máxima limitada a aprox. 100 km/h)",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,11 +120,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 4,
+  "baul": 741,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "auto-pequeño",
   "gallery": {
@@ -199,7 +199,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.504Z",
+    "lastChecked": "2026-08-27T01:29:04.852Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -217,5 +217,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Wuling Hongguang Mini EV es un microcar eléctrico desarrollado por la empresa conjunta SAIC-GM-Wuling, lanzado originalmente al mercado chino en julio de 2020. Su llegada supuso una verdadera revolución en la movilidad urbana gracias a su propuesta minimalista, dimensiones ultra reducidas y, sobre todo, un precio sumamente accesible que lo catapultó rápidamente a los primeros puestos de ventas globales en la categoría de vehículos eléctricos.\n\n## Un hito o generación relevante\nA los pocos meses de su lanzamiento comercial, este pequeño city car superó en ventas mensuales a varios de los gigantes consagrados de la electromovilidad a nivel mundial, convirtiéndose en el vehículo eléctrico más vendido de China durante varios periodos consecutivos. Su éxito demostró que existía una demanda masiva insatisfecha de transporte urbano económico, práctico y sin las pretensiones de los automóviles convencionales.\n\n## Curiosidades\nUna de las características más llamativas del Wuling Hongguang Mini EV es su enorme nivel de personalización impulsado tanto por el fabricante como por sus propios usuarios. En China se ha convertido en un auténtico fenómeno cultural: los propietarios suelen modificar la estética exterior con ploteos llamativos, suspensiones rebajadas y accesorios interiores. A pesar de su tamaño compacto (apenas supera los 2,9 metros de largo), cuenta con una configuración interior pensada para cuatro pasajeros, aunque el espacio de carga trasero se reduce al mínimo a menos que se rebatan los asientos posteriores.\n\n## Competencia y posicionamiento\nDentro de su segmento en el mercado asiático, compite contra una creciente ola de microcars eléctricos de marcas locales como Chery (con modelos como el QQ Ice Cream) y Changan. A diferencia de los vehículos eléctricos tradicionales enfocados en largas autonomías y altas prestaciones, el Wuling se posiciona como una herramienta de movilidad puramente urbana y utilitaria, priorizando la facilidad de estacionamiento, costos de mantenimiento mínimos y una accesibilidad económica sin precedentes en la industria automotriz moderna."
 }

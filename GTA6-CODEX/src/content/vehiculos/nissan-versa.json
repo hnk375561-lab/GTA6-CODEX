@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:27.069Z",
-  "updatedAt": "2026-08-25T23:22:07.486Z",
+  "updatedAt": "2026-08-27T01:53:56.543Z",
   "manufacturer": "Nissan",
   "class": "Sedán",
   "customizable": false,
@@ -19,20 +19,25 @@
     "speed": "Media (175 km/h)",
     "acceleration": "Media (0-100 km/h en 11s)"
   },
-  "power": "106 hp",
-  "price": "USD 18.500",
+  "power": "118 CV",
+  "price": "USD 19.000 (referencia regional)",
   "evidence": {
     "level": "oficial-nombrado",
-    "primarySource": "https://www.nissan.com.ar/vehiculos/nuevos/versa.html"
+    "primarySource": "https://www.nissan.com.ar/vehiculos/nuevos/versa.html",
+    "note": "Se verificaron las especificaciones técnicas principales del Nissan Versa de tercera generación, incluyendo motorización 1.6L, potencia de 118 CV y capacidad de baúl.",
+    "limitations": [
+      "Los precios varían según el mercado específico de Latinoamérica.",
+      "Algunas cifras de consumo dependen de la homologación local y tipo de transmisión."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 5 marchas o automática Xtronic CVT",
+  "traccion": "Delantera",
+  "peso": "1.130 kg aprox.",
+  "tipoMotor": "Naftero (Gasolina)",
+  "potenciaKW": "87 kW",
+  "capacidadTanque": "41 litros",
+  "tiempoRecorrido": "11.5s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +123,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "6.5 l/100 km mixto aprox.",
+  "dimensiones": "4.495 x 1.740 x 1.475 mm",
+  "cilindrada": "1.598 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 466,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación (facelift)",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -250,7 +255,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.445Z",
+    "lastChecked": "2026-08-27T01:53:56.543Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +308,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Nissan Versa es uno de los sedanes subcompactos más importantes a nivel global para la marca japonesa. Originado a mediados de la década del 2000, su propuesta inicial se centró en ofrecer una habitabilidad sobresaliente dentro de un formato accesible, convirtiéndose rápidamente en un pilar fundamental para las ventas de Nissan en América Latina, Norteamérica y diversos mercados emergentes.\n\nA lo largo de sus distintas iteraciones, el Versa evolucionó desde un diseño de líneas conservadoras y enfocadas puramente en la funcionalidad, hasta adoptar la filosofía de diseño más audaz y moderna de la marca, caracterizada por la parrilla en forma de \"V-Motion\" y una silueta de tipo sedán fastback que le otorga una presencia visual mucho más dinámica y deportiva.\n\n## Generación relevante\nLa tercera generación, lanzada hacia finales de 2019 y consolidada en los años siguientes, marcó un punto de inflexión absoluto para el modelo. Ya no se trataba únicamente de un vehículo económico para flotas o familias que buscaban espacio, sino que dio un salto cualitativo enorme en materia de diseño exterior, calidad percibida de materiales en el habitáculo y, sobre todo, seguridad y tecnología.\n\nEsta actualización incorporó de serie o en versiones superiores asistencias avanzadas a la conducción (ADAS) bajo el paraguas de Nissan Intelligent Mobility, posicionándolo como uno de los referentes tecnológicos de su segmento frente a una competencia cada vez más aguerrida.\n\n## Curiosidades\nDependiendo del mercado geográfico en el que se comercialice, este modelo ha recibido diversos nombres o ha compartido plataformas con otros vehículos de la alianza Renault-Nissan. Por ejemplo, en ciertos mercados asiáticos o de Norteamérica en etapas tempranas, compartió espacio con nomenclaturas como Tiida o Almera. Sin embargo, en la región latinoamericana, el nombre Versa se convirtió en un sinónimo absoluto de robustez mecánica y un baúl de generosas dimensiones muy valorado para el uso diario y viajes largos.\n\n## Competencia y posicionamiento\nEn el mercado actual, el Nissan Versa compite en el corazón del segmento B de sedanes, enfrentándose a pesos pesados de la industria como el Chevrolet Onix Plus, el Volkswagen Virtus, el Toyota Yaris Sedán y el Fiat Cronos.\n\nSu posicionamiento estratégico busca captar a aquellos usuarios que priorizan la seguridad activa y pasiva, el confort de marcha y un diseño exterior atractivo, sin resignar la clásica confiabilidad mecánica de los impulsores atmosféricos de cuatro cilindros de la marca japonesa. La inclusión de opciones con transmisión manual o la eficiente caja automática CVT le permite abarcar tanto a clientes particulares como a flotas corporativas que buscan un balance equilibrado entre costo de mantenimiento y equipamiento."
 }

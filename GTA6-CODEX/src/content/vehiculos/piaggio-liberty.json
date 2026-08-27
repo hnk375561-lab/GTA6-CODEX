@@ -12,16 +12,15 @@
   "manufacturer": "Piaggio",
   "class": "Scooter",
   "customizable": false,
-  "power": "12.7 hp (125cc)",
-  "price": "EUR 3.700",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "11 CV (aprox. 8.2 kW) para la versión de 125cc",
+  "price": "EUR 3.200 - 3.700 (referencia mercado europeo)",
+  "consumo": "aprox. 2.5 l/100km",
+  "dimensiones": "1.930 mm largo x 690 mm ancho x 1.140 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "note": "Se ajustaron los datos genéricos previos (que correspondían a un automóvil grande) por las especificaciones reales y conocidas de un scooter urbano de cilindrada mediana como la Piaggio Liberty 125.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+      "Las cifras de precio y potencia pueden variar ligeramente según el año específico de producción y la normativa anticontaminación aplicable (Euro 4 / Euro 5)."
     ]
   },
   "performance": {
@@ -29,15 +28,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.502Z",
-  "transmision": "Automática (CVT)",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:25:13.859Z",
+  "transmision": "Automática por variador continuo (CVT)",
+  "traccion": "Tracción trasera (a la rueda posterior por correa)",
+  "peso": "115 kg (en orden de marcha)",
+  "tipoMotor": "Monocilíndrico de 4 tiempos, 3 válvulas, refrigeración por aire",
+  "potenciaKW": "8.2 kW",
+  "capacidadTanque": "6 litros",
+  "tiempoRecorrido": "No publicado oficialmente",
+  "anoProduccion": "1998-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -123,14 +122,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "124 cc (disponible también en 50cc y 150cc según mercado)",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 2,
+  "baul": 20,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Varias generaciones desde 1998",
+  "anoLanzamiento": 1998,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -205,7 +204,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.453Z",
+    "lastChecked": "2026-08-27T01:25:13.859Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -223,5 +222,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Piaggio Liberty nació a finales de la década de 1990, concretamente en 1998, como una apuesta del fabricante italiano por ofrecer un vehículo de dos ruedas ágil, económico y funcional que pudiera desenvolverse con soltura en el caótico tráfico de las grandes ciudades europeas. Desde su introducción, se convirtió rápidamente en un pilar fundamental dentro del catálogo de la marca de Pontedera, destacando por su formato de rueda alta que prioriza la estabilidad frente a los scooters más pequeños de rueda baja.\n\n## Un hito o generación relevante\nUno de los saltos evolutivos más importantes en la trayectoria de la Piaggio Liberty fue la incorporación de la familia de motores i-get (Italian Green Experience). Esta tecnología supuso un punto de inflexión en cuanto a eficiencia, reduciendo de manera drástica las emisiones contaminantes y el consumo de combustible, al tiempo que disminuía notablemente las vibraciones y la rumorosidad mecánica. Además, la adopción progresiva de sistemas de frenado con antibloqueo (ABS) en la rueda delantera en sus versiones de mayor cilindrada marcó un estándar de seguridad muy elevado para un scooter enfocado al público urbano general.\n\n## Curiosidades\nEl diseño de la Piaggio Liberty siempre ha buscado un equilibrio entre la elegancia clásica italiana y la máxima practicidad. Una de sus características más apreciadas por los usuarios cotidianos es la combinación de su plataforma plana —ideal para llevar bolsos o pequeños paquetes con total comodidad— y un hueco bajo el asiento rediseñado en sus últimas entregas para ganar capacidad de carga, a pesar de montar llantas traseras de gran diámetro que habitualmente restan espacio en esta zona.\n\n## Competencia y posicionamiento\nEn el mercado global de los scooters urbanos de rueda alta, la Piaggio Liberty compite de manera directa con modelos consagrados como el Honda SH Mode y el Kymco Agility. Se posiciona como una opción sumamente racional dentro del segmento, ofreciendo una excelente relación calidad-precio, una red de postventa muy extendida y una robustez contrastada tras más de dos décadas de presencia ininterrumpida en las calles."
 }

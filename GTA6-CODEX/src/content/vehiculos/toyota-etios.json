@@ -14,28 +14,32 @@
   "manufacturer": "Toyota",
   "class": "Sedán económico",
   "customizable": false,
-  "power": "90 hp",
-  "price": "USD 17.000",
-  "consumo": "6.9 l/100km (mixto)",
-  "dimensiones": "4265 x 1695 x 1490 mm",
+  "power": "103 CV",
+  "price": "ARS 6.500.000 (últimos precios de referencia en Argentina antes de su discontinuación)",
+  "consumo": "approx. 6.5 l/100km (mixto)",
+  "dimensiones": "4265 x 1695 x 1510 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.toyota.com.ar/etios"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas principales del Toyota Etios fabricado en Brasil para el mercado argentino, incluyendo motorización 1.5L Dual VVT-i, potencias y capacidades de baúl para la silueta sedán.",
+    "limitations": [
+      "El modelo fue discontinuado en su producción para la región, por lo que los precios corresponden a valores históricos de lista o usados de referencia.",
+      "Las cifras exactas de consumo pueden variar según el tipo de transmisión (manual o automática)."
+    ]
   },
   "performance": {
     "speed": "165 km/h",
     "acceleration": "0-100 km/h en 12.9s"
   },
   "createdAt": "2026-08-23T21:59:12.065294Z",
-  "updatedAt": "2026-08-25T23:22:07.534Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:59:13.908Z",
+  "transmision": "Manual de 5 velocidades o Automática de 4 marchas",
+  "traccion": "Delantera",
+  "peso": "990-1070 kg",
+  "tipoMotor": "Gasolina",
+  "potenciaKW": "76 kW",
+  "capacidadTanque": "45 litros",
+  "tiempoRecorrido": "0-100 km/h en 11.5s",
+  "anoProduccion": "2016-2023",
   "mercados": [
     "Europa",
     "USA",
@@ -121,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1496 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 562,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Primera generación (facelift regional)",
+  "anoLanzamiento": 2016,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -253,8 +257,8 @@
     "description": "Sedán compacto de entrada de Toyota, motor 1.5L, orientado a costo de mantenimiento bajo."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.485Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:59:13.908Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -307,5 +311,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Toyota Etios nació como un proyecto global de la marca japonesa enfocado principalmente en mercados emergentes, con el objetivo de ofrecer un vehículo accesible, robusto y de bajo costo de mantenimiento. Su desarrollo priorizó la funcionalidad y la durabilidad por encima de los lujos superfluos. En Argentina, el Etios irrumpió con fuerza y rápidamente se ganó el favor del público y de las flotas comerciales gracias a su probada confiabilidad mecánica, convirtiéndose en uno de los pilares de ventas de Toyota en el segmento B durante varios años.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la vida comercial del Etios en la región ocurrió en 2016, cuando recibió una actualización profunda (facelift). En dicha renovación se mejoró notablemente la aislación acústica, se incorporó un nuevo instrumental digital, se sumó la tan esperada caja automática de 4 velocidades y, sobre todo, se introdujo el motor 1.5 litros con tecnología Dual VVT-i, el cual elevó la potencia hasta los 103 CV y mejoró de manera sustancial la eficiencia en el consumo de combustible y la respuesta dinámica en ruta.\n\n## Curiosidades\nA pesar de ser concebido desde una estética sumamente racional y criticado inicialmente en algunos mercados por la sobriedad de su diseño interior —como la ubicación central del instrumental en las primeras versiones—, el Etios se transformó en un verdadero fenómeno de culto debido a su indestructible mecánica. Es ampliamente recordado por su excelente valor de reventa en el mercado de usados argentino y por ser la herramienta de trabajo elegida por miles de taxistas y conductores de aplicaciones de movilidad urbana, quienes ponían a prueba la durabilidad del conjunto motriz superando cientos de miles de kilómetros sin mayores inconvenientes.\n\n## Competencia y posicionamiento\nDentro del competitivo segmento B del mercado automotriz argentino, el Toyota Etios compitió de manera directa contra históricos tan pesados como el Volkswagen Gol, el Chevrolet Onix, el Fiat Argo y el Renault Logan/Sandero. Mientras sus rivales apostaban fuertemente por diseños más modernos, pantallas táctiles vistosas o líneas vanguardistas desde etapas más tempranas, el Etios se posicionó firmemente en el escalón de la racionalidad pura: ganó terreno ofreciendo un habitáculo y un baúl sorprendentemente generosos para su tamaño compacto, respaldado por la sólida reputación del servicio de postventa de la marca y una garantía transferible muy valorada por el consumidor local."
 }

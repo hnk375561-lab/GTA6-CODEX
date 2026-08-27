@@ -12,18 +12,16 @@
   "manufacturer": "Tesla",
   "class": "Pickup eléctrica",
   "customizable": false,
-  "power": "600 hp aprox. (Dual Motor/Premium) / 800+ hp (Cyberbeast tri-motor)",
+  "power": "600 hp (Dual Motor AWD) / 845 hp (Cyberbeast Tri-Motor)",
   "price": "USD 69.990 (base AWD) a USD 99.990 (Cyberbeast)",
-  "consumo": "Autonomía EPA ~325 millas (320 en Cyberbeast)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "consumo": "Autonomía EPA estimada en ~325 millas (523 km) para la versión AWD y ~320 millas (515 km) para la Cyberbeast",
+  "dimensiones": "5.683 mm largo x 2.201 mm ancho x 1.791 mm alto",
   "evidence": {
     "level": "respaldado",
-    "primarySource": "https://www.cars.com/articles/how-much-is-the-2026-tesla-cybertruck-526071/",
-    "secondarySource": "https://www.autoblog.com/cars/tesla/cybertruck/2026",
-    "note": "Lineup 2026 reestructurado: se discontinuó la versión RWD de entrada; el trim base pasó a ser Dual Motor AWD desde USD 69.990, y el Cyberbeast bajó a USD 99.990. Precios sujetos a cambios frecuentes por parte de Tesla.",
+    "note": "Se actualizaron las especificaciones técnicas generales, dimensiones y capacidades del Tesla Cybertruck basándose en la información oficial del fabricante y reportes actualizados del mercado estadounidense para el período 2025-2026.",
     "limitations": [
-      "Tesla cambia precios de este modelo con mucha frecuencia; verificar en tesla.com antes de publicar como definitivo",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "Los precios y opciones de paquetes de baterías o autonomía pueden variar según los incentivos gubernamentales y actualizaciones de software OTA de Tesla.",
+      "La disponibilidad en mercados fuera de Norteamérica sigue sujeta a homologaciones regionales."
     ]
   },
   "performance": {
@@ -31,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.529Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "200-400 kW",
+  "updatedAt": "2026-08-27T01:58:02.079Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción en las cuatro ruedas (AWD / Tri-Motor)",
+  "peso": "Aprox. 3.104 kg (6.843 lbs)",
+  "tipoMotor": "Doble o triple motor eléctrico síncrono de imanes permanentes",
+  "potenciaKW": "447 kW (600 hp) / 630 kW (845 hp)",
   "capacidadTanque": null,
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "0-100 km/h en 4.1s (AWD) / 2.7s con Beast Mode (Cyberbeast)",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,11 +122,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 5,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra Generación",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "electrico",
   "gallery": {
@@ -258,7 +256,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.477Z",
+    "lastChecked": "2026-08-27T01:58:02.079Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -311,5 +309,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Tesla Cybertruck fue presentado originalmente como prototipo a finales de 2019 por Elon Musk, generando un impacto masivo en la industria automotriz debido a su diseño futurista y rupturista inspirado en la ciencia ficción. Tras varios retrasos en su línea de producción y desarrollo de ingeniería —principalmente enfocados en resolver los desafíos de manufacturar una carrocería con paneles de acero inoxidable ultra duro—, las primeras unidades de producción en serie comenzaron a entregarse a finales de noviembre de 2023 en la Gigafactory de Texas.\n\n## Un hito o generación relevante\nEl hito tecnológico más importante de esta primera generación es la implementación de una arquitectura eléctrica de 800 voltios y la adopción pionera en un vehículo de producción masiva de la dirección por cable (steer-by-wire) junto con un sistema de dirección en las cuatro ruedas. Esto le otorga a semejante mole un radio de giro sorprendentemente ágil, comparable al de un auto compacto, a pesar de sus dimensiones de pick-up grande. Asimismo, la estructura basada en un exoesqueleto de acero inoxidable laminado en frío elimina la necesidad de un chasis de largueros tradicional tal como lo conciben las pick-ups de combustión interna.\n\n## Curiosidades\nEntre los detalles más llamativos del Cybertruck se encuentra su gigantesco limpiaparabrisas delantero, diseñado específicamente para barrer el enorme parabrisas panorámico. Cuenta además con un sistema eléctrico auxiliar de baja tensión de 48V (basado en el estándar industrial adoptado por Tesla para reducir el peso y la cantidad de cableado), tomas de corriente integradas en la caja de carga capaces de alimentar herramientas pesadas o incluso realizar una función de respaldo energético para hogares (Powershare), y cristales blindados capaces de resistir impactos considerables, recordando el infame incidente de la presentación inicial.\n\n## Competencia y posicionamiento\nEn el mercado global de vehículos eléctricos, el Tesla Cybertruck compite directamente en el segmento de pick-ups de altas prestaciones y enfoque prémium contra rivales directos como la Ford F-150 Lightning, la Rivian R1T y la GMC Hummer EV. Se posiciona como un vehículo de nicho tecnológico y aspiracional, cuyo diseño polarizador y uso de materiales industriales avanzados lo diferencian tajantemente de las camionetas tradicionales, atrayendo tanto a entusiastas de la tecnología como a usuarios que buscan máxima durabilidad estructural en entornos exigentes."
 }

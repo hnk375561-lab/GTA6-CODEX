@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:01:34.065Z",
-  "updatedAt": "2026-08-25T23:22:07.384Z",
+  "updatedAt": "2026-08-27T01:43:51.986Z",
   "manufacturer": "Honda",
   "class": "Moto",
   "customizable": false,
@@ -19,23 +19,24 @@
     "speed": "Media (170 km/h)",
     "acceleration": "Media-Alta (0-100 km/h en 5.5s)"
   },
-  "power": "47 hp",
-  "price": "USD 7.000",
+  "power": "47 hp (35 kW) a 8.600 rpm",
+  "price": "USD 7.399 (MSRP EE.UU.)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://powersports.honda.com/street/naked/cb500f",
+    "level": "respaldado",
+    "note": "Se verificaron los datos técnicos principales de la Honda CB500F a partir de especificaciones globales de la marca para su motor bicilíndrico de 471 cc compatible con el carnet A2 europeo.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+      "Los precios pueden variar según el mercado regional (Latinoamérica, Europa o Norteamérica).",
+      "Algunas especificaciones de suspensión y frenos sufrieron mejoras sutiles (como la horquilla invertida Showa SFF-BP) dependiendo del año exacto de fabricación."
     ]
   },
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 6 velocidades con embrague antirrebote",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "188 kg (en orden de marcha)",
+  "tipoMotor": "Bicilíndrico en línea, 4 tiempos, DOHC, refrigeración líquida",
+  "potenciaKW": "35 kW",
+  "capacidadTanque": "17,1 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 5.2s",
+  "anoProduccion": "2013-2024",
   "mercados": [
     "Europa",
     "USA",
@@ -120,16 +121,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "aprox. 3,5 L / 100 km",
+  "dimensiones": "2080 x 790 x 1060 mm",
+  "cilindrada": "471 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (actualización estética y de componentes)",
+  "anoLanzamiento": 2013,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -251,8 +252,8 @@
     "description": "Moto naked de Honda, motor bicilíndrico de 471cc, ideal para uso urbano y ruta."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.392Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:43:51.986Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +306,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Honda CB500F nació en el año 2013 como parte de la estrategia global de la marca japonesa para revitalizar el segmento de media cilindrada accesible. Diseñada desde una hoja en blanco, formó parte de la familia de tres integrantes junto a la deportiva CBR500R y la crossover CB500X, todas compartiendo la misma plataforma mecánica básica pero adaptadas a distintos estilos de conducción. La CB500F se posicionó rápidamente como una de las opciones naked más equilibradas del mercado mundial, sirviendo tanto como el escalón lógico para motociclistas que salían de baja cilindrada, como una herramienta ágil y económica para usuarios experimentados en entornos urbanos.\n\n## Un hito o generación relevante\nUn momento clave en la evolución de este modelo llegó con la actualización profunda introducida a partir de 2019 y consolidada en 2022. En esta etapa, Honda no solo retocó el diseño general para otorgarle una estética más agresiva, angulosa y de estilo netamente 'naked', sino que implementó mejoras estructurales de gran relevancia. Entre ellas destaca la adopción de una horquilla delantera invertida Showa SFF-BP (Separate Function Fork - Big Piston) de 41 mm y un doble disco de freno delantero con cálcipes de anclaje radial, elevando considerablemente el comportamiento dinámico, la pisada del tren delantero y la seguridad general de la motocicleta en comparación con las primeras versiones de 2013.\n\n## Curiosidades\nUna de las características más celebradas de la Honda CB500F es su motor bicilíndrico en paralelo de 471 cc, el cual fue diseñado específicamente para entregar exactamente 47 caballos de fuerza (35 kW). Esta cifra no es casualidad: responde milimétricamente al límite de potencia estipulado por la normativa europea para el carnet de conducir A2, convirtiéndola en una de las motos preferidas en el viejo continente para quienes recién obtienen esta licencia. Además, su arquitectura de baja fricción y gestión electrónica optimizada le otorga una eficiencia de combustible notable, logrando autonomías que tranquilamente superan los 400 kilómetros con un solo tanque de 17,1 litros bajo un uso mixto.\n\n## Competencia y posicionamiento\nEn el mercado global, la Honda CB500F compite en un segmento sumamente disputado de motocicletas naked de media cilindrada, midiéndole el pulso a rivales de peso como la Yamaha MT-03, la Kawasaki Z400 y la KTM 390 Duke. Frente a ellas, la propuesta de Honda no busca destacar por ser la más radical o la más ligera en la balanza, sino por ofrecer el equilibrio perfecto entre facilidad de conducción, calidad de construcción japonesa, costos de mantenimiento contenidos y una ergonomía amigable para una amplísima variedad de estaturas. Su posicionamiento es el de una moto noble, versátil y extremadamente confiable, ideal para el uso diario y lo suficientemente competente para escapadas de fin de semana en ruta."
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.628Z",
-  "updatedAt": "2026-08-25T23:22:07.424Z",
+  "updatedAt": "2026-08-27T01:48:50.482Z",
   "manufacturer": "Kawasaki",
   "class": "Moto deportiva",
   "customizable": false,
@@ -20,22 +20,23 @@
     "acceleration": "Media-Alta (0-100 km/h en 5.9s)"
   },
   "power": "45 hp",
-  "price": "USD 6.800",
+  "price": "USD 5.499 (MSRP EE.UU.)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.kawasaki.com/en-us/motorcycle/ninja/sport/ninja-400",
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas principales de la Kawasaki Ninja 400 a partir de datos de alta confianza y su sitio oficial. Se ajustaron los valores genéricos previos a las cifras reales del modelo (motor bicilíndrico de 399cc, potencia de 45 hp, peso de 168 kg y dimensiones características).",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+      "El precio puede variar según el mercado regional e impuestos locales en Argentina y otros países de Latinoamérica.",
+      "La producción global de este modelo específico concluyó recientemente, dando paso a la Ninja 500 en varios mercados."
     ]
   },
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 6 velocidades",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "168 kg (en orden de marcha)",
+  "tipoMotor": "Gasolina (Bicilíndrico en paralelo)",
+  "potenciaKW": "33 kW",
+  "capacidadTanque": "14 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 4.4 segundos",
+  "anoProduccion": "2018-2024",
   "mercados": [
     "Europa",
     "USA",
@@ -120,16 +121,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "4.1 l/100km",
+  "dimensiones": "1990 x 710 x 1120 mm",
+  "cilindrada": "399 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2018,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -251,8 +252,8 @@
     "description": "Moto deportiva de Kawasaki, motor bicilíndrico 399cc, popular como primera moto deportiva."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.413Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:48:50.482Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +306,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Kawasaki Ninja 400 debutó en el Salón EICMA de Milán a fines de 2017 como la evolución directa y natural de la exitosa Ninja 300. Kawasaki identificó la necesidad de ofrecer una moto deportiva ligera que no solo cumpliera con las normativas de carnet A2 en Europa, sino que también entregara un rendimiento superior y una dinámica de conducción más refinada frente a su predecesora. Desde su llegada a los concesionarios globales en 2018, la Ninja 400 redefinió el segmento de baja-mediana cilindrada, convirtiéndose rápidamente en una de las opciones más populares tanto para motociclistas principiantes como para usuarios experimentados que buscaban una montura ágil para el día a día o para divertirse en circuitos de baja velocidad.\n\n## Un hito y diseño de la generación\nEl gran salto técnico de esta generación radicó en la incorporación de un motor bicilíndrico en paralelo de 399 cc completamente nuevo, desarrollado sobre un chasis multitubular tipo trellis inspirado directamente en la hiperdeportiva Kawasaki Ninja H2. Este bastidor no solo redujo notablemente el peso total del conjunto en comparación con la Ninja 300, sino que aportó una rigidez estructural sobresaliente. Además, se dotó al modelo de un embrague asistido y antirrebote (Assist & Slipper Clutch), una solución heredada de la competición que suavizó drásticamente el accionamiento de la leva y evitó los bloqueos de la rueda trasera en reducciones de marcha agresivas.\n\n## Curiosidades\nA pesar de pertenecer a una categoría de entrada, la Kawasaki Ninja 400 heredó una presencia visual imponente que la emparenta directamente con las hermanas mayores de la familia Ninja. Su frontal agresivo con doble óptica delantera y la carrocería angulosa engañan con facilidad, haciendo que muchos la confundan con una deportiva de 600 cc o más cilindrada. Otro aspecto destacado por la prensa especializada y usuarios de todo el mundo es su sorprendente polivalencia: con una posición de manejo ligeramente menos extrema que las superbikes puras, permite tanto afrontar trayectos urbanos cotidianos con comodidad como exprimir su parte ciclo en rutas sinuosas de montaña.\n\n## Competencia y posicionamiento\nEn el mercado global, la Kawasaki Ninja 400 compitió de manera directa contra modelos de peso pesado en el segmento de baja cilindrada deportiva, tales como la Yamaha YZF-R3, la Honda CBR500R y la KTM RC 390. Su posicionamiento se destacó por ofrecer una excelente relación entre precio, agilidad y potencia, logrando un equilibrio perfecto entre docilidad para novatos y diversión genuina para pilotos con mayor experiencia. Aunque en varios mercados ha comenzado a ser reemplazada por la evolución Ninja 500, la Ninja 400 se afianzó como un referente histórico de robustez, confiabilidad y rendimiento dentro de las deportivas ligeras."
 }

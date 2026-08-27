@@ -12,32 +12,31 @@
   "manufacturer": "Mercedes-Benz",
   "class": "SUV premium",
   "customizable": false,
-  "power": "255 hp",
-  "price": "USD 68.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "367 hp",
+  "price": "USD 70.000 (MSRP referencia global)",
+  "consumo": "9.5 l/100km combinado",
+  "dimensiones": "4.924 mm largo x 1.947 mm ancho x 1.797 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "respaldado",
+    "note": "Se actualizaron las especificaciones técnicas correspondientes a la cuarta generación (V167) del Mercedes-Benz GLE, enfocándose en versiones de alta demanda global como el GLE 450 4MATIC.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ],
-    "primarySource": "https://www.la.mercedes-benz.com/es/passengercars/mercedes-benz-cars/models/gle/suv-v167/specifications.html"
+      "Los precios varían sustancialmente según los mercados locales, impuestos y aranceles de importación vigentes."
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.462Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:51:45.693Z",
+  "transmision": "Automática 9G-TRONIC",
+  "traccion": "Tracción integral 4MATIC",
+  "peso": "2.165 kg",
+  "tipoMotor": "Gasolina / Mild-Hybrid",
+  "potenciaKW": "270 kW",
+  "capacidadTanque": "85 litros",
+  "tiempoRecorrido": "0-100 km/h en 5.7s",
+  "anoProduccion": "2019-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -125,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.999 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 630,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "V167 (Cuarta generación)",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "ejecutivo",
   "gallery": {
@@ -207,7 +206,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.432Z",
+    "lastChecked": "2026-08-27T01:51:45.693Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -225,5 +224,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Mercedes-Benz GLE es la evolución directa de una de las apuestas más importantes de la marca alemana en el segmento de los SUV de lujo. Originalmente concebido y bautizado bajo la denominación Clase M (ML) a finales de la década de 1990, este vehículo sentó las bases de lo que hoy conocemos como el mercado global de todoterrenos prémium orientados al asfalto y al confort de marcha superior. Con el cambio de nomenclatura adoptado por la firma de Stuttgart hace unos años, la Clase M pasó a llamarse GLE, alineando su jerarquía directamente con la icónica Clase E dentro del portfolio de sedanes.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la trayectoria de este modelo llegó con el desembarco de la cuarta generación, identificada internamente bajo el código V167. Presentada formalmente en los mercados internacionales, esta entrega introdujo una revolución tecnológica profunda al incorporar el sistema de infoentretenimiento MBUX (Mercedes-Benz User Experience) con pantallas duales de alta resolución y control gestual y por voz avanzado. Asimismo, esta generación marcó la masificación de los sistemas de electrificación ligera (Mild-Hybrid de 48V) y opciones de suspensión hidroneumática verdaderamente inteligentes como el E-Active Body Control, capaz de analizar el camino en tiempo real para inclinar la carrocería hacia el interior de las curvas o liberar el vehículo si queda atrapado en la arena o el barro.\n\n## Curiosidades\n¿Sabías que el antecesor espiritual del GLE, el Clase M, fue el primer vehículo de pasajeros de Mercedes-Benz fabricado fuera de Alemania? La planta de Tuscaloosa, en el estado de Alabama (Estados Unidos), fue inaugurada específicamente en 1997 para su producción, convirtiéndose en un polo industrial estratégico que hasta el día de hoy sigue abasteciendo a gran parte del planeta con esta familia de SUV. Además, el GLE fue uno de los pioneros en popularizar la carrocería de tipo SUV coupé, abriendo camino a variantes estéticas de líneas más deportivas que hoy dominan las preferencias de los compradores más exclusivos.\n\n## Competencia y posicionamiento\nEn el mercado global, el Mercedes-Benz GLE compite de manera directa y encarnizada dentro del segmento de los SUV medianos-grandes de lujo frente a pesos pesados de la industria alemana como el BMW X5 y el Audi Q7, así como alternativas de corte dinámico como el Porsche Cayenne o el Volvo XC90. Su posicionamiento dentro de la gama del fabricante se ubica estratégicamente un escalón por encima del GLC y por debajo del imponente GLS de siete plazas. El GLE se destaca tradicionalmente por ofrecer un equilibrio sobresaliente entre refinamiento interior, aislamiento acústico de primer nivel, tecnología de asistencia a la conducción de vanguardia y una dinámica rutera que prioriza el confort absoluto de sus pasajeros por sobre las pretensiones deportivas extremas."
 }

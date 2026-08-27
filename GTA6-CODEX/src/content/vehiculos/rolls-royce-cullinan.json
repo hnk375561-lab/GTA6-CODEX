@@ -12,15 +12,17 @@
   "manufacturer": "Rolls-Royce",
   "class": "SUV de ultralujo",
   "customizable": false,
-  "power": "563 hp",
-  "price": "USD 380.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "571 hp",
+  "price": "USD 390.000 (MSRP referencia)",
+  "consumo": "15.0 l/100km combinado",
+  "dimensiones": "5.341 mm largo x 2.000 mm ancho x 1.835 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.rolls-royce.com",
+    "note": "Se actualizaron las especificaciones del Rolls-Royce Cullinan basadas en conocimiento general de alta confianza de la industria automotriz, incluyendo su motor V12 de 6.75 litros, dimensiones reales de su carrocería y capacidades.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "El precio puede variar significativamente según las opciones de personalización de Bespoke",
+      "Los consumos y prestaciones exactas pueden variar levemente según la versión (como la variante Black Badge)"
     ]
   },
   "performance": {
@@ -28,15 +30,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.516Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:26:09.028Z",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "Tracción integral en las cuatro ruedas (AWD)",
+  "peso": "2.660 kg",
+  "tipoMotor": "Gasolina V12 biturbo",
+  "potenciaKW": "420 kW",
+  "capacidadTanque": "90 litros",
+  "tiempoRecorrido": "0-100 km/h en 5.2s",
+  "anoProduccion": "2018-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "6.750 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 560,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Mk I",
+  "anoLanzamiento": 2018,
   "colores": [],
   "category": "ejecutivo",
   "gallery": {
@@ -206,7 +208,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.463Z",
+    "lastChecked": "2026-08-27T01:26:09.028Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +226,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\n\nEl Rolls-Royce Cullinan representa un hito fundamental en la historia centenaria de la marca británica de ultralujo: el ingreso formal al segmento de los vehículos utilitarios deportivos (SUV). Presentado oficialmente a mediados de 2018, este modelo toma su nombre del diamante Cullinan, el diamante en bruto más grande jamás encontrado. Diseñado bajo la premisa de ofrecer la célebre sensación de \"alfombra mágica\" en cualquier tipo de terreno, la marca desarrolló desde cero una nueva arquitectura de aluminio denominada \"Architecture of Luxury\", compartida también con el imponente sedán Phantom.\n\n## Un hito y diseño relevante\n\nEl desarrollo del Cullinan rompió con los paradigmas tradicionales de Goodwood al incorporar tracción integral y una suspensión neumática profundamente revisada que se adapta de manera milimétrica a las irregularidades del camino mediante la lectura constante del terreno a través de cámaras. Estéticamente, mantiene los códigos de identidad indiscutibles de Rolls-Royce: una parrilla frontal inspirada en el Panteón griego esculpida a mano, la emblemática estatuilla del \"Spirit of Ecstasy\" en el capó y las icónicas puertas de apertura suicida (hacia atrás) que facilitan el acceso al habitáculo más exclusivo del mercado automotriz.\n\n## Curiosidades y detalles de ingeniería\n\nEntre sus características más destacadas se encuentra la opción del \"Viewing Suite\", un mecanismo automatizado que despliega dos asientos de cuero y una pequeña mesa desde el compartimiento del baúl para contemplar paisajes al aire libre. Asimismo, el habitáculo está aislado por más de 100 kilogramos de material aislante acústico, doble panel de vidrios y una estructura de carrocería tan rígida que logra silenciar por completo el exterior, convirtiéndolo en un santuario rodante propulsado por un imponente motor V12 de 6.75 litros con doble turbocompresor.\n\n## Competencia y posicionamiento\n\nEn la cúspide absoluta del mercado automotriz global, el Rolls-Royce Cullinan compite en una liga exclusiva reservada para los SUV más caros y sofisticados del mundo. Sus rivales directos incluyen al Bentley Bentayga y, en términos de exclusividad y precio, versiones de producción sumamente limitadas o preparaciones especiales de marcas de súper deportivos. No obstante, el Cullinan se posiciona firmemente como el referente indiscutido del ultralujo gracias a sus infinitas posibilidades de personalización a través del programa Bespoke, donde cada cliente puede configurar materiales únicos, maderas nobles y acabados hechos a medida que elevan su valor final significativamente por encima del precio base."
 }

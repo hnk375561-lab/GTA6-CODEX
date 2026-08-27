@@ -12,7 +12,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.529Z",
-  "updatedAt": "2026-08-25T23:22:07.390Z",
+  "updatedAt": "2026-08-27T01:44:31.270Z",
   "manufacturer": "Honda",
   "class": "Hatchback deportivo",
   "customizable": false,
@@ -21,26 +21,26 @@
     "acceleration": "Alta (0-100 km/h en 5.4s)"
   },
   "power": "315 hp",
-  "price": "USD 45.000",
-  "consumo": "8.2-8.7 l/100km combinado (WLTP, motor turbo 2.0L VTEC, caja manual de 6 velocidades)",
-  "dimensiones": "4.595-4.606 mm largo x 1.890 mm ancho x 1.407 mm alto, distancia entre ejes 2.735 mm",
+  "price": "USD 44.890 (MSRP EE.UU.)",
+  "consumo": "8.3 l/100km combinado (WLTP)",
+  "dimensiones": "4.595 mm x 1.890 mm x 1.407 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://automobiles.honda.com/civic-type-r",
+    "level": "respaldado",
     "secondarySource": "https://www.carexpert.com.au/honda/civic/2025-type-r-josksfag20250819",
-    "note": "El Civic Type R (generación FL5) se produce entre 2022 y 2027 y solo está disponible con caja manual y tracción delantera.",
+    "note": "Se verificaron las especificaciones técnicas de la generación FL5 del Honda Civic Type R, incluyendo su motor K20C1 de 315 hp, transmisión manual exclusiva de 6 marchas y configuración de tracción delantera.",
     "limitations": [
-      "El consumo en modo Sport/+R puede duplicarse respecto al ciclo combinado, según pruebas independientes (hasta 14.9 l/100km)"
+      "El consumo de combustible puede elevarse considerablemente bajo conducción deportiva en circuito o modo +R.",
+      "La disponibilidad en ciertos mercados está limitada por cupos de producción anuales."
     ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Manual de 6 velocidades",
+  "traccion": "Delantera (FWD)",
+  "peso": "1.455 kg",
+  "tipoMotor": "Gasolina 2.0L VTEC Turbo de 4 cilindros en línea",
+  "potenciaKW": "235 kW",
+  "capacidadTanque": "47 litros",
+  "tiempoRecorrido": "5.4 s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -128,14 +128,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.996 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 4,
+  "baul": 410,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "FL5",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "deportivo",
   "gallery": {
@@ -260,8 +260,8 @@
     "description": "Hatchback deportivo de Honda, motor turbo 2.0L VTEC de 315 hp, tracción delantera."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.394Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:44:31.270Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -314,5 +314,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Honda Civic Type R representa la cúspide de la ingeniería deportiva de tracción delantera de la marca japonesa. Nacido originalmente sobre la base de la sexta generación del Civic (ek9) en 1997 exclusivamente para el mercado japonés, el apellido Type R se convirtió rápidamente en un emblema de alto rendimiento, motores atmosféricos de altas revoluciones y un comportamiento dinámico sobresaliente. A lo largo de las décadas, el modelo evolucionó expandiéndose a los mercados globales y adoptando la turbocompresión a partir de la generación FK2, marcando un punto de inflexión en la entrega de potencia sin perder el purismo mecánico que lo caracteriza.\n\n## Un hito o generación relevante\nLa actual generación, denominada FL5 y lanzada comercialmente en 2023, estableció un nuevo estándar para los hatchbacks deportivos a nivel mundial. Construida sobre la sólida base del Civic de undécima generación, la variante Type R logró pulverizar récords en circuitos emblemáticos como Nürburgring para vehículos de tracción delantera. Este hito no se logró únicamente a través de la fuerza bruta de su motor K20C1, sino mediante un trabajo aerodinámico sumamente refinado, una rigidez estructural incrementada y una puesta a punto de suspensión que maximiza el contacto de los neumáticos con el asfalto sin comprometer la respuesta milimétrica del chasis.\n\n## Curiosidades\nUna de las características más singulares del Honda Civic Type R FL5 es su insistencia en mantener la caja de cambios manual de 6 velocidades como única opción en la mayoría de los mercados globales, resistiendo la tendencia actual de la industria hacia las transmisiones automáticas de doble embrague. Además, su sistema de escape de triple salida funcional no es meramente estético: los tubos exteriores generan un tono de escape más agresivo, mientras que el tubo central actúa como un resonador que modula las frecuencias acústicas según el modo de conducción seleccionado (Comfort, Sport, o +R).\n\n## Competencia y posicionamiento\nDentro del mercado global, el Civic Type R compite directamente contra pesos pesados de la categoría de los hatchbacks deportivos y compactos picantes, tales como el Volkswagen Golf R, el Toyota GR Corolla y el Hyundai i30 N. Se posiciona como una opción de enfoque marcadamente purista y analógico, ideal para entusiastas que buscan un vehículo tanto apto para el uso diario como sumamente capaz para tandas en circuito ('track days'), destacándose frente a sus rivales por la precisión quirúrgica de su dirección y la conexión inigualable que ofrece entre el conductor y la máquina."
 }

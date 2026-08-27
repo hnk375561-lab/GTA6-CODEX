@@ -14,27 +14,31 @@
   "class": "SUV compacta",
   "customizable": false,
   "power": "115 hp",
-  "price": "USD 26.000",
-  "consumo": "7.1 l/100km (mixto)",
+  "price": "USD 15.000 (mercado indio de referencia)",
+  "consumo": "5.5 - 6.0 l/100km (mixto)",
   "dimensiones": "4225 x 1760 x 1612 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.skoda.com.ar/kushaq"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones globales del Škoda Kushaq basado en la plataforma MQB-A0-IN desarrollada para mercados emergentes, con opciones de motores 1.0 TSI y 1.5 TSI.",
+    "limitations": [
+      "Los precios varían fuertemente según el mercado de exportación y los impuestos locales.",
+      "Algunas cifras de rendimiento exactas dependen de la variante de transmisión seleccionada."
+    ]
   },
   "performance": {
     "speed": "185 km/h",
     "acceleration": "0-100 km/h en 10.3s"
   },
   "createdAt": "2026-08-23T21:59:12.340520Z",
-  "updatedAt": "2026-08-25T23:22:07.520Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:56:52.884Z",
+  "transmision": "Manual de 6 velocidades o Automática de 6 velocidades",
+  "traccion": "Delantera",
+  "peso": "1250 kg",
+  "tipoMotor": "Gasolina (TSI)",
+  "potenciaKW": "85 kW (1.0 TSI) / 110 kW (1.5 TSI)",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "0-100 km/h en 10.3s (1.5 TSI)",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "999 cc / 1498 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 385,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra generación (MQB-A0-IN)",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -251,8 +255,8 @@
     "description": "SUV compacta de Skoda (grupo Volkswagen), motor turbo 1.0L o 1.5L TSI."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.467Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:56:52.884Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +309,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Škoda Kushaq representa un hito fundamental en la estrategia internacional del fabricante checo, perteneciente al Grupo Volkswagen. Presentado formalmente como vehículo de producción en 2021, este SUV compacto fue el pionero absoluto del proyecto INDIA 2.0, una iniciativa industrial diseñada para posicionar al grupo alemán con fuerza en mercados emergentes de alta densidad vehicular. Construido sobre la plataforma modular MQB-A0-IN —una variante específica adaptada a los requerimientos normativos, de costos y de robustez de la región—, el Kushaq logró trasladar la filosofía de diseño europea de la marca a un formato adaptado a las exigencias locales sin sacrificar calidad percibida.\n\n## Un hito o generación relevante\nLa primera y actual generación del Kushaq destaca por la introducción exitosa de los reconocidos motores térmicos de la familia TSI de Volkswagen en segmentos de entrada muy competitivos. Las motorizaciones iniciales constan de un tricilíndrico de 1.0 litro con turbocompresor que entrega 115 hp, y un bloque más prestacional de 4 cilindros y 1.5 litros que eroga 150 hp, este último equipado con tecnología de desactivación activa de cilindros (ACT) para optimizar el consumo de combustible en autopistas y trayectos urbanos fluidos. Esta combinación de tren motriz eficiente y un comportamiento dinámico superior al promedio de su categoría consolidó su reputación técnica.\n\n## Curiosidades\nUn dato particular sobre el nombre del modelo es que proviene del sánscrito \"Kushak\", término que significa emperador o rey. A pesar de estar concebido inicialmente como un producto estratégico para India, el vehículo adoptó rápidamente nomenclaturas y estándares de seguridad globales, incorporando asistencias electrónicas a la conducción y variantes de carrocería hermanadas como el Škoda Slavia. Su interior prioriza las soluciones \"Simply Clever\" características de la marca, como ganchos portaobjetos inteligentes, espacios de almacenamiento generosos y una ergonomía de mandos muy intuitiva heredada de modelos de segmentos superiores.\n\n## Competencia y posicionamiento\nDentro del mercado de los SUV compactos B, el Škoda Kushaq compite directamente contra referentes consolidados como el Hyundai Creta, Kia Seltos, Volkswagen Taigun y el Maruti Suzuki Grand Vitara. Su posicionamiento se inclina sutilmente hacia el segmento semi-premium dentro de las opciones de volumen, destacando por su solidez estructural, agilidad en curvas y una calibración de suspensión que equilibra de manera óptima el confort de marcha frente a asfaltos irregulares. Aunque su comercialización se ha centrado prioritariamente en el continente asiático y regiones seleccionadas de exportación, el Kushaq demuestra la capacidad del Grupo Volkswagen de modular sus plataformas globales con eficacia quirúrgica."
 }

@@ -13,15 +13,16 @@
   "class": "SUV eléctrico",
   "customizable": false,
   "power": "201 hp",
-  "price": "USD 40.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "USD 39.000 (MSRP EE.UU. referencia)",
+  "consumo": "16-18 kWh/100 km",
+  "dimensiones": "4.584 mm largo x 1.852 mm ancho x 1.636 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.volkswagen.com",
+    "note": "Se actualizaron las dimensiones, peso, capacidad de baúl y tipo de motor con especificaciones reales del Volkswagen ID.4 basadas en la plataforma MEB. Potencia y precio mantenidos como referencia de mercado.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "Los precios varían según los subsidios gubernamentales y el mercado regional específico",
+      "La autonomía exacta depende de la capacidad de la batería (52 kWh o 82 kWh) y las condiciones de manejo"
     ]
   },
   "performance": {
@@ -29,15 +30,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.548Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-180 kW",
+  "updatedAt": "2026-08-27T01:28:48.478Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción trasera",
+  "peso": "2.124 kg",
+  "tipoMotor": "Eléctrico síncrono de imanes permanentes",
+  "potenciaKW": "150 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "8.5s",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,11 +123,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 543,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -201,7 +202,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.497Z",
+    "lastChecked": "2026-08-27T01:28:48.478Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -219,5 +220,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Volkswagen ID.4 representa un hito fundamental en la estrategia de electrificación de la marca alemana, siendo su primer SUV totalmente eléctrico de alcance global. Desarrollado sobre la plataforma modular de propulsión eléctrica MEB (Modulare E-Antriebs-Baukasten), este vehículo fue concebido desde el inicio como un modelo exclusivamente eléctrico, lo que permitió optimizar el espacio interior y la distribución de pesos de una manera que los vehículos adaptados a partir de plataformas de combustión interna no pueden lograr.\n\n## Un hito o generación relevante\nLa introducción de la primera generación del ID.4 marcó la consolidación de la familia ID en mercados clave como Europa, Norteamérica y China. Con un diseño aerodinámico enfocado en maximizar la eficiencia energética, este SUV mediano logró posicionarse rápidamente como uno de los vehículos eléctricos más vendidos de su segmento. Su habitáculo minimalista, dominado por pantallas táctiles y controles hápticos, sentó las bases para la interfaz de usuario de la nueva era digital de Volkswagen.\n\n## Curiosidades\nUna de las características más interesantes del Volkswagen ID.4 es su concepto de iluminación interactiva conocido como ID. Light. Se trata de una tira de LED ubicada en la base del parabrisas que se comunica de manera intuitiva con el conductor mediante diferentes códigos de color y animaciones, indicando desde instrucciones de navegación hasta alertas de seguridad o el estado de la carga de la batería. Además, a pesar de tener dimensiones exteriores comparables a las de un Volkswagen Tiguan tradicional, el espacio interior del ID.4 se aproxima al de modelos de segmentos superiores gracias a la ausencia del túnel de transmisión y una distancia entre ejes extendida.\n\n## Competencia y posicionamiento\nEn el mercado global, el Volkswagen ID.4 compite directamente en el corazón del segmento de los SUV compactos y medianos eléctricos. Sus principales rivales incluyen al Tesla Model Y, el Ford Mustang Mach-E, el Hyundai Ioniq 5 y el Kia EV6. El posicionamiento del ID.4 apunta hacia un público familiar que busca un vehículo eléctrico práctico, seguro y con la calidad de construcción tradicional de Volkswagen, ofreciendo una conducción suave, una marcha silenciosa y un enfoque general orientado al confort y la facilidad de uso diario por encima de prestaciones puramente deportivas."
 }

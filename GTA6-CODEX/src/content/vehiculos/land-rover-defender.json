@@ -14,28 +14,32 @@
   "manufacturer": "Land Rover",
   "class": "SUV 4x4 premium",
   "customizable": false,
-  "power": "296 hp",
-  "price": "USD 85.000",
-  "consumo": "11.5 l/100km (mixto)",
-  "dimensiones": "4758 x 1996 x 1967 mm",
+  "power": "400 hp (versión P400 de 6 cilindros)",
+  "price": "USD 95.000 (MSRP referencia base EE.UU.)",
+  "consumo": "11.2 l/100km (mixto estimado)",
+  "dimensiones": "5018 x 2008 x 1967 mm (Defender 110)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.landrover.com.ar/defender"
+    "level": "respaldado",
+    "note": "Se actualizaron las especificaciones basándose en la arquitectura moderna L663 del Land Rover Defender, destacando la variante de 6 cilindros in-line P400, dimensiones del Defender 110 y capacidades oficiales de la marca.",
+    "limitations": [
+      "Los precios varían fuertemente según el mercado regional (Argentina, EE.UU., Europa) e impuestos locales",
+      "La gama incluye múltiples motorizaciones (P300, P400, D250, V8) por lo que los valores de consumo y potencia son de referencia para la versión más popular"
+    ]
   },
   "performance": {
     "speed": "195 km/h",
     "acceleration": "0-100 km/h en 8.9s"
   },
   "createdAt": "2026-08-23T21:59:02.633748Z",
-  "updatedAt": "2026-08-25T23:22:07.441Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:50:22.855Z",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "Tracción integral permanente (AWD)",
+  "peso": "2.330 kg",
+  "tipoMotor": "Gasolina / Mild Hybrid (MHEV)",
+  "potenciaKW": "294 kW",
+  "capacidadTanque": "90 litros",
+  "tiempoRecorrido": "0-100 km/h en 6.1s (P400)",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -123,14 +127,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2996 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 7,
+  "baul": 857,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "L663",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -255,8 +259,8 @@
     "description": "SUV 4x4 premium de Land Rover, chasis monocasco, motores desde 4 hasta 6 cilindros."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.421Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:50:22.855Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -309,5 +313,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Land Rover Defender moderno representa una de las reinvenciones más ambiciosas en la historia de la industria automotriz todoterreno. Heredero directo del legendario Land Rover Series I presentado en 1948 y del posterior Defender clásico que se produjo casi sin alteraciones estéticas durante más de tres décadas, la generación actual (conocida internamente como código L663) rompió con el pasado en términos de ingeniería sin perder el espíritu aventurero que caracteriza a la marca británica. Presentado a finales de 2019 para el año modelo 2020, este SUV dejó atrás el tradicional chasis de largueros y travesaños para adoptar una estructura monocasco de aluminio altamente avanzada, bautizada como D7x, que según Land Rover es tres veces más rígida que un diseño de bastidor tradicional.\n\n## Un hito o generación relevante\nEl gran hito de esta generación L663 fue demostrar que un vehículo con aptitudes extremas para el off-road podía convivir en perfecta armonía con el confort de marcha de un SUV de lujo y la tecnología de vanguardia. Disponible en tres carrocerías principales (90 de tres puertas, 110 de cinco puertas y el imponente 130 de carrocería extendida con capacidad para hasta 8 pasajeros), el Defender incorporó la suspensión neumática electrónica adaptativa, capaz de elevar la altura libre al suelo hasta los 291 mm y permitir una profundidad de vadeo de hasta 900 mm. La introducción de los motores Ingenium de 4 y 6 cilindros, así como variantes híbridas ligeras (MHEV) y el poderoso bloque V8 supercargado, marcaron la evolución tecnológica de este ícono británico.\n\n## Curiosidades\nUna de las curiosidades más notables del desarrollo del Land Rover Defender moderno fue el régimen de pruebas al que fue sometido antes de su comercialización. Los prototipos acumularon más de 1,2 millones de kilómetros de ensayos en condiciones extremas, desde los hielos árticos de 50 grados bajo cero en el norte de Suecia hasta los desiertos abrasadores de Dubai y las dunas de África, pasando por la altitud extrema de las montañas rocosas. Además, a diferencia de su antecesor, el diseño rinde homenaje al modelo original con detalles sutiles como las pequeñas ventanas 'Alpine Light' en el techo trasero y la rueda de auxilio colgada en el portón trasero con apertura lateral.\n\n## Competencia y posicionamiento\nEn el mercado global y regional, el Land Rover Defender se posiciona en el segmento de los SUV 4x4 de lujo, compitiendo mano a mano con pesos pesados como el Mercedes-Benz Clase G, la Toyota Land Cruiser (serie 300) y, en términos de versatilidad asfáltica, con versiones altas de modelos como el Audi Q8, BMW X5 o Range Rover Sport. No obstante, el Defender se desmarca de los SUV premium tradicionales por su enfoque marcadamente robusto, ofreciendo pisos de goma lavables en algunas versiones y un habitáculo diseñado para soportar el trato duro sin resignar pantallas digitales de última generación, conectividad avanzada y asistencias electrónicas a la conducción como el sistema Terrain Response 2, que configura automáticamente los parámetros del vehículo según el terreno."
 }

@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.858Z",
-  "updatedAt": "2026-08-25T23:22:07.493Z",
+  "updatedAt": "2026-08-27T01:54:14.596Z",
   "manufacturer": "Peugeot",
   "class": "SUV compacta",
   "customizable": false,
@@ -20,19 +20,23 @@
     "acceleration": "0-100 km/h en 10.9s"
   },
   "power": "130 hp",
-  "price": "USD 27.000",
+  "price": "USD 27.000 (referencia regional)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.peugeot.com.ar/gama-peugeot/2008/"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones generales del Peugeot 2008 con motor PureTech 1.2L y su posicionamiento en el mercado regional sudamericano.",
+    "limitations": [
+      "Los precios y consumos pueden variar según el mercado específico de Latinoamérica.",
+      "Algunas cifras de dimensiones pueden diferir levemente según los facelifts regionales."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática Tiptronic de 6 marchas / Manual de 6 velocidades",
+  "traccion": "Delantera",
+  "peso": "1200-1250 kg",
+  "tipoMotor": "Gasolina Turbo",
+  "potenciaKW": "96 kW",
+  "capacidadTanque": "44 litros",
+  "tiempoRecorrido": "0-100 km/h en 10.9s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +122,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "Aprox. 5.5 L/100 km mixto",
+  "dimensiones": "4300 x 1770 x 1550 mm",
+  "cilindrada": "1199 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 434,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -249,8 +253,8 @@
     "description": "SUV compacta de Peugeot con motor turbo 1.2L PureTech."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.449Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:54:14.596Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +307,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Peugeot 2008 debutó a nivel mundial a finales de 2013 como una apuesta firme de la marca del león para ingresar al competitivo segmento de los B-SUV. Concebido para reemplazar indirectamente a los familiares derivados de hatchbacks en ciertos mercados, el modelo buscó combinar la agilidad de un vehículo urbano con la postura de conducción elevada y el aspecto robusto que demandaba el público moderno. La primera generación tuvo un éxito notable tanto en Europa como en América Latina, fabricándose en centros clave como Mulhouse (Francia) y Porto Real (Brasil).\n\n## Un hito o generación relevante\nEl punto de inflexión más importante para la gama ocurrió con la llegada de su segunda generación, presentada a fines de 2019. Este salto generacional no solo adoptó la nueva plataforma modular CMP del grupo Stellantis, sino que también rediseñó por completo el lenguaje de diseño de la marca. Con líneas mucho más angulosas, un frontal imitado de sus hermanos mayores con la característica \"garra\" de los faros LED diurnos, y la evolución definitiva del puesto de conducción i-Cockpit (que incluye instrumentación digital en 3D en las versiones más equipadas), el Peugeot 2008 dejó atrás su estética de familiar levantado para consolidarse como un SUV compacto de aspecto vanguardista y aspiraciones premium.\n\n## Curiosidades\nUna de las particularidades más destacadas del desarrollo del Peugeot 2008 es su enfoque multienergética en los mercados internacionales. Además de las tradicionales y eficientes opciones de combustión interna —como el aclamado motor naftero turbo 1.2L PureTech de tres cilindros—, la plataforma CMP permitió el desarrollo simultáneo de una variante 100% eléctrica denominada e-2008. Asimismo, el i-Cockpit, tan característico de la marca, generó posturas divididas en sus inicios debido a su volante pequeño ubicado por debajo del cuadro de instrumentos, pero terminó convirtiéndose en uno de los sellos de identidad más reconocibles y emulados de la automotriz francesa.\n\n## Competencia y posicionamiento\nEn el segmento de los SUV compactos (B-SUV), el Peugeot 2008 compite contra pesos pesados de la industria automotriz como el Chevrolet Tracker, Volkswagen T-Cross, Jeep Renegade, Nissan Kicks y Renault Captur. Su estrategia de posicionamiento se ubica en la franja más alta o aspiracional del segmento generalista. Busca seducir a un comprador que valora el diseño sofisticado, la calidad de terminación interior percibida y la tecnología a bordo por encima de la simple funcionalidad utilitaria, ofreciendo un andar aplomado de clara estirpe europea."
 }

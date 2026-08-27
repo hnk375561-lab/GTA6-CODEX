@@ -12,16 +12,16 @@
   "manufacturer": "Xiaomi",
   "class": "Sedán eléctrico",
   "customizable": false,
-  "power": "299 hp",
-  "price": "USD 30.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "673 CV (versión Max)",
+  "price": "USD 30.000 - USD 45.000 (aproximado en mercado chino)",
+  "consumo": "13.7 kWh/100 km (referencia WLTP/CLTC según versión)",
+  "dimensiones": "4.997 mm largo x 1.963 mm ancho x 1.455 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "note": "Se actualizaron las especificaciones del Xiaomi SU7 utilizando datos de conocimiento general de alta confianza sobre su lanzamiento oficial en China, corrigiendo los valores placeholders anteriores.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "Los precios internacionales fuera de China son estimados o sujetos a variaciones de importación y aranceles",
+      "Las autonomías varían según el ciclo de homologación (CLTC vs WLTP)"
     ]
   },
   "performance": {
@@ -29,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.556Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "200-400 kW",
+  "updatedAt": "2026-08-27T01:29:12.988Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción integral (AWD) en versiones altas / Tracción trasera (RWD) en entrada",
+  "peso": "2.200 - 2.430 kg",
+  "tipoMotor": "Eléctrico dual (o simple según versión)",
+  "potenciaKW": "495 kW (versión Max)",
   "capacidadTanque": null,
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "2.78s (0-100 km/h versión Max)",
+  "anoProduccion": "2024-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,11 +122,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 517,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra Generación",
+  "anoLanzamiento": 2024,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -201,7 +201,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.505Z",
+    "lastChecked": "2026-08-27T01:29:12.988Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -219,5 +219,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Xiaomi SU7 marca la incursión oficial del gigante tecnológico chino de la electrónica de consumo en la industria automotriz. Presentado formalmente a principios de 2024, este sedán eléctrico deportivo representa la culminación de años de desarrollo bajo la iniciativa de diversificación de la marca, buscando integrar su ecosistema de dispositivos inteligentes con la movilidad eléctrica de altas prestaciones.\n\n## Un hito y diseño aerodinámico\nUno de los hitos más destacados en el desarrollo del Xiaomi SU7 fue el logro de un coeficiente aerodinámico de apenas 0.195 Cd, situándolo entre los vehículos de producción más eficientes y aerodinámicos del mundo. Este diseño exterior fluido, combinado con una arquitectura de 800V en sus versiones superiores, permite una gestión térmica y de energía altamente optimizada, reduciendo la resistencia al avance y maximizando la autonomía en ruta.\n\n## Curiosidades tecnológicas\nEl SU7 se destaca fuertemente por su enfoque en el software y la conectividad. Utiliza el sistema operativo HyperOS, diseñado para unificar la experiencia del usuario entre los teléfonos inteligentes de la marca, los dispositivos hogareños y el propio vehículo. Además, la compañía desarrolló motores eléctricos propios denominados 'V6', 'V6s' y el avanzado 'V8s' capaz de alcanzar revoluciones por minuto comparables a motores de combustión de competición.\n\n## Competencia y posicionamiento\nEn el mercado global de vehículos eléctricos, el Xiaomi SU7 compite directamente en el segmento de sedanes deportivos premium de altas prestaciones, teniendo en la mira a modelos consolidados como el Tesla Model S y el Porsche Taycan. Su propuesta de valor se centra en ofrecer una relación entre potencia, tecnología de conducción autónoma y precio muy competitiva frente a fabricantes tradicionales de automóviles."
 }

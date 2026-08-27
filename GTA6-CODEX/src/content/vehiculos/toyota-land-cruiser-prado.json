@@ -12,15 +12,16 @@
   "manufacturer": "Toyota",
   "class": "SUV 4x4 grande",
   "customizable": false,
-  "power": "163 hp (diésel)",
-  "price": "USD 55.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "204 hp (turbodiésel)",
+  "price": "USD 75.000 (referencia mercado global)",
+  "consumo": "9.5 l/100km combinado",
+  "dimensiones": "4.925 mm largo x 1.980 mm ancho x 1.935 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "note": "Se actualizaron las especificaciones técnicas basándose en la nueva generación Land Cruiser Prado (serie J250) lanzada globalmente en 2024, utilizando el motor 2.8 turbodiésel de 204 hp y transmisión automática de 8 marchas.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "El precio y el consumo exacto varían según el mercado regional y las especificaciones de homologación locales.",
+      "La capacidad del baúl varía según la configuración de los asientos traseros (5 o 7 plazas)."
     ]
   },
   "performance": {
@@ -28,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.537Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:28:10.636Z",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "Tracción 4x4 permanente con reductora",
+  "peso": "2.430 kg",
+  "tipoMotor": "Turbodiésel (1GD-FTV)",
+  "potenciaKW": "150 kW",
+  "capacidadTanque": "87 litros",
+  "tiempoRecorrido": "9.9s",
+  "anoProduccion": "2024-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.755 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 7,
+  "baul": 620,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Serie 250 (J250)",
+  "anoLanzamiento": 2024,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -206,7 +207,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.488Z",
+    "lastChecked": "2026-08-27T01:28:10.636Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +225,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Toyota Land Cruiser Prado es una de las siluetas más emblemáticas dentro del universo de los vehículos todoterreno de tamaño grande. Derivada históricamente de la estirpe Land Cruiser —cuyo nacimiento se remonta a la década de 1950 con los vehículos utilitarios de tracción integral para uso militar y civil—, la línea Prado comenzó a tomar forma propia como una alternativa ligeramente más compacta, versátil y orientada tanto al uso familiar urbano como a la aventura off-road extrema. A lo largo de las décadas, se ganó una reputación inquebrantable de robustez, confiabilidad mecánica y durabilidad en los terrenos más hostiles del planeta, convirtiéndose en el vehículo de preferencia para flotas de rescate, organismos internacionales y entusiastas del 4x4.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de este modelo es la llegada de la plataforma global GA-F (la misma arquitectura modular que utiliza su hermana mayor, la Land Cruiser 300, y la pick-up Hilux) y el desembarco de la nueva generación denominada Serie 250 (J250). Con este rediseño estructural, presentado globalmente a partir de 2024, la Prado recuperó un diseño exterior de líneas cuadradas y retro que evoca directamente a los clásicos Land Cruiser de las décadas de 70 y 80 (como la mítica serie 70). Este cambio no solo supuso una renovación estética profunda, sino también un incremento sustancial en la rigidez torsional del chasis, mejoras significativas en los recorridos de suspensión y la incorporación de arquitecturas eléctricas modernas orientadas a optimizar la seguridad activa y las asistencias a la conducción en terrenos difíciles.\n\n## Curiosidades\nA pesar de su orientación moderna hacia el confort de marcha y la tecnología de punta a bordo, la Land Cruiser Prado mantiene intacto su ADN de verdadero 4x4. A diferencia de muchos SUV contemporáneos que han migrado hacia chasis monocasco de corte más urbano, la Prado conserva un esquema de chasis de largueros y travesaños (ladder frame), lo que le otorga una capacidad de resistencia a la torsión y una lonvergencia estructural muy superior bajo castigo intenso. Asimismo, en distintos mercados del mundo recibe nomenclaturas diferentes: mientras que en Europa y América Latina suele comercializarse bajo el nombre Land Cruiser o Prado, en Norteamérica ha sido reintroducida simplemente como \"Land Cruiser\", posicionándose como un producto de nicho con un fuerte atractivo emocional y estético.\n\n## Competencia y posicionamiento\nEn el mercado global, la Toyota Land Cruiser Prado compite en el segmento de los SUV grandes de altas prestaciones off-road y enfoque rutero o premium. Entre sus rivales más directos se encuentran pesos pesados de la industria como el Land Rover Defender, el Jeep Wrangler Unlimited, el Mitsubishi Pajero (en los mercados donde aún tiene presencia histórica) y versiones equipadas de marcas como Ford o Nissan dentro del segmento de los todoterrenos puros basados en plataformas de pick-up. No obstante, la Prado se destaca frente a la competencia por mantener un equilibrio muy logrado entre refinamiento interior, aislamiento acústico y una red global de posventa y repuestos sumamente sólida, lo que consolida su valor de reventa y su liderazgo histórico en mercados exigentes."
 }

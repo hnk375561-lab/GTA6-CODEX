@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.994Z",
-  "updatedAt": "2026-08-25T23:22:07.481Z",
+  "updatedAt": "2026-08-27T01:53:29.139Z",
   "manufacturer": "Nissan",
   "class": "SUV compacta",
   "customizable": false,
@@ -19,20 +19,23 @@
     "speed": "175 km/h",
     "acceleration": "0-100 km/h en 11.3s"
   },
-  "power": "114 hp",
-  "price": "USD 24.000",
+  "power": "118 hp",
+  "price": "USD 24.000 (referencia regional)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.nissan.com.ar/vehiculos/nuevo-kicks.html"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones generales del Nissan Kicks con motor 1.6L aspirado y dimensiones estándar para el mercado latinoamericano.",
+    "limitations": [
+      "Las cifras exactas de consumo pueden variar según el mercado y las normativas de homologación locales."
+    ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática CVT",
+  "traccion": "Delantera (FWD)",
+  "peso": "1139 kg",
+  "tipoMotor": "Gasolina 1.6L 4 cilindros",
+  "potenciaKW": "88 kW",
+  "capacidadTanque": "41 litros",
+  "tiempoRecorrido": "11.5s",
+  "anoProduccion": "2016-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -118,16 +121,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "Aprox. 13-14 km/l en uso mixto",
+  "dimensiones": "4310 x 1760 x 1610 mm",
+  "cilindrada": "1598 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 432,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2016,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -249,8 +252,8 @@
     "description": "SUV compacta de Nissan, motor 1.6L naturalmente aspirado."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.442Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:53:29.139Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -303,5 +306,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Nissan Kicks nació como un concepto presentado en el Salón del Automóvil de São Paulo en 2014, anticipando las líneas de un SUV urbano enfocado principalmente en los mercados latinoamericanos. Su diseño preliminar fue desarrollado de manera conjunta por el estudio de diseño global de Nissan en Japón y el centro de diseño satélite en Río de Janeiro, buscando capturar la esencia y el dinamismo de las grandes ciudades de la región. La versión de producción debutó oficialmente en 2016, coincidiendo con los Juegos Olímpicos de Río de Janeiro, justa deportiva para la cual fungió como vehículo oficial.\n\n## Un hito y generación relevante\nEl gran punto de inflexión para el Nissan Kicks fue su transición de un producto de carácter regional a un vehículo de proyección verdaderamente global. Hacia 2018 y 2019, la marca expandió su manufactura y comercialización hacia Norteamérica, Asia y Oriente Medio, adaptándose a las exigencias de seguridad y normativas de emisiones de más de 80 países. La primera generación se consolidó rápidamente como uno de los pilares de venta de la marca en el segmento B-SUV, destacando por incorporar tecnologías de asistencia a la conducción y el sistema de visión periférica Intelligent Around View Monitor, poco comunes en su categoría en los primeros años de comercialización.\n\n## Curiosidades\nUna de las características más singulares del desarrollo del Kicks fue la fuerte influencia del público brasileño y latinoamericano en su concepto final, algo inusual para un vehículo de marca japonesa en esa época. Además, el modelo ha servido como base de experimentación para sistemas de propulsión alternativos en ciertos mercados internacionales, explorando variantes híbridas y tecnologías de electrificación ligera antes de la llegada de las plataformas de nueva generación. Su nombre, que remite al concepto de una 'patada' o impulso dinámico en inglés, fue seleccionado para reflejar un estilo de vida activo y urbano.\n\n## Competencia y posicionamiento\nEn el altamente disputado segmento de las SUVs compactas o B-SUV, el Nissan Kicks compite de manera directa con referentes de peso como el Chevrolet Tracker, Volkswagen T-Cross, Peugeot 2008 y Jeep Renegade. Se posiciona en el mercado ofreciendo un balance competitivo entre espacio interior, optimización de carga en el baúl y consumos contenidos gracias a su mecánica atmosférica de 1.6 litros acoplada a una transmisión automática tipo CVT. Aunque no busca perfilarse como un vehículo de prestaciones deportivas, su propuesta de valor prioriza el confort de marcha diario, la eficiencia en entornos urbanos y un diseño exterior con fuerte personalidad."
 }

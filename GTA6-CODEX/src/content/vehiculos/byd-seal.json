@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.593Z",
-  "updatedAt": "2026-08-25T23:22:07.286Z",
+  "updatedAt": "2026-08-27T01:34:05.056Z",
   "manufacturer": "BYD",
   "class": "Sedán eléctrico",
   "customizable": false,
@@ -19,23 +19,24 @@
     "speed": "180 km/h",
     "acceleration": "0-100 km/h en 5.9s"
   },
-  "power": "313 hp",
-  "price": "USD 45.000",
+  "power": "530 hp / 390 kW (versión AWD Excellence)",
+  "price": "USD 45.000 (precio de referencia global)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.byd.com/ar/car/seal",
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas globales del BYD Seal, incluyendo su plataforma e-Platform 3.0, variantes de potencia y dimensiones estándar para el mercado internacional.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "Los precios varían sustancialmente según los aranceles de importación y subsidios vigentes en cada país de Latinoamérica y Europa.",
+      "La autonomía exacta depende del ciclo de homologación (WLTP o CLTC) y del tamaño de la batería (82.5 kWh)."
     ]
   },
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "200-400 kW",
+  "transmision": "Automática de relación única",
+  "traccion": "Integral (AWD) o trasera (RWD)",
+  "peso": "2185 kg",
+  "tipoMotor": "Doble motor eléctrico sincrónico de imanes permanentes",
+  "potenciaKW": "390 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "3.8s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -117,16 +118,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
+  "consumo": "12.7 kWh / 100 km (ciclo WLTP aprox.)",
+  "dimensiones": "4800 x 1875 x 1460 mm",
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 400,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1era generación",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "electrico",
   "gallery": {
@@ -248,8 +249,8 @@
     "description": "Sedán eléctrico de BYD sobre la plataforma e-Platform 3.0."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.322Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:34:05.056Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -302,5 +303,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl BYD Seal fue presentado oficialmente a principios de 2023 como uno de los pilares fundamentales en la estrategia de expansión global del gigante tecnológico automotriz BYD. Este sedán mediano-grande se posiciona como el segundo modelo dentro de la serie 'Ocean' de la marca, inspirándose directamente en el lenguaje de diseño estético de los vehículos marinos, tal como lo anticipó el prototipo BYD Ocean-X concept.\n\n## Plataforma e-Platform 3.0 y tecnología Cell-to-Body\nUn hito fundamental en la arquitectura del BYD Seal es la utilización de la avanzada e-Platform 3.0, diseñada exclusivamente para vehículos eléctricos de batería (BEV). Una de las innovaciones más destacadas de este modelo es la implementación de la tecnología de construcción 'Cell-to-Body' (CTB). Mediante este sistema, la batería Blade de tipo LFP (fosfato de hierro y litio) se integra estructuralmente al chasis del vehículo, formando parte del suelo de la cabina. Esto no solo maximiza el aprovechamiento del espacio interior y reduce el centro de gravedad, sino que también incrementa drásticamente la rigidez torsional del monocasco, mejorando la seguridad pasiva y la dinámica de conducción en curvas exigentes.\n\n## Curiosidades y diseño aerodinámico\nCon un coeficiente aerodinámico de apenas 0.219 Cd, el BYD Seal destaca por su silueta tipo fastback de líneas sumamente fluidas y manijas de puertas embutidas que emergen automáticamente. En su interior, la consola central está diseñada alrededor de una pantalla táctil multimedia giratoria de 15.6 pulgadas, un sello distintivo de la marca que permite alternar entre visualización horizontal y vertical según la preferencia del conductor. Además, incorpora una bomba de calor de alta eficiencia de serie para optimizar la autonomía en climas extremadamente fríos, reduciendo el impacto negativo de la calefacción en el consumo energético.\n\n## Competencia y posicionamiento en el mercado\nEn el plano comercial, el BYD Seal fue concebido con un objetivo claro: disputarle terreno directamente al Tesla Model 3, así como a berlinas eléctricas prémium de marcas tradicionales alemanas como el BMW i4 y el Audi Q4 e-tron Sportback. Gracias a su combinación de tracción integral, una aceleración de 0 a 100 km/h en apenas 3.8 segundos para su versión más potente, y una dotación de asistencias avanzadas a la conducción (ADAS) de nivel 2, el Seal ha logrado posicionarse como una alternativa altamente competitiva en los mercados de Asia, Europa y América Latina, redefiniendo las expectativas de lo que un sedán eléctrico de categoría generalista-prémium puede ofrecer."
 }

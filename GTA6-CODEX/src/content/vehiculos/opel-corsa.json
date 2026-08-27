@@ -12,15 +12,16 @@
   "manufacturer": "Opel",
   "class": "Hatchback",
   "customizable": false,
-  "power": "100 hp",
-  "price": "EUR 20.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "100 CV",
+  "price": "EUR 21.000 (referencia mercado europeo)",
+  "consumo": "5.3 l/100km combinado",
+  "dimensiones": "4.060 mm largo x 1.765 mm ancho x 1.435 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "note": "Se utilizaron datos técnicos de conocimiento general correspondientes a la sexta generación del Opel Corsa desarrollada bajo la plataforma CMP de Stellantis.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Los precios varían según el mercado europeo específico y las promociones vigentes",
+      "Las especificaciones exactas pueden cambiar según la motorización térmica o eléctrica elegida"
     ]
   },
   "performance": {
@@ -28,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.490Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:24:37.938Z",
+  "transmision": "Manual de 6 velocidades o automática de 8 velocidades",
+  "traccion": "Delantera",
+  "peso": "1.165 kg",
+  "tipoMotor": "Naftero (PureTech) / Eléctrico",
+  "potenciaKW": "74 kW",
+  "capacidadTanque": "44 litros",
+  "tiempoRecorrido": "9.9s",
+  "anoProduccion": "2019-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +123,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.199 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 309,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Sexta generación (F)",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -204,7 +205,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.447Z",
+    "lastChecked": "2026-08-27T01:24:37.938Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -222,5 +223,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Opel Corsa es uno de los hatchbacks compactos más emblemáticos y de mayor trayectoria en el mercado europeo. Nacido originalmente bajo el ala de General Motors en la década de 1980, el Corsa se convirtió rápidamente en un pilar fundamental para la marca alemana, democratizando el acceso a la movilidad urbana en numerosos países. A lo largo de las décadas, este modelo transitó por múltiples evoluciones estilísticas y mecánicas, adaptándose siempre a las demandas cambiantes del consumidor europeo y a las normativas de seguridad y emisiones cada vez más estrictas.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la historia del modelo llegó con el lanzamiento de la sexta generación (conocida internamente como Corsa F), presentada a partir de 2019. Este vehículo marcó la transición definitiva de Opel hacia el grupo Stellantis, adoptando la plataforma modular CMP. Esta arquitectura no solo permitió una significativa reducción de peso y una mejora notable en la rigidez estructural, sino que también abrió la puerta a la electrificación total con la llegada de la variante Corsa-e, demostrando la capacidad de adaptación del compacto a la nueva era de la movilidad sostenible sin perder su esencia práctica.\n\n## Curiosidades\nUna curiosidad interesante del Opel Corsa es que, a lo largo de su historia global, ha sido comercializado bajo una gran variedad de marcas según la región geográfica. Además de ser conocido como Opel en gran parte de Europa, el modelo ha adoptado denominaciones como Vauxhall en el Reino Unido, Chevrolet en América Latina y algunos mercados asiáticos, y Holden en Australia durante distintas etapas comerciales. Asimismo, el Corsa siempre se ha caracterizado por ser un referente en aerodinámica y eficiencia dentro de su segmento B, optimizando cada línea de su carrocería para reducir el consumo de combustible.\n\n## Competencia y posicionamiento\nEn el altamente competitivo segmento B europeo, el Opel Corsa compite mano a mano con pesos pesados de la industria como el Volkswagen Polo, el Peugeot 208 (con el que comparte plataforma y componentes mecánicos fundamentales), el Renault Clio y el Ford Fiesta en sus etapas previas. El posicionamiento del Corsa se destaca por ofrecer un balance muy equilibrado entre la tradicional ingeniería alemana de precisión, un diseño exterior e interior de aspecto moderno y tecnológico, y una gama de motorizaciones térmicas e híbridas o eléctricas que logran satisfacer tanto a flotas corporativas como a compradores particulares que buscan un vehículo versátil para el uso diario en ciudad y ruta."
 }

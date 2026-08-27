@@ -12,15 +12,16 @@
   "manufacturer": "Renault",
   "class": "SUV coupé",
   "customizable": false,
-  "power": "140 hp (híbrido)",
-  "price": "EUR 32.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "145 CV (híbrido)",
+  "price": "EUR 32.000 (MSRP referencia Europa)",
+  "consumo": "4.7 l/100km combinado",
+  "dimensiones": "4.568 mm largo x 1.820 mm ancho x 1.576 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "secondarySource": "https://es.wikipedia.org/wiki/Renault_Arkana",
+    "note": "Se utilizaron especificaciones técnicas oficiales de la variante E-Tech Hybrid comercializada en Europa, con cotizaciones de referencia.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "El precio puede variar según el mercado específico y los impuestos locales de importación."
     ]
   },
   "performance": {
@@ -28,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-25T23:22:07.511Z",
-  "transmision": "Manual o Automática",
+  "updatedAt": "2026-08-27T01:25:41.115Z",
+  "transmision": "Automática multimodo",
   "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "peso": "1.435 kg",
+  "tipoMotor": "Gasolina Híbrido (E-Tech)",
+  "potenciaKW": "105 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "10.8s",
+  "anoProduccion": "2020-2024",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +123,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.598 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 480,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra generación (XM)",
+  "anoLanzamiento": 2020,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -204,7 +205,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.456Z",
+    "lastChecked": "2026-08-27T01:25:41.115Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -222,5 +223,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\n\nEl Renault Arkana representa una de las apuestas más audaces de la marca del rombo en los últimos años al incursionar de lleno en el segmento de los SUV con silueta de tipo coupé. Originariamente desarrollado sobre una plataforma adaptada para el mercado ruso y lanzado en dicho país en 2019, el concepto evolucionó rápidamente hacia un producto de alcance global. Para el mercado europeo y los mercados internacionales, Renault reconfiguró el vehículo utilizando la plataforma modular CMF-B del Grupo Renault, la misma que emplean modelos exitosos como el Clio y el Captur de última generación. Esta transición no solo implicó mejoras estructurales profundas y estándares de seguridad más elevados, sino también la adopción de tecnologías de electrificación avanzadas.\n\n## Un hito o generación relevante\n\nEl hito más significativo en la trayectoria comercial del Arkana fue la introducción de la tecnología híbrida E-Tech en el año 2020 para el mercado europeo. Este sistema propulsor, derivado de la experiencia de Renault en la Fórmula 1, combina un motor naftero atmosférico de 1.6 litros con dos motores eléctricos y una innovadora caja de cambios dog-box sin embrague tradicional. Esta arquitectura permitió al Arkana posicionarse como un vehículo sumamente eficiente en entornos urbanos, capaz de circular en modo 100% eléctrico durante un porcentaje elevado de los trayectos diarios sin necesidad de enchufarse a una red de carga externa. La combinación de una estética deportiva con una alta eficiencia energética marcó un punto de inflexión en la oferta de SUV generalistas.\n\n## Curiosidades\n\nUna de las particularidades más interesantes del Renault Arkana es su doble faceta de desarrollo regional. Mientras que la versión destinada a Europa y los mercados de exportación global se fabrica en la planta de Busan, en Corea del Sur (donde originalmente se comercializó bajo la marca Samsung como XM3), la versión primigenia fabricada en Moscú tenía una orientación distinta y utilizaba una plataforma más antigua (la plataforma B0). Además, a pesar de su silueta marcadamente inclinada en la zaga que imita a los coupés deportivos, el Arkana logró mantener una capacidad de baúl sumamente generosa, superando los 450 litros en sus versiones térmicas tradicionales y rondando los 480 litros en configuraciones óptimas, demostrando que el diseño exterior fluido no necesariamente debía comprometer la practicidad interior o el espacio para los pasajeros de las plazas traseras.\n\n## Competencia y posicionamiento\n\nDentro del mercado automotriz, el Renault Arkana se ubica en el segmento C de los SUV, compitiendo de manera directa contra modelos de marcas generalistas que también adoptaron la silueta coupé o crossovers de estilo dinámico, tales como el Peugeot 3008, el Volkswagen Taigo, el Toyota C-HR y el Kia XCeed. Su principal argumento diferencial radica en ofrecer una estética diferenciadora y de aspiración más refinada o premium a un precio accesible, sumado a una mecánica híbrida autrecargable que resulta muy atractiva para los usuarios que buscan reducir el consumo de combustible en ciudad sin alterar sus hábitos de repostaje. De este modo, el Arkana logró consolidarse como una alternativa atractiva frente a los SUV tradicionales de formato más cuadrado."
 }

@@ -14,27 +14,31 @@
   "class": "Pickup grande",
   "customizable": false,
   "power": "400 hp",
-  "price": "USD 55.000",
-  "consumo": "12.5 l/100km (mixto)",
+  "price": "USD 36.800 (MSRP base EE.UU.)",
+  "consumo": "11.7 l/100km (mixto estimado)",
   "dimensiones": "5890 x 2029 x 1958 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.ford.com/trucks/f150/"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas principales, cotizaciones de referencia para el mercado norteamericano y las motorizaciones EcoBoost de la decimocuarta generación de la Ford F-150.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado de importación y los opcionales elegidos",
+      "El consumo de combustible depende directamente de la motorización seleccionada (V6, V8 o híbrida PowerBoost)"
+    ]
   },
   "performance": {
     "speed": "180 km/h",
     "acceleration": "0-100 km/h en 5.8s (V6 EcoBoost)"
   },
   "createdAt": "2026-08-23T21:59:03.178078Z",
-  "updatedAt": "2026-08-25T23:22:07.357Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:40:21.709Z",
+  "transmision": "Automática de 10 velocidades",
+  "traccion": "Tracción integral (4x4)",
+  "peso": "2.100-2.450 kg",
+  "tipoMotor": "Gasolina V6 EcoBoost / V8",
+  "potenciaKW": "298 kW",
+  "capacidadTanque": "98 litros",
+  "tiempoRecorrido": "0-100 km/h en 5.8s",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "3.5 litros",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 5,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Decimocuarta generación",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "comercial",
   "gallery": {
@@ -259,8 +263,8 @@
     "description": "Pickup full-size de Ford, la más vendida de Estados Unidos, con motorizaciones V6 EcoBoost hasta V8."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.377Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:40:21.709Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -313,5 +317,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Ford F-150 forma parte de la legendaria familia de pickups F-Series de Ford, una línea que ha sido la columna vertebral del mercado norteamericano de vehículos comerciales y particulares durante décadas. Nacida como una evolución lógica para cubrir el espacio entre las camionetas de trabajo liviano y pesado, la F-150 se transformó con el correr de los años en un auténtico fenómeno cultural y comercial, consolidándose de manera ininterrumpida como el vehículo más vendido en los Estados Unidos por más de cuatro décadas.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de la F-150 fue la introducción masiva de carrocerías de aleación de aluminio de alta resistencia sobre un chasis de acero reforzado de alta graduación, implementada a partir de la decimotercera generación. Esta jugada audaz permitió reducir drásticamente el peso total del vehículo sin comprometer su capacidad de carga ni su robustez estructural. Asimismo, la llegada de los motores EcoBoost con turbocompresor marcó un cambio de paradigma, demostrando que bloques de menor cilindrada podían entregar curvas de torque y potencia superiores a los tradicionales motores V8, optimizando al mismo tiempo la eficiencia general.\n\n## Curiosidades\nMás allá de su indiscutido enfoque utilitario, la F-150 se ha convertido en una auténtica plataforma de innovación tecnológica para el óvalo azul. Entre sus particularidades más destacadas se encuentra el sistema Pro Power Onboard, un generador eléctrico integrado que permite extraer energía directamente de la batería o el motor de la camioneta para alimentar herramientas eléctricas, electrodomésticos o incluso una casa rodante durante un corte de luz. Además, versiones recientes han incorporado variantes totalmente eléctricas (Lightning) y mecánicas híbridas enchufables que redefinen el concepto de la fuerza bruta aplicada al transporte diario.\n\n## Competencia y posicionamiento\nEn el segmento de las pickups full-size, la Ford F-150 compite mano a mano con históricos rivales norteamericanos como la Chevrolet Silverado y la RAM 1500, además de enfrentarse a la creciente presión de fabricantes extranjeros en mercados globales. Su posicionamiento dentro del mercado se sustenta en una gama sumamente versátil que va desde configuraciones puramente laborales de flota hasta opulentas versiones tope de gama (como las líneas Platinum o Limited) que rozan el lujo de un sedán ejecutivo. Esta capacidad de adaptarse tanto al barro de un yacimiento petrolero como al asfalto urbano más exigente es la clave principal de su vigencia y liderazgo global."
 }

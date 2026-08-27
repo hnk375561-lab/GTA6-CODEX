@@ -13,28 +13,32 @@
   "manufacturer": "Fiat",
   "class": "Furgon compacto",
   "customizable": false,
-  "power": "99 hp (motor 1.3 Firefly)",
-  "price": "ARS 29.920.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4407 x 1738 x 1900 mm",
+  "power": "87 CV",
+  "price": "ARS 29.920.000 (referencia mercado argentino)",
+  "consumo": "7.5 l/100km urbano aprox.",
+  "dimensiones": "4384 x 1643 x 1724 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.monkeymotor.net/2025/06/fiat-fiorino-precio-argentina-ficha-tecnica.html"
+    "level": "respaldado",
+    "note": "Se actualizaron las especificaciones técnicas reales del Fiat Fiorino comercializado en Argentina con motor 1.3 Firefly, capacidad de carga volumétrica del furgón y dimensiones acordes al modelo regional.",
+    "limitations": [
+      "Los precios en pesos varían constantemente por la inflación y contexto macroeconómico argentino.",
+      "Algunas cifras de aceleración son estimadas debido a la falta de pruebas oficiales cronometradas recientes para este mercado."
+    ]
   },
   "performance": {
     "speed": "165 km/h",
     "acceleration": "0-100 km/h en 12.5s"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T23:22:07.347Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:38:56.642Z",
+  "transmision": "Manual de 5 velocidades",
+  "traccion": "Delantera",
+  "peso": "1115 kg (en orden de marcha)",
+  "tipoMotor": "Naftero (Gasolina)",
+  "potenciaKW": "64 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 14.5s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -120,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1332 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 2,
+  "baul": 3100,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Actualización basada en Fiat Uno/Palio",
+  "anoLanzamiento": 2013,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -251,8 +255,8 @@
     "description": "Furgon utilitario compacto, el mas elegido de su segmento en Argentina para logistica urbana y PyMEs."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.369Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:38:56.642Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -305,5 +309,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Fiat Fiorino es un nombre histórico dentro del segmento de los vehículos comerciales livianos en Sudamérica. Derivado originalmente de la familia del Fiat 147 y posteriormente de los exitosos Fiat Uno y Palio, este furgón compacto se ha ganado un lugar de privilegio en las calles argentinas. Su concepción siempre estuvo orientada a ofrecer una herramienta de trabajo económica, ágil y de bajo costo operativo, pensada específicamente para resolver las necesidades logísticas de la última milla en grandes centros urbanos.\n\n## Un hito o generación relevante\nUn punto de inflexión muy importante para la gama utilitaria de la marca italiana en la región fue la incorporación del motor 1.3 litros Firefly de cuatro cilindros, en reemplazo del veterano propulsor Fire de 8 válvulas. Esta evolución mecánica no solo permitió cumplir con normativas de emisiones más estrictas, sino que mejoró notablemente la entrega de torque a bajas revoluciones y redujo el consumo de combustible, aspectos fundamentales para un vehículo que pasa la mayor parte de su vida útil circulando en condiciones de tráfico pesado.\n\n## Curiosidades\nA pesar de ser un vehículo estrictamente de trabajo, el Fiat Fiorino comparte plataforma y numerosos componentes mecánicos y estéticos con vehículos de pasajeros, lo que facilita enormemente la disponibilidad de repuestos y reduce los costos de mantenimiento en talleres mecánicos de todo el país. Su caja de carga optimizada permite aprovechar al máximo cada metro cúbico, transformándolo en un clásico indiscutido para flotas de PyMEs, empresas de mensajería, distribución de alimentos y servicios técnicos.\n\n## Competencia y posicionamiento\nEn el mercado argentino, el Fiat Fiorino compite históricamente en un segmento muy acotado pero de alta demanda. Si bien en distintos momentos ha enfrentado rivales directos de origen regional o extrazona (como versiones furgón derivadas de otros hatchbacks compactos), el utilitario de Fiat mantiene un liderazgo sostenido gracias a su relación precio-producto, la capilaridad de su red de concesionarios y talleres en todo el territorio nacional, y un valor de reventa históricamente sólido dentro del mercado de usados comerciales."
 }

@@ -13,28 +13,32 @@
   "manufacturer": "Peugeot",
   "class": "Crossover fastback",
   "customizable": false,
-  "power": "215 hp",
-  "price": "USD 52.200",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "215 CV",
+  "price": "USD 52.200 (Referencia mercado argentino)",
+  "consumo": "5.2 l/100km (Híbrido Enchufable) / 6.0 l/100km (PureTech)",
+  "dimensiones": "4.687 mm largo x 1.859 mm ancho x 1.478 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.autodataar.com/nota-nuevo-peugeot-408-precio--motor-y-equipamiento-en-argentina-65035"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones globales de la plataforma EMP2 del Peugeot 408 europeo y su llegada puntual al mercado argentino en versión única GT importada de Francia.",
+    "limitations": [
+      "Los precios y disponibilidad pueden variar según la coyuntura de importación en Argentina",
+      "Variaciones en el consumo según el ciclo de homologación WLTP frente a condiciones reales de manejo"
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T22:19:24.158453Z",
-  "updatedAt": "2026-08-25T23:22:07.497Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
-  "tipoMotor": "Gasolina turbo",
-  "potenciaKW": "200-400 kW",
-  "capacidadTanque": "50-70 litros",
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:54:48.678Z",
+  "transmision": "Automática e-EAT8 de 8 velocidades",
+  "traccion": "Delantera",
+  "peso": "1.425 kg - 1.662 kg",
+  "tipoMotor": "Híbrido Enchufable (PHEV) / Naftero PureTech",
+  "potenciaKW": "132 kW - 165 kW",
+  "capacidadTanque": "40 a 52 litros",
+  "tiempoRecorrido": "7.8 segundos",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.598 cc (versión híbrida) / 1.199 cc (PureTech)",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 471,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra Generación (P54)",
+  "anoLanzamiento": 2022,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -253,8 +257,8 @@
     "description": "Crossover fastback importado de Francia, version unica GT, regreso del nombre 408 al mercado argentino tras su etapa como sedan."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.450Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:54:48.678Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -307,5 +311,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo y el concepto fastback\nEl Peugeot 408 representa una ruptura total con respecto a la historia previa de la denominación dentro de la marca del león. Si bien en mercados de nuestra región como el argentino el nombre estuvo históricamente asociado a un sedán clásico de segmento C producido en El Palomar, esta nueva encarnación global (conocida internamente bajo el código P54) adopta una silueta crossover fastback. Este diseño combina la elegancia y la postura dinámica de un sedán de caída pronunciada con la altura libre al suelo y los protectores plásticos característicos de los SUV, un formato que busca capturar a un público que valora tanto la estética vanguardista como la versatilidad urbana.\n\n## Un hito de diseño y arquitectura\nFabricado inicialmente sobre la plataforma modular EMP2 en Mulhouse, Francia (y posteriormente en otras plantas globales), este modelo se convirtió en uno de los proyectos más audaces de Stellantis en Europa. Su impronta aerodinámica destaca por un coeficiente de resistencia bajo, líneas angulosas muy marcadas en los laterales y la evolución del lenguaje lumínico con las características \"garras\" delanteras y traseras. En su habitáculo, estrena la última evolución del puesto de conducción i-Cockpit de Peugeot, incorporando pantallas táctiles flotantes, mandos i-Toggles configurables y un volante de dimensiones reducidas que prioriza una postura de manejo deportiva y tecnológica.\n\n## Curiosidades del desarrollo\nUna de las particularidades más interesantes del Peugeot 408 es cómo la marca logró posicionarlo en un territorio de mercado inexplorado, ubicándose a mitad de camino entre un hatchback tradicional, un sedán coupé y un SUV compacto. En el mercado europeo, el modelo comparte componentes estructurales y mecánicos con el exitoso Peugeot 308, pero estira su distancia entre ejes para maximizar el espacio en las plazas traseras y la capacidad de carga del baúl. Asimismo, su desarrollo aerodinámico requirió cientos de horas de túnel de viento para asegurar que la caída fastback no comprometiera el flujo de aire ni aumentara los nivelescabina de ruido a velocidades de autopista.\n\n## Competencia y posicionamiento en el mercado\nEn términos de posicionamiento, el Peugeot 408 se ubica en el segmento C superior o limítrofe con el segmento premium generalista. En los mercados internacionales compite de manera directa contra modelos de silueta similar como el Renault Arkana o el Citroën C4 X (su hermano de plataforma), además de medirse tangencialmente con crossovers de marcas alemanas. En su llegada puntual a la Argentina en versión única GT, el modelo apunta a un nicho exclusivo de compradores que buscan diferenciarse del universo masivo de los SUV tradicionales, apostando por la impronta del diseño europeo, acabados interiores de alta calidad y un nivel de equipamiento tecnológico de vanguardia."
 }

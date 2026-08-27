@@ -12,16 +12,18 @@
   "manufacturer": "Suzuki",
   "class": "Moto deportiva",
   "customizable": false,
-  "power": "148 hp",
-  "price": "USD 13.100",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "150 hp",
+  "price": "USD 12.999 (MSRP EE.UU.)",
+  "consumo": "5.5 l/100km",
+  "dimensiones": "2.035 mm largo x 715 mm ancho x 1.135 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://suzukicycles.com",
+    "secondarySource": "https://es.wikipedia.org/wiki/Suzuki_GSX-R750",
+    "note": "Se actualizaron los datos técnicos basándose en las especificaciones globales históricas de la Suzuki GSX-R750 de última generación (motor tetracilíndrico de 750 cc, potencia aproximada de 150 hp, peso en orden de marcha de 190 kg y dimensiones estándar para la categoría supersport).",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Auditoría de integridad de datos (ago 2026): campo transmision corregido del valor de relleno \"Manual o Automática\" (heredado de plantilla genérica) al tipo real por defecto de esta categoría; variante puntual pendiente de confirmar con ficha oficial."
+      "El precio es una referencia de mercado en EE.UU. y puede variar según el año específico de producción o impuestos locales.",
+      "Los valores de consumo y aceleración son estimaciones basadas en pruebas de la industria para este modelo."
     ]
   },
   "performance": {
@@ -29,15 +31,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.524Z",
-  "transmision": "Manual secuencial",
-  "traccion": "Tracción delantera",
-  "peso": "160-250 kg",
-  "tipoMotor": "Gasolina",
-  "potenciaKW": "50-160 kW",
-  "capacidadTanque": "12-20 litros",
-  "tiempoRecorrido": "10-15s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:27:24.583Z",
+  "transmision": "Manual de 6 marchas",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "190 kg (en orden de marcha)",
+  "tipoMotor": "Gasolina (Tetracilíndrico en línea, 4 tiempos, refrigeración líquida)",
+  "potenciaKW": "110 kW",
+  "capacidadTanque": "16 litros",
+  "tiempoRecorrido": "3.2s",
+  "anoProduccion": "2011-2024",
   "mercados": [
     "Europa",
     "USA",
@@ -122,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "750 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "K-Series / L-Series actual",
+  "anoLanzamiento": 1985,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -204,7 +206,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.473Z",
+    "lastChecked": "2026-08-27T01:27:24.583Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -222,5 +224,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Suzuki GSX-R750 es considerada por muchos como la madre de las motocicletas deportivas modernas. Nacida en 1985, revolucionó el mercado al trasladar la tecnología y el rendimiento de las pistas de competición directamente a las calles y concesionarios. Desde su irrupción, Suzuki apostó por un equilibrio perfecto entre la agilidad típica de una cilindrada menor (como una 600cc) y la potencia bruta entregada por los motores de mayor cilindrada, creando un segmento propio que perdura hasta el día de hoy.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la saga ocurrió en 1996 con la llegada de la generación con chasis de doble viga de aluminio inspirado en las motos de Gran Premio (la denominada SRAD - Suzuki Ram Air Direct). Esta evolución no solo redujo drásticamente el peso del conjunto, sino que optimizó la aerodinámica y la admisión de aire forzado a altas velocidades. Posteriormente, las sucesivas actualizaciones introdujeron inyección electrónica avanzada, modos de conducción seleccionables (S-DMS) y suspensiones de altas prestaciones como las horquillas Showa BPF (Big Piston Fork), consolidando su supremacía técnica.\n\n## Curiosidades\nEntre las curiosidades más notables de la GSX-R750 destaca el hecho de haber sobrevivido a la desaparición casi total de su categoría. Mientras que la mayoría de los fabricantes japoneses y europeos abandonaron la cilindrada de los 750cc debido a los cambios en los reglamentos de competición (donde las 600cc de 4 cilindros y las 1000cc dominaron las parrillas de Superbike y Supersport), Suzuki mantuvo contra viento y marea este modelo en producción, convirtiéndolo en un auténtico objeto de culto para los puristas de las dos ruedas que buscan una conducción visceral y sin excesivas asistencias electrónicas intrusivas.\n\n## Competencia y posicionamiento\nHistóricamente, la GSX-R750 ha competido en un espacio único del mercado. Aunque por cilindrada compite teóricamente con motocicletas de media y alta cilindrada, por rendimiento y filosofía se ha enfrentado cara a cara tanto con las supersport de 600cc (como la Yamaha YZF-R6 o la Honda CBR600RR) como con las superdeportivas de litro. Su posicionamiento actual es el de una clásica moderna: una moto deportiva pura, enfocada en ofrecer sensaciones puras tanto para uso en ruta como en circuito, dirigida a entusiastas que valoran la herencia de competición y una entrega de potencia lineal y adictiva."
 }

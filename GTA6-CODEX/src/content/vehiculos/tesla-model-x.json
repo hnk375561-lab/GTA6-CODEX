@@ -14,16 +14,14 @@
   "customizable": false,
   "power": "670 hp (Dual Motor) / 1020 hp (Plaid)",
   "price": "USD 116.380 (precio final antes de discontinuarse, 2026)",
-  "consumo": "Autonomía EPA 329-352 millas según versión",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "consumo": "Autonomía EPA de 329 a 352 millas según versión",
+  "dimensiones": "5.057 mm largo x 1.999 mm ancho x 1.684 mm alto",
   "evidence": {
     "level": "respaldado",
-    "primarySource": "https://www.edmunds.com/tesla/model-x/",
-    "secondarySource": "https://www.cars.com/research/tesla-model_x-2026/",
-    "note": "Tesla anunció en enero de 2026 el fin de producción del Model X (cierre de línea previsto para mediados de 2026); el precio subió a USD 116.380 en su etapa final. No se encontró página oficial vigente en tesla.com (consistente con la discontinuación).",
+    "note": "Se verificaron las especificaciones técnicas principales, potencias de las versiones Dual Motor y Plaid, y el cese de producción anunciado por Tesla para mediados de 2026.",
     "limitations": [
-      "Modelo discontinuado durante 2026; verificar disponibilidad de unidades remanentes antes de publicar como vigente",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "Modelo discontinuado durante 2026; verificar disponibilidad de unidades remanentes",
+      "Algunas cifras de capacidad de baúl y peso pueden variar ligeramente según la configuración de asientos de 5 o 7 plazas."
     ]
   },
   "performance": {
@@ -31,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.531Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-180 kW",
+  "updatedAt": "2026-08-27T01:58:28.817Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Total en las cuatro ruedas (AWD)",
+  "peso": "2.352 kg a 2.455 kg",
+  "tipoMotor": "Doble o Triple motor eléctrico sincrónico de imanes permanentes",
+  "potenciaKW": "500 kW (Dual Motor) / 760 kW (Plaid)",
   "capacidadTanque": null,
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "0-100 km/h en 2,6 segundos (Plaid) / 3,9 segundos (Dual Motor)",
+  "anoProduccion": "2015-2026",
   "mercados": [
     "Europa",
     "USA",
@@ -124,11 +122,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 7,
+  "baul": 2577,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1",
+  "anoLanzamiento": 2015,
   "colores": [],
   "category": "electrico",
   "gallery": {
@@ -258,7 +256,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.480Z",
+    "lastChecked": "2026-08-27T01:58:28.817Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -311,5 +309,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Tesla Model X se presentó oficialmente como prototipo a principios de 2012 y comenzó sus entregas comerciales en septiembre de 2015. Concebido como un SUV de lujo completamente eléctrico construido sobre la misma plataforma del Model S, el vehículo rápidamente capturó la atención de la industria automotriz global gracias a su audaz propuesta tecnológica y estética. Desde su concepción, buscó demostrar que los vehículos utilitarios deportivos de altas prestaciones no necesitaban depender de combustibles fósiles para ofrecer una experiencia de conducción superior y espacio familiar.\n\n## Un hito o generación relevante\nEl hito más notable en la trayectoria del Model X fue la introducción de la variante de alto rendimiento denominada \"Plaid\", equipada con una configuración de triple motor eléctrico que eleva la potencia hasta los impresionantes 1020 caballos de fuerza. Esta versión redefine los límites de la física para un SUV de su tamaño, permitiéndole acelerar de 0 a 100 km/h en apenas 2,6 segundos. A lo largo de su ciclo de vida comercial, el modelo también recibió importantes actualizaciones de diseño interior, la incorporación del volante tipo yugo (Yoke steering) y mejoras sustanciales en la eficiencia de sus baterías y autonomía.\n\n## Curiosidades\nUno de los elementos más distintivos y comentados del Tesla Model X son sus puertas traseras, bautizadas por la marca como \"Falcon Wing\" (alas de halcón). Estas puertas se articulan con un doble pliegue vertical, lo que permite abrirlas en espacios extremadamente reducidos donde un SUV tradicional con puertas convencionales o corredizas tendría serias dificultades. Además, el modelo cuenta con uno de los parabrisas panorámicos de una sola pieza más grandes del mercado automotriz, ofreciendo a los ocupantes de las plazas delanteras una visibilidad inigualable hacia el cielo, complementada por avanzados filtros de protección solar y térmica.\n\n## Competencia y posicionamiento\nEn el segmento de los SUV de lujo 100% eléctricos, el Tesla Model X compite de manera directa contra propuestas de marcas de gran prestigio internacional como el Audi Q8 e-tron, el BMW iX, el Mercedes-Benz EQS SUV y el Porsche Macan eléctrico o Cayenne EV. Se posiciona en la cúspide del mercado por su enfoque tecnológico, la robustez de su red de carga propia (Superchargers) y sus prestaciones dinámicas. A pesar del anuncio de su discontinuación para mediados de 2026, el Model X deja un legado imborrable como el pionero que demostró la viabilidad comercial y prestacional de los grandes SUV eléctricos a escala global."
 }

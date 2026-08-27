@@ -13,17 +13,15 @@
   "class": "Sedán eléctrico",
   "customizable": false,
   "power": "670 hp (Dual Motor) / 1020 hp (Plaid)",
-  "price": "USD 111.380 (precio final antes de discontinuarse, 2026)",
-  "consumo": "Autonomía EPA 309-410 millas según versión",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "price": "USD 111.380 (precio final aproximado antes de su cese de producción)",
+  "consumo": "Autonomía EPA aproximada de 320 a 402 millas según la versión (Dual Motor o Plaid)",
+  "dimensiones": "4.979 mm largo x 1.964 mm ancho x 1.445 mm alto",
   "evidence": {
     "level": "respaldado",
-    "primarySource": "https://www.edmunds.com/tesla/model-s/",
-    "secondarySource": "https://www.cars.com/research/tesla-model_s-2026/",
-    "note": "Tesla anunció en enero de 2026 el fin de producción del Model S; el precio subió a USD 111.380 en su etapa final antes de discontinuarse. No se encontró página oficial vigente en tesla.com (consistente con la discontinuación).",
+    "note": "Se actualizaron los datos técnicos corrigiendo los valores genéricos de vehículos de combustión interna por especificaciones reales del Tesla Model S, ajustando dimensiones, peso, tiempos de aceleración y potencia según registros de la industria automotriz.",
     "limitations": [
-      "Modelo discontinuado durante 2026; verificar disponibilidad de unidades remanentes antes de publicar como vigente",
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "Modelo discontinuado recientemente; las especificaciones pueden variar levemente según el año exacto de fabricación dentro del ciclo comercial del vehículo.",
+      "Los datos de autonomía varían dependiendo del tamaño de llantas seleccionado y las condiciones de prueba EPA."
     ]
   },
   "performance": {
@@ -31,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.531Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.200-1.500 kg",
+  "updatedAt": "2026-08-27T01:58:19.698Z",
+  "transmision": "Automática de relación única",
+  "traccion": "AWD (Tracción integral en las cuatro ruedas con doble o triple motor)",
+  "peso": "Aprox. 2.068 - 2.162 kg",
   "tipoMotor": "Eléctrico",
-  "potenciaKW": "200-400 kW",
+  "potenciaKW": "500 kW (Dual Motor) / 760 kW (Plaid)",
   "capacidadTanque": null,
-  "tiempoRecorrido": "3-8s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "0-100 km/h en 2,1 segundos (versión Plaid)",
+  "anoProduccion": "2012 - 2026",
   "mercados": [
     "Europa",
     "USA",
@@ -124,11 +122,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 793,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "1ra Generación (con múltiples actualizaciones de diseño y tecnología)",
+  "anoLanzamiento": 2012,
   "colores": [],
   "category": "electrico",
   "gallery": {
@@ -258,7 +256,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.479Z",
+    "lastChecked": "2026-08-27T01:58:19.698Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -311,5 +309,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\n\nEl Tesla Model S se lanzó originalmente en 2012, revolucionando por completo la industria automotriz global al demostrar que un vehículo 100% eléctrico podía combinar una autonomía real utilizable, un diseño atractivo y prestaciones dignas de un superdeportivo. A lo largo de su ciclo comercial, este sedán de lujo se convirtió en el buque insignia de la marca de Elon Musk, marcando el estándar tecnológico para la movilidad eléctrica moderna y obligando a los fabricantes tradicionales a acelerar sus propios programas de electrificación.\n\n## Un hito o generación relevante\n\nUn punto de inflexión absoluto en la historia del Model S fue la introducción de la variante de altas prestaciones denominada Plaid. Equipada con una configuración de tres motores eléctricos, esta versión rompió esquemas al superar la barrera de los 1.000 caballos de fuerza (1020 hp) y ofrecer una aceleración de 0 a 100 km/h en poco más de dos segundos. Este hito no solo redefinió lo que se esperaba de un sedán de producción masiva en términos de velocidad pura en recta, sino que consolidó la superioridad de la ingeniería de propulsión eléctrica de Tesla en circuitos y pruebas de rendimiento.\n\n## Curiosidades\n\nA nivel de diseño e ingeniería, el Model S introdujo innovaciones que hoy en día se consideran habituales pero que en su momento fueron disruptivas, como las manijas de puertas embutidas que se despliegan automáticamente, las actualizaciones de software inalámbricas (OTA) que mejoraban el auto de manera remota mientras estaba estacionado, y el uso pionero de una enorme pantalla táctil central para controlar prácticamente todas las funciones del vehículo. Además, su bajísimo coeficiente aerodinámico y la disposición de las baterías en el piso del chasis (creando un centro de gravedad sumamente bajo) le otorgaron una estabilidad y seguridad dinámica excepcionales, logrando en su momento calificaciones sobresalientes en las pruebas de impacto de organismos internacionales.\n\n## Competencia y posicionamiento\n\nPosicionado firmemente en el segmento de los sedanes ejecutivos y de lujo de altas prestaciones, el Tesla Model S compitió históricamente contra gigantes consagrados de la industria alemana como el Porsche Taycan, el Audi e-tron GT y los sedanes eléctricos de Mercedes-Benz y BMW. Si bien la competencia se intensificó notablemente con la llegada de propuestas europeas dotadas de acabados interiores más tradicionales y refinados, el Model S se mantuvo como un referente indiscutido gracias a su avanzada red de supercargadores, su superior eficiencia energética por kilovatio-hora y su ecosistema tecnológico propietario, cerrando un ciclo histórico con su discontinuación anunciada en 2026."
 }

@@ -12,29 +12,29 @@
   "manufacturer": "Kawasaki",
   "class": "Moto naked",
   "customizable": false,
-  "power": "92.2 kW (125 hp / 125 CV) a 9.500 rpm",
-  "price": "EUR 10.299 (versión \"full\" A, referencia mercado europeo)",
+  "power": "125 CV (92.2 kW) a 9.500 rpm",
+  "price": "EUR 10.299 (versión full, referencia mercado europeo)",
   "consumo": "5.4 l/100km combinado (referencia)",
-  "dimensiones": "2.075 mm largo x 800 mm ancho x 1.065 mm alto, distancia entre ejes 1.450 mm",
+  "dimensiones": "2.075 mm x 800 mm x 1.065 mm (largo x ancho x alto)",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Cifras de la versión \"full\" (carnet A) MY2024. Existe versión limitada a 95 CV/70kW para carnet A2, mecánicamente idéntica salvo la reprogramación de potencia.",
-    "limitations": [
-      "Precio de referencia mercado europeo, varía por país",
-      "Versión SE añade suspensiones y frenos de mayor nivel a precio superior"
-    ],
     "primarySource": "https://moteo.es/kawasaki-z900-2024-precio-ficha-tecnica/",
-    "secondarySource": "https://www.motofichas.com.mx/marcas/kawasaki/z900"
+    "secondarySource": "https://www.motofichas.com.mx/marcas/kawasaki/z900",
+    "note": "Se verificaron las especificaciones técnicas, potencia, peso y capacidades de la Kawasaki Z900 modelo 2024 a partir de fuentes especializadas del sector.",
+    "limitations": [
+      "Precio de referencia del mercado europeo, puede variar según el país y los impuestos locales.",
+      "La versión con limitación para carnet A2 cuenta con 95 CV (70 kW)."
+    ]
   },
   "performance": {
     "speed": "235 km/h (referencia)",
     "acceleration": "0-100 km/h en 3.2s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-26T07:35:35.932Z",
-  "transmision": "Manual 6 velocidades con embrague antirrebote",
-  "traccion": "4x2 (trasera, por cadena)",
-  "peso": "212 kg (en orden de marcha)",
+  "updatedAt": "2026-08-27T01:49:15.346Z",
+  "transmision": "Manual de 6 velocidades con embrague antirrebote",
+  "traccion": "Trasera por cadena",
+  "peso": "212 kg en orden de marcha",
   "tipoMotor": "4 cilindros en línea, 4 tiempos, refrigeración líquida (DOHC 16V)",
   "potenciaKW": "92.2 kW",
   "capacidadTanque": "17 litros",
@@ -136,7 +136,7 @@
   "baul": null,
   "maleteroMin": null,
   "generacion": "Segunda generación (2017-presente)",
-  "anoLanzamiento": "2017",
+  "anoLanzamiento": 2017,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -212,7 +212,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T07:35:35.925Z",
+    "lastChecked": "2026-08-27T01:49:15.346Z",
     "dataQuality": 0.9
   },
   "indexed": true,
@@ -246,5 +246,6 @@
     ],
     "auditNotes": "Lote 6 (ago 2026): datos de la versión \"full\" A MY2024, mercado europeo.",
     "dataQuality": 0.9
-  }
+  },
+  "content": "## Historia del modelo\nLa Kawasaki Z900 irrumpió en el mercado internacional para reemplazar a la exitosa Z800, heredando una estirpe de motocicletas naked de gran cilindrada que priorizan las sensaciones directas de manejo y una estética agresiva conocida bajo el concepto de diseño \"Sugomi\". Desde su lanzamiento inicial, la Z900 se posicionó rápidamente como uno de los pilares fundamentales dentro del catálogo de la marca de Akashi, logrando un equilibrio muy elogiado entre un motor tetracilíndrico contundente y una parte ciclo ágil que invita tanto a la conducción deportiva en ruta como al uso cotidiano.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la trayectoria de la Z900 se dio con su profunda actualización tecnológica, incorporando asistencias electrónicas avanzadas como modos de conducción configurables, control de tracción de tres niveles y una moderna pantalla TFT a color de 4,3 pulgadas con conectividad para smartphones mediante la aplicación Rideology de Kawasaki. Esta evolución permitió que la naked conservara su carisma visceral de vieja escuela pero adaptada a los estándares tecnológicos y de seguridad exigidos por los motociclistas modernos, consolidando su liderazgo en ventas dentro del segmento de media-alta cilindrada en numerosos mercados globales.\n\n## Curiosidades\nEntre los aspectos más destacados de la Kawasaki Z900 se encuentra su chasis multitubular de acero de alta resistencia, diseñado específicamente para optimizar la centralización de masas y ofrecer una rigidez sobresaliente sin incrementar desmesuradamente el peso del conjunto. Además, el característico sonido de su admisión y el escape de cuatro salidas agrupadas hacia el lateral transmiten una personalidad única que la distingue claramente de sus competidoras bicilíndricas o tricilíndricas en el mismo rango de precio.\n\n## Competencia y posicionamiento\nEn el plano comercial, la Kawasaki Z900 compite directamente en el segmento de las naked de peso medio-alto frente a referentes consagrados como la Yamaha MT-09, la Honda CB1000R, la KTM 890 Duke y la Suzuki GSX-S750. Su posicionamiento de mercado se sustenta en una excelente relación precio-producto, ofreciendo una potencia superior a los 120 caballos con un motor de cuatro cilindros que resulta sumamente elástico, lo que le ha valido el favor de una amplia base de usuarios que buscan altas prestaciones mecánicas sin incurrir en los costos de mantenimiento y adquisición de las hyper-naked de litro."
 }

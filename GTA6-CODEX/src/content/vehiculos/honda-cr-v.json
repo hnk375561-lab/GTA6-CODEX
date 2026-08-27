@@ -15,27 +15,26 @@
   "power": "204 hp (152 kW) combinados a 6.100 rpm",
   "price": "USD 33.350 (Sport Hybrid, referencia mercado US)",
   "consumo": "6.3 l/100km combinado (37 mpg EPA combinado)",
-  "dimensiones": "4.694 mm largo x 1.867 mm ancho x 1.682 mm alto, distancia entre ejes 2.701 mm",
+  "dimensiones": "4.694 mm largo x 1.867 mm ancho x 1.682 mm alto",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "Cifras de la variante CR-V Sport Hybrid MY2024 (mercado US), tracción delantera de serie con AWD opcional.",
+    "level": "respaldado",
+    "secondarySource": "https://www.topspeed.com/honda/cr-v-hybrid/2024/",
+    "note": "Se verificaron las especificaciones técnicas, dimensiones y motorización de la Honda CR-V Sport Hybrid MY2024 a partir de fuentes especializadas del mercado norteamericano.",
     "limitations": [
       "Existe versión no híbrida con motor turbo 1.5L (190 hp) a precio menor",
-      "Precio varía según trim (Sport, Sport-L, Sport Touring) y mercado",
-      "Cifras de aceleración son estimadas, Honda no publica 0-100 oficial para este modelo"
-    ],
-    "primarySource": "https://www.kbb.com/honda/crv-hybrid/2024/specs",
-    "secondarySource": "https://www.topspeed.com/honda/cr-v-hybrid/2024/"
+      "El precio varía según el nivel de equipamiento (trim) y el mercado de comercialización",
+      "Las cifras de aceleración son estimadas ya que Honda no publica oficialmente el tiempo de 0 a 100 km/h para este modelo"
+    ]
   },
   "performance": {
     "speed": "180 km/h (referencia)",
     "acceleration": "0-100 km/h en 7.9s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-26T07:28:17.777Z",
-  "transmision": "E-CVT (transmisión de dos motores, sin caja de engranajes tradicional)",
-  "traccion": "Delantera (AWD opcional en Sport/Sport-L)",
-  "peso": "1.703-1.781 kg (curb weight, según trim)",
+  "updatedAt": "2026-08-27T01:44:41.693Z",
+  "transmision": "E-CVT (transmisión electrónica variable continua)",
+  "traccion": "Delantera (AWD opcional)",
+  "peso": "1.703-1.781 kg",
   "tipoMotor": "Gasolina Atkinson 2.0L + 2 motores eléctricos (e:HEV)",
   "potenciaKW": "152 kW",
   "capacidadTanque": "57 litros",
@@ -134,10 +133,10 @@
   "emisiones": null,
   "tipo": "SUV compacto híbrido",
   "asientos": 5,
-  "baul": "1.028 litros (asientos arriba) / 2.166 litros (asientos abatidos)",
+  "baul": 1028,
   "maleteroMin": null,
-  "generacion": "Sexta generación (RS, 2023-presente)",
-  "anoLanzamiento": "2022",
+  "generacion": "Sexta generación (2023-presente)",
+  "anoLanzamiento": 2022,
   "colores": [],
   "category": "vehiculo",
   "gallery": {
@@ -212,8 +211,8 @@
     "description": "SUV compacto híbrido best-seller global de Honda, sexta generación (2023-presente)."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T07:28:17.766Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:44:41.693Z",
     "dataQuality": 0.9
   },
   "indexed": true,
@@ -247,5 +246,6 @@
     ],
     "auditNotes": "Lote 5 (ago 2026): datos de la Sport Hybrid MY2024, mercado US.",
     "dataQuality": 0.9
-  }
+  },
+  "content": "## Historia del modelo\nLa Honda CR-V es uno de los SUV compactos más importantes y exitosos a nivel global desde su irrupción en el mercado a mediados de la década del 90. Concebido originalmente como un vehículo recreativo de uso diario, el modelo evolucionó de manera constante hasta convertirse en un pilar fundamental para la marca japonesa. A lo largo de las décadas, la CR-V supo leer las necesidades de las familias alrededor del mundo, priorizando siempre la habitabilidad, la confiabilidad mecánica y la modularidad interior. Cada renovación ha sabido adaptar su propuesta estética a los cánones de diseño contemporáneo, consolidándose como un referente ineludible en el segmento de los SUV medianos y compactos.\n\n## Un hito o generación relevante\nLa sexta generación de la Honda CR-V, introducida a partir del año modelo 2023 y en curso, marca un punto de inflexión tecnológico para el modelo al masificar la adopción de sistemas de propulsión electrificados. Con la arquitectura e:HEV y variantes híbridas que entregan unos sólidos 204 caballos de fuerza combinados, esta generación redefinió el equilibrio entre la eficiencia de combustible y una respuesta dinámica más refinada. El uso de un esquema de doble motor eléctrico junto a un bloque de ciclo Atkinson de 2.0 litros permitió a Honda ofrecer un andar mucho más silencioso y progresivo, alejándose de las sensaciones tradicionales de las transmisiones continuamente variables gracias al tacto de aceleración simulado. Asimismo, la rigidez torsional del chasis mejoró notablemente, incrementando los estándares de seguridad estructural y el confort de marcha en viajes largos.\n\n## Curiosidades\nUn aspecto interesante de la CR-V es que, a pesar de ser considerada un SUV compacto según los estándares de Norteamérica y Europa, por sus dimensiones actuales roza los límites del segmento superior, rozando los 4,7 metros de largo. Esto le permite ofrecer un espacio interior y una capacidad de baúl sumamente generosos, superando a varios de sus rivales directos en términos de versatilidad de carga. Otra particularidad de su esquema híbrido e:HEV es que, en la mayoría de las situaciones de manejo urbano, el motor de combustión actúa principalmente como un generador de energía para alimentar al motor eléctrico de tracción, logrando así cifras de consumo muy competitivas en ciudad que rivalizan con vehículos de menor porte.\n\n## Competencia y posicionamiento\nEn el mercado global, la Honda CR-V compite de manera directa contra otros pesos pesados de la industria como el Toyota RAV4 Hybrid, el Hyundai Tucson, el Kia Sportage y el Nissan X-Trail. Su posicionamiento se ubica en la franja más alta del segmento generalista, rozando incluso el terreno de marcas prémium debido a la calidad percibida de sus materiales, la insonorización de la cabina y la completa dotación de asistencias a la conducción agrupadas bajo el paraguas del sistema Honda Sensing. Es la opción predilecta para aquellos usuarios que buscan un vehículo familiar duradero, con un valor de reventa históricamente fuerte y una baja incidencia de visitas imprevistas al taller."
 }

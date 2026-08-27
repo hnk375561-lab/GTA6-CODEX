@@ -12,15 +12,15 @@
   "manufacturer": "Peugeot",
   "class": "Sedán fastback",
   "customizable": false,
-  "power": "180 hp",
-  "price": "EUR 37.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "225 CV",
+  "price": "EUR 45.000 (referencia mercado europeo)",
+  "consumo": "6.5 l/100km combinado",
+  "dimensiones": "4.750 mm largo x 1.859 mm ancho x 1.403 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "note": "Se utilizaron especificaciones técnicas de conocimiento general correspondientes a la segunda generación del Peugeot 500/508 fastback con motorización PureTech y variantes híbridas.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "El precio es de referencia general para Europa y puede variar según el mercado, impuestos y equipamiento específico."
     ]
   },
   "performance": {
@@ -28,15 +28,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.499Z",
-  "transmision": "Manual o Automática",
+  "updatedAt": "2026-08-27T01:25:04.945Z",
+  "transmision": "Automática de 8 velocidades",
   "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "peso": "1.490 kg",
+  "tipoMotor": "Gasolina / Híbrido enchufable",
+  "potenciaKW": "165 kW",
+  "capacidadTanque": "52 litros",
+  "tiempoRecorrido": "7.9s",
+  "anoProduccion": "2018-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +124,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.598 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 487,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (W)",
+  "anoLanzamiento": 2018,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -206,7 +206,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.452Z",
+    "lastChecked": "2026-08-27T01:25:04.945Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +224,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Peugeot 508 representa la apuesta más firme de la marca del león dentro del segmento D tradicional, reinterpretado con siluetas de tipo sedán fastback y líneas sumamente afiladas. Nacido originalmente para reemplazar tanto al veterano 407 como al más formal 607, el 508 logró desde su primera aparición consolidar una propuesta estética elegante y dinámica. Con el paso de los años, la marca francesa decidió dar un vuelco radical a la filosofía del modelo, transformándolo en una berlina de estilo coupé de cuatro puertas que prioriza la baja altura de la carrocería y una presencia impenetrable en ruta.\n\n## Un hito o generación relevante\nLa segunda generación, presentada comercialmente hacia finales de la década pasada, marcó un antes y un después en la historia del vehículo. No sólo adoptó la plataforma modular EMP2 del grupo Stellantis, sino que introdujo de lleno el concepto de puesto de conducción i-Cockpit de última generación, caracterizado por un volante compacto de formato achatado y una instrumentación digital elevada de gran formato. Este salto generacional vino acompañado por la incorporación de variantes híbridas enchufables y una versión deportiva firmada por Peugeot Sport Engineered (PSE), demostrando que la elegancia formal podía convivir sin problemas con cifras de rendimiento prestacional muy elevadas.\n\n## Curiosidades\nEntre los detalles más llamativos del Peugeot 508 se encuentran sus puertas sin marco en las ventanillas, un recurso estético típicamente reservado para vehículos deportivos de altas prestaciones que realza su silueta fastback. Asimismo, su firma lumínica delantera simula los colmillos de un león, integrándose de manera muy fluida con los faros principales de tecnología LED. A pesar de la tendencia global que empuja a los compradores hacia los SUV, el 508 mantuvo firmemente su apuesta por un centro de gravedad bajo, logrando un comportamiento dinámico en curvas que ha sido elogiado persistentemente por la prensa especializada europea.\n\n## Competencia y posicionamiento\nEn el mercado global, el Peugeot 508 compite de manera directa contra otros sedanes de corte generalista pero con marcada aspiración premium, tales como el Volkswagen Arteon, el Skoda Superb o incluso alternativas de marcas generalistas consolidadas en Europa. Su posicionamiento busca captar a aquellos conductores que rechazan el formato tradicional de los todocaminos y prefieren la agilidad, la aerodinámica y la distinción de una berlina moderna con fuerte personalidad estética y una dotación tecnológica de vanguardia."
 }

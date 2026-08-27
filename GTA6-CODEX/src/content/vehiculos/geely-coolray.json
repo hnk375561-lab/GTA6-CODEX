@@ -12,33 +12,33 @@
   "manufacturer": "Geely",
   "class": "SUV compacto",
   "customizable": false,
-  "power": "177 hp",
-  "price": "USD 20.000",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "174 hp (128 kW)",
+  "price": "no publicado oficialmente",
+  "consumo": "6.6 l/100km combinado",
+  "dimensiones": "4.330 mm largo x 1.800 mm ancho x 1.609 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "primarySource": "https://www.geely.com/en/models/new-coolray",
+    "note": "Se actualizaron las especificaciones principales basándose en la información oficial global de Geely para el New Coolray (motor 1.5TD de 128 kW / 174 hp, aceleración de 0 a 100 km/h en 7.6 segundos y transmisión DCT de 7 velocidades).",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria",
-      "Ronda evidencia (ago 2026, lote 3/95): fuente oficial del fabricante verificada por búsqueda antes de subir el nivel de evidencia. Página oficial global de Geely confirma motor 1.5TD con 128 kW (174 hp) y 290 N·m, 0-100 km/h en 7.6s, caja doble embrague 7 velocidades; cifra de potencia varía levemente según mercado (versión previa homologaba 130 kW/177 hp en algunos países)."
-    ],
-    "primarySource": "https://www.geely.com/en/models/new-coolray"
+      "El precio varía según el mercado de exportación específico y no se fija a nivel global",
+      "Los niveles de equipamiento y consumos homologados pueden diferir levemente según las normativas locales de emisiones (WLTP vs NEDC)"
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-26T05:49:19.144Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:42:03.245Z",
+  "transmision": "Automática de doble embrague de 7 velocidades",
+  "traccion": "Delantera",
+  "peso": "1.340 kg",
+  "tipoMotor": "Gasolina",
+  "potenciaKW": "128 kW",
+  "capacidadTanque": "45 litros",
+  "tiempoRecorrido": "7.6s",
+  "anoProduccion": "2023-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -126,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.5 litros",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 330,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (facelift profundo / BMA)",
+  "anoLanzamiento": 2023,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -208,7 +208,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T05:49:19.144Z",
+    "lastChecked": "2026-08-27T01:42:03.245Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -226,5 +226,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Geely Coolray se ha consolidado como uno de los SUV compactos más exitosos y de mayor proyección internacional del fabricante chino Geely. Desarrollado sobre la plataforma modular BMA (B-segment Modular Architecture), compartida y desarrollada en colaboración con tecnologías del grupo Volvo, el Coolray nació con el objetivo claro de conquistar a un público joven y global que busca diseño audaz, conectividad y altas prestaciones mecánicas a un precio competitivo. Desde su introducción inicial en los mercados de exportación, el modelo ganó tracción rápidamente gracias a su enfoque dinámico.\n\n## Un hito y generación relevante\nUn hito fundamental en la trayectoria comercial de este SUV fue la introducción de su segunda generación (comercializada en varios mercados como el \"New Coolray\"). Esta evolución no solo trajo consigo un lenguaje de diseño exterior mucho más agresivo y aerodinámico —caracterizado por una parrilla frontal imponente, ópticas LED estilizadas y detalles deportivos en la carrocería—, sino también la adopción generalizada del motor turboalimentado de 3 cilindros y 1.5 litros desarrollado por la marca. Este propulsor, asociado a una transmisión de doble embrague de 7 marchas, permitió al modelo erigirse como uno de los referentes de agilidad dentro de su segmento, logrando una aceleración de 0 a 100 km/h en apenas 7.6 segundos.\n\n## Curiosidades\nA pesar de ser un producto concebido en los centros de diseño globales de Geely, la influencia sueca (herencia de Volvo) se deja ver tanto en los estándares de seguridad estructural como en la calibración de la dirección y las asistencias electrónicas a la conducción. Otro aspecto destacado es su interior, que rompió con los esquemas tradicionales de los SUV económicos al integrar pantallas duales panorámicas de alta resolución, iluminación ambiental configurable y una atmósfera marcadamente deportiva que apela directamente al segmento B-SUV aspiracional.\n\n## Competencia y posicionamiento\nEn el mercado global de los SUV compactos, el Geely Coolray compite directamente contra pesos pesados de la industria como el Chevrolet Tracker, el Volkswagen T-Cross, el Nissan Kicks y el Hyundai Creta. Su estrategia para destacar frente a estos rivales consolidados radica en ofrecer una relación precio-producto muy favorable, incorporando de serie elementos tecnológicos avanzados, asistencias a la conducción (ADAS) de nivel superior en sus versiones tope de gama, y una motorización turbo con un tacto de conducción decididamente más picante y enfocado al disfrute al volante."
 }

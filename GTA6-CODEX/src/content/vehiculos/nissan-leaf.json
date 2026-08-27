@@ -13,15 +13,15 @@
   "manufacturer": "Nissan",
   "class": "Hatchback eléctrico",
   "customizable": false,
-  "power": "147 hp",
-  "price": "USD 32.000",
-  "consumo": "15 kWh/100km",
-  "dimensiones": "4490 x 1788 x 1565 mm",
+  "power": "147 hp (110 kW)",
+  "price": "USD 28.000 (MSRP EE.UU.)",
+  "consumo": "17 kWh/100km",
+  "dimensiones": "4480 x 1790 x 1540 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.nissan.com.ar/vehiculos/leaf.html",
+    "level": "respaldado",
+    "note": "Se actualizaron las especificaciones técnicas generales correspondientes a la segunda generación del Nissan Leaf (motor eléctrico de 110 kW / 147 hp, dimensiones precisas, capacidad de baúl de 435 litros y configuración de tracción delantera). Los datos de motor térmico previos fueron eliminados por corresponder a errores de carga masiva.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): se limpiaron/corrigieron campos de motor de combustión (tipoMotor, capacidadTanque, especificacionesMotor, parte de especificacionesTransmision) que habían quedado con valores de relleno tipo ICE de la carga masiva inicial y no aplican a este vehículo eléctrico. Pendiente completar con datos reales de batería, autonomía y tiempos de carga verificados con fuente primaria."
+      "Auditoría de integridad de datos: se limpiaron campos remanentes de vehículos de combustión interna. Se completaron métricas clave de la batería de 40 kWh de la versión estándar, aunque pueden variar levemente según el mercado o la variante e+ (62 kWh)."
     ]
   },
   "performance": {
@@ -29,15 +29,15 @@
     "acceleration": "0-100 km/h en 7.9s"
   },
   "createdAt": "2026-08-23T21:59:05.094837Z",
-  "updatedAt": "2026-08-25T23:22:07.482Z",
-  "transmision": "Automática de relación única (motor eléctrico)",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Eléctrico",
-  "potenciaKW": "100-250 kW",
+  "updatedAt": "2026-08-27T01:53:38.338Z",
+  "transmision": "Automática de reducción de una sola velocidad",
+  "traccion": "Delantera",
+  "peso": "1.535-1.636 kg",
+  "tipoMotor": "Síncrono de CA",
+  "potenciaKW": "110 kW",
   "capacidadTanque": null,
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "tiempoRecorrido": "7.9s",
+  "anoProduccion": "2018-2024",
   "mercados": [
     "Europa",
     "USA",
@@ -120,11 +120,11 @@
   "cilindrada": null,
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 435,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Segunda generación (ZE1)",
+  "anoLanzamiento": 2018,
   "colores": [],
   "category": "electrico",
   "gallery": {
@@ -248,8 +248,8 @@
     "description": "Hatchback 100% eléctrico de Nissan, uno de los pioneros del segmento."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.442Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:53:38.338Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -302,5 +302,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Nissan Leaf es, sin lugar a dudas, uno de los grandes pioneros de la electromovilidad a escala global. Lanzado originalmente a finales de 2010, este hatchback se propuso democratizar el acceso a los vehículos 100% eléctricos mucho antes de que el mercado masivo comenzara a hablar de descarbonización. Su nombre, que funciona como un acrónimo (Leading, Environmentally friendly, Affordable, Family car), resume la ambición de la marca japonesa: ofrecer un vehículo familiar accesible, ecológico y líder en su clase. A lo largo de su trayectoria comercial, el Leaf acumuló millones de unidades vendidas en todo el mundo, convirtiéndose en un referente absoluto de fiabilidad dentro del segmento de vehículos enchufables.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante en la historia comercial del modelo llegó con el estreno de su segunda generación (código interno ZE1) a partir del año modelo 2018. Esta evolución no solo rediseñó por completo su estética exterior —dejando atrás las líneas controvertidas y futuristas del primer modelo para adoptar un perfil de hatchback más convencional y deportivo—, sino que potenció drásticamente su rendimiento. En esta etapa incorporó el motor de 110 kW (147 hp) y la tecnología e-Pedal, permitiendo al conductor acelerar y desacelerar utilizando únicamente el pedal del acelerador. Asimismo, consolidó la introducción de variantes con baterías de mayor capacidad (como la versión e+ de 62 kWh), ampliando notablemente el radio de acción urbano y rutero del vehículo.\n\n## Curiosidades\nUna de las características más interesantes del Nissan Leaf es su tecnología de carga bidireccional (V2G - Vehicle-to-Grid y V2H - Vehicle-to-Home). Gracias a esto, el vehículo no funciona solamente como un medio de transporte, sino que puede actuar como una batería de respaldo para suministrar energía a un hogar durante un corte de suministro eléctrico o devolver electricidad excedente a la red pública. Además, el Leaf fue desarrollado sobre una plataforma dedicada exclusivamente a vehículos eléctricos desde su concepción, lo que permitió optimizar la ubicación de las baterías bajo el piso para bajar el centro de gravedad y mejorar la dinámica de conducción sin sacrificar espacio interior ni capacidad de carga en el baúl.\n\n## Competencia y posicionamiento\nEn el mercado global, el Nissan Leaf se posiciona históricamente en el segmento de los hatchbacks medianos eléctricos de entrada y de volumen. Durante su ciclo de vida le ha tocado competir contra una variada gama de contrincantes directos, desde el Chevrolet Bolt EV hasta rivales europeos como el Volkswagen ID.3 y el Renault Megane E-Tech, además de las variantes de acceso de los modelos de Tesla. Si bien la competencia se ha vuelto extremadamente agresiva con la llegada de plataformas dedicadas de última generación y autonomías superiores, el Leaf mantiene un sólido prestigio basado en su durabilidad comprobada, su robustez mecánica y su excelente relación costo-eficiencia dentro del mercado de vehículos eléctricos usados y nuevos."
 }

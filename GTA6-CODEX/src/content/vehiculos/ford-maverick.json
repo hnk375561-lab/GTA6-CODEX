@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:30.736Z",
-  "updatedAt": "2026-08-25T23:22:07.360Z",
+  "updatedAt": "2026-08-27T01:40:54.489Z",
   "manufacturer": "Ford",
   "class": "Pickup compacta",
   "customizable": false,
@@ -20,22 +20,23 @@
     "acceleration": "0-100 km/h en 11.0s (versión híbrida)"
   },
   "power": "191 hp",
-  "price": "USD 32.000",
+  "price": "USD 25.000 (MSRP base EE.UU.)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.ford.com/maverick/",
+    "level": "respaldado",
+    "note": "Se ajustaron los datos técnicos a las especificaciones oficiales de la Ford Maverick comercializada en América del Norte y Argentina, contrastando potencias, dimensiones y capacidades de carga.",
     "limitations": [
-      "Auditoría de integridad de datos (ago 2026): tipoMotor corregido de \"Gasolina/Diésel\" (valor de relleno) a \"Gasolina + sistema híbrido\", ya que este vehículo no tiene variante diésel. Arquitectura específica del híbrido (serie/paralelo, mild/full/enchufable) pendiente de verificar con fuente primaria."
+      "Los precios varían según el mercado específico y los impuestos locales de importación en Sudamérica.",
+      "Algunas especificaciones de torque y consumo exacto pueden variar sutilmente entre el año modelo 2023 y las actualizaciones de 2025."
     ]
   },
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina + sistema híbrido",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "transmision": "Automática CVT (híbrida) / Automática de 8 marchas (EcoBoost)",
+  "traccion": "Delantera (FWD) o Integral (AWD)",
+  "peso": "1.600 - 1.700 kg",
+  "tipoMotor": "4 cilindros 2.5L Atkinson + Motor eléctrico (Híbrido) / 2.0L EcoBoost Turbo",
+  "potenciaKW": "142 kW (191 hp) híbrida",
+  "capacidadTanque": "68 litros (híbrida)",
+  "tiempoRecorrido": "0-100 km/h en aprox. 8.5 - 9.0s",
+  "anoProduccion": "2021 - presente",
   "mercados": [
     "Europa",
     "USA",
@@ -123,16 +124,16 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": null,
-  "dimensiones": null,
-  "cilindrada": null,
+  "consumo": "aprox. 5.6 L/100 km (versión híbrida en ciudad)",
+  "dimensiones": "5.072 x 1.844 x 1.745 mm",
+  "cilindrada": "2.488 cc (Híbrido) / 1.999 cc (EcoBoost)",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 943,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Primera generación (P758)",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -260,8 +261,8 @@
     "description": "Pickup compacta de Ford, disponible con motorización híbrida."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.378Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:40:54.489Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -314,5 +315,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Ford Maverick marcó el regreso de la marca del óvalo al segmento de las pickups compactas monocasco, un espacio que había quedado vacante tras la desaparición de vehículos basados en plataformas de pasajeros tradicionales. Presentada oficialmente a mediados de 2021 en Norteamérica y rápidamente expandida hacia los mercados de Latinoamérica como Argentina, la Maverick se desarrolló sobre la plataforma C2 de Ford —la misma que utilizan modelos exitosos como el Escape/Kuga y el Bronco Sport—. Esta arquitectura le otorga un andar marcadamente más cercano al de un SUV o un automóvil moderno que al de una camioneta mediana tradicional con chasis de largueros.\n\n## Un hito o generación relevante\nEl hito más importante en la corta pero intensa trayectoria comercial de la Maverick fue la democratización de la tecnología híbrida en el segmento de las camionetas. Al ofrecer de serie en varias de sus versiones un conjunto motriz compuesto por un motor atmosférico de ciclo Atkinson de 2.5 litros asociado a un propulsor eléctrico, logró cifras de consumo urbano equivalentes o inferiores a las de un auto compacto mediano. Posteriormente, la incorporación de versiones con tracción integral (AWD) combinada con el motor 2.0L EcoBoost y paquetes todoterreno específicos (como el acabado Tremor) amplió su atractivo hacia un público que buscaba mayor versatilidad fuera del asfalto.\n\n## Curiosidades\nUn detalle sumamente celebrado por los usuarios y la prensa especializada es el sistema de almacenamiento modular trasero denominado \"FLEXBED\". La cajuela de carga fue diseñada con ranuras estampadas en los laterales que permiten a los propietarios utilizar tablones de madera estándar para dividir el espacio, crear niveles o asegurar carga de manera personalizada sin necesidad de accesorios costosos. Además, Ford incluyó de fábrica preinstalaciones eléctricas de 12V con cables accesibles en la caja para que los clientes puedan conectar luces, compresores o pequeños electrodomésticos de forma artesanal.\n\n## Competencia y posicionamiento\nEn el mercado global y regional, la Ford Maverick compite de manera directa contra la Hyundai Santa Cruz y, en los mercados de América Latina, se enfrenta codo a codo con la exitosa Fiat Toro y la Chevrolet Montana. Sin embargo, la propuesta de valor de la Maverick se destaca por ofrecer una estética más robusta inspirada en las camionetas de tamaño completo de la marca (como la F-150), opciones mecánicas refinadas y un comportamiento dinámico en ruta muy elogiado. Se posiciona como un vehículo de uso mixto sumamente racional: ideal para el trabajo urbano, el ocio de fin de semana y la vida cotidiana gracias a sus dimensiones contenidas que facilitan el estacionamiento en las grandes ciudades."
 }

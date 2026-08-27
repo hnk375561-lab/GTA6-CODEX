@@ -12,32 +12,34 @@
   "manufacturer": "Mazda",
   "class": "Hatchback/Sedán",
   "customizable": false,
-  "power": "191 hp (turbo)",
-  "price": "USD 24.500",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "191 hp",
+  "price": "USD 24.000 (MSRP EE.UU. de referencia)",
+  "consumo": "7.1 l/100km combinado",
+  "dimensiones": "4.660 mm largo x 1.795 mm ancho x 1.440 mm alto (Sedán)",
   "evidence": {
-    "level": "oficial-nombrado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "level": "respaldado",
+    "primarySource": "https://www.mazdausa.com/vehicles/mazda3-sedan",
+    "secondarySource": "https://es.wikipedia.org/wiki/Mazda_3",
+    "note": "Se verificaron los datos históricos y de segmento mediante el contexto provisto de Wikipedia, complementado con especificaciones generales de la cuarta generación del Mazda 3 para el mercado norteamericano y global.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
-    ],
-    "primarySource": "https://www.mazdausa.com/vehicles/mazda3-sedan"
+      "Los precios y consumos varían según el mercado específico y la motorización elegida (Skyactiv-G o Skyactiv-X)",
+      "Las dimensiones varían ligeramente entre las versiones hatchback y sedán"
+    ]
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.453Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:50:51.097Z",
+  "transmision": "Manual de 6 velocidades o Automática de 6 marchas",
+  "traccion": "Delantera (FWD) / Integral (AWD)",
+  "peso": "1.350 - 1.480 kg",
+  "tipoMotor": "Gasolina (Skyactiv-G / Skyactiv-X)",
+  "potenciaKW": "142 kW",
+  "capacidadTanque": "51 litros",
+  "tiempoRecorrido": "0-100 km/h en 8.2s",
+  "anoProduccion": "2003-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -125,14 +127,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2.0L / 2.5L",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 358,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Cuarta generación",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -207,7 +209,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.427Z",
+    "lastChecked": "2026-08-27T01:50:51.098Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -225,5 +227,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\n\nEl Mazda 3 es un referente indiscutido dentro del segmento C (vehículos compactos). Su producción comenzó en el año 2003, ideado de fábrica por la marca japonesa Mazda como el sucesor directo del veterano Mazda 323. Desde su concepción, se posicionó comercialmente entre el modelo de entrada Mazda 2 y el sedán mediano Mazda 6, ganándose rápidamente el favor del público global gracias a una propuesta que priorizaba el dinamismo de conducción por encima del promedio de su categoría.\n\nDurante sus primeras etapas comerciales, específicamente en su primera y segunda generación, el modelo estuvo estrechamente relacionado a nivel tecnológico con otros productos de la industria automotriz debido a alianzas estratégicas corporativas. Compartía plataforma de manera directa con vehículos reconocidos como el Ford Focus y el Volvo S40/V50, lo que le aportó una base robusta y un comportamiento dinámico muy elogiado por la prensa especializada de la época.\n\n## Un hito y evolución relevante\n\nUno de los hitos más importantes en la historia reciente del Mazda 3 fue la introducción de su cuarta generación, presentada a finales de la década pasada. Este lanzamiento no solo supuso una renovación estética profunda basada en el lenguaje de diseño 'Kodo' —caracterizado por líneas fluidas, minimalistas y una silueta sumamente deportiva—, sino que también marcó un punto de inflexión tecnológico con la llegada de las motorizaciones Skyactiv-X y tecnologías de encendido por compresión controlado por chispa (SPCCI), buscando emular la eficiencia de un motor diésel en un bloque naftero.\n\nA nivel estructural, la cuarta generación redefinió las ambiciones de la marca japonesa, alejándose de los generalistas tradicionales para posicionarse en un escalón cercano a las marcas de corte prémium, incorporando materiales de alta calidad en el habitáculo, un aislamiento acústico sobresaliente y una puesta a punto del chasis que prioriza el tacto deportivo.\n\n## Curiosidades del Mazda 3\n\nUna de las curiosidades más interesantes del Mazda 3 es cómo la marca ha resistido las tendencias del mercado actual. Mientras que la mayoría de sus competidores directos en el segmento compacto han abandonado por completo las siluetas de tres volúmenes, Mazda mantiene firmemente tanto la variante hatchback (de cinco puertas) como el sedán clásico (de cuatro puertas), reconociendo que cada mercado tiene preferencias estéticas muy marcadas.\n\nAsimismo, a diferencia de muchos rivales que han optado por mecánicas tricilíndricas de menor cilindrada con turbocompresor para cumplir con las normativas de emisiones, Mazda ha defendido históricamente el uso de cilindradas atmosféricas más generosas u opciones optimizadas mediante su tecnología Skyactiv, logrando respuestas de aceleración más lineales y naturales.\n\n## Competencia y posicionamiento\n\nEn el mercado global, el Mazda 3 compite de manera directa contra pesos pesados de la industria automotriz como el Toyota Corolla, el Volkswagen Golf, el Honda Civic y el Hyundai i30. Sin embargo, su posicionamiento actual se distingue por apuntar a un público que valora el diseño sofisticado, la calidad de terminación interior y una experiencia de manejo superior.\n\nGracias a este enfoque, el Mazda 3 se ubica en un terreno de juego peculiar: es mecánicamente accesible como un generalista, pero ofrece sensaciones y acabados que compiten de igual a igual con opciones de marcas de lujo, consolidándose como una de las alternativas más atractivas y pasionales dentro de los hatchbacks y sedanes medianos a nivel mundial."
 }

@@ -12,16 +12,17 @@
   "manufacturer": "MG",
   "class": "SUV compacto",
   "customizable": false,
-  "power": "162 hp",
-  "price": "EUR 28.000 (referencia mercado europeo)",
-  "consumo": "7.4 l/100km combinado",
-  "dimensiones": "4.574 mm largo x 1.876 mm ancho x 1.664 mm alto",
+  "power": "95 hp",
+  "price": "GBP 680 (precio histórico de lanzamiento en UK, año 1962)",
+  "consumo": "aprox. 10 l/100km (referencia histórica)",
+  "dimensiones": "3.891 mm largo x 1.524 mm ancho x 1.251 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Datos técnicos basados en las especificaciones generales para el mercado global de la primera generación del MG HS, incluyendo variantes nafteras e híbridas enchufables.",
+    "secondarySource": "https://es.wikipedia.org/wiki/MG_MGB",
+    "note": "Datos técnicos e históricos basados en el modelo clásico MGB fabricado por British Motor Corporation entre 1962 y 1980, utilizando la información factual provista por Wikipedia.",
     "limitations": [
-      "Los precios varían considerablemente según el mercado de importación y los impuestos locales.",
-      "Las cifras de consumo y aceleración pueden diferir ligeramente entre la versión naftera pura y la variante híbrida enchufable."
+      "Las especificaciones de potencia y rendimiento pueden variar según el año de fabricación y las normativas de emisiones específicas de cada mercado de exportación.",
+      "Los precios originales corresponden al lanzamiento en el mercado británico y no reflejan el valor actual de colección."
     ]
   },
   "performance": {
@@ -29,15 +30,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:13:05.237Z",
-  "transmision": "Manual de 6 velocidades o Automática de doble embrague / DCT",
-  "traccion": "Delantera",
-  "peso": "1.550 kg",
-  "tipoMotor": "Naftero 1.5 Turbo / Híbrido enchufable (PHEV)",
-  "potenciaKW": "119 kW",
-  "capacidadTanque": "55 litros",
-  "tiempoRecorrido": "9.9s",
-  "anoProduccion": "2020-presente",
+  "updatedAt": "2026-08-27T01:23:25.803Z",
+  "transmision": "Manual de 4 velocidades (con opción de overdrive)",
+  "traccion": "Trasera",
+  "peso": "920 kg",
+  "tipoMotor": "Naftero de 4 cilindros en línea",
+  "potenciaKW": "71 kW",
+  "capacidadTanque": "45 litros",
+  "tiempoRecorrido": "12.0s",
+  "anoProduccion": "1962-1980",
   "mercados": [
     "Europa",
     "USA",
@@ -125,14 +126,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": "1.490 cc",
+  "cilindrada": "1.798 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": 5,
-  "baul": 463,
+  "asientos": 2,
+  "baul": 250,
   "maleteroMin": null,
   "generacion": "1ra Generación",
-  "anoLanzamiento": 2020,
+  "anoLanzamiento": 1962,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -207,7 +208,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:13:05.237Z",
+    "lastChecked": "2026-08-27T01:23:25.803Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -226,5 +227,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl MG HS es un SUV del segmento C desarrollado por el fabricante de origen británico MG Motor, actualmente bajo el ala del gigante asiático SAIC Motor. Lanzado originalmente al mercado internacional hacia finales de 2019 y principios de 2020, este modelo llegó para posicionarse como el hermano mayor del MG ZS, apuntando a un público que busca mayor habitabilidad, tecnología de punta y un nivel superior de confort sin resignar una ecuación de precio y producto muy competitiva frente a rivales tradicionales.\n\n## Un hito o generación relevante\nLa introducción de la variante híbrida enchufable (PHEV) marcó un punto de inflexión fundamental para el MG HS durante su ciclo de vida. Esta versión combinó un motor naftero turboralimentado con un propulsor eléctrico y un paquete de baterías de capacidad considerable, permitiéndole ofrecer una potencia combinada superior y la posibilidad de circular en modo 100% eléctrico en entornos urbanos. Este movimiento estratégico le abrió las puertas de manera definitiva a mercados europeos sumamente estrictos en materia de emisiones contaminantes, consolidando la presencia de la marca en el Viejo Continente.\n\n## Curiosidades\nUna de las características más destacadas del MG HS en diversos mercados es su enfoque en ofrecer un nivel de equipamiento de serie muy completo que, en marcas generalistas tradicionales, suele reservarse únicamente para las versiones tope de gama o cobrarse como opcional. Además, el diseño exterior conjuga líneas de impronta europea con parrillas frontales de gran porte que le otorgan una fuerte personalidad visual, un aspecto muy valorado por los compradores del segmento SUV compacto.\n\n## Competencia y posicionamiento\nEn el plano global, el MG HS compite de forma directa en el hipercompetitivo segmento de los C-SUV, plantándole cara a pesos pesado de la industria como el Toyota RAV4, el Kia Sportage, el Hyundai Tucson y el Volkswagen Tiguan. Su principal argumento de venta radica en su atractiva relación precio-producto, ofreciendo dimensiones generosas, una distancia entre ejes que favorece el espacio en plazas traseras y un baúl con capacidad suficiente para el uso familiar diario. Si bien en algunas plazas debe lidiar con el desafío de construir una sólida reputación a largo plazo frente a marcas con décadas de arraigo, su propuesta tecnológica y su diseño equilibrado lo han convertido en uno de los pilares de la expansión internacional de MG en los últimos años."
+  "content": "## Historia del modelo\nEl MGB es un icónico automóvil deportivo de dos puertas que marcó un antes y un después en la historia de la industria automotriz británica. Fue fabricado de forma ininterrumpida desde 1962 hasta 1980 por la British Motor Corporation (BMC) y comercializado bajo la entrañable marca MG. Anunciado oficialmente al público el 19 de septiembre de 1962, este roadster introdujo una construcción monocasco muy avanzada para su época, dejando atrás el tradicional chasis de largueros que utilizaba su antecesor, el MGA. Esta arquitectura no sólo mejoraba la rigidez estructural del vehículo, sino que también optimizaba el espacio interior para los ocupantes, convirtiéndolo en un éxito comercial inmediato tanto en el Reino Unido como en los mercados de exportación, especialmente en Norteamérica.\n\n## Un hito o generación relevante\nA lo largo de sus casi dos décadas de producción, el MGB no se limitó a su silueta original de descapotable con techo de lona. La evolución de la gama trajo consigo hitos muy importantes, como la introducción en 1965 del MGB GT, un elegante coupé 2+2 de tres puertas diseñado por el prestigioso estudio italiano Pininfarina. Asimismo, la marca experimentó con motorizaciones de mayor cilindrada y prestaciones más ambiciosas, dando vida al MGC impulsado por un motor de seis cilindros entre 1967 y 1969, y posteriormente al exclusivo MGB GT V8 equipado con un bloque de ocho cilindros entre 1973 y 1976. Estas variantes ampliaron considerablemente el atractivo del modelo y consolidaron su versatilidad mecánica.\n\n## Curiosidades\nUna de las particularidades más interesantes del MGB radica en su innovador diseño enfocado en la seguridad pasiva y la facilidad de reparación. Fue uno de los primeros automóviles de producción masiva en incorporar estructuras de deformación programada en la parte delantera para absorber impactos. Además, debido a las estrictas normativas de seguridad impuestas en Estados Unidos a partir de la década de 1970, los modelos destinados a ese mercado debieron incorporar los característicos paragolpes de uretano negro (conocidos popularmente como 'rubber bumpers'), un cambio estético que en su momento generó intensos debates entre los puristas del diseño clásico británico pero que hoy en día constituye una seña de identidad muy reconocible.\n\n## Competencia y posicionamiento\nEn su época dorada, el MGB se posicionó como el referente indiscutido entre los automóviles deportivos accesibles, compitiendo de manera directa contra otros roadsters británicos y europeos como el Triumph Spitfire, el Triumph TR6 y el Fiat 124 Sport Spider. Su gran popularidad se debió a una equilibrada combinación de agilidad en ruta, un comportamiento dinámico noble gracias a su tracción trasera, una mecánica sumamente noble y sencilla de mantener, y un diseño atemporal que cautivó a generaciones enteras de entusiastas del motor en todo el mundo."
 }

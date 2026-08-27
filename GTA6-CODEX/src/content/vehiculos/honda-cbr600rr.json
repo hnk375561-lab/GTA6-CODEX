@@ -12,28 +12,28 @@
   "manufacturer": "Honda",
   "class": "Moto deportiva",
   "customizable": false,
-  "power": "89 kW (121 hp / 121 CV) a 14.250 rpm",
+  "power": "121 CV (89 kW) a 14.250 rpm",
   "price": "EUR 13.075 (referencia mercado europeo)",
-  "consumo": "5.9 l/100km combinado (referencia)",
-  "dimensiones": "2.030 mm largo x 685 mm ancho x 1.125 mm alto, distancia entre ejes 1.375 mm",
+  "consumo": "5.9 l/100km combinado",
+  "dimensiones": "2.030 mm x 685 mm x 1.125 mm",
   "evidence": {
     "level": "oficial-nombrado",
-    "note": "Cifras del retorno de la CBR600RR a Europa en 2024, motor Euro5, versión base sin Pack Racing/Touring.",
-    "limitations": [
-      "Precio varía según país (11.699–13.200 EUR según mercado y año)",
-      "Cifra de potencia limitada por normativa Euro5 respecto a versiones JDM/US previas"
-    ],
     "primarySource": "https://soymotero.net/motos/honda/cbr600rr-2024/",
-    "secondarySource": "https://es.motorbike-specs.com/honda-cbr600rr-2024/"
+    "secondarySource": "https://es.motorbike-specs.com/honda-cbr600rr-2024/",
+    "note": "Se verificaron las especificaciones técnicas oficiales de la Honda CBR600RR correspondientes a su relanzamiento en el mercado europeo para la normativa Euro 5.",
+    "limitations": [
+      "El precio varía según el mercado europeo (aproximadamente entre 11.699 y 13.200 EUR)",
+      "La potencia está condicionada por las restricciones de emisiones Euro 5 en comparación con generaciones previas destinadas a otros mercados"
+    ]
   },
   "performance": {
     "speed": "250 km/h (referencia)",
     "acceleration": "0-100 km/h en 3.0s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-26T07:28:17.775Z",
-  "transmision": "Manual 6 velocidades con quickshifter bidireccional",
-  "traccion": "4x2 (trasera)",
+  "updatedAt": "2026-08-27T01:44:02.756Z",
+  "transmision": "Manual de 6 velocidades con quickshifter bidireccional",
+  "traccion": "Trasera (cadena)",
   "peso": "193 kg (en orden de marcha)",
   "tipoMotor": "4 cilindros en línea, 4 tiempos, refrigeración líquida (DOHC 16V)",
   "potenciaKW": "89 kW",
@@ -135,8 +135,8 @@
   "asientos": 2,
   "baul": null,
   "maleteroMin": null,
-  "generacion": "Retorno a Europa 2024, acelerador electrónico derivado RC213V-S",
-  "anoLanzamiento": "2003",
+  "generacion": "Retorno a Europa 2024, con acelerador electrónico derivado de la RC213V-S",
+  "anoLanzamiento": 2003,
   "colores": [],
   "category": "motocicleta",
   "gallery": {
@@ -212,7 +212,7 @@
   },
   "verified": {
     "source": "oficial-nombrado",
-    "lastChecked": "2026-08-26T07:28:17.766Z",
+    "lastChecked": "2026-08-27T01:44:02.756Z",
     "dataQuality": 0.9
   },
   "indexed": true,
@@ -246,5 +246,6 @@
     ],
     "auditNotes": "Lote 5 (ago 2026): datos del relanzamiento europeo 2024, versión base.",
     "dataQuality": 0.9
-  }
+  },
+  "content": "## Historia del modelo\nLa Honda CBR600RR es una de las motocicletas supersport más emblemáticas y exitosas de la historia reciente del motociclismo mundial. Nacida formalmente en 2003 como una evolución directa de la experiencia de Honda en el Campeonato Mundial de Motociclismo (MotoGP), este modelo heredó el espíritu competitivo y las soluciones aerodinámicas de la legendaria RC211V. A lo largo de las décadas, la CBR600RR se ganó la reputación de ser una herramienta de precisión tanto para la calle como para los circuitos más exigentes, destacándose por un equilibrio sobresaliente entre agilidad, rigidez de chasis y un motor tetracilíndrico capaz de girar a regímenes muy elevados.\n\nTras unos años de ausencia en el mercado europeo debido a las estrictas normativas de emisiones, la marca del ala dorada decidió reintroducir la CBR600RR adaptada a los tiempos modernos, manteniendo viva la categoría de media cilindrada deportiva que parecía destinada a desaparecer frente al auge de los segmentos naked y trail.\n\n## Un hito o generación relevante\nEl punto de inflexión más notable de los últimos años es el retorno del modelo a Europa en 2024. Esta generación incorpora importantes actualizaciones tecnológicas que la ponen a la vanguardia de su categoría. Entre las mejoras más destacadas se encuentra la adopción de una unidad de medición inercial (IMU) de 6 ejes desarrollada por Bosch, un sistema de acelerador electrónico (ride-by-wire) heredado directamente de la exclusiva MotoGP RC213V-S, y un paquete aerodinámico que incluye alerones delanteros integrados inspirados en la competición de máxima categoría. Estos elementos no solo aseguran el cumplimiento de la normativa anticontaminación Euro 5, sino que elevan drásticamente la seguridad activa y el comportamiento dinámico en curvas.\n\n## Curiosidades\nUn aspecto fascinante de la CBR600RR es su capacidad para mantener un régimen de giro sumamente alto, alcanzando su potencia máxima de 121 CV a unas imponentes 14.250 rpm. Además, su diseño exterior no es meramente estético: los alerones laterales frontales fueron cuidadosamente diseñados en el túnel de viento para generar carga aerodinámica (downforce), reduciendo la tendencia a levantar la rueda delantera en aceleraciones fuertes y mejorando la estabilidad en frenadas intensas al ingresar a las curvas. Su instrumentación incorpora una pantalla TFT a color configurable con modos de visualización específicos para calle, circuito y ajustes mecánicos.\n\n## Competencia y posicionamiento\nDentro del segmento de las supersport de media cilindrada, la Honda CBR600RR compite en la categoría más pura y técnica del mercado frente a rivales de la talla de la Yamaha YZF-R6 (en sus versiones enfocadas a circuito) y la Kawasaki Ninja ZX-6R. Se posiciona claramente en el sector **Premium** debido a su avanzada electrónica, calidad de componentes y herencia directa de competición. Es una opción predilecta tanto para puristas del motociclismo deportivo como para entusiastas de las rodadas en pista que buscan una moto directa, reactiva y con un pedigrí de carreras innegable."
 }

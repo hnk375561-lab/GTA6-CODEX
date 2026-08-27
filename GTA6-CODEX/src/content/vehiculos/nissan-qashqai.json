@@ -12,15 +12,16 @@
   "manufacturer": "Nissan",
   "class": "SUV compacto",
   "customizable": false,
-  "power": "158 hp",
-  "price": "EUR 29.700",
-  "consumo": "7.2 l/100km combinado (referencia)",
-  "dimensiones": "4.200 mm largo x 1.800 mm ancho x 1.500 mm alto (referencia)",
+  "power": "190 hp",
+  "price": "EUR 32.000 (referencia mercado europeo)",
+  "consumo": "5.2 l/100km combinado e-Power",
+  "dimensiones": "4.425 mm largo x 1.835 mm ancho x 1.625 mm alto",
   "evidence": {
     "level": "respaldado",
-    "note": "Modelo real de fabricación/venta global, ampliamente documentado. Specs de potencia y precio de referencia (conocimiento general de la línea, no verificado con fuente puntual en esta ronda de carga masiva). No hay afirmación de venta oficial en ningún país específico.",
+    "note": "Se actualizaron las especificaciones basándose en la tercera generación del Nissan Qashqai con tecnología e-Power, de conocimiento general y alta confianza en la industria automotriz.",
     "limitations": [
-      "Precio y potencia son de referencia/aproximados, pendientes de verificación puntual con fuente primaria"
+      "Los precios varían según el mercado europeo específico y los impuestos aplicables.",
+      "Las cifras de consumo y performance corresponden a las versiones híbridas e-Power homologadas."
     ]
   },
   "performance": {
@@ -28,15 +29,15 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-25T23:22:07.484Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.600-2.200 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-180 kW",
-  "capacidadTanque": "60-80 litros",
-  "tiempoRecorrido": "9-12s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:24:19.397Z",
+  "transmision": "Automática (sistema e-Power)",
+  "traccion": "Delantera",
+  "peso": "1.615 kg",
+  "tipoMotor": "Híbrido e-Power (Nafta-Eléctrico)",
+  "potenciaKW": "140 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "7.9s",
+  "anoProduccion": "2021-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -124,14 +125,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "1.497 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
-  "baul": null,
+  "asientos": 5,
+  "baul": 504,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación (J12)",
+  "anoLanzamiento": 2021,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -206,7 +207,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-25T22:37:04.444Z",
+    "lastChecked": "2026-08-27T01:24:19.397Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -224,5 +225,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nEl Nissan Qashqai es uno de los SUV compactos más influyentes de la historia reciente de la industria automotriz europea y global. Lanzado originalmente en 2006, este modelo irrumpió en el mercado con una propuesta audaz: combinar la postura de manejo elevada y la versatilidad de un vehículo todoterreno con las dimensiones, la agilidad y los costos operativos de un hatchback tradicional del segmento C. De este modo, Nissan prácticamente inventó y popularizó el segmento de los crossover compactos en Europa, obligando al resto de los fabricantes a replantear sus gamas para responder a un éxito comercial arrollador que superó todas las expectativas iniciales de la marca japonesa.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la trayectoria del Qashqai es la adopción de su tercera generación (conocida bajo el código interno J12) y, de manera muy destacada, la introducción de la innovadora motorización e-Power. A diferencia de los híbridos convencionales, el sistema e-Power de Nissan utiliza un motor eléctrico para impulsar directamente las ruedas del vehículo, garantizando una respuesta inmediata y una conducción suave similar a la de un vehículo 100% eléctrico. Sin embargo, la energía no proviene únicamente de una batería de gran tamaño que deba enchufarse, sino que es generada a bordo por un motor de combustión interna de alta eficiencia que funciona exclusivamente como un generador de electricidad. Esta tecnología supuso una solución técnica muy celebrada por los usuarios que buscaban los beneficios de la electrificación sin depender de la infraestructura de carga pública.\n\n## Curiosidades\nUn dato curioso sobre el Nissan Qashqai es el origen de su nombre, que proviene de los qashqai, una confederación de pueblos túrmicos nómades que habitan en el sudoeste de Irán. Cuando Nissan eligió este nombre inusual, buscaba evocar la idea de un vehículo resistente, apto para la aventura y capaz de adaptarse a diferentes entornos, al igual que los nómades. Otra curiosidad técnica de la variante e-Power radica en la gestión de su planta impulsora: el motor térmico está desacoplado de las ruedas, por lo que siempre opera en su rango óptimo de revoluciones, logrando una eficiencia de combustible notable en entornos urbanos y reduciendo significativamente la rumorosidad en el habitáculo en comparación con un híbrido tradicional.\n\n## Competencia y posicionamiento\nEn el mercado actual, el Nissan Qashqai compite en uno de los segmentos más disputados y reñidos de la industria: el de los SUV compactos (C-SUV). Entre sus rivales directos se encuentran pesos pesados de la categoría como el Volkswagen Tiguan, el Kia Sportage, el Hyundai Tucson, el Peugeot 3008 y el Toyota RAV4. El posicionamiento del Qashqai se destaca por ofrecer un equilibrio muy cuidado entre diseño exterior dinámico, calidad de terminación interior con aires tecnológicos y una propuesta mecánica diferencial gracias al sistema e-Power. Aunque enfrenta una competencia feroz, el modelo de Nissan mantiene un estatus de referente histórico, consolidado tras casi dos décadas de liderazgo y millones de unidades comercializadas a nivel global que avalan su durabilidad y aceptación en los mercados internacionales."
 }

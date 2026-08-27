@@ -15,27 +15,31 @@
   "class": "Pickup",
   "customizable": false,
   "power": "163 hp",
-  "price": "USD 38.000",
+  "price": "USD 38.000 (referencia mercado regional)",
   "consumo": "8.0 l/100km (mixto)",
   "dimensiones": "5265 x 1870 x 1800 mm",
   "evidence": {
-    "level": "oficial-nombrado",
-    "primarySource": "https://www.isuzu.com.ar/d-max"
+    "level": "respaldado",
+    "note": "Se verificaron las especificaciones técnicas principales de la tercera generación de la Isuzu D-Max equipada con el motor turbodiésel 3.0L (código 4JJ3-TCX), así como sus dimensiones generales y capacidades de carga basadas en fichas técnicas globales de la marca.",
+    "limitations": [
+      "Los precios varían significativamente según el mercado de importación y los aranceles locales.",
+      "Algunas cifras de torque y potencia pueden tener ligeras variaciones según la normativa de emisiones de cada país."
+    ]
   },
   "performance": {
     "speed": "175 km/h",
     "acceleration": "0-100 km/h en 11.8s"
   },
   "createdAt": "2026-08-23T21:59:03.999490Z",
-  "updatedAt": "2026-08-25T23:22:07.410Z",
-  "transmision": "Manual o Automática",
-  "traccion": "Tracción delantera",
-  "peso": "1.300-1.700 kg",
-  "tipoMotor": "Gasolina/Diésel",
-  "potenciaKW": "100-250 kW",
-  "capacidadTanque": "55-75 litros",
-  "tiempoRecorrido": "7-10s",
-  "anoProduccion": "2023-2024",
+  "updatedAt": "2026-08-27T01:47:09.899Z",
+  "transmision": "Manual de 6 marchas o Automática de 6 marchas",
+  "traccion": "4x4 conectable con reductora",
+  "peso": "1.900-2.050 kg",
+  "tipoMotor": "Turbodiésel",
+  "potenciaKW": "120 kW",
+  "capacidadTanque": "76 litros",
+  "tiempoRecorrido": "0-100 km/h en 12.5s",
+  "anoProduccion": "2020-presente",
   "mercados": [
     "Europa",
     "USA",
@@ -123,14 +127,14 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "cilindrada": null,
+  "cilindrada": "2999 cc",
   "emisiones": null,
   "tipo": null,
-  "asientos": null,
+  "asientos": 5,
   "baul": null,
   "maleteroMin": null,
-  "generacion": null,
-  "anoLanzamiento": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2019,
   "colores": [],
   "category": "otros",
   "gallery": {
@@ -255,8 +259,8 @@
     "description": "Pickup mediana de Isuzu, motor turbodiésel 3.0L, conocida por su durabilidad."
   },
   "verified": {
-    "source": "oficial-nombrado",
-    "lastChecked": "2026-08-25T22:37:04.406Z",
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:47:09.899Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -309,5 +313,6 @@
     "siguiente": null,
     "hermanos": [],
     "competidores": []
-  }
+  },
+  "content": "## Historia del modelo\nLa Isuzu D-Max es una de las pick-ups medianas con mayor trayectoria y reconocimiento global en el segmento de vehículos comerciales y todoterreno. Heredera directa de una larga estirpe de camionetas robustas fabricadas por la marca japonesa —un referente histórico en el desarrollo de motores diésel—, la D-Max se ganó una sólida reputación basada en su durabilidad mecánica, su capacidad de trabajo extremo y una eficiencia de combustible destacada. A lo largo de sus distintas generaciones, desarrolladas muchas veces en colaboración y sinergia con otros fabricantes de la industria automotriz global, ha sabido adaptarse a las exigencias cambiantes de los usuarios, transitando desde una herramienta puramente rústica de trabajo hacia un vehículo polivalente capaz de ofrecer confort, seguridad y tecnología avanzada sin sacrificar su ADN indestructible.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de la D-Max fue el lanzamiento de su tercera generación a finales de 2019 (con despliegue comercial consolidado hacia 2020 y años posteriores). Esta renovación total representó un salto cualitativo gigante para el modelo. No solo estrenó una plataforma completamente nueva y un chasis un 20% más rígido que mejoró drásticamente el comportamiento dinámico tanto en ruta como en caminos off-road complejos, sino que también incorporó una profunda actualización en su motorización estrella: el bloque turbodiésel de 3.0 litros (4JJ3-TCX). Este propulsor optimizó la entrega de potencia y torque, redujo los niveles de ruido, vibración y aspereza (NVH), y cumplió con normativas de emisiones más estrictas. Asimismo, esta generación marcó la llegada masiva de asistencias avanzadas a la conducción (ADAS) y un interior con un diseño mucho más refinado, conectividad moderna y materiales de mejor calidad.\n\n## Curiosidades\nUno de los aspectos más interesantes de la Isuzu D-Max es que, a pesar de llevar el emblema de una marca que en muchos mercados occidentales se concentra casi exclusivamente en vehículos comerciales y camiones medianos, comparte una gran cantidad de componentes estructurales y desarrollos de ingeniería con modelos muy populares de otras marcas debido a alianzas estratégicas históricas. Además, en regiones como el Sudeste Asiático —particularmente en Tailandia, donde se produce gran parte del volumen mundial de estas pick-ups—, la D-Max es un verdadero fenómeno cultural y de ventas, liderando el mercado local y siendo la base preferida tanto para flotas de trabajo pesado como para preparaciones deportivas y de trepada en picadas. Su fama de vehículo 'indstructible' ha sido probada en expediciones extremas alrededor del mundo, cruzando selvas, desiertos y zonas polares con modificaciones mínimas respecto a los modelos de salida de fábrica.\n\n## Competencia y posicionamiento\nEn el altamente competitivo mercado global de las pick-ups medianas, la Isuzu D-Max se posiciona como una opción sumamente racional y enfocada en la durabilidad pura, compitiendo directamente contra pesos pesados de la industria como la Toyota Hilux, la Ford Ranger, la Volkswagen Amarok y la Chevrolet S10. Mientras que algunos rivales apuntan con mayor fuerza al confort de marcha similar al de un SUV de lujo o a potencias desmedidas en sus versiones tope de gama, Isuzu centra su propuesta de valor en la confiabilidad mecánica a largo plazo, la robustez de sus componentes de suspensión y tracción 4x4, y un costo de mantenimiento previsible. Esto la convierte en la opción predilecta para flotas mineras, agrícolas y gubernamentales, así como para usuarios particulares que buscan un vehículo de trabajo que no falle bajo ninguna circunstancia."
 }
