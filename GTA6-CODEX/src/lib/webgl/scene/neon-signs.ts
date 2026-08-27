@@ -56,16 +56,18 @@ export function buildNeonSignsScene(options: NeonSignsBuilderOptions): Updater {
 
   if (quality.tier === 'low') return () => {}
 
-  // Paleta expandida GTA VI: rosa neón, magenta, cyan, violeta, azul eléctrico, naranja cálido
+  // Paleta "Synth Noir Intensificado": violeta dominante + magenta/cyan
+  // eléctrico como acentos. Se saca el naranja/ámbar cálido (no encaja
+  // con la identidad noir) y se suma más violeta puro/magenta láser.
   const neonColors = [
-    new THREE.Color(0xff2d78), // Rosa neón
-    new THREE.Color(0xff1744), // Magenta intenso
-    new THREE.Color(0x22d3ee), // Cyan
-    new THREE.Color(0x9c27b0), // Violeta
-    new THREE.Color(0x2979ff), // Azul eléctrico
-    new THREE.Color(0xff9100), // Naranja cálido
-    new THREE.Color(0xe91e63), // Rosa profundo
-    new THREE.Color(0x00bcd4), // Cyan claro
+    new THREE.Color(0xff0080), // Magenta láser
+    new THREE.Color(0x8b00ff), // Violeta puro
+    new THREE.Color(0x00e5ff), // Cyan eléctrico
+    new THREE.Color(0xb026ff), // Púrpura vívido
+    new THREE.Color(0xff2d95), // Rosa neón intenso
+    new THREE.Color(0x6b1fb5), // Violeta profundo
+    new THREE.Color(0xe000ff), // Fucsia
+    new THREE.Color(0x00fff0), // Cyan claro/menta eléctrico
   ]
 
   // Configuración de tipos de negocio con su estética específica
@@ -77,23 +79,29 @@ export function buildNeonSignsScene(options: NeonSignsBuilderOptions): Updater {
     baseIntensity: number
   }
 
-  // Distribución orgánica por capas de profundidad
+  // Distribución orgánica por capas de profundidad — "Synth Noir
+  // Intensificado": más letreros por capa y baseIntensity subida ~15-20%
+  // en cada uno respecto a la versión anterior, para que el bloom (ver
+  // core/postprocessing.ts) tenga más de dónde sacar glow.
   const signConfigs: SignConfig[] = [
     // CAPA LEJANA (-50 a -60): hoteles grandes, poca visibilidad, atmósfera
-    { type: 0, colorIndex: 0, width: 4.2, height: 1.8, baseIntensity: 0.6 }, // Hotel rosa
-    { type: 0, colorIndex: 3, width: 3.8, height: 1.6, baseIntensity: 0.55 }, // Hotel violeta
-    { type: 3, colorIndex: 4, width: 3.5, height: 1.4, baseIntensity: 0.5 }, // Casino azul
+    { type: 0, colorIndex: 0, width: 4.2, height: 1.8, baseIntensity: 0.72 }, // Hotel magenta láser
+    { type: 0, colorIndex: 3, width: 3.8, height: 1.6, baseIntensity: 0.66 }, // Hotel púrpura
+    { type: 3, colorIndex: 4, width: 3.5, height: 1.4, baseIntensity: 0.6 }, // Casino rosa neón
+    { type: 0, colorIndex: 5, width: 4.0, height: 1.7, baseIntensity: 0.62 }, // Hotel violeta profundo (nuevo)
 
     // CAPA MEDIA (-40 a -50): clubes y restaurantes, visibilidad media
-    { type: 1, colorIndex: 1, width: 3.2, height: 1.2, baseIntensity: 0.75 }, // Club magenta
-    { type: 2, colorIndex: 2, width: 2.8, height: 1.0, baseIntensity: 0.7 }, // Restaurante cyan
-    { type: 1, colorIndex: 5, width: 3.0, height: 1.1, baseIntensity: 0.72 }, // Club naranja
-    { type: 2, colorIndex: 6, width: 2.6, height: 0.95, baseIntensity: 0.68 }, // Restaurante rosa
+    { type: 1, colorIndex: 1, width: 3.2, height: 1.2, baseIntensity: 0.88 }, // Club violeta puro
+    { type: 2, colorIndex: 2, width: 2.8, height: 1.0, baseIntensity: 0.82 }, // Restaurante cyan eléctrico
+    { type: 1, colorIndex: 5, width: 3.0, height: 1.1, baseIntensity: 0.85 }, // Club violeta profundo
+    { type: 2, colorIndex: 6, width: 2.6, height: 0.95, baseIntensity: 0.8 }, // Restaurante fucsia
+    { type: 3, colorIndex: 3, width: 3.1, height: 1.15, baseIntensity: 0.84 }, // Casino púrpura (nuevo)
 
     // CAPA CERCANA (-30 a -40): negocios y locales, mayor detalle
-    { type: 4, colorIndex: 7, width: 2.4, height: 0.85, baseIntensity: 0.85 }, // Negocio cyan claro
-    { type: 4, colorIndex: 0, width: 2.2, height: 0.8, baseIntensity: 0.82 }, // Negocio rosa
-    { type: 1, colorIndex: 3, width: 2.8, height: 1.0, baseIntensity: 0.88 }, // Club violeta cercano
+    { type: 4, colorIndex: 7, width: 2.4, height: 0.85, baseIntensity: 1.0 }, // Negocio cyan/menta
+    { type: 4, colorIndex: 0, width: 2.2, height: 0.8, baseIntensity: 0.96 }, // Negocio magenta láser
+    { type: 1, colorIndex: 3, width: 2.8, height: 1.0, baseIntensity: 1.02 }, // Club púrpura cercano
+    { type: 4, colorIndex: 6, width: 2.0, height: 0.75, baseIntensity: 0.94 }, // Negocio fucsia (nuevo)
   ]
 
   // Ajustar cantidad según calidad
