@@ -20,8 +20,8 @@ interface UseParallaxOptions {
   respectReducedMotion?: boolean
 }
 
-export function useParallax(
-  ref: React.RefObject<HTMLElement>,
+export function useParallax<T extends HTMLElement>(
+  ref: React.RefObject<T | null>,
   options: UseParallaxOptions = {}
 ) {
   const { factor = 0.15, respectReducedMotion = true } = options
