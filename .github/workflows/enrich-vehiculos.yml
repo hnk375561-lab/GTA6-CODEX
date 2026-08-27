@@ -1,14 +1,29 @@
 name: Enriquecer fichas de vehiculos (Gemini)
 
 # Corre el enriquecimiento automatico contra src/content/vehiculos usando
-# la API de Gemini con Google Search grounding. Manual a proposito
-# (workflow_dispatch): asi se puede lanzar por tandas y revisar el diff
-# en el commit resultante antes de que se acumulen muchos cambios.
+# la API de Gemini con Google Search grounding.
+#
+# Tres formas de dispararse, para que nadie tenga que acordarse de hacerlo
+# a mano:
+#   1. push: en cuanto se agrega/edita una ficha en src/content/vehiculos,
+#      corre solo (en minutos, no hay que esperar al lunes). Como el script
+#      solo toca lo que le falte evidence/content, es idempotente: si la
+#      ficha nueva llega ya completa, esta corrida no toca nada.
+#   2. schedule: red de seguridad semanal (por si el push trigger no
+#      encontro contexto suficiente la primera vez, o para needsContentOnly
+#      acumulado).
+#   3. workflow_dispatch: manual, y ademas usado por
+#      check-evidence-links.yml para re-enriquecer puntualmente las fichas
+#      cuya fuente se cayo (ONLY=needsBoth).
 #
 # Requiere el secret GEMINI_API_KEY configurado en:
 #   Settings -> Secrets and variables -> Actions -> New repository secret
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "GTA6-CODEX/src/content/vehiculos/**.json"
   workflow_dispatch:
     inputs:
       limit:
@@ -20,10 +35,17 @@ on:
         required: false
         default: "all"
   schedule:
-    # Corre solo, todos los lunes 06:00 UTC. Como el script solo toca
-    # fichas que aun no tienen evidence/content completos, si ya esta
-    # todo enriquecido simplemente no hay nada para commitear ese dia.
+    # Red de seguridad: corre solo, todos los lunes 06:00 UTC. Como el
+    # script solo toca fichas que aun no tienen evidence/content
+    # completos, si ya esta todo enriquecido simplemente no hay nada
+    # para commitear ese dia.
     - cron: "0 6 * * 1"
+
+# Si llegan varios pushes de fichas seguidos, que no se pisen los commits
+# entre corridas concurrentes del mismo workflow.
+concurrency:
+  group: enrich-vehiculos-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   contents: write
