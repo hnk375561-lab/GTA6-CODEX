@@ -141,17 +141,25 @@ async function callGemini(prompt, attempt = 1) {
     body: JSON.stringify(body),
   });
 
-  if (res.status === 429 && attempt < 3) {
-    // Backoff progresivo: puede ser un pico de RPM (recuperable) o RPD
-    // agotado (no recuperable en el dia). Reintentamos un par de veces
-    // por las dudas antes de rendirnos con este archivo puntual.
-    const waitMs = 20000 * attempt;
-    await sleep(waitMs);
-    return callGemini(prompt, attempt + 1);
-  }
-
   if (!res.ok) {
     const text = await res.text();
+    if (res.status === 429) {
+      const isDailyQuota = /exceeded your current quota|RESOURCE_EXHAUSTED|per day|RPD/i.test(text);
+      if (isDailyQuota) {
+        // Cuota diaria agotada: reintentar no sirve de nada hasta el reset.
+        // Marcamos esto para que el loop principal aborte enseguida en vez
+        // de moler horas contra un 429 que no se va a resolver solo.
+        const err = new Error(`QUOTA_DIARIA_AGOTADA: Gemini API 429: ${text.slice(0, 300)}`);
+        err.isDailyQuotaExhausted = true;
+        throw err;
+      }
+      if (attempt < 3) {
+        // Pico transitorio de RPM (no de cuota diaria): esto si vale la
+        // pena reintentar con backoff corto.
+        await sleep(8000 * attempt);
+        return callGemini(prompt, attempt + 1);
+      }
+    }
     throw new Error(`Gemini API ${res.status}: ${text.slice(0, 500)}`);
   }
 
@@ -257,6 +265,15 @@ async function main() {
       console.log("✗ " + err.message.slice(0, 150));
       fail++;
       await log({ file: filename, status: "error", error: String(err.message).slice(0, 500) });
+
+      if (err.isDailyQuotaExhausted) {
+        console.log(
+          `\n⛔ Cuota diaria de Gemini agotada en el archivo ${i + 1}/${queue.length}. ` +
+          `Abortando el resto de la cola para no perder horas reintentando en vano. ` +
+          `Volve a correr este mismo workflow despues del reset diario (~05:00 hora Argentina).`
+        );
+        break;
+      }
     }
 
     if (i < queue.length - 1) await sleep(DELAY_MS);
