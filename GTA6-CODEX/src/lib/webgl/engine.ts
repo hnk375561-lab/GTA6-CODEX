@@ -1736,13 +1736,30 @@ export class AutoFichaWebGLEngine {
       this.gradePass.uniforms.dayPhase.value = this.dayPhase
       this.gradePass.uniforms.humidity.value = this.humidity
       this.gradePass.uniforms.grainStrength.value = 0.03 + this.entityUnrest * 0.025 + this.humidity * 0.012
+      // `this.scrollVelocity` es la diferencia frame a frame de un
+      // `scrollProgress` ya suavizado por lerp (línea ~1635) — una
+      // derivada de una señal amortiguada, dos pasos lejos del gesto real
+      // de la persona. `webglSceneBus`'s `scroll.velocity` es la velocidad
+      // INSTANTÁNEA real que reporta Lenis (`LenisProvider`) en cada tick,
+      // sin ese doble suavizado — sube al instante con un fling fuerte, no
+      // dos frames después. Se suma como término aditivo chico e
+      // independiente (no reemplaza `this.scrollVelocity`, que sigue
+      // gobernando el dolly/parallax existentes sin cambios de tuning):
+      // solo agrega el "golpe" de cámara que ya hacía este `kick` una
+      // pizca más fiel a qué tan fuerte fue el gesto de scroll, no solo a
+      // cuánto se movió la posición. Clampeado antes de sumar para que un
+      // fling extremo no pueda superar lo que ya podía lograr el propio
+      // `scrollVelocity` a su tope.
+      const lenisVelocity = Math.abs(webglSceneBus.getSnapshot().scroll.velocity)
+      const flingKick = this.reducedMotion ? 0 : Math.min(lenisVelocity / 60, 1) * 0.0025
       const kick = this.reducedMotion
         ? 0
         : Math.min(
             this.pointerVelocity * 1.3 +
               this.scrollVelocity * 6 +
               this.pointerIntent * 0.003 +
-              this.entityUnrest * 0.0015,
+              this.entityUnrest * 0.0015 +
+              flingKick,
             0.009
           )
       this.arrivalKick *= 0.92
