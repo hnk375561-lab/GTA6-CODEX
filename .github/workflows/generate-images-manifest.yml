@@ -35,7 +35,7 @@ jobs:
         run: npm run generate:manifest-commons:write
 
       - name: Abrir Pull Request con el manifest generado
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: "chore: generar real-images-manifest.json desde Wikimedia Commons"
           branch: bot/commons-images-manifest
