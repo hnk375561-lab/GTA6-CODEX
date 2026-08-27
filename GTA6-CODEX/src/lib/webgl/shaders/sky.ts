@@ -64,31 +64,35 @@ export const SKY_FRAGMENT_SHADER = /* glsl */ `
     float h = dir.y * 0.5 + 0.5;
     float p = dayPhase;
 
-    // ---- paleta tropical Leonida: 6 momentos del día ----
-    // Noche (indigo profundo, resplandor magenta lejano de la ciudad)
-    vec3 topNight = vec3(0.028, 0.045, 0.145);
-    vec3 midNight = vec3(0.085, 0.075, 0.235);
-    vec3 horNight = vec3(0.26, 0.075, 0.20);
-    // Amanecer (violeta frío arriba, coral rompiendo en el horizonte)
-    vec3 topDawn = vec3(0.11, 0.16, 0.34);
-    vec3 midDawn = vec3(0.42, 0.30, 0.48);
-    vec3 horDawn = vec3(0.95, 0.52, 0.40);
-    // Mediodía (azul tropical saturado, calima cálida y pálida en el horizonte)
-    vec3 topDay = vec3(0.16, 0.48, 0.82);
-    vec3 midDay = vec3(0.42, 0.68, 0.88);
-    vec3 horDay = vec3(0.86, 0.82, 0.72);
-    // Golden hour (ámbar largo, sol bajo)
-    vec3 topGolden = vec3(0.20, 0.24, 0.50);
-    vec3 midGolden = vec3(0.92, 0.52, 0.26);
-    vec3 horGolden = vec3(1.05, 0.60, 0.20);
-    // Atardecer (synthwave magenta/naranja, la firma Vice City)
-    vec3 topDusk = vec3(0.13, 0.08, 0.29);
-    vec3 midDusk = vec3(0.90, 0.28, 0.46);
-    vec3 horDusk = vec3(0.95, 0.30, 0.28);
-    // Hora azul (rescoldo magenta apagándose, transición a la noche)
-    vec3 topBlue = vec3(0.045, 0.05, 0.135);
-    vec3 midBlue = vec3(0.15, 0.11, 0.29);
-    vec3 horBlue = vec3(0.34, 0.13, 0.27);
+    // ---- paleta "Synth Noir Intensificado": violeta dominante todo el ----
+    // ciclo, con magenta/cyan como acentos — ya no hay una franja "día
+    // azul tropical" neutra, todo el ciclo vive dentro de la misma
+    // identidad synthwave (antes solo el atardecer era "la firma").
+    // Noche (violeta profundo casi negro, resplandor magenta lejano)
+    vec3 topNight = vec3(0.035, 0.02, 0.135);
+    vec3 midNight = vec3(0.14, 0.04, 0.28);
+    vec3 horNight = vec3(0.38, 0.05, 0.32);
+    // Amanecer (violeta eléctrico arriba, magenta rompiendo en el horizonte)
+    vec3 topDawn = vec3(0.16, 0.06, 0.42);
+    vec3 midDawn = vec3(0.52, 0.14, 0.58);
+    vec3 horDawn = vec3(1.0, 0.25, 0.55);
+    // Mediodía (violeta-lavanda saturado en vez de azul tropical neutro,
+    // cyan eléctrico como respiro en el horizonte)
+    vec3 topDay = vec3(0.24, 0.10, 0.62);
+    vec3 midDay = vec3(0.30, 0.34, 0.85);
+    vec3 horDay = vec3(0.20, 0.85, 0.92);
+    // Golden hour (magenta-ámbar, sol bajo — ya no ámbar puro)
+    vec3 topGolden = vec3(0.22, 0.06, 0.48);
+    vec3 midGolden = vec3(0.95, 0.22, 0.42);
+    vec3 horGolden = vec3(1.1, 0.35, 0.15);
+    // Atardecer (pico de intensidad: violeta profundo + magenta láser)
+    vec3 topDusk = vec3(0.16, 0.03, 0.36);
+    vec3 midDusk = vec3(0.98, 0.08, 0.55);
+    vec3 horDusk = vec3(1.05, 0.15, 0.35);
+    // Hora azul (violeta/magenta apagándose hacia la noche, sin caer a azul neutro)
+    vec3 topBlue = vec3(0.06, 0.03, 0.16);
+    vec3 midBlue = vec3(0.22, 0.06, 0.34);
+    vec3 horBlue = vec3(0.42, 0.08, 0.30);
 
     vec3 top = sixKeyMix(p, topNight, topDawn, topDay, topGolden, topDusk, topBlue);
     vec3 mid = sixKeyMix(p, midNight, midDawn, midDay, midGolden, midDusk, midBlue);
