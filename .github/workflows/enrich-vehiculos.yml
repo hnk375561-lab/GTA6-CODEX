@@ -46,7 +46,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           LIMIT: ${{ github.event.inputs.limit }}
           ONLY: ${{ github.event.inputs.only }}
-        run: node enrich-vehiculos.mjs
+        run: node enrich-vehiculos-v2.mjs
 
       - name: Commit y push de las fichas actualizadas
         if: always()
