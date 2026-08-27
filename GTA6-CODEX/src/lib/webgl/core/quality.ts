@@ -1,6 +1,13 @@
 /**
  * Quality profile configuration for the GTA6 Zona WebGL engine.
  * Handles device detection and quality settings adaptation.
+ *
+ * "Synth Noir Intensificado" — pase 2: `trafficCount` bajado en los tres
+ * tiers (7/6/6 → 3/3/2) a pedido: los streaks de tráfico vehicular eran
+ * el elemento que más leía como "juego de manejar" en el fondo, más que
+ * cualquier color. Se deja en un valor bajo pero no en cero — un poco de
+ * movimiento en la carretera sigue dando vida a la escena sin ser el
+ * foco.
  */
 
 export interface QualityProfile {
@@ -32,7 +39,7 @@ export function detectQualityProfile(reducedMotion: boolean): QualityProfile {
       dustCount: 120,
       fireflyCount: 0,
       mistCount: 40,
-      trafficCount: 6,
+      trafficCount: 2,
       enableBokeh: false,
       bloomScale: 0.55,
       hazeLayers: 1,
@@ -45,7 +52,7 @@ export function detectQualityProfile(reducedMotion: boolean): QualityProfile {
       dustCount: 160,
       fireflyCount: 20,
       mistCount: 55,
-      trafficCount: 6,
+      trafficCount: 3,
       enableBokeh: false,
       bloomScale: 0.65,
       hazeLayers: 1,
@@ -61,7 +68,7 @@ export function detectQualityProfile(reducedMotion: boolean): QualityProfile {
     dustCount: 200,
     fireflyCount: 30,
     mistCount: 70,
-    trafficCount: 7,
+    trafficCount: 3,
     // El detector de tier solo mira ancho de viewport y tipo de puntero,
     // no la GPU real: un desktop con gráficos integrados (muy común) caía
     // en 'high' igual que una máquina con GPU dedicada y arrastraba
