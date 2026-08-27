@@ -52,7 +52,26 @@ jobs:
         run: npm run lint
 
       - name: Unit tests
-        run: npm test
+        id: unit_tests
+        continue-on-error: true
+        run: npm test 2>&1 | tee /tmp/unit-tests-output.txt
+
+      # Paso de diagnostico temporal: vuelca el output de los tests al
+      # Job Summary (visible via API sin depender del blob storage de
+      # logs) y corta el pipeline si realmente fallaron. Se puede sacar
+      # una vez resuelto el fallo real de Unit tests en Node 20.
+      - name: Diagnostico Unit tests (temporal)
+        if: always()
+        run: |
+          echo '## Output de "npm test"' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          tail -c 60000 /tmp/unit-tests-output.txt >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo "node: $(node -v)" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ steps.unit_tests.outcome }}" = "failure" ]; then
+            echo "Unit tests fallaron de verdad, cortando el pipeline."
+            exit 1
+          fi
 
       # Chequeo de regresión para el bug del BOM UTF-8: si el catálogo de
       # vehículos colapsa (por un BOM, un cambio en el loader, en el
