@@ -73,6 +73,12 @@ jobs:
       - name: Verify SEO routes
         run: npm run verify:seo
 
+      # Falla el pipeline si alguna ficha nueva quedo sin evidence
+      # (primarySource/secondarySource) o sin contenido - asi nadie
+      # mergea una ficha "pelada" sin darse cuenta.
+      - name: Audit evidence coverage
+        run: npm run audit:evidence
+
       - name: Build
         run: npm run build
 
