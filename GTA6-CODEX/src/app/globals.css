@@ -1868,7 +1868,19 @@ a:hover .logo-mark {
   text-transform: uppercase;
   white-space: nowrap;
   color: color-mix(in srgb, #22d3ee calc(var(--scene-warmth) * 100%), #ff2f8f calc((1 - var(--scene-warmth)) * 100%));
-  opacity: 0.6;
+  /* `--scene-depth` (0..1) da una lectura de profundidad de campo real:
+     con más profundidad de escena el shard se desenfoca levemente,
+     coherente con el bokeh que ya aplica el motor a la cámara 3D
+     (`bokehPass`) en vez de un blur inventado aparte. `saturate`/
+     `hue-rotate` reutilizan la MISMA luz (`warmth`) que ya tiñe el
+     borde/texto vía `color-mix` arriba. NOTA: `opacity`/`transform` NO
+     van acá — la animación de abajo (`fill: both`) los gobierna siempre,
+     incluso en reposo (fase "before" = keyframe `from`), así que
+     cualquier valor puesto acá sería letra muerta; ver `from` en
+     `@keyframes hero-shard-disperse`. */
+  filter: blur(calc(var(--scene-depth, 0.5) * 0.6px)) saturate(calc(0.8 + var(--scene-saturation, 0.7) * 0.4))
+    hue-rotate(calc(var(--scene-hue-shift, 0deg) * 0.5));
+  transition: filter 220ms ease;
   animation: hero-shard-disperse 1100ms var(--ease-premium) both;
   animation-timeline: --hero-scroll;
   /* Mismo `exit` que `.hero-declass-bar`: arranca justo cuando el hero
@@ -1936,8 +1948,16 @@ a:hover .logo-mark {
 
 @keyframes hero-shard-disperse {
   from {
-    opacity: 0.6;
-    transform: translate(0, 0) rotate(0deg);
+    /* Mismos valores que la nota en `.hero-word-shard` explica que NO
+       pueden vivir en la regla base: acá sí surten efecto, porque este es
+       el keyframe que la fase "before" usa en reposo (`fill: both`).
+       `--scene-particle-density` (0..~1.4) sube con intensidad/kick
+       reales de la escena — el shard "respira" con el mismo pulso que la
+       cámara 3D, no con una opacidad fija desconectada del canvas.
+       `--scene-depth` encoge levemente el shard cuando la escena está en
+       mayor profundidad de campo, mismo lenguaje que el bokeh de cámara. */
+    opacity: min(calc(0.35 + var(--scene-particle-density, 0.5) * 0.35), 0.75);
+    transform: translate(0, 0) rotate(0deg) scale(calc(1 - var(--scene-depth, 0.5) * 0.04));
   }
   to {
     opacity: 0;
@@ -1948,7 +1968,7 @@ a:hover .logo-mark {
 @supports not (animation-timeline: scroll()) {
   .hero-word-shard {
     animation: none;
-    opacity: 0.6;
+    opacity: min(calc(0.35 + var(--scene-particle-density, 0.5) * 0.35), 0.75);
     transform: none;
   }
 }
@@ -1956,7 +1976,7 @@ a:hover .logo-mark {
 @media (prefers-reduced-motion: reduce) {
   .hero-word-shard {
     animation: none !important;
-    opacity: 0.6 !important;
+    opacity: min(calc(0.35 + var(--scene-particle-density, 0.5) * 0.35), 0.75) !important;
     transform: none !important;
   }
 }
