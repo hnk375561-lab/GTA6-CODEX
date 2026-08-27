@@ -137,12 +137,20 @@ body {
      La opacity base (0.05) reacciona a --scroll-speed: en scroll rápido
      sube a 0.095 (0.05 + 1.0 * 0.045), haciendo el grano más visible.
      Simula "fricción visual" en el momento del fling, sin cambiar la
-     estructura del grano mismo — es puramente aditivo sobre lo que estaba. */
+     estructura del grano mismo — es puramente aditivo sobre lo que estaba.
+     Capítulo 1.1/1.3: en la fase "invitación" (70-100% del scroll de la
+     página — CTA final) el kick de velocidad se recorta a la mitad
+     (0.045 → 0.02): es el tramo pensado para que la persona LEA el CTA
+     final tranquila, no para que sienta fricción de scroll rápido. */
   opacity: calc(0.05 + var(--scroll-speed, 0) * 0.045);
   transition: opacity 180ms ease-out;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 180px 180px;
+}
+
+[data-scroll-phase='invitacion'] .auto-atmosphere::before {
+  opacity: calc(0.05 + var(--scroll-speed, 0) * 0.02);
 }
 
 .auto-atmosphere::after {
