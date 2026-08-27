@@ -11,7 +11,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.809Z",
-  "updatedAt": "2026-08-27T01:57:23.483Z",
+  "updatedAt": "2026-08-27T03:57:32.191Z",
   "manufacturer": "Suzuki",
   "class": "SUV compacta",
   "customizable": false,
@@ -19,21 +19,23 @@
     "speed": "180 km/h",
     "acceleration": "0-100 km/h en 10.5s"
   },
-  "power": "101 hp",
-  "price": "USD 20.000 (referencia mercado internacional)",
+  "power": "103 hp",
+  "price": "Desde $14.690.000 CLP (referencia mercado regional)",
   "evidence": {
-    "level": "respaldado",
-    "note": "Se utilizaron datos técnicos de conocimiento general de alta confianza para el Suzuki Fronx, un SUV compacto basado en la plataforma del Baleno comercializado principalmente en mercados de India, África y América Latina.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.suzuki.cl/vehiculo/fronx",
+    "secondarySource": "https://www.suzukiuniversidad.com.mx/suzuki-fronx-boostergreen.html",
+    "note": "Se utilizaron fichas técnicas oficiales y portales regionales de Suzuki en Chile y México para verificar potencias, consumos con tecnología Mild Hybrid / Boostergreen, capacidades y dimensiones exactas.",
     "limitations": [
-      "Las especificaciones varían según el mercado regional (por ejemplo, presencia del motor 1.0 Boosterjet vs 1.5 atmosférico con tecnología Mild Hybrid).",
-      "Los precios exactos dependen fuertemente de los aranceles de importación de cada país."
+      "Las especificaciones de equipamiento y precios exactos varían según el mercado latinoamericano de destino.",
+      "Los valores de consumo de combustible dependen fuertemente de los hábitos de manejo y la topografía local."
     ]
   },
   "transmision": "Manual de 5 velocidades o Automática de 6 velocidades",
   "traccion": "Delantera (2WD)",
   "peso": "965 - 1060 kg",
-  "tipoMotor": "Nafta (Gasolina) 1.5L K15C o 1.0L Boosterjet turbo",
-  "potenciaKW": "74 kW",
+  "tipoMotor": "Nafta 1.5L DOHC con tecnología Mild Hybrid (Boostergreen)",
+  "potenciaKW": "76 kW",
   "capacidadTanque": "37 litros",
   "tiempoRecorrido": "11.0s",
   "anoProduccion": "2023-presente",
@@ -122,7 +124,7 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "consumo": "5.4 L/100 km",
+  "consumo": "Mixto de 18,9 a 19,2 km/lt (aproximadamente 5.2 L/100 km según versión y homologación)",
   "dimensiones": "3995 x 1765 x 1550 mm",
   "cilindrada": "1462 cc",
   "emisiones": null,
@@ -253,8 +255,8 @@
     "description": "SUV coupé compacta de Suzuki, motor 1.2L o turbo 1.0L Boosterjet."
   },
   "verified": {
-    "source": "respaldado",
-    "lastChecked": "2026-08-27T01:57:23.483Z",
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T03:57:32.191Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -308,5 +310,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Suzuki Fronx hizo su debut mundial a principios de 2023 en el Auto Expo de la India, posicionándose rápidamente como una propuesta fresca dentro del segmento de los B-SUV. Desarrollado tomando como punto de partida la plataforma exitosa del Suzuki Baleno, el Fronx adoptó una silueta de tipo SUV coupé que combina la versatilidad de un vehículo elevado con líneas dinámicas y deportivas en la caída del techo posterior. Esta estrategia permitió a la marca japonesa captar la atención de un público más joven que busca estética aventurera sin resignar dimensiones aptas para el uso urbano.\n\n## Un hito o generación relevante\nLa introducción de la primera generación del Fronx marcó un hito en la estrategia global de exportación de Suzuki desde la India (a través de su filial Maruti Suzuki). Al incorporar opciones mecánicas que van desde el eficiente bloque atmosférico de 1.5 litros hasta el reconocido motor turboalimentado Boosterjet de 1.0 litro con tecnología híbrida ligera (Mild Hybrid), el modelo logró homologar excelentes cifras de consumo de combustible, adaptándose con éxito a normativas de emisiones exigentes en mercados de exportación como Oriente Medio, África y Latinoamérica.\n\n## Curiosidades\nA pesar de sus dimensiones compactas —con una longitud que se ubica justo por debajo de los 4 metros en su mercado de origen para aprovechar beneficios fiscales—, el diseño interior aprovecha al máximo el espacio disponible, ofreciendo una capacidad de baúl muy respetable para su categoría (308 litros). Además, su estética frontal guarda un fuerte parentesco visual con el Suzuki Grand Vitara de nueva generación, heredando su impronta robusta con ópticas divididas y una parrilla frontal de presencia marcada.\n\n## Competencia y posicionamiento\nEn el plano internacional, el Suzuki Fronx compite en un segmento sumamente concurrido de crossovers subcompactos, enfrentándose a modelos de gran peso como el Toyota Raize, Nissan Kicks, Volkswagen Nivus y Chevrolet Tracker. Su principal argumento de venta radica en ofrecer una excelente relación costo-beneficio, una estética diferenciada por su formato coupé y la probada confiabilidad mecánica característica de la firma japonesa, posicionándose como una alternativa atractiva frente a competidores de mayor valor."
+  "content": "## Historia del modelo\nEl Suzuki Fronx irrumpió en el mercado automotriz global a principios de 2023, presentándose inicialmente en el Auto Expo de la India como una propuesta fresca y vanguardista dentro del segmento de los B-SUV. Tomando como base estructural la exitosa y probada plataforma del Suzuki Baleno, los ingenieros de la marca japonesa idearon una silueta con formato de SUV coupé que fusiona la versatilidad de un despeje del suelo elevado con líneas dinámicas y una pronunciada caída del techo en su sector posterior. Esta configuración le permitió a la compañía capturar la atención de un público joven y urbano que busca una estética moderna y aventurera sin renunciar a las ventajas de dimensiones acotadas para el uso diario en las grandes ciudades.\n\n## Un hito o generación relevante\nLa introducción de esta primera generación representó un hito estratégico para la expansión internacional de Suzuki, especialmente a través de su filial Maruti Suzuki en la India. Un factor clave en su consolidación comercial fue la incorporación progresiva de tecnologías de eficiencia energética, como el sistema de hibridación ligera (conocido en la región como Mild Hybrid o Boostergreen). Este esquema autorrecargable asiste al motor atmosférico de 1.5 litros, permitiéndole homologar consumos sumamente competitivos —superando los 19 km/lt en ciclo mixto según especificaciones de mercado— y cumpliendo de este modo con normativas ambientales cada vez más rigurosas en diversos mercados de exportación en América Latina y otros continentes.\n\n## Curiosidades\nA pesar de lucir una estampa robusta y contar con una longitud total que se mantiene por debajo de los 4 metros (precisamente 3.995 mm) para optimizar beneficios fiscales en determinados mercados de origen, el aprovechamiento interior del Fronx resulta destacable. Su habitáculo ofrece un espacio generoso para cinco ocupantes y una capacidad de baúl que ronda los 308 litros. Asimismo, en términos de diseño frontal, el modelo hereda parte del lenguaje visual de productos de mayor envergadura dentro de la marca, como el Suzuki Grand Vitara, destacándose por sus ópticas divididas y una parrilla de fuerte presencia tridimensional.\n\n## Competencia y posicionamiento\nEn el plano comercial de los crossovers compactos, el Suzuki Fronx se enfrenta a contrincantes de peso en el segmento B-SUV, tales como el Volkswagen Nivus, el Chevrolet Tracker y el Nissan Kicks. Su principal carta de presentación radica en una atractiva relación costo-beneficio, respaldada por la histórica reputación de confiabilidad mecánica de la firma japonesa. Al sumar tecnología híbrida ligera en sus versiones más equipadas, el modelo logra posicionarse como una alternativa inteligente y eficiente para quienes priorizan el ahorro de combustible sin resignar diseño y conectividad a bordo."
 }

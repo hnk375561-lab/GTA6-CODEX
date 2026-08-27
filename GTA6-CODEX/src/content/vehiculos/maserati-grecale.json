@@ -13,14 +13,16 @@
   "class": "SUV de lujo",
   "customizable": false,
   "power": "300 hp (GT) / 330 hp (Modena) / 530 hp (Trofeo)",
-  "price": "USD 65.000 (MSRP EE.UU. base de referencia)",
-  "consumo": "9.5 - 11.5 l/100km combinado",
+  "price": "Desde 86.687 € hasta 140.311 € (MSRP de referencia en Europa)",
+  "consumo": "8.8 - 11.2 l/100km combinado",
   "dimensiones": "4.846 mm x 1.948 mm x 1.670 mm",
   "evidence": {
     "level": "respaldado",
-    "note": "Se verificaron las especificaciones técnicas globales y la gama de motorizaciones del Maserati Grecale (GT, Modena y Trofeo) basadas en la plataforma Giorgio y la arquitectura del motor Nettuno.",
+    "primarySource": "https://www.diariomotor.com/coche/maserati-grecale",
+    "secondarySource": "https://es.driveduel.de/models/maserati/grecale/specs",
+    "note": "Se verificaron las especificaciones técnicas globales, gama de motorizaciones, potencias (300 a 530 CV), consumos homologados (8.8 - 11.2 l/100km) y los rangos de precios actualizados para el Maserati Grecale utilizando datos de portales especializados del sector.",
     "limitations": [
-      "Los precios varían según los mercados de exportación, opcionales y aranceles locales.",
+      "Los precios varían según los mercados de exportación, opcionales, aranceles e impuestos locales.",
       "El consumo de combustible puede diferir según las condiciones de homologación regionales (WLTP vs EPA)."
     ]
   },
@@ -29,7 +31,7 @@
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-27T01:22:59.531Z",
+  "updatedAt": "2026-08-27T03:57:20.764Z",
   "transmision": "Automática de 8 velocidades",
   "traccion": "Integral (AWD)",
   "peso": "1.870 - 2.027 kg",
@@ -207,7 +209,7 @@
   },
   "verified": {
     "source": "respaldado",
-    "lastChecked": "2026-08-27T01:22:59.531Z",
+    "lastChecked": "2026-08-27T03:57:20.764Z",
     "dataQuality": 0.85
   },
   "indexed": true,
@@ -226,5 +228,5 @@
     "hermanos": [],
     "competidores": []
   },
-  "content": "## Historia del modelo\nEl Maserati Grecale hizo su estreno oficial a comienzos de 2022, posicionándose estratégicamente como el segundo SUV en la historia de la marca del tridente, ubicándose un escalón por debajo del exitoso Levante. Su desembarco respondió a la firme intención de la firma de Módena de disputar el segmento de los SUV medianos de lujo, un nicho altamente competitivo a nivel global. Fiel a la tradición histórica de Maserati, el vehículo toma su nombre de un viento fresco del noreste que sopla en el Mar Mediterráneo.\n\n## Un hito o generación relevante\nConstruido sobre la reconocida plataforma Giorgio de origen FCA (hoy integrada en Stellantis), el Grecale comparte ciertos lazos arquitectónicos con otros exponentes del grupo como el Alfa Romeo Stelvio, aunque con dimensiones, puesta a punto y carrocería propias que priorizan el lujo y la deportividad italiana. Un hito fundamental en su corta pero intensa trayectoria es la introducción de la variante 100% eléctrica denominada Grecale Folgore, marcando el puntapié inicial hacia la electrificación total de la gama sin renunciar a las prestaciones dinámicas que caracterizan a la marca.\n\n## Curiosidades\nEntre sus detalles más llamativos, el Grecale rompe con la clásica tradición de los relojes analógicos de Maserati al incorporar por primera vez un reloj inteligente digital en la parte superior de la consola central, el cual también actúa como interfaz para los comandos por voz del asistente virtual. Asimismo, la versión más radical, denominada Trofeo, hereda parte de la ingeniería del motor de su hermano superdeportivo, el Maserati MC20, adaptando su bloque V6 biturbo bautizado como \"Nettuno\" (incorporando en este caso un sistema de cárter húmedo optimizado para un uso SUV).\n\n## Competencia y posicionamiento\nEl Maserati Grecale se inserta de lleno en el segmento de los SUV medianos de alta gama, enfrentándose de manera directa a referentes alemanes consolidados como el Porsche Macan, el BMW X3, el Audi Q5 y el Mercedes-Benz GLC. Frente a este nutrido grupo de rivales, la propuesta del modelo italiano se destaca por un diseño sumamente expresivo, calidades interiores de tipo artesanal en sus versiones superiores, y un tacto de conducción que equilibra de forma sobresaliente el confort rutero con la agilidad dinámica en tramos sinuosos."
+  "content": "## Historia del modelo\nEl Maserati Grecale hizo su estreno oficial a comienzos de 2022, posicionándose de manera estratégica como el segundo SUV en la historia de la marca del tridente, ubicándose un escalón por debajo del exitoso Levante. Su llegada respondió a la firme intención de la firma de Módena de disputar el segmento de los SUV medianos de lujo, un nicho altamente competitivo a nivel global. Fiel a la tradición histórica de Maserati, el vehículo toma su nombre de un viento fresco del noreste que sopla en el Mar Mediterráneo.\n\n## Un hito o generación relevante\nConstruido sobre la reconocida plataforma Giorgio, el Grecale comparte ciertos lazos arquitectónicos con otros exponentes del grupo, aunque con dimensiones, puesta a punto y carrocería propias que priorizan el lujo y la deportividad italiana. Un hito fundamental en su corta trayectoria es la diversificación de su gama mecánica, que abarca desde opciones Mild Hybrid de 4 cilindros altamente eficientes hasta la radical versión Trofeo impulsada por el bloque V6, sin olvidar la proyección de variantes 100% eléctricas que marcan el rumbo hacia la electrificación total de la marca.\n\n## Curiosidades\nEntre sus detalles más llamativos, el Grecale rompe con la clásica tradición de los relojes analógicos de Maserati al incorporar por primera vez un reloj inteligente digital en la parte superior de la consola central, el cual también actúa como interfaz para los comandos por voz y diversas funciones del vehículo. Asimismo, la variante más potente, denominada Trofeo, hereda parte de la ingeniería de desarrollo de su hermano superdeportivo, el Maserati MC20, adaptando su bloque V6 biturbo bautizado como \"Nettuno\" para un uso orientado a las altas prestaciones dentro de un formato SUV.\n\n## Competencia y posicionamiento\nEl Maserati Grecale se inserta de lleno en el segmento de los SUV medianos de alta gama, enfrentándose de manera directa a referentes consolidados como el Porsche Macan, el BMW X3, el Audi Q5 y el Mercedes-Benz GLC. Frente a este nutrido grupo de rivales, la propuesta del modelo italiano se destaca por un diseño sumamente expresivo, calidades interiores de tipo artesanal en sus versiones superiores, y un tacto de conducción que equilibra de forma sobresaliente el confort de marcha diario con la agilidad dinámica en tramos sinuosos."
 }

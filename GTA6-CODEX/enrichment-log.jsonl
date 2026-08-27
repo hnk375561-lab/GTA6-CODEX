@@ -854,3 +854,6 @@
 {"ts":"2026-08-27T03:15:18.697Z","file":"yamaha-mt-07.json","status":"ok","sourcesFound":4,"gotEvidence":true}
 {"ts":"2026-08-27T03:15:28.578Z","file":"yamaha-nmax.json","status":"ok","sourcesFound":4,"gotEvidence":true}
 {"ts":"2026-08-27T03:15:47.817Z","file":"yamaha-tenere-700.json","status":"ok","sourcesFound":4,"gotEvidence":true}
+{"ts":"2026-08-27T03:57:09.787Z","file":"ford-maverick.json","status":"ok","sourcesFound":4,"gotEvidence":true}
+{"ts":"2026-08-27T03:57:20.765Z","file":"maserati-grecale.json","status":"ok","sourcesFound":4,"gotEvidence":true}
+{"ts":"2026-08-27T03:57:32.192Z","file":"suzuki-fronx.json","status":"ok","sourcesFound":4,"gotEvidence":true}
