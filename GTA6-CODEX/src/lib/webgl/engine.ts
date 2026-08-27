@@ -1760,7 +1760,14 @@ export class AutoFichaWebGLEngine {
       )
 
       if (this.bokehPass) {
-        this.bokehPass.materialBokeh.uniforms.focus.value = 22 - this.scrollProgress * 7
+        // Capítulo 2.3 — Profundidad de campo que respira con la velocidad.
+        // El focus cambia con scrollProgress (movimiento del usuario dentro del sitio)
+        // Y TAMBIÉN con scrollVelocity (qué tan rápido se mueve).
+        // Scroll rápido desenfoca más (simula que el ojo no llega a enfocar).
+        const focusBase = 22 - this.scrollProgress * 7
+        const focusVelocityAdj = this.scrollVelocity * 15
+        this.bokehPass.materialBokeh.uniforms.focus.value =
+          focusBase + focusVelocityAdj
       }
 
       // Capítulo 2.1 de la Biblia del Scroll — parallax factorizado por

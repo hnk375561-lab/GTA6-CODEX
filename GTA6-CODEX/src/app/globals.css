@@ -3528,3 +3528,20 @@ video,
     transition: filter 600ms var(--ease-premium);
   }
 }
+
+/* ============================================================
+   Capítulo 2.3 — Profundidad de campo que respira
+   ============================================================ */
+
+/* El bokehPass (profundidad de campo real de Three.js) se actualiza en
+   engine.ts con scrollProgress + scrollVelocity. El focus value sube
+   (desenfoca) cuando hay scroll rápido, simulando que el ojo real no
+   llega a enfocar durante un fling. */
+
+/* Este es un efecto puro del motor 3D, no hay CSS aquí, pero se
+   documentan los factores:
+   - focusBase = 22 - scrollProgress * 7 (controla profundidad con posición)
+   - focusVelocity = scrollVelocity * 15 (agrega desenfoque temporal)
+   
+   El decay del desenfoque lo maneja Lenis automáticamente (scrollVelocity
+   decae smooth con la inercia de su física de scroll). */
