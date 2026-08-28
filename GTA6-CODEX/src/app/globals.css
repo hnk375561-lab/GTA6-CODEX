@@ -127,6 +127,16 @@ body {
   background-repeat: no-repeat;
 }
 
+/* Ver HomeBodyBg.tsx: solo se aplica mientras se está en '/'. Tapa el
+   gradiente oscuro de arriba con blanco sólido (incluida el área de
+   overscroll/rubber-band y los safe-insets) para que la home rediseñada
+   sea blanca de punta a punta, sin tocar el tema oscuro del resto del
+   sitio. */
+body.home-bg-white {
+  background-color: #ffffff;
+  background-image: none;
+}
+
 /* --- Grano fílmico + viñeta global ---
    Capa fija entre el canvas WebGL (z-0) y el contenido (z-10). Le da al
    sitio entero una textura de fotografía nocturna/análoga en vez de un

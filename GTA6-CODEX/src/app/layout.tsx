@@ -29,15 +29,11 @@ import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { TrendingBar } from '@/components/layout/TrendingBar'
 import { Footer } from '@/components/layout/Footer'
-import { WebGLBackground } from '@/components/webgl/WebGLBackground'
-import { SceneAmbientBridge } from '@/components/webgl/SceneAmbientBridge'
-import { ScrollTelemetryBridge } from '@/components/webgl/ScrollTelemetryBridge'
-import { ChoreoTelemetryBridge } from '@/components/webgl/ChoreoTelemetryBridge'
-import { ElasticCursor } from '@/components/ui/ElasticCursor'
 import { ConsentBanner } from '@/components/layout/ConsentBanner'
-import { ScrollTelemetryProvider } from '@/lib/scroll/scroll-telemetry'
 import { PageTransitionBridge } from '@/components/layout/PageTransitionBridge'
 import { ScrollRestorationBridge } from '@/components/layout/ScrollRestorationBridge'
+import { HideOnHome } from '@/components/layout/HideOnHome'
+import { HomeBodyBg } from '@/components/layout/HomeBodyBg'
 
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/config/site'
 // GA4 solo se activa si hay un ID real configurado. Sin esto, un build sin
@@ -91,7 +87,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="flex flex-col min-h-screen">
+      <body className="flex min-h-dvh flex-col">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-auto-dark focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-auto-text focus:shadow-auto-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
@@ -107,24 +103,20 @@ export default function RootLayout({
             crossOrigin="anonymous"
           />
         )}
-        <ScrollTelemetryProvider />
+        <HomeBodyBg />
         <ScrollRestorationBridge />
         <PageTransitionBridge />
-        <WebGLBackground />
-        <SceneAmbientBridge />
-        <ScrollTelemetryBridge />
-        <ChoreoTelemetryBridge />
-        <ElasticCursor />
-        {/* Grano fílmico + viñeta: capa atmosférica entre el canvas WebGL
-            (z-0) y el contenido (z-10). Ver .auto-atmosphere en globals.css. */}
-        <div className="auto-atmosphere" aria-hidden="true" />
-        <div id="page-content" className="relative z-10 flex min-h-screen flex-1 flex-col">
+        <div id="page-content" className="relative z-10 flex min-h-dvh flex-1 flex-col">
           <Header />
-          <TrendingBar />
+          <HideOnHome>
+            <TrendingBar />
+          </HideOnHome>
           <main id="main-content" className="flex-1">
             {children}
           </main>
-          <Footer />
+          <HideOnHome>
+            <Footer />
+          </HideOnHome>
         </div>
         {/* Vercel Analytics: no usa cookies ni almacenamiento persistente
             (a diferencia de GA4), por lo que no requiere pasar por

@@ -22,6 +22,12 @@ const NAV_LINKS = [
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
+  // La home es un viewport pineado a 100dvh: si el header queda `sticky`
+  // (como en el resto del sitio) le resta esos ~64-72px al panel, y el
+  // panel deja de ocupar la pantalla completa. Acá pasa a `fixed`
+  // (fuera del flujo, no reserva alto) y flota traslúcido/claro sobre el
+  // fondo blanco de la home en vez del glass oscuro del resto del sitio.
+  const isHome = pathname === '/'
 
   // Cierra el menú móvil al navegar y al presionar Escape.
   useEffect(() => {
@@ -39,18 +45,46 @@ export function Header() {
     return () => document.removeEventListener('keydown', onKeyDown)
   }, [menuOpen])
 
+  const iconBtnClass = isHome
+    ? 'flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-300 text-neutral-600 transition-all hover:border-neutral-900 hover:text-neutral-900 focus-visible:border-neutral-900 focus-visible:text-neutral-900'
+    : 'flex h-9 w-9 items-center justify-center rounded-lg border border-auto-border text-auto-text-secondary transition-all hover:border-auto-accent hover:text-auto-accent-strong hover:shadow-glow-pink focus-visible:border-auto-accent focus-visible:text-auto-accent'
+
   return (
-    <header className="glass-surface sticky top-0 z-50 w-full border-b border-auto-border/80 shadow-[0_1px_0_0_rgba(255,255,255,0.03)]">
-      <div className="section-divider absolute inset-x-0 bottom-0" aria-hidden="true" />
+    <header
+      className={
+        isHome
+          ? // `fixed` (no `sticky`): fuera del flujo del documento, no le
+            // resta alto al panel pineado de 100dvh de abajo. `env(safe-area-inset-top)`
+            // lo empuja debajo del notch/isla dinámica en vez de quedar tapado.
+            'fixed inset-x-0 top-0 z-50 w-full border-b border-neutral-200/70 bg-white/75 backdrop-blur-md'
+          : 'glass-surface sticky top-0 z-50 w-full border-b border-auto-border/80 shadow-[0_1px_0_0_rgba(255,255,255,0.03)]'
+      }
+      style={isHome ? { paddingTop: 'env(safe-area-inset-top)' } : undefined}
+    >
+      {!isHome && <div className="section-divider absolute inset-x-0 bottom-0" aria-hidden="true" />}
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-3">
-          <div className="logo-mark flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-auto-accent to-auto-accent-orange shadow-glow-pink">
-            <span className="font-display text-xs font-bold tracking-tight text-auto-darker">A</span>
+          <div
+            className={
+              isHome
+                ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-neutral-900'
+                : 'logo-mark flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-auto-accent to-auto-accent-orange shadow-glow-pink'
+            }
+          >
+            <span className={`font-display text-xs font-bold tracking-tight ${isHome ? 'text-white' : 'text-auto-darker'}`}>
+              A
+            </span>
           </div>
-          <span className="hidden font-display text-base font-semibold tracking-tight text-auto-text transition-colors duration-300 group-hover:text-auto-accent-strong sm:inline">
-            Auto<span className="text-gradient-vice">Ficha</span>
-          </span>
+          {isHome ? (
+            <span className="hidden font-display text-base font-semibold tracking-tight text-neutral-900 transition-colors duration-300 group-hover:text-neutral-600 sm:inline">
+              Auto<span className="text-orange-600">Ficha</span>
+            </span>
+          ) : (
+            <span className="hidden font-display text-base font-semibold tracking-tight text-auto-text transition-colors duration-300 group-hover:text-auto-accent-strong sm:inline">
+              Auto<span className="text-gradient-vice">Ficha</span>
+            </span>
+          )}
         </Link>
 
         {/* Navegación principal (desktop) */}
@@ -59,7 +93,11 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="link-underline text-sm font-medium text-auto-text-secondary transition-colors hover:text-auto-accent-strong focus-visible:text-auto-accent-strong"
+              className={
+                isHome
+                  ? 'text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900 focus-visible:text-neutral-900'
+                  : 'link-underline text-sm font-medium text-auto-text-secondary transition-colors hover:text-auto-accent-strong focus-visible:text-auto-accent-strong'
+              }
             >
               {link.label}
             </Link>
@@ -68,11 +106,7 @@ export function Header() {
 
         {/* Búsqueda y menú móvil */}
         <div className="flex items-center gap-2">
-          <Link
-            href="/buscar"
-            aria-label="Buscar"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-auto-border text-auto-text-secondary transition-all hover:border-auto-accent hover:text-auto-accent-strong hover:shadow-glow-pink focus-visible:border-auto-accent focus-visible:text-auto-accent"
-          >
+          <Link href="/buscar" aria-label="Buscar" className={iconBtnClass}>
             <svg
               width="16"
               height="16"
@@ -89,11 +123,7 @@ export function Header() {
             </svg>
           </Link>
 
-          <Link
-            href="/favoritos"
-            aria-label="Favoritos"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-auto-border text-auto-text-secondary transition-all hover:border-auto-accent hover:text-auto-accent-strong hover:shadow-glow-pink focus-visible:border-auto-accent focus-visible:text-auto-accent"
-          >
+          <Link href="/favoritos" aria-label="Favoritos" className={iconBtnClass}>
             <svg
               width="16"
               height="16"
@@ -115,7 +145,7 @@ export function Header() {
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-auto-border text-auto-text-secondary transition-all hover:border-auto-accent hover:text-auto-accent-strong hover:shadow-glow-pink focus-visible:border-auto-accent focus-visible:text-auto-accent md:hidden"
+            className={`${iconBtnClass} md:hidden`}
           >
             <svg
               width="16"
@@ -143,14 +173,22 @@ export function Header() {
         id="mobile-nav"
         aria-label="Navegación móvil"
         hidden={!menuOpen}
-        className="glass-surface border-t border-auto-border px-4 py-3 md:hidden"
+        className={
+          isHome
+            ? 'border-t border-neutral-200/70 bg-white/95 px-4 py-3 backdrop-blur-md md:hidden'
+            : 'glass-surface border-t border-auto-border px-4 py-3 md:hidden'
+        }
       >
         <ul className="flex flex-col">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="block rounded-md px-2 py-3 text-base font-medium text-auto-text-secondary transition-colors hover:bg-auto-surface-elevated hover:text-auto-accent-strong focus-visible:bg-auto-surface-elevated focus-visible:text-auto-accent"
+                className={
+                  isHome
+                    ? 'block rounded-md px-2 py-3 text-base font-medium text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus-visible:bg-neutral-100 focus-visible:text-neutral-900'
+                    : 'block rounded-md px-2 py-3 text-base font-medium text-auto-text-secondary transition-colors hover:bg-auto-surface-elevated hover:text-auto-accent-strong focus-visible:bg-auto-surface-elevated focus-visible:text-auto-accent'
+                }
               >
                 {link.label}
               </Link>
