@@ -1,15 +1,22 @@
 'use client'
 
-import { useCallback, useRef, type CSSProperties, type ReactNode } from 'react'
+import { useCallback, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 
 /**
  * Traslada levemente a sus hijos siguiendo el mouse dentro de todo el
  * viewport (no solo al pasar por encima del elemento) — pensado para el
  * título del hero: da una sensación sutil de "el sitio responde a vos"
  * incluso antes de que el usuario interactúe con nada puntual. `strength`
- * es el desplazamiento máximo en px. Usa `pointermove` en window (no en el
- * propio nodo) para que el efecto arranque desde cualquier punto de la
- * pantalla, no solo al entrar al elemento.
+ * es el desplazamiento máximo en px. Usa `pointermove` en `window` (no un
+ * handler sintético de React sobre el propio nodo) para que el efecto
+ * arranque desde cualquier punto de la pantalla, no solo al entrar al
+ * elemento — antes el listener vivía en el propio `<div>` del título y el
+ * movimiento apenas se notaba.
+ *
+ * Respeta `prefers-reduced-motion`, igual que `PinnedScrollStages`,
+ * `CountUp` y `WordRotate`: si está activo, no se agrega el listener y el
+ * título queda fijo. Chequea el valor inicial y se suscribe a cambios en
+ * caliente (mismo patrón que `PinnedScrollStages`/`RotatingHeroBackground`).
  */
 export function Parallax({
   strength = 10,
@@ -21,36 +28,45 @@ export function Parallax({
   children: ReactNode
 }) {
   const ref = useRef<HTMLDivElement>(null)
-  const rafRef = useRef<number | null>(null)
+  const [reducedMotion, setReducedMotion] = useState(false)
 
-  const onPointerMove = useCallback(
-    (e: React.PointerEvent<HTMLDivElement>) => {
+  useEffect(() => {
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setReducedMotion(query.matches)
+    const onChange = () => setReducedMotion(query.matches)
+    query.addEventListener('change', onChange)
+    return () => query.removeEventListener('change', onChange)
+  }, [])
+
+  useEffect(() => {
+    if (reducedMotion) return
+
+    let raf = 0
+    const onPointerMove = (e: PointerEvent) => {
       if (e.pointerType !== 'mouse') return // sin esto en touch queda "pegado" al último toque
-      if (rafRef.current !== null) return
-      rafRef.current = requestAnimationFrame(() => {
-        rafRef.current = null
+      if (raf) return
+      raf = requestAnimationFrame(() => {
+        raf = 0
         const el = ref.current
         if (!el) return
         const nx = (e.clientX / window.innerWidth) * 2 - 1 // [-1, 1]
         const ny = (e.clientY / window.innerHeight) * 2 - 1
         el.style.transform = `translate3d(${nx * strength}px, ${ny * strength * 0.6}px, 0)`
       })
-    },
-    [strength]
-  )
+    }
 
-  const onPointerLeave = useCallback(() => {
-    const el = ref.current
-    if (el) el.style.transform = 'translate3d(0, 0, 0)'
-  }, [])
+    window.addEventListener('pointermove', onPointerMove, { passive: true })
+    return () => {
+      window.removeEventListener('pointermove', onPointerMove)
+      if (raf) cancelAnimationFrame(raf)
+    }
+  }, [strength, reducedMotion])
 
   return (
     <div
       ref={ref}
-      onPointerMove={onPointerMove}
-      onPointerLeave={onPointerLeave}
       className={className}
-      style={{ transition: 'transform 300ms ease-out', willChange: 'transform' }}
+      style={{ transition: 'transform 300ms ease-out', willChange: reducedMotion ? undefined : 'transform' }}
     >
       {children}
     </div>

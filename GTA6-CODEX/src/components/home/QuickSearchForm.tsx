@@ -60,7 +60,7 @@ export function QuickSearchForm() {
       role="search"
     >
       <svg
-        className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-auto-text-tertiary"
+        className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400"
         width="16"
         height="16"
         viewBox="0 0 24 24"
@@ -82,7 +82,7 @@ export function QuickSearchForm() {
         onChange={(e) => setValue(e.target.value)}
         placeholder="Ej. Toyota Corolla, BMW GS 310…"
         aria-label={`Búsqueda rápida en ${SITE_NAME}. Atajo: tecla oblicua`}
-        className="glass-surface w-full rounded-xl border border-auto-border py-3.5 pl-11 pr-24 text-sm text-auto-text placeholder:text-auto-text-tertiary transition-all focus:border-auto-accent focus:shadow-glow-pink focus:outline-none sm:text-base"
+        className="w-full rounded-xl border border-neutral-200 bg-white py-3.5 pl-11 pr-24 text-sm text-neutral-900 shadow-sm placeholder:text-neutral-400 transition-all focus:border-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900/10 sm:text-base"
       />
       {/* Indicador del atajo de teclado: se oculta solo mientras el input
           tiene contenido o foco (empty-values / has-[:focus]), y en mobile
@@ -91,13 +91,13 @@ export function QuickSearchForm() {
           en momentos distintos. */}
       <kbd
         aria-hidden="true"
-        className="hero-search-kbd-hint pointer-events-none absolute right-20 top-1/2 hidden -translate-y-1/2 items-center rounded-md border border-auto-border px-1.5 py-1 font-mono text-xs text-auto-text-tertiary sm:flex"
+        className="hero-search-kbd-hint pointer-events-none absolute right-20 top-1/2 hidden -translate-y-1/2 items-center rounded-md border border-neutral-200 px-1.5 py-1 font-mono text-xs text-neutral-400 sm:flex"
       >
         /
       </kbd>
       <button
         type="submit"
-        className="hero-search-submit absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-auto-accent px-3.5 py-2 text-xs font-semibold uppercase tracking-wide text-auto-darker transition-colors hover:bg-auto-accent-strong sm:text-sm"
+        className="hero-search-submit absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-orange-600 px-3.5 py-2 text-xs font-semibold uppercase tracking-wide text-white transition-colors hover:bg-orange-700 sm:text-sm"
       >
         Buscar
       </button>
