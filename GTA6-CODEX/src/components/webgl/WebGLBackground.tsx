@@ -48,13 +48,12 @@ function hasSeenIntroThisSession(): boolean {
  * El motor (Three.js) se carga de forma perezosa y solo en cliente.
  *
  * Con Save-Data activo (o una conexión declarada 2g/slow-2g) ni siquiera
- * se descarga el chunk del motor: es, con diferencia, el recurso más
- * pesado de toda la home (three.js + ~2000 líneas de escena/shaders/
- * postprocessing) y su costo de GPU es continuo mientras el hero está en
- * pantalla, no un gasto puntual. El `<canvas>` queda transparente y se ve
- * el fondo estático (`bg-auto-dark` en layout.tsx) — la misma degradación
- * elegante que ya aplica `detectQualityProfile` para el tier 'low', solo
- * que acá directamente no hay descarga ni motor que degradar.
+ * se descarga el chunk del motor — con el rediseño "horizonte mínimo" el
+ * motor ya es liviano (un solo plano de pantalla completa con un shader
+ * propio, sin postprocessing ni modelos 3D), pero sigue siendo three.js
+ * completo (~600kb) más costoso que no descargar nada. El `<canvas>`
+ * queda transparente y se ve el fondo estático (`bg-auto-dark` en
+ * layout.tsx).
  *
  * Capítulo 6.3 — persistencia entre páginas (auditado, no requirió cambio)
  * Este componente se monta en `app/layout.tsx`, el ÚNICO `layout.tsx` del
