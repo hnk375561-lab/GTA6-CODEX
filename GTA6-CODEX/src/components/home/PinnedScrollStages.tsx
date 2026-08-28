@@ -24,6 +24,15 @@ interface PinnedScrollStagesProps {
  * paneles arrancan y terminan su crossfade suave, en vez de a velocidad
  * constante como una interpolación lineal — la diferencia que separa un
  * fundido "calculado" de uno que se siente pulido. */
+/** Altura de scroll físico por panel, en `dvh`. Antes era 100 (una
+ * pantalla exacta por panel); subirlo estira el recorrido sin tocar la
+ * lógica de crossfade — `measure()` ya deriva todo de `rect.height`, así
+ * que el único efecto de este número es "cuánto hay que scrollear" para
+ * pasar de un panel al siguiente. Más alto = transición más lenta y
+ * pausada, con más margen para que la cascada de cada panel (`Reveal`)
+ * termine de asentarse antes de que arranque el próximo fundido. */
+const STAGE_SCROLL_VH = 170
+
 function easeInOutCubic(t: number): number {
   const c = Math.min(1, Math.max(0, t))
   return c < 0.5 ? 4 * c * c * c : 1 - Math.pow(-2 * c + 2, 3) / 2
@@ -129,7 +138,11 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
   useEffect(() => {
     if (reducedMotion) return
     let alive = true
-    const LERP_FACTOR = 0.16 // ~6-7 frames para alcanzar el 90% del recorrido a 60fps
+    const LERP_FACTOR = 0.11 // antes 0.16 — más "peso"/inercia ahora que el
+    // recorrido físico es más largo (STAGE_SCROLL_VH): un lerp más lento se
+    // nota más y refuerza la sensación de scroll "pesado"/pulido en vez de
+    // instantáneo, sin desalinearse del scroll real (sigue siendo 1:1, solo
+    // más suave).
 
     function tick() {
       if (!alive) return
@@ -179,8 +192,26 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
   const globalProgress = stages.length > 1 ? displayProgress / (stages.length - 1) : 1
 
   return (
-    <div ref={trackRef} style={{ height: `${stages.length * 100}dvh` }} className="relative">
+    <div ref={trackRef} style={{ height: `${stages.length * STAGE_SCROLL_VH}dvh` }} className="relative">
       <div className="sticky top-0 h-dvh w-full overflow-hidden bg-white">
+        {/* Fondo con vida propia: dos manchas de gradiente muy suaves que
+            derivan lentamente en función del progreso *global* del scroll
+            (no del mouse, no en loop infinito) — dan sensación de que el
+            sitio "respira" de fondo sin competir con el contenido ni
+            romper la estética blanca/minimalista. `zIndex: 0` explícito
+            para que los paneles (z-index 1/2) siempre queden por encima
+            sin depender del orden en el DOM. */}
+        <div className="pointer-events-none absolute inset-0" style={{ zIndex: 0 }} aria-hidden="true">
+          <div
+            className="absolute h-[38rem] w-[38rem] rounded-full bg-orange-200/25 blur-3xl"
+            style={{ transform: `translate3d(${-16 + globalProgress * 46}%, ${-24 + globalProgress * 70}%, 0)` }}
+          />
+          <div
+            className="absolute right-0 h-[34rem] w-[34rem] rounded-full bg-neutral-200/60 blur-3xl"
+            style={{ transform: `translate3d(${18 - globalProgress * 52}%, ${64 - globalProgress * 80}%, 0)` }}
+          />
+        </div>
+
         {stages.map((stage, i) => {
           const diff = displayProgress - i
           const absDiff = Math.abs(diff)

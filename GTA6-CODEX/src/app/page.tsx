@@ -22,6 +22,7 @@ import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
 import { QuickSearchForm } from '@/components/home/QuickSearchForm'
 import { PinnedScrollStages, type Stage } from '@/components/home/PinnedScrollStages'
 import { Reveal } from '@/components/home/StageProgress'
+import { Parallax, TiltCard } from '@/components/home/Parallax'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateHomepageMetadata()
@@ -89,13 +90,15 @@ export default async function HomePage() {
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
               Auto · Ficha
             </p>
-            <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-6xl lg:text-7xl">
-              Cada{' '}
-              <span className="text-orange-600">
-                <WordRotate words={HERO_SUBTITLE_WORDS} />
-              </span>{' '}
-              a un clic
-            </h1>
+            <Parallax strength={14}>
+              <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-6xl lg:text-7xl">
+                Cada{' '}
+                <span className="text-orange-600">
+                  <WordRotate words={HERO_SUBTITLE_WORDS} />
+                </span>{' '}
+                a un clic
+              </h1>
+            </Parallax>
           </Reveal>
 
           <Reveal index={1} total={4} className="mx-auto mt-6 max-w-xl">
@@ -176,23 +179,25 @@ export default async function HomePage() {
                     className="group block h-full"
                     style={{ '--auto-corner-color': accent } as CSSProperties}
                   >
-                    <Card hoverable className="relative flex h-full flex-col overflow-hidden !p-0 text-center">
-                      <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden">
-                        <CategoryCardMedia previews={categoryPreviews[type]} />
-                        <div className="absolute left-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-lg bg-black/40 text-white backdrop-blur">
-                          <CategoryIcon type={type} className="h-5 w-5" />
+                    <TiltCard className="h-full">
+                      <Card hoverable className="relative flex h-full flex-col overflow-hidden !p-0 text-center">
+                        <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden">
+                          <CategoryCardMedia previews={categoryPreviews[type]} />
+                          <div className="absolute left-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-lg bg-black/40 text-white backdrop-blur">
+                            <CategoryIcon type={type} className="h-5 w-5" />
+                          </div>
                         </div>
-                      </div>
-                      <div className="relative z-10 flex flex-1 flex-col gap-2 px-5 py-4">
-                        <p className="font-semibold text-auto-text">{ENTITY_TYPE_LABELS[type]}</p>
-                        <p className="text-sm text-auto-text-secondary">
-                          {countsByType[type]} {countsByType[type] === 1 ? 'entrada' : 'entradas'}
-                        </p>
-                        <div className="h-1 w-full overflow-hidden rounded-full bg-auto-border" aria-hidden="true">
-                          <div className="h-full rounded-full" style={{ width: `${density}%`, background: accent }} />
+                        <div className="relative z-10 flex flex-1 flex-col gap-2 px-5 py-4">
+                          <p className="font-semibold text-auto-text">{ENTITY_TYPE_LABELS[type]}</p>
+                          <p className="text-sm text-auto-text-secondary">
+                            {countsByType[type]} {countsByType[type] === 1 ? 'entrada' : 'entradas'}
+                          </p>
+                          <div className="h-1 w-full overflow-hidden rounded-full bg-auto-border" aria-hidden="true">
+                            <div className="h-full rounded-full" style={{ width: `${density}%`, background: accent }} />
+                          </div>
                         </div>
-                      </div>
-                    </Card>
+                      </Card>
+                    </TiltCard>
                   </Link>
                 </Reveal>
               )
@@ -230,12 +235,14 @@ export default async function HomePage() {
                 <div className="grid max-h-[46vh] grid-cols-1 gap-4 overflow-y-auto sm:grid-cols-2 lg:grid-cols-3">
                   {featured.slice(0, 6).map((entity, i) => (
                     <Reveal key={`${entity.type}-${entity.slug}`} index={i} total={6}>
-                      <EntityCard
-                        entity={entity}
-                        image={resolveEntityDisplayImage(entity)}
-                        clipUrl={undefined}
-                        relationCount={featuredRelationCounts[entity.slug]}
-                      />
+                      <TiltCard>
+                        <EntityCard
+                          entity={entity}
+                          image={resolveEntityDisplayImage(entity)}
+                          clipUrl={undefined}
+                          relationCount={featuredRelationCounts[entity.slug]}
+                        />
+                      </TiltCard>
                     </Reveal>
                   ))}
                 </div>
@@ -268,7 +275,9 @@ export default async function HomePage() {
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                   {latestNews.map((entity, i) => (
                     <Reveal key={`${entity.type}-${entity.slug}`} index={i} total={latestNews.length}>
-                      <EntityCard entity={entity} image={latestNewsImages[entity.slug]} />
+                      <TiltCard>
+                        <EntityCard entity={entity} image={latestNewsImages[entity.slug]} />
+                      </TiltCard>
                     </Reveal>
                   ))}
                 </div>
