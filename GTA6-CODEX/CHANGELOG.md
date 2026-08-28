@@ -9,6 +9,21 @@ entradas se agrupan por fecha en vez de por número de versión.
 
 ## [Sin publicar]
 
+### Quitado
+- **Parallax de scroll en cards de la home (Capítulo 2.2, `useParallax`/
+  `ParallaxElement`):** las cards de categorías, destacados, niveles de
+  evidencia y últimas noticias trasladaban y escalaban a una fracción de
+  la velocidad de scroll durante todo su tránsito por el viewport —
+  contrario al pedido de "sitio estático": el contenido debe aparecer
+  una vez al entrar en pantalla y quedar fijo, sin moverse en ningún
+  sentido mientras se scrollea por encima. Se reemplazan los
+  `<ParallaxElement>` por `<div>`/componentes simples y se borra el hook
+  (`src/lib/hooks/useParallax.tsx`, sin otros usos en el código) y su
+  regla CSS asociada (`[style*="--parallax-offset"]`). El fondo del hero
+  (`RotatingHeroBackground`) mantiene su propio parallax leve, acotado a
+  esa capa de fondo dentro del hero, sin afectar el resto de la página.
+  Validado: `tsc --noEmit`, `eslint` y `next build` (344 páginas) limpios.
+
 ### Cambiado
 - **`<Reveal>` vuelve a un reveal simple, sin parallax/skew continuo:**
   revert de las tres vueltas anteriores (parallax continuo, versión "a
