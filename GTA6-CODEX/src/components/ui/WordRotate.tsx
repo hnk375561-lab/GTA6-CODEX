@@ -25,8 +25,9 @@ interface WordRotateProps {
  * mirando la animación completa. La palabra visible ahora se marca
  * `aria-hidden` (es puramente decorativa/visual) y se agrega un span
  * `sr-only` con la lista completa unida en una frase natural — mismo
- * patrón que ya usa el sitio para separar "lo que se ve" de "lo que se
- * anuncia" (ver `.hero-news-flash-arrow` aria-hidden, por ejemplo).
+ * patrón de separar "lo que se ve" de "lo que se anuncia" que usan
+ * otros elementos puramente decorativos del sitio (aria-hidden + texto
+ * sr-only aparte).
  */
 export function WordRotate({ words, duration = 2500, className }: WordRotateProps) {
   const [index, setIndex] = useState(0)

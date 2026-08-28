@@ -32,11 +32,10 @@ interface PinnedScrollStagesProps {
  * su opacidad/traslación se calculan en función de qué tan cerca está el
  * scroll actual de "su" índice — de ahí el crossfade sin salto.
  *
- * Es JS (no `animation-timeline: scroll()` nativo, que ya usa este sitio
- * en `.hero-gleam`) a propósito: acá los paneles no se desplazan por la
- * pantalla (están apilados en el mismo punto), así que no hay un "view"
- * real que timelinear — se necesita leer el progreso de scroll del propio
- * track. Soporte de `prefers-reduced-motion`: si está activo, se abandona
+ * Es JS (no `animation-timeline: scroll()` nativo) a propósito: acá los
+ * paneles no se desplazan por la pantalla (están apilados en el mismo
+ * punto), así que no hay un "view" real que timelinear — se necesita leer
+ * el progreso de scroll del propio track. Soporte de `prefers-reduced-motion`: si está activo, se abandona
  * el pineo por completo y los paneles se listan en flujo normal, cada uno
  * simplemente visible — mismo contenido, cero movimiento inventado.
  */
@@ -126,11 +125,19 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
             <div
               key={stage.id}
               aria-hidden={!isActive}
+              // `inert` (no solo `aria-hidden` + `pointer-events: none`): sin esto,
+              // un usuario de teclado podía Tab hacia links/botones de paneles
+              // fuera de foco (invisibles pero seguían en el DOM y en el orden de
+              // tabulación), quedando "perdido" en contenido que no ve en pantalla.
+              // `inert` saca el subárbol completo del orden de tabulación y del
+              // árbol de accesibilidad a la vez — soportado nativo desde React 19.
+              inert={!isActive}
               style={{
                 opacity,
                 transform: `translateY(${translateY}px)`,
                 pointerEvents: isActive ? 'auto' : 'none',
                 zIndex: isActive ? 2 : 1,
+                willChange: 'opacity, transform',
               }}
               className="absolute inset-0 flex items-center justify-center px-6"
             >
@@ -140,8 +147,14 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
         })}
 
         {/* Indicador de progreso + navegación directa entre paneles, mismo
-            lenguaje que los "page dots" de sitios tipo Apple. */}
-        <div className="pointer-events-auto absolute right-5 top-1/2 z-20 hidden -translate-y-1/2 flex-col items-center gap-3 sm:flex">
+            lenguaje que los "page dots" de sitios tipo Apple. Antes solo
+            aparecía desde `sm:` — en mobile (la mayoría del tráfico) no había
+            ninguna señal de "en qué panel estoy / cuántos quedan" más que la
+            flecha de "seguir scrolleando", que además desaparece en el último
+            panel. Ahora vive siempre: fila horizontal centrada abajo en
+            mobile, columna vertical a la derecha desde `sm:` — mismo
+            componente, solo cambia el eje. */}
+        <div className="pointer-events-auto absolute inset-x-0 bottom-16 z-20 flex items-center justify-center gap-3 sm:inset-x-auto sm:inset-y-1/2 sm:bottom-auto sm:right-5 sm:flex-col sm:-translate-y-1/2">
           {stages.map((stage, i) => (
             <button
               key={stage.id}

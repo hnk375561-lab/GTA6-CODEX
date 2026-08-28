@@ -80,7 +80,7 @@ export default async function HomePage() {
       label: 'Inicio',
       content: (
         <div className="mx-auto w-full max-w-3xl text-center">
-          <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
+          <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
             Auto · Ficha
           </p>
           <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-6xl lg:text-7xl">
@@ -100,7 +100,7 @@ export default async function HomePage() {
                 <span className="font-display text-3xl font-bold text-neutral-900">
                   <CountUp end={countsByType[type] ?? 0} />
                 </span>
-                <span className="text-xs uppercase tracking-[0.15em] text-neutral-400">
+                <span className="text-xs uppercase tracking-[0.15em] text-neutral-500">
                   {ENTITY_TYPE_LABELS[type]}
                 </span>
               </div>
@@ -110,7 +110,7 @@ export default async function HomePage() {
               <span className="font-display text-3xl font-bold text-orange-600">
                 <CountUp end={totalCount} />
               </span>
-              <span className="text-xs uppercase tracking-[0.15em] text-neutral-400">
+              <span className="text-xs uppercase tracking-[0.15em] text-neutral-500">
                 {totalCount === 1 ? 'Entrada total' : 'Entradas totales'}
               </span>
             </div>
@@ -143,7 +143,7 @@ export default async function HomePage() {
       label: 'Categorías',
       content: (
         <div className="mx-auto w-full max-w-5xl">
-          <p className="mb-2 text-center text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
+          <p className="mb-2 text-center text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
             Categorías
           </p>
           <h2 className="mb-10 text-center font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
@@ -194,7 +194,7 @@ export default async function HomePage() {
               <div className="mx-auto w-full max-w-5xl">
                 <div className="mb-10 flex items-end justify-between gap-4">
                   <div>
-                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
                       Destacados
                     </p>
                     <h2 className="font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
@@ -231,7 +231,7 @@ export default async function HomePage() {
               <div className="mx-auto w-full max-w-5xl">
                 <div className="mb-10 flex items-end justify-between gap-4">
                   <div>
-                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
                       Últimas noticias
                     </p>
                     <h2 className="font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
