@@ -243,14 +243,8 @@ export function EntityCard({
    *  dispara la carga real, y solo se llama cuando el IntersectionObserver
    *  confirma que la card está cerca del viewport. */
   const [ambientVisible, setAmbientVisible] = useState(false)
-  const [reducedMotion, setReducedMotion] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const mediaWrapRef = useRef<HTMLDivElement>(null)
-  /** Elemento que recibe la inclinación 3D en hover (mousemove). Separado
-   *  del nodo de `Card` (que ya tiene su propia animación CSS de
-   *  translateY + glow) para no pisar esa transición existente: acá se
-   *  compone un `perspective()+rotateX+rotateY` en un wrapper propio. */
-  const tiltRef = useRef<HTMLDivElement>(null)
   const quickFacts = getQuickFacts(entity)
   const resolvedRelationCount = relationCount ?? entity.relations?.length ?? 0
   const resolvedTypeLabel = typeLabel ?? ENTITY_TYPE_LABELS[entity.type]
@@ -261,29 +255,11 @@ export function EntityCard({
    *  puntual) — el sello simplemente no se renderiza en ese caso. */
   const evidenceStamp = entity.evidence?.level ? EVIDENCE_STAMP_META[entity.evidence.level] : null
 
-  // Antes solo se leía `.matches` una vez al montar: si el usuario cambiaba
-  // la preferencia del sistema (o del emulador de DevTools) con la página
-  // ya abierta, el tilt 3D seguía activo hasta el próximo refresh. Con el
-  // listener `change` (mismo patrón que ya usa HeroNewsFlash para su propio
-  // reducedMotion) el estado se actualiza en vivo, y si se activa mientras
-  // la card está inclinada, se resetea el transform al toque.
-  useEffect(() => {
-    const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
-    setReducedMotion(mql.matches)
-    const handler = (e: MediaQueryListEvent) => {
-      setReducedMotion(e.matches)
-      if (e.matches) handleTiltLeave()
-    }
-    mql.addEventListener('change', handler)
-    return () => mql.removeEventListener('change', handler)
-  }, [])
-
   // Clip como media ambiental: arranca el loop (mute, sin sonido) apenas la
-  // card entra en viewport, con opacity baja hasta que además hay hover.
-  // Se pausa al salir de pantalla — evita que una grilla larga de cards con
-  // clip mantenga decenas de videos corriendo en simultáneo fuera de vista.
+  // card entra en viewport.
+  // Se pausa al salir de pantalla.
   useEffect(() => {
-    if (!clipUrl || reducedMotion) return
+    if (!clipUrl) return
     const el = mediaWrapRef.current
     if (!el) return
     const io = new IntersectionObserver(
@@ -302,27 +278,7 @@ export function EntityCard({
     )
     io.observe(el)
     return () => io.disconnect()
-  }, [clipUrl, reducedMotion])
-
-  const handleTiltMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (reducedMotion) return
-    const el = tiltRef.current
-    if (!el) return
-    const rect = el.getBoundingClientRect()
-    const px = (e.clientX - rect.left) / rect.width
-    const py = (e.clientY - rect.top) / rect.height
-    // Amplitud chica a propósito (±4°/±3°): la idea es que la card se
-    // sienta como un objeto físico que reacciona al cursor, no un efecto
-    // de feria — demasiado ángulo lee como gimmick, no como premium.
-    const rotateY = (px - 0.5) * 8
-    const rotateX = (0.5 - py) * 6
-    el.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
-  }
-
-  const handleTiltLeave = () => {
-    const el = tiltRef.current
-    if (el) el.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)'
-  }
+  }, [clipUrl])
 
   if (layout === 'row') {
     return (
@@ -455,11 +411,8 @@ export function EntityCard({
 
   return (
     <div
-      ref={tiltRef}
-      onMouseMove={handleTiltMove}
-      onMouseLeave={handleTiltLeave}
       className={cn(
-        'group relative h-full transition-transform duration-300 ease-out will-change-transform',
+        'group relative h-full transition-transform duration-300 ease-out',
         className
       )}
     >
