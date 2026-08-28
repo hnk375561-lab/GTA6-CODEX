@@ -3,7 +3,13 @@
 import { useEffect, useState } from 'react'
 import Script from 'next/script'
 
-const STORAGE_KEY = 'gta6zona-cookie-consent'
+const STORAGE_KEY = 'autoficha-cookie-consent'
+// Nota: la key anterior ('gta6zona-cookie-consent') era un resabio del
+// nombre viejo del sitio (pivote GTA6 Zona -> AutoFicha). Se renombra acá
+// para no arrastrar branding legado en storage del navegador del usuario;
+// como efecto secundario, quienes ya habían aceptado/rechazado bajo la key
+// vieja van a ver el banner una vez más (trade-off aceptable frente a
+// dejar una key con el nombre del proyecto descartado).
 
 type ConsentState = 'accepted' | 'rejected' | null
 

@@ -9,6 +9,24 @@ entradas se agrupan por fecha en vez de por número de versión.
 
 ## [Sin publicar]
 
+### Corregido
+- **Branding legado de GTA6 en dos lugares "vivos" (no comentarios
+  históricos):** auditoría de todo el repo buscando `gta6|gta-|leonida|
+  rockstar|take-two` encontró que casi todos los hits restantes son
+  comentarios que documentan el pivote a propósito (correcto, quedan). Pero
+  dos eran artefactos reales todavía en uso:
+  - `ConsentBanner.tsx` guardaba el consentimiento de cookies bajo la key
+    de `localStorage` `gta6zona-cookie-consent`. Renombrada a
+    `autoficha-cookie-consent`. Efecto secundario aceptado: quien ya había
+    aceptado/rechazado bajo la key vieja va a ver el banner una vez más.
+  - `src/content/README.md` seguía describiendo el modelo de datos del
+    proyecto anterior (tipos `personajes`, `misiones`, `armas`, etc. que
+    nunca existieron en este repo tras el pivote) en vez del modelo real
+    (`vehiculos` / `noticias` / `guias`, ver `src/types/entity.ts`).
+    Reescrito para reflejar el schema real (`Vehicle`, niveles de
+    `evidence`, campos de `BaseEntity`) en vez de contenido ficticio de
+    GTA6.
+
 ### Quitado
 - **`scroll-behavior: smooth` global en `<html>`:** último remanente de
   suavizado de scroll, independiente de Lenis. En navegadores basados en

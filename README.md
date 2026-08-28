@@ -278,6 +278,16 @@ cadena corrupta en una ficha. Detalle completo, regla por regla, en
 el script queda en `scripts/fix-powertrain-integrity.mjs` por si se
 necesita re-auditar tras futuras cargas masivas.
 
+Además (agosto 2026), una auditoría de branding legado —buscando
+`gta6|gta-|leonida|rockstar|take-two` en todo el repo, no solo en este
+archivo— encontró que quedaban dos artefactos "vivos" (no comentarios
+históricos, que sí es intencional que queden documentados): la key de
+`localStorage` del banner de cookies seguía siendo `gta6zona-cookie-
+consent` (ahora `autoficha-cookie-consent`), y `src/content/README.md`
+describía el modelo de datos del proyecto de GTA6 (`personajes`,
+`misiones`, `armas`...) en vez del modelo real (`vehiculos`/`noticias`/
+`guias`). Ambos corregidos — ver `CHANGELOG.md`.
+
 </details>
 
 ## 🤝 Contribuir
