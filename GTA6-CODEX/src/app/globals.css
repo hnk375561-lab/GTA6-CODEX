@@ -144,28 +144,59 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  /* Grano fílmico estático: sin reacción a scroll.
-     El efecto de "fotografía nocturna" es puramente decorativo
-     y no debe cambiar con el movimiento del usuario. */
-  opacity: 0.04;
+  /* Capítulo 4.4: grano más agresivo en pico de velocidad.
+     La opacity base (0.05) reacciona a --scroll-speed: en scroll rápido
+     sube a 0.095 (0.05 + 1.0 * 0.045), haciendo el grano más visible.
+     Simula "fricción visual" en el momento del fling, sin cambiar la
+     estructura del grano mismo — es puramente aditivo sobre lo que estaba.
+     Capítulo 1.1/1.3: en la fase "invitación" (70-100% del scroll de la
+     página — CTA final) el kick de velocidad se recorta a la mitad
+     (0.045 → 0.02): es el tramo pensado para que la persona LEA el CTA
+     final tranquila, no para que sienta fricción de scroll rápido. */
+  opacity: calc(0.05 + var(--scroll-speed, 0) * 0.045);
+  transition: opacity 180ms ease-out;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 180px 180px;
+}
+
+[data-scroll-phase='invitacion'] .auto-atmosphere::before {
+  opacity: calc(0.05 + var(--scroll-speed, 0) * 0.02);
 }
 
 .auto-atmosphere::after {
   content: '';
   position: absolute;
   inset: 0;
-  /* Viñeta estática: sin reacción a scroll o movimiento.
-     Contraste consistente en toda la página, oscurecimiento base (0.34)
-     que da presencia sin ahogar el contenido. */
+  /* Antes: transparent 45%, rgba(3,2,6,0.55) 100% — dejaba una zona
+     central grande sin oscurecer, pensada para el hero. Como este fondo
+     corre detrás de TODO el contenido (no solo el hero), ese centro
+     "limpio" es justo donde suele caer el texto de lectura en el resto
+     de las páginas. Se sube el oscurecido base (0.34 en el centro) y se
+     angosta el radio transparente para dar contraste consistente en
+     toda la página, sin perder el efecto de viñeta hacia los bordes. */
   background: radial-gradient(
     ellipse 120% 90% at 50% 45%,
     rgba(3, 2, 6, 0.34) 0%,
     rgba(3, 2, 6, 0.46) 55%,
     rgba(3, 2, 6, 0.68) 100%
   );
+  /* --scroll-speed (0..1) la publica `ScrollTelemetryBridge` a partir de
+     la velocidad REAL de Lenis (`LenisProvider`), no de una posición
+     diferida — sube instantáneo al arrancar un scroll fuerte y decae solo
+     con la propia inercia de Lenis, sin manejar decay acá. Un fling
+     rápido "abre" levemente la viñeta (más brillo, más saturación) en
+     TODA la página, no solo en el hero — el motor WebGL se pausa fuera de
+     su rango por diseño (ver `HERO_SCROLL_RANGE_VH`), así que esta es la
+     única señal ligada a scroll que sigue viva el resto del recorrido.
+     Sutil a propósito: es una respuesta "se siente", no un efecto que se
+     note como tal. `--scroll-speed` no se define en :root a propósito —
+     el fallback del calc() cubre el instante antes de que el bridge
+     monte, y así ningún elemento queda promovido a capa de compositor
+     antes de que haya scroll real. */
+  transition: filter 220ms ease-out;
+  filter: brightness(calc(1 + var(--scroll-speed, 0) * 0.1))
+    saturate(calc(1 + var(--scroll-speed, 0) * 0.12));
 }
 
 /* ============================================================
@@ -404,40 +435,64 @@ a:hover .logo-mark {
 /* --- Scroll reveal (usado por <Reveal />) --- */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(28px) scale(0.98);
+  transition: opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
-/* will-change removido: las animaciones son simples y cortas,
-   no justifican promover elementos a capas GPU permanentes. */
+/* will-change solo mientras el elemento todavía no se reveló: es el
+   pre-aviso al navegador de que "esto va a animar pronto", útil antes
+   del disparo. Una vez que <Reveal> agrega `.reveal-visible` (via
+   IntersectionObserver, dispara una sola vez con `once=true` por
+   default) se saca el hint — si no, cada elemento revelado queda
+   promovido a su propia capa de composición en GPU para siempre. En
+   listados grandes (ej. /vehiculos con 62 <EntityCard>, cada una
+   envuelta en <Reveal>) eso son decenas de capas permanentes por una
+   animación de 700ms que ya terminó. El costo de sacarlo en el mismo
+   instante que empieza la transición es, como mucho, un frame perdido
+   al arrancar cada reveal — imperceptible comparado con layers GPU
+   acumulándose el resto de la sesión. */
+.reveal:not(.reveal-visible) {
+  will-change: transform, opacity;
+}
 
 .reveal[data-dir='left'] {
-  transform: translateX(-16px);
+  transform: translateX(-32px) scale(0.98);
 }
 
 .reveal[data-dir='right'] {
-  transform: translateX(16px);
+  transform: translateX(32px) scale(0.98);
 }
 
 .reveal[data-dir='zoom'] {
-  transform: translateY(20px);
+  transform: scale(0.85);
 }
 
-/* --- Curtain simplificado: ahora igual que otros reveals ---
-   Una cortina es simplemente un fade+slide como los demás. No hay
-   necesidad de clip-path complicado — mantener las cosas simples. */
+/* --- Cortina (data-dir='curtain') -----------------------------------
+   En vez de fade+slide, revela el contenido con un clip-path que se
+   abre de abajo hacia arriba — el efecto "cortina" que separa un
+   scroll con secciones que solo aparecen de uno donde cada sección se
+   presenta como una escena nueva (el criterio que usa la referencia de
+   VI entre bloques grandes de contenido). Usa las mismas transiciones
+   base de `.reveal` (opacity + delay), solo cambia qué propiedad anima
+   el movimiento: clip-path en vez de transform, así que no compite con
+   ningún translate/scale que ya tenga el elemento por otro lado. */
 .reveal[data-dir='curtain'] {
-  transform: translateY(20px);
-  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: none;
+  clip-path: inset(0 0 100% 0);
+  transition: opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    clip-path 900ms cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal[data-dir='curtain'].reveal-visible {
+  clip-path: inset(0 0 0% 0);
 }
 
 .reveal.reveal-visible {
   opacity: 1;
-  transform: translateY(0) translateX(0);
+  transform: translateY(0) translateX(0) scale(1);
 }
 
 /* --- Listados grandes de entidades (ej. Vehículos: 62 tarjetas, el
@@ -3505,9 +3560,68 @@ img,
    Las secciones reducen su opacidad/escala levemente en transiciones
    para crear "pausas de aliento" que hacen el siguiente acto más fuerte. */
 
-/* Sitio estático: secciones sin animaciones basadas en scroll */
 .scene-section {
-  /* Sin transitions que reaccionen a --scene-phase-local-progress */
+  transition: opacity var(--dur-slower) var(--ease-premium);
+}
+
+/* En transiciones entre fases, las secciones "respiran":
+   - Awakening → Presentation: fade levemente
+   - Presentation → Immersion: escala baja imperceptible
+   - Immersion → Invitation: los colores se desaturan (calma)
+   
+   Esto se controla vía --scene-phase-local-progress. */
+
+@supports (selector(:has(~.section-after))) {
+  .scene-section:has(~ .scene-section) {
+    /* Cada sección excepto la última aplica un efecto suave
+       cuando su progreso local está cerca del final (0.85+).
+       Esto crea el "respiro" natural. */
+    opacity: calc(
+      1 - clamp(0, (var(--scene-phase-local-progress, 0) - 0.8) * 5, 0.1)
+    );
+  }
+}
+
+/* 1.2) Tipografía cinemática: easing distinto por tipo
+   Los headings usan easing rápido (casi lineal) para parecer "asentados".
+   El body text es más lento y suave. */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Headings: transiciones rápidas, easing de texto */
+  transition: all var(--dur-base) var(--ease-text);
+}
+
+p,
+.body-text,
+[class*='text-secondary'] {
+  /* Body: transiciones estándar, easing suave */
+  transition: all var(--dur-slow) var(--ease-premium);
+}
+
+/* Media (imágenes, videos): easing intermedio */
+img,
+video,
+[class*='media'] {
+  transition: all var(--dur-slower) var(--ease-media);
+}
+
+/* 1.3) Fase-based: cambios de saturación/brillo
+   La invitación final (última fase) desatura levemente para calma. */
+
+@media (color-gamut: srgb) {
+  body {
+    filter: saturate(
+      calc(
+        1 - clamp(0, (var(--scene-phase-progress, 0) - 0.7) * 0.5, 0.15)
+      )
+    );
+    transition: filter 600ms var(--ease-premium);
+  }
 }
 
 /* ============================================================
