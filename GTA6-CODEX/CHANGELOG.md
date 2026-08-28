@@ -10,6 +10,19 @@ entradas se agrupan por fecha en vez de por número de versión.
 ## [Sin publicar]
 
 ### Quitado
+- **`scroll-behavior: smooth` global en `<html>`:** último remanente de
+  suavizado de scroll, independiente de Lenis. En navegadores basados en
+  Chromium esta propiedad CSS también se aplica al scroll disparado por la
+  rueda del mouse (no solo a saltos por ancla o `scrollIntoView` sin
+  `behavior` explícito) — cada movimiento de rueda quedaba "de más" animado
+  por el navegador en vez de aplicarse al instante, dando la sensación de
+  que la página seguía bajando/subiendo sola después de mover la rueda.
+  Los saltos puntuales que sí quieren animación (botón "seguir
+  scrolleando", restauración de posición al volver atrás) siguen andando
+  igual: piden `behavior: 'smooth'` de forma explícita en JS
+  (`scroll-telemetry.tsx`), que no depende de esta propiedad global.
+  Validado: `tsc --noEmit`, `eslint src` y `next build` (344 páginas)
+  limpios.
 - **Scroll con inercia (Lenis), rebote elástico y snap automático — sitio
   ESTÁTICO:** el pedido explícito, repetido varias veces, fue que mover la
   rueda hacia abajo/arriba mueva el documento exactamente eso y nada más —

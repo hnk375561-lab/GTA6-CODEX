@@ -90,7 +90,18 @@
    Base
    ============================================================ */
 html {
-  scroll-behavior: smooth;
+  /* Sin scroll-behavior: smooth a propósito. Ese "smooth" del CSS no es
+     inocuo: en navegadores basados en Chromium también se aplica al
+     scroll disparado por la rueda del mouse (no solo a saltos por ancla
+     o `scrollIntoView` sin `behavior` explícito), así que cada movimiento
+     de rueda quedaba "de más" animado por el navegador en vez de
+     aplicarse al instante — exactamente la sensación de "la página sigue
+     bajando sola" que se pidió eliminar. Los saltos puntuales que sí
+     quieren animación (botón "seguir scrolleando", restauración de
+     posición al volver atrás) ya piden `behavior: 'smooth'` de forma
+     explícita en JS (ver `scroll-telemetry.tsx`), que no depende de esta
+     propiedad — solo se pierde el "smooth" implícito y por defecto que
+     aplicaba a TODO el scroll de la página, rueda incluida. */
   color-scheme: dark;
 }
 
