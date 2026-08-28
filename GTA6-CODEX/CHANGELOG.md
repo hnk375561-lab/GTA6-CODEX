@@ -10,6 +10,16 @@ entradas se agrupan por fecha en vez de por número de versión.
 ## [Sin publicar]
 
 ### Cambiado
+- **`<Reveal>` vuelve a un reveal simple, sin parallax/skew continuo:**
+  revert de las tres vueltas anteriores (parallax continuo, versión "a
+  full" y el `skewX` atado a `webglSceneBus`). El componente vuelve a su
+  comportamiento original: IntersectionObserver único, fade + slide
+  corto de un solo disparo por elemento, sin drift ni inclinación
+  mientras el elemento permanece en pantalla. Pedido explícito: sitio
+  quieto y estable, donde el único "evento" es que el contenido aparece
+  al llegar al viewport y después queda fijo. Sin cambios de firma
+  pública salvo la baja del prop `disableMotion` (no tenía usos en el
+  resto del código). Validado: `tsc --noEmit` limpio.
 - **`<Reveal>` reacciona a la velocidad real de scroll, no solo a la
   posición:** tercera vuelta sobre el parallax, pedido explícito de
   "más movimiento, más vida". Mientras un `<Reveal>` está efectivamente

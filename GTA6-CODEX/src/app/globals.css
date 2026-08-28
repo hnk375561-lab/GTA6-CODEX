@@ -423,26 +423,10 @@ a:hover .logo-mark {
 
 /* --- Scroll reveal (usado por <Reveal />) --- */
 .reveal {
-  /* Escritas directo en el nodo por el segundo IntersectionObserver de
-     <Reveal> (ver Reveal.tsx) en cada cruce de umbral durante el
-     tránsito por el viewport — no vienen de un re-render de React.
-     --rv-offset: -1..1 (entrando por abajo → centrado → saliendo por
-     arriba). --rv-mag: |--rv-offset|, para no repetir un abs() en cada
-     regla de abajo. --rv-skew: grados de inclinación proporcional a la
-     velocidad de scroll real (webglSceneBus), no a la posición — solo
-     tiene valor distinto de 0 mientras el elemento está en pantalla.
-     El valor por default (0) es el que rige antes de que el observer
-     dispare el primer callback (elemento aún fuera del root), así que
-     el estado inicial es "sin drift", nunca un salto. */
-  --rv-offset: 0;
-  --rv-mag: 0;
-  --rv-skew: 0;
   opacity: 0;
-  filter: blur(6px);
-  transform: translateY(90px) scale(0.86) rotateZ(-2deg);
-  transition: opacity 550ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 460ms cubic-bezier(0.34, 1.56, 0.64, 1),
-    filter 550ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(28px) scale(0.98);
+  transition: opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
@@ -454,30 +438,24 @@ a:hover .logo-mark {
    promovido a su propia capa de composición en GPU para siempre. En
    listados grandes (ej. /vehiculos con 62 <EntityCard>, cada una
    envuelta en <Reveal>) eso son decenas de capas permanentes por una
-   animación que ya terminó. El costo de sacarlo en el mismo instante
-   que empieza la transición es, como mucho, un frame perdido al
-   arrancar cada reveal — imperceptible comparado con layers GPU
-   acumulándose el resto de la sesión. Mientras está `.reveal-visible`
-   sigue habiendo drift continuo, así que ahí SÍ conviene dejar el hint
-   puesto (ver regla de abajo) en vez de sacarlo. */
+   animación de 700ms que ya terminó. El costo de sacarlo en el mismo
+   instante que empieza la transición es, como mucho, un frame perdido
+   al arrancar cada reveal — imperceptible comparado con layers GPU
+   acumulándose el resto de la sesión. */
 .reveal:not(.reveal-visible) {
-  will-change: transform, opacity, filter;
-}
-
-.reveal.reveal-visible {
-  will-change: transform, filter;
+  will-change: transform, opacity;
 }
 
 .reveal[data-dir='left'] {
-  transform: translateX(-160px) scale(0.86) rotateZ(-4deg);
+  transform: translateX(-32px) scale(0.98);
 }
 
 .reveal[data-dir='right'] {
-  transform: translateX(160px) scale(0.86) rotateZ(4deg);
+  transform: translateX(32px) scale(0.98);
 }
 
 .reveal[data-dir='zoom'] {
-  transform: scale(0.55) rotateZ(-3deg);
+  transform: scale(0.85);
 }
 
 /* --- Cortina (data-dir='curtain') -----------------------------------
@@ -486,15 +464,13 @@ a:hover .logo-mark {
    scroll con secciones que solo aparecen de uno donde cada sección se
    presenta como una escena nueva (el criterio que usa la referencia de
    VI entre bloques grandes de contenido). Usa las mismas transiciones
-   base de `.reveal` de arriba, solo agrega el clip-path como
-   movimiento extra — desde el pedido de "más agresivo, a full" esto
-   también suma el drift continuo de abajo (ya no está excluido), así
-   que la cortina se abre Y además flota con el resto del scroll. */
+   base de `.reveal` (opacity + delay), solo cambia qué propiedad anima
+   el movimiento: clip-path en vez de transform, así que no compite con
+   ningún translate/scale que ya tenga el elemento por otro lado. */
 .reveal[data-dir='curtain'] {
+  transform: none;
   clip-path: inset(0 0 100% 0);
-  transition: opacity 550ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 460ms cubic-bezier(0.34, 1.56, 0.64, 1),
-    filter 550ms cubic-bezier(0.16, 1, 0.3, 1),
+  transition: opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
     clip-path 900ms cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--reveal-delay, 0ms);
 }
@@ -503,31 +479,9 @@ a:hover .logo-mark {
   clip-path: inset(0 0 0% 0);
 }
 
-/* --- Parallax continuo (--rv-offset / --rv-mag / --rv-skew) ---------
-   Versión "a full": además del entrance de arriba, TODO <Reveal> sin
-   `disableMotion` sigue vivo mientras atraviesa el viewport — nada de
-   "aparece y queda quieto". Combina traslado diagonal (vertical fuerte
-   + un toque horizontal), escala marcada, una leve rotación que
-   invierte de signo al cruzar el centro del viewport (entra inclinado
-   para un lado, sale para el otro), un desenfoque que aparece lejos
-   del centro y desaparece al pasar por él (profundidad de campo real,
-   no solo fade), y un `skewX` que reacciona a la VELOCIDAD real de
-   scroll en tiempo real (vía `webglSceneBus`, la misma señal que ya
-   mueve la escena WebGL) — el gesto característico de
-   rockstargames.com/VI: el contenido se inclina cuando el usuario
-   scrollea rápido y se endereza solo al frenar. Esto es
-   deliberadamente notorio: es el "acompañamiento" que se pidió que se
-   sintiera, no un detalle de fondo. Usa transiciones más cortas
-   (460ms/550ms) que el borrador original (era 700ms en todo) para que
-   el drift se sienta pegado al scroll real y no como un arrastre
-   perezoso. */
 .reveal.reveal-visible {
   opacity: 1;
-  filter: blur(calc(var(--rv-mag, 0) * 2.5px));
-  transform: translate(calc(var(--rv-offset, 0) * 26px), calc(var(--rv-offset, 0) * -70px))
-    scale(calc(1 - min(0.14, var(--rv-mag, 0) * 0.14)))
-    rotateZ(calc(var(--rv-offset, 0) * -4.5deg))
-    skewX(calc(var(--rv-skew, 0) * 1deg));
+  transform: translateY(0) translateX(0) scale(1);
 }
 
 /* --- Listados grandes de entidades (ej. Vehículos: 62 tarjetas, el
