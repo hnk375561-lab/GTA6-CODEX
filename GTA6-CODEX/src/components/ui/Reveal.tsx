@@ -36,16 +36,18 @@ function clamp(value: number, min: number, max: number): number {
  *    — controla la clase `.reveal-visible` vía React state.
  *
  * 2. Parallax continuo ("--rv-offset" / "--rv-mag" en globals.css): un
- *    segundo observer, más fino (25 umbrales), que NO toca React state —
+ *    segundo observer, más fino (33 umbrales), que NO toca React state —
  *    escribe las custom properties directo en el nodo del DOM en cada
  *    cruce de umbral. Esto es intencional: usar setState acá dispararía
- *    un re-render de React en cada uno de esos ~25 pasos por elemento,
+ *    un re-render de React en cada uno de esos ~33 pasos por elemento,
  *    algo que se vuelve costoso rápido en listados grandes (/vehiculos,
  *    62 `EntityCard`, cada una envuelta en `<Reveal>`). Escribir el CSS
  *    var directo evita esa cascada de renders: el navegador solo repinta
  *    ese elemento, y `content-visibility: auto` en las cards (ver
  *    globals.css) ya se encarga de que las que están fuera de pantalla
- *    ni siquiera lleguen a esta fase.
+ *    ni siquiera lleguen a esta fase. Corre para las 5 direcciones,
+ *    `curtain` incluida: el clip-path de la cortina y el drift de acá
+ *    conviven sin pisarse (son propiedades CSS distintas).
  *
  * A diferencia del observer de entrada, este segundo observer NO se
  * desconecta con `once` — el drift tiene que seguir actualizándose
@@ -85,8 +87,8 @@ export function Reveal({
 
     let motionObserver: IntersectionObserver | undefined
 
-    if (!disableMotion && direction !== 'curtain') {
-      const thresholds = Array.from({ length: 25 }, (_, i) => i / 24)
+    if (!disableMotion) {
+      const thresholds = Array.from({ length: 33 }, (_, i) => i / 32)
       motionObserver = new IntersectionObserver(
         ([entry]) => {
           const rootHeight = entry.rootBounds?.height ?? window.innerHeight
@@ -109,7 +111,7 @@ export function Reveal({
       revealObserver.disconnect()
       motionObserver?.disconnect()
     }
-  }, [once, disableMotion, direction])
+  }, [once, disableMotion])
 
   return (
     <div

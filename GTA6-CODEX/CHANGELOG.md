@@ -10,7 +10,28 @@ entradas se agrupan por fecha en vez de por número de versión.
 ## [Sin publicar]
 
 ### Cambiado
-- **Parallax continuo en `<Reveal>`:** hasta ahora `<Reveal>` (usado en
+- **Parallax "a full" en `<Reveal>`, segunda vuelta:** el primer pase
+  (drift ±18px, escala ±2%, transición de 700ms) resultó demasiado sutil
+  — pedido explícito de hacerlo mucho más agresivo/notorio. Se subió
+  todo de escala: entrada con traslados de hasta 160px y rotación
+  inicial (±2-4°) por dirección, blur de entrada (6px→0) tipo
+  profundidad de campo, y el drift continuo ahora combina traslado
+  diagonal (26px horizontal / 70px vertical), escala de hasta 14% y
+  rotación continua de hasta 4.5° que invierte de signo al cruzar el
+  centro del viewport, más blur continuo (hasta 2.5px) que aparece lejos
+  del centro y se disuelve al pasar por él. Transiciones de transform
+  bajadas de 700ms a 460ms (con un leve overshoot, `cubic-bezier(0.34,
+  1.56, 0.64, 1)`) para que el drift se sienta pegado al scroll real en
+  vez de un arrastre perezoso. `direction="curtain"` ya no queda
+  excluido del drift continuo (antes no montaba el segundo observer):
+  ahora el clip-path y el parallax conviven. Observer de movimiento
+  pasado de 25 a 33 umbrales para más resolución con transiciones más
+  cortas. Sin cambios de firma pública ni en los 19 usos existentes.
+  Validado: `tsc --noEmit` limpio, build de producción (344 páginas) OK,
+  197/197 tests pasando.
+
+- **Parallax continuo en `<Reveal>` (primera vuelta):** hasta ahora
+  `<Reveal>` (usado en
   autos/`EntityCard`, fichas de vehículo, galería de fotos y
   `MediaCarousel`/clips en toda la home y las 344 páginas del sitio)
   solo hacía un fade+slide de un único disparo al entrar al viewport —
