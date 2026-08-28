@@ -85,8 +85,8 @@ export default async function HomePage() {
       id: 'hero',
       label: 'Inicio',
       content: (
-        <div className="mx-auto w-full max-w-3xl text-center">
-          <Reveal index={0} total={4} options={{ distance: 22 }}>
+        <div className="mx-auto w-full max-w-6xl text-center">
+          <Reveal index={0} total={5} options={{ distance: 22 }}>
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
               Auto · Ficha
             </p>
@@ -101,7 +101,7 @@ export default async function HomePage() {
             </Parallax>
           </Reveal>
 
-          <Reveal index={1} total={4} className="mx-auto mt-6 max-w-xl">
+          <Reveal index={1} total={5} className="mx-auto mt-6 max-w-xl">
             <p className="text-lg text-neutral-500 sm:text-xl">
               Specs reales del fabricante — para que compares antes de comprar.
             </p>
@@ -109,7 +109,7 @@ export default async function HomePage() {
 
           <Reveal
             index={2}
-            total={4}
+            total={5}
             className="mx-auto mt-10 flex max-w-lg flex-wrap items-center justify-center gap-x-10 gap-y-4"
           >
             {HERO_STAT_TYPES.map((type) => (
@@ -133,7 +133,7 @@ export default async function HomePage() {
             </div>
           </Reveal>
 
-          <Reveal index={3} total={4}>
+          <Reveal index={3} total={5}>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/vehiculos"
@@ -153,6 +153,42 @@ export default async function HomePage() {
               <QuickSearchForm />
             </div>
           </Reveal>
+
+          {/* Preview de categorías directo en el hero: contenido real
+              (no relleno) para que el panel tenga más para mostrar sin
+              alargar el tiempo que tarda en aparecer cada ficha — eso lo
+              sigue regulando `Reveal`/`STAGE_SCROLL_VH` sin tocarse acá. */}
+          <Reveal
+            index={4}
+            total={5}
+            className="mx-auto mt-14 grid w-full max-w-5xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
+          >
+            {categories.map((type) => {
+              const accent = CATEGORY_ACCENT[type]
+              return (
+                <Link
+                  key={type}
+                  href={`/${type}`}
+                  className="group flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white/70 px-4 py-3 text-left shadow-sm backdrop-blur transition-transform hover:-translate-y-0.5"
+                >
+                  <span
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white"
+                    style={{ background: accent }}
+                  >
+                    <CategoryIcon type={type} className="h-4 w-4" />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block truncate text-sm font-semibold text-neutral-900">
+                      {ENTITY_TYPE_LABELS[type]}
+                    </span>
+                    <span className="block text-xs text-neutral-500">
+                      {countsByType[type]} {countsByType[type] === 1 ? 'entrada' : 'entradas'}
+                    </span>
+                  </span>
+                </Link>
+              )
+            })}
+          </Reveal>
         </div>
       ),
     },
@@ -161,7 +197,7 @@ export default async function HomePage() {
       id: 'categorias',
       label: 'Categorías',
       content: (
-        <div className="mx-auto w-full max-w-5xl">
+        <div className="mx-auto w-full max-w-7xl">
           <p className="mb-2 text-center text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
             Categorías
           </p>
@@ -218,7 +254,7 @@ export default async function HomePage() {
             id: 'destacados',
             label: 'Destacados',
             content: (
-              <div className="mx-auto w-full max-w-5xl">
+              <div className="mx-auto w-full max-w-7xl">
                 <div className="mb-10 flex items-end justify-between gap-4">
                   <div>
                     <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
@@ -258,7 +294,7 @@ export default async function HomePage() {
             id: 'noticias',
             label: 'Noticias',
             content: (
-              <div className="mx-auto w-full max-w-5xl">
+              <div className="mx-auto w-full max-w-7xl">
                 <div className="mb-10 flex items-end justify-between gap-4">
                   <div>
                     <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
@@ -291,7 +327,7 @@ export default async function HomePage() {
       id: 'buscar',
       label: 'Buscar',
       content: (
-        <div className="mx-auto w-full max-w-xl text-center">
+        <div className="mx-auto w-full max-w-2xl text-center">
           <Reveal index={0} total={3} options={{ distance: 22 }}>
             <h2 className="font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
               ¿Buscás algo puntual?
