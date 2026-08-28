@@ -64,7 +64,7 @@ jobs:
           ref: main
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
 
@@ -88,7 +88,7 @@ jobs:
 
       - name: Subir log de la corrida
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: enrichment-log
           path: GTA6-CODEX/enrichment-log.jsonl

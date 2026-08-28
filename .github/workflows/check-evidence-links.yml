@@ -40,7 +40,7 @@ jobs:
           ref: main
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
 
@@ -51,7 +51,7 @@ jobs:
 
       - name: Subir reporte como artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: broken-links-report
           path: GTA6-CODEX/broken-links-report.json
@@ -74,7 +74,7 @@ jobs:
 
       - name: Disparar re-enriquecimiento automatico
         if: steps.commit.outputs.changed == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             await github.rest.actions.createWorkflowDispatch({
@@ -113,7 +113,7 @@ jobs:
 
       - name: Crear o actualizar Issue
         if: steps.check.outcome == 'failure'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const title = "🔗 Links de evidencia rotos (chequeo mensual)";
