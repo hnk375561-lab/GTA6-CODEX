@@ -423,6 +423,16 @@ a:hover .logo-mark {
 
 /* --- Scroll reveal (usado por <Reveal />) --- */
 .reveal {
+  /* Escritas directo en el nodo por el segundo IntersectionObserver de
+     <Reveal> (ver Reveal.tsx) en cada cruce de umbral durante el
+     tránsito por el viewport — no vienen de un re-render de React.
+     --rv-offset: -1..1 (entrando por abajo → centrado → saliendo por
+     arriba). --rv-mag: |--rv-offset|, para no repetir un abs() en cada
+     regla de abajo. El valor por default (0) es el que rige antes de
+     que el observer dispare el primer callback (elemento aún fuera del
+     root), así que el estado inicial es "sin drift", nunca un salto. */
+  --rv-offset: 0;
+  --rv-mag: 0;
   opacity: 0;
   transform: translateY(28px) scale(0.98);
   transition: opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
@@ -477,11 +487,33 @@ a:hover .logo-mark {
 
 .reveal[data-dir='curtain'].reveal-visible {
   clip-path: inset(0 0 0% 0);
+  /* La cortina se queda sin el drift continuo de abajo a propósito
+     (Reveal.tsx ni siquiera monta el segundo observer para
+     data-dir="curtain") — el clip-path ya es el movimiento de esta
+     variante, sumarle transform competiría con él en vez de sumar. */
+  transform: none;
 }
 
+/* --- Parallax continuo (--rv-offset / --rv-mag) ---------------------
+   Además del fade+slide de un solo disparo de arriba, todo <Reveal>
+   sin `disableMotion` ni `direction="curtain"` sigue moviéndose un
+   poco mientras atraviesa el viewport — no es un "aparecer y quedar
+   quieto", es el efecto continuo tipo rockstargames.com/VI: entra
+   deslizándose desde abajo, se asienta al pasar por el centro y sale
+   con un leve flote hacia arriba, con una escala sutilísima (2% mín/
+   máx) que refuerza la sensación de profundidad sin llegar a "bombeo".
+   18px y 0.02 son deliberadamente chicos: esto es un acompañamiento de
+   fondo para toda la página (autos, fichas, fotos, clips), no el
+   protagonista — si se nota más que el propio contenido, está mal
+   calibrado. Usa el mismo `transition: transform 700ms` de `.reveal`
+   de arriba (no uno nuevo): cada cruce de umbral (25 en total) se
+   suaviza sobre esos 700ms en vez de saltar en escalones, dando una
+   sensación de "alcance" perezoso que combina con la inercia pesada
+   que ya tiene Lenis en el resto del sitio (ver lenis-provider.tsx). */
 .reveal.reveal-visible {
   opacity: 1;
-  transform: translateY(0) translateX(0) scale(1);
+  transform: translateY(calc(var(--rv-offset, 0) * -18px)) translateX(0)
+    scale(calc(1 - min(0.02, var(--rv-mag, 0) * 0.02)));
 }
 
 /* --- Listados grandes de entidades (ej. Vehículos: 62 tarjetas, el

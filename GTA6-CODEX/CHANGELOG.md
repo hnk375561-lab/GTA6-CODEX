@@ -9,7 +9,27 @@ entradas se agrupan por fecha en vez de por número de versión.
 
 ## [Sin publicar]
 
-_Sin cambios pendientes de publicar todavía. Las próximas entradas van acá arriba._
+### Cambiado
+- **Parallax continuo en `<Reveal>`:** hasta ahora `<Reveal>` (usado en
+  autos/`EntityCard`, fichas de vehículo, galería de fotos y
+  `MediaCarousel`/clips en toda la home y las 344 páginas del sitio)
+  solo hacía un fade+slide de un único disparo al entrar al viewport —
+  el contenido "aparecía" pero quedaba estático el resto del scroll,
+  muy lejos del efecto continuo tipo rockstargames.com/VI que se busca.
+  Se le sumó un segundo `IntersectionObserver` (25 umbrales) que calcula
+  la posición del elemento relativa al centro del viewport durante todo
+  su tránsito y expone `--rv-offset`/`--rv-mag` como CSS vars — sin
+  tocar React state ni forzar re-render (escritura directa al DOM), así
+  que el costo en listados grandes (`/vehiculos`, 62 cards) es
+  despreciable. El resultado: todo el contenido envuelto en `<Reveal>`
+  ahora entra deslizándose, se asienta al pasar por el centro del
+  viewport y sale con un leve flote hacia arriba (drift ±18px, escala
+  ±2%), sin cambiar la firma pública del componente ni ninguno de sus
+  19 usos existentes. Nueva prop opcional `disableMotion` para
+  bloques donde el drift no suma. La variante `curtain` queda sin
+  drift a propósito (su clip-path ya es el movimiento). Respeta
+  `prefers-reduced-motion: reduce` (ya forzaba `transform: none` en
+  `.reveal`, sin cambios ahí).
 
 ## [2026-08-26] — Enriquecimiento lote 6 + fix de nivel de evidencia inválido
 
