@@ -61,9 +61,9 @@ const CATEGORY_ORDER: EntityType[] = [EntityType.VEHICLE, EntityType.NEWS, Entit
  * sitio), noticias en magenta, guías en cian.
  */
 const CATEGORY_ACCENT: Record<EntityType, string> = {
-  [EntityType.VEHICLE]: '#c7c7c7',
-  [EntityType.NEWS]: '#787878',
-  [EntityType.GUIDE]: '#a1a1a1',
+  [EntityType.VEHICLE]: '#f0c274',
+  [EntityType.NEWS]: '#ff2f8f',
+  [EntityType.GUIDE]: '#22d3ee',
 }
 
 /**
