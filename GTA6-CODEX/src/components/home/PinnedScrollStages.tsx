@@ -267,7 +267,16 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
                 paddingLeft: 'max(1.5rem, env(safe-area-inset-left))',
                 paddingRight: 'max(1.5rem, env(safe-area-inset-right))',
               }}
-              className="absolute inset-0 flex items-center justify-center"
+              // `grid place-items-center` en vez de `flex items-center
+              // justify-center`: con contenido que puede llegar a superar
+              // los 100dvh (paneles con más fichas, como el hero ahora),
+              // flexbox tiene un bug conocido de centrado + overflow — el
+              // borde superior del contenido queda inaccesible al hacer
+              // scroll hacia arriba, aunque el contenedor sea scrolleable.
+              // Grid con `place-items: center` no tiene ese problema: el
+              // contenido sigue centrado cuando entra entero, y se vuelve
+              // scrolleable desde el borde real cuando no entra.
+              className="absolute inset-0 grid place-items-center overflow-y-auto"
             >
               <StageProgressProvider progress={localProgress}>{stage.content}</StageProgressProvider>
             </div>
