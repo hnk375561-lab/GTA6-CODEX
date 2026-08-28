@@ -8,6 +8,7 @@ import {
   type CSSProperties,
   type ReactNode,
 } from 'react'
+import { StageProgressProvider } from './StageProgress'
 
 export interface Stage {
   id: string
@@ -164,7 +165,7 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
       <div>
         {stages.map((stage) => (
           <section key={stage.id} aria-label={stage.label} className="min-h-dvh w-full">
-            {stage.content}
+            <StageProgressProvider progress={1}>{stage.content}</StageProgressProvider>
           </section>
         ))}
       </div>
@@ -172,6 +173,10 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
   }
 
   const activeIndex = Math.round(displayProgress)
+  // Progreso global del recorrido completo [0,1] — para la barra fina de
+  // arriba, distinta del progreso *local* de cada panel (ese va de -1 a 1
+  // según qué tan lejos está de "su" índice, usado para el crossfade).
+  const globalProgress = stages.length > 1 ? displayProgress / (stages.length - 1) : 1
 
   return (
     <div ref={trackRef} style={{ height: `${stages.length * 100}dvh` }} className="relative">
@@ -193,6 +198,11 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
           const SCALE_MIN = 0.94
           const scale = SCALE_MIN + eased * (1 - SCALE_MIN)
           const isActive = absDiff < 0.5
+          // Progreso local [0,1]: 0 cuando el panel todavía está a más de
+          // "una pantalla" de distancia, 1 cuando está perfectamente
+          // centrado — mismo `eased` que ya mueve opacidad/escala del
+          // panel, reusado acá para la cascada de sus hijos.
+          const localProgress = eased
           return (
             <div
               key={stage.id}
@@ -228,10 +238,35 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
               }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              {stage.content}
+              <StageProgressProvider progress={localProgress}>{stage.content}</StageProgressProvider>
             </div>
           )
         })}
+
+        {/* Barra de progreso fina del recorrido completo — señal
+            "didáctica" adicional a los dots: de un vistazo, cuánto queda
+            del sitio por descubrir, sin necesidad de contar puntitos. */}
+        <div className="absolute inset-x-0 top-0 z-20 h-[3px] bg-neutral-100" aria-hidden="true">
+          <div
+            className="h-full bg-neutral-900"
+            style={{ width: `${globalProgress * 100}%`, transition: 'width 60ms linear' }}
+          />
+        </div>
+
+        {/* Contador de panel ("01 / 05 · Categorías"): mismo espíritu que
+            los dots pero en texto — para quien prefiera leer "dónde estoy"
+            en vez de interpretar puntos. Vive junto a los dots, cruzando
+            en fundido con el label activo. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-5 top-[calc(1.25rem+env(safe-area-inset-top))] z-20 hidden items-baseline gap-2 text-neutral-400 sm:flex"
+        >
+          <span className="font-display text-sm font-semibold tabular-nums text-neutral-900">
+            {String(activeIndex + 1).padStart(2, '0')}
+          </span>
+          <span className="text-sm">/ {String(stages.length).padStart(2, '0')}</span>
+          <span className="text-sm">· {stages[activeIndex]?.label}</span>
+        </div>
 
         {/* Indicador de progreso + navegación directa entre paneles, mismo
             lenguaje que los "page dots" de sitios tipo Apple. Antes solo
@@ -266,18 +301,24 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
         </div>
 
         {/* Pista textual de que hay más paneles debajo — reemplaza el
-            "scroll cue" del hero viejo, ahora aplicado a todo el track. */}
-        {activeIndex < stages.length - 1 && (
-          <div
-            aria-hidden="true"
-            style={{ bottom: 'max(1.5rem, calc(0.5rem + env(safe-area-inset-bottom)))' }}
-            className="absolute left-1/2 z-20 -translate-x-1/2 animate-bounce text-neutral-400"
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 5v14M5 12l7 7 7-7" />
-            </svg>
-          </div>
-        )}
+            "scroll cue" del hero viejo, ahora aplicado a todo el track.
+            Antes era on/off booleano (aparece/desaparece de golpe en el
+            último panel); ahora se desvanece de forma continua a medida
+            que displayProgress se acerca al final, mismo lenguaje "todo
+            es función del progreso, nada es un salto" que el resto del
+            componente. */}
+        <div
+          aria-hidden="true"
+          style={{
+            bottom: 'max(1.5rem, calc(0.5rem + env(safe-area-inset-bottom)))',
+            opacity: 1 - easeInOutCubic(Math.min(1, Math.max(0, displayProgress - (stages.length - 2)))),
+          }}
+          className="pointer-events-none absolute left-1/2 z-20 -translate-x-1/2 animate-bounce text-neutral-400"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </div>
       </div>
     </div>
   )
