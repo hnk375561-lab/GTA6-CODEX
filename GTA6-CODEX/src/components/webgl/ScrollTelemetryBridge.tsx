@@ -5,20 +5,22 @@ import { webglSceneBus } from '@/lib/webgl/scene-bus'
 
 /**
  * Mitad "scroll real → DOM" del puente de scroll, hermana de
- * `SceneAmbientBridge` (que hace "motor WebGL → DOM"). Antes del scroll con
- * inercia (`LenisProvider`), `ScrollTelemetry` en `scene-bus.ts` era un
- * canal "listo pero inerte": nadie lo publicaba ni lo leía. Ahora que
- * `LenisProvider` lo alimenta con velocidad real de Lenis en cada tick, este
- * puente lo escribe como variables CSS en `<html>` para que CUALQUIER
- * superficie del sitio — no solo el canvas WebGL del hero, que se pausa
- * fuera de rango por diseño (ver `HERO_SCROLL_RANGE_VH` en
- * `core/input.ts`) — pueda reaccionar a qué tan rápido y en qué dirección
- * está scrolleando la persona, en toda la página.
+ * `SceneAmbientBridge` (que hace "motor WebGL → DOM"). `ScrollTelemetry` en
+ * `scene-bus.ts` la alimenta `ScrollTelemetryProvider`
+ * (`scroll-telemetry.tsx`) con la velocidad REAL de la rueda/trackpad —
+ * sitio estático, sin motor de scroll propio de por medio — y este puente
+ * la escribe como variables CSS en `<html>` para que CUALQUIER superficie
+ * del sitio — no solo el canvas WebGL del hero, que se pausa fuera de rango
+ * por diseño (ver `HERO_SCROLL_RANGE_VH` en `core/input.ts`) — pueda
+ * reaccionar a qué tan rápido y en qué dirección está scrolleando la
+ * persona, en toda la página. Puramente decorativo (grano fílmico, fondo
+ * WebGL): no mueve el documento ni el contenido.
  *
- * `--scroll-speed`: 0..1, normalizado contra `MAX_EXPECTED_VELOCITY` (px de
- * Lenis por tick). Un scroll de rueda normal ronda 0.1–0.3; un "flick"
- * fuerte de trackpad/inercia llega cerca de 1. El propio decaimiento de la
- * inercia de Lenis hace que este valor baje solo, sin decay manual acá.
+ * `--scroll-speed`: 0..1, normalizado contra `MAX_EXPECTED_VELOCITY`
+ * (px/tick equivalentes). Un scroll de rueda normal ronda 0.1–0.3; un
+ * "flick" fuerte de trackpad llega cerca de 1. Sin inercia artificial de
+ * por medio, este valor baja apenas se detiene la rueda — no hay decay que
+ * lo mantenga alto un rato más.
  *
  * `--scroll-dir`: -1 (subiendo), 0 (quieto), 1 (bajando) — mismo lenguaje
  * que `ScrollTelemetry.direction`.
@@ -31,13 +33,13 @@ import { webglSceneBus } from '@/lib/webgl/scene-bus'
  * Capítulo 1.1 — timeline maestra de scroll, "fases con nombre" extendidas
  * a toda la página (antes solo vivía en el hero, atada a
  * `HERO_SCROLL_RANGE_VH`). Mismos cuatro tramos que describe la biblia,
- * mapeados directo sobre `scroll.progress` (0..1 de la página entera, ya
- * publicado por Lenis vía `webglSceneBus.setScrollProgress` — ver
- * `lenis-provider.tsx`): 0–15% despertar, 15–40% presentación, 40–70%
- * inmersión, 70–100% invitación. Es deliberadamente la misma señal que ya
- * alimenta `--scroll-speed`/`--scroll-dir` acá abajo, no un cálculo nuevo
- * en paralelo — una sola fuente de verdad para "en qué parte del recorrido
- * está la persona".
+ * mapeados directo sobre `scroll.progress` (0..1 de la página entera,
+ * publicado por `ScrollTelemetryProvider` vía `webglSceneBus.setScrollProgress`
+ * — ver `scroll-telemetry.tsx`): 0–15% despertar, 15–40% presentación,
+ * 40–70% inmersión, 70–100% invitación. Es deliberadamente la misma señal
+ * que ya alimenta `--scroll-speed`/`--scroll-dir` acá abajo, no un cálculo
+ * nuevo en paralelo — una sola fuente de verdad para "en qué parte del
+ * recorrido está la persona".
  */
 const PHASE_THRESHOLDS = {
   despertar: 0,

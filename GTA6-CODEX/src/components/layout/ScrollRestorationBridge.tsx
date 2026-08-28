@@ -2,14 +2,14 @@
 
 import { useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
-import { smoothScrollTo } from '@/lib/scroll/lenis-provider'
+import { smoothScrollTo } from '@/lib/scroll/scroll-telemetry'
 
 /**
  * Capítulo 8.3 — scroll restoration al volver atrás (ver
  * biblia-scroll-rockstar.txt). Hoy el botón "atrás" del navegador salta de
- * golpe a la posición vieja; esto lo anima con el mismo motor de scroll
- * (Lenis) que el resto del sitio, en vez de dejar que el navegador la
- * restaure en seco.
+ * golpe a la posición vieja; esto la restaura con un scroll nativo suave
+ * (`smoothScrollTo`, ver `scroll-telemetry.tsx`) en vez de dejar que el
+ * navegador la restaure en seco.
  *
  * Por qué `history.scrollRestoration = 'manual'`
  * Por defecto ('auto'), el navegador guarda y restaura la posición de
@@ -22,12 +22,12 @@ import { smoothScrollTo } from '@/lib/scroll/lenis-provider'
  *
  * Cómo se guarda la posición
  * Un solo listener de `scroll` en `window` (rAF-throttled), montado acá en
- * layout.tsx igual que `LenisProvider`/`PageTransitionBridge` — nunca se
- * desmonta al navegar. Cada tick guarda `window.scrollY` en
+ * layout.tsx igual que `ScrollTelemetryProvider`/`PageTransitionBridge` —
+ * nunca se desmonta al navegar. Cada tick guarda `window.scrollY` en
  * `sessionStorage`, bajo una clave por ruta (`pathname + search`). Se lee
- * `window.scrollY` directo (no el progreso 0..1 de Lenis): igual que
- * `lenis-provider.tsx` documenta, Lenis en este sitio no virtualiza el
- * scroll, así que la posición real del documento es la fuente de verdad.
+ * `window.scrollY` directo: el sitio usa scroll 100% nativo (sin motor de
+ * scroll propio), así que la posición real del documento es, siempre, la
+ * fuente de verdad.
  *
  * Cómo se restaura
  * `usePathname()` cambia recién cuando Next ya montó el `children` nuevo
@@ -40,8 +40,8 @@ import { smoothScrollTo } from '@/lib/scroll/lenis-provider'
  * su cuenta y `PageTransitionBridge` ya tapa ese salto con el fundido.
  *
  * `smoothScrollTo` ya degrada solo a un salto instantáneo si
- * `prefers-reduced-motion: reduce` (Lenis ni se instancia en ese caso, ver
- * `lenis-provider.tsx`), así que no hace falta duplicar esa lógica acá.
+ * `prefers-reduced-motion: reduce` (ver `scroll-telemetry.tsx`), así que no
+ * hace falta duplicar esa lógica acá.
  */
 const STORAGE_PREFIX = 'af-scroll:'
 const MAX_STORED_ENTRIES = 40

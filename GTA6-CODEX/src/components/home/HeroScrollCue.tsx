@@ -1,6 +1,6 @@
 'use client'
 
-import { smoothScrollTo } from '@/lib/scroll/lenis-provider'
+import { smoothScrollTo } from '@/lib/scroll/scroll-telemetry'
 
 /**
  * Invitación a seguir scrolleando debajo del hero. Antes era un `<div>`
@@ -11,10 +11,9 @@ import { smoothScrollTo } from '@/lib/scroll/lenis-provider'
  * `src/app/page.tsx` es un Server Component (async) y no puede pasar
  * handlers de evento inline a elementos del DOM.
  *
- * Usa `smoothScrollTo` (motor Lenis) en vez de `scrollIntoView` nativo
- * para que el gesto de este botón tenga la misma inercia "pesada" que el
- * resto del scroll del sitio — mezclar los dos motores se siente como un
- * frenazo a mitad de camino.
+ * Usa `smoothScrollTo` (`scroll-telemetry.tsx`), que centraliza el salto
+ * puntual con `scrollIntoView`/`scrollTo` nativo — sitio estático, sin un
+ * segundo motor de scroll con inercia propia.
  */
 export function HeroScrollCue() {
   function handleClick(e: React.MouseEvent<HTMLButtonElement>) {

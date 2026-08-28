@@ -59,7 +59,7 @@ function isInternalNavigationClick(event: MouseEvent): HTMLAnchorElement | null 
   if (url.origin !== window.location.origin) return null
   // Anchors de la misma página (`/ruta#seccion` en la ruta actual) navegan
   // vía scroll nativo/Lenis, no por cambio de página — no corresponde
-  // fundido acá, `smoothScrollTo` (lenis-provider.tsx) ya los cubre.
+  // fundido acá, `smoothScrollTo` (scroll-telemetry.tsx) ya los cubre.
   if (url.pathname === window.location.pathname && url.hash) return null
   if (url.pathname === window.location.pathname && url.search === window.location.search) return null
 

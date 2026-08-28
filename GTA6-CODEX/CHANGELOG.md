@@ -10,6 +10,41 @@ entradas se agrupan por fecha en vez de por número de versión.
 ## [Sin publicar]
 
 ### Quitado
+- **Scroll con inercia (Lenis), rebote elástico y snap automático — sitio
+  ESTÁTICO:** el pedido explícito, repetido varias veces, fue que mover la
+  rueda hacia abajo/arriba mueva el documento exactamente eso y nada más —
+  sin que la página siga desplazándose sola después de soltar la rueda, sin
+  rebote en los bordes, sin saltos automáticos a un borde de sección. Se
+  quitan los tres mecanismos que rompían eso:
+  - `LenisProvider` (`lenis-provider.tsx`, borrado): instanciaba Lenis con
+    una desaceleración larga (~1.35s) — la página seguía moviéndose después
+    de soltar la rueda. Reemplazado por `ScrollTelemetryProvider`
+    (`scroll-telemetry.tsx`, nuevo): NO toca el scroll en absoluto, solo
+    lee `window.scrollY` real (rAF-throttled) para seguir alimentando los
+    efectos decorativos de fondo (grano fílmico reactivo a velocidad,
+    canvas "horizonte vivo") que ya consumían `webglSceneBus` — esos
+    siguen vivos, solo que ahora reaccionan a la velocidad REAL de la
+    rueda, sin inercia artificial.
+  - `OverscrollBounceBridge` (borrado): estiraba `#page-content` con un
+    transform elástico transitorio al pegar contra los extremos del
+    scroll. Sin reemplazo — el navegador vuelve a su comportamiento nativo
+    en los bordes.
+  - `ScrollSnapCatch`/`scroll-snap.ts` (borrados): auto-scrolleaba a un
+    borde de sección cuando el usuario se detenía cerca. Ya no se montaba
+    en ninguna página; se termina de borrar por completo (dependía de
+    Lenis).
+  - `smoothScrollTo` se mantiene (ahora en `scroll-telemetry.tsx`) para los
+    dos únicos usos legítimos que quedan — un salto puntual disparado por
+    una acción explícita de la persona, no movimiento ambiental: el botón
+    "seguir scrolleando" del hero y la restauración de posición al volver
+    atrás. Usa `scrollIntoView`/`scrollTo` nativos, sin motor propio.
+  - `RotatingHeroBackground`: se saca el parallax de scroll que desplazaba
+    y hacía zoom al fondo del hero según cuánto se había scrolleado (efecto
+    "cámara acercándose"). Se conserva solo el parallax de cursor (mouse,
+    no scroll) y la rotación con crossfade entre paletas.
+  - Dependencia `lenis` removida de `package.json`.
+  Validado: `tsc --noEmit`, `eslint src`, `npm test` (197 tests) y
+  `next build` (344 páginas) limpios.
 - **Parallax de scroll en cards de la home (Capítulo 2.2, `useParallax`/
   `ParallaxElement`):** las cards de categorías, destacados, niveles de
   evidencia y últimas noticias trasladaban y escalaban a una fracción de

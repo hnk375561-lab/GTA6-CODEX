@@ -15,10 +15,14 @@ import { HeroSceneSVG } from './HeroSceneSVG'
  * sitio, especialmente de cara a monetización (ads/afiliados). Ver PR
  * de referencia para el detalle de la decisión.
  *
- * Parallax: el fondo se desplaza a una fracción de la velocidad del
- * scroll (capa "lejana") y responde levemente al cursor (paralaje sutil,
- * como una cámara con profundidad de campo, no un efecto 3D). Ambos se
- * desactivan por completo con prefers-reduced-motion.
+ * Sitio estático a propósito: este fondo NO se mueve con el scroll (se
+ * sacó el parallax que desplazaba/hacía zoom a la capa según cuánto se
+ * había scrolleado — el pedido explícito fue que el sitio no se mueva
+ * hacia abajo/arriba al mover la rueda, ni siquiera en capas de fondo).
+ * Solo conserva el paralaje sutil de cursor (mueve unos px según la
+ * posición del mouse, como profundidad de campo) y la rotación con
+ * crossfade entre paletas. El paralaje de cursor se desactiva con
+ * prefers-reduced-motion, igual que antes.
  */
 
 /**
@@ -34,8 +38,12 @@ const DEFAULT_HERO_BACKGROUNDS = ['magenta', 'cyan', 'gold'] as const
 
 const ROTATE_INTERVAL_MS = 7000
 const CROSSFADE_MS = 1500
-const SCROLL_PARALLAX_STRENGTH = 0.18
 const POINTER_PARALLAX_MAX_PX = 10
+// Escala base fija: antes crecía con el progreso de scroll (efecto
+// "cámara acercándose"); con el sitio estático, el margen de seguridad
+// para que el paralaje de cursor nunca deje ver un borde vacío alcanza
+// con un valor fijo.
+const HERO_LAYER_SCALE = 1.08
 
 interface RotatingHeroBackgroundProps {
   /** Rutas públicas de fondo, en orden de rotación. Default: DEFAULT_HERO_BACKGROUNDS. */
@@ -64,12 +72,6 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
   const [mountedCount, setMountedCount] = useState(1)
   const layerRef = useRef<HTMLDivElement>(null)
   const rootRef = useRef<HTMLDivElement>(null)
-  const scrollOffset = useRef(0)
-  // Progreso crudo (0..1) del scroll a través del hero, separado de
-  // `scrollOffset` (que ya viene multiplicado por SCROLL_PARALLAX_STRENGTH
-  // y por el alto de la sección, en px de traslado). Se usa para el scale
-  // dinámico de abajo, que necesita el 0..1 sin esas conversiones.
-  const scrollProgress = useRef(0)
   const pointerOffset = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
@@ -127,8 +129,8 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
     return () => clearTimeout(id)
   }, [reducedMotion, saveData, mountedCount, HERO_BACKGROUNDS.length])
 
-  // Parallax de scroll (capa lejana) + parallax de cursor (profundidad sutil).
-  // Un solo rAF combina ambas fuentes para no pisarse el transform entre sí.
+  // Parallax de cursor únicamente (profundidad sutil). Sin scroll de por
+  // medio a propósito — ver docstring del componente.
   useEffect(() => {
     if (reducedMotion || saveData) return
 
@@ -136,33 +138,13 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
     const applyTransform = () => {
       const layer = layerRef.current
       if (layer) {
-        const ty = scrollOffset.current + pointerOffset.current.y
-        const tx = pointerOffset.current.x
-        // La escala base (1.08) existía solo como margen de seguridad para
-        // que el translate por parallax/cursor nunca deje ver un borde
-        // vacío de la capa. Ahora crece con `scrollProgress` (hasta 1.18):
-        // el fondo se acerca de verdad mientras el hero sale de pantalla,
-        // en vez de quedarse fijo en zoom mientras solo se desliza — el
-        // efecto "cámara avanzando hacia la escena" que le falta al hero
-        // frente a una referencia como el scroll de rockstargames.com/VI.
-        const scale = 1.08 + scrollProgress.current * 0.1
-        layer.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${scale})`
+        const { x: tx, y: ty } = pointerOffset.current
+        layer.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${HERO_LAYER_SCALE})`
       }
       raf = 0
     }
     const schedule = () => {
       if (!raf) raf = requestAnimationFrame(applyTransform)
-    }
-
-    const onScroll = () => {
-      const root = rootRef.current
-      if (!root) return
-      const rect = root.getBoundingClientRect()
-      // Progreso 0 (sección arriba del todo) → 1 (sección salió por arriba)
-      const progress = Math.min(Math.max(-rect.top / Math.max(rect.height, 1), 0), 1)
-      scrollProgress.current = progress
-      scrollOffset.current = progress * rect.height * SCROLL_PARALLAX_STRENGTH
-      schedule()
     }
 
     const onPointerMove = (e: PointerEvent) => {
@@ -178,11 +160,9 @@ export function RotatingHeroBackground({ backgrounds = DEFAULT_HERO_BACKGROUNDS 
       schedule()
     }
 
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
+    applyTransform()
     window.addEventListener('pointermove', onPointerMove, { passive: true })
     return () => {
-      window.removeEventListener('scroll', onScroll)
       window.removeEventListener('pointermove', onPointerMove)
       if (raf) cancelAnimationFrame(raf)
     }

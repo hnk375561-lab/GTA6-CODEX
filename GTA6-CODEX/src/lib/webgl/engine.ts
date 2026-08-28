@@ -22,13 +22,15 @@ import { webglSceneBus } from './scene-bus'
  * y `PageTransitionBridge` — esos 4 archivos tampoco se tocaron.
  *
  * De dónde sale la velocidad de scroll: NO se agrega un listener de scroll
- * propio. `lenis-provider.tsx` ya publica `webglSceneBus.setScrollProgress
- * (progress, velocity)` en cada tick de Lenis — este motor solo se suscribe
- * a `webglSceneBus` (`subscribe`, ya existía para el foco de sección) y lee
+ * propio. `scroll-telemetry.tsx` ya publica `webglSceneBus.setScrollProgress
+ * (progress, velocity)` a partir del scroll nativo real (sitio estático,
+ * sin motor de scroll con inercia) — este motor solo se suscribe a
+ * `webglSceneBus` (`subscribe`, ya existía para el foco de sección) y lee
  * `getSnapshot().scroll.velocity` en su propio loop de dibujo. Con
- * reduced-motion, Lenis ni se instancia (ver lenis-provider.tsx), así que
- * `scroll.velocity` queda siempre en 0 — el motor ya lo maneja como "sin
- * streaks", coherente sin necesitar un caso especial.
+ * reduced-motion, `ScrollTelemetryProvider` ni se monta (ver
+ * scroll-telemetry.tsx), así que `scroll.velocity` queda siempre en 0 — el
+ * motor ya lo maneja como "sin streaks", coherente sin necesitar un caso
+ * especial.
  */
 
 const MAX_DPR = 1.5
