@@ -1,112 +1,72 @@
-import * as THREE from 'three'
 import { webglSceneBus } from './scene-bus'
 
 /**
- * Rediseño completo del motor de fondo — "Horizonte mínimo".
+ * Motor de fondo — "Horizonte vivo" (Canvas 2D, sin three.js/WebGL).
  * ---------------------------------------------------------------------------
- * El motor anterior (ciudad nocturna: torre focal, carretera, tráfico,
- * aves, semáforos, polvo, ~25 módulos en `./scene/*`) quedó reemplazado
- * por decisión explícita del usuario ("el motor gráfico no me convence en
- * lo absoluto... empecemos su rediseño"), tras elegir esta composición
- * entre 4 propuestas: una sola línea de horizonte, muy sutil, sobre un
- * degradado vertical casi negro. Sin geometría de ciudad, sin parallax
- * fuerte, sin postprocessing (`EffectComposer`/bloom/bokeh/FXAA) — no
- * hace falta: toda la escena es UN plano de pantalla completa con un
- * shader propio, así que el "glow" de la línea ya está resuelto dentro
- * del fragment shader (`glowCore`/`glowSoft` más abajo) en vez de vía un
- * pase de bloom aparte. Los ~25 archivos de `./scene/*`, `./core/*`,
- * `./shaders/*` y `./config/*` del motor anterior se borraron: nada fuera
- * de `engine.ts` los importaba (verificado antes de borrar).
+ * Reemplaza por completo al motor anterior (three.js + shader GLSL,
+ * "horizonte mínimo") por decisión explícita del usuario: el fondo se sentía
+ * pesado/lageado en la práctica (three.js completo ~600kb + un <canvas>
+ * fixed a pantalla completa compitiendo por frame con Lenis y los ~11
+ * elementos con backdrop-filter del resto del sitio). Se descartaron 3
+ * alternativas (CSS scroll-timeline puro, WebGL scroll-reactivo, SVG morph
+ * por sección) en favor de esta: Canvas 2D, sin dependencias, cuya
+ * intensidad reacciona a la VELOCIDAD real de scroll en vez de a un reloj
+ * propio — "vivo" en el sentido literal de responder al gesto del usuario,
+ * no de animarse solo de fondo.
  *
  * Contrato público preservado a propósito (mismo constructor, mismos 4
  * métodos: `start()`, `setReducedMotion()`, `dispose()`) para que
  * `WebGLBackground.tsx` no necesite ningún cambio, y sigue publicando en
  * `webglSceneBus.publishAmbient()` la misma forma exacta de `SceneAmbient`
- * (5 campos) que ya consumen `SceneAmbientBridge`, `Card.tsx`,
- * `MagicCard.tsx` y `PageTransitionBridge` — esos archivos tampoco se
- * tocaron. La respiración lenta de la línea de horizonte (`breathe` más
- * abajo) alimenta `warmth`/`intensity`, así que el resto de la UI (chips,
- * bordes de card) respira al mismo ritmo que el fondo en vez de tener su
- * propio pulso inventado.
+ * (5 campos) que ya consumen `SceneAmbientBridge`, `Card.tsx`, `MagicCard.tsx`
+ * y `PageTransitionBridge` — esos 4 archivos tampoco se tocaron.
+ *
+ * De dónde sale la velocidad de scroll: NO se agrega un listener de scroll
+ * propio. `lenis-provider.tsx` ya publica `webglSceneBus.setScrollProgress
+ * (progress, velocity)` en cada tick de Lenis — este motor solo se suscribe
+ * a `webglSceneBus` (`subscribe`, ya existía para el foco de sección) y lee
+ * `getSnapshot().scroll.velocity` en su propio loop de dibujo. Con
+ * reduced-motion, Lenis ni se instancia (ver lenis-provider.tsx), así que
+ * `scroll.velocity` queda siempre en 0 — el motor ya lo maneja como "sin
+ * streaks", coherente sin necesitar un caso especial.
  */
 
-const VERTEX_SHADER = /* glsl */ `
-  varying vec2 vUv;
-  void main() {
-    vUv = uv;
-    gl_Position = vec4(position.xy, 0.0, 1.0);
-  }
-`
+const MAX_DPR = 1.5
+const IDLE_VELOCITY_EPSILON = 0.02
 
-const FRAGMENT_SHADER = /* glsl */ `
-  precision mediump float;
-  varying vec2 vUv;
-  uniform vec2 uResolution;
-  uniform float uTime;
-  uniform float uPointerY;
-  uniform float uIntro;
-  uniform float uReducedMotion;
-
-  float grain(vec2 co) {
-    return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
-  }
-
-  void main() {
-    vec2 uv = vUv;
-
-    // Respiración lenta (~52s de período) — apagada del todo con
-    // reduced-motion, no solo atenuada, para que la escena quede
-    // realmente estática y no "casi quieta".
-    float breathe = uReducedMotion > 0.5 ? 0.5 : sin(uTime * 0.12) * 0.5 + 0.5;
-    float pointerShift = uReducedMotion > 0.5 ? 0.0 : uPointerY * 0.018;
-    float horizonY = 0.46 + pointerShift + (breathe - 0.5) * 0.012;
-
-    float dist = uv.y - horizonY;
-    float glowCore = exp(-pow(dist * 140.0, 2.0));
-    float glowSoft = exp(-abs(dist) * 9.0);
-    float brightness = 0.5 + breathe * 0.22;
-
-    vec3 colorTop = vec3(0.018);
-    vec3 colorBottom = vec3(0.01);
-    vec3 base = mix(colorBottom, colorTop, smoothstep(0.0, 1.0, uv.y));
-    base += vec3(0.012) * glowSoft;
-
-    vec3 lineColor = vec3(0.82, 0.82, 0.83) * (glowCore * brightness * 1.25 + glowSoft * brightness * 0.16);
-
-    vec3 color = base + lineColor;
-
-    // Grano sutil: evita banding en el degradado y le da una textura casi
-    // imperceptible de foto/film en vez de un plano CSS perfecto.
-    float g = grain(uv * uResolution.xy * 0.75 + uTime * 0.6);
-    color += (g - 0.5) * 0.01;
-
-    color *= uIntro;
-    gl_FragColor = vec4(color, 1.0);
-  }
-`
+interface Streak {
+  y: number
+  length: number
+  speed: number
+  opacity: number
+}
 
 export class AutoFichaWebGLEngine {
-  private renderer: THREE.WebGLRenderer
-  private scene: THREE.Scene
-  private camera: THREE.OrthographicCamera
-  private material: THREE.ShaderMaterial
-  private clock: THREE.Clock
+  private ctx: CanvasRenderingContext2D
+  private width = 0
+  private height = 0
+  private dpr = 1
 
-  private pointerY = 0
-  private pointerYTarget = 0
   private reducedMotion: boolean
   private returningVisitor: boolean
 
+  private startTime = 0
   private introStart = 0
   private readonly introDurationMs: number
 
   private rafId: number | null = null
   private paused = false
-  private contextLost = false
   private lifecycle: 'idle' | 'running' | 'disposed' = 'idle'
   private ambientFrameCounter = 0
   private arrivalKick = 0
   private lastFocusSectionId: string | null = null
+
+  // Velocidad de scroll suavizada (evita que un solo tick ruidoso de Lenis
+  // dispare/corte streaks de golpe) y su pico reciente, con decaimiento
+  // propio para que el efecto se apague solo al dejar de scrollear en vez
+  // de cortar en seco.
+  private smoothedVelocity = 0
+  private streaks: Streak[] = []
 
   private readonly abortController = new AbortController()
   private unsubscribeSceneBus: (() => void) | null = null
@@ -114,60 +74,19 @@ export class AutoFichaWebGLEngine {
   constructor(canvas: HTMLCanvasElement, opts: { reducedMotion: boolean; returningVisitor?: boolean }) {
     this.reducedMotion = opts.reducedMotion
     this.returningVisitor = opts.returningVisitor ?? false
-    // Visita recurrente: fundido corto (ya vio la coreografía de apertura
-    // antes en esta sesión de navegador). Primera visita: un poco más
-    // largo para que el fundido en sí se note como una pequeña apertura.
     this.introDurationMs = this.returningVisitor ? 450 : 1300
 
-    this.clock = new THREE.Clock()
-    this.renderer = new THREE.WebGLRenderer({
-      canvas,
-      antialias: false,
-      alpha: true,
-      // No hay geometría 3D real ni luces que calcular — un plano de
-      // pantalla completa con un shader propio no necesita la GPU
-      // discreta. 'low-power' es más coherente con el pedido de un fondo
-      // "chill": menos consumo, menos ruido de ventilador, sin ningún
-      // costo visual (la escena es idéntica en cualquier GPU).
-      powerPreference: 'low-power',
-    })
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5))
-    this.renderer.setSize(window.innerWidth, window.innerHeight, false)
+    const ctx = canvas.getContext('2d', { alpha: true })
+    if (!ctx) throw new Error('[AutoFichaWebGLEngine] Canvas 2D no disponible')
+    this.ctx = ctx
 
-    this.scene = new THREE.Scene()
-    this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1)
-
-    this.material = new THREE.ShaderMaterial({
-      vertexShader: VERTEX_SHADER,
-      fragmentShader: FRAGMENT_SHADER,
-      uniforms: {
-        uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
-        uTime: { value: 0 },
-        uPointerY: { value: 0 },
-        uIntro: { value: 0 },
-        uReducedMotion: { value: this.reducedMotion ? 1 : 0 },
-      },
-      depthTest: false,
-      depthWrite: false,
-    })
-    const quad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), this.material)
-    this.scene.add(quad)
+    this.resize(canvas)
 
     const { signal } = this.abortController
-    window.addEventListener('resize', this.handleResize, { signal })
-    window.addEventListener('pointermove', this.handlePointerMove, { passive: true, signal })
+    window.addEventListener('resize', () => this.resize(canvas), { signal })
     document.addEventListener('visibilitychange', this.handleVisibility, { signal })
-    canvas.addEventListener('webglcontextlost', this.handleContextLost, { signal })
-    canvas.addEventListener('webglcontextrestored', this.handleContextRestored, { signal })
 
     this.unsubscribeSceneBus = webglSceneBus.subscribe(() => {
-      // Pulso de llegada: sube a 1 cuando cambia la sección enfocada
-      // (`SceneFocus.sectionId`, publicado por `SceneSection` en cada
-      // sección instrumentada) y decae solo — mismo lenguaje que usaba
-      // el motor anterior, para que Card.tsx/MagicCard.tsx (que ya leen
-      // `kick` de `SceneAmbientBridge`) sigan teniendo ese pulso al
-      // navegar entre secciones, aunque la escena de fondo en sí sea
-      // estática.
       const snapshot = webglSceneBus.getSnapshot()
       if (snapshot.focus.sectionId !== this.lastFocusSectionId) {
         this.lastFocusSectionId = snapshot.focus.sectionId
@@ -176,59 +95,67 @@ export class AutoFichaWebGLEngine {
     })
   }
 
-  private handleResize = () => {
-    this.renderer.setSize(window.innerWidth, window.innerHeight, false)
-    this.material.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight)
-  }
-
-  private handlePointerMove = (e: PointerEvent) => {
-    this.pointerYTarget = (e.clientY / window.innerHeight) * 2 - 1
+  private resize(canvas: HTMLCanvasElement) {
+    this.dpr = Math.min(window.devicePixelRatio || 1, MAX_DPR)
+    this.width = window.innerWidth
+    this.height = window.innerHeight
+    canvas.width = Math.round(this.width * this.dpr)
+    canvas.height = Math.round(this.height * this.dpr)
+    this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0)
   }
 
   private handleVisibility = () => {
     this.paused = document.hidden
   }
 
-  private handleContextLost = (e: Event) => {
-    e.preventDefault()
-    this.contextLost = true
-  }
-
-  private handleContextRestored = () => {
-    this.contextLost = false
+  private spawnStreak() {
+    this.streaks.push({
+      y: Math.random() * this.height,
+      length: 60 + Math.random() * 140,
+      speed: 4 + Math.random() * 6,
+      opacity: 0.08 + Math.random() * 0.1,
+    })
+    // Techo defensivo: nunca más de 40 streaks vivos a la vez, aunque el
+    // usuario scrollee muy rápido y muy sostenido.
+    if (this.streaks.length > 40) this.streaks.shift()
   }
 
   start() {
     if (this.lifecycle === 'disposed') return
     this.lifecycle = 'running'
-    this.introStart = performance.now()
+    this.startTime = performance.now()
+    this.introStart = this.startTime
 
-    const loop = () => {
+    const loop = (now: number) => {
       if (this.lifecycle === 'disposed') return
       this.rafId = requestAnimationFrame(loop)
-      if (this.paused || this.contextLost) return
+      if (this.paused) return
 
-      const elapsed = this.clock.getElapsedTime()
-      this.pointerY += (this.pointerYTarget - this.pointerY) * 0.05
+      const elapsedS = (now - this.startTime) / 1000
+      const intro = this.reducedMotion ? 1 : Math.min((now - this.introStart) / this.introDurationMs, 1)
+
+      const rawVelocity = this.reducedMotion ? 0 : Math.abs(webglSceneBus.getSnapshot().scroll.velocity)
+      this.smoothedVelocity += (rawVelocity - this.smoothedVelocity) * 0.12
       this.arrivalKick *= 0.94
 
-      const intro = this.reducedMotion
-        ? 1
-        : Math.min((performance.now() - this.introStart) / this.introDurationMs, 1)
+      // Respiración lenta de base (ambiente en reposo, sutil) + boost real
+      // cuando hay velocidad de scroll — esto es lo que hace que el fondo
+      // se sienta "vivo" al gesto del usuario y no solo a un reloj.
+      const breathe = this.reducedMotion ? 0.5 : Math.sin(elapsedS * 0.12) * 0.5 + 0.5
+      const scrollBoost = Math.min(this.smoothedVelocity * 0.045, 1)
 
-      this.material.uniforms.uTime.value = elapsed
-      this.material.uniforms.uPointerY.value = this.pointerY
-      this.material.uniforms.uIntro.value = intro
+      this.draw(breathe, scrollBoost, intro)
 
-      this.renderer.render(this.scene, this.camera)
+      if (!this.reducedMotion && this.smoothedVelocity > IDLE_VELOCITY_EPSILON && Math.random() < scrollBoost * 0.5) {
+        this.spawnStreak()
+      }
 
       this.ambientFrameCounter++
       if (this.ambientFrameCounter % 3 === 0) {
-        const breathe = this.reducedMotion ? 0.5 : Math.sin(elapsed * 0.12) * 0.5 + 0.5
         webglSceneBus.publishAmbient({
           lightAngleDeg: 90,
           warmth: breathe,
-          intensity: Math.min(0.4 + breathe * 0.4 + this.arrivalKick * 0.2, 1),
+          intensity: Math.min(0.4 + breathe * 0.3 + scrollBoost * 0.35 + this.arrivalKick * 0.2, 1),
           kick: this.arrivalKick,
           intro,
         })
@@ -237,9 +164,50 @@ export class AutoFichaWebGLEngine {
     this.rafId = requestAnimationFrame(loop)
   }
 
+  private draw(breathe: number, scrollBoost: number, intro: number) {
+    const { ctx, width, height } = this
+    ctx.clearRect(0, 0, width, height)
+
+    // Degradado vertical casi negro, mismo lenguaje tonal que el motor
+    // anterior — el rediseño cambia CÓMO reacciona la escena, no la
+    // paleta "Night Test Track" ya elegida.
+    const bg = ctx.createLinearGradient(0, 0, 0, height)
+    bg.addColorStop(0, 'rgb(5, 5, 5)')
+    bg.addColorStop(1, 'rgb(3, 3, 3)')
+    ctx.fillStyle = bg
+    ctx.fillRect(0, 0, width, height)
+
+    // Línea de horizonte con glow (radial suave) — respira con `breathe` y
+    // se intensifica un poco con `scrollBoost`, igual que hacía la escena
+    // WebGL, pero calculado en 2D en vez de en un fragment shader.
+    const horizonY = height * (0.46 + (breathe - 0.5) * 0.01)
+    const glow = ctx.createLinearGradient(0, horizonY - 120, 0, horizonY + 120)
+    const glowAlpha = (0.05 + breathe * 0.03 + scrollBoost * 0.04) * intro
+    glow.addColorStop(0, 'rgba(210, 210, 213, 0)')
+    glow.addColorStop(0.5, `rgba(210, 210, 213, ${glowAlpha})`)
+    glow.addColorStop(1, 'rgba(210, 210, 213, 0)')
+    ctx.fillStyle = glow
+    ctx.fillRect(0, horizonY - 120, width, 240)
+
+    ctx.fillStyle = `rgba(209, 209, 211, ${(0.55 + breathe * 0.25) * intro})`
+    ctx.fillRect(0, horizonY - 0.75, width, 1.5)
+
+    // Streaks horizontales — la única pieza nueva del rediseño: aparecen y
+    // se mueven solo cuando hay scroll real, y se desvanecen al dejar de
+    // scrollear en vez de tener vida propia.
+    this.streaks = this.streaks.filter((s) => s.opacity > 0.003)
+    for (const s of this.streaks) {
+      s.y += s.speed * (0.3 + scrollBoost)
+      s.opacity *= 0.965
+      if (s.y > height + s.length) s.y = -s.length
+      ctx.fillStyle = `rgba(190, 190, 195, ${s.opacity * intro})`
+      ctx.fillRect(0, s.y, width * 0.5 + s.length * 4, 1)
+    }
+  }
+
   setReducedMotion(value: boolean) {
     this.reducedMotion = value
-    this.material.uniforms.uReducedMotion.value = value ? 1 : 0
+    if (value) this.streaks = []
   }
 
   dispose() {
@@ -248,10 +216,6 @@ export class AutoFichaWebGLEngine {
     if (this.rafId !== null) cancelAnimationFrame(this.rafId)
     this.abortController.abort()
     this.unsubscribeSceneBus?.()
-    this.material.dispose()
-    this.scene.traverse((obj) => {
-      if (obj instanceof THREE.Mesh) obj.geometry.dispose()
-    })
-    this.renderer.dispose()
+    this.streaks = []
   }
 }

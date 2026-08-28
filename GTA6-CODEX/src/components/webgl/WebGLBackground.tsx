@@ -48,12 +48,12 @@ function hasSeenIntroThisSession(): boolean {
  * El motor (Three.js) se carga de forma perezosa y solo en cliente.
  *
  * Con Save-Data activo (o una conexión declarada 2g/slow-2g) ni siquiera
- * se descarga el chunk del motor — con el rediseño "horizonte mínimo" el
- * motor ya es liviano (un solo plano de pantalla completa con un shader
- * propio, sin postprocessing ni modelos 3D), pero sigue siendo three.js
- * completo (~600kb) más costoso que no descargar nada. El `<canvas>`
- * queda transparente y se ve el fondo estático (`bg-auto-dark` en
- * layout.tsx).
+ * se descarga el chunk del motor — desde el rediseño "horizonte vivo" el
+ * motor es Canvas 2D puro, sin three.js/WebGL (se sacó la dependencia por
+ * completo: ver `engine.ts`), así que el chunk ya es liviano de por sí,
+ * pero igual no tiene sentido bajarlo si el usuario pidió menos datos. El
+ * `<canvas>` queda transparente y se ve el fondo estático (`bg-auto-dark`
+ * en layout.tsx).
  *
  * Capítulo 6.3 — persistencia entre páginas (auditado, no requirió cambio)
  * Este componente se monta en `app/layout.tsx`, el ÚNICO `layout.tsx` del
