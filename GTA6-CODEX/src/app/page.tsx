@@ -349,7 +349,7 @@ export default async function HomePage() {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/vehiculos"
-                className="btn-primary hero-cta inline-flex items-center justify-center rounded-lg px-9 py-4 text-base font-semibold text-auto-darker transition-all hover:-translate-y-0.5"
+                className="btn-primary hero-cta inline-flex items-center justify-center rounded-lg px-9 py-4 text-base font-semibold !text-auto-darker transition-all hover:-translate-y-0.5"
               >
                 <span className="hero-cta-label">Ver fichas de autos</span>
                 <span className="hero-cta-arrow" aria-hidden="true">→</span>
@@ -647,7 +647,7 @@ export default async function HomePage() {
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                 <Link
                   href="/buscar"
-                  className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-auto-darker transition-all hover:-translate-y-0.5"
+                  className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold !text-auto-darker transition-all hover:-translate-y-0.5"
                 >
                   Buscar en el Zona
                 </Link>
