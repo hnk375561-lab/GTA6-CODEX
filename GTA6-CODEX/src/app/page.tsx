@@ -21,6 +21,7 @@ import { getCategoryPreviewImages } from '@/lib/images'
 import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
 import { QuickSearchForm } from '@/components/home/QuickSearchForm'
 import { PinnedScrollStages, type Stage } from '@/components/home/PinnedScrollStages'
+import { Stagger } from '@/components/home/Stagger'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateHomepageMetadata()
@@ -29,11 +30,14 @@ export async function generateMetadata(): Promise<Metadata> {
 /**
  * Home rediseñada (agosto 2026, ver conversación de rediseño): en vez de
  * una página larga que se scrollea sección por sección, el viewport queda
- * fijo y el scroll pasa de un panel al siguiente por crossfade — ver
- * `PinnedScrollStages`. Estética: blanco/tipografía grande (referencia
- * explícita: Apple / Vercel), cards oscuras como único acento de color
- * sobre el fondo blanco, en vez del hero oscuro con glow que tenía antes
- * la home. El resto del sitio (fichas, listados, comparador) no cambia.
+ * fijo y el scroll pasa de un panel al siguiente por crossfade con
+ * profundidad — ver `PinnedScrollStages`. Dentro de cada panel, los
+ * bloques (título, stats, botones, grid de cards...) entran en cascada
+ * vía `<Stagger>` en vez de aparecer todos juntos — es lo que le da
+ * sensación de coreografía en vez de un fundido plano. Estética: blanco/
+ * tipografía grande (referencia explícita: Apple / Vercel), cards oscuras
+ * como único acento de color sobre el fondo blanco. El resto del sitio
+ * (fichas, listados, comparador) no cambia.
  */
 
 const HERO_STAT_TYPES: EntityType[] = [EntityType.VEHICLE, EntityType.NEWS, EntityType.GUIDE]
@@ -79,7 +83,7 @@ export default async function HomePage() {
       id: 'hero',
       label: 'Inicio',
       content: (
-        <div className="mx-auto w-full max-w-3xl text-center">
+        <Stagger className="mx-auto w-full max-w-3xl text-center">
           <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
             Auto · Ficha
           </p>
@@ -93,7 +97,6 @@ export default async function HomePage() {
           <p className="mx-auto mt-6 max-w-xl text-lg text-neutral-500 sm:text-xl">
             Specs reales del fabricante — para que compares antes de comprar.
           </p>
-
           <div className="mx-auto mt-10 flex max-w-lg flex-wrap items-center justify-center gap-x-10 gap-y-4">
             {HERO_STAT_TYPES.map((type) => (
               <div key={type} className="flex flex-col items-center gap-0.5">
@@ -115,7 +118,6 @@ export default async function HomePage() {
               </span>
             </div>
           </div>
-
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/vehiculos"
@@ -130,11 +132,10 @@ export default async function HomePage() {
               Comparar vehículos
             </Link>
           </div>
-
           <div className="mx-auto mt-6 max-w-xl">
             <QuickSearchForm />
           </div>
-        </div>
+        </Stagger>
       ),
     },
     // 2. Categorías
@@ -143,13 +144,18 @@ export default async function HomePage() {
       label: 'Categorías',
       content: (
         <div className="mx-auto w-full max-w-5xl">
-          <p className="mb-2 text-center text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
-            Categorías
-          </p>
-          <h2 className="mb-10 text-center font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
-            Explorá por sección
-          </h2>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <Stagger className="mb-10 text-center" step={90}>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
+              Categorías
+            </p>
+            <h2 className="font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
+              Explorá por sección
+            </h2>
+          </Stagger>
+          <Stagger
+            step={60}
+            className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
+          >
             {categories.map((type) => {
               const density = Math.max(6, Math.round((countsByType[type] / maxCategoryCount) * 100))
               const accent = CATEGORY_ACCENT[type]
@@ -175,7 +181,7 @@ export default async function HomePage() {
                 </Link>
               )
             })}
-          </div>
+          </Stagger>
           <p className="mt-8 text-center">
             <Link href="/buscar" className="text-sm font-semibold text-neutral-500 underline underline-offset-4 hover:text-neutral-900">
               Ver las {totalCount} entradas del expediente →
@@ -205,7 +211,10 @@ export default async function HomePage() {
                     Ver galería completa
                   </Link>
                 </div>
-                <div className="grid max-h-[46vh] grid-cols-1 gap-4 overflow-y-auto sm:grid-cols-2 lg:grid-cols-3">
+                <Stagger
+                  step={60}
+                  className="grid max-h-[46vh] grid-cols-1 gap-4 overflow-y-auto sm:grid-cols-2 lg:grid-cols-3"
+                >
                   {featured.slice(0, 6).map((entity) => (
                     <EntityCard
                       key={`${entity.type}-${entity.slug}`}
@@ -215,7 +224,7 @@ export default async function HomePage() {
                       relationCount={featuredRelationCounts[entity.slug]}
                     />
                   ))}
-                </div>
+                </Stagger>
               </div>
             ),
           } satisfies Stage,
@@ -242,11 +251,11 @@ export default async function HomePage() {
                     Ver todas
                   </Link>
                 </div>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                <Stagger step={80} className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                   {latestNews.map((entity) => (
                     <EntityCard key={`${entity.type}-${entity.slug}`} entity={entity} image={latestNewsImages[entity.slug]} />
                   ))}
-                </div>
+                </Stagger>
               </div>
             ),
           } satisfies Stage,
@@ -257,7 +266,7 @@ export default async function HomePage() {
       id: 'buscar',
       label: 'Buscar',
       content: (
-        <div className="mx-auto w-full max-w-xl text-center">
+        <Stagger step={100} className="mx-auto w-full max-w-xl text-center">
           <h2 className="font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
             ¿Buscás algo puntual?
           </h2>
@@ -273,7 +282,7 @@ export default async function HomePage() {
               Ver galería
             </Link>
           </div>
-        </div>
+        </Stagger>
       ),
     },
   ]

@@ -1,7 +1,9 @@
 'use client'
 
 import {
+  createContext,
   useCallback,
+  useContext,
   useEffect,
   useRef,
   useState,
@@ -14,11 +16,27 @@ export interface Stage {
   content: ReactNode
 }
 
+/**
+ * Publica si el panel que envuelve a un `<Stagger>` está "activo" (cerca
+ * del foco de scroll). No se puede pasar como función-prop (`content:
+ * (active) => ReactNode`) porque este árbol nace en un Server Component
+ * (`page.tsx`) y las funciones no cruzan ese límite hacia un Client
+ * Component — solo elementos ya renderizados. Context sí cruza: el
+ * `Provider` vive acá (Client Component) envolviendo el `ReactNode` ya
+ * construido en el servidor, y `Stagger` (también Client Component) lo
+ * lee con `useContext` en el momento en que React lo monta en el cliente.
+ */
+export const StageActiveContext = createContext(false)
+export function useStageActive() {
+  return useContext(StageActiveContext)
+}
+
 interface PinnedScrollStagesProps {
   stages: Stage[]
 }
 
 const MOBILE_BREAKPOINT_PX = 640
+const SNAP_IDLE_MS = 160
 
 /**
  * Reemplazo del homepage "scrolleable normal" por un viewport que se
@@ -31,14 +49,14 @@ const MOBILE_BREAKPOINT_PX = 640
  * contenido real vive en un hijo `sticky top-0 h-screen`, así que
  * visualmente nunca se mueve verticalmente. Cada panel es
  * `position: absolute; inset: 0` (todos superpuestos en el mismo lugar) y
- * su opacidad/escala/blur se calculan en función de qué tan cerca está el
- * scroll actual de "su" índice — de ahí el crossfade sin salto.
+ * su opacidad/escala/rotación/blur se calculan en función de qué tan cerca
+ * está el scroll actual de "su" índice — de ahí el crossfade con
+ * profundidad (no un simple fundido plano).
  *
- * Es JS (no `animation-timeline: scroll()` nativo, que ya usa este sitio
- * en `.hero-gleam`) a propósito: acá los paneles no se desplazan por la
- * pantalla (están apilados en el mismo punto), así que no hay un "view"
- * real que timelinear — se necesita leer el progreso de scroll del propio
- * track.
+ * Snap magnético: 160ms después de que el usuario deja de scrollear, si
+ * quedó a mitad de camino entre dos paneles, se anima solo hasta el más
+ * cercano — el "click" de encastre que hace que el gesto se sienta
+ * intencional en vez de quedar la mitad de un panel montado sobre el otro.
  *
  * Fallbacks deliberados a scroll normal (mismo contenido, cero pineo):
  * - `prefers-reduced-motion: reduce` → nunca tiene sentido animar esto.
@@ -53,6 +71,8 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
   const [reducedMotion, setReducedMotion] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const rafRef = useRef<number | null>(null)
+  const snapTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const isSnappingRef = useRef(false)
   const touchStartY = useRef<number | null>(null)
 
   useEffect(() => {
@@ -98,18 +118,45 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
     const scrollable = rect.height - viewportH
     const targetFraction = stages.length > 1 ? clampedIndex / (stages.length - 1) : 0
     const absoluteTop = window.scrollY + rect.top
+    isSnappingRef.current = true
     window.scrollTo({ top: absoluteTop + targetFraction * scrollable, behavior: 'smooth' })
+    // No hay evento nativo "scrollend" confiable en todos los navegadores
+    // todavía, así que se libera el flag de snap por tiempo: suficiente
+    // para que termine la animación smooth y no se re-dispare un snap
+    // sobre otro snap.
+    window.setTimeout(() => {
+      isSnappingRef.current = false
+    }, 500)
   }, [stages.length])
 
   useEffect(() => {
     if (pinningDisabled) return
 
+    function scheduleSnap() {
+      if (snapTimerRef.current) clearTimeout(snapTimerRef.current)
+      snapTimerRef.current = setTimeout(() => {
+        if (isSnappingRef.current) return
+        const el = trackRef.current
+        if (!el) return
+        const rect = el.getBoundingClientRect()
+        const withinTrack = rect.top < window.innerHeight * 0.5 && rect.bottom > window.innerHeight * 0.5
+        if (!withinTrack) return
+        setProgress((current) => {
+          const nearest = Math.round(current)
+          if (Math.abs(current - nearest) > 0.02) goToStage(nearest)
+          return current
+        })
+      }, SNAP_IDLE_MS)
+    }
+
     function onScroll() {
-      if (rafRef.current !== null) return
-      rafRef.current = requestAnimationFrame(() => {
-        rafRef.current = null
-        measure()
-      })
+      if (rafRef.current === null) {
+        rafRef.current = requestAnimationFrame(() => {
+          rafRef.current = null
+          measure()
+        })
+      }
+      scheduleSnap()
     }
 
     // Navegación por teclado: flechas/AvPag-RePag/espacio saltan un panel
@@ -171,6 +218,7 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
       window.removeEventListener('touchstart', onTouchStart)
       window.removeEventListener('touchend', onTouchEnd)
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current)
+      if (snapTimerRef.current) clearTimeout(snapTimerRef.current)
     }
   }, [measure, goToStage, pinningDisabled, progress])
 
@@ -181,7 +229,7 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
       <div>
         {stages.map((stage) => (
           <section key={stage.id} aria-label={stage.label} className="flex min-h-screen w-full items-center justify-center px-6 py-16">
-            {stage.content}
+            <StageActiveContext.Provider value={true}>{stage.content}</StageActiveContext.Provider>
           </section>
         ))}
       </div>
@@ -208,14 +256,23 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
         />
       </div>
 
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-white">
+      <div className="sticky top-0 h-screen w-full overflow-hidden bg-white" style={{ perspective: '1400px' }}>
         {stages.map((stage, i) => {
+          // Signo invertido a propósito: un panel "por venir" (i > progress)
+          // debe sentirse como que sube desde abajo del pliegue a medida
+          // que se scrollea hacia él, no como que ya estaba arriba
+          // esperando — de ahí el `-diff` en vez de `diff` directo.
           const diff = progress - i
           const absDiff = Math.abs(diff)
-          const opacity = Math.max(0, 1 - absDiff * 1.4)
-          const translateY = diff * 36
-          const scale = Math.max(0.94, 1 - absDiff * 0.06)
-          const blur = Math.min(8, absDiff * 10)
+          const opacity = Math.max(0, 1 - absDiff * 1.5)
+          const translateY = -diff * 90
+          // Leve overshoot: al llegar (absDiff pasando por 0) la escala
+          // pasa brevemente de un poco más grande a 1, en vez de crecer
+          // monotónicamente hasta 1 y quedarse — más "resorte", menos
+          // deslizamiento plano.
+          const scale = absDiff < 0.12 ? 1 + (0.12 - absDiff) * 0.35 : Math.max(0.82, 1 - absDiff * 0.16)
+          const rotateX = diff * 10
+          const blur = Math.min(10, absDiff * 12)
           const isActive = absDiff < 0.5
           return (
             <div
@@ -223,14 +280,16 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
               aria-hidden={!isActive}
               style={{
                 opacity,
-                transform: `translateY(${translateY}px) scale(${scale})`,
+                transform: `translateY(${translateY}px) scale(${scale}) rotateX(${rotateX}deg)`,
+                transformStyle: 'preserve-3d',
                 filter: blur > 0.5 ? `blur(${blur}px)` : undefined,
                 pointerEvents: isActive ? 'auto' : 'none',
                 zIndex: isActive ? 2 : 1,
+                transition: 'filter 120ms linear',
               }}
               className="absolute inset-0 flex items-center justify-center px-6"
             >
-              {stage.content}
+              <StageActiveContext.Provider value={isActive}>{stage.content}</StageActiveContext.Provider>
             </div>
           )
         })}
@@ -253,9 +312,7 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
         </div>
 
         {/* Pista de que hay más paneles debajo — reemplaza el "scroll cue"
-            del hero viejo, ahora aplicado a todo el track. Doble affordance:
-            aria-hidden decorativo con foco real por si alguien navega por
-            teclado hasta acá (aunque las flechas ya cubren el caso). */}
+            del hero viejo, ahora aplicado a todo el track. */}
         {activeIndex < stages.length - 1 && (
           <button
             type="button"
