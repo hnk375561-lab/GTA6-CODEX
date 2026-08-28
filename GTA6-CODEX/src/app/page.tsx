@@ -85,8 +85,8 @@ export default async function HomePage() {
       id: 'hero',
       label: 'Inicio',
       content: (
-        <div className="mx-auto w-full max-w-6xl text-center">
-          <Reveal index={0} total={5} options={{ distance: 22 }}>
+        <div className="mx-auto w-full max-w-[90rem] text-center">
+          <Reveal index={0} total={6} options={{ distance: 22 }}>
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
               Auto · Ficha
             </p>
@@ -101,7 +101,7 @@ export default async function HomePage() {
             </Parallax>
           </Reveal>
 
-          <Reveal index={1} total={5} className="mx-auto mt-6 max-w-xl">
+          <Reveal index={1} total={6} className="mx-auto mt-6 max-w-xl">
             <p className="text-lg text-neutral-500 sm:text-xl">
               Specs reales del fabricante — para que compares antes de comprar.
             </p>
@@ -109,7 +109,7 @@ export default async function HomePage() {
 
           <Reveal
             index={2}
-            total={5}
+            total={6}
             className="mx-auto mt-10 flex max-w-lg flex-wrap items-center justify-center gap-x-10 gap-y-4"
           >
             {HERO_STAT_TYPES.map((type) => (
@@ -133,7 +133,7 @@ export default async function HomePage() {
             </div>
           </Reveal>
 
-          <Reveal index={3} total={5}>
+          <Reveal index={3} total={6}>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/vehiculos"
@@ -160,8 +160,8 @@ export default async function HomePage() {
               sigue regulando `Reveal`/`STAGE_SCROLL_VH` sin tocarse acá. */}
           <Reveal
             index={4}
-            total={5}
-            className="mx-auto mt-14 grid w-full max-w-5xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
+            total={6}
+            className="mx-auto mt-14 grid w-full max-w-3xl grid-cols-2 gap-4 sm:grid-cols-3"
           >
             {categories.map((type) => {
               const accent = CATEGORY_ACCENT[type]
@@ -189,6 +189,36 @@ export default async function HomePage() {
               )
             })}
           </Reveal>
+
+          {/* Franja de confianza al pie del hero: contenido nuevo (no
+              relleno) que responde a "más cosas en el hero", separado del
+              grid de categorías de arriba. Estático — no pide datos extra
+              — así que no compite con `Promise.all` de la carga inicial. */}
+          <Reveal
+            index={5}
+            total={6}
+            className="mx-auto mt-14 grid w-full max-w-[70rem] grid-cols-1 gap-6 border-t border-neutral-200 pt-10 text-left sm:grid-cols-3"
+          >
+            {[
+              {
+                title: 'Fuente verificable',
+                body: 'Cada ficha cita de dónde sale el dato: comunicado, medio o filtración — nunca relleno.',
+              },
+              {
+                title: 'Nivel de evidencia',
+                body: 'Confirmado, rumor o estimación nuestra: siempre marcado, así sabés cuánto confiar en cada especificación.',
+              },
+              {
+                title: 'Comparador real',
+                body: 'Poné vehículos lado a lado con las mismas unidades y fuentes, sin cambiar de pestaña.',
+              },
+            ].map((item) => (
+              <div key={item.title}>
+                <p className="font-display text-base font-semibold text-neutral-900">{item.title}</p>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-500">{item.body}</p>
+              </div>
+            ))}
+          </Reveal>
         </div>
       ),
     },
@@ -197,7 +227,7 @@ export default async function HomePage() {
       id: 'categorias',
       label: 'Categorías',
       content: (
-        <div className="mx-auto w-full max-w-7xl">
+        <div className="mx-auto w-full max-w-[96rem]">
           <p className="mb-2 text-center text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
             Categorías
           </p>
@@ -254,7 +284,7 @@ export default async function HomePage() {
             id: 'destacados',
             label: 'Destacados',
             content: (
-              <div className="mx-auto w-full max-w-7xl">
+              <div className="mx-auto w-full max-w-[96rem]">
                 <div className="mb-10 flex items-end justify-between gap-4">
                   <div>
                     <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
@@ -294,7 +324,7 @@ export default async function HomePage() {
             id: 'noticias',
             label: 'Noticias',
             content: (
-              <div className="mx-auto w-full max-w-7xl">
+              <div className="mx-auto w-full max-w-[96rem]">
                 <div className="mb-10 flex items-end justify-between gap-4">
                   <div>
                     <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">

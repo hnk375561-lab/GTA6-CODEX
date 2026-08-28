@@ -32,7 +32,7 @@ export default async function FavoritosPage() {
   const imageBySlug = getEntityImageMap(entities)
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+    <div className="mx-auto max-w-[96rem] px-4 py-10 sm:px-6 sm:py-14 lg:px-8 xl:px-12">
       <Reveal>
         <div className="mb-8 max-w-2xl">
           <h1 className="font-display text-2xl font-bold text-auto-text sm:text-3xl">

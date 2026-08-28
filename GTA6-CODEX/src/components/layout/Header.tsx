@@ -62,7 +62,7 @@ export function Header() {
       style={isHome ? { paddingTop: 'env(safe-area-inset-top)' } : undefined}
     >
       {!isHome && <div className="section-divider absolute inset-x-0 bottom-0" aria-hidden="true" />}
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-[96rem] items-center justify-between px-4 py-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-3">
           <div

@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer className="relative border-t border-auto-border bg-auto-darker py-14">
       <div className="section-divider absolute inset-x-0 top-0" aria-hidden="true" />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[96rem] px-4 sm:px-6 lg:px-8 xl:px-12">
         <Reveal className="grid gap-10 md:grid-cols-3">
           {/* About */}
           <div>
