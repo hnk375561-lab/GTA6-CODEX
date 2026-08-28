@@ -1,6 +1,7 @@
 'use client'
 
 import { ReactNode, useEffect, useRef, useState } from 'react'
+import { webglSceneBus } from '@/lib/webgl/scene-bus'
 
 interface RevealProps {
   children: ReactNode
@@ -35,19 +36,31 @@ function clamp(value: number, min: number, max: number): number {
  *    default: el comportamiento original de este componente, sin cambios
  *    — controla la clase `.reveal-visible` vía React state.
  *
- * 2. Parallax continuo ("--rv-offset" / "--rv-mag" en globals.css): un
- *    segundo observer, más fino (33 umbrales), que NO toca React state —
- *    escribe las custom properties directo en el nodo del DOM en cada
- *    cruce de umbral. Esto es intencional: usar setState acá dispararía
- *    un re-render de React en cada uno de esos ~33 pasos por elemento,
- *    algo que se vuelve costoso rápido en listados grandes (/vehiculos,
- *    62 `EntityCard`, cada una envuelta en `<Reveal>`). Escribir el CSS
- *    var directo evita esa cascada de renders: el navegador solo repinta
- *    ese elemento, y `content-visibility: auto` en las cards (ver
- *    globals.css) ya se encarga de que las que están fuera de pantalla
- *    ni siquiera lleguen a esta fase. Corre para las 5 direcciones,
- *    `curtain` incluida: el clip-path de la cortina y el drift de acá
- *    conviven sin pisarse (son propiedades CSS distintas).
+ * 2. Parallax continuo ("--rv-offset" / "--rv-mag" / "--rv-skew" en
+ *    globals.css): un segundo observer, más fino (33 umbrales), que NO
+ *    toca React state — escribe las custom properties directo en el
+ *    nodo del DOM en cada cruce de umbral. Esto es intencional: usar
+ *    setState acá dispararía un re-render de React en cada uno de esos
+ *    ~33 pasos por elemento, algo que se vuelve costoso rápido en
+ *    listados grandes (/vehiculos, 62 `EntityCard`, cada una envuelta
+ *    en `<Reveal>`). Escribir el CSS var directo evita esa cascada de
+ *    renders: el navegador solo repinta ese elemento, y
+ *    `content-visibility: auto` en las cards (ver globals.css) ya se
+ *    encarga de que las que están fuera de pantalla ni siquiera lleguen
+ *    a esta fase. Corre para las 5 direcciones, `curtain` incluida: el
+ *    clip-path de la cortina y el drift de acá conviven sin pisarse
+ *    (son propiedades CSS distintas).
+ *
+ *    Mientras el elemento está efectivamente visible, además se
+ *    suscribe al `webglSceneBus` (la misma señal de velocidad de scroll
+ *    que ya alimenta al motor WebGL, ver `lenis-provider.tsx`) para
+ *    aplicar un leve `skewX` proporcional a qué tan rápido se está
+ *    scrolleando en ese instante — el gesto característico de
+ *    rockstargames.com/VI: el contenido se "inclina" con la velocidad
+ *    real del scroll, no con su posición. Se desuscribe apenas el
+ *    elemento sale de pantalla, así que en cualquier momento hay como
+ *    mucho una decena de suscriptores vivos, no uno por cada `<Reveal>`
+ *    del sitio.
  *
  * A diferencia del observer de entrada, este segundo observer NO se
  * desconecta con `once` — el drift tiene que seguir actualizándose
@@ -86,6 +99,7 @@ export function Reveal({
     revealObserver.observe(node)
 
     let motionObserver: IntersectionObserver | undefined
+    let busUnsubscribe: (() => void) | undefined
 
     if (!disableMotion) {
       const thresholds = Array.from({ length: 33 }, (_, i) => i / 32)
@@ -101,6 +115,31 @@ export function Reveal({
           const offset = clamp((elCenter - rootHeight / 2) / (rootHeight / 2), -1, 1)
           node.style.setProperty('--rv-offset', offset.toFixed(3))
           node.style.setProperty('--rv-mag', Math.abs(offset).toFixed(3))
+
+          // Suscripción al `webglSceneBus` de velocidad de scroll SOLO
+          // mientras el elemento está realmente en pantalla (no antes,
+          // no después) — el bus emite en cada tick de Lenis mientras
+          // hay scroll activo (~60/s), así que suscribir esto de forma
+          // permanente en cada <Reveal> del sitio sería cientos de
+          // listeners despiertos todo el tiempo. Acotado a "elementos
+          // actualmente visibles" el conteo real de suscriptores vivos
+          // en cualquier momento es, como mucho, los pocos que entran en
+          // un viewport (una decena, no cientos).
+          if (entry.isIntersecting && !busUnsubscribe) {
+            busUnsubscribe = webglSceneBus.subscribe(() => {
+              const { velocity } = webglSceneBus.getSnapshot().scroll
+              // tanh satura suave en vez de un clamp seco: a velocidad
+              // de scroll normal el skew es sutil, en un "scrolleo"
+              // brusco satura en ±9° en vez de irse a un ángulo
+              // absurdo con un solo salto de rueda grande.
+              const skew = Math.tanh(velocity * 0.05) * 9
+              node.style.setProperty('--rv-skew', skew.toFixed(2))
+            })
+          } else if (!entry.isIntersecting && busUnsubscribe) {
+            busUnsubscribe()
+            busUnsubscribe = undefined
+            node.style.setProperty('--rv-skew', '0')
+          }
         },
         { threshold: thresholds }
       )
@@ -110,6 +149,7 @@ export function Reveal({
     return () => {
       revealObserver.disconnect()
       motionObserver?.disconnect()
+      busUnsubscribe?.()
     }
   }, [once, disableMotion])
 

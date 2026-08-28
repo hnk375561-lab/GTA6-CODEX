@@ -10,6 +10,21 @@ entradas se agrupan por fecha en vez de por número de versión.
 ## [Sin publicar]
 
 ### Cambiado
+- **`<Reveal>` reacciona a la velocidad real de scroll, no solo a la
+  posición:** tercera vuelta sobre el parallax, pedido explícito de
+  "más movimiento, más vida". Mientras un `<Reveal>` está efectivamente
+  en pantalla, se suscribe a `webglSceneBus` (la misma señal de
+  velocidad de scroll que ya alimenta al motor WebGL) y aplica un
+  `skewX` proporcional a esa velocidad en tiempo real, saturado suave
+  con `tanh` a ±9° — el gesto característico de rockstargames.com/VI:
+  el contenido se inclina cuando se scrollea rápido y se endereza solo
+  al frenar. La suscripción se abre/cierra con la propia visibilidad
+  del elemento (motionObserver ya existente), así que en cualquier
+  momento hay como mucho una decena de listeners vivos sobre el bus, no
+  uno por cada `<Reveal>` del sitio. Sin cambios de firma pública ni en
+  los usos existentes. Validado: `tsc --noEmit` limpio, build de
+  producción (344 páginas) OK, 197/197 tests pasando.
+
 - **Parallax "a full" en `<Reveal>`, segunda vuelta:** el primer pase
   (drift ±18px, escala ±2%, transición de 700ms) resultó demasiado sutil
   — pedido explícito de hacerlo mucho más agresivo/notorio. Se subió
