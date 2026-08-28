@@ -51,6 +51,11 @@ function easeInOutCubic(t: number): number {
  * punto), así que no hay un "view" real que timelinear — se necesita leer
  * el progreso de scroll del propio track.
  *
+ * Profundidad: además de opacidad, cada panel escala levemente (0.94→1)
+ * según qué tan activo está — no es un fundido plano, hay una sutil
+ * sensación de acercamiento/alejamiento en Z, mismo lenguaje que los
+ * "depth crossfade" de sitios tipo Apple/Vercel.
+ *
  * Suavizado: el scroll nativo (rueda/trackpad/touch) ya trae su propia
  * inercia del sistema operativo, pero leerlo con rAF y aplicarlo directo
  * al crossfade igual se siente "a los saltos" en inputs entrecortados
@@ -179,6 +184,14 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
           const eased = easeInOutCubic(1 - Math.min(1, absDiff * 1.4))
           const opacity = eased
           const translateY = Math.sign(diff) * (1 - eased) * 32
+          // Profundidad: el panel activo respira a tamaño completo (scale 1)
+          // y los que entran/salen quedan levemente encogidos (SCALE_MIN) —
+          // mismo lenguaje que el "depth crossfade" de Apple/Vercel: no es
+          // solo un fundido plano, hay una sutil sensación de acercamiento/
+          // alejamiento en el eje Z. Simétrico (no depende de la dirección):
+          // tanto el que se va como el que llega encogen desde/hacia el centro.
+          const SCALE_MIN = 0.94
+          const scale = SCALE_MIN + eased * (1 - SCALE_MIN)
           const isActive = absDiff < 0.5
           return (
             <div
@@ -193,7 +206,7 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
               inert={!isActive}
               style={{
                 opacity,
-                transform: `translateY(${translateY}px)`,
+                transform: `translateY(${translateY}px) scale(${scale})`,
                 pointerEvents: isActive ? 'auto' : 'none',
                 zIndex: isActive ? 2 : 1,
                 willChange: 'opacity, transform',
