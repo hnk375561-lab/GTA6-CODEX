@@ -40,21 +40,21 @@ interface HeroSceneSVGProps {
  * material audiovisual, dorado = vehículos/objetos/economía), aplicado acá
  * a cielo/sol en vez de a un borde de card. `gold` reutiliza el naranja
  * cálido que `magenta` ya tenía como base del degradé (`#ffb347`) para el
- * cielo, y sube el dorado (`#f0c274`, el mismo hex que `CATEGORY_ACCENT`)
+ * cielo, y sube el dorado (`#c9a35f`, el mismo hex que `CATEGORY_ACCENT`)
  * a color principal en vez de acento secundario.
  */
 const SCENE_PALETTES: Record<
   NonNullable<HeroSceneSVGProps['variant']>,
   { skyTop: string; skyMid: string; skyBottom: string; sun: string }
 > = {
-  magenta: { skyTop: '#2a0a3d', skyMid: '#ff2f8f', skyBottom: '#ffb347', sun: '#ffd700' },
-  cyan: { skyTop: '#0a1a3d', skyMid: '#22d3ee', skyBottom: '#a78bfa', sun: '#f0c274' },
-  gold: { skyTop: '#2a1a05', skyMid: '#f0c274', skyBottom: '#ff8a3d', sun: '#ffe08a' },
+  magenta: { skyTop: '#2a0a3d', skyMid: '#ff6a1a', skyBottom: '#ffb347', sun: '#ffd700' },
+  cyan: { skyTop: '#0a1a3d', skyMid: '#3d84ff', skyBottom: '#a78bfa', sun: '#c9a35f' },
+  gold: { skyTop: '#2a1a05', skyMid: '#c9a35f', skyBottom: '#ff8a3d', sun: '#ffe08a' },
 }
 
 export function HeroSceneSVG({ variant = 'magenta', instanceId, className, style }: HeroSceneSVGProps) {
   const { skyTop, skyMid, skyBottom, sun } = SCENE_PALETTES[variant]
-  const silhouette = '#0a0712'
+  const silhouette = '#0b0d10'
   const uid = instanceId ?? variant
 
   return (

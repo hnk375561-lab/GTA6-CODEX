@@ -10,7 +10,7 @@ function target(overrides: Partial<CountdownTarget> & { targetIso: string }): Co
     label: 'Hito de prueba',
     pendingLabel: 'Pendiente',
     reachedLabel: 'Ya disponible',
-    accent: '#ff2f8f',
+    accent: '#ff6a1a',
     ...overrides,
   }
 }

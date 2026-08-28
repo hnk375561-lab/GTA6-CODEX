@@ -82,8 +82,8 @@ export function ElasticCursor() {
 
       const opacity = 0.5 + scrollSpeed * 0.3
 
-      ctx.fillStyle = `rgba(255, 47, 143, ${opacity})`
-      ctx.strokeStyle = `rgba(34, 211, 238, ${opacity * 0.6})`
+      ctx.fillStyle = `rgba(255, 106, 26, ${opacity})`
+      ctx.strokeStyle = `rgba(61, 132, 255, ${opacity * 0.6})`
       ctx.lineWidth = 1.5
 
       ctx.beginPath()
@@ -92,7 +92,7 @@ export function ElasticCursor() {
       ctx.stroke()
 
       if (scrollSpeed > 0.5) {
-        ctx.fillStyle = `rgba(255, 47, 143, ${opacity * 0.15})`
+        ctx.fillStyle = `rgba(255, 106, 26, ${opacity * 0.15})`
         ctx.beginPath()
         ctx.ellipse(centerX, centerY + offsetY, radiusX + 4, radiusY + 4, 0, 0, Math.PI * 2)
         ctx.fill()

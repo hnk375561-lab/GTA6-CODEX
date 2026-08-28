@@ -7,30 +7,40 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Paleta "Leonida Nights": negro-ciruela profundo tipo fotografía
-        // nocturna, con dos acentos neón (magenta sunset + cian Vice) y un
-        // toque de oro para momentos de lujo/premium. Menos saturado que un
-        // cyberpunk generico -- pensado para leerse como revista/editorial,
-        // no como arcade.
-        'auto-dark': '#0a0712',
-        'auto-darker': '#050308',
-        'auto-card': '#140f20',
-        'auto-surface': '#140f20',
-        'auto-surface-elevated': '#1b1430',
-        'auto-border': '#2a2138',
-        'auto-border-strong': '#453163',
-        'auto-text': '#f5eff9',
-        'auto-text-secondary': '#b3a3c4',
-        // #7c6c8f original daba 4.18:1 de contraste sobre auto-dark — por debajo
-        // de AA (4.5:1) para texto normal. Se usa en 14+ lugares como
-        // text-xs/text-sm (metadata, timestamps, stat labels). #88799a
-        // mantiene el mismo matiz violeta-gris y sube a 4.99:1.
-        'auto-text-tertiary': '#88799a',
-        'auto-accent': '#ff2f8f',
-        'auto-accent-strong': '#ff7ec4',
-        'auto-accent-orange': '#22d3ee',
-        'auto-accent-warning': '#ffcc4d',
-        'auto-gold': '#f0c274',
+        // Paleta "Placa Técnica" (reemplaza "Leonida Nights", agosto 2026):
+        // la paleta anterior era magenta+cian neón sobre negro-ciruela —
+        // en los hechos, la paleta synthwave "Vice City" del proyecto de
+        // GTA6 original, sobrevivió intacta al pivote de contenido/copy.
+        // Un sitio de fichas técnicas verificadas se lee mejor como una
+        // placa de identificación de motor o un plano de ingeniería:
+        // grafito neutro (no violeta), acento naranja señal (torque,
+        // cinta de precaución de taller) para interacción/CTA, y azul
+        // "plano" para datos secundarios/links — nada de glow nocturno de
+        // arcade. Ver CHANGELOG.md para el detalle de la migración.
+        'auto-dark': '#0b0d10',
+        'auto-darker': '#050607',
+        'auto-card': '#12151a',
+        'auto-surface': '#12151a',
+        'auto-surface-elevated': '#191d24',
+        'auto-border': '#242a32',
+        'auto-border-strong': '#3a4250',
+        'auto-text': '#eef1f4',
+        'auto-text-secondary': '#9fa8b5',
+        // 8.1:1 sobre auto-dark — sobra margen sobre el mínimo AA (4.5:1)
+        // que ya se cuidaba en la paleta anterior.
+        'auto-text-tertiary': '#7c8794',
+        // Naranja señal: reemplaza el magenta. Es el color de interacción
+        // primario (CTAs, foco, hover, links activos).
+        'auto-accent': '#ff6a1a',
+        'auto-accent-strong': '#ff9152',
+        // Azul "plano técnico": reemplaza el cian Vice City. Se mantiene
+        // el nombre de token `auto-accent-orange` para no romper los ~40
+        // usos existentes en componentes; lo que cambió es el valor.
+        'auto-accent-orange': '#3d84ff',
+        'auto-accent-warning': '#ffb703',
+        // Bronce/latón de placa remachada, más apagado que el dorado
+        // "premium" anterior — encaja con metal de taller, no con joyería.
+        'auto-gold': '#c9a35f',
       },
       fontFamily: {
         sans: [
@@ -66,17 +76,25 @@ module.exports = {
         'auto-md': '0 4px 6px rgba(0, 0, 0, 0.6)',
         'auto-lg': '0 10px 15px rgba(0, 0, 0, 0.7)',
         'auto-xl': '0 20px 25px rgba(0, 0, 0, 0.8)',
-        'glow-pink': '0 0 40px -8px rgba(255, 47, 143, 0.45)',
-        'glow-cyan': '0 0 40px -8px rgba(34, 211, 238, 0.4)',
-        'glow-gold': '0 0 32px -10px rgba(240, 194, 116, 0.35)',
+        // Nombres de key sin tocar (evita renombrar clases en ~15
+        // componentes); los valores pasan de glow neón a un resplandor
+        // corto y contenido, más "indicador LED de panel" que "cartel de
+        // neón nocturno".
+        'glow-pink': '0 0 24px -6px rgba(255, 106, 26, 0.5)',
+        'glow-cyan': '0 0 24px -6px rgba(61, 132, 255, 0.45)',
+        'glow-gold': '0 0 20px -8px rgba(201, 163, 95, 0.4)',
       },
       letterSpacing: {
         tightest: '-0.04em',
         widest: '0.28em',
       },
       backgroundImage: {
-        'auto-sunset': 'linear-gradient(90deg, #ff2f8f 0%, #ff7ec4 35%, #22d3ee 70%, #0891b2 100%)',
-        'vice-radial': 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,47,143,0.16), transparent 60%)',
+        // 'auto-sunset' pasa de magenta->cian (paleta Vice City) a
+        // naranja->azul plano (paleta actual). 'vice-radial' se mantiene
+        // como nombre de key por compatibilidad con las clases existentes,
+        // pero ya no referencia nada de Vice City en valor ni en uso.
+        'auto-sunset': 'linear-gradient(90deg, #ff6a1a 0%, #ff9152 35%, #3d84ff 70%, #1c4fd6 100%)',
+        'vice-radial': 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,106,26,0.13), transparent 60%)',
       },
       aspectRatio: {
         'square': '1 / 1',
