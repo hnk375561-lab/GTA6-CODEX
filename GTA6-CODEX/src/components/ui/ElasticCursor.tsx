@@ -1,6 +1,26 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { webglSceneBus } from '@/lib/webgl/scene-bus'
+
+/**
+ * Fix de rendimiento (27/08/2026): `drawCursor` llamaba a
+ * `getComputedStyle(root).getPropertyValue('--scroll-speed')` en CADA
+ * frame de su propio rAF — no solo mientras se scrollea, siempre, en
+ * cualquier página, porque este componente está montado en layout.tsx.
+ * `getComputedStyle` fuerza un recálculo de estilos síncrono ("layout
+ * thrashing"); hacerlo 60 veces por segundo sin parar era, con
+ * diferencia, el costo de rendimiento más grande y constante del sitio
+ * (más que el motor de fondo, que solo importa mientras hay scroll).
+ * `webglSceneBus` ya tiene este mismo valor (lo publica
+ * `ScrollTelemetryBridge` a partir de la velocidad real de Lenis) — acá
+ * simplemente se lee de ahí vía `getSnapshot()`, sin tocar el DOM.
+ */
+function readScrollSpeed(): number {
+  const MAX_EXPECTED_VELOCITY = 60
+  const { velocity } = webglSceneBus.getSnapshot().scroll
+  return Math.min(Math.abs(velocity) / MAX_EXPECTED_VELOCITY, 1)
+}
 
 export function ElasticCursor() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -39,10 +59,7 @@ export function ElasticCursor() {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       const { x, y } = mouseRef.current
-      const root = document.documentElement
-      const scrollSpeed = parseFloat(
-        getComputedStyle(root).getPropertyValue('--scroll-speed') || '0'
-      )
+      const scrollSpeed = readScrollSpeed()
 
       const baseRadius = 8
       const centerX = x / window.devicePixelRatio
@@ -52,7 +69,7 @@ export function ElasticCursor() {
       const stretchIntensity = Math.min(1, stretchFactor)
 
       let radiusY = baseRadius
-      let radiusX = baseRadius
+      const radiusX = baseRadius
       let offsetY = 0
 
       if (scrollDirectionRef.current === 'down') {
