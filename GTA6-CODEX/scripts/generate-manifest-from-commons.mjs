@@ -205,7 +205,15 @@ async function findBestImageFor(vehicle) {
   // primero y solo se sigue a la siguiente si esa no dio ningún candidato
   // con licencia libre Y resolución >= piso mínimo.
   const manufacturer = (vehicle.manufacturer ?? '').trim()
-  const title = (vehicle.title ?? '').trim()
+  // `commonsSearchTerm` (opcional, no se muestra en el sitio): override del
+  // nombre a buscar en Commons cuando el `title` es el nombre de mercado
+  // local (ej. "Bajaj Rouser NS200" en Argentina vs. "Pulsar NS200" que es
+  // como se conoce/etiqueta internacionalmente en Commons) o está en
+  // español cuando Commons solo indexa el nombre en inglés (ej. "Kona
+  // Eléctrico" vs. "Kona Electric"). Sin esto, la búsqueda usaba el título
+  // de mercado tal cual y no encontraba nada aunque la foto sí existiera
+  // en Commons bajo el otro nombre.
+  const title = (vehicle.commonsSearchTerm ?? vehicle.title ?? '').trim()
   const queries = [
     `${manufacturer} ${title}`.trim(),
     `${manufacturer} ${title} car`.trim(),
