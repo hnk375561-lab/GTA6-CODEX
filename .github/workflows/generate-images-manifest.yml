@@ -56,3 +56,4 @@ jobs:
               fotos a `public/images/entities/vehiculos/`.
           add-paths: |
             GTA6-CODEX/real-images-manifest.json
+            GTA6-CODEX/.commons-image-cache.json
