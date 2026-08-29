@@ -1,0 +1,46 @@
+[
+  {
+    "category": "vehiculos",
+    "slug": "alfa-romeo-giulia",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/2026_Alfa_Romeo_Giulia_Quadrifoglio_rear.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceType": "wikimedia-commons",
+    "license": "CC0",
+    "attribution": "TTTNIS",
+    "attributionUrl": "https://commons.wikimedia.org/wiki/File:2026_Alfa_Romeo_Giulia_Quadrifoglio_rear.jpg",
+    "resolution": "4869x2064",
+    "note": "Encontrado con query \"Alfa Romeo Giulia\". Resolución 4869x2064 (>= piso 2K). Verificar manualmente que la foto corresponde al modelo/año correcto antes de publicar."
+  },
+  {
+    "category": "vehiculos",
+    "slug": "alfa-romeo-stelvio",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Moscow%2C_Alfa_Romeo_Stelvio%2C_Apr_2026_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceType": "wikimedia-commons",
+    "license": "CC0",
+    "attribution": "Retired electrician",
+    "attributionUrl": "https://commons.wikimedia.org/wiki/File:Moscow,_Alfa_Romeo_Stelvio,_Apr_2026_03.jpg",
+    "resolution": "4319x2879",
+    "note": "Encontrado con query \"Alfa Romeo Alfa Romeo Stelvio car\". Resolución 4319x2879 (>= piso 2K). Verificar manualmente que la foto corresponde al modelo/año correcto antes de publicar."
+  },
+  {
+    "category": "vehiculos",
+    "slug": "aprilia-rsv4",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Aprilia_RSV4_RF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceType": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "志遠 古",
+    "attributionUrl": "https://commons.wikimedia.org/wiki/File:Aprilia_RSV4_RF.jpg",
+    "resolution": "4752x3168",
+    "note": "Encontrado con query \"Aprilia Aprilia RSV4\". Resolución 4752x3168 (>= piso 2K). Verificar manualmente que la foto corresponde al modelo/año correcto antes de publicar."
+  },
+  {
+    "category": "vehiculos",
+    "slug": "ktm-duke-390",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Moscow%2C_KTM_Duke_390_motorcycle_September_2024_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceType": "wikimedia-commons",
+    "license": "CC0",
+    "attribution": "Retired electrician",
+    "attributionUrl": "https://commons.wikimedia.org/wiki/File:Moscow,_KTM_Duke_390_motorcycle_September_2024_05.jpg",
+    "resolution": "4369x3277",
+    "note": "Encontrado con query \"KTM Duke 390\". Resolución 4369x3277 (>= piso 2K). Verificar manualmente que la foto corresponde al modelo/año correcto antes de publicar."
+  }
+]
