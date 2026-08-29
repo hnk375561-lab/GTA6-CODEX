@@ -2587,5 +2587,165 @@
     "height": 4480,
     "matchedQuery": "Hyundai Hyundai Kona Electric",
     "status": "ok"
+  },
+  "honda-xre-300": {
+    "status": "too-small",
+    "debug": [
+      {
+        "query": "Honda Honda XRE 300",
+        "pagesReturned": 2,
+        "infosExtracted": 2,
+        "licensesSeen": [
+          "Public domain",
+          "Public domain"
+        ],
+        "licensedCount": 2,
+        "sampleSizes": [
+          "2330x1748",
+          "2592x1612"
+        ]
+      },
+      {
+        "query": "Honda Honda XRE 300 car",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Honda XRE 300",
+        "pagesReturned": 2,
+        "infosExtracted": 2,
+        "licensesSeen": [
+          "Public domain",
+          "Public domain"
+        ],
+        "licensedCount": 2,
+        "sampleSizes": [
+          "2330x1748",
+          "2592x1612"
+        ]
+      },
+      {
+        "query": "Honda XRE 300 automobile",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      }
+    ]
+  },
+  "motomel-skua-150": {
+    "status": "no-license",
+    "debug": [
+      {
+        "query": "Motomel Motomel Skua 150",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Motomel Motomel Skua 150 car",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Motomel Skua 150",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Motomel Skua 150 automobile",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      }
+    ]
+  },
+  "zanella-rx-150": {
+    "status": "no-license",
+    "debug": [
+      {
+        "query": "Zanella Zanella RX 150",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Zanella Zanella RX 150 car",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Zanella RX 150",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Zanella RX 150 automobile",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      }
+    ]
+  },
+  "zanella-rx-200": {
+    "status": "no-license",
+    "debug": [
+      {
+        "query": "Zanella Zanella RX 200 Next",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Zanella Zanella RX 200 Next car",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Zanella RX 200 Next",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Zanella RX 200 Next automobile",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      }
+    ]
   }
 }
