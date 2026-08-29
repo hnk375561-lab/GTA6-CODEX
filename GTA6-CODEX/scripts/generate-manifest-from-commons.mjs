@@ -101,11 +101,27 @@ const ACCEPTABLE_LICENSES = [
   'cc-by-sa-4.0',
 ]
 
+// BUGFIX (ago 2026): Wikimedia devuelve LicenseShortName con espacios
+// ("CC BY-SA 4.0"), no con guiones ("cc-by-sa-4.0" como en
+// ACCEPTABLE_LICENSES). El match por `.includes()` nunca daba positivo
+// aunque la licencia fuera perfectamente aceptable — normalizamos
+// espacios a guiones antes de comparar.
 function isAcceptableLicense(licenseShortName) {
   if (!licenseShortName) return false
-  const normalized = licenseShortName.toLowerCase().trim()
+  const normalized = licenseShortName.toLowerCase().trim().replace(/\s+/g, '-')
   return ACCEPTABLE_LICENSES.some((accepted) => normalized.includes(accepted))
 }
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+// BUGFIX (ago 2026): las IPs compartidas de los runners de GitHub Actions
+// reciben 429 de la API de Commons casi de inmediato (mismo fenómeno ya
+// documentado en import-real-images.mjs para las descargas). Antes esto
+// tiraba el query entero como "sin resultado" a la primera; ahora
+// reintenta con backoff exponencial (respetando Retry-After si viene).
+const SEARCH_MAX_RETRIES = 5
 
 async function searchCommons(query) {
   const searchUrl = new URL(COMMONS_API)
@@ -121,14 +137,35 @@ async function searchCommons(query) {
     origin: '*',
   }).toString()
 
-  const res = await fetch(searchUrl, {
-    headers: { 'User-Agent': 'AutoFicha-ManifestBot/1.0 (contacto: proyecto AutoFicha)' },
-  })
-  if (!res.ok) throw new Error(`HTTP ${res.status}`)
-  const data = await res.json()
-  const pages = data?.query?.pages
-  if (!pages) return []
-  return Object.values(pages)
+  let lastErr
+  for (let attempt = 0; attempt <= SEARCH_MAX_RETRIES; attempt++) {
+    if (attempt > 0) {
+      const backoffMs = lastErr?.retryAfterMs ?? Math.min(1500 * 2 ** (attempt - 1), 20000)
+      await sleep(backoffMs)
+    }
+    let res
+    try {
+      res = await fetch(searchUrl, {
+        headers: { 'User-Agent': 'AutoFicha-ManifestBot/1.0 (contacto: proyecto AutoFicha)' },
+      })
+    } catch (err) {
+      lastErr = err
+      continue
+    }
+    if (res.status === 429 || res.status === 503) {
+      const retryAfterHeader = res.headers.get('retry-after')
+      const err = new Error(`HTTP ${res.status}`)
+      err.retryAfterMs = retryAfterHeader ? Number(retryAfterHeader) * 1000 : undefined
+      lastErr = err
+      continue
+    }
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const data = await res.json()
+    const pages = data?.query?.pages
+    if (!pages) return []
+    return Object.values(pages)
+  }
+  throw lastErr
 }
 
 function extractLicenseInfo(page) {
