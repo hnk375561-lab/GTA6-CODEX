@@ -10,6 +10,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: import-real-images-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   import:
     runs-on: ubuntu-latest
