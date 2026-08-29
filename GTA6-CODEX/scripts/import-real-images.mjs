@@ -26,6 +26,13 @@
  * Actions (o cualquier entorno con salida a internet libre), no en
  * el sandbox de una sesión de Claude.
  *
+ * PISO DE RESOLUCIÓN ("2K"): además del techo de 3840x2160 (nunca
+ * upscale — ver `withoutEnlargement`), este script ahora valida la
+ * resolución REAL del archivo ya descargado (no la que decía el
+ * manifest/la fuente) contra un piso mínimo antes de escribirlo. Si el
+ * archivo descargado resulta más chico que el piso, se descarta — no se
+ * escribe igual ni se hace upscale para simular que cumple.
+ *
  * USO:
  *   node scripts/import-real-images.mjs           # dry-run (no escribe nada)
  *   node scripts/import-real-images.mjs --apply
@@ -53,6 +60,18 @@ const OUT_DIR = path.join(ROOT, 'public', 'images', 'entities')
 const APPLY = process.argv.includes('--apply')
 const OVERWRITE = process.argv.includes('--overwrite')
 
+// Mismo piso que scripts/generate-manifest-from-commons.mjs — ver ahí el
+// razonamiento de por qué exigir ambos lados en vez de solo el área.
+const MIN_LONG_SIDE = 2560
+const MIN_SHORT_SIDE = 1440
+
+function meetsResolutionFloor(width, height) {
+  if (!width || !height) return false
+  const long = Math.max(width, height)
+  const short = Math.min(width, height)
+  return long >= MIN_LONG_SIDE && short >= MIN_SHORT_SIDE
+}
+
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
 
@@ -76,6 +95,7 @@ async function main() {
   let skipped = 0
   let failed = 0
   const errors = []
+  const skippedTooSmall = []
 
   for (const item of manifest) {
     const { category, slug, sourceUrl } = item
@@ -96,6 +116,20 @@ async function main() {
       console.log(`Descargando ${category}/${slug} <- ${sourceUrl}`)
       const buf = await downloadBuffer(sourceUrl)
 
+      // Validar la resolución REAL del archivo ya descargado antes de
+      // procesarlo. No confiamos ciegamente en el width/height que traía
+      // el manifest (puede haberse generado en otro momento, o la fuente
+      // pudo cambiar el archivo detrás de la misma URL).
+      const meta = await sharp(buf).metadata()
+      if (!meetsResolutionFloor(meta.width, meta.height)) {
+        console.log(
+          `  DESCARTADA (${meta.width}x${meta.height}, por debajo del piso de 2K) — no se escribe, no se hace upscale: ${category}/${slug}`
+        )
+        skippedTooSmall.push({ category, slug, sourceUrl, actualResolution: `${meta.width}x${meta.height}` })
+        skipped++
+        continue
+      }
+
       const webp = await sharp(buf)
         .resize({ width: 3840, height: 2160, fit: 'inside', withoutEnlargement: true })
         .webp({ quality: 92 })
@@ -105,7 +139,7 @@ async function main() {
         fs.mkdirSync(path.dirname(outPath), { recursive: true })
         fs.writeFileSync(outPath, webp)
       }
-      console.log(`  OK ${APPLY ? '(escrito)' : '(dry-run, no escrito)'} -> ${outPath}`)
+      console.log(`  OK ${APPLY ? '(escrito)' : '(dry-run, no escrito)'} (${meta.width}x${meta.height}) -> ${outPath}`)
       ok++
     } catch (err) {
       console.error(`  FALLO ${category}/${slug}: ${err.message}`)
@@ -115,13 +149,24 @@ async function main() {
   }
 
   console.log(`\n== Resumen == OK=${ok} SKIP=${skipped} FAIL=${failed} (modo: ${APPLY ? 'apply' : 'dry-run'})`)
+  if (skippedTooSmall.length > 0) {
+    console.log(`  De los SKIP, ${skippedTooSmall.length} fueron por no cumplir el piso de 2K (ver detalle abajo).`)
+  }
 
-  if (errors.length) {
+  if (errors.length || skippedTooSmall.length) {
     fs.mkdirSync(path.join(ROOT, '.ci-debug'), { recursive: true })
-    fs.writeFileSync(
-      path.join(ROOT, '.ci-debug', 'import-real-images-errors.json'),
-      JSON.stringify(errors, null, 2)
-    )
+    if (errors.length) {
+      fs.writeFileSync(
+        path.join(ROOT, '.ci-debug', 'import-real-images-errors.json'),
+        JSON.stringify(errors, null, 2)
+      )
+    }
+    if (skippedTooSmall.length) {
+      fs.writeFileSync(
+        path.join(ROOT, '.ci-debug', 'import-real-images-below-2k.json'),
+        JSON.stringify(skippedTooSmall, null, 2)
+      )
+    }
   }
 
   process.env.IMPORT_OK = String(ok)
