@@ -121,7 +121,15 @@ function sleep(ms) {
 // documentado en import-real-images.mjs para las descargas). Antes esto
 // tiraba el query entero como "sin resultado" a la primera; ahora
 // reintenta con backoff exponencial (respetando Retry-After si viene).
-const SEARCH_MAX_RETRIES = 5
+// TUNING (ago 2026, tras ver un run colgado ~35min sin terminar): con
+// 5 reintentos y techo de 20s, un vehículo constantemente 429 podía
+// consumir minutos él solo y en el peor caso horas para las 250
+// entradas. Bajamos a 3 reintentos / techo 6s: preferimos que un
+// vehículo puntual quede "sin resultado esta corrida" (se puede
+// reintentar después con --retry-notfound) a que el job entero se
+// cuelgue. Combinado con el guardado incremental del cache más abajo,
+// ninguna corrida pierde el progreso ya hecho aunque se corte.
+const SEARCH_MAX_RETRIES = 3
 
 async function searchCommons(query) {
   const searchUrl = new URL(COMMONS_API)
@@ -140,7 +148,7 @@ async function searchCommons(query) {
   let lastErr
   for (let attempt = 0; attempt <= SEARCH_MAX_RETRIES; attempt++) {
     if (attempt > 0) {
-      const backoffMs = lastErr?.retryAfterMs ?? Math.min(1500 * 2 ** (attempt - 1), 20000)
+      const backoffMs = lastErr?.retryAfterMs ?? Math.min(1200 * 2 ** (attempt - 1), 6000)
       await sleep(backoffMs)
     }
     let res
@@ -271,7 +279,27 @@ async function main() {
   const notFoundTooSmall = []
   let fromCache = 0
 
+  // GUARDA DE TIEMPO (ago 2026): un run anterior quedó colgado ~35min sin
+  // terminar por los reintentos de 429 acumulados en 250 vehículos. En vez
+  // de dejar que el job siga hasta el timeout del runner (y perder todo lo
+  // que no llegó a escribirse), cortamos el bucle a los RUN_BUDGET_MS y
+  // escribimos igual manifest+cache con lo procesado hasta ahí. Lo que
+  // quedó sin tocar simplemente no está en el cache todavía, así que la
+  // PRÓXIMA corrida (o esta misma con --retry-notfound) retoma justo donde
+  // se cortó, sin repetir trabajo ya hecho.
+  const RUN_BUDGET_MS = Number(process.env.RUN_BUDGET_MS || 12 * 60 * 1000)
+  const startedAt = Date.now()
+  let timeBudgetExceeded = false
+
   for (const file of files) {
+    if (Date.now() - startedAt > RUN_BUDGET_MS) {
+      console.log(
+        `\n⏱ Presupuesto de tiempo (${Math.round(RUN_BUDGET_MS / 1000)}s) agotado — cortando acá. Lo ya resuelto queda guardado; correr de nuevo para continuar con el resto.`
+      )
+      timeBudgetExceeded = true
+      break
+    }
+
     const raw = fs.readFileSync(path.join(VEHICLES_DIR, file), 'utf8').replace(/^\uFEFF/, '')
     const vehicle = JSON.parse(raw)
     const slug = vehicle.slug
@@ -285,6 +313,11 @@ async function main() {
     if (result === undefined || (RETRY_NOTFOUND && cachedWasMiss)) {
       result = await findBestImageFor(vehicle)
       cache[slug] = result
+      // Guardado incremental: si el job se corta/cancela a mitad de
+      // camino (timeout del runner, cancelación manual, etc.), lo ya
+      // resuelto no se pierde — antes el cache solo se escribía una vez
+      // al final de TODO el bucle.
+      fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2))
       // Pequeña pausa para no golpear la API de Commons demasiado rápido.
       await new Promise((r) => setTimeout(r, 200))
     } else {
