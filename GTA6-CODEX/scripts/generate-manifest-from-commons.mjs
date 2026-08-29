@@ -94,9 +94,17 @@ function meetsResolutionFloor(width, height) {
 // Licencias que consideramos seguras para uso comercial. CC-BY / CC-BY-SA
 // exigen atribución (por eso guardamos `author` y `licenseShortName` en
 // el manifest) — NO exigen que el uso sea no comercial.
+// BUGFIX (29 ago 2026): 'public domain' llevaba espacio acá, pero
+// isAcceptableLicense normaliza espacios a guiones antes de comparar
+// ("public-domain"), así que el .includes() nunca daba match — fotos
+// legítimamente en Dominio Público (sin restricción de licencia alguna,
+// el caso MÁS permisivo posible) se estaban descartando como si no
+// tuvieran licencia aceptable. Mismo patrón de bug que el ya arreglado
+// para 'CC BY-SA 4.0' con espacios, ver comentario de isAcceptableLicense
+// más abajo.
 const ACCEPTABLE_LICENSES = [
   'cc0',
-  'public domain',
+  'public-domain',
   'pd',
   'cc-by-2.0',
   'cc-by-3.0',

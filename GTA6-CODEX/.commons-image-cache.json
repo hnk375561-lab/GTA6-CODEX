@@ -991,55 +991,6 @@
       }
     ]
   },
-  "honda-xre-300": {
-    "status": "no-license",
-    "debug": [
-      {
-        "query": "Honda Honda XRE 300",
-        "pagesReturned": 2,
-        "infosExtracted": 2,
-        "licensesSeen": [
-          "Public domain",
-          "Public domain"
-        ],
-        "licensedCount": 0,
-        "sampleSizes": [
-          "2330x1748",
-          "2592x1612"
-        ]
-      },
-      {
-        "query": "Honda Honda XRE 300 car",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Honda XRE 300",
-        "pagesReturned": 2,
-        "infosExtracted": 2,
-        "licensesSeen": [
-          "Public domain",
-          "Public domain"
-        ],
-        "licensedCount": 0,
-        "sampleSizes": [
-          "2330x1748",
-          "2592x1612"
-        ]
-      },
-      {
-        "query": "Honda XRE 300 automobile",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      }
-    ]
-  },
   "hyundai-creta": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/b/be/HYUNDAI_CRETA_%2C_iX25_%28SU2%29_China_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "descriptionUrl": "https://commons.wikimedia.org/wiki/File:HYUNDAI_CRETA_,_iX25_(SU2)_China_(1).jpg",
@@ -1579,43 +1530,6 @@
     "height": 3176,
     "matchedQuery": "Mitsubishi Mitsubishi Triton",
     "status": "ok"
-  },
-  "motomel-skua-150": {
-    "status": "no-license",
-    "debug": [
-      {
-        "query": "Motomel Motomel Skua 150",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Motomel Motomel Skua 150 car",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Motomel Skua 150",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Motomel Skua 150 automobile",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      }
-    ]
   },
   "nio-et5": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/NIO_ET5_1X7A7324.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -2653,80 +2567,6 @@
     "height": 1456,
     "matchedQuery": "Yamaha Yamaha YBR 125",
     "status": "ok"
-  },
-  "zanella-rx-150": {
-    "status": "no-license",
-    "debug": [
-      {
-        "query": "Zanella Zanella RX 150",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Zanella Zanella RX 150 car",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Zanella RX 150",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Zanella RX 150 automobile",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      }
-    ]
-  },
-  "zanella-rx-200": {
-    "status": "no-license",
-    "debug": [
-      {
-        "query": "Zanella Zanella RX 200 Next",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Zanella Zanella RX 200 Next car",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Zanella RX 200 Next",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Zanella RX 200 Next automobile",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      }
-    ]
   },
   "bajaj-rouser-ns200": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Bj_Pulsar_NS_200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
