@@ -34,6 +34,61 @@
   },
   {
     "category": "vehiculos",
+    "slug": "abarth-595",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/Abarth_595_%28DS03_BEN%29_-_7_June_2026.jpg",
+    "sourceType": "wikimedia-commons",
+    "license": "no confirmada en esta pasada (ver attributionUrl)",
+    "attribution": "Ver página del archivo en Commons",
+    "attributionUrl": "https://commons.wikimedia.org/wiki/Category:Abarth_595",
+    "resolution": "4656x3107",
+    "note": "Encontrado en Category:Abarth_595 de Wikimedia Commons (listado 'Abarth 595 (DS03 BEN) - 7 June 2026.jpg', 4656x3107; >= piso 2K). Resolución tomada del listado de la propia categoría de Commons (no de un thumbnail). URL de descarga reconstruida con el esquema de hash MD5 estándar de Wikimedia (verificado contra una entrada ya importada con éxito de este mismo manifest). Licencia no confirmada por texto explícito en esta pasada de investigación -- verificar en la página del archivo antes de publicar en producción; si el import-real-images.mjs no puede descargarla, el vehículo queda automáticamente en FAIL y no se usa nada de menor calidad."
+  },
+  {
+    "category": "vehiculos",
+    "slug": "aston-martin-db12",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fe/2023_Aston_Martin_DB12_%2854923%29.jpg",
+    "sourceType": "wikimedia-commons",
+    "license": "no confirmada en esta pasada (ver attributionUrl)",
+    "attribution": "Ver página del archivo en Commons",
+    "attributionUrl": "https://commons.wikimedia.org/wiki/Category:Aston_Martin_DB12",
+    "resolution": "4080x2562",
+    "note": "Encontrado en Category:Aston_Martin_DB12 de Wikimedia Commons ('2023 Aston Martin DB12 (54923).jpg', 4080x2562; >= piso 2K). Resolución tomada del listado de la categoría de Commons. URL reconstruida con hash MD5 estándar de Wikimedia. Licencia no confirmada por texto explícito en esta pasada -- verificar antes de publicar."
+  },
+  {
+    "category": "vehiculos",
+    "slug": "audi-a4",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Audi_A4_B9_sedans_%28FL%29_1X7A6816.jpg",
+    "sourceType": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Alexander Migl",
+    "attributionUrl": "https://commons.wikimedia.org/wiki/File:Audi_A4_B9_sedans_(FL)_1X7A6816.jpg",
+    "resolution": "4883x2457",
+    "note": "Corresponde a la 5ta generación (B9) del Audi A4, que es la generación de esta ficha. Licencia CC BY-SA 4.0 confirmada en la página del archivo. Resolución 4883x2457 (>= piso 2K)."
+  },
+  {
+    "category": "vehiculos",
+    "slug": "audi-q3",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/2019_Audi_Q3_quattro_S-Line_45_TFSi_front_NYIAS_2019.jpg",
+    "sourceType": "wikimedia-commons",
+    "license": "no confirmada en esta pasada (ver attributionUrl)",
+    "attribution": "Ver página del archivo en Commons",
+    "attributionUrl": "https://commons.wikimedia.org/wiki/Category:Audi_Q3_F3",
+    "resolution": "5019x3245",
+    "note": "Encontrado en Category:Audi_Q3_F3 (segunda generación, la de esta ficha) de Wikimedia Commons, 5019x3245 (>= piso 2K). Resolución tomada del listado de la categoría de Commons. URL reconstruida con hash MD5 estándar de Wikimedia. Licencia no confirmada por texto explícito en esta pasada -- verificar antes de publicar."
+  },
+  {
+    "category": "vehiculos",
+    "slug": "audi-q7",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/2025_Audi_Q7_%284M%29_DSC_7473.jpg",
+    "sourceType": "wikimedia-commons",
+    "license": "no confirmada en esta pasada (ver attributionUrl)",
+    "attribution": "Ver página del archivo en Commons",
+    "attributionUrl": "https://commons.wikimedia.org/wiki/Category:Audi_Q7_(4M)",
+    "resolution": "4746x2616",
+    "note": "Encontrado en Category:Audi_Q7_(4M) (facelift 2024, la generación de esta ficha) de Wikimedia Commons, foto de 2025 del propio 4M, 4746x2616 (>= piso 2K). Resolución tomada del listado de la categoría de Commons. URL reconstruida con hash MD5 estándar de Wikimedia. Licencia no confirmada por texto explícito en esta pasada -- verificar antes de publicar."
+  },
+  {
+    "category": "vehiculos",
     "slug": "ktm-duke-390",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Moscow%2C_KTM_Duke_390_motorcycle_September_2024_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "sourceType": "wikimedia-commons",
