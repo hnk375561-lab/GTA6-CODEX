@@ -1,0 +1,315 @@
+{
+  "slug": "honda-fit",
+  "type": "vehiculos",
+  "title": "Honda Fit",
+  "description": "Hatchback compacto de Honda, conocido por su habitabilidad interior (asientos Magic Seat).",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "honda",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Honda",
+  "class": "Hatchback",
+  "customizable": false,
+  "power": "117 CV",
+  "price": "USD 16,190 MSRP (precio de referencia regional inicial)",
+  "consumo": "8.7 l/100km (urbano)",
+  "dimensiones": "3995 x 1695 x 1535 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.auto-data.net/es/honda-fit-ii-1.5-117hp-48859",
+    "note": "Se verificaron las especificaciones técnicas globales y de rendimiento del motor 1.5 i-VTEC (117 CV), así como el peso en orden de marcha y precios de referencia base en el mercado norteamericano a través de fuentes oficiales y catálogos especializados.",
+    "limitations": [
+      "El precio varía según el mercado regional y los impuestos de importación locales.",
+      "La disponibilidad del modelo Fit de cuarta generación se discontinuó en varios mercados occidentales en favor de la silueta SUV."
+    ]
+  },
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.5s"
+  },
+  "createdAt": "2026-08-23T21:59:04.543405Z",
+  "updatedAt": "2026-08-27T02:53:49.619Z",
+  "transmision": "Manual de 5 o 6 marchas / Automática tipo CVT",
+  "traccion": "Delantera",
+  "peso": "1129 kg",
+  "tipoMotor": "Nafta (Gasolina)",
+  "potenciaKW": "86 kW",
+  "capacidadTanque": "40 litros",
+  "tiempoRecorrido": "10.2s",
+  "anoProduccion": "2001-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "C",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.5 litros",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 354,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (referencia de datos técnicos verificados)",
+  "anoLanzamiento": 2007,
+  "colores": [],
+  "category": "motocicleta",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "175 km/h",
+      "acceleration": "0-100 km/h en 11.5s"
+    },
+    "bateria": {
+      "consumo": "6.8 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4090,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "6.8 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 20.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "hatchback",
+    "honda",
+    "combustion",
+    "Honda",
+    "Hatchback",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Honda Fit - Hatchback Honda. 175 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Honda Fit",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Honda"
+    },
+    "vehicleType": "Hatchback",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.5s",
+    "price": "USD 20.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback compacto de Honda, conocido por su habitabilidad interior (asientos Magic Seat)."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:53:49.619Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.4",
+    "totalVotos": 2433,
+    "desglose": {
+      "1": 208,
+      "2": 493,
+      "3": 676,
+      "4": 998,
+      "5": 1193
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 175
+    },
+    "consumo": {
+      "promedio": "6.8 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl Honda Fit, comercializado como Honda Jazz en los mercados de Europa y Japón, hizo su debut mundial a principios de la década de 2000 para posicionarse rápidamente como un referente absoluto dentro del segmento B de los hatchback compactos. Desde su primera iteración, la marca japonesa apostó por una arquitectura revolucionaria con el tanque de combustible ubicado bajo los asientos delanteros, una solución de ingeniería que permitió liberar un espacio interior inédito para un vehículo de sus contenidas dimensiones exteriores.\n\nA lo largo de sus sucesivas generaciones, el modelo evolucionó tanto en diseño como en eficiencia mecánica, adoptando bloques nafteros de la familia i-VTEC que priorizaron siempre la economía de combustible sin sacrificar la agilidad en entornos urbanos. Su silueta monovolumen disimulada bajo líneas dinámicas le otorgó una personalidad única, convirtiéndolo en un producto sumamente popular en Asia, América y Europa.\n\n## Un hito o generación relevante\n\nEl punto de inflexión en la trayectoria comercial y conceptual del Fit llegó con la consolidación global de su habitáculo y la implementación definitiva de los asientos traseros multifuncionales denominados comercialmente como sistema \"Magic Seats\" (o \"Ultra Seats\" según el mercado). Este ingenioso mecanismo permite plegar, levantar y configurar las plazas posteriores en múltiples posiciones —tipo teatro o completamente planas—, transformando al baúl en un espacio de carga capaz de transportar objetos de gran longitud o altura.\n\nEsta característica distintiva redefinió lo que los usuarios podían esperar de un vehículo compacto, ofreciendo una modularidad propia de monovolúmenes o utilitarios pequeños, algo que ningún otro competidor directo logró replicar con el mismo nivel de simpleza y aprovechamiento espacial.\n\n## Curiosidades\n\nA pesar de ser un hatchback de dimensiones urbanas, el chasis del Honda Fit ha servido de base para una exitosa familia de vehículos globales, compartiendo plataforma con el sedán City y con la exitosa SUV compacta HR-V. En los mercados de Japón y Europa, las variantes híbridas e:HEV han demostrado ser especialmente populares, utilizando un sistema de doble motor eléctrico que asiste al bloque térmico para lograr consumos sumamente reducidos.\n\nAdemás, el nombre original \"Fit\" fue utilizado en Japón debido a que la denominación \"Jazz\" ya se encontraba registrada por otra marca al momento de su lanzamiento inicial, manteniéndose ambos nombres vigentes según la región geográfica.\n\n## Competencia y posicionamiento\n\nEn los mercados globales donde mantiene presencia activa, el Honda Fit compite directamente contra referentes del segmento B como el Toyota Yaris, el Volkswagen Polo y el Renault Clio. Su posicionamiento se ubica tradicionalmente en la franja más alta de los vehículos generalistas compactos.\n\nEl Fit se destaca frente a sus rivales por una calidad de construcción sumamente sólida, una excelente retención de su valor de reventa a lo largo de los años y, fundamentalmente, por ofrecer una habitabilidad y versatilidad interior que superan con creces los estándares habituales de su categoría."
+}

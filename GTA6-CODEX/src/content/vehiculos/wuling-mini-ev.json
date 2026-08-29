@@ -1,0 +1,224 @@
+{
+  "slug": "wuling-mini-ev",
+  "type": "vehiculos",
+  "title": "Wuling Hongguang Mini EV",
+  "description": "Microcar eléctrico urbano chino, uno de los más vendidos del mundo en su categoría.",
+  "status": "confirmado",
+  "tags": [
+    "electrico",
+    "wuling"
+  ],
+  "featured": false,
+  "manufacturer": "Wuling",
+  "class": "Microcar eléctrico",
+  "customizable": false,
+  "power": "27 hp (20 kW)",
+  "price": "USD 4.500 - USD 5.500 (referencia mercado chino base) / aprox. USD 8.500 en otros mercados de importación",
+  "consumo": "Aprox. 9-10 kWh / 100 km",
+  "dimensiones": "2.920 mm largo x 1.493 mm ancho x 1.621 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.ev-electron.com/producto/wuling-honggung-mini-ev",
+    "secondarySource": "https://www.facebook.com/motorhauspy/posts/wuling-hongguang-mini-ev-2021-17200km-motor-el%C3%A9ctrico-potencia-20-kw-27-hp-caja-/1452949626867698",
+    "note": "Se actualizaron las especificaciones del Wuling Hongguang Mini EV contrastando datos de potencia (20 kW / 27 hp), velocidad máxima (100 km/h) y capacidades de pasajeros (4 plazas) obtenidos de fuentes especializadas y registros de importación.",
+    "limitations": [
+      "El precio varía drásticamente dependiendo de los subsidios locales en China, los costos de importación y si incluye aire acondicionado o paquetes estéticos especiales.",
+      "La autonomía cambia de acuerdo a la capacidad de batería elegida (desde versiones básicas de menor alcance hasta variantes superiores de más de 200 km)."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T03:14:51.970Z",
+  "transmision": "Automática de relación única (reductora fija)",
+  "traccion": "Tracción trasera (RWD)",
+  "peso": "665 - 700 kg",
+  "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
+  "potenciaKW": "20 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "Velocidad máxima limitada a aprox. 100 km/h",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 4,
+  "baul": 741,
+  "maleteroMin": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "category": "auto-pequeño",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Automática de relación única (motor eléctrico)"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 5.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "electrico",
+    "wuling",
+    "Wuling",
+    "Microcar eléctrico",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Wuling Hongguang Mini EV - Microcar eléctrico Wuling. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Wuling Hongguang Mini EV",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Wuling"
+    },
+    "vehicleType": "Microcar eléctrico",
+    "fuelType": "Eléctrico",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 5.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Microcar eléctrico urbano chino, uno de los más vendidos del mundo en su categoría."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:14:51.970Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Wuling Hongguang Mini EV es un microcar eléctrico urbano desarrollado por la empresa conjunta SAIC-GM-Wuling, presentado originalmente en el mercado chino en julio de 2020. Su llegada sacudió por completo el paradigma de la movilidad urbana global gracias a una propuesta minimalista, dimensiones ultra compactas y, sobre todo, un precio sumamente accesible que democratizó el acceso a la electromovilidad. Lejos de buscar competir con los gigantes de alta gama, este pequeño vehículo se pensó desde el día uno como una solución de transporte pragmática, económica y eficiente para el día a día en las grandes urbes.\n\n## Un hito o generación relevante\nA los pocos meses de su lanzamiento comercial, el Wuling Mini EV superó en volumen de ventas mensuales a varios de los gigantes consagrados de la industria de vehículos eléctricos, coronándose como el auto eléctrico más vendido de China durante múltiples periodos consecutivos y posicionándose firmemente en los rankings globales de la categoría. Este éxito rotundo demostró que existía una demanda masiva e insatisfecha de movilidad ágil y económica, dejando en evidencia que no todos los usuarios necesitaban autonomías descomunales ni carrocerías sobredimensionadas para sus trayectos cotidianos.\n\n## Curiosidades\nUna de las facetas más pintorescas del Wuling Hongguang Mini EV es cómo se transformó en un fenómeno cultural de personalización masiva. Tanto el fabricante como los propios propietarios han impulsado una cultura vibrante en torno al auto: es muy común ver modificaciones estéticas extremas, ploteos personalizados, suspensiones rebajadas y accesorios interiores únicos. A pesar de medir poco menos de tres metros de largo, su habitáculo está ingeniosamente aprovechado para transportar hasta cuatro pasajeros, aunque esto último implique sacrificar casi por completo el espacio del baúl a menos que se rebatan los asientos posteriores.\n\n## Competencia y posicionamiento\nDentro de su segmento en el mercado asiático, compite directamente contra una creciente familia de microcars eléctricos de marcas locales como Chery (con modelos como el QQ Ice Cream) y Changan. A diferencia de los automóviles eléctricos convencionales, que priorizan la velocidad de ruta y grandes paquetes de baterías, el Wuling se posiciona como una herramienta utilitaria pura. Ofrece costos de mantenimiento mínimos, una facilidad inigualable para estacionar en espacios reducidos y una barrera de entrada económica que lo mantiene como uno de los máximos referentes mundiales en movilidad urbana accesible."
+}

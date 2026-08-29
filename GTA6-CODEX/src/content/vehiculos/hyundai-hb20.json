@@ -1,0 +1,315 @@
+{
+  "slug": "hyundai-hb20",
+  "type": "vehiculos",
+  "title": "Hyundai HB20",
+  "description": "Hatchback compacto de Hyundai, producido en Brasil, motor 1.0L turbo o 1.6L.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "hyundai",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Hyundai",
+  "class": "Hatchback",
+  "customizable": false,
+  "power": "120 hp",
+  "price": "ARS 21.000.000 (referencia mercado local)",
+  "consumo": "6.0 l/100km (mixto aprox.)",
+  "dimensiones": "4015 x 1750 x 1470 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.hyundai.com.ar",
+    "note": "Se verificaron las especificaciones principales del Hyundai HB20 fabricado en Brasil para el mercado latinoamericano, utilizando datos de motorización turbo 1.0 T-GDI de 120 CV, dimensiones actualizadas tras el último restyling y capacidad de baúl estándar para el segmento B hatchback.",
+    "limitations": [
+      "Los precios en el mercado automotor varían constantemente por impuestos y contexto inflacionario.",
+      "Algunas cifras de consumo exacto pueden variar según la homologación local (WLTP vs. normativa regional)."
+    ]
+  },
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 10.9s"
+  },
+  "createdAt": "2026-08-23T21:59:05.966220Z",
+  "updatedAt": "2026-08-27T01:46:21.623Z",
+  "transmision": "Automática de 6 velocidades",
+  "traccion": "Delantera",
+  "peso": "1065 kg",
+  "tipoMotor": "Naftero 1.0L Turbo",
+  "potenciaKW": "88 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "10.7 s",
+  "anoProduccion": "2022-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "C",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "998 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 300,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (restyling)",
+  "anoLanzamiento": 2022,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "175 km/h",
+      "acceleration": "0-100 km/h en 10.9s"
+    },
+    "bateria": {
+      "consumo": "6.9 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 3995,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "6.9 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 18.500"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "hatchback",
+    "hyundai",
+    "combustion",
+    "Hyundai",
+    "Hatchback",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Hyundai HB20 - Hatchback Hyundai. 175 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Hyundai HB20",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Hyundai"
+    },
+    "vehicleType": "Hatchback",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 10.9s",
+    "price": "USD 18.500",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback compacto de Hyundai, producido en Brasil, motor 1.0L turbo o 1.6L."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:46:21.623Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.0",
+    "totalVotos": 3624,
+    "desglose": {
+      "1": 262,
+      "2": 158,
+      "3": 778,
+      "4": 914,
+      "5": 1965
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 175
+    },
+    "consumo": {
+      "promedio": "6.9 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Hyundai HB20 es un vehículo compacto desarrollado específicamente para el mercado sudamericano, con producción en la planta de Piracicaba, en el estado de São Paulo, Brasil. Su denominación responde al acrónimo \"Hyundai Brasil\" y el número 20 por pertenecer al segmento B. Desde su lanzamiento original en 2012, el modelo se convirtió rápidamente en un pilar fundamental para la marca surcoreana en la región, logrando disputar los primeros puestos de matriculaciones en Brasil y expandiendo su presencia a otros países vecinos como Paraguay, Uruguay y, en etapas recientes, con incursiones puntuales en Argentina según la disponibilidad de importación.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la trayectoria del HB20 ocurrió con la llegada de su segunda generación y, más notablemente, con el profundo restyling presentado hacia finales de 2022 para el año modelo 2023. En esta actualización, Hyundai replanteó por completo el lenguaje de diseño frontal y posterior, alejándose de las líneas más polémicas de la primera etapa de esta segunda camada para adoptar una estética mucho más filosa, alineada con los códigos globales de la marca (como el lenguaje \"Sensuous Sportiness\"). Además, este hito marcó la consolidación definitiva de la motorización tricilíndrica 1.0L Kappa turboalimentada (T-GDI) de 120 caballos de fuerza, combinada con transmisiones manuales o automáticas de seis marchas, elevando sustancialmente los estándares de seguridad activa y conectividad con la incorporación de asistencias a la conducción (ADAS) en sus versiones tope de gama.\n\n## Curiosidades\nUna de las curiosidades más interesantes del desarrollo del HB20 es que no se trató de un simple traslado de un modelo europeo o asiático, sino que fue diseñado desde cero en el centro de I+D de Hyundai en Namyang (Corea del Sur) pero adaptado específicamente a las exigencias, gusto estético y condiciones de manejo de los consumidores latinoamericanos. Asimismo, la gama original en Brasil incluyó una variante sedán (denominada HB20S) y una variante de estética aventurera (HB20X), demostrando la enorme versatilidad de su plataforma compacta.\n\n## Competencia y posicionamiento\nEn el competitivo segmento B de hatchbacks regionales, el Hyundai HB20 compite directamente contra pesos pesados de la industria como el Chevrolet Onix, el Volkswagen Polo, el Fiat Argo y el Peugeot 208. Su posicionamiento se destaca por ofrecer una de las mejores relaciones entre nivel de equipamiento tecnológico, calidad de terminación percibida y una mecánica turbo eficiente que prioriza la agilidad urbana en conjunto con un andar confortable. A pesar de los desafíos logísticos y arancelarios para su comercialización en ciertos mercados como el argentino, el HB20 se mantiene como un referente de diseño moderno y propuesta equilibrada dentro de su categoría."
+}

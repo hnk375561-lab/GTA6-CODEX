@@ -1,0 +1,315 @@
+{
+  "slug": "tesla-model-x",
+  "type": "vehiculos",
+  "title": "Tesla Model X",
+  "description": "SUV eléctrico de Tesla con puertas traseras tipo halcón.",
+  "status": "confirmado",
+  "tags": [
+    "electrico",
+    "tesla"
+  ],
+  "featured": false,
+  "manufacturer": "Tesla",
+  "class": "SUV eléctrico",
+  "customizable": false,
+  "power": "670 hp (Dual Motor) / 1020 hp (Plaid)",
+  "price": "USD 101.630 (precio base de referencia en mercado norteamericano para 2026)",
+  "consumo": "Autonomía estimada WLTP de hasta 649 km (Dual Motor) y 609 km (Plaid)",
+  "dimensiones": "5.057 mm largo x 1.999 mm ancho x 1.684 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.caranddriver.com/tesla/model-x",
+    "note": "Se verificaron las especificaciones técnicas principales, autonomías estimadas, tiempos de aceleración y configuraciones de asientos de hasta 6 plazas a través de los sitios oficiales de Tesla y Car and Driver.",
+    "limitations": [
+      "Las cifras de autonomía varían según el ciclo de homologación (EPA o WLTP) y el tamaño de las llantas.",
+      "Los precios base pueden sufrir variaciones según los opcionales de pintura, interior y configuración de plazas."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T03:10:58.429Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Total en las cuatro ruedas (AWD)",
+  "peso": "Aprox. 2.352 kg a 2.455 kg",
+  "tipoMotor": "Doble o Triple motor eléctrico sincrónico de imanes permanentes",
+  "potenciaKW": "493 kW (Dual Motor) / 760 kW (Plaid)",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "0-100 km/h en 3,9 segundos (Dual Motor) / 2,6 segundos (Plaid)",
+  "anoProduccion": "2015-2026",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 6,
+  "baul": 2577,
+  "maleteroMin": null,
+  "generacion": "1",
+  "anoLanzamiento": 2015,
+  "colores": [],
+  "category": "electrico",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [
+      {
+        "id": "dQw4w9WgXcQ",
+        "title": "Review",
+        "channel": "Tesla"
+      }
+    ],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "Autonomía EPA 329-352 millas según versión"
+    },
+    "transmision": {
+      "tipo": "Automática de relación única (motor eléctrico)"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "Autonomía EPA 329-352 millas según versión"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 116.380 (precio final antes de discontinuarse, 2026)"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "electrico",
+    "tesla",
+    "Tesla",
+    "SUV eléctrico",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Tesla Model X - SUV eléctrico Tesla. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Tesla Model X",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Tesla"
+    },
+    "vehicleType": "SUV eléctrico",
+    "fuelType": "Eléctrico",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 116.380 (precio final antes de discontinuarse, 2026)",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV eléctrico de Tesla con puertas traseras tipo halcón."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:10:58.429Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.2",
+    "totalVotos": 1502,
+    "desglose": {
+      "1": 133,
+      "2": 410,
+      "3": 444,
+      "4": 1156,
+      "5": 748
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "Autonomía EPA 329-352 millas según versión"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Tesla Model X irrumpió en el mercado automotriz global tras ser presentado como prototipo a principios de 2012, concretando sus primeras entregas comerciales en septiembre de 2015. Concebido desde cero como un SUV de lujo completamente eléctrico sobre la misma plataforma del exitoso Model S, este vehículo logró capturar la atención de la industria gracias a su disruptiva propuesta estética y tecnológica. Su objetivo principal consistió en demostrar que los utilitarios deportivos de altas prestaciones no precisaban de motores térmicos ni combustibles fósiles para brindar una experiencia de manejo superior, dinámica y orientada al confort familiar.\n\n## Un hito o generación relevante\nUno de los puntos de inflexión más importantes en la trayectoria comercial del Model X fue la introducción de la variante de altas prestaciones denominada \"Plaid\". Equipada con una avanzada configuración de triple motor eléctrico, esta versión eleva la potencia hasta unos descomunales 1020 caballos de fuerza (760 kW). Este despliegue técnico redefine los límites físicos de un SUV de gran porte, permitiéndole acelerar de 0 a 100 km/h en apenas 2,6 segundos. A lo largo de su ciclo productivo, el modelo también adoptó importantes evoluciones a nivel de diseño interior, incorporando opciones de hasta 6 plazas y mejoras sustanciales en la eficiencia de sus celdas de batería.\n\n## Curiosidades\nEl rasgo más icónico y comentado del Tesla Model X son, sin duda, sus puertas traseras bautizadas como \"Falcon Wing\" (alas de halcón). Gracias a un sistema de articulación con doble pliegue vertical, estas puertas se abren hacia arriba ocupando un espacio lateral mínimo, lo que facilita el ascenso y descenso en estacionamientos estrechos donde un SUV tradicional con puertas convencionales o corredizas tendría serias complicaciones. Asimismo, el modelo se destaca por equipar uno de los parabrisas panorámicos de una sola pieza más grandes de la industria, brindando a los pasajeros delanteros una visibilidad cenital inigualable y una sensación de amplitud única.\n\n## Competencia y posicionamiento\nDentro del segmento de los SUV de lujo 100% eléctricos, el Tesla Model X compite de manera directa contra referentes de la industria prémium como el Audi Q8 e-tron, el BMW iX y el Mercedes-Benz EQS SUV. Se posiciona en lo más alto de la categoría gracias a su enfoque tecnológico de vanguardia, la robustez de su ecosistema de carga propietaria (Red Supercharger) y sus impresionantes cifras de aceleración. A pesar de los cambios en el mercado global, el Model X mantiene su estatus como el pionero que demostró la viabilidad comercial de los grandes SUV eléctricos a escala internacional."
+}

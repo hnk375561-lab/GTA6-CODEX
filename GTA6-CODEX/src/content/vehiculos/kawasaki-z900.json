@@ -1,0 +1,251 @@
+{
+  "slug": "kawasaki-z900",
+  "type": "vehiculos",
+  "title": "Kawasaki Z900",
+  "description": "Naked de cilindrada media-alta de Kawasaki, motor tetracilíndrico en línea de 948cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "kawasaki"
+  ],
+  "featured": false,
+  "manufacturer": "Kawasaki",
+  "class": "Moto naked",
+  "customizable": false,
+  "power": "125 CV (92.2 kW) a 9.500 rpm",
+  "price": "EUR 10.299 (versión full, referencia mercado europeo)",
+  "consumo": "5.4 l/100km combinado (referencia)",
+  "dimensiones": "2.075 mm x 800 mm x 1.065 mm (largo x ancho x alto)",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://moteo.es/kawasaki-z900-2024-precio-ficha-tecnica/",
+    "secondarySource": "https://www.motofichas.com.mx/marcas/kawasaki/z900",
+    "note": "Se verificaron las especificaciones técnicas, potencia, peso y capacidades de la Kawasaki Z900 modelo 2024 a partir de fuentes especializadas del sector.",
+    "limitations": [
+      "Precio de referencia del mercado europeo, puede variar según el país y los impuestos locales.",
+      "La versión con limitación para carnet A2 cuenta con 95 CV (70 kW)."
+    ]
+  },
+  "performance": {
+    "speed": "235 km/h (referencia)",
+    "acceleration": "0-100 km/h en 3.2s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:49:15.346Z",
+  "transmision": "Manual de 6 velocidades con embrague antirrebote",
+  "traccion": "Trasera por cadena",
+  "peso": "212 kg en orden de marcha",
+  "tipoMotor": "4 cilindros en línea, 4 tiempos, refrigeración líquida (DOHC 16V)",
+  "potenciaKW": "92.2 kW",
+  "capacidadTanque": "17 litros",
+  "tiempoRecorrido": "3.2s",
+  "anoProduccion": "2024",
+  "mercados": [
+    "Europa",
+    "Norteamérica",
+    "Latinoamérica",
+    "Asia",
+    "Oceanía"
+  ],
+  "equipamiento": [
+    "Pantalla TFT color 4.3\"",
+    "Conectividad Bluetooth (app Rideology)",
+    "Control de tracción 3 niveles + desconectable",
+    "4 modos de conducción (Sport, Road, Rain, Rider)",
+    "ABS de serie"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "120/70 ZR17 (delantero) / 180/55 ZR17 (trasero)",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel de alto flujo",
+    "tipo_valvulas": "DOHC 16 válvulas",
+    "ratio_compresion": "11.8:1",
+    "sistemas_inyeccion": "Inyección electrónica con acelerador electrónico",
+    "arbol_levas": "Doble (DOHC)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "948 cc",
+  "emisiones": null,
+  "tipo": "Moto naked",
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (2017-presente)",
+  "anoLanzamiento": 2017,
+  "colores": [],
+  "category": "motocicleta",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual secuencial"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 9.500"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "moto",
+    "kawasaki",
+    "Kawasaki",
+    "Naked",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "z900",
+    "sugomi"
+  ],
+  "metaDescription": "Kawasaki Z900 - Naked de 948cc y 125 CV, diseño Sugomi. Especificaciones, precio y disponibilidad, ago 2026.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Motorcycle",
+    "name": "Kawasaki Z900",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Kawasaki"
+    },
+    "vehicleType": "Moto naked",
+    "fuelType": "Gasolina",
+    "speed": "235 km/h (referencia)",
+    "acceleration": "0-100 km/h en 3.2s (referencia)",
+    "price": "EUR 10.299",
+    "availability": "https://schema.org/InStock",
+    "description": "Naked de cilindrada media-alta de Kawasaki, motor tetracilíndrico en línea de 948cc, diseño Sugomi."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:49:15.346Z",
+    "dataQuality": 0.9
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://moteo.es/kawasaki-z900-2024-precio-ficha-tecnica/",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://www.motofichas.com.mx/marcas/kawasaki/z900",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Lote 6 (ago 2026): datos de la versión \"full\" A MY2024, mercado europeo.",
+    "dataQuality": 0.9
+  },
+  "content": "## Historia del modelo\nLa Kawasaki Z900 irrumpió en el mercado internacional para reemplazar a la exitosa Z800, heredando una estirpe de motocicletas naked de gran cilindrada que priorizan las sensaciones directas de manejo y una estética agresiva conocida bajo el concepto de diseño \"Sugomi\". Desde su lanzamiento inicial, la Z900 se posicionó rápidamente como uno de los pilares fundamentales dentro del catálogo de la marca de Akashi, logrando un equilibrio muy elogiado entre un motor tetracilíndrico contundente y una parte ciclo ágil que invita tanto a la conducción deportiva en ruta como al uso cotidiano.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la trayectoria de la Z900 se dio con su profunda actualización tecnológica, incorporando asistencias electrónicas avanzadas como modos de conducción configurables, control de tracción de tres niveles y una moderna pantalla TFT a color de 4,3 pulgadas con conectividad para smartphones mediante la aplicación Rideology de Kawasaki. Esta evolución permitió que la naked conservara su carisma visceral de vieja escuela pero adaptada a los estándares tecnológicos y de seguridad exigidos por los motociclistas modernos, consolidando su liderazgo en ventas dentro del segmento de media-alta cilindrada en numerosos mercados globales.\n\n## Curiosidades\nEntre los aspectos más destacados de la Kawasaki Z900 se encuentra su chasis multitubular de acero de alta resistencia, diseñado específicamente para optimizar la centralización de masas y ofrecer una rigidez sobresaliente sin incrementar desmesuradamente el peso del conjunto. Además, el característico sonido de su admisión y el escape de cuatro salidas agrupadas hacia el lateral transmiten una personalidad única que la distingue claramente de sus competidoras bicilíndricas o tricilíndricas en el mismo rango de precio.\n\n## Competencia y posicionamiento\nEn el plano comercial, la Kawasaki Z900 compite directamente en el segmento de las naked de peso medio-alto frente a referentes consagrados como la Yamaha MT-09, la Honda CB1000R, la KTM 890 Duke y la Suzuki GSX-S750. Su posicionamiento de mercado se sustenta en una excelente relación precio-producto, ofreciendo una potencia superior a los 120 caballos con un motor de cuatro cilindros que resulta sumamente elástico, lo que le ha valido el favor de una amplia base de usuarios que buscan altas prestaciones mecánicas sin incurrir en los costos de mantenimiento y adquisición de las hyper-naked de litro."
+}

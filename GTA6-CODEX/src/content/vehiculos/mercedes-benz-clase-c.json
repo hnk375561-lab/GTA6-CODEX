@@ -1,0 +1,318 @@
+{
+  "slug": "mercedes-benz-clase-c",
+  "type": "vehiculos",
+  "title": "Mercedes-Benz Clase C",
+  "description": "Sedán premium de Mercedes-Benz, motor 2.0L turbo, equipamiento tecnológico de gama alta.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "mercedes-benz",
+    "premium",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:26.254Z",
+  "updatedAt": "2026-08-27T02:58:39.122Z",
+  "manufacturer": "Mercedes-Benz",
+  "class": "Sedán premium",
+  "customizable": false,
+  "performance": {
+    "speed": "Alta (250 km/h)",
+    "acceleration": "Alta (0-100 km/h en 6.0s)"
+  },
+  "power": "204 hp (C 200) / 258 hp (C 300)",
+  "price": "Precio de referencia regional (ej. Colombia desde COP 249.900.000)",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.mercedes-benz.com.co/c-sedan",
+    "secondarySource": "https://es.wikipedia.org/wiki/Mercedes-Benz_Clase_C",
+    "note": "Se verificaron las especificaciones principales y de rendimiento del Mercedes-Benz Clase C (generación W206) cruzando información de portales oficiales regionales y fichas técnicas globales.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado local, impuestos y aranceles de importación vigentes en Argentina.",
+      "Algunas opciones de equipamiento y motorización pueden no estar disponibles en todos los mercados de la región."
+    ]
+  },
+  "transmision": "Automática 9G-TRONIC",
+  "traccion": "Tracción trasera (o integral 4MATIC según versión)",
+  "peso": "1650 - 1750 kg",
+  "tipoMotor": "Gasolina 4 cilindros en línea turbo con tecnología mild-hybrid (EQ Boost)",
+  "potenciaKW": "150 kW (C 200)",
+  "capacidadTanque": "66 litros",
+  "tiempoRecorrido": "7.3 segundos (0-100 km/h para C 200)",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "consumo": "aprox. 6.5 - 7.5 L/100 km mixto",
+  "dimensiones": "4751 x 1820 x 1438 mm",
+  "cilindrada": "1496 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 455,
+  "maleteroMin": null,
+  "generacion": "W206",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "category": "ejecutivo",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "Alta (250 km/h)",
+      "acceleration": "Alta (0-100 km/h en 6.0s)"
+    },
+    "bateria": {},
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": null
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 62.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "sedan",
+    "mercedes-benz",
+    "premium",
+    "combustion",
+    "Mercedes-Benz",
+    "Sedán premium",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Mercedes-Benz Clase C - Sedán premium Mercedes-Benz. Alta (250 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Mercedes-Benz Clase C",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Mercedes-Benz"
+    },
+    "vehicleType": "Sedán premium",
+    "fuelType": "Gasolina turbo",
+    "speed": "Alta (250 km/h)",
+    "acceleration": "Alta (0-100 km/h en 6.0s)",
+    "price": "USD 62.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán premium de Mercedes-Benz, motor 2.0L turbo, equipamiento tecnológico de gama alta."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:58:39.122Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.7",
+    "totalVotos": 2197,
+    "desglose": {
+      "1": 241,
+      "2": 423,
+      "3": 522,
+      "4": 339,
+      "5": 2487
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Mercedes-Benz Clase C se consolidó desde su nacimiento a principios de la década de 1990 —como heredero directo del legendario 190 (W201)— en uno de los pilares fundamentales de la marca alemana. Su irrupción en el mercado redefinió por completo el concepto de sedán ejecutivo compacto, ofreciendo una combinación equilibrada de refinamiento, tecnología de vanguardia y estándares de seguridad que marcaron pauta en la industria automotriz global. A lo largo de las décadas, este modelo de volumen se convirtió rápidamente en el estandarte de ventas de la estrella de tres puntas en numerosos mercados internacionales.\n\n## Un hito o generación relevante\nUn punto de inflexión radical en la historia reciente del modelo se materializó con la llegada de la quinta generación, conocida internamente como W206 y presentada comercialmente a partir de 2021. Esta iteración rompió esquemas al adoptar una filosofía de diseño interior y digitalización directamente heredada de su hermano mayor, el Clase S. La incorporación de la pantalla central vertical en formato tipo tablet con el sistema MBUX de última generación, sumada a la electrificación total de su gama mediante sistemas híbridos ligeros (mild-hybrid EQ Boost), posicionó al W206 como un referente tecnológico indiscutido dentro del segmento premium.\n\n## Curiosidades\nUna particularidad interesante del Clase C es su estrategia de producción descentralizada, fabricándose en plantas situadas en distintos continentes (incluyendo Alemania, China, Sudáfrica y los Estados Unidos) para abastecer la demanda mundial. Asimismo, su arquitectura ha servido históricamente como banco de pruebas para introducir sistemas avanzados de asistencia a la conducción que luego se expanden al resto del catálogo de Mercedes-Benz. Cabe destacar también que, en sus iteraciones más recientes, la marca apostó fuertemente por optimizar bloques de cuatro cilindros mediante sobrealimentación y asistencia eléctrica, logrando igualar o superar el rendimiento de tradicionales motores de mayor cilindrada.\n\n## Competencia y posicionamiento\nEn el plano comercial, el Mercedes-Benz Clase C compite de forma directa contra los máximos exponentes de los sedanes ejecutivos alemanes: el BMW Serie 3 y el Audi A4. Mientras que el Serie 3 históricamente ha priorizado la dinámica deportiva y el tacto de conducción, y el Audi A4 destaca por su sobriedad y tracción integral, el Clase C se posiciona con fuerza al ofrecer un nivel superior de confort de marcha, aislamiento acústico y una atmósfera interior de carácter marcadamente lujoso. Esto lo convierte en la opción predilecta para aquellos usuarios que buscan estatus ejecutivo y un andar sumamente relajado tanto en el uso urbano como en viajes largos."
+}

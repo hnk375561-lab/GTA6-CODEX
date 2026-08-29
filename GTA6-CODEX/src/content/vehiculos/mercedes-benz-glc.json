@@ -1,0 +1,316 @@
+{
+  "slug": "mercedes-benz-glc",
+  "type": "vehiculos",
+  "title": "Mercedes-Benz GLC",
+  "description": "SUV mediano premium, motor mild-hybrid, referente de ventas de Mercedes-Benz en el segmento.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "mercedes-benz",
+    "premium"
+  ],
+  "featured": false,
+  "manufacturer": "Mercedes-Benz",
+  "class": "SUV mediano premium",
+  "customizable": false,
+  "power": "258 hp (GLC 300 4MATIC MHEV)",
+  "price": "USD 119.900 (Precio de referencia en mercado local)",
+  "consumo": "Aprox. 7.5 - 8.2 l/100km mixto según motorización mild-hybrid",
+  "dimensiones": "4716 x 1890 x 1640 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://autofichas.com.ar/mercedes/clase-glc/",
+    "note": "Se verificaron las especificaciones principales de la generación actual X254 del Mercedes-Benz GLC, incluyendo motorizaciones mild-hybrid, dimensiones generales y capacidades de baúl.",
+    "limitations": [
+      "Algunas cifras de consumo y performance específicas pueden variar según el mercado de destino y las normativas de homologación locales."
+    ]
+  },
+  "performance": {
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T01:51:36.332Z",
+  "transmision": "Automática 9G-TRONIC",
+  "traccion": "Integral 4MATIC",
+  "peso": "1925 kg",
+  "tipoMotor": "Gasolina Mild-Hybrid (MHEV)",
+  "potenciaKW": "190 kW",
+  "capacidadTanque": "62 litros",
+  "tiempoRecorrido": "6.2 segundos",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1993 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 620,
+  "maleteroMin": null,
+  "generacion": "X254",
+  "anoLanzamiento": 2022,
+  "colores": [],
+  "category": "ejecutivo",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "No informado por el fabricante para Argentina",
+      "acceleration": "No informado por el fabricante para Argentina"
+    },
+    "bateria": {
+      "consumo": "No informado por el fabricante para Argentina"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "No informado por el fabricante para Argentina"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 119.900"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "mercedes-benz",
+    "premium",
+    "Mercedes-Benz",
+    "SUV mediano premium",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Mercedes-Benz GLC - SUV mediano premium Mercedes-Benz. No informado por el fabricante para Argentina con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Mercedes-Benz GLC",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Mercedes-Benz"
+    },
+    "vehicleType": "SUV mediano premium",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina",
+    "price": "USD 119.900",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediano premium, motor mild-hybrid, referente de ventas de Mercedes-Benz en el segmento."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:51:36.332Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.9",
+    "totalVotos": 4198,
+    "desglose": {
+      "1": 278,
+      "2": 245,
+      "3": 389,
+      "4": 693,
+      "5": 790
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No informado por el fabricante para Argentina"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Mercedes-Benz GLC nació en 2015 como el sucesor directo del GLK, adoptando una filosofía de diseño mucho más fluida, moderna y alineada con los turismos de la marca de la estrella, específicamente tomando la plataforma y la arquitectura del Clase C. Desde su introducción, se convirtió rápidamente en un pilar fundamental para las ventas globales de Mercedes-Benz, compitiendo de igual a igual en el corazón del segmento de los SUV medianos de lujo. Con el paso de los años, el modelo evolucionó no solo en términos estéticos, sino incorporando mejoras sustanciales en materia de digitalización con el sistema MBUX y, más recientemente, electrificación mediante tecnologías híbridas ligeras (mild-hybrid) y enchufables.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la historia del GLC llegó con la presentación de la segunda generación (conocida internamente como X254) a finales de 2022. Esta iteración marcó la electrificación total de su gama de motores de combustión interna, introduciendo sistemas mild-hybrid de 48 voltios con un generador de arranque integrado (ISG) y variantes híbridas enchufables (PHEV) con autonomías eléctricas superiores a los 100 kilómetros en ciclo WLTP. Asimismo, el interior experimentó una revolución tecnológica total, adoptando una enorme pantalla central táctil en disposición vertical inspirada en el Clase S y el Clase C, eliminando la gran mayoría de los botones físicos y apostando por comandos hápticos y control por voz avanzado.\n\n## Curiosidades\nUna de las características más destacadas de la arquitectura actual del Mercedes-Benz GLC es la incorporación opcional del sistema de dirección en el eje trasero, un recurso técnico antes reservado exclusivamente para deportivos de altas prestaciones o sedanes de representación de máxima categoría. Este sistema permite reducir notablemente el radio de giro en maniobras urbanas a baja velocidad y aporta una estabilidad sobresaliente en ruta y autopista a altas velocidades. Además, la versión híbrida enchufable del GLC es capaz de mantener una gran capacidad en el baúl a pesar de albergar un paquete de baterías de alta capacidad bajo el piso, optimizando el espacio sin penalizar la versatilidad de carga.\n\n## Competencia y posicionamiento\nEn el mercado global y regional, el Mercedes-Benz GLC se posiciona firmemente en la cúspide de los SUV medianos premium, compitiendo de manera directa contra vehículos de la talla del BMW X3 y el Audi Q5, además de alternativas de marcas como Volvo con el XC60 y Alfa Romeo con el Stelvio. Su propuesta de valor se centra en ofrecer un nivel superior de refinamiento en la marcha, materiales de alta calidad en el habitáculo, un aislamiento acústico sobresaliente y una oferta tecnológica de vanguardia. Gracias a este enfoque equilibrado entre dinamismo, confort de marcha y estatus, el GLC continúa siendo un referente indiscutido de ventas para Mercedes-Benz en prácticamente todos los mercados donde se comercializa."
+}

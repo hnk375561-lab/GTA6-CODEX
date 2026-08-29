@@ -1,0 +1,229 @@
+{
+  "slug": "tata-nexon",
+  "type": "vehiculos",
+  "title": "Tata Nexon",
+  "description": "SUV compacto de entrada de Tata Motors, también disponible en versión eléctrica.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "tata"
+  ],
+  "featured": false,
+  "manufacturer": "Tata",
+  "class": "SUV compacto",
+  "customizable": false,
+  "power": "120 hp",
+  "price": "USD 10.000 a USD 15.000 (referencia mercado indio)",
+  "consumo": "Aprox. 5.5 a 6.5 l/100km",
+  "dimensiones": "3.993 mm largo x 1.811 mm ancho x 1.606 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://en.wikipedia.org/wiki/Tata_Nexon",
+    "note": "Se actualizaron las dimensiones reales, capacidades y cilindradas basadas en las especificaciones oficiales de la primera generación del Tata Nexon comercializado principalmente en India y mercados seleccionados.",
+    "limitations": [
+      "El precio varía según el mercado de exportación y la cotización vigente",
+      "Las cifras de rendimiento exactas dependen de la variante específica (nafta, diésel o EV)"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:27:33.467Z",
+  "transmision": "Manual de 6 marchas o Automática AMT de 6 marchas",
+  "traccion": "Delantera (FWD)",
+  "peso": "1.230 - 1.400 kg",
+  "tipoMotor": "Naftero turbo / Diésel / Eléctrico (según versión Nexon.ev)",
+  "potenciaKW": "88 kW (versión nafta 1.2L turbo)",
+  "capacidadTanque": "44 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 11 segundos",
+  "anoProduccion": "2017 - Presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.199 cc (nafta) / 1.497 cc (diésel)",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 382,
+  "maleteroMin": null,
+  "generacion": "1ª generación (con restylings profundos en 2020 y 2023)",
+  "anoLanzamiento": 2017,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 12.500"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "suv",
+    "tata",
+    "Tata",
+    "SUV compacto",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Tata Nexon - SUV compacto Tata. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Tata Nexon",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Tata"
+    },
+    "vehicleType": "SUV compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 12.500",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacto de entrada de Tata Motors, también disponible en versión eléctrica."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:27:33.467Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Tata Nexon irrumpió en el mercado automotriz indio en el año 2017 como la apuesta de Tata Motors para ingresar al competitivo segmento de los SUV subcompactos. Concebido sobre la plataforma X1 de la marca, el Nexon marcó un antes y un después en la estrategia de diseño de la compañía, alejándose de los vehículos utilitarios más tradicionales y apuntando a un público más joven y urbano. Desde su lanzamiento, se convirtió en uno de los pilares de ventas de la marca en su mercado doméstico.\n\n## Un hito o generación relevante\nUn hito fundamental en la historia del Nexon ocurrió en 2018, cuando se convirtió en el primer automóvil diseñado y fabricado en la India en obtener una calificación de 5 estrellas en las pruebas de seguridad de adultos realizadas por Global NCAP. Este logro cambió radicalmente la percepción sobre la seguridad estructural de los vehículos fabricados localmente. Posteriormente, en 2023, el modelo recibió una actualización estética y tecnológica profunda, adoptando un lenguaje de diseño mucho más futurista inspirado en los concept cars de la marca, además de incorporar asistencias avanzadas a la conducción (ADAS) y pantallas de mayor tamaño en el interior.\n\n## Curiosidades\nUna de las características más interesantes del desarrollo del Tata Nexon es que su diseño exterior mantuvo un parecido inusual con el prototipo original que se había presentado años antes como concept car en el Salón del Automóvil de Delhi. Además, el Nexon se destaca por ofrecer una variante completamente eléctrica denominada Nexon.ev (anteriormente Nexon EV), la cual se posicionó rápidamente como el vehículo eléctrico más vendido de la India, democratizando la electromovilidad en ese país con una relación precio-producto muy agresiva.\n\n## Competencia y posicionamiento\nEn el segmento de los B-SUV, el Tata Nexon compite mano a mano con vehículos de gran volumen como el Hyundai Creta, el Kia Sonet, el Maruti Suzuki Brezza y el Mahindra XUV300. Su posicionamiento estratégico se basa en ofrecer un nivel de seguridad certificado muy alto para su categoría, un despeje del suelo generoso ideal para caminos complejos, y una gama mecánica muy versátil que abarca opciones térmicas tradicionales y tecnologías eléctricas puras, adaptándose a las exigencias de movilidad contemporáneas en mercados emergentes."
+}

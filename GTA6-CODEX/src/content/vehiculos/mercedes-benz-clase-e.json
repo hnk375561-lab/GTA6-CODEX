@@ -1,0 +1,231 @@
+{
+  "slug": "mercedes-benz-clase-e",
+  "type": "vehiculos",
+  "title": "Mercedes-Benz Clase E",
+  "description": "Sedán ejecutivo de Mercedes-Benz, gama media-alta de la marca.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "mercedes-benz"
+  ],
+  "featured": false,
+  "manufacturer": "Mercedes-Benz",
+  "class": "Sedán ejecutivo",
+  "customizable": false,
+  "power": "204 CV (E 200) a 381 CV (E 400e híbrido enchufable)",
+  "price": "USD 62.000 a USD 75.000 (MSRP de referencia en mercado europeo)",
+  "consumo": "4.8 - 7.6 l/100km combinado según motorización (gasolina/diésel/PHEV)",
+  "dimensiones": "4.949 mm x 1.880 mm x 1.469 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.auto-data.net/es/mercedes-benz-e-class-model-1393",
+    "note": "Se verificaron las dimensiones, motorizaciones, potencias y capacidades del Mercedes-Benz Clase E (generación W214) utilizando bases de datos técnicas especializadas como KM77 y Auto-Data.",
+    "limitations": [
+      "Los precios varían sustancialmente según los impuestos, aranceles de importación y costos de patentamiento de cada país de Latinoamérica.",
+      "Las especificaciones exactas dependen de los paquetes de equipamiento opcionales y líneas de diseño elegidas."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T02:58:49.088Z",
+  "transmision": "Automática 9G-TRONIC",
+  "traccion": "Tracción trasera o integral 4MATIC",
+  "peso": "1.750 - 2.150 kg según variante",
+  "tipoMotor": "Gasolina, Diésel e Híbrido Enchufable (PHEV) con tecnología Mild-Hybrid",
+  "potenciaKW": "150 - 280 kW",
+  "capacidadTanque": "66 litros (versiones térmicas)",
+  "tiempoRecorrido": "0-100 km/h en 7.5s (E 200) / 5.3s (E 400e)",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.993 cc - 2.999 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 540,
+  "maleteroMin": null,
+  "generacion": "W214",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "category": "ejecutivo",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 62.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "sedan",
+    "mercedes-benz",
+    "Mercedes-Benz",
+    "Sedán ejecutivo",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Mercedes-Benz Clase E - Sedán ejecutivo Mercedes-Benz. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Mercedes-Benz Clase E",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Mercedes-Benz"
+    },
+    "vehicleType": "Sedán ejecutivo",
+    "fuelType": "Gasolina turbo",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 62.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán ejecutivo de Mercedes-Benz, gama media-alta de la marca."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:58:49.088Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Mercedes-Benz Clase E es uno de los pilares fundamentales en la historia de la marca alemana y del segmento de los sedanes ejecutivos a nivel mundial. Sus raíces se remontan a los clásicos modelos 'Ponton' de la década de 1950, aunque la denominación comercial 'Clase E' no se adoptó formalmente hasta la llegada de la emblemática generación W124 en 1993. A lo largo de las décadas, este vehículo se ha ganado una sólida reputación en los mercados internacionales por su robustez estructural, su confort de marcha excepcional y una constante innovación tecnológica que suele debutar en este modelo antes de implementarse en el resto de la gama de la firma de Stuttgart.\n\n## Un hito o generación relevante\nSi hay una generación que marcó un antes y un después en la memoria colectiva, esa fue la W124. Diseñada bajo la minuciosa supervisión de Bruno Sacco, estableció nuevos estándares en materia de aerodinámica, seguridad pasiva y durabilidad mecánica, con unidades que frecuentemente superan el medio millón de kilómetros bajo uso intensivo. En la historia más reciente, la llegada de la generación W213 supuso un salto cuántico en digitalización con las pantallas de doble panel. La iteración actual, denominada W214, continúa este legado llevando la conectividad avanzada, la inteligencia artificial y la electrificación Mild-Hybrid o híbrida enchufable a un nivel superior, consolidando la transición hacia la movilidad moderna sin perder la elegancia tradicional de la marca.\n\n## Curiosidades\nUna de las curiosidades más notables en la historia del Clase E es que sirvió de base para crear una de las berlinas deportivas más icónicas de los años noventa: el Mercedes-Benz 500 E (W124), desarrollado y ensamblado en estrecha colaboración con Porsche en las instalaciones de Zuffenhausen, el cual incorporaba un potente motor V8 bajo una apariencia sobria y discreta. Además, a lo largo de su trayectoria en los mercados europeos y norteamericanos, el Clase E ha sido tradicionalmente el vehículo predilecto para flotas de taxis de alta gama, demostrando que el lujo de categoría superior y la durabilidad extrema pueden coexistir bajo el uso cotidiano más exigente.\n\n## Competencia y posicionamiento\nEn el mercado global, el Mercedes-Benz Clase E compite de manera directa contra los máximos exponentes del segmento E premium: el BMW Serie 5 y el Audi A6. Mientras que el Serie 5 prioriza un tacto de conducción marcadamente dinámico y el A6 destaca por su sobriedad tecnológica y la tracción integral quattro, el Clase E se diferencia históricamente por ofrecer un enfoque superior orientado al confort de marcha absoluto, el aislamiento acústico de primer nivel y un lujo interior que emula de cerca a su hermano mayor, el Clase S. Es la opción predilecta para ejecutivos y familias que buscan estatus, refinamiento y tecnología de vanguardia."
+}

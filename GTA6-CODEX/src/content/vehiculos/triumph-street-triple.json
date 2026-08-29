@@ -1,0 +1,228 @@
+{
+  "slug": "triumph-street-triple",
+  "type": "vehiculos",
+  "title": "Triumph Street Triple",
+  "description": "Naked tricilíndrica de Triumph, referencia del segmento medio deportivo.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "triumph"
+  ],
+  "featured": false,
+  "manufacturer": "Triumph",
+  "class": "Moto naked",
+  "customizable": false,
+  "power": "115 hp",
+  "price": "USD 10.500 (referencia internacional)",
+  "consumo": "5.2 l/100km combinado",
+  "dimensiones": "2.060 mm largo x 735 mm ancho x 1.060 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.triumphmotorcycles.com",
+    "note": "Se actualizaron los datos técnicos basándose en las especificaciones oficiales de la Triumph Street Triple 765 (versión R/RS), corrigiendo los valores genéricos previos de automóviles por las métricas reales de la motocicleta.",
+    "limitations": [
+      "El precio es una referencia global de mercado y puede variar según los impuestos y aranceles de importación de cada país.",
+      "Las cifras de consumo y aceleración pueden variar según las condiciones de conducción y la variante específica (R o RS)."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:28:29.501Z",
+  "transmision": "Manual de 6 velocidades con embrague antihopping",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "165 kg (en orden de marcha)",
+  "tipoMotor": "Gasolina tricilíndrico en línea, 4 tiempos",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "15 litros",
+  "tiempoRecorrido": "0-100 km/h en 3.4s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "765 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Tercera generación (actualizada)",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual secuencial"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 11.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "moto",
+    "triumph",
+    "Triumph",
+    "Moto naked",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Triumph Street Triple - Moto naked Triumph. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Triumph Street Triple",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Triumph"
+    },
+    "vehicleType": "Moto naked",
+    "fuelType": "Gasolina",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 11.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Naked tricilíndrica de Triumph, referencia del segmento medio deportivo."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:28:29.501Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Triumph Street Triple nació en 2007 como una evolución natural y desangulada de su hermana mayor, la icónica Speed Triple, pero adaptando el concepto al segmento de media cilindrada. Tomando como base el chasis y la agilidad de la Daytona 675, la marca británica logró crear una naked deportiva que rápidamente cautivó al mercado europeo y global por su equilibrio perfecto entre uso diario y prestaciones de circuito. Con el paso de los años, el modelo fue recibiendo actualizaciones estéticas, mejoras en la electrónica y, fundamentalmente, un aumento en su cilindrada hasta llegar al bloque actual de 765 cc, heredado directamente de la experiencia de Triumph como proveedor exclusivo de motores para el Campeonato Mundial de Moto2.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante en la historia reciente de la Street Triple llegó con la introducción del motor tricilíndrico de 765 cc y la llegada de la variante RS. Esta generación no solo incrementó de manera notable la potencia y el torque disponible en todo el rango de revoluciones, sino que también incorporó un paquete tecnológico de vanguardia. La inclusión de instrumentación TFT a color, modos de conducción configurables, ABS optimizado para curvas, control de tracción sensible al ángulo de inclinación y el cambio rápido (quickshifter) bidireccional elevaron el estándar de la categoría naked media, convirtiéndándola en la referencia indiscutida frente a sus rivales de origen japonés y europeo.\n\n## Curiosidades\nUn detalle fascinante de la Triumph Street Triple es cómo su motor de 765 cc comparte arquitectura y desarrollos directamente con las motos que compiten en la categoría intermedia de Moto2. Esto significa que los usuarios de la calle conducen una máquina que utiliza tecnología desarrollada y probada en el máximo nivel del motociclismo de velocidad mundial. Además, su distintivo frontal con doble óptica delantera —que en su momento generó debates apasionados entre los puristas— terminó por consolidarse como el rostro inconfundible de la familia moderna de Hinckley, otorgándole una personalidad visual única en las calles.\n\n## Competencia y posicionamiento\nEn el mercado global, la Triumph Street Triple se posiciona firmemente en el segmento premium de las motocicletas naked de peso mediano. Compide mano a mano con pesos pesados de la industria como la Yamaha MT-09, la KTM 890 Duke, la Kawasaki Z900 y la Ducati Monster. Sin embargo, la Street Triple se destaca frente a la competencia gracias a la finura y elasticidad de su propulsor tricilíndrico, que combina la suavidad y el empuje lineal en baja de un motor bicilíndrico con la estirada final y potencia en alta propia de un cuatro cilindros. Esto la ubica como la opción predilecta para aquellos motociclistas que buscan un comportamiento dinámico de nivel superior sin renunciar a la polivalencia para el uso cotidiano."
+}

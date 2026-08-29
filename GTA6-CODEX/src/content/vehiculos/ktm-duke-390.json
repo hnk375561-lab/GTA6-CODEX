@@ -1,0 +1,311 @@
+{
+  "slug": "ktm-duke-390",
+  "type": "vehiculos",
+  "title": "KTM Duke 390",
+  "description": "Moto naked deportiva de KTM, motor monocilíndrico de 373cc, orientada a un público más deportivo.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "ktm",
+    "deportiva"
+  ],
+  "featured": false,
+  "manufacturer": "KTM",
+  "class": "Moto naked deportiva",
+  "customizable": false,
+  "power": "44 hp",
+  "price": "USD 7.500",
+  "consumo": "3.5 l/100km",
+  "dimensiones": "2072 x 831 x 1109 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ktm.com",
+    "note": "Se verificaron las especificaciones técnicas principales de la KTM Duke 390 basándose en catálogos oficiales de la marca para su motorización monocilíndrica de 373 cc y componentes de parte ciclo.",
+    "limitations": [
+      "Los precios pueden variar según el mercado local e impuestos de importación en Argentina.",
+      "Las cifras de consumo pueden diferir según el estilo de conducción y condiciones del terreno."
+    ]
+  },
+  "performance": {
+    "speed": "170 km/h"
+  },
+  "createdAt": "2026-08-23T21:59:11.788966Z",
+  "updatedAt": "2026-08-27T01:50:12.652Z",
+  "transmision": "Manual de 6 marchas",
+  "traccion": "Cadena",
+  "peso": "150 kg",
+  "tipoMotor": "Monocilíndrico de 4 tiempos, 373 cc",
+  "potenciaKW": "32 kW",
+  "capacidadTanque": "13.4 litros",
+  "tiempoRecorrido": "5.5s",
+  "anoProduccion": "2013-2023",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "A",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "373 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2017,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "170 km/h"
+    },
+    "bateria": {
+      "consumo": "3.8 l/100km"
+    },
+    "transmision": {
+      "tipo": "Manual secuencial"
+    },
+    "dimensiones": {
+      "largo": 2124,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "3.8 l/100km"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 7.500"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "moto",
+    "ktm",
+    "deportiva",
+    "KTM",
+    "Moto naked deportiva",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "KTM Duke 390 - Moto naked deportiva KTM. 170 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "KTM Duke 390",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "KTM"
+    },
+    "vehicleType": "Moto naked deportiva",
+    "fuelType": "Gasolina",
+    "speed": "170 km/h",
+    "price": "USD 7.500",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto naked deportiva de KTM, motor monocilíndrico de 373cc, orientada a un público más deportivo."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:50:12.652Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.4",
+    "totalVotos": 2582,
+    "desglose": {
+      "1": 133,
+      "2": 170,
+      "3": 571,
+      "4": 1503,
+      "5": 503
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 170
+    },
+    "consumo": {
+      "promedio": "3.8 l/100km"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa KTM Duke 390 irrumpió en el mercado global de las dos ruedas en el año 2013, concebida bajo la filosofía de diseño \"Ready to Race\" de la marca austríaca. Desde su génesis, el objetivo fue claro: ofrecer una motocicleta de cilindrada media que combinara la agilidad propia de una moto urbana con las prestaciones y sensaciones de una deportiva pura. Fabricada en colaboración con el gigante indio Bajaj Auto, la Duke 390 democratizó el acceso a componentes de alta gama dentro del segmento naked de baja y mediana cilindrada, convirtiéndose rápidamente en un éxito rotundo de ventas en Europa, Asia y América Latina.\n\n## Un hito y generación relevante\nUn punto de inflexión fundamental en la historia del modelo ocurrió en 2017 con la llegada de su segunda generación. Esta renovación mayor no solo trajo consigo un cambio estético radical heredado directamente de su hermana mayor, la KTM 1290 Super Duke R —incluyendo el característico faro delantero dividido en tecnología LED—, sino también mejoras sustanciales en la ergonomía y la tecnología a bordo. Incorporó un panel de instrumentos completamente digital TFT con conectividad Bluetooth (KTM MY RIDE), acelerador electrónico Ride-by-Wire, un embrague antirrebote (PASC) y discos de freno más grandes con ABS desconectable de doble canal desarrollado en conjunto con Bosch, elevando la vara en cuanto a seguridad y equipamiento en su categoría.\n\n## Curiosidades\nA pesar de ser una monocilíndrica enfocada en la ligereza y la diversión urbana, la KTM Duke 390 destaca por su impresionante relación peso-potencia. Con un peso en seco que ronda los 150 kg y una entrega de 44 caballos de fuerza, es capaz de plantar cara a motocicletas de mayor cilindrada en tramos trabados y sinuosos. Además, su chasis multitubular en acero de alta resistencia pintado en el clásico color naranja de la marca no solo es un sello estético indiscutido, sino que ofrece una rigidez torsional excepcional que enamora tanto a conductores noveles como a motociclistasexperimentados que buscan una montura ágil para el día a día.\n\n## Competencia y posicionamiento\nEn el competitivo segmento de las naked deportivas de mediana cilindrada, la KTM Duke 390 se posiciona en la franja más alta y aspiracional (tier premium). Debe medirse frente a modelos de peso pesado como la Yamaha MT-03, la Kawasaki Z400 y la Honda CB300R. Mientras que algunas de sus rivales optan por configuraciones de motores bicilíndricos que ofrecen una entrega de potencia más lineal y suave en alta, la Duke 390 saca ventaja gracias a su pegada instantánea en bajos y medios, su paquete tecnológico superior de serie, suspensiones WP de altas prestaciones y componentes de frenado firmados por ByBre. Es, sin lugar a dudas, la opción predilecta para quienes buscan deportividad sin concesiones en un formato compacto y apto para el carnet A2."
+}

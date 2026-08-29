@@ -1,0 +1,84 @@
+/* Leaflet MarkerCluster Styles - GTA6 Codex Edition */
+
+.marker-cluster {
+  background: linear-gradient(135deg, rgba(255, 126, 196, 0.95), rgba(255, 100, 180, 0.9));
+  border: 2px solid white;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 126, 196, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker-cluster:hover {
+  background: linear-gradient(135deg, rgba(255, 126, 196, 1), rgba(255, 100, 180, 1));
+  transform: scale(1.15);
+  box-shadow: 0 6px 18px rgba(255, 126, 196, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.category-pin {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+  transition: all 0.2s ease;
+}
+
+.category-pin:hover {
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: rgba(30, 30, 40, 0.95) !important;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 126, 196, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.leaflet-popup-tip {
+  background-color: rgba(30, 30, 40, 0.95);
+  border-top-color: rgba(255, 126, 196, 0.3);
+}
+
+.leaflet-popup-content {
+  color: #fff;
+  font-family: 'Inter', 'Jetbrains Mono', sans-serif;
+  margin: 0;
+  padding: 12px !important;
+  max-width: 300px;
+}
+
+.leonida-recenter-btn,
+.leonida-fullscreen-btn {
+  background-color: rgba(255, 126, 196, 0.1);
+  border: 1px solid rgba(255, 126, 196, 0.4);
+  color: #ff9152;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.leonida-recenter-btn:hover,
+.leonida-fullscreen-btn:hover {
+  background-color: rgba(255, 126, 196, 0.2);
+  border-color: rgba(255, 126, 196, 0.8);
+  box-shadow: 0 4px 12px rgba(255, 126, 196, 0.2);
+}
+
+@media (max-width: 640px) {
+  .marker-cluster {
+    font-size: 12px;
+  }
+
+  .leaflet-popup-content {
+    max-width: 200px;
+    padding: 8px !important;
+  }
+}

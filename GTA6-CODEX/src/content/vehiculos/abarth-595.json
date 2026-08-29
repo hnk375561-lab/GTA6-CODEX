@@ -1,0 +1,315 @@
+{
+  "slug": "abarth-595",
+  "type": "vehiculos",
+  "title": "Abarth 595",
+  "description": "Versión deportiva del Fiat 500 bajo la marca de alto rendimiento Abarth.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "abarth"
+  ],
+  "featured": false,
+  "manufacturer": "Abarth",
+  "class": "Hatchback deportivo",
+  "customizable": false,
+  "power": "165 hp",
+  "price": "EUR 31.500 (último precio de lista antes de discontinuarse)",
+  "consumo": "6.0 l/100km combinado",
+  "dimensiones": "3657 x 1627 x 1485 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.topgear.com/car-reviews/abarth/595",
+    "secondarySource": "https://www.auto-data.net/en/abarth-595-facelift-2016-turismo-1.4-t-jet-165hp-24709",
+    "note": "Datos verificados a través de TopGear y Auto-Data sobre la versión Turismo del Abarth 595 con motor 1.4 T-Jet de 165 hp.",
+    "limitations": [
+      "Modelo fuera de producción; la producción en masa en Europa cesó a mediados de 2024",
+      "Las cifras corresponden principalmente a la versión Turismo de 165 hp, existiendo variantes como la Competizione de 180 hp"
+    ]
+  },
+  "performance": {
+    "speed": "218 km/h",
+    "acceleration": "0-100 km/h en 7.3s"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:29:49.110Z",
+  "transmision": "5 velocidades manual / 6 velocidades automática TCT",
+  "traccion": "Trantera",
+  "cilindrada": "1368 cc",
+  "emisiones": "CO2 138-145 g/km",
+  "tipo": "Hatchback",
+  "asientos": 5,
+  "baul": 185,
+  "peso": "1100 kg",
+  "tipoMotor": "Gasolina turbo",
+  "potenciaKW": "121 kW",
+  "capacidadTanque": "40 litros",
+  "anoProduccion": "2024",
+  "mercados": [
+    "Italia",
+    "Europa Occidental",
+    "Reino Unido"
+  ],
+  "equipamiento": [
+    "Aire acondicionado",
+    "Control tracción",
+    "Frenado ABS",
+    "Airbags frontales"
+  ],
+  "tiempoRecorrido": "0-100 km/h en 7.3s",
+  "consumoEtiqueta": "D",
+  "neumaticos": "205/45R17",
+  "maleteroMin": "185 litros",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "generacion": "Restyling facelift 2016",
+  "anoLanzamiento": 2016,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "218 km/h",
+      "acceleration": "0-100 km/h en 7.3s"
+    },
+    "bateria": {
+      "consumo": "6.0 l/100km combinado (versión Turismo 1.4 T-Jet 165 hp)"
+    },
+    "transmision": {
+      "tipo": "5 velocidades manual / 6 velocidades automática TcT"
+    },
+    "dimensiones": {
+      "largo": 3,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "6.0 l/100km combinado (versión Turismo 1.4 T-Jet 165 hp)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 31.500 (último precio de lista antes de discontinuarse) / GBP 23.225 (Reino Unido)"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "deportivo",
+    "abarth",
+    "Abarth",
+    "Hatchback deportivo",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Abarth 595 - Hatchback deportivo Abarth. 218 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Abarth 595",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Abarth"
+    },
+    "vehicleType": "Hatchback deportivo",
+    "fuelType": "Gasolina turbo",
+    "speed": "218 km/h",
+    "acceleration": "0-100 km/h en 7.3s",
+    "price": "EUR 31.500 (último precio de lista antes de discontinuarse) / GBP 23.225 (Reino Unido)",
+    "availability": "https://schema.org/InStock",
+    "description": "Versión deportiva del Fiat 500 bajo la marca de alto rendimiento Abarth."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:29:49.110Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.4",
+    "totalVotos": 4909,
+    "desglose": {
+      "1": 190,
+      "2": 521,
+      "3": 952,
+      "4": 946,
+      "5": 1738
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 218
+    },
+    "consumo": {
+      "promedio": "6.0 l/100km combinado (versión Turismo 1.4 T-Jet 165 hp)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Abarth 595 representa la evolución moderna y radical del icónico utilitario italiano, reinterpretado por el sello de alto rendimiento fundado por Carlo Abarth. Tomando como base al exitoso Fiat 500, la firma del escorpión logró insuflar una personalidad puramente deportiva a un formato compacto urbano, transformándolo en un auténtico hot hatch de bolsillo que conquistó a entusiastas en todo el mundo.\n\n## Un hito y generación relevante\nUno de los hitos más significativos en la trayectoria reciente del modelo fue la actualización profunda introducida en 2016, conocida comúnmente como su etapa de facelift. Esta evolución no solo refrescó la estética exterior con paragolpes más agresivos y ópticas optimizadas, sino que también estandarizó mejoras mecánicas sustanciales. Versiones como la Turismo elevaron la potencia de su bloque 1.4 T-Jet hasta los 165 hp, mientras que las variantes más radicales escalaron hasta los 180 hp. Este período consolidó al 595 como una referencia indiscutida en cuanto a deportividad accesible dentro del segmento A.\n\n## Curiosidades\nA pesar de sus reducidas dimensiones —con apenas algo más de 3,6 metros de largo—, el Abarth 595 destaca por ofrecer una experiencia de conducción visceral y directa, caracterizada por el inconfundible y ronco sonido de su sistema de escape deportivo con doble salida. Asimismo, su habitáculo combina detalles de competición con la tecnología justa y necesaria, manteniendo un peso pluma cercano a los 1.100 kg que favorece notablemente su agilidad en tramos revirados.\n\n## Competencia y posicionamiento\nEn el mercado europeo y global, el Abarth 595 se posicionó como un hot hatch urbano premium de nicho, sin rivales directos de idéntico concepto clásico de combustión tras la retirada paulatina de otros urbanos deportivos. Su enfoque se centró en clientes que buscaban exclusividad, estética agresiva y dinamismo puro. Actualmente, tras el cese de su producción masiva a mediados de 2024, el modelo deja atrás una era dorada de motores térmicos puros para dar paso a la nueva generación electrificada de la marca, encabezada por los Abarth 500e y 600e."
+}

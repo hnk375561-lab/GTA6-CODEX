@@ -1,0 +1,229 @@
+{
+  "slug": "suzuki-gsx-r750",
+  "type": "vehiculos",
+  "title": "Suzuki GSX-R750",
+  "description": "Deportiva histórica de Suzuki, tetracilíndrica en línea de 750cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "suzuki"
+  ],
+  "featured": false,
+  "manufacturer": "Suzuki",
+  "class": "Moto deportiva",
+  "customizable": false,
+  "power": "150 hp",
+  "price": "USD 12.999 (MSRP EE.UU.)",
+  "consumo": "5.5 l/100km",
+  "dimensiones": "2.035 mm largo x 715 mm ancho x 1.135 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://suzukicycles.com",
+    "secondarySource": "https://es.wikipedia.org/wiki/Suzuki_GSX-R750",
+    "note": "Se actualizaron los datos técnicos basándose en las especificaciones globales históricas de la Suzuki GSX-R750 de última generación (motor tetracilíndrico de 750 cc, potencia aproximada de 150 hp, peso en orden de marcha de 190 kg y dimensiones estándar para la categoría supersport).",
+    "limitations": [
+      "El precio es una referencia de mercado en EE.UU. y puede variar según el año específico de producción o impuestos locales.",
+      "Los valores de consumo y aceleración son estimaciones basadas en pruebas de la industria para este modelo."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:27:24.583Z",
+  "transmision": "Manual de 6 marchas",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "190 kg (en orden de marcha)",
+  "tipoMotor": "Gasolina (Tetracilíndrico en línea, 4 tiempos, refrigeración líquida)",
+  "potenciaKW": "110 kW",
+  "capacidadTanque": "16 litros",
+  "tiempoRecorrido": "3.2s",
+  "anoProduccion": "2011-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "750 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "K-Series / L-Series actual",
+  "anoLanzamiento": 1985,
+  "colores": [],
+  "category": "motocicleta",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual secuencial"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 13.100"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "moto",
+    "suzuki",
+    "Suzuki",
+    "Moto deportiva",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Suzuki GSX-R750 - Moto deportiva Suzuki. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Suzuki GSX-R750",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Suzuki"
+    },
+    "vehicleType": "Moto deportiva",
+    "fuelType": "Gasolina",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 13.100",
+    "availability": "https://schema.org/InStock",
+    "description": "Deportiva histórica de Suzuki, tetracilíndrica en línea de 750cc."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:27:24.583Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Suzuki GSX-R750 es considerada por muchos como la madre de las motocicletas deportivas modernas. Nacida en 1985, revolucionó el mercado al trasladar la tecnología y el rendimiento de las pistas de competición directamente a las calles y concesionarios. Desde su irrupción, Suzuki apostó por un equilibrio perfecto entre la agilidad típica de una cilindrada menor (como una 600cc) y la potencia bruta entregada por los motores de mayor cilindrada, creando un segmento propio que perdura hasta el día de hoy.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la saga ocurrió en 1996 con la llegada de la generación con chasis de doble viga de aluminio inspirado en las motos de Gran Premio (la denominada SRAD - Suzuki Ram Air Direct). Esta evolución no solo redujo drásticamente el peso del conjunto, sino que optimizó la aerodinámica y la admisión de aire forzado a altas velocidades. Posteriormente, las sucesivas actualizaciones introdujeron inyección electrónica avanzada, modos de conducción seleccionables (S-DMS) y suspensiones de altas prestaciones como las horquillas Showa BPF (Big Piston Fork), consolidando su supremacía técnica.\n\n## Curiosidades\nEntre las curiosidades más notables de la GSX-R750 destaca el hecho de haber sobrevivido a la desaparición casi total de su categoría. Mientras que la mayoría de los fabricantes japoneses y europeos abandonaron la cilindrada de los 750cc debido a los cambios en los reglamentos de competición (donde las 600cc de 4 cilindros y las 1000cc dominaron las parrillas de Superbike y Supersport), Suzuki mantuvo contra viento y marea este modelo en producción, convirtiéndolo en un auténtico objeto de culto para los puristas de las dos ruedas que buscan una conducción visceral y sin excesivas asistencias electrónicas intrusivas.\n\n## Competencia y posicionamiento\nHistóricamente, la GSX-R750 ha competido en un espacio único del mercado. Aunque por cilindrada compite teóricamente con motocicletas de media y alta cilindrada, por rendimiento y filosofía se ha enfrentado cara a cara tanto con las supersport de 600cc (como la Yamaha YZF-R6 o la Honda CBR600RR) como con las superdeportivas de litro. Su posicionamiento actual es el de una clásica moderna: una moto deportiva pura, enfocada en ofrecer sensaciones puras tanto para uso en ruta como en circuito, dirigida a entusiastas que valoran la herencia de competición y una entrega de potencia lineal y adictiva."
+}

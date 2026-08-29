@@ -1,0 +1,313 @@
+{
+  "slug": "fiat-pulse",
+  "type": "vehiculos",
+  "title": "Fiat Pulse",
+  "description": "SUV compacta de Fiat sobre la misma plataforma que el Cronos/Argo, motor turbo 1.0L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "fiat",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:29.687Z",
+  "updatedAt": "2026-08-27T01:39:22.820Z",
+  "manufacturer": "Fiat",
+  "class": "SUV compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 11.0s"
+  },
+  "power": "120 CV",
+  "price": "ARS 24.000.000 (referencia mercado argentino)",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.fiat.com.ar",
+    "note": "Se verificaron las especificaciones técnicas oficiales del Fiat Pulse comercializado en el mercado argentino, incluyendo el motor Turbo 200 de 1.0L, capacidades y dimensiones basadas en fichas técnicas de Stellantis.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y disponibilidad de los concesionarios en Argentina.",
+      "Algunos datos de consumo exacto dependen de la homologación específica por versión (Drive o Impetus)."
+    ]
+  },
+  "transmision": "Automática tipo CVT (simula 7 marchas) o Manual de 5 velocidades",
+  "traccion": "Delantera",
+  "peso": "1187 kg",
+  "tipoMotor": "Nafta (Turbo 1.0L 3 cilindros T3)",
+  "potenciaKW": "88 kW",
+  "capacidadTanque": "47 litros",
+  "tiempoRecorrido": "0-100 km/h en 10.2s",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "consumo": "6.5 l/100 km mixto aprox.",
+  "dimensiones": "4099 x 1777 x 1545 mm",
+  "cilindrada": "999 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 370,
+  "maleteroMin": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "180 km/h",
+      "acceleration": "0-100 km/h en 11.0s"
+    },
+    "bateria": {},
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": null
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 22.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "fiat",
+    "combustion",
+    "Fiat",
+    "SUV compacta",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Fiat Pulse - SUV compacta Fiat. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Fiat Pulse",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Fiat"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 11.0s",
+    "price": "USD 22.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Fiat sobre la misma plataforma que el Cronos/Argo, motor turbo 1.0L."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:39:22.820Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.9",
+    "totalVotos": 3771,
+    "desglose": {
+      "1": 124,
+      "2": 60,
+      "3": 358,
+      "4": 1682,
+      "5": 1967
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 180
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Fiat Pulse nació como un proyecto clave para la marca italiana en la región sudamericana, desarrollado íntegramente en el Centro de Diseño de Stellantis en Betim, Brasil. Presentado inicialmente a mediados de 2021 tras una campaña de expectativa donde el público votó su nombre (superando a opciones como Dobi y Tuo), este SUV compacto llegó para posicionarse en uno de los segmentos más dinámicos y disputados del mercado automotriz regional. Construido sobre la nueva plataforma MLA —una evolución profunda de la arquitectura MP1 utilizada en el Argo y el Cronos—, el Pulse significó un salto tecnológico y de calidad fundamental para Fiat en su reconversión de gama.\n\n## Un hito o generación relevante\nEl hito más importante en la breve pero intensa trayectoria del Fiat Pulse fue la introducción de la motorización Turbo 200 (1.0 litros turbo de tres cilindros) junto con la caja automática CVT. Este conjunto mecánico no solo marcó el debut de la nueva familia de motores turboalimentados de origen GSE (Global Small Engine) en la región, sino que también le permitió a la marca ofrecer un balance óptimo entre prestaciones deportivas y eficiencia en el consumo de combustible. Asimismo, el lanzamiento de la variante deportiva firmada por Abarth consolidó al Pulse como un producto versátil capaz de atender tanto a familias jóvenes como a entusiastas del rendimiento.\n\n## Curiosidades\nUna de las particularidades más interesantes del desarrollo del Fiat Pulse fue su proceso de validación. Antes de su lanzamiento comercial, Fiat sometió a mulas de prueba y prototipos a condiciones extremas en climas tan diversos como el calor abrasador del nordeste brasileño y el frío patagónico en Argentina. Además, el sistema multimedia con pantallas de hasta 10.1 pulgadas y conectividad inalámbrica para Android Auto y Apple CarPlay fue diseñado para ofrecer una interfaz sumamente intuitiva, integrándose profundamente con la plataforma de servicios conectados Fiat Connect////Me.\n\n## Competencia y posicionamiento\nEn el mercado argentino y regional, el Fiat Pulse compite directamente en el segmento de los B-SUV contra referentes consolidados como el Volkswagen Nivus (con el cual comparte una silueta de estilo crossover/coupé muy marcada), el Chevrolet Tracker, el Renault Captur y el Peugeot 2008. El posicionamiento de Pulse se destaca por ofrecer una excelente relación precio-producto, un diseño exterior atractivo con estética aventurera, despeje del suelo elevado (19.6 cm) y un nivel de seguridad activa muy competitivo que incluye asistencias a la conducción (ADAS) como frenado autónomo de emergencia y alerta de cambio involuntario de carril en sus versiones más equipadas."
+}

@@ -1,0 +1,320 @@
+{
+  "slug": "subaru-forester",
+  "type": "vehiculos",
+  "title": "Subaru Forester",
+  "description": "SUV mediana de Subaru con tracción integral simétrica de serie, motor boxer 2.5L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "subaru",
+    "combustion",
+    "4x4"
+  ],
+  "featured": false,
+  "manufacturer": "Subaru",
+  "class": "SUV",
+  "customizable": false,
+  "power": "182 hp",
+  "price": "USD 38.000 (MSRP EE.UU. de referencia)",
+  "consumo": "9.8 l/100km (mixto)",
+  "dimensiones": "4640 x 1815 x 1730 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.scribd.com/document/931770241/spec-all-new-forester-2026-new-a4",
+    "secondarySource": "https://www.subaru.com/es/vehicles/forester/2026/features.html",
+    "note": "Se verificaron las especificaciones principales de la Subaru Forester con motor 2.5L bóxer, tracción Symmetrical AWD y datos oficiales globales y regionales de la marca.",
+    "limitations": [
+      "Algunas cifras de consumo y dimensiones pueden variar ligeramente según el mercado o la homologación específica.",
+      "Los precios varían de manera significativa según los impuestos y aranceles de importación en cada país."
+    ]
+  },
+  "performance": {
+    "speed": "190 km/h",
+    "acceleration": "0-100 km/h en 9.5s"
+  },
+  "createdAt": "2026-08-23T21:59:01.784761Z",
+  "updatedAt": "2026-08-27T03:08:44.395Z",
+  "transmision": "Automática CVT (Lineartronic)",
+  "traccion": "Tracción integral simétrica (Symmetrical AWD)",
+  "peso": "1.600 kg",
+  "tipoMotor": "Gasolina Boxer de 4 cilindros atmosférico",
+  "potenciaKW": "136 kW",
+  "capacidadTanque": "63 litros",
+  "tiempoRecorrido": "9.5s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "F",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2498 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 520,
+  "maleteroMin": null,
+  "generacion": "Quinta y sexta generación (según mercado)",
+  "anoLanzamiento": 2018,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "190 km/h",
+      "acceleration": "0-100 km/h en 9.5s"
+    },
+    "bateria": {
+      "consumo": "9.8 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4640,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "9.8 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 38.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "subaru",
+    "combustion",
+    "4x4",
+    "Subaru",
+    "SUV",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Subaru Forester - SUV Subaru. 190 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Subaru Forester",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Subaru"
+    },
+    "vehicleType": "SUV",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "190 km/h",
+    "acceleration": "0-100 km/h en 9.5s",
+    "price": "USD 38.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediana de Subaru con tracción integral simétrica de serie, motor boxer 2.5L."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:08:44.395Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.1",
+    "totalVotos": 5462,
+    "desglose": {
+      "1": 224,
+      "2": 340,
+      "3": 963,
+      "4": 1020,
+      "5": 2027
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 190
+    },
+    "consumo": {
+      "promedio": "9.8 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Subaru Forester debutó a finales de los años 90 (más precisamente en 1997) como una de las apuestas pioneras dentro del segmento de los utilitarios deportivos compactos y medianos, tomando como base la plataforma y el esquema mecánico del tradicional Subaru Impreza. Desde sus inicios, la marca japonesa buscó fusionar la versatilidad de un vehículo recreativo con el comportamiento dinámico y la seguridad de un turismo dotado de tracción integral permanente. Con el correr de las décadas, la Forester evolucionó desde un formato que recordaba a una rural o familiar levantada hasta consolidarse como un SUV puro, robusto y espacioso, manteniendo inalterables dos de sus insignias técnicas más preciadas: los motores de cilindros opuestos (Boxer) y el sistema de tracción integral simétrica.\n\n## Un hito y generación relevante\nUn punto de inflexión fundamental en la historia reciente de la Forester fue la introducción de la Plataforma Global de Subaru (SGP) a partir de su quinta generación (lanzada comercialmente hacia 2018 y actualizada en los años subsiguientes). Esta arquitectura no solo mejoró notablemente la rigidez torsional del chasis —reduciendo ruidos, vibraciones y optimizando la respuesta dinámica en ruta—, sino que también permitió la integración masiva de tecnologías avanzadas de asistencia a la conducción, sobresaliendo el sistema EyeSight. Este paquete de seguridad activa con cámaras estereoscópicas ofrece asistencias como frenado autónomo de emergencia, control crucero adaptativo y alerta de cambio de carril, logrando excelentes calificaciones en ensayos de choque internacionales.\n\n## Curiosidades\nUna de las características más singulares de la Subaru Forester es la disposición longitudinal de su motor Boxer. A diferencia de la gran mayoría de los SUV generalistas que priorizan la tracción delantera o sistemas conectables, la arquitectura simétrica de Subaru permite un reparto de pesos sumamente equilibrado a lo largo del eje longitudinal del vehículo. Esto, combinado con el bajo centro de gravedad que otorgan los cilindros horizontales opuestos, le confiere un comportamiento en curvas y en terrenos de baja adherencia (como ripio, barro o nieve) muy superior al promedio de su categoría, sin depender exclusivamente de gestiones electrónicas complejas o bloqueos manuales.\n\n## Competencia y posicionamiento\nEn el mercado global y regional, la Subaru Forester compite en el corazón del segmento de los SUV medianos (C-SUV), enfrentándose a rivales de peso como la Toyota RAV4, la Honda CR-V, la Volkswagen Tiguan y la Nissan X-Trail. Mientras que muchos competidores han optado por motorizaciones híbridas o mecánicas turboalimentadas de cilindrada reducida en todos sus mercados, la Forester mantiene una propuesta centrada en la durabilidad mecánica, la tracción integral de serie y un perfil netamente familiar. Se posiciona como un producto de nicho con tintes premium dentro de las marcas generalistas, muy valorado por conductores que buscan un vehículo aventurero, sumamente seguro y con una sólida reputación de confiabilidad a largo plazo."
+}

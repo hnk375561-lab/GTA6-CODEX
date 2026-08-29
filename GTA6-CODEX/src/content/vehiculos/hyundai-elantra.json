@@ -1,0 +1,250 @@
+{
+  "slug": "hyundai-elantra",
+  "type": "vehiculos",
+  "title": "Hyundai Elantra",
+  "description": "Sedán compacto de Hyundai, también vendido como Avante en Corea.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "hyundai"
+  ],
+  "featured": false,
+  "manufacturer": "Hyundai",
+  "class": "Sedán compacto",
+  "customizable": false,
+  "power": "147 hp a 6.200 rpm",
+  "price": "USD 21.625 (SE, referencia mercado US)",
+  "consumo": "6.7 l/100km combinado",
+  "dimensiones": "4.677 mm x 1.826 mm x 1.415 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.hyundainews.com/assets/documents/original/57216-2024ElantraSpecs092123A.pdf",
+    "secondarySource": "https://www.kbb.com/hyundai/elantra/2024/specs/",
+    "note": "Se verificaron las especificaciones técnicas del Hyundai Elantra versión SE base para el mercado estadounidense correspondientes al año modelo 2024.",
+    "limitations": [
+      "Las cifras corresponden exclusivamente al motor atmosférico 2.0L de la versión base SE.",
+      "Las variantes deportivas N Line, N y la opción híbrida HEV poseen motorizaciones, precios y consumos diferentes."
+    ]
+  },
+  "performance": {
+    "speed": "190 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:46:09.096Z",
+  "transmision": "IVT (CVT inteligente) de 8 velocidades simuladas",
+  "traccion": "Delantera",
+  "peso": "1.301 kg",
+  "tipoMotor": "Gasolina atmosférico 4 cilindros, DOHC",
+  "potenciaKW": "110 kW",
+  "capacidadTanque": "47 litros",
+  "tiempoRecorrido": "8.5s",
+  "anoProduccion": "2024",
+  "mercados": [
+    "USA",
+    "Canadá",
+    "Corea del Sur (como Avante)",
+    "Latinoamérica",
+    "Medio Oriente"
+  ],
+  "equipamiento": [
+    "Hyundai SmartSense (frenado autónomo, ACC, LKA)",
+    "Pantalla táctil 8\"",
+    "Apple CarPlay / Android Auto",
+    "Cámara de retroceso"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "195/65 R15",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC 16 válvulas",
+    "ratio_compresion": "12.5:1",
+    "sistemas_inyeccion": "Inyección multipunto (MPI)",
+    "arbol_levas": "Doble (DOHC)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.999 cc",
+  "emisiones": null,
+  "tipo": "Sedán compacto",
+  "asientos": 5,
+  "baul": 402,
+  "maleteroMin": null,
+  "generacion": "Séptima generación (CN7)",
+  "anoLanzamiento": "2020",
+  "colores": [],
+  "category": "vehiculo",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 22.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "sedan",
+    "hyundai",
+    "Hyundai",
+    "Sedán compacto",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "elantra",
+    "avante"
+  ],
+  "metaDescription": "Hyundai Elantra - Sedán compacto de 147 hp, séptima generación. Especificaciones, precio y disponibilidad, ago 2026.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Hyundai Elantra",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Hyundai"
+    },
+    "vehicleType": "Sedán compacto",
+    "fuelType": "Gasolina",
+    "speed": "190 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 21.625",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán compacto de Hyundai, también vendido como Avante en Corea, séptima generación."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:46:09.096Z",
+    "dataQuality": 0.9
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.hyundainews.com/assets/documents/original/57216-2024ElantraSpecs092123A.pdf",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.kbb.com/hyundai/elantra/2024/specs/",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Lote 6 (ago 2026): datos del trim SE base MY2024, mercado US.",
+    "dataQuality": 0.9
+  },
+  "content": "## Historia del modelo\nEl Hyundai Elantra es uno de los pilares fundamentales dentro de la oferta global de la marca surcoreana. Desde su introducción inicial en la década de 1990 como reemplazo del Hyundai Stellar, este sedán compacto ha recorrido un largo camino de evolución, pasando de ser un vehículo económico y utilitario a convertirse en un referente de diseño, tecnología y eficiencia dentro de su segmento. A lo largo de las décadas, el modelo ha sabido ganarse la confianza de millones de conductores en todo el mundo, consolidándose como uno de los vehículos más vendidos de la compañía a nivel global.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la trayectoria del modelo fue la llegada de su séptima generación (conocida bajo el código interno CN7), presentada a finales de 2020 para el año modelo 2021 y extendida hasta la actualidad. Esta entrega rompió con los moldes tradicionales de sobriedad que solían imperar en el segmento de los sedanes compactos gracias al lenguaje de diseño denominado \"Sensuous Sportiness\" ( Deportividad Sensual). Con líneas angulosas marcadas, superficies tridimensionales complejas y una silueta de estilo fastback con la línea del techo marcadamente descendente, el Elantra demostró que un sedán de volumen podía adoptar una estética arriesgada y vanguardista sin resignar la funcionalidad diaria.\n\n## Curiosidades\nUna de las particularidades más interesantes del Hyundai Elantra es su dualidad de nombres según el mercado en el que se comercialice. Mientras que en la mayor parte de Occidente se lo conoce bajo la denominación Elantra, en su mercado doméstico de Corea del Sur y en ciertos países de Asia se lo comercializa bajo el nombre de Hyundai Avante. Asimismo, la arquitectura de esta séptima generación permitió el desarrollo de variantes sumamente extremas como el Elantra N, una versión de altas prestaciones desarrollada por la división deportiva N de la marca que compite de igual a igual con hatchbacks deportivos tradicionales y que ha recibido elogios de la prensa especializada por su dinámica de conducción en pista.\n\n## Competencia y posicionamiento\nEn el mercado global, el Hyundai Elantra compite en uno de los segmentos más disputados de la industria automotriz: el de los sedanes compactos. Sus rivales directos históricos incluyen a pesos pesados de la industria como el Toyota Corolla, el Honda Civic, el Nissan Sentra y el Volkswagen Jetta. Para destacar frente a semejante competencia, el sedán coreano se posiciona ofreciendo una excelente relación valor-precio, una dotación tecnológica muy completa desde sus versiones de entrada —que incluye asistencias avanzadas a la conducción bajo el paraguas de Hyundai SmartSense— y una propuesta de diseño que apunta a un público que busca diferenciarse del promedio sin necesidad de acceder a marcas de carácter premium."
+}

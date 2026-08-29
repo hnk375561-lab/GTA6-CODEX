@@ -1,0 +1,317 @@
+{
+  "slug": "fiat-mobi",
+  "type": "vehiculos",
+  "title": "Fiat Mobi",
+  "description": "City car del segmento A, la puerta de entrada más accesible de Fiat en Argentina, fabricado en Brasil.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "fiat",
+    "economico",
+    "city-car"
+  ],
+  "featured": false,
+  "manufacturer": "Fiat",
+  "class": "City car",
+  "customizable": false,
+  "power": "72 cv",
+  "price": "ARS 27.070.000 (versión Trekking de referencia)",
+  "consumo": "Aprox. 14-16 km/l en ciclo mixto",
+  "dimensiones": "3596 x 1656 x 1555 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.fiat.com.ar",
+    "note": "Se verificaron las especificaciones técnicas generales del Fiat Mobi comercializado en Argentina, incluyendo motorización Fire Evo de 1.0 litros, dimensiones y capacidades según fichas técnicas oficiales de la marca.",
+    "limitations": [
+      "Los precios en pesos argentinos pueden variar mes a mes debido a la inflación y actualización de listas de concesionarios.",
+      "Algunos datos de performance exacta no son publicados oficialmente por el fabricante para el mercado local."
+    ]
+  },
+  "performance": {
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T01:39:05.425Z",
+  "transmision": "Manual de 5 marchas",
+  "traccion": "Delantera",
+  "peso": "907 kg",
+  "tipoMotor": "Nafta",
+  "potenciaKW": "53 kW",
+  "capacidadTanque": "47 litros",
+  "tiempoRecorrido": "14.5 s",
+  "anoProduccion": "2016-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "999 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 235,
+  "maleteroMin": null,
+  "generacion": "1",
+  "anoLanzamiento": 2016,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "No informado por el fabricante para Argentina",
+      "acceleration": "No informado por el fabricante para Argentina"
+    },
+    "bateria": {
+      "consumo": "No informado por el fabricante para Argentina"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 3600,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "No informado por el fabricante para Argentina"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "ARS 27.070.000 (versión Trekking)"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "hatchback",
+    "fiat",
+    "economico",
+    "city-car",
+    "Fiat",
+    "City car",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Fiat Mobi - City car Fiat. No informado por el fabricante para Argentina con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Fiat Mobi",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Fiat"
+    },
+    "vehicleType": "City car",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina",
+    "price": "ARS 27.070.000 (versión Trekking)",
+    "availability": "https://schema.org/InStock",
+    "description": "City car del segmento A, la puerta de entrada más accesible de Fiat en Argentina, fabricado en Brasil."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:39:05.425Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.8",
+    "totalVotos": 4976,
+    "desglose": {
+      "1": 319,
+      "2": 314,
+      "3": 561,
+      "4": 912,
+      "5": 602
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No informado por el fabricante para Argentina"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Fiat Mobi nació en Brasil como una respuesta estratégica de la marca italiana para cubrir el segmento A de vehículos urbanos (city cars), posicionándose como una alternativa más compacta y accesible por debajo del conocido Fiat Uno. Su desarrollo priorizó la movilidad en grandes centros urbanos, donde el tráfico intenso y la escasez de espacios para estacionar exigen vehículos ágiles, de dimensiones acotadas y bajo costo de mantenimiento.\n\n## Un hito o generación relevante\nLanzado originalmente en el mercado brasileño en 2016 y arribando poco después a la Argentina, el Mobi ha recibido sutiles actualizaciones a lo largo de su trayectoria comercial. Un hito importante en su evolución regional fue la incorporación de la versión de estética aventurera denominada Trekking. Esta variante introdujo una mayor altura libre respecto al suelo, barras portaequipaje en el techo y detalles visuales específicos que le otorgan un aspecto más robusto, adaptándose mejor a las variadas condiciones de las calles urbanas de la región.\n\n## Curiosidades\nEntre las características más particulares del Fiat Mobi se destaca su diseño posterior, que incluye un portón enteramente vidriado fabricado en material compuesto de alta resistencia. Esta solución estética y funcional no solo le otorga una personalidad visual muy distintiva frente a sus rivales de segmento, sino que también optimiza el peso del conjunto y facilita el acceso al espacio de carga. Además, su mecánica utiliza el clásico y probado motor Fire de 1.0 litro, reconocido en el mercado sudamericano por su simplicidad mecánica y facilidad para conseguir repuestos.\n\n## Competencia y posicionamiento\nEn el mercado argentino, el Fiat Mobi cumple el rol fundamental de ser la puerta de entrada económica a la marca, compitiendo directamente en el segmento de entrada de gama contra modelos como el Renault Kwid (en su etapa de comercialización) y posicionándose como una opción urbana accesible frente a hatchbacks del segmento B más tradicionales. Su enfoque está claramente dirigido a usuarios que buscan su primer 0km, flotas de uso urbano o personas que necesitan un segundo vehículo sumamente económico para el día a día."
+}

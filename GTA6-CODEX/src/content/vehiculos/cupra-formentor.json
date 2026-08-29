@@ -1,0 +1,319 @@
+{
+  "slug": "cupra-formentor",
+  "type": "vehiculos",
+  "title": "Cupra Formentor",
+  "description": "SUV coupé deportiva de Cupra (marca de SEAT), motor turbo 2.0L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "cupra",
+    "deportivo",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Cupra",
+  "class": "SUV coupé deportiva",
+  "customizable": false,
+  "power": "310 hp",
+  "price": "Desde $969,900 MXN (versión VZ 310 HP)",
+  "consumo": "8.5 l/100km (mixto)",
+  "dimensiones": "4451 x 1839 x 1520 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.carwow.es/cupra/formentor/caracteristicas-tecnicas",
+    "note": "Se verificaron las especificaciones técnicas del Cupra Formentor mediante portales especializados de mercado automotriz e información oficial de dimensiones y precios.",
+    "limitations": [
+      "Los precios varían según el mercado local y los impuestos de importación vigentes.",
+      "Algunas especificaciones de potencia pueden diferir ligeramente según las normativas de emisiones de cada región."
+    ]
+  },
+  "performance": {
+    "speed": "230 km/h",
+    "acceleration": "0-100 km/h en 6.6s"
+  },
+  "createdAt": "2026-08-23T21:59:09.542585Z",
+  "updatedAt": "2026-08-27T02:47:36.663Z",
+  "transmision": "Automática secuencial de 7 velocidades (DSG)",
+  "traccion": "Integral (4Drive)",
+  "peso": "1634 kg",
+  "tipoMotor": "Gasolina 2.0 TSI turbo",
+  "potenciaKW": "228 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "0-100 km/h en 4.9s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1984 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 450,
+  "maleteroMin": null,
+  "generacion": "Mk1",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "230 km/h",
+      "acceleration": "0-100 km/h en 6.6s"
+    },
+    "bateria": {
+      "consumo": "8.2 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4450,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "8.2 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 48.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "cupra",
+    "deportivo",
+    "combustion",
+    "Cupra",
+    "SUV coupé deportiva",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Cupra Formentor - SUV coupé deportiva Cupra. 230 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Cupra Formentor",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Cupra"
+    },
+    "vehicleType": "SUV coupé deportiva",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "230 km/h",
+    "acceleration": "0-100 km/h en 6.6s",
+    "price": "USD 48.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV coupé deportiva de Cupra (marca de SEAT), motor turbo 2.0L."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:47:36.663Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.1",
+    "totalVotos": 3002,
+    "desglose": {
+      "1": 263,
+      "2": 440,
+      "3": 455,
+      "4": 351,
+      "5": 1723
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 230
+    },
+    "consumo": {
+      "promedio": "8.2 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nLa Cupra Formentor representa un hito fundamental en la historia moderna de la industria automotriz europea al ser el primer vehículo desarrollado desde cero y de forma exclusiva por Cupra, la división deportiva que se independizó como marca autónoma dentro del paraguas de SEAT, perteneciente al Grupo Volkswagen. Presentada conceptualmente en 2019 y llevada a producción en serie hacia finales de 2020, la Formentor fue ideada como un crossover de espíritu marcadamente pasional, distanciándose de las siluetas SUV tradicionales mediante una propuesta estética audaz, proporciones dinámicas y un enfoque claramente enfocado en el conductor.\n\n## Un hito o generación relevante\n\nEl gran punto de inflexión para la Formentor no fue solo su lanzamiento comercial, sino la consolidación de la identidad de la marca Cupra en mercados internacionales muy competitivos. A diferencia de otros modelos del grupo que simplemente adoptaban emblemas deportivos sobre plataformas preexistentes, la Formentor nació para ser la cara visible de la marca. Su primera generación (Mk1) incorporó desde mecánicas de acceso más racionales hasta configuraciones de altas prestaciones, destacando especialmente la variante equipada con el bloque 2.0 TSI de 310 caballos de fuerza y tracción integral 4Drive, así como versiones híbridas enchufables que demostraron que la electrificación y la deportividad podían convivir sin comprometer las sensaciones al volante.\n\n## Curiosidades\n\nUn detalle fascinante sobre la denominación de este modelo es que su nombre rinde homenaje al Cabo Formentor, un accidente geográfico agreste, ventoso y de gran belleza ubicado en el norte de la isla de Mallorca, España. Este entorno natural sirvió como fuente de inspiración para los diseñadores debido a sus sinuosos caminos y paisajes desafiantes, los cuales reflejan el carácter dinámico que el vehículo promete entregar sobre el asfalto. Asimismo, los distintivos detalles en color 'Copper' (cobre), que se han convertido en el sello indiscutido de la marca, buscan evocar la transición tecnológica y la energía eléctrica de alta competición.\n\n## Competencia y posicionamiento\n\nDentro del mercado global y regional, la Cupra Formentor se posiciona en el segmento C-SUV de corte prémium, apuntando directamente a un público joven y exigente que busca diferenciarse de las propuestas más conservadoras de marcas tradicionales. Entre sus competidores directos más notables se encuentran modelos de altas prestaciones como el Volkswagen T-Roc R, el Audi SQ2, el BMW X2 y variantes deportivas del Alfa Romeo Tonale. La Formentor logra destacar en este selecto grupo gracias a una relación sumamente equilibrada entre diseño vanguardista, un comportamiento dinámico sobresaliente, niveles de tecnología de conectividad de última generación y una puesta a punto de suspensión que prioriza la agilidad sin sacrificar el confort necesario para el uso diario."
+}

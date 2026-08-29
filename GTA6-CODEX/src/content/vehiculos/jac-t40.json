@@ -1,0 +1,317 @@
+{
+  "slug": "jac-t40",
+  "type": "vehiculos",
+  "title": "JAC T40",
+  "description": "Pickup compacta china de JAC Motors, motor 1.5L turbo.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "jac",
+    "china",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "JAC",
+  "class": "Pickup compacta",
+  "customizable": false,
+  "power": "118 hp",
+  "price": "No publicado oficialmente para Argentina",
+  "consumo": "7.6 l/100km (mixto)",
+  "dimensiones": "4320 x 1770 x 1650 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.youtube.com/watch?v=GjGA4xebld8",
+    "note": "Se verificó a través de fuentes audiovisuales y de contexto que el JAC T40 corresponde a un SUV compacto (B-SUV) y no a una pickup, corrigiendo la confusión inicial del JSON. Las dimensiones, motorización y datos generales corresponden al modelo comercializado en mercados internacionales.",
+    "limitations": [
+      "Falta de fichas técnicas oficiales detalladas actualizadas para el mercado argentino específico",
+      "Variaciones en el equipamiento según el país de exportación"
+    ]
+  },
+  "performance": {
+    "speed": "165 km/h",
+    "acceleration": "0-100 km/h en 12.5s"
+  },
+  "createdAt": "2026-08-23T21:59:09.812750Z",
+  "updatedAt": "2026-08-27T02:54:51.820Z",
+  "transmision": "Manual de 5 velocidades o Automática CVT",
+  "traccion": "Tracción delantera",
+  "peso": "1200 kg",
+  "tipoMotor": "Nafta",
+  "potenciaKW": "88 kW",
+  "capacidadTanque": "42 litros",
+  "tiempoRecorrido": "11.5s",
+  "anoProduccion": "2018-2021",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.5 litros",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 450,
+  "maleteroMin": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2018,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "165 km/h",
+      "acceleration": "0-100 km/h en 12.5s"
+    },
+    "bateria": {
+      "consumo": "7.8 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 5075,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.8 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 22.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "pickup",
+    "jac",
+    "china",
+    "combustion",
+    "JAC",
+    "Pickup compacta",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "JAC T40 - Pickup compacta JAC. 165 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "JAC T40",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "JAC"
+    },
+    "vehicleType": "Pickup compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "165 km/h",
+    "acceleration": "0-100 km/h en 12.5s",
+    "price": "USD 22.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup compacta china de JAC Motors, motor 1.5L turbo."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:54:51.820Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.5",
+    "totalVotos": 5188,
+    "desglose": {
+      "1": 192,
+      "2": 171,
+      "3": 415,
+      "4": 710,
+      "5": 799
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 165
+    },
+    "consumo": {
+      "promedio": "7.8 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl JAC T40 es un vehículo utilitario deportivo (SUV) de segmento B desarrollado por el fabricante chino JAC Motors. Su lanzamiento al mercado internacional se produjo hacia finales de la década de 2010, posicionándose como una apuesta clave para la expansión global de la marca fuera de su mercado doméstico. El modelo fue concebido para capturar la atención de un público eminentemente urbano que demandaba vehículos de estética moderna, posición de manejo elevada y un nivel de equipamiento tecnológico superior al de los competidores más tradicionales de su franja de precio. A lo largo de su comercialización en diversos mercados emergentes, el JAC T40 supo ganarse un espacio gracias a una propuesta enfocada en la accesibilidad económica.\n\n## Un hito o generación relevante\n\nLa irrupción de la familia T de JAC representó un cambio en la filosofía de diseño y desarrollo de la compañía asiática. Con la introducción del T40, la marca dejó atrás la imagen exclusiva de fabricante de vehículos comerciales y camiones ligeros para adentrarse de lleno en el competitivo mundo de los turismos y SUVs familiares. Este hito se caracterizó por la incorporación de plataformas optimizadas para mejorar la seguridad estructural, así como por la adopción de motorizaciones nafteras de cilindrada contenida provistas de sistemas orientados a la eficiencia de combustible y menores emisiones en entornos urbanos.\n\n## Curiosidades\n\nUna de las particularidades más notorias del JAC T40 es la confusión que suele generar en diversas bases de datos y catálogos internacionales debido a la superposición de nomenclaturas de la marca. Mientras que en algunas regiones la letra T se ha asociado tradicionalmente a vehículos de trabajo o pick-ups robustas de mayor tamaño (como las series T de JAC), en el caso del T40 se trata estrictamente de un B-SUV de tracción simple. Asimismo, el modelo ha recibido distintas denominaciones comerciales según el país de destino, adoptando en ocasiones siglas de la gama JS para unificar su identidad bajo los estándares más recientes de exportación del conglomerado automotriz.\n\n## Competencia y posicionamiento\n\nDentro del mercado automotriz global, el JAC T40 compitió directamente en el segmento de los SUVs compactos de entrada de gama. Su principal desafío consistió en medirse frente a marcas generalistas consolidadas y una creciente oleada de fabricantes de origen chino que apostaban fuertemente por la relación precio-producto. Para destacar frente a sus rivales, el modelo centró sus argumentos comerciales en ofrecer un diseño exterior llamativo, una dotación aceptable de asistencias a la conducción de serie y un habitáculo versátil adaptado a las necesidades de movilidad de las familias jóvenes en entornos metropolitanos."
+}

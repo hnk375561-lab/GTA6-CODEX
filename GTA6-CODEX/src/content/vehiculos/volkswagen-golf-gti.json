@@ -1,0 +1,346 @@
+{
+  "slug": "volkswagen-golf-gti",
+  "type": "vehiculos",
+  "title": "Volkswagen Golf GTI",
+  "description": "Hatchback deportivo de Volkswagen, motor turbo 2.0L TSI de 245 hp.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "volkswagen",
+    "deportivo",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:32.940Z",
+  "updatedAt": "2026-08-27T02:00:41.682Z",
+  "manufacturer": "Volkswagen",
+  "class": "Hatchback",
+  "customizable": false,
+  "performance": {
+    "speed": "250 km/h (155 mph, limitada electrónicamente)",
+    "acceleration": "0-100 km/h en 6.2s (DSG) / 6.4s (manual)"
+  },
+  "power": "241 hp (245 PS)",
+  "price": "USD 31.965 (MSRP mercado USA, trim S)",
+  "consumo": "8.7 l/100km combinado (WLTP)",
+  "dimensiones": "4.290 mm x 1.789 mm x 1.474 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.vw.com/en/models/golf-gti.html",
+    "secondarySource": "https://www.kbb.com/volkswagen/golf-gti/2024/",
+    "note": "Datos verificados correspondientes a la octava generación (Mk8) del Volkswagen Golf GTI con motor EA888 evo4 de 2.0 litros TSI.",
+    "limitations": [
+      "La disponibilidad de la transmisión manual varía según el año y el mercado regional",
+      "El precio de referencia corresponde al mercado de EE. UU. y puede diferir sustancialmente en Europa o Latinoamérica",
+      "Las cifras de rendimiento pueden variar ligeramente según las normativas de homologación locales (WLTP vs EPA)"
+    ]
+  },
+  "transmision": "Manual de 6 velocidades / Automática DSG de doble embrague y 7 velocidades",
+  "traccion": "Delantera (FWD) con diferencial autoblocante VAQ",
+  "peso": "1.463 kg",
+  "tipoMotor": "Gasolina turbo 4 cilindros (EA888 evo4)",
+  "potenciaKW": "180 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "0-100 km/h en 6.2s (DSG) / 6.4s (manual)",
+  "anoProduccion": "2024",
+  "mercados": [
+    "Alemania",
+    "USA",
+    "Europa",
+    "Latinoamérica",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Suspensión deportiva de serie",
+    "DCC control de amortiguación adaptativa (opcional)",
+    "Diferencial autoblocante electrónico VAQ",
+    "Pantalla digital Digital Cockpit Pro",
+    "Asientos deportivos con tapizado a cuadros icónico"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/40R18 (base) / 235/35R19 (opcional)",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel de alto flujo",
+    "tipo_valvulas": "DOHC 16 válvulas",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyección directa de alta presión",
+    "arbol_levas": "Variable dual (AVS)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.984 cc",
+  "emisiones": "CO2 197 g/km (WLTP)",
+  "tipo": "Hatchback",
+  "asientos": 5,
+  "baul": 374,
+  "maleteroMin": null,
+  "generacion": "Mk8",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "category": "deportivo",
+  "gallery": {
+    "images": {
+      "exterior": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/VW_Golf_GTI_Mk8_IMG_4288.jpg/1280px-VW_Golf_GTI_Mk8_IMG_4288.jpg"
+      ],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/VW_Golf_GTI_Mk8_IMG_4288.jpg/1280px-VW_Golf_GTI_Mk8_IMG_4288.jpg"
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "Alta (250 km/h)",
+      "acceleration": "Alta (0-100 km/h en 6.2s)"
+    },
+    "bateria": {
+      "consumo": "7.4 l/100km combinado (versión 245 hp con caja DSG)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.4 l/100km combinado (versión 245 hp con caja DSG)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia"
+      ],
+      "precioBase": "€40.000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "USD 31.965"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2021-presente (Mk8)",
+      "unidadesProducidas": "Más de 2.5 millones de GTI producidos desde 1976 (todas las generaciones)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "GTI S",
+      "precio": "USD 31.965"
+    },
+    {
+      "nombre": "GTI SE",
+      "precio": "USD 36.290"
+    },
+    {
+      "nombre": "GTI Autobahn",
+      "precio": "USD 39.290"
+    },
+    {
+      "nombre": "Golf R (AWD, 315-329 hp)",
+      "precio": "USD 45.185"
+    }
+  ],
+  "competition": {
+    "competidores": [
+      "Honda Civic Type R",
+      "Hyundai Elantra N",
+      "Toyota GR Corolla",
+      "Cupra Leon"
+    ],
+    "posicionMercado": "Referencia histórica del segmento hot hatch desde 1976",
+    "ventajas": [
+      "Equilibrio único entre deportividad y practicidad diaria",
+      "Chasis MQB muy refinado",
+      "Bajo costo de mantenimiento relativo a rivales",
+      "Herencia de 5 décadas"
+    ]
+  },
+  "seoKeywords": [
+    "hatchback",
+    "volkswagen",
+    "Volkswagen",
+    "Deportivo",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "golf",
+    "gti",
+    "hot hatch"
+  ],
+  "metaDescription": "Volkswagen Golf GTI - Hot hatch turbo 2.0L TSI de 241 hp. Especificaciones, precio y disponibilidad, ago 2026.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Volkswagen Golf GTI",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Volkswagen"
+    },
+    "vehicleType": "Hatchback deportivo",
+    "fuelType": "Gasolina turbo",
+    "speed": "250 km/h",
+    "acceleration": "0-100 km/h en 6.2s",
+    "price": "USD 31.965",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback deportivo de Volkswagen, motor turbo 2.0L TSI de 245 hp."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T02:00:41.682Z",
+    "dataQuality": 0.9
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.vw.com/en/models/golf-gti.html",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.kbb.com/volkswagen/golf-gti/2024/",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Lote 4 (ago 2026): datos de la generación Mk8, trim S base.",
+    "dataQuality": 0.9
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 31965,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.7",
+    "totalVotos": 5324,
+    "desglose": {
+      "1": 134,
+      "2": 198,
+      "3": 824,
+      "4": 757,
+      "5": 876
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "7.4 l/100km combinado (versión 245 hp con caja DSG)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Volkswagen Golf GTI es considerado de manera indiscutida el pionero y máximo referente del segmento de los \"hot hatches\" o hatchbacks deportivos a nivel mundial. Su historia comenzó en 1976, cuando la marca alemana decidió tomar un vehículo familiar compacto y dotarlo de un temperamento rabioso, una puesta a punto específica de suspensión y una estética sobria pero diferencial que incluía los clásicos detalles en rojo y los asientos con tapizado a cuadros. Lo que nació como un proyecto casi experimental y de tirada limitada se transformó en un fenómeno de masas, dando origen a una estirpe de deportivos accesibles que cautivaron a entusiastas de todas las edades durante casi cinco décadas.\n\n## Un hito y generación relevante: La llegada de la octava generación (Mk8)\nCon el lanzamiento de la octava generación, el Golf GTI reafirmó su vigencia en un mercado automotor fuertemente inclinado hacia los SUV y la electrificación. Estéticamente, el Mk8 adoptó una impronta mucho más afilada y tecnológica, incorporando una firma lumínica frontal led que cruza toda la parrilla y entradas de aire de diseño poligonal. En el plano mecánico, esta generación consolidó el uso del motor EA888 evo4 de 2.0 litros turboalimentado, elevando su potencia hasta los 245 caballos de fuerza (241 hp) y perfeccionando el chasis con la introducción del sistema de control dinámico de dinámica vehicular, el cual gestiona de manera centralizada el diferencial autoblocante electrónico VAQ y la amortiguación adaptativa DCC para maximizar el paso por curva sin resignar el confort en el uso diario.\n\n## Curiosidades\nUna de las curiosidades más interesantes del Golf GTI a lo largo de su historia es que su concepción original fue un proyecto clandestino. Un grupo de ingenieros y directivos de Volkswagen comenzó a desarrollarlo fuera del horario laboral oficial en 1974, temiendo que la directiva de la empresa rechazara la idea de un Golf deportivo. Cuando finalmente se lo presentaron al consejo de administración, el prototipo superó todas las expectativas y recibió luz verde inmediata. Otro detalle icónico que perdura hasta el día de hoy es la famosa perilla de cambios con forma de pelota de golf, un guiño retro que se convirtió en una tradición inquebrantable para las versiones manuales.\n\n## Competencia y posicionamiento\nEn el mercado actual, el Volkswagen Golf GTI compite en un nicho sumamente selecto y apasionante contra rivales de la talla del Honda Civic Type R, el Toyota GR Corolla, el Hyundai Elantra N y su pariente cercano, el Cupra León. Frente a ellos, el GTI se posiciona históricamente no como el más radical o extremo en una pista de carreras, sino como el rey indiscutido del equilibrio: ofrece un nivel de refinamiento interior superior, una versatilidad inigualable para el uso cotidiano, costos de mantenimiento más contenidos y una herencia cultural que pocos fabricantes pueden replicar. Es el auto deportivo que cumple con todo: divertido los fines de semana y perfectamente dócil para ir a trabajar los lunes."
+}

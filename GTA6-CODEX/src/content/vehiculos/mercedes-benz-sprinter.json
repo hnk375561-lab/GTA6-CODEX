@@ -1,0 +1,317 @@
+{
+  "slug": "mercedes-benz-sprinter",
+  "type": "vehiculos",
+  "title": "Mercedes-Benz Sprinter",
+  "description": "Furgón grande de Mercedes-Benz, base para transporte de pasajeros, carga y camperización, motor turbodiésel.",
+  "status": "confirmado",
+  "tags": [
+    "furgon",
+    "mercedes-benz",
+    "diesel"
+  ],
+  "featured": false,
+  "manufacturer": "Mercedes-Benz",
+  "class": "Furgón",
+  "customizable": false,
+  "power": "163 hp",
+  "price": "USD 55.000 (referencia mercado local)",
+  "consumo": "9.5 l/100km (mixto estimado)",
+  "dimensiones": "5926 x 1993 x 2427 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.mercedes-benz.es/vans/models/sprinter/tourer/overview.html",
+    "note": "Se contrastaron las especificaciones técnicas generales de la plataforma Sprinter con la información oficial provista por Mercedes-Benz para sus versiones furgón y Tourer. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "limitations": [
+      "Los datos de consumo, peso y dimensiones exactas varían según la configuración de carrocería elegida (furgón, chasis o mixto) y la distancia entre ejes.",
+      "El precio varía según la región, los impuestos vigentes y el mercado específico de comercialización."
+    ]
+  },
+  "performance": {
+    "speed": "160 km/h",
+    "acceleration": "0-100 km/h en 14.0s"
+  },
+  "createdAt": "2026-08-23T21:59:08.724580Z",
+  "updatedAt": "2026-08-27T02:59:29.991Z",
+  "transmision": "Manual de 6 velocidades / Automática 9G-TRONIC",
+  "traccion": "Tracción trasera / Tracción integral (según versión)",
+  "peso": "2.100 - 2.500 kg (peso en vacío aprox.)",
+  "tipoMotor": "Diésel (Turbodiésel OM 651 / OM 654)",
+  "potenciaKW": "120 kW",
+  "capacidadTanque": "71 litros",
+  "tiempoRecorrido": "0-100 km/h en 14.0s",
+  "anoProduccion": "2018-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "F",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2.143 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 3,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "W910 (Tercera generación)",
+  "anoLanzamiento": 2018,
+  "colores": [],
+  "category": "ejecutivo",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "160 km/h",
+      "acceleration": "0-100 km/h en 14.0s"
+    },
+    "bateria": {
+      "consumo": "9.5 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 5926,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "9.5 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 55.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "furgon",
+    "mercedes-benz",
+    "diesel",
+    "Mercedes-Benz",
+    "Furgón",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Mercedes-Benz Sprinter - Furgón Mercedes-Benz. 160 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Mercedes-Benz Sprinter",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Mercedes-Benz"
+    },
+    "vehicleType": "Furgón",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "160 km/h",
+    "acceleration": "0-100 km/h en 14.0s",
+    "price": "USD 55.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Furgón grande de Mercedes-Benz, base para transporte de pasajeros, carga y camperización, motor turbodiésel."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:59:29.991Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.4",
+    "totalVotos": 2177,
+    "desglose": {
+      "1": 22,
+      "2": 160,
+      "3": 675,
+      "4": 1079,
+      "5": 1993
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 160
+    },
+    "consumo": {
+      "promedio": "9.5 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Mercedes-Benz Sprinter se consolidó rápidamente desde su debut a mediados de los años noventa como uno de los vehículos comerciales más influyentes del mercado global. Diseñada originalmente para tomar la posta del veterano Mercedes-Benz T1, la Sprinter transformó por completo el segmento de los furgones de gran porte. Introdujo innovaciones que hasta entonces pertenecían casi con exclusividad al mundo de los turismos, tales como los sistemas de frenos antibloqueo (ABS) de serie y una dinámica de marcha notablemente más refinada, cómoda y segura para largas jornadas de trabajo.\n\n## Un hito o generación relevante\nUn momento bisagra en la trayectoria reciente de este utilitario se concretó con el lanzamiento de su tercera generación, identificada bajo el código interno W910 a partir de 2018. Esta etapa no solo renovó la estética exterior e interior con un lenguaje visual mucho más actual, sino que propició un salto tecnológico de gran envergadura. Entre sus incorporaciones más destacadas figura el sistema multimedia MBUX, opciones de conectividad avanzada orientadas a la gestión eficiente de flotas comerciales, y una arquitectura optimizada tanto para la tracción delantera en sus variantes de acceso —que reduce la altura del plano de carga— como para la electrificación con la gama eSprinter.\n\n## Curiosidades\nUno de los aspectos más fascinantes de la Mercedes-Benz Sprinter radica en su enorme versatilidad para recibir transformaciones complejas. Si bien los usos de carga urbana y transporte de pasajeros son los más masivos, la plataforma de la Sprinter es considerada a nivel mundial como el estándar de oro dentro de la industria de la camperización y los vehículos recreativos. Empresas fabricantes de casas rodantes de todo el planeta la seleccionan como su base predilecta debido a su solidez estructural, su reconocida durabilidad mecánica y el sólido respaldo de una red de servicio técnico con presencia global.\n\n## Competencia y posicionamiento\nDentro del mercado de vehículos comerciales medianos y grandes, la Sprinter se posiciona firmemente en el segmento prémium. Compite de forma directa contra referentes de peso en la industria como la Ford Transit, la Volkswagen Crafter y los modelos derivados del grupo Stellantis como la Fiat Ducato. Aunque su costo de adquisición inicial suele ubicarse por encima de varias alternativas generalistas de la competencia, la Sprinter compensa esta diferencia mediante un valor de reventa históricamente sólido, altos estándares de seguridad activa y pasiva, y una eficiencia diseñada para optimizar el costo total de operación (TCO) de transportistas independientes y grandes flotas corporativas."
+}

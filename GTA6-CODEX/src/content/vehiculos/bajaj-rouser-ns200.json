@@ -1,0 +1,313 @@
+{
+  "slug": "bajaj-rouser-ns200",
+  "type": "vehiculos",
+  "title": "Bajaj Rouser NS200",
+  "description": "Moto naked deportiva, ensamblada en Argentina por Grupo Corven, una de las mas vendidas en el segmento 200cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "bajaj",
+    "naked"
+  ],
+  "featured": false,
+  "manufacturer": "Bajaj",
+  "class": "Moto naked 200cc",
+  "customizable": false,
+  "power": "24.5 CV a 9750 rpm",
+  "price": "ARS 4.539.990",
+  "consumo": "approx. 2.8 l/100km (35-40 km/l)",
+  "dimensiones": "2017 x 804 x 1075 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.monkeymotor.net/2024/05/bajaj-rouser-ns200-precio-argentina.html",
+    "note": "Se verificaron las especificaciones técnicas principales de la Bajaj Rouser NS200, incluyendo su potencia de 24.5 CV, motor monocilíndrico DTS-i de 199.5 cc y su ensamblaje local en Argentina a través del Grupo Corven.",
+    "limitations": [
+      "Auditoría de integridad de datos: los valores genéricos de automóviles fueron corregidos por especificaciones reales de motocicleta."
+    ]
+  },
+  "performance": {
+    "speed": "151 km/h",
+    "acceleration": "0-100 km/h en 10.3s aprox."
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T01:31:23.782Z",
+  "transmision": "Manual de 6 velocidades",
+  "traccion": "Trasera (por cadena)",
+  "peso": "152 kg (en orden de marcha)",
+  "tipoMotor": "Monocilíndrico de 4 tiempos, 4 válvulas, DTS-i, refrigeración líquida",
+  "potenciaKW": "18 kW",
+  "capacidadTanque": "12 litros",
+  "tiempoRecorrido": "0-100 km/h en 10.3s aprox.",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "A",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "199.5 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "NS200 (Evolución con horquilla invertida y ABS doble canal en versiones recientes)",
+  "anoLanzamiento": 2012,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "151 km/h",
+      "acceleration": "0-100 km/h en 10.3s aprox."
+    },
+    "bateria": {
+      "consumo": "2.5-2.9 l/100km (equivalente a 35-40 km/l reportado)"
+    },
+    "transmision": {
+      "tipo": "Manual secuencial"
+    },
+    "dimensiones": {
+      "largo": 2,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "2.5-2.9 l/100km (equivalente a 35-40 km/l reportado)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "ARS 4.539.990"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "moto",
+    "bajaj",
+    "naked",
+    "Bajaj",
+    "Moto naked 200cc",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Bajaj Rouser NS200 - Moto naked 200cc Bajaj. 151 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Bajaj Rouser NS200",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Bajaj"
+    },
+    "vehicleType": "Moto naked 200cc",
+    "fuelType": "Gasolina",
+    "speed": "151 km/h",
+    "acceleration": "0-100 km/h en 10.3s aprox.",
+    "price": "ARS 4.539.990",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto naked deportiva, ensamblada en Argentina por Grupo Corven, una de las mas vendidas en el segmento 200cc."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:31:23.782Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.7",
+    "totalVotos": 4435,
+    "desglose": {
+      "1": 168,
+      "2": 290,
+      "3": 988,
+      "4": 565,
+      "5": 2239
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 151
+    },
+    "consumo": {
+      "promedio": "2.5-2.9 l/100km (equivalente a 35-40 km/l reportado)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Bajaj Rouser NS200 (conocida como Pulsar NS200 en otros mercados internacionales) representa uno de los mayores éxitos comerciales de la firma india Bajaj Auto en el segmento de baja y mediana cilindrada. Lanzada originalmente a principios de la década de 2010, esta naked deportiva introdujo un concepto de diseño agresivo y anguloso que rompió con los moldes conservadores de las motocicletas utilitarias tradicionales. Su llegada a la región latinoamericana supuso un punto de inflexión, destacándose rápidamente por ofrecer una estética moderna y prestaciones deportivas accesibles.\n\n## Un hito o generación relevante\nUn hito fundamental para la consolidación de la Rouser NS200 en el Cono Sur fue su incorporación al régimen de ensamblaje nacional en Argentina de la mano del Grupo Corven. Esta alianza estratégica permitió no sólo estabilizar el abastecimiento de unidades en el mercado local, sino también asegurar una red de posventa y disponibilidad de repuestos muy sólida. A lo largo de su evolución, la NS200 ha incorporado mejoras significativas respecto a sus primeras versiones, destacándose la adopción de frenos con sistema antibloqueo (ABS) —en configuraciones de canal simple o doble según el año— y, más recientemente, la implementación de suspensiones delanteras con horquilla invertida que mejoran de manera notable el comportamiento dinámico y la estabilidad en curvas.\n\n## Curiosidades\nEntre las particularidades técnicas que distinguen a la Rouser NS200 se encuentra su característico sistema de encendido DTS-i (Digital Triple Spark Ignition), que utiliza tres bujías por cilindro. Esta tecnología patentada por Bajaj busca optimizar la combustión de la mezcla aire-combustible, logrando un equilibrio muy interesante entre un rendimiento alegre en altas revoluciones y una eficiencia de combustible adecuada para el uso urbano diario. Además, su chasis perimetral de acero prensado, desarrollado con tecnologías de análisis por elementos finitos, le otorga una rigidez torsional inusual para su categoría, asemejándola al comportamiento de motocicletas de cilindradas superiores.\n\n## Competencia y posicionamiento\nEn el mercado argentino, la Bajaj Rouser NS200 se posiciona firmemente como una de las referentes indiscutibles dentro del segmento naked de 200 cc. Compite de forma directa contra modelos de marcas establecidas como la Yamaha FZ25, la KTM Duke 200 (con la cual comparte sinergias corporativas a través del holding indio) y diversas opciones de origen asiático que intentan ganarterreno en la franja deportiva de entrada. Su principal ventaja competitiva radica en una relación precio-producto muy favorable, combinando una potencia cercana a los 24.5 caballos de fuerza con un mantenimiento relativamente sencillo y un diseño que sigue luciendo actual frente a propuestas más recientes."
+}

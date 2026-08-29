@@ -1,0 +1,225 @@
+{
+  "slug": "renault-megane-e-tech",
+  "type": "vehiculos",
+  "title": "Renault Mégane E-Tech",
+  "description": "Versión 100% eléctrica del Mégane, sobre plataforma CMF-EV.",
+  "status": "confirmado",
+  "tags": [
+    "electrico",
+    "renault"
+  ],
+  "featured": false,
+  "manufacturer": "Renault",
+  "class": "Hatchback eléctrico",
+  "customizable": false,
+  "power": "220 hp",
+  "price": "EUR 39.000 (referencia mercado europeo)",
+  "consumo": "15.5 kWh/100 km (combinado)",
+  "dimensiones": "4.200 mm largo x 1.768 mm ancho x 1.505 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.renault.com",
+    "note": "Se actualizaron los datos técnicos de referencia del Renault Mégane E-Tech basándose en las especificaciones oficiales de la plataforma CMF-EV para la versión de mayor potencia (EV60 de 220 hp). Se corrigieron dimensiones, peso, consumo eléctrico y capacidad de baúl.",
+    "limitations": [
+      "El precio es orientativo para el mercado europeo y puede variar según el país, impuestos y subsidios vigentes.",
+      "Los datos de autonomía y consumo pueden variar según el ciclo de homologación (WLTP) y las condiciones de conducción."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:25:59.684Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Delantera",
+  "peso": "1.636 kg",
+  "tipoMotor": "Eléctrico síncrono de rotor bobinado",
+  "potenciaKW": "160 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "7.4s",
+  "anoProduccion": "2022-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 389,
+  "maleteroMin": null,
+  "generacion": "1ra generación (E-Tech)",
+  "anoLanzamiento": 2022,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Automática de relación única (motor eléctrico)"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 39.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "electrico",
+    "renault",
+    "Renault",
+    "Hatchback eléctrico",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Renault Mégane E-Tech - Hatchback eléctrico Renault. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Renault Mégane E-Tech",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Renault"
+    },
+    "vehicleType": "Hatchback eléctrico",
+    "fuelType": "Eléctrico",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "EUR 39.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Versión 100% eléctrica del Mégane, sobre plataforma CMF-EV."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:25:59.684Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Renault Mégane E-Tech marca un punto de inflexión radical en la historia de uno de los hatchbacks más exitosos de la marca francesa. Lejos de ser una simple adaptación eléctrica de la generación anterior con motor de combustión interna, este modelo fue concebido desde una hoja en blanco como un vehículo 100% eléctrico. Su desarrollo se apoyó en la alianza estratégica y el uso de la avanzada plataforma CMF-EV (Common Module Family - Electric Vehicle), diseñada específicamente para albergar sistemas de propulsión eléctricos y maximizar el espacio interior sin comprometer la dinámica de conducción.\n\n## Un hito o generación relevante\nEl gran hito de este vehículo es la introducción de la arquitectura CMF-EV en un vehículo de segmento C de volumen masivo para Renault. Esto permitió lograr una de las baterías más finas del mercado en su momento (con un espesor de apenas 110 mm), lo que reduce considerablemente el centro de gravedad del vehículo en comparación con un Mégane tradicional. Asimismo, este modelo estrenó el sistema multimedia OpenR Link desarrollado en colaboración con Google, integrando de manera nativa aplicaciones como Google Maps, Google Assistant y Google Play directamente en el torpedo digital en forma de L invertida, redefiniendo la experiencia de conectividad a bordo.\n\n## Curiosidades\nUna de las características más interesantes del Renault Mégane E-Tech es el cuidado obsesivo que se puso en la aerodinámica y la acústica. Para optimizar la autonomía en ruta, cuenta con tiradores de puertas enrasados que se despliegan automáticamente al acercarse con la llave. Además, para compensar la ausencia de ruido del motor térmico y evitar la fatiga en viajes largos, los ingenieros de Renault incorporaron una tecnología de insonorización patentada que utiliza una capa especial de espuma acústica entre el piso del habitáculo y la batería, un desarrollo directamente heredado de la experiencia de la marca en la Fórmula E.\n\n## Competencia y posicionamiento\nEn el mercado global, el Renault Mégane E-Tech compite en el altamente disputado segmento de los crossovers y hatchbacks medianos eléctricos. Entre sus rivales directos se encuentran el Volkswagen ID.3, el Cupra Born y, en ciertas franjas de precio, variantes de entrada de modelos como el Tesla Model 3 o el MG4 Electric. Su posicionamiento se inclina hacia un enfoque semi-premium, destacándose frente a sus competidores por un diseño exterior muy audaz que combina líneas de SUV con proporciones de hatchback deportivo, una calidad de terminación interior sobresaliente y un sistema de infoentretenimiento de referencia en la industria automotriz actual."
+}

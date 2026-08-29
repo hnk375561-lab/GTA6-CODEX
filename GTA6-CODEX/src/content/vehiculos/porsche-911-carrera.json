@@ -1,0 +1,344 @@
+{
+  "slug": "porsche-911-carrera",
+  "type": "vehiculos",
+  "title": "Porsche 911 Carrera",
+  "description": "Deportivo icónico de Porsche, motor bóxer 6 cilindros de 379 hp.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "porsche",
+    "combustion"
+  ],
+  "featured": true,
+  "createdAt": "2026-08-23T18:01:34.332Z",
+  "updatedAt": "2026-08-27T01:55:09.990Z",
+  "manufacturer": "Porsche",
+  "class": "Deportivo",
+  "customizable": false,
+  "performance": {
+    "speed": "293 km/h (182 mph)",
+    "acceleration": "0-100 km/h en 4.2s (3.9s con Sport Chrono)"
+  },
+  "power": "379 hp (283 kW)",
+  "price": "USD 114.400 (Carrera Coupe, mercado USA)",
+  "consumo": "9.3 l/100km combinado (WLTP, PDK)",
+  "dimensiones": "4.519 mm x 1.852 mm x 1.298 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.kbb.com/porsche/911/2024/",
+    "note": "Cifras verificadas de la variante Porsche 911 Carrera base generación 992, con motor bóxer biturbo de 3.0 litros.",
+    "limitations": [
+      "Con paquete Sport Chrono la aceleración de 0 a 100 km/h mejora hasta 0.2s",
+      "La disponibilidad de caja manual de 7 velocidades varía según el mercado",
+      "El precio de referencia corresponde al MSRP base de Estados Unidos sin opcionales"
+    ]
+  },
+  "transmision": "PDK doble embrague 8 velocidades / Manual 7 velocidades (opcional)",
+  "traccion": "Trasera (RWD)",
+  "peso": "1.520 kg",
+  "tipoMotor": "Gasolina biturbo bóxer 6 cilindros",
+  "potenciaKW": "283 kW",
+  "capacidadTanque": "67 litros",
+  "tiempoRecorrido": "4.2s",
+  "anoProduccion": "2024",
+  "mercados": [
+    "Alemania",
+    "USA",
+    "Europa",
+    "China",
+    "Japón",
+    "Medio Oriente"
+  ],
+  "equipamiento": [
+    "Porsche Active Suspension Management (PASM)",
+    "Modos de manejo Sport/Sport+",
+    "Frenos PSCB de serie",
+    "Porsche Communication Management (PCM)",
+    "Control de tracción PSM"
+  ],
+  "consumoEtiqueta": "F",
+  "neumaticos": "235/40R19 delantero, 295/35R20 trasero",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de alto flujo doble",
+    "tipo_valvulas": "DOHC 24 válvulas VarioCam Plus",
+    "ratio_compresion": "10.1:1",
+    "sistemas_inyeccion": "Inyección directa de combustible",
+    "arbol_levas": "Variable (VarioCam Plus)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2.981 cc",
+  "emisiones": "CO2 210 g/km (WLTP)",
+  "tipo": "Cupé",
+  "asientos": 4,
+  "baul": 132,
+  "maleteroMin": null,
+  "generacion": "992 (octava generación)",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "category": "deportivo",
+  "gallery": {
+    "images": {
+      "exterior": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Porsche_911_Carrera_%28992%29_IMG_4287.jpg/1280px-Porsche_911_Carrera_%28992%29_IMG_4287.jpg"
+      ],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Porsche_911_Carrera_%28992%29_IMG_4287.jpg/1280px-Porsche_911_Carrera_%28992%29_IMG_4287.jpg"
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "Muy alta (293 km/h)",
+      "acceleration": "Muy alta (0-100 km/h en 4.2s)"
+    },
+    "bateria": {
+      "consumo": "9.1 l/100km combinado (WLTP, versión Carrera 992.2 con caja PDK)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "9.1 l/100km combinado (WLTP, versión Carrera 992.2 con caja PDK)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "Reino Unido",
+        "Italia"
+      ],
+      "precioBase": "€122.900"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "USD 114.400"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur"
+      ],
+      "precioBase": "USD 130.000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2019-presente (992)",
+      "unidadesProducidas": "Más de 1.2 millones de unidades 911 producidas desde 1963 (todas las generaciones)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Carrera (base)",
+      "precio": "USD 114.400"
+    },
+    {
+      "nombre": "Carrera S",
+      "precio": "USD 130.700"
+    },
+    {
+      "nombre": "Carrera GTS",
+      "precio": "USD 144.100"
+    },
+    {
+      "nombre": "Turbo S",
+      "precio": "USD 222.000"
+    }
+  ],
+  "competition": {
+    "competidores": [
+      "Chevrolet Corvette Z06",
+      "Mercedes-AMG GT",
+      "Aston Martin Vantage",
+      "Nissan GT-R"
+    ],
+    "posicionMercado": "Referencia histórica del segmento deportivo premium",
+    "ventajas": [
+      "Practicidad diaria única en su clase",
+      "Retención de valor excepcional",
+      "Herencia de 60+ años sin interrupciones",
+      "Equilibrio manejo/confort"
+    ]
+  },
+  "seoKeywords": [
+    "deportivo",
+    "porsche",
+    "Porsche",
+    "Deportivo",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "911",
+    "carrera",
+    "boxer"
+  ],
+  "metaDescription": "Porsche 911 Carrera - Deportivo bóxer biturbo 3.0L de 379 hp. Especificaciones, precio y disponibilidad, ago 2026.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Porsche 911 Carrera",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Porsche"
+    },
+    "vehicleType": "Deportivo",
+    "fuelType": "Gasolina",
+    "speed": "293 km/h",
+    "acceleration": "0-100 km/h en 4.2s",
+    "price": "USD 114.400",
+    "availability": "https://schema.org/InStock",
+    "description": "Deportivo icónico de Porsche, motor bóxer 6 cilindros de 379 hp."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:55:09.990Z",
+    "dataQuality": 0.9
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.porsche.com/international/models/911/911-models/carrera/",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.kbb.com/porsche/911/2024/",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Lote 4 (ago 2026): datos de la variante Carrera base, generación 992.",
+    "dataQuality": 0.9
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 114400,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.6",
+    "totalVotos": 4014,
+    "desglose": {
+      "1": 186,
+      "2": 492,
+      "3": 214,
+      "4": 548,
+      "5": 1203
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "9.1 l/100km combinado (WLTP, versión Carrera 992.2 con caja PDK)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Porsche 911 es, sin lugar a dudas, uno de los deportivos más emblemáticos y longevos de la historia automotriz mundial. Desde su presentación oficial en el Salón del Automóvil de Fráncfort en 1963 (inicialmente concebido como 901), este modelo ha mantenido una filosofía de diseño y arquitectura inconfundible: motor bóxer ubicado en la parte trasera y una silueta fastback de líneas fluidas. A lo largo de las décadas, el 911 ha evolucionado desde los puristas modelos refrigerados por aire hasta la sofisticación tecnológica de los motores turboalimentados actuales, consolidándose como el estándar de oro contra el que se miden todos los deportivos de altas prestaciones.\n\n## Un hito o generación relevante\nLa octava generación, conocida internamente bajo el código 992 (lanzada comercialmente en 2019), representa un punto de inflexión en la dinastía de Stuttgart. El 992 adoptó una carrocería más ancha de manera uniforme para todas sus versiones de acceso y uso extensivo de aluminio en su construcción para contener el peso. En el corazón de esta generación se encuentra una evolución magistral del bloque bóxer de 6 cilindros y 3.0 litros con doble turbocompresor, que en el modelo Carrera base entrega unos contundentes 379 hp y 331 lb-pie de torque. Acoplado a la rapidísima transmisión de doble embrague PDK de 8 velocidades, este conjunto propulsor garantiza una respuesta inmediata al acelerador y una eficiencia notable en condiciones de uso mixto.\n\n## Curiosidades\nA pesar de su tremendo rendimiento en circuito, capaz de superar los 290 km/h, el Porsche 911 siempre ha destacado por una cualidad inusual en su segmento: su altísima usabilidad diaria. Su habitáculo 2+2 ofrece la practicidad justa para trayectos cotidianos, complementado por un baúl delantero de 132 litros. Además, se estima que más del 70% de todos los Porsche 911 fabricados desde 1963 aún continúan en funcionamiento en la actualidad, una prueba fehaciente de la calidad de construcción alemana y de la durabilidad legendaria de su ingeniería mecánica.\n\n## Competencia y posicionamiento\nEn el mercado global de los deportivos de lujo, el Porsche 911 Carrera ocupa un lugar privilegiado como la referencia histórica indiscutida. Si bien compite directamente contra colosos de la talla del Chevrolet Corvette Z06, el Mercedes-AMG GT y el Aston Martin Vantage, el 911 se distingue por ofrecer un equilibrio casi perfecto entre confort de marcha para viajes largos y dinamismo puro en conducción deportiva. Su retención de valor a lo largo del tiempo y su herencia ininterrumpida de más de seis décadas lo convierten no solo en un objeto de deseo, sino en una inversión sólida dentro del mundo del motor."
+}

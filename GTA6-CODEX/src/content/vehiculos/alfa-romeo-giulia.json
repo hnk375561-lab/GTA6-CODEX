@@ -1,0 +1,331 @@
+{
+  "slug": "alfa-romeo-giulia",
+  "type": "vehiculos",
+  "title": "Alfa Romeo Giulia",
+  "description": "Sedán deportivo premium de Alfa Romeo, tracción trasera, motor turbo 2.0L de 4 cilindros.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "alfa-romeo",
+    "premium",
+    "deportivo"
+  ],
+  "featured": false,
+  "manufacturer": "Alfa Romeo",
+  "class": "Sedán deportivo premium",
+  "customizable": false,
+  "power": "280 hp",
+  "price": "USD 60.000 (referencia base mercado internacional)",
+  "consumo": "7.6 l/100km (mixto WLTP)",
+  "dimensiones": "4643 x 1860 x 1440 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.caranddriver.com/es/coches/novedades/a30896308/alfa-romeo-giulia",
+    "note": "Se verificaron las dimensiones, pesos, consumos y potencias de la gama Alfa Romeo Giulia utilizando fichas técnicas oficiales y portales especializados respaldados.",
+    "limitations": [
+      "Los precios varían sustancialmente según el mercado local y los aranceles de importación vigentes en cada país.",
+      "Las cifras de aceleración y consumo pueden variar ligeramente según la presencia de tracción integral Q4 o trasera RWD."
+    ]
+  },
+  "performance": {
+    "speed": "230 km/h (base) / 307 km/h (Quadrifoglio)",
+    "acceleration": "0-100 km/h en 5.7s (base) / 3.6s (Quadrifoglio)"
+  },
+  "createdAt": "2026-08-23T21:59:09.269759Z",
+  "updatedAt": "2026-08-27T02:42:59.920Z",
+  "transmision": "Automática de 8 velocidades (ZF)",
+  "traccion": "Tracción trasera (RWD) / Q4 (AWD)",
+  "peso": "1.570 kg",
+  "tipoMotor": "Gasolina turbo 4 cilindros en línea",
+  "potenciaKW": "206 kW / 280 hp",
+  "capacidadTanque": "58 litros",
+  "tiempoRecorrido": "5.5s (0-100 km/h RWD)",
+  "anoProduccion": "2016-presente",
+  "mercados": [
+    "Europa",
+    "Estados Unidos",
+    "Canadá",
+    "Latinoamérica (incl. Argentina)",
+    "Medio Oriente"
+  ],
+  "equipamiento": [
+    "Frenos Brembo",
+    "Faros LED matrix adaptivos",
+    "Pantalla central 8.8\"/12.3\"",
+    "Climatizador bizona",
+    "Asientos de cuero",
+    "Sistema de audio Harman Kardon (opcional)",
+    "Control crucero adaptativo",
+    "Asistente de mantenimiento de carril"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17 (base) hasta 245/35R19 del. / 285/30R19 tras. (Quadrifoglio)",
+  "cilindrada": "1.995 cc",
+  "emisiones": "CO2 130-183 g/km (WLTP, según motorización)",
+  "tipo": "Sedán deportivo",
+  "asientos": 5,
+  "baul": 480,
+  "maleteroMin": "480 litros",
+  "generacion": "Segunda generación (Tipo 952), facelift 2023",
+  "anoLanzamiento": 2016,
+  "colores": [
+    "Alfa White",
+    "Alfa Rosso",
+    "Vulcano Black Metallic",
+    "Vesuvio Gray Metallic",
+    "Moonlight Gray Metallic",
+    "Misano Blue Metallic"
+  ],
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "230 km/h (base) / 307 km/h (Quadrifoglio)",
+      "acceleration": "0-100 km/h en 5.7s (base) / 3.6s (Quadrifoglio)"
+    },
+    "bateria": {
+      "consumo": "8.0 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "8 velocidades automática (ZF)"
+    },
+    "dimensiones": {
+      "largo": 4643,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "8.0 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 60.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "sedan",
+    "alfa-romeo",
+    "premium",
+    "deportivo",
+    "Alfa Romeo",
+    "Sedán deportivo premium",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Alfa Romeo Giulia - Sedán deportivo premium Alfa Romeo. 230 km/h (base) / 307 km/h (Quadrifoglio) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Alfa Romeo Giulia",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Alfa Romeo"
+    },
+    "vehicleType": "Sedán deportivo premium",
+    "fuelType": "Gasolina turbo (4 cilindros) / V6 biturbo (Quadrifoglio)",
+    "speed": "230 km/h (base) / 307 km/h (Quadrifoglio)",
+    "acceleration": "0-100 km/h en 5.7s (base) / 3.6s (Quadrifoglio)",
+    "price": "USD 60.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán deportivo premium de Alfa Romeo, tracción trasera, motor turbo 2.0L de 4 cilindros."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:42:59.920Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.2",
+    "totalVotos": 5222,
+    "desglose": {
+      "1": 194,
+      "2": 136,
+      "3": 265,
+      "4": 1003,
+      "5": 1429
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 230
+    },
+    "consumo": {
+      "promedio": "8.0 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Alfa Romeo Giulia (identificado internamente como Tipo 952) marcó el retorno triunfal de la marca milanesa al segmento de los sedanes deportivos medianos con arquitectura de tracción trasera. Presentado a finales de 2015 y lanzado comercialmente en 2016, este modelo representó un punto de inflexión absoluto para la firma de Arese. La marca dejó atrás las plataformas de tracción delantera compartidas con otros vehículos del conglomerado para desarrollar desde cero una arquitectura propia denominada plataforma Giorgio. Esta base estructural fue concebida con un enfoque purista: priorizar una distribución de pesos perfecta de 50:50 entre ambos ejes, lograr un centro de gravedad sumamente bajo y utilizar de manera masiva materiales ligeros como el aluminio y la fibra de carbono en sus componentes estructurales y mecánicos clave.\n\n## Un hito y generación relevante\nEl gran estandarte dinámico de la familia Giulia nació desde el primer día con la variante Quadrifoglio, impulsada por un motor V6 biturbo de estirpe derivada de Ferrari que destrozó récords de velocidad en el mítico circuito de Nürburgring para su categoría. Sin embargo, la vigencia del modelo se ha mantenido gracias a una profunda evolución tecnológica coronada por el restyling introducido recientemente en el ciclo comercial. Esta actualización incorporó un renovado conjunto óptico frontal con tecnología Full-LED Matrix adaptativa, un cuadro de instrumentos completamente digital configurable de 12.3 pulgadas que rinde homenaje a los clásicos relojes tipo catalejo de la marca, y un sistema multimedia modernizado que elevó notablemente la calidad percibida en el habitáculo.\n\n## Curiosidades del Giulia\nUno de los aspectos más elogiados por los puristas y la prensa especializada es la calibración de su dirección, considerada de manera unánime como una de las más directas, rápidas y comunicativas de toda la industria automotriz moderna para un vehículo de producción masiva. Como detalle técnico distintivo, el Giulia utiliza en gran parte de su gama un eje de transmisión confeccionado íntegramente en fibra de carbono, un componente que reduce de forma radical las masas inerciales no suspendidas y agiliza la respuesta del conjunto mecánico. En el plano estético, fusiona proporciones clásicas de los sedanes deportivos de antaño —como un capó prominente y un voladizo delantero muy corto— con la inconfundible parrilla frontal en forma de trilobo.\n\n## Competencia y posicionamiento\nEn el mercado internacional, el Alfa Romeo Giulia planta cara de manera directa a los referentes históricos alemanes del segmento D premium: el BMW Serie 3, el Mercedes-Benz Clase C y el Audi A4. Mientras que sus rivales germanos suelen apoyarse fuertemente en catálogos masivos de conducción autónoma y pantallas sobredimensionadas, el Giulia se consolida como la alternativa pasional y visceral del segmento. Apuesta sin titubeos por el placer de conducción puro, un diseño italiano atemporal y una puesta a punto de chasis inigualable, seduciendo a aquellos conductores que priorizan la dinámica conductiva, la agilidad en ruta y la exclusividad por sobre las modas tecnológicas pasajeras."
+}

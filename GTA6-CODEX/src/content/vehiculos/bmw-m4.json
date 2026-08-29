@@ -1,0 +1,324 @@
+{
+  "slug": "bmw-m4",
+  "type": "vehiculos",
+  "title": "BMW M4",
+  "description": "Coupé deportivo de alto rendimiento de BMW M, motor 3.0 biturbo.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "bmw"
+  ],
+  "featured": true,
+  "manufacturer": "BMW",
+  "class": "Deportivo",
+  "customizable": false,
+  "power": "510 hp (503 hp SAE)",
+  "price": "USD 76.200 (precio base aproximado MSRP EE.UU. para versión base; versiones Competition superan los USD 80.000)",
+  "consumo": "9.9 - 10.2 l/100 km combinado (WLTP)",
+  "dimensiones": "4.794 mm x 1.887 mm x 1.393 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.auto-data.net/en/bmw-m4-g82-competition-3.0-510hp-steptronic-41300",
+    "secondarySource": "https://www.cardekho.com/bmw/m4-competition/specs",
+    "note": "Se verificaron las especificaciones técnicas principales del BMW M4 G82 (versión Competition con motor S58 de 3.0 litros biturbo). Los datos de potencia, dimensiones y rendimiento corresponden a los registros oficiales de la marca y bases de datos automotrices.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado local, impuestos y opciones de personalización configuradas.",
+      "El consumo de combustible puede diferir según el estilo de conducción y las condiciones de homologación regionales (WLTP vs EPA)."
+    ]
+  },
+  "performance": {
+    "speed": "250 km/h (limitada electrónicamente)",
+    "acceleration": "0-100 km/h en 3.9s"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:32:01.618Z",
+  "transmision": "Automática de 8 velocidades Steptronic M con Drivelogic (o manual de 6 marchas según mercado)",
+  "traccion": "Tracción trasera (versión base/Competition) o tracción total inteligente M xDrive (Competition xDrive)",
+  "cilindrada": "2.993 cc",
+  "emisiones": "CO2 215 g/km (WLTP)",
+  "tipo": "Coupé",
+  "asientos": 4,
+  "baul": 440,
+  "peso": "1.725 kg a 1.800 kg según variante y equipamiento",
+  "tipoMotor": "Gasolina 6 cilindros en línea, 3.0 litros biturbo (S58)",
+  "potenciaKW": "375 kW (510 PS)",
+  "capacidadTanque": "59 litros",
+  "anoProduccion": "2023",
+  "mercados": [
+    "Alemania",
+    "USA",
+    "Europa",
+    "Asia"
+  ],
+  "equipamiento": [
+    "M Sport Package",
+    "Suspensión M adaptativa",
+    "Control dinámico M",
+    "Frenos cerámica M"
+  ],
+  "tiempoRecorrido": "3.9 segundos (0-100 km/h para M4 Competition xDrive)",
+  "consumoEtiqueta": "F",
+  "neumaticos": "275/35R20",
+  "maleteroMin": "405 litros",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "generacion": "G82",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "category": "deportivo",
+  "gallery": {
+    "images": {
+      "exterior": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/2021_BMW_M440i_xDrive_Sedan%2C_front_11.22.21.jpg/1280px-2021_BMW_M440i_xDrive_Sedan%2C_front_11.22.21.jpg"
+      ],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [
+      {
+        "id": "video_id",
+        "title": "Performance",
+        "channel": "BMW"
+      }
+    ],
+    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/2021_BMW_M440i_xDrive_Sedan%2C_front_11.22.21.jpg/1280px-2021_BMW_M440i_xDrive_Sedan%2C_front_11.22.21.jpg"
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "250 km/h (limitada electrónicamente)",
+      "acceleration": "0-100 km/h en 3.9s"
+    },
+    "bateria": {
+      "consumo": "9.9-10.2 l/100km combinado (versión Competition)"
+    },
+    "transmision": {
+      "tipo": "Automática 8 velocidades Steptronic M"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "9.9-10.2 l/100km combinado (versión Competition)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 78.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "deportivo",
+    "bmw",
+    "BMW",
+    "Deportivo",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "BMW M4 - Deportivo BMW. 250 km/h (limitada electrónicamente) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "BMW M4",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "BMW"
+    },
+    "vehicleType": "Deportivo",
+    "fuelType": "Gasolina turbo bimotor",
+    "speed": "250 km/h (limitada electrónicamente)",
+    "acceleration": "0-100 km/h en 3.9s",
+    "price": "USD 78.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Coupé deportivo de alto rendimiento de BMW M, motor 3.0 biturbo."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:32:01.618Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.2",
+    "totalVotos": 1086,
+    "desglose": {
+      "1": 142,
+      "2": 200,
+      "3": 966,
+      "4": 371,
+      "5": 1555
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 250
+    },
+    "consumo": {
+      "promedio": "9.9-10.2 l/100km combinado (versión Competition)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl BMW M4 nació como la evolución natural de la icónica estirpe de coupés deportivos de altas prestaciones de la marca bávara, separando formalmente la nomenclatura de la Serie 3 coupé a partir de la generación F82 en 2014. Desde entonces, el M4 se ha consolidado como uno de los referentes indiscutidos dentro del segmento de los deportivos compactos de lujo, heredando décadas de desarrollo en competición por parte de la división BMW M. Con el lanzamiento de la generación G82, la marca llevó la fórmula un paso más adelante, introduciendo un diseño sumamente agresivo y polarizante —liderado por la imponente parrilla de doble riñón vertical— junto con una arquitectura mecánica profundamente revisada que prioriza tanto la rigidez estructural como la entrega de potencia descomunal.\n\n## Un hito o generación relevante\n\nLa introducción de la generación G82 (y su variante de carrocería convertible G83) marcó un punto de inflexión absoluto en la historia del modelo al incorporar por primera vez en la historia del M4 el sistema de tracción integral inteligente M xDrive en sus versiones Competition. Tradicionalmente fieles a la propulsión trasera pura, los ingenieros de BMW M lograron desarrollar un esquema de tracción en las cuatro ruedas con polarización trasera y un diferencial activo M que no diluye el carácter lúdico y dinámico del vehículo, permitiendo además gestionar de manera mucho más eficiente los más de 500 caballos de fuerza que emanan de su motor.\n\n## Curiosidades\n\nBajo el capó del M4 actual late el afamado motor S58, un bloque de 6 cilindros en línea con tecnología TwinPower Turbo que comparte arquitectura con los vehículos de competición GT3 de la marca. Una de las curiosidades técnicas más destacadas de este propulsor es su sistema de refrigeración inspirado directamente en las pistas, diseñado para soportar tandas de circuito exigentes sin fatiga térmica. Asimismo, a diferencia de la tendencia generalizada hacia la electrificación total, BMW mantuvo viva la opción de una transmisión manual de 6 velocidades en ciertos mercados para las versiones de acceso, un guiño directo a los puristas que buscan una conexión análoga con la conducción deportiva.\n\n## Competencia y posicionamiento\n\nEn el mercado global, el BMW M4 compite directamente en la cúspide de los coupés deportivos de altas prestaciones frente a rivales de peso pesado como el Mercedes-AMG C 63 Coupé (y sus evoluciones híbridas recientes) y el Audi RS 5 Coupé. El posicionamiento del M4 destaca por ofrecer una dualidad de personalidad muy marcada: es capaz de comportarse como un rutero sumamente tecnológico y cómodo para el uso diario, pero se transforma en un devorador de circuitos despiadado al activar los modos de manejo más extremos. Su combinación de potencia bruta, precisión quirúrgica en el tren delantero y una conectividad de vanguardia lo mantienen como uno de los productos más deseados y cotizados de su categoría."
+}

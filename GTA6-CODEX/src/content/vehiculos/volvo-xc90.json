@@ -1,0 +1,231 @@
+{
+  "slug": "volvo-xc90",
+  "type": "vehiculos",
+  "title": "Volvo XC90",
+  "description": "SUV grande de 7 plazas de Volvo, buque insignia de la marca sueca.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "volvo"
+  ],
+  "featured": false,
+  "manufacturer": "Volvo",
+  "class": "SUV grande",
+  "customizable": false,
+  "power": "455 hp (híbrido enchufable T8 Recharge) / 295 hp (B6 AWD)",
+  "price": "USD 64.645 a USD 77.645 (MSRP EE.UU. de referencia)",
+  "consumo": "2.8 l/100km (mixto equivalente PHEV) / 7.2 l/100km (híbrido descargado)",
+  "dimensiones": "4.953 mm largo x 1.933 mm ancho x 1.770 mm alto (equivalentes a 195.0 x 76.1 x 69.7 pulgadas)",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.caranddriver.com/volvo/xc90",
+    "note": "Se actualizaron las especificaciones de dimensiones, pesos, cilindrada y potencias utilizando las fuentes de Car and Driver y Volvo Cars para las variantes B6 AWD y T8 Recharge sobre la plataforma SPA.",
+    "limitations": [
+      "Los precios pueden variar significativamente según el mercado de destino, aranceles e impuestos locales",
+      "Las cifras de consumo de combustible en híbridos enchufables dependen fuertemente del uso de la carga eléctrica"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T03:14:37.907Z",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "AWD (Tracción integral)",
+  "peso": "2.144 kg (4.727 lb)",
+  "tipoMotor": "Gasolina 2.0L turbo, supercargado e híbrido enchufable",
+  "potenciaKW": "335 kW (455 hp) para T8 / 220 kW (295 hp) para B6",
+  "capacidadTanque": "71 litros",
+  "tiempoRecorrido": "0-100 km/h en 5.4s (T8 Recharge)",
+  "anoProduccion": "2015-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.969 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 7,
+  "baul": 680,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (SPA)",
+  "anoLanzamiento": 2015,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 60.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "suv",
+    "volvo",
+    "Volvo",
+    "SUV grande",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Volvo XC90 - SUV grande Volvo. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Volvo XC90",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Volvo"
+    },
+    "vehicleType": "SUV grande",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 60.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV grande de 7 plazas de Volvo, buque insignia de la marca sueca."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:14:37.907Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Volvo XC90 representa un antes y un después para la firma sueca. Presentado originalmente a principios de los años 2000, este SUV grande ayudó a definir el segmento de los vehículos familiares de lujo con un enfoque primordial en la seguridad y el confort. Sin embargo, fue con el lanzamiento de su segunda generación en 2015 cuando la marca adoptó por completo su actual lenguaje de diseño minimalista escandinavo y estrenó la plataforma modular escalable (SPA), diseñada desde cero para albergar tanto mecánicas térmicas tradicionales como avanzados sistemas de propulsión electrificados.\n\n## Un hito o generación relevante\nEl gran punto de inflexión para el XC90 llegó con la adopción de la tecnología híbrida enchufable (conocida inicialmente como T8 Twin Engine y más tarde como Recharge). Este sistema combinó un motor de combustión de cuatro cilindros con sobrealimentación mixta (compresor y turbo) y un potente motor eléctrico en el eje trasero. No solo elevó la potencia combinada hasta superar los 400 caballos, sino que demostró que un SUV de gran tamaño y siete plazas podía ofrecer prestaciones deportivas sin sacrificar la eficiencia ni la posibilidad de circular en modo 100% eléctrico durante los trayectos urbanos cotidianos.\n\n## Curiosidades\nDesde su concepción, el habitáculo del XC90 ha sido objeto de estudio en ergonomía y diseño industrial. Elementos distintivos como los selectores de marchas de cristal de la prestigiosa cristalería sueca Orrefors, o la incorporación de maderas nobles de origen sostenible con vetas abiertas, marcaron una ruptura con el lujo ostentoso tradicional de alemanes y británicos, apostando por lo que en Suecia denominan 'lagom' (ni mucho, ni poco, lo justo y necesario). Además, fue el primer modelo de serie de la marca en incorporar los característicos faros delanteros con el diseño lumínico del 'Martillo de Thor'.\n\n## Competencia y posicionamiento\nEn el mercado global, el Volvo XC90 compite de forma directa contra los pesos pesados alemanes como el BMW X5, el Mercedes-Benz GLE y el Audi Q7, así como contra propuestas de corte nórdico y americano como el Range Rover Velar o el Lincoln Aviator. Su posicionamiento de mercado se sustenta en tres pilares fundamentales: ser el estandarte tecnológico de la marca, mantener la reputación histórica en materia de seguridad pasiva y activa (pionero en la implementación de asistencias avanzadas a la conducción), y ofrecer una estética sofisticada que prioriza el bienestar de los pasajeros por encima de las pretensiones puramente dinámicas."
+}

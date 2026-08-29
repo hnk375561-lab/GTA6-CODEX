@@ -1,0 +1,230 @@
+{
+  "slug": "seat-leon",
+  "type": "vehiculos",
+  "title": "SEAT León",
+  "description": "Compacto español del grupo Volkswagen, plataforma MQB compartida con Golf.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "seat"
+  ],
+  "featured": false,
+  "manufacturer": "SEAT",
+  "class": "Hatchback",
+  "customizable": false,
+  "power": "150 CV",
+  "price": "EUR 28.500 (referencia mercado europeo)",
+  "consumo": "5.5 l/100km combinado",
+  "dimensiones": "4.368 mm largo x 1.799 mm ancho x 1.456 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.seat.com",
+    "secondarySource": "https://es.wikipedia.org/wiki/SEAT_Le%C3%B3n",
+    "note": "Se actualizaron las dimensiones, cilindrada y capacidad de baúl basándose en las especificaciones oficiales de la plataforma MQB Evo para la cuarta generación del SEAT León. Los valores de potencia y consumo corresponden a las motorizaciones más equilibradas y comunes de la gama (1.5 TSI de 150 CV).",
+    "limitations": [
+      "El precio es meramente orientativo para el mercado europeo y puede variar sustancialmente según impuestos locales y aranceles de importación.",
+      "La disponibilidad de motorizaciones específicas cambia según el mercado regional."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:26:27.693Z",
+  "transmision": "Manual de 6 marchas o Automática DSG de 7 velocidades",
+  "traccion": "Delantera",
+  "peso": "1.350 kg",
+  "tipoMotor": "Gasolina (TSI) / Diésel (TDI) / Híbrido Enchufable (e-Hybrid)",
+  "potenciaKW": "110 kW",
+  "capacidadTanque": "45 litros",
+  "tiempoRecorrido": "8.4s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.498 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 380,
+  "maleteroMin": null,
+  "generacion": "Cuarta generación (KL)",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 27.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "hatchback",
+    "seat",
+    "SEAT",
+    "Hatchback",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "SEAT León - Hatchback SEAT. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "SEAT León",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "SEAT"
+    },
+    "vehicleType": "Hatchback",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "EUR 27.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Compacto español del grupo Volkswagen, plataforma MQB compartida con Golf."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:26:27.693Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl SEAT León es uno de los pilares fundamentales de la marca española desde su irrupción en el mercado a finales del siglo pasado. Nacido bajo el paraguas del Grupo Volkswagen, el León se propuso desde su primera generación ofrecer una alternativa de corte más dinámico y juvenil dentro del segmento C, compartiendo componentes mecánicos y estructurales con su primo hermano, el Volkswagen Golf. Con el correr de los años, el modelo evolucionó desde una propuesta puramente funcional y económica hasta convertirse en el referente indiscutido de deportividad accesible dentro de las marcas generalistas europeas.\n\n## Un hito o generación relevante\nEl salto tecnológico más importante en la trayectoria del modelo se consolidó con la llegada de su tercera generación, la primera en utilizar la archiconocida plataforma modular MQB del Grupo Volkswagen. Esta arquitectura permitió al León reducir drásticamente su peso, mejorar la rigidez torsional y adoptar un arsenal tecnológico hasta entonces reservado a segmentos superiores. La cuarta generación (KL), lanzada comercialmente en 2020, profundizó esta evolución al incorporar líneas de diseño más afiladas, opciones de electrificación mediante sistemas híbridos ligeros (Mild Hybrid) e híbridos enchufables (e-Hybrid), y un habitáculo prácticamente desprovisto de botones físicos, apostando por la digitalización total.\n\n## Curiosidades\nUn dato poco conocido por el público general es que las dos primeras generaciones del SEAT León fueron diseñadas bajo la batuta del prestigioso Walter de Silva, quien buscó imprimirles un carácter latino y pasional que contrastara con la sobriedad germana del Golf. Además, el nombre del modelo no hace referencia a ningún felino, sino a la histórica ciudad española de León. Asimismo, la variante más picante del compacto abandonó la histórica insignia de SEAT para comercializarse bajo la órbita de la marca independiente Cupra, marcando un hito en la estrategia comercial del fabricante.\n\n## Competencia y posicionamiento\nDentro del competitivo segmento de los hatchbacks compactos en Europa, el SEAT León compite directamente contra pesos pesados de la industria como el propio Volkswagen Golf, el Ford Focus, el Opel Astra y el Peugeot 308. Su posicionamiento de mercado busca captar a conductores que valoran la agilidad dinámica, un chasis con puesta a punto firme y una estética agresiva, sin resignar la practicidad diaria ni los estándares de seguridad y tecnología de última generación dictados por el gigante alemán."
+}

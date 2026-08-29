@@ -1,0 +1,110 @@
+diff --git a/GTA6-CODEX/src/app/[entityType]/[slug]/page.tsx b/GTA6-CODEX/src/app/[entityType]/[slug]/page.tsx
+index 5f00bc5..b704845 100644
+--- a/GTA6-CODEX/src/app/[entityType]/[slug]/page.tsx
++++ b/GTA6-CODEX/src/app/[entityType]/[slug]/page.tsx
+@@ -5,7 +5,7 @@ import { EntityType } from '@/types'
+ import { getEntity, getEntitySlugs } from '@/lib/entities'
+ import { resolveEntityDisplayImage } from '@/lib/media'
+ import { getBidirectionalRelatedEntitiesWithLabel } from '@/lib/relations'
+-import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo'
++import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd, serializeJsonLd } from '@/lib/seo'
+ import { Card, CardBody } from '@/components/ui/Card'
+ import { Badge } from '@/components/ui/Badge'
+ import { Reveal } from '@/components/ui/Reveal'
+@@ -172,11 +172,11 @@ export default async function EntityPage({ params }: PageProps) {
+     <>
+       <script
+         type="application/ld+json"
+-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
++        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
+       />
+       <script
+         type="application/ld+json"
+-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
++        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbLd) }}
+       />
+ 
+       {/* Publica categoría/estado/featured de esta ficha al motor WebGL.
+diff --git a/GTA6-CODEX/src/app/galeria/page.tsx b/GTA6-CODEX/src/app/galeria/page.tsx
+index 79ca2d1..623d245 100644
+--- a/GTA6-CODEX/src/app/galeria/page.tsx
++++ b/GTA6-CODEX/src/app/galeria/page.tsx
+@@ -3,6 +3,7 @@ import { getGalleryItems, getGalleryCategoryCounts } from '@/lib/gallery'
+ import { GalleryHero } from '@/components/gallery/GalleryHero'
+ import { GalleryExplorer } from '@/components/gallery/GalleryExplorer'
+ import { SITE_NAME, SITE_URL } from '@/config/site'
++import { serializeJsonLd } from '@/lib/seo'
+ 
+ export async function generateMetadata(): Promise<Metadata> {
+   const items = await getGalleryItems()
+@@ -46,7 +47,7 @@ export default async function GaleriaPage() {
+     <>
+       <script
+         type="application/ld+json"
+-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
++        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
+       />
+       <GalleryHero total={items.length} categoryCount={categories.length} />
+       <section className="py-12 sm:py-16">
+diff --git a/GTA6-CODEX/src/app/page.tsx b/GTA6-CODEX/src/app/page.tsx
+index 0c959a8..ce739ff 100644
+--- a/GTA6-CODEX/src/app/page.tsx
++++ b/GTA6-CODEX/src/app/page.tsx
+@@ -10,7 +10,7 @@ import {
+ } from '@/lib/entities'
+ import { resolveEntityDisplayImage } from '@/lib/media'
+ import { getBidirectionalRelationCount } from '@/lib/relations'
+-import { generateHomepageMetadata, generateBreadcrumbJsonLd, generateWebsiteJsonLd } from '@/lib/seo'
++import { generateHomepageMetadata, generateBreadcrumbJsonLd, generateWebsiteJsonLd, serializeJsonLd } from '@/lib/seo'
+ import { Card } from '@/components/ui/Card'
+ import { CategoryIcon } from '@/components/ui/CategoryIcon'
+ import { CountUp } from '@/components/ui/CountUp'
+@@ -384,8 +384,8 @@ export default async function HomePage() {
+ 
+   return (
+     <>
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbLd) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteLd) }} />
+       <PinnedScrollStages stages={stages} />
+     </>
+   )
+diff --git a/GTA6-CODEX/src/lib/seo.ts b/GTA6-CODEX/src/lib/seo.ts
+index 52f7107..189b409 100644
+--- a/GTA6-CODEX/src/lib/seo.ts
++++ b/GTA6-CODEX/src/lib/seo.ts
+@@ -202,6 +202,17 @@ export function generateEntityJsonLd(entity: Entity, primaryMedia?: MediaAsset |
+   return base
+ }
+ 
++/**
++ * Serializa un objeto para inyectarlo en un <script type="application/ld+json">
++ * vía dangerouslySetInnerHTML. JSON.stringify() no escapa '<', así que sin esto
++ * un valor de contenido que contuviera la secuencia "</script>" podría cerrar el
++ * tag antes de tiempo e inyectar HTML/JS arbitrario en la página. Patrón estándar
++ * de JSON-LD seguro en Next.js.
++ */
++export function serializeJsonLd(data: object): string {
++  return JSON.stringify(data).replace(/</g, '\\u003c')
++}
++
+ /**
+  * Genera JSON-LD para BreadcrumbList
+  */
+diff --git a/GTA6-CODEX/src/types/schemas.ts b/GTA6-CODEX/src/types/schemas.ts
+index 9f22778..64e6410 100644
+--- a/GTA6-CODEX/src/types/schemas.ts
++++ b/GTA6-CODEX/src/types/schemas.ts
+@@ -77,7 +77,10 @@ const isoDateStringSchema = (fieldName: string) =>
+     })
+ 
+ export const BaseEntitySchema = z.object({
+-  slug: z.string().min(1, 'slug no puede estar vacío'),
++  slug: z
++    .string()
++    .min(1, 'slug no puede estar vacío')
++    .regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'slug debe ser kebab-case (a-z, 0-9, guiones)'),
+   type: EntityTypeSchema,
+   title: z.string().min(1, 'title no puede estar vacío'),
+   description: z.string().min(1, 'description no puede estar vacía'),

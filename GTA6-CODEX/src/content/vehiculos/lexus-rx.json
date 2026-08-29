@@ -1,0 +1,232 @@
+{
+  "slug": "lexus-rx",
+  "type": "vehiculos",
+  "title": "Lexus RX",
+  "description": "SUV premium mediano de Lexus, principal modelo en volumen de la marca.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "lexus"
+  ],
+  "featured": false,
+  "manufacturer": "Lexus",
+  "class": "SUV premium",
+  "customizable": false,
+  "power": "275 hp / 205 kW (RX 350 turbo) hasta más de 300 hp en variantes híbridas (RX 350h / RX 500h)",
+  "price": "USD 49.900 (MSRP base EE.UU. para generación actual)",
+  "consumo": "8.7 l/100km en ciudad / 10.7 l/100km en ruta (aprox. según versión naftera/híbrida)",
+  "dimensiones": "4.890 mm largo x 1.920 mm ancho x 1.695 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.lexus.com",
+    "secondarySource": "https://es.wikipedia.org/wiki/Lexus_RX",
+    "note": "Se actualizaron las especificaciones con base en la quinta generación del Lexus RX lanzada globalmente a partir del año modelo 2023, utilizando datos estándar de motorización turbo de 2.4 litros y variantes híbridas de la marca.",
+    "limitations": [
+      "Los precios varían según el mercado regional e impuestos locales",
+      "Los consumos de combustible exactos dependen de la homologación de cada país (EPA, WLTP)"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:12:10.759Z",
+  "transmision": "Automática de 8 marchas (Direct-Shift) o e-CVT según variante híbrida",
+  "traccion": "Tracción delantera (FWD) o tracción integral (AWD / DIRECT4)",
+  "peso": "1.950 - 2.150 kg",
+  "tipoMotor": "Gasolina Turbo / Híbrido autorrecargable / Híbrido enchufable",
+  "potenciaKW": "205-273 kW",
+  "capacidadTanque": "65 litros",
+  "tiempoRecorrido": "0-100 km/h en 6.0s a 7.6s según versión",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2.4 L (turbo) / 2.5 L (híbrido)",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 612,
+  "maleteroMin": null,
+  "generacion": "Quinta generación",
+  "anoLanzamiento": 2022,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 48.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "suv",
+    "lexus",
+    "Lexus",
+    "SUV premium",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Lexus RX - SUV premium Lexus. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Lexus RX",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Lexus"
+    },
+    "vehicleType": "SUV premium",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 48.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV premium mediano de Lexus, principal modelo en volumen de la marca."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:12:10.759Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Lexus RX es uno de los SUV de lujo más emblemáticos y de mayor trayectoria en el mercado global. Presentado originalmente a finales de la década de 1990, este modelo ayudó a definir y popularizar el segmento de los vehículos utilitarios deportivos premium, combinando el confort de marcha y la finura de un sedán ejecutivo con la versatilidad de un SUV. A lo largo de las décadas, el RX se convirtió rápidamente en el pilar fundamental en términos de volumen de ventas para la división de lujo de Toyota, liderando la transición de la marca hacia la electrificación con la introducción temprana de tecnologías híbridas.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la historia del Lexus RX fue la llegada de su cuarta generación, que introdujo el lenguaje de diseño más audaz de la marca —incluyendo la característica parrilla en forma de doble punta de flecha— y consolidó la presencia global del sistema Lexus Safety System+. Sin embargo, la quinta generación (introducida para el año modelo 2023 y vigente en la actualidad) marca una evolución técnica sustancial al construirse sobre la plataforma GA-K. Esta arquitectura permitió reducir el peso total del vehículo, bajar el centro de gravedad y ofrecer una rigidez estructural muy superior, mejorando notablemente el comportamiento dinámico sin sacrificar el andar suave y silencioso que caracteriza a la firma.\n\n## Curiosidades\nUna de las curiosidades más notables del Lexus RX es que, en sus dos primeras generaciones, fue comercializado en Japón bajo la marca Toyota y con el nombre de Toyota Harrier, antes de que Lexus fuera introducido formalmente en su mercado doméstico. Además, el RX fue pionero en ofrecer una variante híbrida en el segmento de lujo de tamaño mediano (el RX 400h en 2005), demostrando que la alta eficiencia y la potencia podían coexistir mucho antes de que la electrificación fuera una norma en la industria automotriz.\n\n## Competencia y posicionamiento\nEn el mercado global, el Lexus RX compite de manera directa contra los referentes históricos alemanes del segmento de SUVs medianos premium, como el BMW X5, el Mercedes-Benz GLE y el Audi Q5/Q7, además de alternativas norteamericanas y suecas como el Lincoln Nautilus y el Volvo XC90. Su posicionamiento se centra en ofrecer un nivel de confort de marcha sobresaliente, una altísima fiabilidad mecánica comprobada y una propuesta tecnológica enfocada en la tranquilidad del conductor, destacando especialmente por la alta retención de valor en el mercado de usados y la popularidad sostenida de sus motorizaciones híbridas frente a sus rivales de corte tradicional."
+}

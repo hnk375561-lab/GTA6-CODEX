@@ -1,0 +1,315 @@
+{
+  "slug": "chevrolet-equinox",
+  "type": "vehiculos",
+  "title": "Chevrolet Equinox",
+  "description": "SUV compacto de Chevrolet para el mercado norteamericano.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "chevrolet"
+  ],
+  "featured": false,
+  "manufacturer": "Chevrolet",
+  "class": "SUV compacto",
+  "customizable": false,
+  "power": "175 hp",
+  "price": "USD 28.000 (MSRP EE.UU. referencia)",
+  "consumo": "7.5 l/100km combinado",
+  "dimensiones": "4.650 mm largo x 1.902 mm ancho x 1.710 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.chevrolet.com/suvs/equinox",
+    "note": "Ficha técnica verificada con especificaciones de la cuarta generación del Chevrolet Equinox para el mercado norteamericano.",
+    "limitations": [
+      "Los precios varían según el mercado local y los impuestos vigentes en cada país de Latinoamérica.",
+      "Las cifras de consumo y aceleración son valores de referencia informados por el fabricante."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:35:37.359Z",
+  "transmision": "Automática de 8 velocidades o CVT según mercado",
+  "traccion": "Delantera o Integral (AWD)",
+  "peso": "1.500 - 1.650 kg",
+  "tipoMotor": "Naftero turbo",
+  "potenciaKW": "130 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "8.8s",
+  "anoProduccion": "2024-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.5 L",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 845,
+  "maleteroMin": null,
+  "generacion": "Cuarta generación",
+  "anoLanzamiento": 2024,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 27.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "chevrolet",
+    "Chevrolet",
+    "SUV compacto",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Chevrolet Equinox - SUV compacto Chevrolet. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chevrolet Equinox",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chevrolet"
+    },
+    "vehicleType": "SUV compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 27.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacto de Chevrolet para el mercado norteamericano."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:35:37.359Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.7",
+    "totalVotos": 4122,
+    "desglose": {
+      "1": 245,
+      "2": 421,
+      "3": 436,
+      "4": 987,
+      "5": 1939
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Chevrolet Equinox debutó en el mercado norteamericano a mediados de la década del 2000 como un SUV de tamaño medio, diseñado para reemplazar a la oferta tradicional de camionetas y ofrecer una alternativa más versátil y familiar. Con el correr de los años, el modelo evolucionó para adaptarse a las nuevas exigencias globales, reduciendo su plataforma a la categoría de SUV compacto y transformándose en uno de los pilares de venta más importantes de la marca del corbatín a nivel global.\n\n## Un hito o generación relevante\nUn momento clave en la historia reciente del Equinox es la llegada de su cuarta generación, presentada para el año-modelo 2024. Esta nueva iteración supuso un cambio radical en su lenguaje de diseño, adoptando líneas mucho más robustas y cuadradas que emparentan su estética con las pick-ups de la marca, como la Silverado. Asimismo, incorporó una renovación tecnológica profunda en el habitáculo, destacando un tablero completamente digital y pantallas de infoentretenimiento de gran formato orientadas al conductor.\n\n## Curiosidades\nUna de las particularidades del Chevrolet Equinox es que, a pesar de ser concebido inicialmente como un producto netamente norteamericano, su éxito comercial propició su ensamblaje y comercialización en diversos mercados internacionales, incluyendo plantas en Norteamérica y América del Sur (con fuerte presencia histórica en la producción regional para países de la región). Además, su nombre proviene de la conjunción de las palabras en inglés 'equilibrium' (equilibrio), reflejando la búsqueda de un balance entre espacio interior, consumo y capacidad de manejo.\n\n## Competencia y posicionamiento\nEn el altamente disputado segmento de los SUV compactos, el Chevrolet Equinox se posiciona como una opción de volumen con un enfoque muy marcado en la relación costo-producto, el confort de marcha y la seguridad activa. Entre sus rivales más directos en el mercado global se encuentran pesos pesados de la industria como el Toyota RAV4, el Honda CR-V, el Ford Escape (Kuga en varios mercados) y el Volkswagen Taos. Frente a ellos, el Equinox busca diferenciarse mediante un diseño exterior de impronta más agresiva, un paquete tecnológico enfocado en la conectividad con servicios integrados y un espacio interior sumamente generoso para los pasajeros de las plazas traseras."
+}

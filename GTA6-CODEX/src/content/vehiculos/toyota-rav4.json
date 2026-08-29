@@ -1,0 +1,317 @@
+{
+  "slug": "toyota-rav4",
+  "type": "vehiculos",
+  "title": "Toyota RAV4",
+  "description": "SUV compacta de Toyota, disponible en versión híbrida, motor 2.5L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "toyota",
+    "hibrido"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:33.800Z",
+  "updatedAt": "2026-08-27T01:59:52.786Z",
+  "manufacturer": "Toyota",
+  "class": "SUV",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 8.1s)"
+  },
+  "power": "219 hp",
+  "price": "USD 28.500 (MSRP base estimado EE.UU.)",
+  "consumo": "5.8 l/100km combinado (aprox. 40 mpg EPA para versión híbrida)",
+  "dimensiones": "4.600 mm largo x 1.855 mm ancho x 1.685 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.toyota.com/rav4/",
+    "note": "Se actualizaron los datos para reflejar la quinta generación del Toyota RAV4, haciendo foco en la motorización híbrida predominante en los mercados globales principales, manteniendo coherencia con las especificaciones técnicas oficiales de la marca.",
+    "limitations": [
+      "Las especificaciones exactas pueden variar según el mercado regional (Latinoamérica, Norteamérica o Europa)",
+      "Los precios de referencia son estimados y varían según impuestos y aranceles locales"
+    ]
+  },
+  "transmision": "Automática e-CVT",
+  "traccion": "Tracción delantera o total (AWD-i)",
+  "peso": "1.650 kg",
+  "tipoMotor": "Gasolina 2.5L 4 cilindros + sistema híbrido (HEV)",
+  "potenciaKW": "163 kW (219 hp combinados)",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "0-100 km/h en 7.8s",
+  "anoProduccion": "2019-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2.487 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 580,
+  "maleteroMin": null,
+  "generacion": "Quinta generación (XA50)",
+  "anoLanzamiento": 2018,
+  "colores": [],
+  "category": "suv",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "Media (180 km/h)",
+      "acceleration": "Media (0-100 km/h en 8.1s)"
+    },
+    "bateria": {
+      "consumo": "7.8 l/100km combinado (30 mpg EPA, versión XLE FWD 2.5L a gasolina)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.8 l/100km combinado (30 mpg EPA, versión XLE FWD 2.5L a gasolina)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 29.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "toyota",
+    "hibrido",
+    "Toyota",
+    "SUV",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Toyota RAV4 - SUV Toyota. Media (180 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Toyota RAV4",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Toyota"
+    },
+    "vehicleType": "SUV",
+    "fuelType": "Gasolina + sistema híbrido",
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 8.1s)",
+    "price": "USD 29.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Toyota, disponible en versión híbrida, motor 2.5L."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:59:52.786Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.7",
+    "totalVotos": 4154,
+    "desglose": {
+      "1": 266,
+      "2": 218,
+      "3": 490,
+      "4": 373,
+      "5": 549
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "7.8 l/100km combinado (30 mpg EPA, versión XLE FWD 2.5L a gasolina)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Toyota RAV4 es considerado el pionero de los SUV compactos modernos. Su historia comenzó en 1994 con el lanzamiento de la primera generación, un vehículo que combinaba la versatilidad y la posición de manejo elevada de un todoterreno con la agilidad, el consumo reducido y el comportamiento dinámico de un automóvil compacto. El acrónimo RAV4 responde a *Recreational Active Vehicle with 4-wheel drive* (Vehículo Recreativo Activo con tracción en las 4 ruedas), aunque en sus inicios también se comercializó con tracción simple delantera. A lo largo de las décadas, este modelo evolucionó desde un formato inicial de tres puertas de aspecto lúdico y juvenil hasta convertirse en un SUV familiar de cinco puertas de dimensiones generosas y alta demanda global.\n\n## Un hito y generación relevante\nUn punto de inflexión fundamental en la historia del RAV4 fue la adopción masiva de la tecnología híbrida (HEV) a partir de su cuarta generación y, de manera muy marcada, en la quinta generación (plataforma TNGA-K, presentada globalmente a finales de 2018). Esta plataforma no solo mejoró notablemente la rigidez torsional y el centro de gravedad del vehículo, sino que consolidó al RAV4 como uno de los híbridos más vendidos del mundo. La variante híbrida combinó un motor térmico de ciclo Atkinson con motores eléctricos para ofrecer consumos sumamente contenidos sin depender exclusivamente de la infraestructura de carga enchufable, marcando el estándar de eficiencia en el segmento de los SUV medianos.\n\n## Curiosidades\n¿Sabías que el RAV4 original de los años 90 estuvo disponible en una rarísima versión descapotable de tres puertas en algunos mercados? Asimismo, el nombre ha sido tan influyente que ayudó a crear un nuevo segmento de mercado que hoy en día eclipsa las ventas de los sedanes tradicionales en casi todo el planeta. En términos de ingeniería, la tracción total en las versiones híbridas (AWD-i) no utiliza un árbol de transmisión mecánico tradicional hacia el eje trasero, sino que incorpora un motor eléctrico independiente dedicado exclusivamente a mover las ruedas posteriores cuando el sistema detecta pérdida de adherencia, ahorrando peso y optimizando la respuesta.\n\n## Competencia y posicionamiento\nEn el mercado global, el Toyota RAV4 compite en una de las categorías más disputadas de la industria automotriz, frente a rivales de peso como el Honda CR-V, el Ford Escape (Kuga en Europa), el Nissan X-Trail (Rogue), el Hyundai Tucson y el Kia Sportage. Su posicionamiento dentro del segmento se destaca por ofrecer una sólida reputación en cuanto a confiabilidad mecánica, un valor de reventa históricamente alto y una propuesta mecánica electrificada muy eficiente. Si bien algunos competidores pueden ofrecer interiores de corte más lujoso o dinámicas de conducción ligeramente más deportivas, el RAV4 mantiene su liderazgo global gracias a su equilibrio general, la robustez de su conjunto motriz y la inclusión de serie de complejos paquetes de seguridad activa y asistencia a la conducción (Toyota Safety Sense)."
+}

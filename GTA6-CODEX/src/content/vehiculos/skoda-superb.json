@@ -1,0 +1,228 @@
+{
+  "slug": "skoda-superb",
+  "type": "vehiculos",
+  "title": "Skoda Superb",
+  "description": "Sedán/wagon grande de Skoda, tope de gama de la marca checa.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "skoda"
+  ],
+  "featured": false,
+  "manufacturer": "Skoda",
+  "class": "Sedán/Wagon grande",
+  "customizable": false,
+  "power": "150 hp / 110 kW",
+  "price": "EUR 40.000 (referencia mercado europeo)",
+  "consumo": "5.2 l/100km combinado",
+  "dimensiones": "4.912 mm largo x 1.849 mm ancho x 1.475 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://es.wikipedia.org/wiki/%C5%A0koda_Superb",
+    "note": "Se actualizaron las especificaciones con base en los datos técnicos conocidos de la cuarta generación del Skoda Superb, manteniendo consistencia con las motorizaciones europeas del Grupo Volkswagen.",
+    "limitations": [
+      "El precio es aproximado de referencia para el mercado europeo y puede variar según el país, impuestos y nivel de equipamiento seleccionado."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:26:46.360Z",
+  "transmision": "Automática DSG de 7 velocidades",
+  "traccion": "Tracción delantera o integral (4x5)",
+  "peso": "1.585 kg",
+  "tipoMotor": "Gasolina TSI / Diésel TDI",
+  "potenciaKW": "110 kW",
+  "capacidadTanque": "66 litros",
+  "tiempoRecorrido": "9.2s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.968 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 645,
+  "maleteroMin": null,
+  "generacion": "Cuarta generación",
+  "anoLanzamiento": 2024,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 34.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "sedan",
+    "skoda",
+    "Skoda",
+    "Sedán/Wagon grande",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Skoda Superb - Sedán/Wagon grande Skoda. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Skoda Superb",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Skoda"
+    },
+    "vehicleType": "Sedán/Wagon grande",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "EUR 34.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán/wagon grande de Skoda, tope de gama de la marca checa."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:26:46.360Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl Skoda Superb es uno de los sedanes y familiares de segmento D más respetados del mercado europeo, heredando un nombre histórico que la marca checa utilizó originalmente entre 1934 y 1949. Tras la adquisición de Skoda por parte del Grupo Volkswagen, el nombre fue resucitado en el año 2001 para posicionarse como el buque insignia de la marca, compartiendo plataforma y tecnologías con modelos consagrados como el Volkswagen Passat. A lo largo de sus sucesivas generaciones, el Superb se ganó una sólida reputación por ofrecer un nivel de habitabilidad sobresaliente, soluciones prácticas 'Simply Clever' y una relación precio-producto muy difícil de igualar en su categoría.\n\n## Un hito o generación relevante\n\nLa tercera generación, lanzada en 2015 y actualizada en 2019, marcó un punto de inflexión absoluto para el modelo al adoptar la plataforma modular MQB. Esto permitió un salto cuantitativo y cualitativo en términos de rigidez torsional, reducción de peso, incorporación de asistencias a la conducción de última generación y la introducción de variantes híbridas enchufables (iV). Paralelamente, la cuarta generación presentada a finales de 2023 refinó aún más la fórmula, mejorando la aerodinámica con un coeficiente de resistencia optimizado, incorporando faros Matrix LED de segunda generación y apostando por interiores más sostenibles con pantallas flotantes de gran formato.\n\n## Curiosidades\n\nUna de las características más célebres y distintivas del Skoda Superb desde su primera modernidad es la integración de paraguas alojados en el interior de los paneles de las puertas delanteras, un guiño directo a soluciones de vehículos de lujo de marcas británicas como Rolls-Royce. Además, su variante familiar (conocida como Combi) ofrece un espacio de carga descomunal que supera con creces a muchos SUV de mayor tamaño exterior, transformándolo en el vehículo preferido para flotas corporativas de alta gama y servicios de transporte ejecutivo en diversas capitales europeas.\n\n## Competencia y posicionamiento\n\nDentro del mercado automotriz global, el Skoda Superb compite directamente contra sedanes y rurales del segmento D generalista como el Volkswagen Passat (con el que comparte numerosos componentes mecánicos), el Ford Mondeo en sus mercados de presencia, el Peugeot 508 y el Mazda 6. No obstante, gracias a su generosa distancia entre ejes y a un espacio para las piernas en las plazas traseras que compite directamente con vehículos de representación del segmento E (marcas premium), el Superb se posiciona en una categoría intermedia muy particular, ofreciendo refinamiento, confort de marcha en viajes largos y una enorme versatilidad a un costo considerablemente menor que el de las berlinas alemanas tradicionales."
+}

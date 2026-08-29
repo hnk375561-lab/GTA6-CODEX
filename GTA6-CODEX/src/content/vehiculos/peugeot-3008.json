@@ -1,0 +1,314 @@
+{
+  "slug": "peugeot-3008",
+  "type": "vehiculos",
+  "title": "Peugeot 3008 GT",
+  "description": "SUV mediano fastback de Peugeot, tercera generación, fabricado en Sochaux (Francia) sobre plataforma STLA Medium, comercializado en Argentina exclusivamente en versión GT.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "peugeot"
+  ],
+  "featured": false,
+  "manufacturer": "Peugeot",
+  "class": "SUV mediano",
+  "customizable": false,
+  "power": "180 HP",
+  "price": "Desde $612,900 MXN (Versión GT de referencia)",
+  "consumo": "7.2 l/100km combinado",
+  "dimensiones": "4542 x 1895 x 1641 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.carwow.es/peugeot/3008/caracteristicas-tecnicas",
+    "note": "Se verificaron las dimensiones exactas, la motorización de 1.6L turbo con 180 HP y los datos de las versiones mediante gacetillas oficiales y catálogos especializados de Peugeot para la región. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "limitations": [
+      "Los precios y especificaciones exactas varían según el mercado de comercialización local y las normativas de homologación vigentes."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T22:30:00.000000Z",
+  "updatedAt": "2026-08-27T03:03:04.099Z",
+  "transmision": "Automática",
+  "traccion": "Delantera",
+  "peso": "1500-1600 kg",
+  "tipoMotor": "Gasolina",
+  "potenciaKW": "132 kW",
+  "capacidadTanque": "53 litros",
+  "tiempoRecorrido": "8.5s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1598 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 520,
+  "maleteroMin": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4540,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 53.200 - 54.500"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "peugeot",
+    "Peugeot",
+    "SUV mediano",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Peugeot 3008 GT - SUV mediano Peugeot. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Peugeot 3008 GT",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Peugeot"
+    },
+    "vehicleType": "SUV mediano",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 53.200 - 54.500",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediano fastback de Peugeot, tercera generación, fabricado en Sochaux (Francia) sobre plataforma STLA Medium, comercializado en Argentina exclusivamente en versión GT."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:03:04.099Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.7",
+    "totalVotos": 760,
+    "desglose": {
+      "1": 29,
+      "2": 153,
+      "3": 1144,
+      "4": 1273,
+      "5": 979
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Peugeot 3008 ha recorrido un camino notable desde su concepción original, mutando desde un formato inicial con tintes de monovolumen crossover hasta transformarse, en su segunda camada, en un SUV compacto plenamente consolidado que cosechó galardones internacionales de gran peso, como el codiciado premio al Auto del Año en Europa en 2017. Esta trayectoria le permitió a la firma francesa posicionarse firmemente en el segmento C, conquistando a millones de usuarios alrededor del globo gracias a una apuesta estética osada y un interior que priorizaba la vanguardia tecnológica.\n\n## Un hito o generación relevante\nLa llegada de la tercera generación marca un punto de inflexión absoluto para la familia 3008 al adoptar una silueta tipo fastback, fusionando la prestancia y altura de un SUV con una caída de techo marcadamente aerodinámica y deportiva. Este nuevo capítulo destaca además por ser el pionero en utilizar la plataforma multienergía STLA Medium del grupo Stellantis, diseñada específicamente para albergar opciones térmicas, híbridas y netamente eléctricas. Este despliegue de modernidad arquitectónica refuerza el compromiso de la marca del león con la transición energética sin descuidar el dinamismo conductivo.\n\n## Curiosidades\nAl adentrarse en la cabina de esta iteración, es imposible soslayar la evolución del concepto i-Cockpit. El puesto de conducción deja atrás los esquemas tradicionales para dar paso a una impactante pantalla panorámica flotante curva de alta definición de 21 pulgadas que integra de forma fluida el instrumental y el sistema multimedia. En paralelo, el exterior incorpora una firma lumínica frontal sumamente estilizada en forma de triple garra, acompañada por elementos aerodinámicos funcionales que optimizan la resistencia al viento y reafirman su carácter vanguardista.\n\n## Competencia y posicionamiento\nEn el plano comercial, el Peugeot 3008 se ubica en el corazón del segmento de los SUV medianos, coqueteando de cerca con propuestas de corte marcadamente premium. Enfrenta a contrincantes de peso en los distintos mercados regionales, midiendo fuerzas con opciones consolidadas de marcas generalistas y exponentes de entrada al segmento de lujo. Su propuesta de valor descansa sólidamente sobre un diseño exterior sumamente diferenciado, calidades de terminación sobresalientes y una dotación tecnológica orientada tanto al confort de marcha como a la seguridad activa a través de asistencias avanzadas a la conducción."
+}

@@ -1,0 +1,229 @@
+{
+  "slug": "chery-omoda-5",
+  "type": "vehiculos",
+  "title": "Chery Omoda 5",
+  "description": "SUV compacto de Chery orientado a exportación, con diseño futurista.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "chery"
+  ],
+  "featured": false,
+  "manufacturer": "Chery",
+  "class": "SUV compacto",
+  "customizable": false,
+  "power": "145 hp",
+  "price": "EUR 24.500 (precio de referencia para Europa)",
+  "consumo": "7.2 l/100km combinado (referencia)",
+  "dimensiones": "4.400 mm largo x 1.830 mm ancho x 1.588 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://omodaauto.co.uk/",
+    "note": "Se utilizaron especificaciones generales de la gama Omoda 5 comercializada en mercados internacionales y europeos, destacando el motor de 1.5 litros turbo y dimensiones estándar de la plataforma T1X.",
+    "limitations": [
+      "Los precios y consumos pueden variar según el mercado específico de exportación y las normativas de homologación locales.",
+      "Las cifras de aceleración son estimaciones de referencia según la variante mecánica."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:34:31.937Z",
+  "transmision": "Automática DCT de doble embrague o Manual",
+  "traccion": "Delantera (FWD)",
+  "peso": "1.344 kg",
+  "tipoMotor": "Gasolina 1.5 turbo",
+  "potenciaKW": "108 kW",
+  "capacidadTanque": "51 litros",
+  "tiempoRecorrido": "9.9s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1498 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 380,
+  "maleteroMin": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 24.500"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "suv",
+    "chery",
+    "Chery",
+    "SUV compacto",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Chery Omoda 5 - SUV compacto Chery. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chery Omoda 5",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chery"
+    },
+    "vehicleType": "SUV compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "EUR 24.500",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacto de Chery orientado a exportación, con diseño futurista."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:34:31.937Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Chery Omoda 5 marca un punto de inflexión en la estrategia global de la automotriz china Chery, siendo el primer exponente de su nueva gama de vehículos orientados fuertemente al mercado internacional, con especial foco en Europa, Asia y mercados emergentes. Presentado formalmente a principios de la década, este SUV compacto nació bajo la filosofía de diseño 'Art in Motion', buscando capturar la atención de un público más joven y vanguardista que prioriza la estética futurista y la digitalización a bordo por sobre los formatos tradicionales de la marca.\n\n## Un hito y generación relevante\nLa primera generación del Omoda 5 representa el debut de la plataforma modular T1X optimizada para albergar no solo motorizaciones de combustión interna tradicionales, sino también variantes electrificadas como híbridas y 100% eléctricas (Omoda E5). Este enfoque multiplataforma es un hito clave para Chery, ya que le permite adaptar rápidamente su oferta comercial a las exigencias ambientales de diferentes regiones sin alterar radicalmente la arquitectura base del vehículo.\n\n## Curiosidades\nUna de las particularidades más llamativas del Omoda 5 es su denominación: la letra 'O' proviene del oxígeno y simboliza nueva vida y vitalidad, mientras que 'Moda' hace referencia a las tendencias de la moda moderna. Además, su frontal se distingue por una parrilla paramétrica sin bordes que se integra fluidamente con grupos ópticos LED divididos, un recurso de diseño que rápidamente lo convirtió en un vehículo muy fotografiado y comentado en salones del automóvil internacionales.\n\n## Competencia y posicionamiento\nEn el segmento de los SUV compactos, el Chery Omoda 5 compite directamente contra pesos pesados de la industria como el Toyota C-HR, el Kia Seltos, el Nissan Kicks y el Volkswagen T-Cross. Se posiciona con una propuesta de valor agresiva, ofreciendo un nivel de equipamiento tecnológico muy elevado, asistencias avanzadas a la conducción (ADAS) de serie en muchas versiones y una relación precio-producto competitiva para ganar terreno rápidamente frente a marcas consolidada en Occidente."
+}

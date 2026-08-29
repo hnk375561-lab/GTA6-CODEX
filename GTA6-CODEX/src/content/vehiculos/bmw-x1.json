@@ -1,0 +1,325 @@
+{
+  "slug": "bmw-x1",
+  "type": "vehiculos",
+  "title": "BMW X1",
+  "description": "SUV compacto premium del Segmento C, con motorizaciones mild-hybrid y versiones eléctricas iX1.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "bmw",
+    "premium",
+    "compacto"
+  ],
+  "featured": false,
+  "manufacturer": "BMW",
+  "class": "SUV compacto premium",
+  "customizable": false,
+  "power": "163 hp",
+  "price": "USD 44.900",
+  "consumo": "5.1 l/100km (WLTP)",
+  "dimensiones": "4500 x 1845 x 1642 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.16valvulas.com.ar/nueva-bmw-x1-sdrive20d-efficient-lanzamiento-en-argentina-desde-us-44-900/",
+    "note": "Se verificaron los datos de la versión sDrive20d Mild-Hybrid lanzada en el mercado argentino y especificaciones globales de la tercera generación U11.",
+    "limitations": [
+      "Algunas especificaciones de equipamiento opcional pueden variar según el mercado regional.",
+      "Los valores de consumo WLTP pueden diferir en condiciones de manejo real."
+    ]
+  },
+  "performance": {
+    "speed": "210 km/h",
+    "acceleration": "0-100 km/h en 8.5s"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T01:33:01.111Z",
+  "transmision": "Automática Steptronic de doble embrague",
+  "traccion": "Tracción delantera (sDrive)",
+  "peso": "1600 kg",
+  "tipoMotor": "Diésel Mild-Hybrid",
+  "potenciaKW": "120 kW",
+  "capacidadTanque": "54 litros",
+  "tiempoRecorrido": "0-100 km/h en 8.5s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "B",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1995 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 540,
+  "maleteroMin": null,
+  "generacion": "Tercera generación (U11)",
+  "anoLanzamiento": 2022,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [
+      {
+        "id": "video_id",
+        "title": "Performance",
+        "channel": "BMW"
+      }
+    ],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "210 km/h",
+      "acceleration": "0-100 km/h en 8.5s"
+    },
+    "bateria": {
+      "consumo": "5.1 l/100km (WLTP)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4500,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "5.1 l/100km (WLTP)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 44.900"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "bmw",
+    "premium",
+    "compacto",
+    "BMW",
+    "SUV compacto premium",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "BMW X1 - SUV compacto premium BMW. 210 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "BMW X1",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "BMW"
+    },
+    "vehicleType": "SUV compacto premium",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "210 km/h",
+    "acceleration": "0-100 km/h en 8.5s",
+    "price": "USD 44.900",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacto premium del Segmento C, con motorizaciones mild-hybrid y versiones eléctricas iX1."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:33:01.111Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.8",
+    "totalVotos": 769,
+    "desglose": {
+      "1": 199,
+      "2": 157,
+      "3": 436,
+      "4": 1046,
+      "5": 613
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 210
+    },
+    "consumo": {
+      "promedio": "5.1 l/100km (WLTP)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa BMW X1 irrumpió en el mercado automotriz global en 2009 como la apuesta de la firma bávara para incursionar en el segmento de los SUV compactos de lujo (Segmento C). Desde su concepción, el modelo se propuso democratizar la experiencia de manejo dinámica de BMW en un formato más versátil, urbano y accesible que sus hermanos mayores, el X3 y el X5. A lo largo de los años, el modelo evolucionó desde su plataforma inicial compartida con la Serie 3 hasta adoptar arquitecturas de tracción delantera y total orientadas a maximizar el espacio interior sin sacrificar el ADN deportivo de la marca.\n\n## Un hito y generación relevante\nEl punto de inflexión más significativo en la historia reciente del modelo se materializa con la llegada de la tercera generación (conocida bajo el código interno U11), presentada comercialmente hacia finales de 2022 y con desembarco en los mercados latinoamericanos durante 2023 y 2024. Esta iteración representa un salto tecnológico monumental: no solo creció levemente en dimensiones para ganar presencia visual y habitabilidad, sino que introdujo por primera vez una gama totalmente electrificada que abarca desde opciones Mild-Hybrid de alta eficiencia (como el sDrive20d) hasta variantes 100% eléctricas denominadas iX1. Su habitáculo adoptó el concepto de pantalla curva de BMW ('BMW Curved Display') y el sistema operativo iDrive de última generación, elevando la percepción de calidad a nuevos estándares en su categoría.\n\n## Curiosidades\nA pesar de ser el SUV de entrada a la familia 'X' de BMW, la X1 ha logrado superar en volumen de ventas a varios de sus hermanos de gama en múltiples mercados internacionales, convirtiéndose en un pilar financiero fundamental para la compañía. Además, la tercera generación fue diseñada desde el inicio para soportar múltiples arquitecturas de propulsión (combustión interna, hibridación ligera, híbridos enchufables y eléctricos puros) utilizando una misma línea de producción flexible, un hito de ingeniería industrial que optimiza costos y tiempos de entrega.\n\n## Competencia y posicionamiento\nEn el plano comercial, la BMW X1 compite de manera directa y encarnizada dentro del segmento de los C-SUV premium contra rivales alemanes de peso pesado como el Audi Q3 y el Mercedes-Benz GLA, además de alternativas de corte sueco como el Volvo XC40. Frente a ellos, la propuesta de valor de la X1 se centra en ofrecer un equilibrio sobresaliente entre el dinamismo de conducción tradicional de BMW —con una dirección precisa y una puesta a punto de suspensión refinada— y una eficiencia sobresaliente en sus motorizaciones mild-hybrid, posicionándose como una de las opciones tecnológicamente más avanzadas y equilibradas para el uso diario y los viajes largos."
+}

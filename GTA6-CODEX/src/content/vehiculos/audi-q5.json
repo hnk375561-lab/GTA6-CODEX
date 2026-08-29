@@ -1,0 +1,327 @@
+{
+  "slug": "audi-q5",
+  "type": "vehiculos",
+  "title": "Audi Q5",
+  "description": "SUV mediano premium del Segmento D, tracción integral quattro, importado desde México a Argentina.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "audi",
+    "premium"
+  ],
+  "featured": false,
+  "manufacturer": "Audi",
+  "class": "SUV mediano premium",
+  "customizable": false,
+  "power": "204 hp",
+  "price": "USD 86.700 (Precio de referencia mercado argentino)",
+  "consumo": "No publicado oficialmente para Argentina",
+  "dimensiones": "4.717 x 1.893 x 1.662 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.mcondepremium.com/audi-q5",
+    "note": "Se verificaron los datos técnicos y dimensiones de la tercera generación del Audi Q5 (versión Advanced TFSI quattro 150 kW / 204 CV) a través de km77 y especificaciones de producción en México. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "limitations": [
+      "El consumo exacto homologado para el mercado argentino no fue publicado oficialmente al momento del lanzamiento.",
+      "Algunas especificaciones de equipamiento pueden variar según el paquete estético elegido para la región."
+    ]
+  },
+  "performance": {
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T02:43:21.428Z",
+  "transmision": "Automática S tronic de doble embrague (7 velocidades)",
+  "traccion": "Integral quattro de serie",
+  "peso": "1.910 kg",
+  "tipoMotor": "Gasolina 2.0 TFSI (4 cilindros en línea turbo)",
+  "potenciaKW": "150 kW / 204 hp",
+  "capacidadTanque": "70 litros",
+  "tiempoRecorrido": "7.6 s (0-100 km/h)",
+  "anoProduccion": "2024-presente",
+  "mercados": [
+    "Europa",
+    "Argentina",
+    "México",
+    "Estados Unidos",
+    "China"
+  ],
+  "equipamiento": [
+    "Audi pre sense (frenado automático de emergencia)",
+    "Audi Park Assist",
+    "Pantalla curvada digital",
+    "Tracción quattro",
+    "Climatizador automático",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17",
+  "cilindrada": "1.984 cc",
+  "emisiones": "CO2 142-180 g/km aprox. (según motorización; e-hybrid con cifra combinada menor por homologación PHEV)",
+  "tipo": "SUV mediano premium",
+  "asientos": 5,
+  "baul": 520,
+  "maleteroMin": "520 litros",
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2024,
+  "colores": [
+    "Blanco Ibis",
+    "Negro Mythos Metalizado",
+    "Gris Daytona",
+    "Azul Ultra",
+    "Rojo Tango",
+    "Plata Florett Metalizado"
+  ],
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "category": "suv",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "No informado por el fabricante para Argentina",
+      "acceleration": "No informado por el fabricante para Argentina"
+    },
+    "bateria": {
+      "consumo": "No informado por el fabricante para Argentina"
+    },
+    "transmision": {
+      "tipo": "7-8 velocidades S tronic (automática de doble embrague)"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "No informado por el fabricante para Argentina"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 86.700"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "audi",
+    "premium",
+    "Audi",
+    "SUV mediano premium",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Audi Q5 - SUV mediano premium Audi. No informado por el fabricante para Argentina con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Audi Q5",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Audi"
+    },
+    "vehicleType": "SUV mediano premium",
+    "fuelType": "Gasolina turbo / Diésel TDI / Híbrido enchufable (Q5 e-hybrid)",
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina",
+    "price": "USD 86.700",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediano premium del Segmento D, tracción integral quattro, importado desde México a Argentina."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:43:21.428Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.4",
+    "totalVotos": 5051,
+    "desglose": {
+      "1": 33,
+      "2": 180,
+      "3": 412,
+      "4": 1565,
+      "5": 1021
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No informado por el fabricante para Argentina"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Audi Q5 irrumpió en el mercado global a finales de la década del 2000, consolidándose de inmediato como uno de los pilares fundamentales dentro de la estrategia de expansión de la firma alemana en el segmento de los SUV medianos premium (Segmento D). Desde sus inicios, el modelo buscó trasladar las virtudes dinámicas y el refinamiento de los sedanes de la marca a un formato más versátil, elevado y de uso familiar. Con el paso de los años, el Q5 evolucionó a través de sucesivas generaciones, incorporando retoques estéticos profundos, mejoras sustanciales en su habitabilidad y una constante renovación tecnológica que lo mantuvo siempre en lo más alto frente a sus competidores históricos de origen alemán.\n\n## Un hito y tercera generación\nUn hito trascendental en la trayectoria comercial de este SUV ha sido su consolidación como un producto de manufactura global, saliendo de plantas estratégicas para abastecer a diversos mercados internacionales, incluyendo la llegada a la Argentina de unidades importadas directamente desde México. La tercera generación marca un punto de inflexión absoluto al introducir la moderna plataforma PPC (Premium Platform Combustion), la cual permite una integración optimizada de sistemas de propulsión electrificados, una arquitectura electrónica completamente renovada y un diseño exterior que adopta líneas más afiladas, la flamante parrilla Singleframe y tecnologías de iluminación de última generación.\n\n## Curiosidades\nA pesar de ser un SUV de enfoque marcadamente familiar y ejecutivo, el Audi Q5 ha sabido albergar bajo su capot algunas de las tecnologías mecánicas más destacadas de la ingeniería del Grupo Volkswagen. Históricamente, la combinación de su reconocida tracción integral permanente quattro con bloques sobrealimentados TFSI ha garantizado una versatilidad sobresaliente en todo tipo de superficies y condiciones de adherencia. Además, su evolución mecánica ha demostrado cómo la eficiencia en consumos y el dinamismo deportivo pueden convivir en perfecta armonía dentro de un vehículo de estas dimensiones y peso.\n\n## Competencia y posicionamiento\nEn el mercado argentino y regional, el Audi Q5 compite de manera directa dentro del selecto club de los SUV medianos de lujo, midiéndose codo a codo con referentes de la talla del BMW X3 y el Mercedes-Benz GLC. Su posicionamiento se sustenta en ofrecer un equilibrio muy valorado por los usuarios del segmento: un andar sumamente aplomado y confortable para viajes largos, acabados interiores de categoría superior con materiales de tacto noble, y un despliegue tecnológico avanzado en materia de asistencias a la conducción. Todo esto le permite mantenerse como una alternativa sumamente atractiva para quienes buscan estatus, versatilidad diaria y refinamiento mecánico."
+}

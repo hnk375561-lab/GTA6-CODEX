@@ -1,0 +1,228 @@
+{
+  "slug": "triumph-bonneville-t120",
+  "type": "vehiculos",
+  "title": "Triumph Bonneville T120",
+  "description": "Moto de estilo clásico de Triumph, motor bicilíndrico paralelo de 1200cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "triumph"
+  ],
+  "featured": false,
+  "manufacturer": "Triumph",
+  "class": "Moto clásica",
+  "customizable": false,
+  "power": "80 hp",
+  "price": "USD 13.000 (referencia internacional)",
+  "consumo": "4.1 l/100km (referencia WMTC)",
+  "dimensiones": "2.170 mm largo x 780 mm ancho x 1.100 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://es.wikipedia.org/wiki/Triumph_Bonneville",
+    "note": "Se actualizaron los datos técnicos específicos de la Triumph Bonneville T120, incluyendo su motor bicilíndrico paralelo de 1200 cc (High Torque), transmisión manual de 6 marchas, dimensiones reales de la moto y capacidades acordes al modelo de producción real.",
+    "limitations": [
+      "El precio y consumo exactos pueden variar según el mercado regional y las normativas de emisiones vigentes (Euro 5).",
+      "No se incluye URL de fuente primaria para evitar enlaces no verificados en esta carga."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:28:19.707Z",
+  "transmision": "Manual de 6 velocidades",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "216 kg (en seco) / 236 kg (en orden de marcha)",
+  "tipoMotor": "Gasolina (Bicilíndrico paralelo)",
+  "potenciaKW": "58.8 kW",
+  "capacidadTanque": "14.5 litros",
+  "tiempoRecorrido": "no publicado oficialmente",
+  "anoProduccion": "2016-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1200 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Moderna clásica (T120)",
+  "anoLanzamiento": 2016,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual secuencial"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 12.500"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "moto",
+    "triumph",
+    "Triumph",
+    "Moto clásica",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Triumph Bonneville T120 - Moto clásica Triumph. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Triumph Bonneville T120",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Triumph"
+    },
+    "vehicleType": "Moto clásica",
+    "fuelType": "Gasolina",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 12.500",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto de estilo clásico de Triumph, motor bicilíndrico paralelo de 1200cc."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:28:19.707Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Triumph Bonneville T120 es uno de los máximos exponentes del motociclismo británico y un tributo directo a la icónica Bonneville T120 original lanzada en 1959, moto que dominó las pistas y las rutas de su época. El renacimiento moderno de esta saga llegó al mercado global para fusionar el diseño atemporal de mediados del siglo XX con las más altas exigencias de la ingeniería contemporánea. Lejos de ser una simple pieza de museo rodante, la T120 se diseñó para ofrecer el auténtico espíritu de las clásicas de alta cilindrada, pero dotada de un rendimiento fiable y apto para el uso diario.\n\n## Un hito o generación relevante\nEl hito más importante para la familia Bonneville moderna se concretó en 2016, año en el que Triumph introdujo una plataforma completamente nueva refrigerada por líquido. Dentro de esta gama, la T120 se posicionó como el buque insignia de estilo clásico. A diferencia de las variantes más pequeñas de 900 cc, la T120 adoptó un motor bicilíndrico paralelo de 1200 cc diseñado específicamente para entregar un par motor masivo desde bajas revoluciones, manteniendo al mismo tiempo una estética sumamente limpia que oculta de forma magistral los componentes modernos como el radiador y los sistemas de inyección de combustible.\n\n## Curiosidades\nUn aspecto sumamente destacado de la Triumph Bonneville T120 es su meticulosa atención al detalle estético. Los ingenieros y diseñadores trabajaron para recrear detalles clásicos, tales como los cuerpos de mariposa que simulan ser carburadores tradicionales de la época dorada del motociclismo inglés. Además, a pesar de su silueta marcadamente retro, incorpora de serie tecnologías de asistencia a la conducción indispensables hoy en día, como modos de conducción seleccionables (Road y Rain), control de tracción desconectable, frenos ABS y puños calefaccionados de fábrica en la mayoría de sus versiones globales, logrando un equilibrio perfecto entre nostalgia y confort tecnológico.\n\n## Competencia y posicionamiento\nDentro del mercado actual de motocicletas de estilo clásico y neoretro, la Triumph Bonneville T120 compite directamente con pesos pesados de la industria como la gama R nineT de BMW y la Kawasaki W800. No obstante, la T120 se distingue por ocupar un lugar privilegiado en el segmento premium gracias a su herencia británica indiscutible, sus acabados de alta calidad y un andar refinado que prioriza el torque lineal y la comodidad por encima de las pretensiones puramente deportivas. Es una opción predilecta tanto para puristas del motociclismo como para conductores modernos que buscan distinción y presencia en el asfalto."
+}

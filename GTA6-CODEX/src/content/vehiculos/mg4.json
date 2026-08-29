@@ -1,0 +1,225 @@
+{
+  "slug": "mg4",
+  "type": "vehiculos",
+  "title": "MG4 Electric",
+  "description": "Hatchback eléctrico compacto de MG (SAIC), sobre plataforma modular dedicada.",
+  "status": "confirmado",
+  "tags": [
+    "electrico",
+    "mg"
+  ],
+  "featured": false,
+  "manufacturer": "MG",
+  "class": "Hatchback eléctrico",
+  "customizable": false,
+  "power": "170 hp (versión Standard Range)",
+  "price": "EUR 29.000 (precio de referencia aproximado mercado europeo)",
+  "consumo": "16.0 kWh/100km (combinado WLTP referencia)",
+  "dimensiones": "4.287 mm largo x 1.836 mm ancho x 1.504 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://en.wikipedia.org/wiki/MG4_EV",
+    "note": "Se verificaron las especificaciones técnicas del MG4 Electric a partir de la plataforma modular MSP de SAIC y datos de lanzamiento globales, utilizando como base factual el artículo de Wikipedia provisto.",
+    "limitations": [
+      "Los precios y la autonomía pueden variar según el mercado europeo o internacional específico y los subsidios vigentes.",
+      "Las diferentes variantes de batería y motorización (Standard, Extended Range, Long Range, XPower) modifican sustancialmente la potencia, el peso y las prestaciones."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:23:33.860Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción trasera",
+  "peso": "1.655 kg",
+  "tipoMotor": "Eléctrico síncrono de imanes permanentes",
+  "potenciaKW": "125 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "7.7s",
+  "anoProduccion": "2022-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 363,
+  "maleteroMin": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2022,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Automática de relación única (motor eléctrico)"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 29.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "electrico",
+    "mg",
+    "MG",
+    "Hatchback eléctrico",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "MG4 Electric - Hatchback eléctrico MG. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "MG4 Electric",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "MG"
+    },
+    "vehicleType": "Hatchback eléctrico",
+    "fuelType": "Eléctrico",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "EUR 29.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback eléctrico compacto de MG (SAIC), sobre plataforma modular dedicada."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:23:33.860Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl MG4 Electric representa un hito fundamental en la reinvención moderna de Morris Garages (MG), una marca de origen británico que hoy opera bajo el paraguas del gigante automotriz chino SAIC Motor. Presentado formalmente a mediados de 2022 —inicialmente conocido como MG Mulan en China y lanzado en Europa poco después—, este hatchback compacto fue desarrollado desde una hoja en blanco como un vehículo 100% eléctrico puro, descartando cualquier adaptación de plataformas térmicas previas.\n\nEl núcleo de su arquitectura es la plataforma modular escalable (MSP) de SAIC, bautizada internamente como 'Nebula'. Esta base destaca por integrar un paquete de baterías sumamente delgado, conocido como 'One Pack', que optimiza de manera notable el espacio interior y reduce el centro de gravedad del vehículo, dotándolo de un comportamiento dinámico ágil y equilibrado.\n\n## Un hito o generación relevante\nEl lanzamiento de la variante deportiva de altas prestaciones denominada MG4 XPower marcó un punto de inflexión para la marca en los mercados internacionales. Este modelo introdujo un esquema de doble motor eléctrico que entrega tracción integral y una potencia combinada cercana a los 435 CV, demostrando que la plataforma MSP no solo estaba preparada para la movilidad urbana eficiente, sino también para competir directamente en rendimiento con hatchbacks deportivos tradicionales de alta gama a una fracción de su costo.\n\n## Curiosidades\nA pesar de su enfoque generalista y accesible, el MG4 adoptó una configuración de tracción trasera en sus versiones de acceso, una característica poco común en el segmento C-hatchback eléctrico, que suele priorizar la tracción delantera. Esto le otorga un radio de giro muy favorable y una dinámica de conducción marcadamente más entretenida. Asimismo, su diseño exterior fue concebido en el centro de estudios avanzados que SAIC posee en Londres, buscando seducir al público europeo con líneas angulosas y una firma lumínica trasera muy distintiva.\n\n## Competencia y posicionamiento\nEn el mercado global, el MG4 Electric se posiciona como un disruptor de precios en el segmento de los hatchbacks compactos a batería. Compite de manera directa contra pesos pesados de la industria como el Volkswagen ID.3, el Renault Megane E-Tech, el Nissan Leaf y el BYD Dolphin. Su principal ventaja competitiva ha sido democratizar el acceso a la electromovilidad mediante una excelente relación precio-producto, combinando autonomías competitivas que van desde los 350 hasta más de 500 kilómetros según la capacidad de la batería elegida, sin resignar los altos estándares de seguridad respaldados por las cinco estrellas en las pruebas de choque de Euro NCAP."
+}

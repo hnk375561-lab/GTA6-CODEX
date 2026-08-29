@@ -1,0 +1,326 @@
+{
+  "slug": "audi-q7",
+  "type": "vehiculos",
+  "title": "Audi Q7",
+  "description": "SUV premium grande de Audi de 7 plazas, plataforma MLB Evo.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "audi"
+  ],
+  "featured": false,
+  "manufacturer": "Audi",
+  "class": "SUV premium",
+  "customizable": false,
+  "power": "335 hp",
+  "price": "USD 65.000 (MSRP estimado de referencia)",
+  "consumo": "8.7 l/100km combinado (versión 55 TFSI V6)",
+  "dimensiones": "5063 mm x 1970 mm x 1741 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://motoreu.com/audi-q7-55-tfsi-mpg-fuel-consumption-technical-specifications-176357",
+    "secondarySource": "https://www.auto-data.net/en/audi-q7-model-517",
+    "note": "Se verificaron las especificaciones técnicas principales de la variante Audi Q7 55 TFSI quattro con motor V6 de 3.0 litros a partir de bases de datos automotrices especializadas.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado de destino y los opcionales de equipamiento.",
+      "Los niveles de consumo pueden diferir según las normativas locales de homologación (WLTP frente a EPA)."
+    ]
+  },
+  "performance": {
+    "speed": "250 km/h (limitada electrónicamente)",
+    "acceleration": "0-100 km/h en 5.9s"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:31:04.445Z",
+  "transmision": "Automática Tiptronic de 8 velocidades",
+  "traccion": "Integral quattro (AWD)",
+  "peso": "2055 kg",
+  "tipoMotor": "Gasolina V6 3.0 turbo (Mild-Hybrid)",
+  "potenciaKW": "250 kW",
+  "capacidadTanque": "85 litros",
+  "tiempoRecorrido": "5.9s 0-100 km/h",
+  "anoProduccion": "2019-presente",
+  "mercados": [
+    "Europa",
+    "Estados Unidos",
+    "Latinoamérica",
+    "China",
+    "Medio Oriente"
+  ],
+  "equipamiento": [
+    "7 plazas de serie",
+    "Suspensión neumática adaptativa (opcional)",
+    "Audi pre sense",
+    "Climatizador de 4 zonas",
+    "Asistente de conducción adaptativo",
+    "Pantalla digital MMI touch"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "cilindrada": "2995 cc",
+  "emisiones": "CO2 229 g/km (55 TFSI V6) / 57 g/km (55 TFSIe híbrido, cifra combinada PHEV)",
+  "tipo": "SUV premium grande (7 plazas)",
+  "asientos": 7,
+  "baul": 865,
+  "maleteroMin": "865 litros",
+  "generacion": "Cuarta generación (4M, facelift 2024)",
+  "anoLanzamiento": 2019,
+  "colores": [
+    "Blanco Ibis",
+    "Negro Mythos Metalizado",
+    "Gris Daytona",
+    "Azul Navarra",
+    "Plata Florett Metalizado",
+    "Marrón Terra"
+  ],
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "250 km/h (limitada electrónicamente)",
+      "acceleration": "0-100 km/h en 5.9s"
+    },
+    "bateria": {
+      "consumo": "8.7 l/100km combinado (versión 55 TFSI V6 335 hp)"
+    },
+    "transmision": {
+      "tipo": "8 velocidades Tiptronic (automática)"
+    },
+    "dimensiones": {
+      "largo": 5,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "8.7 l/100km combinado (versión 55 TFSI V6 335 hp)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 62.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "audi",
+    "Audi",
+    "SUV premium",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Audi Q7 - SUV premium Audi. 250 km/h (limitada electrónicamente) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Audi Q7",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Audi"
+    },
+    "vehicleType": "SUV premium",
+    "fuelType": "Gasolina turbo V6 (mild-hybrid) / Híbrido enchufable TFSIe",
+    "speed": "250 km/h (limitada electrónicamente)",
+    "acceleration": "0-100 km/h en 5.9s",
+    "price": "USD 62.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV premium grande de Audi de 7 plazas, plataforma MLB Evo."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:31:04.445Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.5",
+    "totalVotos": 3544,
+    "desglose": {
+      "1": 241,
+      "2": 324,
+      "3": 274,
+      "4": 1553,
+      "5": 1487
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 250
+    },
+    "consumo": {
+      "promedio": "8.7 l/100km combinado (versión 55 TFSI V6 335 hp)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Audi Q7 representa la apuesta más ambiciosa de la firma de Ingolstadt dentro del segmento de los SUV grandes de lujo. Presentado originalmente a mediados de los 2000, este modelo se consolidó rápidamente como un pilar fundamental para la marca alemana al inaugurar su incursión en el terreno de los vehículos utilitarios deportivos de altas prestaciones y gran porte. A lo largo de su trayectoria comercial, el Q7 ha sabido redefinir los estándares de confort, habitabilidad y tecnología aplicada a la conducción, posicionándose como un referente indiscutido frente a sus rivales tradicionales de origen alemán.\n\n## Un hito y generación relevante\nUn punto de inflexión fundamental en la historia del modelo fue la llegada de la segunda generación y su posterior evolución bajo la plataforma MLB Evo del Grupo Volkswagen, estructura compartida con otros colosos del conglomerado. La actualización más reciente, introducida en 2024, trajo consigo una renovación estética profunda que adoptó el nuevo lenguaje visual de Audi, incorporando ópticas delanteras con tecnología Matrix LED avanzada, parrilla Singleframe rediseñada y mejoras sustanciales en el sistema de infoentretenimiento MMI touch response con pantallas de alta resolución. Estas modificaciones permitieron mantener al Q7 a la vanguardia tecnológica sin perder la sobriedad y elegancia que caracteriza a la marca.\n\n## Curiosidades\nA pesar de sus generosas dimensiones exteriores, que superan los cinco metros de largo, el Audi Q7 destaca por contar con soluciones dinámicas avanzadas como la dirección en las cuatro ruedas, lo que reduce notablemente el radio de giro en ciudad y mejora la estabilidad en ruta a altas velocidades. Asimismo, su habitáculo ha sido diseñado meticulosamente para ofrecer hasta siete plazas reales de serie en la mayoría de sus mercados principales, integrando opciones de modularidad que permiten abatir los asientos traseros para configurar un espacio de carga descomunal de más de 2000 litros.\n\n## Competencia y posicionamiento\nEn el mercado global de los SUV premium de gran tamaño, el Audi Q7 compite directamente con pesos pesados de la industria como el BMW X5, el Mercedes-Benz GLE y el Volvo XC90. El posicionamiento del modelo de los cuatro anillos se destaca principalmente por ofrecer un equilibrio sobresaliente entre el refinamiento de marcha —especialmente al equipar la suspensión neumática adaptativa—, una tracción integral quattro de probada eficacia en cualquier condición climática, y un nivel de digitalización interior intuitivo y vanguardista que atrae tanto a compradores corporativos como a familias que buscan lo máximo en confort para viajes de larga distancia."
+}

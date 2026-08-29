@@ -1,0 +1,232 @@
+{
+  "slug": "gwm-tank-300",
+  "type": "vehiculos",
+  "title": "GWM Tank 300",
+  "description": "SUV 4x4 de estilo retro de Great Wall Motors, con versión híbrida enchufable.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "gwm",
+    "hibrido"
+  ],
+  "featured": false,
+  "manufacturer": "GWM",
+  "class": "SUV 4x4",
+  "customizable": false,
+  "power": "224 hp",
+  "price": "USD 35.000 (referencia de mercado global)",
+  "consumo": "9.5 l/100km combinado",
+  "dimensiones": "4.760 mm largo x 1.930 mm ancho x 1.905 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.gwm.co.za/content/dam/gwm/pages/za/en/models/tank-300/tank300-brochure.pdf",
+    "note": "Se verificaron las especificaciones principales y dimensiones a partir de la documentación oficial de GWM para el modelo Tank 300 con motorización naftera 2.0T.",
+    "limitations": [
+      "El precio es orientativo y puede variar sustancialmente según los mercados de exportación e impuestos locales.",
+      "Las cifras de consumo y aceleración pueden variar según la variante híbrida o de combustión pura elegida en cada región."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:42:34.457Z",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "4x4 conectable con reductora",
+  "peso": "2.150 kg",
+  "tipoMotor": "Gasolina 2.0L Turbo",
+  "potenciaKW": "162 kW",
+  "capacidadTanque": "80 litros",
+  "tiempoRecorrido": "9.5s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.967 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 410,
+  "maleteroMin": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 35.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "suv",
+    "gwm",
+    "GWM",
+    "SUV 4x4",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "GWM Tank 300 - SUV 4x4 GWM. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "GWM Tank 300",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "GWM"
+    },
+    "vehicleType": "SUV 4x4",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 35.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV 4x4 de estilo retro de Great Wall Motors, con versión híbrida enchufable."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:42:34.457Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl GWM Tank 300 es uno de los vehículos más disruptivos lanzados por Great Wall Motors bajo su división especializada en todoterrenos, Tank. Presentado originalmente en el Salón del Automóvil de Chengdu en 2020 y comercializado desde 2023 en adelante, este SUV nació con el objetivo claro de sacudir el segmento de los 4x4 medianos tradicionales. Su propuesta combina una estética claramente inspirada en los todoterrenos clásicos de formato cuadrado con una plataforma de largueros y travesaños moderna, pensada para soportar un uso off-road intenso sin resignar confort en el asfalto.\n\n## Un hito o generación relevante\nEl hito fundamental en la corta pero intensa trayectoria del Tank 300 fue su rápida expansión fuera del mercado chino. Mientras que en su etapa inicial se comercializó bajo la marca Wey, GWM decidió independizar la familia \"Tank\" como una marca propia debido al rotundo éxito comercial. Este movimiento le permitió posicionarse rápidamente en mercados internacionales como Sudáfrica, Australia y Medio Oriente, donde los entusiastas del off-road recibieron con agrado una alternativa más accesible frente a los referentes históricos japoneses y occidentales del segmento de 4x4 robustos.\n\n## Curiosidades\nA pesar de su apariencia robusta y puramente utilitaria que recuerda a clásicos como el Jeep Wrangler o el Ford Bronco, el interior del Tank 300 sorprende por un nivel de refinamiento tecnológico muy elevado. Cuenta con doble pantalla digital unida para el instrumental y el sistema multimedia, acabados en materiales de tacto agradable y detalles de iluminación ambiental personalizable. Además, su nombre comercial (\"Tank\") generó inicialmente escepticismo sobre si un vehículo civil estaría a la altura de semejante denominación, algo que el modelo disipó rápidamente gracias a sus capacidades de vadeo, ángulos de ataque y salida destacados, y sus bloqueos de diferencial delantero y trasero en las versiones más equipadas.\n\n## Competencia y posicionamiento\nEn el mercado global, el GWM Tank 300 se posiciona como un SUV todoterreno mediano de enfoque recreativo y aventurero. Compite directamente contra exponentes de la talla del Jeep Wrangler, el Toyota Land Cruiser Prado (en versiones de entrada o mercados específicos) y el Ford Bronco. Su principal ventaja competitiva radica en una agresiva relación precio-producto, ofreciendo tracción integral real con reductora y asistencias electrónicas avanzadas a un costo sensiblemente inferior al de sus rivales tradicionales occidentales y japoneses, logrando abrirse paso en mercados emergentes y desarrollados por igual."
+}

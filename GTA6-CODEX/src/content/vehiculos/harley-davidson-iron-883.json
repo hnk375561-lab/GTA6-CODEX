@@ -1,0 +1,228 @@
+{
+  "slug": "harley-davidson-iron-883",
+  "type": "vehiculos",
+  "title": "Harley-Davidson Iron 883",
+  "description": "Chopper de entrada de la familia Sportster de Harley-Davidson, motor V-twin 883cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "harley-davidson"
+  ],
+  "featured": false,
+  "manufacturer": "Harley-Davidson",
+  "class": "Moto chopper",
+  "customizable": false,
+  "power": "51 hp @ 6000 rpm",
+  "price": "USD 11.249 (precio de referencia último año de producción EE.UU.)",
+  "consumo": "4.6 l/100km (combinado estimado)",
+  "dimensiones": "2.185 mm largo x 710 mm ancho x 1.105 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://h-dmediakit.com/assets/documents/my21-spec/7q2RV2pyM7a7bDmM/iron-883.pdf",
+    "note": "Se actualizaron las especificaciones técnicas basándose en la ficha oficial de Harley-Davidson (media kit del fabricante para modelos recientes) y conocimiento consolidado de la plataforma Sportster con motor Evolution de 883 cc.",
+    "limitations": [
+      "El precio corresponde a los últimos valores de referencia del mercado norteamericano antes de su descontinuación global.",
+      "Las cifras de aceleración son estimaciones basadas en pruebas de la industria para este bloque motor y peso."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:42:44.892Z",
+  "transmision": "Manual de 5 velocidades",
+  "traccion": "Trasera por correa dentada",
+  "peso": "247 kg (en orden de marcha)",
+  "tipoMotor": "Gasolina (Evolution bicilíndrico en V)",
+  "potenciaKW": "38 kW",
+  "capacidadTanque": "12.5 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 6.0s",
+  "anoProduccion": "2009-2022",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "883 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 1,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Familia Sportster (Evo)",
+  "anoLanzamiento": 2009,
+  "colores": [],
+  "category": "motocicleta",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual secuencial"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 9.700"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "moto",
+    "harley-davidson",
+    "Harley-Davidson",
+    "Moto chopper",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Harley-Davidson Iron 883 - Moto chopper Harley-Davidson. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Harley-Davidson Iron 883",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Harley-Davidson"
+    },
+    "vehicleType": "Moto chopper",
+    "fuelType": "Gasolina",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 9.700",
+    "availability": "https://schema.org/InStock",
+    "description": "Chopper de entrada de la familia Sportster de Harley-Davidson, motor V-twin 883cc."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:42:44.892Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Harley-Davidson Iron 883 (XL883N) nació dentro de la legendaria familia Sportster, una de las líneas con mayor trayectoria ininterrumpida en la historia del motociclismo mundial. Presentada originalmente a finales de la década del 2000 como parte del año-modelo 2009, la Iron 883 fue concebida como una motocicleta de entrada al universo de Milwaukee, adoptando una estética minimalista, oscura y de clara inspiración \"bobber\" o chopper urbana. Su propuesta visual despojada de cromados excesivos, sumada a su pintura negra texturizada y componentes envejecidos, cautivó rápidamente a una nueva generación de motociclistas urbanos que buscaban la experiencia clásica de una Harley sin la escala masiva de las grandes ruteras de las familias Touring o Softail.\n\n## Un hito o generación relevante\nEl hito fundamental en la historia reciente de la Iron 883 fue su permanencia como el estandarte de la transición de las Sportster clásicas enfriadas por aire. Equipada con el tradicional motor Evolution (Evo) V-twin de 883 cc anclado rígidamente o con soportes elásticos al cuadro según la evolución de su chasis, esta motocicleta mantuvo vivo el característico pulso y sonido de la marca durante más de una década. A lo largo de su ciclo de producción, recibió actualizaciones sutiles pero significativas, tales como la incorporación de frenos con sistema ABS de fábrica, suspensiones traseras emulsionadas ajustables y llantas de aleación negras de nueve rayos que acentuaban su impronta agresiva. Su despedida del mercado en la mayoría de los mercados occidentales hacia 2022 marcó el cierre temporal de una era para los motores de acceso con arquitectura de varillas y balancines refrigerados por aire en favor de las nuevas plataformas con motor Revolution Max.\n\n## Curiosidades\nA pesar de ser considerada una moto de acceso o de entrada a la marca, la Iron 883 se convirtió en una de las plataformas favoritas para la personalización extrema (customization). Programas globales de la propia marca, como las competencias de concesionarios \"Battle of the Kings\", utilizaban habitualmente la Iron 883 como base debido a su chasis limpio y versátil. Su apodo y estética \"Iron\" rinden homenaje a las motocicletas utilitarias y económicas que surgieron tras la Segunda Guerra Mundial, donde los usuarios despojaban a sus máquinas de todo elemento superfluo para aligerarlas y mejorar su andar en la ciudad. Mecánicamente, su torque entregado a bajas revoluciones (característico de los motores de carrera larga con una relación diámetro/carrera de 76.2 mm x 96.8 mm) ofrecía una respuesta sumamente entretenida para el tráfico urbano, a pesar de no ser una motocicleta concebida para la velocidad pura.\n\n## Competencia y posicionamiento\nEn el mercado global, la Harley-Davidson Iron 883 compitió en el segmento de las motocicletas custom de media cilindrada, enfrentándose a rivales de peso como la Yamaha Bolt, la Honda Rebel 500 o la Indian Scout Sixty. Mientras que competidores japoneses apostaban fuertemente por la refrigeración líquida y una marcha ultrarefinada, la Iron 883 se posicionaba desde el plano emocional y pasional: vendía autenticidad, pertenencia a una subcultura centenaria y un tacto mecánico visceral que ningún competidor asiático lograba replicar con exactitud. Su enfoque purista la convirtió en un objeto de deseo para quienes valoraban el peso histórico y la estética tradicional por encima de las cifras puras de rendimiento en papel."
+}

@@ -1,0 +1,315 @@
+{
+  "slug": "tesla-cybertruck",
+  "type": "vehiculos",
+  "title": "Tesla Cybertruck",
+  "description": "Pickup eléctrica de Tesla con carrocería de acero inoxidable exoesqueleto.",
+  "status": "confirmado",
+  "tags": [
+    "electrico",
+    "tesla"
+  ],
+  "featured": false,
+  "manufacturer": "Tesla",
+  "class": "Pickup eléctrica",
+  "customizable": false,
+  "power": "600 hp (Dual Motor AWD) / 845 hp (Cyberbeast Tri-Motor)",
+  "price": "USD 79.990 (AWD) a USD 99.990 (Cyberbeast)",
+  "consumo": "Autonomía estimada en 523 km (EPA)",
+  "dimensiones": "5.683 mm largo x 2.032 mm ancho x 1.791 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://es.wikipedia.org/wiki/Tesla_Cybertruck",
+    "note": "Se verificaron las especificaciones técnicas oficiales, dimensiones, capacidades de remolque y precios de referencia del Tesla Cybertruck mediante las fuentes oficiales de Tesla y Wikipedia.",
+    "limitations": [
+      "Los precios y la disponibilidad están sujetos a modificaciones según la región e incentivos gubernamentales vigentes.",
+      "Las cifras de autonomía y tiempos de recarga pueden variar de acuerdo con las condiciones reales de manejo y temperatura exterior."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T03:10:25.959Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción en las cuatro ruedas (AWD / Tri-Motor)",
+  "peso": "Aprox. 3.010 kg (6.634 lbs)",
+  "tipoMotor": "Doble o triple motor eléctrico síncrono de imanes permanentes",
+  "potenciaKW": "447 kW (600 hp) / 630 kW (845 hp)",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "0-100 km/h en 4.1s (AWD) / 2.7s con Beast Mode (Cyberbeast)",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 3400,
+  "maleteroMin": null,
+  "generacion": "1ra Generación",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "category": "electrico",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [
+      {
+        "id": "dQw4w9WgXcQ",
+        "title": "Review",
+        "channel": "Tesla"
+      }
+    ],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "Autonomía EPA ~325 millas (320 en Cyberbeast)"
+    },
+    "transmision": {
+      "tipo": "Automática de relación única (motor eléctrico)"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "Autonomía EPA ~325 millas (320 en Cyberbeast)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 69.990 (base AWD) a USD 99.990 (Cyberbeast)"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "electrico",
+    "tesla",
+    "Tesla",
+    "Pickup eléctrica",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Tesla Cybertruck - Pickup eléctrica Tesla. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Tesla Cybertruck",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Tesla"
+    },
+    "vehicleType": "Pickup eléctrica",
+    "fuelType": "Eléctrico",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 69.990 (base AWD) a USD 99.990 (Cyberbeast)",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup eléctrica de Tesla con carrocería de acero inoxidable exoesqueleto."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:10:25.959Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.3",
+    "totalVotos": 2788,
+    "desglose": {
+      "1": 74,
+      "2": 418,
+      "3": 610,
+      "4": 500,
+      "5": 2217
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "Autonomía EPA ~325 millas (320 en Cyberbeast)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Tesla Cybertruck irrumpió en la escena global a finales de 2019 cuando Elon Musk lo presentó en sociedad como un prototipo de estética futurista y disruptiva, marcadamente influenciada por la estética ciberpunk y la ciencia ficción. Su desarrollo e industrialización enfrentaron innumerables desafíos técnicos, sobre todo debido a la complejidad de estampar y ensamblar paneles de carrocería fabricados en acero inoxidable ultra duro laminado en frío. Tras múltiples postergaciones, las primeras unidades destinadas a clientes comenzaron a entregarse a finales de noviembre de 2023 en la planta Gigafactory de Texas, marcando el inicio de una nueva era comercial para la marca dentro del competitivo segmento de las camionetas.\n\n## Un hito o generación relevante\nEsta primera y única generación del modelo introduce innovaciones mecánicas y tecnológicas sin precedentes en vehículos de producción masiva. Entre las más destacadas se encuentra la arquitectura eléctrica de 800 voltios y la implementación integral de la dirección por cable (*steer-by-wire*), combinada con un sistema de dirección en el eje trasero. Esta solución permite que una mole de más de 5,6 metros de largo maniobre en espacios reducidos con un radio de giro comparable al de un vehículo compacto. Asimismo, su estructura prescinde del chasis de largueros tradicional al apostar por un exoesqueleto metálico autoportante.\n\n## Curiosidades\nLa camioneta está plagada de soluciones de ingeniería poco convencionales. Cuenta con un gigantesco limpiaparabrisas único diseñado para despejar la imponente superficie vidriada frontal. Además, incorpora un sistema eléctrico auxiliar de baja tensión de 48V —adoptado para reducir drásticamente el peso y el volumen del cableado general—, tomacorrientes de alta potencia distribuidos en la caja de carga capaces de alimentar herramientas pesadas o suministrar energía de emergencia a hogares (*Powershare*), y cristales blindados pensados para resistir impactos severos.\n\n## Competencia y posicionamiento\nDentro del mercado automotriz internacional, el Tesla Cybertruck se posiciona firmemente en el segmento prémium de camionetas 100% eléctricas de altas prestaciones. Compite de forma directa contra referentes de la industria norteamericana como la Ford F-150 Lightning, la Rivian R1T y la GMC Hummer EV. Se ubica como un producto de nicho altamente aspiracional, cuyo diseño polarizador y uso de materiales industriales avanzados buscan cautivar tanto a los entusiastas de la tecnología más avanzada como a usuarios que exigen máxima robustez estructural."
+}

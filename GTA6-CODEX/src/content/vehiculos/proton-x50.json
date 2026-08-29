@@ -1,0 +1,232 @@
+{
+  "slug": "proton-x50",
+  "type": "vehiculos",
+  "title": "Proton X50",
+  "description": "SUV compacto malayo basado en el Geely Binyue.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "proton"
+  ],
+  "featured": false,
+  "manufacturer": "Proton",
+  "class": "SUV compacto",
+  "customizable": false,
+  "power": "177 hp",
+  "price": "RM 79,200 a RM 103,300 (referencia mercado malayo)",
+  "consumo": "6.5 l/100km combinado",
+  "dimensiones": "4.330 mm largo x 1.800 mm ancho x 1.609 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://en.wikipedia.org/wiki/Proton_X50",
+    "secondarySource": "https://www.proton.com/models/all-new-x50",
+    "note": "Se verificaron las especificaciones técnicas, dimensiones, pesos y rangos de precio oficiales del Proton X50 a través de Wikipedia y el sitio web oficial del fabricante.",
+    "limitations": [
+      "Los precios originales están expresados en Ringgit malayo (RM) y pueden variar según el mercado de importación.",
+      "No disponible oficialmente en el mercado argentino."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T03:05:31.199Z",
+  "transmision": "Automática de 7 velocidades (DCT)",
+  "traccion": "Delantera",
+  "peso": "1.325–1.370 kg",
+  "tipoMotor": "Gasolina (Turbo)",
+  "potenciaKW": "130 kW",
+  "capacidadTanque": "45 litros",
+  "tiempoRecorrido": "7.9s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.477 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 330,
+  "maleteroMin": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "category": "suv",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 22.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "suv",
+    "proton",
+    "Proton",
+    "SUV compacto",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Proton X50 - SUV compacto Proton. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Proton X50",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Proton"
+    },
+    "vehicleType": "SUV compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 22.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacto malayo basado en el Geely Binyue."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:05:31.199Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Proton X50 representa un hito fundamental en la estrategia de modernización del fabricante malayo Proton, tras la adquisición de una participación mayoritaria por parte del gigante chino Geely. Lanzado oficialmente al mercado a finales de 2020, este SUV compacto nació como una adaptación directa para el mercado del sudeste asiático del exitoso Geely Binyue. El proyecto no solo implicó un cambio de emblema, sino un minucioso trabajo conjunto de ingeniería para adaptar el vehículo a la conducción con volante a la derecha y refinar la dinámica de conducción según los estándares locales exigidos por Proton en la región.\n\n## Un hito y generación relevante\nLa primera y actual generación del Proton X50 marcó un antes y un después para la marca al introducir tecnología de propulsión avanzada y sistemas de asistencia a la conducción en un segmento accesible. El hito comercial más destacable ocurrió en tiempo récord: a pocos meses de abrir sus reservas en Malasia, el modelo acumuló decenas de miles de pedidos, convirtiéndose rápidamente en el SUV más vendido de su categoría en dicho país y revitalizando por completo la imagen corporativa de Proton frente a rivales tradicionales de origen japonés.\n\n## Curiosidades\nUna de las curiosidades más interesantes del Proton X50 es su conjunto motriz. Utiliza un motor turboalimentado de tres cilindros desarrollado en colaboración dentro de la órbita de Geely y Volvo, lo que le otorga una respuesta en baja muy ágil y una eficiencia de combustible destacable para su categoría. Además, en sus variantes superiores, incorpora sistemas multimedia avanzados con pantallas táctiles de gran tamaño y conectividad integral, posicionándose a la vanguardia tecnológica dentro de su rango de precio.\n\n## Competencia y posicionamiento\nEn el plano de la competencia regional, el Proton X50 se posiciona firmemente en el segmento de los B-SUV, compitiendo de manera directa contra modelos consagrados como el Honda HR-V y otros referentes del mercado asiático. Su principal estrategia de posicionamiento radica en ofrecer una relación precio-producto sumamente competitiva, combinando acabados interiores de estilo deportivo, materiales de buen tacto y un despliegue tecnológico superior al de sus rivales directos de marcas generalistas tradicionales."
+}

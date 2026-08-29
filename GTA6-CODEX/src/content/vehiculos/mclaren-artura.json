@@ -1,0 +1,231 @@
+{
+  "slug": "mclaren-artura",
+  "type": "vehiculos",
+  "title": "McLaren Artura",
+  "description": "Deportivo híbrido enchufable de motor central de McLaren, V6 biturbo.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "mclaren"
+  ],
+  "featured": false,
+  "manufacturer": "McLaren",
+  "class": "Deportivo híbrido",
+  "customizable": false,
+  "power": "680 CV (700 PS combinados)",
+  "price": "USD 237.500 (precio base de referencia global)",
+  "consumo": "4.8 l/100km combinado",
+  "dimensiones": "4.530 mm largo x 1.970 mm ancho x 1.190 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.mclaren.com/cars/es_es/artura",
+    "secondarySource": "https://www.caranddriver.com/es/coches/novedades/a46900057/mclaren-artura-2025",
+    "note": "Se verificaron las especificaciones técnicas principales, dimensiones, peso, potencia y consumos mediante fuentes oficiales de McLaren y Car and Driver España.",
+    "limitations": [
+      "El precio es de referencia global y puede variar según impuestos y aranceles de importación en cada mercado específico."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T03:58:14.025Z",
+  "transmision": "Automática de doble embrague de 8 velocidades",
+  "traccion": "Tracción trasera",
+  "peso": "1.560 kg",
+  "tipoMotor": "Híbrido enchufable, V6 biturbo de 3.0 litros",
+  "potenciaKW": "500 kW",
+  "capacidadTanque": "65 litros",
+  "tiempoRecorrido": "0-100 km/h en 3.0s",
+  "anoProduccion": "2021-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2.993 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 2,
+  "baul": 160,
+  "maleteroMin": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "category": "super-deportivo",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 237.500"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "deportivo",
+    "mclaren",
+    "McLaren",
+    "Deportivo híbrido",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "McLaren Artura - Deportivo híbrido McLaren. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "McLaren Artura",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "McLaren"
+    },
+    "vehicleType": "Deportivo híbrido",
+    "fuelType": "Gasolina turbo",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 237.500",
+    "availability": "https://schema.org/InStock",
+    "description": "Deportivo híbrido enchufable de motor central de McLaren, V6 biturbo."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:58:14.025Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl McLaren Artura representa un auténtico punto de inflexión en la historia de la firma de Woking. Presentado originalmente para marcar el inicio de una nueva era tecnológica, este superdeportivo abandona la clásica receta de los motores V8 biturbo que caracterizaron a modelos icónicos anteriores para abrazar una arquitectura híbrida enchufable completamente revolucionaria. Desarrollado desde una hoja en blanco, el Artura fue concebido para demostrar que la electrificación y las altas prestaciones prestadas de la competición no solo son compatibles, sino que se potencian mutuamente.\n\n## Un hito o generación relevante\n\nEl gran hito de esta primera generación del Artura es la introducción de la nueva plataforma MCLA (McLaren Carbon Lightweight Architecture), optimizada específicamente para albergar sistemas de propulsión electrificados sin comprometer la relación peso-potencia. A diferencia de otros superdeportivos pesados debido a las baterías, los ingenieros británicos lograron contener el peso total en orden de marcha en unos impresionantes 1.560 kilos. Esto se logra combinando un compacto bloque térmico V6 biturbo de 3.0 litros con un motor eléctrico de flujo axial integrado directamente en la carcasa de la transmisión, el cual se alimenta de una batería de 7.4 kWh que le permite circular en modo 100% eléctrico durante trayectos urbanos cortos.\n\n## Curiosidades técnicas y de diseño\n\nEntre las curiosidades más destacadas del McLaren Artura se encuentra la ausencia de una marcha atrás mecánica tradicional dentro de su transmisión de doble embrague de 8 velocidades. Para simplificar el conjunto y ahorrar valiosos gramos, es el propio motor eléctrico el que gira en sentido inverso cuando el conductor selecciona la reversa. Además, su diseño exterior mantiene la pureza aerodinámica característica de la marca, prescindiendo de alerones móviles recargados y confiando en un flujo de aire optimizado por debajo de su carrocería de aluminio y fibra de carbono. Su habitáculo, minimalista y enfocado puramente en el conductor, integra mandos satelitales anclados directamente al instrumental para que los ajustes de conducción se realicen sin apartar las manos del volante.\n\n## Competencia y posicionamiento\n\nEn el segmento de los superdeportivos híbridos de motor central, el McLaren Artura compite de manera directa contra colosos de la industria como la gama híbrida de entrada de Ferrari y modelos avanzados de Porsche. Se posiciona como una opción sumamente refinada pero rabiosamente veloz para aquellos entusiastas que buscan la agilidad milimétrica de un deportivo de pista combinada con la eficiencia y la tecnología de vanguardia del mañana. Su velocidad máxima está electrónicamente limitada a 330 km/h, consolidándose como un referente indiscutido en dinamismo y usabilidad diaria dentro de la élite automotriz global."
+}

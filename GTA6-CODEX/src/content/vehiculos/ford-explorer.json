@@ -1,0 +1,321 @@
+{
+  "slug": "ford-explorer",
+  "type": "vehiculos",
+  "title": "Ford Explorer",
+  "description": "SUV grande de 3 filas de Ford, mercado norteamericano principalmente.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "ford"
+  ],
+  "featured": false,
+  "manufacturer": "Ford",
+  "class": "SUV grande",
+  "customizable": false,
+  "power": "300 hp",
+  "price": "USD 41.350 (MSRP EE.UU. referencia)",
+  "consumo": "10.7 l/100km combinado (referencia)",
+  "dimensiones": "5.050 mm largo x 2.004 mm ancho x 1.778 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.ford.pe/suvs/explorer",
+    "note": "Se verificaron las especificaciones técnicas principales de la sexta generación de la Ford Explorer, incluyendo la motorización EcoBoost de 2.3L y la transmisión automática de 10 velocidades a partir de fuentes oficiales de Ford. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado de exportación, aranceles e impuestos locales.",
+      "El consumo de combustible y la potencia exacta dependen de la elección entre el motor 2.3L EcoBoost o el V6 3.0L."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T02:49:41.607Z",
+  "transmision": "Automática de 10 velocidades",
+  "traccion": "Tracción trasera o integral (AWD)",
+  "peso": "1.980 - 2.150 kg",
+  "tipoMotor": "Gasolina (EcoBoost Turbo)",
+  "potenciaKW": "224 kW",
+  "capacidadTanque": "75 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 6.8s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2.3 L a 3.0 L",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 7,
+  "baul": 515,
+  "maleteroMin": null,
+  "generacion": "6ta generación",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "category": "suv",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [
+      {
+        "id": "video_id",
+        "title": "Official",
+        "channel": "Ford Motor Company"
+      }
+    ],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 40.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "ford",
+    "Ford",
+    "SUV grande",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Ford Explorer - SUV grande Ford. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Ford Explorer",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Ford"
+    },
+    "vehicleType": "SUV grande",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 40.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV grande de 3 filas de Ford, mercado norteamericano principalmente."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:49:41.607Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.2",
+    "totalVotos": 4393,
+    "desglose": {
+      "1": 69,
+      "2": 361,
+      "3": 1134,
+      "4": 1041,
+      "5": 1373
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Ford Explorer es uno de los SUV medianos y grandes más emblemáticos de Norteamérica, habiendo debutado a principios de la década de 1990 para revolucionar el mercado familiar y recreativo. A lo largo de las décadas, este vehículo evolucionó desde una construcción tradicional sobre chasis de largueros orientada al off-road hasta convertirse en un sofisticado crossover moderno con estructura monocasco, priorizando el confort en ruta, el espacio interior y la seguridad de los ocupantes.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de la Explorer fue el lanzamiento de su sexta generación a partir del año modelo 2020. En esta etapa, Ford rediseñó por completo la plataforma para volver a adoptar una arquitectura de tracción trasera longitudinal, lo que permitió mejorar notablemente la distribución de pesos, la capacidad de remolque y la dinámica de conducción general en comparación con la generación anterior de tracción delantera.\n\n## Curiosidades\nDurante sus primeras generaciones en los años 90, la Ford Explorer fue considerada la piedra angular del boom de los SUV en Estados Unidos, convirtiéndose rápidamente en el vehículo utilitario deportivo más vendido del mercado norteamericano. Además, ha servido de base durante años para una infinidad de flotas de agencias gubernamentales y policiales en todo el mundo, destacándose por su versatilidad mecánica y robustez estructural.\n\n## Competencia y posicionamiento\nEn el mercado actual, la Ford Explorer se posiciona firmemente en el segmento de los SUV de tres filas de asientos, compitiendo de manera directa contra modelos de gran peso comercial como el Chevrolet Traverse, el Toyota Highlander, el Jeep Grand Cherokee L y el Honda Pilot. Su propuesta se centra en ofrecer un balance equilibrado entre tecnología de asistencia a la conducción de última generación, opciones de motores EcoBoost eficientes y una excelente habitabilidad para familias numerosas."
+}

@@ -1,0 +1,232 @@
+{
+  "slug": "mazda-cx-30",
+  "type": "vehiculos",
+  "title": "Mazda CX-30",
+  "description": "SUV compacto sobre la plataforma del Mazda 3, con opción de motor turbo 2.5.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "mazda"
+  ],
+  "featured": false,
+  "manufacturer": "Mazda",
+  "class": "SUV compacto",
+  "customizable": false,
+  "power": "186 hp",
+  "price": "Desde $451,900 MXN (referencia Mazda México) / 31.870 € (referencia España)",
+  "consumo": "7.8 l/100km combinado",
+  "dimensiones": "4395 mm largo x 1795 mm ancho x 1540 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.mazda.mx/vehiculos/cx-30",
+    "secondarySource": "https://www.carwow.es/mazda/cx-30/caracteristicas-tecnicas",
+    "note": "Se utilizaron especificaciones técnicas oficiales de Mazda México y Carwow España para contrastar dimensiones, capacidades del baúl, motorizaciones y precios de referencia.",
+    "limitations": [
+      "Los precios varían sustancialmente según el mercado local, aranceles aduaneros e impuestos internos.",
+      "Las cifras de potencia y consumo pueden presentar variaciones menores según la calibración exigida por las normativas de emisiones de cada región y la presencia de variantes con motores 2.0L o 2.5L."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T02:58:13.305Z",
+  "transmision": "Automática de 6 velocidades (Skyactiv-Drive)",
+  "traccion": "Delantera o Integral (i-Activ AWD)",
+  "peso": "1.427 - 1.564 kg",
+  "tipoMotor": "Gasolina atmosférico y turboalimentado (Skyactiv-G / Skyactiv-T)",
+  "potenciaKW": "139 kW",
+  "capacidadTanque": "48 litros",
+  "tiempoRecorrido": "8.1s",
+  "anoProduccion": "2019-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2.5 L",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 430,
+  "maleteroMin": null,
+  "generacion": "1ra generación (DM)",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 25.500"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "suv",
+    "mazda",
+    "Mazda",
+    "SUV compacto",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Mazda CX-30 - SUV compacto Mazda. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Mazda CX-30",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Mazda"
+    },
+    "vehicleType": "SUV compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 25.500",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacto sobre la plataforma del Mazda 3, con opción de motor turbo 2.5."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:58:13.305Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Mazda CX-30 hizo su debut mundial en el Salón del Automóvil de Ginebra en marzo de 2019, posicionándose estratégicamente dentro del catálogo de la marca japonesa como un puente intermedio entre el crossover subcompacto CX-3 y el más tradicional CX-5. Este SUV compacto adopta la exitosa filosofía de diseño Kodo y la avanzada arquitectura de vehículos Skyactiv, compartiendo gran parte de su plataforma, componentes estructurales y arquitectura interior con la cuarta generación del Mazda 3. Desde su comercialización inicial, el vehículo fue concebido para competir en el segmento global de los crossovers, ofreciendo un habitáculo de orientación marcadamente más refinada y cercana a las marcas de categoría prémium.\n\n## Un hito y generación relevante\nLa introducción de tecnologías avanzadas de propulsión representó un hito fundamental para este modelo en diversos mercados internacionales. Entre ellas destaca la variante con motorización atmosférica y turboalimentada de 2.5 litros, que otorga al CX-30 una dinámica de conducción ágil y notablemente deportiva, diferenciándose de la propuesta más conservadora y puramente utilitaria de la mayoría de sus rivales directos. Asimismo, la cuidada puesta a punto del chasis y la dirección priorizan el placer de manejo, manteniendo el concepto de Jinba Ittai (la conexión hombre-máquina) que caracteriza a la firma de Hiroshima en toda su gama actual.\n\n## Curiosidades\nUna de las decisiones más comentadas al momento de bautizar al vehículo fue su denominación numérica. Mientras que la lógica secuencial de la marca indicaba que debía llamarse CX-4 (un nombre que Mazda ya utilizaba en un modelo exclusivo fabricado y comercializado en China), se optó por la nomenclatura CX-30 para evitar confusiones comerciales y reflejar claramente que se trataba de un vehículo de tamaño mediano basado en la plataforma del Mazda 3. Además, el diseño exterior genera debate debido a sus prominentes molduras plásticas perimetrales inferiores, diseñadas para otorgar un aspecto robusto tipo off-road, pero cuya generosa proporción respecto a la superficie vidriada ha dividido opiniones entre los puristas del diseño automotriz.\n\n## Competencia y posicionamiento\nEn el mercado global, el Mazda CX-30 compite de forma directa contra una amplia variedad de SUVs compactos de gran volumen, tales como el Toyota Corolla Cross, el Volkswagen T-Roc, el Nissan Qashqai y el Honda HR-V. No obstante, la estrategia comercial de Mazda ha sido posicionar al vehículo un escalón por encima de los generalistas tradicionales, buscando capturar a clientes que evalúan opciones de marcas prémium como Audi, BMW o MINI. Esto se logra mediante el uso de materiales de tacto superior en la cabina, una insonorización muy lograda y un enfoque ergonómico centrado totalmente en el conductor que redefine los estándares del segmento B/C SUV."
+}

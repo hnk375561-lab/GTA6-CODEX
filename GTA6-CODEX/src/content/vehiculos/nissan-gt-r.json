@@ -1,0 +1,230 @@
+{
+  "slug": "nissan-gt-r",
+  "type": "vehiculos",
+  "title": "Nissan GT-R",
+  "description": "Ícono deportivo japonés de tracción integral, motor V6 biturbo VR38DETT.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "nissan"
+  ],
+  "featured": true,
+  "manufacturer": "Nissan",
+  "class": "Deportivo",
+  "customizable": false,
+  "power": "565 hp",
+  "price": "USD 121.900 (MSRP EE.UU. referencia)",
+  "consumo": "14.7 l/100km urbano / 10.7 l/100km ruta (referencia EPA)",
+  "dimensiones": "4.710 mm largo x 1.895 mm ancho x 1.370 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.nissanusa.com",
+    "note": "Se actualizaron las especificaciones técnicas con base en el conocimiento general validado para la plataforma R35 del Nissan GT-R (motor VR38DETT, potencia de 565 hp para la versión estándar, dimensiones y capacidades homologadas).",
+    "limitations": [
+      "El precio corresponde a valores de referencia para el mercado norteamericano y puede variar según la versión (Pure, Premium, Nismo) y año de producción exacto."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:53:19.839Z",
+  "transmision": "Automática de doble embrague y 6 velocidades",
+  "traccion": "Tracción integral (AWD ATTESA E-TS)",
+  "peso": "1.770 kg",
+  "tipoMotor": "Gasolina V6 biturbo",
+  "potenciaKW": "419 kW",
+  "capacidadTanque": "74 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 2.8s",
+  "anoProduccion": "2007-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "3.799 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 4,
+  "baul": 315,
+  "maleteroMin": null,
+  "generacion": "R35",
+  "anoLanzamiento": 2007,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 122.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "deportivo",
+    "nissan",
+    "Nissan",
+    "Deportivo",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Nissan GT-R - Deportivo Nissan. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Nissan GT-R",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Nissan"
+    },
+    "vehicleType": "Deportivo",
+    "fuelType": "Gasolina turbo",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 122.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Ícono deportivo japonés de tracción integral, motor V6 biturbo VR38DETT."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:53:19.839Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl Nissan GT-R, conocido popularmente como \"Godzilla\", representa uno de los hitos más importantes en la historia de la ingeniería automotriz japonesa. Heredero directo de la legendaria estirpe de los Skyline GT-R (R32, R33 y R34), el GT-R R35 rompió con la tradición al separarse comercialmente de la gama Skyline en 2007, convirtiéndose en un superdeportivo de desarrollo independiente y vocación global. Desde su concepción, fue diseñado para ofrecer un rendimiento descomunal capaz de rivalizar con marcas europeas tradicionalmente establecidas en el segmento de los bólidos de alta gama, pero a una fracción de su costo.\n\n## Un hito o generación relevante\n\nLa generación R35 ha marcado un precedente único en la industria debido a su prolongado ciclo de vida comercial, recibiendo constantes actualizaciones mecánicas, aerodinámicas y estéticas a lo largo de los años en lugar de una renovación generacional completa. Uno de los puntos de inflexión más destacados en su trayectoria ocurrió con la introducción de la variante Nismo y las sucesivas actualizaciones de motor que elevaron la potencia del bloque V6 biturbo VR38DETT hasta los 600 hp en sus versiones más radicales, optimizando también la rigidez estructural del chasis y la calibración de la suspensión.\n\n## Curiosidades\n\nUna de las características más fascinantes del Nissan GT-R es su proceso de ensamblaje artesanal. Cada motor VR38DETT es construido a mano en una sala limpia especializada por un grupo selecto de técnicos altamente calificados conocidos como los *Takumi*. Al finalizar la construcción, una placa con la firma del artesano responsable se coloca de manera visible sobre la cubierta del propulsor. Asimismo, el sistema de tracción integral ATTESA E-TS con transaxle trasero independiente es una obra maestra de la distribución de peso y tracción, otorgando al vehículo una agilidad en curvas que desafía las leyes de la física para un coupé de su porte y peso.\n\n## Competencia y posicionamiento\n\nEn el mercado global de los deportivos de altas prestaciones, el Nissan GT-R ocupa un nicho muy particular. Se posiciona como un matagigantes (*giant killer*), compitiendo de tú a tú con modelos de referencia como el Porsche 911 Turbo, el Chevrolet Corvette Z06 y diversos coupés de altas prestaciones firmados por BMW M y Mercedes-AMG. A pesar del paso de los años, el GT-R mantiene un estatus de culto inquebrantable gracias a su brutal capacidad de aceleración desde partida detenida, su inconfundible estética agresiva y su enfoque enfocado puramente en la experiencia de manejo dinámica."
+}

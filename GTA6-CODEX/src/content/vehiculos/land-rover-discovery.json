@@ -1,0 +1,230 @@
+{
+  "slug": "land-rover-discovery",
+  "type": "vehiculos",
+  "title": "Land Rover Discovery",
+  "description": "SUV grande de 7 plazas de Land Rover con fuerte capacidad off-road.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "land-rover"
+  ],
+  "featured": false,
+  "manufacturer": "Land Rover",
+  "class": "SUV grande",
+  "customizable": false,
+  "power": "360 hp",
+  "price": "USD 65.000 (MSRP referencia global)",
+  "consumo": "9.5 l/100km combinado",
+  "dimensiones": "4.956 mm largo x 2.073 mm ancho x 1.888 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.landrover.com",
+    "note": "Se actualizaron las especificaciones técnicas generales basadas en la quinta generación del Land Rover Discovery (L462), estandarizando valores de dimensiones, capacidad y peso con base en catálogos globales de la marca.",
+    "limitations": [
+      "El precio es una referencia global de entrada de gama y puede variar según el mercado local y opcionales"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:50:31.300Z",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "Tracción integral permanente (AWD)",
+  "peso": "2.250-2.400 kg",
+  "tipoMotor": "Gasolina / Diésel (Mild Hybrid disponible)",
+  "potenciaKW": "265 kW",
+  "capacidadTanque": "89 litros",
+  "tiempoRecorrido": "6.5s a 7.5s (0-100 km/h)",
+  "anoProduccion": "2017-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2.0 - 3.0 litros",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 7,
+  "baul": 258,
+  "maleteroMin": null,
+  "generacion": "Quinta generación (L462)",
+  "anoLanzamiento": 2017,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 62.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "suv",
+    "land-rover",
+    "Land Rover",
+    "SUV grande",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Land Rover Discovery - SUV grande Land Rover. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Land Rover Discovery",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Land Rover"
+    },
+    "vehicleType": "SUV grande",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 62.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV grande de 7 plazas de Land Rover con fuerte capacidad off-road."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:50:31.300Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Land Rover Discovery es uno de los SUV grandes más emblemáticos y respetados a nivel mundial, concebido inicialmente en la década de 1980 para posicionarse entre el utilitario Defender y el lujoso Range Rover. A lo largo de las décadas, evolucionó desde un vehículo puramente enfocado en el trabajo duro y el off-road extremo hasta convertirse en un sofisticado familiero de alta gama, sin perder jamás su ADN aventurero.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la saga fue la introducción de la quinta generación (conocida internamente como L462) lanzada comercialmente en 2017. Este modelo marcó una ruptura drástica con el diseño tradicional de líneas cuadradas y angulosas que había caracterizado a las iteraciones anteriores (como el Discovery 3 y 4). Adoptó una estética mucho más aerodinámica y moderna, inspirada en parte en la familia Discovery Sport, además de incorporar una carrocería monocasco fabricada en aluminio que redujo significativamente el peso total frente a sus antecesores de chasis de largueros.\n\n## Curiosidades\nEntre las características más destacadas del Discovery moderno se encuentra su versatilidad interior. Conserva el clásico formato de hasta 7 plazas reales, donde los asientos de la tercera fila pueden plegarse o desplegarse mediante un sistema eléctrico operable desde la pantalla táctil central o incluso desde una aplicación móvil. Asimismo, mantiene detalles de diseño sutiles que rinden tributo a sus ancestros, como el techo escalonado ('stamped roof') que históricamente mejoraba la visibilidad y el espacio para los pasajeros de las plazas traseras.\n\n## Competencia y posicionamiento\nEn el mercado global de los SUV grandes de lujo, el Land Rover Discovery compite de manera directa con colosos alemanes y asiáticos como el Audi Q7, el BMW X5, el Mercedes-Benz GLE y el Volvo XC90. Se posiciona como una opción sumamente atractiva para quienes priorizan una estética británica distintiva y capacidades todoterreno líderes en su clase, gracias a sistemas avanzados como el Terrain Response y una suspensión neumática ajustable que le permite sortear vadeos profundos y terrenos sumamente complejos con total soltura."
+}

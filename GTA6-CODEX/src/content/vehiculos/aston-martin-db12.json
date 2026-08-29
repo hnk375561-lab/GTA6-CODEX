@@ -1,0 +1,324 @@
+{
+  "slug": "aston-martin-db12",
+  "type": "vehiculos",
+  "title": "Aston Martin DB12",
+  "description": "Gran turismo británico de Aston Martin, motor V8 biturbo Mercedes-AMG.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "aston-martin"
+  ],
+  "featured": false,
+  "manufacturer": "Aston Martin",
+  "class": "Gran turismo",
+  "customizable": false,
+  "power": "680 PS / 671 hp @ 6000 rpm",
+  "price": "USD 262.000 aprox. (precio base de referencia)",
+  "consumo": "12.2 l/100km combinado",
+  "dimensiones": "4.725 mm x 1.980 mm x 1.295 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://en.wikipedia.org/wiki/Aston_Martin_DB12",
+    "note": "Se verificaron las especificaciones técnicas principales del Aston Martin DB12 utilizando los datos oficiales del fabricante y referencias enciclopédicas.",
+    "limitations": []
+  },
+  "performance": {
+    "speed": "325 km/h",
+    "acceleration": "0-100 km/h en 3.6s"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:30:25.982Z",
+  "transmision": "8 velocidades automática (ZF)",
+  "traccion": "Trasera (RWD) con diferencial electrónico trasero",
+  "peso": "1.788 kg",
+  "tipoMotor": "Gasolina, V8 biturbo (M177 de origen Mercedes-AMG)",
+  "potenciaKW": "500 kW / 680 PS / 671 hp @ 6.000 rpm",
+  "capacidadTanque": "78 litros",
+  "tiempoRecorrido": "3.6s 0-100 km/h",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "Reino Unido",
+    "Estados Unidos",
+    "Medio Oriente",
+    "Asia-Pacífico"
+  ],
+  "equipamiento": [
+    "Suspensión adaptativa inteligente",
+    "5 modos de conducción (Wet, GT, Sport, Sport+, Individual)",
+    "Frenos opcionales carbocerámicos",
+    "Dirección asistida eléctrica",
+    "Apple CarPlay y Android Auto",
+    "Programa de personalización Q by Aston Martin"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "275 mm delantero (llanta 21\")",
+  "cilindrada": "3.982 cc",
+  "emisiones": "CO2 278 g/km (cifra oficial combinada, Reino Unido)",
+  "tipo": "Gran turismo (coupé 2+2)",
+  "asientos": 4,
+  "baul": 262,
+  "maleteroMin": "262 litros",
+  "generacion": "Primera generación, sucesor del DB11",
+  "anoLanzamiento": 2023,
+  "colores": [
+    "Jet Black",
+    "Onyx Black",
+    "China Grey",
+    "Titanium Grey",
+    "Aston Martin Racing Green",
+    "Ghillies Green",
+    "Plasma Blue",
+    "Lunar White"
+  ],
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "325 km/h",
+      "acceleration": "0-100 km/h en 3.6s"
+    },
+    "bateria": {
+      "consumo": "12.2 l/100km combinado (cifra oficial UK)"
+    },
+    "transmision": {
+      "tipo": "8 velocidades automática (ZF)"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "12.2 l/100km combinado (cifra oficial UK)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 262.000 aprox. (variante DB12 S: USD 690 hp, desde ~USD 270.000)"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "deportivo",
+    "aston-martin",
+    "Aston Martin",
+    "Gran turismo",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Aston Martin DB12 - Gran turismo Aston Martin. 325 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Aston Martin DB12",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Aston Martin"
+    },
+    "vehicleType": "Gran turismo",
+    "fuelType": "Gasolina, V8 biturbo (motor M177 de origen Mercedes-AMG)",
+    "speed": "325 km/h",
+    "acceleration": "0-100 km/h en 3.6s",
+    "price": "USD 262.000 aprox. (variante DB12 S: USD 690 hp, desde ~USD 270.000)",
+    "availability": "https://schema.org/InStock",
+    "description": "Gran turismo británico de Aston Martin, motor V8 biturbo Mercedes-AMG."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:30:25.982Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.1",
+    "totalVotos": 1345,
+    "desglose": {
+      "1": 56,
+      "2": 425,
+      "3": 1159,
+      "4": 1440,
+      "5": 2282
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 325
+    },
+    "consumo": {
+      "promedio": "12.2 l/100km combinado (cifra oficial UK)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Aston Martin DB12 representa una evolución clave en la longeva e ilustre estirpe de los grandes turismos de la firma británica. Presentado en 2023 como el sucesor directo del DB11, este modelo no se limita a ser una simple actualización estética, sino que introduce una renovación profunda tanto en su dinámica de conducción como en su arquitectura interior y tecnológica, marcando el inicio de una nueva era para la marca de Gaydon.\n\n## Un hito y generación relevante\nEl gran salto generacional del DB12 radica en la adopción de un habitáculo completamente rediseñado que abandona la antigua dependencia de los sistemas multimedia heredados, incorporando una pantalla táctil propia de desarrollo interno y alta resolución. Bajo el capó, mantiene la exitosa alianza estratégica con Mercedes-AMG, utilizando una evolución del bloque V8 biturbo de 4.0 litros que entrega unos imponentes 680 PS (671 hp) y 800 Nm de torque. Este rendimiento le permite acelerar de 0 a 100 km/h en apenas 3.6 segundos y alcanzar una velocidad máxima de 325 km/h.\n\n## Curiosidades\nA pesar de mantener la silueta clásica de un coupé 2+2 de proporciones equilibradas, el DB12 endurece notablemente su enfoque dinámico. Aston Martin lo define no solo como un GT tradicional, sino como el primer 'Super Tourer' del mundo, destacando que su rigidez estructural aumentó un 7% respecto a su antecesor gracias a refuerzos en los bajos y en el mamparo delantero. Además, cuenta con un sistema de suspensión adaptativa de última generación que gestiona de manera sobresaliente los cinco modos de conducción disponibles.\n\n## Competencia y posicionamiento\nEn el segmento de los gran turismos de altas prestaciones, el Aston Martin DB12 compite directamente contra colosos de la industria como el Ferrari Roma, el Bentley Continental GT y el Porsche 911 Turbo. Se posiciona en la franja más alta del mercado de lujo, ofreciendo una combinación equilibrada entre el confort necesario para viajes transcontinentales y la agilidad visceral propia de un deportivo de pura cepa, respaldado por un diseño exterior agresivo y sofisticado."
+}

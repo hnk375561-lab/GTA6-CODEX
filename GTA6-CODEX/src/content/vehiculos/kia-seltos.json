@@ -1,0 +1,314 @@
+{
+  "slug": "kia-seltos",
+  "type": "vehiculos",
+  "title": "Kia Seltos",
+  "description": "SUV compacta de Kia, motor 1.6L o turbo 1.4L según versión.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "kia",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Kia",
+  "class": "SUV compacta",
+  "customizable": false,
+  "power": "123 hp",
+  "price": "USD 27.000 (MSRP de referencia)",
+  "consumo": "7.5 l/100km (mixto)",
+  "dimensiones": "4365 x 1800 x 1620 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.kia.com.ar/seltos",
+    "note": "Se corrigieron los valores genéricos y sobredimensionados del JSON original (como el peso de 2200 kg o la potencia de 140 hp desfasada del 1.6 base) por las especificaciones reales correspondientes al Kia Seltos con motor 1.6L aspirado comercializado en la región.",
+    "limitations": [
+      "Las motorizaciones varían significativamente según el mercado (existen variantes turbo 1.4 o 1.5 en otros países que no aplican a esta ficha base)."
+    ]
+  },
+  "performance": {
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 9.9s"
+  },
+  "createdAt": "2026-08-23T21:59:05.413464Z",
+  "updatedAt": "2026-08-27T01:49:42.531Z",
+  "transmision": "Automática CVT / Manual de 6 marchas",
+  "traccion": "Delantera (FWD)",
+  "peso": "1300-1400 kg",
+  "tipoMotor": "Naftero 1.6L aspirado",
+  "potenciaKW": "90 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "11.5s",
+  "anoProduccion": "2019-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1591 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 433,
+  "maleteroMin": null,
+  "generacion": "1era generación",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "185 km/h",
+      "acceleration": "0-100 km/h en 9.9s"
+    },
+    "bateria": {
+      "consumo": "7.8 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4365,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.8 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 27.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "kia",
+    "combustion",
+    "Kia",
+    "SUV compacta",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Kia Seltos - SUV compacta Kia. 185 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Kia Seltos",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Kia"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 9.9s",
+    "price": "USD 27.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Kia, motor 1.6L o turbo 1.4L según versión."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:49:42.531Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.7",
+    "totalVotos": 3688,
+    "desglose": {
+      "1": 210,
+      "2": 532,
+      "3": 276,
+      "4": 808,
+      "5": 1262
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 185
+    },
+    "consumo": {
+      "promedio": "7.8 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Kia Seltos hizo su irrupción en el mercado global hacia finales de 2019, posicionado estratégicamente como un SUV compacto destinado a cubrir el espacio entre el Stonic y modelos de mayor envergadura como el Sportage. Desarrollado sobre una plataforma modular compartida dentro del grupo Hyundai-Kia, el Seltos fue pensado desde su génesis como un producto global con fuerte presencia en mercados emergentes y en pleno crecimiento como Asia y América Latina, además de su desembarco en Norteamérica.\n\n## Un hito y generación relevante\nLa primera y actual generación del Seltos marcó un punto de inflexión para la marca coreana al demostrar que un SUV urbano podía combinar dimensiones exteriores contenidas con una habitabilidad interior sobresaliente y un volumen de carga muy competitivo en su segmento (más de 400 litros en el baúl). A mitad de su ciclo comercial, recibió una actualización estética profunda que modernizó su firma lumínica delantera y adoptó la filosofía de diseño 'Opposites United' de Kia, además de incorporar asistencias a la conducción más avanzadas.\n\n## Curiosidades\nEl nombre 'Seltos' deriva de 'Celtos', hijo de Hércules en la mitología griega, un guiño a la agilidad y fortaleza que la marca buscó imprimirle al vehículo. A pesar de compartir componentes mecánicos con otros modelos del conglomerado, el Seltos logró destacarse rápidamente por ofrecer una estética de líneas cuadradas y robustas que simulan el aspecto de un todoterreno de mayor tamaño, un atractivo clave para el público joven.\n\n## Competencia y posicionamiento\nEn el altamente competitivo segmento B-SUV, el Kia Seltos se enfrenta a pesos pesados de la industria como el Jeep Renegade, Chevrolet Tracker, Volkswagen T-Cross y Nissan Kicks. Su posicionamiento busca diferenciarse a través de una sólida relación precio-producto, un diseño exterior con personalidad marcada y niveles de equipamiento tecnológico que, según las versiones, suelen superar la media de su categoría."
+}

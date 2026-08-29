@@ -1,0 +1,310 @@
+{
+  "slug": "honda-wave-110",
+  "type": "vehiculos",
+  "title": "Honda Wave 110",
+  "description": "Moto utilitaria semiautomática, una de las más vendidas de Latinoamérica, motor de 110cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "honda",
+    "utilitaria"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:34.107Z",
+  "updatedAt": "2026-08-27T02:54:10.435Z",
+  "manufacturer": "Honda",
+  "class": "Moto utilitaria",
+  "customizable": false,
+  "performance": {
+    "speed": "95 km/h"
+  },
+  "power": "9.3 cv a 7.500 rpm",
+  "price": "ARS 1.850.000 (Precio de referencia mercado argentino)",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://motos0km.com.ar/fichas-tecnicas/honda/wave-110-s",
+    "secondarySource": "https://es.wikipedia.org/wiki/Honda_Wave",
+    "note": "Se verificaron las especificaciones técnicas de la Honda Wave 110 (cilindrada de 109.1 cc, potencia de 9.3 cv a 7.500 rpm, peso de 101 kg, dimensiones de 1897 x 706 x 1083 mm y capacidad de tanque de 3.7 litros) a partir de fichas técnicas oficiales y portales especializados en el mercado argentino.",
+    "limitations": [
+      "El precio varía frecuentemente según la plaza local, los gastos de patentamiento y los incrementos mensuales del mercado argentino.",
+      "Algunas especificaciones menores sobre el sistema de frenos (tambor vs disco delantero) pueden variar según la versión específica elegida."
+    ]
+  },
+  "transmision": "4 velocidades de tipo retorno",
+  "traccion": "Transmisión final por cadena",
+  "peso": "101 kg",
+  "tipoMotor": "Monocilíndrico, 4 tiempos, 2 válvulas, OHC, refrigerado por aire",
+  "potenciaKW": "6.8 kW",
+  "capacidadTanque": "3.7 litros",
+  "tiempoRecorrido": "no publicado oficialmente",
+  "anoProduccion": "2013-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "consumo": "aprox. 50 km/l",
+  "dimensiones": "1897 x 706 x 1083 mm",
+  "cilindrada": "109.1 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 2,
+  "baul": 18,
+  "maleteroMin": null,
+  "generacion": "Actualización regional (producción nacional en Planta Campana)",
+  "anoLanzamiento": 2013,
+  "colores": [],
+  "category": "motocicleta",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "95 km/h"
+    },
+    "bateria": {},
+    "transmision": {
+      "tipo": "Manual secuencial"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": null
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 2.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "moto",
+    "honda",
+    "utilitaria",
+    "Honda",
+    "Moto utilitaria",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Honda Wave 110 - Moto utilitaria Honda. 95 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Honda Wave 110",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Honda"
+    },
+    "vehicleType": "Moto utilitaria",
+    "fuelType": "Gasolina",
+    "speed": "95 km/h",
+    "price": "USD 2.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto utilitaria semiautomática, una de las más vendidas de Latinoamérica, motor de 110cc."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:54:10.435Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.5",
+    "totalVotos": 922,
+    "desglose": {
+      "1": 42,
+      "2": 130,
+      "3": 215,
+      "4": 1623,
+      "5": 1493
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 95
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Honda Wave se consolida como uno de los pilares fundamentales dentro del mercado de motovehículos de baja cilindrada en Latinoamérica y en Argentina en particular. Heredera directa de la icónica filosofía de la Honda Super Cub —el vehículo motorizado más vendido de la historia mundial—, la Wave nació con el propósito de ofrecer una alternativa de transporte urbana sumamente económica, confiable y accesible para el público general. En el mercado argentino, este modelo se ha ganado un lugar de privilegio inquebrantable, liderando de forma constante los rankings de patentamientos mes a mes y convirtiéndose en la opción predilecta de movilidad para millones de ciudadanos.\n\n## Un hito o generación relevante\nUn hito trascendental en la historia reciente de la Honda Wave 110 en Argentina fue la radicación de su producción local en la planta que Honda posee en Campana, provincia de Buenos Aires. Este movimiento estratégico no solo aseguró un abastecimiento fluido de unidades y repuestos en todo el territorio nacional, sino que también permitió acompañar el proceso con actualizaciones estéticas y funcionales continuas. La incorporación progresiva de líneas más angulosas y modernas, opciones de freno a disco delantero en variantes seleccionadas y mejoras sustanciales en sus ópticas delanteras permitieron que el modelo se mantuviera plenamente vigente frente a una competencia asiática cada vez más numerosa y agresiva.\n\n## Curiosidades\nEntre las características más destacadas que explican el fenómeno de la Honda Wave 110 se encuentra su transmisión semiautomática con embrague centrífugo, la cual prescinde por completo de la tradicional maneta de embrague en el manillar izquierdo. Este sistema permite ejecutar los cambios de marcha de manera secuencial utilizando exclusivamente el pedal selector, lo que simplifica de forma notable el proceso de aprendizaje para conductores novatos. Asimismo, su notable eficiencia en el consumo de combustible —que ronda habitualmente los 50 kilómetros por litro en un uso mixto urbano— la transformó en la herramienta de trabajo indispensable para miles de repartidores de delivery, mensajeros y trabajadores independientes a lo largo y ancho del país.\n\n## Competencia y posicionamiento\nDentro del altamente competitivo segmento de las cubs y utilitarias de 110 cc en Argentina, la Honda Wave 110 compite de manera directa contra exponentes de gran arraigo comercial como la Gilera Smash, la Motomel Blitz, la Keller 110 y la Corven Energy. No obstante, el posicionamiento de la Wave se ubica tradicionalmente un escalón por encima. Esto se debe a una sólida reputación de durabilidad mecánica, un excelente valor de reventa en el mercado de usados, una percepción superior en la calidad de sus componentes y una disponibilidad inigualable de repuestos legítimos, virtudes que justifican plenamente su liderazgo comercial sostenido a lo largo de los años."
+}

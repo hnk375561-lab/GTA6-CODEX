@@ -1,0 +1,231 @@
+{
+  "slug": "honda-accord",
+  "type": "vehiculos",
+  "title": "Honda Accord",
+  "description": "Sedán mediano de Honda, gama con motor turbo o versión híbrida.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "honda"
+  ],
+  "featured": false,
+  "manufacturer": "Honda",
+  "class": "Sedán mediano",
+  "customizable": false,
+  "power": "204 hp (sistema híbrido)",
+  "price": "USD 32.000 (MSRP EE.UU. referencia)",
+  "consumo": "4.8 l/100km en ciclo urbano (híbrido)",
+  "dimensiones": "4.971 mm largo x 1.862 mm ancho x 1.450 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://owners.honda.com/vehicles/information/2021/Accord-Sedan/specs",
+    "note": "Se actualizaron las especificaciones con base en los estándares globales conocidos para la undécima generación del Honda Accord, priorizando la variante híbrida y dimensiones reales de fábrica.",
+    "limitations": [
+      "Los precios pueden variar según el mercado de importación y aranceles locales",
+      "Las cifras de consumo corresponden a homologaciones EPA/WLTP de referencia"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:43:21.879Z",
+  "transmision": "Automática e-CVT",
+  "traccion": "Delantera",
+  "peso": "1.485 - 1.555 kg",
+  "tipoMotor": "4 cilindros 2.0L i-VTEC + Motor eléctrico (Híbrido)",
+  "potenciaKW": "152 kW",
+  "capacidadTanque": "48 litros",
+  "tiempoRecorrido": "0-100 km/h en 7.5s",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.993 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 573,
+  "maleteroMin": null,
+  "generacion": "Undécima generación",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "category": "sedan",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 28.900"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "sedan",
+    "honda",
+    "Honda",
+    "Sedán mediano",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Honda Accord - Sedán mediano Honda. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Honda Accord",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Honda"
+    },
+    "vehicleType": "Sedán mediano",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 28.900",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán mediano de Honda, gama con motor turbo o versión híbrida."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:43:21.879Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Honda Accord es uno de los sedanes medianos más emblemáticos y longevos de la industria automotriz mundial. Desde su debut en la década de 1970, este modelo de la marca japonesa supo ganarse la confianza de millones de conductores gracias a su sólida reputación en materia de confiabilidad, calidad de construcción y una dinámica de conducción superior a la media de su segmento. A lo largo de las décadas, el Accord evolucionó desde un compacto hatchback de tres puertas hasta transformarse en un elegante sedán de tamaño mediano que hoy en día define los estándares de su categoría en mercados internacionales de gran volumen como Norteamérica.\n\n## Un hito y generación relevante\nLa undécima generación, lanzada para los años modelo 2023 y 2024, representa un punto de inflexión fundamental en la historia del vehículo. Este modelo apostó fuertemente por la electrificación al adoptar una arquitectura revisada y un sistema híbrido de doble motor eléctrico altamente eficiente, diseñado para ofrecer una respuesta más inmediata al acelerador sin sacrificar el confort de marcha. Asimismo, esta iteración redefinió el lenguaje de diseño exterior de la marca, optando por líneas más limpias, un frontal alargado de inspiración fastback y una cabina minimalista con tecnología de vanguardia orientada al conductor.\n\n## Curiosidades\nA pesar de la tendencia global del mercado que prioriza fuertemente a los SUV y crossovers, el Honda Accord se ha mantenido firme como un pilar fundamental para la marca en mercados donde el formato sedán sigue siendo sinónimo de estatus ejecutivo y eficiencia aerodinámica. En varias regiones, el Accord ha sido históricamente uno de los vehículos más premiados por publicaciones especializadas en seguridad y valor de reventa, destacándose de manera consistente en las pruebas de choque más exigentes de organismos como la IIHS y la NHTSA.\n\n## Competencia y posicionamiento\nEn el mercado global, el Honda Accord compite de manera directa contra históricos contrincantes como el Toyota Camry, el Nissan Altima y el Hyundai Sonata. Su posicionamiento dentro del segmento se ubica en la franja más alta de los sedanes generalistas, rozando incluso el territorio de marcas de entrada de gama prémium debido a la calidad de sus materiales interiores, la rigidez torsional de su chasis y el completo despliegue de asistentes avanzados a la conducción agrupados bajo el paraguas de la tecnología Honda Sensing. Es la opción predilecta para quienes buscan la practicidad de un sedán familiar con un manejo refinado y menores costos de operación gracias a su variante electrificada."
+}

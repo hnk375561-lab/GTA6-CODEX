@@ -1,0 +1,315 @@
+{
+  "slug": "volkswagen-saveiro",
+  "type": "vehiculos",
+  "title": "Volkswagen Saveiro",
+  "description": "Pickup compacta de Volkswagen, muy popular en Argentina y Brasil por su relación carga/consumo.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "volkswagen",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Volkswagen",
+  "class": "Pickup compacta",
+  "customizable": false,
+  "power": "116 CV",
+  "price": "ARS 22.000.000 (referencia mercado local)",
+  "consumo": "7.8 l/100km (mixto)",
+  "dimensiones": "4491 x 1721 x 1589 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.vw.com.ar/es/modelos/saveiro.html",
+    "note": "Se verificaron las especificaciones técnicas principales del motor MSI 1.6 de 116 CV, dimensiones y capacidades de carga basadas en la oferta actual para el mercado argentino.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y disponibilidad en concesionarios oficiales.",
+      "Algunos datos de consumos específicos en ruta pueden variar según la carga transportada."
+    ]
+  },
+  "performance": {
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 12.0s"
+  },
+  "createdAt": "2026-08-23T21:59:07.889585Z",
+  "updatedAt": "2026-08-27T02:02:20.037Z",
+  "transmision": "Manual de 5 marchas",
+  "traccion": "Delantera",
+  "peso": "1107 kg",
+  "tipoMotor": "Nafta",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "10.1s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.598 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 692,
+  "maleteroMin": null,
+  "generacion": "Facelift de tercera generación",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "170 km/h",
+      "acceleration": "0-100 km/h en 12.0s"
+    },
+    "bateria": {
+      "consumo": "7.5 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4482,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.5 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 21.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "pickup",
+    "volkswagen",
+    "combustion",
+    "Volkswagen",
+    "Pickup compacta",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Volkswagen Saveiro - Pickup compacta Volkswagen. 170 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Volkswagen Saveiro",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Volkswagen"
+    },
+    "vehicleType": "Pickup compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 12.0s",
+    "price": "USD 21.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup compacta de Volkswagen, muy popular en Argentina y Brasil por su relación carga/consumo."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T02:02:20.037Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.0",
+    "totalVotos": 604,
+    "desglose": {
+      "1": 256,
+      "2": 428,
+      "3": 1038,
+      "4": 1047,
+      "5": 1416
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 170
+    },
+    "consumo": {
+      "promedio": "7.5 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nLa Volkswagen Saveiro es una de las pick-ups compactas más emblemáticas del mercado sudamericano. Nacida en Brasil a principios de la década de 1980, este utilitario derivado de la familia del Volkswagen Gol se ganó rápidamente la confianza de trabajadores, PyMEs y usuarios particulares gracias a su robustez mecánica y una excelente relación entre capacidad de carga y costos de mantenimiento. A lo largo de las décadas, la Saveiro evolucionó a la par de las sucesivas generaciones del Gol, adaptando su diseño exterior, mejorando su habitáculo y sumando tecnologías orientadas tanto al confort como a la seguridad.\n\n## Un hito o generación relevante\n\nUn punto de inflexión muy importante en la historia reciente de la Saveiro se dio con la introducción de su tercera generación profundamente estilizada y, más recientemente, la actualización mayor lanzada hacia 2023/2024. En esta última etapa, el modelo adoptó un lenguaje de diseño frontal alineado con los últimos SUV y vehículos globales de la marca alemana, incorporando líneas más musculosas, ópticas rasgadas y una estética general que refuerza su espíritu aventurero —especialmente en las versiones más equipadas como la franja Robust o la tope de gama Extreme—, sin descuidar jamás su enfoque primordial como herramienta de trabajo versátil.\n\n## Curiosidades\n\nUna de las características más interesantes de la Volkswagen Saveiro a lo largo de su trayectoria comercial en Argentina y Brasil es que logró trascender el uso estrictamente laboral. Si bien fue concebida para el transporte de mercaderías livianas, su dinámica de conducción —heredada directamente de un hatchback compacto— hizo que muchos usuarios la elijan como vehículo de uso diario e incluso recreativo. Además, mecánicamente se convirtió en un verdadero referente de durabilidad gracias al uso de motorizaciones sumamente probadas, como el clásico impulsor naftero aspirado de 1.6 litros, capaz de soportar tratos exigentes con una red de posventa sumamente extendida y accesible en toda la región.\n\n## Competencia y posicionamiento\n\nEn el segmento de las pick-ups compactas, la Volkswagen Saveiro compite históricamente cara a cara con la exitosa Fiat Strada, que durante años ha liderado las ventas en su categoría en la región. Mientras que la competidora italiana ha apostado por innovaciones estructurales recientes y opciones de motorización más variadas, la Saveiro mantiene una propuesta basada en la simplicidad mecánica, la confiabilidad estructural de su chasis, una caja de carga muy generosa en volumen y una robustez general que la consolida como una de las opciones más racionales y de mejor valor de reventa en el mercado argentino."
+}

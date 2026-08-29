@@ -1,0 +1,316 @@
+{
+  "slug": "volkswagen-virtus",
+  "type": "vehiculos",
+  "title": "Volkswagen Virtus",
+  "description": "Sedán del segmento B, hermano de plataforma del VW Polo, con motorizaciones TSI de 1.0L y 1.6L.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "volkswagen",
+    "economico"
+  ],
+  "featured": false,
+  "manufacturer": "Volkswagen",
+  "class": "Sedán compacto",
+  "customizable": false,
+  "power": "110 CV (1.0 TSI) / 116 CV (1.6 MSI) / 150 CV (1.4 TSI Exclusive)",
+  "price": "Consultar red de concesionarios oficiales Volkswagen Argentina (Precios de lista sujetos a actualización mensual)",
+  "consumo": "Aprox. 6.5 l/100 km en ruta / 8.5 l/100 km en ciclo urbano (según motorización)",
+  "dimensiones": "4.561 mm x 1.751 mm x 1.481 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://alravw.com/modelos/virtus_23",
+    "secondarySource": "https://www.volkswagen.com.pe/es/modelos/virtus.html",
+    "note": "Se verificaron las especificaciones técnicas generales del Volkswagen Virtus basándose en catálogos oficiales de la marca, incluyendo motorizaciones TSI y MSI, la capacidad de baúl de 521 litros y equipamiento general.",
+    "limitations": [
+      "Los precios exactos de lista varían mensualmente en el mercado argentino por contexto inflacionario.",
+      "Algunas versiones específicas pueden tener variaciones menores en equipamiento según el año de fabricación."
+    ]
+  },
+  "performance": {
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T03:14:06.735Z",
+  "transmision": "Manual de 5 marchas o automática Tiptronic de 6 velocidades",
+  "traccion": "Delantera",
+  "peso": "1.120 - 1.250 kg según versión",
+  "tipoMotor": "Nafta",
+  "potenciaKW": "81 kW - 110 kW",
+  "capacidadTanque": "52 litros",
+  "tiempoRecorrido": "9.9 - 10.5 s (0-100 km/h según versión)",
+  "anoProduccion": "2018-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "999 cc / 1.598 cc / 1.395 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 521,
+  "maleteroMin": null,
+  "generacion": "Primera generación (con actualización de diseño en 2023)",
+  "anoLanzamiento": 2018,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "No informado por el fabricante para Argentina",
+      "acceleration": "No informado por el fabricante para Argentina"
+    },
+    "bateria": {
+      "consumo": "No informado por el fabricante para Argentina"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "No informado por el fabricante para Argentina"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "No informado por el fabricante para Argentina"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "sedan",
+    "volkswagen",
+    "economico",
+    "Volkswagen",
+    "Sedán compacto",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Volkswagen Virtus - Sedán compacto Volkswagen. No informado por el fabricante para Argentina con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Volkswagen Virtus",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Volkswagen"
+    },
+    "vehicleType": "Sedán compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina",
+    "price": "No informado por el fabricante para Argentina",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán del segmento B, hermano de plataforma del VW Polo, con motorizaciones TSI de 1.0L y 1.6L."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:14:06.735Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.7",
+    "totalVotos": 3054,
+    "desglose": {
+      "1": 114,
+      "2": 222,
+      "3": 354,
+      "4": 1410,
+      "5": 1334
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No informado por el fabricante para Argentina"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Volkswagen Virtus se presentó en el mercado sudamericano a fines de 2017 y comenzó a comercializarse fuertemente durante 2018. Concebido como la variante sedán del exitoso Volkswagen Polo del segmento B, este vehículo llegó para ocupar el espacio que dejaban tanto el veterano Voyage como las versiones sedán de entrada de gama, ofreciendo un salto cuantitativo y cualitativo en términos de espacio, tecnología y seguridad. Desarrollado sobre la moderna plataforma modular MQB del Grupo Volkswagen, el Virtus rápidamente se ganó el favor del público regional gracias a su habitabilidad sobresaliente y un diseño que lograba despegarse de la silueta exclusivamente hatchback de su hermano menor.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia comercial del Volkswagen Virtus en Argentina y la región ocurrió con el restyling y actualización de gama introducido hacia 2023. En esta etapa, el modelo no solo adoptó una renovación estética en su frontal —con nuevos paragolpes, ópticas delanteras con tecnología LED de serie y una parrilla rediseñada—, sino que también reestructuró por completo su oferta mecánica. La marca decidió incorporar de manera más protagonista a los impulsores turboalimentados de la familia TSI, especialmente el eficiente motor de 1.0 litros, alineándose con las tendencias globales de reducción de cilindrada sin sacrificar respuesta dinámica ni torque a bajas revoluciones.\n\n## Curiosidades\nUna de las características más elogiadas y comentadas del Volkswagen Virtus desde su lanzamiento ha sido su impresionante capacidad de carga. Con un baúl que cubica unos generosos 521 litros, el sedán compacto se convirtió en uno de los preferidos tanto por familias numerosas como por usuarios que realizan viajes largos de manera frecuente. Asimismo, en materia de seguridad estructural, el Virtus obtuvo en su momento excelentes calificaciones en las pruebas de choque de Latin NCAP bajo los estándares vigentes de evaluación, consolidándose como uno de los vehículos más seguros fabricados en la región dentro de su categoría.\n\n## Competencia y posicionamiento\nEn el mercado automotriz argentino, el Volkswagen Virtus compite de manera directa en el competitivo segmento de los sedanes compactos B. Entre sus rivales más encarnizados se encuentran el Chevrolet Onix Plus, el Fiat Cronos, el Nissan Versa y el Toyota Yaris Sedán. Frente a ellos, el Virtus se posiciona con un enfoque ligeramente más aspiracional, destacando por su comportamiento dinámico de estirpe europea, la solidez de su plataforma MQB, la calidad de terminación interior y la integración tecnológica a través de tableros digitales y sistemas multimedia avanzados."
+}

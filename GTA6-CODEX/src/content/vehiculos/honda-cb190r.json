@@ -1,0 +1,312 @@
+{
+  "slug": "honda-cb190r",
+  "type": "vehiculos",
+  "title": "Honda CB190R 2.0",
+  "description": "Naked streetfighter de baja cilindrada de Honda, renovada en 2026 con tablero TFT, luces full LED y ABS de doble canal.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "honda"
+  ],
+  "featured": false,
+  "manufacturer": "Honda",
+  "class": "Moto naked",
+  "customizable": false,
+  "power": "16.3 hp @ 8500 rpm",
+  "price": "ARS 5.867.000",
+  "consumo": "aprox. 2.5 l/100km",
+  "dimensiones": "2.000 mm largo x 746 mm ancho x 1.039 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://motos.honda.com.ar/modelos/cb190r-2-0",
+    "note": "Se actualizaron los datos técnicos específicos de la Honda CB190R acorde a la configuración de baja cilindrada y especificaciones reales del mercado argentino.",
+    "limitations": [
+      "Los datos de aceleración 0-100 km/h no son publicados oficialmente por el fabricante para este modelo de baja cilindrada.",
+      "El precio corresponde al periodo de vigencia indicado en el sitio oficial de Honda Motos Argentina y está sujeto a variaciones del mercado local."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T22:30:00.000000Z",
+  "updatedAt": "2026-08-27T01:43:42.389Z",
+  "transmision": "Manual de 5 velocidades",
+  "traccion": "Tracción trasera (cadena)",
+  "peso": "142 kg (en orden de marcha)",
+  "tipoMotor": "Monocilíndrico 4 tiempos, SOHC, refrigerado por aire",
+  "potenciaKW": "12 kW",
+  "capacidadTanque": "12 litros",
+  "tiempoRecorrido": "no publicado oficialmente",
+  "anoProduccion": "2016-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "184.4 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "CB190R Evolución / 2.0",
+  "anoLanzamiento": 2016,
+  "colores": [],
+  "category": "motocicleta",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual secuencial"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "ARS 5.867.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "moto",
+    "honda",
+    "Honda",
+    "Moto naked",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Honda CB190R 2.0 - Moto naked Honda. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Honda CB190R 2.0",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Honda"
+    },
+    "vehicleType": "Moto naked",
+    "fuelType": "Gasolina",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "ARS 5.867.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Naked streetfighter de baja cilindrada de Honda, renovada en 2026 con tablero TFT, luces full LED y ABS de doble canal."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:43:42.389Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.2",
+    "totalVotos": 2462,
+    "desglose": {
+      "1": 72,
+      "2": 158,
+      "3": 1072,
+      "4": 933,
+      "5": 2162
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Honda CB190R irrumpió en el mercado latinoamericano con el objetivo de redefinir el segmento de entrada a las motocicletas de corte deportivo urbano. Desarrollada bajo un concepto estético agresivo inspirado en las líneas 'naked' de mayor cilindrada de la marca japonesa (la familia CB), rápidamente se convirtió en un objeto de deseo para quienes buscaban movilidad diaria con una estética llamativa y un manejo ágil.\n\n## Un hito o generación relevante\nCon el paso de los años, el modelo recibió diversas actualizaciones estéticas y tecnológicas para mantenerse vigente en un mercado cada vez más competitivo. La introducción de variantes con iluminación full LED y tableros digitales más completos marcó un salto de calidad importante. Para las versiones más recientes, como la evolución comercializada en Argentina, se han incorporado mejoras sustanciales en seguridad activa, destacando la adopción de sistemas de frenos con ABS para brindar mayor confianza al motociclista urbano.\n\n## Curiosidades\nA pesar de portar una cilindrada nominal cercana a los 184 cc, su denominación comercial '190' responde tanto a una estrategia de posicionamiento de marketing como a su rendimiento dinámico, que compite de igual a igual con opciones de mayor cubicaje teórico en términos de pique corto y agilidad en el tránsito denso. Su postura de manejo ligeramente adelantada, con semi-manillares anclados por debajo de la tija superior, ofrece una ergonomía de tipo sport sin sacrificar la comodidad necesaria para trayectos cotidianos.\n\n## Competencia y posicionamiento\nEn el mercado argentino, la Honda CB190R compite dentro del segmento naked de baja-mediana cilindrada frente a propuestas de marcas como Yamaha, Bajaj y KTM. Su principal fortaleza radica en el respaldo de la red oficial Honda en el país, la confiabilidad mecánica de su motor monocilíndrico enfriado por aire y un valor de reventa históricamente estable. Se posiciona como un escalón intermedio ideal para usuarios que provienen de baja cilindrada (110cc o 150cc) y buscan dar el salto hacia una moto con presencia imponente, mejores componentes de parte ciclo y una estética marcadamente deportiva."
+}

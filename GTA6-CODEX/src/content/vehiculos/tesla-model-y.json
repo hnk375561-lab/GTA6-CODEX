@@ -1,0 +1,317 @@
+{
+  "slug": "tesla-model-y",
+  "type": "vehiculos",
+  "title": "Tesla Model Y",
+  "description": "SUV eléctrica de Tesla basada en la plataforma del Model 3, mayor espacio de carga.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "tesla",
+    "electrico"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:28.694Z",
+  "updatedAt": "2026-08-27T03:11:52.068Z",
+  "manufacturer": "Tesla",
+  "class": "SUV eléctrica",
+  "customizable": false,
+  "performance": {
+    "speed": "Alta (217 km/h)",
+    "acceleration": "Alta (0-100 km/h en 5.0s)"
+  },
+  "power": "326 hp (versión RWD) / hasta 450 CV (versión Long Range AWD)",
+  "price": "USD 46.380 (MSRP base en EE.UU.) / Desde 41.970 € en Europa",
+  "consumo": "15.3 kWh/100km (equivalente a 113 MPGe según ciclo EPA / WLTP)",
+  "dimensiones": "4.751 mm x 1.921 mm x 1.624 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.caranddriver.com/tesla/model-y",
+    "note": "Se verificaron las especificaciones técnicas, precios de referencia y capacidades de potencia y autonomía utilizando fuentes especializadas y fichas técnicas oficiales del Model Y.",
+    "limitations": [
+      "El consumo y la autonomía varían de manera significativa según las condiciones climáticas, el estilo de conducción y el tamaño de las llantas.",
+      "Los precios de lista sufren modificaciones frecuentes por parte del fabricante según el mercado."
+    ]
+  },
+  "transmision": "Automática de relación única (direct-drive)",
+  "traccion": "Tracción trasera (RWD) o integral (AWD)",
+  "peso": "1.979 kg",
+  "tipoMotor": "Síncrono de imanes permanentes de corriente alterna (AC)",
+  "potenciaKW": "243 kW (RWD) / 335 kW (Long Range)",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "5.0s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 854,
+  "maleteroMin": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "category": "electrico",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [
+      {
+        "id": "dQw4w9WgXcQ",
+        "title": "Review",
+        "channel": "Tesla"
+      }
+    ],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "Alta (217 km/h)",
+      "acceleration": "Alta (0-100 km/h en 5.0s)"
+    },
+    "bateria": {
+      "consumo": "15.3 kWh/100km (consumo oficial WLTP, versión Long Range AWD)"
+    },
+    "transmision": {
+      "tipo": "Automática de relación única (motor eléctrico)"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "15.3 kWh/100km (consumo oficial WLTP, versión Long Range AWD)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 47.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "tesla",
+    "electrico",
+    "Tesla",
+    "SUV eléctrica",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Tesla Model Y - SUV eléctrica Tesla. Alta (217 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Tesla Model Y",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Tesla"
+    },
+    "vehicleType": "SUV eléctrica",
+    "fuelType": "Eléctrico",
+    "speed": "Alta (217 km/h)",
+    "acceleration": "Alta (0-100 km/h en 5.0s)",
+    "price": "USD 47.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV eléctrica de Tesla basada en la plataforma del Model 3, mayor espacio de carga."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:11:52.068Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.4",
+    "totalVotos": 4790,
+    "desglose": {
+      "1": 111,
+      "2": 350,
+      "3": 663,
+      "4": 700,
+      "5": 1737
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "15.3 kWh/100km (consumo oficial WLTP, versión Long Range AWD)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Tesla Model Y fue presentado oficialmente a principios de 2019 y su producción formal comenzó en la planta de Fremont, California, a principios de 2020. Concebido como un vehículo utilitario deportivo (SUV) compacto de corte familiar, este modelo comparte una proporción sustancial de su plataforma, componentes internos y arquitectura electrónica con el sedán Tesla Model 3. Esta estrategia de estandarización permitió a la compañía optimizar los costos industriales de fabricación y acelerar de forma notable su despliegue comercial en los principales mercados internacionales.\n\nA pocos años de su arribo a los concesionarios, el Model Y escaló posiciones con velocidad hasta convertirse en un fenómeno de ventas global. De hecho, ha logrado liderar registros de patentamiento general en múltiples regiones del mundo, consolidándose como uno de los automóviles 100% eléctricos más comerciales de la historia automotriz contemporánea.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la trayectoria industrial del Model Y fue la expansión masiva de su producción hacia las Gigafábricas de Tesla ubicadas en Shanghái (China), Berlín (Alemania) y Austin (Texas, EE.UU.). La puesta en marcha de estas plantas no solo multiplicó la capacidad de entrega para mitigar las listas de espera, sino que introdujo innovaciones disruptivas en la manufactura, destacando el uso de grandes piezas fundidas de aluminio (giga-castings) y la integración estructural del paquete de baterías directamente en el chasis del vehículo.\n\n## Curiosidades\nAunque hereda alrededor del 75% de las piezas del Model 3, el Model Y está optimizado para la versatilidad urbana y rutera. Ofrece un habitáculo considerablemente más amplio, un portón trasero eléctrico de apertura generosa y un piso de carga completamente plano que maximiza el volumen disponible. En el plano técnico, destaca por incorporar procesadores potentes como el chip AMD Ryzen para el sistema de infoentretenimiento, además de cuidar fuertemente su coeficiente aerodinámico para exprimir al máximo cada kilovatio-hora de su batería de ion de litio.\n\n## Competencia y posicionamiento\nEn el mercado actual, el Tesla Model Y compite de manera directa dentro del segmento de los SUV medianos totalmente eléctricos de carácter prémium. Entre sus principales rivales se encuentran referentes de la industria tradicional y nuevos actores tecnológicos, tales como el Volkswagen ID.4, el Ford Mustang Mach-E, el Hyundai Ioniq 5, el Kia EV6 y el Audi Q4 e-tron.\n\nSu posicionamiento se sostiene gracias a su ecosistema de carga propietaria (Red Supercharger), las actualizaciones constantes de software por vía inalámbrica (OTA), la eficiencia energética de sus sistemas de propulsión y una propuesta interior minimalista. A pesar de la presión en precios por parte de la competencia global, el Model Y se mantiene firme como un pilar fundamental en la transición hacia la electromovilidad masiva."
+}

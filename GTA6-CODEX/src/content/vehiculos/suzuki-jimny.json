@@ -1,0 +1,229 @@
+{
+  "slug": "suzuki-jimny",
+  "type": "vehiculos",
+  "title": "Suzuki Jimny",
+  "description": "4x4 compacto icónico de Suzuki, chasis de largueros y reductora.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "suzuki"
+  ],
+  "featured": false,
+  "manufacturer": "Suzuki",
+  "class": "4x4 compacto",
+  "customizable": false,
+  "power": "102 CV",
+  "price": "USD 25.000 (referencia internacional)",
+  "consumo": "6.8 l/100km",
+  "dimensiones": "3.625 mm largo x 1.645 mm ancho x 1.720 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.globalsuzuki.com/automobile/lineup/jimny/",
+    "note": "Se actualizaron las especificaciones técnicas generales de la cuarta generación del Suzuki Jimny (motor K15B de 1.5 litros, dimensiones de la versión de 3 puertas, esquema de chasis de largueros y tracción 4x4 con reductora).",
+    "limitations": [
+      "Los precios varían fuertemente según el mercado de importación y los impuestos locales.",
+      "Las cifras de aceleración y consumo son valores de referencia homologados."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:57:33.364Z",
+  "transmision": "Manual de 5 marchas o Automática de 4 marchas",
+  "traccion": "4x4 conectable con reductora (AllGrip Pro)",
+  "peso": "1.100 kg",
+  "tipoMotor": "Naftero atmosférico",
+  "potenciaKW": "75 kW",
+  "capacidadTanque": "40 litros",
+  "tiempoRecorrido": "12.0s",
+  "anoProduccion": "2018-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.462 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 4,
+  "baul": 85,
+  "maleteroMin": null,
+  "generacion": "Cuarta generación (JB74)",
+  "anoLanzamiento": 2018,
+  "colores": [],
+  "category": "motocicleta",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 24.500"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "suv",
+    "suzuki",
+    "Suzuki",
+    "4x4 compacto",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Suzuki Jimny - 4x4 compacto Suzuki. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Suzuki Jimny",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Suzuki"
+    },
+    "vehicleType": "4x4 compacto",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 24.500",
+    "availability": "https://schema.org/InStock",
+    "description": "4x4 compacto icónico de Suzuki, chasis de largueros y reductora."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:57:33.364Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Suzuki Jimny es uno de los vehículos 4x4 más icónicos y respetados del mercado global. Su historia comenzó en la década de 1970 con el lanzamiento de la primera generación, un pequeño vehículo utilitario que revolucionó el segmento por ofrecer capacidades off-road puras en un formato ultra compacto. A lo largo de las décadas, el Jimny mantuvo su filosofía intacta, convirtiéndose en el heredero espiritual de los legendarios Samurai y LJ. Lejos de ceder ante la moda de los crossovers urbanos de tracción simple, la marca japonesa se mantuvo fiel a la fórmula original: un vehículo robusto, sin concesiones a la frivolidad, pensado para enfrentar los terrenos más difíciles.\n\n## Un hito y generación relevante\nEl gran punto de inflexión en la historia reciente del modelo se dio con la presentación de la cuarta generación (conocida internamente como serie JB74) a finales de 2018. Este lanzamiento reavivó la pasión global por el modelo gracias a un diseño retro que homenajea a sus antecesores —con líneas cuadradas, faros redondos y pasos de rueda bien marcados— combinado con una actualización tecnológica necesaria. A pesar de incorporar asistencias modernas a la conducción y un habitáculo más funcional, conservó intactos los componentes mecánicos esenciales que definen a un verdadero todoterreno: un chasis de largueros y travesaños (ladder frame), suspensión de eje rígido en ambos trenes y un sistema de tracción en las cuatro ruedas conectable con reductora (AllGrip Pro).\n\n## Curiosidades\nUna de las características más llamativas del Suzuki Jimny es su enorme éxito comercial y de culto a nivel mundial, al punto de generar listas de espera de varios meses en numerosos mercados apenas fue lanzado. Su motorización naftera de 1.5 litros (denominada K15B) prioriza la confiabilidad mecánica y el torque a bajas revoluciones por sobre la deportividad, permitiéndole superar obstáculos complejos donde vehículos mucho más grandes y potentes se quedan en el camino. Además, debido a sus cotas compactas, ángulo de ataque, ventral y de salida excepcionales, se ha ganado el apodo cariñoso de 'Baby G-Wagen' por su silueta que recuerda a la de los grandes todoterrenos de lujo alemanes, pero en una escala minimalista.\n\n## Competencia y posicionamiento\nEn el mercado global, el Suzuki Jimny ocupa un nicho casi sin competencia directa. Mientras que la mayoría de los fabricantes han migrado hacia los SUV monocasco con tracción delantera o integral permanente orientada al asfalto, el Jimny se mantiene como un auténtico 4x4 de vieja escuela adaptado a los tiempos modernos. No compite de manera directa con los SUV compactos tradicionales del segmento B, sino que se posiciona como un vehículo recreativo de altas capacidades off-road, ideal para entusiastas del todoterreno, uso rural o como segundo vehículo de aventura. Su relación precio-producto y su altísima retención de valor en el mercado de usados lo consolidan como una pieza de colección en constante vigencia."
+}

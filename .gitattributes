@@ -1,0 +1,22 @@
+# Normaliza automáticamente los finales de línea a LF en el repositorio,
+# sin importar el sistema operativo o la config local de Git (autocrlf) de
+# quien hace el checkout. Esto elimina el ruido de warnings CRLF/LF que
+# aparecía en cada `git add`/`git commit` en Windows, sin tocar el
+# contenido real de ningún archivo.
+* text=auto eol=lf
+
+# Binarios: nunca deben pasar por conversión de línea.
+*.png binary
+*.ico binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+
+# Parches históricos: se dejan bit-a-bit intactos (no forman parte del
+# contenido/arquitectura funcional del sitio).
+*.patch -text

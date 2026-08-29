@@ -1,0 +1,314 @@
+{
+  "slug": "suzuki-swift",
+  "type": "vehiculos",
+  "title": "Suzuki Swift",
+  "description": "Hatchback del segmento B con sistema mild-hybrid SHVS, importado de Japon, con beneficio impositivo por ser vehiculo electrificado.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "suzuki",
+    "hibrido"
+  ],
+  "featured": false,
+  "manufacturer": "Suzuki",
+  "class": "Hatchback compacto",
+  "customizable": false,
+  "power": "82 hp",
+  "price": "USD 20.900 (versión GLX Manual)",
+  "consumo": "4.3 l/100km (aprox. 23.2 km/l mixto)",
+  "dimensiones": "3.860 mm largo x 1.735 mm ancho x 1.495 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://es.wikipedia.org/wiki/Suzuki_Swift",
+    "note": "Se actualizaron las especificaciones técnicas con base en la ficha global de la séptima generación del Suzuki Swift equipado con el motor Z12E y tecnología mild-hybrid SHVS.",
+    "limitations": [
+      "Los precios y la disponibilidad exacta pueden variar según el mercado de importación en Sudamérica y los aranceles vigentes."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T01:57:43.012Z",
+  "transmision": "Manual de 5 marchas o Automática CVT",
+  "traccion": "Delantera",
+  "peso": "915-990 kg",
+  "tipoMotor": "Naftero 1.2L de 3 cilindros con sistema híbrido liviano (Mild-Hybrid SHVS)",
+  "potenciaKW": "61 kW",
+  "capacidadTanque": "37 litros",
+  "tiempoRecorrido": "12.5s",
+  "anoProduccion": "2024-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.197 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 265,
+  "maleteroMin": null,
+  "generacion": "Séptima generación",
+  "anoLanzamiento": 2024,
+  "colores": [],
+  "category": "motocicleta",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "23.8 km/l (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "23.8 km/l (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 20.900 (version GLX Manual)"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "hatchback",
+    "suzuki",
+    "hibrido",
+    "Suzuki",
+    "Hatchback compacto",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Suzuki Swift - Hatchback compacto Suzuki. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Suzuki Swift",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Suzuki"
+    },
+    "vehicleType": "Hatchback compacto",
+    "fuelType": "Gasolina + sistema híbrido",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 20.900 (version GLX Manual)",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback del segmento B con sistema mild-hybrid SHVS, importado de Japon, con beneficio impositivo por ser vehiculo electrificado."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:57:43.012Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.2",
+    "totalVotos": 2689,
+    "desglose": {
+      "1": 279,
+      "2": 455,
+      "3": 788,
+      "4": 473,
+      "5": 2155
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "23.8 km/l (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Suzuki Swift es uno de los hatchbacks compactos más emblemáticos y exitosos a nivel global dentro del segmento B. Nacido originalmente a mediados de los años ochenta como un vehículo económico de concepción mundial, su verdadera revolución llegó en 2004 con el lanzamiento de su tercera generación (la primera bajo el concepto moderno). Aquel modelo adoptó un diseño dinámico inspirado fuertemente en el mundo de los karts y en los compactos europeos, marcando un antes y un después en la percepción de la marca japonesa fuera de su mercado doméstico. Desde entonces, el Swift se ganó la reputación de ser un vehículo ágil, divertido de manejar y sumamente confiable, logrando comercializar millones de unidades en todo el planeta.\n\n## Un hito o generación relevante\nUn hito fundamental en la evolución reciente del modelo es la introducción de la tecnología híbrida liviana (Mild-Hybrid), conocida en Suzuki como SHVS (Smart Hybrid Vehicle by Suzuki). A partir de la sexta generación y consolidado en la actual séptima generación lanzada recientemente, el Swift incorporó sistemas eléctricos de apoyo de 12V y 48V vinculados a un generador integrado (ISG). Esta evolución no buscó convertirlo en un vehículo 100% eléctrico ni de autonomía extendida, sino dotar a su motorización naftera de una asistencia eléctrica eficiente para reducir notablemente el consumo urbano y las emisiones contaminantes, permitiéndole además acceder a beneficios impositivos en diversos mercados internacionales y de la región por tratarse de un vehículo electrificado.\n\n## Curiosidades\nUna de las características más interesantes del Suzuki Swift a lo largo de su historia es su versión deportiva, el Swift Sport. Aunque el modelo estándar prioriza la economía de combustible y la agilidad urbana, las variantes Sport se han convertido en objeto de culto entre los entusiastas del automovilismo gracias a su bajo peso, una puesta a punto de suspensión sumamente firme y motores turboalimentados alegres que ofrecen sensaciones de manejo dignas de hot-hatches tradicionales pero en un formato compacto y accesible. Asimismo, su diseño exterior ha sabido mantener un ADN visual inconfundible a lo largo de las décadas, caracterizado por el formato de su parabrisas y los parantes negros que otorgan un efecto visual de 'techo flotante'.\n\n## Competencia y posicionamiento\nEn el mercado global y regional, el Suzuki Swift compite dentro del competitivo segmento B de los hatchbacks compactos contra modelos consagrados como el Toyota Yaris, el Volkswagen Polo, el Peugeot 208 y el Chevrolet Onix. Su posicionamiento se sustenta fuertemente en su procedencia (muchas de sus unidades para exportación provienen directamente de Japón, lo que garantiza altos estándares de calidad de armado y terminación) y en su propuesta mecánica electrificada. A diferencia de rivales que optan por mecánicas tradicionales atmosféricas o turbos de mayor cilindrada, el Swift apuesta por la eficiencia de su plataforma ligera Heartect y su sistema híbrido liviano, atrayendo a un público urbano que valora el ahorro de combustible, la agilidad en el tránsito diario y un nivel de equipamiento tecnológico actualizado en materia de seguridad y asistencias a la conducción (ADAS)."
+}

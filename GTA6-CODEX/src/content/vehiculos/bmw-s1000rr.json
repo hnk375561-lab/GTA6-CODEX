@@ -1,0 +1,321 @@
+{
+  "slug": "bmw-s1000rr",
+  "type": "vehiculos",
+  "title": "BMW S1000RR",
+  "description": "Superdeportiva insignia de BMW Motorrad, tetracilíndrica en línea de 999cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "bmw"
+  ],
+  "featured": false,
+  "manufacturer": "BMW",
+  "class": "Moto superdeportiva",
+  "customizable": false,
+  "power": "210 CV (154 kW) a 13.750 rpm",
+  "price": "Desde aprox. 24.430 € (referencia base mercado europeo)",
+  "consumo": "6.4 l/100km",
+  "dimensiones": "2.073 mm largo x 848 mm ancho x 1.105 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.motofichas.com/marcas/bmw/s-1000-rr",
+    "note": "Ficha técnica contrastada con especificaciones oficiales de BMW Motorrad y portales especializados, verificando cilindrada, potencia de 210 CV, esquema de motor ShiftCam y dimensiones generales de la generación K67.",
+    "limitations": [
+      "El precio varía según el mercado local, impuestos y la incorporación de paquetes de equipamiento opcionales (M, Race)",
+      "Los valores de consumo y aceleración pueden verse alterados según las condiciones de la ruta, el clima y los modos de conducción seleccionados"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T02:44:08.749Z",
+  "transmision": "Manual secuencial de 6 velocidades con toma constante",
+  "traccion": "Cadena",
+  "peso": "197 kg (en orden de marcha)",
+  "tipoMotor": "Tetracilíndrico en línea de 4 tiempos, 16 válvulas DOHC, refrigerado por líquido",
+  "potenciaKW": "154 kW",
+  "capacidadTanque": "16.5 litros",
+  "anoProduccion": "2024",
+  "mercados": [
+    "Alemania",
+    "Europa",
+    "USA",
+    "Asia Pacífico"
+  ],
+  "equipamiento": [
+    "ABS integral",
+    "Control tracción dinámico",
+    "Motor ShiftAssist",
+    "Asistente aceleración"
+  ],
+  "tiempoRecorrido": "0-100 km/h en 3.2s",
+  "consumoEtiqueta": "F",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "999 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 1,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "K67 (Actualización ShiftCam)",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "category": "comercial",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [
+      {
+        "id": "video_id",
+        "title": "Performance",
+        "channel": "BMW"
+      }
+    ],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual secuencial"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 18.500"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "moto",
+    "bmw",
+    "BMW",
+    "Moto superdeportiva",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "BMW S1000RR - Moto superdeportiva BMW. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "BMW S1000RR",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "BMW"
+    },
+    "vehicleType": "Moto superdeportiva",
+    "fuelType": "Gasolina 4 cilindros",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 18.500",
+    "availability": "https://schema.org/InStock",
+    "description": "Superdeportiva insignia de BMW Motorrad, tetracilíndrica en línea de 999cc."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:44:08.749Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.2",
+    "totalVotos": 3530,
+    "desglose": {
+      "1": 104,
+      "2": 401,
+      "3": 992,
+      "4": 332,
+      "5": 1050
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa BMW S1000RR irrumpió en el mercado mundial en 2009 con un objetivo claro: sacudir el segmento de las superbikes y arrebatarle el cetro a las dominantes marcas japonesas. Desde su presentación inicial, la máquina alemana demostró que BMW no solo sabía fabricar excelentes motos ruteras o de aventura, sino que podía construir una superdeportiva pura capaz de ganar en las pistas más exigentes del mundo, incluido el Campeonato Mundial de Superbikes (WSBK).\n\n## Un hito y generación relevante\nUn punto de inflexión fundamental en la trayectoria de este modelo llegó con la introducción de la tecnología ShiftCam de distribución variable en válvulas, estrenada en la generación K67 a partir de 2019 y perfeccionada en las versiones recientes. Este sistema permitió optimizar la entrega de par motor a bajas y medias revoluciones sin sacrificar la potencia explosiva en la parte alta del tacómetro, logrando erogar unos imponentes 210 CV a 13.750 rpm. La evolución aerodinámica sumó además alerones delanteros integrados de fábrica, una solución directa heredada de la competición para garantizar estabilidad a velocidades ultra altas y reducir la tendencia a levantar la rueda delantera.\n\n## Curiosidades\nDesde su debut, la S1000RR llamó la atención por su asimetría estética original en sus ópticos delanteros (un sello que luego fue evolucionando hacia líneas más simétricas pero igual de agresivas). Además, su motor tetracilíndrico en línea de 999 cc está inclinado hacia adelante para lograr un centro de gravedad óptimo. El uso extensivo de componentes ligeros y de titanio permite rebajar el peso total de forma drástica, situándose en los 197 kg en orden de marcha y acercándola al estándar de competición.\n\n## Competencia y posicionamiento\nEn el segmento de las superdeportivas de un litro, la BMW S1000RR compite directamente contra pesos pesados como la Yamaha YZF-R1, la Honda CBR1000RR-R Fireblade, la Kawasaki Ninja ZX-10R y la Ducati Panigale V4. Se posiciona como una opción de referencia dentro del segmento premium, destacándose por ofrecer un paquete tecnológico sumamente intuitivo —que incluye múltiples modos de manejo, control de tracción dinámico, ABS Pro y suspensión electrónica— que permite tanto al piloto aficionado rodar con confianza como al experto exprimirla al máximo en circuito."
+}

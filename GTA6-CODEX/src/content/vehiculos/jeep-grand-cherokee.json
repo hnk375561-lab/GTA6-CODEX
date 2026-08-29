@@ -1,0 +1,230 @@
+{
+  "slug": "jeep-grand-cherokee",
+  "type": "vehiculos",
+  "title": "Jeep Grand Cherokee",
+  "description": "SUV mediano-grande de Jeep, capacidad off-road de referencia en su segmento.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "jeep"
+  ],
+  "featured": false,
+  "manufacturer": "Jeep",
+  "class": "SUV mediano",
+  "customizable": false,
+  "power": "293 hp",
+  "price": "USD 42.000 (MSRP referencia EE.UU.)",
+  "consumo": "10.5 l/100km combinado",
+  "dimensiones": "4.915 mm largo x 1.979 mm ancho x 1.816 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.jeep.com/grand-cherokee.html",
+    "note": "Se utilizaron especificaciones estándar de la quinta generación (plataforma WL) para el motor V6 Pentastar de 3.6 litros, dimensiones globales y capacidades.",
+    "limitations": [
+      "El precio es de referencia para el mercado norteamericano y puede variar significativamente según impuestos y aranceles de importación en otros países."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:48:15.995Z",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "Tracción integral (4x4)",
+  "peso": "2.000-2.250 kg",
+  "tipoMotor": "Gasolina V6 (Pentastar)",
+  "potenciaKW": "218 kW",
+  "capacidadTanque": "87 litros",
+  "tiempoRecorrido": "0-100 km/h en 8.4s",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "3.6 L",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 1067,
+  "maleteroMin": null,
+  "generacion": "Quinta generación (WL)",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 40.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "suv",
+    "jeep",
+    "Jeep",
+    "SUV mediano",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Jeep Grand Cherokee - SUV mediano Jeep. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Jeep Grand Cherokee",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Jeep"
+    },
+    "vehicleType": "SUV mediano",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 40.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediano-grande de Jeep, capacidad off-road de referencia en su segmento."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:48:15.995Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Jeep Grand Cherokee es uno de los SUV más emblemáticos del mercado global y el vehículo que ayudó a redefinir el concepto de todoterreno de lujo desde su presentación oficial a principios de la década de 1990. Heredera directa de la mítica estirpe de camionetas de la marca norteamericana, la Grand Cherokee logró fusionar por primera vez en un solo producto las capacidades puras off-road con el confort, la refinación y la tecnología propias de un sedán de alta gama. A lo largo de las décadas, este modelo evolucionó a través de múltiples generaciones, adoptando innovaciones mecánicas, sistemas de tracción cada vez más sofisticados y diseños vanguardistas que marcaron tendencia en el competitivo segmento de los SUV medianos y grandes.\n\n## Un hito o generación relevante\nEl lanzamiento de la quinta generación, conocida internamente bajo el código WL, representa un punto de inflexión fundamental en la historia del modelo. Presentada para el año modelo 2021, esta iteración estrenó una plataforma completamente nueva desarrollada para albergar no sólo a las tradicionales motorizaciones térmicas V6 y V8, sino también opciones híbridas enchufables bajo la denominación 4xe. Además, por primera vez en su historia, la gama sumó de manera formal una variante de carrocería extendida con tres filas de asientos (Grand Cherokee L), ampliando drásticamente su versatilidad para uso familiar sin sacrificar el ADN aventurero que caracteriza a la insignia de las siete ranuras.\n\n## Curiosidades\nUna de las curiosidades más notables en la trayectoria de la Grand Cherokee ocurrió durante su presentación mundial en el Salón del Automóvil de Detroit de 1992, cuando la marca realizó una demostración inolvidable al romper una de las puertas de vidrio del centro de convenciones para hacer ingresar al vehículo conducido por el entonces ejecutivo de Chrysler, Bob Lutz. Desde el punto de vista técnico, la Grand Cherokee fue pionera en popularizar sistemas de tracción integral permanentes con gestión electrónica avanzada en vehículos de producción masiva, democratizando tecnologías que antes quedaban reservadas exclusivamente para vehículos militares o de expedición extrema.\n\n## Competencia y posicionamiento\nEn el mercado global, la Jeep Grand Cherokee se posiciona firmemente en el segmento de los SUV medianos y grandes con aspiraciones premium, compitiendo mano a mano con pesos pesados de la industria como la Ford Explorer, la Toyota Land Cruiser Prado, la Chevrolet Blazer y exponentes de marcas de lujo europeas como BMW (X5) y Mercedes-Benz (GLE). Su gran diferencial histórico radica en el equilibrio: mientras muchos rivales priorizan el asfalto o el lujo urbano, la Grand Cherokee mantiene intactas sus credenciales off-road, ofreciendo distintos niveles de sistemas de tracción 4x4 (como Quadra-Trac y Quadra-Drive II) y la opción de suspensión neumática ajustable Quadra-Lift, lo que le permite transitar con soltura tanto en autopistas urbanas como en los terrenos más hostiles e intransitables del planeta."
+}

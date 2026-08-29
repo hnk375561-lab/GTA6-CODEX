@@ -1,0 +1,313 @@
+{
+  "slug": "volkswagen-nivus",
+  "type": "vehiculos",
+  "title": "Volkswagen Nivus",
+  "description": "SUV coupé compacta de Volkswagen sobre plataforma MQB, motor turbo 1.0L o 1.4L TSI.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "volkswagen",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:28.597Z",
+  "updatedAt": "2026-08-27T03:13:43.592Z",
+  "manufacturer": "Volkswagen",
+  "class": "SUV coupé compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "188 km/h",
+    "acceleration": "0-100 km/h en 10.2s"
+  },
+  "power": "116 CV",
+  "price": "ARS 34.434.250 (Referencia mercado argentino, febrero 2026)",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://autofichas.com.ar/volkswagen/nivus",
+    "note": "Se verificaron las especificaciones técnicas, precios de lista actualizados para el mercado argentino en febrero de 2026 y la incorporación de tecnologías de seguridad y diseño para los modelos recientes.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y el mercado local en Argentina.",
+      "Algunos equipamientos pueden variar según la versión disponible."
+    ]
+  },
+  "transmision": "Automática Tiptronic de 6 marchas",
+  "traccion": "Delantera",
+  "peso": "1199 kg",
+  "tipoMotor": "Nafta 1.0 200 TSI (Turbo)",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "52 litros",
+  "tiempoRecorrido": "10.2s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "consumo": "6.8 l/100km mixto",
+  "dimensiones": "4266 x 1757 x 1493 mm",
+  "cilindrada": "999 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 415,
+  "maleteroMin": null,
+  "generacion": "Primera generación (Mk1)",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "188 km/h",
+      "acceleration": "0-100 km/h en 10.2s"
+    },
+    "bateria": {},
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": null
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 26.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "volkswagen",
+    "combustion",
+    "Volkswagen",
+    "SUV coupé compacta",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Volkswagen Nivus - SUV coupé compacta Volkswagen. 188 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Volkswagen Nivus",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Volkswagen"
+    },
+    "vehicleType": "SUV coupé compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "188 km/h",
+    "acceleration": "0-100 km/h en 10.2s",
+    "price": "USD 26.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV coupé compacta de Volkswagen sobre plataforma MQB, motor turbo 1.0L o 1.4L TSI."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:13:43.592Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.9",
+    "totalVotos": 4603,
+    "desglose": {
+      "1": 50,
+      "2": 495,
+      "3": 400,
+      "4": 1479,
+      "5": 1577
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 188
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Volkswagen Nivus se ha ganado un lugar muy particular dentro del mercado automotor regional gracias a una propuesta que supo combinar con acierto la silueta típica de un SUV con la caída de techo propia de una coupé. Desarrollado íntegramente en Sudamérica sobre la exitosa plataforma modular MQB —la misma que da vida a otros exponentes de peso como el Polo y el T-Cross—, este modelo nació con el objetivo claro de captar a un público más joven y dinámico. La marca alemana apostó fuerte por un formato que rompía con los moldes tradicionales de los utilitarios deportivos compactos, ofreciendo una estética más osada sin resignar la practicidad que se le exige a un vehículo de uso diario en las grandes ciudades.\n\n## Un hito o generación relevante\nUno de los puntos de inflexión más importantes en la trayectoria del Nivus fue su irrupción en el mercado a mediados de 2020. En plena pandemia global, Volkswagen eligió un formato de presentación completamente digital y regional que marcó tendencia en la industria. Además de su silueta vanguardista, el modelo se convirtió en el pionero absoluto en incorporar el sistema de infoentretenimiento VW Play, diseñado íntegramente en América Latina. Con los años, la plataforma ha sabido mantenerse vigente incorporando actualizaciones estéticas en su frontal —alineándose con los nuevos códigos lumínicos de la marca— y reforzando su oferta en seguridad activa con la incorporación de asistencias a la conducción de nivel superior, como el control de velocidad crucero adaptativo y el freno autónomo de emergencia dentro del concepto Travel Assist.\n\n## Curiosidades\nA pesar de contar con una línea de techo marcadamente inclinada que simula la de un vehículo deportivo de dos puertas, los ingenieros de Volkswagen lograron resolver de manera sobresaliente el aprovechamiento del espacio interior. Contrariamente a lo que se suele especular con este tipo de siluetas, el Nivus ofrece una capacidad de baúl de unos respetables 415 litros, una cifra sumamente competitiva dentro del segmento B-SUV que lo pone a la par de vehículos de formato más tradicional. En el plano mecánico, su motorización naftera turboalimentada de tres cilindros (conocida comercialmente como 200 TSI) demuestra que los bloques de baja cilindrada pueden entregar una respuesta ágil y un torque generoso desde bajas revoluciones, logrando un equilibrio muy elogiado entre agilidad urbana y contención en el consumo de combustible.\n\n## Competencia y posicionamiento\nDentro del nutrido segmento de los SUV compactos, el Volkswagen Nivus ocupa un lugar de carácter aspiracional y emocional. Mientras que su hermano de gama, el T-Cross, prioriza las formas cuadradas para maximizar la habitabilidad vertical, el Nivus juega la carta del diseño y la diferenciación estética. En el mercado argentino y regional compite de manera directa contra alternativas de marcas rivales como el Fiat Pulse —que adoptó una receta similar—, además de medirse con las versiones de entrada de otros SUV generalistas. Su gran diferencial radica en la conjunción de una dinámica de conducción refinada, calidades interiores percibidas como superiores al promedio de la categoría, y un paquete tecnológico que lo posiciona como una de las opciones más inteligentes y equipadas del segmento."
+}

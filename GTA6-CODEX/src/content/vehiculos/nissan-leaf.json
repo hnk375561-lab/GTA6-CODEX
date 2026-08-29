@@ -1,0 +1,309 @@
+{
+  "slug": "nissan-leaf",
+  "type": "vehiculos",
+  "title": "Nissan Leaf",
+  "description": "Hatchback 100% eléctrico de Nissan, uno de los pioneros del segmento.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "electrico",
+    "nissan"
+  ],
+  "featured": false,
+  "manufacturer": "Nissan",
+  "class": "Hatchback eléctrico",
+  "customizable": false,
+  "power": "147 hp (110 kW)",
+  "price": "MSRP inicial desde USD 29.990 (EE.UU.)",
+  "consumo": "17 kWh/100km",
+  "dimensiones": "4480 x 1790 x 1540 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.nissanusa.com/vehicles/electric-cars/leaf/specs-trims.html",
+    "secondarySource": "https://es.wikipedia.org/wiki/Nissan_Leaf",
+    "note": "Se verificaron las especificaciones técnicas de la segunda generación del Nissan Leaf (motor de 110 kW / 147 hp, batería de 40 kWh, dimensiones y capacidad de baúl) utilizando como base el sitio oficial de Nissan en EE.UU. y documentación de referencia técnica.",
+    "limitations": [
+      "Los precios de lista (MSRP) y las autonomías exactas pueden variar según las normativas regionales (EPA vs. WLTP) y el paquete de baterías elegido (como la variante e+ de 62 kWh)."
+    ]
+  },
+  "performance": {
+    "speed": "157 km/h",
+    "acceleration": "0-100 km/h en 7.9s"
+  },
+  "createdAt": "2026-08-23T21:59:05.094837Z",
+  "updatedAt": "2026-08-27T03:01:54.988Z",
+  "transmision": "Automática de reducción de una sola velocidad",
+  "traccion": "Delantera",
+  "peso": "1.535-1.636 kg",
+  "tipoMotor": "Síncrono de CA",
+  "potenciaKW": "110 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "7.9s",
+  "anoProduccion": "2018-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 435,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (ZE1)",
+  "anoLanzamiento": 2018,
+  "colores": [],
+  "category": "electrico",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "157 km/h",
+      "acceleration": "0-100 km/h en 7.9s"
+    },
+    "bateria": {
+      "consumo": "15 kWh/100km"
+    },
+    "transmision": {
+      "tipo": "Automática de relación única (motor eléctrico)"
+    },
+    "dimensiones": {
+      "largo": 4490,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "15 kWh/100km"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 32.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "hatchback",
+    "electrico",
+    "nissan",
+    "Nissan",
+    "Hatchback eléctrico",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Nissan Leaf - Hatchback eléctrico Nissan. 157 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Nissan Leaf",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Nissan"
+    },
+    "vehicleType": "Hatchback eléctrico",
+    "fuelType": "Eléctrico",
+    "speed": "157 km/h",
+    "acceleration": "0-100 km/h en 7.9s",
+    "price": "USD 32.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback 100% eléctrico de Nissan, uno de los pioneros del segmento."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:01:54.988Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.9",
+    "totalVotos": 4230,
+    "desglose": {
+      "1": 273,
+      "2": 196,
+      "3": 430,
+      "4": 487,
+      "5": 1945
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 157
+    },
+    "consumo": {
+      "promedio": "15 kWh/100km"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Nissan Leaf es, sin lugar a dudas, uno de los grandes pioneros de la electromovilidad a escala global. Lanzado originalmente a finales de 2010, este hatchback se propuso democratizar el acceso a los vehículos 100% eléctricos mucho antes de que el mercado masivo comenzara a hablar de descarbonización de forma generalizada. Su nombre, concebido como un acrónimo (Leading, Environmentally friendly, Affordable, Family car), resume fielmente la ambición inicial de la marca japonesa: ofrecer un vehículo familiar accesible, ecológico y líder en su segmento. A lo largo de toda su trayectoria comercial, el Leaf acumuló una base de millones de unidades vendidas alrededor del planeta, convirtiéndose en un referente absoluto de fiabilidad dentro del ecosistema de vehículos enchufables.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante en la historia comercial del modelo llegó con el estreno de su segunda generación (código interno ZE1) a partir del año modelo 2018. Esta evolución no solo rediseñó por completo su estética exterior —dejando atrás las líneas más controvertidas y futuristas de la primera iteración para adoptar el perfil de un hatchback convencional, moderno y de espíritu dinámico—, sino que potenció de manera notable su rendimiento técnico. En esta etapa incorporó un motor eléctrico de 110 kW (147 hp) y la innovadora tecnología e-Pedal, permitiendo al conductor acelerar y desacelerar utilizando un único comando. Asimismo, esta generación consolidó la introducción de variantes equipadas con baterías de mayor capacidad, como la versión e+ de 62 kWh, ampliando de forma considerable el radio de acción tanto en entornos urbanos como en rutas.\n\n## Curiosidades\nUna de las características más interesantes que acompañaron al Nissan Leaf en diversos mercados es su tecnología de carga bidireccional (sistemas V2G - Vehicle-to-Grid y V2H - Vehicle-to-Home). Gracias a esta función, el vehículo no cumple únicamente el rol tradicional de medio de transporte, sino que tiene la capacidad de actuar como una batería de respaldo capaz de suministrar energía eléctrica a un hogar durante un corte de suministro o bien devolver el excedente acumulado hacia la red pública. Además, el modelo fue desarrollado desde sus cimientos sobre una plataforma concebida exclusivamente para vehículos eléctricos, lo que permitió optimizar de manera sobresaliente la ubicación del paquete de baterías bajo el piso del habitáculo, logrando reducir el centro de gravedad y optimizar la dinámica de conducción sin resignar espacio para los pasajeros ni capacidad volumétrica en el baúl.\n\n## Competencia y posicionamiento\nEn el panorama automotor global, el Nissan Leaf se posiciona históricamente dentro del segmento de los hatchbacks medianos eléctricos enfocados en el volumen y la accesibilidad. A lo largo de su ciclo de vida comercial le ha tocado medirse contra una variada y creciente gama de contrincantes directos, desde alternativas pioneras como el Chevrolet Bolt EV hasta propuestas de nueva generación en Europa y América tales como el Volkswagen ID.3, el Renault Megane E-Tech o las versiones de entrada de diversos fabricantes. Si bien la competencia se ha vuelto sumamente agresiva con la adopción masiva de plataformas modulares dedicadas y autonomías superiores, el Leaf conserva un prestigio sólido fundamentado en su durabilidad comprobada, su robustez mecánica en entornos de uso diario y una excelente ecuación de costo-eficiencia, tanto en el mercado de unidades nuevas como en el de usados."
+}

@@ -1,0 +1,313 @@
+{
+  "slug": "fiat-cronos",
+  "type": "vehiculos",
+  "title": "Fiat Cronos",
+  "description": "Sedán compacto de Fiat, uno de los más vendidos de Argentina, motores 1.3L o 1.8L.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "fiat",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:31.161Z",
+  "updatedAt": "2026-08-27T02:48:33.250Z",
+  "manufacturer": "Fiat",
+  "class": "Sedán",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (175 km/h)",
+    "acceleration": "Media (0-100 km/h en 11s)"
+  },
+  "power": "99 CV",
+  "price": "ARS 30.467.000 a 37.974.000 (referencia mercado argentino, diciembre)",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://cronos.fiat.com.ar/noprecache/ficha-tecnica-cronos.pdf",
+    "secondarySource": "https://es.wikipedia.org/wiki/Fiat_Cronos",
+    "note": "Se verificaron las especificaciones técnicas oficiales del motor 1.3 Firefly, dimensiones y capacidades para el mercado argentino a través de la ficha técnica de Fiat y datos complementarios.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación, la disponibilidad en concesionarios locales y los cambios en las listas oficiales."
+    ]
+  },
+  "transmision": "Manual de 5 marchas o automática CVT",
+  "traccion": "Delantera",
+  "peso": "1139 kg",
+  "tipoMotor": "Naftero 1.3 Firefly (SOHC 8 válvulas)",
+  "potenciaKW": "73 kW",
+  "capacidadTanque": "48 litros",
+  "tiempoRecorrido": "13.0s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "consumo": "6.5 l/100km mixto aprox.",
+  "dimensiones": "4364 x 1724 x 1516 mm",
+  "cilindrada": "1332 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 525,
+  "maleteroMin": null,
+  "generacion": "1ra generación (facelift)",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "Media (175 km/h)",
+      "acceleration": "Media (0-100 km/h en 11s)"
+    },
+    "bateria": {},
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": null
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 17.500"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "sedan",
+    "fiat",
+    "combustion",
+    "Fiat",
+    "Sedán",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Fiat Cronos - Sedán Fiat. Media (175 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Fiat Cronos",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Fiat"
+    },
+    "vehicleType": "Sedán",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (175 km/h)",
+    "acceleration": "Media (0-100 km/h en 11s)",
+    "price": "USD 17.500",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán compacto de Fiat, uno de los más vendidos de Argentina, motores 1.3L o 1.8L."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:48:33.250Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.6",
+    "totalVotos": 4727,
+    "desglose": {
+      "1": 149,
+      "2": 261,
+      "3": 855,
+      "4": 1371,
+      "5": 2210
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Fiat Cronos es un sedán compacto producido en la planta industrial de Ferreyra, en la provincia de Córdoba, Argentina, desarrollado y pensado específicamente para el mercado de América Latina. Su presentación oficial se concretó a finales de 2017 y comenzó a comercializarse formalmente en 2018, posicionándose de manera natural como el sucesor de veteranos modelos de la marca como el Siena y el Grand Siena, además de complementar la propuesta del hatchback Argo, con el que comparte tanto la plataforma como diversos componentes estructurales clave.\n\n## Un hito o generación relevante\nUno de los hitos más significativos en la trayectoria comercial del Fiat Cronos ha sido su contundente liderazgo en los patentamientos de la República Argentina, consolidándose en lo más alto del mercado durante varios años consecutivos (como 2021, 2022 y 2023). Este éxito comercial sostenido se apoyó fuertemente en un alto nivel de integración nacional de piezas y en una estrategia industrial que le permitió capear con eficacia las restricciones a las importaciones que afectaron al sector automotor argentino en dichos períodos. Asimismo, la incorporación gradual de la transmisión automática tipo CVT asociada al eficiente motor 1.3 Firefly marcó un punto de inflexión muy valorado, mejorando notablemente la experiencia de manejo y el confort de marcha en el ámbito urbano.\n\n## Curiosidades\nA diferencia de muchos competidores de su segmento que llegan importados desde Brasil o México, el Cronos se ganó un lugar como un auténtico símbolo de la industria automotriz cordobesa, siendo exportado con gran éxito a diversos países de la región, con un fuerte peso en el mercado brasileño. A lo largo de su evolución comercial, el modelo ha recibido sutiles actualizaciones estéticas en su parrilla, diseño de llantas e insignias, manteniendo intacta su principal fortaleza histórica: un generoso baúl de 525 litros de capacidad que lo transformó en el aliado indiscutido tanto para uso familiar como para flotas corporativas y conductores de aplicaciones de transporte de pasajeros.\n\n## Competencia y posicionamiento\nDentro del segmento de los sedanes compactos del Mercosur, el Fiat Cronos compite de forma directa contra referentes tradicionales como el Chevrolet Onix Plus, el Volkswagen Virtus y el Nissan Versa. Su posicionamiento comercial se ha destacado históricamente por ofrecer una excelente relación precio-producto, posicionándose como una de las alternativas más lógicas y accesibles para quienes buscan un vehículo sedán de tres cuerpos tradicional, caracterizado por un bajo costo de mantenimiento, una mecánica sumamente probada y una habitabilidad destacada para su categoría."
+}

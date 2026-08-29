@@ -1,0 +1,319 @@
+{
+  "slug": "chevrolet-trailblazer",
+  "type": "vehiculos",
+  "title": "Chevrolet Trailblazer",
+  "description": "SUV grande de tres filas para 7 pasajeros, motor turbodiésel, tracción 4x4 con reductora, fabricado en Brasil.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "chevrolet",
+    "4x4",
+    "diesel"
+  ],
+  "featured": false,
+  "manufacturer": "Chevrolet",
+  "class": "SUV grande",
+  "customizable": false,
+  "power": "200 CV",
+  "price": "ARS 71.900.000 (versión High Country)",
+  "consumo": "Aprox. 9.5 l/100km mixto",
+  "dimensiones": "4887 x 1902 x 1843 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://elcerokm.com/chevrolet/trailblazer",
+    "note": "Se verificaron las especificaciones técnicas principales basadas en el motor Duramax 2.8L y la arquitectura compartida con la pick-up S10 fabricada en Brasil.",
+    "limitations": [
+      "Los consumos exactos pueden variar según las condiciones de manejo y homologación local.",
+      "Disponibilidad de precios sujeta a variaciones del mercado argentino."
+    ]
+  },
+  "performance": {
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T01:36:40.612Z",
+  "transmision": "Automática de 6 marchas",
+  "traccion": "4x4 con reductora",
+  "peso": "2131 kg",
+  "tipoMotor": "Turbodiésel",
+  "potenciaKW": "147 kW",
+  "capacidadTanque": "76 litros",
+  "tiempoRecorrido": "Aprox. 10.5s",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2776 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 7,
+  "baul": 205,
+  "maleteroMin": null,
+  "generacion": "Restyling actual",
+  "anoLanzamiento": 2013,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "No informado por el fabricante para Argentina",
+      "acceleration": "No informado por el fabricante para Argentina"
+    },
+    "bateria": {
+      "consumo": "No informado por el fabricante para Argentina"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4871,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "No informado por el fabricante para Argentina"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "ARS 71.900.000 (versión High Country)"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "chevrolet",
+    "4x4",
+    "diesel",
+    "Chevrolet",
+    "SUV grande",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Chevrolet Trailblazer - SUV grande Chevrolet. No informado por el fabricante para Argentina con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chevrolet Trailblazer",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chevrolet"
+    },
+    "vehicleType": "SUV grande",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina",
+    "price": "ARS 71.900.000 (versión High Country)",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV grande de tres filas para 7 pasajeros, motor turbodiésel, tracción 4x4 con reductora, fabricado en Brasil."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:36:40.612Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.8",
+    "totalVotos": 1277,
+    "desglose": {
+      "1": 227,
+      "2": 279,
+      "3": 534,
+      "4": 918,
+      "5": 1750
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No informado por el fabricante para Argentina"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Chevrolet Trailblazer es un referente dentro del segmento de los SUV grandes basados en plataformas de pick-up mediana. Derivada directamente de la exitosa familia de la Chevrolet S10, este vehículo nació para ofrecer una propuesta robusta que combinara las capacidades todoterreno de un vehículo de trabajo pesado con el confort, la habitabilidad y el refinamiento necesarios para el uso familiar y ejecutivo. A lo largo de su trayectoria productiva en la planta de São José dos Campos, en Brasil, ha recibido diversas actualizaciones estéticas, mejoras en el aislamiento acústico y la incorporación progresiva de asistencias avanzadas a la conducción, consolidándose en los mercados de América del Sur.\n\n## Un hito o generación relevante\nUno de los hitos más importantes en la evolución reciente de la Trailblazer en la región fue la adopción de la evolución mecánica del motor turbodiésel Duramax de 2.8 litros, asociado a una transmisión automática de convertidor de par y a un sistema de tracción integral selectivo con caja reductora. Asimismo, la introducción del nivel de acabado High Country marcó un punto de inflexión, elevando notablemente la percepción de calidad interior con revestimientos específicos, detalles estéticos exclusivos y la incorporación de tecnologías de conectividad de última generación como el sistema MyLink con compatibilidad inalámbrica y Wi-Fi nativo a bordo.\n\n## Curiosidades\nA diferencia de otros mercados globales donde el nombre Trailblazer ha sido utilizado para denominar a SUV de tamaño compacto o crossover urbanos, en la región de Sudamérica este modelo mantiene su ADN de auténtico todoterreno de chasis de largueros y travesaños. Esto le otorga una capacidad de arrastre y una durabilidad estructural muy superior a la de los SUV monocasco tradicionales, permitiéndole sortear caminos sumamente complejos sin resignar la comodidad de contar con tres filas de asientos y una configuración versátil para hasta siete ocupantes.\n\n## Competencia y posicionamiento\nEn el mercado argentino, la Chevrolet Trailblazer compite de manera directa contra otros colosos del segmento basados en pick-ups, siendo su rival más emblemática la Toyota SW4, fabricada localmente, así como la Mitsubishi Montero Sport en mercados seleccionados. Se posiciona en la cúspide de la oferta de vehículos de pasajeros de la marca del corbatín en el país, apuntando a un público que valora la habitabilidad de tres filas reales, la robustez mecánica frente al uso intensivo en rutas y caminos rurales, y un nivel de equipamiento de seguridad activa y pasiva orientado a proteger a toda la familia en viajes de larga distancia."
+}

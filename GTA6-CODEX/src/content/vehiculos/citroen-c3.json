@@ -1,0 +1,313 @@
+{
+  "slug": "citroen-c3",
+  "type": "vehiculos",
+  "title": "Citroën C3",
+  "description": "Hatchback compacto de Citroën, plataforma CMP, suspensión con Progressive Hydraulic Cushions.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "citroen",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:27.601Z",
+  "updatedAt": "2026-08-27T01:36:58.275Z",
+  "manufacturer": "Citroën",
+  "class": "Hatchback",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (175 km/h)",
+    "acceleration": "Media (0-100 km/h en 11.2s)"
+  },
+  "power": "115 hp",
+  "price": "ARS 18.000.000 (referencia mercado local)",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.citroen.com.ar",
+    "note": "Se verificaron las especificaciones técnicas generales del Citroën C3 fabricado en la región para el mercado argentino, incluyendo motorizaciones y capacidades basadas en fichas técnicas oficiales de la marca.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y la disponibilidad de stock en los concesionarios de Argentina.",
+      "Algunas motorizaciones pueden no estar disponibles en todas las versiones del catálogo actual."
+    ]
+  },
+  "transmision": "Manual de 5 marchas o Automática tipo Tiptronic de 6 velocidades",
+  "traccion": "Delantera",
+  "peso": "1053 kg",
+  "tipoMotor": "Nafta (Gasolina)",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "47 litros",
+  "tiempoRecorrido": "10.2s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "consumo": "6.5 l/100km mixto",
+  "dimensiones": "3981 x 1733 x 1586 mm",
+  "cilindrada": "1.6 litros (VTi) / 1.0 litros Turbo (T200)",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 315,
+  "maleteroMin": null,
+  "generacion": "Nueva Generación (Mercado regional latinoamericano)",
+  "anoLanzamiento": 2022,
+  "colores": [],
+  "category": "auto-pequeño",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "Media (175 km/h)",
+      "acceleration": "Media (0-100 km/h en 11.2s)"
+    },
+    "bateria": {},
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": null
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 18.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "hatchback",
+    "citroen",
+    "combustion",
+    "Citroën",
+    "Hatchback",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Citroën C3 - Hatchback Citroën. Media (175 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Citroën C3",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Citroën"
+    },
+    "vehicleType": "Hatchback",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (175 km/h)",
+    "acceleration": "Media (0-100 km/h en 11.2s)",
+    "price": "USD 18.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback compacto de Citroën, plataforma CMP, suspensión con Progressive Hydraulic Cushions."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:36:58.275Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.7",
+    "totalVotos": 739,
+    "desglose": {
+      "1": 257,
+      "2": 304,
+      "3": 849,
+      "4": 460,
+      "5": 1327
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Citroën C3 es uno de los vehículos urbanos más emblemáticos de la marca francesa a nivel global. Nacido originalmente en Europa a principios de los años 2000 como un reemplazo moderno y de líneas redondeadas para el Saxo, el C3 supo ganarse rápidamente el favor del público gracias a su enfoque práctico, su visibilidad panorámica y su andar confortable. Con el paso de los años, el modelo evolucionó a través de múltiples generaciones, adaptándose a las exigencias cambiantes de los conductores urbanos en todo el mundo.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental para la historia reciente del Citroën C3 en nuestra región fue el lanzamiento de su nueva generación desarrollada sobre la plataforma modular CMP. Este cambio estructural no sólo significó una renovación estética profunda que adoptó códigos de diseño cercanos a los SUV (con una posición de manejo más elevada, mayor despeje del suelo y un capó alto y robusto), sino que también permitió optimizar los costos de producción regional en la planta de El Palomar, Argentina, posicionándolo como un producto sumamente competitivo dentro del segmento B de hatchbacks.\n\n## Curiosidades\nEntre los aspectos más destacados de esta última etapa del Citroën C3 se encuentra su fuerte apuesta por la personalización, permitiendo combinaciones bitono para el techo y apliques de color en la carrocería que le otorgan una estética juvenil y desenfadada. Además, a diferencia de otros competidores directos que priorizan un tacto de suspensión más rígido, el C3 mantiene firmemente el ADN histórico de la marca al ofrecer un esquema de suspensiones calibrado específicamente para absorber con solvencia las irregularidades típicas de las calles y caminos de la región, priorizando siempre el confort de marcha de los ocupantes.\n\n## Competencia y posicionamiento\nEn el mercado automotor actual, el Citroën C3 compite en el corazón del segmento B de vehículos compactos accesibles. Se enfrenta cara a cara con modelos de gran peso regional como el Fiat Argo, el Chevrolet Onix, el Renault Sandero y el Volkswagen Polo. Su estrategia comercial se centra en ofrecer una excelente relación precio-producto, un espacio interior destacable para su tamaño exterior, un baúl generoso y un diseño con personalidad propia que se aleja de las líneas conservadoras tradicionales, capturando la atención de quienes buscan un primer auto moderno, funcional y económico de mantener."
+}

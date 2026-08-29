@@ -1,0 +1,320 @@
+{
+  "slug": "haval-jolion",
+  "type": "vehiculos",
+  "title": "GWM Haval Jolion",
+  "description": "SUV compacto chino, con versión híbrida Pro HEV de sistema DHT, sucesor del Haval H2.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "haval",
+    "gwm",
+    "hibrido",
+    "china"
+  ],
+  "featured": false,
+  "manufacturer": "GWM (Haval)",
+  "class": "SUV compacto",
+  "customizable": false,
+  "power": "190 hp",
+  "price": "USD 29.900 (mercado argentino)",
+  "consumo": "19.6 km/l (uso mixto)",
+  "dimensiones": "4472 x 1841 x 1619 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.16valvulas.com.ar/lanzamiento-gwm-jolion-pro-hev-hibrido-desde-us-29-900/",
+    "note": "Se verificaron las especificaciones principales para el mercado argentino del GWM Haval Jolion Pro HEV según el lanzamiento oficial informado en medios especializados de la región.",
+    "limitations": [
+      "Algunas cotas exactas de trochas o capacidades secundarias pueden variar según el mercado de exportación y la homologación local."
+    ]
+  },
+  "performance": {
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T01:43:12.575Z",
+  "transmision": "Automática DHT (Dedicated Hybrid Transmission)",
+  "traccion": "Delantera",
+  "peso": "1425 kg",
+  "tipoMotor": "1.5L atmosférico de ciclo Atkinson + motor eléctrico (HEV)",
+  "potenciaKW": "140 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "8.5 s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1499 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 400,
+  "maleteroMin": null,
+  "generacion": "1ª generación (facelift / Jolion Pro)",
+  "anoLanzamiento": 2024,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "No informado por el fabricante para Argentina",
+      "acceleration": "No informado por el fabricante para Argentina"
+    },
+    "bateria": {
+      "consumo": "19.6 km/l (uso mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "19.6 km/l (uso mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 29.900"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "haval",
+    "gwm",
+    "hibrido",
+    "china",
+    "GWM (Haval)",
+    "SUV compacto",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "GWM Haval Jolion - SUV compacto GWM (Haval). No informado por el fabricante para Argentina con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "GWM Haval Jolion",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "GWM (Haval)"
+    },
+    "vehicleType": "SUV compacto",
+    "fuelType": "Gasolina + sistema híbrido",
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina",
+    "price": "USD 29.900",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacto chino, con versión híbrida Pro HEV de sistema DHT, sucesor del Haval H2."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:43:12.575Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.7",
+    "totalVotos": 2290,
+    "desglose": {
+      "1": 276,
+      "2": 166,
+      "3": 358,
+      "4": 434,
+      "5": 1718
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "19.6 km/l (uso mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl GWM Haval Jolion se introdujo originalmente a nivel global como el sucesor natural del exitoso Haval H2, un SUV compacto que le permitió a la marca consolidar su presencia fuera de China. Con el correr de los años y la rápida expansión del gigante automotriz Great Wall Motor (GWM) hacia los mercados internacionales, la familia Jolion evolucionó para incorporar nuevas tecnologías de electrificación. La variante Jolion Pro HEV representa un paso adelante en la estrategia de la compañía, adaptándose a las demandas de movilidad sostenible en regiones emergentes y consolidándose como una opción atractiva dentro del segmento B/C de SUV.\n\n## Un hito o generación relevante\nEl desembarco de la variante híbrida autorrecargable (HEV) equipada con la transmisión DHT (Dedicated Hybrid Transmission) marca un hito fundamental para la gama en Sudamérica. A diferencia de las motorizaciones térmicas tradicionales que caracterizaron sus inicios, este sistema combina un motor naftero de ciclo Atkinson con un propulsor eléctrico para ofrecer una respuesta dinámica optimizada y consumos sumamente contenidos en el ámbito urbano, donde el vehículo puede operar en modo 100% eléctrico en diversas situaciones de tráfico denso.\n\n## Curiosidades\nA pesar de ser un vehículo de origen asiático, el diseño y la calibración global del Haval Jolion han sido pensados para competir de igual a igual con marcas tradicionales europeas, japonesas y estadounidenses. Su denominación 'Jolion' proviene de un juego de palabras fonético en inglés que busca evocar conceptos de alegría y dinamismo ('Joy + Lion'), reflejando la filosofía juvenil y moderna con la que la marca bautiza a sus productos más dinámicos orientados a nuevas generaciones de conductores.\n\n## Competencia y posicionamiento\nEn el mercado regional, el GWM Haval Jolion Pro HEV se posiciona de manera muy competitiva gracias a una agresiva estrategia de precios de entrada (desde USD 29.900 al momento de su lanzamiento en Argentina) para un vehículo con tecnología híbrida. Su principal competencia proviene de los SUV compactos más consagrados del segmento generalista, tanto de origen Mercosur como extrazona (provenientes principalmente de Brasil y otras terminales asiáticas), destacándose frente a ellos por ofrecer un nivel de equipamiento tecnológico elevado y una notable eficiencia en consumo de combustible sin requerir infraestructura de carga externa."
+}

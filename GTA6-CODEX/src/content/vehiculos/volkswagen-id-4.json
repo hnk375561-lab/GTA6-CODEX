@@ -1,0 +1,225 @@
+{
+  "slug": "volkswagen-id-4",
+  "type": "vehiculos",
+  "title": "Volkswagen ID.4",
+  "description": "SUV eléctrico de Volkswagen sobre plataforma MEB dedicada.",
+  "status": "confirmado",
+  "tags": [
+    "electrico",
+    "volkswagen"
+  ],
+  "featured": false,
+  "manufacturer": "Volkswagen",
+  "class": "SUV eléctrico",
+  "customizable": false,
+  "power": "201 hp",
+  "price": "USD 39.000 (MSRP EE.UU. referencia)",
+  "consumo": "16-18 kWh/100 km",
+  "dimensiones": "4.584 mm largo x 1.852 mm ancho x 1.636 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.volkswagen.com",
+    "note": "Se actualizaron las dimensiones, peso, capacidad de baúl y tipo de motor con especificaciones reales del Volkswagen ID.4 basadas en la plataforma MEB. Potencia y precio mantenidos como referencia de mercado.",
+    "limitations": [
+      "Los precios varían según los subsidios gubernamentales y el mercado regional específico",
+      "La autonomía exacta depende de la capacidad de la batería (52 kWh o 82 kWh) y las condiciones de manejo"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:28:48.478Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción trasera",
+  "peso": "2.124 kg",
+  "tipoMotor": "Eléctrico síncrono de imanes permanentes",
+  "potenciaKW": "150 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "8.5s",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 543,
+  "maleteroMin": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Automática de relación única (motor eléctrico)"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 40.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "electrico",
+    "volkswagen",
+    "Volkswagen",
+    "SUV eléctrico",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Volkswagen ID.4 - SUV eléctrico Volkswagen. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Volkswagen ID.4",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Volkswagen"
+    },
+    "vehicleType": "SUV eléctrico",
+    "fuelType": "Eléctrico",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 40.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV eléctrico de Volkswagen sobre plataforma MEB dedicada."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:28:48.478Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Volkswagen ID.4 representa un hito fundamental en la estrategia de electrificación de la marca alemana, siendo su primer SUV totalmente eléctrico de alcance global. Desarrollado sobre la plataforma modular de propulsión eléctrica MEB (Modulare E-Antriebs-Baukasten), este vehículo fue concebido desde el inicio como un modelo exclusivamente eléctrico, lo que permitió optimizar el espacio interior y la distribución de pesos de una manera que los vehículos adaptados a partir de plataformas de combustión interna no pueden lograr.\n\n## Un hito o generación relevante\nLa introducción de la primera generación del ID.4 marcó la consolidación de la familia ID en mercados clave como Europa, Norteamérica y China. Con un diseño aerodinámico enfocado en maximizar la eficiencia energética, este SUV mediano logró posicionarse rápidamente como uno de los vehículos eléctricos más vendidos de su segmento. Su habitáculo minimalista, dominado por pantallas táctiles y controles hápticos, sentó las bases para la interfaz de usuario de la nueva era digital de Volkswagen.\n\n## Curiosidades\nUna de las características más interesantes del Volkswagen ID.4 es su concepto de iluminación interactiva conocido como ID. Light. Se trata de una tira de LED ubicada en la base del parabrisas que se comunica de manera intuitiva con el conductor mediante diferentes códigos de color y animaciones, indicando desde instrucciones de navegación hasta alertas de seguridad o el estado de la carga de la batería. Además, a pesar de tener dimensiones exteriores comparables a las de un Volkswagen Tiguan tradicional, el espacio interior del ID.4 se aproxima al de modelos de segmentos superiores gracias a la ausencia del túnel de transmisión y una distancia entre ejes extendida.\n\n## Competencia y posicionamiento\nEn el mercado global, el Volkswagen ID.4 compite directamente en el corazón del segmento de los SUV compactos y medianos eléctricos. Sus principales rivales incluyen al Tesla Model Y, el Ford Mustang Mach-E, el Hyundai Ioniq 5 y el Kia EV6. El posicionamiento del ID.4 apunta hacia un público familiar que busca un vehículo eléctrico práctico, seguro y con la calidad de construcción tradicional de Volkswagen, ofreciendo una conducción suave, una marcha silenciosa y un enfoque general orientado al confort y la facilidad de uso diario por encima de prestaciones puramente deportivas."
+}

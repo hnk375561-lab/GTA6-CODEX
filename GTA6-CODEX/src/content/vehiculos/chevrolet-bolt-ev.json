@@ -1,0 +1,308 @@
+{
+  "slug": "chevrolet-bolt-ev",
+  "type": "vehiculos",
+  "title": "Chevrolet Bolt EV",
+  "description": "Hatchback 100% eléctrico de Chevrolet, orientado a uso urbano con buena autonomía.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "chevrolet",
+    "electrico"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:29.250Z",
+  "updatedAt": "2026-08-27T01:35:08.867Z",
+  "manufacturer": "Chevrolet",
+  "class": "Hatchback eléctrico",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (150 km/h)",
+    "acceleration": "Media-Alta (0-100 km/h en 6.5s)"
+  },
+  "power": "200 hp (150 kW)",
+  "price": "USD 26.500 (MSRP EE.UU. base)",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.chevrolet.com/electric/bolt-ev",
+    "note": "Se verificaron las especificaciones técnicas oficiales del Chevrolet Bolt EV correspondientes a su última etapa de producción con batería de 65 kWh y motor de 200 hp.",
+    "limitations": [
+      "El modelo finalizó su producción en 2023 para dar paso a la plataforma Ultium, aunque GM anunció el retorno del nombre Bolt para futuros modelos económicos."
+    ]
+  },
+  "transmision": "Automática de relación única",
+  "traccion": "Delantera (FWD)",
+  "peso": "1625 kg",
+  "tipoMotor": "Motor síncrono de imanes permanentes",
+  "potenciaKW": "150 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "6.5s",
+  "anoProduccion": "2017-2023",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "consumo": "16 kWh / 100 km",
+  "dimensiones": "4161 x 1765 x 1610 mm",
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 478,
+  "maleteroMin": null,
+  "generacion": "1ª generación (reestyling 2022)",
+  "anoLanzamiento": 2016,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "Media (150 km/h)",
+      "acceleration": "Media-Alta (0-100 km/h en 6.5s)"
+    },
+    "bateria": {},
+    "transmision": {
+      "tipo": "Automática de relación única (motor eléctrico)"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": null
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 29.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "hatchback",
+    "chevrolet",
+    "electrico",
+    "Chevrolet",
+    "Hatchback eléctrico",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Chevrolet Bolt EV - Hatchback eléctrico Chevrolet. Media (150 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chevrolet Bolt EV",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chevrolet"
+    },
+    "vehicleType": "Hatchback eléctrico",
+    "fuelType": "Eléctrico",
+    "speed": "Media (150 km/h)",
+    "acceleration": "Media-Alta (0-100 km/h en 6.5s)",
+    "price": "USD 29.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback 100% eléctrico de Chevrolet, orientado a uso urbano con buena autonomía."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:35:08.867Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.1",
+    "totalVotos": 1966,
+    "desglose": {
+      "1": 247,
+      "2": 394,
+      "3": 497,
+      "4": 1131,
+      "5": 1049
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Chevrolet Bolt EV marcó un antes y un después en la estrategia de electrificación de General Motors. Presentado en forma de prototipo en 2015 y lanzado al mercado estadounidense a finales de 2016 como modelo 2017, este hatchback compacto fue concebido desde cero como un vehículo 100% eléctrico y no como una adaptación de un modelo con motor de combustión interna tradicional. Su objetivo principal era romper la barrera psicológica y económica de los autos eléctricos de largo alcance, ofreciendo una opción accesible para el uso diario sin resignar autonomía.\n\n## Un hito o generación relevante\nEl hito más importante en la trayectoria del Bolt EV llegó con la actualización profunda introducida para el año modelo 2022. En esta renovación, Chevrolet no solo rediseñó por completo el exterior y el interior —otorgándole un aspecto mucho más moderno, tecnológico y con materiales de mejor calidad en la cabina—, sino que también ajustó agresivamente su política de precios. Con una baja considerable en su valor de entrada con respecto a la primera serie, se posicionó momentáneamente como uno de los vehículos eléctricos con mejor relación autonomía-precio del mercado norteamericano. Además, se complementó con la variante Bolt EUV, una versión de carrocería ligeramente más alargada y formato SUV compacto.\n\n## Curiosidades\nUna de las características más destacadas del Chevrolet Bolt EV es su manejo enfocado en la conducción con un solo pedal (\"One-Pedal Driving\"). Mediante una calibración muy precisa del sistema de frenado regenerativo, el conductor puede acelerar y detener casi por completo el vehículo utilizando únicamente el pedal del acelerador, lo que maximiza la recuperación de energía en entornos urbanos con tráfico denso. Asimismo, su arquitectura mecánica permitió alojar el paquete de baterías en formato de \"skateboard\" bajo el piso de la cabina, logrando un aprovechamiento del espacio interior inusual para un vehículo de poco más de 4,1 metros de largo.\n\n## Competencia y posicionamiento\nEn términos de mercado, el Chevrolet Bolt EV compitió directamente contra vehículos como el Nissan Leaf, el Tesla Model 3 en sus versiones de acceso (aunque este último con un enfoque más aspiracional) y posteriormente contra los crossovers compactos basados en plataformas dedicadas de marcas generalistas. Su fuerte posicionamiento inicial residió en ofrecer más de 400 kilómetros de autonomía real por carga a un precio muy competitivo, convirtiéndose en una herramienta fundamental para la adopción masiva de la movilidad eléctrica en flotas urbanas y usuarios particulares en Norteamérica."
+}

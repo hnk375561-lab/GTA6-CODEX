@@ -1,0 +1,250 @@
+{
+  "slug": "jac-js6",
+  "type": "vehiculos",
+  "title": "JAC JS6",
+  "description": "SUV compacto de JAC Motors orientado a mercados de exportación.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "jac"
+  ],
+  "featured": false,
+  "manufacturer": "JAC",
+  "class": "SUV compacto",
+  "customizable": false,
+  "power": "181 hp (135 kW) a 4.850-5.500 rpm",
+  "price": "USD 27.000 (versión gasolina turbo, referencia mercado Latinoamérica)",
+  "consumo": "6.5 l/100km combinado (referencia fabricante)",
+  "dimensiones": "4.605 mm largo x 1.890 mm ancho x 1.700 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.motoresjac.com.gt/vehiculos-jac/jac-suvs/suv-jac-js6/",
+    "secondarySource": "https://en.wikipedia.org/wiki/JAC_QX",
+    "note": "Cifras verificadas para la versión a gasolina turbo 1.5L comercializada en mercados de exportación latinoamericanos bajo la denominación JS6.",
+    "limitations": [
+      "El precio varía significativamente según el país debido a políticas arancelarias e impuestos de importación.",
+      "Las cifras de aceleración son estimadas y varían según la versión y las condiciones de prueba."
+    ]
+  },
+  "performance": {
+    "speed": "190 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.8s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:47:28.623Z",
+  "transmision": "DCT (doble embrague) 7 velocidades",
+  "traccion": "Delantera",
+  "peso": "1.550 kg (referencia)",
+  "tipoMotor": "Gasolina turbo 4 cilindros, GDI",
+  "potenciaKW": "135 kW",
+  "capacidadTanque": "54 litros",
+  "tiempoRecorrido": "8.8s",
+  "anoProduccion": "2024",
+  "mercados": [
+    "Latinoamérica",
+    "China",
+    "Medio Oriente",
+    "Europa del Este"
+  ],
+  "equipamiento": [
+    "Pantalla dual panorámica 12.3\"",
+    "Apple CarPlay / Android Auto",
+    "Cámara 360° HD",
+    "Techo panorámico eléctrico",
+    "Asientos delanteros calefaccionados"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "235/50 R19",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC 16 válvulas",
+    "ratio_compresion": "10.0:1",
+    "sistemas_inyeccion": "Inyección directa (GDI) turbo",
+    "arbol_levas": "Doble (DOHC) con VVT"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.498 cc",
+  "emisiones": null,
+  "tipo": "SUV compacto",
+  "asientos": 5,
+  "baul": 455,
+  "maleteroMin": null,
+  "generacion": "Plataforma JAC GSE (2021-presente)",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "category": "vehiculo",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 21.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "suv",
+    "jac",
+    "JAC",
+    "SUV compacto",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "js6",
+    "china"
+  ],
+  "metaDescription": "JAC JS6 - SUV compacto chino de exportación, motor turbo 1.5L de 181 hp. Especificaciones, precio y disponibilidad, ago 2026.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "JAC JS6",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "JAC"
+    },
+    "vehicleType": "SUV compacto",
+    "fuelType": "Gasolina turbo",
+    "speed": "190 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.8s (referencia)",
+    "price": "USD 27.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacto de JAC Motors orientado a mercados de exportación, también vendido como Sehol QX en China."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:47:28.623Z",
+    "dataQuality": 0.8
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.motoresjac.com.gt/vehiculos-jac/jac-suvs/suv-jac-js6/",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/JAC_QX",
+        "type": "general",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Lote 6 (ago 2026): datos de la versión gasolina turbo 1.5L, mercado de exportación Latinoamérica.",
+    "dataQuality": 0.8
+  },
+  "content": "## Historia del modelo y desarrollo\nEl JAC JS6 representa un paso adelante en la estrategia de expansión global de JAC Motors dentro del segmento de los SUV compactos. Este modelo está construido sobre la plataforma modular JAC GSE, introducida originalmente en el mercado chino bajo la denominación Sehol QX. Con un enfoque claro en la modernización de la gama de productos de la marca, el JS6 combina un diseño exterior vanguardista con una propuesta tecnológica orientada a satisfacer las demandas de los consumidores internacionales en mercados emergentes y de exportación.\n\n## Un hito y generación relevante\nLanzado comercialmente a partir de 2021, este vehículo marca la consolidación de JAC en el desarrollo de motorizaciones turboalimentadas de alta eficiencia y transmisiones de doble embrague de nueva generación. La adopción de la plataforma GSE permitió mejorar significativamente la rigidez estructural, la seguridad pasiva y la integración de sistemas avanzados de asistencia a la conducción (ADAS), posicionándose como uno de los productos más sofisticados jamás fabricados por la compañía para el mercado externo.\n\n## Curiosidades y diseño\nUno de los aspectos más llamativos del JAC JS6 es su arquitectura interior, que destaca por incorporar una pantalla dual panorámica de 12.3 pulgadas orientada al conductor, reduciendo al mínimo la presencia de botones físicos tradicionales. Su diseño exterior adopta ópticas divididas y líneas afiladas que siguen las tendencias estéticas globales de los SUV medianos y compactos. Además, en ciertos mercados internacionales comparte componentes mecánicos y estructurales con alianzas estratégicas del grupo automotriz en China.\n\n## Competencia y posicionamiento\nDentro del mercado de los SUV compactos, el JAC JS6 compite directamente con referentes de peso regional como el Haval H6, el Chery Tiggo 7 Pro y el Geely Azkara. Su estrategia se basa en ofrecer un nivel de equipamiento de confort elevado, acabados interiores de apariencia cuidada y una mecánica equilibrada basada en el motor 1.5 litros GDI de 181 caballos, apuntando a un segmento que busca una relación precio-producto competitiva frente a marcas tradicionales consolidadas."
+}

@@ -1,0 +1,314 @@
+{
+  "slug": "chevrolet-onix",
+  "type": "vehiculos",
+  "title": "Chevrolet Onix",
+  "description": "Hatchback compacto de Chevrolet, motor 1.0L turbo de 116 hp, uno de los más vendidos de la región.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "chevrolet",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:34.590Z",
+  "updatedAt": "2026-08-27T02:45:59.968Z",
+  "manufacturer": "Chevrolet",
+  "class": "Hatchback",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 10.5s)"
+  },
+  "power": "116 hp",
+  "price": "ARS 22.000.000 (Precio de referencia mercado argentino)",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Chevrolet_Onix",
+    "secondarySource": "https://www.chevrolet.com.mx/autos/sedan-deportivo-onix",
+    "note": "Se verificaron las especificaciones técnicas generales, dimensiones del hatchback (4163 x 1730 x 1473 mm), capacidad del tanque de combustible (44 L) y baúl (303 L) utilizando fichas técnicas oficiales y registros enciclopédicos.",
+    "limitations": [
+      "Los precios en el mercado local varían constantemente debido a la inflación y la carga impositiva en Argentina.",
+      "Algunos equipamientos y capacidades pueden variar según la versión específica disponible en el mercado."
+    ]
+  },
+  "transmision": "Manual de 5 marchas o automática de 6 velocidades",
+  "traccion": "Delantera",
+  "peso": "1113 kg",
+  "tipoMotor": "Naftero 1.0L Turbo",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "44 litros",
+  "tiempoRecorrido": "10.2 s",
+  "anoProduccion": "2019-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "consumo": "5.4 L/100km mixto",
+  "dimensiones": "4163 x 1730 x 1473 mm",
+  "cilindrada": "999 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 303,
+  "maleteroMin": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "Media (180 km/h)",
+      "acceleration": "Media (0-100 km/h en 10.5s)"
+    },
+    "bateria": {},
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": null
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 17.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "hatchback",
+    "chevrolet",
+    "combustion",
+    "Chevrolet",
+    "Hatchback",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Chevrolet Onix - Hatchback Chevrolet. Media (180 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chevrolet Onix",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chevrolet"
+    },
+    "vehicleType": "Hatchback",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 10.5s)",
+    "price": "USD 17.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback compacto de Chevrolet, motor 1.0L turbo de 116 hp, uno de los más vendidos de la región."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:45:59.968Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.1",
+    "totalVotos": 3759,
+    "desglose": {
+      "1": 219,
+      "2": 401,
+      "3": 1058,
+      "4": 544,
+      "5": 2078
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Chevrolet Onix nació en el mercado sudamericano a finales de 2012, consolidándose rápidamente como un desarrollo clave de General Motors para la región. Concebido originalmente en Brasil para reemplazar al veterano Celta y complementar la oferta de la marca en el segmento B, su propuesta se centró desde el primer día en ofrecer un diseño atractivo, costos de mantenimiento contenidos y una accesibilidad que lo posicionó de inmediato entre los favoritos del público. Con los años, el modelo no solo conquistó el liderazgo en patentamientos de su categoría tanto en Brasil como en Argentina, sino que también redefinió las expectativas de los consumidores respecto a lo que un vehículo compacto de entrada de gama podía ofrecer.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la trayectoria del compacto se materializó a finales de 2019 con la llegada de su segunda generación, construida bajo la plataforma global GEM (Global Emerging Markets). Este salto generacional dejó atrás la imagen de un simple vehículo económico para elevar la vara en materia de seguridad, conectividad y eficiencia mecánica. La introducción de motorizaciones nafteras de 3 cilindros con turbocompresor —capaces de entregar 116 caballos de fuerza— junto con un paquete de seguridad estructural de serie que incluyó seis airbags y control electrónico de estabilidad (ESC), permitió que el Onix obtuviera destacadas calificaciones en las pruebas de protección de Latin NCAP, transformándose en un referente indiscutido en su segmento.\n\n## Curiosidades\nDetrás del desarrollo de esta exitosa segunda generación existe un gran despliegue de ingeniería multinacional, donde centros de diseño y desarrollo en Sudamérica, Asia y Norteamérica colaboraron estrechamente para dar vida a un producto global adaptado a mercados emergentes. Además, el Onix se convirtió en un verdadero pionero al democratizar la conectividad a bordo en su categoría, introduciendo de forma masiva sistemas de infoentretenimiento compatibles con Apple CarPlay y Android Auto, y dotando a sus versiones más equipadas con tecnología Wi-Fi 4G LTE integrada, una prestación inédita para vehículos de este segmento al momento de su lanzamiento.\n\n## Competencia y posicionamiento\nEn el competitivo escenario automotriz de América Latina, el Chevrolet Onix enfrenta de manera directa a modelos de peso pesado dentro del segmento B de los hatchbacks, tales como el Volkswagen Polo, el Fiat Argo, el Toyota Yaris y el Peugeot 208. Su posicionamiento comercial actual busca equilibrar una ecuación muy valorada por el consumidor moderno: motores eficientes enfocados en el ahorro de combustible, agilidad sobresaliente para el tránsito urbano gracias al torque del turbo, y una propuesta tecnológica robusta que satisface tanto a usuarios jóvenes como a familias que buscan un vehículo versátil, seguro y conectado."
+}

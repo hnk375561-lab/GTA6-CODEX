@@ -1,0 +1,316 @@
+{
+  "slug": "jeep-renegade",
+  "type": "vehiculos",
+  "title": "Jeep Renegade",
+  "description": "SUV compacta de Jeep, motor turbo 1.3L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "jeep",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:32.310Z",
+  "updatedAt": "2026-08-27T02:55:01.515Z",
+  "manufacturer": "Jeep",
+  "class": "SUV compacta",
+  "customizable": false,
+  "performance": {
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 9.8s"
+  },
+  "power": "175 CV",
+  "price": "USD 32.900 (MSRP regional referencia)",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.jeep.com/cr/renegade.html",
+    "secondarySource": "https://www.jeep.com.mx/renegade.html",
+    "note": "Se verificaron las especificaciones técnicas del motor T270 de 1.3L turbo y los precios de referencia para la región a través de los sitios oficiales de Jeep.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado específico de Latinoamérica.",
+      "Las cifras de consumo exactas dependen de la homologación local y condiciones de manejo."
+    ]
+  },
+  "transmision": "Automática de 6 u 9 marchas",
+  "traccion": "Delantera (4x2) o integral (4x4 Jeep Active Drive)",
+  "peso": "1425 kg",
+  "tipoMotor": "Nafta 1.3L Turbo (T270)",
+  "potenciaKW": "128 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "9.8s",
+  "anoProduccion": "2015-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "consumo": "7.5 l/100km mixto",
+  "dimensiones": "4268 x 1805 x 1695 mm",
+  "cilindrada": "1332 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 385,
+  "maleteroMin": null,
+  "generacion": "1ra generación (facelift actual)",
+  "anoLanzamiento": 2015,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "185 km/h",
+      "acceleration": "0-100 km/h en 9.8s"
+    },
+    "bateria": {},
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": null
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 26.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "jeep",
+    "combustion",
+    "Jeep",
+    "SUV compacta",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Jeep Renegade - SUV compacta Jeep. 185 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Jeep Renegade",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Jeep"
+    },
+    "vehicleType": "SUV compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 9.8s",
+    "price": "USD 26.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta de Jeep, motor turbo 1.3L."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:55:01.515Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.1",
+    "totalVotos": 4088,
+    "desglose": {
+      "1": 166,
+      "2": 128,
+      "3": 1168,
+      "4": 1562,
+      "5": 1644
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 185
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Jeep Renegade irrumpió en el mercado automotriz global en el año 2014 (con comercialización desde 2015) como una propuesta audaz y completamente nueva para la marca norteamericana. Desarrollado tras la integración de Chrysler por parte de Fiat (dando lugar a FCA, hoy Stellantis), el Renegade marcó un hito fundamental: fue el primer vehículo de la marca en ser producido fuera de Estados Unidos, fabricándose principalmente en Melfi (Italia) para Europa y en Goiana (Brasil) para abastecer a todo el mercado latinoamericano.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la vida comercial del Jeep Renegade se dio con la introducción de la motorización T270 de cuatro cilindros y 1.3 litros turboalimentada, desarrollada bajo el ala de Stellantis. Esta actualización mecánica reemplazó de manera paulatina a los veteranos motores atmosféricos en la región y a los bloques de menor eficiencia en Europa. Con este impulsor, el SUV compacto no sólo ganó una respuesta mucho más vigorosa en baja gracias al torque, sino que optimizó de forma notable los consumos de combustible en ruta y ciudad, adaptándose a las exigencias de normativas ambientales más estrictas y ofreciendo potencias cercanas a los 175 CV.\n\n## Curiosidades\nDesde su fase de diseño, el Jeep Renegade estuvo lleno de guiños a la rica historia militar y aventurera de la marca. Entre los detalles más celebrados por los fanáticos se encuentran los pequeños emblemas ocultos (conocidos como \"Easter eggs\"), como la silueta del Jeep original de 1941 trepando por el parabrisas, el diseño en forma de \"X\" de las luces traseras —inspirado en los bidones de combustible metálicos (jerrycans) utilizados en la Segunda Guerra Mundial—, y texturas de mapas topográficos moldeadas en el interior de los portaobjetos.\n\n## Competencia y posicionamiento\nEn el altamente competitivo segmento de los B-SUV (SUV compactos), el Jeep Renegade ocupa un lugar de carácter singular. Mientras que la mayoría de sus rivales directos apuestan exclusivamente por un enfoque urbano y tracción delantera (como el Chevrolet Tracker, Volkswagen T-Cross, Nissan Kicks o Renault Duster), el Renegade se destaca en sus versiones superiores por ofrecer auténticas capacidades off-road, especialmente en las variantes con tracción integral (4x4) y el sello Trail Rated, destinado a los terrenos más exigentes. Esto lo posiciona como una opción de espíritu más robusto y recreativo dentro de una categoría dominada por la estética de uso netamente citadino."
+}

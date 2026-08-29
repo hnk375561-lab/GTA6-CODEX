@@ -1,0 +1,557 @@
+diff --git a/.github/workflows/check-evidence-links.yml b/.github/workflows/check-evidence-links.yml
+index 183f4c3..eef9075 100644
+--- a/.github/workflows/check-evidence-links.yml
++++ b/.github/workflows/check-evidence-links.yml
+@@ -114,10 +114,12 @@ jobs:
+       - name: Crear o actualizar Issue
+         if: steps.check.outcome == 'failure'
+         uses: actions/github-script@v9
++        env:
++          ISSUE_BODY: ${{ steps.body.outputs.body }}
+         with:
+           script: |
+             const title = "🔗 Links de evidencia rotos (chequeo mensual)";
+-            const body = `${{ steps.body.outputs.body }}`;
++            const body = process.env.ISSUE_BODY;
+             const { data: issues } = await github.rest.issues.listForRepo({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+diff --git a/GTA6-CODEX/README.md b/GTA6-CODEX/README.md
+index e0c74cb..091edfd 100644
+--- a/GTA6-CODEX/README.md
++++ b/GTA6-CODEX/README.md
+@@ -63,7 +63,7 @@ Pensado para dos públicos:
+ |-----------|----------|---------|
+ | 🚗 **Vehículos** | **250** fichas activas | Autos, SUVs, pickups y motos de **75 fabricantes** distintos |
+ | 🌍 **Cobertura** | Global | Marcas europeas, americanas, japonesas, coreanas, chinas (BYD, Chery, BAIC, Changan, GWM...) e indias (Bajaj, Mahindra) conviven en el mismo catálogo |
+-| 🔎 **Evidencia** | 196/250 con fuente citada sólida (78%) | Todo dato declara un nivel de confianza — ver [niveles de evidencia](#niveles-de-evidencia) |
++| 🔎 **Evidencia** | 250/250 con fuente citada sólida (100%) | Todo dato declara un nivel de confianza — ver [niveles de evidencia](#niveles-de-evidencia) |
+ | 📰 **Noticias / Guías** | Tipos habilitados, sin contenido aún | Sección lista en el código, pendiente de primer contenido real |
+ 
+ ## 🗺️ Estrategia: global primero, después por país
+@@ -209,10 +209,10 @@ Cada ficha declara qué tan sólida es la fuente de sus datos:
+ 
+ | Nivel | Significado | Uso actual |
+ |-------|-------------|------------|
+-| `oficial-nombrado` | Confirmado por ficha técnica oficial del fabricante | 126 fichas |
++| `oficial-nombrado` | Confirmado por ficha técnica oficial del fabricante | 78 fichas |
+ | `oficial-visual` | Visible en material oficial, sin confirmación textual | — |
+ | `oficial-visual-multifuente` | Igual al anterior, con más de una fuente oficial | — |
+-| `respaldado` | Sin confirmación oficial directa, pero con fuentes secundarias solventes | 124 fichas |
++| `respaldado` | Sin confirmación oficial directa, pero con fuentes secundarias solventes | 172 fichas |
+ | `especulativo` | Rumor o estimación razonable, marcado como tal | — |
+ 
+ ## 🩺 Estado del pivote (qué falta)
+diff --git a/GTA6-CODEX/next.config.js b/GTA6-CODEX/next.config.js
+index 7285564..f3e30db 100644
+--- a/GTA6-CODEX/next.config.js
++++ b/GTA6-CODEX/next.config.js
+@@ -25,6 +25,20 @@ const nextConfig = {
+     // CSP en modo enforcement. Se validó contra los reportes de la fase
+     // Report-Only (GA, thumbnails de YouTube, estilos/scripts inline de
+     // Next) sin falsos positivos, así que ahora bloquea de verdad.
++    //
++    // IMPORTANTE — AdSense: script-src NO incluye pagead2.googlesyndication.com
++    // (ni los dominios de doubleclick.net/googlesyndication.com que Google usa
++    // para los iframes de anuncios). El código de layout.tsx/ConsentBanner.tsx
++    // ya está listo para cargar AdSense (gateado detrás del consentimiento),
++    // pero con esta CSP el navegador bloquearía igual el script en cuanto se
++    // active NEXT_PUBLIC_ADSENSE_CLIENT_ID. Antes de activar AdSense en serio:
++    // volver a poner esta CSP en modo Content-Security-Policy-Report-Only
++    // (agregar "-Report-Only" al nombre del header) con una cuenta de AdSense
++    // real en staging, mirar en la consola del navegador qué dominios reporta
++    // como bloqueados, y recién ahí sumarlos acá — la lista completa de
++    // Google cambia con el tiempo, no tiene sentido copiar una fija de
++    // antemano. Mismo proceso que ya se usó para validar esta CSP la
++    // primera vez (ver comentario arriba).
+     const csp = [
+       "default-src 'self'",
+       "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
+diff --git a/GTA6-CODEX/public/images/og/.gitkeep b/GTA6-CODEX/public/images/og/.gitkeep
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/GTA6-CODEX/src/app/[entityType]/[slug]/page.tsx b/GTA6-CODEX/src/app/[entityType]/[slug]/page.tsx
+index 5f00bc5..b704845 100644
+--- a/GTA6-CODEX/src/app/[entityType]/[slug]/page.tsx
++++ b/GTA6-CODEX/src/app/[entityType]/[slug]/page.tsx
+@@ -5,7 +5,7 @@ import { EntityType } from '@/types'
+ import { getEntity, getEntitySlugs } from '@/lib/entities'
+ import { resolveEntityDisplayImage } from '@/lib/media'
+ import { getBidirectionalRelatedEntitiesWithLabel } from '@/lib/relations'
+-import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo'
++import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd, serializeJsonLd } from '@/lib/seo'
+ import { Card, CardBody } from '@/components/ui/Card'
+ import { Badge } from '@/components/ui/Badge'
+ import { Reveal } from '@/components/ui/Reveal'
+@@ -172,11 +172,11 @@ export default async function EntityPage({ params }: PageProps) {
+     <>
+       <script
+         type="application/ld+json"
+-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
++        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
+       />
+       <script
+         type="application/ld+json"
+-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
++        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbLd) }}
+       />
+ 
+       {/* Publica categoría/estado/featured de esta ficha al motor WebGL.
+diff --git a/GTA6-CODEX/src/app/[entityType]/page.tsx b/GTA6-CODEX/src/app/[entityType]/page.tsx
+index 936ac3d..ea07c14 100644
+--- a/GTA6-CODEX/src/app/[entityType]/page.tsx
++++ b/GTA6-CODEX/src/app/[entityType]/page.tsx
+@@ -201,15 +201,34 @@ export default async function EntityTypePage({ params }: PageProps) {
+             solo este subárbol. El fallback reproduce el layout sin
+             interactividad para que no haya salto de layout mientras
+             hidrata. */}
+-        <Suspense fallback={<EntityListExplorerFallback entities={entities} typeLabel={label} imageBySlug={entityImageMap} />}>
+-          <EntityListExplorer
+-            type={type}
+-            entities={entities}
+-            typeLabel={label}
+-            imageBySlug={entityImageMap}
+-            relationCountBySlug={relationCountBySlug}
+-          />
+-        </Suspense>
++        {entities.length === 0 ? (
++          // Mismo patrón visual que /mapa (única otra sección "en
++          // construcción" del sitio): encabezado + párrafo centrados, sin
++          // inventar un estilo nuevo. Antes de esto, Noticias y Guías no
++          // mostraban nada bajo el h1 — un grid vacío sin ninguna
++          // explicación, indistinguible de una página rota.
++          <Reveal>
++            <div className="mx-auto max-w-2xl py-16 text-center md:py-24">
++              <h2 className="font-display text-2xl font-bold text-auto-text md:text-3xl">
++                {label} en construcción
++              </h2>
++              <p className="mt-4 text-auto-text-secondary">
++                Esta sección ya está lista en el código — todavía no publicamos{' '}
++                {type === EntityType.NEWS ? 'la primera noticia real' : 'la primera guía real'}.
++              </p>
++            </div>
++          </Reveal>
++        ) : (
++          <Suspense fallback={<EntityListExplorerFallback entities={entities} typeLabel={label} imageBySlug={entityImageMap} />}>
++            <EntityListExplorer
++              type={type}
++              entities={entities}
++              typeLabel={label}
++              imageBySlug={entityImageMap}
++              relationCountBySlug={relationCountBySlug}
++            />
++          </Suspense>
++        )}
+       </div>
+     </section>
+   )
+diff --git a/GTA6-CODEX/src/app/galeria/page.tsx b/GTA6-CODEX/src/app/galeria/page.tsx
+index 79ca2d1..623d245 100644
+--- a/GTA6-CODEX/src/app/galeria/page.tsx
++++ b/GTA6-CODEX/src/app/galeria/page.tsx
+@@ -3,6 +3,7 @@ import { getGalleryItems, getGalleryCategoryCounts } from '@/lib/gallery'
+ import { GalleryHero } from '@/components/gallery/GalleryHero'
+ import { GalleryExplorer } from '@/components/gallery/GalleryExplorer'
+ import { SITE_NAME, SITE_URL } from '@/config/site'
++import { serializeJsonLd } from '@/lib/seo'
+ 
+ export async function generateMetadata(): Promise<Metadata> {
+   const items = await getGalleryItems()
+@@ -46,7 +47,7 @@ export default async function GaleriaPage() {
+     <>
+       <script
+         type="application/ld+json"
+-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
++        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
+       />
+       <GalleryHero total={items.length} categoryCount={categories.length} />
+       <section className="py-12 sm:py-16">
+diff --git a/GTA6-CODEX/src/app/layout.tsx b/GTA6-CODEX/src/app/layout.tsx
+index c3a0e85..fad22a0 100644
+--- a/GTA6-CODEX/src/app/layout.tsx
++++ b/GTA6-CODEX/src/app/layout.tsx
+@@ -1,5 +1,4 @@
+ import { Metadata } from 'next'
+-import Script from 'next/script'
+ import { Analytics } from '@vercel/analytics/next'
+ // Autohospedadas vía @fontsource (paquetes npm con los .woff2 empaquetados,
+ // sin llamada a fonts.googleapis.com/fonts.gstatic.com en build ni en
+@@ -94,14 +93,8 @@ export default function RootLayout({
+         >
+           Saltar al contenido principal
+         </a>
+-        {GA_MEASUREMENT_ID && <ConsentBanner gaId={GA_MEASUREMENT_ID} />}
+-        {ADSENSE_CLIENT_ID && (
+-          <Script
+-            async
+-            strategy="afterInteractive"
+-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+-            crossOrigin="anonymous"
+-          />
++        {(GA_MEASUREMENT_ID || ADSENSE_CLIENT_ID) && (
++          <ConsentBanner gaId={GA_MEASUREMENT_ID} adsenseClientId={ADSENSE_CLIENT_ID} />
+         )}
+         <HomeBodyBg />
+         <ScrollRestorationBridge />
+diff --git a/GTA6-CODEX/src/app/page.tsx b/GTA6-CODEX/src/app/page.tsx
+index 0c959a8..ce739ff 100644
+--- a/GTA6-CODEX/src/app/page.tsx
++++ b/GTA6-CODEX/src/app/page.tsx
+@@ -10,7 +10,7 @@ import {
+ } from '@/lib/entities'
+ import { resolveEntityDisplayImage } from '@/lib/media'
+ import { getBidirectionalRelationCount } from '@/lib/relations'
+-import { generateHomepageMetadata, generateBreadcrumbJsonLd, generateWebsiteJsonLd } from '@/lib/seo'
++import { generateHomepageMetadata, generateBreadcrumbJsonLd, generateWebsiteJsonLd, serializeJsonLd } from '@/lib/seo'
+ import { Card } from '@/components/ui/Card'
+ import { CategoryIcon } from '@/components/ui/CategoryIcon'
+ import { CountUp } from '@/components/ui/CountUp'
+@@ -384,8 +384,8 @@ export default async function HomePage() {
+ 
+   return (
+     <>
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbLd) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteLd) }} />
+       <PinnedScrollStages stages={stages} />
+     </>
+   )
+diff --git a/GTA6-CODEX/src/app/privacidad/page.tsx b/GTA6-CODEX/src/app/privacidad/page.tsx
+index c12234f..2aff9f3 100644
+--- a/GTA6-CODEX/src/app/privacidad/page.tsx
++++ b/GTA6-CODEX/src/app/privacidad/page.tsx
+@@ -45,10 +45,11 @@ export default function PrivacyPage() {
+             identifican personalmente.
+           </p>
+           <p>
+-            Si en el futuro incorporamos publicidad (por ejemplo, Google AdSense),
+-            esos proveedores pueden usar cookies propias para mostrar anuncios
+-            relevantes. Actualizaremos esta página cuando eso ocurra, detallando
+-            qué proveedores están activos.
++            El sitio puede mostrar anuncios de Google AdSense cuando dan el consentimiento
++            en el banner de cookies (el mismo que gatea Google Analytics). Sin ese
++            consentimiento, ningún script de anuncios se carga. AdSense puede usar sus
++            propias cookies para mostrar anuncios relevantes cuando el consentimiento
++            está dado.
+           </p>
+         </section>
+ 
+diff --git a/GTA6-CODEX/src/components/entities/VehicleCompareSheet.tsx b/GTA6-CODEX/src/components/entities/VehicleCompareSheet.tsx
+index 1e63845..2d19ecf 100644
+--- a/GTA6-CODEX/src/components/entities/VehicleCompareSheet.tsx
++++ b/GTA6-CODEX/src/components/entities/VehicleCompareSheet.tsx
+@@ -1,11 +1,12 @@
+ 'use client'
+ 
+-import { useEffect, type ReactNode } from 'react'
++import { useEffect, useRef, type ReactNode } from 'react'
+ import Image from 'next/image'
+ import Link from 'next/link'
+ import type { Vehicle } from '@/types'
+ import type { ResolvedDisplayImage } from '@/lib/images'
+ import { StatBar } from '@/components/entities/StatBar'
++import { useModalFocus } from '@/lib/hooks/useModalFocus'
+ import { cn } from '@/lib/utils'
+ 
+ export const MAX_COMPARE = 5
+@@ -240,6 +241,8 @@ interface VehicleCompareSheetProps {
+  * `VehicleCompareTable` directamente embebida en la página.
+  */
+ export function VehicleCompareSheet({ open, vehicles, imageBySlug, onClose, onRemove }: VehicleCompareSheetProps) {
++  const dialogRef = useRef<HTMLDivElement>(null)
++
+   useEffect(() => {
+     if (!open) return
+     const onKey = (e: KeyboardEvent) => {
+@@ -253,10 +256,14 @@ export function VehicleCompareSheet({ open, vehicles, imageBySlug, onClose, onRe
+     }
+   }, [open, onClose])
+ 
++  useModalFocus(open, dialogRef)
++
+   if (!open || vehicles.length === 0) return null
+ 
+   return (
+     <div
++      ref={dialogRef}
++      tabIndex={-1}
+       className="fixed inset-0 z-50 flex items-end justify-center bg-auto-dark/80 backdrop-blur-sm sm:items-center sm:p-6"
+       role="dialog"
+       aria-modal="true"
+diff --git a/GTA6-CODEX/src/components/gallery/GalleryExplorer.tsx b/GTA6-CODEX/src/components/gallery/GalleryExplorer.tsx
+index 1eacbf2..cdb1e07 100644
+--- a/GTA6-CODEX/src/components/gallery/GalleryExplorer.tsx
++++ b/GTA6-CODEX/src/components/gallery/GalleryExplorer.tsx
+@@ -11,6 +11,7 @@ import { ZoomableImage } from '@/components/ui/ZoomableImage'
+ import { YouTubeEmbed } from '@/components/media/YouTubeEmbed'
+ import { VideoEmbed } from '@/components/media/VideoEmbed'
+ import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
++import { useModalFocus } from '@/lib/hooks/useModalFocus'
+ import { STATUS_LABELS } from '@/lib/entity-labels'
+ import { cn } from '@/lib/utils'
+ 
+@@ -346,13 +347,19 @@ function GalleryLightbox({
+     }
+     document.addEventListener('keydown', onKeyDown)
+     document.body.style.overflow = 'hidden'
+-    dialogRef.current?.focus()
+     return () => {
+       document.removeEventListener('keydown', onKeyDown)
+       document.body.style.overflow = ''
+     }
+   }, [onClose, onPrev, onNext])
+ 
++  // Este componente solo existe montado mientras el lightbox está
++  // abierto (ver el `{lightboxIndex !== null && ... && <GalleryLightbox`
++  // condicional del padre), así que "open" es siempre true acá — el
++  // hook igual necesita el flag para poder restaurar el foco en su
++  // cleanup cuando el padre lo desmonta.
++  useModalFocus(true, dialogRef)
++
+   return (
+     <div
+       ref={dialogRef}
+diff --git a/GTA6-CODEX/src/components/layout/ConsentBanner.tsx b/GTA6-CODEX/src/components/layout/ConsentBanner.tsx
+index 73383d5..c2b6538 100644
+--- a/GTA6-CODEX/src/components/layout/ConsentBanner.tsx
++++ b/GTA6-CODEX/src/components/layout/ConsentBanner.tsx
+@@ -1,7 +1,8 @@
+ 'use client'
+ 
+-import { useEffect, useState } from 'react'
++import { useEffect, useRef, useState } from 'react'
+ import Script from 'next/script'
++import { useModalFocus } from '@/lib/hooks/useModalFocus'
+ 
+ const STORAGE_KEY = 'autoficha-cookie-consent'
+ // Nota: la key anterior ('gta6zona-cookie-consent') era un resabio del
+@@ -14,24 +15,33 @@ const STORAGE_KEY = 'autoficha-cookie-consent'
+ type ConsentState = 'accepted' | 'rejected' | null
+ 
+ /**
+- * Gatea la carga de Google Analytics detrás de un consentimiento explícito
+- * del usuario (banner aceptar/rechazar), en vez de inyectar el script de
+- * `gtag` incondicionalmente apenas hay un `NEXT_PUBLIC_GA_ID` configurado.
++ * Gatea la carga de Google Analytics y Google AdSense detrás de un
++ * consentimiento explícito del usuario (banner aceptar/rechazar), en vez
++ * de inyectar esos scripts incondicionalmente apenas hay un
++ * `NEXT_PUBLIC_GA_ID`/`NEXT_PUBLIC_ADSENSE_CLIENT_ID` configurado.
+  *
+- * Por qué: GA sin gating de consentimiento previo es un problema de
+- * cumplimiento GDPR/ePrivacy en cuanto el sitio reciba tráfico de la UE —
+- * ver AUDITORIA_CRITICA_VENTA.md sección 6.2. Este componente resuelve
+- * solo eso, es intencionalmente mínimo (sin librería de CMP de terceros,
+- * sin categorías granulares) y no toca AdSense.
++ * Por qué: cargar GA o anuncios personalizados sin gating de
++ * consentimiento previo es un problema de cumplimiento GDPR/ePrivacy en
++ * cuanto el sitio reciba tráfico de la UE/UK — Google además lo exige
++ * explícitamente para publishers de AdSense en esas regiones (Consent
++ * Mode). Este componente es intencionalmente mínimo (sin librería de CMP
++ * de terceros, sin categorías granulares): una sola decisión binaria que
++ * gatea ambos scripts por igual.
++ *
++ * Nota: la CSP de next.config.js también necesita permitir el dominio de
++ * AdSense en `script-src` para que el script llegue a cargar una vez que
++ * el consentimiento esté resuelto — ver el comentario en next.config.js.
+  *
+  * Guardamos la decisión en localStorage (no cookie) a propósito: es
+  * exactamente lo que se está decidiendo (si se puede trackear al usuario),
+  * así que la propia decisión no debería depender de una cookie que ya
+  * requeriría el mismo consentimiento para setearse con TTL largo.
+  */
+-export function ConsentBanner({ gaId }: { gaId: string }) {
++export function ConsentBanner({ gaId, adsenseClientId }: { gaId?: string; adsenseClientId?: string }) {
+   const [consent, setConsent] = useState<ConsentState>(null)
+   const [hydrated, setHydrated] = useState(false)
++  const dialogRef = useRef<HTMLDivElement>(null)
++  const showBanner = hydrated && consent === null
+ 
+   useEffect(() => {
+     const stored = window.localStorage.getItem(STORAGE_KEY)
+@@ -41,6 +51,13 @@ export function ConsentBanner({ gaId }: { gaId: string }) {
+     setHydrated(true)
+   }, [])
+ 
++  // El banner no tiene un botón que lo "abra" (aparece solo, ver
++  // showBanner arriba) — el hook igual sirve acá para atrapar Tab dentro
++  // de sus dos botones mientras está visible; al cerrarse devuelve el
++  // foco a lo que estuviera enfocado antes (normalmente nada/body, sin
++  // efecto visible).
++  useModalFocus(showBanner, dialogRef)
++
+   const decide = (value: 'accepted' | 'rejected') => {
+     window.localStorage.setItem(STORAGE_KEY, value)
+     setConsent(value)
+@@ -48,7 +65,7 @@ export function ConsentBanner({ gaId }: { gaId: string }) {
+ 
+   return (
+     <>
+-      {consent === 'accepted' && (
++      {consent === 'accepted' && gaId && (
+         <>
+           <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+           <Script id="ga4-init" strategy="afterInteractive">
+@@ -62,16 +79,27 @@ export function ConsentBanner({ gaId }: { gaId: string }) {
+         </>
+       )}
+ 
++      {consent === 'accepted' && adsenseClientId && (
++        <Script
++          async
++          strategy="afterInteractive"
++          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
++          crossOrigin="anonymous"
++        />
++      )}
++
+       {hydrated && consent === null && (
+         <div
++          ref={dialogRef}
++          tabIndex={-1}
+           role="dialog"
+           aria-label="Consentimiento de cookies"
+           className="fixed inset-x-0 bottom-0 z-[200] border-t border-auto-border bg-auto-darker/95 px-4 py-4 backdrop-blur-sm sm:px-6"
+         >
+           <div className="container-max flex flex-col items-center justify-between gap-3 sm:flex-row">
+             <p className="text-sm text-auto-text-secondary">
+-              Usamos cookies analíticas para entender cómo se usa el sitio. Podés aceptarlas o rechazarlas —
+-              el sitio funciona igual en ambos casos.
++              Usamos cookies analíticas y, cuando estén activos, anuncios personalizados, para financiar y
++              mejorar el sitio. Podés aceptarlas o rechazarlas — el sitio funciona igual en ambos casos.
+             </p>
+             <div className="flex shrink-0 gap-3">
+               <button
+diff --git a/GTA6-CODEX/src/components/ui/SimpleLightbox.tsx b/GTA6-CODEX/src/components/ui/SimpleLightbox.tsx
+index 7477dc2..7260675 100644
+--- a/GTA6-CODEX/src/components/ui/SimpleLightbox.tsx
++++ b/GTA6-CODEX/src/components/ui/SimpleLightbox.tsx
+@@ -2,6 +2,7 @@
+ 
+ import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
+ import { ZoomableImage } from '@/components/ui/ZoomableImage'
++import { useModalFocus } from '@/lib/hooks/useModalFocus'
+ import { cn } from '@/lib/utils'
+ 
+ interface SimpleLightboxProps {
+@@ -37,13 +38,17 @@ export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleL
+     }
+     document.addEventListener('keydown', onKeyDown)
+     document.body.style.overflow = 'hidden'
+-    dialogRef.current?.focus()
+     return () => {
+       document.removeEventListener('keydown', onKeyDown)
+       document.body.style.overflow = ''
+     }
+   }, [open, close])
+ 
++  // Atrapa Tab dentro del modal y devuelve el foco al trigger al cerrar
++  // (ver comentario del hook) — complementa el useEffect de arriba, que
++  // sigue a cargo de Escape y el scroll lock.
++  useModalFocus(open, dialogRef)
++
+   return (
+     <>
+       <button
+diff --git a/GTA6-CODEX/src/lib/hooks/useModalFocus.ts b/GTA6-CODEX/src/lib/hooks/useModalFocus.ts
+new file mode 100644
+index 0000000..3501761
+--- /dev/null
++++ b/GTA6-CODEX/src/lib/hooks/useModalFocus.ts
+@@ -0,0 +1,58 @@
++'use client'
++
++import { useEffect, useRef, type RefObject } from 'react'
++
++/**
++ * Comportamiento estándar de foco para un diálogo modal (ARIA Authoring
++ * Practices Guide): guarda el elemento con foco al abrir, mueve el foco al
++ * contenedor del modal, atrapa `Tab`/`Shift+Tab` dentro de los elementos
++ * enfocables del modal mientras está abierto, y devuelve el foco al
++ * elemento original al cerrarse.
++ *
++ * Se extrajo como hook compartido porque los 4 componentes del sitio que
++ * usan `role="dialog"` (SimpleLightbox, GalleryExplorer,
++ * VehicleCompareSheet, ConsentBanner) repetían el mismo patrón de
++ * `useEffect` para `Escape`/scroll-lock, pero a ninguno le faltaba
++ * exactamente esto: sin atrapar `Tab`, alguien navegando con teclado podía
++ * salir del modal hacia elementos de la página de atrás mientras seguía
++ * visualmente abierto; sin restaurar el foco, al cerrar quedaba flotando
++ * en el `<body>` en vez de volver al botón que lo abrió.
++ *
++ * No maneja `Escape` ni el scroll lock del body a propósito — eso se queda
++ * en cada componente porque ya varía levemente entre ellos (algunos
++ * también atan flechas de navegación a `Escape`). Este hook solo resuelve
++ * el foco.
++ */
++export function useModalFocus(open: boolean, containerRef: RefObject<HTMLElement | null>) {
++  const previouslyFocused = useRef<HTMLElement | null>(null)
++
++  useEffect(() => {
++    if (!open) return
++
++    previouslyFocused.current = document.activeElement as HTMLElement | null
++    containerRef.current?.focus()
++
++    const onKeyDown = (e: KeyboardEvent) => {
++      if (e.key !== 'Tab' || !containerRef.current) return
++      const focusable = containerRef.current.querySelectorAll<HTMLElement>(
++        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
++      )
++      if (focusable.length === 0) return
++      const first = focusable[0]
++      const last = focusable[focusable.length - 1]
++      if (e.shiftKey && document.activeElement === first) {
++        e.preventDefault()
++        last.focus()
++      } else if (!e.shiftKey && document.activeElement === last) {
++        e.preventDefault()
++        first.focus()
++      }
++    }
++    document.addEventListener('keydown', onKeyDown)
++
++    return () => {
++      document.removeEventListener('keydown', onKeyDown)
++      previouslyFocused.current?.focus()
++    }
++  }, [open, containerRef])
++}
+diff --git a/GTA6-CODEX/src/lib/seo.ts b/GTA6-CODEX/src/lib/seo.ts
+index 52f7107..189b409 100644
+--- a/GTA6-CODEX/src/lib/seo.ts
++++ b/GTA6-CODEX/src/lib/seo.ts
+@@ -202,6 +202,17 @@ export function generateEntityJsonLd(entity: Entity, primaryMedia?: MediaAsset |
+   return base
+ }
+ 
++/**
++ * Serializa un objeto para inyectarlo en un <script type="application/ld+json">
++ * vía dangerouslySetInnerHTML. JSON.stringify() no escapa '<', así que sin esto
++ * un valor de contenido que contuviera la secuencia "</script>" podría cerrar el
++ * tag antes de tiempo e inyectar HTML/JS arbitrario en la página. Patrón estándar
++ * de JSON-LD seguro en Next.js.
++ */
++export function serializeJsonLd(data: object): string {
++  return JSON.stringify(data).replace(/</g, '\\u003c')
++}
++
+ /**
+  * Genera JSON-LD para BreadcrumbList
+  */
+diff --git a/GTA6-CODEX/src/types/schemas.ts b/GTA6-CODEX/src/types/schemas.ts
+index 9f22778..64e6410 100644
+--- a/GTA6-CODEX/src/types/schemas.ts
++++ b/GTA6-CODEX/src/types/schemas.ts
+@@ -77,7 +77,10 @@ const isoDateStringSchema = (fieldName: string) =>
+     })
+ 
+ export const BaseEntitySchema = z.object({
+-  slug: z.string().min(1, 'slug no puede estar vacío'),
++  slug: z
++    .string()
++    .min(1, 'slug no puede estar vacío')
++    .regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'slug debe ser kebab-case (a-z, 0-9, guiones)'),
+   type: EntityTypeSchema,
+   title: z.string().min(1, 'title no puede estar vacío'),
+   description: z.string().min(1, 'description no puede estar vacía'),

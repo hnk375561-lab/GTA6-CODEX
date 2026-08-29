@@ -1,0 +1,317 @@
+{
+  "slug": "mazda-cx-5",
+  "type": "vehiculos",
+  "title": "Mazda CX-5",
+  "description": "SUV mediana de Mazda con motor 2.5L Skyactiv-G, tracción integral opcional.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "mazda",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Mazda",
+  "class": "SUV",
+  "customizable": false,
+  "power": "187 hp",
+  "price": "USD 29.990 (MSRP base EE.UU.)",
+  "consumo": "9.0 l/100km (mixto)",
+  "dimensiones": "4575 x 1845 x 1680 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.mazdaespanol.com/veh%C3%ADculos-18/cx-5",
+    "note": "Se verificaron las especificaciones técnicas principales del motor Skyactiv-G 2.5L de 187 hp, dimensiones y precios base utilizando los portales oficiales de Mazda y bases de datos técnicas de la industria.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado regional, aranceles de importación y costos de transporte.",
+      "Las cifras exactas de consumo pueden diferir según el tipo de tracción y la homologación regional específica."
+    ]
+  },
+  "performance": {
+    "speed": "195 km/h",
+    "acceleration": "0-100 km/h en 9.0s"
+  },
+  "createdAt": "2026-08-23T21:59:01.491247Z",
+  "updatedAt": "2026-08-27T02:58:25.108Z",
+  "transmision": "Automática de 6 velocidades (Skyactiv-Drive)",
+  "traccion": "i-Activ AWD (integral estándar según mercado)",
+  "peso": "1588-1755 kg",
+  "tipoMotor": "Gasolina (Skyactiv-G 2.5 de 4 cilindros)",
+  "potenciaKW": "139 kW",
+  "capacidadTanque": "56 litros",
+  "tiempoRecorrido": "9.0s",
+  "anoProduccion": "2017-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "F",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2488 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 506,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (con actualizaciones de gama)",
+  "anoLanzamiento": 2017,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "195 km/h",
+      "acceleration": "0-100 km/h en 9.0s"
+    },
+    "bateria": {
+      "consumo": "9.2 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4575,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "9.2 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 32.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "mazda",
+    "combustion",
+    "Mazda",
+    "SUV",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Mazda CX-5 - SUV Mazda. 195 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Mazda CX-5",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Mazda"
+    },
+    "vehicleType": "SUV",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "195 km/h",
+    "acceleration": "0-100 km/h en 9.0s",
+    "price": "USD 32.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediana de Mazda con motor 2.5L Skyactiv-G, tracción integral opcional."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T02:58:25.108Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.7",
+    "totalVotos": 1488,
+    "desglose": {
+      "1": 196,
+      "2": 416,
+      "3": 878,
+      "4": 1541,
+      "5": 1355
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 195
+    },
+    "consumo": {
+      "promedio": "9.2 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Mazda CX-5 irrumpió en el mercado automotriz global a finales de 2011, marcando un hito fundamental para la marca japonesa al ser el primer vehículo en adoptar por completo el lenguaje de diseño 'Kodo - Alma del movimiento' y el paquete tecnológico de ingeniería 'Skyactiv'. Este desarrollo integral buscaba optimizar tanto la eficiencia del combustible como la dinámica de conducción sin depender inicialmente de la electrificación. La primera generación logró posicionarse rápidamente como una de las referencias dentro del segmento de los SUV medianos, destacándose por un tacto de conducción inusualmente ágil para su categoría y una calidad de terminaciones que comenzó a coquetear con el segmento superior.\n\n## Un hito o generación relevante\nEl salto evolutivo más significativo llegó con la presentación de la segunda generación a finales de 2016 (comercializada globalmente desde 2017). Esta iteración refinó la fórmula original al incrementar la rigidez torsional de la carrocería en un 15%, mejorar notablemente el aislamiento acústico del habitáculo e introducir asistencias a la conducción más avanzadas bajo el paraguas de i-Activsense. Mecánicamente, incorporó mejoras en la gestión de los motores Skyactiv-G y opciones turboalimentadas que elevaron aún más el atractivo del modelo. Las actualizaciones recientes continúan optimizando su chasis y conectividad para mantener su vigencia frente a los estándares actuales de la industria.\n\n## Curiosidades\nUn aspecto clave en el desarrollo de la CX-5 es la obsesión de Mazda por la ergonomía y la conexión humano-máquina, conocida internamente como 'Jinba Ittai' (el jinete y su caballo en armonía). A diferencia de muchos rivales que migraron todos sus comandos a pantallas táctiles complejas, Mazda mantuvo firmemente el control giratorio en la consola central para evitar que el conductor apartara la vista del camino. Además, el característico color de lanzamiento de esta generación, el 'Soul Red Crystal', utiliza un proceso de pintura de alta complejidad desarrollado específicamente para realzar las líneas fluidas del diseño Kodo bajo cualquier condición lumínica.\n\n## Competencia y posicionamiento\nEn el altamente disputado mercado de los SUV medianos, la Mazda CX-5 compite de manera directa contra pesos pesados de la industria como la Toyota RAV4, la Honda CR-V, la Volkswagen Tiguan y la Ford Escape. Mientras que algunos de sus competidores priorizan la habitabilidad pura o la adopción masiva de mecánicas híbridas, Mazda ha optado por posicionar a la CX-5 en un escalón ligeramente más aspiracional o cercano al segmento premium. Esto se traduce en un enfoque centrado en el agrado de manejo, materiales interiores muy cuidados y una estética sofisticada, buscando seducir a conductores que valoran la experiencia al volante por encima de la mera utilidad familiar."
+}

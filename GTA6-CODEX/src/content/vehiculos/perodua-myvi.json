@@ -1,0 +1,229 @@
+{
+  "slug": "perodua-myvi",
+  "type": "vehiculos",
+  "title": "Perodua Myvi",
+  "description": "Hatchback urbano más vendido de Malasia.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "perodua"
+  ],
+  "featured": false,
+  "manufacturer": "Perodua",
+  "class": "Hatchback urbano",
+  "customizable": false,
+  "power": "95 hp",
+  "price": "Desde RM 46.500 (mercado malayo de referencia)",
+  "consumo": "4.5 l/100km combinado (aproximado según ciclo de homologación)",
+  "dimensiones": "3.895 mm largo x 1.665 mm ancho x 1.515 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.perodua.com.my/our-models/hatchback/myvi",
+    "secondarySource": "https://en.wikipedia.org/wiki/Perodua_Myvi",
+    "note": "Se verificaron las especificaciones generales, dimensiones, precios de referencia en Malasia y configuraciones de motorización y transmisión mediante la web oficial de Perodua y registros históricos.",
+    "limitations": [
+      "Las especificaciones de precio y consumo pueden variar según el mercado de exportación y las normativas locales de homologación."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T03:02:29.874Z",
+  "transmision": "Automática de 4 marchas o manual de 5 marchas",
+  "traccion": "Delantera",
+  "peso": "985 kg",
+  "tipoMotor": "Gasolina",
+  "potenciaKW": "70 kW",
+  "capacidadTanque": "36 litros",
+  "tiempoRecorrido": "12.0s",
+  "anoProduccion": "2017-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.3 L",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 277,
+  "maleteroMin": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2017,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 13.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "hatchback",
+    "perodua",
+    "Perodua",
+    "Hatchback urbano",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Perodua Myvi - Hatchback urbano Perodua. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Perodua Myvi",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Perodua"
+    },
+    "vehicleType": "Hatchback urbano",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 13.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback urbano más vendido de Malasia."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:02:29.874Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Perodua Myvi es un hatchback urbano producido por el fabricante malayo Perodua, consolidado como uno de los vehículos más vendidos e icónicos de la industria automotriz en Malasia desde su lanzamiento inicial en 2005. Desarrollado originalmente en colaboración con Daihatsu, el Myvi adoptó rápidamente el favor del público gracias a su formato compacto, excelente aprovechamiento del espacio interior y una alta eficiencia de combustible, atributos ideales para la congestión de las grandes urbes del Sudeste Asiático. A lo largo de los años, el modelo ha evolucionado adaptándose a las demandas de conectividad, confort y seguridad de los consumidores modernos.\n\n## Un hito o generación relevante\nLa tercera generación del Myvi, introducida a finales de 2017, marcó un punto de inflexión tecnológico y de diseño para la marca. Por primera vez, el modelo dejó de ser un simple derivado directo de los diseños de Daihatsu para recibir un desarrollo propio en su apartado estético y estructural. Esta iteración incorporó paquetes de seguridad avanzada como el sistema 'Advanced Safety Assist' (ASA), democratizando asistencias a la conducción en un segmento de entrada y posicionando al Myvi como un referente regional en materia de protección vehicular a un precio accesible.\n\n## Curiosidades\nUna de las características más singulares del Perodua Myvi en la cultura popular de su mercado doméstico es su omnipresencia y versatilidad, lo que le ha valido el apodo no oficial de 'auto superdeportivo nacional' en tono de humor por parte de los automovilistas locales, debido a la enorme cantidad de unidades en circulación y a su uso frecuente en modificaciones estéticas. Además, comparte componentes mecánicos esenciales con plataformas del grupo Toyota/Daihatsu, lo que garantiza una alta confiabilidad mecánica y una disponibilidad masiva de repuestos en su región de origen.\n\n## Competencia y posicionamiento\nEn el mercado malayo y zonas aledañas de influencia, el Perodua Myvi compite directamente en el segmento B de los hatchbacks compactos contra modelos de marcas establecidas como el Proton Iriz. Su posicionamiento comercial se destaca por ofrecer una excelente relación precio-producto, costos de mantenimiento sumamente contenidos y un valor de reventa muy estable, lo que explica su indiscutido liderazgo en ventas durante largos periodos frente a competidores de marcas internacionales."
+}

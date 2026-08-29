@@ -1,0 +1,229 @@
+{
+  "slug": "toyota-innova",
+  "type": "vehiculos",
+  "title": "Toyota Innova",
+  "description": "Minivan/MPV de Toyota muy popular en el sudeste asiático.",
+  "status": "confirmado",
+  "tags": [
+    "minivan",
+    "toyota"
+  ],
+  "featured": false,
+  "manufacturer": "Toyota",
+  "class": "Minivan",
+  "customizable": false,
+  "power": "174 hp (2.4L turbodiésel) / 186 hp (sistema híbrido)",
+  "price": "USD 30.000 (referencia mercado asiático)",
+  "consumo": "6.5 l/100km combinado",
+  "dimensiones": "4.750 mm largo x 1.850 mm ancho x 1.795 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.toyota.com",
+    "note": "Datos técnicos basados en las especificaciones globales de la Toyota Innova (generaciones recientes con motores 2.4L turbodiésel y variantes híbridas en mercados como sudeste asiático e India).",
+    "limitations": [
+      "El precio es orientativo y varía según el mercado de comercialización.",
+      "No se comercializa oficialmente en Argentina bajo el nombre Innova en la actualidad."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:28:01.206Z",
+  "transmision": "Automática de 6 marchas o e-CVT",
+  "traccion": "Tracción delantera (FWD)",
+  "peso": "1.600-1.750 kg",
+  "tipoMotor": "Turbodiésel / Híbrido (Gasolina)",
+  "potenciaKW": "128 kW (diésel) / 137 kW (híbrido)",
+  "capacidadTanque": "52 litros",
+  "tiempoRecorrido": "11.0s (0-100 km/h)",
+  "anoProduccion": "2016-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2.393 cc (2.4L) / 1.987 cc (2.0L Híbrido)",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 7,
+  "baul": 300,
+  "maleteroMin": null,
+  "generacion": "2da generación (AN140)",
+  "anoLanzamiento": 2016,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 24.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "minivan",
+    "toyota",
+    "Toyota",
+    "Minivan",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Toyota Innova - Minivan Toyota. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Toyota Innova",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Toyota"
+    },
+    "vehicleType": "Minivan",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 24.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Minivan/MPV de Toyota muy popular en el sudeste asiático."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:28:01.206Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Toyota Innova es un vehículo multipropósito (MPV) desarrollado principalmente para mercados emergentes, con un éxito rotundo en países del sudeste asiático como Indonesia, Tailandia, Filipinas e India. Heredera espiritual de la exitosa familia de vehículos comerciales livianos de la marca sobre el chassi IMV (la misma plataforma que comparten la pick-up Hilux y el SUV SW4 en sus versiones anteriores y variantes orientadas a trabajo), la Innova evolucionó desde un enfoque puramente utilitario hacia un vehículo familiar de pasajeros con altas prestaciones de confort.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de la Innova se dio con la introducción de su segunda generación (y las subsecuentes actualizaciones profundas como la Innova Zenix / Innova Hycross). En esta etapa, el modelo dejó parcialmente de lado el chasis de largueros tradicional para adoptar una arquitectura monocasco basada en la plataforma TNGA (Toyota New Global Architecture) en sus variantes más modernas. Esto permitió incorporar trenes motrices electrificados, específicamente sistemas híbridos autorecargables (HEV), marcando un salto cualitativo en términos de refinamiento de marcha, reducción de emisiones y eficiencia de combustible para un vehículo de gran porte destinado al transporte de hasta siete u ocho pasajeros.\n\n## Curiosidades\nA pesar de no tener presencia comercial bajo ese nombre en el mercado argentino actual, la plataforma mecánica de la Innova comparte una enorme cantidad de componentes con la exitosa familia IMV de Toyota. En muchos mercados, la Innova es considerada el vehículo por excelencia para flotas corporativas ejecutivas y familias numerosas debido a su legendaria confiabilidad mecánica, robustez ante caminos difíciles y un valor de reventa sumamente estable. Su interior destaca por soluciones prácticas de modularidad en las filas de asientos y múltiples espacios portaobjetos.\n\n## Competencia y posicionamiento\nEn los mercados donde opera, la Toyota Innova compite directamente contra monovolúmenes y grandes crossovers orientados al transporte familiar de pasajeros, tales como la Hyundai Staria (en versiones de menor capacidad), la Kia Carnival y diversos SUV de tres hileras de asientos derivados de pick-ups. Su posicionamiento se ubica en un punto de equilibrio entre la durabilidad propia de un vehículo de trabajo y las comodidades de un sedán o SUV mediano, priorizando la habitabilidad interior, la seguridad activa con paquetes como Toyota Safety Sense en sus versiones tope de gama, y un costo de mantenimiento previsible."
+}

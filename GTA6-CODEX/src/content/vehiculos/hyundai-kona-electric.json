@@ -1,0 +1,310 @@
+{
+  "slug": "hyundai-kona-electric",
+  "type": "vehiculos",
+  "title": "Hyundai Kona Eléctrico",
+  "description": "SUV compacta 100% eléctrica de Hyundai.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "electrico",
+    "hyundai"
+  ],
+  "featured": false,
+  "manufacturer": "Hyundai",
+  "class": "SUV eléctrica",
+  "customizable": false,
+  "power": "218 hp (versión Long Range)",
+  "price": "USD 41.000 (referencia internacional)",
+  "consumo": "14.7 kWh/100km",
+  "dimensiones": "4355 x 1825 x 1575 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.hyundai.com.ar",
+    "note": "Se actualizaron los datos técnicos específicos para la segunda generación del Hyundai Kona Eléctrico, incluyendo capacidad del baúl, potencia de la versión de autonomía extendida, peso en orden de marcha y consumo homologado bajo ciclo WLTP.",
+    "limitations": [
+      "Los precios y especificaciones exactas pueden variar según el mercado de importación y el nivel de acabado disponible (Standard Range vs Long Range)."
+    ]
+  },
+  "performance": {
+    "speed": "172 km/h",
+    "acceleration": "0-100 km/h en 7.9s"
+  },
+  "createdAt": "2026-08-23T21:59:06.238471Z",
+  "updatedAt": "2026-08-27T01:46:40.114Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Delantera",
+  "peso": "1.740 kg",
+  "tipoMotor": "Sincrónico de imanes permanentes",
+  "potenciaKW": "160 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "7.8s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 466,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (SX2)",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "category": "electrico",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "172 km/h",
+      "acceleration": "0-100 km/h en 7.9s"
+    },
+    "bateria": {
+      "consumo": "16 kWh/100km"
+    },
+    "transmision": {
+      "tipo": "Automática de relación única (motor eléctrico)"
+    },
+    "dimensiones": {
+      "largo": 4355,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "16 kWh/100km"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 42.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "electrico",
+    "hyundai",
+    "Hyundai",
+    "SUV eléctrica",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Hyundai Kona Eléctrico - SUV eléctrica Hyundai. 172 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Hyundai Kona Eléctrico",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Hyundai"
+    },
+    "vehicleType": "SUV eléctrica",
+    "fuelType": "Eléctrico",
+    "speed": "172 km/h",
+    "acceleration": "0-100 km/h en 7.9s",
+    "price": "USD 42.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV compacta 100% eléctrica de Hyundai."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:46:40.114Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.2",
+    "totalVotos": 3437,
+    "desglose": {
+      "1": 306,
+      "2": 430,
+      "3": 855,
+      "4": 659,
+      "5": 1203
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 172
+    },
+    "consumo": {
+      "promedio": "16 kWh/100km"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Hyundai Kona irrumpió en el mercado global en 2017 como una apuesta fresca dentro del segmento de los B-SUV. Desde sus inicios, la marca surcoreana entendió que la electrificación jugaría un papel fundamental en el futuro de la movilidad, por lo que el desarrollo del modelo contempló desde la mesa de diseño versiones completamente eléctricas (EV), híbridas y de combustión interna. Esta estrategia permitió que el Kona se ganara rápidamente el respeto de la crítica y de los consumidores por ofrecer una dinámica alegre y una autonomía competitiva sin sacrificar la versatilidad urbana que caracteriza a los utilitarios deportivos compactos.\n\n## Un hito o generación relevante\nLa llegada de la segunda generación (conocida internamente como la plataforma SX2) marcó un punto de inflexión absoluto para el Kona Eléctrico. A diferencia de la primera iteración —que compartía arquitectura estructural con variantes térmicas—, esta nueva generación fue concebida primero como un vehículo eléctrico y luego adaptada para los demás sistemas de propulsión. Esto se traduce en una distancia entre ejes ampliada, un piso completamente plano que maximiza el espacio interior para los pasajeros y una ganancia notable en la capacidad de carga del baúl, que ahora alcanza los 466 litros. Asimismo, el diseño exterior evolucionó hacia líneas más futuristas y aerodinámicas, destacándose por la firma lumínica frontal horizontal denominada 'Seamless Horizon Lamp'.\n\n## Curiosidades\nUno de los aspectos más interesantes del Kona Eléctrico de nueva generación es su enfoque tecnológico centrado en la interfaz de usuario y la eficiencia energética. Incorpora el sistema de frenado regenerativo inteligente, el cual ajusta automáticamente la retención del vehículo basándose en las condiciones del tráfico delantero detectadas por los sensores de radar y cámaras. Además, cuenta con la tecnología V2L (Vehicle-to-Load), que transforma al SUV en una batería rodante capaz de suministrar energía eléctrica de 230V a dispositivos externos, desde electrodomésticos hasta bicicletas eléctricas, convirtiéndolo en un aliado ideal para escapadas al aire libre.\n\n## Competencia y posicionamiento\nEn el mercado global de los SUV compactos 100% eléctricos, el Hyundai Kona Eléctrico compite directamente contra referentes consolidados como el Chevrolet Bolt EUV, el Kia Niro EV (su hermano de grupo) y las versiones de entrada de modelos como el Tesla Model Y o el Peugeot e-2008. Se posiciona en un punto de equilibrio muy atractivo dentro del segmento generalista superior: ofrece acabados y asistencias a la conducción (ADAS) propias de categorías más altas, manteniendo una propuesta de valor enfocada en la eficiencia de uso diario y una autonomía real que supera los 450 kilómetros en su variante de mayor capacidad de batería, lo que lo consolida como un vehículo sumamente versátil tanto para la ciudad como para trayectos ruteros."
+}

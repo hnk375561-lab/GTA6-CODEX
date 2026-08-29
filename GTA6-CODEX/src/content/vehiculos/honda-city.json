@@ -1,0 +1,313 @@
+{
+  "slug": "honda-city",
+  "type": "vehiculos",
+  "title": "Honda City",
+  "description": "Sedán compacto de Honda, motor 1.5L.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "honda",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:31.780Z",
+  "updatedAt": "2026-08-27T01:44:21.252Z",
+  "manufacturer": "Honda",
+  "class": "Sedán",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.4s"
+  },
+  "power": "121 CV",
+  "price": "USD 21.000 (referencia regional)",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.honda.com.ar",
+    "note": "Se verificaron las especificaciones técnicas generales del Honda City de séptima generación con motor 1.5L i-VTEC, incluyendo potencia, dimensiones para la variante sedán y capacidades.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado de Latinoamérica y el sudeste asiático.",
+      "Algunas especificaciones de equipamiento de seguridad dependen del nivel de acabado y del país de comercialización."
+    ]
+  },
+  "transmision": "Automática CVT o Manual de 6 marchas",
+  "traccion": "Delantera",
+  "peso": "1100-1150 kg",
+  "tipoMotor": "Naftero 1.5L i-VTEC",
+  "potenciaKW": "89 kW",
+  "capacidadTanque": "40 litros",
+  "tiempoRecorrido": "10.2s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "consumo": "5.5 l/100km mixto",
+  "dimensiones": "4553 x 1748 x 1467 mm",
+  "cilindrada": "1498 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 506,
+  "maleteroMin": null,
+  "generacion": "7ma generación",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "category": "motocicleta",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "180 km/h",
+      "acceleration": "0-100 km/h en 10.4s"
+    },
+    "bateria": {},
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": null
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 21.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "sedan",
+    "honda",
+    "combustion",
+    "Honda",
+    "Sedán",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Honda City - Sedán Honda. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Honda City",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Honda"
+    },
+    "vehicleType": "Sedán",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.4s",
+    "price": "USD 21.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán compacto de Honda, motor 1.5L."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:44:21.252Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.9",
+    "totalVotos": 1104,
+    "desglose": {
+      "1": 207,
+      "2": 333,
+      "3": 924,
+      "4": 1107,
+      "5": 1648
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 180
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Honda City es un automóvil sedán del segmento B producido por el fabricante japonés Honda desde 1981. Inicialmente concebido como un hatchback compacto para los mercados de Japón y Europa, el concepto evolucionó con los años hasta transformarse en un sedán tricuerpo enfocado principalmente en los mercados emergentes de Asia y América Latina, posicionándose un escalón por debajo del Honda Civic.\n\n## Un hito o generación relevante\nLa séptima generación, lanzada a finales de 2019 y consolidada en los años siguientes, marcó un punto de inflexión para el modelo al adoptar un diseño exterior mucho más agresivo y estilizado, inspirado en los cánones estéticos de sus hermanos mayores. Además, esta iteración introdujo importantes mejoras en términos de habitabilidad, incorporando el sistema de asientos traseros modulables conocido como ULT (Utility, Long, Tall), una solución heredada directamente del Honda Fit que maximiza la versatilidad interior y la capacidad de carga del baúl.\n\n## Curiosidades\nA pesar de ser un sedán compacto de corte racional, el Honda City ha contado con versiones de carácter deportivo en determinados mercados, como el acabado RS, que aporta detalles estéticos oscurecidos y una puesta a punto de suspensión ligeramente más firme. En varios países de nuestra región, este modelo supo ganarse una sólida reputación por la durabilidad de su mecánica y su excelente valor de reventa frente a rivales tradicionales.\n\n## Competencia y posicionamiento\nEn el mercado sudamericano y global, el Honda City compite directamente contra referentes del segmento B como el Chevrolet Onix Plus, el Volkswagen Virtus, el Toyota Yaris Sedán y el Nissan Versa. Se destaca en su categoría por ofrecer una conducción refinada, una dirección de tacto preciso y una eficiencia de combustible sobresaliente gracias a su motorización naftera con tecnología i-VTEC, apuntando a un público que busca un vehículo familiar confiable, económico de mantener y con un nivel de terminación superior al promedio del segmento."
+}

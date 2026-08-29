@@ -1,0 +1,232 @@
+{
+  "slug": "mitsubishi-outlander",
+  "type": "vehiculos",
+  "title": "Mitsubishi Outlander",
+  "description": "SUV mediano de Mitsubishi con opción PHEV enchufable.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "mitsubishi"
+  ],
+  "featured": false,
+  "manufacturer": "Mitsubishi",
+  "class": "SUV mediano",
+  "customizable": false,
+  "power": "252 hp combinados (versión PHEV)",
+  "price": "USD 40.000 (MSRP EE.UU. referencia)",
+  "consumo": "1.6 l/100km equivalente (PHEV) / 8.5 l/100km gasolina",
+  "dimensiones": "4.710 mm largo x 1.860 mm ancho x 1.745 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.mitsubishicars.com",
+    "secondarySource": "https://es.wikipedia.org/wiki/Mitsubishi_Outlander",
+    "note": "Se actualizaron las especificaciones basándose en la cuarta generación del Mitsubishi Outlander PHEV, estandarizando dimensiones, capacidades y motorización híbrida de conocimiento global.",
+    "limitations": [
+      "El precio es de referencia para el mercado norteamericano y puede variar según impuestos y aranceles locales",
+      "Los consumos varían según el ciclo de homologación y el uso del sistema híbrido enchufable"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:23:42.834Z",
+  "transmision": "Automática CVT",
+  "traccion": "Tracción integral (S-AWC)",
+  "peso": "2.030 kg",
+  "tipoMotor": "Híbrido enchufable (PHEV) / Gasolina",
+  "potenciaKW": "185 kW combinados",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "0-100 km/h en 10.6s",
+  "anoProduccion": "2022-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2.360 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 7,
+  "baul": 461,
+  "maleteroMin": null,
+  "generacion": "Cuarta generación",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "category": "suv",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 32.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "suv",
+    "mitsubishi",
+    "Mitsubishi",
+    "SUV mediano",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Mitsubishi Outlander - SUV mediano Mitsubishi. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Mitsubishi Outlander",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Mitsubishi"
+    },
+    "vehicleType": "SUV mediano",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 32.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediano de Mitsubishi con opción PHEV enchufable."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:23:42.834Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Mitsubishi Outlander es uno de los SUV medianos más emblemáticos de la marca japonesa, con una trayectoria que comenzó a principios de los años 2000 como un vehículo de corte familiar y aventurero. A lo largo de las décadas, este modelo supo reinventarse para adaptarse a las demandas globales del mercado, abandonando gradualmente su enfoque inicial más rústico para transformarse en un SUV refinado, espacioso y tecnológicamente avanzado.\n\n## Un hito o generación relevante\nEl gran punto de inflexión en la historia reciente del Outlander fue la introducción de su variante híbrida enchufable (PHEV). Lanzada originalmente en la primera mitad de la década pasada, esta tecnología convirtió al Outlander PHEV en uno de los vehículos híbridos recargables más vendidos del mundo en su categoría. La cuarta generación, desarrollada bajo la alianza con la órbita de Renault-Nissan, elevó la vara al incorporar una plataforma completamente nueva, un diseño exterior mucho más agresivo y moderno conocido como 'Dynamic Shield', y un salto notable en la calidad percibida de los materiales interiores.\n\n## Curiosidades\nUna de las características más destacadas del Mitsubishi Outlander, especialmente en sus versiones más recientes, es la integración del sistema de tracción integral S-AWC (Super All Wheel Control), heredado de la rica experiencia de la marca en el mundo de los rallies y del legendario Lancer Evolution. Este sistema optimiza de manera independiente la distribución del torque en cada rueda, brindando una estabilidad y seguridad sobresalientes tanto en superficies resbaladizas como en conducción exigente sobre asfalto. Además, a pesar de contar con un tren motriz electrificado avanzado en su versión PHEV, mantiene una versátil configuración interior de tres filas de asientos, algo poco común en el segmento de los híbridos enchufables medianos.\n\n## Competencia y posicionamiento\nEn el mercado global, el Mitsubishi Outlander compite en uno de los segmentos más reñidos y disputados de la industria automotriz: el de los SUV medianos. Entre sus principales rivales se encuentran pesos pesados de la industria como el Toyota RAV4, el Honda CR-V, el Hyundai Tucson y el Kia Sportage. Frente a ellos, el Outlander se posiciona como una opción sumamente atractiva para aquellos usuarios que buscan un equilibrio entre habitabilidad familiar, capacidad off-road moderada gracias a su tracción integral y, sobre todo, la eficiencia de movilidad eléctrica que aporta su variante híbrida enchufable sin sacrificar la autonomía para viajes largos."
+}

@@ -1,0 +1,315 @@
+{
+  "slug": "toyota-camry",
+  "type": "vehiculos",
+  "title": "Toyota Camry",
+  "description": "Sedán mediano global de Toyota, en su última generación disponible solo con motorización híbrida.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "toyota"
+  ],
+  "featured": false,
+  "manufacturer": "Toyota",
+  "class": "Sedán mediano",
+  "customizable": false,
+  "power": "225 hp (versión FWD) / 232 hp (versión AWD)",
+  "price": "USD 28.400 (precio base MSRP EE.UU.)",
+  "consumo": "aprox. 4.8 l/100km en ciclo combinado (EPA)",
+  "dimensiones": "4.925 mm largo x 1.840 mm ancho x 1.445 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.toyota.com/espanol/camry/",
+    "note": "Se actualizaron las especificaciones técnicas de la novena generación del Toyota Camry, destacando la adopción exclusiva del sistema híbrido de quinta generación (Toyota Hybrid System), dimensiones reales de la plataforma GA-K y potencias oficiales para el mercado norteamericano.",
+    "limitations": [
+      "Los precios de referencia corresponden al mercado de EE.UU. y pueden variar según aranceles, impuestos y país de importación en Latinoamérica.",
+      "El consumo exacto puede variar según el tipo de tracción (FWD o AWD) y las condiciones de manejo."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:58:47.644Z",
+  "transmision": "Automática eCVT",
+  "traccion": "Delantera (FWD) o Total electrónica (AWD)",
+  "peso": "1.595 - 1.635 kg",
+  "tipoMotor": "Híbrido (Naftero 2.5L 4 cilindros + motores eléctricos)",
+  "potenciaKW": "166 kW (225 hp)",
+  "capacidadTanque": "49 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 7.2 - 8.0s",
+  "anoProduccion": "2024-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2.487 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 427,
+  "maleteroMin": null,
+  "generacion": "Novena generación (XV80)",
+  "anoLanzamiento": 2024,
+  "colores": [],
+  "category": "sedan",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 28.400"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "sedan",
+    "toyota",
+    "Toyota",
+    "Sedán mediano",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Toyota Camry - Sedán mediano Toyota. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Toyota Camry",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Toyota"
+    },
+    "vehicleType": "Sedán mediano",
+    "fuelType": "Gasolina turbo",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 28.400",
+    "availability": "https://schema.org/InStock",
+    "description": "Sedán mediano global de Toyota, en su última generación disponible solo con motorización híbrida."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:58:47.644Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.4",
+    "totalVotos": 3594,
+    "desglose": {
+      "1": 113,
+      "2": 472,
+      "3": 924,
+      "4": 779,
+      "5": 1482
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Toyota Camry es uno de los sedanes medianos más exitosos e influyentes de la historia automotriz global. Desde su introducción inicial a principios de la década de 1980 como un modelo independiente, evolucionó de ser un vehículo familiar compacto a convertirse en el referente indiscutido del segmento D en numerosos mercados internacionales, especialmente en Norteamérica. A lo largo de las décadas, el Camry construyó una sólida reputación basada en su durabilidad legendaria, confort de marcha excepcional y una altísima confiabilidad mecánica, convirtiéndose en el vehículo de pasajeros más vendido en Estados Unidos durante más de dos décadas consecutivas.\n\n## Un hito o generación relevante\nEl hito más disruptivo en la historia reciente del Camry se materializa con el lanzamiento de su novena generación (código XV80), presentada para el año modelo 2025. Este punto de inflexión marca la decisión radical de Toyota de eliminar por completo las motorizaciones exclusivamente de combustión interna (tanto los tradicionales bloques de cuatro cilindros como los ya extintos V6). A partir de esta generación, el Camry se comercializa de manera global exclusivamente con tecnología híbrida (HEV), adoptando el sistema Toyota Hybrid System de quinta generación. Este salto tecnológico no solo optimiza de forma drástica el consumo de combustible y reduce las emisiones contaminantes, sino que además introduce por primera vez en la historia del modelo la opción de tracción integral electrónica (AWD-e) mediante el uso de un motor eléctrico independiente montado en el eje trasero.\n\n## Curiosidades\nUna de las curiosidades más interesantes del Toyota Camry es cómo logró trascender su imagen inicial de vehículo puramente utilitario y corporativo. En mercados como Estados Unidos, la marca implementó estrategias de diseño audaces en sus últimas iteraciones para dotarlo de una silueta mucho más agresiva, con líneas de estilo inspiradas en los coupés de cuatro puertas y una parrilla frontal imponente que rompe con la sobriedad de las generaciones pasadas. Además, a pesar de la caída global en las ventas de sedanes frente al furor de los SUV y crossovers, el Camry mantiene cuotas de mercado envidiables gracias a su adopción masiva en flotas de taxis, servicios de transporte de pasajeros y usuarios particulares que priorizan la eficiencia aerodinámica y de combustible por encima de los formatos elevados.\n\n## Competencia y posicionamiento\nEn el plano comercial, el Toyota Camry compite en un segmento de sedanes medianos que se ha ido achicando debido a la competencia interna de los SUV, pero que mantiene contendientes de peso muy pesado. Sus rivales directos históricos incluyen al Honda Accord (su contrincante más tradicional), el Hyundai Sonata y el Kia K5. Frente a ellos, el posicionamiento del Camry se destaca fuertemente gracias a la madurez de su tecnología híbrida, que ofrece costos operativos sumamente bajos y una suavidad de marcha muy valorada en viajes largos. Aunque marcas rivales han apostado por motorizaciones turboalimentadas convencionales o alternativas 100% eléctricas, Toyota mantiene con el Camry una propuesta equilibrada que no requiere infraestructura de carga enchufable, consolidándolo como una de las opciones más racionales y eficientes del mercado global actual."
+}

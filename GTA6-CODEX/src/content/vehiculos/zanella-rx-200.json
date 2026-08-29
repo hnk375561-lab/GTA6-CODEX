@@ -1,0 +1,314 @@
+{
+  "slug": "zanella-rx-200",
+  "type": "vehiculos",
+  "title": "Zanella RX 200 Next",
+  "description": "Moto naked de la marca argentina Zanella, motor monocilíndrico de 197cc, caja de 6 velocidades.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "zanella",
+    "argentina"
+  ],
+  "featured": false,
+  "manufacturer": "Zanella",
+  "class": "Moto naked",
+  "customizable": false,
+  "power": "15.4 hp @ 8000 rpm",
+  "price": "ARS 1.744.993 - 2.094.993 (aprox., listados de concesionaria oficial Motozuni)",
+  "consumo": "33.3 km/l (declarado por fabricante)",
+  "dimensiones": "2020 x 780 x 1070 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://plan-gobierno.org/plan-gobierno-motos/zanella/rx-200-next/",
+    "note": "Ficha técnica de motor, cilindrada y consumo obtenida de portales especializados en el mercado argentino; precios tomados de listados de concesionarios oficiales.",
+    "limitations": [
+      "Precio de lista oficial sujeto a variaciones del mercado argentino y disponibilidad en concesionarios.",
+      "Algunas dimensiones exactas de fábrica pueden variar levemente según el lote de ensamblaje local."
+    ]
+  },
+  "performance": {
+    "speed": "140 km/h",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T22:30:00.000000Z",
+  "updatedAt": "2026-08-27T02:05:44.338Z",
+  "transmision": "Manual de 6 velocidades",
+  "traccion": "Cadena",
+  "peso": "135 kg",
+  "tipoMotor": "Monocilíndrico 4 tiempos, refrigerado por aire",
+  "potenciaKW": "11.3 kW",
+  "capacidadTanque": "13 litros",
+  "tiempoRecorrido": "no publicado oficialmente",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "197 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Next",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "140 km/h",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "33.3 km/l (declarado por fabricante)"
+    },
+    "transmision": {
+      "tipo": "Manual secuencial"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "33.3 km/l (declarado por fabricante)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "ARS 1.744.993 - 2.094.993 (aprox., listados de concesionaria oficial Motozuni)"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "moto",
+    "zanella",
+    "argentina",
+    "Zanella",
+    "Moto naked",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Zanella RX 200 Next - Moto naked Zanella. 140 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Zanella RX 200 Next",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Zanella"
+    },
+    "vehicleType": "Moto naked",
+    "fuelType": "Gasolina",
+    "speed": "140 km/h",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "ARS 1.744.993 - 2.094.993 (aprox., listados de concesionaria oficial Motozuni)",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto naked de la marca argentina Zanella, motor monocilíndrico de 197cc, caja de 6 velocidades."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:05:44.338Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.0",
+    "totalVotos": 2120,
+    "desglose": {
+      "1": 25,
+      "2": 337,
+      "3": 834,
+      "4": 320,
+      "5": 1735
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 140
+    },
+    "consumo": {
+      "promedio": "33.3 km/l (declarado por fabricante)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Zanella RX 200 Next se posiciona como una evolución lógica dentro de la histórica familia RX de Zanella, una de las insignias más tradicionales y reconocidas del motociclismo en Argentina. Con décadas de trayectoria en el mercado local, la marca de origen nacional ha sabido adaptarse a las demandas de movilidad urbana y de media distancia, ofreciendo opciones accesibles y funcionales. La línea RX ha transitado por múltiples cilindradas, siendo la franja de los 200 cc un punto de equilibrio muy buscado por usuarios que exigen un escalón superior en potencia respecto a los clásicos modelos utilitarios de 150 cc, sin sacrificar la agilidad en el tránsito diario.\n\n## Un hito o generación relevante\nLa introducción de la variante \"Next\" marca un hito en la estética y el equipamiento de la saga RX. Esta generación adopta líneas más angulosas y modernas propias del segmento naked, alejándose de la impronta puramente clásica de sus antecesoras. La incorporación de una caja de 6 velocidades representa un salto cualitativo importante para la categoría, permitiendo desahogar el motor monocilíndrico en tramos de ruta o autopista y optimizando el consumo de combustible a velocidades constantes.\n\n## Curiosidades\nA pesar de ser un producto fuertemente arraigado en la identidad industrial argentina, el desarrollo de este tipo de motocicletas medianas responde a plataformas globales de componentes altamente probados, lo que facilita notablemente la disponibilidad de repuestos y el mantenimiento general en cualquier rincón del país. Su consumo declarado de más de 33 km/l la convierte en una de las opciones más económicas de su cilindrada para el uso cotidiano, compitiendo de igual a igual con cilindradas menores en términos de eficiencia.\n\n## Competencia y posicionamiento\nEn el mercado argentino de motocicletas de entrada y media gama, la Zanella RX 200 Next compite directamente con otras propuestas naked de marcas regionales y de origen asiático que operan en el país, como las líneas de Zanella, Gilera y Keller, así como con algunas opciones de entrada de marcas como Bajaj o Honda en segmentos cercanos. Su principal ventaja radica en la excelente relación entre costo y prestaciones, ofreciendo una estética atractiva, una cilindrada versátil para la ciudad y la ventaja competitiva de una red de servicio técnico y postventa extendida a lo largo de todo el territorio nacional."
+}

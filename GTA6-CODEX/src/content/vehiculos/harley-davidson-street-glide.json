@@ -1,0 +1,228 @@
+{
+  "slug": "harley-davidson-street-glide",
+  "type": "vehiculos",
+  "title": "Harley-Davidson Street Glide",
+  "description": "Moto touring de la familia Grand American Touring de Harley-Davidson.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "harley-davidson"
+  ],
+  "featured": false,
+  "manufacturer": "Harley-Davidson",
+  "class": "Moto touring",
+  "customizable": false,
+  "power": "107 hp",
+  "price": "USD 25.999 (MSRP EE.UU.)",
+  "consumo": "6.1 l/100km combinado",
+  "dimensiones": "2.410 mm largo x 960 mm ancho x 1.390 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.harley-davidson.com/us/en/motorcycles/street-glide.html",
+    "note": "Se actualizaron las especificaciones basándose en la generación actual de la Harley-Davidson Street Glide equipada con el motor Milwaukee-Eight 117 de 1.923 cc. Los datos de peso, dimensiones, cilindrada y potencia corresponden a las fichas técnicas oficiales publicadas por el fabricante para el mercado global.",
+    "limitations": [
+      "Los precios pueden variar según impuestos, aranceles de importación y costos de patentamiento específicos de cada mercado internacional.",
+      "El consumo de combustible puede variar según el estilo de conducción, la carga y las condiciones geográficas."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:42:54.604Z",
+  "transmision": "Manual de 6 velocidades (Cruise Drive)",
+  "traccion": "Tracción trasera por correa",
+  "peso": "368 kg (en orden de marcha)",
+  "tipoMotor": "Gasolina (Milwaukee-Eight 117)",
+  "potenciaKW": "80 kW",
+  "capacidadTanque": "22.7 litros",
+  "tiempoRecorrido": "5.5s",
+  "anoProduccion": "2024-2026",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1923 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Milwaukee-Eight (Rediseño moderno)",
+  "anoLanzamiento": 2024,
+  "colores": [],
+  "category": "motocicleta",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual secuencial"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 22.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "moto",
+    "harley-davidson",
+    "Harley-Davidson",
+    "Moto touring",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Harley-Davidson Street Glide - Moto touring Harley-Davidson. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Harley-Davidson Street Glide",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Harley-Davidson"
+    },
+    "vehicleType": "Moto touring",
+    "fuelType": "Gasolina",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "USD 22.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Moto touring de la familia Grand American Touring de Harley-Davidson."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:42:54.604Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Harley-Davidson Street Glide forma parte de la icónica familia Grand American Touring de la marca de Milwaukee. Nacida con el propósito de ofrecer una motocicleta rutera que combinara la comodidad de largo aliento con una estética agresiva y urbana, el modelo se transformó rápidamente en uno de los pilares comerciales y culturales de la compañía estadounidense. Heredera de la legendaria estirpe de baggers de la marca, la Street Glide eliminó elementos accesorios pesados para priorizar una silueta más baja, estilizada y limpia, coronada por su característico carenado frontal tipo \"batwing\" anclado directamente al cuadro.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la historia reciente de este modelo llegó con la introducción de la plataforma propulsada por los motores Milwaukee-Eight y, más recientemente, la profunda renovación tecnológica y estética implementada en la gama actual. Esta nueva generación no solo incorporó el imponente bloque Milwaukee-Eight 117 de 1.923 cc —que elevó notablemente las prestaciones en términos de par motor y elasticidad—, sino que también rediseñó por completo el frontal, optimizó la aerodinámica con conductos de aire integrados para reducir la fatiga del piloto y reemplazó la clásica instrumentación analógica por una avanzada pantalla táctil central potenciada por el sistema operativo Skyline OS, marcando el ingreso definitivo de la moto a la era digital sin perder su esencia clásica.\n\n## Curiosidades\nUna de las características más interesantes de la Street Glide es la integración de su sistema de audio y infoentretenimiento, el cual evolucionó desde simples radios AM/FM en sus primeras iteraciones hasta convertirse en potentes equipos de sonido de alta fidelidad diseñados para superar el ruido del viento y de los escapes a velocidades de autopista. Además, el icónico carenado \"batwing\", introducido originalmente en la década de 1960 en otros modelos ruteros, fue objeto de miles de horas de pruebas en túnel de viento para minimizar las turbulencias alrededor del casco del conductor, demostrando que la estética custom también puede estar profundamente unida a la ingeniería aerodinámica funcional.\n\n## Competencia y posicionamiento\nDentro del mercado global de las motocicletas touring y baggers de alta cilindrada, la Harley-Davidson Street Glide compite de manera directa contra modelos pesados de turismo de marcas como Indian Motorcycle (con la línea Chieftain o Challenger), así como contra grandes ruteras de fabricantes europeos y japoneses. Sin embargo, el posicionamiento de la Street Glide trasciende la mera ficha técnica: se ubica en el segmento premium aspiracional, donde el valor de marca, la enorme oferta de accesorios de personalización y el sentido de pertenencia a una comunidad global de motociclistas pesan tanto o más que la potencia pura o la velocidad final. Es la opción predilecta para aquellos motociclistas que buscan devorar kilómetros en rutas abiertas con una presencia imponente y un estilo inconfundible."
+}

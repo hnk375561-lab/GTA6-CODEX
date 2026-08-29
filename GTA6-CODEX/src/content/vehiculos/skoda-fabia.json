@@ -1,0 +1,229 @@
+{
+  "slug": "skoda-fabia",
+  "type": "vehiculos",
+  "title": "Skoda Fabia",
+  "description": "Hatchback compacto europeo de Skoda, plataforma MQB-A0.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "skoda"
+  ],
+  "featured": false,
+  "manufacturer": "Skoda",
+  "class": "Hatchback",
+  "customizable": false,
+  "power": "80 a 150 CV",
+  "price": "EUR 15.400 a 37.329 (referencia mercado europeo)",
+  "consumo": "4.90 - 5.60 l/100km combinado",
+  "dimensiones": "4.260 mm largo x 1.780 mm ancho x 1.500 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.diariomotor.com/coche/skoda-fabia",
+    "secondarySource": "https://www.skoda.es/modelos/fabia/fabia",
+    "note": "Se actualizaron las especificaciones de precios, consumos, dimensiones y rangos de potencia basándose en los datos oficiales de Diariomotor y Skoda España vigentes para la cuarta generación.",
+    "limitations": [
+      "El precio y el consumo exacto pueden variar según el mercado específico de la Unión Europea y el nivel de equipamiento seleccionado."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T03:08:10.871Z",
+  "transmision": "Manual de 5 o 6 marchas / Automática DSG de 7 marchas",
+  "traccion": "Delantera",
+  "peso": "1.165 kg",
+  "tipoMotor": "Gasolina (MPI / TSI)",
+  "potenciaKW": "59 kW a 110 kW",
+  "capacidadTanque": "40 litros",
+  "tiempoRecorrido": "9.9s",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.0 litros",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 380,
+  "maleteroMin": null,
+  "generacion": "Cuarta generación",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 19.500"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "hatchback",
+    "skoda",
+    "Skoda",
+    "Hatchback",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Skoda Fabia - Hatchback Skoda. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Skoda Fabia",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Skoda"
+    },
+    "vehicleType": "Hatchback",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "EUR 19.500",
+    "availability": "https://schema.org/InStock",
+    "description": "Hatchback compacto europeo de Skoda, plataforma MQB-A0."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:08:10.871Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Skoda Fabia nació a finales de la década de 1990 como el sucesor natural del Skoda Felicia, marcando un punto de inflexión absoluto para la marca checa tras su integración definitiva dentro del Grupo Volkswagen. Desde su primera aparición pública en el Salón del Automóvil de Fráncfort de 1999, el Fabia se ganó rápidamente una sólida reputación en el mercado europeo gracias a su enfoque práctico, su robustez mecánica heredada de componentes alemanes y una excelente relación precio-producto. Con el paso de los años, el utilitario compacto evolucionó a través de sucesivas generaciones, adoptando plataformas más modernas y mejorando sustancialmente su diseño exterior, habitabilidad y carga tecnológica sin perder jamás su filosofía original de vehículo racional y funcional.\n\n## Un hito o generación relevante\nUn hito fundamental en la historia reciente del modelo es la llegada de su cuarta generación al mercado europeo, presentada en 2021. Este cambio generacional supuso el salto definitivo a la plataforma modular MQB-A0 del Grupo Volkswagen, la misma que utilizan otros referentes del segmento B como el Volkswagen Polo o el Seat Ibiza. Gracias a esta arquitectura, el Skoda Fabia creció notablemente en dimensiones —superando por primera vez la barrera de los cuatro metros de largo—, lo que permitió ampliar de forma drástica el espacio interior para los pasajeros y llevar la capacidad del baúl hasta unos imponentes 380 litros, posicionándolo como el líder indiscutido en habitabilidad dentro de su categoría. Asimismo, esta plataforma permitió incorporar asistentes avanzados a la conducción, un chasis con mayor rigidez torsional y una aerodinámica optimizada.\n\n## Curiosidades\nDentro del universo Skoda, el Fabia es famoso por ser el exponente principal de la filosofía 'Simply Clever', una serie de soluciones inteligentes ideadas para hacerle la vida más fácil al usuario en el día a día. En el caso del Fabia de cuarta generación, esto se traduce en múltiples detalles prácticos distribuidos por todo el habitáculo y el área de carga. Entre ellos destacan elementos ya clásicos como el paraguas integrado en la puerta del conductor, el rascador de hielo en la tapa del tanque de combustible con medidor de profundidad para los neumáticos, múltiples redes de sujeción en el baúl, ganchos multifuncionales y bolsillos específicos para smartphones en los respaldos de los asientos delanteros. Además, su variante de competición, el Skoda Fabia Rally2 evo, se ha convertido en uno de los vehículos de rally más exitosos y competitivos a nivel mundial.\n\n## Competencia y posicionamiento\nEn el panorama automotriz europeo, el Skoda Fabia compite de manera directa en el altamente disputado segmento B de los hatchbacks compactos. Entre sus rivales más directos se encuentran modelos de peso pesado como el Renault Clio, el Peugeot 208, el Opel Corsa y sus primos hermanos de plataforma, el Volkswagen Polo y el Seat Ibiza. Dentro de este selecto grupo, el posicionamiento comercial de Skoda se destaca por ofrecer un producto con los más altos estándares de calidad del Grupo Volkswagen, pero con un enfoque más pragmático, inteligente y accesible. Mientras que el Polo busca un perfil más aspiracional y el Ibiza uno de tinte más deportivo y juvenil, el Fabia se consolida como la opción más lógica y racional para quienes priorizan el espacio interior, la funcionalidad familiar y una durabilidad comprobada sin renunciar a la tecnología de última generación."
+}

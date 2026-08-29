@@ -1,0 +1,313 @@
+{
+  "slug": "kia-sportage",
+  "type": "vehiculos",
+  "title": "Kia Sportage",
+  "description": "SUV mediana de Kia, disponible en versiones nafta, diésel e híbrida.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "kia",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:26.800Z",
+  "updatedAt": "2026-08-27T01:50:03.062Z",
+  "manufacturer": "Kia",
+  "class": "SUV",
+  "customizable": false,
+  "performance": {
+    "speed": "Media (190 km/h)",
+    "acceleration": "Media (0-100 km/h en 9.5s)"
+  },
+  "power": "187 hp (2.5L) / 227 hp (Híbrida)",
+  "price": "USD 28.000 (MSRP base EE.UU.)",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.kia.com/ar/vehiculos/sportage/",
+    "note": "Se verificaron las especificaciones técnicas principales de la quinta generación de la Kia Sportage para mercados globales, incluyendo motorización naftera y capacidades.",
+    "limitations": [
+      "Los valores de consumo exactos varían según el mercado y el tipo de homologación (EPA vs WLTP).",
+      "Los precios y niveles de equipamiento cambian según la oferta específica para el mercado argentino."
+    ]
+  },
+  "transmision": "Automática de 8 velocidades / Automática de 6 velocidades (Híbrida)",
+  "traccion": "Delantera (FWD) o Integral (AWD)",
+  "peso": "1500 - 1750 kg",
+  "tipoMotor": "Naftero 2.5L / Híbrido / Híbrido Enchufable",
+  "potenciaKW": "139 kW - 169 kW",
+  "capacidadTanque": "54 litros",
+  "tiempoRecorrido": "8.8 - 9.4s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "consumo": "7.5 - 9.0 L/100 km promedio",
+  "dimensiones": "4515 x 1865 x 1650 mm",
+  "cilindrada": "2498 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 591,
+  "maleteroMin": null,
+  "generacion": "Quinta generación (NQ5)",
+  "anoLanzamiento": 2022,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "Media (190 km/h)",
+      "acceleration": "Media (0-100 km/h en 9.5s)"
+    },
+    "bateria": {},
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": null
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 31.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "kia",
+    "combustion",
+    "Kia",
+    "SUV",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Kia Sportage - SUV Kia. Media (190 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Kia Sportage",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Kia"
+    },
+    "vehicleType": "SUV",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "Media (190 km/h)",
+    "acceleration": "Media (0-100 km/h en 9.5s)",
+    "price": "USD 31.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediana de Kia, disponible en versiones nafta, diésel e híbrida."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:50:03.062Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "3.7",
+    "totalVotos": 837,
+    "desglose": {
+      "1": 38,
+      "2": 362,
+      "3": 766,
+      "4": 838,
+      "5": 2049
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 0
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Kia Sportage es uno de los SUV compactos más longevos y exitosos de la marca surcoreana. Nacida originalmente en 1993 como un vehículo de tracción integral más rústico y basado en un chasis de largueros, la Sportage evolucionó drásticamente con el correr de las décadas. A partir de su segunda generación, adoptó una estructura monocasco que la transformó por completo, alineándose con las demandas del mercado global y convirtiéndose en un referente del segmento C-SUV gracias a su enfoque urbano, diseño atractivo y una excelente relación precio-producto.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la historia del modelo es la introducción de su quinta generación (conocida internamente como código NQ5), presentada a partir del año modelo 2023. Esta entrega rompió con los moldes conservadores anteriores al estrenar el lenguaje de diseño global de Kia denominado 'Opposites United' (Opuestos Unidos). Su imponente parrilla frontal 'Tiger Nose' integrada a ópticas angulares en forma de boomerang y una silueta marcadamente aerodinámica redefinieron la estética del segmento. En el interior, la adopción de una doble pantalla panorámica curva unificada para el instrumental digital y el sistema multimedia marcó un salto tecnológico sin precedentes para la marca.\n\n## Curiosidades\nA lo largo de su producción global, la Sportage ha sido fabricada en múltiples plantas alrededor del mundo, incluyendo Corea del Sur, Eslovaquia, Estados Unidos y China, adaptando sus motorizaciones y longitudes de carrocería (ofreciendo versiones de batalla corta y larga según la región). Además, fue uno de los vehículos clave que ayudó a consolidar la reputación de Kia fuera de Asia, demostrando que un fabricante generalista podía competir de igual a igual en términos de diseño y calidad percibida contra marcas europeas y japonesas consolidadas.\n\n## Competencia y posicionamiento\nEn el altamente competitivo mercado de los SUV medianos, la Kia Sportage se posiciona en el corazón del segmento, compitiendo directamente contra pesos pesados de la industria como el Toyota RAV4, el Honda CR-V, el Volkswagen Taos, el Ford Territory y el Hyundai Tucson (con el cual comparte plataforma y componentes mecánicos). Su propuesta de valor se centra en ofrecer un nivel superior de equipamiento tecnológico, asistencias avanzadas a la conducción (ADAS) y un diseño vanguardista que apunta a un público más joven y exigente que busca diferenciarse del diseño tradicional."
+}

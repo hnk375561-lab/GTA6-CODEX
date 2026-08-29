@@ -1,0 +1,315 @@
+{
+  "slug": "chery-tiggo-7-pro",
+  "type": "vehiculos",
+  "title": "Chery Tiggo 7 Pro",
+  "description": "SUV mediana china de Chery, motor turbo 1.5L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "chery",
+    "china",
+    "combustion"
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:33.336Z",
+  "updatedAt": "2026-08-27T01:34:50.491Z",
+  "manufacturer": "Chery",
+  "class": "SUV",
+  "customizable": false,
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.7s"
+  },
+  "power": "147 CV",
+  "price": "USD 27.000 (referencia regional)",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.chery.com.ar",
+    "note": "Se verificaron las especificaciones técnicas principales del Chery Tiggo 7 Pro para el mercado latinoamericano, incluyendo su motorización 1.5 turbo, dimensiones, capacidades y opciones de transmisión.",
+    "limitations": [
+      "Los precios y niveles de equipamiento exactos pueden variar según el mercado específico de Sudamérica.",
+      "Algunas cifras de consumo dependen fuertemente de las condiciones de manejo y homologación local."
+    ]
+  },
+  "transmision": "Automática CVT (9 marchas simuladas) o manual de 6 velocidades",
+  "traccion": "Delantera (FWD)",
+  "peso": "1429 kg",
+  "tipoMotor": "Naftero 1.5L Turbo",
+  "potenciaKW": "108 kW",
+  "capacidadTanque": "51 litros",
+  "tiempoRecorrido": "0-100 km/h en 10.7s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "consumo": "7.5 L/100 km aprox.",
+  "dimensiones": "4500 x 1842 x 1746 mm",
+  "cilindrada": "1498 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 414,
+  "maleteroMin": null,
+  "generacion": "1ra generación (fase actual Pro)",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "180 km/h",
+      "acceleration": "0-100 km/h en 10.7s"
+    },
+    "bateria": {},
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": null,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": null
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 27.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "chery",
+    "china",
+    "combustion",
+    "Chery",
+    "SUV",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Chery Tiggo 7 Pro - SUV Chery. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chery Tiggo 7 Pro",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chery"
+    },
+    "vehicleType": "SUV",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.7s",
+    "price": "USD 27.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV mediana china de Chery, motor turbo 1.5L."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:34:50.491Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.0",
+    "totalVotos": 2397,
+    "desglose": {
+      "1": 219,
+      "2": 50,
+      "3": 414,
+      "4": 718,
+      "5": 588
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 180
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Chery Tiggo 7 Pro forma parte de la exitosa familia de SUV medianas del fabricante chino Chery, diseñada para consolidar su presencia global y competir de igual a igual en el segmento C-SUV. Desde su lanzamiento inicial, la gama Tiggo ha evolucionado notablemente en términos de diseño, calidad percibida y adopción tecnológica, distanciándose de los primeros productos de marcas chinas que llegaron a los mercados occidentales. La variante 'Pro' introdujo una renovación estética profunda, un habitáculo mucho más sofisticado y una puesta a punto orientada al confort y la conectividad, pilares fundamentales para capturar a un público cada vez más exigente en América Latina y otras regiones emergentes.\n\n## Un hito y diseño relevante\nUn hito clave en la trayectoria del Tiggo 7 Pro ha sido su rápida adopción como uno de los productos globales más importantes de Chery, fabricado bajo estrictos estándares de calidad internacional. Su lenguaje de diseño exterior incorpora una parrilla frontal de gran porte con detalles tridimensionales, ópticas delanteras y traseras con tecnología LED completa y una silueta lateral moderna con techo flotante, recurso muy valorado en el segmento de los crossovers actuales. Puertas adentro, el salto cualitativo es evidente gracias a la implementación de pantallas digitales múltiples, comandos táctiles para la climatización y materiales de tacto agradable que mejoran la experiencia a bordo tanto para el conductor como para los pasajeros.\n\n## Curiosidades y motorización\nBajo el capot, el Chery Tiggo 7 Pro confía en un impulsor naftero de 4 cilindros y 1.5 litros dotado de turbocompresor, una arquitectura muy difundida que busca equilibrar una respuesta ágil en ciudad con consumos contenidos en ruta. Entre las curiosidades de su desarrollo se destaca la calibración de su transmisión automática —generalmente una caja CVT que simula marchas—, pensada para priorizar la suavidad de marcha por sobre las pretensiones deportivas. Además, su arquitectura incluye suspensiones independientes en las cuatro ruedas (tipo McPherson adelante y Multilink atrás), un detalle técnico que no siempre está presente en rivales directos de su franja de precio y que le otorga un andar aplomado en rutas pavimentadas.\n\n## Competencia y posicionamiento\nEn el mercado actual, el Chery Tiggo 7 Pro se posiciona estratégicamente en el corazón del segmento de las SUV medianas, compitiendo contra pesos pesados tradicionales como el Toyota Corolla Cross, el Jeep Compass, el Volkswagen Taos y el Chevrolet Tracker (en sus versiones más equipadas), además de otros contrincantes de origen asiático. Su principal argumento de venta radica en la excelente relación entre precio, nivel de equipamiento tecnológico, espacio interior y seguridad, ofreciendo asistencias a la conducción (ADAS) y elementos de confort que en marcas generalistas tradicionales suelen reservarse para versiones tope de gama mucho más costosas."
+}

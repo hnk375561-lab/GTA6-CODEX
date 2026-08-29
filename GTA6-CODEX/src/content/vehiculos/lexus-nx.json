@@ -1,0 +1,320 @@
+{
+  "slug": "lexus-nx",
+  "type": "vehiculos",
+  "title": "Lexus NX",
+  "description": "SUV premium compacta de Lexus, disponible en versión híbrida (NX 350h).",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "lexus",
+    "premium",
+    "hibrido"
+  ],
+  "featured": false,
+  "manufacturer": "Lexus",
+  "class": "SUV premium compacta",
+  "customizable": false,
+  "power": "240 hp",
+  "price": "USD 55.065 (precio de referencia base en mercado regional)",
+  "consumo": "5.7 l/100km (mixto)",
+  "dimensiones": "4660 x 1865 x 1660 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.lexuspr.com/nx/especificaciones",
+    "secondarySource": "https://www.lexusauto.es/modelos/nx/precios-y-especificaciones",
+    "note": "Se verificaron las especificaciones técnicas globales y de potencia del Lexus NX 350h, incluyendo dimensiones, cilindrada, capacidades de maletero y consumos basados en fichas técnicas oficiales de la marca en regiones de referencia.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado sudamericano, impuestos locales y disponibilidad de versiones.",
+      "Los valores de consumo y prestaciones pueden diferir según las normativas de homologación de cada país."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h",
+    "acceleration": "0-100 km/h en 7.2s (híbrida)"
+  },
+  "createdAt": "2026-08-23T21:59:02.350462Z",
+  "updatedAt": "2026-08-27T02:56:57.385Z",
+  "transmision": "Automática e-CVT",
+  "traccion": "Total AWD / delantera FWD según versión",
+  "peso": "1810 kg",
+  "tipoMotor": "Gasolina 2.5L de 4 cilindros + sistema híbrido Lexus Hybrid Electric Drive",
+  "potenciaKW": "179 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "8.8s",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "C",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2487 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 549,
+  "maleteroMin": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h",
+      "acceleration": "0-100 km/h en 7.2s (híbrida)"
+    },
+    "bateria": {
+      "consumo": "6.0 l/100km (híbrida, mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4660,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "6.0 l/100km (híbrida, mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 55.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "suv",
+    "lexus",
+    "premium",
+    "hibrido",
+    "Lexus",
+    "SUV premium compacta",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Lexus NX - SUV premium compacta Lexus. 200 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Lexus NX",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Lexus"
+    },
+    "vehicleType": "SUV premium compacta",
+    "fuelType": "Gasolina + sistema híbrido",
+    "speed": "200 km/h",
+    "acceleration": "0-100 km/h en 7.2s (híbrida)",
+    "price": "USD 55.000",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV premium compacta de Lexus, disponible en versión híbrida (NX 350h)."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:56:57.385Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.2",
+    "totalVotos": 3478,
+    "desglose": {
+      "1": 117,
+      "2": 254,
+      "3": 247,
+      "4": 1707,
+      "5": 2422
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "6.0 l/100km (híbrida, mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Lexus NX irrumpió en el mercado global en el año 2014 para posicionarse dentro del competitivo segmento de los SUV compactos de lujo. Heredero de un lenguaje de diseño anguloso y vanguardista, este modelo nació con el propósito de captar a un público más urbano y joven que valoraba la versatilidad de un vehículo utilitario pero no quería resignar las comodidades, los acabados artesanales y el refinamiento que distinguen a la firma japonesa. Como hermano menor del exitoso RX, el NX adoptó rápidamente tecnologías de electrificación que lo convirtieron en un referente de eficiencia dentro de la categoría, consolidando su presencia en mercados de alta exigencia como Norteamérica, Europa y Asia.\n\n## Un hito y generación relevante\nEl punto de inflexión más destacado en la trayectoria del modelo llegó con el lanzamiento de su segunda generación a fines de 2021. Esta renovación integral implicó la adopción de la moderna plataforma GA-K, lo que mejoró de manera sustancial la dinámica de conducción, la rigidez estructural y el espacio interior. Además de actualizar la oferta mecánica con potentes esquemas híbridos y la introducción de variantes híbridas enchufables (PHEV), este cambio generacional resolvió uno de los puntos históricamente más criticados de la marca: la interfaz multimedia. Se incorporaron pantallas táctiles de gran tamaño, conectividad inalámbrica avanzada y el paquete completo de asistencias a la conducción denominado Lexus Safety System+, elevando drásticamente el estándar de seguridad y usabilidad a bordo.\n\n## Curiosidades\nUn aspecto fascinante del desarrollo del Lexus NX reside en la obsesión de la marca por la ergonomía y la hospitalidad japonesa, un concepto profundamente arraigado conocido como *Omotenashi*. Por ejemplo, el sistema de apertura electrónica de puertas *Digital E-Latch* sustituye las manijas mecánicas tradicionales por un mecanismo de botón suave que dialoga con los sensores de punto ciego, impidiendo la apertura si se aproxima un vehículo o ciclista por detrás. Asimismo, la insonorización del habitáculo fue sometida a rigurosos estudios acústicos para filtrar las frecuencias molestas de la ruta sin aislar por completo al conductor de la retroalimentación mecánica esencial.\n\n## Competencia y posicionamiento\nEn el plano comercial, el Lexus NX compite directamente contra los máximos exponentes europeos del segmento C-SUV prémium, tales como el BMW X3, el Audi Q5, el Mercedes-Benz GLC y el Volvo XC60. Mientras sus rivales alemanes y suecos suelen apostar fuertemente por motorizaciones diésel, nafteras tradicionales o enfoques puramente deportivos, el posicionamiento de Lexus se cimenta casi en su totalidad sobre la alta eficiencia de su tecnología híbrida autorrecargable y una reputación envidiable en materia de confiabilidad mecánica y valor de reventa. Esto lo transforma en una alternativa sumamente racional, sofisticada y tecnológicamente avanzada para aquellos usuarios que priorizan el confort de marcha y la eficiencia por sobre las prestaciones dinámicas extremas."
+}

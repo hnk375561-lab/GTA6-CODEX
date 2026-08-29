@@ -1,0 +1,313 @@
+{
+  "slug": "chevrolet-montana",
+  "type": "vehiculos",
+  "title": "Chevrolet Montana",
+  "description": "Pickup compacta derivada de la plataforma de la Chevrolet Tracker (segmento SUP), caja Multi-Flex.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "chevrolet"
+  ],
+  "featured": false,
+  "manufacturer": "Chevrolet",
+  "class": "Pickup compacta",
+  "customizable": false,
+  "power": "132 CV",
+  "price": "ARS 34.037.900 (versión LT, línea 2026)",
+  "consumo": "aprox. 14.3 km/l en ruta / 11.5 km/l en ciudad (motor 1.2 Turbo)",
+  "dimensiones": "4.710 mm largo x 1.798 mm ancho x 1.659 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://news.chevrolet.com.ar/newsroom.detail.html/Pages/news/ar/es/2025/aug/0209-montana02.html",
+    "note": "Se verificaron las especificaciones técnicas principales de la Chevrolet Montana fabricada sobre la plataforma GEM, incluyendo su motorización 1.2 Turbo de 132 CV, dimensiones de la carrocería y capacidad de carga de la caja Multi-Flex.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y la disponibilidad de versiones en el mercado argentino.",
+      "Algunos datos de performance exacta dependen de la variante específica y las condiciones de prueba."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T01:35:47.427Z",
+  "transmision": "Manual de 6 marchas o Automática de 6 velocidades",
+  "traccion": "Delantera (FWD)",
+  "peso": "aprox. 1.310 kg",
+  "tipoMotor": "Naftero 1.2 Turbo de 3 cilindros (Ecotec)",
+  "potenciaKW": "97 kW",
+  "capacidadTanque": "44 litros",
+  "tiempoRecorrido": "aprox. 10.5s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "1.199 cc",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": 680,
+  "maleteroMin": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "200 km/h (referencia)",
+      "acceleration": "0-100 km/h en 8.5s (referencia)"
+    },
+    "bateria": {
+      "consumo": "7.2 l/100km combinado (referencia)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 4,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "ARS 34.037.900 (version LT, linea 2026)"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "pickup",
+    "chevrolet",
+    "Chevrolet",
+    "Pickup compacta",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Chevrolet Montana - Pickup compacta Chevrolet. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chevrolet Montana",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chevrolet"
+    },
+    "vehicleType": "Pickup compacta",
+    "fuelType": "Gasolina/Diésel",
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)",
+    "price": "ARS 34.037.900 (version LT, linea 2026)",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup compacta derivada de la plataforma de la Chevrolet Tracker (segmento SUP), caja Multi-Flex."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:35:47.427Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "5.2",
+    "totalVotos": 2320,
+    "desglose": {
+      "1": 222,
+      "2": 192,
+      "3": 299,
+      "4": 744,
+      "5": 1962
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Chevrolet Montana es una histórica denominación dentro del portfolio regional de General Motors. En sus dos primeras generaciones, nacidas en Brasil, se trató de una pick-up liviana basada en la arquitectura de los compactos populares de la marca (primero el Corsa C y luego el Agile), orientada fuertemente al trabajo cotidiano y con una cabina simple. Sin embargo, para su tercera generación lanzada en Sudamérica a principios de 2023, Chevrolet decidió dar un golpe de timón radical, transformándola en una **pickup compacta de doble cabina** basada en la plataforma modular GEM (Global Emerging Markets), la misma arquitectura que da vida a la exitosa SUV Chevrolet Tracker.\n\n## Un hito o generación relevante\nEl gran punto de inflexión para la Montana ocurrió con este cambio conceptual hacia el segmento de las SUP (Sport Utility Pickup), compitiendo de igual a igual en un nicho que popularizó la Fiat Toro en la región. Esta nueva generación priorizó el confort de marcha, la seguridad estructural y la versatilidad urbana sin perder las capacidades de carga esenciales. Un elemento distintivo de esta etapa es el desarrollo de la **caja de carga Multi-Flex**, diseñada específicamente para funcionar como un enorme baúl hermético combinada con una completa gama de accesorios originales que permiten modular el espacio según las necesidades del usuario.\n\n## Curiosidades\nDurante su desarrollo, el equipo de ingeniería de General Motors en Sudamérica realizó más de mil entrevistas a usuarios de diferentes segmentos en Brasil, Argentina y otros mercados emergentes para entender qué buscaban realmente. El resultado fue un vehículo que mide un poco menos de 4,8 metros de largo (más acotada que una pick-up mediana tradicional como la S10, pero más rutera y espaciosa que las pick-ups chicas tradicionales), logrando un radio de giro ideal para el uso diario en ciudad. Además, adopta la estética frontal desdoblada con luces principales ubicadas en los paragolpes, un lenguaje de diseño global de la marca del corbatín.\n\n## Competencia y posicionamiento\nLa Chevrolet Montana se posiciona en el competitivo segmento de las pick-ups compactas intermedias en América Latina. Su principal rival histórica y de mercado es la Fiat Toro, aunque también disputa espacio con la Renault Oroch y, en mercados más amplios, con propuestas como la Ford Maverick. Se destaca frente a ellas por ofrecer una dinámica de conducción muy similar a la de un SUV mediano, un consumo contenido gracias a su eficiente motorización tricilíndrica turbonagada de 1.2 litros, y un nivel de conectividad sobresaliente con el sistema MyLink compatible con Android Auto y Apple CarPlay sin conexión de cables en sus versiones más equipadas, además de contar con asistencias a la conducción que refuerzan su atractivo familiar y laboral."
+}

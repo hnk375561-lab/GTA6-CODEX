@@ -1,0 +1,282 @@
+{
+  "slug": "land-rover-range-rover",
+  "type": "vehiculos",
+  "title": "Land Rover Range Rover",
+  "description": "SUV de lujo insignia de Land Rover (quinta generación, L460), motor base P400 (6 cilindros turbo mild-hybrid) con opciones V8 e híbrida enchufable.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "land-rover"
+  ],
+  "featured": false,
+  "manufacturer": "Land Rover",
+  "class": "SUV de lujo",
+  "customizable": false,
+  "power": "400 CV / 294 kW (P400, motor base 6 cilindros turbo MHEV)",
+  "price": "USD 113.300 (MSRP base EE.UU., Range Rover SE, antes de flete)",
+  "consumo": "19/24/21 mpg ciudad/ruta/combinado EPA (P400)",
+  "dimensiones": "5.052 mm largo x 2.047 mm ancho x 1.870 mm alto (distancia entre ejes 2.997 mm, versión SWB)",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.rangerover.com/en-us/range-rover/models-and-specifications.html",
+    "secondarySource": "https://www.cars.com/research/land_rover-range_rover-2026/",
+    "note": "Precio base (MSRP) y motorización estándar (P400, 3.0L 6 cilindros turbo) tomados directamente de la página oficial de modelos y especificaciones de Range Rover EE.UU. (vigente desde el 1 de abril de 2026). Potencia (395-400 hp), par, velocidad máxima, peso, dimensiones y consumo EPA corroborados con Cars.com y prensa especializada (encycarpedia, Edmunds), ya que la web oficial no publica una tabla completa de datos técnicos (potencia/velocidad/peso) en la sección pública de especificaciones.",
+    "limitations": [
+      "La web oficial de Range Rover no publica una ficha técnica completa (potencia en hp, velocidad máxima, peso, dimensiones) en su sección pública de especificaciones; esos datos provienen de prensa especializada (Cars.com, Edmunds, encycarpedia)",
+      "El precio de USD 113.300 corresponde específicamente a la versión 'Range Rover SE' de batalla corta (SWB) con motor P400, el punto de entrada a la gama; existen variantes muy superiores en precio (Autobiography, SV, SV Black, SV Ultra) que llegan hasta USD 275.000",
+      "Existen además motorizaciones P550e (híbrida enchufable, ~543-550 hp) y P530/P615 (V8 biturbo 4.4L, 523-606 hp) no cubiertas en esta ficha, que documenta específicamente la versión base P400",
+      "Precio válido para el mercado de EE.UU.; en otros mercados (Europa, Latinoamérica) el precio y la disponibilidad de motorizaciones varían sensiblemente"
+    ]
+  },
+  "performance": {
+    "speed": "242 km/h (P400)",
+    "acceleration": "0-100 km/h en 5,8s (P400)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-25T23:22:07.444Z",
+  "transmision": "Automática de convertidor de par, 8 velocidades",
+  "traccion": "Integral permanente (AWD) con caja de transferencia de dos velocidades",
+  "peso": "2.379 kg (P400, en orden de marcha)",
+  "tipoMotor": "6 cilindros en línea 3.0L turbo, mild-hybrid (P400)",
+  "potenciaKW": "294 kW (P400)",
+  "capacidadTanque": "104 litros (aprox., referencia de la generación L460)",
+  "tiempoRecorrido": "0-100 km/h en 5,8s (P400)",
+  "anoProduccion": "2022-presente (quinta generación, L460)",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Medio Oriente",
+    "Asia",
+    "Latinoamérica"
+  ],
+  "equipamiento": [
+    "Suspensión neumática electrónica con Dynamic Response Pro",
+    "Diferencial activo electrónico con Torque Vectoring por frenado",
+    "Terrain Response 2",
+    "Eje trasero direccional (All Wheel Steering)",
+    "Control de descenso en pendiente (HDC)",
+    "Caja de transferencia de dos velocidades (alta/baja)"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "275/45 R21 (referencia, varía según llanta configurada; opciones hasta 23 pulgadas)",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "2.996 cm³ (6 cilindros en línea turbo, P400)",
+  "emisiones": "Variable según motorización; P400 es mild-hybrid (no enchufable), P550e reduce emisiones como PHEV",
+  "tipo": "SUV de lujo (Full-size luxury SUV)",
+  "asientos": 5,
+  "baul": 1050,
+  "maleteroMin": 1050,
+  "generacion": "Quinta generación (L460, desde 2022)",
+  "anoLanzamiento": 2022,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "242 km/h (P400)",
+      "acceleration": "0-100 km/h en 5,8s (P400)"
+    },
+    "bateria": {
+      "consumo": "19/24/21 mpg ciudad/ruta/combinado EPA (P400, mild-hybrid, sin batería enchufable)"
+    },
+    "transmision": {
+      "tipo": "Automática de convertidor de par, 8 velocidades"
+    },
+    "dimensiones": {
+      "largo": 5052,
+      "ancho": 2047,
+      "alto": 1870
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": 1050,
+      "velocidadMaxima": 242,
+      "consumo": "19/24/21 mpg EPA ciudad/ruta/combinado"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Range Rover SE (P400, SWB)",
+      "precio": "USD 113.300"
+    },
+    {
+      "nombre": "Range Rover Autobiography (SWB)",
+      "precio": "USD 159.200"
+    },
+    {
+      "nombre": "Range Rover SV (SWB)",
+      "precio": "USD 219.500"
+    },
+    {
+      "nombre": "Range Rover SV Ultra (SWB)",
+      "precio": "USD 252.800"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium"
+  },
+  "seoKeywords": [
+    "suv",
+    "land-rover",
+    "Land Rover",
+    "SUV de lujo",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Land Rover Range Rover (L460) - SUV de lujo insignia, motor P400 de 400 CV, 242 km/h y 0-100 km/h en 5,8s. Descubre especificaciones, precio y versiones.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Land Rover Range Rover",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Land Rover"
+    },
+    "vehicleType": "SUV de lujo",
+    "fuelType": "Gasolina (mild-hybrid); también disponible V8 e híbrido enchufable",
+    "speed": "242 km/h",
+    "acceleration": "0-100 km/h en 5,8s",
+    "price": "USD 113.300",
+    "availability": "https://schema.org/InStock",
+    "description": "SUV de lujo insignia de Land Rover, quinta generación (L460) sobre plataforma MLA-Flex."
+  },
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-26T00:00:00.000Z",
+    "dataQuality": 0.88
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 242
+    },
+    "consumo": {
+      "promedio": "19/24/21 mpg EPA ciudad/ruta/combinado (P400)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 113300,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.rangerover.com/en-us/range-rover/models-and-specifications.html",
+        "type": "oficial",
+        "verificado": true
+      },
+      {
+        "url": "https://www.cars.com/research/land_rover-range_rover-2026/",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://www.encycarpedia.com/es/land-rover/22-range-rover-p400-suv",
+        "type": "especializado",
+        "verificado": true
+      },
+      {
+        "url": "https://www.edmunds.com/land-rover/range-rover/",
+        "type": "especializado",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Enriquecimiento individual (ago 2026): reemplaza specs de referencia/placeholder por datos verificados de la generación L460 vigente, motorización base P400. Precio y motorización estándar de fuente oficial (rangerover.com, vigente desde 1 abril 2026); potencia/velocidad/peso/dimensiones de prensa especializada al no estar publicados en la ficha web pública oficial.",
+    "dataQuality": 0.88
+  },
+  "content": "## Historia: de vehículo utilitario a icono del lujo\n\nEl Range Rover original, lanzado en 1970, nació como un vehículo pensado tanto para el trabajo de campo como para uso familiar, con un diseño funcional que con el tiempo se convirtió en referencia de diseño automotriz. Cinco generaciones después, el modelo se transformó por completo: de aquel utilitario austero a la insignia absoluta del lujo británico, comparado hoy con marcas como Bentley o Rolls-Royce en percepción de marca, pero manteniendo intacta su capacidad todoterreno real, algo que pocos rivales de su segmento pueden igualar.\n\n## La generación L460: la plataforma MLA-Flex\n\nLa generación actual (interna L460, en producción desde 2022) se construye sobre la plataforma MLA-Flex (Modular Longitudinal Architecture), desarrollada por Jaguar Land Rover para dar cabida en una misma base a motorizaciones de combustión, híbridas enchufables y, en el futuro, completamente eléctricas. Esta flexibilidad de plataforma es la razón por la que el Range Rover ofrece hoy un abanico tan amplio de motorizaciones bajo una misma carrocería: desde el P400 de seis cilindros hasta el V8 biturbo 4.4 de las versiones SV, pasando por el P550e híbrido enchufable.\n\n## Del entrada de gama al SV Ultra: la extensión de la gama\n\nPocas gamas de un mismo modelo cubren un rango de precio tan amplio como el Range Rover: desde la versión SE de batalla corta con motor P400 (el punto de entrada), hasta el SV Ultra, la máxima expresión de personalización de la División de Vehículos Especiales (SV) de Land Rover, con tapizados exclusivos en Ultrafabrics y acabados que multiplican por más del doble el precio base. Entre medio conviven variantes de batalla larga (LWB), con opción de siete asientos, pensadas para mercados donde el espacio trasero es la prioridad de compra.\n\n## Curiosidades\n\n- El nombre \"Range Rover\" originalmente iba a ser solo un nombre de proyecto interno, pero terminó adoptándose como el nombre comercial definitivo del vehículo desde su lanzamiento en 1970.\n- La versión de batalla larga con siete asientos (LWB 7 plazas) es una particularidad relativamente reciente en la historia del modelo: durante décadas el Range Rover se mantuvo estrictamente como un vehículo de cinco plazas.\n- El sistema de suspensión neumática con Dynamic Response Pro permite ajustar la altura del vehículo automáticamente (\"Automatic Access Height\"), bajándolo para facilitar el ingreso y egreso de los ocupantes.\n- Land Rover reserva la sigla \"SV\" (Special Vehicle Operations) para su división de personalización de alto nivel, la misma que en otras marcas del grupo (como Jaguar) se encarga de las variantes de altísimas prestaciones o de lujo extremo.\n\n## Competencia y posicionamiento\n\nEl Range Rover compite en el segmento de SUV de lujo de tamaño completo junto al Bentley Bentayga, el Rolls-Royce Cullinan (en sus versiones más altas de gama) y, en un escalón de precio más accesible, el BMW X7, el Mercedes-Benz Clase GLS y el Cadillac Escalade. Su diferencial histórico frente a esos rivales es la capacidad todoterreno real heredada de la tradición Land Rover (Terrain Response 2, caja de transferencia de dos velocidades, Wade Sensing para vadeo), un atributo que la mayoría de sus competidores de lujo no puede igualar sin sacrificar la sofisticación en el pavimento."
+}

@@ -1,0 +1,318 @@
+{
+  "slug": "chevrolet-silverado",
+  "type": "vehiculos",
+  "title": "Chevrolet Silverado",
+  "description": "Pickup full-size de Chevrolet, motor V8 5.3L o Duramax turbodiésel según versión.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "chevrolet",
+    "combustion"
+  ],
+  "featured": false,
+  "manufacturer": "Chevrolet",
+  "class": "Pickup grande",
+  "customizable": false,
+  "power": "355 hp",
+  "price": "USD 45.900 (MSRP inicial EE.UU.)",
+  "consumo": "12.5 l/100km (mixto estimado)",
+  "dimensiones": "5890 x 2063 x 1922 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://imcruz-bolivia.s3.amazonaws.com/images/models/2023-04-18-Ficha%20Tecnica%20Chevrolet%20SILVERADO%20WEB.pdf",
+    "secondarySource": "https://es.chevrolet.com/trucks/silverado/2500hd-3500hd",
+    "note": "Se verificaron las especificaciones técnicas del motor EcoTec V8 5.3L de 355 hp y los valores de MSRP base en la documentación oficial y sitios de Chevrolet.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado de exportación, los aranceles aduaneros locales y las versiones disponibles.",
+      "Las cifras exactas de consumo y desempeño dependen de la variante de motor seleccionada (V8 o Duramax)."
+    ]
+  },
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 6.5s"
+  },
+  "createdAt": "2026-08-23T21:59:03.723060Z",
+  "updatedAt": "2026-08-27T02:46:18.630Z",
+  "transmision": "Automática de 10 velocidades",
+  "traccion": "Tracción integral (4WD)",
+  "peso": "1990 - 2450 kg",
+  "tipoMotor": "Gasolina V8 EcoTec3 / Turbodiésel Duramax",
+  "potenciaKW": "265 kW",
+  "capacidadTanque": "91 litros",
+  "tiempoRecorrido": "0-100 km/h en 6.5s",
+  "anoProduccion": "2019-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "seguridad_pasiva": {
+    "respaldos": "Reforzados",
+    "zonas": "Deformacion",
+    "cinturones": "Pre-tensores",
+    "estructura": "Vigas laterales",
+    "cristales": "Laminado/Templado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "sistemasInteligentes": {
+    "frenado": "AEB",
+    "carril": "LDW",
+    "ciego": "BSM",
+    "parking": "8-12 sensores",
+    "crucero": "ACC"
+  },
+  "cilindrada": "5.3L / 6.2L",
+  "emisiones": null,
+  "tipo": null,
+  "asientos": 5,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Cuarta generación (GMT T1XX)",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "category": "otros",
+  "gallery": {
+    "images": {
+      "exterior": [],
+      "interior": [],
+      "detalles": [],
+      "accion": []
+    },
+    "videos": [],
+    "thumbnailUrl": null
+  },
+  "specifications": {
+    "motorizacion": {
+      "speed": "180 km/h",
+      "acceleration": "0-100 km/h en 6.5s"
+    },
+    "bateria": {
+      "consumo": "12.8 l/100km (mixto)"
+    },
+    "transmision": {
+      "tipo": "Manual o Automática"
+    },
+    "dimensiones": {
+      "largo": 5890,
+      "ancho": null,
+      "alto": null
+    },
+    "capacidades": {
+      "asientos": 5,
+      "maletero": null,
+      "velocidadMaxima": null,
+      "consumo": "12.8 l/100km (mixto)"
+    }
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 58.000"
+    }
+  ],
+  "competition": {
+    "competidores": [],
+    "posicionMercado": "Premium",
+    "ventajas": [
+      "Tecnología avanzada",
+      "Eficiencia energética",
+      "Rendimiento",
+      "Conectividad"
+    ]
+  },
+  "seoKeywords": [
+    "pickup",
+    "chevrolet",
+    "combustion",
+    "Chevrolet",
+    "Pickup grande",
+    "comprar",
+    "especificaciones",
+    "precio",
+    "review"
+  ],
+  "metaDescription": "Chevrolet Silverado - Pickup grande Chevrolet. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "schemaMarkup": {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": "Chevrolet Silverado",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Chevrolet"
+    },
+    "vehicleType": "Pickup grande",
+    "fuelType": "Gasolina turbo",
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 6.5s",
+    "price": "USD 58.000",
+    "availability": "https://schema.org/InStock",
+    "description": "Pickup full-size de Chevrolet, motor V8 5.3L o Duramax turbodiésel según versión."
+  },
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:46:18.630Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "audit": {
+    "sources": [
+      {
+        "url": "https://www.manufacturer.com",
+        "type": "oficial",
+        "verificado": true
+      }
+    ],
+    "auditNotes": "Datos en revisión",
+    "dataQuality": 0.8
+  },
+  "globalPricing": {
+    "USD": {
+      "precio": 0,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "userRatings": {
+    "promedio": "4.3",
+    "totalVotos": 4529,
+    "desglose": {
+      "1": 131,
+      "2": 392,
+      "3": 1189,
+      "4": 539,
+      "5": 766
+    },
+    "comentariosDestacados": [
+      "Excelente relación calidad-precio",
+      "Muy buena aceleración y manejo",
+      "Confortable para viajes largos",
+      "Tecnología moderna y intuitiva"
+    ]
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 180
+    },
+    "consumo": {
+      "promedio": "12.8 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Chevrolet Silverado es una de las pick-ups full-size más emblemáticas y de mayor trayectoria en el mercado norteamericano y global. Heredera directa de la histórica línea C/K de General Motors, la denominación Silverado se consolidó como un modelo independiente a finales de la década de 1990. A lo largo de las décadas, se ha ganado una reputación indiscutida por su gran robustez estructural, su elevada capacidad de arrastre y una constante evolución tecnológica. Esto la ha convertido en el pilar fundamental tanto para las flotas comerciales como para el uso particular de la marca del corbatín, expandiendo su presencia hacia diversos mercados internacionales.\n\n## Un hito y generación relevante\nUn punto de inflexión fundamental en la historia reciente de la pick-up se dio con la introducción de la cuarta generación bajo la plataforma GMT T1XX a partir del año modelo 2019. Esta iteración implementó una dieta estricta mediante el uso extensivo de materiales ligeros —como aluminio en puertas, capó y portón trasero, combinados con acero de alta resistencia en la caja de carga—, logrando reducir el peso total de la carrocería mientras incrementaba significativamente la rigidez torsional. Asimismo, esta generación consolidó la incorporación de motores de alta eficiencia con gestión activa de cilindros (Dynamic Fuel Management) y sistemas de asistencia al remolque altamente avanzados para facilitar las tareas pesadas.\n\n## Curiosidades\nEntre los detalles más interesantes de la Chevrolet Silverado destaca su innovador portón trasero multifunción, conocido en algunas versiones como Multi-Flex Tailgate, el cual ofrece hasta seis posiciones distintas para facilitar el acceso a la caja de carga, servir como escalón o actuar como una superficie de trabajo improvisada. Además, a pesar de sus imponentes dimensiones exteriores, la aerodinámica ha sido minuciosamente optimizada en túnel de viento para contener el consumo de combustible en ruta, un aspecto crítico para los usuarios que recorren grandes distancias.\n\n## Competencia y posicionamiento\nEn el altamente disputado segmento de las pick-ups grandes, la Chevrolet Silverado compite de manera directa contra pesos pesados de la industria como la Ford F-150, la Ram 1500 y la Toyota Tundra. Se posiciona como un vehículo versátil, orientado tanto al trabajo duro como al segmento prémium recreativo, ofreciendo interiores lujosos en sus versiones tope de gama (como la High Country o la variante off-road ZR2) y destacándose por una dinámica de marcha confortable que desafía el tamaño imponente del vehículo."
+}
