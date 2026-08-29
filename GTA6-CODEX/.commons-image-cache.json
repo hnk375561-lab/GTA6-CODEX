@@ -2580,5 +2580,226 @@
     "height": 3281,
     "matchedQuery": "Volvo Volvo S60",
     "status": "ok"
+  },
+  "volvo-xc60": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Volvo_XC60_%28SPA%29_FL_1X7A6406.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Volvo_XC60_(SPA)_FL_1X7A6406.jpg",
+    "licenseShortName": "CC BY-SA 4.0",
+    "artist": "Alexander Migl",
+    "width": 5106,
+    "height": 3407,
+    "matchedQuery": "Volvo Volvo XC60",
+    "status": "ok"
+  },
+  "volvo-xc90": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Volvo_XC90_II_IMG_5738.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Volvo_XC90_II_IMG_5738.jpg",
+    "licenseShortName": "CC BY-SA 4.0",
+    "artist": "Alexander Migl",
+    "width": 4978,
+    "height": 3313,
+    "matchedQuery": "Volvo Volvo XC90",
+    "status": "ok"
+  },
+  "wuling-mini-ev": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Wuling_Hongguang_Mini_EV_Cabrio_IMG004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Wuling_Hongguang_Mini_EV_Cabrio_IMG004.jpg",
+    "licenseShortName": "CC BY-SA 4.0",
+    "artist": "JustAnotherCarDesigner",
+    "width": 4032,
+    "height": 3024,
+    "matchedQuery": "Wuling Wuling Hongguang Mini EV",
+    "status": "ok"
+  },
+  "xiaomi-su7": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Xiaomi_SU7_Ultra_yellow_showroom_side_view_2026_dllu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Xiaomi_SU7_Ultra_yellow_showroom_side_view_2026_dllu.jpg",
+    "licenseShortName": "CC BY-SA 4.0",
+    "artist": "Daniel Lu (User:dllu)",
+    "width": 11568,
+    "height": 5784,
+    "matchedQuery": "Xiaomi Xiaomi SU7",
+    "status": "ok"
+  },
+  "yamaha-fazer-250": {
+    "status": "too-small",
+    "debug": [
+      {
+        "query": "Yamaha Yamaha Fazer 250",
+        "pagesReturned": 5,
+        "infosExtracted": 5,
+        "licensesSeen": [
+          "Public domain",
+          "Public domain",
+          "Public domain",
+          "CC BY-SA 4.0",
+          "CC BY-SA 4.0"
+        ],
+        "licensedCount": 2,
+        "sampleSizes": [
+          "1280x960",
+          "1280x960",
+          "1280x960"
+        ]
+      },
+      {
+        "query": "Yamaha Yamaha Fazer 250 car",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Yamaha Fazer 250",
+        "pagesReturned": 5,
+        "infosExtracted": 5,
+        "licensesSeen": [
+          "Public domain",
+          "Public domain",
+          "Public domain",
+          "CC BY-SA 4.0",
+          "CC BY-SA 4.0"
+        ],
+        "licensedCount": 2,
+        "sampleSizes": [
+          "1280x960",
+          "1280x960",
+          "1280x960"
+        ]
+      },
+      {
+        "query": "Yamaha Fazer 250 automobile",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      }
+    ]
+  },
+  "yamaha-mt-07": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/2021_Black_Yamaha_MT-07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:2021_Black_Yamaha_MT-07.jpg",
+    "licenseShortName": "CC BY-SA 4.0",
+    "artist": "PackMecEng",
+    "width": 3031,
+    "height": 1903,
+    "matchedQuery": "Yamaha Yamaha MT-07",
+    "status": "ok"
+  },
+  "yamaha-nmax": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Yamaha_nmax_cpd150_YCP.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Yamaha_nmax_cpd150_YCP.JPG",
+    "licenseShortName": "CC BY-SA 4.0",
+    "artist": "Rainmaker47",
+    "width": 3872,
+    "height": 2592,
+    "matchedQuery": "Yamaha Yamaha NMAX",
+    "status": "ok"
+  },
+  "yamaha-r1": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/1998_Yamaha_YZF-R1_in_the_Yamaha_Communication_Plaza.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:1998_Yamaha_YZF-R1_in_the_Yamaha_Communication_Plaza.JPG",
+    "licenseShortName": "CC BY-SA 4.0",
+    "artist": "Rainmaker47",
+    "width": 3872,
+    "height": 2592,
+    "matchedQuery": "Yamaha Yamaha R1",
+    "status": "ok"
+  },
+  "yamaha-tenere-700": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/06-2024_Yamaha_Rally_Tenere_700.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:06-2024_Yamaha_Rally_Tenere_700.jpg",
+    "licenseShortName": "CC BY-SA 4.0",
+    "artist": "Wikisympathisant",
+    "width": 5101,
+    "height": 3407,
+    "matchedQuery": "Yamaha Yamaha Ténéré 700",
+    "status": "ok"
+  },
+  "yamaha-ybr-125": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Yamaha_YBR_125_ESD_2014_MEXICO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Yamaha_YBR_125_ESD_2014_MEXICO.jpg",
+    "licenseShortName": "CC BY-SA 4.0",
+    "artist": "Landerossoriano",
+    "width": 2592,
+    "height": 1456,
+    "matchedQuery": "Yamaha Yamaha YBR 125",
+    "status": "ok"
+  },
+  "zanella-rx-150": {
+    "status": "no-license",
+    "debug": [
+      {
+        "query": "Zanella Zanella RX 150",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Zanella Zanella RX 150 car",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Zanella RX 150",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Zanella RX 150 automobile",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      }
+    ]
+  },
+  "zanella-rx-200": {
+    "status": "no-license",
+    "debug": [
+      {
+        "query": "Zanella Zanella RX 200 Next",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Zanella Zanella RX 200 Next car",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Zanella RX 200 Next",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      },
+      {
+        "query": "Zanella RX 200 Next automobile",
+        "pagesReturned": 0,
+        "infosExtracted": 0,
+        "licensesSeen": [],
+        "licensedCount": 0,
+        "sampleSizes": []
+      }
+    ]
   }
 }
