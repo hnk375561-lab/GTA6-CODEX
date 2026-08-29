@@ -1,26 +1,8 @@
 [
   {
     "category": "vehiculos",
-    "slug": "ducati-panigale-v4",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Ducati_Panigale_V4_-_Tuning_World_Bodensee_2018%2C_Friedrichshafen_%28OW1A0484%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-    "error": "HTTP 429 Too many requests"
-  },
-  {
-    "category": "vehiculos",
-    "slug": "gwm-poer",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Great_Wall_Pao_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-    "error": "HTTP 429 Too many requests"
-  },
-  {
-    "category": "vehiculos",
-    "slug": "honda-city",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/1985_Honda_City_Cabriolet_rear.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-    "error": "HTTP 429 Too many requests"
-  },
-  {
-    "category": "vehiculos",
-    "slug": "honda-wave-110",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/2026_Honda_Wave_110_Special_Edition_%28Alloy_Type%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "slug": "peugeot-408",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/2022_Dongfeng-Peugeot_408_%28facelift%2C_front%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "error": "HTTP 429 Too many requests"
   }
 ]
