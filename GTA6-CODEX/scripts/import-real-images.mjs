@@ -79,8 +79,10 @@ if (limitArg && (!Number.isFinite(LIMIT) || LIMIT <= 0)) {
 
 // Mismo piso que scripts/generate-manifest-from-commons.mjs — ver ahí el
 // razonamiento de por qué exigir ambos lados en vez de solo el área.
-const MIN_LONG_SIDE = 2560
-const MIN_SHORT_SIDE = 1440
+// Piso subido de 2560x1440 a 3000x1700 (29 ago 2026): ver mismo cambio y
+// razonamiento en scripts/generate-manifest-from-commons.mjs.
+const MIN_LONG_SIDE = 3000
+const MIN_SHORT_SIDE = 1700
 
 function meetsResolutionFloor(width, height) {
   if (!width || !height) return false

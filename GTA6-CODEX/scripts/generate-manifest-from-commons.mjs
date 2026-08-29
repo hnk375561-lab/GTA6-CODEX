@@ -76,8 +76,13 @@ const COMMONS_API = 'https://commons.wikimedia.org/w/api.php'
 //     3000x900, que no son realmente "2K" en el sentido que pide el sitio)
 // Nunca se hace upscale para llegar a este piso: si la fuente no lo
 // cumple de origen, el candidato se descarta directamente.
-const MIN_LONG_SIDE = 2560
-const MIN_SHORT_SIDE = 1440
+// Piso subido de 2560x1440 a 3000x1700 (29 ago 2026): el piso anterior
+// dejaba pasar candidatos que cumplían el número de píxeles pero no la
+// nitidez real (fotos viejas/comprimidas escaladas justo por encima del
+// mínimo). Nunca se hace upscale para llegar a esto — ver
+// `withoutEnlargement` en import-real-images.mjs.
+const MIN_LONG_SIDE = 3000
+const MIN_SHORT_SIDE = 1700
 
 function meetsResolutionFloor(width, height) {
   if (!width || !height) return false
