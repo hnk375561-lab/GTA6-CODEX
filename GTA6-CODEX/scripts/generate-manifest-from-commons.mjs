@@ -164,17 +164,33 @@ async function findBestImageFor(vehicle) {
   ].filter((q, i, arr) => q && arr.indexOf(q) === i) // sin duplicados/vacíos
 
   let sawLicensedButTooSmall = false
+  const debug = []
+  let anyQuerySucceeded = false
+  let lastError = null
 
   for (const query of queries) {
     let pages
     try {
       pages = await searchCommons(query)
+      anyQuerySucceeded = true
     } catch (err) {
-      console.warn(`  ⚠ error buscando "${query}": ${err.message}`)
+      lastError = err.message
+      debug.push({ query, error: err.message })
       continue
     }
 
-    const licensed = pages.map(extractLicenseInfo).filter((info) => info && isAcceptableLicense(info.licenseShortName))
+    const infos = pages.map(extractLicenseInfo).filter(Boolean)
+    const licenses = infos.map((i) => i.licenseShortName)
+    const licensed = infos.filter((info) => isAcceptableLicense(info.licenseShortName))
+
+    debug.push({
+      query,
+      pagesReturned: pages.length,
+      infosExtracted: infos.length,
+      licensesSeen: licenses,
+      licensedCount: licensed.length,
+      sampleSizes: infos.slice(0, 3).map((i) => `${i.width}x${i.height}`),
+    })
 
     // Preferimos imágenes de mayor resolución entre las que tengan
     // licencia aceptable Y cumplan el piso de 2K.
@@ -189,7 +205,11 @@ async function findBestImageFor(vehicle) {
     if (licensed.length > 0) sawLicensedButTooSmall = true
   }
 
-  return { status: sawLicensedButTooSmall ? 'too-small' : 'no-license' }
+  if (!anyQuerySucceeded) {
+    return { status: 'error', error: lastError, debug }
+  }
+
+  return { status: sawLicensedButTooSmall ? 'too-small' : 'no-license', debug }
 }
 
 async function main() {
