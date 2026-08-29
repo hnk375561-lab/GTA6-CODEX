@@ -75,13 +75,46 @@ function meetsResolutionFloor(width, height) {
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+// Los runners de GitHub Actions comparten pools de IP muy castigados por
+// tráfico automatizado de todo el mundo, así que Wikimedia devuelve 429
+// (Too Many Requests) con más frecuencia acá que desde una IP residencial.
+// Reintenta con backoff exponencial (respetando Retry-After si viene) en
+// vez de descartar la imagen a la primera — evita falsos "sin imagen ≥2K"
+// que en realidad sí existían, solo que la primera consulta fue throttled.
+const MAX_RETRIES = 4
+
 async function downloadBuffer(url) {
-  const res = await fetch(url, {
-    headers: { 'User-Agent': UA, Referer: 'https://www.google.com/' },
-  })
-  if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`)
-  const arrBuf = await res.arrayBuffer()
-  return Buffer.from(arrBuf)
+  let lastErr
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    if (attempt > 0) {
+      const res429RetryAfter = lastErr?.retryAfterMs
+      const backoffMs = res429RetryAfter ?? Math.min(2000 * 2 ** (attempt - 1), 20000)
+      console.log(`    reintentando en ${Math.round(backoffMs / 1000)}s (intento ${attempt + 1}/${MAX_RETRIES + 1})...`)
+      await sleep(backoffMs)
+    }
+    try {
+      const res = await fetch(url, {
+        headers: { 'User-Agent': UA, Referer: 'https://www.google.com/' },
+      })
+      if (res.status === 429) {
+        const retryAfterHeader = res.headers.get('retry-after')
+        const err = new Error(`HTTP 429 Too many requests`)
+        err.retryAfterMs = retryAfterHeader ? Number(retryAfterHeader) * 1000 : undefined
+        lastErr = err
+        continue
+      }
+      if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`)
+      const arrBuf = await res.arrayBuffer()
+      return Buffer.from(arrBuf)
+    } catch (err) {
+      lastErr = err
+    }
+  }
+  throw lastErr
 }
 
 async function main() {
@@ -140,6 +173,10 @@ async function main() {
         fs.writeFileSync(outPath, webp)
       }
       console.log(`  OK ${APPLY ? '(escrito)' : '(dry-run, no escrito)'} (${meta.width}x${meta.height}) -> ${outPath}`)
+      // Pausa corta entre descargas (además del retry/backoff en 429) para
+      // no golpear a Wikimedia con ráfagas cuando el manifest crezca a
+      // decenas/cientos de entradas.
+      await sleep(400)
       ok++
     } catch (err) {
       console.error(`  FALLO ${category}/${slug}: ${err.message}`)
