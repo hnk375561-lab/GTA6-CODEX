@@ -1,0 +1,14 @@
+[
+  {
+    "category": "vehiculos",
+    "slug": "aprilia-rsv4",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Aprilia_RSV4_RF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "error": "HTTP 429 Too many requests (f061ab2)"
+  },
+  {
+    "category": "vehiculos",
+    "slug": "ktm-duke-390",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Moscow%2C_KTM_Duke_390_motorcycle_September_2024_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "error": "HTTP 429 Too many requests (f061ab2)"
+  }
+]
