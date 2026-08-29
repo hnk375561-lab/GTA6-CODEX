@@ -37,6 +37,16 @@
  *   node scripts/import-real-images.mjs           # dry-run (no escribe nada)
  *   node scripts/import-real-images.mjs --apply
  *   node scripts/import-real-images.mjs --apply --overwrite
+ *   node scripts/import-real-images.mjs --apply --limit=50
+ *
+ * --limit=N: procesa como máximo N ítems del manifest que todavía NO
+ * tienen archivo local (los ya presentes se siguen contando como SKIP,
+ * como siempre, y no consumen cupo del límite). Pensado para correr el
+ * import en tandas (ver .github/workflows/import-real-images.yml, input
+ * `limit`) en vez de las ~230 imágenes pendientes de una sola corrida,
+ * así cada tanda es más fácil de auditar y un fallo de red/rate-limit
+ * a mitad de camino no obliga a repetir todo desde cero — la próxima
+ * corrida retoma donde quedó, porque los ya escritos se saltean.
  *
  * FORMATO de real-images-manifest.json (array plano):
  *   [
@@ -59,6 +69,13 @@ const OUT_DIR = path.join(ROOT, 'public', 'images', 'entities')
 
 const APPLY = process.argv.includes('--apply')
 const OVERWRITE = process.argv.includes('--overwrite')
+
+const limitArg = process.argv.find((a) => a.startsWith('--limit='))
+const LIMIT = limitArg ? Number(limitArg.slice('--limit='.length)) : null
+if (limitArg && (!Number.isFinite(LIMIT) || LIMIT <= 0)) {
+  console.error(`--limit inválido: ${limitArg}`)
+  process.exit(1)
+}
 
 // Mismo piso que scripts/generate-manifest-from-commons.mjs — ver ahí el
 // razonamiento de por qué exigir ambos lados en vez de solo el área.
@@ -127,6 +144,7 @@ async function main() {
   let ok = 0
   let skipped = 0
   let failed = 0
+  let attempted = 0
   const errors = []
   const skippedTooSmall = []
 
@@ -144,6 +162,12 @@ async function main() {
       skipped++
       continue
     }
+
+    if (LIMIT !== null && attempted >= LIMIT) {
+      console.log(`LIMITE alcanzado (--limit=${LIMIT}), quedan pendientes para la próxima tanda: ${category}/${slug} y siguientes`)
+      break
+    }
+    attempted++
 
     try {
       console.log(`Descargando ${category}/${slug} <- ${sourceUrl}`)
@@ -185,7 +209,18 @@ async function main() {
     }
   }
 
-  console.log(`\n== Resumen == OK=${ok} SKIP=${skipped} FAIL=${failed} (modo: ${APPLY ? 'apply' : 'dry-run'})`)
+  const pendingForNextBatch = manifest.filter((item) => {
+    if (!item.sourceUrl) return false
+    const outPath = path.join(OUT_DIR, item.category, `${item.slug}.webp`)
+    return !fs.existsSync(outPath)
+  }).length
+
+  console.log(
+    `\n== Resumen == OK=${ok} SKIP=${skipped} FAIL=${failed}${LIMIT !== null ? ` LIMIT=${LIMIT}` : ''} (modo: ${APPLY ? 'apply' : 'dry-run'})`
+  )
+  if (LIMIT !== null) {
+    console.log(`  Pendientes para la próxima tanda: ${pendingForNextBatch}`)
+  }
   if (skippedTooSmall.length > 0) {
     console.log(`  De los SKIP, ${skippedTooSmall.length} fueron por no cumplir el piso de 2K (ver detalle abajo).`)
   }
