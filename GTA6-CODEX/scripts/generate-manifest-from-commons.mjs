@@ -24,6 +24,24 @@
  * encontró nada, para resolverlos aparte (kit de prensa oficial con
  * permiso, banco de fotos pago, o ilustración).
  *
+ * REQUISITO DE RESOLUCIÓN (agregado): además de la licencia, cada
+ * candidato tiene que cumplir un piso de "2K" antes de entrar al
+ * manifest — ver MIN_LONG_SIDE/MIN_SHORT_SIDE abajo. Si Commons solo
+ * tiene una foto con licencia libre pero por debajo de ese piso, el
+ * vehículo queda en `notFound` igual que si no hubiera nada: nunca se
+ * hace upscale ni se acepta una imagen de menor resolución solo para
+ * completar el listado.
+ *
+ * MÚLTIPLES PASADAS: `findBestImageFor` ya prueba varias variantes de
+ * query por vehículo (marca+modelo, modelo solo, modelo+"car"). El
+ * cache en disco (.commons-image-cache.json) permite además correr
+ * este script varias veces sin re-consultar lo ya resuelto — si en una
+ * corrida algo quedó en notFound, alcanza con borrar esa entrada del
+ * cache (o correr con --retry-notfound) para reintentarlo en la
+ * siguiente pasada, por ejemplo después de ajustar manualmente el
+ * `title`/`manufacturer` de una ficha si la búsqueda no encontraba nada
+ * por un nombre poco común.
+ *
  * Requiere salida a internet real (api.wikimedia.org / commons.wikimedia.org),
  * por eso está pensado para correr en GitHub Actions o en tu máquina,
  * no en el sandbox de una sesión de Claude.
@@ -31,6 +49,9 @@
  * USO:
  *   node scripts/generate-manifest-from-commons.mjs           (dry-run, imprime resultado)
  *   node scripts/generate-manifest-from-commons.mjs --write   (escribe real-images-manifest.json)
+ *   node scripts/generate-manifest-from-commons.mjs --write --retry-notfound
+ *                                                     (además reintenta lo que quedó sin resultado
+ *                                                      en corridas previas, en vez de respetar el cache)
  * ============================================================
  */
 
@@ -45,7 +66,25 @@ const MANIFEST_PATH = path.join(ROOT, 'real-images-manifest.json')
 const CACHE_PATH = path.join(ROOT, '.commons-image-cache.json')
 
 const WRITE = process.argv.includes('--write')
+const RETRY_NOTFOUND = process.argv.includes('--retry-notfound')
 const COMMONS_API = 'https://commons.wikimedia.org/w/api.php'
+
+// Piso mínimo de resolución ("2K"). Se exige en ambos lados para cubrir
+// tanto orientación horizontal como vertical:
+//   - lado mayor >= 2560px (ej. 2560x1440, 3000x2000, 3840x2160)
+//   - lado menor >= 1440px (descarta paisajes anchos pero muy bajos, tipo
+//     3000x900, que no son realmente "2K" en el sentido que pide el sitio)
+// Nunca se hace upscale para llegar a este piso: si la fuente no lo
+// cumple de origen, el candidato se descarta directamente.
+const MIN_LONG_SIDE = 2560
+const MIN_SHORT_SIDE = 1440
+
+function meetsResolutionFloor(width, height) {
+  if (!width || !height) return false
+  const long = Math.max(width, height)
+  const short = Math.min(width, height)
+  return long >= MIN_LONG_SIDE && short >= MIN_SHORT_SIDE
+}
 
 // Licencias que consideramos seguras para uso comercial. CC-BY / CC-BY-SA
 // exigen atribución (por eso guardamos `author` y `licenseShortName` en
@@ -111,9 +150,20 @@ function extractLicenseInfo(page) {
 }
 
 async function findBestImageFor(vehicle) {
-  // Probamos primero con marca + modelo completo, y si no hay nada
-  // aceptable, con una query más amplia (solo el título).
-  const queries = [`${vehicle.manufacturer ?? ''} ${vehicle.title}`.trim(), vehicle.title]
+  // Varias variantes de query, de más específica a más amplia, para
+  // maximizar cobertura sin perder precisión: se prueba la más específica
+  // primero y solo se sigue a la siguiente si esa no dio ningún candidato
+  // con licencia libre Y resolución >= piso mínimo.
+  const manufacturer = (vehicle.manufacturer ?? '').trim()
+  const title = (vehicle.title ?? '').trim()
+  const queries = [
+    `${manufacturer} ${title}`.trim(),
+    `${manufacturer} ${title} car`.trim(),
+    title,
+    `${title} automobile`.trim(),
+  ].filter((q, i, arr) => q && arr.indexOf(q) === i) // sin duplicados/vacíos
+
+  let sawLicensedButTooSmall = false
 
   for (const query of queries) {
     let pages
@@ -124,18 +174,22 @@ async function findBestImageFor(vehicle) {
       continue
     }
 
+    const licensed = pages.map(extractLicenseInfo).filter((info) => info && isAcceptableLicense(info.licenseShortName))
+
     // Preferimos imágenes de mayor resolución entre las que tengan
-    // licencia aceptable.
-    const candidates = pages
-      .map(extractLicenseInfo)
-      .filter((info) => info && isAcceptableLicense(info.licenseShortName))
+    // licencia aceptable Y cumplan el piso de 2K.
+    const candidates = licensed
+      .filter((info) => meetsResolutionFloor(info.width, info.height))
       .sort((a, b) => (b.width || 0) * (b.height || 0) - (a.width || 0) * (a.height || 0))
 
     if (candidates.length > 0) {
-      return { ...candidates[0], matchedQuery: query }
+      return { ...candidates[0], matchedQuery: query, status: 'ok' }
     }
+
+    if (licensed.length > 0) sawLicensedButTooSmall = true
   }
-  return null
+
+  return { status: sawLicensedButTooSmall ? 'too-small' : 'no-license' }
 }
 
 async function main() {
@@ -156,7 +210,8 @@ async function main() {
   }
 
   const manifest = []
-  const notFound = []
+  const notFoundNoLicense = []
+  const notFoundTooSmall = []
   let fromCache = 0
 
   for (const file of files) {
@@ -165,7 +220,12 @@ async function main() {
     const slug = vehicle.slug
 
     let result = cache[slug]
-    if (result === undefined) {
+    // Si --retry-notfound está activo, ignoramos el cache para cualquier
+    // entrada que en una corrida previa haya quedado sin resultado (así
+    // una pasada nueva puede encontrar algo que la anterior no encontró,
+    // sin tener que re-consultar TODO el catálogo de nuevo).
+    const cachedWasMiss = result && result.status !== 'ok'
+    if (result === undefined || (RETRY_NOTFOUND && cachedWasMiss)) {
       result = await findBestImageFor(vehicle)
       cache[slug] = result
       // Pequeña pausa para no golpear la API de Commons demasiado rápido.
@@ -174,7 +234,7 @@ async function main() {
       fromCache++
     }
 
-    if (result) {
+    if (result.status === 'ok') {
       manifest.push({
         category: 'vehiculos',
         slug,
@@ -183,24 +243,42 @@ async function main() {
         license: result.licenseShortName,
         attribution: result.artist,
         attributionUrl: result.descriptionUrl,
-        note: `Encontrado con query "${result.matchedQuery}". Verificar manualmente que la foto corresponde al modelo/año correcto antes de publicar.`,
+        resolution: `${result.width}x${result.height}`,
+        note: `Encontrado con query "${result.matchedQuery}". Resolución ${result.width}x${result.height} (>= piso 2K). Verificar manualmente que la foto corresponde al modelo/año correcto antes de publicar.`,
       })
       console.log(`✓ ${slug} → ${result.licenseShortName} (${result.width}x${result.height})`)
+    } else if (result.status === 'too-small') {
+      notFoundTooSmall.push(slug)
+      console.log(`✗ ${slug} — había foto con licencia libre pero por debajo de 2K, descartada (sin upscale)`)
     } else {
-      notFound.push(slug)
+      notFoundNoLicense.push(slug)
       console.log(`✗ ${slug} — sin resultado con licencia libre aceptable`)
     }
   }
 
   fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2))
 
+  const notFoundTotal = notFoundNoLicense.length + notFoundTooSmall.length
   console.log(`\n============================================================`)
-  console.log(`Encontradas: ${manifest.length}/${files.length}`)
-  console.log(`Sin resultado: ${notFound.length}/${files.length}`)
+  console.log(`Encontradas (>= 2K, licencia libre): ${manifest.length}/${files.length}`)
+  console.log(`Sin resultado: ${notFoundTotal}/${files.length}`)
+  console.log(`  - sin licencia libre encontrada: ${notFoundNoLicense.length}`)
+  console.log(`  - licencia libre pero < 2K (descartada, no se hizo upscale): ${notFoundTooSmall.length}`)
   if (fromCache > 0) console.log(`(${fromCache} tomadas de cache local, no se volvió a consultar la API)`)
-  if (notFound.length > 0) {
-    console.log(`\nVehículos sin foto libre encontrada (resolver aparte):`)
-    notFound.forEach((s) => console.log(`  - ${s}`))
+  if (notFoundTotal > 0) {
+    console.log(`\nVehículos sin foto que cumpla licencia + 2K (resolver aparte):`)
+    if (notFoundNoLicense.length > 0) {
+      console.log(`  Sin licencia libre:`)
+      notFoundNoLicense.forEach((s) => console.log(`    - ${s}`))
+    }
+    if (notFoundTooSmall.length > 0) {
+      console.log(`  Con licencia pero < 2K:`)
+      notFoundTooSmall.forEach((s) => console.log(`    - ${s}`))
+    }
+    console.log(
+      `\nPara reintentar estos en otra pasada (por si Commons suma contenido nuevo, o tras ajustar el título/manufacturer de la ficha):`
+    )
+    console.log(`  node scripts/generate-manifest-from-commons.mjs --write --retry-notfound`)
   }
 
   if (WRITE) {
