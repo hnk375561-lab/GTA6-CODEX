@@ -421,10 +421,10 @@ function GalleryLightbox({
       )}
 
       <div
-        className="gallery-lightbox-panel glass-surface relative z-10 grid max-h-[90vh] w-full max-w-7xl grid-cols-1 overflow-hidden rounded-2xl border border-auto-border shadow-auto-xl md:grid-cols-[1.6fr_1fr]"
+        className="gallery-lightbox-panel glass-surface relative z-10 grid max-h-[94vh] w-full max-w-[1900px] grid-cols-1 overflow-hidden rounded-2xl border border-auto-border shadow-auto-xl md:grid-cols-[minmax(0,1fr)_320px]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative min-h-[55vh] bg-auto-darker md:min-h-[80vh]">
+        <div className="relative min-h-[60vh] bg-auto-darker md:min-h-[88vh]">
           {item.kind === 'video' && item.videoEmbedId ? (
             <div className="flex h-full w-full items-center p-4">
               <YouTubeEmbed embedId={item.videoEmbedId} title={item.title} thumbnailSrc={item.src} autoLoad />
@@ -439,14 +439,14 @@ function GalleryLightbox({
               resetKey={item.id}
               src={item.src}
               alt={item.alt}
-              sizes="(min-width: 1920px) 1800px, (min-width: 1536px) 1400px, (min-width: 1280px) 1200px, (min-width: 1024px) 1000px, (min-width: 768px) 800px, 100vw"
+              sizes="(min-width: 1920px) 1580px, (min-width: 1280px) 82vw, 100vw"
               priority
               quality={100}
             />
           )}
         </div>
 
-        <div className="flex max-h-[55vh] flex-col overflow-y-auto p-6 md:max-h-[80vh]">
+        <div className="flex max-h-[55vh] flex-col overflow-y-auto p-6 md:max-h-[88vh]">
           <div className="mb-3 flex flex-wrap items-center gap-1.5">
             {item.status && (
               <Badge variant="status" status={item.status}>

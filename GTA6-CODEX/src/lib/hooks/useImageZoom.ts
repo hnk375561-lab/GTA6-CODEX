@@ -2,9 +2,14 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
+// Techo subido de 4x a 6x (29 ago 2026): las fotos fuente llegan a
+// 3840x2160 real (ver deviceSizes en next.config.js, subido en el mismo
+// cambio) — con el techo viejo de 4x no se podía llegar a ver el detalle
+// real que la foto sí tiene, se topaba con el límite del zoom antes que
+// con el de resolución de la imagen.
 const MIN_SCALE = 1
-const MAX_SCALE = 4
-const DOUBLE_CLICK_SCALE = 2.4
+const MAX_SCALE = 6
+const DOUBLE_CLICK_SCALE = 3
 const BUTTON_ZOOM_STEP = 1
 // Negativo porque deltaY > 0 significa "rueda hacia abajo" = alejar.
 const WHEEL_SENSITIVITY = -0.0022

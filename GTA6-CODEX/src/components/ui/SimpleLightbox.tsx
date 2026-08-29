@@ -84,13 +84,13 @@ export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleL
           </button>
 
           <div
-            className="gallery-lightbox-panel relative z-10 h-[85vh] w-full max-w-6xl"
+            className="gallery-lightbox-panel relative z-10 h-[92vh] w-full max-w-[1800px]"
             onClick={(e) => e.stopPropagation()}
           >
             <ZoomableImage
               src={src}
               alt={alt}
-              sizes="(min-width: 1280px) 1200px, 95vw"
+              sizes="(min-width: 1920px) 1800px, (min-width: 1280px) 90vw, 95vw"
               quality={100}
               priority
             />

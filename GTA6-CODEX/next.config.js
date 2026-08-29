@@ -18,7 +18,12 @@ const nextConfig = {
     // MediaCarousel, CompareExplorer, VehicleCompareSheet, SimpleLightbox).
     qualities: [75, 90, 92, 94, 95, 97, 100],
     minimumCacheTTL: 31536000,
-    deviceSizes: [320, 640, 1024, 1440, 1920, 2560],
+    // Techo subido de 2560 a 3840 (29 ago 2026): las fotos de vehículos ya
+    // se importan hasta 3840x2160 real (ver import-real-images.mjs), pero
+    // next/image nunca podía servir más de 2560px de ancho aunque el
+    // lightbox lo pidiera — quien hacía zoom en el visor terminaba viendo
+    // una versión recortada en vez del detalle real de la foto original.
+    deviceSizes: [320, 640, 1024, 1440, 1920, 2560, 3840],
     imageSizes: [256, 384, 512, 640, 750, 828, 1024],
   },
   headers: async () => {
