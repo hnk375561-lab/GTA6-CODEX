@@ -44,7 +44,8 @@ jobs:
         run: |
           git config user.name "gta6-codex-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add public/images/entities .ci-debug 2>/dev/null || true
+          git add public/images/entities 2>/dev/null || true
+          git add -f .ci-debug 2>/dev/null || true
           git diff --cached --quiet && echo "Nada para commitear" && exit 0
           git commit -m "feat(images): importa imagenes reales verificadas desde real-images-manifest.json [OK=${IMPORT_OK:-?} FAIL=${IMPORT_FAIL:-?}]"
           git push origin main
