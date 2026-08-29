@@ -111,6 +111,17 @@
   },
   {
     "category": "vehiculos",
+    "slug": "bajaj-rouser-ns200",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Bj_Pulsar_NS_200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceType": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "EEIM",
+    "attributionUrl": "https://commons.wikimedia.org/wiki/File:Bj_Pulsar_NS_200.jpg",
+    "resolution": "5632x4224",
+    "note": "Encontrado con query \"Bajaj Bajaj Pulsar NS200\". Resolución 5632x4224 (>= piso 2K). Verificar manualmente que la foto corresponde al modelo/año correcto antes de publicar."
+  },
+  {
+    "category": "vehiculos",
     "slug": "bentley-continental-gt",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Bentley_Continental_GT_V8_S%2C_Techno-Classica_2018%2C_Essen_%28IMG_9623%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "sourceType": "wikimedia-commons",
@@ -1021,6 +1032,17 @@
     "attributionUrl": "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_5_Robotaxi_IAA_2021_1X7A0002.jpg",
     "resolution": "5435x3626",
     "note": "Encontrado con query \"Hyundai Hyundai Ioniq 5\". Resolución 5435x3626 (>= piso 2K). Verificar manualmente que la foto corresponde al modelo/año correcto antes de publicar."
+  },
+  {
+    "category": "vehiculos",
+    "slug": "hyundai-kona-electric",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Geneva_International_Motor_Show_2018%2C_Le_Grand-Saconnex_%281X7A1439%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceType": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Matti Blume",
+    "attributionUrl": "https://commons.wikimedia.org/wiki/File:Geneva_International_Motor_Show_2018,_Le_Grand-Saconnex_(1X7A1439).jpg",
+    "resolution": "6720x4480",
+    "note": "Encontrado con query \"Hyundai Hyundai Kona Electric\". Resolución 6720x4480 (>= piso 2K). Verificar manualmente que la foto corresponde al modelo/año correcto antes de publicar."
   },
   {
     "category": "vehiculos",

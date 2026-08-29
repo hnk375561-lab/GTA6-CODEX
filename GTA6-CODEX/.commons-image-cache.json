@@ -2727,5 +2727,25 @@
         "sampleSizes": []
       }
     ]
+  },
+  "bajaj-rouser-ns200": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Bj_Pulsar_NS_200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Bj_Pulsar_NS_200.jpg",
+    "licenseShortName": "CC BY-SA 4.0",
+    "artist": "EEIM",
+    "width": 5632,
+    "height": 4224,
+    "matchedQuery": "Bajaj Bajaj Pulsar NS200",
+    "status": "ok"
+  },
+  "hyundai-kona-electric": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Geneva_International_Motor_Show_2018%2C_Le_Grand-Saconnex_%281X7A1439%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Geneva_International_Motor_Show_2018,_Le_Grand-Saconnex_(1X7A1439).jpg",
+    "licenseShortName": "CC BY-SA 4.0",
+    "artist": "Matti Blume",
+    "width": 6720,
+    "height": 4480,
+    "matchedQuery": "Hyundai Hyundai Kona Electric",
+    "status": "ok"
   }
 }
