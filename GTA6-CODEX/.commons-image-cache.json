@@ -99,43 +99,6 @@
     "matchedQuery": "BAIC BAIC X55",
     "status": "ok"
   },
-  "bajaj-rouser-ns200": {
-    "status": "no-license",
-    "debug": [
-      {
-        "query": "Bajaj Bajaj Rouser NS200",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Bajaj Bajaj Rouser NS200 car",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Bajaj Rouser NS200",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Bajaj Rouser NS200 automobile",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      }
-    ]
-  },
   "bentley-continental-gt": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Bentley_Continental_GT_V8_S%2C_Techno-Classica_2018%2C_Essen_%28IMG_9623%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Bentley_Continental_GT_V8_S,_Techno-Classica_2018,_Essen_(IMG_9623).jpg",
@@ -1116,43 +1079,6 @@
     "height": 3626,
     "matchedQuery": "Hyundai Hyundai Ioniq 5",
     "status": "ok"
-  },
-  "hyundai-kona-electric": {
-    "status": "no-license",
-    "debug": [
-      {
-        "query": "Hyundai Hyundai Kona Eléctrico",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Hyundai Hyundai Kona Eléctrico car",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Hyundai Kona Eléctrico",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      },
-      {
-        "query": "Hyundai Kona Eléctrico automobile",
-        "pagesReturned": 0,
-        "infosExtracted": 0,
-        "licensesSeen": [],
-        "licensedCount": 0,
-        "sampleSizes": []
-      }
-    ]
   },
   "hyundai-santa-fe": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Hyundai_Santa_Fe%2C_GIMS_2018%2C_Le_Grand-Saconnex_%281X7A1735%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
