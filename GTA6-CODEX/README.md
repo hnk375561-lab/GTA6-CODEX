@@ -94,7 +94,7 @@ para ese quiebre futuro entre "cobertura global" y "detalle por país".
 |------|------------|
 | Frontend | Next.js 15 + React 19 + TypeScript 5 |
 | Estilos | Tailwind CSS 3 + plugin Typography |
-| Fondo 3D del hero | Three.js (r185) |
+| Fondo animado del hero | Canvas 2D nativo (sin dependencias — reemplazó a Three.js) |
 | Validación de datos | Zod 4 |
 | Búsqueda | Fuse.js 7 (fuzzy search) |
 | Mapa (pausado, listo para reactivar) | Leaflet + clustering |

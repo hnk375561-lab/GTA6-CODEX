@@ -376,6 +376,11 @@ async function main() {
   console.log(`  - sin licencia libre encontrada: ${notFoundNoLicense.length}`)
   console.log(`  - licencia libre pero < 2K (descartada, no se hizo upscale): ${notFoundTooSmall.length}`)
   if (fromCache > 0) console.log(`(${fromCache} tomadas de cache local, no se volvió a consultar la API)`)
+  if (timeBudgetExceeded) {
+    console.log(
+      `⏱ Corrida cortada por presupuesto de tiempo antes de procesar los ${files.length} vehículos — correr de nuevo para continuar con el resto (retoma desde el cache, sin repetir trabajo).`
+    )
+  }
   if (notFoundTotal > 0) {
     console.log(`\nVehículos sin foto que cumpla licencia + 2K (resolver aparte):`)
     if (notFoundNoLicense.length > 0) {
