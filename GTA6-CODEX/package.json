@@ -18,6 +18,8 @@
     "check:evidence-links": "node scripts/check-evidence-links.mjs",
     "verify:relations": "node scripts/verify-relations-integrity.mjs",
     "verify:relations:selftest": "node scripts/verify-relations-integrity.mjs --self-test",
+    "normalize:generacion": "node scripts/normalize-generacion.mjs",
+    "normalize:generacion:selftest": "node scripts/normalize-generacion.mjs --self-test",
     "test": "vitest run",
     "verify:tailwind": "node scripts/verify-tailwind-config.mjs",
     "verify:reserved-keys": "node scripts/verify-reserved-entity-keys.mjs",

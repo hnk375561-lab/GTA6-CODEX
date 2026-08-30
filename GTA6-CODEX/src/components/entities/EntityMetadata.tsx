@@ -11,12 +11,19 @@ import { StatBar } from '@/components/entities/StatBar'
  *  la versión extendida de esas mismas quick-facts, así que ahora se
  *  ven como la misma pieza tipográfica en vez de dos sistemas distintos
  *  (Fase "Expediente", punto 2). */
-function Field({ label, value }: { label: string; value?: string | null }) {
+function Field({ label, value, badge }: { label: string; value?: string | null; badge?: string | null }) {
   if (!value) return null
   return (
     <div className="flex items-baseline justify-between gap-4">
       <dt className="font-mono text-[10px] uppercase tracking-wide text-auto-text-tertiary">{label}</dt>
-      <dd className="truncate text-right font-mono text-xs font-medium tabular-nums text-auto-text">{value}</dd>
+      <dd className="flex items-baseline justify-end gap-1.5 truncate text-right font-mono text-xs font-medium tabular-nums text-auto-text">
+        {badge && (
+          <span className="rounded-sm bg-auto-accent/15 px-1 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-auto-accent">
+            {badge}
+          </span>
+        )}
+        {value}
+      </dd>
     </div>
   )
 }
@@ -180,7 +187,18 @@ function VehicleMetadata({ entity }: { entity: Vehicle }) {
         <dl className="space-y-2 border-y border-dashed border-auto-border-strong py-2.5">
           <Field label="Fabricante" value={entity.manufacturer} />
           <Field label="Clase" value={entity.class} />
-          <Field label="Generación" value={entity.generacion} />
+          <Field
+            label="Generación"
+            value={entity.generacion}
+            // `generacionInfo.facelift` viene de un parser que extrae señal
+            // estructurada de un campo de texto libre e inconsistente (ver
+            // scripts/normalize-generacion.mjs). El string original
+            // (`entity.generacion`) casi siempre ya menciona "facelift" en
+            // alguna parte de la oración, pero mezclado con el resto del
+            // texto — este badge lo hace escaneable de un vistazo sin
+            // obligar a leer la frase completa.
+            badge={entity.generacionInfo?.facelift ? 'Facelift' : null}
+          />
           <Field label="Año de lanzamiento" value={entity.anoLanzamiento ? String(entity.anoLanzamiento) : undefined} />
           <Field label="Producción" value={entity.anoProduccion} />
           <Field label="Precio" value={entity.price} />

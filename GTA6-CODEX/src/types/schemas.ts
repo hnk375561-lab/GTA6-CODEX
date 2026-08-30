@@ -168,6 +168,27 @@ export const VehicleSchema = BaseEntitySchema.extend({
   baul: z.union([z.number(), z.string()]).nullable().optional(),
   maleteroMin: z.union([z.number(), z.string()]).nullable().optional(),
   generacion: z.string().nullable().optional(),
+  // `generacion` es texto 100% libre e inconsistente entre las 250 fichas
+  // (números ordinales en palabra, números romanos, códigos de chasis
+  // sueltos, rangos de años, menciones de facelift, todo mezclado sin
+  // formato fijo — ver auditoría "AutoFicha: aprovechamiento de datos",
+  // oportunidad P2 #9). `generacionInfo` es un campo aditivo, poblado por
+  // `scripts/normalize-generacion.mjs`, que extrae lo que se puede inferir
+  // con confianza y deja cada subcampo en `null` cuando no hay certeza —
+  // `generacion` (el string original) nunca se borra ni se reemplaza.
+  generacionInfo: z
+    .object({
+      raw: z.string(),
+      numero: z.number().nullable(),
+      codigoChasis: z.string().nullable(),
+      anoInicio: z.number().nullable(),
+      anoFin: z.number().nullable(),
+      rangoAbierto: z.boolean(),
+      facelift: z.boolean(),
+      faceliftAno: z.number().nullable(),
+    })
+    .nullable()
+    .optional(),
   anoLanzamiento: z.union([z.number(), z.string()]).nullable().optional(),
   colores: z.array(z.string()).nullable().optional(),
 
