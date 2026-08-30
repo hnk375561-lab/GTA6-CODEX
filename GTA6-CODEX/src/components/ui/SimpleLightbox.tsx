@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import { ZoomableImage } from '@/components/ui/ZoomableImage'
 import { useModalFocus } from '@/lib/hooks/useModalFocus'
 import { cn } from '@/lib/utils'
@@ -25,17 +26,21 @@ interface SimpleLightboxProps {
  * esos casos (EntityCard, MediaCarousel con href) el clic ya navega y no
  * corresponde superponer un lightbox.
  */
-/** Ancho/alto máximo del panel del visor: mismo criterio que antes
- *  (92% del alto de pantalla, 95% del ancho, tope de 1800px), pero ahora
- *  son solo COTAS — el tamaño final sale de `panelSize` respetando el
- *  aspect ratio real de la foto. */
-const MAX_HEIGHT_VH = 0.92
-const MAX_WIDTH_VW = 0.95
-const MAX_WIDTH_PX = 1800
+/** Ancho/alto máximo del panel del visor: son COTAS — el tamaño final
+ *  sale de `panelSize` respetando el aspect ratio real de la foto, para
+ *  que ocupe el máximo posible de pantalla sin dejar espacio muerto. */
+const MAX_HEIGHT_VH = 0.95
+const MAX_WIDTH_VW = 0.97
+const MAX_WIDTH_PX = 1900
 
 export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleLightboxProps) {
   const [open, setOpen] = useState(false)
   const dialogRef = useRef<HTMLDivElement>(null)
+  // El portal (más abajo) solo puede usar `document.body` una vez montado
+  // en el cliente — en SSR no existe. Sin este flag, el primer render en
+  // el navegador no coincidiría con el del servidor (0 vs 1 nodos) y React
+  // tira warning de hydration mismatch.
+  const [mounted, setMounted] = useState(false)
   // Dimensiones reales de la foto (se miden al abrir) y tamaño de
   // viewport (se recalcula en resize/rotación) — de acá sale el tamaño
   // final del panel. Ver comentario largo en el render de abajo.
@@ -43,6 +48,10 @@ export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleL
   const [viewport, setViewport] = useState<{ w: number; h: number } | null>(null)
 
   const close = useCallback(() => setOpen(false), [])
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     if (!open) return
@@ -115,6 +124,57 @@ export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleL
   // sigue a cargo de Escape y el scroll lock.
   useModalFocus(open, dialogRef)
 
+  const lightbox = open && (
+    <div
+      ref={dialogRef}
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Visor de imagen: ${alt}`}
+      tabIndex={-1}
+      className="gallery-lightbox fixed inset-0 z-[100] flex items-center justify-center p-2 sm:p-6"
+      onClick={close}
+    >
+      <div className="gallery-lightbox-backdrop absolute inset-0" aria-hidden="true" />
+
+      <button
+        type="button"
+        onClick={close}
+        aria-label="Cerrar visor"
+        className="glass-surface absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-auto-border text-auto-text transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:right-6 sm:top-6"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+
+      {/*
+        Mientras no midamos la foto (primer frame) se usa el tamaño fijo
+        de siempre como fallback vía className, para que no haya un
+        "salto" visible sin nada dibujado. Ni bien `panelSize` está
+        listo, el style inline (que siempre gana sobre las clases) lo
+        reemplaza por el tamaño real, ajustado al aspect ratio real de
+        la foto.
+      */}
+      <div
+        className="gallery-lightbox-panel relative z-10 h-[95vh] w-full max-w-[1900px]"
+        style={
+          panelSize
+            ? { width: panelSize.width, height: panelSize.height, maxWidth: '97vw', maxHeight: '95vh' }
+            : undefined
+        }
+        onClick={(e) => e.stopPropagation()}
+      >
+        <ZoomableImage
+          src={src}
+          alt={alt}
+          sizes="(min-width: 1920px) 1800px, (min-width: 1280px) 90vw, 97vw"
+          quality={100}
+          priority
+        />
+      </div>
+    </div>
+  )
+
   return (
     <>
       <button
@@ -126,52 +186,22 @@ export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleL
         {children}
       </button>
 
-      {open && (
-        <div
-          ref={dialogRef}
-          role="dialog"
-          aria-modal="true"
-          aria-label={`Visor de imagen: ${alt}`}
-          tabIndex={-1}
-          className="gallery-lightbox fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-8"
-          onClick={close}
-        >
-          <div className="gallery-lightbox-backdrop absolute inset-0" aria-hidden="true" />
-
-          <button
-            type="button"
-            onClick={close}
-            aria-label="Cerrar visor"
-            className="glass-surface absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-auto-border text-auto-text transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:right-6 sm:top-6"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-              <path d="M18 6 6 18M6 6l12 12" />
-            </svg>
-          </button>
-
-          {/*
-            Mientras no midamos la foto (primer frame) se usa el tamaño
-            fijo de siempre como fallback vía className, para que no haya
-            un "salto" visible sin nada dibujado. Ni bien `panelSize` está
-            listo, el style inline (que siempre gana sobre las clases) lo
-            reemplaza por el tamaño real, ajustado al aspect ratio real de
-            la foto.
-          */}
-          <div
-            className="gallery-lightbox-panel relative z-10 h-[92vh] w-full max-w-[1800px]"
-            style={panelSize ? { width: panelSize.width, height: panelSize.height, maxWidth: '95vw', maxHeight: '92vh' } : undefined}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <ZoomableImage
-              src={src}
-              alt={alt}
-              sizes="(min-width: 1920px) 1800px, (min-width: 1280px) 90vw, 95vw"
-              quality={100}
-              priority
-            />
-          </div>
-        </div>
-      )}
+      {/*
+        Portal a document.body: el trigger (botón de arriba) vive dentro
+        del árbol normal de la página, casi siempre envuelto en <Reveal>
+        (la animación de aparición al scrollear). <Reveal> le aplica
+        `transform: translate(...) scale(...)` a su wrapper — y CUALQUIER
+        transform en un ancestro, aunque termine en la identidad
+        (`scale(1)`), convierte a ese ancestro en el "containing block"
+        de sus descendientes `position: fixed`. Sin este portal, el modal
+        (que es fixed) quedaba encerrado dentro de la cajita del <Reveal>
+        en vez de cubrir la pantalla completa — por eso se veía "chico" y
+        con contenido de la página asomando al costado, pese a que el
+        tamaño interno del panel ya era correcto. Portalizando a <body>
+        el modal escapa de ese árbol transformado y "fixed" vuelve a ser
+        relativo al viewport real, como corresponde.
+      */}
+      {mounted && lightbox ? createPortal(lightbox, document.body) : null}
     </>
   )
 }
