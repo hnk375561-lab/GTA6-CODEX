@@ -59,7 +59,9 @@ export default async function SearchPage({
     <section className="py-12 sm:py-16">
       <div className="container-max">
         <div className="mb-8">
-          <h1 className="mb-2 text-4xl font-bold text-auto-text">Buscar</h1>
+          <h1 className="mb-2 font-display text-2xl font-bold text-auto-text sm:text-3xl">
+            Buscá <span className="text-gradient-vice">en el expediente</span>
+          </h1>
           <Reveal delay={100}>
             <p className="text-auto-text-secondary">
               Encontrá cualquier personaje, vehículo, ubicación o misión documentada.
