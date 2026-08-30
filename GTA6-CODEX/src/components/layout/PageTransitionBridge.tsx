@@ -2,16 +2,13 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import { webglSceneBus } from '@/lib/webgl/scene-bus'
 
 /**
  * Capítulo 6.1 + 6.2 — Transiciones entre páginas (ver
- * biblia-scroll-rockstar.txt). Antes de esto, `NavigationTransition` en
- * `scene-bus.ts` era exactamente lo que su propio comentario decía: "canal
- * listo, nadie lo llama". Este es ese bridge — hermano de
- * `SceneAmbientBridge`/`ScrollTelemetryBridge`, mismo patrón (componente sin
- * salida visual propia más un overlay puramente decorativo, se conecta a
- * `usePathname` de Next.js como pedía el punto 6.1).
+ * biblia-scroll-rockstar.txt). Maneja su propio estado de React (`phase`,
+ * `frozenFrame`) de punta a punta; no depende de `webglSceneBus` para nada
+ * de esto — el bus quedó reservado a foco de sección/scroll/hover, que sí
+ * consume el motor de fondo.
  *
  * 6.1 — conectar el canal a la navegación real
  * Next.js App Router no expone un evento "la navegación está por
@@ -120,7 +117,6 @@ export function PageTransitionBridge() {
       transitionInProgressRef.current = true
       setFrozenFrame(captureFrozenFrame())
       setPhase('exiting')
-      webglSceneBus.setNavigationTransition(true, url.pathname)
 
       window.setTimeout(() => {
         router.push(targetHref)
@@ -140,8 +136,6 @@ export function PageTransitionBridge() {
   useEffect(() => {
     if (previousPathnameRef.current === pathname) return
     previousPathnameRef.current = pathname
-
-    webglSceneBus.setNavigationTransition(false, pathname)
 
     if (reducedMotionRef.current) {
       setPhase('idle')

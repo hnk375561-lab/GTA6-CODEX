@@ -46,8 +46,7 @@ import { webglSceneBus } from '@/lib/webgl/scene-bus'
  * `{ sectionId, progress }`. Todo lo demás — profundidad, parallax,
  * iluminación, temperatura de color, partículas, niebla, velocidad ambiental,
  * transiciones, composición cinematográfica — el motor lo *deriva* de ese
- * mood (más `entityAtmosphere`, que publica `EntityAtmosphereBridge`, y
- * `pointerIntent`, que publica `Card`), no lo recibe como un
+ * mood (más `pointerIntent`, que publica `Card`), no lo recibe como un
  * campo aparte por sección. Agregar acá props sueltas para "controlar" esos
  * efectos no tendría ningún destino real en el motor (no hay ningún campo en
  * `SceneFocus` que los reciba) y sería configuración decorativa que miente

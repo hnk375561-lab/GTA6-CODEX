@@ -21,7 +21,6 @@ import { MediaCarousel } from '@/components/media/MediaCarousel'
 import { getMediaForEntity } from '@/lib/media'
 import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
 import { SceneSection } from '@/components/webgl/SceneSection'
-import { EntityAtmosphereBridge } from '@/components/webgl/EntityAtmosphereBridge'
 
 interface PageProps {
   params: Promise<{ entityType: string; slug: string }>
@@ -177,10 +176,6 @@ export default async function EntityPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbLd) }}
       />
-
-      {/* Publica categoría/estado/featured de esta ficha al motor WebGL.
-          No renderiza nada — ver EntityAtmosphereBridge. */}
-      <EntityAtmosphereBridge category={type} status={entity.status} featured={Boolean(entity.featured)} />
 
       {/* Header — el fondo ambiental por categoría (EntityHeaderBackground) se
           mantiene siempre: es identidad visual de bajo costo (CSS/SVG, sin JS).
