@@ -9,11 +9,17 @@ import { EntityType } from '@/types'
  * Enlaces siempre visibles en la barra: la categoría núcleo del sitio
  * (Vehículos) más las secciones transversales que no son un tipo de
  * entidad (Comparar, Galería, Mapa).
+ *
+ * Noticias y Guías (EntityType.NEWS / EntityType.GUIDE) tienen rutas,
+ * tipos y SEO ya construidos, pero 0 contenido real en
+ * src/content/ (ver auditoría "AutoFicha: aprovechamiento de datos",
+ * oportunidad P1 "Noticias/Guías"). Se retiran del nav por ahora para no
+ * llevar a secciones vacías — decisión reversible, no se borra ninguna
+ * ruta ni componente: alcanza con reagregar estas dos líneas cuando haya
+ * contenido real que publicar.
  */
 const NAV_LINKS = [
   { href: `/${EntityType.VEHICLE}`, label: 'Vehículos' },
-  { href: `/${EntityType.NEWS}`, label: 'Noticias' },
-  { href: `/${EntityType.GUIDE}`, label: 'Guías' },
   { href: '/comparar', label: 'Comparar' },
   { href: '/galeria', label: 'Galería' },
   { href: '/mapa', label: 'Mapa' },

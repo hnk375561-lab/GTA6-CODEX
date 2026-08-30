@@ -37,22 +37,10 @@ export function Footer() {
                   Vehículos
                 </Link>
               </li>
-              <li>
-                <Link
-                  href={`/${EntityType.NEWS}`}
-                  className="link-underline text-auto-text-secondary transition-colors hover:text-auto-accent-strong"
-                >
-                  Noticias
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${EntityType.GUIDE}`}
-                  className="link-underline text-auto-text-secondary transition-colors hover:text-auto-accent-strong"
-                >
-                  Guías
-                </Link>
-              </li>
+              {/* Noticias/Guías retirados del footer junto con el nav
+                  (ver Header.tsx): 0 contenido real hoy, decisión
+                  reversible — ver auditoría "AutoFicha: aprovechamiento
+                  de datos". */}
             </ul>
           </div>
 
