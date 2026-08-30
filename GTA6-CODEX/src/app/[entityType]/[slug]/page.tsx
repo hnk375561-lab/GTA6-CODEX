@@ -155,11 +155,20 @@ export default async function EntityPage({ params }: PageProps) {
       </Reveal>
 
       {entity.tags && entity.tags.length > 0 && (
-        <Reveal className="stagger mt-5 flex flex-wrap gap-2" delay={250}>
+        /* Tags = metadata pura (ej. "deportivo", "aston-martin"), no un
+           filtro ni un estado: no ejecutan ninguna acción en esta página.
+           Texto separado por punto medio en vez de una fila de cápsulas
+           — con hasta 5 tags por entidad, cada uno como pill coloreada se
+           leía como una fila de botones de filtro (mismo lenguaje visual
+           que /vehiculos) sin ser interactiva. Ver auditoría de badges/pills. */
+        <Reveal className="stagger mt-5 flex flex-wrap items-center gap-x-2.5 gap-y-1" delay={250}>
           {entity.tags.map((tag) => (
-            <Badge key={tag} variant="tag">
-              {tag}
-            </Badge>
+            <span
+              key={tag}
+              className="text-xs capitalize text-auto-text-tertiary [&:not(:first-child)]:before:mr-2.5 [&:not(:first-child)]:before:text-auto-text-tertiary/50 [&:not(:first-child)]:before:content-['·']"
+            >
+              {tag.replace(/-/g, ' ')}
+            </span>
           ))}
         </Reveal>
       )}

@@ -501,11 +501,14 @@ function GalleryLightbox({
           )}
 
           {item.tags && item.tags.length > 0 && (
-            <div className="mt-5 flex flex-wrap gap-1.5 border-t border-auto-border pt-4">
+            /* Mismo criterio que en la ficha de entidad: tags = metadata,
+               no filtro/estado, así que van como texto separado por punto
+               medio en vez de una fila de pills. */
+            <div className="mt-5 flex flex-wrap items-center gap-x-2.5 gap-y-1 border-t border-auto-border pt-4">
               {item.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-auto-border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-auto-text-secondary"
+                  className="text-xs capitalize text-auto-text-tertiary [&:not(:first-child)]:before:mr-2.5 [&:not(:first-child)]:before:text-auto-text-tertiary/50 [&:not(:first-child)]:before:content-['·']"
                 >
                   {tag}
                 </span>
