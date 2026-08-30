@@ -14,11 +14,11 @@ export const metadata: Metadata = {
  * src/components/map/) modelaba las 5 zonas ficticias de Leonida a partir
  * de datos que ya no existen en el repo (leonida-zones.ts,
  * leonida-map-coordinates.ts — eliminados junto al resto del contenido de
- * GTA6). El componente Leaflet en sí (proyección, clustering, popups) es
- * reutilizable tal cual está para un mapa real (ej. "concesionarias cerca
- * tuyo"), pero necesita datos geográficos reales, no ficticios — por eso
- * queda pausado acá (Fase 5 del plan de migración) en vez de fabricar
- * coordenadas de relleno.
+ * GTA6). El componente en sí también fue eliminado del repo (no solo sus
+ * datos), así que un mapa real (ej. "concesionarias cerca tuyo") requiere
+ * reconstruirlo desde cero con datos geográficos reales — no es una
+ * reactivación inmediata. Queda como stub explícito acá hasta que ese
+ * trabajo se priorice, en vez de fabricar coordenadas de relleno.
  */
 export default function MapaPage() {
   return (
@@ -26,8 +26,7 @@ export default function MapaPage() {
       <Reveal>
         <h1 className="font-display text-3xl font-bold text-auto-text md:text-4xl">Mapa en construcción</h1>
         <p className="mt-4 text-auto-text-secondary">
-          Estamos preparando un mapa de concesionarias y puntos de interés con datos reales. El motor de mapa
-          interactivo (Leaflet) ya está listo — solo falta cargar la geografía real para activarlo.
+          Estamos preparando un mapa de concesionarias y puntos de interés con datos reales.
         </p>
       </Reveal>
     </div>
