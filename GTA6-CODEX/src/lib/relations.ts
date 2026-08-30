@@ -280,6 +280,8 @@ export function getRelationLabel(relation: string): string {
     variant_of: 'Variante de',
     partners_with: 'Asociado con',
     invests_in: 'Invierte en',
+    mismo_fabricante: 'Mismo fabricante',
+    competidor: 'Competidor',
   }
 
   return labels[relation] || relation

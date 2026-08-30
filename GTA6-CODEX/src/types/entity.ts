@@ -68,6 +68,40 @@ export interface BaseEntity {
   image?: ImageProvenance
 }
 
+/** Bloques de especificación técnica "clave: valor" libre (motor,
+ *  transmisión, suspensión, ruedas, dirección). Se modelan como diccionario
+ *  abierto porque las claves varían levemente entre combustión/eléctrico/
+ *  moto (ver auditoría), y forzar una forma fija perdería datos reales. */
+export type SpecBlock = Record<string, string | number | null | undefined>
+
+export interface VehicleSafety {
+  euroNCAP?: string
+  puntaje?: number
+}
+
+export interface VehicleRegionAvailability {
+  disponible?: boolean
+  mercados?: string[]
+  precioBase?: string
+}
+
+export interface VehicleAvailability {
+  europa?: VehicleRegionAvailability
+  americas?: VehicleRegionAvailability
+  asia?: VehicleRegionAvailability
+}
+
+export interface VehicleVariant {
+  nombre?: string
+  precio?: string
+}
+
+export interface VehicleCompetition {
+  competidores?: string[]
+  posicionMercado?: string
+  ventajas?: string[]
+}
+
 export interface Vehicle extends BaseEntity {
   type: EntityType.VEHICLE
   manufacturer?: string
@@ -86,6 +120,55 @@ export interface Vehicle extends BaseEntity {
     acceleration?: string
     handling?: string
     braking?: string
+  }
+
+  // --- Campos reales del contenido, poblados en ~250/250 fichas pero
+  // hasta ahora ausentes de este contrato (ver auditoría "AutoFicha:
+  // aprovechamiento de datos", sección 4). Todos opcionales y de solo
+  // lectura de contenido existente — no se inventa ningún dato acá.
+  price?: string
+  consumo?: string
+  dimensiones?: string
+  transmision?: string
+  traccion?: string
+  peso?: string
+  tipoMotor?: string
+  potenciaKW?: string
+  capacidadTanque?: string
+  tiempoRecorrido?: string
+  anoProduccion?: string
+  mercados?: string[]
+  equipamiento?: string[]
+  consumoEtiqueta?: string
+  neumaticos?: string
+  cilindrada?: string
+  asientos?: number
+  baul?: number
+  maleteroMin?: number | null
+  generacion?: string
+  anoLanzamiento?: number
+  colores?: string[]
+
+  especificacionesMotor?: SpecBlock
+  especificacionesTransmision?: SpecBlock
+  especificacionesSuspension?: SpecBlock
+  especificacionesRuedas?: SpecBlock
+  especificacionesDireccion?: SpecBlock
+
+  /** Poblado en 155/250 fichas — cualquier UI que lo consuma debe tratarlo
+   *  como opcional/condicional, igual que ya hace el resto del sitio con
+   *  cobertura parcial. */
+  safety?: VehicleSafety
+  /** Poblado en 155/250 fichas, con precio real por región. */
+  availability?: VehicleAvailability
+
+  variants?: VehicleVariant[]
+  competition?: VehicleCompetition
+  relatedModels?: {
+    anterior?: string | null
+    siguiente?: string | null
+    hermanos?: string[]
+    competidores?: string[]
   }
 }
 

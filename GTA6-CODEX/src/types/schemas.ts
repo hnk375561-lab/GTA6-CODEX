@@ -107,6 +107,17 @@ export type ValidatedBaseEntity = z.infer<typeof BaseEntitySchema>
  * intencionalmente abierto (`[key: string]: unknown`), así que validan solo
  * contra `BaseEntitySchema`.
  */
+// Bloque de especificación técnica libre (motor/transmisión/suspensión/
+// ruedas/dirección): diccionario abierto de clave→valor, ver `SpecBlock`
+// en `@/types/entity.ts`.
+const SpecBlockSchema = z.record(z.string(), z.union([z.string(), z.number(), z.null()]).optional())
+
+const VehicleRegionAvailabilitySchema = z.object({
+  disponible: z.boolean().optional(),
+  mercados: z.array(z.string()).optional(),
+  precioBase: z.string().optional(),
+})
+
 export const VehicleSchema = BaseEntitySchema.extend({
   type: z.literal(EntityType.VEHICLE),
   manufacturer: z.string().optional(),
@@ -120,6 +131,76 @@ export const VehicleSchema = BaseEntitySchema.extend({
       acceleration: z.string().optional(),
       handling: z.string().optional(),
       braking: z.string().optional(),
+    })
+    .optional(),
+
+  // Campos reales del contenido (ver `Vehicle` en `@/types/entity.ts` para
+  // el detalle de por qué se agregan): se validan como opcionales, nunca
+  // requeridos, para no romper fichas existentes que todavía no los tengan.
+  price: z.string().optional(),
+  consumo: z.string().optional(),
+  dimensiones: z.string().optional(),
+  transmision: z.string().optional(),
+  traccion: z.string().optional(),
+  peso: z.string().optional(),
+  tipoMotor: z.string().optional(),
+  potenciaKW: z.string().optional(),
+  capacidadTanque: z.string().optional(),
+  tiempoRecorrido: z.string().optional(),
+  anoProduccion: z.string().optional(),
+  mercados: z.array(z.string()).optional(),
+  equipamiento: z.array(z.string()).optional(),
+  consumoEtiqueta: z.string().optional(),
+  neumaticos: z.string().optional(),
+  cilindrada: z.string().optional(),
+  asientos: z.number().optional(),
+  baul: z.number().optional(),
+  maleteroMin: z.number().nullable().optional(),
+  generacion: z.string().optional(),
+  anoLanzamiento: z.number().optional(),
+  colores: z.array(z.string()).optional(),
+
+  especificacionesMotor: SpecBlockSchema.optional(),
+  especificacionesTransmision: SpecBlockSchema.optional(),
+  especificacionesSuspension: SpecBlockSchema.optional(),
+  especificacionesRuedas: SpecBlockSchema.optional(),
+  especificacionesDireccion: SpecBlockSchema.optional(),
+
+  safety: z
+    .object({
+      euroNCAP: z.string().optional(),
+      puntaje: z.number().optional(),
+    })
+    .optional(),
+  availability: z
+    .object({
+      europa: VehicleRegionAvailabilitySchema.optional(),
+      americas: VehicleRegionAvailabilitySchema.optional(),
+      asia: VehicleRegionAvailabilitySchema.optional(),
+    })
+    .optional(),
+
+  variants: z
+    .array(
+      z.object({
+        nombre: z.string().optional(),
+        precio: z.string().optional(),
+      })
+    )
+    .optional(),
+  competition: z
+    .object({
+      competidores: z.array(z.string()).optional(),
+      posicionMercado: z.string().optional(),
+      ventajas: z.array(z.string()).optional(),
+    })
+    .optional(),
+  relatedModels: z
+    .object({
+      anterior: z.string().nullable().optional(),
+      siguiente: z.string().nullable().optional(),
+      hermanos: z.array(z.string()).optional(),
+      competidores: z.array(z.string()).optional(),
     })
     .optional(),
 })
