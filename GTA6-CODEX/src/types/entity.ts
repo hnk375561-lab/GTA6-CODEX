@@ -126,34 +126,34 @@ export interface Vehicle extends BaseEntity {
   // hasta ahora ausentes de este contrato (ver auditoría "AutoFicha:
   // aprovechamiento de datos", sección 4). Todos opcionales y de solo
   // lectura de contenido existente — no se inventa ningún dato acá.
-  price?: string
-  consumo?: string
-  dimensiones?: string
-  transmision?: string
-  traccion?: string
-  peso?: string
-  tipoMotor?: string
-  potenciaKW?: string
-  capacidadTanque?: string
-  tiempoRecorrido?: string
-  anoProduccion?: string
-  mercados?: string[]
-  equipamiento?: string[]
-  consumoEtiqueta?: string
-  neumaticos?: string
-  cilindrada?: string
-  asientos?: number
-  baul?: number
-  maleteroMin?: number | null
-  generacion?: string
-  anoLanzamiento?: number
-  colores?: string[]
+  price?: string | null
+  consumo?: string | null
+  dimensiones?: string | null
+  transmision?: string | null
+  traccion?: string | null
+  peso?: string | null
+  tipoMotor?: string | null
+  potenciaKW?: string | null
+  capacidadTanque?: string | null
+  tiempoRecorrido?: string | null
+  anoProduccion?: string | null
+  mercados?: string[] | null
+  equipamiento?: string[] | null
+  consumoEtiqueta?: string | null
+  neumaticos?: string | null
+  cilindrada?: string | null
+  asientos?: number | string | null
+  baul?: number | string | null
+  maleteroMin?: number | string | null
+  generacion?: string | null
+  anoLanzamiento?: number | string | null
+  colores?: string[] | null
 
-  especificacionesMotor?: SpecBlock
-  especificacionesTransmision?: SpecBlock
-  especificacionesSuspension?: SpecBlock
-  especificacionesRuedas?: SpecBlock
-  especificacionesDireccion?: SpecBlock
+  especificacionesMotor?: SpecBlock | null
+  especificacionesTransmision?: SpecBlock | null
+  especificacionesSuspension?: SpecBlock | null
+  especificacionesRuedas?: SpecBlock | null
+  especificacionesDireccion?: SpecBlock | null
 
   /** Poblado en 155/250 fichas — cualquier UI que lo consuma debe tratarlo
    *  como opcional/condicional, igual que ya hace el resto del sitio con

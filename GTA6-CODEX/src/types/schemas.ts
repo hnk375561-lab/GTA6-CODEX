@@ -137,34 +137,45 @@ export const VehicleSchema = BaseEntitySchema.extend({
   // Campos reales del contenido (ver `Vehicle` en `@/types/entity.ts` para
   // el detalle de por qué se agregan): se validan como opcionales, nunca
   // requeridos, para no romper fichas existentes que todavía no los tengan.
-  price: z.string().optional(),
-  consumo: z.string().optional(),
-  dimensiones: z.string().optional(),
-  transmision: z.string().optional(),
-  traccion: z.string().optional(),
-  peso: z.string().optional(),
-  tipoMotor: z.string().optional(),
-  potenciaKW: z.string().optional(),
-  capacidadTanque: z.string().optional(),
-  tiempoRecorrido: z.string().optional(),
-  anoProduccion: z.string().optional(),
-  mercados: z.array(z.string()).optional(),
-  equipamiento: z.array(z.string()).optional(),
-  consumoEtiqueta: z.string().optional(),
-  neumaticos: z.string().optional(),
-  cilindrada: z.string().optional(),
-  asientos: z.number().optional(),
-  baul: z.number().optional(),
-  maleteroMin: z.number().nullable().optional(),
-  generacion: z.string().optional(),
-  anoLanzamiento: z.number().optional(),
-  colores: z.array(z.string()).optional(),
+  // `.nullable()` en cada uno porque el contenido real usa `null` (no
+  // ausencia de la clave) para "sin dato" en varios campos — confirmado
+  // contra las 250 fichas antes de este ajuste (ver bug real detectado en
+  // build: sin esto, `safeParseVehicle` fallaba y `validateTypeSpecific`
+  // excluía silenciosamente ~74 vehículos del sitio).
+  price: z.string().nullable().optional(),
+  consumo: z.string().nullable().optional(),
+  dimensiones: z.string().nullable().optional(),
+  transmision: z.string().nullable().optional(),
+  traccion: z.string().nullable().optional(),
+  peso: z.string().nullable().optional(),
+  tipoMotor: z.string().nullable().optional(),
+  potenciaKW: z.string().nullable().optional(),
+  capacidadTanque: z.string().nullable().optional(),
+  tiempoRecorrido: z.string().nullable().optional(),
+  anoProduccion: z.string().nullable().optional(),
+  mercados: z.array(z.string()).nullable().optional(),
+  equipamiento: z.array(z.string()).nullable().optional(),
+  consumoEtiqueta: z.string().nullable().optional(),
+  neumaticos: z.string().nullable().optional(),
+  cilindrada: z.string().nullable().optional(),
+  // `baul`/`maleteroMin`/`anoLanzamiento` son inconsistentes en tipo en el
+  // contenido real (mayormente number, pero algunas fichas los traen como
+  // string, ej. "470" en vez de 470, y siempre pueden venir en null) —
+  // confirmado contra las 250 fichas. z.union en vez de z.number() para no
+  // volver a excluir vehículos por una discrepancia de tipo que ya existe
+  // en el dataset y no es responsabilidad de este commit normalizar.
+  asientos: z.union([z.number(), z.string()]).nullable().optional(),
+  baul: z.union([z.number(), z.string()]).nullable().optional(),
+  maleteroMin: z.union([z.number(), z.string()]).nullable().optional(),
+  generacion: z.string().nullable().optional(),
+  anoLanzamiento: z.union([z.number(), z.string()]).nullable().optional(),
+  colores: z.array(z.string()).nullable().optional(),
 
-  especificacionesMotor: SpecBlockSchema.optional(),
-  especificacionesTransmision: SpecBlockSchema.optional(),
-  especificacionesSuspension: SpecBlockSchema.optional(),
-  especificacionesRuedas: SpecBlockSchema.optional(),
-  especificacionesDireccion: SpecBlockSchema.optional(),
+  especificacionesMotor: SpecBlockSchema.nullable().optional(),
+  especificacionesTransmision: SpecBlockSchema.nullable().optional(),
+  especificacionesSuspension: SpecBlockSchema.nullable().optional(),
+  especificacionesRuedas: SpecBlockSchema.nullable().optional(),
+  especificacionesDireccion: SpecBlockSchema.nullable().optional(),
 
   safety: z
     .object({

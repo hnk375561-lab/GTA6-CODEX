@@ -53,7 +53,7 @@ function SpecBlockFields({ block }: { block?: SpecBlock }) {
   )
 }
 
-function ListField({ label, items }: { label: string; items?: string[] }) {
+function ListField({ label, items }: { label: string; items?: string[] | null }) {
   if (!items || items.length === 0) return null
   return (
     <div>
