@@ -49,11 +49,3 @@ export function CardBody({ children, className = '' }: CardBodyProps) {
   return <div className={`py-4 ${className}`}>{children}</div>
 }
 
-interface CardFooterProps {
-  children: ReactNode
-  className?: string
-}
-
-export function CardFooter({ children, className = '' }: CardFooterProps) {
-  return <div className={`border-t border-auto-border pt-4 ${className}`}>{children}</div>
-}
