@@ -8,6 +8,33 @@
     "hatchback",
     "kia"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-ev6",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-picanto",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-seltos",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-focus",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mazda-3",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Kia",
   "class": "Hatchback/Sedán",

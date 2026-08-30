@@ -8,6 +8,13 @@
     "hatchback",
     "opel"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "opel-corsa",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "Opel",
   "class": "Hatchback/SUV",

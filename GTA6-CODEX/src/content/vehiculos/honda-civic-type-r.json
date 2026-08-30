@@ -10,6 +10,33 @@
     "deportivo",
     "combustion"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-accord",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb190r",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "abarth-595",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "cupra-leon",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.529Z",
   "updatedAt": "2026-08-27T01:44:31.270Z",

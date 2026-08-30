@@ -9,6 +9,23 @@
     "volkswagen",
     "combustion"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-amarok",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-golf-gti",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-id-4",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.597Z",
   "updatedAt": "2026-08-27T03:13:43.592Z",

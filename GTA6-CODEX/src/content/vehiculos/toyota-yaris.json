@@ -9,6 +9,43 @@
     "toyota",
     "combustion"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-alphard",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-camry",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-corolla-2024",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-onix",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-sandero",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:28.060Z",
   "updatedAt": "2026-08-27T03:13:15.198Z",

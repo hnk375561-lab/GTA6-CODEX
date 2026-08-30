@@ -8,6 +8,23 @@
     "moto",
     "ducati"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ducati-monster",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "aprilia-rsv4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-s1000rr",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Ducati",
   "class": "Moto superdeportiva",

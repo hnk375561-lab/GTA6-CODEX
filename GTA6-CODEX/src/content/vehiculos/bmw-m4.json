@@ -8,6 +8,43 @@
     "deportivo",
     "bmw"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-gs-310",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-r1250gs",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-s1000rr",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-camaro",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-corvette",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ferrari-296-gtb",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-mustang",
+      "relation": "competidor"
+    }
+  ],
   "featured": true,
   "manufacturer": "BMW",
   "class": "Deportivo",

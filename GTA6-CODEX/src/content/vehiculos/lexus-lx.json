@@ -8,6 +8,28 @@
     "suv",
     "lexus"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lexus-nx",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lexus-rx",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-range-rover",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "maserati-grecale",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Lexus",
   "class": "SUV de lujo",

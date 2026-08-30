@@ -8,6 +8,38 @@
     "deportivo",
     "subaru"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "subaru-forester",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "subaru-impreza",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-m4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-camaro",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-corvette",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ferrari-296-gtb",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Subaru",
   "class": "Deportivo",

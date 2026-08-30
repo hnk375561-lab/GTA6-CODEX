@@ -8,6 +8,38 @@
     "scooter",
     "honda"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-accord",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb190r",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "piaggio-liberty",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "vespa-primavera",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-nmax",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Honda",
   "class": "Scooter",

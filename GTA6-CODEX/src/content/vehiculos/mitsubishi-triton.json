@@ -8,6 +8,33 @@
     "pickup",
     "mitsubishi"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mitsubishi-l200",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mitsubishi-outlander",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "gwm-poer",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jac-t8",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-navara",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Mitsubishi",
   "class": "Pickup mediana",

@@ -10,6 +10,43 @@
     "muscle-car",
     "combustion"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-corvette",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-bolt-ev",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-equinox",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-m4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ferrari-296-gtb",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-mustang",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jaguar-f-type",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.088Z",
   "updatedAt": "2026-08-27T01:35:18.716Z",

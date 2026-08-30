@@ -8,6 +8,28 @@
     "sedan",
     "honda"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb190r",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb500f",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-camry",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Honda",
   "class": "Sedán mediano",

@@ -8,6 +8,33 @@
     "sedan",
     "mercedes-benz"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-c",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-glc",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-gle",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-a4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volvo-s60",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Mercedes-Benz",
   "class": "Sedán ejecutivo",

@@ -9,6 +9,28 @@
     "tesla",
     "electrico"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-cybertruck",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-s",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-kona-electric",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.694Z",
   "updatedAt": "2026-08-27T03:11:52.068Z",

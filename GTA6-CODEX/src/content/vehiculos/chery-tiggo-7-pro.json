@@ -10,6 +10,43 @@
     "china",
     "combustion"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-omoda-5",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-8-pro",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "haval-h6",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-tucson",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-compass",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-sportage",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.336Z",
   "updatedAt": "2026-08-27T01:34:50.491Z",

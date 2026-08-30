@@ -9,6 +9,38 @@
     "electrico",
     "byd"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-han",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-atto-3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin-mini",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nio-et5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-s",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "xiaomi-su7",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.593Z",
   "updatedAt": "2026-08-27T02:45:10.387Z",

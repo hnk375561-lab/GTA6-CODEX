@@ -8,6 +8,43 @@
     "electrico",
     "tesla"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-cybertruck",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-x",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-han",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-seal",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nio-et5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "xiaomi-su7",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Tesla",
   "class": "Sedán eléctrico",

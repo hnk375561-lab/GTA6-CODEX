@@ -8,6 +8,43 @@
     "electrico",
     "tesla"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-cybertruck",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-s",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-atto-3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-tang",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-ioniq-5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-ev6",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Tesla",
   "class": "SUV eléctrico",

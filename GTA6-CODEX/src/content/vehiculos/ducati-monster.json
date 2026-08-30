@@ -8,6 +8,33 @@
     "moto",
     "ducati"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ducati-panigale-v4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb190r",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-z900",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "triumph-street-triple",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-fazer-250",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Ducati",
   "class": "Moto naked",

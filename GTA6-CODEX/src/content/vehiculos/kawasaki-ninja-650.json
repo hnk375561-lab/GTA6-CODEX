@@ -8,6 +8,33 @@
     "moto",
     "kawasaki"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-ninja-400",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-z900",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cbr600rr",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-gsx-r750",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-r1",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Kawasaki",
   "class": "Moto deportiva",

@@ -8,6 +8,38 @@
     "electrico",
     "mg"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mg-hs",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mg-zs",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin-mini",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-bolt-ev",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-leaf",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "MG",
   "class": "Hatchback eléctrico",

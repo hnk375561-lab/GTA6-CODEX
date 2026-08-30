@@ -8,6 +8,23 @@
     "scooter",
     "vespa"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-pcx-150",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "piaggio-liberty",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-nmax",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Vespa",
   "class": "Scooter",

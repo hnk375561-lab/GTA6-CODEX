@@ -8,6 +8,28 @@
     "electrico",
     "xiaomi"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-han",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-seal",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nio-et5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-s",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Xiaomi",
   "class": "Sedán eléctrico",

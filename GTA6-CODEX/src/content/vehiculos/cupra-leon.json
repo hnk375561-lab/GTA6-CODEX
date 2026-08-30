@@ -8,6 +8,23 @@
     "deportivo",
     "cupra"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "cupra-formentor",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "abarth-595",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-civic-type-r",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Cupra",
   "class": "Hatchback deportivo",

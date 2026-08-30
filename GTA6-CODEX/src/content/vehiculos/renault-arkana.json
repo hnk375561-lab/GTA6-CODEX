@@ -8,6 +8,23 @@
     "suv",
     "renault"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-captur",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-clio",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-duster",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "Renault",
   "class": "SUV coupé",

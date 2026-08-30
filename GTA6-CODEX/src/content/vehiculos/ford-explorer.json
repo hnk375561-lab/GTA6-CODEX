@@ -8,6 +8,43 @@
     "suv",
     "ford"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-bronco-sport",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-f-150",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-focus",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-8-pro",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-trailblazer",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-discovery",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-5008",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Ford",
   "class": "SUV grande",

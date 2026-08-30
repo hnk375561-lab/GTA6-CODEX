@@ -8,6 +8,18 @@
     "moto",
     "royal-enfield"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "royal-enfield-himalayan",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "triumph-bonneville-t120",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Royal Enfield",
   "class": "Moto clásica",

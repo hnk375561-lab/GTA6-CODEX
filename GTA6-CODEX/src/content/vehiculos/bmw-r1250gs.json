@@ -8,6 +8,38 @@
     "moto",
     "bmw"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-gs-310",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-m4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-s1000rr",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ktm-1290-super-adventure",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-tenere-700",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "BMW",
   "class": "Moto aventura",

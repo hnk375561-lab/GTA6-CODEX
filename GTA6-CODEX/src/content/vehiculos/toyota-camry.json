@@ -8,6 +8,28 @@
     "sedan",
     "toyota"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-alphard",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-corolla-2024",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-corolla-cross",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-accord",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Toyota",
   "class": "Sedán mediano",

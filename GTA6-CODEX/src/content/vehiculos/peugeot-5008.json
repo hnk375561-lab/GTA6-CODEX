@@ -8,6 +8,43 @@
     "suv",
     "peugeot"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-2008",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-208",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-3008",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-8-pro",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-trailblazer",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-explorer",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-discovery",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Peugeot",
   "class": "SUV grande",

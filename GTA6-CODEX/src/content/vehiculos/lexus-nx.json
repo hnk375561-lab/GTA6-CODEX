@@ -10,6 +10,23 @@
     "premium",
     "hibrido"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lexus-lx",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lexus-rx",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q3",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Lexus",
   "class": "SUV premium compacta",

@@ -8,6 +8,43 @@
     "suv",
     "hyundai"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-creta",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-elantra",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-hb20",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-territory",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-grand-cherokee",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-sorento",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mitsubishi-outlander",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Hyundai",
   "class": "SUV mediano",

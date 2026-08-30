@@ -9,6 +9,33 @@
     "kawasaki",
     "deportiva"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-ninja-650",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-z900",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cbr600rr",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-gsx-r750",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-r1",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.628Z",
   "updatedAt": "2026-08-27T02:55:14.606Z",

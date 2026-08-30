@@ -9,6 +9,43 @@
     "electrico",
     "nissan"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-frontier",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-gt-r",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-kicks",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin-mini",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-bolt-ev",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mg4",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Nissan",
   "class": "Hatchback eléctrico",

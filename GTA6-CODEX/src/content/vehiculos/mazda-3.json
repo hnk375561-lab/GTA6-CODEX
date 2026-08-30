@@ -8,6 +8,28 @@
     "hatchback",
     "mazda"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mazda-cx-30",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mazda-cx-5",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-focus",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-rio",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Mazda",
   "class": "Hatchback/Sedán",

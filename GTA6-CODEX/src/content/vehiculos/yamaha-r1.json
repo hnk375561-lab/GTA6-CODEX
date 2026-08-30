@@ -8,6 +8,43 @@
     "moto",
     "yamaha"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-fazer-250",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-mt-07",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-nmax",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cbr600rr",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-ninja-400",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-ninja-650",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-gsx-r750",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Yamaha",
   "class": "Moto deportiva",

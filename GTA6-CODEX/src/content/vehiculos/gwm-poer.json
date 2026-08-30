@@ -8,6 +8,28 @@
     "pickup",
     "gwm"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "gwm-tank-300",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jac-t8",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mitsubishi-triton",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-navara",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "GWM",
   "class": "Pickup mediana",

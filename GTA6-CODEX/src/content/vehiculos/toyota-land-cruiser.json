@@ -11,6 +11,33 @@
     "4x4",
     "premium"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-sw4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-alphard",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-camry",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "gwm-tank-300",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mahindra-scorpio-n",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Toyota",
   "class": "SUV 4x4",

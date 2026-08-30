@@ -9,6 +9,28 @@
     "peugeot",
     "diesel"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-2008",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-208",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-3008",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-kangoo",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Peugeot",
   "class": "Utilitario",

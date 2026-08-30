@@ -9,6 +9,28 @@
     "volkswagen",
     "economico"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-amarok",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-golf-gti",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-id-4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-elantra",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Volkswagen",
   "class": "Sedán compacto",

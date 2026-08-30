@@ -9,6 +9,13 @@
     "royal-enfield",
     "enduro"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "royal-enfield-classic-350",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "Royal Enfield",
   "class": "Moto adventure",

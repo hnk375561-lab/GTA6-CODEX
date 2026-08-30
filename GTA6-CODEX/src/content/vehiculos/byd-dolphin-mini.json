@@ -8,6 +8,43 @@
     "electrico",
     "byd"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-atto-3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-han",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-bolt-ev",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mg4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-leaf",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-megane-e-tech",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "BYD",
   "class": "Hatchback eléctrico",

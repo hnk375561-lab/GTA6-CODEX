@@ -8,6 +8,18 @@
     "hatchback",
     "citroen"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3-aircross",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "Citroën",
   "class": "Hatchback/SUV coupé",

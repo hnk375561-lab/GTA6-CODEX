@@ -8,6 +8,23 @@
     "suv",
     "porsche"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "porsche-911-carrera",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "porsche-taycan",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lamborghini-urus",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Porsche",
   "class": "SUV deportivo",

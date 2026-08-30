@@ -9,6 +9,18 @@
     "ram",
     "combustion"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-silverado",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-f-150",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "RAM",
   "class": "Pickup grande",

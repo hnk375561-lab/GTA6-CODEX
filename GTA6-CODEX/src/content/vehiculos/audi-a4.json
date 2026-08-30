@@ -8,6 +8,33 @@
     "sedan",
     "audi"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q5",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q7",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-e",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volvo-s60",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Audi",
   "class": "Sedán ejecutivo",

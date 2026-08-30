@@ -8,6 +8,13 @@
     "suv",
     "lamborghini"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "porsche-cayenne",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Lamborghini",
   "class": "SUV deportivo",

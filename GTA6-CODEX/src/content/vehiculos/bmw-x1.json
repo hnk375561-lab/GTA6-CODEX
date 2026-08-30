@@ -10,6 +10,23 @@
     "premium",
     "compacto"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-gs-310",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-m4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-r1250gs",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "BMW",
   "class": "SUV compacto premium",

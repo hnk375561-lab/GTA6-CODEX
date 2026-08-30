@@ -10,6 +10,43 @@
     "suv",
     "crossover"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-picanto",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-rio",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-seltos",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-atto-3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-tang",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-ioniq-5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "smart-1",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Kia",
   "class": "SUV eléctrico",

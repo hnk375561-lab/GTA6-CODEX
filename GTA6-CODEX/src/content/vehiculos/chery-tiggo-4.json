@@ -8,6 +8,43 @@
     "suv",
     "chery"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-omoda-5",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-7-pro",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-8-pro",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "baic-x55",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-equinox",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3-aircross",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-duster",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Chery",
   "class": "SUV compacto",

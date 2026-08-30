@@ -8,6 +8,18 @@
     "suv",
     "isuzu"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "isuzu-d-max",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-land-cruiser-prado",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Isuzu",
   "class": "SUV 4x4 grande",

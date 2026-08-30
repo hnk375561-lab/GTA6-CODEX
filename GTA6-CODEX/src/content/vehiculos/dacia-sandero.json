@@ -8,6 +8,33 @@
     "hatchback",
     "dacia"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-duster",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-onix",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-argo",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Dacia",
   "class": "Hatchback",

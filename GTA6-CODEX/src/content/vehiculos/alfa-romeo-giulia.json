@@ -10,6 +10,13 @@
     "premium",
     "deportivo"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "alfa-romeo-stelvio",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "Alfa Romeo",
   "class": "Sedán deportivo premium",

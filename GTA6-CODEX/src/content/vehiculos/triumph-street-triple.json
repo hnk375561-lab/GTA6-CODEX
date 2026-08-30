@@ -8,6 +8,33 @@
     "moto",
     "triumph"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "triumph-bonneville-t120",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ducati-monster",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb190r",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-z900",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-fazer-250",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Triumph",
   "class": "Moto naked",

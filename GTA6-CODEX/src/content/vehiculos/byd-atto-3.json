@@ -8,6 +8,43 @@
     "electrico",
     "byd"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-tang",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin-mini",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-ioniq-5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-ev6",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "smart-1",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-x",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "BYD",
   "class": "SUV eléctrico",

@@ -8,6 +8,18 @@
     "moto",
     "triumph"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "triumph-street-triple",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "royal-enfield-classic-350",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Triumph",
   "class": "Moto clásica",

@@ -10,6 +10,13 @@
     "deportivo",
     "combustion"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "cupra-leon",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "Cupra",
   "class": "SUV coupé deportiva",

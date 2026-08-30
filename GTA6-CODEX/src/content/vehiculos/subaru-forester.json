@@ -10,6 +10,38 @@
     "combustion",
     "4x4"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "subaru-impreza",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "subaru-wrx",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-7-pro",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "haval-h6",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-tucson",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-compass",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Subaru",
   "class": "SUV",

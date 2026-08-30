@@ -9,6 +9,23 @@
     "suzuki",
     "hibrido"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-baleno",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-fronx",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-gsx-r750",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "Suzuki",
   "class": "Hatchback compacto",

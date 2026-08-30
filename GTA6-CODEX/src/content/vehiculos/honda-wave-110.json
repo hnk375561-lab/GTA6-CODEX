@@ -9,6 +9,23 @@
     "honda",
     "utilitaria"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cg-150",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-accord",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:34.107Z",
   "updatedAt": "2026-08-27T02:54:10.435Z",

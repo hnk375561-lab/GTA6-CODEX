@@ -10,6 +10,33 @@
     "diesel",
     "4x4"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-land-cruiser",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-alphard",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-camry",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "gwm-tank-300",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mahindra-scorpio-n",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:32.048Z",
   "updatedAt": "2026-08-27T03:12:48.301Z",

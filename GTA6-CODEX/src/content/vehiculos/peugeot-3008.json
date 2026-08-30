@@ -8,6 +8,43 @@
     "suv",
     "peugeot"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-2008",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-208",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-408",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-territory",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-santa-fe",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-grand-cherokee",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-sorento",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Peugeot",
   "class": "SUV mediano",

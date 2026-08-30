@@ -10,6 +10,18 @@
     "premium",
     "4x4"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-discovery",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-range-rover",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "Land Rover",
   "class": "SUV 4x4 premium",

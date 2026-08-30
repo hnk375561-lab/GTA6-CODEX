@@ -8,6 +8,18 @@
     "moto",
     "aprilia"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-s1000rr",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ducati-panigale-v4",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Aprilia",
   "class": "Moto superdeportiva",

@@ -8,6 +8,43 @@
     "suv",
     "jeep"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-compass",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-renegade",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-wrangler",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-territory",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-santa-fe",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-sorento",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mitsubishi-outlander",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Jeep",
   "class": "SUV mediano",

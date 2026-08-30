@@ -9,6 +9,23 @@
     "zanella",
     "argentina"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "zanella-rx-200",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb500f",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-ybr-125",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.849Z",
   "updatedAt": "2026-08-27T02:05:34.705Z",

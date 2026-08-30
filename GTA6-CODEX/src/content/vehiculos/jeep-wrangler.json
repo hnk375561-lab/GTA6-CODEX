@@ -10,6 +10,23 @@
     "4x4",
     "todoterreno"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-compass",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-grand-cherokee",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-renegade",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": true,
   "manufacturer": "Jeep",
   "class": "SUV todoterreno",

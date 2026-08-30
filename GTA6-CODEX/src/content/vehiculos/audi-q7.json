@@ -8,6 +8,43 @@
     "suv",
     "audi"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-a4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q5",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "alfa-romeo-stelvio",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-x5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "genesis-gv70",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lexus-rx",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Audi",
   "class": "SUV premium",

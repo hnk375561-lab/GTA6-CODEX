@@ -8,6 +8,33 @@
     "hatchback",
     "seat"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "seat-leon",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-onix",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-sandero",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "SEAT",
   "class": "Hatchback",

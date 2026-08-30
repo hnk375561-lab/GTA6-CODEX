@@ -8,6 +8,43 @@
     "deportivo",
     "nissan"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-frontier",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-kicks",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-leaf",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-m4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-camaro",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-corvette",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ferrari-296-gtb",
+      "relation": "competidor"
+    }
+  ],
   "featured": true,
   "manufacturer": "Nissan",
   "class": "Deportivo",

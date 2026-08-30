@@ -9,6 +9,13 @@
     "ktm",
     "deportiva"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ktm-1290-super-adventure",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "KTM",
   "class": "Moto naked deportiva",

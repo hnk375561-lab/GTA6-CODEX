@@ -8,6 +8,43 @@
     "electrico",
     "hyundai"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-creta",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-elantra",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-hb20",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-atto-3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-tang",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-ev6",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "smart-1",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Hyundai",
   "class": "SUV eléctrico",

@@ -8,6 +8,38 @@
     "suv",
     "volvo"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volvo-s60",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volvo-xc60",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-8-pro",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-trailblazer",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-explorer",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-discovery",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Volvo",
   "class": "SUV grande",

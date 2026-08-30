@@ -10,6 +10,28 @@
     "electrico",
     "hyundai"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-creta",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-elantra",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-hb20",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-y",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Hyundai",
   "class": "SUV eléctrica",

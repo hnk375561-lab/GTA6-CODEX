@@ -9,6 +9,28 @@
     "audi",
     "premium"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-a4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q7",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-glc",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Audi",
   "class": "SUV mediano premium",

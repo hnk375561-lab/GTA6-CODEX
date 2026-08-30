@@ -8,6 +8,13 @@
     "moto",
     "harley-davidson"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "harley-davidson-street-glide",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "Harley-Davidson",
   "class": "Moto chopper",

@@ -8,6 +8,13 @@
     "hatchback",
     "perodua"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-panda",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Perodua",
   "class": "Hatchback urbano",

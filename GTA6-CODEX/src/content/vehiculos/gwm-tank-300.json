@@ -9,6 +9,28 @@
     "gwm",
     "hibrido"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "gwm-poer",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mahindra-scorpio-n",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-land-cruiser",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-sw4",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "GWM",
   "class": "SUV 4x4",

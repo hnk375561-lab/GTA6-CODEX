@@ -8,6 +8,28 @@
     "suv",
     "land-rover"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-defender",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-discovery",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lexus-lx",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "maserati-grecale",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Land Rover",
   "class": "SUV de lujo",

@@ -8,6 +8,18 @@
     "suv",
     "maserati"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-range-rover",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lexus-lx",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Maserati",
   "class": "SUV de lujo",

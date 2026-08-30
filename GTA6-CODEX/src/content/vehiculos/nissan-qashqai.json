@@ -8,6 +8,43 @@
     "suv",
     "nissan"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-frontier",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-gt-r",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-kicks",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "baic-x55",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-omoda-5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-equinox",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Nissan",
   "class": "SUV compacto",

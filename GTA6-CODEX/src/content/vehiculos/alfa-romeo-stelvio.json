@@ -8,6 +8,33 @@
     "suv",
     "alfa-romeo"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "alfa-romeo-giulia",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q7",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-x5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "genesis-gv70",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lexus-rx",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Alfa Romeo",
   "class": "SUV premium",

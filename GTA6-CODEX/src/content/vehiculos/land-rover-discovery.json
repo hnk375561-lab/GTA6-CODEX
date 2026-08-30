@@ -8,6 +8,38 @@
     "suv",
     "land-rover"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-defender",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-range-rover",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-8-pro",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-trailblazer",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-explorer",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-5008",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Land Rover",
   "class": "SUV grande",

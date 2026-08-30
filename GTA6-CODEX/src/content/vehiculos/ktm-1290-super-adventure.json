@@ -8,6 +8,28 @@
     "moto",
     "ktm"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ktm-duke-390",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-r1250gs",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-tenere-700",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "KTM",
   "class": "Moto aventura",

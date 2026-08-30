@@ -8,6 +8,28 @@
     "suv",
     "mahindra"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mahindra-thar",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "gwm-tank-300",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-land-cruiser",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-sw4",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Mahindra",
   "class": "SUV 4x4",

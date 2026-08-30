@@ -10,6 +10,13 @@
     "premium",
     "combustion"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mini-countryman",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "Mini",
   "class": "Hatchback premium",

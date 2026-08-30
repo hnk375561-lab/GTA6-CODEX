@@ -9,6 +9,28 @@
     "mercedes-benz",
     "premium"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-c",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-e",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-gle",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q5",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Mercedes-Benz",
   "class": "SUV mediano premium",

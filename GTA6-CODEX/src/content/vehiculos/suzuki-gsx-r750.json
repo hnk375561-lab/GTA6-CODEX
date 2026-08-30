@@ -8,6 +8,43 @@
     "moto",
     "suzuki"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-baleno",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-fronx",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-jimny",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cbr600rr",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-ninja-400",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-ninja-650",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-r1",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Suzuki",
   "class": "Moto deportiva",

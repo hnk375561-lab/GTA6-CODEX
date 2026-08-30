@@ -8,6 +8,18 @@
     "suv",
     "mahindra"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mahindra-scorpio-n",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-jimny",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Mahindra",
   "class": "4x4 compacto",

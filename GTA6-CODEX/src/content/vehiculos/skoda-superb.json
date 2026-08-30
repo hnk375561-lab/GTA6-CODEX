@@ -8,6 +8,18 @@
     "sedan",
     "skoda"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "skoda-fabia",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "skoda-kushaq",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "Skoda",
   "class": "Sedán/Wagon grande",

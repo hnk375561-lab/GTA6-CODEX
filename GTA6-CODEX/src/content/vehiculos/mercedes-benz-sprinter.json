@@ -9,6 +9,23 @@
     "mercedes-benz",
     "diesel"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-c",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-e",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-glc",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "Mercedes-Benz",
   "class": "Furgón",

@@ -8,6 +8,28 @@
     "suv",
     "suzuki"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-baleno",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-fronx",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-gsx-r750",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mahindra-thar",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Suzuki",
   "class": "4x4 compacto",

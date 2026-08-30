@@ -8,6 +8,28 @@
     "deportivo",
     "ferrari"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-m4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-camaro",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-corvette",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-mustang",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Ferrari",
   "class": "Deportivo",

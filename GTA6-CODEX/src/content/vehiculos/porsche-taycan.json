@@ -8,6 +8,18 @@
     "electrico",
     "porsche"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "porsche-911-carrera",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "porsche-cayenne",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "manufacturer": "Porsche",
   "class": "Deportivo eléctrico",

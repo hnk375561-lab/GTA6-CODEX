@@ -9,6 +9,43 @@
     "tesla",
     "electrico"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-cybertruck",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-s",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-x",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-cronos",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-city",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-sentra",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-versa",
+      "relation": "competidor"
+    }
+  ],
   "featured": true,
   "createdAt": "2026-08-23T18:01:33.524Z",
   "updatedAt": "2026-08-27T03:10:37.528Z",

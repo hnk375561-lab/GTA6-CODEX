@@ -8,6 +8,28 @@
     "suv",
     "toyota"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-alphard",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-camry",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-corolla-2024",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "isuzu-mu-x",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Toyota",
   "class": "SUV 4x4 grande",

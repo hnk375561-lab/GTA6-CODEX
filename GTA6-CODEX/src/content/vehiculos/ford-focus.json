@@ -8,6 +8,33 @@
     "hatchback",
     "ford"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-bronco-sport",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-explorer",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-f-150",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-rio",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mazda-3",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Ford",
   "class": "Hatchback/Sedán",

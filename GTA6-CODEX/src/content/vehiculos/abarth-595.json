@@ -8,6 +8,18 @@
     "deportivo",
     "abarth"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "cupra-leon",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-civic-type-r",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Abarth",
   "class": "Hatchback deportivo",

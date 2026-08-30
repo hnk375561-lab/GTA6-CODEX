@@ -9,6 +9,23 @@
     "bmw",
     "trail"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-m4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-r1250gs",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-s1000rr",
+      "relation": "mismo_fabricante"
+    }
+  ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:30.892Z",
   "updatedAt": "2026-08-27T02:43:33.473Z",

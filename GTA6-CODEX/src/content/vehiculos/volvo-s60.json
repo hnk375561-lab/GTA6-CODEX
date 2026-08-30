@@ -8,6 +8,28 @@
     "sedan",
     "volvo"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volvo-xc60",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volvo-xc90",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-a4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-e",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Volvo",
   "class": "Sedán ejecutivo",

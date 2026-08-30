@@ -8,6 +8,38 @@
     "suv",
     "mitsubishi"
   ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mitsubishi-l200",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mitsubishi-triton",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-territory",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-santa-fe",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-grand-cherokee",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-sorento",
+      "relation": "competidor"
+    }
+  ],
   "featured": false,
   "manufacturer": "Mitsubishi",
   "class": "SUV mediano",
