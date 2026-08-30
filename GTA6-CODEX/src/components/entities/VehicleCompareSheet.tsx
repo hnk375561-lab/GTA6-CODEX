@@ -97,6 +97,23 @@ const PERFORMANCE_ROWS: Array<{ key: 'speed' | 'acceleration' | 'handling' | 'br
   { key: 'braking', label: 'Frenado' },
 ]
 
+/**
+ * Filas de comparación de texto simple, con campos reales del dominio
+ * automotor en vez de los legado `customizable`/`driven_by` (oportunidad
+ * P0 #2 de la auditoría "AutoFicha: aprovechamiento de datos"):
+ * `customizable` era `false` en las 250 fichas sin ninguna variación —
+ * no comparaba nada — y `driven_by` estaba 0/250 poblado. Precio,
+ * consumo, dimensiones, transmisión y tracción sí varían entre vehículos
+ * y son, en los hechos, lo que alguien comparando autos quiere ver.
+ */
+const TEXT_COMPARE_ROWS: Array<{ key: 'price' | 'consumo' | 'dimensiones' | 'transmision' | 'traccion'; label: string }> = [
+  { key: 'price', label: 'Precio' },
+  { key: 'consumo', label: 'Consumo' },
+  { key: 'dimensiones', label: 'Dimensiones' },
+  { key: 'transmision', label: 'Transmisión' },
+  { key: 'traccion', label: 'Tracción' },
+]
+
 interface VehicleCompareTableProps {
   vehicles: Vehicle[]
   imageBySlug?: Record<string, ResolvedDisplayImage | null>
@@ -105,8 +122,9 @@ interface VehicleCompareTableProps {
 
 /**
  * Contenido puro de la comparación: fotos + nombre + filas alineadas por
- * atributo (clase, personalizable, 4 métricas de rendimiento, conducido
- * por). Extraído de `VehicleCompareSheet` para poder reutilizarlo tanto
+ * atributo (clase, precio/consumo/dimensiones/transmisión/tracción, y las
+ * 4 métricas de rendimiento). Extraído de `VehicleCompareSheet` para poder
+ * reutilizarlo tanto
  * en el panel modal (sobre el listado de `/vehiculos`) como en la página
  * standalone `/comparar` — mismo componente, dos contenedores distintos
  * (overlay vs. sección de página normal). `onRemove` es opcional: si no
@@ -191,13 +209,15 @@ export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: Vehicle
             ))}
           </CompareRow>
 
-          <CompareRow label="Personalizable">
-            {vehicles.map((v) => (
-              <span key={v.slug} className="text-sm text-auto-text">
-                {v.customizable ? 'Sí' : v.customizable === false ? 'No' : '—'}
-              </span>
-            ))}
-          </CompareRow>
+          {TEXT_COMPARE_ROWS.map((row) => (
+            <CompareRow key={row.key} label={row.label}>
+              {vehicles.map((v) => (
+                <span key={v.slug} className="text-sm text-auto-text">
+                  {v[row.key] || '—'}
+                </span>
+              ))}
+            </CompareRow>
+          ))}
 
           {PERFORMANCE_ROWS.map((row) => (
             <CompareRow key={row.key} label={row.label} align="stretch">
@@ -211,14 +231,6 @@ export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: Vehicle
               ))}
             </CompareRow>
           ))}
-
-          <CompareRow label="Conducido por">
-            {vehicles.map((v) => (
-              <span key={v.slug} className="text-sm text-auto-text">
-                {v.driven_by && v.driven_by.length > 0 ? v.driven_by.join(', ') : '—'}
-              </span>
-            ))}
-          </CompareRow>
         </div>
       </div>
     </div>
