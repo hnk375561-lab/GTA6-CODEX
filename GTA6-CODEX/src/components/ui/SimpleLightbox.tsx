@@ -28,10 +28,14 @@ interface SimpleLightboxProps {
  */
 /** Ancho/alto máximo del panel del visor: son COTAS — el tamaño final
  *  sale de `panelSize` respetando el aspect ratio real de la foto, para
- *  que ocupe el máximo posible de pantalla sin dejar espacio muerto. */
-const MAX_HEIGHT_VH = 0.95
-const MAX_WIDTH_VW = 0.97
-const MAX_WIDTH_PX = 1900
+ *  que ocupe el máximo posible de pantalla sin dejar espacio muerto.
+ *  99% y no 100%: a cero margen el botón de cerrar y los controles de
+ *  zoom quedan pegados al borde justo, difíciles de tocar con el pulgar;
+ *  con 99% dejan ~1% de aire (unos pocos px) que alcanza para que sigan
+ *  siendo cómodos de tocar sin que se note como "espacio perdido". */
+const MAX_HEIGHT_VH = 0.99
+const MAX_WIDTH_VW = 0.99
+const MAX_WIDTH_PX = 2200
 
 export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleLightboxProps) {
   const [open, setOpen] = useState(false)
@@ -131,7 +135,13 @@ export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleL
       aria-modal="true"
       aria-label={`Visor de imagen: ${alt}`}
       tabIndex={-1}
-      className="gallery-lightbox fixed inset-0 z-[100] flex items-center justify-center p-2 sm:p-6"
+      className="gallery-lightbox fixed inset-0 z-[100] flex items-center justify-center"
+      style={{
+        paddingTop: 'max(0.25rem, env(safe-area-inset-top))',
+        paddingBottom: 'max(0.25rem, env(safe-area-inset-bottom))',
+        paddingLeft: 'max(0.25rem, env(safe-area-inset-left))',
+        paddingRight: 'max(0.25rem, env(safe-area-inset-right))',
+      }}
       onClick={close}
     >
       <div className="gallery-lightbox-backdrop absolute inset-0" aria-hidden="true" />
@@ -156,10 +166,10 @@ export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleL
         la foto.
       */}
       <div
-        className="gallery-lightbox-panel relative z-10 h-[95vh] w-full max-w-[1900px]"
+        className="gallery-lightbox-panel relative z-10 h-[99vh] w-full max-w-[2200px]"
         style={
           panelSize
-            ? { width: panelSize.width, height: panelSize.height, maxWidth: '97vw', maxHeight: '95vh' }
+            ? { width: panelSize.width, height: panelSize.height, maxWidth: '99vw', maxHeight: '99vh' }
             : undefined
         }
         onClick={(e) => e.stopPropagation()}
@@ -167,7 +177,7 @@ export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleL
         <ZoomableImage
           src={src}
           alt={alt}
-          sizes="(min-width: 1920px) 1800px, (min-width: 1280px) 90vw, 97vw"
+          sizes="(min-width: 1920px) 1900px, (min-width: 1280px) 92vw, 99vw"
           quality={100}
           priority
         />
