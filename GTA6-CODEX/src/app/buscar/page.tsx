@@ -64,7 +64,7 @@ export default async function SearchPage({
           </h1>
           <Reveal delay={100}>
             <p className="text-auto-text-secondary">
-              Encontrá cualquier personaje, vehículo, ubicación o misión documentada.
+              Encontrá cualquier vehículo, marca o ficha técnica documentada.
             </p>
           </Reveal>
         </div>
