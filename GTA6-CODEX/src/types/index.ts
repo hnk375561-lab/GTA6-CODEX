@@ -5,6 +5,12 @@ export type {
   GenericEntity,
   EntityRelation,
   EntityTypeConfig,
+  SpecBlock,
+  VehicleSafety,
+  VehicleAvailability,
+  VehicleRegionAvailability,
+  VehicleVariant,
+  VehicleCompetition,
 } from './entity'
 
 export { EntityType } from './entity'
