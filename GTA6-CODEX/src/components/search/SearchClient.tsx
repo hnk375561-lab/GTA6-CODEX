@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import Fuse from 'fuse.js'
 import { EntityType, type Entity, type Vehicle } from '@/types'
-import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { EntityImage } from '@/components/entities/EntityImage'
@@ -413,29 +412,49 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
           </p>
 
           {results.length > 0 && (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            /* Lista de filas, no grid de cards: un resultado de búsqueda se
+               escanea de arriba a abajo, no se compara lado a lado como un
+               listado de entidades — la misma razón por la que
+               `RelationsPanel` (mismo contenido: avatar + título + tipo)
+               tampoco envuelve cada fila en una `Card` con borde/sombra
+               propios. El único badge que se conserva es el de estado
+               (`Badge variant="status"`): es el único que codifica una
+               señal real por color; el tipo se resuelve como texto + ícono
+               en vez de una segunda pill, igual que en RelationsPanel. */
+            <ul className="divide-y divide-auto-border">
               {results.map((entity) => (
-                <Link key={`${entity.type}-${entity.slug}`} href={`/${entity.type}/${entity.slug}`} className="search-result-viewport group block h-full">
-                  <Card hoverable className="h-full">
-                    <CardBody className="flex gap-3">
-                      <EntityImage entity={entity} image={imageBySlug?.[`${entity.type}/${entity.slug}`]} variant="avatar" className="h-12 w-12" />
-                      <div className="min-w-0 flex-1">
-                        <div className="mb-2 flex items-center gap-2">
-                          <Badge variant="tag">{TYPE_LABELS[entity.type]}</Badge>
-                          <Badge variant="status" status={entity.status}>
-                            {entity.status}
-                          </Badge>
-                        </div>
-                        <h3 className="mb-1 truncate font-bold text-auto-text transition-colors group-hover:text-auto-accent">
-                          {entity.title}
-                        </h3>
-                        <p className="line-clamp-2 text-sm text-auto-text-secondary">{entity.description}</p>
+                <li key={`${entity.type}-${entity.slug}`}>
+                  <Link
+                    href={`/${entity.type}/${entity.slug}`}
+                    className="search-result-viewport group -mx-3 flex items-start gap-4 rounded-lg px-3 py-4 transition-colors duration-200 hover:bg-auto-darker/40"
+                  >
+                    <EntityImage
+                      entity={entity}
+                      image={imageBySlug?.[`${entity.type}/${entity.slug}`]}
+                      variant="avatar"
+                      className="h-12 w-12 shrink-0"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <div className="mb-1 flex flex-wrap items-center gap-x-2 gap-y-1">
+                        <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-auto-text-tertiary">
+                          <CategoryIcon type={entity.type} className="h-3 w-3" />
+                          {TYPE_LABELS[entity.type]}
+                        </span>
+                        <Badge variant="status" status={entity.status}>
+                          {entity.status}
+                        </Badge>
                       </div>
-                    </CardBody>
-                  </Card>
-                </Link>
+                      <h3 className="truncate font-bold text-auto-text transition-colors group-hover:text-auto-accent">
+                        {entity.title}
+                      </h3>
+                      <p className="line-clamp-1 text-sm text-auto-text-secondary sm:line-clamp-2">
+                        {entity.description}
+                      </p>
+                    </div>
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           )}
 
           {results.length === 0 && (
