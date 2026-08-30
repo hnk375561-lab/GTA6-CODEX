@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
-import Fuse from 'fuse.js'
 import { EntityType, type Entity, type Vehicle } from '@/types'
 import { Badge } from '@/components/ui/Badge'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
@@ -14,6 +13,7 @@ import { cn } from '@/lib/utils'
 import { STATUS_LABELS } from '@/lib/entity-labels'
 import { vehiclePerformanceScore, hasPerformanceData } from '@/lib/vehicle-performance'
 import { SITE_NAME } from '@/config/site'
+import { buildFuse } from '@/lib/entity-list-filters'
 
 type StatusFilter = 'todos' | keyof typeof STATUS_LABELS
 
@@ -128,19 +128,13 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedQuery, activeType, status, sortBy, selectedTags])
 
-  const fuse = useMemo(
-    () =>
-      new Fuse(entities, {
-        keys: [
-          { name: 'title', weight: 0.5 },
-          { name: 'description', weight: 0.3 },
-          { name: 'tags', weight: 0.2 },
-        ],
-        threshold: 0.35,
-        ignoreLocation: true,
-      }),
-    [entities]
-  )
+  // Antes duplicaba acá su propia config de Fuse.js (ligeramente distinta
+  // de la de EntityListExplorer/`buildFuse`, sin manufacturer/class) —
+  // ahora reutiliza la misma función que el listado de `/vehiculos`, así
+  // ambos buscadores del sitio quedan sincronizados en vez de poder
+  // divergir con el tiempo (oportunidad P2 #7 de la auditoría "AutoFicha:
+  // aprovechamiento de datos").
+  const fuse = useMemo(() => buildFuse(entities), [entities])
 
   const rawResults = useMemo(() => {
     if (!debouncedQuery.trim()) return []

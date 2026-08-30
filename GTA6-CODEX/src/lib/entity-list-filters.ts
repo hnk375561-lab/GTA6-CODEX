@@ -109,12 +109,25 @@ export interface FilterEntitiesParams {
 /** Instancia un Fuse.js sobre el set de entidades, con la misma
  *  ponderación de campos que /buscar. Extraído a función para poder
  *  reconstruirlo en cada test sin depender de useMemo/React. */
+/**
+ * Índice de búsqueda de Fuse.js. Antes solo indexaba `title`/`description`/
+ * `tags` — buscar "Toyota" o "SUV" no encontraba nada salvo que esas
+ * palabras aparecieran también en el título/descripción/tags de la ficha
+ * (oportunidad P2 #7 de la auditoría "AutoFicha: aprovechamiento de
+ * datos"). Se agregan `manufacturer`/`class` con peso menor: siguen sin
+ * competir con una coincidencia de título, pero ahora "Toyota" encuentra
+ * las 15 fichas Toyota aunque el fabricante no esté en su título/tags.
+ * Ambas keys son específicas de `Vehicle` — Fuse.js las ignora sin error
+ * en los `GenericEntity` (Noticias/Guías) que no las tienen.
+ */
 export function buildFuse(entities: Entity[]): Fuse<Entity> {
   return new Fuse(entities, {
     keys: [
-      { name: 'title', weight: 0.6 },
-      { name: 'description', weight: 0.25 },
+      { name: 'title', weight: 0.5 },
+      { name: 'description', weight: 0.2 },
       { name: 'tags', weight: 0.15 },
+      { name: 'manufacturer', weight: 0.1 },
+      { name: 'class', weight: 0.05 },
     ],
     threshold: 0.35,
     ignoreLocation: true,
