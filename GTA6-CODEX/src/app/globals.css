@@ -312,7 +312,7 @@ a:not(.no-style) {
 ::-webkit-scrollbar-thumb {
   border-radius: 9999px;
   border: none;
-  background: linear-gradient(180deg, var(--c-pink), #7c3f6b);
+  background: linear-gradient(180deg, var(--c-pink), var(--c-cyan));
   transition: background var(--transition-base);
 }
 
