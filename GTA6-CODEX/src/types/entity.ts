@@ -146,6 +146,18 @@ export interface Vehicle extends BaseEntity {
   baul?: number | string | null
   maleteroMin?: number | string | null
   generacion?: string | null
+  /** Ver comentario en schemas.ts: extracción best-effort de `generacion`,
+   *  aditiva y nunca destructiva del string original. */
+  generacionInfo?: {
+    raw: string
+    numero: number | null
+    codigoChasis: string | null
+    anoInicio: number | null
+    anoFin: number | null
+    rangoAbierto: boolean
+    facelift: boolean
+    faceliftAno: number | null
+  } | null
   anoLanzamiento?: number | string | null
   colores?: string[] | null
 
