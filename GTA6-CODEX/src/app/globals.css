@@ -1451,60 +1451,6 @@ img,
   }
 }
 
-/* --- MagicCard: borde con gradiente / orb que sigue al cursor, 100% CSS --- */
-.magic-card {
-  --mx: -9999px;
-  --my: -9999px;
-  background:
-    linear-gradient(#12151a, #12151a) padding-box,
-    radial-gradient(var(--mgs) circle at var(--mx) var(--my), var(--mg-from), var(--mg-to), #242a32 100%)
-      border-box;
-  border: 1px solid transparent;
-}
-
-.magic-card-gradient {
-  position: absolute;
-  inset: 1px;
-  z-index: 5;
-  border-radius: inherit;
-  pointer-events: none;
-  opacity: 0;
-  background: radial-gradient(var(--mgs) circle at var(--mx) var(--my), var(--mg-color), transparent 100%);
-  transition: opacity var(--transition-base);
-}
-
-.magic-card--interactive.magic-card--active .magic-card-gradient {
-  opacity: var(--mg-opacity);
-}
-
-.magic-card-orb {
-  position: absolute;
-  z-index: 5;
-  top: var(--my);
-  left: var(--mx);
-  width: var(--glow-size);
-  height: var(--glow-size);
-  transform: translate(-50%, -50%);
-  border-radius: 9999px;
-  pointer-events: none;
-  filter: blur(var(--glow-blur));
-  opacity: 0;
-  background: linear-gradient(90deg, var(--glow-from), var(--glow-to));
-  mix-blend-mode: screen;
-  transition: opacity var(--transition-slow);
-}
-
-.magic-card--interactive.magic-card--active .magic-card-orb {
-  opacity: var(--glow-opacity);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .magic-card-gradient,
-  .magic-card-orb {
-    transition: none !important;
-  }
-}
-
 /* --- Navegador rápido de escenas (TrailerScenes) --- */
 .scene-nav-rail {
   scrollbar-width: thin;

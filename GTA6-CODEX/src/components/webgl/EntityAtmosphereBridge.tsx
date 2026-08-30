@@ -50,9 +50,9 @@ import { useEntityAtmosphere } from '@/lib/hooks/useEntityAtmosphere'
  *  - **estado editorial** (`confirmado`/`rumor`/`nuestro`) → inquietud
  *    visual (`entityUnrest`: parpadeo de baliza/neón, grano), ya cubierto
  *    exhaustivamente por `STATUS_UNREST` — no necesita alias.
- *  - **featured** → énfasis/presencia (`entityPresence`, bloom); el orbe de
- *    `MagicCard` que sigue al cursor en fichas featured es una capa
- *    adicional que ya vive en la página, no acá.
+ *  - **featured** → énfasis/presencia (`entityPresence`, bloom): la única
+ *    capa visual que queda para "featured" además de esto es el borde de
+ *    acento estático en la página de ficha (`[slug]/page.tsx`), sin JS.
  *  - **transiciones** entre categoría/estado/featured (entrada, salida,
  *    cambio de entidad) las suaviza `engine.ts` solo, interpolando cada
  *    target con lerp en cada frame — no hace falta (ni se puede, sin tocar
@@ -63,7 +63,7 @@ import { useEntityAtmosphere } from '@/lib/hooks/useEntityAtmosphere'
  * campos de `EntityAtmosphere`, y agregar listeners de scroll/pointer acá
  * (a) no tendría a dónde publicarse sin tocar `scene-bus.ts`, y (b)
  * duplicaría trabajo que ya hacen `engine.ts` (scroll global, pointermove)
- * y `Card`/`MagicCard` (hover real sobre UI) — exactamente lo que se pidió
+ * y `Card` (hover real sobre UI) — exactamente lo que se pidió
  * evitar ("listeners duplicados"). Se documenta acá en vez de simularse con
  * props decorativas sin efecto real.
  */

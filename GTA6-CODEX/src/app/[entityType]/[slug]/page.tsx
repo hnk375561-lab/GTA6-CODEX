@@ -20,7 +20,6 @@ import { EntityNav } from '@/components/entities/EntityNav'
 import { MediaCarousel } from '@/components/media/MediaCarousel'
 import { getMediaForEntity } from '@/lib/media'
 import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
-import { MagicCard } from '@/components/ui/MagicCard'
 import { SceneSection } from '@/components/webgl/SceneSection'
 import { EntityAtmosphereBridge } from '@/components/webgl/EntityAtmosphereBridge'
 
@@ -185,10 +184,8 @@ export default async function EntityPage({ params }: PageProps) {
 
       {/* Header — el fondo ambiental por categoría (EntityHeaderBackground) se
           mantiene siempre: es identidad visual de bajo costo (CSS/SVG, sin JS).
-          El orb interactivo que sigue al cursor (MagicCard) queda reservado a
-          entidades `featured`, que es exactamente lo que el comentario del
-          componente ya decía pero el código no respetaba — el resto usa un
-          contenedor estático, sin efecto de seguimiento de puntero. */}
+          Las fichas `featured` se diferencian con un borde de acento sólido
+          (ver más abajo) en vez de un efecto interactivo — sin JS extra. */}
       <SceneSection
         sceneId="entity-header"
         className="relative overflow-hidden border-b border-auto-border bg-gradient-to-b from-auto-card to-auto-dark py-10 sm:py-14"
@@ -204,17 +201,18 @@ export default async function EntityPage({ params }: PageProps) {
             aria-hidden="true"
           />
           {entity.featured ? (
-            <MagicCard
-              mode="orb"
-              glowFrom="#ff6a1a"
-              glowTo="#3d84ff"
-              glowSize={340}
-              glowBlur={90}
-              glowOpacity={0.25}
-              className="p-6 sm:p-8"
-            >
+            /* Antes: `MagicCard` con un orb que sigue al cursor y reacciona
+               con "bloom" en el fondo WebGL — un efecto vistoso pero sin
+               función real (no comunica nada que el usuario necesite, solo
+               "se ve moderno"). Reemplazado por el mismo lenguaje visual de
+               "expediente" que ya usa el resto del sitio (borde punteado en
+               EntityCard, sello de evidencia, pestaña de categoría): acá,
+               un borde de acento sólido en vez de uno gris, sin animación
+               de por medio. Comunica "esta es una ficha destacada" con la
+               misma claridad y cero JS extra. */
+            <div className="rounded-lg border border-auto-accent/40 bg-auto-surface/60 p-6 sm:p-8">
               {headerContent}
-            </MagicCard>
+            </div>
           ) : (
             <div className="rounded-lg border border-auto-border bg-auto-surface/60 p-6 sm:p-8">
               {headerContent}

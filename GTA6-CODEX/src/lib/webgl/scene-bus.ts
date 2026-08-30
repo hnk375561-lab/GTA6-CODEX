@@ -110,7 +110,7 @@ export interface SceneAmbient {
  * De qué tipo de superficie viene una intención de hover/puntero. Permite a
  * futuros consumidores reaccionar distinto ante un hover de card que ante
  * uno de CTA o de navegación, sin que `setPointerIntent` deje de aceptar la
- * forma simple (`setPointerIntent(1)`) que ya usan `Card.tsx`/`MagicCard.tsx`.
+ * forma simple (`setPointerIntent(1)`) que ya usa `Card.tsx`.
  */
 export interface PointerIntentSource {
   kind: 'card' | 'cta' | 'nav' | 'media' | 'custom'

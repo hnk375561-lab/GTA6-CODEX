@@ -18,8 +18,8 @@ import { webglSceneBus } from './scene-bus'
  * métodos: `start()`, `setReducedMotion()`, `dispose()`) para que
  * `WebGLBackground.tsx` no necesite ningún cambio, y sigue publicando en
  * `webglSceneBus.publishAmbient()` la misma forma exacta de `SceneAmbient`
- * (5 campos) que ya consumen `SceneAmbientBridge`, `Card.tsx`, `MagicCard.tsx`
- * y `PageTransitionBridge` — esos 4 archivos tampoco se tocaron.
+ * (5 campos) que ya consumen `SceneAmbientBridge`, `Card.tsx`
+ * y `PageTransitionBridge`.
  *
  * De dónde sale la velocidad de scroll: NO se agrega un listener de scroll
  * propio. `scroll-telemetry.tsx` ya publica `webglSceneBus.setScrollProgress
