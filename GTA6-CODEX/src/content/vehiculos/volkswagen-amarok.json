@@ -166,14 +166,12 @@
   "dimensiones": "5350 x 1954 x 1834 mm",
   "cilindrada": "2967 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": null,
   "maleteroMin": null,
   "generacion": "1ª generación (con restyling regional)",
   "anoLanzamiento": 2010,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.1",
     "totalVotos": 3301,
@@ -335,9 +327,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

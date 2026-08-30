@@ -167,14 +167,12 @@
   },
   "cilindrada": "2776 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 7,
   "baul": 205,
   "maleteroMin": null,
   "generacion": "Restyling actual",
   "anoLanzamiento": 2013,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -314,13 +312,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.8",
     "totalVotos": 1277,
@@ -339,9 +331,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No informado por el fabricante para Argentina"
     }

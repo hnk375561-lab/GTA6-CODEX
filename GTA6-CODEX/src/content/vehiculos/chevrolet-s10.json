@@ -166,14 +166,12 @@
   "dimensiones": "5365 x 1870 x 1832 mm",
   "cilindrada": "2776 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": null,
   "maleteroMin": null,
   "generacion": "Segunda generación (con múltiples actualizaciones)",
   "anoLanzamiento": 2012,
   "colores": [],
-  "category": "comercial",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.3",
     "totalVotos": 3923,
@@ -335,9 +327,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

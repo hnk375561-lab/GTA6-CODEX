@@ -163,14 +163,12 @@
   "dimensiones": "4145 x 1730 x 1475 mm (Hatchback Mercosur aprox.)",
   "cilindrada": "1496 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 310,
   "maleteroMin": null,
   "generacion": "Cuarta generación (versión regional Mercosur)",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -307,13 +305,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.9",
     "totalVotos": 1230,

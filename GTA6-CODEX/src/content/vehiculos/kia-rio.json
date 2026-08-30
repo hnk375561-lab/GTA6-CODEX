@@ -153,14 +153,12 @@
   },
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": null,
   "baul": null,
   "maleteroMin": null,
   "generacion": null,
   "anoLanzamiento": null,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

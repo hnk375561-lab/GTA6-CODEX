@@ -142,14 +142,12 @@
   },
   "cilindrada": "149.2 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 2,
   "baul": null,
   "maleteroMin": null,
   "generacion": "Evoluciones regionales múltiples (Titan)",
   "anoLanzamiento": 2003,
   "colores": [],
-  "category": "motocicleta",
   "gallery": {
     "images": {
       "exterior": [],
@@ -286,13 +284,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.1",
     "totalVotos": 4987,

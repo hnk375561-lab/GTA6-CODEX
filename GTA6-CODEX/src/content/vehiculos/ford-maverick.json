@@ -167,14 +167,12 @@
   "dimensiones": "5.072 x 1.979 x 1.745 mm",
   "cilindrada": "1.999 cc (EcoBoost) / 2.488 cc (Híbrido)",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 943,
   "maleteroMin": null,
   "generacion": "Primera generación (P758)",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -317,13 +315,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.0",
     "totalVotos": 4794,

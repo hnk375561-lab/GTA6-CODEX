@@ -150,14 +150,12 @@
   },
   "cilindrada": "1.5 litros (1.5T)",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 350,
   "maleteroMin": null,
   "generacion": "Segunda generación (Beijing X55 II)",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "suv",
   "gallery": {
     "images": {
       "exterior": [],
@@ -295,13 +293,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.0",
     "totalVotos": 5240,

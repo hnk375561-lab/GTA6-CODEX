@@ -166,14 +166,12 @@
   },
   "cilindrada": "2.487 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 580,
   "maleteroMin": null,
   "generacion": "Quinta generación (XA50)",
   "anoLanzamiento": 2018,
   "colores": [],
-  "category": "suv",
   "gallery": {
     "images": {
       "exterior": [],
@@ -312,13 +310,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.7",
     "totalVotos": 4154,
@@ -337,9 +329,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "7.8 l/100km combinado (30 mpg EPA, versión XLE FWD 2.5L a gasolina)"
     }

@@ -164,14 +164,12 @@
   },
   "cilindrada": "1.2 - 2.0 litros",
   "emisiones": null,
-  "tipo": null,
   "asientos": 7,
   "baul": 702,
   "maleteroMin": null,
   "generacion": "Segunda generación (P87) y tercera generación (STLA Medium)",
   "anoLanzamiento": 2017,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

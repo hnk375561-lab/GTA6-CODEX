@@ -154,14 +154,12 @@
   },
   "cilindrada": "1.2 L - 1.6 L",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 472,
   "maleteroMin": null,
   "generacion": "Tercera generación",
   "anoLanzamiento": 2024,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -299,13 +297,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.8",
     "totalVotos": 1839,

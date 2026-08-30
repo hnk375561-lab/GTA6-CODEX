@@ -170,14 +170,12 @@
   },
   "cilindrada": "5.038 cc",
   "emisiones": "CO2 271 g/km (estimado combinado EPA)",
-  "tipo": "Cupé / Convertible",
   "asientos": 4,
   "baul": 358,
   "maleteroMin": null,
   "generacion": "S650 (séptima generación)",
   "anoLanzamiento": 2023,
   "colores": [],
-  "category": "deportivo",
   "gallery": {
     "images": {
       "exterior": [
@@ -359,9 +357,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "12.9 l/100km combinado (motor V8 5.0L Ti-VCT, versión GT)"
     }

@@ -171,14 +171,12 @@
   },
   "cilindrada": "1.984 cc",
   "emisiones": "CO2 197 g/km (WLTP)",
-  "tipo": "Hatchback",
   "asientos": 5,
   "baul": 374,
   "maleteroMin": null,
   "generacion": "Mk8",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "deportivo",
   "gallery": {
     "images": {
       "exterior": [
@@ -366,9 +364,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "7.4 l/100km combinado (versión 245 hp con caja DSG)"
     }

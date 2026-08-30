@@ -146,14 +146,12 @@
   },
   "cilindrada": "2.0 L Turbo",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 533,
   "maleteroMin": null,
   "generacion": "JL",
   "anoLanzamiento": 2018,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -293,13 +291,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.7",
     "totalVotos": 3105,
@@ -318,9 +310,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No informado por el fabricante para Argentina"
     }

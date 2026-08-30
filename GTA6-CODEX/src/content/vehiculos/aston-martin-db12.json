@@ -55,7 +55,6 @@
   "neumaticos": "275 mm delantero (llanta 21\")",
   "cilindrada": "3.982 cc",
   "emisiones": "CO2 278 g/km (cifra oficial combinada, Reino Unido)",
-  "tipo": "Gran turismo (coupé 2+2)",
   "asientos": 4,
   "baul": 262,
   "maleteroMin": "262 litros",
@@ -144,7 +143,6 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -282,13 +280,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.1",
     "totalVotos": 1345,

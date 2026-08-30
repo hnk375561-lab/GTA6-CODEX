@@ -162,14 +162,12 @@
   },
   "cilindrada": "157 cc",
   "emisiones": null,
-  "tipo": "Scooter urbana",
   "asientos": 2,
   "baul": 30,
   "maleteroMin": null,
   "generacion": "Sucesor: PCX160 (motor 157cc, ABS de serie)",
   "anoLanzamiento": 2009,
   "colores": [],
-  "category": "motocicleta",
   "gallery": {
     "images": {
       "exterior": [],

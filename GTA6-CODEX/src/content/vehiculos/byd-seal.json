@@ -156,14 +156,12 @@
   "dimensiones": "4800 x 1875 x 1460 mm",
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 400,
   "maleteroMin": null,
   "generacion": "1era generación",
   "anoLanzamiento": 2023,
   "colores": [],
-  "category": "electrico",
   "gallery": {
     "images": {
       "exterior": [],
@@ -300,13 +298,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.8",
     "totalVotos": 1663,

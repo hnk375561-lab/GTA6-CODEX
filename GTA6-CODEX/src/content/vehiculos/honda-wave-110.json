@@ -143,14 +143,12 @@
   "dimensiones": "1897 x 706 x 1083 mm",
   "cilindrada": "109.1 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 2,
   "baul": 18,
   "maleteroMin": null,
   "generacion": "Actualización regional (producción nacional en Planta Campana)",
   "anoLanzamiento": 2013,
   "colores": [],
-  "category": "motocicleta",
   "gallery": {
     "images": {
       "exterior": [],
@@ -285,13 +283,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.5",
     "totalVotos": 922,

@@ -159,14 +159,12 @@
   },
   "cilindrada": "1.587 cm3",
   "emisiones": null,
-  "tipo": null,
   "asientos": 7,
   "baul": 493,
   "maleteroMin": null,
   "generacion": "Segunda generación (Proyecto C3 CC21)",
   "anoLanzamiento": 2023,
   "colores": [],
-  "category": "auto-pequeño",
   "gallery": {
     "images": {
       "exterior": [],
@@ -305,13 +303,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.7",
     "totalVotos": 2117,

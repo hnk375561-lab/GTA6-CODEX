@@ -69,7 +69,6 @@
   "neumaticos": "225/50R17 (base) hasta 245/35R19 del. / 285/30R19 tras. (Quadrifoglio)",
   "cilindrada": "1.995 cc",
   "emisiones": "CO2 130-183 g/km (WLTP, según motorización)",
-  "tipo": "Sedán deportivo",
   "asientos": 5,
   "baul": 480,
   "maleteroMin": "480 litros",
@@ -156,7 +155,6 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -296,13 +294,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.2",
     "totalVotos": 5222,

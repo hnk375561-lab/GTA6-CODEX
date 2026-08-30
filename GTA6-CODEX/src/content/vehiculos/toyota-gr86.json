@@ -164,14 +164,12 @@
   },
   "cilindrada": "2.4 litros",
   "emisiones": null,
-  "tipo": null,
   "asientos": 4,
   "baul": 178,
   "maleteroMin": null,
   "generacion": "Segunda generación",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

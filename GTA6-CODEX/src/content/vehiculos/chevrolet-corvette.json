@@ -165,14 +165,12 @@
   },
   "cilindrada": "6.2 litros",
   "emisiones": null,
-  "tipo": null,
   "asientos": 2,
   "baul": 357,
   "maleteroMin": null,
   "generacion": "C8",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "deportivo",
   "gallery": {
     "images": {
       "exterior": [
@@ -312,13 +310,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.9",
     "totalVotos": 5284,

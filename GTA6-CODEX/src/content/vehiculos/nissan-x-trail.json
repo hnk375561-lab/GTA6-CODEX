@@ -165,14 +165,12 @@
   },
   "cilindrada": "1.498 cc (Turbo e-POWER)",
   "emisiones": null,
-  "tipo": null,
   "asientos": 7,
   "baul": 485,
   "maleteroMin": null,
   "generacion": "Cuarta generación (T33)",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.3",
     "totalVotos": 4394,

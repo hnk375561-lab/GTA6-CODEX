@@ -163,14 +163,12 @@
   },
   "cilindrada": "1.4 litros",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 355,
   "maleteroMin": null,
   "generacion": "Segunda generación (moderna)",
   "anoLanzamiento": 2015,
   "colores": [],
-  "category": "motocicleta",
   "gallery": {
     "images": {
       "exterior": [],

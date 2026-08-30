@@ -162,14 +162,12 @@
   },
   "cilindrada": "999 cc (1.0 L EcoBoost)",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 456,
   "maleteroMin": null,
   "generacion": "1ra generación (facelift 2024)",
   "anoLanzamiento": 2019,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

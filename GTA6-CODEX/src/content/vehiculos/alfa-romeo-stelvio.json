@@ -85,7 +85,6 @@
   "neumaticos": "235/60R18 (base) hasta 255/40R21 del. / 285/35R21 tras. (Quadrifoglio)",
   "cilindrada": "1.995 cc",
   "emisiones": "CO2 152-204 g/km (WLTP, gama sin Quadrifoglio)",
-  "tipo": "SUV",
   "asientos": 5,
   "baul": 525,
   "maleteroMin": "525 litros",
@@ -172,7 +171,6 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.9",
     "totalVotos": 1953,

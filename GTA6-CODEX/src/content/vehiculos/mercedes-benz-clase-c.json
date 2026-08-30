@@ -153,14 +153,12 @@
   "dimensiones": "4751 x 1820 x 1438 mm",
   "cilindrada": "1496 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 455,
   "maleteroMin": null,
   "generacion": "W206",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "ejecutivo",
   "gallery": {
     "images": {
       "exterior": [],
@@ -298,13 +296,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.7",
     "totalVotos": 2197,
@@ -323,9 +315,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

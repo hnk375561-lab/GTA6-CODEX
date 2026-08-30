@@ -160,14 +160,12 @@
   },
   "cilindrada": "999 cc / 1498 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 385,
   "maleteroMin": null,
   "generacion": "1ra generación (MQB-A0-IN)",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -306,13 +304,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.6",
     "totalVotos": 2317,

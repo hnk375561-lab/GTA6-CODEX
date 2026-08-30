@@ -166,14 +166,12 @@
   "dimensiones": "4915 x 1845 x 1791 mm",
   "cilindrada": "1956 cc (Diésel) / 1332 cc (Nafta)",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 937,
   "maleteroMin": null,
   "generacion": "1ra Generación (con restylings)",
   "anoLanzamiento": 2016,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.7",
     "totalVotos": 1483,
@@ -335,9 +327,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

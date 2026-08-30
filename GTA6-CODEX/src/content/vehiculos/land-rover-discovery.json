@@ -159,14 +159,12 @@
   },
   "cilindrada": "2.0 - 3.0 litros",
   "emisiones": null,
-  "tipo": null,
   "asientos": 7,
   "baul": 258,
   "maleteroMin": null,
   "generacion": "Quinta generación (L462)",
   "anoLanzamiento": 2017,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

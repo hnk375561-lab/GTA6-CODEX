@@ -164,14 +164,12 @@
   },
   "cilindrada": "2.5 litros",
   "emisiones": null,
-  "tipo": "SUV mediano de 3 filas, carrocería crossover",
   "asientos": 7,
   "baul": 2139,
   "maleteroMin": null,
   "generacion": "Cuarta generación (MQ4, facelift 2024)",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

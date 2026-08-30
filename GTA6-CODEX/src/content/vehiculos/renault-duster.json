@@ -164,14 +164,12 @@
   "dimensiones": "4341 x 1832 x 1693 mm",
   "cilindrada": "1333 cc (Turbo) / 1598 cc (1.6L)",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 400,
   "maleteroMin": null,
   "generacion": "Segunda generación",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -308,13 +306,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.4",
     "totalVotos": 691,

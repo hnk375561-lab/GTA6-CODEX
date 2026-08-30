@@ -164,14 +164,12 @@
   "dimensiones": "4304 x 2044 x 1624 mm",
   "cilindrada": "1199 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 393,
   "maleteroMin": null,
   "generacion": "Segunda generación",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -308,13 +306,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.5",
     "totalVotos": 1658,

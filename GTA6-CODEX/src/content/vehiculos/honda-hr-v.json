@@ -163,14 +163,12 @@
   "dimensiones": "4567 x 1790 x 1621 mm",
   "cilindrada": "1996 cm3",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 691,
   "maleteroMin": null,
   "generacion": "Tercera generación",
   "anoLanzamiento": 2023,
   "colores": [],
-  "category": "motocicleta",
   "gallery": {
     "images": {
       "exterior": [],
@@ -307,13 +305,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.5",
     "totalVotos": 1940,

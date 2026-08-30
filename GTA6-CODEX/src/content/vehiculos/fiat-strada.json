@@ -164,14 +164,12 @@
   },
   "cilindrada": "1332 cc (Turbo) / 1332 cc (Firefly 1.3)",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 844,
   "maleteroMin": null,
   "generacion": "Segunda generación (con actualización de motor turbo y caja CVT)",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.2",
     "totalVotos": 2126,

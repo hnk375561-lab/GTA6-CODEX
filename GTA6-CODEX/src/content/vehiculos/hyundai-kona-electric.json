@@ -145,14 +145,12 @@
   },
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 466,
   "maleteroMin": null,
   "generacion": "Segunda generación (SX2)",
   "anoLanzamiento": 2023,
   "colores": [],
-  "category": "electrico",
   "gallery": {
     "images": {
       "exterior": [],
@@ -291,13 +289,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.2",
     "totalVotos": 3437,

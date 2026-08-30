@@ -159,14 +159,12 @@
   "dimensiones": "3981 x 1733 x 1586 mm",
   "cilindrada": "1.6 litros (VTi) / 1.0 litros Turbo (T200)",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 315,
   "maleteroMin": null,
   "generacion": "Nueva Generación (Mercado regional latinoamericano)",
   "anoLanzamiento": 2022,
   "colores": [],
-  "category": "auto-pequeño",
   "gallery": {
     "images": {
       "exterior": [],
@@ -303,13 +301,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.7",
     "totalVotos": 739,
@@ -328,9 +320,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

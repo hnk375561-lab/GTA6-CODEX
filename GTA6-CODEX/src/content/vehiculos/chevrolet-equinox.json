@@ -165,14 +165,12 @@
   },
   "cilindrada": "1.5 L",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 845,
   "maleteroMin": null,
   "generacion": "Cuarta generación",
   "anoLanzamiento": 2024,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.7",
     "totalVotos": 4122,

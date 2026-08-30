@@ -159,14 +159,12 @@
   },
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 543,
   "maleteroMin": null,
   "generacion": "1ra generación",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

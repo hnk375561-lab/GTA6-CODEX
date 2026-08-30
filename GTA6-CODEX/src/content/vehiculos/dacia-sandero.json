@@ -153,14 +153,12 @@
   },
   "cilindrada": "999 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 328,
   "maleteroMin": null,
   "generacion": "Tercera generación",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

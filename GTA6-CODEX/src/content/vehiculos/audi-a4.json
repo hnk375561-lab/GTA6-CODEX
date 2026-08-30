@@ -84,7 +84,6 @@
   "neumaticos": "225/50R17",
   "cilindrada": "1.984 cc",
   "emisiones": "CO2 134-165 g/km (según ciclo y motorización, NEDC/WLTP)",
-  "tipo": "Sedán ejecutivo compacto",
   "asientos": 5,
   "baul": 460,
   "maleteroMin": "460 litros",
@@ -171,7 +170,6 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -309,13 +307,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.4",
     "totalVotos": 4685,

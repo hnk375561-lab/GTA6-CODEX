@@ -164,14 +164,12 @@
   },
   "cilindrada": "1.5 litros",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 354,
   "maleteroMin": null,
   "generacion": "Segunda generación (referencia de datos técnicos verificados)",
   "anoLanzamiento": 2007,
   "colores": [],
-  "category": "motocicleta",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.4",
     "totalVotos": 2433,

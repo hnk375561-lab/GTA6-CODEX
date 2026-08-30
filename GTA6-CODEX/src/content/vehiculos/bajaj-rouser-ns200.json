@@ -126,14 +126,12 @@
   },
   "cilindrada": "199.5 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 2,
   "baul": null,
   "maleteroMin": null,
   "generacion": "NS200 (Evolución con horquilla invertida y ABS doble canal en versiones recientes)",
   "anoLanzamiento": 2012,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -272,13 +270,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.7",
     "totalVotos": 4435,

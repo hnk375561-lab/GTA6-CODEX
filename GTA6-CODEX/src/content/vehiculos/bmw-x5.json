@@ -95,7 +95,6 @@
   "neumaticos": "225/50R17",
   "cilindrada": "2.998 cc",
   "emisiones": "CO2 193-224 g/km (WLTP, xDrive40i)",
-  "tipo": "SUV premium mediano-grande",
   "asientos": 5,
   "baul": 650,
   "maleteroMin": "650 litros",
@@ -182,7 +181,6 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "category": "suv",
   "gallery": {
     "images": {
       "exterior": [],
@@ -326,13 +324,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.5",
     "totalVotos": 1205,

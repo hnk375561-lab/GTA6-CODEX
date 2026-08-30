@@ -166,14 +166,12 @@
   },
   "cilindrada": "1.987 cc (2.0L)",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 470,
   "maleteroMin": null,
   "generacion": "Duodécima generación (E210)",
   "anoLanzamiento": 2019,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -312,13 +310,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.3",
     "totalVotos": 1982,
@@ -337,9 +329,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "6.9 l/100km combinado (34 mpg EPA combinado, versión XSE 2.0L con CVT)"
     }

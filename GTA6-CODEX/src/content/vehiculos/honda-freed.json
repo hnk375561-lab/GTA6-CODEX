@@ -145,14 +145,12 @@
   },
   "cilindrada": "1.496 cc",
   "emisiones": null,
-  "tipo": "Minivan compacta (mini MPV)",
   "asientos": 6,
   "baul": null,
   "maleteroMin": null,
   "generacion": "III",
   "anoLanzamiento": 2024,
   "colores": [],
-  "category": "vehiculo",
   "gallery": {
     "images": {
       "exterior": [],

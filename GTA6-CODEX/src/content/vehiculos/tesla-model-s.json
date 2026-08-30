@@ -159,14 +159,12 @@
   },
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 793,
   "maleteroMin": null,
   "generacion": "1ra Generación (con múltiples actualizaciones de diseño y tecnología)",
   "anoLanzamiento": 2012,
   "colores": [],
-  "category": "electrico",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.7",
     "totalVotos": 2365,

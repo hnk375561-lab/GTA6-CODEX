@@ -156,14 +156,12 @@
   },
   "cilindrada": "1.0 - 1.5 litros",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 375,
   "maleteroMin": null,
   "generacion": "Cuarta generación (MK4)",
   "anoLanzamiento": 2018,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -307,13 +305,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.8",
     "totalVotos": 910,

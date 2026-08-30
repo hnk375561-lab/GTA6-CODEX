@@ -128,14 +128,12 @@
   },
   "cilindrada": "3.996 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 4,
   "baul": 358,
   "maleteroMin": null,
   "generacion": "Tercera generación",
   "anoLanzamiento": 2018,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -273,13 +271,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.1",
     "totalVotos": 4669,

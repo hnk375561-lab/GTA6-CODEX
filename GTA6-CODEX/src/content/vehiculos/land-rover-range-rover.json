@@ -156,14 +156,12 @@
   },
   "cilindrada": "2.996 cm³ (6 cilindros en línea turbo, P400)",
   "emisiones": "Variable según motorización; P400 es mild-hybrid (no enchufable), P550e reduce emisiones como PHEV",
-  "tipo": "SUV de lujo (Full-size luxury SUV)",
   "asientos": 5,
   "baul": 1050,
   "maleteroMin": 1050,
   "generacion": "Quinta generación (L460, desde 2022)",
   "anoLanzamiento": 2022,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

@@ -165,14 +165,12 @@
   },
   "cilindrada": "2.3 L a 3.0 L",
   "emisiones": null,
-  "tipo": null,
   "asientos": 7,
   "baul": 515,
   "maleteroMin": null,
   "generacion": "6ta generación",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "suv",
   "gallery": {
     "images": {
       "exterior": [],
@@ -316,13 +314,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.2",
     "totalVotos": 4393,

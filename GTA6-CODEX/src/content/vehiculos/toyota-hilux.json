@@ -171,14 +171,12 @@
   },
   "cilindrada": "2.755 cc",
   "emisiones": "CO2 212 g/km (WLTP)",
-  "tipo": "Pickup doble cabina",
   "asientos": 5,
   "baul": "Caja de carga 1.570 x 1.645 x 495 mm (largo x ancho x profundidad)",
   "maleteroMin": null,
   "generacion": "VIII (facelift 2024)",
   "anoLanzamiento": 2015,
   "colores": [],
-  "category": "pickup",
   "gallery": {
     "images": {
       "exterior": [
@@ -378,9 +376,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "7.5-8.5 l/100km combinado (motor turbodiésel 2.8L GD-6, según versión y tracción)"
     }

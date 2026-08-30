@@ -160,14 +160,12 @@
   },
   "cilindrada": "1.5 litros",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 450,
   "maleteroMin": null,
   "generacion": "1ra generación",
   "anoLanzamiento": 2018,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -307,13 +305,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.5",
     "totalVotos": 5188,

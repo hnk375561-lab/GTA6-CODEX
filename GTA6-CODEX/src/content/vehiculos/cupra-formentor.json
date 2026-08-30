@@ -137,14 +137,12 @@
   },
   "cilindrada": "1984 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 450,
   "maleteroMin": null,
   "generacion": "Mk1",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -284,13 +282,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.1",
     "totalVotos": 3002,

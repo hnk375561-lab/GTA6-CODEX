@@ -144,14 +144,12 @@
   },
   "cilindrada": "2.999 cc",
   "emisiones": "CO2 220 g/km (referencia)",
-  "tipo": "SUV 4x4 grande",
   "asientos": 7,
   "baul": 311,
   "maleteroMin": null,
   "generacion": "Tercera generación (2020-presente)",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "vehiculo",
   "gallery": {
     "images": {
       "exterior": [],

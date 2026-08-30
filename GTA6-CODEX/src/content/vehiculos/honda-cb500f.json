@@ -153,14 +153,12 @@
   "dimensiones": "2080 x 790 x 1060 mm",
   "cilindrada": "471 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 2,
   "baul": null,
   "maleteroMin": null,
   "generacion": "Segunda generación (actualización estética y de componentes)",
   "anoLanzamiento": 2013,
   "colores": [],
-  "category": "motocicleta",
   "gallery": {
     "images": {
       "exterior": [],
@@ -297,13 +295,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.2",
     "totalVotos": 5010,
@@ -322,9 +314,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

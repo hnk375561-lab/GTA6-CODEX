@@ -143,14 +143,12 @@
   },
   "cilindrada": "2996 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 7,
   "baul": 857,
   "maleteroMin": null,
   "generacion": "L663",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -290,13 +288,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.5",
     "totalVotos": 2980,

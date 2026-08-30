@@ -137,14 +137,12 @@
   },
   "cilindrada": "1499 cc (1.5L) / 1998 cc (2.0L)",
   "emisiones": null,
-  "tipo": null,
   "asientos": 4,
   "baul": 210,
   "maleteroMin": null,
   "generacion": "F66 (Cuarta generación moderna)",
   "anoLanzamiento": 2024,
   "colores": [],
-  "category": "auto-pequeño",
   "gallery": {
     "images": {
       "exterior": [],
@@ -284,13 +282,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.2",
     "totalVotos": 2657,

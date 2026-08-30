@@ -150,14 +150,12 @@
   },
   "cilindrada": "2.487 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 427,
   "maleteroMin": null,
   "generacion": "Novena generación (XV80)",
   "anoLanzamiento": 2024,
   "colores": [],
-  "category": "sedan",
   "gallery": {
     "images": {
       "exterior": [],
@@ -295,13 +293,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.4",
     "totalVotos": 3594,

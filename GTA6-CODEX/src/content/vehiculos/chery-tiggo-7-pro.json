@@ -165,14 +165,12 @@
   "dimensiones": "4500 x 1842 x 1746 mm",
   "cilindrada": "1498 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 414,
   "maleteroMin": null,
   "generacion": "1ra generación (fase actual Pro)",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.0",
     "totalVotos": 2397,

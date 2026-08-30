@@ -166,14 +166,12 @@
   "dimensiones": "5370 x 1918 x 1884 mm",
   "cilindrada": "1996 cc (Bi-Turbo) / 2993 cc (V6)",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": null,
   "maleteroMin": null,
   "generacion": "Nueva generación (P703)",
   "anoLanzamiento": 2023,
   "colores": [],
-  "category": "suv",
   "gallery": {
     "images": {
       "exterior": [],
@@ -316,13 +314,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.9",
     "totalVotos": 809,
@@ -341,9 +333,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

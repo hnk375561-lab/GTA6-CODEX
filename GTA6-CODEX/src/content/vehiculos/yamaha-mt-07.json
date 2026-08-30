@@ -164,14 +164,12 @@
   "dimensiones": "2.085 x 745 x 1.090 mm",
   "cilindrada": "689 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 2,
   "baul": null,
   "maleteroMin": null,
   "generacion": "Segunda generación (actualización estética, tecnológica y de normativas)",
   "anoLanzamiento": 2014,
   "colores": [],
-  "category": "motocicleta",
   "gallery": {
     "images": {
       "exterior": [],
@@ -308,13 +306,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.8",
     "totalVotos": 3215,
@@ -333,9 +325,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

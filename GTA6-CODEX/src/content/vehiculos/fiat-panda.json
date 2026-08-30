@@ -149,14 +149,12 @@
   },
   "cilindrada": "999 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 225,
   "maleteroMin": null,
   "generacion": "Tercera generación (actualización Pandina)",
   "anoLanzamiento": 2011,
   "colores": [],
-  "category": "auto-pequeño",
   "gallery": {
     "images": {
       "exterior": [],
@@ -294,13 +292,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.3",
     "totalVotos": 747,

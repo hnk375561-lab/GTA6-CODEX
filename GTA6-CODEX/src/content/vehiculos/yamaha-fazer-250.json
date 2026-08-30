@@ -160,14 +160,12 @@
   },
   "cilindrada": "249 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 2,
   "baul": null,
   "maleteroMin": null,
   "generacion": "Evolución FZ25 / Fazer 250",
   "anoLanzamiento": 2006,
   "colores": [],
-  "category": "motocicleta",
   "gallery": {
     "images": {
       "exterior": [],
@@ -303,13 +301,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.3",
     "totalVotos": 2325,

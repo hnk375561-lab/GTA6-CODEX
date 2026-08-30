@@ -145,14 +145,12 @@
   },
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 517,
   "maleteroMin": null,
   "generacion": "1ra Generación",
   "anoLanzamiento": 2024,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

@@ -152,14 +152,12 @@
   "dimensiones": "4683 x 1886 x 1730 mm",
   "cilindrada": "1499 cc / 1998 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 600,
   "maleteroMin": null,
   "generacion": "Tercera generación",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -297,13 +295,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.0",
     "totalVotos": 2112,

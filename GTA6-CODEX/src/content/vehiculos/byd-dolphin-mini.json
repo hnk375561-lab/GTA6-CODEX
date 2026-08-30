@@ -156,14 +156,12 @@
   },
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": 4,
   "baul": 230,
   "maleteroMin": null,
   "generacion": "1ra generación (Plataforma e-Platform 3.0)",
   "anoLanzamiento": 2023,
   "colores": [],
-  "category": "auto-pequeño",
   "gallery": {
     "images": {
       "exterior": [],

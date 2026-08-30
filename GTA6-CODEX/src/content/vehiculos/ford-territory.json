@@ -166,14 +166,12 @@
   },
   "cilindrada": "1798 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 448,
   "maleteroMin": null,
   "generacion": "Segunda generación",
   "anoLanzamiento": 2023,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -318,13 +316,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.5",
     "totalVotos": 2867,

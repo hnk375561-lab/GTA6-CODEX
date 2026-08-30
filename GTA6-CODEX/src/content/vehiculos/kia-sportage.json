@@ -164,14 +164,12 @@
   "dimensiones": "4515 x 1865 x 1650 mm",
   "cilindrada": "2498 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 591,
   "maleteroMin": null,
   "generacion": "Quinta generación (NQ5)",
   "anoLanzamiento": 2022,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -308,13 +306,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.7",
     "totalVotos": 837,
@@ -333,9 +325,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

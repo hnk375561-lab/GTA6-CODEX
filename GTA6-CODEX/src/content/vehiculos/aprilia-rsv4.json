@@ -68,7 +68,6 @@
   "neumaticos": "120/70-17 (delantero) / 200/55-17 (trasero)",
   "cilindrada": "1.099 cc",
   "emisiones": "No publicado oficialmente (motocicleta homologada Euro5+; sin cifra WLTP equivalente publicada por Aprilia)",
-  "tipo": "Motocicleta superdeportiva",
   "asientos": 2,
   "baul": "Sin baúl (moto deportiva, sin espacio de carga)",
   "maleteroMin": "N/A",
@@ -152,7 +151,6 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -290,13 +288,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.3",
     "totalVotos": 4150,

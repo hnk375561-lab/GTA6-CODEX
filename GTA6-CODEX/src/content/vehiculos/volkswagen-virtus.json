@@ -150,14 +150,12 @@
   },
   "cilindrada": "999 cc / 1.598 cc / 1.395 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 521,
   "maleteroMin": null,
   "generacion": "Primera generación (con actualización de diseño en 2023)",
   "anoLanzamiento": 2018,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -296,13 +294,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.7",
     "totalVotos": 3054,
@@ -321,9 +313,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No informado por el fabricante para Argentina"
     }

@@ -167,14 +167,12 @@
   },
   "cilindrada": null,
   "emisiones": "0 g/km CO2 en uso directo (vehículo 100% eléctrico); las emisiones asociadas dependen de la matriz de generación eléctrica de cada mercado",
-  "tipo": "Crossover eléctrico de carrocería tipo hatchback/SUV compacto",
   "asientos": 5,
   "baul": "691 L / 24.4 ft³ tras la segunda fila (1.422 L / 50.2 ft³ con asientos abatidos) + frunk de 20 L / 0.7 ft³ (fuentes: U.S. News, itemfits.com; cifras de la generación actual post-2025)",
   "maleteroMin": "691 L / 24.4 ft³",
   "generacion": "Primera generación (E-GMP), con actualización de batería, estilo y carga NACS en 2025",
   "anoLanzamiento": "2021",
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

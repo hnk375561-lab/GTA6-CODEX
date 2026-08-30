@@ -164,14 +164,12 @@
   "dimensiones": "4366 x 1800 x 1630 mm",
   "cilindrada": "1598 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 849,
   "maleteroMin": null,
   "generacion": "Primera generación / Evoluciones regionales",
   "anoLanzamiento": 2016,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -308,13 +306,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.9",
     "totalVotos": 4649,

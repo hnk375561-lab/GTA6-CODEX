@@ -73,7 +73,6 @@
   "traccion": "Tracción trasera (versión base/Competition) o tracción total inteligente M xDrive (Competition xDrive)",
   "cilindrada": "2.993 cc",
   "emisiones": "CO2 215 g/km (WLTP)",
-  "tipo": "Coupé",
   "asientos": 4,
   "baul": 440,
   "peso": "1.725 kg a 1.800 kg según variante y equipamiento",
@@ -173,7 +172,6 @@
   "generacion": "G82",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "deportivo",
   "gallery": {
     "images": {
       "exterior": [
@@ -319,13 +317,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.2",
     "totalVotos": 1086,

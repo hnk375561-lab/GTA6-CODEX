@@ -165,14 +165,12 @@
   },
   "cilindrada": "1332 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 400,
   "maleteroMin": null,
   "generacion": "Segunda generación",
   "anoLanzamiento": 2019,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -311,13 +309,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.1",
     "totalVotos": 2685,

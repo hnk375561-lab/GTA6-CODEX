@@ -157,14 +157,12 @@
   "dimensiones": "4795 x 1855 x 1835 mm",
   "cilindrada": "2755 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 7,
   "baul": 500,
   "maleteroMin": null,
   "generacion": "Segunda generación",
   "anoLanzamiento": 2015,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -302,13 +300,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.0",
     "totalVotos": 4271,

@@ -81,7 +81,6 @@
   "neumaticos": "225/50R17",
   "cilindrada": "1.984 cc",
   "emisiones": "CO2 142-180 g/km aprox. (según motorización; e-hybrid con cifra combinada menor por homologación PHEV)",
-  "tipo": "SUV mediano premium",
   "asientos": 5,
   "baul": 520,
   "maleteroMin": "520 litros",
@@ -168,7 +167,6 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "category": "suv",
   "gallery": {
     "images": {
       "exterior": [],
@@ -307,13 +305,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.4",
     "totalVotos": 5051,
@@ -332,9 +324,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No informado por el fabricante para Argentina"
     }

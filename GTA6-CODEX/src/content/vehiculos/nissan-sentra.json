@@ -164,14 +164,12 @@
   },
   "cilindrada": "2.0 L",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 466,
   "maleteroMin": null,
   "generacion": "Octava generación (B18)",
   "anoLanzamiento": 2019,
   "colores": [],
-  "category": "sedan",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.0",
     "totalVotos": 1726,

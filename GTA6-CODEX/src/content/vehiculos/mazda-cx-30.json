@@ -161,14 +161,12 @@
   },
   "cilindrada": "2.5 L",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 430,
   "maleteroMin": null,
   "generacion": "1ra generación (DM)",
   "anoLanzamiento": 2019,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

@@ -80,7 +80,6 @@
   "neumaticos": "225/50R17",
   "cilindrada": "1.395 cc",
   "emisiones": "CO2 131-159 g/km (según motorización; versión TFSIe híbrida: 37-47 g/km)",
-  "tipo": "SUV premium compacta",
   "asientos": 5,
   "baul": 530,
   "maleteroMin": "460 litros",
@@ -169,7 +168,6 @@
   },
   "consumo": "Aprox. 6.5 - 7.5 L/100 km combinado",
   "dimensiones": "4484 x 1856 x 1616 mm",
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -307,13 +305,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.4",
     "totalVotos": 3386,
@@ -332,9 +324,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

@@ -165,14 +165,12 @@
   "dimensiones": "3999 x 1724 x 1505 mm",
   "cilindrada": "1.3 litros",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 300,
   "maleteroMin": null,
   "generacion": "1ra Generación (Facelift)",
   "anoLanzamiento": 2017,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -309,13 +307,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.2",
     "totalVotos": 3730,

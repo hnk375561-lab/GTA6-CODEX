@@ -80,7 +80,6 @@
   "neumaticos": "225/50R17",
   "cilindrada": "1.998 cc",
   "emisiones": "CO2 158-166 g/km (WLTP, versión 330i xDrive)",
-  "tipo": "Sedán premium",
   "asientos": 5,
   "baul": 480,
   "maleteroMin": "480 litros",
@@ -169,7 +168,6 @@
   },
   "consumo": "6.5 L/100 km (mixto WLTP)",
   "dimensiones": "4713 x 1827 x 1440 mm",
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -313,13 +311,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.0",
     "totalVotos": 3099,
@@ -338,9 +330,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

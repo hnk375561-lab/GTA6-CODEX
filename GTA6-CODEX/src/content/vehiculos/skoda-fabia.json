@@ -158,14 +158,12 @@
   },
   "cilindrada": "1.0 litros",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 380,
   "maleteroMin": null,
   "generacion": "Cuarta generación",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

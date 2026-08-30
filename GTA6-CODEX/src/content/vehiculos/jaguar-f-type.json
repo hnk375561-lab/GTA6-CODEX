@@ -153,14 +153,12 @@
   },
   "cilindrada": "4.999 cc",
   "emisiones": null,
-  "tipo": "Coupé/roadster deportivo",
   "asientos": 2,
   "baul": 336,
   "maleteroMin": null,
   "generacion": "Segunda mitad de ciclo (2020-2024), ediciones especiales 75/R75",
   "anoLanzamiento": 2013,
   "colores": [],
-  "category": "vehiculo",
   "gallery": {
     "images": {
       "exterior": [],

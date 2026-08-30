@@ -154,14 +154,12 @@
   },
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 410,
   "maleteroMin": null,
   "generacion": "1ra generación (facelift reciente)",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "electrico",
   "gallery": {
     "images": {
       "exterior": [],

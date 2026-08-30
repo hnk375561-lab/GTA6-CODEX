@@ -164,14 +164,12 @@
   },
   "cilindrada": "998 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 300,
   "maleteroMin": null,
   "generacion": "Segunda generación (restyling)",
   "anoLanzamiento": 2022,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.0",
     "totalVotos": 3624,

@@ -164,14 +164,12 @@
   },
   "cilindrada": "No aplica (Eléctrico) / 999 cc (Híbrido)",
   "emisiones": null,
-  "tipo": null,
   "asientos": 4,
   "baul": 185,
   "maleteroMin": null,
   "generacion": "Tercera generación (Nueva 500 / 500e)",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "auto-pequeño",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.8",
     "totalVotos": 4918,

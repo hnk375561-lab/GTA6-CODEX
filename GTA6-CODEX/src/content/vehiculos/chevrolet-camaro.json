@@ -167,14 +167,12 @@
   },
   "cilindrada": "6.2 L",
   "emisiones": null,
-  "tipo": null,
   "asientos": 4,
   "baul": 258,
   "maleteroMin": null,
   "generacion": "Sexta generación",
   "anoLanzamiento": 2016,
   "colores": [],
-  "category": "deportivo",
   "gallery": {
     "images": {
       "exterior": [],
@@ -314,13 +312,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.3",
     "totalVotos": 1198,
@@ -339,9 +331,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "≈12.4 l/100km combinado estimado (19 mpg EPA, versión SS V8 6.2L)"
     }

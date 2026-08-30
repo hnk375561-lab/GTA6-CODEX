@@ -159,14 +159,12 @@
   },
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 527,
   "maleteroMin": null,
   "generacion": "1ra generación",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "electrico",
   "gallery": {
     "images": {
       "exterior": [],

@@ -142,14 +142,12 @@
   "dimensiones": "2040 x 750 x 1080 mm",
   "cilindrada": "149 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 2,
   "baul": null,
   "maleteroMin": null,
   "generacion": "Evolución constante de baja cilindrada",
   "anoLanzamiento": 2010,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -284,13 +282,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.0",
     "totalVotos": 5459,

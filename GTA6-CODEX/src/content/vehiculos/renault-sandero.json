@@ -165,14 +165,12 @@
   "dimensiones": "4069 x 1733 x 1523 mm",
   "cilindrada": "1598 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 320,
   "maleteroMin": null,
   "generacion": "3ra generación",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -309,13 +307,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.6",
     "totalVotos": 1584,
@@ -334,9 +326,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

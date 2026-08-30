@@ -149,14 +149,12 @@
   },
   "cilindrada": "1560 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 3000,
   "maleteroMin": null,
   "generacion": "Primera generación (con profundos restylings regionales en Sudamérica)",
   "anoLanzamiento": 1998,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -295,13 +293,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.5",
     "totalVotos": 5356,

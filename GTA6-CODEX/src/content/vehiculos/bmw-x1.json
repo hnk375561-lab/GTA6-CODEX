@@ -147,14 +147,12 @@
   },
   "cilindrada": "1995 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 540,
   "maleteroMin": null,
   "generacion": "Tercera generación (U11)",
   "anoLanzamiento": 2022,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -300,13 +298,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.8",
     "totalVotos": 769,

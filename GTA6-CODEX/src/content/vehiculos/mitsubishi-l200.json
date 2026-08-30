@@ -162,14 +162,12 @@
   },
   "cilindrada": "2442 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": null,
   "maleteroMin": null,
   "generacion": "6ta generación (facelift o previa a la nueva 2024 global)",
   "anoLanzamiento": 2019,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -309,13 +307,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.2",
     "totalVotos": 3909,

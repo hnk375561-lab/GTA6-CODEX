@@ -164,14 +164,12 @@
   },
   "cilindrada": "999 cc / 1395 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 415,
   "maleteroMin": null,
   "generacion": "1ra Generación (Facelift 2024)",
   "anoLanzamiento": 2019,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -310,13 +308,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.3",
     "totalVotos": 3054,

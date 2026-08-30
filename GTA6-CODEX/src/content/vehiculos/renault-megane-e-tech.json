@@ -159,14 +159,12 @@
   },
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 389,
   "maleteroMin": null,
   "generacion": "1ra generación (E-Tech)",
   "anoLanzamiento": 2022,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

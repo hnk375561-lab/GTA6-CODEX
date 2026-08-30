@@ -164,14 +164,12 @@
   "dimensiones": "4364 x 1724 x 1516 mm",
   "cilindrada": "1332 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 525,
   "maleteroMin": null,
   "generacion": "1ra generación (facelift)",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -308,13 +306,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.6",
     "totalVotos": 4727,
@@ -333,9 +325,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

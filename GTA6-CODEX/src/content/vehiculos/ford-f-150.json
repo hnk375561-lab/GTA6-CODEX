@@ -156,14 +156,12 @@
   },
   "cilindrada": "3.5 litros",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": null,
   "maleteroMin": null,
   "generacion": "Decimocuarta generación",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "comercial",
   "gallery": {
     "images": {
       "exterior": [],
@@ -308,13 +306,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.6",
     "totalVotos": 1194,

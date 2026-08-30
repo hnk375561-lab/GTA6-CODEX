@@ -165,14 +165,12 @@
   },
   "cilindrada": "2.981 cc",
   "emisiones": "CO2 210 g/km (WLTP)",
-  "tipo": "Cupé",
   "asientos": 4,
   "baul": 132,
   "maleteroMin": null,
   "generacion": "992 (octava generación)",
   "anoLanzamiento": 2019,
   "colores": [],
-  "category": "deportivo",
   "gallery": {
     "images": {
       "exterior": [
@@ -359,9 +357,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "9.1 l/100km combinado (WLTP, versión Carrera 992.2 con caja PDK)"
     }

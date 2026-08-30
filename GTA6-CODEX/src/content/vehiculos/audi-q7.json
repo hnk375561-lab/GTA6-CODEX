@@ -96,7 +96,6 @@
   "neumaticos": "225/50R17",
   "cilindrada": "2995 cc",
   "emisiones": "CO2 229 g/km (55 TFSI V6) / 57 g/km (55 TFSIe híbrido, cifra combinada PHEV)",
-  "tipo": "SUV premium grande (7 plazas)",
   "asientos": 7,
   "baul": 865,
   "maleteroMin": "865 litros",
@@ -183,7 +182,6 @@
     "parking": "8-12 sensores",
     "crucero": "ACC"
   },
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -321,13 +319,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.5",
     "totalVotos": 3544,

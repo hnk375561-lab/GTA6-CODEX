@@ -165,14 +165,12 @@
   "dimensiones": "3995 x 1765 x 1550 mm",
   "cilindrada": "1462 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 308,
   "maleteroMin": null,
   "generacion": "1ra generación",
   "anoLanzamiento": 2023,
   "colores": [],
-  "category": "motocicleta",
   "gallery": {
     "images": {
       "exterior": [],
@@ -309,13 +307,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.2",
     "totalVotos": 4963,

@@ -167,14 +167,12 @@
   },
   "cilindrada": "2.497 cc",
   "emisiones": null,
-  "tipo": "SUV mediano",
   "asientos": 7,
   "baul": 2253,
   "maleteroMin": null,
   "generacion": "Quinta generación (MX5, 2024-presente)",
   "anoLanzamiento": 2024,
   "colores": [],
-  "category": "vehiculo",
   "gallery": {
     "images": {
       "exterior": [],

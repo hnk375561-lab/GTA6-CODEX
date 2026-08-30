@@ -150,14 +150,12 @@
   "dimensiones": "3595 x 1595 x 1485 mm",
   "cilindrada": "998 cc o 1197 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 255,
   "maleteroMin": null,
   "generacion": "Tercera generación (facelift reciente)",
   "anoLanzamiento": 2017,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -295,13 +293,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.4",
     "totalVotos": 894,

@@ -159,14 +159,12 @@
   "dimensiones": "4161 x 1765 x 1610 mm",
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 478,
   "maleteroMin": null,
   "generacion": "1ª generación (reestyling 2022)",
   "anoLanzamiento": 2016,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -303,13 +301,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "5.1",
     "totalVotos": 1966,
@@ -328,9 +320,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "No especificado"
     }

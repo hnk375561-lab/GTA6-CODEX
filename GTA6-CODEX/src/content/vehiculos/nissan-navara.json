@@ -160,14 +160,12 @@
   },
   "cilindrada": "2.3 litros",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": null,
   "maleteroMin": null,
   "generacion": "D23",
   "anoLanzamiento": 2014,
   "colores": [],
-  "category": "comercial",
   "gallery": {
     "images": {
       "exterior": [],

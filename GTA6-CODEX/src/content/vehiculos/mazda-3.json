@@ -151,14 +151,12 @@
   },
   "cilindrada": "2.0L / 2.5L",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 358,
   "maleteroMin": null,
   "generacion": "Cuarta generación",
   "anoLanzamiento": 2019,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

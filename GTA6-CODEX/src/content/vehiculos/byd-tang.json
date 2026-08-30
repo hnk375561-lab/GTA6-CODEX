@@ -159,14 +159,12 @@
   },
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": 7,
   "baul": 940,
   "maleteroMin": null,
   "generacion": "2da generación (facelift EV)",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "electrico",
   "gallery": {
     "images": {
       "exterior": [],

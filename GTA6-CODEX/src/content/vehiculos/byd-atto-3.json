@@ -159,14 +159,12 @@
   },
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 440,
   "maleteroMin": null,
   "generacion": "1ra generación",
   "anoLanzamiento": 2022,
   "colores": [],
-  "category": "electrico",
   "gallery": {
     "images": {
       "exterior": [],
@@ -304,13 +302,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "3.7",
     "totalVotos": 4251,

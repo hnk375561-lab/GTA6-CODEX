@@ -162,14 +162,12 @@
   },
   "cilindrada": "999 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 391,
   "maleteroMin": null,
   "generacion": "Quinta generación (facelift reciente)",
   "anoLanzamiento": 2019,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],

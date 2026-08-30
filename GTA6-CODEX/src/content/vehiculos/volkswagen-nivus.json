@@ -144,14 +144,12 @@
   "dimensiones": "4266 x 1757 x 1493 mm",
   "cilindrada": "999 cc",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 415,
   "maleteroMin": null,
   "generacion": "Primera generación (Mk1)",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "otros",
   "gallery": {
     "images": {
       "exterior": [],
@@ -288,13 +286,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.9",
     "totalVotos": 4603,

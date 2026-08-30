@@ -145,14 +145,12 @@
   },
   "cilindrada": null,
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 854,
   "maleteroMin": null,
   "generacion": "Primera generación",
   "anoLanzamiento": 2020,
   "colores": [],
-  "category": "electrico",
   "gallery": {
     "images": {
       "exterior": [],
@@ -297,13 +295,7 @@
     "auditNotes": "Datos en revisión",
     "dataQuality": 0.8
   },
-  "globalPricing": {
-    "USD": {
-      "precio": 0,
-      "moneda": "USD",
-      "disponible": true
-    }
-  },
+  "globalPricing": null,
   "userRatings": {
     "promedio": "4.4",
     "totalVotos": 4790,
@@ -322,9 +314,6 @@
     ]
   },
   "performanceData": {
-    "velocidad": {
-      "maxima": 0
-    },
     "consumo": {
       "promedio": "15.3 kWh/100km (consumo oficial WLTP, versión Long Range AWD)"
     }

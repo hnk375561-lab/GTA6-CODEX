@@ -152,14 +152,12 @@
   },
   "cilindrada": "1.0 litros",
   "emisiones": null,
-  "tipo": null,
   "asientos": 5,
   "baul": 355,
   "maleteroMin": null,
   "generacion": "Quinta generación (facelift)",
   "anoLanzamiento": 2021,
   "colores": [],
-  "category": "auto-pequeño",
   "gallery": {
     "images": {
       "exterior": [],
