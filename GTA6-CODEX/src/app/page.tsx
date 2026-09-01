@@ -23,6 +23,7 @@ import { QuickSearchForm } from '@/components/home/QuickSearchForm'
 import { PinnedScrollStages, type Stage } from '@/components/home/PinnedScrollStages'
 import { Reveal } from '@/components/home/StageProgress'
 import { Parallax, TiltCard } from '@/components/home/Parallax'
+import { AdUnit } from '@/components/monetization/AdUnit'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateHomepageMetadata()
@@ -159,6 +160,10 @@ export default async function HomePage() {
             <div className="mx-auto mt-6 max-w-xl">
               <QuickSearchForm />
             </div>
+          </Reveal>
+
+          <Reveal index={3.5} total={6} className="mx-auto mt-8">
+            <AdUnit slotId="4725819384" format="responsive" dataTrackingLabel="ad-hero" />
           </Reveal>
 
           {/* Preview de categorías directo en el hero: contenido real
