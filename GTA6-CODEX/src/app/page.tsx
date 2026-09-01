@@ -163,7 +163,7 @@ export default async function HomePage() {
           </Reveal>
 
           <Reveal index={3.5} total={6} className="mx-auto mt-8">
-            <AdUnit slotId="4725819384" format="responsive" dataTrackingLabel="ad-hero" />
+            <AdUnit slotId="3119092668" format="responsive" dataTrackingLabel="ad-hero" />
           </Reveal>
 
           {/* Preview de categorías directo en el hero: contenido real
