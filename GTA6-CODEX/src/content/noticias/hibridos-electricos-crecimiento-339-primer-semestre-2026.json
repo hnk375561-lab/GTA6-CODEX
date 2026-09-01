@@ -1,0 +1,27 @@
+{
+  "slug": "hibridos-electricos-crecimiento-339-primer-semestre-2026",
+  "type": "noticias",
+  "title": "Los híbridos y eléctricos crecieron 339% en el primer semestre de 2026 en Argentina",
+  "description": "Según ACARA, las ventas de vehículos electrificados alcanzaron un récord histórico en el primer semestre de 2026, impulsadas por la eliminación de aranceles a la importación y el avance de marcas chinas como BYD.",
+  "status": "confirmado",
+  "tags": ["autos-electricos", "hibridos", "acara", "byd", "2026"],
+  "featured": false,
+  "createdAt": "2026-09-01",
+  "updatedAt": "2026-09-01",
+  "seoTitle": "Autos Híbridos y Eléctricos en Argentina 2026: Crecen 339% | AutoFicha",
+  "seoDescription": "Datos de ACARA sobre el crecimiento histórico de híbridos y eléctricos en Argentina durante el primer semestre de 2026, con BYD a la cabeza del segmento.",
+  "content": "Mientras el mercado de 0km en general viene mostrando caídas interanuales, un segmento fue en la dirección contraria: según datos de la Asociación de Concesionarios de Automotores (ACARA), las ventas de vehículos híbridos y eléctricos crecieron 339,4% interanual durante el primer semestre de 2026, marcando un récord histórico para el segmento en el país.\n\n## Qué explica el salto\n\nEl principal impulsor fue la eliminación de aranceles de importación para determinados vehículos electrificados provenientes de fuera del Mercosur (Decreto 49/2025), que permitió el ingreso de unidades con un valor FOB reducido sin el arancel extrazona habitual. Esa ventana abrió la puerta a una ola de marcas chinas que hasta hace pocos años prácticamente no tenían presencia en el país.\n\n## BYD, muy por delante del resto\n\nEntre las marcas chinas, BYD se consolidó como la clara líder del segmento eléctrico, con el BYD Dolphin Mini como modelo más vendido del país en esa categoría, seguido por el Yuan Pro. Chery y BAIC también ganaron posiciones relevantes, en general con SUV compactos y versiones híbridas de entrada.\n\n## Un segmento chico, pero que ya no es anecdótico\n\nEs importante poner el crecimiento en contexto: partiendo de una base muy baja (apenas un puñado de unidades diarias hace un año), el segmento electrificado sigue siendo una porción menor del mercado total de 0km. Pero la velocidad del crecimiento — y el hecho de que ya compite en volumen con marcas tradicionales en algunos meses — anticipa que la electrificación va a jugar un rol cada vez más central en el mercado argentino de acá a los próximos años.\n\n## Si estás pensando en un híbrido o eléctrico\n\nAntes de decidirte, revisá la [ficha técnica](/vehiculos) de cada modelo — autonomía real, infraestructura de carga necesaria y disponibilidad de repuestos/service local varían mucho entre marcas recién llegadas y las que ya tienen años en el país. El [comparador](/comparar) te sirve para poner lado a lado, por ejemplo, un eléctrico chino de entrada contra un híbrido de una marca más establecida.\n\n---\n\n*Fuente: datos de ACARA para el primer semestre 2026, reportados por Aire de Santa Fe.*",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.airedesantafe.com.ar/autos/los-10-autos-hibridos-y-electricos-mas-vendidos-la-argentina-2026-n665214",
+    "note": "Crecimiento interanual del segmento híbrido/eléctrico según informe de ACARA para el primer semestre de 2026."
+  },
+  "relations": [
+    {
+      "targetType": "guias",
+      "targetSlug": "autos-electricos-argentina-donde-comprarlos",
+      "relation": "related_guide",
+      "direction": "to"
+    }
+  ]
+}
