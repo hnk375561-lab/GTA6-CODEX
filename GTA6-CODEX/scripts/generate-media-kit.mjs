@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Genera prospeccion/media-kit-autoficha.pdf a partir de
+ * Genera prospeccion/media-kit-sinfrenos.pdf a partir de
  * prospeccion/media-kit-data.json.
  *
  * Por qué un script y no un PDF estático hecho una vez: los números de
@@ -18,7 +18,7 @@ import { dirname, join } from 'node:path'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const dataPath = join(__dirname, '..', 'prospeccion', 'media-kit-data.json')
-const outputPath = join(__dirname, '..', 'prospeccion', 'media-kit-autoficha.pdf')
+const outputPath = join(__dirname, '..', 'prospeccion', 'media-kit-sinfrenos.pdf')
 
 const data = JSON.parse(readFileSync(dataPath, 'utf-8'))
 
@@ -80,13 +80,13 @@ doc
   .fillColor(COLORS.accent)
   .font('Helvetica-Bold')
   .fontSize(28)
-  .text('AutoFicha', 50, y)
+  .text('Sin Frenos', 50, y)
 y = doc.y + 2
 doc
   .fillColor(COLORS.textSecondary)
   .font('Helvetica')
   .fontSize(11)
-  .text('Catálogo de fichas técnicas de autos y motos — autoficha.vercel.app', 50, y)
+  .text('Catálogo de fichas técnicas de autos y motos — gta-6-codex.vercel.app', 50, y)
 y = doc.y + 4
 doc
   .fillColor(COLORS.textSecondary)
@@ -96,8 +96,8 @@ doc
 y = doc.y + 24
 divider()
 
-// --- Qué es AutoFicha ---
-subheading('Qué es AutoFicha')
+// --- Qué es Sin Frenos ---
+subheading('Qué es Sin Frenos')
 paragraph(
   'Catálogo de referencia técnica de autos y motos: fichas verificadas, comparador ' +
     'lado a lado y guías de compra. Pensado para gente que ya decidió comprar y está ' +
@@ -139,7 +139,7 @@ divider()
 
 // --- ROI ---
 ensureSpace(120)
-subheading('Por qué AutoFicha vs. un ad genérico')
+subheading('Por qué Sin Frenos vs. un ad genérico')
 paragraph(data.roiEjemplo)
 
 // --- Footer / contacto ---

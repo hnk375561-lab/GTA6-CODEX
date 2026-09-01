@@ -6,7 +6,7 @@
  * sitio era un find-and-replace riesgoso en vez de un cambio en un solo
  * lugar. Este módulo reemplaza todas esas copias.
  */
-export const SITE_NAME = 'AutoFicha'
+export const SITE_NAME = 'Sin Frenos'
 
 export const SITE_TAGLINE = 'Fichas técnicas y comparador de autos y motos'
 

@@ -39,12 +39,12 @@ describe('useAbTest', () => {
 
     await waitFor(() => expect(variants).toContain(result.current))
 
-    const stored = window.localStorage.getItem('autoficha:ab:test-persistencia')
+    const stored = window.localStorage.getItem('sinfrenos:ab:test-persistencia')
     expect(stored).toBe(result.current)
   })
 
   it('en visitas siguientes respeta la variante ya persistida', async () => {
-    window.localStorage.setItem('autoficha:ab:test-repeticion', 'Buscar en OLX')
+    window.localStorage.setItem('sinfrenos:ab:test-repeticion', 'Buscar en OLX')
     const variants = ['Ver en OLX', 'Buscar en OLX', 'Ver publicaciones'] as const
 
     const { result } = renderHook(() => useAbTest('test-repeticion', variants))
@@ -52,7 +52,7 @@ describe('useAbTest', () => {
   })
 
   it('ignora un valor persistido que ya no es una variante válida', async () => {
-    window.localStorage.setItem('autoficha:ab:test-invalido', 'variante-vieja-que-ya-no-existe')
+    window.localStorage.setItem('sinfrenos:ab:test-invalido', 'variante-vieja-que-ya-no-existe')
     const variants = ['a', 'b'] as const
 
     const { result } = renderHook(() => useAbTest('test-invalido', variants))

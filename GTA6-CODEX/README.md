@@ -1,4 +1,4 @@
-# 🚗 AutoFicha: Fichas Técnicas y Comparador de Autos y Motos
+# 🚗 Sin Frenos: Fichas Técnicas y Comparador de Autos y Motos
 
 > **Un catálogo global de vehículos** con fichas técnicas reales, comparador
 > lado a lado y una fuente citada detrás de cada dato.

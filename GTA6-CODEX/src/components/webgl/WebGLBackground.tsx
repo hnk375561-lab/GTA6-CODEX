@@ -61,7 +61,7 @@ function hasSeenIntroThisSession(): boolean {
  * de `{children}`. En App Router de Next.js eso significa que React lo
  * mantiene montado a través de navegaciones entre rutas — `{children}` es
  * lo único que se reemplaza, este `<canvas>` y la instancia de
- * `AutoFichaWebGLEngine` que contiene NUNCA se desmontan ni reinstancian
+ * `SinFrenosWebGLEngine` que contiene NUNCA se desmontan ni reinstancian
  * al navegar. El ciclo día/noche y el mood de la escena ya persisten solos;
  * no había nada que arreglar acá. `data-webgl-canvas` (ver abajo) es la
  * única adición: un identificador para que `PageTransitionBridge` (6.1/6.2)
@@ -75,15 +75,15 @@ export function WebGLBackground() {
     if (!canvasRef.current) return
     if (prefersReducedData()) return
 
-    let engine: import('@/lib/webgl/engine').AutoFichaWebGLEngine | null = null
+    let engine: import('@/lib/webgl/engine').SinFrenosWebGLEngine | null = null
     let cancelled = false
 
     const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
 
     import('@/lib/webgl/engine')
-      .then(({ AutoFichaWebGLEngine }) => {
+      .then(({ SinFrenosWebGLEngine }) => {
         if (cancelled || !canvasRef.current) return
-        engine = new AutoFichaWebGLEngine(canvasRef.current, {
+        engine = new SinFrenosWebGLEngine(canvasRef.current, {
           reducedMotion: mql.matches,
           returningVisitor: hasSeenIntroThisSession(),
         })

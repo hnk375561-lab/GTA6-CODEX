@@ -43,7 +43,7 @@ interface Streak {
   opacity: number
 }
 
-export class AutoFichaWebGLEngine {
+export class SinFrenosWebGLEngine {
   private ctx: CanvasRenderingContext2D
   private width = 0
   private height = 0
@@ -79,7 +79,7 @@ export class AutoFichaWebGLEngine {
     this.introDurationMs = this.returningVisitor ? 450 : 1300
 
     const ctx = canvas.getContext('2d', { alpha: true })
-    if (!ctx) throw new Error('[AutoFichaWebGLEngine] Canvas 2D no disponible')
+    if (!ctx) throw new Error('[SinFrenosWebGLEngine] Canvas 2D no disponible')
     this.ctx = ctx
 
     this.resize(canvas)

@@ -2,13 +2,13 @@
 
 import { useCallback, useEffect, useState } from 'react'
 
-const STORAGE_KEY = 'autoficha:wishlist'
+const STORAGE_KEY = 'sinfrenos:wishlist'
 /** Evento custom disparado en el mismo tab tras cada mutación, para que
  *  todas las instancias del hook (ej. el botón en una card y el contador
  *  en el header, si algún día existe) se enteren sin depender solo del
  *  evento nativo `storage` — ese último SOLO dispara en tabs distintos al
  *  que hizo el cambio, nunca en el propio. */
-const LOCAL_EVENT = 'autoficha:wishlist-change'
+const LOCAL_EVENT = 'sinfrenos:wishlist-change'
 
 /** Id compuesto `type/slug` — mismo formato que ya usa `imageBySlug` en
  *  `getEntityImageMap` (ver `lib/media.ts`), así que reutilizamos la

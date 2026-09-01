@@ -68,7 +68,7 @@ export function MercadoLibreAffiliateButton({
     const encodedQuery = encodeURIComponent(vehicleName)
     const baseUrl = `https://listado.mercadolibre.com.ar/${encodedQuery}`
     const params = new URLSearchParams({
-      utm_source: 'autoficha',
+      utm_source: 'sinfrenos',
       utm_medium: 'affiliate',
       utm_campaign: 'vehicle-search',
     })

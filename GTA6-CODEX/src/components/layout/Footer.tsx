@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { EntityType } from '@/types'
 import { Reveal } from '@/components/ui/Reveal'
+import { SITE_NAME } from '@/config/site'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -16,9 +17,9 @@ export function Footer() {
           <div>
             <div className="mb-4 flex items-center gap-2.5">
               <div className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-auto-accent to-auto-accent-orange">
-                <span className="font-display text-[10px] font-bold text-auto-darker">A</span>
+                <span className="font-display text-[10px] font-bold text-auto-darker">{SITE_NAME.charAt(0)}</span>
               </div>
-              <h3 className="font-display text-lg font-semibold text-auto-text">AutoFicha</h3>
+              <h3 className="font-display text-lg font-semibold text-auto-text">{SITE_NAME}</h3>
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-auto-text-secondary">
               Fichas técnicas de autos y motos con specs reales, comparador lado a lado y fuente por cada dato.
@@ -136,10 +137,10 @@ export function Footer() {
         <Reveal delay={150} className="relative mt-10 space-y-3 pt-8 text-center text-auto-text-tertiary">
           <div className="section-divider absolute inset-x-0 top-0" aria-hidden="true" />
           <p className="mx-auto max-w-2xl text-xs leading-relaxed">
-            AutoFicha es un proyecto editorial independiente. Las marcas y nombres de fabricantes mencionados
+            {SITE_NAME} es un proyecto editorial independiente. Las marcas y nombres de fabricantes mencionados
             pertenecen a sus respectivos dueños y se citan aquí con fines informativos y de comparación técnica.
           </p>
-          <p className="font-mono text-xs tracking-wide">© {currentYear} AutoFicha.</p>
+          <p className="font-mono text-xs tracking-wide">© {currentYear} {SITE_NAME}.</p>
         </Reveal>
       </div>
     </footer>

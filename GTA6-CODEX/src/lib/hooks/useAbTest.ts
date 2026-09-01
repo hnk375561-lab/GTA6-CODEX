@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { trackAbAssignment } from '@/lib/analytics-events'
 
-const STORAGE_PREFIX = 'autoficha:ab:'
+const STORAGE_PREFIX = 'sinfrenos:ab:'
 
 /**
  * Hash determinístico simple (djb2) — no necesita ser criptográfico, solo

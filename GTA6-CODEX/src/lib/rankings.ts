@@ -115,7 +115,7 @@ const RANKING_DEFINITIONS: RankingDefinition[] = [
     intro:
       'Ranking calculado automáticamente a partir de la potencia (hp) declarada en la ficha técnica de cada vehículo. Se ordena de mayor a menor potencia. Solo se incluyen vehículos con un valor de potencia numérico y comparable; los que no tienen ese dato cargado no participan de este ranking (pero siguen disponibles en el catálogo y la búsqueda). El orden se recalcula automáticamente cada vez que cambian los datos del catálogo.',
     metaDescription:
-      'Ranking automático de los vehículos con mayor potencia (hp) del catálogo de AutoFicha, ordenado por dato real de ficha técnica.',
+      'Ranking automático de los vehículos con mayor potencia (hp) del catálogo de Sin Frenos, ordenado por dato real de ficha técnica.',
   },
   {
     slug: 'mas-baratos',
@@ -129,7 +129,7 @@ const RANKING_DEFINITIONS: RankingDefinition[] = [
     intro:
       'Ranking calculado automáticamente a partir del precio estructurado en dólares estadounidenses (USD) de cada vehículo. Se ordena de menor a mayor precio. El catálogo incluye precios en varias monedas (USD, ARS, EUR, GBP y otras); para evitar comparar monedas distintas como si fueran la misma unidad, este ranking se limita exclusivamente a vehículos con precio estructurado en USD — no se realiza ninguna conversión de moneda. Los vehículos con precio en otra moneda, sin precio o con precio no estructurable no participan de este ranking, pero siguen disponibles en el catálogo. El orden se recalcula automáticamente cada vez que cambian los datos del catálogo.',
     metaDescription:
-      'Ranking automático de los vehículos con menor precio en USD del catálogo de AutoFicha, sin conversión de moneda.',
+      'Ranking automático de los vehículos con menor precio en USD del catálogo de Sin Frenos, sin conversión de moneda.',
   },
   {
     slug: 'mas-caros',
@@ -143,7 +143,7 @@ const RANKING_DEFINITIONS: RankingDefinition[] = [
     intro:
       'Ranking calculado automáticamente a partir del precio estructurado en dólares estadounidenses (USD) de cada vehículo. Se ordena de mayor a menor precio. Igual que en "Más baratos", este ranking se limita exclusivamente a vehículos con precio estructurado en USD, sin ninguna conversión de moneda, para no mezclar monedas distintas en una misma comparación. Los vehículos con precio en otra moneda, sin precio o con precio no estructurable no participan de este ranking, pero siguen disponibles en el catálogo. El orden se recalcula automáticamente cada vez que cambian los datos del catálogo.',
     metaDescription:
-      'Ranking automático de los vehículos con mayor precio en USD del catálogo de AutoFicha, sin conversión de moneda.',
+      'Ranking automático de los vehículos con mayor precio en USD del catálogo de Sin Frenos, sin conversión de moneda.',
   },
   {
     slug: 'mas-recientes',
@@ -157,7 +157,7 @@ const RANKING_DEFINITIONS: RankingDefinition[] = [
     intro:
       'Ranking calculado automáticamente a partir del año de lanzamiento (anoLanzamiento) de cada vehículo. Se ordena del más nuevo al más antiguo. Solo se incluyen vehículos con un año de lanzamiento válido (entre 1900 y el año actual más un margen para modelos ya anunciados); los que no tienen ese dato cargado o tienen un valor fuera de rango no participan de este ranking. El orden se recalcula automáticamente cada vez que cambian los datos del catálogo.',
     metaDescription:
-      'Ranking automático de los vehículos más recientes del catálogo de AutoFicha, ordenado por año de lanzamiento real.',
+      'Ranking automático de los vehículos más recientes del catálogo de Sin Frenos, ordenado por año de lanzamiento real.',
   },
 ]
 

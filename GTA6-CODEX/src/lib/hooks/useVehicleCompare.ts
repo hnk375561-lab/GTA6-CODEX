@@ -4,13 +4,13 @@ import { useEffect, useMemo, useState } from 'react'
 import type { Entity, Vehicle } from '@/types'
 import { MAX_COMPARE } from '@/components/entities/VehicleCompareSheet'
 
-/** Mismo patrón que `autoficha:wishlist` (ver `useWishlist.ts`): persiste
+/** Mismo patrón que `sinfrenos:wishlist` (ver `useWishlist.ts`): persiste
  *  la selección del comparador en `localStorage` (Oportunidad #10 de la
  *  auditoría "AutoFicha: aprovechamiento de datos" — hoy se perdía al
  *  cerrar la pestaña o navegar entre listado y `/comparar`). Clave
  *  distinta a la wishlist porque son conceptos independientes: un
  *  vehículo puede estar en comparación sin estar en favoritos y viceversa. */
-const STORAGE_KEY = 'autoficha:compare'
+const STORAGE_KEY = 'sinfrenos:compare'
 
 export function readCompareStorage(): string[] {
   if (typeof window === 'undefined') return []

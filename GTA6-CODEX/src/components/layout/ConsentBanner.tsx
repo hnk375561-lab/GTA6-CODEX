@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Script from 'next/script'
 import { useModalFocus } from '@/lib/hooks/useModalFocus'
 
-const STORAGE_KEY = 'autoficha-cookie-consent'
+const STORAGE_KEY = 'sinfrenos-cookie-consent'
 // Nota: la key anterior ('gta6zona-cookie-consent') era un resabio del
 // nombre viejo del sitio (pivote GTA6 Zona -> AutoFicha). Se renombra acá
 // para no arrastrar branding legado en storage del navegador del usuario;

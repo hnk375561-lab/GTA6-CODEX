@@ -31,17 +31,17 @@ import { SITE_NAME, SITE_URL } from '@/config/site'
 const MIN_VEHICLES_PER_GROUP = MIN_VEHICLES_PER_SEO_CATEGORY
 
 const GROUP_INTRO: Record<VehicleCategory, string> = {
-  SUV: 'SUVs y crossovers documentados en AutoFicha, de compactos a versiones de lujo, con ficha técnica completa y fuente citada en cada dato.',
-  Sedán: 'Sedanes documentados en AutoFicha, desde compactos hasta versiones ejecutivas, con ficha técnica completa y fuente citada en cada dato.',
-  Hatchback: 'Hatchbacks documentados en AutoFicha, con ficha técnica completa y fuente citada en cada dato.',
-  Pickup: 'Pickups documentadas en AutoFicha, de uso liviano a pesado, con ficha técnica completa y fuente citada en cada dato.',
-  Deportivo: 'Autos deportivos y gran turismo documentados en AutoFicha, con ficha técnica completa y fuente citada en cada dato.',
-  Familiar: 'Familiares y station wagons documentados en AutoFicha, con ficha técnica completa y fuente citada en cada dato.',
-  Coupé: 'Coupés documentados en AutoFicha, con ficha técnica completa y fuente citada en cada dato.',
-  Cabrio: 'Cabrios y descapotables documentados en AutoFicha, con ficha técnica completa y fuente citada en cada dato.',
-  Monovolumen: 'Monovolúmenes y minivans documentados en AutoFicha, con ficha técnica completa y fuente citada en cada dato.',
-  Utilitario: 'Utilitarios documentados en AutoFicha, con ficha técnica completa y fuente citada en cada dato.',
-  Moto: 'Motos y scooters documentados en AutoFicha, con ficha técnica completa y fuente citada en cada dato.',
+  SUV: 'SUVs y crossovers documentados en Sin Frenos, de compactos a versiones de lujo, con ficha técnica completa y fuente citada en cada dato.',
+  Sedán: 'Sedanes documentados en Sin Frenos, desde compactos hasta versiones ejecutivas, con ficha técnica completa y fuente citada en cada dato.',
+  Hatchback: 'Hatchbacks documentados en Sin Frenos, con ficha técnica completa y fuente citada en cada dato.',
+  Pickup: 'Pickups documentadas en Sin Frenos, de uso liviano a pesado, con ficha técnica completa y fuente citada en cada dato.',
+  Deportivo: 'Autos deportivos y gran turismo documentados en Sin Frenos, con ficha técnica completa y fuente citada en cada dato.',
+  Familiar: 'Familiares y station wagons documentados en Sin Frenos, con ficha técnica completa y fuente citada en cada dato.',
+  Coupé: 'Coupés documentados en Sin Frenos, con ficha técnica completa y fuente citada en cada dato.',
+  Cabrio: 'Cabrios y descapotables documentados en Sin Frenos, con ficha técnica completa y fuente citada en cada dato.',
+  Monovolumen: 'Monovolúmenes y minivans documentados en Sin Frenos, con ficha técnica completa y fuente citada en cada dato.',
+  Utilitario: 'Utilitarios documentados en Sin Frenos, con ficha técnica completa y fuente citada en cada dato.',
+  Moto: 'Motos y scooters documentados en Sin Frenos, con ficha técnica completa y fuente citada en cada dato.',
   Otros: '',
 }
 

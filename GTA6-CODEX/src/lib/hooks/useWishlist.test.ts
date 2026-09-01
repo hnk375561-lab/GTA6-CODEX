@@ -38,7 +38,7 @@ describe('useWishlist', () => {
 
     act(() => result.current.toggleWishlist('vehiculos', 'audi-q5'))
 
-    const raw = window.localStorage.getItem('autoficha:wishlist')
+    const raw = window.localStorage.getItem('sinfrenos:wishlist')
     expect(raw).not.toBeNull()
     expect(JSON.parse(raw as string)).toEqual([wishlistId('vehiculos', 'audi-q5')])
   })
@@ -80,7 +80,7 @@ describe('useWishlist', () => {
 
     act(() => result.current.clearWishlist())
     expect(result.current.count).toBe(0)
-    expect(window.localStorage.getItem('autoficha:wishlist')).toBe('[]')
+    expect(window.localStorage.getItem('sinfrenos:wishlist')).toBe('[]')
   })
 
   it('dos instancias del hook (ej. una card y la página de favoritos) quedan sincronizadas', async () => {
@@ -95,7 +95,7 @@ describe('useWishlist', () => {
   })
 
   it('ignora un valor corrupto en localStorage en vez de romper', async () => {
-    window.localStorage.setItem('autoficha:wishlist', '{not valid json')
+    window.localStorage.setItem('sinfrenos:wishlist', '{not valid json')
     const { result } = renderHook(() => useWishlist())
     await waitFor(() => expect(result.current.hydrated).toBe(true))
     expect(result.current.count).toBe(0)

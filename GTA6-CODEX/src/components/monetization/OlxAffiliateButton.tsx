@@ -74,7 +74,7 @@ export function OlxAffiliateButton({
     // Using OLX.com.ar search URL with UTM params for tracking
     const baseUrl = `https://olx.com.ar/items/q-${encodedQuery}`
     const utmParams = new URLSearchParams({
-      utm_source: 'autoficha',
+      utm_source: 'sinfrenos',
       utm_medium: 'affiliate',
       utm_campaign: 'vehicle-search',
     })

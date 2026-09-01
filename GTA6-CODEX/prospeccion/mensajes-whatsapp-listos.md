@@ -1,4 +1,4 @@
-# Mensajes de WhatsApp listos — Prospección AutoFicha
+# Mensajes de WhatsApp listos — Prospección Sin Frenos
 
 Generados a partir de `contactos-concepcion-del-uruguay.csv`, solo los 17
 contactos con teléfono verificado (confianza "Media"). Los 4 de confianza
@@ -33,7 +33,7 @@ de mandar el primero (son 17 lugares, un solo find-and-replace).
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app): un catálogo
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app): un catálogo
 de 250 fichas técnicas de autos y motos con datos reales, cada uno con su
 fuente citada (nada inventado). Tenemos la gama Toyota completa fichada
 (Hilux, Corolla, RAV4...) y una guía sobre "0km vs. usado" que le sirve a
@@ -51,7 +51,7 @@ es nada pago, primero quiero mostrarte la idea.
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app), fichas
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app), fichas
 técnicas reales de autos (incluida toda la gama Renault) más guías de
 compra. Como ustedes cubren service oficial Y venta de usados, encajan en
 dos lugares del sitio a la vez: la ficha de cada modelo Renault, y la guía
@@ -68,7 +68,7 @@ usado. Me gustaría sumarlos como referencia recomendada en ambos. ¿Tenés
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app). Tenemos un
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app). Tenemos un
 comparador donde la gente pone dos o tres autos lado a lado antes de
 decidir — la idea es que cuando lleguen a un lugar como Taraborelli ya
 vengan con la decisión más clara, no arrancando de cero. Me gustaría
@@ -85,7 +85,7 @@ por ahora.
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app). Tenemos una
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app). Tenemos una
 guía sobre "qué revisar en una prueba de manejo" — pensada justo para el
 momento en que alguien va a probar un auto a un lugar como Automotores
 Almada, para que llegue sabiendo qué mirar. Me gustaría sumarlos como uno
@@ -101,7 +101,7 @@ te cuente la idea? Todavía no hay nada para pagar.
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app): fichas
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app): fichas
 técnicas con datos reales (cada dato con su fuente, nada inventado) y una
 guía sobre 0km vs. usado para el que todavía está decidiendo. Me
 gustaría sumar a Chita Automotores como uno de los lugares recomendados
@@ -117,7 +117,7 @@ sería? Nada para pagar por ahora, quiero mostrarte la idea primero.
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app). Tenemos una
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app). Tenemos una
 guía sobre cómo tasar un auto usado antes de venderlo, que sirve tanto
 para el que entrega el usado como para el que después compra en un lugar
 como Manuel Automotor. Me gustaría sumarlos como uno de los recomendados
@@ -132,7 +132,7 @@ del sitio. ¿Tenés 5 minutos para que te cuente cómo funcionaría?
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app). Publicamos
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app). Publicamos
 un ranking de los autos más buscados en Argentina en 2026, además de
 fichas técnicas con fuente citada de cada modelo. Me gustaría sumar a
 Cazzulino como uno de los lugares recomendados para comprar en
@@ -147,7 +147,7 @@ Concepción del Uruguay. ¿Tenés 5 minutos para que te cuente la idea?
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app): fichas
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app): fichas
 técnicas y comparador de autos. Me gustaría sumar a Amed Camil como uno
 de los multimarca recomendados de la zona — la idea es que la gente
 llegue habiendo comparado antes, no a los tumbos. ¿Tenés 5 minutos para
@@ -162,7 +162,7 @@ que te cuente cómo funciona? No hay nada para pagar todavía.
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app). A diferencia
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app). A diferencia
 de la mayoría de sitios de autos, el catálogo también tiene fichas
 técnicas reales de motos (Honda, Yamaha, Kawasaki, Zanella...), así que
 Rodar encaja doble: autos y motos. Me gustaría sumarlos como el lugar
@@ -178,7 +178,7 @@ cómo sería?
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app). No vendemos
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app). No vendemos
 autos, pero sí publicamos fichas técnicas con specs reales y contenido de
 mantenimiento — la gente que busca eso a veces necesita repuestos
 puntuales. Es un target un poco distinto al resto de mis contactos
@@ -195,7 +195,7 @@ tiene sentido? Nada para pagar todavía.
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app). Ya
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app). Ya
 publicamos la guía "Cómo elegir un taller mecánico de confianza en
 Concepción del Uruguay" (la podés ver acá:
 gta-6-codex.vercel.app/guias/como-elegir-taller-mecanico-confianza-concepcion-del-uruguay).
@@ -212,7 +212,7 @@ cobro nada.
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app). Tenemos
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app). Tenemos
 publicada la guía "Cómo elegir un taller mecánico de confianza en
 Concepción del Uruguay", y me gustaría sumar a Arcore ahí como el taller
 de chapa y pintura recomendado. ¿Tenés 5 minutos para que te cuente la
@@ -227,7 +227,7 @@ idea? Nada para pagar todavía.
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app). El catálogo
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app). El catálogo
 tiene bastantes autos con motor turbo (deportivos, algunas pickups), así
 que estoy por escribir un artículo específico sobre turbos — y me
 gustaría que Turbos Uruguay sea el especialista recomendado ahí, además
@@ -243,7 +243,7 @@ de en la guía general de talleres de confianza que ya está publicada.
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app). Ya
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app). Ya
 publicamos la guía "Cómo comprar un auto usado sin llevarte un problema",
 que incluye el paso de verificación de dominio antes de comprar
 (gta-6-codex.vercel.app/guias/como-comprar-auto-usado-guia-paso-a-paso).
@@ -259,7 +259,7 @@ Me gustaría sumarlos ahí como la referencia recomendada para ese trámite.
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app). Tenemos
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app). Tenemos
 publicada una guía de talleres de confianza en Concepción del Uruguay y
 me gustaría sumar al lubricentro como referencia para aceites, filtros y
 service rápido. Antes que nada: ¿este número es del lubricentro local o
@@ -275,7 +275,7 @@ hay que hablar con alguien de la franquicia central? Si es el local,
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app). Publicamos
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app). Publicamos
 la guía "Cómo elegir un taller mecánico de confianza en Concepción del
 Uruguay", y me gustaría sumar a Servicios Sabisky ahí como uno de los
 talleres generales recomendados. ¿Tenés 5 minutos para que te cuente cómo
@@ -290,7 +290,7 @@ funcionaría?
 
 **Mensaje:**
 ```
-Hola! Soy Santiago, armo AutoFicha (gta-6-codex.vercel.app). Tenemos
+Hola! Soy Santiago, armo Sin Frenos (gta-6-codex.vercel.app). Tenemos
 publicada la guía "Cómo elegir un taller mecánico de confianza en
 Concepción del Uruguay", y me gustaría sumar a Taller Rebacco ahí como
 uno de los recomendados. ¿Tenés un minuto para que te cuente cómo sería?

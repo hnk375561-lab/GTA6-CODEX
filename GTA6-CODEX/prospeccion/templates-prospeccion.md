@@ -1,4 +1,4 @@
-# Templates de prospección — AutoFicha
+# Templates de prospección — Sin Frenos
 
 Reemplazá lo que está entre `[corchetes]`. No cambies nada más — están
 pensados para copiar/pegar, no para reescribir cada vez.
@@ -7,11 +7,11 @@ pensados para copiar/pegar, no para reescribir cada vez.
 
 ## EMAIL 1 — Contacto inicial (no agresivo)
 
-**Asunto:** Propuesta para [Nombre del negocio] en AutoFicha
+**Asunto:** Propuesta para [Nombre del negocio] en Sin Frenos
 
 Hola [Nombre de contacto o "equipo de Nombre del negocio"],
 
-Mi nombre es [Tu nombre] y estoy detrás de AutoFicha
+Mi nombre es [Tu nombre] y estoy detrás de Sin Frenos
 (gta-6-codex.vercel.app), un catálogo de fichas técnicas de autos y motos
 pensado para gente de Concepción del Uruguay y la región que está
 comparando antes de comprar.
@@ -37,11 +37,11 @@ Saludos,
 
 ## EMAIL 2 — Follow-up con tráfico real (usar cuando ya haya datos de Analytics)
 
-**Asunto:** Como prometí — números reales de AutoFicha
+**Asunto:** Como prometí — números reales de Sin Frenos
 
 Hola [Nombre de contacto],
 
-Te escribo como quedamos. AutoFicha lleva [X semanas/meses] online y
+Te escribo como quedamos. Sin Frenos lleva [X semanas/meses] online y
 estos son los números reales a la fecha:
 
 - [X] visitas en los últimos 30 días
@@ -63,7 +63,7 @@ Saludos,
 
 ## EMAIL 3 — Propuesta de publicidad (cierre)
 
-**Asunto:** Propuesta concreta — AutoFicha x [Nombre del negocio]
+**Asunto:** Propuesta concreta — Sin Frenos x [Nombre del negocio]
 
 Hola [Nombre de contacto],
 
@@ -89,7 +89,7 @@ Saludos,
 
 ## WHATSAPP — Versión directa (más informal, para primer contacto)
 
-Hola [Nombre]! Soy [Tu nombre], armo AutoFicha (gta-6-codex.vercel.app),
+Hola [Nombre]! Soy [Tu nombre], armo Sin Frenos (gta-6-codex.vercel.app),
 un sitio de fichas técnicas de autos para gente de la zona que está
 por comprar. Te escribo porque me gustaría sumar a [Nombre del negocio]
 como uno de los lugares recomendados del sitio para [rubro]. ¿Tenés 5

@@ -11,7 +11,7 @@ import { SITE_NAME, SITE_URL } from '@/config/site'
 
 const TITLE = `Categorías de vehículos | ${SITE_NAME}`
 const DESCRIPTION =
-  'Explorá el catálogo de AutoFicha agrupado por categoría — SUV, Sedán, Hatchback, Pickup, Deportivo y más — con ficha técnica completa y fuente citada en cada dato.'
+  'Explorá el catálogo de Sin Frenos agrupado por categoría — SUV, Sedán, Hatchback, Pickup, Deportivo y más — con ficha técnica completa y fuente citada en cada dato.'
 
 export const metadata: Metadata = {
   title: TITLE,

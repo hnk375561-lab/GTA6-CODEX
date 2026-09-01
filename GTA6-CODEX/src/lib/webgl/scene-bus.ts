@@ -45,7 +45,7 @@ export interface SceneFocus {
 /**
  * "Ambiente" real del fondo en el frame actual — la mitad del puente que va
  * MOTOR → DOM (el resto del archivo es UI → motor). Publicado por
- * `AutoFichaWebGLEngine` en su loop de render y consumido por
+ * `SinFrenosWebGLEngine` en su loop de render y consumido por
  * `SceneAmbientBridge`, que lo escribe como variables CSS en `<html>` para
  * que cards, hero y demás superficies reaccionen a la misma luz/intensidad
  * que el fondo.
