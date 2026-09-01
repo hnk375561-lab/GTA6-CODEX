@@ -1,0 +1,96 @@
+{
+  "slug": "chevrolet",
+  "type": "fabricantes",
+  "title": "Chevrolet",
+  "description": "Vehículos y motocicletas de Chevrolet",
+  "content": "## Identidad de Marca\nChevrolet se consolidó a lo largo de más de un siglo como una de las insignias más representativas de la industria automotriz global. Con sede central en Detroit, Míchigan, opera como una de las divisiones principales del conglomerado General Motors, destacándose por ofrecer una gama diversa que abarca desde vehículos compactos hasta camiones y utilitarios.\n\n## Historia y Fundación\nLa compañía formalizó su nacimiento el 3 de noviembre de 1911 gracias a una alianza estratégica entre el piloto de carreras de origen suizo Louis Chevrolet y el empresario William Crapo Durant, este último fundador previo de General Motors en 1908. Tras enfrentar diversos contratiempos financieros que lo alejaron temporalmente de la administración de GM, Durant unió fuerzas con Chevrolet con el propósito inicial de fabricar automóviles pequeños y accesibles para el público masivo. Con los años, la firma se integró de lleno bajo el ala de General Motors, convirtiéndose en su marca insignia y alcanzando hitos comerciales históricos a nivel mundial durante el transcurso del siglo XX.\n\n## Posicionamiento Actual\nEn la actualidad, Chevrolet mantiene una presencia global masiva con operaciones y áreas comerciales distribuidas en múltiples regiones estratégicas, incluyendo América, Asia y Oceanía. Su impronta en el mercado se sostiene sobre una propuesta de accesibilidad, variedad de carrocerías y una fuerte penetración en mercados emergentes y desarrollados por igual.",
+  "status": "confirmado",
+  "officialName": "Chevrolet",
+  "country": "Estados Unidos",
+  "foundedYear": 1911,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:19:20.156Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-bolt-ev",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-camaro",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-corvette",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-equinox",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-montana",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-onix",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-s10",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-silverado",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-spin",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-tracker",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-trailblazer",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Chevrolet",
+    "secondarySource": "https://clixauto.com/es/blogs/history/a-brief-history-of-chevrolet",
+    "note": "Se verificó la fundación de la marca el 3 de noviembre de 1911 mediante la alianza entre Louis Chevrolet y William Crapo Durant, así como su vinculación con General Motors y su sede en Detroit, Míchigan.",
+    "limitations": [
+      "No se detallan cifras exactas de producción actual en el mercado latinoamericano dentro de las fuentes provistas.",
+      "La información sobre personas clave recientes se limita a datos históricos o parciales."
+    ]
+  }
+}

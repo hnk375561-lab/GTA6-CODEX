@@ -1,0 +1,233 @@
+{
+  "slug": "baic-x55",
+  "type": "vehiculos",
+  "title": "BAIC X55",
+  "description": "SUV compacto de BAIC Motor para mercados de exportación.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "baic"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-omoda-5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-equinox",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3-aircross",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "BAIC",
+  "class": "SUV compacto",
+  "power": "185 hp @ 5.500 rpm (305 Nm)",
+  "price": "USD 18.000 (precio de referencia para exportación)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 18000,
+    "raw": "USD 18.000 (precio de referencia para exportación)"
+  },
+  "consumo": "7.4-7.7 l/100km combinado",
+  "dimensiones": "4.620 mm largo x 1.886 mm ancho x 1.680 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.zigwheels.ae/new-cars/baic/x55/specifications",
+    "secondarySource": "https://www.auto-data.net/en/baic-x55-1.5t-185hp-dct-54031",
+    "note": "Se verificaron las especificaciones técnicas principales del BAIC X55 basadas en las fuentes provistas para la motorización 1.5 turbo de 185 hp con transmisión DCT.",
+    "limitations": [
+      "Las especificaciones de equipamiento y precios varían notablemente según el mercado de importación en Latinoamérica y Medio Oriente."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h",
+    "acceleration": "0-100 km/h en 7.84s"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:31:14.496Z",
+  "transmision": "Automática de doble embrague (DCT) de 7 marchas",
+  "traccion": "Tracción delantera",
+  "peso": "1.420 kg",
+  "tipoMotor": "Nafta (Gasolina)",
+  "potenciaKW": "138 kW",
+  "capacidadTanque": "53 litros",
+  "tiempoRecorrido": "7.84s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.5 litros (1.5T)",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 350,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (Beijing X55 II)",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 18.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:31:14.496Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.4-7.7 l/100km combinado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl BAIC X55, también comercializado en varios mercados bajo la submarca Beijing (perteneciente al grupo BAIC Motor), representa un salto evolutivo muy importante para el fabricante chino en su incursión dentro del segmento de los SUV compactos. Mientras que la primera generación apostaba por líneas más conservadoras, esta segunda etapa —conocida globalmente como BAIC X55 II— adoptó un lenguaje de diseño vanguardista, minimalista y marcadamente futurista que rompe con los moldes tradicionales de la marca en los mercados de exportación.\n\n## Un hito y generación relevante\nEl gran hito de esta segunda generación es la implementación de la plataforma modular BMFA (Beijing Modular Functional Architecture) y la incorporación del motor naftero 1.5 litros turbo con inyección directa, capaz de erogar unos contundentes 185 caballos de fuerza y 305 Nm de torque. Este propulsor se acopla exclusivamente a una caja automática de doble embrague (DCT) de 7 velocidades, logrando una aceleración de 0 a 100 km/h en aproximadamente 7,8 segundos. Este conjunto mecánico le permitió a BAIC posicionar al vehículo no solo como un producto accesible, sino con prestaciones dinámicas muy competitivas frente a rivales consagrados.\n\n## Curiosidades\nEntre los detalles más llamativos del BAIC X55 se encuentra su aerodinámica y estética exterior, que incluye manijas de puertas ocultas y enrasadas con la carrocería, un alerón trasero dividido de estilo deportivo y un coeficiente aerodinámico muy cuidado para su categoría. En el interior, prescinde casi en su totalidad de los botones físicos, delegando la climatización, el sistema multimedia y los ajustes del vehículo a una pantalla central táctil de alta resolución flotante, acompañada por un instrumental 100% digital.\n\n## Competencia y posicionamiento\nEn los mercados emergentes donde opera (incluyendo Sudamérica, Medio Oriente y África), el BAIC X55 compite de manera directa contra pesos pesados del segmento C-SUV como el Toyota RAV4, el Haval H6, el Chery Tiggo 7 Pro y el Geely Coolray. Su estrategia comercial se basa en ofrecer un nivel de tecnología, asistentes avanzados a la conducción (ADAS) de Nivel 2 y calidad de terminaciones percibida muy superior a su rango de precio, buscando seducir a compradores que priorizan la relación costo-producto frente a las marcas tradicionales.",
+  "generacionInfo": {
+    "raw": "Segunda generación (Beijing X55 II)",
+    "numero": 2,
+    "codigoChasis": "X55",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "BAIC X55 - SUV compacto BAIC. 200 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

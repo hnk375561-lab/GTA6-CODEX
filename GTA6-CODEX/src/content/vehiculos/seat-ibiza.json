@@ -1,0 +1,191 @@
+{
+  "slug": "seat-ibiza",
+  "type": "vehiculos",
+  "title": "SEAT Ibiza",
+  "description": "Hatchback de entrada de SEAT, plataforma MQB-A0.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "seat"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "seat-leon",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-onix",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-sandero",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "SEAT",
+  "class": "Hatchback",
+  "power": "110 CV",
+  "price": "EUR 21.000 (referencia mercado europeo)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "EUR",
+    "amount": 21000,
+    "raw": "EUR 21.000 (referencia mercado europeo)"
+  },
+  "consumo": "5.0 l/100km combinado",
+  "dimensiones": "4.084 mm largo x 1.780 mm ancho x 1.444 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.seat.com",
+    "note": "Se actualizaron las especificaciones técnicas utilizando datos de referencia reales para la quinta generación del SEAT Ibiza con motor 1.0 EcoTSI de 110 CV y plataforma MQB-A0.",
+    "limitations": [
+      "El precio es de referencia general para el mercado europeo y puede variar según el país y los impuestos vigentes."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:26:18.232Z",
+  "transmision": "Manual de 6 velocidades o automática DSG de 7 marchas",
+  "traccion": "Delantera",
+  "peso": "1.150 kg",
+  "tipoMotor": "Naftero (Gasolina)",
+  "potenciaKW": "81 kW",
+  "capacidadTanque": "40 litros",
+  "tiempoRecorrido": "10.2s",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.0 litros",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 355,
+  "maleteroMin": null,
+  "generacion": "Quinta generación (facelift)",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 19.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:26:18.232Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl SEAT Ibiza es, sin lugar a dudas, uno de los vehículos más emblemáticos en la historia de la marca española y un pilar fundamental dentro del Grupo Volkswagen. Lanzado originalmente en 1984, el Ibiza nació con la ambición de posicionar a SEAT como un fabricante independiente y moderno tras su separación de Fiat. Para su diseño inicial, la marca recurrió a prestigiosos nombres de la industria: Giugiaro se encargó de las líneas exteriores, mientras que Italdesign firmó el interior y Porsche colaboró estrechamente en el desarrollo de los motores bautizados como \"System Porsche\". Desde entonces, el utilitario compacto se convirtió rápidamente en el modelo más vendido de la compañía, acumulando millones de unidades a lo largo de sucesivas generaciones que supieron adaptarse a las demandas cambiantes del mercado europeo.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la trayectoria del modelo llegó con la introducción de la quinta generación, lanzada al mercado en 2017 y profundamente actualizada en 2021. Este hito tecnológico se fundamentó en la adopción de la plataforma modular MQB-A0 del Grupo Volkswagen. Dicha arquitectura no solo permitió optimizar de manera notable el espacio interior y la capacidad del baúl a pesar de mantener unas dimensiones exteriores contenidas, sino que también elevó drásticamente los estándares de seguridad estructural, rigidez torsional y la integración de sistemas avanzados de asistencia a la conducción. La actualización de 2021, en particular, corrigió uno de los puntos más criticados de los primeros años de esta generación al renovar por completo el habitáculo con materiales de mayor calidad perceptiva, un torpedo rediseñado y una pantalla táctil flotante de nueva generación.\n\n## Curiosidades\n¿Sabías que el nombre «Ibiza» no fue elegido al azar, sino que continúa con la tradición de SEAT de bautizar a sus vehículos con nombres geográficos de España? Curiosamente, al momento de su lanzamiento en los años 80, el pequeño hatchback representó un esfuerzo titánico de ingeniería y marketing para una marca que buscaba expandir sus horizontes fuera de la península ibérica. Además, el Ibiza ha tenido una relación histórica muy estrecha con el mundo de los rallies, compitiendo en las décadas de los 90 en la categoría Kit Car, donde SEAT logró alzarse con el Campeonato del Mundo de Rallyes en la categoría de dos litros (F2) de forma consecutiva entre 1996 y 1998, demostrando una fiabilidad y agilidad mecánicas sobresalientes.\n\n## Competencia y posicionamiento\nEn el competitivo segmento B europeo de los hatchbacks compactos, el SEAT Ibiza se posiciona como una opción de carácter marcadamente juvenil, dinámico y enfocado en la conducción urbana y rutera. Comparado de manera directa con históricos rivales como el Volkswagen Polo (con el cual comparte plataforma y componentes mecánicos), el Renault Clio o el Peugeot 208, el Ibiza suele apostar por una estética más filosa y deportiva, así como por una relación precio-producto atractiva dentro del paraguas del Grupo Volkswagen. Mientras que el Polo busca un enfoque más sobrio y prémium, y el 208 prioriza la vanguardia estética de su puesto de conducción i-Cockpit, el Ibiza mantiene su vigencia apelando a un público que valora la agilidad dinámica, una dirección precisa y una conectividad tecnológica a la altura de las expectativas actuales.",
+  "generacionInfo": {
+    "raw": "Quinta generación (facelift)",
+    "numero": 5,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": true,
+    "faceliftAno": null
+  },
+  "seoDescription": "SEAT Ibiza - Hatchback SEAT. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

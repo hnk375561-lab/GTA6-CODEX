@@ -1,0 +1,225 @@
+{
+  "slug": "ram-1500",
+  "type": "vehiculos",
+  "title": "RAM 1500",
+  "description": "Pickup full-size de RAM, suspensión trasera neumática opcional, motor V8 HEMI 5.7L.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "ram",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-silverado",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-f-150",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "RAM",
+  "class": "Pickup grande",
+  "power": "420 hp",
+  "price": "USD 66.190 (referencia base mercado norteamericano)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 66190,
+    "raw": "USD 66.190 (referencia base mercado norteamericano)"
+  },
+  "consumo": "14.5 l/100km (mixto estimado)",
+  "dimensiones": "5816 x 2017 x 1935 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.caranddriver.com/ram/1500",
+    "secondarySource": "https://www.scribd.com/document/272793387/Ficha-Tecnica-RAM-1500",
+    "note": "Se verificaron las especificaciones técnicas de motorizaciones recientes (incluyendo los nuevos bloques biturbo de seis cilindros en línea y los datos tradicionales del V8 HEMI) mediante Car and Driver y fichas técnicas de la marca.",
+    "limitations": [
+      "Los consumos reales varían considerablemente según el estilo de conducción y la carga.",
+      "Los precios de mercado difieren fuertemente entre Norteamérica y Sudamérica por aranceles e impuestos de importación."
+    ]
+  },
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 6.3s"
+  },
+  "createdAt": "2026-08-23T21:59:03.451886Z",
+  "updatedAt": "2026-08-27T03:05:41.437Z",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "Tracción integral (4x4)",
+  "peso": "2.400 - 2.600 kg",
+  "tipoMotor": "Gasolina twin-turbocharged en línea de 6 cilindros / V8 HEMI según versión",
+  "potenciaKW": "313 kW",
+  "capacidadTanque": "98 litros",
+  "tiempoRecorrido": "0-100 km/h en 6.3s",
+  "anoProduccion": "2019-2026",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "2993 cm3 / 5654 cm3",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Quinta generación (DT) / Actualizaciones recientes 2025-2026",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 60.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:05:41.437Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 180
+    },
+    "consumo": {
+      "promedio": "13.0 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa RAM 1500 tiene sus raíces en la mítica línea Dodge Ram, una familia de pickups de tamaño completo que comenzó a forjar su leyenda en la década de 1980. Sin embargo, el punto de inflexión definitivo ocurrió en 1994, cuando la segunda generación adoptó un diseño frontal agresivo inspirado en los camiones de carga pesada de los Estados Unidos, revolucionando por completo la estética del segmento de las chatas full-size. A lo largo de los años, la pickup evolucionó desde una herramienta de trabajo pura y dura hasta convertirse en un referente global de lujo, confort y capacidad de arrastre.\n\n## Un hito o generación relevante\nUn hito fundamental en la historia reciente de la RAM 1500 fue el lanzamiento de su quinta generación (conocida internamente como plataforma DT) a partir del año modelo 2019, complementada recientemente con la incorporación de motorizaciones de alta eficiencia biturbo de seis cilindros en línea (como el motor Hurricane de 3.0 litros). Esta camada marcó la separación definitiva de la marca RAM respecto a Dodge, operando como una división independiente dentro del conglomerado Stellantis. Esta generación introdujo una estructura de alta resistencia con aceros avanzados, una reducción significativa de peso general y, sobre todo, una revolución en el interior con pantallas multimedia verticales de gran tamaño, materiales de categoría prémium y la incorporación opcional de la suspensión neumática en las cuatro ruedas, única en su segmento.\n\n## Curiosidades\nEntre las características más llamativas de la RAM 1500 se destaca el sistema de almacenamiento lateral conocido como RamBox, introducido en generaciones anteriores y perfeccionado con los años, el cual aprovecha los espacios de los guardabarros traseros para ofrecer baúles cerrados, con llave e impermeables integrados a la propia caja de carga. Asimismo, mientras que los motores V8 HEMI de alta cilindrada han sido adorados durante décadas por los entusiastas del sonido ronco y característico de los bloques norteamericanos, la marca ha sabido transicionar hacia mecánicas biturbo más potentes y eficientes sin perder el ADN imponente que la caracteriza.\n\n## Competencia y posicionamiento\nEn el mercado global de las pickups full-size, la RAM 1500 compite mano a mano con pesos pesados históricos como la Ford F-150 y la Chevrolet Silverado. Mientras que la competencia suele enfatizar aspectos tradicionales de durabilidad o flotas de trabajo, la RAM se ha posicionado firmemente como la opción más refinada y lujosa del segmento. En mercados de exportación como el Cono Sur, la RAM 1500 ocupa un nicho aspiracional muy marcado, siendo elegida tanto por usuarios del sector agropecuario de alto poder adquisitivo como por aquellos que buscan el confort de marcha de un SUV de alta gama combinado con la versatilidad indiscutible de una caja de carga.",
+  "generacionInfo": {
+    "raw": "Quinta generación (DT) / Actualizaciones recientes 2025-2026",
+    "numero": 5,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "RAM 1500 - Pickup grande RAM. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

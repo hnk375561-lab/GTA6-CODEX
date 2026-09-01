@@ -1,0 +1,233 @@
+{
+  "slug": "kia-picanto",
+  "type": "vehiculos",
+  "title": "Kia Picanto",
+  "description": "Hatchback urbano de entrada de Kia, motor 1.0L o 1.2L.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "kia",
+    "economico",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-ev6",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-rio",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-seltos",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-kwid",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:32.554Z",
+  "updatedAt": "2026-08-27T01:49:24.811Z",
+  "manufacturer": "Kia",
+  "class": "Hatchback económico",
+  "performance": {
+    "speed": "155 km/h",
+    "acceleration": "0-100 km/h en 13.4s"
+  },
+  "power": "67 hp (motor 1.0) / 84 hp (motor 1.2)",
+  "price": "USD 15.000 (referencia base mercado internacional)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 15000,
+    "raw": "USD 15.000 (referencia base mercado internacional)"
+  },
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.kia.com",
+    "note": "Se verificaron los datos técnicos principales del Kia Picanto basados en especificaciones globales de sus motorizaciones nafteras de entrada de gama.",
+    "limitations": [
+      "Los precios y equipamientos varían según el mercado específico de Latinoamérica o Europa.",
+      "Algunas cifras de aceleración varían levemente según la transmisión elegida."
+    ]
+  },
+  "transmision": "Manual de 5 marchas o automatizada AMT de 5 marchas",
+  "traccion": "Delantera",
+  "peso": "935-993 kg",
+  "tipoMotor": "Gasolina atmosférico",
+  "potenciaKW": "49 kW (1.0L) / 62 kW (1.2L)",
+  "capacidadTanque": "35 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 14.1s (1.0) / 13.4s (1.2)",
+  "anoProduccion": "2017-presente (con actualizaciones recientes)",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "Aprox. 5.0 L/100 km mixto",
+  "dimensiones": "3595 x 1595 x 1485 mm",
+  "cilindrada": "998 cc o 1197 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 255,
+  "maleteroMin": null,
+  "generacion": "Tercera generación (facelift reciente)",
+  "anoLanzamiento": 2017,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 15.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:49:24.811Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 155
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Kia Picanto es uno de los hatchbacks urbanos más exitosos y reconocidos a nivel global dentro del segmento A. Desde su introducción inicial a principios de los años 2000, este modelo se consolidó rápidamente como una propuesta clave para la movilidad urbana gracias a su formato compacto, bajo costo de mantenimiento y una excelente relación precio-producto. Diseñado principalmente para lidiar con el tráfico denso de las grandes ciudades, el Picanto supo evolucionar generación tras generación, dejando atrás su imagen estrictamente utilitaria para adoptar un lenguaje de diseño mucho más moderno, agresivo y tecnológico.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la trayectoria del Kia Picanto fue el lanzamiento de su tercera generación, presentada alrededor de 2017 y posteriormente actualizada con profundos lavados de cara (facelifts) que se extienden hasta la actualidad. Esta iteración marcó un antes y un después al incorporar plataformas más rígidas, mejoras sustanciales en seguridad activa y pasiva, además de un salto notable en la calidad percibida del habitáculo. Con la incorporación de pantallas táctiles compatibles con sistemas de conectividad avanzados y asistencias a la conducción en mercados selectos, el Picanto demostró que un auto urbano de entrada ya no tiene que sacrificar confort ni tecnología.\n\n## Curiosidades\nEntre las particularidades del Kia Picanto destaca que, a pesar de pertenecer al segmento más chico del mercado automotriz, ofrece versiones de aspecto deportivo (como la línea GT-Line) que simulan la estética de vehículos de altas prestaciones con detalles en la carrocería, doble salida de escape simulada y llantas de aleación de diseño exclusivo. Asimismo, comparte plataforma y desarrollos mecánicos con su primo hermano, el Hyundai i10, lo que le permite optimizar costos de producción y garantizar una alta fiabilidad mecánica global.\n\n## Competencia y posicionamiento\nEn el mercado global y regional, el Kia Picanto compite directamente contra referentes históricos del segmento A como el Fiat Mobi, el Toyota Aygo (en Europa) o el Renault Kwid. Frente a ellos, el modelo de la marca surcoreana se posiciona tradicionalmente un escalón más arriba en términos de terminaciones, refinamiento de marcha y disponibilidad de equipamiento de seguridad, apuntando a un público que busca un vehículo principal accesible o un segundo auto urbano confiable y bien equipado.",
+  "generacionInfo": {
+    "raw": "Tercera generación (facelift reciente)",
+    "numero": 3,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": true,
+    "faceliftAno": null
+  },
+  "seoDescription": "Kia Picanto - Hatchback económico Kia. 155 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

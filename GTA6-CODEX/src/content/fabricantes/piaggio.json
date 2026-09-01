@@ -1,0 +1,34 @@
+{
+  "slug": "piaggio",
+  "type": "fabricantes",
+  "title": "Piaggio",
+  "description": "Vehículos y motocicletas de Piaggio",
+  "content": "## Identidad de marca\nPiaggio es uno de los fabricantes de vehículos a motor más emblemáticos de la industria global, reconocido por su capacidad de adaptación y su profundo arraigo en la movilidad urbana. La compañía opera como el núcleo de un conglomerado industrial que abarca múltiples marcas de referencia en el sector de las dos y cuatro ruedas.\n\n## Historia real y evolución\nLa historia de la compañía comenzó en 1884 cuando un joven Rinaldo Piaggio dio inicio a la actividad empresarial [Fuente 4, Fuente 5]. En sus etapas iniciales, muy alejadas del motociclismo actual, la empresa se concentró en la fabricación de locomotoras y vagones de tren [Fuente 1, Fuente 3, Fuente 4]. A lo largo de las décadas y atravesando periodos cruciales como la Primera y la Segunda Guerra Mundial [Fuente 4], la firma transformó radicalmente su perfil productivo hasta consolidarse en la construcción de soluciones de transporte personal y vehículos comerciales livianos de tres y cuatro ruedas [Fuente 2]. Actualmente, el centro neurálgico de sus operaciones se encuentra en la localidad de Pontedera, Italia [Fuente 1, Fuente 3], desde donde dirige su desarrollo tecnológico e industrial.\n\n## Posicionamiento actual\nHoy en día, el Grupo Piaggio se posiciona a nivel global como un referente indiscutido en el ámbito de la movilidad urbana y de los vehículos comerciales compactos [Fuente 1, Fuente 2]. Bajo su paraguas corporativo, la compañía agrupa a marcas de gran peso histórico y deportivo como Vespa, Aprilia, Moto Guzzi y Derbi, además de la propia línea de productos Piaggio [Fuente 1]. Su enfoque combina la tradición industrial italiana con una oferta diversificada que responde a las exigencias modernas de traslado urbano y comercial.",
+  "status": "confirmado",
+  "officialName": "Piaggio",
+  "country": "Italia",
+  "foundedYear": 1884,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T22:20:37.704Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "piaggio-liberty",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Piaggio",
+    "note": "Se verificó la fundación de la empresa en 1884 por Rinaldo Piaggio, su diversificación inicial hacia el sector ferroviario y su evolución actual como parte del Grupo Piaggio con sede central en Pontedera, Italia.",
+    "limitations": [
+      "No se detallan cronologías extensas de cada modelo comercial en la documentación base."
+    ]
+  }
+}

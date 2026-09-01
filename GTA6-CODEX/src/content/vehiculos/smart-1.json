@@ -1,0 +1,184 @@
+{
+  "slug": "smart-1",
+  "type": "vehiculos",
+  "title": "Smart #1",
+  "description": "SUV eléctrico compacto de Smart, desarrollado junto a Geely.",
+  "status": "confirmado",
+  "tags": [
+    "electrico",
+    "smart"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-atto-3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-tang",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-ioniq-5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-ev6",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Smart",
+  "class": "SUV eléctrico",
+  "power": "272 hp",
+  "price": "EUR 37.900 (referencia mercado europeo)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "EUR",
+    "amount": 37900,
+    "raw": "EUR 37.900 (referencia mercado europeo)"
+  },
+  "consumo": "16.8 kWh/100km combinado",
+  "dimensiones": "4.270 mm largo x 1.822 mm ancho x 1.636 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.carwow.es/smart/smart-1/caracteristicas-tecnicas",
+    "secondarySource": "https://es.smart.com/es/models/hashtag-one/specifications",
+    "note": "Se verificaron las especificaciones técnicas, precios de referencia en Europa y dimensiones del Smart #1 utilizando los portales especializados y la web oficial de Smart.",
+    "limitations": [
+      "Los precios y la autonomía pueden variar según el mercado europeo o global específico y los subsidios vigentes.",
+      "Las cifras de capacidad de batería y consumo varían levemente según el nivel de equipamiento (Pro+, Premium, Brabus)."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T03:08:34.025Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción trasera",
+  "peso": "1.780 kg",
+  "tipoMotor": "Eléctrico síncrono de imanes permanentes",
+  "potenciaKW": "200 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "6.7s",
+  "anoProduccion": "2022-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 313,
+  "maleteroMin": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2022,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 38.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:08:34.025Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl Smart #1 marca un punto de inflexión absoluto en la historia de la marca automotriz. Tradicionalmente reconocida por la fabricación de microcoches urbanos biplazas enfocados en la movilidad estrictamente citadina, la firma pasó a operar como una empresa conjunta (joint venture) al 50% entre el gigante alemán Mercedes-Benz y el conglomerado chino Geely. Este vehículo representa el primer exponente de esta nueva etapa, transformando a Smart en un fabricante enfocado en SUVs eléctricos de vocación global, dejando atrás la era de los motores de combustión y los tamaños ultrareducidos.\n\n## Un hito o generación relevante\n\nEl hito fundamental en la vida comercial y técnica del Smart #1 es la adopción de la plataforma modular SEA (Sustainable Experience Architecture) desarrollada por Geely. Esta arquitectura dedicada exclusivamente a vehículos eléctricos permitió a la marca escalar de manera drástica en dimensiones y habitabilidad, ofreciendo un formato de SUV compacto que prescinde por completo de los formatos anteriores. Con un diseño exterior fluido, minimalista y de líneas futuristas supervisado minuciosamente por el equipo de diseño de Mercedes-Benz, el Smart #1 se posiciona en el competitivo segmento B-SUV eléctrico, ofreciendo espacio real para cinco pasajeros, tecnología de punta a bordo y asistencias avanzadas a la conducción de última generación.\n\n## Curiosidades\n\nA pesar de su cambio radical de segmento y tamaño, el Smart #1 mantiene sutiles guiños a su identidad histórica. Por ejemplo, en algunas de sus versiones conserva el emblema flotante de Smart incrustado en los pilares traseros, un detalle clásico de los modelos biplazas anteriores. Además, la gama incluye variantes de altas prestaciones desarrolladas conjuntamente con Brabus, que añaden un motor eléctrico delantero para dotarlo de tracción integral (AWD) y llevar la potencia combinada hasta los 428 caballos, convirtiéndolo en un SUV compacto con prestaciones dinámicas propias de un deportivo de altas prestaciones.\n\n## Competencia y posicionamiento\n\nEl Smart #1 compite de lleno en el corazón del mercado internacional de SUVs eléctricos compactos. Entre sus principales rivales se encuentran modelos como el Volvo EX30 (con el cual comparte plataforma y componentes mecánicos estructurales), el Volkswagen ID.3, el Hyundai Kona Eléctrico y el Peugeot e-2008. Se posiciona en un escalón ligeramente premium dentro de su categoría, buscando seducir tanto a los antiguos clientes de la marca que necesitan una mayor versatilidad de uso como a nuevos compradores que valoran la estética vanguardista, la conectividad avanzada y la eficiencia de su esquema de propulsión 100% eléctrico.",
+  "generacionInfo": {
+    "raw": "Primera generación",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Smart #1 - SUV eléctrico Smart. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

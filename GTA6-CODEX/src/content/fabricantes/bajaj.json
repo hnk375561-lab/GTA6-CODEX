@@ -1,0 +1,34 @@
+{
+  "slug": "bajaj",
+  "type": "fabricantes",
+  "title": "Bajaj",
+  "description": "Vehículos y motocicletas de Bajaj",
+  "content": "## Identidad de marca\nBajaj Auto es un referente indiscutido en la industria global de la movilidad urbana y de media distancia. Su identidad se cimenta en la eficiencia, la durabilidad y la capacidad de ofrecer soluciones de transporte accesibles y masivas, adaptándose tanto a las exigencias de los mercados emergentes como a los estándares internacionales de rendimiento.\n\n## Historia y evolución\nLa historia de la compañía se remonta a 1945, año en que el industrial Jamnalal Bajaj fundó la empresa bajo el nombre inicial de Bachraj Trading Corporation Private Limited en Pune, Maharashtra. En sus etapas iniciales, las operaciones se centraron en la importación de motocicletas y scooters para abastecer el mercado local. \n\nUn hito clave en su desarrollo industrial ocurrió en 1959, cuando la firma concretó un acuerdo de licencia con la italiana Piaggio para comenzar la producción local de scooters. Este paso sentó las bases para el posterior crecimiento tecnológico y fabril de la marca. Con los años, la empresa se transformó en una corporación pública y expandió su capacidad productiva con plantas estratégicas en ubicaciones como Waluj, Akurdi y Chakan.\n\n## Posicionamiento actual\nEn la actualidad, Bajaj se consolida como el segundo fabricante de vehículos de dos ruedas en su país de origen, por detrás de Hero MotoCorp. Asimismo, ostenta un liderazgo indiscutido en la fabricación de vehículos de tres ruedas en el mercado local y ocupa el cuarto puesto a nivel mundial en este segmento. Su catálogo abarca desde scooters y motocicletas hasta los reconocidos triciclos motorizados de transporte ligero, demostrando una sólida presencia internacional y una estructura industrial robusta.",
+  "status": "confirmado",
+  "officialName": "Bajaj",
+  "country": "India",
+  "foundedYear": 1945,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:18:26.060Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bajaj-rouser-ns200",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Bajaj",
+    "note": "Se verificó la fundación de la empresa en 1945 por Jamnalal Bajaj, su sede en Pune y su posicionamiento actual como uno de los principales fabricantes mundiales de vehículos de dos y tres ruedas a partir de las fuentes provistas.",
+    "limitations": [
+      "No se detalla en profundidad la cronología completa de todos los modelos posteriores a la asociación con Piaggio en las fuentes provistas."
+    ]
+  }
+}

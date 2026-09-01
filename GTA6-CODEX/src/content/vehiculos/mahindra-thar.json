@@ -1,0 +1,177 @@
+{
+  "slug": "mahindra-thar",
+  "type": "vehiculos",
+  "title": "Mahindra Thar",
+  "description": "4x4 compacto de estilo off-road de Mahindra, popular en India.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "mahindra"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mahindra-scorpio-n",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-jimny",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Mahindra",
+  "class": "4x4 compacto",
+  "power": "130 hp (Diésel) / 150 hp (Gasolina)",
+  "price": "USD 15.000 (Referencia mercado indio)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 15000,
+    "raw": "USD 15.000 (Referencia mercado indio)"
+  },
+  "consumo": "12-15 km/l (aprox. 7-8 l/100km)",
+  "dimensiones": "3.985 mm largo x 1.820 mm ancho x 1.844 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://auto.mahindra.com/suv/thar",
+    "note": "Se utilizaron especificaciones técnicas de conocimiento general para la segunda generación del Mahindra Thar, incluyendo opciones de motorización mHawk y mStallion, dimensiones aproximadas y configuraciones de transmisión.",
+    "limitations": [
+      "Los precios exactos varían según el mercado de exportación e impuestos locales.",
+      "Algunas cifras de rendimiento y aceleración son estimaciones basadas en pruebas de la prensa especializada."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:12:29.876Z",
+  "transmision": "Manual de 6 velocidades o Automática de 6 velocidades",
+  "traccion": "Tracción en las cuatro ruedas (4x4 con reductora)",
+  "peso": "1.750 kg",
+  "tipoMotor": "Turbo diésel mHawk / Gasolina mStallion",
+  "potenciaKW": "97 kW / 112 kW",
+  "capacidadTanque": "57 litros",
+  "tiempoRecorrido": "No publicado oficialmente",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "2.184 cc (diésel) / 1.997 cc (gasolina)",
+  "emisiones": null,
+  "asientos": 4,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 15.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:12:29.876Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Mahindra Thar es un vehículo todoterreno icónico fabricado por el gigante automotriz indio Mahindra & Mahindra. Su linaje se remonta indirectamente a los vehículos todoterreno de la Segunda Guerra Mundial y a los antiguos Jeep producidos bajo licencia en India desde la década de 1940 a través de Mahindra & Mahindra. El Thar original se lanzó al mercado en 2010 con el objetivo de capturar la esencia de los rústicos vehículos utilitarios clásicos de la marca, modernizándolos ligeramente para cumplir con las normativas vigentes y satisfacer tanto a entusiastas del off-road como a usuarios rurales.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la historia del modelo ocurrió en octubre de 2020, con la presentación de la segunda generación del Mahindra Thar. Este nuevo modelo marcó una evolución radical al dejar atrás la plataforma utilitaria y austera de su predecesor para adoptar un chasis completamente nuevo, una suspensión delantera independiente y opciones de motores mucho más refinados, tanto nafteros (mStallion) como diésel (mHawk). Además, introdujo por primera vez un nivel de confort, seguridad y tecnología interior (como infoentretenimiento con conectividad moderna y opciones de transmisión automática) que lo transformó en un vehículo apto tanto para la aventura extrema como para el uso diario en ciudad.\n\n## Curiosidades\nEl diseño exterior del Thar guarda un inconfundible parecido estético con los todoterrenos clásicos norteamericanos, lo que en su momento generó debates legales y atención mediática internacional sobre su silueta cuadrada, su parrilla frontal de barras verticales y sus guardabarros prominentes. A pesar de esto, el Thar se convirtió rápidamente en un fenómeno cultural en India, donde las listas de espera tras su lanzamiento superaron los varios meses debido a la alta demanda. Es considerado un vehículo de culto para los amantes del todoterreno extremo gracias a sus ángulos de ataque y salida generosos, su robusto sistema de tracción en las cuatro ruedas con caja reductora y su capacidad para vadear ríos poco profundos sin modificaciones complejas.\n\n## Competencia y posicionamiento\nEn el mercado indio y en ciertos mercados de exportación emergentes donde tiene presencia, el Mahindra Thar compite directamente en el segmento de los 4x4 compactos de estilo purista. Su principal rival histórico y comercial es el Force Gurkha, y más recientemente se enfrenta a la versión de cinco puertas de otros todoterrenos globales que han ingresado a su categoría. Se posiciona como una opción accesible, robusta y altamente capaz fuera del asfalto, ofreciendo una alternativa económica frente a los todoterrenos tradicionales de marcas prémium o generalistas occidentales.",
+  "generacionInfo": {
+    "raw": "Segunda generación",
+    "numero": 2,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Mahindra Thar - 4x4 compacto Mahindra. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

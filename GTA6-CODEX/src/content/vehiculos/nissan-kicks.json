@@ -1,0 +1,247 @@
+{
+  "slug": "nissan-kicks",
+  "type": "vehiculos",
+  "title": "Nissan Kicks",
+  "description": "SUV compacta de Nissan, motor 1.6L naturalmente aspirado.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "nissan",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-frontier",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-gt-r",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-leaf",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "changan-cs35-plus",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-tracker",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-pulse",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-hr-v",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:30.994Z",
+  "updatedAt": "2026-08-27T03:00:36.093Z",
+  "manufacturer": "Nissan",
+  "class": "SUV compacto",
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.3s"
+  },
+  "power": "118 hp",
+  "price": "USD 22.730 (MSRP base en EE.UU.)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 22730,
+    "raw": "USD 22.730 (MSRP base en EE.UU.)"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.nissanusa.com/vehicles/crossovers-suvs/kicks/specs-trims.html",
+    "secondarySource": "https://autonizanissan.pe/wp-content/uploads/2024/09/FT-Nuevo-Kicks.pdf",
+    "note": "Se verificaron las especificaciones generales del Nissan Kicks con motor 1.6L aspirado (118 hp), dimensiones y precios de referencia utilizando catálogos oficiales de Nissan USA y fichas técnicas regionales.",
+    "limitations": [
+      "Las cifras exactas de consumo, peso y capacidad de tanque pueden variar según el mercado específico y las normativas de homologación locales."
+    ]
+  },
+  "transmision": "Automática CVT",
+  "traccion": "Delantera (FWD)",
+  "peso": "No publicado oficialmente",
+  "tipoMotor": "Gasolina 1.6L 4 cilindros (HR16)",
+  "potenciaKW": "88 kW (118 hp / 6300 rpm)",
+  "capacidadTanque": "No publicado oficialmente",
+  "tiempoRecorrido": "0-100 km/h en aprox. 12s",
+  "anoProduccion": "2016-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "Aprox. 13-14 km/l en uso mixto (según mercado)",
+  "dimensiones": "4366 x 1800 x 1630 mm",
+  "cilindrada": "1598 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 849,
+  "maleteroMin": null,
+  "generacion": "Primera generación / Evoluciones regionales",
+  "anoLanzamiento": 2016,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 24.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:00:36.093Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 175
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Nissan Kicks nació como un vehículo conceptual que se presentó por primera vez en el Salón del Automóvil de São Paulo en 2014, ideado para capturar la atención del público latinoamericano mediante un diseño fresco y urbano. Su desarrollo preliminar estuvo a cargo de una colaboración estratégica entre el centro de diseño global de Nissan en Japón y su estudio satélite en Río de Janeiro, buscando reflejar el dinamismo de las principales metrópolis de la región. La versión definitiva de producción hizo su estreno mundial en 2016, coincidiendo estratégicamente con los Juegos Olímpicos de Río de Janeiro, justa deportiva en la cual cumplió un rol destacado como vehículo oficial de la organización.\n\n## Un hito y generación relevante\nEl gran punto de inflexión en la trayectoria del Nissan Kicks fue su transición de un producto concebido originalmente para América Latina a un modelo de alcance verdaderamente global. Entre 2018 y 2019, la marca expandió su producción y comercialización hacia Norteamérica, Asia y diversos mercados de Oriente Medio, adaptándose con éxito a normativas de seguridad y emisiones más estrictas en más de ochenta países. Esta primera generación se convirtió rápidamente en uno de los pilares comerciales de Nissan dentro del segmento B-SUV, destacándose por incorporar tecnologías avanzadas de asistencia a la conducción y el sistema de visión periférica Intelligent Around View Monitor, características poco habituales en su categoría durante sus primeros años en el mercado.\n\n## Curiosidades\nUn aspecto sumamente particular del desarrollo del Kicks fue el profundo protagonismo que tuvo el gusto del público latinoamericano en la definición de su estética y concepto general, algo poco común para un fabricante de origen japonés en aquellos años. Asimismo, el modelo sirvió como banco de pruebas para evaluar sistemas de propulsión alternativos en determinados mercados internacionales, analizando variantes híbridas y soluciones de electrificación antes de la irrupción de las plataformas vehiculares de nueva generación. Su denominación, que evoca la idea de un impulso dinámico o una 'patada' en inglés, fue elegida deliberadamente para transmitir un estilo de vida activo y moderno.\n\n## Competencia y posicionamiento\nDentro del altamente competitivo segmento de las SUVs compactas o B-SUV, el Nissan Kicks se enfrenta cara a cara con rivales de peso como el Chevrolet Tracker, el Volkswagen T-Cross, el Peugeot 2008 y el Jeep Renegade. Su propuesta en el mercado se destaca por ofrecer un equilibrio muy razonable entre habitabilidad interior, optimización del espacio de carga en el baúl y una eficiencia de combustible sobresaliente gracias a su confiable bloque atmosférico de 1.6 litros vinculado a una transmisión automática tipo CVT. Aunque no apunta a un perfil netamente deportivo, prioriza el confort cotidiano, la funcionalidad urbana y una estética exterior dotada de marcada personalidad.",
+  "generacionInfo": {
+    "raw": "Primera generación / Evoluciones regionales",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Nissan Kicks - SUV compacta Nissan. 175 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

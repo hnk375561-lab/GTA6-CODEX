@@ -1,0 +1,36 @@
+{
+  "slug": "motomel",
+  "type": "fabricantes",
+  "title": "Motomel",
+  "description": "Vehículos y motocicletas de Motomel",
+  "content": "## Identidad de Marca\nMotomel es una de las marcas referentes en el mercado de motovehículos en Argentina. Su nombre surge como un acrónimo que remite directamente a Motovehículos Meller, reflejando el espíritu industrial y familiar de sus orígenes. La gestión y producción están a cargo de La Emilia S.A., empresa comandada por la familia Meller, consolidando una estructura con oficinas centrales en la Ciudad Autónoma de Buenos Aires y un fuerte anclaje productivo en la provincia de Buenos Aires.\n\n## Historia Real y Origen\nLos orígenes de la compañía familiar están ligados al sector textil durante la década de los años 90. Ante los cambios económicos y la apertura de las importaciones, la familia Meller debió reorientar sus unidades de negocio, transformando su planta industrial y reconvirtiendo su perfil productivo hacia el rubro de los vehículos de dos ruedas. Con el correr de los años, la empresa impulsó inversiones estratégicas orientadas a la sustitución de importaciones y al desarrollo de capacidades locales, incluyendo la fabricación propia de motores en su planta ubicada en la localidad de La Emilia, próxima a San Nicolás de los Arroyos.\n\n## Posicionamiento Actual\nEn la actualidad, Motomel se destaca por contar con uno de los catálogos más amplios del mercado argentino, abarcando más de sesenta modelos distribuidos en ocho líneas de productos que cubren segmentos tan diversos como motos de calle, deportivas, cubs, custom, on-off, scooters, cuatriciclos y utilitarios. Como parte del Grupo La Emilia —que también opera con marcas internacionales como Benelli y Suzuki—, la compañía continúa expandiendo su horizonte industrial con inversiones destinadas a incorporar nuevas tecnologías de movilidad, tales como bicicletas y motocicletas eléctricas.",
+  "status": "confirmado",
+  "officialName": "Motomel",
+  "country": "Argentina",
+  "foundedYear": 1992,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T22:20:37.704Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "motomel-skua-150",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Motomel",
+    "secondarySource": "https://www.lanacion.com.ar/autos/el-fabricante-de-motomel-hara-bicicletas-y-motos-electricas-nid04042023",
+    "note": "Se verificó la identidad corporativa y origen de Motomel a través de su pertenencia a La Emilia S.A. y registros históricos documentados.",
+    "limitations": [
+      "No se especifica con exactitud el año calendario de fundación de la marca en los registros provistos.",
+      "No se detalla el año exacto de transición de la industria textil al rubro de motovehículos, más allá de la mención general a los años 90."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{"ts":"2026-08-30T17:17:26.089Z","file":"abarth.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:17:34.563Z","file":"alfa-romeo.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:17:49.897Z","file":"aprilia.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:18:00.024Z","file":"aston-martin.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:18:07.423Z","file":"audi.json","status":"error","error":"Bad escaped character in JSON at position 1037"}
+{"ts":"2026-08-30T17:18:16.819Z","file":"baic.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:18:26.061Z","file":"bajaj.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:18:37.749Z","file":"bentley.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:18:45.687Z","file":"bmw.json","status":"error","error":"Bad escaped character in JSON at position 1304"}
+{"ts":"2026-08-30T17:18:54.711Z","file":"byd.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:19:02.638Z","file":"changan.json","status":"ok","sourcesFound":4,"gotEvidence":true}
+{"ts":"2026-08-30T17:19:11.092Z","file":"chery.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:19:20.156Z","file":"chevrolet.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:19:28.300Z","file":"citroen.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:19:36.153Z","file":"cupra.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:19:45.185Z","file":"dacia.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:19:53.505Z","file":"ducati.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:20:02.646Z","file":"ferrari.json","status":"ok","sourcesFound":4,"gotEvidence":true}
+{"ts":"2026-08-30T17:20:10.576Z","file":"fiat.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:20:18.729Z","file":"ford.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:20:28.124Z","file":"geely.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:20:38.385Z","file":"genesis.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:20:50.948Z","file":"gwm-haval.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:21:00.086Z","file":"gwm.json","status":"error","error":"Bad escaped character in JSON at position 1138"}
+{"ts":"2026-08-30T17:21:09.424Z","file":"harley-davidson.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:21:17.885Z","file":"haval.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:21:26.386Z","file":"honda.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:21:34.703Z","file":"hyundai.json","status":"error","error":"Bad escaped character in JSON at position 1181"}
+{"ts":"2026-08-30T17:21:43.705Z","file":"isuzu.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:21:52.941Z","file":"jac.json","status":"ok","sourcesFound":4,"gotEvidence":true}
+{"ts":"2026-08-30T17:22:01.282Z","file":"jaguar.json","status":"ok","sourcesFound":4,"gotEvidence":true}
+{"ts":"2026-08-30T17:22:09.537Z","file":"jeep.json","status":"error","error":"Bad escaped character in JSON at position 1106"}
+{"ts":"2026-08-30T17:22:17.995Z","file":"kawasaki.json","status":"error","error":"Bad escaped character in JSON at position 1165"}
+{"ts":"2026-08-30T17:22:26.302Z","file":"kia.json","status":"error","error":"Bad escaped character in JSON at position 1145"}
+{"ts":"2026-08-30T17:22:35.767Z","file":"ktm.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:22:44.281Z","file":"lamborghini.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:22:53.302Z","file":"land-rover.json","status":"ok","sourcesFound":4,"gotEvidence":true}
+{"ts":"2026-08-30T17:23:03.452Z","file":"lexus.json","status":"ok","sourcesFound":4,"gotEvidence":true}
+{"ts":"2026-08-30T17:23:14.396Z","file":"mahindra.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:23:22.524Z","file":"maserati.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:23:30.142Z","file":"mazda.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:23:39.152Z","file":"mclaren.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:23:47.717Z","file":"mercedes-benz.json","status":"error","error":"Bad escaped character in JSON at position 1105"}
+{"ts":"2026-08-30T17:24:00.338Z","file":"mg.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:24:09.241Z","file":"mini.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:24:17.831Z","file":"mitsubishi.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:24:26.643Z","file":"motomel.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:24:36.075Z","file":"nio.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:24:44.055Z","file":"nissan.json","status":"error","error":"Bad escaped character in JSON at position 1151"}
+{"ts":"2026-08-30T17:24:52.431Z","file":"opel.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:25:04.261Z","file":"perodua.json","status":"ok","sourcesFound":4,"gotEvidence":true}
+{"ts":"2026-08-30T17:25:12.775Z","file":"peugeot.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:25:20.958Z","file":"piaggio.json","status":"error","error":"Bad escaped character in JSON at position 1132"}
+{"ts":"2026-08-30T17:25:29.518Z","file":"porsche.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:25:37.784Z","file":"proton.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:25:48.446Z","file":"ram.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:25:57.206Z","file":"renault.json","status":"ok","sourcesFound":4,"gotEvidence":true}
+{"ts":"2026-08-30T17:26:12.150Z","file":"rolls-royce.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:26:20.242Z","file":"royal-enfield.json","status":"error","error":"Bad escaped character in JSON at position 991"}
+{"ts":"2026-08-30T17:26:29.144Z","file":"seat.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:26:37.500Z","file":"skoda.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:26:46.456Z","file":"smart.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:26:55.730Z","file":"subaru.json","status":"ok","sourcesFound":4,"gotEvidence":true}
+{"ts":"2026-08-30T17:27:11.307Z","file":"suzuki.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:27:18.972Z","file":"tata.json","status":"error","error":"QUOTA_DIARIA_AGOTADA: Gemini API 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota ex"}
+{"ts":"2026-08-30T17:45:30.381Z","file":"audi.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:45:38.343Z","file":"bmw.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:45:51.891Z","file":"gwm.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:46:00.001Z","file":"hyundai.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:46:09.568Z","file":"jeep.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:46:18.875Z","file":"kawasaki.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:46:27.053Z","file":"kia.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:46:37.156Z","file":"mercedes-benz.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:47:15.846Z","file":"nissan.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:47:25.110Z","file":"piaggio.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:47:33.464Z","file":"royal-enfield.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:47:42.211Z","file":"tata.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:47:51.398Z","file":"tesla.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:48:07.057Z","file":"toyota.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:48:17.643Z","file":"triumph.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:48:56.851Z","file":"vespa.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:49:05.231Z","file":"volkswagen.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:49:14.134Z","file":"volvo.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:49:25.749Z","file":"wuling.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:49:35.970Z","file":"xiaomi.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:49:45.550Z","file":"yamaha.json","status":"ok","sourcesFound":5,"gotEvidence":true}
+{"ts":"2026-08-30T17:49:54.429Z","file":"zanella.json","status":"ok","sourcesFound":4,"gotEvidence":true}

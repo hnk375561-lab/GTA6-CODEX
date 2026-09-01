@@ -1,0 +1,52 @@
+{
+  "slug": "audi",
+  "type": "fabricantes",
+  "title": "Audi",
+  "description": "Vehículos y motocicletas de Audi",
+  "content": "## Identidad de marca\nAudi se consolidó globalmente como uno de los fabricantes de referencia dentro del segmento de vehículos de gama alta, lujo y modelos deportivos. Su ADN técnico prioriza la sofisticación en ingeniería y la deportividad, con una presencia fuerte en los mercados internacionales más exigentes.\n\n## Historia y evolución\nLos orígenes de la compañía se remontan a principios del siglo XX, de la mano del ingeniero August Horch. Tras desvincularse de su proyecto primigenio, Horch estableció una nueva firma en 1910 bajo la denominación que hoy conocemos. A lo largo de las décadas siguientes, la marca transitó diversas transformaciones estructurales y técnicas, destacándose de manera sostenida en competencias automovilísticas de alta exigencia que sirvieron como banco de pruebas para su tecnología.\n\nUn hito fundamental en su estructura corporativa moderna ocurrió en 1965, año en el que pasó a formar parte del Grupo Volkswagen. Esta integración estratégica le permitió potenciar sus capacidades de desarrollo industrial y asegurar su expansión global sin perder su impronta técnica diferencial.\n\n## Posicionamiento actual\nCon base principal de operaciones en Ingolstadt, Baviera, la marca de los cuatro anillos opera bajo la dirección ejecutiva actual de Gernot Döllner. En el mercado contemporáneo, compite en la vanguardia de la industria automotriz global, enfocándose en la electrificación de su gama de productos, la digitalización de la experiencia de manejo y la incorporación de plataformas tecnológicas avanzadas, manteniendo los estándares de calidad y exclusividad que definen su legado histórico.",
+  "status": "confirmado",
+  "officialName": "Audi",
+  "country": "Alemania",
+  "foundedYear": 1910,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:45:30.332Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-a4",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q3",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q5",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q7",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Audi",
+    "note": "Se verificó la fundación oficial de la marca en 1910 por August Horch, su sede central en Ingolstadt y su integración al Grupo Volkswagen desde 1965 a través de fuentes enciclopédicas y especializadas.",
+    "limitations": [
+      "La disputa inicial del fundador con su compañía anterior y el origen exacto del término latino se mencionan parcialmente en las fuentes pero requieren acotar detalles operativos previos a 1910."
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "geely",
+  "type": "fabricantes",
+  "title": "Geely",
+  "description": "Vehículos y motocicletas de Geely",
+  "content": "## Identidad de marca\n\nGeely Auto se consolida como uno de los actores más dinámicos y de mayor expansión en la industria automotriz global. Como el primer fabricante de automóviles de capitales privados en su país de origen, la marca ha evolucionado desde sus inicios hasta convertirse en el núcleo de un gigantesco conglomerado industrial con proyección internacional, enfocado en democratizar el acceso a la movilidad y redefinir los estándares tecnológicos del sector.\n\n## Historia real y evolución\n\nLa trayectoria de la compañía en el sector automotriz comenzó formalmente en 1997, año en el que se lanzó al mercado la marca Geely Auto con el objetivo central de producir vehículos accesibles para el público masivo [4]. Durante esta primera etapa, conocida internamente como la fase de productos de primera generación, la empresa sentó las bases productivas y comerciales que le permitirían escalar rápidamente en el mercado local [4]. \n\nA lo largo de las décadas siguientes, el crecimiento corporativo no se detuvo. En 2005, el grupo dio un paso financiero clave al abrirse a la Bolsa de Hong Kong [4]. Esta expansión le permitió estructurar una de las carteras de marcas y alianzas más complejas y respetadas del mundo automotor actual, integrando bajo su paraguas o participando de manera accionaria en nombres históricos y firmas de vanguardia de la industria [1, 4].\n\n## Posicionamiento actual\n\nEn la actualidad, Zhejiang Geely Holding Group opera como un gigante global que trasciende la fabricación de vehículos masivos. La compañía es propietaria total o accionista mayoritaria de prestigiosas marcas europeas y globales como Volvo Cars, Lotus Cars y Polestar, además de mantener importantes participaciones en firmas como Lynk & Co, Proton Holdings, London EV Company y bloques accionarios en gigantes de la industria como Mercedes-Benz [1, 4, 5]. \n\nEsta red de cooperación tecnológica y de ingeniería permite a Geely Auto incorporar estándares globales de seguridad, diseño y electrificación en su propia línea de vehículos, posicionándose en los mercados internacionales como una alternativa moderna, tecnológicamente avanzada y respaldada por un sólido entramado industrial multinacional.",
+  "status": "confirmado",
+  "officialName": "Geely",
+  "country": "China",
+  "foundedYear": 1997,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:20:28.124Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "geely-coolray",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://geelyparaguay.com/historia.html",
+    "secondarySource": "https://es.wikipedia.org/wiki/Geely",
+    "note": "Se verificó la fundación de Geely Auto en 1997 como parte de Zhejiang Geely Holding Group, así como su rol como el primer fabricante privado de automóviles en su país de origen y su actual portafolio de marcas globales según fuentes oficiales y enciclopédicas.",
+    "limitations": [
+      "Las fechas exactas de fundación del grupo varían según las fuentes (mencionando 1986 o 1997 para la división automotriz), por lo que se priorizó el inicio formal en la industria automotriz.",
+      "La magnitud exacta de las participaciones accionarias en otras marcas globales varía en constante actualización financiera."
+    ]
+  }
+}

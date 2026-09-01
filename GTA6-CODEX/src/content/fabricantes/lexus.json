@@ -1,0 +1,46 @@
+{
+  "slug": "lexus",
+  "type": "fabricantes",
+  "title": "Lexus",
+  "description": "Vehículos y motocicletas de Lexus",
+  "content": "## Identidad de marca\nLexus se consolida como la división de vehículos de lujo y alto rendimiento del gigante automotriz Toyota. Desde su concepción, la marca ha buscado redefinir los estándares del segmento prémium mediante una propuesta que combina ingeniería de precisión, tecnología avanzada y un enfoque centrado en el confort y la hospitalidad, conocida en su cultura corporativa bajo el concepto japonés de *omotenashi*.\n\n## Historia real y origen\nLa génesis de la marca se remonta a principios de la década de 1980, cuando la dirección de Toyota evaluó la necesidad de expandir su presencia hacia el mercado de vehículos de alta gama. Tras años de planificación y desarrollo interno, Lexus formalizó su lanzamiento en 1989. Este movimiento estratégico permitió a la compañía competir directamente con los fabricantes de automóviles de lujo más establecidos a nivel global, logrando posicionar rápidamente a sus primeros sedanes como referentes de fiabilidad y refinamiento técnico.\n\n## Posicionamiento actual\nEn la actualidad, Lexus mantiene un firme liderazgo en la adopción de tecnologías de electrificación dentro del segmento prémium, impulsando una amplia gama de vehículos híbridos, enchufables y 100% eléctricos. Su propuesta de valor se mantiene enfocada en ofrecer una experiencia de conducción silenciosa, materiales de alta calidad y una atención al detalle artesanal en cada uno de sus modelos, consolidándose como una de las alternativas más sólidas y confiables del mercado automotriz internacional.",
+  "status": "confirmado",
+  "officialName": "Lexus",
+  "country": "Japón",
+  "foundedYear": 1989,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:23:03.451Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lexus-lx",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lexus-nx",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lexus-rx",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.lexusmadrid.com/lexus-historia",
+    "note": "Se verificó el año de fundación de Lexus (1989) y su vínculo como división de lujo del fabricante Toyota mediante fuentes oficiales y de referencia.",
+    "limitations": [
+      "No se detalla en las fuentes el catálogo completo de modelos actualizados para el mercado argentino."
+    ]
+  }
+}

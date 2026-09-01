@@ -1,0 +1,247 @@
+{
+  "slug": "fiat-500",
+  "type": "vehiculos",
+  "title": "Fiat 500",
+  "description": "Hatchback urbano de diseño retro de Fiat, también disponible en versión 100% eléctrica.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "fiat",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-argo",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-cronos",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-fiorino",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-onix",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-sandero",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-fit",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Fiat",
+  "class": "Hatchback",
+  "power": "118 hp (versión eléctrica 500e) / 70 hp (versión híbrida ligera)",
+  "price": "Desde €20.850 (MSRP referencia en Europa)",
+  "priceStructured": {
+    "type": "starting",
+    "currency": "EUR",
+    "amount": 20850,
+    "raw": "Desde €20.850 (MSRP referencia en Europa)"
+  },
+  "consumo": "14.9 kWh/100km (eléctrico) o 4.7 l/100km (híbrido)",
+  "dimensiones": "3632 x 1683 x 1527 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.carwow.es/fiat/500/caracteristicas-tecnicas",
+    "note": "Se verificaron las dimensiones exactas (3632 x 1683 x 1527 mm) y los rangos de precios de referencia para el mercado europeo mediante fuentes especializadas.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado (Europa, Norteamérica o Sudamérica)",
+      "La disponibilidad de motorizaciones térmicas, híbridas o eléctricas depende estrictamente de la región"
+    ]
+  },
+  "performance": {
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 10.5s"
+  },
+  "createdAt": "2026-08-23T21:59:07.332517Z",
+  "updatedAt": "2026-08-27T02:48:10.628Z",
+  "transmision": "Automática de 1 marcha (EV) / Manual de 6 marchas (Híbrido)",
+  "traccion": "Tracción delantera",
+  "peso": "1.365 kg (versión eléctrica con batería de 42 kWh)",
+  "tipoMotor": "Eléctrico sincrónico / Nafta 1.0 FireFly Mild Hybrid",
+  "potenciaKW": "87 kW",
+  "capacidadTanque": "No aplica (Eléctrico) / 35 litros (Híbrido)",
+  "tiempoRecorrido": "0-100 km/h en 9.0s (Eléctrico)",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "C",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "No aplica (Eléctrico) / 999 cc (Híbrido)",
+  "emisiones": null,
+  "asientos": 4,
+  "baul": 185,
+  "maleteroMin": null,
+  "generacion": "Tercera generación (Nueva 500 / 500e)",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 23.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:48:10.628Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 170
+    },
+    "consumo": {
+      "promedio": "6.0 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Fiat 500 es uno de los automóviles más icónicos y reconocibles de la industria automotriz global. Su rica trayectoria comenzó en 1957 con el legendario 'Cinquecento' diseñado por Dante Giacosa, un vehículo compacto y accesible que motorizó a la Italia de la posguerra y se transformó rápidamente en un símbolo indiscutido de la cultura pop, la movilidad urbana y el diseño industrial italiano.\n\nEn 2007, coincidiendo con el quincuagésimo aniversario del modelo original, la marca italiana relanzó el 500 bajo una filosofía de diseño retro-moderno desarrollada por el Centro Stile Fiat. Este relanzamiento convirtió al humilde utilitario en un producto de carácter marcadamente aspiracional y de estilo de vida, logrando un rotundo éxito comercial en todo el mundo y posicionándose como un referente absoluto dentro del segmento A de los hatchbacks urbanos.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante en la historia reciente del modelo se materializó en 2020 con la introducción de su tercera generación, comercializada globalmente como el Nuevo Fiat 500 o Fiat 500e. A diferencia de sus antecesores directos, esta arquitectura fue concebida desde una hoja en blanco exclusivamente como un vehículo eléctrico en sus variantes principales, marcando la transición definitiva de la marca hacia la electrificación sin perder los trazos estéticos característicos que lo definen.\n\nEl 500e adoptó proporciones ligeramente incrementadas para acomodar de manera óptima el paquete de baterías bajo el piso del habitáculo, lo que mejoró de forma notable el comportamiento dinámico gracias a un centro de gravedad sensiblemente más bajo. Asimismo, incorporó tecnologías de asistencia a la conducción avanzadas y sistemas multimedia de última generación, elevando la vara en materia de conectividad urbana.\n\n## Curiosidades\nA lo largo de su era moderna, el Fiat 500 ha servido como lienzo para numerosas ediciones especiales y colaboraciones exclusivas con reconocidas marcas de alta gama y de la moda internacional, tales como Gucci, Diesel y Riva (la prestigiosa firma de yates de lujo). Estas ediciones limitadas reforzaron el posicionamiento del modelo como un auténtico objeto de diseño y distinción por encima de su condición de medio de transporte.\n\nAdemás, a pesar de contar con medidas sumamente contenidas, el equipo de diseño logró preservar la silueta clásica de 'burbuja' que rinde homenaje fiel al modelo original de 1957, un logro estético sumamente complejo que pocos fabricantes han podido replicar con tanta precisión en el siglo XXI.\n\n## Competencia y posicionamiento\nDentro del mercado global, el Fiat 500 compite directamente en el segmento de los hatchbacks urbanos pequeños de espíritu chic y elegante. Entre sus rivales históricos y modernos más destacados figuran el MINI Cooper, el Smart Fortwo, y más recientemente opciones impulsadas por baterías como el Honda e, el Renault 5 E-Tech y el Dacia Spring.\n\nA pesar de la creciente competencia, el 500 se destaca frente a sus contrincantes por ofrecer una propuesta estética de alto impacto emocional combinada con costos de operación sumamente reducidos en su variante eléctrica, ocupando un nicho único donde el diseño distintivo y la practicidad urbana conviven en perfecta armonía.",
+  "generacionInfo": {
+    "raw": "Tercera generación (Nueva 500 / 500e)",
+    "numero": 3,
+    "codigoChasis": "500",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Fiat 500 - Hatchback Fiat. 170 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

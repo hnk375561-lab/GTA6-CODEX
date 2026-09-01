@@ -1,0 +1,41 @@
+{
+  "slug": "triumph",
+  "type": "fabricantes",
+  "title": "Triumph",
+  "description": "Vehículos y motocicletas de Triumph",
+  "content": "## Identidad de marca\nTriumph ocupa un lugar fundamental en la historia del automovilismo británico. A lo largo de su trayectoria, la marca se consolidó como un referente indiscutido en la fabricación de automóviles deportivos accesibles y de diseño sofisticado, logrando definir la esencia clásica del *roadster* británico durante las décadas doradas de la industria automotriz.\n\n## Historia real\nLos orígenes de la compañía se remontan a finales del siglo XIX, más precisamente en 1885, cuando el inmigrante alemán Siegfried Bettmann fundó el negocio en Coventry, inicialmente enfocado en la comercialización y fabricación de bicicletas. Con el cambio de siglo, la empresa diversificó su producción hacia el sector de las dos ruedas, ganando una sólida reputación por su rendimiento y confiabilidad.\n\nEl salto definitivo hacia la industria automotriz se concretó en 1923, año en que la firma fabricó su primer automóvil. Con los años, la división de vehículos y la de motocicletas tomaron rumbos separados; esta última se desprendió en la década de 1930 para dar paso a Triumph Engineering. Por su parte, la división de autos continuó su camino hasta que, en un contexto de consolidación industrial, fue adquirida por Leyland Motors en 1960. Posteriormente, en 1968, pasó a formar parte del gigantesco conglomerado British Leyland, integrándose en su división especializada junto a marcas hermanas como Rover y Jaguar.\n\n## Posicionamiento actual\nLa producción de automóviles bajo el sello de Triumph cesó definitivamente en 1984. En la actualidad, la marca no cuenta con actividad comercial en el mercado de vehículos nuevos, por lo que su valor reside enteramente en el ámbito del coleccionismo y la preservación patrimonial. Los modelos clásicos fabricados a mediados del siglo XX continúan siendo piezas muy codiciadas por entusiastas de todo el mundo, recordados perennemente por su estilo inconfundible y su contribución a la cultura de los autos deportivos.",
+  "status": "confirmado",
+  "officialName": "Triumph",
+  "country": "Reino Unido",
+  "foundedYear": 1902,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:48:17.643Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "triumph-bonneville-t120",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "triumph-street-triple",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.supercars.net/blog/all-brands/triumph",
+    "secondarySource": "https://es.wikipedia.org/wiki/Triumph_Motor_Company",
+    "note": "Se verificó la fundación original de la marca en 1885/1902, su transición hacia la producción de motocicletas y automóviles, y su posterior integración en British Leyland a través de fuentes especializadas y enciclopédicas.",
+    "limitations": [
+      "La producción de automóviles cesó en 1984, por lo que su posicionamiento actual se limita a su legado histórico."
+    ]
+  }
+}

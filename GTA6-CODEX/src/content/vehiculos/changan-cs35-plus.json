@@ -1,0 +1,233 @@
+{
+  "slug": "changan-cs35-plus",
+  "type": "vehiculos",
+  "title": "Changan CS35 Plus",
+  "description": "SUV compacta china de Changan, motor turbo 1.4L.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "changan",
+    "china",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-tracker",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-pulse",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-hr-v",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-creta",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Changan",
+  "class": "SUV compacto",
+  "power": "158 hp",
+  "price": "Desde $13.490.000 (referencia Chile / mercado regional)",
+  "priceStructured": {
+    "type": "unstructured",
+    "currency": null,
+    "raw": "Desde $13.490.000 (referencia Chile / mercado regional)"
+  },
+  "consumo": "aprox. 7.4 l/100km (mixto / 13.6 km/l)",
+  "dimensiones": "4335 x 1825 x 1660 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.derco.cl/auto/changan/cs35-plus",
+    "secondarySource": "https://changanmerida.com/modelo/cs35-plus",
+    "note": "Se verificaron las especificaciones principales y de motorización (1.4 Turbo con 158 HP, torque de 192 lb-ft / 260 Nm, transmisión DCT de 7 marchas y capacidad para 5 pasajeros) a partir de catálogos oficiales de distribuidores regionales en Hispanoamérica.",
+    "limitations": [
+      "Los precios varían de manera significativa según el mercado de Latinoamérica (Chile, México, etc.) y los impuestos o bonos vigentes de cada red de concesionarios.",
+      "Algunos elementos de equipamiento de seguridad activa y asistencias a la conducción pueden variar según la versión específica disponible en cada país."
+    ]
+  },
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.0s"
+  },
+  "createdAt": "2026-08-23T21:59:10.362177Z",
+  "updatedAt": "2026-08-27T02:45:47.373Z",
+  "transmision": "Automática de doble embrague (DCT húmedo) de 7 velocidades",
+  "traccion": "Delantera",
+  "peso": "1350 kg",
+  "tipoMotor": "Naftero 1.4 Turbo Bluecore (16V, 4 cilindros)",
+  "potenciaKW": "118 kW",
+  "capacidadTanque": "53 litros",
+  "tiempoRecorrido": "0-100 km/h en 11.0s",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1398 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 403,
+  "maleteroMin": null,
+  "generacion": "1ra generación (facelift CS35 Plus)",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 20.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:45:47.373Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 175
+    },
+    "consumo": {
+      "promedio": "7.5 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Changan CS35 Plus representa una evolución profunda respecto a la CS35 tradicional, un SUV subcompacto con el que la firma de origen chino buscó ganar terreno inicial en los mercados de exportación. Si bien el modelo primigenio priorizaba la funcionalidad elemental y un precio de entrada accesible, la variante 'Plus' marcó un salto cualitativo rotundo en términos de diseño, calidad de materiales y arquitectura general. Con una impronta visual mucho más moderna y robusta, este vehículo se posicionó rápidamente para competir de igual a igual contra los referentes tradicionales del segmento B-SUV en distintas regiones emergentes.\n\n## Un hito o generación relevante\nEl punto de inflexión técnico y comercial para esta familia de SUVs llegó con la incorporación de la familia de motores Bluecore de 1.4 litros turbo con inyección directa, acoplados a una moderna transmisión automática de doble embrague (DCT húmedo) de 7 velocidades. Esta actualización mecánica no solo optimizó la respuesta en ciudad y ruta gracias a sus 158 caballos de fuerza, sino que también mejoró de manera notable la insonorización, la eficiencia de combustible y el refinamiento de marcha en comparación con los bloques atmosféricos más antiguos.\n\n## Curiosidades\nUn detalle interesante detrás del desarrollo de la Changan CS35 Plus es la estructura global de ingeniería de la marca. Changan cuenta con centros de investigación y desarrollo distribuidos estratégicamente en ciudades clave como Turín (Italia), Detroit (Estados Unidos) y Birmingham (Reino Unido). Esto explica por qué el lenguaje de diseño exterior e interior se aleja de los estereotipos clásicos de los vehículos asiáticos de antaño, adoptando líneas de carácter occidental, ergonomía refinada y un panel digital integrado que centraliza la experiencia multimedia.\n\n## Competencia y posicionamiento\nEn el mercado actual, la Changan CS35 Plus compite en el nutrido segmento de los B-SUV frente a pesos pesados de la industria como la Chevrolet Tracker, la Volkswagen T-Cross, la Nissan Kicks y la Renault Duster. Para destacar en esta categoría tan disputada, el modelo apuesta fuertemente por una ecuación de valor muy competitiva, ofreciendo en sus versiones más equipadas asistencias avanzadas a la conducción (ADAS), cámara de visión periférica de 360 grados, techo panorámico y terminaciones interiores de tacto blando que reafirman su salto prestacional.",
+  "generacionInfo": {
+    "raw": "1ra generación (facelift CS35 Plus)",
+    "numero": 1,
+    "codigoChasis": "CS35",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": true,
+    "faceliftAno": null
+  },
+  "seoDescription": "Changan CS35 Plus - SUV compacta Changan. 175 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

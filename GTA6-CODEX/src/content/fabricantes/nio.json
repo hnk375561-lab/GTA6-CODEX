@@ -1,0 +1,36 @@
+{
+  "slug": "nio",
+  "type": "fabricantes",
+  "title": "NIO",
+  "description": "Vehículos y motocicletas de NIO",
+  "content": "## Identidad de marca\nNIO se posiciona en el mercado global como una multinacional enfocada en el desarrollo y diseño de vehículos eléctricos inteligentes, autónomos y de alto rendimiento. Su propuesta va más allá de la fabricación tradicional de automóviles, buscando consolidar un estilo de vida tecnológico y sustentable para sus usuarios.\n\n## Historia y evolución\nFundada en noviembre de 2014, la compañía estableció su sede central en Shanghái. Desde sus inicios, la marca apostó por diferenciarse mediante la innovación tecnológica aplicada a la movilidad sustentable. A lo largo de su trayectoria, ha desarrollado un ecosistema integral que abarca desde la ingeniería de vehículos y sistemas avanzados de conducción hasta redes propias de energía y servicios.\n\n## Posicionamiento actual\nActualmente, NIO trasciende el concepto clásico de automotriz al integrar soluciones avanzadas como el modelo *Battery as a Service* (BaaS), el intercambio rápido de baterías y una infraestructura de servicios orientada a la experiencia del usuario. Su enfoque comprende el desarrollo de hardware inteligente, software operativo vehicular y propuestas de estilo de vida, posicionándose como un actor clave en la transformación del sector de vehículos eléctricos de gama alta.",
+  "status": "confirmado",
+  "officialName": "NIO",
+  "country": "China",
+  "foundedYear": 2014,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:24:36.074Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nio-et5",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/NIO_(empresa_automovil%C3%ADstica)",
+    "secondarySource": "https://lions.financial/es/nio-electric-automotive-industry",
+    "note": "Se verificó la fundación de la empresa en noviembre de 2014, su sede central en Shanghái y su enfoque en vehículos eléctricos inteligentes y de alto rendimiento a través de las fuentes provistas.",
+    "limitations": [
+      "No se detallan cifras exactas de ventas anuales en las fuentes provistas.",
+      "La expansión comercial por fuera de sus mercados principales está escasamente documentada en el extracto."
+    ]
+  }
+}

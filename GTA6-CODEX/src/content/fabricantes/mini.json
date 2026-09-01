@@ -1,0 +1,42 @@
+{
+  "slug": "mini",
+  "type": "fabricantes",
+  "title": "Mini",
+  "description": "Vehículos y motocicletas de Mini",
+  "content": "## Identidad de marca\nMini se consolidó a lo largo de las décadas como un ícono indiscutido de la cultura automotriz británica. Su propuesta se centra en la maximización del espacio interior en carrocerías de dimensiones sumamente compactas, combinando una estética distintiva con una dinámica de conducción ágil, frecuentemente comparada con el comportamiento de un kart.\n\n## Historia y evolución\nFundada en 1959 en territorio británico, la marca marcó un hito en la industria al repensar radicalmente la arquitectura de los vehículos pequeños. Con el correr de los años, la impronta deportiva de la firma se potenció gracias a figuras clave como el célebre ingeniero británico John Cooper, cuyo trabajo en el desarrollo de variantes de alta competición transformó al modelo utilitario en una leyenda de los rallies y las pistas internacionales.\n\n## Posicionamiento actual\nEn la actualidad, bajo el paraguas corporativo del Grupo BMW, Mini ha evolucionado hacia el segmento de los automóviles compactos de carácter premium. La marca mantiene firmemente los rasgos estéticos fundamentales que la hicieron famosa en todo el mundo, adaptándolos a las exigencias tecnológicas contemporáneas, los estándares de seguridad modernos y las nuevas demandas de movilidad urbana global.",
+  "status": "confirmado",
+  "officialName": "Mini",
+  "country": "Reino Unido",
+  "foundedYear": 1959,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:24:09.241Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mini-cooper",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mini-countryman",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Mini",
+    "secondarySource": "https://www.press.bmwgroup.com/mexico/article/topic/5257",
+    "note": "Se verificó la existencia de la marca Mini y su vínculo histórico con la figura del legendario ingeniero británico John Cooper a través de fuentes oficiales y enciclopédicas.",
+    "limitations": [
+      "Las fuentes disponibles sobre la historia detallada de la marca en el contexto provisto son acotadas.",
+      "No se dispone en el corpus de datos precisos sobre la evolución de cada generación de modelos posteriores a 1959."
+    ]
+  }
+}

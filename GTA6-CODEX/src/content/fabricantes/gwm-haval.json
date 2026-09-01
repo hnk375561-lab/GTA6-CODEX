@@ -1,0 +1,36 @@
+{
+  "slug": "gwm-haval",
+  "type": "fabricantes",
+  "title": "GWM (Haval)",
+  "description": "Vehículos y motocicletas de GWM (Haval)",
+  "content": "## Identidad de Marca\n\nHaval opera como una división especializada dentro del conglomerado automotriz de Great Wall Motors (GWM). La marca concentra su propuesta de valor en el desarrollo, producción y comercialización de vehículos tipo crossover y SUVs, orientándose a un segmento que demanda versatilidad, espacio y prestaciones adaptadas tanto al uso urbano como a la conducción fuera del camino.\n\n## Historia y Hitos\n\nEl recorrido de la marca comenzó formalmente con el lanzamiento de su primer producto al mercado en junio de 2005, momento a partir del cual adoptó una estrategia centrada en la especialización de su catálogo [Fuente 5]. Con los años, esta división se consolidó bajo el paraguas de GWM, un fabricante que comenzó sus operaciones de expansión internacional mediante exportaciones desde el año 1997 [Fuente 3]. Esta trayectoria le permitió a la corporación posicionarse de forma temprana en diversos mercados extranjeros, expandiendo su presencia global de manera paulatina [Fuente 2]. \n\n## Posicionamiento Actual\n\nEn la actualidad, Haval se reconoce dentro de la industria automotriz global como una marca especializada en el segmento de vehículos utilitarios deportivos. Su evolución comprende la adopción de nuevas tecnologías aplicadas a la movilidad contemporánea, incluyendo el desarrollo de variantes híbridas y la renovación constante de su oferta de modelos orientados a satisfacer la demanda internacional de SUVs y vehículos multipropósito.",
+  "status": "confirmado",
+  "officialName": "GWM (Haval)",
+  "country": "China",
+  "foundedYear": 1984,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T22:20:37.703Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "haval-jolion",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Haval",
+    "secondarySource": "https://www.greatwallmotors.com.do/haval",
+    "note": "Se verificó que Haval es una marca especializada en SUVs y crossovers perteneciente al fabricante Great Wall Motors (GWM), con el lanzamiento de su primer producto registrado en junio de 2005.",
+    "limitations": [
+      "No se dispone en las fuentes del año exacto de fundación de la empresa matriz o de la marca más allá de la fecha de su primer producto.",
+      "No se detalla el país de origen de la matriz en las fuentes proporcionadas, limitando el contexto geográfico a la industria de origen chino según la mención de la marca."
+    ]
+  }
+}

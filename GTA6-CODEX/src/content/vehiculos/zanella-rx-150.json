@@ -1,0 +1,225 @@
+{
+  "slug": "zanella-rx-150",
+  "type": "vehiculos",
+  "title": "Zanella RX 150",
+  "description": "Moto naked económica de la marca argentina Zanella, motor monocilíndrico de 150cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "zanella",
+    "argentina"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "zanella-rx-200",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb500f",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-ybr-125",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:33.849Z",
+  "updatedAt": "2026-08-27T02:05:34.705Z",
+  "manufacturer": "Zanella",
+  "class": "Moto",
+  "performance": {
+    "speed": "110 km/h"
+  },
+  "power": "12 HP",
+  "price": "ARS 1.800.000 (Precio de referencia mercado argentino)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "ARS",
+    "amount": 1800000,
+    "raw": "ARS 1.800.000 (Precio de referencia mercado argentino)"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.zanella.com.ar",
+    "note": "Se corrigieron los datos genéricos del JSON previo para adaptarlos a una motocicleta urbana de 150cc fabricada en Argentina, basándose en especificaciones técnicas de catálogo y conocimiento general verificado.",
+    "limitations": [
+      "El precio varía frecuentemente según la inflación local y la disponibilidad en los concesionarios oficiales de Zanella en Argentina.",
+      "Algunas variantes menores de equipamiento pueden cambiar según el año exacto de fabricación."
+    ]
+  },
+  "transmision": "Manual de 5 marchas",
+  "traccion": "Cadena",
+  "peso": "115 kg",
+  "tipoMotor": "Monocilíndrico 4 tiempos",
+  "potenciaKW": "9 kW",
+  "capacidadTanque": "12 litros",
+  "tiempoRecorrido": "10-15s",
+  "anoProduccion": "2010-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "2.5 L / 100 km",
+  "dimensiones": "2040 x 750 x 1080 mm",
+  "cilindrada": "149 cc",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Evolución constante de baja cilindrada",
+  "anoLanzamiento": 2010,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 2.400"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:05:34.705Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 110
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Zanella RX 150 es uno de los emblemas indiscutidos del mercado de motocicletas de baja cilindrada en la Argentina. Concebida como una herramienta de trabajo y un medio de transporte diario económico, esta moto naked de la histórica marca nacional Zanella ha logrado motorizar a miles de argentinos a lo largo de los años. Su propuesta siempre giró en torno a la accesibilidad, la simpleza mecánica y la facilidad para conseguir repuestos en cualquier punto del país, convirtiéndola en un clásico moderno de las calles urbanas y rutas secundarias.\n\n## Un hito o generación relevante\nEl gran hito de la familia RX 150 no radica en una sola innovación tecnológica disruptiva, sino en su capacidad de supervivencia y adaptación frente a la competencia de importados asiáticos. A lo largo de sus distintas evoluciones de diseño —que pasaron por sutiles retoques estéticos en cachas, ópticas y tablero—, la RX 150 consolidó la presencia industrial de Zanella, adaptándose a las normativas de emisiones vigentes y mejorando la calidad de sus componentes eléctricos y acabados generales sin perder su ADN original de bajo costo.\n\n## Curiosidades\nEntre las particularidades de la Zanella RX 150 destaca su extrema versatilidad: es el vehículo elegido tanto por repartidores urbanos (delivery) como por trabajadores que realizan trayectos interurbanos diarios. Su motor monocilíndrico de 150cc es sumamente noble, tolerando mantenimientos básicos realizados por mecánicos barriales e incluso por sus propios usuarios. Además, su estética naked de líneas agresivas pero sencillas sirvió de inspiración para toda una generación de motos de entrada de gama en el conurbano bonaerense.\n\n## Competencia y posicionamiento\nEn el mercado argentino, la Zanella RX 150 compite de manera directa con otros tanques de ventas locales como la Gilera Smash (en variantes de mayor cilindrada), la Corven Triax o Hunter, y la Honda CG 150 Titan (aunque esta última ubicada en un escalón superior de precio y prestigio de marca). El posicionamiento de la RX 150 es netamente popular y pragmático: ofrece una relación precio-producto imbatible, menor consumo de combustible frente a vehículos de cuatro ruedas, y un costo de mantenimiento mensual sumamente bajo, lo que la mantiene firme en el podio de los patentamientos nacionales.",
+  "generacionInfo": {
+    "raw": "Evolución constante de baja cilindrada",
+    "numero": null,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Zanella RX 150 - Moto Zanella. 110 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

@@ -1,0 +1,184 @@
+{
+  "slug": "porsche-cayenne",
+  "type": "vehiculos",
+  "title": "Porsche Cayenne",
+  "description": "SUV deportivo de Porsche, tercera generación con base MLB Evo.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "porsche"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "porsche-911-carrera",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "porsche-taycan",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lamborghini-urus",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Porsche",
+  "class": "SUV deportivo",
+  "power": "353 CV",
+  "price": "USD 80.000 (MSRP EE.UU. de referencia)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 80000,
+    "raw": "USD 80.000 (MSRP EE.UU. de referencia)"
+  },
+  "consumo": "11.8 l/100km en ciclo combinado (EPA estimado de referencia)",
+  "dimensiones": "4.930 mm largo x 1.983 mm ancho x 1.698 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.porsche.com",
+    "note": "Se actualizaron las especificaciones clave para la tercera generación del Porsche Cayenne basadas en el conocimiento técnico general de la marca. Los valores de potencia corresponden a la versión base con motor V6 turbo.",
+    "limitations": [
+      "Los precios varían según los mercados e impuestos locales",
+      "Los datos de consumo de combustible dependen del estilo de manejo y condiciones de homologación"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:55:19.427Z",
+  "transmision": "Automática Tiptronic S de 8 velocidades",
+  "traccion": "Tracción integral permanente (AWD)",
+  "peso": "2.055 kg",
+  "tipoMotor": "Gasolina V6 turbo de 3.0 litros",
+  "potenciaKW": "260 kW",
+  "capacidadTanque": "75 litros",
+  "tiempoRecorrido": "0-100 km/h en 5.7s (con paquete Sport Chrono)",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "2.995 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 698,
+  "maleteroMin": null,
+  "generacion": "Tercera generación (facelift mayor)",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 82.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:55:19.427Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Porsche Cayenne irrumpió en el mercado automotriz a principios de los años 2000, marcando un hito histórico para la marca de Stuttgart al convertirse en su primer vehículo de tipo SUV. Su lanzamiento generó debate inicial entre los puristas del fabricante alemán, pero el tiempo demostró que fue una decisión comercial y de ingeniería brillante. Lejos de diluir la identidad deportiva de Porsche, el Cayenne logró trasladar el dinamismo, las prestaciones y el ADN de competición a un formato de carrocería grande y versátil. Con las sucesivas generaciones, el modelo se consolidó como uno de los pilares de ventas más importantes a nivel global, permitiendo a la compañía financiar el desarrollo de sus icónicos deportivos de motor central y trasero.\n\n## Un hito o generación relevante\nLa introducción de la tercera generación del Cayenne, construida sobre la plataforma modular MLB Evo del Grupo Volkswagen, representó un salto evolutivo monumental en términos de agilidad, reducción de peso mediante el uso inteligente de aluminio y acero, y la incorporación de arquitectura digital avanzada en el habitáculo. Esta plataforma le permitió optimizar su centro de gravedad y mejorar notablemente la dinámica de conducción en ruta y caminos sinuosos. Asimismo, las actualizaciones profundas introducidas recientemente no solo rediseñaron por completo el panel de instrumentos con pantallas curvas de tipo OLED, sino que también refinaron la gama de motores térmicos e híbridos enchufables para cumplir con las exigencias normativas más estrictas sin sacrificar la respuesta al acelerador que caracteriza a la firma.\n\n## Curiosidades\nA pesar de ser un SUV de gran porte y peso considerable, el desarrollo del Porsche Cayenne siempre priorizó la física del movimiento por encima de las modas estéticas. Cuenta con sofisticados sistemas de suspensión neumática adaptativa (PASM) y barras estabilizadoras activas que anulan prácticamente el balanceo de la carrocería en curvas cerradas, desafiando las leyes de la física para un vehículo de su segmento. Además, desde sus inicios, la marca diseñó la gama de motores para soportar un uso intensivo tanto en asfalto a velocidades de autopista alemana como en terrenos off-road moderados, gracias a sus múltiples modos de conducción seleccionables desde la consola central.\n\n## Competencia y posicionamiento\nDentro del segmento de los SUV de lujo de altas prestaciones, el Porsche Cayenne compite directamente con pesos pesados de la industria como el BMW X5, el Mercedes-Benz GLE y el Audi Q7, con los cuales comparte componentes estructurales y tecnológicos debido al parentesco corporativo. Sin embargo, el Cayenne se posiciona de manera diferencial al apuntar a un público que valora un tacto de conducción marcadamente más deportivo, una dirección de respuesta quirúrgica y un prestigio de marca indiscutido dentro del nicho de los vehículos de altas prestaciones. Su capacidad para combinar la funcionalidad familiar con prestaciones dignas de un coupé deportivo lo mantiene como una referencia ineludible en el mercado global.",
+  "generacionInfo": {
+    "raw": "Tercera generación (facelift mayor)",
+    "numero": 3,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": true,
+    "faceliftAno": null
+  },
+  "seoDescription": "Porsche Cayenne - SUV deportivo Porsche. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

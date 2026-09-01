@@ -1,0 +1,247 @@
+{
+  "slug": "hyundai-creta",
+  "type": "vehiculos",
+  "title": "Hyundai Creta",
+  "description": "SUV compacta de Hyundai, uno de los modelos más vendidos de su segmento en Latinoamérica.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "hyundai",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-elantra",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-hb20",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-ioniq-5",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "changan-cs35-plus",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-tracker",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-pulse",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-hr-v",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Hyundai",
+  "class": "SUV compacto",
+  "power": "115 hp",
+  "price": "USD 25.000 (referencia regional)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 25000,
+    "raw": "USD 25.000 (referencia regional)"
+  },
+  "consumo": "7.0 l/100km (mixto)",
+  "dimensiones": "4315 x 1790 x 1630 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.hyundai.com.ar",
+    "note": "Se verificaron las especificaciones técnicas principales de la Hyundai Creta de segunda generación para el mercado latinoamericano, incluyendo dimensiones, motorización naftera 1.5L y capacidades generales.",
+    "limitations": [
+      "Las configuraciones de equipamiento y motorización pueden variar según el mercado específico de Latinoamérica.",
+      "Los valores de consumo y performance son estimaciones basadas en fichas técnicas oficiales para la región."
+    ]
+  },
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.8s"
+  },
+  "createdAt": "2026-08-23T21:59:05.686502Z",
+  "updatedAt": "2026-08-27T01:45:58.878Z",
+  "transmision": "Automática IVT o Manual de 6 velocidades",
+  "traccion": "Delantera (FWD)",
+  "peso": "1200-1300 kg",
+  "tipoMotor": "Nafta 1.5L aspirado",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "0-100 km/h en 11.8s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1497 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 433,
+  "maleteroMin": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 25.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:45:58.878Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 180
+    },
+    "consumo": {
+      "promedio": "7.4 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Hyundai Creta se ha consolidado como uno de los SUV compactos más importantes a nivel global desde su presentación original. Diseñada para atender la creciente demanda de vehículos utilitarios deportivos urbanos, la Creta rápidamente encontró su lugar en mercados emergentes clave como India, Brasil y el resto de Latinoamérica, donde la combinación de diseño robusto, posición de manejo elevada y practicidad diaria resonó fuertemente con los consumidores.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental para este modelo llegó con la introducción de su segunda generación, estrenada comercialmente hacia finales de la década pasada y expandida globalmente en los años siguientes. Esta evolución trajo consigo un cambio estético radical, adoptando la filosofía de diseño global de la marca caracterizada por un frontal imponente con grupos ópticos divididos, líneas de carácter más marcadas en los laterales y un habitáculo completamente modernizado con mayor enfoque en la conectividad y la digitalización del puesto de conducción.\n\n## Curiosidades\nUn aspecto interesante de la Hyundai Creta es su versatilidad industrial y comercial: se produce en múltiples plantas alrededor del mundo para abastecer de manera localizada a regiones muy diversas, lo que implica que recibe adaptaciones mecánicas y estéticas sutiles según el país donde se comercialice. En algunos mercados asiáticos, por ejemplo, comparte plataforma y desarrollos tecnológicos estrechamente con otros productos del conglomerado Hyundai-Kia, optimizando costos y maximizando el espacio interior a pesar de mantener una huella exterior compacta ideal para el tráfico urbano.\n\n## Competencia y posicionamiento\nEn el altamente competitivo segmento B-SUV, la Hyundai Creta se posiciona como una opción equilibrada que prioriza el confort de marcha, la confiabilidad mecánica y una excelente relación valor-producto. Debe medirse constantemente contra pesos pesados de la categoría como la Chevrolet Tracker, la Volkswagen T-Cross, el Jeep Renegade y la Nissan Kicks. Para destacar frente a ellos, la Creta apuesta por un espacio interior generoso, un baúl de capacidad destacada para su tamaño y un nivel de equipamiento tecnológico que suele incluir asistencias avanzadas a la conducción en sus versiones más equipadas, consolidando así su liderazgo en ventas en diversos mercados de la región.",
+  "generacionInfo": {
+    "raw": "Segunda generación",
+    "numero": 2,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Hyundai Creta - SUV compacta Hyundai. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

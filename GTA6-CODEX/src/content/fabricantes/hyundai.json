@@ -1,0 +1,72 @@
+{
+  "slug": "hyundai",
+  "type": "fabricantes",
+  "title": "Hyundai",
+  "description": "Vehículos y motocicletas de Hyundai",
+  "content": "## Identidad de marca\nEl término Hyundai proviene del coreano y significa \"modernidad\" [Fuente 3]. Esta premisa define la filosofía de una marca que creció desde sus raíces en Seúl para consolidarse como un pilar fundamental de la industria automotriz global, apostando por la evolución tecnológica constante y el desarrollo de ingeniería propia.\n\n## Historia real y evolución\\Los orígenes de la compañía se remontan a la visión de su fundador, Chung Ju-yung, quien comenzó sus actividades industriales en la década del cuarenta [Fuente 1, Fuente 3]. La división dedicada específicamente a los vehículos, Hyundai Motor Company, se estableció formalmente a fines de 1967 [Fuente 3]. En sus primeros años, la automotriz dio sus primeros pasos ensamblando vehículos bajo licencia extranjera, como el sedán Cortina de Ford en 1968 [Fuente 3]. Poco después, la marca incursionó en la producción de vehículos pequeños propios, destacándose el lanzamiento histórico del Hyundai Pony [Fuente 2]. \n\nA medida que avanzaron las décadas, la empresa dejó de depender exclusivamente de tecnologías ajenas. Un hito clave en su autonomía técnica ocurrió en 1991 con el desarrollo de \"Alfa\", el primer motor diseñado íntegramente en Corea [Fuente 5]. Durante esa misma época, la marca expandió su catálogo con la presentación de modelos emblemáticos como el Elantra y el Scoupe [Fuente 5], sentando las bases para su expansión internacional masiva.\n\n## Posicionamiento actual\nHoy en día, Hyundai Motor Company se posiciona como un actor central en el mercado automotriz internacional. Junto con su subsidiaria Kia Motors, conforma uno de los mayores conglomerados fabricantes de vehículos del mundo [Fuente 1]. Su oferta actual abarca desde automóviles compactos y sedanes hasta camiones y maquinaria pesada a través de sus empresas asociadas, manteniendo una presencia sólida en los principales mercados globales gracias a una estrategia enfocada en la competitividad, el diseño y la innovación constante.",
+  "status": "confirmado",
+  "officialName": "Hyundai",
+  "country": "Corea del Sur",
+  "foundedYear": 1967,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:46:00.000Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-creta",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-elantra",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-hb20",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-ioniq-5",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-kona-electric",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-santa-fe",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-tucson",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Hyundai_Motor_Company",
+    "secondarySource": "https://es.wikipedia.org/wiki/Hyundai",
+    "note": "Se verificó la fecha de fundación en 1967 por Chung Ju-yung, la sede en Seúl, el significado del término ('modernidad') y su posición actual como parte de un gran conglomerado global junto a Kia.",
+    "limitations": [
+      "No se detalla la oferta completa de vehículos eléctricos de última generación en este extracto.",
+      "Las cifras financieras exactas varían según el ejercicio fiscal y la fuente bursátil."
+    ]
+  }
+}

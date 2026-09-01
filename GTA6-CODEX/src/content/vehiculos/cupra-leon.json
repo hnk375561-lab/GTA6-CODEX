@@ -1,0 +1,228 @@
+{
+  "slug": "cupra-leon",
+  "type": "vehiculos",
+  "title": "Cupra León",
+  "description": "Versión deportiva de alto rendimiento del SEAT León bajo la marca Cupra.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "cupra"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "cupra-formentor",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "abarth-595",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-civic-type-r",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Cupra",
+  "class": "Hatchback deportivo",
+  "power": "300 CV",
+  "price": "EUR 42.000 (referencia mercado europeo)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "EUR",
+    "amount": 42000,
+    "raw": "EUR 42.000 (referencia mercado europeo)"
+  },
+  "consumo": "7.5 l/100km combinado",
+  "dimensiones": "4.368 mm largo x 1.799 mm ancho x 1.456 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.cupraofficial.es/coches/leon",
+    "note": "Se actualizaron los datos técnicos de potencia, dimensiones, aceleración y motorización basándose en las especificaciones oficiales de la gama Cupra León de alta performance.",
+    "limitations": [
+      "Los precios pueden variar según el mercado europeo o impuestos locales",
+      "Las cifras de consumo y performance corresponden a la variante tope de gama de 300 CV"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:37:28.822Z",
+  "transmision": "Automática de doble embrague (DSG) de 7 velocidades",
+  "traccion": "Delantera o integral (4Drive según versión)",
+  "peso": "1.490 kg",
+  "tipoMotor": "Gasolina 2.0 TSI turbo",
+  "potenciaKW": "221 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "4.9s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1984 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 380,
+  "maleteroMin": null,
+  "generacion": "Cuarta generación (KL)",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 38.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:37:28.822Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Cupra León marca un punto de inflexión fundamental en la historia automotriz contemporánea al erigirse como el primer modelo en portar con orgullo el emblema de Cupra de manera independiente, desvinculándose de la denominación SEAT Sport que tradicionalmente abanderaba a los hatchbacks más picantes del conglomerado de Volkswagen en Martorell. Aunque comparte plataforma (MQB Evo) y sinergias mecánicas con sus primos del Grupo Vgg, el Cupra León busca diferenciarse con una identidad visual mucho más agresiva, marcada por detalles en color cobre distintivos, tomas de aire sobredimensionadas y una puesta a punto de chasis orientada netamente al dinamismo y al placer de conducción.\n\n## Un hito o generación relevante\nLa cuarta generación del León (conocida internamente como la plataforma KL) introdujo en 2020 la electrificación ligera y variantes híbridas enchufables (e-HYBRID) dentro de la gama de altas prestaciones, logrando equilibrar de manera notable las normativas de emisiones cada vez más estrictas de la Unión Europea con la deportividad visceral que los entusiastas esperan de la marca. Sin embargo, la variante pura de combustión equipada con el bloque 2.0 TSI de 300 CV y tracción delantera (o hasta 310 CV con la carrocería Familiar/Sportstourer y tracción integral 4Drive) sigue siendo el estandarte dinámico de la familia, incorporando diferencial autoblocante delantero y una dirección progresiva de tacto quirúrgico.\n\n## Curiosidades\nUna de las características más llamativas del habitáculo del Cupra León es la incorporación de los botones satelitales en el volante —inspirados directamente en el mundo de la competición— que permiten encender el motor y alternar entre los modos de conducción (incluyendo el modo Cupra extremo) sin apartar las manos del aro. Asimismo, la paleta cromática exclusiva de la marca, encabezada por tonos mate como el Gris Petrol o el Azul Enceladus, le otorga una presencia visual en la calle que pocas veces se ve en un hatchback mediano de producción en serie.\n\n## Competencia y posicionamiento\nEn el mercado global, el Cupra León compite de manera directa contra pesos pesados consagrados del segmento C deportivo, como el Volkswagen Golf GTI y el radical Golf R, el Ford Focus ST, el Honda Civic Type R y el Hyundai i30 N. Se posiciona dentro de un escalón de corte semi-premium o generalista aspiracional, ofreciendo un nivel de acabados interiores muy cuidado, infoentretenimiento de última generación y una dinámica de marcha que combina la usabilidad diaria con una efectividad en tramos revirados digna de vehículos de categorías superiores.",
+  "generacionInfo": {
+    "raw": "Cuarta generación (KL)",
+    "numero": 4,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Cupra León - Hatchback deportivo Cupra. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

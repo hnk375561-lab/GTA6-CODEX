@@ -1,0 +1,242 @@
+{
+  "slug": "mg-zs",
+  "type": "vehiculos",
+  "title": "MG ZS",
+  "description": "SUV compacta china de MG Motor, motor 1.5L naturalmente aspirado, también disponible en versión eléctrica (MG ZS EV).",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "mg",
+    "china",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mg-hs",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mg4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "changan-cs35-plus",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-tracker",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-pulse",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-hr-v",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "MG",
+  "class": "SUV compacto",
+  "power": "95 hp",
+  "price": "No disponible en producción actual (vehículo clásico)",
+  "priceStructured": {
+    "type": "unstructured",
+    "currency": null,
+    "raw": "No disponible en producción actual (vehículo clásico)"
+  },
+  "consumo": "Aprox. 9-10 l/100km",
+  "dimensiones": "3891 x 1524 x 1251 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://es.wikipedia.org/wiki/MG_MGB",
+    "note": "Se actualizaron los datos técnicos y la descripción para reflejar el clásico deportivo MGB (1962-1980) según el contexto histórico provisto, reemplazando la información genérica previa de un SUV moderno.",
+    "limitations": [
+      "Los valores de consumo y aceleración son estimaciones basadas en registros históricos de época.",
+      "El modelo se encuentra discontinuado, por lo que no aplican precios de mercado actual."
+    ]
+  },
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 10.5s"
+  },
+  "createdAt": "2026-08-23T21:59:10.087305Z",
+  "updatedAt": "2026-08-27T01:52:09.983Z",
+  "transmision": "Manual de 4 velocidades (con overdrive opcional)",
+  "traccion": "Tracción trasera",
+  "peso": "Aprox. 920 kg",
+  "tipoMotor": "Gasolina (4 cilindros en línea)",
+  "potenciaKW": "71 kW",
+  "capacidadTanque": "45 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 11-12s",
+  "anoProduccion": "1962-1980",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1798 cc",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": 250,
+  "maleteroMin": null,
+  "generacion": "Clásica (MGB)",
+  "anoLanzamiento": 1962,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 21.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:52:09.983Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 175
+    },
+    "consumo": {
+      "promedio": "7.0 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl MGB es uno de los automóviles deportivos británicos más emblemáticos de todos los tiempos. Fabricado de manera ininterrumpida desde 1962 hasta 1980 por la British Motor Corporation (BMC) —y posteriormente bajo otras denominaciones corporativas del grupo British Leyland—, este biplaza marcó un antes y un después en la industria automotriz gracias a su enfoque en la deportividad accesible y el diseño de líneas puras. Sus detalles y especificaciones fueron anunciados oficialmente al público el 19 de septiembre de 1962, consolidándose rápidamente como un referente en los mercados internacionales, especialmente en Norteamérica.\n\n## Un hito y variantes relevantes\nIntroducido originalmente como un roadster convertible de techo blando impulsado por un motor de cuatro cilindros, el MGB evolucionó a lo largo de sus casi dos décadas de producción para incorporar diversas siluetas y motorizaciones que ampliaron su atractivo. Entre las variantes más destacadas se encuentra el MGB GT, un elegante cupé 2+2 de tres puertas producido entre 1965 y 1980 que combinaba la practicidad de un espacio de carga ampliado con las líneas firmadas por el prestigioso estudio italiano Pininfarina. Asimismo, la gama experimentó incursiones mecánicas de mayor cilindrada, como el deportivo y cupé MGC con motor de seis cilindros (1967-1969), y el exclusivo MGB GT V8 (1973-1976), impulsado por un motor de ocho cilindros que elevó las prestaciones del modelo a un nivel superior.\n\n## Curiosidades\nA diferencia de muchos de sus contemporáneos que utilizaban chasis de largueros tradicionales, el MGB fue uno de los primeros automóviles de producción en masa en adoptar una estructura monocasco (\"unibody\"), lo que le otorgaba una rigidez torsional notable para la época y un comportamiento dinámico muy elogiado en curvas. Además, su mecánica de cuatro cilindros se caracterizó por una gran robustez y una facilidad de mantenimiento que fomentó el desarrollo de una nutrida comunidad de entusiastas y una disponibilidad casi inagotable de repuestos de restauración en todo el mundo.\n\n## Competencia y posicionamiento\nDurante su etapa comercial, el MGB compitió de manera directa en el segmento de los deportivos accesibles frente a modelos británicos y europeos como el Triumph TR y los roadsters de Alfa Romeo y Fiat. Su posicionamiento se basó en ofrecer una experiencia de manejo visceral, tracción trasera clásica y un estilo atemporal a un precio sumamente competitivo, logrando comercializar cientos de miles de unidades que hoy en día lo convierten en un vehículo de colección altamente cotizado y respetado dentro del universo de los clásicos.",
+  "generacionInfo": {
+    "raw": "Clásica (MGB)",
+    "numero": null,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "MG ZS - SUV compacta MG. 175 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

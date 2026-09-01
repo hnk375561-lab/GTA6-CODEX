@@ -1,0 +1,41 @@
+{
+  "slug": "ktm",
+  "type": "fabricantes",
+  "title": "KTM",
+  "description": "Vehículos y motocicletas de KTM",
+  "content": "## Identidad de marca\nKTM se consolidó de manera definitiva en el escenario global bajo su estructura actual en 1992, logrando posicionarse como un referente indiscutido en el desarrollo de motocicletas y vehículos de altas prestaciones orientados tanto al off-road como al uso deportivo extremo. Su impronta combina ingeniería de precisión con una filosofía comercial agresiva y competitiva.\n\n## Historia real y evolución\nLos cimientos de la compañía se remontan a 1934, cuando el ingeniero Hans Trunkenpolz puso en marcha una industria metalúrgica en la localidad de Mattighofen [Fuente 3, Fuente 4]. Con el paso de los años, el negocio evolucionó hasta incursionar en la comercialización y posterior fabricación de vehículos de dos ruedas, destacándose en hitos como el lanzamiento de modelos históricos que sentaron las bases de su reputación técnica [Fuente 5]. Tras un proceso de reestructuración profunda, la compañía adoptó su formato corporativo actual en 1992, momento que marcó el renacimiento industrial de la firma y su expansión internacional masiva [Fuente 1].\n\n## Posicionamiento actual\nEn la actualidad, la marca mantiene un fuerte liderazgo en el mercado europeo de motocicletas [Fuente 5], destacándose además por su activa y exitosa participación en competencias internacionales de primer nivel, lo que le permite validar sus desarrollos tecnológicos directamente en las pistas más exigentes del mundo.",
+  "status": "confirmado",
+  "officialName": "KTM",
+  "country": "Austria",
+  "foundedYear": 1992,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:22:35.766Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ktm-1290-super-adventure",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ktm-duke-390",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/KTM",
+    "secondarySource": "https://www.autopasion18.com/HISTORIA-KTM.htm",
+    "note": "Se verificó la estructura actual establecida en 1992 y los orígenes iniciales en 1934 a partir de las fuentes provistas.",
+    "limitations": [
+      "La información sobre la transición exacta entre los talleres metalúrgicos originales y la fabricación moderna es acotada en los extractos."
+    ]
+  }
+}

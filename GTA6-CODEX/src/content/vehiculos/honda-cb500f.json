@@ -1,0 +1,233 @@
+{
+  "slug": "honda-cb500f",
+  "type": "vehiculos",
+  "title": "Honda CB500F",
+  "description": "Moto naked de Honda, motor bicilíndrico de 471cc, ideal para uso urbano y ruta.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "honda",
+    "naked"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-accord",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb190r",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-ybr-125",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "zanella-rx-150",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:34.065Z",
+  "updatedAt": "2026-08-27T02:53:07.771Z",
+  "manufacturer": "Honda",
+  "class": "Moto",
+  "performance": {
+    "speed": "Media (170 km/h)",
+    "acceleration": "Media-Alta (0-100 km/h en 5.5s)"
+  },
+  "power": "47 hp a 8.600 rpm",
+  "price": "USD 7.399 (MSRP referencia EE.UU.)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 7399,
+    "raw": "USD 7.399 (MSRP referencia EE.UU.)"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.motoplanete.es/honda/9689/CB-500-F-2023/contact.html",
+    "note": "Se verificaron las especificaciones técnicas del motor bicilíndrico de 471 cc, el peso en orden de marcha y la arquitectura general mediante catálogos y especificaciones globales oficiales de Honda.",
+    "limitations": [
+      "Los precios de mercado varían sustancialmente entre Norteamérica, Europa y los mercados de Latinoamérica.",
+      "Algunas denominaciones comerciales varían según la región (pasando en algunos mercados recientes a denominarse CB500 Hornet)."
+    ]
+  },
+  "transmision": "Manual de 6 velocidades con embrague antirrebote",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "189 kg (en orden de marcha)",
+  "tipoMotor": "Bicilíndrico en paralelo, 4 tiempos, DOHC, refrigeración líquida",
+  "potenciaKW": "35 kW",
+  "capacidadTanque": "17,1 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 5.2s",
+  "anoProduccion": "2013-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "aprox. 3,5 L / 100 km",
+  "dimensiones": "2080 x 790 x 1060 mm",
+  "cilindrada": "471 cc",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (actualización estética y de componentes)",
+  "anoLanzamiento": 2013,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 7.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:53:07.771Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Honda CB500F irrumpió en el mercado global en el año 2013 como una apuesta estratégica de la marca japonesa para revitalizar el segmento de media cilindrada accesible. Concebida desde una hoja en blanco, formó parte de un trío de modelos que compartían la misma plataforma mecánica junto a la deportiva CBR500R y la crossover CB500X, cada una adaptada a un propósito diferente. La variante naked (CB500F) se ganó rápidamente el favor del público por ofrecer una propuesta sumamente equilibrada, convirtiéndose tanto en el paso lógico para quienes salían de baja cilindrada como en una herramienta ágil, económica y de bajo mantenimiento para usuarios experimentados que se movían a diario por entornos urbanos.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la trayectoria de este modelo llegó con la profunda evolución introducida a partir de 2019 y consolidada en las versiones posteriores. En esta etapa, Honda no solo retocó las líneas estéticas para dotarla de un aspecto mucho más afilado y agresivo de estilo streetfighter, sino que introdujo mejoras mecánicas sustanciales en la parte ciclo. La incorporación de una horquilla delantera invertida Showa SFF-BP (Separate Function Fork - Big Piston) de 41 mm y un sistema de frenos delantero mejorado con anclaje radial supuso un salto cualitativo enorme, elevando la precisión del tren delantero, la estabilidad en ruta y el comportamiento dinámico general frente a las unidades originales de 2013.\n\n## Curiosidades\nUno de los aspectos más celebrados y estudiados de la Honda CB500F es su motor bicilíndrico en paralelo de 471 cc, diseñado milimétricamente para entregar una potencia exacta de 47 caballos de fuerza (35 kW). Esta cifra no es producto del azar: responde de forma estricta al límite legal establecido por la normativa europea para el carnet de conducir A2, transformándola de manera automática en una de las opciones más vendidas y codiciadas del Viejo Continente para los nuevos motociclistas. A esto se le suma una excelente eficiencia de combustible, capaz de rondar los 3,5 litros cada 100 kilómetros, lo que se traduce en autonomías que superan holgadamente los 400 kilómetros con un único tanque de 17,1 litros.\n\n## Competencia y posicionamiento\nDentro del tablero global de las motocicletas naked de media cilindrada, la Honda CB500F compite cara a cara contra pesos pesados como la Yamaha MT-03, la Kawasaki Z400 y la KTM 390 Duke. Frente a este abanico de rivales, la postura de Honda no apunta a ser la más ligera ni la más radical de la categoría, sino a erigirse como la opción más racional, confiable y noble. Su enfoque prioriza la durabilidad legendaria de la ingeniería japonesa, una ergonomía amigable para una amplia variedad de estaturas y unos costos operativos sumamente contenidos, consolidándose como una moto sumamente versátil tanto para la rutina diaria como para escapadas de fin de semana en ruta.",
+  "generacionInfo": {
+    "raw": "Segunda generación (actualización estética y de componentes)",
+    "numero": 2,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Honda CB500F - Moto Honda. Media (170 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

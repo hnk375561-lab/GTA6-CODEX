@@ -1,0 +1,34 @@
+{
+  "slug": "changan",
+  "type": "fabricantes",
+  "title": "Changan",
+  "description": "Vehículos y motocicletas de Changan",
+  "content": "## Identidad de marca\nChangan Automobile se consolida como una de las empresas de tecnología de movilidad global más importantes de la industria, destacando por su capacidad de producción masiva y su fuerte enfoque en la innovación tecnológica. Como parte de su portafolio, la compañía abarca diversas submarcas y desarrollos avanzados orientados al futuro de la automoción.\n\n## Historia real y evolución\nLos orígenes del grupo industrial se remontan a 1862, durante el final de la dinastía Qing en el marco del Movimiento de Occidentalización, comenzando inicialmente con actividades en el sector manufacturero y de fundición. Decadas más tarde, la empresa dio un giro estratégico fundamental al incursionar en la industria automotriz, iniciando la fabricación de vehículos de pasajeros y comerciales. A lo largo de su trayectoria, Changan expandió sus operaciones más allá de sus fronteras originales, estableciendo una red global de bases de producción y centros de desarrollo tecnológico en distintos mercados internacionales.\n\n## Posicionamiento actual\nEn la actualidad, Changan se posiciona firmemente entre los principales grupos automotrices de origen chino y registra un volumen de producción histórico que supera las decenas de millones de unidades a nivel mundial. La marca sostiene alianzas estratégicas con fabricantes globales de renombre y continúa invirtiendo fuertemente en mercados internacionales, impulsando una oferta que combina experiencia de manufactura con nuevas tecnologías en movilidad.",
+  "status": "confirmado",
+  "officialName": "Changan",
+  "country": "China",
+  "foundedYear": 1862,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T22:20:37.703Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "changan-cs35-plus",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.globalchangan.com/aboutus.html",
+    "note": "Se verificó la trayectoria histórica de la marca desde su origen industrial en el siglo XIX, su transición hacia la industria automotriz y su posicionamiento global actual a través de fuentes oficiales y especializadas.",
+    "limitations": [
+      "Algunas cifras específicas sobre la cantidad exacta de plantas varían ligeramente según el reporte institucional consultado."
+    ]
+  }
+}

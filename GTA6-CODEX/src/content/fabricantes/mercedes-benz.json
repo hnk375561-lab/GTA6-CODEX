@@ -1,0 +1,60 @@
+{
+  "slug": "mercedes-benz",
+  "type": "fabricantes",
+  "title": "Mercedes-Benz",
+  "description": "Vehículos y motocicletas de Mercedes-Benz",
+  "content": "## Identidad de marca\nMercedes-Benz se posiciona como uno de los máximos exponentes globales dentro del segmento de vehículos de lujo, turismos, deportivos, utilitarios y vehículos comerciales. Bajo la premisa de su icónico eslogan «Das Beste oder nichts» (traducido como «El mejor o nada»), la marca sintetiza una filosofía de ingeniería de precisión, exclusividad y constante evolución tecnológica que define su impronta en la industria automotriz mundial.\n\n## Historia y legado\\Los orígenes de la compañía se remontan al impulso de los pioneros que sentaron las bases del transporte motorizado moderno a finales del siglo XIX. Por un lado, Karl Benz desarrolló el primer automóvil de gasolina en 1886 mediante el Benz Patent-Motorwagen y fundó Benz & Cie. Paralelamente, Gottlieb Daimler y Wilhelm Maybach crearon vehículos motorizados de manera independiente y establecieron la Daimler-Benz-Gesellschaft (DMG). Ambas trayectorias confluyeron formalmente en 1926, cuando se concretó la fusión definitiva que dio origen a la estructura corporativa de Daimler-Benz, consolidando un legado técnico que abarca más de un siglo de innovación constante en la movilidad.\n\n## Posicionamiento actual\nSubsidiaria del grupo empresario Mercedes-Benz Group, la firma mantiene una vigencia indiscutida en los mercados internacionales. Su oferta abarca desde automóviles de pasajeros de alta gama hasta vehículos pesados, flotas comerciales y autobuses, respaldados por una red global de producción y un enfoque estratégico orientado a la electrificación, la digitalización y los más altos estándares de calidad en cada segmento donde opera.",
+  "status": "confirmado",
+  "officialName": "Mercedes-Benz",
+  "country": "Alemania",
+  "foundedYear": 1926,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:46:37.155Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-c",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-e",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-glc",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-gle",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-sprinter",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Mercedes-Benz",
+    "secondarySource": "https://caetano.es/mercedes-benz/blog/historia",
+    "note": "Se verificó la fundación en 1926 a partir de la fusión de las empresas de los pioneros Karl Benz y Gottlieb Daimler, así como su eslogan corporativo y gama de productos.",
+    "limitations": [
+      "No se detallan los volúmenes de producción globales de los últimos años más allá del registro parcial del 2020.",
+      "La expansión específica en mercados regionales fuera de Europa y América Latina queda fuera del alcance de las fuentes provistas."
+    ]
+  }
+}

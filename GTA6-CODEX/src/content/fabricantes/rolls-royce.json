@@ -1,0 +1,35 @@
+{
+  "slug": "rolls-royce",
+  "type": "fabricantes",
+  "title": "Rolls-Royce",
+  "description": "Vehículos y motocicletas de Rolls-Royce",
+  "content": "## Identidad de marca\nRolls-Royce representa la cúspide indiscutida de la ingeniería automotriz de lujo a nivel global. Lejos de la producción en serie masiva, la marca se consolidó históricamente bajo el principio rector de fabricar \"el mejor auto del mundo\", un estándar de excelencia artesanal y exclusividad que se mantiene vigente hasta nuestros días.\n\n## Historia real y orígenes\nLos cimientos de la compañía se gestaron cuando el empresario y piloto de carreras Charles Rolls conoció al ingeniero Henry Royce en Manchester, el 4 de mayo de 1904. Tras probar el automóvil de dos cilindros diseñado por Royce, Rolls acordó comercializar todos los vehículos que su socio pudiera construir bajo el nombre que unió a ambos apellidos. La colaboración formalizó su existencia corporativa hacia 1906, uniendo la visión comercial y deportiva de Rolls con la genialidad técnica de Royce para establecer un nuevo paradigma en la industria del motor.\n\n## Posicionamiento actual\nEn la actualidad, Rolls-Royce Motor Cars opera como un fabricante de vehículos de ultra lujo enfocado en la personalización extrema (bespoke) para clientes de alto poder adquisitivo. Propiedad del grupo alemán BMW desde finales de la década del noventa, la firma ha sabido adaptar su legado señorial a los estándares tecnológicos del siglo XXI, conservando el silencio de marcha, el confort absoluto y el trabajo artesanal como sus señas de identidad más intransigentes.",
+  "status": "confirmado",
+  "officialName": "Rolls-Royce",
+  "country": "Reino Unido",
+  "foundedYear": 1906,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:26:12.150Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "rolls-royce-cullinan",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://es.wikipedia.org/wiki/Rolls-Royce_Motor_Cars",
+    "note": "Se verificó la fundación de la compañía y los antecedentes de los fundadores Charles Rolls y Henry Royce a través de fuentes oficiales y enciclopédicas.",
+    "limitations": [
+      "Las fuentes presentan discrepancias menores sobre si el hito de origen se fija en 1904 (el encuentro entre los fundadores) o en 1906 (la formalización de la compañía).",
+      "No se detalla en las fuentes proporcionadas la cronología completa de la transición corporativa hacia el grupo BMW desde 1998."
+    ]
+  }
+}

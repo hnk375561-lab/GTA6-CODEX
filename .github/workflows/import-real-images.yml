@@ -1,0 +1,82 @@
+name: Import real images
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Máx. de imágenes NUEVAS a procesar en esta corrida (tandas). Vacío = sin límite.'
+        type: string
+        default: '50'
+      overwrite:
+        description: 'Re-descargar también las que ya existen localmente (uso puntual, no para tandas normales)'
+        type: boolean
+        default: false
+  push:
+    paths:
+      - 'GTA6-CODEX/real-images-manifest.json'
+      - 'GTA6-CODEX/.trigger-import-images'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-real-images-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: GTA6-CODEX
+        run: npm install --no-save sharp
+
+      # Disparado por push a real-images-manifest.json (p.ej. al mergear el
+      # PR de generate-images-manifest.yml): corre completo con --overwrite,
+      # porque en ese caso corresponde re-generar todo si cambió el pipeline
+      # (ver scripts/import-real-images.mjs, techo subido a 3840x2160/q92 el
+      # 19 ago 2026 — antes 1600x900/q82 aplastaba capturas 4K reales).
+      #
+      # Disparado a mano (workflow_dispatch): corre en tanda de `limit`
+      # imágenes nuevas (las ya existentes se saltean, sin --overwrite salvo
+      # que se pida explícitamente), para poder auditar de a poco en vez de
+      # las ~230 pendientes de una sola corrida.
+      - name: Run import script
+        working-directory: GTA6-CODEX
+        run: |
+          ARGS="--apply"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ inputs.overwrite }}" = "true" ]; then
+              ARGS="$ARGS --overwrite"
+            fi
+            if [ -n "${{ inputs.limit }}" ]; then
+              ARGS="$ARGS --limit=${{ inputs.limit }}"
+            fi
+          else
+            ARGS="$ARGS --overwrite"
+          fi
+          echo "Corriendo: node scripts/import-real-images.mjs $ARGS"
+          node scripts/import-real-images.mjs $ARGS
+
+      - name: Commit and push
+        if: always()
+        working-directory: GTA6-CODEX
+        run: |
+          git config user.name "gta6-codex-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/images/entities 2>/dev/null || true
+          git add -f .ci-debug 2>/dev/null || true
+          git diff --cached --quiet && echo "Nada para commitear" && exit 0
+          git commit -m "feat(images): importa imagenes reales verificadas [OK=${IMPORT_OK:-?} FAIL=${IMPORT_FAIL:-?}] (tanda limit=${{ inputs.limit }}, evento=${{ github.event_name }})"
+          git push origin main

@@ -1,0 +1,229 @@
+{
+  "slug": "aprilia-rsv4",
+  "type": "vehiculos",
+  "title": "Aprilia RSV4",
+  "description": "Superdeportiva de Aprilia, motor V4 de 1099cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "aprilia"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-s1000rr",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ducati-panigale-v4",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Aprilia",
+  "class": "Moto superdeportiva",
+  "power": "220 hp @ 13.100 rpm",
+  "price": "USD 19.499 (RSV4 1100 base) - USD 26.749 (Factory 1100)",
+  "priceStructured": {
+    "type": "range",
+    "currency": "USD",
+    "min": 19499,
+    "max": 26749,
+    "raw": "USD 19.499 (RSV4 1100 base) - USD 26.749 (Factory 1100)"
+  },
+  "consumo": "6.5 l/100km combinado aprox.",
+  "dimensiones": "2.035 mm x 735 mm x 1.105 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.motorcycle.com/specs/aprilia/sport/2026/rsv4/1100/detail.html",
+    "note": "Datos verificados para la gama RSV4 1100 y versión Factory con suspensión Öhlins Smart EC 2.0.",
+    "limitations": [
+      "El consumo exacto y los tiempos de aceleración corresponden a estimaciones y pruebas de prensa especializada dada la ausencia de cifras oficiales de homologación en superbikes."
+    ]
+  },
+  "performance": {
+    "speed": "305 km/h aprox.",
+    "acceleration": "0-100 km/h en 3.0s aprox. (0-60 mph en 3.1s, prueba independiente de Cycle World sobre la Factory; el modelo base comparte motor)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:30:17.012Z",
+  "transmision": "6 velocidades manual secuencial, embrague húmedo",
+  "traccion": "Trasera por cadena",
+  "peso": "202 kg (Factory) / 199 kg (base)",
+  "tipoMotor": "Gasolina, V4 65°",
+  "potenciaKW": "162 kW / 220 hp @ 13.100 rpm",
+  "capacidadTanque": "18.5 litros",
+  "tiempoRecorrido": "3.0s aprox. 0-100 km/h",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "Estados Unidos",
+    "Latinoamérica",
+    "Asia-Pacífico"
+  ],
+  "equipamiento": [
+    "Paquete electrónico APRC (control tracción, wheelie, engine brake)",
+    "ABS con función cornering",
+    "Suspensión Öhlins Smart EC 2.0 (Factory)",
+    "Pinzas de freno Brembo Hypure",
+    "Control crucero (ACC)",
+    "Pantalla TFT"
+  ],
+  "consumoEtiqueta": "C",
+  "neumaticos": "120/70-17 (delantero) / 200/55-17 (trasero)",
+  "cilindrada": "1.099 cc",
+  "emisiones": "No publicado oficialmente (motocicleta homologada Euro5+; sin cifra WLTP equivalente publicada por Aprilia)",
+  "asientos": 2,
+  "baul": "Sin baúl (moto deportiva, sin espacio de carga)",
+  "maleteroMin": "N/A",
+  "generacion": "Generación con motor 1100cc (actualización Euro5+ en 2025)",
+  "anoLanzamiento": 2021,
+  "colores": [
+    "Negro Aprilia",
+    "Librea racing roja/negra",
+    "Colores especiales de temporada (varían por año en la versión Factory)"
+  ],
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 19.499 (RSV4 1100 base) - USD 26.749 (Factory 1100)"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:30:17.012Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 305
+    },
+    "consumo": {
+      "promedio": "6.5 l/100km combinado aprox. (referencia de segmento superbike, no publicado oficialmente por Aprilia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa saga RSV4 de Aprilia representa uno de los hitos más importantes en la ingeniería de motocicletas de alta cilindrada. Desde su concepción, la marca de Noale apostó por una arquitectura de motor inusual y altamente efectiva en el segmento de las superbikes: un bloque V4 a 65 grados. Esta configuración permitió mantener una moto extremadamente estrecha, similar a una montura de menor cilindrada, pero con una entrega de potencia descomunal y un sonido característico que cautivó tanto a los entusiastas de las pistas como a los críticos de la industria.\n\n## Un hito y generación relevante\nEl punto de inflexión moderno llegó con la adopción de la cilindrada de 1.099 cc, consolidada a partir de 2021 y actualizada recientemente para cumplir con las normativas de emisiones Euro5+. Esta evolución no solo incrementó el torque y la potencia hasta los 220 hp, sino que perfeccionó notablemente la aerodinámica integrada con alerones frontales derivados de la experiencia de Aprilia en MotoGP. La versión Factory, tope de gama, destaca además por incorporar el sistema de suspensión semiactiva Öhlins Smart EC 2.0, elevando el nivel de control y respuesta dinámica en circuito.\n\n## Curiosidades\nUno de los aspectos más fascinantes de la Aprilia RSV4 es cómo la marca logró trasladar la tecnología de competición al usuario de calle de forma tan directa. Su paquete electrónico APRC (Aprilia Performance Ride Control) es considerado uno de los conjuntos de ayudas a la conducción más avanzados del mercado, permitiendo ajustar en tiempo real el control de tracción, el freno motor y el sistema anti-wheelie. Además, el chasis de doble viga de aluminio mantiene una capacidad de ajuste milimétrica heredada directamente de las motos de carreras del Mundial de Superbike.\n\n## Competencia y posicionamiento\nEn el mercado global, la RSV4 compite en la categoría más exigente de las superbikes de litro, frente a pesos pesados como la Ducati Panigale V4, la Yamaha YZF-R1, la BMW S1000RR y la Honda CBR1000RR-R. Se posiciona en un segmento estrictamente premium, dirigido a conductores experimentados y puristas que buscan sensaciones de competición puros combinadas con una electrónica de vanguardia. Su equilibrio entre agilidad en curvas cerradas, estabilidad a alta velocidad y potencia bruta la mantiene consistentemente en la cima de las preferencias dentro de la categoría superdeportiva.",
+  "generacionInfo": {
+    "raw": "Generación con motor 1100cc (actualización Euro5+ en 2025)",
+    "numero": null,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Aprilia RSV4 - Moto superdeportiva Aprilia. 305 km/h aprox. con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

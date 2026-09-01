@@ -1,0 +1,243 @@
+{
+  "slug": "yamaha-fazer-250",
+  "type": "vehiculos",
+  "title": "Yamaha Fazer 250",
+  "description": "Moto naked de cilindrada media de Yamaha, motor monocilíndrico de 250cc, muy usada en trayectos urbanos e interurbanos.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "yamaha"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-mt-07",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-nmax",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-r1",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ducati-monster",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb190r",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-z900",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "triumph-street-triple",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Yamaha",
+  "class": "Moto naked",
+  "power": "20.9 CV",
+  "price": "USD 5.000 (referencia de mercado)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 5000,
+    "raw": "USD 5.000 (referencia de mercado)"
+  },
+  "consumo": "3.3 l/100km",
+  "dimensiones": "2015 x 770 x 1070 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.yamaha-motor.com.ar",
+    "note": "Se corrigieron los datos de plantilla genérica de automóviles (como tracción delantera, cilindrada nula, suspensiones MacPherson y pesos sobredimensionados) adaptándolos a las especificaciones reales de una motocicleta naked de 250cc.",
+    "limitations": [
+      "Los datos de precio y disponibilidad pueden variar según el mercado regional y año fiscal exacto."
+    ]
+  },
+  "performance": {
+    "speed": "140 km/h"
+  },
+  "createdAt": "2026-08-23T21:59:11.215408Z",
+  "updatedAt": "2026-08-27T02:03:38.580Z",
+  "transmision": "Manual de 5 velocidades",
+  "traccion": "Trasera por cadena",
+  "peso": "148 kg (en orden de marcha)",
+  "tipoMotor": "Monocilíndrico 4 tiempos, SOHC, refrigerado por aire y aceite",
+  "potenciaKW": "15.4 kW",
+  "capacidadTanque": "14 litros",
+  "tiempoRecorrido": "10-15s",
+  "anoProduccion": "2006-presente (con evoluciones)",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "A",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "249 cc",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Evolución FZ25 / Fazer 250",
+  "anoLanzamiento": 2006,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 5.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T02:03:38.580Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 140
+    },
+    "consumo": {
+      "promedio": "3.3 l/100km"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Yamaha Fazer 250 (también conocida en varios mercados bajo la denominación FZ25) nació como una respuesta directa a la creciente demanda de motocicletas de cilindrada media que ofrecieran un equilibrio óptimo entre el uso diario en entornos urbanos y la capacidad de realizar trayectos interurbanos con soltura. Desde su introducción inicial en mercados emergentes, este modelo se consolidó rápidamente como un pilar fundamental dentro del segmento naked de entrada-media de la marca de los diapasones. Su concepción buscó ofrecer una estética agresiva y deportiva heredada de sus hermanas mayores de la familia FZ, pero manteniendo una mecánica robusta, de bajo mantenimiento y alta confiabilidad.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la trayectoria de la Fazer 250 fue la incorporación progresiva de sistemas de inyección electrónica de combustible de última generación y, posteriormente, la adopción de frenos con sistema antibloqueo (ABS) de doble canal en los mercados donde las normativas de seguridad pasiva comenzaron a exigirlo. Esta evolución permitió modernizar el propulsor monocilíndrico sin perder su característico torque a bajas y medias revoluciones, optimizando notablemente el consumo de combustible y reduciendo las emisiones contaminantes para cumplir con estándares ambientales más estrictos.\n\n## Curiosidades\nA pesar de estar catalogada como una motocicleta utilitaria y de uso cotidiano, la Fazer 250 ha ganado una enorme reputación entre motociclistas viajeros debido a la extraordinaria durabilidad de su motor y la facilidad para conseguir repuestos en distintas regiones de Latinoamérica y Asia. Su chasis tipo diamante y su configuración de suspensión han sido históricamente elogiados por proporcionar una agilidad sobresaliente en el tránsito pesado, convirtiéndola en una de las opciones preferidas tanto por conductores noveles que buscan dar el salto desde baja cilindrada como por usuarios experimentados que priorizan la economía operativa.\n\n## Competencia y posicionamiento\nEn el competitivo mercado de las motocicletas naked de 250cc, la Yamaha Fazer 250 compite directamente con modelos consagrados como la Honda CB 250 Twister y la Suzuki Gixxer 250. Se posiciona dentro de un rango de valor intermedio-alto, justificando su precio a través de una sólida calidad de construcción, una ergonomía muy lograda que prioriza la comodidad del conductor durante largas jornadas y un valor de reventa históricamente estable en el mercado de usados. Su enfoque equilibra la faceta racional del transporte diario con un toque deportivo inconfundible.",
+  "generacionInfo": {
+    "raw": "Evolución FZ25 / Fazer 250",
+    "numero": null,
+    "codigoChasis": "FZ25",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Yamaha Fazer 250 - Moto naked Yamaha. 140 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

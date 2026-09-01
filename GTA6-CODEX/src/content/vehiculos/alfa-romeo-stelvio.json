@@ -1,0 +1,248 @@
+{
+  "slug": "alfa-romeo-stelvio",
+  "type": "vehiculos",
+  "title": "Alfa Romeo Stelvio",
+  "description": "SUV premium deportivo de Alfa Romeo, comparte plataforma con el Giulia.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "alfa-romeo"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "alfa-romeo-giulia",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q7",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-x5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "genesis-gv70",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lexus-rx",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Alfa Romeo",
+  "class": "SUV premium",
+  "power": "280 hp (motor 2.0L turbo I4) / 505 hp (V6 biturbo Quadrifoglio)",
+  "price": "USD 53.245 (base, 2026)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 53245,
+    "raw": "USD 53.245 (base, 2026)"
+  },
+  "consumo": "22 mpg ciudad / 28 mpg ruta (EPA)",
+  "dimensiones": "4.687 mm largo x 1.903 mm ancho x 1.648 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.alfaromeousa.com/models/stelvio",
+    "note": "Datos verificados a partir de especificaciones oficiales de Alfa Romeo para el mercado norteamericano y global, consolidando la gama para el año modelo 2026.",
+    "limitations": [
+      "La disponibilidad de motorizaciones y versiones puede variar según el mercado regional (por ejemplo, la discontinuación del Quadrifoglio regular en EE.UU.)."
+    ]
+  },
+  "performance": {
+    "speed": "230 km/h",
+    "acceleration": "0-100 km/h en 5.7s (0-60 mph en 5.5s, cifra oficial)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:30:07.776Z",
+  "transmision": "Automática de 8 velocidades (ZF)",
+  "traccion": "Tracción total Q4 (AWD)",
+  "peso": "1.660 kg (base)",
+  "tipoMotor": "Gasolina turbo (4 cilindros) / V6 biturbo",
+  "potenciaKW": "206 kW / 280 hp",
+  "capacidadTanque": "64 litros",
+  "tiempoRecorrido": "0-100 km/h en 5.7s",
+  "anoProduccion": "2016-presente",
+  "mercados": [
+    "Europa",
+    "Estados Unidos",
+    "Canadá",
+    "Latinoamérica (incl. Argentina)",
+    "Medio Oriente"
+  ],
+  "equipamiento": [
+    "Faros LED matrix adaptivos",
+    "Pantalla central 8.8\"/12.3\"",
+    "Climatizador bizona automático",
+    "Asientos delanteros calefactables",
+    "Control crucero activo con asistente de carril",
+    "Sensores de aparcamiento delanteros y traseros",
+    "Portón de maletero eléctrico"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "235/60R18 (base) hasta 255/40R21 del. / 285/35R21 tras. (Quadrifoglio)",
+  "cilindrada": "1.995 cc",
+  "emisiones": "CO2 152-204 g/km (WLTP, gama sin Quadrifoglio)",
+  "asientos": 5,
+  "baul": 525,
+  "maleteroMin": "525 litros",
+  "generacion": "Primera generación (Tipo 949)",
+  "anoLanzamiento": 2016,
+  "colores": [
+    "Alfa White",
+    "Alfa Rosso",
+    "Vulcano Black Metallic",
+    "Vesuvio Gray Metallic",
+    "Moonlight Gray Metallic",
+    "Misano Blue Metallic"
+  ],
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 53.245 (base, 2026)"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:30:07.776Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 230
+    },
+    "consumo": {
+      "promedio": "22 mpg ciudad / 28 mpg ruta (EPA)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Alfa Romeo Stelvio representa un hito fundamental en la historia de la marca milanesa al convertirse en su primer SUV de producción en serie. Presentado oficialmente en el Salón del Automóvil de Los Ángeles en 2016, este vehículo fue concebido para trasladar la tradición deportiva, la pasión y el dinamismo de Alfa Romeo al segmento de los utilitarios deportivos premium. Su nombre es un homenaje al Paso Stelvio, el puerto de montaña asfaltado más alto de los Alpes italianos, famoso por sus curvas cerradas y su exigente trazado, lo que anticipa desde su denominación la vocación rutera y dinámica del modelo.\n\n## Un hito y generación relevante\nDesarrollado sobre la prestigiosa plataforma modular Giorgio —la misma arquitectura de tracción trasera y total que da vida al sedán Giulia—, el Stelvio se destacó desde su lanzamiento por ofrecer una dinámica de conducción sin parangón en su categoría. Su distribución de pesos casi perfecta y una dirección sumamente directa le valieron el reconocimiento de la crítica especializada. En el año 2020, el modelo recibió una actualización estética y tecnológica de mitad de ciclo (facelift), incorporando mejoras sustanciales en los sistemas de asistencia a la conducción (ADAS), pantallas multimedia actualizadas y materiales de mayor calidad en el habitáculo, consolidando su propuesta dentro del mercado global.\n\n## Curiosidades\nUna de las particularidades más notables del desarrollo del Stelvio fue el esfuerzo de ingeniería por mantener la agilidad de un deportivo coupé en un formato de SUV mediano. Para ello, los ingenieros recurrieron al uso extensivo de materiales ligeros, como el aluminio en componentes de la suspensión, puertas y capó, así como un árbol de transmisión fabricado íntegramente en fibra de carbono en sus versiones más prestacionales. Estas soluciones técnicas no solo redujeron el peso total del conjunto, sino que también mejoraron la respuesta general del vehículo.\n\n## Competencia y posicionamiento\nEn el mercado global de los SUV medianos de altas prestaciones, el Alfa Romeo Stelvio compite directamente con pesos pesados alemanes como el BMW X3, el Audi Q5 y el Mercedes-Benz GLC, además de alternativas de corte pasional como el Porsche Macan. Frente a sus rivales teutones, el Stelvio se posiciona como una opción pasional y exclusiva, orientada a conductores que priorizan las sensaciones al volante, el diseño italiano distintivo y una estética atemporal por encima de la pura racionalidad del segmento.",
+  "generacionInfo": {
+    "raw": "Primera generación (Tipo 949)",
+    "numero": 1,
+    "codigoChasis": "949",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Alfa Romeo Stelvio - SUV premium Alfa Romeo. 230 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

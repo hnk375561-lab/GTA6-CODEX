@@ -1,0 +1,26 @@
+diff --git a/GTA6-CODEX/README.md b/GTA6-CODEX/README.md
+index e0c74cb..091edfd 100644
+--- a/GTA6-CODEX/README.md
++++ b/GTA6-CODEX/README.md
+@@ -63,7 +63,7 @@ Pensado para dos públicos:
+ |-----------|----------|---------|
+ | 🚗 **Vehículos** | **250** fichas activas | Autos, SUVs, pickups y motos de **75 fabricantes** distintos |
+ | 🌍 **Cobertura** | Global | Marcas europeas, americanas, japonesas, coreanas, chinas (BYD, Chery, BAIC, Changan, GWM...) e indias (Bajaj, Mahindra) conviven en el mismo catálogo |
+-| 🔎 **Evidencia** | 196/250 con fuente citada sólida (78%) | Todo dato declara un nivel de confianza — ver [niveles de evidencia](#niveles-de-evidencia) |
++| 🔎 **Evidencia** | 250/250 con fuente citada sólida (100%) | Todo dato declara un nivel de confianza — ver [niveles de evidencia](#niveles-de-evidencia) |
+ | 📰 **Noticias / Guías** | Tipos habilitados, sin contenido aún | Sección lista en el código, pendiente de primer contenido real |
+ 
+ ## 🗺️ Estrategia: global primero, después por país
+@@ -209,10 +209,10 @@ Cada ficha declara qué tan sólida es la fuente de sus datos:
+ 
+ | Nivel | Significado | Uso actual |
+ |-------|-------------|------------|
+-| `oficial-nombrado` | Confirmado por ficha técnica oficial del fabricante | 126 fichas |
++| `oficial-nombrado` | Confirmado por ficha técnica oficial del fabricante | 78 fichas |
+ | `oficial-visual` | Visible en material oficial, sin confirmación textual | — |
+ | `oficial-visual-multifuente` | Igual al anterior, con más de una fuente oficial | — |
+-| `respaldado` | Sin confirmación oficial directa, pero con fuentes secundarias solventes | 124 fichas |
++| `respaldado` | Sin confirmación oficial directa, pero con fuentes secundarias solventes | 172 fichas |
+ | `especulativo` | Rumor o estimación razonable, marcado como tal | — |
+ 
+ ## 🩺 Estado del pivote (qué falta)

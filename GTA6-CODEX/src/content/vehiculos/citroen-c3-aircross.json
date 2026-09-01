@@ -1,0 +1,242 @@
+{
+  "slug": "citroen-c3-aircross",
+  "type": "vehiculos",
+  "title": "Citroën C3 Aircross",
+  "description": "SUV del segmento B, producido en Mercosur, con opcion de configuracion para 7 pasajeros.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "citroen",
+    "economico"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "baic-x55",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-omoda-5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-equinox",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Citroën",
+  "class": "SUV compacto",
+  "power": "115 CV",
+  "price": "ARS 36.710.000 (versión VTi Live, entrada de gama de referencia)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "ARS",
+    "amount": 36710000,
+    "raw": "ARS 36.710.000 (versión VTi Live, entrada de gama de referencia)"
+  },
+  "consumo": "Urbano: 10.5 l/100km, A 100 km/h: 7.2 l/100km, A 120 km/h: 8.7 l/100km",
+  "dimensiones": "4.320 mm largo x 1.720 mm ancho x 1.640 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.16valvulas.com.ar/prueba-citroen-c3-aircross-1-6-shine",
+    "note": "Se verificaron las especificaciones técnicas, potencias y capacidades utilizando datos de pruebas especializadas y portales oficiales regionales de la marca para el motor 1.6 VTi.",
+    "limitations": [
+      "Los precios varían constantemente debido a la inflación y la dinámica del mercado automotor en Argentina.",
+      "Los valores de consumo exactos dependen de las condiciones de manejo, el tránsito y la versión seleccionada."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T02:46:51.768Z",
+  "transmision": "Manual de 5 marchas o Automática",
+  "traccion": "Tracción delantera",
+  "peso": "1.300 kg",
+  "tipoMotor": "Nafta 4 cilindros",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "No publicado oficialmente",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.587 cm3",
+  "emisiones": null,
+  "asientos": 7,
+  "baul": 493,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (Proyecto C3 CC21)",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "ARS 36.710.000 (version VTi Live, entrada de gama)"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:46:51.768Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Citroën C3 Aircross forma parte de la estrategia global de la marca del doble chevrón, perteneciente al grupo Stellantis, enfocada en renovar profundamente su presencia en el segmento B de los mercados emergentes, con especial énfasis en América Latina. A diferencia de las opciones desarrolladas para el mercado europeo, la arquitectura pensada para el Mercosur prioriza la robustez estructural, la optimización del espacio interior y una destacada relación precio-producto. Su silueta de SUV compacto responde de manera directa a las demandas y preferencias de las familias modernas de la región, que buscan versatilidad urbana y estética aventurera.\n\n## Un hito y generación relevante\nEl gran diferencial de esta segunda generación, fabricada en el Polo Industrial de Porto Real en Brasil, radica en la incorporación de una configuración de hasta siete plazas en un vehículo que se mantiene por debajo de los 4,5 metros de largo. Para alcanzar este hito sin resignar habitabilidad, la marca implementó una solución modular innovadora: una tercera fila compuesta por dos asientos individuales que pueden ser abatidos por completo o retirados de forma sencilla del habitáculo. Esto permite alternar con absoluta facilidad entre una capacidad de carga sobresaliente o el transporte de pasajeros adicionales según las necesidades del momento.\n\n## Curiosidades\nUna de las marcas registradas del C3 Aircross regional es su marcado enfoque en el confort de marcha. Heredando la tradicional escuela de Citroën, el esquema de suspensiones está calibrado para ofrecer un andar mullido y confortable, capaz de absorber con solvencia las irregularidades, cunetas y baches típicos de la infraestructura vial latinoamericana. Asimismo, su diseño exterior combina de manera equilibrada molduras de protección plásticas en los pasarruedas, paragolpes robustos y una generosa altura libre al suelo, realzando su personalidad aventurera sin descuidar la agilidad indispensable para el manejo diario en entornos urbanos congestionados.\n\n## Competencia y posicionamiento\nDentro del mercado automotor argentino y sudamericano, el Citroën C3 Aircross compite en un segmento altamente disputado de SUVs compactos y crossovers derivados de plataformas regionales. Se enfrenta de manera directa a contendientes como el Chevrolet Spin (con el que comparte la particularidad distintiva de ofrecer capacidad para siete pasajeros), el Renault Duster, el Fiat Pulse y el Volkswagen Nivus. Su principal argumento de venta radica en posicionarse como una de las alternativas más accesibles y espaciosas para familias numerosas que valoran la funcionalidad, la visibilidad elevada y el diseño exterior propio de un utilitario deportivo, evitando los costos de adquisición y mantenimiento de segmentos superiores.",
+  "generacionInfo": {
+    "raw": "Segunda generación (Proyecto C3 CC21)",
+    "numero": 2,
+    "codigoChasis": "C3",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Citroën C3 Aircross - SUV compacto Citroën. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

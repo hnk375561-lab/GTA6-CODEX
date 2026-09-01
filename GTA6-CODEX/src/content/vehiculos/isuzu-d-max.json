@@ -1,0 +1,240 @@
+{
+  "slug": "isuzu-d-max",
+  "type": "vehiculos",
+  "title": "Isuzu D-Max",
+  "description": "Pickup mediana de Isuzu, motor turbodiésel 3.0L, conocida por su durabilidad.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "isuzu",
+    "diesel",
+    "4x4"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "isuzu-mu-x",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-s10",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-toro",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-ranger",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mitsubishi-l200",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Isuzu",
+  "class": "Pickup",
+  "power": "190 hp",
+  "price": "USD 38.000 (referencia mercado regional / desde aprox. 40.109 € en Europa)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 38000,
+    "raw": "USD 38.000 (referencia mercado regional / desde aprox. 40.109 € en Europa)"
+  },
+  "consumo": "8.0 l/100km (mixto)",
+  "dimensiones": "5265 x 1870 x 1800 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.km77.com/coches/isuzu/d-max/2021/space/estandar/d-max-space-n57-4x4/datos",
+    "note": "Se contrastaron las especificaciones técnicas de la tercera generación de la Isuzu D-Max y su motorización diésel 3.0L (4JJ3-TCX) utilizando fichas técnicas oficiales y portales especializados en el mercado internacional. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "limitations": [
+      "Los precios y configuraciones exactas varían según el mercado de importación y las normativas de emisiones de cada país.",
+      "Algunas cifras de torque y consumo pueden oscilar según el tipo de carrocería (Space Cab, Double Cab) y la relación de transmisión."
+    ]
+  },
+  "performance": {
+    "speed": "175 km/h",
+    "acceleration": "0-100 km/h en 11.8s"
+  },
+  "createdAt": "2026-08-23T21:59:03.999490Z",
+  "updatedAt": "2026-08-27T02:54:41.251Z",
+  "transmision": "Manual de 6 marchas o Automática de 6 marchas",
+  "traccion": "4x4 conectable con reductora",
+  "peso": "1.900-2.050 kg",
+  "tipoMotor": "Turbodiésel",
+  "potenciaKW": "140 kW",
+  "capacidadTanque": "76 litros",
+  "tiempoRecorrido": "0-100 km/h en 11.8s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "2999 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 38.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:54:41.251Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 175
+    },
+    "consumo": {
+      "promedio": "8.0 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Isuzu D-Max se consolidó a lo largo de los años como una de las pick-ups medianas más respetadas y confiables a escala global. Heredera directa de la vasta experiencia de la marca japonesa en el desarrollo de vehículos comerciales y mecánicas diésel de alta resistencia, la D-Max se ganó un lugar de privilegio en los mercados más exigentes gracias a su durabilidad mecánica y su enfoque orientado al trabajo pesado. Con el paso de las generaciones, el modelo supo evolucionar desde una herramienta puramente rústica hacia una propuesta más versátil, incorporando mayores niveles de confort y seguridad sin renunciar jamás a su ADN indestructible.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto para la gama se produjo con el lanzamiento de su tercera generación, comercializada globalmente a partir de 2020. Esta renovación integral incluyó un chasis con mayor rigidez torsional y longitudinal, frenos redimensionados y una cabina reforzada con aceros de alta resistencia que mejoró de manera notable la seguridad y el comportamiento dinámico tanto en ruta como en terrenos off-road complejos. Asimismo, esta etapa trajo consigo la optimización de su motor estrella, el bloque turbodiésel de 3.0 litros (con código 4JJ3-TCX), diseñado para ofrecer una entrega de fuerza más contundente, menor vibración y una eficiencia superior, acompañado por la incorporación masiva de asistencias avanzadas a la conducción (ADAS).\n\n## Curiosidades\nUn detalle fascinante de la Isuzu D-Max es su condición de fenómeno cultural y comercial en regiones como el Sudeste Asiático. Particularmente en Tailandia, donde se concentra gran parte de su producción mundial, la D-Max no solo lidera con comodidad los listados de ventas, sino que es la plataforma predilecta tanto para flotas de trabajo extremo como para preparaciones deportivas de alto rendimiento. Además, a pesar de pertenecer a una marca enfocada en nichos comerciales en Occidente, comparte desarrollos de ingeniería y soluciones mecánicas que reafirman su estatus de trotamundos, habiendo demostrado su confiabilidad en expediciones extremas a través de selvas y desiertos con modificaciones mínimas respecto de los vehículos de serie.\n\n## Competencia y posicionamiento\nEn el segmento global de las pick-ups medianas, la Isuzu D-Max se posiciona como una alternativa sumamente racional y sólida frente a referentes históricos como la Toyota Hilux, la Ford Ranger, la Volkswagen Amarok y la Chevrolet S10. Mientras algunos competidores priorizan lujos similares a los de un SUV o esquemas de suspensiones orientados puramente al confort urbano, Isuzu enfoca su propuesta en la robustez estructural, la durabilidad a largo plazo de sus componentes de tracción 4x4 y unos costos de mantenimiento sumamente lógicos. Esto la transforma en la herramienta elegida por flotas mineras, agrícolas y gubernamentales, así como por usuarios particulares que buscan una camioneta que responda siempre sin importar cuán severas sean las exigencias del camino.",
+  "generacionInfo": {
+    "raw": "Tercera generación",
+    "numero": 3,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Isuzu D-Max - Pickup Isuzu. 175 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

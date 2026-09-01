@@ -1,0 +1,42 @@
+{
+  "slug": "royal-enfield",
+  "type": "fabricantes",
+  "title": "Royal Enfield",
+  "description": "Vehículos y motocicletas de Royal Enfield",
+  "content": "## Identidad de marca\nRoyal Enfield se consolidó a lo largo de los años como un ícono global del motociclismo clásico y de cilindrada media. Su propuesta se centra en ofrecer máquinas de estética atemporal, mecánicas robustas y una experiencia de conducción accesible, vinculada tradicionalmente al concepto de aventura y libertad sobre dos ruedas.\n\n## Historia real\\Los orígenes de la compañía se remontan a finales del siglo XIX en Redditch, Inglaterra, cuando R.W. Smith y Albert Eadie adquirieron la Townsend Cycle Company y comenzaron a proveer componentes a la Royal Small Arms Factory. La marca lanzó su primera motocicleta en 1901, equipada con un motor Minerva, marcando el inicio de una larga trayectoria en la industria. Originalmente operada por The Enfield Cycle Company Limited —la cual fabricó desde bicicletas y motores estacionarios hasta cortadoras de césped—, la firma atravesó diversas etapas industriales hasta integrarse en el conglomerado actual bajo la empresa Eicher Motors.\n\n## Posicionamiento actual\nEn la actualidad, la marca ocupa un lugar estratégico en el mercado internacional de motocicletas de media cilindrada. Con una sólida base de producción en India y proyección global, Royal Enfield combina su herencia británica fundacional con procesos de manufactura modernos, apuntando tanto a usuarios urbanos como a entusiastas del motoviajero que buscan identidad clásica, durabilidad y un costo de mantenimiento contenido.",
+  "status": "confirmado",
+  "officialName": "Royal Enfield",
+  "country": "India",
+  "foundedYear": 1901,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:47:33.463Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "royal-enfield-classic-350",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "royal-enfield-himalayan",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Royal_Enfield",
+    "secondarySource": "https://www.royalenfield.com/es/es/our-world/since-1901",
+    "note": "Se verificaron la titularidad actual por Eicher Motors, los orígenes británicos en Redditch y el lanzamiento de su primera motocicleta en 1901 utilizando fuentes documentales y oficiales.",
+    "limitations": [
+      "No se detallan en el texto provisto los volúmenes exactos de producción actuales por modelo.",
+      "La información sobre el traslado definitivo y consolidación total en India requiere un desglose histórico complementario no incluido en las fuentes primarias."
+    ]
+  }
+}

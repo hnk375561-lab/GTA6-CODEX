@@ -1,0 +1,125 @@
+{
+  "slug": "honda",
+  "type": "fabricantes",
+  "title": "Honda",
+  "description": "Vehículos y motocicletas de Honda",
+  "content": "## Identidad de marca\nHonda es una compañía de capital abierto con sede en Minato, Tokio, reconocida a nivel global dentro de la industria automotriz y de manufactura [Fuente 2]. Lejos de limitarse a los automóviles, su huella abarca la producción de motocicletas, motores para distintos tipos de vehículos (terrestres, acuáticos y aéreos), además de desarrollos en robótica y componentes especializados [Fuente 1]. Su ADN corporativo mantiene una fuerte impronta de ingeniería aplicada y pragmatismo mecánico.\n\n## Historia real y evolución\nLos orígenes de la empresa se remontan a 1946 [Fuente 2], cuando el ingeniero Sōichirō Honda comenzó a dar forma a sus proyectos mecánicos. El punto de partida de la producción comercial se gestó mediante la adaptación de un pequeño motor auxiliar a una bicicleta común, una solución de movilidad accesible que marcaría el pulso inicial de la compañía [Fuente 2]. En las décadas siguientes, la marca diversificó su producción con un hito fundamental en el mercado de las dos ruedas: la presentación de la Honda Cub en 1958, un modelo que redefinió los estándares de las motocicletas masivas por su accesibilidad y facilidad de uso [Fuente 3]. Con el tiempo, la firma consolidó su expansión hacia el sector de los automóviles, cotizando en bolsas internacionales como la de Tokio y Nueva York [Fuente 2].\n\n## Posicionamiento actual\nHoy en día, Honda opera como un productor automotriz de alcance mundial con presencia bursátil en índices de referencia como el Nikkei 225 y TOPIX Core30 [Fuente 2]. La marca mantiene una sólida reputación basada en la eficiencia de sus motores, la durabilidad de sus vehículos y una sólida diversificación industrial que va desde la movilidad personal hasta la tecnología aplicada.",
+  "status": "confirmado",
+  "officialName": "Honda",
+  "country": "Japón",
+  "foundedYear": 1946,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:21:26.385Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-accord",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb190r",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb500f",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cbr600rr",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cg-150",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-city",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-civic-type-r",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cr-v",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-fit",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-freed",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-hr-v",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-pcx-150",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-wave-110",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-xr250-tornado",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-xre-300",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Honda",
+    "secondarySource": "https://clixauto.com/es/blogs/history/a-brief-history-of-honda",
+    "note": "Se verificó la fundación de la compañía por Sōichirō Honda y Takeo Fujisawa, así como su evolución desde la producción inicial de motores auxiliares para bicicletas hasta convertirse en un fabricante global de automóviles y motocicletas.",
+    "limitations": [
+      "Las fuentes presentan leves discrepancias en cuanto al año exacto de constitución formal entre 1946 y 1948, aunque se reconoce su origen en ese período."
+    ]
+  }
+}

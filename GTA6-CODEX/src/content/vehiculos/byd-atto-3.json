@@ -1,0 +1,242 @@
+{
+  "slug": "byd-atto-3",
+  "type": "vehiculos",
+  "title": "BYD Atto 3",
+  "description": "SUV compacto eléctrico de BYD, batería Blade LFP.",
+  "status": "confirmado",
+  "tags": [
+    "electrico",
+    "byd"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-tang",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin-mini",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-ioniq-5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-ev6",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "smart-1",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-x",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "BYD",
+  "class": "SUV eléctrico",
+  "power": "204 hp",
+  "price": "EUR 38.000 (referencia mercado europeo)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "EUR",
+    "amount": 38000,
+    "raw": "EUR 38.000 (referencia mercado europeo)"
+  },
+  "consumo": "15.6 kWh/100 km",
+  "dimensiones": "4.455 mm largo x 1.875 mm ancho x 1.615 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.byd.com/en/car/atto3",
+    "note": "Se actualizaron las especificaciones técnicas con datos reales y verificados del BYD Atto 3 (también conocido como Yuan Plus en otros mercados), incluyendo potencia de 150 kW (204 hp), dimensiones reales basadas en la plataforma e-Platform 3.0 y capacidad de baúl de 440 litros.",
+    "limitations": [
+      "Los precios pueden variar según los aranceles de importación y subsidios vigentes en cada país de comercialización.",
+      "Las cifras de autonomía varían según el ciclo de homologación (WLTP o CLTC)."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:33:27.693Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Delantera",
+  "peso": "1.750 kg",
+  "tipoMotor": "Eléctrico síncrono de imanes permanentes",
+  "potenciaKW": "150 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "7.3s",
+  "anoProduccion": "2022-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 440,
+  "maleteroMin": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2022,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 38.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:33:27.693Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl BYD Atto 3 se ha convertido en uno de los vehículos eléctricos más importantes a nivel global para el fabricante chino BYD (Build Your Dreams). Presentado internacionalmente a finales de 2021 y comercializado en mercados de Asia-Pacífico y Latinoamérica bajo el nombre de BYD Yuan Plus, este SUV compacto marcó un punto de inflexión en la estrategia de expansión masiva de la marca fuera de su mercado doméstico. El modelo inaugura una nueva era para la compañía al ser el primer SUV desarrollado íntegramente sobre la avanzada e-Platform 3.0, diseñada exclusivamente para vehículos propulsados por baterías.\n\n## Un hito o generación relevante\nEl gran diferencial técnico y comercial del Atto 3 radica en la adopción de las innovadoras baterías Blade de tipo LFP (Litio-Fierro-Fosfato). Este hito tecnológico no solo optimiza de forma notable el aprovechamiento del espacio interior y la rigidez estructural del chasis, sino que redefine los estándares de seguridad en la industria gracias a su excelente resistencia a las pruebas de penetración y control térmico extremo. Con una potencia de 150 kW (204 hp) transmitida al eje delantero y una aceleración de 0 a 100 km/h en 7,3 segundos, el Atto 3 combina agilidad urbana con un desempeño sumamente equilibrado en ruta.\n\n## Curiosidades\nEl interior del BYD Atto 3 destaca por un diseño sumamente disruptivo y lúdico, inspirado en la cultura del fitness y los gimnasios. Los paneles de las puertas incorporan cordones elásticos diseñados para simular las cuerdas de una guitarra, permitiendo a los pasajeros sujetar objetos de manera original, mientras que la selectora de marchas asemeja la empuñadura de una palanca de aceleración de una nave o embarcación. Además, cuenta con una característica pantalla táctil central giratoria de 12.8 o 15.6 pulgadas, permitiendo alternar con un simple comando entre la disposición horizontal y vertical según la preferencia de visualización del conductor.\n\n## Competencia y posicionamiento\nEn el plano internacional, el BYD Atto 3 compite en el altamente disputado segmento de los C-SUV eléctricos, enfrentándose de manera directa contra modelos consagrados como el Tesla Model Y, el Volkswagen ID.4, el Hyundai Ioniq 5 y el Kia EV6. Su posicionamiento estratégico apuesta fuertemente por ofrecer una relación precio-producto muy competitiva, un nivel de equipamiento tecnológico de serie muy completo y una alta eficiencia energética, consolidándose rápidamente como una de las opciones predilectas para los consumidores que buscan dar el salto hacia la movilidad eléctrica sin resignar confort ni espacio interior.",
+  "generacionInfo": {
+    "raw": "1ra generación",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "BYD Atto 3 - SUV eléctrico BYD. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

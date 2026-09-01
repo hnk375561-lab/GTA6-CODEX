@@ -1,0 +1,246 @@
+{
+  "slug": "audi-a4",
+  "type": "vehiculos",
+  "title": "Audi A4",
+  "description": "Sedán ejecutivo compacto de Audi, tracción quattro opcional.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "audi"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q5",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q7",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-e",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volvo-s60",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Audi",
+  "class": "Sedán ejecutivo",
+  "power": "201 hp (motor 2.0 TFSI)",
+  "price": "Discontinuado en EE.UU. tras el año-modelo 2025; disponible en mercados internacionales (como India o Europa) según configuración local",
+  "priceStructured": {
+    "type": "unstructured",
+    "currency": null,
+    "raw": "Discontinuado en EE.UU. tras el año-modelo 2025; disponible en mercados internacionales (como India o Europa) según configuración local"
+  },
+  "consumo": "5.8-6.1 l/100km combinado (versión 40 TFSI, ciclo WLTP)",
+  "dimensiones": "4.763 mm x 1.847 mm x 1.427 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.cargurus.com/research/articles/2025-audi-a4-pricing-specs-release-date",
+    "note": "Se verificó la información técnica general de la quinta generación (B9) y el cese de comercialización del modelo bajo la denominación A4 en EE.UU. tras el año-modelo 2025, dando paso a la nueva nomenclatura de la marca.",
+    "limitations": [
+      "El estado del modelo varía según el mercado (discontinuado en EE.UU. pero vigente en otras regiones)",
+      "Los precios difieren sustancialmente según el país y la versión"
+    ]
+  },
+  "performance": {
+    "speed": "241 km/h",
+    "acceleration": "0-100 km/h en 7.3s"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:30:36.188Z",
+  "transmision": "Automática de doble embrague S tronic de 7 velocidades",
+  "traccion": "Delantera (FWD) o integral quattro según versión",
+  "peso": "1.530 - 1.725 kg",
+  "tipoMotor": "Gasolina turbo, mild-hybrid 12V",
+  "potenciaKW": "140 kW (190 hp) / 186 kW (252 hp)",
+  "capacidadTanque": "54 litros",
+  "tiempoRecorrido": "0-100 km/h en 7.3s",
+  "anoProduccion": "2015-presente (generación B9, discontinuado en EE.UU. en 2025)",
+  "mercados": [
+    "Europa",
+    "India",
+    "Latinoamérica (incl. Argentina, México)",
+    "Medio Oriente"
+  ],
+  "equipamiento": [
+    "Audi Drive Select",
+    "Faros LED",
+    "Asistente de estacionamiento delantero y trasero",
+    "Cámara de reversa",
+    "Airbags laterales y de cabeza",
+    "Dirección progresiva"
+  ],
+  "consumoEtiqueta": "B",
+  "neumaticos": "225/50R17",
+  "cilindrada": "1.984 cc",
+  "emisiones": "CO2 134-165 g/km (según ciclo y motorización, NEDC/WLTP)",
+  "asientos": 5,
+  "baul": 460,
+  "maleteroMin": "460 litros",
+  "generacion": "Quinta generación (B9)",
+  "anoLanzamiento": 2015,
+  "colores": [
+    "Blanco Ibis",
+    "Negro Mythos Metalizado",
+    "Gris Manhattan Metalizado",
+    "Azul Turbo",
+    "Rojo Tango",
+    "Plata Florett Metalizado"
+  ],
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "Discontinuado en EE.UU. (2025 fue el último año-modelo); sigue vigente en India/Europa con precio local (ej. India desde ₹53,4 lakh)"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:30:36.188Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 241
+    },
+    "consumo": {
+      "promedio": "5.8-6.1 l/100km combinado (versión 40 TFSI, ciclo WLTP Europa)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Audi A4 representa uno de los pilares fundamentales dentro de la oferta de berlinas medianas de la marca de los anillos. Heredero directo de la estirpe iniciada por el Audi 80 en los años setenta, el A4 adoptó su denominación actual a mediados de la década del noventa para estructurar la nomenclatura global de la firma de Ingolstadt. A lo largo de las décadas, este sedán ejecutivo se consolidó como una referencia en términos de calidad de construcción, refinamiento de marcha y adopción tecnológica dentro de su segmento.\n\n## Generación relevante (B9)\nLa quinta generación del Audi A4, conocida internamente bajo el código B9, hizo su debut en el año 2015 asentada sobre la plataforma modular longitudinal MLB evo del Grupo Volkswagen. Esta arquitectura permitió una reducción significativa del peso total frente a su antecesor, además de optimizar la rigidez torsional y mejorar el comportamiento dinámico general. En 2019, la gama recibió una actualización de mitad de ciclo (facelift) que modernizó profundamente el lenguaje de diseño exterior, incorporando grupos ópticos delanteros y traseros de tecnología LED más afilados, parrilla Singleframe ensanchada y la integración del sistema de infotainment MMI touch con pantalla central de alta resolución, suprimiendo la clásica rueda de control rotativa en favor de una interfaz puramente táctil.\n\n## Curiosidades\nUna de las particularidades más destacadas de la evolución reciente del Audi A4 es su reestructuración comercial a nivel global. Tras el año-modelo 2025, Audi decidió discontinuar la denominación A4 en mercados clave como el norteamericano, reorganizando su portafolio donde los modelos con motor de combustión interna pasan a utilizar números impares (como el A5), reservando las cifras pares exclusivamente para la familia de vehículos 100% eléctricos. No obstante, en regiones de Europa, Asia (como India) y otros mercados emergentes, el nombre A4 ha mantenido su vigencia comercial adaptándose a las normativas de emisiones locales mediante la incorporación de tecnologías de electrificación ligera (mild-hybrid de 12V).\n\n## Competencia y posicionamiento\nDentro del mercado automotriz global, el Audi A4 compite de manera directa en el segmento de los sedanes ejecutivos compactos prémium, rivalizando tradicionalmente contra el BMW Serie 3 y el Mercedes-Benz Clase C. El posicionamiento de Audi en esta categoría se ha distinguido históricamente por ofrecer un equilibrio sobresaliente entre tecnología de vanguardia, acabados interiores de altísima calidad y la opción de equipar el reputado sistema de tracción integral quattro. Su enfoque prioriza la estabilidad en ruta, la ergonomía y un diseño sobrio pero sofisticado que atrae tanto a flotas corporativas como a clientes particulares que buscan una alternativa refinada a los todoterrenos y SUVs dominantes en el mercado actual.",
+  "generacionInfo": {
+    "raw": "Quinta generación (B9)",
+    "numero": 5,
+    "codigoChasis": "B9",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Audi A4 - Sedán ejecutivo Audi. 241 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

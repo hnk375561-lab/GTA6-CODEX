@@ -1,0 +1,247 @@
+{
+  "slug": "peugeot-2008",
+  "type": "vehiculos",
+  "title": "Peugeot 2008",
+  "description": "SUV compacta de Peugeot con motor turbo 1.2L PureTech.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "peugeot",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-208",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-3008",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-408",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "changan-cs35-plus",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-tracker",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-pulse",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-hr-v",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:28.858Z",
+  "updatedAt": "2026-08-27T03:02:41.872Z",
+  "manufacturer": "Peugeot",
+  "class": "SUV compacto",
+  "performance": {
+    "speed": "188 km/h",
+    "acceleration": "0-100 km/h en 10.9s"
+  },
+  "power": "130 hp",
+  "price": "USD 22.490 (precio base de referencia regional)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 22490,
+    "raw": "USD 22.490 (precio base de referencia regional)"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.carwow.es/peugeot/2008/caracteristicas-tecnicas",
+    "note": "Se verificaron las dimensiones exteriores oficiales, los valores de potencia y el posicionamiento de precios regionales utilizando las fuentes de Peugeot Perú y Carwow.",
+    "limitations": [
+      "Los precios y configuraciones específicas pueden variar según el mercado de comercialización en Latinoamérica.",
+      "Las cifras de consumo homologado dependen de los ciclos de prueba de cada región."
+    ]
+  },
+  "transmision": "Automática EAT8 / Manual",
+  "traccion": "Delantera",
+  "peso": "1200-1250 kg",
+  "tipoMotor": "Gasolina Turbo PureTech 1.2L",
+  "potenciaKW": "96 kW",
+  "capacidadTanque": "44 litros",
+  "tiempoRecorrido": "0-100 km/h en 10.9s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "Aprox. 5.5 L/100 km mixto",
+  "dimensiones": "4304 x 1815 x 1550 mm",
+  "cilindrada": "1199 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 434,
+  "maleteroMin": null,
+  "generacion": "Segunda generación",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 27.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:02:41.872Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 188
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Peugeot 2008 irrumpió en el mercado automotriz a finales de 2013 como la apuesta de la marca del león para conquistar el segmento de los B-SUV. Diseñado para ofrecer una alternativa fresca a los hatchbacks tradicionales y a los familiares compactos, el modelo combinó con acierto la versatilidad de uso urbano con una posición de manejo elevada y un diseño de impronta robusta. Su gran recepción en Europa y América Latina consolidó rápidamente su producción en centros estratégicos como Mulhouse y Porto Real, marcando el pulso de una categoría en pleno crecimiento.\n\n## Un hito o generación relevante\nEl punto de inflexión definitivo para la gama llegó con el estreno de su segunda generación a finales de 2019. Este salto generacional supuso la adopción de la moderna plataforma modular CMP de Stellantis, permitiendo un cambio radical en su lenguaje estético. El frontal adoptó la firma lumínica de la marca con las características garras de LED, mientras que el habitáculo evolucionó de la mano del concepto i-Cockpit, integrando paneles digitales y pantallas de mayor tamaño. De este modo, el Peugeot 2008 dejó atrás su silueta de familiar levantado para consolidarse como un SUV compacto de aspecto vanguardista y aspiraciones marcadamente premium.\n\n## Curiosidades\nUno de los aspectos más interesantes en el desarrollo del Peugeot 2008 es su arquitectura multienergética. La flexibilidad de la plataforma CMP hizo posible la concepción simultánea de variantes con motores térmicos altamente eficientes —como el laureado bloque naftero turbo 1.2L PureTech de tres cilindros— y opciones totalmente eléctricas bajo la denominación e-2008. Además, su particular puesto de conducción i-Cockpit, caracterizado por un volante de dimensiones reducidas ubicado por debajo de la instrumentación, generó intensos debates iniciales en la prensa especializada, pero terminó convirtiéndose en uno de los sellos de identidad más reconocibles y emulados de la automotriz francesa en el mercado actual.\n\n## Competencia y posicionamiento\nDentro del competitivo segmento de los SUV compactos (B-SUV), el Peugeot 2008 se enfrenta a pesos pesados de la industria como el Chevrolet Tracker, Volkswagen T-Cross, Jeep Renegade, Nissan Kicks y Renault Captur. Su estrategia de posicionamiento comercial se ancla en la franja más alta y aspiracional de las marcas generalistas. Está dirigido a un perfil de cliente que prioriza el diseño sofisticado, la calidad de terminación interior percibida y una dotación tecnológica superior, ofreciendo a su vez un andar aplomado de clara estirpe europea.",
+  "generacionInfo": {
+    "raw": "Segunda generación",
+    "numero": 2,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Peugeot 2008 - SUV compacta Peugeot. 188 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

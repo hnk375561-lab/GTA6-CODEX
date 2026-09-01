@@ -1,0 +1,42 @@
+{
+  "slug": "mahindra",
+  "type": "fabricantes",
+  "title": "Mahindra",
+  "description": "Vehículos y motocicletas de Mahindra",
+  "content": "## Identidad de marca\nMahindra & Mahindra es uno de los pilares industriales de la India y un referente global en la fabricación de vehículos utilitarios. Lejos de ser un fabricante tradicional de turismos, la marca se consolidó construyendo una reputación basada en la robustez, la durabilidad y la capacidad de trabajo pesado. Su propuesta de valor actual combina la ingeniería orientada al rendimiento utilitario con una expansión internacional constante, respaldada por la filosofía corporativa del conglomerado Grupo Mahindra.\n\n## Historia y evolución\nLa compañía dio sus primeros pasos el 2 de octubre de 1945 bajo el nombre original de Mahindra & Mohammed, fundada por los hermanos K.C. Mahindra y J.C. Mahindra junto a Malik Ghulam Mohammed en Ludhiana. En sus etapas iniciales, la empresa enfocó sus operaciones en el comercio de acero importado desde proveedores de Inglaterra y Estados Unidos.\n\nEl punto de inflexión hacia la industria automotriz ocurrió en 1947, cuando la firma comenzó a ensamblar vehículos Jeep completos en formato CKD. Tras la partición y la independencia del país, Mohammed emigró y la compañía adoptó su denominación definitiva, Mahindra & Mahindra, en 1948. A partir de entonces, consolidó su capacidad industrial mediante la fabricación nacional de vehículos tipo Jeep bajo licencias sucesivas de Kaiser Jeep y AMC, sentando las bases de su liderazgo histórico en el segmento de vehículos utilitarios.\n\n## Posicionamiento actual\nEn la actualidad, Mahindra dejó atrás su origen monoproducto para transformarse en un vasto conglomerado industrial. Su paraguas operativo abarca desde la maquinaria pesada de construcción y la tecnología aeroespacial hasta una gama diversificada de automóviles. Con operaciones comerciales en más de un centenar de países, la marca se posiciona firmemente como un actor clave en la movilidad utilitaria asiática y global, destacándose por ofrecer soluciones de transporte enfocadas en la funcionalidad y el desarrollo industrial sostenible.",
+  "status": "confirmado",
+  "officialName": "Mahindra",
+  "country": "India",
+  "foundedYear": 1945,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:23:14.395Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mahindra-scorpio-n",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mahindra-thar",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Mahindra_%26_Mahindra_Limited",
+    "secondarySource": "https://www.mahindra.cl/sobre-mahindra",
+    "note": "Se verificó la fundación en 1945 como Mahindra & Mohammed, el cambio de nombre posterior, el inicio de la producción con vehículos tipo Jeep bajo licencia y su evolución actual como un conglomerado global con presencia en más de cien países a través de fuentes enciclopédicas y sitios oficiales.",
+    "limitations": [
+      "No se detallan en las fuentes todos los modelos específicos comercializados en cada mercado internacional actual.",
+      "La información sobre volúmenes de ventas globales exactos recientes no está completamente especificada en los extractos provistos."
+    ]
+  }
+}

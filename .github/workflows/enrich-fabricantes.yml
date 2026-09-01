@@ -1,0 +1,95 @@
+name: Enriquecer fichas de fabricantes (Gemini)
+
+# Corre enrich-fabricantes.mjs contra src/content/fabricantes usando la
+# misma API de Gemini con Google Search grounding que ya usa
+# enrich-vehiculos.yml. Completa `evidence` y reemplaza el `content`
+# boilerplate genérico ("X es un fabricante de vehículos documentado
+# en AutoFicha.") por historia de marca real y citada.
+#
+# Nota histórica: este workflow existe porque en su momento
+# `npm run audit:evidence` fallaba en CI por falta de evidence en
+# fabricantes. Ese problema ya está resuelto (325/325, 100%, verificado
+# en auditoría 2026-08); el workflow queda como red de seguridad mensual
+# (ver schedule más abajo) por si se agrega contenido nuevo sin evidence.
+#
+# Dos formas de dispararse:
+#   1. workflow_dispatch: manual desde la pestaña Actions.
+#   2. schedule: red de seguridad mensual (por si queda algo pendiente
+#      tras una corrida parcial por cuota agotada).
+#
+# Requiere el mismo secret GEMINI_API_KEY que enrich-vehiculos.yml
+# (Settings -> Secrets and variables -> Actions). TAVILY_API_KEY es
+# opcional, mejora cobertura en marcas de nicho.
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Cantidad maxima de fabricantes a procesar en esta corrida"
+        required: false
+        default: "20"
+  schedule:
+    - cron: "0 6 1 * *"
+
+concurrency:
+  group: enrich-fabricantes-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    working-directory: GTA6-CODEX
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+
+      - name: Correr enriquecimiento de fabricantes
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          LIMIT: ${{ github.event.inputs.limit || '20' }}
+        run: node enrich-fabricantes.mjs
+
+      - name: Commit y push de las fichas actualizadas
+        if: always()
+        run: |
+          git config user.name "gta6-codex-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/content/fabricantes enrichment-fabricantes-log.jsonl 2>/dev/null || true
+          git diff --cached --quiet && echo "Nada para commitear" && exit 0
+          git commit -m "feat(fabricantes): enriquecimiento automatico via Gemini (LIMIT=${LIMIT:-?}) [GitHub Actions]"
+          # Ver comentario equivalente en enrich-vehiculos.yml: reintenta
+          # con rebase si otro workflow pusheó a main mientras esta
+          # corrida trabajaba, para no perder llamadas reales a Gemini.
+          for i in 1 2 3 4 5; do
+            if git push origin main; then
+              exit 0
+            fi
+            echo "Push rechazado (intento $i/5), reintentando con rebase..."
+            git fetch origin main
+            git rebase origin/main
+            sleep $((i * 5))
+          done
+          echo "No se pudo pushear tras varios reintentos"
+          exit 1
+
+      - name: Subir log de la corrida
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: enrichment-fabricantes-log
+          path: GTA6-CODEX/enrichment-fabricantes-log.jsonl
+          if-no-files-found: ignore

@@ -1,0 +1,173 @@
+{
+  "slug": "porsche-taycan",
+  "type": "vehiculos",
+  "title": "Porsche Taycan",
+  "description": "Sedán deportivo 100% eléctrico de Porsche.",
+  "status": "confirmado",
+  "tags": [
+    "electrico",
+    "porsche"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "porsche-911-carrera",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "porsche-cayenne",
+      "relation": "mismo_fabricante"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Porsche",
+  "class": "Deportivo eléctrico",
+  "power": "402 hp",
+  "price": "USD 99.000 (MSRP base referencia)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 99000,
+    "raw": "USD 99.000 (MSRP base referencia)"
+  },
+  "consumo": "18-22 kWh/100 km (equivalente eléctrico)",
+  "dimensiones": "4.963 mm largo x 1.966 mm ancho x 1.395 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.porsche.com",
+    "note": "Se actualizaron las dimensiones, capacidades y motorización con base en las especificaciones reales de la plataforma J1 del Porsche Taycan. Los valores de potencia y precio corresponden a configuraciones de entrada de gama referenciales.",
+    "limitations": [
+      "El precio puede variar significativamente según el mercado de destino, opcionales de fábrica e impuestos locales.",
+      "La autonomía exacta depende de la capacidad de la batería seleccionada (Performance Battery o Performance Battery Plus)."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:25:22.515Z",
+  "transmision": "Automática de 2 marchas (eje trasero) y relación única (eje delantero)",
+  "traccion": "Tracción integral (AWD) en versiones duales, o trasera según variante",
+  "peso": "2.100-2.300 kg",
+  "tipoMotor": "Doble motor sincrónico de imanes permanentes",
+  "potenciaKW": "300 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "0-100 km/h en 4.8s (versión base con Launch Control)",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "asientos": 4,
+  "baul": 407,
+  "maleteroMin": null,
+  "generacion": "1era generación (J1)",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 99.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:25:22.515Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Porsche Taycan representa un hito fundamental en la historia de la marca de Stuttgart, al ser el primer vehículo de producción 100% eléctrico en llevar el escudo de Porsche. Su anticipación comercial comenzó en 2015 con la presentación del aclamado prototipo conceptual Mission E en el Salón del Automóvil de Frankfurt. La recepción mundial fue tan abrumadora que Porsche aceleró su desarrollo industrial para llevarlo a las líneas de montaje, materializándose en la versión de producción que debutó oficialmente a finales de 2019 bajo la denominación Taycan (que puede traducirse libremente como 'caballo joven y vivaz').\n\n## Un hito o generación relevante\nLa arquitectura del Taycan descansa sobre la avanzada plataforma J1, desarrollada específicamente para vehículos eléctricos de altas prestaciones dentro del Grupo Volkswagen. Uno de los mayores avances técnicos introducidos por esta arquitectura es su sistema eléctrico de 800 voltios en lugar de los 400 voltios tradicionales utilizados en la industria hasta entonces. Este diferencial tecnológico no solo reduce considerablemente el peso del cableado interno, sino que permite soportar potencias de carga ultra rápida en corriente continua (DC) de hasta 270 kW o más en versiones actualizadas, posibilitando recargar la batería del 5% al 80% en aproximadamente 22 minutos bajo condiciones óptimas.\n\n## Curiosidades\nA diferencia de la gran mayoría de los vehículos eléctricos del mercado que emplean una transmisión de una sola velocidad, el Porsche Taycan incorpora una innovadora caja de cambios automática de dos velocidades en el eje trasero. La primera marcha está diseñada para ofrecer una aceleración explosiva desde parado y optimizar la salida con el sistema Launch Control, mientras que la segunda marcha, de relación larga, prioriza la eficiencia energética y el rendimiento a altas velocidades en ruta o autopista.\n\n## Competencia y posicionamiento\nDentro del mercado global, el Porsche Taycan se posiciona firmemente en el segmento de los sedanes deportivos de lujo eléctricos (segmento F). Su rival directo y natural desde su concepción ha sido el Tesla Model S, al cual desafía directamente en términos de prestaciones puros y autonomía, aunque superándolo ampliamente en acabados interiores, calidad de ensamblaje y comportamiento dinámico en circuitos cerrados. Asimismo, compite de cerca con opciones emergentes de marcas de lujo tradicionales como el Audi e-tron GT (con el cual comparte plataforma y componentes mecánicos) y el Mercedes-Benz EQS, diferenciándose de este último por apostar por un enfoque mucho más visceral, deportivo y enfocado en el conductor.",
+  "generacionInfo": {
+    "raw": "1era generación (J1)",
+    "numero": 1,
+    "codigoChasis": "J1",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Porsche Taycan - Deportivo eléctrico Porsche. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

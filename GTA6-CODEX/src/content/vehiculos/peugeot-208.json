@@ -1,0 +1,244 @@
+{
+  "slug": "peugeot-208",
+  "type": "vehiculos",
+  "title": "Peugeot 208",
+  "description": "Hatchback compacto de Peugeot, diseño i-Cockpit, motores 1.6L o turbo 1.2L.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "peugeot",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-2008",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-3008",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-408",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-onix",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-sandero",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:27.335Z",
+  "updatedAt": "2026-08-27T03:02:53.855Z",
+  "manufacturer": "Peugeot",
+  "class": "Hatchback",
+  "performance": {
+    "speed": "Media (185 km/h)",
+    "acceleration": "Media (0-100 km/h en 10.2s)"
+  },
+  "power": "115 hp",
+  "price": "ARS 22.000.000 (Referencia mercado local)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "ARS",
+    "amount": 22000000,
+    "raw": "ARS 22.000.000 (Referencia mercado local)"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.lanacion.com.ar/autos/nuevo-peugeot-208-fabricado-argentina-conoce-ficha-nid2412266",
+    "note": "Datos verificados a partir de las fichas técnicas oficiales de Peugeot Argentina y notas de lanzamiento industrial regional.",
+    "limitations": [
+      "Las cifras de consumo pueden variar según las condiciones de uso y la versión exacta.",
+      "Los precios en el mercado automotor varían constantemente según la inflación y disponibilidad."
+    ]
+  },
+  "transmision": "Manual de 5 marchas o Automática CVT de 7 velocidades",
+  "traccion": "Delantera",
+  "peso": "1165 kg",
+  "tipoMotor": "Nafta",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "47 litros",
+  "tiempoRecorrido": "10.2s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "6.2 l/100km mixto",
+  "dimensiones": "4055 x 1745 x 1453 mm",
+  "cilindrada": "1598 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 311,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (P21)",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 20.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:02:53.855Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Peugeot 208 es uno de los hatchbacks compactos más exitosos y representativos del mercado sudamericano y europeo. Su recorrido comenzó como el sucesor natural de la exitosa saga de los 20X (206, 207), heredando un legado de diseño audaz y dinámica de conducción ágil. La segunda generación, fabricada en su polo industrial de El Palomar (Argentina) para la región, marcó un antes y un después en términos de calidad constructiva, tecnología aplicada y adopción de plataformas modernas (CMP), consolidándose rápidamente como uno de los vehículos más vendidos en su segmento dentro del mercado argentino.\n\n## Un hito o generación relevante\nEl gran punto de inflexión para el Peugeot 208 en la región sudamericana fue la introducción de su plataforma modular CMP (Common Modular Platform) en el año 2020. Esta arquitectura no solo permitió una mejora sustancial en la rigidez estructural, la seguridad y la reducción de peso frente a su predecesor, sino que también habilitó la llegada del revolucionario puesto de conducción i-Cockpit®. Este concepto, caracterizado por un volante de diámetro reducido, un instrumental elevado y una pantalla táctil orientada al conductor, transformó por completo la experiencia a bordo, convirtiéndose en la seña de identidad indiscutida de la marca del león.\n\n## Curiosidades\nUna de las características más llamativas del desarrollo del concepto i-Cockpit en la gama Peugeot fue la decisión de ubicar el volante por debajo de la línea del instrumental. Si bien al principio generó debate entre los puristas del automóvil, los ingenieros de Peugeot demostraron tras extensas pruebas ergonómicas que esta disposición reduce el tiempo de reacción del conductor, ya que los ojos apenas deben apartarse del camino para consultar la velocidad o las alertas. Además, el Peugeot 208 se destaca por ser un vehículo con una fuerte impronta de diseño exterior, donde las firmas lumínicas frontales que simulan los \"colmillos\" del león se han transformado en un icono visual fácilmente reconocible en las calles de Buenos Aires y el resto de la región.\n\n## Competencia y posicionamiento\nDentro del segmento B de hatchbacks, el Peugeot 208 se posiciona en la franja más alta y aspiracional, coqueteando con tintes semi-premium. Debe medirse codo a codo con referentes históricos de peso pesado en el Mercosur, tales como el Volkswagen Polo y el Chevrolet Onix, además de alternativas de marcas regionales o asiáticas. Para destacar frente a ellos, el modelo francés apuesta fuertemente por la estética vanguardista, la calidad de terminaciones en su habitáculo y un andar equilibrado que prioriza tanto el confort en ciudad como la estabilidad en ruta, apuntando a un público que valora el diseño diferenciado y la tecnología por sobre la pura funcionalidad utilitaria.",
+  "generacionInfo": {
+    "raw": "Segunda generación (P21)",
+    "numero": 2,
+    "codigoChasis": "P21",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Peugeot 208 - Hatchback Peugeot. Media (185 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

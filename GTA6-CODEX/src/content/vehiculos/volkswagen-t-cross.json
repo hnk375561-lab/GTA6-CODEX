@@ -1,0 +1,247 @@
+{
+  "slug": "volkswagen-t-cross",
+  "type": "vehiculos",
+  "title": "Volkswagen T-Cross",
+  "description": "SUV compacta de Volkswagen sobre plataforma MQB, motor turbo 1.0L o 1.4L TSI.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "volkswagen",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-tera",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-amarok",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-golf-gti",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "changan-cs35-plus",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-tracker",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-pulse",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-hr-v",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Volkswagen",
+  "class": "SUV compacto",
+  "power": "116 CV (motores 200 TSI) o 150 CV (motor 250 TSI)",
+  "price": "ARS 28.000.000 (referencia mercado argentino)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "ARS",
+    "amount": 28000000,
+    "raw": "ARS 28.000.000 (referencia mercado argentino)"
+  },
+  "consumo": "6.5 l/100km (mixto aprox.)",
+  "dimensiones": "4265 x 1760 x 1483 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.vw.com.ar/es/modelos/t-cross.html",
+    "note": "Se verificaron las motorizaciones 1.0 y 1.4 TSI vigentes en la región, dimensiones actualizadas del restyling y capacidades oficiales de fábrica.",
+    "limitations": [
+      "Los precios en el mercado automotor varían constantemente por inflación y cargas impositivas en Argentina",
+      "Los consumos pueden diferir según estilo de conducción y condiciones de tráfico"
+    ]
+  },
+  "performance": {
+    "speed": "185 km/h",
+    "acceleration": "0-100 km/h en 10.0s"
+  },
+  "createdAt": "2026-08-23T21:59:07.608786Z",
+  "updatedAt": "2026-08-27T02:02:31.804Z",
+  "transmision": "Automática Tiptronic de 6 marchas",
+  "traccion": "Tracción delantera",
+  "peso": "1250-1320 kg",
+  "tipoMotor": "Naftero turbo (TSI)",
+  "potenciaKW": "85 kW / 110 kW",
+  "capacidadTanque": "52 litros",
+  "tiempoRecorrido": "0-100 km/h en 9.9s (1.4 TSI)",
+  "anoProduccion": "2019-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "999 cc / 1395 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 415,
+  "maleteroMin": null,
+  "generacion": "1ra Generación (Facelift 2024)",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 27.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T02:02:31.804Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 185
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Volkswagen T-Cross hizo su irrupción en el mercado global a finales de la década pasada como la apuesta de la marca alemana para el segmento de los SUV compactos (B-SUV). Desarrollado sobre la archiconocida plataforma modular MQB —la misma que da vida a modelos exitosos como el Polo y el Virtus—, este vehículo nació con el objetivo claro de conquistar tanto a los mercados europeos como a los latinoamericanos, adaptándose a las necesidades de cada región mediante plantas de producción locales. En nuestra región, el T-Cross se produce principalmente en la planta de São José dos Pinhais, en Brasil, desde donde se abastece a gran parte de Sudamérica, consolidándose rápidamente como uno de los referentes indiscutidos de ventas en su categoría.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia comercial del T-Cross se da con la llegada de su actualización de media vida (facelift) presentada recientemente para el año-modelo 2024/2025. Esta evolución no solo trajo consigo una renovación estética profunda que alineó su lenguaje visual con los últimos lanzamientos globales de Volkswagen —destacándose una nueva firma lumínica LED delantera y trasera, y paragolpes rediseñados que incrementaron levemente su longitud—, sino que también mejoró sustancialmente la calidad percibida del habitáculo. Históricamente criticado por el uso excesivo de plásticos rígidos en el panel de instrumentos, el T-Cross incorporó apliques texturizados, superficies soft-touch y una central multimedia VW Play flotante de nueva generación, respondiendo de manera directa a las demandas de un consumidor cada vez más exigente.\n\n## Curiosidades\nUna de las características más interesantes del Volkswagen T-Cross es su enfoque en la seguridad estructural. A pesar de compartir plataforma con vehículos urbanos más pequeños, el T-Cross fue concebido desde el día uno para obtener las máximas calificaciones en las pruebas de choque de Latin NCAP, logrando en su momento las ansiadas 5 estrellas tanto para protección de ocupantes adultos como infantiles, incorporando de serie elementos que en su segmento no siempre venían garantizados. Además, cabe destacar su versatilidad interior: aunque pertenece al segmento compacto, el diseño inteligente de la plataforma MQB permite un aprovechamiento óptimo del espacio para las piernas en las plazas traseras y un baúl de excelente capacidad para su tamaño, el cual se puede ampliar gracias a soluciones modulares en los asientos.\n\n## Competencia y posicionamiento\nEn el competitivo mercado de los SUV compactos en Argentina y la región, el T-Cross se posiciona en la franja alta del segmento generalista. Debe enfrentar a rivales de peso pesado como el Chevrolet Tracker, el Jeep Renegade, el Nissan Kicks y el Toyota Corolla Cross (este último bordeando el segmento C). El T-Cross logra mantenerse vigente y competitivo gracias a la sólida reputación de su mecánica turbo (familiarizados como los motores 200 TSI y 250 TSI), el excelente tacto de manejo dinámico que le otorga la plataforma MQB, y una red de posventa sumamente consolidada que otorga tranquilidad al comprador sudamericano. Su posicionamiento prioriza la tecnología, la seguridad estructural y una dinámica de conducción de neto corte rutero por sobre las pretensiones off-road.",
+  "generacionInfo": {
+    "raw": "1ra Generación (Facelift 2024)",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": true,
+    "faceliftAno": 2024
+  },
+  "seoDescription": "Volkswagen T-Cross - SUV compacta Volkswagen. 185 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

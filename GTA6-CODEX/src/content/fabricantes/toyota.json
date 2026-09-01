@@ -1,0 +1,118 @@
+{
+  "slug": "toyota",
+  "type": "fabricantes",
+  "title": "Toyota",
+  "description": "Vehículos y motocicletas de Toyota",
+  "content": "## Identidad de marca\nToyota Motor Corporation se consolidó a lo largo de las décadas como uno de los fabricantes de automóviles más influyentes del mundo. Su filosofía de producción y su enfoque en la eficiencia la han convertido en un referente global de confiabilidad y escala industrial dentro del sector automotor.\n\n## Historia real\nLos orígenes de la compañía se remontan a los años 20 y están estrechamente ligados al desarrollo tecnológico textil. Sakichi Toyoda marcó un hito previo al inventar un telar automático conocido como el Toyota Model G. Posteriormente, su hijo Kiichiro Toyoda impulsó la transición hacia la industria automotriz, estableciendo las bases de lo que formalmente se constituiría en 1937 como fabricante de vehículos. Desde sus primeros años como taller, la empresa evolucionó hasta estructurar una sede principal en la ciudad de Toyota (Aichi) y en Bunkyō (Tokio), expandiendo su presencia mediante subsidiarias y plantas productivas en múltiples mercados internacionales.\n\n## Posicionamiento actual\nEn la actualidad, Toyota opera como una corporación multinacional de alcance masivo con cotización en los principales mercados bursátiles internacionales. Su estrategia global mantiene un fuerte arraigo en la producción a gran escala, la adaptación a los mercados regionales —con hitos como su expansión consolidada en América del Norte y Latina durante las últimas dos décadas— y un constante desarrollo tecnológico enfocado en la movilidad sostenible.",
+  "status": "confirmado",
+  "officialName": "Toyota",
+  "country": "Japón",
+  "foundedYear": 1937,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:48:07.055Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-alphard",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-camry",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-corolla-2024",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-corolla-cross",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-etios",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-gr86",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-hilux",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-innova",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-land-cruiser-prado",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-land-cruiser",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-prius",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-rav4",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-sw4",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-yaris-cross",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-yaris",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Toyota",
+    "note": "Se verificó la fundación de la compañía y sus antecedentes tecnológicos a partir de la Wikipedia y fuentes especializadas en su historia.",
+    "limitations": [
+      "No se detallan en las fuentes todos los modelos actuales de la marca en la región."
+    ]
+  }
+}

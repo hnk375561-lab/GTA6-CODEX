@@ -1,0 +1,35 @@
+{
+  "slug": "vespa",
+  "type": "fabricantes",
+  "title": "Vespa",
+  "description": "Vehículos y motocicletas de Vespa",
+  "content": "## Identidad de Marca\n\nVespa se consolida mucho más allá de un simple medio de transporte urbano: es un auténtico referente global del diseño y la movilidad ligera. Nacida bajo el amparo de la compañía matriz Piaggio & Co, S.p.A., la marca fusiona la distinción inconfundible del estilo *Made in Italy* con soluciones tecnológicas actualizadas para la vida contemporánea [Fuente 3]. Su enfoque estético y funcional la ha transformado, de generación en generación, en un símbolo indiscutido de libertad y emancipación juvenil [Fuente 3, Fuente 4].\n\n## Historia y Hílos Clave\n\nLos orígenes de este emblema sobre dos ruedas se remontan al 23 de abril de 1946, fecha en la que la marca quedó oficialmente establecida en Florencia bajo la visión de Rinaldo Piaggio [Fuente 2]. El desarrollo técnico e industrial cobró un impulso definitivo desde su sede central en Pontedera, Toscana, con el genio creativo del diseñador Corradino D'Ascanio, pieza clave en la configuración de su estructura y concepto motoneta [Fuente 2].\n\nEl surgimiento de Vespa respondió directamente al contexto de una nación inmersa en la reconstrucción de la posguerra [Fuente 3]. En lugar de replicar las motocicletas tradicionales, la marca propuso una alternativa revolucionaria e innovadora que encarnó desde el primer momento el optimismo, la creatividad y las ansias de mirar hacia el futuro [Fuente 3]. A lo largo de las décadas, su trayectoria ha estado marcada por una narrativa zigzagueante que priorizó la transformación constante [Fuente 3].\n\n## Posicionamiento Actual\n\nEn la actualidad, Vespa mantiene vigencia global combinando su herencia histórica con una comunidad de usuarios muy activa —los denominados vespistas— que continúan celebrando su legado en encuentros internacionales de gran magnitud [Fuente 4]. En el mercado de las motonetas, la marca se posiciona en un segmento prémium, valorada tanto por usuarios urbanos que buscan practicidad con distinción como por coleccionistas y entusiastas que reconocen en cada modelo un pedazo de la historia industrial italiana adaptada a los tiempos modernos.",
+  "status": "confirmado",
+  "officialName": "Vespa",
+  "country": "Italia",
+  "foundedYear": 1946,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:48:56.850Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "vespa-primavera",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Vespa_(motocicletas)",
+    "secondarySource": "https://vespaoficial.com.ar/historia",
+    "note": "Se verificó la fundación de la marca el 23 de abril de 1946 en Florencia por Rinaldo Piaggio, con el diseño a cargo de Corradino D'Ascanio, bajo el paraguas de Piaggio & Co, S.p.A. desde Pontedera, Toscana. Asimismo, se contrastó su contexto de surgimiento en la posguerra y su evolución como un icono de estilo de vida a través de fuentes oficiales.",
+    "limitations": [
+      "La información se centra en los hitos históricos generales y el posicionamiento cultural, sin detallar las especificaciones técnicas completas de cada generación actual en el texto provisto."
+    ]
+  }
+}

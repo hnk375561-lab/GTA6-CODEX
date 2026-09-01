@@ -1,0 +1,35 @@
+{
+  "actualizadoAl": "2026-08-31",
+  "trafico": {
+    "visitasMensuales": "En crecimiento (sitio nuevo, sin ciclo completo de indexación todavía)",
+    "paginasVistasPorVisita": "N/D — completar cuando GA4 tenga 2+ semanas de datos",
+    "fichasPublicadas": 250,
+    "articulosPublicados": 10
+  },
+  "audiencia": {
+    "resumen": "Personas buscando activamente información técnica de autos y motos antes de comprar o vender, mayoría desde Argentina.",
+    "intencion": "Alta intención de compra: llegan buscando datos concretos (ficha técnica, comparación, guía de compra), no contenido de entretenimiento."
+  },
+  "opcionesPublicidad": [
+    {
+      "nombre": "Banner en artículo relevante",
+      "descripcion": "Tu marca en el artículo de guía de compra más relacionado con tu rubro (ej. 'Cómo comprar auto usado' para una concesionaria).",
+      "precioMensualArs": "500 - 800"
+    },
+    {
+      "nombre": "Banner en homepage",
+      "descripcion": "Visibilidad en la página principal del sitio, mayor alcance.",
+      "precioMensualArs": "800 - 1500"
+    },
+    {
+      "nombre": "Mención + link en ficha técnica",
+      "descripcion": "'Consultá disponibilidad en [tu negocio]' en la ficha de vehículos que vendés.",
+      "precioMensualArs": "500 - 1000"
+    }
+  ],
+  "roiEjemplo": "Un lead calificado (alguien que ya comparó specs y decidió que ese es el auto que quiere) vale más que un click frío de red social — está 2-3 pasos más cerca de comprar.",
+  "contacto": {
+    "nombre": "Santiago Ceferino Nehuel Solis",
+    "telefono": "+54 3445 511081"
+  }
+}

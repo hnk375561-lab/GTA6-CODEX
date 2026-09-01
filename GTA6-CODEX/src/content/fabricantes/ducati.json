@@ -1,0 +1,41 @@
+{
+  "slug": "ducati",
+  "type": "fabricantes",
+  "title": "Ducati",
+  "description": "Vehículos y motocicletas de Ducati",
+  "content": "## Identidad de marca\nDucati es una de las firmas más emblemáticas del motociclismo mundial. Con sede en Bolonia, la marca italiana conjuga una estética de altas prestaciones con una sólida reputación tanto en el mercado comercial como en el ámbito de la competición deportiva de máxima exigencia.\n\n## Historia real y evolución\nLos orígenes de la compañía se remontan al 4 de julio de 1926, fecha en la que la familia Ducati, junto con el ingeniero Antonio Cavalieri Ducati y Carlo Crespi, fundaron la “Società Scientifica Radio Brevetti Ducati”. Si bien los primeros pasos de la empresa estuvieron vinculados al sector de la radiodifusión y la tecnología, el rumbo industrial cambió de forma radical tras la Segunda Guerra Mundial. Fue en 1952 cuando la compañía diseñó su primera motocicleta, marcando el inicio de su legendaria trayectoria en el sector de las dos ruedas.\n\nA lo largo de las décadas siguientes, la marca consolidó su prestigio a través del desarrollo de motores característicos y una fuerte presencia en los circuitos internacionales. Esta trayectoria de casi un siglo de innovación dio un giro estratégico en abril de 2012, cuando Audi concretó la compra de Ducati, integrándola dentro del grupo automotriz alemán y potenciando su desarrollo tecnológico y financiero.\n\n## Posicionamiento actual\nHoy en día, Ducati se posiciona en la cúspide del segmento de motocicletas deportivas y de lujo. La marca mantiene un equilibrio entre su rica herencia histórica —preservada en su museo oficial en Bolonia— y una constante evolución en ingeniería, diseño y conectividad, consolidándose como un referente global de rendimiento y pasión por el motociclismo.",
+  "status": "confirmado",
+  "officialName": "Ducati",
+  "country": "Italia",
+  "foundedYear": 1926,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:19:53.504Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ducati-monster",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ducati-panigale-v4",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ducati.com/es/es/heritage",
+    "secondarySource": "https://es.wikipedia.org/wiki/Ducati",
+    "note": "Se verificó la fundación de la marca en Bolonia en 1926, sus orígenes ligados a la familia Ducati, la evolución hacia la fabricación de motocicletas a partir de 1952 y su posterior integración al grupo Audi en 2012 mediante fuentes oficiales y enciclopédicas.",
+    "limitations": [
+      "No se detallan en el texto los modelos mecánicos específicos previos a la primera motocicleta de 1952."
+    ]
+  }
+}

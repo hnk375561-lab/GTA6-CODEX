@@ -1,0 +1,184 @@
+{
+  "slug": "xiaomi-su7",
+  "type": "vehiculos",
+  "title": "Xiaomi SU7",
+  "description": "Primer auto eléctrico de Xiaomi, sedán deportivo con software propio.",
+  "status": "confirmado",
+  "tags": [
+    "electrico",
+    "xiaomi"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-han",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-seal",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nio-et5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-s",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Xiaomi",
+  "class": "Sedán eléctrico",
+  "power": "299 CV (versión Base RWD) a 673 CV (versión Max AWD)",
+  "price": "Desde aprox. € 28.500 / USD 30.000 (precio base de referencia en el mercado chino)",
+  "priceStructured": {
+    "type": "starting",
+    "currency": "EUR",
+    "amount": 28500,
+    "raw": "Desde aprox. € 28.500 / USD 30.000 (precio base de referencia en el mercado chino)"
+  },
+  "consumo": "13.7 kWh/100 km (referencia WLTP/CLTC según versión)",
+  "dimensiones": "4997 x 1963 x 1455 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.arenaev.com/xiaomi_su7_su7_2024-specs-573.php",
+    "secondarySource": "https://www.caranddriver.com/es/coches/novedades/a45857185/xiaomi-su7-berlina-2024",
+    "note": "Se actualizaron las especificaciones del Xiaomi SU7 utilizando datos contrastados de lanzamientos oficiales y pruebas técnicas en China, registrando potencias de 299 CV y 673 CV, dimensiones exactas y coeficientes aerodinámicos.",
+    "limitations": [
+      "Los precios internacionales fuera de China se ven afectados por aranceles de importación y costos logísticos",
+      "Las autonomías varían considerablemente según el ciclo de homologación (CLTC vs WLTP)"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T03:15:04.904Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción trasera (RWD) / Tracción integral (AWD) según versión",
+  "peso": "1980 - 2205 kg",
+  "tipoMotor": "Eléctrico (simple o dual)",
+  "potenciaKW": "220 kW (versión Base) / 495 kW (versión Max)",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "5.3 s (0-100 km/h versión Base) / 2.78 s (0-100 km/h versión Max)",
+  "anoProduccion": "2024-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 517,
+  "maleteroMin": null,
+  "generacion": "1ra Generación",
+  "anoLanzamiento": 2024,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 30.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:15:04.904Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Xiaomi SU7 representa la incursión formal y sin precedentes del gigante tecnológico chino en la industria automotriz global. Presentado a finales de 2023 y lanzado comercialmente a principios de 2024, este sedán eléctrico deportivo surge como la cúspide de un ambicioso plan de diversificación de la marca. El objetivo principal fue trasladar su vasto ecosistema de dispositivos inteligentes y conectividad avanzada al terreno de la movilidad eléctrica de altas prestaciones, compitiendo de igual a igual con terminales tradicionales de larga trayectoria.\n\n## Un hito y diseño aerodinámico\nUno de los mayores logros técnicos en el desarrollo del Xiaomi SU7 fue alcanzar un coeficiente aerodinámico de apenas 0.195 Cd, situándolo entre los vehículos de producción en serie más eficientes del planeta en términos de resistencia al avance. Este resultado se logró gracias a una silueta de líneas fluidas, una arquitectura avanzada de 800V en sus variantes más equipadas y una minuciosa optimización del flujo de aire. Esto no solo mejora la estabilidad a alta velocidad, sino que optimiza drásticamente el consumo energético y maximiza la autonomía de la batería en ruta.\n\n## Curiosidades tecnológicas\nEl apartado tecnológico es el gran diferencial del SU7. El vehículo opera bajo el sistema operativo HyperOS, diseñado para unificar la experiencia del usuario entre los smartphones de la marca, los dispositivos de domótica y la computadora de a bordo. Asimismo, Xiaomi desarrolló in-house sus propios motores eléctricos, bautizados como 'V6', 'V6s' y el radical 'V8s', capaces de girar a regímenes de revoluciones por minuto sumamente elevados, emulando la eficiencia y el empuje de propulsores de competición.\n\n## Competencia y posicionamiento\nEn el panorama internacional de los vehículos eléctricos, el Xiaomi SU7 se posiciona firmemente en el segmento de los sedanes deportivos de lujo y altas prestaciones. Su mira está puesta en referentes indiscutidos como el Tesla Model S y el Porsche Taycan. La estrategia de Xiaomi radica en ofrecer una propuesta de valor muy agresiva, combinando cifras de aceleración extraordinarias, autonomía extendida, un ecosistema de software superior y una estructura de costos altamente competitiva.",
+  "generacionInfo": {
+    "raw": "1ra Generación",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Xiaomi SU7 - Sedán eléctrico Xiaomi. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "mg",
+  "type": "fabricantes",
+  "title": "MG",
+  "description": "Vehículos y motocicletas de MG",
+  "content": "## Identidad de Marca\n\nMG (Morris Garages) es una de las firmas con mayor trayectoria emocional dentro de la industria automotriz. Combina una rica herencia británica de espíritu deportivo con la robustez industrial y tecnológica de su actual etapa global, apostando fuertemente hacia la electrificación y la movilidad sostenible.\n\n## Historia Real y Hitos\n\nLos orígenes de la marca se remontan a 1924, cuando Cecil Kimber, descontento con el departamento de ventas tradicional, comenzó a diseñar sus propias versiones modificadas de los automóviles Morris en un garaje, dando forma al icónico «Old Number One» y registrando la marca oficialmente el 1 de mayo de aquel año. A lo largo de las décadas, MG se consolidó como un referente de coupés y vehículos accesibles de corte pasional en el Reino Unido.\n\nTras diversos vaivenes financieros y cambios corporativos en la industria británica, la marca experimentó un punto de inflexión crucial en 2007, año en el que fue adquirida y relanzada al mercado internacional bajo el paraguas de Nanjing Automobile y, posteriormente, del gigante automotriz SAIC Motor (Shanghai Automobile Industry Corporation), uno de los fabricantes más grandes del mundo.\n\n## Posicionamiento Actual\n\nEn la actualidad, MG ha completado una reinvención profunda para adaptarse a las demandas del mercado contemporáneo. Sin perder de vista el legado dinámico que caracteriza a su nombre, la marca opera bajo la órbita de SAIC con una propuesta renovada que prioriza la accesibilidad, la tecnología de punta y una gama fuertemente orientada hacia vehículos eléctricos e híbridos, logrando una rápida expansión comercial en múltiples regiones globales.",
+  "status": "confirmado",
+  "officialName": "MG",
+  "country": "Reino Unido",
+  "foundedYear": 1924,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T22:20:37.704Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mg-hs",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mg-zs",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mg4",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.mgmotor.eu/es-ES/about",
+    "secondarySource": "https://www.mgmotorlatam.com/mg-about-us",
+    "note": "Se verificaron los orígenes de la marca en 1924 a través de Morris Garages y su posterior adquisición y respaldo actual por parte del gigante asiático SAIC Motor.",
+    "limitations": [
+      "La información disponible se centra en hitos generales y la transición corporativa, omitiendo detalles exhaustivos de cada etapa técnica de su historia."
+    ]
+  }
+}

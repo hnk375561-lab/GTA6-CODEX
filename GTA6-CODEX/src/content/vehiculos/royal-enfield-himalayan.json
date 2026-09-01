@@ -1,0 +1,216 @@
+{
+  "slug": "royal-enfield-himalayan",
+  "type": "vehiculos",
+  "title": "Royal Enfield Himalayan",
+  "description": "Moto adventure de Royal Enfield, pensada para largas travesías y terreno mixto, motor monocilíndrico de 411cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "royal-enfield",
+    "enduro"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "royal-enfield-classic-350",
+      "relation": "mismo_fabricante"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Royal Enfield",
+  "class": "Moto adventure",
+  "power": "40 CV",
+  "price": "ARS 10.200.000 (Referencia mercado)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "ARS",
+    "amount": 10200000,
+    "raw": "ARS 10.200.000 (Referencia mercado)"
+  },
+  "consumo": "no publicado oficialmente",
+  "dimensiones": "2245 x 852 x 1316 mm",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://fichamotos.com.ar/fichas/royal-enfield/himalayan-450",
+    "secondarySource": "https://www.motociclismo.es/pruebas/royal-enfield-himalayan-450-prueba-ficha-tecnica-moto-aventura-todos_285591_102.html",
+    "note": "Se actualizaron los datos técnicos basándose en la nueva generación Royal Enfield Himalayan 450, corroborando cilindrada, potencia de 40 CV, dimensiones, peso de 196 kg y capacidad del tanque de 17 litros mediante fichas técnicas especializadas y portales oficiales de la marca.",
+    "limitations": [
+      "Los valores de precio en pesos argentinos varían constantemente debido a la inflación y la carga impositiva local.",
+      "Ciertos datos prestacionales de aceleración no son provistos de manera oficial por el fabricante."
+    ]
+  },
+  "performance": {
+    "speed": "135 km/h"
+  },
+  "createdAt": "2026-08-23T21:59:11.515889Z",
+  "updatedAt": "2026-08-27T03:08:00.461Z",
+  "transmision": "Manual",
+  "traccion": "Trasera por cadena",
+  "peso": "196 kg",
+  "tipoMotor": "Monocilíndrico, 4 tiempos, DOHC, 4 válvulas, refrigeración líquida",
+  "potenciaKW": "29 kW",
+  "capacidadTanque": "17 litros",
+  "tiempoRecorrido": "no publicado oficialmente",
+  "anoProduccion": "2024-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "A",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "452 cc",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (Himalayan 450)",
+  "anoLanzamiento": 2024,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 6.800"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T03:08:00.461Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 135
+    },
+    "consumo": {
+      "promedio": "3.5 l/100km"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Royal Enfield Himalayan 450 representa un punto de inflexión absoluto para la emblemática marca de herencia británica. Tras el éxito rotundo de su predecesora de 411 cc, la firma decidió rediseñar por completo su concepto de moto adventure para adaptarse a las exigencias modernas del mercado global. Concebida y probada en las rutas más inhóspitas de la cordillera del Himalaya, esta nueva generación abandona los esquemas mecánicos tradicionales de la marca para adoptar una plataforma completamente nueva, enfocada en ofrecer un rendimiento superior tanto en largas travesías asfálticas como en los terrenos off-road más complejos.\n\n## Un hito o generación relevante\nEl gran salto tecnológico de esta plataforma radica en la incorporación del motor Sherpa 450, el primer propulsor con refrigeración líquida en la historia de Royal Enfield. Con una cilindrada exacta de 452 cc, distribución DOHC y 4 válvulas, entrega una potencia de 40 CV a 8.000 rpm y un par motor de 40 Nm a 5.500 rpm. Este bloque se encuentra adosado a un chasis de doble viga de acero desarrollado junto a Harris Performance, complementado por un esquema de suspensiones de largo recorrido —con horquilla invertida delantera y monoamortiguador trasero con bieleta— que aseguran una absorción de irregularidades sobresaliente y una conducción sumamente dócil.\n\n## Curiosidades\nEntre los detalles más destacados de la Himalayan 450 se encuentra su renovado panel de instrumentos circular dotado de conectividad avanzada y navegación integrada mediante mapas, eliminando la necesidad de soportes externos para dispositivos móviles. Además, su diseño frontal integra un sistema de iluminación LED completo y un tanque de combustible de 17 litros que optimiza la autonomía para los motoviajeros. Su electrónica incluye modos de conducción configurables y un sistema de frenos ABS de doble canal que puede desconectarse en la rueda trasera, un requisito indispensable para los entusiastas de la conducción off-road más pura.\n\n## Competencia y posicionamiento\nEn el mercado actual, la Royal Enfield Himalayan 450 compite de forma directa en el segmento de las trail de media cilindrada, plantando cara a opciones consagradas de marcas europeas y japonesas. Su principal fortaleza reside en una ecuación altamente competitiva entre tecnología moderna, capacidades camperas reales y un precio de referencia sumamente atractivo. De este modo, la Himalayan 450 se consolida como una alternativa robusta, versátil y preparada tanto para el uso diario en ciudad como para expediciones transcontinentales exigentes.",
+  "generacionInfo": {
+    "raw": "Segunda generación (Himalayan 450)",
+    "numero": 2,
+    "codigoChasis": "450",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Royal Enfield Himalayan - Moto adventure Royal Enfield. 135 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

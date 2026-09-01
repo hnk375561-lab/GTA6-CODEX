@@ -1,0 +1,247 @@
+{
+  "slug": "ferrari-296-gtb",
+  "type": "vehiculos",
+  "title": "Ferrari 296 GTB",
+  "description": "Deportivo híbrido enchufable de motor central de Ferrari, V6 biturbo + eléctrico.",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "ferrari"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-m4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-camaro",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-corvette",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-mustang",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Ferrari",
+  "class": "Deportivo",
+  "power": "830 CV / 610 kW combinados (V6 biturbo + motor eléctrico)",
+  "price": "USD 351.950 (MSRP base EE.UU.)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 351950,
+    "raw": "USD 351.950 (MSRP base EE.UU.)"
+  },
+  "consumo": "7.2 l/100km combinado WLTP + modo 100% eléctrico",
+  "dimensiones": "4.565 mm x 1.958 mm x 1.187 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.kbb.com/ferrari/296-gtb/2025/specs/",
+    "note": "Se verificaron las especificaciones técnicas principales, potencias combinadas, arquitectura híbrida enchufable y dimensiones directamente de los canales oficiales de Ferrari.",
+    "limitations": [
+      "El precio de referencia corresponde al MSRP base en Estados Unidos antes de opciones e impuestos locales.",
+      "La autonomía eléctrica pura de aproximadamente 25 km responde a ciclos de homologación y puede variar en uso real.",
+      "La disponibilidad y los valores finales dependen fuertemente de los cupos de asignación de fábrica y paquetes opcionales como el Assetto Fiorano."
+    ]
+  },
+  "performance": {
+    "speed": "330 km/h (205 mph)",
+    "acceleration": "0-100 km/h en 2.9s"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:38:20.597Z",
+  "transmision": "Automática de doble embrague de 8 velocidades F1 DCT",
+  "traccion": "Trasera (RWD)",
+  "peso": "1.470 kg (en seco)",
+  "tipoMotor": "Híbrido enchufable: V6 de 120° biturbo de 2.992 cc + motor eléctrico MGU-K",
+  "potenciaKW": "610 kW",
+  "capacidadTanque": "65 litros",
+  "tiempoRecorrido": "2.9s",
+  "anoProduccion": "2024",
+  "mercados": [
+    "Italia",
+    "USA",
+    "Europa",
+    "Medio Oriente",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Batería de tracción 7.45 kWh",
+    "Modo 100% eléctrico (eDrive)",
+    "Spoiler activo trasero",
+    "Assetto Fiorano (paquete opcional de pista)",
+    "Frenos carbono-cerámicos de serie"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "245/35R20 delantero, 305/35R20 trasero",
+  "especificacionesMotor": {
+    "filtro_aire": "Doble filtro de alto rendimiento",
+    "tipo_valvulas": "DOHC 24 válvulas",
+    "ratio_compresion": "9.4:1",
+    "sistemas_inyeccion": "Inyección directa de alta presión",
+    "arbol_levas": "Variable independiente"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "2.992 cc",
+  "emisiones": "CO2 149 g/km (WLTP, ciclo combinado)",
+  "asientos": 2,
+  "baul": 210,
+  "maleteroMin": null,
+  "generacion": "Única (2021-presente)",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Italia",
+        "Alemania",
+        "Reino Unido",
+        "Francia"
+      ],
+      "precioBase": "€269.000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "Brasil"
+      ],
+      "precioBase": "USD 351.950"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Emiratos Árabes Unidos"
+      ],
+      "precioBase": "USD 380.000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2021-presente",
+      "unidadesProducidas": "Producción limitada por encargo, cifras no divulgadas por Ferrari"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "296 GTB (cupé)",
+      "precio": "USD 351.950"
+    },
+    {
+      "nombre": "296 GTS (targa)",
+      "precio": "USD 379.500"
+    },
+    {
+      "nombre": "296 Speciale",
+      "precio": "USD 450.000 (estimado)"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:38:20.597Z",
+    "dataQuality": 0.9
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": {
+    "USD": {
+      "precio": 351950,
+      "moneda": "USD",
+      "disponible": true
+    }
+  },
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nLa Ferrari 296 GTB representa un quiebre conceptual e histórico dentro de la casa de Maranello. Presentada oficialmente en 2021, su denominación sigue la tradicional nomenclatura de la marca combinando su cilindrada (2.9 litros) y cantidad de cilindros (6), seguida por las siglas GTB (Gran Turismo Berlinetta). Lo verdaderamente revolucionario de este modelo es que marca el regreso de un motor de seis cilindros a un deportivo de calle de producción regular bajo el Cavallino Rampante, un linaje que no se veía desde la gama Dino comercializada entre finales de los años 60 y principios de los 70.\n\nLejos de ser un simple ejercicio de nostalgia, la 296 GTB adopta la electrificación más avanzada desarrollada por la marca en la Fórmula 1 para redefinir el concepto de auto deportivo de motor central-trasero. Su arquitectura combina un bloque térmico completamente nuevo con una disposición a 120 grados que permite alojar los turbocompresores en el interior de la V, optimizando el espacio, bajando el centro de gravedad y mejorando notablemente la eficiencia termodinámica.\n\n## Un hito de ingeniería y electrificación\n\nEl gran hito de este deportivo radica en su sistema híbrido enchufable (PHEV). El motor de combustión interna entrega por sí solo unos impactantes 663 CV, a los que se suman otros 167 CV aportados por un motor eléctrico compacto (MGU-K) ubicado entre el propulsor térmico y la transmisión de doble embrague de 8 velocidades. La potencia combinada alcanza los 830 CV (610 kW), gestionados exclusivamente a través de las ruedas traseras.\n\nGracias a su batería de 7.45 kWh, la 296 GTB puede circular en modo 100% eléctrico (eDrive) durante trayectos urbanos breves, ofreciendo una versuilidad inédita para un superdeportivo de Maranello sin resignar prestaciones extremas en circuito.\n\n## Curiosidades\n\nEntre sus detalles más destacados se encuentra la aerodinámica activa. Hereda conceptos complejos probados en la cúspide de la gama de la marca, como el spoiler trasero activo integrado en el paragolpes que genera carga aerodinámica adicional cuando es necesario frenar o tomar curvas a alta velocidad, reduciendo la resistencia al avance en rectas.\n\nAdemás, el paquete opcional 'Assetto Fiorano' incorpora mejoras de competición, incluyendo amortiguadores especiales Multimatic derivados de las carreras GT, elementos de fibra de carbono que aligeran el conjunto y una decoración inspirada en la mítica Ferrari 250 LM.\n\n## Competencia y posicionamiento\n\nEn el mercado global, la Ferrari 296 GTB se posiciona como el escalón prestacional de acceso a los superdeportivos híbridos de la marca, aunque sus números la ubican holgadamente al nivel de competidores directos de altísimo calibre como el McLaren Artura, el Porsche 911 Turbo S y los exponentes de motor V8 de menor tamaño en el segmento de lujo. Su capacidad para combinar una dinámica de conducción punzante, tecnología híbrida enchufable y un sonido muy particular para un V6 la han convertido en una de las referencias indiscutidas de su categoría.",
+  "generacionInfo": {
+    "raw": "Única (2021-presente)",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": 2021,
+    "anoFin": null,
+    "rangoAbierto": true,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Ferrari 296 GTB - Híbrido enchufable V6 de 830 CV combinados. Especificaciones, precio y disponibilidad, ago 2026."
+}

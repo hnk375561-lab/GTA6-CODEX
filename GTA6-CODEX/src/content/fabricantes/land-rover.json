@@ -1,0 +1,47 @@
+{
+  "slug": "land-rover",
+  "type": "fabricantes",
+  "title": "Land Rover",
+  "description": "Vehículos y motocicletas de Land Rover",
+  "content": "## Identidad de Marca\n\nLand Rover se consolidó globalmente como una de las marcas de referencia en el desarrollo y comercialización de vehículos todoterreno. Caracterizada por su enfoque en la tracción integral (4WD) y su capacidad para operar en terrenos complejos, la firma combina una propuesta de diseño robusto con prestaciones mecánicas orientadas tanto al uso utilitario como al segmento prémium.\n\n## Historia Real y Hitos\n\nLos orígenes de la marca se remontan a 1948, año en que la entonces Rover Company ideó un utilitario todoterreno con tracción en las cuatro ruedas. El modelo original hizo su debut formal en el Salón del Automóvil de Ámsterdam de ese mismo año, logrando una rápida aceptación en el mercado por su durabilidad y resistencia mecánica.\n\nA lo largo de las décadas, la estructura corporativa experimentó diversas transformaciones. En la actualidad, Land Rover forma parte del grupo Jaguar Land Rover (JLR), el cual opera a su vez como una subsidiaria del conglomerado industrial indio Tata Motors desde 2008. La producción de sus vehículos se distribuye internacionalmente en plantas ubicadas en el Reino Unido, China, India y Eslovaquia.\n\n## Posicionamiento Actual\n\nEn el mercado automotor contemporáneo, Land Rover ocupa un espacio singular donde conviven la herencia de sus vehículos de trabajo originales y la sofisticación tecnológica de su gama actual. La marca mantiene su vigencia comercial adaptándose a los estándares globales de confort y seguridad, sin abandonar el ADN de versatilidad off-road que definió su propuesta desde su irrupción en la posguerra europea.",
+  "status": "confirmado",
+  "officialName": "Land Rover",
+  "country": "Reino Unido",
+  "foundedYear": 1948,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:22:53.302Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-defender",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-discovery",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-range-rover",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Land_Rover",
+    "secondarySource": "https://clixauto.com/es/blogs/history/a-brief-history-of-land-rover",
+    "note": "Se verificó la fundación de la marca en 1948 por la Rover Company y su evolución corporativa actual bajo el grupo Tata Motors mediante Jaguar Land Rover.",
+    "limitations": [
+      "El análisis se limita a los hitos históricos documentados en las fuentes provistas."
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "jeep",
+  "type": "fabricantes",
+  "title": "Jeep",
+  "description": "Vehículos y motocicletas de Jeep",
+  "content": "## Identidad de marca\nJeep se consolidó a nivel global como el referente indiscutido de los vehículos todoterreno. Lejos de ser una simple etiqueta comercial, el nombre de la marca es hoy sinónimo de aventura, libertad y capacidades dinámicas extremas fuera del asfalto. Su impronta robusta traspasó las fronteras del mercado militar para convertirse en un emblema de la versatilidad automotriz.\n\n## Historia real y origen\nLa historia de la marca se puso en marcha formalmente en 1941, impulsada por un requerimiento directo del ejército de los Estados Unidos. Ante la necesidad de contar con un medio de movilidad ligero y adaptable a cualquier terreno para las tropas en el frente de combate de la Segunda Guerra Mundial, la empresa Willys-Overland Motors desarrolló el vehículo inicial. \n\nEl nombre «Jeep» nació de la fonética inglesa de las siglas «GP» (yi-pi), que respondían a la denominación técnica *General Purpose* (propósito general). No obstante, el ingenio popular también popularizó una teoría alternativa ligada a «Eugene the Jeep», un personaje de la historieta de Popeye dotado de habilidades místicas, cuyos poderes se comparaban con el extraordinario desempeño del vehículo 4x4. \n\nApenas finalizado el conflicto bélico, la marca dio un paso clave hacia el uso civil con el debut en julio de 1946 del Jeep Station Wagon, considerado el primer vehículo familiar totalmente de acero y el precursor histórico de lo que hoy conocemos como SUVs de gran porte.\n\n## Posicionamiento actual\nEn la actualidad, Jeep forma parte del conglomerado global Stellantis. La marca mantiene vigente su ADN histórico enfocado en la tracción integral y el rendimiento off-road, adaptándose a las exigencias contemporáneas del mercado automotriz sin perder la mística de sus orígenes militares y de su primer prototipo Quad 4x4 presentado a principios de los años 40.",
+  "status": "confirmado",
+  "officialName": "Jeep",
+  "country": "Estados Unidos",
+  "foundedYear": 1941,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:46:09.567Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-compass",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-grand-cherokee",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-renegade",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-wrangler",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Jeep",
+    "note": "Se verificó la fundación de la marca en 1941, su origen ligado al requerimiento militar de la Segunda Guerra Mundial mediante Willys-Overland Motors, y su pertenencia actual a Stellantis.",
+    "limitations": [
+      "No se detallan especificaciones técnicas completas de los modelos modernos en las fuentes provistas.",
+      "La evolución comercial exacta entre las décadas de 1970 y 1990 está acotada en este dataset."
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "genesis",
+  "type": "fabricantes",
+  "title": "Genesis",
+  "description": "Vehículos y motocicletas de Genesis",
+  "content": "## Identidad de marca\nGenesis se consolidó como la primera división de vehículos de alta gama creada por un fabricante automotriz de Corea del Sur, operando bajo el conglomerado Hyundai Motor Group. Su propuesta se centra en redefinir el lujo moderno a través de un diseño sofisticado, tecnología de vanguardia y un rendimiento dinámico enfocado en competir directamente con las marcas prémium tradicionales a nivel global.\n\n## Historia real y evolución\nLas bases del proyecto comenzaron a gestarse alrededor de 2003 y 2004, cuando Hyundai conceptualizó un sedán deportivo de tracción trasera e ideó un plan a largo plazo para un segmento superior. Tras años de desarrollo y una inversión multimillonaria coordinada desde el centro de investigación de Namyang, el hito clave ocurrió el 4 de noviembre de 2015, momento en el cual Hyundai separó oficialmente su división de lujo para constituirla como una marca independiente.\n\nEl despliegue comercial inició con el sedán insignia EQ900 (conocido globalmente como G90) y el G80. La expansión internacional no tardó en llegar: la marca ingresó al mercado estadounidense en 2017 y posteriormente hizo su desembarco en Europa en 2021. En su primer decenio de vida, Genesis logró superar hitos comerciales relevantes al rebasar el umbral de 1.5 millones de unidades acumuladas a nivel global hacia finales de 2025.\n\n## Posicionamiento actual\nEn la actualidad, Genesis transita una etapa de madurez y expansión global, diversificando su presencia tanto en el mercado de vehículos de pasajeros como en el automovilismo deportivo. Un reflejo de esta ambición es la creación en 2024 de su división Genesis Magma Racing Team, con la cual proyecta su participación en el Campeonato Mundial de Resistencia de la FIA (WEC) a partir de 2026 mediante el prototipo GMR-001 LMDh, reafirmando su vocación por la alta performance y la innovación tecnológica.",
+  "status": "confirmado",
+  "officialName": "Genesis",
+  "country": "Corea del Sur",
+  "foundedYear": 2015,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:20:38.384Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "genesis-gv70",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://en.wikipedia.org/wiki/Genesis_Motor",
+    "secondarySource": "https://www.hyundaimotorgroup.com/en/story/genesis-ten-years-journey",
+    "note": "Se verificó la fundación de Genesis como marca independiente en 2015 bajo el paraguas del Hyundai Motor Group, sus antecedentes de desarrollo iniciados en la década del 2000 y sus hitos comerciales y de competición recientes.",
+    "limitations": [
+      "No se detallan especificaciones técnicas de todos los modelos de la gama actual en el resumen proporcionado.",
+      "Los datos de ventas globales reflejan cifras acumuladas hasta finales de 2025."
+    ]
+  }
+}

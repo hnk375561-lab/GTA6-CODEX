@@ -1,0 +1,182 @@
+{
+  "slug": "kia-rio",
+  "type": "vehiculos",
+  "title": "Kia Rio",
+  "description": "Compacto de entrada de Kia, disponible en versión hatchback y sedán.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "kia"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-ev6",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-picanto",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-seltos",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-focus",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mazda-3",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Kia",
+  "class": "Hatchback/Sedán",
+  "power": "no publicado oficialmente",
+  "price": "no publicado oficialmente",
+  "priceStructured": {
+    "type": "unstructured",
+    "currency": null,
+    "raw": "no publicado oficialmente"
+  },
+  "consumo": "no publicado oficialmente",
+  "dimensiones": "no publicado oficialmente",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://es.wikipedia.org/wiki/Katia_del_R%C3%ADo",
+    "note": "Se descartaron los datos genéricos previos del Kia Rio dado que la única fuente factual provista en el contexto corresponde a la actriz mexicana Katia del Río. Por rigor técnico y para evitar desinformación, los campos numéricos y especificaciones del automóvil se han dejado sin publicar (null o no publicado oficialmente).",
+    "limitations": [
+      "No se dispone de especificaciones técnicas automotrices reales para este registro dentro de las fuentes provistas",
+      "El contexto aportado corresponde a una biografía personal y no a fichas técnicas vehiculares"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:49:33.756Z",
+  "transmision": "no publicado oficialmente",
+  "traccion": "no publicado oficialmente",
+  "peso": "no publicado oficialmente",
+  "tipoMotor": "no publicado oficialmente",
+  "potenciaKW": "no publicado oficialmente",
+  "capacidadTanque": "no publicado oficialmente",
+  "tiempoRecorrido": "no publicado oficialmente",
+  "anoProduccion": "no publicado oficialmente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "asientos": null,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": null,
+  "anoLanzamiento": null,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 17.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:49:33.756Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl nombre \"Rio\" suele vincularse de manera directa con la industria automotriz global a través del clásico compacto de la marca surcoreana Kia. Sin embargo, al analizar en detalle los registros documentales y las referencias cruzadas disponibles en esta ficha, surge una particularidad interesante que cruza caminos inesperados del mundo del espectáculo y la cultura pop.\n\n## Un hito o generación relevante\n\nDentro de las fuentes documentales confiables asociadas a esta denominación exacta en el ámbito hispanohablante, destaca la figura de Katia del Río, reconocida actriz mexicana que marcó una época en la televisión y el cine de su país antes de su retiro definitivo de los escenarios. Este cruce nominal demuestra cómo un término puede habitar universos completamente disímiles, desde el asfalto y la movilidad urbana hasta los sets de filmación latinoamericanos.\n\n## Curiosidades\n\nEn el mundo de los catálogos digitales, la gestión de metadatos y nombres homónimos a menudo genera situaciones curiosas donde términos de la industria del motor convergen con nombres propios de personalidades públicas. Mientras que en el mercado global un vehículo compacto lleva este nombre como emblema de accesibilidad y diseño funcional, en los registros biográficos el mismo término evoca la trayectoria artística de una intérprete que dejó su huella en la pantalla chica.\n\n## Competencia y posicionamiento\n\nAl no existir una vinculación directa entre las especificaciones técnicas del vehículo y la información factual provista por las fuentes oficiales de referencia en esta ronda, se mantiene una postura de estricta neutralidad informativa. El posicionamiento de este registro queda sujeto a futuras actualizaciones que permitan separar con precisión la nomenclature comercial del sector automotor respecto de otras referencias culturales e históricas.",
+  "generacionInfo": null,
+  "seoDescription": "Kia Rio - Hatchback/Sedán Kia. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

@@ -1,0 +1,35 @@
+{
+  "slug": "aston-martin",
+  "type": "fabricantes",
+  "title": "Aston Martin",
+  "description": "Vehículos y motocicletas de Aston Martin",
+  "content": "## Identidad de Marca\nAston Martin se consolidó a lo largo de más de un siglo como uno de los máximos exponentes globales en el segmento de vehículos de alta gama, alto rendimiento y diseño artesanal. Su impronta combina una estética clásica con prestaciones mecánicas de vanguardia, posicionándose en la cúspide del mercado de automóviles deportivos de lujo.\n\n## Historia y Evolución\nLos orígenes de la compañía se remontan al 15 de enero de 1913, cuando los socios Robert Bamford y Lionel Martin fundaron la firma bajo el nombre inicial de Bamford & Martin en Londres. En sus primeros años, el foco estuvo puesto en la fabricación artesanal de vehículos de carácter deportivo que rápidamente comenzaron a ganar notoriedad en el ámbito de las competencias.\n\nA lo largo de su extensa trayectoria, la empresa atravesó numerosas transformaciones societarias y pasó por las manos de diversos grupos industriales. Entre los capítulos más destacados de su historia moderna figura su integración al Premier Automotive Group, la división de marcas de lujo que Ford Motor Company estructuró en Europa hasta su disolución en 2008.\n\n## Posicionamiento Actual\nTras sucesivas etapas bajo diferentes consorcios, la compañía dio un paso clave en 2018 al convertirse en una empresa de cotización pública. Posteriormente, a partir de 2020, sumó el respaldo estratégico de un grupo inversor liderado por el empresario canadiense Lawrence Stroll, quien asumió un rol central en la dirección accionaria. Hoy en día, Aston Martin mantiene su vigencia combinando su herencia histórica en el automovilismo con una propuesta tecnológica adaptada a los estándares más exigentes del mercado internacional de súper deportivos.",
+  "status": "confirmado",
+  "officialName": "Aston Martin",
+  "country": "Reino Unido",
+  "foundedYear": 1913,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:18:00.024Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "aston-martin-db12",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Aston_Martin",
+    "note": "Se verificó la fecha de fundación, los fundadores originales (Lionel Martin y Robert Bamford) y los cambios societarios recientes mediante fuentes enciclopédicas y registros históricos.",
+    "limitations": [
+      "No se detallan los volúmenes de producción exactos por modelo en este perfil",
+      "La información sobre la estructura accionaria posterior a 2020 se resume a los actores principales"
+    ]
+  }
+}

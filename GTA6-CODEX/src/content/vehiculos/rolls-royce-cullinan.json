@@ -1,0 +1,167 @@
+{
+  "slug": "rolls-royce-cullinan",
+  "type": "vehiculos",
+  "title": "Rolls-Royce Cullinan",
+  "description": "SUV de ultralujo de Rolls-Royce, motor V12 biturbo.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "rolls-royce"
+  ],
+  "featured": false,
+  "manufacturer": "Rolls-Royce",
+  "class": "SUV de ultralujo",
+  "power": "571 hp",
+  "price": "USD 390.000 (MSRP referencia)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 390000,
+    "raw": "USD 390.000 (MSRP referencia)"
+  },
+  "consumo": "15.0 l/100km combinado",
+  "dimensiones": "5.341 mm largo x 2.000 mm ancho x 1.835 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.rolls-royce.com",
+    "note": "Se actualizaron las especificaciones del Rolls-Royce Cullinan basadas en conocimiento general de alta confianza de la industria automotriz, incluyendo su motor V12 de 6.75 litros, dimensiones reales de su carrocería y capacidades.",
+    "limitations": [
+      "El precio puede variar significativamente según las opciones de personalización de Bespoke",
+      "Los consumos y prestaciones exactas pueden variar levemente según la versión (como la variante Black Badge)"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:26:09.028Z",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "Tracción integral en las cuatro ruedas (AWD)",
+  "peso": "2.660 kg",
+  "tipoMotor": "Gasolina V12 biturbo",
+  "potenciaKW": "420 kW",
+  "capacidadTanque": "90 litros",
+  "tiempoRecorrido": "0-100 km/h en 5.2s",
+  "anoProduccion": "2018-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "6.750 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 560,
+  "maleteroMin": null,
+  "generacion": "Mk I",
+  "anoLanzamiento": 2018,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 380.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:26:09.028Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl Rolls-Royce Cullinan representa un hito fundamental en la historia centenaria de la marca británica de ultralujo: el ingreso formal al segmento de los vehículos utilitarios deportivos (SUV). Presentado oficialmente a mediados de 2018, este modelo toma su nombre del diamante Cullinan, el diamante en bruto más grande jamás encontrado. Diseñado bajo la premisa de ofrecer la célebre sensación de \"alfombra mágica\" en cualquier tipo de terreno, la marca desarrolló desde cero una nueva arquitectura de aluminio denominada \"Architecture of Luxury\", compartida también con el imponente sedán Phantom.\n\n## Un hito y diseño relevante\n\nEl desarrollo del Cullinan rompió con los paradigmas tradicionales de Goodwood al incorporar tracción integral y una suspensión neumática profundamente revisada que se adapta de manera milimétrica a las irregularidades del camino mediante la lectura constante del terreno a través de cámaras. Estéticamente, mantiene los códigos de identidad indiscutibles de Rolls-Royce: una parrilla frontal inspirada en el Panteón griego esculpida a mano, la emblemática estatuilla del \"Spirit of Ecstasy\" en el capó y las icónicas puertas de apertura suicida (hacia atrás) que facilitan el acceso al habitáculo más exclusivo del mercado automotriz.\n\n## Curiosidades y detalles de ingeniería\n\nEntre sus características más destacadas se encuentra la opción del \"Viewing Suite\", un mecanismo automatizado que despliega dos asientos de cuero y una pequeña mesa desde el compartimiento del baúl para contemplar paisajes al aire libre. Asimismo, el habitáculo está aislado por más de 100 kilogramos de material aislante acústico, doble panel de vidrios y una estructura de carrocería tan rígida que logra silenciar por completo el exterior, convirtiéndolo en un santuario rodante propulsado por un imponente motor V12 de 6.75 litros con doble turbocompresor.\n\n## Competencia y posicionamiento\n\nEn la cúspide absoluta del mercado automotriz global, el Rolls-Royce Cullinan compite en una liga exclusiva reservada para los SUV más caros y sofisticados del mundo. Sus rivales directos incluyen al Bentley Bentayga y, en términos de exclusividad y precio, versiones de producción sumamente limitadas o preparaciones especiales de marcas de súper deportivos. No obstante, el Cullinan se posiciona firmemente como el referente indiscutido del ultralujo gracias a sus infinitas posibilidades de personalización a través del programa Bespoke, donde cada cliente puede configurar materiales únicos, maderas nobles y acabados hechos a medida que elevan su valor final significativamente por encima del precio base.",
+  "generacionInfo": {
+    "raw": "Mk I",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Rolls-Royce Cullinan - SUV de ultralujo Rolls-Royce. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "citroen",
+  "type": "fabricantes",
+  "title": "Citroën",
+  "description": "Vehículos y motocicletas de Citroën",
+  "content": "## Identidad de marca\nCitroën se consolidó a lo largo de más de un siglo como una de las marcas más emblemáticas de la industria automotriz, caracterizada por un enfoque disruptivo, audaz y con una marcada impronta humana orientada al confort y la accesibilidad en la movilidad.\n\n## Historia real\nLa compañía fue fundada oficialmente en 1919 por el visionario industrial André Citroën, cuya fecha de nacimiento data de febrero de 1878 y cuyas innovaciones cambiaron para siempre los paradigmas de la fabricación y comercialización de vehículos. A lo largo de su dilatada trayectoria, la firma acumuló un patrimonio de más de 300 modelos que marcaron hitos imborrables en las calles del mundo.\n\nEntre sus creaciones más recordadas y vanguardistas figuran vehículos utilitarios y de pasajeros que revolucionaron sus respectivas épocas por su diseño y funcionalidad, tales como el histórico utilitario Citroën H, el popular y accesible Citroën 2CV, el ecléctico Citroën Mehari, además de los icónicos y avanzados Citroën DS y Citroën CX, reconocidos por sus soluciones tecnológicas de suspensión y aerodinámica.\n\n## Posicionamiento actual\nEn la actualidad, la marca forma parte del gigante global Stellantis, adaptándose a las demandas de la industria moderna sin perder su ADN histórico centrado en la originalidad, el diseño distintivo y el bienestar a bordo para el usuario contemporáneo.",
+  "status": "confirmado",
+  "officialName": "Citroën",
+  "country": "Francia",
+  "foundedYear": 1919,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:19:28.299Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3-aircross",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c4",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Citro%C3%ABn",
+    "note": "Se verificó la fundación de la marca en 1919 por André Citroën, su pertenencia actual a Stellantis, su trayectoria con más de 300 modelos históricos y su sede actual en Francia a través de fuentes enciclopédicas y oficiales.",
+    "limitations": [
+      "No se detallan en el texto base las cifras exactas de producción actual de cada planta regional."
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "slug": "nissan",
+  "type": "fabricantes",
+  "title": "Nissan",
+  "description": "Vehículos y motocicletas de Nissan",
+  "content": "## Identidad de marca\nNissan Motor Co., Ltd. se consolidó a lo largo de las décadas como uno de los fabricantes globales más importantes de la industria automotriz. Con su sede central ubicada en Nishi-ku, Yokohama, la compañía adoptó históricamente el lema institucional «Innovation that excites» («Innovación que emociona»), reflejando su enfoque en el desarrollo tecnológico y la ingeniería aplicada a la movilidad masiva.\n\n## Historia real y evolución\nLos orígenes de la firma se remontan al período comprendido entre 1928 y 1958, bajo el liderazgo de Yoshisuke Aikawa. Formalmente, la compañía adoptó su estructura actual el 26 de diciembre de 1933 bajo la denominación inicial de *Jidosha-Seizo Kabushiki-Kaisha* (traducido como *Automobile Manufacturing Co., Ltd.*). Su nombre actual, Nissan, surge como un acrónimo de «Nippon Sangyo».\n\nEn su etapa de expansión internacional, la marca comenzó a diversificar su producción fuera de su territorio de origen a mediados del siglo XX. Instaló operaciones de fabricación en Taiwán a partir de 1959 y estableció una planta en México en 1961. Hacia la década de 1980, afianzó su presencia global con el establecimiento de bases estratégicas de manufactura en los Estados Unidos, marcando su consolidación en el mercado norteamericano.\n\n## Posicionamiento actual\nEn la actualidad, Nissan ocupa un rol protagónico en el volumen de producción mundial de vehículos. Desde 1999, forma parte de una triple alianza junto a Renault y Mitsubishi. Dentro de este esquema corporativo, la firma francesa reestructuró recientemente su participación accionaria, reduciéndola del 43% al 15%, lo que evidencia una evolución constante en la gobernanza y autonomía de las marcas que integran el consorcio.",
+  "status": "confirmado",
+  "officialName": "Nissan",
+  "country": "Japón",
+  "foundedYear": 1933,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:47:15.845Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-frontier",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-gt-r",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-kicks",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-leaf",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-navara",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-qashqai",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-sentra",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-versa",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-x-trail",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Nissan",
+    "secondarySource": "https://clixauto.com/es/blogs/history/a-brief-history-of-nissan",
+    "note": "Se verificó la fundación de la compañía en 1933, sus orígenes ligados a Yoshisuke Aikawa y su estructura corporativa actual incluyendo la alianza estratégica.",
+    "limitations": [
+      "No se detallan especificaciones técnicas de modelos recientes en el extracto provisto",
+      "La información sobre la evolución de la alianza Renault-Nissan-Mitsubishi se limita a los cambios accionariales recientes"
+    ]
+  }
+}

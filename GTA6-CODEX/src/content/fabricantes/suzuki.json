@@ -1,0 +1,64 @@
+{
+  "slug": "suzuki",
+  "type": "fabricantes",
+  "title": "Suzuki",
+  "description": "Vehículos y motocicletas de Suzuki",
+  "content": "## Identidad de marca\nSuzuki es una multinacional consolidada en el desarrollo y fabricación de vehículos compactos, todoterrenos, motocicletas y motores fuera de borda. Su filosofía de diseño prioriza la eficiencia, la agilidad urbana y la capacidad off-road en formatos accesibles, posicionándose como un referente global en ingeniería de vehículos de dimensiones contenidas.\n\n## Historia real y evolución\nLa compañía tiene sus raíces en 1909, cuando Michio Suzuki fundó un taller de telares en la localidad costera de Hamamatsu. Durante sus primeras tres décadas, el negocio se centró en la industria textil, destacándose por la invención de maquinaria avanzada para la exportación. \n\nLa transición hacia el sector de la movilidad comenzó de forma práctica tras la posguerra, impulsada por la necesidad de transporte económico. En 1952, la empresa introdujo un pequeño motor auxiliar para bicicletas. Poco después, en 1955, dio el salto definitivo al mercado automotor con el lanzamiento del Suzulight 360, un mini coche utilitario diseñado para motorizar a Japón en un contexto desafiante. Este modelo marcó el inicio de una demanda sostenida que transformó a la firma en un fabricante clave de equipos de transporte.\n\n## Posicionamiento actual\nEn la actualidad, la marca mantiene un rol destacado en la industria automotriz y de las dos ruedas, donde sus volúmenes de venta de motocicletas en el mercado doméstico se ubican entre los principales del país nipón. Su enfoque sigue enfocado en la movilidad eficiente, adaptándose a las demandas contemporáneas del mercado internacional con una oferta centrada en la practicidad y la funcionalidad.",
+  "status": "confirmado",
+  "officialName": "Suzuki",
+  "country": "Japón",
+  "foundedYear": 1909,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:27:11.304Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-baleno",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-fronx",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-gsx-r750",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-jimny",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-swift",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-vitara",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Suzuki",
+    "note": "Se verificó la fundación de la empresa en 1909 por Michio Suzuki en Hamamatsu, su origen como fabricante de telares y su posterior transición a la industria de la movilidad con vehículos de dos y cuatro ruedas.",
+    "limitations": [
+      "La documentación histórica disponible se centra principalmente en los hitos generales de su fundación y evolución industrial sin detallar los balances financieros de cada período."
+    ]
+  }
+}

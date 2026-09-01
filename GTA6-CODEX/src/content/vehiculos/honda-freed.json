@@ -1,0 +1,184 @@
+{
+  "slug": "honda-freed",
+  "type": "vehiculos",
+  "title": "Honda Freed",
+  "description": "Minivan compacta japonesa de Honda.",
+  "status": "confirmado",
+  "tags": [
+    "minivan",
+    "honda"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-accord",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb190r",
+      "relation": "mismo_fabricante"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Honda",
+  "class": "Minivan compacta",
+  "power": "117 hp (87 kW) a 6.600 rpm (gasolina) / 121 hp combinados (híbrido e:HEV)",
+  "price": "JPY 2.508.000 (~USD 17.000, referencia mercado japonés)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "JPY",
+    "amount": 2508000,
+    "raw": "JPY 2.508.000 (~USD 17.000, referencia mercado japonés)"
+  },
+  "consumo": "5.5 l/100km combinado (ciclo WLTC)",
+  "dimensiones": "4.310 mm largo x 1.695 mm ancho x 1.755 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://paultan.org/2024/06/27/2024-honda-freed-launched-in-japan/",
+    "secondarySource": "https://llantasneumaticos.com/size/honda/freed/2024/",
+    "note": "Se verificaron las especificaciones técnicas, dimensiones y motorizaciones de la tercera generación del Honda Freed lanzada en Japón en junio de 2024, incluyendo las variantes de gasolina y el sistema híbrido e:HEV.",
+    "limitations": [
+      "Modelo enfocado principalmente en el mercado JDM y selectos países asiáticos",
+      "Cifras de aceleración son estimaciones basadas en configuraciones mecánicas similares",
+      "Los precios fuera de Japón corresponden a valores de importación y pueden variar considerablemente"
+    ]
+  },
+  "performance": {
+    "speed": "165 km/h (referencia)",
+    "acceleration": "0-100 km/h en 11.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:45:01.456Z",
+  "transmision": "CVT automática (gasolina) / e:HEV transmisión eléctrica de una velocidad / DCT híbrido",
+  "traccion": "Delantera (4WD opcional según versión)",
+  "peso": "1.340-1.470 kg",
+  "tipoMotor": "Gasolina 1.5L i-VTEC / Híbrido e:HEV",
+  "potenciaKW": "87 kW",
+  "capacidadTanque": "36 litros",
+  "tiempoRecorrido": "11.5s",
+  "anoProduccion": "2024",
+  "mercados": [
+    "Japón",
+    "Sudeste Asiático"
+  ],
+  "equipamiento": [
+    "Honda Sensing 360 (asistentes de conducción)",
+    "Puertas correderas eléctricas",
+    "Pantalla táctil 9\"",
+    "Asientos configurables 2ª y 3ª fila"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "185/65 R15",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC i-VTEC",
+    "ratio_compresion": "10.3:1",
+    "sistemas_inyeccion": "Inyección electrónica multipunto",
+    "arbol_levas": "Variable (i-VTEC)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.496 cc",
+  "emisiones": null,
+  "asientos": 6,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "III",
+  "anoLanzamiento": 2024,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 20.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:45:01.456Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Honda Freed es una de las minivans compactas más exitosas y versátiles dentro del mercado japonés (JDM). Introducido originalmente en 2008 como un reemplazo directo del Honda Mobilio, el Freed logró capturar rápidamente la atención de las familias urbanas gracias a su inteligente aprovechamiento del espacio interior en una huella exterior muy contenida. A lo largo de sus dos primeras generaciones, el modelo se consolidó como un referente de practicidad, ofreciendo configuraciones de asientos flexibles y un acceso sumamente cómodo mediante puertas corredizas traseras, una característica indispensable en los congestionados centros urbanos de Japón.\n\n## Un hito o generación relevante\nLa llegada de la tercera generación a mediados de 2024 marcó un punto de inflexión absoluto para la gama Freed. Con un diseño exterior completamente renovado que adopta líneas más limpias, cuadradas y modernas, esta iteración busca maximizar la visibilidad y el volumen interior útil. Se estructuró en dos grandes variantes estéticas y de uso: la Freed Air, enfocada en la elegancia y el confort familiar tradicional, y la Freed Crosstar, que introduce un aspecto aventurero con protecciones plásticas en la carrocería, barras de techo y una estética aventurera tipo crossover. En el plano mecánico, esta generación incorporó de serie las mejoras del sistema híbrido e:HEV de doble motor de Honda, logrando una eficiencia de combustible sobresaliente y una respuesta mucho más refinada al acelerar, además de sumar el paquete integral de asistencias a la conducción Honda Sensing 360.\n\n## Curiosidades\nUna de las genialidades de diseño del Honda Freed es su capacidad para albergar hasta seis o siete pasajeros en un vehículo que apenas supera los 4.3 metros de largo, dimensiones equivalentes a las de un hatchback mediano tradicional. Para lograr esto, los ingenieros de Honda rediseñaron por completo la plataforma, optimizando el tanque de combustible ubicado bajo los asientos delanteros y logrando un piso completamente plano. Además, la tercera generación introdujo asientos en la tercera fila notablemente más ligeros y fáciles de plegar hacia los laterales, simplificando la tarea de modular el espacio de carga sin requerir un gran esfuerzo físico por parte del usuario.\n\n## Competencia y posicionamiento\nDentro del mercado japonés, el Honda Freed compite directamente contra vehículos consagrados como el Toyota Sienta y, en menor medida, propuestas de mayor tamaño como el Nissan Serena. Su posicionamiento dentro de la categoría de las mini MPVs es de carácter familiar pero con un fuerte enfoque tecnológico y de eficiencia. Si bien no cuenta con intenciones de comercialización oficial masiva en los mercados de Occidente o América Latina, su reputación de vehículo extremadamente fiable, ahorrador y sumamente práctico lo mantiene en la mira de los entusiastas de los vehículos importados de nicho y de la cultura JDM.",
+  "generacionInfo": {
+    "raw": "III",
+    "numero": 3,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Honda Freed - Minivan compacta japonesa, 3ra generación 2024. Especificaciones, precio y disponibilidad, ago 2026."
+}

@@ -1,0 +1,180 @@
+{
+  "slug": "nio-et5",
+  "type": "vehiculos",
+  "title": "NIO ET5",
+  "description": "Sedán eléctrico premium chino de NIO, con sistema de intercambio de batería (battery swap).",
+  "status": "confirmado",
+  "tags": [
+    "electrico",
+    "nio"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-han",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-seal",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-s",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "xiaomi-su7",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "NIO",
+  "class": "Sedán eléctrico",
+  "power": "490 CV (360 kW)",
+  "price": "EUR 48.300 (referencia base mercado europeo)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "EUR",
+    "amount": 48300,
+    "raw": "EUR 48.300 (referencia base mercado europeo)"
+  },
+  "consumo": "15.5 kWh/100 km",
+  "dimensiones": "4.790 mm largo x 1.960 mm ancho x 1.499 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://es.driveduel.de/models/nio/et5-wagon",
+    "note": "Se verificaron las especificaciones técnicas del NIO ET5 utilizando los canales oficiales de NIO y registros de mercado europeo, confirmando los 490 CV (360 kW) de potencia combinada, la aceleración de 0 a 100 km/h en 3.9 segundos y los datos de capacidad de maletero y precio base de referencia.",
+    "limitations": [
+      "El precio puede variar según el mercado europeo específico, los impuestos locales y si se opta por la modalidad de suscripción de batería (BaaS)."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T03:00:14.422Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción integral (AWD)",
+  "peso": "2.150-2.300 kg",
+  "tipoMotor": "Doble motor eléctrico (inducción adelante, imanes permanentes atrás)",
+  "potenciaKW": "360 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "3.9s",
+  "anoProduccion": "2022-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 386,
+  "maleteroMin": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2022,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 46.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:00:14.422Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl NIO ET5 fue presentado formalmente a finales de diciembre de 2021 en el evento anual NIO Day, posicionándose rápidamente como el segundo sedán eléctrico de la firma china y apuntando de lleno al competitivo segmento D a escala global. Diseñado con una silueta que mezcla proporciones deportivas y una marcada estética tecnológica, el ET5 nació para ofrecer una alternativa más compacta y accesible que su hermano mayor, el ET7, buscando seducir a un público más joven e interesado en la conectividad avanzada, la electrificación de altas prestaciones y los sistemas de asistencia a la conducción de última generación.\n\n## Un hito o generación relevante\nUn punto de inflexión muy importante dentro de la corta pero intensa trayectoria comercial del modelo fue la introducción de la variante familiar denominada ET5 Touring (o ET5T). Lanzada al mercado europeo para responder a la alta demanda de este tipo de siluetas en dicha región, la versión familiar heredó por completo el esquema motriz, la arquitectura digital y las capacidades dinámicas del sedán, pero optimizó de manera notable la versatilidad de carga y la habitabilidad trasera sin resignar el coeficiente aerodinámico que caracteriza a la familia.\n\n## Curiosidades\nEntre los aspectos más llamativos que distinguen al NIO ET5 se encuentra su absoluta compatibilidad con el ecosistema de intercambio rápido de baterías (Power Swap Stations) de la marca, una tecnología que permite sustituir el acumulador descargado por uno completamente operativo en cuestión de minutos, eludiendo los tiempos tradicionales de recarga en postes públicos. Además, en el centro de su habitáculo minimalista destaca NOMI, un asistente virtual interactivo dotado de inteligencia artificial que sobresale por su expresividad y capacidad para gestionar funciones de confort, climatización y entretenimiento mediante comandos de voz avanzados.\n\n## Competencia y posicionamiento\nDentro del panorama automotor internacional, el NIO ET5 se posiciona de manera firme dentro del segmento de vehículos eléctricos premium. Su propuesta se enfrenta cara a cara con rivales consagrados como el Tesla Model 3, el BMW i4 y el Polestar 2. Gracias a su potente esquema de doble motor que entrega 490 caballos de fuerza, su tracción integral y una dotación tecnológica sobresaliente que incluye sensores LiDAR en el techo, el ET5 logra consolidarse como una de las alternativas más vanguardistas y dinámicas del mercado global.",
+  "generacionInfo": {
+    "raw": "Primera generación",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "NIO ET5 - Sedán eléctrico NIO. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

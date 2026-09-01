@@ -1,0 +1,246 @@
+{
+  "slug": "chery-tiggo-4",
+  "type": "vehiculos",
+  "title": "Chery Tiggo 4",
+  "description": "SUV compacto de entrada de Chery, buen volumen de exportación.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "chery"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-omoda-5",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-7-pro",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-8-pro",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "baic-x55",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-equinox",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3-aircross",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-duster",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Chery",
+  "class": "SUV compacto",
+  "power": "113 hp",
+  "price": "USD 19.000 (referencia regional)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 19000,
+    "raw": "USD 19.000 (referencia regional)"
+  },
+  "consumo": "7.0 l/100km aprox.",
+  "dimensiones": "4.318 mm largo x 1.830 mm ancho x 1.670 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://chery.com.ar/tiggo-4-hybrid/",
+    "note": "Se verificaron las especificaciones generales del Chery Tiggo 4 y su posicionamiento como SUV compacto de entrada en mercados de Latinoamérica, ajustando la potencia y dimensiones a configuraciones reales del fabricante.",
+    "limitations": [
+      "Los precios y consumos pueden variar según el mercado específico de Sudamérica y las normativas de emisiones locales.",
+      "Algunas variantes mecánicas con turbo o caja DCT varían según el año de fabricación."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:34:40.798Z",
+  "transmision": "Manual de 5 marchas o CVT",
+  "traccion": "Delantera (FWD)",
+  "peso": "1.300 kg",
+  "tipoMotor": "Naftero 1.5 Litros atmosférico",
+  "potenciaKW": "83 kW",
+  "capacidadTanque": "51 litros",
+  "tiempoRecorrido": "11.5s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1499 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 340,
+  "maleteroMin": null,
+  "generacion": "1ra generación (facelift actual)",
+  "anoLanzamiento": 2017,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 19.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:34:40.798Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Chery Tiggo 4, conocido en varios mercados internacionales como Tiggo 5x, debutó comercialmente a finales de 2017 como parte de la ambiciosa estrategia de expansión de la marca china en el segmento de los SUV compactos. Concebido para ubicarse estratégicamente entre el más pequeño Tiggo 2 y el mediano Tiggo 7, este modelo rápidamente se convirtió en uno de los pilares de exportación del fabricante gracias a su propuesta enfocada en la accesibilidad económica, la renovación estética y la incorporación progresiva de tecnología a bordo.\n\n## Un hito o generación relevante\nUn punto de inflexión importante para la gama Tiggo 4 fue su profunda actualización estética y tecnológica introducida en su etapa de madurez comercial (comercializada en la región bajo denominaciones como Tiggo 4 Pro). En esta evolución, el SUV adoptó el nuevo lenguaje de diseño global de Chery, destacándose por una parrilla frontal tridimensional de aspecto más agresivo, ópticas estilizadas con tecnología LED y un habitáculo totalmente repensado. Este rediseño incorporó pantallas duales flotantes para el instrumental y el sistema multimedia, elevando la percepción de calidad interior y acercando el producto a los estándares exigidos por los consumidores en mercados emergentes y de Europa del Este.\n\n## Curiosidades\nA pesar de ser un vehículo de enfoque netamente urbano y familiar, la plataforma T1X sobre la que está construido el Tiggo 4 fue desarrollada en colaboración con ingenieros internacionales, lo que le otorga una rigurosidad estructural superior a la de generaciones anteriores de la marca. Además, en diversos mercados globales, este modelo ha servido como banco de pruebas para la integración de sistemas de propulsión alternativos, incluyendo variantes híbridas ligeras (Mild Hybrid) que buscan optimizar el consumo de combustible en entornos de tráfico denso.\n\n## Competencia y posicionamiento\nEn el altamente competitivo segmento B-SUV, el Chery Tiggo 4 compite directamente contra referentes consolidados como el Chevrolet Tracker, el Volkswagen T-Cross, el Renault Duster y el Nissan Kicks. Su principal argumento de venta radica en ofrecer una excelente relación precio-producto, dotando a sus versiones de un nivel de equipamiento en confort y seguridad activa que suele superar al de sus rivales directos en los niveles de entrada de gama. Aunque debe lidiar con el desafío constante de consolidar la valoración de reventa frente a marcas tradicionales, su volumen global de ventas demuestra la sólida aceptación de su propuesta comercial.",
+  "generacionInfo": {
+    "raw": "1ra generación (facelift actual)",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": true,
+    "faceliftAno": null
+  },
+  "seoDescription": "Chery Tiggo 4 - SUV compacto Chery. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

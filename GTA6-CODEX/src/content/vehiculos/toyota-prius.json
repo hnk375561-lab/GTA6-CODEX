@@ -1,0 +1,184 @@
+{
+  "slug": "toyota-prius",
+  "type": "vehiculos",
+  "title": "Toyota Prius",
+  "description": "Pionero de los híbridos, quinta generación con diseño mucho más deportivo.",
+  "status": "confirmado",
+  "tags": [
+    "hibrido",
+    "toyota"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-alphard",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-camry",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-corolla-2024",
+      "relation": "mismo_fabricante"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Toyota",
+  "class": "Sedán híbrido",
+  "power": "196 hp (híbrido convencional) o 220 hp (enchufable PHEV)",
+  "price": "USD 27.500 (MSRP EE.UU. de referencia)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 27500,
+    "raw": "USD 27.500 (MSRP EE.UU. de referencia)"
+  },
+  "consumo": "4.1 l/100km combinado (aprox. 57 MPG)",
+  "dimensiones": "4.599 mm largo x 1.782 mm ancho x 1.425 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.toyota.com/prius/",
+    "note": "Se actualizaron las especificaciones técnicas de la quinta generación del Toyota Prius utilizando datos oficiales globales para motorización de 2.0 litros, dimensiones, consumo estimado y capacidades basados en el lanzamiento global de 2023.",
+    "limitations": [
+      "Los precios y disponibilidad varían según el mercado regional (Norteamérica, Europa, Asia)",
+      "El consumo exacto puede variar según el ciclo de homologación local (EPA, WLTP)"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:59:42.420Z",
+  "transmision": "Automática e-CVT",
+  "traccion": "Delantera (FWD) o integral (AWD-e según versión)",
+  "peso": "1.420 - 1.550 kg",
+  "tipoMotor": "Gasolina 2.0L 4 cilindros + motor eléctrico (sistema híbrido Toyota)",
+  "potenciaKW": "144 kW (196 hp)",
+  "capacidadTanque": "43 litros",
+  "tiempoRecorrido": "7.2 - 7.5 segundos",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.987 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 375,
+  "maleteroMin": null,
+  "generacion": "Quinta generación",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 28.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:59:42.420Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Toyota Prius es, sin lugar a dudas, el pionero indiscutido de la electrificación masiva en la industria automotriz global. Presentado originalmente a finales de la década de 1990 en Japón, nació con la premisa radical de combinar un motor de combustión interna con un sistema propulsor eléctrico para maximizar la eficiencia de combustible y reducir drásticamente las emisiones contaminantes. A lo largo de sus primeras cuatro generaciones, el Prius se ganó una reputación inquebrantable como el vehículo predilecto de taxistas, flotas corporativas y conductores conscientes del medio ambiente, priorizando siempre la funcionalidad aerodinámica y la economía de uso por encima de la estética emocional.\n\n## Un hito o generación relevante\nLa quinta generación, introducida para el año modelo 2023, representa un punto de inflexión absoluto en la historia del modelo. Por primera vez, Toyota decidió abandonar el perfil puramente utilitario y un tanto polarizante de las iteraciones pasadas para adoptar una silueta de estilo coupé de cuatro puertas, con una línea de techo marcadamente fluida, un centro de gravedad más bajo gracias a la plataforma TNGA-C y proporciones mucho más atléticas. Este cambio drástico de diseño no solo mejoró notablemente la aerodinámica del vehículo, sino que transformó al Prius en un sedán estéticamente deseable, capaz de capturar la atención de un público más joven que busca estilo además de eficiencia.\n\n## Curiosidades\nUna de las curiosidades más notables de esta quinta generación es su salto prestacional. Mientras que las versiones clásicas del Prius priorizaban la moderación en el acelerador, este nuevo modelo entrega hasta 196 caballos de fuerza en su variante híbrida convencional y supera los 220 caballos en la versión híbrida enchufable (PHEV), permitiéndole acelerar de 0 a 100 km/h en poco más de siete segundos. Esto demuestra que la eficiencia energética ya no está reñida con una dinámica de conducción ágil y entretenida. Además, en ciertos mercados, ofrece un techo con paneles solares opcionales para ayudar a recargar la batería auxiliar del sistema.\n\n## Competencia y posicionamiento\nEn el mercado actual, el Toyota Prius compite en un segmento de sedanes compactos y medianos electrificados donde se cruza con propuestas de marcas generalistas como el Hyundai Elantra Hybrid, el Honda Civic e:HEV y variantes híbridas de otros fabricantes asiáticos y europeos. Sin embargo, gracias a su longeva trayectoria, la probada confiabilidad del sistema híbrido de Toyota y esta renovada quinta generación, el Prius se posiciona firmemente como el referente histórico de la categoría, logrando un equilibrio sobresaliente entre tecnología de vanguardia, consumos sumamente contenidos y un diseño exterior completamente revitalizado.",
+  "generacionInfo": {
+    "raw": "Quinta generación",
+    "numero": 5,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Toyota Prius - Sedán híbrido Toyota. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

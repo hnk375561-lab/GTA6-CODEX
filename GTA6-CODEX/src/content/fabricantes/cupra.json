@@ -1,0 +1,41 @@
+{
+  "slug": "cupra",
+  "type": "fabricantes",
+  "title": "Cupra",
+  "description": "Vehículos y motocicletas de Cupra",
+  "content": "## Identidad de marca\nCupra se posiciona en el mercado como la división de vehículos de alta gama deportiva de SEAT, operando a su vez bajo el paraguas del Grupo Volkswagen [1]. La marca adoptó una personalidad propia, caracterizada por un enfoque dinámico, un diseño vanguardista y una fuerte apuesta por la electrificación. Su centro de operaciones y desarrollo se encuentra en Martorell, Barcelona [1, 4].\n\n## Historia real y evolución\nAunque el lanzamiento oficial de Cupra como marca independiente se concretó el 22 de febrero de 2018 en el circuito de Terramar, San Pedro de Ribas [1], sus raíces conceptuales se remontan a 1996, año en el que se gestó la iniciativa de trasladar la experiencia de competición de SEAT a vehículos de producción [2]. \n\nTras su presentación en 2018, la firma comenzó a estructurar una gama de productos diferenciada. Un hito clave en su desarrollo independiente fue el lanzamiento del Cupra Formentor, concebido como el primer modelo diseñado y desarrollado íntegramente por la marca [1]. A lo largo de su trayectoria reciente, la oferta de vehículos se ha ampliado progresivamente con el objetivo de consolidar su presencia global a través de una red comercial especializada [1].\n\n## Posicionamiento actual\nEn la actualidad, el catálogo de Cupra abarca una propuesta diversa que incluye tanto opciones térmicas como alternativas electrificadas. Su gama comprende modelos como el Cupra Ateca, el Cupra León, el eléctrico Cupra Born, el ya mencionado Formentor, y las incorporaciones más recientes: el Tavascan, el Terramar y el Raval [1]. Con esta estructura, la marca busca capturar a un público que valora la deportividad, la exclusividad y la diferenciación estética frente a los fabricantes generalistas tradicionales, apoyándose en la infraestructura industrial y tecnológica del Grupo Volkswagen.",
+  "status": "confirmado",
+  "officialName": "Cupra",
+  "country": "España",
+  "foundedYear": 2018,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:19:36.152Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "cupra-formentor",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "cupra-leon",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Cupra",
+    "secondarySource": "https://es.wikipedia.org/wiki/Cupra",
+    "note": "Se verificó la fundación oficial de Cupra en 2018, su vínculo como división deportiva de SEAT dentro del Grupo Volkswagen, su sede en Martorell y su catálogo de modelos a partir de fuentes enciclopédicas.",
+    "limitations": [
+      "No se detallan volúmenes de venta globales ni especificaciones técnicas minuciosas de cada motorización en las fuentes proporcionadas."
+    ]
+  }
+}

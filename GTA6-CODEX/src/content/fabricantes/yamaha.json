@@ -1,0 +1,66 @@
+{
+  "slug": "yamaha",
+  "type": "fabricantes",
+  "title": "Yamaha",
+  "description": "Vehículos y motocicletas de Yamaha",
+  "content": "## Identidad de marca\nYamaha Motor Company es una multinacional reconocida globalmente dentro de la industria de la movilidad y la ingeniería mecánica. Su filosofía corporativa, resumida en el lema \"Revs your Heart\", refleja la búsqueda constante de emocionar a sus usuarios a través del desarrollo de productos dinámicos y de alto rendimiento.\n\n## Historia y evolución\nLa compañía formalizó su independencia operativa el 1 de julio de 1955 bajo la dirección de su fundador, Genichi Kawakami, en la ciudad de Iwata, prefectura de Shizuoka. Con un equipo inicial de 274 colaboradores, la empresa heredó la experiencia industrial de la corporación matriz —célebre por sus instrumentos musicales y aparatos electrónicos— para encauzarla hacia el sector del motor. A lo largo de las décadas siguientes, la firma expandió su presencia internacional mediante la apertura de filiales y plantas en distintas regiones del mundo, consolidando una red global de manufactura y distribución.\n\n## Posicionamiento actual\nHoy en día, la marca opera de manera integral en múltiples industrias del sector motorizado. Su catálogo de producción abarca desde motocicletas de calle y competición hasta quads, motonieves, motos de agua y motores fuera de borda. Asimismo, su participación en el ámbito de la alta competencia a través de Yamaha Motor Racing en MotoGP respalda la transferencia tecnológica directa desde los circuitos de máxima exigencia hacia los vehículos comerciales disponibles en el mercado internacional.",
+  "status": "confirmado",
+  "officialName": "Yamaha",
+  "country": "Japón",
+  "foundedYear": 1955,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:49:45.550Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-fazer-250",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-mt-07",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-nmax",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-r1",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-tenere-700",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-ybr-125",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Yamaha_Motor_Company",
+    "secondarySource": "https://www.yamaha-motor.eu/es/es/about-us/our-history/our-foundation",
+    "note": "Se verificó la fundación de Yamaha Motor Co., Ltd. el 1 de julio de 1955 bajo el liderazgo de Genichi Kawakami en Iwata, Japón, así como su diversificación en productos de movilidad a través de fuentes oficiales y enciclopédicas.",
+    "limitations": [
+      "No se detallan cifras exactas de producción actual ni la totalidad de sus subsidiarias regionales en el extracto provisto.",
+      "La información se centra en los hitos históricos corporativos generales y la estructura inicial."
+    ]
+  }
+}

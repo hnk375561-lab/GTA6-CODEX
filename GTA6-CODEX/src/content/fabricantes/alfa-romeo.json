@@ -1,0 +1,40 @@
+{
+  "slug": "alfa-romeo",
+  "type": "fabricantes",
+  "title": "Alfa Romeo",
+  "description": "Vehículos y motocicletas de Alfa Romeo",
+  "content": "## Identidad de marca\nAlfa Romeo es un emblema indiscutido de la industria automotriz mundial, universalmente asociada a la deportividad pasional, el diseño refinado y las altas prestaciones mecánicas. Nacida bajo el espíritu dinámico de la ingeniería milanesa, la marca del 'Biscione' cultiva una estética sofisticada combinada con un profundo arraigo en la competición, imprimiendo un carácter inconfundible a cada uno de sus vehículos.\n\n## Historia real y evolución\nLa historia formal arranca el 24 de junio de 1910 en Milán bajo la denominación original de A.L.F.A. (Anonima Lombarda Fabbrica Automobili). En sus albores, bajo la dirección de Ugo Stella y el talento técnico del primer ingeniero jefe Giuseppe Merosi, la flamante compañía dio vida a sus dos primeros automóviles: el 12 HP y el 24 HP, bautizados así en honor a su potencia. Poco tiempo después, el empresario napolitano Nicola Romeo tomó las riendas de la compañía, fusionando su impronta y modificando la denominación social para consagrar el nombre definitivo de Alfa Romeo.\n\nA lo largo de las décadas siguientes, la marca construyó una reputación de leyenda en las pistas internacionales. Un hito bisagra en su historia deportiva ocurrió en 1923, cuando el piloto Ugo Sivocci se quedó con la victoria en la prestigiosa Targa Florio a bordo de un Alfa Romeo RL, marcando el inicio de un historial exitoso que acumuló diez triunfos en las exigentes carreteras sicilianas.\n\n## Posicionamiento actual\nEn el escenario automotriz contemporáneo, Alfa Romeo forma parte del grupo multinacional Stellantis, integrando un conglomerado global sin perder su esencia artesanal y su foco en el rendimiento. La marca se posiciona en el segmento de vehículos de altas prestaciones y diseño exclusivo, manteniendo vivo el legado de deportividad que forjó durante más de un siglo de historia en la vanguardia de la industria europea.",
+  "status": "confirmado",
+  "officialName": "Alfa Romeo",
+  "country": "Italia",
+  "foundedYear": 1910,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:17:34.563Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "alfa-romeo-giulia",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "alfa-romeo-stelvio",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Alfa_Romeo",
+    "note": "Se verificó la fundación de A.L.F.A. en Milán el 24 de junio de 1910, la posterior incorporación de Nicola Romeo, los primeros modelos (24 HP y 12 HP), los triunfos en la Targa Florio y su pertenencia actual a Stellantis a través de fuentes oficiales e históricas.",
+    "limitations": [
+      "La información detalla hitos históricos fundamentales y el contexto corporativo actual, pero no profundiza en cada modelo de producción contemporáneo ni en especificaciones técnicas de la gama actual."
+    ]
+  }
+}

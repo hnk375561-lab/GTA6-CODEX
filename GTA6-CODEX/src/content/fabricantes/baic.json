@@ -1,0 +1,36 @@
+{
+  "slug": "baic",
+  "type": "fabricantes",
+  "title": "BAIC",
+  "description": "Vehículos y motocicletas de BAIC",
+  "content": "## Identidad de marca\n\nBAIC (Beijing Automotive Industry Holding Co., Ltd.) se consolida como uno de los conglomerados industriales y fabricantes de automóviles estatales más importantes de China. Su propuesta se centra en ofrecer una oferta diversificada que abarca desde vehículos de pasajeros y SUVs hasta comerciales y soluciones avanzadas de movilidad sostenible, destacando por su capacidad de adaptación tecnológica y su fuerte infraestructura productiva.\n\n## Historia real y evolución\n\nLos orígenes de la compañía se remontan a 1958 en Pekín, año en el que dio sus primeros pasos dentro del sector automotor. A lo largo de las décadas, la empresa evolucionó hasta posicionarse entre los constructores líderes de su país de origen. Un hito fundamental en su estrategia de expansión y desarrollo tecnológico ha sido la creación de empresas conjuntas con gigantes internacionales de la industria. Entre ellas sobresale Beijing Benz, su alianza con el Grupo Mercedes-Benz, que le permitió adentrarse de lleno en el segmento de vehículos de alta gama y elevar sus estándares de manufactura. Asimismo, estableció sociedades productivas y de desarrollo con marcas como Hyundai Motor Company y Magna International.\n\nEn respuesta a las tendencias globales de cuidado ambiental y a las directrices de su mercado doméstico, la compañía reorientó su visión estratégica. Para el año 2018, la firma anunció un cambio clave enfocado en reducir de forma paulatina los motores de combustión interna para priorizar la investigación, el desarrollo y la producción de vehículos eléctricos, así como tecnologías vinculadas a la conducción autónoma y la conectividad.\n\n## Posicionamiento actual\n\nA escala global, la empresa mantiene una posición competitiva relevante frente a otros actores de peso tanto del mercado chino como internacional. Su enfoque actual prioriza la innovación constante, la optimización de sus centros de investigación y desarrollo, y la expansión de su presencia internacional a través de filiales y subsidiarias orientadas a consolidar su oferta de nuevas energías en el mercado automotriz contemporáneo.",
+  "status": "confirmado",
+  "officialName": "BAIC",
+  "country": "China",
+  "foundedYear": 1958,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T22:20:37.703Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "baic-x55",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/BAIC_Motor",
+    "secondarySource": "http://www.baicvzla.com/us",
+    "note": "Se verificó la información sobre la fundación de BAIC en 1958, su sede en Pekín y sus alianzas estratégicas globales mediante Wikipedia y sitios oficiales.",
+    "limitations": [
+      "No se detallan volúmenes exactos de ventas anuales recientes en la región.",
+      "La información sobre el inicio de operaciones comerciales específicas en cada mercado sudamericano requiere validación local adicional."
+    ]
+  }
+}

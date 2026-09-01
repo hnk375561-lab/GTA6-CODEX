@@ -1,0 +1,59 @@
+name: Generar manifest de imágenes desde Wikimedia Commons
+
+# Manual a propósito: esto busca fotos automáticamente, pero cada una
+# necesita revisión humana (¿es el modelo/año correcto? ¿la licencia
+# realmente permite este uso?) antes de mezclarse a main. Por eso abre
+# un Pull Request en vez de commitear directo a main.
+on:
+  workflow_dispatch: {}
+
+defaults:
+  run:
+    working-directory: GTA6-CODEX
+
+jobs:
+  generate-manifest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: GTA6-CODEX/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generar real-images-manifest.json desde Commons
+        run: npm run generate:manifest-commons:write
+
+      - name: Abrir Pull Request con el manifest generado
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "chore: generar real-images-manifest.json desde Wikimedia Commons"
+          branch: bot/commons-images-manifest
+          title: "Manifest de imágenes generado desde Wikimedia Commons — revisar antes de mergear"
+          body: |
+            Generado automáticamente por `generate-manifest-from-commons.mjs`.
+
+            ⚠️ **Revisar antes de mergear:**
+            - Cada entrada trae `note` pidiendo confirmar que la foto es del
+              modelo/año correcto (la búsqueda es por texto, puede traer
+              falsos positivos).
+            - Los vehículos sin resultado quedan listados en el log de este
+              job — resolverlos aparte (kit de prensa oficial, banco de
+              fotos pago, o ilustración).
+            - Después de mergear este PR, correr manualmente
+              `npm run process-images:apply` (o el workflow de importación
+              de imágenes) para efectivamente descargar y procesar las
+              fotos a `public/images/entities/vehiculos/`.
+          add-paths: |
+            GTA6-CODEX/real-images-manifest.json
+            GTA6-CODEX/.commons-image-cache.json

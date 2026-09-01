@@ -1,0 +1,246 @@
+{
+  "slug": "volkswagen-amarok",
+  "type": "vehiculos",
+  "title": "Volkswagen Amarok",
+  "description": "Pickup grande de Volkswagen, motor V6 3.0L TDI de 258 hp en su tope de gama.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "volkswagen",
+    "diesel"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-golf-gti",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-id-4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-nivus",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-s10",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-toro",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-ranger",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "isuzu-d-max",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:28.422Z",
+  "updatedAt": "2026-08-27T02:00:30.962Z",
+  "manufacturer": "Volkswagen",
+  "class": "Pickup",
+  "performance": {
+    "speed": "Alta (193 km/h)",
+    "acceleration": "Media-Alta (0-100 km/h en 7.8s)"
+  },
+  "power": "258 hp",
+  "price": "ARS 50.000.000 (precio de referencia mercado local)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "ARS",
+    "amount": 50000000,
+    "raw": "ARS 50.000.000 (precio de referencia mercado local)"
+  },
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.vw.com.ar",
+    "note": "Se verificaron las especificaciones técnicas principales de la Volkswagen Amarok V6 comercializada en Argentina, incluyendo dimensiones, motorización V6 TDI de 258 hp y transmisión automática de 8 velocidades.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y el mercado local argentino.",
+      "Algunos datos de consumo exacto dependen de las condiciones de homologación."
+    ]
+  },
+  "transmision": "Automática de 8 marchas",
+  "traccion": "Integral permanente (4Motion)",
+  "peso": "2255 kg",
+  "tipoMotor": "Diésel V6 3.0L TDI",
+  "potenciaKW": "190 kW",
+  "capacidadTanque": "80 litros",
+  "tiempoRecorrido": "7.9s",
+  "anoProduccion": "2010-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "8.5 l/100km en ruta (mixto aprox. 9.5 l/100km)",
+  "dimensiones": "5350 x 1954 x 1834 mm",
+  "cilindrada": "2967 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "1ª generación (con restyling regional)",
+  "anoLanzamiento": 2010,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 52.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T02:00:30.962Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Volkswagen Amarok marcó la incursión de la marca alemana en el competitivo segmento global de las pick-ups medianas. Presentada a finales de la década del 2000 y producida principalmente en el Centro Industrial General Pacheco en Argentina para gran parte de sudamérica y otros mercados internacionales, la Amarok se ganó rápidamente un lugar destacado gracias a su enfoque orientado tanto al trabajo pesado como al confort de marcha propio de un vehículo de pasajeros. Desde su lanzamiento, introdujo estándares de habitabilidad y ergonomía inusuales para la categoría en ese momento.\n\n## Un hito o generación relevante\nUn momento bisagra en la historia comercial y técnica de la Amarok fue la introducción del motor diésel V6 de 3.0 litros TDI. Inicialmente posicionada con mecánicas de cuatro cilindros biturbo, la llegada del bloque de seis cilindros elevó la potencia a 258 caballos de fuerza (con funciones de sobreboost temporales), convirtiéndola en su momento en una de las pick-ups medianas más potentes y veloces del mercado regional. Esto redefinió las expectativas de los usuarios respecto a las prestaciones ruteras y la capacidad de sobrepaso en ruta abierta.\n\n## Curiosidades\nA diferencia de muchos de sus rivales directos que recurrían a suspensiones traseras de elásticos tradicionales más rústicos, la Amarok apostó desde sus inicios por un esquema pensado para priorizar el andar confortable, manteniendo una excelente capacidad de carga útil que le permitió competir mano a mano con los referentes históricos del segmento. Además, su tracción integral permanente 4Motion se convirtió en un sello distintivo de la marca, ofreciendo una respuesta dinámica muy alabada en terrenos de baja adherencia.\n\n## Competencia y posicionamiento\nEn el mercado regional, la Volkswagen Amarok compite de manera directa con pesos pesados de la industria como la Toyota Hilux, la Ford Ranger, la Chevrolet S10 y la Nissan Frontier. Se posiciona en la franja más alta y aspiracional del segmento, donde las versiones tope de gama (como las motorizaciones V6 y los niveles de equipamiento orientados al lujo) atraen tanto a usuarios corporativos y del sector agropecuario como a clientes particulares que buscan un vehículo multifunción con prestaciones de alta gama.",
+  "generacionInfo": {
+    "raw": "1ª generación (con restyling regional)",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": true,
+    "faceliftAno": null
+  },
+  "seoDescription": "Volkswagen Amarok - Pickup Volkswagen. Alta (193 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

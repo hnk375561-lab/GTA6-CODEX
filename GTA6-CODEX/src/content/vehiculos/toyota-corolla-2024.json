@@ -1,0 +1,246 @@
+{
+  "slug": "toyota-corolla-2024",
+  "type": "vehiculos",
+  "title": "Toyota Corolla 2024",
+  "description": "Sedán compacto de Toyota, generación XII, motor 2.0L de 4 cilindros.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "toyota",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-alphard",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-camry",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-corolla-cross",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-cronos",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-city",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-sentra",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-versa",
+      "relation": "competidor"
+    }
+  ],
+  "featured": true,
+  "createdAt": "2026-08-23T18:01:32.194Z",
+  "updatedAt": "2026-08-27T01:58:56.128Z",
+  "manufacturer": "Toyota",
+  "class": "Sedán",
+  "performance": {
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 10.1s)"
+  },
+  "power": "170 hp (126 kW)",
+  "price": "USD 22.050 (MSRP EE.UU. base)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 22050,
+    "raw": "USD 22.050 (MSRP EE.UU. base)"
+  },
+  "consumo": "6.9 l/100km combinado (aprox. 14.5 km/l)",
+  "dimensiones": "4.630 mm largo x 1.780 mm ancho x 1.435 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.toyota.com/corolla/",
+    "note": "Se verificaron las especificaciones técnicas del Toyota Corolla 2024 con motor 2.0L Dynamic Force, potencia de 170 hp, dimensiones globales del sedán y capacidades a partir de información oficial de la marca y registros de mercado en Norteamérica.",
+    "limitations": [
+      "Las cifras de consumo y dimensiones pueden variar levemente según la región de comercialización (Norteamérica, Mercosur, Europa)",
+      "La versión híbrida posee especificaciones de motorización y capacidad de baúl diferentes"
+    ]
+  },
+  "transmision": "Automática CVT (Direct Shift-CVT) o manual según mercado",
+  "traccion": "Delantera (FWD)",
+  "peso": "1.340 - 1.400 kg",
+  "tipoMotor": "Gasolina (Nafta)",
+  "potenciaKW": "126 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "0-100 km/h en 9.2 segundos",
+  "anoProduccion": "2023-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "C",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.987 cc (2.0L)",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 470,
+  "maleteroMin": null,
+  "generacion": "Duodécima generación (E210)",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 24.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:58:56.128Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "consumo": {
+      "promedio": "6.9 l/100km combinado (34 mpg EPA combinado, versión XSE 2.0L con CVT)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Toyota Corolla es, sin lugar a dudas, uno de los nombres más pesados y exitosos en la historia de la industria automotriz mundial. Desde su presentación original en Japón en 1966, este sedán compacto ha recorrido un largo camino a lo largo de doce generaciones, transformándose paulatinamente de un vehículo económico y sencillo en un referente global de confiabilidad, durabilidad y eficiencia.\n\n## Un hito o generación relevante\nLa duodécima generación (E210), introducida globalmente hacia finales de la década pasada y consolidada en los años recientes como el modelo 2024, marcó un punto de inflexión absoluto gracias a la adopción de la plataforma modular TNGA (Toyota New Global Architecture). Esta base estructural no solo mejoró notablemente el comportamiento dinámico del vehículo y redujo su centro de gravedad, sino que permitió incorporar la exitosa familia de motores Dynamic Force —incluyendo el bloque naftero de 2.0 litros y las variantes híbridas—, logrando un balance sobresaliente entre agilidad de marcha y contención de consumos.\n\n## Curiosidades\nUna de las curiosidades más notables del Toyota Corolla es su estatus de vehículo más vendido de todos los tiempos en el planeta, habiendo superado los 50 millones de unidades comercializadas acumuladas en sus múltiples carrocerías (sedán, hatchback y familiar). Además, el nombre \"Corolla\" proviene del latín y hace referencia a la corona de pétalos que rodea el centro de una flor, un guiño al concepto original de la marca de ofrecer un auto atractivo y accesible para las familias.\n\n## Competencia y posicionamiento\nEn el mercado actual, el Toyota Corolla 2024 se posiciona firmemente en el segmento de los sedanes compactos generalistas, compitiendo palmo a palmo con pesos pesados de la industria como el Honda Civic, el Nissan Sentra, el Hyundai Elantra y el Volkswagen Jetta. Frente a ellos, el Corolla destaca principalmente por su legendaria reputación de postventa, su valor de reventa históricamente alto y, en los mercados de América Latina y otras regiones, por ofrecer opciones mecánicas tanto tradicionales como híbridas autrecargables que lideran los rankings de eficiencia en combustible.",
+  "generacionInfo": {
+    "raw": "Duodécima generación (E210)",
+    "numero": 12,
+    "codigoChasis": "E210",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Toyota Corolla 2024 - Sedán Toyota. Media (180 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

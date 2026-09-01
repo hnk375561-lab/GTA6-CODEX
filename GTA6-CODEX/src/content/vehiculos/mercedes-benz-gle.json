@@ -1,0 +1,209 @@
+{
+  "slug": "mercedes-benz-gle",
+  "type": "vehiculos",
+  "title": "Mercedes-Benz GLE",
+  "description": "SUV premium mediano-grande de Mercedes-Benz.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "mercedes-benz"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-c",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-e",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-glc",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "alfa-romeo-stelvio",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-q7",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-x5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "genesis-gv70",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Mercedes-Benz",
+  "class": "SUV premium",
+  "power": "367 CV",
+  "price": "USD 70.000 (MSRP referencia global, varía según mercado e impuestos)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 70000,
+    "raw": "USD 70.000 (MSRP referencia global, varía según mercado e impuestos)"
+  },
+  "consumo": "8.3 - 9.4 l/100km combinado",
+  "dimensiones": "4.924 mm largo x 1.947 mm ancho x 1.797 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.auto-data.net/es/mercedes-benz-gle-suv-v167-gle-450-367hp-eq-boost-4matic-g-tronic-35268",
+    "note": "Se actualizaron las especificaciones técnicas de la cuarta generación (V167) tomando como referencia principal la versión GLE 450 4MATIC (367 CV con tecnología EQ Boost), validando datos de potencia, cilindrada, consumo y dimensiones a partir de fichas técnicas especializadas y catálogos oficiales de la marca.",
+    "limitations": [
+      "Los precios varían sustancialmente según los mercados locales, aranceles de importación e impuestos vigentes.",
+      "Las cifras de consumo y aceleración pueden presentar ligeras variaciones dependiendo del equipamiento opcional y las condiciones de homologación regionales."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-30T17:38:56.484Z",
+  "transmision": "Automática 9G-TRONIC",
+  "traccion": "Tracción integral 4MATIC",
+  "peso": "2.165 kg",
+  "tipoMotor": "Gasolina / Mild-Hybrid (EQ Boost)",
+  "potenciaKW": "270 kW",
+  "capacidadTanque": "85 litros",
+  "tiempoRecorrido": "0-100 km/h en 5.7s",
+  "anoProduccion": "2019-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "2.999 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 630,
+  "maleteroMin": null,
+  "generacion": "V167 (Cuarta generación)",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 68.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:59:05.903Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Mercedes-Benz GLE es la evolución directa de una de las apuestas más influyentes de la marca alemana en el segmento de los SUV de lujo. Concebido originalmente bajo la denominación Clase M (ML) a finales de la década de 1990, este vehículo sentó los cimientos de lo que hoy conocemos como el mercado global de todoterrenos prémium orientados al confort de marcha superior y al asfalto. Con la reestructuración de nombres adoptada por la firma de Stuttgart hace unos años, la Clase M adoptó la denominación GLE, alineando su jerarquía de manera directa con la icónica Clase E dentro de la familia de sedanes.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la trayectoria de este modelo llegó con el desembarco de la cuarta generación, identificada internamente bajo el código V167. Presentada formalmente en los mercados internacionales a partir de 2019, esta entrega introdujo una revolución tecnológica profunda al incorporar el sistema de infoentretenimiento MBUX con pantallas duales de alta resolución y control por voz avanzado. Asimismo, esta etapa marcó la masificación de los sistemas de electrificación ligera (Mild-Hybrid de 48V con tecnología EQ Boost) y opciones de suspensión hidroneumática verdaderamente inteligentes como el E-Active Body Control, capaz de escanear el camino en tiempo real para optimizar el comportamiento dinámico y el aislamiento de la cabina.\n\n## Curiosidades\n¿Sabías que el antecesor espiritual del GLE, el Clase M, fue el primer vehículo de pasajeros de Mercedes-Benz fabricado fuera de Alemania? La planta de Tuscaloosa, en el estado de Alabama (Estados Unidos), fue inaugurada en 1997 exclusivamente para su producción, transformándose en un polo industrial estratégico que hasta el día de hoy abastece a gran parte del planeta con esta familia de SUV. Además, el GLE fue uno de los pioneros en popularizar las siluetas de tipo SUV coupé, abriendo camino a variantes de líneas más estilizadas y deportivas que hoy dominan las preferencias de los compradores más exigentes.\n\n## Competencia y posicionamiento\nEn el mercado global, el Mercedes-Benz GLE compite de manera directa y encarnizada dentro del segmento de los SUV medianos-grandes de lujo frente a referentes alemanes de peso como el BMW X5 y el Audi Q7, así como alternativas de enfoque más dinámico como el Porsche Cayenne o el Volvo XC90. Su posicionamiento dentro de la gama del fabricante se ubica estratégicamente un escalón por encima del GLC y por debajo del imponente GLS de siete plazas. El GLE se destaca tradicionalmente por ofrecer un equilibrio sobresaliente entre refinamiento interior, un aislamiento acústico de primer nivel, tecnología de asistencia a la conducción de vanguardia y una dinámica rutera que prioriza el confort absoluto de sus pasajeros por sobre las pretensiones deportivas extremas.",
+  "generacionInfo": {
+    "raw": "V167 (Cuarta generación)",
+    "numero": 4,
+    "codigoChasis": "V167",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Mercedes-Benz GLE - SUV premium Mercedes-Benz. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad.",
+  "safety": {
+    "euroNCAP": "5 estrellas",
+    "fuenteOrganismo": "Euro NCAP",
+    "evidenceUrl": "https://charlamotor.app/coches/mercedes-benz/gle.html"
+  }
+}

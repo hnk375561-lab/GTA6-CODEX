@@ -1,0 +1,224 @@
+{
+  "slug": "bmw-gs-310",
+  "type": "vehiculos",
+  "title": "BMW G 310 GS",
+  "description": "Moto trail de BMW, monocilíndrico 313cc, pensada para uso mixto ciudad-ruta.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "bmw",
+    "trail"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-m4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-r1250gs",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-s1000rr",
+      "relation": "mismo_fabricante"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:30.892Z",
+  "updatedAt": "2026-08-27T02:43:33.473Z",
+  "manufacturer": "BMW",
+  "class": "Moto trail",
+  "performance": {
+    "speed": "Media (143 km/h)",
+    "acceleration": "Media (0-100 km/h en 7.3s)"
+  },
+  "power": "34 CV (25 kW) a 9.500 rpm",
+  "price": "USD 8.200 (Referencia mercado internacional)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 8200,
+    "raw": "USD 8.200 (Referencia mercado internacional)"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.motofichas.com/marcas/bmw/g-310-gs",
+    "secondarySource": "https://www.mundomotero.com/motos/bmw/g-310-gs",
+    "note": "Se verificaron las especificaciones técnicas del motor monocilíndrico de 313 cc, la potencia de 34 CV a 9.500 rpm, las dimensiones de 2.075 x 880 x 1.230 mm y la velocidad máxima de 143 km/h a través de fichas técnicas globales de BMW Motorrad y portales especializados.",
+    "limitations": [
+      "El precio puede variar según los aranceles de importación, impuestos y la cotización vigente en el mercado local de Argentina.",
+      "Algunas especificaciones de equipamiento o colores pueden cambiar según el año modelo y la disponibilidad en el concesionario."
+    ]
+  },
+  "transmision": "Manual de 6 marchas",
+  "traccion": "Trasera por cadena",
+  "peso": "175 kg (en orden de marcha)",
+  "tipoMotor": "Monocilíndrico 4 tiempos, refrigerado por líquido",
+  "potenciaKW": "25 kW",
+  "capacidadTanque": "11 litros",
+  "tiempoRecorrido": "7.3s (0-100 km/h)",
+  "anoProduccion": "2017-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "3,3 l/100 km",
+  "dimensiones": "2075 x 880 x 1230 mm",
+  "cilindrada": "313 cc",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "1ra generación (actualizada)",
+  "anoLanzamiento": 2017,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 8.200"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:43:33.473Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa BMW G 310 GS representa la puerta de entrada al universo de las motocicletas trail y de aventura de la prestigiosa marca alemana. Presentada originalmente en el mercado global en 2017, este modelo nació con el objetivo claro de democratizar la experiencia GS, ofreciendo una opción más liviana, accesible y ágil para aquellos motociclistas que buscaban una moto versátil tanto para el uso diario en entornos urbanos como para escapadas de fin de semana por caminos de tierra y ripio.\n\nDesarrollada en colaboración con el fabricante indio TVS Motor Company, la G 310 GS se produce en la planta de Hosur, en India, manteniendo los estrictos estándares de calidad y diseño dictados por la central de BMW Motorrad en Múnich, Alemania.\n\n## Un hito o generación relevante\nUn momento clave en la historia reciente de este modelo fue la actualización profunda que recibió para cumplir con la normativa de emisiones Euro 5. En dicha renovación, BMW no solo ajustó su motor monocilíndrico, sino que incorporó mejoras tecnológicas muy significativas que elevaron el nivel del segmento de baja-media cilindrada. Entre los hitos de esta evolución se destacan la introducción del acelerador electrónico ride-by-wire, el embrague anti-rebote, faros delanteros con tecnología LED completa y manetas de freno y embrague ajustables en alcance, detalles que tradicionalmente estaban reservados para motocicletas de mayor cilindrada y costo.\n\n## Curiosidades\nUna de las características más singulares y llamativas del diseño de la BMW G 310 GS es la disposición invertida de su motor monocilíndrico de 313 cc. A diferencia de las motocicletas tradicionales, el cilindro está inclinado hacia atrás y la culata está girada 180 grados. Esto permite que la admisión de aire quede ubicada en la parte delantera y el escape hacia atrás, logrando una centralización de masas óptima, un basculante más largo para mayor estabilidad sin comprometer la distancia entre ejes, y una distribución de pesos muy equilibrada.\n\nAdemás, comparte la misma plataforma mecánica que su hermana naked, la G 310 R, pero adaptada ergonómicamente con suspensiones de mayor recorrido, una posición de manejo más erguida, un manillar ancho y la estética inconfundible de la familia GS que incluye el característico pico delantero.\n\n## Competencia y posicionamiento\nEn el mercado actual, la BMW G 310 GS se posiciona dentro del segmento trail de entrada como una alternativa de corte netamente prémium. Compite de manera directa contra modelos consagrados como la KTM 390 Adventure, la Kawasaki Versys-X 300 y la Honda CRF300 Rally.\n\nFrente a sus competidores, la BMW destaca principalmente por el prestigio de su emblema, el confort de marcha en ruta, la calidad de terminación y una ergonomía muy lograda que resulta amigable tanto para conductores noveles como para usuarios experimentados que buscan una montura secundaria ligera y manejable. Aunque algunos rivales pueden ofrecer cifras de potencia más puras o aptitudes camperas más radicales, la G 310 GS apuesta por un equilibrio refinado que prioriza la polivalencia diaria, la facilidad de conducción y la seguridad gracias a su sistema de frenos ABS de serie y componentes de frenado firmados por ByBre.",
+  "generacionInfo": {
+    "raw": "1ra generación (actualizada)",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "BMW G 310 GS - Moto trail BMW. Media (143 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

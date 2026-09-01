@@ -1,0 +1,144 @@
+name: Chequear links de evidencia
+
+# Corre scripts/check-evidence-links.mjs --fix contra src/content/vehiculos:
+# revisa que primarySource/secondarySource sigan respondiendo. Si algo se
+# cayo con el tiempo:
+#   1. Limpia esa evidencia rota (--fix) y commitea el cambio.
+#   2. Dispara enrich-vehiculos.yml automaticamente (ONLY=needsBoth) para
+#      que esas fichas puntuales se re-completen solas con Gemini/Tavily.
+#   3. Abre (o actualiza) un Issue informativo, ya no como pedido de accion
+#      manual sino como registro de lo que se auto-corrigio.
+#
+# Bucle cerrado: nadie tiene que entrar a mano a arreglar nada, salvo que
+# una fuente quede rota de forma persistente (eso se ve en el historial
+# de Issues, que no se cierran solos).
+#
+# Corre solo, todos los dias 1 de cada mes, y tambien se puede disparar
+# a mano desde la pestana Actions.
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 8 1 * *"
+
+defaults:
+  run:
+    working-directory: GTA6-CODEX
+
+permissions:
+  contents: write
+  issues: write
+  actions: write # necesario para disparar enrich-vehiculos.yml via API
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+
+      - name: Correr link-checker (con auto-fix)
+        id: check
+        continue-on-error: true
+        run: node scripts/check-evidence-links.mjs --fix
+
+      - name: Subir reporte como artifact
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: broken-links-report
+          path: GTA6-CODEX/broken-links-report.json
+          if-no-files-found: ignore
+
+      - name: Commitear fichas con evidencia limpiada
+        id: commit
+        if: steps.check.outcome == 'failure'
+        run: |
+          git config user.name "gta6-codex-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/content/vehiculos
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "chore(vehiculos): limpia evidence con URLs rotas [check-evidence-links --fix]"
+            git push origin main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Disparar re-enriquecimiento automatico
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: "enrich-vehiculos.yml",
+              ref: "main",
+              inputs: { only: "needsBoth", limit: "50" },
+            });
+
+      - name: Armar cuerpo del Issue
+        if: steps.check.outcome == 'failure'
+        id: body
+        run: |
+          {
+            echo 'body<<EOF'
+            echo "Encontrado por el workflow \`check-evidence-links.yml\` (corrida automatica mensual)."
+            echo ""
+            echo "URLs rotas y las fichas que las citan:"
+            echo ""
+            node -e "
+              const r = require('./broken-links-report.json');
+              for (const b of r.broken) {
+                console.log('- \`' + b.url + '\` (' + (b.reason || b.status) + ')');
+                for (const f of b.affectedFiles) {
+                  console.log('  - ' + f.file + ' → ' + f.field);
+                }
+              }
+              if (r.fixedFiles && r.fixedFiles.length > 0) {
+                console.log('');
+                console.log('✅ Auto-corregido: se limpio evidence en ' + r.fixedFiles.length + ' ficha(s) y se disparo enrich-vehiculos.yml (ONLY=needsBoth) para re-completarlas solas. No hace falta accion manual salvo que la proxima corrida mensual vuelva a marcar el mismo archivo (fuente rota de forma persistente).');
+              }
+            "
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Crear o actualizar Issue
+        if: steps.check.outcome == 'failure'
+        uses: actions/github-script@v9
+        env:
+          ISSUE_BODY: ${{ steps.body.outputs.body }}
+        with:
+          script: |
+            const title = "🔗 Links de evidencia rotos (chequeo mensual)";
+            const body = process.env.ISSUE_BODY;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: "open",
+              labels: "evidence-links",
+            });
+            if (issues.length > 0) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issues[0].number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ["evidence-links"],
+              });
+            }

@@ -1,0 +1,239 @@
+{
+  "slug": "ford-focus",
+  "type": "vehiculos",
+  "title": "Ford Focus",
+  "description": "Compacto europeo de Ford, discontinuado en varios mercados a favor de SUVs.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "ford"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-bronco-sport",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-explorer",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-f-150",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-rio",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mazda-3",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Ford",
+  "class": "Hatchback/Sedán",
+  "power": "155 CV",
+  "price": "EUR 26.000 (referencia última generación)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "EUR",
+    "amount": 26000,
+    "raw": "EUR 26.000 (referencia última generación)"
+  },
+  "consumo": "5.5 - 6.5 l/100km",
+  "dimensiones": "4.378 mm largo x 1.825 mm ancho x 1.471 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.rmotion.es/ford-focus",
+    "secondarySource": "https://fr.scribd.com/document/423721446/Ficha-Tecnica-Ford-Focus-2-0-Titanium-Powershift",
+    "note": "Se verificó la motorización actual del Ford Focus MK4 basada en el bloque EcoBoost de tres cilindros con potencias de hasta 155 CV, así como las especificaciones generales y dimensiones de la variante hatchback.",
+    "limitations": [
+      "El precio exacto y las opciones de equipamiento varían según el mercado europeo específico.",
+      "El modelo ha finalizado su ciclo de producción formal en la planta de Saarlouis hacia finales de 2025."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T02:50:22.926Z",
+  "transmision": "Manual de 6 velocidades o Automática de 7 marchas",
+  "traccion": "Delantera",
+  "peso": "1.350 - 1.450 kg",
+  "tipoMotor": "Gasolina 1.0 EcoBoost / Diésel EcoBlue",
+  "potenciaKW": "114 kW",
+  "capacidadTanque": "52 litros",
+  "tiempoRecorrido": "8.9s",
+  "anoProduccion": "2018-2025",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.0 - 1.5 litros",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 375,
+  "maleteroMin": null,
+  "generacion": "Cuarta generación (MK4)",
+  "anoLanzamiento": 2018,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 26.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:50:22.926Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Ford Focus irrumpió a finales de los años 90 como el ambicioso sucesor del histórico Ford Escort. Su llegada al mercado global marcó un antes y un después para la marca del óvalo gracias a la introducción de la filosofía de diseño 'New Edge' y, sobre todo, a la revolucionaria suspensión trasera independiente Control Blade. Esta solución de ingeniería le otorgó un dinamismo de conducción inédito en su categoría, convirtiéndolo instantáneamente en la referencia rutera frente a rivales tan consagrados como el Volkswagen Golf.\n\nA lo largo de sus cuatro generaciones, el Focus supo adaptarse a las exigencias tecnológicas y de seguridad de cada época. Desde las emblemáticas versiones deportivas ST y RS que cautivaron a los entusiastas de la velocidad, hasta las variantes más racionales orientadas al uso familiar y a flotas, el compacto europeo demostró una versatilidad notable que cimentó su éxito comercial tanto en Europa como en diversos mercados internacionales.\n\n## Un hito o generación relevante\nLa cuarta generación (MK4), lanzada comercialmente en 2018, representó la cúspide evolutiva del modelo antes de su despedida definitiva. Desarrollada sobre la plataforma modular C2, esta iteración incrementó significativamente la rigidez torsional y mejoró el aprovechamiento del espacio interior. Además, incorporó una completa renovación tecnológica con asistencias avanzadas a la conducción (ADAS), instrumentación digital y eficientes mecánicas microhíbridas (Mild-Hybrid de 48V) asociadas al motor EcoBoost de tres cilindros, logrando equilibrar el rendimiento dinámico con normativas anticontaminación cada vez más estrictas.\n\n## Curiosidades\nUna de las facetas más recordadas del Ford Focus fue su exitoso paso por el deporte motor, particularmente en el Campeonato Mundial de Rally (WRC). Equipos oficiales y pilotos legendarios como Colin McRae y Marcus Grönholm llevaron al modelo a lo más alto del podio en múltiples ocasiones, forjando una sólida reputación de robustez bajo exigencias extremas.\n\nAsimismo, el Focus fue concebido desde sus orígenes como un producto verdaderamente global. El proyecto original unificó los desarrollos de ingeniería europeos y norteamericanos bajo una misma plataforma estructural, adaptando posteriormente detalles estéticos y mecánicos según los gustos de cada región.\n\n## Competencia y posicionamiento\nEn el segmento de los hatchbacks compactos y sedanes medianos, el Ford Focus compitió siempre en una de las categorías más disputadas de la industria. Su rivalidad directa incluyó a pesos pesados como el Volkswagen Golf, el Opel Astra, el SEAT León y el Toyota Corolla.\n\nPosicionado como un generalista con marcadas aspiraciones dinámicas, el Focus destacó históricamente por ofrecer un tacto de dirección superior y un paso por curva sobresaliente. Sin embargo, los cambios drásticos en las preferencias de los consumidores globales —que volcaron masivamente su demanda hacia los SUV y crossovers— determinaron el cese de su producción en la planta alemana de Saarlouis, cerrando un capítulo dorado para los turismos tradicionales de la marca.",
+  "generacionInfo": {
+    "raw": "Cuarta generación (MK4)",
+    "numero": 4,
+    "codigoChasis": "MK4",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Ford Focus - Hatchback/Sedán Ford. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

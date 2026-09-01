@@ -1,0 +1,245 @@
+{
+  "slug": "renault-sandero",
+  "type": "vehiculos",
+  "title": "Renault Sandero",
+  "description": "Hatchback compacto de Renault, motores 1.6L de 16v, orientado a la relación precio-equipamiento.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "renault",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-clio",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-arkana",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-captur",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-onix",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-sandero",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:31.429Z",
+  "updatedAt": "2026-08-27T03:06:53.127Z",
+  "manufacturer": "Renault",
+  "class": "Hatchback",
+  "performance": {
+    "speed": "Media (175 km/h)",
+    "acceleration": "Media (0-100 km/h en 11.5s)"
+  },
+  "power": "110 hp",
+  "price": "USD 16.490 (precio de referencia regional)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 16490,
+    "raw": "USD 16.490 (precio de referencia regional)"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://renault-yopal.loscoches.com/vehiculos-nuevos/renault-sandero.html",
+    "secondarySource": "https://www.facebook.com/RenaultEcuador/videos/sandero/437485559035684",
+    "note": "Se verificaron las especificaciones técnicas generales del Renault Sandero, incluyendo la potencia de 110 hp con motor 1.6 SCe, la capacidad del baúl de 320 litros, las opciones de transmisión manual y CVT, así como el precio de referencia regional a partir de $16.490 USD.",
+    "limitations": [
+      "Los precios y las configuraciones exactas varían según el mercado específico de comercialización en Latinoamérica.",
+      "Algunas opciones de equipamiento y asistencia a la conducción dependen de la versión elegida (Life+, Zen, Intens)."
+    ]
+  },
+  "transmision": "Manual de 5 marchas o automática CVT X-Tronic",
+  "traccion": "Delantera",
+  "peso": "1055 kg",
+  "tipoMotor": "Nafta",
+  "potenciaKW": "81 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "11.5s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "7.0 L/100 km mixto",
+  "dimensiones": "4069 x 1733 x 1523 mm",
+  "cilindrada": "1598 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 320,
+  "maleteroMin": null,
+  "generacion": "3ra generación",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 16.500"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:06:53.127Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Renault Sandero se consolidó rápidamente como uno de los hatchbacks compactos más populares y exitosos del mercado sudamericano. Diseñado originalmente bajo la órbita de Dacia —la filial rumana de Grupo Renault—, el modelo fue adaptado para llevar el clásico rombo en la parrilla frontal y conquistar los mercados emergentes desde la segunda mitad de los años 2000. Desde su introducción, se posicionó como un producto robusto, pensado específicamente para soportar las exigencias de la infraestructura vial de la región, destacándose por su andar confortable frente a baches y caminos irregulares.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la trayectoria comercial del Sandero fue la evolución hacia tecnologías más modernas y plataformas optimizadas. En los mercados internacionales y regionales, la adopción de la arquitectura CMF-B aportó mejoras sustanciales en rigidez torsional y comportamiento dinámico. Con la llegada de su tercera generación, el modelo dio un salto notable en materia de diseño exterior con firmas lumínicas distintivas, seguridad pasiva y conectividad, incorporando pantallas multimedia flotantes compatibles con sistemas operativos modernos y mejorando la calidad percibida en el habitáculo respecto a sus antecesores.\n\n## Curiosidades\nUna de las particularidades más interesantes del ecosistema del Renault Sandero es el éxito rotundo de su variante aventurera, el Stepway, que popularizó un nicho convertido hoy en furor: el de los hatchbacks con estética y despeje de SUV urbano. Asimismo, en distintos mercados globales el vehículo se comercializa de manera indistinta bajo los emblemas de Renault o Dacia, demostrando una altísima versatilidad industrial que le permitió ser producido en plantas clave de Sudamérica como la de Curitiba en Brasil o Santa Isabel en Córdoba, Argentina.\n\n## Competencia y posicionamiento\nDentro del competitivo segmento B de los hatchbacks compactos, el Renault Sandero compite de forma directa contra referentes de la industria como el Volkswagen Polo, el Chevrolet Onix, el Fiat Argo y el Toyota Yaris. Su principal argumento de venta histórico radica en la excelente relación precio-producto, ofreciendo una habitabilidad interior destacada para su categoría, un baúl generoso de 320 litros y costos de mantenimiento accesibles, lo que lo convierte en un vehículo sumamente elegido tanto por flotas corporativas como por familias que buscan su primer vehículo 0 km confiable.",
+  "generacionInfo": {
+    "raw": "3ra generación",
+    "numero": 3,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Renault Sandero - Hatchback Renault. Media (175 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

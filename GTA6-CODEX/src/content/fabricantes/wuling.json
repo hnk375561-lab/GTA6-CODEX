@@ -1,0 +1,35 @@
+{
+  "slug": "wuling",
+  "type": "fabricantes",
+  "title": "Wuling",
+  "description": "Vehículos y motocicletas de Wuling",
+  "content": "## Identidad de Marca\n\nWuling opera bajo el paraguas de SAIC GM Wuling (SGMW), una empresa conjunta que reúne la capacidad industrial del gigante chino SAIC, la experiencia global de General Motors y la trayectoria local de Wuling [Fuente 2, Fuente 3, Fuente 4]. La marca se ha consolidado en el mercado por ofrecer soluciones de movilidad accesibles, dividiendo su propuesta actual entre su línea tradicional orientada al trabajo y vehículos de pasajeros con enfoques más modernos [Fuente 4, Fuente 5].\n\n## Historia y Orígenes\n\nLas raíces industriales de la compañía se remontan a 1958 con el establecimiento de la Liuzhou Power Machinery Plant, un hito que sentó las bases para su posterior incursión en el sector automotor [Fuente 2]. Sin embargo, la estructura corporativa actual tal como se la conoce, SGMW, se formalizó oficialmente en el año 2002 mediante la alianza estratégica entre SAIC y General Motors [Fuente 2, Fuente 3]. A lo largo de las décadas, este joint venture creció hasta convertirse en un actor clave en la producción de vehículos comerciales y de pasajeros dentro de la industria automotriz asiática [Fuente 4].\n\n## Posicionamiento Actual\n\nEn la actualidad, Wuling estructura su oferta comercial diferenciando claramente sus gamas según las necesidades del usuario. Por un lado, la línea conocida como *Wuling Red* se posiciona bajo el lema de ser el vehículo para los proyectos de las personas, enfocándose en desarrollar modelos utilitarios que respalden las actividades comerciales y de trabajo [Fuente 5]. Por otro lado, la división *Wuling Silver* apunta a elevar la calidad de manejo de los usuarios con una propuesta orientada a un estándar superior [Fuente 5]. Asimismo, la compañía complementa su estrategia de mercado con la marca Baojun, posicionada como un referente de vehículos inteligentes accesibles para promover la equidad tecnológica [Fuente 4, Fuente 5].",
+  "status": "confirmado",
+  "officialName": "Wuling",
+  "country": "China",
+  "foundedYear": 2002,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T22:20:37.704Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "wuling-mini-ev",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://es.wikipedia.org/wiki/SAIC-GM-Wuling",
+    "note": "Se verificó la estructura de la empresa conjunta SAIC GM Wuling Automobile (SGMW), sus orígenes y su segmentación de mercado a través de fuentes oficiales y enciclopédicas.",
+    "limitations": [
+      "No se especifica el año exacto de creación de la marca Wuling de manera independiente previa a la formación de la empresa conjunta en 2002.",
+      "Los detalles específicos sobre la evolución de su gama de productos en el mercado internacional son limitados."
+    ]
+  }
+}
