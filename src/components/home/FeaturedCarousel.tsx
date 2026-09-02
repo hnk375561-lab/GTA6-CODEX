@@ -1,6 +1,13 @@
 'use client'
 
-import { useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react'
+import {
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+  useState,
+  type PointerEvent as ReactPointerEvent,
+  type ReactNode,
+} from 'react'
 import { cn } from '@/lib/utils'
 
 interface FeaturedCarouselProps {
@@ -56,9 +63,21 @@ interface FeaturedCarouselProps {
  * los bordes del carrusel; `touch-pan-x` declara explícitamente al
  * navegador que este contenedor solo maneja paneo horizontal, en vez de
  * dejarlo inferir el eje del primer frame del gesto.
+ *
+ * `forwardRef` (rediseño "showroom" del hero, sept. 2026): el consumidor
+ * puede pasar un `ref` para quedarse con el nodo real del track scrolleable
+ * y disparar `scrollBy(...)` desde flechas prev/next propias (ver
+ * `HeroVehicleShowcase.tsx`) sin duplicar la lógica de drag/snap de acá.
+ * Antes el `trackRef` era 100% interno — no hacía falta exponerlo porque
+ * el único consumidor (panel "Destacados") no tenía controles manuales,
+ * solo drag/swipe nativo.
  */
-export function FeaturedCarousel({ children, className }: FeaturedCarouselProps) {
+export const FeaturedCarousel = forwardRef<HTMLDivElement, FeaturedCarouselProps>(function FeaturedCarousel(
+  { children, className },
+  forwardedRef
+) {
   const trackRef = useRef<HTMLDivElement>(null)
+  useImperativeHandle(forwardedRef, () => trackRef.current as HTMLDivElement)
   const dragStateRef = useRef<{ pointerId: number; startX: number; startScrollLeft: number } | null>(null)
   const [isDragging, setIsDragging] = useState(false)
 
@@ -108,4 +127,4 @@ export function FeaturedCarousel({ children, className }: FeaturedCarouselProps)
       {children}
     </div>
   )
-}
+})

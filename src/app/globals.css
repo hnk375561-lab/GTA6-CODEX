@@ -206,30 +206,6 @@ body {
   animation: hero-vehicle-float 6s ease-in-out infinite;
 }
 
-/* Barra de progreso del punto activo del rotador de vehículos del hero
-   (ver controles manuales en `HeroVehicleShowcase.tsx`): se remonta con
-   una nueva `key` en cada avance (automático o manual), así que el
-   `0% -> 100%` siempre arranca sincronizado con el temporizador real de
-   rotación (`ROTATE_INTERVAL_MS`, pasado como `animationDuration`
-   inline). Solo se renderiza en JS cuando no hay `prefers-reduced-motion`
-   ni pausa activa (ver ese componente), así que no hace falta un bloque
-   `@media` acá para apagarla — nunca llega a montarse en esos casos. */
-@keyframes hero-vehicle-dot-fill {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-.hero-vehicle-dot-fill {
-  animation-name: hero-vehicle-dot-fill;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
-
 h1,
 h2,
 h3,
@@ -623,7 +599,12 @@ a:hover .logo-mark {
   /* --- Detiene toda animación infinita/ambiental del sitio ---
      Cubre: logo (hover glow), contador y capas de media de las cards.
      Cada elemento queda en un estado final estático y legible en vez
-     de congelarse a mitad de ciclo. */
+     de congelarse a mitad de ciclo.
+     (`.hero-vehicle-dot-fill` — el punto de progreso del rotador
+     automático del hero — se eliminó de acá en el rediseño "franja
+     showroom" de sept. 2026 junto con la clase misma: esa pieza ya no
+     tiene rotación automática por temporizador, ver
+     `HeroVehicleShowcase.tsx`.) */
   .logo-mark,
   .count-up,
   .card-media-image,

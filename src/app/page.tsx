@@ -548,21 +548,28 @@ export default async function HomePage() {
             </div>
           </Reveal>
 
-          {/* Franja horizontal del hero (1.2, rediseño sept. 2026):
-              anuncio propio (izquierda, `HeroSelfPromoCard`) + carrusel
-              de vehículos `featured` (derecha, `HeroVehicleShowcase`) —
-              va acá, en el flujo normal del documento, justo debajo de
-              CTAs/buscador y antes de la grilla de categorías (ubicación
-              acordada explícitamente, ver conversación de rediseño).
-              Antes vivía en una capa `position: absolute` `-z-10`
-              `pointer-events-none` superpuesta DETRÁS de todo este
-              texto — de ahí que nada respondiera al click ni se
-              percibiera como una pieza propia con su propio lugar (ver
-              el FIX documentado en `HeroVehicleShowcase.tsx`). Al vivir
-              acá, en flujo normal, la anima el mismo `Reveal` que el
-              resto de los bloques del panel — sin mecanismo de scroll
-              propio ni superposición con nada. */}
-          <Reveal index={4} total={7} className="mx-auto mt-14 w-full max-w-[100rem] text-left">
+          {/* Franja "showroom" del hero (2do rediseño, sept. 2026):
+              una sola fila 100% horizontal con scroll-snap real —
+              anuncio propio (`HeroSelfPromoCard`) como primera card,
+              seguido de una card panorámica por cada vehículo `featured`
+              (`HeroVehicleShowcase`, ver ese archivo para el detalle
+              completo del cambio de arquitectura). Va acá, en el flujo
+              normal del documento, justo debajo de CTAs/buscador y antes
+              de la grilla de categorías (ubicación acordada
+              explícitamente, ver conversación de rediseño) — eso no
+              cambió respecto de la primera versión.
+              Lo que sí cambió: el wrapper pasa de `max-w-[100rem]`
+              (columna angosta centrada) a `w-full` sin techo de ancho —
+              la fila necesita ocupar el 100% del ancho real del panel
+              del hero (`max-w-[90rem]` heredado del contenedor padre,
+              ver el `<div>` raíz de este panel) para que "100%
+              horizontal" sea literal y no quede recortada por un
+              max-width propio innecesario. La anima el mismo `Reveal`
+              que el resto de los bloques del panel — sin mecanismo de
+              scroll vertical propio ni superposición con nada (el track
+              interno de `FeaturedCarousel` scrollea en su propio eje
+              horizontal, ver esa nota en `HeroVehicleShowcase.tsx`). */}
+          <Reveal index={4} total={7} className="mx-auto mt-14 w-full text-left">
             <HeroVehicleShowcase vehicles={heroShowcaseVehicles} selfPromo={heroSelfPromo} />
           </Reveal>
 

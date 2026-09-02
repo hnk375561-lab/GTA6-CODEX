@@ -47,10 +47,11 @@ interface HeroSelfPromoCardProps {
 }
 
 /**
- * Bloque izquierdo del hero, hermano del carrusel de la derecha (ver
- * `HeroVehicleShowcase`) — mismo alto (`h-full`, ambos viven en un grid
- * `items-stretch`), mismo lenguaje visual (`rounded-3xl border shadow-lg`),
- * pero formato "banner editorial": la foto ocupa la tarjeta completa
+ * Primer ítem de la franja showroom del hero (ver `HeroVehicleShowcase`,
+ * que la monta como primera card fija de su fila con scroll-snap) —
+ * mismo lenguaje visual que las cards de vehículo (`rounded-3xl border
+ * shadow-lg`), pero formato "banner editorial": la foto ocupa la tarjeta
+ * completa
  * (`object-cover` a sangre, no una caja de foto separada arriba) con un
  * degradé oscuro al pie para que el texto (eyebrow + título + specs +
  * CTA) quede legible encima sin taparla del todo — a propósito distinto
@@ -62,10 +63,21 @@ interface HeroSelfPromoCardProps {
  * agrupada (`categoryHref`, si existe), el chip de CTA linkea a la
  * ficha específica de este vehículo (`detailHref`) — son hermanos en el
  * mismo contenedor `relative`, no un link dentro del otro.
+ *
+ * SEGUNDO REDISEÑO ("franja showroom", sept. 2026): esta card deja de
+ * vivir en una columna de grid que estira su alto al del carrusel
+ * vecino (`h-full`) — ahora es el primer ítem, de ancho fijo, de una
+ * fila 100% horizontal con scroll-snap (ver `HeroVehicleShowcase.tsx`),
+ * hermana en el mismo eje que cada card de vehículo, no ya "al lado" en
+ * una grilla de 2 columnas. Por eso pasa de `h-full min-h-[18rem]` a un
+ * alto fijo (`h-[21rem] sm:h-[23rem]`) que el caller no necesita
+ * mantener sincronizado con nada más — el ancho lo define el caller vía
+ * `className` (`shrink-0` + `w-[...]`, mismo criterio que las cards de
+ * vehículo del nuevo track).
  */
 export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps) {
   const cardClassName = cn(
-    'relative flex h-full min-h-[18rem] flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-900 text-white shadow-lg',
+    'relative flex h-[21rem] flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-900 text-white shadow-lg',
     className
   )
 
@@ -112,7 +124,7 @@ export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps
         src={content.src}
         alt=""
         fill
-        sizes="(min-width: 1024px) 40rem, 100vw"
+        sizes="(min-width: 640px) 22rem, 78vw"
         priority
         className="object-cover"
       />
