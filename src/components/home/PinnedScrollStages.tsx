@@ -315,11 +315,19 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
           <div className="absolute" style={{ transform: `translate3d(${-16 + globalProgress * 46}%, ${-24 + globalProgress * 70}%, 0)` }}>
             <div className="hero-blob-a h-[38rem] w-[38rem] rounded-full bg-orange-200/25 blur-3xl" />
           </div>
+          {/* Blob B: antes `bg-neutral-200/60` (gris plano) — resabio de
+              antes de que el sitio adoptara la paleta "vice"
+              naranja→cian (ver `.text-gradient-vice`, ya en uso en 9+
+              páginas del sitio, pero no en este hero hasta ahora). Se
+              recolorea a cian muy sutil para que el hero tenga el mismo
+              duotono de marca que el resto del sitio, sin subir la
+              opacidad ni romper la estética blanca/minimalista que el
+              comentario de arriba documenta a propósito. */}
           <div
             className="absolute right-0"
             style={{ transform: `translate3d(${18 - globalProgress * 52}%, ${64 - globalProgress * 80}%, 0)` }}
           >
-            <div className="hero-blob-b h-[34rem] w-[34rem] rounded-full bg-neutral-200/60 blur-3xl" />
+            <div className="hero-blob-b h-[34rem] w-[34rem] rounded-full bg-blue-200/30 blur-3xl" />
           </div>
         </div>
 

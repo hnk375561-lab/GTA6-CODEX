@@ -454,9 +454,7 @@ export default async function HomePage() {
             <Parallax strength={8}>
               <h1 className="font-display text-6xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-7xl lg:text-8xl">
                 Cada{' '}
-                <span className="text-orange-600">
-                  <WordRotate words={HERO_SUBTITLE_WORDS} />
-                </span>{' '}
+                <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gradient-vice" />{' '}
                 a un clic
               </h1>
             </Parallax>
@@ -485,7 +483,7 @@ export default async function HomePage() {
             ))}
             <div className="hidden h-10 w-px bg-neutral-200 sm:block" aria-hidden="true" />
             <div className="flex flex-col items-center gap-0.5">
-              <span className="font-display text-5xl font-bold text-orange-600">
+              <span className="font-display text-5xl font-bold text-gradient-vice">
                 <CountUp end={totalCount} />
               </span>
               <span className="text-xs uppercase tracking-[0.15em] text-neutral-500">
