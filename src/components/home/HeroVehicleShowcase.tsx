@@ -86,50 +86,53 @@ interface HeroVehicleShowcaseProps {
 }
 
 /**
- * REDISEÑO "FRANJA SHOWROOM" (sept. 2026) — reemplaza por completo la
- * versión anterior de esta pieza (banner de 2 columnas fijas: anuncio
- * propio a la izquierda + carrusel de 1 vehículo por vez con crossfade
- * automático a la derecha). Motivo del cambio, pedido explícito: esa
- * versión de 2 columnas ya no se sentía "lo más horizontal posible" —
- * las proporciones quedaban atadas al ancho de la columna derecha
- * (`minmax(0,1.6fr)`), nunca ocupaba de verdad todo el ancho disponible
- * del hero, y mostraba un solo vehículo por vez (había que esperar el
- * crossfade o tocar una flecha para ver el resto).
+ * TERCER REDISEÑO — "DOS BLOQUES, 100% HORIZONTAL" (sept. 2026).
  *
- * Nueva idea, no un parche de proporciones: en vez de "2 columnas con un
- * carrusel adentro de una de ellas", es UNA sola fila 100% horizontal
- * con scroll real (`FeaturedCarousel`, el mismo componente de
- * drag+snap que ya usa el panel "Destacados" más abajo en la home — se
- * reusa en vez de reinventar la lógica de touch/drag). El anuncio propio
- * (`HeroSelfPromoCard`) pasa a ser la PRIMERA card de esa fila, del
- * mismo alto y familia visual que las cards de vehículo que la siguen —
- * ya no es un bloque aparte "al lado", es el primer ítem de la vidriera.
+ * Motivo del cambio, pedido explícito tras probar el rediseño anterior
+ * ("franja showroom", una sola fila con el anuncio propio como primera
+ * card del mismo track): dos problemas de fondo, no de detalle.
  *
- * Cambios de fondo respecto de la versión anterior:
- * - Todos los vehículos están montados a la vez, cada uno en su propia
- *   card panorámica — no hay más una sola imagen "actual" con crossfade
- *   por opacidad. Se ve más de un auto al mismo tiempo sin esperar nada,
- *   y en desktop ancho ya asoma el borde de la card siguiente (efecto
- *   "hay más, seguí mirando").
- * - Sin rotación automática por temporizador: la fila avanza por drag,
- *   swipe, rueda con Shift, o las flechas prev/next (controles reales,
- *   ver más abajo) — el usuario controla el ritmo, no un `setInterval`.
- *   Esto también resuelve de raíz cualquier duda sobre "por qué no
- *   responde al click": no hay una sola imagen apilada encima de otras
- *   con opacidad 0 compitiendo por el mismo espacio — cada card es un
- *   nodo propio, independiente, con su propio `<Link>`.
- * - Flechas prev/next reales (no decorativas): usan `scrollBy` sobre el
- *   mismo nodo que ya scrollea con drag/swipe (`FeaturedCarousel` ahora
- *   expone su ref, ver ese archivo), así que "click de flecha" y
- *   "arrastrar con el mouse" mueven exactamente el mismo scroll, sin
- *   dos mecanismos de estado por separado que puedan desincronizarse.
+ * 1) CLICKS ROTOS CON MOUSE. La causa real no era de este archivo sino
+ *    de `FeaturedCarousel` (ver el comentario largo ahí): capturaba el
+ *    puntero en TODO `pointerdown` de mouse, incluso en un click limpio
+ *    sin arrastre, lo que hacía que el `click` sintético se reasignara
+ *    al track en vez de al `<Link>`/`<button>` de abajo. Corregido de
+ *    raíz en `FeaturedCarousel.tsx` (umbral de movimiento antes de
+ *    confirmar arrastre y recién ahí capturar el puntero) — esta pieza
+ *    se beneficia automáticamente, sin nada especial que hacer acá.
+ * 2) ANCHO REAL. La fila anterior vivía dentro del contenedor centrado
+ *    del panel hero (`max-w-[90rem]`, heredado de `page.tsx`) — nunca
+ *    llegaba a ocupar el ancho real del viewport, y mezclar el anuncio
+ *    propio como "una card más" del mismo track lo hacía perderse entre
+ *    los vehículos en vez de leerse como un bloque señalado a propósito.
  *
- * Se mantiene sin cambios: overlay de sello de evidencia + specs +
+ * Solución — dos bloques lado a lado, no una fila mezclada:
+ * - IZQUIERDA: `HeroSelfPromoCard`, bloque FIJO propio (no forma parte
+ *   del scroll del carrusel), marcado con un chip "Nuestra
+ *   recomendación" (flecha, ver ese componente) para que se lea como
+ *   señalado a propósito, no como una card de catálogo más.
+ * - DERECHA: el carrusel de vehículos (`FeaturedCarousel`, mismo
+ *   drag+snap+flechas de siempre), ahora en su propio bloque, todo el
+ *   ancho restante para él solo.
+ * - El contenedor raíz de esta pieza se escapa del `max-width` del
+ *   panel hero con la técnica clásica de "full-bleed" (`w-screen` +
+ *   `left-1/2` + margen negativo de medio viewport) para que la franja
+ *   sea 100% horizontal de verdad — de borde a borde del viewport, con
+ *   el mismo padding lateral responsive que el resto del sitio
+ *   (`container-max`), nunca tocando el borde físico de la pantalla.
+ *   El ancestro que envuelve cada panel del track pineado ya tiene
+ *   `overflow: hidden` (`PinnedScrollStages`), así que este escape de
+ *   ancho no genera scroll horizontal en la página.
+ * - En mobile/tablet (`< lg`) los dos bloques se apilan en columna
+ *   (anuncio arriba, carrusel abajo) — "izquierda/derecha" es un
+ *   concepto de desktop; en una pantalla angosta no hay espacio real
+ *   para dos columnas sin que ambas queden demasiado angostas.
+ *
+ * Se mantiene sin cambios: todos los vehículos montados a la vez (sin
+ * rotación por temporizador), overlay de sello de evidencia + specs +
  * chip "Ver ficha" por card, transición FLIP opcional hacia Categorías
- * (`lib/view-transitions.ts`), `prefers-reduced-motion` (ya cubierto en
- * gran parte por `FeaturedCarousel`, que no depende de animación propia
- * para funcionar), y accesibilidad (imagen decorativa `aria-hidden` +
- * `aria-label` real en cada `<Link>`).
+ * (`lib/view-transitions.ts`), `prefers-reduced-motion`, y accesibilidad
+ * (imagen decorativa `aria-hidden` + `aria-label` real en cada `<Link>`).
  */
 export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: HeroVehicleShowcaseProps) {
   const router = useRouter()
@@ -176,10 +179,22 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
   }
 
   return (
-    <div className={cn('relative w-full', className)}>
-      <FeaturedCarousel ref={trackRef} className="scroll-px-1 pb-3 pr-1">
-        <HeroSelfPromoCard content={selfPromo} className="w-[16.5rem] shrink-0 snap-start sm:w-[19rem]" />
+    // Full-bleed: escapa del `max-w` centrado del panel hero para que la
+    // franja sea 100% horizontal de verdad (borde a borde del viewport,
+    // con el mismo padding lateral responsive que `container-max` en el
+    // resto del sitio). `className` del caller se agrega al final via
+    // `cn`/`twMerge`, así que si algún día hace falta espaciado extra
+    // desde `page.tsx` sigue pudiendo pisarse sin tocar este archivo.
+    <div className={cn('relative left-1/2 w-screen -ml-[50vw] px-4 sm:px-6 lg:px-8 xl:px-12', className)}>
+      <div className="flex w-full flex-col gap-5 lg:flex-row lg:items-stretch">
+        {/* IZQUIERDA: anuncio propio, bloque fijo — ya no es una card
+            más del track de la derecha, ver docstring del componente. */}
+        <HeroSelfPromoCard content={selfPromo} className="h-[20rem] w-full shrink-0 sm:h-[22rem] lg:h-auto lg:w-[24rem] xl:w-[27rem]" />
 
+        {/* DERECHA: carrusel de vehículos, en su propio bloque con todo
+            el ancho restante para él solo. */}
+        <div className="relative min-w-0 flex-1">
+      <FeaturedCarousel ref={trackRef} className="scroll-px-1 pb-3 pr-1">
         {vehicles.map((vehicle) => {
           const canLink = Boolean(vehicle.categoryHref)
           const flipEnabled = canLink && flipSupported
@@ -311,42 +326,45 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
             </div>
           )
         })}
-      </FeaturedCarousel>
+          </FeaturedCarousel>
 
-      {/* Flechas prev/next reales — mueven el mismo nodo que ya scrollea
-          con drag/swipe (`trackRef`, expuesto por `FeaturedCarousel`),
-          nunca un segundo estado de "índice actual" separado. Ocultas
-          en mobile (el gesto de swipe ya cubre esa navegación en pantallas
-          chicas, y las flechas superpuestas competían con el thumb);
-          visibles desde `sm:` como en el resto del sitio. Deshabilitadas
-          (no ocultas) en el extremo correspondiente del recorrido, para
-          que la fila siga leyéndose como "esto es todo, no hay más". */}
-      {vehicles.length > 0 && (
-        <>
-          <button
-            type="button"
-            onClick={() => scrollByStep(-1)}
-            disabled={!canScrollPrev}
-            aria-label="Ver vehículos anteriores"
-            className="tap-scale absolute -left-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-neutral-700 shadow-lg ring-1 ring-neutral-200 transition-all duration-150 hover:-translate-x-0.5 hover:text-neutral-900 disabled:pointer-events-none disabled:opacity-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent sm:flex"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollByStep(1)}
-            disabled={!canScrollNext}
-            aria-label="Ver más vehículos"
-            className="tap-scale absolute -right-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-neutral-700 shadow-lg ring-1 ring-neutral-200 transition-all duration-150 hover:translate-x-0.5 hover:text-neutral-900 disabled:pointer-events-none disabled:opacity-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent sm:flex"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
-        </>
-      )}
+          {/* Flechas prev/next reales — mueven el mismo nodo que ya
+              scrollea con drag/swipe (`trackRef`, expuesto por
+              `FeaturedCarousel`), nunca un segundo estado de "índice
+              actual" separado. Ocultas en mobile (el gesto de swipe ya
+              cubre esa navegación en pantallas chicas, y las flechas
+              superpuestas competían con el thumb); visibles desde `sm:`
+              como en el resto del sitio. Deshabilitadas (no ocultas) en
+              el extremo correspondiente del recorrido, para que la fila
+              siga leyéndose como "esto es todo, no hay más". */}
+          {vehicles.length > 0 && (
+            <>
+              <button
+                type="button"
+                onClick={() => scrollByStep(-1)}
+                disabled={!canScrollPrev}
+                aria-label="Ver vehículos anteriores"
+                className="tap-scale absolute -left-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-neutral-700 shadow-lg ring-1 ring-neutral-200 transition-all duration-150 hover:-translate-x-0.5 hover:text-neutral-900 disabled:pointer-events-none disabled:opacity-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent sm:flex"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollByStep(1)}
+                disabled={!canScrollNext}
+                aria-label="Ver más vehículos"
+                className="tap-scale absolute -right-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-neutral-700 shadow-lg ring-1 ring-neutral-200 transition-all duration-150 hover:translate-x-0.5 hover:text-neutral-900 disabled:pointer-events-none disabled:opacity-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent sm:flex"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </>
+          )}
+        </div>
+      </div>
     </div>
   )
 }

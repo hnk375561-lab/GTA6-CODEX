@@ -47,9 +47,9 @@ interface HeroSelfPromoCardProps {
 }
 
 /**
- * Primer ítem de la franja showroom del hero (ver `HeroVehicleShowcase`,
- * que la monta como primera card fija de su fila con scroll-snap) —
- * mismo lenguaje visual que las cards de vehículo (`rounded-3xl border
+ * Bloque izquierdo de la franja del hero (ver `HeroVehicleShowcase`, que
+ * la monta como bloque fijo hermano del carrusel de vehículos) — mismo
+ * lenguaje visual que las cards de vehículo (`rounded-3xl border
  * shadow-lg`), pero formato "banner editorial": la foto ocupa la tarjeta
  * completa
  * (`object-cover` a sangre, no una caja de foto separada arriba) con un
@@ -64,17 +64,44 @@ interface HeroSelfPromoCardProps {
  * ficha específica de este vehículo (`detailHref`) — son hermanos en el
  * mismo contenedor `relative`, no un link dentro del otro.
  *
- * SEGUNDO REDISEÑO ("franja showroom", sept. 2026): esta card deja de
- * vivir en una columna de grid que estira su alto al del carrusel
- * vecino (`h-full`) — ahora es el primer ítem, de ancho fijo, de una
- * fila 100% horizontal con scroll-snap (ver `HeroVehicleShowcase.tsx`),
- * hermana en el mismo eje que cada card de vehículo, no ya "al lado" en
- * una grilla de 2 columnas. Por eso pasa de `h-full min-h-[18rem]` a un
- * alto fijo (`h-[21rem] sm:h-[23rem]`) que el caller no necesita
- * mantener sincronizado con nada más — el ancho lo define el caller vía
- * `className` (`shrink-0` + `w-[...]`, mismo criterio que las cards de
- * vehículo del nuevo track).
+ * TERCER REDISEÑO ("dos bloques", sept. 2026): esta card deja de ser el
+ * primer ítem dentro del mismo track con scroll-snap del carrusel (eso
+ * la hacía "una card más" de la fila, se perdía entre las demás y
+ * competía por el mismo gesto de drag/swipe que el resto). Ahora es un
+ * bloque PROPIO, fijo, a la izquierda de la franja del hero — el
+ * carrusel de vehículos vive aparte, a la derecha, con su propio scroll
+ * (ver `HeroVehicleShowcase.tsx` para el layout completo de dos
+ * columnas). El alto ya no es un valor fijo pensado para calzar con el
+ * resto de una fila (`h-[21rem]`): el caller (`HeroVehicleShowcase`)
+ * pasa la altura real vía `className`, que sobreescribe el valor por
+ * default acá abajo gracias a `cn`/`twMerge` (último valor gana).
+ *
+ * Además de la reubicación: se agrega una marca visual de "esto es
+ * nuestra recomendación" (chip con flecha, esquina superior izquierda) —
+ * pedido explícito para que el bloque se lea como señalado a propósito y
+ * no como una card más del catálogo. El sello de evidencia se corre a la
+ * esquina superior DERECHA para no superponerse con esa marca nueva.
  */
+
+/** Chip decorativo "esto es nuestra recomendación" — mismo chip en el
+ *  fallback sin vehículo y en la versión con contenido real, así el
+ *  bloque siempre se lee como señalado a propósito, tenga o no datos de
+ *  catálogo detrás. `pointer-events-none`: es puramente una etiqueta, no
+ *  debe restar área de click a la foto que tiene debajo. */
+function RecommendationBadge() {
+  return (
+    <span
+      aria-hidden="true"
+      className="pointer-events-none absolute left-4 top-4 z-20 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/15 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-white shadow-sm backdrop-blur-md"
+    >
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+      Nuestra recomendación
+    </span>
+  )
+}
+
 export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps) {
   const cardClassName = cn(
     'relative flex h-[21rem] flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-900 text-white shadow-lg',
@@ -88,6 +115,7 @@ export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps
   if (!content) {
     return (
       <div className={cardClassName}>
+        <RecommendationBadge />
         <div className="flex h-full flex-col justify-end bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
             {`Explorá el expediente`}
@@ -118,13 +146,18 @@ export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps
   // zoom, a diferencia del carrusel), pero se mantiene el mismo patrón
   // de nodo separado para no acoplar la animación CSS al posicionamiento
   // de `next/image` con `fill`.
+  // `z-0` explícito (antes: sin valor, `auto`): dejamos constancia clara
+  // de que este es el nodo de más abajo de la pila — el badge (`z-20`),
+  // el degradé (sin z pero pintado después = arriba de este) y el bloque
+  // de texto/CTA (`z-20`) siempre quedan por encima sin depender del
+  // orden implícito de "quién se declaró después en el JSX".
   const photo = (
-    <div aria-hidden="true" className="hero-vehicle-float absolute inset-0">
+    <div aria-hidden="true" className="hero-vehicle-float absolute inset-0 z-0">
       <Image
         src={content.src}
         alt=""
         fill
-        sizes="(min-width: 640px) 22rem, 78vw"
+        sizes="(min-width: 1024px) 24rem, 78vw"
         priority
         className="object-cover"
       />
@@ -137,7 +170,7 @@ export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps
         <Link
           href={content.categoryHref as string}
           aria-label={`Ver ${content.headline} en su categoría`}
-          className="tap-scale absolute inset-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-auto-accent"
+          className="tap-scale absolute inset-0 z-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-auto-accent"
         >
           {photo}
         </Link>
@@ -148,12 +181,17 @@ export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps
       {/* Degradé oscuro de pie a mitad de tarjeta: garantiza contraste
           del texto sobre cualquier foto real, sin depender de qué tan
           clara u oscura sea cada imagen puntual del catálogo. */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-2/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
 
+      <RecommendationBadge />
+
+      {/* Sello de evidencia: esquina superior DERECHA (antes izquierda,
+          donde ahora vive `RecommendationBadge`) para que las dos
+          etiquetas nunca se superpongan. */}
       {content.evidenceLevel && (
         <span
           className={cn(
-            'pointer-events-none absolute left-4 top-4 z-10 inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-wide shadow-sm backdrop-blur-sm',
+            'pointer-events-none absolute right-4 top-4 z-20 inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-wide shadow-sm backdrop-blur-sm',
             EVIDENCE_STAMP_META[content.evidenceLevel].className
           )}
           title="Nivel de evidencia — ver detalle completo en la ficha"
@@ -163,7 +201,12 @@ export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps
         </span>
       )}
 
-      <div className="relative z-10 mt-auto flex flex-col gap-3 p-5">
+      {/* `z-20` (antes `z-10`): mismo nivel que las etiquetas de arriba,
+          por encima de la foto (`z-0`) y el degradé (`z-[1]`) sin dejar
+          nada libreado al orden de aparición en el DOM. El chip de CTA
+          de acá adentro queda, así, siempre por encima de la foto —
+          nunca compite por el click con el `<Link>` de categoría. */}
+      <div className="relative z-20 mt-auto flex flex-col gap-3 p-5">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">{content.eyebrow}</p>
           <p className="mt-1 font-display text-2xl font-bold leading-tight sm:text-3xl">{content.headline}</p>

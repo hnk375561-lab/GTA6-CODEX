@@ -71,43 +71,90 @@ interface FeaturedCarouselProps {
  * Antes el `trackRef` era 100% interno — no hacía falta exponerlo porque
  * el único consumidor (panel "Destacados") no tenía controles manuales,
  * solo drag/swipe nativo.
+ *
+ * FIX CLICK-THROUGH CON MOUSE (auditoría "por qué no responde al click",
+ * sept. 2026): la versión anterior llamaba `track.setPointerCapture(...)`
+ * en TODO `pointerdown` de mouse, incluso en un click limpio sin arrastre
+ * real. Capturar el puntero desde el primer instante hace que Chrome/
+ * Firefox reasignen el `click` sintético que sigue al `pointerup` al
+ * elemento que capturó el puntero (el track) en vez de al `<Link>`/
+ * `<button>` real que está debajo del cursor — el resultado visible era
+ * exactamente "las cards/chips no responden al click" para cualquiera que
+ * use mouse (touch no se veía afectado porque este bloque solo corre para
+ * `pointerType === 'mouse'`).
+ *
+ * Corrección: ya no se captura el puntero en `pointerdown`. Se guarda la
+ * posición de arranque sin tocar nada del DOM, y recién cuando el
+ * movimiento acumulado supera `DRAG_THRESHOLD_PX` (un puñado de píxeles,
+ * suficiente para distinguir "moví el mouse" de "temblor de click") se
+ * confirma el gesto como arrastre real: ahí, y solo ahí, se llama
+ * `setPointerCapture` y arranca el scroll manual. Un click sin
+ * desplazamiento nunca dispara captura de puntero, así que el `click`
+ * sintético llega intacto al `<Link>`/`<button>` que el usuario tocó.
  */
+const DRAG_THRESHOLD_PX = 6
+
 export const FeaturedCarousel = forwardRef<HTMLDivElement, FeaturedCarouselProps>(function FeaturedCarousel(
   { children, className },
   forwardedRef
 ) {
   const trackRef = useRef<HTMLDivElement>(null)
   useImperativeHandle(forwardedRef, () => trackRef.current as HTMLDivElement)
-  const dragStateRef = useRef<{ pointerId: number; startX: number; startScrollLeft: number } | null>(null)
+  const dragStateRef = useRef<{
+    pointerId: number
+    startX: number
+    startScrollLeft: number
+    /** true recién cuando el movimiento superó el umbral y se confirmó
+     *  como arrastre real (y por lo tanto ya se capturó el puntero) —
+     *  antes de eso, `pointermove` solo mide distancia, nunca toca
+     *  `scrollLeft` ni el estado visual de "arrastrando". */
+    dragging: boolean
+  } | null>(null)
   const [isDragging, setIsDragging] = useState(false)
 
   const onPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (event.pointerType !== 'mouse') return
     const track = trackRef.current
     if (!track) return
+    // Sin `setPointerCapture` acá: se confirma recién en `onPointerMove`
+    // si el gesto resulta ser un arrastre real (ver comentario arriba).
     dragStateRef.current = {
       pointerId: event.pointerId,
       startX: event.clientX,
       startScrollLeft: track.scrollLeft,
+      dragging: false,
     }
-    track.setPointerCapture(event.pointerId)
-    setIsDragging(true)
   }
 
   const onPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
     const track = trackRef.current
     const drag = dragStateRef.current
     if (!track || !drag || drag.pointerId !== event.pointerId) return
-    track.scrollLeft = drag.startScrollLeft - (event.clientX - drag.startX)
+
+    const deltaX = event.clientX - drag.startX
+
+    if (!drag.dragging) {
+      if (Math.abs(deltaX) < DRAG_THRESHOLD_PX) return
+      // Recién ahora se confirma como arrastre real: se captura el
+      // puntero y se activa el estado visual — todo lo que pasó antes
+      // (el click limpio, si de eso se trataba) queda sin tocar.
+      drag.dragging = true
+      track.setPointerCapture(event.pointerId)
+      setIsDragging(true)
+    }
+
+    track.scrollLeft = drag.startScrollLeft - deltaX
   }
 
   const endDrag = (event: ReactPointerEvent<HTMLDivElement>) => {
     const track = trackRef.current
     const drag = dragStateRef.current
-    if (!track || !drag || drag.pointerId !== event.pointerId) return
-    track.releasePointerCapture(event.pointerId)
+    if (!drag || drag.pointerId !== event.pointerId) return
+    if (drag.dragging) {
+      track?.releasePointerCapture(event.pointerId)
+      setIsDragging(false)
+    }
     dragStateRef.current = null
-    setIsDragging(false)
   }
 
   return (
