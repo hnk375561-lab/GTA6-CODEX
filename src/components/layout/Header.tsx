@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { EntityType } from '@/types'
 import { SITE_NAME } from '@/config/site'
 import { cn } from '@/lib/utils'
+import { useWishlist } from '@/lib/hooks/useWishlist'
 
 /**
  * Enlaces siempre visibles en la barra: la categoría núcleo del sitio
@@ -40,6 +41,14 @@ const SITE_NAME_REST = SITE_NAME_REST_WORDS.join(' ')
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
+  // Contador de favoritos en vivo (sincronización visual, ver
+  // `useWishlist`): antes el corazón del header era un link ciego a
+  // `/favoritos` sin ningún indicio de cuántos había guardados — el
+  // hook ya se sincroniza solo entre toda instancia montada (evento
+  // custom local + `storage` entre pestañas), así que este contador
+  // queda al día apenas se toca un corazón en cualquier card del sitio,
+  // sin recargar la página ni pasar el estado por props.
+  const { count: wishlistCount, hydrated: wishlistHydrated } = useWishlist()
   // La home es un viewport pineado a 100dvh: si el header queda `sticky`
   // (como en el resto del sitio) le resta esos ~64-72px al panel, y el
   // panel deja de ocupar la pantalla completa. Acá pasa a `fixed`
@@ -157,7 +166,7 @@ export function Header() {
             </svg>
           </Link>
 
-          <Link href="/favoritos" aria-label="Favoritos" className={iconBtnClass}>
+          <Link href="/favoritos" aria-label={`Favoritos${wishlistHydrated && wishlistCount > 0 ? ` (${wishlistCount})` : ''}`} className={cn(iconBtnClass, 'relative')}>
             <svg
               width="16"
               height="16"
@@ -171,6 +180,15 @@ export function Header() {
             >
               <path d="M12 20.5s-7.5-4.6-10-9.2C.5 8 1.8 4.5 5 3.4c2.2-.8 4.4.1 5.6 2 .3.5.4.7.4.7s.1-.2.4-.7c1.2-1.9 3.4-2.8 5.6-2 3.2 1.1 4.5 4.6 3 7.9-2.5 4.6-10 9.2-10 9.2Z" />
             </svg>
+            {wishlistHydrated && wishlistCount > 0 && (
+              <span
+                key={wishlistCount}
+                aria-hidden="true"
+                className="header-badge-pop absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-auto-accent px-1 font-mono text-[10px] font-semibold leading-none text-white"
+              >
+                {wishlistCount > 99 ? '99+' : wishlistCount}
+              </span>
+            )}
           </Link>
 
           <button

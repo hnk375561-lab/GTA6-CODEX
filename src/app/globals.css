@@ -1315,6 +1315,30 @@ img,
   .wishlist-burst {
     display: none;
   }
+
+  .header-badge-pop {
+    animation: none !important;
+  }
+}
+
+/* Badge de conteo de favoritos en el header (sincronización visual, ver
+   `useWishlist`/`Header`): pequeño "pop" al aparecer o al cambiar de
+   número — `key={wishlistCount}` en el componente fuerza el remount que
+   hace que esta animación corra en cada cambio, no solo la primera vez
+   que se guarda un favorito. */
+.header-badge-pop {
+  animation: header-badge-pop 320ms var(--ease-out-back) both;
+}
+
+@keyframes header-badge-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* ============================================================
