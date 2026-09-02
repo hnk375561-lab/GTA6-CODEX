@@ -29,7 +29,7 @@ interface WordRotateProps {
  * otros elementos puramente decorativos del sitio (aria-hidden + texto
  * sr-only aparte).
  */
-export function WordRotate({ words, duration = 2500, className }: WordRotateProps) {
+export function WordRotate({ words, duration = 1800, className }: WordRotateProps) {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {

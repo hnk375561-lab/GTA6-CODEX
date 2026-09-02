@@ -456,8 +456,8 @@ a:hover .logo-mark {
 .reveal {
   opacity: 0;
   transform: translateY(28px) scale(0.98);
-  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 350ms cubic-bezier(0.32, 0.72, 0.12, 0.96),
+    transform 350ms cubic-bezier(0.32, 0.72, 0.12, 0.96);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
@@ -501,8 +501,8 @@ a:hover .logo-mark {
 .reveal[data-dir='curtain'] {
   transform: none;
   clip-path: inset(0 0 100% 0);
-  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
-    clip-path 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 350ms cubic-bezier(0.32, 0.72, 0.12, 0.96),
+    clip-path 450ms cubic-bezier(0.32, 0.72, 0.12, 0.96);
   transition-delay: var(--reveal-delay, 0ms);
 }
 

@@ -452,7 +452,7 @@ export default async function HomePage() {
               )}
             </p>
             <Parallax strength={8}>
-              <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-6xl lg:text-7xl">
+              <h1 className="font-display text-6xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-7xl lg:text-8xl">
                 Cada{' '}
                 <span className="text-orange-600">
                   <WordRotate words={HERO_SUBTITLE_WORDS} />
@@ -475,7 +475,7 @@ export default async function HomePage() {
           >
             {HERO_STAT_TYPES.map((type) => (
               <div key={type} className="flex flex-col items-center gap-0.5">
-                <span className="font-display text-3xl font-bold text-neutral-900">
+                <span className="font-display text-5xl font-bold text-neutral-900">
                   <CountUp end={countsByType[type] ?? 0} />
                 </span>
                 <span className="text-xs uppercase tracking-[0.15em] text-neutral-500">
@@ -485,7 +485,7 @@ export default async function HomePage() {
             ))}
             <div className="hidden h-10 w-px bg-neutral-200 sm:block" aria-hidden="true" />
             <div className="flex flex-col items-center gap-0.5">
-              <span className="font-display text-3xl font-bold text-orange-600">
+              <span className="font-display text-5xl font-bold text-orange-600">
                 <CountUp end={totalCount} />
               </span>
               <span className="text-xs uppercase tracking-[0.15em] text-neutral-500">
@@ -498,13 +498,13 @@ export default async function HomePage() {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/vehiculos"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-8 py-4 text-base font-semibold text-white transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-10 py-5 text-lg font-semibold text-white transition-transform hover:-translate-y-1"
               >
                 Ver fichas de autos <span aria-hidden="true">→</span>
               </Link>
               <Link
                 href="/comparar"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 px-8 py-4 text-base font-semibold text-neutral-900 transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 px-10 py-5 text-lg font-semibold text-neutral-900 transition-transform hover:-translate-y-1"
               >
                 Comparar vehículos
               </Link>

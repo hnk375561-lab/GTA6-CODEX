@@ -237,10 +237,9 @@ export function PinnedScrollStages({ stages }: PinnedScrollStagesProps) {
   useEffect(() => {
     if (reducedMotion) return
     let alive = true
-    const LERP_FACTOR = 0.18 // ajustado para mejor responsividad: 0.11 era
-    // demasiado lento, hacía que el scroll se sintiera "raro"/desalineado.
-    // 0.18 mantiene el suavizado pero sigue siendo 1:1 con el scroll real,
-    // sensación más natural y profesional sin temblor de muestreo.
+    const LERP_FACTOR = 0.25 // scroll responsivo y snappy: 0.11 era lento,
+    // 0.18 estaba bien, 0.25 es más agresivo/directo. Mantiene 1:1 con scroll
+    // real pero siente más "vivo" y menos flotante — profesional y reactivo.
 
     function tick() {
       if (!alive) return

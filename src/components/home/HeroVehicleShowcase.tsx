@@ -350,7 +350,7 @@ export function HeroVehicleShowcase({ vehicles, className }: HeroVehicleShowcase
 
   const layer = (
     <div className="hero-vehicle-float">
-      {isDesktop ? <Parallax strength={24}>{photoBox}</Parallax> : photoBox}
+      {isDesktop ? <Parallax strength={40}>{photoBox}</Parallax> : photoBox}
     </div>
   )
 
