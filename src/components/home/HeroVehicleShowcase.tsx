@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { HeroSelfPromoCard } from '@/components/home/HeroSelfPromoCard'
+import { HeroSelfPromoCard, type HeroSelfPromoContent } from '@/components/home/HeroSelfPromoCard'
 import { FLIP_VIEW_TRANSITION_NAME, navigateWithFlip, supportsViewTransitions } from '@/lib/view-transitions'
 import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
 import { cn } from '@/lib/utils'
@@ -68,6 +68,10 @@ const PHOTO_ZOOM_SCALE = 1.4
 
 interface HeroVehicleShowcaseProps {
   vehicles: HeroVehicleShowcaseItem[]
+  /** Contenido del bloque izquierdo (ver `HeroSelfPromoCard`) — `null`
+   *  cuando `page.tsx` no encontró ningún vehículo con foto resuelta
+   *  para armarlo (cae al fallback genérico del componente). */
+  selfPromo?: HeroSelfPromoContent | null
   className?: string
 }
 
@@ -116,8 +120,27 @@ interface HeroVehicleShowcaseProps {
  * pieza vive en el flujo normal del hero, la anima el mismo `Reveal` que
  * ya usa el resto de los bloques del panel (ver `page.tsx`) — un solo
  * mecanismo de entrada para todo el hero, no dos superpuestos.
+ *
+ * FIX (auditoría "vida del hero", sept. 2026): este archivo ya traía el
+ * rediseño de arriba, pero `page.tsx` seguía montando el componente
+ * DENTRO del wrapper viejo (`position: absolute`, `-z-10`,
+ * `pointer-events-none`) — el mismo problema que el rediseño dice
+ * resolver, reintroducido en el caller. Efecto real: nada de esta pieza
+ * respondía al click (`pointer-events-none` en un ancestro gana sobre
+ * cualquier `pointer-events-auto` de acá adentro) y la franja seguía
+ * flotando detrás del texto en vez de ocupar su propio lugar en el
+ * flujo. Corregido en `page.tsx`: el `Reveal` que monta este componente
+ * ya no tiene ese wrapper. También faltaba el archivo
+ * `HeroSelfPromoCard.tsx` (import roto, build nunca llegaba a compilar
+ * esta pieza) — se agrega en este mismo cambio.
+ *
+ * Más horizontal (pedido explícito, sept. 2026): las dos columnas ahora
+ * se separan desde `sm` en vez de `lg` (`grid-cols-1 sm:grid-cols-[...]`
+ * más abajo) y la caja de foto del carrusel pasa a `21/9` en desktop —
+ * la franja se lee "larga" apenas se sale de mobile, en vez de recién
+ * en pantallas grandes.
  */
-export function HeroVehicleShowcase({ vehicles, className }: HeroVehicleShowcaseProps) {
+export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: HeroVehicleShowcaseProps) {
   const router = useRouter()
   const [index, setIndex] = useState(0)
   const [reducedMotion, setReducedMotion] = useState(false)
@@ -161,7 +184,7 @@ export function HeroVehicleShowcase({ vehicles, className }: HeroVehicleShowcase
   if (vehicles.length === 0) {
     return (
       <div className={cn('mx-auto grid w-full max-w-3xl grid-cols-1', className)}>
-        <HeroSelfPromoCard />
+        <HeroSelfPromoCard content={selfPromo} />
       </div>
     )
   }
@@ -223,16 +246,17 @@ export function HeroVehicleShowcase({ vehicles, className }: HeroVehicleShowcase
   )
 
   return (
-    <div className={cn('grid w-full grid-cols-1 items-stretch gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)]', className)}>
-      <HeroSelfPromoCard />
+    <div className={cn('grid w-full grid-cols-1 items-stretch gap-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] sm:gap-5', className)}>
+      <HeroSelfPromoCard content={selfPromo} />
 
       <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-lg">
         {/* Caja de foto panorámica — antes recuadro chico
             (`aspect-[4/3] max-w-lg`) flotando sobre el fondo; ahora
             ocupa el ancho completo de su columna en formato horizontal,
-            acorde al pedido de que la pieza sea "lo más horizontal
-            posible". */}
-        <div className="relative aspect-[16/11] w-full shrink-0 bg-neutral-50 sm:aspect-[16/9]">
+            cada vez más panorámico a medida que hay más ancho
+            disponible (`21/9` en desktop), acorde al pedido de que la
+            pieza sea "lo más horizontal posible". */}
+        <div className="relative aspect-[4/3] w-full shrink-0 bg-neutral-50 sm:aspect-[16/9] lg:aspect-[21/9]">
           {canLink ? (
             <Link
               href={current.categoryHref as string}

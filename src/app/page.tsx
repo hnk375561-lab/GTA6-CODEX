@@ -15,7 +15,7 @@ import { getBidirectionalRelationCount } from '@/lib/relations'
 import { generateHomepageMetadata, generateBreadcrumbJsonLd, generateWebsiteJsonLd, generateFaqJsonLd, serializeJsonLd } from '@/lib/seo'
 import { parsePowerHp } from '@/lib/vehicle-power'
 import { parsePriceUsd } from '@/lib/vehicle-price'
-import { pickSearchExamples, computeCategoryQuickFilterOptions, categoryPageHref } from '@/lib/vehicle-category'
+import { pickSearchExamples, computeCategoryQuickFilterOptions, categoryPageHref, getVehicleCategory } from '@/lib/vehicle-category'
 import { getAvailableRankings } from '@/lib/rankings'
 import { getManufacturerMarqueeItems } from '@/lib/vehicle-manufacturers'
 import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
@@ -35,6 +35,7 @@ import { PinnedScrollStages, type Stage } from '@/components/home/PinnedScrollSt
 import { Reveal } from '@/components/home/StageProgress'
 import { Parallax, TiltCard } from '@/components/home/Parallax'
 import { HeroVehicleShowcase, type HeroVehicleShowcaseItem } from '@/components/home/HeroVehicleShowcase'
+import { type HeroSelfPromoContent } from '@/components/home/HeroSelfPromoCard'
 import { AdUnit } from '@/components/monetization/AdUnit'
 import { CompareShowcase, type CompareShowcaseVehicle } from '@/components/home/CompareShowcase'
 import { EvidenceSpotlight, type EvidenceHighlight } from '@/components/home/EvidenceSpotlight'
@@ -263,6 +264,52 @@ export default async function HomePage() {
     .filter((item): item is HeroVehicleShowcaseItem => item !== null)
     .slice(0, HERO_SHOWCASE_LIMIT)
 
+  // Anuncio propio del hero (bloque izquierdo, ver `HeroSelfPromoCard`):
+  // recomendación editorial FIJA (no rota, a diferencia del carrusel de
+  // la derecha — decisión de producto, "más simple, lo cambio yo a mano
+  // después"). Categoría por defecto: Sedán. Mismo criterio anti-relleno
+  // que `heroShowcaseVehicles` arriba: nunca se arma con datos
+  // inventados, así que primero se busca un sedán real con foto
+  // resuelta (y que no sea ya uno de los vehículos del carrusel, para
+  // no mostrar el mismo auto dos veces en el mismo panel); si no hay
+  // ninguno, cae al primer vehículo del catálogo (fuera del carrusel)
+  // que sí tenga foto, sea cual sea su categoría; si el catálogo entero
+  // no tiene ninguna foto resuelta (caso borde), el bloque recibe `null`
+  // y `HeroSelfPromoCard` muestra su fallback genérico (pitch del sitio,
+  // sin specs inventados).
+  const HERO_SELF_PROMO_CATEGORY = 'Sedán'
+  const heroShowcaseSlugs = new Set(heroShowcaseVehicles.map((item) => item.slug))
+
+  function buildSelfPromoContent(vehicle: Vehicle, categoryLabel: string): HeroSelfPromoContent | null {
+    const image = resolveEntityDisplayImage(vehicle)
+    if (!image) return null
+    const powerHp = parsePowerHp(vehicle)
+    const priceUsd = parsePriceUsd(vehicle)
+    return {
+      eyebrow: `Por qué elegir un ${categoryLabel.toLowerCase()}`,
+      headline: vehicle.manufacturer ? `${vehicle.manufacturer} ${vehicle.title}` : vehicle.title,
+      body: `Nuestra recomendación del momento en ${categoryLabel} — ficha completa con specs y precio reales.`,
+      src: image.src,
+      alt: image.alt,
+      categoryHref: categoryPageHref(vehicle.class),
+      detailHref: `/${EntityType.VEHICLE}/${vehicle.slug}`,
+      ctaLabel: 'Ver ficha',
+      powerLabel: powerHp !== null ? `${powerHp} hp` : null,
+      secondaryStatLabel: priceUsd !== null ? formatUsdShort(priceUsd) : (vehicle.performance?.speed ?? null),
+      evidenceLevel: vehicle.evidence?.level,
+    }
+  }
+
+  const preferredSelfPromoVehicle = vehicles.find(
+    (v) => !heroShowcaseSlugs.has(v.slug) && getVehicleCategory(v.class) === HERO_SELF_PROMO_CATEGORY
+  )
+  const fallbackSelfPromoVehicle = vehicles.find((v) => !heroShowcaseSlugs.has(v.slug))
+  const heroSelfPromo: HeroSelfPromoContent | null = preferredSelfPromoVehicle
+    ? buildSelfPromoContent(preferredSelfPromoVehicle, HERO_SELF_PROMO_CATEGORY)
+    : fallbackSelfPromoVehicle
+      ? buildSelfPromoContent(fallbackSelfPromoVehicle, getVehicleCategory(fallbackSelfPromoVehicle.class) ?? 'vehículo')
+      : null
+
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
   const websiteLd = generateWebsiteJsonLd()
 
@@ -421,26 +468,14 @@ export default async function HomePage() {
     // Component que hace `await` a la base del expediente.
     //
     // `scrollVh` alto (210): panel de entrada, con la cascada más larga
-    // (6 bloques) — pide el recorrido más pausado del track.
+    // (7 bloques) — pide el recorrido más pausado del track.
     {
       id: 'hero',
       label: 'Inicio',
       scrollVh: 210,
       content: (
         <div className="relative mx-auto w-full max-w-[90rem] text-center">
-          {/* Capa media (1.2): entre el fondo (blobs, z-index 0 del track
-              en `PinnedScrollStages`) y el texto de abajo. `-z-10` la deja
-              detrás de todo el contenido en flujo normal de este panel
-              (ver nota de stacking en `HeroVehicleShowcase`) sin necesidad
-              de subir el z-index del resto del hero. Sin `aria-hidden` acá
-              afuera a propósito: el `sr-only` que anuncia el vehículo
-              mostrado vive dentro de `HeroVehicleShowcase` y debe seguir
-              llegando a lectores de pantalla. */}
-          <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center opacity-60 sm:justify-end sm:opacity-100">
-            <HeroVehicleShowcase vehicles={heroShowcaseVehicles} className="sm:mr-[-1rem] lg:mr-6" />
-          </div>
-
-          <Reveal index={0} total={6} options={{ distance: 22 }}>
+          <Reveal index={0} total={7} options={{ distance: 22 }}>
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
               {SITE_NAME}
               {lastUpdateLabel && (
@@ -460,7 +495,7 @@ export default async function HomePage() {
             </Parallax>
           </Reveal>
 
-          <Reveal index={1} total={6} className="mx-auto mt-6 max-w-xl">
+          <Reveal index={1} total={7} className="mx-auto mt-6 max-w-xl">
             <p className="text-lg text-neutral-500 sm:text-xl">
               Specs reales del fabricante — para que compares antes de comprar.
             </p>
@@ -468,7 +503,7 @@ export default async function HomePage() {
 
           <Reveal
             index={2}
-            total={6}
+            total={7}
             className="mx-auto mt-10 flex max-w-lg flex-wrap items-center justify-center gap-x-10 gap-y-4"
           >
             {HERO_STAT_TYPES.map((type) => (
@@ -492,7 +527,7 @@ export default async function HomePage() {
             </div>
           </Reveal>
 
-          <Reveal index={3} total={6}>
+          <Reveal index={3} total={7}>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/vehiculos"
@@ -513,13 +548,31 @@ export default async function HomePage() {
             </div>
           </Reveal>
 
+          {/* Franja horizontal del hero (1.2, rediseño sept. 2026):
+              anuncio propio (izquierda, `HeroSelfPromoCard`) + carrusel
+              de vehículos `featured` (derecha, `HeroVehicleShowcase`) —
+              va acá, en el flujo normal del documento, justo debajo de
+              CTAs/buscador y antes de la grilla de categorías (ubicación
+              acordada explícitamente, ver conversación de rediseño).
+              Antes vivía en una capa `position: absolute` `-z-10`
+              `pointer-events-none` superpuesta DETRÁS de todo este
+              texto — de ahí que nada respondiera al click ni se
+              percibiera como una pieza propia con su propio lugar (ver
+              el FIX documentado en `HeroVehicleShowcase.tsx`). Al vivir
+              acá, en flujo normal, la anima el mismo `Reveal` que el
+              resto de los bloques del panel — sin mecanismo de scroll
+              propio ni superposición con nada. */}
+          <Reveal index={4} total={7} className="mx-auto mt-14 w-full max-w-[100rem] text-left">
+            <HeroVehicleShowcase vehicles={heroShowcaseVehicles} selfPromo={heroSelfPromo} />
+          </Reveal>
+
           {/* Preview de categorías directo en el hero: contenido real
               (no relleno) para que el panel tenga más para mostrar sin
               alargar el tiempo que tarda en aparecer cada ficha — eso lo
               sigue regulando `Reveal`/`scrollVh` sin tocarse acá. */}
           <Reveal
-            index={4}
-            total={6}
+            index={5}
+            total={7}
             className="mx-auto mt-14 grid w-full max-w-3xl grid-cols-2 gap-4 sm:grid-cols-3"
           >
             {categories.map((type) => {
@@ -554,8 +607,8 @@ export default async function HomePage() {
               grid de categorías de arriba. Estático — no pide datos extra
               — así que no compite con `Promise.all` de la carga inicial. */}
           <Reveal
-            index={5}
-            total={6}
+            index={6}
+            total={7}
             className="mx-auto mt-14 grid w-full max-w-[70rem] grid-cols-1 gap-6 border-t border-neutral-200 pt-10 text-left sm:grid-cols-3"
           >
             {[
