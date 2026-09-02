@@ -60,7 +60,7 @@ export function CategoryQuickFilter({ options }: CategoryQuickFilterProps) {
               // valor (no hace falta un botón "Limpiar" aparte).
               onClick={() => setActiveIndex(isActive ? null : i)}
               className={cn(
-                'rounded-full border px-4 py-2 text-sm font-semibold transition-colors',
+                'tap-scale rounded-full border px-4 py-2 text-sm font-semibold transition-colors',
                 isActive
                   ? 'border-neutral-900 bg-neutral-900 text-white'
                   : 'border-neutral-200 bg-white text-neutral-700 hover:border-neutral-400'

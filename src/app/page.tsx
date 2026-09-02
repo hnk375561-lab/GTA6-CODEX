@@ -498,13 +498,13 @@ export default async function HomePage() {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/vehiculos"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-10 py-5 text-lg font-semibold text-white transition-transform hover:-translate-y-1"
+                className="cta-shine tap-scale inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-10 py-5 text-lg font-semibold text-white transition-transform hover:-translate-y-1"
               >
                 Ver fichas de autos <span aria-hidden="true">→</span>
               </Link>
               <Link
                 href="/comparar"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 px-10 py-5 text-lg font-semibold text-neutral-900 transition-transform hover:-translate-y-1"
+                className="tap-scale inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 px-10 py-5 text-lg font-semibold text-neutral-900 transition-transform hover:-translate-y-1"
               >
                 Comparar vehículos
               </Link>
@@ -530,7 +530,7 @@ export default async function HomePage() {
                 <Link
                   key={type}
                   href={`/${type}`}
-                  className="group flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white/70 px-4 py-3 text-left shadow-sm backdrop-blur transition-transform hover:-translate-y-0.5"
+                  className="tap-scale group flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white/70 px-4 py-3 text-left shadow-sm backdrop-blur transition-transform hover:-translate-y-0.5"
                 >
                   <span
                     className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white"
@@ -914,10 +914,10 @@ export default async function HomePage() {
             </p>
           </Reveal>
           <Reveal index={2} total={3} className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/vehiculos" className="inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-8 py-4 font-semibold text-white transition-transform hover:-translate-y-0.5">
+            <Link href="/vehiculos" className="cta-shine tap-scale inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-8 py-4 font-semibold text-white transition-transform hover:-translate-y-0.5">
               Elegí tu vehículo <span aria-hidden="true">→</span>
             </Link>
-            <Link href="/buscar" className="inline-flex items-center justify-center rounded-full border border-neutral-300 px-8 py-4 font-semibold text-neutral-900 transition-transform hover:-translate-y-0.5">
+            <Link href="/buscar" className="tap-scale inline-flex items-center justify-center rounded-full border border-neutral-300 px-8 py-4 font-semibold text-neutral-900 transition-transform hover:-translate-y-0.5">
               Buscar un modelo puntual
             </Link>
           </Reveal>

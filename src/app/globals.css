@@ -1760,3 +1760,67 @@ video,
     padding-inline: 0;
   }
 }
+
+/* ============================================================
+   Micro-interacciones globales (sept. 2026)
+   Dos utilidades chicas, reusan los tokens de motion ya definidos
+   arriba (--ease-premium, --dur-fast/--dur-slow) en vez de inventar
+   timings nuevos — dos capas, no una por elemento:
+
+   1. `.tap-scale`: feedback de "esto es tocable" en cualquier
+      botón/card/chip clickeable — leve compresión al presionar.
+      Barato y universal, se aplica en toda la superficie interactiva
+      del sitio (Card, CTAs del hero, chips de filtro).
+   2. `.cta-shine`: barrido de luz diagonal al hover, reservado para
+      los 1-2 CTA primarios por vista (hero) — "gastar el atrevimiento
+      en un solo lugar", no en cada botón del sitio.
+   ============================================================ */
+.tap-scale {
+  transition: transform var(--dur-fast) var(--ease-standard);
+}
+
+.tap-scale:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tap-scale:active {
+    transform: none;
+  }
+}
+
+.cta-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cta-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  opacity: 0;
+}
+
+.cta-shine:hover::after {
+  opacity: 1;
+  transform: translateX(120%);
+  transition:
+    transform var(--dur-slower) var(--ease-premium),
+    opacity var(--dur-fast) var(--ease-standard);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-shine::after {
+    display: none;
+  }
+}
