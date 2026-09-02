@@ -442,6 +442,11 @@ a:not(.no-style) {
   transform-origin: left;
 }
 
+.link-underline--active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 /* --- Logo: glow discreto solo al hacer hover, sin loop permanente --- */
 .logo-mark {
   transition: box-shadow var(--transition-base), transform var(--transition-base);
@@ -1786,6 +1791,10 @@ video,
 @media (prefers-reduced-motion: reduce) {
   .tap-scale:active {
     transform: none;
+  }
+
+  #mobile-nav {
+    transition: none !important;
   }
 }
 

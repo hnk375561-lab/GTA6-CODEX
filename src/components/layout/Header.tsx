@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { EntityType } from '@/types'
 import { SITE_NAME } from '@/config/site'
+import { cn } from '@/lib/utils'
 
 /**
  * Enlaces siempre visibles en la barra: la categoría núcleo del sitio
@@ -63,8 +64,14 @@ export function Header() {
   }, [menuOpen])
 
   const iconBtnClass = isHome
-    ? 'flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-300 text-neutral-600 transition-all hover:border-neutral-900 hover:text-neutral-900 focus-visible:border-neutral-900 focus-visible:text-neutral-900'
-    : 'flex h-9 w-9 items-center justify-center rounded-lg border border-edge text-neutral-500 transition-all hover:border-auto-accent hover:text-auto-accent-strong focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent'
+    ? 'tap-scale flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-300 text-neutral-600 transition-all hover:border-neutral-900 hover:text-neutral-900 focus-visible:border-neutral-900 focus-visible:text-neutral-900'
+    : 'tap-scale flex h-9 w-9 items-center justify-center rounded-lg border border-edge text-neutral-500 transition-all hover:border-auto-accent hover:text-auto-accent-strong focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent'
+
+  // Enlace activo: exacto o sub-ruta (ej. `/vehiculos` queda activo en
+  // `/vehiculos/toyota-corolla`) — el único link sin sub-rutas propias es
+  // la home, y esta barra nunca lista `/` como item, así que no hace
+  // falta excluirla a mano.
+  const isLinkActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`)
 
   return (
     <header
@@ -106,19 +113,29 @@ export function Header() {
 
         {/* Navegación principal (desktop) */}
         <nav className="hidden items-center gap-6 md:flex" aria-label="Navegación principal">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={
-                isHome
-                  ? 'text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900 focus-visible:text-neutral-900'
-                  : 'link-underline text-sm font-medium text-neutral-500 transition-colors hover:text-auto-accent-strong focus-visible:text-auto-accent-strong'
-              }
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const active = isLinkActive(link.href)
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={active ? 'page' : undefined}
+                className={cn(
+                  'link-underline text-sm font-medium transition-colors',
+                  active && 'link-underline--active',
+                  isHome
+                    ? active
+                      ? 'text-neutral-900'
+                      : 'text-neutral-600 hover:text-neutral-900 focus-visible:text-neutral-900'
+                    : active
+                      ? 'text-auto-accent-strong'
+                      : 'text-neutral-500 hover:text-auto-accent-strong focus-visible:text-auto-accent-strong'
+                )}
+              >
+                {link.label}
+              </Link>
+            )
+          })}
         </nav>
 
         {/* Búsqueda y menú móvil */}
@@ -185,32 +202,49 @@ export function Header() {
         </div>
       </div>
 
-      {/* Navegación móvil */}
+      {/* Navegación móvil — transición de altura (grid-rows 0fr→1fr) en vez
+          del toggle abrupto por atributo `hidden` que tenía antes; el
+          contenido sigue montado siempre (mejor para el timing de la
+          transición) pero `inert` lo saca del tab order y de lectores de
+          pantalla mientras está cerrado, sin depender de JS extra para
+          eso. */}
       <nav
         id="mobile-nav"
         aria-label="Navegación móvil"
-        hidden={!menuOpen}
-        className={
+        aria-hidden={!menuOpen}
+        inert={!menuOpen}
+        className={cn(
+          'grid transition-[grid-template-rows] duration-300 ease-[var(--ease-standard)] md:hidden',
+          menuOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
           isHome
-            ? 'border-t border-neutral-200/70 bg-white/95 px-4 py-3 backdrop-blur-md md:hidden'
-            : 'glass-surface border-t border-edge px-4 py-3 md:hidden'
-        }
+            ? 'border-t border-neutral-200/70 bg-white/95 backdrop-blur-md'
+            : 'glass-surface border-t border-edge'
+        )}
       >
-        <ul className="flex flex-col">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={
-                  isHome
-                    ? 'block rounded-md px-2 py-3 text-base font-medium text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus-visible:bg-neutral-100 focus-visible:text-neutral-900'
-                    : 'block rounded-md px-2 py-3 text-base font-medium text-neutral-500 transition-colors hover:bg-surface-alt hover:text-auto-accent-strong focus-visible:bg-surface-alt focus-visible:text-auto-accent'
-                }
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+        <ul className="flex flex-col overflow-hidden px-4 py-3">
+          {NAV_LINKS.map((link) => {
+            const active = isLinkActive(link.href)
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={cn(
+                    'block rounded-md px-2 py-3 text-base font-medium transition-colors',
+                    isHome
+                      ? active
+                        ? 'bg-neutral-100 text-neutral-900'
+                        : 'text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 focus-visible:bg-neutral-100 focus-visible:text-neutral-900'
+                      : active
+                        ? 'bg-surface-alt text-auto-accent-strong'
+                        : 'text-neutral-500 hover:bg-surface-alt hover:text-auto-accent-strong focus-visible:bg-surface-alt focus-visible:text-auto-accent'
+                  )}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </nav>
     </header>
