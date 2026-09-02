@@ -133,7 +133,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
               type="button"
               onClick={() => setQuery('')}
               aria-label="Limpiar búsqueda"
-              className="absolute right-2.5 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-md text-neutral-500 transition-colors hover:bg-surface-alt hover:text-neutral-900"
+              className="tap-scale absolute right-2.5 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-md text-neutral-500 transition-colors hover:bg-surface-alt hover:text-neutral-900"
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                 <path d="M18 6 6 18M6 6l12 12" />
@@ -148,7 +148,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
             onClick={() => setCategory('todas')}
             aria-pressed={category === 'todas'}
             className={cn(
-              'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
+              'tap-scale rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
               category === 'todas'
                 ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                 : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -164,7 +164,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
               onClick={() => setCategory(c.slug)}
               aria-pressed={category === c.slug}
               className={cn(
-                'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
+                'tap-scale rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
                 category === c.slug
                   ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                   : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -220,7 +220,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
           <button
             type="button"
             onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
-            className="rounded-full border border-edge px-5 py-2.5 text-sm font-semibold text-neutral-500 transition-colors hover:border-auto-accent hover:text-auto-accent"
+            className="tap-scale rounded-full border border-edge px-5 py-2.5 text-sm font-semibold text-neutral-500 transition-colors hover:border-auto-accent hover:text-auto-accent"
           >
             Cargar más ({filtered.length - visibleCount} restantes)
           </button>
@@ -256,7 +256,7 @@ function GalleryTile({
       onClick={onOpen}
       data-featured={featured}
       className={cn(
-        'gallery-tile group relative block h-full w-full overflow-hidden rounded-xl border border-edge bg-surface-card text-left flex flex-col'
+        'tap-scale gallery-tile group relative block h-full w-full overflow-hidden rounded-xl border border-edge bg-surface-card text-left flex flex-col'
       )}
       aria-label={`Ampliar imagen: ${item.title}`}
     >
@@ -338,6 +338,32 @@ function GalleryLightbox({
   onNext: () => void
 }) {
   const dialogRef = useRef<HTMLDivElement>(null)
+  // Swipe táctil (mobile): solo para navegar prev/next, no interfiere con
+  // el pan/pinch de `ZoomableImage` (que usa touch-action:none y captura
+  // sus propios gestos) porque acá solo miramos el delta X del punto de
+  // inicio/fin — si el swipe es mayormente vertical o muy corto, se
+  // ignora, así un pan diagonal dentro de la imagen no dispara una
+  // navegación accidental.
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null)
+  const SWIPE_THRESHOLD_PX = 60
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0]
+    touchStartRef.current = touch ? { x: touch.clientX, y: touch.clientY } : null
+  }
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const start = touchStartRef.current
+    touchStartRef.current = null
+    if (!start || total <= 1) return
+    const touch = e.changedTouches[0]
+    if (!touch) return
+    const deltaX = touch.clientX - start.x
+    const deltaY = touch.clientY - start.y
+    if (Math.abs(deltaX) < SWIPE_THRESHOLD_PX || Math.abs(deltaX) < Math.abs(deltaY)) return
+    if (deltaX < 0) onNext()
+    else onPrev()
+  }
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -382,7 +408,7 @@ function GalleryLightbox({
         type="button"
         onClick={onClose}
         aria-label="Cerrar visor"
-        className="glass-surface absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-edge text-neutral-900 transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:right-6 sm:top-6"
+        className="tap-scale glass-surface absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-edge text-neutral-900 transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:right-6 sm:top-6"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
           <path d="M18 6 6 18M6 6l12 12" />
@@ -398,7 +424,7 @@ function GalleryLightbox({
               onPrev()
             }}
             aria-label="Imagen anterior"
-            className="glass-surface absolute left-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-edge text-neutral-900 transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:left-6"
+            className="tap-scale glass-surface absolute left-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-edge text-neutral-900 transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:left-6"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m15 18-6-6 6-6" />
@@ -411,7 +437,7 @@ function GalleryLightbox({
               onNext()
             }}
             aria-label="Imagen siguiente"
-            className="glass-surface absolute right-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-edge text-neutral-900 transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:right-6"
+            className="tap-scale glass-surface absolute right-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-edge text-neutral-900 transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:right-6"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m9 18 6-6-6-6" />
@@ -424,25 +450,26 @@ function GalleryLightbox({
         className="gallery-lightbox-panel glass-surface relative z-10 grid max-h-[94vh] w-full max-w-[1900px] grid-cols-1 overflow-hidden rounded-2xl border border-edge shadow-xl md:grid-cols-[minmax(0,1fr)_320px]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative min-h-[60vh] bg-auto-darker md:min-h-[88vh]">
+        <div className="relative min-h-[60vh] bg-auto-darker md:min-h-[88vh]" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
           {item.kind === 'video' && item.videoEmbedId ? (
-            <div className="flex h-full w-full items-center p-4">
+            <div className="flex h-full w-full items-center p-4" key={item.id}>
               <YouTubeEmbed embedId={item.videoEmbedId} title={item.title} thumbnailSrc={item.src} autoLoad />
             </div>
           ) : item.kind === 'video' && item.videoSrc ? (
-            <div className="flex h-full w-full items-center p-4">
+            <div className="flex h-full w-full items-center p-4" key={item.id}>
               <VideoEmbed videoSrc={item.videoSrc} title={item.title} autoLoad />
             </div>
           ) : (
-            <ZoomableImage
-              key={item.id}
-              resetKey={item.id}
-              src={item.src}
-              alt={item.alt}
-              sizes="(min-width: 1920px) 1580px, (min-width: 1280px) 82vw, 100vw"
-              priority
-              quality={100}
-            />
+            <div className="gallery-lightbox-media-enter h-full w-full" key={item.id}>
+              <ZoomableImage
+                resetKey={item.id}
+                src={item.src}
+                alt={item.alt}
+                sizes="(min-width: 1920px) 1580px, (min-width: 1280px) 82vw, 100vw"
+                priority
+                quality={100}
+              />
+            </div>
           )}
         </div>
 

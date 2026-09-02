@@ -1552,6 +1552,32 @@ img,
   }
 }
 
+/* Transición al navegar prev/next DENTRO del lightbox ya abierto (antes
+   la imagen simplemente saltaba, sin ningún feedback de que cambió de
+   ítem) — `key={item.id}` en el wrapper del media hace que React
+   remonte el nodo en cada navegación, así que esta animación arranca
+   de cero cada vez sin necesidad de un estado de "dirección" aparte. */
+.gallery-lightbox-media-enter {
+  animation: gallery-lightbox-media-in var(--dur-base) var(--ease-standard);
+}
+
+@keyframes gallery-lightbox-media-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-lightbox-media-enter {
+    animation: none !important;
+  }
+}
+
 /* --- Zoom de imágenes (SimpleLightbox y GalleryExplorer, vía ZoomableImage) --- */
 .zoomable-image-container {
   /* El propio contenedor es el que recibe los gestos de pan/pinch/wheel;
