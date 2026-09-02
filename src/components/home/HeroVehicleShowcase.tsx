@@ -290,6 +290,19 @@ export function HeroVehicleShowcase({ vehicles, className }: HeroVehicleShowcase
 
       {isDesktop && (
         <>
+          {/* Resplandor decorativo detrás de la foto (auditoría "más
+              vida", sept. 2026): antes los badges de spec "sangraban"
+              hacia el espacio en blanco de alrededor conectados por una
+              línea fina — sin nada que los ancle visualmente, se leían
+              como anotaciones sueltas/rotas (ver captura de feedback).
+              Este glow le da profundidad al recuadro completo y hace
+              que la pieza se sienta integrada al fondo en vez de flotar
+              en el vacío. `-z-10` para quedar detrás de la imagen. */}
+          <div
+            aria-hidden="true"
+            className="absolute -inset-8 -z-10 rounded-[2.5rem] bg-gradient-to-br from-auto-accent/25 via-auto-accent-orange/10 to-transparent blur-2xl"
+          />
+
           {/* Sello de evidencia — mismo componente visual que ya usa
               `EntityCard` sobre sus fotos, mismo criterio de color por
               nivel (`EVIDENCE_STAMP_META`). Mete la propuesta de valor
@@ -298,7 +311,7 @@ export function HeroVehicleShowcase({ vehicles, className }: HeroVehicleShowcase
           {current.evidenceLevel && (
             <span
               className={cn(
-                'absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-wide backdrop-blur-sm',
+                'absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-wide shadow-sm backdrop-blur-sm',
                 EVIDENCE_STAMP_META[current.evidenceLevel].className
               )}
               title="Nivel de evidencia — ver detalle completo en la ficha"
@@ -308,40 +321,79 @@ export function HeroVehicleShowcase({ vehicles, className }: HeroVehicleShowcase
             </span>
           )}
 
-          {/* Badge de potencia, arriba a la derecha, "sangrando" fuera
-              del recuadro con su línea conectora — dato real
-              (`parsePowerHp`, calculado en `page.tsx`). */}
-          {current.powerLabel && (
-            <div className="pointer-events-none absolute left-full top-8 z-10 flex items-center gap-2">
-              <span aria-hidden="true" className="h-px w-6 bg-neutral-300" />
-              <span className="pointer-events-auto whitespace-nowrap rounded-full border border-edge-strong bg-auto-darker/90 px-2.5 py-1 font-mono text-[11px] font-semibold text-auto-accent-strong backdrop-blur-sm">
-                {current.powerLabel}
-              </span>
+          {/* Tarjeta de specs unificada (rediseño "más vida", sept.
+              2026): potencia y precio/velocidad ahora viven juntos en
+              una sola pieza con ícono, en vez de dos badges sueltos
+              conectados por una línea fina flotando fuera del recuadro
+              — mismo dato real (`powerLabel`/`secondaryStatLabel`,
+              calculados en `page.tsx`), presentación más legible y
+              menos "rota". Se ancla "sangrando" apenas hacia afuera de
+              la esquina inferior izquierda (sigue leyéndose como una
+              pieza flotante con vida propia) pero como un solo bloque
+              sólido con sombra real, no como anotaciones sueltas. */}
+          {(current.powerLabel || current.secondaryStatLabel) && (
+            <div className="pointer-events-none absolute -bottom-4 -left-4 z-10 flex items-stretch overflow-hidden rounded-2xl border border-edge-strong bg-white/95 shadow-xl backdrop-blur-md">
+              {current.powerLabel && (
+                <div className="flex items-center gap-2 px-3 py-2.5">
+                  <span
+                    aria-hidden="true"
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-auto-accent/15 text-auto-accent"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M13 2 3 14h7l-1 8 11-14h-7l0-6z" />
+                    </svg>
+                  </span>
+                  <span className="whitespace-nowrap font-mono text-[11px] font-semibold text-neutral-900">
+                    {current.powerLabel}
+                  </span>
+                </div>
+              )}
+
+              {current.powerLabel && current.secondaryStatLabel && (
+                <span aria-hidden="true" className="my-2 w-px bg-edge-strong" />
+              )}
+
+              {current.secondaryStatLabel && (
+                <div className="flex items-center gap-2 px-3 py-2.5">
+                  <span
+                    aria-hidden="true"
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-auto-accent-orange/15 text-auto-accent-orange"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M20.59 13.41 12 22l-9-9V3h10l7.59 8.41a2 2 0 0 1 0 2.18Z" />
+                      <circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none" />
+                    </svg>
+                  </span>
+                  <span className="whitespace-nowrap font-mono text-[11px] font-semibold text-neutral-900">
+                    {current.secondaryStatLabel}
+                  </span>
+                </div>
+              )}
             </div>
           )}
 
-          {/* Segundo badge, abajo a la izquierda, mismo criterio del
-              lado opuesto — precio USD o velocidad máxima según lo que
-              tenga la ficha (ver `secondaryStatLabel` en `page.tsx`). */}
-          {current.secondaryStatLabel && (
-            <div className="pointer-events-none absolute right-full bottom-8 z-10 flex flex-row-reverse items-center gap-2">
-              <span aria-hidden="true" className="h-px w-6 bg-neutral-300" />
-              <span className="pointer-events-auto whitespace-nowrap rounded-full border border-edge-strong bg-auto-darker/90 px-2.5 py-1 font-mono text-[11px] font-semibold text-auto-accent-strong backdrop-blur-sm">
-                {current.secondaryStatLabel}
-              </span>
-            </div>
-          )}
-
-          {/* Chip "Ver ficha →": segundo punto de click real sobre la
-              pieza, hermano del `<Link>` de categoría de arriba (nunca
+          {/* Chip "Ver ficha →" rediseñado como CTA sólido (mismo
+              lenguaje visual que el botón principal del hero, "Ver
+              fichas de autos") en vez del chip claro casi invisible de
+              antes — ahora se lee sin ambigüedad como un botón: fondo
+              oscuro con contraste real, flecha en el acento de marca,
+              y una elevación al hover/focus que confirma que responde
+              al click. Segundo punto de click real sobre la pieza,
+              hermano del `<Link>` de categoría de arriba (nunca
               anidado) — va a la ficha específica de ESTE vehículo, no
               a la categoría agrupada. */}
           <Link
             href={current.detailHref}
             aria-label={`Ver ficha completa de ${current.manufacturer ? `${current.manufacturer} ` : ''}${current.title}`}
-            className="absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-edge-strong bg-white/90 px-3 py-1.5 text-xs font-semibold text-neutral-900 shadow-sm backdrop-blur-sm transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
+            className="group absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-neutral-900/20 ring-1 ring-white/10 transition-all duration-200 hover:-translate-y-0.5 hover:bg-black hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
           >
-            Ver ficha <span aria-hidden="true">→</span>
+            Ver ficha
+            <span
+              aria-hidden="true"
+              className="text-auto-accent-strong transition-transform duration-200 group-hover:translate-x-0.5"
+            >
+              →
+            </span>
           </Link>
         </>
       )}
@@ -370,10 +422,17 @@ export function HeroVehicleShowcase({ vehicles, className }: HeroVehicleShowcase
       {/* Controles manuales + indicador de avance (solo desktop, mismo
           gate que el resto del overlay): antes la rotación era 100%
           automática sin ningún control real del usuario. Pausa con
-          hover/focus, mismo criterio que `ManufacturersMarquee`. */}
+          hover/focus, mismo criterio que `ManufacturersMarquee`.
+          Rediseño "más vida" (sept. 2026): antes las flechas eran un
+          borde gris de 1px casi invisible sobre fondo blanco — leían
+          como texto suelto, no como botones (feedback: "los botones ni
+          siquiera son clickeables"). Ahora van en una píldora propia
+          con fondo, sombra y borde real (mismo lenguaje que el resto
+          de controles del sitio), con relieve de tarjeta física y una
+          elevación notoria al hover para confirmar la interacción. */}
       {isDesktop && vehicles.length > 1 && (
         <div
-          className="flex items-center gap-3"
+          className="flex items-center gap-2 rounded-full border border-edge-strong bg-white px-2 py-1.5 shadow-md"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocus={() => setPaused(true)}
@@ -383,14 +442,14 @@ export function HeroVehicleShowcase({ vehicles, className }: HeroVehicleShowcase
             type="button"
             onClick={goPrev}
             aria-label="Vehículo anterior"
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-edge text-neutral-500 transition-colors hover:border-neutral-900 hover:text-neutral-900"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-100 text-neutral-600 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:bg-neutral-900 hover:text-white hover:shadow-md active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 px-1">
             {vehicles.map((vehicle, i) => (
               <button
                 key={vehicle.slug}
@@ -398,16 +457,19 @@ export function HeroVehicleShowcase({ vehicles, className }: HeroVehicleShowcase
                 onClick={() => goTo(i)}
                 aria-label={`Ver ${vehicle.manufacturer ? `${vehicle.manufacturer} ` : ''}${vehicle.title}`}
                 aria-current={i === currentIndex}
-                className="relative h-1.5 w-7 overflow-hidden rounded-full bg-neutral-200"
+                className={cn(
+                  'relative h-2 overflow-hidden rounded-full bg-neutral-200 transition-all duration-200 hover:bg-neutral-300',
+                  i === currentIndex ? 'w-8' : 'w-2'
+                )}
               >
                 {i === currentIndex && !reducedMotion && !paused ? (
                   <span
                     key={autoTick}
-                    className="hero-vehicle-dot-fill absolute inset-y-0 left-0 rounded-full bg-neutral-900"
+                    className="hero-vehicle-dot-fill absolute inset-y-0 left-0 rounded-full bg-auto-accent"
                     style={{ animationDuration: `${ROTATE_INTERVAL_MS}ms` }}
                   />
                 ) : (
-                  i === currentIndex && <span className="absolute inset-0 rounded-full bg-neutral-900" />
+                  i === currentIndex && <span className="absolute inset-0 rounded-full bg-auto-accent" />
                 )}
               </button>
             ))}
@@ -417,7 +479,7 @@ export function HeroVehicleShowcase({ vehicles, className }: HeroVehicleShowcase
             type="button"
             onClick={goNext}
             aria-label="Vehículo siguiente"
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-edge text-neutral-500 transition-colors hover:border-neutral-900 hover:text-neutral-900"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-100 text-neutral-600 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:bg-neutral-900 hover:text-white hover:shadow-md active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M9 18l6-6-6-6" />
