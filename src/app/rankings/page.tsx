@@ -73,6 +73,7 @@ export default async function RankingsIndexPage() {
       vehicle: e.vehicle,
       position: e.position,
       metricLabel: e.metricLabel,
+      metricValue: e.metricValue,
     })),
   }))
 

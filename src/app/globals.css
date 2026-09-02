@@ -1219,6 +1219,31 @@ img,
   }
 }
 
+/* Vista "Tabla" del preview de rankings (RankingBarList): cada barra
+   crece desde 0 hasta su ancho real (`--bar-target`, seteado inline por
+   fila) al montar — mismo criterio que el resto del sitio: como el
+   panel completo se remonta por `key={active.slug}` en el padre, esta
+   animación corre de nuevo cada vez que se entra a un ranking distinto,
+   no solo la primera vez. `animation-delay` (inline, primeras 10 filas)
+   escalona el crecimiento en vez de que las barras salten todas juntas. */
+.ranking-bar-fill {
+  width: 0%;
+  animation: ranking-bar-grow 550ms var(--ease-premium) both;
+}
+
+@keyframes ranking-bar-grow {
+  to {
+    width: var(--bar-target);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ranking-bar-fill {
+    animation: none !important;
+    width: var(--bar-target);
+  }
+}
+
 /* ============================================================
    WishlistButton — micro-refuerzo al guardar (Prioridad C)
    6 "chispas" lineales (mismo lenguaje de trazo que HeartIcon, sin
