@@ -139,6 +139,16 @@ interface HeroVehicleShowcaseProps {
  * más abajo) y la caja de foto del carrusel pasa a `21/9` en desktop —
  * la franja se lee "larga" apenas se sale de mobile, en vez de recién
  * en pantallas grandes.
+ *
+ * Pulido mobile/animaciones/detalles (mismo sept. 2026, pase posterior
+ * al fix de arriba): la base mobile de la caja de foto quedó en `16/10`
+ * (no `4/3` — ese valor de un cambio anterior la volvía MÁS vertical
+ * que la versión previa al rediseño, al revés de lo pedido); flechas
+ * prev/next de `10` a `11` (`2.75rem`, más cerca del mínimo de touch
+ * target recomendado); y `.tap-scale` (compresión leve al presionar, el
+ * mismo feedback táctil que usa el resto del sitio) en cada elemento
+ * clickeable de esta pieza que no lo tenía — foto, chip "Ver ficha",
+ * flechas y dots.
  */
 export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: HeroVehicleShowcaseProps) {
   const router = useRouter()
@@ -216,8 +226,18 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
   const canLink = Boolean(current.categoryHref)
   const flipEnabled = canLink && flipSupported && !reducedMotion
 
+  // Pulido mobile/animaciones (sept. 2026): `.hero-vehicle-float` ya
+  // existía en `globals.css` (documentado ahí como "ver
+  // HeroVehicleShowcase.tsx") pero nunca se conectó acá — la foto
+  // quedaba completamente quieta entre cada crossfade de ~4s. Va en el
+  // wrapper del stack, nunca en el nodo de cada `Image` (que ya lleva
+  // su propio `transform: scale(...)` inline vía `style`, ver abajo):
+  // dos `transform` en dos elementos distintos para que la animación
+  // CSS no le pise el `style` de React al de la imagen. Reduced-motion
+  // ya estaba cubierto en el CSS (`@media` que apaga `.hero-vehicle-float`),
+  // así que no hace falta condicionarlo de nuevo acá.
   const imagesStack = (
-    <div aria-hidden="true" className="relative h-full w-full">
+    <div aria-hidden="true" className="hero-vehicle-float relative h-full w-full">
       {vehicles.map((vehicle, i) => {
         const isCurrent = i === currentIndex
         return (
@@ -256,12 +276,12 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
             cada vez más panorámico a medida que hay más ancho
             disponible (`21/9` en desktop), acorde al pedido de que la
             pieza sea "lo más horizontal posible". */}
-        <div className="relative aspect-[4/3] w-full shrink-0 bg-neutral-50 sm:aspect-[16/9] lg:aspect-[21/9]">
+        <div className="relative aspect-[16/10] w-full shrink-0 bg-neutral-50 sm:aspect-[16/9] lg:aspect-[21/9]">
           {canLink ? (
             <Link
               href={current.categoryHref as string}
               aria-label={`Ver ${current.manufacturer ? `${current.manufacturer} ` : ''}${current.title} en su categoría`}
-              className="block h-full w-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-auto-accent"
+              className="block h-full w-full tap-scale focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-auto-accent"
               onClick={
                 flipEnabled
                   ? (e) => {
@@ -346,7 +366,7 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
           <Link
             href={current.detailHref}
             aria-label={`Ver ficha completa de ${current.manufacturer ? `${current.manufacturer} ` : ''}${current.title}`}
-            className="group absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-neutral-900/20 ring-1 ring-white/10 transition-all duration-200 hover:-translate-y-0.5 hover:bg-black hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
+            className="group tap-scale absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-neutral-900/20 ring-1 ring-white/10 transition-all duration-200 hover:-translate-y-0.5 hover:bg-black hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
           >
             Ver ficha
             <span
@@ -375,7 +395,7 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
                 onFocus={() => setPaused(true)}
                 onBlur={() => setPaused(false)}
                 aria-label="Vehículo anterior"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-neutral-700 shadow-lg backdrop-blur-sm transition-all duration-150 hover:-translate-x-0.5 hover:bg-white hover:text-neutral-900 active:translate-x-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
+                className="tap-scale flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-neutral-700 shadow-lg backdrop-blur-sm transition-all duration-150 hover:-translate-x-0.5 hover:bg-white hover:text-neutral-900 active:translate-x-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M15 18l-6-6 6-6" />
@@ -387,7 +407,7 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
                 onFocus={() => setPaused(true)}
                 onBlur={() => setPaused(false)}
                 aria-label="Vehículo siguiente"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-neutral-700 shadow-lg backdrop-blur-sm transition-all duration-150 hover:translate-x-0.5 hover:bg-white hover:text-neutral-900 active:translate-x-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
+                className="tap-scale flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-neutral-700 shadow-lg backdrop-blur-sm transition-all duration-150 hover:translate-x-0.5 hover:bg-white hover:text-neutral-900 active:translate-x-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M9 18l6-6-6-6" />
@@ -416,7 +436,7 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
                 aria-label={`Ver ${vehicle.manufacturer ? `${vehicle.manufacturer} ` : ''}${vehicle.title}`}
                 aria-current={i === currentIndex}
                 className={cn(
-                  'relative h-2 overflow-hidden rounded-full bg-neutral-200 transition-all duration-200 hover:bg-neutral-300',
+                  'relative h-2 tap-scale overflow-hidden rounded-full bg-neutral-200 transition-all duration-200 hover:bg-neutral-300',
                   i === currentIndex ? 'w-8' : 'w-2'
                 )}
               >

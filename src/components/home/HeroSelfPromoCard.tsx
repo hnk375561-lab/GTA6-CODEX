@@ -99,16 +99,24 @@ export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps
 
   const canLink = Boolean(content.categoryHref)
 
+  // Mismo pulido de "vida" del carrusel (ver el comentario largo sobre
+  // `.hero-vehicle-float` en `HeroVehicleShowcase.tsx`): wrapper propio
+  // con `absolute inset-0`, nunca en el nodo de `Image` en sí — acá no
+  // hay un segundo `transform` inline compitiendo (esta foto no tiene
+  // zoom, a diferencia del carrusel), pero se mantiene el mismo patrón
+  // de nodo separado para no acoplar la animación CSS al posicionamiento
+  // de `next/image` con `fill`.
   const photo = (
-    <Image
-      src={content.src}
-      alt=""
-      aria-hidden="true"
-      fill
-      sizes="(min-width: 1024px) 40rem, 100vw"
-      priority
-      className="object-cover"
-    />
+    <div aria-hidden="true" className="hero-vehicle-float absolute inset-0">
+      <Image
+        src={content.src}
+        alt=""
+        fill
+        sizes="(min-width: 1024px) 40rem, 100vw"
+        priority
+        className="object-cover"
+      />
+    </div>
   )
 
   return (
@@ -117,7 +125,7 @@ export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps
         <Link
           href={content.categoryHref as string}
           aria-label={`Ver ${content.headline} en su categoría`}
-          className="absolute inset-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-auto-accent"
+          className="tap-scale absolute inset-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-auto-accent"
         >
           {photo}
         </Link>
@@ -186,7 +194,7 @@ export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps
           <Link
             href={content.detailHref}
             aria-label={`Ver ficha completa de ${content.headline}`}
-            className="group relative z-10 ml-auto inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-neutral-900 shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
+            className="group tap-scale relative z-10 ml-auto inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-neutral-900 shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
           >
             {content.ctaLabel}
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
