@@ -1,0 +1,70 @@
+{
+  "slug": "peugeot",
+  "type": "fabricantes",
+  "title": "Peugeot",
+  "description": "Vehículos y motocicletas de Peugeot",
+  "content": "## Identidad de marca\nPeugeot es una reconocida marca de la industria automotriz con sede en Poissy, con una trayectoria que trasciende largamente el universo de los vehículos a motor. Su propuesta actual abarca desde turismos y vehículos comerciales hasta servicios de movilidad y alternativas de transporte como bicicletas y motonetas.\n\n## Historia real\nLos orígenes de la compañía se remontan mucho antes de la era del automóvil. La empresa familiar fue establecida en 1810 por Jean-Frédéric y Jean-Pierre II Peugeot, coincidiendo con la transformación de su molino hidráulico en una acería. En sus primeros tiempos, la firma destacó por la fabricación de útiles de cocina —siendo los molinillos de café y pimienta sus productos iniciales— y herramientas como sierras. \n\nCon el correr de las décadas, la visión industrial se expandió hacia otros rubros. Hacia finales del siglo XIX, más precisamente en 1885, Armand Peugeot impulsó la incursión en la fabricación de bicicletas, una división que se mantiene activa hasta la actualidad bajo el nombre de Peugeot Cycles. Posteriormente, la estructura adoptó denominaciones como «Les fils de Peugeot frères» para consolidar su ingreso definitivo al sector de la fabricación de automóviles, marcando el pulso de su desarrollo a lo largo de los siglos XX y XXI.\n\n## Posicionamiento actual\nEn la actualidad, Peugeot forma parte del conglomerado Stellantis y se posiciona como un fabricante global que combina la experiencia de más de dos siglos de historia industrial con una fuerte apuesta por la electrificación, el diseño contemporáneo y la evolución constante en la movilidad urbana y de pasajeros.",
+  "status": "confirmado",
+  "officialName": "Peugeot",
+  "country": "Francia",
+  "foundedYear": 1810,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:25:12.774Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-2008",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-208",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-3008",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-408",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-5008",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-508",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-partner",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Peugeot",
+    "note": "Se verificó la fundación en 1810 por Jean-Frédéric y Jean-Pierre II Peugeot a partir de la transformación de un molino hidráulico en acería, así como la evolución inicial hacia molinillos, herramientas y posteriormente vehículos y bicicletas.",
+    "limitations": [
+      "No se detallan en las fuentes todos los modelos contemporáneos específicos comercializados en cada mercado regional."
+    ]
+  }
+}

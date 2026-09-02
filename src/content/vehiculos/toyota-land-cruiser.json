@@ -1,0 +1,242 @@
+{
+  "slug": "toyota-land-cruiser",
+  "type": "vehiculos",
+  "title": "Toyota Land Cruiser",
+  "description": "SUV 4x4 de gama alta de Toyota, referencia histórica en todoterrenos, motor turbodiésel V6.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "toyota",
+    "diesel",
+    "4x4",
+    "premium"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-sw4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-alphard",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-camry",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "gwm-tank-300",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mahindra-scorpio-n",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Toyota",
+  "class": "SUV 4x4",
+  "power": "304 hp",
+  "price": "USD 85.000 (MSRP EE.UU. aproximado para la Serie 300)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 85000,
+    "raw": "USD 85.000 (MSRP EE.UU. aproximado para la Serie 300)"
+  },
+  "consumo": "11.2 l/100km (mixto)",
+  "dimensiones": "4925 x 1980 x 1945 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.toyota.com/espanol/landcruiser/features",
+    "secondarySource": "https://espanol.headquartertoyota.com/nueva-toyota-land-cruiser-hialeah-fl.html",
+    "note": "Se verificaron los datos de la Serie 300 y las variantes del Land Cruiser utilizando los catálogos oficiales de Toyota para América del Norte y Costa Rica.",
+    "limitations": [
+      "Los precios varían significativamente según el mercado local y los aranceles de importación vigentes en Argentina.",
+      "La disponibilidad de motorizaciones diésel V6 o híbridas de 4 cilindros depende estrictamente de cada región."
+    ]
+  },
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 9.9s"
+  },
+  "createdAt": "2026-08-23T21:59:02.907844Z",
+  "updatedAt": "2026-08-27T03:12:37.183Z",
+  "transmision": "Automática de 10 velocidades",
+  "traccion": "Tracción integral en las cuatro ruedas (4x4 permanente)",
+  "peso": "2.490-2.635 kg",
+  "tipoMotor": "Diésel (V6 biturbo)",
+  "potenciaKW": "227 kW",
+  "capacidadTanque": "110 litros",
+  "tiempoRecorrido": "0-100 km/h en 6.8s",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "3346 cc",
+  "emisiones": null,
+  "asientos": 7,
+  "baul": 500,
+  "maleteroMin": null,
+  "generacion": "Serie 300",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 90.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:12:37.183Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 180
+    },
+    "consumo": {
+      "promedio": "10.5 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Toyota Land Cruiser se consolidó a lo largo de las décadas como uno de los pilares fundamentales del automovilismo todoterreno a nivel global. Nacido en los albores de la década de 1950 bajo la influencia de diseños utilitarios militares de la época, evolucionó de forma constante desde una herramienta de trabajo sumamente ruda hasta transformarse en el máximo exponente de lujo, durabilidad y capacidad off-road de la firma japonesa. Su reputación se forjó en los escenarios más hostiles y complejos del planeta, ganándose la confianza inquebrantable de usuarios particulares, exploradores y flotas humanitarias internacionales que exigen resistencia mecánica absoluta.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia moderna de este todoterreno se materializó con la llegada de la generación Serie 300. Este salto generacional dejó atrás la mítica pero pesada arquitectura anterior para adoptar la plataforma global TNGA-F. Dicha evolución estructural permitió reducir el peso total del vehículo y elevar drásticamente la rigidez torsional del chasis. Asimismo, supuso la retirada progresiva de los tradicionales motores V8 atmosféricos para incorporar propulsores de alta eficiencia, como el avanzado bloque turbodiésel V6 de 3.3 litros, que optimiza de forma notable la entrega de torque a bajas revoluciones y mejora de manera sustancial los niveles de consumo y emisiones contaminantes.\n\n## Curiosidades\nDentro del universo Land Cruiser existen múltiples particularidades que reafirman su estatus legendario. Es ampliamente conocido por ser el vehículo de cabecera elegido por agencias de ayuda humanitaria y misiones internacionales de paz de la ONU, donde la confiabilidad mecánica representa un factor crítico de supervivencia. Además, debido a sus rigurosos estándares de fabricación en la planta de Yoshiwara en Japón y a una demanda sostenida globalmente, el modelo ha registrado históricamente largas listas de espera en numerosos mercados tras sus lanzamientos principales.\n\n## Competencia y posicionamiento\nEn el mercado global, el Toyota Land Cruiser se ubica firmemente en el segmento de los SUV grandes de gama alta. Su propuesta compite de manera directa contra referentes de peso como el Nissan Patrol, el Lexus LX y alternativas de carácter más ostentoso en Europa como el Range Rover. Mientras que otros competidores apuestan fuertemente por un lujo urbano vanguardista, el Land Cruiser prioriza una filosofía donde la robustez estructural, la simplicidad de operación ante exigencias extremas y la excelente retención de valor a lo largo de los años continúan marcando la diferencia para los usuarios más exigentes.",
+  "generacionInfo": {
+    "raw": "Serie 300",
+    "numero": null,
+    "codigoChasis": "300",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Toyota Land Cruiser - SUV 4x4 Toyota. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

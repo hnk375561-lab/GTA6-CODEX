@@ -1,0 +1,246 @@
+{
+  "slug": "fiat-toro",
+  "type": "vehiculos",
+  "title": "Fiat Toro",
+  "description": "Pickup mediana de Fiat, motor turbo 1.8L o 2.0L diésel, popular en Argentina y Brasil.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "fiat",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-argo",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-cronos",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-s10",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-ranger",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "isuzu-d-max",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mitsubishi-l200",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:01:35.107Z",
+  "updatedAt": "2026-08-27T01:39:42.244Z",
+  "manufacturer": "Fiat",
+  "class": "Pickup",
+  "performance": {
+    "speed": "Media (180 km/h)",
+    "acceleration": "Media (0-100 km/h en 10s)"
+  },
+  "power": "170 CV",
+  "price": "ARS 35.000.000 (Referencia mercado argentino)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "ARS",
+    "amount": 35000000,
+    "raw": "ARS 35.000.000 (Referencia mercado argentino)"
+  },
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.fiat.com.ar",
+    "note": "Datos verificados sobre especificaciones técnicas oficiales de la Fiat Toro fabricada en Brasil para el mercado regional sudamericano.",
+    "limitations": [
+      "Los precios varían constantemente según la inflación y el mercado local en Argentina.",
+      "Las motorizaciones varían según el año de producción y el nivel de equipamiento (Freedom, Volcano, Ultra, Ranch)."
+    ]
+  },
+  "transmision": "Automática de 6 o 9 marchas",
+  "traccion": "Integral 4x4 o Delantera 4x2",
+  "peso": "1680-1760 kg",
+  "tipoMotor": "Turbo diésel (Multijet 2.0L) / Gasolina (T270 1.3L Turbo)",
+  "potenciaKW": "125 kW (170 CV)",
+  "capacidadTanque": "60 litros",
+  "tiempoRecorrido": "10.2s (0-100 km/h)",
+  "anoProduccion": "2016-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "7.5 L/100 km (mixto diésel)",
+  "dimensiones": "4915 x 1845 x 1791 mm",
+  "cilindrada": "1956 cc (Diésel) / 1332 cc (Nafta)",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 937,
+  "maleteroMin": null,
+  "generacion": "1ra Generación (con restylings)",
+  "anoLanzamiento": 2016,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 31.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:39:42.244Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Fiat Toro irrumpió en el mercado automotriz sudamericano a principios de 2016, inaugurando un nuevo segmento: el de las Sport Utility Pickups (SUP). Desarrollada sobre la plataforma modular Small Wide del grupo FCA (ahora Stellantis), la Toro combinó la comodidad de andar y la refinada habitabilidad de un SUV mediano con la versatilidad y capacidad de carga de una camioneta mediana de una tonelada, aunque posicionándose un escalón por debajo de estas últimas en cuanto a dimensiones.\n\nDesde su planta de producción en Pernambuco, Brasil, el modelo fue concebido estratégicamente para conquistar tanto al público urbano como a los amantes del trabajo y las travesías ruteras en Argentina, Brasil y otros mercados de la región. Su diseño exterior, audaz y futurista para la época, introdujo grupos ópticos divididos que sentaron tendencia en el lenguaje de diseño global de la marca italiana.\n\n## Un hito o generación relevante\nUn hito fundamental en la trayectoria comercial de la Fiat Toro ocurrió en 2021, cuando recibió su actualización más profunda de mitad de vida. En esta renovación, la pickup no solo adoptó sutiles retoques estéticos en la parrilla y el paragolpes delantero, sino que incorporó una revolución tecnológica en el interior: un renovado panel instrumental 100% digital y una pantalla multimedia vertical de hasta 10,1 pulgadas con el sistema Uconnect. Además, este restyling marcó la llegada de los nuevos motores turbo nafteros Firefly de la familia T270, complementando al consagrado bloque turbodiésel 2.0L Multijet y modernizando la oferta mecánica frente a competidores cada vez más exigentes.\n\n## Curiosidades\nUn detalle no menor de la Fiat Toro es su portón trasero de apertura lateral dual (dos hojas que se abren como las puertas de un armario), una solución innovadora y muy práctica heredada de su hermana menor, la Fiat Strada, que facilita enormemente el acceso a la caja de carga. Asimismo, a pesar de compartir componentes estructurales con el Jeep Renegade y el Jeep Compass, la Toro fue diseñada desde cero para soportar exigencias de carga estructural y tracción integral permanente en versiones diésel, logrando un equilibrio dinámico muy elogiado por la prensa especializada debido a su suspensión trasera independiente tipo Multilink, inusual en el segmento de las pick-ups compactas.\n\n## Competencia y posicionamiento\nEn el mercado argentino y regional, la Fiat Toro ocupa un espacio muy particular. Durante años operó prácticamente sin rivales directos, hasta la llegada de competidores como la Ford Maverick y, posteriormente, otras propuestas de marcas generalistas que buscaron replicar el éxito de las SUP. La Toro se posiciona en un rango de precios superior al de las pick-ups chicas tradicionales (como la mencionada Strada o la Volkswagen Saveiro), pero compite directamente con las versiones de entrada o intermedias de las medianas clásicas (Toyota Hilux, Volkswagen Amarok, Ford Ranger). Su principal argumento de venta radica en su enfoque enfocado en el confort de marcha diario, la seguridad activa, la tecnología a bordo y una estética que se aleja de la clásica herramienta de trabajo para abrazar un perfil más recreativo y familiar.",
+  "generacionInfo": {
+    "raw": "1ra Generación (con restylings)",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": true,
+    "faceliftAno": null
+  },
+  "seoDescription": "Fiat Toro - Pickup Fiat. Media (180 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

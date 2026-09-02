@@ -1,0 +1,48 @@
+{
+  "slug": "jac",
+  "type": "fabricantes",
+  "title": "JAC",
+  "description": "Vehículos y motocicletas de JAC",
+  "content": "## Identidad de Marca\nJAC Motors es un fabricante de origen chino enfocado en la producción masiva de automóviles, vehículos comerciales y transporte de carga ligera. La marca se ha consolidado a nivel global mediante una estrategia de expansión internacional que incluye presencia en el mercado sudamericano.\n\n## Historia y Evolución\nLa compañía inició sus actividades industriales en el año 1964. Desde su establecimiento en Hefei, República Popular China, ha recorrido un extenso camino enfocado en el desarrollo tecnológico y la innovación dentro del sector automotriz. Con más de cinco décadas de trayectoria, la empresa evolucionó desde sus inicios como fabricante de vehículos comerciales hasta diversificar su portafolio hacia el segmento de pasajeros, adaptándose a las exigencias cambiantes del mercado global.\n\n## Posicionamiento Actual\nEn la actualidad, JAC opera como un actor relevante en la industria automotriz internacional, comercializando sus productos en múltiples regiones del mundo, incluida la Argentina. Su oferta apunta a satisfacer tanto las necesidades de movilidad urbana y familiar como las demandas del transporte comercial liviano, apoyándose en una estructura industrial consolidada y en un proceso continuo de desarrollo de productos.",
+  "status": "confirmado",
+  "officialName": "JAC",
+  "country": "China",
+  "foundedYear": 1964,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T22:20:37.703Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jac-js6",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jac-t40",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jac-t8",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/JAC_Motors",
+    "secondarySource": "https://jacargentina.com.ar/jac-motors-argentina",
+    "note": "Se verificó el año de fundación de la marca (1964) y su sede central en Hefei, China, a través de registros enciclopédicos y canales oficiales de comercialización en Argentina.",
+    "limitations": [
+      "No se detallan en las fuentes todos los hitos específicos de expansión internacional año por año.",
+      "Los volúmenes exactos de producción global no figuran en los extractos provistos."
+    ]
+  }
+}

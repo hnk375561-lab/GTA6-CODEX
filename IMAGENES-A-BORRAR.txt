@@ -1,0 +1,8 @@
+Estas 3 imagenes fueron eliminadas de public/images/entities/vehiculos/
+en el entorno de trabajo (eran bytes identicos a la foto de otro vehiculo,
+confirmado visualmente por el badge/logo en la propia foto). Borralas
+tambien en tu repo local al aplicar este paquete:
+
+public/images/entities/vehiculos/mercedes-benz-clase-e.webp
+public/images/entities/vehiculos/toyota-corolla-2024.webp
+public/images/entities/vehiculos/volkswagen-tera.webp

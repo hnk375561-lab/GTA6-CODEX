@@ -1,0 +1,203 @@
+{
+  "slug": "yamaha-r1",
+  "type": "vehiculos",
+  "title": "Yamaha R1",
+  "description": "Superdeportiva insignia de Yamaha, motor tetracilíndrico crossplane de 998cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "yamaha"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-fazer-250",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-mt-07",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-nmax",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cbr600rr",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-ninja-400",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-ninja-650",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-gsx-r750",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Yamaha",
+  "class": "Moto deportiva",
+  "power": "200 hp",
+  "price": "USD 18.000 (referencia internacional)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 18000,
+    "raw": "USD 18.000 (referencia internacional)"
+  },
+  "consumo": "7.0 l/100km",
+  "dimensiones": "2.055 mm largo x 690 mm ancho x 1.165 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.yamaha-motor.eu",
+    "note": "Se actualizaron los datos técnicos basándose en las especificaciones globales de fábrica para la Yamaha YZF-R1 con motor crossplane de 998 cc, potencia de 200 hp y configuración de moto deportiva de litro.",
+    "limitations": [
+      "El precio es de referencia global y puede variar considerablemente según los impuestos y aranceles de importación de cada mercado en Sudamérica.",
+      "Los valores de consumo y aceleración son estimados en condiciones óptimas de prueba."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:29:30.797Z",
+  "transmision": "Manual secuencial de 6 marchas",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "201 kg (en orden de marcha)",
+  "tipoMotor": "Gasolina",
+  "potenciaKW": "147 kW",
+  "capacidadTanque": "17 litros",
+  "tiempoRecorrido": "0-100 km/h en 3.0s",
+  "anoProduccion": "2015-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "998 cc",
+  "emisiones": null,
+  "asientos": 1,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Séptima generación (Crossplane)",
+  "anoLanzamiento": 2015,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 18.900"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:29:30.797Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Yamaha YZF-R1 es, sin lugar a dudas, uno de los nombres más pesados y respetados dentro del universo de las motocicletas superdeportivas. Desde su aparición a finales de la década de 1990, este modelo revolucionó el segmento de las motos de litro al ofrecer un equilibrio inédito hasta entonces entre potencia bruta, agilidad y un chasis sumamente compacto. A lo largo de los años, Yamaha utilizó a la R1 como su máxima vidriera tecnológica, volcando en ella toda la experiencia acumulada en los máximos circuitos de velocidad del mundo.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante en la historia reciente de la superdeportiva japonesa llegó con la introducción del motor con cigüeñal tipo *Crossplane* (CP4). Inspirado directamente en la tecnología desarrollada en la M1 de MotoGP, este diseño de 998 cc modificó por completo el orden de encendido de los cilindros. El resultado no fue solo un sonido inconfundible y profundamente ronco, similar al de un motor V4, sino también una entrega de torque lineal y una tracción en salida de curva que dejó obsoletos a muchos de sus competidores tradicionales con motores tetracilíndricos convencionales. A partir de esta arquitectura, la electrónica pasó a ser protagonista absoluta gracias a la incorporación de unidades de medición inercial (IMU) de seis ejes.\n\n## Curiosidades\nUn dato poco conocido por el público general es que el proyecto original de la primera R1 a finales de los 90 estuvo al borde de ser descartado por los ingenieros debido a la dificultad de empaquetar tanta potencia en una distancia entre ejes tan corta, algo que finalmente lograron dominar rompiendo los moldes de la época. Además, la aerodinámica frontal de las versiones más modernas adopta líneas y canaletas directamente heredadas de la categoría reina del motociclismo mundial, buscando generar carga aerodinámica real a altas velocidades en pista.\n\n## Competencia y posicionamiento\nEn el mercado global de las superbikes, la Yamaha R1 compite mano a mano contra auténticos tótems de la industria como la Honda CBR1000RR-R Fireblade, la Kawasaki Ninja ZX-10R, la Suzuki GSX-R1000 y la imponente Ducati Panigale V4. Se posiciona claramente en el segmento más alto del mercado de motocicletas de producción, dirigido a entusiastas exigentes y pilotos que buscan un rendimiento superlativo tanto para uso recreativo en circuitos como para coleccionistas de altas prestaciones.",
+  "generacionInfo": {
+    "raw": "Séptima generación (Crossplane)",
+    "numero": 7,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Yamaha R1 - Moto deportiva Yamaha. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "perodua",
+  "type": "fabricantes",
+  "title": "Perodua",
+  "description": "Vehículos y motocicletas de Perodua",
+  "content": "## Identidad de marca\n\nPerodua se consolidó a lo largo de las décadas como uno de los pilares fundamentales de la industria automotriz asiática, focalizando su propuesta de valor en la fabricación de vehículos compactos, utilitarios y automóviles urbanos accesibles. Su impronta está profundamente ligada al desarrollo industrial de su país de origen, donde lidera la producción masiva y sostiene una vasta red de empleo local dentro del ecosistema de autopartes.\n\n## Historia y evolución\n\nConstituida formalmente en 1993, la compañía dio sus primeros pasos concretos en el mercado poco tiempo después, marcando un hito fundacional con el lanzamiento del Perodua Kancil a finales de 1994. Este utilitario compacto estableció las bases de su perfil productivo. A lo largo de los años, la marca amplió su gama con el desarrollo de nuevos vehículos urbanos, como el Perodua Viva presentado en mayo de 2007, afianzando su presencia en el segmento de entrada de gama y optimizando continuamente sus procesos de manufactura.\n\n## Posicionamiento actual y futuro\n\nEn la actualidad, Perodua proyecta su crecimiento más allá de sus fronteras tradicionales con el objetivo de posicionarse como una marca automotriz regional de referencia bajo estándares globales. Su estrategia corporativa actual apunta a liderar la transición de la industria hacia la era de los vehículos eléctricos (EV), integrando tecnología accesible y manteniendo una infraestructura de postventa y servicios sumamente extensa para garantizar la comodidad de sus usuarios.",
+  "status": "confirmado",
+  "officialName": "Perodua",
+  "country": "Malasia",
+  "foundedYear": 1993,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:25:04.260Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "perodua-myvi",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.perodua.com.my",
+    "secondarySource": "https://www.autopasion18.com/HISTORIA-PERODUA.htm",
+    "note": "Se verificó la fecha de fundación en 1993, el lanzamiento de su primer modelo (el Kancil a fines de 1994) y su rol actual como compañía automotriz enfocada en la accesibilidad y la transición hacia la electromovilidad a través de fuentes oficiales y especializadas.",
+    "limitations": [
+      "La información disponible en fuentes públicas en español sobre su catálogo histórico detallado es acotada.",
+      "Los registros globales detallados de especificaciones técnicas para mercados occidentales son prácticamente inexistentes al tratarse de una marca de enfoque regional."
+    ]
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "slug": "subaru-impreza",
+  "type": "vehiculos",
+  "title": "Subaru Impreza",
+  "description": "Compacto de tracción integral simétrica de Subaru.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "subaru"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "subaru-forester",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "subaru-wrx",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-onix",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-sandero",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Subaru",
+  "class": "Hatchback",
+  "power": "152 hp (motor 2.0) / 182 hp (motor 2.5)",
+  "price": "USD 24.000 (MSRP base estimado de referencia)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 24000,
+    "raw": "USD 24.000 (MSRP base estimado de referencia)"
+  },
+  "consumo": "7.8 l/100km combinado",
+  "dimensiones": "4.475 mm largo x 1.780 mm ancho x 1.480 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.subaru.com",
+    "note": "Se actualizaron las especificaciones generales basadas en la sexta generación del Subaru Impreza presentada para el mercado global, destacando la adopción de motores bóxer de 2.0 y 2.5 litros, tracción Symmetrical AWD de serie y transmisión Lineartronic CVT.",
+    "limitations": [
+      "Los precios y consumos varían según el mercado específico de comercialización y la normativa local de homologación",
+      "Las cifras de aceleración son estimaciones de referencia para la versión estándar de acceso"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:27:03.331Z",
+  "transmision": "Automática CVT (Lineartronic)",
+  "traccion": "Tracción integral simétrica (Symmetrical AWD)",
+  "peso": "1.400 - 1.480 kg",
+  "tipoMotor": "Gasolina (Bóxer atmosférico)",
+  "potenciaKW": "113 kW (2.0) / 135 kW (2.5)",
+  "capacidadTanque": "63 litros",
+  "tiempoRecorrido": "9.0 - 9.5s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.995 cc / 2.498 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 555,
+  "maleteroMin": null,
+  "generacion": "Sexta generación",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 24.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:27:03.331Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Subaru Impreza es uno de los vehículos más emblemáticos de la marca japonesa, con una trayectoria que comenzó a principios de la década de 1990. Concebido inicialmente como un reemplazo más compacto y accesible para el Leone, el Impreza rápidamente trascendió su rol de vehículo utilitario gracias a su exitosa participación en el Campeonato Mundial de Rally (WRC). A lo largo de las décadas, el modelo ha evolucionado a través de múltiples generaciones, adaptándose a las exigencias cambiantes del mercado global sin perder su identidad fundamental: la combinación de motores de disposición horizontal (bóxer) y un sistema de tracción integral permanente.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente del Impreza fue la introducción de la plataforma global de Subaru (Subaru Global Platform - SGP) en su quinta generación, la cual se refinó notablemente en la sexta generación lanzada en 2023. Esta arquitectura mejoró de manera radical la rigidez torsional del chasis, redujo el centro de gravedad y optimizó el aislamiento acústico y la respuesta dinámica general. Con esta base, el Impreza consolidó su reputación no solo como un vehículo seguro y durable, sino también como uno de los hatchbacks compactos con mejor comportamiento dinámico y aplomo en ruta de su categoría.\n\n## Curiosidades\nUna de las características más singulares del Subaru Impreza es la persistencia en el uso de motores con arquitectura bóxer (de cilindros opuestos horizontalmente), una configuración mecánica que comparte prácticamente en exclusiva con la marca Porsche dentro de la industria automotriz masiva. Esto permite un centro de gravedad sumamente bajo, lo que beneficia directamente la estabilidad en curvas y el equilibrio general del vehículo. Además, el sistema de tracción integral simétrica (Symmetrical AWD) está diseñado con una disposición longitudinal completamente simétrica, lo que garantiza una distribución de pesos sumamente equilibrada entre ambos lados del chasis, algo poco común en vehículos compactos de tracción total.\n\n## Competencia y posicionamiento\nEn el mercado global de los vehículos compactos, el Subaru Impreza compite directamente con referentes tradicionales del segmento C como el Honda Civic, el Toyota Corolla y el Mazda 3. Mientras que muchos de sus rivales ofrecen configuraciones de tracción delantera como opción predeterminada, el Impreza se posiciona como una alternativa distintiva al incluir la tracción integral simétrica de serie en la gran mayoría de los mercados donde se comercializa. Su enfoque prioriza la seguridad activa, la durabilidad mecánica y el confort de marcha en condiciones climáticas adversas, atrayendo a conductores que valoran la versatilidad y la tracción total por encima de las prestaciones puramente deportivas que en el pasado caracterizaban a sus variantes más vitaminadas.",
+  "generacionInfo": {
+    "raw": "Sexta generación",
+    "numero": 6,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Subaru Impreza - Hatchback Subaru. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

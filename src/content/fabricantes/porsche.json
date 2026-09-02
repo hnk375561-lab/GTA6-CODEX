@@ -1,0 +1,47 @@
+{
+  "slug": "porsche",
+  "type": "fabricantes",
+  "title": "Porsche",
+  "description": "Vehículos y motocicletas de Porsche",
+  "content": "## Identidad de marca\n\nPorsche AG se consolidó globalmente como uno de los máximos exponentes en el desarrollo y fabricación de automóviles deportivos de lujo de alta gama. Su propuesta combina la herencia de la alta ingeniería con un rendimiento dinámico superior, expandiendo su catálogo tradicional de coupés deportivos hacia el segmento de los vehículos utilitarios deportivos (SUV) y sedanes de altas prestaciones.\n\n## Historia y evolución\n\nLas raíces técnicas de la compañía se remontan a su establecimiento en Stuttgart por Ferdinand Porsche y su hijo Ferdinand Anton Ernst Porsche. Desde sus primeros años, la marca centró su ADN corporativo en la innovación tecnológica aplicada al diseño y la optimización mecánica. Con el correr de las décadas, esta visión evolucionó hasta convertirla en un referente ineludible del automovilismo mundial y de la producción en serie de vehículos deportivos sofisticados.\n\n## Posicionamiento actual\n\nEn la actualidad, la firma forma parte estructural del Grupo Volkswagen, operando bajo el control mayoritario de Porsche Automobil Holding SE. Este respaldo corporativo le permite mantener su impronta de exclusividad y desarrollo tecnológico de vanguardia, compitiendo en la cima del mercado global de vehículos de lujo y tracción orientada al desempeño.",
+  "status": "confirmado",
+  "officialName": "Porsche",
+  "country": "Alemania",
+  "foundedYear": 1948,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:25:29.517Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "porsche-911-carrera",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "porsche-cayenne",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "porsche-taycan",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Porsche",
+    "note": "Se verificaron la ubicación de Stuttgart, la autoría de Ferdinand Porsche y su hijo, y la vinculación histórica con la ingeniería automotriz a partir de la documentación provista en las fuentes.",
+    "limitations": [
+      "Las fuentes presentan discrepancias menores respecto al año exacto de inicio operativo o conceptual de la estructura inicial (citando 1931), mientras que el catálogo asigna formalmente 1948.",
+      "La integración corporativa actual con el Grupo Volkswagen y Porsche Automobil Holding SE está documentada de forma general pero requiere catálogos financieros externos para el detalle accionario completo."
+    ]
+  }
+}

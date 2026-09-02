@@ -1,0 +1,48 @@
+{
+  "slug": "kawasaki",
+  "type": "fabricantes",
+  "title": "Kawasaki",
+  "description": "Vehículos y motocicletas de Kawasaki",
+  "content": "## Identidad de marca\nKawasaki es una de las marcas de origen japonés más emblemáticas a nivel global dentro de la industria de la movilidad y la ingeniería pesada. Si bien su reconocimiento masivo está fuertemente ligado al mundo de las dos ruedas, su ADN corporativo abarca un desarrollo tecnológico de gran escala, posicionándose como un referente indiscutido en la fabricación de motocicletas y vehículos todoterreno.\n\n## Historia y evolución industrial\nLos orígenes de la compañía se remontan al año 1896, momento en el que dio inicio formalmente con la constitución de Kawasaki Heavy Industries. A lo largo de las décadas, la empresa evolucionó desde sus raíces en la industria pesada y la construcción naval hasta consolidarse como un ícono del motociclismo internacional. Este proceso de expansión incluyó hitos fundamentales en su presencia comercial en mercados clave, como el establecimiento en 1966 de su división en Estados Unidos, la cual impulsó de manera definitiva su penetración en el segmento de vehículos recreativos y de alto rendimiento.\n\n## Posicionamiento actual\nEn el mercado actual, Kawasaki mantiene una posición de liderazgo basada en la potencia, la innovación técnica y una fuerte presencia en competición. Su catálogo web refleja una oferta diversificada que va desde motocicletas deportivas de alta cilindrada hasta vehículos utilitarios todoterreno, manteniendo siempre el prestigio de una marca centenaria que combina la solidez de la ingeniería industrial japonesa con el desarrollo constante de altas prestaciones.",
+  "status": "confirmado",
+  "officialName": "Kawasaki",
+  "country": "Japón",
+  "foundedYear": 1896,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:46:18.874Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-ninja-400",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-ninja-650",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-z900",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Kawasaki_Heavy_Industries",
+    "secondarySource": "https://www.latribunadeautomocion.es/2026/04/la-historia-de-kawasaki-en-el-mundo-de-las-motos-de-industria-pesada-a-icono-del-motociclismo",
+    "note": "Se verificó la fundación de Kawasaki Heavy Industries en 1896 y su evolución hacia la producción de motocicletas y vehículos todoterreno a través de registros históricos y de la industria pesada.",
+    "limitations": [
+      "Faltan detalles específicos y año exacto del lanzamiento de la primera motocicleta producida en masa por la compañía en las fuentes provistas.",
+      "No se detallan cifras de producción actuales ni la cronología completa de su expansión global en el extracto."
+    ]
+  }
+}

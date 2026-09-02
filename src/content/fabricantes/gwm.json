@@ -1,0 +1,41 @@
+{
+  "slug": "gwm",
+  "type": "fabricantes",
+  "title": "GWM",
+  "description": "Vehículos y motocicletas de GWM",
+  "content": "## Identidad de marca\n\nGreat Wall Motor (GWM) es uno de los fabricantes de automóviles más destacados de origen asiático, con sede central en la ciudad de Baoding, Hebei [[Fuente 1]]. Su nombre rinde homenaje en inglés a la emblemática Gran Muralla China [[Fuente 1]], reflejando una impronta de solidez y proyección a largo plazo. A lo largo de las décadas, la compañía se ha consolidado como un referente indiscutido en la producción de vehículos utilitarios deportivos (SUV) y camionetas pickup [[Fuente 1]].\n\n## Historia y evolución\n\nLos cimientos de la empresa se remontan a 1984 [[Fuente 1]], operando inicialmente como un taller enfocado en vehículos agrícolas antes de reestructurarse a comienzos de la década del noventa como fabricante de automóviles [[Fuente 4]]. Bajo el liderazgo de Wei Jianjun, nombrado director en 1990, la firma impulsó la producción de camionetas y sentó las bases para su expansión [[Fuente 2]]. \n\nGWM marcó hitos tempranos en la industria al convertirse en una de las primeras marcas de su país en incursionar en el mercado internacional, comenzando sus exportaciones hacia Oriente Medio a finales de los noventa [[Fuente 4]]. Tras un proceso de privatización y su posterior cotización en la Bolsa de Hong Kong [[Fuente 2]], la compañía aceleró su crecimiento hasta transformarse en una potencia global con presencia en más de 170 países y millones de usuarios en todo el planeta [[Fuente 3]].\n\n## Posicionamiento actual\n\nEn la actualidad, GWM opera como una estructura global diversificada que trasciende la manufactura tradicional. La empresa ha desarrollado plataformas propias orientadas a la movilidad inteligente —como su sistema híbrido Hi4— y cuenta con centros estratégicos de investigación y desarrollo distribuidos en diferentes continentes, además de plantas de producción internacionales en regiones clave como Asia, América del Sur y Europa [[Fuente 3]]. Este despliegue le permite sostener un volumen de ventas masivo y competir de igual a igual en el mercado automotriz internacional.",
+  "status": "confirmado",
+  "officialName": "GWM",
+  "country": "China",
+  "foundedYear": 1984,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:45:51.890Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "gwm-poer",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "gwm-tank-300",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Great_Wall_Motors",
+    "secondarySource": "https://noticias.autocosmos.com.mx/2025/07/28/fue-hace-35-anos-cuando-gwm-oficialmente-se-convirtio-en-fabricante-de-automoviles",
+    "note": "Se verificó la fundación de GWM en 1984, su sede en Baoding, su evolución hasta convertirse en un referente global de SUVs y pickups, y su expansión internacional utilizando fuentes enciclopédicas y periodísticas especializadas.",
+    "limitations": [
+      "No se detallan todas las cifras exactas de producción de cada año más allá de los hitos globales reportados."
+    ]
+  }
+}

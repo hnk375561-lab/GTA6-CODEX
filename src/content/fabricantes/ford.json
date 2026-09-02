@@ -1,0 +1,82 @@
+{
+  "slug": "ford",
+  "type": "fabricantes",
+  "title": "Ford",
+  "description": "Vehículos y motocicletas de Ford",
+  "content": "## Identidad de marca\n\nFord Motor Company es uno de los fabricantes de automóviles más grandes y reconocidos del mundo, con sede central en Dearborn, Míchigan. Su impronta global se extiende a través de subsidiarias en América, Europa y Asia, destacándose en la producción de vehículos comerciales, de carreras y automóviles orientados a satisfacer una demanda masiva y diversa.\n\n## Historia real y evolución\n\nLa compañía inició formalmente sus operaciones el 16 de junio de 1903, impulsada por Henry Ford junto a otros once inversores y un capital inicial de 28.000 dólares en una pequeña fábrica de Detroit. Durante sus primeros meses de actividad, la producción se limitaba a unos pocos vehículos diarios, comenzando con el Modelo A como primer exponente de su línea de producción.\n\nEl gran punto de inflexión llegó en 1908 con la presentación del Modelo T. Este vehículo se convirtió en el primer automóvil verdaderamente asequible para el consumidor estadounidense promedio, catapultando a la marca al liderazgo indiscutido de la industria automotriz. A lo largo de las décadas siguientes, la empresa continuó innovando en ingeniería; un hito destacado ocurrió en 1932, cuando logró fundir con éxito el primer bloque de motor V-8 en una sola pieza.\n\n## Posicionamiento actual\n\nEn la actualidad, Ford mantiene una sólida presencia bursátil y comercial a nivel internacional. Cotiza en la Bolsa de Nueva York bajo el símbolo F y forma parte de índices clave como el S&P 100 y S&P 500. La compañía conserva su rol protagónico en la industria automotriz global, adaptándose a las exigencias tecnológicas y de mercado del siglo XXI sin perder el legado industrial construido por su fundador.",
+  "status": "confirmado",
+  "officialName": "Ford",
+  "country": "Estados Unidos",
+  "foundedYear": 1903,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:20:18.728Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-bronco-sport",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-explorer",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-f-150",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-focus",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-maverick",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-mustang",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-puma",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-ranger",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-territory",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Ford_Motor_Company",
+    "note": "Se verificaron la fecha de fundación (16 de junio de 1903), el capital inicial de 28.000 dólares con 11 inversores, la sede en Dearborn (Míchigan), y hitos históricos como el lanzamiento del Modelo T en 1908 y el bloque de motor V-8 en una sola pieza en 1932.",
+    "limitations": [
+      "La expansión y subsidiarias globales se mencionan de forma general sin detallar cronologías específicas por región."
+    ]
+  }
+}

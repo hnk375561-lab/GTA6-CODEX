@@ -1,0 +1,34 @@
+{
+  "slug": "abarth",
+  "type": "fabricantes",
+  "title": "Abarth",
+  "description": "Vehículos y motocicletas de Abarth",
+  "content": "## Identidad de marca\nAbarth se consolidó históricamente como una de las marcas de referencia en el desarrollo de vehículos deportivos compactos de alto rendimiento. Identificada universalmente por el emblema del escorpión, la filosofía de la firma siempre priorizó la agilidad, la potencia dosificada en carrocerías reducidas y un carácter plenamente enfocado en las sensaciones de manejo y la deportividad urbana.\n\n## Historia real y evolución\nLos orígenes de la compañía se sitúan en 1949 en Bolonia, Italia, cuando el italo-austríaco Carlo Abarth —junto con Guido Scagliarini— dio vida a Abarth & C. Tras una trayectoria previa vinculada al automovilismo de competición, la empresa volcó su experiencia en el desarrollo de vehículos de carreras, como el recordado 204 A Roadster basado en componentes de Fiat, el cual cosechó victorias inmediatas en distintas categorías y campeonatos de la época.\n\nParalelamente a su división de competición, Abarth se hizo famosa a nivel global por la fabricación masiva de kits de potenciación y sistemas de escape de alto rendimiento orientados a mejorar la velocidad y la respuesta de vehículos estándar de calle. A lo largo de las décadas de 1950 y 1960, la marca acumuló innumerables récords de velocidad y triunfos en pistas europeas e internacionales, potenciando utilitarios económicos para convertirlos en auténticos bólidos de carreras.\n\n## Posicionamiento actual\nTras formar parte de Fiat Group Automobiles durante su integración industrial, la marca actualmente opera bajo el paraguas corporativo de Stellantis. En el mercado actual, Abarth mantiene vivo su legado de altas prestaciones reinterpretando los modelos compactos del grupo con una impronta radical, configurándose como una opción de nicho altamente valorada por los entusiastas que buscan deportividad pura, estética agresiva y dinamismo en formato reducido.",
+  "status": "confirmado",
+  "officialName": "Abarth",
+  "country": "Italia",
+  "foundedYear": 1949,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T22:20:37.702Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "abarth-595",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Abarth",
+    "note": "Se verificó la información institucional y biográfica de la marca a través de Wikipedia y el sitio oficial de Abarth, confirmando sus orígenes en Italia, su año de fundación y su vínculo histórico con Fiat.",
+    "limitations": [
+      "No se detalla en profundidad la transición completa de cada modelo comercial moderno dentro de Stellantis en el extracto provisto."
+    ]
+  }
+}

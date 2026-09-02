@@ -1,0 +1,204 @@
+{
+  "slug": "volkswagen-tiguan",
+  "type": "vehiculos",
+  "title": "Volkswagen Tiguan",
+  "description": "SUV compacto europeo de Volkswagen, uno de los más vendidos del segmento C.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "volkswagen"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-amarok",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-golf-gti",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-id-4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "baic-x55",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-omoda-5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-equinox",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Volkswagen",
+  "class": "SUV compacto",
+  "power": "150 hp / 110 kW (versión base de referencia)",
+  "price": "EUR 38.000 (precio de referencia mercado europeo)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "EUR",
+    "amount": 38000,
+    "raw": "EUR 38.000 (precio de referencia mercado europeo)"
+  },
+  "consumo": "6.5 l/100km combinado",
+  "dimensiones": "4.539 mm largo x 1.839 mm ancho x 1.639 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.volkswagen.com",
+    "note": "Se actualizaron las dimensiones, capacidad de baúl y motorización en base a las especificaciones oficiales globales de la tercera generación del Volkswagen Tiguan.",
+    "limitations": [
+      "Los precios varían según el mercado específico y los impuestos locales",
+      "Las motorizaciones exactas dependen de la región de comercialización"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T02:03:00.327Z",
+  "transmision": "Automática DSG de doble embrague",
+  "traccion": "Tracción delantera o integral 4MOTION",
+  "peso": "1.550-1.750 kg",
+  "tipoMotor": "Gasolina TSI / Diésel TDI",
+  "potenciaKW": "110-150 kW",
+  "capacidadTanque": "58 litros",
+  "tiempoRecorrido": "0-100 km/h en 9.2s",
+  "anoProduccion": "2024-actualidad",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.498 cc / 1.968 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 652,
+  "maleteroMin": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2024,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 36.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:03:00.327Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Volkswagen Tiguan es uno de los pilares fundamentales en la estrategia global de la marca alemana desde su presentación oficial. Concebido como la respuesta de Wolfsburgo a la creciente demanda de vehículos utilitarios deportivos que combinaran la agilidad de un hatchback con la versatilidad familiar, el Tiguan rápidamente escaló posiciones para convertirse en uno de los SUV medianos más vendidos del mundo. Su denominación, un acrónimo curioso que combina las palabras alemanas 'Tiger' (tigre) e 'Iguana', fue elegida mediante una votación realizada por los lectores de una reconocida revista especializada del motor en Alemania.\n\n## Un hito o generación relevante\nA lo largo de su trayectoria comercial, el Tiguan ha transitado por evoluciones tecnológicas profundas. El salto más significativo se consolidó con la adopción de la plataforma modular MQB, que permitió optimizar notablemente el espacio interior, reducir el peso total del conjunto y dar cabida a mecánicas electrificadas de última generación. La tercera generación del modelo marca un punto de inflexión absoluto, refinando las líneas exteriores con un diseño aerodinámico más limpio y apostando fuertemente por una digitalización avanzada en el habitáculo, donde las pantallas de alta resolución y los asistentes inteligentes toman el protagonismo absoluto.\n\n## Curiosidades\nUna de las claves del éxito rotundo del Tiguan a escala global es su versatilidad estructural. En distintas etapas de su vida comercial, el modelo ha ofrecido configuraciones de carrocería con distancia entre ejes extendida, permitiendo incorporar una tercera fila de asientos para albergar hasta siete pasajeros en mercados clave como Norteamérica y América Latina (conocido en varias regiones bajo la denominación Allspace). Además, la oferta mecánica siempre ha sabido adaptarse a los tiempos, integrando desde eficientes bloques turbodiésel hasta tecnologías híbridas enchufables (eHybrid) capaces de recorrer decenas de kilómetros en modo 100% eléctrico.\n\n## Competencia y posicionamiento\nEnclavado en el competitivo segmento C de los SUV, el Volkswagen Tiguan compite mano a mano con pesos pesados de la industria como el Toyota RAV4, el Honda CR-V, el Ford Kuga y su primo hermano dentro del Grupo Volkswagen, el Škoda Kodiaq. Su posicionamiento en el mercado siempre se ha ubicado en una zona intermedia con aspiraciones premium; ofrece un nivel de acabados, insonorización y tecnología que lo acerca a marcas de alta gama, pero manteniendo la funcionalidad y accesibilidad propias de un fabricante generalista. Esto lo ha consolidado como la opción preferida tanto para flotas corporativas como para familias que buscan un equilibrio superior entre confort en ruta, seguridad activa y valor de reventa.",
+  "generacionInfo": {
+    "raw": "Tercera generación",
+    "numero": 3,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Volkswagen Tiguan - SUV compacto Volkswagen. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

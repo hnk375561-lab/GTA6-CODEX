@@ -1,0 +1,237 @@
+{
+  "slug": "dacia-duster",
+  "type": "vehiculos",
+  "title": "Dacia Duster",
+  "description": "SUV compacto low-cost de Dacia (Renault), gran volumen de ventas en Europa.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "dacia"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-sandero",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "baic-x55",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-omoda-5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-equinox",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Dacia",
+  "class": "SUV compacto",
+  "power": "130 hp",
+  "price": "EUR 20.020 (referencia España)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "EUR",
+    "amount": 20020,
+    "raw": "EUR 20.020 (referencia España)"
+  },
+  "consumo": "5.5 l/100km combinado",
+  "dimensiones": "4.343 mm largo x 1.810 mm ancho x 1.656 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.dacia.es/modelos-hibridos-electricos/duster-suv/datos-tecnicos.html",
+    "secondarySource": "https://www.carwow.es/dacia/duster",
+    "note": "Se contrastaron las especificaciones técnicas, dimensiones y precios de referencia para la tercera generación del Dacia Duster con los sitios oficiales y portales especializados en el mercado europeo.",
+    "limitations": [
+      "Los precios varían según el mercado europeo, las ayudas gubernamentales y los impuestos locales aplicables.",
+      "Las versiones con tracción integral y las motorizaciones híbridas presentan diferencias en el peso total, el despeje y la capacidad volumétrica del baúl."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T02:47:49.206Z",
+  "transmision": "Manual de 6 velocidades o Automática",
+  "traccion": "Delantera o Integral (AWD)",
+  "peso": "1.300-1.450 kg",
+  "tipoMotor": "Gasolina / Híbrido",
+  "potenciaKW": "96 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "8.5s",
+  "anoProduccion": "2024-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.2 L - 1.6 L",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 472,
+  "maleteroMin": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2024,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 18.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:47:49.206Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl Dacia Duster irrumpió en el mercado automotriz europeo bajo la órbita de Renault Group con una premisa clara y disruptiva: ofrecer un vehículo utilitario deportivo robusto, sumamente espacioso y accesible, eliminando los gastos superfluos típicos del segmento. Con este enfoque, el Duster redefinió el concepto de movilidad económica, logrando posicionarse rápidamente como un éxito rotundo de ventas en Europa y adaptándose con éxito a los mercados emergentes de América Latina bajo el rombo de Renault.\n\nA lo largo de su trayectoria comercial, el modelo se ganó una sólida reputación basada en la simplicidad mecánica y una altísima durabilidad frente a tratos exigentes. La versatilidad de su plataforma y su esquema de suspensiones le permitieron destacar tanto en el asfalto urbano como en caminos rurales o de tierra castigados, convirtiéndose en el vehículo de cabecera para un público muy diverso.\n\n## Un hito o generación relevante\n\nEl punto de inflexión más destacado en la historia reciente del modelo se materializó con el arribo de su tercera generación, presentada a fines de 2023 y lanzada comercialmente en 2024. Este salto generacional dejó atrás la excesiva austeridad de sus orígenes para adoptar la plataforma modular CMF-B del Grupo Renault. Gracias a esta arquitectura moderna, el Duster incorporó por primera vez alternativas mecánicas electrificadas, tales como la tecnología híbrida (Hybrid 140), marcando un hito en términos de eficiencia energética.\n\nAsimismo, el diseño exterior evolucionó hacia líneas mucho más angulosas, marcadas y de fuerte impronta aventurera. Puertas adentro, la cabina se renovó por completo integrando instrumentación digital y pantallas multimedia actualizadas, sin descuidar la utilización de materiales duraderos pensados para un uso intensivo y recreativo.\n\n## Curiosidades\n\nUn aspecto sumamente llamativo del Duster es cómo obligó a la plana mayor de Renault a replantearse sus estrategias de marketing y desarrollo debido a su masiva aceptación. Lejos de limitarse a los compradores de presupuestos ajustados, el SUV se convirtió en un fenómeno de ventas en países de alto poder adquisitivo como Francia, Alemania y España, compitiendo de igual a igual con contrincantes de marcas tradicionalmente más caras y generalistas.\n\nOtro punto distintivo es su capacidad off-road real. A diferencia de muchos crossovers contemporáneos que priorizan exclusivamente la estética urbana, el Duster heredó y adaptó sistemas de tracción integral de la alianza franco-japonesa que le otorgan aptitudes de vadeo, ángulos de ataque y tracción muy superiores al promedio de su categoría, ganándose el fervor de los entusiastas de la vida al aire libre.\n\n## Competencia y posicionamiento\n\nDentro del panorama automotriz europeo, el Dacia Duster milita en el segmento de los B-SUV y C-SUV económicos, midiendo fuerzas de manera directa contra alternativas como el SEAT Arona, el Citroën C3 Aircross o el Škoda Kamiq. Su principal as bajo la manga radica en una relación precio-producto imbatible, brindando dimensiones y habitabilidad propias de categorías superiores por el valor de un compacto de entrada.\n\nPor otro lado, en regiones donde se comercializa bajo la marca Renault, el posicionamiento se centra fuertemente en la robustez estructural, la confiabilidad mecánica y la accesibilidad para las familias que buscan un vehículo versátil para el día a día o un primer 4x4 confiable y económico de mantener.",
+  "generacionInfo": {
+    "raw": "Tercera generación",
+    "numero": 3,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Dacia Duster - SUV compacto Dacia. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

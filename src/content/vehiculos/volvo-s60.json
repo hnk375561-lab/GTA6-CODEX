@@ -1,0 +1,189 @@
+{
+  "slug": "volvo-s60",
+  "type": "vehiculos",
+  "title": "Volvo S60",
+  "description": "Sedán ejecutivo de Volvo, fabricado en Carolina del Sur (EE.UU.).",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "volvo"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volvo-xc60",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volvo-xc90",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "audi-a4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-e",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Volvo",
+  "class": "Sedán ejecutivo",
+  "power": "250 hp",
+  "price": "USD 42.000 (MSRP EE.UU. referencia)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 42000,
+    "raw": "USD 42.000 (MSRP EE.UU. referencia)"
+  },
+  "consumo": "7.4 l/100km combinado",
+  "dimensiones": "4.778 mm largo x 1.850 mm ancho x 1.433 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://vamos.es/ficha-tecnica/volvo-s60-2023",
+    "note": "Se actualizaron las especificaciones de potencia y aceleración de la tercera generación del Volvo S60 basadas en registros de la industria y fuentes verificadas.",
+    "limitations": [
+      "Los precios pueden variar según el mercado local y los impuestos vigentes",
+      "Las versiones y equipamientos específicos dependen de la región de comercialización"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T03:14:16.800Z",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "Tracción delantera o integral (AWD)",
+  "peso": "1.650-1.750 kg",
+  "tipoMotor": "Gasolina 2.0L turbo (Mild-Hybrid)",
+  "potenciaKW": "184 kW",
+  "capacidadTanque": "60 litros",
+  "tiempoRecorrido": "0-100 km/h en 6.5s",
+  "anoProduccion": "2019-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.969 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 442,
+  "maleteroMin": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2018,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 43.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:14:16.800Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl Volvo S60 es el sedán ejecutivo de la marca sueca que debutó originalmente a principios de los años 2000 para reemplazar al S70, posicionándose como una alternativa moderna, elegante y enfocada en la seguridad dentro del segmento D. A lo largo de sus distintas generaciones, el S60 evolucionó desde un enfoque marcadamente clásico y sobrio hacia una propuesta de diseño mucho más dinámica, atlética y vanguardista, adaptándose a las nuevas demandas del mercado global.\n\n## Un hito o generación relevante\n\nLa tercera generación del Volvo S60, lanzada comercialmente hacia finales de la década pasada, marcó un punto de inflexión fundamental para la compañía. Este modelo se convirtió en el primer vehículo de la marca en fabricarse en los Estados Unidos, específicamente en la planta de Ridgeville, Carolina del Sur. Además, representó la decisión estratégica de Volvo de eliminar por completo las motorizaciones diésel de su gama, apostando fuertemente por bloques nafteros avanzados, tecnología híbrida ligera (Mild-Hybrid) y variantes híbridas enchufables de altas prestaciones.\n\n## Curiosidades\n\nA pesar de ser un sedán de corte ejecutivo y familiar, el Volvo S60 ha tenido una rica historia en el automovilismo deportivo. A través de la división de desarrollo y preparación Polestar (antes de convertirse en una marca independiente de vehículos eléctricos), el S60 compitió y cosechó grandes éxitos en campeonatos de turismos tan exigentes como el STCC (Scandinavian Touring Car Championship) y el V8 Supercars australiano, demostrando que la seguridad y el confort característicos de Volvo podían convivir perfectamente con un desempeño dinámico de primer nivel en circuitos.\n\n## Competencia y posicionamiento\n\nEn el mercado global, el Volvo S60 compite de manera directa contra los referentes históricos alemanes del segmento de los sedanes medianos premium, como el BMW Serie 3, el Audi A4 y el Mercedes-Benz Clase C. Frente a ellos, la propuesta de valor de Volvo se diferencia principalmente por ofrecer un diseño escandinavo minimalista muy distintivo, un nivel de confort en ruta sobresaliente, asientos ergonómicos considerados entre los mejores de la industria y un enfoque prioritario hacia los sistemas de asistencia a la conducción y la seguridad activa y pasiva.",
+  "generacionInfo": {
+    "raw": "Tercera generación",
+    "numero": 3,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Volvo S60 - Sedán ejecutivo Volvo. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

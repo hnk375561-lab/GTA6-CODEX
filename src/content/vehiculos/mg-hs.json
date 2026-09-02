@@ -1,0 +1,199 @@
+{
+  "slug": "mg-hs",
+  "type": "vehiculos",
+  "title": "MG HS",
+  "description": "SUV compacto de MG, con opción de motor turbo o híbrido enchufable.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "mg"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mg-zs",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mg4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "baic-x55",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-omoda-5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-equinox",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "MG",
+  "class": "SUV compacto",
+  "power": "95 hp",
+  "price": "GBP 680 (precio histórico de lanzamiento en UK, año 1962)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "GBP",
+    "amount": 680,
+    "raw": "GBP 680 (precio histórico de lanzamiento en UK, año 1962)"
+  },
+  "consumo": "aprox. 10 l/100km (referencia histórica)",
+  "dimensiones": "3.891 mm largo x 1.524 mm ancho x 1.251 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://es.wikipedia.org/wiki/MG_MGB",
+    "note": "Datos técnicos e históricos basados en el modelo clásico MGB fabricado por British Motor Corporation entre 1962 y 1980, utilizando la información factual provista por Wikipedia.",
+    "limitations": [
+      "Las especificaciones de potencia y rendimiento pueden variar según el año de fabricación y las normativas de emisiones específicas de cada mercado de exportación.",
+      "Los precios originales corresponden al lanzamiento en el mercado británico y no reflejan el valor actual de colección."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:23:25.803Z",
+  "transmision": "Manual de 4 velocidades (con opción de overdrive)",
+  "traccion": "Trasera",
+  "peso": "920 kg",
+  "tipoMotor": "Naftero de 4 cilindros en línea",
+  "potenciaKW": "71 kW",
+  "capacidadTanque": "45 litros",
+  "tiempoRecorrido": "12.0s",
+  "anoProduccion": "1962-1980",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.798 cc",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": 250,
+  "maleteroMin": null,
+  "generacion": "1ra Generación",
+  "anoLanzamiento": 1962,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 28.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:23:25.803Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl MGB es un icónico automóvil deportivo de dos puertas que marcó un antes y un después en la historia de la industria automotriz británica. Fue fabricado de forma ininterrumpida desde 1962 hasta 1980 por la British Motor Corporation (BMC) y comercializado bajo la entrañable marca MG. Anunciado oficialmente al público el 19 de septiembre de 1962, este roadster introdujo una construcción monocasco muy avanzada para su época, dejando atrás el tradicional chasis de largueros que utilizaba su antecesor, el MGA. Esta arquitectura no sólo mejoraba la rigidez estructural del vehículo, sino que también optimizaba el espacio interior para los ocupantes, convirtiéndolo en un éxito comercial inmediato tanto en el Reino Unido como en los mercados de exportación, especialmente en Norteamérica.\n\n## Un hito o generación relevante\nA lo largo de sus casi dos décadas de producción, el MGB no se limitó a su silueta original de descapotable con techo de lona. La evolución de la gama trajo consigo hitos muy importantes, como la introducción en 1965 del MGB GT, un elegante coupé 2+2 de tres puertas diseñado por el prestigioso estudio italiano Pininfarina. Asimismo, la marca experimentó con motorizaciones de mayor cilindrada y prestaciones más ambiciosas, dando vida al MGC impulsado por un motor de seis cilindros entre 1967 y 1969, y posteriormente al exclusivo MGB GT V8 equipado con un bloque de ocho cilindros entre 1973 y 1976. Estas variantes ampliaron considerablemente el atractivo del modelo y consolidaron su versatilidad mecánica.\n\n## Curiosidades\nUna de las particularidades más interesantes del MGB radica en su innovador diseño enfocado en la seguridad pasiva y la facilidad de reparación. Fue uno de los primeros automóviles de producción masiva en incorporar estructuras de deformación programada en la parte delantera para absorber impactos. Además, debido a las estrictas normativas de seguridad impuestas en Estados Unidos a partir de la década de 1970, los modelos destinados a ese mercado debieron incorporar los característicos paragolpes de uretano negro (conocidos popularmente como 'rubber bumpers'), un cambio estético que en su momento generó intensos debates entre los puristas del diseño clásico británico pero que hoy en día constituye una seña de identidad muy reconocible.\n\n## Competencia y posicionamiento\nEn su época dorada, el MGB se posicionó como el referente indiscutido entre los automóviles deportivos accesibles, compitiendo de manera directa contra otros roadsters británicos y europeos como el Triumph Spitfire, el Triumph TR6 y el Fiat 124 Sport Spider. Su gran popularidad se debió a una equilibrada combinación de agilidad en ruta, un comportamiento dinámico noble gracias a su tracción trasera, una mecánica sumamente noble y sencilla de mantener, y un diseño atemporal que cautivó a generaciones enteras de entusiastas del motor en todo el mundo.",
+  "generacionInfo": {
+    "raw": "1ra Generación",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "MG HS - SUV compacto MG. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

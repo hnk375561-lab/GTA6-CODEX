@@ -1,0 +1,35 @@
+{
+  "slug": "smart",
+  "type": "fabricantes",
+  "title": "Smart",
+  "description": "Vehículos y motocicletas de Smart",
+  "content": "## Identidad de marca\nSmart se consolidó en el mercado global como un fabricante de automóviles enfocado de manera exclusiva en la movilidad urbana y los espacios reducidos [Fuente 3]. Su propuesta conceptual gira en torno a la eficiencia de dimensiones y la practicidad para las grandes ciudades, manteniendo el respaldo técnico de la ingeniería alemana [Fuente 2].\n\n## Historia real\nLos antecedentes de la marca se remontan a mediados de la década de 1970, cuando los equipos de ingenieros de Mercedes-Benz comenzaron a idear conceptos vehiculares compactos [Fuente 2]. Formalmente, la constitución del proyecto se concretó en 1994 [Fuente 3]. Desde su origen, la compañía fue concebida como una respuesta innovadora para el tránsito metropolitano, integrándose como parte de Mercedes-Benz Group [Fuente 3]. A lo largo de su trayectoria, el desarrollo de sus vehículos ha estado marcado por la búsqueda constante de soluciones de transporte ágiles y de menor impacto en el espacio público.\n\n## Posicionamiento actual\nEn la actualidad, Smart forma parte de la estructura corporativa de Mercedes-Benz Group [Fuente 3], orientando sus esfuerzos comerciales hacia los canales digitales de atención, la modernización de servicios y la adaptación a las nuevas demandas de conectividad y movilidad sostenible en el mercado internacional [Fuente 5].",
+  "status": "confirmado",
+  "officialName": "Smart",
+  "country": "Alemania",
+  "foundedYear": 1994,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:26:46.455Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "smart-1",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Smart_(autom%C3%B3vil)",
+    "secondarySource": "https://noticias.autocosmos.com.mx/2018/06/29/smart-cumple-20-anos-de-su-fundacion",
+    "note": "Se verificó el origen de la marca alemana fundada en 1994 y su vinculación histórica con Mercedes-Benz Group para la producción de vehículos urbanos.",
+    "limitations": [
+      "La información disponible en fuentes locales directas es acotada respecto a los últimos cambios de la gama eléctrica y su transición corporativa."
+    ]
+  }
+}

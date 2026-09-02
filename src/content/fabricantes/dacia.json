@@ -1,0 +1,42 @@
+{
+  "slug": "dacia",
+  "type": "fabricantes",
+  "title": "Dacia",
+  "description": "Vehículos y motocicletas de Dacia",
+  "content": "## Identidad de marca\n\nDacia se consolidó en el mercado automotriz internacional como un referente indiscutido en el segmento de vehículos accesibles, priorizando la funcionalidad, la robustez y una relación precio-producto muy competitiva. Lejos de los lujos superfluos o la ostentación, la filosofía de la marca se centra en ofrecer soluciones de movilidad honestas y prácticas para el uso cotidiano.\n\n## Historia real\n\nEl origen de la compañía se remonta a 1966, cuando se gestó como un proyecto impulsado por el Estado rumano [Fuente 2]. El propósito fundacional fue claro y directo: proveer automóviles modernos, sólidos y económicos destinados a motorizar a la población local [Fuente 3]. Esta base industrial permitió sentar las condiciones para su evolución posterior, marcando un hito fundamental al integrarse bajo el paraguas del grupo Renault [Fuente 4], lo que le aportó el respaldo tecnológico, de ingeniería y de gestión necesario para expandirse masivamente más allá de sus fronteras regionales.\n\n## Posicionamiento actual\n\nEn la actualidad, Dacia goza de una sólida popularidad en diversos mercados gracias a una gama de modelos reconocidos por su asequibilidad y fiabilidad mecánica [Fuente 5]. Al formar parte de un conglomerado global, la marca logró optimizar sus procesos productivos y estandarizar componentes, posicionándose como la opción predilecta para aquellos conductores que buscan vehículos funcionales de bajo costo operativo sin resignar los estándares modernos de seguridad y confort esenciales.",
+  "status": "confirmado",
+  "officialName": "Dacia",
+  "country": "Rumania",
+  "foundedYear": 1966,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:19:45.185Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-duster",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-sandero",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.dacia.es/descubrir-dacia/historia.html",
+    "secondarySource": "https://www.diariomotor.com/marcas/dacia",
+    "note": "Se verificó la fundación de la marca en 1966 como proyecto estatal en Rumanía orientado a vehículos accesibles, así como su posterior integración al grupo Renault y su posicionamiento actual en el segmento de bajo costo.",
+    "limitations": [
+      "No se detallan en el texto todos los acuerdos industriales específicos con Renault previos a la adquisición total.",
+      "Faltan métricas exactas de volumen de ventas por año en los extractos provistos."
+    ]
+  }
+}

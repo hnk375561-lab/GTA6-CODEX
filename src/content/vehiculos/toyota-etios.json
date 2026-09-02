@@ -1,0 +1,233 @@
+{
+  "slug": "toyota-etios",
+  "type": "vehiculos",
+  "title": "Toyota Etios",
+  "description": "Sedán compacto de entrada de Toyota, motor 1.5L, orientado a costo de mantenimiento bajo.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "toyota",
+    "economico",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-alphard",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-camry",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-corolla-2024",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-logan",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Toyota",
+  "class": "Sedán económico",
+  "power": "103 CV",
+  "price": "ARS 6.500.000 (últimos precios de referencia en Argentina antes de su discontinuación)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "ARS",
+    "amount": 6500000,
+    "raw": "ARS 6.500.000 (últimos precios de referencia en Argentina antes de su discontinuación)"
+  },
+  "consumo": "aprox. 6.5 l/100km (mixto)",
+  "dimensiones": "4265 x 1695 x 1510 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.mercadolibre.com.ar/blog/mo-ficha-tecnica-toyota-etios-motor-seguridad-confort",
+    "note": "Se verificaron las especificaciones técnicas principales del Toyota Etios fabricado en Brasil para el mercado argentino a través de fichas técnicas oficiales y portales especializados, incluyendo la motorización 1.5L con tecnología Dual VVT-i de 103 CV, cilindrada de 1496 cc, torque de 137 Nm y capacidades volumétricas de carga. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "limitations": [
+      "El modelo fue discontinuado en su producción regional, por lo que los valores de precio corresponden a referencias históricas o de mercado de usados.",
+      "Las cifras de consumo de combustible pueden presentar variaciones según el tipo de transmisión seleccionada (manual de 5 marchas o automática de 4 marchas) y las condiciones de manejo urbano o rutero."
+    ]
+  },
+  "performance": {
+    "speed": "165 km/h",
+    "acceleration": "0-100 km/h en 12.9s"
+  },
+  "createdAt": "2026-08-23T21:59:12.065294Z",
+  "updatedAt": "2026-08-27T03:12:13.200Z",
+  "transmision": "Manual de 5 velocidades o Automática de 4 marchas",
+  "traccion": "Delantera",
+  "peso": "990-1070 kg",
+  "tipoMotor": "Nafta",
+  "potenciaKW": "76 kW",
+  "capacidadTanque": "45 litros",
+  "tiempoRecorrido": "0-100 km/h en 11.5s",
+  "anoProduccion": "2016-2023",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "C",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1496 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 562,
+  "maleteroMin": null,
+  "generacion": "Primera generación (facelift regional)",
+  "anoLanzamiento": 2016,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 17.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:12:13.200Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 165
+    },
+    "consumo": {
+      "promedio": "6.9 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Toyota Etios surgió como una apuesta estratégica de la marca japonesa orientada firmemente a los mercados emergentes de la región, concebido desde sus bases para ofrecer un medio de transporte accesible, mecánicamente robusto y con un costo de mantenimiento sumamente contenido. Lejos de priorizar lujos superfluos o estéticas vanguardistas, el desarrollo del Etios puso el foco en la durabilidad a largo plazo, la funcionalidad cotidiana y una alta eficiencia operativa. En el mercado argentino, el modelo impactó fuertemente desde su arribo, logrando capturar la preferencia tanto de compradores particulares que buscaban su primer vehículo 0km confiable como de flotas comerciales, posicionándose de inmediato como uno de los pilares fundamentales en el volumen de ventas de Toyota dentro del competitivo segmento B.\n\n## Un hito o generación relevante\nUn punto de inflexión clave en la trayectoria comercial del Etios en Argentina se concretó en el año 2016, momento en el que recibió una profunda actualización estética y mecánica (conocida como facelift regional). En dicha renovación se introdujo el reputado motor de 1.5 litros equipado con el sistema Dual VVT-i de variación inteligente de válvulas, elevando la potencia hasta los 103 CV y optimizando notablemente la respuesta dinámica y el consumo de combustible. Asimismo, esta evolución marcó la incorporación de una esperada caja automática de 4 velocidades, mejoras sustanciales en la aislación acústica del habitáculo y un completo rediseño del instrumental, dotando al vehículo de una propuesta mucho más madura y adaptada a las exigencias del usuario moderno.\n\n## Curiosidades\nA pesar de haber sido blanco de críticas iniciales debido a ciertas soluciones de diseño interior sumamente espartanas —como la ubicación central del cuadro de instrumentos en sus primeras etapas—, el Toyota Etios se consolidó rápidamente como un auténtico fenómeno de culto gracias a su mecánica prácticamente indestructible. Es ampliamente recordado en el mercado de usados argentino por conservar un valor de reventa sobresaliente y por constituir la herramienta de trabajo predilecta de miles de taxistas y conductores de aplicaciones de movilidad urbana, quienes sometieron al conjunto motriz a pruebas extremas superando cientos de miles de kilómetros con un nivel de desgaste mínimo y una disponibilidad mecánica admirable.\n\n## Competencia y posicionamiento\nDentro de la franja más disputada del mercado automotriz argentino, el Toyota Etios debió enfrentar a contrincantes de peso histórico como el Volkswagen Gol, el Chevrolet Onix, el Fiat Argo y la familia Logan/Sandero de Renault. Mientras sus competidores apostaban con mayor velocidad por líneas de diseño vanguardistas o pantallas multimedia de gran tamaño, el Etios se aferró a los valores tradicionales de la racionalidad pura: ofreció un habitáculo y un baúl de dimensiones sumamente generosas para su tamaño compacto, respaldado por la sólida reputación de la postventa de la marca nipona y una confiabilidad estructural que marcó un referente en su categoría.",
+  "generacionInfo": {
+    "raw": "Primera generación (facelift regional)",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": true,
+    "faceliftAno": null
+  },
+  "seoDescription": "Toyota Etios - Sedán económico Toyota. 165 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

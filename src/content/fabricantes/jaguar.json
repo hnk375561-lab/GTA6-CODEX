@@ -1,0 +1,35 @@
+{
+  "slug": "jaguar",
+  "type": "fabricantes",
+  "title": "Jaguar",
+  "description": "Vehículos y motocicletas de Jaguar",
+  "content": "## Identidad de marca\nJaguar se consolidó a lo largo de las décadas como un referente indiscutido de lujo, elegancia y alto rendimiento dentro de la industria automotriz global. Su impronta combina una estética clásica con una dinámica de conducción orientada al deporte, posicionándose en el segmento premium con vehículos que priorizan tanto el confort como la potencia.\n\n## Historia real\nLos orígenes de la compañía se remontan a 1922, cuando fue establecida originalmente bajo el nombre de Swallow Sidecar Company para dedicarse a la fabricación de sidecares para motocicletas ([Fuente 4](https://motor.elpais.com/conducir/el-curioso-origen-de-jaguar-y-por-que-se-llama-asi)). Tras consolidar su transición hacia la industria automotriz y con el fin de evitar las desafortunadas connotaciones de sus siglas anteriores tras la Segunda Guerra Mundial, la empresa adoptó oficialmente el nombre de Jaguar Cars ([Fuente 2](https://es.wikipedia.org/wiki/Jaguar_Cars)).\n\nA lo largo de su trayectoria, la firma acumuló hitos memorables que definieron su ADN deportivo. Uno de los momentos más transformadores ocurrió en el Salón del Automóvil de Ginebra de 1961, cuando se produjo la presentación oficial del legendario E-type, un modelo que redefinió los estándares estéticos y prestacionales de su época y quedó grabado para siempre en la historia del diseño automotriz ([Fuente 3](https://www.jaguar.com/es-es/jdx/copy-nothing/origins.html)).\n\n## Posicionamiento actual\nEn la actualidad, Jaguar mantiene su estatus de exclusividad y sofisticación, adaptándose a las nuevas exigencias del mercado global. La marca continúa enfocando su propuesta de valor en la ingeniería de precisión, el diseño sofisticado y la evolución tecnológica, manteniendo vigente el espíritu de distinción que caracteriza a sus vehículos en las carreteras de todo el mundo.",
+  "status": "confirmado",
+  "officialName": "Jaguar",
+  "country": "Reino Unido",
+  "foundedYear": 1935,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:22:01.281Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jaguar-f-type",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.jaguar.com/es-es/jdx/copy-nothing/origins.html",
+    "secondarySource": "https://es.wikipedia.org/wiki/Jaguar_Cars",
+    "note": "Se verificaron los orígenes de la marca a partir de su documentación histórica oficial y registros enciclopédicos sobre su evolución y el lanzamiento de hitos emblemáticos como el E-type.",
+    "limitations": [
+      "La transición corporativa reciente hacia una marca totalmente eléctrica no está completamente detallada en los extractos base provistos."
+    ]
+  }
+}

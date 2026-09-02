@@ -1,0 +1,203 @@
+{
+  "slug": "suzuki-baleno",
+  "type": "vehiculos",
+  "title": "Suzuki Baleno",
+  "description": "Hatchback compacto de Suzuki, fabricado principalmente en India.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "suzuki"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-fronx",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-gsx-r750",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-jimny",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-onix",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-sandero",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Suzuki",
+  "class": "Hatchback",
+  "power": "95 CV",
+  "price": "USD 21.500 a USD 23.000 (referencia lanzamiento regional)",
+  "priceStructured": {
+    "type": "range",
+    "currency": "USD",
+    "min": 21500,
+    "max": 23000,
+    "raw": "USD 21.500 a USD 23.000 (referencia lanzamiento regional)"
+  },
+  "consumo": "4.8 l/100km combinado",
+  "dimensiones": "3.990 mm largo x 1.745 mm ancho x 1.500 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://es.scribd.com/document/365191200/Ficha-Tecnica-Suzuki-Baleno",
+    "note": "Se actualizaron las especificaciones de potencia (95 CV), precios de referencia regional, cilindrada (1.4L) y dimensiones basándose en los registros de lanzamiento en la región y la ficha técnica oficial documentada.",
+    "limitations": [
+      "Los precios corresponden a referencias de lanzamiento regional y pueden variar según impuestos y disponibilidad en cada país.",
+      "Las motorizaciones varían según el mercado global (existiendo variantes 1.2, 1.4 y 1.5 litros)."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T03:08:54.168Z",
+  "transmision": "Manual de 5 marchas o Automática de 4 marchas",
+  "traccion": "Delantera",
+  "peso": "915 - 955 kg",
+  "tipoMotor": "Nafta (Gasolina)",
+  "potenciaKW": "70 kW",
+  "capacidadTanque": "37 litros",
+  "tiempoRecorrido": "11.6s",
+  "anoProduccion": "2015-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.4 litros",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 355,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (moderna)",
+  "anoLanzamiento": 2015,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 15.500"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:08:54.168Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Suzuki Baleno resurgió en 2015 como un hatchback compacto de concepción global, desarrollado para posicionarse un escalón por encima del exitoso Swift y ofrecer mayor habitabilidad sin perder agilidad urbana. Fabricado principalmente en India a través de Maruti Suzuki, este modelo adoptó una silueta influenciada por el concepto de diseño \"Liquid Flow\", caracterizada por líneas fluidas y una postura visualmente ancha que optimiza el espacio interior.\n\n## Un hito y plataforma relevante\nUn pilar fundamental en la arquitectura del Baleno moderno es la implementación de la plataforma liviana \"Heartect\". Esta estructura permitió contener el peso del vehículo por debajo de la tonelada (en torno a los 915-955 kg) sin comprometer la rigidez torsional ni la seguridad estructural. Gracias a esta reducción de peso, el modelo logró potenciar notablemente su eficiencia de combustible y su respuesta dinámica en el tránsito diario.\n\n## Curiosidades\nA pesar de estar enfocado fuertemente en mercados emergentes de alta demanda, el Baleno cumplió un rol comercial estratégico en regiones como Europa y América Latina, destacándose por ofrecer una de las capacidades de baúl más generosas de su segmento en relación con sus casi 4 metros de longitud exterior. Asimismo, sirvió de base para acuerdos de colaboración internacional con otros fabricantes en determinados mercados.\n\n## Competencia y posicionamiento\nEn el competitivo segmento B de los hatchbacks, el Suzuki Baleno se enfrenta a referentes consagrados como el Volkswagen Polo, el Toyota Yaris y el Hyundai i20. Su principal argumento de ventas radica en la excelente relación entre su habitabilidad, la confiabilidad mecánica de sus impulsores nafteros y un costo de mantenimiento sumamente racional, consolidándose como una opción lógica dentro del mercado.",
+  "generacionInfo": {
+    "raw": "Segunda generación (moderna)",
+    "numero": 2,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Suzuki Baleno - Hatchback Suzuki. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

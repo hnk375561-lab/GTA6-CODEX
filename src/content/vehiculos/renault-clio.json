@@ -1,0 +1,201 @@
+{
+  "slug": "renault-clio",
+  "type": "vehiculos",
+  "title": "Renault Clio",
+  "description": "Hatchback compacto europeo de Renault, uno de los más vendidos históricos de Europa.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "renault"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-sandero",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-arkana",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-captur",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-onix",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-sandero",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Renault",
+  "class": "Hatchback",
+  "power": "91 hp",
+  "price": "EUR 18.500",
+  "priceStructured": {
+    "type": "single",
+    "currency": "EUR",
+    "amount": 18500,
+    "raw": "EUR 18.500"
+  },
+  "consumo": "4.5 l/100km combinado",
+  "dimensiones": "4.053 mm largo x 1.798 mm ancho x 1.440 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://es.wikipedia.org/wiki/Renault_Clio",
+    "note": "Se verificaron las dimensiones, capacidades y motorizaciones principales de la quinta generación del Renault Clio comercializado en el mercado europeo.",
+    "limitations": [
+      "Los precios y consumos exactos pueden variar según el mercado específico y la versión de equipamiento elegida."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:25:49.643Z",
+  "transmision": "Manual de 5 o 6 velocidades / Automática EDC",
+  "traccion": "Delantera",
+  "peso": "1.100 - 1.250 kg",
+  "tipoMotor": "Gasolina / Híbrido",
+  "potenciaKW": "67 kW",
+  "capacidadTanque": "42 litros",
+  "tiempoRecorrido": "12.2s",
+  "anoProduccion": "2019-2024",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "999 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 391,
+  "maleteroMin": null,
+  "generacion": "Quinta generación (facelift reciente)",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 18.500"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:25:49.643Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Renault Clio es, sin lugar a dudas, uno de los vehículos más emblemáticos y exitosos de la industria automotriz europea. Desde su aparición a principios de la década de 1990 para reemplazar al histórico Renault 5, este hatchback compacto supo ganarse el favor del público gracias a su equilibrio entre tamaño urbano, versatilidad en ruta y una excelente relación precio-calidad. A lo largo de sus distintas generaciones, el Clio se consolidó como un referente indiscutido en el segmento B europeo, acumulando millones de unidades vendidas y conquistando en múltiples ocasiones el prestigioso galardón de Coche del Año en Europa.\n\n## Un hito y generación relevante\nLa quinta generación del Renault Clio, lanzada comercialmente en 2019 y actualizada recientemente, marcó un punto de inflexión en cuanto a calidad percibida, tecnología y seguridad dentro de la categoría. Construido sobre la plataforma modular CMF-B de la Alianza Renault-Nissan-Mitsubishi, este modelo optimizó notablemente el espacio interior a pesar de mantener unas dimensiones exteriores muy contenidas. Un hito fundamental de esta etapa fue la incorporación de mecánicas electrificadas, destacando la variante híbrida E-Tech, que demostró el compromiso de la marca del rombo con la eficiencia energética y la reducción de emisiones sin resignar agilidad en el manejo urbano.\n\n## Curiosidades\nUna de las facetas más interesantes en la historia del Clio es su estrecha relación con el mundo de la competición y las altas prestaciones. Versiones históricas como el Clio Williams o las sucesivas iteraciones firmadas por Renault Sport (RS) se convirtieron rápidamente en objetos de culto para los entusiastas de los hatchbacks deportivos, ofreciendo dinámicas de conducción dignas de vehículos de segmentos superiores. Además, en diversos mercados globales el modelo adoptó nombres alternativos o se comercializó bajo otras marcas del grupo, demostrando una flexibilidad comercial pocas veces vista en la industria.\n\n## Competencia y posicionamiento\nEn el mercado actual, el Renault Clio compite en uno de los segmentos más disputados de Europa, enfrentándose cara a cara con pesos pesados de la industria como el Volkswagen Polo, el Peugeot 208, el Opel Corsa y el Ford Fiesta (en sus etapas de comercialización). Su posicionamiento se destaca por ofrecer un diseño exterior sumamente atractivo y emocional, un habitáculo con acabados cuidados y una oferta tecnológica de vanguardia que incluye sistemas avanzados de asistencia a la conducción (ADAS) y pantallas multimedia de generosas dimensiones. Gracias a esta combinación, el Clio se mantiene firme en los primeros puesto de matriculación de su categoría, siendo una opción predilecta tanto para conductores jóvenes como para familias pequeñas que buscan un vehículo práctico y moderno.",
+  "generacionInfo": {
+    "raw": "Quinta generación (facelift reciente)",
+    "numero": 5,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": true,
+    "faceliftAno": null
+  },
+  "seoDescription": "Renault Clio - Hatchback Renault. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

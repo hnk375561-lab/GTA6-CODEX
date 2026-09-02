@@ -1,0 +1,34 @@
+{
+  "slug": "tata",
+  "type": "fabricantes",
+  "title": "Tata",
+  "description": "Vehículos y motocicletas de Tata",
+  "content": "## Identidad de marca\n\nTata Motors es la división automotriz del gigante industrial Grupo Tata. Como uno de los actores principales de la industria en su país de origen, la marca ha sabido trascender las fronteras locales para consolidarse como un conglomerado global con presencia en diversos segmentos de la movilidad comercial y de pasajeros.\n\n## Historia y evolución\n\nSi bien el conglomerado posee una trayectoria centenaria, la división automotriz formal bajo la estructura conocida comenzó sus operaciones consolidadas en el año 1997. Desde entonces, la compañía expandió su capacidad productiva y de desarrollo tecnológico, adaptándose a las exigencias de un mercado internacional altamente competitivo. A lo largo de las décadas, la firma ha evolucionado desde la producción de vehículos utilitarios básicos hasta la integración de tecnologías avanzadas y el diseño de automóviles que responden a estándares globales de seguridad y eficiencia.\n\n## Posicionamiento actual\n\nEn la actualidad, Tata Motors se destaca por su enfoque en la accesibilidad, la robustez y la innovación orientada a la transición energética, incluyendo desarrollos significativos en movilidad eléctrica. Su estrategia actual apunta a fortalecer su portafolio internacional mediante estándares modernos de diseño y una sólida propuesta de valor, posicionándose como un competidor versátil frente a los grandes fabricantes tradicionales del mercado global.",
+  "status": "confirmado",
+  "officialName": "Tata",
+  "country": "India",
+  "foundedYear": 1997,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:47:42.211Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tata-nexon",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Tata",
+    "note": "Se verificó que Tata Motors es un fabricante de automóviles perteneciente al Grupo Tata, fundado en 1997, utilizando la información disponible en Wikipedia.",
+    "limitations": [
+      "Las fuentes disponibles ofrecen información muy limitada sobre la historia interna y los detalles de la fundación de Tata Motors, centrándose principalmente en su pertenencia al conglomerado más amplio del Grupo Tata."
+    ]
+  }
+}

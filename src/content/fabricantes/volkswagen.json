@@ -1,0 +1,96 @@
+{
+  "slug": "volkswagen",
+  "type": "fabricantes",
+  "title": "Volkswagen",
+  "description": "Vehículos y motocicletas de Volkswagen",
+  "content": "## Identidad de marca\nVolkswagen se consolidó a lo largo de décadas como un pilar fundamental de la industria automotriz global. Su nombre, que traduce literalmente \"el auto del pueblo\", refleja su vocación histórica orientada a motorizar a las grandes mayorías con vehículos funcionales, accesibles y de masiva adopción en distintos mercados del mundo.\n\n## Historia real\nLos orígenes de la compañía se remontan al 28 de mayo de 1937, fecha en la que fue establecida en las cercanías de Wolfsburgo, en el estado de Baja Sajonia. Su creación original estuvo impulsada por el Frente Alemán del Trabajo, una organización de la época, con el propósito inicial de acercar un vehículo accesible a la clase trabajadora. A lo largo del siglo XX, la empresa logró redefinir su identidad tras los conflictos bélicos europeos, transformándose en un símbolo de la reconstrucción industrial y expandiendo sus operaciones comerciales de manera exponencial a nivel internacional.\n\n## Posicionamiento actual\nEn la actualidad, la marca opera como el núcleo central y la insignia más comercializada del Grupo Volkswagen. Como parte de uno de los mayores conglomerados fabricantes de automóviles del mundo, la firma combina una vasta tradición industrial con una sólida presencia en los mercados internacionales, adaptándose constantemente a las nuevas demandas tecnológicas, de movilidad urbana y de transición hacia flotas más eficientes.",
+  "status": "confirmado",
+  "officialName": "Volkswagen",
+  "country": "Alemania",
+  "foundedYear": 1937,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:49:05.229Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-amarok",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-golf-gti",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-id-4",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-nivus",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-polo",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-saveiro",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-t-cross",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-taos",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-tera",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-tiguan",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-virtus",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Volkswagen",
+    "secondarySource": "https://clixauto.com/es/blogs/history/a-brief-history-of-volkswagen",
+    "note": "Se verificó la fundación de Volkswagen en 1937 y su sede en Wolfsburgo mediante fuentes enciclopédicas y de historia automotriz.",
+    "limitations": [
+      "No se detallan los volúmenes exactos de producción posteriores a 2020 en este extracto.",
+      "El perfil se limita a la información histórica y corporativa principal disponible en las fuentes provistas."
+    ]
+  }
+}

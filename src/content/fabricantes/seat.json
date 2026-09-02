@@ -1,0 +1,42 @@
+{
+  "slug": "seat",
+  "type": "fabricantes",
+  "title": "SEAT",
+  "description": "Vehículos y motocicletas de SEAT",
+  "content": "## Identidad de Marca\nSEAT se consolidó a lo largo de las décadas como un referente indiscutido de la industria automotriz en su país de origen, destacándose por combinar un enfoque dinámico y accesible con una fuerte capacidad de diseño, desarrollo y fabricación propia centralizada en la planta de Martorell <a href=\"https://en.wikipedia.org/wiki/SEAT\" target=\"_blank\">[2]</a>. Hoy en día, la estructura de la compañía también abarca el desarrollo de propuestas enfocadas en nuevos segmentos a través de marcas derivadas como Cupra <a href=\"https://en.wikipedia.org/wiki/SEAT\" target=\"_blank\">[2]</a>.\n\n## Historia y Hitos\nLa compañía arrancó su recorrido el 9 de mayo de 1950, constituida inicialmente como una empresa pública impulsada por el Instituto Nacional de Industria, contando además con la participación de la banca privada y el socio tecnológico Fiat <a href=\"https://es.wikipedia.org/wiki/SEAT\" target=\"_blank\">[1]</a> <a href=\"https://en.wikipedia.org/wiki/SEAT\" target=\"_blank\">[2]</a>. En una primera etapa, la producción estuvo estrechamente ligada a la adaptación de modelos de la marca italiana, entre los cuales sobresalió el SEAT 124 lanzado en 1968, que marcó un hito en la movilidad familiar de la época <a href=\"https://es.wikipedia.org/wiki/SEAT\" target=\"_blank\">[3]</a>.\n\nUn punto de inflexión radical ocurrió en 1981, cuando Fiat retiró su participación accionaria y el INI asumió el control mayoritario <a href=\"https://es.wikipedia.org/wiki/SEAT\" target=\"_blank\">[3]</a>. A partir de ese momento, la firma operó como un fabricante con autonomía para proyectar su propia familia de vehículos, dando luz a hitos comerciales e industriales muy recordados como los modelos Ronda, Málaga, Marbella y el icónico Ibiza <a href=\"https://es.wikipedia.org/wiki/SEAT\" target=\"_blank\">[3]</a>.\n\n## Posicionamiento Actual\nEn la actualidad, la automotriz representa un pilar fundamental para la economía industrial de su región, concentrando una parte significativa de la inversión en investigación y desarrollo tecnológico del sector <a href=\"https://es.wikipedia.org/wiki/SEAT\" target=\"_blank\">[4]</a>. Su propuesta actual equilibra la fabricación tradicional de vehículos de volumen con la incursión en nichos de diseño vanguardista y electrificación, adaptándose a las exigencias cambiantes del mercado global.",
+  "status": "confirmado",
+  "officialName": "SEAT",
+  "country": "España",
+  "foundedYear": 1950,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:26:29.144Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "seat-ibiza",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "seat-leon",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/SEAT",
+    "secondarySource": "https://en.wikipedia.org/wiki/SEAT",
+    "note": "Se verificó la fundación de la compañía en mayo de 1950 por medio del Instituto Nacional de Industria, su posterior vínculo y separación de Fiat, el desarrollo de modelos propios y su rol actual como parte del sector industrial automotriz en Martorell.",
+    "limitations": [
+      "No se detallan los números exactos de producción de la última década en los extractos proporcionados.",
+      "La información sobre la transición tecnológica con el grupo alemán se menciona de manera general."
+    ]
+  }
+}

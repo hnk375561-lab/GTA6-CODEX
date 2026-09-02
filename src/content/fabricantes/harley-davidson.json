@@ -1,0 +1,40 @@
+{
+  "slug": "harley-davidson",
+  "type": "fabricantes",
+  "title": "Harley-Davidson",
+  "description": "Vehículos y motocicletas de Harley-Davidson",
+  "content": "## Identidad de marca\nHarley-Davidson, también conocida simplemente como Harley o H-D, es una de las marcas de motocicletas más icónicas y reconocidas a nivel global. Su propuesta se centra en una comunidad muy fiel de seguidores, respaldada por clubes de propietarios, eventos internacionales en todo el mundo y un museo oficial patrocinado por la propia compañía.\n\n## Historia real y evolución\nLos orígenes de la empresa se remontan a 1903 en la ciudad de Milwaukee, Wisconsin, cuando William S. Harley y amigos como Arthur y Walter Davidson comenzaron a dar forma a sus primeras motocicletas en un pequeño cobertizo detrás de la casa de la familia Davidson. A lo largo del siglo XX, la compañía debió superar desafíos monumentales para sostenerse en el mercado.\n\nFue uno de los pocos fabricantes nacionales de motocicletas que logró sobrevivir a la crisis de la Gran Depresión, compartiendo ese hito histórico con Indian Motorcycle. Su trayectoria posterior no estuvo exenta de turbulencias: atravesó diversos acuerdos de propiedad, reestructuraciones subsidiarias, etapas de marcada inestabilidad económica, altibajos en la calidad de sus productos y una competencia global sumamente intensa.\n\n## Posicionamiento actual\nGracias a su capacidad de resiliencia frente a los cambios de la industria y las exigencias del mercado internacional, Harley-Davidson logró trascender el rubro de las dos ruedas para convertirse en un verdadero símbolo cultural. Hoy en día, se posiciona firmemente como uno de los fabricantes de motocicletas de mayor envergadura a nivel mundial, manteniendo una identidad inconfundible arraigada en su larga historia de origen estadounidense.",
+  "status": "confirmado",
+  "officialName": "Harley-Davidson",
+  "country": "Estados Unidos",
+  "foundedYear": 1903,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:21:09.423Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "harley-davidson-iron-883",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "harley-davidson-street-glide",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Harley-Davidson",
+    "note": "Se verificó la fundación en Milwaukee en 1903 a través de Wikipedia y fuentes secundarias de historia de la marca.",
+    "limitations": [
+      "La información se limita a hitos generales de supervivencia histórica y su estatus como marca global, sin entrar en especificaciones técnicas de modelos particulares."
+    ]
+  }
+}

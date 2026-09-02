@@ -1,0 +1,54 @@
+{
+  "slug": "chery",
+  "type": "fabricantes",
+  "title": "Chery",
+  "description": "Vehículos y motocicletas de Chery",
+  "content": "## Identidad de marca\nChery Automobile Co. Ltd. es un fabricante de automóviles de propiedad estatal con sede en Wuhu, China. Desde sus inicios, la compañía ha centrado su estrategia corporativa en el desarrollo tecnológico aplicado a la producción masiva de vehículos, logrando posicionarse como un actor clave en la industria automotriz global y expandiéndose con rapidez hacia diversos mercados internacionales.\n\n## Historia real y evolución\nLa compañía fue fundada oficialmente a principios de 1997, más precisamente el 8 de enero de ese año, gracias a una iniciativa respaldada por corporaciones locales de la provincia de Anhui. La construcción de su planta de producción inicial comenzó pocos meses después, en marzo de 1997. Con los años, la automotriz consolidó su estructura societaria, contando actualmente con la participación de SAIC Motor, que posee un 20% de las acciones.\n\nComo parte de su estrategia de diversificación y proyección internacional, Chery se constituyó también como accionista y cofundadora de Qoros, una marca de carácter chino-israelí enfocada en la producción de vehículos orientados a estándares de mayor exigencia, con comercialización principal en el mercado europeo.\n\n## Posicionamiento actual\nEn el mercado global, Chery es reconocida por ofrecer una propuesta basada en la accesibilidad y la funcionalidad, priorizando vehículos diseñados para satisfacer las demandas de movilidad cotidiana. Su enfoque actual combina la producción de unidades de gran volumen con una continua inversión en investigación y desarrollo, lo que le permite mantenerse competitiva frente a los nuevos desafíos tecnológicos del sector automotriz.",
+  "status": "confirmado",
+  "officialName": "Chery",
+  "country": "China",
+  "foundedYear": 1997,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T22:20:37.703Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-omoda-5",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-4",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-7-pro",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-8-pro",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Chery",
+    "secondarySource": "https://www.chery.com.pe/historia-chery",
+    "note": "Se verificó la fundación en 1997, la sede en Wuhu y la participación accionaria de SAIC Motor mediante Wikipedia y fuentes corporativas oficiales.",
+    "limitations": [
+      "No se detallan exhaustivamente los balances financieros actuales de la compañía.",
+      "La expansión exacta en cada mercado secundario regional queda fuera del alcance de los extractos."
+    ]
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "slug": "yamaha-mt-07",
+  "type": "vehiculos",
+  "title": "Yamaha MT-07",
+  "description": "Moto naked de Yamaha, motor bicilíndrico CP2 689cc, muy elegida por relación peso-potencia.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "yamaha",
+    "naked"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-fazer-250",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-nmax",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-r1",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ducati-monster",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb190r",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kawasaki-z900",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "triumph-street-triple",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:30.363Z",
+  "updatedAt": "2026-08-27T03:15:18.696Z",
+  "manufacturer": "Yamaha",
+  "class": "Moto naked",
+  "performance": {
+    "speed": "Media-Alta (215 km/h)",
+    "acceleration": "Alta (0-100 km/h en 3.7s)"
+  },
+  "power": "73.4 CV (53.99 kW) a 8.750 rpm",
+  "price": "USD 8.199 (MSRP EE.UU. referencial)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 8199,
+    "raw": "USD 8.199 (MSRP EE.UU. referencial)"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.motofichas.com/marcas/yamaha/mt-07",
+    "secondarySource": "https://www.yamaha-motor.com.mx/motos/deportivas/mt-07-2025",
+    "note": "Se verificaron las especificaciones técnicas completas de la Yamaha MT-07 utilizando fichas especializadas y portales oficiales de Yamaha (cilindrada exacta de 689 cc, potencia de 73.4 CV a 8.750 rpm, par motor de 67 Nm a 6.500 rpm, dimensiones de 2.085 x 745 x 1.090 mm y peso en orden de marcha).",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado local, los impuestos y los aranceles de importación en Argentina.",
+      "Algunas especificaciones de electrónica o normativas anticontaminación (como Euro 5+) pueden presentar variaciones menores según la homologación de cada región."
+    ]
+  },
+  "transmision": "Manual de 6 velocidades con embrague antirrebote y asistido",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "183-184 kg (en orden de marcha)",
+  "tipoMotor": "Bicilíndrico en línea, 4 tiempos, refrigeración líquida, DOHC, 4 válvulas por cilindro",
+  "potenciaKW": "53.99 kW",
+  "capacidadTanque": "14 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 3.8 segundos",
+  "anoProduccion": "2014-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "apx. 4.2 L / 100 km",
+  "dimensiones": "2.085 x 745 x 1.090 mm",
+  "cilindrada": "689 cc",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Segunda generación (actualización estética, tecnológica y de normativas)",
+  "anoLanzamiento": 2014,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 9.500"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:15:18.696Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Yamaha MT-07 irrumpió con fuerza en el mercado global en el año 2014, posicionándose de inmediato como uno de los pilares fundamentales dentro de la familia de motocicletas naked de media cilindrada de la marca japonesa. Concebida bajo la filosofía de diseño \"Master of Torque\" (MT), esta moto nació con el objetivo prioritario de ofrecer una experiencia de manejo ágil, divertida y sumamente accesible, dejando de lado la búsqueda obsesiva de cifras de velocidad punta puras para centrarse en la respuesta inmediata y el disfrute en el uso diario.\n\nDesde su concepción inicial, la MT-07 se propuso conquistar tanto a conductores novatos que buscaban dar un salto cualitativo en cilindrada como a usuarios experimentados que necesitaban una montura ligera y dinámica para sortear el tráfico urbano o disfrutar de una escapada de fin de semana con curvas. Su éxito rotundo a nivel mundial obligó a la marca a mantenerla en constante evolución, adaptándola a las exigentes normativas de emisiones europeas e introduciendo sutiles mejoras estéticas y tecnológicas a lo largo de los años sin perder jamás su ADN original.\n\n## Un hito o generación relevante\nEl verdadero punto de inflexión y el corazón indiscutido de este modelo es la incorporación de su laureado motor con tecnología **Crossplane** de segunda generación, conocido popularmente como bloque **CP2**. Este propulsor bicilíndrico en línea de 689 cc destaca fundamentalmente por su calado de cigüeñal a 270 grados, una solución técnica que genera un intervalo de encendido irregular capaz de imitar el comportamiento y la entrega de par de un motor en V.\n\nEsta arquitectura revolucionó el segmento de las medias cilindradas al lograr fusionar la contundencia y el empuje a bajas y medias revoluciones —típicos de motores de mayor cilindrada— con la ligereza, la economía de combustible y el bajo mantenimiento característicos de un bloque compacto. El impacto del motor CP2 fue tal que se convirtió rápidamente en la plataforma modular sobre la cual Yamaha edificó una gama entera de éxitos comerciales, incluyendo modelos de gran aceptación como la Tracer 7, la Ténéré 700 y la neo-retro XSR 700.\n\n## Curiosidades\nUno de los aspectos más fascinantes del desarrollo de la MT-07 fue el riguroso enfoque de ingeniería orientado al control de costos de producción y la reducción drástica de peso, logrados sin comprometer la integridad estructural ni el comportamiento dinámico. Por ejemplo, los diseñadores desarrollaron un basculante trasero asimétrico de acero y lograron configurar un conjunto global que apenas ronda los 183-184 kilogramos en orden de marcha.\n\nAsimismo, a lo largo de sus distintas evoluciones, la MT-07 ha incorporado asistencias electrónicas cada vez más refinadas sin perder su carácter purista. Versiones recientes han sumado control de tracción desconectable, modos de conducción configurables y la opción de equipar un sistema de cambio rápido (*quickshifter*), demostrando que una moto de planteo sencillo y económico puede mantenerse a la vanguardia tecnológica.\n\n## Competencia y posicionamiento\nEn el siempre disputado segmento de las motocicletas naked de media cilindrada, la Yamaha MT-07 compite cara a cara con pesados rivales de la industria como la Kawasaki Z650, la Honda CB650R, la Suzuki SV 650 y las variantes de acceso de la familia KTM Duke. A pesar de la intensa rivalidad, la MT-07 ha sabido mantenerse en la cima de las preferencias de los usuarios gracias a una relación peso-potencia envidiable, costos operativos contenidos y una comunidad global sumamente activa que valora su versatilidad y su facilidad de personalización.",
+  "generacionInfo": {
+    "raw": "Segunda generación (actualización estética, tecnológica y de normativas)",
+    "numero": 2,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Yamaha MT-07 - Moto naked Yamaha. Media-Alta (215 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

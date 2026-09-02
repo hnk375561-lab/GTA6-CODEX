@@ -1,0 +1,233 @@
+{
+  "slug": "renault-logan",
+  "type": "vehiculos",
+  "title": "Renault Logan",
+  "description": "Sedán compacto de entrada de Renault, motor 1.6L, foco en espacio y bajo costo de mantenimiento.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "renault",
+    "economico",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-arkana",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-captur",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-clio",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-etios",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Renault",
+  "class": "Sedán económico",
+  "power": "115 CV",
+  "price": "ARS 18.000.000 (Referencia mercado argentino)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "ARS",
+    "amount": 18000000,
+    "raw": "ARS 18.000.000 (Referencia mercado argentino)"
+  },
+  "consumo": "7.2 l/100km (mixto)",
+  "dimensiones": "4357 x 1733 x 1529 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://renault.sanautos.com.co/carros/logan",
+    "note": "Se verificaron las especificaciones técnicas del Renault Logan para la región, destacando la motorización 1.6 litros de 115 caballos de fuerza, la capacidad del baúl de 510 litros y las dimensiones generales mediante fuentes oficiales y portales especializados.",
+    "limitations": [
+      "Los precios en el mercado argentino varían constantemente debido a la inflación y la disponibilidad de stock.",
+      "El equipamiento de seguridad y confort puede presentar variaciones según el nivel de acabado o versión disponible en el concesionario."
+    ]
+  },
+  "performance": {
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 12.5s"
+  },
+  "createdAt": "2026-08-23T21:59:06.785891Z",
+  "updatedAt": "2026-08-27T03:06:43.373Z",
+  "transmision": "Manual de 5 marchas o Automática CVT",
+  "traccion": "Delantera",
+  "peso": "1.115 kg",
+  "tipoMotor": "Nafta",
+  "potenciaKW": "85 kW",
+  "capacidadTanque": "50 litros",
+  "tiempoRecorrido": "12.5s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1598 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 510,
+  "maleteroMin": null,
+  "generacion": "3ra generación (Mercosur)",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 16.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:06:43.373Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 170
+    },
+    "consumo": {
+      "promedio": "7.0 l/100km (mixto)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl Renault Logan se originó inicialmente como un proyecto estratégico del Grupo Renault a través de su marca rumana Dacia, concebido con la premisa clara de ofrecer un medio de movilidad robusto, sumamente espacioso y con un costo de producción y mantenimiento acotado. Su diseño estuvo enfocado desde los cimientos en satisfacer las demandas de los mercados emergentes, donde la durabilidad ante caminos exigentes y la practicidad diaria son factores determinantes para el consumidor.\n\nCon su posterior desembarque en Sudamérica bajo el emblema del rombo, el sedán compacto caló hondo en el público local. Su propuesta sin pretensiones excesivas pero sumamente honesta lo convirtió rápidamente en una opción muy elegida tanto por familias que buscaban un vehículo confiable para el uso cotidiano como por operadores de flotas, gracias a una mecánica noble y una estructura general preparada para tolerar el trato riguroso de las calles y rutas de la región.\n\n## Un hito o generación relevante\n\nUn punto de inflexión muy importante en la trayectoria comercial del modelo en el Cono Sur fue la llegada de la actualización de su tercera generación adaptada para el Mercosur. Esta evolución significó un salto cualitativo considerable frente a las ediciones pasadas. Estéticamente, el frente adoptó la nueva firma lumínica con tecnología LED diurna y una parrilla rediseñada que modernizó por completo su estampa.\n\nAdentro, la marca puso el foco en mejorar la calidad percibida de los materiales y en modernizar la experiencia a bordo mediante la incorporación de sistemas multimedia compatibles con Android Auto y Apple CarPlay. Asimismo, en el plano mecánico, la introducción paulatina de opciones con caja automática tipo CVT aportó un grado de confort de marcha muy superior en entornos urbanos, reemplazando a las antiguas transmisiones robotizadas que habían recibido críticas por su andar menos refinado.\n\n## Curiosidades\n\nUno de los aspectos más elogiados y que constituye el principal argumento de compra del Renault Logan es su notable habitabilidad interior. A pesar de ubicarse formalmente dentro del segmento B, la arquitectura de su carrocería sedán prioriza el despeje y la distancia entre ejes, permitiendo que pasajeros adultos viajen con total comodidad en las plazas traseras sin rozar las rodillas contra los respaldos delanteros.\n\nA esto se le suma un baúl descomunal de 510 litros de capacidad nominal, una cifra que compite directamente con vehículos de categorías superiores (segmento C). Esta característica convirtió al Logan en un auténtico referente de la versatilidad de carga dentro de su franja de precios, siendo históricamente uno de los preferidos para quienes realizan viajes largos cargados de equipaje o necesitan espacio operativo diario.\n\n## Competencia y posicionamiento\n\nDentro del mercado automotriz argentino, el Renault Logan ocupa un rol estratégico bien definido en el segmento de los sedanes compactos accesibles de entrada de gama. Allí debe medir fuerzas con contrincantes de peso pesado como el Fiat Cronos, el Chevrolet Onix Plus y el Volkswagen Virtus, modelos con los que se disputa constantemente la preferencia del público racional.\n\nSu posicionamiento comercial se apoya firmemente en tres pilares: una inmejorable relación entre precio y metros cúbicos habitables, una red de postventa con repuestos ampliamente disponibles y accesibles, y una motorización 1.6 litros de probada resistencia que prioriza la longevidad mecánica por encima de sensaciones deportivas. Aunque las tendencias actuales del mercado se inclinan marcadamente hacia los SUV y crossovers, el Logan continúa firme como una alternativa lógica y altamente funcional para quienes priorizan la economía de uso y la practicidad pura por sobre las modas pasajeras.",
+  "generacionInfo": {
+    "raw": "3ra generación (Mercosur)",
+    "numero": 3,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Renault Logan - Sedán económico Renault. 170 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

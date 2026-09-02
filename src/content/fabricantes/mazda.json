@@ -1,0 +1,47 @@
+{
+  "slug": "mazda",
+  "type": "fabricantes",
+  "title": "Mazda",
+  "description": "Vehículos y motocicletas de Mazda",
+  "content": "## Identidad de marca\nMazda es una de las marcas automotrices más particulares del mercado global. Su sede central se encuentra en Hiroshima, y opera instalaciones productivas en localidades como Nishinoura, Hōfu y Miyoshi, desde donde proyecta una propuesta que busca diferenciarse de los estándares industriales masivos mediante un enfoque muy marcado en el diseño y la ingeniería de precisión [Fuente 1].\n\n## Historia real y evolución\nLos orígenes de la compañía datan de 1920, cuando comenzó su actividad bajo el nombre de Toyo Kogyo Co. en Hiroshima [Fuente 2]. En sus primeros tiempos, la empresa operaba como fabricante de productos derivados del corcho antes de dar el salto definitivo hacia la industria metalmecánica y automotriz [Fuente 2, Fuente 4]. Este espíritu inconformista la llevó, décadas más tarde, a emprender desafíos técnicos que otros fabricantes consideraban inviables, como el desarrollo de su icónico motor rotativo a partir de 1961 [Fuente 5]. A lo largo de su trayectoria, la firma evolucionó hasta consolidar una estructura de producción a gran escala que, ya para el año 2010, superaba el millón trescientos mil vehículos comercializados en mercados tan diversos como Europa, China, Norteamérica, América del Sur y su país de origen [Fuente 1].\n\n## Posicionamiento actual\nEn la actualidad, Mazda se posiciona como un fabricante que apela a un público exigente, priorizando una experiencia de conducción dinámica y acabados de nivel superior. Sin caer en la producción de nichos extremos, la marca mantiene una identidad propia muy sólida dentro del mercado automotor internacional, apoyada en una historia de resiliencia y en una constante reinterpretación de sus propios estándares tecnológicos.",
+  "status": "confirmado",
+  "officialName": "Mazda",
+  "country": "Japón",
+  "foundedYear": 1920,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:23:30.141Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mazda-3",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mazda-cx-30",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mazda-cx-5",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Mazda",
+    "note": "Se verificaron la fecha de fundación, los orígenes corporativos y la ubicación de la sede y plantas a partir de fuentes enciclopédicas y de prensa oficial de la marca.",
+    "limitations": [
+      "No se detallan volúmenes de producción globales recientes en las fuentes provistas más allá de los datos históricos del año 2010.",
+      "La información de ventas abarca regiones amplias pero carece de un desglose por modelo específico en el corpus utilizado."
+    ]
+  }
+}

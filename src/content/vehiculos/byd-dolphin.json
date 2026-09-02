@@ -1,0 +1,239 @@
+{
+  "slug": "byd-dolphin",
+  "type": "vehiculos",
+  "title": "BYD Dolphin",
+  "description": "Hatchback 100% eléctrico de BYD, batería Blade LFP, uno de los eléctricos más vendidos a nivel global.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "byd",
+    "electrico"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin-mini",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-atto-3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-han",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-bolt-ev",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mg4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-leaf",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-megane-e-tech",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:28.972Z",
+  "updatedAt": "2026-08-27T02:44:59.242Z",
+  "manufacturer": "BYD",
+  "class": "Hatchback eléctrico",
+  "performance": {
+    "speed": "Media (150 km/h)",
+    "acceleration": "Media (0-100 km/h en 12.3s)"
+  },
+  "power": "88 CV a 204 CV según versión (Active, Boost, Comfort y Design)",
+  "price": "Desde €25.200 (precio de tarifa de referencia en España antes de ayudas y promociones)",
+  "priceStructured": {
+    "type": "starting",
+    "currency": "EUR",
+    "amount": 25200,
+    "raw": "Desde €25.200 (precio de tarifa de referencia en España antes de ayudas y promociones)"
+  },
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.byd.com/es-es/coches-electricos/dolphin",
+    "secondarySource": "https://www.byd.com/es-es/coches-electricos/dolphin-surf",
+    "note": "Se verificaron las especificaciones técnicas, potencias (88 CV hasta 204 CV), consumo WLTP (15,5-16 kWh/100km), dimensiones (4290 mm de largo y 1820 mm de ancho) y capacidad del maletero (364 litros) utilizando los catálogos oficiales de BYD España.",
+    "limitations": [
+      "Los precios de referencia corresponden al mercado europeo y pueden variar según aranceles, impuestos locales y subsidios gubernamentales vigentes en cada país.",
+      "Las capacidades de batería y autonomías varían según el nivel de equipamiento seleccionado (Active, Boost, Comfort, Design)."
+    ]
+  },
+  "transmision": "Automática de relación única con reductora fija",
+  "traccion": "Delantera",
+  "peso": "No publicado oficialmente para toda la gama exacta",
+  "tipoMotor": "Eléctrico síncrono de imanes permanentes con batería Blade (LFP)",
+  "potenciaKW": "65 kW a 150 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "7.9s (0-100 km/h en versión tope de gama de 204 CV)",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "15,5 - 16 kWh / 100 km (ciclo combinado WLTP)",
+  "dimensiones": "4290 x 1820 x 1570 mm",
+  "cilindrada": null,
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 364,
+  "maleteroMin": null,
+  "generacion": "1ra generación (MY25)",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 26.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T02:44:59.242Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl BYD Dolphin debutó originalmente en el mercado global en 2021 como el puntal inicial de la familia de vehículos basados en la e-Platform 3.0 de la marca y equipados con la innovadora tecnología de baterías Blade (LFP). Concebido bajo la dirección de diseño de Wolfgang Egger, el modelo adoptó el concepto estético \"Marine Aesthetics\", inspirándose en la fluidez y dinamismo de los delfines. Esta propuesta rompió radicalmente con las líneas tradicionales de los hatchbacks del segmento B y compacto, ofreciendo una silueta aerodinámica y una identidad visual muy fresca y juvenil que rápidamente trascendió las fronteras del mercado asiático.\n\n## Un hito y generación relevante\nEl verdadero hito del BYD Dolphin radica en su capacidad para democratizar la electromovilidad de alta eficiencia sin sacrificar habitabilidad ni seguridad. Gracias a la arquitectura específica de su plataforma y a la delgadez del paquete de baterías Blade, el modelo logró una distancia entre ejes sobresaliente de 2,70 metros en una longitud total de 4,29 metros. Esto maximizó el espacio interior, rivalizando con vehículos de segmentos superiores. Además, su maletero de 364 litros y las opciones de potencia que escalan desde los 88 CV en versiones de acceso hasta los 204 CV en los acabados superiores consolidaron a esta primera generación como un referente tecnológico global.\n\n## Curiosidades\nEntre los detalles más singulares que esconde su habitáculo se encuentran múltiples guiños a la temática marina, como las manijas de las puertas interiores moldeadas con la forma de una aleta y comandos centralizados de diseño orgánico. Asimismo, la batería Blade que lo alimenta no solo destaca por optimizar el espacio físico y ofrecer una alta densidad energética, sino por haber superado con éxito las pruebas de penetración de clavos sin generar fuego ni humo, estableciendo un nuevo estándar de seguridad percibida para las baterías de litio ferrofosfato en la industria automotriz actual.\n\n## Competencia y posicionamiento\nComercialmente, el BYD Dolphin se posiciona en el competitivo segmento de los hatchbacks y crossovers compactos 100% eléctricos, compitiendo de frente contra modelos consolidados como el Volkswagen ID.3, el MG 4 y el Ora Good Cat de GWM. Su propuesta de valor se centra en ofrecer una excelente relación entre precio, equipamiento de asistencias avanzadas a la conducción (ADAS), eficiencia energética comprobada bajo ciclo WLTP y costos operativos sumamente reducidos, capturando tanto a flotas urbanas como a usuarios particulares que buscan dar el salto definitivo hacia la movilidad sustentable.",
+  "generacionInfo": {
+    "raw": "1ra generación (MY25)",
+    "numero": 1,
+    "codigoChasis": "MY25",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "BYD Dolphin - Hatchback eléctrico BYD. Media (150 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

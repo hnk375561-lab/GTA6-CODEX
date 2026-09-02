@@ -1,0 +1,65 @@
+{
+  "slug": "byd",
+  "type": "fabricantes",
+  "title": "BYD",
+  "description": "Vehículos y motocicletas de BYD",
+  "content": "## Identidad de marca\nBYD (cuyas siglas responden al lema en inglés *Build Your Dreams* o *Construye tus sueños*) se ha consolidado como un actor fundamental en el ecosistema global de la movilidad sostenible y la alta tecnología [Ref. 2, Ref. 4]. Con origen en el desarrollo de baterías recargables para dispositivos móviles, la compañía evolucionó de manera estratégica hasta convertirse en un referente indiscutido en la fabricación de vehículos electrificados y soluciones integrales de energía limpia [Ref. 1, Ref. 4].\n\n## Historia real y evolución\nLa compañía matriz dio sus primeros pasos en 1995 bajo la dirección de Wang Chuanfu, enfocándose inicialmente en satisfacer la alta demanda de acumuladores de energía para marcas líderes de la industria tecnológica [Ref. 1, Ref. 3]. Con una visión orientada hacia la diversificación industrial y la innovación tecnológica, la organización dio el salto definitivo al sector automotor en enero de 2003 [Ref. 1]. Este hito se concretó tras la adquisición de la empresa Xi'an Qinchuan Automobile, sentando las bases operativas para el desarrollo de su propia división de vehículos [Ref. 1, Ref. 2]. A partir de ese momento, la marca impulsó un ambicioso plan de expansión global enfocado en la electromovilidad [Ref. 1].\n\n## Posicionamiento actual\nEn la actualidad, la compañía ocupa un lugar de protagonismo absoluto en el mercado internacional de vehículos de nueva energía (NEV) [Ref. 4]. Respaldada por un crecimiento sostenido a lo largo de tres décadas, la firma no solo se posiciona entre los fabricantes de automóviles más importantes a nivel mundial en volumen de ventas, sino que también lidera la transición hacia un transporte de cero emisiones mediante una propuesta que integra almacenamiento energético, electrónica y transporte ferroviario [Ref. 4, Ref. 5].",
+  "status": "confirmado",
+  "officialName": "BYD",
+  "country": "China",
+  "foundedYear": 1995,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:18:54.711Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-atto-3",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin-mini",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-han",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-seal",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-tang",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/BYD_Auto",
+    "secondarySource": "https://motor.elpais.com/actualidad/historia-de-byd",
+    "note": "Se verificó la fundación de la compañía matriz en 1995 bajo el liderazgo de Wang Chuanfu, su evolución hacia la industria automotriz con la creación formal de BYD Auto en 2003 tras la adquisición de Qinchuan Automobile, y su sólida posición actual en el mercado global de vehículos de nueva energía (NEV).",
+    "limitations": [
+      "Las fuentes presentan leves divergencias en el mes exacto de inicio corporativo (mencionando 1994 o 1995), aunque coinciden plenamente en el año de fundación y su consolidación automotriz en 2003."
+    ]
+  }
+}

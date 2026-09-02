@@ -1,0 +1,48 @@
+{
+  "slug": "skoda",
+  "type": "fabricantes",
+  "title": "Skoda",
+  "description": "Vehículos y motocicletas de Skoda",
+  "content": "## Identidad de marca\nŠkoda se consolida como uno de los fabricantes de vehículos más tradicionales y respetados a nivel global. Con una arraigada tradición industrial europea, la marca combina un enfoque práctico con soluciones de ingeniería avanzada, destacándose por ofrecer una excelente relación entre funcionalidad, espacio y durabilidad.\n\n## Historia real y evolución\nLos orígenes de la compañía se remontan a finales del siglo XIX, más precisamente en el año 1895, cuando el cerrajero Václav Laurin y el librero Václav Klement unieron fuerzas para dar inicio a la fabricación en el sector del transporte, comenzando inicialmente con vehículos de dos ruedas bajo una filosofía orientada a la satisfacción de sus clientes.\n\nA lo largo de las décadas, la empresa evolucionó hasta convertirse en un pilar fundamental de la industria automotriz. Un hito transformador en su historia contemporánea ocurrió en 1991, año en el que pasó a formar parte del Grupo Volkswagen como subsidiaria, un movimiento estratégico que le permitió acceder a tecnologías de vanguardia, optimizar sus procesos productivos y expandir masivamente su presencia en los mercados internacionales.\n\n## Posicionamiento actual\nEn la actualidad, Škoda ocupa un lugar estratégico dentro del conglomerado alemán, compitiendo firmemente en el mercado generalista europeo con una gama de vehículos que prioriza la habitabilidad, la seguridad y la eficiencia. Su propuesta de valor se centra en la racionalidad de compra, incorporando tecnologías de conectividad y electrificación modernas sin perder la impronta práctica que caracteriza a su herencia industrial.",
+  "status": "confirmado",
+  "officialName": "Skoda",
+  "country": "República Checa",
+  "foundedYear": 1894,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:26:37.499Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "skoda-fabia",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "skoda-kushaq",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "skoda-superb",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/%C5%A0koda",
+    "secondarySource": "https://www.skoda.es/conoce-skoda/historia-skoda",
+    "note": "Se verificó la historia fundacional a cargo de Václav Laurin y Václav Klement, la fecha de fundación en el período 1894-1895 y su integración al Grupo Volkswagen en 1991 mediante fuentes enciclopédicas y oficiales.",
+    "limitations": [
+      "No se detallan especificaciones técnicas de modelos recientes en las fuentes provistas.",
+      "Las fuentes varían ligeramente entre los años 1894 y 1895 para el inicio de las actividades de los fundadores."
+    ]
+  }
+}

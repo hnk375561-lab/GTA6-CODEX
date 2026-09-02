@@ -1,0 +1,35 @@
+{
+  "slug": "lamborghini",
+  "type": "fabricantes",
+  "title": "Lamborghini",
+  "description": "Vehículos y motocicletas de Lamborghini",
+  "content": "## Identidad de marca\nAutomobili Lamborghini S.p.A. se consolidó como uno de los fabricantes de superdeportivos más deseados y reconocidos a nivel global. Con base en Sant'Agata Bolognese, la marca italiana representa la máxima expresión de diseño agresivo, ingeniería de alto rendimiento y exclusividad dentro de la industria automotriz.\n\n## Historia real y evolución\nLa compañía fue constituida formalmente en 1963 por el empresario Ferruccio Lamborghini. Sus raíces industriales provenían de Lamborghini Trattori, la exitosa fábrica de tractores que Ferruccio había desarrollado en la posguerra. La transición hacia la fabricación de automóviles deportivos nació de una visión muy particular y de la exigencia de crear máquinas capaces de competir con los mejores bólidos de su época, estableciendo una planta en la localidad de Santa Ágata, a pocos kilómetros de Bolonia, donde dio luz a sus primeros desarrollos mecánicos innovadores durante los años sesenta y setenta.\n\n## Posicionamiento actual\nEn la actualidad, la firma italiana forma parte estructural del Grupo Volkswagen, una integración corporativa que le ha permitido mantener su impronta artesanal y extrema mientras se beneficia de la robustez tecnológica y financiera de un gigante automotriz mundial. Lamborghini continúa operando desde su sede histórica original, adaptándose a los nuevos estándares de electrificación y sostenibilidad sin perder el ADN disruptivo que la caracteriza desde su fundación.",
+  "status": "confirmado",
+  "officialName": "Lamborghini",
+  "country": "Italia",
+  "foundedYear": 1963,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:22:44.281Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "lamborghini-urus",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Lamborghini",
+    "secondarySource": "https://www.lamborghini.com/es-en/historia",
+    "note": "Se verificó la fundación de la marca en 1963 por Ferruccio Lamborghini, su ubicación en Sant'Agata Bolognese, su origen como desprendimiento de una fábrica de tractores y su pertenencia actual al Grupo Volkswagen mediante las fuentes oficiales y enciclopédicas provistas.",
+    "limitations": [
+      "El ecosistema de modelos específicos actuales y cifras de producción detalladas no fueron provistos en las fuentes y se omiten para mantener la precisión."
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "slug": "xiaomi",
+  "type": "fabricantes",
+  "title": "Xiaomi",
+  "description": "Vehículos y motocicletas de Xiaomi",
+  "content": "## Identidad de marca\nXiaomi es una reconocida corporación multinacional tecnológica que diversificó su tradicional enfoque en electrónica de consumo y telefonía celular para incursionar en el mercado de la movilidad sustentable. A través de su división especializada, la marca traslada su experiencia en ecosistemas inteligentes y conectividad directamente al desarrollo de vehículos eléctricos.\n\n## Historia real y evolución\\La matriz tecnológica inició su camino en el sector de dispositivos móviles en agosto de 2011, logrando una rápida expansión en su mercado doméstico y una sólida presencia global. Años más tarde, la compañía dio el salto definitivo hacia la industria automotriz con la creación de su filial dedicada al diseño y fabricación de vehículos eléctricos inteligentes. Desde el lanzamiento comercial de su primer modelo en el mercado chino, la marca ha evolucionado con velocidad, estructurando en poco tiempo una gama que contempla opciones de carrocería tipo sedán.\n\n## Posicionamiento actual\nActualmente, la división automotriz de la compañía se posiciona como un actor innovador dentro del segmento de vehículos eléctricos inteligentes. Aprovechando su robusta infraestructura tecnológica y su masiva red de tiendas físicas y canales digitales en distintos continentes, la marca busca integrar la movilidad dentro de su ecosistema conectado de productos electrónicos, compitiendo de lleno en el dinámico mercado de la electromovilidad.",
+  "status": "confirmado",
+  "officialName": "Xiaomi",
+  "country": "China",
+  "foundedYear": 2010,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T22:20:37.704Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "xiaomi-su7",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Xiaomi",
+    "secondarySource": "https://es.wikipedia.org/wiki/Xiaomi_Auto",
+    "note": "Se verificó la información corporativa general de Xiaomi y los datos específicos sobre su división automotriz Xiaomi Auto a partir de artículos enciclopédicos.",
+    "limitations": [
+      "El desarrollo y catálogo vehicular aún es reciente y se encuentra en plena expansión global."
+    ]
+  }
+}

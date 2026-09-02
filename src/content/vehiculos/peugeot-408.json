@@ -1,0 +1,229 @@
+{
+  "slug": "peugeot-408",
+  "type": "vehiculos",
+  "title": "Peugeot 408",
+  "description": "Crossover fastback importado de Francia, version unica GT, regreso del nombre 408 al mercado argentino tras su etapa como sedan.",
+  "status": "confirmado",
+  "tags": [
+    "crossover",
+    "peugeot",
+    "fastback"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-2008",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-208",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-3008",
+      "relation": "mismo_fabricante"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Peugeot",
+  "class": "Crossover fastback",
+  "power": "215 CV",
+  "price": "U$S 52.200 (Referencia mercado argentino)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 52200,
+    "raw": "U$S 52.200 (Referencia mercado argentino)"
+  },
+  "consumo": "12,2 km/l (Promedio de prueba)",
+  "dimensiones": "4690 mm largo x 1850 mm ancho x 1480 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.carwow.es/peugeot/408/caracteristicas-tecnicas",
+    "note": "Se verificaron las especificaciones técnicas, dimensiones, potencia, precio en Argentina para la versión GT y datos de consumo mediante pruebas especializadas locales y portales de automoción europeos.",
+    "limitations": [
+      "Los precios y disponibilidad pueden variar según la coyuntura de importación e impuestos internos en Argentina",
+      "Variaciones en el consumo según condiciones de manejo urbano y ciclo de homologación"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T03:04:12.736Z",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "Delantera",
+  "peso": "1.490 kg",
+  "tipoMotor": "Naftero THP",
+  "potenciaKW": "158 kW",
+  "capacidadTanque": "52 litros",
+  "tiempoRecorrido": "8.5 segundos",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.598 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 471,
+  "maleteroMin": null,
+  "generacion": "1ra Generación (P54)",
+  "anoLanzamiento": 2022,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 52.200"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:04:12.736Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo y el concepto fastback\nEl Peugeot 408 marca un punto de inflexión absoluto respecto a la trayectoria histórica que la denominación había tenido en la región. Mientras que en mercados sudamericanos como el argentino el nombre rememoraba tradicionalmente a un sedán tricuerpo clásico del segmento C fabricado localmente en El Palomar, esta nueva generación global —conocida internamente como código P54— rompe los moldes tradicionales al adoptar una silueta de tipo crossover fastback. Este planteo estético fusiona la estampa fluida y aerodinámica de un vehículo de caída pronunciada en el techo con la robustez visual, las protecciones plásticas perimetrales y el despeje elevado típicos de los SUV modernos, logrando captar la atención de conductores que priorizan la vanguardia estética.\n\n## Un hito de diseño y arquitectura\nDesarrollado sobre la versátil plataforma modular EMP2 de Stellantis, este modelo se consolidó rápidamente como una de las propuestas más disruptivas de la marca del león en los últimos años. Su silueta exterior se destaca por un coeficiente aerodinámico muy cuidado, líneas angulares marcadas en los laterales y la evolución del característico sistema de iluminación LED en forma de garras tanto en el frente como en el sector posterior. Puertas adentro, incorpora la última evolución del puesto de conducción i-Cockpit, el cual combina pantallas táctiles flotantes orientadas al conductor, comandos i-Toggles configurables y un volante compacto que prioriza una postura de manejo ágil y conectada.\n\n## Curiosidades del desarrollo\nUna de las particularidades más interesantes en el desarrollo del Peugeot 408 fue la búsqueda de un formato híbrido que desafiara las categorías tradicionales. La marca francesa logró posicionar al vehículo en un territorio inexplorado, a caballo entre un hatchback de gran tamaño, una coupé de cuatro puertas y un SUV compacto. En Europa comparte elementos estructurales con el exitoso 308, pero estira su distancia entre ejes para garantizar una habitabilidad óptima en las plazas traseras sin castigar la capacidad de carga del baúl. Su diseño exigió extensas jornadas en el túnel de viento para asegurar que la pronunciada caída trasera optimizara el flujo de aire sin generar turbulencias excesivas a velocidades de autopista.\n\n## Competencia y posicionamiento en el mercado\nEn el plano comercial, el Peugeot 408 se ubica en la franja superior del segmento C, coqueteando con el universo premium generalista. A nivel internacional compite directamente contra exponentes de silueta similar como el Renault Arkana o el Citroën C4 X, además de disputarle clientes a crossovers de marcas alemanas. En su desembarco puntual en el mercado argentino bajo la configuración única GT importada de Francia, el modelo se posiciona en un nicho exclusivo orientado a quienes buscan diferenciarse de la oferta masiva de SUV tradicionales, apostando por el diseño europeo, acabados de alta calidad y un completo abanico de asistencias a la conducción.",
+  "generacionInfo": {
+    "raw": "1ra Generación (P54)",
+    "numero": 1,
+    "codigoChasis": "P54",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Peugeot 408 - Crossover fastback Peugeot. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

@@ -1,0 +1,242 @@
+{
+  "slug": "tesla-model-s",
+  "type": "vehiculos",
+  "title": "Tesla Model S",
+  "description": "Sedán eléctrico insignia de Tesla, versión Plaid supera los 1000 hp.",
+  "status": "confirmado",
+  "tags": [
+    "electrico",
+    "tesla"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-cybertruck",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-x",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-han",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-seal",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nio-et5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "xiaomi-su7",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Tesla",
+  "class": "Sedán eléctrico",
+  "power": "670 hp (Dual Motor) / 1.020 hp (Plaid)",
+  "price": "USD 111.630 (precio base de referencia aproximado según mercado de EE. UU.)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 111630,
+    "raw": "USD 111.630 (precio base de referencia aproximado según mercado de EE. UU.)"
+  },
+  "consumo": "Autonomía estimada entre 592 km (Plaid) y hasta 744 km WLTP según la versión",
+  "dimensiones": "4.979 mm largo x 1.964 mm ancho (2.189 mm con retrovisores) x 1.445 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.caranddriver.com/tesla/model-s",
+    "note": "Se verificaron las especificaciones técnicas principales, potencias, tiempos de aceleración, dimensiones y precios base utilizando los registros oficiales de Tesla y Car and Driver.",
+    "limitations": [
+      "Los datos de autonomía y velocidad máxima pueden variar según la homologación (EPA vs. WLTP) y el tamaño de las llantas seleccionadas.",
+      "Los precios de mercado pueden fluctuar según opciones de personalización y actualizaciones comerciales del fabricante."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T03:10:47.664Z",
+  "transmision": "Automática de relación única",
+  "traccion": "AWD (Tracción integral con doble o triple motor)",
+  "peso": "Aprox. 2.068 - 2.162 kg",
+  "tipoMotor": "Eléctrico",
+  "potenciaKW": "500 kW (Dual Motor) / 760 kW (Plaid)",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "0-100 km/h en 2,1 segundos (versión Plaid)",
+  "anoProduccion": "2012 - Presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 793,
+  "maleteroMin": null,
+  "generacion": "1ra Generación (con múltiples actualizaciones de diseño y tecnología)",
+  "anoLanzamiento": 2012,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 111.380 (precio final antes de discontinuarse, 2026)"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:10:47.664Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "Autonomía EPA 309-410 millas según versión"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl Tesla Model S se lanzó originalmente en 2012, marcando un antes y un después en la industria automotriz global. Su propuesta demostró que un vehículo 100% eléctrico podía ofrecer una autonomía real, un diseño sumamente atractivo y prestaciones comparables o superiores a las de los sedanes de combustión interna de lujo. A lo largo de su trayectoria, este modelo se consolidó como el buque insignia de la marca de Elon Musk, impulsando la transición hacia la movilidad eléctrica y obligando a los fabricantes tradicionales a redefinir sus estrategias tecnológicas.\n\n## Un hito o generación relevante\n\nUn punto de inflexión absoluto en la historia de este vehículo fue la introducción de la variante de altas prestaciones denominada Plaid. Equipada con una avanzada configuración de tres motores eléctricos, esta versión rompió esquemas al superar la barrera de los 1.000 caballos de potencia (1.020 hp) y alcanzar una aceleración de 0 a 100 km/h en apenas 2,1 segundos. Este hito redefinió lo que se esperaba de un vehículo de producción en masa en términos de aceleración pura y consolidó el liderazgo de Tesla en ingeniería de propulsión eléctrica.\n\n## Curiosidades\n\nEl Model S introdujo soluciones técnicas e innovaciones que hoy en día se consideran un estándar en la industria. Entre ellas destacan las manijas de puertas embutidas que se despliegan automáticamente, las actualizaciones de software inalámbricas (OTA) que mejoraban el vehículo de manera remota, y el uso pionero de una gran pantalla táctil central para gestionar la mayoría de los comandos. Además, cuenta con un paquete de baterías integrado en la parte baja del chasis protegido por una plancha de titanio, logrando un centro de gravedad sumamente bajo que optimiza notablemente su estabilidad y seguridad dinámica.\n\n## Competencia y posicionamiento\n\nPosicionado firmemente en el segmento de los sedanes ejecutivos y de lujo de altas prestaciones, el Tesla Model S compite históricamente contra referentes alemanes de la talla del Porsche Taycan, el Audi e-tron GT y las propuestas eléctricas de Mercedes-Benz y BMW. Si bien la competencia se ha intensificado con alternativas que ofrecen acabados interiores más tradicionales y refinados, el Model S se mantiene como un referente indiscutido gracias a su eficiente ecosistema de recarga, su rendimiento superior y su constante evolución tecnológica.",
+  "generacionInfo": {
+    "raw": "1ra Generación (con múltiples actualizaciones de diseño y tecnología)",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Tesla Model S - Sedán eléctrico Tesla. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

@@ -1,0 +1,226 @@
+{
+  "slug": "jeep-wrangler",
+  "type": "vehiculos",
+  "title": "Jeep Wrangler",
+  "description": "SUV todoterreno icónico, tracción 4x4, puertas desmontables y techo removible.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "jeep",
+    "4x4",
+    "todoterreno"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-compass",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-grand-cherokee",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-renegade",
+      "relation": "mismo_fabricante"
+    }
+  ],
+  "featured": true,
+  "manufacturer": "Jeep",
+  "class": "SUV todoterreno",
+  "power": "270 hp",
+  "price": "USD 115.000 (Precio de referencia en Argentina)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 115000,
+    "raw": "USD 115.000 (Precio de referencia en Argentina)"
+  },
+  "consumo": "Aprox. 11.5 l/100 km mixto",
+  "dimensiones": "4882 x 1894 x 1838 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.jeep.com.ar",
+    "note": "Se verificaron las especificaciones técnicas principales para la versión moderna del Jeep Wrangler JL comercializada en la región, incluyendo su motorización 2.0 Turbo y dimensiones para la variante de 4 puertas.",
+    "limitations": [
+      "Los precios y consumos exactos pueden variar según el mercado específico y la carga impositiva local en Argentina."
+    ]
+  },
+  "performance": {
+    "speed": "No informado por el fabricante para Argentina",
+    "acceleration": "No informado por el fabricante para Argentina"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T01:48:34.171Z",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "4x4 conectable (Command-Trac o Rock-Trac según versión)",
+  "peso": "2.000 - 2.250 kg",
+  "tipoMotor": "Nafta (Gasolina)",
+  "potenciaKW": "201 kW",
+  "capacidadTanque": "81 litros",
+  "tiempoRecorrido": "7.5 - 8.5s",
+  "anoProduccion": "2018-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "G",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "2.0 L Turbo",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 533,
+  "maleteroMin": null,
+  "generacion": "JL",
+  "anoLanzamiento": 2018,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 89.900"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:48:34.171Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "consumo": {
+      "promedio": "No informado por el fabricante para Argentina"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Jeep Wrangler es, sin lugar a dudas, el heredero directo del legendario Willys MB utilizado durante la Segunda Guerra Mundial. A lo largo de las décadas, este vehículo ha sabido mantener su espíritu militar original adaptándose a los estándares modernos de confort y tecnología, sin perder jamás su ADN enfocado en el uso todoterreno extremo. Desde la presentación de la primera generación (YJ) en la década de 1980 hasta la actual arquitectura JL, el Wrangler se consolidó como el parámetro contra el cual se miden todos los demás SUVs orientados al off-road.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente del modelo fue la introducción de la generación JL en 2018 y su posterior actualización estética y tecnológica. Esta evolución incorporó materiales más livianos como aluminio en componentes clave de la carrocería, mejoras sustanciales en la insonorización del habitáculo y la llegada de motorizaciones más eficientes, como el bloque turborencendido de 2.0 litros de cilindrada. Asimismo, la incorporación de sistemas multimedia avanzados como Uconnect y ejes más robustos redefinieron la experiencia de manejo tanto en el asfalto urbano como en las rutas más agrestes de la Patagonia.\n\n## Curiosidades\nUna de las características más celebradas por los entusiastas del modelo es su modularidad única: las puertas son completamente desmontables, el parabrisas puede abatirse hacia adelante y el techo (ya sea de lona o rígido) se puede remover con facilidad. Además, el diseño frontal mantiene los tradicionales faros redondos y la parrilla de siete ranuras, un homenaje directo a los vehículos militares originales que patentó la marca a mediados del siglo pasado. Incluso los desagües en el piso permiten lavar el interior con una manguera tras una jornada intensa de barro y aventura.\n\n## Competencia y posicionamiento\nEn el mercado global y regional, el Jeep Wrangler ocupa un nicho muy particular reservado para puristas y amantes de la aventura. Si bien históricamente competía casi en solitario, en los últimos años ha encontrado un rival directo en el renacido Ford Bronco, además de alternativas de lujo con capacidades off-road como el Land Rover Defender. A pesar de la competencia, el Wrangler se posiciona firmemente en el segmento premium gracias a su valor icónico, sus capacidades imbatibles en terrenos difíciles y un estatus de vehículo de culto que pocos automóviles en el mundo pueden igualar.",
+  "generacionInfo": {
+    "raw": "JL",
+    "numero": null,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Jeep Wrangler - SUV todoterreno Jeep. No informado por el fabricante para Argentina con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

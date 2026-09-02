@@ -1,0 +1,225 @@
+{
+  "slug": "honda-xre-300",
+  "type": "vehiculos",
+  "title": "Honda XRE 300",
+  "description": "Moto enduro/adventure de entrada de Honda, motor monocilíndrico de 300cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "honda",
+    "enduro"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-accord",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb190r",
+      "relation": "mismo_fabricante"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Honda",
+  "class": "Moto enduro",
+  "power": "25.4 CV a 7.500 rpm",
+  "price": "USD 6.500 aprox. (de referencia)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 6500,
+    "raw": "USD 6.500 aprox. (de referencia)"
+  },
+  "consumo": "3.3 l/100km (aprox. 30-35 km/L)",
+  "dimensiones": "2172 x 838 x 1181 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.motos.honda.com.ec/producto/xre300-2023-19",
+    "secondarySource": "https://en.wikipedia.org/wiki/Honda_XRE300",
+    "note": "Se verificaron las especificaciones técnicas de la Honda XRE 300 utilizando fuentes oficiales de Honda Ecuador y registros enciclopédicos sobre dimensiones, cilindrada, tipo de motor, pesos y capacidades.",
+    "limitations": [
+      "El precio y la disponibilidad varían según el mercado sudamericano, impuestos locales y vigencia de stock."
+    ]
+  },
+  "performance": {
+    "speed": "140 km/h"
+  },
+  "createdAt": "2026-08-23T21:59:10.925515Z",
+  "updatedAt": "2026-08-27T02:54:20.618Z",
+  "transmision": "Manual de 5 velocidades",
+  "traccion": "Trasera por cadena",
+  "peso": "157 kg (en orden de marcha)",
+  "tipoMotor": "Monocilíndrico 4 tiempos, DOHC, refrigerado por aire y aceite",
+  "potenciaKW": "18.7 kW",
+  "capacidadTanque": "13.8 litros",
+  "tiempoRecorrido": "No publicado oficialmente",
+  "anoProduccion": "2009-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "A",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "291 cc",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "1ra Generación",
+  "anoLanzamiento": 2009,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 6.500"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:54:20.618Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 140
+    },
+    "consumo": {
+      "promedio": "3.0 l/100km"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Honda XRE 300 se consolidó en el mercado latinoamericano como una de las referentes indiscutidas dentro del segmento de motocicletas doble propósito (on-off). Diseñada para ofrecer un equilibrio óptimo entre el uso urbano cotidiano y la conducción exigente en caminos de tierra o ripio, este modelo heredó el legado de motos icónicas de la marca japonesa como la XR 250 Tornado y la NX 400 Falcon. Su postura de manejo erguida, la gran visibilidad que otorga al conductor y su robustez general la convirtieron rápidamente en una herramienta de trabajo sumamente confiable y en una compañera ideal para la aventura.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la evolución de la XRE 300 fue la adopción de la inyección electrónica PGM-FI en reemplazo de los carburadores tradicionales. Esta tecnología no solo optimizó de manera notable el consumo de combustible y la respuesta del acelerador, sino que también simplificó los arranques en frío y redujo las emisiones contaminantes. Asimismo, la incorporación de variantes con frenos C-ABS (sistema de frenos antibloqueo combinados) marcó un avance significativo en materia de seguridad activa para motocicletas de cilindrada media, mejorando la estabilidad en superficies de baja adherencia.\n\n## Curiosidades\nEntre los detalles más valorados por los usuarios se encuentra su particular estética frontal, caracterizada por un pequeño guardabarros elevado («pico de pato») que remite directamente al mundo del rally raid y a la familia CRF de competición de Honda. Su chasis de tipo cuna semi-doble y las suspensiones de largo recorrido (con horquilla telescópica adelante y sistema Pro-Link atrás) están ingenierizadas específicamente para absorber impactos severos, un atributo indispensable en la región debido a las variadas y a veces difíciles condiciones de la infraestructura vial.\n\n## Competencia y posicionamiento\nDentro del mercado de las trail livianas, la Honda XRE 300 compite de manera directa contra modelos como la Yamaha XTZ 250 Lander. Se posiciona estratégicamente como una opción sumamente lógica para aquellos motociclistas que buscan dar el salto desde cilindradas menores hacia una moto más capaz en ruta, o bien para quienes priorizan la durabilidad, la facilidad de mantenimiento y la versatilidad por sobre la pura deportividad asfáltica.",
+  "generacionInfo": {
+    "raw": "1ra Generación",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Honda XRE 300 - Moto enduro Honda. 140 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

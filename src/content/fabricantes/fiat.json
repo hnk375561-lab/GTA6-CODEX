@@ -1,0 +1,82 @@
+{
+  "slug": "fiat",
+  "type": "fabricantes",
+  "title": "Fiat",
+  "description": "Vehículos y motocicletas de Fiat",
+  "content": "## Identidad de marca\nFiat (Fabbrica Italiana Automobili Torino) se consolidó desde sus inicios como una de las marcas más influyentes del automovilismo europeo y global. Su filosofía de diseño e ingeniería se ha centrado históricamente en combinar la emoción con una gran practicidad, destacándose por ofrecer proporciones limpias, un aprovechamiento eficiente del espacio interior y mecánicas orientadas a la facilidad de mantenimiento.\n\n## Historia real\nLa compañía fue constituida el 11 de julio de 1899 en Turín por Giovanni Agnelli junto a un grupo de inversores visionarios. En sus primeros años, operando desde la histórica planta de Corso Dante, la producción era modesta y apenas alcanzó los 24 vehículos en 1900. Con el correr de las décadas, la firma creció hasta convertirse en el mayor grupo industrial y automotriz de su país de origen. \n\nA lo largo de su trayectoria, la marca acumuló hitos memorables en el desarrollo de vehículos populares y de gran llegada masiva. Un ejemplo destacado fue el Fiat 124, galardonado como Coche Europeo del Año en 1967, que se transformó en uno de los modelos más adaptados y licenciados de la historia automotriz, mientras que su variante descapotable (el 124 Spider) logró una notable repercusión en el mercado norteamericano.\n\n## Posicionamiento actual\nEn la actualidad, tras décadas de evolución corporativa y fusiones estratégicas en el sector, la marca opera como una subsidiaria propiedad de Stellantis. Mantiene su enfoque principal en la movilidad accesible, funcional y adaptada a las necesidades urbanas, capitalizando su rica herencia industrial para competir en los mercados internacionales con una oferta renovada y eficiente.",
+  "status": "confirmado",
+  "officialName": "Fiat",
+  "country": "Italia",
+  "foundedYear": 1899,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:20:10.576Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-argo",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-cronos",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-fiorino",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-mobi",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-panda",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-pulse",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-strada",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-toro",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Fiat",
+    "note": "Se verificó la fundación en Turín en 1899 por Giovanni Agnelli, los orígenes de la producción en Corso Dante y su actual pertenencia a Stellantis a través de las fuentes provistas.",
+    "limitations": [
+      "La información se limita a los hitos históricos clave y la estructura corporativa general provista por las fuentes, sin detallar cada modelo producido a lo largo de 125 años."
+    ]
+  }
+}

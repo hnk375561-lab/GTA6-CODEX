@@ -1,0 +1,42 @@
+{
+  "slug": "opel",
+  "type": "fabricantes",
+  "title": "Opel",
+  "description": "Vehículos y motocicletas de Opel",
+  "content": "## Identidad de marca\nOpel es una emblemática compañía automotriz con base en Rüsselsheim am Main, Hesse, que se destaca por el diseño, fabricación y comercialización de vehículos de pasajeros y comerciales ligeros [1]. Junto con su marca hermana británica Vauxhall, opera comercialmente en más de sesenta países [1]. Tras formar parte de diversos gigantes industriales a lo largo de las décadas, en la actualidad forma parte del conglomerado internacional Stellantis [1].\n\n## Historia y evolución\nLos orígenes de la empresa se remontan a 1862, cuando Adam Opel fundó el negocio en un modesto establecimiento [2, 4]. En su etapa inicial, la compañía no producía vehículos de transporte, sino que se dedicaba a la fabricación de máquinas de coser y, posteriormente, incorporó las bicicletas a su catálogo [3, 4].\n\nTras el fallecimiento del fundador en 1895, sus herederos impulsaron la transición hacia el rubro automotriz, presentando su primer diseño propio a comienzos del siglo XX [4]. A partir de allí, la firma consolidó su perfil industrial hasta que, en 1929, pasó a manos de la corporación estadounidense General Motors, marcando el inicio de una prolongada etapa bajo su órbita que se extendió hasta 2017 [2]. En ese año, pasó a integrar el francés Groupe PSA, antes de concretar su integración definitiva en Stellantis tras la fusión con Fiat Chrysler Automobiles en 2021 [2].\n\n## Posicionamiento actual\nEn el escenario automotriz contemporáneo, Opel combina su larga tradición de ingeniería con los recursos tecnológicos y de escala de Stellantis. La marca enfoca su propuesta en la renovación de su gama de vehículos, adaptándose a las demandas de movilidad sostenible, conectividad y eficiencia que exige el mercado europeo y global, manteniendo su impronta funcional y accesible.",
+  "status": "confirmado",
+  "officialName": "Opel",
+  "country": "Alemania",
+  "foundedYear": 1862,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:24:52.430Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "opel-astra",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "opel-corsa",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Opel",
+    "secondarySource": "https://noticias.coches.com/historia/la-historia-de-opel/9403",
+    "note": "Se verificó la historia fundacional de Opel, sus cambios corporativos a lo largo de los años y su pertenencia actual a Stellantis utilizando fuentes enciclopédicas y especializadas.",
+    "limitations": [
+      "No se detallan los volúmenes de ventas actuales por región",
+      "No se incluye la ficha técnica específica de modelos recientes en este perfil general de marca"
+    ]
+  }
+}

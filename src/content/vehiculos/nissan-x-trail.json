@@ -1,0 +1,248 @@
+{
+  "slug": "nissan-x-trail",
+  "type": "vehiculos",
+  "title": "Nissan X-Trail",
+  "description": "SUV familiar del segmento C, disponible en version naftera Exclusive y version electrificada e-POWER con tecnologia e-4ORCE.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "nissan"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-frontier",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-gt-r",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-kicks",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-territory",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-santa-fe",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jeep-grand-cherokee",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-sorento",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Nissan",
+  "class": "SUV mediano",
+  "power": "201 hp / 150 kW (versión e-POWER)",
+  "price": "ARS 56.990.000",
+  "priceStructured": {
+    "type": "single",
+    "currency": "ARS",
+    "amount": 56990000,
+    "raw": "ARS 56.990.000"
+  },
+  "consumo": "5.8 l/100km combinado (e-POWER)",
+  "dimensiones": "4.680 mm largo x 1.840 mm ancho x 1.725 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.nissan.com.ar/vehiculos/nuevos/nueva-xtrail.html",
+    "note": "Se verificaron las especificaciones técnicas globales y para el mercado argentino de la cuarta generación de Nissan X-Trail, incluyendo la variante e-POWER y tracción e-4ORCE.",
+    "limitations": [
+      "Los precios en pesos argentinos pueden variar según ajustes de mercado y disponibilidad de versiones.",
+      "Algunas cifras de performance varían ligeramente entre los mercados de exportación."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T01:54:05.496Z",
+  "transmision": "Automática (e-POWER / Xtronic CVT)",
+  "traccion": "Integral e-4ORCE o Delantera según versión",
+  "peso": "1.720 - 1.870 kg",
+  "tipoMotor": "Híbrido (e-POWER) / Naftero",
+  "potenciaKW": "150 kW (e-POWER)",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "7.0 - 8.0s (0-100 km/h)",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.498 cc (Turbo e-POWER)",
+  "emisiones": null,
+  "asientos": 7,
+  "baul": 485,
+  "maleteroMin": null,
+  "generacion": "Cuarta generación (T33)",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "ARS 56.990.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:54:05.496Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Nissan X-Trail es uno de los SUV medianos más emblemáticos a nivel global dentro del segmento C. Desde su introducción inicial a principios de los años 2000, este modelo se consolidó rápidamente como una opción robusta para familias y entusiastas de la aventura ligera, combinando la versatilidad de un vehículo utilitario deportivo con el confort de marcha característico de un sedán. A lo largo de las décadas, la X-Trail ha evolucionado desde sus raíces más utilitarias y cuadradas hacia líneas mucho más aerodinámicas, estilizadas y tecnológicamente avanzadas.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de la X-Trail es la llegada de su cuarta generación (conocida bajo el código interno T33) y la introducción de la innovadora tecnología e-POWER junto con el sistema de tracción integral e-4ORCE. A diferencia de los híbridos tradicionales, el sistema e-POWER de Nissan utiliza un motor eléctrico para impulsar directamente las ruedas del vehículo, mientras que un motor naftero de combustión interna actúa exclusivamente como un generador dedicado a recargar la batería. Esto permite ofrecer una respuesta instantánea al acelerador, un andar marcadamente silencioso y una eficiencia de combustible destacada sin necesidad de enchufar el vehículo a la red eléctrica.\n\n## Curiosidades\nEntre los aspectos más interesantes de la cuarta generación destaca el sistema e-4ORCE, una tecnología de tracción integral eléctrica heredada y adaptada del conocimiento en vehículos 100% eléctricos de la marca japonesa. Este sistema gestiona de manera independiente la potencia y el frenado de cada una de las cuatro ruedas, logrando un control sumamente preciso en superficies resbaladizas, minimizando el cabeceo del vehículo al frenar y maximizando el confort de todos los ocupantes a bordo. Además, la X-Trail ofrece en muchos de sus mercados internacionales una configuración de tres filas de asientos, manteniendo una huella exterior relativamente compacta para facilitar su uso en entornos urbanos.\n\n## Competencia y posicionamiento\nEn el mercado actual, la Nissan X-Trail se posiciona en el competitivo segmento de los SUV medianos, compitiendo directamente contra referentes consagrados como el Toyota RAV4, el Honda CR-V, el Volkswagen Taos y el Ford Territory. Frente a ellos, la propuesta de valor de Nissan se centra fuertemente en su nivel de equipamiento tecnológico, las asistencias avanzadas a la conducción (Nissan Intelligent Mobility) y, especialmente, en el diferencial que aporta la motorización electrificada e-POWER. Es una alternativa ideal para quienes buscan dar el salto hacia la movilidad electrificada sin depender de la infraestructura de carga pública en trayectos largos.",
+  "generacionInfo": {
+    "raw": "Cuarta generación (T33)",
+    "numero": 4,
+    "codigoChasis": "T33",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Nissan X-Trail - SUV mediano Nissan. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

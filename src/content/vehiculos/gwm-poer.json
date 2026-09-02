@@ -1,0 +1,189 @@
+{
+  "slug": "gwm-poer",
+  "type": "vehiculos",
+  "title": "GWM Poer",
+  "description": "Pickup mediana de Great Wall Motors, orientada a exportación.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "gwm"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "gwm-tank-300",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jac-t8",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mitsubishi-triton",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-navara",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "GWM",
+  "class": "Pickup mediana",
+  "power": "188 hp",
+  "price": "USD 28.000",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 28000,
+    "raw": "USD 28.000"
+  },
+  "consumo": "8.5 l/100km combinado",
+  "dimensiones": "5.410 mm largo x 1.934 mm ancho x 1.886 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://gwmuae.com/Poer/Poer",
+    "note": "Se verificaron las especificaciones globales provistas por la marca, incluyendo la motorización turbo naftera de 2.0 litros, dimensiones aproximadas de la versión doble cabina y capacidades generales de la plataforma.",
+    "limitations": [
+      "El precio y consumo exacto varían fuertemente según el mercado de exportación y la motorización diésel o naftera elegida.",
+      "Las dimensiones pueden presentar sutiles diferencias según los paragolpes y configuración de la caja de carga para cada país."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:42:22.331Z",
+  "transmision": "Automática de 8/9 velocidades",
+  "traccion": "4x4",
+  "peso": "2.050 kg",
+  "tipoMotor": "Gasolina / Diésel",
+  "potenciaKW": "140 kW",
+  "capacidadTanque": "80 litros",
+  "tiempoRecorrido": "10.2s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1996 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Primera generación",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 28.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:42:22.331Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa GWM Poer (también conocida como Great Wall P-Series en algunos mercados) representa un punto de inflexión estratégico para Great Wall Motor en su ambición por trascender las fronteras del mercado interno chino y posicionarse como un jugador global de peso en el segmento de las pickups medianas. Lanzada comercialmente a finales de 2019 y con despliegue fuerte desde 2020, esta camioneta fue concebida desde el tablero de dibujo para competir de igual a igual con los referentes históricos de marcas japonesas y occidentales, ofreciendo un nivel de refinamiento interior y dotación tecnológica inusuales para la categoría en sus versiones de entrada.\n\n## Un hito o generación relevante\nEl gran hito de la GWM Poer fue inaugurar la plataforma modular P71 de la marca, una arquitectura diseñada específicamente para vehículos comerciales ligeros y SUVs de chasis independiente que prioriza la rigidez torsional, la seguridad estructural y la compatibilidad con mecánicas electrificadas y de alta eficiencia. Esta base le permitió a GWM superar con altas calificaciones las pruebas de seguridad de organismos internacionales y adaptar la pick-up tanto para el trabajo duro en flotas como para el uso recreativo y familiar de alta gama, introduciendo por primera vez en el segmento configuraciones con suspensión trasera multilink en algunas versiones orientadas al confort.\n\n## Curiosidades\nUn detalle interesante sobre la denominación 'Poer' es que no es una sigla técnica, sino una adaptación fonética intencional destinada a evocar potencia y solidez en los mercados internacionales, vinculándose directamente con el carácter robusto del vehículo. Además, la familia Poer ha servido como banco de pruebas para las ambiciones de electrificación de GWM, existiendo variantes híbridas y desarrollos completamente eléctricos e incluso de hidrógeno orientados a nichos muy específicos de minería y logística verde en Asia y Oceanía.\n\n## Competencia y posicionamiento\nEn el mercado global, la GWM Poer se ubica en el corazón del segmento de las pickups medianas de una tonelada, compitiendo directamente contra pesos pesados consolidados como la Toyota Hilux, la Ford Ranger, la Volkswagen Amarok y la Chevrolet S10. Su estrategia comercial se basa en una agresiva relación precio-producto, un diseño exterior imponente de parrilla prominente y un habitáculo que emula el confort y la conectividad de un SUV moderno, buscando seducir a usuarios que antes solo miraban marcas tradicionales.",
+  "generacionInfo": {
+    "raw": "Primera generación",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "GWM Poer - Pickup mediana GWM. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

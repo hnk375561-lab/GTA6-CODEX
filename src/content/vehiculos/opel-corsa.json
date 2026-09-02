@@ -1,0 +1,192 @@
+{
+  "slug": "opel-corsa",
+  "type": "vehiculos",
+  "title": "Opel Corsa",
+  "description": "Compacto europeo de Opel (Stellantis), también disponible en versión eléctrica.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "opel"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "opel-astra",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-onix",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "citroen-c3",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "dacia-sandero",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Opel",
+  "class": "Hatchback",
+  "power": "100 CV",
+  "price": "EUR 19.350 (referencia mercado europeo)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "EUR",
+    "amount": 19350,
+    "raw": "EUR 19.350 (referencia mercado europeo)"
+  },
+  "consumo": "5.2 l/100km combinado",
+  "dimensiones": "4.060 mm largo x 1.765 mm ancho x 1.435 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.diariomotor.com/coche/opel-corsa",
+    "note": "Se utilizaron datos técnicos verificados en km77 y rangos de precios actuales de Diariomotor para la sexta generación del Opel Corsa.",
+    "limitations": [
+      "Los precios varían según el mercado europeo específico y las promociones vigentes",
+      "Las especificaciones exactas pueden cambiar según la motorización térmica, híbrida o eléctrica elegida"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T03:02:16.835Z",
+  "transmision": "Manual de 6 velocidades o automática",
+  "traccion": "Delantera",
+  "peso": "1.165 kg",
+  "tipoMotor": "Naftero / Híbrido / Eléctrico",
+  "potenciaKW": "74 kW",
+  "capacidadTanque": "44 litros",
+  "tiempoRecorrido": "9.9s",
+  "anoProduccion": "2019-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.199 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 309,
+  "maleteroMin": null,
+  "generacion": "Sexta generación (F)",
+  "anoLanzamiento": 2019,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 20.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:02:16.835Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Opel Corsa es uno de los hatchbacks compactos más emblemáticos y de mayor trayectoria en el mercado europeo. Nacido originalmente bajo el ala de General Motors en la década de 1980, el Corsa se convirtió rápidamente en un pilar fundamental para la marca alemana, democratizando el acceso a la movilidad urbana en numerosos países. A lo largo de las décadas, este modelo transitó por múltiples evoluciones estilísticas y mecánicas, adaptándose siempre a las demandas cambiantes del consumidor europeo y a las normativas de seguridad y emisiones cada vez más estrictas.\n\n## Un hito o generación relevante\nUn punto de inflexión absoluto en la historia del modelo llegó con el lanzamiento de la sexta generación (conocida internamente como Corsa F), presentada a partir de 2019. Este vehículo marcó la transición definitiva de Opel hacia el grupo Stellantis, adoptando la plataforma modular CMP. Esta arquitectura no solo permitió una significativa reducción de peso y una mejora notable en la rigidez estructural, sino que también abrió la puerta a la electrificación total con la llegada de la variante eléctrica, demostrando la capacidad de adaptación del compacto a la nueva era de la movilidad sostenible sin perder su esencia práctica.\n\n## Curiosidades\nUna curiosidad interesante del Opel Corsa es que, a lo largo de su historia global, ha sido comercializado bajo una gran variedad de marcas según la región geográfica. Además de ser conocido como Opel en gran parte de Europa, el modelo ha adoptado denominaciones como Vauxhall en el Reino Unido, Chevrolet en América Latina y algunos mercados asiáticos, y Holden en Australia durante distintas etapas comerciales. Asimismo, el Corsa siempre se ha caracterizado por ser un referente en aerodinámica y eficiencia dentro de su segmento B, optimizando cada línea de su carrocería para reducir el consumo de combustible.\n\n## Competencia y posicionamiento\nEn el altamente competitivo segmento B europeo, el Opel Corsa compite mano a mano con pesos pesados de la industria como el Volkswagen Polo, el Peugeot 208 (con el que comparte plataforma y componentes mecánicos fundamentales) y el Renault Clio. El posicionamiento del Corsa se destaca por ofrecer un balance muy equilibrado entre la tradicional ingeniería alemana de precisión, un diseño exterior e interior de aspecto moderno y tecnológico, y una gama de motorizaciones térmicas, híbridas y eléctricas que logran satisfacer tanto a flotas corporativas como a compradores particulares que buscan un vehículo versátil para el uso diario en ciudad y ruta.",
+  "generacionInfo": {
+    "raw": "Sexta generación (F)",
+    "numero": 6,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Opel Corsa - Hatchback Opel. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

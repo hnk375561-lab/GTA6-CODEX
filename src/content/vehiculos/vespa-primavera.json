@@ -1,0 +1,183 @@
+{
+  "slug": "vespa-primavera",
+  "type": "vehiculos",
+  "title": "Vespa Primavera",
+  "description": "Scooter clásica italiana de Piaggio, ícono del diseño urbano europeo.",
+  "status": "confirmado",
+  "tags": [
+    "scooter",
+    "vespa"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-pcx-150",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "piaggio-liberty",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-nmax",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Vespa",
+  "class": "Scooter",
+  "power": "12.9 CV a 7.750 rpm (versión 150)",
+  "price": "Desde EUR 4.300 (referencia gama Europa)",
+  "priceStructured": {
+    "type": "starting",
+    "currency": "EUR",
+    "amount": 4300,
+    "raw": "Desde EUR 4.300 (referencia gama Europa)"
+  },
+  "consumo": "2.5 l/100km (aproximado)",
+  "dimensiones": "1.852 mm largo x 735 mm ancho x 1.170 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.scribd.com/document/831416962/FICHA-TECNICA-VespaPrimavera-150",
+    "secondarySource": "https://vespa-colombia.com/vespa-primavera-150",
+    "note": "Se verificaron las especificaciones técnicas de la Vespa Primavera 150 (cilindrada de 154.8 cc, potencia de 12.9 CV / 9.5 kW a 7.750 rpm y ancho de 735 mm) a partir de documentación oficial y sitios de la marca. Los precios europeos de entrada parten desde los 4.300 euros según la web oficial.",
+    "limitations": [
+      "Los precios varían de manera significativa según el mercado regional, aranceles de importación e impuestos locales.",
+      "Las cifras de aceleración de 0 a 100 km/h no forman parte de las especificaciones oficiales publicadas para scooters de baja cilindrada."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T03:13:28.986Z",
+  "transmision": "Automática variador continuo (CVT)",
+  "traccion": "Tracción trasera por correa",
+  "peso": "115 kg (en orden de marcha)",
+  "tipoMotor": "Monocilíndrico 4 tiempos, 3 válvulas, i-get",
+  "potenciaKW": "9.5 kW",
+  "capacidadTanque": "7 litros",
+  "tiempoRecorrido": "No publicado oficialmente",
+  "anoProduccion": "2013-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "154.8 cc (también en variantes de 50 cc)",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": 20,
+  "maleteroMin": null,
+  "generacion": "Actual (Evolución moderna de la clásica Primavera)",
+  "anoLanzamiento": 2013,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 5.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:13:28.986Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Vespa Primavera representa uno de los capítulos más emblemáticos y perdurables dentro del universo de la movilidad urbana global. Creada originalmente en la década de 1960 por Piaggio, nació con la firme vocación de ofrecer una alternativa de transporte fresca, ligera, dinámica y profundamente juvenil que transformó por completo la manera en que las nuevas generaciones se desplazaban por las metrópolis europeas. Aquel modelo primigenio trascendió rápidamente su condición de simple medio de transporte para erigirse como un estandarte indiscutido de libertad, estilo de vida y diseño vanguardista. Tras permanecer fuera de los catálogos comerciales durante años, la casa italiana decidió rescatar el espíritu incorruptible de la Primavera para readaptarlo por completo a las exigencias normativas, tecnológicas y estéticas del siglo XXI, fusionando con maestría su mítica carrocería monocarcasa de acero con arquitecturas motrices de última generación y estándares contemporáneos de seguridad vial.\n\n## Un hito o generación relevante\nEl relanzamiento oficial de la Vespa Primavera concretado en 2013 marcó un punto de inflexión histórico y tecnológico para la marca de Pontedera. Esta nueva generación logró rescatar el ADN estético de la estirpe clásica incorporando al mismo tiempo profundas mejoras estructurales que optimizaron de forma radical su comportamiento dinámico. La adopción de llantas de mayor diámetro en comparación con sus ancestros directos aportó una estabilidad notable y una capacidad de absorción muy superior ante las irregularidades típicas del asfalto urbano. Posteriormente, la integración de la familia de impulsores i-get (Italian Green Experience) supuso un salto evolutivo monumental en materia de eficiencia térmica, reducción drástica de emisiones contaminantes, disminución de la rumorosidad mecánica y contención del consumo de combustible, logrando una finura de marcha sin precedentes en su categoría.\n\n## Curiosidades\nA diferencia de la abrumadora mayoría de los scooters que dominan el mercado contemporáneo, los cuales recurren masivamente al empleo de paneles de plásticos inyectados y resinas sintéticas, la Vespa Primavera mantiene incólume la tradición artesanal e industrial de utilizar un chasis monocasco de acero estampado que opera como estructura portante principal. Esta solución constructiva no solo le otorga una rigidez torsional muy superior frente a la torsión y una durabilidad estructural excepcional a lo largo de los años, sino que también define por completo su silueta esbelta, su personalidad inconfundible y un peso sumamente contenido. Otro detalle mecánico de estirpe propia es su sofisticada suspensión delantera con brazo articulado, una genialidad heredada directamente de la ingeniería aeronáutica que Piaggio adaptó con éxito a sus motocicletas desde mediados del siglo pasado para simplificar las tareas de sustitución de neumáticos y garantizar una pisada impecable en el trazado de curvas.\n\n## Competencia y posicionamiento\nDentro del ecosistema global de las dos ruedas, la Vespa Primavera se ubica de manera indiscutida en la cúspide del segmento de scooters urbanos de enfoque netamente premium y aspiracional. Lejos de competir en el terreno de la funcionalidad económica pura o de las propuestas utilitarias de origen asiático, la Primavera milita en una categoría exclusiva donde el diseño estético, el prestigio histórico y el refinamiento de los acabados pesan tanto o más que las cifras puras de la ficha técnica. Si bien enfrenta la resistencia de reinterpretaciones retro de otros fabricantes y de la histórica rivalidad con firmas como Lambretta, la Vespa mantiene un valor de reventa envidiable, una red de soporte consolidada y un capital simbólico inigualable que la consagran como el máximo referente estético y funcional del transporte urbano con estilo europeo.",
+  "generacionInfo": {
+    "raw": "Actual (Evolución moderna de la clásica Primavera)",
+    "numero": null,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Vespa Primavera - Scooter Vespa. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

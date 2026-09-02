@@ -1,0 +1,356 @@
+{
+  "slug": "tesla-model-3",
+  "type": "vehiculos",
+  "title": "Tesla Model 3",
+  "description": "Sedán 100% eléctrico de Tesla, tracción trasera, autonomía de largo alcance.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "tesla",
+    "electrico"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-cybertruck",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-s",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-x",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-cronos",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-city",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-sentra",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nissan-versa",
+      "relation": "competidor"
+    }
+  ],
+  "featured": true,
+  "createdAt": "2026-08-23T18:01:33.524Z",
+  "updatedAt": "2026-08-27T03:10:37.528Z",
+  "manufacturer": "Tesla",
+  "class": "Sedán",
+  "performance": {
+    "speed": "Alta (225 km/h)",
+    "acceleration": "Muy alta (0-100 km/h en 3.3s en versión Performance)"
+  },
+  "power": "283 hp (Versión RWD acceso) / hasta 464 CV en variantes superiores",
+  "price": "Desde 33.365 € hasta 57.490 € (PVP referencia España y mercado europeo)",
+  "priceStructured": {
+    "type": "range",
+    "currency": "EUR",
+    "min": 33365,
+    "max": 57490,
+    "raw": "Desde 33.365 € hasta 57.490 € (PVP referencia España y mercado europeo)"
+  },
+  "consumo": "13,0 kWh/100 km (Ciclo WLTP oficial)",
+  "dimensiones": "4.720 mm x 1.850 mm x 1.441 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.diariomotor.com/coche/tesla-model-3",
+    "note": "Datos verificados a partir de especificaciones oficiales de Tesla y portales especializados europeos sobre el rediseño Highland y sus autonomías de hasta 660 km WLTP.",
+    "limitations": [
+      "El consumo real varía según el estilo de conducción, uso de climatización y condiciones climáticas",
+      "Los precios y rangos de autonomía pueden diferir sustancialmente según los aranceles y la homologación de cada región fuera de Europa"
+    ]
+  },
+  "transmision": "Automática de relación única (reductora fija)",
+  "traccion": "Trasera (RWD) / Total (AWD)",
+  "peso": "1.760 kg aprox. según variante de batería",
+  "tipoMotor": "Motor eléctrico síncrono de imanes permanentes AC",
+  "potenciaKW": "208 kW (RWD base)",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "3.3s (0-100 km/h en versión Performance)",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 425,
+  "maleteroMin": null,
+  "generacion": "Highland",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★★",
+    "puntaje": 94,
+    "proteccionAdultos": 98,
+    "proteccionNiños": 87,
+    "proteccionVulnerables": 91,
+    "asistenciaSistemas": 98
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "primeraGeneracion": {
+      "años": "2015-2023",
+      "unidadesProducidas": 2000000,
+      "hitos": [
+        "2015 Lanzamiento",
+        "2017 Producción en masa"
+      ]
+    },
+    "segundaGeneracion": {
+      "años": "2023-presente",
+      "nombre": "Highland",
+      "mejoras": [
+        "Nuevo diseño",
+        "Eficiencia mejorada",
+        "Interior rediseñado"
+      ]
+    }
+  },
+  "variants": [
+    {
+      "nombre": "RWD",
+      "potencia": "283 hp",
+      "autonomia": "400 km",
+      "precio": "$43,990"
+    },
+    {
+      "nombre": "AWD",
+      "potencia": "346 hp",
+      "autonomia": "480 km",
+      "precio": "$54,990"
+    },
+    {
+      "nombre": "Performance",
+      "potencia": "450 hp",
+      "autonomia": "450 km",
+      "precio": "$65,990"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:10:37.528Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": {
+    "USA": {
+      "precio": 43990,
+      "moneda": "USD",
+      "impuesto": 0.08,
+      "disponible": true
+    },
+    "España": {
+      "precio": 45500,
+      "moneda": "EUR",
+      "impuesto": 0.21,
+      "disponible": true
+    },
+    "Brasil": {
+      "precio": 250000,
+      "moneda": "BRL",
+      "impuesto": 0.18,
+      "disponible": true
+    },
+    "Argentina": {
+      "precio": 3200000,
+      "moneda": "ARS",
+      "impuesto": 0.21,
+      "disponible": true
+    },
+    "México": {
+      "precio": 850000,
+      "moneda": "MXN",
+      "impuesto": 0.16,
+      "disponible": true
+    },
+    "Alemania": {
+      "precio": 46500,
+      "moneda": "EUR",
+      "impuesto": 0.19,
+      "disponible": true
+    },
+    "Reino Unido": {
+      "precio": 43000,
+      "moneda": "GBP",
+      "impuesto": 0.2,
+      "disponible": true
+    },
+    "Japón": {
+      "precio": 5900000,
+      "moneda": "JPY",
+      "impuesto": 0.1,
+      "disponible": true
+    },
+    "Australia": {
+      "precio": 68900,
+      "moneda": "AUD",
+      "impuesto": 0.1,
+      "disponible": true
+    }
+  },
+  "performanceData": {
+    "aceleracion": {
+      "0-100kmh": "3.3s",
+      "0-60mph": "3.2s",
+      "80-120kmh": "2.8s"
+    },
+    "velocidad": {
+      "maxima": 225,
+      "crucero": 180
+    },
+    "consumo": {
+      "promedio": "13 kWh/100km",
+      "urbano": "15 kWh/100km",
+      "autopista": "11 kWh/100km",
+      "mixto": "13.2 kWh/100km"
+    },
+    "emisiones": {
+      "co2": "0 g/km",
+      "tipo": "Eléctrico - Sin emisiones directas"
+    },
+    "autonomia": {
+      "estimada": "500 km",
+      "real": "450 km"
+    }
+  },
+  "relatedModels": {
+    "anterior": "tesla-model-s",
+    "siguiente": "tesla-model-3-highland",
+    "hermanos": [
+      "tesla-model-y",
+      "tesla-model-s"
+    ],
+    "competidores": [
+      "bmw-i4",
+      "mercedes-benz-eqe",
+      "audi-a4-e-tron"
+    ],
+    "reemplaza": null,
+    "reemplazadoPor": null
+  },
+  "content": "## Historia del modelo\nEl Tesla Model 3 se consolidó desde su lanzamiento inicial en 2017 como uno de los pilares fundamentales para la masificación de la movilidad eléctrica a escala global. Pensado como una alternativa de acceso más compacta y económica en comparación con el Model S, este sedán mediano logró capturar la atención del mercado masivo gracias a su combinación de autonomía competitiva, una infraestructura de carga propia sin precedentes y una propuesta tecnológica rupturista.\n\n## Generación relevante: El rediseño 'Highland'\nHacia finales de 2023, la marca introdujo de manera oficial la actualización de mitad de vida comercial conocida internamente bajo el nombre en clave 'Highland'. Esta evolución abarcó una profunda revisión estética y funcional. En el plano exterior, el vehículo adoptó un frontal mucho más afilado, grupos ópticos delanteros y traseros LED de diseño estilizado y una aerodinámica optimizada que redujo el coeficiente de resistencia al viento. Puertas adentro, el habitáculo experimentó un salto cualitativo en cuanto a insonorización mediante el uso de cristales acústicos dobles, la eliminación de las tradicionales palancas satelitales tras el volante para reubicar los mandos en la pantalla o el volante, y la incorporación de una pantalla táctil de 8 pulgadas destinada a los pasajeros de las plazas traseras.\n\n## Curiosidades\nUna de las señas de identidad más marcadas del Tesla Model 3 es el minimalismo absoluto de su diseño interior, donde se prescinde por completo de un cuadro de instrumentos tradicional detrás del volante o de botoneras físicas convencionales. Prácticamente todas las funciones del vehículo —desde el ajuste de la climatización y los espejos retrovisores hasta la apertura de la guantera o la gestión de los sistemas multimedia— se centralizan en su pantalla táctil central de 15.4 pulgadas. Además, cuenta con una gestión térmica avanzada que aprovecha el calor residual del inversor y el motor para climatizar la cabina con un consumo energético sumamente eficiente.\n\n## Competencia y posicionamiento\nDentro del segmento de los sedanes medianos premium, el Tesla Model 3 compite de igual a igual con los máximos exponentes de la industria automotriz tradicional, enfrentándose a modelos consolidados como el BMW i4 o el Mercedes-Benz Clase C eléctrico. Su posicionamiento comercial sigue destacando por ofrecer una excelente relación entre prestaciones, precio y eficiencia energética, respaldada además por el ecosistema de carga rápida de la red Supercharger, lo que le otorga una ventaja competitiva clave frente a la oferta de otros fabricantes generalistas y prémium.",
+  "generacionInfo": {
+    "raw": "Highland",
+    "numero": null,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Tesla Model 3 - Sedán Tesla. Alta (225 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

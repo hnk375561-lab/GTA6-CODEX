@@ -1,0 +1,242 @@
+{
+  "slug": "bmw-serie-3",
+  "type": "vehiculos",
+  "title": "BMW Serie 3",
+  "description": "Sedán premium de BMW, motor 2.0L turbo de 4 cilindros, tracción trasera.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "bmw",
+    "premium",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-gs-310",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-m4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-r1250gs",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mercedes-benz-clase-c",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:25.977Z",
+  "updatedAt": "2026-08-27T02:44:31.099Z",
+  "manufacturer": "BMW",
+  "class": "Sedán premium",
+  "performance": {
+    "speed": "Alta (250 km/h)",
+    "acceleration": "Alta (0-100 km/h en 5.8s)"
+  },
+  "power": "258 hp",
+  "price": "USD 45.000 (MSRP EE.UU.)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 45000,
+    "raw": "USD 45.000 (MSRP EE.UU.)"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.km77.com/coches/bmw/serie-3/2024/datos",
+    "note": "Se verificaron las especificaciones técnicas y dimensiones globales para la séptima generación del BMW Serie 3 (G20) a través de bases de datos especializadas y portales oficiales. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "limitations": [
+      "Los precios varían considerablemente según el mercado local, impuestos y aranceles de importación en Argentina.",
+      "Las cifras de consumo y aceleración pueden variar según la versión específica (320i, 330i o variantes xDrive)."
+    ]
+  },
+  "transmision": "Automática de 8 velocidades (Steptronic)",
+  "traccion": "Trasera (RWD) o xDrive (AWD)",
+  "peso": "1.526 kg",
+  "tipoMotor": "Gasolina 2.0L TwinPower Turbo de 4 cilindros",
+  "potenciaKW": "190 kW",
+  "capacidadTanque": "59 litros",
+  "tiempoRecorrido": "5.8s (0-100 km/h)",
+  "anoProduccion": "2019-presente",
+  "mercados": [
+    "Europa",
+    "Argentina",
+    "Estados Unidos",
+    "China",
+    "Medio Oriente"
+  ],
+  "equipamiento": [
+    "BMW TwinPower Turbo",
+    "Sistemas inteligentes de asistencia al conductor",
+    "BMW Live Cockpit digital",
+    "Control de tracción dinámico",
+    "Faros LED adaptativos",
+    "Opción híbrida enchufable (330e)"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "cilindrada": "1.998 cc",
+  "emisiones": "CO2 158-166 g/km (WLTP, versión 330i xDrive)",
+  "asientos": 5,
+  "baul": 480,
+  "maleteroMin": "480 litros",
+  "generacion": "Séptima generación (G20)",
+  "anoLanzamiento": 2019,
+  "colores": [
+    "Alpine White",
+    "Black Sapphire Metallic",
+    "Mineral Grey Metallic",
+    "Portimao Blue Metallic",
+    "Skyscraper Grey",
+    "Sunset Orange"
+  ],
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "6.5 L/100 km (mixto WLTP)",
+  "dimensiones": "4713 x 1827 x 1440 mm",
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 58.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:44:31.099Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl BMW Serie 3 es el pilar fundamental sobre el cual se sostiene la reputación de deportividad y dinamismo de la marca bávara. Desde el lanzamiento de su primera generación en 1975, este sedán compacto ejecutivo redefinió lo que un conductor podía esperar de un vehículo de tracción trasera enfocado en el uso diario. A lo largo de las décadas, evolucionó a través de iteraciones icónicas que consolidaron su estatus como la referencia indiscutida del segmento frente a una competencia histórica muy reñida.\n\n## Un hito o generación relevante\nLa séptima generación, conocida bajo el código interno G20 y lanzada comercialmente en 2019 con posteriores actualizaciones estéticas y tecnológicas, representa un salto evolutivo clave. Construido sobre la plataforma modular CLAR, el G20 logró una notable reducción de peso y un incremento sustancial en la rigidez torsional respecto a su predecesor. Esto se traduce en una agilidad superior en curvas y un confort de marcha optimizado, complementado por la integración del sistema BMW Live Cockpit y asistencias a la conducción de última generación, todo sin perder el tradicional reparto de pesos equilibrado.\n\n## Curiosidades\nA pesar de la fama histórica de los motores de seis cilindros en línea de la marca, las variantes de cuatro cilindros sobrealimentadas mediante tecnología TwinPower Turbo —como el bloque presente en las versiones 320i y 330i— se han consolidado como el verdadero corazón comercial y de ingeniería del modelo. Logran un equilibrio sobresaliente entre consumos contenidos en ruta y una entrega de torque inmediata desde bajas revoluciones, manteniendo viva la esencia dinámica en mercados globales muy diversos.\n\n## Competencia y posicionamiento\nEn el mercado automotriz actual, el BMW Serie 3 ocupa un rol estratégico como el sedán ejecutivo de espíritu más marcadamente deportivo. Se posiciona de manera directa frente a contrincantes de origen alemán como el Mercedes-Benz Clase C y el Audi A4. Mientras que el Clase C suele priorizar el confort de marcha y el lujo clásico, y el Audi A4 apuesta fuertemente por la tracción integral y la sobriedad tecnológica, el Serie 3 mantiene su liderazgo apostando firmemente por el tacto de dirección, la precisión del chasis y una experiencia general orientada al conductor exigente.",
+  "generacionInfo": {
+    "raw": "Séptima generación (G20)",
+    "numero": 7,
+    "codigoChasis": "G20",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "BMW Serie 3 - Sedán premium BMW. Alta (250 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

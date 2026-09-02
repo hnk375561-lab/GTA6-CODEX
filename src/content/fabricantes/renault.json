@@ -1,0 +1,84 @@
+{
+  "slug": "renault",
+  "type": "fabricantes",
+  "title": "Renault",
+  "description": "Vehículos y motocicletas de Renault",
+  "content": "## Identidad de Marca\nRenault se posiciona como uno de los actores históricos más influyentes de la industria automotriz global. Con una sólida herencia arraigada en Europa y una fuerte presencia internacional —incluyendo un profundo arraigo en el mercado argentino y regional—, la marca combina una larga tradición de ingeniería con una apuesta constante hacia la movilidad del futuro y la innovación tecnológica.\n\n## Historia y Orígenes\nLa aventura industrial comenzó el 24 de diciembre de 1898, cuando los hermanos Louis, Marcel y Fernand fundaron la sociedad que daría origen a la marca. Louis Renault, un ingeniero joven y destacado, ya había diseñado y construido diversos prototipos previos en un taller ubicado en una cabaña en Billancourt, a las afueras de París. El primer hito comercial y técnico fue el desarrollo del Voiturette Tipo A. Desde sus inicios, la visión del fundador estuvo marcada por la pasión por la innovación tecnológica y la convicción de que la competencia y la exigencia en las fábricas eran motores fundamentales para el desarrollo de mejores vehículos.\n\n## Posicionamiento Actual\nEn la actualidad, el Grupo Renault se encuentra a la vanguardia de la reinvención de la movilidad. Respaldado por alianzas estratégicas globales y un ecosistema de marcas que incluye a Dacia, Alpine y Mobilize, el grupo opera en más de 130 países. Su enfoque combina la experiencia acumulada a lo largo de más de un siglo con el desarrollo de nuevas tecnologías, apuntando a las demandas actuales de eficiencia, conectividad y sustentabilidad en el mercado automotriz.",
+  "status": "confirmado",
+  "officialName": "Renault",
+  "country": "Francia",
+  "foundedYear": 1898,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:25:57.206Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-arkana",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-captur",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-clio",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-duster",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-kangoo",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-kwid",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-logan",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-megane-e-tech",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "renault-sandero",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Renault",
+    "secondarySource": "https://motocostarenault.com/blog/conoce-la-historia-de-renault",
+    "note": "Se verificó la fundación en 1898 por los hermanos Louis, Marcel y Fernand Renault, así como el inicio en Boulogne-Billancourt, Francia, y los primeros desarrollos como la Voiturette Tipo A.",
+    "limitations": [
+      "Las fuentes no detallan el portfolio completo actual de vehículos para el mercado argentino",
+      "No se profundiza en las cifras exactas de producción moderna dentro del texto provisto"
+    ]
+  }
+}

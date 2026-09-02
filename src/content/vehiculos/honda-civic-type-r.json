@@ -1,0 +1,237 @@
+{
+  "slug": "honda-civic-type-r",
+  "type": "vehiculos",
+  "title": "Honda Civic Type R",
+  "description": "Hatchback deportivo de Honda, motor turbo 2.0L VTEC de 315 hp, tracción delantera.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "honda",
+    "deportivo",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-accord",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb190r",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "abarth-595",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "cupra-leon",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T18:31:29.529Z",
+  "updatedAt": "2026-08-27T01:44:31.270Z",
+  "manufacturer": "Honda",
+  "class": "Hatchback deportivo",
+  "performance": {
+    "speed": "Muy alta (275 km/h)",
+    "acceleration": "Alta (0-100 km/h en 5.4s)"
+  },
+  "power": "315 hp",
+  "price": "USD 44.890 (MSRP EE.UU.)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 44890,
+    "raw": "USD 44.890 (MSRP EE.UU.)"
+  },
+  "consumo": "8.3 l/100km combinado (WLTP)",
+  "dimensiones": "4.595 mm x 1.890 mm x 1.407 mm",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.carexpert.com.au/honda/civic/2025-type-r-josksfag20250819",
+    "note": "Se verificaron las especificaciones técnicas de la generación FL5 del Honda Civic Type R, incluyendo su motor K20C1 de 315 hp, transmisión manual exclusiva de 6 marchas y configuración de tracción delantera.",
+    "limitations": [
+      "El consumo de combustible puede elevarse considerablemente bajo conducción deportiva en circuito o modo +R.",
+      "La disponibilidad en ciertos mercados está limitada por cupos de producción anuales."
+    ]
+  },
+  "transmision": "Manual de 6 velocidades",
+  "traccion": "Delantera (FWD)",
+  "peso": "1.455 kg",
+  "tipoMotor": "Gasolina 2.0L VTEC Turbo de 4 cilindros en línea",
+  "potenciaKW": "235 kW",
+  "capacidadTanque": "47 litros",
+  "tiempoRecorrido": "5.4 s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.996 cc",
+  "emisiones": null,
+  "asientos": 4,
+  "baul": 410,
+  "maleteroMin": null,
+  "generacion": "FL5",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 45.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:44:31.270Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "consumo": {
+      "promedio": "8.2-8.7 l/100km combinado (WLTP, motor turbo 2.0L VTEC, caja manual de 6 velocidades)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Honda Civic Type R representa la cúspide de la ingeniería deportiva de tracción delantera de la marca japonesa. Nacido originalmente sobre la base de la sexta generación del Civic (ek9) en 1997 exclusivamente para el mercado japonés, el apellido Type R se convirtió rápidamente en un emblema de alto rendimiento, motores atmosféricos de altas revoluciones y un comportamiento dinámico sobresaliente. A lo largo de las décadas, el modelo evolucionó expandiéndose a los mercados globales y adoptando la turbocompresión a partir de la generación FK2, marcando un punto de inflexión en la entrega de potencia sin perder el purismo mecánico que lo caracteriza.\n\n## Un hito o generación relevante\nLa actual generación, denominada FL5 y lanzada comercialmente en 2023, estableció un nuevo estándar para los hatchbacks deportivos a nivel mundial. Construida sobre la sólida base del Civic de undécima generación, la variante Type R logró pulverizar récords en circuitos emblemáticos como Nürburgring para vehículos de tracción delantera. Este hito no se logró únicamente a través de la fuerza bruta de su motor K20C1, sino mediante un trabajo aerodinámico sumamente refinado, una rigidez estructural incrementada y una puesta a punto de suspensión que maximiza el contacto de los neumáticos con el asfalto sin comprometer la respuesta milimétrica del chasis.\n\n## Curiosidades\nUna de las características más singulares del Honda Civic Type R FL5 es su insistencia en mantener la caja de cambios manual de 6 velocidades como única opción en la mayoría de los mercados globales, resistiendo la tendencia actual de la industria hacia las transmisiones automáticas de doble embrague. Además, su sistema de escape de triple salida funcional no es meramente estético: los tubos exteriores generan un tono de escape más agresivo, mientras que el tubo central actúa como un resonador que modula las frecuencias acústicas según el modo de conducción seleccionado (Comfort, Sport, o +R).\n\n## Competencia y posicionamiento\nDentro del mercado global, el Civic Type R compite directamente contra pesos pesados de la categoría de los hatchbacks deportivos y compactos picantes, tales como el Volkswagen Golf R, el Toyota GR Corolla y el Hyundai i30 N. Se posiciona como una opción de enfoque marcadamente purista y analógico, ideal para entusiastas que buscan un vehículo tanto apto para el uso diario como sumamente capaz para tandas en circuito ('track days'), destacándose frente a sus rivales por la precisión quirúrgica de su dirección y la conexión inigualable que ofrece entre el conductor y la máquina.",
+  "generacionInfo": {
+    "raw": "FL5",
+    "numero": null,
+    "codigoChasis": "FL5",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Honda Civic Type R - Hatchback deportivo Honda. Muy alta (275 km/h) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

@@ -1,0 +1,250 @@
+{
+  "slug": "chery-tiggo-8-pro",
+  "type": "vehiculos",
+  "title": "Chery Tiggo 8 Pro",
+  "description": "SUV de siete plazas del segmento D, tope de gama de Chery en Argentina, comercializado por Grupo Corven.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "chery",
+    "china",
+    "7-plazas"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-omoda-5",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-7-pro",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-trailblazer",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-explorer",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "land-rover-discovery",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "peugeot-5008",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Chery",
+  "class": "SUV grande",
+  "power": "186 CV",
+  "price": "USD 44.800 (referencia mercado local)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 44800,
+    "raw": "USD 44.800 (referencia mercado local)"
+  },
+  "consumo": "8.1 l/100km combinado",
+  "dimensiones": "4.722 mm largo x 1.860 mm ancho x 1.705 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://minutomotor.com.ar/chery-actualizo-sus-precios-en-argentina/",
+    "note": "Se verificaron las especificaciones técnicas generales del Chery Tiggo 8 Pro para el mercado latinoamericano y argentino, incluyendo su motorización 1.6 TGDI de 186 CV y la configuración de 7 plazas.",
+    "limitations": [
+      "Los precios en el mercado argentino pueden sufrir variaciones constantes debido a la carga impositiva y el tipo de cambio.",
+      "Algunos equipamientos específicos de confort o asistencias a la conducción pueden variar según la partida importada por Grupo Corven."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T01:34:59.920Z",
+  "transmision": "Automática DCT de 7 marchas",
+  "traccion": "Delantera",
+  "peso": "1.637 kg",
+  "tipoMotor": "Naftero 1.6 Turbo",
+  "potenciaKW": "137 kW",
+  "capacidadTanque": "51 litros",
+  "tiempoRecorrido": "0-100 km/h en 9.9s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.598 cc",
+  "emisiones": null,
+  "asientos": 7,
+  "baul": 193,
+  "maleteroMin": null,
+  "generacion": "1ra generación (facelift Pro)",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 44.800"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:34:59.920Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Chery Tiggo 8 Pro se posiciona como el buque insignia de la marca de origen chino dentro del segmento de los SUV grandes (segmento D). Concebido para competir en mercados globales exigentes, este modelo representa la evolución de la familia Tiggo, apostando fuertemente por un salto de calidad en términos de diseño, materiales interiores, seguridad activa y motorización eficiente. Su desembarco en la región sudamericana y particularmente en Argentina, de la mano de representantes locales como Grupo Corven, buscó captar a familias numerosas o usuarios que demandan un vehículo versátil de siete plazas sin resignar un habitáculo refinado ni una estética imponente.\n\n## Un hito o generación relevante\nEl gran punto de inflexión para esta gama fue la introducción de la variante 'Pro' y sus posteriores actualizaciones estéticas y mecánicas, que incorporaron el motor naftero de alta eficiencia 1.6 TGDI (Inyección Directa Turboalimentada) asociado a una transmisión automática de doble embrague (DCT) de 7 velocidades. Este conjunto mecánico marcó una clara diferencia respecto a las motorizaciones atmosféricas o turbos más antiguos de la marca, ofreciendo una respuesta dinámica más ágil, mejores cifras de consumo y un andar refinado en ruta que se alinea con los estándares de marcas generalistas tradicionales de origen europeo o asiático.\n\n## Curiosidades\nA pesar de ser un vehículo de dimensiones generosas (superando los 4,7 metros de largo) y ofrecer una configuración de tres filas de asientos, el Tiggo 8 Pro logra mantener un coeficiente aerodinámico competitivo gracias a los deflectores integrados y líneas de carácter esculpidas en su carrocería. Además, en su mercado de origen y en varias plazas internacionales, este modelo sirve como base para versiones híbridas enchufables (PHEV) y tracción integral, demostrando la alta modularidad de la plataforma T1X desarrollada por Chery.\n\n## Competencia y posicionamiento\nEn el mercado argentino y regional, el Chery Tiggo 8 Pro compite de manera directa contra medianos y grandes del segmento D y C-SUV extendido, tales como el Jeep Commander, el Volkswagen Taos (en versiones tope), el Chevrolet Equinox y diversas alternativas provenientes tanto del Mercado Común del Sur como de otras marcas de origen asiático. Su principal propuesta de valor radica en una relación precio-producto muy competitiva, ofreciendo de serie un nivel de equipamiento tecnológico, asistencias avanzadas a la conducción (ADAS) y refinamiento interior que usualmente se encuentra en escalones de precio superiores dentro del mercado automotor.",
+  "generacionInfo": {
+    "raw": "1ra generación (facelift Pro)",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": true,
+    "faceliftAno": null
+  },
+  "seoDescription": "Chery Tiggo 8 Pro - SUV grande Chery. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

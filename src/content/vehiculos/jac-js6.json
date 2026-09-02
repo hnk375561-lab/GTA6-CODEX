@@ -1,0 +1,201 @@
+{
+  "slug": "jac-js6",
+  "type": "vehiculos",
+  "title": "JAC JS6",
+  "description": "SUV compacto de JAC Motors orientado a mercados de exportación.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "jac"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jac-t40",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jac-t8",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "baic-x55",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-omoda-5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chery-tiggo-4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-equinox",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "JAC",
+  "class": "SUV compacto",
+  "power": "181 hp (135 kW) a 4.850-5.500 rpm",
+  "price": "USD 27.000 (versión gasolina turbo, referencia mercado Latinoamérica)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 27000,
+    "raw": "USD 27.000 (versión gasolina turbo, referencia mercado Latinoamérica)"
+  },
+  "consumo": "6.5 l/100km combinado (referencia fabricante)",
+  "dimensiones": "4.605 mm largo x 1.890 mm ancho x 1.700 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.motoresjac.com.gt/vehiculos-jac/jac-suvs/suv-jac-js6/",
+    "secondarySource": "https://en.wikipedia.org/wiki/JAC_QX",
+    "note": "Cifras verificadas para la versión a gasolina turbo 1.5L comercializada en mercados de exportación latinoamericanos bajo la denominación JS6.",
+    "limitations": [
+      "El precio varía significativamente según el país debido a políticas arancelarias e impuestos de importación.",
+      "Las cifras de aceleración son estimadas y varían según la versión y las condiciones de prueba."
+    ]
+  },
+  "performance": {
+    "speed": "190 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.8s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:47:28.623Z",
+  "transmision": "DCT (doble embrague) 7 velocidades",
+  "traccion": "Delantera",
+  "peso": "1.550 kg (referencia)",
+  "tipoMotor": "Gasolina turbo 4 cilindros, GDI",
+  "potenciaKW": "135 kW",
+  "capacidadTanque": "54 litros",
+  "tiempoRecorrido": "8.8s",
+  "anoProduccion": "2024",
+  "mercados": [
+    "Latinoamérica",
+    "China",
+    "Medio Oriente",
+    "Europa del Este"
+  ],
+  "equipamiento": [
+    "Pantalla dual panorámica 12.3\"",
+    "Apple CarPlay / Android Auto",
+    "Cámara 360° HD",
+    "Techo panorámico eléctrico",
+    "Asientos delanteros calefaccionados"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "235/50 R19",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC 16 válvulas",
+    "ratio_compresion": "10.0:1",
+    "sistemas_inyeccion": "Inyección directa (GDI) turbo",
+    "arbol_levas": "Doble (DOHC) con VVT"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1.498 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 455,
+  "maleteroMin": null,
+  "generacion": "Plataforma JAC GSE (2021-presente)",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 21.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:47:28.623Z",
+    "dataQuality": 0.8
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo y desarrollo\nEl JAC JS6 representa un paso adelante en la estrategia de expansión global de JAC Motors dentro del segmento de los SUV compactos. Este modelo está construido sobre la plataforma modular JAC GSE, introducida originalmente en el mercado chino bajo la denominación Sehol QX. Con un enfoque claro en la modernización de la gama de productos de la marca, el JS6 combina un diseño exterior vanguardista con una propuesta tecnológica orientada a satisfacer las demandas de los consumidores internacionales en mercados emergentes y de exportación.\n\n## Un hito y generación relevante\nLanzado comercialmente a partir de 2021, este vehículo marca la consolidación de JAC en el desarrollo de motorizaciones turboalimentadas de alta eficiencia y transmisiones de doble embrague de nueva generación. La adopción de la plataforma GSE permitió mejorar significativamente la rigidez estructural, la seguridad pasiva y la integración de sistemas avanzados de asistencia a la conducción (ADAS), posicionándose como uno de los productos más sofisticados jamás fabricados por la compañía para el mercado externo.\n\n## Curiosidades y diseño\nUno de los aspectos más llamativos del JAC JS6 es su arquitectura interior, que destaca por incorporar una pantalla dual panorámica de 12.3 pulgadas orientada al conductor, reduciendo al mínimo la presencia de botones físicos tradicionales. Su diseño exterior adopta ópticas divididas y líneas afiladas que siguen las tendencias estéticas globales de los SUV medianos y compactos. Además, en ciertos mercados internacionales comparte componentes mecánicos y estructurales con alianzas estratégicas del grupo automotriz en China.\n\n## Competencia y posicionamiento\nDentro del mercado de los SUV compactos, el JAC JS6 compite directamente con referentes de peso regional como el Haval H6, el Chery Tiggo 7 Pro y el Geely Azkara. Su estrategia se basa en ofrecer un nivel de equipamiento de confort elevado, acabados interiores de apariencia cuidada y una mecánica equilibrada basada en el motor 1.5 litros GDI de 181 caballos, apuntando a un segmento que busca una relación precio-producto competitiva frente a marcas tradicionales consolidadas.",
+  "generacionInfo": {
+    "raw": "Plataforma JAC GSE (2021-presente)",
+    "numero": null,
+    "codigoChasis": null,
+    "anoInicio": 2021,
+    "anoFin": null,
+    "rangoAbierto": true,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "JAC JS6 - SUV compacto chino de exportación, motor turbo 1.5L de 181 hp. Especificaciones, precio y disponibilidad, ago 2026."
+}

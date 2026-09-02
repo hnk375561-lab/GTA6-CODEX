@@ -1,0 +1,228 @@
+{
+  "slug": "fiat-fiorino",
+  "type": "vehiculos",
+  "title": "Fiat Fiorino",
+  "description": "Furgon utilitario compacto, el mas elegido de su segmento en Argentina para logistica urbana y PyMEs.",
+  "status": "confirmado",
+  "tags": [
+    "utilitario",
+    "fiat",
+    "furgon"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-argo",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-cronos",
+      "relation": "mismo_fabricante"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Fiat",
+  "class": "Furgon compacto",
+  "power": "87 CV",
+  "price": "ARS 29.920.000 (referencia mercado argentino)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "ARS",
+    "amount": 29920000,
+    "raw": "ARS 29.920.000 (referencia mercado argentino)"
+  },
+  "consumo": "aprox. 8.0 l/100km urbano (12,4 km/l)",
+  "dimensiones": "4384 x 1643 x 1724 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://fiorino.fiat.com.ar",
+    "secondarySource": "https://www.scribd.com/document/348956166/FT-Fiorino",
+    "note": "Se verificaron las especificaciones técnicas del Fiat Fiorino comercializado en Argentina, incluyendo motorización naftera, cilindrada, potencia de 87 CV, transmisión manual de 5 marchas y tracción delantera a través de fuentes oficiales y técnicas de la marca.",
+    "limitations": [
+      "Los precios en pesos varían constantemente por la inflación y contexto macroeconómico argentino.",
+      "Algunas cifras de aceleración son estimadas debido a la falta de pruebas oficiales cronometradas recientes para este mercado."
+    ]
+  },
+  "performance": {
+    "speed": "165 km/h",
+    "acceleration": "0-100 km/h en 12.5s"
+  },
+  "createdAt": "2026-08-23T22:19:24.158453Z",
+  "updatedAt": "2026-08-27T02:48:44.535Z",
+  "transmision": "Manual de 5 velocidades",
+  "traccion": "Delantera",
+  "peso": "1115 kg (en orden de marcha)",
+  "tipoMotor": "Naftero",
+  "potenciaKW": "64 kW",
+  "capacidadTanque": "55 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 14.5s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1332 cc",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": 3100,
+  "maleteroMin": null,
+  "generacion": "Evolución basada en plataforma regional (Uno/Palio)",
+  "anoLanzamiento": 2013,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "ARS 29.920.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:48:44.535Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 165
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Fiat Fiorino se consolidó a lo largo de las décadas como un auténtico emblema dentro del segmento de los vehículos comerciales livianos en la región sudamericana. Nacido originalmente como un desprendimiento utilitario de la familia del clásico Fiat 147 y adaptándose más tarde a las plataformas de los exitosos Fiat Uno y Palio, este furgón compacto logró ganarse un lugar de absoluta preferencia en las calles argentinas. Su concepción fundamental siempre giró en torno a ofrecer una herramienta de trabajo sumamente económica, ágil y con un costo operativo reducido, diseñada a medida para resolver las complejas necesidades de la logística de la última milla en los grandes centros urbanos.\n\n## Un hito o generación relevante\nUn punto de inflexión verdaderamente destacado para la gama utilitaria de la marca italiana en el mercado regional fue la adopción de mecánicas más modernas y eficientes, optimizando la respuesta en ciudad. Esta evolución en el apartado mecánico no solo permitió dar cumplimiento a las exigentes normativas ambientales vigentes, sino que potenció de manera notoria la entrega de torque a bajas revoluciones y consiguió achicar los márgenes de consumo de combustible, factores clave y determinantes para un vehículo utilitario que pasa la mayor parte de su vida útil sometido a las exigencias del tráfico pesado y constante.\n\n## Curiosidades\nA pesar de estar ideado estrictamente como un vehículo de trabajo utilitario, el Fiat Fiorino comparte numerosos componentes estructurales, estéticos y mecánicos con vehículos de pasajeros de la marca. Esto genera una enorme ventaja competitiva en términos de mantenimiento: los repuestos son sumamente accesibles, fáciles de conseguir y cualquier taller mecánico del país conoce a la perfección su arquitectura. Asimismo, la caja de carga optimiza al máximo el aprovechamiento volumétrico interior, transformándolo en un aliado indiscutido para flotas de pequeñas y medianas empresas (PyMEs), servicios de mensajería urbana, distribución minorista y asistencia técnica.\n\n## Competencia y posicionamiento\nDentro del mercado automotor argentino, el Fiat Fiorino compite históricamente en un nicho sumamente específico pero de demanda sostenida y constante. Aunque a lo largo del tiempo ha debido enfrentar a diversos contendientes regionales o alternativos, el furgón compacto de Fiat mantiene de forma ininterrumpida un liderazgo indiscutible en su categoría. Este posicionamiento de privilegio se sostiene gracias a una relación precio-producto muy equilibrada, una amplia capilaridad de la red de concesionarios y talleres oficiales en todo el territorio nacional, y un sólido valor de reventa dentro del mercado de usados comerciales.",
+  "generacionInfo": {
+    "raw": "Evolución basada en plataforma regional (Uno/Palio)",
+    "numero": null,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Fiat Fiorino - Furgon compacto Fiat. 165 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

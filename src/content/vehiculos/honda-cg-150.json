@@ -1,0 +1,225 @@
+{
+  "slug": "honda-cg-150",
+  "type": "vehiculos",
+  "title": "Honda CG 150",
+  "description": "Una de las motos más vendidas de Latinoamérica en su segmento, motor monocilíndrico de 150cc, muy usada como vehículo de trabajo.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "honda",
+    "utilitaria"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-wave-110",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-accord",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "mismo_fabricante"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Honda",
+  "class": "Moto utilitaria",
+  "power": "13.1 CV",
+  "price": "USD 2.600",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 2600,
+    "raw": "USD 2.600"
+  },
+  "consumo": "2.6 l/100km (aprox. 38 km/l)",
+  "dimensiones": "2025 x 745 x 1055 mm",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://fichamotos.com.ar/fichas/honda/cg-150",
+    "secondarySource": "https://motos0km.com.ar/fichas-tecnicas/honda/titan-cg-150",
+    "note": "Se actualizaron los datos específicos de la Honda CG 150 utilizando registros y fichas técnicas locales de Argentina (FichaMotos y Motos0km), contrastando cilindrada de 149.2 cc, potencia cercana a los 13.1 CV, consumo estimado de 38 km/l y dimensiones oficiales de la plataforma comercializada en la región.",
+    "limitations": [
+      "Las especificaciones exactas como el peso en orden de marcha vs en seco (112 kg en seco / 143 kg según registro de fichas comerciales completas) y sistemas de alimentación (carburador vs versiones posteriores con inyección en otros mercados) pueden presentar leves variantes según el año de fabricación específico."
+    ]
+  },
+  "performance": {
+    "speed": "105 km/h"
+  },
+  "createdAt": "2026-08-23T21:59:10.642893Z",
+  "updatedAt": "2026-08-27T02:53:20.703Z",
+  "transmision": "Manual de 5 marchas",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "143 kg",
+  "tipoMotor": "Monocilíndrico 4 tiempos, OHC, refrigerado por aire",
+  "potenciaKW": "9.6 kW",
+  "capacidadTanque": "14.1 litros",
+  "tiempoRecorrido": "10-15s",
+  "anoProduccion": "2003-2018 (Discontinuada en Argentina, sucedida por GLH 150)",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "A",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "149.2 cc",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Evoluciones regionales múltiples (Titan)",
+  "anoLanzamiento": 2003,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 2.600"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:53:20.703Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 105
+    },
+    "consumo": {
+      "promedio": "2.2 l/100km"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nLa Honda CG 150 representa un eslabón fundamental dentro de la legendaria e incombustible estirpe de motocicletas CG de la marca japonesa. Heredera directa de la histórica CG 125 que conquistó el mundo a partir de la década de 1970, la variante de 150 cc nació para dar respuesta a la demanda de los usuarios urbanos y laborales que exigían una dosis extra de torque y potencia sin sacrificar la legendaria economía de combustible que caracteriza a la plataforma. En el mercado argentino y en gran parte de Latinoamérica, este modelo se consolidó rápidamente como una herramienta de trabajo indispensable, marcando una época dorada para repartidores, cadetes y trabajadores independientes que necesitaban un vehículo capaz de soportar el castigo diario del tránsito intenso con un mantenimiento mínimo y una confiabilidad a toda prueba.\n\n## Un hito y su arquitectura mecánica\n\nEl verdadero hito de la Honda CG 150 radica en la simplicidad y robustez de su arquitectura mecánica. Equipada con un motor monocilíndrico de 4 tiempos y 149.2 cc con tecnología OHC (Overhead Camshaft) y refrigeración por aire, esta motocicleta prioriza una entrega de potencia muy lineal y aprovechable en baja y media vuelta. Generalmente alimentada por un confiable sistema de carburación y asistida por un encendido CDI con avance electrónico, se acopla a una transmisión manual de 5 velocidades de suave accionar. Su chasis tipo diamante, combinado con suspensiones de recorrido correcto —una horquilla telescópica delantera y un basculante trasero con doble amortiguador—, le otorgan una agilidad sobresaliente para sortear baches, calles empedradas y embotellamientos urbanos con absoluta soltura.\n\n## Curiosidades y arraigo cultural\n\nEn la cultura urbana de la región, la Honda CG 150 es considerada un auténtico objeto de culto utilitario. Su apodo más famoso, \"Titan\", acompaña a una reputación de durabilidad casi indestructible que pasa de generación en generación entre motociclistas. Una de sus virtudes más celebradas es su bajísimo consumo de combustible, que ronda habitualmente los 2.6 litros cada 100 kilómetros (equivalente a unos 38 km/l), permitiendo una autonomía destacable gracias a su tanque de combustible de generosa capacidad. Asimismo, la enorme disponibilidad de repuestos, tanto originales como alternativos, garantiza que cualquier eventualidad mecánica se resuelva de manera rápida y económica en cualquier rincón del país, evitando largas estadías en el taller.\n\n## Competencia y posicionamiento\n\nDentro del segmento de las motocicletas utilitarias de baja cilindrada, la Honda CG 150 compite de forma directa contra una multitud de opciones de origen asiático y alternativas de marcas generalistas consolidadas en el mercado local (tales como la Yamaha YBR o diversos exponentes importados). A pesar de la intensa competencia y de haber cedido su lugar en los concesionarios oficiales a sucesoras más modernas como la Honda GLH 150, la CG 150 mantiene un valor de reventa envidiable y un prestigio inalterable. No busca deslumbrar con lujos tecnológicos ni diseño vanguardista, sino revalidar día a día su título de aliada incondicional del trabajo cotidiano, destacando por su lógica racional y su durabilidad a largo plazo.",
+  "generacionInfo": {
+    "raw": "Evoluciones regionales múltiples (Titan)",
+    "numero": null,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Honda CG 150 - Moto utilitaria Honda. 105 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

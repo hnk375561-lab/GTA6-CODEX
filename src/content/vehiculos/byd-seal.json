@@ -1,0 +1,239 @@
+{
+  "slug": "byd-seal",
+  "type": "vehiculos",
+  "title": "BYD Seal",
+  "description": "Sedán eléctrico de BYD sobre la plataforma e-Platform 3.0.",
+  "status": "confirmado",
+  "tags": [
+    "sedan",
+    "electrico",
+    "byd"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-han",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-atto-3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin-mini",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nio-et5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-s",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "xiaomi-su7",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:33.593Z",
+  "updatedAt": "2026-08-27T02:45:10.387Z",
+  "manufacturer": "BYD",
+  "class": "Sedán eléctrico",
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 5.9s"
+  },
+  "power": "313 CV / 230 kW (versión Design RWD) hasta 530 hp / 390 kW (versión Excellence AWD)",
+  "price": "Desde aprox. USD 43.990 o EUR 40.775 (precio de referencia global / mercado europeo)",
+  "priceStructured": {
+    "type": "starting",
+    "currency": "USD",
+    "amount": 43990,
+    "raw": "Desde aprox. USD 43.990 o EUR 40.775 (precio de referencia global / mercado europeo)"
+  },
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.byd.com/es-es/coches-electricos/seal",
+    "secondarySource": "https://www.byd.com/mx/car/seal",
+    "note": "Se verificaron las especificaciones técnicas oficiales de BYD para el modelo Seal, incluyendo potencias de 230 kW, consumos según ciclo WLTP, dimensiones con una longitud de 4800 mm, y la tecnología de integración Cell-to-Body (CTB).",
+    "limitations": [
+      "Los precios y la disponibilidad exacta varían sustancialmente según los aranceles de importación, impuestos locales y subsidios vigentes en cada país de Latinoamérica y Europa.",
+      "La autonomía precisa depende de la versión elegida (Comfort, Design o Excellence) y de las condiciones de conducción del ciclo de homologación."
+    ]
+  },
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción trasera (RWD) o Integral (AWD)",
+  "peso": "2185 kg",
+  "tipoMotor": "Motor eléctrico sincrónico de imanes permanentes (simple o dual)",
+  "potenciaKW": "230 kW (RWD) a 390 kW (AWD)",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "3.8s (versión AWD Excellence) / 5.9s (versión RWD)",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "15.4 - 18.2 kWh / 100 km (ciclo WLTP)",
+  "dimensiones": "4800 x 1875 x 1460 mm",
+  "cilindrada": null,
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 400,
+  "maleteroMin": null,
+  "generacion": "1era generación",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 45.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T02:45:10.387Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 180
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl BYD Seal fue presentado oficialmente a principios de 2023 como un pilar fundamental dentro de la estrategia de expansión global del gigante tecnológico y automotriz BYD. Este sedán mediano-grande se posiciona como el segundo exponente de la serie 'Ocean' de la marca, inspirándose abiertamente en el lenguaje de diseño estético de los vehículos marinos y tomando como base conceptual al prototipo BYD Ocean-X. Su irrupción en el mercado internacional marcó un punto de inflexión para la compañía, consolidando su transición definitiva hacia una gama completamente electrificada de alta gama.\n\n## Plataforma e-Platform 3.0 y tecnología Cell-to-Body\nUn hito tecnológico trascendental en la arquitectura del BYD Seal es la adopción de la avanzada e-Platform 3.0, desarrollada exclusivamente para vehículos eléctricos de batería (BEV). Una de las innovaciones más notables de este modelo es la implementación de la tecnología de construcción 'Cell-to-Body' (CTB). Mediante este sistema, la batería Blade de tipo LFP (fosfato de hierro y litio) se integra de manera estructural a la carrocería del automóvil, creando una sólida estructura tipo sándwich que forma parte del piso del habitáculo. Gracias a esta ingeniería, el Seal alcanza una rigidez torsional superior a los 40.500 Nm/°, un valor equiparable al de vehículos de lujo, lo que optimiza el aprovechamiento del espacio interior, baja notablemente el centro de gravedad y mejora de forma drástica tanto la seguridad pasiva como la dinámica de conducción en curvas exigentes.\n\n## Curiosidades y diseño aerodinámico\nCon una silueta tipo fastback de líneas sumamente fluidas y expresivas, el BYD Seal ostenta una longitud de 4800 mm y una distancia entre ejes de 2920 mm, logrando una relación eje-longitud del 61% que dibuja proporciones armónicas y un perfil aerodinámico sumamente eficiente. En el habitáculo, la experiencia digital gira en torno a una pantalla táctil multimedia giratoria de 15.6 pulgadas, un sello característico de la marca que permite alternar con soltura entre la visualización horizontal y vertical según las preferencias del conductor. Además, se complementa con detalles de confort prémium como asientos de cuero vegano calefactados de serie y un sistema de audio firmado por especialistas.\n\n## Competencia y posicionamiento en el mercado\nEn el plano comercial, el BYD Seal fue concebido con un objetivo ambicioso: disputarle terreno directamente al Tesla Model 3, así como a berlinas eléctricas prémium de marcas tradicionales europeas como el BMW i4. Gracias a su combinación de tracción trasera o integral, una aceleración de 0 a 100 km/h que puede descender hasta los 3.8 segundos en su variante más potente y una completa dotación de asistencias avanzadas a la conducción, el Seal se ha consolidado como una alternativa sumamente competitiva y disruptiva en los mercados de Asia, Europa y América Latina.",
+  "generacionInfo": {
+    "raw": "1era generación",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "BYD Seal - Sedán eléctrico BYD. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

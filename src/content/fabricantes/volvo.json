@@ -1,0 +1,46 @@
+{
+  "slug": "volvo",
+  "type": "fabricantes",
+  "title": "Volvo",
+  "description": "Vehículos y motocicletas de Volvo",
+  "content": "## Identidad de marca\nVolvo se consolidó globalmente como una de las marcas de alta gama más respetadas de la industria automotriz. Con base en Gotemburgo, la compañía construyó su reputación posicionándose como un referente indiscutido en materia de seguridad vial e innovación tecnológica, logrando comercializar sus vehículos en más de un centenar de países.\n\n## Historia real y evolución\nLos orígenes de la firma se remontan a 1927, cuando el ingeniero Gustav Larson y el economista Assar Gabrielsson le dieron vida a la compañía en calidad de subsidiaria del conocido fabricante de rodamientos SKF. El hito inaugural ocurrió en la mañana del 14 de abril de ese mismo año, momento en el cual el primer automóvil de serie salió formalmente de la planta de producción ubicada en la costa oeste sueca. A lo largo de las décadas siguientes, la empresa evolucionó de manera constante hasta convertirse en un estandarte de la industria escandinava, logrando trascender sus fronteras originales.\n\n## Posicionamiento actual\nEn la actualidad, la marca forma parte del conglomerado empresarial chino Geely, una transición que le permitió asegurar músculo financiero y potenciar su desarrollo tecnológico en el mercado global de vehículos de alta gama. Sin perder el foco en su herencia histórica vinculada a la protección de los ocupantes, Volvo transita un proceso de adaptación a las nuevas demandas de movilidad sustentable, manteniendo un perfil competitivo y sofisticado dentro del segmento prémium internacional.",
+  "status": "confirmado",
+  "officialName": "Volvo",
+  "country": "Suecia",
+  "foundedYear": 1927,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:49:14.134Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volvo-s60",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volvo-xc60",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volvo-xc90",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Volvo_Cars",
+    "note": "Se verificó la fundación en 1927 por Gustav Larson y Assar Gabrielsson como subsidiaria de SKF, su sede en Gotemburgo y su pertenencia actual al grupo Geely mediante fuentes enciclopédicas y oficiales.",
+    "limitations": [
+      "No se detallan en las fuentes todos los cambios societarios intermedios previos a la adquisición por Geely."
+    ]
+  }
+}

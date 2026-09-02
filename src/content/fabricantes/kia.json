@@ -1,0 +1,66 @@
+{
+  "slug": "kia",
+  "type": "fabricantes",
+  "title": "Kia",
+  "description": "Vehículos y motocicletas de Kia",
+  "content": "## Identidad de marca\nKia Corporation se consolida como una de las marcas de movilidad más relevantes a escala global. Con su sede central ubicada en Seúl, destaca como el fabricante automotriz más antiguo de su país de origen y ocupa el segundo lugar en volumen dentro del mercado surcoreano, operando bajo el ala estratégica del conglomerado Hyundai Motor Company [<a href=\"https://es.wikipedia.org/wiki/Kia_Motors\">1</a>].\n\n## Historia real y evolución\\Los orígenes de la compañía se remontan al 11 de diciembre de 1944 [<a href=\"https://es.wikipedia.org/wiki/Kia_Motors\">2</a>]. En sus etapas iniciales, la empresa comenzó sus actividades vinculada a la producción de tuberías de acero y al ensamblaje de motocicletas [<a href=\"https://es.wikipedia.org/wiki/Kia_Motors\">2</a>]. Tras adoptar la denominación de Kyungsung Precision Industry en la década de 1950 y modificar posteriormente su nombre a Kia en 1957 [<a href=\"https://es.wikipedia.org/wiki/Kia_Motors\">2</a>, <a href=\"https://blog.beforward.jp/es/history-es/la-historia-de-kia-y-el-significado-del-logotipo.html\">4</a>], la compañía dio el salto hacia la construcción de camiones y vehículos de pasajeros durante las décadas siguientes [<a href=\"https://es.wikipedia.org/wiki/Kia_Motors\">2</a>]. Un hito clave en su expansión industrial ocurrió en los años 70 con el lanzamiento del Brisa, un sedán compacto destinado tanto al mercado doméstico como a la exportación [<a href=\"https://clixauto.com/es/blogs/history/a-brief-history-of-kia\">3</a>].\n\n## Posicionamiento actual\nEn la actualidad, Kia mantiene una sólida presencia internacional respaldada por cifras de producción masiva que superan los dos millones y medio de unidades anuales [<a href=\"https://es.wikipedia.org/wiki/Kia_Motors\">1</a>]. Si bien Hyundai posee una participación accionaria minoritaria significativa en la corporación, Kia conserva una estructura independiente dentro del grupo, participando a su vez en diversas subsidiarias y posicionándose competitivamente en los mercados globales gracias a su constante evolución tecnológica y de diseño [<a href=\"https://es.wikipedia.org/wiki/Kia_Motors\">1</a>, <a href=\"https://www.kia.com/es/todo-sobre-kia/empresa/historia\">5</a>].",
+  "status": "confirmado",
+  "officialName": "Kia",
+  "country": "Corea del Sur",
+  "foundedYear": 1944,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:46:27.053Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-ev6",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-picanto",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-rio",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-seltos",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-sorento",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "kia-sportage",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Kia_Motors",
+    "secondarySource": "https://www.kia.com/es/todo-sobre-kia/empresa/historia",
+    "note": "Se verificó la fundación de Kia en 1944, su evolución desde la fabricación de tuberías de acero y motocicletas hasta los automóviles, y su vínculo corporativo actual con Hyundai Motor Company a partir de fuentes documentales y corporativas.",
+    "limitations": [
+      "Faltan detalles específicos y exhaustivos sobre la totalidad de las subsidiarias menores en el texto provisto.",
+      "La cronología exacta de cada modelo posterior a los años 70 no se profundiza detalladamente en los extractos."
+    ]
+  }
+}

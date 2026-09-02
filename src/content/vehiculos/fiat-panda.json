@@ -1,0 +1,232 @@
+{
+  "slug": "fiat-panda",
+  "type": "vehiculos",
+  "title": "Fiat Panda",
+  "description": "Auto urbano de entrada de Fiat, uno de los más vendidos de Europa históricamente.",
+  "status": "confirmado",
+  "tags": [
+    "hatchback",
+    "fiat"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-500",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-argo",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-cronos",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "perodua-myvi",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Fiat",
+  "class": "Hatchback urbano",
+  "power": "70 hp (51 kW)",
+  "price": "EUR 15.500 (precio de referencia en Europa para la versión actual)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "EUR",
+    "amount": 15500,
+    "raw": "EUR 15.500 (precio de referencia en Europa para la versión actual)"
+  },
+  "consumo": "aprox. 5.0 l/100km combinado (WLTP)",
+  "dimensiones": "3.686 mm largo x 1.643 mm ancho x 1.551 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.carwow.es/fiat/panda/caracteristicas-tecnicas",
+    "secondarySource": "https://es.wikipedia.org/wiki/Fiat_Panda",
+    "note": "Se verificaron las dimensiones, capacidad de maletero, plazas y datos de prestaciones como aceleración y transmisión utilizando fichas técnicas oficiales y portales especializados en el mercado europeo.",
+    "limitations": [
+      "El precio es de referencia para el mercado europeo y puede variar según el país de patentamiento y los impuestos locales.",
+      "Los valores de consumo y aceleración corresponden a homologaciones oficiales WLTP que pueden diferir del uso real en ciudad."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T02:48:57.214Z",
+  "transmision": "Manual de 6 velocidades",
+  "traccion": "Tracción delantera",
+  "peso": "980 kg",
+  "tipoMotor": "Mild Hybrid (Gasolina)",
+  "potenciaKW": "51 kW",
+  "capacidadTanque": "35 litros",
+  "tiempoRecorrido": "13.9 segundos",
+  "anoProduccion": "2011-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "999 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 225,
+  "maleteroMin": null,
+  "generacion": "Tercera generación (actualización Pandina)",
+  "anoLanzamiento": 2011,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "EUR 15.500"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:48:57.214Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Fiat Panda es, sin lugar a dudas, uno de los automóviles urbanos más emblemáticos y exitosos de la industria automotriz europea. Desde su concepción original firmada por el prestigioso diseñador Giorgetto Giugiaro a principios de los años 80, este hatchback compacto supo ganarse el favor del público gracias a su enfoque minimalista, su robustez mecánica y un aprovechamiento magistral del espacio interior. A lo largo de las décadas, el Panda logró reinventarse por completo sin traicionar jamás su premisa fundacional: ofrecer una movilidad accesible, económica y sumamente funcional para el día a día en las grandes urbes, consolidándose como un auténtico pilar histórico dentro del segmento A en Europa.\n\n## Un hito o generación relevante\nLa tercera generación del modelo, introducida comercialmente en 2011 y sometida a constantes actualizaciones tecnológicas, marcó un punto de inflexión en cuanto a su longevidad y vigencia en el mercado. Recientemente, Fiat rebautizó oficialmente a esta línea clásica bajo la denominación 'Pandina' —una estrategia clave para diferenciarlo del nuevo y más grande Grande Panda de proyección global—. Esta puesta al día incorporó importantes mejoras en materia de seguridad activa, asistencias a la conducción (ADAS) y conectividad, permitiéndole cumplir con creces las estrictas normativas europeas actuales y mantenerse al pie del cañón frente a rivales de concepción mucho más moderna.\n\n## Curiosidades\nUno de los capítulos más célebres y recordados en la trayectoria del Fiat Panda es su inolvidable variante con tracción integral (4x4), lanzada originalmente en su primera generación y replicada en las subsiguientes. Este pequeño utilitario demostró en innumerables ocasiones ser capaz de poner en aprietos a vehículos todoterreno de gran porte y costos infinitamente superiores. Su secreto radicaba en una combinación letal: un peso pluma, voladizos mínimos y una agilidad fuera de serie sobre superficies tan complejas como el barro, la arena o la nieve profunda, convirtiéndolo en el vehículo favorito de los habitantes de regiones montañosas.\n\n## Competencia y posicionamiento\nDentro del mercado europeo, el Fiat Panda milita en el competitivo segmento de los hatchbacks urbanos, midiéndose cara a cara contra exponentes de peso pesado como el Toyota Aygo X, el Hyundai i10 y el Kia Picanto. Su principal ventaja competitiva frente a ellos radica en una dilatada trayectoria comercial que genera suma confianza, una relación precio-producto altamente competitiva y una arquitectura mecánica simplificada. Esto último se traduce en costos de mantenimiento sumamente bajos y una excelente eficiencia de combustible, especialmente en las versiones equipadas con tecnología híbrida ligera (Mild Hybrid), ideales para sortear la congestión del tráfico diario en las grandes ciudades europeas.",
+  "generacionInfo": {
+    "raw": "Tercera generación (actualización Pandina)",
+    "numero": 3,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Fiat Panda - Hatchback urbano Fiat. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

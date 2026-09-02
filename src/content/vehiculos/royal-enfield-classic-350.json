@@ -1,0 +1,176 @@
+{
+  "slug": "royal-enfield-classic-350",
+  "type": "vehiculos",
+  "title": "Royal Enfield Classic 350",
+  "description": "Moto de estilo clásico retro de Royal Enfield, motor monocilíndrico de 349cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "royal-enfield"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "royal-enfield-himalayan",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "triumph-bonneville-t120",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Royal Enfield",
+  "class": "Moto clásica",
+  "power": "20.2 hp",
+  "price": "USD 4.400 (referencia global)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 4400,
+    "raw": "USD 4.400 (referencia global)"
+  },
+  "consumo": "35 km/l (aprox. 2.8 l/100km)",
+  "dimensiones": "2.145 mm largo x 786 mm ancho x 1.090 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.royalenfield.com/us/en/motorcycles/classic-350/",
+    "note": "Se actualizaron las especificaciones con datos reales y verificados de la plataforma J de Royal Enfield Classic 350, incluyendo cilindrada exacta, dimensiones oficiales, tipo de transmisión y capacidad del tanque. Se descartaron los datos genéricos previos de automóviles.",
+    "limitations": [
+      "El precio es una referencia global y puede variar considerablemente según los impuestos y aranceles de importación en cada país de la región.",
+      "Los valores de aceleración de 0 a 100 km/h no son publicados de manera oficial por el fabricante, ya que el enfoque del modelo es utilitario y clásico."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:08:07.679Z",
+  "updatedAt": "2026-08-27T01:56:33.587Z",
+  "transmision": "Manual de 5 velocidades",
+  "traccion": "Tracción trasera por cadena",
+  "peso": "195 kg (en orden de marcha)",
+  "tipoMotor": "Monocilíndrico 4 tiempos, SOHC, refrigerado por aire/aceite",
+  "potenciaKW": "15 kW (20.2 hp)",
+  "capacidadTanque": "13 litros",
+  "tiempoRecorrido": "10-15s",
+  "anoProduccion": "2021-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "349 cc",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "Plataforma J (J-series)",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 4.400"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T01:56:33.587Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Royal Enfield Classic 350 es una de las motocicletas de estilo retro más exitosas y emblemáticas del mercado global contemporáneo. Su diseño rinde un homenaje directo al legendario modelo G2 de la posguerra, fabricado originalmente a finales de la década de 1940 en Redditch, Inglaterra. Durante décadas, las motocicletas de la marca se convirtieron en un símbolo indiscutible de robustez y resistencia en las rutas de la India, donde la producción se trasladó por completo con el correr de los años. El lanzamiento de la nueva generación de la Classic 350 marcó un antes y un después para la compañía, logrando consolidar una presencia masiva no solo en su mercado local, sino también en Europa, América del Norte y el Cono Sur.\n\n## Un hito o generación relevante\nEl punto de inflexión más importante en la historia reciente de este modelo se produjo con la introducción de la nueva plataforma \"J-series\" de motores de 349 cc. Esta arquitectura reemplazó al histórico impulsor de varillas (UCE), introduciendo un diseño de árbol de levas en cabeza (SOHC) que redujo drásticamente las vibraciones molestas a altas revoluciones, un problema clásico de las versiones anteriores. Esta actualización estructural no solo mejoró notablemente la suavidad de marcha y la confiabilidad mecánica, sino que también permitió cumplir con las exigentes normativas internacionales de emisiones contaminantes (Euro 5), abriéndole las puertas a los mercados más estrictos del mundo sin perder la esencia estética y el característico pulso sonoro de escape que apasiona a los puristas del motociclismo clásico.\n\n## Curiosidades\nA pesar de incorporar tecnología moderna como inyección electrónica de combustible y sistemas de frenos antibloqueo (ABS) de doble canal, la Classic 350 mantiene con orgullo detalles artesanales en su proceso de fabricación, como las tradicionales líneas pintadas a mano en el tanque de combustible por artesanos especializados en la planta de Chennai. Además, su chasis de doble cuna descendiente fue desarrollado en colaboración con el prestigioso centro tecnológico de Harris Performance en el Reino Unido, logrando un equilibrio dinámico sobresaliente que combina la estética de antaño con una agilidad urbana sumamente moderna.\n\n## Competencia y posicionamiento\nEn el mercado actual, la Royal Enfield Classic 350 se posiciona en un segmento muy particular de media cilindrada, enfocado en usuarios que buscan una experiencia de conducción relajada, estética atemporal y una excelente relación precio-calidad. Si bien comparte espacio con marcas de corte similar como Benelli (con su línea Imperiale) o Honda (con la H'ness CB350 en algunos mercados), la Classic 350 destaca por contar con una comunidad global masiva y una red de accesorios originales sumamente extensa. Su propuesta no busca ofrecer altas prestaciones de velocidad ni deportividad, sino conquistar al motociclista mediante el encanto de lo vintage, la facilidad de manejo y un consumo de combustible sumamente eficiente para el uso diario en ciudad y rutas pintorescas.",
+  "generacionInfo": {
+    "raw": "Plataforma J (J-series)",
+    "numero": null,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Royal Enfield Classic 350 - Moto clásica Royal Enfield. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

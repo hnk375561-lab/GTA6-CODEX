@@ -1,0 +1,248 @@
+{
+  "slug": "chevrolet-corvette",
+  "type": "vehiculos",
+  "title": "Chevrolet Corvette",
+  "description": "Deportivo icónico americano, primera generación de motor central (C8).",
+  "status": "confirmado",
+  "tags": [
+    "deportivo",
+    "chevrolet"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-camaro",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-bolt-ev",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-equinox",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-m4",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ferrari-296-gtb",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-mustang",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jaguar-f-type",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Chevrolet",
+  "class": "Deportivo",
+  "power": "495 hp",
+  "price": "USD 68.300 (MSRP EE.UU.)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 68300,
+    "raw": "USD 68.300 (MSRP EE.UU.)"
+  },
+  "consumo": "11.7 l/100km en ciudad / 8.4 l/100km en ruta",
+  "dimensiones": "4.630 mm largo x 1.933 mm ancho x 1.234 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.chevrolet.com/performance/corvette/stingray",
+    "note": "Se verificaron los datos principales del Chevrolet Corvette C8 Stingray contra fuentes de la industria y la especificación de fábrica para el motor V8 LT2 de 6.2L.",
+    "limitations": [
+      "Los precios varían según el mercado de exportación, impuestos locales y opciones de equipamiento seleccionadas",
+      "El consumo de combustible puede diferir según las condiciones de manejo y el tipo de combustible utilizado"
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:35:28.679Z",
+  "transmision": "Automática de doble embrague de 8 velocidades",
+  "traccion": "Tracción trasera",
+  "peso": "1.527 kg",
+  "tipoMotor": "Gasolina V8 atmosférico",
+  "potenciaKW": "369 kW",
+  "capacidadTanque": "70 litros",
+  "tiempoRecorrido": "0-100 km/h en 2.9s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "6.2 litros",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": 357,
+  "maleteroMin": null,
+  "generacion": "C8",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 68.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:35:28.679Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\n\nEl Chevrolet Corvette representa uno de los linajes más respetados y longevos dentro de la industria automotriz norteamericana. Desde su aparición en la década de 1950, este deportivo se consolidó como el estandarte de la accesibilidad prestacional en Estados Unidos, ofreciendo una alternativa directa y económica a las grandes berlinas y coupés europeas de alta gama. A lo largo de siete generaciones, el Corvette mantuvo una arquitectura clásica inquebrantable: motor delantero longitudinal y tracción trasera. Sin embargo, los ingenieros de General Motors llegaron a un punto donde el chasis tradicional limitaba la capacidad de tracción y transferencia de potencia al suelo frente a superdeportivos con configuraciones de motor central.\n\n## Un hito o generación relevante: La revolución del C8\n\nLa octava generación, conocida como C8 y lanzada comercialmente en 2020, marcó un antes y un después absoluto en la historia del modelo al adoptar una arquitectura de motor central trasero. Este cambio radical de paradigma no fue meramente estético; transformó por completo la dinámica vehicular, mejorando la distribución de pesos, la agilidad en curvas cerradas y la tracción al acelerar desde parado. Dotado del bloque V8 atmosférico LT2 de 6.2 litros, capaz de erogar 495 caballos de fuerza, el C8 rompió con los prejuicios tradicionales de los puristas y colocó al Corvette en la misma conversación que vehículos de marcas europeas de la talla de Ferrari, Lamborghini o Porsche, pero manteniendo una relación precio-producto sumamente competitiva.\n\n## Curiosidades\n\nUna de las particularidades más interesantes del desarrollo del Corvette C8 fue la necesidad imperiosa de rediseñar el espacio interior y la disposición térmica. Al ubicar el motor a espaldas de los ocupantes, los ingenieros debieron lidiar con la gestión del calor generado por el V8 justo detrás del habitáculo, implementando conductos de aire laterales sumamente agresivos que se convirtieron en la seña de identidad visual del modelo. Además, el diseño del panel de instrumentos y la botonera central orientada exclusivamente hacia el conductor emula la cabina de un avión de combate, reforzando la sensación de deportividad extrema. Pese a su configuración radical, el C8 conservó la capacidad de almacenar un techo targa desmontable dentro del baúl trasero, combinando la experiencia de un coupé con la libertad de un convertible.\n\n## Competencia y posicionamiento\n\nEn el mercado global, el Chevrolet Corvette C8 compite de manera directa contra pesos pesados del segmento de deportivos de altas prestaciones con motor central, tales como el Porsche 718 Cayman GT4, el Audi R8 (en sus etapas finales de producción) y modelos de acceso de marcas como McLaren o Lotus. Su posicionamiento comercial se destaca por ofrecer prestaciones dinámicas y tiempos de aceleración de 0 a 100 km/h cercanos a los 2.9 segundos por una fracción del costo de sus rivales directos. Esta estrategia le ha permitido a Chevrolet captar no sólo a los seguidores históricos de la marca en Norteamérica, sino también conquistar mercados internacionales tradicionalmente reacios a los deportivos estadounidenses, consolidando al Corvette como un producto global de primer nivel.",
+  "generacionInfo": {
+    "raw": "C8",
+    "numero": null,
+    "codigoChasis": "C8",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Chevrolet Corvette - Deportivo Chevrolet. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

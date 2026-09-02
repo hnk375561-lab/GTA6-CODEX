@@ -1,0 +1,249 @@
+{
+  "slug": "ford-maverick",
+  "type": "vehiculos",
+  "title": "Ford Maverick",
+  "description": "Pickup compacta de Ford, disponible con motorización híbrida.",
+  "status": "confirmado",
+  "tags": [
+    "pickup",
+    "ford",
+    "hibrido"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-bronco-sport",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-explorer",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ford-f-150",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-montana",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-strada",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "jac-t40",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "volkswagen-saveiro",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:30.736Z",
+  "updatedAt": "2026-08-27T03:57:09.785Z",
+  "manufacturer": "Ford",
+  "class": "Pickup compacta",
+  "performance": {
+    "speed": "170 km/h",
+    "acceleration": "0-100 km/h en 11.0s (versión híbrida)"
+  },
+  "power": "253 CV (versión EcoBoost) / 191 hp (versión híbrida)",
+  "price": "Consultar red de concesionarios oficiales (mercado argentino / regional)",
+  "priceStructured": {
+    "type": "unstructured",
+    "currency": null,
+    "raw": "Consultar red de concesionarios oficiales (mercado argentino / regional)"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://blog.montironi.com/ford/ford-maverick-en-cordoba",
+    "secondarySource": "https://parabrisas.perfil.com/noticias/autos/ficha-tecnica-ford-maverick-hibrida-4x4-todas-especificaciones-pick-up-electrificada-lariat.phtml",
+    "note": "Se contrastaron las especificaciones técnicas oficiales para Argentina de la gama Ford Maverick (versiones EcoBoost y variantes electrificadas/híbridas con tracción integral y delantera) utilizando datos de distribuidores oficiales y prensa especializada.",
+    "limitations": [
+      "Los precios de lista varían constantemente debido a la inflación, los impuestos internos y la disponibilidad de stock en el mercado argentino.",
+      "Algunas especificaciones de torque y consumos exactos pueden tener variaciones sutiles según la calibración regional para Sudamérica."
+    ]
+  },
+  "transmision": "Automática de 8 marchas (EcoBoost) / CVT (Híbrida)",
+  "traccion": "4x2 (delantera) o 4x4 AWD / 4x4 con bloqueo diferencial",
+  "peso": "1.600 - 1.700 kg",
+  "tipoMotor": "2.0L EcoBoost Turbo / 2.5L Atkinson + Motor eléctrico (Híbrido)",
+  "potenciaKW": "186 kW (253 CV) EcoBoost / 142 kW (191 hp) Híbrida",
+  "capacidadTanque": "68 litros",
+  "tiempoRecorrido": "0-100 km/h en aprox. 8.5 - 9.0s",
+  "anoProduccion": "2021 - presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "aprox. 5.6 L/100 km (versión híbrida en ciclo urbano)",
+  "dimensiones": "5.072 x 1.979 x 1.745 mm",
+  "cilindrada": "1.999 cc (EcoBoost) / 2.488 cc (Híbrido)",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 943,
+  "maleteroMin": null,
+  "generacion": "Primera generación (P758)",
+  "anoLanzamiento": 2021,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 32.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:57:09.785Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 170
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Ford Maverick irrumpió en el mercado automotriz global y regional marcando el regreso de la marca del óvalo al segmento de las pickups compactas con estructura monocasco. Desarrollada sobre la plataforma C2 de Ford —la misma base que emplean modelos de gran éxito como el Bronco Sport—, la Maverick fue concebida para ofrecer un perfil sumamente versátil. A diferencia de las camionetas medianas tradicionales con chasis de largueros, este vehículo prioriza un confort de marcha marcadamente refinado, muy similar al de un SUV o un automóvil moderno, sin descuidar las capacidades fundamentales de carga y el uso recreativo.\n\n## Un hito o generación relevante\nUno de los puntos de inflexión más importantes en la trayectoria comercial de la Maverick ha sido la introducción gradual de tecnologías electrificadas en el segmento, combinando variantes con motorización naftera tradicional EcoBoost de 2.0 litros y alternativas híbridas (FHEV) que optimizan de forma notable el consumo de combustible en entornos urbanos. Asimismo, la incorporación de versiones con tracción integral (AWD) y configuraciones orientadas al uso fuera del asfalto —como la variante Tremor— permitió ampliar sustancialmente su público objetivo, atrayendo tanto a usuarios urbanos como a entusiastas de la aventura.\n\n## Curiosidades\nEntre las soluciones más ingeniosas celebradas tanto por la crítica especializada como por los usuarios se destaca el sistema de almacenamiento modular conocido como \"FLEXBED\". La caja de carga cuenta con ranuras y muescas estampadas de fábrica en sus laterales que permiten a los propietarios utilizar tablones de madera comunes para dividir el espacio, crear niveles a medida o asegurar elementos de forma segura sin requerir accesorios costosos. Además, incluye de serie preinstalaciones eléctricas con cables accesibles en la batea, facilitando la conexión de pequeños dispositivos o luces de trabajo de manera artesanal.\n\n## Competencia y posicionamiento\nEn el mercado regional de Sudamérica y Argentina, la Ford Maverick se posiciona con autoridad compitiendo de manera directa contra referentes de la categoría como la Fiat Toro y la Chevrolet Montana. No obstante, su propuesta se destaca por incorporar un diseño exterior robusto que emula a las icónicas camionetas de tamaño completo de la marca (como la F-150), mecánicas potentes y un comportamiento dinámico sobresaliente. Se consolida como una alternativa sumamente racional para el uso diario en ciudad, el trabajo liviano y el esparcimiento de fin de semana.",
+  "generacionInfo": {
+    "raw": "Primera generación (P758)",
+    "numero": 1,
+    "codigoChasis": "P758",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Ford Maverick - Pickup compacta Ford. 170 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

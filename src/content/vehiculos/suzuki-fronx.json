@@ -1,0 +1,248 @@
+{
+  "slug": "suzuki-fronx",
+  "type": "vehiculos",
+  "title": "Suzuki Fronx",
+  "description": "SUV coupé compacta de Suzuki, motor 1.2L o turbo 1.0L Boosterjet.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "suzuki",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-baleno",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-gsx-r750",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "suzuki-jimny",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "changan-cs35-plus",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-tracker",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-pulse",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-hr-v",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:32.809Z",
+  "updatedAt": "2026-08-27T03:57:32.191Z",
+  "manufacturer": "Suzuki",
+  "class": "SUV compacto",
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.5s"
+  },
+  "power": "103 hp",
+  "price": "Desde $14.690.000 CLP (referencia mercado regional)",
+  "priceStructured": {
+    "type": "starting",
+    "currency": "CLP",
+    "amount": 14690000,
+    "raw": "Desde $14.690.000 CLP (referencia mercado regional)"
+  },
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.suzuki.cl/vehiculo/fronx",
+    "secondarySource": "https://www.suzukiuniversidad.com.mx/suzuki-fronx-boostergreen.html",
+    "note": "Se utilizaron fichas técnicas oficiales y portales regionales de Suzuki en Chile y México para verificar potencias, consumos con tecnología Mild Hybrid / Boostergreen, capacidades y dimensiones exactas.",
+    "limitations": [
+      "Las especificaciones de equipamiento y precios exactos varían según el mercado latinoamericano de destino.",
+      "Los valores de consumo de combustible dependen fuertemente de los hábitos de manejo y la topografía local."
+    ]
+  },
+  "transmision": "Manual de 5 velocidades o Automática de 6 velocidades",
+  "traccion": "Delantera (2WD)",
+  "peso": "965 - 1060 kg",
+  "tipoMotor": "Nafta 1.5L DOHC con tecnología Mild Hybrid (Boostergreen)",
+  "potenciaKW": "76 kW",
+  "capacidadTanque": "37 litros",
+  "tiempoRecorrido": "11.0s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "Mixto de 18,9 a 19,2 km/lt (aproximadamente 5.2 L/100 km según versión y homologación)",
+  "dimensiones": "3995 x 1765 x 1550 mm",
+  "cilindrada": "1462 cc",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 308,
+  "maleteroMin": null,
+  "generacion": "1ra generación",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 20.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T03:57:32.191Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 180
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl Suzuki Fronx irrumpió en el mercado automotriz global a principios de 2023, presentándose inicialmente en el Auto Expo de la India como una propuesta fresca y vanguardista dentro del segmento de los B-SUV. Tomando como base estructural la exitosa y probada plataforma del Suzuki Baleno, los ingenieros de la marca japonesa idearon una silueta con formato de SUV coupé que fusiona la versatilidad de un despeje del suelo elevado con líneas dinámicas y una pronunciada caída del techo en su sector posterior. Esta configuración le permitió a la compañía capturar la atención de un público joven y urbano que busca una estética moderna y aventurera sin renunciar a las ventajas de dimensiones acotadas para el uso diario en las grandes ciudades.\n\n## Un hito o generación relevante\nLa introducción de esta primera generación representó un hito estratégico para la expansión internacional de Suzuki, especialmente a través de su filial Maruti Suzuki en la India. Un factor clave en su consolidación comercial fue la incorporación progresiva de tecnologías de eficiencia energética, como el sistema de hibridación ligera (conocido en la región como Mild Hybrid o Boostergreen). Este esquema autorrecargable asiste al motor atmosférico de 1.5 litros, permitiéndole homologar consumos sumamente competitivos —superando los 19 km/lt en ciclo mixto según especificaciones de mercado— y cumpliendo de este modo con normativas ambientales cada vez más rigurosas en diversos mercados de exportación en América Latina y otros continentes.\n\n## Curiosidades\nA pesar de lucir una estampa robusta y contar con una longitud total que se mantiene por debajo de los 4 metros (precisamente 3.995 mm) para optimizar beneficios fiscales en determinados mercados de origen, el aprovechamiento interior del Fronx resulta destacable. Su habitáculo ofrece un espacio generoso para cinco ocupantes y una capacidad de baúl que ronda los 308 litros. Asimismo, en términos de diseño frontal, el modelo hereda parte del lenguaje visual de productos de mayor envergadura dentro de la marca, como el Suzuki Grand Vitara, destacándose por sus ópticas divididas y una parrilla de fuerte presencia tridimensional.\n\n## Competencia y posicionamiento\nEn el plano comercial de los crossovers compactos, el Suzuki Fronx se enfrenta a contrincantes de peso en el segmento B-SUV, tales como el Volkswagen Nivus, el Chevrolet Tracker y el Nissan Kicks. Su principal carta de presentación radica en una atractiva relación costo-beneficio, respaldada por la histórica reputación de confiabilidad mecánica de la firma japonesa. Al sumar tecnología híbrida ligera en sus versiones más equipadas, el modelo logra posicionarse como una alternativa inteligente y eficiente para quienes priorizan el ahorro de combustible sin resignar diseño y conectividad a bordo.",
+  "generacionInfo": {
+    "raw": "1ra generación",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Suzuki Fronx - SUV compacta Suzuki. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

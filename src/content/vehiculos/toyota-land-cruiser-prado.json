@@ -1,0 +1,189 @@
+{
+  "slug": "toyota-land-cruiser-prado",
+  "type": "vehiculos",
+  "title": "Toyota Land Cruiser Prado",
+  "description": "Versión Prado del Land Cruiser, 4x4 grande de uso mixto ciudad/off-road.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "toyota"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-alphard",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-camry",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "toyota-corolla-2024",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "isuzu-mu-x",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "Toyota",
+  "class": "SUV 4x4 grande",
+  "power": "204 hp",
+  "price": "USD 75.000 (referencia mercado global)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 75000,
+    "raw": "USD 75.000 (referencia mercado global)"
+  },
+  "consumo": "9.5 l/100km combinado",
+  "dimensiones": "4.925 mm largo x 1.980 mm ancho x 1.935 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.toyocosta.com/wp-content/uploads/2024/10/Toyota-Land-Cruiser-Prado-Ficha-Tecnica-1.pdf",
+    "note": "Se verificaron las especificaciones técnicas de la nueva generación Land Cruiser Prado (serie J250) lanzada globalmente, utilizando el motor 2.8 turbodiésel de 204 hp, capacidad del tanque de combustible y asistencias de seguridad Toyota Safety Sense respaldadas por fichas técnicas oficiales.",
+    "limitations": [
+      "El precio y el consumo exacto varían según el mercado regional y las especificaciones de homologación locales.",
+      "La capacidad del baúl varía según la configuración de los asientos traseros (5 o 7 plazas)."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T03:12:26.426Z",
+  "transmision": "Automática de 8 velocidades",
+  "traccion": "Tracción 4x4 permanente con reductora",
+  "peso": "2.430 kg",
+  "tipoMotor": "Turbodiésel (1GD-FTV)",
+  "potenciaKW": "150 kW",
+  "capacidadTanque": "87 litros",
+  "tiempoRecorrido": "9.9s",
+  "anoProduccion": "2024-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "2.755 cc",
+  "emisiones": null,
+  "asientos": 7,
+  "baul": 620,
+  "maleteroMin": null,
+  "generacion": "Serie 250 (J250)",
+  "anoLanzamiento": 2024,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 55.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T03:12:26.426Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Toyota Land Cruiser Prado representa una de las trayectorias más sólidas e influyentes dentro del segmento de los vehículos todoterreno de gran porte. Heredera directa de la mítica estirpe Land Cruiser —cuyo origen se remonta a la década de 1950 como respuesta a vehículos utilitarios de uso rudo y militar—, la línea Prado evolucionó con el tiempo para ofrecer una propuesta de uso mixto. Logró equilibrar de manera sobresaliente la robustez mecánica necesaria para transitar por caminos hostiles con el confort y la versatilidad requeridos para el transporte familiar y urbano. A lo largo de las décadas, esta silueta se ganó una reputación inquebrantable de confiabilidad absoluta en los rincones más inaccesibles del planeta, siendo elegida habitualmente por organizaciones internacionales, flotas de rescate y entusiastas del off-road.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental en la historia reciente de este modelo se materializa con la llegada de la nueva plataforma global GA-F (la misma arquitectura modular empleada en la Land Cruiser 300 y la pick-up Hilux) y el desembarco de la generación denominada Serie 250 (J250). Presentada a partir de 2024, esta nueva iteración supuso un retorno a las raíces estéticas de la marca, adoptando líneas cuadradas y trazos de carácter retro que evocan de inmediato a los clásicos Land Cruiser de los años 70 y 80. Más allá del evidente atractivo visual, este cambio estructural aportó una mejora sustancial en la rigidez torsional del chasis, suspensiones con mayores recorridos y la incorporación de arquitecturas eléctricas de última generación que potencian de forma directa la seguridad activa y las asistencias electrónicas a la conducción.\n\n## Curiosidades\nA pesar de la constante evolución hacia el lujo y la incorporación masiva de tecnología de punta en el habitáculo, la Land Cruiser Prado se niega a abandonar su ADN de auténtico todoterreno. Mientras que una gran parte de los SUV contemporáneos ha migrado hacia construcciones de tipo monocasco orientadas exclusivamente al pavimento, la Prado se mantiene fiel al clásico esquema de chasis de largueros y travesaños (*ladder frame*). Esto le otorga una resistencia estructural excepcional frente a los castigos más severos en terrenos irregulares. Asimismo, su estrategia de denominación comercial varía según la región: mientras que en muchos mercados internacionales se comercializa bajo el nombre de Prado o Land Cruiser Prado, en Norteamérica se introdujo recientemente bajo la denominación simplificada de \"Land Cruiser\", posicionándose como un producto de fuerte valor emocional y de nicho.\n\n## Competencia y posicionamiento\nEn el plano global, la Toyota Land Cruiser Prado compite de manera directa en el segmento de los SUV grandes con capacidades off-road de altas prestaciones y un claro enfoque rutero o prémium. Entre sus rivales más destacados se encuentran referentes de la industria como el Land Rover Defender, el Jeep Wrangler Unlimited y diversas variantes de vehículos todoterreno basados en plataformas de pick-up de marcas competidoras. No obstante, la Prado logra diferenciarse y liderar el mercado gracias a una combinación equilibrada de refinamiento interior, un excelente aislamiento acústico y, sobre todo, una red global de posventa y disponibilidad de repuestos sumamente sólida que respalda su valor de reventa a largo plazo.",
+  "generacionInfo": {
+    "raw": "Serie 250 (J250)",
+    "numero": null,
+    "codigoChasis": "J250",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Toyota Land Cruiser Prado - SUV 4x4 grande Toyota. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

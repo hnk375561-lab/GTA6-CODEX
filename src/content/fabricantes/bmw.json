@@ -1,0 +1,71 @@
+{
+  "slug": "bmw",
+  "type": "fabricantes",
+  "title": "BMW",
+  "description": "Vehículos y motocicletas de BMW",
+  "content": "## Identidad de marca\nBMW (Bayerische Motoren Werke) se consolidó a lo largo de las décadas como uno de los fabricantes globales más influyentes en el segmento de vehículos de gama alta. Con base en Múnich, la corporación dirige su propuesta de valor hacia la ingeniería de precisión, el rendimiento dinámico y la innovación tecnológica, operando además de forma directa en el mercado de motocicletas y abarcando bajo su paraguas a marcas de peso como MINI y Rolls-Royce Motor Cars [Fuente 1].\n\n## Historia real y evolución\\Los orígenes de la compañía se remontan a 1916 [Fuente 3], período en el cual la actividad inicial estuvo enfocada en la producción de motores de aviación [Fuente 3] —como el destacado motor BMW IIIa durante la Primera Guerra Mundial [Fuente 3]—. Tras las restricciones impuestas al sector aeronáutico tras el conflicto bélico, la empresa redirigió su capacidad industrial hacia la fabricación de motores y, posteriormente, hacia el desarrollo de motocicletas y automóviles que sentaron las bases de su reputación técnica.\n\n## Posicionamiento actual\nEn el mercado automotriz internacional, la marca ocupa una posición de liderazgo sostenido dentro del segmento prémium. Su estrategia actual combina la herencia de deportividad clásica con una transición acelerada hacia la electrificación, la digitalización de la experiencia de manejo y la sustentabilidad en sus procesos productivos, manteniendo una fuerte presencia tanto en vehículos de pasajeros como en servicios financieros especializados a través de BMW Bank [Fuente 1].",
+  "status": "confirmado",
+  "officialName": "BMW",
+  "country": "Alemania",
+  "foundedYear": 1916,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:45:38.343Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-gs-310",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-m4",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-r1250gs",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-s1000rr",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-serie-3",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-x1",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-x5",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/BMW",
+    "secondarySource": "https://clixauto.com/es/blogs/history/a-brief-history-of-bmw",
+    "note": "Se verificó la fecha de fundación en 1916 en Múnich, sus orígenes ligados a los motores de aviación y su evolución hacia la fabricación de automóviles, así como sus principales subsidiarias actuales (MINI, Rolls-Royce Motor Cars y BMW Bank).",
+    "limitations": [
+      "La cronología exacta de la transición societaria entre BFW, Rapp-Motorenwerke y BMW en los primeros años presenta múltiples denominaciones y cambios legales complejos que exceden un resumen ejecutivo."
+    ]
+  }
+}

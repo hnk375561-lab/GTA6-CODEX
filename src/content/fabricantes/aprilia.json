@@ -1,0 +1,34 @@
+{
+  "slug": "aprilia",
+  "type": "fabricantes",
+  "title": "Aprilia",
+  "description": "Vehículos y motocicletas de Aprilia",
+  "content": "## Identidad de marca\nAprilia es un fabricante de motocicletas de origen italiano que logró trascender sus raíces para convertirse en un referente indiscutido dentro del segmento deportivo y de alta cilindrada. Integrada actualmente al grupo industrial italiano Piaggio, la marca combina la tradición artesanal de la región de Véneto con una fuerte orientación hacia la performance y la ingeniería de competición.\n\n## Historia y evolución\nLa trayectoria de la marca cuenta con registros que sitúan sus inicios a mediados de la década del cuarenta, aunque otras fuentes sitúan su lanzamiento formal a comienzos de los años sesenta como una productora de bicicletas y, posteriormente, de ciclomotores. Con el paso de los años, la firma experimentó una transformación radical en su propuesta productiva, dejando atrás los vehículos utilitarios de baja cilindrada para enfocarse de lleno en el desarrollo de motocicletas deportivas de alta performance. Este cambio de rumbo la llevó a instalar su sede principal en la localidad de Noale, desde donde gestó su identidad asociada a la velocidad y la innovación técnica.\n\n## Posicionamiento actual\nEn la actualidad, Aprilia se posiciona en el mercado global como una marca de carácter pasional y deportivo. Su catálogo abarca desde scooters urbanos hasta motocicletas de máxima cilindrada cargadas de adrenalina, pensadas tanto para el uso en ruta como para entusiastas que buscan tecnología derivada directamente de la competición. La marca mantiene un firme compromiso con el diseño aerodinámico y el desarrollo de componentes electrónicos avanzados, consolidándose como una opción de peso para los motociclistas que priorizan las sensaciones dinámicas y el legado de la industria italiana.",
+  "status": "confirmado",
+  "officialName": "Aprilia",
+  "country": "Italia",
+  "foundedYear": 1945,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T22:20:37.703Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "aprilia-rsv4",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Aprilia",
+    "note": "Se verificaron los orígenes y la pertenencia al Grupo Piaggio utilizando registros enciclopédicos y sitios oficiales regionales.",
+    "limitations": [
+      "Existe discrepancia entre las fuentes sobre el año exacto de fundación (1945 frente a 1962)."
+    ]
+  }
+}

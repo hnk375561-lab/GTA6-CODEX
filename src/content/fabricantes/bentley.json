@@ -1,0 +1,36 @@
+{
+  "slug": "bentley",
+  "type": "fabricantes",
+  "title": "Bentley",
+  "description": "Vehículos y motocicletas de Bentley",
+  "content": "## Identidad de Marca\nBentley se consolida como uno de los máximos exponentes globales en el segmento de vehículos de alta gama y lujo. La filosofía de la casa británica, impulsada desde sus inicios, prioriza la creación de automóviles que combinen prestaciones sobresalientes, terminaciones artesanales de primer nivel y una presencia imponente en el camino.\n\n## Historia Real\nLos orígenes de la compañía se remontan a 1919, año en el que Walter Owen (W.O.) Bentley fundó la empresa con una visión clara y directa: construir «un coche rápido, un coche de gran calidad, el mejor de todos» [Fuente 5]. Tras la gestación de la firma en octubre de ese mismo año, el desarrollo avanzó con firmeza hasta que, en septiembre de 1921, se entregó el primer modelo fabricado de serie a su propietario, Noel van Raalte, luciendo ya el icónico radiador y el emblema de la «B» alada [Fuente 5]. \n\nA lo largo de su trayectoria, la marca atravesó momentos decisivos, incluyendo su adquisición por parte de Rolls-Royce por 125.275 libras en 1931, periodo en el cual se mantuvo la producción en sus plantas originales hasta ese año [Fuente 4]. \n\n## Posicionamiento Actual\nEn la actualidad, Bentley lidera el sector automovilístico mundial de alta gama, manteniendo vivo el principio fundacional de excelencia y exclusividad [Fuente 5]. La marca combina su rica herencia artesanal con tecnología de vanguardia, posicionándose como un referente indiscutido para los conductores más exigentes que buscan potencia y distinción en un mismo vehículo.",
+  "status": "confirmado",
+  "officialName": "Bentley",
+  "country": "Reino Unido",
+  "foundedYear": 1919,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:18:37.748Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bentley-continental-gt",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.bentleymedia.com/es/company/facts-and-figures",
+    "secondarySource": "https://www.bentleymedia.com/es/company/heritage",
+    "note": "Se verificó la fundación de la marca en 1919 por Walter Owen Bentley y hitos históricos clave mediante fuentes oficiales de Bentley Media y Wikipedia.",
+    "limitations": [
+      "No se detallan todos los modelos intermedios en las fuentes provistas.",
+      "La información sobre la adquisición por parte de Rolls-Royce está resumida a cifras básicas."
+    ]
+  }
+}

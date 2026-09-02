@@ -1,0 +1,41 @@
+{
+  "slug": "zanella",
+  "type": "fabricantes",
+  "title": "Zanella",
+  "description": "Vehículos y motocicletas de Zanella",
+  "content": "## Identidad de marca\nZanella es una de las marcas con mayor arraigo y trayectoria en el mercado de la movilidad urbana y de dos ruedas en Argentina. Su propuesta combina una sólida herencia industrial con un enfoque práctico, orientado a ofrecer soluciones de transporte accesibles, eficientes y adaptadas a las necesidades cotidianas del usuario local.\n\n## Historia real\nLos orígenes de la compañía se remontan al 11 de febrero de 1948 en la localidad de Caseros, provincia de Buenos Aires, cuando un grupo de socios fundó un pequeño taller enfocado en la producción de motores y piezas [Fuente 1]. Aprovechando el contexto de la posguerra y la creciente demanda de vehículos económicos, la empresa dio el salto hacia la fabricación de motocicletas [Fuente 1]. Un hito clave en esta etapa fue el lanzamiento de la Zanella Chicato 100 en 1957, desarrollada bajo licencia italiana, lo que sentó las bases de su capacidad productiva y de sus estándares de calidad en el país [Fuente 1]. A lo largo de las décadas, la firma consolidó su presencia cruzando generaciones y expandiendo su catálogo [Fuente 3].\n\n## Posicionamiento actual\nEn la actualidad, Zanella mantiene una presencia activa en el mercado con una oferta diversa que abarca desde motovehículos de carácter urbano como las líneas ZB y Due, hasta opciones multipropósito y de cilindrada media como la familia ZR y modelos de corte clásico o utilitario (ZMax) [Fuente 4]. Su enfoque se centra en la accesibilidad mecánica, la funcionalidad diaria y una amplia red de cobertura, afianzándose como un referente tradicional dentro del segmento de vehículos de dos ruedas en la región.",
+  "status": "confirmado",
+  "officialName": "Zanella",
+  "country": "Argentina",
+  "foundedYear": 1948,
+  "category": "motociclista",
+  "tags": [
+    "fabricante",
+    "motociclista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T22:20:37.704Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "zanella-rx-150",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "zanella-rx-200",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Zanella",
+    "secondarySource": "https://www.youtube.com/watch?v=d_SBf06QJOQ",
+    "note": "Se verificó la fundación en 1948 en Buenos Aires y sus orígenes vinculados a la producción de motores a través de Wikipedia y registros históricos documentados.",
+    "limitations": [
+      "Faltan detalles específicos sobre la evolución tecnológica de los últimos años fuera del catálogo comercial actual."
+    ]
+  }
+}

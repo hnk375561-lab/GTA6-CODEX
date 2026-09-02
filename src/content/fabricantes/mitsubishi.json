@@ -1,0 +1,47 @@
+{
+  "slug": "mitsubishi",
+  "type": "fabricantes",
+  "title": "Mitsubishi",
+  "description": "Vehículos y motocicletas de Mitsubishi",
+  "content": "## Identidad de Marca\nMitsubishi representa una de las presencias más tradicionales de la industria automotriz global, arraigada en un vasto conglomerado industrial que históricamente abarcó desde el transporte marítimo hasta la tecnología pesada. Su filosofía de marca se resume en la premisa de impulsar la ambición de sus usuarios a través de la ingeniería aplicada.\n\n## Historia y Orígenes\nLos cimientos de la división automotriz se remontan a 1917, cuando Mitsubishi Shipbuilding Co., Ltd. introdujo el Mitsubishi Modelo A. Este vehículo marcó un hito al convertirse en el primer automóvil de producción en serie en la historia de Japón, concebido originalmente como un sedán de lujo de siete plazas construido a mano y basado en el Fiat Tipo 3. Pese a su carácter pionero, la producción inicial fue acotada y se discontinuó pocos años después.\n\nTras el proceso de reestructuración corporativa de la posguerra y la posterior disolución y reorganización de los conglomerados originales, la división automotriz adoptó una estructura moderna y consolidada. Formalmente, la constitución de Mitsubishi Motors como entidad independiente encargada de la producción automotriz se concretó el 22 de abril de 1970, impulsada por Mitsubishi Heavy Industries.\n\nA lo largo del siglo XX, la compañía expandió su experiencia técnica desarrollando hitos relevantes en materia de vehículos utilitarios y de tracción integral, destacándose tempranamente con diseños precursores como el prototipo PX33 en la década de 1930, considerado un antecedente de los vehículos todoterreno de la marca.\n\n## Posicionamiento Actual\nEn el mercado global contemporáneo, la marca mantiene un enfoque sólido en la durabilidad, el desarrollo de tecnologías de tracción en las cuatro ruedas y la electrificación gradual de su gama. Su catálogo web refleja una propuesta orientada a conductores que valoran la herencia técnica y la robustez mecánica, manteniendo una identidad diferenciada dentro del competitivo escenario automotriz internacional.",
+  "status": "confirmado",
+  "officialName": "Mitsubishi",
+  "country": "Japón",
+  "foundedYear": 1970,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:24:17.831Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mitsubishi-l200",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mitsubishi-outlander",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mitsubishi-triton",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Mitsubishi_Motors",
+    "secondarySource": "https://es.wikipedia.org/wiki/Mitsubishi",
+    "note": "Se verificó la fundación formal de Mitsubishi Motors en abril de 1970 y los antecedentes históricos ligados a Mitsubishi Heavy Industries, además del lanzamiento del primer vehículo en 1917.",
+    "limitations": [
+      "La estructura actual como fabricante automotriz independiente surge de la reorganización corporativa posterior a la división de las empresas originales."
+    ]
+  }
+}

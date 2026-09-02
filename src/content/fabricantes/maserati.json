@@ -1,0 +1,36 @@
+{
+  "slug": "maserati",
+  "type": "fabricantes",
+  "title": "Maserati",
+  "description": "Vehículos y motocicletas de Maserati",
+  "content": "## Identidad de Marca\nMaserati representa una de las expresiones más tradicionales y exclusivas de la industria automotriz de lujo. Con sede en Módena y Bolonia, la firma del tridente combina un legado de altas prestaciones con un diseño artesanal característico, posicionándose como un referente del refinamiento mecánico y la elegancia deportiva.\n\n## Historia y Orígenes\nLa marca fue establecida el 1 de diciembre de 1914 en Bolonia por los hermanos Maserati, un hito que marcó el inicio de una trayectoria profundamente ligada a la cultura del automóvil y a la competición [Fuente 2, Fuente 3, Fuente 4]. Desde sus primeros años, la empresa se consolidó a través de la innovación técnica en las pistas, construyendo una sólida reputación en el automovilismo deportivo mucho antes de la consolidación de otros gigantes del sector [Fuente 5]. A lo largo de las décadas, la firma evolucionó desde un taller de competición hasta convertirse en un fabricante global de automóviles de gran turismo y altas prestaciones.\n\n## Posicionamiento Actual\nEn la actualidad, Maserati forma parte del conglomerado Stellantis [Fuente 1], lo que le permite integrar tecnologías de vanguardia y estándares industriales modernos sin perder su esencia artesanal. Como parte de su estrategia comercial y de exclusividad, la marca ha implementado parámetros de producción controlados —como el límite de 75 000 vehículos anuales fijado durante la década de 2010— para preservar la distinción de sus vehículos en los mercados internacionales [Fuente 1]. Su gama actual apunta a un segmento exigente que valora la herencia deportiva italiana, la potencia de sus motorizaciones y un nivel superior de acabados en el mercado global del lujo.",
+  "status": "confirmado",
+  "officialName": "Maserati",
+  "country": "Italia",
+  "foundedYear": 1914,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:23:22.524Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "maserati-grecale",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/Maserati",
+    "secondarySource": "https://www.maseratimexico.com/nosotros",
+    "note": "Se verificó la fecha de fundación (1 de diciembre de 1914 en Bolonia por los hermanos Maserati), la sede central actual en Módena y Bolonia, la propiedad bajo el grupo Stellantis y su enfoque en vehículos de lujo mediante fuentes oficiales y enciclopédicas.",
+    "limitations": [
+      "No se detallan todos los cambios accionarios históricos previos a su integración en Stellantis.",
+      "Los datos de volumen de producción reflejan límites proyectados en la década de 2010 y no el volumen actual exacto."
+    ]
+  }
+}

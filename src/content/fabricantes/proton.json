@@ -1,0 +1,34 @@
+{
+  "slug": "proton",
+  "type": "fabricantes",
+  "title": "Proton",
+  "description": "Vehículos y motocicletas de Proton",
+  "content": "## Identidad de Marca\n\nProton (Perusahaan Otomobil Nasional) se consolidó desde sus inicios como el estandarte de la industria automotriz malaya. Concebida inicialmente como una empresa nacional de vehículos accesibles bajo el patrocinio estatal y el impulso político de figuras clave como Mahathir Mohamad, la marca representa la soberanía industrial y el desarrollo tecnológico de su país de origen. Su sede central se encuentra en Shah Alam, Selangor, complementando sus operaciones con instalaciones productivas en Proton City, Perak.\n\n## Historia Real y Evolución\n\nLa compañía fue establecida el 7 de mayo de 1983 mediante una *joint venture* impulsada por el gobierno malayo. Durante sus primeras décadas, funcionó como el único fabricante nacional de automóviles económicos en el mercado de su país, hasta la llegada de competidores locales como Perodua en la década del noventa. A lo largo de su trayectoria, la empresa buscó consolidar alianzas estratégicas internacionales para potenciar su capacidad de producción y modernizar su oferta de vehículos. En su estructura corporativa actual, opera como una subsidiaria de DRB-HICOM, el conglomerado automotriz más importante de la región.\n\n## Posicionamiento Actual\n\nEn la actualidad, Proton enfoca sus esfuerzos en mantener su liderazgo en el mercado doméstico mientras despliega estrategias orientadas a la expansión internacional. Su catálogo productivo abarca una gama diversificada de vehículos que responden a las necesidades de movilidad urbana y familiar, combinando la accesibilidad económica con estándares contemporáneos de diseño y equipamiento. Aunque su presencia principal se concentra en el mercado asiático, la marca continúa evolucionando para competir en un entorno global cada vez más exigente.",
+  "status": "confirmado",
+  "officialName": "Proton",
+  "country": "Malasia",
+  "foundedYear": 1983,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:25:37.783Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "proton-x50",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://en.wikipedia.org/wiki/Proton_Holdings",
+    "note": "Se verificó la fundación de la marca en 1983 bajo el impulso del gobierno malayo y su evolución como fabricante nacional a través de bases de datos enciclopédicas y registros históricos automotrices.",
+    "limitations": [
+      "La información disponible detalla su rol como fabricante nacional y su estructura corporativa, pero es escasa en cuanto a especificaciones técnicas detalladas de modelos antiguos para el mercado latinoamericano."
+    ]
+  }
+}

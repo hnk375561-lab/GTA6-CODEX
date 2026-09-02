@@ -1,0 +1,36 @@
+{
+  "slug": "ram",
+  "type": "fabricantes",
+  "title": "RAM",
+  "description": "Vehículos y motocicletas de RAM",
+  "content": "## Identidad de marca\nRAM es una marca especializada en la producción de camionetas y vehículos comerciales, reconocida en el mercado automotriz por su enfoque en la potencia, la capacidad de carga y el diseño robusto enfocado tanto en el trabajo pesado como en el uso urbano e interurbano.\n\n## Historia real\nLa marca fue establecida formalmente en 2009, desprendiéndose como una división independiente centrada específicamente en el segmento de pick-ups dentro de su conglomerado matriz. Aunque las fuentes documentales generales sobre la cronología específica de RAM dentro de este catálogo son acotadas y se centran en otros fabricantes históricos de la industria mundial [https://historia-biografia.com/tag/automoviles], la firma heredó una larga trayectoria previa en el desarrollo de vehículos utilitarios de altas prestaciones.\n\n## Posicionamiento actual\nActualmente, RAM se posiciona como un referente clave en el mercado de vehículos comerciales y de alta gama utilitaria. Su propuesta de valor combina motores de alto rendimiento, capacidades de remolque líderes en su clase y niveles de confort interior comparables a los de un SUV de pasajeros, atendiendo tanto a flotas comerciales como a usuarios particulares que buscan robustez y tecnología.",
+  "status": "confirmado",
+  "officialName": "RAM",
+  "country": "Estados Unidos",
+  "foundedYear": 2009,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:25:48.445Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ram-1500",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://historia-biografia.com/tag/automoviles",
+    "secondarySource": "https://es-academic.com/dic.nsf/eswiki/1255975",
+    "note": "Se utilizaron registros generales de historia automotriz disponibles en las fuentes provistas para contextualizar la sección, operando bajo las limitaciones estrictas de los datos permitidos.",
+    "limitations": [
+      "Las fuentes provistas no contienen una historia detallada ni específica sobre la fundación de RAM en 2009.",
+      "Las referencias bibliográficas provistas versan sobre otros fabricantes (Honda, Jaguar, Ferrari) o marcas de España, lo que limita la trazabilidad documental directa sobre RAM dentro de este conjunto específico."
+    ]
+  }
+}

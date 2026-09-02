@@ -1,0 +1,1762 @@
+/* ============================================================
+   Tipografía self-hosted (@fontsource) — sin llamadas externas a
+   Google Fonts en build/runtime. Cargada antes de Tailwind para
+   que las capas @layer puedan referenciarla sin FOUC de orden.
+   ============================================================ */
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/600.css';
+@import '@fontsource/space-grotesk/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CSS Variables — lenguaje visual "Leonida Nights"
+   Vice City nocturno + fotografía editorial + expediente clasificado.
+   ============================================================ */
+:root {
+  --gutter-width: 1.5rem;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+  /* --- Motion tokens: curva única premium para todo el sitio --- */
+  --ease-premium: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --dur-fast: 150ms;
+  --dur-base: 300ms;
+  --dur-slow: 500ms;
+  --dur-slower: 700ms;
+
+  --transition-fast: var(--dur-fast) var(--ease-standard);
+  --transition-base: var(--dur-base) var(--ease-standard);
+  --transition-slow: var(--dur-slow) var(--ease-standard);
+
+  /* --- Paleta de acentos crudos (uso en gradientes/color-mix) ---
+     Mismos valores que tailwind.config.js (auto-accent / auto-accent-orange
+     / auto-gold), centralizados acá para las fórmulas CSS de abajo. */
+  --c-pink: #ff6a1a;
+  --c-pink-soft: #ff9152;
+  --c-cyan: #3d84ff;
+  --c-gold: #c9a35f;
+
+  /* --- Puente motor WebGL → DOM (ver SceneAmbientBridge) ---
+     El motor Three.js escribe estos valores en cada frame (throttled).
+     Son el mismo ángulo de luz, temperatura y "kick" de llegada que ve la
+     escena 3D — las superficies DOM (cards, hero) los leen para sentirse
+     iluminadas por la MISMA luz, no por un brillo CSS estático aparte.
+     Los valores acá son el fallback antes de que el motor monte (SSR / JS
+     desactivado / primer frame). */
+  --scene-light-angle: 135deg;
+  --scene-warmth: 0.5;
+  --scene-intensity: 0.55;
+  --scene-kick: 0;
+  --scene-intro: 1;
+
+  /* --- Capítulo 1: Timeline maestra de scroll ---
+     Las 4 fases narrativas del sitio (ChoreoTelemetryBridge las publica).
+     --scene-phase: 'awakening' | 'presentation' | 'immersion' | 'invitation'
+     --scene-phase-progress: 0..1 (global, scroll / total altura)
+     --scene-phase-local-progress: 0..1 (dentro de la fase actual) */
+  --scene-phase: 'awakening';
+  --scene-phase-progress: 0;
+  --scene-phase-local-progress: 0;
+
+  /* --- Easing profiles por tipo de elemento ---
+     Cada tipo de contenido responde diferente a la narrativa.
+     Las animaciones de easing se aplican en cada componente. */
+  --ease-background: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-text: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-media: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter-width: 1rem;
+  }
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+html {
+  /* Sin scroll-behavior: smooth a propósito. Ese "smooth" del CSS no es
+     inocuo: en navegadores basados en Chromium también se aplica al
+     scroll disparado por la rueda del mouse (no solo a saltos por ancla
+     o `scrollIntoView` sin `behavior` explícito), así que cada movimiento
+     de rueda quedaba "de más" animado por el navegador en vez de
+     aplicarse al instante — exactamente la sensación de "la página sigue
+     bajando sola" que se pidió eliminar. Los saltos puntuales que sí
+     quieren animación (botón "seguir scrolleando", restauración de
+     posición al volver atrás) ya piden `behavior: 'smooth'` de forma
+     explícita en JS (ver `scroll-telemetry.tsx`), que no depende de esta
+     propiedad — solo se pierde el "smooth" implícito y por defecto que
+     aplicaba a TODO el scroll de la página, rueda incluida. */
+  color-scheme: light;
+}
+
+/* Ancla del countdown (#countdown, ver htmlId en la SceneSection de
+   page.tsx), enlazada desde el nuevo chip de countdown del hero: el
+   header es sticky (~72-80px), así que sin este margen el scroll-into-
+   view dejaría el título de la sección tapado debajo de él. */
+#countdown {
+  scroll-margin-top: 6rem;
+}
+
+/* Tema claro global (ver AUDITORIA-FONDO-OSCURO-COMPLETA.md, Fase 2).
+   Antes: bg-auto-dark + 3 radial-gradient de acento a 0.05-0.10 de
+   opacidad + .auto-atmosphere (grano fílmico + viñeta hasta 0.68 en los
+   bordes) encima. A esa opacidad los gradientes se leían como ruido
+   gris, no como color, y la viñeta oscurecía aún más el 90% del sitio
+   que no es la home. body.home-bg-white (que tapaba todo esto con
+   blanco solo en '/', vía HomeBodyBg.tsx) queda obsoleto: ahora el
+   tema base ya es blanco en todo el sitio. */
+body {
+  @apply bg-white text-neutral-900 antialiased;
+  font-family: var(--font-sans);
+  font-feature-settings: 'ss01' 1, 'cv05' 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Deriva ambiental de los blobs del hero (home) ---
+   Antes, las dos manchas de gradiente del hero (`PinnedScrollStages`)
+   solo se movían atadas al progreso del scroll: con el mouse quieto y
+   sin scrollear, el fondo quedaba completamente congelado — el hero se
+   sentía "muerto" en el primer instante, que es justo cuando más gente
+   lo ve. Estos keyframes agregan una deriva lenta e infinita, en un
+   elemento hijo separado del que ya lleva el transform atado al scroll
+   (ver PinnedScrollStages.tsx), así los dos movimientos se combinan en
+   vez de pisarse. Recorridos asimétricos (radios/tiempos distintos por
+   blob) para que no se sientan como un único bloque moviéndose en
+   espejo. Se apaga con prefers-reduced-motion (ver bloque de arriba). */
+@keyframes hero-blob-drift-a {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(3%, 4%, 0) scale(1.06);
+  }
+  66% {
+    transform: translate3d(-2%, 5%, 0) scale(0.97);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes hero-blob-drift-b {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  40% {
+    transform: translate3d(-4%, -3%, 0) scale(0.95);
+  }
+  75% {
+    transform: translate3d(2%, -5%, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.hero-blob-a {
+  animation: hero-blob-drift-a 26s ease-in-out infinite;
+}
+
+.hero-blob-b {
+  animation: hero-blob-drift-b 32s ease-in-out infinite;
+}
+
+/* --- Flotación ambiental del vehículo del hero (auditoría "vida del
+   hero", sept. 2026) ---
+   Antes, la foto del vehículo solo se movía en el salto de crossfade
+   cada ~4s (o al mover el mouse, vía Parallax) — entre esos eventos
+   quedaba completamente quieta, reforzando la sensación de "sin vida".
+   Este keyframe agrega una deriva vertical lenta e infinita en un
+   elemento envoltorio propio (`.hero-vehicle-float`, ver
+   `HeroVehicleShowcase.tsx`), separado del nodo que ya lleva el
+   `transform` inline de la entrada ligada al scroll — dos `transform`
+   en dos elementos distintos, nunca compitiendo por la misma propiedad
+   en el mismo nodo (una animación CSS pisaría el `style` inline de
+   React si compartieran elemento). Amplitud chica (6px) a propósito:
+   es una "respiración" de fondo, no debe competir con el crossfade ni
+   con el parallax de mouse. */
+@keyframes hero-vehicle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.hero-vehicle-float {
+  animation: hero-vehicle-float 6s ease-in-out infinite;
+}
+
+/* Barra de progreso del punto activo del rotador de vehículos del hero
+   (ver controles manuales en `HeroVehicleShowcase.tsx`): se remonta con
+   una nueva `key` en cada avance (automático o manual), así que el
+   `0% -> 100%` siempre arranca sincronizado con el temporizador real de
+   rotación (`ROTATE_INTERVAL_MS`, pasado como `animationDuration`
+   inline). Solo se renderiza en JS cuando no hay `prefers-reduced-motion`
+   ni pausa activa (ver ese componente), así que no hace falta un bloque
+   `@media` acá para apagarla — nunca llega a montarse en esos casos. */
+@keyframes hero-vehicle-dot-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.hero-vehicle-dot-fill {
+  animation-name: hero-vehicle-dot-fill;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold text-neutral-900;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+h1 {
+  @apply text-4xl tracking-tightest sm:text-5xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+h4 {
+  @apply text-xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
+h6 {
+  @apply text-base;
+}
+
+p {
+  @apply text-neutral-500;
+  line-height: 1.65;
+}
+
+/* --- Etiquetas/eyebrows editoriales: mono + tracking ancho. --- */
+.eyebrow {
+  font-family: var(--font-mono);
+  letter-spacing: 0.28em;
+}
+
+a {
+  @apply transition-colors;
+}
+
+/* Links */
+a:not(.no-style) {
+  @apply text-auto-accent hover:text-auto-accent-strong underline-offset-4;
+}
+
+/* --- Texto en gradiente Vice (magenta → rosa → cian), reutilizable en
+   cualquier heading/acento numérico del sitio. --- */
+.text-gradient-vice {
+  background: linear-gradient(90deg, var(--c-pink) 0%, var(--c-pink-soft) 35%, var(--c-cyan) 70%, #1c4fd6 100%);
+  background-size: 200% auto;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 106, 26, 0.35);
+  color: #fff;
+}
+
+/* --- Capítulo 6.2: fundido entre páginas ---
+   Overlay SIEMPRE montado (a diferencia de un modal que aparece/desaparece
+   del DOM), a propósito: así el navegador ya tiene un frame previo pintado
+   con opacity:0 cuando `PageTransitionBridge` cambia el atributo de fase,
+   y la transición de opacity tiene un "desde" real que animar — montar el
+   div ya en su estado final (como pasaría si esto condicionara el render
+   con un `return null`) no dispara transición, solo aparece de golpe.
+
+   z-[60]: por encima de TODO lo demás en la página, incluido el header
+   sticky (z-50) y el cursor elástico (z-50, Capítulo 4.3) — tiene que
+   tapar el viewport completo durante el swap de ruta, cursor incluido.
+
+   `background-image` (el frame congelado del canvas WebGL) lo escribe el
+   propio componente por `style` inline, ya que es una foto tomada en el
+   momento, no algo expresable en CSS estático. Sin foto (fallback si
+   `toDataURL` falla), queda el `background-color` liso de acá. */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0;
+  @apply bg-auto-dark;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 220ms ease-out;
+}
+
+.page-transition-overlay[data-nav-transition-phase='exiting'] {
+  opacity: 1;
+}
+
+.page-transition-overlay[data-nav-transition-phase='entering'],
+.page-transition-overlay[data-nav-transition-phase='idle'] {
+  opacity: 0;
+}
+
+/* Scrollbar — antes tenía un thumb con degradé naranja→celeste
+   (var(--c-pink)/var(--c-cyan) — "pink" es un nombre legado, el valor
+   real es #ff6a1a, naranja) siempre visible sobre el fondo blanco de la
+   home. En mobile, con el hero fijo de `PinnedScrollStages` (scroll
+   pineado, `overflow-y-auto` por panel), esto se veía como una barra
+   naranja sólida pegada al borde derecho durante todo el scroll — pedido
+   explícito de sacarla. El scroll nativo sigue funcionando exactamente
+   igual (no se toca `overflow`/`scroll-behavior` en ningún lado); solo se
+   oculta el thumb visual, tanto en navegadores Chromium/Safari
+   (`::-webkit-scrollbar`) como Firefox (`scrollbar-width: none`). */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+/* Focus visible — anillo con resplandor de color en vez de outline duro */
+:focus-visible {
+  outline: 2px solid var(--c-pink);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Visibilidad solo para screen readers */
+.sr-only {
+  @apply absolute h-px w-px overflow-hidden whitespace-nowrap border-0 p-0;
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+/* Containers */
+/* Antes max-w-7xl (80rem/1280px): en pantallas grandes dejaba todo el
+   sitio apretado en el centro con franjas vacías a los lados. Subido a
+   96rem (~1536px) para que listados, header y footer aprovechen el ancho
+   real del viewport en desktop grande, sin perder el padding lateral que
+   ya evita que el contenido toque el borde. */
+.container-max {
+  @apply mx-auto max-w-[96rem] px-4 sm:px-6 lg:px-8 xl:px-12;
+}
+
+.container-narrow {
+  @apply mx-auto max-w-2xl px-4 sm:px-6 lg:px-8;
+}
+
+/* --- Separador de sección: línea degradada en vez de borde plano, para
+   una transición más editorial entre bloques del sitio. --- */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--c-pink) 35%, transparent) 25%,
+    color-mix(in srgb, var(--c-cyan) 25%, transparent) 75%,
+    transparent
+  );
+}
+
+/* ============================================================
+   ANIMACIONES — Sistema global GTA6 Zona
+   ============================================================ */
+
+/* --- Básicas (legacy, se mantienen por compatibilidad) --- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 300ms ease-in-out;
+}
+
+/* --- Subrayado que crece (links / nav) --- */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, currentColor, transparent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-base);
+}
+
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* --- Logo: glow discreto solo al hacer hover, sin loop permanente --- */
+.logo-mark {
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+a:hover .logo-mark {
+  box-shadow: 0 0 16px 2px rgba(255, 106, 26, 0.5);
+  transform: scale(1.05);
+}
+
+/* --- Scroll reveal (usado por <Reveal />) --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* will-change solo mientras el elemento todavía no se reveló: es el
+   pre-aviso al navegador de que "esto va a animar pronto", útil antes
+   del disparo. Una vez que <Reveal> agrega `.reveal-visible` (via
+   IntersectionObserver, dispara una sola vez con `once=true` por
+   default) se saca el hint — si no, cada elemento revelado queda
+   promovido a su propia capa de composición en GPU para siempre. En
+   listados grandes (ej. /vehiculos con 62 <EntityCard>, cada una
+   envuelta en <Reveal>) eso son decenas de capas permanentes por una
+   animación de 700ms que ya terminó. El costo de sacarlo en el mismo
+   instante que empieza la transición es, como mucho, un frame perdido
+   al arrancar cada reveal — imperceptible comparado con layers GPU
+   acumulándose el resto de la sesión. */
+.reveal:not(.reveal-visible) {
+  will-change: transform, opacity;
+}
+
+.reveal[data-dir='left'] {
+  transform: translateX(-32px) scale(0.98);
+}
+
+.reveal[data-dir='right'] {
+  transform: translateX(32px) scale(0.98);
+}
+
+.reveal[data-dir='zoom'] {
+  transform: scale(0.85);
+}
+
+/* --- Cortina (data-dir='curtain') -----------------------------------
+   En vez de fade+slide, revela el contenido con un clip-path que se
+   abre de abajo hacia arriba — el efecto "cortina" que separa un
+   scroll con secciones que solo aparecen de uno donde cada sección se
+   presenta como una escena nueva (el criterio que usa la referencia de
+   VI entre bloques grandes de contenido). Usa las mismas transiciones
+   base de `.reveal` (opacity + delay), solo cambia qué propiedad anima
+   el movimiento: clip-path en vez de transform, así que no compite con
+   ningún translate/scale que ya tenga el elemento por otro lado. */
+.reveal[data-dir='curtain'] {
+  transform: none;
+  clip-path: inset(0 0 100% 0);
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    clip-path 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal[data-dir='curtain'].reveal-visible {
+  clip-path: inset(0 0 0% 0);
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* --- Listados grandes de entidades (ej. Vehículos: 62 tarjetas, el
+   listado más grande del sitio) ---
+   Cada EntityCard combina backdrop-blur, una animación CSS infinita
+   ("respiración" de la imagen) y un borde con degradado sincronizado en
+   tiempo real al motor WebGL de fondo (variables --scene-* actualizadas
+   ~20 veces por segundo). Con pocas cards eso es imperceptible; con 60+
+   montadas a la vez el navegador termina recalculando estilo/pintando
+   decenas de capas compuestas en cada frame de scroll, incluso para las
+   que no están a la vista — de ahí el lag reportado específicamente en
+   /vehiculos.
+   `content-visibility: auto` le dice al navegador que puede saltarse por
+   completo el trabajo de layout/paint de una card mientras esté fuera
+   del viewport (aprox.), sin cambiar nada visualmente ni romper el
+   IntersectionObserver de <Reveal> (siguen disparando normalmente).
+   `contain-intrinsic-size` evita que la página salte de alto mientras el
+   navegador todavía no conoce el tamaño real de una card salteada. */
+.entity-card-viewport {
+  content-visibility: auto;
+  /* Estimado mobile-first: en pantallas angostas la grilla es 1-2
+     columnas y la card queda más alta (imagen a lo ancho + cuerpo
+     apilado) que en desktop, donde hay más columnas y cada card es más
+     compacta. Un único valor fijo (el de desktop) subestimaba el alto
+     real en mobile, igual que le pasaba a .gallery-tile-viewport antes
+     de sus propios breakpoints — incrementa el reflow durante el scroll
+     en vez de evitarlo. */
+  contain-intrinsic-size: 0 620px;
+}
+
+@media (min-width: 640px) {
+  .entity-card-viewport {
+    contain-intrinsic-size: 0 520px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .entity-card-viewport {
+    contain-intrinsic-size: 0 460px;
+  }
+}
+
+.entity-card-viewport--row {
+  contain-intrinsic-size: 0 96px;
+}
+
+/* --- /buscar: resultados ya acotados a 60 (ver SearchClient). Filas de
+   una sola columna (no cards en grid), así que el alto intrínseco es el
+   de una fila con descripción de hasta 2 líneas — mismo orden de
+   magnitud que `entity-card-viewport--row` (96px) más algo de aire por
+   el wrap de la descripción en mobile (1 línea) vs. desktop (2 líneas). */
+.search-result-viewport {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 92px;
+}
+
+@media (min-width: 640px) {
+  .search-result-viewport {
+    contain-intrinsic-size: 0 108px;
+  }
+}
+
+/* --- /galeria: mismo problema que Vehículos pero más grande todavía —
+   agrega imágenes de TODOS los tipos de entidad + key art + videos, así
+   que fácilmente supera el centenar de tiles en un único grid. Cada tile
+   es más liviano que EntityCard (sin blur/glow permanentes), pero la
+   cantidad de nodos por sí sola ya cuesta layout/paint durante el scroll
+   sin este corte.
+
+   El estimado de altura sigue los mismos breakpoints que `.gallery-tile`
+   (160px/200px/220px + min-width 640px/1024px, ver más abajo): la grilla
+   pasa de 2 a 3 a 5 columnas y el tile tiene `aspect-ratio: 3/4`, así que
+   su altura real escala con el ancho de columna — un único valor fijo de
+   desktop (220px) para mobile hacía que el navegador estimara mal el
+   alto de los tiles fuera de viewport en pantallas chicas, con más
+   reflow del necesario durante el scroll. */
+.gallery-tile-viewport {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 160px;
+}
+
+@media (min-width: 640px) {
+  .gallery-tile-viewport {
+    contain-intrinsic-size: 0 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-tile-viewport {
+    contain-intrinsic-size: 0 220px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  /* --- Detiene toda animación infinita/ambiental del sitio ---
+     Cubre: logo (hover glow), contador y capas de media de las cards.
+     Cada elemento queda en un estado final estático y legible en vez
+     de congelarse a mitad de ciclo. */
+  .logo-mark,
+  .count-up,
+  .card-media-image,
+  .card-media-sheen,
+  .card-media-fallback-sweep,
+  .card-media-fallback-glyph,
+  .hero-blob-a,
+  .hero-blob-b,
+  .hero-vehicle-float {
+    animation: none !important;
+  }
+
+  .card-animated,
+  .card-animated::before,
+  .link-underline::after {
+    transition: none !important;
+  }
+
+  .card-media-image,
+  .card-media-vignette {
+    transition: none !important;
+  }
+
+  .group:hover .card-media-image,
+  .group:focus-visible .card-media-image {
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* --- Cards: glass premium + elevación sutil + borde iluminado por la
+   MISMA luz que la escena 3D (ver --scene-* arriba). No es un brillo
+   decorativo fijo: el ángulo, la temperatura y el pulso de llegada vienen
+   del motor WebGL en tiempo real, así la card se siente parte de la misma
+   escena en vez de flotar sobre un fondo animado. --- */
+.card-animated {
+  position: relative;
+  transition: transform 250ms var(--ease-standard), border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.card-animated::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    var(--scene-light-angle),
+    color-mix(in srgb, #3d84ff calc(var(--scene-warmth) * 100%), #ff6a1a calc((1 - var(--scene-warmth)) * 100%)) 0%,
+    transparent 42%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: calc(0.14 + var(--scene-intensity) * 0.16 + var(--scene-kick) * 0.4);
+  pointer-events: none;
+  transition: opacity 500ms ease;
+}
+
+.card-animated:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.7),
+    0 0 36px -16px color-mix(in srgb, #3d84ff calc(var(--scene-warmth) * 70%), #ff6a1a calc((1 - var(--scene-warmth)) * 70%));
+}
+
+/* ===================================================================
+   CARD MEDIA — sistema reutilizable de imagen animada para tarjetas
+   ===================================================================
+   Un único lenguaje visual para TODA imagen (real o fallback) dentro de
+   una card en todo el sitio (listados, destacados, categorías, ficha):
+     1) Movimiento ambiental sutil incluso sin interacción — "breathing"
+        zoom lentísimo + barrido de luz diagonal — para que la grilla se
+        sienta viva mientras se explora, no solo al pasar el mouse.
+     2) Profundidad + zoom + iluminación al hover/focus, activados por el
+        ancestro `.group` (el <Link>/<button> que envuelve la card entera:
+        EntityListExplorer, destacados de home, category cards), mismo
+        patrón que ya usa `.gallery-tile-image` en la galería.
+     3) Fallback (sin imagen real todavía, `EntityImage` sin match en
+        `resolveEntityImage`) con el mismo lenguaje — glifo de categoría +
+        barrido de escaneo — para que ninguna card se vea "muerta" mientras
+        se van incorporando assets a `public/images/entities/{tipo}/`.
+   Todo animado por `transform`/`opacity` (compositable, sin reflow): barato
+   incluso con varias decenas de cards montadas en un mismo listado. Se
+   desactiva por completo bajo `prefers-reduced-motion` (ver bloque arriba). */
+
+.card-media {
+  isolation: isolate;
+}
+
+.card-media-image {
+  transform: scale(1.001); /* fuerza layer de composición desde el primer frame, sin "pop" al arrancar la animación */
+  animation: card-media-breathe 17s var(--ease-standard) infinite alternate;
+  transition: transform var(--dur-slower) var(--ease-premium), filter var(--transition-base);
+  will-change: transform;
+}
+
+@keyframes card-media-breathe {
+  0% {
+    transform: scale(1.001);
+  }
+  100% {
+    transform: scale(1.045);
+  }
+}
+
+.group:hover .card-media-image,
+.group:focus-visible .card-media-image {
+  transform: scale(1.09);
+  filter: brightness(1.14) saturate(1.22) contrast(1.04);
+  animation-play-state: paused;
+}
+
+/* Variante SIN animación para el retrato "hero" de la ficha (EntityImage
+   variant="portrait") y para el visor ampliado. El "breathing" zoom +
+   los filtros de brillo/saturación de `.card-media-image` están pensados
+   para las cards chicas de un listado (decorativo, imagen siempre en
+   movimiento); sobre la pieza más grande y más mirada del sitio —el
+   retrato de personaje/vehículo/ubicación en su propia página, la que
+   además se puede ampliar en el lightbox— ese reescalado y esos filtros
+   continuos hacen que la imagen nunca quede quieta en su resolución
+   nativa: el navegador la está recomponiendo todo el tiempo, lo que en
+   la práctica se percibe como falta de nitidez (más aún al hacer hover,
+   con scale(1.09) + filtros encima). Acá priorizamos que se vea fija y
+   nítida por sobre el efecto ambiental. */
+.card-media-image-static {
+  transform: none;
+  animation: none;
+  transition: filter var(--transition-base);
+  will-change: auto;
+}
+
+/* Avatares (relaciones, resultados de búsqueda, escenas de trailer):
+   demasiado chicos para el "breathing" ambiental — solo zoom en hover,
+   mismo criterio liviano que el resto de la UI compacta del sitio. */
+.card-media--avatar .card-media-image {
+  animation: none;
+  will-change: auto;
+}
+
+.group:hover .card-media--avatar .card-media-image,
+.group:focus-visible .card-media--avatar .card-media-image {
+  transform: scale(1.14);
+}
+
+/* Barrido de luz diagonal — sheen premium, en loop propio e independiente
+   del hover (movimiento ambiental real, no solo reactivo al cursor). */
+.card-media-sheen {
+  position: absolute;
+  inset: -40% -60%;
+  background: linear-gradient(
+    115deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.14) 49%,
+    rgba(61, 132, 255, 0.12) 53%,
+    transparent 60%
+  );
+  transform: translateX(-55%);
+  opacity: 0;
+  animation: card-media-sheen-sweep 8s ease-in-out infinite;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+@keyframes card-media-sheen-sweep {
+  0%,
+  38% {
+    transform: translateX(-55%);
+    opacity: 0;
+  }
+  55% {
+    opacity: 0.85;
+  }
+  72%,
+  100% {
+    transform: translateX(55%);
+    opacity: 0;
+  }
+}
+
+/* Viñeta inferior fija (legibilidad de badges/título superpuestos), se
+   atenúa un poco al hover para dejar respirar la imagen iluminada.
+   Opción conservadora de la Fase 4 de AUDITORIA-FONDO-OSCURO-COMPLETA.md:
+   opacity bajada de 0.75 a 0.15 y color de rgba(5,3,8,...) [casi
+   negro-violeta, vestigio "expediente"] a rgba(0,0,0,...). */
+.card-media-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 42%,
+    rgba(0, 0, 0, 0.22) 68%,
+    rgba(0, 0, 0, 0.58) 100%
+  ), radial-gradient(ellipse 120% 60% at 50% 0%, rgba(0, 0, 0, 0.3), transparent 55%);
+  opacity: 0.15;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+
+.group:hover .card-media-vignette,
+.group:focus-visible .card-media-vignette {
+  opacity: 0.09;
+}
+
+/* --- Fallback: sin imagen real todavía --- */
+.card-media-fallback {
+  background: linear-gradient(160deg, rgba(255, 106, 26, 0.05), rgba(61, 132, 255, 0.04));
+}
+
+.card-media-fallback-sweep {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(255, 106, 26, 0.14) 48%,
+    rgba(61, 132, 255, 0.12) 54%,
+    transparent 72%
+  );
+  transform: translateX(-100%);
+  animation: card-media-fallback-scan 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes card-media-fallback-scan {
+  0%,
+  25% {
+    transform: translateX(-100%);
+  }
+  75%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.group:hover .card-media-fallback-sweep,
+.group:focus-visible .card-media-fallback-sweep {
+  animation-duration: 3.5s;
+}
+
+.card-media-fallback-glyph {
+  position: relative;
+  animation: card-media-glyph-pulse 4.5s ease-in-out infinite;
+  transition: transform var(--transition-base);
+}
+
+@keyframes card-media-glyph-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-3px);
+  }
+}
+
+.group:hover .card-media-fallback-glyph,
+.group:focus-visible .card-media-fallback-glyph {
+  opacity: 1;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* --- Variante: card de CATEGORÍA (home → "Explorá por sección") ---
+   La imagen vive detrás del ícono + texto, atenuada por un tinte fijo
+   para que el contenido siga legible sin perder el movimiento de fondo. */
+.card-media--category {
+  z-index: 0;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.card-media--category .card-media-image {
+  opacity: 0.3;
+}
+
+.group:hover .card-media--category .card-media-image,
+.group:focus-visible .card-media--category .card-media-image {
+  opacity: 0.48;
+}
+
+.card-media--category .card-media-fallback-sweep {
+  opacity: 0.6;
+}
+
+.card-media-category-tint {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 90% at 50% 0%, rgba(255, 106, 26, 0.14), transparent 60%),
+    linear-gradient(180deg, rgba(10, 7, 18, 0.55), rgba(10, 7, 18, 0.86));
+  pointer-events: none;
+}
+
+/* --- Superficie "glass" reutilizable: header, menú móvil, pills, panel
+   de búsqueda. Un solo lenguaje de vidrio esmerilado en todo el sitio. --- */
+.glass-surface {
+  background: color-mix(in srgb, #12151a 78%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* --- Contador numérico: leve "tick" al actualizar --- */
+@keyframes count-tick {
+  0% {
+    transform: translateY(4px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.count-up {
+  display: inline-block;
+  animation: count-tick 400ms ease-out;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Stagger genérico para listas de hijos directos ---
+   Antes esto animaba con `animation` puro apenas el nodo se pintaba —
+   es decir, ni bien cargaba la página, sin importar si la grilla estaba
+   debajo del pliegue. Para cuando el usuario scrolleaba hasta ahí, la
+   animación ya había terminado hacía rato: se veía "muerta" comparada
+   con el resto del sitio, que sí usa `<Reveal>` (IntersectionObserver).
+   Ahora `.stagger` se usa siempre junto con `<Reveal>` (mismo nodo,
+   `<Reveal className="stagger ...">`) y la animación queda gateada por
+   `.reveal-visible` — recién corre cuando la grilla entra en pantalla,
+   igual que todo lo demás. */
+.stagger > * {
+  opacity: 0;
+}
+
+.reveal-visible.stagger > * {
+  animation: word-rise 560ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.reveal-visible.stagger > *:nth-child(1) {
+  animation-delay: 60ms;
+}
+.reveal-visible.stagger > *:nth-child(2) {
+  animation-delay: 120ms;
+}
+.reveal-visible.stagger > *:nth-child(3) {
+  animation-delay: 180ms;
+}
+.reveal-visible.stagger > *:nth-child(4) {
+  animation-delay: 240ms;
+}
+.reveal-visible.stagger > *:nth-child(5) {
+  animation-delay: 300ms;
+}
+.reveal-visible.stagger > *:nth-child(6) {
+  animation-delay: 360ms;
+}
+.reveal-visible.stagger > *:nth-child(7) {
+  animation-delay: 420ms;
+}
+.reveal-visible.stagger > *:nth-child(8) {
+  animation-delay: 480ms;
+}
+.reveal-visible.stagger > *:nth-child(9) {
+  animation-delay: 540ms;
+}
+.reveal-visible.stagger > *:nth-child(10) {
+  animation-delay: 600ms;
+}
+.reveal-visible.stagger > *:nth-child(11) {
+  animation-delay: 660ms;
+}
+.reveal-visible.stagger > *:nth-child(n + 12) {
+  animation-delay: 720ms;
+}
+
+@keyframes word-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger > * {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
+
+/* Hint del atajo de teclado "/": visible solo en su estado útil (input
+   vacío y sin foco). Se oculta apenas hay texto (`:placeholder-shown`
+   deja de aplicar) o apenas el usuario ya está escribiendo (`:focus`),
+   momento en el que ya sabe dónde está y el hint solo estorbaría. */
+.hero-search-kbd-hint {
+  transition: opacity 200ms ease;
+}
+
+/* --- Botones: lenguaje único para todo el sitio (hero, formularios,
+   estados vacíos). Primario = gradiente sunset con glow; el resto de
+   acciones secundarias/terciarias se resuelve con `link-underline` o
+   borde simple caso a caso (ver `error.tsx`/`not-found.tsx`). --- */
+.btn-primary {
+  position: relative;
+  background: linear-gradient(90deg, var(--c-pink), var(--c-pink-soft));
+  box-shadow: 0 0 0 1px rgba(255, 106, 26, 0.3), 0 10px 28px -10px rgba(255, 106, 26, 0.55);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 0 1px rgba(61, 132, 255, 0.45), 0 14px 34px -10px rgba(255, 106, 26, 0.7);
+}
+
+/* --- Secciones post-hero: badges de categoría. Mismo lenguaje visual
+   que el hero (gradiente rosa->cian, glow sutil), sin agregar colores
+   nuevos a la paleta. --- */
+.category-icon-badge {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(135deg, rgba(20, 15, 32, 0.85), rgba(20, 15, 32, 0.6));
+  backdrop-filter: blur(6px) saturate(140%);
+  -webkit-backdrop-filter: blur(6px) saturate(140%);
+  box-shadow: 0 0 0 1px rgba(255, 106, 26, 0.1), 0 4px 16px -6px rgba(0, 0, 0, 0.6);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.group:hover .category-icon-badge,
+.group:focus-visible .category-icon-badge {
+  border-color: var(--auto-corner-color, #ff6a1a);
+  box-shadow: 0 0 0 1px rgba(255, 106, 26, 0.15), 0 0 24px -6px var(--auto-corner-color, #ff6a1a);
+}
+
+/* ============================================================
+   Capítulo 4 — Respuesta física a la velocidad de scroll
+   Motion blur direccional + Hover suppression + Cursor reactivo
+   ============================================================ */
+
+/* 4.1) MOTION BLUR DIRECCIONAL en scroll rápido
+   Imágenes y cards que cumplen dos condiciones reciben blur:
+   1. El usuario está scrolleando rápido (--scroll-speed > 0)
+   2. El viewport no está "quieto"
+   El blur es vertical (dirección del scroll en web) y sutil (1-3px máx).
+   Al frenar, decay smooth de 180ms. */
+
+img,
+.card-media-image {
+  /* Aplicar blur direccional en scroll rápido. El factor 0.03 convierte
+     --scroll-speed (0..1) a un rango de 0..3px de blur vertical. La
+     transición larga (180ms) suaviza el decay al frenar. */
+  filter: blur(calc(var(--scroll-speed, 0) * 3px));
+  transition: filter 180ms ease-out;
+}
+
+/* 4.2) HOVER SUPPRESSION en scroll rápido
+   Si --scroll-speed > 0.4 (scroll rápido), desactivar transiciones de
+   hover en cards para evitar "parpadeo" con el cursor pasando de refilón.
+   El umbral 0.4 se elige porque es donde el blur visual (1.2px) ya es
+   notorio pero no incapacitante. Bajo ese umbral, hover responde normal. */
+
+@supports (--scroll-speed: 0) {
+  /* Si scroll es rápido (--scroll-speed > 0.4), las transiciones de hover
+     en cards se desactivan temporalmente. Sin este, un card que recibe
+     hover rápido mientras el usuario scrollea se ve "saltarina". */
+  .card-animated {
+    transition: transform calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 250ms) var(--ease-standard),
+      border-color calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 300ms) var(--ease-standard),
+      box-shadow calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 300ms) var(--ease-standard);
+  }
+
+  .card-animated:hover {
+    transition: transform calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 250ms) var(--ease-standard),
+      border-color calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 300ms) var(--ease-standard),
+      box-shadow calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 300ms) var(--ease-standard);
+  }
+}
+
+/* 4.4) Grano + cromática: ver AUDITORIA-FONDO-OSCURO-COMPLETA.md, Fase 2
+   — la capa .auto-atmosphere que manejaba esto se borró (CSS muerto,
+   sin uso confirmado en ningún .tsx). */
+
+/* Accessibility: respetar prefers-reduced-motion en todo el capítulo 4 */
+@media (prefers-reduced-motion: reduce) {
+  img,
+  .card-media-image {
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .card-animated {
+    transition: none !important;
+  }
+}
+
+.scene-timestamp {
+  border-radius: 0.25rem;
+  background: linear-gradient(120deg, var(--c-cyan), var(--c-pink-soft));
+  padding: 0.15rem 0.5rem;
+  box-shadow: 0 2px 10px -4px rgba(61, 132, 255, 0.45);
+}
+
+/* ============================================================
+   List header — glow ambiental sutil detrás del header de las
+   páginas de listado (/[entityType]), mismo lenguaje que el resto
+   del sitio, coste ~cero (radial-gradient puro, sin canvas).
+   ============================================================ */
+.list-header-glow {
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 320px;
+  pointer-events: none;
+  background: radial-gradient(ellipse 60% 100% at 15% 0%, rgba(255, 106, 26, 0.08), transparent 65%);
+  z-index: 0;
+}
+
+/* --- Fondo de ficha destacada (EntityHeaderBackground) --- */
+.entity-bg-glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 0%,
+    rgba(255, 106, 26, 0.12),
+    rgba(61, 132, 255, 0.05) 45%,
+    transparent 75%
+  );
+}
+
+.entity-bg-grid {
+  opacity: 0.5;
+}
+
+/* --- WordRotate: crossfade + slide 100% CSS --- */
+.word-rotate {
+  position: relative;
+  display: inline-grid;
+}
+
+.word-rotate > * {
+  grid-area: 1 / 1;
+}
+
+.word-rotate-ghost {
+  visibility: hidden;
+}
+
+@keyframes word-rotate-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.word-rotate-item {
+  animation: word-rotate-in 320ms var(--ease-premium) both;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word-rotate-item {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   Rankings — tabs animados (Prioridad C, RankingsLeaderboardTabs)
+   El panel activo se remonta (`key={active.slug}` en el componente) en
+   cada cambio de tab, así que esta animación corre siempre: fade + leve
+   slide de entrada en vez de un fade genérico, para que el cambio de
+   leaderboard se sienta como una transición y no como un refresh.
+   ============================================================ */
+.rankings-tabs-panel {
+  animation: rankings-tab-crossfade 420ms var(--ease-premium) both;
+}
+
+@keyframes rankings-tab-crossfade {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rankings-tabs-panel {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   WishlistButton — micro-refuerzo al guardar (Prioridad C)
+   6 "chispas" lineales (mismo lenguaje de trazo que HeartIcon, sin
+   relleno) que estallan radialmente desde el corazón y se desvanecen,
+   más un pop breve del ícono. Nada de confeti/colores random: la única
+   variable por chispa es el ángulo (`--spark-angle`, inline por JS).
+   ============================================================ */
+@keyframes wishlist-heart-pop {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.28);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.wishlist-heart-pop {
+  animation: wishlist-heart-pop 360ms var(--ease-premium) both;
+}
+
+.wishlist-burst {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.wishlist-burst-spark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 6px;
+  margin-left: -1px;
+  margin-top: -3px;
+  border-radius: 1px;
+  background: currentColor;
+  transform: rotate(var(--spark-angle)) translateY(-9px) scale(0);
+  opacity: 0;
+  animation: wishlist-burst-spark 480ms var(--ease-premium) both;
+}
+
+@keyframes wishlist-burst-spark {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--spark-angle)) translateY(-9px) scale(0);
+  }
+  30% {
+    opacity: 1;
+    transform: rotate(var(--spark-angle)) translateY(-13px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--spark-angle)) translateY(-20px) scale(0.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wishlist-heart-pop,
+  .wishlist-burst-spark {
+    animation: none !important;
+  }
+
+  .wishlist-burst {
+    display: none;
+  }
+}
+
+/* ============================================================
+   Home — FAQ antes del footer (Prioridad C, HomeFaqPanel)
+   Acordeón sin medir alturas por JS: cada respuesta es una grid-row que
+   anima de 0fr a 1fr (truco estándar para animar "height: auto" en CSS
+   puro), con el texto interno recortado por `overflow: hidden` mientras
+   crece — mismo criterio del sitio de no traer una librería nueva para
+   una interacción que CSS ya resuelve (ver `.word-rotate`, `.stagger`).
+   ============================================================ */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms var(--ease-premium);
+}
+
+.faq-answer > p {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.faq-answer-open {
+  grid-template-rows: 1fr;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-answer {
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+   Media Carousel — item hover feedback (MediaCarousel)
+   ============================================================ */
+.media-carousel-item {
+  border-radius: 0.75rem;
+  transition: transform var(--transition-base);
+}
+
+.media-carousel-item:hover,
+.media-carousel-item:focus-within {
+  transform: translateY(-3px);
+}
+
+.media-carousel-item-frame {
+  position: relative;
+  border-radius: 0.75rem;
+  transition: box-shadow var(--transition-base);
+}
+
+.media-carousel-item:hover .media-carousel-item-frame,
+.media-carousel-item:focus-within .media-carousel-item-frame {
+  box-shadow: 0 14px 30px -16px rgba(0, 0, 0, 0.75), 0 0 26px -10px rgba(61, 132, 255, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-carousel-item,
+  .media-carousel-item-frame {
+    transition: none !important;
+  }
+
+  .media-carousel-item:hover {
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   Reproductores (VideoEmbed / YouTubeEmbed) — botón play + carga
+   ============================================================ */
+.media-play-button {
+  position: relative;
+}
+
+.media-play-button::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--c-pink) 55%, transparent);
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  pointer-events: none;
+}
+
+.group:hover .media-play-button::after,
+.group:focus-visible .media-play-button::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes media-embed-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.media-embed-fade-in {
+  animation: media-embed-in var(--dur-slow) var(--ease-premium) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-play-button::after {
+    transition: none !important;
+  }
+
+  .media-embed-fade-in {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   Galería — grid editorial de densidad variable + lightbox propio.
+   Mismo lenguaje visual "Leonida Nights" (glass, glow, gradientes,
+   profundidad) que el resto del sitio, sin dependencias externas.
+   ============================================================ */
+/* El grid en sí (.gallery-grid / .gallery-grid-item--featured) se movió
+   a clases utilitarias de Tailwind directamente en GalleryExplorer.tsx.
+   Motivo: esta hoja vive en globals.css, que Next.js puede dividir en un
+   chunk CSS distinto al de las utilidades de Tailwind — si ese chunk
+   carga en un orden distinto al del código fuente (chunking de
+   producción, navegación client-side con <Link>), la regla base sin
+   @media puede terminar aplicándose DESPUÉS de (y por lo tanto ganarle
+   a) la regla min-width:1024px, aunque el viewport sea ancho, colapsando
+   el grid a 2 columnas y a la altura mínima del contenido. Usar
+   grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 como utilidades de Tailwind
+   evita el problema por completo: todas viven en el mismo stylesheet
+   generado por Tailwind, con el orden de cascada garantizado por su
+   propio pipeline. */
+
+.gallery-tile {
+  cursor: zoom-in;
+  transition: transform var(--transition-base), box-shadow var(--transition-base),
+    border-color var(--transition-base);
+  /* aspect-ratio 3:4 para dejar espacio al texto debajo */
+  aspect-ratio: 3 / 4;
+  min-height: 160px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Featured items: más cuadrados para destacar */
+.gallery-tile[data-featured="true"] {
+  aspect-ratio: 1 / 1;
+  border-width: 2px;
+  border-color: color-mix(in srgb, var(--c-pink) 40%, var(--auto-border-strong, #3a4250));
+}
+
+@media (min-width: 640px) {
+  .gallery-tile {
+    min-height: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-tile {
+    min-height: 220px;
+  }
+}
+
+.gallery-tile:hover,
+.gallery-tile:focus-visible {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--c-pink) 55%, var(--auto-border-strong, #3a4250));
+  box-shadow: 0 18px 36px -18px rgba(0, 0, 0, 0.75), 0 0 30px -14px rgba(255, 106, 26, 0.35);
+}
+
+.gallery-tile-image {
+  transition: transform var(--dur-slower) var(--ease-premium), filter var(--transition-base);
+  object-fit: contain;
+  object-position: center;
+}
+
+.gallery-tile:hover .gallery-tile-image,
+.gallery-tile:focus-visible .gallery-tile-image {
+  transform: scale(1.06);
+}
+
+/* Opción conservadora de la Fase 4 (AUDITORIA-FONDO-OSCURO-COMPLETA.md):
+   pico bajado de rgba(5,3,8,0.92) [casi negro-violeta, vestigio
+   "expediente"] a rgba(0,0,0,0.35), resto del gradiente escalado
+   proporcionalmente. */
+.gallery-tile-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.13) 42%,
+    rgba(0, 0, 0, 0) 68%
+  );
+  pointer-events: none;
+}
+
+.gallery-tile-zoom-icon {
+  position: absolute;
+  right: 0.65rem;
+  top: 0.65rem;
+  display: flex;
+  height: 1.85rem;
+  width: 1.85rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  color: var(--auto-text, #f5eff9);
+  background: color-mix(in srgb, #12151a 65%, transparent);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.gallery-tile:hover .gallery-tile-zoom-icon,
+.gallery-tile:focus-visible .gallery-tile-zoom-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- Lightbox --- */
+.gallery-lightbox-backdrop {
+  background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(255, 106, 26, 0.1), transparent 60%),
+    rgba(5, 3, 8, 0.92);
+  backdrop-filter: blur(6px);
+}
+
+.gallery-lightbox-panel {
+  animation: gallery-lightbox-in 260ms var(--ease-out-back);
+}
+
+@keyframes gallery-lightbox-in {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-tile,
+  .gallery-tile-image,
+  .gallery-lightbox-panel {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .gallery-tile:hover .gallery-tile-image,
+  .gallery-tile:focus-visible .gallery-tile-image {
+    transform: none;
+  }
+}
+
+/* --- Zoom de imágenes (SimpleLightbox y GalleryExplorer, vía ZoomableImage) --- */
+.zoomable-image-container {
+  /* El propio contenedor es el que recibe los gestos de pan/pinch/wheel;
+     sin esto el navegador intenta hacer scroll/zoom nativo de la página en
+     mobile antes de que el pointermove del hook llegue a procesarlos. */
+  touch-action: none;
+}
+
+.zoomable-image-controls {
+  animation: zoomable-controls-in 220ms var(--ease-out-back);
+}
+
+@keyframes zoomable-controls-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zoomable-image-controls {
+    animation: none !important;
+  }
+
+}
+
+/* Print styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+    background-image: none;
+  }
+
+  a {
+    @apply underline;
+  }
+}
+
+/* ============================================================
+   Capítulo 1 — Coreografía: Timeline maestra y Dead Time
+   ============================================================ */
+
+/* 1.1) Dead time deliberado entre transiciones de fase
+   Las secciones reducen su opacidad/escala levemente en transiciones
+   para crear "pausas de aliento" que hacen el siguiente acto más fuerte. */
+
+/* Secciones sin animaciones coreografiadas */
+.scene-section {
+  /* Sin transiciones basadas en scroll */
+}
+
+/* Headings, paragraphs, media: sin reacciones a fase */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+[class*='text-secondary'],
+img,
+video,
+[class*='media'] {
+  /* Sin transitions que reaccionen a variables de scroll */
+}
+
+/* ============================================================
+   Capítulo 2.3 — Profundidad de campo que respira
+   ============================================================ */
+
+/* El bokehPass (profundidad de campo real de Three.js) se actualiza en
+   engine.ts con scrollProgress + scrollVelocity. El focus value sube
+   (desenfoca) cuando hay scroll rápido, simulando que el ojo real no
+   llega a enfocar durante un fling. */
+
+/* Este es un efecto puro del motor 3D, no hay CSS aquí, pero se
+   documentan los factores:
+   - focusBase = 22 - scrollProgress * 7 (controla profundidad con posición)
+   - focusVelocity = scrollVelocity * 15 (agrega desenfoque temporal)
+   
+   El decay del desenfoque lo maneja Lenis automáticamente (scrollVelocity
+   decae smooth con la inercia de su física de scroll). */
+
+/* ============================================================
+   Capítulo 2.2 — Marquee de fabricantes
+   ============================================================ */
+
+/* Loop horizontal de los 75 fabricantes (panel 2.5 de la home, junto a
+   Categorías — ver `ManufacturersMarquee.tsx` y
+   `getManufacturerMarqueeItems()` en `src/lib/vehicle-manufacturers.ts`).
+   CSS puro: sin JS de animación, el componente solo duplica la lista una
+   vez (`.manufacturers-marquee__track` + su clon
+   `.manufacturers-marquee__track--clone`) para que el loop de
+   `translateX(-50%)` sea perfectamente continuo. */
+
+.manufacturers-marquee {
+  position: relative;
+  overflow: hidden;
+  /* Difumina los bordes del track en vez de cortarlo en seco. */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 48px,
+    black calc(100% - 48px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 48px,
+    black calc(100% - 48px),
+    transparent 100%
+  );
+}
+
+.manufacturers-marquee__viewport {
+  display: flex;
+  width: max-content;
+  /* `animation-play-state` es lo único que togglea la pausa: por hover
+     (mouse) y por `[data-paused="true"]` (botón de teclado, ver 2.2 más
+     abajo) — ninguno de los dos existe en touch, por eso el control
+     manual no es opcional. */
+  animation: manufacturers-marquee-scroll 40s linear infinite;
+}
+
+.manufacturers-marquee:hover .manufacturers-marquee__viewport,
+.manufacturers-marquee[data-paused='true'] .manufacturers-marquee__viewport {
+  animation-play-state: paused;
+}
+
+.manufacturers-marquee__track {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 2.5rem;
+  padding-inline: 1.25rem;
+}
+
+@keyframes manufacturers-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* El track se duplica una sola vez (dos copias == 100% de ancho
+       combinado), así que -50% deja el clon exactamente donde empezaba
+       el original: el corte del loop no se nota. */
+    transform: translateX(-50%);
+  }
+}
+
+.manufacturers-marquee__logo {
+  display: flex;
+  height: 2.75rem;
+  width: 7.5rem;
+  align-items: center;
+  justify-content: center;
+  filter: grayscale(1) opacity(0.55);
+  transition: filter 0.2s ease;
+}
+
+.manufacturers-marquee__logo:hover,
+.manufacturers-marquee__logo:focus-visible {
+  filter: grayscale(0) opacity(1);
+}
+
+.manufacturers-marquee__pause-button {
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.manufacturers-marquee__pause-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Mobile (2.2, "Mantener auto-scroll, reducir velocidad"): mismo loop,
+   duración mayor => desplazamiento más lento, no se apaga. */
+@media (max-width: 640px) {
+  .manufacturers-marquee__viewport {
+    animation-duration: 70s;
+  }
+}
+
+/* prefers-reduced-motion (2.2, "detener por completo y mostrar grid
+   estático"): se cancela la animación, el track pasa de scroller
+   infinito a grid con wrap, y el clon (redundante fuera del loop) se
+   oculta para no duplicar fabricantes visibles. */
+@media (prefers-reduced-motion: reduce) {
+  .manufacturers-marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .manufacturers-marquee__viewport {
+    animation: none;
+    width: 100%;
+    flex-wrap: wrap;
+    transform: none;
+  }
+
+  .manufacturers-marquee__track--clone {
+    display: none;
+  }
+
+  .manufacturers-marquee__track {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-inline: 0;
+  }
+}

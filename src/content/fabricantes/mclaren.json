@@ -1,0 +1,35 @@
+{
+  "slug": "mclaren",
+  "type": "fabricantes",
+  "title": "McLaren",
+  "description": "Vehículos y motocicletas de McLaren",
+  "content": "## Identidad de marca\nMcLaren es sinónimo de ingeniería de competición llevada al extremo y transferencia tecnológica directa desde los circuitos hacia los superdeportivos de calle. Con su base central en Woking, la marca británica cultiva una filosofía donde la ligereza, la aerodinámica avanzada y el uso pionero de materiales compuestos como la fibra de carbono son los pilares fundamentales de cada vehículo que sale de sus líneas de montaje.\n\n## Historia real y hitos\nLos cimientos de la marca se remontan a 1963, cuando el piloto neozelandés Bruce McLaren fundó la empresa Bruce McLaren Motor Racing Ltd [https://es.wikipedia.org/wiki/McLaren, https://www.facebook.com/DiscoveryLA/posts/descubre-la-apasionante-historia-de-bruce-mclaren-uno-de-los-pilotos-m%C3%A1s-legenda/1152811522873340]. Lo que comenzó como un proyecto enfocado en el automovilismo evolucionó con los años hasta establecerse formalmente bajo su estructura actual en 1985. En la máxima categoría del automovilismo mundial, la Fórmula 1, se consolidó como uno de los cuatro grandes equipos históricos, cosechando múltiples títulos de constructores y pilotos, además de cientos de podios y victorias que la ubican en la élite global del deporte motor [https://es.wikipedia.org/wiki/McLaren].\n\nEn el terreno de los automóviles de producción comercial, el gran hito fundacional llegó con el desarrollo del legendario McLaren F1, concebido en 1988 y fabricado a partir de 1992, marcando la primera incursión oficial de la compañía en el segmento de los superdeportivos legales para la calle [https://www.mclaren.com/cars/es_es/ultimate-models/mclaren-f1].\n\n## Posicionamiento actual\nEn la actualidad, McLaren se posiciona en el segmento ultra exclusivo de los superdeportivos y hiperautos. Compite de manera directa contra los fabricantes más tradicionales de Europa, ofreciendo una gama de vehículos enfocada en brindar sensaciones de manejo puramente dinámicas, tanto para el uso diario en carretera como para el alto rendimiento en circuitos cerrados, manteniendo intacto su ADN de competición.",
+  "status": "confirmado",
+  "officialName": "McLaren",
+  "country": "Reino Unido",
+  "foundedYear": 1985,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:23:39.152Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "mclaren-artura",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://es.wikipedia.org/wiki/McLaren",
+    "secondarySource": "https://www.mclaren.com/cars/es_es/ultimate-models/mclaren-f1",
+    "note": "Se verificó la fundación histórica de la escudería original en 1963 por Bruce McLaren, la consolidación corporativa en 1985 y el lanzamiento de su primer vehículo de calle, el McLaren F1, concebido en 1988 y fabricado en 1992.",
+    "limitations": [
+      "La información disponible se centra fuertemente en su división de competición (Fórmula 1) y modelos icónicos específicos, con menor nivel de detalle sobre la totalidad de su gama de producción contemporánea en serie."
+    ]
+  }
+}

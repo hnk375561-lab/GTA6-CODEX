@@ -1,0 +1,246 @@
+{
+  "slug": "honda-hr-v",
+  "type": "vehiculos",
+  "title": "Honda HR-V",
+  "description": "SUV compacta de Honda, motor 1.5L o 2.0L según mercado.",
+  "status": "confirmado",
+  "tags": [
+    "suv",
+    "honda",
+    "combustion"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-accord",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-cb190r",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "changan-cs35-plus",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "chevrolet-tracker",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "fiat-pulse",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "hyundai-creta",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "createdAt": "2026-08-23T21:41:31.522Z",
+  "updatedAt": "2026-08-27T02:53:59.495Z",
+  "manufacturer": "Honda",
+  "class": "SUV compacto",
+  "performance": {
+    "speed": "180 km/h",
+    "acceleration": "0-100 km/h en 10.5s"
+  },
+  "power": "158 hp",
+  "price": "USD 30,195 (MSRP de referencia para EE.UU.)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 30195,
+    "raw": "USD 30,195 (MSRP de referencia para EE.UU.)"
+  },
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://www.caranddriver.com/honda/hr-v-2024",
+    "note": "Se verificaron las especificaciones técnicas del motor 2.0L de 158 hp, transmisión CVT, dimensiones y capacidades del Honda HR-V en base a fichas técnicas oficiales y pruebas especializadas de la región norteamericana.",
+    "limitations": [
+      "Las motorizaciones y capacidades varían según el mercado específico (por ejemplo, el motor 2.0L atmosférico de Norteamérica difiere del sistema híbrido e-HEV comercializado en Europa y ciertos mercados asiáticos)."
+    ]
+  },
+  "transmision": "CVT (Transmisión Variable Continua)",
+  "traccion": "Delantera",
+  "peso": "1400 kg",
+  "tipoMotor": "Gasolina atmosférico DOHC 16-valve inline-4",
+  "potenciaKW": "118 kW",
+  "capacidadTanque": "53 litros",
+  "tiempoRecorrido": "9.5s",
+  "anoProduccion": "2023-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "E",
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "consumo": "7.8 l/100km (estimado mixto)",
+  "dimensiones": "4567 x 1790 x 1621 mm",
+  "cilindrada": "1996 cm3",
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 691,
+  "maleteroMin": null,
+  "generacion": "Tercera generación",
+  "anoLanzamiento": 2023,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 27.000"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:53:59.495Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 180
+    },
+    "consumo": {
+      "promedio": "No especificado"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa Honda HR-V es un SUV compacto que debutó originalmente a finales de la década de 1990, convirtiéndose en uno de los pioneros del segmento que hoy domina el mercado automotriz global. Su nombre, que responde a las siglas de Hi-rider Revolutionary Vehicle, buscaba reflejar una propuesta fresca que combinaba la postura elevada y la versatilidad de un todoterreno con la agilidad y eficiencia de un hatchback compacto. Tras una pausa en su comercialización global, Honda reintrodujo la placa HR-V en 2013 sobre la plataforma del Honda Fit, logrando un éxito rotundo de ventas en múltiples regiones gracias a su habitabilidad inteligente y su diseño atemporal.\n\n## Un hito o generación relevante\nEl punto de inflexión más notable en la historia reciente del modelo se da con la llegada de la tercera generación. Este salto generacional abandonó las líneas redondeadas de su predecesora para adoptar una silueta de estilo más limpio, casi tipo fastback o coupé de cuatro puertas, alineándose con las nuevas tendencias estéticas de la marca nipona. Asimismo, esta iteración marcó un compromiso más fuerte con la seguridad avanzada y el confort de marcha, incorporando una plataforma más rígida y opciones motrices adaptadas a las exigencias regulatorias y energéticas de cada mercado internacional.\n\n## Curiosidades\nUn aspecto sumamente característico de la familia HR-V, heredado de la filosofía de diseño interior de la marca, es la optimización inteligente del espacio de cabina. El modelo destaca por incorporar un panel frontal de diseño limpio y moderno inspirado directamente en el Civic, acompañado de soluciones de almacenamiento versátiles, consolas centrales bien distribuidas y una habitabilidad trasera destacable que prioriza tanto el espacio para las piernas como la comodidad en viajes largos.\n\n## Competencia y posicionamiento\nEn el competitivo segmento de los B-SUV, la Honda HR-V se posiciona históricamente en un peldaño ligeramente superior en términos de calidad percibida, refinamiento de marcha y valor de reventa frente a varios de sus rivales generalistas directos. Compite cara a cara con modelos de gran peso comercial como el Toyota Corolla Cross, Jeep Renegade, Volkswagen T-Cross, Chevrolet Tracker y Nissan Kicks. Mientras que algunos competidores apuestan fuertemente por precios de entrada más agresivos o motorizaciones turboalimentadas de corte deportivo, la HR-V suele inclinar la balanza hacia la durabilidad mecánica, la eficiencia de combustible y un enfoque orientado al confort y la practicidad urbana familiar.",
+  "generacionInfo": {
+    "raw": "Tercera generación",
+    "numero": 3,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "Honda HR-V - SUV compacta Honda. 180 km/h con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

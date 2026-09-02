@@ -1,0 +1,59 @@
+{
+  "slug": "tesla",
+  "type": "fabricantes",
+  "title": "Tesla",
+  "description": "Vehículos y motocicletas de Tesla",
+  "content": "## Identidad de marca\nTesla se ha consolidado como un referente global en la industria automotriz y tecnológica, especializándose en el desarrollo y fabricación de vehículos eléctricos de pasajeros y camiones, además de sistemas de almacenamiento de energía limpia [Fuente 1, Fuente 4, Fuente 5]. Su nombre rinde homenaje al célebre inventor e ingeniero eléctrico Nikola Tesla [Fuente 4].\n\n## Historia real\nLa compañía dio sus primeros pasos en 2003, cuando fue establecida originalmente como Tesla Motors por los ingenieros Martin Eberhard y Marc Tarpenning [Fuente 4]. El plan estratégico inicial apuntaba a fabricar un automóvil deportivo con el fin de demostrar que la movilidad eléctrica podía superar en rendimiento a los motores de combustión interna tradicionales [Fuente 3]. \n\nEn las etapas iniciales de desarrollo se sumaron figuras clave como Elon Musk, J. B. Straubel e Ian Wright, quienes posteriormente fueron reconocidos como cofundadores de la empresa [Fuente 4]. Bajo el liderazgo y la visión de Musk, la compañía amplió su alcance inicial para acelerar la transición mundial hacia la energía sustentable [Fuente 2].\n\n## Posicionamiento actual\nEn la actualidad, Tesla ocupa un lugar central en el mercado internacional como uno de los principales fabricantes de vehículos sin emisiones contaminantes [Fuente 5]. Su propuesta combina la tecnología aplicada a la conducción, la conectividad y una red propia de infraestructura de carga, posicionándose firmemente en la vanguardia de la electromovilidad a nivel global.",
+  "status": "confirmado",
+  "officialName": "Tesla",
+  "country": "Estados Unidos",
+  "foundedYear": 2003,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:47:51.398Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-cybertruck",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-3",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-s",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-x",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-y",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Tesla,_Inc.",
+    "note": "Se verificó la fundación de la compañía en 2003 por Martin Eberhard y Marc Tarpenning, con la posterior incorporación de Elon Musk, J. B. Straubel e Ian Wright como cofundadores, así como su enfoque en vehículos eléctricos y almacenamiento de energía mediante fuentes oficiales y secundarias.",
+    "limitations": [
+      "No se detallan balances financieros recientes en el resumen provisto.",
+      "La evolución exacta de cada modelo posterior al lanzamiento inicial requiere referencias adicionales."
+    ]
+  }
+}

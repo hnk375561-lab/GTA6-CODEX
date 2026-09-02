@@ -1,0 +1,42 @@
+{
+  "slug": "isuzu",
+  "type": "fabricantes",
+  "title": "Isuzu",
+  "description": "Vehículos y motocicletas de Isuzu",
+  "content": "## Identidad de marca\nIsuzu es un fabricante de origen japonés cuya trayectoria está profundamente ligada al desarrollo industrial del transporte pesado y utilitario. A diferencia de las marcas generalistas enfocadas masivamente en el vehículo de pasajeros, la compañía ha concentrado sus esfuerzos corporativos y de ingeniería en el diseño y producción de camiones de diversos tonelajes, autobuses, chasis y motores diésel de alta durabilidad para aplicaciones terrestres, marítimas e industriales.\n\n## Historia real y evolución\nLos orígenes industriales de la marca se remontan a 1916, vinculados a iniciativas pioneras de ingeniería y construcción naval en Tokio a través de Tokyo Ishikawajima Engineering Co. Ltd. y sus empresas asociadas. Décadas más tarde, tras consolidar su estructura societaria y adoptar formalmente el nombre Isuzu —en referencia al río homónimo y cuyo significado alude a cincuenta campanas—, la compañía dio un paso clave en su expansión global en 1972 al concretar una alianza de capital y técnica con el gigante estadounidense General Motors.\n\nEste acuerdo potenció su capacidad productiva y tecnológica, permitiendo que modelos icónicos y utilitarios globales salieran masivamente de su planta central en Fujisawa hacia los mercados internacionales. A lo largo de su historia, la marca también incursionó temporalmente en la producción de vehículos de pasajeros y SUVs, destacándose siempre por el desarrollo de plantas motrices diésel robustas y confiables.\n\n## Posicionamiento actual\nActualmente, el posicionamiento de Isuzu en el mercado global descansa sobre su especialización indiscutible en el transporte comercial y logístico. La marca prioriza la eficiencia operativa, la durabilidad de sus chasises y la fiabilidad mecánica en condiciones de trabajo exigentes, consolidándose como un socio estratégico para flotas comerciales y de transporte pesado en múltiples regiones del mundo.",
+  "status": "confirmado",
+  "officialName": "Isuzu",
+  "country": "Japón",
+  "foundedYear": 1937,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:21:43.705Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "isuzu-d-max",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "isuzu-mu-x",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Isuzu",
+    "secondarySource": "https://isuzuecuador.com.ec/quienes-somos",
+    "note": "Se verificaron los orígenes de la marca a partir de 1916 con los astilleros e ingeniería Ishikawajima, su consolidación bajo el nombre Isuzu (adoptado formalmente a mediados del siglo XX), su alianza estratégica con General Motors en 1972 y su especialización histórica en vehículos comerciales, camiones, buses y motores diésel.",
+    "limitations": [
+      "No se detallan en las fuentes los volúmenes de ventas actuales específicos para el mercado de América del Sur.",
+      "Hay pequeñas discrepancias documentales en las fuentes sobre los nombres exactos de los socios fundadores originales en 1916, aunque coinciden en la base cronológica."
+    ]
+  }
+}

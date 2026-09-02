@@ -1,0 +1,48 @@
+{
+  "slug": "subaru",
+  "type": "fabricantes",
+  "title": "Subaru",
+  "description": "Vehículos y motocicletas de Subaru",
+  "content": "## Identidad de marca\nSubaru se consolidó en la industria automotriz global gracias a una impronta técnica muy definida que la distingue de la competencia generalista. Su filosofía constructiva gira en torno a dos pilares fundamentales: la arquitectura de sus motores de cilindros opuestos (bóxer) y el sistema de tracción integral simétrica (AWD). Esta combinación prioriza un centro de gravedad bajo y una distribución equilibrada de los pesos, optimizando el comportamiento dinámico y la seguridad activa en superficies de baja adherencia sin perder versatilidad para el uso cotidiano.\n\n## Historia real\nLos orígenes de la compañía se remontan al período de posguerra en el archipiélago nipón, heredando el conocimiento tecnológico y la disciplina de ingeniería de una empresa originalmente enfocada en la aviación [Fuente 4]. En 1953, la corporación formalizó sus bases industriales —con la posterior consolidación bajo el conglomerado de Fuji Heavy Industries a partir de la inversión de cinco empresas del sector aeronáutico y de transportes—, dando el salto definitivo hacia la fabricación masiva de vehículos terrestres [Fuente 3]. Desde entonces, la marca evolucionó desde la producción de pequeños utilitarios urbanos hasta convertirse en un referente tecnológico indiscutido en materia de adherencia total y diseño mecánico diferencial [Fuente 1].\n\n## Posicionamiento actual\nEn el mercado automotor contemporáneo, Subaru ocupa un lugar singular como fabricante de nicho con un fuerte arraigo entre conductores que valoran la robustez, la ingeniería de precisión y el rendimiento fuera del camino. Sin buscar competir en volumen puro con los gigantes de la industria, la marca mantiene una base fiel de usuarios que identifican a sus vehículos como sinónimo de durabilidad, tracción superior y una propuesta mecánica orientada a la confiabilidad a largo plazo.",
+  "status": "confirmado",
+  "officialName": "Subaru",
+  "country": "Japón",
+  "foundedYear": 1953,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:26:55.729Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "subaru-forester",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "subaru-impreza",
+      "relation": "produce",
+      "direction": "from"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "subaru-wrx",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://clixauto.com/es/blogs/history/a-brief-history-of-subaru",
+    "secondarySource": "https://es.wikipedia.org/wiki/Subaru",
+    "note": "Se verificó la fundación en 1953, los orígenes en la industria aeronáutica, el uso característico de motores bóxer y la tracción total a partir de fuentes documentadas.",
+    "limitations": [
+      "No se detallan en las fuentes los modelos específicos lanzados década por década, por lo que el recorrido histórico se mantiene a nivel general.",
+      "Faltan datos financieros recientes o estadísticas precisas de volumen de ventas en la región."
+    ]
+  }
+}

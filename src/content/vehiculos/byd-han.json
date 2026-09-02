@@ -1,0 +1,193 @@
+{
+  "slug": "byd-han",
+  "type": "vehiculos",
+  "title": "BYD Han",
+  "description": "Sedán eléctrico insignia de BYD para el mercado chino y de exportación.",
+  "status": "confirmado",
+  "tags": [
+    "electrico",
+    "byd"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-seal",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-atto-3",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "byd-dolphin-mini",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "nio-et5",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "tesla-model-s",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "xiaomi-su7",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "BYD",
+  "class": "Sedán eléctrico",
+  "power": "517 hp (versión AWD de alta performance)",
+  "price": "USD 45.000 (precio de referencia en mercado de origen)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 45000,
+    "raw": "USD 45.000 (precio de referencia en mercado de origen)"
+  },
+  "consumo": "15-18 kWh/100km",
+  "dimensiones": "4995 mm largo x 1910 mm ancho x 1495 mm alto",
+  "evidence": {
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.byd.com/us/car/han-ev",
+    "note": "Se actualizaron las especificaciones de potencia, dimensiones, peso, baúl y performance basándose en las fichas técnicas globales oficiales del BYD Han EV y sus variantes de tracción integral.",
+    "limitations": [
+      "El precio corresponde a valores de referencia en el mercado doméstico (China) y puede variar considerablemente según impuestos y aranceles de exportación en otros mercados.",
+      "Los tiempos de autonomía pueden variar según el ciclo de homologación (CLTC, WLTP o EPA)."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T01:33:54.904Z",
+  "transmision": "Automática de relación única",
+  "traccion": "Tracción integral (AWD) / Delantera (FWD)",
+  "peso": "2.250 kg",
+  "tipoMotor": "Doble motor eléctrico (sincrónico de imanes permanentes)",
+  "potenciaKW": "380 kW",
+  "capacidadTanque": null,
+  "tiempoRecorrido": "3.9s",
+  "anoProduccion": "2020-presente",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia",
+    "Mercados emergentes"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS",
+    "Control estabilidad dinámico",
+    "Asistentes de conducción"
+  ],
+  "consumoEtiqueta": null,
+  "neumaticos": "225/50R17",
+  "especificacionesMotor": null,
+  "especificacionesTransmision": {
+    "tipo_automatico": "No aplica (sin convertidor de par)",
+    "control_cambios": "Directo (relación única)",
+    "sist_propulsion": "Traccion",
+    "velocidades": "1 relación (reductora fija)"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": null,
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "No aplica (motor eléctrico)",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": null,
+  "emisiones": null,
+  "asientos": 5,
+  "baul": 410,
+  "maleteroMin": null,
+  "generacion": "1ra generación (facelift reciente)",
+  "anoLanzamiento": 2020,
+  "colores": [],
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 40.000"
+    }
+  ],
+  "verified": {
+    "source": "oficial-nombrado",
+    "lastChecked": "2026-08-27T01:33:54.904Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nEl BYD Han representa uno de los hitos más importantes en la estrategia de expansión global de la marca china BYD dentro del segmento de vehículos de pasajeros de alta gama. Lanzado originalmente en 2020, este sedán ejecutivo fue concebido para competir directamente en el corazón del mercado de vehículos eléctricos de lujo, combinando una propuesta estética sofisticada con tecnologías de propulsión de vanguardia. Su denominación rinde homenaje a la Dinastía Han, una de las eras doradas de la historia imperial china, reflejando el orgullo y la ambición de la compañía por consolidarse como un referente automotriz a escala internacional.\n\n## Un hito o generación relevante\nUn punto de inflexión fundamental para el BYD Han fue la introducción de su famosa batería Blade (Blade Battery) basada en química LFP (litio-ferrofosfato). Este avance tecnológico no solo redefinió los estándares de seguridad de la industria frente a las pruebas de penetración y temperatura, sino que también permitió optimizar el espacio físico del paquete de baterías dentro de la plataforma, mejorando la densidad energética sin comprometer la integridad estructural del vehículo. Las versiones de tracción integral (AWD) equipadas con doble motor lograron posicionar al Han como un sedán capaz de acelerar de 0 a 100 km/h en apenas 3.9 segundos, rivalizando con berlinas deportivas tradicionales de marcas europeas establecidas.\n\n## Curiosidades\nEn el plano estético, el diseño del BYD Han estuvo a cargo de Wolfgang Egger, ex diseñador jefe de Alfa Romeo y Audi, quien logró fusionar elementos de la estética tradicional oriental con las demandas aerodinámicas modernas de un vehículo eléctrico. El resultado es un coeficiente aerodinámico sumamente eficiente que contribuye de manera directa a maximizar la autonomía en ruta. Asimismo, el interior destaca por incorporar una pantalla táctil central giratoria, un sello distintivo de la interfaz multimedia de la marca que permite alternar entre disposición horizontal y vertical según la preferencia del conductor.\n\n## Competencia y posicionamiento\nDentro del mercado global, el BYD Han se posiciona en el segmento E de sedanes ejecutivos eléctricos. Su propuesta de valor equilibra dimensiones imponentes —superando los 4.9 metros de largo— con un nivel de terminaciones y asistencias a la conducción de categoría premium. Compite de forma directa contra modelos consagrados como el Tesla Model S, el Mercedes-Benz EQE y otras berlinas eléctricas de origen asiático, logrando destacar gracias a una agresiva relación entre el nivel tecnológico ofrecido, sus prestaciones dinámicas y un costo de adquisición competitivo frente a sus rivales occidentales.",
+  "generacionInfo": {
+    "raw": "1ra generación (facelift reciente)",
+    "numero": 1,
+    "codigoChasis": null,
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": true,
+    "faceliftAno": null
+  },
+  "seoDescription": "BYD Han - Sedán eléctrico BYD. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}

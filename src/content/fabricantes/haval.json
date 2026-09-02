@@ -1,0 +1,36 @@
+{
+  "slug": "haval",
+  "type": "fabricantes",
+  "title": "Haval",
+  "description": "Vehículos y motocicletas de Haval",
+  "content": "## Identidad de marca\n\nHaval es una división especializada en el desarrollo y comercialización exclusiva de crossovers y vehículos utilitarios deportivos (SUV). Opera bajo el paraguas de Great Wall Motors, enfocando sus recursos en la ingeniería y producción de este segmento específico para competir tanto en su mercado doméstico como a nivel internacional.\n\n## Historia y evolución\n\nLos antecedentes de la marca se remontan a junio de 2005, cuando se lanzó el primer producto bajo este concepto. Años más tarde, en marzo de 2013, se formalizó su presentación como una marca independiente dedicada por completo al rubro de los SUV. \n\nDurante su trayectoria inicial, la compañía estructuró una familia de modelos que incluyó diversas denominaciones numéricas y letras (como las series H), destacándose en 2011 el lanzamiento del SUV urbano H6, un modelo que sentó las bases de su popularidad y consolidación comercial. Con el transcurso de los años, la marca expandió su presencia fabril y comercial mediante filiales y plantas estratégicas en regiones como Eurasia, Australia y Sudáfrica.\n\n## Posicionamiento actual\n\nHacia el cierre de la década pasada, la marca superó el hito de los cinco millones de unidades vendidas a nivel global. En la actualidad, su estrategia apunta a la globalización y a la incorporación constante de tecnología inteligente en su matriz de productos, buscando afianzarse como un referente competitivo dentro del mercado global de vehículos utilitarios deportivos.",
+  "status": "confirmado",
+  "officialName": "Haval",
+  "country": "China",
+  "foundedYear": 2005,
+  "category": "automovilista",
+  "tags": [
+    "fabricante",
+    "automovilista"
+  ],
+  "createdAt": "2026-08-30T05:20:41.647Z",
+  "updatedAt": "2026-08-30T17:21:17.884Z",
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "haval-h6",
+      "relation": "produce",
+      "direction": "from"
+    }
+  ],
+  "evidence": {
+    "level": "respaldado",
+    "primarySource": "https://es.wikipedia.org/wiki/Haval",
+    "secondarySource": "https://www.gwm-mx.com/es/discover/about-gwm",
+    "note": "Se verificó la pertenencia a Great Wall Motors, el año de su primer lanzamiento (2005) y su presentación oficial como marca independiente en 2013, así como hitos de su expansión internacional en regiones como Australia, Sudáfrica y América Latina.",
+    "limitations": [
+      "No se detallan con precisión todas las especificaciones técnicas de la gama histórica completa en la región.",
+      "La cronología exacta de introducción comercial para cada mercado sudamericano específico varía según los distribuidores locales."
+    ]
+  }
+}

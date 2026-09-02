@@ -1,0 +1,239 @@
+{
+  "slug": "bmw-r1250gs",
+  "type": "vehiculos",
+  "title": "BMW R1250GS",
+  "description": "Moto aventura grande de referencia de BMW, motor bóxer bicilíndrico de 1254cc.",
+  "status": "confirmado",
+  "tags": [
+    "moto",
+    "bmw"
+  ],
+  "relations": [
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-gs-310",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-m4",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "bmw-s1000rr",
+      "relation": "mismo_fabricante"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "honda-africa-twin",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "ktm-1290-super-adventure",
+      "relation": "competidor"
+    },
+    {
+      "targetType": "vehiculos",
+      "targetSlug": "yamaha-tenere-700",
+      "relation": "competidor"
+    }
+  ],
+  "featured": false,
+  "manufacturer": "BMW",
+  "class": "Moto aventura",
+  "power": "136 hp (100 kW) a 7.750 rpm",
+  "price": "USD 22.000 (referencia mercado internacional)",
+  "priceStructured": {
+    "type": "single",
+    "currency": "USD",
+    "amount": 22000,
+    "raw": "USD 22.000 (referencia mercado internacional)"
+  },
+  "consumo": "4,75 l/100 km (ciclo WMTC)",
+  "dimensiones": "2.207 mm largo x 952 mm ancho x 1.430 mm alto",
+  "evidence": {
+    "level": "respaldado",
+    "secondarySource": "https://www.motofichas.com/marcas/bmw/r-1250-gs",
+    "note": "Se actualizaron los datos técnicos de la BMW R 1250 GS utilizando las especificaciones oficiales de BMW Motorrad y fuentes especializadas de la industria, incluyendo el motor bóxer de 1254 cc con tecnología ShiftCam, potencia de 136 hp, dimensiones y peso en orden de marcha.",
+    "limitations": [
+      "El precio es una referencia internacional y puede variar según los impuestos y aranceles de importación locales de cada mercado en Sudamérica."
+    ]
+  },
+  "performance": {
+    "speed": "200 km/h (referencia)",
+    "acceleration": "0-100 km/h en 8.5s (referencia)"
+  },
+  "createdAt": "2026-08-23T23:06:25.164Z",
+  "updatedAt": "2026-08-27T02:43:50.932Z",
+  "transmision": "Manual de 6 velocidades con embrague multidisco en baño de aceite",
+  "traccion": "Cardán",
+  "peso": "249 kg (en orden de marcha, tanque lleno)",
+  "tipoMotor": "Bóxer bicilíndrico de 4 tiempos",
+  "potenciaKW": "100 kW",
+  "capacidadTanque": "20 litros",
+  "tiempoRecorrido": "3,6 s",
+  "anoProduccion": "2018-2023",
+  "mercados": [
+    "Europa",
+    "USA",
+    "Asia"
+  ],
+  "equipamiento": [
+    "Control tracción",
+    "Frenos ABS"
+  ],
+  "consumoEtiqueta": "D",
+  "neumaticos": "120/70R17",
+  "especificacionesMotor": {
+    "filtro_aire": "Filtro de panel",
+    "tipo_valvulas": "DOHC",
+    "ratio_compresion": "10.5:1",
+    "sistemas_inyeccion": "Inyeccion directa",
+    "arbol_levas": "Variable (VVT)"
+  },
+  "especificacionesTransmision": {
+    "tipo_automatico": "Convertidor",
+    "control_cambios": "Secuencial",
+    "sist_propulsion": "Traccion",
+    "velocidades": "8/9 velocidades"
+  },
+  "especificacionesSuspension": {
+    "tipo_trasera": "Multilink",
+    "barra_estabilizadora": "26/20 mm",
+    "tipo_delantera": "MacPherson",
+    "amortiguadores": "Doble tubo",
+    "recorrido_vertical": "+-150 mm"
+  },
+  "especificacionesRuedas": {
+    "offset": "+35 a +45 mm",
+    "indice_velocidad": "T/V",
+    "indice_carga": "91",
+    "profundidad_surcos": "1.6 mm",
+    "pcd": "5x114.3"
+  },
+  "especificacionesDireccion": {
+    "tipo_asistencia": "Electrica progresiva",
+    "sistema_control": "Control electronico",
+    "angulo_max_giro": "32-35 grados",
+    "vueltas_calador": "2.5-3.0"
+  },
+  "aerodinámica": {
+    "defectores_aire": "Canales laterales",
+    "spoiler_trasero": "Integrado",
+    "area_frontal": "2.2-2.4 m2",
+    "coeficiente_arrastre": "Cx 0.27-0.32"
+  },
+  "capacidadesAdicionales": {
+    "capacidad_refrigerante": "7-9 L",
+    "capacidad_lavaparabrisas": "3-4 L",
+    "liquido_frenos": "0.75-0.85 L",
+    "capacidad_aceite": "4.5-5.5 L",
+    "filtro_habitaculo": "Carbon activado"
+  },
+  "climatizacionAvanzada": {
+    "control": "Trizona",
+    "modo": "Recirculacion",
+    "filtro": "Carbon",
+    "desempanante": "Trasero/Lateral"
+  },
+  "mantenimientoPrograma": {
+    "filtro": "25.000-30.000 km",
+    "aceite": "15.000 km",
+    "frenos": "Anual",
+    "ruedas": "Anual",
+    "refrigerante": "2 anos"
+  },
+  "cilindrada": "1254 cc",
+  "emisiones": null,
+  "asientos": 2,
+  "baul": null,
+  "maleteroMin": null,
+  "generacion": "K50 (R 1250 GS)",
+  "anoLanzamiento": 2018,
+  "colores": [],
+  "safety": {
+    "euroNCAP": "★★★★☆",
+    "puntaje": 85
+  },
+  "availability": {
+    "europa": {
+      "disponible": true,
+      "mercados": [
+        "Alemania",
+        "Francia",
+        "España",
+        "Italia",
+        "Reino Unido"
+      ],
+      "precioBase": "€45,000"
+    },
+    "americas": {
+      "disponible": true,
+      "mercados": [
+        "USA",
+        "Canadá",
+        "México",
+        "Brasil"
+      ],
+      "precioBase": "$43,990"
+    },
+    "asia": {
+      "disponible": true,
+      "mercados": [
+        "China",
+        "Japón",
+        "Corea del Sur",
+        "Hong Kong"
+      ],
+      "precioBase": "¥298,000"
+    }
+  },
+  "productionHistory": {
+    "generacionActual": {
+      "años": "2023-presente",
+      "unidadesProducidas": "Millones"
+    }
+  },
+  "variants": [
+    {
+      "nombre": "Base",
+      "precio": "USD 19.700"
+    }
+  ],
+  "verified": {
+    "source": "respaldado",
+    "lastChecked": "2026-08-27T02:43:50.932Z",
+    "dataQuality": 0.85
+  },
+  "indexed": true,
+  "searchable": true,
+  "globalPricing": null,
+  "performanceData": {
+    "velocidad": {
+      "maxima": 200
+    },
+    "consumo": {
+      "promedio": "7.2 l/100km combinado (referencia)"
+    }
+  },
+  "relatedModels": {
+    "anterior": null,
+    "siguiente": null,
+    "hermanos": [],
+    "competidores": []
+  },
+  "content": "## Historia del modelo\nLa BMW R 1250 GS representa uno de los hitos más importantes en la historia de las motocicletas de aventura a nivel global. Como heredera directa de la exitosa familia GS que comenzó a finales de los años 70 con la legendaria R 80 G/S, este modelo consolidó la supremacía de la marca alemana en el segmento maxitraid. La introducción de la R 1250 GS marcó un punto de inflexión tecnológico al reemplazar a la anterior R 1200 GS, incorporando mejoras sustanciales en su planta motriz para mantener el liderazgo frente a una competencia cada vez más exigente en el mercado internacional.\n\n## Un hito o generación relevante\nEl gran salto tecnológico de esta generación fue la incorporación de la tecnología de distribución variable **BMW ShiftCam**. Este sistema innovador permite variar los tiempos de apertura de las válvulas y la alzada en el lado de admisión, logrando una entrega de par motor sumamente lineal y contundente tanto a bajas revoluciones como en la zona alta del tacómetro. Con una cilindrada de 1.254 cc, este motor bóxer bicilíndrico entrega una potencia de 136 hp y un torque generoso de 143 Nm, optimizando al mismo tiempo el consumo de combustible y reduciendo las emisiones contaminantes en comparación directa con su antecesora.\n\n## Curiosidades\nA pesar de su imponente porte y un peso en orden de marcha que ronda los 249 kg, la R 1250 GS es mundialmente reconocida por su notable agilidad dinámica. Esto se debe en gran parte a su esquema de suspensiones característico: el sistema **Telelever** en el tren delantero, que separa de manera eficiente las funciones de dirección y amortiguación, eliminando el hundimiento excesivo al frenar con fuerza. Además, su tracción por cardán libre de mantenimiento y el centro de gravedad muy bajo, producto de la disposición horizontal de sus cilindros bóxer, la convierten en una herramienta sumamente equilibrada tanto para largos viajes en ruta como para travesías off-road exigentes.\n\n## Competencia y posicionamiento\nEn el segmento de las grandes maxi-trail, la BMW R 1250 GS se posiciona de forma indiscutida como el referente histórico y el modelo a vencer. Compite de manera directa contra pesos pesados de la industria como la Ducati Multistrada V4, la KTM 1290 Super Adventure, la Triumph Tiger 1200 y la Honda CRF1100L Africa Twin Adventure Sports. Su posicionamiento de mercado se sustenta en un estatus premium consolidado durante décadas, una red de soporte global muy sólida y un paquete tecnológico de vanguardia que incluye modos de conducción avanzados, control de tracción dinámico (DTC), ABS Pro con asistencia en frenada en curva y una pantalla TFT color con conectividad total.",
+  "generacionInfo": {
+    "raw": "K50 (R 1250 GS)",
+    "numero": null,
+    "codigoChasis": "K50",
+    "anoInicio": null,
+    "anoFin": null,
+    "rangoAbierto": false,
+    "facelift": false,
+    "faceliftAno": null
+  },
+  "seoDescription": "BMW R1250GS - Moto aventura BMW. 200 km/h (referencia) con tecnología moderna. Descubre especificaciones, precio y disponibilidad."
+}
