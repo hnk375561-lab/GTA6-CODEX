@@ -265,19 +265,32 @@ export default async function HomePage() {
     .slice(0, HERO_SHOWCASE_LIMIT)
 
   // Anuncio propio del hero (bloque izquierdo, ver `HeroSelfPromoCard`):
-  // recomendación editorial FIJA (no rota, a diferencia del carrusel de
-  // la derecha — decisión de producto, "más simple, lo cambio yo a mano
-  // después"). Categoría por defecto: Sedán. Mismo criterio anti-relleno
-  // que `heroShowcaseVehicles` arriba: nunca se arma con datos
-  // inventados, así que primero se busca un sedán real con foto
-  // resuelta (y que no sea ya uno de los vehículos del carrusel, para
-  // no mostrar el mismo auto dos veces en el mismo panel); si no hay
-  // ninguno, cae al primer vehículo del catálogo (fuera del carrusel)
-  // que sí tenga foto, sea cual sea su categoría; si el catálogo entero
-  // no tiene ninguna foto resuelta (caso borde), el bloque recibe `null`
-  // y `HeroSelfPromoCard` muestra su fallback genérico (pitch del sitio,
-  // sin specs inventados).
-  const HERO_SELF_PROMO_CATEGORY = 'Sedán'
+  // CUARTO REDISEÑO (sept. 2026, pedido explícito "más cosas cambiantes"):
+  // deja de ser una única recomendación fija — ahora es un mini-carrusel
+  // de varias recomendaciones editoriales (una por categoría de
+  // carrocería, ver `HERO_SELF_PROMO_CATEGORY_ORDER`), pero el avance
+  // entre ellas sigue siendo 100% manual (click en flechas/dots o swipe
+  // dentro de `HeroSelfPromoCard`) — nunca con temporizador automático,
+  // decisión explícita para no competir por atención con el carrusel de
+  // vehículos de la derecha, que tampoco rota solo.
+  //
+  // Mismo criterio anti-relleno que `heroShowcaseVehicles` arriba: cada
+  // slide se arma con un vehículo real con foto resuelta, nunca con
+  // datos inventados. Se recorre el orden de categorías de abajo y, por
+  // cada una, se toma el primer vehículo del catálogo que (a) sea de esa
+  // categoría, (b) no esté ya en el carrusel de la derecha, y (c) no se
+  // haya usado ya en un slide anterior de este mismo bloque (para no
+  // repetir el mismo auto dos veces en la franja). Si una categoría no
+  // tiene ningún vehículo disponible, simplemente no genera slide — no
+  // se rellena con un vehículo de otra categoría a la fuerza. Si el
+  // resultado queda vacío (catálogo muy chico o sin fotos resueltas),
+  // cae al mismo fallback de una sola recomendación genérica que ya
+  // tenía la versión anterior (primer vehículo disponible fuera del
+  // carrusel, sea cual sea su categoría); y si tampoco hay ninguno,
+  // `HeroSelfPromoCard` recibe un array vacío y muestra su pitch
+  // genérico del sitio (sin flechas/dots, no hay entre qué navegar).
+  const HERO_SELF_PROMO_CATEGORY_ORDER = ['Sedán', 'SUV', 'Pickup', 'Deportivo', 'Hatchback', 'Familiar'] as const
+  const HERO_SELF_PROMO_LIMIT = 5
   const heroShowcaseSlugs = new Set(heroShowcaseVehicles.map((item) => item.slug))
 
   function buildSelfPromoContent(vehicle: Vehicle, categoryLabel: string): HeroSelfPromoContent | null {
@@ -300,15 +313,26 @@ export default async function HomePage() {
     }
   }
 
-  const preferredSelfPromoVehicle = vehicles.find(
-    (v) => !heroShowcaseSlugs.has(v.slug) && getVehicleCategory(v.class) === HERO_SELF_PROMO_CATEGORY
-  )
-  const fallbackSelfPromoVehicle = vehicles.find((v) => !heroShowcaseSlugs.has(v.slug))
-  const heroSelfPromo: HeroSelfPromoContent | null = preferredSelfPromoVehicle
-    ? buildSelfPromoContent(preferredSelfPromoVehicle, HERO_SELF_PROMO_CATEGORY)
-    : fallbackSelfPromoVehicle
+  const usedSelfPromoSlugs = new Set(heroShowcaseSlugs)
+  const heroSelfPromoSlides: HeroSelfPromoContent[] = []
+  for (const category of HERO_SELF_PROMO_CATEGORY_ORDER) {
+    if (heroSelfPromoSlides.length >= HERO_SELF_PROMO_LIMIT) break
+    const candidate = vehicles.find(
+      (v) => !usedSelfPromoSlugs.has(v.slug) && getVehicleCategory(v.class) === category
+    )
+    if (!candidate) continue
+    const slide = buildSelfPromoContent(candidate, category)
+    if (!slide) continue
+    usedSelfPromoSlugs.add(candidate.slug)
+    heroSelfPromoSlides.push(slide)
+  }
+  if (heroSelfPromoSlides.length === 0) {
+    const fallbackSelfPromoVehicle = vehicles.find((v) => !heroShowcaseSlugs.has(v.slug))
+    const fallbackSlide = fallbackSelfPromoVehicle
       ? buildSelfPromoContent(fallbackSelfPromoVehicle, getVehicleCategory(fallbackSelfPromoVehicle.class) ?? 'vehículo')
       : null
+    if (fallbackSlide) heroSelfPromoSlides.push(fallbackSlide)
+  }
 
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
   const websiteLd = generateWebsiteJsonLd()
@@ -570,7 +594,7 @@ export default async function HomePage() {
               interno de `FeaturedCarousel` scrollea en su propio eje
               horizontal, ver esa nota en `HeroVehicleShowcase.tsx`). */}
           <Reveal index={4} total={7} className="mx-auto mt-14 w-full text-left">
-            <HeroVehicleShowcase vehicles={heroShowcaseVehicles} selfPromo={heroSelfPromo} />
+            <HeroVehicleShowcase vehicles={heroShowcaseVehicles} selfPromoSlides={heroSelfPromoSlides} />
           </Reveal>
 
           {/* Preview de categorías directo en el hero: contenido real

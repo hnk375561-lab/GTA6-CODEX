@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState, useEffect, useCallback } from 'react'
+import { useRef, useState, useEffect, useCallback, type CSSProperties } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -78,10 +78,13 @@ const SCROLL_STEP_PX = 360
 
 interface HeroVehicleShowcaseProps {
   vehicles: HeroVehicleShowcaseItem[]
-  /** Contenido del bloque izquierdo (ver `HeroSelfPromoCard`) — `null`
-   *  cuando `page.tsx` no encontró ningún vehículo con foto resuelta
-   *  para armarlo (cae al fallback genérico del componente). */
-  selfPromo?: HeroSelfPromoContent | null
+  /** Slides del bloque izquierdo (ver `HeroSelfPromoCard`) — CUARTO
+   *  REDISEÑO (sept. 2026): antes un único objeto fijo, ahora un array
+   *  que el propio `HeroSelfPromoCard` navega a mano (click/swipe, sin
+   *  temporizador). Array vacío cuando `page.tsx` no encontró ningún
+   *  vehículo con foto resuelta para armar ni un slide (cae al fallback
+   *  genérico del componente). */
+  selfPromoSlides: HeroSelfPromoContent[]
   className?: string
 }
 
@@ -134,7 +137,7 @@ interface HeroVehicleShowcaseProps {
  * (`lib/view-transitions.ts`), `prefers-reduced-motion`, y accesibilidad
  * (imagen decorativa `aria-hidden` + `aria-label` real en cada `<Link>`).
  */
-export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: HeroVehicleShowcaseProps) {
+export function HeroVehicleShowcase({ vehicles, selfPromoSlides, className }: HeroVehicleShowcaseProps) {
   const router = useRouter()
   const trackRef = useRef<HTMLDivElement>(null)
   const [flipSupported, setFlipSupported] = useState(false)
@@ -187,9 +190,11 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
     // desde `page.tsx` sigue pudiendo pisarse sin tocar este archivo.
     <div className={cn('relative left-1/2 w-screen -ml-[50vw] px-4 sm:px-6 lg:px-8 xl:px-12', className)}>
       <div className="flex w-full flex-col gap-5 lg:flex-row lg:items-stretch">
-        {/* IZQUIERDA: anuncio propio, bloque fijo — ya no es una card
-            más del track de la derecha, ver docstring del componente. */}
-        <HeroSelfPromoCard content={selfPromo} className="h-[20rem] w-full shrink-0 sm:h-[22rem] lg:h-auto lg:w-[24rem] xl:w-[27rem]" />
+        {/* IZQUIERDA: anuncio propio, bloque fijo en su posición dentro
+            de la franja — pero, desde el CUARTO REDISEÑO, con varios
+            slides navegables a mano dentro de la card (ver
+            `HeroSelfPromoCard`), ya no un único contenido estático. */}
+        <HeroSelfPromoCard slides={selfPromoSlides} className="h-[20rem] w-full shrink-0 sm:h-[22rem] lg:h-auto lg:w-[24rem] xl:w-[27rem]" />
 
         {/* DERECHA: carrusel de vehículos, en su propio bloque con todo
             el ancho restante para él solo. */}
@@ -200,15 +205,24 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
           const flipEnabled = canLink && flipSupported
 
           const imageNode = (
-            <div aria-hidden="true" className="hero-vehicle-float absolute inset-0">
+            <div aria-hidden="true" className="hero-vehicle-float absolute inset-0 overflow-hidden">
+              {/* Zoom base vía variable CSS (`--hero-photo-zoom`, ver
+                  `.hero-vehicle-photo` en `globals.css`) en vez de
+                  `transform` inline directo: un `style` inline pisa
+                  cualquier regla de hoja de estilo para la MISMA
+                  propiedad, así que el zoom extra al hover
+                  (`.group:hover &`, definido en CSS) nunca podría
+                  ganarle a un `transform` inline fijo. Con la escala
+                  base viajando como variable, la regla CSS del hover
+                  puede subirla sin competir con nada puesto por React. */}
               <Image
                 src={vehicle.src}
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 30rem, (min-width: 640px) 26rem, 78vw"
-                className="object-contain drop-shadow-xl"
+                className="hero-vehicle-photo object-contain drop-shadow-xl"
                 style={{
-                  transform: `scale(${PHOTO_ZOOM_SCALE})`,
+                  '--hero-photo-zoom': PHOTO_ZOOM_SCALE,
                   // Nombre compartido con la card de destino en
                   // `/categorias/[grupo]` (ver `EntityCard.tsx`) — cada
                   // card de la fila ahora es un nodo propio y estático
@@ -216,7 +230,7 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
                   // que el nombre solo se asigna a la card que
                   // realmente dispara la navegación con FLIP.
                   viewTransitionName: flipEnabled ? FLIP_VIEW_TRANSITION_NAME : undefined,
-                }}
+                } as CSSProperties}
               />
             </div>
           )
@@ -224,7 +238,7 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
           return (
             <div
               key={vehicle.slug}
-              className="relative h-[21rem] w-[19rem] shrink-0 snap-start overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-lg sm:h-[23rem] sm:w-[26rem] lg:w-[30rem]"
+              className="hero-glow-card hero-card-hover group relative h-[21rem] w-[19rem] shrink-0 snap-start overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-lg sm:h-[23rem] sm:w-[26rem] lg:w-[30rem]"
             >
               {canLink ? (
                 <Link
@@ -313,12 +327,12 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
               <Link
                 href={vehicle.detailHref}
                 aria-label={`Ver ficha completa de ${vehicle.manufacturer ? `${vehicle.manufacturer} ` : ''}${vehicle.title}`}
-                className="group tap-scale absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-neutral-900/20 ring-1 ring-white/10 transition-all duration-200 hover:-translate-y-0.5 hover:bg-black hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
+                className="cta-shine group/cta tap-scale absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-neutral-900/20 ring-1 ring-white/10 transition-all duration-200 hover:-translate-y-1 hover:bg-black hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
               >
                 Ver ficha
                 <span
                   aria-hidden="true"
-                  className="text-auto-accent-strong transition-transform duration-200 group-hover:translate-x-0.5"
+                  className="text-auto-accent-strong transition-transform duration-200 group-hover/cta:translate-x-0.5"
                 >
                   →
                 </span>

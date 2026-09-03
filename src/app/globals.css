@@ -1889,3 +1889,117 @@ video,
     display: none;
   }
 }
+
+/* ============================================================
+   Franja del hero — pase "más vistoso/agresivo" (sept. 2026)
+   Pedido explícito: más impacto visual en la franja de dos bloques del
+   hero (anuncio propio + carrusel de vehículos) sin tocar el resto del
+   sitio. Reusa los tokens de motion/color ya definidos arriba (--c-pink,
+   --c-cyan, --c-gold, --dur-*, --ease-*) — nada de valores nuevos
+   sueltos. Cuatro piezas chicas, cada una con un solo trabajo:
+
+   1. `.hero-glow-card`: halo de acento detrás de la card (anuncio
+      propio y cada card del carrusel de vehículos) — gradiente cónico
+      rosa/cian/dorado, invisible en reposo, se enciende y gira al
+      hover/focus. Vive en un `::before` con z-index negativo, nunca
+      compite con el contenido real de la card.
+   2. `.hero-card-hover`: eleva + escala levemente la card entera al
+      hover (antes solo la foto interna "respiraba" con
+      `.hero-vehicle-float`) — feedback más notorio de "esto es
+      interactivo" en las dos piezas de la franja.
+   3. `.hero-vehicle-photo`: reemplaza el `transform: scale(...)` que
+      antes iba inline en el `<Image>` del carrusel (ver
+      `HeroVehicleShowcase.tsx`) por la misma escala vía variable CSS
+      (`--hero-photo-zoom`, seteada desde React) — un `style` inline
+      pisa cualquier regla de hoja de estilo para la MISMA propiedad, así
+      que el zoom extra al hover de acá abajo no podría ganarle a un
+      `transform` fijo puesto por React. Con la base en variable, el
+      hover simplemente la multiplica.
+   4. `.hero-badge-glow`: pulso sutil (box-shadow que respira) en el chip
+      "Nuestra recomendación" del anuncio propio (`HeroSelfPromoCard`) —
+      para que se note como señalado a propósito apenas entra el panel,
+      no recién al pasar el mouse.
+
+   Todas respetan `prefers-reduced-motion` (bloque al final).
+   ============================================================ */
+.hero-glow-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-glow-card::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  z-index: -1;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg, var(--c-pink), var(--c-cyan), var(--c-gold), var(--c-pink));
+  opacity: 0;
+  filter: blur(20px);
+  transition: opacity var(--dur-slow) var(--ease-standard);
+}
+
+.hero-glow-card:hover::before,
+.hero-glow-card:focus-within::before {
+  opacity: 0.65;
+  animation: hero-glow-spin 5s linear infinite;
+}
+
+@keyframes hero-glow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-card-hover {
+  transition:
+    transform var(--dur-base) var(--ease-premium),
+    box-shadow var(--dur-base) var(--ease-premium);
+}
+
+.hero-card-hover:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow:
+    0 32px 60px -20px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.hero-vehicle-photo {
+  transform: scale(var(--hero-photo-zoom, 1.3));
+  transition: transform var(--dur-slower) var(--ease-premium);
+}
+
+.group:hover .hero-vehicle-photo {
+  transform: scale(calc(var(--hero-photo-zoom, 1.3) * 1.08));
+}
+
+.hero-badge-glow {
+  animation: hero-badge-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes hero-badge-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 106, 26, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 106, 26, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow-card::before,
+  .hero-card-hover,
+  .hero-vehicle-photo,
+  .hero-badge-glow {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero-card-hover:hover {
+    transform: none;
+  }
+}
