@@ -109,6 +109,30 @@ export function trackNewsletterSignup() {
 }
 
 /**
+ * Track lead capture (calculadora de financiamiento → WhatsApp). Se
+ * dispara al hacer click en "Enviar por WhatsApp", no al tipear — evita
+ * contar como lead a alguien que completó el form pero nunca lo mandó.
+ * `value: 1` sigue la misma convención que trackAffiliateClick /
+ * trackNewsletterSignup (permite sumarlos en GA4 sin lógica extra).
+ */
+export function trackLeadSubmit(params: {
+  source: 'financiamiento-calculadora' | string
+  vehicleName?: string
+}) {
+  if (typeof window === 'undefined') return
+
+  if (typeof window.gtag !== 'undefined') {
+    window.gtag('event', 'lead_submit', {
+      lead_source: params.source,
+      vehicle_name: params.vehicleName || 'general',
+      value: 1,
+    })
+  }
+
+  console.debug('[Analytics] Lead submit tracked:', params)
+}
+
+/**
  * Track A/B test variant assignment — se dispara una vez por visitante al
  * montar el componente que usa `useAbTest` (ver src/lib/hooks/useAbTest.ts).
  * En GA4 esto permite armar un Explore con dimensión `ab_variant` segmentado

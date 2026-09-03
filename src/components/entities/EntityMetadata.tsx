@@ -214,7 +214,11 @@ function VehicleMetadata({ entity }: { entity: Vehicle }) {
             // copia el precio a mano.
             <div className="flex justify-end pt-1">
               <Link
-                href={priceUsd !== null ? `/financiamiento?precio=${Math.round(priceUsd)}` : '/financiamiento'}
+                href={
+                  priceUsd !== null
+                    ? `/financiamiento?precio=${Math.round(priceUsd)}&vehiculo=${encodeURIComponent(entity.title)}`
+                    : `/financiamiento?vehiculo=${encodeURIComponent(entity.title)}`
+                }
                 className="link-underline font-mono text-[10px] uppercase tracking-wide text-auto-accent hover:text-auto-accent-strong"
               >
                 Simular cuota →
