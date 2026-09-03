@@ -132,6 +132,12 @@ export default function AnunciatePage() {
           >
             o escribinos por mail
           </a>
+          <a
+            href="/concesionarias-concepcion-del-uruguay"
+            className="link-underline text-xs text-neutral-400 hover:text-neutral-200"
+          >
+            Ver el directorio de Concepción del Uruguay
+          </a>
         </div>
       </Reveal>
     </div>

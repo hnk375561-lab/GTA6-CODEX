@@ -121,6 +121,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/concesionarias-concepcion-del-uruguay"
+                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                >
+                  Directorio Concepción del Uruguay
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/privacidad"
                   className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
                 >
