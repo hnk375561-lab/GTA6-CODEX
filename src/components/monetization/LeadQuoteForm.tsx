@@ -61,6 +61,7 @@ export function LeadQuoteForm({
   const [contacto, setContacto] = useState('')
   const [comentario, setComentario] = useState('')
   const [sent, setSent] = useState(false)
+  const [sentVia, setSentVia] = useState<'gform' | 'mailto'>('mailto')
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -91,13 +92,17 @@ export function LeadQuoteForm({
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: formData.toString(),
         })
+        setSentVia('gform')
       } catch {
-        // Si falla la red, no perdemos el lead: caemos a mailto igual.
+        // Si falla la red (o el CSP bloquea el fetch), no perdemos el
+        // lead: caemos a mailto igual, pero avisamos que fue por esa vía
+        // (ver `sentVia` más abajo) en vez de mentir que llegó al Sheet.
         const subject = encodeURIComponent(`Lead de cotización — ${vehicleName}`)
         const body = encodeURIComponent(
           `Vehículo: ${vehicleName}\nNombre: ${nombre}\nContacto (tel/email): ${contacto}\nComentario: ${comentario || '(sin comentario)'}`
         )
         window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
+        setSentVia('mailto')
       }
       setSent(true)
       return
@@ -109,16 +114,17 @@ export function LeadQuoteForm({
       `Vehículo: ${vehicleName}\nNombre: ${nombre}\nContacto (tel/email): ${contacto}\nComentario: ${comentario || '(sin comentario)'}\n\n— enviado desde la ficha de ${vehicleName}`
     )
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
+    setSentVia('mailto')
     setSent(true)
   }
 
   if (sent) {
     return (
       <div className={`rounded-lg border border-auto-accent/30 bg-auto-accent/5 p-4 text-sm text-neutral-700 ${className}`}>
-        {GFORM_CONFIGURED
+        {sentVia === 'gform'
           ? '✅ ¡Listo! Ya registramos tu consulta, te contactamos a la brevedad.'
           : '✅ Se abrió tu cliente de correo con los datos cargados. Si no se abrió automáticamente, escribinos por WhatsApp desde '}
-        {!GFORM_CONFIGURED && (
+        {sentVia === 'mailto' && (
           <Link className="underline" href="/anunciate">
             la página de contacto
           </Link>
