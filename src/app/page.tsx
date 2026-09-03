@@ -42,7 +42,7 @@ import { EvidenceSpotlight, type EvidenceHighlight } from '@/components/home/Evi
 import { RankingsSpotlight, type RankingSpotlight } from '@/components/home/RankingsSpotlight'
 import { FeaturedCarousel } from '@/components/home/FeaturedCarousel'
 import { HomeFaqPanel, type FaqItem } from '@/components/home/HomeFaqPanel'
-import { formatRelativeTime } from '@/lib/utils'
+import { formatRelativeTime, formatVehicleDisplayName } from '@/lib/utils'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateHomepageMetadata()
@@ -285,7 +285,7 @@ export default async function HomePage() {
     const category = getVehicleCategory(v.class) ?? 'vehículo'
     return {
       eyebrow: `Por qué elegir un ${category.toLowerCase()}`,
-      headline: v.manufacturer ? `${v.manufacturer} ${v.title}` : v.title,
+      headline: formatVehicleDisplayName(v.manufacturer, v.title),
       description: v.description || null,
       src: image.src,
       alt: image.alt,
@@ -293,6 +293,13 @@ export default async function HomePage() {
       powerLabel: powerHp !== null ? `${powerHp} hp` : null,
       secondaryStatLabel: priceUsd !== null ? formatUsdShort(priceUsd) : (v.performance?.speed ?? null),
       evidenceLevel: v.evidence?.level,
+      // Transparencia del placement (ver comentario largo en
+      // `HeroPromoBannerItem['placementLabel']`): esta tarjeta es un
+      // espacio elegido/curado, distinto del sello de evidencia que ya
+      // trae el vehículo. Fijo por ahora ("Destacado") — el día que este
+      // slot se venda de verdad, el único cambio necesario es reemplazar
+      // este string por algo como "Patrocinado" o el nombre del partner.
+      placementLabel: 'Destacado',
     }
   })()
 
@@ -556,6 +563,33 @@ export default async function HomePage() {
               interno de `FeaturedCarousel` scrollea en su propio eje
               horizontal, ver esa nota en `HeroVehicleShowcase.tsx`). */}
           <Reveal index={4} total={7} className="mx-auto mt-14 w-full text-left">
+            {/* Encabezado de la franja (nuevo, sept. 2026): antes la
+                franja arrancaba directo en la tarjeta de anuncio propio,
+                sin ningún texto que explicara qué está mirando el
+                usuario — se apoyaba solo en el `aria-label` interno del
+                carrusel ("Vehículos destacados"), invisible para
+                cualquiera que no use lector de pantalla. Visualmente la
+                franja podía leerse como "banner publicitario suelto" en
+                vez de "selección editorial". Este encabezado, con el
+                mismo patrón eyebrow+h2 que ya usa el panel de
+                Categorías más abajo (consistencia visual, no un
+                componente nuevo), aclara que lo que sigue es curaduría
+                real (`featured` + evidencia verificada, ambos
+                mecanismos ya existentes — nada inventado) antes de que
+                aparezca la tarjeta de placement. */}
+            <div className="mb-5 flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
+                  Selección
+                </p>
+                <h2 className="mt-1 font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
+                  Lo que vale la pena mirar primero
+                </h2>
+              </div>
+              <p className="hidden max-w-xs text-sm leading-relaxed text-neutral-500 sm:block">
+                Fichas completas con evidencia verificada — no es el catálogo entero, es lo que ya revisamos a fondo.
+              </p>
+            </div>
             <HeroVehicleShowcaseV2 vehicles={heroShowcaseVehicles} promoBannerItem={heroPromoBannerItem} />
           </Reveal>
 

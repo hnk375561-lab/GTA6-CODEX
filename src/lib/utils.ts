@@ -18,6 +18,26 @@ export function prefersReducedMotion(): boolean {
 }
 
 /**
+ * Nombre de display de un vehículo sin duplicar el fabricante cuando el
+ * título de la ficha ya lo incluye. Bug real detectado en el hero (sept.
+ * 2026): `${manufacturer} ${title}` con title="Porsche 911 Carrera" y
+ * manufacturer="Porsche" rendía "Porsche Porsche 911 Carrera" — visible
+ * tanto en el headline de la tarjeta de anuncio propio como en los
+ * `aria-label` del carrusel. Esta función es la única fuente de verdad
+ * para ese armado: compara sin distinguir mayúsculas: si el título ya
+ * arranca con el nombre del fabricante, lo devuelve tal cual; si no, lo
+ * antepone (comportamiento anterior, para fabricantes que no aparecen en
+ * el título, ej. title="911 Carrera" + manufacturer="Porsche").
+ */
+export function formatVehicleDisplayName(manufacturer: string | undefined | null, title: string): string {
+  if (!manufacturer) return title
+  const normalizedTitle = title.trim().toLowerCase()
+  const normalizedManufacturer = manufacturer.trim().toLowerCase()
+  if (normalizedTitle.startsWith(normalizedManufacturer)) return title
+  return `${manufacturer} ${title}`
+}
+
+/**
  * Formatea una fecha ISO como tiempo relativo en español ("hace 2 horas",
  * "hace 3 días", "hoy"), usando `Intl.RelativeTimeFormat` (nativo, sin
  * dependencia nueva). Cae a fecha absoluta corta cuando la diferencia

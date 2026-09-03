@@ -27,6 +27,20 @@ export interface HeroPromoBannerItem {
   secondaryStatLabel?: string | null
   /** Nivel de evidencia de la ficha. */
   evidenceLevel?: EvidenceLevel
+  /**
+   * Etiqueta de transparencia del espacio (ej. "Destacado") — declara que
+   * esta tarjeta es un placement elegido/curado, algo distinto de
+   * `evidenceLevel` (que certifica de dónde sale el DATO técnico, no si
+   * el VEHÍCULO fue puesto ahí a propósito). Antes esta tarjeta solo
+   * mostraba el sello de evidencia (ej. "Respaldado"), que un usuario
+   * podía leer ambiguamente como "anuncio respaldado/pago" en vez de
+   * "dato técnico respaldado por fuente" — dos afirmaciones distintas
+   * compartiendo una sola palabra. Separar los dos sellos deja además el
+   * espacio preparado para venderse a futuro como placement patrocinado
+   * real sin tener que rediseñar la tarjeta ese día: el badge ya existe,
+   * solo cambiaría el texto ("Destacado" → "Patrocinado por X").
+   */
+  placementLabel?: string | null
 }
 
 interface HeroPromoBannerProps {
@@ -130,6 +144,21 @@ export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
           >
             <span aria-hidden="true">{EVIDENCE_STAMP_META[item.evidenceLevel].icon}</span>
             {EVIDENCE_STAMP_META[item.evidenceLevel].shortLabel}
+          </span>
+        )}
+
+        {/* Etiqueta de transparencia del placement — esquina superior
+            derecha, deliberadamente opuesta al sello de evidencia (que
+            certifica el dato, no el espacio). Estilo neutro/vidrio, no
+            un cartel de "ANUNCIO" agresivo: comunica sin gritar, y
+            queda listo para leer "Patrocinado" el día que este slot se
+            venda de verdad. */}
+        {item.placementLabel && (
+          <span
+            className="pointer-events-none absolute right-4 top-4 z-10 inline-flex items-center rounded-full border border-white/15 bg-black/45 px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-wide text-white/90 shadow-sm backdrop-blur-sm"
+            title="Espacio destacado del catálogo"
+          >
+            {item.placementLabel}
           </span>
         )}
 
