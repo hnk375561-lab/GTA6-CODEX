@@ -83,18 +83,20 @@ interface HeroSelfPromoCardProps {
  * esquina superior DERECHA para no superponerse con esa marca nueva.
  */
 
-/** Chip decorativo "esto es nuestra recomendación" — mismo chip en el
- *  fallback sin vehículo y en la versión con contenido real, así el
- *  bloque siempre se lee como señalado a propósito, tenga o no datos de
- *  catálogo detrás. `pointer-events-none`: es puramente una etiqueta, no
- *  debe restar área de click a la foto que tiene debajo. */
+/** Chip "esto es nuestra recomendación" — mismo chip en el fallback sin
+ *  vehículo y en la versión con contenido real, así el bloque siempre se
+ *  lee como señalado a propósito, tenga o no datos de catálogo detrás.
+ *  `pointer-events-none`: es una etiqueta, no debe restar área de click
+ *  a la foto de abajo — pero a diferencia de un adorno puramente visual,
+ *  el texto SÍ es información real ("este es el bloque recomendado", no
+ *  uno más del catálogo), así que solo el ícono de flecha va
+ *  `aria-hidden` — el texto se anuncia a quien usa lector de pantalla,
+ *  no queda oculto detrás de un `aria-hidden` en el `<span>` entero
+ *  (bug de accesibilidad de la versión anterior de este chip). */
 function RecommendationBadge() {
   return (
-    <span
-      aria-hidden="true"
-      className="pointer-events-none absolute left-4 top-4 z-20 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/15 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-white shadow-sm backdrop-blur-md"
-    >
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+    <span className="pointer-events-none absolute left-4 top-4 z-20 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/15 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-white shadow-sm backdrop-blur-md">
+      <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 5v14M5 12l7 7 7-7" />
       </svg>
       Nuestra recomendación
@@ -157,7 +159,7 @@ export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps
         src={content.src}
         alt=""
         fill
-        sizes="(min-width: 1024px) 24rem, 78vw"
+        sizes="(min-width: 1280px) 27rem, (min-width: 1024px) 24rem, 100vw"
         priority
         className="object-cover"
       />

@@ -205,7 +205,7 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
                 src={vehicle.src}
                 alt=""
                 fill
-                sizes="(min-width: 1024px) 26rem, 78vw"
+                sizes="(min-width: 1024px) 30rem, (min-width: 640px) 26rem, 78vw"
                 className="object-contain drop-shadow-xl"
                 style={{
                   transform: `scale(${PHOTO_ZOOM_SCALE})`,
