@@ -34,8 +34,8 @@ import { ManufacturersMarquee } from '@/components/home/ManufacturersMarquee'
 import { PinnedScrollStages, type Stage } from '@/components/home/PinnedScrollStages'
 import { Reveal } from '@/components/home/StageProgress'
 import { Parallax, TiltCard } from '@/components/home/Parallax'
-import { HeroVehicleShowcase, type HeroVehicleShowcaseItem } from '@/components/home/HeroVehicleShowcase'
-import { type HeroSelfPromoContent } from '@/components/home/HeroSelfPromoCard'
+import { HeroVehicleShowcaseV2, type HeroVehicleShowcaseItem } from '@/components/home/HeroVehicleShowcaseV2'
+import { type HeroPromoBannerItem } from '@/components/home/HeroPromoBanner'
 import { AdUnit } from '@/components/monetization/AdUnit'
 import { CompareShowcase, type CompareShowcaseVehicle } from '@/components/home/CompareShowcase'
 import { EvidenceSpotlight, type EvidenceHighlight } from '@/components/home/EvidenceSpotlight'
@@ -264,73 +264,37 @@ export default async function HomePage() {
     .filter((item): item is HeroVehicleShowcaseItem => item !== null)
     .slice(0, HERO_SHOWCASE_LIMIT)
 
-  // Anuncio propio del hero (bloque izquierdo, ver `HeroSelfPromoCard`):
-  // QUINTO REDISEÑO (sept. 2026, pedido explícito "varias a la vez, sin
-  // rotación ni flechas"): 2-3 recomendaciones editoriales (una por
-  // categoría de carrocería, ver `HERO_SELF_PROMO_CATEGORY_ORDER`) TODAS
-  // visibles al mismo tiempo — a diferencia del carrusel de la derecha,
-  // este bloque no tiene ningún mecanismo de navegación propio.
-  //
-  // Mismo criterio anti-relleno que `heroShowcaseVehicles` arriba: cada
-  // ítem se arma con un vehículo real con foto resuelta, nunca con datos
-  // inventados. Se recorre el orden de categorías de abajo y, por cada
-  // una, se toma el primer vehículo del catálogo que (a) sea de esa
-  // categoría, (b) no esté ya en el carrusel de la derecha, y (c) no se
-  // haya usado ya en un ítem anterior de este mismo bloque (para no
-  // repetir el mismo auto dos veces en la franja). Si una categoría no
-  // tiene ningún vehículo disponible, simplemente no genera ítem — no se
-  // rellena con un vehículo de otra categoría a la fuerza. Si el
-  // resultado queda vacío (catálogo muy chico o sin fotos resueltas),
-  // `HeroSelfPromoCard` recibe un array vacío y muestra su pitch
-  // genérico del sitio.
-  const HERO_SELF_PROMO_CATEGORY_ORDER = ['Sedán', 'SUV', 'Pickup', 'Deportivo', 'Hatchback', 'Familiar'] as const
-  const HERO_SELF_PROMO_LIMIT = 3
+  // Anuncio propio del hero (bloque izquierdo, ver `HeroPromoBanner`):
+  // REDISEÑO NUEVO (sept. 2026): UNA SOLA tarjeta promocional grande
+  // (no múltiples ítems pequeños). No rotante, fija — el usuario ve el
+  // mismo anuncio siempre. Se selecciona el primer vehículo `featured`
+  // que tenga foto y que no esté ya en el carrusel de la derecha.
   const heroShowcaseSlugs = new Set(heroShowcaseVehicles.map((item) => item.slug))
 
-  function buildSelfPromoContent(vehicle: Vehicle, categoryLabel: string): HeroSelfPromoContent | null {
-    const image = resolveEntityDisplayImage(vehicle)
-    if (!image) return null
-    const powerHp = parsePowerHp(vehicle)
-    const priceUsd = parsePriceUsd(vehicle)
+  const heroPromoBannerItem: HeroPromoBannerItem | null = (() => {
+    const candidate = featured.find((v) => {
+      if (heroShowcaseSlugs.has(v.slug)) return false
+      const img = resolveEntityDisplayImage(v)
+      return Boolean(img)
+    })
+    if (!candidate) return null
+    const v = candidate as Vehicle
+    const image = resolveEntityDisplayImage(candidate)!
+    const powerHp = parsePowerHp(v)
+    const priceUsd = parsePriceUsd(v)
+    const category = getVehicleCategory(v.class) ?? 'vehículo'
     return {
-      eyebrow: `Por qué elegir un ${categoryLabel.toLowerCase()}`,
-      headline: vehicle.manufacturer ? `${vehicle.manufacturer} ${vehicle.title}` : vehicle.title,
+      eyebrow: `Por qué elegir un ${category.toLowerCase()}`,
+      headline: v.manufacturer ? `${v.manufacturer} ${v.title}` : v.title,
+      description: v.description || null,
       src: image.src,
       alt: image.alt,
-      detailHref: `/${EntityType.VEHICLE}/${vehicle.slug}`,
+      detailHref: `/${EntityType.VEHICLE}/${candidate.slug}`,
       powerLabel: powerHp !== null ? `${powerHp} hp` : null,
-      secondaryStatLabel: priceUsd !== null ? formatUsdShort(priceUsd) : (vehicle.performance?.speed ?? null),
-      evidenceLevel: vehicle.evidence?.level,
+      secondaryStatLabel: priceUsd !== null ? formatUsdShort(priceUsd) : (v.performance?.speed ?? null),
+      evidenceLevel: v.evidence?.level,
     }
-  }
-
-  const usedSelfPromoSlugs = new Set(heroShowcaseSlugs)
-  const heroSelfPromoItems: HeroSelfPromoContent[] = []
-  for (const category of HERO_SELF_PROMO_CATEGORY_ORDER) {
-    if (heroSelfPromoItems.length >= HERO_SELF_PROMO_LIMIT) break
-    const candidate = vehicles.find(
-      (v) => !usedSelfPromoSlugs.has(v.slug) && getVehicleCategory(v.class) === category
-    )
-    if (!candidate) continue
-    const item = buildSelfPromoContent(candidate, category)
-    if (!item) continue
-    usedSelfPromoSlugs.add(candidate.slug)
-    heroSelfPromoItems.push(item)
-  }
-  // Relleno hasta 2 ítems mínimo (si alcanza el catálogo): con solo 1
-  // ítem el bloque izquierdo se ve desbalanceado frente al carrusel de
-  // la derecha — se completa con cualquier vehículo disponible que no se
-  // haya usado todavía, sin importar su categoría.
-  if (heroSelfPromoItems.length < 2) {
-    const fallbackVehicle = vehicles.find((v) => !usedSelfPromoSlugs.has(v.slug))
-    const fallbackItem = fallbackVehicle
-      ? buildSelfPromoContent(fallbackVehicle, getVehicleCategory(fallbackVehicle.class) ?? 'vehículo')
-      : null
-    if (fallbackItem) {
-      usedSelfPromoSlugs.add(fallbackVehicle!.slug)
-      heroSelfPromoItems.push(fallbackItem)
-    }
-  }
+  })()
 
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
   const websiteLd = generateWebsiteJsonLd()
@@ -592,7 +556,7 @@ export default async function HomePage() {
               interno de `FeaturedCarousel` scrollea en su propio eje
               horizontal, ver esa nota en `HeroVehicleShowcase.tsx`). */}
           <Reveal index={4} total={7} className="mx-auto mt-14 w-full text-left">
-            <HeroVehicleShowcase vehicles={heroShowcaseVehicles} selfPromoItems={heroSelfPromoItems} />
+            <HeroVehicleShowcaseV2 vehicles={heroShowcaseVehicles} promoBannerItem={heroPromoBannerItem} />
           </Reveal>
 
           {/* Preview de categorías directo en el hero: contenido real
