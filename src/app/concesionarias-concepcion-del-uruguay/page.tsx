@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { Reveal } from '@/components/ui/Reveal'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 import mediaKitData from '../../../prospeccion/media-kit-data.json'
@@ -20,7 +21,7 @@ import mediaKitData from '../../../prospeccion/media-kit-data.json'
  * apuntar en la prospección puerta a puerta / WhatsApp.
  */
 
-type Rubro = 'concesionaria' | 'taller' | 'seguro' | 'repuestos'
+type Rubro = 'concesionaria' | 'taller' | 'seguro' | 'repuestos' | 'gestoria' | 'neumaticos'
 
 interface Listing {
   nombre: string
@@ -39,6 +40,8 @@ const RUBROS: { key: Rubro; label: string }[] = [
   { key: 'taller', label: 'Talleres mecánicos' },
   { key: 'seguro', label: 'Seguros' },
   { key: 'repuestos', label: 'Repuestos y accesorios' },
+  { key: 'neumaticos', label: 'Gomerías y neumáticos' },
+  { key: 'gestoria', label: 'Gestorías y trámites (transferencias, patentes)' },
 ]
 
 const WHATSAPP_NUMBER = mediaKitData.contacto.telefono.replace(/[^\d]/g, '')
@@ -50,7 +53,7 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`
 export const metadata: Metadata = {
   title: `Concesionarias y talleres en Concepción del Uruguay | ${SITE_NAME}`,
   description:
-    'Directorio de concesionarias, talleres, seguros y repuestos para autos y motos en Concepción del Uruguay, Entre Ríos.',
+    'Directorio de concesionarias, talleres, seguros, repuestos, gomerías y gestorías para autos y motos en Concepción del Uruguay, Entre Ríos.',
   metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: `${SITE_URL}/concesionarias-concepcion-del-uruguay`,
@@ -59,7 +62,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: `Concesionarias y talleres en Concepción del Uruguay | ${SITE_NAME}`,
     description:
-      'Directorio de negocios automotores en Concepción del Uruguay: concesionarias, talleres, seguros y repuestos.',
+      'Directorio de negocios automotores en Concepción del Uruguay: concesionarias, talleres, seguros, repuestos, gomerías y gestorías.',
     url: `${SITE_URL}/concesionarias-concepcion-del-uruguay`,
     siteName: SITE_NAME,
   },
@@ -94,9 +97,9 @@ export default function DirectorioConcepcionDelUruguayPage() {
             <span className="text-gradient-vice">Concepción del Uruguay</span>
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-neutral-500 sm:text-base">
-            El directorio de negocios automotores de la ciudad, pensado para gente que ya está comparando fichas
-            técnicas en {SITE_NAME} y busca dónde comprar, revisar o asegurar su próximo auto o moto cerca de
-            casa.
+            El directorio de negocios automotores de la ciudad — concesionarias, talleres, seguros, repuestos,
+            gomerías y gestorías — pensado para gente que ya está comparando fichas técnicas en {SITE_NAME} y
+            busca dónde comprar, revisar o asegurar su próximo auto o moto cerca de casa.
           </p>
         </div>
       </Reveal>
@@ -135,9 +138,9 @@ export default function DirectorioConcepcionDelUruguayPage() {
           <p className="max-w-md text-sm text-neutral-300">
             Sumate al directorio y aparecé frente a gente que ya está comparando autos y motos antes de comprar.
             Ver planes y precios en{' '}
-            <a href="/anunciate" className="link-underline text-auto-accent">
+            <Link href="/anunciate" className="link-underline text-auto-accent">
               /anunciate
-            </a>
+            </Link>
             .
           </p>
           <a

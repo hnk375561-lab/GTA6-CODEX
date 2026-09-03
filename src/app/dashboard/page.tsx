@@ -31,6 +31,7 @@ const SOURCE_COLORS: Record<RevenueSource, string> = {
   'afiliado-financiacion': 'bg-[#38bdf8]',
   'publicidad-directa': 'bg-[#ff5c8a]',
   'lead-cotizacion': 'bg-[#a78bfa]',
+  'lead-venta-usado': 'bg-[#f472b6]',
   'ficha-destacada': 'bg-[#fb923c]',
   'licencia-datos': 'bg-[#22d3ee]',
   otro: 'bg-auto-text-secondary',

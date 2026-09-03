@@ -117,6 +117,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/vender-tu-auto"
+                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                >
+                  Vendé tu auto
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/anunciate"
                   className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
                 >

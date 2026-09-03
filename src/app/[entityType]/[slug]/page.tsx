@@ -30,6 +30,9 @@ import { AdUnit } from '@/components/monetization/AdUnit'
 import { MercadoLibreAffiliateButton } from '@/components/monetization/MercadoLibreAffiliateButton'
 import { MonetizationCtaGroup } from '@/components/monetization/MonetizationCtaGroup'
 import { LeadQuoteForm } from '@/components/monetization/LeadQuoteForm'
+import { SellVehicleLeadForm } from '@/components/monetization/SellVehicleLeadForm'
+import { SponsoredListingBanner } from '@/components/monetization/SponsoredListingBanner'
+import { getSponsorshipForVehicle } from '@/lib/sponsorships'
 
 interface PageProps {
   params: Promise<{ entityType: string; slug: string }>
@@ -145,6 +148,17 @@ export default async function EntityPage({ params }: PageProps) {
     (entityTags.includes('financiamiento') ||
       entityTags.includes('0km') ||
       entityTags.includes('guia-de-compra'))
+  // CTA de venta/tasación (Monetización, canal nuevo): a diferencia de
+  // seguro/financiación (que van con "guia-de-compra" en general), este
+  // es intencionalmente angosto — solo guías realmente sobre VENDER un
+  // vehículo ("venta"/"tasacion"), no sobre comprar. Ver
+  // SellVehicleLeadForm.tsx para el modelo de negocio.
+  const showGuideSellCta =
+    type === EntityType.GUIDE && (entityTags.includes('venta') || entityTags.includes('tasacion'))
+
+  // Ficha destacada (patrocinio real y entregable, ver src/lib/sponsorships.ts).
+  const vehicleSponsorship =
+    type === EntityType.VEHICLE ? getSponsorshipForVehicle(entity as Vehicle) : null
 
   // Agregados derivados de fabricante (FASE 7, punto 2): total de
   // modelos, rango de potencia, rango de años, categorías presentes y
@@ -449,6 +463,17 @@ export default async function EntityPage({ params }: PageProps) {
                 </Card>
               </Reveal>
             )}
+
+            {/* Monetización: captura de leads de venta/tasación, solo en
+                guías realmente sobre vender (ver showGuideSellCta arriba).
+                Esta guía en particular explicaba CÓMO tasar pero no tenía
+                ningún formulario — quien llegaba con intención de vender
+                no tenía dónde dejar sus datos. */}
+            {showGuideSellCta && (
+              <Reveal direction="left" delay={60}>
+                <SellVehicleLeadForm trackingLabelPrefix={`guide-${entity.slug}`} />
+              </Reveal>
+            )}
           </div>
 
           <aside className="space-y-6">
@@ -506,6 +531,20 @@ export default async function EntityPage({ params }: PageProps) {
               </Reveal>
             )}
 
+            {/* Monetización: ficha destacada (patrocinio real, ver
+                src/lib/sponsorships.ts). Va antes que el AdUnit genérico
+                porque es un cliente pago específico de ESTA ficha —
+                más relevante que un anuncio de AdSense sin segmentar. */}
+            {vehicleSponsorship && (
+              <Reveal direction="right" delay={195}>
+                <SponsoredListingBanner
+                  sponsorship={vehicleSponsorship}
+                  vehicleName={entity.title}
+                  trackingLabel={`vehicle-${entity.slug}`}
+                />
+              </Reveal>
+            )}
+
             {/* Monetization: Ad Unit */}
             <Reveal direction="right" delay={200}>
               <AdUnit slotId="8314744878" format="responsive" dataTrackingLabel={`ad-${entity.slug}`} />
@@ -551,6 +590,22 @@ export default async function EntityPage({ params }: PageProps) {
             {type === EntityType.VEHICLE && (
               <Reveal direction="right" delay={218}>
                 <LeadQuoteForm vehicleName={entity.title} trackingLabelPrefix={`vehicle-${entity.slug}`} />
+              </Reveal>
+            )}
+
+            {/* Monetización: cross-sell al lead de VENTA (canal separado,
+                ver SellVehicleLeadForm.tsx). Acá solo un link liviano
+                (no el form completo) para no saturar 250 fichas — el
+                form completo vive en /vender-tu-auto. */}
+            {type === EntityType.VEHICLE && (
+              <Reveal direction="right" delay={219}>
+                <p className="text-center text-xs text-neutral-400">
+                  ¿Tenés un vehículo para vender o entregar como parte de pago?{' '}
+                  <Link href="/vender-tu-auto" className="link-underline text-auto-accent-strong">
+                    Contanos acá
+                  </Link>
+                  .
+                </p>
               </Reveal>
             )}
 

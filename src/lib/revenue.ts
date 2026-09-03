@@ -8,6 +8,7 @@ export type RevenueSource =
   | 'afiliado-financiacion'
   | 'publicidad-directa'
   | 'lead-cotizacion'
+  | 'lead-venta-usado'
   | 'ficha-destacada'
   | 'licencia-datos'
   | 'otro'
@@ -27,6 +28,7 @@ export const SOURCE_LABELS: Record<RevenueSource, string> = {
   'afiliado-financiacion': 'Afiliado financiación',
   'publicidad-directa': 'Publicidad directa',
   'lead-cotizacion': 'Lead de cotización',
+  'lead-venta-usado': 'Lead de venta de usado',
   'ficha-destacada': 'Ficha destacada (patrocinio)',
   'licencia-datos': 'Licencia de datos (B2B)',
   otro: 'Otro',
@@ -52,6 +54,7 @@ export function getRevenueBySource(entries: RevenueEntry[]): Record<RevenueSourc
     'afiliado-financiacion': 0,
     'publicidad-directa': 0,
     'lead-cotizacion': 0,
+    'lead-venta-usado': 0,
     'ficha-destacada': 0,
     'licencia-datos': 0,
     otro: 0,

@@ -1,5 +1,5 @@
 {
-  "actualizadoAl": "2026-08-31",
+  "actualizadoAl": "2026-09-03",
   "trafico": {
     "visitasMensuales": "En crecimiento (sitio nuevo, sin ciclo completo de indexación todavía)",
     "paginasVistasPorVisita": "N/D — completar cuando GA4 tenga 2+ semanas de datos",
@@ -28,12 +28,17 @@
     },
     {
       "nombre": "Ficha destacada (patrocinio de marca/modelo)",
-      "descripcion": "Tu concesionaria como referencia exclusiva de una marca o modelo puntual: aparecés como '¿Buscás este auto? Consultá en [tu negocio]' en esa ficha específica, más los leads de cotización de esa ficha por mail.",
+      "descripcion": "Tu concesionaria como referencia exclusiva de una marca o modelo puntual: aparecés como '¿Buscás este auto? Consultá en [tu negocio]' en esa ficha específica (banner real, no una promesa — se activa en minutos), más los leads de cotización de esa ficha por mail.",
       "precioMensualArs": "1500 - 3000"
     },
     {
       "nombre": "Leads de cotización compartidos",
       "descripcion": "Recibís por mail cada persona que pidió cotización de un modelo de tu marca (nombre, teléfono, comentario) — lead calificado, no tráfico frío.",
+      "precioMensualArs": "800 - 2000 (o por lead individual)"
+    },
+    {
+      "nombre": "Leads de venta de usados (trade-in)",
+      "descripcion": "Recibís por mail cada persona que dejó los datos de un auto o moto que quiere vender o entregar como parte de pago — ideal para completar stock de usados sin salir a buscarlo.",
       "precioMensualArs": "800 - 2000 (o por lead individual)"
     }
   ],
