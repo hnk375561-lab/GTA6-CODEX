@@ -35,18 +35,20 @@ interface HeroPromoBannerProps {
 }
 
 /**
- * REDISEÑO NUEVO — "TARJETA PROMOCIONAL GRANDE 100% HORIZONTAL" (sept. 2026).
+ * REDISEÑO V3 — "TARJETA VERTICAL, COLUMNA ANGOSTA" (sept. 2026).
  *
  * Reemplaza el bloque izquierdo anterior (`HeroSelfPromoCard`) con una
- * tarjeta MUCHO más grande y prominente:
+ * tarjeta grande y prominente:
  *
- * Layout:
- * - Desktop (≥ lg): dos columnas (50/50 aprox.)
- *   - Izquierda: Foto grande con overlay de specs (esquina inferior)
- *   - Derecha: Título + descripción + specs + CTA grande
- * - Mobile/tablet (< lg): una columna
- *   - Foto grande arriba
- *   - Detalles abajo
+ * Layout: SIEMPRE una columna (foto arriba, detalles abajo), en todos los
+ * tamaños de pantalla. Antes (V2) este banner dividía 50/50 foto/texto en
+ * desktop porque ocupaba la mitad de la franja del hero; ahora
+ * `HeroVehicleShowcaseV2` lo aloja en una columna angosta de ancho fijo
+ * (≈320-360px) para dejarle todo el resto del ancho al carrusel de la
+ * derecha — dentro de una columna así de angosta, partir la tarjeta en
+ * dos mitades laterales la dejaba con la foto y el texto aplastados. El
+ * formato vertical (más alto que ancho) es además el que mejor lee en una
+ * columna angosta.
  *
  * Características:
  * - Clickeable en su totalidad — el `<Link>` rodea foto + detalles
@@ -67,7 +69,7 @@ export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
   if (!item) {
     return (
       <div aria-label="Anuncio destacado" className={containerClassName}>
-        <div className="flex h-full min-h-96 flex-col justify-end bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-8">
+        <div className="flex h-full min-h-[26rem] flex-col justify-end bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
             Descubrí el catálogo
           </p>
@@ -92,16 +94,16 @@ export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
     <Link
       href={item.detailHref}
       aria-label={`Ver ficha de ${item.headline}`}
-      className={cn(containerClassName, 'hero-card-hover tap-scale animate-fade-in group flex flex-col gap-0 transition-colors duration-150 hover:border-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent lg:flex-row lg:items-stretch')}
+      className={cn(containerClassName, 'hero-card-hover tap-scale animate-fade-in group flex flex-col gap-0 transition-colors duration-150 hover:border-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent')}
     >
-      {/* IZQUIERDA: Foto + sello de evidencia + specs */}
-      <div className="relative flex min-h-64 w-full overflow-hidden bg-white/5 lg:w-1/2">
+      {/* ARRIBA: Foto + sello de evidencia + specs */}
+      <div className="relative flex min-h-64 w-full overflow-hidden bg-white/5 sm:min-h-72">
         <Image
           src={item.src}
           alt=""
           aria-hidden="true"
           fill
-          sizes="(min-width: 1024px) 50vw, 100vw"
+          sizes="(min-width: 1024px) 360px, 100vw"
           priority
           className="object-cover"
         />
@@ -163,8 +165,8 @@ export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
         )}
       </div>
 
-      {/* DERECHA: Detalles + CTA */}
-      <div className="flex w-full flex-col justify-between gap-4 bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-6 sm:p-8 lg:w-1/2">
+      {/* ABAJO: Detalles + CTA */}
+      <div className="flex w-full flex-1 flex-col justify-between gap-4 bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-6 sm:p-8">
         {/* Eyebrow + Título + Descripción */}
         <div className="flex flex-col gap-3">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">

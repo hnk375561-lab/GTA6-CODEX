@@ -6,12 +6,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { HeroPromoBanner, type HeroPromoBannerItem } from '@/components/home/HeroPromoBanner'
 import { FeaturedCarousel } from '@/components/home/FeaturedCarousel'
-import { FLIP_VIEW_TRANSITION_NAME, navigateWithFlip, supportsViewTransitions } from '@/lib/view-transitions'
+import { navigateWithFlip, supportsViewTransitions } from '@/lib/view-transitions'
 import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
 import { cn } from '@/lib/utils'
 
 /**
- * Ítem del carrusel derecho (same as before).
+ * Ítem del carrusel derecho (sin cambios de forma respecto de versiones
+ * anteriores).
  */
 export interface HeroVehicleShowcaseItem {
   slug: string
@@ -36,24 +37,38 @@ interface HeroVehicleShowcaseV2Props {
 }
 
 /**
- * REDISEÑO COMPLETO — "FRANJA 100% HORIZONTAL CON DOS BLOQUES" (sept. 2026).
+ * REDISEÑO V3 — "FRANJA HORIZONTAL, CARRUSEL AL ANCHO REAL" (sept. 2026).
  *
- * Nueva estructura de hero:
- * 1. Elimina la foto flotante/superpuesta anterior
- * 2. Crea una franja 100% horizontal (edge-to-edge, mín. padding)
- * 3. Divide en dos bloques lado a lado:
- *    - IZQUIERDA (50%): HeroPromoBanner (tarjeta promocional grande, un único item fijo)
- *    - DERECHA (50%): FeaturedCarousel (carrusel de 4+ vehículos con flechas)
- * 4. Mobile/tablet: se apilan verticalmente (columna)
+ * Qué cambia respecto de la V2 anterior:
  *
- * Ambos bloques:
- * - Son 100% clickeables y funcionales
- * - Mantienen el mismo lenguaje visual (hero-glow-card, hover effects)
- * - Tienen especificaciones y nivel de evidencia visible
- * - Responden a interacción del usuario (flechas, click, transición FLIP)
+ * 1. FIX del build roto (`error TS2322: Property 'trackRef' does not
+ *    exist...`): la V2 le pasaba `trackRef` y `onScroll` como props a
+ *    `<FeaturedCarousel>`, que nunca los declaró en su interfaz — ese
+ *    componente ya expone su propio nodo scrolleable vía `forwardRef`
+ *    (ver `FeaturedCarousel.tsx`), no vía props custom. Antes, además, la
+ *    V2 envolvía `<FeaturedCarousel>` (que ya es scrolleable por dentro,
+ *    con su propio `overflow-x-auto` + drag por puntero) dentro de OTRO
+ *    div con `overflow-x-auto` propio y su propio listener de scroll —
+ *    dos contenedores de scroll anidados en el mismo eje, compitiendo por
+ *    el mismo gesto. Eso es exactamente el patrón que el propio
+ *    `FeaturedCarousel.tsx` advierte evitar en sus comentarios, y es la
+ *    causa más probable de que ni las cards ni las flechas respondieran
+ *    al click: el contenedor externo capturaba el scroll/puntero antes de
+ *    que llegara al `<Link>`/`<button>` real de adentro.
+ *    Ahora `<FeaturedCarousel ref={trackRef}>` es EL único contenedor
+ *    scrolleable — sin wrapper duplicado — y las flechas prev/next llaman
+ *    `trackRef.current.scrollBy(...)` sobre ese mismo nodo real.
  *
- * Desktop: lado a lado, altura uniforme
- * Mobile: apilados, altura auto (foto + detalles fluye naturalmente)
+ * 2. Proporción izquierda/derecha: la V2 dividía 50/50, lo que dejaba el
+ *    carrusel angosto (apenas 1–1.5 cards visibles) y no se sentía "una
+ *    franja horizontal". Ahora el bloque de anuncio propio es una columna
+ *    angosta de ancho fijo (`lg:w-[320px] xl:w-[360px]`) y el carrusel
+ *    ocupa TODO el resto del ancho disponible (`flex-1`) — en pantallas
+ *    anchas se ven 3-4 cards completas más el inicio de la siguiente, en
+ *    vez de una columna recortada.
+ *
+ * Mobile/tablet (< lg): se apilan verticalmente — anuncio arriba,
+ * carrusel abajo, cada uno a 100% del ancho.
  */
 export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: HeroVehicleShowcaseV2Props) {
   const router = useRouter()
@@ -73,6 +88,10 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
     setCanScrollNext(track.scrollLeft + track.clientWidth < track.scrollWidth - 4)
   }, [])
 
+  // El track real vive DENTRO de `FeaturedCarousel` (expuesto vía
+  // `forwardRef`), así que el listener de scroll se engancha directo a
+  // ese nodo — no a un wrapper propio — para no crear un segundo
+  // contenedor de scroll como en la V2.
   useEffect(() => {
     const track = trackRef.current
     if (!track) return
@@ -96,171 +115,169 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
 
   return (
     <div className={cn('relative w-full', className)}>
-      {/* Franja principal: dos bloques lado a lado (o apilados en mobile) */}
-      <div className="flex flex-col gap-4 px-3 sm:px-4 lg:flex-row lg:gap-4">
-        {/* BLOQUE IZQUIERDO: Anuncio promocional fijo */}
-        <div className="flex w-full flex-shrink-0 lg:w-1/2">
-          <HeroPromoBanner item={promoBannerItem} />
+      {/* Franja principal: anuncio angosto a la izquierda + carrusel al
+          ancho real a la derecha (o apilados en mobile/tablet). */}
+      <div className="flex w-full flex-col gap-4 px-3 sm:px-4 lg:flex-row lg:items-stretch lg:gap-5">
+        {/* BLOQUE IZQUIERDO: anuncio promocional fijo, columna angosta */}
+        <div className="flex w-full flex-shrink-0 lg:w-[320px] xl:w-[360px]">
+          <HeroPromoBanner item={promoBannerItem} className="w-full" />
         </div>
 
-        {/* BLOQUE DERECHO: Carrusel de vehículos destacados */}
-        <section className="relative flex w-full flex-col gap-3 lg:w-1/2" aria-label="Vehículos destacados">
-          {/* Track del carrusel con snap y scroll suave */}
-          <div
-            ref={trackRef}
-            className="hide-scrollbar group relative flex gap-3 overflow-x-auto scroll-smooth"
-          >
-            <FeaturedCarousel trackRef={trackRef} onScroll={updateScrollButtons}>
-              {vehicles.map((vehicle, index) => {
-                const flipEnabled =
-                  flipSupported && !matchMedia('(prefers-reduced-motion: reduce)').matches && vehicle.categoryHref
+        {/* BLOQUE DERECHO: carrusel de vehículos destacados, ocupa todo
+            el ancho restante de la franja */}
+        <section className="relative min-w-0 flex-1" aria-label="Vehículos destacados">
+          <FeaturedCarousel ref={trackRef} className="scroll-smooth">
+            {vehicles.map((vehicle, index) => {
+              const flipEnabled =
+                flipSupported && !matchMedia('(prefers-reduced-motion: reduce)').matches && vehicle.categoryHref
 
-                const imageNode = (
-                  <div className="relative h-full w-full overflow-hidden bg-white/5">
-                    <Image
-                      src={vehicle.src}
-                      alt=""
-                      aria-hidden="true"
-                      fill
-                      sizes="(min-width: 1024px) 25vw, 33vw"
-                      priority={index === 0}
-                      className="object-cover transition-transform duration-500 group-hover/card:scale-110"
-                      style={{ transform: `scale(${PHOTO_ZOOM_SCALE})` } as CSSProperties}
-                    />
-                  </div>
-                )
+              const imageNode = (
+                <div className="relative h-full w-full overflow-hidden bg-white/5">
+                  <Image
+                    src={vehicle.src}
+                    alt=""
+                    aria-hidden="true"
+                    fill
+                    sizes="(min-width: 1024px) 25vw, 33vw"
+                    priority={index === 0}
+                    className="object-cover transition-transform duration-500 group-hover/card:scale-110"
+                    style={{ transform: `scale(${PHOTO_ZOOM_SCALE})` } as CSSProperties}
+                  />
+                </div>
+              )
 
-                const canLink = Boolean(vehicle.categoryHref)
+              const canLink = Boolean(vehicle.categoryHref)
 
-                return (
-                  <div
-                    key={vehicle.slug}
-                    className="hero-glow-card hero-card-hover animate-fade-in group/card relative h-[21rem] w-[19rem] shrink-0 snap-start overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-lg sm:h-[23rem] sm:w-[26rem] lg:w-[30rem]"
-                    style={{ animationDelay: `${index * 90}ms`, animationFillMode: 'backwards' }}
-                  >
-                    {canLink ? (
-                      <Link
-                        href={vehicle.categoryHref as string}
-                        aria-label={`Ver ${vehicle.manufacturer ? `${vehicle.manufacturer} ` : ''}${vehicle.title} en su categoría`}
-                        className="block h-full w-full tap-scale focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-auto-accent"
-                        onClick={
-                          flipEnabled
-                            ? (e) => {
-                                e.preventDefault()
-                                navigateWithFlip((href) => router.push(href), vehicle.categoryHref as string, vehicle.slug)
-                              }
-                            : undefined
-                        }
-                      >
-                        {imageNode}
-                      </Link>
-                    ) : (
-                      imageNode
-                    )}
-
-                    {/* Sello de evidencia */}
-                    {vehicle.evidenceLevel && (
-                      <span
-                        className={cn(
-                          'pointer-events-none absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-wide shadow-sm backdrop-blur-sm',
-                          EVIDENCE_STAMP_META[vehicle.evidenceLevel].className
-                        )}
-                        title="Nivel de evidencia — ver detalle completo en la ficha"
-                      >
-                        <span aria-hidden="true">{EVIDENCE_STAMP_META[vehicle.evidenceLevel].icon}</span>
-                        {EVIDENCE_STAMP_META[vehicle.evidenceLevel].shortLabel}
-                      </span>
-                    )}
-
-                    {/* Chip de specs */}
-                    {(vehicle.powerLabel || vehicle.secondaryStatLabel) && (
-                      <div className="pointer-events-none absolute bottom-3 left-3 z-10 flex items-stretch overflow-hidden rounded-2xl border border-edge-strong bg-white/95 shadow-xl backdrop-blur-md">
-                        {vehicle.powerLabel && (
-                          <div className="flex items-center gap-2 px-3 py-2.5">
-                            <span
-                              aria-hidden="true"
-                              className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-auto-accent/15 text-auto-accent"
-                            >
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M13 2 3 14h7l-1 8 11-14h-7l0-6z" />
-                              </svg>
-                            </span>
-                            <span className="whitespace-nowrap font-mono text-[11px] font-semibold text-neutral-900">
-                              {vehicle.powerLabel}
-                            </span>
-                          </div>
-                        )}
-
-                        {vehicle.powerLabel && vehicle.secondaryStatLabel && (
-                          <span aria-hidden="true" className="my-2 w-px bg-edge-strong" />
-                        )}
-
-                        {vehicle.secondaryStatLabel && (
-                          <div className="flex items-center gap-2 px-3 py-2.5">
-                            <span
-                              aria-hidden="true"
-                              className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-auto-accent-orange/15 text-auto-accent-orange"
-                            >
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                <path d="M20.59 13.41 12 22l-9-9V3h10l7.59 8.41a2 2 0 0 1 0 2.18Z" />
-                                <circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none" />
-                              </svg>
-                            </span>
-                            <span className="whitespace-nowrap font-mono text-[11px] font-semibold text-neutral-900">
-                              {vehicle.secondaryStatLabel}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    )}
-
-                    {/* CTA: Ver ficha */}
+              return (
+                <div
+                  key={vehicle.slug}
+                  className="hero-glow-card hero-card-hover animate-fade-in group/card relative h-[21rem] w-[19rem] shrink-0 snap-start overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-lg sm:h-[23rem] sm:w-[26rem] lg:w-[28rem]"
+                  style={{ animationDelay: `${index * 90}ms`, animationFillMode: 'backwards' }}
+                >
+                  {canLink ? (
                     <Link
-                      href={vehicle.detailHref}
-                      aria-label={`Ver ficha completa de ${vehicle.manufacturer ? `${vehicle.manufacturer} ` : ''}${vehicle.title}`}
-                      className="cta-shine group/cta tap-scale absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-neutral-900/20 ring-1 ring-white/10 transition-all duration-200 hover:-translate-y-1 hover:bg-black hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
+                      href={vehicle.categoryHref as string}
+                      aria-label={`Ver ${vehicle.manufacturer ? `${vehicle.manufacturer} ` : ''}${vehicle.title} en su categoría`}
+                      className="block h-full w-full tap-scale focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-auto-accent"
+                      onClick={
+                        flipEnabled
+                          ? (e) => {
+                              e.preventDefault()
+                              navigateWithFlip((href) => router.push(href), vehicle.categoryHref as string, vehicle.slug)
+                            }
+                          : undefined
+                      }
                     >
-                      Ver ficha
-                      <span
-                        aria-hidden="true"
-                        className="text-auto-accent-strong transition-transform duration-200 group-hover/cta:translate-x-0.5"
-                      >
-                        →
-                      </span>
+                      {imageNode}
                     </Link>
-                  </div>
-                )
-              })}
-            </FeaturedCarousel>
+                  ) : (
+                    imageNode
+                  )}
 
-            {/* Botones de navegación (solo desktop) */}
-            {vehicles.length > 0 && (
-              <>
-                <button
-                  type="button"
-                  onClick={() => scrollByStep(-1)}
-                  disabled={!canScrollPrev}
-                  aria-label="Ver vehículos anteriores"
-                  className="tap-scale absolute -left-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-neutral-700 shadow-lg ring-1 ring-neutral-200 transition-all duration-150 hover:-translate-x-0.5 hover:text-neutral-900 disabled:pointer-events-none disabled:opacity-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent sm:flex"
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M15 18l-6-6 6-6" />
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => scrollByStep(1)}
-                  disabled={!canScrollNext}
-                  aria-label="Ver más vehículos"
-                  className="tap-scale absolute -right-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-neutral-700 shadow-lg ring-1 ring-neutral-200 transition-all duration-150 hover:translate-x-0.5 hover:text-neutral-900 disabled:pointer-events-none disabled:opacity-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent sm:flex"
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
-                </button>
-              </>
-            )}
-          </div>
+                  {/* Sello de evidencia */}
+                  {vehicle.evidenceLevel && (
+                    <span
+                      className={cn(
+                        'pointer-events-none absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-wide shadow-sm backdrop-blur-sm',
+                        EVIDENCE_STAMP_META[vehicle.evidenceLevel].className
+                      )}
+                      title="Nivel de evidencia — ver detalle completo en la ficha"
+                    >
+                      <span aria-hidden="true">{EVIDENCE_STAMP_META[vehicle.evidenceLevel].icon}</span>
+                      {EVIDENCE_STAMP_META[vehicle.evidenceLevel].shortLabel}
+                    </span>
+                  )}
+
+                  {/* Chip de specs */}
+                  {(vehicle.powerLabel || vehicle.secondaryStatLabel) && (
+                    <div className="pointer-events-none absolute bottom-3 left-3 z-10 flex items-stretch overflow-hidden rounded-2xl border border-edge-strong bg-white/95 shadow-xl backdrop-blur-md">
+                      {vehicle.powerLabel && (
+                        <div className="flex items-center gap-2 px-3 py-2.5">
+                          <span
+                            aria-hidden="true"
+                            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-auto-accent/15 text-auto-accent"
+                          >
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                              <path d="M13 2 3 14h7l-1 8 11-14h-7l0-6z" />
+                            </svg>
+                          </span>
+                          <span className="whitespace-nowrap font-mono text-[11px] font-semibold text-neutral-900">
+                            {vehicle.powerLabel}
+                          </span>
+                        </div>
+                      )}
+
+                      {vehicle.powerLabel && vehicle.secondaryStatLabel && (
+                        <span aria-hidden="true" className="my-2 w-px bg-edge-strong" />
+                      )}
+
+                      {vehicle.secondaryStatLabel && (
+                        <div className="flex items-center gap-2 px-3 py-2.5">
+                          <span
+                            aria-hidden="true"
+                            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-auto-accent-orange/15 text-auto-accent-orange"
+                          >
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                              <path d="M20.59 13.41 12 22l-9-9V3h10l7.59 8.41a2 2 0 0 1 0 2.18Z" />
+                              <circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none" />
+                            </svg>
+                          </span>
+                          <span className="whitespace-nowrap font-mono text-[11px] font-semibold text-neutral-900">
+                            {vehicle.secondaryStatLabel}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* CTA: Ver ficha */}
+                  <Link
+                    href={vehicle.detailHref}
+                    aria-label={`Ver ficha completa de ${vehicle.manufacturer ? `${vehicle.manufacturer} ` : ''}${vehicle.title}`}
+                    className="cta-shine group/cta tap-scale absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-neutral-900/20 ring-1 ring-white/10 transition-all duration-200 hover:-translate-y-1 hover:bg-black hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
+                  >
+                    Ver ficha
+                    <span
+                      aria-hidden="true"
+                      className="text-auto-accent-strong transition-transform duration-200 group-hover/cta:translate-x-0.5"
+                    >
+                      →
+                    </span>
+                  </Link>
+                </div>
+              )
+            })}
+          </FeaturedCarousel>
+
+          {/* Botones de navegación (solo desktop) — controlan el nodo
+              real expuesto por `FeaturedCarousel` vía `trackRef`, sin
+              wrapper de scroll intermedio. */}
+          {vehicles.length > 0 && (
+            <>
+              <button
+                type="button"
+                onClick={() => scrollByStep(-1)}
+                disabled={!canScrollPrev}
+                aria-label="Ver vehículos anteriores"
+                className="tap-scale absolute -left-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-neutral-700 shadow-lg ring-1 ring-neutral-200 transition-all duration-150 hover:-translate-x-0.5 hover:text-neutral-900 disabled:pointer-events-none disabled:opacity-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent sm:flex"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollByStep(1)}
+                disabled={!canScrollNext}
+                aria-label="Ver más vehículos"
+                className="tap-scale absolute -right-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-neutral-700 shadow-lg ring-1 ring-neutral-200 transition-all duration-150 hover:translate-x-0.5 hover:text-neutral-900 disabled:pointer-events-none disabled:opacity-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent sm:flex"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </>
+          )}
         </section>
       </div>
     </div>
