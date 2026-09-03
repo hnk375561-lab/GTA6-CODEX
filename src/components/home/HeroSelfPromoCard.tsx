@@ -1,26 +1,22 @@
-'use client'
-
-import { useRef, useState, type PointerEvent as ReactPointerEvent, type MouseEvent as ReactMouseEvent } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
 import { cn } from '@/lib/utils'
 
 /**
- * Un slide del bloque izquierdo del hero ("anuncio propio del sitio").
- * `page.tsx` arma un ARRAY de estos (uno por categoría de carrocería,
- * ver `HERO_SELF_PROMO_CATEGORY_ORDER` ahí) — CUARTO REDISEÑO (sept.
- * 2026, "más cosas cambiantes"): antes era un único objeto fijo, ahora
- * es una lista que el usuario navega a mano (nunca con temporizador
- * automático, ver docstring del componente más abajo).
+ * Contenido del bloque izquierdo del hero ("anuncio propio del sitio").
+ * FIJO por decisión de producto (no rota como el carrusel de la derecha,
+ * ver `HeroVehicleShowcase`): una sola idea editorial a la vez, que se
+ * cambia a mano editando el criterio de selección en `page.tsx` (hoy:
+ * "recomendación del momento" en una categoría, por defecto Sedán).
  *
- * Server component (`page.tsx`) arma cada slide igual que
+ * Server component (`page.tsx`) arma este objeto igual que
  * `HeroVehicleShowcaseItem` — mismo motivo: `resolveEntityDisplayImage`
  * depende de `fs` y no puede resolverse en un client component. Datos
  * reales del catálogo (foto, potencia, precio), nunca inventados: si
  * `page.tsx` no encuentra ningún vehículo con foto resuelta para armar
- * ni un solo slide, pasa un array vacío y este componente cae a su
- * fallback genérico (ver más abajo) en vez de mostrar specs vacíos.
+ * este bloque, pasa `null` y este componente cae a su fallback genérico
+ * (ver más abajo) en vez de mostrar specs vacíos o de relleno.
  */
 export interface HeroSelfPromoContent {
   /** Etiqueta corta arriba del título (ej. "Por qué elegir un sedán"). */
@@ -46,38 +42,8 @@ export interface HeroSelfPromoContent {
 }
 
 interface HeroSelfPromoCardProps {
-  /** Uno o más slides ya armados en servidor — array vacío cuando
-   *  `page.tsx` no encontró ningún vehículo disponible (fallback
-   *  genérico, sin flechas/dots). Con un solo slide, tampoco se
-   *  muestran controles de navegación (no hay entre qué elegir). */
-  slides: HeroSelfPromoContent[]
+  content: HeroSelfPromoContent | null
   className?: string
-}
-
-/** Distancia mínima de arrastre (px) para contar un swipe como cambio de
- *  slide en vez de un click limpio sobre la foto/CTA — mismo criterio de
- *  umbral que ya usa `FeaturedCarousel` para no robarle el click a los
- *  links de abajo (ver el comentario largo ahí). */
-const SWIPE_THRESHOLD_PX = 40
-
-/** Chip "esto es nuestra recomendación" — mismo chip en el fallback sin
- *  vehículo y en la versión con contenido real, así el bloque siempre se
- *  lee como señalado a propósito, tenga o no datos de catálogo detrás.
- *  Halo pulsante propio (`hero-badge-glow`, ver `globals.css`) — parte
- *  del pase "más vistoso" (sept. 2026): la flecha ya no es un ícono
- *  quieto, respira para que el ojo la encuentre primero al entrar al
- *  panel. `pointer-events-none`: es una etiqueta, no debe restar área de
- *  click a la foto de abajo — el texto SÍ se anuncia a lectores de
- *  pantalla (solo el ícono va `aria-hidden`). */
-function RecommendationBadge() {
-  return (
-    <span className="hero-badge-glow pointer-events-none absolute left-4 top-4 z-20 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/15 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-white shadow-sm backdrop-blur-md">
-      <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 5v14M5 12l7 7 7-7" />
-      </svg>
-      Nuestra recomendación
-    </span>
-  )
 }
 
 /**
@@ -85,50 +51,68 @@ function RecommendationBadge() {
  * la monta como bloque fijo hermano del carrusel de vehículos) — mismo
  * lenguaje visual que las cards de vehículo (`rounded-3xl border
  * shadow-lg`), pero formato "banner editorial": la foto ocupa la tarjeta
- * completa (`object-cover` a sangre) con un degradé oscuro al pie para
- * que el texto quede legible encima.
+ * completa
+ * (`object-cover` a sangre, no una caja de foto separada arriba) con un
+ * degradé oscuro al pie para que el texto (eyebrow + título + specs +
+ * CTA) quede legible encima sin taparla del todo — a propósito distinto
+ * del carrusel (foto en caja propia + franja de texto abajo) para que
+ * las dos piezas no se lean como la misma cosa repetida dos veces.
  *
- * CUARTO REDISEÑO ("más cosas cambiantes", sept. 2026) — dos cambios de
- * fondo sobre la versión anterior (slide único, fijo):
+ * Dos puntos de click reales, nunca un `<Link>` anidado dentro de otro
+ * (mismo patrón que el carrusel): la foto entera linkea a la categoría
+ * agrupada (`categoryHref`, si existe), el chip de CTA linkea a la
+ * ficha específica de este vehículo (`detailHref`) — son hermanos en el
+ * mismo contenedor `relative`, no un link dentro del otro.
  *
- * 1) NAVEGACIÓN MANUAL ENTRE SLIDES. `slides` ahora es un array (uno por
- *    categoría de carrocería, armado en `page.tsx`). El avance es
- *    SIEMPRE manual — flechas prev/next (mismo lenguaje visual que las
- *    del carrusel de la derecha) + dots clickeables + swipe con
- *    puntero/touch — nunca un temporizador automático (pedido explícito:
- *    "rota pero solo al hacer click/swipe"). El swipe reusa el mismo
- *    patrón de umbral de `FeaturedCarousel` (ver `SWIPE_THRESHOLD_PX`):
- *    se mide el arrastre en `pointerup` contra el punto de partida y
- *    recién ahí se decide si fue un swipe real o un click limpio — un
- *    `<Link>` de la foto nunca pierde su click por un swipe fallido
- *    (`onClick` del link chequea la misma bandera de arrastre).
- * 2) MÁS IMPACTO VISUAL. Halo de acento animado detrás de la card
- *    (`.hero-glow-card`, ver `globals.css` — gradiente cónico rosa/
- *    cian/dorado que gira y se enciende al hover), hover más agresivo
- *    (elevación + escala, no solo la foto respirando de siempre),
- *    badge con pulso propio, y barrido de luz (`.cta-shine`, ya usado en
- *    los CTA grandes del hero) en el chip de CTA para que el punto de
- *    click más importante de la card se note más.
+ * TERCER REDISEÑO ("dos bloques", sept. 2026): esta card deja de ser el
+ * primer ítem dentro del mismo track con scroll-snap del carrusel (eso
+ * la hacía "una card más" de la fila, se perdía entre las demás y
+ * competía por el mismo gesto de drag/swipe que el resto). Ahora es un
+ * bloque PROPIO, fijo, a la izquierda de la franja del hero — el
+ * carrusel de vehículos vive aparte, a la derecha, con su propio scroll
+ * (ver `HeroVehicleShowcase.tsx` para el layout completo de dos
+ * columnas). El alto ya no es un valor fijo pensado para calzar con el
+ * resto de una fila (`h-[21rem]`): el caller (`HeroVehicleShowcase`)
+ * pasa la altura real vía `className`, que sobreescribe el valor por
+ * default acá abajo gracias a `cn`/`twMerge` (último valor gana).
  *
- * Dos puntos de click reales, nunca un `<Link>` anidado dentro de otro:
- * la foto entera linkea a la categoría agrupada (`categoryHref`, si
- * existe), el chip de CTA linkea a la ficha específica (`detailHref`).
+ * Además de la reubicación: se agrega una marca visual de "esto es
+ * nuestra recomendación" (chip con flecha, esquina superior izquierda) —
+ * pedido explícito para que el bloque se lea como señalado a propósito y
+ * no como una card más del catálogo. El sello de evidencia se corre a la
+ * esquina superior DERECHA para no superponerse con esa marca nueva.
  */
-export function HeroSelfPromoCard({ slides, className }: HeroSelfPromoCardProps) {
-  const [index, setIndex] = useState(0)
-  const draggingRef = useRef(false)
-  const startXRef = useRef(0)
 
+/** Chip decorativo "esto es nuestra recomendación" — mismo chip en el
+ *  fallback sin vehículo y en la versión con contenido real, así el
+ *  bloque siempre se lee como señalado a propósito, tenga o no datos de
+ *  catálogo detrás. `pointer-events-none`: es puramente una etiqueta, no
+ *  debe restar área de click a la foto que tiene debajo. */
+function RecommendationBadge() {
+  return (
+    <span
+      aria-hidden="true"
+      className="pointer-events-none absolute left-4 top-4 z-20 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/15 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-white shadow-sm backdrop-blur-md"
+    >
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+      Nuestra recomendación
+    </span>
+  )
+}
+
+export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps) {
   const cardClassName = cn(
-    'hero-glow-card hero-card-hover relative flex h-[21rem] flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-900 text-white shadow-lg',
+    'relative flex h-[21rem] flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-900 text-white shadow-lg',
     className
   )
 
   // Fallback sin vehículo (catálogo sin ninguna foto resuelta disponible
   // para este bloque, caso borde): pitch genérico del sitio, sin specs
-  // ni foto inventada. Sin controles de navegación: no hay slides entre
-  // los que elegir.
-  if (slides.length === 0) {
+  // ni foto inventada — sigue siendo un CTA real y clickeable, solo que
+  // apunta al catálogo completo en vez de a una ficha puntual.
+  if (!content) {
     return (
       <div className={cardClassName}>
         <RecommendationBadge />
@@ -144,7 +128,7 @@ export function HeroSelfPromoCard({ slides, className }: HeroSelfPromoCardProps)
           </p>
           <Link
             href="/vehiculos"
-            className="cta-shine tap-scale mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-neutral-900 shadow-lg transition-transform hover:-translate-y-0.5"
+            className="tap-scale mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-neutral-900 shadow-lg transition-transform hover:-translate-y-0.5"
           >
             Ver catálogo <span aria-hidden="true">→</span>
           </Link>
@@ -153,85 +137,39 @@ export function HeroSelfPromoCard({ slides, className }: HeroSelfPromoCardProps)
     )
   }
 
-  const safeIndex = index % slides.length
-  const content = slides[safeIndex]
   const canLink = Boolean(content.categoryHref)
-  const canNavigate = slides.length > 1
-
-  function goTo(next: number) {
-    setIndex(((next % slides.length) + slides.length) % slides.length)
-  }
-  function goPrev() {
-    goTo(safeIndex - 1)
-  }
-  function goNext() {
-    goTo(safeIndex + 1)
-  }
-
-  function onPointerDown(e: ReactPointerEvent<HTMLDivElement>) {
-    if (!canNavigate) return
-    draggingRef.current = false
-    startXRef.current = e.clientX
-  }
-  function onPointerMove(e: ReactPointerEvent<HTMLDivElement>) {
-    if (!canNavigate) return
-    if (Math.abs(e.clientX - startXRef.current) > 8) draggingRef.current = true
-  }
-  function onPointerUp(e: ReactPointerEvent<HTMLDivElement>) {
-    if (!canNavigate) return
-    const deltaX = e.clientX - startXRef.current
-    if (Math.abs(deltaX) > SWIPE_THRESHOLD_PX) {
-      if (deltaX < 0) goNext()
-      else goPrev()
-    }
-  }
-  // El swipe se resuelve en `pointerup` (arriba); acá solo evitamos que
-  // el `click` sintético que sigue navegue el `<Link>` de la foto cuando
-  // el gesto SÍ fue un arrastre real — mismo problema de fondo que
-  // `FeaturedCarousel` documenta en detalle. Se resetea después para que
-  // el próximo click limpio funcione normal.
-  function onPhotoLinkClick(e: ReactMouseEvent) {
-    if (draggingRef.current) {
-      e.preventDefault()
-      draggingRef.current = false
-    }
-  }
 
   // Mismo pulido de "vida" del carrusel (ver el comentario largo sobre
   // `.hero-vehicle-float` en `HeroVehicleShowcase.tsx`): wrapper propio
-  // con `absolute inset-0`, nunca en el nodo de `Image` en sí. `key`
-  // sobre la imagen (nueva en este rediseño): fuerza remount al cambiar
-  // de slide, así `.animate-fade-in` corre de nuevo en cada foto.
+  // con `absolute inset-0`, nunca en el nodo de `Image` en sí — acá no
+  // hay un segundo `transform` inline compitiendo (esta foto no tiene
+  // zoom, a diferencia del carrusel), pero se mantiene el mismo patrón
+  // de nodo separado para no acoplar la animación CSS al posicionamiento
+  // de `next/image` con `fill`.
+  // `z-0` explícito (antes: sin valor, `auto`): dejamos constancia clara
+  // de que este es el nodo de más abajo de la pila — el badge (`z-20`),
+  // el degradé (sin z pero pintado después = arriba de este) y el bloque
+  // de texto/CTA (`z-20`) siempre quedan por encima sin depender del
+  // orden implícito de "quién se declaró después en el JSX".
   const photo = (
     <div aria-hidden="true" className="hero-vehicle-float absolute inset-0 z-0">
       <Image
-        key={content.src}
         src={content.src}
         alt=""
         fill
-        sizes="(min-width: 1280px) 27rem, (min-width: 1024px) 24rem, 100vw"
+        sizes="(min-width: 1024px) 24rem, 78vw"
         priority
-        className="animate-fade-in object-cover"
+        className="object-cover"
       />
     </div>
   )
 
   return (
-    <div
-      className={cardClassName}
-      onPointerDown={onPointerDown}
-      onPointerMove={onPointerMove}
-      onPointerUp={onPointerUp}
-      onPointerCancel={() => {
-        draggingRef.current = false
-      }}
-      style={{ touchAction: canNavigate ? 'pan-y' : undefined }}
-    >
+    <div className={cardClassName}>
       {canLink ? (
         <Link
           href={content.categoryHref as string}
           aria-label={`Ver ${content.headline} en su categoría`}
-          onClick={onPhotoLinkClick}
           className="tap-scale absolute inset-0 z-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-auto-accent"
         >
           {photo}
@@ -241,13 +179,15 @@ export function HeroSelfPromoCard({ slides, className }: HeroSelfPromoCardProps)
       )}
 
       {/* Degradé oscuro de pie a mitad de tarjeta: garantiza contraste
-          del texto sobre cualquier foto real. */}
+          del texto sobre cualquier foto real, sin depender de qué tan
+          clara u oscura sea cada imagen puntual del catálogo. */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-2/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
 
       <RecommendationBadge />
 
-      {/* Sello de evidencia: esquina superior DERECHA, para no
-          superponerse con `RecommendationBadge`. */}
+      {/* Sello de evidencia: esquina superior DERECHA (antes izquierda,
+          donde ahora vive `RecommendationBadge`) para que las dos
+          etiquetas nunca se superpongan. */}
       {content.evidenceLevel && (
         <span
           className={cn(
@@ -261,39 +201,13 @@ export function HeroSelfPromoCard({ slides, className }: HeroSelfPromoCardProps)
         </span>
       )}
 
-      {/* Flechas prev/next — mismo lenguaje visual que las del carrusel
-          de la derecha (`HeroVehicleShowcase`), acá siempre visibles
-          (card angosta, no hace falta reservarlas para `sm:` como en el
-          carrusel ancho) — solo si hay más de un slide entre el que
-          elegir. */}
-      {canNavigate && (
-        <>
-          <button
-            type="button"
-            onClick={goPrev}
-            aria-label="Recomendación anterior"
-            className="tap-scale absolute left-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white shadow-lg ring-1 ring-white/15 backdrop-blur-md transition-all duration-150 hover:-translate-x-0.5 hover:bg-black/60 hover:ring-white/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            onClick={goNext}
-            aria-label="Siguiente recomendación"
-            className="tap-scale absolute right-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white shadow-lg ring-1 ring-white/15 backdrop-blur-md transition-all duration-150 hover:translate-x-0.5 hover:bg-black/60 hover:ring-white/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
-        </>
-      )}
-
-      {/* `z-20`: por encima de la foto (`z-0`) y el degradé (`z-[1]`). */}
+      {/* `z-20` (antes `z-10`): mismo nivel que las etiquetas de arriba,
+          por encima de la foto (`z-0`) y el degradé (`z-[1]`) sin dejar
+          nada libreado al orden de aparición en el DOM. El chip de CTA
+          de acá adentro queda, así, siempre por encima de la foto —
+          nunca compite por el click con el `<Link>` de categoría. */}
       <div className="relative z-20 mt-auto flex flex-col gap-3 p-5">
-        <div key={content.headline} className="animate-fade-in">
+        <div>
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">{content.eyebrow}</p>
           <p className="mt-1 font-display text-2xl font-bold leading-tight sm:text-3xl">{content.headline}</p>
           <p className="mt-1.5 max-w-sm text-sm text-white/80">{content.body}</p>
@@ -330,13 +244,12 @@ export function HeroSelfPromoCard({ slides, className }: HeroSelfPromoCardProps)
           )}
 
           {/* Chip de CTA — hermano del `<Link>` de la foto (nunca
-              anidado dentro). `.cta-shine` (barrido de luz al hover):
-              parte del pase "más vistoso" — mismo efecto que ya
-              reservaba el sitio para los 1-2 CTA primarios por vista. */}
+              anidado dentro), mismo patrón que el chip "Ver ficha" del
+              carrusel de la derecha. */}
           <Link
             href={content.detailHref}
             aria-label={`Ver ficha completa de ${content.headline}`}
-            className="cta-shine group tap-scale relative z-10 ml-auto inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-neutral-900 shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
+            className="group tap-scale relative z-10 ml-auto inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-neutral-900 shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
           >
             {content.ctaLabel}
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -344,27 +257,6 @@ export function HeroSelfPromoCard({ slides, className }: HeroSelfPromoCardProps)
             </span>
           </Link>
         </div>
-
-        {/* Dots — mismo criterio que las flechas: solo con más de un
-            slide. Cada dot es un botón real (no solo un indicador
-            visual), navegación directa además de prev/next/swipe. */}
-        {canNavigate && (
-          <div className="mt-1 flex items-center gap-1.5">
-            {slides.map((slide, i) => (
-              <button
-                key={slide.headline}
-                type="button"
-                onClick={() => goTo(i)}
-                aria-label={`Ver recomendación ${i + 1} de ${slides.length}: ${slide.headline}`}
-                aria-current={i === safeIndex}
-                className={cn(
-                  'tap-scale h-1.5 rounded-full transition-all duration-200',
-                  i === safeIndex ? 'w-6 bg-white' : 'w-1.5 bg-white/35 hover:bg-white/60'
-                )}
-              />
-            ))}
-          </div>
-        )}
       </div>
     </div>
   )
