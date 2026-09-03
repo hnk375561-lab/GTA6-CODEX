@@ -13,17 +13,20 @@ import { useWishlist } from '@/lib/hooks/useWishlist'
  * (Vehículos) más las secciones transversales que no son un tipo de
  * entidad (Comparar, Galería, Mapa).
  *
- * Noticias y Guías (EntityType.NEWS / EntityType.GUIDE) tienen rutas,
- * tipos y SEO ya construidos, pero 0 contenido real en
- * src/content/ (ver auditoría "AutoFicha: aprovechamiento de datos",
- * oportunidad P1 "Noticias/Guías"). Se retiran del nav por ahora para no
- * llevar a secciones vacías — decisión reversible, no se borra ninguna
- * ruta ni componente: alcanza con reagregar estas dos líneas cuando haya
- * contenido real que publicar.
+ * Guías (EntityType.GUIDE) se reincorpora al nav (monetización, sept
+ * 2026): la nota anterior decía "0 contenido real" pero
+ * src/content/guias/ ya tiene 10 guías publicadas, 9 de ellas con tags
+ * que disparan el CTA de afiliado de seguro/financiación
+ * (MonetizationCtaGroup, ver page.tsx de [entityType]/[slug]). Tenerlas
+ * fuera del nav significaba contenido con monetización ya cableada sin
+ * ningún link interno que lo lleve tráfico — el peor tipo de desperdicio
+ * (trabajo hecho, cero exposición). Noticias queda afuera todavía: solo
+ * 3 artículos, umbral más bajo para justificar su propio ítem de nav.
  */
 const NAV_LINKS = [
   { href: `/${EntityType.VEHICLE}`, label: 'Vehículos' },
   { href: `/${EntityType.MANUFACTURER}`, label: 'Fabricantes' },
+  { href: `/${EntityType.GUIDE}`, label: 'Guías' },
   { href: '/comparar', label: 'Comparar' },
   { href: '/galeria', label: 'Galería' },
   { href: '/mapa', label: 'Mapa' },

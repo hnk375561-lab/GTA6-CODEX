@@ -46,10 +46,16 @@ export function Footer() {
                   Fabricantes
                 </Link>
               </li>
-              {/* Noticias/Guías retirados del footer junto con el nav
-                  (ver Header.tsx): 0 contenido real hoy, decisión
-                  reversible — ver auditoría "AutoFicha: aprovechamiento
-                  de datos". */}
+              <li>
+                <Link
+                  href={`/${EntityType.GUIDE}`}
+                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                >
+                  Guías de compra
+                </Link>
+              </li>
+              {/* Noticias sigue afuera de la navegación (solo 3
+                  artículos hoy) — ver Header.tsx para el criterio. */}
             </ul>
           </div>
 
