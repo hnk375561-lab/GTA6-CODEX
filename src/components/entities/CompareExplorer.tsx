@@ -7,6 +7,8 @@ import type { Vehicle } from '@/types'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { VehicleCompareTable, MAX_COMPARE } from '@/components/entities/VehicleCompareSheet'
 import { readCompareStorage, writeCompareStorage } from '@/lib/hooks/useVehicleCompare'
+import { MercadoLibreAffiliateButton } from '@/components/monetization/MercadoLibreAffiliateButton'
+import { MonetizationCtaGroup } from '@/components/monetization/MonetizationCtaGroup'
 import { cn } from '@/lib/utils'
 
 interface CompareExplorerProps {
@@ -138,6 +140,26 @@ export function CompareExplorer({ vehicles, imageBySlug }: CompareExplorerProps)
               </button>
             </div>
             <VehicleCompareTable vehicles={selectedVehicles} imageBySlug={imageBySlug} onRemove={toggle} />
+
+            {/* Auditoría de monetización (2026-09): esta comparación
+                dinámica (armada eligiendo autos de la grilla) tenía el
+                mismo agujero que tenía `/comparar/[pair]` antes de
+                cerrarlo — cero afiliados para una selección explícita de
+                2+ autos que la persona ya decidió comparar. */}
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              {selectedVehicles.map((v) => (
+                <MercadoLibreAffiliateButton
+                  key={v.slug}
+                  vehicleName={v.title}
+                  buttonText={`Ver ${v.title} en Mercado Libre`}
+                  size="sm"
+                  trackingLabel={`comparar-dinamico-ml-${v.slug}`}
+                />
+              ))}
+            </div>
+            <div className="mt-4">
+              <MonetizationCtaGroup trackingLabelPrefix="comparar-dinamico" />
+            </div>
           </div>
         ) : (
           <div className="glass-surface flex flex-col items-center justify-center rounded-2xl border border-dashed border-edge bg-surface-card/60 px-6 py-12 text-center">
