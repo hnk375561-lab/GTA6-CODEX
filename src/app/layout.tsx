@@ -32,6 +32,7 @@ import { ConsentBanner } from '@/components/layout/ConsentBanner'
 import { PageTransitionBridge } from '@/components/layout/PageTransitionBridge'
 import { ScrollRestorationBridge } from '@/components/layout/ScrollRestorationBridge'
 import { HideOnHome } from '@/components/layout/HideOnHome'
+import { StickyAdUnit } from '@/components/monetization/StickyAdUnit'
 
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/config/site'
 // GA4 solo se activa si hay un ID real configurado. Sin esto, un build sin
@@ -122,6 +123,14 @@ export default async function RootLayout({
             <Footer />
           </HideOnHome>
         </div>
+        {/* Monetización: anuncio ancla (sticky) mobile, canal nuevo — ver
+            StickyAdUnit.tsx y docs/monetizacion-plan.md sección 2.18.
+            Oculto en home por el mismo motivo que TrendingBar/Footer (ver
+            HideOnHome.tsx): el layout pineado de "/" no tiene margen fijo
+            de pantalla para regalarle a una barra inferior. */}
+        <HideOnHome>
+          <StickyAdUnit />
+        </HideOnHome>
         {/* Vercel Analytics: no usa cookies ni almacenamiento persistente
             (a diferencia de GA4), por lo que no requiere pasar por
             ConsentBanner. Solo reporta datos si el sitio está deployado

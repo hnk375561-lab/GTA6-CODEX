@@ -588,6 +588,8 @@ export default async function EntityPage({ params }: PageProps) {
               <Reveal direction="right" delay={215}>
                 <MonetizationCtaGroup
                   vehicleName={entity.title}
+                  showFintech
+                  showTramites
                   trackingLabelPrefix={`vehicle-${entity.slug}`}
                 />
               </Reveal>

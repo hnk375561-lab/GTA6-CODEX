@@ -40,6 +40,11 @@
       "nombre": "Leads de venta de usados (trade-in)",
       "descripcion": "Recibís por mail cada persona que dejó los datos de un auto o moto que quiere vender o entregar como parte de pago — ideal para completar stock de usados sin salir a buscarlo.",
       "precioMensualArs": "800 - 2000 (o por lead individual)"
+    },
+    {
+      "nombre": "Leads de trámites (transferencia/patentamiento)",
+      "descripcion": "Recibís por mail cada persona que necesita hacer una transferencia, patentamiento u otro trámite vehicular — ideal para gestorías. Producto exclusivo del rubro gestoría del directorio, no compite con concesionarias.",
+      "precioMensualArs": "800 - 2000 (o por lead individual)"
     }
   ],
   "roiEjemplo": "Un lead calificado (alguien que ya comparó specs y decidió que ese es el auto que quiere) vale más que un click frío de red social — está 2-3 pasos más cerca de comprar.",

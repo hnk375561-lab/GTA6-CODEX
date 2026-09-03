@@ -125,6 +125,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/tramites-vehiculo"
+                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                >
+                  Trámites (transferencia/patentamiento)
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/anunciate"
                   className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
                 >

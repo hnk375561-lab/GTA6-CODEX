@@ -110,6 +110,18 @@ export default function DirectorioConcepcionDelUruguayPage() {
           <Reveal key={rubro.key} delay={60 + i * 40}>
             <section className="mb-10">
               <h2 className="mb-4 font-display text-lg font-semibold text-neutral-900">{rubro.label}</h2>
+              {/* CTA para quien busca (no para el negocio que se anuncia):
+                  alimenta el lead de trámites (sección 2.19 del plan de
+                  monetización) desde el rubro donde tiene más sentido. */}
+              {rubro.key === 'gestoria' && (
+                <p className="mb-4 text-sm text-neutral-500">
+                  ¿Necesitás hacer una transferencia o patentamiento?{' '}
+                  <Link href="/tramites-vehiculo" className="link-underline font-medium text-auto-accent-strong">
+                    Dejá tus datos acá
+                  </Link>{' '}
+                  y te conectamos con una gestoría.
+                </p>
+              )}
               <div className="grid gap-4 sm:grid-cols-2">
                 {rubroListings.map((listing) => (
                   <div key={listing.nombre} className="rounded-xl border border-edge bg-surface-card p-5">

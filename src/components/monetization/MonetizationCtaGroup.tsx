@@ -1,11 +1,29 @@
+import Link from 'next/link'
 import { InsuranceAffiliateButton } from '@/components/monetization/InsuranceAffiliateButton'
 import { FinancingAffiliateButton } from '@/components/monetization/FinancingAffiliateButton'
+import { FintechAffiliateButton } from '@/components/monetization/FintechAffiliateButton'
 
 interface MonetizationCtaGroupProps {
   /** Nombre del vehículo, si el bloque se muestra en una ficha técnica. */
   vehicleName?: string
   showInsurance?: boolean
   showFinancing?: boolean
+  /**
+   * Afiliado fintech (cuenta digital / tarjeta prepaga, ver
+   * `FintechAffiliateButton.tsx`, sección 2.17 del plan de monetización).
+   * Default `false` a propósito: a diferencia de seguro/financiación (que
+   * aplican a casi cualquier compra de vehículo), la relevancia de esto
+   * varía más por contexto — se activa explícitamente en la ficha de
+   * vehículo, no en guías genéricas.
+   */
+  showFintech?: boolean
+  /**
+   * Link (no botón de afiliado externo) hacia `/tramites-vehiculo` — lead
+   * de transferencia/patentamiento, sección 2.19. Default `false`: solo
+   * tiene sentido en momentos de "ya elegí/tengo el vehículo", igual que
+   * showFintech.
+   */
+  showTramites?: boolean
   /** Prefijo para las tracking labels (ej. "vehicle-toyota-corolla" o "guide-seguros-2026"). */
   trackingLabelPrefix: string
   /** Título opcional del bloque (por defecto sin título, para no repetir contexto en la ficha de vehículo). */
@@ -28,10 +46,12 @@ export function MonetizationCtaGroup({
   vehicleName,
   showInsurance = true,
   showFinancing = true,
+  showFintech = false,
+  showTramites = false,
   trackingLabelPrefix,
   heading,
 }: MonetizationCtaGroupProps) {
-  if (!showInsurance && !showFinancing) return null
+  if (!showInsurance && !showFinancing && !showFintech && !showTramites) return null
 
   return (
     <div className="py-2">
@@ -40,7 +60,7 @@ export function MonetizationCtaGroup({
           {heading}
         </p>
       )}
-      <div className="flex flex-wrap justify-center gap-3">
+      <div className="flex flex-wrap items-center justify-center gap-3">
         {showInsurance && (
           <InsuranceAffiliateButton
             vehicleName={vehicleName}
@@ -52,6 +72,20 @@ export function MonetizationCtaGroup({
             vehicleName={vehicleName}
             trackingLabel={`${trackingLabelPrefix}-financiacion`}
           />
+        )}
+        {showFintech && (
+          <FintechAffiliateButton
+            vehicleName={vehicleName}
+            trackingLabel={`${trackingLabelPrefix}-fintech`}
+          />
+        )}
+        {showTramites && (
+          <Link
+            href="/tramites-vehiculo"
+            className="link-underline text-sm font-medium text-neutral-500 hover:text-auto-accent-strong"
+          >
+            Trámites de transferencia/patentamiento →
+          </Link>
         )}
       </div>
     </div>

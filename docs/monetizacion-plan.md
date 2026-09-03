@@ -8,10 +8,10 @@ los canales nuevos de la ronda de 03/09/2026 (incluyendo el primero que
 cobra directo a la persona usuaria, no a un negocio: el reporte
 comparativo premium, sección 2.13).
 
-Última actualización: 03/09/2026 (segunda ronda del mismo día: secciones
-2.14 a 2.16, más el resto de variables de entorno que faltaban en
-`.env.example` para poder activar canales que ya existían en el código
-pero no estaban documentados ahí).
+Última actualización: 03/09/2026 (tercera ronda del mismo día: secciones
+2.14 a 2.19 — las tres primeras ya estaban en el código sin tener su
+párrafo acá, esta ronda cierra ese hueco de documentación y agrega tres
+canales nuevos: 2.17 fintech, 2.18 anuncio ancla, 2.19 lead de trámites).
 
 ## 1. Cómo leer este documento
 
@@ -171,6 +171,93 @@ que agrega Route Handlers (`route.ts`) — hasta ahora todo el sitio era
 ya existente sobre esto en `next.config.js`), pero cualquier ronda
 futura que siga sumando rutas nuevas debería revisar ese conteo antes de
 desplegar.
+
+### 2.14 Cross-sell de accesorios (`AccessoriesAffiliateWidget`) — 🟢
+
+En cada ficha de vehículo, debajo de los botones de seguro/financiación.
+Vende lo que se compra DESPUÉS de decidirse por el vehículo (cubre-asientos,
+baulera, cascos, GPS, etc.), no el vehículo en sí — no compite con
+`MercadoLibreAffiliateButton.tsx` por el mismo click. Reutiliza el mismo
+tag de Afiliados y Creadores de Mercado Libre que ya usa ese botón, así
+que arranca activo sin ningún acuerdo comercial nuevo.
+
+### 2.15 Anuncios nativos / contenido recomendado (`NativeAdUnit`) — 🟡
+
+En cada ficha de vehículo, debajo del `AdUnit` de AdSense. Inventario y
+CPM de una red distinta a AdSense (Taboola/Outbrain/MGID/RevContent) —
+por eso es un componente aparte y no se apila dentro del mismo bloque de
+AdSense (mezclarlos violaría las políticas de ambas redes). Activar:
+elegir una red, conseguir su aprobación (suele ser rápida) y completar
+`NEXT_PUBLIC_NATIVE_ADS_SCRIPT_SRC` / `NEXT_PUBLIC_NATIVE_ADS_CONTAINER_ID`.
+
+### 2.16 Cartel de venta en PDF (`/vender-tu-auto/cartel`) — 🔵 🟡
+
+Segundo canal que cobra directo a la persona usuaria (no a un negocio),
+mismo mecanismo que el reporte comparativo premium (2.13): Mercado Pago
+Checkout Pro server-side, verificación del pago contra la API de Mercado
+Pago antes de generar el PDF (nunca se confía en el query param de vuelta
+del navegador), sin base de datos propia (los datos del cartel viajan
+codificados en la propia URL). Precio: ARS 690 (`FLYER_PRICE_ARS` en
+`src/lib/for-sale-flyer.ts`). Quien deja el lead gratis en
+`SellVehicleLeadForm.tsx` puede además comprar un cartel prolijo (marca,
+modelo, precio grande, contacto) para el parabrisas o para compartir en
+grupos de WhatsApp/redes. Activar: mismo `MERCADOPAGO_ACCESS_TOKEN` que
+2.13 (ya lo habilita a los dos canales a la vez).
+
+### 2.17 Afiliado fintech (`FintechAffiliateButton`) — 🔵 🟡
+
+**Nuevo (03/09/2026, tercera ronda).** Botón en la ficha de vehículo (bloque
+`MonetizationCtaGroup`, junto a seguro y financiación) para cuentas
+digitales, tarjetas prepagas o billeteras virtuales (Ualá, Prex, Cuenta
+DNI, Belo, etc.). Momento distinto al de seguro/financiación: esos son
+"qué necesitás alrededor del vehículo", esto es "cómo movés la plata de
+la operación" — pagar/cobrar una seña entre particulares sin efectivo, o
+tener resguardo del pago. A diferencia de OLX (retirado del sitio en
+septiembre porque no tiene programa de afiliados propio, ver el
+comentario en `[entityType]/[slug]/page.tsx`), la mayoría de las fintechs
+argentinas sí tienen programas de referidos reales — solo falta elegir
+una y cerrarla.
+
+100% fail-closed a propósito (a diferencia de seguro/financiación, que
+arrancan con un fallback real a comparaencasa.com sin comisión
+confirmada): no existe una fintech "neutral" para linkear sin implicar
+una asociación que todavía no existe. Activar:
+`NEXT_PUBLIC_FINTECH_AFFILIATE_URL` + `NEXT_PUBLIC_FINTECH_AFFILIATE_NAME`
+(las dos, o no renderiza nada).
+
+### 2.18 Anuncio ancla / sticky mobile (`StickyAdUnit`) — 🔵 🟡
+
+**Nuevo (03/09/2026, tercera ronda).** Barra de AdSense fija al pie de
+pantalla, solo en mobile (`md:hidden`), con botón para cerrarla (se
+recuerda por `sessionStorage`, no persiste entre sesiones). Inventario
+ADICIONAL: el formato ancla no cuenta contra el límite de anuncios por
+pantalla de las políticas de AdSense, así que no le saca espacio a los
+`AdUnit` in-page que ya existen en cada página — es ingreso incremental
+real. Reutiliza `NEXT_PUBLIC_ADSENSE_CLIENT_ID` (no necesita variable de
+entorno propia), pero **sí** necesita un slot de AdSense dedicado (In-page
+→ Ancla): reemplazar el placeholder `STICKY_AD_SLOT_ID` en
+`StickyAdUnit.tsx` por ese slot real antes de esperar que rellene con
+anuncios de verdad.
+
+### 2.19 Lead de trámites (`TramitesLeadForm`, `/tramites-vehiculo`) — 🔵 🟢 / 🟡
+
+**Nuevo (03/09/2026, tercera ronda).** Mismo mecanismo que 2.5/2.6 (Google
+Forms con fallback a mailto), pero para un rubro que el directorio local
+ya lista (`gestoria` en `/concesionarias-concepcion-del-uruguay`, desde la
+ronda anterior) y para el que no existía ninguna forma de capturar
+intención: alguien que compró, vendió o heredó un vehículo y necesita
+transferirlo o patentarlo. El comprador de este lead es una gestoría del
+directorio, no una concesionaria — producto separado, sumado también a
+`prospeccion/media-kit-data.json` para que `/anunciate` lo ofrezca.
+
+Deliberadamente NO calcula aranceles ni costos de trámite (varían por
+provincia/municipio y cambian seguido — un número desactualizado sería
+peor que no mostrar nada): el formulario solo identifica el tipo de
+trámite y captura el contacto. Además de la página propia, hay un link
+de entrada desde la sección "Gestorías" del directorio y, en la ficha de
+vehículo, un link corto dentro de `MonetizationCtaGroup`
+(`showTramites`). Activar planilla propia (opcional, sin esto cae a
+mailto:): `NEXT_PUBLIC_TRAMITES_GFORM_*`.
 
 ## 3. Qué falta (a futuro, no construido todavía)
 
