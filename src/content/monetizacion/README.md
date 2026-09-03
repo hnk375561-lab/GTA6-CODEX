@@ -19,7 +19,15 @@ Para agregar un ingreso, sumá un objeto al array en `revenue-log.json`:
 ```
 
 `fuente` acepta: `"adsense"`, `"afiliado-olx"`, `"afiliado-meli"`,
-`"publicidad-directa"`, `"otro"`.
+`"afiliado-seguro"`, `"afiliado-financiacion"`, `"publicidad-directa"`, `"otro"`.
+
+Las dos fuentes nuevas (`afiliado-seguro`, `afiliado-financiacion`) corresponden
+a los botones `InsuranceAffiliateButton` y `FinancingAffiliateButton`
+(`src/components/monetization/`), agregados en fichas de vehículo y en guías
+de compra. Hoy apuntan a comparaencasa.com con UTM propios (sin comisión
+confirmada todavía) — en cuanto exista un acuerdo real, configurar
+`NEXT_PUBLIC_SEGURO_AFFILIATE_URL` / `NEXT_PUBLIC_FINANCIACION_AFFILIATE_URL`
+en Vercel apunta los botones a la URL de afiliado real sin tocar código.
 
 Después de editar el archivo: `git add`, `git commit`, `git push` a `main`.
 El dashboard se actualiza solo en el próximo deploy (automático en Vercel).

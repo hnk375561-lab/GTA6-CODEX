@@ -4,6 +4,8 @@ export type RevenueSource =
   | 'adsense'
   | 'afiliado-olx'
   | 'afiliado-meli'
+  | 'afiliado-seguro'
+  | 'afiliado-financiacion'
   | 'publicidad-directa'
   | 'otro'
 
@@ -18,6 +20,8 @@ export const SOURCE_LABELS: Record<RevenueSource, string> = {
   adsense: 'Google AdSense',
   'afiliado-olx': 'Afiliado OLX',
   'afiliado-meli': 'Afiliado Mercado Libre',
+  'afiliado-seguro': 'Afiliado seguro',
+  'afiliado-financiacion': 'Afiliado financiación',
   'publicidad-directa': 'Publicidad directa',
   otro: 'Otro',
 }
@@ -38,6 +42,8 @@ export function getRevenueBySource(entries: RevenueEntry[]): Record<RevenueSourc
     adsense: 0,
     'afiliado-olx': 0,
     'afiliado-meli': 0,
+    'afiliado-seguro': 0,
+    'afiliado-financiacion': 0,
     'publicidad-directa': 0,
     otro: 0,
   }

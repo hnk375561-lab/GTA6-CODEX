@@ -29,6 +29,7 @@ import { SceneSection } from '@/components/webgl/SceneSection'
 import { AdUnit } from '@/components/monetization/AdUnit'
 import { OlxAffiliateButton } from '@/components/monetization/OlxAffiliateButton'
 import { MercadoLibreAffiliateButton } from '@/components/monetization/MercadoLibreAffiliateButton'
+import { MonetizationCtaGroup } from '@/components/monetization/MonetizationCtaGroup'
 
 interface PageProps {
   params: Promise<{ entityType: string; slug: string }>
@@ -129,6 +130,21 @@ export default async function EntityPage({ params }: PageProps) {
         )
       : []
   const hasSimilar = similarVehicles.length > 0
+
+  // CTAs de seguro/financiación en guías (Monetización, fase 1): se
+  // muestran solo en guías cuyo `tags` indica intención de compra real
+  // ("guia-de-compra", "seguros", "financiamiento", "0km") — evita, por
+  // ejemplo, mostrar el CTA de financiación en la guía de "cómo elegir
+  // un taller mecánico", donde no aplica.
+  const entityTags = entity.tags ?? []
+  const showGuideInsuranceCta =
+    type === EntityType.GUIDE &&
+    (entityTags.includes('seguros') || entityTags.includes('guia-de-compra'))
+  const showGuideFinancingCta =
+    type === EntityType.GUIDE &&
+    (entityTags.includes('financiamiento') ||
+      entityTags.includes('0km') ||
+      entityTags.includes('guia-de-compra'))
 
   // Agregados derivados de fabricante (FASE 7, punto 2): total de
   // modelos, rango de potencia, rango de años, categorías presentes y
@@ -415,6 +431,24 @@ export default async function EntityPage({ params }: PageProps) {
                 </Card>
               </Reveal>
             )}
+
+            {/* Monetization: seguro + financiación, solo en guías con
+                intención de compra real (ver showGuideInsuranceCta /
+                showGuideFinancingCta más arriba). */}
+            {type === EntityType.GUIDE && (showGuideInsuranceCta || showGuideFinancingCta) && (
+              <Reveal direction="left" delay={40}>
+                <Card className="shadow-sm">
+                  <CardBody>
+                    <MonetizationCtaGroup
+                      showInsurance={showGuideInsuranceCta}
+                      showFinancing={showGuideFinancingCta}
+                      trackingLabelPrefix={`guide-${entity.slug}`}
+                      heading="Servicios relacionados"
+                    />
+                  </CardBody>
+                </Card>
+              </Reveal>
+            )}
           </div>
 
           <aside className="space-y-6">
@@ -490,6 +524,18 @@ export default async function EntityPage({ params }: PageProps) {
                   />
                   <OlxAffiliateButton vehicleName={entity.title} trackingLabel={`vehicle-${entity.slug}`} />
                 </div>
+              </Reveal>
+            )}
+
+            {/* Monetization: seguro + financiación. Momento distinto al de
+                ML/OLX (esos son "dónde comprarlo", esto es "qué necesitás
+                una vez que lo compraste/elegiste"). */}
+            {type === EntityType.VEHICLE && (
+              <Reveal direction="right" delay={215}>
+                <MonetizationCtaGroup
+                  vehicleName={entity.title}
+                  trackingLabelPrefix={`vehicle-${entity.slug}`}
+                />
               </Reveal>
             )}
 

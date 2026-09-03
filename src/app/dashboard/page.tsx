@@ -27,6 +27,8 @@ const SOURCE_COLORS: Record<RevenueSource, string> = {
   adsense: 'bg-[#3aa5ff]',
   'afiliado-olx': 'bg-[#ffd166]',
   'afiliado-meli': 'bg-[#ffe600]',
+  'afiliado-seguro': 'bg-[#34d399]',
+  'afiliado-financiacion': 'bg-[#38bdf8]',
   'publicidad-directa': 'bg-[#ff5c8a]',
   otro: 'bg-auto-text-secondary',
 }
