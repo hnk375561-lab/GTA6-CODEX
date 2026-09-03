@@ -29,6 +29,7 @@ import { SceneSection } from '@/components/webgl/SceneSection'
 import { AdUnit } from '@/components/monetization/AdUnit'
 import { MercadoLibreAffiliateButton } from '@/components/monetization/MercadoLibreAffiliateButton'
 import { MonetizationCtaGroup } from '@/components/monetization/MonetizationCtaGroup'
+import { LeadQuoteForm } from '@/components/monetization/LeadQuoteForm'
 
 interface PageProps {
   params: Promise<{ entityType: string; slug: string }>
@@ -539,6 +540,17 @@ export default async function EntityPage({ params }: PageProps) {
                   vehicleName={entity.title}
                   trackingLabelPrefix={`vehicle-${entity.slug}`}
                 />
+              </Reveal>
+            )}
+
+            {/* Monetization: captura de leads de compra. Distinto de los
+                botones de arriba (esos mandan tráfico afuera); esto
+                captura el dato de contacto de la persona para revenderlo/
+                pasarlo a una concesionaria patrocinadora — ver
+                LeadQuoteForm.tsx para el modelo de negocio completo. */}
+            {type === EntityType.VEHICLE && (
+              <Reveal direction="right" delay={218}>
+                <LeadQuoteForm vehicleName={entity.title} trackingLabelPrefix={`vehicle-${entity.slug}`} />
               </Reveal>
             )}
 

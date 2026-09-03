@@ -125,6 +125,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/licencia-datos"
+                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                >
+                  Licencia de datos (B2B)
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/concesionarias-concepcion-del-uruguay"
                   className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
                 >

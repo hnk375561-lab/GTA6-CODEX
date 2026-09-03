@@ -25,6 +25,16 @@
       "nombre": "Mención + link en ficha técnica",
       "descripcion": "'Consultá disponibilidad en [tu negocio]' en la ficha de vehículos que vendés.",
       "precioMensualArs": "500 - 1000"
+    },
+    {
+      "nombre": "Ficha destacada (patrocinio de marca/modelo)",
+      "descripcion": "Tu concesionaria como referencia exclusiva de una marca o modelo puntual: aparecés como '¿Buscás este auto? Consultá en [tu negocio]' en esa ficha específica, más los leads de cotización de esa ficha por mail.",
+      "precioMensualArs": "1500 - 3000"
+    },
+    {
+      "nombre": "Leads de cotización compartidos",
+      "descripcion": "Recibís por mail cada persona que pidió cotización de un modelo de tu marca (nombre, teléfono, comentario) — lead calificado, no tráfico frío.",
+      "precioMensualArs": "800 - 2000 (o por lead individual)"
     }
   ],
   "roiEjemplo": "Un lead calificado (alguien que ya comparó specs y decidió que ese es el auto que quiere) vale más que un click frío de red social — está 2-3 pasos más cerca de comprar.",
