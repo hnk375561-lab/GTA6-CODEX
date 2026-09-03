@@ -16,25 +16,37 @@ import { trackAffiliateClick } from '@/lib/analytics-events'
  * valor se estaba regalando entero a ML/afiliados sin capturar el dato
  * de contacto de la persona en ningún lado.
  *
- * Modelo de negocio (dos formas de cobrar el mismo formulario, elegí
- * una o combiná ambas — no requiere tocar este componente, solo cambiar
- * a quién se le manda el mailto o agregar destinatarios):
- *   1. Lead directo: el mail llega a tu casilla, vos lo revendés/pasás a
- *      la concesionaria que ya te paga por `MonetizationCtaGroup`/`anunciate`
- *      (mismo cliente, canal nuevo — ver prospeccion/).
- *   2. Lead compartido: agregás un segundo destinatario en `to` (CC a la
- *      concesionaria patrocinadora de esa marca/modelo) y cobrás un fee
- *      mensual fijo por "recibir todos los leads de Toyota", en vez de
- *      por lead individual — más simple de facturar.
+ * Envío: Google Forms como "backend" gratis, sin servidor propio.
+ * Si `NEXT_PUBLIC_LEADS_GFORM_ACTION_URL` está configurada, el submit
+ * postea directo al formResponse de un Google Form (que ya viene con
+ * una hoja de cálculo enlazada automáticamente — el "CRM" es esa
+ * planilla, todos los leads en un lugar ordenado, exportable, filtrable
+ * por vehículo/fecha). Ver `.env.example` para el paso a paso de cómo
+ * crear el form (2 minutos, con la cuenta de Gmail que ya usás).
  *
- * Mismo criterio que `NewsletterSignupForm.tsx`: mailto: en vez de un
- * backend nuevo. Cuando el volumen lo justifique, este es el único
- * archivo a tocar (cambiar `handleSubmit` para postear a un CRM/Sheet).
+ * Si esas env vars NO están configuradas, cae a mailto: (mismo
+ * comportamiento que antes) para que el botón nunca se rompa aunque el
+ * form no esté armado todavía — fail-soft, no fail-closed, porque acá
+ * perder un lead sí duele.
+ *
+ * Modelo de negocio (no requiere tocar este componente):
+ *   1. Lead directo: revisás la planilla y lo pasás a la concesionaria
+ *      que ya te paga por `MonetizationCtaGroup`/`anunciate`.
+ *   2. Lead compartido: le das acceso de lectura a la planilla (filtrada
+ *      por columna "Vehículo") a la concesionaria patrocinadora de esa
+ *      marca, y cobrás un fee mensual fijo en vez de por lead individual.
  */
-// Misma casilla que el resto del sitio usa como contacto (footer, media
-// kit, newsletter). Si en algún momento el lead se reparte con una
-// concesionaria patrocinadora, agregar un segundo destinatario acá.
 const CONTACT_EMAIL = 'uruspotcdu@gmail.com'
+
+const GFORM_ACTION_URL = process.env.NEXT_PUBLIC_LEADS_GFORM_ACTION_URL
+const GFORM_ENTRY_NOMBRE = process.env.NEXT_PUBLIC_LEADS_GFORM_ENTRY_NOMBRE
+const GFORM_ENTRY_CONTACTO = process.env.NEXT_PUBLIC_LEADS_GFORM_ENTRY_CONTACTO
+const GFORM_ENTRY_VEHICULO = process.env.NEXT_PUBLIC_LEADS_GFORM_ENTRY_VEHICULO
+const GFORM_ENTRY_COMENTARIO = process.env.NEXT_PUBLIC_LEADS_GFORM_ENTRY_COMENTARIO
+
+const GFORM_CONFIGURED = Boolean(
+  GFORM_ACTION_URL && GFORM_ENTRY_NOMBRE && GFORM_ENTRY_CONTACTO && GFORM_ENTRY_VEHICULO
+)
 
 export function LeadQuoteForm({
   vehicleName,
@@ -50,29 +62,67 @@ export function LeadQuoteForm({
   const [comentario, setComentario] = useState('')
   const [sent, setSent] = useState(false)
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!nombre.trim() || !contacto.trim()) return
-
-    const subject = encodeURIComponent(`Lead de cotización — ${vehicleName}`)
-    const body = encodeURIComponent(
-      `Vehículo: ${vehicleName}\nNombre: ${nombre}\nContacto (tel/email): ${contacto}\nComentario: ${comentario || '(sin comentario)'}\n\n— enviado desde la ficha de ${vehicleName}`
-    )
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
 
     trackAffiliateClick({
       platform: 'lead-cotizacion',
       vehicleName,
       label: `${trackingLabelPrefix}-lead-form`,
     })
+
+    if (GFORM_CONFIGURED) {
+      // no-cors: Google Forms no devuelve headers CORS, así que la
+      // respuesta es "opaque" (no podemos leer status) — se asume éxito
+      // si el fetch no tira excepción. Es el patrón estándar para
+      // postear a Google Forms desde un sitio de terceros.
+      const formData = new URLSearchParams()
+      formData.append(GFORM_ENTRY_NOMBRE!, nombre)
+      formData.append(GFORM_ENTRY_CONTACTO!, contacto)
+      formData.append(GFORM_ENTRY_VEHICULO!, vehicleName)
+      if (GFORM_ENTRY_COMENTARIO) {
+        formData.append(GFORM_ENTRY_COMENTARIO, comentario)
+      }
+      try {
+        await fetch(GFORM_ACTION_URL!, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: formData.toString(),
+        })
+      } catch {
+        // Si falla la red, no perdemos el lead: caemos a mailto igual.
+        const subject = encodeURIComponent(`Lead de cotización — ${vehicleName}`)
+        const body = encodeURIComponent(
+          `Vehículo: ${vehicleName}\nNombre: ${nombre}\nContacto (tel/email): ${contacto}\nComentario: ${comentario || '(sin comentario)'}`
+        )
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
+      }
+      setSent(true)
+      return
+    }
+
+    // Fallback sin Google Form configurado: mailto, como antes.
+    const subject = encodeURIComponent(`Lead de cotización — ${vehicleName}`)
+    const body = encodeURIComponent(
+      `Vehículo: ${vehicleName}\nNombre: ${nombre}\nContacto (tel/email): ${contacto}\nComentario: ${comentario || '(sin comentario)'}\n\n— enviado desde la ficha de ${vehicleName}`
+    )
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
     setSent(true)
   }
 
   if (sent) {
     return (
       <div className={`rounded-lg border border-auto-accent/30 bg-auto-accent/5 p-4 text-sm text-neutral-700 ${className}`}>
-        ✅ Se abrió tu cliente de correo con los datos cargados. Si no se abrió automáticamente,
-        escribinos por WhatsApp desde <Link className="underline" href="/anunciate">la página de contacto</Link>.
+        {GFORM_CONFIGURED
+          ? '✅ ¡Listo! Ya registramos tu consulta, te contactamos a la brevedad.'
+          : '✅ Se abrió tu cliente de correo con los datos cargados. Si no se abrió automáticamente, escribinos por WhatsApp desde '}
+        {!GFORM_CONFIGURED && (
+          <Link className="underline" href="/anunciate">
+            la página de contacto
+          </Link>
+        )}
       </div>
     )
   }
