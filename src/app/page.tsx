@@ -460,15 +460,18 @@ export default async function HomePage() {
     // función): así este contenido puede seguir viviendo en un Server
     // Component que hace `await` a la base del expediente.
     //
-    // `scrollVh` alto (210): panel de entrada, con la cascada más larga
-    // (7 bloques) — pide el recorrido más pausado del track.
+    // `scrollVh` 160: recorte agresivo (sept. 2026, ver nota abajo) —
+    // antes 210 con una cascada de 7 bloques, ahora 5. Mismo peso que el
+    // panel "Evidencia" (también de 160), coherente con el contenido real
+    // que queda: título, credibilidad rápida, acción, vitrina — nada de
+    // relleno que ya se repite más abajo.
     {
       id: 'hero',
       label: 'Inicio',
-      scrollVh: 210,
+      scrollVh: 160,
       content: (
         <div className="relative mx-auto w-full max-w-[90rem] text-center">
-          <Reveal index={0} total={7} options={{ distance: 22 }}>
+          <Reveal index={0} total={5} options={{ distance: 22 }}>
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
               {SITE_NAME}
               {lastUpdateLabel && (
@@ -488,7 +491,7 @@ export default async function HomePage() {
             </Parallax>
           </Reveal>
 
-          <Reveal index={1} total={7} className="mx-auto mt-6 max-w-xl">
+          <Reveal index={1} total={5} className="mx-auto mt-6 max-w-xl">
             <p className="text-lg text-neutral-500 sm:text-xl">
               Specs reales del fabricante — para que compares antes de comprar.
             </p>
@@ -496,7 +499,7 @@ export default async function HomePage() {
 
           <Reveal
             index={2}
-            total={7}
+            total={5}
             className="mx-auto mt-10 flex max-w-lg flex-wrap items-center justify-center gap-x-10 gap-y-4"
           >
             {HERO_STAT_TYPES.map((type) => (
@@ -520,7 +523,7 @@ export default async function HomePage() {
             </div>
           </Reveal>
 
-          <Reveal index={3} total={7}>
+          <Reveal index={3} total={5}>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/vehiculos"
@@ -547,10 +550,9 @@ export default async function HomePage() {
               seguido de una card panorámica por cada vehículo `featured`
               (`HeroVehicleShowcase`, ver ese archivo para el detalle
               completo del cambio de arquitectura). Va acá, en el flujo
-              normal del documento, justo debajo de CTAs/buscador y antes
-              de la grilla de categorías (ubicación acordada
-              explícitamente, ver conversación de rediseño) — eso no
-              cambió respecto de la primera versión.
+              normal del documento, justo debajo de CTAs/buscador (ubicación
+              acordada explícitamente, ver conversación de rediseño) — eso
+              no cambió respecto de la primera versión.
               Lo que sí cambió: el wrapper pasa de `max-w-[100rem]`
               (columna angosta centrada) a `w-full` sin techo de ancho —
               la fila necesita ocupar el 100% del ancho real del panel
@@ -561,22 +563,43 @@ export default async function HomePage() {
               que el resto de los bloques del panel — sin mecanismo de
               scroll vertical propio ni superposición con nada (el track
               interno de `FeaturedCarousel` scrollea en su propio eje
-              horizontal, ver esa nota en `HeroVehicleShowcase.tsx`). */}
-          <Reveal index={4} total={7} className="mx-auto mt-14 w-full text-left">
-            {/* Encabezado de la franja (nuevo, sept. 2026): antes la
-                franja arrancaba directo en la tarjeta de anuncio propio,
-                sin ningún texto que explicara qué está mirando el
-                usuario — se apoyaba solo en el `aria-label` interno del
-                carrusel ("Vehículos destacados"), invisible para
-                cualquiera que no use lector de pantalla. Visualmente la
-                franja podía leerse como "banner publicitario suelto" en
-                vez de "selección editorial". Este encabezado, con el
-                mismo patrón eyebrow+h2 que ya usa el panel de
-                Categorías más abajo (consistencia visual, no un
-                componente nuevo), aclara que lo que sigue es curaduría
-                real (`featured` + evidencia verificada, ambos
-                mecanismos ya existentes — nada inventado) antes de que
-                aparezca la tarjeta de placement. */}
+              horizontal, ver esa nota en `HeroVehicleShowcase.tsx`).
+
+              RECORTE AGRESIVO (sept. 2026): este es ahora el ÚLTIMO
+              bloque del hero — se eliminaron los dos que seguían (mini
+              grilla de categorías y franja de confianza estática de 3
+              ítems). Los dos eran, en los hechos, un adelanto en texto
+              de contenido que el propio scroll pinneado muestra segundos
+              después con más detalle y de forma interactiva: el panel
+              "Categorías" (siguiente stage, `id: 'categorias'`) ya
+              repite las mismas 3 categorías con foto real y conteo; los
+              paneles "Comparador en vivo" y "Evidencia" (más abajo en el
+              track) ya demuestran en vivo exactamente lo que la franja
+              de confianza solo prometía en una oración ("Comparador
+              real", "Nivel de evidencia"). Contarle al usuario dos veces
+              la misma promesa —una en texto estático, otra interactiva—
+              antes de que llegue a la acción principal no suma claridad
+              ni confianza extra: solo alarga el scroll del panel más
+              importante del sitio (el primero) sin agregar nada que el
+              resto del recorrido no vaya a mostrar mejor por su cuenta.
+              El hero ahora termina en su verdadero trabajo: título,
+              credibilidad rápida (stats), acción (CTA + buscador) y la
+              vitrina de vehículos/anuncio propio — nada que compita por
+              atención con lo que ya viene después. */}
+          <Reveal index={4} total={5} className="mx-auto mt-14 w-full text-left">
+            {/* Encabezado de la franja: antes la franja arrancaba directo
+                en la tarjeta de anuncio propio, sin ningún texto que
+                explicara qué está mirando el usuario — se apoyaba solo
+                en el `aria-label` interno del carrusel ("Vehículos
+                destacados"), invisible para cualquiera que no use lector
+                de pantalla. Visualmente la franja podía leerse como
+                "banner publicitario suelto" en vez de "selección
+                editorial". Este encabezado, con el mismo patrón
+                eyebrow+h2 que ya usa el panel de Categorías más abajo
+                (consistencia visual, no un componente nuevo), aclara que
+                lo que sigue es curaduría real (`featured` + evidencia
+                verificada, ambos mecanismos ya existentes — nada
+                inventado) antes de que aparezca la tarjeta de placement. */}
             <div className="mb-5 flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
@@ -591,72 +614,6 @@ export default async function HomePage() {
               </p>
             </div>
             <HeroVehicleShowcaseV2 vehicles={heroShowcaseVehicles} promoBannerItem={heroPromoBannerItem} />
-          </Reveal>
-
-          {/* Preview de categorías directo en el hero: contenido real
-              (no relleno) para que el panel tenga más para mostrar sin
-              alargar el tiempo que tarda en aparecer cada ficha — eso lo
-              sigue regulando `Reveal`/`scrollVh` sin tocarse acá. */}
-          <Reveal
-            index={5}
-            total={7}
-            className="mx-auto mt-14 grid w-full max-w-3xl grid-cols-2 gap-4 sm:grid-cols-3"
-          >
-            {categories.map((type) => {
-              const accent = CATEGORY_ACCENT[type]
-              return (
-                <Link
-                  key={type}
-                  href={`/${type}`}
-                  className="tap-scale group flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white/70 px-4 py-3 text-left shadow-sm backdrop-blur transition-transform hover:-translate-y-0.5"
-                >
-                  <span
-                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white"
-                    style={{ background: accent }}
-                  >
-                    <CategoryIcon type={type} className="h-4 w-4" />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block truncate text-sm font-semibold text-neutral-900">
-                      {ENTITY_TYPE_LABELS[type]}
-                    </span>
-                    <span className="block text-xs text-neutral-500">
-                      {countsByType[type]} {countsByType[type] === 1 ? 'entrada' : 'entradas'}
-                    </span>
-                  </span>
-                </Link>
-              )
-            })}
-          </Reveal>
-
-          {/* Franja de confianza al pie del hero: contenido nuevo (no
-              relleno) que responde a "más cosas en el hero", separado del
-              grid de categorías de arriba. Estático — no pide datos extra
-              — así que no compite con `Promise.all` de la carga inicial. */}
-          <Reveal
-            index={6}
-            total={7}
-            className="mx-auto mt-14 grid w-full max-w-[70rem] grid-cols-1 gap-6 border-t border-neutral-200 pt-10 text-left sm:grid-cols-3"
-          >
-            {[
-              {
-                title: 'Fuente verificable',
-                body: 'Cada ficha cita de dónde sale el dato: comunicado, medio o filtración — nunca relleno.',
-              },
-              {
-                title: 'Nivel de evidencia',
-                body: 'Confirmado, rumor o estimación nuestra: siempre marcado, así sabés cuánto confiar en cada especificación.',
-              },
-              {
-                title: 'Comparador real',
-                body: 'Poné vehículos lado a lado con las mismas unidades y fuentes, sin cambiar de pestaña.',
-              },
-            ].map((item) => (
-              <div key={item.title}>
-                <p className="font-display text-base font-semibold text-neutral-900">{item.title}</p>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-500">{item.body}</p>
-              </div>
-            ))}
           </Reveal>
         </div>
       ),
