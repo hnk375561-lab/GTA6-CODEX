@@ -75,6 +75,16 @@ export default function VenderTuAutoPage() {
           .
         </p>
       </Reveal>
+
+      <Reveal delay={170}>
+        <p className="mt-2 text-center text-xs text-neutral-400">
+          ¿Vas a venderlo vos mismo? Generá un{' '}
+          <Link href="/vender-tu-auto/cartel" className="link-underline text-auto-accent-strong">
+            cartel de venta profesional en PDF
+          </Link>
+          .
+        </p>
+      </Reveal>
     </div>
   )
 }

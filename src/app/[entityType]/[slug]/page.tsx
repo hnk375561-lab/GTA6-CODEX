@@ -32,6 +32,8 @@ import { MonetizationCtaGroup } from '@/components/monetization/MonetizationCtaG
 import { LeadQuoteForm } from '@/components/monetization/LeadQuoteForm'
 import { SellVehicleLeadForm } from '@/components/monetization/SellVehicleLeadForm'
 import { SponsoredListingBanner } from '@/components/monetization/SponsoredListingBanner'
+import { AccessoriesAffiliateWidget } from '@/components/monetization/AccessoriesAffiliateWidget'
+import { NativeAdUnit } from '@/components/monetization/NativeAdUnit'
 import { getSponsorshipForVehicle } from '@/lib/sponsorships'
 
 interface PageProps {
@@ -550,6 +552,15 @@ export default async function EntityPage({ params }: PageProps) {
               <AdUnit slotId="8314744878" format="responsive" dataTrackingLabel={`ad-${entity.slug}`} />
             </Reveal>
 
+            {/* Monetización: red de anuncios nativos, canal nuevo
+                (03/09/2026, ver NativeAdUnit.tsx) — no renderiza nada
+                hasta configurar una red (Taboola/Outbrain/MGID), no pisa
+                el AdUnit de arriba (redes distintas, inventario
+                distinto). */}
+            <Reveal direction="right" delay={205}>
+              <NativeAdUnit dataTrackingLabel={`native-ad-${entity.slug}`} />
+            </Reveal>
+
             {/* Monetization: Affiliate buttons (for vehicles). ML es la
                 única fuente de comisión real acá (programa de afiliados
                 activo). El botón de OLX se sacó (sept 2026): OLX no
@@ -578,6 +589,20 @@ export default async function EntityPage({ params }: PageProps) {
                 <MonetizationCtaGroup
                   vehicleName={entity.title}
                   trackingLabelPrefix={`vehicle-${entity.slug}`}
+                />
+              </Reveal>
+            )}
+
+            {/* Monetización: accesorios (cross-sell, canal nuevo
+                03/09/2026, ver AccessoriesAffiliateWidget.tsx). Momento
+                distinto al de arriba: "qué le sumo al vehículo", no "cómo
+                lo pago". Reutiliza el mismo programa de afiliados de ML,
+                activo desde ya sin acuerdo comercial nuevo. */}
+            {type === EntityType.VEHICLE && (
+              <Reveal direction="right" delay={216}>
+                <AccessoriesAffiliateWidget
+                  category={vehicleCategory}
+                  vehicleName={entity.title}
                 />
               </Reveal>
             )}

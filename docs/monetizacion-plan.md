@@ -8,7 +8,10 @@ los canales nuevos de la ronda de 03/09/2026 (incluyendo el primero que
 cobra directo a la persona usuaria, no a un negocio: el reporte
 comparativo premium, sección 2.13).
 
-Última actualización: 03/09/2026.
+Última actualización: 03/09/2026 (segunda ronda del mismo día: secciones
+2.14 a 2.16, más el resto de variables de entorno que faltaban en
+`.env.example` para poder activar canales que ya existían en el código
+pero no estaban documentados ahí).
 
 ## 1. Cómo leer este documento
 
