@@ -81,24 +81,26 @@ export async function generateMetadata(): Promise<Metadata> {
  * post-release.
  */
 
-const HERO_STAT_TYPES: EntityType[] = [EntityType.VEHICLE, EntityType.NEWS, EntityType.GUIDE]
-const HERO_SUBTITLE_WORDS = ['auto', 'moto', 'ficha técnica', 'comparativa']
-
 /**
- * COPY DEL HERO — pase de posicionamiento (sept. 2026, "reconstrucción del
- * Hero"): el headline anterior ("Cada {auto/moto/...} a un clic") describía
- * FORMATO (hay muchas fichas, es rápido) pero no la razón real para no
- * resolver esto con un buscador genérico o un resumen de IA — que hoy es la
- * competencia de facto de cualquier sitio de datos, no otro catálogo de
- * autos. Lo único que este sitio tiene y un resumen de IA/buscador no puede
- * ofrecer con la misma certeza es la trazabilidad: cada dato declara de
- * dónde sale y con qué nivel de confianza (`evidence.level`, ver
- * `lib/evidence.ts` — no es un texto de marketing, es un campo real del
- * dataset que ya se muestra en cada card). El nuevo headline cierra sobre
- * "a un clic" solo en el segmento final, sacado del rol protagónico, y usa
- * "con fuente citada" para nombrar el diferencial real en vez de la
- * velocidad de acceso (que cualquier sitio también puede decir).
+ * COPY DEL HERO — SEGUNDA PASADA, más agresiva (sept. 2026): la primera
+ * iteración cambió el CIERRE del headline ("a un clic" → "con fuente
+ * citada") pero dejó la palabra que rota siendo un SUSTANTIVO ABSTRACTO
+ * de categoría (auto/moto/ficha técnica/comparativa) — el mismo patrón
+ * "headline + palabra que rota" que usa cualquier landing de SaaS
+ * genérica, sin decir nada que un usuario nuevo pueda verificar por su
+ * cuenta en 2 segundos. Ahora rota ENTRE MARCAS REALES del catálogo
+ * (`HERO_HEADLINE_BRANDS` — las 6 elegidas existen hoy como fabricantes
+ * reales en `src/content/fabricantes/`, no son un placeholder): un
+ * headline que dice "Cada Toyota, con fuente citada" / "Cada BYD, con
+ * fuente citada" es una afirmación concreta y chequeable (¿de verdad
+ * tienen Toyota? ¿de verdad tienen BYD?), no una promesa vaga de
+ * "contenido variado". De paso, la selección de marcas (Japón, Alemania,
+ * EEUU, China, Corea, motos) comunica sin decirlo la cobertura global
+ * real del catálogo (ver README, "estrategia global primero") — otro
+ * diferencial real que antes vivía solo en la letra chica del repo, no
+ * en la primera pantalla del producto.
  */
+const HERO_HEADLINE_BRANDS = ['Toyota', 'BMW', 'Ford', 'BYD', 'Hyundai', 'Yamaha']
 const HERO_HEADLINE_LEAD = 'Cada'
 const HERO_HEADLINE_TAIL = 'con fuente citada'
 const HERO_SUBTITLE =
@@ -517,7 +519,7 @@ export default async function HomePage() {
             <Parallax strength={8}>
               <h1 className="font-display text-6xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-7xl lg:text-8xl">
                 {HERO_HEADLINE_LEAD}{' '}
-                <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gradient-vice" />
+                <WordRotate words={HERO_HEADLINE_BRANDS} className="text-gradient-vice" />
                 {', '}
                 {HERO_HEADLINE_TAIL}
               </h1>
@@ -528,143 +530,97 @@ export default async function HomePage() {
             <p className="text-lg text-neutral-500 sm:text-xl">{HERO_SUBTITLE}</p>
           </Reveal>
 
+          {/* Bloque de credibilidad — SEGUNDA PASADA (sept. 2026): antes
+              este renglón mezclaba 4 números (Vehículos, Noticias, Guías,
+              "Entradas totales") con dos categorías que hoy tienen
+              prácticamente contenido cero (3 noticias, 10 guías sobre 250
+              vehículos — ver conteo real en `src/content/`). Mostrarle a
+              un usuario nuevo "3 Noticias" en su primer segundo en el
+              sitio no genera confianza, la rompe: grita "esto recién
+              arranca" en la única franja pensada para decir lo contrario.
+              Ahora son 3 números, los 3 genuinamente fuertes y
+              verificables con un clic (`/vehiculos`, `/fabricantes`):
+              catálogo real, cobertura de marcas real, y el sello de
+              evidencia (antes relegado a una línea aparte, más chica,
+              debajo del bloque — ahora con el mismo peso visual que el
+              resto, porque es el diferencial más fuerte que tiene el
+              sitio, no una nota al pie). */}
           <Reveal
             index={2}
             total={5}
             className="mx-auto mt-10 flex max-w-lg flex-wrap items-center justify-center gap-x-10 gap-y-4"
           >
-            {HERO_STAT_TYPES.map((type) => (
-              <div key={type} className="flex flex-col items-center gap-0.5">
-                <span className="font-display text-5xl font-bold text-neutral-900">
-                  <CountUp end={countsByType[type] ?? 0} />
-                </span>
-                <span className="text-xs uppercase tracking-[0.15em] text-neutral-500">
-                  {ENTITY_TYPE_LABELS[type]}
-                </span>
-              </div>
-            ))}
-            <div className="hidden h-10 w-px bg-neutral-200 sm:block" aria-hidden="true" />
             <div className="flex flex-col items-center gap-0.5">
-              <span className="font-display text-5xl font-bold text-gradient-vice">
-                <CountUp end={totalCount} />
+              <span className="font-display text-5xl font-bold text-neutral-900">
+                <CountUp end={countsByType[EntityType.VEHICLE] ?? 0} />
               </span>
               <span className="text-xs uppercase tracking-[0.15em] text-neutral-500">
-                {totalCount === 1 ? 'Entrada total' : 'Entradas totales'}
+                {ENTITY_TYPE_LABELS[EntityType.VEHICLE]}
               </span>
             </div>
+            <div className="flex flex-col items-center gap-0.5">
+              <span className="font-display text-5xl font-bold text-neutral-900">
+                <CountUp end={countsByType[EntityType.MANUFACTURER] ?? 0} />
+              </span>
+              <span className="text-xs uppercase tracking-[0.15em] text-neutral-500">Fabricantes</span>
+            </div>
+            {evidenceCoveragePct !== null && evidenceCoveragePct > 0 && (
+              <>
+                <div className="hidden h-10 w-px bg-neutral-200 sm:block" aria-hidden="true" />
+                <div className="flex flex-col items-center gap-0.5">
+                  <span className="font-display text-5xl font-bold text-gradient-vice">
+                    <CountUp end={evidenceCoveragePct} suffix="%" />
+                  </span>
+                  <span className="text-xs uppercase tracking-[0.15em] text-neutral-500">Con fuente citada</span>
+                </div>
+              </>
+            )}
           </Reveal>
 
-          {/* Sello de confianza (pase de posicionamiento, sept. 2026): el
-              diferencial real del sitio —evidencia citada, no una promesa
-              de marketing— vive hasta acá solo como sello visual por card
-              más abajo en la vitrina. Este renglón lo nombra en texto una
-              sola vez, cerca de los stats (mismo bloque de credibilidad
-              rápida), con el % calculado en vivo sobre el catálogo real
-              (`evidenceCoveragePct` arriba) — nunca un número fijo que
-              pueda quedar desactualizado o, peor, inflado a mano. Si el
-              catálogo llegara a tener 0% de cobertura (no pasa hoy, pero
-              el cálculo lo contempla) el renglón simplemente no se
-              muestra en vez de anunciar un 0% que solo genera desconfianza
-              sin agregar información útil. */}
-          {evidenceCoveragePct !== null && evidenceCoveragePct > 0 && (
-            <Reveal index={2} total={5} className="mx-auto mt-3">
-              <p className="inline-flex items-center gap-1.5 text-xs text-neutral-500">
-                <span aria-hidden="true" className="text-emerald-500">✓</span>
-                {evidenceCoveragePct}% de las fichas de vehículos citan su fuente
-              </p>
-            </Reveal>
-          )}
-
+          {/* CTA — SEGUNDA PASADA (sept. 2026): antes había TRES acciones
+              compitiendo al mismo nivel visual (dos botones grandes +
+              buscador chico debajo) — "CTA war" sin ganador real, y la
+              acción de mayor intención real (buscar el vehículo puntual
+              que el usuario ya tiene en mente) quedaba, en los hechos, en
+              tercer lugar visual. Ahora hay UNA acción primaria (buscar,
+              agrandada) y las otras dos bajan a links de texto — siguen
+              existiendo (nadie pierde la posibilidad de explorar todo el
+              catálogo o ir directo al comparador), pero ya no compiten en
+              peso visual contra la acción de mayor intención. */}
           <Reveal index={3} total={5}>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/vehiculos"
-                className="cta-shine tap-scale inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-10 py-5 text-lg font-semibold text-white transition-transform hover:-translate-y-1"
-              >
-                Ver fichas de autos <span aria-hidden="true">→</span>
-              </Link>
-              <Link
-                href="/comparar"
-                className="tap-scale inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 px-10 py-5 text-lg font-semibold text-neutral-900 transition-transform hover:-translate-y-1"
-              >
-                Comparar vehículos
-              </Link>
-            </div>
-
-            <div className="mx-auto mt-6 max-w-xl">
+            <div className="mx-auto mt-10 max-w-xl">
               <QuickSearchForm examples={searchExamples} />
             </div>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm font-semibold text-neutral-500">
+              <Link href="/vehiculos" className="tap-scale transition-colors hover:text-neutral-900">
+                Ver las {countsByType[EntityType.VEHICLE] ?? 0} fichas <span aria-hidden="true">→</span>
+              </Link>
+              <Link href="/comparar" className="tap-scale transition-colors hover:text-neutral-900">
+                Comparar dos vehículos <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </Reveal>
 
-          {/* Franja "showroom" del hero (2do rediseño, sept. 2026):
-              una sola fila 100% horizontal con scroll-snap real —
-              anuncio propio (`HeroSelfPromoCard`) como primera card,
-              seguido de una card panorámica por cada vehículo `featured`
-              (`HeroVehicleShowcase`, ver ese archivo para el detalle
-              completo del cambio de arquitectura). Va acá, en el flujo
-              normal del documento, justo debajo de CTAs/buscador (ubicación
-              acordada explícitamente, ver conversación de rediseño) — eso
-              no cambió respecto de la primera versión.
-              Lo que sí cambió: el wrapper pasa de `max-w-[100rem]`
-              (columna angosta centrada) a `w-full` sin techo de ancho —
-              la fila necesita ocupar el 100% del ancho real del panel
-              del hero (`max-w-[90rem]` heredado del contenedor padre,
-              ver el `<div>` raíz de este panel) para que "100%
-              horizontal" sea literal y no quede recortada por un
-              max-width propio innecesario. La anima el mismo `Reveal`
-              que el resto de los bloques del panel — sin mecanismo de
-              scroll vertical propio ni superposición con nada (el track
-              interno de `FeaturedCarousel` scrollea en su propio eje
-              horizontal, ver esa nota en `HeroVehicleShowcase.tsx`).
-
-              RECORTE AGRESIVO (sept. 2026): este es ahora el ÚLTIMO
-              bloque del hero — se eliminaron los dos que seguían (mini
-              grilla de categorías y franja de confianza estática de 3
-              ítems). Los dos eran, en los hechos, un adelanto en texto
-              de contenido que el propio scroll pinneado muestra segundos
-              después con más detalle y de forma interactiva: el panel
-              "Categorías" (siguiente stage, `id: 'categorias'`) ya
-              repite las mismas 3 categorías con foto real y conteo; los
-              paneles "Comparador en vivo" y "Evidencia" (más abajo en el
-              track) ya demuestran en vivo exactamente lo que la franja
-              de confianza solo prometía en una oración ("Comparador
-              real", "Nivel de evidencia"). Contarle al usuario dos veces
-              la misma promesa —una en texto estático, otra interactiva—
-              antes de que llegue a la acción principal no suma claridad
-              ni confianza extra: solo alarga el scroll del panel más
-              importante del sitio (el primero) sin agregar nada que el
-              resto del recorrido no vaya a mostrar mejor por su cuenta.
-              El hero ahora termina en su verdadero trabajo: título,
-              credibilidad rápida (stats), acción (CTA + buscador) y la
-              vitrina de vehículos/anuncio propio — nada que compita por
-              atención con lo que ya viene después. */}
+          {/* Franja "showroom" del hero: fila 100% horizontal con
+              scroll-snap real — anuncio propio (`HeroPromoBanner`) +
+              carrusel de vehículos `featured` (`HeroVehicleShowcaseV2`).
+              Arquitectura sin cambios en esta pasada (ver
+              `HeroVehicleShowcaseV2.tsx`/`FeaturedCarousel.tsx` para el
+              historial de fixes de accesibilidad/click ya validados).
+              Encabezado RECORTADO (sept. 2026, segunda pasada): antes
+              eran 2 líneas de texto propio (eyebrow "Selección" + h2 "Lo
+              que vale la pena mirar primero") repitiendo, en los hechos,
+              la misma promesa que ya hace el headline de arriba ("con
+              fuente citada") y que cada card ya demuestra sola con su
+              propio sello de evidencia — dos anuncios de la misma cosa
+              antes de que el usuario llegue a verla. Ahora es una sola
+              línea corta que cumple el único trabajo real que le
+              quedaba: nombrar la región para quien no vea el `aria-label`
+              interno del carrusel. */}
           <Reveal index={4} total={5} className="mx-auto mt-14 w-full text-left">
-            {/* Encabezado de la franja: antes la franja arrancaba directo
-                en la tarjeta de anuncio propio, sin ningún texto que
-                explicara qué está mirando el usuario — se apoyaba solo
-                en el `aria-label` interno del carrusel ("Vehículos
-                destacados"), invisible para cualquiera que no use lector
-                de pantalla. Visualmente la franja podía leerse como
-                "banner publicitario suelto" en vez de "selección
-                editorial". Este encabezado, con el mismo patrón
-                eyebrow+h2 que ya usa el panel de Categorías más abajo
-                (consistencia visual, no un componente nuevo), aclara que
-                lo que sigue es curaduría real (`featured` + evidencia
-                verificada, ambos mecanismos ya existentes — nada
-                inventado) antes de que aparezca la tarjeta de placement. */}
-            <div className="mb-5 flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
-                  Selección
-                </p>
-                <h2 className="mt-1 font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
-                  Lo que vale la pena mirar primero
-                </h2>
-              </div>
-              <p className="hidden max-w-xs text-sm leading-relaxed text-neutral-500 sm:block">
-                Fichas completas con evidencia verificada — no es el catálogo entero, es lo que ya revisamos a fondo.
-              </p>
-            </div>
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
+              Fichas destacadas — evidencia verificada
+            </p>
             <HeroVehicleShowcaseV2 vehicles={heroShowcaseVehicles} promoBannerItem={heroPromoBannerItem} />
           </Reveal>
         </div>
