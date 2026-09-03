@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { AdUnit } from '@/components/monetization/AdUnit'
 
 export default function NotFound() {
   return (
@@ -32,6 +33,12 @@ export default function NotFound() {
             </Link>
           </p>
         </div>
+
+        {/* Auditoría de monetización (2026-09): tráfico bajo por
+            definición, pero no es cero (links rotos, typos, resultados
+            viejos de Google todavía indexados) — mismo slot reutilizado
+            que el resto del sitio, no cuesta nada tenerlo acá también. */}
+        <AdUnit slotId="3119092668" format="responsive" className="mt-12" dataTrackingLabel="ad-404" />
       </div>
     </div>
   )

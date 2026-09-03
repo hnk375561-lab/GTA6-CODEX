@@ -7,6 +7,7 @@ import { getEntityImageMap } from '@/lib/media'
 import { generateBreadcrumbJsonLd, serializeJsonLd } from '@/lib/seo'
 import { Reveal } from '@/components/ui/Reveal'
 import { EntityCard } from '@/components/entities/EntityCard'
+import { AdUnit } from '@/components/monetization/AdUnit'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 
 interface PageProps {
@@ -131,6 +132,11 @@ export default async function RankingDetailPage({ params }: PageProps) {
             />
           ))}
         </Reveal>
+
+        {/* Auditoría de monetización (2026-09): rankings individuales
+            (ej. /rankings/autos-mas-potentes) sin AdUnit — mismo slot
+            responsive reutilizado que el índice de /rankings. */}
+        <AdUnit slotId="3119092668" format="responsive" className="mt-12" dataTrackingLabel={`ad-ranking-${slug}`} />
       </div>
     </section>
   )

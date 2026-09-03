@@ -18,6 +18,7 @@ import { generateBreadcrumbJsonLd, serializeJsonLd } from '@/lib/seo'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { EntityCard } from '@/components/entities/EntityCard'
+import { AdUnit } from '@/components/monetization/AdUnit'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 
 /**
@@ -179,6 +180,11 @@ export default async function CategoryGroupPage({ params }: PageProps) {
             />
           ))}
         </Reveal>
+
+        {/* Auditoría de monetización (2026-09): página de categoría
+            (ej. /categorias/suv) sin ningún AdUnit — mismo slot
+            responsive reutilizado que /categorias (índice). */}
+        <AdUnit slotId="3119092668" format="responsive" className="mt-12" dataTrackingLabel={`ad-categoria-${grupo}`} />
 
         {otherCategories.length > 0 && (
           <Reveal className="mt-12 border-t border-edge pt-8">

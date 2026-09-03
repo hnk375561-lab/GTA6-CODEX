@@ -3,6 +3,7 @@ import { getAllEntities } from '@/lib/entities'
 import { getEntityImageMap } from '@/lib/media'
 import { WishlistExplorer } from '@/components/entities/WishlistExplorer'
 import { Reveal } from '@/components/ui/Reveal'
+import { AdUnit } from '@/components/monetization/AdUnit'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 
 export const metadata: Metadata = {
@@ -45,6 +46,14 @@ export default async function FavoritosPage() {
       </Reveal>
 
       <WishlistExplorer entities={entities} imageBySlug={imageBySlug} />
+
+      {/* Auditoría de monetización (2026-09): quien llega hasta acá ya
+          guardó autos concretos que le interesan — es la página de
+          mayor intención de compra del sitio después de una ficha
+          individual, y no tenía ningún AdUnit. `noindex` no afecta esto:
+          los ads se sirven igual a visitas reales, solo no se indexa en
+          Google. */}
+      <AdUnit slotId="3119092668" format="responsive" className="mt-12" dataTrackingLabel="ad-favoritos" />
     </div>
   )
 }

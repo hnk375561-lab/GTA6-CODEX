@@ -13,6 +13,7 @@ import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { Card, CardBody } from '@/components/ui/Card'
 import { EntityListExplorer } from '@/components/entities/EntityListExplorer'
 import { EntityCard } from '@/components/entities/EntityCard'
+import { AdUnit } from '@/components/monetization/AdUnit'
 
 interface PageProps {
   params: Promise<{ entityType: string }>
@@ -240,6 +241,15 @@ export default async function EntityTypePage({ params }: PageProps) {
               relationCountBySlug={relationCountBySlug}
             />
           </Suspense>
+        )}
+
+        {/* Auditoría de monetización (2026-09): esta era la ruta con más
+            tráfico potencial del sitio (listado completo de /vehiculos,
+            /guias, /noticias) sin un solo AdUnit. Slot reutilizado, mismo
+            criterio que categorias/rankings/buscar/galeria — no hace
+            falta un slot nuevo por página, uno responsive alcanza. */}
+        {entities.length > 0 && (
+          <AdUnit slotId="3119092668" format="responsive" className="mt-12" dataTrackingLabel={`ad-${type}-index`} />
         )}
       </div>
     </section>

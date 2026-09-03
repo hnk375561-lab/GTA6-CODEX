@@ -9,6 +9,9 @@ import { VehicleCompareTable } from '@/components/entities/VehicleCompareSheet'
 import { generateBreadcrumbJsonLd, serializeJsonLd } from '@/lib/seo'
 import { Reveal } from '@/components/ui/Reveal'
 import { SITE_NAME, SITE_URL } from '@/config/site'
+import { AdUnit } from '@/components/monetization/AdUnit'
+import { MercadoLibreAffiliateButton } from '@/components/monetization/MercadoLibreAffiliateButton'
+import { MonetizationCtaGroup } from '@/components/monetization/MonetizationCtaGroup'
 
 /**
  * Comparaciones fijas SEO 1-a-1 (Product Growth Audit, oportunidad #11).
@@ -108,6 +111,31 @@ export default async function FixedComparisonPage({ params }: PageProps) {
       </Reveal>
 
       <VehicleCompareTable vehicles={pairVehicles} imageBySlug={imageBySlug} />
+
+      {/* Auditoría de monetización (2026-09): esta era, de todo el
+          sitio, la página con mayor intención de compra sin un solo
+          punto de monetización — alguien que llega a "Auto A vs Auto B"
+          ya descartó todo lo demás y está eligiendo entre dos opciones
+          concretas. Antes no tenía ni el botón de Mercado Libre (que sí
+          existe en la ficha individual de cada auto) ni el AdUnit. */}
+      <Reveal delay={60} className="mt-8 flex flex-wrap justify-center gap-3">
+        <MercadoLibreAffiliateButton
+          vehicleName={a.title}
+          buttonText={`Ver ${a.title} en Mercado Libre`}
+          trackingLabel={`comparar-${pair}-ml-a`}
+        />
+        <MercadoLibreAffiliateButton
+          vehicleName={b.title}
+          buttonText={`Ver ${b.title} en Mercado Libre`}
+          trackingLabel={`comparar-${pair}-ml-b`}
+        />
+      </Reveal>
+
+      <Reveal delay={100} className="mt-6">
+        <MonetizationCtaGroup trackingLabelPrefix={`comparar-${pair}`} />
+      </Reveal>
+
+      <AdUnit slotId="5425797006" format="responsive" className="mt-10" dataTrackingLabel={`ad-comparar-${pair}`} />
 
       <Reveal className="mt-8">
         <Link
