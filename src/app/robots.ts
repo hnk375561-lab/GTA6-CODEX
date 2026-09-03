@@ -17,10 +17,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        // Nota: no hay rutas /api/ ni /admin/ en el proyecto hoy (verificado,
-        // auditoría 2026-08). Se dejan bloqueadas de forma preventiva por si
-        // se agregan en el futuro; si el proyecto nunca las suma, se pueden
-        // quitar sin impacto.
+        // /api/ ya no está vacío (03/09/2026: rutas del reporte comparativo
+        // premium, ver src/app/api/premium-report/*) — se mantiene
+        // bloqueado igual, son endpoints transaccionales sin contenido que
+        // indexar. /admin/ sigue sin existir, se deja preventivo.
         disallow: ['/.next/', '/api/', '/admin/'],
       },
       {

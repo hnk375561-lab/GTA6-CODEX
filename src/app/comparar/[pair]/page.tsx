@@ -12,6 +12,7 @@ import { SITE_NAME, SITE_URL } from '@/config/site'
 import { AdUnit } from '@/components/monetization/AdUnit'
 import { MercadoLibreAffiliateButton } from '@/components/monetization/MercadoLibreAffiliateButton'
 import { MonetizationCtaGroup } from '@/components/monetization/MonetizationCtaGroup'
+import { PremiumReportButton } from '@/components/monetization/PremiumReportButton'
 
 /**
  * Comparaciones fijas SEO 1-a-1 (Product Growth Audit, oportunidad #11).
@@ -129,6 +130,10 @@ export default async function FixedComparisonPage({ params }: PageProps) {
           buttonText={`Ver ${b.title} en Mercado Libre`}
           trackingLabel={`comparar-${pair}-ml-b`}
         />
+      </Reveal>
+
+      <Reveal delay={80} className="mt-6 flex justify-center">
+        <PremiumReportButton slugs={[a.slug, b.slug]} trackingLabel={`comparar-${pair}`} />
       </Reveal>
 
       <Reveal delay={100} className="mt-6">

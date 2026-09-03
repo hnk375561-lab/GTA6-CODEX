@@ -172,6 +172,27 @@ export function trackAbConversion(params: { testId: string; variant: string }) {
   console.debug('[Analytics] A/B conversion tracked:', params)
 }
 
+/**
+ * Track el inicio de checkout del reporte comparativo premium (Mercado
+ * Pago). Se dispara al click, antes de conocer si el pago se completa —
+ * el resultado real (aprobado/pendiente/rechazado) se ve en el propio
+ * dashboard de Mercado Pago, esto es solo para correlacionar cuántos
+ * clicks del botón terminan iniciando un checkout.
+ */
+export function trackPremiumReportCheckoutStarted(params: { slugs: string[]; label: string }) {
+  if (typeof window === 'undefined') return
+
+  if (typeof window.gtag !== 'undefined') {
+    window.gtag('event', 'premium_report_checkout_started', {
+      vehicle_slugs: params.slugs.join(','),
+      label: params.label,
+      value: 1,
+    })
+  }
+
+  console.debug('[Analytics] Premium report checkout started:', params)
+}
+
 // Type augmentation for window.gtag
 declare global {
   interface Window {

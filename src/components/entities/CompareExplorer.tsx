@@ -9,6 +9,7 @@ import { VehicleCompareTable, MAX_COMPARE } from '@/components/entities/VehicleC
 import { readCompareStorage, writeCompareStorage } from '@/lib/hooks/useVehicleCompare'
 import { MercadoLibreAffiliateButton } from '@/components/monetization/MercadoLibreAffiliateButton'
 import { MonetizationCtaGroup } from '@/components/monetization/MonetizationCtaGroup'
+import { PremiumReportButton } from '@/components/monetization/PremiumReportButton'
 import { cn } from '@/lib/utils'
 
 interface CompareExplorerProps {
@@ -156,6 +157,9 @@ export function CompareExplorer({ vehicles, imageBySlug }: CompareExplorerProps)
                   trackingLabel={`comparar-dinamico-ml-${v.slug}`}
                 />
               ))}
+            </div>
+            <div className="mt-6 flex justify-center">
+              <PremiumReportButton slugs={selected} trackingLabel="comparar-dinamico" />
             </div>
             <div className="mt-4">
               <MonetizationCtaGroup trackingLabelPrefix="comparar-dinamico" />

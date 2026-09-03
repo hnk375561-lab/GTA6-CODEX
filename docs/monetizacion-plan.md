@@ -4,7 +4,9 @@ Este documento es el mapa completo de todos los canales de monetización del
 sitio: qué está activo, qué está construido pero esperando un acuerdo
 comercial, y qué falta para activar cada uno. Se referenciaba desde
 `SupportButton.tsx` sin existir todavía; esta versión lo cierra y agrega
-los tres canales nuevos de la ronda de 03/09/2026.
+los canales nuevos de la ronda de 03/09/2026 (incluyendo el primero que
+cobra directo a la persona usuaria, no a un negocio: el reporte
+comparativo premium, sección 2.13).
 
 Última actualización: 03/09/2026.
 
@@ -127,6 +129,46 @@ dentro del newsletter — canal a futuro, no construido todavía.
 Botón "Invitame un cafecito" en el footer. Activar: crear cuenta en
 cafecito.app y configurar `NEXT_PUBLIC_CAFECITO_USERNAME`.
 
+### 2.13 Reporte comparativo premium (`/api/premium-report/*`) — 🔵 🟡
+
+**Nuevo (03/09/2026).** Primer canal que cobra directo a la persona
+usuaria en vez de a un negocio — hasta esta ronda, todo lo demás era
+afiliado, lead o patrocinio B2B. Desde `/comparar` (comparador libre) y
+`/comparar/[pair]` (comparaciones fijas SEO), con 2 a 5 vehículos
+seleccionados, `PremiumReportButton.tsx` ofrece descargar un PDF con la
+ficha técnica completa + evidencia citada de cada vehículo comparado
+(ARS 990, precio editable en `src/lib/premium-report.ts`).
+
+Cómo funciona (sin base de datos ni backend propio, mismo criterio que
+el resto del sitio):
+
+1. El botón llama a `POST /api/premium-report/create-preference`, que
+   crea una preferencia de **Mercado Pago Checkout Pro** (API REST
+   directa, sin el SDK oficial — ver comentario en `src/lib/mercadopago.ts`)
+   y redirige al checkout hosteado por Mercado Pago.
+2. Mercado Pago vuelve a `/reporte-premium/descargar` con el resultado.
+3. Esa página linkea a `GET /api/premium-report/pdf`, que **vuelve a
+   verificar el pago contra la API de Mercado Pago** (nunca confía en el
+   query param que vuelve en la URL del navegador) y solo si está
+   `approved` y corresponde exactamente a los vehículos pedidos, genera
+   el PDF al vuelo con `pdfkit` (mismo estilo visual que
+   `scripts/generate-media-kit.mjs`) y lo devuelve para descargar.
+
+**Activar:** configurar `MERCADOPAGO_ACCESS_TOKEN` (credencial de
+producción, ver `.env.example`) en Vercel. Sin esa variable, el botón
+muestra "todavía no está activo" (fail-closed, no rompe para quien
+visita el sitio). No requiere cuenta de terceros nueva más allá de
+Mercado Pago, que el sitio ya usa indirectamente vía el afiliado de
+Mercado Libre.
+
+**Nota de infraestructura:** esta es la primera funcionalidad del sitio
+que agrega Route Handlers (`route.ts`) — hasta ahora todo el sitio era
+100% estático. Son 2 Serverless Functions nuevas (`create-preference` y
+`pdf`), lejos del tope de 12 del plan Hobby de Vercel (ver el comentario
+ya existente sobre esto en `next.config.js`), pero cualquier ronda
+futura que siga sumando rutas nuevas debería revisar ese conteo antes de
+desplegar.
+
 ## 3. Qué falta (a futuro, no construido todavía)
 
 Ideas evaluadas para esta ronda y descartadas por ahora (no por falta de
@@ -135,9 +177,6 @@ pagos, backend propio — que no se justifica al volumen actual; quedan
 como próximo paso natural una vez que los canales de arriba tengan
 tracción real):
 
-- **Reportes/PDF pagos** (ficha comparativa premium vía Mercado Pago
-  Checkout Pro): requiere integrar un checkout real, primer canal que
-  necesitaría cobrar directo a un usuario final en vez de a un negocio.
 - **Contenido patrocinado/advertorial declarado** en guías: la
   infraestructura de tags (`showGuideInsuranceCta`, etc.) ya soporta
   este patrón; falta solo escribir el contenido cuando haya un cliente

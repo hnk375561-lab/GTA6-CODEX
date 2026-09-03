@@ -11,6 +11,7 @@ export type RevenueSource =
   | 'lead-venta-usado'
   | 'ficha-destacada'
   | 'licencia-datos'
+  | 'reporte-premium'
   | 'otro'
 
 export interface RevenueEntry {
@@ -31,6 +32,7 @@ export const SOURCE_LABELS: Record<RevenueSource, string> = {
   'lead-venta-usado': 'Lead de venta de usado',
   'ficha-destacada': 'Ficha destacada (patrocinio)',
   'licencia-datos': 'Licencia de datos (B2B)',
+  'reporte-premium': 'Reporte comparativo premium',
   otro: 'Otro',
 }
 
@@ -57,6 +59,7 @@ export function getRevenueBySource(entries: RevenueEntry[]): Record<RevenueSourc
     'lead-venta-usado': 0,
     'ficha-destacada': 0,
     'licencia-datos': 0,
+    'reporte-premium': 0,
     otro: 0,
   }
   for (const entry of entries) {
