@@ -7,6 +7,7 @@ import { generateBreadcrumbJsonLd, serializeJsonLd } from '@/lib/seo'
 import { Reveal } from '@/components/ui/Reveal'
 import { Card, CardBody } from '@/components/ui/Card'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
+import { AdUnit } from '@/components/monetization/AdUnit'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 
 const TITLE = `Categorías de vehículos | ${SITE_NAME}`
@@ -100,6 +101,12 @@ export default async function CategoriasIndexPage() {
             ))}
           </Reveal>
         )}
+
+        {/* Monetization: mismo slot real de AdSense reusado en el resto
+            del sitio (ver rankings/page.tsx para el mismo criterio). */}
+        <Reveal className="mt-12">
+          <AdUnit slotId="3119092668" format="responsive" dataTrackingLabel="ad-categorias-index" />
+        </Reveal>
       </div>
     </section>
   )

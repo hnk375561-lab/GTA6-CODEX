@@ -5,6 +5,7 @@ import { getEntityImageMap } from '@/lib/media'
 import { getBidirectionalRelationCount } from '@/lib/relations'
 import { SearchClient } from '@/components/search/SearchClient'
 import { Reveal } from '@/components/ui/Reveal'
+import { AdUnit } from '@/components/monetization/AdUnit'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 
 // Antes esta página no definía `alternates`, `openGraph` ni `twitter`, así
@@ -85,6 +86,10 @@ export default async function SearchPage({
             initialQuery={q}
           />
         </Suspense>
+
+        {/* Monetization: mismo slot real de AdSense reusado en el resto
+            del sitio (ver rankings/page.tsx para el criterio). */}
+        <AdUnit slotId="3119092668" format="responsive" className="mt-12" dataTrackingLabel="ad-buscar" />
       </div>
     </section>
   )

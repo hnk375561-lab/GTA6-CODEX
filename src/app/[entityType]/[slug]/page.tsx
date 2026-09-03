@@ -27,7 +27,6 @@ import { getMediaForEntity } from '@/lib/media'
 import { ENTITY_IMAGE_CATEGORIES } from '@/lib/images'
 import { SceneSection } from '@/components/webgl/SceneSection'
 import { AdUnit } from '@/components/monetization/AdUnit'
-import { OlxAffiliateButton } from '@/components/monetization/OlxAffiliateButton'
 import { MercadoLibreAffiliateButton } from '@/components/monetization/MercadoLibreAffiliateButton'
 import { MonetizationCtaGroup } from '@/components/monetization/MonetizationCtaGroup'
 
@@ -512,9 +511,14 @@ export default async function EntityPage({ params }: PageProps) {
             </Reveal>
 
             {/* Monetization: Affiliate buttons (for vehicles). ML es la
-                fuente de comisión real (programa de afiliados activo);
-                OLX queda solo como link de referencia de tráfico, sin
-                comisión propia hoy. */}
+                única fuente de comisión real acá (programa de afiliados
+                activo). El botón de OLX se sacó (sept 2026): OLX no
+                tiene programa de afiliados propio, así que ese link
+                solo mandaba tráfico gratis a un competidor sin generar
+                nada a cambio — el espacio ahora es 100% para el botón
+                que sí convierte en comisión. `OlxAffiliateButton` queda
+                en el repo sin uso (no se borra el componente) por si en
+                algún momento OLX abre un programa de afiliados real. */}
             {type === EntityType.VEHICLE && (
               <Reveal direction="right" delay={210}>
                 <div className="flex flex-wrap justify-center gap-3 py-4">
@@ -522,7 +526,6 @@ export default async function EntityPage({ params }: PageProps) {
                     vehicleName={entity.title}
                     trackingLabel={`vehicle-${entity.slug}`}
                   />
-                  <OlxAffiliateButton vehicleName={entity.title} trackingLabel={`vehicle-${entity.slug}`} />
                 </div>
               </Reveal>
             )}

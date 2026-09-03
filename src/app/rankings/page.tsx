@@ -7,6 +7,7 @@ import { getEntityImageMap } from '@/lib/media'
 import { generateBreadcrumbJsonLd, serializeJsonLd } from '@/lib/seo'
 import { Reveal } from '@/components/ui/Reveal'
 import { RankingsLeaderboardTabs, type RankingTabData } from '@/components/rankings/RankingsLeaderboardTabs'
+import { AdUnit } from '@/components/monetization/AdUnit'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 
 const TITLE = `Rankings de vehículos | ${SITE_NAME}`
@@ -118,6 +119,15 @@ export default async function RankingsIndexPage() {
             />
           </Reveal>
         )}
+
+        {/* Monetization: mismo slot real de AdSense que el resto del
+            sitio (ver page.tsx home / comparar / fabricantes), solo
+            cambia el tracking label. /rankings tiene tráfico de
+            búsqueda directo ("autos más potentes", "autos más baratos"
+            2026) y no tenía ningún espacio monetizado hasta ahora. */}
+        <Reveal className="mt-12">
+          <AdUnit slotId="3119092668" format="responsive" dataTrackingLabel="ad-rankings-index" />
+        </Reveal>
       </div>
     </section>
   )

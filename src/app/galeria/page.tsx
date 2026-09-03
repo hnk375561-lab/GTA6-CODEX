@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { getGalleryItems, getGalleryCategoryCounts } from '@/lib/gallery'
 import { GalleryHero } from '@/components/gallery/GalleryHero'
 import { GalleryExplorer } from '@/components/gallery/GalleryExplorer'
+import { AdUnit } from '@/components/monetization/AdUnit'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 import { serializeJsonLd } from '@/lib/seo'
 
@@ -53,6 +54,14 @@ export default async function GaleriaPage() {
       <section className="py-12 sm:py-16">
         <div className="container-max">
           <GalleryExplorer items={items} categories={categories} />
+          {/* Monetization: mismo slot real de AdSense reusado en el
+              resto del sitio (ver rankings/page.tsx para el criterio). */}
+          <AdUnit
+            slotId="3119092668"
+            format="responsive"
+            className="mt-12"
+            dataTrackingLabel="ad-galeria-index"
+          />
         </div>
       </section>
     </>
