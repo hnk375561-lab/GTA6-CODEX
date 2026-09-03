@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { EntityType } from '@/types'
 import { Reveal } from '@/components/ui/Reveal'
 import { SITE_NAME } from '@/config/site'
+import { NewsletterSignupForm } from '@/components/monetization/NewsletterSignupForm'
+import { SupportButton } from '@/components/monetization/SupportButton'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -24,6 +26,8 @@ export function Footer() {
             <p className="max-w-xs text-sm leading-relaxed text-neutral-500">
               Fichas técnicas de autos y motos con specs reales, comparador lado a lado y fuente por cada dato.
             </p>
+            <NewsletterSignupForm className="mt-6 max-w-xs" trackingSource="footer" />
+            <SupportButton className="mt-4" />
           </div>
 
           {/* Quick Links */}
