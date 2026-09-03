@@ -83,6 +83,26 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const HERO_STAT_TYPES: EntityType[] = [EntityType.VEHICLE, EntityType.NEWS, EntityType.GUIDE]
 const HERO_SUBTITLE_WORDS = ['auto', 'moto', 'ficha técnica', 'comparativa']
+
+/**
+ * COPY DEL HERO — pase de posicionamiento (sept. 2026, "reconstrucción del
+ * Hero"): el headline anterior ("Cada {auto/moto/...} a un clic") describía
+ * FORMATO (hay muchas fichas, es rápido) pero no la razón real para no
+ * resolver esto con un buscador genérico o un resumen de IA — que hoy es la
+ * competencia de facto de cualquier sitio de datos, no otro catálogo de
+ * autos. Lo único que este sitio tiene y un resumen de IA/buscador no puede
+ * ofrecer con la misma certeza es la trazabilidad: cada dato declara de
+ * dónde sale y con qué nivel de confianza (`evidence.level`, ver
+ * `lib/evidence.ts` — no es un texto de marketing, es un campo real del
+ * dataset que ya se muestra en cada card). El nuevo headline cierra sobre
+ * "a un clic" solo en el segmento final, sacado del rol protagónico, y usa
+ * "con fuente citada" para nombrar el diferencial real en vez de la
+ * velocidad de acceso (que cualquier sitio también puede decir).
+ */
+const HERO_HEADLINE_LEAD = 'Cada'
+const HERO_HEADLINE_TAIL = 'con fuente citada'
+const HERO_SUBTITLE =
+  'No es un resumen de IA sin origen ni una ficha de foro: cada dato viene de una fuente citada y verificable, para que compares antes de decidir.'
 const CATEGORY_ORDER: EntityType[] = [EntityType.VEHICLE, EntityType.NEWS, EntityType.GUIDE]
 const CATEGORY_ACCENT: Record<EntityType, string> = {
   [EntityType.VEHICLE]: '#c9a35f',
@@ -181,6 +201,18 @@ export default async function HomePage() {
   // `SITE_NAME` en ese caso, sin un segundo tramo de texto colgando.
   const lastUpdateLabel = lastUpdate ? formatRelativeTime(lastUpdate) : null
   const vehicles = allVehicles as Vehicle[]
+
+  // Sello de confianza del hero (pase de posicionamiento, sept. 2026): en
+  // vez de afirmar en texto fijo "cada dato cita su fuente" (una promesa
+  // de marketing que se desactualiza sola en cuanto entra un vehículo sin
+  // evidencia todavía cargada), se calcula el % real sobre `vehicles`
+  // —mismo array ya en memoria para "Un dato, una fuente" más abajo, sin
+  // fetch nuevo— contando cuántos declaran `evidence.level`. Redondeado
+  // hacia abajo (`Math.floor`) a propósito: para un sello de confianza,
+  // subestimar levemente es más seguro que un redondeo que sobreestime la
+  // cobertura real por 0.x puntos.
+  const evidenceCoveragePct =
+    vehicles.length > 0 ? Math.floor((vehicles.filter((v) => Boolean(v.evidence?.level)).length / vehicles.length) * 100) : null
 
   // 5.B (Fase 5, prioridad B): ejemplos reales para el placeholder
   // rotativo de `QuickSearchForm` — antes el componente solo tenía su
@@ -484,17 +516,16 @@ export default async function HomePage() {
             </p>
             <Parallax strength={8}>
               <h1 className="font-display text-6xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-7xl lg:text-8xl">
-                Cada{' '}
-                <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gradient-vice" />{' '}
-                a un clic
+                {HERO_HEADLINE_LEAD}{' '}
+                <WordRotate words={HERO_SUBTITLE_WORDS} className="text-gradient-vice" />
+                {', '}
+                {HERO_HEADLINE_TAIL}
               </h1>
             </Parallax>
           </Reveal>
 
           <Reveal index={1} total={5} className="mx-auto mt-6 max-w-xl">
-            <p className="text-lg text-neutral-500 sm:text-xl">
-              Specs reales del fabricante — para que compares antes de comprar.
-            </p>
+            <p className="text-lg text-neutral-500 sm:text-xl">{HERO_SUBTITLE}</p>
           </Reveal>
 
           <Reveal
@@ -522,6 +553,27 @@ export default async function HomePage() {
               </span>
             </div>
           </Reveal>
+
+          {/* Sello de confianza (pase de posicionamiento, sept. 2026): el
+              diferencial real del sitio —evidencia citada, no una promesa
+              de marketing— vive hasta acá solo como sello visual por card
+              más abajo en la vitrina. Este renglón lo nombra en texto una
+              sola vez, cerca de los stats (mismo bloque de credibilidad
+              rápida), con el % calculado en vivo sobre el catálogo real
+              (`evidenceCoveragePct` arriba) — nunca un número fijo que
+              pueda quedar desactualizado o, peor, inflado a mano. Si el
+              catálogo llegara a tener 0% de cobertura (no pasa hoy, pero
+              el cálculo lo contempla) el renglón simplemente no se
+              muestra en vez de anunciar un 0% que solo genera desconfianza
+              sin agregar información útil. */}
+          {evidenceCoveragePct !== null && evidenceCoveragePct > 0 && (
+            <Reveal index={2} total={5} className="mx-auto mt-3">
+              <p className="inline-flex items-center gap-1.5 text-xs text-neutral-500">
+                <span aria-hidden="true" className="text-emerald-500">✓</span>
+                {evidenceCoveragePct}% de las fichas de vehículos citan su fuente
+              </p>
+            </Reveal>
+          )}
 
           <Reveal index={3} total={5}>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
