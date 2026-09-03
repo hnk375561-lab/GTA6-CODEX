@@ -265,32 +265,26 @@ export default async function HomePage() {
     .slice(0, HERO_SHOWCASE_LIMIT)
 
   // Anuncio propio del hero (bloque izquierdo, ver `HeroSelfPromoCard`):
-  // CUARTO REDISEÑO (sept. 2026, pedido explícito "más cosas cambiantes"):
-  // deja de ser una única recomendación fija — ahora es un mini-carrusel
-  // de varias recomendaciones editoriales (una por categoría de
-  // carrocería, ver `HERO_SELF_PROMO_CATEGORY_ORDER`), pero el avance
-  // entre ellas sigue siendo 100% manual (click en flechas/dots o swipe
-  // dentro de `HeroSelfPromoCard`) — nunca con temporizador automático,
-  // decisión explícita para no competir por atención con el carrusel de
-  // vehículos de la derecha, que tampoco rota solo.
+  // QUINTO REDISEÑO (sept. 2026, pedido explícito "varias a la vez, sin
+  // rotación ni flechas"): 2-3 recomendaciones editoriales (una por
+  // categoría de carrocería, ver `HERO_SELF_PROMO_CATEGORY_ORDER`) TODAS
+  // visibles al mismo tiempo — a diferencia del carrusel de la derecha,
+  // este bloque no tiene ningún mecanismo de navegación propio.
   //
   // Mismo criterio anti-relleno que `heroShowcaseVehicles` arriba: cada
-  // slide se arma con un vehículo real con foto resuelta, nunca con
-  // datos inventados. Se recorre el orden de categorías de abajo y, por
-  // cada una, se toma el primer vehículo del catálogo que (a) sea de esa
+  // ítem se arma con un vehículo real con foto resuelta, nunca con datos
+  // inventados. Se recorre el orden de categorías de abajo y, por cada
+  // una, se toma el primer vehículo del catálogo que (a) sea de esa
   // categoría, (b) no esté ya en el carrusel de la derecha, y (c) no se
-  // haya usado ya en un slide anterior de este mismo bloque (para no
+  // haya usado ya en un ítem anterior de este mismo bloque (para no
   // repetir el mismo auto dos veces en la franja). Si una categoría no
-  // tiene ningún vehículo disponible, simplemente no genera slide — no
-  // se rellena con un vehículo de otra categoría a la fuerza. Si el
+  // tiene ningún vehículo disponible, simplemente no genera ítem — no se
+  // rellena con un vehículo de otra categoría a la fuerza. Si el
   // resultado queda vacío (catálogo muy chico o sin fotos resueltas),
-  // cae al mismo fallback de una sola recomendación genérica que ya
-  // tenía la versión anterior (primer vehículo disponible fuera del
-  // carrusel, sea cual sea su categoría); y si tampoco hay ninguno,
   // `HeroSelfPromoCard` recibe un array vacío y muestra su pitch
-  // genérico del sitio (sin flechas/dots, no hay entre qué navegar).
+  // genérico del sitio.
   const HERO_SELF_PROMO_CATEGORY_ORDER = ['Sedán', 'SUV', 'Pickup', 'Deportivo', 'Hatchback', 'Familiar'] as const
-  const HERO_SELF_PROMO_LIMIT = 5
+  const HERO_SELF_PROMO_LIMIT = 3
   const heroShowcaseSlugs = new Set(heroShowcaseVehicles.map((item) => item.slug))
 
   function buildSelfPromoContent(vehicle: Vehicle, categoryLabel: string): HeroSelfPromoContent | null {
@@ -301,12 +295,9 @@ export default async function HomePage() {
     return {
       eyebrow: `Por qué elegir un ${categoryLabel.toLowerCase()}`,
       headline: vehicle.manufacturer ? `${vehicle.manufacturer} ${vehicle.title}` : vehicle.title,
-      body: `Nuestra recomendación del momento en ${categoryLabel} — ficha completa con specs y precio reales.`,
       src: image.src,
       alt: image.alt,
-      categoryHref: categoryPageHref(vehicle.class),
       detailHref: `/${EntityType.VEHICLE}/${vehicle.slug}`,
-      ctaLabel: 'Ver ficha',
       powerLabel: powerHp !== null ? `${powerHp} hp` : null,
       secondaryStatLabel: priceUsd !== null ? formatUsdShort(priceUsd) : (vehicle.performance?.speed ?? null),
       evidenceLevel: vehicle.evidence?.level,
@@ -314,24 +305,31 @@ export default async function HomePage() {
   }
 
   const usedSelfPromoSlugs = new Set(heroShowcaseSlugs)
-  const heroSelfPromoSlides: HeroSelfPromoContent[] = []
+  const heroSelfPromoItems: HeroSelfPromoContent[] = []
   for (const category of HERO_SELF_PROMO_CATEGORY_ORDER) {
-    if (heroSelfPromoSlides.length >= HERO_SELF_PROMO_LIMIT) break
+    if (heroSelfPromoItems.length >= HERO_SELF_PROMO_LIMIT) break
     const candidate = vehicles.find(
       (v) => !usedSelfPromoSlugs.has(v.slug) && getVehicleCategory(v.class) === category
     )
     if (!candidate) continue
-    const slide = buildSelfPromoContent(candidate, category)
-    if (!slide) continue
+    const item = buildSelfPromoContent(candidate, category)
+    if (!item) continue
     usedSelfPromoSlugs.add(candidate.slug)
-    heroSelfPromoSlides.push(slide)
+    heroSelfPromoItems.push(item)
   }
-  if (heroSelfPromoSlides.length === 0) {
-    const fallbackSelfPromoVehicle = vehicles.find((v) => !heroShowcaseSlugs.has(v.slug))
-    const fallbackSlide = fallbackSelfPromoVehicle
-      ? buildSelfPromoContent(fallbackSelfPromoVehicle, getVehicleCategory(fallbackSelfPromoVehicle.class) ?? 'vehículo')
+  // Relleno hasta 2 ítems mínimo (si alcanza el catálogo): con solo 1
+  // ítem el bloque izquierdo se ve desbalanceado frente al carrusel de
+  // la derecha — se completa con cualquier vehículo disponible que no se
+  // haya usado todavía, sin importar su categoría.
+  if (heroSelfPromoItems.length < 2) {
+    const fallbackVehicle = vehicles.find((v) => !usedSelfPromoSlugs.has(v.slug))
+    const fallbackItem = fallbackVehicle
+      ? buildSelfPromoContent(fallbackVehicle, getVehicleCategory(fallbackVehicle.class) ?? 'vehículo')
       : null
-    if (fallbackSlide) heroSelfPromoSlides.push(fallbackSlide)
+    if (fallbackItem) {
+      usedSelfPromoSlugs.add(fallbackVehicle!.slug)
+      heroSelfPromoItems.push(fallbackItem)
+    }
   }
 
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
@@ -594,7 +592,7 @@ export default async function HomePage() {
               interno de `FeaturedCarousel` scrollea en su propio eje
               horizontal, ver esa nota en `HeroVehicleShowcase.tsx`). */}
           <Reveal index={4} total={7} className="mx-auto mt-14 w-full text-left">
-            <HeroVehicleShowcase vehicles={heroShowcaseVehicles} selfPromoSlides={heroSelfPromoSlides} />
+            <HeroVehicleShowcase vehicles={heroShowcaseVehicles} selfPromoItems={heroSelfPromoItems} />
           </Reveal>
 
           {/* Preview de categorías directo en el hero: contenido real

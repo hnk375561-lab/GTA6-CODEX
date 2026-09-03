@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState, useEffect, useCallback } from 'react'
+import { useRef, useState, useEffect, useCallback, type CSSProperties } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -15,12 +15,6 @@ import { cn } from '@/lib/utils'
  * `fs` (ver `EntityImage.tsx`), así que este componente cliente nunca
  * resuelve la imagen por sí mismo — el caller (`src/app/page.tsx`) arma
  * este array con 3–4 vehículos `featured` que sí tengan foto real.
- *
- * Interfaz SIN CAMBIOS respecto de la versión anterior (crossfade):
- * `page.tsx` sigue armando exactamente los mismos campos, el rediseño de
- * abajo es 100% de presentación — ninguna de las líneas que resuelven
- * imagen/potencia/precio/categoría en el server component necesitó
- * tocarse para este cambio.
  */
 export interface HeroVehicleShowcaseItem {
   slug: string
@@ -37,24 +31,20 @@ export interface HeroVehicleShowcaseItem {
    *  hacia la card correspondiente en Categorías (ver
    *  `lib/view-transitions.ts`). */
   categoryHref?: string | null
-  /** URL de la ficha completa del vehículo (`/vehiculos/[slug]`) — a
-   *  diferencia de `categoryHref` (que agrupa por carrocería), este es
-   *  el destino específico de ESTE vehículo. Segundo punto de click real
-   *  sobre la pieza (ver "chip" más abajo), hermano del click sobre la
-   *  foto (que va a `categoryHref`) — nunca un `<Link>` anidado dentro
-   *  de otro. */
+  /** URL de la ficha completa del vehículo (`/vehiculos/[slug]`) —
+   *  segundo punto de click real sobre la pieza (ver "chip" más abajo),
+   *  hermano del click sobre la foto (que va a `categoryHref`) — nunca
+   *  un `<Link>` anidado dentro de otro. */
   detailHref: string
   /** Etiqueta corta ya formateada ("201 hp") derivada de `parsePowerHp`
    *  en el caller — este componente nunca parsea texto libre por su
    *  cuenta. `null` cuando el vehículo no tiene potencia parseable. */
   powerLabel?: string | null
-  /** Segundo dato destacado: precio en USD ya formateado si el vehículo
-   *  tiene `priceStructured` en esa moneda, o la velocidad máxima (texto
-   *  ya humano, ej. "241 km/h") como respaldo — mismo criterio de
-   *  prioridad que arma el caller. `null` si no hay ninguno de los dos. */
+  /** Segundo dato destacado: precio en USD ya formateado, o la velocidad
+   *  máxima (texto ya humano, ej. "241 km/h") como respaldo. `null` si no
+   *  hay ninguno de los dos. */
   secondaryStatLabel?: string | null
-  /** Nivel de evidencia real de la ficha (`vehicle.evidence.level`) —
-   *  mismo sello compacto que ya usa `EntityCard` sobre sus fotos. */
+  /** Nivel de evidencia real de la ficha (`vehicle.evidence.level`). */
   evidenceLevel?: EvidenceLevel
 }
 
@@ -63,11 +53,7 @@ export interface HeroVehicleShowcaseItem {
  * oficial traen mucho margen blanco propio alrededor del vehículo — con
  * `object-contain` puro ese margen se leía como espacio muerto). En vez
  * de recortar cada asset a mano, se escala la imagen ya encajada dentro
- * de un contenedor propio con `overflow-hidden`: el margen sobrante
- * queda recortado por el contenedor y el vehículo queda más grande y
- * protagonista. Mismo criterio que la versión anterior (crossfade), acá
- * reusado tal cual porque el problema de origen (fotos de prensa con
- * mucho margen) no cambió con el rediseño de presentación.
+ * de un contenedor propio con `overflow-hidden`.
  */
 const PHOTO_ZOOM_SCALE = 1.3
 
@@ -78,63 +64,52 @@ const SCROLL_STEP_PX = 360
 
 interface HeroVehicleShowcaseProps {
   vehicles: HeroVehicleShowcaseItem[]
-  /** Contenido del bloque izquierdo (ver `HeroSelfPromoCard`) — `null`
-   *  cuando `page.tsx` no encontró ningún vehículo con foto resuelta
-   *  para armarlo (cae al fallback genérico del componente). */
-  selfPromo?: HeroSelfPromoContent | null
+  /** Ítems del bloque izquierdo (ver `HeroSelfPromoCard`) — QUINTO
+   *  REDISEÑO (sept. 2026): 2-3 ítems fijos, todos visibles a la vez, sin
+   *  rotación ni flechas propias (ver docstring de ese componente para
+   *  el detalle completo del cambio). Array vacío cuando `page.tsx` no
+   *  encontró ningún vehículo con foto resuelta para armar ni un ítem
+   *  (cae al fallback genérico del componente). */
+  selfPromoItems: HeroSelfPromoContent[]
   className?: string
 }
 
 /**
- * TERCER REDISEÑO — "DOS BLOQUES, 100% HORIZONTAL" (sept. 2026).
+ * QUINTO REDISEÑO — "DOS BLOQUES, EDGE-TO-EDGE DE VERDAD" (sept. 2026).
  *
- * Motivo del cambio, pedido explícito tras probar el rediseño anterior
- * ("franja showroom", una sola fila con el anuncio propio como primera
- * card del mismo track): dos problemas de fondo, no de detalle.
+ * Reconstruida desde cero sobre la base del rediseño anterior (mismo
+ * concepto de fondo: dos bloques lado a lado, izquierda anuncio propio,
+ * derecha carrusel de vehículos), con dos correcciones explícitas
+ * pedidas tras probarlo:
  *
- * 1) CLICKS ROTOS CON MOUSE. La causa real no era de este archivo sino
- *    de `FeaturedCarousel` (ver el comentario largo ahí): capturaba el
- *    puntero en TODO `pointerdown` de mouse, incluso en un click limpio
- *    sin arrastre, lo que hacía que el `click` sintético se reasignara
- *    al track en vez de al `<Link>`/`<button>` de abajo. Corregido de
- *    raíz en `FeaturedCarousel.tsx` (umbral de movimiento antes de
- *    confirmar arrastre y recién ahí capturar el puntero) — esta pieza
- *    se beneficia automáticamente, sin nada especial que hacer acá.
- * 2) ANCHO REAL. La fila anterior vivía dentro del contenedor centrado
- *    del panel hero (`max-w-[90rem]`, heredado de `page.tsx`) — nunca
- *    llegaba a ocupar el ancho real del viewport, y mezclar el anuncio
- *    propio como "una card más" del mismo track lo hacía perderse entre
- *    los vehículos en vez de leerse como un bloque señalado a propósito.
+ * 1) "NO ME GUSTA LA FORMA EN QUE SE EJECUTA" — el bloque izquierdo
+ *    (`HeroSelfPromoCard`) dejó de navegarse a mano (flechas/dots/swipe,
+ *    `'use client'` con estado) y ahora muestra 2-3 recomendaciones A LA
+ *    VEZ, sin nada para tocar ni esperar — ver el docstring largo de ese
+ *    componente para el detalle de por qué esto también es más robusto
+ *    (un solo click por fila, sin superficie para que un handler de
+ *    swipe vuelva a robarle el click a un `<Link>`).
+ * 2) "QUIERO QUE SEA MÁS HORIZONTAL, 100% SI SE PUEDE" — el padding
+ *    lateral del wrapper full-bleed baja de hasta `xl:px-12` (3rem) a un
+ *    margen fijo y chico (`px-3 sm:px-4`), así la franja queda
+ *    verdaderamente de borde a borde del viewport en vez de sentirse
+ *    "casi ancho" — el único motivo para no ir a `px-0` literal es que
+ *    las cards tienen esquinas redondeadas (`rounded-3xl`): a cero
+ *    padding esas esquinas quedarían cortadas exactamente en el borde
+ *    físico de la pantalla, que se lee como error de recorte, no como
+ *    diseño "ancho".
  *
- * Solución — dos bloques lado a lado, no una fila mezclada:
- * - IZQUIERDA: `HeroSelfPromoCard`, bloque FIJO propio (no forma parte
- *   del scroll del carrusel), marcado con un chip "Nuestra
- *   recomendación" (flecha, ver ese componente) para que se lea como
- *   señalado a propósito, no como una card de catálogo más.
- * - DERECHA: el carrusel de vehículos (`FeaturedCarousel`, mismo
- *   drag+snap+flechas de siempre), ahora en su propio bloque, todo el
- *   ancho restante para él solo.
- * - El contenedor raíz de esta pieza se escapa del `max-width` del
- *   panel hero con la técnica clásica de "full-bleed" (`w-screen` +
- *   `left-1/2` + margen negativo de medio viewport) para que la franja
- *   sea 100% horizontal de verdad — de borde a borde del viewport, con
- *   el mismo padding lateral responsive que el resto del sitio
- *   (`container-max`), nunca tocando el borde físico de la pantalla.
- *   El ancestro que envuelve cada panel del track pineado ya tiene
- *   `overflow: hidden` (`PinnedScrollStages`), así que este escape de
- *   ancho no genera scroll horizontal en la página.
- * - En mobile/tablet (`< lg`) los dos bloques se apilan en columna
- *   (anuncio arriba, carrusel abajo) — "izquierda/derecha" es un
- *   concepto de desktop; en una pantalla angosta no hay espacio real
- *   para dos columnas sin que ambas queden demasiado angostas.
- *
- * Se mantiene sin cambios: todos los vehículos montados a la vez (sin
- * rotación por temporizador), overlay de sello de evidencia + specs +
- * chip "Ver ficha" por card, transición FLIP opcional hacia Categorías
- * (`lib/view-transitions.ts`), `prefers-reduced-motion`, y accesibilidad
+ * Se mantiene sin cambios respecto de la versión anterior: el carrusel
+ * de la derecha (`FeaturedCarousel`, mismo drag+snap+flechas, mismo fix
+ * de click-through con mouse — ver ese archivo), overlay de sello de
+ * evidencia + specs + chip "Ver ficha" por card, transición FLIP
+ * opcional hacia Categorías, `prefers-reduced-motion`, y accesibilidad
  * (imagen decorativa `aria-hidden` + `aria-label` real en cada `<Link>`).
+ * En mobile/tablet (`< lg`) los dos bloques se apilan en columna
+ * (anuncio arriba, carrusel abajo) — "izquierda/derecha" es un concepto
+ * de desktop.
  */
-export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: HeroVehicleShowcaseProps) {
+export function HeroVehicleShowcase({ vehicles, selfPromoItems, className }: HeroVehicleShowcaseProps) {
   const router = useRouter()
   const trackRef = useRef<HTMLDivElement>(null)
   const [flipSupported, setFlipSupported] = useState(false)
@@ -150,11 +125,8 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
   }, [])
 
   // Habilita/deshabilita visualmente las flechas según si queda algo
-  // para scrollear en cada dirección — mismo dato (`scrollLeft`/
-  // `scrollWidth`) que ya calcula el navegador para el scroll nativo,
-  // solo leído acá para reflejarlo en el estado de las flechas. Se
-  // recalcula en cada evento de scroll del track (drag, swipe, flecha,
-  // rueda) y una vez al montar.
+  // para scrollear en cada dirección — se recalcula en cada evento de
+  // scroll del track (drag, swipe, flecha, rueda) y una vez al montar.
   const updateScrollButtons = useCallback(() => {
     const track = trackRef.current
     if (!track) return
@@ -179,164 +151,185 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
   }
 
   return (
-    // Full-bleed: escapa del `max-w` centrado del panel hero para que la
-    // franja sea 100% horizontal de verdad (borde a borde del viewport,
-    // con el mismo padding lateral responsive que `container-max` en el
-    // resto del sitio). `className` del caller se agrega al final via
-    // `cn`/`twMerge`, así que si algún día hace falta espaciado extra
-    // desde `page.tsx` sigue pudiendo pisarse sin tocar este archivo.
-    <div className={cn('relative left-1/2 w-screen -ml-[50vw] px-4 sm:px-6 lg:px-8 xl:px-12', className)}>
-      <div className="flex w-full flex-col gap-5 lg:flex-row lg:items-stretch">
-        {/* IZQUIERDA: anuncio propio, bloque fijo — ya no es una card
-            más del track de la derecha, ver docstring del componente. */}
-        <HeroSelfPromoCard content={selfPromo} className="h-[20rem] w-full shrink-0 sm:h-[22rem] lg:h-auto lg:w-[24rem] xl:w-[27rem]" />
+    // Full-bleed edge-to-edge: escapa del `max-w` centrado del panel hero
+    // (`w-screen` + `-ml-[50vw]`) con un margen lateral fijo y chico —
+    // ver el punto 2 del docstring de arriba para por qué no es `px-0`.
+    <div className={cn('relative left-1/2 w-screen -ml-[50vw] px-3 sm:px-4', className)}>
+      <div className="flex w-full flex-col gap-4 lg:flex-row lg:items-stretch">
+        {/* IZQUIERDA: anuncio propio — bloque fijo, 2-3 ítems visibles a
+            la vez (ver `HeroSelfPromoCard`), sin navegación propia. */}
+        <HeroSelfPromoCard
+          items={selfPromoItems}
+          className="h-[22rem] shrink-0 sm:h-[24rem] lg:h-auto lg:w-[22rem] xl:w-[25rem]"
+        />
 
         {/* DERECHA: carrusel de vehículos, en su propio bloque con todo
-            el ancho restante para él solo. */}
-        <div className="relative min-w-0 flex-1">
-      <FeaturedCarousel ref={trackRef} className="scroll-px-1 pb-3 pr-1">
-        {vehicles.map((vehicle) => {
-          const canLink = Boolean(vehicle.categoryHref)
-          const flipEnabled = canLink && flipSupported
+            el ancho restante para él solo. Envuelto en `<section>` con
+            `aria-label` propio (pulido final: mismo criterio semántico
+            que el `<aside>` de la izquierda, ver `HeroSelfPromoCard`) —
+            dos regiones nombradas para lectores de pantalla en vez de
+            dos `<div>` genéricos. El encabezado "Destacados" vive FUERA
+            del contenedor `relative` que envuelve flechas+track: esas
+            flechas se centran con `top-1/2` respecto de ESE contenedor
+            (ver más abajo), así que si el label viviera adentro,
+            correrían el centro vertical hacia abajo, desalineadas
+            respecto de las cards. */}
+        <section aria-label="Vehículos destacados" className="flex min-w-0 flex-1 flex-col">
+          <div className="mb-2.5 flex items-center gap-1.5 px-1">
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-neutral-400">
+              <path d="M13 2 3 14h7l-1 8 11-14h-7l0-6z" />
+            </svg>
+            <span className="font-mono text-[10px] font-semibold uppercase tracking-wide text-neutral-500">
+              Destacados
+            </span>
+          </div>
+          <div className="relative min-w-0 flex-1">
+          <FeaturedCarousel ref={trackRef} className="scroll-px-1 pb-3 pr-1">
+            {vehicles.map((vehicle, index) => {
+              const canLink = Boolean(vehicle.categoryHref)
+              const flipEnabled = canLink && flipSupported
 
-          const imageNode = (
-            <div aria-hidden="true" className="hero-vehicle-float absolute inset-0">
-              <Image
-                src={vehicle.src}
-                alt=""
-                fill
-                sizes="(min-width: 1024px) 26rem, 78vw"
-                className="object-contain drop-shadow-xl"
-                style={{
-                  transform: `scale(${PHOTO_ZOOM_SCALE})`,
-                  // Nombre compartido con la card de destino en
-                  // `/categorias/[grupo]` (ver `EntityCard.tsx`) — cada
-                  // card de la fila ahora es un nodo propio y estático
-                  // (ya no hay "una sola imagen actual" apilada), así
-                  // que el nombre solo se asigna a la card que
-                  // realmente dispara la navegación con FLIP.
-                  viewTransitionName: flipEnabled ? FLIP_VIEW_TRANSITION_NAME : undefined,
-                }}
-              />
-            </div>
-          )
-
-          return (
-            <div
-              key={vehicle.slug}
-              className="relative h-[21rem] w-[19rem] shrink-0 snap-start overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-lg sm:h-[23rem] sm:w-[26rem] lg:w-[30rem]"
-            >
-              {canLink ? (
-                <Link
-                  href={vehicle.categoryHref as string}
-                  aria-label={`Ver ${vehicle.manufacturer ? `${vehicle.manufacturer} ` : ''}${vehicle.title} en su categoría`}
-                  className="block h-full w-full tap-scale focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-auto-accent"
-                  onClick={
-                    flipEnabled
-                      ? (e) => {
-                          e.preventDefault()
-                          navigateWithFlip((href) => router.push(href), vehicle.categoryHref as string, vehicle.slug)
-                        }
-                      : undefined
-                  }
-                >
-                  {imageNode}
-                </Link>
-              ) : (
-                imageNode
-              )}
-
-              {/* Sello de evidencia — mismo componente visual que ya usa
-                  `EntityCard` sobre sus fotos, mismo criterio de color
-                  por nivel. */}
-              {vehicle.evidenceLevel && (
-                <span
-                  className={cn(
-                    'pointer-events-none absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-wide shadow-sm backdrop-blur-sm',
-                    EVIDENCE_STAMP_META[vehicle.evidenceLevel].className
-                  )}
-                  title="Nivel de evidencia — ver detalle completo en la ficha"
-                >
-                  <span aria-hidden="true">{EVIDENCE_STAMP_META[vehicle.evidenceLevel].icon}</span>
-                  {EVIDENCE_STAMP_META[vehicle.evidenceLevel].shortLabel}
-                </span>
-              )}
-
-              {/* Tarjeta de specs unificada: potencia y precio/velocidad
-                  juntos en una sola pieza con ícono. */}
-              {(vehicle.powerLabel || vehicle.secondaryStatLabel) && (
-                <div className="pointer-events-none absolute bottom-3 left-3 z-10 flex items-stretch overflow-hidden rounded-2xl border border-edge-strong bg-white/95 shadow-xl backdrop-blur-md">
-                  {vehicle.powerLabel && (
-                    <div className="flex items-center gap-2 px-3 py-2.5">
-                      <span
-                        aria-hidden="true"
-                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-auto-accent/15 text-auto-accent"
-                      >
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                          <path d="M13 2 3 14h7l-1 8 11-14h-7l0-6z" />
-                        </svg>
-                      </span>
-                      <span className="whitespace-nowrap font-mono text-[11px] font-semibold text-neutral-900">
-                        {vehicle.powerLabel}
-                      </span>
-                    </div>
-                  )}
-
-                  {vehicle.powerLabel && vehicle.secondaryStatLabel && (
-                    <span aria-hidden="true" className="my-2 w-px bg-edge-strong" />
-                  )}
-
-                  {vehicle.secondaryStatLabel && (
-                    <div className="flex items-center gap-2 px-3 py-2.5">
-                      <span
-                        aria-hidden="true"
-                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-auto-accent-orange/15 text-auto-accent-orange"
-                      >
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <path d="M20.59 13.41 12 22l-9-9V3h10l7.59 8.41a2 2 0 0 1 0 2.18Z" />
-                          <circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none" />
-                        </svg>
-                      </span>
-                      <span className="whitespace-nowrap font-mono text-[11px] font-semibold text-neutral-900">
-                        {vehicle.secondaryStatLabel}
-                      </span>
-                    </div>
-                  )}
+              const imageNode = (
+                <div aria-hidden="true" className="hero-vehicle-float absolute inset-0 overflow-hidden">
+                  {/* Zoom base vía variable CSS (`--hero-photo-zoom`, ver
+                      `.hero-vehicle-photo` en `globals.css`) en vez de
+                      `transform` inline directo — así el zoom extra al
+                      hover (`.group:hover &`, definido en CSS) puede
+                      subir la escala sin competir con nada puesto por
+                      React en el mismo `style`. */}
+                  <Image
+                    src={vehicle.src}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 30rem, (min-width: 640px) 26rem, 78vw"
+                    // `priority` solo en la primera card: es el
+                    // candidato más probable a LCP de todo el hero (la
+                    // foto más grande arriba del pliegue) — el resto
+                    // sigue con lazy-loading por defecto.
+                    priority={index === 0}
+                    className="hero-vehicle-photo object-contain drop-shadow-xl"
+                    style={{
+                      '--hero-photo-zoom': PHOTO_ZOOM_SCALE,
+                      viewTransitionName: flipEnabled ? FLIP_VIEW_TRANSITION_NAME : undefined,
+                    } as CSSProperties}
+                  />
                 </div>
-              )}
+              )
 
-              {/* Chip "Ver ficha →": CTA sólido, fondo oscuro con
-                  contraste real — segundo punto de click real sobre la
-                  card, hermano del `<Link>` de categoría de arriba
-                  (nunca anidado). Va a la ficha específica de ESTE
-                  vehículo, no a la categoría agrupada. */}
-              <Link
-                href={vehicle.detailHref}
-                aria-label={`Ver ficha completa de ${vehicle.manufacturer ? `${vehicle.manufacturer} ` : ''}${vehicle.title}`}
-                className="group tap-scale absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-neutral-900/20 ring-1 ring-white/10 transition-all duration-200 hover:-translate-y-0.5 hover:bg-black hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
-              >
-                Ver ficha
-                <span
-                  aria-hidden="true"
-                  className="text-auto-accent-strong transition-transform duration-200 group-hover:translate-x-0.5"
+              return (
+                <div
+                  key={vehicle.slug}
+                  className="hero-glow-card hero-card-hover animate-fade-in group relative h-[21rem] w-[19rem] shrink-0 snap-start overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-lg sm:h-[23rem] sm:w-[26rem] lg:w-[30rem]"
+                  style={{ animationDelay: `${index * 90}ms`, animationFillMode: 'backwards' }}
                 >
-                  →
-                </span>
-              </Link>
-            </div>
-          )
-        })}
+                  {canLink ? (
+                    <Link
+                      href={vehicle.categoryHref as string}
+                      aria-label={`Ver ${vehicle.manufacturer ? `${vehicle.manufacturer} ` : ''}${vehicle.title} en su categoría`}
+                      className="block h-full w-full tap-scale focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-auto-accent"
+                      onClick={
+                        flipEnabled
+                          ? (e) => {
+                              e.preventDefault()
+                              navigateWithFlip((href) => router.push(href), vehicle.categoryHref as string, vehicle.slug)
+                            }
+                          : undefined
+                      }
+                    >
+                      {imageNode}
+                    </Link>
+                  ) : (
+                    imageNode
+                  )}
+
+                  {/* Sello de evidencia — mismo componente visual que ya
+                      usa `EntityCard` sobre sus fotos, mismo criterio de
+                      color por nivel. */}
+                  {vehicle.evidenceLevel && (
+                    <span
+                      className={cn(
+                        'pointer-events-none absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-wide shadow-sm backdrop-blur-sm',
+                        EVIDENCE_STAMP_META[vehicle.evidenceLevel].className
+                      )}
+                      title="Nivel de evidencia — ver detalle completo en la ficha"
+                    >
+                      <span aria-hidden="true">{EVIDENCE_STAMP_META[vehicle.evidenceLevel].icon}</span>
+                      {EVIDENCE_STAMP_META[vehicle.evidenceLevel].shortLabel}
+                    </span>
+                  )}
+
+                  {/* Tarjeta de specs unificada: potencia y precio/velocidad
+                      juntos en una sola pieza con ícono. */}
+                  {(vehicle.powerLabel || vehicle.secondaryStatLabel) && (
+                    <div className="pointer-events-none absolute bottom-3 left-3 z-10 flex items-stretch overflow-hidden rounded-2xl border border-edge-strong bg-white/95 shadow-xl backdrop-blur-md">
+                      {vehicle.powerLabel && (
+                        <div className="flex items-center gap-2 px-3 py-2.5">
+                          <span
+                            aria-hidden="true"
+                            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-auto-accent/15 text-auto-accent"
+                          >
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                              <path d="M13 2 3 14h7l-1 8 11-14h-7l0-6z" />
+                            </svg>
+                          </span>
+                          <span className="whitespace-nowrap font-mono text-[11px] font-semibold text-neutral-900">
+                            {vehicle.powerLabel}
+                          </span>
+                        </div>
+                      )}
+
+                      {vehicle.powerLabel && vehicle.secondaryStatLabel && (
+                        <span aria-hidden="true" className="my-2 w-px bg-edge-strong" />
+                      )}
+
+                      {vehicle.secondaryStatLabel && (
+                        <div className="flex items-center gap-2 px-3 py-2.5">
+                          <span
+                            aria-hidden="true"
+                            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-auto-accent-orange/15 text-auto-accent-orange"
+                          >
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                              <path d="M20.59 13.41 12 22l-9-9V3h10l7.59 8.41a2 2 0 0 1 0 2.18Z" />
+                              <circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none" />
+                            </svg>
+                          </span>
+                          <span className="whitespace-nowrap font-mono text-[11px] font-semibold text-neutral-900">
+                            {vehicle.secondaryStatLabel}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Chip "Ver ficha →": CTA sólido, fondo oscuro con
+                      contraste real — segundo punto de click real sobre
+                      la card, hermano del `<Link>` de categoría de
+                      arriba (nunca anidado). */}
+                  <Link
+                    href={vehicle.detailHref}
+                    aria-label={`Ver ficha completa de ${vehicle.manufacturer ? `${vehicle.manufacturer} ` : ''}${vehicle.title}`}
+                    className="cta-shine group/cta tap-scale absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-neutral-900/20 ring-1 ring-white/10 transition-all duration-200 hover:-translate-y-1 hover:bg-black hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
+                  >
+                    Ver ficha
+                    <span
+                      aria-hidden="true"
+                      className="text-auto-accent-strong transition-transform duration-200 group-hover/cta:translate-x-0.5"
+                    >
+                      →
+                    </span>
+                  </Link>
+                </div>
+              )
+            })}
           </FeaturedCarousel>
 
           {/* Flechas prev/next reales — mueven el mismo nodo que ya
               scrollea con drag/swipe (`trackRef`, expuesto por
               `FeaturedCarousel`), nunca un segundo estado de "índice
               actual" separado. Ocultas en mobile (el gesto de swipe ya
-              cubre esa navegación en pantallas chicas, y las flechas
-              superpuestas competían con el thumb); visibles desde `sm:`
-              como en el resto del sitio. Deshabilitadas (no ocultas) en
-              el extremo correspondiente del recorrido, para que la fila
-              siga leyéndose como "esto es todo, no hay más". */}
+              cubre esa navegación en pantallas chicas); visibles desde
+              `sm:`. Deshabilitadas (no ocultas) en el extremo
+              correspondiente del recorrido. */}
           {vehicles.length > 0 && (
             <>
               <button
@@ -363,7 +356,8 @@ export function HeroVehicleShowcase({ vehicles, selfPromo = null, className }: H
               </button>
             </>
           )}
-        </div>
+          </div>
+        </section>
       </div>
     </div>
   )

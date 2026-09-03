@@ -4,118 +4,79 @@ import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
 import { cn } from '@/lib/utils'
 
 /**
- * Contenido del bloque izquierdo del hero ("anuncio propio del sitio").
- * FIJO por decisión de producto (no rota como el carrusel de la derecha,
- * ver `HeroVehicleShowcase`): una sola idea editorial a la vez, que se
- * cambia a mano editando el criterio de selección en `page.tsx` (hoy:
- * "recomendación del momento" en una categoría, por defecto Sedán).
- *
- * Server component (`page.tsx`) arma este objeto igual que
- * `HeroVehicleShowcaseItem` — mismo motivo: `resolveEntityDisplayImage`
- * depende de `fs` y no puede resolverse en un client component. Datos
- * reales del catálogo (foto, potencia, precio), nunca inventados: si
- * `page.tsx` no encuentra ningún vehículo con foto resuelta para armar
- * este bloque, pasa `null` y este componente cae a su fallback genérico
- * (ver más abajo) en vez de mostrar specs vacíos o de relleno.
+ * Un ítem del bloque izquierdo del hero ("anuncio propio del sitio").
+ * `page.tsx` arma un ARRAY de 2-3 de estos (uno por categoría de
+ * carrocería, ver `HERO_SELF_PROMO_CATEGORY_ORDER` ahí) — datos reales
+ * del catálogo (foto, potencia, precio), nunca inventados: si `page.tsx`
+ * no encuentra ningún vehículo con foto resuelta para armar ni un solo
+ * ítem, pasa un array vacío y este componente cae a su fallback genérico
+ * (ver más abajo) en vez de mostrar specs vacíos.
  */
 export interface HeroSelfPromoContent {
   /** Etiqueta corta arriba del título (ej. "Por qué elegir un sedán"). */
   eyebrow: string
   /** Título del vehículo recomendado (ej. "Toyota Corolla"). */
   headline: string
-  /** Una línea de contexto editorial — por qué se destaca este vehículo. */
-  body: string
   src: string
   alt: string
-  /** Mismo criterio que `HeroVehicleShowcaseItem.categoryHref`: URL de
-   *  `/categorias/[grupo]`, o `null` si el vehículo no tiene categoría
-   *  con página SEO propia (la foto deja de ser clickeable en ese caso,
-   *  el chip de CTA sigue yendo a la ficha igual). */
-  categoryHref?: string | null
-  /** Ficha completa del vehículo — destino del CTA principal. */
+  /** Ficha completa del vehículo — único destino de click de este ítem
+   *  (ver docstring del componente: QUINTO REDISEÑO, un solo click por
+   *  fila, sin link anidado ni link de categoría separado). */
   detailHref: string
-  /** Texto del CTA principal (ej. "Ver ficha"). */
-  ctaLabel: string
   powerLabel?: string | null
   secondaryStatLabel?: string | null
   evidenceLevel?: EvidenceLevel
 }
 
 interface HeroSelfPromoCardProps {
-  content: HeroSelfPromoContent | null
+  /** 2-3 ítems ya armados en servidor, todos visibles a la vez, sin
+   *  rotación — array vacío cuando `page.tsx` no encontró ningún vehículo
+   *  disponible (fallback genérico, sin filas). */
+  items: HeroSelfPromoContent[]
   className?: string
 }
 
 /**
- * Bloque izquierdo de la franja del hero (ver `HeroVehicleShowcase`, que
- * la monta como bloque fijo hermano del carrusel de vehículos) — mismo
- * lenguaje visual que las cards de vehículo (`rounded-3xl border
- * shadow-lg`), pero formato "banner editorial": la foto ocupa la tarjeta
- * completa
- * (`object-cover` a sangre, no una caja de foto separada arriba) con un
- * degradé oscuro al pie para que el texto (eyebrow + título + specs +
- * CTA) quede legible encima sin taparla del todo — a propósito distinto
- * del carrusel (foto en caja propia + franja de texto abajo) para que
- * las dos piezas no se lean como la misma cosa repetida dos veces.
+ * QUINTO REDISEÑO — "VARIAS A LA VEZ, ESTÁTICO Y ROBUSTO" (sept. 2026).
  *
- * Dos puntos de click reales, nunca un `<Link>` anidado dentro de otro
- * (mismo patrón que el carrusel): la foto entera linkea a la categoría
- * agrupada (`categoryHref`, si existe), el chip de CTA linkea a la
- * ficha específica de este vehículo (`detailHref`) — son hermanos en el
- * mismo contenedor `relative`, no un link dentro del otro.
+ * Reemplaza la versión anterior (un slide por vez, navegado a mano con
+ * flechas/dots/swipe, `'use client'` con estado de índice y drag). Pedido
+ * explícito: mostrar 2-3 recomendaciones A LA VEZ en la misma franja, SIN
+ * rotación automática NI flechas — se lee todo de un vistazo, no hay nada
+ * que esperar ni que tocar para ver el resto.
  *
- * TERCER REDISEÑO ("dos bloques", sept. 2026): esta card deja de ser el
- * primer ítem dentro del mismo track con scroll-snap del carrusel (eso
- * la hacía "una card más" de la fila, se perdía entre las demás y
- * competía por el mismo gesto de drag/swipe que el resto). Ahora es un
- * bloque PROPIO, fijo, a la izquierda de la franja del hero — el
- * carrusel de vehículos vive aparte, a la derecha, con su propio scroll
- * (ver `HeroVehicleShowcase.tsx` para el layout completo de dos
- * columnas). El alto ya no es un valor fijo pensado para calzar con el
- * resto de una fila (`h-[21rem]`): el caller (`HeroVehicleShowcase`)
- * pasa la altura real vía `className`, que sobreescribe el valor por
- * default acá abajo gracias a `cn`/`twMerge` (último valor gana).
+ * Simplificación deliberada del modelo de click, no solo estética: la
+ * versión anterior tenía DOS puntos de click por ítem (foto → categoría,
+ * chip CTA → ficha) que dependían de que ningún elemento absoluto se
+ * interpusiera en el área del otro. Acá cada fila es UN solo `<Link>` que
+ * envuelve toda la fila (foto + texto) y va directo a la ficha del
+ * vehículo — menos superficie para que un z-index o un handler de swipe
+ * mal calzado vuelva a romper el click, que fue exactamente la queja que
+ * motivó este rediseño. Sin `useState`/`useRef`/handlers de puntero: este
+ * componente ya no necesita `'use client'`, se renderiza 100% en servidor
+ * — un click roto por hidratación tardía o por JS que no llegó a correr
+ * deja de ser posible acá.
  *
- * Además de la reubicación: se agrega una marca visual de "esto es
- * nuestra recomendación" (chip con flecha, esquina superior izquierda) —
- * pedido explícito para que el bloque se lea como señalado a propósito y
- * no como una card más del catálogo. El sello de evidencia se corre a la
- * esquina superior DERECHA para no superponerse con esa marca nueva.
+ * Layout: columna de 2-3 filas horizontales (foto cuadrada a la
+ * izquierda, texto+specs a la derecha, flecha al final) que llenan la
+ * altura completa del bloque a partes iguales (`flex-1` por fila) — el
+ * mismo lenguaje visual (`hero-glow-card`/`hero-card-hover`, halo +
+ * elevación al hover) que ya usaba la versión anterior y que sigue usando
+ * el carrusel de la derecha, así el bloque no pierde el "más vistoso" ya
+ * logrado, solo la interacción de navegación que generaba el problema.
  */
-
-/** Chip decorativo "esto es nuestra recomendación" — mismo chip en el
- *  fallback sin vehículo y en la versión con contenido real, así el
- *  bloque siempre se lee como señalado a propósito, tenga o no datos de
- *  catálogo detrás. `pointer-events-none`: es puramente una etiqueta, no
- *  debe restar área de click a la foto que tiene debajo. */
-function RecommendationBadge() {
-  return (
-    <span
-      aria-hidden="true"
-      className="pointer-events-none absolute left-4 top-4 z-20 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/15 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-white shadow-sm backdrop-blur-md"
-    >
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 5v14M5 12l7 7 7-7" />
-      </svg>
-      Nuestra recomendación
-    </span>
-  )
-}
-
-export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps) {
-  const cardClassName = cn(
-    'relative flex h-[21rem] flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-900 text-white shadow-lg',
+export function HeroSelfPromoCard({ items, className }: HeroSelfPromoCardProps) {
+  const containerClassName = cn(
+    'hero-glow-card relative flex h-full w-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-900 text-white shadow-lg',
     className
   )
 
   // Fallback sin vehículo (catálogo sin ninguna foto resuelta disponible
-  // para este bloque, caso borde): pitch genérico del sitio, sin specs
-  // ni foto inventada — sigue siendo un CTA real y clickeable, solo que
-  // apunta al catálogo completo en vez de a una ficha puntual.
-  if (!content) {
+  // para este bloque, caso borde): pitch genérico del sitio, sin specs ni
+  // foto inventada.
+  if (items.length === 0) {
     return (
-      <div className={cardClassName}>
-        <RecommendationBadge />
+      <aside aria-label="Recomendación del sitio" className={containerClassName}>
         <div className="flex h-full flex-col justify-end bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
             {`Explorá el expediente`}
@@ -128,136 +89,90 @@ export function HeroSelfPromoCard({ content, className }: HeroSelfPromoCardProps
           </p>
           <Link
             href="/vehiculos"
-            className="tap-scale mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-neutral-900 shadow-lg transition-transform hover:-translate-y-0.5"
+            className="cta-shine tap-scale mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-neutral-900 shadow-lg transition-transform hover:-translate-y-0.5"
           >
             Ver catálogo <span aria-hidden="true">→</span>
           </Link>
         </div>
-      </div>
+      </aside>
     )
   }
 
-  const canLink = Boolean(content.categoryHref)
-
-  // Mismo pulido de "vida" del carrusel (ver el comentario largo sobre
-  // `.hero-vehicle-float` en `HeroVehicleShowcase.tsx`): wrapper propio
-  // con `absolute inset-0`, nunca en el nodo de `Image` en sí — acá no
-  // hay un segundo `transform` inline compitiendo (esta foto no tiene
-  // zoom, a diferencia del carrusel), pero se mantiene el mismo patrón
-  // de nodo separado para no acoplar la animación CSS al posicionamiento
-  // de `next/image` con `fill`.
-  // `z-0` explícito (antes: sin valor, `auto`): dejamos constancia clara
-  // de que este es el nodo de más abajo de la pila — el badge (`z-20`),
-  // el degradé (sin z pero pintado después = arriba de este) y el bloque
-  // de texto/CTA (`z-20`) siempre quedan por encima sin depender del
-  // orden implícito de "quién se declaró después en el JSX".
-  const photo = (
-    <div aria-hidden="true" className="hero-vehicle-float absolute inset-0 z-0">
-      <Image
-        src={content.src}
-        alt=""
-        fill
-        sizes="(min-width: 1024px) 24rem, 78vw"
-        priority
-        className="object-cover"
-      />
-    </div>
-  )
-
   return (
-    <div className={cardClassName}>
-      {canLink ? (
-        <Link
-          href={content.categoryHref as string}
-          aria-label={`Ver ${content.headline} en su categoría`}
-          className="tap-scale absolute inset-0 z-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-auto-accent"
-        >
-          {photo}
-        </Link>
-      ) : (
-        photo
-      )}
-
-      {/* Degradé oscuro de pie a mitad de tarjeta: garantiza contraste
-          del texto sobre cualquier foto real, sin depender de qué tan
-          clara u oscura sea cada imagen puntual del catálogo. */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-2/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-
-      <RecommendationBadge />
-
-      {/* Sello de evidencia: esquina superior DERECHA (antes izquierda,
-          donde ahora vive `RecommendationBadge`) para que las dos
-          etiquetas nunca se superpongan. */}
-      {content.evidenceLevel && (
-        <span
-          className={cn(
-            'pointer-events-none absolute right-4 top-4 z-20 inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-wide shadow-sm backdrop-blur-sm',
-            EVIDENCE_STAMP_META[content.evidenceLevel].className
-          )}
-          title="Nivel de evidencia — ver detalle completo en la ficha"
-        >
-          <span aria-hidden="true">{EVIDENCE_STAMP_META[content.evidenceLevel].icon}</span>
-          {EVIDENCE_STAMP_META[content.evidenceLevel].shortLabel}
+    <aside aria-label="Recomendación del sitio" className={containerClassName}>
+      {/* Encabezado del bloque — una sola vez para todo el grupo (ya no
+          hay un badge por ítem: con 2-3 filas visibles a la vez, repetir
+          el chip por fila era ruido, no señal). */}
+      <div className="flex items-center gap-1.5 border-b border-white/10 bg-white/[0.03] px-4 py-3">
+        <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-white/70">
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
+        <span className="font-mono text-[10px] font-semibold uppercase tracking-wide text-white/70">
+          Nuestra recomendación
         </span>
-      )}
+      </div>
 
-      {/* `z-20` (antes `z-10`): mismo nivel que las etiquetas de arriba,
-          por encima de la foto (`z-0`) y el degradé (`z-[1]`) sin dejar
-          nada libreado al orden de aparición en el DOM. El chip de CTA
-          de acá adentro queda, así, siempre por encima de la foto —
-          nunca compite por el click con el `<Link>` de categoría. */}
-      <div className="relative z-20 mt-auto flex flex-col gap-3 p-5">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">{content.eyebrow}</p>
-          <p className="mt-1 font-display text-2xl font-bold leading-tight sm:text-3xl">{content.headline}</p>
-          <p className="mt-1.5 max-w-sm text-sm text-white/80">{content.body}</p>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-3">
-          {(content.powerLabel || content.secondaryStatLabel) && (
-            <div className="flex items-stretch overflow-hidden rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md">
-              {content.powerLabel && (
-                <div className="flex items-center gap-2 px-3 py-2">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="shrink-0 text-auto-accent">
-                    <path d="M13 2 3 14h7l-1 8 11-14h-7l0-6z" />
-                  </svg>
-                  <span className="whitespace-nowrap font-mono text-[11px] font-semibold text-white">
-                    {content.powerLabel}
-                  </span>
-                </div>
-              )}
-              {content.powerLabel && content.secondaryStatLabel && (
-                <span aria-hidden="true" className="my-2 w-px bg-white/15" />
-              )}
-              {content.secondaryStatLabel && (
-                <div className="flex items-center gap-2 px-3 py-2">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="shrink-0 text-auto-accent-orange">
-                    <path d="M20.59 13.41 12 22l-9-9V3h10l7.59 8.41a2 2 0 0 1 0 2.18Z" />
-                    <circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none" />
-                  </svg>
-                  <span className="whitespace-nowrap font-mono text-[11px] font-semibold text-white">
-                    {content.secondaryStatLabel}
-                  </span>
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* Chip de CTA — hermano del `<Link>` de la foto (nunca
-              anidado dentro), mismo patrón que el chip "Ver ficha" del
-              carrusel de la derecha. */}
+      <div className="flex flex-1 flex-col gap-2.5 p-2.5">
+        {items.map((item, index) => (
           <Link
-            href={content.detailHref}
-            aria-label={`Ver ficha completa de ${content.headline}`}
-            className="group tap-scale relative z-10 ml-auto inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-neutral-900 shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
+            key={item.detailHref}
+            href={item.detailHref}
+            aria-label={`Ver ficha completa de ${item.headline}`}
+            className="hero-card-hover tap-scale group animate-fade-in relative flex flex-1 items-stretch gap-3 overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 transition-colors duration-150 hover:bg-white/10 hover:ring-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
+            style={{ animationDelay: `${index * 90}ms`, animationFillMode: 'backwards' }}
           >
-            {content.ctaLabel}
-            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+            <div className="relative w-24 shrink-0 overflow-hidden rounded-l-2xl bg-white/10 sm:w-28">
+              {/* `priority` solo en el primer ítem: es contenido arriba
+                  del pliegue y candidato real a LCP — el resto conserva
+                  el lazy-loading por defecto de `next/image`, no hace
+                  falta adelantar toda la fila. */}
+              <Image
+                src={item.src}
+                alt=""
+                aria-hidden="true"
+                fill
+                sizes="(min-width: 640px) 7rem, 6rem"
+                priority={index === 0}
+                className="hero-row-photo object-cover"
+              />
+            </div>
+
+            <div className="flex min-w-0 flex-1 flex-col justify-center gap-1 py-2 pr-2">
+              <p className="truncate text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">
+                {item.eyebrow}
+              </p>
+              <p className="truncate font-display text-base font-bold leading-tight sm:text-lg">
+                {item.headline}
+              </p>
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[11px] font-medium text-white/75">
+                {item.powerLabel && <span>{item.powerLabel}</span>}
+                {item.powerLabel && item.secondaryStatLabel && (
+                  <span aria-hidden="true" className="text-white/30">·</span>
+                )}
+                {item.secondaryStatLabel && <span>{item.secondaryStatLabel}</span>}
+                {item.evidenceLevel && (
+                  <span
+                    className={cn(
+                      'inline-flex items-center gap-1 rounded-full border px-1.5 py-0.5 text-[9px] uppercase tracking-wide',
+                      EVIDENCE_STAMP_META[item.evidenceLevel].className
+                    )}
+                  >
+                    <span aria-hidden="true">{EVIDENCE_STAMP_META[item.evidenceLevel].icon}</span>
+                    {EVIDENCE_STAMP_META[item.evidenceLevel].shortLabel}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            <span
+              aria-hidden="true"
+              className="flex shrink-0 items-center pr-3 text-white/40 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:text-white"
+            >
               →
             </span>
           </Link>
-        </div>
+        ))}
       </div>
-    </div>
+    </aside>
   )
 }
