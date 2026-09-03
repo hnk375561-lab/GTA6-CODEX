@@ -5,6 +5,7 @@ import {
   useImperativeHandle,
   useRef,
   useState,
+  type KeyboardEvent as ReactKeyboardEvent,
   type PointerEvent as ReactPointerEvent,
   type ReactNode,
 } from 'react'
@@ -13,7 +14,18 @@ import { cn } from '@/lib/utils'
 interface FeaturedCarouselProps {
   children: ReactNode
   className?: string
+  /** Nombre accesible de la región (ej. "Vehículos destacados"). Opcional
+   *  y retrocompatible: si no se pasa, el componente no agrega `role` ni
+   *  `aria-label` propios — el consumidor puede seguir etiquetando el
+   *  carrusel desde afuera (como hace `HeroVehicleShowcase.tsx`, que
+   *  envuelve esto en su propio `<section aria-label>`). */
+  ariaLabel?: string
 }
+
+/** Fracción del ancho visible del track que avanza cada `ArrowLeft` /
+ *  `ArrowRight` (pulido de accesibilidad, sept. 2026 — ver comentario en
+ *  `onKeyDown` más abajo). */
+const KEYBOARD_SCROLL_FRACTION = 0.9
 
 /**
  * Carrusel horizontal con scroll-snap + drag para el panel "Destacados"
@@ -91,11 +103,24 @@ interface FeaturedCarouselProps {
  * `setPointerCapture` y arranca el scroll manual. Un click sin
  * desplazamiento nunca dispara captura de puntero, así que el `click`
  * sintético llega intacto al `<Link>`/`<button>` que el usuario tocó.
+ *
+ * NAVEGACIÓN POR TECLADO (pulido de accesibilidad, sept. 2026): drag con
+ * mouse y swipe táctil ya estaban cubiertos, pero alguien navegando solo
+ * con teclado no tenía forma de avanzar el carrusel más que tabulando
+ * ítem por ítem (funciona, porque cada card es un `<Link>`/`<button>`
+ * real, pero es lento si hay varios ítems fuera de vista). `onKeyDown`
+ * escucha `ArrowLeft`/`ArrowRight` — el evento burbujea hasta acá desde
+ * cualquier `<Link>` enfocado adentro sin necesidad de que el propio
+ * track tenga `tabIndex` (no se agrega una parada de Tab extra e inútil)
+ * — y desplaza el track un ~90% de su ancho visible, mismo criterio que
+ * las flechas prev/next de `HeroVehicleShowcaseV2`. Solo se llama
+ * `preventDefault()` en esas dos teclas puntuales, para no interferir con
+ * el resto de la navegación normal del teclado (Tab, Enter, etc.).
  */
 const DRAG_THRESHOLD_PX = 6
 
 export const FeaturedCarousel = forwardRef<HTMLDivElement, FeaturedCarouselProps>(function FeaturedCarousel(
-  { children, className },
+  { children, className, ariaLabel },
   forwardedRef
 ) {
   const trackRef = useRef<HTMLDivElement>(null)
@@ -157,14 +182,30 @@ export const FeaturedCarousel = forwardRef<HTMLDivElement, FeaturedCarouselProps
     dragStateRef.current = null
   }
 
+  const onKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
+    const track = trackRef.current
+    if (!track) return
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return
+    event.preventDefault()
+    const direction = event.key === 'ArrowRight' ? 1 : -1
+    track.scrollBy({
+      left: track.clientWidth * KEYBOARD_SCROLL_FRACTION * direction,
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <div
       ref={trackRef}
+      role={ariaLabel ? 'region' : undefined}
+      aria-roledescription={ariaLabel ? 'carrusel' : undefined}
+      aria-label={ariaLabel}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={endDrag}
       onPointerCancel={endDrag}
       onPointerLeave={endDrag}
+      onKeyDown={onKeyDown}
       className={cn(
         'flex snap-x gap-3 overflow-x-auto overscroll-x-contain touch-pan-x pb-2',
         isDragging ? 'snap-none cursor-grabbing select-none' : 'snap-mandatory cursor-grab',

@@ -58,6 +58,17 @@ interface HeroPromoBannerProps {
  * - Chip de specs (potencia + precio) en la esquina inferior izquierda de la foto
  * - CTA grande al final del detalles (ej. "Ver ficha completa →")
  * - Animación de entrada suave (`animate-fade-in`)
+ *
+ * PULIDO FINAL — alto parejo con el carrusel (sept. 2026): en `lg`,
+ * `HeroVehicleShowcaseV2` le da a esta tarjeta un alto fijo (`h-full`
+ * sobre `lg:h-[23rem]`, igual que las cards del carrusel) para que ambos
+ * bloques de la franja midan lo mismo. Adentro, la foto pasa a
+ * `lg:flex-1 lg:min-h-0` (ocupa lo que sobra después del texto, en vez de
+ * imponer su propio mínimo fijo) y el bloque de texto pasa a
+ * `lg:flex-none` con `line-clamp-2` en título y descripción — así el
+ * contenido nunca empuja la tarjeta más allá del alto fijo compartido.
+ * Por debajo de `lg` (banner apilado a ancho completo, sin alto forzado)
+ * el comportamiento no cambia.
  */
 export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
   const containerClassName = cn(
@@ -69,7 +80,7 @@ export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
   if (!item) {
     return (
       <div aria-label="Anuncio destacado" className={containerClassName}>
-        <div className="flex h-full min-h-[26rem] flex-col justify-end bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-8">
+        <div className="flex h-full min-h-[26rem] flex-col justify-end bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-8 lg:min-h-0">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
             Descubrí el catálogo
           </p>
@@ -97,7 +108,7 @@ export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
       className={cn(containerClassName, 'hero-card-hover tap-scale animate-fade-in group flex flex-col gap-0 transition-colors duration-150 hover:border-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent')}
     >
       {/* ARRIBA: Foto + sello de evidencia + specs */}
-      <div className="relative flex min-h-64 w-full overflow-hidden bg-white/5 sm:min-h-72">
+      <div className="relative flex min-h-64 w-full overflow-hidden bg-white/5 sm:min-h-72 lg:min-h-0 lg:flex-1">
         <Image
           src={item.src}
           alt=""
@@ -166,17 +177,17 @@ export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
       </div>
 
       {/* ABAJO: Detalles + CTA */}
-      <div className="flex w-full flex-1 flex-col justify-between gap-4 bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-6 sm:p-8">
+      <div className="flex w-full flex-1 flex-col justify-between gap-4 bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-6 sm:p-8 lg:flex-none lg:gap-3 lg:overflow-hidden lg:p-6">
         {/* Eyebrow + Título + Descripción */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 lg:gap-2">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
             {item.eyebrow}
           </p>
-          <h2 className="font-display text-2xl font-bold leading-tight sm:text-3xl">
+          <h2 className="font-display text-2xl font-bold leading-tight sm:text-3xl lg:line-clamp-2 lg:text-2xl">
             {item.headline}
           </h2>
           {item.description && (
-            <p className="max-w-sm text-sm leading-relaxed text-neutral-300">
+            <p className="line-clamp-2 max-w-sm text-sm leading-relaxed text-neutral-300">
               {item.description}
             </p>
           )}

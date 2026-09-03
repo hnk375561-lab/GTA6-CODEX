@@ -69,6 +69,30 @@ interface HeroVehicleShowcaseV2Props {
  *
  * Mobile/tablet (< lg): se apilan verticalmente — anuncio arriba,
  * carrusel abajo, cada uno a 100% del ancho.
+ *
+ * REDISEÑO V4 — PULIDO FINAL (sept. 2026): visual + responsive + a11y.
+ *
+ * - Alto parejo entre los dos bloques en desktop: antes cada bloque tenía
+ *   su alto "natural" (el banner, con foto + eyebrow + título + descripción
+ *   + CTA apilados, terminaba bastante más alto que las cards del
+ *   carrusel — ~470-500px contra los 23rem/368px de las cards), así que
+ *   la fila quedaba desalineada y con aire de sobra debajo del carrusel.
+ *   Ahora la fila fuerza `lg:h-[23rem]` (mismo alto que las cards, que ya
+ *   usan `sm:h-[23rem]` y no tienen override propio en `lg`), y adentro
+ *   del banner la foto pasa a `lg:flex-1` (ocupa lo que sobra) mientras el
+ *   bloque de texto usa `line-clamp` en título/descripción para no
+ *   desbordar ese alto fijo — ver el detalle en `HeroPromoBanner.tsx`.
+ * - Fade de scroll: un degradé sutil en el borde derecho del carrusel
+ *   (visible solo mientras `canScrollNext` es true) señala que hay más
+ *   contenido para scrollear sin depender únicamente de las flechas.
+ * - Accesibilidad: el nombre accesible de la región ("Vehículos
+ *   destacados") se movió del `<section>` envolvente al propio track de
+ *   `FeaturedCarousel` (vía su nuevo prop `ariaLabel`), que es el
+ *   elemento que realmente scrollea — así un lector de pantalla anuncia
+ *   "región, carrusel, Vehículos destacados" sobre el contenedor
+ *   correcto. `FeaturedCarousel` también ganó soporte de flechas de
+ *   teclado (`ArrowLeft`/`ArrowRight`) para quien navegue sin mouse ni
+ *   touch — ver el detalle en `FeaturedCarousel.tsx`.
  */
 export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: HeroVehicleShowcaseV2Props) {
   const router = useRouter()
@@ -116,17 +140,19 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
   return (
     <div className={cn('relative w-full', className)}>
       {/* Franja principal: anuncio angosto a la izquierda + carrusel al
-          ancho real a la derecha (o apilados en mobile/tablet). */}
-      <div className="flex w-full flex-col gap-4 px-3 sm:px-4 lg:flex-row lg:items-stretch lg:gap-5">
+          ancho real a la derecha (o apilados en mobile/tablet). `lg:h-*`
+          fuerza el mismo alto en ambos bloques — ver nota "Alto parejo"
+          arriba. */}
+      <div className="flex w-full flex-col gap-4 px-3 sm:px-4 lg:h-[23rem] lg:flex-row lg:items-stretch lg:gap-5">
         {/* BLOQUE IZQUIERDO: anuncio promocional fijo, columna angosta */}
-        <div className="flex w-full flex-shrink-0 lg:w-[320px] xl:w-[360px]">
-          <HeroPromoBanner item={promoBannerItem} className="w-full" />
+        <div className="flex w-full flex-shrink-0 lg:h-full lg:w-[320px] xl:w-[360px]">
+          <HeroPromoBanner item={promoBannerItem} className="h-full w-full" />
         </div>
 
         {/* BLOQUE DERECHO: carrusel de vehículos destacados, ocupa todo
             el ancho restante de la franja */}
-        <section className="relative min-w-0 flex-1" aria-label="Vehículos destacados">
-          <FeaturedCarousel ref={trackRef} className="scroll-smooth">
+        <section className="relative min-w-0 flex-1 lg:h-full">
+          <FeaturedCarousel ref={trackRef} ariaLabel="Vehículos destacados" className="h-full scroll-smooth">
             {vehicles.map((vehicle, index) => {
               const flipEnabled =
                 flipSupported && !matchMedia('(prefers-reduced-motion: reduce)').matches && vehicle.categoryHref
@@ -247,7 +273,31 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
                 </div>
               )
             })}
+
+            {/* Espaciador final: aire después de la última card para que
+                no quede pegada al borde del degradé de la derecha. */}
+            {vehicles.length > 0 && <div aria-hidden="true" className="w-1 shrink-0 sm:w-2" />}
           </FeaturedCarousel>
+
+          {/* Degradés de borde: señalan "hay más para scrollear" a cada
+              lado sin depender solo de las flechas — se apagan solos
+              cuando ya no queda nada para ese lado (mismo estado que
+              deshabilita las flechas). `pointer-events-none` para que
+              nunca tapen el click de la card de abajo. */}
+          <div
+            aria-hidden="true"
+            className={cn(
+              'pointer-events-none absolute inset-y-0 left-0 z-[5] w-8 bg-gradient-to-r from-white to-transparent transition-opacity duration-200 sm:w-12',
+              canScrollPrev ? 'opacity-100' : 'opacity-0'
+            )}
+          />
+          <div
+            aria-hidden="true"
+            className={cn(
+              'pointer-events-none absolute inset-y-0 right-0 z-[5] w-8 bg-gradient-to-l from-white to-transparent transition-opacity duration-200 sm:w-12',
+              canScrollNext ? 'opacity-100' : 'opacity-0'
+            )}
+          />
 
           {/* Botones de navegación (solo desktop) — controlan el nodo
               real expuesto por `FeaturedCarousel` vía `trackRef`, sin
