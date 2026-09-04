@@ -2,11 +2,35 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    formats: ['image/avif', 'image/webp'],
+    // 3 sep 2026 — sitio en plan Hobby de Vercel: la Image Optimization
+    // API tiene una cuota gratuita de ~1000 transformaciones/mes, y con
+    // ~250 fotos de vehículo en alta resolución (hasta 3840px) servidas
+    // en 15+ componentes distintos, cada uno con sus propios
+    // anchos/calidades, se agota en días — al pasarse, Vercel bloquea
+    // toda transformación NUEVA (combinación ancho/calidad no pedida
+    // antes) y esa imagen queda en blanco (ver /galeria y fichas de
+    // vehículo). Pasa a usarse un loader propio (`loader: 'custom'` +
+    // `loaderFile`) que resuelve cada pedido a un archivo ya
+    // redimensionado por scripts/pregenerate-image-variants.mjs en build
+    // time (ver ese script y src/lib/image-loader.ts) — next/image deja
+    // de llamar a la Image Optimization API por completo, así que el
+    // límite de cuota deja de aplicar, para siempre, sin plan pago.
+    //
+    // `formats` queda sin efecto con un loader custom (la negociación
+    // avif/webp por Accept-Header vive en el optimizador built-in de
+    // Vercel, que ya no se usa) — se deja comentado en vez de borrado
+    // para que quede documentado por qué ya no hace nada.
+    // formats: ['image/avif', 'image/webp'],
+    loader: 'custom',
+    loaderFile: './src/lib/image-loader.ts',
     // Miniaturas de YouTube usadas por <YouTubeEmbed> (facade de los
     // tráilers migrados desde el Vercel Blob externo caído). Sin esto,
     // next/image lanza "hostname not configured" y el componente nunca
-    // llega a renderizar nada.
+    // llega a renderizar nada. Se preserva con loader custom: next/image
+    // sigue validando `remotePatterns` contra cualquier `src` remoto
+    // ANTES de invocar al loader, sea cual sea — este chequeo no depende
+    // de qué loader esté configurado. image-loader.ts a su vez devuelve
+    // estas URLs tal cual (no tienen variante local pregenerada).
     remotePatterns: [
       { protocol: 'https', hostname: 'img.youtube.com' },
       { protocol: 'https', hostname: 'i.ytimg.com' },
@@ -16,6 +40,10 @@ const nextConfig = {
     // vía 'qualities'. Estos son los valores usados por los distintos
     // componentes <Image> del proyecto (EntityImage, GalleryExplorer,
     // MediaCarousel, CompareExplorer, VehicleCompareSheet, SimpleLightbox).
+    // Esta validación también es independiente del loader: se mantiene
+    // sin cambios aunque image-loader.ts no lea `quality` (ver por qué en
+    // el comment-header de scripts/pregenerate-image-variants.mjs,
+    // sección CALIDAD).
     qualities: [75, 90, 92, 94, 95, 97, 100],
     minimumCacheTTL: 31536000,
     // Techo subido de 2560 a 3840 (29 ago 2026): las fotos de vehículos ya

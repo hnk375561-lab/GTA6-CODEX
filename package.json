@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/pregenerate-image-variants.mjs && next build",
     "start": "next start",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
