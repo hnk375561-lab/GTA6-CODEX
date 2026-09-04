@@ -222,7 +222,7 @@ export function PinnedScrollStages({ stages }: Props) {
             className="flex w-full items-center justify-center p-4 sm:p-6 lg:p-8"
             style={{ height: `${stage.scrollVh ?? DEFAULT_SCROLL_VH}dvh` }}
           >
-            <StageProgressProvider value={poses[i] ?? 0}>
+            <StageProgressProvider progress={poses[i] ?? 0}>
               <div className="w-full max-w-7xl">{stage.content}</div>
             </StageProgressProvider>
           </section>
