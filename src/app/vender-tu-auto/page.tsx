@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Reveal } from '@/components/ui/Reveal'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 import { SellVehicleLeadForm } from '@/components/monetization/SellVehicleLeadForm'
+import { AdUnit } from '@/components/monetization/AdUnit'
 
 /**
  * Landing de venta/tasación de usados — ver `SellVehicleLeadForm.tsx`
@@ -85,6 +86,13 @@ export default function VenderTuAutoPage() {
           .
         </p>
       </Reveal>
+
+      {/* Única página del sitio con formulario de lead que no tenía ningún
+       *  inventario de AdSense (ver auditoría 03/09/2026) — se agrega
+       *  después de todo el contenido/CTAs de venta a propósito, para no
+       *  competir por atención con el formulario ni con el link al cartel
+       *  en PDF, que son la conversión principal de esta página. */}
+      <AdUnit slotId="3119092668" format="responsive" className="mt-12" dataTrackingLabel="ad-vender-tu-auto" />
     </div>
   )
 }

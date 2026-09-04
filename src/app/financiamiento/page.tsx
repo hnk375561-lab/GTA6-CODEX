@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { FinancingCalculator } from '@/components/ui/FinancingCalculator'
 import { Reveal } from '@/components/ui/Reveal'
 import { SITE_NAME, SITE_URL } from '@/config/site'
+import { AdUnit } from '@/components/monetization/AdUnit'
+import { FinancingAffiliateButton } from '@/components/monetization/FinancingAffiliateButton'
 
 /** Fallback del Suspense que envuelve `FinancingCalculator` (ahora lee
  *  `useSearchParams` para el prefill opcional de precio — mismo patrón
@@ -47,6 +49,20 @@ export default function FinanciamientoPage() {
           <FinancingCalculator />
         </Suspense>
       </Reveal>
+
+      {/* La calculadora terminaba en el número simulado sin ningún próximo
+       *  paso: quien ya vio la cuota que le conviene no tenía a dónde ir a
+       *  buscar esa financiación de verdad. Mismo botón/afiliado que ya se
+       *  usa en la ficha de vehículo (`MonetizationCtaGroup`), acá como
+       *  cierre natural del flujo de la calculadora. */}
+      <Reveal delay={110}>
+        <div className="mt-8 flex flex-col items-center gap-2 rounded-xl border border-edge bg-surface-alt p-5 text-center">
+          <p className="text-sm text-neutral-600">¿Te sirvió la simulación? Buscá tu financiación con esas condiciones.</p>
+          <FinancingAffiliateButton trackingLabel="financiamiento-calculadora" />
+        </div>
+      </Reveal>
+
+      <AdUnit slotId="3119092668" format="responsive" className="mt-12" dataTrackingLabel="ad-financiamiento" />
     </div>
   )
 }
