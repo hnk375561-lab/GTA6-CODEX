@@ -48,27 +48,17 @@
   --c-cyan: #3d84ff;
   --c-gold: #c9a35f;
 
-  /* --- Puente motor WebGL → DOM (ver SceneAmbientBridge) ---
-     El motor Three.js escribe estos valores en cada frame (throttled).
-     Son el mismo ángulo de luz, temperatura y "kick" de llegada que ve la
-     escena 3D — las superficies DOM (cards, hero) los leen para sentirse
-     iluminadas por la MISMA luz, no por un brillo CSS estático aparte.
-     Los valores acá son el fallback antes de que el motor monte (SSR / JS
-     desactivado / primer frame). */
+  /* --- Luz estática del borde de las cards (--scene-*) ---
+     Valores sin escritor: el motor WebGL que los actualizaba en vivo
+     (SceneAmbientBridge / engine.ts) se eliminó durante la limpieza, así
+     que hoy son una constante que `.card-animated` consume directamente.
+     Se mantienen acá (no inline en la regla) para que el gradiente del
+     borde y la elevación al hover sigan referenciando UNA sola fuente. */
   --scene-light-angle: 135deg;
   --scene-warmth: 0.5;
   --scene-intensity: 0.55;
   --scene-kick: 0;
   --scene-intro: 1;
-
-  /* --- Capítulo 1: Timeline maestra de scroll ---
-     Las 4 fases narrativas del sitio (ChoreoTelemetryBridge las publica).
-     --scene-phase: 'awakening' | 'presentation' | 'immersion' | 'invitation'
-     --scene-phase-progress: 0..1 (global, scroll / total altura)
-     --scene-phase-local-progress: 0..1 (dentro de la fase actual) */
-  --scene-phase: 'awakening';
-  --scene-phase-progress: 0;
-  --scene-phase-local-progress: 0;
 
   /* --- Easing profiles por tipo de elemento ---
      Cada tipo de contenido responde diferente a la narrativa.
@@ -97,7 +87,7 @@ html {
      bajando sola" que se pidió eliminar. Los saltos puntuales que sí
      quieren animación (botón "seguir scrolleando", restauración de
      posición al volver atrás) ya piden `behavior: 'smooth'` de forma
-     explícita en JS (ver `scroll-telemetry.tsx`), que no depende de esta
+     explícita en JS (ver `smooth-scroll.ts`), que no depende de esta
      propiedad — solo se pierde el "smooth" implícito y por defecto que
      aplicaba a TODO el scroll de la página, rueda incluida. */
   color-scheme: light;
@@ -634,10 +624,9 @@ a:hover .logo-mark {
 }
 
 /* --- Cards: glass premium + elevación sutil + borde iluminado por la
-   MISMA luz que la escena 3D (ver --scene-* arriba). No es un brillo
-   decorativo fijo: el ángulo, la temperatura y el pulso de llegada vienen
-   del motor WebGL en tiempo real, así la card se siente parte de la misma
-   escena en vez de flotar sobre un fondo animado. --- */
+   MISMA luz estática que define --scene-* en `:root` (valores fijos
+   desde que se eliminó el motor WebGL; ver la nota ahí). El gradiente del
+   borde y su opacidad son constantes; el hover solo eleva la card. --- */
 .card-animated {
   position: relative;
   transition: transform 250ms var(--ease-standard), border-color var(--transition-base),
@@ -1036,66 +1025,7 @@ a:hover .logo-mark {
   box-shadow: 0 0 0 1px rgba(255, 106, 26, 0.15), 0 0 24px -6px var(--auto-corner-color, #ff6a1a);
 }
 
-/* ============================================================
-   Capítulo 4 — Respuesta física a la velocidad de scroll
-   Motion blur direccional + Hover suppression + Cursor reactivo
-   ============================================================ */
 
-/* 4.1) MOTION BLUR DIRECCIONAL en scroll rápido
-   Imágenes y cards que cumplen dos condiciones reciben blur:
-   1. El usuario está scrolleando rápido (--scroll-speed > 0)
-   2. El viewport no está "quieto"
-   El blur es vertical (dirección del scroll en web) y sutil (1-3px máx).
-   Al frenar, decay smooth de 180ms. */
-
-img,
-.card-media-image {
-  /* Aplicar blur direccional en scroll rápido. El factor 0.03 convierte
-     --scroll-speed (0..1) a un rango de 0..3px de blur vertical. La
-     transición larga (180ms) suaviza el decay al frenar. */
-  filter: blur(calc(var(--scroll-speed, 0) * 3px));
-  transition: filter 180ms ease-out;
-}
-
-/* 4.2) HOVER SUPPRESSION en scroll rápido
-   Si --scroll-speed > 0.4 (scroll rápido), desactivar transiciones de
-   hover en cards para evitar "parpadeo" con el cursor pasando de refilón.
-   El umbral 0.4 se elige porque es donde el blur visual (1.2px) ya es
-   notorio pero no incapacitante. Bajo ese umbral, hover responde normal. */
-
-@supports (--scroll-speed: 0) {
-  /* Si scroll es rápido (--scroll-speed > 0.4), las transiciones de hover
-     en cards se desactivan temporalmente. Sin este, un card que recibe
-     hover rápido mientras el usuario scrollea se ve "saltarina". */
-  .card-animated {
-    transition: transform calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 250ms) var(--ease-standard),
-      border-color calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 300ms) var(--ease-standard),
-      box-shadow calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 300ms) var(--ease-standard);
-  }
-
-  .card-animated:hover {
-    transition: transform calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 250ms) var(--ease-standard),
-      border-color calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 300ms) var(--ease-standard),
-      box-shadow calc((1 - clamp(0, (var(--scroll-speed, 0) - 0.4) * 2.5, 1)) * 300ms) var(--ease-standard);
-  }
-}
-
-/* 4.4) Grano + cromática: ver AUDITORIA-FONDO-OSCURO-COMPLETA.md, Fase 2
-   — la capa .auto-atmosphere que manejaba esto se borró (CSS muerto,
-   sin uso confirmado en ningún .tsx). */
-
-/* Accessibility: respetar prefers-reduced-motion en todo el capítulo 4 */
-@media (prefers-reduced-motion: reduce) {
-  img,
-  .card-media-image {
-    filter: none !important;
-    transition: none !important;
-  }
-
-  .card-animated {
-    transition: none !important;
-  }
-}
 
 .scene-timestamp {
   border-radius: 0.25rem;
@@ -2142,25 +2072,4 @@ video,
     animation: none !important;
     transition: none !important;
   }
-}
-   /* ============================================================
-   NUEVAS REGLAS (Auditoría CRÍTICO #1): Soporte para Scroll Snap Nativo
-   Añadido para compatibilidad con la nueva arquitectura de PinnedScrollStages.
-   ============================================================ */
-
-/* Estado inicial de los paneles antes de ser visibles (controlado por JS) */
-.stage-panel {
-  opacity: 0;
-  transition: opacity 700ms ease-out;
-}
-
-/* Estado activo cuando el IntersectionObserver detecta visibilidad */
-.stage-panel.is-active {
-  opacity: 1;
-}
-
-/* Pausa de animaciones infinitas cuando no están en viewport (Ahorro de batería) */
-.manufacturers-marquee.is-paused .manufacturers-marquee__viewport,
-.hero-glow-card.is-paused::before {
-  animation-play-state: paused !important;
 }
