@@ -1,8 +1,5 @@
 {
   "buildCommand": "next build",
   "installCommand": "npm ci",
-  "framework": "nextjs",
-  "env": {
-    "NEXT_PUBLIC_SITE_URL": "https://gta-6-codex.vercel.app"
-  }
+  "framework": "nextjs"
 }

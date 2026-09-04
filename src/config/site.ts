@@ -10,4 +10,4 @@ export const SITE_NAME = 'Sin Frenos'
 
 export const SITE_TAGLINE = 'Fichas técnicas y comparador de autos y motos'
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gta-6-codex.vercel.app'
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://sinfreno.vercel.app'
