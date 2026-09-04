@@ -1,36 +1,45 @@
-import fs from 'fs'
-import path from 'path'
 import { Entity, EntityType } from '@/types'
 import entityImageCategorySlugs from '@/config/entity-image-categories.json'
+import entityImagesManifest from '@/config/entity-images-manifest.json'
 import { getEntitiesByTypeSync } from './entities'
 
 /**
- * SISTEMA DE RESOLUCIÓN DE IMÁGENES POR CONVENCIÓN
- * ==================================================
+ * SISTEMA DE RESOLUCIÓN DE IMÁGENES POR CONVENCIÓN (ahora vía Blob)
+ * ===================================================================
  *
  * No hay una tabla ni un campo `image.url` en los JSON de contenido.
- * La imagen de una entidad se busca por convención de nombre de archivo:
+ * La imagen de una entidad se sigue buscando por convención de nombre:
  *
- *   public/images/entities/{type}/{slug}.{ext}
+ *   {slug}.{ext}   (siempre webp en la práctica, ver más abajo)
  *
- * probando extensiones en este orden (mejor formato primero):
+ * MIGRACIÓN A VERCEL BLOB (evita ENOSPC en el build — ver
+ * scripts/upload-images-to-blob.mjs):
+ *   Antes esto hacía fs.existsSync/fs.readdirSync contra
+ *   public/images/entities/**, que exigía tener los ~291 MB de fotos
+ *   fuente commiteados y presentes en el checkout de cada build.
+ *
+ *   Ahora los binarios de imagen viven en Vercel Blob (subidos por
+ *   scripts/upload-images-to-blob.mjs, corrido localmente, NO en cada
+ *   build) y el repo solo commitea src/config/entity-images-manifest.json:
+ *   un JSON chico (`{ [type]: string[] }`) con qué slugs TIENEN imagen.
+ *   Ese manifest es la única fuente de verdad de "existe o no existe" —
+ *   ya no se toca el filesystem para esto, así que funciona igual en
+ *   local, en build de Vercel, y sin que el repo necesite los binarios.
+ *
+ *   Para agregar/reemplazar fotos: soltalas en tu public/images/entities/
+ *   local (gitignored) y corré `node scripts/upload-images-to-blob.mjs`
+ *   — sube las variantes a Blob y regenera el manifest.
+ *
+ * Extensiones que soporta el manifest (compatibilidad con contenido
+ * viejo), aunque scripts/upload-images-to-blob.mjs siempre normaliza a
+ * webp al subir:
  *   webp > avif > jpg > jpeg > png
- *
- * Esto es intencional: permite soltar archivos nuevos en
- * public/images/entities/{type}/ (a mano o vía scripts/process-images.mjs)
- * y que la ficha/card los recoja automáticamente en el próximo build,
- * sin editar código ni contenido.
- *
- * Es un chequeo de filesystem (fs.existsSync), igual que el resto de
- * src/lib/entities.ts — funciona en Server Components / build time,
- * coherente con next.config.js (sin remotePatterns: nunca se hotlinkea
- * una imagen externa, solo se sirven archivos ya descargados al repo).
  */
 
 const IMAGE_EXTENSIONS = ['webp', 'avif', 'jpg', 'jpeg', 'png'] as const
 
-const PUBLIC_DIR = path.join(process.cwd(), 'public')
-const ENTITY_IMAGES_DIR = path.join(PUBLIC_DIR, 'images', 'entities')
+type EntityImagesManifest = Record<string, string[]>
+const MANIFEST = entityImagesManifest as EntityImagesManifest
 
 export interface ResolvedEntityImage {
   /** Ruta pública servible por next/image, ej: /images/entities/personajes/lucia-caminos.webp */
@@ -73,16 +82,21 @@ export interface ResolvedDisplayImage {
 const CACHE_ENABLED = process.env.NODE_ENV === 'production'
 const dirListingCache = new Map<EntityType, Set<string> | null>()
 
+/**
+ * Antes leía public/images/entities/{type}/ con fs.readdirSync. Ahora
+ * arma el mismo Set<string> de "nombres de archivo que existen"
+ * (ej. "chevrolet-camaro.webp", "chevrolet-camaro-2.webp") a partir del
+ * manifest commiteado, sin tocar el filesystem — el manifest solo guarda
+ * slugs, así que reconstruimos los nombres con extensión .webp (todo lo
+ * subido por scripts/upload-images-to-blob.mjs normaliza a webp).
+ */
 function getDirListing(type: EntityType): Set<string> | null {
   if (CACHE_ENABLED && dirListingCache.has(type)) {
     return dirListingCache.get(type)!
   }
 
-  const dir = path.join(ENTITY_IMAGES_DIR, type)
-  let listing: Set<string> | null = null
-  if (fs.existsSync(dir)) {
-    listing = new Set(fs.readdirSync(dir))
-  }
+  const slugs = MANIFEST[type]
+  const listing = slugs && slugs.length > 0 ? new Set(slugs.map((slug) => `${slug}.webp`)) : null
 
   if (CACHE_ENABLED) dirListingCache.set(type, listing)
   return listing
