@@ -2,9 +2,19 @@
 /**
  * scripts/upload-images-to-blob.mjs
  * ============================================================
- * REEMPLAZA a scripts/pregenerate-image-variants.mjs como paso de BUILD.
+ * UTILIDAD DE MIGRACIÓN A VERCEL BLOB — NO CABLEADA AL BUILD (sept 2026).
  *
- * POR QUÉ:
+ * DECISIÓN (auditoría, sept 2026): el pipeline ACTIVO y único del repo
+ * sigue siendo local — scripts/pregenerate-image-variants.mjs escribiendo
+ * en public/images/_optimized/ durante `next build` (ver header de
+ * src/lib/image-loader.ts). Este script quedó como documentación viva de
+ * la migración a Blob y NO se enlaza en ningún npm script; para adoptarlo
+ * hace falta primero: instalar @vercel/blob, cablear el flujo en build y
+ * configurar NEXT_PUBLIC_BLOB_BASE_URL en Vercel. Hasta que eso ocurra,
+ * NO correrlo como si formara parte del deploy (crashea: @vercel/blob no
+ * es dependencia del proyecto).
+ *
+ * POR QUÉ SE ESCRIBIÓ:
  *   pregenerate-image-variants.mjs escribía ~2900 archivos (242 imágenes
  *   × 12 anchos) en public/images/_optimized/ EN CADA BUILD de Vercel.
  *   Como Next.js empaqueta toda public/ en el output del deploy, eso
@@ -18,7 +28,7 @@
  *   tocar imágenes por completo: solo lee las URLs de Blob a través de
  *   src/lib/image-loader.ts.
  *
- * REQUISITOS:
+ * REQUISITOS (si algún día se adopta):
  *   1. npm install @vercel/blob
  *   2. Crear un Blob store en Vercel (Dashboard → Storage → Create →
  *      Blob) y conectarlo a este proyecto. Eso agrega automáticamente
@@ -26,6 +36,9 @@
  *   3. Para correr este script LOCALMENTE necesitás ese mismo token en
  *      tu .env local: `vercel env pull .env.local` lo trae, o copialo a
  *      mano desde Vercel → Storage → tu store → ".env.local" tab.
+ *   4. Configurar NEXT_PUBLIC_BLOB_BASE_URL en Vercel (Production +
+ *      Preview) y decidir si pregenerate-image-variants.mjs sigue
+ *      corriendo en build (ya no haría falta).
  *
  * USO:
  *   node scripts/upload-images-to-blob.mjs

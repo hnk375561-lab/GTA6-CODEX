@@ -39,7 +39,6 @@
     "verify:adsense-csp:selftest": "node scripts/verify-adsense-csp.mjs --self-test",
     "verify:all": "npm run type-check && npm run lint && npm test && npm run verify:min-count && npm run verify:content && npm run verify:relations && npm run verify:manufacturer-slugs && npm run verify:reserved-keys && npm run verify:seo && npm run verify:adsense-csp && npm run build && npm run verify:tailwind",
     "check:unused": "knip",
-    "sync:media": "node scripts/media-sync.mjs",
     "generate:manifest-commons": "node scripts/generate-manifest-from-commons.mjs",
     "generate:manifest-commons:write": "node scripts/generate-manifest-from-commons.mjs --write",
     "generate:media-kit": "node scripts/generate-media-kit.mjs"

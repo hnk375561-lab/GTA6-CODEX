@@ -4,9 +4,26 @@ import type { ImageLoaderProps } from 'next/image'
  * LOADER PERSONALIZADO DE next/image
  * ====================================
  * Reemplaza la Vercel Image Optimization API (cuota mensual limitada en
- * el plan Hobby) por variantes pregeneradas y subidas a VERCEL BLOB por
- * scripts/upload-images-to-blob.mjs (corrido localmente, no en cada
- * build — ver ese script para el porqué).
+ * el plan Hobby) por variantes WebP pregeneradas en build time.
+ *
+ * PIPELINE ACTIVO (única fuente de verdad, sept 2026): las variantes las
+ * genera scripts/pregenerate-image-variants.mjs, que corre ANTES de
+ * `next build` (ver "scripts".build en package.json) y escribe cada
+ * imagen en public/images/_optimized/ (carpeta gitignoreada, se regenera
+ * en cada build). Este loader resuelve cada pedido a un archivo ya
+ * existente de esa carpeta — next/image nunca invoca a la Image
+ * Optimization API de Vercel, así que el límite de cuota del plan Hobby
+ * deja de aplicar.
+ *
+ * MIGRACIÓN A VERCEL BLOB (NO ACTIVA): scripts/upload-images-to-blob.mjs
+ * prepara el camino a Blob (subir ahí las mismas variantes y servir la
+ * URL base desde `NEXT_PUBLIC_BLOB_BASE_URL`). Hoy NO está cableado: el
+ * paquete @vercel/blob no es dependencia del proyecto, el script no se
+ * enlaza en build y la env var no está configurada en Vercel. Si en el
+ * futuro se adopta Blob, el único cambio acá es configurar la env var; el
+ * resto del loader no se toca. Mientras tanto este archivo usa el
+ * fallback local `'/images/_optimized'`, consistente con el pipeline
+ * activo.
  *
  * Este archivo se bundlea TANTO para servidor como para navegador, así
  * que:
@@ -35,14 +52,17 @@ const WIDTHS = [256, 320, 384, 512, 640, 750, 828, 1024, 1440, 1920, 2560, 3840]
  *   https://abc123xyz.public.blob.vercel-storage.com/images/_optimized
  *
  * Tiene que ser NEXT_PUBLIC_ porque este loader corre también en el
- * navegador (next/image lo llama ahí para construir el srcSet). Se
- * configura en Vercel → Settings → Environment Variables (Production +
- * Preview) con el valor que imprime scripts/upload-images-to-blob.mjs
- * al terminar, y en .env.local para dev/build local.
+ * navegador (next/image lo llama ahí para construir el srcSet).
  *
- * Si no está seteada, se cae de vuelta a la carpeta local histórica —
- * útil en dev si todavía no migraste a Blob — pero en producción SIEMPRE
- * tiene que estar seteada o las imágenes quedan rotas.
+ * HOY ESTÁ EN DESUSO (sept 2026): el pipeline activo es local — ver
+ * header de este archivo. Si se migra a Blob, se configura en
+ * Vercel → Settings → Environment Variables (Production + Preview) con el
+ * valor que imprime scripts/upload-images-to-blob.mjs, y en .env.local
+ * para dev/build local.
+ *
+ * Sin configurar, se cae de vuelta a la carpeta local histórica
+ * `/images/_optimized`, generada por scripts/pregenerate-image-variants.mjs
+ * en cada build — exactamente el pipeline que está activo hoy.
  */
 const BLOB_BASE_URL = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '/images/_optimized'
 

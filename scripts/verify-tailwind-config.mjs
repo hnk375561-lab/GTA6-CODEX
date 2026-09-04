@@ -86,18 +86,26 @@ if (!cssDir) {
   const css = cssFiles.map((f) => fs.readFileSync(path.join(cssDir, f), 'utf8')).join('\n')
 
   // Muestra representativa de clases que dependen de tokens definidos en
-  // theme.extend y que la app usa activamente (colores, shadows, radius).
-  // Actualizado tras el pivote de diseño "Leonida Nights": los tokens
-  // gta-* se eliminaron de tailwind.config.js y el código real usa
-  // prefijo auto-* (ver `colors` en tailwind.config.js). Lista tomada de
-  // los usos más frecuentes en src/components y src/app.
+  // theme.extend y que la app usa activamente (colores, radius). Para que
+  // un check tenga sentido, la clase TIENE que existir en el CSS compilado:
+  // Tailwind solo genera utilidades que aparecen en los archivos que
+  // escanean los globs de `content`, así que una clase sin usos reales no
+  // se emite por más que su token exista en el theme.
+  //
+  // Reconciliación (sept 2026, auditoría): se quitaron `.bg-auto-card`
+  // (token `auto-card` eliminado del theme en la Fase 6 del rediseño — ver
+  // tailwind.config.js) y `.shadow-auto-sm` (ningún archivo de src/* la
+  // referencia; las boxShadow custom `auto-*`/`glow-*` no tienen consumo
+  // por clase). Se sumaron en su lugar `.bg-auto-surface` y `.bg-auto-accent`,
+  // las dos con uso real verificable en el CSS compilado (dashboard y
+  // componentes distribuidos respectivamente).
   const expectedClasses = [
-    '.bg-auto-card',
+    '.bg-auto-surface',
     '.text-auto-text',
     '.text-auto-text-secondary',
     '.border-auto-border',
     '.text-auto-accent',
-    '.shadow-auto-sm',
+    '.bg-auto-accent',
     '.rounded-lg',
     '.rounded-md',
   ]
