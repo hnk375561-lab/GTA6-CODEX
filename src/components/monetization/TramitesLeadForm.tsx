@@ -59,6 +59,10 @@ export function TramitesLeadForm({ className = '' }: { className?: string }) {
   const [sent, setSent] = useState(false)
   const [sentVia, setSentVia] = useState<'gform' | 'mailto'>('mailto')
 
+  // Mismo criterio que LeadQuoteForm/SellVehicleLeadForm: el submit se
+  // desactiva visiblemente hasta que estén los datos obligatorios.
+  const formValid = nombre.trim() !== '' && contacto.trim() !== ''
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!nombre.trim() || !contacto.trim()) return
@@ -131,7 +135,7 @@ export function TramitesLeadForm({ className = '' }: { className?: string }) {
           value={tipoTramite}
           onChange={(e) => setTipoTramite(e.target.value)}
           aria-label="Tipo de trámite"
-          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm text-neutral-900"
+          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm text-neutral-900 transition duration-200 focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
         >
           {TIPOS_TRAMITE.map((tipo) => (
             <option key={tipo} value={tipo}>
@@ -145,7 +149,7 @@ export function TramitesLeadForm({ className = '' }: { className?: string }) {
           value={nombre}
           onChange={(e) => setNombre(e.target.value)}
           required
-          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm"
+          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm transition duration-200 focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
         />
         <input
           type="text"
@@ -153,18 +157,19 @@ export function TramitesLeadForm({ className = '' }: { className?: string }) {
           value={contacto}
           onChange={(e) => setContacto(e.target.value)}
           required
-          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm"
+          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm transition duration-200 focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
         />
         <textarea
           placeholder="Marca, modelo, año o algo puntual (opcional)"
           value={comentario}
           onChange={(e) => setComentario(e.target.value)}
           rows={2}
-          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm"
+          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm transition duration-200 focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
         />
         <button
           type="submit"
-          className="w-full rounded-md bg-auto-accent px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-auto-accent-strong"
+          disabled={!formValid}
+          className="w-full rounded-md bg-auto-accent px-3 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-auto-accent-strong active:scale-[0.99] active:bg-auto-accent-strong disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent focus-visible:ring-offset-2"
         >
           Quiero que me contacten
         </button>

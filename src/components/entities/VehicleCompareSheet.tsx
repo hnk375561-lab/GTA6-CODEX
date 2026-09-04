@@ -61,7 +61,7 @@ export function VehicleCompareBar({ selected, imageBySlug, onRemove, onClear, on
                   type="button"
                   onClick={() => onRemove(v.slug)}
                   aria-label={`Quitar ${v.title} de la comparación`}
-                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-edge bg-white text-neutral-500 opacity-0 transition-opacity hover:text-auto-accent group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none"
+                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-edge bg-white text-neutral-500 opacity-0 transition duration-200 hover:text-auto-accent active:scale-90 group-hover:opacity-100 focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
                 >
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />

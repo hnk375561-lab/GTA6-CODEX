@@ -1,3 +1,5 @@
+'use client'
+
 import { trackAffiliateClick } from '@/lib/analytics-events'
 
 /**
@@ -31,7 +33,7 @@ export function SupportButton({ className = '' }: { className?: string }) {
       onClick={() =>
         trackAffiliateClick({ platform: 'cafecito', vehicleName: 'general', label: 'footer-support' })
       }
-      className={`inline-flex items-center gap-2 rounded-lg border border-edge px-3 py-1.5 text-xs font-medium text-neutral-500 transition-colors hover:border-auto-accent hover:text-auto-accent-strong ${className}`}
+      className={`inline-flex items-center gap-2 rounded-lg border border-edge px-3 py-2 text-xs font-medium text-neutral-500 transition duration-200 hover:border-auto-accent hover:text-auto-accent-strong active:scale-[0.97] active:border-auto-accent/70 ${className}`}
     >
       ☕ Invitame un cafecito
     </a>

@@ -96,27 +96,28 @@ export function FintechAffiliateButton({
   }
 
   return (
-    <Link href={generateUrl()} target="_blank" rel="noopener noreferrer sponsored">
-      <button
-        onClick={handleClick}
-        className={`
-          inline-flex items-center justify-center
-          font-medium rounded-lg transition-colors duration-200
-          ${getSizeClasses()}
-          ${getVariantClasses()}
-          ${className}
-        `}
-      >
-        Pagá seguro con {FINTECH_NAME}
-        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-9-14.25h16.5a1.5 1.5 0 011.5 1.5v10.5a1.5 1.5 0 01-1.5 1.5H3.75a1.5 1.5 0 01-1.5-1.5V6a1.5 1.5 0 011.5-1.5z"
-          />
-        </svg>
-      </button>
+    <Link
+      href={generateUrl()}
+      target="_blank"
+      rel="noopener noreferrer sponsored"
+      onClick={handleClick}
+      className={`
+        inline-flex items-center justify-center
+        font-medium rounded-lg transition duration-200 active:scale-[0.97]
+        ${getSizeClasses()}
+        ${getVariantClasses()}
+        ${className}
+      `}
+    >
+      Pagá seguro con {FINTECH_NAME}
+      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-9-14.25h16.5a1.5 1.5 0 011.5 1.5v10.5a1.5 1.5 0 01-1.5 1.5H3.75a1.5 1.5 0 01-1.5-1.5V6a1.5 1.5 0 011.5-1.5z"
+        />
+      </svg>
     </Link>
   )
 }

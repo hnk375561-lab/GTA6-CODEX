@@ -330,7 +330,7 @@ export function EntityCard({
     return (
       <div
         className={cn(
-          'group relative flex items-center gap-4 rounded-xl border border-edge bg-surface-card p-3 shadow-sm transition-colors duration-300 hover:border-auto-accent/60 hover:shadow-md sm:p-4',
+          'group relative flex items-center gap-4 rounded-xl border border-edge bg-surface-card p-3 shadow-sm transition duration-300 hover:border-auto-accent/60 hover:shadow-md sm:p-4',
           className
         )}
       >

@@ -76,8 +76,8 @@ export function Header() {
   }, [menuOpen])
 
   const iconBtnClass = isHome
-    ? 'tap-scale flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-300 text-neutral-600 transition-all hover:border-neutral-900 hover:text-neutral-900 focus-visible:border-neutral-900 focus-visible:text-neutral-900'
-    : 'tap-scale flex h-9 w-9 items-center justify-center rounded-lg border border-edge text-neutral-500 transition-all hover:border-auto-accent hover:text-auto-accent-strong focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent'
+    ? 'tap-scale flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-300 text-neutral-600 transition hover:border-neutral-900 hover:text-neutral-900 focus-visible:border-neutral-900 focus-visible:text-neutral-900'
+    : 'tap-scale flex h-9 w-9 items-center justify-center rounded-lg border border-edge text-neutral-500 transition hover:border-auto-accent hover:text-auto-accent-strong focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent'
 
   // Enlace activo: exacto o sub-ruta (ej. `/vehiculos` queda activo en
   // `/vehiculos/toyota-corolla`) — el único link sin sub-rutas propias es

@@ -382,6 +382,17 @@ a:not(.no-style) {
   animation: fade-in 300ms ease-in-out;
 }
 
+/* Cobertura de `prefers-reduced-motion` para los feedback de
+   carga/anuncio compartidos que no la tenían en ningún bloque existente:
+   los skeletons (`animate-pulse`, utility de Tailwind) y `.animate-fade-in`
+   pasan a estado estático — sin parpadeo de opacidad. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse,
+  .animate-fade-in {
+    animation: none;
+  }
+}
+
 /* --- Subrayado que crece (links / nav) --- */
 .link-underline {
   position: relative;
@@ -1765,16 +1776,34 @@ video,
       en un solo lugar", no en cada botón del sitio.
    ============================================================ */
 .tap-scale {
-  transition: transform var(--dur-fast) var(--ease-standard);
+  /* Lenguaje de movimiento de toda la superficie interactiva que lleva
+     esta clase: press/transform con `--dur-fast`, colores/sombra con
+     `--transition-base`. Antes esta regla (unlayered) pisaba el
+     `transition-property` de las utilities de Tailwind
+     (`transition-colors`/`transition-all`, que viven en `@layer
+     utilities`) y los hovers de color quedaban SIN transición — saltos
+     instantáneos que se sentían "baratos". Un sola clase = el sistema
+     completo de feedback del sitio. */
+  transition:
+    transform var(--dur-fast) var(--ease-standard),
+    color var(--transition-base),
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    opacity var(--transition-base);
 }
 
 .tap-scale:active {
-  transform: scale(0.97);
+  transform: scale(0.96);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .tap-scale:active {
     transform: none;
+  }
+
+  .tap-scale {
+    transition: none;
   }
 
   #mobile-nav {

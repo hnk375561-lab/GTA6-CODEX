@@ -106,7 +106,7 @@ export function RelationsPanel({ related, currentSlug, currentType }: RelationsP
                   {showCompare && (
                     <Link
                       href={compareHref}
-                      className="shrink-0 rounded-md border border-dashed border-edge-strong px-2 py-2 font-mono text-[10px] uppercase tracking-wide text-neutral-500 opacity-0 transition-opacity duration-200 hover:border-auto-accent hover:text-auto-accent group-hover/row:opacity-100 focus-visible:opacity-100 focus-visible:outline-none"
+                      className="shrink-0 rounded-md border border-dashed border-edge-strong px-2 py-2 font-mono text-[10px] uppercase tracking-wide text-neutral-500 opacity-0 transition duration-200 hover:border-auto-accent hover:text-auto-accent active:scale-95 group-hover/row:opacity-100 focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
                       aria-label={`Comparar con ${e.title}`}
                     >
                       Comparar

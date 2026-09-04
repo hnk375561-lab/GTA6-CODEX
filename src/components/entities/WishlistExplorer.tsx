@@ -49,7 +49,7 @@ export function WishlistExplorer({ entities, imageBySlug }: WishlistExplorerProp
         </p>
         <Link
           href="/vehiculos"
-          className="mt-2 inline-flex items-center rounded-lg bg-auto-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-auto-accent-strong"
+          className="mt-2 inline-flex items-center rounded-lg bg-auto-accent px-4 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-auto-accent-strong active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
         >
           Ver vehículos
         </Link>
@@ -66,7 +66,7 @@ export function WishlistExplorer({ entities, imageBySlug }: WishlistExplorerProp
         <button
           type="button"
           onClick={clearWishlist}
-          className="text-sm font-semibold text-neutral-500 transition-colors hover:text-auto-accent-strong"
+          className="text-sm font-semibold text-neutral-500 transition duration-200 hover:text-auto-accent-strong active:scale-[0.97] active:text-auto-accent-strong"
         >
           Vaciar favoritos
         </button>
