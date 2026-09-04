@@ -164,7 +164,18 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
                     alt=""
                     aria-hidden="true"
                     fill
-                    sizes="(min-width: 1024px) 25vw, 33vw"
+                    // `sizes` describe la caja CSS de la card, pero la imagen
+                    // encima se agranda un PHOTO_ZOOM_SCALE (1.3x) más via
+                    // `transform: scale()` — sin compensar acá, next/image
+                    // pide una resolución pensada para la caja sin zoomear y
+                    // el navegador la termina estirando un 30% extra al
+                    // renderizar, perdiendo nitidez visible (reportado: fotos
+                    // 4K de origen se ven borrosas en este carrusel puntual).
+                    // Se pide ~30% más ancho de source para que, incluso ya
+                    // agrandada por el transform, siga siendo 1:1 con los
+                    // píxeles reales de pantalla.
+                    sizes="(min-width: 1024px) 33vw, 43vw"
+                    quality={95}
                     priority={index === 0}
                     className="object-cover transition-transform duration-500 group-hover/card:scale-110"
                     style={{ transform: `scale(${PHOTO_ZOOM_SCALE})` } as CSSProperties}
