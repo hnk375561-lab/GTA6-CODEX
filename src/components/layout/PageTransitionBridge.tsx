@@ -6,9 +6,10 @@ import { usePathname, useRouter } from 'next/navigation'
 /**
  * Capítulo 6.1 + 6.2 — Transiciones entre páginas (ver
  * biblia-scroll-rockstar.txt). Maneja su propio estado de React (`phase`,
- * `frozenFrame`) de punta a punta; no depende de `webglSceneBus` para nada
- * de esto — el bus quedó reservado a foco de sección/scroll/hover, que sí
- * consume el motor de fondo.
+ * `frozenFrame`) de punta a punta; no depende del motor WebGL de fondo
+ * (desmontado en la limpieza heredada, ver
+ * docs/spike-4-1-motor-webgl-choreo-2026-09.md) para nada de esto — el
+ * fundido funciona con o sin escena 3D detrás.
  *
  * 6.1 — conectar el canal a la navegación real
  * Next.js App Router no expone un evento "la navegación está por
@@ -18,16 +19,14 @@ import { usePathname, useRouter } from 'next/navigation'
  * eso es lo que hace `handleClick` acá. `usePathname()` es la señal de
  * "la navegación ya terminó, el nuevo `children` ya está montado".
  *
- * 6.2 — fundido con frame congelado del fondo WebGL
- * Al click: se toma una foto (`canvas.toDataURL`) del `<canvas>` que
- * `WebGLBackground` marca con `data-webgl-canvas` (ver ese archivo — el
- * fondo NO se pausa ni se reinstancia, 6.3 ya lo garantiza; esto solo le
- * saca una foto de un frame en movimiento) y se usa como fondo del overlay
- * mientras se funde a opaco. Solo entonces se navega. Cuando el nuevo
- * `children` aparece (`pathname` cambia), se funde de vuelta a transparente.
- * Si `toDataURL` falla (canvas vacío, tainted, o simplemente no existe
- * todavía) se degrada a un fundido liso sobre `bg-white` — nunca rompe
- * la navegación por esto, ver el `try/catch`.
+ * 6.2 — fundido entre páginas
+ * Al click se navega tras un fundido a opaco; cuando el nuevo `children`
+ * aparece (`pathname` cambia), se funde de vuelta a transparente. El
+ * overlay solía congelar un frame del canvas WebGL (`captureFrozenFrame`,
+ * `data-webgl-canvas` en `WebGLBackground`) pero ese motor ya no existe en
+ * el árbol, así que la captura devuelve siempre `null` y el fundido es
+ * siempre liso sobre `bg-white` — que es exactamente la degradación que el
+ * `try/catch` ya tenía prevista. No rompe la navegación por esto.
  *
  * Fuera de alcance a propósito: clicks en links externos, `target="_blank"`,
  * clicks modificados (cmd/ctrl/shift/alt — el usuario está pidiendo abrir en
@@ -55,15 +54,18 @@ function isInternalNavigationClick(event: MouseEvent): HTMLAnchorElement | null 
   const url = new URL(anchor.href, window.location.href)
   if (url.origin !== window.location.origin) return null
   // Anchors de la misma página (`/ruta#seccion` en la ruta actual) navegan
-  // vía scroll nativo/Lenis, no por cambio de página — no corresponde
-  // fundido acá, `smoothScrollTo` (scroll-telemetry.tsx) ya los cubre.
+  // vía scroll nativo, no por cambio de página — no corresponde
+  // fundido acá, `smoothScrollTo` (smooth-scroll.ts) ya los cubre.
   if (url.pathname === window.location.pathname && url.hash) return null
   if (url.pathname === window.location.pathname && url.search === window.location.search) return null
 
   return anchor
 }
 
-/** Foto del canvas WebGL actual, o `null` si no se pudo tomar (degrada a fundido liso). */
+/** Foto del canvas WebGL, o `null` si no se pudo tomar. El canvas del motor
+ *  (`data-webgl-canvas`) ya no existe tras la limpieza heredada, así que
+ *  esto siempre devuelve `null` → el fundido es siempre liso; se conserva
+ *  por si algún overlay (WebGL u otro) vuelve a publicar un canvas. */
 function captureFrozenFrame(): string | null {
   try {
     const canvas = document.querySelector<HTMLCanvasElement>('canvas[data-webgl-canvas="true"]')

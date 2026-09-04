@@ -2,13 +2,13 @@
 
 import { useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
-import { smoothScrollTo } from '@/lib/scroll/scroll-telemetry'
+import { smoothScrollTo } from '@/lib/scroll/smooth-scroll'
 
 /**
  * Capítulo 8.3 — scroll restoration al volver atrás (ver
  * biblia-scroll-rockstar.txt). Hoy el botón "atrás" del navegador salta de
  * golpe a la posición vieja; esto la restaura con un scroll nativo suave
- * (`smoothScrollTo`, ver `scroll-telemetry.tsx`) en vez de dejar que el
+ * (`smoothScrollTo`, ver `smooth-scroll.ts`) en vez de dejar que el
  * navegador la restaure en seco.
  *
  * Por qué `history.scrollRestoration = 'manual'`
@@ -22,7 +22,7 @@ import { smoothScrollTo } from '@/lib/scroll/scroll-telemetry'
  *
  * Cómo se guarda la posición
  * Un solo listener de `scroll` en `window` (rAF-throttled), montado acá en
- * layout.tsx igual que `ScrollTelemetryProvider`/`PageTransitionBridge` —
+ * layout.tsx igual que `PageTransitionBridge` —
  * nunca se desmonta al navegar. Cada tick guarda `window.scrollY` en
  * `sessionStorage`, bajo una clave por ruta (`pathname + search`). Se lee
  * `window.scrollY` directo: el sitio usa scroll 100% nativo (sin motor de
@@ -40,7 +40,7 @@ import { smoothScrollTo } from '@/lib/scroll/scroll-telemetry'
  * su cuenta y `PageTransitionBridge` ya tapa ese salto con el fundido.
  *
  * `smoothScrollTo` ya degrada solo a un salto instantáneo si
- * `prefers-reduced-motion: reduce` (ver `scroll-telemetry.tsx`), así que no
+ * `prefers-reduced-motion: reduce` (ver `smooth-scroll.ts`), así que no
  * hace falta duplicar esa lógica acá.
  */
 const STORAGE_PREFIX = 'af-scroll:'

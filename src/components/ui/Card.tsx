@@ -1,7 +1,6 @@
 'use client'
 
 import { ReactNode } from 'react'
-import { webglSceneBus } from '@/lib/webgl/scene-bus'
 
 interface CardProps {
   children: ReactNode
@@ -21,10 +20,6 @@ export function Card({ children, className = '', hoverable = false }: CardProps)
         ${hoverClass}
         ${className}
       `}
-      // Solo las cards realmente interactivas (`hoverable`) publican intención
-      // de cursor al motor WebGL; el resto no cambia comportamiento.
-      onMouseEnter={hoverable ? () => webglSceneBus.setPointerIntent(1) : undefined}
-      onMouseLeave={hoverable ? () => webglSceneBus.setPointerIntent(0) : undefined}
     >
       {children}
     </div>
