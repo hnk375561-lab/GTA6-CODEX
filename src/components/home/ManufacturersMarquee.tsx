@@ -95,7 +95,7 @@ export function ManufacturersMarquee({ manufacturers, className }: Manufacturers
           onClick={togglePaused}
           aria-pressed={paused}
           aria-label={paused ? 'Reanudar el desplazamiento de fabricantes' : 'Pausar el desplazamiento de fabricantes'}
-          className="manufacturers-marquee__pause-button inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-edge text-neutral-500 hover:border-neutral-900 hover:text-neutral-900"
+          className="manufacturers-marquee__pause-button inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-edge text-neutral-500 hover:border-neutral-900 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
         >
           {paused ? (
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

@@ -117,6 +117,23 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* --- Touch: inputs a 16px para evitar el zoom automático de iOS ---
+   Safari enfoca y "hace zoom" de la página sola sobre cualquier campo de
+   formulario con font-size < 16px (el usuario la percibe como "la app se
+   agrandó"), lo que rompe el flujo de completar un lead form en mobile.
+   Esta regla global para pointers gruesos (touch) sube la tipografía de
+   campos a 16px dentro de todo el sitio. Vive FUERA de @layer a propósito:
+   una regla sin capa le gana a las utilities de Tailwind (que viven en
+   @layer utilities), así un `text-sm` en un componente no la pisa. En
+   desktop (pointer fino) no aplica y no cambia nada. */
+@media (pointer: coarse) {
+  input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
 /* --- Deriva ambiental de los blobs del hero (home) ---
    Antes, las dos manchas de gradiente del hero (`PinnedScrollStages`)
    solo se movían atadas al progreso del scroll: con el mouse quieto y

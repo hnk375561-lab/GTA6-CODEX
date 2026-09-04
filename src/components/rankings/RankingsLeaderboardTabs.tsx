@@ -188,15 +188,19 @@ function RankingBarList({ entries }: { entries: RankingTabEntry[] }) {
           <li key={entry.vehicle.slug}>
             <Link
               href={`/${entry.vehicle.type}/${entry.vehicle.slug}`}
-              className="group flex items-center gap-3 rounded-lg border border-transparent px-2 py-1.5 transition-colors hover:border-edge hover:bg-surface-alt"
+              className="group flex flex-wrap items-center gap-x-3 gap-y-2 rounded-lg border border-transparent px-2 py-1.5 transition-colors hover:border-edge hover:bg-surface-alt"
             >
               <span className="w-6 shrink-0 text-right font-mono text-xs text-neutral-400">
                 {entry.position}
               </span>
-              <span className="w-32 shrink-0 truncate text-sm font-medium text-neutral-900 sm:w-48">
+              <span className="min-w-0 flex-1 truncate text-sm font-medium text-neutral-900 sm:w-48 sm:flex-none sm:shrink-0">
                 {entry.vehicle.title}
               </span>
-              <span className="relative h-6 flex-1 overflow-hidden rounded-md bg-surface-alt">
+              {/* En móvil la barra pasa a su propia línea (basis-full) en
+                  vez de pelear por los ~52px que dejaban la columna fija
+                  del título + la métrica en un viewport de 320px. El
+                  ancho/altura base se conserva intacto desde sm. */}
+              <span className="relative h-6 flex-1 basis-full overflow-hidden rounded-md bg-surface-alt sm:basis-auto">
                 <span
                   className="ranking-bar-fill absolute inset-y-0 left-0 rounded-md bg-gradient-to-r from-auto-accent to-auto-accent-orange"
                   style={{ '--bar-target': `${pct}%`, animationDelay: `${Math.min(i, 10) * 30}ms` } as CSSProperties}

@@ -147,7 +147,7 @@ export function EntityGallery({ images, entityTitle }: EntityGalleryProps) {
       )}
 
       <div
-        className="gallery-lightbox-panel relative z-10 h-[90vh] w-full max-w-[1900px] sm:h-[94vh]"
+        className="gallery-lightbox-panel relative z-10 h-[90dvh] w-full max-w-[1900px] sm:h-[94dvh]"
         onClick={(e) => e.stopPropagation()}
       >
         <ZoomableImage

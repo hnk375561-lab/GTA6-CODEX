@@ -112,7 +112,7 @@ export function ConsentBanner({
           tabIndex={-1}
           role="dialog"
           aria-label="Consentimiento de cookies"
-          className="fixed inset-x-0 bottom-0 z-[200] border-t border-edge bg-auto-darker/95 px-4 py-4 backdrop-blur-sm sm:px-6"
+          className="fixed inset-x-0 bottom-0 z-[200] border-t border-edge bg-auto-darker/95 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-sm sm:px-6"
         >
           <div className="container-max flex flex-col items-center justify-between gap-3 sm:flex-row">
             <p className="text-sm text-neutral-500">
@@ -122,13 +122,13 @@ export function ConsentBanner({
             <div className="flex shrink-0 gap-3">
               <button
                 onClick={() => decide('rejected')}
-                className="rounded-lg border border-edge px-4 py-2 text-sm font-semibold text-neutral-500 transition-colors hover:text-neutral-900"
+                className="rounded-lg border border-edge px-4 py-2.5 text-sm font-semibold text-neutral-500 transition-colors hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
               >
                 Rechazar
               </button>
               <button
                 onClick={() => decide('accepted')}
-                className="btn-primary rounded-lg px-4 py-2 text-sm font-semibold text-auto-darker"
+                className="btn-primary rounded-lg px-4 py-2.5 text-sm font-semibold text-auto-darker"
               >
                 Aceptar
               </button>

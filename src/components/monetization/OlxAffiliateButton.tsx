@@ -88,7 +88,7 @@ export function OlxAffiliateButton({
   const getSizeClasses = () => {
     switch (size) {
       case 'sm':
-        return 'px-3 py-1.5 text-sm'
+        return 'px-3 py-2 text-sm'
       case 'lg':
         return 'px-6 py-3 text-lg'
       default:

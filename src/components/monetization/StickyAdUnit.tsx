@@ -59,8 +59,13 @@ export function StickyAdUnit() {
   }
 
   return (
+    /* z-30 (y no z-40 como la barra del comparador): cuando el comparador
+       está activo ambos flotan sobre el pie del viewport; la barra del
+       comparador queda POR ENCIMA del ancla para que sus botones
+       (Limpiar/Comparar) sigan siendo tocables. El consent banner (z-200)
+       y los modales (z-50) ya pisan al ancla con o sin este cambio. */
     <div
-      className="fixed inset-x-0 bottom-0 z-40 flex items-center gap-2 border-t border-edge bg-surface-card/95 px-2 py-1.5 shadow-[0_-2px_12px_rgba(0,0,0,0.08)] backdrop-blur md:hidden"
+      className="fixed inset-x-0 bottom-0 z-30 flex items-center gap-2 border-t border-edge bg-surface-card/95 px-2 py-1.5 pb-[env(safe-area-inset-bottom)] shadow-[0_-2px_12px_rgba(0,0,0,0.08)] backdrop-blur md:hidden"
       data-tracking="sticky-anchor-ad"
     >
       <div className="min-w-0 flex-1">

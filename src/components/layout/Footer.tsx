@@ -11,7 +11,11 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative border-t border-edge bg-auto-darker py-14">
+    <footer className="relative border-t border-edge bg-auto-darker pt-14 pb-[8.25rem] md:pb-14">
+      {/* pb móvil extra: el anuncio ancla sticky (solo ≤md) flota sobre el
+          pie del viewport y sin este colchón el último bloque del footer
+          quedaba tapado al llegar al final del scroll. En md+ el ancla no
+          existe y el padding vuelve al normal. */}
       <div className="section-divider absolute inset-x-0 top-0" aria-hidden="true" />
       <div className="mx-auto max-w-[96rem] px-4 sm:px-6 lg:px-8 xl:px-12">
         <Reveal className="grid gap-10 md:grid-cols-3">

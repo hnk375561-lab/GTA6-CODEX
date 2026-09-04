@@ -70,6 +70,7 @@ function easeOutCubic(t: number): number {
  */
 export function PinnedScrollStages({ stages }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const sectionRefs = useRef<Array<HTMLElement | null>>([])
   const [activeStageId, setActiveStageId] = useState<string | null>(stages[0]?.id ?? null)
   /* Progreso de cascada (0..1) por panel, indexado igual que `stages`. */
   const [poses, setPoses] = useState<number[]>(() => stages.map(() => 0))
@@ -91,12 +92,23 @@ export function PinnedScrollStages({ stages }: Props) {
 
     const measure = () => {
       ch = container.clientHeight || window.innerHeight
-      heights = stages.map((s) => ((s.scrollVh ?? DEFAULT_SCROLL_VH) / 100) * ch)
+      // Alturas REALES de cada panel (no el presupuesto configurado): un
+      // panel se estira hasta contener su contenido (min-height, ver
+      // secciones abajo), así que en móvil — donde el hero es mucho más
+      // alto que su presupuesto de scroll — nada queda recortado ni
+      // superpuesto al panel siguiente, y la cascada se calcula sobre la
+      // geometría real del DOM.
       tops = []
+      heights = []
       let acc = 0
-      for (let i = 0; i < heights.length; i++) {
+      for (let i = 0; i < stages.length; i++) {
+        const el = sectionRefs.current[i]
+        const h = el
+          ? el.offsetHeight
+          : ((stages[i].scrollVh ?? DEFAULT_SCROLL_VH) / 100) * ch
+        heights.push(h)
         tops.push(acc)
-        acc += heights[i]
+        acc += h
       }
       total = acc
       windowPx = Math.min(640, Math.max(300, ch * ENTRY_WINDOW_FACTOR))
@@ -131,9 +143,19 @@ export function PinnedScrollStages({ stages }: Props) {
       clear()
       measure()
 
+      const firstIsTaller = (heights[0] ?? 0) > ch
       const initialPoseTop = Math.max(
         0,
-        Math.min(total - ch, (tops[0] ?? 0) + (heights[0] ?? 0) / 2 - ch / 2)
+        Math.min(
+          total - ch,
+          // Si el primer panel no entra en el viewport (móvil: hero más
+          // alto que la pantalla), la "pose" inicial debe alinear el TOPE
+          // del contenido con el tope del viewport para que el H1 se vea
+          // desde el primer frame. En desktop (contenido ≤ viewport) se
+          // mantiene la pose histórica: centro del panel == centro del
+          // viewport.
+          firstIsTaller ? (tops[0] ?? 0) : (tops[0] ?? 0) + (heights[0] ?? 0) / 2 - ch / 2
+        )
       )
       container.scrollTo({ top: initialPoseTop })
 
@@ -202,7 +224,7 @@ export function PinnedScrollStages({ stages }: Props) {
     <div className="relative">
       <div
         ref={containerRef}
-        className="h-dvh w-full overflow-y-scroll scroll-container-custom"
+        className="h-dvh w-full overflow-y-scroll overscroll-contain scroll-container-custom"
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
@@ -219,8 +241,21 @@ export function PinnedScrollStages({ stages }: Props) {
             key={stage.id}
             data-stage-id={stage.id}
             aria-label={stage.label}
-            className="flex w-full items-center justify-center p-4 sm:p-6 lg:p-8"
-            style={{ height: `${stage.scrollVh ?? DEFAULT_SCROLL_VH}dvh` }}
+            ref={(el) => {
+              sectionRefs.current[i] = el
+            }}
+            className={cn(
+              'flex w-full items-center justify-center p-4 sm:p-6 lg:p-8',
+              // El último panel respira más abajo en mobile: el anuncio
+              // ancla sticky (solo ≤md) flota sobre el pie del viewport
+              // y sin este margen taparía el final del expediente al
+              // llegar al tope del scroll.
+              i === stages.length - 1 && 'pb-[8.75rem] md:pb-8'
+            )}
+            // min-height (no height): el panel crece hasta contener su
+            // contenido. Con height fija, un hero más alto que su
+            // presupuesto de scroll quedaba recortado en móvil.
+            style={{ minHeight: `${stage.scrollVh ?? DEFAULT_SCROLL_VH}dvh` }}
           >
             <StageProgressProvider progress={poses[i] ?? 0}>
               <div className="w-full max-w-7xl">{stage.content}</div>

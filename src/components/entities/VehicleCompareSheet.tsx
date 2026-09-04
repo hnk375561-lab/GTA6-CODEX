@@ -38,7 +38,7 @@ export function VehicleCompareBar({ selected, imageBySlug, onRemove, onClear, on
 
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-40 flex justify-center px-4 pb-4 sm:pb-6"
+      className="fixed inset-x-0 bottom-0 z-40 flex justify-center px-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:pb-[max(1.5rem,env(safe-area-inset-bottom))]"
       role="region"
       aria-label="Comparador de vehículos"
     >
@@ -61,7 +61,7 @@ export function VehicleCompareBar({ selected, imageBySlug, onRemove, onClear, on
                   type="button"
                   onClick={() => onRemove(v.slug)}
                   aria-label={`Quitar ${v.title} de la comparación`}
-                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-edge bg-white text-neutral-500 opacity-0 transition duration-200 hover:text-auto-accent active:scale-90 group-hover:opacity-100 focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-edge bg-white text-neutral-500 transition duration-200 hover:text-auto-accent active:scale-90 group-hover:opacity-100 focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1.5 before:rounded-full before:content-[''] opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
                 >
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />
@@ -432,7 +432,7 @@ export function VehicleCompareSheet({ open, vehicles, imageBySlug, onClose, onRe
       onClick={onClose}
     >
       <div
-        className="max-h-[92vh] w-full max-w-4xl overflow-y-auto rounded-t-2xl border border-edge bg-surface-card shadow-md sm:rounded-2xl"
+        className="max-h-[92dvh] w-full max-w-4xl overflow-y-auto rounded-t-2xl border border-edge bg-surface-card shadow-md sm:rounded-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-edge bg-surface-card/95 px-5 py-4 backdrop-blur-md">
@@ -441,7 +441,7 @@ export function VehicleCompareSheet({ open, vehicles, imageBySlug, onClose, onRe
             type="button"
             onClick={onClose}
             aria-label="Cerrar comparador"
-            className="flex h-8 w-8 items-center justify-center rounded-lg text-neutral-500 transition-colors hover:bg-surface-alt hover:text-neutral-900"
+            className="relative flex h-8 w-8 items-center justify-center rounded-lg text-neutral-500 transition-colors hover:bg-surface-alt hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1 before:rounded-lg before:content-['']"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
               <path d="M18 6 6 18M6 6l12 12" />

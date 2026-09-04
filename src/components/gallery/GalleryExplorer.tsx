@@ -392,8 +392,8 @@ function GalleryLightbox({
       role="dialog"
       aria-modal="true"
       aria-label={`Visor de imagen: ${item.title}`}
-      tabIndex={-1}
-      className="gallery-lightbox fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-8"
+tabIndex={-1}
+      className="gallery-lightbox fixed inset-0 z-[100] flex items-center justify-center p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:p-8"
       onClick={onClose}
     >
       <div className="gallery-lightbox-backdrop absolute inset-0" aria-hidden="true" />
@@ -447,10 +447,15 @@ function GalleryLightbox({
       )}
 
       <div
-        className="gallery-lightbox-panel glass-surface relative z-10 grid max-h-[94vh] w-full max-w-[1900px] grid-cols-1 overflow-hidden rounded-2xl border border-edge shadow-xl md:grid-cols-[minmax(0,1fr)_320px]"
+        className="gallery-lightbox-panel glass-surface relative z-10 grid max-h-[94dvh] w-full max-w-[1900px] grid-cols-1 overflow-hidden rounded-2xl border border-edge shadow-xl md:grid-cols-[minmax(0,1fr)_320px]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative min-h-[60vh] bg-auto-darker md:min-h-[88vh]" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+        {/* En móvil la fila es único (grid-cols-1): las dos celdas compiten
+            por el mismo presupuesto de 94dvh. Con media a 60vh y metadata a
+            55vh la suma daba 115vh > 94dvh y el panel cortaba la cola de la
+            metadata (inalcanzable). Ahora 45 + 44 = 89dvh, con margen para la
+            resolución del navegador. */}
+        <div className="relative min-h-[45vh] bg-auto-darker md:min-h-[88vh]" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
           {item.kind === 'video' && item.videoEmbedId ? (
             <div className="flex h-full w-full items-center p-4" key={item.id}>
               <YouTubeEmbed embedId={item.videoEmbedId} title={item.title} thumbnailSrc={item.src} autoLoad />
@@ -473,7 +478,7 @@ function GalleryLightbox({
           )}
         </div>
 
-        <div className="flex max-h-[55vh] flex-col overflow-y-auto p-6 md:max-h-[88vh]">
+        <div className="flex max-h-[44vh] flex-col overflow-y-auto p-6 md:max-h-[88vh]">
           <div className="mb-3 flex flex-wrap items-center gap-1.5">
             {item.status && (
               <Badge variant="status" status={item.status}>

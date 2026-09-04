@@ -592,7 +592,7 @@ export function EntityListExplorer({
                   type="button"
                   onClick={() => setPowerRange(null)}
                   aria-label="Quitar filtro de potencia"
-                  className="flex h-5 w-5 items-center justify-center rounded-full text-neutral-500 transition-colors hover:text-auto-accent"
+                  className="relative flex h-5 w-5 items-center justify-center rounded-full text-neutral-500 transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1.5 before:rounded-full before:content-['']"
                 >
                   <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />
@@ -647,7 +647,7 @@ export function EntityListExplorer({
                   type="button"
                   onClick={() => setPriceRange(null)}
                   aria-label="Quitar filtro de precio"
-                  className="flex h-5 w-5 items-center justify-center rounded-full text-neutral-500 transition-colors hover:text-auto-accent"
+                  className="relative flex h-5 w-5 items-center justify-center rounded-full text-neutral-500 transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1.5 before:rounded-full before:content-['']"
                 >
                   <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />
@@ -702,7 +702,7 @@ export function EntityListExplorer({
                   type="button"
                   onClick={() => setYearRange(null)}
                   aria-label="Quitar filtro de año"
-                  className="flex h-5 w-5 items-center justify-center rounded-full text-neutral-500 transition-colors hover:text-auto-accent"
+                  className="relative flex h-5 w-5 items-center justify-center rounded-full text-neutral-500 transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1.5 before:rounded-full before:content-['']"
                 >
                   <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />
