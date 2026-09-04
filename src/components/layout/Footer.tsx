@@ -6,6 +6,7 @@ import { Reveal } from '@/components/ui/Reveal'
 import { SITE_NAME } from '@/config/site'
 import { NewsletterSignupForm } from '@/components/monetization/NewsletterSignupForm'
 import { SupportButton } from '@/components/monetization/SupportButton'
+import { smoothScrollTo } from '@/lib/scroll/smooth-scroll'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -185,6 +186,35 @@ export function Footer() {
               </li>
             </ul>
           </div>
+        </Reveal>
+
+        {/* Volver arriba — acción terminal del pie de página. El FAB
+            global (BackToTop) cubre el "durante el scroll"; esta es la
+            alternativa anclada y con texto para la persona que llegó al
+            final del contenido y (sobre todo en desktop, donde el FAB es
+            compacto y sin label) prefiere una acción explícita de cierre. */}
+        <Reveal delay={100} className="mt-12 flex justify-center">
+          <button
+            type="button"
+            onClick={() => smoothScrollTo(0)}
+            aria-label="Volver arriba"
+            className="tap-scale inline-flex items-center gap-2 rounded-full border border-auto-border/60 px-4 py-2.5 text-xs font-medium text-neutral-400 transition-colors hover:border-auto-accent/60 hover:text-auto-accent-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m18 15-6-6-6 6" />
+            </svg>
+            Volver arriba
+          </button>
         </Reveal>
 
         {/* Disclaimer + Copyright */}

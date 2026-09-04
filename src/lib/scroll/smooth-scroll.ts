@@ -17,12 +17,30 @@
  * atrás), no un movimiento ambiental de la página. Se sigue centralizando
  * acá para que no convivan dos formas distintas de saltar a una posición.
  */
+/**
+ * `behavior` para TODOS los saltos de este módulo: 'smooth' normalmente,
+ * 'auto' (instantáneo) con `prefers-reduced-motion: reduce`. El
+ * comentario de arriba lo prometía desde hace tiempo pero el código
+ * siempre pedía 'smooth' duro, y `scrollTo`/`scrollIntoView` con
+ * 'smooth' animan igual aunque el sistema pida menos movimiento — solo el
+ * `scroll-behavior: smooth` del CSS respeta reduced-motion, y este sitio
+ * lo desactiva a propósito (ver `html` en globals.css). Acá se resuelve
+ * en JS, en el único punto por el que pasa el scroll programático del
+ * sitio (BackToTop, ScrollRestorationBridge, atajos).
+ */
+function scrollBehavior(): ScrollBehavior {
+  if (typeof window === 'undefined') return 'auto'
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+}
+
 export function smoothScrollTo(
   target: HTMLElement | number | string,
   options?: { offset?: number }
 ) {
+  const behavior = scrollBehavior()
+
   if (typeof target === 'number') {
-    window.scrollTo({ top: target + (options?.offset ?? 0), behavior: 'smooth' })
+    window.scrollTo({ top: target + (options?.offset ?? 0), behavior })
     return
   }
 
@@ -32,9 +50,9 @@ export function smoothScrollTo(
 
   if (options?.offset) {
     const top = el.getBoundingClientRect().top + window.scrollY + options.offset
-    window.scrollTo({ top, behavior: 'smooth' })
+    window.scrollTo({ top, behavior })
     return
   }
 
-  el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  el.scrollIntoView({ behavior, block: 'start' })
 }

@@ -9,6 +9,7 @@ import { ConsentBanner } from '@/components/layout/ConsentBanner'
 import { PageTransitionBridge } from '@/components/layout/PageTransitionBridge'
 import { ScrollRestorationBridge } from '@/components/layout/ScrollRestorationBridge'
 import { HideOnHome } from '@/components/layout/HideOnHome'
+import { BackToTop } from '@/components/layout/BackToTop'
 import { StickyAdUnit } from '@/components/monetization/StickyAdUnit'
 
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/config/site'
@@ -107,6 +108,10 @@ export default async function RootLayout({
         <HideOnHome>
           <StickyAdUnit />
         </HideOnHome>
+        {/* Al final del body, fuera de `#page-content`: el FAB vive en el
+            stacking global de la página, no dentro de ningún contexto de
+            apilamiento de una ruta. */}
+        <BackToTop />
         <Analytics />
       </body>
     </html>

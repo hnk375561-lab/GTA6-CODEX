@@ -2119,3 +2119,84 @@ video,
     transition: none !important;
   }
 }
+
+/* ============================================================
+   Volver arriba — FAB global (sept. 2026)
+   Control flotante fijo en el pie-derecho del viewport, montado en
+   layout.tsx (ver BackToTop.tsx para el comportamiento). Aparece solo
+   tras ~media viewport de scroll de DOCUMENTO — nunca en páginas cortas
+   ni en el arranque de una larga.
+
+   Posicionamiento:
+   - `bottom` se setea inline desde React: `altura de docks del pie
+     (src/lib/scroll/fab-layer.ts) + env(safe-area-inset-bottom) +
+     --fab-gap` (acá abajo, responsive: 0.75rem mobile / 1.5rem md+).
+     Así el FAB nunca tapa el anuncio ancla ni la barra del comparador.
+   - `right` incluye `env(safe-area-inset-right)` para el notch/isla
+     dinámica en landscape.
+
+   Movimiento: fade + ascenso corto (--dur-fast), como el resto de las
+   micro-interacciones del sitio, con `prefers-reduced-motion` cubierto.
+   El ring de focus lo hereda del `:focus-visible` global (naranja).
+   ============================================================ */
+.fab-back-to-top {
+  --fab-gap: 0.75rem;
+
+  position: fixed;
+  right: calc(1rem + env(safe-area-inset-right));
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid rgba(36, 42, 50, 0.9);
+  border-radius: 9999px;
+  background: #0b0d10;
+  color: #f4f4f5;
+  box-shadow: 0 12px 28px -12px rgba(5, 6, 7, 0.75);
+  opacity: 0;
+  transform: translateY(0.5rem);
+  pointer-events: none;
+  transition:
+    opacity var(--dur-fast) var(--ease-standard),
+    transform var(--dur-fast) var(--ease-standard),
+    background-color var(--transition-base) var(--ease-standard),
+    border-color var(--transition-base) var(--ease-standard),
+    box-shadow var(--transition-base) var(--ease-standard);
+}
+
+@media (min-width: 768px) {
+  .fab-back-to-top {
+    --fab-gap: 1.5rem;
+    right: calc(1.5rem + env(safe-area-inset-right));
+  }
+}
+
+.fab-back-to-top[data-visible='true'] {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.fab-back-to-top:hover {
+  background: #12151a;
+  border-color: var(--c-pink);
+  box-shadow:
+    0 0 0 1px rgba(255, 106, 26, 0.25),
+    0 14px 32px -12px rgba(255, 106, 26, 0.4);
+}
+
+.fab-back-to-top:active {
+  transform: scale(0.95) translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fab-back-to-top {
+    transition: none;
+  }
+
+  .fab-back-to-top:active {
+    transform: none;
+  }
+}

@@ -1,7 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AdUnit } from '@/components/monetization/AdUnit'
+import { FAB_LAYER_ANCHOR_AD, setFabLayer } from '@/lib/scroll/fab-layer'
 
 const DISMISS_KEY = 'sinfrenos-sticky-ad-dismissed'
 
@@ -45,13 +46,47 @@ const STICKY_AD_SLOT_ID = process.env.NEXT_PUBLIC_ADSENSE_ANCHOR_SLOT_ID || '000
  */
 export function StickyAdUnit() {
   const [dismissed, setDismissed] = useState(true)
+  // Referencia al contenedor fixed para medir su alto real y avisarle al
+  // FAB "volver arriba" cuánto despejar (ver src/lib/scroll/fab-layer.ts).
+  const rootRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     const stored = window.sessionStorage.getItem(DISMISS_KEY)
     setDismissed(stored === '1')
   }, [])
 
-  if (dismissed || !process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID) return null
+  const adEnabled = !dismissed && !!process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID
+
+  useEffect(() => {
+    if (!adEnabled) {
+      setFabLayer(FAB_LAYER_ANCHOR_AD, null)
+      return
+    }
+    const el = rootRef.current
+    if (!el) return
+    const measure = () => {
+      const height = el.getBoundingClientRect().height
+      // Fallback 72px por si la medición da 0 en el primer frame (el ad
+      // aún no reservó alto): mejor subir el FAB de más que taparlo.
+      setFabLayer(FAB_LAYER_ANCHOR_AD, { height: height || 72 })
+    }
+    measure()
+    // El alto del ancla cambia cuando AdSense resuelve el creativo (una
+    // vez que se monta el iframe del anuncio) — ResizeObserver local
+    // alcanza para enterarse sin ningún listener global.
+    const observer = new ResizeObserver(measure)
+    observer.observe(el)
+    window.addEventListener('orientationchange', measure, { passive: true })
+    window.addEventListener('resize', measure, { passive: true })
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('orientationchange', measure)
+      window.removeEventListener('resize', measure)
+      setFabLayer(FAB_LAYER_ANCHOR_AD, null)
+    }
+  }, [adEnabled])
+
+  if (!adEnabled) return null
 
   const handleDismiss = () => {
     window.sessionStorage.setItem(DISMISS_KEY, '1')
@@ -65,6 +100,7 @@ export function StickyAdUnit() {
        (Limpiar/Comparar) sigan siendo tocables. El consent banner (z-200)
        y los modales (z-50) ya pisan al ancla con o sin este cambio. */
     <div
+      ref={rootRef}
       className="fixed inset-x-0 bottom-0 z-30 flex items-center gap-2 border-t border-edge bg-surface-card/95 px-2 py-1.5 pb-[env(safe-area-inset-bottom)] shadow-[0_-2px_12px_rgba(0,0,0,0.08)] backdrop-blur md:hidden"
       data-tracking="sticky-anchor-ad"
     >

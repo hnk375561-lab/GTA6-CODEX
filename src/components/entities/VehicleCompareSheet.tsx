@@ -15,6 +15,7 @@ import { parsePowerHp } from '@/lib/vehicle-power'
 import { parseTrunkVolume } from '@/lib/vehicle-trunk'
 import { getSafetyInfo } from '@/lib/vehicle-safety-score'
 import { getAllEquipmentNames, getVehicleEquipmentMatrix } from '@/lib/vehicle-compare-equipment'
+import { FAB_LAYER_COMPARE_BAR, FAB_LAYER_COMPARE_SHEET, setFabLayer } from '@/lib/scroll/fab-layer'
 
 export const MAX_COMPARE = 5
 
@@ -34,10 +35,37 @@ interface VehicleCompareBarProps {
  * usuario puede tildar una card.
  */
 export function VehicleCompareBar({ selected, imageBySlug, onRemove, onClear, onOpen }: VehicleCompareBarProps) {
+  // Mide el alto real de la barra y se lo reporta al FAB "volver arriba"
+  // (src/lib/scroll/fab-layer.ts) para que suba por encima de ella en vez
+  // de taparla — la barra convive con el FAB en el pie del viewport.
+  const barRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (selected.length === 0) {
+      setFabLayer(FAB_LAYER_COMPARE_BAR, null)
+      return
+    }
+    const el = barRef.current
+    if (!el) return
+    const measure = () => {
+      setFabLayer(FAB_LAYER_COMPARE_BAR, { height: el.getBoundingClientRect().height })
+    }
+    measure()
+    const observer = new ResizeObserver(measure)
+    observer.observe(el)
+    window.addEventListener('orientationchange', measure, { passive: true })
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('orientationchange', measure)
+      setFabLayer(FAB_LAYER_COMPARE_BAR, null)
+    }
+  }, [selected.length])
+
   if (selected.length === 0) return null
 
   return (
     <div
+      ref={barRef}
       className="fixed inset-x-0 bottom-0 z-40 flex justify-center px-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:pb-[max(1.5rem,env(safe-area-inset-bottom))]"
       role="region"
       aria-label="Comparador de vehículos"
@@ -418,6 +446,14 @@ export function VehicleCompareSheet({ open, vehicles, imageBySlug, onClose, onRe
   }, [open, onClose])
 
   useModalFocus(open, dialogRef)
+
+  // El panel comparte z-50 con el FAB y con el documento bloqueado no
+  // tiene función contra el scroll de página: se lo oculta mientras el
+  // panel está abierto (src/lib/scroll/fab-layer.ts).
+  useEffect(() => {
+    setFabLayer(FAB_LAYER_COMPARE_SHEET, open ? { hide: true } : null)
+    return () => setFabLayer(FAB_LAYER_COMPARE_SHEET, null)
+  }, [open])
 
   if (!open || vehicles.length === 0) return null
 
