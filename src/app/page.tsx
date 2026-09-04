@@ -35,6 +35,8 @@ import { PinnedScrollStages, type Stage } from '@/components/home/PinnedScrollSt
 import { Reveal } from '@/components/home/StageProgress'
 import { Parallax, TiltCard } from '@/components/home/Parallax'
 import { HeroVehicleShowcaseV2, type HeroVehicleShowcaseItem } from '@/components/home/HeroVehicleShowcaseV2'
+import { HeroQuickLinks } from '@/components/home/HeroQuickLinks'
+import { HERO_QUICK_LINKS } from '@/config/hero-quick-links'
 import { type HeroPromoBannerItem } from '@/components/home/HeroPromoBanner'
 import { AdUnit } from '@/components/monetization/AdUnit'
 import { CompareShowcase, type CompareShowcaseVehicle } from '@/components/home/CompareShowcase'
@@ -505,7 +507,7 @@ export default async function HomePage() {
       scrollVh: 160,
       content: (
         <div className="relative mx-auto w-full max-w-[90rem] text-center">
-          <Reveal index={0} total={5} options={{ distance: 22 }}>
+          <Reveal index={0} total={6} options={{ distance: 22 }}>
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
               {SITE_NAME}
               {lastUpdateLabel && (
@@ -526,7 +528,7 @@ export default async function HomePage() {
             </Parallax>
           </Reveal>
 
-          <Reveal index={1} total={5} className="mx-auto mt-6 max-w-xl">
+          <Reveal index={1} total={6} className="mx-auto mt-6 max-w-xl">
             <p className="text-lg text-neutral-500 sm:text-xl">{HERO_SUBTITLE}</p>
           </Reveal>
 
@@ -547,7 +549,7 @@ export default async function HomePage() {
               sitio, no una nota al pie). */}
           <Reveal
             index={2}
-            total={5}
+            total={6}
             className="mx-auto mt-10 flex max-w-lg flex-wrap items-center justify-center gap-x-10 gap-y-4"
           >
             <div className="flex flex-col items-center gap-0.5">
@@ -587,18 +589,20 @@ export default async function HomePage() {
               existiendo (nadie pierde la posibilidad de explorar todo el
               catálogo o ir directo al comparador), pero ya no compiten en
               peso visual contra la acción de mayor intención. */}
-          <Reveal index={3} total={5}>
+          <Reveal index={3} total={6}>
             <div className="mx-auto mt-10 max-w-xl">
               <QuickSearchForm examples={searchExamples} />
             </div>
-            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm font-semibold text-neutral-500">
-              <Link href="/vehiculos" className="tap-scale transition-colors hover:text-neutral-900">
-                Ver las {countsByType[EntityType.VEHICLE] ?? 0} fichas <span aria-hidden="true">→</span>
-              </Link>
-              <Link href="/comparar" className="tap-scale transition-colors hover:text-neutral-900">
-                Comparar dos vehículos <span aria-hidden="true">→</span>
-              </Link>
-            </div>
+          </Reveal>
+
+          {/* Constelación de accesos directos — SEGUNDA PASADA (sept.
+              2026): reemplaza los 2 links de texto chico que había acá
+              (catálogo + comparador) por 10 chips al mismo nivel visual
+              que el buscador de arriba — pedido explícito del usuario
+              ("todo al mismo nivel, aunque compitan con el buscador").
+              Ver `HeroQuickLinks.tsx`/`config/hero-quick-links.tsx`. */}
+          <Reveal index={4} total={6} className="mt-8">
+            <HeroQuickLinks items={HERO_QUICK_LINKS} />
           </Reveal>
 
           {/* Franja "showroom" del hero: fila 100% horizontal con
@@ -617,7 +621,7 @@ export default async function HomePage() {
               línea corta que cumple el único trabajo real que le
               quedaba: nombrar la región para quien no vea el `aria-label`
               interno del carrusel. */}
-          <Reveal index={4} total={5} className="mx-auto mt-14 w-full text-left">
+          <Reveal index={5} total={6} className="mx-auto mt-14 w-full text-left">
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
               Fichas destacadas — evidencia verificada
             </p>

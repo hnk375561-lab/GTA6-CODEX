@@ -2009,3 +2009,139 @@ video,
     transform: none;
   }
 }
+
+/* ============================================================
+   Hero — "constelación de accesos directos" (sept. 2026)
+   Ver `HeroQuickLinks.tsx` para la lógica (cascada de entrada +
+   empuje de vecinos al hover). Acá solo las piezas visuales:
+
+   1. `.hero-quicklinks-ring`: los 2 círculos concéntricos decorativos
+      detrás del cluster — trazo punteado, rotación opuesta y muy lenta
+      entre ambos (sensación "constelación viva" sin llamar la atención).
+   2. `.hero-chip`: la burbuja/pill clickeable en sí — 3 tamaños
+      (`--lg/--md/--sm`) que comparten el mismo lenguaje (radio completo,
+      ícono + label + flecha) pero escalan tipografía/padding, así igual
+      de "clickeables" pero con jerarquía sutil de tamaño. Reusa
+      `.tap-scale`/`.cta-shine` ya definidos arriba — no reinventa el
+      feedback de click, solo la cascada de entrada (`.is-visible`) y el
+      color por variante (`data-accent`).
+   ============================================================ */
+.hero-quicklinks-ring {
+  fill: none;
+  stroke-width: 0.4;
+  stroke-dasharray: 1.2 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.hero-quicklinks-ring--a {
+  stroke: var(--c-cyan);
+  animation: hero-glow-spin 60s linear infinite;
+}
+
+.hero-quicklinks-ring--b {
+  stroke: var(--c-pink);
+  animation: hero-glow-spin 44s linear infinite reverse;
+}
+
+.hero-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgb(228 228 231);
+  background: white;
+  color: rgb(23 23 23);
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transform: scale(0.5) translateY(10px);
+  transition:
+    box-shadow var(--dur-base) var(--ease-premium),
+    border-color var(--dur-base) var(--ease-premium),
+    transform var(--dur-fast) var(--ease-out-back);
+}
+
+.hero-chip.is-visible {
+  animation: hero-chip-pop var(--dur-slow) var(--ease-out-back) both;
+  animation-delay: var(--chip-delay, 0ms);
+}
+
+.hero-chip:hover,
+.hero-chip:focus-visible {
+  border-color: var(--c-pink);
+  box-shadow:
+    0 12px 24px -12px rgba(255, 106, 26, 0.35),
+    0 0 0 1px rgba(255, 106, 26, 0.15);
+}
+
+.hero-chip__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-pink);
+}
+
+.hero-chip__arrow {
+  color: rgb(163 163 163);
+  font-size: 0.85em;
+}
+
+.hero-chip--lg {
+  padding: 0.85rem 1.35rem;
+  font-size: 0.95rem;
+}
+
+.hero-chip--lg .hero-chip__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.hero-chip--md {
+  padding: 0.7rem 1.1rem;
+  font-size: 0.85rem;
+}
+
+.hero-chip--md .hero-chip__icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.hero-chip--sm {
+  padding: 0.55rem 0.9rem;
+  font-size: 0.75rem;
+}
+
+.hero-chip--sm .hero-chip__icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+@keyframes hero-chip-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(10px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-quicklinks-ring--a,
+  .hero-quicklinks-ring--b {
+    animation: none !important;
+  }
+
+  .hero-chip {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+    transition: none !important;
+  }
+}
