@@ -73,12 +73,21 @@ const APPLY_FORCE = process.argv.includes('--force')
 const concurrencyArg = process.argv.find((a) => a.startsWith('--concurrency='))
 const CONCURRENCY = concurrencyArg ? Math.max(1, parseInt(concurrencyArg.split('=')[1], 10) || 4) : 4
 
-if (!process.env.BLOB_READ_WRITE_TOKEN) {
+// Vercel Blob ahora autentica por defecto con OIDC (BLOB_STORE_ID +
+// VERCEL_OIDC_TOKEN, ambos de corta duración y rotados solos) en vez del
+// BLOB_READ_WRITE_TOKEN de larga duración de antes. `vercel env pull`
+// trae las dos automáticamente si el store está conectado al proyecto —
+// el SDK de @vercel/blob las detecta solo, no hay que pasarle nada.
+const hasOidcAuth = Boolean(process.env.BLOB_STORE_ID && process.env.VERCEL_OIDC_TOKEN)
+const hasLegacyToken = Boolean(process.env.BLOB_READ_WRITE_TOKEN)
+
+if (!hasOidcAuth && !hasLegacyToken) {
   console.error(
-    '[upload-images-to-blob] Falta BLOB_READ_WRITE_TOKEN en el entorno.\n' +
-      '  1. Vercel Dashboard → tu proyecto → Storage → Create → Blob (si no lo creaste)\n' +
-      '  2. Conectá el store al proyecto\n' +
-      '  3. Corré `vercel env pull .env.local` o copiá el token a mano\n'
+    '[upload-images-to-blob] No encuentro credenciales de Blob en el entorno.\n' +
+      '  1. Vercel Dashboard → tu proyecto → Storage → conectá tu Blob store al proyecto\n' +
+      '  2. Desde la carpeta del proyecto: `vercel link` y despué `vercel env pull .env.local`\n' +
+      '  3. Volvé a correr este script (Node carga .env.local solo si usás `node --env-file=.env.local ...`,\n' +
+      '     o si tu package.json ya usa algo como dotenv/next para cargarlo)\n'
   )
   process.exit(1)
 }
