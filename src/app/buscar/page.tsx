@@ -20,6 +20,14 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   metadataBase: new URL(SITE_URL),
   alternates: { canonical: `${SITE_URL}/buscar` },
+  // Página de resultados de búsqueda: sin contenido indexable único y con
+  // el costo de servidor más alto del sitio (recarga todas las entidades
+  // + conteo de relaciones en cada request). Alineada con /favoritos:
+  // noindex + fuera del sitemap (ver src/app/sitemap.ts).
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     type: 'website',
     title: TITLE,

@@ -11,25 +11,34 @@ import { EntityCard } from '@/components/entities/EntityCard'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 import { AdUnit } from '@/components/monetization/AdUnit'
 
-const TITLE = `Fabricantes | ${SITE_NAME}`
-const DESCRIPTION = `Explorá los 75 fabricantes de vehículos y motos documentados, con historia, origen y catálogo de modelos.`
+async function loadManufacturers() {
+  return getEntitiesByType(EntityType.MANUFACTURER)
+}
 
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  metadataBase: new URL(SITE_URL),
-  alternates: { canonical: `${SITE_URL}/fabricantes` },
-  openGraph: {
-    type: 'website',
-    title: TITLE,
-    description: DESCRIPTION,
-    url: `${SITE_URL}/fabricantes`,
-    siteName: SITE_NAME,
-  },
+// Metadata dinámica a partir del conteo real (antes el "75" estaba
+// hardcodeado en la descripción y se desincronizaba al agregar un
+// fabricante). El cuerpo de la página usaba manufacturers.length; ahora
+// generateMetadata y el render comparten la misma fuente.
+export async function generateMetadata(): Promise<Metadata> {
+  const manufacturers = await loadManufacturers()
+
+  return {
+    title: `Fabricantes | ${SITE_NAME}`,
+    description: `Explorá los ${manufacturers.length} fabricantes de vehículos y motos documentados, con historia, origen y catálogo de modelos.`,
+    metadataBase: new URL(SITE_URL),
+    alternates: { canonical: `${SITE_URL}/fabricantes` },
+    openGraph: {
+      type: 'website',
+      title: `Fabricantes | ${SITE_NAME}`,
+      description: `Explorá los ${manufacturers.length} fabricantes de vehículos y motos documentados, con historia, origen y catálogo de modelos.`,
+      url: `${SITE_URL}/fabricantes`,
+      siteName: SITE_NAME,
+    },
+  }
 }
 
 export default async function ManufacturersHubPage() {
-  const manufacturers = await getEntitiesByType(EntityType.MANUFACTURER)
+  const manufacturers = await loadManufacturers()
 
   if (manufacturers.length === 0) {
     notFound()

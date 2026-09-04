@@ -49,12 +49,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'daily',
       priority: 1,
     },
-    {
-      url: `${SITE_URL}/buscar`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
+    // /buscar ya NO está acá ni indexado: es resultados de búsqueda sin
+    // contenido único indexable (mismo criterio que /favoritos). Era la
+    // serverless más cara del sitio (recarga las 341 entidades + conteo de
+    // relaciones en cada recrawl). Ver robots en src/app/buscar/page.tsx.
     {
       url: `${SITE_URL}/galeria`,
       lastModified: new Date(),
@@ -78,6 +76,40 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
+    },
+    // Rutas comerciales/landings indexables (auditoría sept 2026): las 5
+    // que quedaron fuera del sitemap mientras existían (eran funcionales y
+    // sin noindex). `/concesionarias-concepcion-del-uruguay` cubre
+    // búsqueda local que el resto del sitio no captura.
+    {
+      url: `${SITE_URL}/anunciate`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/licencia-datos`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.4,
+    },
+    {
+      url: `${SITE_URL}/vender-tu-auto`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/vender-tu-auto/cartel`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.4,
+    },
+    {
+      url: `${SITE_URL}/concesionarias-concepcion-del-uruguay`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
     },
     {
       url: `${SITE_URL}/privacidad`,

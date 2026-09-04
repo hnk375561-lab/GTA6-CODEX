@@ -108,7 +108,7 @@ function generateDynamicDescription(entity: Entity): string {
 
   // Si es fabricante
   if (entity.type === EntityType.MANUFACTURER) {
-    return `Modelos ${entity.title} en catálogo de Sin Frenos. Comparar preços, potencia y specs de todos los vehículos ${entity.title}.`
+    return `Modelos ${entity.title} en catálogo de Sin Frenos. Comparar precios, potencia y specs de todos los vehículos ${entity.title}.`
   }
 
   // Fallback: descripción genérica
