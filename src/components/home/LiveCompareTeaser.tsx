@@ -197,9 +197,12 @@ function MobileCompareSwipe({ pair }: { pair: CompareTeaserPair }) {
       <div className="px-6 py-4 text-center">
         <Link
           href={`/comparar/${pair.pairSlug}`}
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+          className="group inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
         >
-          Ver comparación completa <span aria-hidden="true">→</span>
+          Ver comparación completa{' '}
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+              →
+            </span>
         </Link>
       </div>
     </Card>
@@ -278,9 +281,12 @@ export function LiveCompareTeaser({ pairs }: LiveCompareTeaserProps) {
         <div className="mt-6 text-center">
           <Link
             href={`/comparar/${pair.pairSlug}`}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
           >
-            Ver comparación completa <span aria-hidden="true">→</span>
+            Ver comparación completa{' '}
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+              →
+            </span>
           </Link>
         </div>
       </Card>

@@ -19,7 +19,7 @@ export default function NotFound() {
         <div className="space-y-4">
           <Link
             href="/"
-            className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold !text-auto-darker transition-all hover:-translate-y-0.5"
+            className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold !text-auto-darker transition duration-200 hover:-translate-y-0.5"
           >
             Volver a Inicio
           </Link>

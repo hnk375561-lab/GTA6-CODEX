@@ -131,7 +131,7 @@ export function QuickSearchForm({ examples = DEFAULT_EXAMPLES }: QuickSearchForm
         onChange={(e) => setValue(e.target.value)}
         placeholder={placeholder}
         aria-label={`Búsqueda rápida en ${SITE_NAME}. Atajo: tecla oblicua`}
-        className="w-full rounded-xl border border-neutral-200 bg-white py-3.5 pl-11 pr-24 text-sm text-neutral-900 shadow-sm placeholder:text-neutral-400 transition-all focus:border-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900/10 sm:text-base"
+        className="w-full rounded-xl border border-neutral-200 bg-white py-3.5 pl-11 pr-24 text-sm text-neutral-900 shadow-sm placeholder:text-neutral-400 transition focus:border-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900/10 sm:text-base"
       />
       {/* Indicador del atajo de teclado: se oculta solo mientras el input
           tiene contenido o foco (empty-values / has-[:focus]), y en mobile

@@ -270,7 +270,7 @@ function VehiclePickerTile({
       disabled={disabled}
       aria-pressed={selected}
       className={cn(
-        'group relative overflow-hidden rounded-xl border bg-surface-card text-left transition-all',
+        'group relative overflow-hidden rounded-xl border bg-surface-card text-left transition duration-300',
         selected
           ? 'border-auto-accent ring-2 ring-auto-accent/20'
           : 'border-edge hover:border-auto-accent/60',

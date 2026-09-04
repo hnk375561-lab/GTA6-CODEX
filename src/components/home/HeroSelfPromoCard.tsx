@@ -89,9 +89,12 @@ export function HeroSelfPromoCard({ items, className }: HeroSelfPromoCardProps) 
           </p>
           <Link
             href="/vehiculos"
-            className="cta-shine tap-scale mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-neutral-900 shadow-lg transition-transform hover:-translate-y-0.5"
+            className="cta-shine tap-scale group mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-neutral-900 shadow-lg transition-transform hover:-translate-y-0.5"
           >
-            Ver catálogo <span aria-hidden="true">→</span>
+            Ver catálogo{' '}
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+              →
+            </span>
           </Link>
         </div>
       </aside>

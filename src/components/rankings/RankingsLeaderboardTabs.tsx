@@ -123,7 +123,7 @@ export function RankingsLeaderboardTabs({
                 aria-pressed={view === mode}
                 onClick={() => setView(mode)}
                 className={cn(
-                  'tap-scale rounded-full px-3 py-1 text-xs font-semibold capitalize transition-colors',
+                  'tap-scale rounded-full px-3 py-1 text-xs font-semibold capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                   view === mode
                     ? 'bg-neutral-900 text-white'
                     : 'text-neutral-500 hover:text-neutral-900'
@@ -155,9 +155,12 @@ export function RankingsLeaderboardTabs({
         <div className="mt-6">
           <Link
             href={`/rankings/${active.slug}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-auto-accent transition-colors hover:text-auto-accent-strong"
+            className="group inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-auto-accent transition duration-200 hover:text-auto-accent-strong"
           >
-            Ver ranking completo <span aria-hidden="true">→</span>
+            Ver ranking completo{' '}
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+              →
+            </span>
           </Link>
         </div>
       </div>

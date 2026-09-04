@@ -384,7 +384,7 @@ export function EntityListExplorer({
             onChange={(e) => setQuery(e.target.value)}
             placeholder={`Buscar en ${typeLabel.toLowerCase()}...`}
             aria-label={`Buscar en ${typeLabel}`}
-            className="glass-surface w-full rounded-lg border border-edge py-2.5 pl-10 pr-9 text-sm text-neutral-900 placeholder:text-neutral-400 transition-all focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+            className="glass-surface w-full rounded-lg border border-edge py-2.5 pl-10 pr-9 text-sm text-neutral-900 placeholder:text-neutral-400 transition focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
           />
           {query && (
             <button
@@ -429,7 +429,7 @@ export function EntityListExplorer({
                 aria-pressed={viewMode === 'grid'}
                 title="Vista en grilla"
                 className={cn(
-                  'flex h-7 w-7 items-center justify-center rounded-md transition-colors',
+                  'flex h-7 w-7 items-center justify-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                   viewMode === 'grid'
                     ? 'bg-auto-accent/15 text-auto-accent'
                     : 'text-neutral-500 hover:text-neutral-900'
@@ -448,7 +448,7 @@ export function EntityListExplorer({
                 aria-pressed={viewMode === 'catalogo'}
                 title="Vista de catálogo"
                 className={cn(
-                  'flex h-7 w-7 items-center justify-center rounded-md transition-colors',
+                  'flex h-7 w-7 items-center justify-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                   viewMode === 'catalogo'
                     ? 'bg-auto-accent/15 text-auto-accent'
                     : 'text-neutral-500 hover:text-neutral-900'
@@ -487,7 +487,7 @@ export function EntityListExplorer({
             onClick={() => setStatus(key)}
             aria-pressed={status === key}
             className={cn(
-              'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
+              'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
               status === key
                 ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                 : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -510,7 +510,7 @@ export function EntityListExplorer({
                 onClick={() => toggleClassGroup(group)}
                 aria-pressed={selectedClassGroup === group}
                 className={cn(
-                  'rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors',
+                  'rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                   selectedClassGroup === group
                     ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                     : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'

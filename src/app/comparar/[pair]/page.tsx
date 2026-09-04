@@ -145,9 +145,12 @@ export default async function FixedComparisonPage({ params }: PageProps) {
       <Reveal className="mt-8">
         <Link
           href={`/comparar?v=${encodeURIComponent(a.slug)},${encodeURIComponent(b.slug)}`}
-          className="link-underline text-sm text-neutral-500 transition-colors hover:text-auto-accent"
+          className="link-underline group text-sm text-neutral-500 transition-colors hover:text-auto-accent"
         >
-          Agregar más vehículos a esta comparación →
+          Agregar más vehículos a esta comparación{' '}
+          <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+            →
+          </span>
         </Link>
       </Reveal>
     </div>

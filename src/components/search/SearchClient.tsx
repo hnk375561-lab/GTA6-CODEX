@@ -248,7 +248,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
           placeholder="Buscar autos, motos, marcas..."
           autoFocus
           aria-label={`Buscar en ${SITE_NAME}`}
-          className="glass-surface w-full rounded-xl border border-edge py-4 pl-12 pr-12 text-lg text-neutral-900 placeholder:text-neutral-400 transition-all focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+          className="glass-surface w-full rounded-xl border border-edge py-4 pl-12 pr-12 text-lg text-neutral-900 placeholder:text-neutral-400 transition focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
         />
         {query && (
           <button
@@ -274,7 +274,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
               <Link
                 key={type}
                 href={`/${type}`}
-                className="group flex items-center gap-3 rounded-lg border border-edge bg-surface-card/60 px-4 py-3.5 transition-colors hover:border-auto-accent/50 hover:bg-surface-alt"
+                className="group flex items-center gap-3 rounded-lg border border-edge bg-surface-card/60 px-4 py-3.5 transition-colors hover:border-auto-accent/50 hover:bg-surface-alt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
               >
                 <div className="category-icon-badge flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-auto-accent">
                   <CategoryIcon type={type} className="h-4 w-4" />
@@ -297,7 +297,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
               onClick={() => setActiveType('todos')}
               aria-pressed={activeType === 'todos'}
               className={cn(
-                'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
+                'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                 activeType === 'todos'
                   ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                   : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -312,7 +312,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
                 onClick={() => setActiveType(type)}
                 aria-pressed={activeType === type}
                 className={cn(
-                  'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
+                  'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                   activeType === type
                     ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                     : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -348,7 +348,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
                   onClick={() => setStatus(key)}
                   aria-pressed={status === key}
                   className={cn(
-                    'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
+                    'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                     status === key
                       ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                       : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -416,7 +416,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
                 <li key={`${entity.type}-${entity.slug}`}>
                   <Link
                     href={`/${entity.type}/${entity.slug}`}
-                    className="search-result-viewport group -mx-3 flex items-start gap-4 rounded-lg px-3 py-4 transition-colors duration-200 hover:bg-auto-darker/40"
+                    className="search-result-viewport group -mx-3 flex items-start gap-4 rounded-lg px-3 py-4 transition-colors duration-200 hover:bg-auto-darker/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent active:bg-auto-darker/60"
                   >
                     <EntityImage
                       entity={entity}

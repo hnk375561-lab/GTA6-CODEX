@@ -10,7 +10,7 @@ interface CardProps {
 
 export function Card({ children, className = '', hoverable = false }: CardProps) {
   const hoverClass = hoverable
-    ? 'tap-scale hover:border-auto-accent/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300'
+    ? 'tap-scale hover:border-auto-accent/50 hover:shadow-md hover:-translate-y-0.5 transition duration-300'
     : 'transition-colors duration-300'
 
   return (

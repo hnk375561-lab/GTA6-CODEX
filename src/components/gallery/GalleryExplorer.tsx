@@ -126,14 +126,14 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Buscar en la galería..."
             aria-label="Buscar en la galería"
-            className="glass-surface w-full rounded-lg border border-edge py-2.5 pl-10 pr-9 text-sm text-neutral-900 placeholder:text-neutral-400 transition-all focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+            className="glass-surface w-full rounded-lg border border-edge py-2.5 pl-10 pr-9 text-sm text-neutral-900 placeholder:text-neutral-400 transition focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
           />
           {query && (
             <button
               type="button"
               onClick={() => setQuery('')}
               aria-label="Limpiar búsqueda"
-              className="tap-scale absolute right-2.5 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-md text-neutral-500 transition-colors hover:bg-surface-alt hover:text-neutral-900"
+              className="tap-scale absolute right-2.5 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-md text-neutral-500 transition-colors hover:bg-surface-alt hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                 <path d="M18 6 6 18M6 6l12 12" />
@@ -148,7 +148,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
             onClick={() => setCategory('todas')}
             aria-pressed={category === 'todas'}
             className={cn(
-              'tap-scale rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
+              'tap-scale rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
               category === 'todas'
                 ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                 : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -164,7 +164,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
               onClick={() => setCategory(c.slug)}
               aria-pressed={category === c.slug}
               className={cn(
-                'tap-scale rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors',
+                'tap-scale rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                 category === c.slug
                   ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                   : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'

@@ -82,7 +82,7 @@ export default async function CategoriasIndexPage() {
         ) : (
           <Reveal className="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map(({ group, count }) => (
-              <Link key={group} href={`/categorias/${categoryToSlug(group)}`}>
+              <Link key={group} href={`/categorias/${categoryToSlug(group)}`} className="group">
                 <Card hoverable className="h-full transition-colors duration-300 hover:border-auto-accent/60">
                   <CardBody className="flex h-full flex-col gap-2">
                     <div className="category-icon-badge flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-auto-accent">
@@ -92,8 +92,11 @@ export default async function CategoriasIndexPage() {
                     <p className="flex-1 text-sm text-neutral-500">
                       {count} {group.toLowerCase()}s documentados.
                     </p>
-                    <span className="text-sm font-semibold uppercase tracking-wide text-auto-accent">
-                      Ver categoría →
+                    <span className="flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-auto-accent">
+                      Ver categoría
+                      <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                        →
+                      </span>
                     </span>
                   </CardBody>
                 </Card>

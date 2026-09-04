@@ -47,7 +47,7 @@ export default function Error({
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => reset()}
-              className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-auto-darker transition-all hover:-translate-y-0.5"
+              className="btn-primary inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-semibold text-auto-darker transition duration-200 hover:-translate-y-0.5"
             >
               Reintentar
             </button>

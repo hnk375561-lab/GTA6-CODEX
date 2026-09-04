@@ -219,9 +219,12 @@ function VehicleMetadata({ entity }: { entity: Vehicle }) {
                     ? `/financiamiento?precio=${Math.round(priceUsd)}&vehiculo=${encodeURIComponent(entity.title)}`
                     : `/financiamiento?vehiculo=${encodeURIComponent(entity.title)}`
                 }
-                className="link-underline font-mono text-[10px] uppercase tracking-wide text-auto-accent hover:text-auto-accent-strong"
+                className="link-underline group font-mono text-[10px] uppercase tracking-wide text-auto-accent hover:text-auto-accent-strong"
               >
-                Simular cuota →
+                Simular cuota{' '}
+                <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                  →
+                </span>
               </Link>
             </div>
           )}

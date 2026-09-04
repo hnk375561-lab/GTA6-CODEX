@@ -82,9 +82,12 @@ export function MonetizationCtaGroup({
         {showTramites && (
           <Link
             href="/tramites-vehiculo"
-            className="link-underline text-sm font-medium text-neutral-500 hover:text-auto-accent-strong"
+            className="link-underline group text-sm font-medium text-neutral-500 hover:text-auto-accent-strong"
           >
-            Trámites de transferencia/patentamiento →
+            Trámites de transferencia/patentamiento{' '}
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+              →
+            </span>
           </Link>
         )}
       </div>

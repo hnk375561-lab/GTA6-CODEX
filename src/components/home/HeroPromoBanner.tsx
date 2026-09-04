@@ -106,9 +106,12 @@ export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
           </p>
           <Link
             href="/vehiculos"
-            className="cta-shine tap-scale mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 shadow-lg transition-transform hover:-translate-y-0.5"
+            className="cta-shine tap-scale group mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 shadow-lg transition-transform hover:-translate-y-0.5"
           >
-            Explorar todos <span aria-hidden="true">→</span>
+            Explorar todos{' '}
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+              →
+            </span>
           </Link>
         </div>
       </div>
@@ -223,9 +226,11 @@ export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
         </div>
 
         {/* CTA grande */}
-        <div className="flex items-center gap-2 pt-2 text-white/40 transition-all duration-150 group-hover:text-white">
+        <div className="flex items-center gap-2 pt-2 text-white/40 transition-colors duration-150 group-hover:text-white">
           <span className="font-semibold">Ver ficha completa</span>
-          <span aria-hidden="true" className="text-lg">→</span>
+          <span aria-hidden="true" className="text-lg transition-transform duration-150 group-hover:translate-x-0.5">
+            →
+          </span>
         </div>
       </div>
     </Link>

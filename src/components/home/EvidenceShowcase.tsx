@@ -93,7 +93,7 @@ export function EvidenceShowcase({ items, autoRotateInterval = 6000 }: EvidenceS
               // Reset automático rotate al hacer click
               if (autoRotateTimer.current) clearInterval(autoRotateTimer.current)
             }}
-            className={`h-2 rounded-full transition-all duration-300 ${
+            className={`relative h-2 rounded-full transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent focus-visible:ring-offset-2 active:scale-90 before:absolute before:-inset-2 before:rounded-full before:content-[''] before:hover:bg-neutral-300/25 ${
               i === currentIndex ? 'w-8 bg-orange-600' : 'w-2 bg-neutral-300 hover:bg-neutral-400'
             }`}
             aria-label={`Ir a dato ${i + 1} de ${items.length}`}
@@ -114,7 +114,7 @@ export function EvidenceShowcase({ items, autoRotateInterval = 6000 }: EvidenceS
         >
           <Card className="relative overflow-hidden !p-0">
             {/* Estado por defecto: dato protagonista */}
-            <div className={`p-8 transition-all duration-500 ${isHovering ? 'opacity-0' : 'opacity-100'}`}>
+            <div className={`p-8 transition-opacity duration-500 ${isHovering ? 'opacity-0' : 'opacity-100'}`}>
               <div className="flex flex-col items-center justify-center gap-4 text-center">
                 <p className="text-sm font-semibold uppercase tracking-[0.15em] text-neutral-500">
                   {current.dataLabel}
@@ -127,15 +127,18 @@ export function EvidenceShowcase({ items, autoRotateInterval = 6000 }: EvidenceS
                 )}
                 <Link
                   href={`/${current.entityType}/${current.slug}`}
-                  className="mt-2 font-display text-sm font-semibold text-orange-600 hover:text-orange-700"
+                  className="group mt-2 inline-flex items-center gap-1 font-display text-sm font-semibold text-orange-600 transition duration-200 hover:text-orange-700"
                 >
-                  {current.title} →
+                  {current.title}
+                  <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                    →
+                  </span>
                 </Link>
               </div>
             </div>
 
             {/* Estado hover: fuente + nivel de confianza */}
-            <div className={`absolute inset-0 flex flex-col justify-between p-8 transition-all duration-500 ${
+            <div className={`absolute inset-0 flex flex-col justify-between p-8 transition-opacity duration-500 ${
               isHovering ? 'opacity-100' : 'opacity-0'
             }`}>
               <div>

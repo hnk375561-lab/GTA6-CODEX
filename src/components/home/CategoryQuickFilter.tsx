@@ -86,10 +86,12 @@ export function CategoryQuickFilter({ options }: CategoryQuickFilterProps) {
           </p>
           <Link
             href={`/categorias/${categoryToSlug(active.group)}`}
-            className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange-600 hover:text-orange-700"
+            className="group mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange-600 transition duration-200 hover:text-orange-700"
           >
             Ver los {active.count} {active.group}
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+              →
+            </span>
           </Link>
         </div>
       )}

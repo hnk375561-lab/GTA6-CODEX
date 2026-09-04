@@ -54,7 +54,7 @@ export function YouTubeEmbed({ embedId, title, thumbnailSrc, autoLoad = false, c
         alt={title}
         fill
         sizes="(min-width: 768px) 60vw, 100vw"
-        className="object-cover opacity-80 transition-all duration-300 group-hover:scale-105 group-hover:opacity-100"
+        className="object-cover opacity-80 transition duration-300 group-hover:scale-105 group-hover:opacity-100"
       />
       <span className="absolute inset-0 flex items-center justify-center bg-white/30 transition-colors group-hover:bg-white/10">
         <span className="media-play-button flex h-16 w-16 items-center justify-center rounded-full bg-auto-accent/90 shadow-lg transition-transform duration-200 group-hover:scale-110">
