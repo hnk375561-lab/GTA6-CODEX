@@ -1,21 +1,4 @@
-/* ============================================================
-   Tipografía self-hosted (@fontsource) — sin llamadas externas a
-   Google Fonts en build/runtime. Cargada antes de Tailwind para
-   que las capas @layer puedan referenciarla sin FOUC de orden.
-   ============================================================ */
-@import '@fontsource/space-grotesk/500.css';
-@import '@fontsource/space-grotesk/600.css';
-@import '@fontsource/space-grotesk/700.css';
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/500.css';
-@import '@fontsource/inter/600.css';
-@import '@fontsource/inter/700.css';
-@import '@fontsource/jetbrains-mono/400.css';
-@import '@fontsource/jetbrains-mono/500.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 /* ============================================================
    CSS Variables — lenguaje visual "Leonida Nights"
@@ -2144,4 +2127,25 @@ video,
     animation: none !important;
     transition: none !important;
   }
+}
+   /* ============================================================
+   NUEVAS REGLAS (Auditoría CRÍTICO #1): Soporte para Scroll Snap Nativo
+   Añadido para compatibilidad con la nueva arquitectura de PinnedScrollStages.
+   ============================================================ */
+
+/* Estado inicial de los paneles antes de ser visibles (controlado por JS) */
+.stage-panel {
+  opacity: 0;
+  transition: opacity 700ms ease-out;
+}
+
+/* Estado activo cuando el IntersectionObserver detecta visibilidad */
+.stage-panel.is-active {
+  opacity: 1;
+}
+
+/* Pausa de animaciones infinitas cuando no están en viewport (Ahorro de batería) */
+.manufacturers-marquee.is-paused .manufacturers-marquee__viewport,
+.hero-glow-card.is-paused::before {
+  animation-play-state: paused !important;
 }
