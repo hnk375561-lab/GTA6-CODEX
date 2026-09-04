@@ -36,24 +36,30 @@
  *   `src/lib/image-loader.ts` pueda resolver cualquier ancho de WIDTHS con
  *   una función pura, sin tener que consultar el filesystem en el navegador.
  *
- * CALIDAD:
- *   quality:100 fijo para TODAS las variantes (ver OUTPUT_QUALITY) — es
- *   igual o superior al quality={} más alto que pide cualquier componente
- *   hoy (100, en EntityGallery.tsx / GalleryExplorer.tsx / SimpleLightbox
- *   vía ZoomableImage.tsx, para la vista ampliada/lightbox). Como el
- *   loader (ver src/lib/image-loader.ts) resuelve el ARCHIVO solo por
- *   ancho — no por el `quality` que pida cada <Image> — generar variantes
- *   por ancho a distinta calidad podría terminar sirviéndole quality:90 a
- *   un componente que pidió quality:97/100 según qué ancho le tocara en
- *   ese viewport/DPR puntual. Fijar 100 en el generador evita esa
- *   combinatoria (ancho × calidad) por completo y garantiza que ningún
- *   componente reciba nunca menos calidad que la que ya pedía.
+ * CALIDAD (por ancho, no plana — 3 sep 2026):
+ *   Antes este script usaba quality:100 fijo para los 12 anchos, sin
+ *   importar qué pide cada componente. Eso es seguro pero desperdicia
+ *   peso: un componente que declara quality:75/90/92 igual recibía un
+ *   archivo a 100 para cualquier ancho.
  *
- *   Contrapartida esperada (avisar al usuario): esto genera archivos más
- *   pesados que si cada variante llevara la calidad mínima que en
- *   realidad necesita su uso más chico — es la única forma simple de no
- *   arriesgar una regresión de nitidez como la ya corregida en
- *   HeroVehicleShowcaseV2.tsx.
+ *   Ahora la calidad de CADA ancho sale de
+ *   scripts/lib/image-usage-manifest.mjs (`buildQualityByWidth()`), que
+ *   replica el algoritmo real de next/image (`getWidths()`) para saber
+ *   qué anchos configurados termina pidiendo cada uno de los 15
+ *   componentes según su `sizes`/`width`, y le asigna a cada ancho la
+ *   calidad MÁXIMA entre todos los componentes que lo piden — así ningún
+ *   componente recibe nunca menos calidad que la que ya pedía, igual que
+ *   antes, pero sin pagar quality:100 en anchos donde nadie lo pide.
+ *
+ *   RESULTADO REAL (auditado, no estimado — ver
+ *   scripts/lib/image-usage-manifest.mjs): de los 12 anchos, 11 terminan
+ *   necesitando quality:100 de todos modos (EntityGallery.tsx pieza
+ *   principal, GalleryExplorer.tsx zoom y SimpleLightbox.tsx piden esos
+ *   anchos a 100, y entre los tres cubren casi todo el rango salvo el
+ *   ancho más chico). Solo el ancho 256px baja de 100 a 95. La ganancia
+ *   de espacio es real pero chica — se imprime en el resumen final del
+ *   build (ver `formatBytes` más abajo) para no subestimarla ni
+ *   sobrevenderla.
  *
  * USO:
  *   node scripts/pregenerate-image-variants.mjs
@@ -69,6 +75,7 @@ import fs from 'fs'
 import path from 'path'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
+import { ALL_WIDTHS, buildQualityByWidth } from './lib/image-usage-manifest.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -82,20 +89,28 @@ const OUTPUT_DIR = path.join(ROOT, 'public', 'images', '_optimized')
  * valores) de next.config.js, sin duplicados, ordenada ascendente — son
  * exactamente los anchos que next/image puede llegar a pedir para
  * cualquier combinación de `sizes`/`fill`/`width` usada hoy en el sitio.
+ * Vive en scripts/lib/image-usage-manifest.mjs (única fuente) porque ese
+ * módulo también la necesita para calcular qué anchos pide cada
+ * componente.
  *
  * IMPORTANTE: si se cambia deviceSizes/imageSizes en next.config.js, hay
- * que reflejar el cambio ACÁ y en la constante homónima de
- * src/lib/image-loader.ts (ese archivo se bundlea para el navegador y no
- * puede importar next.config.js sin arrastrar código de servidor al
- * cliente, así que se mantiene el valor duplicado a propósito, con esta
- * misma referencia cruzada en ambos archivos).
+ * que reflejar el cambio en ALL_WIDTHS de image-usage-manifest.mjs y en
+ * la constante homónima de src/lib/image-loader.ts (ese archivo se
+ * bundlea para el navegador y no puede importar ningún módulo de
+ * scripts/ sin arrastrar código de servidor al cliente, así que ahí se
+ * mantiene el valor duplicado a propósito, con la misma referencia
+ * cruzada).
  */
-const WIDTHS = [256, 320, 384, 512, 640, 750, 828, 1024, 1440, 1920, 2560, 3840]
+const WIDTHS = ALL_WIDTHS
 
 const SOURCE_EXTENSIONS = new Set(['.webp', '.avif', '.jpg', '.jpeg', '.png'])
 
-/** Ver bloque "CALIDAD" en el comment-header de arriba. */
-const OUTPUT_QUALITY = 100
+/**
+ * Map<ancho, calidad> — ver bloque "CALIDAD (por ancho, no plana)" en el
+ * comment-header de arriba. Calculado una sola vez a partir del uso real
+ * de los 15 componentes (scripts/lib/image-usage-manifest.mjs).
+ */
+const QUALITY_BY_WIDTH = buildQualityByWidth()
 
 const APPLY_FORCE = process.argv.includes('--force')
 const concurrencyArg = process.argv.find((a) => a.startsWith('--concurrency='))
@@ -145,6 +160,11 @@ async function processImage(relPath, stats) {
   const srcStat = fs.statSync(srcPath)
 
   for (const width of WIDTHS) {
+    // Ancho que en la práctica ningún componente pide hoy (no debería
+    // pasar con los 15 componentes auditados, pero si el manifiesto
+    // queda desactualizado es más seguro generarlo igual a máxima
+    // calidad que dejar un ancho del srcSet sin archivo.
+    const quality = QUALITY_BY_WIDTH.get(width) ?? 100
     const outRelPath = `${withoutExt}-w${width}.webp`
     const outPath = path.join(OUTPUT_DIR, outRelPath)
 
@@ -166,7 +186,7 @@ async function processImage(relPath, stats) {
     try {
       const buffer = await sharp(srcPath)
         .resize({ width, withoutEnlargement: true })
-        .webp({ quality: OUTPUT_QUALITY })
+        .webp({ quality })
         .toBuffer()
 
       fs.writeFileSync(tmpPath, buffer)
@@ -203,10 +223,12 @@ async function main() {
 
   const stats = { generated: 0, skipped: 0, totalBytes: 0, errors: [] }
 
+  const qualitySummary = WIDTHS.map((w) => `${w}px→q${QUALITY_BY_WIDTH.get(w) ?? 100}`).join(', ')
   console.log(
     `[pregenerate-image-variants] Procesando ${images.length} imágenes × ${WIDTHS.length} anchos ` +
-      `(quality=${OUTPUT_QUALITY}, concurrencia=${CONCURRENCY})...`
+      `(concurrencia=${CONCURRENCY})...`
   )
+  console.log(`[pregenerate-image-variants] Calidad por ancho: ${qualitySummary}`)
 
   await runWithConcurrency(images, CONCURRENCY, (relPath) => processImage(relPath, stats))
 
