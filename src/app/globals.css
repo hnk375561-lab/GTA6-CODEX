@@ -1,5 +1,20 @@
 
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Causa raíz del sitio sin estilos en producción (sept 2026): este archivo
+ * había perdido las directivas `@tailwind` (el commit base "Update
+ * globals.css" reemplazó el archivo sin ellas), así que el plugin PostCSS
+ * de Tailwind no tenía qué expandir y el build servía CERO utilidades
+ * (ni `.flex`, ni `.font-display`, ni `.bg-surface-card`). Sin ellas no
+ * existe build que genere el CSS utilitario — ver
+ * scripts/verify-tailwind-config.mjs (que valida clases en el CSS
+ * compilado y solo puede pasar si estas directivas están presentes).
+ */
+
 /* ============================================================
    CSS Variables — lenguaje visual "Leonida Nights"
    Vice City nocturno + fotografía editorial + expediente clasificado.
