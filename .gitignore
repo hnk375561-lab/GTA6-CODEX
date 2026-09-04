@@ -38,6 +38,13 @@ next-env.d.ts
 /incoming/
 /incoming-images/
 
+# Variantes responsive pregeneradas por
+# scripts/pregenerate-image-variants.mjs (ver next.config.js
+# `images.loaderFile` / src/lib/image-loader.ts). Se regeneran en cada
+# `npm run build` a partir de public/images/entities/**, así que no hace
+# falta (ni conviene, por peso) commitearlas.
+/public/images/_optimized/
+
 # Archivos de proceso interno / debug de CI (no son parte del producto)
 /.ci-debug/
 /.trigger-poster-gen
