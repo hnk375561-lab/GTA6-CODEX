@@ -7,13 +7,15 @@ const DISMISS_KEY = 'sinfrenos-sticky-ad-dismissed'
 
 // Slot de AdSense dedicado para el formato "Anchor ad" (anuncio ancla,
 // fijo al pie de pantalla en mobile). Requiere crear ese slot puntual desde
-// AdSense (Anuncios → Por unidad de anuncio → In-page → Ancla) — NO
-// reutilizar uno de los slotId de `format="responsive"` que ya usan las
-// otras páginas, porque el formato ancla necesita su propio slot dado de
-// alta como tal en la cuenta. Hasta reemplazar este placeholder por el
-// slot real, AdSense simplemente no lo va a rellenar (no rompe nada:
-// mismo criterio fail-soft que el resto de `AdUnit.tsx`).
-const STICKY_AD_SLOT_ID = '0000000000'
+// AdSense (Anuncios → Por unidad de anuncio → In-page → Ancla).
+// IMPORTANTE: Reemplazar con tu slotId real de AdSense (formato numérico).
+// Instrucciones:
+// 1. Ve a Google AdSense > Anuncios > Por unidad de anuncio
+// 2. Crea nuevo slot tipo "In-page" > "Ancla (sticky)"
+// 3. Copia el ID numérico de 16 dígitos
+// 4. Reemplaza '0000000000' con ese ID en las variables de entorno:
+//    NEXT_PUBLIC_ADSENSE_ANCHOR_SLOT_ID=tu_slot_id_aqui
+const STICKY_AD_SLOT_ID = process.env.NEXT_PUBLIC_ADSENSE_ANCHOR_SLOT_ID || '0000000000'
 
 /**
  * Anuncio ancla (sticky) para mobile — canal nuevo, documentado en

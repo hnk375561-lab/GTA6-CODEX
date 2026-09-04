@@ -34,21 +34,21 @@ interface EntityOgImage {
 }
 
 /**
- * Genera metadata para una entidad.
+ * Genera metadata dinámico mejorado para una entidad.
+ *
+ * P1 Optimization (2026-09-04): Las descriptions estáticas dejaban dinero.
+ * Esta versión genera descriptions específicas por tipo de entidad con datos
+ * reales (poder, clase, precio) cuando están disponibles.
  *
  * `ogImage`: retrato ya resuelto de la entidad (local o remoto). Si no se
  * pasa o la entidad no tiene ninguno, cae al OG genérico del sitio
- * (`/og-image.png`) — antes esto pasaba SIEMPRE, para las 162 entidades por
- * igual, sin importar que muchas ya tuvieran retrato propio. No se fija
- * `width`/`height` fijos (1200x630) para el retrato de entidad porque su
- * aspect ratio real varía por variante (`portrait` ~4:5); forzar esas
- * dimensiones mentiría sobre el tamaño real de la imagen a los crawlers de
- * OG/Twitter. El fallback genérico sí es 1200x630 real, así que ahí se
- * mantienen explícitas.
+ * (`/og-image.png`). No se fija width/height fijos para retrato de entidad
+ * porque su aspect ratio real varía; el fallback genérico sí es 1200x630.
  */
 export function generateEntityMetadata(entity: Entity, ogImage?: EntityOgImage | null): Metadata {
   const title = entity.seoTitle || entity.title
-  const description = entity.seoDescription || entity.description
+  // Generar description dinámica si no existe una custom seoDescription
+  const description = entity.seoDescription || generateDynamicDescription(entity)
   const url = `${SITE_URL}/${entity.type}/${entity.slug}`
   const fallbackImage = `${SITE_URL}/og-image.png`
 
@@ -79,6 +79,40 @@ export function generateEntityMetadata(entity: Entity, ogImage?: EntityOgImage |
       images: [image],
     },
   }
+}
+
+/**
+ * Genera meta descriptions dinámicas específicas por tipo de entidad.
+ * Extrae datos clave (poder, clase, precio, mercados) para mejorar CTR en SERP.
+ */
+function generateDynamicDescription(entity: Entity): string {
+  // Fallback genérico: usar entity.description si existe
+  if (entity.description && entity.description !== entity.title) {
+    return entity.description
+  }
+
+  // Si es vehículo, armar description rica en datos
+  if (entity.type === EntityType.VEHICLE) {
+    const vehicle = entity as unknown as { class?: string; power?: string; price?: string; manufacturer?: string }
+    const parts: string[] = []
+    
+    if (vehicle.manufacturer) parts.push(vehicle.manufacturer)
+    if (vehicle.class) parts.push(vehicle.class.toLowerCase())
+    if (vehicle.power) parts.push(`${vehicle.power} potencia`)
+    if (vehicle.price) parts.push(`desde ${vehicle.price}`)
+    
+    if (parts.length > 0) {
+      return `${entity.title}: ${parts.join(', ')}. Compará specs, diseño y precio en Sin Frenos.`
+    }
+  }
+
+  // Si es fabricante
+  if (entity.type === EntityType.MANUFACTURER) {
+    return `Modelos ${entity.title} en catálogo de Sin Frenos. Comparar preços, potencia y specs de todos los vehículos ${entity.title}.`
+  }
+
+  // Fallback: descripción genérica
+  return `${entity.title} en Sin Frenos. Fichas técnicas, comparador y specs verificados de autos y motos.`
 }
 
 /**
