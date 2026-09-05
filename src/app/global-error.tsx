@@ -43,6 +43,7 @@ export default function GlobalError({
             El sitio tuvo un error inesperado. Probá recargar la página.
           </p>
           <button
+            type="button"
             onClick={() => reset()}
             style={{
               padding: '0.75rem 2rem',
