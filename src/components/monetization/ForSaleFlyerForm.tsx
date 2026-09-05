@@ -84,7 +84,7 @@ export function ForSaleFlyerForm({ className = '' }: { className?: string }) {
           value={data.marca}
           onChange={(e) => update('marca', e.target.value)}
           required
-          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm"
+          className="w-full rounded-md border border-edge bg-surface-input px-3 py-2 text-sm"
         />
         <input
           type="text"
@@ -92,7 +92,7 @@ export function ForSaleFlyerForm({ className = '' }: { className?: string }) {
           value={data.modelo}
           onChange={(e) => update('modelo', e.target.value)}
           required
-          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm"
+          className="w-full rounded-md border border-edge bg-surface-input px-3 py-2 text-sm"
         />
         <input
           type="text"
@@ -100,14 +100,14 @@ export function ForSaleFlyerForm({ className = '' }: { className?: string }) {
           value={data.anio}
           onChange={(e) => update('anio', e.target.value)}
           required
-          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm"
+          className="w-full rounded-md border border-edge bg-surface-input px-3 py-2 text-sm"
         />
         <input
           type="text"
           placeholder="Kilometraje (opcional)"
           value={data.km}
           onChange={(e) => update('km', e.target.value)}
-          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm"
+          className="w-full rounded-md border border-edge bg-surface-input px-3 py-2 text-sm"
         />
         <input
           type="text"
@@ -115,7 +115,7 @@ export function ForSaleFlyerForm({ className = '' }: { className?: string }) {
           value={data.precio}
           onChange={(e) => update('precio', e.target.value)}
           required
-          className="col-span-2 w-full rounded-md border border-edge bg-white px-3 py-2 text-sm"
+          className="col-span-2 w-full rounded-md border border-edge bg-surface-input px-3 py-2 text-sm"
         />
         <input
           type="text"
@@ -123,14 +123,14 @@ export function ForSaleFlyerForm({ className = '' }: { className?: string }) {
           value={data.contacto}
           onChange={(e) => update('contacto', e.target.value)}
           required
-          className="col-span-2 w-full rounded-md border border-edge bg-white px-3 py-2 text-sm"
+          className="col-span-2 w-full rounded-md border border-edge bg-surface-input px-3 py-2 text-sm"
         />
         <input
           type="text"
           placeholder="Ubicación (opcional, ej. Concepción del Uruguay)"
           value={data.ubicacion}
           onChange={(e) => update('ubicacion', e.target.value)}
-          className="col-span-2 w-full rounded-md border border-edge bg-white px-3 py-2 text-sm"
+          className="col-span-2 w-full rounded-md border border-edge bg-surface-input px-3 py-2 text-sm"
         />
       </div>
       <button

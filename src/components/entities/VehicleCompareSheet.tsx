@@ -89,7 +89,7 @@ export function VehicleCompareBar({ selected, imageBySlug, onRemove, onClear, on
                   type="button"
                   onClick={() => onRemove(v.slug)}
                   aria-label={`Quitar ${v.title} de la comparación`}
-                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-edge bg-white text-neutral-500 transition duration-200 hover:text-auto-accent active:scale-90 group-hover:opacity-100 focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1.5 before:rounded-full before:content-[''] opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
+                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-edge bg-surface-elevated text-neutral-500 transition duration-200 hover:text-auto-accent active:scale-90 group-hover:opacity-100 focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1.5 before:rounded-full before:content-[''] opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
                 >
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />
@@ -385,9 +385,9 @@ export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: Vehicle
                           status === 'present' ? '✓' : status === 'absent' ? '✕' : '—'
                         const bgColor =
                           status === 'present'
-                            ? 'bg-green-500/10 text-green-600'
+                            ? 'bg-green-500/10 text-green-600 dark:text-green-400'
                             : status === 'absent'
-                              ? 'bg-red-500/10 text-red-600'
+                              ? 'bg-red-500/10 text-red-600 dark:text-red-400'
                               : 'bg-surface-card text-neutral-500'
 
                         return (

@@ -62,8 +62,8 @@ export function CategoryQuickFilter({ options }: CategoryQuickFilterProps) {
               className={cn(
                 'tap-scale rounded-full border px-4 py-2 text-sm font-semibold transition-colors',
                 isActive
-                  ? 'border-neutral-900 bg-neutral-900 text-white'
-                  : 'border-neutral-200 bg-white text-neutral-700 hover:border-neutral-400'
+                  ? 'border-inverse bg-inverse text-white'
+                  : 'border-neutral-200 bg-surface-card text-neutral-700 hover:border-neutral-400'
               )}
             >
               {option.group}{' '}
@@ -77,7 +77,7 @@ export function CategoryQuickFilter({ options }: CategoryQuickFilterProps) {
           se oculta con CSS — evita que un lector de pantalla anuncie un
           bloque vacío mientras no hay selección. */}
       {active && (
-        <div className="mx-auto mt-5 max-w-xl rounded-xl border border-neutral-200 bg-white p-5 text-center shadow-sm">
+        <div className="mx-auto mt-5 max-w-xl rounded-xl border border-neutral-200 bg-surface-card p-5 text-center shadow-sm">
           <p className="text-sm text-neutral-600">
             {active.examples.join(' · ')}
             {active.count > active.examples.length && (
@@ -86,7 +86,7 @@ export function CategoryQuickFilter({ options }: CategoryQuickFilterProps) {
           </p>
           <Link
             href={`/categorias/${categoryToSlug(active.group)}`}
-            className="group mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange-600 transition duration-200 hover:text-orange-700"
+            className="group mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange-600 transition duration-200 hover:text-orange-700 dark:text-auto-accent dark:hover:text-auto-accent-strong"
           >
             Ver los {active.count} {active.group}
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">

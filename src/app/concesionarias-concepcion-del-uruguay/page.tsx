@@ -147,7 +147,7 @@ export default function DirectorioConcepcionDelUruguayPage() {
       <Reveal delay={260} direction="glide">
         <div className="flex flex-col items-center gap-3 rounded-xl border border-edge bg-auto-darker p-8 text-center">
           <p className="font-display text-lg font-semibold text-white">¿Tenés un negocio del rubro en la ciudad?</p>
-          <p className="max-w-md text-sm text-neutral-300">
+          <p className="max-w-md text-sm text-auto-text-secondary">
             Sumate al directorio y aparecé frente a gente que ya está comparando autos y motos antes de comprar.
             Ver planes y precios en{' '}
             <Link href="/anunciate" className="link-underline text-auto-accent">

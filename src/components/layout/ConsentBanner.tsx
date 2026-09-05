@@ -122,7 +122,7 @@ export function ConsentBanner({
             <div className="flex shrink-0 gap-3">
               <button
                 onClick={() => decide('rejected')}
-                className="rounded-lg border border-edge px-4 py-2.5 text-sm font-semibold text-neutral-500 transition-colors hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                className="rounded-lg border border-edge px-4 py-2.5 text-sm font-semibold text-auto-text-secondary transition-colors hover:text-auto-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
               >
                 Rechazar
               </button>

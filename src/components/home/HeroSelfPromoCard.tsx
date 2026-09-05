@@ -67,7 +67,7 @@ interface HeroSelfPromoCardProps {
  */
 export function HeroSelfPromoCard({ items, className }: HeroSelfPromoCardProps) {
   const containerClassName = cn(
-    'hero-glow-card relative flex h-full w-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-900 text-white shadow-lg',
+    'hero-glow-card relative flex h-full w-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-inverse text-white shadow-lg',
     className
   )
 
@@ -77,19 +77,19 @@ export function HeroSelfPromoCard({ items, className }: HeroSelfPromoCardProps) 
   if (items.length === 0) {
     return (
       <aside aria-label="Recomendación del sitio" className={containerClassName}>
-        <div className="flex h-full flex-col justify-end bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-6">
+        <div className="flex h-full flex-col justify-end bg-gradient-to-br from-[#262626] via-[#171717] to-black p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
             {`Explorá el expediente`}
           </p>
           <p className="mt-3 font-display text-2xl font-bold leading-tight">
             Todas las fichas, con fuente citada
           </p>
-          <p className="mt-2 max-w-sm text-sm text-neutral-300">
+          <p className="mt-2 max-w-sm text-sm text-auto-text-secondary">
             Specs reales de fabricante, nunca relleno — compará antes de decidir.
           </p>
           <Link
             href="/vehiculos"
-            className="cta-shine tap-scale group mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-neutral-900 shadow-lg transition-transform hover:-translate-y-0.5"
+            className="cta-shine tap-scale group mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-[#171717] shadow-lg transition-transform hover:-translate-y-0.5"
           >
             Ver catálogo{' '}
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">

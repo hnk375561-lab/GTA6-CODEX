@@ -58,7 +58,7 @@ export function HomeFaqPanel({ items }: HomeFaqPanelProps) {
   if (items.length === 0) return null
 
   return (
-    <section className="relative border-t border-edge bg-white py-16 sm:py-20" aria-labelledby={`${baseId}-heading`}>
+    <section className="relative border-t border-edge bg-surface-page py-16 sm:py-20" aria-labelledby={`${baseId}-heading`}>
       <div className="container-max">
         <Reveal className="mx-auto mb-10 max-w-2xl text-center">
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">

@@ -114,7 +114,7 @@ export default function AnunciatePage() {
       <Reveal delay={180} direction="glide">
         <div className="flex flex-col items-center gap-3 rounded-xl border border-edge bg-auto-darker p-8 text-center">
           <p className="font-display text-lg font-semibold text-white">¿Charlamos 15 minutos?</p>
-          <p className="max-w-md text-sm text-neutral-300">
+          <p className="max-w-md text-sm text-auto-text-secondary">
             Contanos tu rubro y te armamos una propuesta con el espacio que más sentido tenga para tu negocio —
             sin compromiso.
           </p>

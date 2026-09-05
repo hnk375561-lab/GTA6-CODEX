@@ -125,7 +125,7 @@ export function FinancingTeaser() {
         <div className="text-center">
           <Link
             href={fullCalculatorHref}
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-inverse px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
           >
             Ver simulación completa{' '}
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">

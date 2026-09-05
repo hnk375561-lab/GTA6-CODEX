@@ -140,7 +140,7 @@ export function RankingsSpotlight({ rankings }: RankingsSpotlightProps) {
             className={cn(
               'rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors',
               i === activeIndex
-                ? 'border-neutral-900 bg-neutral-900 text-white'
+                ? 'border-inverse bg-inverse text-white'
                 : 'border-neutral-300 text-neutral-500 hover:border-neutral-400 hover:text-neutral-900'
             )}
           >
@@ -174,12 +174,12 @@ export function RankingsSpotlight({ rankings }: RankingsSpotlightProps) {
                   </span>
                   <Link
                     href={`/vehiculos/${entry.vehicleSlug}`}
-                    className="min-w-0 flex-1 truncate text-sm font-semibold text-neutral-900 hover:text-orange-600"
+                    className="min-w-0 flex-1 truncate text-sm font-semibold text-neutral-900 hover:text-orange-600 dark:hover:text-auto-accent"
                   >
                     {entry.vehicleTitle}
                   </Link>
                   {isBest && (
-                    <span className="shrink-0 rounded-full bg-orange-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-orange-700">
+                    <span className="shrink-0 rounded-full bg-orange-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-orange-700 dark:bg-orange-500/15 dark:text-orange-300">
                       Mejor valor
                     </span>
                   )}
@@ -199,7 +199,7 @@ export function RankingsSpotlight({ rankings }: RankingsSpotlightProps) {
           <div className="mt-6 text-center">
             <Link
               href={`/rankings/${ranking.slug}`}
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-inverse px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
             >
               Ver ranking completo{' '}
               <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">

@@ -284,7 +284,7 @@ export function PinnedScrollStages({ stages }: Props) {
             className={cn(
               'w-2 h-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-auto-accent',
               activeStageId === stage.id
-                ? 'bg-neutral-900 scale-125'
+                ? 'bg-inverse scale-125'
                 : 'bg-neutral-300 hover:bg-neutral-400'
             )}
             aria-label={`Ir a ${stage.label}`}

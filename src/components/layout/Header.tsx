@@ -7,6 +7,7 @@ import { EntityType } from '@/types'
 import { SITE_NAME } from '@/config/site'
 import { cn } from '@/lib/utils'
 import { useWishlist } from '@/lib/hooks/useWishlist'
+import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
 /**
  * Enlaces siempre visibles en la barra: la categoría núcleo del sitio
@@ -77,7 +78,7 @@ export function Header() {
 
   const iconBtnClass = isHome
     ? 'tap-scale relative flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-300 text-neutral-600 transition hover:border-neutral-900 hover:text-neutral-900 focus-visible:border-neutral-900 focus-visible:text-neutral-900 before:absolute before:-inset-1 before:rounded-lg before:content-[\'\']'
-    : 'tap-scale relative flex h-9 w-9 items-center justify-center rounded-lg border border-edge text-neutral-500 transition hover:border-auto-accent hover:text-auto-accent-strong focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1 before:rounded-lg before:content-[\'\']'
+    : 'tap-scale relative flex h-9 w-9 items-center justify-center rounded-lg border border-edge text-auto-text-secondary transition hover:border-auto-accent hover:text-auto-accent-strong focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1 before:rounded-lg before:content-[\'\']'
 
   // Enlace activo: exacto o sub-ruta (ej. `/vehiculos` queda activo en
   // `/vehiculos/toyota-corolla`) — el único link sin sub-rutas propias es
@@ -92,7 +93,7 @@ export function Header() {
           ? // `fixed` (no `sticky`): fuera del flujo del documento, no le
             // resta alto al panel pineado de 100dvh de abajo. `env(safe-area-inset-top)`
             // lo empuja debajo del notch/isla dinámica en vez de quedar tapado.
-            'fixed inset-x-0 top-0 z-50 w-full border-b border-neutral-200/70 bg-white/75 backdrop-blur-md'
+            'fixed inset-x-0 top-0 z-50 w-full border-b border-neutral-200/70 bg-surface-header backdrop-blur-md'
           : 'glass-surface sticky top-0 z-50 w-full border-b border-edge/80 shadow-[0_1px_0_0_rgba(255,255,255,0.03)]'
       }
       // Safe-area superior en AMBAS variantes: en home el `fixed` necesita
@@ -109,7 +110,7 @@ export function Header() {
           <div
             className={
               isHome
-                ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-neutral-900'
+                ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-auto-dark'
                 : 'logo-mark flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-auto-accent to-auto-accent-orange'
             }
           >
@@ -119,10 +120,10 @@ export function Header() {
           </div>
           {isHome ? (
             <span className="hidden font-display text-base font-semibold tracking-tight text-neutral-900 transition-colors duration-300 group-hover:text-neutral-600 sm:inline">
-              {SITE_NAME_FIRST_WORD} <span className="text-orange-600">{SITE_NAME_REST}</span>
+              {SITE_NAME_FIRST_WORD} <span className="text-orange-600 dark:text-auto-accent">{SITE_NAME_REST}</span>
             </span>
           ) : (
-            <span className="hidden font-display text-base font-semibold tracking-tight text-neutral-900 transition-colors duration-300 group-hover:text-auto-accent-strong sm:inline">
+            <span className="hidden font-display text-base font-semibold tracking-tight text-auto-text transition-colors duration-300 group-hover:text-auto-accent-strong sm:inline">
               {SITE_NAME_FIRST_WORD} <span className="text-gradient-vice">{SITE_NAME_REST}</span>
             </span>
           )}
@@ -146,7 +147,7 @@ export function Header() {
                       : 'text-neutral-600 hover:text-neutral-900 focus-visible:text-neutral-900'
                     : active
                       ? 'text-auto-accent-strong'
-                      : 'text-neutral-500 hover:text-auto-accent-strong focus-visible:text-auto-accent-strong'
+                      : 'text-auto-text-secondary hover:text-auto-accent-strong focus-visible:text-auto-accent-strong'
                 )}
               >
                 {link.label}
@@ -199,6 +200,8 @@ export function Header() {
             )}
           </Link>
 
+          <ThemeToggle className={iconBtnClass} />
+
           <button
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
@@ -243,7 +246,7 @@ export function Header() {
           'grid transition-[grid-template-rows] duration-300 ease-[var(--ease-standard)] md:hidden',
           menuOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
           isHome
-            ? 'border-t border-neutral-200/70 bg-white/95 backdrop-blur-md'
+            ? 'border-t border-neutral-200/70 bg-surface-drawer backdrop-blur-md'
             : 'glass-surface border-t border-edge'
         )}
       >
@@ -263,7 +266,7 @@ export function Header() {
                         : 'text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 focus-visible:bg-neutral-100 focus-visible:text-neutral-900'
                       : active
                         ? 'bg-surface-alt text-auto-accent-strong'
-                        : 'text-neutral-500 hover:bg-surface-alt hover:text-auto-accent-strong focus-visible:bg-surface-alt focus-visible:text-auto-accent'
+                        : 'text-auto-text-secondary hover:bg-surface-alt hover:text-auto-accent-strong focus-visible:bg-surface-alt focus-visible:text-auto-accent'
                   )}
                 >
                   {link.label}

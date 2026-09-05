@@ -92,7 +92,7 @@ export function RankingsLeaderboardTabs({
               className={cn(
                 'tap-scale rounded-full border px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                 isActive
-                  ? 'border-neutral-900 bg-neutral-900 text-white'
+                  ? 'border-inverse bg-inverse text-white'
                   : 'border-edge text-neutral-500 hover:border-auto-accent hover:text-auto-accent-strong'
               )}
             >
@@ -125,7 +125,7 @@ export function RankingsLeaderboardTabs({
                 className={cn(
                   'tap-scale rounded-full px-3 py-1 text-xs font-semibold capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                   view === mode
-                    ? 'bg-neutral-900 text-white'
+                    ? 'bg-inverse text-white'
                     : 'text-neutral-500 hover:text-neutral-900'
                 )}
               >

@@ -58,16 +58,44 @@ module.exports = {
         // "premium" anterior — encaja con metal de taller, no con joyería.
         'auto-gold': '#c9a35f',
 
-        // Tokens de tema claro (fase de migración fondo-oscuro -> blanco,
-        // ver AUDITORIA-FONDO-OSCURO-COMPLETA.md). Conviven con los
-        // tokens oscuros de arriba hasta que la Fase 6 de esa migración
-        // los reemplace por completo fuera de /dashboard.
-        'surface-page': '#ffffff',
-        'surface-alt': '#fafafa',
-        'surface-card': '#ffffff',
-        'surface-card-hover': '#fcfcfc',
-        'edge': '#e5e5e5',
-        'edge-strong': '#d4d4d4',
+        // Tokens semánticos de superficie y escala neutral (reingeniería
+        // de dark mode, sept 2026). Los VALORES viven en
+        // src/app/globals.css como CSS custom properties (`--color-*`):
+        // `:root` define el tema claro (idéntico al estado pre-dark-mode)
+        // y `.dark` el tema oscuro — diseñado por jerarquía de superficies
+        // y luminancia, no una inversión de colores. Cada token usa el
+        // patrón de tripleta RGB + `<alpha-value>` para que los
+        // modificadores de opacidad de Tailwind (`/70`, `/10`, `/20` …)
+        // sigan generando `rgb(var(--color-x) / 0.7)` en vez de romper
+        // (ver AUDITORIA-FONDO-OSCURO-COMPLETA.md: la Opción B con
+        // `var(--x)` directo DROPA las clases con opacidad). Los tokens
+        // de glass con alpha horneado (header/drawer/chip) se referencian
+        // sin `<alpha-value>`: su transparencia es parte del valor.
+        neutral: {
+          50: 'rgb(var(--color-neutral-50) / <alpha-value>)',
+          100: 'rgb(var(--color-neutral-100) / <alpha-value>)',
+          200: 'rgb(var(--color-neutral-200) / <alpha-value>)',
+          300: 'rgb(var(--color-neutral-300) / <alpha-value>)',
+          400: 'rgb(var(--color-neutral-400) / <alpha-value>)',
+          500: 'rgb(var(--color-neutral-500) / <alpha-value>)',
+          600: 'rgb(var(--color-neutral-600) / <alpha-value>)',
+          700: 'rgb(var(--color-neutral-700) / <alpha-value>)',
+          800: 'rgb(var(--color-neutral-800) / <alpha-value>)',
+          900: 'rgb(var(--color-neutral-900) / <alpha-value>)',
+          950: 'rgb(var(--color-neutral-950) / <alpha-value>)',
+        },
+        'surface-page': 'rgb(var(--color-surface-page) / <alpha-value>)',
+        'surface-alt': 'rgb(var(--color-surface-alt) / <alpha-value>)',
+        'surface-card': 'rgb(var(--color-surface-card) / <alpha-value>)',
+        'surface-card-hover': 'rgb(var(--color-surface-card-hover) / <alpha-value>)',
+        'surface-elevated': 'rgb(var(--color-surface-elevated) / <alpha-value>)',
+        'surface-input': 'rgb(var(--color-surface-input) / <alpha-value>)',
+        'surface-header': 'rgb(var(--color-surface-header))',
+        'surface-drawer': 'rgb(var(--color-surface-drawer))',
+        'surface-chip': 'rgb(var(--color-surface-chip))',
+        'inverse': 'rgb(var(--color-inverse) / <alpha-value>)',
+        'edge': 'rgb(var(--color-edge) / <alpha-value>)',
+        'edge-strong': 'rgb(var(--color-edge-strong) / <alpha-value>)',
       },
       fontFamily: {
         sans: [

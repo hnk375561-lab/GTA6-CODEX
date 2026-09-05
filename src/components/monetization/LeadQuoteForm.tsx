@@ -161,7 +161,7 @@ export function LeadQuoteForm({
           value={nombre}
           onChange={(e) => setNombre(e.target.value)}
           required
-          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm transition duration-200 focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+          className="w-full rounded-md border border-edge bg-surface-input px-3 py-2 text-sm transition duration-200 focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
         />
         <input
           type="text"
@@ -169,14 +169,14 @@ export function LeadQuoteForm({
           value={contacto}
           onChange={(e) => setContacto(e.target.value)}
           required
-          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm transition duration-200 focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+          className="w-full rounded-md border border-edge bg-surface-input px-3 py-2 text-sm transition duration-200 focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
         />
         <textarea
           placeholder="¿Algo puntual que quieras preguntar? (opcional)"
           value={comentario}
           onChange={(e) => setComentario(e.target.value)}
           rows={2}
-          className="w-full rounded-md border border-edge bg-white px-3 py-2 text-sm transition duration-200 focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+          className="w-full rounded-md border border-edge bg-surface-input px-3 py-2 text-sm transition duration-200 focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
         />
         <button
           type="submit"

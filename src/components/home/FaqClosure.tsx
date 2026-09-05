@@ -30,7 +30,7 @@ export function FaqClosure() {
 
   return (
     <section
-      className="border-t border-edge bg-white pb-16 pt-2 sm:pb-20"
+      className="border-t border-edge bg-surface-page pb-16 pt-2 sm:pb-20"
       aria-labelledby="faq-closure-heading"
     >
       <div className="container-max">
@@ -53,7 +53,7 @@ export function FaqClosure() {
               <button
                 type="button"
                 onClick={rewind}
-                className="tap-scale rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
+                className="tap-scale rounded-full bg-inverse px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
               >
                 Repasá el recorrido
               </button>

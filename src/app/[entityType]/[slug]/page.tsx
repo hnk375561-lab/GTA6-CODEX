@@ -291,7 +291,7 @@ export default async function EntityPage({ params }: PageProps) {
           (ver más abajo) en vez de un efecto interactivo — sin JS extra. */}
       <SceneSection
         sceneId="entity-header"
-        className="relative overflow-hidden border-b border-edge bg-gradient-to-b from-surface-alt to-white py-10 sm:py-14"
+        className="relative overflow-hidden border-b border-edge bg-gradient-to-b from-surface-alt to-surface-page py-10 sm:py-14"
       >
         <EntityHeaderBackground type={type} evidenceLevel={entity.evidence?.level} />
         <div className="container-max relative">

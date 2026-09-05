@@ -98,7 +98,7 @@ export function WishlistExplorer({ entities, imageBySlug }: WishlistExplorerProp
         </p>
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
           {confirmClear && (
-            <span role="alert" className="text-xs font-medium text-red-500">
+            <span role="alert" className="text-xs font-medium text-red-500 dark:text-red-400">
               Vaciar todos los favoritos no se puede deshacer.
             </span>
           )}
@@ -108,7 +108,7 @@ export function WishlistExplorer({ entities, imageBySlug }: WishlistExplorerProp
             aria-pressed={confirmClear}
             className={
               confirmClear
-                ? 'rounded-md border border-red-200 bg-red-50 px-2.5 py-1 text-sm font-semibold text-red-600 transition duration-200 hover:bg-red-100 active:scale-[0.97]'
+                ? 'rounded-md border border-red-200 bg-red-50 px-2.5 py-1 text-sm font-semibold text-red-600 transition duration-200 hover:bg-red-100 active:scale-[0.97] dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-400 dark:hover:bg-red-500/20'
                 : 'text-sm font-semibold text-neutral-500 transition duration-200 hover:text-auto-accent-strong active:scale-[0.97] active:text-auto-accent-strong'
             }
           >

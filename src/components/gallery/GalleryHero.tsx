@@ -29,7 +29,7 @@ export function GalleryHero({ total, categoryCount }: GalleryHeroProps) {
 
       <div className="container-max relative py-20 sm:py-28">
         <Reveal direction="chapter">
-          <p className="eyebrow-pop mb-4 inline-flex items-center gap-2 rounded-full border border-edge bg-white/50 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-auto-accent-strong backdrop-blur-sm">
+          <p className="eyebrow-pop mb-4 inline-flex items-center gap-2 rounded-full border border-edge bg-white/50 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-auto-accent-strong backdrop-blur-sm dark:bg-surface-chip">
             Archivo visual
           </p>
           <h1 className="max-w-2xl text-4xl font-bold tracking-tightest text-neutral-900 sm:text-6xl">

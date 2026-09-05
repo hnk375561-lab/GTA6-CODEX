@@ -87,6 +87,72 @@
   --ease-background: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease-text: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-media: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+
+  /* --- Tokens semánticos de color (reingeniería de dark mode, sept
+     2026) -------------------------------------------------------------
+     Las utilities de Tailwind (text/bg/border/ring/shadow) leen estas
+     custom properties mediante `rgb(var(--color-x) / <alpha-value>)`
+     definido en tailwind.config.js — así los modificadores de opacidad
+     (`/70`, `/10`, …) siguen funcionando. `:root` = tema claro (valores
+     idénticos a la paleta neutral default de Tailwind y al estado
+     pre-dark-mode). `.dark` (bloque de abajo) = tema oscuro diseñado,
+     no una inversión: escala neutral con luminancia ascendente sobre
+     lienzo grafito, y superficies por jerarquía (L0 página → L5 modal).
+     Las tres capas glass con alpha horneado (`surface-header`/`drawer`/
+     `chip`) se usan sin `<alpha-value>`: su transparencia es el valor. */
+  --color-neutral-50: 250 250 250;
+  --color-neutral-100: 245 245 245;
+  --color-neutral-200: 229 229 229;
+  --color-neutral-300: 212 212 212;
+  --color-neutral-400: 163 163 163;
+  --color-neutral-500: 115 115 115;
+  --color-neutral-600: 82 82 82;
+  --color-neutral-700: 64 64 64;
+  --color-neutral-800: 38 38 38;
+  --color-neutral-900: 23 23 23;
+  --color-neutral-950: 10 10 10;
+  --color-surface-page: 255 255 255;
+  --color-surface-alt: 250 250 250;
+  --color-surface-card: 255 255 255;
+  --color-surface-card-hover: 252 252 252;
+  --color-surface-elevated: 255 255 255;
+  --color-surface-input: 255 255 255;
+  --color-surface-header: 255 255 255 / 0.75;
+  --color-surface-drawer: 255 255 255 / 0.95;
+  --color-surface-chip: 255 255 255 / 0.9;
+  --color-inverse: 24 24 27;
+  --color-edge: 229 229 229;
+  --color-edge-strong: 212 212 212;
+}
+
+/* --- Dark mode: `.dark` en <html> (gestionado por ThemeToggle,
+   ver lib/theme + layout.tsx). Misma API de tokens que `:root`, solo
+   cambian los valores. `color-scheme: dark` sincroniza los native
+   controls (scrollbar, inputs, select, date pickers) con el tema. --- */
+.dark {
+  --color-neutral-50: 26 31 41;
+  --color-neutral-100: 34 40 54;
+  --color-neutral-200: 44 52 68;
+  --color-neutral-300: 61 70 88;
+  --color-neutral-400: 124 135 152;
+  --color-neutral-500: 152 161 176;
+  --color-neutral-600: 170 179 193;
+  --color-neutral-700: 191 198 211;
+  --color-neutral-800: 214 219 228;
+  --color-neutral-900: 238 241 245;
+  --color-neutral-950: 248 250 252;
+  --color-surface-page: 11 13 16;
+  --color-surface-alt: 18 21 26;
+  --color-surface-card: 18 21 26;
+  --color-surface-card-hover: 22 27 33;
+  --color-surface-elevated: 26 32 41;
+  --color-surface-input: 14 18 24;
+  --color-surface-header: 10 12 17 / 0.78;
+  --color-surface-drawer: 14 17 23 / 0.95;
+  --color-surface-chip: 30 36 46 / 0.92;
+  --color-inverse: 42 52 65;
+  --color-edge: 36 42 50;
+  --color-edge-strong: 51 60 71;
 }
 
 @media (max-width: 640px) {
@@ -114,6 +180,12 @@ html {
   color-scheme: light;
 }
 
+/* El tema oscuro (`.dark`, ver bloque de arriba) también conmuta los
+   native controls (scrollbar, selects, inputs) a apariencia oscura. */
+.dark {
+  color-scheme: dark;
+}
+
 /* Ancla del countdown (#countdown, ver htmlId en la SceneSection de
    page.tsx), enlazada desde el nuevo chip de countdown del hero: el
    header es sticky (~72-80px), así que sin este margen el scroll-into-
@@ -131,7 +203,7 @@ html {
    blanco solo en '/', vía HomeBodyBg.tsx) queda obsoleto: ahora el
    tema base ya es blanco en todo el sitio. */
 body {
-  @apply bg-white text-neutral-900 antialiased;
+  @apply bg-surface-page text-neutral-900 antialiased;
   font-family: var(--font-sans);
   font-feature-settings: 'ss01' 1, 'cv05' 1;
   text-rendering: optimizeLegibility;
@@ -2692,4 +2764,34 @@ video,
     animation: none;
     opacity: 0.5;
   }
+}
+
+/* ============================================================
+   Dark mode — overrides de piezas de CSS "crudo"
+   ------------------------------------------------------------
+   Las utilities (text/bg/border/…) ya trackean el tema vía las
+   custom properties de --color-*; estas reglas cubren las clases de
+   CSS que usan colores FIJOS en su definición. Más especificidad
+   (`.dark .x`) para ganarles sin tener que tocar cada regla.
+   ============================================================ */
+.dark .hero-chip {
+  border-color: rgb(61 70 88 / 0.9);
+  background: #1a2029;
+  color: rgb(238 241 245);
+}
+
+.dark .hero-chip .hero-chip__arrow {
+  color: rgb(124 135 152);
+}
+
+.dark .skeleton {
+  background: #1a2029;
+}
+
+.dark .skeleton::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.dark .media-reveal--loading {
+  background: linear-gradient(110deg, #1a2029 30%, #232b38 45%, #141920 60%, #1a2029 75%);
 }

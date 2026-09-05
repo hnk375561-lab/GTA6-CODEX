@@ -74,7 +74,7 @@ export function InsuranceAffiliateButton({
   const getVariantClasses = () => {
     switch (variant) {
       case 'outline':
-        return 'border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-50'
+        return 'border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-500 dark:text-emerald-400 dark:hover:bg-emerald-500/10'
       default:
         return 'bg-emerald-600 text-white hover:bg-emerald-700'
     }

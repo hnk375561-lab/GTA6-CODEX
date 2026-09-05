@@ -141,7 +141,7 @@ export function EntityImage({ entity, image, variant = 'thumbnail', priority = f
   const mediaContent = (
     <div
       className={cn(
-        'card-media relative shrink-0 overflow-hidden rounded-lg border border-edge bg-white',
+        'card-media relative shrink-0 overflow-hidden rounded-lg border border-edge bg-surface-input',
         isAvatar && 'card-media--avatar rounded-md',
         ASPECT[variant],
         className

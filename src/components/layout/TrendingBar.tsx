@@ -49,7 +49,7 @@ export async function TrendingBar() {
               {i > 0 && <span className="text-neutral-400/60" aria-hidden="true">·</span>}
               <Link
                 href={getEntityPath(entity.type, entity.slug)}
-                className="link-underline font-medium text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                className="link-underline font-medium text-auto-text-secondary transition-colors hover:text-auto-accent-strong"
               >
                 {entity.title}
               </Link>

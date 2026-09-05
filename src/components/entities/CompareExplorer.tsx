@@ -277,7 +277,7 @@ function VehiclePickerTile({
         disabled && 'cursor-not-allowed opacity-40 hover:border-edge'
       )}
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-white">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface-input">
         {image?.src ? (
           <ImageReveal
             src={image.src}

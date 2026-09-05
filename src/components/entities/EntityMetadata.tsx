@@ -71,7 +71,7 @@ function ListField({ label, items }: { label: string; items?: string[] | null })
         {items.map((item) => (
           <span
             key={item}
-            className="rounded-md border border-dashed border-edge-strong bg-auto-darker px-2 py-0.5 font-mono text-xs text-neutral-900"
+            className="rounded-md border border-dashed border-edge-strong bg-auto-darker px-2 py-0.5 font-mono text-xs text-auto-text"
           >
             {item}
           </span>

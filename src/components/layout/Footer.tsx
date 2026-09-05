@@ -26,7 +26,7 @@ export function Footer() {
               <div className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-auto-accent to-auto-accent-orange">
                 <span className="font-display text-[10px] font-bold text-auto-darker">{SITE_NAME.charAt(0)}</span>
               </div>
-              <h3 className="font-display text-lg font-semibold text-neutral-900">{SITE_NAME}</h3>
+              <h3 className="font-display text-lg font-semibold text-auto-text">{SITE_NAME}</h3>
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-neutral-500">
               Fichas técnicas de autos y motos con specs reales, comparador lado a lado y fuente por cada dato.

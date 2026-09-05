@@ -127,7 +127,7 @@ export function EvidenceShowcase({ items, autoRotateInterval = 6000 }: EvidenceS
                 )}
                 <Link
                   href={`/${current.entityType}/${current.slug}`}
-                  className="group mt-2 inline-flex items-center gap-1 font-display text-sm font-semibold text-orange-600 transition duration-200 hover:text-orange-700"
+                  className="group mt-2 inline-flex items-center gap-1 font-display text-sm font-semibold text-orange-600 transition duration-200 hover:text-orange-700 dark:text-auto-accent dark:hover:text-auto-accent-strong"
                 >
                   {current.title}
                   <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">

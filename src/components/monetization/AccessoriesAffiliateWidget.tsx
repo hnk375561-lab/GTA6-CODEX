@@ -149,7 +149,7 @@ export function AccessoriesAffiliateWidget({
                 label: `accesorio-${idea.query}`,
               })
             }
-            className="inline-flex items-center gap-1.5 rounded-full border border-edge bg-white px-3 py-1.5 text-xs font-medium text-neutral-700 transition-colors hover:border-yellow-400 hover:bg-yellow-50"
+            className="inline-flex items-center gap-1.5 rounded-full border border-edge bg-surface-card px-3 py-1.5 text-xs font-medium text-neutral-700 transition-colors hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-500/10"
           >
             {idea.label}
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">

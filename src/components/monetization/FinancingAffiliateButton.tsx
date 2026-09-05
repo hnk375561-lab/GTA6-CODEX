@@ -69,7 +69,7 @@ export function FinancingAffiliateButton({
   const getVariantClasses = () => {
     switch (variant) {
       case 'outline':
-        return 'border-2 border-sky-600 text-sky-700 hover:bg-sky-50'
+        return 'border-2 border-sky-600 text-sky-700 hover:bg-sky-50 dark:border-sky-500 dark:text-sky-400 dark:hover:bg-sky-500/10'
       default:
         return 'bg-sky-600 text-white hover:bg-sky-700'
     }

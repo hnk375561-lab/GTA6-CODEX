@@ -96,9 +96,9 @@ export function MercadoLibreAffiliateButton({
   const getVariantClasses = () => {
     switch (variant) {
       case 'outline':
-        return 'border-2 border-yellow-500 text-yellow-600 hover:bg-yellow-50'
+        return 'border-2 border-yellow-500 text-yellow-600 hover:bg-yellow-50 dark:border-yellow-400 dark:text-yellow-400 dark:hover:bg-yellow-500/10'
       default:
-        return 'bg-yellow-400 text-neutral-900 hover:bg-yellow-500'
+        return 'bg-yellow-400 text-[#18181b] hover:bg-yellow-500'
     }
   }
 

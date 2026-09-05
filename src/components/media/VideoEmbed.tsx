@@ -98,7 +98,7 @@ export function VideoEmbed({ videoSrc, title, ambient = false, autoLoad = false,
           </svg>
         </span>
       </span>
-      <span className="absolute bottom-0 left-0 right-0 truncate bg-gradient-to-t from-auto-dark/90 to-transparent px-3 pb-2 pt-6 text-left text-sm font-medium text-neutral-900">
+      <span className="absolute bottom-0 left-0 right-0 truncate bg-gradient-to-t from-auto-dark/90 to-transparent px-3 pb-2 pt-6 text-left text-sm font-medium text-white">
         {title}
       </span>
     </button>

@@ -163,7 +163,7 @@ function MobileCompareSwipe({ pair }: { pair: CompareTeaserPair }) {
             <div key={v.slug} className="w-1/2 shrink-0 p-6">
               <Link
                 href={`/vehiculos/${v.slug}`}
-                className="mb-3 block truncate font-display text-lg font-bold text-neutral-900 hover:text-orange-600"
+                className="mb-3 block truncate font-display text-lg font-bold text-neutral-900 hover:text-orange-600 dark:hover:text-auto-accent"
               >
                 {v.title}
               </Link>
@@ -186,7 +186,7 @@ function MobileCompareSwipe({ pair }: { pair: CompareTeaserPair }) {
             onClick={() => setSide(i as 0 | 1)}
             className={cn(
               'flex-1 truncate px-3 py-3 text-xs font-semibold uppercase tracking-wide transition-colors',
-              side === i ? 'bg-neutral-900 text-white' : 'text-neutral-500'
+              side === i ? 'bg-inverse text-white' : 'text-neutral-500'
             )}
           >
             {v.title}
@@ -197,7 +197,7 @@ function MobileCompareSwipe({ pair }: { pair: CompareTeaserPair }) {
       <div className="px-6 py-4 text-center">
         <Link
           href={`/comparar/${pair.pairSlug}`}
-          className="group inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
+          className="group inline-flex items-center justify-center gap-2 rounded-full bg-inverse px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
         >
           Ver comparación completa{' '}
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -238,7 +238,7 @@ export function LiveCompareTeaser({ pairs }: LiveCompareTeaserProps) {
             className={cn(
               'rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors',
               i === activeIndex
-                ? 'border-neutral-900 bg-neutral-900 text-white'
+                ? 'border-inverse bg-inverse text-white'
                 : 'border-neutral-300 text-neutral-500 hover:border-neutral-400 hover:text-neutral-900'
             )}
           >
@@ -251,14 +251,14 @@ export function LiveCompareTeaser({ pairs }: LiveCompareTeaserProps) {
         <div className="mb-2 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-baseline gap-3">
           <Link
             href={`/vehiculos/${pair.a.slug}`}
-            className="truncate text-right font-display text-lg font-bold text-neutral-900 hover:text-orange-600"
+            className="truncate text-right font-display text-lg font-bold text-neutral-900 hover:text-orange-600 dark:hover:text-auto-accent"
           >
             {pair.a.title}
           </Link>
           <span className="text-center text-xs font-semibold uppercase tracking-[0.15em] text-neutral-400">vs</span>
           <Link
             href={`/vehiculos/${pair.b.slug}`}
-            className="truncate text-left font-display text-lg font-bold text-neutral-900 hover:text-orange-600"
+            className="truncate text-left font-display text-lg font-bold text-neutral-900 hover:text-orange-600 dark:hover:text-auto-accent"
           >
             {pair.b.title}
           </Link>
@@ -281,7 +281,7 @@ export function LiveCompareTeaser({ pairs }: LiveCompareTeaserProps) {
         <div className="mt-6 text-center">
           <Link
             href={`/comparar/${pair.pairSlug}`}
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-inverse px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
           >
             Ver comparación completa{' '}
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">

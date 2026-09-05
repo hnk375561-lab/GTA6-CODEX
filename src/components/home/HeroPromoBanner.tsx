@@ -86,7 +86,7 @@ interface HeroPromoBannerProps {
  */
 export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
   const containerClassName = cn(
-    'relative w-full overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-900 text-white shadow-lg hero-glow-card',
+    'relative w-full overflow-hidden rounded-3xl border border-neutral-200 bg-inverse text-white shadow-lg hero-glow-card',
     className
   )
 
@@ -94,19 +94,19 @@ export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
   if (!item) {
     return (
       <div aria-label="Anuncio destacado" className={containerClassName}>
-        <div className="flex h-full min-h-[26rem] flex-col justify-end bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-8 lg:min-h-0">
+        <div className="flex h-full min-h-[26rem] flex-col justify-end bg-gradient-to-br from-[#262626] via-[#171717] to-black p-8 lg:min-h-0">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
             Descubrí el catálogo
           </p>
           <p className="mt-4 font-display text-3xl font-bold leading-tight">
             Fichas técnicas reales
           </p>
-          <p className="mt-2 max-w-sm text-sm text-neutral-300">
+          <p className="mt-2 max-w-sm text-sm text-auto-text-secondary">
             Especificaciones de fabricante con fuentes citadas — compará antes de decidir.
           </p>
           <Link
             href="/vehiculos"
-            className="cta-shine tap-scale group mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 shadow-lg transition-transform hover:-translate-y-0.5"
+            className="cta-shine tap-scale group mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#171717] shadow-lg transition-transform hover:-translate-y-0.5"
           >
             Explorar todos{' '}
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -167,7 +167,7 @@ export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
 
         {/* Chip de specs — esquina inferior izquierda */}
         {(item.powerLabel || item.secondaryStatLabel) && (
-          <div className="pointer-events-none absolute bottom-4 left-4 z-10 flex items-stretch gap-2 overflow-hidden rounded-2xl border border-edge-strong bg-white/95 shadow-xl backdrop-blur-md">
+          <div className="pointer-events-none absolute bottom-4 left-4 z-10 flex items-stretch gap-2 overflow-hidden rounded-2xl border border-edge-strong bg-surface-chip shadow-xl backdrop-blur-md">
             {item.powerLabel && (
               <div className="flex items-center gap-2 px-3 py-2.5">
                 <span
@@ -209,7 +209,7 @@ export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
       </div>
 
       {/* ABAJO: Detalles + CTA */}
-      <div className="flex w-full flex-1 flex-col justify-between gap-4 bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-6 sm:p-8 lg:flex-none lg:gap-3 lg:overflow-hidden lg:p-6">
+      <div className="flex w-full flex-1 flex-col justify-between gap-4 bg-gradient-to-br from-[#262626] via-[#171717] to-black p-6 sm:p-8 lg:flex-none lg:gap-3 lg:overflow-hidden lg:p-6">
         {/* Eyebrow + Título + Descripción */}
         <div className="flex flex-col gap-3 lg:gap-2">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
@@ -219,7 +219,7 @@ export function HeroPromoBanner({ item, className }: HeroPromoBannerProps) {
             {item.headline}
           </h2>
           {item.description && (
-            <p className="line-clamp-2 max-w-sm text-sm leading-relaxed text-neutral-300">
+            <p className="line-clamp-2 max-w-sm text-sm leading-relaxed text-auto-text-secondary">
               {item.description}
             </p>
           )}

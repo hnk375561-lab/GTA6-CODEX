@@ -999,7 +999,7 @@ export default async function HomePage() {
             </p>
           </Reveal>
           <Reveal index={2} total={3} className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/vehiculos" className="cta-shine tap-scale group inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-8 py-4 font-semibold text-white transition-transform hover:-translate-y-0.5">
+            <Link href="/vehiculos" className="cta-shine tap-scale group inline-flex items-center justify-center gap-2 rounded-full bg-inverse px-8 py-4 font-semibold text-white transition-transform hover:-translate-y-0.5">
               Elegí tu vehículo{' '}
               <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
                 →

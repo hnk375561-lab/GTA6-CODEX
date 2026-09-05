@@ -111,7 +111,7 @@ export function StickyAdUnit() {
         type="button"
         onClick={handleDismiss}
         aria-label="Cerrar anuncio"
-        className="relative flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-edge bg-white text-neutral-400 transition duration-200 hover:border-neutral-300 hover:text-neutral-700 active:scale-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:left-1/2 before:top-1/2 before:h-11 before:w-11 before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']"
+        className="relative flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-edge bg-surface-elevated text-neutral-400 transition duration-200 hover:border-neutral-300 hover:text-neutral-700 active:scale-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:left-1/2 before:top-1/2 before:h-11 before:w-11 before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']"
       >
         ✕
       </button>

@@ -64,7 +64,7 @@ export function EvidenceBlock({ evidence }: EvidenceBlockProps) {
             <dt className="mb-0.5 text-xs font-semibold uppercase tracking-wide text-neutral-500">
               Fuente primaria
             </dt>
-            <dd className="text-neutral-900">{evidence.primarySource}</dd>
+            <dd className="text-auto-text">{evidence.primarySource}</dd>
           </div>
         )}
         {evidence.secondarySource && (

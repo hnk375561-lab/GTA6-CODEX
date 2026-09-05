@@ -99,7 +99,7 @@ function CrossfadeImage({
   }, [src])
 
   return (
-    <div className="relative h-full w-full bg-white">
+    <div className="relative h-full w-full bg-surface-input">
       {layers.map((layerSrc, i) =>
         layerSrc ? (
           <Image
@@ -235,7 +235,7 @@ function VehiclePane({
             </p>
             <Link
               href={`/vehiculos/${vehicle.slug}`}
-              className="block truncate font-display text-lg font-bold text-neutral-900 hover:text-orange-600"
+              className="block truncate font-display text-lg font-bold text-neutral-900 hover:text-orange-600 dark:hover:text-auto-accent"
             >
               {vehicle.title}
             </Link>
@@ -390,7 +390,7 @@ export function CompareShowcase({ pool, initialIndexA, initialIndexB }: CompareS
           className={cn(
             'rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors',
             mobileSide === 'a'
-              ? 'border-neutral-900 bg-neutral-900 text-white'
+              ? 'border-inverse bg-inverse text-white'
               : 'border-neutral-300 text-neutral-500 hover:border-neutral-400 hover:text-neutral-900'
           )}
         >
@@ -404,7 +404,7 @@ export function CompareShowcase({ pool, initialIndexA, initialIndexB }: CompareS
           className={cn(
             'rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors',
             mobileSide === 'b'
-              ? 'border-neutral-900 bg-neutral-900 text-white'
+              ? 'border-inverse bg-inverse text-white'
               : 'border-neutral-300 text-neutral-500 hover:border-neutral-400 hover:text-neutral-900'
           )}
         >

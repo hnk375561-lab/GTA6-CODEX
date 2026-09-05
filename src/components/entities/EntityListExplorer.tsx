@@ -389,7 +389,7 @@ export function EntityListExplorer({
             onChange={(e) => setQuery(e.target.value)}
             placeholder={`Buscar en ${typeLabel.toLowerCase()}...`}
             aria-label={`Buscar en ${typeLabel}`}
-            className="glass-surface w-full rounded-lg border border-edge py-2.5 pl-10 pr-9 text-sm text-neutral-900 placeholder:text-neutral-400 transition focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+            className="glass-surface w-full rounded-lg border border-edge py-2.5 pl-10 pr-9 text-sm text-auto-text placeholder:text-neutral-400 transition focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
           />
           {query && (
             <button

@@ -253,7 +253,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
           placeholder="Buscar autos, motos, marcas..."
           autoFocus
           aria-label={`Buscar en ${SITE_NAME}`}
-          className="glass-surface w-full rounded-xl border border-edge py-4 pl-12 pr-12 text-lg text-neutral-900 placeholder:text-neutral-400 transition focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+          className="glass-surface w-full rounded-xl border border-edge py-4 pl-12 pr-12 text-lg text-auto-text placeholder:text-neutral-400 transition focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
         />
         {query && (
           <button

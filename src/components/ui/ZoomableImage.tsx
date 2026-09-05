@@ -80,7 +80,7 @@ export function ZoomableImage({ resetKey, wrapperClassName, className, alt, ...i
           onClick={zoomOut}
           disabled={scale <= minScale + 0.01}
           aria-label="Alejar imagen"
-          className="flex h-9 w-9 items-center justify-center rounded-full text-neutral-900 transition-colors hover:bg-surface-alt hover:text-auto-accent-strong disabled:pointer-events-none disabled:opacity-35"
+          className="flex h-9 w-9 items-center justify-center rounded-full text-auto-text transition-colors hover:bg-surface-alt hover:text-auto-accent-strong disabled:pointer-events-none disabled:opacity-35"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
             <circle cx="11" cy="11" r="7" />
@@ -97,7 +97,7 @@ export function ZoomableImage({ resetKey, wrapperClassName, className, alt, ...i
           onClick={zoomIn}
           disabled={scale >= maxScale - 0.01}
           aria-label="Ampliar imagen"
-          className="flex h-9 w-9 items-center justify-center rounded-full text-neutral-900 transition-colors hover:bg-surface-alt hover:text-auto-accent-strong disabled:pointer-events-none disabled:opacity-35"
+          className="flex h-9 w-9 items-center justify-center rounded-full text-auto-text transition-colors hover:bg-surface-alt hover:text-auto-accent-strong disabled:pointer-events-none disabled:opacity-35"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
             <circle cx="11" cy="11" r="7" />
@@ -112,7 +112,7 @@ export function ZoomableImage({ resetKey, wrapperClassName, className, alt, ...i
               type="button"
               onClick={reset}
               aria-label="Restablecer zoom"
-              className="flex h-9 w-9 items-center justify-center rounded-full text-neutral-900 transition-colors hover:bg-surface-alt hover:text-auto-accent-strong"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-auto-text transition-colors hover:bg-surface-alt hover:text-auto-accent-strong"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5" />

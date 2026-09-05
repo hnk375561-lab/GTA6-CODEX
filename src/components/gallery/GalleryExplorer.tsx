@@ -132,7 +132,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Buscar en la galería..."
             aria-label="Buscar en la galería"
-            className="glass-surface w-full rounded-lg border border-edge py-2.5 pl-10 pr-9 text-sm text-neutral-900 placeholder:text-neutral-400 transition focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+            className="glass-surface w-full rounded-lg border border-edge py-2.5 pl-10 pr-9 text-sm text-auto-text placeholder:text-neutral-400 transition focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
           />
           {query && (
             <button
@@ -277,7 +277,7 @@ function GalleryTile({
           // en modo remote (misma superficie esqueleto + fade).
           <ImageReveal remote src={item.src} alt={item.alt} imgClassName="gallery-tile-image" />
         ) : item.kind === 'video' ? (
-          <div className="w-full h-full bg-gradient-to-br from-neutral-800 via-auto-darker to-black" aria-hidden="true" />
+          <div className="w-full h-full bg-gradient-to-br from-[#262626] via-[#050607] to-black" aria-hidden="true" />
         ) : (
           <ImageReveal
             src={item.src}
@@ -413,7 +413,7 @@ tabIndex={-1}
         type="button"
         onClick={onClose}
         aria-label="Cerrar visor"
-        className="tap-scale glass-surface absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-edge text-neutral-900 transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:right-6 sm:top-6"
+        className="tap-scale glass-surface absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-edge text-auto-text transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:right-6 sm:top-6"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
           <path d="M18 6 6 18M6 6l12 12" />
@@ -429,7 +429,7 @@ tabIndex={-1}
               onPrev()
             }}
             aria-label="Imagen anterior"
-            className="tap-scale glass-surface absolute left-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-edge text-neutral-900 transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:left-6"
+            className="tap-scale glass-surface absolute left-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-edge text-auto-text transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:left-6"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m15 18-6-6 6-6" />
@@ -442,7 +442,7 @@ tabIndex={-1}
               onNext()
             }}
             aria-label="Imagen siguiente"
-            className="tap-scale glass-surface absolute right-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-edge text-neutral-900 transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:right-6"
+            className="tap-scale glass-surface absolute right-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-edge text-auto-text transition-colors hover:border-auto-accent hover:text-auto-accent-strong sm:right-6"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m9 18 6-6-6-6" />
