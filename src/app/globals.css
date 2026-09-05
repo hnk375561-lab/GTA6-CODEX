@@ -2451,6 +2451,108 @@ video,
 }
 
 /* ============================================================
+   CTA de recuperación del recorrido (RecoveryCta.tsx)
+   ============================================================
+   La home recorre el expediente completo dentro del track de
+   `PinnedScrollStages` (~16 viewports de scroll interno). El search del
+   hero y los CTAs de "Decidí" están en los extremos: en los paneles de
+   solo lectura del medio (Evidencia, Rankings) el usuario se queda sin
+   ruta hacia la acción principal y es donde más sentido tiene recuperar
+   la conversión. Esta pill reabre esa ruta con UNA sola acción (acceder
+   al catálogo completo, `/vehiculos`). Reglas de visibilidad (ver
+   componente): solo bajando, solo cuando la zona está centrada en
+   viewport, nunca si asoma el panel "Decidí" (la mejor acción visible
+   del recorrido) y nunca en grillas/formularios/paneles interactivos —
+   la zona está fija a Evidencia + Rankings por diseño para no competir
+   con ningún otro CTA.
+
+   Esquina inferior-izquierda: el FAB "Volver arriba" vive a la derecha
+   (no se pisan), en desktop el contenido centrado deja gutters vacíos a
+   los costados (nada que tapar) y en móvil no convive con el ancla ad
+   (oculto en home) ni con bottom-nav. Safe areas cubiertas.
+
+   Movimiento: fade + ascenso corto (--dur-fast), mismo lenguaje que el
+   FAB; hover de elevación concisa (glow + avance de la flecha), active
+   con escala contenida, ring heredado del `:focus-visible` global y
+   `prefers-reduced-motion` cubierto. Cuando está oculto queda fuera del
+   tab-order y del árbol de accesibilidad (inert + aria-hidden).
+   ============================================================ */
+.recovery-fab {
+  position: fixed;
+  left: calc(1rem + env(safe-area-inset-left));
+  bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2.75rem;
+  padding: 0 1.25rem;
+  border: 1px solid rgba(36, 42, 50, 0.9);
+  border-radius: 9999px;
+  background: #0b0d10;
+  color: #fafafa;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 12px 28px -12px rgba(5, 6, 7, 0.75);
+  opacity: 0;
+  transform: translateY(0.5rem);
+  pointer-events: none;
+  transition:
+    opacity var(--dur-fast) var(--ease-standard),
+    transform var(--dur-fast) var(--ease-standard),
+    background-color var(--transition-base) var(--ease-standard),
+    border-color var(--transition-base) var(--ease-standard),
+    box-shadow var(--transition-base) var(--ease-standard);
+}
+
+@media (min-width: 768px) {
+  .recovery-fab {
+    left: calc(1.5rem + env(safe-area-inset-left));
+    bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  }
+}
+
+.recovery-fab[data-visible='true'] {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.recovery-fab:hover {
+  background: #12151a;
+  border-color: var(--c-pink);
+  box-shadow:
+    0 0 0 1px rgba(255, 106, 26, 0.25),
+    0 14px 32px -12px rgba(255, 106, 26, 0.4);
+}
+
+.recovery-fab:active {
+  transform: scale(0.97) translateY(0);
+}
+
+.recovery-fab__arrow {
+  transition: transform var(--dur-fast) var(--ease-standard);
+}
+
+.recovery-fab:hover .recovery-fab__arrow {
+  transform: translateX(0.125rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recovery-fab,
+  .recovery-fab__arrow,
+  .recovery-fab:hover .recovery-fab__arrow {
+    transition: none;
+  }
+
+  .recovery-fab:active {
+    transform: none;
+  }
+}
+
+/* ============================================================
    Estados de carga y skeletons — auditoría de carga (2026-09)
    ------------------------------------------------------------
    Mismo lenguaje visual del sitio (sin valores de color nuevos:

@@ -46,6 +46,8 @@ import { EvidenceSpotlight, type EvidenceHighlight } from '@/components/home/Evi
 import { RankingsSpotlight, type RankingSpotlight } from '@/components/home/RankingsSpotlight'
 import { FeaturedCarousel } from '@/components/home/FeaturedCarousel'
 import { HomeFaqPanel, type FaqItem } from '@/components/home/HomeFaqPanel'
+import { RecoveryCta } from '@/components/home/RecoveryCta'
+import { FaqClosure } from '@/components/home/FaqClosure'
 import { SectionBridge } from '@/components/ui/SectionBridge'
 import { formatRelativeTime, formatVehicleDisplayName } from '@/lib/utils'
 
@@ -756,6 +758,25 @@ export default async function HomePage() {
                   initialIndexA={compareInitialIndexA}
                   initialIndexB={compareInitialIndexB}
                 />
+                {/* Fin de la unidad de contenido del comparador: después de
+                    re-elegir pares con "Cambiar", la continuación natural
+                    es la tabla completa de `/comparar` (todos los criterios,
+                    elegís vos los vehículos). Un solo link quieto, sin
+                    competir con los botones "Cambiar" de adentro. */}
+                <div className="mt-10 flex justify-center">
+                  <Link
+                    href="/comparar"
+                    className="group text-sm font-semibold text-neutral-500 underline underline-offset-4 transition-colors hover:text-neutral-900"
+                  >
+                    Abrir el comparador completo{' '}
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-200 group-hover:translate-x-0.5"
+                    >
+                      →
+                    </span>
+                  </Link>
+                </div>
               </div>
             ),
           } satisfies Stage,
@@ -999,12 +1020,25 @@ export default async function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }} />
       <PinnedScrollStages stages={stages} />
+      {/* CTA de recuperación del recorrido: pill flotante que aparece en
+          los paneles de solo lectura del medio del track (Evidencia,
+          Rankings) para no dejar la home sin ruta hacia la acción
+          principal. Vive fuera del track (posición fixed) y se gobierna
+          con IntersectionObserver + dirección de scroll — ver
+          `RecoveryCta.tsx`. */}
+      <RecoveryCta />
       {/* Prioridad C: fuera del track de crossfade a propósito — acá el
           documento ya volvió a scroll normal (ver comentario en
           `HomeFaqPanel`), entre el final del track y `<Footer />`
           (renderizado por `layout.tsx`, no por esta página). */}
       <SectionBridge className="mt-2" />
       <HomeFaqPanel items={faqItems} />
+      {/* Cierre del recorrido: la home termina donde termina el documento
+          (el footer está oculto en home) — después del FAQ no queda
+          ninguna ruta posible. `FaqClosure` responde el "¿y ahora qué?"
+          final con un regreso al expediente (rebobina el track) y un
+          salto directo a la comparación. */}
+      <FaqClosure />
     </>
   )
 }

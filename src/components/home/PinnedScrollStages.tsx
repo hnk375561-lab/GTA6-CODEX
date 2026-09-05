@@ -234,6 +234,7 @@ export function PinnedScrollStages({ stages }: Props) {
     <div className="relative">
       <div
         ref={containerRef}
+        data-home-track
         className="h-dvh w-full overflow-y-scroll overscroll-contain scroll-container-custom"
         style={{
           scrollbarWidth: 'none',
