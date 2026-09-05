@@ -35,6 +35,7 @@ import { ManufacturersMarquee } from '@/components/home/ManufacturersMarquee'
 import { PinnedScrollStages, type Stage } from '@/components/home/PinnedScrollStages'
 import { Reveal } from '@/components/home/StageProgress'
 import { Parallax, TiltCard } from '@/components/home/Parallax'
+import { HeroAura } from '@/components/home/HeroAura'
 import { HeroVehicleShowcaseV2, type HeroVehicleShowcaseItem } from '@/components/home/HeroVehicleShowcaseV2'
 import { HeroQuickLinks } from '@/components/home/HeroQuickLinks'
 import { HERO_QUICK_LINKS } from '@/config/hero-quick-links'
@@ -509,7 +510,20 @@ export default async function HomePage() {
       scrollVh: 160,
       content: (
         <div className="relative mx-auto w-full max-w-[90rem] text-center">
-          <Reveal index={0} total={6} options={{ distance: 24, easing: 'cine' }}>
+          {/* Aura ambiental (capa de fondo de la pila de profundidad):
+              se dibuja PRIMERO en el DOM para quedar detrás del
+              contenido; el parallax contra el cursor y la entrada la
+              manejan `HeroAura` + las clases `.hero-aura-*`. */}
+          <HeroAura />
+
+          {/* Entrada del hero aquí (bloques de arriba) por TIEMPO, con
+              jerarquía explícita, NO por la cascada de scroll: la pose
+              del primer panel satura en 1 apenas el boot del track
+              termina, y la cascada comprime todo en los mismos 700ms
+              (todos subiendo a la vez). Ver `.hero-arrival-*` en
+              globals.css. Los bloques de abajo (chips y showroom) sí
+              siguen entrando con el scroll. */}
+          <div className="hero-arrival hero-arrival--eyebrow">
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
               {SITE_NAME}
               {lastUpdateLabel && (
@@ -520,6 +534,8 @@ export default async function HomePage() {
                 </>
               )}
             </p>
+          </div>
+          <div className="hero-arrival hero-arrival--headline">
             <Parallax strength={8}>
               <h1 className="font-display text-6xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-7xl lg:text-8xl">
                 {HERO_HEADLINE_LEAD}{' '}
@@ -528,11 +544,11 @@ export default async function HomePage() {
                 {HERO_HEADLINE_TAIL}
               </h1>
             </Parallax>
-          </Reveal>
+          </div>
 
-          <Reveal index={1} total={6} className="mx-auto mt-6 max-w-xl">
+          <div className="hero-arrival hero-arrival--subtitle mx-auto mt-6 max-w-xl">
             <p className="text-lg text-neutral-500 sm:text-xl">{HERO_SUBTITLE}</p>
-          </Reveal>
+          </div>
 
           {/* Bloque de credibilidad — SEGUNDA PASADA (sept. 2026): antes
               este renglón mezclaba 4 números (Vehículos, Noticias, Guías,
@@ -549,11 +565,7 @@ export default async function HomePage() {
               debajo del bloque — ahora con el mismo peso visual que el
               resto, porque es el diferencial más fuerte que tiene el
               sitio, no una nota al pie). */}
-          <Reveal
-            index={2}
-            total={6}
-            className="mx-auto mt-10 flex max-w-lg flex-wrap items-center justify-center gap-x-10 gap-y-4"
-          >
+          <div className="hero-arrival hero-arrival--counts mx-auto mt-10 flex max-w-lg flex-wrap items-center justify-center gap-x-10 gap-y-4">
             <div className="flex flex-col items-center gap-0.5">
               <span className="font-display text-5xl font-bold text-neutral-900">
                 <CountUp end={countsByType[EntityType.VEHICLE] ?? 0} />
@@ -579,7 +591,7 @@ export default async function HomePage() {
                 </div>
               </>
             )}
-          </Reveal>
+          </div>
 
           {/* CTA — SEGUNDA PASADA (sept. 2026): antes había TRES acciones
               compitiendo al mismo nivel visual (dos botones grandes +
@@ -591,21 +603,24 @@ export default async function HomePage() {
               existiendo (nadie pierde la posibilidad de explorar todo el
               catálogo o ir directo al comparador), pero ya no compiten en
               peso visual contra la acción de mayor intención. */}
-          <Reveal index={3} total={6}>
+          <div className="hero-arrival hero-arrival--search">
             <div className="mx-auto mt-10 max-w-xl">
               <QuickSearchForm examples={searchExamples} />
             </div>
-          </Reveal>
+          </div>
 
           {/* Constelación de accesos directos — SEGUNDA PASADA (sept.
               2026): reemplaza los 2 links de texto chico que había acá
               (catálogo + comparador) por 10 chips al mismo nivel visual
               que el buscador de arriba — pedido explícito del usuario
               ("todo al mismo nivel, aunque compitan con el buscador").
-              Ver `HeroQuickLinks.tsx`/`config/hero-quick-links.tsx`. */}
-          <Reveal index={4} total={6} className="mt-8">
+              Ver `HeroQuickLinks.tsx`/`config/hero-quick-links.tsx`.
+              Entra con su PROPIO IntersectionObserver (`.hero-chip
+              is-visible`), no con la cascada del track: queda fuera de lo
+              que el boot del panel comprime. */}
+          <div className="mt-8">
             <HeroQuickLinks items={HERO_QUICK_LINKS} />
-          </Reveal>
+          </div>
 
           {/* Franja "showroom" del hero: fila 100% horizontal con
               scroll-snap real — anuncio propio (`HeroPromoBanner`) +
@@ -623,7 +638,7 @@ export default async function HomePage() {
               línea corta que cumple el único trabajo real que le
               quedaba: nombrar la región para quien no vea el `aria-label`
               interno del carrusel. */}
-          <Reveal index={5} total={6} options={{ flavor: 'swell' }} className="mx-auto mt-14 w-full text-left">
+          <Reveal index={0} total={1} options={{ flavor: 'swell' }} className="mx-auto mt-14 w-full text-left">
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
               Fichas destacadas — evidencia verificada
             </p>

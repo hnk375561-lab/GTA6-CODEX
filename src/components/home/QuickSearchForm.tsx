@@ -146,7 +146,7 @@ export function QuickSearchForm({ examples = DEFAULT_EXAMPLES }: QuickSearchForm
       </kbd>
       <button
         type="submit"
-        className="hero-search-submit absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-auto-accent px-3.5 py-2 text-xs font-semibold uppercase tracking-wide text-white transition-colors hover:bg-auto-accent-strong sm:text-sm"
+        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-auto-accent px-3.5 py-2 text-xs font-semibold uppercase tracking-wide text-white transition-[background-color,transform] duration-200 ease-out hover:bg-auto-accent-strong active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent focus-visible:ring-offset-2 sm:text-sm"
       >
         Buscar
       </button>

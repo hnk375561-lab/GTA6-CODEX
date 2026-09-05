@@ -34,10 +34,41 @@ export function WordRotate({ words, duration = 1800, className }: WordRotateProp
 
   useEffect(() => {
     if (words.length <= 1) return
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % words.length)
-    }, duration)
-    return () => clearInterval(interval)
+
+    let intervalId: number | undefined
+    const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
+
+    const stop = () => {
+      if (intervalId !== undefined) {
+        window.clearInterval(intervalId)
+        intervalId = undefined
+      }
+    }
+
+    const start = () => {
+      if (intervalId !== undefined) return
+      intervalId = window.setInterval(() => {
+        // No rotar en pestañas ocultas: el temporizador de un background
+        // tab solo quema CPU y al volver la palabra congelada se monta
+        // igual con su animación de entrada (mismo tick visual).
+        if (document.hidden) return
+        setIndex((prev) => (prev + 1) % words.length)
+      }, duration)
+    }
+
+    // El rotador es puramente decorativo: con prefers-reduced-motion se
+    // congela en la palabra actual (cuando el usuario entra a la página
+    // con reduce activo, HOY con `words` de solo palabra visible real,
+    // ver nota de accesibilidad de arriba) y no vuelve a correr encima
+    // de la regla `animation: none` del CSS.
+    if (!mql.matches) start()
+    const onChange = (e: MediaQueryListEvent) => (!e.matches ? start() : stop())
+    mql.addEventListener('change', onChange)
+
+    return () => {
+      stop()
+      mql.removeEventListener('change', onChange)
+    }
   }, [words, duration])
 
   return (

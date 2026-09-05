@@ -155,81 +155,151 @@ body {
   }
 }
 
-/* --- Deriva ambiental de los blobs del hero (home) ---
-   Antes, las dos manchas de gradiente del hero (`PinnedScrollStages`)
-   solo se movían atadas al progreso del scroll: con el mouse quieto y
-   sin scrollear, el fondo quedaba completamente congelado — el hero se
-   sentía "muerto" en el primer instante, que es justo cuando más gente
-   lo ve. Estos keyframes agregan una deriva lenta e infinita, en un
-   elemento hijo separado del que ya lleva el transform atado al scroll
-   (ver PinnedScrollStages.tsx), así los dos movimientos se combinan en
-   vez de pisarse. Recorridos asimétricos (radios/tiempos distintos por
-   blob) para que no se sientan como un único bloque moviéndose en
-   espejo. Se apaga con prefers-reduced-motion (ver bloque de arriba). */
-@keyframes hero-blob-drift-a {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  33% {
-    transform: translate3d(3%, 4%, 0) scale(1.06);
-  }
-  66% {
-    transform: translate3d(-2%, 5%, 0) scale(0.97);
-  }
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
+/* --- Aura ambiental del hero (home) ---------------------------------
+   Sustituye a los antiguos blobs de gradiente (`.hero-blob-*`) y a la
+   "flotación" infinita del vehículo (`.hero-vehicle-float`), que ya
+   nadie renderizaba desde que se retiraron las piezas que los usaban
+   (ver `PinnedScrollStages` y la V1 de `HeroVehicleShowcase`). Razón de
+   fondo, no limpieza por limpieza: moverse en loop infinito es justo lo
+   que una pieza ambiental del hero NO debe hacer — movimiento constante
+   = fatiga, y el hero es la pieza visual más importante del sitio. El
+   aura nueva:
+     - Dos glows de gradiente (cián arriba-izquierda, rosa abajo-derecha,
+       eco del `text-gradient-vice`) que se materializan UNA vez en la
+       carga (fade 1.2s, subliminal) y después solo se desplazan CONTRA
+       el mouse (parallax de capa de fondo, ver `HeroAura.tsx`):
+       profundidad sin bucle ni temporizador, en línea con el parallax
+       del título pero con MAYOR amplitud (la capa de fondo se mueve más
+       que el contenido: es la capa de atrás de la pila de profundidad).
+     - Un wrapper `overflow: hidden` aislado (`pointer-events: none`):
+       los blobs pueden ser más grandes que el contenedor sin generar
+       scroll horizontal ni estorbar al contenido del hero.
+   `prefers-reduced-motion`: sin fade de entrada (glows visibles tal
+   cual, ver bloque reduce) y sin listener de mouse (parallax apagado). */
+.hero-aura {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-aura-blob {
+  position: absolute;
+  border-radius: 999px;
+  opacity: 0.85;
+  transition: transform 200ms ease-out;
+  will-change: transform;
+}
+
+.hero-aura-blob--a {
+  top: -12rem;
+  left: -10rem;
+  width: min(46rem, 95vw);
+  height: min(46rem, 95vw);
+  background: radial-gradient(circle, rgb(34 211 238 / 0.16), transparent 62%);
+  animation: hero-aura-in 1200ms ease-out both;
+}
+
+.hero-aura-blob--b {
+  right: -9rem;
+  bottom: -12rem;
+  width: min(42rem, 90vw);
+  height: min(42rem, 90vw);
+  background: radial-gradient(circle, rgb(236 72 153 / 0.14), transparent 62%);
+  animation: hero-aura-in 1400ms ease-out 250ms both;
+}
+
+@keyframes hero-aura-in {
+  from {
+    opacity: 0;
   }
 }
 
-@keyframes hero-blob-drift-b {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  40% {
-    transform: translate3d(-4%, -3%, 0) scale(0.95);
-  }
-  75% {
-    transform: translate3d(2%, -5%, 0) scale(1.05);
-  }
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
+/* --- Entrada del hero: secuencia con jerarquía (home) ---------------
+   Reemplaza a la cascada `Reveal` de scroll para los bloques de ARRIBA
+   del hero. Motivo: la pose del primer panel satura en 1 apenas el
+   `BOOT_MS` del track termina — toda la cascada corría comprimida en
+   esos 700ms, los bloques subiendo a la vez, que es exactamente lo que
+   una entrada de hero no debe ser. Ahora los bloques de mensaje
+   (eyebrow → headline → subtítulo → strip de credibilidad → buscador)
+   entran por TIEMPO, con ventanas deliberadamente próximas (una
+   composición, no una fila de espera) y jerarquía explícita de
+   movimiento:
+     1. eyebrow  : kicker, apenas sube (6px) — contexto, no protagoniza.
+     2. headline : cortina de clip-path ascendente — la pieza estrella,
+                   la más lenta y la única "de cámara".
+     3. subtítulo: asciende 14px — sigue al mensaje.
+     4. counts   : asciende 12px — la evidencia respalda al mensaje.
+     5. buscador : llega ÚLTIMO (acción después del mensaje), 10px.
+   Todo termina en ~0.9s: nada de delays artificiales (el primero
+   arranca a 0ms, el último a 460ms). Los bloques de ABJO (chips, con su
+   propio IntersectionObserver, y la franja showroom, con la cascada de
+   scroll/swell) quedan fuera a propósito: siguen entrando con el scroll,
+   sin doble driver de animación.
+   La base de cada bloque es VISIBLE (opacity 1, sin transform ni clip):
+   si `prefers-reduced-motion` apaga la animación (ver bloque reduce) o
+   si una animación fallara, el hero queda completo y legible. */
+.hero-arrival {
+  opacity: 1;
+}
+
+/* `backwards` (no `both`): aplica el estado inicial durante el delay y
+   durante la animación, pero al terminar el elemento vuelve a su base
+   visible sin dejar `clip-path`/`transform` pegados (libera la capa). */
+.hero-arrival--eyebrow {
+  animation: hero-arrival-rise 420ms var(--ease-cine) backwards;
+  --arrival-rise: 6px;
+}
+
+.hero-arrival--headline {
+  animation: hero-arrival-curtain 620ms var(--ease-cine) 60ms backwards;
+}
+
+.hero-arrival--subtitle {
+  animation: hero-arrival-rise 480ms var(--ease-cine) 140ms backwards;
+  --arrival-rise: 14px;
+}
+
+.hero-arrival--counts {
+  animation: hero-arrival-rise 480ms var(--ease-cine) 200ms backwards;
+  --arrival-rise: 12px;
+}
+
+.hero-arrival--search {
+  animation: hero-arrival-rise 460ms var(--ease-cine) 460ms backwards;
+  --arrival-rise: 10px;
+}
+
+@keyframes hero-arrival-rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--arrival-rise, 12px));
   }
 }
 
-.hero-blob-a {
-  animation: hero-blob-drift-a 26s ease-in-out infinite;
-}
-
-.hero-blob-b {
-  animation: hero-blob-drift-b 32s ease-in-out infinite;
-}
-
-/* --- Flotación ambiental del vehículo del hero (auditoría "vida del
-   hero", sept. 2026) ---
-   Antes, la foto del vehículo solo se movía en el salto de crossfade
-   cada ~4s (o al mover el mouse, vía Parallax) — entre esos eventos
-   quedaba completamente quieta, reforzando la sensación de "sin vida".
-   Este keyframe agrega una deriva vertical lenta e infinita en un
-   elemento envoltorio propio (`.hero-vehicle-float`, ver
-   `HeroVehicleShowcase.tsx`), separado del nodo que ya lleva el
-   `transform` inline de la entrada ligada al scroll — dos `transform`
-   en dos elementos distintos, nunca compitiendo por la misma propiedad
-   en el mismo nodo (una animación CSS pisaría el `style` inline de
-   React si compartieran elemento). Amplitud chica (6px) a propósito:
-   es una "respiración" de fondo, no debe competir con el crossfade ni
-   con el parallax de mouse. */
-@keyframes hero-vehicle-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
+@keyframes hero-arrival-curtain {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(24px);
   }
 }
 
-.hero-vehicle-float {
-  animation: hero-vehicle-float 6s ease-in-out infinite;
+/* --- Media de las cards del showroom (hero): profundidad interior -----
+   La foto de cada card queda fija con su crop (scale 1.3 inline, ver
+   `HeroVehicleShowcaseV2`). El `scale-110` de hover de Tailwind que
+   tenía convivía con ese `transform` inline (que gana en cascada):
+   el hover no hacía NADA, era código muerto. En vez de un zoom genérico,
+   el wrapper de la foto panea 3% hacia arriba con la curva cinematográfica
+   al hacer hover en la card: la cámara se desplaza dentro del recorte
+   (depth sin zoom). Con `prefers-reduced-motion` se apaga (ver reduce). */
+.hero-card-media {
+  transition: transform 700ms var(--ease-cine);
+}
+
+.group\/card:hover .hero-card-media,
+.group\/showcase:hover .hero-card-media {
+  transform: translateY(-3%);
 }
 
 h1,
@@ -785,11 +855,29 @@ a:hover .logo-mark {
   .card-media-image,
   .card-media-sheen,
   .card-media-fallback-sweep,
-  .card-media-fallback-glyph,
-  .hero-blob-a,
-  .hero-blob-b,
-  .hero-vehicle-float {
+  .card-media-fallback-glyph {
     animation: none !important;
+  }
+
+  /* Entrada del hero y aura ambiental: los bloques quedan en su estado
+     base (visible, estático; ver `.hero-arrival { opacity: 1 }` y la
+     opacidad fija de `.hero-aura-blob`) y el parallax de la capa de
+     fondo no se instala (ver `HeroAura.tsx`). El paneo interior de las
+     fotos del showroom también se apaga. */
+  .hero-aura-blob,
+  .hero-arrival--eyebrow,
+  .hero-arrival--headline,
+  .hero-arrival--subtitle,
+  .hero-arrival--counts,
+  .hero-arrival--search {
+    animation: none !important;
+  }
+
+  .hero-card-media,
+  .group\/card:hover .hero-card-media,
+  .group\/showcase:hover .hero-card-media {
+    transform: none !important;
+    transition: none !important;
   }
 
   .card-animated,
@@ -1268,17 +1356,19 @@ a:hover .logo-mark {
 @keyframes word-rotate-in {
   0% {
     opacity: 0;
-    transform: translateY(-14px);
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(0.45em);
   }
   100% {
     opacity: 1;
+    clip-path: inset(0 0 0 0);
     transform: translateY(0);
   }
 }
 
 .word-rotate-item {
-  animation: word-rotate-in 320ms var(--ease-premium) both;
-  will-change: transform, opacity;
+  animation: word-rotate-in 460ms var(--ease-cine) both;
+  will-change: transform, opacity, clip-path;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -158,7 +158,14 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
                 flipSupported && !matchMedia('(prefers-reduced-motion: reduce)').matches && vehicle.categoryHref
 
               const imageNode = (
-                <div className="relative h-full w-full overflow-hidden bg-white/5">
+                // El wrapper panea la foto dentro del recorte al hacer
+                // hover (`.hero-card-media`, ver globals.css): la cámara
+                // "sube" 3% en vez de hacer un zoom genérico. El crop fijo
+                // sigue en el Image (`PHOTO_ZOOM_SCALE`, compensa `sizes`)
+                // y siempre gana el transform inline sobre clases — por eso
+                // el antiguo `group-hover/card:scale-110` de Tailwind no
+                // hacía nada (código muerto, ver auditoría del hero).
+                <div className="hero-card-media relative h-full w-full overflow-hidden bg-white/5">
                   <Image
                     src={vehicle.src}
                     alt=""
@@ -177,7 +184,7 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
                     sizes="(min-width: 1024px) 33vw, 43vw"
                     quality={95}
                     priority={index === 0}
-                    className="object-cover transition-transform duration-500 group-hover/card:scale-110"
+                    className="object-cover"
                     style={{ transform: `scale(${PHOTO_ZOOM_SCALE})` } as CSSProperties}
                   />
                 </div>
