@@ -57,7 +57,7 @@ export default async function CategoriasIndexPage() {
       />
       <div className="list-header-glow" aria-hidden="true" />
       <div className="container-max relative">
-        <Reveal className="mb-10">
+        <Reveal direction="chapter" className="mb-10">
           <nav className="mb-4 text-sm text-neutral-500" aria-label="Breadcrumb">
             <Link href="/" className="link-underline transition-colors hover:text-auto-accent">
               Inicio

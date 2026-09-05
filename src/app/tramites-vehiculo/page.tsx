@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 export default function TramitesVehiculoPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-      <Reveal>
+      <Reveal direction="chapter">
         <div className="mb-8 max-w-2xl">
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
             Trámites de <span className="text-gradient-vice">transferencia y patentamiento</span>

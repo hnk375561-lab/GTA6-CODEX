@@ -87,9 +87,9 @@ function EmptySlotCard({ rubroLabel }: { rubroLabel: string }) {
 export default function DirectorioConcepcionDelUruguayPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-      <Reveal>
+      <Reveal direction="chapter">
         <div className="mb-10 max-w-2xl">
-          <p className="eyebrow mb-3 text-xs font-semibold uppercase tracking-wide text-auto-accent-strong">
+          <p className="eyebrow-pop eyebrow mb-3 text-xs font-semibold uppercase tracking-wide text-auto-accent-strong">
             Concepción del Uruguay, Entre Ríos
           </p>
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
@@ -144,7 +144,7 @@ export default function DirectorioConcepcionDelUruguayPage() {
         )
       })}
 
-      <Reveal delay={260}>
+      <Reveal delay={260} direction="glide">
         <div className="flex flex-col items-center gap-3 rounded-xl border border-edge bg-auto-darker p-8 text-center">
           <p className="font-display text-lg font-semibold text-white">¿Tenés un negocio del rubro en la ciudad?</p>
           <p className="max-w-md text-sm text-neutral-300">

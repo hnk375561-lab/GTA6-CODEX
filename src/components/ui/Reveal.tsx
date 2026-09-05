@@ -9,8 +9,11 @@ interface RevealProps {
   delay?: number
   /** Dirección de entrada. 'curtain' = cortina en clip-path (ver globals.css),
    *  para secciones donde se quiere un reveal más cinematográfico que el
-   *  fade+slide de las demás direcciones. */
-  direction?: 'up' | 'left' | 'right' | 'zoom' | 'curtain'
+   *  fade+slide de las demás direcciones. 'chapter' = apertura de capítulo
+   *  (máscara + ascenso con curva cine) para cabeceras de sección/página;
+   *  'glide' = entrada horizontal direccional; 'swell' = crecimiento sutil
+   *  para secciones dominadas por media. */
+  direction?: 'up' | 'left' | 'right' | 'zoom' | 'curtain' | 'chapter' | 'glide' | 'swell'
   /** Si es true, la animación se repite cada vez que reingresa al viewport */
   once?: boolean
 }

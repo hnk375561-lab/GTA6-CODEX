@@ -13,6 +13,7 @@ import { generateEntityMetadata, generateEntityJsonLd, generateBreadcrumbJsonLd,
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
+import { SectionBridge } from '@/components/ui/SectionBridge'
 import { EvidenceBlock } from '@/components/entities/EvidenceBlock'
 import { EntityMetadata } from '@/components/entities/EntityMetadata'
 import { RelationsPanel } from '@/components/entities/RelationsPanel'
@@ -322,6 +323,11 @@ export default async function EntityPage({ params }: PageProps) {
           )}
         </div>
       </SceneSection>
+
+      {/* Costura entre el capítulo "ficha" (header ambiental) y el
+          contenido: el puente marca que la sección que viene es un nuevo
+          bloque del expediente, no continuación accidental. */}
+      <SectionBridge compact />
 
       {/* Content */}
       <SceneSection sceneId="entity-content" className="py-12 sm:py-16">

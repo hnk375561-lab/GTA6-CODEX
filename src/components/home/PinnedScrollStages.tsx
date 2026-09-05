@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { cn } from '@/lib/utils'
-import { StageProgressProvider } from '@/components/home/StageProgress'
+import { StageProgressProvider, StageShell } from '@/components/home/StageProgress'
 
 export interface Stage {
   id: string
@@ -74,6 +74,12 @@ export function PinnedScrollStages({ stages }: Props) {
   const [activeStageId, setActiveStageId] = useState<string | null>(stages[0]?.id ?? null)
   /* Progreso de cascada (0..1) por panel, indexado igual que `stages`. */
   const [poses, setPoses] = useState<number[]>(() => stages.map(() => 0))
+  /* Progreso de "retirada" (0..1) por panel = progreso de entrada del
+     panel SIGUIENTE: cuando el capítulo que viene entra, este se aleja
+     (`StageShell` consume `recedeStyle`). Se mantiene separado de
+     `poses` para que los `Reveal` de cascada no se enteren de la salida.
+     En `prefers-reduced-motion` queda en 0 (paneles estáticos). */
+  const [recedes, setRecedes] = useState<number[]>(() => stages.map(() => 0))
 
   useEffect(() => {
     const container = containerRef.current
@@ -164,6 +170,7 @@ export function PinnedScrollStages({ stages }: Props) {
 
       if (reduced) {
         setPoses(stages.map(() => 1))
+        setRecedes(stages.map(() => 0))
         onScroll = () => setActiveStageId(activeIdAt(container.scrollTop))
         container.addEventListener('scroll', onScroll, { passive: true })
         setActiveStageId(activeIdAt(container.scrollTop))
@@ -192,6 +199,9 @@ export function PinnedScrollStages({ stages }: Props) {
         prevSignature = signature
 
         setPoses(next)
+        // Retirada de un panel = entrada del panel que le sigue. El último
+        // panel no tiene "siguiente", así que nunca se retira solo.
+        setRecedes(next.map((pose, i) => (i + 1 < next.length ? next[i + 1] : 0)))
         setActiveStageId(active)
       }
       raf = requestAnimationFrame(tick)
@@ -257,8 +267,8 @@ export function PinnedScrollStages({ stages }: Props) {
             // presupuesto de scroll quedaba recortado en móvil.
             style={{ minHeight: `${stage.scrollVh ?? DEFAULT_SCROLL_VH}dvh` }}
           >
-            <StageProgressProvider progress={poses[i] ?? 0}>
-              <div className="w-full max-w-7xl">{stage.content}</div>
+            <StageProgressProvider progress={poses[i] ?? 0} exit={recedes[i] ?? 0}>
+              <StageShell className="w-full max-w-7xl">{stage.content}</StageShell>
             </StageProgressProvider>
           </section>
         ))}

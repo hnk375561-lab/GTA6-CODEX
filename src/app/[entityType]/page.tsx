@@ -157,7 +157,7 @@ export default async function EntityTypePage({ params }: PageProps) {
                   (Categorías, Destacados) — antes esta página era la única
                   que saltaba directo al h1 sin ese primer escalón, así que
                   el título no se leía como parte del mismo sistema. */}
-              <p className="eyebrow mb-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
+              <p className="eyebrow-pop eyebrow mb-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-auto-accent">
                 Catálogo
               </p>
               <h1 className="text-4xl font-bold leading-tight text-neutral-900">{label}</h1>
@@ -190,7 +190,7 @@ export default async function EntityTypePage({ params }: PageProps) {
             antes enlazaba a /vehiculos/fabricante/[manufacturer], ruta
             consolidada y ahora redirigida (#9 audit, ver next.config.js). */}
         {type === EntityType.VEHICLE && (
-          <Reveal className="mb-10">
+<Reveal direction="chapter" className="mb-10">
             {(() => {
               const groups = Array.from(vehicleManufacturerGroups!.values()).sort(
                 (a, b) => b.vehicles.length - a.vehicles.length

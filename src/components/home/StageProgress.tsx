@@ -1,7 +1,7 @@
 'use client'
 
-import { createContext, useContext, type ReactNode } from 'react'
-import { staggerStyle, type StaggerOptions } from '@/lib/scroll/stagger'
+import { createContext, useContext, type CSSProperties, type ReactNode } from 'react'
+import { staggerStyle, recedeStyle, type StaggerOptions } from '@/lib/scroll/stagger'
 
 /**
  * `PinnedScrollStages` es Client Component, pero `app/page.tsx` (donde vive
@@ -15,19 +15,34 @@ import { staggerStyle, type StaggerOptions } from '@/lib/scroll/stagger'
  * (index/total), nunca una función.
  */
 const StageProgressContext = createContext(1)
+/* Progreso de "retirada" del panel (0 = manda, 1 = cedió su lugar al
+   siguiente, ver `recedeStyle`). Separado del de entrada a propósito:
+   los `Reveal` de cascada siguen consumiendo solo el de entrada, y el
+   shell del panel consume el de salida. */
+const StageExitContext = createContext(0)
 
 export function StageProgressProvider({
   progress,
+  exit,
   children,
 }: {
   progress: number
+  exit: number
   children: ReactNode
 }) {
-  return <StageProgressContext.Provider value={progress}>{children}</StageProgressContext.Provider>
+  return (
+    <StageExitContext.Provider value={exit}>
+      <StageProgressContext.Provider value={progress}>{children}</StageProgressContext.Provider>
+    </StageExitContext.Provider>
+  )
 }
 
 export function useStageProgress(): number {
   return useContext(StageProgressContext)
+}
+
+export function useStageExit(): number {
+  return useContext(StageExitContext)
 }
 
 /**
@@ -55,6 +70,33 @@ export function Reveal({
   const progress = useStageProgress()
   return (
     <div className={className} style={{ ...staggerStyle(progress, index, total, options), ...style }}>
+      {children}
+    </div>
+  )
+}
+
+/**
+ * Shell de un panel dentro del track: aplica la "retirada" (salida) del
+ * capítulo a su contenido cuando el siguiente empieza a entrar. Mientras
+ * el panel manda (`exit` = 0) no toca nada; cuando el siguiente capítulo
+ * crece, el actual sube 2.2% de su propia altura, se difumina a 0.7 y se
+ * agranda un 1.8% — el mismo arquetipo "se aleja mientras el próximo se
+ * acerca" de un plano secuencia. Zero listeners: lee la misma señal de
+ * rAF que ya calcula `PinnedScrollStages`; `prefers-reduced-motion` la
+ * deja en 0 y el panel queda estático.
+ */
+export function StageShell({
+  className,
+  children,
+}: {
+  className?: string
+  children: ReactNode
+}) {
+  const exit = useStageExit()
+  const style: CSSProperties = recedeStyle(exit)
+  if (exit <= 0) return <div className={className}>{children}</div>
+  return (
+    <div className={className} style={style}>
       {children}
     </div>
   )

@@ -31,6 +31,27 @@
   --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
 
+  /* --- Tokens del sistema de transiciones entre secciones (REINGENIERÍA
+     de motion, ver informe) ---
+     Tres curvas con un solo propósito cada una:
+     - `--ease-cine`: desaceleración cinematográfica (expo-out liviana).
+       Es la curva de los "capítulos": cabeceras, máscaras, puentes y el
+       asentamiento de contenido grande. Empieza rápido y decelera hasta
+       casi cero — igual que un plano de cámara que llega a destino.
+     - `--ease-premium`: ya existía; queda reservada a la cascada fina de
+       cards/tiles (no cambia su uso actual).
+     - `--ease-hinge`: mini-overshoot (≈4%) solo para acentos muy chicos
+       (eyebrows, puntos, hachitas) donde un micro-barrido comunica
+       "llegó" sin transformar el mood del sitio.
+     Duraciones por rol (ver uso en cada regla de abajo): `--dur-snap`
+     para la respuesta táctil/inmediata, `--dur-settle` para contenido de
+     lectura, `--dur-chapter` para el arco completo de un capítulo. */
+  --ease-cine: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-hinge: cubic-bezier(0.3, 1.2, 0.3, 1);
+  --dur-snap: 220ms;
+  --dur-settle: 520ms;
+  --dur-chapter: 760ms;
+
   --dur-fast: 150ms;
   --dur-base: 300ms;
   --dur-slow: 500ms;
@@ -381,6 +402,82 @@ a:not(.no-style) {
   );
 }
 
+/* --- Puente entre secciones (`SectionBridge`) --------------------------
+   Es la costura entre dos capítulos: una hairline de gradiente (mismo
+   lenguaje que `.section-divider`) que CRECE de izquierda a derecha
+   cuando la siguiente sección entra al viewport, con un glow central
+   muy contenido debajo (refuerza "la página continua / hay un nuevo
+   capítulo llegando"). Cero JS: en navegadores con scroll-driven
+   animations (Chrome, Safari 18.2+) el crecimiento queda atado al
+   `view()` timeline; donde no hay soporte, la línea aparece estática
+   (misma degradación elegante de toda el área). `prefers-reduced-motion`
+   deja la línea tendida sin animarla. */
+.section-bridge {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-bridge::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  transform-origin: left center;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--c-pink) 30%, transparent) 28%,
+    color-mix(in srgb, var(--c-cyan) 20%, transparent) 72%,
+    transparent
+  );
+  animation: bridge-grow var(--dur-chapter) var(--ease-cine) both;
+}
+
+.section-bridge::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(38rem, 86vw);
+  height: 5px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--c-cyan) 10%, transparent), transparent 70%);
+  filter: blur(5px);
+  opacity: 0.85;
+}
+
+@supports (animation-timeline: view()) {
+  .section-bridge::before {
+    animation-timeline: view();
+    animation-range: entry;
+  }
+}
+
+@keyframes bridge-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-bridge::before {
+    animation: none;
+  }
+
+  /* Eyebrow de capítulos: visible estático (el `.reveal [data-dir=chapter]`
+     ya desactiva su clip/transform arriba; acá se libera el hijo). */
+  .reveal .eyebrow-pop {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 /* ============================================================
    ANIMACIONES — Sistema global GTA6 Zona
    ============================================================ */
@@ -471,7 +568,7 @@ a:hover .logo-mark {
    al arrancar cada reveal — imperceptible comparado con layers GPU
    acumulándose el resto de la sesión. */
 .reveal:not(.reveal-visible) {
-  will-change: transform, opacity;
+  will-change: transform, opacity, clip-path;
 }
 
 .reveal[data-dir='left'] {
@@ -505,6 +602,68 @@ a:hover .logo-mark {
 
 .reveal[data-dir='curtain'].reveal-visible {
   clip-path: inset(0 0 0% 0);
+}
+
+/* --- Arquetipos del sistema de transiciones entre secciones ------------
+   `up` (default) queda como "asentamiento secundario" (cards, bloques de
+   apoyo). Estas tres variantes dan LENGUAJE VARIABLE a las secciones:
+   el header de una página no entra igual que su grilla, ni la grilla
+   igual que una pasarela horizontal. Regla del sistema: un mismo rol de
+   sección siempre usa el mismo arquetipo, pero cada rol tiene el suyo.
+
+   `chapter` — apertura de capítulo (cabeceras de sección/página):
+   máscara de clip que se abre de abajo hacia arriba mientras el bloque
+   sube y decelera. A diferencia de `curtain` (máscara sola, esqueleto
+   estático), acá el transform también participa: la sección se SIENTE
+   entrar como una nueva escena, no solo destaparse. Curva cine,
+   dur-chapter.
+   `glide` — movimiento horizontal (secciones con identidad direccional:
+   side-panels, pasarelas, listas laterales). Entra desde la dirección
+   que su layout ya sugiere.
+   `swell` — crece y asienta (sección dominada por una pieza visual).
+   Escala 0.94 → 1, sutil: la pieza "se acerca" en vez de deslizarse. */
+.reveal[data-dir='chapter'] {
+  transform: translateY(30px);
+  clip-path: inset(0 0 100% 0);
+  transition: opacity var(--dur-chapter) var(--ease-cine),
+    clip-path var(--dur-chapter) var(--ease-cine),
+    transform var(--dur-chapter) var(--ease-cine);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal[data-dir='chapter'].reveal-visible {
+  transform: none;
+  clip-path: inset(0 0 0% 0);
+}
+
+.reveal[data-dir='glide'] {
+  transform: translateX(56px);
+  transition: opacity var(--dur-settle) var(--ease-cine),
+    transform var(--dur-settle) var(--ease-cine);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal[data-dir='swell'] {
+  transform: scale(0.94);
+  transition: opacity 640ms var(--ease-cine), transform 640ms var(--ease-cine);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* Eyebrow con micro-overshoot al entrar, PERO solo dentro de un
+   `chapter`: el chip de acento "aterriza" un instante después que la
+   máscara del capítulo (delay = reveal-delay + 320ms). En cascadas de
+   cards NO se usa — ahí el stagger ya tiene su propio orden. */
+.reveal[data-dir='chapter'] .eyebrow-pop {
+  transform: translateY(0.35em) scale(0.96);
+  opacity: 0;
+  transition: transform var(--dur-snap) var(--ease-hinge),
+    opacity var(--dur-base) var(--ease-standard);
+  transition-delay: calc(var(--reveal-delay, 0ms) + 320ms);
+}
+
+.reveal[data-dir='chapter'].reveal-visible .eyebrow-pop {
+  transform: none;
+  opacity: 1;
 }
 
 .reveal.reveal-visible {

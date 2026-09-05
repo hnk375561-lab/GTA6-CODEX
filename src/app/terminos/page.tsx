@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <div className="container-narrow py-16 sm:py-20">
-      <Reveal>
-        <p className="eyebrow mb-4 text-xs font-semibold uppercase text-auto-accent-strong">
+      <Reveal direction="chapter">
+        <p className="eyebrow-pop eyebrow mb-4 text-xs font-semibold uppercase text-auto-accent-strong">
           Legal
         </p>
         <h1 className="mb-8 text-3xl font-bold text-neutral-900 sm:text-4xl">

@@ -31,9 +31,9 @@ export const metadata: Metadata = {
 export default function VenderTuAutoPage() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-      <Reveal>
+      <Reveal direction="chapter">
         <div className="mb-8">
-          <p className="eyebrow mb-3 text-xs font-semibold uppercase tracking-wide text-auto-accent-strong">
+          <p className="eyebrow-pop eyebrow mb-3 text-xs font-semibold uppercase tracking-wide text-auto-accent-strong">
             Vendé o entregá tu usado
           </p>
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">

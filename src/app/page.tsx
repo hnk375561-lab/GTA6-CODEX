@@ -45,6 +45,7 @@ import { EvidenceSpotlight, type EvidenceHighlight } from '@/components/home/Evi
 import { RankingsSpotlight, type RankingSpotlight } from '@/components/home/RankingsSpotlight'
 import { FeaturedCarousel } from '@/components/home/FeaturedCarousel'
 import { HomeFaqPanel, type FaqItem } from '@/components/home/HomeFaqPanel'
+import { SectionBridge } from '@/components/ui/SectionBridge'
 import { formatRelativeTime, formatVehicleDisplayName } from '@/lib/utils'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -508,7 +509,7 @@ export default async function HomePage() {
       scrollVh: 160,
       content: (
         <div className="relative mx-auto w-full max-w-[90rem] text-center">
-          <Reveal index={0} total={6} options={{ distance: 22 }}>
+          <Reveal index={0} total={6} options={{ distance: 24, easing: 'cine' }}>
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
               {SITE_NAME}
               {lastUpdateLabel && (
@@ -622,7 +623,7 @@ export default async function HomePage() {
               línea corta que cumple el único trabajo real que le
               quedaba: nombrar la región para quien no vea el `aria-label`
               interno del carrusel. */}
-          <Reveal index={5} total={6} className="mx-auto mt-14 w-full text-left">
+          <Reveal index={5} total={6} options={{ flavor: 'swell' }} className="mx-auto mt-14 w-full text-left">
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
               Fichas destacadas — evidencia verificada
             </p>
@@ -987,6 +988,7 @@ export default async function HomePage() {
           documento ya volvió a scroll normal (ver comentario en
           `HomeFaqPanel`), entre el final del track y `<Footer />`
           (renderizado por `layout.tsx`, no por esta página). */}
+      <SectionBridge className="mt-2" />
       <HomeFaqPanel items={faqItems} />
     </>
   )

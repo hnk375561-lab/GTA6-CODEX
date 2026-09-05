@@ -67,16 +67,14 @@ export default async function SearchPage({
   return (
     <section className="py-12 sm:py-16">
       <div className="container-max">
-        <div className="mb-8">
-          <h1 className="mb-2 font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
-            Buscá <span className="text-gradient-vice">en el expediente</span>
-          </h1>
-          <Reveal delay={100}>
-            <p className="text-neutral-500">
-              Explorá vehículos, motos, fabricantes y guías documentadas en el catálogo.
-            </p>
-          </Reveal>
-        </div>
+        <Reveal direction="chapter" className="mb-8">
+        <h1 className="mb-2 font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
+          Buscá <span className="text-gradient-vice">en el expediente</span>
+        </h1>
+        <p className="text-neutral-500">
+          Explorá vehículos, motos, fabricantes y guías documentadas en el catálogo.
+        </p>
+      </Reveal>
 
         {/* Suspense requerido por `useSearchParams` dentro de SearchClient
             (sincroniza `?q=`/`?tipo=` con la URL, ver

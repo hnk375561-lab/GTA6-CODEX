@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 export default function MapaPage() {
   return (
     <div className="mx-auto max-w-3xl px-[var(--gutter-width)] py-16 text-center md:py-24">
-      <Reveal>
+      <Reveal direction="chapter">
         <h1 className="font-display text-3xl font-bold text-neutral-900 md:text-4xl">Mapa en construcción</h1>
         <p className="mt-4 text-neutral-500">
           Estamos preparando un mapa de concesionarias y puntos de interés con datos reales.

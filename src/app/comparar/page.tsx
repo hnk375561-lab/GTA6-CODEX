@@ -6,6 +6,7 @@ import { getEntityImageMap } from '@/lib/media'
 import { CompareExplorer } from '@/components/entities/CompareExplorer'
 import { CompareTileSkeleton } from '@/components/ui/loading'
 import { Reveal } from '@/components/ui/Reveal'
+import { SectionBridge } from '@/components/ui/SectionBridge'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 import { AdUnit } from '@/components/monetization/AdUnit'
 
@@ -54,7 +55,7 @@ export default async function CompararPage() {
 
   return (
     <div className="mx-auto max-w-[96rem] px-4 py-10 sm:px-6 sm:py-14 lg:px-8 xl:px-12">
-      <Reveal>
+      <Reveal direction="chapter">
         <div className="mb-8 max-w-2xl">
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
             Comparar <span className="text-gradient-vice">vehículos</span>
@@ -65,6 +66,8 @@ export default async function CompararPage() {
           </p>
         </div>
       </Reveal>
+
+      <SectionBridge compact />
 
       <Suspense fallback={<CompareExplorerFallback />}>
         <CompareExplorer vehicles={vehicles} imageBySlug={imageBySlug} />

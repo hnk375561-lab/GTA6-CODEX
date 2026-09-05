@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 export default function FinanciamientoPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-      <Reveal>
+      <Reveal direction="chapter">
         <div className="mb-8 max-w-2xl">
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
             Calculadora de <span className="text-gradient-vice">financiamiento</span>
@@ -56,7 +56,7 @@ export default function FinanciamientoPage() {
        *  buscar esa financiación de verdad. Mismo botón/afiliado que ya se
        *  usa en la ficha de vehículo (`MonetizationCtaGroup`), acá como
        *  cierre natural del flujo de la calculadora. */}
-      <Reveal delay={110}>
+      <Reveal delay={110} direction="glide">
         <div className="mt-8 flex flex-col items-center gap-2 rounded-xl border border-edge bg-surface-alt p-5 text-center">
           <p className="text-sm text-neutral-600">¿Te sirvió la simulación? Buscá tu financiación con esas condiciones.</p>
           <FinancingAffiliateButton trackingLabel="financiamiento-calculadora" />
