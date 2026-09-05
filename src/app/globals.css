@@ -2305,6 +2305,13 @@ video,
   }
 }
 
+/* Utilidad para targets de scroll-snap: evita que el navegador salte
+   cards durante scroll rápido / fling. Aplicar en los ítems del carrusel
+   (los que tienen `snap-start`). */
+.snap-stop-always {
+  scroll-snap-stop: always;
+}
+
 /* ============================================================
    Hero — "constelación de accesos directos" (sept. 2026)
    Ver `HeroQuickLinks.tsx` para la lógica (cascada de entrada +

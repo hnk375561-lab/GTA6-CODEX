@@ -28,7 +28,15 @@ export interface HeroVehicleShowcaseItem {
 }
 
 const PHOTO_ZOOM_SCALE = 1.3
-const SCROLL_STEP_PX = 360
+
+/** Calcula el paso de scroll dinámicamente basado en el ancho real de una card
+ *  (incluye gap). El track expone su scrollWidth/clientWidth, así que el paso
+ *  ideal es ~ancho visible del track * 0.85 (deja ~15% de la siguiente card
+ *  asomando como pista visual). Fallback a 360px si el track no está listo. */
+function getScrollStep(track: HTMLDivElement | null): number {
+  if (!track) return 360
+  return Math.max(280, Math.round(track.clientWidth * 0.85))
+}
 
 interface HeroVehicleShowcaseV2Props {
   vehicles: HeroVehicleShowcaseItem[]
@@ -132,7 +140,7 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
     const track = trackRef.current
     if (!track) return
     track.scrollBy({
-      left: SCROLL_STEP_PX * direction,
+      left: getScrollStep(track) * direction,
       behavior: 'smooth',
     })
   }
@@ -195,7 +203,7 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
               return (
                 <div
                   key={vehicle.slug}
-                  className="hero-glow-card hero-card-hover animate-fade-in group/card relative h-[21rem] w-[19rem] shrink-0 snap-start overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-lg sm:h-[23rem] sm:w-[26rem] lg:w-[28rem]"
+                  className="hero-glow-card hero-card-hover animate-fade-in group/card relative h-[21rem] w-[19rem] shrink-0 snap-start snap-stop-always overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-lg sm:h-[23rem] sm:w-[26rem] lg:w-[28rem]"
                   style={{ animationDelay: `${index * 90}ms`, animationFillMode: 'backwards' }}
                 >
                   {canLink ? (
@@ -294,28 +302,29 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
 
             {/* Espaciador final: aire después de la última card para que
                 no quede pegada al borde del degradé de la derecha. */}
-            {vehicles.length > 0 && <div aria-hidden="true" className="w-1 shrink-0 sm:w-2" />}
+            {vehicles.length > 0 && <div aria-hidden="true" className="w-4 shrink-0 sm:w-6" />}
           </FeaturedCarousel>
 
-          {/* Degradés de borde: señalan "hay más para scrollear" a cada
+{/* Degradés de borde: señalan "hay más para scrollear" a cada
               lado sin depender solo de las flechas — se apagan solos
               cuando ya no queda nada para ese lado (mismo estado que
               deshabilita las flechas). `pointer-events-none` para que
-              nunca tapen el click de la card de abajo. */}
-          <div
-            aria-hidden="true"
-            className={cn(
-              'pointer-events-none absolute inset-y-0 left-0 z-[5] w-8 bg-gradient-to-r from-surface-page to-transparent transition-opacity duration-200 sm:w-12',
-              canScrollPrev ? 'opacity-100' : 'opacity-0'
-            )}
-          />
-          <div
-            aria-hidden="true"
-            className={cn(
-              'pointer-events-none absolute inset-y-0 right-0 z-[5] w-8 bg-gradient-to-l from-surface-page to-transparent transition-opacity duration-200 sm:w-12',
-              canScrollNext ? 'opacity-100' : 'opacity-0'
-            )}
-          />
+              nunca tapen el click de la card de abajo. Ancho aumentado
+              para mejor visibilidad (24px base, 48px en sm). */}
+            <div
+              aria-hidden="true"
+              className={cn(
+                'pointer-events-none absolute inset-y-0 left-0 z-[5] w-6 bg-gradient-to-r from-surface-page to-transparent transition-opacity duration-200 sm:w-12',
+                canScrollPrev ? 'opacity-100' : 'opacity-0'
+              )}
+            />
+            <div
+              aria-hidden="true"
+              className={cn(
+                'pointer-events-none absolute inset-y-0 right-0 z-[5] w-6 bg-gradient-to-l from-surface-page to-transparent transition-opacity duration-200 sm:w-12',
+                canScrollNext ? 'opacity-100' : 'opacity-0'
+              )}
+            />
 
           {/* Botones de navegación (solo desktop) — controlan el nodo
               real expuesto por `FeaturedCarousel` vía `trackRef`, sin
@@ -327,7 +336,7 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
                 onClick={() => scrollByStep(-1)}
                 disabled={!canScrollPrev}
                 aria-label="Ver vehículos anteriores"
-                className="tap-scale absolute -left-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#404040] shadow-lg ring-1 ring-[#e5e5e5] transition duration-150 hover:-translate-x-0.5 hover:text-[#171717] disabled:pointer-events-none disabled:opacity-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent sm:flex"
+                className="tap-scale absolute -left-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-surface-elevated text-auto-text ring-1 ring-edge transition duration-150 hover:-translate-x-0.5 hover:bg-surface-card-hover hover:text-auto-accent-strong disabled:pointer-events-none disabled:opacity-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent sm:flex"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M15 18l-6-6 6-6" />
@@ -338,7 +347,7 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
                 onClick={() => scrollByStep(1)}
                 disabled={!canScrollNext}
                 aria-label="Ver más vehículos"
-                className="tap-scale absolute -right-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#404040] shadow-lg ring-1 ring-[#e5e5e5] transition duration-150 hover:translate-x-0.5 hover:text-[#171717] disabled:pointer-events-none disabled:opacity-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent sm:flex"
+                className="tap-scale absolute -right-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-surface-elevated text-auto-text ring-1 ring-edge transition duration-150 hover:translate-x-0.5 hover:bg-surface-card-hover hover:text-auto-accent-strong disabled:pointer-events-none disabled:opacity-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent sm:flex"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M9 18l6-6-6-6" />

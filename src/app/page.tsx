@@ -815,7 +815,7 @@ export default async function HomePage() {
                   {featured.map((entity, i) => (
                     <div
                       key={`${entity.type}-${entity.slug}`}
-                      className="w-[44%] shrink-0 snap-start sm:w-[30%] lg:w-[22%]"
+                      className="w-[44%] shrink-0 snap-start snap-stop-always sm:w-[30%] lg:w-[22%]"
                     >
                       <Reveal index={i} total={featured.length}>
                         <TiltCard>
