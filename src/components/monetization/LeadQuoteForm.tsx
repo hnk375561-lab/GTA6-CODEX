@@ -62,6 +62,11 @@ export function LeadQuoteForm({
   const [comentario, setComentario] = useState('')
   const [sent, setSent] = useState(false)
   const [sentVia, setSentVia] = useState<'gform' | 'mailto'>('mailto')
+  // Envío en curso: desactiva el submit (anti doble-click/tap) y cambia la
+  // etiqueta del botón a "Enviando…" mientras el fetch a Google Forms
+  // resuelve — antes el botón quedaba "muerto" sin ningún feedback durante
+  // la ventana de red, y un doble click podía duplicar el lead.
+  const [sending, setSending] = useState(false)
 
   // Botón de submit desactivado mientras falten los campos obligatorios:
   // el formulario comunica desde el reposo cuándo se puede enviar, en vez
@@ -70,6 +75,7 @@ export function LeadQuoteForm({
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    if (sending) return
     if (!nombre.trim() || !contacto.trim()) return
 
     trackAffiliateClick({
@@ -77,6 +83,8 @@ export function LeadQuoteForm({
       vehicleName,
       label: `${trackingLabelPrefix}-lead-form`,
     })
+
+    setSending(true)
 
     if (GFORM_CONFIGURED) {
       // no-cors: Google Forms no devuelve headers CORS, así que la
@@ -109,6 +117,7 @@ export function LeadQuoteForm({
         window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
         setSentVia('mailto')
       }
+      setSending(false)
       setSent(true)
       return
     }
@@ -120,6 +129,7 @@ export function LeadQuoteForm({
     )
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
     setSentVia('mailto')
+    setSending(false)
     setSent(true)
   }
 
@@ -139,7 +149,7 @@ export function LeadQuoteForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`rounded-lg border border-edge bg-surface-card p-4 ${className}`}>
+    <form onSubmit={handleSubmit} aria-busy={sending} className={`rounded-lg border border-edge bg-surface-card p-4 ${className}`}>
       <p className="mb-3 text-sm font-semibold text-neutral-900">
         📩 Solicitá una cotización de {vehicleName} sin compromiso
       </p>
@@ -169,10 +179,10 @@ export function LeadQuoteForm({
         />
         <button
           type="submit"
-          disabled={!formValid}
+          disabled={!formValid || sending}
           className="w-full rounded-md bg-auto-accent px-3 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-auto-accent-strong active:scale-[0.99] active:bg-auto-accent-strong disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent focus-visible:ring-offset-2"
         >
-          Pedir cotización
+          {sending ? 'Enviando…' : 'Pedir cotización'}
         </button>
         <p className="text-center text-[11px] text-neutral-400">
           No compartimos tus datos con nadie sin tu consentimiento explícito.

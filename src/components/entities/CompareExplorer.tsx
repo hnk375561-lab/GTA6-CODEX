@@ -2,9 +2,9 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import Image from 'next/image'
 import type { Vehicle } from '@/types'
 import type { ResolvedDisplayImage } from '@/lib/images'
+import { ImageReveal } from '@/components/ui/ImageReveal'
 import { VehicleCompareTable, MAX_COMPARE } from '@/components/entities/VehicleCompareSheet'
 import { readCompareStorage, writeCompareStorage } from '@/lib/hooks/useVehicleCompare'
 import { MercadoLibreAffiliateButton } from '@/components/monetization/MercadoLibreAffiliateButton'
@@ -279,13 +279,12 @@ function VehiclePickerTile({
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-white">
         {image?.src ? (
-          <Image
+          <ImageReveal
             src={image.src}
             alt={vehicle.title}
-            fill
             sizes="(min-width: 1024px) 600px, (min-width: 640px) 480px, 320px"
             quality={92}
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            imgClassName="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center text-[10px] text-neutral-400">

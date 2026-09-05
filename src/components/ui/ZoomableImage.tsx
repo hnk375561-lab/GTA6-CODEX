@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image, { type ImageProps } from 'next/image'
 import { useImageZoom } from '@/lib/hooks/useImageZoom'
 import { cn } from '@/lib/utils'
@@ -36,14 +36,37 @@ export function ZoomableImage({ resetKey, wrapperClassName, className, alt, ...i
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resetKey])
 
+  // Revelado: el panel del lightbox ya es oscuro y reservado (sin CLS), así
+  // que acá basta un fade de la imagen (mismas clases `.media-img*` que
+  // `ImageReveal`) sin superficie de esqueleto. Guard anti-race de
+  // hidratación idéntico: si la foto ya estaba en caché, el `load` pudo
+  // ocurrir antes de montar React — `naturalWidth > 0` la marca como lista.
+  const imgWrapRef = useRef<HTMLDivElement>(null)
+  const [loaded, setLoaded] = useState(false)
+  useEffect(() => {
+    const img = imgWrapRef.current?.querySelector('img')
+    if (img && img.complete && img.naturalWidth > 0) setLoaded(true)
+  }, [])
+
   return (
     <div
       ref={containerRef}
       className={cn('zoomable-image-container relative h-full w-full select-none overflow-hidden', wrapperClassName)}
       {...containerProps}
     >
-      <div className="pointer-events-none absolute inset-0" style={style}>
-        <Image {...imageProps} alt={alt} fill className={cn('pointer-events-none object-contain', className)} />
+      <div
+        ref={imgWrapRef}
+        className={cn('media-img pointer-events-none absolute inset-0', loaded && 'media-img--loaded')}
+        style={style}
+      >
+        <Image
+          {...imageProps}
+          alt={alt}
+          fill
+          className={cn('pointer-events-none object-contain', className)}
+          onLoad={() => setLoaded(true)}
+          onError={() => setLoaded(true)}
+        />
       </div>
 
       <div

@@ -14,6 +14,7 @@ import { Card, CardBody } from '@/components/ui/Card'
 import { EntityListExplorer } from '@/components/entities/EntityListExplorer'
 import { EntityCard } from '@/components/entities/EntityCard'
 import { AdUnit } from '@/components/monetization/AdUnit'
+import { cn } from '@/lib/utils'
 
 interface PageProps {
   params: Promise<{ entityType: string }>
@@ -38,7 +39,19 @@ function EntityListExplorerFallback({
   imageBySlug: ReturnType<typeof getEntityImageMap>
 }) {
   return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div
+      className={cn(
+        'grid gap-6',
+        // Antes fijo en sm:2 lg:3 — pero el explorador real de Vehículos
+        // usa un grid denso de más columnas (grid-cols-2 sm:3 md:4 xl:5) y
+        // el fallback quedaba DESALINEADO con el contenido que reemplaza
+        // (salto de layout al hidratar). Se detecta por el tipo de la
+        // primera entidad, misma rama que usa `EntityListExplorer`.
+        entities[0]?.type === EntityType.VEHICLE
+          ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5'
+          : 'sm:grid-cols-2 lg:grid-cols-3'
+      )}
+    >
       {entities.map((entity, index) => (
         <div key={`${entity.type}-${entity.slug}`} className="entity-card-viewport">
           <EntityCard

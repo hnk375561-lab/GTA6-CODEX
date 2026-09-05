@@ -9,6 +9,7 @@ import { EntityImage } from '@/components/entities/EntityImage'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
 import { useSyncedSearchParams } from '@/lib/hooks/useSyncedSearchParams'
+import { PendingIndicator } from '@/components/ui/loading'
 import { cn } from '@/lib/utils'
 import { STATUS_LABELS } from '@/lib/entity-labels'
 import { vehiclePerformanceScore, hasPerformanceData } from '@/lib/vehicle-performance'
@@ -107,6 +108,10 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
     return raw ? raw.split(',').filter(Boolean) : []
   })
   const debouncedQuery = useDebouncedValue(query, 250)
+
+  // Búsqueda en curso (debounce): la query escrita todavía no está
+  // aplicada a `results`. Ver `PendingIndicator`.
+  const isSearchPending = query.trim() !== debouncedQuery.trim()
 
   // Mantiene `?q=`, `?tipo=`, `?estado=`, `?orden=` y `?tags=` al día con
   // el estado actual, así el link es compartible y el botón "atrás" del
@@ -397,8 +402,11 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
             </div>
           )}
 
-          <p className="mb-4 text-sm text-neutral-500" aria-live="polite">
-            {results.length} {results.length === 1 ? 'resultado' : 'resultados'} para &ldquo;{query}&rdquo;
+          <p className="mb-4 flex items-center gap-3 text-sm text-neutral-500" aria-live="polite">
+            <span>
+              {results.length} {results.length === 1 ? 'resultado' : 'resultados'} para &ldquo;{query}&rdquo;
+            </span>
+            {isSearchPending && <PendingIndicator />}
           </p>
 
           {results.length > 0 && (

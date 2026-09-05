@@ -2,9 +2,9 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import Image from 'next/image'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { ZoomableImage } from '@/components/ui/ZoomableImage'
+import { ImageReveal } from '@/components/ui/ImageReveal'
 import { useModalFocus } from '@/lib/hooks/useModalFocus'
 import { cn } from '@/lib/utils'
 
@@ -80,7 +80,7 @@ export function EntityGallery({ images, entityTitle }: EntityGalleryProps) {
           )}
           style={{ width: 64 }}
         >
-          <Image src={img.src} alt={img.alt} fill sizes="64px" loading="lazy" className="object-cover" />
+          <ImageReveal src={img.src} alt={img.alt} sizes="64px" imgClassName="object-cover" />
         </button>
       )),
     [images, active, total]
@@ -177,13 +177,12 @@ export function EntityGallery({ images, entityTitle }: EntityGalleryProps) {
         aria-label={`Ampliar imagen: ${current.alt}`}
         className="card-media relative block aspect-[4/5] w-full cursor-zoom-in overflow-hidden rounded-lg border border-edge bg-white"
       >
-        <Image
+        <ImageReveal
           src={current.src}
           alt={current.alt}
-          fill
           sizes="(min-width: 1024px) 380px, 92vw"
           quality={90}
-          className="card-media-image-static object-cover"
+          imgClassName="card-media-image-static object-cover"
         />
         <div className="card-media-sheen" aria-hidden="true" />
         <div className="card-media-vignette" aria-hidden="true" />

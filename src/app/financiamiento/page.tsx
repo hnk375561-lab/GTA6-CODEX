@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { FinancingCalculator } from '@/components/ui/FinancingCalculator'
+import { FinancingCalculatorSkeleton } from '@/components/ui/loading'
 import { Reveal } from '@/components/ui/Reveal'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 import { AdUnit } from '@/components/monetization/AdUnit'
@@ -10,7 +11,7 @@ import { FinancingAffiliateButton } from '@/components/monetization/FinancingAff
  *  `useSearchParams` para el prefill opcional de precio — mismo patrón
  *  que `CompareExplorerFallback` en `/comparar`). */
 function FinancingCalculatorFallback() {
-  return <div className="h-[420px] animate-pulse rounded-xl border border-edge bg-surface-card" />
+  return <FinancingCalculatorSkeleton />
 }
 
 export const metadata: Metadata = {

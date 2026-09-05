@@ -25,6 +25,7 @@ import { CountUp } from '@/components/ui/CountUp'
 import { WordRotate } from '@/components/ui/WordRotate'
 import { CategoryCardMedia } from '@/components/ui/CategoryCardMedia'
 import { FinancingCalculator } from '@/components/ui/FinancingCalculator'
+import { FinancingCalculatorSkeleton } from '@/components/ui/loading'
 import { EntityCard } from '@/components/entities/EntityCard'
 import { getCategoryPreviewImages } from '@/lib/images'
 import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
@@ -150,7 +151,7 @@ const EVIDENCE_LEVEL_PRIORITY: Record<EvidenceLevel, number> = {
  *  (lee `useSearchParams` para el prefill opcional de precio), mismo
  *  placeholder mientras React hidrata. */
 function FinancingCalculatorFallback() {
-  return <div className="h-[420px] w-full animate-pulse rounded-xl border border-edge bg-surface-card" />
+  return <FinancingCalculatorSkeleton />
 }
 
 /** Mismo criterio de formato que `formatUsd` (privado en `rankings.ts`,

@@ -4,6 +4,7 @@ import { EntityType, type Vehicle } from '@/types'
 import { getEntitiesByType } from '@/lib/entities'
 import { getEntityImageMap } from '@/lib/media'
 import { CompareExplorer } from '@/components/entities/CompareExplorer'
+import { CompareTileSkeleton } from '@/components/ui/loading'
 import { Reveal } from '@/components/ui/Reveal'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 import { AdUnit } from '@/components/monetization/AdUnit'
@@ -37,7 +38,7 @@ function CompareExplorerFallback() {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
       {Array.from({ length: 10 }).map((_, i) => (
-        <div key={i} className="aspect-[4/3] animate-pulse rounded-xl border border-edge bg-surface-card" />
+        <CompareTileSkeleton key={i} />
       ))}
     </div>
   )

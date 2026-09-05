@@ -9,6 +9,7 @@ import { VehicleCompareBar, VehicleCompareSheet, MAX_COMPARE } from '@/component
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
 import { useSyncedSearchParams } from '@/lib/hooks/useSyncedSearchParams'
 import { useVehicleCompare } from '@/lib/hooks/useVehicleCompare'
+import { PendingIndicator } from '@/components/ui/loading'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { cn } from '@/lib/utils'
 import { STATUS_LABELS } from '@/lib/entity-labels'
@@ -358,6 +359,10 @@ export function EntityListExplorer({
   // todavía, para que ninguna card se vea "muerta" mientras se sube el
   // asset real. La propia card (EntityCard) ya asume esto siempre.
   const isFiltering = debouncedQuery.trim().length > 0 || hasActiveFilters
+
+  // Búsqueda todavía sin aplicar (debounce de 200ms en curso): la query
+  // visible es más nueva que `filtered`. Ver `PendingIndicator`.
+  const isSearchPending = query.trim() !== debouncedQuery.trim()
 
   return (
     <div>
@@ -753,9 +758,12 @@ export function EntityListExplorer({
       </div>
 
       {isFiltering && (
-        <p className="mb-5 text-sm text-neutral-500" aria-live="polite">
-          {filtered.length} {filtered.length === 1 ? 'resultado' : 'resultados'}
-          {query.trim() && <> para &ldquo;{query}&rdquo;</>}
+        <p className="mb-5 flex items-center gap-3 text-sm text-neutral-500" aria-live="polite">
+          <span>
+            {filtered.length} {filtered.length === 1 ? 'resultado' : 'resultados'}
+            {query.trim() && <> para &ldquo;{query}&rdquo;</>}
+          </span>
+          {isSearchPending && <PendingIndicator />}
         </p>
       )}
 

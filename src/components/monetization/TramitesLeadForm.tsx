@@ -58,6 +58,9 @@ export function TramitesLeadForm({ className = '' }: { className?: string }) {
   const [comentario, setComentario] = useState('')
   const [sent, setSent] = useState(false)
   const [sentVia, setSentVia] = useState<'gform' | 'mailto'>('mailto')
+  // Envío en curso: desactiva el submit (anti doble-click) y muestra
+  // "Enviando…" mientras el fetch a Google Forms resuelve.
+  const [sending, setSending] = useState(false)
 
   // Mismo criterio que LeadQuoteForm/SellVehicleLeadForm: el submit se
   // desactiva visiblemente hasta que estén los datos obligatorios.
@@ -65,6 +68,7 @@ export function TramitesLeadForm({ className = '' }: { className?: string }) {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    if (sending) return
     if (!nombre.trim() || !contacto.trim()) return
 
     trackAffiliateClick({
@@ -72,6 +76,8 @@ export function TramitesLeadForm({ className = '' }: { className?: string }) {
       vehicleName: tipoTramite,
       label: 'tramites-vehiculo-form',
     })
+
+    setSending(true)
 
     if (GFORM_CONFIGURED) {
       const formData = new URLSearchParams()
@@ -93,12 +99,14 @@ export function TramitesLeadForm({ className = '' }: { className?: string }) {
         sendMailtoFallback()
         setSentVia('mailto')
       }
+      setSending(false)
       setSent(true)
       return
     }
 
     sendMailtoFallback()
     setSentVia('mailto')
+    setSending(false)
     setSent(true)
 
     function sendMailtoFallback() {
@@ -126,7 +134,7 @@ export function TramitesLeadForm({ className = '' }: { className?: string }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`rounded-lg border border-edge bg-surface-card p-4 ${className}`}>
+    <form onSubmit={handleSubmit} aria-busy={sending} className={`rounded-lg border border-edge bg-surface-card p-4 ${className}`}>
       <p className="mb-3 text-sm font-semibold text-neutral-900">
         📋 Contanos qué trámite necesitás y te conectamos con una gestoría
       </p>
@@ -168,10 +176,10 @@ export function TramitesLeadForm({ className = '' }: { className?: string }) {
         />
         <button
           type="submit"
-          disabled={!formValid}
+          disabled={!formValid || sending}
           className="w-full rounded-md bg-auto-accent px-3 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-auto-accent-strong active:scale-[0.99] active:bg-auto-accent-strong disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent focus-visible:ring-offset-2"
         >
-          Quiero que me contacten
+          {sending ? 'Enviando…' : 'Quiero que me contacten'}
         </button>
         <p className="text-center text-[11px] text-neutral-400">
           No calculamos aranceles ni costos de trámite acá (varían por provincia y cambian seguido) — una

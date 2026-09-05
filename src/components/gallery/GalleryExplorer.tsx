@@ -1,13 +1,14 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import Fuse from 'fuse.js'
 import type { GalleryCategoryCount, GalleryItem } from '@/lib/gallery'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
 import { ZoomableImage } from '@/components/ui/ZoomableImage'
+import { ImageReveal } from '@/components/ui/ImageReveal'
+import { PendingIndicator } from '@/components/ui/loading'
 import { YouTubeEmbed } from '@/components/media/YouTubeEmbed'
 import { VideoEmbed } from '@/components/media/VideoEmbed'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
@@ -55,6 +56,11 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
   }, [fuse, debouncedQuery, items, category])
 
   const isFiltering = debouncedQuery.trim().length > 0 || category !== 'todas'
+
+  // Búsqueda todavía "en el aire": la query que ve el usuario todavía no
+  // está aplicada (debounce de 200ms en curso) — los resultados mostrados
+  // son los anteriores. Ver `PendingIndicator`.
+  const isSearchPending = query.trim() !== debouncedQuery.trim()
 
   /** Mismo patrón que el listado de Vehículos (`EntityListExplorer`): la
    *  galería agrega imágenes de TODOS los tipos de entidad + key art +
@@ -178,9 +184,12 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
       </div>
 
       {isFiltering && (
-        <p className="mb-5 text-sm text-neutral-500" aria-live="polite">
-          {filtered.length} {filtered.length === 1 ? 'resultado' : 'resultados'}
-          {query.trim() && <> para &ldquo;{query}&rdquo;</>}
+        <p className="mb-5 flex items-center gap-3 text-sm text-neutral-500" aria-live="polite">
+          <span>
+            {filtered.length} {filtered.length === 1 ? 'resultado' : 'resultados'}
+            {query.trim() && <> para &ldquo;{query}&rdquo;</>}
+          </span>
+          {isSearchPending && <PendingIndicator />}
         </p>
       )}
 
@@ -263,23 +272,19 @@ function GalleryTile({
       {/* Contenedor de imagen - ocupa espacio flexible */}
       <div className="relative flex-1 w-full overflow-hidden flex items-center justify-center">
         {item.kind === 'video' && item.src ? (
-          // eslint-disable-next-line @next/next/no-img-element -- miniatura pública de i.ytimg.com (YouTube), fuera del dominio propio configurado en next/image
-          <img
-            src={item.src}
-            alt={item.alt}
-            loading="lazy"
-            className="gallery-tile-image w-full h-full"
-          />
+          // Miniatura pública de i.ytimg.com (YouTube), fuera del dominio
+          // propio configurado en next/image — revelado con `ImageReveal`
+          // en modo remote (misma superficie esqueleto + fade).
+          <ImageReveal remote src={item.src} alt={item.alt} imgClassName="gallery-tile-image" />
         ) : item.kind === 'video' ? (
           <div className="w-full h-full bg-gradient-to-br from-neutral-800 via-auto-darker to-black" aria-hidden="true" />
         ) : (
-          <Image
+          <ImageReveal
             src={item.src}
             alt={item.alt}
-            fill
             sizes={featured ? '(min-width: 1920px) 1400px, (min-width: 1536px) 1100px, (min-width: 1280px) 1000px, (min-width: 1024px) 900px, (min-width: 768px) 95vw, 100vw' : '(min-width: 1920px) 750px, (min-width: 1536px) 700px, (min-width: 1280px) 650px, (min-width: 1024px) 600px, (min-width: 768px) 60vw, 90vw'}
-            className="gallery-tile-image"
             quality={94}
+            imgClassName="gallery-tile-image"
           />
         )}
         <div className="gallery-tile-overlay absolute inset-0" aria-hidden="true" />

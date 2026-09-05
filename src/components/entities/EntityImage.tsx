@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import { Entity, EntityType } from '@/types'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { GridPattern } from '@/components/ui/GridPattern'
 import { SimpleLightbox } from '@/components/ui/SimpleLightbox'
+import { ImageReveal } from '@/components/ui/ImageReveal'
 import { cn } from '@/lib/utils'
 
 interface EntityImageProps {
@@ -149,30 +149,24 @@ export function EntityImage({ entity, image, variant = 'thumbnail', priority = f
     >
       {resolved ? (
         <>
-          {resolved.remote ? (
-            // Miniatura de YouTube (img.youtube.com): dominio externo no
-            // configurado en next.config.js `images` a propósito (el resto
-            // del sitio nunca hotlinkea assets externos), mismo criterio
-            // que ya usa GalleryExplorer para las piezas de video.
-            // eslint-disable-next-line @next/next/no-img-element -- ver comentario arriba
-            <img
-              src={resolved.src}
-              alt={resolved.alt}
-              loading="lazy"
-              className={cn('absolute inset-0 h-full w-full object-cover', variant === 'portrait' ? 'card-media-image-static' : 'card-media-image')}
-            />
-          ) : (
-            <Image
-              src={resolved.src}
-              alt={resolved.alt}
-              fill
-              sizes={SIZES[variant]}
-              quality={QUALITY[variant]}
-              priority={priority}
-              loading={priority ? undefined : 'lazy'}
-              className={cn('object-cover', variant === 'portrait' ? 'card-media-image-static' : 'card-media-image')}
-            />
-          )}
+          {/* Media con revelado sutil: `ImageReveal` (hijo cliente) muestra
+              la superficie esqueleto mientras carga y hace fade a la imagen
+              apenas está lista — en vez del "pop" abrupto del `<img>`
+              directo sobre el fondo plano `bg-white`. Sigue sin haber CLS:
+              el contenedor `.card-media` ya reserva el aspect-ratio. La
+              sheen/vignette van DETRÁS del fade (`media-reveal` es z-0 y
+              su `::after` contenido) y los badges/zoom por SÍLIDA encima,
+              así no se ocultan durante la transición. */}
+          <ImageReveal
+            src={resolved.src}
+            alt={resolved.alt}
+            remote={resolved.remote}
+            sizes={SIZES[variant]}
+            quality={QUALITY[variant]}
+            priority={priority}
+            className="z-0"
+            imgClassName={cn('object-cover', variant === 'portrait' ? 'card-media-image-static' : 'card-media-image')}
+          />
           {!isAvatar && <div className="card-media-sheen" aria-hidden="true" />}
           {!isAvatar && <div className="card-media-vignette" aria-hidden="true" />}
           {!isAvatar && isAiImage && (
