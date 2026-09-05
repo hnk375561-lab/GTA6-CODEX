@@ -16,7 +16,8 @@ import { EntityCardSkeleton, Skeleton } from '@/components/ui/loading'
  */
 export default function Loading() {
   return (
-    <div className="container-max py-16">
+    <div className="container-max py-16" role="status">
+      <span className="sr-only">Cargando el listado…</span>
       <div className="mb-10" aria-hidden="true">
         <Skeleton className="mb-6 h-3.5 w-40" />
         <div className="flex items-center gap-4">

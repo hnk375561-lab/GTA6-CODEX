@@ -66,7 +66,7 @@ export function ForSaleFlyerForm({ className = '' }: { className?: string }) {
 
   if (status === 'unavailable') {
     return (
-      <p className={`text-sm text-neutral-400 ${className}`}>
+      <p role="status" className={`text-sm text-neutral-400 ${className}`}>
         El cartel de venta en PDF todavía no está activo en este sitio.
       </p>
     )
@@ -140,7 +140,7 @@ export function ForSaleFlyerForm({ className = '' }: { className?: string }) {
       >
         {status === 'loading' ? 'Generando pago…' : `Pagar y descargar (ARS ${FLYER_PRICE_ARS})`}
       </button>
-      {errorMessage && <p className="mt-1.5 text-xs text-red-400">{errorMessage}</p>}
+      {errorMessage && <p role="alert" className="mt-1.5 text-xs text-red-400">{errorMessage}</p>}
       <p className="mt-2 text-center text-[11px] text-neutral-400">
         Pago único vía Mercado Pago. No guardamos tus datos en ningún servidor: viajan solo hasta generar el PDF.
       </p>

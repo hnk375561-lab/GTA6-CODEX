@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { trackAffiliateClick } from '@/lib/analytics-events'
+import { LeadMailtoNotice } from '@/components/monetization/LeadMailtoNotice'
 
 /**
  * Captura de leads de TRÁMITES vehiculares (transferencia, patentamiento
@@ -120,7 +121,7 @@ export function TramitesLeadForm({ className = '' }: { className?: string }) {
 
   if (sent) {
     return (
-      <div className={`rounded-lg border border-auto-accent/30 bg-auto-accent/5 p-4 text-sm text-neutral-700 ${className}`}>
+      <div role="status" className={`rounded-lg border border-auto-accent/30 bg-auto-accent/5 p-4 text-sm text-neutral-700 ${className}`}>
         {sentVia === 'gform'
           ? '✅ ¡Listo! Registramos tu consulta, te contactamos con una gestoría de la zona.'
           : '✅ Se abrió tu cliente de correo con los datos cargados. Si no se abrió automáticamente, escribinos por WhatsApp desde '}
@@ -181,6 +182,7 @@ export function TramitesLeadForm({ className = '' }: { className?: string }) {
         >
           {sending ? 'Enviando…' : 'Quiero que me contacten'}
         </button>
+        {!GFORM_CONFIGURED && <LeadMailtoNotice />}
         <p className="text-center text-[11px] text-neutral-400">
           No calculamos aranceles ni costos de trámite acá (varían por provincia y cambian seguido) — una
           gestoría real te da el presupuesto exacto.

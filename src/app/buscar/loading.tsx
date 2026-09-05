@@ -8,7 +8,8 @@ import { SearchRowSkeleton, Skeleton } from '@/components/ui/loading'
  */
 export default function Loading() {
   return (
-    <div className="container-max py-16">
+    <div className="container-max py-16" role="status">
+      <span className="sr-only">Buscando…</span>
       <div className="mx-auto max-w-xl">
         <Skeleton className="h-12 w-full rounded-xl" />
       </div>

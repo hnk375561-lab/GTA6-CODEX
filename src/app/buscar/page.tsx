@@ -5,6 +5,7 @@ import { getEntityImageMap } from '@/lib/media'
 import { getBidirectionalRelationCount } from '@/lib/relations'
 import { SearchClient } from '@/components/search/SearchClient'
 import { Reveal } from '@/components/ui/Reveal'
+import { SearchRowSkeleton, Skeleton } from '@/components/ui/loading'
 import { AdUnit } from '@/components/monetization/AdUnit'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 
@@ -82,8 +83,26 @@ export default async function SearchPage({
             `searchParams` server-side arriba), así que no afecta la
             generación estática — se agrega igual por consistencia y para
             que una futura navegación cliente entre categorías no bloquee
-            el resto de la página. */}
-        <Suspense>
+            el resto de la página. El fallback reproduce el mismo skeleton
+            que `loading.tsx` (evita una zona de resultados vacía durante
+            la navegación cliente mientras `SearchClient` hidrata) y usa
+            `role="status"` para anunciar el estado a lectores de pantalla,
+            mismo criterio accesible que los loading.tsx de las rutas. */}
+        <Suspense
+          fallback={
+            <div role="status">
+              <span className="sr-only">Buscando…</span>
+              <div className="mx-auto max-w-xl">
+                <Skeleton className="h-12 w-full rounded-xl" />
+                <div className="mt-6 divide-y divide-edge rounded-xl border border-edge bg-surface-card px-3">
+                  {Array.from({ length: 6 }).map((_, i) => (
+                    <SearchRowSkeleton key={i} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          }
+        >
           <SearchClient
             entities={entities}
             counts={counts}

@@ -63,7 +63,7 @@ export function PremiumReportButton({ slugs, className = '', trackingLabel }: Pr
 
   if (status === 'unavailable') {
     return (
-      <p className={`text-xs text-neutral-400 ${className}`}>
+      <p role="status" className={`text-xs text-neutral-400 ${className}`}>
         El reporte premium en PDF todavía no está activo en este sitio.
       </p>
     )
@@ -83,7 +83,7 @@ export function PremiumReportButton({ slugs, className = '', trackingLabel }: Pr
         </svg>
         {status === 'loading' ? 'Generando pago…' : `Descargar reporte en PDF (ARS ${PREMIUM_REPORT_PRICE_ARS})`}
       </button>
-      {errorMessage && <p className="mt-1.5 text-xs text-red-400">{errorMessage}</p>}
+      {errorMessage && <p role="alert" className="mt-1.5 text-xs text-red-400">{errorMessage}</p>}
       {!errorMessage && (
         <p className="mt-1.5 text-[11px] text-neutral-400">
           Ficha técnica completa con evidencia citada, para guardar o llevar a la concesionaria. Pago único vía

@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import type { Entity } from '@/types'
 import type { ResolvedDisplayImage } from '@/lib/images'
@@ -23,6 +24,38 @@ interface WishlistExplorerProps {
  */
 export function WishlistExplorer({ entities, imageBySlug }: WishlistExplorerProps) {
   const { ids, hydrated, count, clearWishlist } = useWishlist()
+
+  // "Vaciar favoritos" borra TODO de forma irrecuperable (localStorage, sin
+  // backend ni historial), así que necesita confirmación explícita: el
+  // primer toque arma el estado de confirmación (botón en rojo + aviso
+  // accesible), el segundo ejecuta. Si no se confirma en 4s, se revierte
+  // solo para no dejar una trampa armada colgando.
+  const [confirmClear, setConfirmClear] = useState(false)
+  const confirmClearTimer = useRef<number | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (confirmClearTimer.current !== null) {
+        window.clearTimeout(confirmClearTimer.current)
+      }
+    }
+  }, [])
+
+  function requestClearWishlist() {
+    if (confirmClear) {
+      if (confirmClearTimer.current !== null) {
+        window.clearTimeout(confirmClearTimer.current)
+        confirmClearTimer.current = null
+      }
+      clearWishlist()
+      return
+    }
+    setConfirmClear(true)
+    confirmClearTimer.current = window.setTimeout(() => {
+      setConfirmClear(false)
+      confirmClearTimer.current = null
+    }, 4000)
+  }
 
   const saved = entities.filter((entity) => ids.has(wishlistId(entity.type, entity.slug)))
 
@@ -59,17 +92,29 @@ export function WishlistExplorer({ entities, imageBySlug }: WishlistExplorerProp
 
   return (
     <div>
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm text-neutral-500">
           {saved.length} {saved.length === 1 ? 'guardado' : 'guardados'}
         </p>
-        <button
-          type="button"
-          onClick={clearWishlist}
-          className="text-sm font-semibold text-neutral-500 transition duration-200 hover:text-auto-accent-strong active:scale-[0.97] active:text-auto-accent-strong"
-        >
-          Vaciar favoritos
-        </button>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+          {confirmClear && (
+            <span role="alert" className="text-xs font-medium text-red-500">
+              Vaciar todos los favoritos no se puede deshacer.
+            </span>
+          )}
+          <button
+            type="button"
+            onClick={requestClearWishlist}
+            aria-pressed={confirmClear}
+            className={
+              confirmClear
+                ? 'rounded-md border border-red-200 bg-red-50 px-2.5 py-1 text-sm font-semibold text-red-600 transition duration-200 hover:bg-red-100 active:scale-[0.97]'
+                : 'text-sm font-semibold text-neutral-500 transition duration-200 hover:text-auto-accent-strong active:scale-[0.97] active:text-auto-accent-strong'
+            }
+          >
+            {confirmClear ? '¿Seguro? Vaciar todos' : 'Vaciar favoritos'}
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">

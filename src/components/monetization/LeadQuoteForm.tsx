@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { trackAffiliateClick } from '@/lib/analytics-events'
+import { LeadMailtoNotice } from '@/components/monetization/LeadMailtoNotice'
 
 /**
  * Captura de leads de compra ("Solicitá cotización sin compromiso").
@@ -135,7 +136,7 @@ export function LeadQuoteForm({
 
   if (sent) {
     return (
-      <div className={`rounded-lg border border-auto-accent/30 bg-auto-accent/5 p-4 text-sm text-neutral-700 ${className}`}>
+      <div role="status" className={`rounded-lg border border-auto-accent/30 bg-auto-accent/5 p-4 text-sm text-neutral-700 ${className}`}>
         {sentVia === 'gform'
           ? '✅ ¡Listo! Ya registramos tu consulta, te contactamos a la brevedad.'
           : '✅ Se abrió tu cliente de correo con los datos cargados. Si no se abrió automáticamente, escribinos por WhatsApp desde '}
@@ -184,6 +185,7 @@ export function LeadQuoteForm({
         >
           {sending ? 'Enviando…' : 'Pedir cotización'}
         </button>
+        {!GFORM_CONFIGURED && <LeadMailtoNotice />}
         <p className="text-center text-[11px] text-neutral-400">
           No compartimos tus datos con nadie sin tu consentimiento explícito.
         </p>
