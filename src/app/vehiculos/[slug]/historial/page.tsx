@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import { Vehicle } from '@/types'
+import { Vehicle, EntityType } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
 import { resolveEntityDisplayImage } from '@/lib/media'
 import { getModelYearHistory } from '@/lib/vehicle-history'
@@ -29,10 +29,10 @@ const TYPE_LABELS = {
 }
 
 async function getVehicleData(slug: string) {
-  const vehicle = await getEntity('vehiculos', slug)
+  const vehicle = await getEntity(EntityType.VEHICLE, slug)
   if (!vehicle) return null
   const image = resolveEntityDisplayImage(vehicle)
-  const history = await import('@/lib/vehicle-history').then(m => m.getModelYearHistory(vehicle))
+  const history = await import('@/lib/vehicle-history').then(m => m.getModelYearHistory(vehicle as Vehicle))
   return { vehicle, image, history }
 }
 
@@ -225,9 +225,9 @@ function VehicleHistoryClient({ vehicle, history }: VehicleHistoryProps) {
             <span>Volver a la ficha de {vehicle.title}</span>
           </Link>
           <div className="flex flex-wrap gap-3">
-            {vehicle.categoryHref && (
+            {(vehicle as any).categoryHref && (
               <Link
-                href={vehicle.categoryHref}
+                href={(vehicle as any).categoryHref}
                 className="inline-flex items-center gap-2 rounded-lg border border-auto-accent/35 bg-auto-accent/15 px-3 py-2 text-sm font-semibold uppercase tracking-wide text-auto-accent-strong transition-colors hover:bg-auto-accent/25"
               >
                 Ver categoría {vehicle.class}
@@ -258,29 +258,26 @@ function VehicleHistoryClient({ vehicle, history }: VehicleHistoryProps) {
   )
 }
 
-async function getVehicleData(slug: string) {
-  const vehicle = await getEntity('vehiculos', slug)
-  if (!vehicle) return null
-  const image = resolveEntityDisplayImage(vehicle)
-  const history = await import('@/lib/vehicle-history').then(m => m.getModelYearHistory(vehicle))
-  return { vehicle, image, history }
-}
-
 function createJsonLdItemList(vehicle: any, history: any) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Historial del ' + vehicle.title,
-    description: 'Historial de años de modelo y evoluciones del ' + vehicle.title + ' desde ' + history.launchYear,
-    itemListElement: history.years.map((entry, index) => ({
+  const itemListElement = history.years.map((entry: any, index: number) => {
+    return {
       '@type': 'ListItem',
       position: index + 1,
       name: vehicle.title + ' (' + entry.year + ')',
       description: entry.generation + (entry.isFacelift ? ' - Facelift' : '') + (entry.isCurrent ? ' (Modelo actual)' : ''),
       url: SITE_URL + '/vehiculos/' + vehicle.slug + '/historial#year-' + entry.year,
-    }),
+    }
+  })
+
+  const result = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Historial del ' + vehicle.title,
+    description: 'Historial de años de modelo y evoluciones del ' + vehicle.title + ' desde ' + history.launchYear,
+    itemListElement: itemListElement,
     numberOfItems: history.years.length,
   }
+  return result
 }
 
 function createJsonLdBreadcrumb(vehicle: any) {
@@ -298,21 +295,21 @@ function createJsonLdBreadcrumb(vehicle: any) {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  const vehicle = await getEntity('vehiculos', slug)
+  const vehicle = await getEntity(EntityType.VEHICLE, slug)
   if (!vehicle) return {}
 
   return generateEntityMetadata(vehicle, resolveEntityDisplayImage(vehicle))
 }
 
 export async function generateStaticParams() {
-  const slugs = await getEntitySlugs('vehiculos')
-  const vehicles = await Promise.all(slugs.map(slug => getEntity('vehiculos', slug)))
+  const slugs = await getEntitySlugs(EntityType.VEHICLE)
+  const vehicles = await Promise.all(slugs.map(slug => getEntity(EntityType.VEHICLE, slug)))
   return vehicles
     .filter((v): v is NonNullable<typeof v> => v !== null)
     .filter(v => {
-      const hasHistory = v.anoProduccion?.includes('-') ||
-        v.productionHistory?.generacionActual?.años ||
-        v.generacionInfo?.faceliftAno !== null
+      const vv = v as Vehicle
+      const hasHistory = vv.anoProduccion?.includes('-') ||
+        vv.generacionInfo?.faceliftAno !== null
       return hasHistory
     })
     .map(v => ({ slug: v.slug }))
@@ -320,71 +317,26 @@ export async function generateStaticParams() {
 
 export default async function VehicleHistoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const vehicle = await getEntity('vehiculos', slug)
+  const vehicle = await getEntity(EntityType.VEHICLE, slug)
   if (!vehicle) notFound()
 
   const image = resolveEntityDisplayImage(vehicle)
-  const history = await import('@/lib/vehicle-history').then(m => m.getModelYearHistory(vehicle))
+  const history = await import('@/lib/vehicle-history').then(m => m.getModelYearHistory(vehicle as Vehicle))
 
-  const jsonLdItemList = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Historial del ' + vehicle.title,
-    description: 'Historial de años de modelo y evoluciones del ' + vehicle.title + ' desde ' + history.launchYear,
-    itemListElement: history.years.map((entry, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: vehicle.title + ' (' + entry.year + ')',
-      description: entry.generation + (entry.isFacelift ? ' - Facelift' : '') + (entry.isCurrent ? ' (Modelo actual)' : ''),
-      url: SITE_URL + '/vehiculos/' + vehicle.slug + '/historial#year-' + entry.year,
-    }),
-    numberOfItems: history.years.length,
-  }
-
-  const jsonLdBreadcrumb = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Vehículos', item: SITE_URL + '/vehiculos' },
-      { '@type': 'ListItem', position: 3, name: vehicle.title, item: SITE_URL + '/vehiculos/' + vehicle.slug },
-      { '@type': 'ListItem', position: 4, name: 'Historial', item: SITE_URL + '/vehiculos/' + vehicle.slug + '/historial' },
-    ],
-  }
+  const jsonLdItemList = JSON.stringify(createJsonLdItemList(vehicle, history)).replace(/</g, '\\u003c')
+  const jsonLdBreadcrumb = JSON.stringify(createJsonLdBreadcrumb(vehicle)).replace(/</g, '\\u003c')
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'ItemList',
-          name: 'Historial del ' + vehicle.title,
-          description: 'Historial de años de modelo y evoluciones del ' + vehicle.title + ' desde ' + history.launchYear,
-          itemListElement: history.years.map((entry, index) => ({
-            '@type': 'ListItem',
-            position: index + 1,
-            name: vehicle.title + ' (' + entry.year + ')',
-            description: entry.generation + (entry.isFacelift ? ' - Facelift' : '') + (entry.isCurrent ? ' (Modelo actual)' : ''),
-            url: SITE_URL + '/vehiculos/' + vehicle.slug + '/historial#year-' + entry.year,
-          }),
-          numberOfItems: history.years.length,
-        }).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{ __html: jsonLdItemList }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
-            { '@type': 'ListItem', position: 2, name: 'Vehículos', item: SITE_URL + '/vehiculos' },
-            { '@type': 'ListItem', position: 3, name: vehicle.title, item: SITE_URL + '/vehiculos/' + vehicle.slug },
-            { '@type': 'ListItem', position: 4, name: 'Historial', item: SITE_URL + '/vehiculos/' + vehicle.slug + '/historial' },
-          ],
-        }).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{ __html: jsonLdBreadcrumb }}
       />
-      <VehicleHistoryClient vehicle={vehicle} history={history} />
+      <VehicleHistoryClient vehicle={vehicle as Vehicle} history={history} />
     </>
   )
 }

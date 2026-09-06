@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { EntityType, type Vehicle } from '@/types'
+import { EntityType, type Vehicle, type Entity } from '@/types'
 import { getEntitiesByType } from '@/lib/entities'
 import { getEntityImageMap } from '@/lib/media'
 import { parsePowerHp } from '@/lib/vehicle-power'
@@ -116,99 +116,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-function calculateValueScore(vehicle: Vehicle): number | null {
-  const power = parsePowerHp(vehicle)
-  const priceUsd = parsePriceUsd(vehicle as any)
-  
-  if (power === null || priceUsd === null || priceUsd <= 0) return null
-  
-  // Score = (potencia * 1000) / precio en USD
-  // Normalizado para que sea más legible
-  return Math.round((power * 1000) / priceUsd)
-}
-
-function getValueTier(score: number): 'excelente' | 'buena' | 'regular' | 'basica' {
-  if (score >= 30) return 'excelente'
-  if (score >= 20) return 'buena'
-  if (score >= 12) return 'regular'
-  return 'basica'
-}
-
-function getValueTierLabel(tier: string): string {
-  switch (tier) {
-    case 'excelente': return 'Mejor compra'
-    case 'buena': return 'Buena opción'
-    case 'regular': return 'Opción válida'
-    default: return 'Básica'
-  }
-}
-
-function getValueTierColor(tier: string): string {
-  switch (tier) {
-    case 'excelente': return 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400'
-    case 'buena': return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400'
-    case 'regular': return 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400'
-    default: return 'bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-400'
-  }
-}
-
-interface PageProps {
-  params: Promise<{ grupo: string }>
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { grupo } = await params
-  const group = categoryFromSlug(grupo)
-  if (!group) return {}
-
-  const vehicles = (await getEntitiesByType(EntityType.VEHICLE)) as Vehicle[]
-  const categoryVehicles = vehicles.filter((v) => getVehicleCategory(v.class) === group)
-  const validVehicles = categoryVehicles.filter(v => {
-    const score = calculateValueScore(v)
-    return score !== null && score > 0
-  })
-  const count = validVehicles.length
-  
-  const title = `Mejor calidad-precio en ${group} | ${SITE_NAME}`
-  const description = `${count} ${group.toLowerCase()}s con la mejor relación calidad-precio del catálogo. ${GROUP_INTRO[group]}`
-
-  return {
-    title,
-    description,
-    metadataBase: new URL(SITE_URL),
-    alternates: { canonical: `${SITE_URL}/categorias/${grupo}/mejor-calidad-precio` },
-    openGraph: {
-      type: 'website',
-      title,
-      description,
-      url: `${SITE_URL}/categorias/${grupo}/mejor-calidad-precio`,
-      siteName: SITE_NAME,
-    },
-  }
-}
-
-function calculateValueScore(vehicle: Vehicle): number | null {
-  const power = parsePowerHp(vehicle)
-  const priceUsd = parsePriceUsd(vehicle as any)
-  
-  if (power === null || priceUsd === null || priceUsd <= 0) return null
-  
-  // Score = (potencia * 1000) / precio en USD
-  // Normalizado para que sea más legible
-  return Math.round((power * 1000) / priceUsd)
-}
-
-function getValueTier(score: number): 'excelente' | 'buena' | 'regular' | 'basica' {
-  if (score >= 30) return 'excelente'
-  if (score >= 20) return 'buena'
-  if (score >= 12) return 'regular'
-  return 'basica'
-}
-
-interface PageProps {
-  params: Promise<{ grupo: string }>
-}
-
 export default async function CategoryBestValuePage({ params }: PageProps) {
   const { grupo } = await params
   const group = categoryFromSlug(grupo)
@@ -234,7 +141,7 @@ export default async function CategoryBestValuePage({ params }: PageProps) {
   const allVehiclesForNav = (await getEntitiesByType(EntityType.VEHICLE)) as Vehicle[]
   const otherCategories = computeSeoCategoryOptions(allVehiclesForNav).filter(({ group: g }) => g !== group)
 
-  const imageBySlug = getEntityImageMap(vehiclesWithScore.map(v => ({ type: 'vehiculos', slug: v.slug })))
+  const imageBySlug = getEntityImageMap(vehiclesWithScore as unknown as Entity[])
 
   const breadcrumbLd = {
     '@context': 'https://schema.org',
@@ -309,8 +216,8 @@ export default async function CategoryBestValuePage({ params }: PageProps) {
         </Reveal>
 
         <Reveal className="stagger grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
-          {vehiclesWithScore.slice(0, 20).map((vehicle, index) => (
-            <Reveal key={vehicle.slug} index={index} total={Math.min(vehiclesWithScore.length, 20)} className="h-full">
+          {vehiclesWithScore.slice(0, 20).map((vehicle) => (
+            <Reveal key={vehicle.slug} className="h-full">
               <div className="h-full">
                 <a
                   href={`/vehiculos/${vehicle.slug}`}

@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import { Vehicle } from '@/types'
+import { Vehicle, EntityType } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
 import { resolveEntityDisplayImage } from '@/lib/media'
 import { parsePriceUsd } from '@/lib/vehicle-price'
@@ -11,6 +11,7 @@ import { Reveal } from '@/components/ui/Reveal'
 import Link from 'next/link'
 import Image from 'next/image'
 import { SITE_URL } from '@/config/site'
+import { Suspense } from 'react'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -23,12 +24,12 @@ interface FinancingLandingProps {
 }
 
 async function getVehicleData(slug: string) {
-  const vehicle = await getEntity('vehiculos', slug)
+  const vehicle = await getEntity(EntityType.VEHICLE, slug)
   if (!vehicle) return null
 
   const image = resolveEntityDisplayImage(vehicle)
-  const priceUsd = parsePriceUsd(vehicle as any)
-  const priceDisplay = vehicle.price || 'Precio no disponible'
+  const priceUsd = parsePriceUsd(vehicle as Vehicle)
+  const priceDisplay = (vehicle as Vehicle).price || 'Precio no disponible'
 
   return { vehicle, priceUsd, priceDisplay }
 }
@@ -70,7 +71,9 @@ function FinancingLandingClient({ vehicle, priceUsd, priceDisplay }: { vehicle: 
         <section aria-labelledby="calculator-heading">
           <h2 id="calculator-heading" className="sr-only">Calculadora de financiamiento</h2>
           <div className="max-w-xl mx-auto">
-            <FinancingCalculator />
+            <Suspense fallback={<div className="h-64 animate-pulse bg-surface-alt rounded-xl" />}>
+              <FinancingCalculator />
+            </Suspense>
           </div>
         </section>
       </Reveal>
@@ -190,25 +193,15 @@ function FinancingLandingClient({ vehicle, priceUsd, priceDisplay }: { vehicle: 
   )
 }
 
-async function getVehicleData(slug: string) {
-  const vehicle = await getEntity('vehiculos', slug)
-  if (!vehicle) return null
-
-  const image = resolveEntityDisplayImage(vehicle)
-  const priceUsd = parsePriceUsd(vehicle as any)
-  const priceDisplay = vehicle.price || 'Precio no disponible'
-
-  return { vehicle, priceUsd, priceDisplay }
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  const vehicle = await getEntity('vehiculos', slug)
+  const vehicle = await getEntity(EntityType.VEHICLE, slug)
   if (!vehicle) return {}
 
-  const priceUsd = parsePriceUsd(vehicle as any)
-  const title = `Financiar ${vehicle.title} | Simulador de cuota | Sin Frenos`
-  const description = `Simulá la cuota mensual para financiar el ${vehicle.title}. Precio desde ${vehicle.price}. Calculá entrega, plazo y tasa. Preaprobación online.`
+  const priceUsd = parsePriceUsd(vehicle as Vehicle)
+  const v = vehicle as Vehicle
+  const title = `Financiar ${v.title} | Simulador de cuota | Sin Frenos`
+  const description = `Simulá la cuota mensual para financiar el ${v.title}. Precio desde ${v.price}. Calculá entrega, plazo y tasa. Preaprobación online.`
 
   return {
     title,
@@ -219,28 +212,28 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     openGraph: {
       type: 'website',
-      title: `Financiar ${vehicle.title} | Simulador de cuota`,
-      description: `Calculá la cuota mensual para el ${vehicle.title}. Precio: ${vehicle.price}. Simulá entrega, plazo y tasa.`,
+      title: `Financiar ${v.title} | Simulador de cuota`,
+      description: `Calculá la cuota mensual para el ${v.title}. Precio: ${v.price}. Simulá entrega, plazo y tasa.`,
       url: `https://sinfreno.vercel.app/financiar/${slug}`,
       siteName: 'Sin Frenos',
-      images: [{ url: 'https://sinfreno.vercel.app/og-image.png', width: 1200, height: 630, alt: `Financiar ${vehicle.title}` }],
+      images: [{ url: 'https://sinfreno.vercel.app/og-image.png', width: 1200, height: 630, alt: `Financiar ${v.title}` }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Financiar ${vehicle.title} | Simulador`,
-      description: `Simulá la cuota del ${vehicle.title}. Precio: ${vehicle.price}.`,
+      title: `Financiar ${v.title} | Simulador`,
+      description: `Simulá la cuota del ${v.title}. Precio: ${v.price}.`,
       images: ['https://sinfreno.vercel.app/og-image.png'],
     },
   }
 }
 
 export async function generateStaticParams() {
-  const slugs = await getEntitySlugs('vehiculos')
-  const vehicles = await Promise.all(slugs.map(slug => getEntity('vehiculos', slug)))
+  const slugs = await getEntitySlugs(EntityType.VEHICLE)
+  const vehicles = await Promise.all(slugs.map(slug => getEntity(EntityType.VEHICLE, slug)))
   return vehicles
     .filter((v): v is NonNullable<typeof v> => v !== null)
     .filter(v => {
-      const priceUsd = parsePriceUsd(v as any)
+      const priceUsd = parsePriceUsd(v as Vehicle)
       return priceUsd !== null && priceUsd > 0
     })
     .map(v => ({ slug: v.slug }))
@@ -248,25 +241,26 @@ export async function generateStaticParams() {
 
 export default async function FinancingLandingPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const vehicle = await getEntity('vehiculos', slug)
+  const vehicle = await getEntity(EntityType.VEHICLE, slug)
   if (!vehicle) notFound()
 
-  const priceUsd = parsePriceUsd(vehicle as any)
+  const v = vehicle as Vehicle
+  const priceUsd = parsePriceUsd(v)
   if (!priceUsd || priceUsd <= 0) notFound()
 
-  const priceDisplay = vehicle.price || 'Precio no disponible'
+  const priceDisplay = v.price || 'Precio no disponible'
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: `Calculadora de financiamiento - ${vehicle.title}`,
-    description: `Simulador de cuota mensual para el ${vehicle.title}. Precio: ${vehicle.price}. Calculá entrega, plazo y tasa.`,
+    name: `Calculadora de financiamiento - ${v.title}`,
+    description: `Simulador de cuota mensual para el ${v.title}. Precio: ${v.price}. Calculá entrega, plazo y tasa.`,
     url: `https://sinfreno.vercel.app/financiar/${slug}`,
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'Web',
     offers: {
       '@type': 'Offer',
-      price: vehicle.price,
+      price: v.price,
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
     },
@@ -277,7 +271,6 @@ export default async function FinancingLandingPage({ params }: { params: Promise
       'Preaprobación online',
       'Envío de simulación por WhatsApp'
     ],
-    operatingSystem: 'Web',
     browserRequirements: 'Requires JavaScript. Requires HTML5.',
     softwareVersion: '1.0',
     datePublished: new Date().toISOString(),
@@ -291,24 +284,13 @@ export default async function FinancingLandingPage({ params }: { params: Promise
         dangerouslySetInnerHTML={{ __html: serializeJsonLd({
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: `Financiar ${vehicle.title}`,
-          description: `Simulador de cuota mensual para el ${vehicle.title}. Precio: ${vehicle.price}.`,
+          name: `Financiar ${v.title}`,
+          description: `Simulador de cuota mensual para el ${v.title}. Precio: ${v.price}.`,
           url: `https://sinfreno.vercel.app/financiar/${slug}`,
           mainEntity: {
-            '@type': 'Vehicle',
-            name: vehicle.title,
-            description: `Ficha técnica del ${vehicle.title}`,
-            url: `https://sinfreno.vercel.app/vehiculos/${slug}`,
-            manufacturer: vehicle.manufacturer,
-            model: vehicle.title,
-            vehicleModelDate: vehicle.anoProduccion,
-            vehicleConfiguration: 'Financiamiento',
-            vehicleModelYear: new Date().getFullYear(),
-          },
-          mainEntity: {
             '@type': 'WebApplication',
-            name: `Calculadora de financiamiento - ${vehicle.title}`,
-            description: `Simulador de cuota mensual para el ${vehicle.title}. Precio: ${vehicle.price}.`,
+            name: `Calculadora de financiamiento - ${v.title}`,
+            description: `Simulador de cuota mensual para el ${v.title}. Precio: ${v.price}.`,
             url: `https://sinfreno.vercel.app/financiar/${slug}`,
             applicationCategory: 'FinanceApplication',
             operatingSystem: 'Web',
@@ -319,7 +301,6 @@ export default async function FinancingLandingPage({ params }: { params: Promise
               'Preaprobación online',
               'Envío de simulación por WhatsApp'
             ],
-            operatingSystem: 'Web',
             browserRequirements: 'Requires JavaScript. Requires HTML5.',
           }
         }) }}
@@ -332,12 +313,12 @@ export default async function FinancingLandingPage({ params }: { params: Promise
           itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://sinfreno.vercel.app' },
             { '@type': 'ListItem', position: 2, name: 'Vehículos', item: 'https://sinfreno.vercel.app/vehiculos' },
-            { '@type': 'ListItem', position: 3, name: vehicle.title, item: `https://sinfreno.vercel.app/vehiculos/${slug}` },
+            { '@type': 'ListItem', position: 3, name: v.title, item: `https://sinfreno.vercel.app/vehiculos/${slug}` },
             { '@type': 'ListItem', position: 4, name: 'Financiar', item: `https://sinfreno.vercel.app/financiar/${slug}` },
           ],
         }) }}
       />
-      <FinancingLandingClient vehicle={vehicle as any} priceUsd={parsePriceUsd(vehicle as any)} priceDisplay={vehicle.price} />
+      <FinancingLandingClient vehicle={v} priceUsd={parsePriceUsd(v)} priceDisplay={v.price || 'Precio no disponible'} />
     </>
   )
 }

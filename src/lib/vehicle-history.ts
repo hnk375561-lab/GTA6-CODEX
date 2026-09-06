@@ -42,7 +42,7 @@ function extractStartYear(vehicle: Vehicle): number {
 
   // Prioridad 2: anoLanzamiento
   if (vehicle.anoLanzamiento) {
-    return vehicle.anoLanzamiento
+    return typeof vehicle.anoLanzamiento === 'number' ? vehicle.anoLanzamiento : parseInt(String(vehicle.anoLanzamiento), 10)
   }
 
   // Prioridad 3: anoProduccion (extraer año de inicio del rango)
@@ -52,8 +52,9 @@ function extractStartYear(vehicle: Vehicle): number {
   }
 
   // Prioridad 4: productionHistory.generacionActual.años
-  if (vehicle.productionHistory?.generacionActual?.años) {
-    const match = vehicle.productionHistory.generacionActual.años.match(/(\d{4})/)
+  const ph = (vehicle as any).productionHistory
+  if (ph?.generacionActual?.años) {
+    const match = ph.generacionActual.años.match(/(\d{4})/)
     if (match) return parseInt(match[1], 10)
   }
 
@@ -84,8 +85,9 @@ function extractEndYear(vehicle: Vehicle): number | 'presente' {
   }
 
   // Prioridad 3: productionHistory.generacionActual.años
-  if (vehicle.productionHistory?.generacionActual?.años) {
-    const match = vehicle.productionHistory.generacionActual.años.match(/(\d{4})\s*-\s*(\d{4}|presente)/i)
+  const ph = (vehicle as any).productionHistory
+  if (ph?.generacionActual?.años) {
+    const match = ph.generacionActual.años.match(/(\d{4})\s*-\s*(\d{4}|presente)/i)
     if (match) {
       const end = match[2].toLowerCase()
       if (end === 'presente') return 'presente'

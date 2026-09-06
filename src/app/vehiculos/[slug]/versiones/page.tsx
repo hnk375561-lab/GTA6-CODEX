@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import { Vehicle } from '@/types'
+import { Vehicle, EntityType } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
 import { resolveEntityDisplayImage } from '@/lib/media'
 import { extractVehicleVariants, hasMultipleVariants } from '@/lib/vehicle-variants'
-import { generateEntityMetadata, serializeJsonLd } from '@/lib/seo'
+import { generateEntityMetadata } from '@/lib/seo'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Reveal } from '@/components/ui/Reveal'
@@ -162,7 +162,7 @@ function VehicleVersionsClient({ vehicle, variants }: VehicleVersionsProps) {
                   </div>
                 </Reveal>
               )
-            )}
+            })}
           </div>
         </section>
       </Reveal>
@@ -180,9 +180,9 @@ function VehicleVersionsClient({ vehicle, variants }: VehicleVersionsProps) {
             <span>Volver a la ficha de {vehicle.title}</span>
           </Link>
           <div className="flex flex-wrap gap-3">
-            {vehicle.categoryHref && (
+            {(vehicle as any).categoryHref && (
               <Link
-                href={vehicle.categoryHref}
+                href={(vehicle as any).categoryHref}
                 className="inline-flex items-center gap-2 rounded-lg border border-auto-accent/35 bg-auto-accent/15 px-3 py-2 text-sm font-semibold uppercase tracking-wide text-auto-accent-strong transition-colors hover:bg-auto-accent/25"
               >
                 Ver categoría {vehicle.class}
@@ -202,32 +202,15 @@ function VehicleVersionsClient({ vehicle, variants }: VehicleVersionsProps) {
 }
 
 async function getVehicleData(slug: string) {
-  const vehicle = await getEntity('vehiculos', slug)
+  const vehicle = await getEntity(EntityType.VEHICLE, slug)
   if (!vehicle) return null
   const image = resolveEntityDisplayImage(vehicle)
-  const variants = (await import('@/lib/vehicle-variants')).extractVehicleVariants(vehicle)
+  const variants = (await import('@/lib/vehicle-variants')).extractVehicleVariants(vehicle as Vehicle)
   return { vehicle, image, variants }
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params
-  const vehicle = await getEntity('vehiculos', slug)
-  if (!vehicle) return {}
-
-  return generateEntityMetadata(vehicle, resolveEntityDisplayImage(vehicle))
-}
-
-export async function generateStaticParams() {
-  const slugs = await getEntitySlugs('vehiculos')
-  const vehicles = await Promise.all(slugs.map(slug => getEntity('vehiculos', slug)))
-  return vehicles
-    .filter((v): v is NonNullable<typeof v> => v !== null)
-    .filter(v => hasMultipleVariants(v))
-    .map(v => ({ slug: v.slug }))
-}
-
 function createJsonLdItemList(vehicle: any, variants: any[]) {
-  return {
+  return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Versiones del ' + vehicle.title,
@@ -238,13 +221,13 @@ function createJsonLdItemList(vehicle: any, variants: any[]) {
       name: vehicle.title + ' ' + variant.nombre,
       description: 'Versión ' + variant.nombre + ' del ' + vehicle.title,
       url: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug + '/versiones#' + variant.nombre.toLowerCase().replace(/\s+/g, '-'),
-    }),
+    })),
     numberOfItems: variants.length,
-  }
+  })
 }
 
 function createJsonLdVehicle(vehicle: any, variants: any[]) {
-  return {
+  return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Vehicle',
     name: vehicle.title,
@@ -264,12 +247,12 @@ function createJsonLdVehicle(vehicle: any, variants: any[]) {
         engineDisplacement: v.cilindrada,
         enginePower: { '@type': 'QuantitativeValue', value: v.power, unitCode: 'HP' }
       }
-    })
-  }
+    }))
+  })
 }
 
 function createJsonLdBreadcrumb(vehicle: any) {
-  return {
+  return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -278,126 +261,37 @@ function createJsonLdBreadcrumb(vehicle: any) {
       { '@type': 'ListItem', position: 3, name: vehicle.title, item: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug },
       { '@type': 'ListItem', position: 4, name: 'Versiones', item: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug + '/versiones' },
     ],
-  }
+  })
 }
 
 export default async function VehicleVersionsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const vehicle = await getEntity('vehiculos', slug)
+  const vehicle = await getEntity(EntityType.VEHICLE, slug)
   if (!vehicle) notFound()
 
-  const variants = extractVehicleVariants(vehicle)
+  const v = vehicle as Vehicle
+  const variants = extractVehicleVariants(v)
   if (variants.length <= 1) notFound()
 
-  const jsonLdItemList = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Versiones del ' + vehicle.title,
-    description: 'Comparativa de las ' + variants.length + ' versiones del ' + vehicle.title + ' con especificaciones y precios',
-    itemListElement: variants.map((variant, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: vehicle.title + ' ' + variant.nombre,
-      description: 'Versión ' + variant.nombre + ' del ' + vehicle.title,
-      url: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug + '/versiones#' + variant.nombre.toLowerCase().replace(/\s+/g, '-'),
-    }),
-    numberOfItems: variants.length,
-  }
-
-  const jsonLdVehicle = {
-    '@context': 'https://schema.org',
-    '@type': 'Vehicle',
-    name: vehicle.title,
-    description: 'Comparativa de ' + variants.length + ' versiones del ' + vehicle.title,
-    url: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug + '/versiones',
-    vehicleConfiguration: variants.map((v) => ({
-      '@type': 'VehicleConfiguration',
-      name: v.nombre,
-      price: v.precio,
-      engineDisplacement: v.cilindrada,
-      vehicleTransmission: v.transmission,
-      fuelConsumption: v.consumption,
-      accelerationTime: v.acceleration,
-      maxSpeed: v.speed,
-      vehicleEngine: {
-        '@type': 'Engine',
-        engineDisplacement: v.cilindrada,
-        enginePower: { '@type': 'QuantitativeValue', value: v.power, unitCode: 'HP' }
-      }
-    })
-  }
-
-  const jsonLdBreadcrumb = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://sinfreno.vercel.app' },
-      { '@type': 'ListItem', position: 2, name: 'Vehículos', item: 'https://sinfreno.vercel.app/vehiculos' },
-      { '@type': 'ListItem', position: 3, name: vehicle.title, item: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug },
-      { '@type': 'ListItem', position: 4, name: 'Versiones', item: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug + '/versiones' },
-    ],
-  }
+  const jsonLdItemList = createJsonLdItemList(v, variants)
+  const jsonLdVehicle = createJsonLdVehicle(v, variants)
+  const jsonLdBreadcrumb = createJsonLdBreadcrumb(v)
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@graph': [
-            {
-              '@context': 'https://schema.org',
-              '@type': 'ItemList',
-              name: 'Versiones del ' + vehicle.title,
-              description: 'Comparativa de las ' + variants.length + ' versiones del ' + vehicle.title + ' con especificaciones y precios',
-              itemListElement: variants.map((variant, index) => ({
-                '@type': 'ListItem',
-                position: index + 1,
-                name: vehicle.title + ' ' + variant.nombre,
-                description: 'Versión ' + variant.nombre + ' del ' + vehicle.title,
-                url: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug + '/versiones#' + variant.nombre.toLowerCase().replace(/\s+/g, '-'),
-              }),
-              numberOfItems: variants.length,
-            },
-            {
-              '@context': 'https://schema.org',
-              '@type': 'Vehicle',
-              name: vehicle.title,
-              description: 'Comparativa de ' + variants.length + ' versiones del ' + vehicle.title,
-              url: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug + '/versiones',
-              vehicleConfiguration: vehicle.variants?.map((v: any) => ({
-                '@type': 'VehicleConfiguration',
-                name: v.nombre,
-                price: v.precio,
-                engineDisplacement: v.cilindrada,
-                vehicleTransmission: v.transmission,
-                fuelConsumption: v.consumption,
-                accelerationTime: v.acceleration,
-                maxSpeed: v.speed,
-                vehicleEngine: {
-                  '@type': 'Engine',
-                  engineDisplacement: v.cilindrada,
-                  enginePower: { '@type': 'QuantitativeValue', value: v.power, unitCode: 'HP' }
-                }
-              }) || []
-            }
-          ]
-        }).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{ __html: jsonLdItemList }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://sinfreno.vercel.app' },
-            { '@type': 'ListItem', position: 2, name: 'Vehículos', item: 'https://sinfreno.vercel.app/vehiculos' },
-            { '@type': 'ListItem', position: 3, name: vehicle.title, item: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug },
-            { '@type': 'ListItem', position: 4, name: 'Versiones', item: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug + '/versiones' },
-          ],
-        }).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{ __html: jsonLdVehicle }}
       />
-      <VehicleVersionsClient vehicle={vehicle as any} variants={variants as any} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdBreadcrumb }}
+      />
+      <VehicleVersionsClient vehicle={v} variants={variants as any} />
     </>
   )
 }
