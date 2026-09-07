@@ -1,22 +1,17 @@
-import fs from 'fs'
-import path from 'path'
 import type { Entity } from '@/types'
 import type { MediaAsset, RenderableMedia } from '@/types/media'
 import { safeParseMediaAsset } from '@/types/schemas'
 import type { ResolvedDisplayImage, ResolvedEntityImage } from './images'
 import { getEntitiesByTypeSync } from './entities'
 import { resolveEntityImage, resolveEntityImages } from './images'
+import { CONTENT_BUNDLE } from './generated/content-bundle'
 
 /**
  * Registro editorial de media.
  *
- * La fuente de verdad son los JSON de `src/content/media/`. El pivote a
- * AutoFicha eliminó el tipo de entidad `Trailer` y todo el contenido de
- * trailers/tráilers; este registro ya no necesita fallback ni relaciones
- * especiales para ese tipo.
+ * La fuente de verdad son los datos de `src/content/media/` embebidos en el
+ * bundle (generado en build time). Sin I/O de runtime, cero CPU timeout.
  */
-const MEDIA_DIR = path.join(process.cwd(), 'src', 'content', 'media')
-const CACHE_ENABLED = process.env.NODE_ENV === 'production'
 let mediaCache: MediaAsset[] | null = null
 
 function isDirectVideoUrl(url?: string): url is string {
@@ -29,34 +24,32 @@ function isDirectVideoUrl(url?: string): url is string {
 }
 
 function readEditorialMedia(): MediaAsset[] {
-  if (CACHE_ENABLED && mediaCache) return mediaCache
-  if (!fs.existsSync(MEDIA_DIR)) return []
+  if (mediaCache) return mediaCache
 
   const seenIds = new Set<string>()
   const assets: MediaAsset[] = []
+  const raw = CONTENT_BUNDLE.media ?? []
 
-  for (const file of fs.readdirSync(MEDIA_DIR).filter((name) => name.endsWith('.json')).sort()) {
+  for (const parsed of raw) {
     try {
-      const parsed: unknown = JSON.parse(fs.readFileSync(path.join(MEDIA_DIR, file), 'utf8'))
       const result = safeParseMediaAsset(parsed)
       if (!result.success) {
-        console.warn(`[media] Asset inválido ignorado: media/${file}: ${result.error.message}`)
+        console.warn(`[media] Asset inválido ignorado: ${(parsed as any).id}: ${result.error.message}`)
         continue
       }
       const asset = result.data as MediaAsset
-      const expectedId = file.replace(/\.json$/, '')
-      if (asset.id !== expectedId || seenIds.has(asset.id)) {
-        console.warn(`[media] Asset ignorado por id inválido o duplicado: media/${file}`)
+      if (seenIds.has(asset.id)) {
+        console.warn(`[media] Asset ignorado por id duplicado: ${asset.id}`)
         continue
       }
       seenIds.add(asset.id)
       assets.push(asset)
     } catch (error) {
-      console.warn(`[media] Error leyendo media/${file}:`, error)
+      console.warn(`[media] Error procesando media asset:`, error)
     }
   }
 
-  if (CACHE_ENABLED) mediaCache = assets
+  mediaCache = assets
   return assets
 }
 
