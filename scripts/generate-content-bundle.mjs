@@ -81,4 +81,5 @@ export const CONTENT_BUNDLE: {
 `
 
 fs.writeFileSync(OUTPUT_FILE, fileContent, 'utf-8')
-console.log(`[generate-content-bundle] Escribí ${OUTPUT_FILE} con ${totalEntities} entidades.`)
+const timestamp = new Date().toISOString()
+console.log(`[generate-content-bundle] ✅ Escribí ${OUTPUT_FILE} con ${totalEntities} entidades. (${timestamp})`)
