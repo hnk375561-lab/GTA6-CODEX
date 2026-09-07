@@ -77,7 +77,7 @@ export const CONTENT_BUNDLE: {
   guias: Entity[]
   fabricantes: Entity[]
   media: MediaAsset[]
-} = ${JSON.stringify(bundle, null, 2)} as any
+} = ${JSON.stringify(bundle)} as any
 `
 
 fs.writeFileSync(OUTPUT_FILE, fileContent, 'utf-8')
