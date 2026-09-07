@@ -1,9 +1,6 @@
 name = "sinfrenos"
-compatibility_date = "2024-09-01"
+compatibility_date = "2024-12-01"
 pages_build_output_dir = ".open-next/assets"
-
-[build]
-command = "npm run build:cf"
 
 [vars]
 # Environment variables that are not secrets
