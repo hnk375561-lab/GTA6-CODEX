@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/pregenerate-image-variants.mjs && next build",
-    "build:cf": "node scripts/pregenerate-image-variants.mjs && next build && opennextjs-cloudflare build",
+    "build": "node scripts/generate-content-bundle.mjs && node scripts/pregenerate-image-variants.mjs && next build",
+    "build:cf": "node scripts/generate-content-bundle.mjs && node scripts/pregenerate-image-variants.mjs && next build && opennextjs-cloudflare build",
     "preview": "npm run build:cf && wrangler pages dev .open-next",
     "deploy": "npm run build:cf && wrangler pages deploy .open-next",
     "start": "next start",

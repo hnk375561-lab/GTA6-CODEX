@@ -51,3 +51,6 @@ next-env.d.ts
 # Archivos de proceso interno / debug de CI (no son parte del producto)
 /.ci-debug/
 /.trigger-poster-gen
+
+# Artefactos generados en build time
+src/lib/generated/
