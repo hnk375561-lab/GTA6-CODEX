@@ -2,89 +2,30 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    // 3 sep 2026 — sitio en plan Hobby de Vercel: la Image Optimization
-    // API tiene una cuota gratuita de ~1000 transformaciones/mes, y con
-    // ~250 fotos de vehículo en alta resolución (hasta 3840px) servidas
-    // en 15+ componentes distintos, cada uno con sus propios
-    // anchos/calidades, se agota en días — al pasarse, Vercel bloquea
-    // toda transformación NUEVA (combinación ancho/calidad no pedida
-    // antes) y esa imagen queda en blanco (ver /galeria y fichas de
-    // vehículo). Pasa a usarse un loader propio (`loader: 'custom'` +
-    // `loaderFile`) que resuelve cada pedido a un archivo ya
-    // redimensionado por scripts/pregenerate-image-variants.mjs en build
-    // time (ver ese script y src/lib/image-loader.ts) — next/image deja
-    // de llamar a la Image Optimization API por completo, así que el
-    // límite de cuota deja de aplicar, para siempre, sin plan pago.
-    //
-    // `formats` queda sin efecto con un loader custom (la negociación
-    // avif/webp por Accept-Header vive en el optimizador built-in de
-    // Vercel, que ya no se usa) — se deja comentado en vez de borrado
-    // para que quede documentado por qué ya no hace nada.
-    // formats: ['image/avif', 'image/webp'],
+    // Custom loader replaces Vercel Image Optimization API.
+    // Variants are pre-generated at build time by scripts/pregenerate-image-variants.mjs
+    // and served from public/images/_optimized/ — next/image never calls the
+    // Vercel Image Optimization API, so quota limits don't apply.
     loader: 'custom',
     loaderFile: './src/lib/image-loader.ts',
-    // Miniaturas de YouTube usadas por <YouTubeEmbed> (facade de los
-    // tráilers migrados desde el Vercel Blob externo caído). Sin esto,
-    // next/image lanza "hostname not configured" y el componente nunca
-    // llega a renderizar nada. Se preserva con loader custom: next/image
-    // sigue validando `remotePatterns` contra cualquier `src` remoto
-    // ANTES de invocar al loader, sea cual sea — este chequeo no depende
-    // de qué loader esté configurado. image-loader.ts a su vez devuelve
-    // estas URLs tal cual (no tienen variante local pregenerada).
+    // YouTube thumbnails used by <YouTubeEmbed> — validated by next/image
+    // before invoking the custom loader.
     remotePatterns: [
       { protocol: 'https', hostname: 'img.youtube.com' },
       { protocol: 'https', hostname: 'i.ytimg.com' },
     ],
-    // Next.js 15.5+ ya no acepta 'quality' como opción global; ahora hay
-    // que declarar explícitamente qué valores de quality están permitidos
-    // vía 'qualities'. Estos son los valores usados por los distintos
-    // componentes <Image> del proyecto (EntityImage, GalleryExplorer,
-    // MediaCarousel, CompareExplorer, VehicleCompareSheet, SimpleLightbox).
-    // Esta validación también es independiente del loader: se mantiene
-    // sin cambios aunque image-loader.ts no lea `quality` (ver por qué en
-    // el comment-header de scripts/pregenerate-image-variants.mjs,
-    // sección CALIDAD).
+    // Explicit quality values allowed (Next.js 15.5+ requirement).
+    // Matches qualities used by Image components across the project.
     qualities: [75, 90, 92, 94, 95, 97, 100],
     minimumCacheTTL: 31536000,
-    // Techo subido de 2560 a 3840 (29 ago 2026): las fotos de vehículos ya
-    // se importan hasta 3840x2160 real (ver import-real-images.mjs), pero
-    // next/image nunca podía servir más de 2560px de ancho aunque el
-    // lightbox lo pidiera — quien hacía zoom en el visor terminaba viendo
-    // una versión recortada en vez del detalle real de la foto original.
+    // Max device width 3840px — matches source image resolution.
     deviceSizes: [320, 640, 1024, 1440, 1920, 2560, 3840],
     imageSizes: [256, 384, 512, 640, 750, 828, 1024],
   },
   headers: async () => {
-    // E-1 (auditoría, ago 2026) — REVERTIDO, 31 ago 2026: se había migrado
-    // esta CSP a nonce por request vía middleware.ts, pero eso obliga a
-    // que el layout raíz lea `headers()` en cada request, lo que a su vez
-    // fuerza a TODAS las rutas del sitio a renderizarse dinámicamente (ya
-    // no estáticas). En Vercel, cada ruta dinámica se despliega como su
-    // propia Serverless Function, y el plan Hobby tiene un tope de 12 —
-    // este proyecto tiene 18 rutas dinámicas, así que el deploy empezó a
-    // fallar con "No more than 12 Serverless Functions can be added to a
-    // Deployment on the Hobby plan." Se revierte a CSP estática (definida
-    // acá, evaluada una sola vez en build) con 'unsafe-inline' en
-    // script-src, igual que antes de la auditoría.
-    //
-    // Riesgo aceptado: la propia auditoría original ya calificaba esto
-    // como severidad MEDIA con riesgo de explotación bajo hoy (sitio con
-    // contenido 100% estático desde JSON versionado, sin inputs de
-    // usuario que se rendericen sin sanitizar). Si en el futuro se quiere
-    // retomar el nonce, hace falta primero pasar a Vercel Pro (sin tope
-    // de funciones) o migrar suficientes rutas a runtime edge antes de
-    // reintroducir middleware.ts + headers() en el layout raíz.
-    //
-    // 31 ago 2026 — se suman los dominios de Google AdSense (script-src,
-    // img-src, frame-src, connect-src). Sin esto el <Script> de
-    // ConsentBanner.tsx hacia pagead2.googlesyndication.com quedaba
-    // bloqueado por el navegador (violación de CSP silenciosa: no rompe
-    // nada visualmente, pero el anuncio nunca llega a cargar ni a
-    // registrar impresión). frame-src/connect-src cubren los iframes de
-    // renderizado de ads y los endpoints de Ad Traffic Quality
-    // (verificación anti-fraude de Google) y Funding Choices (mensaje de
-    // consentimiento propio de Google, separado del ConsentBanner
-    // propio del sitio).
+    // Static CSP (evaluated once at build) — avoids forcing all routes
+    // to dynamic rendering via middleware + headers() in root layout.
+    // Includes Google AdSense/Analytics domains for ads and tracking.
     return [
       {
         source: '/:path*',
@@ -120,20 +61,9 @@ const nextConfig = {
   },
   redirects: async () => {
     return [
-      // Consolidación de rutas de fabricante (#9 audit): `/fabricantes/[slug]`
-      // (entidad Manufacturer real, con evidencia/relaciones) y
-      // `/vehiculos/fabricante/[manufacturer]` (agrupación ad-hoc por el
-      // campo de texto libre `vehicle.manufacturer`) coexistían apuntando
-      // al mismo fabricante — confirmado 1:1 sin huérfanos en ninguna
-      // dirección entre los 75 `Manufacturer.slug` y los 75 slugs
-      // derivados de `vehicle.manufacturer` (mismo slugify). La segunda
-      // ruta quedaba además más pobre: listaba TODOS los vehículos del
-      // fabricante, pero `/fabricantes/[slug]` los mostraba acotados a 8
-      // (panel de relacionados) — 8 fabricantes con más de 8 vehículos
-      // perdían unidades en su propia ficha. Se resolvió del lado del
-      // panel (ver `[entityType]/[slug]/page.tsx`) y esta ruta vieja
-      // ahora redirige 301 a la ficha real, para no perder el SEO ya
-      // indexado en `/vehiculos/fabricante/*`.
+      // Consolidation: /vehiculos/fabricante/[manufacturer] -> /fabricantes/[slug]
+      // Both routes pointed to same manufacturer; old route redirects 301
+      // to preserve SEO indexed under /vehiculos/fabricante/*
       {
         source: '/vehiculos/fabricante/:manufacturer',
         destination: '/fabricantes/:manufacturer',

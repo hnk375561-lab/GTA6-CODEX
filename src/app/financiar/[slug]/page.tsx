@@ -206,23 +206,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title,
     description,
-    metadataBase: new URL('https://sinfreno.vercel.app'),
+    metadataBase: new URL(SITE_URL),
     alternates: {
-      canonical: `https://sinfreno.vercel.app/financiar/${slug}`,
+      canonical: `${SITE_URL}/financiar/${slug}`,
     },
     openGraph: {
       type: 'website',
       title: `Financiar ${v.title} | Simulador de cuota`,
       description: `Calculá la cuota mensual para el ${v.title}. Precio: ${v.price}. Simulá entrega, plazo y tasa.`,
-      url: `https://sinfreno.vercel.app/financiar/${slug}`,
+      url: `${SITE_URL}/financiar/${slug}`,
       siteName: 'Sin Frenos',
-      images: [{ url: 'https://sinfreno.vercel.app/og-image.png', width: 1200, height: 630, alt: `Financiar ${v.title}` }],
+      images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: `Financiar ${v.title}` }],
     },
     twitter: {
       card: 'summary_large_image',
       title: `Financiar ${v.title} | Simulador`,
       description: `Simulá la cuota del ${v.title}. Precio: ${v.price}.`,
-      images: ['https://sinfreno.vercel.app/og-image.png'],
+      images: [`${SITE_URL}/og-image.png`],
     },
   }
 }
@@ -255,7 +255,7 @@ export default async function FinancingLandingPage({ params }: { params: Promise
     '@type': 'WebApplication',
     name: `Calculadora de financiamiento - ${v.title}`,
     description: `Simulador de cuota mensual para el ${v.title}. Precio: ${v.price}. Calculá entrega, plazo y tasa.`,
-    url: `https://sinfreno.vercel.app/financiar/${slug}`,
+    url: `${SITE_URL}/financiar/${slug}`,
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'Web',
     offers: {
@@ -286,12 +286,12 @@ export default async function FinancingLandingPage({ params }: { params: Promise
           '@type': 'WebPage',
           name: `Financiar ${v.title}`,
           description: `Simulador de cuota mensual para el ${v.title}. Precio: ${v.price}.`,
-          url: `https://sinfreno.vercel.app/financiar/${slug}`,
+          url: `${SITE_URL}/financiar/${slug}`,
           mainEntity: {
             '@type': 'WebApplication',
             name: `Calculadora de financiamiento - ${v.title}`,
             description: `Simulador de cuota mensual para el ${v.title}. Precio: ${v.price}.`,
-            url: `https://sinfreno.vercel.app/financiar/${slug}`,
+            url: `${SITE_URL}/financiar/${slug}`,
             applicationCategory: 'FinanceApplication',
             operatingSystem: 'Web',
             featureList: [
@@ -311,10 +311,10 @@ export default async function FinancingLandingPage({ params }: { params: Promise
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://sinfreno.vercel.app' },
-            { '@type': 'ListItem', position: 2, name: 'Vehículos', item: 'https://sinfreno.vercel.app/vehiculos' },
-            { '@type': 'ListItem', position: 3, name: v.title, item: `https://sinfreno.vercel.app/vehiculos/${slug}` },
-            { '@type': 'ListItem', position: 4, name: 'Financiar', item: `https://sinfreno.vercel.app/financiar/${slug}` },
+            { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+            { '@type': 'ListItem', position: 2, name: 'Vehículos', item: `${SITE_URL}/vehiculos` },
+            { '@type': 'ListItem', position: 3, name: v.title, item: `${SITE_URL}/vehiculos/${slug}` },
+            { '@type': 'ListItem', position: 4, name: 'Financiar', item: `${SITE_URL}/financiar/${slug}` },
           ],
         }) }}
       />

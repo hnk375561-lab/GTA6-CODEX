@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import { Analytics } from '@vercel/analytics/next'
 import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
@@ -16,6 +15,7 @@ import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/config/site'
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID
 const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID
+const CF_ANALYTICS_TOKEN = process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN
 
 // OPTIMIZACIÓN: Migración de @fontsource a next/font para reducir CSS crítico y mejorar CLS.
 const inter = Inter({
@@ -81,6 +81,16 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="es" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        {/* Cloudflare Web Analytics — lightweight, privacy-first, no cookies */}
+        {CF_ANALYTICS_TOKEN && (
+          <script
+            defer
+            data-cf-beacon={`{"token": "${CF_ANALYTICS_TOKEN}"}`}
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+          />
+        )}
+      </head>
       <body className="flex min-h-dvh flex-col font-sans antialiased">
         {/* Anti-FOUC de dark mode (sept 2026): corre antes del primer
             paint, sin esperar el bundle de React. Resuelve la preferencia
@@ -124,7 +134,6 @@ export default async function RootLayout({
             stacking global de la página, no dentro de ningún contexto de
             apilamiento de una ruta. */}
         <BackToTop />
-        <Analytics />
       </body>
     </html>
   )

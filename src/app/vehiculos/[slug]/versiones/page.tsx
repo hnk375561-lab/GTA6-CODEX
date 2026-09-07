@@ -220,7 +220,7 @@ function createJsonLdItemList(vehicle: any, variants: any[]) {
       position: index + 1,
       name: vehicle.title + ' ' + variant.nombre,
       description: 'Versión ' + variant.nombre + ' del ' + vehicle.title,
-      url: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug + '/versiones#' + variant.nombre.toLowerCase().replace(/\s+/g, '-'),
+      url: SITE_URL + '/vehiculos/' + vehicle.slug + '/versiones#' + variant.nombre.toLowerCase().replace(/\s+/g, '-'),
     })),
     numberOfItems: variants.length,
   })
@@ -232,7 +232,7 @@ function createJsonLdVehicle(vehicle: any, variants: any[]) {
     '@type': 'Vehicle',
     name: vehicle.title,
     description: 'Comparativa de ' + variants.length + ' versiones del ' + vehicle.title,
-    url: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug + '/versiones',
+    url: SITE_URL + '/vehiculos/' + vehicle.slug + '/versiones',
     vehicleConfiguration: variants.map((v) => ({
       '@type': 'VehicleConfiguration',
       name: v.nombre,
@@ -256,10 +256,10 @@ function createJsonLdBreadcrumb(vehicle: any) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://sinfreno.vercel.app' },
-      { '@type': 'ListItem', position: 2, name: 'Vehículos', item: 'https://sinfreno.vercel.app/vehiculos' },
-      { '@type': 'ListItem', position: 3, name: vehicle.title, item: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug },
-      { '@type': 'ListItem', position: 4, name: 'Versiones', item: 'https://sinfreno.vercel.app/vehiculos/' + vehicle.slug + '/versiones' },
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Vehículos', item: SITE_URL + '/vehiculos' },
+      { '@type': 'ListItem', position: 3, name: vehicle.title, item: SITE_URL + '/vehiculos/' + vehicle.slug },
+      { '@type': 'ListItem', position: 4, name: 'Versiones', item: SITE_URL + '/vehiculos/' + vehicle.slug + '/versiones' },
     ],
   })
 }

@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/pregenerate-image-variants.mjs && next build",
+    "build:cf": "node scripts/pregenerate-image-variants.mjs && next build && opennextjs-cloudflare build",
+    "preview": "npm run build:cf && wrangler pages dev .open-next",
+    "deploy": "npm run build:cf && wrangler pages deploy .open-next",
     "start": "next start",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
@@ -47,7 +50,6 @@
     "@fontsource/inter": "^5.3.0",
     "@fontsource/jetbrains-mono": "^5.3.0",
     "@fontsource/space-grotesk": "^5.3.0",
-    "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
     "fuse.js": "^7.0.0",
     "github-slugger": "^2.0.0",
@@ -62,6 +64,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.6",
     "@eslint/eslintrc": "^3.3.6",
     "@tailwindcss/typography": "^0.5.10",
     "@testing-library/jest-dom": "^7.0.1",
