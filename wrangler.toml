@@ -3,6 +3,14 @@ compatibility_date = "2024-12-01"
 pages_build_output_dir = ".open-next/assets"
 
 [vars]
-# Environment variables that are not secrets
-# These will be overridden by Cloudflare Pages dashboard settings
 NEXT_PUBLIC_SITE_URL = "https://sinfreno.com"
+NEXT_PUBLIC_ADSENSE_CLIENT_ID = "ca-pub-8424604961377300"
+NEXT_PUBLIC_ADSENSE_ANCHOR_SLOT_ID = "6975537249"
+NEXT_PUBLIC_GA_ID = "G-XG4X3VFXLQ"
+NEXT_PUBLIC_MELI_AFFILIATE_TAG = "solissantiago20220712193414"
+NEXT_PUBLIC_LEADS_GFORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfZ05ZZV-8pzGIb5UWLjNwE_DfN7DdlM-9AAsyQz1TM24jHTQ/formResponse"
+NEXT_PUBLIC_LEADS_GFORM_ENTRY_NOMBRE = "entry.45681910"
+NEXT_PUBLIC_LEADS_GFORM_ENTRY_CONTACTO = "entry.45662509"
+NEXT_PUBLIC_LEADS_GFORM_ENTRY_VEHICULO = "entry.45794381"
+NEXT_PUBLIC_LEADS_GFORM_ENTRY_COMENTARIO = "entry.45808609"
+BLOB_STORE_ID = "store_s3ChiF0bJKi32KTF"
