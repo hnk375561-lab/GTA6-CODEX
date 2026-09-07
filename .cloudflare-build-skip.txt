@@ -1,0 +1,4 @@
+# Force Cloudflare to skip all caches and run a clean build
+# This file forces Pages to rebuild from scratch
+FORCE_REBUILD=true
+BUILD_TIMESTAMP=$(date +%s)
