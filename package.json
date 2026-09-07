@@ -1,6 +1,6 @@
 {
   "name": "sinfrenos",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Sin Frenos - Fichas técnicas de autos y motos con comparador y buscador",
   "private": true,
   "scripts": {
