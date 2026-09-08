@@ -64,7 +64,8 @@ Pensado para dos públicos:
 | 🚗 **Vehículos** | **250** fichas activas | Autos, SUVs, pickups y motos de **75 fabricantes** distintos |
 | 🌍 **Cobertura** | Global | Marcas europeas, americanas, japonesas, coreanas, chinas (BYD, Chery, BAIC, Changan, GWM...) e indias (Bajaj, Mahindra) conviven en el mismo catálogo |
 | 🔎 **Evidencia** | 250/250 con fuente citada sólida (100%) | Todo dato declara un nivel de confianza — ver [niveles de evidencia](#niveles-de-evidencia) |
-| 📰 **Noticias / Guías** | Tipos habilitados, sin contenido aún | Sección lista en el código, pendiente de primer contenido real |
+| 📰 **Guías** | **13** guías publicadas | Contenido editorial propio (`status: "nuestro"`), sin campo `evidence` — no aplica el mismo esquema de fuente citada que las fichas de vehículos |
+| 📰 **Noticias** | **3** noticias publicadas | Igual que guías: contenido editorial, sin `evidence` estructurado |
 
 ## 🗺️ Estrategia: global primero, después por país
 
