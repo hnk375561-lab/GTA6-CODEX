@@ -80,6 +80,9 @@ import { ALL_WIDTHS, buildQualityByWidth } from './lib/image-usage-manifest.mjs'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const ROOT = path.resolve(__dirname, '..')
+const CONTENT_DIR = path.join(ROOT, 'src', 'content')
+const MANIFEST_PATH = path.join(ROOT, 'src', 'config', 'entity-images-manifest.json')
+const MANIFEST_EXTENSIONS = ['webp', 'avif', 'jpg', 'jpeg', 'png']
 
 const SOURCE_DIR = path.join(ROOT, 'public', 'images', 'entities')
 const OUTPUT_DIR = path.join(ROOT, 'public', 'images', '_optimized')
@@ -205,8 +208,91 @@ async function processImage(relPath, stats) {
   }
 }
 
+/**
+ * Regenera src/config/entity-images-manifest.json a partir de los
+ * archivos REALES en public/images/entities/**, cruzando contra los
+ * slugs reales de src/content/<type>/*.json.
+ *
+ * Por qué corre acá (y no solo en scripts/upload-images-to-blob.mjs):
+ * ese script requiere @vercel/blob y no está conectado al build (ver su
+ * propio header) — el manifest quedaba desactualizado a mano cada vez
+ * que se agregaba/sacaba una foto directo en public/images/entities/,
+ * sin que nada lo regenerara. Resultado real detectado (sept 2026): 33
+ * vehículos con foto real (ej. tesla-model-3.webp, mazda-cx-30.webp)
+ * listados en el manifest viejo con el slug TRUNCADO (tesla-model,
+ * mazda-cx) porque un generador anterior le cortaba un sufijo
+ * "-N" final asumiendo que siempre era una variante de galería — bug
+ * para cualquier modelo cuyo nombre real termina en número (Tesla
+ * Model 3, Mazda CX-30, Peugeot 2008, etc.). El código de runtime
+ * (`resolveEntityImage` en `src/lib/images.ts`) solo consulta este
+ * manifest, nunca el filesystem, así que un manifest desincronizado se
+ * traduce directo en "Sin imagen verificada" para fotos que sí existen.
+ *
+ * Al correr esto en CADA build (mismo script que ya escanea
+ * public/images/entities/** para generar variantes), el manifest queda
+ * siempre 100% derivado de qué archivos hay realmente — cero
+ * mantenimiento manual, cero drift posible.
+ *
+ * El cruce contra slugs de contenido es lo que resuelve la ambigüedad:
+ * "tesla-model-3-2.webp" (segunda foto de galería) vs
+ * "tesla-model-3.webp" (foto única cuyo slug ya termina en número) se
+ * distinguen probando primero el nombre completo tal cual contra los
+ * slugs reales, y solo si no matchea se prueba sacándole un "-N" final.
+ */
+function regenerateImageManifest() {
+  if (!fs.existsSync(MANIFEST_PATH)) return
+
+  const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf-8'))
+  const summary = []
+
+  for (const type of Object.keys(manifest)) {
+    const contentTypeDir = path.join(CONTENT_DIR, type)
+    const imagesTypeDir = path.join(SOURCE_DIR, type)
+    if (!fs.existsSync(contentTypeDir) || !fs.existsSync(imagesTypeDir)) continue
+
+    const contentSlugs = new Set(
+      fs
+        .readdirSync(contentTypeDir)
+        .filter((f) => f.endsWith('.json'))
+        .map((f) => f.replace(/\.json$/, ''))
+    )
+
+    const slugsWithImage = new Set()
+    for (const file of fs.readdirSync(imagesTypeDir)) {
+      const ext = path.extname(file).slice(1).toLowerCase()
+      if (!MANIFEST_EXTENSIONS.includes(ext)) continue
+      const base = file.slice(0, -(ext.length + 1))
+
+      if (contentSlugs.has(base)) {
+        slugsWithImage.add(base)
+        continue
+      }
+      const withoutGallerySuffix = base.replace(/-\d+$/, '')
+      if (withoutGallerySuffix !== base && contentSlugs.has(withoutGallerySuffix)) {
+        slugsWithImage.add(withoutGallerySuffix)
+      }
+    }
+
+    const before = new Set(manifest[type] || [])
+    const changed = before.size !== slugsWithImage.size || [...before].some((s) => !slugsWithImage.has(s))
+    if (changed) {
+      summary.push(`${type}: ${before.size} → ${slugsWithImage.size}`)
+    }
+    manifest[type] = [...slugsWithImage].sort()
+  }
+
+  fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + '\n')
+  if (summary.length > 0) {
+    console.log(`[pregenerate-image-variants] Manifest de imágenes actualizado: ${summary.join(', ')}`)
+  } else {
+    console.log('[pregenerate-image-variants] Manifest de imágenes ya estaba al día.')
+  }
+}
+
 async function main() {
   const startedAt = Date.now()
+
+  regenerateImageManifest()
 
   if (!fs.existsSync(SOURCE_DIR)) {
     console.log(`[pregenerate-image-variants] No existe ${path.relative(ROOT, SOURCE_DIR)} — nada que hacer.`)
