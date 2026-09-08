@@ -1,8 +1,6 @@
 import { Suspense } from 'react'
 import type { Metadata } from 'next'
-import { getAllEntities, getEntityCountsByType } from '@/lib/entities'
-import { getEntityImageMap } from '@/lib/media'
-import { getBidirectionalRelationCount } from '@/lib/relations'
+import { getEntityCountsByType } from '@/lib/entities'
 import { SearchClient } from '@/components/search/SearchClient'
 import { Reveal } from '@/components/ui/Reveal'
 import { SearchRowSkeleton, Skeleton } from '@/components/ui/loading'
@@ -25,6 +23,13 @@ export const metadata: Metadata = {
   // el costo de servidor más alto del sitio (recarga todas las entidades
   // + conteo de relaciones en cada request). Alineada con /favoritos:
   // noindex + fuera del sitemap (ver src/app/sitemap.ts).
+  // Fase 1 del plan de escalado (docs/plan-escalado-1000-vehiculos.md):
+  // esta página dejó de ser la de mayor costo de servidor del sitio — ya
+  // no recarga el catálogo completo ni resuelve conteo de relaciones para
+  // todas las entidades en cada request. La búsqueda ahora corre en
+  // `/api/buscar`, resuelta solo para los resultados que realmente
+  // vuelven al cliente. Sigue noindex por lo mismo de siempre: sin
+  // contenido indexable único, alineada con /favoritos.
   robots: {
     index: false,
     follow: true,
@@ -49,21 +54,7 @@ export default async function SearchPage({
   // Next.js 15: `searchParams` llega como Promise en Server Components.
   searchParams: Promise<{ q?: string }>
 }) {
-  const [{ q }, entities, counts] = await Promise.all([
-    searchParams,
-    getAllEntities(),
-    getEntityCountsByType(),
-  ])
-
-  // Conteo de conexiones incluyendo relaciones inferidas/bidireccionales
-  // (mismo patrón que `[entityType]/page.tsx`), para habilitar el orden
-  // "Más conexiones" en el buscador global igual que en los listados por
-  // categoría. Se resuelve una sola vez acá, en servidor — `SearchClient`
-  // es `'use client'` y no puede recorrer todo el contenido por su cuenta.
-  const relationCountEntries = await Promise.all(
-    entities.map(async (e) => [`${e.type}/${e.slug}`, await getBidirectionalRelationCount(e)] as const)
-  )
-  const relationCountBySlug = Object.fromEntries(relationCountEntries)
+  const [{ q }, counts] = await Promise.all([searchParams, getEntityCountsByType()])
 
   return (
     <section className="py-12 sm:py-16">
@@ -103,13 +94,7 @@ export default async function SearchPage({
             </div>
           }
         >
-          <SearchClient
-            entities={entities}
-            counts={counts}
-            imageBySlug={getEntityImageMap(entities)}
-            relationCountBySlug={relationCountBySlug}
-            initialQuery={q}
-          />
+          <SearchClient counts={counts} initialQuery={q} />
         </Suspense>
 
         {/* Monetization: mismo slot real de AdSense reusado en el resto

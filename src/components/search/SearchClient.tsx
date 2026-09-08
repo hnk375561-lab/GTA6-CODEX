@@ -1,12 +1,11 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { EntityType, type Entity, type Vehicle } from '@/types'
 import { Badge } from '@/components/ui/Badge'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { EntityImage } from '@/components/entities/EntityImage'
-import type { ResolvedDisplayImage } from '@/lib/images'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
 import { useSyncedSearchParams } from '@/lib/hooks/useSyncedSearchParams'
 import { PendingIndicator } from '@/components/ui/loading'
@@ -14,7 +13,7 @@ import { cn } from '@/lib/utils'
 import { STATUS_LABELS } from '@/lib/entity-labels'
 import { vehiclePerformanceScore, hasPerformanceData } from '@/lib/vehicle-performance'
 import { SITE_NAME } from '@/config/site'
-import { buildFuse } from '@/lib/entity-list-filters'
+import type { SearchApiItem, SearchApiResponse } from '@/app/api/buscar/route'
 
 type StatusFilter = 'todos' | keyof typeof STATUS_LABELS
 
@@ -38,19 +37,11 @@ const MIN_ATTRIBUTE_COUNT = 2
 const MAX_TAG_OPTIONS = 14
 
 interface SearchClientProps {
-  entities: Entity[]
+  /** Conteos por tipo — liviano (4 números), se sigue resolviendo
+   *  server-side en `/buscar/page.tsx` vía `getEntityCountsByType()` para
+   *  los chips de acceso rápido. No confundir con el catálogo completo:
+   *  esto nunca fue el cuello de botella. */
   counts: Record<EntityType, number>
-  /** type/slug → imagen ya resuelta (ver `getEntityImageMap` en `@/lib/media.ts`).
-   *  `SearchClient` es `'use client'`, así que no puede resolver imágenes
-   *  por su cuenta con `fs` — el caller server (`/buscar/page.tsx`)
-   *  resuelve el mapa completo una sola vez y lo pasa acá. */
-  imageBySlug?: Record<string, ResolvedDisplayImage | null>
-  /** type/slug → conteo de conexiones incluyendo relaciones inferidas/
-   *  bidireccionales (ver `getBidirectionalRelationCount` en
-   *  `@/lib/relations.ts`), mismo patrón que `imageBySlug`. Habilita el
-   *  criterio de orden "Más conexiones", igual que en `EntityListExplorer`.
-   *  Si no se pasa, ese criterio de orden no se ofrece. */
-  relationCountBySlug?: Record<string, number>
   /** Query inicial con la que arranca el input, resuelta server-side desde
    *  `?q=` en la URL (ver `/buscar/page.tsx`). Permite deep-linking real
    *  desde otros puntos del sitio (ej. el buscador rápido de la home) en
@@ -82,7 +73,7 @@ function getQuickTypes(counts: Record<EntityType, number>): EntityType[] {
     .slice(0, 6)
 }
 
-export function SearchClient({ entities, counts, imageBySlug, relationCountBySlug, initialQuery }: SearchClientProps) {
+export function SearchClient({ counts, initialQuery }: SearchClientProps) {
   // Estado inicial: `initialQuery` llega resuelto del servidor desde
   // `?q=` (ver /buscar/page.tsx). El resto de filtros (`tipo`, `estado`,
   // `orden`, `tags`) se leen directo de la URL, igual que en
@@ -109,9 +100,61 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
   })
   const debouncedQuery = useDebouncedValue(query, 250)
 
-  // Búsqueda en curso (debounce): la query escrita todavía no está
-  // aplicada a `results`. Ver `PendingIndicator`.
-  const isSearchPending = query.trim() !== debouncedQuery.trim()
+  // Resultados crudos de la búsqueda por texto: ahora vienen de
+  // `/api/buscar` (Fuse.js corre server-side), no de un índice armado en
+  // el navegador sobre el catálogo completo. `items` ya trae imagen y
+  // conteo de relaciones resueltos por resultado — ver `SearchApiItem`.
+  const [items, setItems] = useState<SearchApiItem[]>([])
+  const [isFetching, setIsFetching] = useState(false)
+  const requestIdRef = useRef(0)
+
+  useEffect(() => {
+    const trimmed = debouncedQuery.trim()
+    if (!trimmed) {
+      setItems([])
+      setIsFetching(false)
+      return
+    }
+
+    const requestId = ++requestIdRef.current
+    const controller = new AbortController()
+    setIsFetching(true)
+
+    fetch(`/api/buscar?q=${encodeURIComponent(trimmed)}`, { signal: controller.signal })
+      .then((res) => res.json() as Promise<SearchApiResponse>)
+      .then((data) => {
+        // Descarta respuestas fuera de orden (ej. la query anterior tardó
+        // más en responder que la más reciente) — mismo problema que
+        // resolvía el debounce local, pero ahora sobre un fetch real.
+        if (requestId === requestIdRef.current) {
+          setItems(data.items)
+          setIsFetching(false)
+        }
+      })
+      .catch((err) => {
+        if (err?.name !== 'AbortError' && requestId === requestIdRef.current) {
+          setItems([])
+          setIsFetching(false)
+        }
+      })
+
+    return () => controller.abort()
+  }, [debouncedQuery])
+
+  const rawResults = useMemo(() => items.map((item) => item.entity), [items])
+  const imageBySlug = useMemo(
+    () => Object.fromEntries(items.map((item) => [`${item.entity.type}/${item.entity.slug}`, item.image])),
+    [items]
+  )
+  const relationCountBySlug = useMemo(
+    () => Object.fromEntries(items.map((item) => [`${item.entity.type}/${item.entity.slug}`, item.relationCount])),
+    [items]
+  )
+
+  // Búsqueda en curso: la query escrita todavía no está aplicada a
+  // `results` (por debounce) o la respuesta del servidor todavía no
+  // volvió. Ver `PendingIndicator`.
+  const isSearchPending = query.trim() !== debouncedQuery.trim() || isFetching
 
   // Mantiene `?q=`, `?tipo=`, `?estado=`, `?orden=` y `?tags=` al día con
   // el estado actual, así el link es compartible y el botón "atrás" del
@@ -128,19 +171,6 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedQuery, activeType, status, sortBy, selectedTags])
-
-  // Antes duplicaba acá su propia config de Fuse.js (ligeramente distinta
-  // de la de EntityListExplorer/`buildFuse`, sin manufacturer/class) —
-  // ahora reutiliza la misma función que el listado de `/vehiculos`, así
-  // ambos buscadores del sitio quedan sincronizados en vez de poder
-  // divergir con el tiempo (oportunidad P2 #7 de la auditoría "AutoFicha:
-  // aprovechamiento de datos").
-  const fuse = useMemo(() => buildFuse(entities), [entities])
-
-  const rawResults = useMemo(() => {
-    if (!debouncedQuery.trim()) return []
-    return fuse.search(debouncedQuery).slice(0, 60).map((r) => r.item)
-  }, [fuse, debouncedQuery])
 
   const typeCountsInResults = useMemo(() => {
     const c = new Map<EntityType, number>()
@@ -272,7 +302,7 @@ export function SearchClient({ entities, counts, imageBySlug, relationCountBySlu
       {!query.trim() ? (
         <div>
           <p className="mb-4 text-sm text-neutral-500">
-            {entities.length} entidades documentadas — escribí un nombre, o entrá directo por categoría.
+            {Object.values(counts).reduce((sum, n) => sum + n, 0)} entidades documentadas — escribí un nombre, o entrá directo por categoría.
           </p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {quickTypes.map((type) => (
