@@ -226,16 +226,25 @@ navegación, home), pero quedan cabos sueltos conocidos — se listan acá para
 que no haya sorpresas:
 
 - [ ] **Nombre del repositorio en GitHub** sigue siendo `GTA6-CODEX`.
-- [ ] **Fotos reales de vehículos: 242/250 (96.8%)** —
-  `public/images/entities/vehiculos/` ya tiene 242 fotos reales (`.webp`,
-  ~290MB en total, resolución hasta 3240×2160), pobladas con el pipeline
-  de Wikimedia Commons descrito abajo. Quedan pendientes 8, todas motos
-  de nicho sin foto libre disponible todavía en Commons: `honda-cg-150`,
-  `honda-xr250-tornado`, `honda-xre-300`, `motomel-skua-150`,
-  `yamaha-fazer-250`, `yamaha-ybr-125`, `zanella-rx-150`,
-  `zanella-rx-200`. Para esas 8 hay que resolver por otra vía (kit de
-  prensa oficial con permiso, banco de fotos con licencia comercial, o
-  ilustración).
+- [ ] **Fotos reales de vehículos: 239/250 (95.6%)** —
+  `public/images/entities/vehiculos/` tiene 239 fotos reales (`.webp`,
+  pobladas con el pipeline de Wikimedia Commons descrito abajo). Quedan
+  pendientes 11:
+  - **8 motos de nicho sin foto libre disponible todavía en Commons:**
+    `honda-cg-150`, `honda-xr250-tornado`, `honda-xre-300`,
+    `motomel-skua-150`, `yamaha-fazer-250`, `yamaha-ybr-125`,
+    `zanella-rx-150`, `zanella-rx-200`.
+  - **3 recién liberadas por esta auditoría:** `mercedes-benz-clase-e`,
+    `toyota-corolla-2024` y `volkswagen-tera` tenían fotos byte-a-byte
+    idénticas a las de otro modelo (`mercedes-benz-clase-c`,
+    `toyota-corolla-cross` y `volkswagen-t-cross` respectivamente) — es
+    decir, mostraban el auto equivocado. Esto ya estaba detectado en un
+    archivo de notas (`IMAGENES-A-BORRAR.txt`) que nunca se aplicó; esta
+    auditoría borró las 3 fotos incorrectas y las sacó de
+    `entity-images-manifest.json`, así que ahora caen al fallback visual
+    (silueta genérica) en vez de mostrar el modelo equivocado. Para las
+    8 originales hay que resolver por otra vía (kit de prensa oficial
+    con permiso, banco de fotos con licencia comercial, o ilustración).
 
   Pipeline usado (sin infringir copyright): `npm run
   generate:manifest-commons:write` busca en Wikimedia Commons una foto

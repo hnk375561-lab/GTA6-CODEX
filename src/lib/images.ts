@@ -4,7 +4,7 @@ import entityImagesManifest from '@/config/entity-images-manifest.json'
 import { getEntitiesByTypeSync } from './entities'
 
 /**
- * SISTEMA DE RESOLUCIÓN DE IMÁGENES POR CONVENCIÓN (ahora vía Blob)
+ * SISTEMA DE RESOLUCIÓN DE IMÁGENES POR CONVENCIÓN
  * ===================================================================
  *
  * No hay una tabla ni un campo `image.url` en los JSON de contenido.
@@ -12,23 +12,19 @@ import { getEntitiesByTypeSync } from './entities'
  *
  *   {slug}.{ext}   (siempre webp en la práctica, ver más abajo)
  *
- * MIGRACIÓN A VERCEL BLOB (evita ENOSPC en el build — ver
- * scripts/upload-images-to-blob.mjs):
- *   Antes esto hacía fs.existsSync/fs.readdirSync contra
- *   public/images/entities/**, que exigía tener los ~291 MB de fotos
- *   fuente commiteados y presentes en el checkout de cada build.
+ * FUENTE DE VERDAD DE "EXISTE O NO EXISTE": src/config/entity-images-manifest.json
+ * (un JSON chico con qué slugs TIENEN imagen), en vez de tocar el
+ * filesystem en cada resolución.
  *
- *   Ahora los binarios de imagen viven en Vercel Blob (subidos por
- *   scripts/upload-images-to-blob.mjs, corrido localmente, NO en cada
- *   build) y el repo solo commitea src/config/entity-images-manifest.json:
- *   un JSON chico (`{ [type]: string[] }`) con qué slugs TIENEN imagen.
- *   Ese manifest es la única fuente de verdad de "existe o no existe" —
- *   ya no se toca el filesystem para esto, así que funciona igual en
- *   local, en build de Vercel, y sin que el repo necesite los binarios.
- *
- *   Para agregar/reemplazar fotos: soltalas en tu public/images/entities/
- *   local (gitignored) y corré `node scripts/upload-images-to-blob.mjs`
- *   — sube las variantes a Blob y regenera el manifest.
+ * OJO — Vercel Blob (mencionado en scripts/upload-images-to-blob.mjs) NO
+ * está activo hoy: es infraestructura preparada pero sin cablear (ver
+ * cabecera de src/lib/image-loader.ts, que es la fuente de verdad
+ * actualizada al respecto). El pipeline activo sigue siendo local:
+ * public/images/entities/** SIGUE necesitando estar commiteado en el
+ * repo — es la fuente que usa scripts/pregenerate-image-variants.mjs en
+ * cada build para generar public/images/_optimized/ (esa sí gitignoreada
+ * y regenerada). No borrar ni gitignorear entities/** sin migrar primero
+ * el loader a Blob de verdad.
  *
  * Extensiones que soporta el manifest (compatibilidad con contenido
  * viejo), aunque scripts/upload-images-to-blob.mjs siempre normaliza a
