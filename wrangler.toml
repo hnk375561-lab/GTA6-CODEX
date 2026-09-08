@@ -7,6 +7,10 @@ compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
 directory = ".open-next/assets"
 binding = "ASSETS"
 
+[[services]]
+binding = "WORKER_SELF_REFERENCE"
+service = "sinfrenos"
+
 [vars]
 NEXT_PUBLIC_SITE_URL = "https://sinfreno.com"
 NEXT_PUBLIC_ADSENSE_CLIENT_ID = "ca-pub-8424604961377300"
