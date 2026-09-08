@@ -1,5 +1,7 @@
+import Image from 'next/image'
 import { Entity, EntityType } from '@/types'
 import type { ResolvedDisplayImage } from '@/lib/images'
+import { getManufacturerLogoSrc } from '@/lib/manufacturer-logos'
 import { GridPattern } from '@/components/ui/GridPattern'
 import { SimpleLightbox } from '@/components/ui/SimpleLightbox'
 import { ImageReveal } from '@/components/ui/ImageReveal'
@@ -138,6 +140,16 @@ export function EntityImage({ entity, image, variant = 'thumbnail', priority = f
   // rompería esa navegación y sería HTML inválido, botón dentro de link).
   const isZoomable = variant === 'portrait' && resolved && !resolved.remote
 
+  /** Logo del fabricante (ver `lib/manufacturer-logos.ts`): a diferencia de
+   *  la FOTO de la entidad (`resolved`, de la que las 75 fichas de
+   *  fabricante no tienen ninguna todavía), el logo se resuelve solo con
+   *  el slug — no pasa por servidor/fs, así que puede calcularse acá
+   *  mismo aunque este componente sea `'use client'`. Solo tiene efecto
+   *  cuando NO hay foto (`resolved` es null): si algún día un fabricante
+   *  suma una foto real, esa sigue teniendo prioridad, igual que
+   *  cualquier otra entidad. */
+  const manufacturerLogoSrc = entity.type === EntityType.MANUFACTURER ? getManufacturerLogoSrc(entity.slug) : null
+
   const mediaContent = (
     <div
       className={cn(
@@ -186,6 +198,17 @@ export function EntityImage({ entity, image, variant = 'thumbnail', priority = f
             </div>
           )}
         </>
+      ) : manufacturerLogoSrc ? (
+        <div className={cn('card-media-fallback absolute inset-0 flex items-center justify-center bg-surface-input', isAvatar ? 'p-1.5' : 'p-6')}>
+          <Image
+            src={manufacturerLogoSrc}
+            alt={`Logo de ${entity.title}`}
+            fill
+            sizes={isAvatar ? '56px' : '(min-width: 1024px) 320px, 40vw'}
+            quality={90}
+            className="object-contain"
+          />
+        </div>
       ) : (
         <div className="card-media-fallback absolute inset-0 flex flex-col items-center justify-center gap-2">
           {!isAvatar && <div className="card-media-fallback-sweep" aria-hidden="true" />}
