@@ -50,7 +50,21 @@ export function Reveal({
     )
 
     observer.observe(node)
-    return () => observer.disconnect()
+
+    // Red de seguridad: si por cualquier motivo (error de hidratación en
+    // otro componente de la misma página, IntersectionObserver que nunca
+    // dispara, etc.) `.reveal-visible` no llega a aplicarse, el contenido
+    // quedaría en opacity:0 PERO seguiría siendo clickeable (el `<Link>`
+    // ya está en el DOM desde el SSR) — invisible pero interactivo, el
+    // peor de los dos mundos. Este timeout fuerza visible=true igual
+    // pasado 1.5s, priorizando "se ve aunque sin animación" por sobre
+    // "invisible para siempre".
+    const fallback = setTimeout(() => setVisible(true), 1500)
+
+    return () => {
+      observer.disconnect()
+      clearTimeout(fallback)
+    }
   }, [once])
 
   return (
