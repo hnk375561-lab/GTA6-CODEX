@@ -19,6 +19,7 @@
     "verify:min-count": "node scripts/verify-min-entity-count.mjs",
     "audit:evidence": "node scripts/audit-evidence-coverage.mjs",
     "audit:price-formats": "node scripts/audit-price-formats.mjs",
+    "verify:image-coverage": "node scripts/verify-image-coverage.mjs",
     "migrate:price-structure": "node scripts/migrate-price-structure.mjs",
     "migrate:price-structure:apply": "node scripts/migrate-price-structure.mjs --apply",
     "price-classifier:selftest": "node scripts/lib/price-classifier.mjs --self-test",
