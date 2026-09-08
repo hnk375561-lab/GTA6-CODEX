@@ -10,6 +10,74 @@ import { getEntity, getEntitiesByType } from './entities'
 const bidirectionalCache = new Map<string, EntityRelation[]>()
 
 /**
+ * ÍNDICE INVERTIDO DE RELACIONES (fix CPU timeout, ver nota de
+ * escalabilidad más abajo).
+ *
+ * Antes, `getBidirectionalRelations` escaneaba TODAS las entidades del
+ * sitio por cada entidad de origen — en una página de listado como
+ * `/fabricantes` (75 fabricantes) eso son 75 escaneos completos del
+ * contenido entero, cada uno recorriendo cada candidato y sus relaciones.
+ * Con 162 entidades era tolerable; con 341 (y subiendo) el costo total es
+ * ~75 × 341 × relaciones-por-candidato, suficiente para superar el límite
+ * de CPU por request de Cloudflare Workers y devolver 503 — justo el
+ * síntoma reportado en producción en varias rutas de listado (fabricantes,
+ * vehículos, guías, etc., todas construyen este conteo por entidad).
+ *
+ * La solución: un único pase por TODO el contenido construye un mapa
+ * "target type/slug" → relaciones entrantes, una sola vez por instancia
+ * de Worker (se cachea en este módulo, igual que `typeCache` en
+ * `entities.ts`). Cada llamada a `getBidirectionalRelations` después es
+ * un lookup O(1) en ese mapa en vez de un escaneo O(n) — el costo total
+ * de la página pasa de O(entidades_de_listado × entidades_totales) a
+ * O(entidades_totales), una sola vez, sin importar cuántas entidades
+ * tenga el listado que la disparó primero.
+ */
+let invertedRelationIndex: Map<string, EntityRelation[]> | null = null
+
+function invertedIndexKey(type: EntityType, slug: string): string {
+  return `${type}/${slug}`
+}
+
+/**
+ * Construye (una sola vez, cacheado en memoria del módulo) el índice
+ * invertido de relaciones: para cada entidad candidata que declara una
+ * relación hacia X, registra esa relación bajo la clave de X. Así,
+ * resolver "quién apunta a esta entidad" es un lookup directo en vez de
+ * recorrer todo el contenido de nuevo.
+ */
+async function buildInvertedRelationIndex(): Promise<Map<string, EntityRelation[]>> {
+  if (invertedRelationIndex) return invertedRelationIndex
+
+  const index = new Map<string, EntityRelation[]>()
+  const entitiesByType = await Promise.all(
+    Object.values(EntityType).map(async (type) => await getEntitiesByType(type))
+  )
+
+  for (const candidates of entitiesByType) {
+    for (const candidate of candidates) {
+      for (const rel of candidate.relations || []) {
+        const key = invertedIndexKey(rel.targetType, rel.targetSlug)
+        const bucket = index.get(key)
+        const entry: EntityRelation = {
+          targetType: candidate.type,
+          targetSlug: candidate.slug,
+          relation: rel.relation,
+          direction: 'from',
+        }
+        if (bucket) {
+          bucket.push(entry)
+        } else {
+          index.set(key, [entry])
+        }
+      }
+    }
+  }
+
+  invertedRelationIndex = index
+  return index
+}
+
+/**
  * Genera clave de caché única para relaciones bidireccionales.
  * @param type - Tipo de entidad
  * @param slug - Slug de la entidad
@@ -20,11 +88,13 @@ function relationCacheKey(type: EntityType, slug: string): string {
 }
 
 /**
- * Limpia el caché de relaciones bidireccionales.
- * Expuesto para tests / scripts que necesiten recalcular relaciones.
+ * Limpia el caché de relaciones bidireccionales (incluido el índice
+ * invertido). Expuesto para tests / scripts que necesiten recalcular
+ * relaciones.
  */
 export function clearRelationCache(): void {
   bidirectionalCache.clear()
+  invertedRelationIndex = null
 }
 
 /**
@@ -97,39 +167,20 @@ export async function getBidirectionalRelations(entity: Entity): Promise<EntityR
 
   const direct = entity.relations || []
 
-  // Relaciones explícitas marcadas como bidireccionales ya cuentan.
-  // Para el resto, buscamos entidades del mismo tipo que referencien a esta.
-  const inferred: EntityRelation[] = []
+  // Relaciones explícitas marcadas como bidireccionales ya cuentan. Para
+  // el resto, un lookup O(1) en el índice invertido (construido una sola
+  // vez por Worker) reemplaza el escaneo completo de todo el contenido
+  // que hacía esta función antes por cada entidad de origen.
+  const index = await buildInvertedRelationIndex()
+  const pointingToThis = index.get(invertedIndexKey(entity.type, entity.slug)) || []
 
-  // Se cargan todos los tipos en paralelo una sola vez (en vez de un
-  // import() dinámico + lectura secuencial repetida en cada iteración).
-  const entitiesByType = await Promise.all(
-    Object.values(EntityType).map(async (type) => [type, await getEntitiesByType(type)] as const)
-  )
-
-  for (const [, candidates] of entitiesByType) {
-    for (const candidate of candidates) {
-      if (candidate.slug === entity.slug && candidate.type === entity.type) continue
-
-      const pointsToThis = (candidate.relations || []).find(
-        (r) => r.targetType === entity.type && r.targetSlug === entity.slug
+  const inferred = pointingToThis.filter(
+    (candidate) =>
+      !(candidate.targetSlug === entity.slug && candidate.targetType === entity.type) &&
+      !direct.some(
+        (r) => r.targetType === candidate.targetType && r.targetSlug === candidate.targetSlug
       )
-
-      if (pointsToThis) {
-        const alreadyListed = direct.some(
-          (r) => r.targetType === candidate.type && r.targetSlug === candidate.slug
-        )
-        if (!alreadyListed) {
-          inferred.push({
-            targetType: candidate.type,
-            targetSlug: candidate.slug,
-            relation: pointsToThis.relation,
-            direction: 'from',
-          })
-        }
-      }
-    }
-  }
+  )
 
   const result = [...direct, ...inferred]
   bidirectionalCache.set(cacheKey, result)
