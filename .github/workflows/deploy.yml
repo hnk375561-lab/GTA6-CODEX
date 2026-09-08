@@ -32,7 +32,16 @@ jobs:
         run: npm run lint
 
       - name: Run tests
-        run: npx vitest run --reporter=default --reporter=github-actions
+        run: |
+          set +e
+          npx vitest run --reporter=default > /tmp/test-output.txt 2>&1
+          code=$?
+          cat /tmp/test-output.txt
+          if [ $code -ne 0 ]; then
+            tail -c 3500 /tmp/test-output.txt | sed ':a;N;$!ba;s/\n/%0A/g' > /tmp/test-output-encoded.txt
+            echo "::error::$(cat /tmp/test-output-encoded.txt)"
+          fi
+          exit $code
 
       - name: Run verification scripts
         run: npm run verify:min-count && npm run verify:content && npm run verify:relations && npm run verify:manufacturer-slugs && npm run verify:reserved-keys && npm run verify:seo && npm run verify:adsense-csp && npm run verify:tailwind
