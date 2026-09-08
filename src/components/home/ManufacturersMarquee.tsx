@@ -28,6 +28,7 @@ function ManufacturerLogo({
   return (
     <Link
       href={`/fabricantes/${manufacturer.slug}`}
+      prefetch={false}
       className="manufacturers-marquee__logo"
       tabIndex={interactive ? 0 : -1}
       aria-hidden={interactive ? undefined : true}

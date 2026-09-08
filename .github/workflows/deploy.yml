@@ -1,4 +1,15 @@
-name: Deploy to Cloudflare Pages
+name: CI (type-check, lint, test, build)
+
+# El deploy real a producción lo hace Cloudflare Workers Builds (git
+# integration nativa, configurada del lado de Cloudflare, que lee
+# wrangler.toml directo). Este workflow quedó de la época en que el
+# proyecto todavía era Cloudflare Pages (antes de la migración a Workers
+# del 07/09/2026) y hasta ahora seguía intentando un segundo deploy con
+# `cloudflare/pages-action@v1` contra un proyecto Pages que ya no es el
+# que sirve el sitio — dos pipelines de deploy corriendo en paralelo
+# contra el mismo nombre, candidato fuerte a builds fallidos fantasma en
+# el dashboard de Cloudflare. Se deja este workflow solo como gate de CI
+# (falla el check de GitHub si algo rompe), sin ningún paso de deploy.
 
 on:
   push:
@@ -82,55 +93,7 @@ jobs:
           retention-days: 14
           if-no-files-found: ignore
 
-      - name: Build for Cloudflare Pages
+      - name: Build (verificación — el deploy real lo hace Cloudflare Workers Builds)
         run: npm run build:cf
         env:
           NEXT_PUBLIC_SITE_URL: https://sinfreno.com
-
-      - name: Upload Pages artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: pages-build
-          path: .open-next
-          retention-days: 1
-
-  deploy-preview:
-    needs: build-and-test
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download Pages artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: pages-build
-          path: .open-next
-
-      - name: Deploy to Cloudflare Pages Preview
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: sinfrenos
-          directory: .open-next
-          branch: preview-${{ github.event.pull_request.number }}
-
-  deploy-production:
-    needs: build-and-test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - name: Download Pages artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: pages-build
-          path: .open-next
-
-      - name: Deploy to Cloudflare Pages Production
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: sinfrenos
-          directory: .open-next
-          branch: main

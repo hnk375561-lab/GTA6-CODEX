@@ -344,6 +344,7 @@ export function EntityCard({
             su propio click sin disparar la navegación. */}
         <Link
           href={`/${entity.type}/${entity.slug}`}
+          prefetch={false}
           className="absolute inset-0 z-10 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
         >
           <span className="sr-only">Ver ficha de {entity.title}</span>
@@ -470,6 +471,7 @@ export function EntityCard({
           del contenido (decorativo, no interactivo) de la card. */}
       <Link
         href={`/${entity.type}/${entity.slug}`}
+        prefetch={false}
         className="absolute inset-0 z-10 rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
       >
         <span className="sr-only">Ver ficha de {entity.title}</span>
