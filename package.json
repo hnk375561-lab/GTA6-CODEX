@@ -44,6 +44,7 @@
     "check:unused": "knip",
     "generate:manifest-commons": "node scripts/generate-manifest-from-commons.mjs",
     "generate:manifest-commons:write": "node scripts/generate-manifest-from-commons.mjs --write",
+    "add-vehicle": "node scripts/add-vehicle.mjs",
     "generate:media-kit": "node scripts/generate-media-kit.mjs"
   },
   "dependencies": {
