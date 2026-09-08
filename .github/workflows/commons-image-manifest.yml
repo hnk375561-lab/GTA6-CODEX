@@ -14,8 +14,14 @@ name: Commons Image Manifest
 # confirmación visual de que cada foto es del modelo/año correcto sigue
 # siendo 100% humana, PR por PR.
 #
-# El cron periódico (Fase 5) se agrega después, sumando un trigger
-# `schedule` a este mismo archivo — no es parte de esta fase.
+# Fase 5: se sumó el trigger `schedule` de más abajo — cron quincenal
+# (días 1 y 15 de cada mes; GitHub Actions no tiene una unidad nativa
+# "cada 2 semanas", esto es la aproximación estándar) que reintenta
+# siempre los slugs en "notFound" (ítem C2 del inventario de la
+# auditoría), sin depender de que alguien se acuerde de correrlo a mano.
+# La corrida manual (workflow_dispatch) sigue igual que en la Fase 3,
+# con el toggle de --retry-notfound quedando a criterio de quien la
+# dispara.
 
 on:
   workflow_dispatch:
@@ -27,6 +33,9 @@ on:
         required: false
         default: false
         type: boolean
+  schedule:
+    # 06:00 UTC los días 1 y 15 de cada mes ("quincenal" aproximado).
+    - cron: '0 6 1,15 * *'
 
 # Evita que dos corridas manuales superpuestas generen dos PRs distintos
 # contra el mismo manifest (riesgo identificado en sección 8 de la
@@ -59,8 +68,11 @@ jobs:
         run: npm ci
 
       - name: Generar manifest desde Wikimedia Commons
+        # El cron (Fase 5) siempre reintenta los "notFound" — es justamente
+        # su propósito (ítem C2 del audit). La corrida manual respeta el
+        # toggle que elija quien la dispara desde la pestaña Actions.
         run: |
-          if [ "${{ github.event.inputs.retry_notfound }}" = "true" ]; then
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event.inputs.retry_notfound }}" = "true" ]; then
             npm run generate:manifest-commons:write -- --retry-notfound
           else
             npm run generate:manifest-commons:write

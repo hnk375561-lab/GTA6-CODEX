@@ -1,0 +1,49 @@
+# Fase 5 de docs/auditoria-automatizacion-sinfrenos.md.
+#
+# Hasta esta fase, actualizar dependencias dependía 100% de que alguien
+# se acordara de revisar `npm outdated` a mano — "no hay Dependabot ni
+# Renovate configurado (package.json tiene ~35 dependencias)" (sección 4,
+# ítem L). Esto solo ABRE pull requests; nunca los mergea (mitigación de
+# riesgo de sección 14: "Dependabot solo abre PRs, no mergea").
+#
+# Agrupado (`groups`) y semanal (no diario), también por mitigación
+# explícita de sección 14: "Dependabot generando ruido de PRs menores →
+# Configurar agrupamiento y frecuencia semanal, no diaria."
+#
+# Se cubren dos ecosistemas:
+#   - npm: las ~35 dependencias de package.json.
+#   - github-actions: las actions de terceros que ya usan los workflows
+#     del repo (actions/checkout, actions/setup-node, cloudflare/pages-action,
+#     peter-evans/create-pull-request, etc.) — no estaba en el plan original
+#     de la Fase 5, pero es la misma clase de deuda ("dependencia sin
+#     actualización automática") aplicada a CI en vez de a npm, con el
+#     mismo mecanismo (Dependabot) y cero costo extra de mantenimiento.
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+      development-dependencies:
+        dependency-type: "development"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(ci)"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
