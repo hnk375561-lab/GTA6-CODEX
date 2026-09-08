@@ -49,6 +49,18 @@ jobs:
       - name: Run price format audit
         run: npm run audit:price-formats
 
+      # No bloqueante todavía (Fase 4 de la auditoría): al momento de sumar
+      # este check, el catálogo real tiene 8 vehículos sin imagen pendientes
+      # de la Fase 3 (workflow de Commons) — ver
+      # docs/auditoria-automatizacion-sinfrenos.md sección C2. Bloquear el
+      # build ahora rompería el deploy de contenido que ya está en
+      # producción, por el mismo motivo que check-evidence-links no bloquea
+      # más abajo. Sacar `continue-on-error` una vez que esos 8 slugs (o los
+      # que queden pendientes en ese momento) tengan su imagen.
+      - name: Verify image coverage (non-blocking until Fase 3 resuelva las imágenes pendientes)
+        continue-on-error: true
+        run: npm run verify:image-coverage
+
       # No bloqueante: chequea 318 URLs externas de evidencia citada en el
       # contenido. Un link caído (rate-limit, mantenimiento, bot-blocking del
       # sitio de terceros, etc.) no debe tumbar un deploy de producción por
