@@ -32,7 +32,7 @@ jobs:
         run: npm run lint
 
       - name: Run tests
-        run: npm test
+        run: npx vitest run --reporter=default --reporter=github-actions
 
       - name: Run verification scripts
         run: npm run verify:min-count && npm run verify:content && npm run verify:relations && npm run verify:manufacturer-slugs && npm run verify:reserved-keys && npm run verify:seo && npm run verify:adsense-csp && npm run verify:tailwind
