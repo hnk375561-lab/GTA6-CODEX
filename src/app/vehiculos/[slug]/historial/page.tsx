@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { Vehicle, EntityType } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
 import { resolveEntityDisplayImage } from '@/lib/media'
-import { getModelYearHistory } from '@/lib/vehicle-history'
+import { getModelYearHistory, ModelYearHistory } from '@/lib/vehicle-history'
 import { generateEntityMetadata } from '@/lib/seo'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Reveal } from '@/components/ui/Reveal'
@@ -225,9 +225,9 @@ function VehicleHistoryClient({ vehicle, history }: VehicleHistoryProps) {
             <span>Volver a la ficha de {vehicle.title}</span>
           </Link>
           <div className="flex flex-wrap gap-3">
-            {(vehicle as any).categoryHref && (
+            {(vehicle as unknown as { categoryHref?: string }).categoryHref && (
               <Link
-                href={(vehicle as any).categoryHref}
+                href={(vehicle as unknown as { categoryHref?: string }).categoryHref ?? '#'}
                 className="inline-flex items-center gap-2 rounded-lg border border-auto-accent/35 bg-auto-accent/15 px-3 py-2 text-sm font-semibold uppercase tracking-wide text-auto-accent-strong transition-colors hover:bg-auto-accent/25"
               >
                 Ver categoría {vehicle.class}
@@ -258,8 +258,8 @@ function VehicleHistoryClient({ vehicle, history }: VehicleHistoryProps) {
   )
 }
 
-function createJsonLdItemList(vehicle: any, history: any) {
-  const itemListElement = history.years.map((entry: any, index: number) => {
+function createJsonLdItemList(vehicle: Vehicle, history: ModelYearHistory) {
+  const itemListElement = history.years.map((entry, index) => {
     return {
       '@type': 'ListItem',
       position: index + 1,
@@ -280,7 +280,7 @@ function createJsonLdItemList(vehicle: any, history: any) {
   return result
 }
 
-function createJsonLdBreadcrumb(vehicle: any) {
+function createJsonLdBreadcrumb(vehicle: Vehicle) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -323,8 +323,8 @@ export default async function VehicleHistoryPage({ params }: { params: Promise<{
   const image = resolveEntityDisplayImage(vehicle)
   const history = await import('@/lib/vehicle-history').then(m => m.getModelYearHistory(vehicle as Vehicle))
 
-  const jsonLdItemList = JSON.stringify(createJsonLdItemList(vehicle, history)).replace(/</g, '\\u003c')
-  const jsonLdBreadcrumb = JSON.stringify(createJsonLdBreadcrumb(vehicle)).replace(/</g, '\\u003c')
+  const jsonLdItemList = JSON.stringify(createJsonLdItemList(vehicle as Vehicle, history)).replace(/</g, '\\u003c')
+  const jsonLdBreadcrumb = JSON.stringify(createJsonLdBreadcrumb(vehicle as Vehicle)).replace(/</g, '\\u003c')
 
   return (
     <>

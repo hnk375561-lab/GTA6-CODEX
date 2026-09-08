@@ -1,5 +1,17 @@
 import { Vehicle } from '@/types'
 
+/**
+ * `productionHistory` es un campo legacy que ya no está en el schema
+ * (`VehicleSchema`) pero puede seguir presente en JSON viejos que no
+ * pasaron por una migración. Se tipa acá en vez de leerlo con `any` para
+ * no perder el chequeo de tipos en el resto del archivo.
+ */
+interface LegacyProductionHistory {
+  generacionActual?: {
+    años?: string
+  }
+}
+
 export interface ModelYearEntry {
   year: number
   isCurrent: boolean
@@ -52,7 +64,7 @@ function extractStartYear(vehicle: Vehicle): number {
   }
 
   // Prioridad 4: productionHistory.generacionActual.años
-  const ph = (vehicle as any).productionHistory
+  const ph = (vehicle as unknown as { productionHistory?: LegacyProductionHistory }).productionHistory
   if (ph?.generacionActual?.años) {
     const match = ph.generacionActual.años.match(/(\d{4})/)
     if (match) return parseInt(match[1], 10)
@@ -85,7 +97,7 @@ function extractEndYear(vehicle: Vehicle): number | 'presente' {
   }
 
   // Prioridad 3: productionHistory.generacionActual.años
-  const ph = (vehicle as any).productionHistory
+  const ph = (vehicle as unknown as { productionHistory?: LegacyProductionHistory }).productionHistory
   if (ph?.generacionActual?.años) {
     const match = ph.generacionActual.años.match(/(\d{4})\s*-\s*(\d{4}|presente)/i)
     if (match) {

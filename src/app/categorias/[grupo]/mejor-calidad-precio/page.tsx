@@ -41,7 +41,7 @@ const GROUP_INTRO: Record<string, string> = {
 
 function calculateValueScore(vehicle: Vehicle): number | null {
   const power = parsePowerHp(vehicle)
-  const priceUsd = parsePriceUsd(vehicle as any)
+  const priceUsd = parsePriceUsd(vehicle)
   
   if (power === null || priceUsd === null || priceUsd <= 0) return null
   

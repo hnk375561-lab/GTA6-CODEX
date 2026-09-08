@@ -12,6 +12,14 @@ import { CONTENT_BUNDLE } from './generated/content-bundle'
  * propósito: ya quedan cubiertos por `validateEntity` (BaseEntitySchema)
  * y su contrato es intencionalmente abierto.
  */
+/** Extrae `slug` de un valor no validado solo para mensajes de log; no asume forma. */
+function slugForLog(entity: unknown): string {
+  if (entity && typeof entity === 'object' && 'slug' in entity && typeof (entity as { slug: unknown }).slug === 'string') {
+    return (entity as { slug: string }).slug
+  }
+  return '(sin slug)'
+}
+
 function validateTypeSpecific(type: EntityType, entity: unknown, contextLabel: string): boolean {
   let result: ReturnType<typeof safeParseVehicle> | ReturnType<typeof safeParseManufacturer> | null = null
 
@@ -86,16 +94,20 @@ function loadEntitiesByTypeSync(type: EntityType): Entity[] {
     return typeCache.get(type)!
   }
 
-  const raw = CONTENT_BUNDLE[type] ?? []
+  // El bundle está tipado como Entity[] pero en runtime es JSON crudo sin
+  // validar todavía (por eso `validateEntity` existe) — se itera como
+  // `unknown` para que el type guard narrowe de verdad en vez de partir
+  // de un `never` cuando falla.
+  const raw = (CONTENT_BUNDLE[type] ?? []) as unknown[]
   const entities: Entity[] = []
 
   for (const parsed of raw) {
     if (!validateEntity(parsed)) {
-      console.warn(`[entities] Entidad inválida ignorada: ${type}/${(parsed as any).slug}`)
+      console.warn(`[entities] Entidad inválida ignorada: ${type}/${slugForLog(parsed)}`)
       continue
     }
 
-    if (!validateTypeSpecific(type, parsed, `${type}/${(parsed as any).slug}`)) {
+    if (!validateTypeSpecific(type, parsed, `${type}/${parsed.slug}`)) {
       continue
     }
 

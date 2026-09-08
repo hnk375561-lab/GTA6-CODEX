@@ -114,7 +114,7 @@ function FinancingLandingClient({ vehicle, priceUsd, priceDisplay }: { vehicle: 
                 Completá el formulario y te contactamos para avanzar con la simulación y la gestión del crédito.
               </p>
               <Link
-                href={`/financiamiento?vehiculo=${encodeURIComponent(vehicle.title)}&precio=${encodeURIComponent(String(parsePriceUsd(vehicle as any) || 0))}`}
+                href={`/financiamiento?vehiculo=${encodeURIComponent(vehicle.title)}&precio=${encodeURIComponent(String(parsePriceUsd(vehicle) || 0))}`}
                 className="inline-flex items-center gap-2 rounded-lg bg-auto-accent px-6 py-3 font-display text-sm font-semibold text-auto-darker transition-transform hover:scale-105 active:scale-95"
               >
                 Ir a la calculadora completa

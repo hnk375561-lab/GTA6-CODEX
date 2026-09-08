@@ -71,13 +71,19 @@ const fileContent = `// AUTO-GENERADO por scripts/generate-content-bundle.mjs �
 import type { Entity } from '@/types'
 import type { MediaAsset } from '@/types/media'
 
-export const CONTENT_BUNDLE: {
+type ContentBundle = {
   vehiculos: Entity[]
   noticias: Entity[]
   guias: Entity[]
   fabricantes: Entity[]
   media: MediaAsset[]
-} = ${JSON.stringify(bundle)} as any
+}
+
+// El literal de JSON.stringify no infiere las uniones discriminadas de
+// Entity/MediaAsset con la precisión que TS exige para una asignación
+// directa, así que pasa por \`unknown\` en vez de \`any\` (any dispara
+// @typescript-eslint/no-explicit-any en el lint de CI).
+export const CONTENT_BUNDLE: ContentBundle = ${JSON.stringify(bundle)} as unknown as ContentBundle
 `
 
 fs.writeFileSync(OUTPUT_FILE, fileContent, 'utf-8')

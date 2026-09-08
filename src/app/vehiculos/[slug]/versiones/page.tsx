@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { Vehicle, EntityType } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
 import { resolveEntityDisplayImage } from '@/lib/media'
-import { extractVehicleVariants, hasMultipleVariants } from '@/lib/vehicle-variants'
+import { extractVehicleVariants, hasMultipleVariants, VehicleVariant } from '@/lib/vehicle-variants'
 import { generateEntityMetadata } from '@/lib/seo'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
@@ -19,21 +19,7 @@ interface PageProps {
 
 interface VehicleVersionsProps {
   vehicle: Vehicle
-  variants: Array<{
-    nombre: string
-    precio: string
-    power?: string
-    transmission?: string
-    consumption?: string
-    dimensions?: string
-    acceleration?: string
-    speed?: string
-    equipamiento?: string[]
-    traccion?: string
-    cilindrada?: string
-    peso?: string | number
-    baul?: string | number
-  }>
+  variants: VehicleVariant[]
 }
 
 function VehicleVersionsClient({ vehicle, variants }: VehicleVersionsProps) {
@@ -142,7 +128,9 @@ function VehicleVersionsClient({ vehicle, variants }: VehicleVersionsProps) {
               Peso: 'weight',
               Baúl: 'trunk',
             }).map(([label, key]) => {
-              const values = variants.map(v => (v as any)[key]).filter(Boolean)
+              const values = variants
+                .map(v => (v as unknown as Record<string, unknown>)[key])
+                .filter((val): val is string => typeof val === 'string' && val.length > 0)
               const uniqueValues = [...new Set(values)]
               if (uniqueValues.length <= 1) return null
               return (
@@ -153,7 +141,7 @@ function VehicleVersionsClient({ vehicle, variants }: VehicleVersionsProps) {
                       {variants.map((v, i) => (
                         <li key={i} className="flex items-center gap-2 text-sm">
                           <span className="font-mono text-neutral-900 flex-1 text-right pr-2">
-                            {(v as any)[key] || '—'}
+                            {((v as unknown as Record<string, unknown>)[key] as string | undefined) || '—'}
                           </span>
                           <span className="text-neutral-500 text-sm">{variants[i].nombre || `Versión ${i + 1}`}</span>
                         </li>
@@ -180,9 +168,9 @@ function VehicleVersionsClient({ vehicle, variants }: VehicleVersionsProps) {
             <span>Volver a la ficha de {vehicle.title}</span>
           </Link>
           <div className="flex flex-wrap gap-3">
-            {(vehicle as any).categoryHref && (
+            {(vehicle as unknown as { categoryHref?: string }).categoryHref && (
               <Link
-                href={(vehicle as any).categoryHref}
+                href={(vehicle as unknown as { categoryHref?: string }).categoryHref ?? '#'}
                 className="inline-flex items-center gap-2 rounded-lg border border-auto-accent/35 bg-auto-accent/15 px-3 py-2 text-sm font-semibold uppercase tracking-wide text-auto-accent-strong transition-colors hover:bg-auto-accent/25"
               >
                 Ver categoría {vehicle.class}
@@ -209,7 +197,7 @@ async function getVehicleData(slug: string) {
   return { vehicle, image, variants }
 }
 
-function createJsonLdItemList(vehicle: any, variants: any[]) {
+function createJsonLdItemList(vehicle: Vehicle, variants: VehicleVariant[]) {
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -226,7 +214,7 @@ function createJsonLdItemList(vehicle: any, variants: any[]) {
   })
 }
 
-function createJsonLdVehicle(vehicle: any, variants: any[]) {
+function createJsonLdVehicle(vehicle: Vehicle, variants: VehicleVariant[]) {
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Vehicle',
@@ -251,7 +239,7 @@ function createJsonLdVehicle(vehicle: any, variants: any[]) {
   })
 }
 
-function createJsonLdBreadcrumb(vehicle: any) {
+function createJsonLdBreadcrumb(vehicle: Vehicle) {
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -291,7 +279,7 @@ export default async function VehicleVersionsPage({ params }: { params: Promise<
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdBreadcrumb }}
       />
-      <VehicleVersionsClient vehicle={v} variants={variants as any} />
+      <VehicleVersionsClient vehicle={v} variants={variants} />
     </>
   )
 }

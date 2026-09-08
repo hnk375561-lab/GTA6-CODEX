@@ -1,21 +1,61 @@
 import { Vehicle } from '@/types'
 
+/**
+ * Forma laxa de un vehículo/variante tal como aparece en JSON legacy que no
+ * pasó por `VehicleSchema` (campos como `transmision`, `performance`,
+ * `relatedModels.variants`, etc. no existen en el tipo `Vehicle` estricto).
+ * Se tipa así, con todo opcional, en vez de `any`, para no perder el chequeo
+ * de tipos del resto del archivo sin reescribir la lógica de extracción.
+ */
+interface LegacyVehicleLike {
+  price?: string | null
+  power?: string | null
+  transmision?: string | null
+  transmission?: string | null
+  consumo?: string | null
+  consumption?: string | null
+  dimensiones?: string | null
+  dimensions?: string | null
+  performance?: {
+    acceleration?: string
+    speed?: string
+    handling?: string
+    braking?: string
+  }
+  acceleration?: string | null
+  speed?: string | null
+  equipamiento?: string[] | null
+  traccion?: string | null
+  cilindrada?: string | null
+  peso?: string | number | null
+  baul?: string | number | null
+  nombre?: string | null
+  precio?: string | null
+  variants?: unknown[] | null
+  relatedModels?: { variants?: unknown[] | null } | null
+}
+
+/** Normaliza un elemento crudo de un array de variantes a `LegacyVehicleLike | string`. */
+function asVariantItem(v: unknown): LegacyVehicleLike | string {
+  return v as LegacyVehicleLike | string
+}
+
 export interface VehicleVariant {
   nombre: string
   precio: string
-  power?: string
-  transmission?: string
-  consumption?: string
-  dimensions?: string
-  acceleration?: string
-  speed?: string
-  equipamiento?: string[]
-  traccion?: string
-  cilindrada?: string
-  peso?: string
-  baul?: string | number
+  power?: string | null
+  transmission?: string | null
+  consumption?: string | null
+  dimensions?: string | null
+  acceleration?: string | null
+  speed?: string | null
+  equipamiento?: string[] | null
+  traccion?: string | null
+  cilindrada?: string | null
+  peso?: string | number | null
+  baul?: string | number | null
   rendimiento?: {
-    speed?: string
+    speed?: string | null
     acceleration?: string
   }
 }
@@ -23,12 +63,13 @@ export interface VehicleVariant {
 /**
  * Extrae las variantes de un vehículo con datos enriquecidos
  */
-export function extractVehicleVariants(vehicle: any): VehicleVariant[] {
+export function extractVehicleVariants(vehicle: Vehicle & LegacyVehicleLike): VehicleVariant[] {
   const variants: VehicleVariant[] = []
 
   // Prioridad 1: variants array explícito
   if (vehicle.variants && Array.isArray(vehicle.variants) && vehicle.variants.length > 0) {
-    vehicle.variants.forEach((v: any) => {
+    (vehicle.variants as unknown[]).forEach((raw) => {
+      const v = asVariantItem(raw) as LegacyVehicleLike
       variants.push({
         nombre: v.nombre || 'Base',
         precio: v.precio || '—',
@@ -54,7 +95,8 @@ export function extractVehicleVariants(vehicle: any): VehicleVariant[] {
 
   // Prioridad 2: variants en relatedModels
   if (vehicle.relatedModels?.variants && Array.isArray(vehicle.relatedModels.variants)) {
-    vehicle.relatedModels.variants.forEach((v: any) => {
+    (vehicle.relatedModels.variants as unknown[]).forEach((raw) => {
+      const v = asVariantItem(raw) as LegacyVehicleLike
       variants.push({
         nombre: v.nombre || 'Base',
         precio: v.precio || '—',
@@ -80,7 +122,8 @@ export function extractVehicleVariants(vehicle: any): VehicleVariant[] {
 
   // Prioridad 3: variants en variants (array simple)
   if (vehicle.variants && Array.isArray(vehicle.variants) && vehicle.variants.length > 0) {
-    vehicle.variants.forEach((v: any) => {
+    (vehicle.variants as unknown[]).forEach((raw) => {
+      const v = asVariantItem(raw)
       if (typeof v === 'string') {
         variants.push({
           nombre: v,
@@ -147,7 +190,7 @@ export function extractVehicleVariants(vehicle: any): VehicleVariant[] {
 /**
  * Verifica si un vehículo tiene múltiples versiones/trims reales
  */
-export function hasMultipleVariants(vehicle: any): boolean {
+export function hasMultipleVariants(vehicle: Vehicle & LegacyVehicleLike): boolean {
   const variants = extractVehicleVariants(vehicle)
   return variants.length > 1 && variants.some(v => v.nombre !== 'Base' || variants.length > 1)
 }
@@ -155,7 +198,7 @@ export function hasMultipleVariants(vehicle: any): boolean {
 /**
  * Obtiene el número de variantes reales
  */
-export function getVariantCount(vehicle: any): number {
+export function getVariantCount(vehicle: Vehicle & LegacyVehicleLike): number {
   const variants = extractVehicleVariants(vehicle)
   return variants.length
 }
@@ -183,7 +226,9 @@ export function getVariantDifferences(variants: VehicleVariant[]): Record<string
   ]
 
   fields.forEach(({ key, label }) => {
-    const values = variants.map(v => (v as any)[key]).filter(Boolean)
+    const values = variants
+      .map(v => (v as unknown as Record<string, unknown>)[key])
+      .filter((val): val is string => typeof val === 'string' && val.length > 0)
     const uniqueValues = [...new Set(values)]
     if (uniqueValues.length > 1) {
       differences[label] = uniqueValues

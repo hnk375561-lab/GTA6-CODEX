@@ -2,6 +2,10 @@
 
 import { cn } from '@/lib/utils'
 
+interface VehicleValueCardImage {
+  src?: string
+}
+
 interface VehicleValueCardProps {
   vehicle: {
     slug: string
@@ -12,7 +16,7 @@ interface VehicleValueCardProps {
     price?: string
     type: string
   }
-  image: any
+  image: VehicleValueCardImage | null | undefined
   score: number
   tier: string
 }
@@ -27,7 +31,7 @@ export function VehicleValueCard({ vehicle, image, score, tier }: {
     price?: string
     type: string
   }
-  image: any
+  image: VehicleValueCardImage | null | undefined
   score: number
   tier: string
 }) {

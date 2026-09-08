@@ -1,5 +1,5 @@
-const fetch = require('node-fetch');
-
+// Node 22 (ver .nvmrc) trae `fetch` global (undici) desde Node 18 — no hace
+// falta node-fetch. El require() disparaba @typescript-eslint/no-require-imports.
 const token = process.env.CLOUDFLARE_TOKEN;
 if (!token) {
   console.error('❌ Falta: CLOUDFLARE_TOKEN');

@@ -34,7 +34,7 @@ function readEditorialMedia(): MediaAsset[] {
     try {
       const result = safeParseMediaAsset(parsed)
       if (!result.success) {
-        console.warn(`[media] Asset inválido ignorado: ${(parsed as any).id}: ${result.error.message}`)
+        console.warn(`[media] Asset inválido ignorado: ${parsed.id}: ${result.error.message}`)
         continue
       }
       const asset = result.data as MediaAsset
