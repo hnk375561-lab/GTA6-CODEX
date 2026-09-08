@@ -1,7 +1,10 @@
 import { notFound } from 'next/navigation'
+import { Metadata } from 'next'
 import { Vehicle, EntityType } from '@/types'
-import { getEntity } from '@/lib/entities'
-import { extractVehicleVariants, VehicleVariant } from '@/lib/vehicle-variants'
+import { getEntity, getEntitySlugs } from '@/lib/entities'
+import { resolveEntityDisplayImage } from '@/lib/media'
+import { extractVehicleVariants, hasMultipleVariants, VehicleVariant } from '@/lib/vehicle-variants'
+import { generateEntityMetadata } from '@/lib/seo'
 import { Reveal } from '@/components/ui/Reveal'
 import Link from 'next/link'
 import { SITE_URL } from '@/config/site'
@@ -231,6 +234,23 @@ function createJsonLdBreadcrumb(vehicle: Vehicle) {
       { '@type': 'ListItem', position: 4, name: 'Versiones', item: SITE_URL + '/vehiculos/' + vehicle.slug + '/versiones' },
     ],
   })
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const vehicle = await getEntity(EntityType.VEHICLE, slug)
+  if (!vehicle) return {}
+
+  return generateEntityMetadata(vehicle, resolveEntityDisplayImage(vehicle))
+}
+
+export async function generateStaticParams() {
+  const slugs = await getEntitySlugs(EntityType.VEHICLE)
+  const vehicles = await Promise.all(slugs.map(slug => getEntity(EntityType.VEHICLE, slug)))
+  return vehicles
+    .filter((v): v is NonNullable<typeof v> => v !== null)
+    .filter(v => hasMultipleVariants(v as Vehicle))
+    .map(v => ({ slug: v.slug }))
 }
 
 export default async function VehicleVersionsPage({ params }: { params: Promise<{ slug: string }> }) {
