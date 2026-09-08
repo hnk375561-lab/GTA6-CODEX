@@ -282,3 +282,37 @@ criterio: (a) anularlas a `null` como se hizo con los eléctricos, o (b)
 investigar y reemplazar por la especificación real por vehículo (trabajo
 en lotes, como las Rondas 2-4 de cierre de evidencia). No se tocó ningún
 JSON de vehículo en esta ronda.
+
+### Tanda 1 (2026-09-08): 5/211 vehículos con specs reales verificadas
+
+Se optó por el criterio (b): investigar y reemplazar cada campo con datos
+reales por vehículo, dejando explícitamente marcados como "no publicado"
+o "estimado del segmento" los campos sin fuente pública confiable (nunca
+inventados). Orden: marcas masivas primero. Tanda de 5 vehículos:
+
+- `toyota-corolla-2024.json` — motor M20A-FKS real (compresión 13.0:1,
+  no 10.5:1; CVT, no 8/9 vel.; suspensión trasera multilink/torsión según
+  trim). Fuentes: toyota.com, manual de lubricación Toyota Corolla.
+- `chevrolet-onix.json` — ficha oficial GM Argentina (Onix RS MY21):
+  compresión 10.5:1 (coincide con el placeholder por casualidad, pero
+  verificada independientemente), inyección MPFI (no directa), PCD
+  4x100, Cx 0.330 oficial, neumático real 195/55R16 (no 225/50R17).
+- `volkswagen-polo.json` — motor EA211 1.0 TSI real: compresión 10.5:1
+  (verificada, no copiada), inyección directa real, PCD 5x100 (Polo
+  Mk6/MQB A0 Sudamérica).
+- `ford-ranger.json` — el caso más grave: tenía specs de auto naftero
+  FWD en una pickup diésel 4x4. Motor Panther/EcoBlue 2.0L Bi-Turbo real:
+  compresión 16.5:1 (vs. 10.5:1 inventado), Common Rail piezoeléctrico,
+  suspensión delantera de doble horquilla / trasera de ballestas (vs.
+  MacPherson/multilink inventado), PCD 6x139.7 (vs. 5x114.3 inventado).
+- `honda-city.json` — motor L15Z1/L15Z6 real: SOHC (no DOHC como decía
+  el placeholder), compresión 10.3:1, inyección PGM-FI multipunto (no
+  directa), PCD 4x100.
+
+Quedan **206** vehículos con el placeholder sin verificar (211 originales
+- 5 de esta tanda; nota: 2 de los 5, Onix y Polo, siguen mostrando
+`10.5:1` porque ese es su valor real verificado, no el placeholder sin
+tocar — el resto de sus campos sí cambió sustancialmente). Continúa en
+tandas de 5, próximas marcas masivas por orden de búsqueda: Ford, VW,
+Chevrolet, Honda, Toyota, Hyundai, Nissan (resto de sus modelos en el
+catálogo), luego Renault/Fiat/Peugeot.

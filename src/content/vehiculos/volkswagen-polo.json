@@ -66,11 +66,12 @@
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.vw.com.ar/es/modelos/polo.html",
-    "note": "Se verificaron las especificaciones técnicas para el mercado argentino, destacando la motorización 200 TSI y la plataforma MQB A0.",
+    "note": "Se verificaron las especificaciones técnicas para el mercado argentino, destacando la motorización 200 TSI y la plataforma MQB A0. Ronda 5 (2026-09-08): se reemplazó el bloque de especificaciones contaminado con el placeholder genérico (10.5:1 idéntico en 211 vehículos) por datos reales del motor EA211 1.0 TSI (compresión 10.5:1 verificada de forma independiente contra fuentes técnicas del motor, no copiada del placeholder; inyección directa real, coincide con el placeholder en este caso puntual; DOHC 12V; PCD 5x100 confirmado para Polo Mk6/MQB A0 Sudamérica). Varios campos sin dato público en la ficha regional argentina (Cx, ángulo de giro, capacidades exactas de fluidos) se dejaron como no publicado o estimado del segmento, sin inventar cifras.",
     "limitations": [
       "Los precios varían constantemente según contexto inflacionario y disponibilidad de stock en concesionarios.",
       "Algunos elementos de equipamiento pueden cambiar según versiones y año-modelo."
-    ]
+    ],
+    "secondarySource": "https://en.wikipedia.org/wiki/Volkswagen_EA211_engine"
   },
   "transmision": "Automática Tiptronic de 6 marchas",
   "traccion": "Delantera",
@@ -93,63 +94,63 @@
   "consumoEtiqueta": "E",
   "neumaticos": "225/50R17",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
+    "filtro_aire": "Filtro de panel de celulosa",
+    "tipo_valvulas": "DOHC, 12 válvulas totales (4 por cilindro, motor 3 cilindros)",
     "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "sistemas_inyeccion": "Inyección directa de alta presión (120-250 bar), inyectores de 5 orificios",
+    "arbol_levas": "Doble árbol a la cabeza (DOHC)"
   },
   "especificacionesTransmision": {
-    "tipo_automatico": "Convertidor",
-    "control_cambios": "Secuencial",
-    "sist_propulsion": "Traccion",
-    "velocidades": "8/9 velocidades"
+    "tipo_automatico": "Convertidor de par Tiptronic de 6 marchas",
+    "control_cambios": "Secuencial mediante paddle shifters o palanca +/-",
+    "sist_propulsion": "Tracción delantera (FWD)",
+    "velocidades": "6 velocidades (automática Tiptronic) o 5/6 manuales según versión"
   },
   "especificacionesSuspension": {
-    "tipo_trasera": "Multilink",
-    "barra_estabilizadora": "26/20 mm",
-    "tipo_delantera": "MacPherson",
-    "amortiguadores": "Doble tubo",
-    "recorrido_vertical": "+-150 mm"
+    "tipo_delantera": "MacPherson independiente sobre plataforma MQB A0",
+    "tipo_trasera": "Eje de torsión semi-independiente (típico de la plataforma MQB A0 en versiones de tracción delantera)",
+    "amortiguadores": "Monotubo a gas",
+    "barra_estabilizadora": "Presente en el eje delantero; el trasero (viga de torsión) no lleva barra separada",
+    "recorrido_vertical": "No publicado por Volkswagen Argentina en la ficha regional"
   },
   "especificacionesRuedas": {
-    "offset": "+35 a +45 mm",
-    "indice_velocidad": "T/V",
-    "indice_carga": "91",
-    "profundidad_surcos": "1.6 mm",
-    "pcd": "5x114.3"
+    "offset": "No publicado oficialmente (estimado +35 a +40 mm, típico de aros 15\"-17\" MQB A0)",
+    "indice_velocidad": "H/V según versión (hasta 210-240 km/h)",
+    "indice_carga": "Estimado 88-91 según medida de neumático de la versión",
+    "profundidad_surcos": "1.6 mm (mínimo legal)",
+    "pcd": "5x100"
   },
   "especificacionesDireccion": {
-    "tipo_asistencia": "Electrica progresiva",
-    "sistema_control": "Control electronico",
-    "angulo_max_giro": "32-35 grados",
-    "vueltas_calador": "2.5-3.0"
+    "tipo_asistencia": "Eléctrica progresiva (EPS), montada en la cremallera",
+    "sistema_control": "Asistencia variable según velocidad",
+    "angulo_max_giro": "No publicado por Volkswagen para el mercado argentino",
+    "vueltas_calador": "No publicado por Volkswagen para el mercado argentino"
   },
   "aerodinámica": {
-    "defectores_aire": "Canales laterales",
-    "spoiler_trasero": "Integrado",
-    "area_frontal": "2.2-2.4 m2",
-    "coeficiente_arrastre": "Cx 0.27-0.32"
+    "defectores_aire": "No especificado en ficha regional",
+    "spoiler_trasero": "Presente en versiones Highline/GTS; no de serie en versión base",
+    "area_frontal": "No publicado oficialmente (estimado 2.0-2.1 m², típico del segmento B)",
+    "coeficiente_arrastre": "No publicado oficialmente por VW Argentina para esta versión (estimado Cx 0.30-0.32, típico de hatchbacks MQB A0)"
   },
   "capacidadesAdicionales": {
-    "capacidad_refrigerante": "7-9 L",
-    "capacidad_lavaparabrisas": "3-4 L",
-    "liquido_frenos": "0.75-0.85 L",
-    "capacidad_aceite": "4.5-5.5 L",
-    "filtro_habitaculo": "Carbon activado"
+    "capacidad_refrigerante": "Estimado 4.5-5 L (no publicado con precisión en ficha regional)",
+    "capacidad_lavaparabrisas": "Estimado 3 L",
+    "liquido_frenos": "DOT 4, aprox. 0.5 L",
+    "capacidad_aceite": "Aprox. 3.6 L con filtro (motor EA211 1.0 TSI, 0W-20 o 5W-40 sintético según manual)",
+    "filtro_habitaculo": "No especificado en ficha regional"
   },
   "climatizacionAvanzada": {
-    "control": "Trizona",
-    "modo": "Recirculacion",
-    "filtro": "Carbon",
-    "desempanante": "Trasero/Lateral"
+    "control": "Manual (versión base) o automático monozona (Highline/GTS, según equipamiento)",
+    "modo": "Recirculación manual o automática según versión",
+    "filtro": "No especificado en ficha regional",
+    "desempanante": "Desempañador eléctrico de vidrio trasero (de serie)"
   },
   "mantenimientoPrograma": {
-    "filtro": "25.000-30.000 km",
-    "aceite": "15.000 km",
-    "frenos": "Anual",
-    "ruedas": "Anual",
-    "refrigerante": "2 anos"
+    "filtro": "Filtro de aceite en cada cambio; filtro de aire según plan de mantenimiento VW (no publicado con km exacto en la ficha regional)",
+    "aceite": "Cada 10.000-15.000 km según plan de mantenimiento Volkswagen Argentina",
+    "frenos": "Inspección según plan de mantenimiento oficial; sin intervalo fijo publicado",
+    "ruedas": "Rotación recomendada cada 10.000 km",
+    "refrigerante": "No publicado con intervalo exacto en ficha regional"
   },
   "consumo": "6.2 l/100km mixto",
   "dimensiones": "4074 x 1751 x 1471 mm",

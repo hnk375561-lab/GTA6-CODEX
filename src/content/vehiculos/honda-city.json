@@ -66,11 +66,12 @@
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.honda.com.ar",
-    "note": "Se verificaron las especificaciones técnicas generales del Honda City de séptima generación con motor 1.5L i-VTEC, incluyendo potencia, dimensiones para la variante sedán y capacidades.",
+    "note": "Se verificaron las especificaciones técnicas generales del Honda City de séptima generación con motor 1.5L i-VTEC, incluyendo potencia, dimensiones para la variante sedán y capacidades. Ronda 5 (2026-09-08): se reemplazó el bloque contaminado con el placeholder genérico DOHC/10.5:1 por datos reales del motor Honda L15Z1/L15Z6 (SOHC -no DOHC, corrección importante frente al placeholder-, compresión 10.3:1, inyección PGM-FI multipunto -no directa-, PCD 4x100 confirmado). Varios campos sin dato público confiable en fichas regionales (Cx, ángulo de giro, capacidades exactas de fluidos) se dejaron como no publicado o estimado del segmento, sin inventar cifras.",
     "limitations": [
       "Los precios varían considerablemente según el mercado de Latinoamérica y el sudeste asiático.",
       "Algunas especificaciones de equipamiento de seguridad dependen del nivel de acabado y del país de comercialización."
-    ]
+    ],
+    "secondarySource": "https://www.fitfreak.net/forums/general-fit-modifications-discussion/97618-comparison-between-l15a7-engine-l15z1-engine.html"
   },
   "transmision": "Automática CVT o Manual de 6 marchas",
   "traccion": "Delantera",
@@ -93,63 +94,63 @@
   "consumoEtiqueta": "E",
   "neumaticos": "225/50R17",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "filtro_aire": "Filtro de panel de celulosa",
+    "tipo_valvulas": "SOHC, 16 válvulas (4 por cilindro), i-VTEC -no DOHC como decía el placeholder-",
+    "ratio_compresion": "10.3:1 (motor L15Z1/L15Z6)",
+    "sistemas_inyeccion": "PGM-FI (inyección electrónica multipunto), no directa",
+    "arbol_levas": "Simple árbol a la cabeza (SOHC) con i-VTEC"
   },
   "especificacionesTransmision": {
-    "tipo_automatico": "Convertidor",
-    "control_cambios": "Secuencial",
-    "sist_propulsion": "Traccion",
-    "velocidades": "8/9 velocidades"
+    "tipo_automatico": "CVT (transmisión variable continua)",
+    "control_cambios": "Modo manual simulado de 7 relaciones con paddle shifters (según versión)",
+    "sist_propulsion": "Tracción delantera (FWD)",
+    "velocidades": "CVT o manual de 6 velocidades según mercado/versión"
   },
   "especificacionesSuspension": {
-    "tipo_trasera": "Multilink",
-    "barra_estabilizadora": "26/20 mm",
-    "tipo_delantera": "MacPherson",
-    "amortiguadores": "Doble tubo",
-    "recorrido_vertical": "+-150 mm"
+    "tipo_delantera": "MacPherson independiente",
+    "tipo_trasera": "Viga de torsión (H-shape torsion beam), típico de sedanes B/C de Honda",
+    "amortiguadores": "Monotubo a gas",
+    "barra_estabilizadora": "Presente en el eje delantero; no especificada en el trasero de torsión",
+    "recorrido_vertical": "No publicado por Honda en la ficha técnica regional"
   },
   "especificacionesRuedas": {
-    "offset": "+35 a +45 mm",
-    "indice_velocidad": "T/V",
-    "indice_carga": "91",
-    "profundidad_surcos": "1.6 mm",
-    "pcd": "5x114.3"
+    "offset": "Estimado +43 a +47 mm (rango típico Honda City/Civic, no confirmado para esta versión puntual)",
+    "indice_velocidad": "H/V según versión y medida de neumático",
+    "indice_carga": "91 (615 kg por neumático), típico de la medida 215/55R16 de fábrica",
+    "profundidad_surcos": "1.6 mm (mínimo legal)",
+    "pcd": "4x100"
   },
   "especificacionesDireccion": {
-    "tipo_asistencia": "Electrica progresiva",
-    "sistema_control": "Control electronico",
-    "angulo_max_giro": "32-35 grados",
-    "vueltas_calador": "2.5-3.0"
+    "tipo_asistencia": "Eléctrica (EPS), montada en la cremallera",
+    "sistema_control": "Asistencia variable según velocidad",
+    "angulo_max_giro": "No publicado por Honda",
+    "vueltas_calador": "No publicado por Honda"
   },
   "aerodinámica": {
-    "defectores_aire": "Canales laterales",
-    "spoiler_trasero": "Integrado",
-    "area_frontal": "2.2-2.4 m2",
-    "coeficiente_arrastre": "Cx 0.27-0.32"
+    "defectores_aire": "No especificado en ficha regional",
+    "spoiler_trasero": "Presente en versiones RS; no de serie en versiones base",
+    "area_frontal": "No publicado oficialmente (estimado 2.1-2.2 m², típico del segmento sedán B)",
+    "coeficiente_arrastre": "No publicado oficialmente por Honda para esta versión (estimado Cx 0.29-0.32, típico del segmento)"
   },
   "capacidadesAdicionales": {
-    "capacidad_refrigerante": "7-9 L",
-    "capacidad_lavaparabrisas": "3-4 L",
-    "liquido_frenos": "0.75-0.85 L",
-    "capacidad_aceite": "4.5-5.5 L",
-    "filtro_habitaculo": "Carbon activado"
+    "capacidad_refrigerante": "Estimado 4.3-4.5 L (no publicado con precisión en ficha regional)",
+    "capacidad_lavaparabrisas": "Estimado 3-4 L",
+    "liquido_frenos": "DOT 3, aprox. 0.5 L",
+    "capacidad_aceite": "Aprox. 3.7 L con filtro (motor L15Z, 0W-20 sintético)",
+    "filtro_habitaculo": "No especificado en ficha regional"
   },
   "climatizacionAvanzada": {
-    "control": "Trizona",
-    "modo": "Recirculacion",
-    "filtro": "Carbon",
-    "desempanante": "Trasero/Lateral"
+    "control": "Manual (versiones base) o automático (versiones superiores, según mercado)",
+    "modo": "Recirculación manual",
+    "filtro": "No especificado en ficha regional",
+    "desempanante": "Desempañador eléctrico de vidrio trasero"
   },
   "mantenimientoPrograma": {
-    "filtro": "25.000-30.000 km",
-    "aceite": "15.000 km",
-    "frenos": "Anual",
-    "ruedas": "Anual",
-    "refrigerante": "2 anos"
+    "filtro": "Filtro de aceite en cada cambio; filtro de aire según plan de mantenimiento Honda (no publicado con km exacto)",
+    "aceite": "Cada 10.000 km o 12 meses según plan de mantenimiento Honda",
+    "frenos": "Inspección según plan de mantenimiento oficial",
+    "ruedas": "Rotación recomendada cada 10.000 km",
+    "refrigerante": "No publicado con intervalo exacto en ficha regional"
   },
   "consumo": "5.5 l/100km mixto",
   "dimensiones": "4553 x 1748 x 1467 mm",

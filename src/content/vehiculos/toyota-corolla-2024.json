@@ -68,11 +68,12 @@
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.toyota.com/corolla/",
-    "note": "Se verificaron las especificaciones técnicas del Toyota Corolla 2024 con motor 2.0L Dynamic Force, potencia de 170 hp, dimensiones globales del sedán y capacidades a partir de información oficial de la marca y registros de mercado en Norteamérica.",
+    "note": "Se verificaron las especificaciones técnicas del Toyota Corolla 2024 con motor 2.0L Dynamic Force, potencia de 170 hp, dimensiones globales del sedán y capacidades a partir de información oficial de la marca y registros de mercado en Norteamérica. Ronda 5 (2026-09-08): se reemplazaron los campos de especificacionesMotor/Transmision/Suspension/Ruedas/Direccion/aerodinámica/capacidadesAdicionales/climatizacionAvanzada/mantenimientoPrograma, contaminados con un bloque genérico idéntico en 211 vehículos del catálogo, por datos reales verificados del motor M20A-FKS (compresión 13.0:1, D-4S, Dual VVT-i, CVT Direct Shift) contra fuentes técnicas del motor y manuales de mantenimiento de EE.UU. Los campos sin dato público confiable (barra estabilizadora exacta, Cx, ángulo de giro) se dejaron como rango estimado del segmento, explícitamente marcado como tal, en vez de inventar una cifra puntual.",
     "limitations": [
       "Las cifras de consumo y dimensiones pueden variar levemente según la región de comercialización (Norteamérica, Mercosur, Europa)",
       "La versión híbrida posee especificaciones de motorización y capacidad de baúl diferentes"
-    ]
+    ],
+    "secondarySource": "https://www.tocorolla12.com/toyota_corolla_lubrication_system_2_0_l_4_cylinder_m20a_fks_engine_-2513.html"
   },
   "transmision": "Automática CVT (Direct Shift-CVT) o manual según mercado",
   "traccion": "Delantera (FWD)",
@@ -97,63 +98,63 @@
   "consumoEtiqueta": "C",
   "neumaticos": "225/50R17",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "filtro_aire": "Filtro de panel de celulosa (elemento seco)",
+    "tipo_valvulas": "DOHC 16V, Dual VVT-i (variador en ambos árboles)",
+    "ratio_compresion": "13.0:1",
+    "sistemas_inyeccion": "D-4S (inyección directa + puerto, combinada)",
+    "arbol_levas": "Doble árbol a la cabeza (DOHC), accionado por cadena, con Dual VVT-i"
   },
   "especificacionesTransmision": {
-    "tipo_automatico": "Convertidor",
-    "control_cambios": "Secuencial",
-    "sist_propulsion": "Traccion",
-    "velocidades": "8/9 velocidades"
+    "tipo_automatico": "CVT (Direct Shift-CVT) con engranaje de arranque físico para 1ra marcha",
+    "control_cambios": "Modo manual simulado de 10 relaciones con paddle shifters (SE/XSE)",
+    "sist_propulsion": "Tracción delantera (FWD)",
+    "velocidades": "CVT (relación continuamente variable; sin número fijo de marchas)"
   },
   "especificacionesSuspension": {
-    "tipo_trasera": "Multilink",
-    "barra_estabilizadora": "26/20 mm",
     "tipo_delantera": "MacPherson",
-    "amortiguadores": "Doble tubo",
-    "recorrido_vertical": "+-150 mm"
+    "tipo_trasera": "Multilink independiente (SE/XSE) o viga de torsión (L/LE, según mercado/año)",
+    "amortiguadores": "Monotubo a gas",
+    "barra_estabilizadora": "Estimado 22-24 mm delantera / 14-16 mm trasera (rango típico del segmento; Toyota no publica el diámetro exacto)",
+    "recorrido_vertical": "No publicado por el fabricante; estimado 120-140 mm, típico de sedanes compactos FWD"
   },
   "especificacionesRuedas": {
-    "offset": "+35 a +45 mm",
-    "indice_velocidad": "T/V",
-    "indice_carga": "91",
-    "profundidad_surcos": "1.6 mm",
+    "offset": "Estimado +40 a +45 mm (típico de aros 17\" en plataforma TNGA-C)",
+    "indice_velocidad": "V (hasta 240 km/h) en neumáticos 225/50R17 de fábrica",
+    "indice_carga": "94 (670 kg por neumático)",
+    "profundidad_surcos": "1.6 mm (mínimo legal en la mayoría de los mercados)",
     "pcd": "5x114.3"
   },
   "especificacionesDireccion": {
-    "tipo_asistencia": "Electrica progresiva",
-    "sistema_control": "Control electronico",
-    "angulo_max_giro": "32-35 grados",
-    "vueltas_calador": "2.5-3.0"
+    "tipo_asistencia": "Eléctrica (EPS) montada en la cremallera",
+    "sistema_control": "Asistencia variable según velocidad, sin sistema de dirección trasera",
+    "angulo_max_giro": "No publicado por Toyota; estimado 33-36° (típico del segmento)",
+    "vueltas_calador": "Estimado 2.7-3.0 vueltas de tope a tope (no publicado oficialmente)"
   },
   "aerodinámica": {
-    "defectores_aire": "Canales laterales",
-    "spoiler_trasero": "Integrado",
-    "area_frontal": "2.2-2.4 m2",
-    "coeficiente_arrastre": "Cx 0.27-0.32"
+    "defectores_aire": "Canales de aire laterales bajo el paragolpes delantero",
+    "spoiler_trasero": "Integrado en la tapa del baúl (de serie en SE/XSE; opcional en L/LE)",
+    "area_frontal": "Estimado 2.2-2.3 m² (no publicado oficialmente por Toyota para esta versión)",
+    "coeficiente_arrastre": "Cx estimado 0.28-0.31 (Toyota no publica el valor exacto para el Corolla sedán 2024 en todos los mercados)"
   },
   "capacidadesAdicionales": {
-    "capacidad_refrigerante": "7-9 L",
-    "capacidad_lavaparabrisas": "3-4 L",
-    "liquido_frenos": "0.75-0.85 L",
-    "capacidad_aceite": "4.5-5.5 L",
-    "filtro_habitaculo": "Carbon activado"
+    "capacidad_refrigerante": "Aprox. 6.0-6.3 L (Toyota Super Long Life Coolant, rosa, libre de silicatos)",
+    "capacidad_lavaparabrisas": "Estimado 3-4 L (no publicado con precisión por Toyota)",
+    "liquido_frenos": "DOT 3, aprox. 0.5-0.6 L",
+    "capacidad_aceite": "4.4-4.6 L con filtro (0W-16 sintético; 0W-20 como sustituto temporal admitido)",
+    "filtro_habitaculo": "Carbón activado"
   },
   "climatizacionAvanzada": {
-    "control": "Trizona",
-    "modo": "Recirculacion",
-    "filtro": "Carbon",
-    "desempanante": "Trasero/Lateral"
+    "control": "Automático bizona (SE/XSE) o monozona manual (L/LE, según mercado)",
+    "modo": "Recirculación automática con sensor de calidad de aire (trims superiores)",
+    "filtro": "Carbón activado",
+    "desempanante": "Trasero eléctrico; delantero por flujo de aire acondicionado"
   },
   "mantenimientoPrograma": {
-    "filtro": "25.000-30.000 km",
-    "aceite": "15.000 km",
-    "frenos": "Anual",
-    "ruedas": "Anual",
-    "refrigerante": "2 anos"
+    "filtro": "Filtro de aceite en cada cambio de aceite; filtro de aire cada 30.000-48.000 km",
+    "aceite": "Cada 16.000 km (10.000 millas) o 12 meses, lo que ocurra primero (norma EE.UU.)",
+    "frenos": "Inspección anual; líquido de frenos cada 3 años",
+    "ruedas": "Rotación cada 8.000-10.000 km; alineación anual",
+    "refrigerante": "Toyota Super Long Life Coolant: primer cambio a los 10 años/192.000 km"
   },
   "cilindrada": "1.987 cc (2.0L)",
   "emisiones": null,

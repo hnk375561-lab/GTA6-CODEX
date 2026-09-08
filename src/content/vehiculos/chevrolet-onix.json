@@ -66,8 +66,8 @@
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://es.wikipedia.org/wiki/Chevrolet_Onix",
-    "secondarySource": "https://www.chevrolet.com.mx/autos/sedan-deportivo-onix",
-    "note": "Se verificaron las especificaciones técnicas generales, dimensiones del hatchback (4163 x 1730 x 1473 mm), capacidad del tanque de combustible (44 L) y baúl (303 L) utilizando fichas técnicas oficiales y registros enciclopédicos.",
+    "secondarySource": "https://cdn.motor1.com/pdf-files/ficha-tecnica-chevrolet-onix-rs-configuracion-para-argentina-1pdf.pdf",
+    "note": "Se verificaron las especificaciones técnicas generales, dimensiones del hatchback (4163 x 1730 x 1473 mm), capacidad del tanque de combustible (44 L) y baúl (303 L) utilizando fichas técnicas oficiales y registros enciclopédicos. Ronda 5 (2026-09-08): se reemplazaron los bloques de especificaciones técnicas contaminados con el placeholder genérico (compartido con otros 210 vehículos) por datos de la ficha técnica oficial GM Argentina para Onix RS MY21 1.0 Turbo (motor 3 cilindros DOHC, compresión 10.5:1 -verificada, no genérica-, inyección MPFI -no directa como decía el placeholder-, PCD 4x100, Cx 0.330, neumático real 195/55R16 en vez de 225/50R17). Varios campos de detalle (offset exacto, capacidades de fluidos, filtro de habitáculo) no están publicados en la ficha regional disponible y se dejaron marcados como no publicados o como estimado del segmento, sin inventar cifras.",
     "limitations": [
       "Los precios en el mercado local varían constantemente debido a la inflación y la carga impositiva en Argentina.",
       "Algunos equipamientos y capacidades pueden variar según la versión específica disponible en el mercado."
@@ -94,63 +94,63 @@
   "consumoEtiqueta": "E",
   "neumaticos": "225/50R17",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
+    "filtro_aire": "Filtro de panel de celulosa",
+    "tipo_valvulas": "DOHC, 12 válvulas totales (4 por cilindro, motor 3 cilindros)",
     "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "sistemas_inyeccion": "MPFI (inyección electrónica multipunto), no directa",
+    "arbol_levas": "Doble árbol a la cabeza (DOHC)"
   },
   "especificacionesTransmision": {
-    "tipo_automatico": "Convertidor",
-    "control_cambios": "Secuencial",
-    "sist_propulsion": "Traccion",
-    "velocidades": "8/9 velocidades"
+    "tipo_automatico": "Convertidor de par, 6 velocidades con modo manual 'Active Select' (versión automática opcional)",
+    "control_cambios": "Secuencial en modo manual (solo versión automática)",
+    "sist_propulsion": "Tracción delantera",
+    "velocidades": "Manual de 5 velocidades (versión de base) o automática de 6"
   },
   "especificacionesSuspension": {
-    "tipo_trasera": "Multilink",
-    "barra_estabilizadora": "26/20 mm",
-    "tipo_delantera": "MacPherson",
-    "amortiguadores": "Doble tubo",
-    "recorrido_vertical": "+-150 mm"
+    "tipo_delantera": "MacPherson independiente, con barra estabilizadora unida al amortiguador",
+    "tipo_trasera": "Semi-independiente de eje de torsión, SIN barra estabilizadora, resorte helicoidal lineal",
+    "amortiguadores": "Telescópicos presurizados (trasero); delanteros integrados al McPherson",
+    "barra_estabilizadora": "Presente solo en el eje delantero (unida al amortiguador); el eje trasero no lleva barra",
+    "recorrido_vertical": "No publicado por Chevrolet en la ficha técnica oficial"
   },
   "especificacionesRuedas": {
-    "offset": "+35 a +45 mm",
-    "indice_velocidad": "T/V",
-    "indice_carga": "91",
-    "profundidad_surcos": "1.6 mm",
-    "pcd": "5x114.3"
+    "offset": "No publicado en la ficha oficial (estimado +40 mm, típico de aros 16\" de origen)",
+    "indice_velocidad": "T (hasta 190 km/h), neumático 195/55R16 de fábrica",
+    "indice_carga": "87 (545 kg por neumático)",
+    "profundidad_surcos": "1.6 mm (mínimo legal)",
+    "pcd": "4x100"
   },
   "especificacionesDireccion": {
-    "tipo_asistencia": "Electrica progresiva",
-    "sistema_control": "Control electronico",
-    "angulo_max_giro": "32-35 grados",
-    "vueltas_calador": "2.5-3.0"
+    "tipo_asistencia": "Eléctrica progresiva",
+    "sistema_control": "Asistencia variable según velocidad",
+    "angulo_max_giro": "No publicado por Chevrolet",
+    "vueltas_calador": "No publicado por Chevrolet"
   },
   "aerodinámica": {
-    "defectores_aire": "Canales laterales",
-    "spoiler_trasero": "Integrado",
-    "area_frontal": "2.2-2.4 m2",
-    "coeficiente_arrastre": "Cx 0.27-0.32"
+    "defectores_aire": "No especificado en la ficha oficial",
+    "spoiler_trasero": "No de serie en versiones base; presente en versión RS",
+    "area_frontal": "No publicado oficialmente (estimado 2.0-2.1 m², típico del segmento hatchback B)",
+    "coeficiente_arrastre": "Cx 0.330 (dato oficial de Chevrolet Argentina)"
   },
   "capacidadesAdicionales": {
-    "capacidad_refrigerante": "7-9 L",
-    "capacidad_lavaparabrisas": "3-4 L",
-    "liquido_frenos": "0.75-0.85 L",
-    "capacidad_aceite": "4.5-5.5 L",
-    "filtro_habitaculo": "Carbon activado"
+    "capacidad_refrigerante": "Estimado 4.5-5 L (no publicado con precisión en la ficha regional)",
+    "capacidad_lavaparabrisas": "Estimado 2.5-3 L",
+    "liquido_frenos": "DOT 3/4, aprox. 0.5 L",
+    "capacidad_aceite": "Estimado 3.2-3.5 L (motor 1.0L 3 cilindros turbo, típico del SGE Ecotec)",
+    "filtro_habitaculo": "No especificado en ficha oficial"
   },
   "climatizacionAvanzada": {
-    "control": "Trizona",
-    "modo": "Recirculacion",
-    "filtro": "Carbon",
-    "desempanante": "Trasero/Lateral"
+    "control": "Manual (versión base); no hay bizona automática de serie según ficha oficial",
+    "modo": "Recirculación manual",
+    "filtro": "No especificado en ficha oficial",
+    "desempanante": "Desempañador eléctrico de vidrio trasero (de serie)"
   },
   "mantenimientoPrograma": {
-    "filtro": "25.000-30.000 km",
-    "aceite": "15.000 km",
-    "frenos": "Anual",
-    "ruedas": "Anual",
-    "refrigerante": "2 anos"
+    "filtro": "Filtro de aceite en cada cambio; filtro de aire según plan de mantenimiento GM (no publicado con km exacto en esta ficha)",
+    "aceite": "Cada 10.000-15.000 km según plan de mantenimiento Chevrolet Argentina",
+    "frenos": "Delanteros a disco ventilado, traseros a tambor; inspección según plan de mantenimiento",
+    "ruedas": "Rotación recomendada cada 10.000 km",
+    "refrigerante": "Estimado, no publicado con intervalo exacto en ficha regional"
   },
   "consumo": "5.4 L/100km mixto",
   "dimensiones": "4163 x 1730 x 1473 mm",

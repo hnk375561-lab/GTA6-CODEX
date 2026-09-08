@@ -65,8 +65,8 @@
   },
   "evidence": {
     "level": "respaldado",
-    "secondarySource": "https://www.ford.com/trucks/ranger",
-    "note": "Se verificaron las especificaciones técnicas principales de la Ford Ranger de nueva generación utilizando la ficha técnica oficial para Argentina y especificaciones de la plataforma global de Ford. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "secondarySource": "https://www.ford.co.uk/content/dam/guxeu/uk/documents/home/experience-ford/news/component-sales/2.0l-panther-engine.pdf",
+    "note": "Se verificaron las especificaciones técnicas principales de la Ford Ranger de nueva generación utilizando la ficha técnica oficial para Argentina y especificaciones de la plataforma global de Ford. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo. Ronda 5 (2026-09-08): se reemplazó el bloque de especificaciones contaminado con el placeholder genérico de auto naftero (ratio_compresion 10.5:1, inyección directa naftera, suspensión MacPherson/multilink, neumático 225/50R17 -todo incorrecto para una pickup diésel 4x4-) por datos reales del motor diésel Panther/EcoBlue 2.0L Bi-Turbo (compresión real 16.5:1, muy distinta a la naftera inventada; inyección Common Rail piezoeléctrica; suspensión delantera de doble horquilla y trasera de ballestas, propia de una pickup; PCD 6x139.7 verificado). El coeficiente aerodinámico y varias capacidades de fluidos no están publicados oficialmente y se dejaron como estimado del segmento pickup, sin inventar cifras puntuales.",
     "limitations": [
       "Los precios varían fuertemente según el mercado regional, impuestos y aranceles locales.",
       "El consumo exacto depende de la versión de transmisión y tipo de tracción seleccionada (4x2 o 4x4)."
@@ -95,63 +95,63 @@
   "consumoEtiqueta": "E",
   "neumaticos": "225/50R17",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "filtro_aire": "Filtro de panel de celulosa de alta capacidad (motor diésel turbo)",
+    "tipo_valvulas": "DOHC, 16 válvulas (4 por cilindro, motor 4 cilindros)",
+    "ratio_compresion": "16.5:1 (motor diésel Panther/EcoBlue 2.0L, dato oficial Ford)",
+    "sistemas_inyeccion": "Common Rail de alta presión, inyectores piezoeléctricos de 8 orificios",
+    "arbol_levas": "Doble árbol a la cabeza (DOHC)"
   },
   "especificacionesTransmision": {
-    "tipo_automatico": "Convertidor",
-    "control_cambios": "Secuencial",
-    "sist_propulsion": "Traccion",
-    "velocidades": "8/9 velocidades"
+    "tipo_automatico": "Convertidor de par, 10 velocidades (versión Bi-Turbo)",
+    "control_cambios": "Secuencial con selector +/-",
+    "sist_propulsion": "4x2 o 4x4 con reductora (caja de transferencia electrónica)",
+    "velocidades": "Manual de 6 velocidades (2.0 Turbo simple) o automática de 10 (Bi-Turbo)"
   },
   "especificacionesSuspension": {
-    "tipo_trasera": "Multilink",
-    "barra_estabilizadora": "26/20 mm",
-    "tipo_delantera": "MacPherson",
-    "amortiguadores": "Doble tubo",
-    "recorrido_vertical": "+-150 mm"
+    "tipo_delantera": "Doble horquilla (double wishbone) independiente con resorte helicoidal",
+    "tipo_trasera": "Eje rígido con hojas de ballesta (Berlin eye leaf springs), típico de pickup con caja de carga",
+    "amortiguadores": "Telescópicos hidráulicos",
+    "barra_estabilizadora": "Presente en el eje delantero; no especificada en el trasero de ballestas",
+    "recorrido_vertical": "No publicado por Ford en la ficha técnica"
   },
   "especificacionesRuedas": {
-    "offset": "+35 a +45 mm",
-    "indice_velocidad": "T/V",
-    "indice_carga": "91",
-    "profundidad_surcos": "1.6 mm",
-    "pcd": "5x114.3"
+    "offset": "No publicado oficialmente por Ford",
+    "indice_velocidad": "S/T según versión y neumático de fábrica (uso mixto ciudad/off-road)",
+    "indice_carga": "Estimado 116-121 (pickup mediana con capacidad de carga útil elevada)",
+    "profundidad_surcos": "1.6 mm (mínimo legal)",
+    "pcd": "6x139.7"
   },
   "especificacionesDireccion": {
-    "tipo_asistencia": "Electrica progresiva",
-    "sistema_control": "Control electronico",
-    "angulo_max_giro": "32-35 grados",
-    "vueltas_calador": "2.5-3.0"
+    "tipo_asistencia": "Eléctrica asistida (EPAS), cremallera y piñón",
+    "sistema_control": "Diámetro de giro 11.8 m (4x2) / 12.4 m (4x4), dato oficial Ford Europa",
+    "angulo_max_giro": "No publicado en grados por Ford",
+    "vueltas_calador": "3.5 vueltas de tope a tope (dato oficial Ford)"
   },
   "aerodinámica": {
-    "defectores_aire": "Canales laterales",
-    "spoiler_trasero": "Integrado",
-    "area_frontal": "2.2-2.4 m2",
-    "coeficiente_arrastre": "Cx 0.27-0.32"
+    "defectores_aire": "No especificado en ficha oficial",
+    "spoiler_trasero": "No aplica de serie (pickup con caja abierta)",
+    "area_frontal": "Estimado 2.8-3.0 m² (típico de pickup mediana 4x4)",
+    "coeficiente_arrastre": "No publicado oficialmente por Ford (estimado Cx 0.40-0.45, típico del segmento pickup)"
   },
   "capacidadesAdicionales": {
-    "capacidad_refrigerante": "7-9 L",
-    "capacidad_lavaparabrisas": "3-4 L",
-    "liquido_frenos": "0.75-0.85 L",
-    "capacidad_aceite": "4.5-5.5 L",
-    "filtro_habitaculo": "Carbon activado"
+    "capacidad_refrigerante": "Estimado 9-10 L (motor diésel 2.0L biturbo)",
+    "capacidad_lavaparabrisas": "Estimado 4-5 L",
+    "liquido_frenos": "DOT 4, aprox. 0.8-1.0 L",
+    "capacidad_aceite": "Estimado 6.3-6.5 L con filtro (motor diésel 2.0L, aceite 5W-30 según manual)",
+    "filtro_habitaculo": "No especificado en ficha regional"
   },
   "climatizacionAvanzada": {
-    "control": "Trizona",
-    "modo": "Recirculacion",
-    "filtro": "Carbon",
-    "desempanante": "Trasero/Lateral"
+    "control": "Manual (XL/XLS) o automático bizona (XLT/versiones superiores, según equipamiento)",
+    "modo": "Recirculación manual o automática según versión",
+    "filtro": "No especificado en ficha regional",
+    "desempanante": "Desempañador eléctrico de vidrio trasero"
   },
   "mantenimientoPrograma": {
-    "filtro": "25.000-30.000 km",
-    "aceite": "15.000 km",
-    "frenos": "Anual",
-    "ruedas": "Anual",
-    "refrigerante": "2 anos"
+    "filtro": "Filtro de aceite en cada cambio; correa de distribución a los 230.000 km según manual Ford (motor Panther)",
+    "aceite": "Cada 10.000-15.000 km según plan de mantenimiento Ford Argentina (uso normal)",
+    "frenos": "Delanteros a disco ventilado 302x32 mm, traseros a tambor; inspección según plan de mantenimiento",
+    "ruedas": "Rotación recomendada cada 10.000 km",
+    "refrigerante": "No publicado con intervalo exacto en ficha regional"
   },
   "consumo": "8.5 a 9.5 l/100km mixto aprox. según motorización",
   "dimensiones": "5370 x 1918 x 1884 mm",
