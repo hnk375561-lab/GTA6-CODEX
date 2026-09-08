@@ -77,6 +77,30 @@ import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 import { ALL_WIDTHS, buildQualityByWidth } from './lib/image-usage-manifest.mjs'
 
+// Fase 2 del plan de escalado (docs/plan-escalado-1000-vehiculos.md),
+// paso "paralelismo real" — auditado 8 sep 2026, no solo bajado a ojo:
+//
+//   - El proyecto corre en Cloudflare Workers Builds plan FREE: 2 vCPU
+//     reales (4 en planes pagos — ver changelog "Increased vCPU for
+//     Workers Builds on paid plans", developers.cloudflare.com/changelog).
+//     El `concurrencia=4` que este script tenía hardcodeado antes ya
+//     estaba pidiendo el doble de CPU real disponible.
+//   - Además de nuestro propio pool (`runWithConcurrency`), `sharp` corre
+//     cada resize sobre libvips, que internamente usa SU PROPIO thread
+//     pool (tamaño = cores detectados por el proceso, no necesariamente
+//     los que el plan free realmente entrega). Sin `sharp.concurrency(1)`
+//     acá, cada llamada a `sharp(...)` compite por los mismos 2 cores que
+//     ya está usando nuestro loop externo — paralelismo sobre paralelismo
+//     en una máquina con 2 CPU, que no acelera nada, solo agrega cambios
+//     de contexto.
+//
+//   Fijar sharp a 1 thread interno y dejar que el paralelismo real lo
+//   maneje `runWithConcurrency` (con el límite real de CPU del plan) es
+//   el patrón recomendado para procesar muchas imágenes independientes en
+//   lote, en vez de pocas imágenes cada una multi-threaded.
+sharp.concurrency(1)
+sharp.cache(false)
+
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const ROOT = path.resolve(__dirname, '..')
@@ -117,7 +141,15 @@ const QUALITY_BY_WIDTH = buildQualityByWidth()
 
 const APPLY_FORCE = process.argv.includes('--force')
 const concurrencyArg = process.argv.find((a) => a.startsWith('--concurrency='))
-const CONCURRENCY = concurrencyArg ? Math.max(1, parseInt(concurrencyArg.split('=')[1], 10) || 4) : 4
+// Default real: 2 (plan free de Cloudflare Workers Builds, ver comentario
+// arriba). Si en algún momento pasan a un plan pago (4 vCPU), correr con
+// `--concurrency=4` o setear IMAGE_BUILD_CONCURRENCY=4 en el build —
+// no hace falta tocar código para eso.
+const DEFAULT_CONCURRENCY = Number(process.env.IMAGE_BUILD_CONCURRENCY) || 2
+const CONCURRENCY = concurrencyArg
+  ? Math.max(1, parseInt(concurrencyArg.split('=')[1], 10) || DEFAULT_CONCURRENCY)
+  : DEFAULT_CONCURRENCY
+
 
 /** Mismo pool de concurrencia acotada que scripts/process-images.mjs. */
 async function runWithConcurrency(items, limit, worker) {
