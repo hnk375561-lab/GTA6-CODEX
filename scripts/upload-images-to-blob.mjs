@@ -43,7 +43,8 @@
  * USO:
  *   node scripts/upload-images-to-blob.mjs
  *   node scripts/upload-images-to-blob.mjs --concurrency=8
- *   node scripts/upload-images-to-blob.mjs --force   (re-sube todo)
+ *   (no hay flag --force: el script siempre sube/pisa todas las variantes,
+ *   no hay lógica de "saltar si ya existe" que forzar a saltear)
  *
  * SALIDA:
  *   - Sube cada variante a Blob en la ruta:
