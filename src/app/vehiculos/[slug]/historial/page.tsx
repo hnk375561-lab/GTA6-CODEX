@@ -3,37 +3,15 @@ import { Metadata } from 'next'
 import { Vehicle, EntityType } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
 import { resolveEntityDisplayImage } from '@/lib/media'
-import { getModelYearHistory, ModelYearHistory } from '@/lib/vehicle-history'
+import { ModelYearHistory } from '@/lib/vehicle-history'
 import { generateEntityMetadata } from '@/lib/seo'
-import { Card, CardBody } from '@/components/ui/Card'
 import { Reveal } from '@/components/ui/Reveal'
-import { cn } from '@/lib/utils'
 import Link from 'next/link'
-import Image from 'next/image'
 import { SITE_URL } from '@/config/site'
-
-interface PageProps {
-  params: Promise<{ slug: string }>
-}
 
 interface VehicleHistoryProps {
   vehicle: Vehicle
   history: ReturnType<typeof import('@/lib/vehicle-history').getModelYearHistory>
-}
-
-const TYPE_LABELS = {
-  vehiculos: 'Vehículos',
-  fabricantes: 'Fabricantes',
-  noticias: 'Noticias',
-  guias: 'Guías',
-}
-
-async function getVehicleData(slug: string) {
-  const vehicle = await getEntity(EntityType.VEHICLE, slug)
-  if (!vehicle) return null
-  const image = resolveEntityDisplayImage(vehicle)
-  const history = await import('@/lib/vehicle-history').then(m => m.getModelYearHistory(vehicle as Vehicle))
-  return { vehicle, image, history }
 }
 
 function VehicleHistoryClient({ vehicle, history }: VehicleHistoryProps) {
@@ -190,7 +168,7 @@ function VehicleHistoryClient({ vehicle, history }: VehicleHistoryProps) {
                 </tr>
               </thead>
               <tbody className="divide-y divide-edge">
-                {years.slice(0, 10).map((entry, index) => (
+                {years.slice(0, 10).map((entry) => (
                   <tr key={entry.year} className={entry.isFacelift ? 'bg-auto-accent-orange/5' : ''}>
                     <td className={entry.isFacelift ? 'font-mono text-auto-accent-orange' : 'font-mono'}>
                       {entry.year}
@@ -320,7 +298,6 @@ export default async function VehicleHistoryPage({ params }: { params: Promise<{
   const vehicle = await getEntity(EntityType.VEHICLE, slug)
   if (!vehicle) notFound()
 
-  const image = resolveEntityDisplayImage(vehicle)
   const history = await import('@/lib/vehicle-history').then(m => m.getModelYearHistory(vehicle as Vehicle))
 
   const jsonLdItemList = JSON.stringify(createJsonLdItemList(vehicle as Vehicle, history)).replace(/</g, '\\u003c')

@@ -2,39 +2,15 @@ import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { Vehicle, EntityType } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
-import { resolveEntityDisplayImage } from '@/lib/media'
 import { parsePriceUsd } from '@/lib/vehicle-price'
-import { generateEntityMetadata, serializeJsonLd } from '@/lib/seo'
+import { serializeJsonLd } from '@/lib/seo'
 import { FinancingCalculator } from '@/components/ui/FinancingCalculator'
-import { Card, CardBody } from '@/components/ui/Card'
 import { Reveal } from '@/components/ui/Reveal'
 import Link from 'next/link'
-import Image from 'next/image'
 import { SITE_URL } from '@/config/site'
 import { Suspense } from 'react'
 
-interface PageProps {
-  params: Promise<{ slug: string }>
-}
-
-interface FinancingLandingProps {
-  vehicle: Vehicle
-  priceUsd: number | null
-  priceDisplay: string
-}
-
-async function getVehicleData(slug: string) {
-  const vehicle = await getEntity(EntityType.VEHICLE, slug)
-  if (!vehicle) return null
-
-  const image = resolveEntityDisplayImage(vehicle)
-  const priceUsd = parsePriceUsd(vehicle as Vehicle)
-  const priceDisplay = (vehicle as Vehicle).price || 'Precio no disponible'
-
-  return { vehicle, priceUsd, priceDisplay }
-}
-
-function FinancingLandingClient({ vehicle, priceUsd, priceDisplay }: { vehicle: Vehicle; priceUsd: number | null; priceDisplay: string }) {
+function FinancingLandingClient({ vehicle }: { vehicle: Vehicle }) {
   return (
     <div className="space-y-8">
       {/* Hero */}
@@ -198,7 +174,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const vehicle = await getEntity(EntityType.VEHICLE, slug)
   if (!vehicle) return {}
 
-  const priceUsd = parsePriceUsd(vehicle as Vehicle)
   const v = vehicle as Vehicle
   const title = `Financiar ${v.title} | Simulador de cuota | Sin Frenos`
   const description = `Simulá la cuota mensual para financiar el ${v.title}. Precio desde ${v.price}. Calculá entrega, plazo y tasa. Preaprobación online.`
@@ -248,35 +223,6 @@ export default async function FinancingLandingPage({ params }: { params: Promise
   const priceUsd = parsePriceUsd(v)
   if (!priceUsd || priceUsd <= 0) notFound()
 
-  const priceDisplay = v.price || 'Precio no disponible'
-
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: `Calculadora de financiamiento - ${v.title}`,
-    description: `Simulador de cuota mensual para el ${v.title}. Precio: ${v.price}. Calculá entrega, plazo y tasa.`,
-    url: `${SITE_URL}/financiar/${slug}`,
-    applicationCategory: 'FinanceApplication',
-    operatingSystem: 'Web',
-    offers: {
-      '@type': 'Offer',
-      price: v.price,
-      priceCurrency: 'USD',
-      availability: 'https://schema.org/InStock',
-    },
-    featureList: [
-      'Calculadora de cuota mensual',
-      'Simulación de entrega y plazo',
-      'Tasa de interés configurable',
-      'Preaprobación online',
-      'Envío de simulación por WhatsApp'
-    ],
-    browserRequirements: 'Requires JavaScript. Requires HTML5.',
-    softwareVersion: '1.0',
-    datePublished: new Date().toISOString(),
-    dateModified: new Date().toISOString(),
-  }
-
   return (
     <>
       <script
@@ -318,7 +264,7 @@ export default async function FinancingLandingPage({ params }: { params: Promise
           ],
         }) }}
       />
-      <FinancingLandingClient vehicle={v} priceUsd={parsePriceUsd(v)} priceDisplay={v.price || 'Precio no disponible'} />
+      <FinancingLandingClient vehicle={v} />
     </>
   )
 }

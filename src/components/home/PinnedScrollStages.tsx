@@ -179,7 +179,7 @@ export function PinnedScrollStages({ stages }: Props) {
 
       let prevSignature = ''
       const bootStart = performance.now()
-      const tick = (now: number) => {
+      const tick = (_now: number) => {
         raf = requestAnimationFrame(tick)
 
         const boot = performance.now() - bootStart

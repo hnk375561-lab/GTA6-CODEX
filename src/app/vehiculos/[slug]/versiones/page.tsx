@@ -1,21 +1,10 @@
 import { notFound } from 'next/navigation'
-import { Metadata } from 'next'
 import { Vehicle, EntityType } from '@/types'
-import { getEntity, getEntitySlugs } from '@/lib/entities'
-import { resolveEntityDisplayImage } from '@/lib/media'
-import { extractVehicleVariants, hasMultipleVariants, VehicleVariant } from '@/lib/vehicle-variants'
-import { generateEntityMetadata } from '@/lib/seo'
-import { Card, CardBody } from '@/components/ui/Card'
-import { Badge } from '@/components/ui/Badge'
+import { getEntity } from '@/lib/entities'
+import { extractVehicleVariants, VehicleVariant } from '@/lib/vehicle-variants'
 import { Reveal } from '@/components/ui/Reveal'
-import { cn } from '@/lib/utils'
 import Link from 'next/link'
-import Image from 'next/image'
 import { SITE_URL } from '@/config/site'
-
-interface PageProps {
-  params: Promise<{ slug: string }>
-}
 
 interface VehicleVersionsProps {
   vehicle: Vehicle
@@ -87,7 +76,7 @@ function VehicleVersionsClient({ vehicle, variants }: VehicleVersionsProps) {
                 </tr>
               </thead>
               <tbody className="divide-y divide-edge">
-                {variants.map((variant, index) => (
+                {variants.map((variant) => (
                   <tr key={variant.nombre} className="transition-colors hover:bg-surface-alt/50">
                     <td className="py-4 px-4 font-medium text-neutral-900">{variant.nombre}</td>
                     <td className="py-3 px-4 font-mono text-neutral-900">{variant.precio || '—'}</td>
@@ -187,14 +176,6 @@ function VehicleVersionsClient({ vehicle, variants }: VehicleVersionsProps) {
       </Reveal>
     </div>
   )
-}
-
-async function getVehicleData(slug: string) {
-  const vehicle = await getEntity(EntityType.VEHICLE, slug)
-  if (!vehicle) return null
-  const image = resolveEntityDisplayImage(vehicle)
-  const variants = (await import('@/lib/vehicle-variants')).extractVehicleVariants(vehicle as Vehicle)
-  return { vehicle, image, variants }
 }
 
 function createJsonLdItemList(vehicle: Vehicle, variants: VehicleVariant[]) {

@@ -5,7 +5,6 @@ import {
   applyTheme,
   cyclePreference,
   getStoredPreference,
-  getSystemTheme,
   resolveTheme,
   setStoredPreference,
   type ThemePreference,

@@ -120,7 +120,6 @@ function generateYearEntries(vehicle: Vehicle): ModelYearEntry[] {
   const endYearNum = endYear === 'presente' ? currentYear : (typeof endYear === 'number' ? endYear : currentYear)
 
   const faceliftYear = vehicle.generacionInfo?.faceliftAno !== null ? vehicle.generacionInfo?.faceliftAno : undefined
-  const isFacelift = vehicle.generacionInfo?.facelift === true
 
   const entries: ModelYearEntry[] = []
 
@@ -135,9 +134,6 @@ function generateYearEntries(vehicle: Vehicle): ModelYearEntry[] {
     if (genNum !== null && genNum !== undefined) {
       generation = `${genNum}ª generación${vehicle.generacionInfo?.codigoChasis ? ` (${vehicle.generacionInfo.codigoChasis})` : ''}`
     }
-
-    // Detectar si es año de facelift
-    const isFacelift = faceliftYear !== undefined && year === faceliftYear
 
     entries.push({
       year,
@@ -165,7 +161,6 @@ function extractGenerations(vehicle: Vehicle) {
   }> = []
 
   const genNum = vehicle.generacionInfo?.numero
-  const genName = vehicle.generacion || 'Generación actual'
   const chassisCode = vehicle.generacionInfo?.codigoChasis || undefined
   const faceliftYear = vehicle.generacionInfo?.faceliftAno !== null ? vehicle.generacionInfo?.faceliftAno : undefined
   const startYear = extractStartYear(vehicle)
@@ -202,7 +197,6 @@ export function getModelYearHistory(vehicle: Vehicle): ModelYearHistory {
   const years = generateYearEntries(vehicle)
   const generations = extractGenerations(vehicle)
   const launchYear = extractStartYear(vehicle)
-  const endYear = extractEndYear(vehicle)
   const currentYear = new Date().getFullYear()
 
   // Determinar si tiene historial suficiente (más de 1 año o tiene facelift)
@@ -229,7 +223,7 @@ export function hasModelYearHistory(vehicle: Vehicle): boolean {
 /**
  * Obtiene las especificaciones clave por año (para tabla comparativa)
  */
-export function getYearSpecs(vehicle: Vehicle, year: number) {
+export function getYearSpecs(vehicle: Vehicle, _year: number) {
   // Por ahora retornamos specs genéricas del vehículo actual
   // En el futuro se podría enriquecer con datos históricos específicos por año
   return {

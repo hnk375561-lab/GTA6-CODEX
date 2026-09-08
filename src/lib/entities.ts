@@ -47,8 +47,6 @@ function validateTypeSpecific(type: EntityType, entity: unknown, contextLabel: s
  * En `next dev`, los cambios a JSON requieren `npm run build` (o solo
  * `node scripts/generate-content-bundle.mjs`) para que se reflejen.
  */
-const CACHE_ENABLED = true
-
 const typeCache = new Map<EntityType, Entity[]>()
 const singleEntityCache = new Map<string, Entity | null>()
 /**

@@ -6,7 +6,6 @@ if (!token) {
   process.exit(1);
 }
 
-const domain = 'sinfrenos.santicefe04.workers.dev';
 const api = 'https://api.cloudflare.com/client/v4';
 
 async function getZoneId() {

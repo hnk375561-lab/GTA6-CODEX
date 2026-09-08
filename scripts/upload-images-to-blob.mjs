@@ -82,7 +82,6 @@ const WIDTHS = ALL_WIDTHS
 const SOURCE_EXTENSIONS = new Set(['.webp', '.avif', '.jpg', '.jpeg', '.png'])
 const QUALITY_BY_WIDTH = buildQualityByWidth()
 
-const APPLY_FORCE = process.argv.includes('--force')
 const concurrencyArg = process.argv.find((a) => a.startsWith('--concurrency='))
 const CONCURRENCY = concurrencyArg ? Math.max(1, parseInt(concurrencyArg.split('=')[1], 10) || 4) : 4
 

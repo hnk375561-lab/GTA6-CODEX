@@ -1,9 +1,8 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { EntityType, type Vehicle, type Entity } from '@/types'
+import { EntityType, type Vehicle } from '@/types'
 import { getEntitiesByType } from '@/lib/entities'
-import { getEntityImageMap } from '@/lib/media'
 import { parsePowerHp } from '@/lib/vehicle-power'
 import { parsePriceUsd } from '@/lib/vehicle-price'
 import {
@@ -12,14 +11,10 @@ import {
   categoryToSlug,
   categoryFromSlug,
   MIN_VEHICLES_PER_SEO_CATEGORY,
-  type VehicleCategory,
 } from '@/lib/vehicle-category'
-import { generateBreadcrumbJsonLd, serializeJsonLd } from '@/lib/seo'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
-import { EntityCard } from '@/components/entities/EntityCard'
 import { AdUnit } from '@/components/monetization/AdUnit'
-import { VehicleValueCard } from '@/components/seo/VehicleValueCard'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 
 const MIN_VEHICLES_PER_GROUP = MIN_VEHICLES_PER_SEO_CATEGORY
@@ -129,7 +124,7 @@ export default async function CategoryBestValuePage({ params }: PageProps) {
   const vehiclesWithScore = vehicles
     .map(v => {
       const score = calculateValueScore(v)
-      const tier = score !== null ? (score >= 30 ? 'excelente' : score >= 20 ? 'buena' : score >= 12 ? 'regular' : 'basica') : 'basica'
+      const tier = score !== null ? getValueTier(score) : 'basica'
       return { ...v, score, tier }
     })
     .filter(v => v.score !== null && v.score > 0)
@@ -140,8 +135,6 @@ export default async function CategoryBestValuePage({ params }: PageProps) {
   // Otras categorías para navegación
   const allVehiclesForNav = (await getEntitiesByType(EntityType.VEHICLE)) as Vehicle[]
   const otherCategories = computeSeoCategoryOptions(allVehiclesForNav).filter(({ group: g }) => g !== group)
-
-  const imageBySlug = getEntityImageMap(vehiclesWithScore as unknown as Entity[])
 
   const breadcrumbLd = {
     '@context': 'https://schema.org',
@@ -163,9 +156,6 @@ export default async function CategoryBestValuePage({ params }: PageProps) {
     numberOfItems: vehiclesWithScore.length,
   }
 
-  // Import VehicleValueCard dynamically to avoid server-side rendering issues
-  const VehicleValueCard = (await import('@/components/seo/VehicleValueCard')).VehicleValueCard
-
   return (
     <section className="relative overflow-hidden border-b border-edge py-12 sm:py-16">
       <script
@@ -174,14 +164,7 @@ export default async function CategoryBestValuePage({ params }: PageProps) {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'CollectionPage',
-          name: `Mejor calidad-precio en ${group} | ${SITE_NAME}`,
-          description: `${vehiclesWithScore.length} ${group.toLowerCase()}s con la mejor relación calidad-precio.`,
-          url: `${SITE_URL}/categorias/${categoryToSlug(group)}/mejor-calidad-precio`,
-          numberOfItems: vehiclesWithScore.length,
-        }).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionLd).replace(/</g, '\\u003c') }}
       />
       <div className="list-header-glow" aria-hidden="true" />
       <div className="container-max relative">
@@ -230,12 +213,8 @@ export default async function CategoryBestValuePage({ params }: PageProps) {
                         <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-auto-accent/15 text-auto-accent-strong border border-auto-accent/30 text-xs">
                           {vehicle.manufacturer}
                         </span>
-                        <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold ${['excelente', 'buena', 'regular'].includes(vehicle.tier) ? 
-                          (vehicle.tier === 'excelente' ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400' :
-                           vehicle.tier === 'buena' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400' :
-                           'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400') :
-                          'bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-400'}`}>
-                          {vehicle.tier === 'excelente' ? 'Mejor compra' : vehicle.tier === 'buena' ? 'Buena opción' : vehicle.tier === 'regular' ? 'Opción válida' : 'Básica'}
+                        <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold ${getValueTierColor(vehicle.tier)}`}>
+                          {getValueTierLabel(vehicle.tier)}
                         </span>
                       </div>
                     </div>
