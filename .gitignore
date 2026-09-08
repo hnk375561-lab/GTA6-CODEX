@@ -54,3 +54,8 @@ next-env.d.ts
 
 # Artefactos generados en build time
 src/lib/generated/
+
+# Reporte generado por scripts/check-evidence-links.mjs (ver CI en
+# .github/workflows/deploy.yml) — se sube como artifact de Actions,
+# no se versiona.
+/broken-links-report.json

@@ -37,6 +37,30 @@ jobs:
       - name: Run verification scripts
         run: npm run verify:min-count && npm run verify:content && npm run verify:relations && npm run verify:manufacturer-slugs && npm run verify:reserved-keys && npm run verify:seo && npm run verify:adsense-csp && npm run verify:tailwind
 
+      - name: Run price format audit
+        run: npm run audit:price-formats
+
+      # No bloqueante: chequea 318 URLs externas de evidencia citada en el
+      # contenido. Un link caído (rate-limit, mantenimiento, bot-blocking del
+      # sitio de terceros, etc.) no debe tumbar un deploy de producción por
+      # algo fuera del propio repo. El reporte queda igual visible en el log
+      # del job y en broken-links-report.json para revisión manual — ver
+      # sección 8 de la auditoría (docs/auditoria-automatizacion-sinfrenos.md)
+      # sobre por qué esto se mantiene informativo en vez de bloqueante hasta
+      # tener una corrida real en CI que confirme que no es demasiado ruidoso.
+      - name: Check evidence links (non-blocking)
+        continue-on-error: true
+        run: npm run check:evidence-links
+
+      - name: Upload broken links report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: broken-links-report
+          path: broken-links-report.json
+          retention-days: 14
+          if-no-files-found: ignore
+
       - name: Build for Cloudflare Pages
         run: npm run build:cf
         env:

@@ -40,7 +40,7 @@
     "verify:reserved-keys": "node scripts/verify-reserved-entity-keys.mjs",
     "verify:adsense-csp": "node scripts/verify-adsense-csp.mjs",
     "verify:adsense-csp:selftest": "node scripts/verify-adsense-csp.mjs --self-test",
-    "verify:all": "npm run type-check && npm run lint && npm test && npm run verify:min-count && npm run verify:content && npm run verify:relations && npm run verify:manufacturer-slugs && npm run verify:reserved-keys && npm run verify:seo && npm run verify:adsense-csp && npm run build && npm run verify:tailwind",
+    "verify:all": "npm run type-check && npm run lint && npm test && npm run verify:min-count && npm run verify:content && npm run verify:relations && npm run verify:manufacturer-slugs && npm run verify:reserved-keys && npm run verify:seo && npm run verify:adsense-csp && npm run audit:price-formats && npm run build && npm run verify:tailwind",
     "check:unused": "knip",
     "generate:manifest-commons": "node scripts/generate-manifest-from-commons.mjs",
     "generate:manifest-commons:write": "node scripts/generate-manifest-from-commons.mjs --write",
