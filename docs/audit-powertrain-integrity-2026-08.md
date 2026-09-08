@@ -239,3 +239,46 @@ despliega Vercel (según `vercel.json` y la raíz del repo en GitHub) y borrar
 las copias viejas, o al menos documentarlo en el propio README para que
 ningún script — ni ninguna sesión de edición — vuelva a correr o escribir
 contra una copia muerta sin que nadie lo note.
+
+## Ronda 5 (2026-09-08): specs de motor/suspensión/ruedas genéricas en el 84% del catálogo
+
+**Hallazgo:** los scripts `apply-enrich.ps1`, `apply-enrich-v2.ps1` y
+`apply-enrich-clean.ps1` (tres iteraciones del mismo script, sin diferencias
+funcionales entre sí — solo cosméticas: tildes/eñes vs. ASCII plano, encoding
+explícito, y una línea de timestamp) inyectaban un mismo bloque hardcodeado
+de `especificacionesMotor`, `especificacionesTransmision`,
+`especificacionesSuspension`, `especificacionesRuedas`,
+`especificacionesDireccion`, aerodinámica, capacidades adicionales,
+seguridad pasiva, climatización y mantenimiento — idéntico para cualquier
+vehículo, sin distinguir marca, modelo, ni tipo de motor (auto vs. moto vs.
+eléctrico).
+
+Se verificó contra los datos reales del repo (no contra los `.ps1`, que
+nunca se ejecutaron según el historial) que este relleno **ya está en
+producción**:
+
+- **211 de 250 vehículos (84.4%)** tienen `especificacionesMotor.ratio_compresion`
+  con el valor idéntico `"10.5:1"` — confirmado en casos tan dispares como
+  Abarth 595 y Bajaj Rouser NS200. (Nota: el Ferrari 296 GTB, citado
+  inicialmente como otro ejemplo, en realidad tiene `"9.4:1"` propio y
+  correcto — no está afectado en este campo puntual.)
+- El Yamaha MT-07 (moto) tiene `especificacionesSuspension.tipo_delantera:
+  "MacPherson"` y `especificacionesRuedas.pcd: "5x114.3"` — ambos datos de
+  auto, inaplicables a una moto con horquilla telescópica.
+- Los vehículos eléctricos sí quedaron protegidos: `fix-powertrain-integrity.mjs`
+  corrigió los ~24-25 eléctricos anulando estos campos a `null` (verificado
+  en `tesla-model-3.json`: `especificacionesMotor` es `null`). Pero el fix
+  nunca cubrió los ~211 vehículos a combustión — su alcance fue coherencia
+  estructural, no verificación contra fuente real.
+
+**Acción tomada en esta ronda:** se eliminaron los tres `.ps1` de la raíz
+del repo (no aportaban nada que no estuviera ya, peor, en producción; y de
+correrse por error, reafirmarían la contaminación en los pocos vehículos que
+quedan limpios).
+
+**Pendiente / no resuelto en esta ronda:** los 211 archivos de vehículos
+a combustión siguen con las specs genéricas inventadas. Falta decidir el
+criterio: (a) anularlas a `null` como se hizo con los eléctricos, o (b)
+investigar y reemplazar por la especificación real por vehículo (trabajo
+en lotes, como las Rondas 2-4 de cierre de evidencia). No se tocó ningún
+JSON de vehículo en esta ronda.
