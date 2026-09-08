@@ -15,4 +15,12 @@ export default defineCloudflareConfig({
   // próximo deploy/build, lo cual es apropiado para un catálogo que se
   // reconstruye en cada deploy.
   incrementalCache: staticAssetsIncrementalCache,
+  // Requerido junto con staticAssetsIncrementalCache (ver docs de OpenNext,
+  // sección "If your site is static"): sin esto, las requests RSC que
+  // Next.js dispara al prefetchear links (?_rsc=...) no se resuelven bien
+  // contra el caché de assets estáticos y devuelven 503 — eso es lo que
+  // causaba que las cards de /fabricantes (y el prefetch de otras rutas)
+  // quedaran sin hidratar del todo: el documento inicial carga bien, pero
+  // el JS de navegación/reveal client-side nunca termina de asentarse.
+  enableCacheInterception: true,
 });
