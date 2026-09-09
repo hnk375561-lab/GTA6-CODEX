@@ -60,9 +60,10 @@
   "consumo": "Ciclo combinado aprox. 8.5 a 10.2 l/100km según motorización",
   "dimensiones": "4.397 mm largo x 1.888 mm ancho x 1.786 mm alto",
   "evidence": {
-    "level": "respaldado",
-    "secondarySource": "https://www.caranddriver.com/ford/bronco-sport",
-    "note": "Se verificaron las especificaciones técnicas globales, potencias de motores EcoBoost de 1.5L y 2.0L, dimensiones y precios base a través de los portales oficiales de Ford y Car and Driver. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ford.com/suvs/bronco-sport/",
+    "secondarySource": "https://en.wikipedia.org/wiki/Ford_Bronco_Sport",
+    "note": "Ronda 6: se reemplazó la fuente secundaria (Car and Driver) por fuente oficial de Ford.com. Motorizaciones verificadas: 1.5L EcoBoost turbo I3 (181 hp/190 lb-ft) y 2.0L EcoBoost turbo I4 (245 hp/275 lb-ft), 4x4 de serie en todas las versiones excepto Badlands (4x4 avanzado); coincide con Wikipedia.",
     "limitations": [
       "Los precios varían según el mercado local, la carga impositiva y los aranceles de importación.",
       "Las cifras de consumo de combustible dependen directamente del tipo de conducción y las condiciones del terreno."

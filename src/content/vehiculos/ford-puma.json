@@ -59,9 +59,9 @@
   "consumo": "5.3 l/100km combinado (WLTP)",
   "dimensiones": "4.207 mm largo x 1.805 mm ancho x 1.537 mm alto",
   "evidence": {
-    "level": "respaldado",
-    "secondarySource": "https://es.wikipedia.org/wiki/Ford_Madox_Ford",
-    "note": "Se actualizaron las especificaciones del Ford Puma con datos técnicos reales de la gama europea, incluyendo dimensiones, cilindrada y capacidades. Se incluye la fuente de Wikipedia provista en el contexto factual aunque no guarde relación directa con la ingeniería automotriz del SUV.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ford.es/turismos/puma",
+    "note": "Ronda 6: se corrigió un error de fuente — la ficha citaba erróneamente la página de Wikipedia sobre el escritor Ford Madox Ford, sin relación con el vehículo. Se reemplazó por el sitio oficial de Ford España. Motorización mild-hybrid 1.0 EcoBoost verificada (125/155 CV según versión, transmisión automática de doble embrague EcoBoost Hybrid Powershift de 7 velocidades opcional).",
     "limitations": [
       "Los precios pueden variar según el mercado europeo específico y los impuestos locales aplicables"
     ]

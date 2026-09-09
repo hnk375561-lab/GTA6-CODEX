@@ -59,9 +59,9 @@
   "consumo": "10.7 l/100km combinado (referencia)",
   "dimensiones": "5.050 mm largo x 2.004 mm ancho x 1.778 mm alto",
   "evidence": {
-    "level": "respaldado",
-    "secondarySource": "https://www.ford.pe/suvs/explorer",
-    "note": "Se verificaron las especificaciones técnicas principales de la sexta generación de la Ford Explorer, incluyendo la motorización EcoBoost de 2.3L y la transmisión automática de 10 velocidades a partir de fuentes oficiales de Ford. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ford.pe/suvs/explorer",
+    "note": "Ronda 6: la fuente ya citada (Ford Perú) es el sitio oficial del fabricante; se promovió de secundaria a primaria y se sube el nivel de evidencia en consecuencia.",
     "limitations": [
       "Los precios varían considerablemente según el mercado de exportación, aranceles e impuestos locales.",
       "El consumo de combustible y la potencia exacta dependen de la elección entre el motor 2.3L EcoBoost o el V6 3.0L."

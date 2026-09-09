@@ -50,9 +50,10 @@
   "consumo": "11.7 l/100km (mixto estimado)",
   "dimensiones": "5890 x 2029 x 1958 mm",
   "evidence": {
-    "level": "respaldado",
-    "secondarySource": "https://www.ford.cl/pickups/f-150/comparar-modelos",
-    "note": "Se verificaron las motorizaciones V6 EcoBoost y V8 (como el 5.0L Ti-VCT), la transmisión automática de 10 velocidades y las especificaciones generales para los mercados de Norteamérica y Sudamérica en base a portales oficiales de Ford. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ford.cl/pickups/f-150/comparar-modelos",
+    "secondarySource": "https://www.ford.com/trucks/f150/",
+    "note": "Ronda 6: la fuente oficial de Ford Chile ya estaba citada pero mal clasificada como secundaria; se promovió a primaria (es el sitio oficial del fabricante) y se sube el nivel de evidencia. Motorizaciones verificadas cruzando con concesionarios oficiales de EE.UU.: 2.7L EcoBoost V6 (325 hp/400 lb-ft, base), 5.0L V8 (400 hp), 3.5L EcoBoost V6 (400-450 hp), PowerBoost híbrido 3.5L V6+eléctrico (430 hp/570 lb-ft), Raptor R 5.2L V8 sobrealimentado (700 hp/640 lb-ft); todas con automática de 10 velocidades.",
     "limitations": [
       "Los precios varían considerablemente según el mercado de importación, aranceles aduaneros y los opcionales elegidos",
       "El consumo de combustible depende directamente de la motorización seleccionada (V6, V8 o híbrida PowerBoost)"

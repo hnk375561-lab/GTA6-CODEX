@@ -67,9 +67,10 @@
   "consumo": "11.7 l/100km combinado (estimación EPA)",
   "dimensiones": "4.811 mm largo x 1.916 mm ancho x 1.394 mm alto",
   "evidence": {
-    "level": "respaldado",
-    "secondarySource": "https://es.wikipedia.org/wiki/Ford_Mustang",
-    "note": "Se verificaron las dimensiones, motorización, potencia y precios de referencia utilizando los portales oficiales de Ford y registros especializados.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ford.com/cars/mustang/",
+    "secondarySource": "https://en.wikipedia.org/wiki/Ford_Mustang_(seventh_generation)",
+    "note": "Ronda 6: se agregó fuente oficial de Ford.com (línea Mustang) como primaria. Potencia GT (480 hp / 358 kW @7150 rpm, 418 lb-ft / 567 Nm @4900 rpm) verificada cruzando Ford.com con Wikipedia (generación S650) y TrueDelta; coincide con los valores ya presentes en la ficha.",
     "limitations": [
       "Los precios corresponden al mercado norteamericano y varían según aranceles o impuestos locales en otros países",
       "Las cifras de aceleración son estimaciones de la prensa especializada"

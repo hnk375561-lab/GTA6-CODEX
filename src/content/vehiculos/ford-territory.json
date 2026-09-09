@@ -60,9 +60,10 @@
   "consumo": "7.1 l/100km (mixto)",
   "dimensiones": "4685 x 1935 x 1706 mm",
   "evidence": {
-    "level": "respaldado",
-    "secondarySource": "https://www.mercadolibre.com.mx/blog/mo-catalogo-ford-territory-2025-precio-versiones-y-ficha-tecnica",
-    "note": "Se verificaron las especificaciones técnicas y los precios vigentes de las distintas versiones de la Ford Territory (como la SEL y la Trend Híbrida) directamente en el sitio oficial de Ford Argentina. Fuente del modelo no verificable; se usa la primera fuente recuperada como respaldo.",
+    "level": "oficial-nombrado",
+    "primarySource": "https://www.ford.com.ar/content/dam/Ford/website-assets/latam/ar/nameplate/territory/2025/pdf/far-nueva-territory-ficha-tecnica-v2-agosto-2026.pdf",
+    "secondarySource": "https://www.ford.com.ar/crossovers-suvs-4x4/territory/",
+    "note": "Ronda 6: la fuente citada (blog de Mercado Libre) no era oficial pese a la nota previa afirmarlo. Se reemplazó por la ficha técnica oficial en PDF de Ford Argentina (agosto 2026). Motorizaciones verificadas: SEL/Titanium/Platinum 1.8L EcoBoost (185 CV/320 Nm, automática 7 velocidades) y Trend Híbrida 1.5L GTDI ciclo Miller con transmisión 2DHT; 4x2 en todas las versiones.",
     "limitations": [
       "Los precios en pesos argentinos están sujetos a constantes actualizaciones por inflación y modificaciones impositivas.",
       "La disponibilidad de equipamiento o versiones específicas puede variar según el mercado regional y el stock de los concesionarios."
