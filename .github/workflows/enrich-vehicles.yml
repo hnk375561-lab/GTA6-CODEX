@@ -14,12 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     
-    # BUG encontrado (09/09/2026): tenía `pull-requests: write` pero este
-    # job nunca abre un PR (commitea y pushea directo a main más abajo) —
-    # permiso de más sin uso real, contra el principio de mínimo
-    # privilegio. Sacado.
+    # Actualización (09/09/2026): este job SÍ abre PR ahora (ver el step
+    # "Abrir PR" más abajo), así que `pull-requests: write` vuelve a hacer
+    # falta — no es el mismo permiso de más que se sacó antes, ahora tiene
+    # uso real. `contents: write` sigue haciendo falta para crear la rama
+    # con el commit del enriquecimiento.
     permissions:
       contents: write
+      pull-requests: write
     
     steps:
       - name: 📥 Clonar repo
@@ -59,38 +61,64 @@ jobs:
           fs.writeFileSync('enrichment-report.txt', \`Enriquecimiento completado: \${complete}/\${files.length} vehículos\\nFecha: \${new Date().toISOString()}\`);
           " || true
       
-      # BUG encontrado (09/09/2026): este job pushea directo a main con
-      # `contents: write` sin correr NINGUNA verificación sobre lo que el
-      # enriquecedor escribió — ni type-check, ni verify:min-count, ni
-      # verify:reserved-keys. Un JSON con forma inválida (o un campo con
-      # el tipo equivocado) llegaría a producción sin que nadie se
-      # entere hasta el próximo build o la próxima sesión manual. Se
-      # deja afuera `verify:content` (corre `next build` completo, no
-      # entra en el timeout de este job) y `verify:all`/tests (no
-      # aplican a datos de contenido) — estos 3 checks son los que
-      # cubren específicamente la forma de las entidades y corren en
-      # segundos, no minutos.
-      - name: ✅ Verificar antes de pushear (aborta sin pushear si falla)
+      # Estos 3 checks cubren específicamente la forma de las entidades y
+      # corren en segundos, no minutos — por eso van acá, antes de abrir
+      # el PR, y abortan el job si fallan (así no se abre un PR con datos
+      # rotos). Se dejan afuera `verify:content` (corre `next build`
+      # completo, no entra en el timeout de este job) y `verify:all`/tests
+      # (no aplican a datos de contenido); esos quedan para el CI normal
+      # que corre sobre el PR antes de mergear.
+      - name: ✅ Verificar antes de abrir PR (aborta sin PR si falla)
         run: |
           npm run type-check
           npm run verify:min-count
           npm run verify:reserved-keys
 
-      - name: 📤 Commit y push
+      - name: 📤 Commit en rama nueva
+        id: commit
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "🤖 Enriquecedor automático"
-          
-          # Verificar si hay cambios
+
           if [[ -n $(git status -s) ]]; then
             git add src/content/vehiculos/
             git add enrichment-report.txt || true
-            git commit -m "🤖 Enriquecimiento automático: actualización de fichas técnicas $(date +%Y-%m-%d)"
-            git push
-            echo "✅ Cambios enviados"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "ℹ️  Sin cambios que enviar"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
+
+      # Mismo patrón que .github/workflows/commons-image-manifest.yml:
+      # en vez de pushear directo a main, se abre un PR. Antes, un dato
+      # mal enriquecido por la IA/fuente externa (Motor1) podía llegar a
+      # producción sin que nadie lo viera — los 3 checks de arriba
+      # validan forma, no que el contenido sea correcto. Ahora hay un
+      # gate humano real: alguien revisa el diff del PR antes de
+      # mergear, que es justo lo que faltaba.
+      - name: 📤 Abrir PR con el enriquecimiento
+        if: steps.commit.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "🤖 Enriquecimiento automático: actualización de fichas técnicas"
+          title: "🤖 Enriquecimiento automático de fichas técnicas (run ${{ github.run_id }})"
+          body: |
+            PR automático generado por `enricher-motor-families.mjs` corriendo en
+            Actions (workflow `enrich-vehicles.yml`, disparado por el cron diario
+            de las 2 AM UTC o manualmente).
+
+            Pasaron `type-check`, `verify:min-count` y `verify:reserved-keys`
+            antes de llegar a este PR — esos checks validan que la forma de las
+            entidades sea correcta, no que el contenido enriquecido lo sea.
+
+            **Antes de mergear, revisar el diff**: confirmar que los datos que
+            trajo Motor1/la IA para cada vehículo son correctos. Este PR **no se
+            mergea automáticamente**.
+          branch: bot/enrich-vehicles
+          delete-branch: true
+          add-paths: |
+            src/content/vehiculos/
+            enrichment-report.txt
       
       - name: 📝 Resumen
         if: always()
