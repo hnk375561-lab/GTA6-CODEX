@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import Link from 'next/link'
-import { Entity, EntityType } from '@/types'
+import { Entity, EntityType, InformationStatus, Vehicle } from '@/types'
 import { Card, CardBody } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
@@ -12,9 +12,98 @@ import type { ResolvedDisplayImage } from '@/lib/images'
 import { ENTITY_TYPE_LABELS, STATUS_LABELS } from '@/lib/entity-labels'
 import { getGenericQuickFacts } from '@/lib/entity-fields'
 import { performanceToScale } from '@/lib/vehicle-performance'
+import { parsePowerHp } from '@/lib/vehicle-power'
 import { EVIDENCE_STAMP_META } from '@/lib/evidence'
 import { FLIP_VIEW_TRANSITION_NAME, consumeFlipSlug } from '@/lib/view-transitions'
 import { cn } from '@/lib/utils'
+
+/** Color del punto de estado en la card "showroom" de vehículos — mismo
+ *  mapeo semántico que `Badge` (`statusStyles`), pero como punto de 2px
+ *  en vez de pill, para que el estado deje de competir visualmente con
+ *  la foto (ver rediseño Fase 9: "CONFIRMADO" pasa de pill grande a
+ *  indicador chico). */
+const STATUS_DOT_CLASS: Record<InformationStatus, string> = {
+  confirmado: 'bg-emerald-400',
+  rumor: 'bg-auto-accent-warning',
+  nuestro: 'bg-auto-accent-orange',
+}
+
+/** Separa "Audi Q5" en marca ("Audi") + modelo ("Q5") para la
+ *  presentación tipográfica de la card showroom: la marca chica en
+ *  mayúsculas, el modelo grande como elemento principal. Si el título no
+ *  arranca con el fabricante (dato faltante o formato distinto), cae a
+ *  mostrar el título completo como "modelo" sin línea de marca — nunca
+ *  inventa una marca que el contenido no declara. */
+function splitVehicleName(vehicle: Vehicle): { brand: string; model: string } {
+  const manufacturer = vehicle.manufacturer?.trim()
+  const title = vehicle.title?.trim() ?? ''
+  if (manufacturer && title.toLowerCase().startsWith(manufacturer.toLowerCase())) {
+    const rest = title.slice(manufacturer.length).trim()
+    if (rest) return { brand: manufacturer, model: rest }
+  }
+  return { brand: manufacturer ?? '', model: title }
+}
+
+/** Clasifica el texto libre de `transmision` (ej. "Automática S tronic de
+ *  doble embrague (7 velocidades)") en la etiqueta corta que necesita una
+ *  métrica de card ("Auto"/"Manual"). Devuelve `null` en vez de adivinar
+ *  cuando el texto no da una señal clara — mejor omitir el dato que
+ *  mostrar una clasificación potencialmente errónea. */
+function shortTransmissionLabel(raw?: string | null): string | null {
+  if (!raw) return null
+  const lower = raw.toLowerCase()
+  const isManual = /manual/.test(lower)
+  const isAuto = /(automátic|automatic|cvt|dsg|s tronic|doble embrague|dct|secuencial)/.test(lower)
+  if (isManual && !isAuto) return 'Manual'
+  if (isAuto) return 'Auto'
+  return null
+}
+
+/** Año de lanzamiento/producción para la línea secundaria de la card
+ *  ("SUV mediano premium · 2024"). Prioriza `anoLanzamiento` (ya viene
+ *  como año puntual); si no está, intenta extraer un año de 4 dígitos de
+ *  `anoProduccion` (texto libre tipo "2024-presente"). Nunca inventa un
+ *  año si ninguno de los dos campos lo tiene. */
+function vehicleYearLabel(vehicle: Vehicle): string | null {
+  if (typeof vehicle.anoLanzamiento === 'number') return String(vehicle.anoLanzamiento)
+  if (typeof vehicle.anoLanzamiento === 'string' && /^\d{4}$/.test(vehicle.anoLanzamiento)) {
+    return vehicle.anoLanzamiento
+  }
+  if (vehicle.anoProduccion) {
+    const match = /\d{4}/.exec(vehicle.anoProduccion)
+    if (match) return match[0]
+  }
+  return null
+}
+
+/** Versión corta del precio para la card: el campo `price` suele traer
+ *  una aclaración entre paréntesis (ej. "USD 86.700 (Precio de
+ *  referencia mercado argentino)") pensada para la ficha completa, no
+ *  para una card compacta. Se recorta esa aclaración para la
+ *  presentación "showroom" — el precio completo sigue intacto en la
+ *  ficha del vehículo, esto es solo de display. */
+function priceHeadline(vehicle: Vehicle): string | null {
+  if (!vehicle.price) return null
+  const clean = vehicle.price.split('(')[0].trim()
+  return clean || vehicle.price
+}
+
+/** Métricas compactas (valor grande + label chico) para la franja
+ *  inferior de la card showroom. Solo incluye lo que el vehículo
+ *  realmente tiene cargado — potencia via `parsePowerHp` (mismo parser
+ *  que ya usa el sitio para filtros/rankings), cilindrada tal cual está
+ *  en el contenido (nunca se convierte a litros: no hay dato confiable
+ *  para esa conversión en todo el catálogo) y caja de cambios solo
+ *  cuando `shortTransmissionLabel` puede clasificarla con confianza. */
+function vehicleShowcaseSpecs(vehicle: Vehicle): Array<{ label: string; value: string }> {
+  const specs: Array<{ label: string; value: string }> = []
+  const hp = parsePowerHp(vehicle)
+  if (hp !== null) specs.push({ label: 'Potencia', value: `${hp} HP` })
+  if (vehicle.cilindrada) specs.push({ label: 'Cilindrada', value: vehicle.cilindrada })
+  const transmission = shortTransmissionLabel(vehicle.transmision)
+  if (transmission) specs.push({ label: 'Caja', value: transmission })
+  return specs
+}
 
 /** Ancho de la mini-barra de rendimiento en la vista de catálogo (fila),
  *  reutilizando la misma escala 1-5 que EntityMetadata/StatBar. */
@@ -266,6 +355,175 @@ export function EntityCard({
 
   const evidenceStamp = entity.evidence ? EVIDENCE_STAMP_META[entity.evidence.level] : undefined
 
+  /**
+   * CARD "SHOWROOM" — rediseño radical (Fase 9). Solo para vehículos en
+   * layout de grilla/compact; `layout="row"` (filas de lista/comparación)
+   * sigue con el markup genérico de abajo, que sirve a los otros 8 tipos
+   * de entidad del sitio y no forma parte de este pedido. Arquitectura
+   * completamente distinta a la card genérica: la foto es el contenedor
+   * principal (occupies ~62% via aspect-[4/5], edge-to-edge, sin Card/
+   * CardBody), marca+modelo se superponen sobre el gradiente inferior de
+   * la foto en vez de vivir en un bloque de texto separado, y la franja
+   * inferior es mínima (specs + precio), no una "ficha técnica".
+   */
+  if (entity.type === EntityType.VEHICLE && layout !== 'row') {
+    const vehicle = entity as Vehicle
+    const { brand, model } = splitVehicleName(vehicle)
+    const specs = vehicleShowcaseSpecs(vehicle)
+    const year = vehicleYearLabel(vehicle)
+    const price = priceHeadline(vehicle)
+    const secondaryLine = [vehicle.class, year].filter(Boolean).join(' · ')
+    const isCompact = size === 'compact'
+    const statusText = STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status
+
+    return (
+      <div className={cn('group', className)}>
+        <Link href={`/${entity.type}/${entity.slug}`} className="block h-full">
+          <article
+            className={cn(
+              'group/card relative flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-800/70 bg-[#111316] transition-all duration-300 ease-out',
+              'hover:-translate-y-1 hover:border-auto-accent/50 hover:shadow-[0_28px_56px_-20px_rgba(0,0,0,0.7)]'
+            )}
+          >
+            {/* FOTO — edge-to-edge, domina la card (~62% de la altura) */}
+            <div
+              className="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-neutral-950"
+              onMouseEnter={() => setHovering(true)}
+              onMouseLeave={() => setHovering(false)}
+              style={flipSlug ? ({ viewTransitionName: FLIP_VIEW_TRANSITION_NAME } as CSSProperties) : undefined}
+            >
+              <div className="absolute inset-0 transition-transform duration-[320ms] ease-out group-hover/card:scale-[1.07]">
+                <EntityImage entity={entity} image={image} priority={priority} />
+              </div>
+
+              {/* Gradiente cinematográfico — único gradiente permitido,
+                  de transparente a negro, para poder leer texto encima
+                  sin ningún tratamiento decorativo de color. */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+              {/* Capa de hover, muy sutil */}
+              <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover/card:bg-black/15" />
+
+              {/* Esquina superior izquierda: estado + evidencia + ranking */}
+              <div className="absolute left-3 top-3 z-10 flex flex-col items-start gap-1.5">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-black/55 px-2 py-1 text-[9px] font-semibold uppercase tracking-wide text-neutral-200 backdrop-blur-sm">
+                  <span className={cn('h-1.5 w-1.5 rounded-full', STATUS_DOT_CLASS[entity.status])} aria-hidden="true" />
+                  {statusText}
+                </span>
+                {evidenceStamp && (
+                  <span
+                    className="inline-flex items-center gap-1 rounded-full border border-auto-accent/30 bg-auto-accent/15 px-2 py-1 text-[9px] font-semibold uppercase tracking-wide text-auto-accent backdrop-blur-sm"
+                    title="Nivel de evidencia — ver detalle completo en la ficha"
+                  >
+                    <span aria-hidden="true">{evidenceStamp.icon}</span>
+                    {evidenceStamp.shortLabel}
+                  </span>
+                )}
+                {rankBadge && (
+                  <span className="inline-flex items-center gap-1 rounded-full border border-auto-accent/40 bg-neutral-900/85 px-2 py-1 text-[9px] font-bold uppercase tracking-wide text-auto-accent backdrop-blur-sm">
+                    #{rankBadge.position} · {rankBadge.metricLabel}
+                  </span>
+                )}
+                {compareEnabled && (
+                  <CompareCheckbox
+                    checked={compareChecked}
+                    disabled={compareDisabled}
+                    onToggle={onCompareToggle}
+                    title={entity.title}
+                  />
+                )}
+              </div>
+
+              {/* Esquina superior derecha: favorito — circular, chico,
+                  acción secundaria de marketplace premium. */}
+              <div className="absolute right-3 top-3 z-10">
+                <WishlistButton type={entity.type} slug={entity.slug} title={entity.title} />
+              </div>
+
+              {/* Clip de video ambient (sin cambios funcionales) */}
+              {clipUrl && (
+                <>
+                  <video
+                    ref={videoRef}
+                    src={clipUrl}
+                    muted
+                    loop
+                    playsInline
+                    preload="none"
+                    aria-hidden="true"
+                    tabIndex={-1}
+                    className={cn(
+                      'absolute inset-0 h-full w-full object-cover transition-opacity duration-500',
+                      hovering ? 'opacity-100' : ambientVisible ? 'opacity-35' : 'opacity-0'
+                    )}
+                  />
+                  <span className="absolute right-3 top-14 z-10 inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/60 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-0">
+                    <MiniIcon name="play" />
+                    <span aria-hidden="true">Clip</span>
+                  </span>
+                </>
+              )}
+
+              {/* Marca + modelo, superpuestos sobre el gradiente — el
+                  elemento tipográfico principal de la card, no un
+                  <h2> de dashboard debajo de la foto. */}
+              <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-3">
+                {brand && (
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-neutral-300/90">
+                    {brand}
+                  </p>
+                )}
+                <h2
+                  className={cn(
+                    'font-bold leading-[1.05] tracking-tight text-white transition-colors group-hover/card:text-auto-accent',
+                    isCompact ? 'text-lg' : 'text-2xl sm:text-[1.7rem]'
+                  )}
+                >
+                  {model}
+                </h2>
+              </div>
+            </div>
+
+            {/* SUPERFICIE DE INFORMACIÓN — mínima, ~38% de la card */}
+            <div className={cn('flex flex-1 flex-col gap-2.5', isCompact ? 'px-3.5 pb-3.5 pt-2.5' : 'px-4 pb-4 pt-3')}>
+              {secondaryLine && (
+                <p className="truncate text-[11px] font-medium uppercase tracking-wide text-neutral-500">
+                  {secondaryLine}
+                </p>
+              )}
+
+              {specs.length > 0 && (
+                <div className="flex items-center gap-4 border-y border-neutral-800/70 py-2">
+                  {specs.map((spec) => (
+                    <div key={spec.label} className="flex flex-col">
+                      <span className="text-sm font-bold tabular-nums text-neutral-100">{spec.value}</span>
+                      <span className="text-[8.5px] font-semibold uppercase tracking-wide text-neutral-500">
+                        {spec.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="mt-auto flex items-center justify-between gap-2 pt-0.5">
+                {price ? (
+                  <span className="text-[15px] font-extrabold tracking-tight text-auto-accent">{price}</span>
+                ) : (
+                  <span aria-hidden="true" />
+                )}
+                <span className="inline-flex shrink-0 items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-400 transition-colors duration-200 group-hover/card:text-auto-accent">
+                  Ver detalles
+                  <span aria-hidden="true" className="transition-transform duration-200 group-hover/card:translate-x-0.5">
+                    →
+                  </span>
+                </span>
+              </div>
+            </div>
+          </article>
+        </Link>
+      </div>
+    )
+  }
+
   return (
     <div className={cn('group', className)}>
       <Link href={`/${entity.type}/${entity.slug}`}>
@@ -444,18 +702,6 @@ export function EntityCard({
               >
                 {entity.description}
               </p>
-            )}
-
-            {/* TECHNICAL SPECS - Metadata compacta con iconos */}
-            {entity.type === EntityType.VEHICLE && quickFacts.length > 0 && size !== 'compact' && layout !== 'row' && (
-              <div className="my-1 flex flex-wrap gap-x-3 gap-y-1.5 text-xs text-neutral-400">
-                {quickFacts.slice(0, 4).map((fact) => (
-                  <div key={fact.label} className="inline-flex items-center gap-1.5">
-                    {fact.icon && <MiniIcon name={fact.icon as any} />}
-                    <span className="font-mono text-neutral-300">{fact.value}</span>
-                  </div>
-                ))}
-              </div>
             )}
 
             {/* Generic specs for non-vehicles */}
