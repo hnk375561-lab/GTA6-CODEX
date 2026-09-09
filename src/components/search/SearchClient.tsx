@@ -42,12 +42,6 @@ interface SearchClientProps {
    *  los chips de acceso rápido. No confundir con el catálogo completo:
    *  esto nunca fue el cuello de botella. */
   counts: Record<EntityType, number>
-  /** Query inicial con la que arranca el input, resuelta server-side desde
-   *  `?q=` en la URL (ver `/buscar/page.tsx`). Permite deep-linking real
-   *  desde otros puntos del sitio (ej. el buscador rápido de la home) en
-   *  vez de forzar al usuario a re-escribir la búsqueda. Sigue siendo
-   *  100% opcional: sin `?q=`, el comportamiento es idéntico al de antes. */
-  initialQuery?: string
 }
 
 // Antes este mapa traía categorías heredadas del sitio de GTA6
@@ -73,14 +67,19 @@ function getQuickTypes(counts: Record<EntityType, number>): EntityType[] {
     .slice(0, 6)
 }
 
-export function SearchClient({ counts, initialQuery }: SearchClientProps) {
-  // Estado inicial: `initialQuery` llega resuelto del servidor desde
-  // `?q=` (ver /buscar/page.tsx). El resto de filtros (`tipo`, `estado`,
-  // `orden`, `tags`) se leen directo de la URL, igual que en
-  // `EntityListExplorer` — mismo criterio de filtros en ambas pantallas
-  // (ver `useSyncedSearchParams`).
+export function SearchClient({ counts }: SearchClientProps) {
+  // Estado inicial: `q` (y el resto de filtros — `tipo`, `estado`,
+  // `orden`, `tags`) se lee directo de la URL client-side, mismo criterio
+  // que `EntityListExplorer`. Antes `q` llegaba resuelto server-side desde
+  // `/buscar/page.tsx` (que hacía `await searchParams`), pero esa lectura
+  // forzaba a Next.js a tratar toda la ruta como dinámica: cada
+  // `router.replace()` de `updateParams` (un tecleo debounced) invalidaba
+  // el Router Cache y disparaba un re-render completo en el servidor solo
+  // para actualizar la URL, sin aportar datos (los resultados ya vienen
+  // de `/api/buscar` vía fetch normal). Leyendo `q` acá, `/buscar/page.tsx`
+  // vuelve a ser 100% estática y el deep-link sigue funcionando igual.
   const { searchParams, updateParams } = useSyncedSearchParams()
-  const [query, setQuery] = useState(initialQuery ?? searchParams.get('q') ?? '')
+  const [query, setQuery] = useState(searchParams.get('q') ?? '')
   const quickTypes = useMemo(() => getQuickTypes(counts), [counts])
   const [activeType, setActiveType] = useState<EntityType | 'todos'>(() => {
     const raw = searchParams.get('tipo')

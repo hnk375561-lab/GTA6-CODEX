@@ -48,13 +48,28 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function SearchPage({
-  searchParams,
-}: {
-  // Next.js 15: `searchParams` llega como Promise en Server Components.
-  searchParams: Promise<{ q?: string }>
-}) {
-  const [{ q }, counts] = await Promise.all([searchParams, getEntityCountsByType()])
+export default async function SearchPage() {
+  // Antes esta página recibía `searchParams` y hacía `await` sobre esa
+  // Promise para pasarle `q` a `SearchClient` como `initialQuery`. Eso
+  // basta para que Next.js trate la ruta como dinámica (cualquier lectura
+  // de `searchParams`/`cookies()`/`headers()` en un Server Component
+  // desoptimiza toda la ruta), aunque el valor de `q` nunca se volvía a
+  // usar después del render inicial — el estado real vive en
+  // `SearchClient`. Cada `router.replace()` de `useSyncedSearchParams`
+  // (un tecleo debounced en el buscador) invalidaba el Router Cache de
+  // Next para esta ruta y forzaba un nuevo render server-side completo
+  // (re-ejecutando `getEntityCountsByType()` de nuevo) solo para
+  // actualizar la URL — sin aportar datos nuevos, ya que los resultados
+  // de búsqueda vienen de `/api/buscar` vía `fetch` normal, no de este
+  // render. Ver auditoría de invocaciones (Cloudflare Workers, 2026-09).
+  //
+  // Sacando `searchParams` de la firma, esta página vuelve a ser 100%
+  // estática (mismo criterio que `[entityType]/page.tsx`): Next.js no
+  // vuelve a golpear el servidor cuando cambia solo el query string.
+  // `SearchClient` ya sabe leer `?q=` inicial por su cuenta con
+  // `useSearchParams()` (ver `useSyncedSearchParams`), así que el
+  // deep-link sigue funcionando igual.
+  const counts = await getEntityCountsByType()
 
   return (
     <section className="py-12 sm:py-16">
@@ -94,7 +109,7 @@ export default async function SearchPage({
             </div>
           }
         >
-          <SearchClient counts={counts} initialQuery={q} />
+          <SearchClient counts={counts} />
         </Suspense>
 
         {/* Monetization: mismo slot real de AdSense reusado en el resto
