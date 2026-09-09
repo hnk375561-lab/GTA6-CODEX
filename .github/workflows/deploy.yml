@@ -60,15 +60,14 @@ jobs:
       - name: Run price format audit
         run: npm run audit:price-formats
 
-      # No bloqueante todavía (Fase 4 de la auditoría): al momento de sumar
-      # este check, el catálogo real tiene 8 vehículos sin imagen pendientes
-      # de la Fase 3 (workflow de Commons) — ver
-      # docs/auditoria-automatizacion-sinfrenos.md sección C2. Bloquear el
+      # No bloqueante todavía: al momento de sumar este check, el catálogo
+      # real tiene 8 vehículos sin imagen pendientes de que el workflow de
+      # Commons (commons-image-manifest.yml) las resuelva. Bloquear el
       # build ahora rompería el deploy de contenido que ya está en
       # producción, por el mismo motivo que check-evidence-links no bloquea
       # más abajo. Sacar `continue-on-error` una vez que esos 8 slugs (o los
       # que queden pendientes en ese momento) tengan su imagen.
-      - name: Verify image coverage (non-blocking until Fase 3 resuelva las imágenes pendientes)
+      - name: Verify image coverage (non-blocking until las imágenes pendientes se resuelvan)
         continue-on-error: true
         run: npm run verify:image-coverage
 
@@ -76,10 +75,10 @@ jobs:
       # contenido. Un link caído (rate-limit, mantenimiento, bot-blocking del
       # sitio de terceros, etc.) no debe tumbar un deploy de producción por
       # algo fuera del propio repo. El reporte queda igual visible en el log
-      # del job y en broken-links-report.json para revisión manual — ver
-      # sección 8 de la auditoría (docs/auditoria-automatizacion-sinfrenos.md)
-      # sobre por qué esto se mantiene informativo en vez de bloqueante hasta
-      # tener una corrida real en CI que confirme que no es demasiado ruidoso.
+      # del job y en broken-links-report.json para revisión manual. Se
+      # mantiene informativo en vez de bloqueante hasta tener suficientes
+      # corridas reales en CI que confirmen que la tasa de falsos positivos
+      # (links caídos por motivos ajenos al contenido) es baja.
       - name: Check evidence links (non-blocking)
         continue-on-error: true
         run: npm run check:evidence-links

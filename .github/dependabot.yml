@@ -1,23 +1,23 @@
-# Fase 5 de docs/auditoria-automatizacion-sinfrenos.md.
+# Actualización automática de dependencias (npm + github-actions).
 #
-# Hasta esta fase, actualizar dependencias dependía 100% de que alguien
-# se acordara de revisar `npm outdated` a mano — "no hay Dependabot ni
-# Renovate configurado (package.json tiene ~35 dependencias)" (sección 4,
-# ítem L). Esto solo ABRE pull requests; nunca los mergea (mitigación de
-# riesgo de sección 14: "Dependabot solo abre PRs, no mergea").
+# Antes de esto, actualizar dependencias dependía de que alguien se
+# acordara de revisar `npm outdated` a mano (package.json tiene ~35
+# dependencias directas). Dependabot solo ABRE pull requests; nunca los
+# mergea automáticamente — la revisión y el merge siguen siendo humanos.
 #
-# Agrupado (`groups`) y semanal (no diario), también por mitigación
-# explícita de sección 14: "Dependabot generando ruido de PRs menores →
-# Configurar agrupamiento y frecuencia semanal, no diaria."
+# Agrupado (`groups`) y semanal (no diario) a propósito: sin agrupar,
+# cada dependencia menor abre su propio PR y genera ruido que nadie
+# termina revisando en serio; agrupado y semanal mantiene el volumen de
+# PRs manejable sin perder la actualización regular.
 #
 # Se cubren dos ecosistemas:
 #   - npm: las ~35 dependencias de package.json.
 #   - github-actions: las actions de terceros que ya usan los workflows
 #     del repo (actions/checkout, actions/setup-node, cloudflare/pages-action,
-#     peter-evans/create-pull-request, etc.) — no estaba en el plan original
-#     de la Fase 5, pero es la misma clase de deuda ("dependencia sin
-#     actualización automática") aplicada a CI en vez de a npm, con el
-#     mismo mecanismo (Dependabot) y cero costo extra de mantenimiento.
+#     peter-evans/create-pull-request, etc.) — es la misma clase de deuda
+#     ("dependencia sin actualización automática") aplicada a CI en vez de
+#     a npm, con el mismo mecanismo (Dependabot) y cero costo extra de
+#     mantenimiento.
 
 version: 2
 updates:

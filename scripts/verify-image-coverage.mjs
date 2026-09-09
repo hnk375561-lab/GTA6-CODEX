@@ -2,10 +2,9 @@
 /**
  * scripts/verify-image-coverage.mjs
  * ============================================================
- * Fase 4 de docs/auditoria-automatizacion-sinfrenos.md (ítem C3 del
- * inventario, sección 4).
+ * Verifica cobertura de imágenes por vehículo.
  *
- * Hasta esta fase, un vehículo sin imagen en
+ * Sin este script, un vehículo sin imagen en
  * public/images/entities/vehiculos/{slug}.webp podía llegar a producción
  * sin que ningún check lo detectara: Zod valida la forma del JSON, no que
  * exista el archivo de imagen correspondiente. Este script cierra ese

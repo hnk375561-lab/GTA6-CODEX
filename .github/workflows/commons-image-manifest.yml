@@ -1,7 +1,5 @@
 name: Commons Image Manifest
 
-# Fase 3 de docs/auditoria-automatizacion-sinfrenos.md.
-#
 # Cierra el gap entre lo que el README describe ("workflow manual... en
 # Actions") y lo que hasta ahora existía en .github/workflows/ (nada —
 # el paso se corría a mano en una terminal). Este workflow es ese botón
@@ -9,19 +7,17 @@ name: Commons Image Manifest
 # pública de Wikimedia (sin secrets nuevos) y, si encuentra fotos nuevas
 # para vehículos sin imagen, abre un PR con el manifest actualizado.
 #
-# Lo que este workflow NO hace, a propósito (sección 16 de la auditoría):
-# no mergea el PR solo, y no corre process-images.mjs --apply. La
-# confirmación visual de que cada foto es del modelo/año correcto sigue
-# siendo 100% humana, PR por PR.
+# Lo que este workflow NO hace, a propósito: no mergea el PR solo, y no
+# corre process-images.mjs --apply. La confirmación visual de que cada
+# foto es del modelo/año correcto sigue siendo 100% humana, PR por PR.
 #
-# Fase 5: se sumó el trigger `schedule` de más abajo — cron quincenal
+# Además del trigger manual, corre por `schedule` con cron quincenal
 # (días 1 y 15 de cada mes; GitHub Actions no tiene una unidad nativa
 # "cada 2 semanas", esto es la aproximación estándar) que reintenta
-# siempre los slugs en "notFound" (ítem C2 del inventario de la
-# auditoría), sin depender de que alguien se acuerde de correrlo a mano.
-# La corrida manual (workflow_dispatch) sigue igual que en la Fase 3,
-# con el toggle de --retry-notfound quedando a criterio de quien la
-# dispara.
+# siempre los slugs que quedaron en "notFound" en corridas previas, sin
+# depender de que alguien se acuerde de correrlo a mano. La corrida
+# manual (workflow_dispatch) sigue disponible igual, con el toggle de
+# --retry-notfound quedando a criterio de quien la dispara.
 
 on:
   workflow_dispatch:
@@ -84,17 +80,14 @@ jobs:
           commit-message: 'chore(images): actualizar manifest de Commons'
           title: 'chore(images): actualizar manifest de imágenes de Commons'
           body: |
-            PR automático — Fase 3 de `docs/auditoria-automatizacion-sinfrenos.md`.
-
-            Generado por `generate-manifest-from-commons.mjs --write` corriendo
-            en Actions (workflow `commons-image-manifest.yml`, disparado a mano
-            desde la pestaña Actions).
+            PR automático generado por `generate-manifest-from-commons.mjs --write`
+            corriendo en Actions (workflow `commons-image-manifest.yml`, disparado
+            a mano o por el cron quincenal).
 
             **Antes de mergear, confirmar visualmente** que cada foto nueva
             corresponde al modelo y año correctos del vehículo. Este paso queda
-            humano a propósito (sección 16 de la auditoría): la búsqueda en
-            Commons puede traer un modelo o año equivocado, y Zod valida forma,
-            no que la foto sea la correcta.
+            humano a propósito: la búsqueda en Commons puede traer un modelo o
+            año equivocado, y Zod valida forma, no que la foto sea la correcta.
 
             Este PR **no se mergea automáticamente**.
           branch: chore/commons-image-manifest

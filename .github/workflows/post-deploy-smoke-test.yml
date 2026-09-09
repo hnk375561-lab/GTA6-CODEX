@@ -1,22 +1,19 @@
 name: Post-Deploy Smoke Test
 
-# Fase 4 de docs/auditoria-automatizacion-sinfrenos.md.
-#
-# Hasta esta fase no había ningún chequeo de que el sitio en producción
-# realmente respondiera después de un deploy — "no hay monitoreo de
-# uptime/post-deploy del sitio en vivo... un smoke test post-deploy es
-# barato y de alto valor" (sección 4, ítems I-K).
+# Smoke test post-deploy: confirma que el sitio en producción realmente
+# responde después de cada deploy. Antes de este workflow no había ningún
+# monitoreo de uptime/post-deploy del sitio en vivo — un smoke test
+# post-deploy es barato de mantener y de alto valor si algo se rompe en
+# producción sin que nadie lo note.
 #
 # BUG encontrado y corregido (09/09/2026): este workflow nunca se disparó
 # ni una sola vez desde que existe. `workflow_run` escuchaba el nombre
 # "Deploy to Cloudflare Pages", pero ese workflow ya no existe con ese
 # nombre — se renombró a "CI (type-check, lint, test, build)" en el
-# commit d03717eb (07/09/2026, ver deploy.yml), de una sesión anterior
-# que no sabía de la existencia de este smoke test (viven en fases
-# distintas del mismo doc de auditoría, aplicadas en momentos distintos).
-# GitHub matchea `workflow_run` por nombre exacto, así que un rename sin
-# tocar este archivo lo deja huérfano para siempre, sin ningún error
-# visible — simplemente no corre nunca.
+# commit d03717eb (07/09/2026, ver deploy.yml), sin que se actualizara
+# este archivo al mismo tiempo. GitHub matchea `workflow_run` por nombre
+# exacto, así que un rename sin tocar este archivo lo deja huérfano para
+# siempre, sin ningún error visible — simplemente no corre nunca.
 #
 # Además, el deploy real a producción NO lo hace ningún workflow de
 # GitHub Actions: lo hace Cloudflare Workers Builds vía su integración

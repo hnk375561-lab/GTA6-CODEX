@@ -2,8 +2,7 @@
 /**
  * scripts/add-vehicle.mjs
  * ============================================================
- * Fase 2 de docs/auditoria-automatizacion-sinfrenos.md — comando único
- * para el flujo completo de alta de vehículo.
+ * Comando único para el flujo completo de alta de vehículo.
  *
  * Qué hace, en orden:
  *   1. Delega la creación + validación Zod del JSON a new-vehicle.mjs,
