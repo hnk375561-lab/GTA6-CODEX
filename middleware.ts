@@ -114,5 +114,14 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/:path*'],
+  matcher: [
+    /*
+     * Ejecutar el middleware en todo MENOS:
+     * - _next/static (archivos JS/CSS compilados)
+     * - _next/image (optimización de imágenes)
+     * - archivos estáticos con extensión (svg, png, jpg, css, js, ico, etc.)
+     * - favicon.ico
+     */
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|css|js|ico|woff2?)$).*)',
+  ],
 }
