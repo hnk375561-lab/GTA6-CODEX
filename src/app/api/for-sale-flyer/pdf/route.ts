@@ -5,6 +5,14 @@ import { decodeFlyerData, externalReferenceMatchesData } from '@/lib/for-sale-fl
 import { SITE_NAME, SITE_URL } from '@/config/site'
 import { A4_HEIGHT, A4_WIDTH, PdfCursor, embedStandardFonts, hexToRgb } from '@/lib/pdf/render'
 
+// NOTA: la validación de charset (isWinAnsiEncodable) vive en
+// create-preference/route.ts, ANTES de cobrar — ver comentario ahí. Acá
+// (después del pago) ya no rechazamos por charset: si algo llegó hasta
+// acá con datos no codificables sería porque alguien construyó el
+// `data=` a mano evitando el formulario, y preferimos que buildFlyerPdf
+// reviente con un 500 legible (el pago ya está hecho, no hay nada mejor
+// que devolver) antes que silenciarlo.
+
 // pdf-lib no toca el filesystem (a diferencia de pdfkit, que lee sus
 // fuentes .afm con fs.readFileSync en runtime y por eso rompe en
 // workerd/Cloudflare Workers), pero igual dejamos el runtime Node

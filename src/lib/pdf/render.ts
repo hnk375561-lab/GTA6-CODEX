@@ -122,3 +122,41 @@ export async function embedStandardFonts(doc: PDFDocument) {
   const bold = await doc.embedFont(StandardFonts.HelveticaBold)
   return { regular, bold }
 }
+
+// Font Helvetica reutilizada solo para VALIDAR texto libre antes de
+// dibujarlo (nunca para render final — cada PDF sigue embebiendo la
+// suya propia vía `embedStandardFonts`). Se cachea a nivel módulo:
+// `PDFDocument.create()` + `embedFont` no tocan filesystem ni red, así
+// que es seguro reusar la instancia entre requests de la misma isolate.
+let validationFontPromise: Promise<PDFFont> | null = null
+
+async function getValidationFont(): Promise<PDFFont> {
+  if (!validationFontPromise) {
+    validationFontPromise = PDFDocument.create().then((doc) => doc.embedFont(StandardFonts.Helvetica))
+  }
+  return validationFontPromise
+}
+
+/**
+ * true si `text` se puede dibujar con las fuentes estándar de pdf-lib
+ * (encoding WinAnsi/cp1252 — cubre español con tildes y ñ, pero NO
+ * emoji ni la mayoría de símbolos fuera de Latin-1).
+ *
+ * Por qué existe: sin este chequeo, texto libre que llega de un
+ * formulario (marca/modelo/contacto de `for-sale-flyer`, por ejemplo)
+ * podía pasar la validación de "no vacío", cobrarse vía Mercado Pago, y
+ * recién reventar con un error de encoding al generar el PDF en
+ * `/api/.../pdf` — es decir, DESPUÉS de que la persona ya pagó. Usar
+ * esto en la validación de `create-preference` (antes de cobrar) mueve
+ * el rechazo a un 400 barato, sin plata de por medio.
+ */
+export async function isWinAnsiEncodable(text: string): Promise<boolean> {
+  if (!text) return true
+  const font = await getValidationFont()
+  try {
+    font.encodeText(text)
+    return true
+  } catch {
+    return false
+  }
+}

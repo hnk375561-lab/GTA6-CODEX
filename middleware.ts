@@ -1,6 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { timingSafeEqual } from 'node:crypto'
 import { getCloudflareContext } from '@opennextjs/cloudflare'
 import { SITE_NAME } from './src/config/site'
+
+// Comparación constant-time para el password del dashboard. `a === b` en
+// JS compara char por char y corta en el primer mismatch — eso filtra,
+// vía tiempo de respuesta, cuántos caracteres iniciales acertó quien
+// ataca (timing attack clásico contra Basic Auth). `timingSafeEqual`
+// exige buffers del mismo largo: si difieren, se corta antes (fuga
+// aceptada de LARGO, no de contenido — es la limitación estándar de esta
+// técnica, no un descuido).
+function safeCompare(a: string, b: string): boolean {
+  const bufA = Buffer.from(a, 'utf-8')
+  const bufB = Buffer.from(b, 'utf-8')
+  if (bufA.length !== bufB.length) return false
+  return timingSafeEqual(bufA, bufB)
+}
 
 // Tipo mínimo del binding "Workers Rate Limiting API" (no dependemos de
 // @cloudflare/workers-types solo por esto). Ver wrangler.toml: [[ratelimits]].
@@ -155,7 +170,7 @@ export async function middleware(request: NextRequest) {
       if (scheme === 'Basic' && encoded) {
         const decoded = Buffer.from(encoded, 'base64').toString('utf-8')
         const [, password] = decoded.split(':')
-        if (password === expectedPassword) {
+        if (safeCompare(password, expectedPassword)) {
           return NextResponse.next()
         }
       }

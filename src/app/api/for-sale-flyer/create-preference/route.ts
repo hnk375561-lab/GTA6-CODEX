@@ -7,7 +7,27 @@ import {
   isValidFlyerData,
   type FlyerData,
 } from '@/lib/for-sale-flyer'
+import { isWinAnsiEncodable } from '@/lib/pdf/render'
 import { SITE_URL } from '@/config/site'
+
+const FLYER_TEXT_FIELDS: Array<keyof FlyerData> = ['marca', 'modelo', 'anio', 'precio', 'km', 'contacto', 'ubicacion']
+
+/**
+ * Encuentra el primer campo con un caracter que el PDF no va a poder
+ * dibujar (fuente estándar = encoding WinAnsi, sin emoji ni la mayoría
+ * de símbolos fuera de Latin-1). Se corre ACÁ, antes de `createPreference`,
+ * para rechazar con un 400 barato en vez de cobrar $690 y recién
+ * enterarse en `/pdf` cuando ya no hay nada que devolver sin reembolsar
+ * a mano. Ver `isWinAnsiEncodable` en `src/lib/pdf/render.ts`.
+ */
+async function findUnencodableField(data: FlyerData): Promise<string | null> {
+  for (const field of FLYER_TEXT_FIELDS) {
+    const value = data[field]
+    if (typeof value !== 'string' || !value) continue
+    if (!(await isWinAnsiEncodable(value))) return field
+  }
+  return null
+}
 
 /**
  * POST /api/for-sale-flyer/create-preference
@@ -47,6 +67,16 @@ export async function POST(request: Request) {
   if (!isValidFlyerData(data)) {
     return NextResponse.json(
       { error: 'Faltan datos: marca, modelo, año, precio y contacto son obligatorios.' },
+      { status: 400 }
+    )
+  }
+
+  const unencodableField = await findUnencodableField(data)
+  if (unencodableField) {
+    return NextResponse.json(
+      {
+        error: `El campo "${unencodableField}" tiene un caracter que el cartel no puede imprimir (ej. emoji). Sacalo e intentá de nuevo.`,
+      },
       { status: 400 }
     )
   }
