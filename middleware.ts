@@ -153,16 +153,32 @@ export async function middleware(request: NextRequest) {
     return new NextResponse('Bloqueado', { status: 403 })
   }
 
-  // Rate limiting
-  const clientIP = getClientIP(request)
-  if (await isRateLimited(clientIP)) {
-    return new NextResponse('Demasiadas solicitudes', { status: 429 })
+  const pathname = request.nextUrl.pathname
+
+  // Rate limiting — SOLO para rutas sensibles (API, dashboard) o métodos
+  // que modifican estado (POST/PUT/etc, típicamente formularios). La
+  // navegación normal (GET a páginas de contenido) queda afuera a
+  // propósito: en un sitio de contenido, cada visita real hace varias
+  // requests (documento + RSC payloads + posibles redirects de
+  // canonicalización de la capa de assets), y aplicar un límite por IP
+  // ahí termina bloqueando visitantes legítimos — sobre todo detrás de
+  // CGNAT, común en ISPs móviles — sin aportar protección real contra
+  // abuso. Lo que sí vale la pena limitar es scraping agresivo de la
+  // API y fuerza bruta contra /dashboard.
+  const isSensitiveRoute = pathname.startsWith('/api') || pathname.startsWith('/dashboard')
+  const isMutatingRequest = request.method !== 'GET' && request.method !== 'HEAD'
+  const shouldRateLimit = isSensitiveRoute || isMutatingRequest
+
+  if (shouldRateLimit) {
+    const clientIP = getClientIP(request)
+    if (await isRateLimited(clientIP)) {
+      return new NextResponse('Demasiadas solicitudes', { status: 429 })
+    }
   }
 
   // Dashboard auth (código original)
   const auth = request.headers.get('authorization')
   const expectedPassword = process.env.DASHBOARD_PASSWORD
-  const pathname = request.nextUrl.pathname
 
   if (pathname.startsWith('/dashboard')) {
     if (!expectedPassword) {
