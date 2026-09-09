@@ -22,15 +22,31 @@ const BLOCKED_USER_AGENTS = [
 // Rate limiting en memoria (simple, sin KV/DO)
 const requestCounts = new Map<string, { count: number; resetTime: number }>()
 
-// Limpiar entradas antiguas cada 2 minutos
-setInterval(() => {
+// Antes esto se limpiaba con un `setInterval` a nivel de módulo (scope
+// global). Cloudflare Workers prohíbe explícitamente I/O asíncrono
+// (fetch, setTimeout/setInterval, crypto.getRandomValues) fuera de un
+// handler de request — cualquier intento tira
+// "Disallowed operation called within global scope" en cuanto el módulo
+// se evalúa al arrancar una isolate nueva. Esto coincide con los errores
+// vistos en Cloudflare Workers Metrics: un goteo constante, independiente
+// del volumen de tráfico, típico de un fallo en cold start del módulo en
+// vez de un fallo por request. Se reemplaza por un sweep perezoso: se
+// ejecuta como mucho una vez cada `SWEEP_INTERVAL_MS`, disparado desde
+// dentro del propio handler del middleware (que sí corre en contexto de
+// request), no desde un timer persistente.
+const SWEEP_INTERVAL_MS = 120000
+let lastSweepAt = 0
+
+function sweepExpiredEntries() {
   const now = Date.now()
+  if (now - lastSweepAt < SWEEP_INTERVAL_MS) return
+  lastSweepAt = now
   for (const [ip, data] of requestCounts.entries()) {
     if (now > data.resetTime) {
       requestCounts.delete(ip)
     }
   }
-}, 120000)
+}
 
 function getClientIP(request: NextRequest): string {
   return (
@@ -67,6 +83,11 @@ function isRateLimited(ip: string): boolean {
 }
 
 export function middleware(request: NextRequest) {
+  // Limpieza perezosa del mapa de rate limiting — ver comentario en
+  // `sweepExpiredEntries`. Se ejecuta acá (no en scope global) porque
+  // este es el único lugar con contexto de request válido.
+  sweepExpiredEntries()
+
   // Block bots
   const userAgent = request.headers.get('user-agent')
   if (isBlockedBot(userAgent)) {
