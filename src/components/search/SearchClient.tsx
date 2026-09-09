@@ -454,6 +454,7 @@ export function SearchClient({ counts, initialQuery }: SearchClientProps) {
                 <li key={`${entity.type}-${entity.slug}`}>
                   <Link
                     href={`/${entity.type}/${entity.slug}`}
+                    prefetch={false}
                     className="search-result-viewport group -mx-3 flex items-start gap-4 rounded-lg px-3 py-4 transition-colors duration-200 hover:bg-auto-darker/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent active:bg-auto-darker/60"
                   >
                     <EntityImage
