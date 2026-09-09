@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import Link from 'next/link'
 import { Entity, EntityType } from '@/types'
 import { Card, CardBody } from '@/components/ui/Card'
@@ -191,6 +191,14 @@ interface EntityCardProps {
   size?: 'default' | 'hero' | 'compact'
   priority?: boolean
   dateLabel?: string | null
+  /** Sello de posición para grillas de ranking (`/rankings/[slug]`,
+   *  `RankingsLeaderboardTabs`) — ej. "#1 · 0-100 km/h". Opcional: el
+   *  resto de las grillas del sitio no lo pasa y la card se ve igual
+   *  que antes. */
+  rankBadge?: {
+    position: number
+    metricLabel: string
+  }
 }
 
 function CompareCheckbox({
@@ -234,6 +242,7 @@ export function EntityCard({
   size = 'default',
   priority,
   dateLabel,
+  rankBadge,
 }: EntityCardProps) {
   const resolvedTypeLabel = typeLabel || ENTITY_TYPE_LABELS[entity.type]
   const quickFacts = getQuickFacts(entity)
@@ -241,7 +250,7 @@ export function EntityCard({
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [hovering, setHovering] = useState(false)
   const [ambientVisible] = useState(true)
-  const flipSlug = consumeFlipSlug()
+  const flipSlug = consumeFlipSlug(entity.slug)
 
   useEffect(() => {
     if (!videoRef.current || !clipUrl) return
@@ -255,11 +264,11 @@ export function EntityCard({
     }
   }, [hovering, clipUrl])
 
-  const evidenceStamp = EVIDENCE_STAMP_META[entity.evidence as keyof typeof EVIDENCE_STAMP_META]
+  const evidenceStamp = entity.evidence ? EVIDENCE_STAMP_META[entity.evidence.level] : undefined
 
   return (
     <div className={cn('group', className)}>
-      <Link href={`/${entity.type}/${entity.slug}`} viewTransitionName={flipSlug ? FLIP_VIEW_TRANSITION_NAME : undefined}>
+      <Link href={`/${entity.type}/${entity.slug}`}>
         <Card hoverable={!layout || layout === 'grid'} className={cn(layout === 'row' && 'flex-row')}>
           {/* IMAGE SECTION - Prominente, 40-45% del ancho en grid */}
           <div
@@ -275,6 +284,11 @@ export function EntityCard({
             )}
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
+            style={
+              flipSlug
+                ? ({ viewTransitionName: FLIP_VIEW_TRANSITION_NAME } as CSSProperties)
+                : undefined
+            }
           >
             {/* Zoom suave en hover */}
             <div className={cn(
@@ -284,9 +298,6 @@ export function EntityCard({
               <EntityImage
                 entity={entity}
                 image={image}
-                alt={entity.title}
-                fill
-                className="object-cover"
                 priority={priority}
               />
             </div>
@@ -298,6 +309,24 @@ export function EntityCard({
                 {resolvedTypeLabel}
               </div>
             </div>
+
+            {/* Rank Badge - posición del ranking (solo grillas de /rankings).
+                Esquina inferior izquierda: la superior ya tiene el Category
+                Tab (izq) y el Evidence Stamp (der), y la inferior derecha
+                tiene el WishlistButton — este es el único cuadrante libre. */}
+            {rankBadge && (
+              <div
+                className="absolute bottom-3 left-3 z-10 flex flex-col items-start gap-0.5 rounded-lg border border-auto-accent/40 bg-neutral-900/85 px-2.5 py-1.5 backdrop-blur-sm"
+                title={rankBadge.metricLabel}
+              >
+                <span className="text-sm font-extrabold leading-none text-auto-accent">
+                  #{rankBadge.position}
+                </span>
+                <span className="max-w-[7rem] truncate text-[9px] font-semibold uppercase tracking-wide text-neutral-400">
+                  {rankBadge.metricLabel}
+                </span>
+              </div>
+            )}
 
             {/* Evidence Stamp */}
             {evidenceStamp && (
