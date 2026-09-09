@@ -412,7 +412,7 @@ export function EntityCard({
 
     return (
       <div className={cn('group', className)}>
-        <Link href={`/${entity.type}/${entity.slug}`} className="block h-full">
+        <Link href={`/${entity.type}/${entity.slug}`} prefetch={false} className="block h-full">
           <article
             className={cn(
               'group/card relative flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-800/70 bg-[#111316] transition-all duration-[350ms] ease-out',
@@ -580,7 +580,7 @@ export function EntityCard({
 
   return (
     <div className={cn('group', className)}>
-      <Link href={`/${entity.type}/${entity.slug}`}>
+      <Link href={`/${entity.type}/${entity.slug}`} prefetch={false}>
         <Card hoverable={!layout || layout === 'grid'} className={cn(layout === 'row' && 'flex-row')}>
           {/* IMAGE SECTION - Prominente, 40-45% del ancho en grid */}
           <div
