@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const https = require('https');
-const http = require('http');
+import fs from 'node:fs';
+import path from 'node:path';
+import https from 'node:https';
+import http from 'node:http';
 
 const colors = {
   reset: '\x1b[0m',
@@ -95,28 +95,11 @@ function makeRequest(url, timeout = 8000) {
   });
 }
 
-// Buscar PDF de ficha técnica
-async function searchTechnicalSheetPDF(brand, model, country = 'AR') {
-  const queries = [
-    `${brand} ${model} ficha técnica PDF ${country}`,
-    `${brand} ${model} specifications PDF`,
-    `site:${brand.toLowerCase()}.com ${model} ficha técnica filetype:pdf`
-  ];
-  
-  for (const query of queries) {
-    try {
-      // Buscar en DuckDuckGo (sin límite de requests)
-      const searchUrl = `https://duckduckgo.com/?q=${encodeURIComponent(query + ' filetype:pdf')}&format=json`;
-      const { data } = await makeRequest(searchUrl, 5000);
-      // DuckDuckGo API limitado pero puedes intentar otros métodos
-      return null; // Placeholder para expandir
-    } catch (e) {
-      // Continuar con siguiente query
-    }
-  }
-  
-  return null;
-}
+// Nota (09/09/2026): existía acá una función `searchTechnicalSheetPDF`
+// definida pero jamás invocada por `enrichVehicle` — hacía un fetch real
+// a DuckDuckGo y descartaba la respuesta (`return null` fijo, comentado
+// como "Placeholder para expandir"). Código muerto que además gastaba
+// una request de red por vehículo sin usar el resultado. Eliminada.
 
 // Buscar en Motor1.com
 async function fetchMotor1Specs(brand, model) {
@@ -135,7 +118,7 @@ async function fetchMotor1Specs(brand, model) {
     if (powerMatch) specs.potencia = powerMatch[1];
     
     return Object.keys(specs).length > 0 ? specs : null;
-  } catch (e) {
+  } catch {
     return null;
   }
 }
@@ -153,7 +136,6 @@ function getMotorFamilySpecs(vehicleSlug) {
 // Enriquecer vehículo
 async function enrichVehicle(vehiclePath, vehicleData) {
   const slug = vehicleData.slug;
-  const title = vehicleData.title;
   
   // Verificar si necesita enriquecimiento
   const needsEnrichment = 
@@ -183,7 +165,7 @@ async function enrichVehicle(vehiclePath, vehicleData) {
         newSpecs = { ...newSpecs, ...motor1Specs };
         source = 'motor1.com';
       }
-    } catch (e) {
+    } catch {
       // Continuar
     }
   }
@@ -222,14 +204,9 @@ async function main() {
   console.log(`${colors.blue}═══════════════════════════════════════════════${colors.reset}`);
   console.log(`📁 ${files.length} vehículos encontrados\n`);
   
-  // Agrupar por familia
-  const byFamily = {};
-  const motorFamilyNames = Object.keys(motorFamilies);
-  
   let processed = 0;
   let enriched = 0;
   let skipped = 0;
-  const results = [];
   
   for (const file of files) {
     const vehiclePath = path.join(vehiculosDir, file);

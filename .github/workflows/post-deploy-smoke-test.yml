@@ -7,34 +7,39 @@ name: Post-Deploy Smoke Test
 # uptime/post-deploy del sitio en vivo... un smoke test post-deploy es
 # barato y de alto valor" (sección 4, ítems I-K).
 #
-# Se dispara solo cuando "Deploy to Cloudflare Pages" TERMINA en push a
-# main (o sea, después de un deploy real a producción, no en cada PR de
-# preview). Si alguna URL clave no devuelve 200, este workflow falla — la
-# notificación ES la falla del workflow mismo, visible en la pestaña
-# Actions y en el email/resumen que GitHub ya manda por default con
-# workflows fallidos. No se suma ningún servicio de monitoring externo
-# (Sentry, Datadog, etc. — descartados explícitamente en sección 16).
+# BUG encontrado y corregido (09/09/2026): este workflow nunca se disparó
+# ni una sola vez desde que existe. `workflow_run` escuchaba el nombre
+# "Deploy to Cloudflare Pages", pero ese workflow ya no existe con ese
+# nombre — se renombró a "CI (type-check, lint, test, build)" en el
+# commit d03717eb (07/09/2026, ver deploy.yml), de una sesión anterior
+# que no sabía de la existencia de este smoke test (viven en fases
+# distintas del mismo doc de auditoría, aplicadas en momentos distintos).
+# GitHub matchea `workflow_run` por nombre exacto, así que un rename sin
+# tocar este archivo lo deja huérfano para siempre, sin ningún error
+# visible — simplemente no corre nunca.
+#
+# Además, el deploy real a producción NO lo hace ningún workflow de
+# GitHub Actions: lo hace Cloudflare Workers Builds vía su integración
+# git nativa (ver comentario en deploy.yml), que no emite ningún evento
+# que Actions pueda escuchar. Por eso este workflow ahora dispara sobre
+# el `push` a main directamente (mismo trigger que la CI) en vez de
+# encadenarse a un workflow_run que no puede representar "el deploy ya
+# terminó" — y el chequeo reintenta con backoff en vez de un sleep fijo,
+# porque el build+deploy de Cloudflare Workers Builds puede tardar
+# varios minutos (ver notas de ~13min en sesiones anteriores) y un sleep
+# corto daría falsos negativos.
 
 on:
-  workflow_run:
-    workflows: ["Deploy to Cloudflare Pages"]
-    types: [completed]
+  push:
     branches: [main]
 
 jobs:
   smoke-test:
-    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     env:
       SITE_URL: https://sinfreno.com
     steps:
-      # Cloudflare Pages tarda unos segundos en propagar el deploy nuevo
-      # detrás de su CDN. Un margen chico evita falsos negativos por pegarle
-      # a la versión anterior o a un edge todavía no actualizado.
-      - name: Esperar propagación del deploy
-        run: sleep 30
-
-      - name: Chequear URLs clave (esperado 200 en cada una)
+      - name: Chequear URLs clave (esperado 200 en cada una, con reintentos)
         run: |
           set -e
           urls=(
@@ -44,19 +49,37 @@ jobs:
             "$SITE_URL/fabricantes"
             "$SITE_URL/sitemap.xml"
           )
-          fail=0
-          for url in "${urls[@]}"; do
-            code=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 15 "$url" || echo "000")
-            if [ "$code" = "200" ]; then
-              echo "✓ $url -> $code"
-            else
-              echo "✗ $url -> $code"
-              fail=1
+          # Cloudflare Workers Builds no emite ningún evento que Actions
+          # pueda esperar, así que en vez de un sleep fijo se reintenta
+          # en rondas (todas las URLs pendientes por ronda, no una URL a
+          # la vez) hasta 12 minutos totales antes de darlas por caídas —
+          # suficiente margen para un build+deploy típico (~13min en
+          # corridas previas) sin bloquear el job más de lo necesario.
+          max_rounds=24
+          sleep_between=30
+          pending=("${urls[@]}")
+          for round in $(seq 1 "$max_rounds"); do
+            still_pending=()
+            for url in "${pending[@]}"; do
+              code=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 15 "$url" || echo "000")
+              if [ "$code" = "200" ]; then
+                echo "✓ $url -> $code (ronda $round)"
+              else
+                still_pending+=("$url")
+              fi
+            done
+            pending=("${still_pending[@]}")
+            if [ "${#pending[@]}" -eq 0 ]; then
+              break
+            fi
+            if [ "$round" -lt "$max_rounds" ]; then
+              sleep "$sleep_between"
             fi
           done
-          if [ "$fail" -eq 1 ]; then
+          if [ "${#pending[@]}" -gt 0 ]; then
             echo ""
-            echo "smoke-test: FALLÓ — al menos una URL clave no devolvió 200 después del deploy a producción."
+            echo "smoke-test: FALLÓ — no respondieron 200 tras ${max_rounds} rondas:"
+            printf '  ✗ %s\n' "${pending[@]}"
             exit 1
           fi
           echo ""

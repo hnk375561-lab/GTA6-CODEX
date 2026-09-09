@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const https = require('https');
-const http = require('http');
+import fs from 'node:fs';
+import path from 'node:path';
+import https from 'node:https';
+import http from 'node:http';
 
 // Colores para salida
 const colors = {
@@ -50,7 +50,7 @@ async function fetchWikipediaSpecs(vehicleTitle) {
     const page = Object.values(pages)[0];
     
     return page?.extract || null;
-  } catch (e) {
+  } catch {
     return null;
   }
 }

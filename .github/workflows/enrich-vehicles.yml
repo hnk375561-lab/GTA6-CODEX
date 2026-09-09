@@ -14,9 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     
+    # BUG encontrado (09/09/2026): tenía `pull-requests: write` pero este
+    # job nunca abre un PR (commitea y pushea directo a main más abajo) —
+    # permiso de más sin uso real, contra el principio de mínimo
+    # privilegio. Sacado.
     permissions:
       contents: write
-      pull-requests: write
     
     steps:
       - name: 📥 Clonar repo
@@ -34,7 +37,7 @@ jobs:
         run: npm ci
       
       - name: 🚀 Ejecutar enriquecedor por familia de motores
-        run: node enricher-motor-families.js
+        run: node enricher-motor-families.mjs
         timeout-minutes: 25
       
       - name: 📊 Análisis de completitud
@@ -56,6 +59,23 @@ jobs:
           fs.writeFileSync('enrichment-report.txt', \`Enriquecimiento completado: \${complete}/\${files.length} vehículos\\nFecha: \${new Date().toISOString()}\`);
           " || true
       
+      # BUG encontrado (09/09/2026): este job pushea directo a main con
+      # `contents: write` sin correr NINGUNA verificación sobre lo que el
+      # enriquecedor escribió — ni type-check, ni verify:min-count, ni
+      # verify:reserved-keys. Un JSON con forma inválida (o un campo con
+      # el tipo equivocado) llegaría a producción sin que nadie se
+      # entere hasta el próximo build o la próxima sesión manual. Se
+      # deja afuera `verify:content` (corre `next build` completo, no
+      # entra en el timeout de este job) y `verify:all`/tests (no
+      # aplican a datos de contenido) — estos 3 checks son los que
+      # cubren específicamente la forma de las entidades y corren en
+      # segundos, no minutos.
+      - name: ✅ Verificar antes de pushear (aborta sin pushear si falla)
+        run: |
+          npm run type-check
+          npm run verify:min-count
+          npm run verify:reserved-keys
+
       - name: 📤 Commit y push
         run: |
           git config --local user.email "action@github.com"

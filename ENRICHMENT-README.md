@@ -9,8 +9,8 @@
 
 ```
 tu-repo/
-├── enricher-motor-families.js      ← Script principal (inteligencia)
-├── enricher-zero-cost.js           ← Alternativa más simple
+├── enricher-motor-families.mjs      ← Script principal (inteligencia)
+├── enricher-zero-cost.mjs           ← Alternativa más simple
 ├── run-enrichment-suite.sh         ← Orquestador (lo que corres)
 ├── .github/
 │   └── workflows/
@@ -177,7 +177,7 @@ validators = {
 ## Troubleshooting
 
 ### "El script dice 'sin datos encontrados'"
-→ Necesita agregar más fuentes. Edita `enricher-motor-families.js` y:
+→ Necesita agregar más fuentes. Edita `enricher-motor-families.mjs` y:
 ```javascript
 // Agrega un sitio regional nuevo
 const siteRegional = await fetchFromSite('https://sitio-local.com', brand, model);
