@@ -137,6 +137,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
+                prefetch={false}
                 aria-current={active ? 'page' : undefined}
                 className={cn(
                   'link-underline text-sm font-medium transition-colors',
@@ -257,6 +258,7 @@ export function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
+                  prefetch={false}
                   aria-current={active ? 'page' : undefined}
                   className={cn(
                     'block rounded-md px-2 py-3 text-base font-medium transition-colors',

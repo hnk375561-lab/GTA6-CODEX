@@ -120,6 +120,7 @@ export function HeroSelfPromoCard({ items, className }: HeroSelfPromoCardProps) 
           <Link
             key={item.detailHref}
             href={item.detailHref}
+            prefetch={false}
             aria-label={`Ver ficha completa de ${item.headline}`}
             className="hero-card-hover tap-scale group animate-fade-in relative flex flex-1 items-stretch gap-3 overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 transition-colors duration-150 hover:bg-white/10 hover:ring-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
             style={{ animationDelay: `${index * 90}ms`, animationFillMode: 'backwards' }}

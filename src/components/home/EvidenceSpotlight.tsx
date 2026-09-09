@@ -58,6 +58,7 @@ export function EvidenceSpotlight({ highlights }: EvidenceSpotlightProps) {
               </span>
               <Link
                 href={`/${item.entityType}/${item.slug}`}
+                prefetch={false}
                 className="font-display text-lg font-bold text-neutral-900 hover:text-orange-600 dark:hover:text-auto-accent"
               >
                 {item.title}

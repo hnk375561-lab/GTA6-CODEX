@@ -87,6 +87,7 @@ export function HeroQuickLinks({ items, className }: HeroQuickLinksProps) {
             <li key={item.href} className="list-none">
               <Link
                 href={item.href}
+                prefetch={false}
                 className={cn(
                   'hero-chip tap-scale cta-shine group/chip',
                   `hero-chip--${item.size}`,

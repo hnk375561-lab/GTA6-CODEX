@@ -223,6 +223,7 @@ export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: Vehicle
                 </div>
                 <Link
                   href={`/vehiculos/${v.slug}`}
+                  prefetch={false}
                   className="mb-1 line-clamp-2 text-sm font-bold text-neutral-900 transition-colors hover:text-auto-accent"
                 >
                   {v.title}
