@@ -356,15 +356,35 @@ export function EntityCard({
   const evidenceStamp = entity.evidence ? EVIDENCE_STAMP_META[entity.evidence.level] : undefined
 
   /**
-   * CARD "SHOWROOM" — rediseño radical (Fase 9). Solo para vehículos en
-   * layout de grilla/compact; `layout="row"` (filas de lista/comparación)
-   * sigue con el markup genérico de abajo, que sirve a los otros 8 tipos
-   * de entidad del sitio y no forma parte de este pedido. Arquitectura
-   * completamente distinta a la card genérica: la foto es el contenedor
-   * principal (occupies ~62% via aspect-[4/5], edge-to-edge, sin Card/
-   * CardBody), marca+modelo se superponen sobre el gradiente inferior de
-   * la foto en vez de vivir en un bloque de texto separado, y la franja
-   * inferior es mínima (specs + precio), no una "ficha técnica".
+   * CARD "SHOWROOM" — segunda generación (Fase 10, auditoría UX). La
+   * primera versión (aspect-[4/5] + gradiente `from-black` a lo largo de
+   * TODA la foto) dejaba una franja enorme casi negra entre el auto y el
+   * título, y apilaba 4 elementos flotantes (estado, evidencia, ranking,
+   * comparar) sobre la imagen. Esta versión corrige ambos problemas de
+   * raíz en vez de ajustar tokens visuales:
+   *
+   * - Foto en `aspect-[4/3]` (paisaje, como el material real del
+   *   catálogo) en vez de retrato — reduce sustancialmente la altura
+   *   total de la card para que 5 columnas respiren, y el degradado
+   *   ahora usa stops explícitos que solo oscurecen el 45% inferior de
+   *   la foto (`to 45%` totalmente transparente), no el 100%.
+   * - Máximo 2 indicadores simultáneos sobre la foto: el punto de estado
+   *   (sin pill, solo texto con drop-shadow) + a lo sumo UNO de
+   *   evidencia/ranking (`secondaryBadge`, prioriza ranking cuando
+   *   ambos existen). "Comparar" deja la foto por completo.
+   * - "Comparar" pasa a ser un checkbox mínimo inline junto a la línea
+   *   de categoría/año, dentro de la superficie de información — ya no
+   *   es un control flotante sobre el vehículo.
+   * - Precio con `truncate` + contenedor `min-w-0` para que nunca fuerce
+   *   un salto de línea (antes rompía en dos líneas con aclaraciones
+   *   tipo "USD 262.000 aprox.").
+   * - Un solo separador sutil (`border-t`) antes de precio/CTA; se quita
+   *   el `border-y` de la fila de specs — la separación ahora es por
+   *   spacing, no por líneas.
+   *
+   * Solo para vehículos en layout de grilla/compact; `layout="row"`
+   * sigue con el markup genérico de abajo (los otros 8 tipos de entidad
+   * del sitio, fuera de este pedido).
    */
   if (entity.type === EntityType.VEHICLE && layout !== 'row') {
     const vehicle = entity as Vehicle
@@ -376,66 +396,71 @@ export function EntityCard({
     const isCompact = size === 'compact'
     const statusText = STATUS_LABELS[entity.status as keyof typeof STATUS_LABELS] || entity.status
 
+    // Máximo UN indicador secundario además del estado — el ranking
+    // (contexto de página de rankings) pesa más que el sello de
+    // evidencia cuando ambos existen a la vez, así nunca se apilan 3+
+    // badges sobre la misma esquina.
+    const secondaryBadge = rankBadge
+      ? { icon: `#${rankBadge.position}`, label: rankBadge.metricLabel, title: rankBadge.metricLabel }
+      : evidenceStamp
+        ? {
+            icon: evidenceStamp.icon,
+            label: evidenceStamp.shortLabel,
+            title: 'Nivel de evidencia — ver detalle completo en la ficha',
+          }
+        : null
+
     return (
       <div className={cn('group', className)}>
         <Link href={`/${entity.type}/${entity.slug}`} className="block h-full">
           <article
             className={cn(
-              'group/card relative flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-800/70 bg-[#111316] transition-all duration-300 ease-out',
-              'hover:-translate-y-1 hover:border-auto-accent/50 hover:shadow-[0_28px_56px_-20px_rgba(0,0,0,0.7)]'
+              'group/card relative flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-800/70 bg-[#111316] transition-all duration-[350ms] ease-out',
+              'hover:-translate-y-1 hover:border-auto-accent/45 hover:shadow-[0_20px_40px_-18px_rgba(0,0,0,0.65)]'
             )}
           >
-            {/* FOTO — edge-to-edge, domina la card (~62% de la altura) */}
+            {/* FOTO — paisaje, edge-to-edge. Domina la card sin forzarla
+                a ser excesivamente alta en una grilla de 5 columnas. */}
             <div
-              className="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-neutral-950"
+              className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-neutral-950"
               onMouseEnter={() => setHovering(true)}
               onMouseLeave={() => setHovering(false)}
               style={flipSlug ? ({ viewTransitionName: FLIP_VIEW_TRANSITION_NAME } as CSSProperties) : undefined}
             >
-              <div className="absolute inset-0 transition-transform duration-[320ms] ease-out group-hover/card:scale-[1.07]">
+              <div className="absolute inset-0 transition-transform duration-[350ms] ease-out group-hover/card:scale-[1.035]">
                 <EntityImage entity={entity} image={image} priority={priority} />
               </div>
 
-              {/* Gradiente cinematográfico — único gradiente permitido,
-                  de transparente a negro, para poder leer texto encima
-                  sin ningún tratamiento decorativo de color. */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-              {/* Capa de hover, muy sutil */}
-              <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover/card:bg-black/15" />
+              {/* Degradado acotado: solo el 45% inferior se oscurece
+                  (stops explícitos, no `from-black` cubriendo el 100%),
+                  así el auto se ve completo y nítido en vez de una franja
+                  gris/negra artificial. Único overlay de color de toda
+                  la card — el resto es tipografía y spacing. */}
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,4,5,0.92)_0%,rgba(4,4,5,0.45)_24%,rgba(4,4,5,0)_46%)]" />
+              <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover/card:bg-black/10" />
 
-              {/* Esquina superior izquierda: estado + evidencia + ranking */}
-              <div className="absolute left-3 top-3 z-10 flex flex-col items-start gap-1.5">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-black/55 px-2 py-1 text-[9px] font-semibold uppercase tracking-wide text-neutral-200 backdrop-blur-sm">
+              {/* Esquina superior izquierda: estado (sin pill, solo
+                  texto con drop-shadow para legibilidad) + a lo sumo un
+                  indicador secundario — nunca más de 2 a la vez. */}
+              <div className="absolute left-3 top-2.5 z-10 flex items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-wide text-white/95 [text-shadow:0_1px_3px_rgba(0,0,0,0.85)]">
                   <span className={cn('h-1.5 w-1.5 rounded-full', STATUS_DOT_CLASS[entity.status])} aria-hidden="true" />
                   {statusText}
                 </span>
-                {evidenceStamp && (
+                {secondaryBadge && (
                   <span
-                    className="inline-flex items-center gap-1 rounded-full border border-auto-accent/30 bg-auto-accent/15 px-2 py-1 text-[9px] font-semibold uppercase tracking-wide text-auto-accent backdrop-blur-sm"
-                    title="Nivel de evidencia — ver detalle completo en la ficha"
+                    className="inline-flex items-center gap-1 rounded-full border border-auto-accent/35 bg-black/45 px-1.5 py-[3px] text-[8.5px] font-bold uppercase tracking-wide text-auto-accent backdrop-blur-sm"
+                    title={secondaryBadge.title}
                   >
-                    <span aria-hidden="true">{evidenceStamp.icon}</span>
-                    {evidenceStamp.shortLabel}
+                    <span aria-hidden="true">{secondaryBadge.icon}</span>
+                    {secondaryBadge.label}
                   </span>
-                )}
-                {rankBadge && (
-                  <span className="inline-flex items-center gap-1 rounded-full border border-auto-accent/40 bg-neutral-900/85 px-2 py-1 text-[9px] font-bold uppercase tracking-wide text-auto-accent backdrop-blur-sm">
-                    #{rankBadge.position} · {rankBadge.metricLabel}
-                  </span>
-                )}
-                {compareEnabled && (
-                  <CompareCheckbox
-                    checked={compareChecked}
-                    disabled={compareDisabled}
-                    onToggle={onCompareToggle}
-                    title={entity.title}
-                  />
                 )}
               </div>
 
-              {/* Esquina superior derecha: favorito — circular, chico,
-                  acción secundaria de marketplace premium. */}
-              <div className="absolute right-3 top-3 z-10">
+              {/* Esquina superior derecha: favorito — único control
+                  flotante que queda sobre la foto. */}
+              <div className="absolute right-2.5 top-2.5 z-10">
                 <WishlistButton type={entity.type} slug={entity.slug} title={entity.title} />
               </div>
 
@@ -456,26 +481,25 @@ export function EntityCard({
                       hovering ? 'opacity-100' : ambientVisible ? 'opacity-35' : 'opacity-0'
                     )}
                   />
-                  <span className="absolute right-3 top-14 z-10 inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/60 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-0">
+                  <span className="absolute right-2.5 top-11 z-10 inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/60 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-0">
                     <MiniIcon name="play" />
                     <span aria-hidden="true">Clip</span>
                   </span>
                 </>
               )}
 
-              {/* Marca + modelo, superpuestos sobre el gradiente — el
-                  elemento tipográfico principal de la card, no un
-                  <h2> de dashboard debajo de la foto. */}
-              <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-3">
+              {/* Marca + modelo, superpuestos sobre el degradado — el
+                  elemento tipográfico principal de la card. */}
+              <div className="absolute inset-x-0 bottom-0 z-10 px-3.5 pb-2.5">
                 {brand && (
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-neutral-300/90">
+                  <p className="truncate text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-300/90">
                     {brand}
                   </p>
                 )}
                 <h2
                   className={cn(
-                    'font-bold leading-[1.05] tracking-tight text-white transition-colors group-hover/card:text-auto-accent',
-                    isCompact ? 'text-lg' : 'text-2xl sm:text-[1.7rem]'
+                    'truncate font-bold leading-[1.08] tracking-tight text-white transition-colors group-hover/card:text-auto-accent',
+                    isCompact ? 'text-base' : 'text-xl sm:text-[1.45rem]'
                   )}
                 >
                   {model}
@@ -483,20 +507,52 @@ export function EntityCard({
               </div>
             </div>
 
-            {/* SUPERFICIE DE INFORMACIÓN — mínima, ~38% de la card */}
-            <div className={cn('flex flex-1 flex-col gap-2.5', isCompact ? 'px-3.5 pb-3.5 pt-2.5' : 'px-4 pb-4 pt-3')}>
-              {secondaryLine && (
-                <p className="truncate text-[11px] font-medium uppercase tracking-wide text-neutral-500">
-                  {secondaryLine}
-                </p>
+            {/* SUPERFICIE DE INFORMACIÓN — compacta, sin bordes salvo un
+                único separador sutil antes de precio/CTA. */}
+            <div
+              className={cn(
+                'flex flex-1 flex-col justify-between gap-2',
+                isCompact ? 'min-h-[72px] px-3 pb-3 pt-2' : 'min-h-[84px] px-3.5 pb-3.5 pt-2.5'
+              )}
+            >
+              {(secondaryLine || compareEnabled) && (
+                <div className="flex items-center justify-between gap-2">
+                  {secondaryLine ? (
+                    <p className="truncate text-[10.5px] font-medium uppercase tracking-wide text-neutral-500">
+                      {secondaryLine}
+                    </p>
+                  ) : (
+                    <span aria-hidden="true" />
+                  )}
+                  {compareEnabled && (
+                    <label
+                      className={cn(
+                        'inline-flex shrink-0 cursor-pointer items-center gap-1.5 text-[10px] font-medium text-neutral-500 transition-colors hover:text-neutral-300',
+                        compareDisabled && 'cursor-not-allowed opacity-50'
+                      )}
+                      onClick={(event) => event.stopPropagation()}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={compareChecked}
+                        disabled={compareDisabled}
+                        onChange={() => onCompareToggle?.()}
+                        onClick={(event) => event.stopPropagation()}
+                        className="h-3 w-3 cursor-pointer rounded-sm accent-auto-accent disabled:cursor-not-allowed"
+                        aria-label={`Comparar ${entity.title}`}
+                      />
+                      Comparar
+                    </label>
+                  )}
+                </div>
               )}
 
               {specs.length > 0 && (
-                <div className="flex items-center gap-4 border-y border-neutral-800/70 py-2">
+                <div className="flex items-center gap-4">
                   {specs.map((spec) => (
                     <div key={spec.label} className="flex flex-col">
                       <span className="text-sm font-bold tabular-nums text-neutral-100">{spec.value}</span>
-                      <span className="text-[8.5px] font-semibold uppercase tracking-wide text-neutral-500">
+                      <span className="text-[9px] font-semibold uppercase tracking-wide text-neutral-500">
                         {spec.label}
                       </span>
                     </div>
@@ -504,13 +560,11 @@ export function EntityCard({
                 </div>
               )}
 
-              <div className="mt-auto flex items-center justify-between gap-2 pt-0.5">
-                {price ? (
-                  <span className="text-[15px] font-extrabold tracking-tight text-auto-accent">{price}</span>
-                ) : (
-                  <span aria-hidden="true" />
-                )}
-                <span className="inline-flex shrink-0 items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-400 transition-colors duration-200 group-hover/card:text-auto-accent">
+              <div className="flex items-center justify-between gap-3 border-t border-neutral-800/60 pt-2">
+                <span className="min-w-0 flex-1 truncate text-lg font-extrabold tracking-tight text-auto-accent">
+                  {price ?? '\u00A0'}
+                </span>
+                <span className="inline-flex shrink-0 items-center gap-1 text-[10.5px] font-semibold uppercase tracking-wide text-neutral-400 transition-colors duration-200 group-hover/card:text-auto-accent">
                   Ver detalles
                   <span aria-hidden="true" className="transition-transform duration-200 group-hover/card:translate-x-0.5">
                     →
