@@ -1,14 +1,16 @@
 import { NextResponse } from 'next/server'
-import PDFDocument from 'pdfkit'
+import { PDFDocument } from 'pdf-lib'
 import { EntityType, type Vehicle } from '@/types'
 import { getEntitiesByType } from '@/lib/entities'
 import { getPayment, isMercadoPagoConfigured } from '@/lib/mercadopago'
 import { externalReferenceMatchesSlugs, isValidSlugSelection, normalizeSlugs } from '@/lib/premium-report'
 import { SITE_NAME, SITE_URL } from '@/config/site'
+import { A4_HEIGHT, A4_WIDTH, PdfCursor, embedStandardFonts, hexToRgb } from '@/lib/pdf/render'
 
-// pdfkit necesita el runtime de Node (fs, streams reales) — no corre en
-// el runtime Edge. Mismo motivo por el que `generate-media-kit.mjs` es
-// un script de Node y no algo que corra en el navegador.
+// pdf-lib no toca el filesystem (a diferencia de pdfkit, que lee sus
+// fuentes .afm con fs.readFileSync en runtime y por eso rompe en
+// workerd/Cloudflare Workers), pero igual dejamos el runtime Node
+// explícito por las dudas de otras dependencias del handler.
 export const runtime = 'nodejs'
 
 const COLORS = {
@@ -78,9 +80,9 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'Uno o más vehículos ya no están disponibles.' }, { status: 404 })
   }
 
-  const pdfBuffer = await buildReportPdf(vehicles)
+  const pdfBytes = await buildReportPdf(vehicles)
 
-  return new NextResponse(pdfBuffer as unknown as BodyInit, {
+  return new NextResponse(pdfBytes as unknown as BodyInit, {
     headers: {
       'Content-Type': 'application/pdf',
       'Content-Disposition': `attachment; filename="reporte-${vehicles.map((v) => v.slug).join('-')}.pdf"`,
@@ -107,100 +109,106 @@ function fieldToText(value: unknown): string {
   return String(value)
 }
 
-async function buildReportPdf(vehicles: Vehicle[]): Promise<Buffer> {
-  return new Promise((resolve, reject) => {
-    const doc = new PDFDocument({ size: 'A4', margin: 50 })
-    const chunks: Buffer[] = []
-    doc.on('data', (chunk) => chunks.push(chunk as Buffer))
-    doc.on('end', () => resolve(Buffer.concat(chunks)))
-    doc.on('error', reject)
+async function buildReportPdf(vehicles: Vehicle[]): Promise<Uint8Array> {
+  const doc = await PDFDocument.create()
+  const { regular, bold } = await embedStandardFonts(doc)
 
-    function paintBackground() {
-      doc.rect(0, 0, doc.page.width, doc.page.height).fill(COLORS.bg)
+  const bg = hexToRgb(COLORS.bg)
+  const accent = hexToRgb(COLORS.accent)
+  const text = hexToRgb(COLORS.text)
+  const textSecondary = hexToRgb(COLORS.textSecondary)
+  const border = hexToRgb(COLORS.border)
+
+  const CONTENT_WIDTH = 495 // 545 - 50, igual que el margin:50 original
+
+  function paintBackground(page: import('pdf-lib').PDFPage) {
+    page.drawRectangle({ x: 0, y: 0, width: A4_WIDTH, height: A4_HEIGHT, color: bg })
+  }
+
+  const firstPage = doc.addPage([A4_WIDTH, A4_HEIGHT])
+  paintBackground(firstPage)
+
+  const cursor = new PdfCursor(doc, firstPage, 60, paintBackground)
+
+  function heading(value: string, size = 18) {
+    cursor.text(value, 50, CONTENT_WIDTH, { font: bold, size, color: accent })
+    cursor.y += 8
+  }
+
+  function subheading(value: string) {
+    cursor.text(value, 50, CONTENT_WIDTH, { font: bold, size: 13, color: text })
+    cursor.y += 6
+  }
+
+  function paragraph(value: string, color = textSecondary, size = 10.5) {
+    cursor.text(value, 50, CONTENT_WIDTH, { font: regular, size, color })
+    cursor.y += 8
+  }
+
+  function row(label: string, value: string) {
+    cursor.ensureSpace(40)
+    const startY = cursor.y
+
+    // Etiqueta (columna izquierda, ancho 160).
+    cursor.text(label, 50, 160, { font: bold, size: 9.5, color: textSecondary })
+    const labelEndY = cursor.y
+
+    // Valor (columna derecha, ancho 325) — vuelve a partir de startY.
+    cursor.y = startY
+    cursor.text(value, 220, 325, { font: regular, size: 9.5, color: text })
+    const valueEndY = cursor.y
+
+    cursor.y = Math.max(labelEndY, valueEndY) + 6
+  }
+
+  function divider() {
+    cursor.hLine(50, 545, cursor.y, border, 1)
+    cursor.y += 16
+  }
+
+  // --- Portada ---
+  heading(SITE_NAME, 22)
+  paragraph('Reporte comparativo premium', text, 13)
+  paragraph(
+    `Generado el ${new Date().toLocaleDateString('es-AR', { day: '2-digit', month: 'long', year: 'numeric' })} · ${SITE_URL}`
+  )
+  divider()
+
+  paragraph(
+    `Comparación entre ${vehicles.length} vehículos: ${vehicles.map((v) => v.title).join(', ')}. Cada dato ` +
+      'conserva el nivel de evidencia y la fuente citada en la ficha original — este PDF no agrega ni ' +
+      'infiere ningún valor que no esté ya publicado en el sitio.'
+  )
+  divider()
+
+  for (const vehicle of vehicles) {
+    cursor.ensureSpace(160)
+    subheading(`${vehicle.title}${vehicle.manufacturer ? ` — ${vehicle.manufacturer}` : ''}`)
+    cursor.y += 4
+
+    for (const { key, label } of SPEC_ROWS) {
+      row(label, fieldToText(vehicle[key]))
     }
-    paintBackground()
-    doc.on('pageAdded', paintBackground)
 
-    let y = 60
-
-    function heading(text: string, size = 18) {
-      doc.fillColor(COLORS.accent).font('Helvetica-Bold').fontSize(size).text(text, 50, y, { width: 495 })
-      y = doc.y + 8
-    }
-
-    function subheading(text: string) {
-      doc.fillColor(COLORS.text).font('Helvetica-Bold').fontSize(13).text(text, 50, y, { width: 495 })
-      y = doc.y + 6
-    }
-
-    function paragraph(text: string, color = COLORS.textSecondary, size = 10.5) {
-      doc.fillColor(color).font('Helvetica').fontSize(size).text(text, 50, y, { width: 495 })
-      y = doc.y + 8
-    }
-
-    function row(label: string, value: string) {
-      ensureSpace(40)
-      doc.fillColor(COLORS.textSecondary).font('Helvetica-Bold').fontSize(9.5).text(label, 50, y, { width: 160 })
-      doc.fillColor(COLORS.text).font('Helvetica').fontSize(9.5).text(value, 220, y, { width: 325 })
-      y = Math.max(doc.y, y) + 6
-    }
-
-    function divider() {
-      doc.moveTo(50, y).lineTo(545, y).strokeColor(COLORS.border).lineWidth(1).stroke()
-      y += 16
-    }
-
-    function ensureSpace(minSpace = 100) {
-      if (y > doc.page.height - minSpace) {
-        doc.addPage()
-        y = 60
+    if (vehicle.evidence) {
+      row('Nivel de evidencia', vehicle.evidence.level)
+      if (vehicle.evidence.primarySource) {
+        row('Fuente primaria', vehicle.evidence.primarySource)
       }
     }
 
-    // --- Portada ---
-    heading(SITE_NAME, 22)
-    paragraph('Reporte comparativo premium', COLORS.text, 13)
-    paragraph(
-      `Generado el ${new Date().toLocaleDateString('es-AR', { day: '2-digit', month: 'long', year: 'numeric' })} · ${SITE_URL}`
-    )
+    row('Ficha completa', `${SITE_URL}/vehiculos/${vehicle.slug}`)
     divider()
+  }
 
-    paragraph(
-      `Comparación entre ${vehicles.length} vehículos: ${vehicles.map((v) => v.title).join(', ')}. Cada dato ` +
-        'conserva el nivel de evidencia y la fuente citada en la ficha original — este PDF no agrega ni ' +
-        'infiere ningún valor que no esté ya publicado en el sitio.'
-    )
-    divider()
+  cursor.ensureSpace(120)
+  subheading('Aviso')
+  paragraph(
+    'Este reporte es una recopilación de datos técnicos publicados y citados en ' +
+      `${SITE_NAME}, pensada para guardar o compartir. No constituye asesoramiento de compra, ` +
+      'legal ni financiero. Precios y specs pueden variar por región y quedar desactualizados con ' +
+      'el tiempo — la ficha online enlazada arriba siempre tiene la versión más reciente.'
+  )
 
-    for (const vehicle of vehicles) {
-      ensureSpace(160)
-      subheading(`${vehicle.title}${vehicle.manufacturer ? ` — ${vehicle.manufacturer}` : ''}`)
-      y += 4
-
-      for (const { key, label } of SPEC_ROWS) {
-        row(label, fieldToText(vehicle[key]))
-      }
-
-      if (vehicle.evidence) {
-        row('Nivel de evidencia', vehicle.evidence.level)
-        if (vehicle.evidence.primarySource) {
-          row('Fuente primaria', vehicle.evidence.primarySource)
-        }
-      }
-
-      row('Ficha completa', `${SITE_URL}/vehiculos/${vehicle.slug}`)
-      divider()
-    }
-
-    ensureSpace(120)
-    subheading('Aviso')
-    paragraph(
-      'Este reporte es una recopilación de datos técnicos publicados y citados en ' +
-        `${SITE_NAME}, pensada para guardar o compartir. No constituye asesoramiento de compra, ` +
-        'legal ni financiero. Precios y specs pueden variar por región y quedar desactualizados con ' +
-        'el tiempo — la ficha online enlazada arriba siempre tiene la versión más reciente.'
-    )
-
-    doc.end()
-  })
+  return doc.save()
 }

@@ -1,11 +1,14 @@
 import { NextResponse } from 'next/server'
-import PDFDocument from 'pdfkit'
+import { PDFDocument } from 'pdf-lib'
 import { getPayment, isMercadoPagoConfigured } from '@/lib/mercadopago'
 import { decodeFlyerData, externalReferenceMatchesData } from '@/lib/for-sale-flyer'
 import { SITE_NAME, SITE_URL } from '@/config/site'
+import { A4_HEIGHT, A4_WIDTH, PdfCursor, embedStandardFonts, hexToRgb } from '@/lib/pdf/render'
 
-// Mismo motivo que /api/premium-report/pdf: pdfkit necesita el runtime
-// de Node.
+// pdf-lib no toca el filesystem (a diferencia de pdfkit, que lee sus
+// fuentes .afm con fs.readFileSync en runtime y por eso rompe en
+// workerd/Cloudflare Workers), pero igual dejamos el runtime Node
+// explícito por las dudas de otras dependencias del handler.
 export const runtime = 'nodejs'
 
 const COLORS = {
@@ -63,9 +66,9 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'El pago no corresponde a estos datos.' }, { status: 403 })
   }
 
-  const pdfBuffer = await buildFlyerPdf(data)
+  const pdfBytes = await buildFlyerPdf(data)
 
-  return new NextResponse(pdfBuffer as unknown as BodyInit, {
+  return new NextResponse(pdfBytes as unknown as BodyInit, {
     headers: {
       'Content-Type': 'application/pdf',
       'Content-Disposition': `attachment; filename="cartel-venta-${data.marca}-${data.modelo}.pdf"`.replace(/\s+/g, '-'),
@@ -82,87 +85,76 @@ async function buildFlyerPdf(data: {
   km?: string
   contacto: string
   ubicacion?: string
-}): Promise<Buffer> {
-  return new Promise((resolve, reject) => {
-    // Tamaño A4 vertical pensado para imprimir y pegar en el parabrisas.
-    const doc = new PDFDocument({ size: 'A4', margin: 0 })
-    const chunks: Buffer[] = []
-    doc.on('data', (chunk) => chunks.push(chunk as Buffer))
-    doc.on('end', () => resolve(Buffer.concat(chunks)))
-    doc.on('error', reject)
+}): Promise<Uint8Array> {
+  const doc = await PDFDocument.create()
+  const { regular, bold } = await embedStandardFonts(doc)
 
-    const pageWidth = doc.page.width
-    const pageHeight = doc.page.height
+  // Tamaño A4 vertical pensado para imprimir y pegar en el parabrisas.
+  const page = doc.addPage([A4_WIDTH, A4_HEIGHT])
+  const pageWidth = A4_WIDTH
+  const pageHeight = A4_HEIGHT
 
-    doc.rect(0, 0, pageWidth, pageHeight).fill(COLORS.bg)
+  const bg = hexToRgb(COLORS.bg)
+  const accent = hexToRgb(COLORS.accent)
+  const text = hexToRgb(COLORS.text)
+  const textSecondary = hexToRgb(COLORS.textSecondary)
+  const border = hexToRgb(COLORS.border)
+  const dark = hexToRgb('#12151a')
 
-    // Franja superior de marca.
-    doc.rect(0, 0, pageWidth, 90).fill(COLORS.accent)
-    doc
-      .fillColor('#12151a')
-      .font('Helvetica-Bold')
-      .fontSize(26)
-      .text('SE VENDE', 0, 28, { width: pageWidth, align: 'center' })
+  const cursor = new PdfCursor(doc, page, 0)
 
-    let y = 140
+  cursor.rect(0, 0, pageWidth, pageHeight, bg)
 
-    doc
-      .fillColor(COLORS.text)
-      .font('Helvetica-Bold')
-      .fontSize(38)
-      .text(`${data.marca}`, 40, y, { width: pageWidth - 80, align: 'center' })
-    y = doc.y + 4
-    doc
-      .fillColor(COLORS.text)
-      .font('Helvetica-Bold')
-      .fontSize(30)
-      .text(`${data.modelo}`, 40, y, { width: pageWidth - 80, align: 'center' })
-    y = doc.y + 10
+  // Franja superior de marca.
+  cursor.rect(0, 0, pageWidth, 90, accent)
+  cursor.y = 28
+  cursor.text('SE VENDE', 0, pageWidth, { font: bold, size: 26, color: dark, align: 'center' })
 
-    doc
-      .fillColor(COLORS.textSecondary)
-      .font('Helvetica')
-      .fontSize(16)
-      .text(`Año ${data.anio}${data.km ? ` · ${data.km}` : ''}`, 40, y, { width: pageWidth - 80, align: 'center' })
-    y = doc.y + 30
+  cursor.y = 140
 
-    // Precio, el elemento más grande de la página — es lo que se lee
-    // desde lejos.
-    doc
-      .fillColor(COLORS.accent)
-      .font('Helvetica-Bold')
-      .fontSize(48)
-      .text(data.precio, 40, y, { width: pageWidth - 80, align: 'center' })
-    y = doc.y + 40
+  cursor.text(data.marca, 40, pageWidth - 80, { font: bold, size: 38, color: text, align: 'center' })
+  cursor.y += 4
+  cursor.text(data.modelo, 40, pageWidth - 80, { font: bold, size: 30, color: text, align: 'center' })
+  cursor.y += 10
 
-    doc.moveTo(60, y).lineTo(pageWidth - 60, y).strokeColor(COLORS.border).lineWidth(1).stroke()
-    y += 30
-
-    doc
-      .fillColor(COLORS.text)
-      .font('Helvetica-Bold')
-      .fontSize(20)
-      .text(`📞 ${data.contacto}`, 40, y, { width: pageWidth - 80, align: 'center' })
-    y = doc.y + 14
-
-    if (data.ubicacion) {
-      doc
-        .fillColor(COLORS.textSecondary)
-        .font('Helvetica')
-        .fontSize(14)
-        .text(`📍 ${data.ubicacion}`, 40, y, { width: pageWidth - 80, align: 'center' })
-      y = doc.y + 14
-    }
-
-    doc
-      .fillColor(COLORS.textSecondary)
-      .font('Helvetica')
-      .fontSize(10)
-      .text(`Generado con ${SITE_NAME} · ${SITE_URL}`, 40, pageHeight - 50, {
-        width: pageWidth - 80,
-        align: 'center',
-      })
-
-    doc.end()
+  cursor.text(`Año ${data.anio}${data.km ? ` · ${data.km}` : ''}`, 40, pageWidth - 80, {
+    font: regular,
+    size: 16,
+    color: textSecondary,
+    align: 'center',
   })
+  cursor.y += 30
+
+  // Precio, el elemento más grande de la página — es lo que se lee
+  // desde lejos.
+  cursor.text(data.precio, 40, pageWidth - 80, { font: bold, size: 48, color: accent, align: 'center' })
+  cursor.y += 40
+
+  cursor.hLine(60, pageWidth - 60, cursor.y, border, 1)
+  cursor.y += 30
+
+  // Sin emoji: las fuentes estándar de pdf-lib usan WinAnsi, que no
+  // los soporta (tirarían error al dibujar).
+  cursor.text(`Tel: ${data.contacto}`, 40, pageWidth - 80, { font: bold, size: 20, color: text, align: 'center' })
+  cursor.y += 14
+
+  if (data.ubicacion) {
+    cursor.text(`Zona: ${data.ubicacion}`, 40, pageWidth - 80, {
+      font: regular,
+      size: 14,
+      color: textSecondary,
+      align: 'center',
+    })
+    cursor.y += 14
+  }
+
+  cursor.y = pageHeight - 50
+  cursor.text(`Generado con ${SITE_NAME} · ${SITE_URL}`, 40, pageWidth - 80, {
+    font: regular,
+    size: 10,
+    color: textSecondary,
+    align: 'center',
+  })
+
+  return doc.save()
 }
