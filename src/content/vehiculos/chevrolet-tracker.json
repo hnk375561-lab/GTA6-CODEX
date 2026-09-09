@@ -64,8 +64,8 @@
   },
   "evidence": {
     "level": "respaldado",
-    "secondarySource": "https://www.chevrolet.com.mx/suvs/tracker-mejor-suv",
-    "note": "Datos técnicos y de dimensiones verificados para la Chevrolet Tracker con motor 1.2L turbo y especificaciones regionales.",
+    "secondarySource": "https://en.wikipedia.org/wiki/GM_E-Turbo_engine",
+    "note": "Datos técnicos y de dimensiones verificados para la Chevrolet Tracker con motor 1.2L turbo y especificaciones regionales. Ronda 5 (2026-09-08): se reemplazó el bloque contaminado con el placeholder genérico (10.5:1 copiado sin verificar) por datos del motor real L4H 1.2L Turbo DOHC (confirmado por fichas oficiales GM Chile/Bolivia), inyección multipunto (no directa), PCD 5x105 (confirmado, distinto al 5x114.3 genérico), plataforma GEM compartida con Onix Plus/Montana para la suspensión. La compresión exacta de la variante 1.2L no tiene fuente pública específica (solo se conoce el rango de la familia CSS Prime/E-Turbo, 9.5-12.5:1 según motor); se dejó como estimado explícito en vez de copiar el valor genérico sin verificar.",
     "limitations": [
       "Los precios varían según el mercado específico y la versión disponible",
       "Las especificaciones de equipamiento cambian según la versión (LT, LTZ, Premier, RS)"
@@ -92,63 +92,63 @@
   "consumoEtiqueta": "E",
   "neumaticos": "225/50R17",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "filtro_aire": "Filtro de panel de celulosa",
+    "tipo_valvulas": "DOHC (motor L4H 1.2L turbo 3 cilindros), confirmado por ficha oficial GM Chile/Bolivia",
+    "ratio_compresion": "Estimado 10.0-10.5:1 (familia GM CSS Prime/E-Turbo, mismo bloque que el Onix 1.0T; no se encontró fuente pública con el valor exacto de la variante 1.2L)",
+    "sistemas_inyeccion": "Inyección electrónica multipunto (port injection), no directa",
+    "arbol_levas": "Doble árbol a la cabeza (DOHC)"
   },
   "especificacionesTransmision": {
-    "tipo_automatico": "Convertidor",
-    "control_cambios": "Secuencial",
-    "sist_propulsion": "Traccion",
-    "velocidades": "8/9 velocidades"
+    "tipo_automatico": "Convertidor de par, 6 velocidades",
+    "control_cambios": "Secuencial en modo manual (versión automática)",
+    "sist_propulsion": "Tracción delantera (FWD)",
+    "velocidades": "Manual de 5-6 velocidades (versión base) o automática de 6"
   },
   "especificacionesSuspension": {
-    "tipo_trasera": "Multilink",
-    "barra_estabilizadora": "26/20 mm",
-    "tipo_delantera": "MacPherson",
-    "amortiguadores": "Doble tubo",
-    "recorrido_vertical": "+-150 mm"
+    "tipo_delantera": "MacPherson independiente (plataforma GM GEM, compartida con Onix Plus/Montana)",
+    "tipo_trasera": "Semi-independiente de eje de torsión, típico del segmento B-SUV sobre plataforma GEM",
+    "amortiguadores": "Monotubo a gas",
+    "barra_estabilizadora": "Presente en el eje delantero",
+    "recorrido_vertical": "No publicado por Chevrolet en la ficha regional"
   },
   "especificacionesRuedas": {
-    "offset": "+35 a +45 mm",
-    "indice_velocidad": "T/V",
-    "indice_carga": "91",
-    "profundidad_surcos": "1.6 mm",
-    "pcd": "5x114.3"
+    "offset": "No publicado oficialmente",
+    "indice_velocidad": "T/H según versión y medida de neumático (llantas 16\"-17\" de fábrica)",
+    "indice_carga": "Estimado 91-94 según medida de fábrica",
+    "profundidad_surcos": "1.6 mm (mínimo legal)",
+    "pcd": "5x105"
   },
   "especificacionesDireccion": {
-    "tipo_asistencia": "Electrica progresiva",
-    "sistema_control": "Control electronico",
-    "angulo_max_giro": "32-35 grados",
-    "vueltas_calador": "2.5-3.0"
+    "tipo_asistencia": "Eléctrica",
+    "sistema_control": "Asistencia variable según velocidad",
+    "angulo_max_giro": "No publicado por Chevrolet",
+    "vueltas_calador": "No publicado por Chevrolet"
   },
   "aerodinámica": {
-    "defectores_aire": "Canales laterales",
-    "spoiler_trasero": "Integrado",
-    "area_frontal": "2.2-2.4 m2",
-    "coeficiente_arrastre": "Cx 0.27-0.32"
+    "defectores_aire": "No especificado en ficha regional",
+    "spoiler_trasero": "De serie en la mayoría de las versiones (SUV con línea de techo tipo coupé)",
+    "area_frontal": "No publicado oficialmente (estimado 2.3-2.4 m², típico de SUV compacto)",
+    "coeficiente_arrastre": "No publicado oficialmente por Chevrolet (estimado Cx 0.33-0.35, típico de SUV B)"
   },
   "capacidadesAdicionales": {
-    "capacidad_refrigerante": "7-9 L",
-    "capacidad_lavaparabrisas": "3-4 L",
-    "liquido_frenos": "0.75-0.85 L",
-    "capacidad_aceite": "4.5-5.5 L",
-    "filtro_habitaculo": "Carbon activado"
+    "capacidad_refrigerante": "Estimado 4.5-5 L (no publicado con precisión en ficha regional)",
+    "capacidad_lavaparabrisas": "Estimado 3 L",
+    "liquido_frenos": "DOT 3/4, aprox. 0.5 L",
+    "capacidad_aceite": "Estimado 3.5-4 L con filtro (motor 1.2T 3 cilindros)",
+    "filtro_habitaculo": "No especificado en ficha regional"
   },
   "climatizacionAvanzada": {
-    "control": "Trizona",
-    "modo": "Recirculacion",
-    "filtro": "Carbon",
-    "desempanante": "Trasero/Lateral"
+    "control": "Manual (LS) o automático (LTZ/Premier, según equipamiento oficial)",
+    "modo": "Recirculación manual o automática según versión",
+    "filtro": "No especificado en ficha regional",
+    "desempanante": "Desempañador eléctrico de vidrio trasero"
   },
   "mantenimientoPrograma": {
-    "filtro": "25.000-30.000 km",
-    "aceite": "15.000 km",
-    "frenos": "Anual",
-    "ruedas": "Anual",
-    "refrigerante": "2 anos"
+    "filtro": "Filtro de aceite en cada cambio; filtro de aire según plan de mantenimiento GM (no publicado con km exacto)",
+    "aceite": "Cada 10.000-15.000 km según plan de mantenimiento Chevrolet Argentina",
+    "frenos": "Inspección según plan de mantenimiento oficial",
+    "ruedas": "Rotación recomendada cada 10.000 km",
+    "refrigerante": "No publicado con intervalo exacto en ficha regional"
   },
   "consumo": "6.6 L/100 km mixto",
   "dimensiones": "4304 x 2044 x 1624 mm",

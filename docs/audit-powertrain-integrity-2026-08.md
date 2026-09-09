@@ -316,3 +316,30 @@ tocar — el resto de sus campos sí cambió sustancialmente). Continúa en
 tandas de 5, próximas marcas masivas por orden de búsqueda: Ford, VW,
 Chevrolet, Honda, Toyota, Hyundai, Nissan (resto de sus modelos en el
 catálogo), luego Renault/Fiat/Peugeot.
+
+### Tanda 2 (2026-09-08): 5/206 vehículos con specs reales verificadas
+
+- `fiat-cronos.json` — motor Firefly 1.3 N4 8V real: compresión 13.2:1
+  (muy alta, no 10.5:1), SOHC 8V (no DOHC), MPFI (no directa), PCD 4x98.
+  Fuentes: Wikipedia (Fiat Global Small Engine), prensa técnica brasileña.
+- `renault-sandero.json` — ficha técnica oficial Renault Argentina
+  (motor1.com PDF): motor H4M real, compresión 10.7:1 (no 10.5:1),
+  inyección indirecta (no directa), dirección electrohidráulica (no
+  eléctrica pura), suspensión con descripción textual oficial completa,
+  PCD 4x100.
+- `volkswagen-amarok.json` — otro caso grave: tenía specs de auto FWD en
+  una pickup diésel V6 4x4. Motor V6 3.0 TDI real (familia EA897): DOHC
+  24V, Common Rail directo, suspensión delantera de paralelogramo
+  deformable / trasera de ballestas (ficha oficial VW Perú + prensa
+  especializada), PCD 5x120 (no 6x139.7 de la Ranger, ya que esta gen.
+  de Amarok usa plataforma propia VW). Compresión exacta no publicada
+  con precisión para esta variante puntual; se dejó como estimado de
+  familia, marcado como tal.
+- `chevrolet-tracker.json` — motor real L4H 1.2T DOHC (ficha oficial GM
+  Chile/Bolivia), inyección multipunto (no directa), PCD 5x105 (no
+  5x114.3 genérico). Compresión exacta de la variante 1.2L sin fuente
+  pública específica; se dejó como estimado de familia (CSS Prime/
+  E-Turbo), no copiada del placeholder.
+
+Quedan **202** vehículos pendientes (206 - 4; nota: el Sandero conservó
+compresión distinta al placeholder en todos los campos igual, ver commit).

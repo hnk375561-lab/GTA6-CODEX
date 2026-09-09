@@ -66,8 +66,8 @@
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://renault-yopal.loscoches.com/vehiculos-nuevos/renault-sandero.html",
-    "secondarySource": "https://www.facebook.com/RenaultEcuador/videos/sandero/437485559035684",
-    "note": "Se verificaron las especificaciones técnicas generales del Renault Sandero, incluyendo la potencia de 110 hp con motor 1.6 SCe, la capacidad del baúl de 320 litros, las opciones de transmisión manual y CVT, así como el precio de referencia regional a partir de $16.490 USD.",
+    "secondarySource": "https://cdn.motor1.com/pdf-files/ficha-tecnica-renault-sandero-esp.pdf",
+    "note": "Se verificaron las especificaciones técnicas generales del Renault Sandero, incluyendo la potencia de 110 hp con motor 1.6 SCe, la capacidad del baúl de 320 litros, las opciones de transmisión manual y CVT, así como el precio de referencia regional a partir de $16.490 USD. Ronda 5 (2026-09-08): se reemplazó el bloque contaminado con el placeholder genérico (10.5:1, dirección 'eléctrica progresiva' genérica) por datos de la ficha técnica oficial Renault Argentina (PDF motor1.com): motor H4M real (compresión 10.7:1, no 10.5:1; inyección indirecta multipunto, no directa; dirección electrohidráulica, no eléctrica pura; suspensión delantera McPherson con barra antirrolido y trasera de eje flexible con barra estabilizadora integrada, ambas con detalle textual oficial). PCD 4x100 verificado. Cx, ángulo de giro y varias capacidades de fluido no están publicados oficialmente y se dejaron como no publicado o estimado del segmento.",
     "limitations": [
       "Los precios y las configuraciones exactas varían según el mercado específico de comercialización en Latinoamérica.",
       "Algunas opciones de equipamiento y asistencia a la conducción dependen de la versión elegida (Life+, Zen, Intens)."
@@ -94,63 +94,63 @@
   "consumoEtiqueta": "E",
   "neumaticos": "225/50R17",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "filtro_aire": "Filtro de panel de celulosa",
+    "tipo_valvulas": "16 válvulas (4 por cilindro, motor 4 cilindros)",
+    "ratio_compresion": "10.7:1 (motor H4M, dato oficial ficha técnica Renault Argentina)",
+    "sistemas_inyeccion": "Inyección indirecta multipunto (no directa)",
+    "arbol_levas": "No detallado como SOHC/DOHC en la ficha oficial (motor H4M de 16V)"
   },
   "especificacionesTransmision": {
-    "tipo_automatico": "Convertidor",
-    "control_cambios": "Secuencial",
-    "sist_propulsion": "Traccion",
-    "velocidades": "8/9 velocidades"
+    "tipo_automatico": "CVT X-Tronic (versiones Intens CVT/GT Line CVT)",
+    "control_cambios": "Sin modo manual simulado (CVT sin relaciones fijas)",
+    "sist_propulsion": "Tracción delantera",
+    "velocidades": "Manual de 5 velocidades (dato oficial) o CVT según versión"
   },
   "especificacionesSuspension": {
-    "tipo_trasera": "Multilink",
-    "barra_estabilizadora": "26/20 mm",
-    "tipo_delantera": "MacPherson",
-    "amortiguadores": "Doble tubo",
-    "recorrido_vertical": "+-150 mm"
+    "tipo_delantera": "MacPherson con brazo inferior rectangular (efecto antipercusión), barra antirrolido, resortes helicoidales y amortiguadores hidráulicos (dato oficial Renault)",
+    "tipo_trasera": "Eje flexible (viga de torsión) con punto de fijación exterior, deflexión programada, resortes helicoidales, barra estabilizadora integrada, amortiguadores hidráulicos telescópicos (dato oficial Renault)",
+    "amortiguadores": "Hidráulicos telescópicos",
+    "barra_estabilizadora": "Presente en ambos ejes (delantero y trasero), según ficha oficial",
+    "recorrido_vertical": "No publicado por Renault"
   },
   "especificacionesRuedas": {
-    "offset": "+35 a +45 mm",
-    "indice_velocidad": "T/V",
-    "indice_carga": "91",
-    "profundidad_surcos": "1.6 mm",
-    "pcd": "5x114.3"
+    "offset": "No publicado en la ficha oficial",
+    "indice_velocidad": "T/H según versión y medida de neumático (185/65R15 o 195/55R16)",
+    "indice_carga": "Estimado 87-91 según medida de fábrica",
+    "profundidad_surcos": "1.6 mm (mínimo legal)",
+    "pcd": "4x100"
   },
   "especificacionesDireccion": {
-    "tipo_asistencia": "Electrica progresiva",
-    "sistema_control": "Control electronico",
-    "angulo_max_giro": "32-35 grados",
-    "vueltas_calador": "2.5-3.0"
+    "tipo_asistencia": "Electrohidráulica (dato oficial Renault, no eléctrica pura)",
+    "sistema_control": "Asistencia variable según velocidad",
+    "angulo_max_giro": "No publicado por Renault",
+    "vueltas_calador": "No publicado por Renault"
   },
   "aerodinámica": {
-    "defectores_aire": "Canales laterales",
-    "spoiler_trasero": "Integrado",
-    "area_frontal": "2.2-2.4 m2",
-    "coeficiente_arrastre": "Cx 0.27-0.32"
+    "defectores_aire": "No especificado en ficha oficial (excepto deflectores de aire para ventanillas como accesorio opcional)",
+    "spoiler_trasero": "De serie solo en versión GT Line (spoiler y difusor deportivos)",
+    "area_frontal": "No publicado oficialmente (estimado 2.0-2.1 m², típico del segmento)",
+    "coeficiente_arrastre": "No publicado oficialmente por Renault (estimado Cx 0.32-0.34, típico de hatchback/sedán B)"
   },
   "capacidadesAdicionales": {
-    "capacidad_refrigerante": "7-9 L",
-    "capacidad_lavaparabrisas": "3-4 L",
-    "liquido_frenos": "0.75-0.85 L",
-    "capacidad_aceite": "4.5-5.5 L",
-    "filtro_habitaculo": "Carbon activado"
+    "capacidad_refrigerante": "Estimado 5-5.5 L (no publicado con precisión en ficha oficial)",
+    "capacidad_lavaparabrisas": "Estimado 3 L",
+    "liquido_frenos": "DOT 4, aprox. 0.5 L",
+    "capacidad_aceite": "Estimado 4.0-4.2 L con filtro (motor H4M 1.6, 10W-40 o 5W-30 según manual)",
+    "filtro_habitaculo": "No especificado en ficha oficial"
   },
   "climatizacionAvanzada": {
-    "control": "Trizona",
-    "modo": "Recirculacion",
-    "filtro": "Carbon",
-    "desempanante": "Trasero/Lateral"
+    "control": "Manual (Life/Zen) o automático (Intens/GT Line, según equipamiento oficial)",
+    "modo": "Recirculación manual",
+    "filtro": "No especificado en ficha oficial",
+    "desempanante": "Calefactor/desempañador de serie en toda la gama"
   },
   "mantenimientoPrograma": {
-    "filtro": "25.000-30.000 km",
-    "aceite": "15.000 km",
-    "frenos": "Anual",
-    "ruedas": "Anual",
-    "refrigerante": "2 anos"
+    "filtro": "Filtro de aceite en cada cambio; filtro de aire según plan de mantenimiento Renault (no publicado con km exacto)",
+    "aceite": "Cada 10.000-15.000 km según plan de mantenimiento Renault Argentina",
+    "frenos": "Inspección según plan de mantenimiento oficial",
+    "ruedas": "Rotación recomendada cada 10.000 km",
+    "refrigerante": "No publicado con intervalo exacto en ficha oficial"
   },
   "consumo": "7.0 L/100 km mixto",
   "dimensiones": "4069 x 1733 x 1523 mm",

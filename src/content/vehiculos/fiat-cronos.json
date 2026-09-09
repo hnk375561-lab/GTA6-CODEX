@@ -67,8 +67,8 @@
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://cronos.fiat.com.ar/noprecache/ficha-tecnica-cronos.pdf",
-    "secondarySource": "https://es.wikipedia.org/wiki/Fiat_Cronos",
-    "note": "Se verificaron las especificaciones técnicas oficiales del motor 1.3 Firefly, dimensiones y capacidades para el mercado argentino a través de la ficha técnica de Fiat y datos complementarios.",
+    "secondarySource": "https://en.wikipedia.org/wiki/Fiat_Global_Small_Engine",
+    "note": "Se verificaron las especificaciones técnicas oficiales del motor 1.3 Firefly, dimensiones y capacidades para el mercado argentino a través de la ficha técnica de Fiat y datos complementarios. Ronda 5 (2026-09-08): se reemplazó el bloque contaminado con el placeholder genérico (10.5:1) por datos reales del motor Firefly 1.3 N4 8V (compresión real 13.2:1, notablemente más alta que el placeholder; SOHC 8V -no DOHC-; MPFI -no inyección directa-; suspensión MacPherson delantera/viga de torsión trasera confirmada por fuente enciclopédica; PCD 4x98, distinto del 5x114.3 genérico). Campos sin dato público confiable se dejaron como no publicado o estimado del segmento.",
     "limitations": [
       "Los precios varían constantemente según la inflación, la disponibilidad en concesionarios locales y los cambios en las listas oficiales."
     ]
@@ -94,63 +94,63 @@
   "consumoEtiqueta": "E",
   "neumaticos": "225/50R17",
   "especificacionesMotor": {
-    "filtro_aire": "Filtro de panel",
-    "tipo_valvulas": "DOHC",
-    "ratio_compresion": "10.5:1",
-    "sistemas_inyeccion": "Inyeccion directa",
-    "arbol_levas": "Variable (VVT)"
+    "filtro_aire": "Filtro de panel de celulosa",
+    "tipo_valvulas": "SOHC, 8 válvulas (2 por cilindro, versión base 8V; existe variante 16V DOHC en otros mercados)",
+    "ratio_compresion": "13.2:1 (muy alta para motor naftero atmosférico; dato real del Firefly 1.3, no genérico)",
+    "sistemas_inyeccion": "Inyección electrónica multipunto (MPFI), no directa",
+    "arbol_levas": "Simple, accionado por cadena, con variador continuo (CVCP)"
   },
   "especificacionesTransmision": {
-    "tipo_automatico": "Convertidor",
-    "control_cambios": "Secuencial",
-    "sist_propulsion": "Traccion",
-    "velocidades": "8/9 velocidades"
+    "tipo_automatico": "CVT (opcional) o automatizada GSR de 5 marchas según versión",
+    "control_cambios": "Sin modo manual simulado en la versión CVT base",
+    "sist_propulsion": "Tracción delantera",
+    "velocidades": "Manual de 5 velocidades (versión base)"
   },
   "especificacionesSuspension": {
-    "tipo_trasera": "Multilink",
-    "barra_estabilizadora": "26/20 mm",
-    "tipo_delantera": "MacPherson",
-    "amortiguadores": "Doble tubo",
-    "recorrido_vertical": "+-150 mm"
+    "tipo_delantera": "MacPherson con barra estabilizadora (plataforma Small MP-S)",
+    "tipo_trasera": "Viga de torsión (torsion beam)",
+    "amortiguadores": "Monotubo a gas",
+    "barra_estabilizadora": "Presente en el eje delantero; no especificada en el trasero de torsión",
+    "recorrido_vertical": "No publicado por Fiat en la ficha regional"
   },
   "especificacionesRuedas": {
-    "offset": "+35 a +45 mm",
-    "indice_velocidad": "T/V",
-    "indice_carga": "91",
-    "profundidad_surcos": "1.6 mm",
-    "pcd": "5x114.3"
+    "offset": "Estimado +35 a +38 mm (típico de aros 13\"-15\" de origen)",
+    "indice_velocidad": "T/H según versión y medida de neumático",
+    "indice_carga": "Estimado 79-82 según medida de fábrica",
+    "profundidad_surcos": "1.6 mm (mínimo legal)",
+    "pcd": "4x98"
   },
   "especificacionesDireccion": {
-    "tipo_asistencia": "Electrica progresiva",
-    "sistema_control": "Control electronico",
-    "angulo_max_giro": "32-35 grados",
-    "vueltas_calador": "2.5-3.0"
+    "tipo_asistencia": "Eléctrica",
+    "sistema_control": "Asistencia variable según velocidad",
+    "angulo_max_giro": "No publicado por Fiat",
+    "vueltas_calador": "No publicado por Fiat"
   },
   "aerodinámica": {
-    "defectores_aire": "Canales laterales",
-    "spoiler_trasero": "Integrado",
-    "area_frontal": "2.2-2.4 m2",
-    "coeficiente_arrastre": "Cx 0.27-0.32"
+    "defectores_aire": "No especificado en ficha regional",
+    "spoiler_trasero": "No de serie (sedán de perfil clásico)",
+    "area_frontal": "No publicado oficialmente (estimado 2.0-2.1 m², típico del segmento)",
+    "coeficiente_arrastre": "No publicado oficialmente por Fiat (estimado Cx 0.30-0.33, típico de sedán subcompacto)"
   },
   "capacidadesAdicionales": {
-    "capacidad_refrigerante": "7-9 L",
-    "capacidad_lavaparabrisas": "3-4 L",
-    "liquido_frenos": "0.75-0.85 L",
-    "capacidad_aceite": "4.5-5.5 L",
-    "filtro_habitaculo": "Carbon activado"
+    "capacidad_refrigerante": "Estimado 4.5-5 L (no publicado con precisión en ficha regional)",
+    "capacidad_lavaparabrisas": "Estimado 3 L",
+    "liquido_frenos": "DOT 4, aprox. 0.5 L",
+    "capacidad_aceite": "Aprox. 3.2 L con filtro (motor Firefly 1.3, 5W-30 sintético)",
+    "filtro_habitaculo": "No especificado en ficha regional"
   },
   "climatizacionAvanzada": {
-    "control": "Trizona",
-    "modo": "Recirculacion",
-    "filtro": "Carbon",
-    "desempanante": "Trasero/Lateral"
+    "control": "Manual (versión base); climatizador automático en versiones superiores",
+    "modo": "Recirculación manual",
+    "filtro": "No especificado en ficha regional",
+    "desempanante": "Desempañador eléctrico de vidrio trasero"
   },
   "mantenimientoPrograma": {
-    "filtro": "25.000-30.000 km",
-    "aceite": "15.000 km",
-    "frenos": "Anual",
-    "ruedas": "Anual",
-    "refrigerante": "2 anos"
+    "filtro": "Filtro de aceite en cada cambio; filtro de aire según plan de mantenimiento Fiat (no publicado con km exacto)",
+    "aceite": "Cada 10.000-15.000 km según plan de mantenimiento Fiat Argentina",
+    "frenos": "Inspección según plan de mantenimiento oficial",
+    "ruedas": "Rotación recomendada cada 10.000 km",
+    "refrigerante": "No publicado con intervalo exacto en ficha regional"
   },
   "consumo": "6.5 l/100km mixto aprox.",
   "dimensiones": "4364 x 1724 x 1516 mm",
