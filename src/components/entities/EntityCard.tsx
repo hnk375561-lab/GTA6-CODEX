@@ -382,16 +382,11 @@ export function EntityCard({
    *   el `border-y` de la fila de specs — la separación ahora es por
    *   spacing, no por líneas.
    *
-   * Cubre AMBOS layouts de vehículo (`grid` y `row`, ver rama dedicada
-   * más abajo para esta última) — antes `layout="row"` (usado por la
-   * vista "Catálogo"/lista) caía al markup genérico compartido con el
-   * resto de tipos de entidad, que conservaba intactos todos los
-   * problemas de la Fase 9: checkbox "Comparar" flotando como botón
-   * grande sobre la foto, grilla de specs con `divide-x`/`border-t`
-   * (estética de ficha técnica) y dos badges compitiendo en la esquina.
-   * Fase 11 le da a esa vista el mismo lenguaje editorial que la grilla.
+   * Solo para vehículos en layout de grilla/compact; `layout="row"`
+   * sigue con el markup genérico de abajo (los otros 8 tipos de entidad
+   * del sitio, fuera de este pedido).
    */
-  if (entity.type === EntityType.VEHICLE) {
+  if (entity.type === EntityType.VEHICLE && layout !== 'row') {
     const vehicle = entity as Vehicle
     const { brand, model } = splitVehicleName(vehicle)
     const specs = vehicleShowcaseSpecs(vehicle)
@@ -414,115 +409,6 @@ export function EntityCard({
             title: 'Nivel de evidencia — ver detalle completo en la ficha',
           }
         : null
-
-    /**
-     * ROW — vista "Catálogo" (lista densa). Misma jerarquía editorial que
-     * la card de grilla (marca chica + modelo grande, specs compactas,
-     * precio protagonista, CTA como link) pero distribuida en horizontal:
-     * miniatura fija a la izquierda, resto de la información en columnas
-     * que aprovechan el ancho completo de la fila en vez de apilarse.
-     * "Comparar" es un checkbox inline al final de la fila — nunca vuelve
-     * a flotar sobre la foto.
-     */
-    if (layout === 'row') {
-      return (
-        <div className={cn('group', className)}>
-          <Link href={`/${entity.type}/${entity.slug}`} className="block">
-            <article
-              className={cn(
-                'group/card relative flex items-center gap-3 overflow-hidden rounded-xl border border-neutral-800/70 bg-[#111316] px-2.5 py-2.5 transition-all duration-300 ease-out sm:gap-4 sm:px-3.5',
-                'hover:border-auto-accent/45 hover:bg-[#15171a]'
-              )}
-            >
-              {/* MINIATURA */}
-              <div
-                className="relative aspect-[4/3] h-16 shrink-0 overflow-hidden rounded-lg bg-neutral-950 sm:h-20 md:h-24"
-                onMouseEnter={() => setHovering(true)}
-                onMouseLeave={() => setHovering(false)}
-              >
-                <div className="absolute inset-0 transition-transform duration-300 ease-out group-hover/card:scale-[1.04]">
-                  <EntityImage entity={entity} image={image} priority={priority} />
-                </div>
-                <span
-                  className={cn('absolute left-1.5 top-1.5 h-1.5 w-1.5 rounded-full ring-2 ring-black/40', STATUS_DOT_CLASS[entity.status])}
-                  title={statusText}
-                  aria-hidden="true"
-                />
-              </div>
-
-              {/* MARCA + MODELO */}
-              <div className="min-w-0 flex-1 sm:w-44 sm:flex-none md:w-56">
-                {brand && (
-                  <p className="truncate text-[9.5px] font-semibold uppercase tracking-[0.18em] text-neutral-500">
-                    {brand}
-                  </p>
-                )}
-                <h2 className="truncate text-sm font-bold leading-tight text-neutral-100 transition-colors group-hover/card:text-auto-accent sm:text-base">
-                  {model}
-                </h2>
-                {secondaryLine && (
-                  <p className="truncate text-[11px] text-neutral-500">{secondaryLine}</p>
-                )}
-              </div>
-
-              {/* SPECS — solo en pantallas con lugar real para respirar */}
-              {specs.length > 0 && (
-                <div className="hidden shrink-0 items-center gap-4 lg:flex xl:gap-6">
-                  {specs.map((spec) => (
-                    <div key={spec.label} className="flex flex-col">
-                      <span className="text-sm font-bold tabular-nums text-neutral-100">{spec.value}</span>
-                      <span className="text-[8.5px] font-semibold uppercase tracking-wide text-neutral-500">
-                        {spec.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* PRECIO + ACCIONES */}
-              <div className="ml-auto flex shrink-0 items-center gap-3 sm:gap-5">
-                <span className="hidden text-right text-sm font-extrabold tracking-tight text-auto-accent sm:block sm:text-base md:text-lg">
-                  {price ?? '\u00A0'}
-                </span>
-                {compareEnabled && (
-                  <label
-                    className={cn(
-                      'inline-flex shrink-0 cursor-pointer items-center gap-1.5 text-[10px] font-medium text-neutral-500 transition-colors hover:text-neutral-300',
-                      compareDisabled && 'cursor-not-allowed opacity-50'
-                    )}
-                    onClick={(event) => event.stopPropagation()}
-                  >
-                    <input
-                      type="checkbox"
-                      checked={compareChecked}
-                      disabled={compareDisabled}
-                      onChange={() => onCompareToggle?.()}
-                      onClick={(event) => event.stopPropagation()}
-                      className="h-3.5 w-3.5 cursor-pointer rounded-sm accent-auto-accent disabled:cursor-not-allowed"
-                      aria-label={`Comparar ${entity.title}`}
-                    />
-                    <span className="hidden sm:inline">Comparar</span>
-                  </label>
-                )}
-                <WishlistButton type={entity.type} slug={entity.slug} title={entity.title} />
-                <span
-                  className="hidden shrink-0 items-center gap-1 text-[10.5px] font-semibold uppercase tracking-wide text-neutral-400 transition-colors duration-200 group-hover/card:text-auto-accent sm:inline-flex"
-                >
-                  Ver
-                  <span aria-hidden="true" className="transition-transform duration-200 group-hover/card:translate-x-0.5">
-                    →
-                  </span>
-                </span>
-              </div>
-            </article>
-          </Link>
-          {/* Precio visible en mobile, debajo de la fila principal (no hay lugar horizontal) */}
-          <span className="mt-1 block text-right text-sm font-extrabold tracking-tight text-auto-accent sm:hidden">
-            {price ?? ''}
-          </span>
-        </div>
-      )
-    }
 
     return (
       <div className={cn('group', className)}>
@@ -872,10 +758,8 @@ export function EntityCard({
               </p>
             )}
 
-            {/* Specs — este fallback genérico ya no lo alcanzan los
-                vehículos (tienen rama propia arriba, `grid` y `row`);
-                queda para el resto de tipos de entidad del sitio. */}
-            {quickFacts.length > 0 && size !== 'compact' && (
+            {/* Generic specs for non-vehicles */}
+            {entity.type !== EntityType.VEHICLE && quickFacts.length > 0 && size !== 'compact' && (
               <dl className={cn(
                 'grid auto-cols-fr divide-x divide-edge-strong text-xs',
                 layout === 'row' ? 'grid-flow-col' : 'grid-flow-col border-t border-dashed border-edge-strong py-2'
