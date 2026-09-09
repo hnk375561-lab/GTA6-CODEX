@@ -1,5 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { getCloudflareContext } from '@opennextjs/cloudflare'
 import { SITE_NAME } from './src/config/site'
+
+// Tipo mínimo del binding "Workers Rate Limiting API" (no dependemos de
+// @cloudflare/workers-types solo por esto). Ver wrangler.toml: [[ratelimits]].
+interface CloudflareRateLimiter {
+  limit(options: { key: string }): Promise<{ success: boolean }>
+}
 
 // Bots/crawlers conocidos que querés bloquear
 const BLOCKED_USER_AGENTS = [
@@ -19,7 +26,14 @@ const BLOCKED_USER_AGENTS = [
   'okhttp',
 ]
 
-// Rate limiting en memoria (simple, sin KV/DO)
+// Rate limiting en memoria — SOLO fallback para contextos sin el binding
+// nativo de Cloudflare (`next dev`, tests, o si el binding no está
+// configurado). En producción real (Workers) este Map vive por isolate:
+// un mismo cliente puede caer en isolates distintos que no comparten
+// memoria entre sí, así que "50 req/min" acá termina siendo "50 req/min
+// por instancia que te toque", no un límite global real. Por eso el
+// camino primario usa `env.RATE_LIMITER` (Workers Rate Limiting API,
+// contador compartido a nivel de cuenta/ubicación, ver wrangler.toml).
 const requestCounts = new Map<string, { count: number; resetTime: number }>()
 
 // Antes esto se limpiaba con un `setInterval` a nivel de módulo (scope
@@ -61,7 +75,7 @@ function isBlockedBot(userAgent: string | null): boolean {
   return BLOCKED_USER_AGENTS.some((bot) => userAgent.toLowerCase().includes(bot.toLowerCase()))
 }
 
-function isRateLimited(ip: string): boolean {
+function isRateLimitedInMemory(ip: string): boolean {
   const now = Date.now()
   const limit = 50 // requests
   const window = 60000 // 1 minuto en ms
@@ -82,10 +96,34 @@ function isRateLimited(ip: string): boolean {
   return existing.count > limit
 }
 
-export function middleware(request: NextRequest) {
-  // Limpieza perezosa del mapa de rate limiting — ver comentario en
-  // `sweepExpiredEntries`. Se ejecuta acá (no en scope global) porque
-  // este es el único lugar con contexto de request válido.
+// Intenta usar el binding nativo `RATE_LIMITER` (contador compartido a
+// nivel de cuenta, no por isolate — ver wrangler.toml [[ratelimits]]).
+// Si el binding no existe (dev local, tests, build sin Workers) o falla
+// por cualquier motivo, cae fail-open al Map en memoria en vez de
+// romper el request — mismo criterio "no romper nada" del resto del
+// middleware (bots/dashboard).
+async function isRateLimited(ip: string): Promise<boolean> {
+  try {
+    const { env } = getCloudflareContext()
+    const limiter = (env as { RATE_LIMITER?: CloudflareRateLimiter }).RATE_LIMITER
+    if (limiter) {
+      const { success } = await limiter.limit({ key: ip })
+      return !success
+    }
+  } catch {
+    // getCloudflareContext no disponible en este contexto (ej. next dev
+    // sin initOpenNextCloudflareForDev, o entorno de test) — se sigue
+    // al fallback de abajo.
+  }
+
+  return isRateLimitedInMemory(ip)
+}
+
+export async function middleware(request: NextRequest) {
+  // Limpieza perezosa del mapa de rate limiting (fallback) — ver
+  // comentario en `sweepExpiredEntries`. Se ejecuta acá (no en scope
+  // global) porque este es el único lugar con contexto de request
+  // válido.
   sweepExpiredEntries()
 
   // Block bots
@@ -96,7 +134,7 @@ export function middleware(request: NextRequest) {
 
   // Rate limiting
   const clientIP = getClientIP(request)
-  if (isRateLimited(clientIP)) {
+  if (await isRateLimited(clientIP)) {
     return new NextResponse('Demasiadas solicitudes', { status: 429 })
   }
 

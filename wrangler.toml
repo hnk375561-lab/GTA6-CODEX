@@ -11,6 +11,18 @@ binding = "ASSETS"
 binding = "WORKER_SELF_REFERENCE"
 service = "sinfrenos"
 
+# Workers Rate Limiting API: contador compartido a nivel de cuenta/ubicación
+# (no por isolate, a diferencia del Map en memoria que reemplaza en
+# middleware.ts). namespace_id es un identificador propio, no un ID real de
+# Cloudflare — solo debe ser único dentro de esta cuenta.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 50
+  period = 60
+
 [vars]
 NEXT_PUBLIC_SITE_URL = "https://sinfreno.com"
 NEXT_PUBLIC_ADSENSE_CLIENT_ID = "ca-pub-8424604961377300"
