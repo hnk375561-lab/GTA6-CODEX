@@ -1,23 +1,23 @@
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
-import { FlatCompat } from '@eslint/eslintrc'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-})
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals'
+import nextTypescript from 'eslint-config-next/typescript'
 
 /**
- * Migrado de `.eslintrc.json` (formato legacy, usado por el ahora deprecado
- * `next lint`) a flat config para `eslint` CLI directo, siguiendo el patrón
- * oficial de Next.js (FlatCompat sobre los presets legacy de
- * eslint-config-next, que todavía no publica sus reglas en formato flat
- * nativo). Se agrega `next/typescript` respecto a la config anterior
- * (que solo tenía `next/core-web-vitals`): suma reglas reales de
- * @typescript-eslint (ej. no-unused-vars, no-explicit-any como warning)
- * en vez de depender únicamente de `tsc --noEmit` para chequeo de tipos.
+ * Hasta eslint-config-next@15.x, el paquete solo publicaba presets en
+ * formato legacy (`.eslintrc`), por eso este archivo pasaba
+ * 'next/core-web-vitals' y 'next/typescript' por `FlatCompat` (patrón
+ * oficial de Next.js para adaptar config legacy a flat config).
+ *
+ * Desde eslint-config-next@16.x el paquete exporta flat config nativo
+ * (`eslint-config-next/core-web-vitals` y `eslint-config-next/typescript`
+ * son arrays de `Linter.Config` listos para usar, ver
+ * node_modules/eslint-config-next/dist/*.d.ts). Con la v16 instalada,
+ * seguir usando `FlatCompat.extends(...)` sobre estos presets ya-flat
+ * rompía: el validador de config legacy de @eslint/eslintrc no sabe
+ * procesar los plugins flat que trae la v16 y tira
+ * "Converting circular structure to JSON" al pisarse las referencias
+ * entre `eslint-plugin-react` y sus propios configs. Importar los
+ * presets flat nativos directamente evita ese paso de conversión
+ * innecesario.
  */
 const eslintConfig = [
   {
@@ -27,7 +27,8 @@ const eslintConfig = [
     // no del proyecto). Mismos directorios que ya excluye .gitignore.
     ignores: ['.next/**', 'out/**', 'coverage/**', 'node_modules/**', 'next-env.d.ts', 'public/**'],
   },
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...nextCoreWebVitals,
+  ...nextTypescript,
   {
     rules: {
       // El proyecto ya usa la convención estándar de prefijar con `_` los
