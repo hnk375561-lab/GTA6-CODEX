@@ -520,6 +520,7 @@ tabIndex={-1}
                   <li key={`${app.trailerSlug}-${app.sceneId}`}>
                     <Link
                       href={`/trailers/${app.trailerSlug}#${app.sceneId}`}
+                      prefetch={false}
                       className="group flex items-start gap-2 rounded-lg border border-edge bg-surface-card/60 px-3 py-2 transition-colors hover:border-auto-accent/60"
                     >
                       <span className="scene-timestamp mt-0.5 shrink-0 font-mono text-[10px] font-semibold text-neutral-900">

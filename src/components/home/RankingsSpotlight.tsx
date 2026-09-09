@@ -174,6 +174,7 @@ export function RankingsSpotlight({ rankings }: RankingsSpotlightProps) {
                   </span>
                   <Link
                     href={`/vehiculos/${entry.vehicleSlug}`}
+                    prefetch={false}
                     className="min-w-0 flex-1 truncate text-sm font-semibold text-neutral-900 hover:text-orange-600 dark:hover:text-auto-accent"
                   >
                     {entry.vehicleTitle}

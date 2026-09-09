@@ -209,6 +209,7 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
                   {canLink ? (
                     <Link
                       href={vehicle.categoryHref as string}
+                      prefetch={false}
                       aria-label={`Ver ${formatVehicleDisplayName(vehicle.manufacturer, vehicle.title)} en su categoría`}
                       className="block h-full w-full tap-scale focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-auto-accent"
                       onClick={
@@ -285,6 +286,7 @@ export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: 
                   {/* CTA: Ver ficha */}
                   <Link
                     href={vehicle.detailHref}
+                    prefetch={false}
                     aria-label={`Ver ficha completa de ${formatVehicleDisplayName(vehicle.manufacturer, vehicle.title)}`}
                     className="cta-shine group/cta tap-scale absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-inverse px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-black/20 ring-1 ring-white/10 transition duration-200 hover:-translate-y-1 hover:bg-black hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-auto-accent"
                   >

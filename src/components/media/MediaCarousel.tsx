@@ -75,7 +75,7 @@ export function MediaCarousel({ title, assets }: MediaCarouselProps) {
 
             if (href && !isInteractiveEmbed) {
               return (
-                <Link key={asset.id} href={href} className="block">
+                <Link key={asset.id} href={href} prefetch={false} className="block">
                   {body}
                 </Link>
               )

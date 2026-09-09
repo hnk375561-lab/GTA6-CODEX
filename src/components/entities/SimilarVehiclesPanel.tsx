@@ -25,6 +25,7 @@ export function SimilarVehiclesPanel({ items }: SimilarVehiclesPanelProps) {
         <li key={vehicle.slug}>
           <Link
             href={`/vehiculos/${vehicle.slug}`}
+            prefetch={false}
             className="group flex items-center gap-3 rounded-md border border-dashed border-transparent px-2 py-2 -mx-2 transition-colors duration-200 hover:border-edge-strong hover:bg-auto-darker/40"
           >
             <EntityImage

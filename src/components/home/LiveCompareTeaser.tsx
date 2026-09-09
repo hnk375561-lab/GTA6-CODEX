@@ -163,6 +163,7 @@ function MobileCompareSwipe({ pair }: { pair: CompareTeaserPair }) {
             <div key={v.slug} className="w-1/2 shrink-0 p-6">
               <Link
                 href={`/vehiculos/${v.slug}`}
+                prefetch={false}
                 className="mb-3 block truncate font-display text-lg font-bold text-neutral-900 hover:text-orange-600 dark:hover:text-auto-accent"
               >
                 {v.title}

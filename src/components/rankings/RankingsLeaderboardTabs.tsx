@@ -188,6 +188,7 @@ function RankingBarList({ entries }: { entries: RankingTabEntry[] }) {
           <li key={entry.vehicle.slug}>
             <Link
               href={`/${entry.vehicle.type}/${entry.vehicle.slug}`}
+              prefetch={false}
               className="group flex flex-wrap items-center gap-x-3 gap-y-2 rounded-lg border border-transparent px-2 py-1.5 transition-colors hover:border-edge hover:bg-surface-alt"
             >
               <span className="w-6 shrink-0 text-right font-mono text-xs text-neutral-400">
