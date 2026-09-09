@@ -32,7 +32,11 @@
     "raw": "USD 99.000 (MSRP base referencia)"
   },
   "consumo": "18-22 kWh/100 km (equivalente eléctrico)",
-  "dimensiones": "4.963 mm largo x 1.966 mm ancho x 1.395 mm alto",
+  "dimensiones": {
+    "largo": "4963 mm",
+    "ancho": "1964 mm",
+    "alto": "1395 mm"
+  },
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.porsche.com",
@@ -40,17 +44,22 @@
     "limitations": [
       "El precio puede variar significativamente según el mercado de destino, opcionales de fábrica e impuestos locales.",
       "La autonomía exacta depende de la capacidad de la batería seleccionada (Performance Battery o Performance Battery Plus)."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.538Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:25:22.515Z",
-  "transmision": "Automática de 2 marchas (eje trasero) y relación única (eje delantero)",
-  "traccion": "Tracción integral (AWD) en versiones duales, o trasera según variante",
-  "peso": "2.100-2.300 kg",
+  "updatedAt": "2026-09-09T01:09:44.538Z",
+  "transmision": "Automática 2-velocidades",
+  "traccion": "AWD",
+  "peso": "2280 kg",
   "tipoMotor": "Doble motor sincrónico de imanes permanentes",
   "potenciaKW": "300 kW",
   "capacidadTanque": null,
@@ -70,7 +79,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes (dual)",
+    "potenciaKW": "280-500 kW",
+    "power": "376-670 HP",
+    "torque": "660-1050 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

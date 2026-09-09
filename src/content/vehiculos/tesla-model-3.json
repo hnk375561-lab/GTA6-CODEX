@@ -48,7 +48,7 @@
   ],
   "featured": true,
   "createdAt": "2026-08-23T18:01:33.524Z",
-  "updatedAt": "2026-08-27T03:10:37.528Z",
+  "updatedAt": "2026-09-09T01:09:44.517Z",
   "manufacturer": "Tesla",
   "class": "Sedán",
   "performance": {
@@ -65,7 +65,12 @@
     "raw": "Desde 33.365 € hasta 57.490 € (PVP referencia España y mercado europeo)"
   },
   "consumo": "13,0 kWh/100 km (Ciclo WLTP oficial)",
-  "dimensiones": "4.720 mm x 1.850 mm x 1.441 mm",
+  "dimensiones": {
+    "largo": "4719 mm",
+    "ancho": "1849 mm",
+    "alto": "1440 mm",
+    "distancia_ejes": "2875 mm"
+  },
   "evidence": {
     "level": "respaldado",
     "secondarySource": "https://www.diariomotor.com/coche/tesla-model-3",
@@ -73,11 +78,16 @@
     "limitations": [
       "El consumo real varía según el estilo de conducción, uso de climatización y condiciones climáticas",
       "Los precios y rangos de autonomía pueden diferir sustancialmente según los aranceles y la homologación de cada región fuera de Europa"
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.529Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
-  "transmision": "Automática de relación única (reductora fija)",
-  "traccion": "Trasera (RWD) / Total (AWD)",
-  "peso": "1.760 kg aprox. según variante de batería",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "RWD/AWD (depende versión)",
+  "peso": "1752 kg",
   "tipoMotor": "Motor eléctrico síncrono de imanes permanentes AC",
   "potenciaKW": "208 kW (RWD base)",
   "capacidadTanque": null,
@@ -97,7 +107,14 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
+    "potenciaKW": "202-380 kW (depende versión)",
+    "power": "271-510 HP",
+    "torque": "420-740 Nm",
+    "revoluciones": "N/A (sin cilindros)",
+    "cilindrada": "N/A (eléctrico)"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",
@@ -153,7 +170,7 @@
   "cilindrada": null,
   "emisiones": null,
   "asientos": 5,
-  "baul": 425,
+  "baul": "682 L",
   "maleteroMin": null,
   "generacion": "Highland",
   "anoLanzamiento": 2023,

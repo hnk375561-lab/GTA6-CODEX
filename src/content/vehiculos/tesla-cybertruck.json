@@ -38,7 +38,11 @@
     "raw": "USD 79.990 (AWD) a USD 99.990 (Cyberbeast)"
   },
   "consumo": "Autonomía estimada en 523 km (EPA)",
-  "dimensiones": "5.683 mm largo x 2.032 mm ancho x 1.791 mm alto",
+  "dimensiones": {
+    "largo": "5382 mm",
+    "ancho": "2099 mm",
+    "alto": "1791 mm"
+  },
   "evidence": {
     "level": "respaldado",
     "secondarySource": "https://es.wikipedia.org/wiki/Tesla_Cybertruck",
@@ -46,17 +50,22 @@
     "limitations": [
       "Los precios y la disponibilidad están sujetos a modificaciones según la región e incentivos gubernamentales vigentes.",
       "Las cifras de autonomía y tiempos de recarga pueden variar de acuerdo con las condiciones reales de manejo y temperatura exterior."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.534Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T03:10:25.959Z",
-  "transmision": "Automática de relación única",
-  "traccion": "Tracción en las cuatro ruedas (AWD / Tri-Motor)",
-  "peso": "Aprox. 3.010 kg (6.634 lbs)",
+  "updatedAt": "2026-09-09T01:09:44.534Z",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "AWD/RWD",
+  "peso": "2950 kg",
   "tipoMotor": "Doble o triple motor eléctrico síncrono de imanes permanentes",
   "potenciaKW": "447 kW (600 hp) / 630 kW (845 hp)",
   "capacidadTanque": null,
@@ -76,7 +85,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes (triple)",
+    "potenciaKW": "448-522 kW",
+    "power": "602-700 HP",
+    "torque": "900-1100 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

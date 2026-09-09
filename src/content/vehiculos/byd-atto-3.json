@@ -57,7 +57,12 @@
     "raw": "EUR 38.000 (referencia mercado europeo)"
   },
   "consumo": "15.6 kWh/100 km",
-  "dimensiones": "4.455 mm largo x 1.875 mm ancho x 1.615 mm alto",
+  "dimensiones": {
+    "largo": "4455 mm",
+    "ancho": "1875 mm",
+    "alto": "1615 mm",
+    "distancia_ejes": "2720 mm"
+  },
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.byd.com/en/car/atto3",
@@ -65,17 +70,22 @@
     "limitations": [
       "Los precios pueden variar según los aranceles de importación y subsidios vigentes en cada país de comercialización.",
       "Las cifras de autonomía varían según el ciclo de homologación (WLTP o CLTC)."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:10:02.766Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-27T01:33:27.693Z",
-  "transmision": "Automática de relación única",
-  "traccion": "Delantera",
-  "peso": "1.750 kg",
+  "updatedAt": "2026-09-09T01:10:02.766Z",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "FWD/AWD",
+  "peso": "1615-1750 kg",
   "tipoMotor": "Eléctrico síncrono de imanes permanentes",
   "potenciaKW": "150 kW",
   "capacidadTanque": null,
@@ -95,7 +105,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes (simple o dual)",
+    "potenciaKW": "100-150 kW",
+    "power": "134-201 HP",
+    "torque": "310 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

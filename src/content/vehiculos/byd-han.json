@@ -52,7 +52,12 @@
     "raw": "USD 45.000 (precio de referencia en mercado de origen)"
   },
   "consumo": "15-18 kWh/100km",
-  "dimensiones": "4995 mm largo x 1910 mm ancho x 1495 mm alto",
+  "dimensiones": {
+    "largo": "4785 mm",
+    "ancho": "1875 mm",
+    "alto": "1600 mm",
+    "distancia_ejes": "2915 mm"
+  },
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.byd.com/us/car/han-ev",
@@ -60,17 +65,22 @@
     "limitations": [
       "El precio corresponde a valores de referencia en el mercado doméstico (China) y puede variar considerablemente según impuestos y aranceles de exportación en otros mercados.",
       "Los tiempos de autonomía pueden variar según el ciclo de homologación (CLTC, WLTP o EPA)."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:10:02.769Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:33:54.904Z",
-  "transmision": "Automática de relación única",
-  "traccion": "Tracción integral (AWD) / Delantera (FWD)",
-  "peso": "2.250 kg",
+  "updatedAt": "2026-09-09T01:10:02.769Z",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "AWD",
+  "peso": "1820-2000 kg",
   "tipoMotor": "Doble motor eléctrico (sincrónico de imanes permanentes)",
   "potenciaKW": "380 kW",
   "capacidadTanque": null,
@@ -90,7 +100,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Doble motor eléctrico sincrónico de imanes permanentes",
+    "potenciaKW": "160-320 kW",
+    "power": "214-429 HP",
+    "torque": "400-640 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

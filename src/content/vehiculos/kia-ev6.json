@@ -60,7 +60,11 @@
     "raw": "USD 39.445 (Light RWD) a USD 54.545 (GT-Line AWD), MSRP EE.UU. 2026 sin destino ni cargos de concesionario"
   },
   "consumo": "115 MPGe combinado (Light RWD, más eficiente) a 97 MPGe combinado (GT-Line AWD con rines de 20\"), estimación EPA",
-  "dimensiones": "4.694 mm largo x 1.880 mm ancho x 1.544 mm alto, distancia entre ejes 2.901 mm (convertido desde 184.8\" x 74\" x 60.8\", batalla 114.2\", cifras EE.UU. 2026)",
+  "dimensiones": {
+    "largo": "4680 mm",
+    "ancho": "1890 mm",
+    "alto": "1550 mm"
+  },
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.kia.com/us/en/ev6",
@@ -72,17 +76,22 @@
       "Especificaciones corresponden al mercado de EE.UU.; en Europa, Reino Unido y otros mercados el EV6 tiene una configuración de batería y trims distinta (p. ej. batería única de 84 kWh, nomenclatura de trims 'Air/GT-Line/GT'), no cubierta en esta ficha",
       "Cifras de 0-60 mph son oficiales de fábrica reportadas por KBB; Edmunds midió 4.9s en prueba independiente de pista para la versión GT-Line AWD (vs. 5.0s oficial)",
       "Capacidad de carga (baúl, frunk) corresponde a la generación actual (facelift 2025+) según pruebas independientes de U.S. News e itemfits.com, no a la ficha técnica oficial de Kia"
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.536Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "115 mph / 185 km/h (Light RWD) a 117 mph / 188 km/h (trims AWD)",
     "acceleration": "8.3s 0-60mph (Light RWD) a 5.0s 0-60mph (trims AWD 320 hp); Edmunds midió 4.9s en pista para GT-Line AWD"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-26T19:02:10.000Z",
-  "transmision": "Automática de relación única (reductora fija, sin caja de cambios ni convertidor de par)",
-  "traccion": "Trasera / RWD (trim Light) o integral / AWD doble motor (Light Long Range, Wind, GT-Line)",
-  "peso": "1.874 kg / 4.132 lb (Light RWD) a 2.100 kg / 4.630 lb (trims AWD)",
+  "updatedAt": "2026-09-09T01:09:44.536Z",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "RWD/AWD",
+  "peso": "1900 kg",
   "tipoMotor": "Eléctrico",
   "potenciaKW": "125 kW (Light RWD) a 239 kW (trims AWD)",
   "capacidadTanque": null,
@@ -104,7 +113,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "19 pulgadas (Light, Light Long Range, Wind) o 20 pulgadas (GT-Line, según Cars.com)",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
+    "potenciaKW": "167-320 kW",
+    "power": "224-429 HP",
+    "torque": "405-640 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

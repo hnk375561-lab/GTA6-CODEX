@@ -57,7 +57,11 @@
     "raw": "USD 39.000 (MSRP EE.UU. referencia)"
   },
   "consumo": "16-18 kWh/100 km",
-  "dimensiones": "4.584 mm largo x 1.852 mm ancho x 1.636 mm alto",
+  "dimensiones": {
+    "largo": "4612 mm",
+    "ancho": "1852 mm",
+    "alto": "1612 mm"
+  },
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.volkswagen.com",
@@ -65,17 +69,22 @@
     "limitations": [
       "Los precios varían según los subsidios gubernamentales y el mercado regional específico",
       "La autonomía exacta depende de la capacidad de la batería (52 kWh o 82 kWh) y las condiciones de manejo"
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.537Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:28:48.478Z",
-  "transmision": "Automática de relación única",
-  "traccion": "Tracción trasera",
-  "peso": "2.124 kg",
+  "updatedAt": "2026-09-09T01:09:44.537Z",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "RWD/AWD",
+  "peso": "2050 kg",
   "tipoMotor": "Eléctrico síncrono de imanes permanentes",
   "potenciaKW": "150 kW",
   "capacidadTanque": null,
@@ -95,7 +104,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
+    "potenciaKW": "125-220 kW",
+    "power": "168-295 HP",
+    "torque": "300-460 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

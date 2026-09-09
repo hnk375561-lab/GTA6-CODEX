@@ -43,7 +43,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T21:41:33.593Z",
-  "updatedAt": "2026-08-27T02:45:10.387Z",
+  "updatedAt": "2026-09-09T01:10:02.770Z",
   "manufacturer": "BYD",
   "class": "Sedán eléctrico",
   "performance": {
@@ -66,11 +66,16 @@
     "limitations": [
       "Los precios y la disponibilidad exacta varían sustancialmente según los aranceles de importación, impuestos locales y subsidios vigentes en cada país de Latinoamérica y Europa.",
       "La autonomía precisa depende de la versión elegida (Comfort, Design o Excellence) y de las condiciones de conducción del ciclo de homologación."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:10:02.770Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
-  "transmision": "Automática de relación única",
-  "traccion": "Tracción trasera (RWD) o Integral (AWD)",
-  "peso": "2185 kg",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "RWD/AWD",
+  "peso": "1650-1900 kg",
   "tipoMotor": "Motor eléctrico sincrónico de imanes permanentes (simple o dual)",
   "potenciaKW": "230 kW (RWD) a 390 kW (AWD)",
   "capacidadTanque": null,
@@ -90,7 +95,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Motor eléctrico sincrónico de imanes permanentes (simple o dual)",
+    "potenciaKW": "100-200 kW",
+    "power": "134-268 HP",
+    "torque": "310-400 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",
@@ -144,7 +154,12 @@
     "refrigerante": "2 anos"
   },
   "consumo": "15.4 - 18.2 kWh / 100 km (ciclo WLTP)",
-  "dimensiones": "4800 x 1875 x 1460 mm",
+  "dimensiones": {
+    "largo": "4800 mm",
+    "ancho": "1875 mm",
+    "alto": "1460 mm",
+    "distancia_ejes": "2920 mm"
+  },
   "cilindrada": null,
   "emisiones": null,
   "asientos": 5,

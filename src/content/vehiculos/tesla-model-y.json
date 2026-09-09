@@ -33,7 +33,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.694Z",
-  "updatedAt": "2026-08-27T03:11:52.068Z",
+  "updatedAt": "2026-09-09T01:09:44.533Z",
   "manufacturer": "Tesla",
   "class": "SUV eléctrico",
   "performance": {
@@ -49,7 +49,11 @@
     "raw": "USD 46.380 (MSRP base en EE.UU.) / Desde 41.970 € en Europa"
   },
   "consumo": "15.3 kWh/100km (equivalente a 113 MPGe según ciclo EPA / WLTP)",
-  "dimensiones": "4.751 mm x 1.921 mm x 1.624 mm",
+  "dimensiones": {
+    "largo": "4750 mm",
+    "ancho": "1921 mm",
+    "alto": "1624 mm"
+  },
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.caranddriver.com/tesla/model-y",
@@ -57,11 +61,16 @@
     "limitations": [
       "El consumo y la autonomía varían de manera significativa según las condiciones climáticas, el estilo de conducción y el tamaño de las llantas.",
       "Los precios de lista sufren modificaciones frecuentes por parte del fabricante según el mercado."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.533Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
-  "transmision": "Automática de relación única (direct-drive)",
-  "traccion": "Tracción trasera (RWD) o integral (AWD)",
-  "peso": "1.979 kg",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "RWD/AWD",
+  "peso": "1844 kg",
   "tipoMotor": "Síncrono de imanes permanentes de corriente alterna (AC)",
   "potenciaKW": "243 kW (RWD) / 335 kW (Long Range)",
   "capacidadTanque": null,
@@ -81,7 +90,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
+    "potenciaKW": "219-353 kW",
+    "power": "295-473 HP",
+    "torque": "430-660 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

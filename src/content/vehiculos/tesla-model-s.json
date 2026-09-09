@@ -57,7 +57,11 @@
     "raw": "USD 111.630 (precio base de referencia aproximado según mercado de EE. UU.)"
   },
   "consumo": "Autonomía estimada entre 592 km (Plaid) y hasta 744 km WLTP según la versión",
-  "dimensiones": "4.979 mm largo x 1.964 mm ancho (2.189 mm con retrovisores) x 1.445 mm alto",
+  "dimensiones": {
+    "largo": "4959 mm",
+    "ancho": "1964 mm",
+    "alto": "1455 mm"
+  },
   "evidence": {
     "level": "respaldado",
     "secondarySource": "https://www.caranddriver.com/tesla/model-s",
@@ -65,17 +69,22 @@
     "limitations": [
       "Los datos de autonomía y velocidad máxima pueden variar según la homologación (EPA vs. WLTP) y el tamaño de las llantas seleccionadas.",
       "Los precios de mercado pueden fluctuar según opciones de personalización y actualizaciones comerciales del fabricante."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.532Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T03:10:47.664Z",
-  "transmision": "Automática de relación única",
-  "traccion": "AWD (Tracción integral con doble o triple motor)",
-  "peso": "Aprox. 2.068 - 2.162 kg",
+  "updatedAt": "2026-09-09T01:09:44.532Z",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "AWD",
+  "peso": "2070 kg",
   "tipoMotor": "Eléctrico",
   "potenciaKW": "500 kW (Dual Motor) / 760 kW (Plaid)",
   "capacidadTanque": null,
@@ -95,7 +104,13 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes (dual)",
+    "potenciaKW": "315-415 kW",
+    "power": "425-553 HP",
+    "torque": "660-750 Nm",
+    "revoluciones": "N/A"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

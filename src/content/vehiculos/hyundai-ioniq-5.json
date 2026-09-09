@@ -57,7 +57,11 @@
     "raw": "USD 43.000 (referencia base mercado internacional)"
   },
   "consumo": "16.8 kWh/100 km (equivalente combinado)",
-  "dimensiones": "4.635 mm largo x 1.890 mm ancho x 1.605 mm alto",
+  "dimensiones": {
+    "largo": "4635 mm",
+    "ancho": "1890 mm",
+    "alto": "1595 mm"
+  },
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.hyundai.com/worldwide/en/eco/ioniq5/performance",
@@ -65,17 +69,22 @@
     "limitations": [
       "Los precios varían según el mercado local y los subsidios gubernamentales aplicables.",
       "La autonomía exacta y los tiempos de carga dependen de la capacidad de la batería (Standard o Long Range) y la infraestructura disponible."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.535Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:46:30.936Z",
-  "transmision": "Automática de relación única",
-  "traccion": "Tracción trasera (RWD)",
-  "peso": "1.830-2.050 kg",
+  "updatedAt": "2026-09-09T01:09:44.535Z",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "RWD/AWD",
+  "peso": "1900 kg",
   "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
   "potenciaKW": "168 kW",
   "capacidadTanque": null,
@@ -95,7 +104,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
+    "potenciaKW": "160-320 kW",
+    "power": "214-429 HP",
+    "torque": "400-640 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

@@ -57,7 +57,11 @@
     "raw": "USD 101.630 (precio base de referencia en mercado norteamericano para 2026)"
   },
   "consumo": "Autonomía estimada WLTP de hasta 649 km (Dual Motor) y 609 km (Plaid)",
-  "dimensiones": "5.057 mm largo x 1.999 mm ancho x 1.684 mm alto",
+  "dimensiones": {
+    "largo": "5037 mm",
+    "ancho": "2070 mm",
+    "alto": "1674 mm"
+  },
   "evidence": {
     "level": "respaldado",
     "secondarySource": "https://www.caranddriver.com/tesla/model-x",
@@ -65,17 +69,22 @@
     "limitations": [
       "Las cifras de autonomía varían según el ciclo de homologación (EPA o WLTP) y el tamaño de las llantas.",
       "Los precios base pueden sufrir variaciones según los opcionales de pintura, interior y configuración de plazas."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.532Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T03:10:58.429Z",
-  "transmision": "Automática de relación única",
-  "traccion": "Total en las cuatro ruedas (AWD)",
-  "peso": "Aprox. 2.352 kg a 2.455 kg",
+  "updatedAt": "2026-09-09T01:09:44.532Z",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "AWD",
+  "peso": "2266 kg",
   "tipoMotor": "Doble o Triple motor eléctrico sincrónico de imanes permanentes",
   "potenciaKW": "493 kW (Dual Motor) / 760 kW (Plaid)",
   "capacidadTanque": null,
@@ -95,7 +104,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes (dual)",
+    "potenciaKW": "315-415 kW",
+    "power": "425-553 HP",
+    "torque": "660-750 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

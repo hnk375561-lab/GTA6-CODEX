@@ -52,7 +52,11 @@
     "raw": "EUR 29.000 (precio de referencia aproximado mercado europeo)"
   },
   "consumo": "16.0 kWh/100km (combinado WLTP referencia)",
-  "dimensiones": "4.287 mm largo x 1.836 mm ancho x 1.504 mm alto",
+  "dimensiones": {
+    "largo": "4400 mm",
+    "ancho": "1800 mm",
+    "alto": "1550 mm"
+  },
   "evidence": {
     "level": "respaldado",
     "secondarySource": "https://en.wikipedia.org/wiki/MG4_EV",
@@ -60,17 +64,22 @@
     "limitations": [
       "Los precios y la autonomía pueden variar según el mercado europeo o internacional específico y los subsidios vigentes.",
       "Las diferentes variantes de batería y motorización (Standard, Extended Range, Long Range, XPower) modifican sustancialmente la potencia, el peso y las prestaciones."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.539Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:23:33.860Z",
-  "transmision": "Automática de relación única",
-  "traccion": "Tracción trasera",
-  "peso": "1.655 kg",
+  "updatedAt": "2026-09-09T01:09:44.539Z",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "Delantera",
+  "peso": "1600 kg",
   "tipoMotor": "Eléctrico síncrono de imanes permanentes",
   "potenciaKW": "125 kW",
   "capacidadTanque": null,
@@ -90,7 +99,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
+    "potenciaKW": "125-170 kW",
+    "power": "168-228 HP",
+    "torque": "300-310 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

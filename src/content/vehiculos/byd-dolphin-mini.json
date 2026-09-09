@@ -57,24 +57,34 @@
     "raw": "USD 17.000 (referencia regional)"
   },
   "consumo": "Aprox. 11-12 kWh/100 km",
-  "dimensiones": "3.780 mm largo x 1.715 mm ancho x 1.540 mm alto",
+  "dimensiones": {
+    "largo": "4070 mm",
+    "ancho": "1770 mm",
+    "alto": "1570 mm",
+    "distancia_ejes": "2700 mm"
+  },
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.byd.com/ar/car/dolphin-mini",
     "note": "Se ajustaron los datos erróneos de la carga masiva inicial (que incluían valores de motores de combustión y dimensiones de un segmento superior) por las especificaciones reales del BYD Dolphin Mini / Seagull basadas en la plataforma e-Platform 3.0.",
     "limitations": [
       "El precio y la autonomía exacta pueden variar según el mercado de importación y la capacidad de batería seleccionada (Blade Battery de 30 kWh o 38 kWh)."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:10:02.768Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-27T01:33:36.419Z",
-  "transmision": "Automática de relación única",
+  "updatedAt": "2026-09-09T01:10:02.768Z",
+  "transmision": "Automática 1-velocidad",
   "traccion": "Delantera",
-  "peso": "1.160 - 1.240 kg",
+  "peso": "1285-1400 kg",
   "tipoMotor": "Eléctrico síncrono de imanes permanentes",
   "potenciaKW": "55 kW",
   "capacidadTanque": null,
@@ -92,7 +102,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes con batería Blade LFP",
+    "potenciaKW": "70-130 kW",
+    "power": "94-174 HP",
+    "torque": "180-290 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

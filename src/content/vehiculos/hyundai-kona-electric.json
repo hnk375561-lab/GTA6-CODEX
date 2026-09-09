@@ -44,24 +44,33 @@
     "raw": "USD 41.000 (referencia internacional)"
   },
   "consumo": "14.7 kWh/100km",
-  "dimensiones": "4355 x 1825 x 1575 mm",
+  "dimensiones": {
+    "largo": "4165 mm",
+    "ancho": "1800 mm",
+    "alto": "1575 mm"
+  },
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.hyundai.com.ar",
     "note": "Se actualizaron los datos técnicos específicos para la segunda generación del Hyundai Kona Eléctrico, incluyendo capacidad del baúl, potencia de la versión de autonomía extendida, peso en orden de marcha y consumo homologado bajo ciclo WLTP.",
     "limitations": [
       "Los precios y especificaciones exactas pueden variar según el mercado de importación y el nivel de acabado disponible (Standard Range vs Long Range)."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.542Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "172 km/h",
     "acceleration": "0-100 km/h en 7.9s"
   },
   "createdAt": "2026-08-23T21:59:06.238471Z",
-  "updatedAt": "2026-08-27T01:46:40.114Z",
-  "transmision": "Automática de relación única",
+  "updatedAt": "2026-09-09T01:09:44.542Z",
+  "transmision": "Automática 1-velocidad",
   "traccion": "Delantera",
-  "peso": "1.740 kg",
+  "peso": "1675 kg",
   "tipoMotor": "Sincrónico de imanes permanentes",
   "potenciaKW": "160 kW",
   "capacidadTanque": null,
@@ -81,7 +90,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
+    "potenciaKW": "100-150 kW",
+    "power": "134-201 HP",
+    "torque": "300-395 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

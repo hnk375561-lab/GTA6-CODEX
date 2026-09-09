@@ -42,7 +42,11 @@
     "raw": "EUR 37.900 (referencia mercado europeo)"
   },
   "consumo": "16.8 kWh/100km combinado",
-  "dimensiones": "4.270 mm largo x 1.822 mm ancho x 1.636 mm alto",
+  "dimensiones": {
+    "largo": "4270 mm",
+    "ancho": "1850 mm",
+    "alto": "1589 mm"
+  },
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.carwow.es/smart/smart-1/caracteristicas-tecnicas",
@@ -51,17 +55,22 @@
     "limitations": [
       "Los precios y la autonomía pueden variar según el mercado europeo o global específico y los subsidios vigentes.",
       "Las cifras de capacidad de batería y consumo varían levemente según el nivel de equipamiento (Pro+, Premium, Brabus)."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.542Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-27T03:08:34.025Z",
-  "transmision": "Automática de relación única",
-  "traccion": "Tracción trasera",
-  "peso": "1.780 kg",
+  "updatedAt": "2026-09-09T01:09:44.542Z",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "Delantera",
+  "peso": "1597 kg",
   "tipoMotor": "Eléctrico síncrono de imanes permanentes",
   "potenciaKW": "200 kW",
   "capacidadTanque": null,
@@ -81,7 +90,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
+    "potenciaKW": "100-135 kW",
+    "power": "134-181 HP",
+    "torque": "300 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

@@ -42,7 +42,12 @@
     "raw": "Desde aprox. € 28.500 / USD 30.000 (precio base de referencia en el mercado chino)"
   },
   "consumo": "13.7 kWh/100 km (referencia WLTP/CLTC según versión)",
-  "dimensiones": "4997 x 1963 x 1455 mm",
+  "dimensiones": {
+    "largo": "4997 mm",
+    "ancho": "1963 mm",
+    "alto": "1440 mm",
+    "distancia_ejes": "3000 mm"
+  },
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.arenaev.com/xiaomi_su7_su7_2024-specs-573.php",
@@ -51,17 +56,22 @@
     "limitations": [
       "Los precios internacionales fuera de China se ven afectados por aranceles de importación y costos logísticos",
       "Las autonomías varían considerablemente según el ciclo de homologación (CLTC vs WLTP)"
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:10:02.772Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-27T03:15:04.904Z",
-  "transmision": "Automática de relación única",
-  "traccion": "Tracción trasera (RWD) / Tracción integral (AWD) según versión",
-  "peso": "1980 - 2205 kg",
+  "updatedAt": "2026-09-09T01:10:02.772Z",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "RWD/AWD",
+  "peso": "1900-2165 kg",
   "tipoMotor": "Eléctrico (simple o dual)",
   "potenciaKW": "220 kW (versión Base) / 495 kW (versión Max)",
   "capacidadTanque": null,
@@ -81,7 +91,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes (simple o dual)",
+    "potenciaKW": "210-432 kW",
+    "power": "281-579 HP",
+    "torque": "400-820 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

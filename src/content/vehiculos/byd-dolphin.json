@@ -48,7 +48,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:28.972Z",
-  "updatedAt": "2026-08-27T02:44:59.242Z",
+  "updatedAt": "2026-09-09T01:10:02.768Z",
   "manufacturer": "BYD",
   "class": "Hatchback eléctrico",
   "performance": {
@@ -71,11 +71,16 @@
     "limitations": [
       "Los precios de referencia corresponden al mercado europeo y pueden variar según aranceles, impuestos locales y subsidios gubernamentales vigentes en cada país.",
       "Las capacidades de batería y autonomías varían según el nivel de equipamiento seleccionado (Active, Boost, Comfort, Design)."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:10:02.768Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
-  "transmision": "Automática de relación única con reductora fija",
+  "transmision": "Automática 1-velocidad",
   "traccion": "Delantera",
-  "peso": "No publicado oficialmente para toda la gama exacta",
+  "peso": "1400-1658 kg",
   "tipoMotor": "Eléctrico síncrono de imanes permanentes con batería Blade (LFP)",
   "potenciaKW": "65 kW a 150 kW",
   "capacidadTanque": null,
@@ -93,7 +98,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes con batería Blade LFP",
+    "potenciaKW": "70-150 kW",
+    "power": "94-201 HP",
+    "torque": "180-310 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",
@@ -147,7 +157,12 @@
     "refrigerante": "2 anos"
   },
   "consumo": "15,5 - 16 kWh / 100 km (ciclo combinado WLTP)",
-  "dimensiones": "4290 x 1820 x 1570 mm",
+  "dimensiones": {
+    "largo": "4290 mm",
+    "ancho": "1770 mm",
+    "alto": "1570 mm",
+    "distancia_ejes": "2700 mm"
+  },
   "cilindrada": null,
   "emisiones": null,
   "asientos": 5,

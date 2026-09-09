@@ -57,7 +57,11 @@
     "raw": "EUR 39.000 (referencia mercado europeo)"
   },
   "consumo": "15.5 kWh/100 km (combinado)",
-  "dimensiones": "4.200 mm largo x 1.768 mm ancho x 1.505 mm alto",
+  "dimensiones": {
+    "largo": "4405 mm",
+    "ancho": "1848 mm",
+    "alto": "1550 mm"
+  },
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.renault.com",
@@ -65,17 +69,22 @@
     "limitations": [
       "El precio es orientativo para el mercado europeo y puede variar según el país, impuestos y subsidios vigentes.",
       "Los datos de autonomía y consumo pueden variar según el ciclo de homologación (WLTP) y las condiciones de conducción."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.539Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-27T01:25:59.684Z",
-  "transmision": "Automática de relación única",
+  "updatedAt": "2026-09-09T01:09:44.539Z",
+  "transmision": "Automática 1-velocidad",
   "traccion": "Delantera",
-  "peso": "1.636 kg",
+  "peso": "1800 kg",
   "tipoMotor": "Eléctrico síncrono de rotor bobinado",
   "potenciaKW": "160 kW",
   "capacidadTanque": null,
@@ -95,7 +104,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de rotor bobinado",
+    "potenciaKW": "147-220 kW",
+    "power": "197-295 HP",
+    "torque": "300-450 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

@@ -21,7 +21,12 @@
     "raw": "USD 4.500 - USD 5.500 (referencia mercado chino base) / aprox. USD 8.500 en otros mercados de importación"
   },
   "consumo": "Aprox. 9-10 kWh / 100 km",
-  "dimensiones": "2.920 mm largo x 1.493 mm ancho x 1.621 mm alto",
+  "dimensiones": {
+    "largo": "2920 mm",
+    "ancho": "1493 mm",
+    "alto": "1621 mm",
+    "distancia_ejes": "1940 mm"
+  },
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.ev-electron.com/producto/wuling-honggung-mini-ev",
@@ -30,17 +35,22 @@
     "limitations": [
       "El precio varía drásticamente dependiendo de los subsidios locales en China, los costos de importación y si incluye aire acondicionado o paquetes estéticos especiales.",
       "La autonomía cambia de acuerdo a la capacidad de batería elegida (desde versiones básicas de menor alcance hasta variantes superiores de más de 200 km)."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:10:13.465Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-27T03:14:51.970Z",
-  "transmision": "Automática de relación única (reductora fija)",
-  "traccion": "Tracción trasera (RWD)",
-  "peso": "665 - 700 kg",
+  "updatedAt": "2026-09-09T01:10:13.465Z",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "Delantera",
+  "peso": "700-800 kg",
   "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
   "potenciaKW": "20 kW",
   "capacidadTanque": null,
@@ -58,7 +68,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
+    "potenciaKW": "25-30 kW",
+    "power": "34-40 HP",
+    "torque": "85-110 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

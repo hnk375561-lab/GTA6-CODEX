@@ -42,24 +42,34 @@
     "raw": "EUR 48.300 (referencia base mercado europeo)"
   },
   "consumo": "15.5 kWh/100 km",
-  "dimensiones": "4.790 mm largo x 1.960 mm ancho x 1.499 mm alto",
+  "dimensiones": {
+    "largo": "4790 mm",
+    "ancho": "1960 mm",
+    "alto": "1560 mm",
+    "distancia_ejes": "2900 mm"
+  },
   "evidence": {
     "level": "respaldado",
     "secondarySource": "https://es.driveduel.de/models/nio/et5-wagon",
     "note": "Se verificaron las especificaciones técnicas del NIO ET5 utilizando los canales oficiales de NIO y registros de mercado europeo, confirmando los 490 CV (360 kW) de potencia combinada, la aceleración de 0 a 100 km/h en 3.9 segundos y los datos de capacidad de maletero y precio base de referencia.",
     "limitations": [
       "El precio puede variar según el mercado europeo específico, los impuestos locales y si se opta por la modalidad de suscripción de batería (BaaS)."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:10:02.771Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "200 km/h (referencia)",
     "acceleration": "0-100 km/h en 8.5s (referencia)"
   },
   "createdAt": "2026-08-23T23:08:07.679Z",
-  "updatedAt": "2026-08-27T03:00:14.422Z",
-  "transmision": "Automática de relación única",
-  "traccion": "Tracción integral (AWD)",
-  "peso": "2.150-2.300 kg",
+  "updatedAt": "2026-09-09T01:10:02.771Z",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "AWD",
+  "peso": "2030 kg",
   "tipoMotor": "Doble motor eléctrico (inducción adelante, imanes permanentes atrás)",
   "potenciaKW": "360 kW",
   "capacidadTanque": null,
@@ -77,7 +87,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Doble motor eléctrico (inducción delantero, imanes permanentes trasero)",
+    "potenciaKW": "360 kW",
+    "power": "483 HP",
+    "torque": "725 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",

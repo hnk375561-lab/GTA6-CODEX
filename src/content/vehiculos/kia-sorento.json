@@ -58,7 +58,12 @@
     "raw": "USD 32.390 (MSRP base sin destino) hasta USD 49.285 (tope de gama X-Pro SX Prestige AWD con destino)"
   },
   "consumo": "26 MPG combinado (LX FWD) a 23 MPG combinado (trims turbo AWD)",
-  "dimensiones": "4816-4821 mm x 1900 mm x 1694-1786 mm",
+  "dimensiones": {
+    "largo": "4810 mm",
+    "ancho": "1900 mm",
+    "alto": "1700 mm",
+    "distancia_ejes": "2810 mm"
+  },
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.kia.com/us/en/sorento",
@@ -68,17 +73,22 @@
       "Las cifras de precio pueden variar según cargos de destino y región",
       "Los modelos Hybrid y PHEV poseen especificaciones y motorizaciones separadas no cubiertas en esta ficha",
       "Las mediciones de aceleración provienen de pruebas independientes en pista y no de gacetillas oficiales de la marca"
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:10:02.773Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
   "performance": {
     "speed": "124 mph / 200 km/h (trims 191 hp) a 131 mph / 211 km/h (trims 281 hp turbo), cifras KBB",
     "acceleration": "6.7s 0-60mph medido por Edmunds en pista para versión con motor turbo (cifra oficial por trim no publicada por Kia)"
   },
   "createdAt": "2026-08-23T23:06:25.164Z",
-  "updatedAt": "2026-08-27T01:49:53.815Z",
-  "transmision": "Automática de 8 velocidades (convertidor de par) o automática de doble embrague de 8 velocidades según versión",
-  "traccion": "Delantera (FWD) de serie o integral (AWD) disponible según versión",
-  "peso": "1730 kg a 1911 kg",
+  "updatedAt": "2026-09-09T01:10:02.773Z",
+  "transmision": "Automática 8-velocidades",
+  "traccion": "FWD/AWD",
+  "peso": "1825-2000 kg",
   "tipoMotor": "Gasolina 4 cilindros GDI 2.5L atmosférico o turboalimentado",
   "potenciaKW": "142 kW (atmosférico) / 210 kW (turbo)",
   "capacidadTanque": "67 litros",
@@ -101,7 +111,13 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "Ruedas de aleación de serie en todos los trims; llantas all-terrain de 24\" en X-Pro (KBB)",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Gasolina 4 cilindros GDI",
+    "potenciaKW": "149-195 kW",
+    "power": "200-261 HP",
+    "torque": "252-350 Nm",
+    "cilindrada": "2497 cc"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "Convertidor de par (LX, S) / Doble embrague (trims turbo)",
     "control_cambios": "Secuencial",

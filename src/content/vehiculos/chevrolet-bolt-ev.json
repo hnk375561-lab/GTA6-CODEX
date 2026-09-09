@@ -48,7 +48,7 @@
   ],
   "featured": false,
   "createdAt": "2026-08-23T18:31:29.250Z",
-  "updatedAt": "2026-08-27T01:35:08.867Z",
+  "updatedAt": "2026-09-09T01:09:44.543Z",
   "manufacturer": "Chevrolet",
   "class": "Hatchback eléctrico",
   "performance": {
@@ -69,11 +69,16 @@
     "note": "Se verificaron las especificaciones técnicas oficiales del Chevrolet Bolt EV correspondientes a su última etapa de producción con batería de 65 kWh y motor de 200 hp.",
     "limitations": [
       "El modelo finalizó su producción en 2023 para dar paso a la plataforma Ultium, aunque GM anunció el retorno del nombre Bolt para futuros modelos económicos."
-    ]
+    ],
+    "lastEnrichment": {
+      "date": "2026-09-09T01:09:44.543Z",
+      "source": "manual-recherche-2026-09-09",
+      "method": "web-search + fabricante oficial"
+    }
   },
-  "transmision": "Automática de relación única",
-  "traccion": "Delantera (FWD)",
-  "peso": "1625 kg",
+  "transmision": "Automática 1-velocidad",
+  "traccion": "Delantera",
+  "peso": "1669 kg",
   "tipoMotor": "Motor síncrono de imanes permanentes",
   "potenciaKW": "150 kW",
   "capacidadTanque": null,
@@ -93,7 +98,12 @@
   ],
   "consumoEtiqueta": null,
   "neumaticos": "225/50R17",
-  "especificacionesMotor": null,
+  "especificacionesMotor": {
+    "tipoMotor": "Eléctrico sincrónico de imanes permanentes",
+    "potenciaKW": "120 kW",
+    "power": "161 HP",
+    "torque": "360 Nm"
+  },
   "especificacionesTransmision": {
     "tipo_automatico": "No aplica (sin convertidor de par)",
     "control_cambios": "Directo (relación única)",
@@ -147,7 +157,11 @@
     "refrigerante": "2 anos"
   },
   "consumo": "16 kWh / 100 km",
-  "dimensiones": "4161 x 1765 x 1610 mm",
+  "dimensiones": {
+    "largo": "4163 mm",
+    "ancho": "1769 mm",
+    "alto": "1533 mm"
+  },
   "cilindrada": null,
   "emisiones": null,
   "asientos": 5,
