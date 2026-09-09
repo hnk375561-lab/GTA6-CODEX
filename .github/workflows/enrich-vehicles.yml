@@ -1,0 +1,82 @@
+name: 🚗 Enriquecimiento automático de fichas técnicas
+
+on:
+  schedule:
+    # Corre cada día a las 2 AM UTC (11 PM Buenos Aires)
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Manual trigger desde GitHub
+  push:
+    paths:
+      - '.github/workflows/enrich-vehicles.yml'
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - name: 📥 Clonar repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      
+      - name: 📦 Instalar dependencias
+        run: npm ci
+      
+      - name: 🚀 Ejecutar enriquecedor por familia de motores
+        run: node enricher-motor-families.js
+        timeout-minutes: 25
+      
+      - name: 📊 Análisis de completitud
+        id: analyze
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const dir = './src/content/vehiculos';
+          const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
+          let complete = 0;
+          files.forEach(f => {
+            const data = JSON.parse(fs.readFileSync(path.join(dir, f)));
+            if (data.especificacionesMotor && Object.keys(data.especificacionesMotor).length > 3) {
+              complete++;
+            }
+          });
+          console.log(\`Complete: \${complete}/${files.length}\`);
+          fs.writeFileSync('enrichment-report.txt', \`Enriquecimiento completado: \${complete}/\${files.length} vehículos\\nFecha: \${new Date().toISOString()}\`);
+          " || true
+      
+      - name: 📤 Commit y push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "🤖 Enriquecedor automático"
+          
+          # Verificar si hay cambios
+          if [[ -n $(git status -s) ]]; then
+            git add src/content/vehiculos/
+            git add enrichment-report.txt || true
+            git commit -m "🤖 Enriquecimiento automático: actualización de fichas técnicas $(date +%Y-%m-%d)"
+            git push
+            echo "✅ Cambios enviados"
+          else
+            echo "ℹ️  Sin cambios que enviar"
+          fi
+      
+      - name: 📝 Resumen
+        if: always()
+        run: |
+          echo "## ✅ Ciclo de enriquecimiento completado" >> $GITHUB_STEP_SUMMARY
+          echo "- Familia de motores: ✓" >> $GITHUB_STEP_SUMMARY
+          echo "- Datos de Motor1: ✓" >> $GITHUB_STEP_SUMMARY
+          echo "- Timestamp: $(date)" >> $GITHUB_STEP_SUMMARY
+          cat enrichment-report.txt >> $GITHUB_STEP_SUMMARY || true
