@@ -23,6 +23,15 @@ interface CloudflareRateLimiter {
   limit(options: { key: string }): Promise<{ success: boolean }>
 }
 
+// IMPORTANTE: estos valores deben coincidir con [ratelimits.simple] en
+// wrangler.toml (limit / period). El binding nativo RATE_LIMITER lee su
+// propia config desde wrangler.toml directamente, pero el fallback en
+// memoria de abajo (isRateLimitedInMemory) NO tiene acceso a ese archivo
+// en runtime — por eso se duplica acá a mano. Si cambiás uno, cambiá el
+// otro, o el fallback queda con un límite viejo silenciosamente.
+const RATE_LIMIT_MAX_REQUESTS = 300 // debe coincidir con wrangler.toml -> limit
+const RATE_LIMIT_WINDOW_MS = 60000 // debe coincidir con wrangler.toml -> period (en segundos * 1000)
+
 // Bots/crawlers conocidos que querés bloquear
 const BLOCKED_USER_AGENTS = [
   'AhrefsBot',
@@ -92,23 +101,20 @@ function isBlockedBot(userAgent: string | null): boolean {
 
 function isRateLimitedInMemory(ip: string): boolean {
   const now = Date.now()
-  const limit = 50 // requests
-  const window = 60000 // 1 minuto en ms
-
   const existing = requestCounts.get(ip)
 
   if (!existing) {
-    requestCounts.set(ip, { count: 1, resetTime: now + window })
+    requestCounts.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS })
     return false
   }
 
   if (now > existing.resetTime) {
-    requestCounts.set(ip, { count: 1, resetTime: now + window })
+    requestCounts.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS })
     return false
   }
 
   existing.count++
-  return existing.count > limit
+  return existing.count > RATE_LIMIT_MAX_REQUESTS
 }
 
 // Intenta usar el binding nativo `RATE_LIMITER` (contador compartido a
