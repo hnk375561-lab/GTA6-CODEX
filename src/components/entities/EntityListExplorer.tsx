@@ -845,6 +845,10 @@ export function EntityListExplorer({
                   entity={entity}
                   image={imageBySlug?.[`${entity.type}/${entity.slug}`]}
                   priority={i < 5}
+                  compareEnabled={isVehicleList}
+                  compareChecked={compareSlugs.includes(entity.slug)}
+                  onCompareToggle={() => toggleCompare(entity.slug)}
+                  compareDisabled={!compareSlugs.includes(entity.slug) && compareSlugs.length >= MAX_COMPARE}
                 />
               </Reveal>
             ) : (

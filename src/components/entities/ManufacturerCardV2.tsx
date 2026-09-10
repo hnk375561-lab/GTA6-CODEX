@@ -61,19 +61,20 @@ export function ManufacturerCardV2({ entity, className, relationCount }: Manufac
 
   return (
     <div className={cn('group/mv2', className)}>
-      <Link href={`/${entity.type}/${entity.slug}`} prefetch={false} className="block h-full">
+      <Link
+        href={`/${entity.type}/${entity.slug}`}
+        prefetch={false}
+        className="block h-full rounded-[3px] outline-none focus-visible:ring-2 focus-visible:ring-auto-accent focus-visible:ring-offset-2 focus-visible:ring-offset-auto-darker"
+      >
         <article
-          className={cn(
-            'group/mv2card relative flex aspect-[4/5] w-full flex-col overflow-hidden rounded-[3px] bg-auto-darker',
-            'transition-transform duration-300 ease-out'
-          )}
+          className="group/mv2card relative flex aspect-[4/5] w-full flex-col overflow-hidden rounded-[3px] bg-auto-darker"
         >
           {/* PLACA — el logo vive en un "panel de identificación" propio,
               no en un recorte fotográfico: fondo neutro grafito, logo
               centrado a tamaño natural (object-contain), nunca cropeado.
               Ocupa ~62% del alto — deja aire real arriba y abajo del
               logo en vez de estirarlo a full-bleed como si fuera foto. */}
-          <div className="relative flex flex-1 items-center justify-center bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.05),transparent_70%)] px-8 py-6 transition-transform duration-300 ease-out group-hover/mv2card:scale-[1.02]">
+          <div className="relative flex flex-1 items-center justify-center bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.05),transparent_70%)] px-8 py-6 transition-transform duration-300 ease-out motion-reduce:transition-none group-hover/mv2card:scale-[1.02] motion-reduce:group-hover/mv2card:scale-100">
             {logoSrc ? (
               <div className="relative h-full w-full">
                 <Image
@@ -118,7 +119,7 @@ export function ManufacturerCardV2({ entity, className, relationCount }: Manufac
                 {manufacturer.country}
               </p>
             )}
-            <h2 className="truncate text-xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-[1.35rem]">
+            <h2 className="line-clamp-2 break-words text-xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-[1.35rem]">
               {entity.title}
             </h2>
 

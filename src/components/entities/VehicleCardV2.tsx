@@ -89,9 +89,26 @@ export interface VehicleCardV2Props {
   image?: ResolvedDisplayImage | null
   className?: string
   priority?: boolean
+  /** Comparador de vehículos — mismo contrato que EntityCard (ver
+   *  EntityListExplorer/VehicleCompareSheet). Si no se pasa, el toggle
+   *  simplemente no se renderiza (comportamiento seguro en cualquier
+   *  otro caller que no compare, ej. fichas de "similares"). */
+  compareEnabled?: boolean
+  compareChecked?: boolean
+  onCompareToggle?: () => void
+  compareDisabled?: boolean
 }
 
-export function VehicleCardV2({ entity, image, className, priority }: VehicleCardV2Props) {
+export function VehicleCardV2({
+  entity,
+  image,
+  className,
+  priority,
+  compareEnabled,
+  compareChecked,
+  onCompareToggle,
+  compareDisabled,
+}: VehicleCardV2Props) {
   if (entity.type !== EntityType.VEHICLE) return null
 
   const vehicle = entity as Vehicle
@@ -104,14 +121,17 @@ export function VehicleCardV2({ entity, image, className, priority }: VehicleCar
 
   return (
     <div className={cn('group/v2', className)}>
-      <Link href={`/${entity.type}/${entity.slug}`} prefetch={false} className="block h-full">
+      <Link
+        href={`/${entity.type}/${entity.slug}`}
+        prefetch={false}
+        className="block h-full rounded-[3px] outline-none focus-visible:ring-2 focus-visible:ring-auto-accent focus-visible:ring-offset-2 focus-visible:ring-offset-auto-darker"
+      >
         <article
           className={cn(
             // Casi sin radio, sin borde, sin shadow "flotante" — no debe
             // leerse como componente UI convencional sino como recorte
             // de una página editorial.
-            'group/v2card relative flex aspect-[3/4] w-full overflow-hidden rounded-[3px] bg-auto-darker',
-            'transition-transform duration-300 ease-out will-change-transform'
+            'group/v2card relative flex aspect-[3/4] w-full overflow-hidden rounded-[3px] bg-auto-darker'
           )}
           style={{ aspectRatio: '0.75 / 1' } as CSSProperties}
         >
@@ -122,7 +142,7 @@ export function VehicleCardV2({ entity, image, className, priority }: VehicleCar
               (spec CSS: aspect-ratio solo aplica si una dimensión es auto)
               y la foto pasa a llenar realmente el contenedor 3/4 de esta
               card en vez de dejar una franja negra vacía debajo. */}
-          <div className="absolute inset-0 scale-100 transition-transform duration-300 ease-out group-hover/v2card:scale-[1.03]">
+          <div className="absolute inset-0 scale-100 transition-transform duration-300 ease-out motion-reduce:transition-none group-hover/v2card:scale-[1.03] motion-reduce:group-hover/v2card:scale-100">
             <EntityImage
               entity={entity}
               image={image}
@@ -134,13 +154,56 @@ export function VehicleCardV2({ entity, image, className, priority }: VehicleCar
           {/* Velo inferior — máx. ~28% de alto, muy gradual. El auto se
               ve casi a pleno color; esto es solo para que el texto lea. */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[42%] bg-[linear-gradient(to_top,rgba(5,6,7,0.86)_0%,rgba(5,6,7,0.42)_38%,rgba(5,6,7,0)_100%)]" />
-          {/* Velo superior mínimo, solo contraste para status/favorito. */}
+          {/* Velo superior mínimo, solo contraste para status/favorito/comparar. */}
           <div className="pointer-events-none absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-black/35 to-transparent" />
 
-          {/* TOP-LEFT — estado, glifo + texto, sin pill. */}
-          <span className="absolute left-3.5 top-3 z-10 inline-flex items-center gap-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-white/75 [text-shadow:0_1px_2px_rgba(0,0,0,0.9)]">
-            {statusLabel}
-          </span>
+          {/* TOP-LEFT — estado (glifo+texto, sin pill) + comparar (si el
+              caller lo habilita), mismo patrón visual "+"/"✓" mínimo que
+              tenía la card anterior — sin esto, VehicleCompareBar queda
+              sin forma de agregar vehículos desde la grilla. */}
+          <div className="absolute left-3.5 top-3 z-10 flex items-center gap-2.5">
+            <span className="inline-flex items-center gap-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-white/75 [text-shadow:0_1px_2px_rgba(0,0,0,0.9)]">
+              {statusLabel}
+            </span>
+            {compareEnabled && (
+              <label
+                className={cn(
+                  'group/compare inline-flex cursor-pointer items-center gap-1 [text-shadow:0_1px_2px_rgba(0,0,0,0.9)]',
+                  compareDisabled && 'cursor-not-allowed opacity-40'
+                )}
+                onClick={(event) => event.stopPropagation()}
+              >
+                <span
+                  className={cn(
+                    'text-[11px] font-bold leading-none transition-colors duration-200',
+                    compareChecked ? 'text-auto-accent' : 'text-white/55 group-hover/compare:text-white/85'
+                  )}
+                  aria-hidden="true"
+                >
+                  {compareChecked ? '✓' : '+'}
+                </span>
+                <input
+                  type="checkbox"
+                  checked={compareChecked}
+                  disabled={compareDisabled}
+                  onChange={() => onCompareToggle?.()}
+                  onClick={(event) => event.stopPropagation()}
+                  className="sr-only"
+                  aria-label={`Comparar ${entity.title}`}
+                />
+                <span
+                  className={cn(
+                    'overflow-hidden whitespace-nowrap text-[9px] font-semibold uppercase tracking-wide transition-[max-width,opacity] duration-200',
+                    compareChecked
+                      ? 'max-w-[5rem] text-auto-accent opacity-100'
+                      : 'max-w-0 text-white/70 opacity-0 group-hover/compare:max-w-[5rem] group-hover/compare:opacity-100'
+                  )}
+                >
+                  Comparar
+                </span>
+              </label>
+            )}
+          </div>
 
           {/* TOP-RIGHT — favorito, ícono suelto sin chip, semi-invisible por defecto. */}
           <div className="absolute right-2.5 top-2 z-10 opacity-60 transition-opacity duration-200 group-hover/v2card:opacity-100 [&_svg]:drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
@@ -167,7 +230,12 @@ export function VehicleCardV2({ entity, image, className, priority }: VehicleCar
                   {brand}
                 </p>
               )}
-              <h2 className="truncate text-[1.4rem] font-extrabold leading-[0.95] tracking-tight text-white sm:text-[1.7rem]">
+              {/* line-clamp-2 en vez de truncate: un nombre largo ("GLE 450
+                  4MATIC Coupé AMG Line") puede envolver a 2 líneas sin
+                  romper la composición — truncarlo a 1 línea perdía
+                  información real del modelo (brief §24: 2 líneas es
+                  aceptable si preservar el nombre completo lo justifica). */}
+              <h2 className="line-clamp-2 break-words text-[1.4rem] font-extrabold leading-[1.02] tracking-tight text-white sm:text-[1.7rem]">
                 {model}
               </h2>
               {specsLine && (
@@ -185,7 +253,7 @@ export function VehicleCardV2({ entity, image, className, priority }: VehicleCar
               )}
               <span
                 aria-hidden="true"
-                className="text-sm font-bold leading-none text-white/60 transition-transform duration-200 group-hover/v2card:translate-x-1 group-hover/v2card:text-auto-accent"
+                className="text-sm font-bold leading-none text-white/60 transition-transform duration-200 motion-reduce:transition-none group-hover/v2card:translate-x-1 motion-reduce:group-hover/v2card:translate-x-0 group-hover/v2card:text-auto-accent"
               >
                 →
               </span>

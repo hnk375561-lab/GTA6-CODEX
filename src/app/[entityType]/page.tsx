@@ -13,6 +13,9 @@ import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { Card, CardBody } from '@/components/ui/Card'
 import { EntityListExplorer } from '@/components/entities/EntityListExplorer'
 import { EntityCard } from '@/components/entities/EntityCard'
+// Mismo fallback pre-hidratación que EntityListExplorer, para no mostrar
+// un flash EntityCard → VehicleCardV2 apenas React hidrata.
+import { VehicleCardV2 } from '@/components/entities/VehicleCardV2'
 import { AdUnit } from '@/components/monetization/AdUnit'
 import { cn } from '@/lib/utils'
 
@@ -54,16 +57,24 @@ function EntityListExplorerFallback({
     >
       {entities.map((entity, index) => (
         <div key={`${entity.type}-${entity.slug}`} className="entity-card-viewport">
-          <EntityCard
-            entity={entity}
-            typeLabel={typeLabel}
-            image={imageBySlug[`${entity.type}/${entity.slug}`]}
-            // Las primeras 4 cards son las que típicamente están visibles
-            // sin scroll (1-2 columnas en mobile, hasta 3 en desktop) —
-            // ver docs/audit-performance-2026-08.md sección 3. Solo esas
-            // piden priority; el resto sigue lazy como antes.
-            priority={index < 4}
-          />
+          {entity.type === EntityType.VEHICLE ? (
+            <VehicleCardV2
+              entity={entity}
+              image={imageBySlug[`${entity.type}/${entity.slug}`]}
+              priority={index < 4}
+            />
+          ) : (
+            <EntityCard
+              entity={entity}
+              typeLabel={typeLabel}
+              image={imageBySlug[`${entity.type}/${entity.slug}`]}
+              // Las primeras 4 cards son las que típicamente están visibles
+              // sin scroll (1-2 columnas en mobile, hasta 3 en desktop) —
+              // ver docs/audit-performance-2026-08.md sección 3. Solo esas
+              // piden priority; el resto sigue lazy como antes.
+              priority={index < 4}
+            />
+          )}
         </div>
       ))}
     </div>
