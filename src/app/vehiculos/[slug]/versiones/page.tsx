@@ -4,7 +4,7 @@ import { Vehicle, EntityType } from '@/types'
 import { getEntity, getEntitySlugs } from '@/lib/entities'
 import { resolveEntityDisplayImage } from '@/lib/media'
 import { extractVehicleVariants, hasMultipleVariants, VehicleVariant } from '@/lib/vehicle-variants'
-import { generateEntityMetadata } from '@/lib/seo'
+import { generateEntityMetadata, serializeJsonLd } from '@/lib/seo'
 import { Reveal } from '@/components/ui/Reveal'
 import Link from 'next/link'
 import { SITE_URL } from '@/config/site'
@@ -182,7 +182,7 @@ function VehicleVersionsClient({ vehicle, variants }: VehicleVersionsProps) {
 }
 
 function createJsonLdItemList(vehicle: Vehicle, variants: VehicleVariant[]) {
-  return JSON.stringify({
+  return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Versiones del ' + vehicle.title,
@@ -195,11 +195,11 @@ function createJsonLdItemList(vehicle: Vehicle, variants: VehicleVariant[]) {
       url: SITE_URL + '/vehiculos/' + vehicle.slug + '/versiones#' + variant.nombre.toLowerCase().replace(/\s+/g, '-'),
     })),
     numberOfItems: variants.length,
-  })
+  }
 }
 
 function createJsonLdVehicle(vehicle: Vehicle, variants: VehicleVariant[]) {
-  return JSON.stringify({
+  return {
     '@context': 'https://schema.org',
     '@type': 'Vehicle',
     name: vehicle.title,
@@ -220,11 +220,11 @@ function createJsonLdVehicle(vehicle: Vehicle, variants: VehicleVariant[]) {
         enginePower: { '@type': 'QuantitativeValue', value: v.power, unitCode: 'HP' }
       }
     }))
-  })
+  }
 }
 
 function createJsonLdBreadcrumb(vehicle: Vehicle) {
-  return JSON.stringify({
+  return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -233,7 +233,7 @@ function createJsonLdBreadcrumb(vehicle: Vehicle) {
       { '@type': 'ListItem', position: 3, name: vehicle.title, item: SITE_URL + '/vehiculos/' + vehicle.slug },
       { '@type': 'ListItem', position: 4, name: 'Versiones', item: SITE_URL + '/vehiculos/' + vehicle.slug + '/versiones' },
     ],
-  })
+  }
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -262,9 +262,9 @@ export default async function VehicleVersionsPage({ params }: { params: Promise<
   const variants = extractVehicleVariants(v)
   if (variants.length <= 1) notFound()
 
-  const jsonLdItemList = createJsonLdItemList(v, variants)
-  const jsonLdVehicle = createJsonLdVehicle(v, variants)
-  const jsonLdBreadcrumb = createJsonLdBreadcrumb(v)
+  const jsonLdItemList = serializeJsonLd(createJsonLdItemList(v, variants))
+  const jsonLdVehicle = serializeJsonLd(createJsonLdVehicle(v, variants))
+  const jsonLdBreadcrumb = serializeJsonLd(createJsonLdBreadcrumb(v))
 
   return (
     <>
