@@ -40,12 +40,23 @@ jobs:
         run: npx next build
         env:
           # Dejar VACÍO si el sitio usa dominio propio (public/CNAME,
-          # sirve en la raíz). Poner "/GTA6-CODEX" (el nombre del repo,
+          # sirve en la raíz). Poner "/Sin-Frenos" (el nombre del repo,
           # con la barra inicial) SOLO si en vez de dominio propio se usa
           # la URL default de GitHub Pages
-          # (hnk375561-lab.github.io/GTA6-CODEX) — ver next.config.js.
-          GITHUB_PAGES_BASE_PATH: '/GTA6-CODEX'
-          NEXT_PUBLIC_SITE_URL: https://hnk375561-lab.github.io/GTA6-CODEX
+          # (hnk375561-lab.github.io/Sin-Frenos) — ver next.config.js.
+          GITHUB_PAGES_BASE_PATH: '/Sin-Frenos'
+          NEXT_PUBLIC_SITE_URL: https://hnk375561-lab.github.io/Sin-Frenos
+
+      - name: Evitar procesamiento Jekyll (rompe /_next/*, ver public/.nojekyll)
+        # public/.nojekyll ya se copia solo a out/ en el export estático de
+        # Next.js, pero este paso es un seguro extra explícito: sin este
+        # archivo en la raíz de lo publicado, GitHub Pages procesa el sitio
+        # con Jekyll, que ignora cualquier carpeta que empiece con "_"
+        # (jekyll considera esas carpetas "especiales") — y TODO el CSS/JS
+        # de Next.js vive en /_next/. Resultado: el HTML carga pero sin
+        # estilos ni scripts (404 silencioso en cada asset). Confirmado como
+        # causa raíz el 10/09/2026 tras el primer deploy exitoso del sitio.
+        run: touch ./out/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
