@@ -49,7 +49,14 @@ export function useImageZoom() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [state, setState] = useState<ZoomState>(IDLE)
   const stateRef = useRef(state)
-  stateRef.current = state
+  // Mantener `stateRef.current` al día en un efecto (no durante el
+  // render, que dispara `react-hooks/refs`): los callbacks de abajo
+  // (pointer/wheel handlers memoizados sin `state` en sus deps) leen
+  // `stateRef.current` para tener siempre el valor más reciente sin
+  // tener que recrear el handler en cada cambio de `state`.
+  useEffect(() => {
+    stateRef.current = state
+  }, [state])
 
   const [isPanning, setIsPanning] = useState(false)
   const panOrigin = useRef({ clientX: 0, clientY: 0, x: 0, y: 0 })

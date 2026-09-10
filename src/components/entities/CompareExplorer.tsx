@@ -65,6 +65,13 @@ export function CompareExplorer({ vehicles, imageBySlug }: CompareExplorerProps)
     const validSlugs = new Set(vehicles.map((v) => v.slug))
     const restored = stored.filter((s) => validSlugs.has(s))
     if (restored.length === 0) return
+    // Efecto de una sola corrida al montar (`[]` más abajo): no hay
+    // riesgo de cascading render (el motivo real de esta regla) porque
+    // no vuelve a dispararse a sí mismo. Reescribirlo con
+    // `useSyncExternalStore` no aplica limpio acá: además de leer
+    // localStorage, sincroniza la URL vía `router.replace` como acción
+    // puntual de montaje, no como snapshot de un store externo.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelected(restored)
     const params = new URLSearchParams(searchParams.toString())
     params.set('v', restored.join(','))

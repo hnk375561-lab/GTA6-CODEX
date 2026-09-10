@@ -6,6 +6,7 @@ import Link from 'next/link'
 import type { Evidence, Vehicle } from '@/types'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { StatBar } from '@/components/entities/StatBar'
+import { usePrefersReducedMotion } from '@/lib/hooks/usePrefersReducedMotion'
 import { EvidenceBlock } from '@/components/entities/EvidenceBlock'
 import { performanceToScale } from '@/lib/vehicle-performance'
 import { getBestValueIndices } from '@/lib/vehicle-compare-best'
@@ -335,19 +336,11 @@ function VehiclePane({
  * componente si hace falta ese ajuste en el futuro.
  */
 export function CompareShowcase({ pool, initialIndexA, initialIndexB }: CompareShowcaseProps) {
-  const [reducedMotion, setReducedMotion] = useState(false)
+  const reducedMotion = usePrefersReducedMotion()
   const [indexA, setIndexA] = useState(initialIndexA)
   const [indexB, setIndexB] = useState(initialIndexB)
   const [mobileSide, setMobileSide] = useState<'a' | 'b'>('a')
   const touchStartX = useRef<number | null>(null)
-
-  useEffect(() => {
-    const query = window.matchMedia('(prefers-reduced-motion: reduce)')
-    setReducedMotion(query.matches)
-    const onChange = () => setReducedMotion(query.matches)
-    query.addEventListener('change', onChange)
-    return () => query.removeEventListener('change', onChange)
-  }, [])
 
   if (pool.length < 2) return null
 

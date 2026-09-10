@@ -45,6 +45,11 @@ const SITE_NAME_REST = SITE_NAME_REST_WORDS.join(' ')
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
+  // Última ruta vista por el render anterior — permite cerrar el menú
+  // "durante el render" (patrón oficial de React para resetear estado
+  // cuando cambia un valor) en vez de en un `useEffect` con `setState`
+  // síncrono, ver el `if` más abajo.
+  const [prevPathname, setPrevPathname] = useState(pathname)
   // Contador de favoritos en vivo (sincronización visual, ver
   // `useWishlist`): antes el corazón del header era un link ciego a
   // `/favoritos` sin ningún indicio de cuántos había guardados — el
@@ -60,10 +65,12 @@ export function Header() {
   // fondo blanco de la home en vez del glass oscuro del resto del sitio.
   const isHome = pathname === '/'
 
-  // Cierra el menú móvil al navegar y al presionar Escape.
-  useEffect(() => {
+  // Cierra el menú móvil al navegar (y al presionar Escape, ver el
+  // efecto de abajo).
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname)
     setMenuOpen(false)
-  }, [pathname])
+  }
 
   useEffect(() => {
     if (!menuOpen) return

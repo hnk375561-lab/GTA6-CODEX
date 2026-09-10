@@ -303,13 +303,26 @@ export function EntityListExplorer({
     ]
   )
 
+  // Última referencia de `filtered` vista por el render anterior — sirve
+  // para detectar el cambio "durante el render" en vez de en un efecto
+  // (ver comentario debajo).
+  const [prevFiltered, setPrevFiltered] = useState(filtered)
+
   // Vuelve a la primera página cada vez que cambia el conjunto filtrado
   // real (nueva búsqueda/filtro/orden) — nunca en cada render, `filtered`
   // solo cambia de referencia cuando `filterAndSortEntities` produce un
-  // resultado distinto (ver sus deps arriba).
-  useEffect(() => {
+  // resultado distinto (ver sus deps arriba). Ajuste durante el render
+  // (patrón oficial de React para "resetear estado cuando cambia un
+  // valor", en vez de un `useEffect` con `setState` síncrono) en lugar
+  // de un efecto aparte: se compara `filtered` contra la última
+  // referencia vista y, si cambió, se resetea `visibleCount` en la misma
+  // pasada de render — React descarta ese render y vuelve a renderizar
+  // con el estado ya actualizado, sin el flash de un frame con la página
+  // vieja que un efecto sí produciría.
+  if (filtered !== prevFiltered) {
+    setPrevFiltered(filtered)
     setVisibleCount(PAGE_SIZE)
-  }, [filtered])
+  }
 
   const visibleEntities = filtered.slice(0, visibleCount)
   const hasMore = visibleCount < filtered.length

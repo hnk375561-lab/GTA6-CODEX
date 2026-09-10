@@ -84,6 +84,13 @@ export function useAbTest<T extends string>(testId: string, variants: readonly T
       writeAssignment(testId, resolved)
     }
 
+    // Efecto de una sola corrida al montar (deps `[testId]`, estático en
+    // cada call site — ver comentario debajo): no hay riesgo real de
+    // cascading render. El sorteo usa `crypto.randomUUID()`/
+    // `Math.random()` (no es puro) y reporta a analytics, así que no es
+    // un snapshot cacheable de un store externo — `useSyncExternalStore`
+    // no aplica limpio acá.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setVariant(resolved)
     trackAbAssignment({ testId, variant: resolved })
     // Solo se corre una vez al montar: el testId y la lista de variantes

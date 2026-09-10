@@ -56,6 +56,9 @@ export function useVehicleCompare(entities: Entity[]) {
   const [compareOpen, setCompareOpen] = useState(false)
 
   useEffect(() => {
+    // Hidratación única al montar (deps `[]`): sin riesgo de cascading
+    // render, mismo criterio que `useWishlist`.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCompareSlugs(readCompareStorage())
   }, [])
 

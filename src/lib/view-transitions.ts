@@ -55,6 +55,15 @@ export function supportsViewTransitions(): boolean {
   return typeof document !== 'undefined' && typeof document.startViewTransition === 'function'
 }
 
+/** `subscribe` no-op para `useSyncExternalStore` cuando el valor externo
+ *  se resuelve una sola vez y no cambia durante la sesión (ej. soporte
+ *  de una API del navegador) — no hay ningún evento al que suscribirse,
+ *  solo hace falta la lectura client-only segura para hidratación que
+ *  da `useSyncExternalStore`. Ver `HeroVehicleShowcase`/`HeroVehicleShowcaseV2`. */
+export function subscribeNoop(): () => void {
+  return () => {}
+}
+
 /**
  * Dispara la navegación hacia `href` marcando `slug` como el vehículo
  * que debe "continuar" visualmente en destino. Sin soporte de View

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Card } from '@/components/ui/Card'
 import { getBestValueIndices } from '@/lib/vehicle-compare-best'
 import { cn } from '@/lib/utils'
+import { usePrefersReducedMotion } from '@/lib/hooks/usePrefersReducedMotion'
 
 /** Resumen de una posición del ranking, ya resuelto server-side desde
  *  `RankingEntry` (`rankings.ts`) — se pasa el mínimo necesario para
@@ -71,19 +72,11 @@ const CROSSFADE_MS = 220
  * fade, igual que el resto de los crossfades de la home.
  */
 export function RankingsSpotlight({ rankings }: RankingsSpotlightProps) {
-  const [reducedMotion, setReducedMotion] = useState(false)
+  const reducedMotion = usePrefersReducedMotion()
   const [activeIndex, setActiveIndex] = useState(0)
   const [displayedIndex, setDisplayedIndex] = useState(0)
   const [fadingOut, setFadingOut] = useState(false)
   const pendingIndexRef = useRef<number | null>(null)
-
-  useEffect(() => {
-    const query = window.matchMedia('(prefers-reduced-motion: reduce)')
-    setReducedMotion(query.matches)
-    const onChange = () => setReducedMotion(query.matches)
-    query.addEventListener('change', onChange)
-    return () => query.removeEventListener('change', onChange)
-  }, [])
 
   useEffect(() => {
     if (!fadingOut) return

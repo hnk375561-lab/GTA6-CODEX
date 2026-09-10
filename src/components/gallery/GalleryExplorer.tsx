@@ -70,10 +70,15 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
    *  fuera de pantalla; esto además reduce cuántos existen en el DOM. */
   const PAGE_SIZE = 40
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
-
-  useEffect(() => {
+  // Misma técnica que `EntityListExplorer`: ajustar durante el render en
+  // vez de en un `useEffect` con `setState` síncrono (evita el lint
+  // error `react-hooks/set-state-in-effect` y el flash de un frame con
+  // el estado viejo que un efecto aparte produciría).
+  const [prevFiltered, setPrevFiltered] = useState(filtered)
+  if (filtered !== prevFiltered) {
+    setPrevFiltered(filtered)
     setVisibleCount(PAGE_SIZE)
-  }, [filtered])
+  }
 
   const visibleItems = filtered.slice(0, visibleCount)
   const hasMore = visibleCount < filtered.length
@@ -100,12 +105,16 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
 
   // Si el filtro/búsqueda cambia mientras el lightbox está abierto y el
   // índice actual queda fuera de rango, lo cerramos en vez de mostrar un
-  // ítem que ya no pertenece al set filtrado.
-  useEffect(() => {
+  // ítem que ya no pertenece al set filtrado. Mismo ajuste-en-render que
+  // arriba: se dispara solo cuando `filtered.length` realmente cambió de
+  // valor respecto del render anterior, no en cada render.
+  const [prevFilteredLength, setPrevFilteredLength] = useState(filtered.length)
+  if (filtered.length !== prevFilteredLength) {
+    setPrevFilteredLength(filtered.length)
     if (lightboxIndex !== null && lightboxIndex >= filtered.length) {
       setLightboxIndex(filtered.length > 0 ? 0 : null)
     }
-  }, [filtered.length, lightboxIndex])
+  }
 
   return (
     <div>

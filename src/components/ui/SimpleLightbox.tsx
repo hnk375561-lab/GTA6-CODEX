@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import { createPortal } from 'react-dom'
 import { ZoomableImage } from '@/components/ui/ZoomableImage'
 import { useModalFocus } from '@/lib/hooks/useModalFocus'
+import { useIsMounted } from '@/lib/hooks/useIsMounted'
 import { cn } from '@/lib/utils'
 
 interface SimpleLightboxProps {
@@ -44,7 +45,7 @@ export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleL
   // en el cliente — en SSR no existe. Sin este flag, el primer render en
   // el navegador no coincidiría con el del servidor (0 vs 1 nodos) y React
   // tira warning de hydration mismatch.
-  const [mounted, setMounted] = useState(false)
+  const mounted = useIsMounted()
   // Dimensiones reales de la foto (se miden al abrir) y tamaño de
   // viewport (se recalcula en resize/rotación) — de acá sale el tamaño
   // final del panel. Ver comentario largo en el render de abajo.
@@ -52,10 +53,6 @@ export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleL
   const [viewport, setViewport] = useState<{ w: number; h: number } | null>(null)
 
   const close = useCallback(() => setOpen(false), [])
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   useEffect(() => {
     if (!open) return
@@ -78,10 +75,7 @@ export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleL
   // `object-contain` termina ajustando por ancho. Ahora el panel toma la
   // forma real de la imagen y así ocupa el máximo posible de pantalla.
   useEffect(() => {
-    if (!open) {
-      setNatural(null)
-      return
-    }
+    if (!open) return
     let cancelled = false
     const img = new window.Image()
     img.onload = () => {
@@ -90,6 +84,12 @@ export function SimpleLightbox({ src, alt, children, triggerClassName }: SimpleL
     img.src = src
     return () => {
       cancelled = true
+      // Reset al cerrar/cambiar de foto: pasa por el cleanup del efecto
+      // (que corre antes de la próxima ejecución o al desmontar) en vez
+      // de un `setNatural(null)` síncrono al inicio del cuerpo — mismo
+      // resultado, sin el warning de "setState directo dentro de un
+      // efecto".
+      setNatural(null)
     }
   }, [open, src])
 

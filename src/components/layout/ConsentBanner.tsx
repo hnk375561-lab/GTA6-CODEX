@@ -61,6 +61,10 @@ export function ConsentBanner({
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY)
     if (stored === 'accepted' || stored === 'rejected') {
+      // Lectura única de localStorage al montar (deps `[]`): sin riesgo
+      // de cascading render — el efecto no depende del estado que setea,
+      // no vuelve a dispararse a sí mismo.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setConsent(stored)
     }
     setHydrated(true)

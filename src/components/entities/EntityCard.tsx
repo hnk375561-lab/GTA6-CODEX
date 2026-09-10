@@ -11,7 +11,6 @@ import { WishlistButton } from '@/components/ui/WishlistButton'
 import type { ResolvedDisplayImage } from '@/lib/images'
 import { ENTITY_TYPE_LABELS, STATUS_LABELS } from '@/lib/entity-labels'
 import { getGenericQuickFacts } from '@/lib/entity-fields'
-import { performanceToScale } from '@/lib/vehicle-performance'
 import { parsePowerHp } from '@/lib/vehicle-power'
 import { EVIDENCE_STAMP_META } from '@/lib/evidence'
 import { FLIP_VIEW_TRANSITION_NAME, consumeFlipSlug } from '@/lib/view-transitions'
@@ -108,13 +107,6 @@ function vehicleShowcaseSpecs(vehicle: Vehicle): Array<{ label: string; value: s
   const transmission = shortTransmissionLabel(vehicle.transmision)
   if (transmission) specs.push({ label: 'Caja', value: transmission })
   return specs
-}
-
-/** Ancho de la mini-barra de rendimiento en la vista de catálogo (fila),
- *  reutilizando la misma escala 1-5 que EntityMetadata/StatBar. */
-function statBarWidth(value?: string): string {
-  const scale = performanceToScale(value)
-  return scale !== null ? `${(scale / 5) * 100}%` : '0%'
 }
 
 /** Un ícono SVG mínimo, lineal, mismo lenguaje que CategoryIcon — no hay

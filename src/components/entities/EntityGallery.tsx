@@ -6,6 +6,7 @@ import type { ResolvedDisplayImage } from '@/lib/images'
 import { ZoomableImage } from '@/components/ui/ZoomableImage'
 import { ImageReveal } from '@/components/ui/ImageReveal'
 import { useModalFocus } from '@/lib/hooks/useModalFocus'
+import { useIsMounted } from '@/lib/hooks/useIsMounted'
 import { cn } from '@/lib/utils'
 
 interface EntityGalleryProps {
@@ -30,10 +31,8 @@ interface EntityGalleryProps {
 export function EntityGallery({ images, entityTitle }: EntityGalleryProps) {
   const [active, setActive] = useState(0)
   const [open, setOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
+  const mounted = useIsMounted()
   const dialogRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => setMounted(true), [])
 
   const total = images.length
   const current = images[active] ?? images[0]

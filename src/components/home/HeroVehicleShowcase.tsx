@@ -1,12 +1,12 @@
 'use client'
 
-import { useRef, useState, useEffect, useCallback, type CSSProperties } from 'react'
+import { useRef, useState, useEffect, useCallback, useSyncExternalStore, type CSSProperties } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { HeroSelfPromoCard, type HeroSelfPromoContent } from '@/components/home/HeroSelfPromoCard'
 import { FeaturedCarousel } from '@/components/home/FeaturedCarousel'
-import { FLIP_VIEW_TRANSITION_NAME, navigateWithFlip, supportsViewTransitions } from '@/lib/view-transitions'
+import { FLIP_VIEW_TRANSITION_NAME, navigateWithFlip, supportsViewTransitions, subscribeNoop } from '@/lib/view-transitions'
 import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
 import { cn } from '@/lib/utils'
 
@@ -114,17 +114,16 @@ interface HeroVehicleShowcaseProps {
 export function HeroVehicleShowcase({ vehicles, selfPromoItems, className }: HeroVehicleShowcaseProps) {
   const router = useRouter()
   const trackRef = useRef<HTMLDivElement>(null)
-  const [flipSupported, setFlipSupported] = useState(false)
   const [canScrollPrev, setCanScrollPrev] = useState(false)
   const [canScrollNext, setCanScrollNext] = useState(false)
 
   // Soporte de View Transitions: se resuelve una sola vez en cliente (no
   // cambia durante la sesión) — evita evaluar como `true` en el primer
   // render de servidor/hidratación, donde `document.startViewTransition`
-  // todavía no es chequeable.
-  useEffect(() => {
-    setFlipSupported(supportsViewTransitions())
-  }, [])
+  // todavía no es chequeable. `useSyncExternalStore` (en vez de
+  // `useState` + `useEffect`) es el hook pensado para leer un valor
+  // externo al render de React de forma segura para hidratación.
+  const flipSupported = useSyncExternalStore(subscribeNoop, supportsViewTransitions, () => false)
 
   // Habilita/deshabilita visualmente las flechas según si queda algo
   // para scrollear en cada dirección — se recalcula en cada evento de

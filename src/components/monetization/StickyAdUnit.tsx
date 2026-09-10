@@ -52,6 +52,9 @@ export function StickyAdUnit() {
 
   useEffect(() => {
     const stored = window.sessionStorage.getItem(DISMISS_KEY)
+    // Lectura única de sessionStorage al montar (deps `[]`): sin riesgo
+    // de cascading render, el efecto no depende del estado que setea.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDismissed(stored === '1')
   }, [])
 

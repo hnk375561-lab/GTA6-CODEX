@@ -1,6 +1,7 @@
 'use client'
 
-import { useCallback, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
+import { useCallback, useEffect, useRef, type CSSProperties, type ReactNode } from 'react'
+import { usePrefersReducedMotion } from '@/lib/hooks/usePrefersReducedMotion'
 
 /**
  * Traslada levemente a sus hijos siguiendo el mouse dentro de todo el
@@ -28,15 +29,7 @@ export function Parallax({
   children: ReactNode
 }) {
   const ref = useRef<HTMLDivElement>(null)
-  const [reducedMotion, setReducedMotion] = useState(false)
-
-  useEffect(() => {
-    const query = window.matchMedia('(prefers-reduced-motion: reduce)')
-    setReducedMotion(query.matches)
-    const onChange = () => setReducedMotion(query.matches)
-    query.addEventListener('change', onChange)
-    return () => query.removeEventListener('change', onChange)
-  }, [])
+  const reducedMotion = usePrefersReducedMotion()
 
   useEffect(() => {
     if (reducedMotion) return

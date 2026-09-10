@@ -1,12 +1,12 @@
 'use client'
 
-import { useRef, useState, useEffect, useCallback, type CSSProperties } from 'react'
+import { useRef, useState, useEffect, useCallback, useSyncExternalStore, type CSSProperties } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { HeroPromoBanner, type HeroPromoBannerItem } from '@/components/home/HeroPromoBanner'
 import { FeaturedCarousel } from '@/components/home/FeaturedCarousel'
-import { navigateWithFlip, supportsViewTransitions } from '@/lib/view-transitions'
+import { navigateWithFlip, supportsViewTransitions, subscribeNoop } from '@/lib/view-transitions'
 import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
 import { cn, formatVehicleDisplayName } from '@/lib/utils'
 
@@ -105,13 +105,12 @@ interface HeroVehicleShowcaseV2Props {
 export function HeroVehicleShowcaseV2({ vehicles, promoBannerItem, className }: HeroVehicleShowcaseV2Props) {
   const router = useRouter()
   const trackRef = useRef<HTMLDivElement>(null)
-  const [flipSupported, setFlipSupported] = useState(false)
   const [canScrollPrev, setCanScrollPrev] = useState(false)
   const [canScrollNext, setCanScrollNext] = useState(false)
-
-  useEffect(() => {
-    setFlipSupported(supportsViewTransitions())
-  }, [])
+  // Soporte de View Transitions: se resuelve una sola vez en cliente (no
+  // cambia durante la sesión) — `useSyncExternalStore` evita el mismatch
+  // de hidratación sin necesitar `useState` + `useEffect` acá.
+  const flipSupported = useSyncExternalStore(subscribeNoop, supportsViewTransitions, () => false)
 
   const updateScrollButtons = useCallback(() => {
     const track = trackRef.current

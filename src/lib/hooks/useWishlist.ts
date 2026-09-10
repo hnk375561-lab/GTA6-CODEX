@@ -65,6 +65,15 @@ export function useWishlist() {
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
+    // Hidratación única al montar (deps `[]`): lee el estado real de
+    // localStorage recién en cliente, sin riesgo de cascading render (no
+    // depende de `ids`/`hydrated`). El `sync` de abajo sí corre dentro
+    // de los listeners de eventos (uso correcto y ya exceptuado por la
+    // regla), pero la lectura inicial no tiene un evento que la dispare
+    // — es la primera lectura, no una reacción a un cambio — así que no
+    // encaja limpio en `useSyncExternalStore` sin agregar una capa de
+    // caché al snapshot solo para esto.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIds(readStorage())
     setHydrated(true)
 

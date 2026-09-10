@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { SITE_NAME } from '@/config/site'
-import { prefersReducedMotion } from '@/lib/utils'
+import { usePrefersReducedMotion } from '@/lib/hooks/usePrefersReducedMotion'
 
 /**
  * Fallback si no se pasa `examples` — un puñado de títulos reales del
@@ -53,16 +53,8 @@ export function QuickSearchForm({ examples = DEFAULT_EXAMPLES }: QuickSearchForm
   const router = useRouter()
   const [value, setValue] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
-  const [reducedMotion, setReducedMotion] = useState(false)
+  const reducedMotion = usePrefersReducedMotion()
   const [exampleIndex, setExampleIndex] = useState(0)
-
-  useEffect(() => {
-    setReducedMotion(prefersReducedMotion())
-    const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const onChange = () => setReducedMotion(mql.matches)
-    mql.addEventListener('change', onChange)
-    return () => mql.removeEventListener('change', onChange)
-  }, [])
 
   useEffect(() => {
     if (reducedMotion || value.length > 0 || examples.length <= 1) return
