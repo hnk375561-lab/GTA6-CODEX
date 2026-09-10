@@ -5,6 +5,11 @@ import Link from 'next/link'
 import { EntityType, type Entity } from '@/types'
 import { Reveal } from '@/components/ui/Reveal'
 import { EntityCard } from '@/components/entities/EntityCard'
+// TEMPORAL — evaluación de VehicleCardV2 (reset visual completo, ver
+// VehicleCardV2.tsx). Se monta en paralelo en la vista grid de vehículos
+// hasta aprobación explícita; EntityCard sigue siendo la card real del
+// resto del sitio y de la vista "catálogo" (layout="row").
+import { VehicleCardV2 } from '@/components/entities/VehicleCardV2'
 import { VehicleCompareBar, VehicleCompareSheet, MAX_COMPARE } from '@/components/entities/VehicleCompareSheet'
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue'
 import { useSyncedSearchParams } from '@/lib/hooks/useSyncedSearchParams'
@@ -829,28 +834,42 @@ export function EntityListExplorer({
             compareSlugs.length > 0 && 'pb-24',
           )}
         >
-          {visibleEntities.map((entity, i) => (
-            <Reveal key={entity.slug} delay={(i % 6) * 80} className="entity-card-viewport">
-              <EntityCard
-                entity={entity}
-                image={imageBySlug?.[`${entity.type}/${entity.slug}`]}
-                typeLabel={typeLabel}
-                clipUrl={clipUrlBySlug?.[entity.slug]}
-                relationCount={relationCountBySlug?.[entity.slug]}
-                compareEnabled={isVehicleList}
-                compareChecked={compareSlugs.includes(entity.slug)}
-                onCompareToggle={() => toggleCompare(entity.slug)}
-                compareDisabled={!compareSlugs.includes(entity.slug) && compareSlugs.length >= MAX_COMPARE}
-                // Solo las primeras cards del grid, las que están sin scroll
-                // en la mayoría de viewports (el grid de vehiculos llega a 5
-                // columnas en xl — ver docs/audit-performance-2026-08.md
-                // sección 3, donde queda marcado como "sospecha sin medir").
-                // EntityImage ya soportaba esta prop; lo que faltaba era que
-                // el caller (acá) se la pasara a alguna card.
-                priority={i < 5}
-              />
-            </Reveal>
-          ))}
+          {visibleEntities.map((entity, i) =>
+            // TEMPORAL: vehículos en vista grid usan VehicleCardV2 para
+            // evaluación (ver import arriba). Todo lo demás — fabricantes,
+            // noticias, guías, y la vista "catálogo" (row) — sigue
+            // exactamente igual con EntityCard.
+            isVehicleList ? (
+              <Reveal key={entity.slug} delay={(i % 6) * 80} className="entity-card-viewport">
+                <VehicleCardV2
+                  entity={entity}
+                  image={imageBySlug?.[`${entity.type}/${entity.slug}`]}
+                  priority={i < 5}
+                />
+              </Reveal>
+            ) : (
+              <Reveal key={entity.slug} delay={(i % 6) * 80} className="entity-card-viewport">
+                <EntityCard
+                  entity={entity}
+                  image={imageBySlug?.[`${entity.type}/${entity.slug}`]}
+                  typeLabel={typeLabel}
+                  clipUrl={clipUrlBySlug?.[entity.slug]}
+                  relationCount={relationCountBySlug?.[entity.slug]}
+                  compareEnabled={isVehicleList}
+                  compareChecked={compareSlugs.includes(entity.slug)}
+                  onCompareToggle={() => toggleCompare(entity.slug)}
+                  compareDisabled={!compareSlugs.includes(entity.slug) && compareSlugs.length >= MAX_COMPARE}
+                  // Solo las primeras cards del grid, las que están sin scroll
+                  // en la mayoría de viewports (el grid de vehiculos llega a 5
+                  // columnas en xl — ver docs/audit-performance-2026-08.md
+                  // sección 3, donde queda marcado como "sospecha sin medir").
+                  // EntityImage ya soportaba esta prop; lo que faltaba era que
+                  // el caller (acá) se la pasara a alguna card.
+                  priority={i < 5}
+                />
+              </Reveal>
+            )
+          )}
         </div>
       )}
 
