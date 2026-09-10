@@ -32,6 +32,7 @@
 - [✨ Qué hay hoy](#-qué-hay-hoy)
 - [🗺️ Estrategia: global primero, después por país](#️-estrategia-global-primero-después-por-país)
 - [🏗️ Arquitectura](#️-arquitectura)
+- [⚠️ Cloudflare: qué NO hacer (Error 1027 / rate limit)](#️-cloudflare-qué-no-hacer-error-1027--rate-limit)
 - [🚀 Quick Start](#-quick-start)
 - [📄 Estructura de contenido](#-estructura-de-contenido)
 - [🩺 Estado del pivote (qué falta)](#-estado-del-pivote-qué-falta)
@@ -133,6 +134,74 @@ AutoFicha/
 │
 └── README.md
 ```
+
+## ⚠️ Cloudflare: qué NO hacer (Error 1027 / rate limit)
+
+**Leer esto ANTES de tocar `EntityCard.tsx`, cualquier componente que
+renderice una lista de `<Link>` de `next/link`, o `open-next.config.ts`.**
+No es una sugerencia de estilo — un descuido acá ya tumbó el sitio
+completo una vez (09/09/2026, Error 1027 "plan limits exceeded" de
+Cloudflare Workers) sin que hiciera falta ningún tráfico real ni ataque.
+
+### Qué pasó, en una frase
+
+Un `<Link>` de `next/link` **sin `prefetch={false}`**, dentro de una card
+que se repite muchas veces en una grilla (`EntityCard`, listado de
+`/vehiculos`), + `enableCacheInterception: true` en
+`open-next.config.ts` (activo a propósito, ver comentario ahí — soluciona
+otro bug distinto y **no se puede simplemente apagar**) = cada card que
+entra en el viewport dispara un fetch interno de precarga contra el
+binding de assets del Worker (aparece como host `assets.local` en el
+dashboard de Cloudflare, **no** el dominio público). Con ~50 vehículos
+por página y 5 columnas, eso multiplicó las invocations reales por
+~100-140x — de unos pocos miles de requests reales a **más de 400.000**
+invocations "fantasma" en una sola sesión de navegación normal,
+suficiente para agotar el cupo diario del plan y bloquear el sitio entero
+(`Error 1027: This website has been temporarily rate limited`) para
+todo el mundo, dueño incluido.
+
+### La regla, para siempre
+
+**Todo `<Link href={...}>` de `next/link` que se renderice dentro de un
+`.map()` (una card por ítem de una lista: vehículos, fabricantes,
+rankings, wishlist, comparados, lo que sea) DEBE llevar
+`prefetch={false}` explícito.** Un `<Link>` suelto, único, que no se
+repite en un loop (un botón de CTA, un breadcrumb) no necesita esto — el
+riesgo es específicamente la multiplicación por cantidad de ítems
+visibles a la vez.
+
+Esto **ya se arregló una vez** (commit `d03717eb`, 08/09/2026) y **se
+volvió a perder sin que nadie lo notara** cuando `EntityCard.tsx` se
+reescribió por completo unas horas después en un rediseño visual
+("showroom premium", `f18d4ae8`). El rediseño no tocó lógica, no tocó
+datos, no tocó rutas — fue un cambio "solo de presentación" y aun así
+rompió esto, porque `prefetch={false}` vive en la misma etiqueta JSX que
+se reescribe con cualquier refactor del markup. **`tsc`, `eslint` y los
+tests existentes en ese momento pasaban en verde con el bug adentro** —
+nada de eso detecta una prop de Next.js faltante si no hay un test que la
+busque específicamente.
+
+### Qué hay ahora para que no vuelva a pasar
+
+- **Test de regresión:** `src/components/entities/EntityCard.test.tsx`
+  mockea `next/link` y falla en rojo si CUALQUIER `<Link>` renderizado
+  por `EntityCard` (layout `grid`, `row`, o el fallback genérico para
+  entidades no-vehículo) no lleva `prefetch={false}`. Corré
+  `npm run test` antes de dar por terminado cualquier cambio en ese
+  archivo — si este test falla, es exactamente este bug volviendo.
+- **Si agregás una card nueva en cualquier otro componente** (no
+  `EntityCard`) que renderice `<Link>` dentro de un `.map()`: agregale
+  `prefetch={false}` desde el primer commit, y considerá agregar un test
+  igual al de `EntityCard.test.tsx` para esa card.
+- **Si en algún momento se saca `enableCacheInterception` de
+  `open-next.config.ts`**, este riesgo específico desaparece — pero esa
+  opción está ahí a propósito por otro bug (ver el comentario largo en
+  ese archivo), así que sacarla sin resolver ese otro problema primero
+  cambia un incidente por otro.
+- **Detalle completo del diagnóstico e investigación** (cómo se detectó,
+  capturas del dashboard, la cadena exacta de commits): ver
+  [`TROUBLESHOOTING.md`](./TROUBLESHOOTING.md).
+
 
 ## 🚀 Quick Start
 
