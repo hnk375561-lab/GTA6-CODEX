@@ -6,6 +6,13 @@ import { getFixedComparisonPairs, fixedComparisonSlug } from '@/lib/fixed-compar
 import { getAvailableRankings } from '@/lib/rankings'
 import { SITE_URL } from '@/config/site'
 
+// Requerido por Next.js cuando el proyecto usa `output: "export"`
+// (export estático, necesario para desplegar en GitHub Pages, que no
+// corre un servidor Node). Sin esta línea, `next build` falla con:
+// "export const dynamic = force-static/export const revalidate not
+// configured on route /sitemap.xml with output: export".
+export const dynamic = 'force-static'
+
 /**
  * Parsea una fecha de entidad de forma segura. entities.ts:validateEntity()
  * ya rechaza (con warning) cualquier entidad con updatedAt no parseable, así
