@@ -83,21 +83,15 @@ const nextConfig = {
           },
         ],
       },
-      // 10/09/2026 — imágenes de vehículos/logos SEPARADAS de la regla de
-      // arriba a propósito: pesan hasta ~2.4MB c/u (public/images/entities/
-      // vehiculos/, 287MB en total) y la regla anterior solo traía
-      // `s-maxage` (sin `max-age`). `s-maxage` únicamente le habla a caches
-      // compartidos (el CDN de Cloudflare) — el NAVEGADOR lo ignora sin un
-      // `max-age` explícito. Resultado real: cada vez que el propio dueño
-      // del sitio volvía a entrar a una ficha ya vista (o iba y volvía con
-      // el botón atrás), el navegador re-descargaba la imagen completa en
-      // vez de servirla desde su caché local — un viaje de ida y vuelta
-      // (y una invocación al Worker) por cada imagen, en cada visita
-      // repetida, sin que hiciera falta ningún bot para explicarlo.
-      // `immutable` es seguro acá porque el pipeline de imágenes
-      // (scripts/pregenerate-image-variants.mjs) regenera el archivo
-      // completo en cada build — no hay edición in-place del mismo
-      // nombre entre deploys.
+      // ⚠️ CORREGIDO 10/09/2026 (sesión posterior): esta regla para
+      // /images/* y /logos/* es un NO-OP en Cloudflare Workers con
+      // OpenNext — el Worker no corre delante de los archivos de
+      // `public/` (Workers Static Assets los sirve directo), así que
+      // `headers()` de next.config.js nunca se ejecuta para ellos. Se
+      // deja documentada la intención (mismos valores que el fix real),
+      // pero el mecanismo que efectivamente aplica el Cache-Control es
+      // `public/_headers` — ver ese archivo para el detalle y la fuente.
+      // NO borrar `public/_headers` asumiendo que esto ya cubre el caso.
       {
         source: '/images/:path*',
         headers: [

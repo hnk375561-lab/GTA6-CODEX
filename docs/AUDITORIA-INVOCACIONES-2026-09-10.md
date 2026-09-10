@@ -170,6 +170,31 @@ Cuando el sitio esté listo para indexarse de verdad:
    justo cuando ya puede cachear en el borde y no vuelve a repetirse el
    incidente.
 
+## ⚠️ ADDENDUM (sesión posterior, mismo día): el fix del punto 5 no aplicaba
+
+El punto 5 (`Cache-Control` con `max-age` para `/images/*` y `/logos/*` vía
+`headers()` en `next.config.js`) quedó documentado como RESUELTO pero **no
+tenía ningún efecto en producción**. Motivo, confirmado contra la
+documentación oficial de OpenNext
+(https://opennext.js.org/cloudflare/caching#static-assets-caching): en
+Cloudflare Workers con Static Assets, el Worker no corre delante de los
+archivos de `public/` (a menos que `run_worker_first: true`, que no está
+seteado en `wrangler.toml` — y no conviene setearlo, porque eso sí
+facturaría cada asset request como invocación, agravando el incidente
+original). Como el Worker nunca procesa esos requests, `headers()` de
+Next.js nunca se ejecuta para ellos: la regla quedaba escrita pero muerta.
+
+**Fix real**: `public/_headers` (convención nativa de Cloudflare Workers
+Static Assets, la misma que usa Cloudflare Pages), con las mismas reglas de
+`Cache-Control` para `/images/*`, `/logos/*` y adicionalmente
+`/_next/static/*` (que tenía el mismo problema, sin haber sido detectado
+antes). `next.config.js` se dejó con un comentario corregido apuntando acá
+para que no se vuelva a asumir que esa regla hace algo.
+
+Esto no cambia el análisis de causa raíz del punto 5 (seguía siendo el
+motivo real de las invocaciones repetidas por revisita) — solo corrige que
+el fix aplicado no llegó a resolverlo hasta ahora.
+
 ## Cómo verificar que esto funcionó
 
 En el dashboard de Cloudflare (Workers & Pages → sinfrenos → Metrics),
