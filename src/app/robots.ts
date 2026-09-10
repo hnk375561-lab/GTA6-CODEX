@@ -13,26 +13,21 @@ import { SITE_URL } from '@/config/site'
  */
 export default function robots(): MetadataRoute.Robots {
   return {
+    // 10/09/2026 — BLOQUEO TOTAL TEMPORAL: el sitio corre 100% sobre
+    // `*.workers.dev` (sin dominio propio conectado), lo que significa
+    // que NINGÚN request se cachea en el borde de Cloudflare — cada
+    // página que un crawler visita reinvoca el Worker completo y arrastra
+    // decenas de assets (JS/CSS/imágenes) con él. Con el sitio recién
+    // publicado y sin necesidad de indexación real todavía (uso actual:
+    // solo el propio dueño), dejar pasar crawlers normales (Googlebot,
+    // Bingbot, etc., antes permitidos) es la fuente más probable del
+    // consumo de cuota diaria sin que haya visitas humanas de terceros.
+    // Sacar este bloqueo total en cuanto: (a) se conecte un dominio propio
+    // (Cache-Control ya está listo para eso en next.config.js) y/o (b) el
+    // sitio esté listo para indexarse de verdad.
     rules: [
       {
         userAgent: '*',
-        allow: '/',
-        // /api/ ya no está vacío (03/09/2026: rutas del reporte comparativo
-        // premium, ver src/app/api/premium-report/*) — se mantiene
-        // bloqueado igual, son endpoints transaccionales sin contenido que
-        // indexar. /admin/ sigue sin existir, se deja preventivo.
-        disallow: ['/.next/', '/api/', '/admin/'],
-      },
-      {
-        userAgent: 'GPTBot',
-        disallow: '/',
-      },
-      {
-        userAgent: 'CCBot',
-        disallow: '/',
-      },
-      {
-        userAgent: 'anthropic-ai',
         disallow: '/',
       },
     ],

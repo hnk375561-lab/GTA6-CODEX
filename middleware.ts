@@ -97,6 +97,32 @@ const BLOCKED_USER_AGENTS = [
   'Diffbot',
   'omgili',
   'YouBot',
+  // Buscadores "normales" — bloqueo TEMPORAL (10/09/2026, ver nota en
+  // robots.ts): sitio corriendo sin dominio propio en workers.dev, sin
+  // caché de borde posible, y sin necesidad real de indexación todavía.
+  // Estos SÍ respetan robots.ts, pero acá se refuerza para que el corte
+  // sea inmediato en middleware y no dependa de que cada uno relea el
+  // robots.txt. Sacar esta sección cuando el sitio esté listo para
+  // indexarse (junto con robots.ts).
+  'Googlebot',
+  'bingbot',
+  'Slurp', // Yahoo
+  'DuckDuckBot',
+  'Baiduspider',
+  'YandexBot',
+  'Sogou',
+  'facebookexternalhit',
+  'ia_archiver', // Alexa/Wayback
+  'archive.org_bot',
+  'Applebot',
+  'LinkedInBot',
+  'TwitterBot',
+  'WhatsApp',
+  'SkypeUriPreview',
+  'Discordbot',
+  'TelegramBot',
+  'Pinterestbot',
+  'redditbot',
   // Scraping/SEO agresivo adicional (mismo patrón que Ahrefs/Semrush)
   'BLEXBot',
   'DataForSeoBot',
