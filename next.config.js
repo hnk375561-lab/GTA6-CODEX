@@ -75,11 +75,44 @@ const nextConfig = {
       // en vez de golpear el Worker con tráfico en caliente post-deploy.
       {
         source:
-          '/((?!api/|dashboard|_next/|favicon.ico).*)',
+          '/((?!api/|dashboard|_next/|favicon.ico|images/|logos/).*)',
         headers: [
           {
             key: 'Cache-Control',
             value: 'public, s-maxage=3600, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      // 10/09/2026 — imágenes de vehículos/logos SEPARADAS de la regla de
+      // arriba a propósito: pesan hasta ~2.4MB c/u (public/images/entities/
+      // vehiculos/, 287MB en total) y la regla anterior solo traía
+      // `s-maxage` (sin `max-age`). `s-maxage` únicamente le habla a caches
+      // compartidos (el CDN de Cloudflare) — el NAVEGADOR lo ignora sin un
+      // `max-age` explícito. Resultado real: cada vez que el propio dueño
+      // del sitio volvía a entrar a una ficha ya vista (o iba y volvía con
+      // el botón atrás), el navegador re-descargaba la imagen completa en
+      // vez de servirla desde su caché local — un viaje de ida y vuelta
+      // (y una invocación al Worker) por cada imagen, en cada visita
+      // repetida, sin que hiciera falta ningún bot para explicarlo.
+      // `immutable` es seguro acá porque el pipeline de imágenes
+      // (scripts/pregenerate-image-variants.mjs) regenera el archivo
+      // completo en cada build — no hay edición in-place del mismo
+      // nombre entre deploys.
+      {
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=604800, s-maxage=2592000, stale-while-revalidate=2592000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/logos/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=604800, s-maxage=2592000, stale-while-revalidate=2592000, immutable',
           },
         ],
       },
