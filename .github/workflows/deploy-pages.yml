@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate content bundle
+        run: node scripts/generate-content-bundle.mjs
+
+      - name: Pregenerate image variants
+        run: node scripts/pregenerate-image-variants.mjs
+
+      - name: Build (static export)
+        run: npx next build
+        env:
+          # Dejar VACÍO si el sitio usa dominio propio (public/CNAME,
+          # sirve en la raíz). Poner "/GTA6-CODEX" (el nombre del repo,
+          # con la barra inicial) SOLO si en vez de dominio propio se usa
+          # la URL default de GitHub Pages
+          # (hnk375561-lab.github.io/GTA6-CODEX) — ver next.config.js.
+          GITHUB_PAGES_BASE_PATH: ''
+          NEXT_PUBLIC_SITE_URL: https://sinfreno.com
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
