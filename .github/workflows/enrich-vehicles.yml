@@ -45,7 +45,7 @@ jobs:
       - name: 📊 Análisis de completitud
         id: analyze
         run: |
-          node -e "
+          cat > /tmp/analyze-completeness.cjs << 'EOF'
           const fs = require('fs');
           const path = require('path');
           const dir = './src/content/vehiculos';
@@ -57,9 +57,10 @@ jobs:
               complete++;
             }
           });
-          console.log(\`Complete: \${complete}/${files.length}\`);
-          fs.writeFileSync('enrichment-report.txt', \`Enriquecimiento completado: \${complete}/\${files.length} vehículos\\nFecha: \${new Date().toISOString()}\`);
-          " || true
+          console.log(`Complete: ${complete}/${files.length}`);
+          fs.writeFileSync('enrichment-report.txt', `Enriquecimiento completado: ${complete}/${files.length} vehículos\nFecha: ${new Date().toISOString()}`);
+          EOF
+          node /tmp/analyze-completeness.cjs || true
       
       # Estos 3 checks cubren específicamente la forma de las entidades y
       # corren en segundos, no minutos — por eso van acá, antes de abrir
