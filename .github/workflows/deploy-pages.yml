@@ -44,8 +44,8 @@ jobs:
           # con la barra inicial) SOLO si en vez de dominio propio se usa
           # la URL default de GitHub Pages
           # (hnk375561-lab.github.io/GTA6-CODEX) — ver next.config.js.
-          GITHUB_PAGES_BASE_PATH: ''
-          NEXT_PUBLIC_SITE_URL: https://sinfreno.com
+          GITHUB_PAGES_BASE_PATH: '/GTA6-CODEX'
+          NEXT_PUBLIC_SITE_URL: https://hnk375561-lab.github.io/GTA6-CODEX
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
