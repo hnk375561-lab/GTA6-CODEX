@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { FLYER_PRICE_ARS, isValidFlyerData, type FlyerData } from '@/lib/for-sale-flyer'
 import { trackPremiumReportCheckoutStarted } from '@/lib/analytics-events'
+import { fetchWithTimeout, isTimeoutError } from '@/lib/fetch-with-timeout'
 
 /**
  * Formulario del "cartel de venta" pago — ver `src/lib/for-sale-flyer.ts`
@@ -40,7 +41,7 @@ export function ForSaleFlyerForm({ className = '' }: { className?: string }) {
     trackPremiumReportCheckoutStarted({ slugs: [`flyer:${data.marca}-${data.modelo}`], label: 'cartel-venta' })
 
     try {
-      const res = await fetch('/api/for-sale-flyer/create-preference', {
+      const res = await fetchWithTimeout('/api/for-sale-flyer/create-preference', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -58,9 +59,13 @@ export function ForSaleFlyerForm({ className = '' }: { className?: string }) {
       }
 
       window.location.href = json.initPoint
-    } catch {
+    } catch (err) {
       setStatus('error')
-      setErrorMessage('No se pudo conectar con Mercado Pago. Probá de nuevo.')
+      setErrorMessage(
+        isTimeoutError(err)
+          ? 'Mercado Pago tardó demasiado en responder. Probá de nuevo.'
+          : 'No se pudo conectar con Mercado Pago. Probá de nuevo.'
+      )
     }
   }
 

@@ -17,6 +17,29 @@
 
 const MP_API_BASE = 'https://api.mercadopago.com'
 
+/** Timeout por defecto para llamadas a la API de Mercado Pago. Sin esto,
+ *  una API externa colgada cuelga la ruta API entera con ella hasta el
+ *  `maxDuration` del runtime (o indefinidamente si no está seteado). */
+const MP_FETCH_TIMEOUT_MS = 10_000
+
+/** fetch con timeout vía AbortController. Si `init.signal` ya viene
+ *  seteado desde afuera se respeta; si no, se crea uno propio con
+ *  `MP_FETCH_TIMEOUT_MS`. */
+async function fetchWithTimeout(url: string, init: RequestInit, timeoutMs = MP_FETCH_TIMEOUT_MS): Promise<Response> {
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), timeoutMs)
+  try {
+    return await fetch(url, { ...init, signal: init.signal ?? controller.signal })
+  } catch (err) {
+    if (err instanceof Error && err.name === 'AbortError') {
+      throw new Error(`Mercado Pago no respondió dentro de ${timeoutMs}ms (timeout).`)
+    }
+    throw err
+  } finally {
+    clearTimeout(timeout)
+  }
+}
+
 export interface CreatePreferenceItem {
   title: string
   description?: string
@@ -67,7 +90,7 @@ export function isMercadoPagoConfigured(): boolean {
 export async function createPreference(params: CreatePreferenceParams): Promise<MercadoPagoPreference> {
   const token = getAccessToken()
 
-  const res = await fetch(`${MP_API_BASE}/checkout/preferences`, {
+  const res = await fetchWithTimeout(`${MP_API_BASE}/checkout/preferences`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -117,7 +140,7 @@ export interface MercadoPagoPayment {
 export async function getPayment(paymentId: string): Promise<MercadoPagoPayment> {
   const token = getAccessToken()
 
-  const res = await fetch(`${MP_API_BASE}/v1/payments/${encodeURIComponent(paymentId)}`, {
+  const res = await fetchWithTimeout(`${MP_API_BASE}/v1/payments/${encodeURIComponent(paymentId)}`, {
     headers: { Authorization: `Bearer ${token}` },
     cache: 'no-store',
   })

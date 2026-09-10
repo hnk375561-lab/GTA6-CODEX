@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { trackAffiliateClick } from '@/lib/analytics-events'
 import { LeadMailtoNotice } from '@/components/monetization/LeadMailtoNotice'
+import { fetchWithTimeout, isTimeoutError } from '@/lib/fetch-with-timeout'
 
 /**
  * Captura de leads de VENTA/tasación (distinto de `LeadQuoteForm.tsx`,
@@ -81,14 +82,19 @@ export function SellVehicleLeadForm({
         formData.append(GFORM_ENTRY_COMENTARIO, comentario)
       }
       try {
-        await fetch(GFORM_ACTION_URL!, {
+        await fetchWithTimeout(GFORM_ACTION_URL!, {
           method: 'POST',
           mode: 'no-cors',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: formData.toString(),
         })
         setSentVia('gform')
-      } catch {
+      } catch (err) {
+        // Google Forms con no-cors nunca devuelve un status legible, así
+        // que cualquier excepción (red caída o timeout) cae al mismo
+        // fallback de mailto. isTimeoutError solo se usa para distinguir
+        // en logs/analytics si hiciera falta más adelante.
+        void isTimeoutError(err)
         sendMailtoFallback()
         setSentVia('mailto')
       }

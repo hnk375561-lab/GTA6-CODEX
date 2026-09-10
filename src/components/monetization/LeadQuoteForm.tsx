@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { trackAffiliateClick } from '@/lib/analytics-events'
 import { LeadMailtoNotice } from '@/components/monetization/LeadMailtoNotice'
+import { fetchWithTimeout, isTimeoutError } from '@/lib/fetch-with-timeout'
 
 /**
  * Captura de leads de compra ("Solicitá cotización sin compromiso").
@@ -100,17 +101,19 @@ export function LeadQuoteForm({
         formData.append(GFORM_ENTRY_COMENTARIO, comentario)
       }
       try {
-        await fetch(GFORM_ACTION_URL!, {
+        await fetchWithTimeout(GFORM_ACTION_URL!, {
           method: 'POST',
           mode: 'no-cors',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: formData.toString(),
         })
         setSentVia('gform')
-      } catch {
-        // Si falla la red (o el CSP bloquea el fetch), no perdemos el
-        // lead: caemos a mailto igual, pero avisamos que fue por esa vía
-        // (ver `sentVia` más abajo) en vez de mentir que llegó al Sheet.
+      } catch (err) {
+        // Si falla la red, se corta por timeout (ver fetchWithTimeout) o
+        // el CSP bloquea el fetch, no perdemos el lead: caemos a mailto
+        // igual, pero avisamos que fue por esa vía (ver `sentVia` más
+        // abajo) en vez de mentir que llegó al Sheet.
+        void isTimeoutError(err)
         const subject = encodeURIComponent(`Lead de cotización — ${vehicleName}`)
         const body = encodeURIComponent(
           `Vehículo: ${vehicleName}\nNombre: ${nombre}\nContacto (tel/email): ${contacto}\nComentario: ${comentario || '(sin comentario)'}`

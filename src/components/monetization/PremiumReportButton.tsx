@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { PREMIUM_REPORT_PRICE_ARS } from '@/lib/premium-report'
 import { trackPremiumReportCheckoutStarted } from '@/lib/analytics-events'
+import { fetchWithTimeout, isTimeoutError } from '@/lib/fetch-with-timeout'
 
 interface PremiumReportButtonProps {
   /** Slugs de los vehículos ya seleccionados en la comparación (2 a 5). */
@@ -37,7 +38,7 @@ export function PremiumReportButton({ slugs, className = '', trackingLabel }: Pr
     trackPremiumReportCheckoutStarted({ slugs, label: trackingLabel || 'comparar' })
 
     try {
-      const res = await fetch('/api/premium-report/create-preference', {
+      const res = await fetchWithTimeout('/api/premium-report/create-preference', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ slugs }),
@@ -55,9 +56,13 @@ export function PremiumReportButton({ slugs, className = '', trackingLabel }: Pr
       }
 
       window.location.href = data.initPoint
-    } catch {
+    } catch (err) {
       setStatus('error')
-      setErrorMessage('No se pudo conectar con Mercado Pago. Probá de nuevo.')
+      setErrorMessage(
+        isTimeoutError(err)
+          ? 'Mercado Pago tardó demasiado en responder. Probá de nuevo.'
+          : 'No se pudo conectar con Mercado Pago. Probá de nuevo.'
+      )
     }
   }
 
