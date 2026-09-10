@@ -6,25 +6,15 @@ name: Post-Deploy Smoke Test
 # post-deploy es barato de mantener y de alto valor si algo se rompe en
 # producción sin que nadie lo note.
 #
-# BUG encontrado y corregido (09/09/2026): este workflow nunca se disparó
-# ni una sola vez desde que existe. `workflow_run` escuchaba el nombre
-# "Deploy to Cloudflare Pages", pero ese workflow ya no existe con ese
-# nombre — se renombró a "CI (type-check, lint, test, build)" en el
-# commit d03717eb (07/09/2026, ver deploy.yml), sin que se actualizara
-# este archivo al mismo tiempo. GitHub matchea `workflow_run` por nombre
-# exacto, así que un rename sin tocar este archivo lo deja huérfano para
-# siempre, sin ningún error visible — simplemente no corre nunca.
-#
-# Además, el deploy real a producción NO lo hace ningún workflow de
-# GitHub Actions: lo hace Cloudflare Workers Builds vía su integración
-# git nativa (ver comentario en deploy.yml), que no emite ningún evento
-# que Actions pueda escuchar. Por eso este workflow ahora dispara sobre
-# el `push` a main directamente (mismo trigger que la CI) en vez de
-# encadenarse a un workflow_run que no puede representar "el deploy ya
-# terminó" — y el chequeo reintenta con backoff en vez de un sleep fijo,
-# porque el build+deploy de Cloudflare Workers Builds puede tardar
-# varios minutos (ver notas de ~13min en sesiones anteriores) y un sleep
-# corto daría falsos negativos.
+# 10/09/2026 — Migración a GitHub Pages: SITE_URL ahora apunta a
+# hnk375561-lab.github.io/GTA6-CODEX (no hay dominio propio conectado).
+# El trigger sigue siendo `push` a main directamente en vez de
+# encadenarse a un `workflow_run` de "Deploy to GitHub Pages": el deploy
+# de Pages corre en paralelo (job separado, mismo push), y este smoke
+# test reintenta con backoff hasta 12 minutos para darle tiempo a
+# terminar sin acoplarse al nombre exacto de ese otro workflow (mismo
+# problema de acoplamiento por nombre que ya rompió esto una vez,
+# documentado en el historial de este archivo).
 
 on:
   push:
@@ -34,7 +24,7 @@ jobs:
   smoke-test:
     runs-on: ubuntu-latest
     env:
-      SITE_URL: https://sinfreno.com
+      SITE_URL: https://hnk375561-lab.github.io/GTA6-CODEX
     steps:
       - name: Chequear URLs clave (esperado 200 en cada una, con reintentos)
         run: |
@@ -46,12 +36,12 @@ jobs:
             "$SITE_URL/fabricantes"
             "$SITE_URL/sitemap.xml"
           )
-          # Cloudflare Workers Builds no emite ningún evento que Actions
-          # pueda esperar, así que en vez de un sleep fijo se reintenta
-          # en rondas (todas las URLs pendientes por ronda, no una URL a
-          # la vez) hasta 12 minutos totales antes de darlas por caídas —
-          # suficiente margen para un build+deploy típico (~13min en
-          # corridas previas) sin bloquear el job más de lo necesario.
+          # El job de deploy (deploy-pages.yml) corre en paralelo a este,
+          # sin emitir ningún evento que este workflow pueda esperar, así
+          # que en vez de un sleep fijo se reintenta en rondas (todas las
+          # URLs pendientes por ronda, no una URL a la vez) hasta 12
+          # minutos totales antes de darlas por caídas — margen suficiente
+          # para un build+deploy típico sin bloquear el job de más.
           max_rounds=24
           sleep_between=30
           pending=("${urls[@]}")
