@@ -10,4 +10,4 @@ export const SITE_NAME = 'Sin Frenos'
 
 export const SITE_TAGLINE = 'Fichas técnicas y comparador de autos y motos'
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://hnk375561-lab.github.io/GTA6-CODEX'
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://hnk375561-lab.github.io/Sin-Frenos'

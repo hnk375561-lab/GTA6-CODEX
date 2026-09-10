@@ -33,7 +33,7 @@ describe('imageLoader', () => {
   })
 
   it('should include basePath in entity image URLs', () => {
-    process.env.NEXT_PUBLIC_ASSET_PREFIX = '/GTA6-CODEX'
+    process.env.NEXT_PUBLIC_ASSET_PREFIX = '/Sin-Frenos'
     process.env.NEXT_PUBLIC_BLOB_BASE_URL = ''
     
     const result = imageLoader({
@@ -41,7 +41,7 @@ describe('imageLoader', () => {
       width: 1024
     })
     
-    expect(result.startsWith('/GTA6-CODEX')).toBe(true)
+    expect(result.startsWith('/Sin-Frenos')).toBe(true)
     expect(result).toContain('nissan-gt-r-w')
     expect(result).toContain('.webp')
   })
@@ -61,14 +61,14 @@ describe('imageLoader', () => {
   })
 
   it('should handle UI images with basePath', () => {
-    process.env.NEXT_PUBLIC_ASSET_PREFIX = '/GTA6-CODEX'
+    process.env.NEXT_PUBLIC_ASSET_PREFIX = '/Sin-Frenos'
     
     const result = imageLoader({
       src: '/images/ui/icon.svg',
       width: 32
     })
     
-    expect(result.startsWith('/GTA6-CODEX')).toBe(true)
+    expect(result.startsWith('/Sin-Frenos')).toBe(true)
     expect(result).toContain('/images/ui/icon.svg')
   })
 
