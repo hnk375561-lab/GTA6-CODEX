@@ -1,129 +1,69 @@
 /** @type {import('next').NextConfig} */
+
+// Migración a GitHub Pages (hosting 100% estático):
+//
+// - `output: 'export'` reemplaza el runtime de Vercel/Cloudflare Workers
+//   por un `next build` que escribe HTML/CSS/JS ya resueltos en `out/`
+//   (ver `.github/workflows/deploy-pages.yml`). Requiere que NINGUNA
+//   ruta use APIs dinámicas (`middleware.ts`, `headers()`/`redirects()`
+//   de next.config.js, Route Handlers que lean `searchParams`/`cookies`,
+//   páginas con `dynamic = 'force-dynamic'`). Ya no queda ninguna: el
+//   dashboard interno y las rutas de Mercado Pago se sacaron del build
+//   público, y `/api/buscar` se reemplazó por `/search-index.json`
+//   (Route Handler estático, ver `src/app/search-index.json/route.ts`).
+//
+// - `trailingSlash: true` genera `pagina/index.html` en vez de
+//   `pagina.html` para cada ruta — el formato que sirve sin fricción el
+//   servidor estático de GitHub Pages para URLs sin extensión
+//   (`/vehiculos/toyota-corolla/`, no `/vehiculos/toyota-corolla`).
+//
+// - `basePath`/`assetPrefix`: solo hacen falta si el sitio se publica en
+//   `hnk375561-lab.github.io/GTA6-CODEX` (subcarpeta del dominio de
+//   GitHub) en vez de un dominio propio en la raíz (`sinfreno.com` vía
+//   `public/CNAME`). Se activan solos con la env var
+//   `GITHUB_PAGES_BASE_PATH` que ya setea el workflow cuando NO hay
+//   dominio propio — ver `.github/workflows/deploy-pages.yml`. Con
+//   dominio propio, dejar esa env var vacía/sin setear.
+const basePath = process.env.GITHUB_PAGES_BASE_PATH || ''
+
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
+  trailingSlash: true,
+  ...(basePath ? { basePath, assetPrefix: basePath } : {}),
   images: {
-    // Custom loader replaces Vercel Image Optimization API.
-    // Variants are pre-generated at build time by scripts/pregenerate-image-variants.mjs
-    // and served from public/images/_optimized/ — next/image never calls the
-    // Vercel Image Optimization API, so quota limits don't apply.
+    // Custom loader — nunca llamó a la Image Optimization API de Vercel
+    // ni de ningún otro servidor; sigue funcionando igual en export
+    // estático porque solo arma URLs a variantes pregeneradas en
+    // `public/images/_optimized/` (scripts/pregenerate-image-variants.mjs).
     loader: 'custom',
     loaderFile: './src/lib/image-loader.ts',
-    // YouTube thumbnails used by <YouTubeEmbed> — validated by next/image
-    // before invoking the custom loader.
     remotePatterns: [
       { protocol: 'https', hostname: 'img.youtube.com' },
       { protocol: 'https', hostname: 'i.ytimg.com' },
     ],
-    // Explicit quality values allowed (Next.js 15.5+ requirement).
-    // Matches qualities used by Image components across the project.
     qualities: [75, 90, 92, 94, 95, 97, 100],
     minimumCacheTTL: 31536000,
-    // Max device width 3840px — matches source image resolution.
     deviceSizes: [320, 640, 1024, 1440, 1920, 2560, 3840],
     imageSizes: [256, 384, 512, 640, 750, 828, 1024],
   },
-  headers: async () => {
-    // Static CSP (evaluated once at build) — avoids forcing all routes
-    // to dynamic rendering via middleware + headers() in root layout.
-    // Includes Google AdSense/Analytics domains for ads and tracking.
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'Content-Security-Policy',
-            value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://img.youtube.com https://i.ytimg.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.g.doubleclick.net; frame-src https://www.youtube.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://fundingchoicesmessages.google.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://adtrafficquality.google https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://fundingchoicesmessages.google.com https://docs.google.com; font-src 'self' data:;"
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin'
-          },
-          {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=63072000; includeSubDomains; preload'
-          },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()'
-          }
-        ]
-      },
-      // CRÍTICO PARA INVOCACIONES: todo el catálogo (vehículos, fabricantes,
-      // rankings, comparador, categorías, galería, home) se genera 100%
-      // estático en build (ninguna page.tsx fuera de /dashboard declara
-      // `export const dynamic`), y open-next.config.ts usa
-      // staticAssetsIncrementalCache — o sea, el contenido NO cambia hasta
-      // el próximo deploy. Sin Cache-Control, Cloudflare trata cada
-      // request como no-cacheable y reenvía el 100% del tráfico al Worker
-      // (de ahí Invocations ≈ Asset requests 1:1 en las métricas). Con
-      // s-maxage, un HIT en el CDN de Cloudflare se sirve DIRECTO desde el
-      // edge sin invocar el Worker — esto es lo único en el código que
-      // realmente baja el conteo de invocaciones, a diferencia del bloqueo
-      // de bots en middleware (que igual consume 1 invocación por request,
-      // solo corta el trabajo posterior).
-      // stale-while-revalidate cubre el minuto exacto del deploy: sirve la
-      // versión vieja cacheada mientras Cloudflare revalida en background,
-      // en vez de golpear el Worker con tráfico en caliente post-deploy.
-      {
-        source:
-          '/((?!api/|dashboard|_next/|favicon.ico|images/|logos/).*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, s-maxage=3600, stale-while-revalidate=86400',
-          },
-        ],
-      },
-      // ⚠️ CORREGIDO 10/09/2026 (sesión posterior): esta regla para
-      // /images/* y /logos/* es un NO-OP en Cloudflare Workers con
-      // OpenNext — el Worker no corre delante de los archivos de
-      // `public/` (Workers Static Assets los sirve directo), así que
-      // `headers()` de next.config.js nunca se ejecuta para ellos. Se
-      // deja documentada la intención (mismos valores que el fix real),
-      // pero el mecanismo que efectivamente aplica el Cache-Control es
-      // `public/_headers` — ver ese archivo para el detalle y la fuente.
-      // NO borrar `public/_headers` asumiendo que esto ya cubre el caso.
-      {
-        source: '/images/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=604800, s-maxage=2592000, stale-while-revalidate=2592000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/logos/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=604800, s-maxage=2592000, stale-while-revalidate=2592000, immutable',
-          },
-        ],
-      },
-    ]
-  },
-  redirects: async () => {
-    return [
-      // Consolidation: /vehiculos/fabricante/[manufacturer] -> /fabricantes/[slug]
-      // Both routes pointed to same manufacturer; old route redirects 301
-      // to preserve SEO indexed under /vehiculos/fabricante/*
-      {
-        source: '/vehiculos/fabricante/:manufacturer',
-        destination: '/fabricantes/:manufacturer',
-        permanent: true,
-      },
-    ]
-  }
+  // `headers()` y `redirects()` de next.config.js NO se aplican en
+  // `output: 'export'` (Next.js los ignora en build y avisa por consola)
+  // porque GitHub Pages no ejecuta ningún proceso Next.js en runtime que
+  // pueda evaluarlos en cada request — es un servidor de archivos.
+  //
+  // - CSP / security headers: no tienen reemplazo estático equivalente
+  //   sin un CDN propio delante (Cloudflare gratis como proxy, por
+  //   ejemplo). Se pierden en esta migración; si hace falta recuperarlos
+  //   más adelante, la opción más simple sigue siendo poner Cloudflare
+  //   (modo proxy, sin Workers) delante del dominio propio y agregar las
+  //   reglas ahí como Response Headers, no acá.
+  // - Cache-Control: GitHub Pages ya sirve todo con cache agresivo del
+  //   lado del CDN por defecto; no hace falta configurarlo a mano.
+  // - El redirect `/vehiculos/fabricante/:manufacturer` →
+  //   `/fabricantes/:manufacturer` se resolvió como páginas estáticas
+  //   reales con `<meta http-equiv="refresh">` — ver
+  //   `src/app/vehiculos/fabricante/[manufacturer]/page.tsx`.
 }
 
 module.exports = nextConfig

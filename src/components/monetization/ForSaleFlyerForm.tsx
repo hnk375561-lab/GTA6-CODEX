@@ -1,17 +1,19 @@
 'use client'
 
 import { useState } from 'react'
-import { FLYER_PRICE_ARS, isValidFlyerData, type FlyerData } from '@/lib/for-sale-flyer'
+import { isValidFlyerData, type FlyerData } from '@/lib/for-sale-flyer'
 import { trackPremiumReportCheckoutStarted } from '@/lib/analytics-events'
-import { fetchWithTimeout, isTimeoutError } from '@/lib/fetch-with-timeout'
 
 /**
- * Formulario del "cartel de venta" pago — ver `src/lib/for-sale-flyer.ts`
- * para el modelo de negocio completo. Reutiliza
- * `trackPremiumReportCheckoutStarted` para el evento de analytics en vez
- * de crear uno nuevo: ambos son "inicio de checkout de un producto
- * pequeño vía Mercado Pago", el nombre del evento no necesita ser
- * literal al reporte premium para servir el mismo propósito de embudo.
+ * Formulario del "cartel de venta" — ver `src/lib/for-sale-flyer.ts` para
+ * el modelo de negocio histórico.
+ *
+ * Migración a GitHub Pages: antes, "Pagar y descargar" hacía POST a
+ * `/api/for-sale-flyer/create-preference` y redirigía a Mercado Pago; el
+ * PDF salía recién de `/api/for-sale-flyer/pdf` tras confirmar el pago.
+ * Sin servidor no hay forma de cobrar (necesita
+ * `MERCADOPAGO_ACCESS_TOKEN`), así que el cartel pasa a ser gratis y el
+ * PDF se genera directo en el navegador con `buildFlyerPdf`.
  */
 export function ForSaleFlyerForm({ className = '' }: { className?: string }) {
   const [data, setData] = useState<FlyerData>({
@@ -23,7 +25,7 @@ export function ForSaleFlyerForm({ className = '' }: { className?: string }) {
     contacto: '',
     ubicacion: '',
   })
-  const [status, setStatus] = useState<'idle' | 'loading' | 'error' | 'unavailable'>('idle')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   const disabled = !isValidFlyerData(data)
@@ -41,46 +43,31 @@ export function ForSaleFlyerForm({ className = '' }: { className?: string }) {
     trackPremiumReportCheckoutStarted({ slugs: [`flyer:${data.marca}-${data.modelo}`], label: 'cartel-venta' })
 
     try {
-      const res = await fetchWithTimeout('/api/for-sale-flyer/create-preference', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      })
-      const json = await res.json()
+      const [{ buildFlyerPdf, findUnencodableFlyerField }, { downloadPdfBytes }] = await Promise.all([
+        import('@/lib/pdf/build-flyer'),
+        import('@/lib/pdf/download'),
+      ])
 
-      if (res.status === 503) {
-        setStatus('unavailable')
-        return
-      }
-      if (!res.ok || !json.initPoint) {
+      const unencodableField = await findUnencodableFlyerField(data)
+      if (unencodableField) {
         setStatus('error')
-        setErrorMessage(json.error || 'No se pudo iniciar el pago.')
+        setErrorMessage(`El campo "${unencodableField}" tiene un caracter que el cartel no puede imprimir (ej. emoji). Sacalo e intentá de nuevo.`)
         return
       }
 
-      window.location.href = json.initPoint
-    } catch (err) {
+      const bytes = await buildFlyerPdf(data)
+      downloadPdfBytes(bytes, `cartel-venta-${data.marca}-${data.modelo}.pdf`.replace(/\s+/g, '-'))
+      setStatus('idle')
+    } catch {
       setStatus('error')
-      setErrorMessage(
-        isTimeoutError(err)
-          ? 'Mercado Pago tardó demasiado en responder. Probá de nuevo.'
-          : 'No se pudo conectar con Mercado Pago. Probá de nuevo.'
-      )
+      setErrorMessage('No se pudo generar el PDF. Probá de nuevo.')
     }
-  }
-
-  if (status === 'unavailable') {
-    return (
-      <p role="status" className={`text-sm text-neutral-400 ${className}`}>
-        El cartel de venta en PDF todavía no está activo en este sitio.
-      </p>
-    )
   }
 
   return (
     <form onSubmit={handleSubmit} className={`rounded-lg border border-edge bg-surface-card p-4 ${className}`}>
       <p className="mb-3 text-sm font-semibold text-neutral-900">
-        🖼️ Generá un cartel de venta profesional (PDF, ARS {FLYER_PRICE_ARS})
+        🖼️ Generá un cartel de venta profesional (PDF, gratis)
       </p>
       <div className="grid grid-cols-2 gap-2">
         <input
@@ -143,11 +130,11 @@ export function ForSaleFlyerForm({ className = '' }: { className?: string }) {
         disabled={disabled || status === 'loading'}
         className="mt-3 w-full rounded-md bg-auto-accent px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-auto-accent-strong disabled:cursor-not-allowed disabled:opacity-50"
       >
-        {status === 'loading' ? 'Generando pago…' : `Pagar y descargar (ARS ${FLYER_PRICE_ARS})`}
+        {status === 'loading' ? 'Generando PDF…' : 'Descargar cartel (gratis)'}
       </button>
       {errorMessage && <p role="alert" className="mt-1.5 text-xs text-red-400">{errorMessage}</p>}
       <p className="mt-2 text-center text-[11px] text-neutral-400">
-        Pago único vía Mercado Pago. No guardamos tus datos en ningún servidor: viajan solo hasta generar el PDF.
+        El PDF se genera en tu navegador. No mandamos tus datos a ningún servidor.
       </p>
     </form>
   )

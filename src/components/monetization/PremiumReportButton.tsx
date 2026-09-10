@@ -1,9 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { PREMIUM_REPORT_PRICE_ARS } from '@/lib/premium-report'
 import { trackPremiumReportCheckoutStarted } from '@/lib/analytics-events'
-import { fetchWithTimeout, isTimeoutError } from '@/lib/fetch-with-timeout'
 
 interface PremiumReportButtonProps {
   /** Slugs de los vehículos ya seleccionados en la comparación (2 a 5). */
@@ -13,19 +11,24 @@ interface PremiumReportButtonProps {
 }
 
 /**
- * CTA de "Reporte comparativo premium" — ver `docs/monetizacion-plan.md`
- * y `src/lib/premium-report.ts` para el contexto completo.
+ * CTA de "Reporte comparativo" — ver `docs/monetizacion-plan.md` y
+ * `src/lib/premium-report.ts` para el contexto histórico.
  *
- * Flujo: click → POST a `/api/premium-report/create-preference` → si
- * Mercado Pago está configurado, redirige a `init_point` (checkout
- * hosteado por Mercado Pago, no hay formulario de tarjeta propio que
- * mantener). Si el endpoint devuelve 503 (falta `MERCADOPAGO_ACCESS_TOKEN`
- * en producción), se muestra un mensaje en vez de un error críptico —
- * evita que un click real de un visitante choque contra una feature a
- * medio configurar.
+ * Migración a GitHub Pages (sitio 100% estático, sin servidor): antes,
+ * el click hacía POST a `/api/premium-report/create-preference` y
+ * redirigía al checkout de Mercado Pago; el PDF se generaba recién
+ * después de confirmar el pago vía `/api/premium-report/pdf`. Ninguna de
+ * las dos rutas puede vivir en hosting estático (necesitan
+ * `MERCADOPAGO_ACCESS_TOKEN` server-side), así que el cobro se cae y el
+ * PDF se genera directo en el navegador con `buildPremiumReportPdf`
+ * (pdf-lib no depende de Node) — el reporte pasa a ser gratis.
+ *
+ * `buildPremiumReportPdf` se importa dinámicamente recién al hacer click
+ * (arrastra el catálogo completo de vehículos) para no sumarlo al bundle
+ * inicial de `/comparar`.
  */
 export function PremiumReportButton({ slugs, className = '', trackingLabel }: PremiumReportButtonProps) {
-  const [status, setStatus] = useState<'idle' | 'loading' | 'error' | 'unavailable'>('idle')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   const disabled = slugs.length < 2 || slugs.length > 5
@@ -38,40 +41,17 @@ export function PremiumReportButton({ slugs, className = '', trackingLabel }: Pr
     trackPremiumReportCheckoutStarted({ slugs, label: trackingLabel || 'comparar' })
 
     try {
-      const res = await fetchWithTimeout('/api/premium-report/create-preference', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slugs }),
-      })
-      const data = await res.json()
-
-      if (res.status === 503) {
-        setStatus('unavailable')
-        return
-      }
-      if (!res.ok || !data.initPoint) {
-        setStatus('error')
-        setErrorMessage(data.error || 'No se pudo iniciar el pago.')
-        return
-      }
-
-      window.location.href = data.initPoint
+      const [{ buildPremiumReportPdf }, { downloadPdfBytes }] = await Promise.all([
+        import('@/lib/pdf/build-premium-report'),
+        import('@/lib/pdf/download'),
+      ])
+      const bytes = await buildPremiumReportPdf(slugs)
+      downloadPdfBytes(bytes, `reporte-${slugs.join('-')}.pdf`)
+      setStatus('idle')
     } catch (err) {
       setStatus('error')
-      setErrorMessage(
-        isTimeoutError(err)
-          ? 'Mercado Pago tardó demasiado en responder. Probá de nuevo.'
-          : 'No se pudo conectar con Mercado Pago. Probá de nuevo.'
-      )
+      setErrorMessage(err instanceof Error ? err.message : 'No se pudo generar el PDF. Probá de nuevo.')
     }
-  }
-
-  if (status === 'unavailable') {
-    return (
-      <p role="status" className={`text-xs text-neutral-400 ${className}`}>
-        El reporte premium en PDF todavía no está activo en este sitio.
-      </p>
-    )
   }
 
   return (
@@ -86,13 +66,12 @@ export function PremiumReportButton({ slugs, className = '', trackingLabel }: Pr
           <path d="M12 15V3m0 12-4-4m4 4 4-4" />
           <path d="M2 17l.6 3.4a2 2 0 0 0 2 1.6h14.8a2 2 0 0 0 2-1.6L22 17" />
         </svg>
-        {status === 'loading' ? 'Generando pago…' : `Descargar reporte en PDF (ARS ${PREMIUM_REPORT_PRICE_ARS})`}
+        {status === 'loading' ? 'Generando PDF…' : 'Descargar reporte en PDF (gratis)'}
       </button>
       {errorMessage && <p role="alert" className="mt-1.5 text-xs text-red-400">{errorMessage}</p>}
       {!errorMessage && (
         <p className="mt-1.5 text-[11px] text-neutral-400">
-          Ficha técnica completa con evidencia citada, para guardar o llevar a la concesionaria. Pago único vía
-          Mercado Pago.
+          Ficha técnica completa con evidencia citada, para guardar o llevar a la concesionaria.
         </p>
       )}
     </div>

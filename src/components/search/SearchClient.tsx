@@ -1,7 +1,8 @@
 'use client'
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
+import type Fuse from 'fuse.js'
 import { EntityType, type Entity, type Vehicle } from '@/types'
 import { Badge } from '@/components/ui/Badge'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
@@ -11,9 +12,10 @@ import { useSyncedSearchParams } from '@/lib/hooks/useSyncedSearchParams'
 import { PendingIndicator } from '@/components/ui/loading'
 import { cn } from '@/lib/utils'
 import { STATUS_LABELS } from '@/lib/entity-labels'
+import { buildFuse } from '@/lib/entity-list-filters'
 import { vehiclePerformanceScore, hasPerformanceData } from '@/lib/vehicle-performance'
 import { SITE_NAME } from '@/config/site'
-import type { SearchApiItem, SearchApiResponse } from '@/app/api/buscar/route'
+import type { SearchIndexItem, SearchIndexResponse } from '@/app/search-index.json/route'
 
 type StatusFilter = 'todos' | keyof typeof STATUS_LABELS
 
@@ -99,46 +101,45 @@ export function SearchClient({ counts }: SearchClientProps) {
   })
   const debouncedQuery = useDebouncedValue(query, 250)
 
-  // Resultados crudos de la búsqueda por texto: ahora vienen de
-  // `/api/buscar` (Fuse.js corre server-side), no de un índice armado en
-  // el navegador sobre el catálogo completo. `items` ya trae imagen y
-  // conteo de relaciones resueltos por resultado — ver `SearchApiItem`.
-  const [items, setItems] = useState<SearchApiItem[]>([])
-  const [isFetching, setIsFetching] = useState(false)
-  const requestIdRef = useRef(0)
+  // GitHub Pages no ejecuta nada server-side, así que `/api/buscar` (que
+  // leía `?q=` en cada request) no puede existir acá. En su lugar,
+  // `/search-index.json` se genera una sola vez en build (ver
+  // `src/app/search-index.json/route.ts`, static export) y este
+  // componente lo descarga una única vez al entrar a `/buscar`, arma el
+  // índice Fuse.js en el navegador, y cada tecleo se resuelve localmente
+  // sin ningún round-trip de red adicional.
+  const [allItems, setAllItems] = useState<SearchIndexItem[]>([])
+  const [fuse, setFuse] = useState<Fuse<Entity> | null>(null)
+  const [isFetching, setIsFetching] = useState(true)
 
   useEffect(() => {
-    const trimmed = debouncedQuery.trim()
-    if (!trimmed) {
-      setItems([])
-      setIsFetching(false)
-      return
-    }
-
-    const requestId = ++requestIdRef.current
     const controller = new AbortController()
-    setIsFetching(true)
 
-    fetch(`/api/buscar?q=${encodeURIComponent(trimmed)}`, { signal: controller.signal })
-      .then((res) => res.json() as Promise<SearchApiResponse>)
+    fetch('/search-index.json', { signal: controller.signal })
+      .then((res) => res.json() as Promise<SearchIndexResponse>)
       .then((data) => {
-        // Descarta respuestas fuera de orden (ej. la query anterior tardó
-        // más en responder que la más reciente) — mismo problema que
-        // resolvía el debounce local, pero ahora sobre un fetch real.
-        if (requestId === requestIdRef.current) {
-          setItems(data.items)
-          setIsFetching(false)
-        }
+        setAllItems(data.items)
+        setFuse(buildFuse(data.items.map((item) => item.entity)))
+        setIsFetching(false)
       })
       .catch((err) => {
-        if (err?.name !== 'AbortError' && requestId === requestIdRef.current) {
-          setItems([])
-          setIsFetching(false)
-        }
+        if (err?.name !== 'AbortError') setIsFetching(false)
       })
 
     return () => controller.abort()
-  }, [debouncedQuery])
+  }, [])
+
+  const items = useMemo<SearchIndexItem[]>(() => {
+    const trimmed = debouncedQuery.trim()
+    if (!trimmed || !fuse) return []
+
+    const itemBySlug = new Map(allItems.map((item) => [`${item.entity.type}/${item.entity.slug}`, item]))
+    return fuse
+      .search(trimmed)
+      .slice(0, 60)
+      .map((r) => itemBySlug.get(`${r.item.type}/${r.item.slug}`))
+      .filter((item): item is SearchIndexItem => Boolean(item))
+  }, [debouncedQuery, fuse, allItems])
 
   const rawResults = useMemo(() => items.map((item) => item.entity), [items])
   const imageBySlug = useMemo(
