@@ -18,7 +18,7 @@
 //   (`/vehiculos/toyota-corolla/`, no `/vehiculos/toyota-corolla`).
 //
 // - `basePath`/`assetPrefix`: solo hacen falta si el sitio se publica en
-//   `hnk375561-lab.github.io/GTA6-CODEX` (subcarpeta del dominio de
+//   `hnk375561-lab.github.io/Sin-Frenos` (subcarpeta del dominio de
 //   GitHub) en vez de un dominio propio en la raíz (`sinfreno.com` vía
 //   `public/CNAME`). Se activan solos con la env var
 //   `GITHUB_PAGES_BASE_PATH` que ya setea el workflow cuando NO hay
