@@ -6,9 +6,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/generate-content-bundle.mjs && node scripts/pregenerate-image-variants.mjs && next build",
-    "build:cf": "node scripts/generate-content-bundle.mjs && node scripts/pregenerate-image-variants.mjs && next build && opennextjs-cloudflare build",
-    "preview": "npm run build:cf && wrangler dev",
-    "deploy": "npm run build:cf && wrangler deploy",
     "start": "next start",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
@@ -64,7 +61,6 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^1.20.6",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.2",
     "@types/node": "^20.10.0",
