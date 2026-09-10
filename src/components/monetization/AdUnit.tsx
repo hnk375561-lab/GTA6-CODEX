@@ -42,9 +42,15 @@ export function AdUnit({
   useEffect(() => {
     // Only load if AdSense is configured
     if (!ADSENSE_CLIENT_ID) {
-      console.warn(
-        '[AdUnit] NEXT_PUBLIC_ADSENSE_CLIENT_ID not configured. Ad unit will not load.'
-      )
+      // Solo en dev: en producción este warning es ruido en cada visita
+      // de cada usuario para un componente que igual no renderiza nada
+      // (ver `return null` más abajo) — no es un error accionable para
+      // quien visita el sitio, solo para quien lo desarrolla.
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(
+          '[AdUnit] NEXT_PUBLIC_ADSENSE_CLIENT_ID not configured. Ad unit will not load.'
+        )
+      }
       return
     }
 
