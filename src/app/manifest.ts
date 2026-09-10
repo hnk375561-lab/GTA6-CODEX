@@ -1,5 +1,13 @@
 import type { MetadataRoute } from 'next'
 import { SITE_NAME, SITE_TAGLINE } from '@/config/site'
+
+// Requerido por Next.js cuando el proyecto usa `output: "export"`
+// (export estático, necesario para desplegar en GitHub Pages, que no
+// corre un servidor Node). Sin esta línea, `next build` falla con:
+// "export const dynamic = force-static/export const revalidate not
+// configured on route /manifest.webmanifest with output: export".
+export const dynamic = 'force-static'
+
 /**
  * Genera /manifest.webmanifest (convención nativa del App Router).
  */
