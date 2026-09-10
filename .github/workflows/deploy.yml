@@ -98,5 +98,5 @@ jobs:
       - name: Build (verificación — el deploy real lo hace el workflow deploy-pages.yml)
         run: npm run build
         env:
-          GITHUB_PAGES_BASE_PATH: '/GTA6-CODEX'
-          NEXT_PUBLIC_SITE_URL: https://hnk375561-lab.github.io/GTA6-CODEX
+          GITHUB_PAGES_BASE_PATH: '/Sin-Frenos'
+          NEXT_PUBLIC_SITE_URL: https://hnk375561-lab.github.io/Sin-Frenos
