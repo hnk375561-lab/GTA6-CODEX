@@ -41,7 +41,7 @@ describe('imageLoader', () => {
       width: 1024
     })
     
-    expect(result).toStartWith('/GTA6-CODEX')
+    expect(result.startsWith('/GTA6-CODEX')).toBe(true)
     expect(result).toContain('nissan-gt-r-w')
     expect(result).toContain('.webp')
   })
@@ -68,7 +68,7 @@ describe('imageLoader', () => {
       width: 32
     })
     
-    expect(result).toStartWith('/GTA6-CODEX')
+    expect(result.startsWith('/GTA6-CODEX')).toBe(true)
     expect(result).toContain('/images/ui/icon.svg')
   })
 
@@ -81,7 +81,7 @@ describe('imageLoader', () => {
       width: 750
     })
     
-    expect(result).toStartWith('https://abc123.public.blob.vercel-storage.com')
+    expect(result.startsWith('https://abc123.public.blob.vercel-storage.com')).toBe(true)
     expect(result).toContain('jeep-wrangler-w750.webp')
   })
 })

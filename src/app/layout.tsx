@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { TrendingBar } from '@/components/layout/TrendingBar'
@@ -18,23 +18,38 @@ const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID
 const CF_ANALYTICS_TOKEN = process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN
 
 // OPTIMIZACIÓN: Migración de @fontsource a next/font para reducir CSS crítico y mejorar CLS.
-const inter = Inter({
-  subsets: ['latin'],
+//
+// 10/09/2026 — de next/font/google a next/font/local: next/font/google
+// descarga los archivos de fuente en build time desde
+// fonts.googleapis.com/fonts.gstatic.com. En GitHub Actions (y en
+// cualquier entorno de build sin acceso libre a esos hosts) esa descarga
+// puede devolver 403/timeout de forma intermitente y tumbar el build
+// entero (`next build` falla con "Failed to fetch <fuente> from Google
+// Fonts") — exactamente lo que rompió el deploy a GitHub Pages. Los
+// archivos .woff2 en src/fonts/ son variable fonts reales de Google
+// Fonts (mismo binario que serviría fonts.gstatic.com), traídos una sola
+// vez vía los paquetes @fontsource-variable/* (devDependency, ver
+// package.json) y commiteados acá — el build ya no depende de la
+// disponibilidad de ningún host externo para resolver las fuentes.
+const inter = localFont({
+  src: '../fonts/inter-latin-variable.woff2',
   variable: '--font-sans',
   display: 'swap',
-  adjustFontFallback: false,
+  weight: '100 900',
 })
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
+const spaceGrotesk = localFont({
+  src: '../fonts/space-grotesk-latin-variable.woff2',
   variable: '--font-display',
   display: 'swap',
+  weight: '300 700',
 })
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
+const jetbrainsMono = localFont({
+  src: '../fonts/jetbrains-mono-latin-variable.woff2',
   variable: '--font-mono',
   display: 'swap',
+  weight: '100 800',
 })
 
 export const metadata: Metadata = {
