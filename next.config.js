@@ -31,6 +31,13 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   ...(basePath ? { basePath, assetPrefix: basePath } : {}),
+  env: {
+    // Pasar basePath como env var NEXT_PUBLIC_ASSET_PREFIX para que el
+    // image-loader personalizado pueda construir URLs correctas en client-side
+    // y en server-side. El loader NO tiene acceso directo a next.config.js
+    // (ver comentario en image-loader.ts).
+    NEXT_PUBLIC_ASSET_PREFIX: basePath,
+  },
   images: {
     // Custom loader — nunca llamó a la Image Optimization API de Vercel
     // ni de ningún otro servidor; sigue funcionando igual en export

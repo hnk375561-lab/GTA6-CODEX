@@ -63,8 +63,14 @@ const WIDTHS = [256, 320, 384, 512, 640, 750, 828, 1024, 1440, 1920, 2560, 3840]
  * Sin configurar, se cae de vuelta a la carpeta local histórica
  * `/images/_optimized`, generada por scripts/pregenerate-image-variants.mjs
  * en cada build — exactamente el pipeline que está activo hoy.
+ *
+ * IMPORTANTE: Desde sept 2026 (GitHub Pages migration), si hay basePath
+ * configurado (env var GITHUB_PAGES_BASE_PATH), Next.js lo inyecta
+ * automáticamente en URLs de <Image> component, pero NO en loaders
+ * customizados. Este loader debe construir URLs completas con basePath.
  */
 const BLOB_BASE_URL = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '/images/_optimized'
+const ASSET_PREFIX = process.env.NEXT_PUBLIC_ASSET_PREFIX || ''
 
 /**
  * Único prefijo con variantes pregeneradas. El resto de public/images/
@@ -91,6 +97,13 @@ export default function imageLoader({ src, width }: ImageLoaderProps): string {
   }
 
   if (!src.startsWith(ENTITIES_PREFIX)) {
+    // Imágenes no-entidades (ej: UI icons en /images/ui/) se sirven
+    // tal cual pero con basePath/assetPrefix si está configurado.
+    // Next.js no inyecta assetPrefix en loaders customizados, así que
+    // el loader debe hacerlo manualmente cuando el src es una ruta local.
+    if (!src.startsWith('http') && ASSET_PREFIX && !src.startsWith(ASSET_PREFIX)) {
+      return `${ASSET_PREFIX}${src}`
+    }
     return src
   }
 
@@ -99,5 +112,12 @@ export default function imageLoader({ src, width }: ImageLoaderProps): string {
   const relPath = withoutExt.slice(ENTITIES_PREFIX.length)
   const resolvedWidth = pickWidth(width)
 
-  return `${BLOB_BASE_URL}/${relPath}-w${resolvedWidth}.webp`
+  // Construir URL con assetPrefix (basePath de GitHub Pages)
+  const imageUrl = `${BLOB_BASE_URL}/${relPath}-w${resolvedWidth}.webp`
+  
+  if (ASSET_PREFIX && !imageUrl.startsWith('http') && !imageUrl.startsWith(ASSET_PREFIX)) {
+    return `${ASSET_PREFIX}${imageUrl}`
+  }
+  
+  return imageUrl
 }
