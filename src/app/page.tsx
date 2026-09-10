@@ -15,31 +15,25 @@ import { getBidirectionalRelationCount } from '@/lib/relations'
 import { generateHomepageMetadata, generateBreadcrumbJsonLd, generateWebsiteJsonLd, generateFaqJsonLd, serializeJsonLd } from '@/lib/seo'
 import { parsePowerHp } from '@/lib/vehicle-power'
 import { parsePriceUsd } from '@/lib/vehicle-price'
-import { pickSearchExamples, computeCategoryQuickFilterOptions, categoryPageHref, getVehicleCategory } from '@/lib/vehicle-category'
+import { computeCategoryQuickFilterOptions, categoryPageHref } from '@/lib/vehicle-category'
 import { getAvailableRankings } from '@/lib/rankings'
 import { getManufacturerMarqueeItems } from '@/lib/vehicle-manufacturers'
 import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
 import { Card } from '@/components/ui/Card'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
-import { CountUp } from '@/components/ui/CountUp'
-import { WordRotate } from '@/components/ui/WordRotate'
 import { CategoryCardMedia } from '@/components/ui/CategoryCardMedia'
 import { FinancingCalculator } from '@/components/ui/FinancingCalculator'
 import { FinancingCalculatorSkeleton } from '@/components/ui/loading'
 import { EntityCard } from '@/components/entities/EntityCard'
 import { getCategoryPreviewImages } from '@/lib/images'
 import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
-import { QuickSearchForm } from '@/components/home/QuickSearchForm'
 import { CategoryQuickFilter } from '@/components/home/CategoryQuickFilter'
 import { ManufacturersMarquee } from '@/components/home/ManufacturersMarquee'
 import { PinnedScrollStages, type Stage } from '@/components/home/PinnedScrollStages'
 import { Reveal } from '@/components/home/StageProgress'
-import { Parallax, TiltCard } from '@/components/home/Parallax'
-import { HeroAura } from '@/components/home/HeroAura'
-import { HeroVehicleShowcaseV2, type HeroVehicleShowcaseItem } from '@/components/home/HeroVehicleShowcaseV2'
-import { HeroQuickLinks } from '@/components/home/HeroQuickLinks'
-import { HERO_QUICK_LINKS } from '@/config/hero-quick-links'
-import { type HeroPromoBannerItem } from '@/components/home/HeroPromoBanner'
+import { TiltCard } from '@/components/home/Parallax'
+import { HeroShowroom } from '@/components/home/HeroShowroom'
+import { type HeroVehicleShowcaseItem } from '@/components/home/HeroVehicleShowcaseV2'
 import { AdUnit } from '@/components/monetization/AdUnit'
 import { CompareShowcase, type CompareShowcaseVehicle } from '@/components/home/CompareShowcase'
 import { EvidenceSpotlight, type EvidenceHighlight } from '@/components/home/EvidenceSpotlight'
@@ -49,7 +43,7 @@ import { HomeFaqPanel, type FaqItem } from '@/components/home/HomeFaqPanel'
 import { RecoveryCta } from '@/components/home/RecoveryCta'
 import { FaqClosure } from '@/components/home/FaqClosure'
 import { SectionBridge } from '@/components/ui/SectionBridge'
-import { formatRelativeTime, formatVehicleDisplayName } from '@/lib/utils'
+import { formatRelativeTime } from '@/lib/utils'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateHomepageMetadata()
@@ -223,17 +217,11 @@ export default async function HomePage() {
   const evidenceCoveragePct =
     vehicles.length > 0 ? Math.floor((vehicles.filter((v) => Boolean(v.evidence?.level)).length / vehicles.length) * 100) : null
 
-  // 5.B (Fase 5, prioridad B): ejemplos reales para el placeholder
-  // rotativo de `QuickSearchForm` — antes el componente solo tenía su
-  // fallback interno (`DEFAULT_EXAMPLES`, 5 títulos fijos hardcodeados).
-  // Se calcula sobre `vehicles` (catálogo completo, ya en memoria para
-  // "Un dato, una fuente" más abajo) y no sobre `featured` (solo 8-12
-  // fichas) para tener más margen de variedad real de categorías.
-  // `pickSearchExamples` es determinista (sin `Math.random`), así que el
-  // array que arma este server component en cada request es exactamente
-  // el que recibe `QuickSearchForm` (client component) para hidratar —
-  // sin riesgo de mismatch servidor/cliente.
-  const searchExamples = pickSearchExamples(vehicles)
+  // NOTA (rediseño de hero, sept. 2026): el buscador rápido con ejemplos
+  // rotativos (antes acá, `QuickSearchForm` dentro del hero) se sacó del
+  // hero por completo — ver `HeroShowroom.tsx`. Sigue disponible entero
+  // en `/buscar` (el CTA secundario del hero linkea ahí); no se perdió
+  // funcionalidad, solo cambió dónde vive.
 
   // 5.B (Fase 5, prioridad B): datos del filtro rápido de carrocería del
   // panel Categorías — ver `computeCategoryQuickFilterOptions` en
@@ -305,44 +293,13 @@ export default async function HomePage() {
     .filter((item): item is HeroVehicleShowcaseItem => item !== null)
     .slice(0, HERO_SHOWCASE_LIMIT)
 
-  // Anuncio propio del hero (bloque izquierdo, ver `HeroPromoBanner`):
-  // REDISEÑO NUEVO (sept. 2026): UNA SOLA tarjeta promocional grande
-  // (no múltiples ítems pequeños). No rotante, fija — el usuario ve el
-  // mismo anuncio siempre. Se selecciona el primer vehículo `featured`
-  // que tenga foto y que no esté ya en el carrusel de la derecha.
-  const heroShowcaseSlugs = new Set(heroShowcaseVehicles.map((item) => item.slug))
-
-  const heroPromoBannerItem: HeroPromoBannerItem | null = (() => {
-    const candidate = featured.find((v) => {
-      if (heroShowcaseSlugs.has(v.slug)) return false
-      const img = resolveEntityDisplayImage(v)
-      return Boolean(img)
-    })
-    if (!candidate) return null
-    const v = candidate as Vehicle
-    const image = resolveEntityDisplayImage(candidate)!
-    const powerHp = parsePowerHp(v)
-    const priceUsd = parsePriceUsd(v)
-    const category = getVehicleCategory(v.class) ?? 'vehículo'
-    return {
-      eyebrow: `Por qué elegir un ${category.toLowerCase()}`,
-      headline: formatVehicleDisplayName(v.manufacturer, v.title),
-      description: v.description || null,
-      src: image.src,
-      alt: image.alt,
-      detailHref: `/${EntityType.VEHICLE}/${candidate.slug}`,
-      powerLabel: powerHp !== null ? `${powerHp} hp` : null,
-      secondaryStatLabel: priceUsd !== null ? formatUsdShort(priceUsd) : (v.performance?.speed ?? null),
-      evidenceLevel: v.evidence?.level,
-      // Transparencia del placement (ver comentario largo en
-      // `HeroPromoBannerItem['placementLabel']`): esta tarjeta es un
-      // espacio elegido/curado, distinto del sello de evidencia que ya
-      // trae el vehículo. Fijo por ahora ("Destacado") — el día que este
-      // slot se venda de verdad, el único cambio necesario es reemplazar
-      // este string por algo como "Patrocinado" o el nombre del partner.
-      placementLabel: 'Destacado',
-    }
-  })()
+  // NOTA (rediseño de hero, sept. 2026): el banner promocional propio
+  // del hero (antes acá, `HeroPromoBanner`/`heroPromoBannerItem`) se
+  // saca del hero — era la típica "card de más" que compite contra el
+  // vehículo rotador y el CTA. El panel "Destacados" más abajo en esta
+  // misma página ya muestra los `featured` en su propio carrusel
+  // (`FeaturedCarousel`), así que la exposición de esos vehículos no se
+  // pierde, solo deja de duplicarse en el hero.
 
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
   const websiteLd = generateWebsiteJsonLd()
@@ -495,158 +452,38 @@ export default async function HomePage() {
   }))
 
   const stages: Stage[] = [
-    // 1. Hero — cada bloque entra en cascada (título → subtítulo → stats →
-    // CTAs/buscador) en vez de aparecer todo junto con el fundido del panel.
-    // `Reveal` lee el progreso local del panel por Context (no por prop
-    // función): así este contenido puede seguir viviendo en un Server
-    // Component que hace `await` a la base del expediente.
+    // 1. Hero — REDISEÑO RADICAL (sept. 2026, ver conversación de rediseño
+    // del hero): reemplaza por completo el hero anterior (centrado,
+    // tipografía Apple/Vercel, stats + buscador + 10 chips + carrusel
+    // horizontal apilados) por una composición asimétrica, oscura y
+    // cinematográfica tipo "showroom digital" — ver `HeroShowroom.tsx`
+    // para el detalle completo de qué se sacó y por qué (nada se pierde
+    // sin reemplazo: el buscador sigue en `/buscar`, los vehículos
+    // destacados se ven en el panel "Destacados" más abajo, la
+    // navegación completa vive en `<Header />`).
     //
-    // `scrollVh` 160: recorte agresivo (sept. 2026, ver nota abajo) —
-    // antes 210 con una cascada de 7 bloques, ahora 5. Mismo peso que el
-    // panel "Evidencia" (también de 160), coherente con el contenido real
-    // que queda: título, credibilidad rápida, acción, vitrina — nada de
-    // relleno que ya se repite más abajo.
+    // `scrollVh` baja a 130 (antes 160): con un solo componente
+    // autocontenido en vez de 7 bloques en cascada, el hero pide bastante
+    // menos recorrido físico de scroll para sentirse "completo".
     {
       id: 'hero',
       label: 'Inicio',
-      scrollVh: 160,
+      scrollVh: 130,
       content: (
-        <div className="relative mx-auto w-full max-w-[90rem] text-center">
-          {/* Aura ambiental (capa de fondo de la pila de profundidad):
-              se dibuja PRIMERO en el DOM para quedar detrás del
-              contenido; el parallax contra el cursor y la entrada la
-              manejan `HeroAura` + las clases `.hero-aura-*`. */}
-          <HeroAura />
-
-          {/* Entrada del hero aquí (bloques de arriba) por TIEMPO, con
-              jerarquía explícita, NO por la cascada de scroll: la pose
-              del primer panel satura en 1 apenas el boot del track
-              termina, y la cascada comprime todo en los mismos 700ms
-              (todos subiendo a la vez). Ver `.hero-arrival-*` en
-              globals.css. Los bloques de abajo (chips y showroom) sí
-              siguen entrando con el scroll. */}
-          <div className="hero-arrival hero-arrival--eyebrow">
-            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
-              {SITE_NAME}
-              {lastUpdateLabel && (
-                <>
-                  {' '}
-                  <span aria-hidden="true" className="text-neutral-300">·</span>{' '}
-                  <span className="normal-case tracking-normal">Actualizado {lastUpdateLabel}</span>
-                </>
-              )}
-            </p>
-          </div>
-          <div className="hero-arrival hero-arrival--headline">
-            <Parallax strength={8}>
-              <h1 className="font-display text-6xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-7xl lg:text-8xl">
-                {HERO_HEADLINE_LEAD}{' '}
-                <WordRotate words={HERO_HEADLINE_BRANDS} className="text-gradient-vice" />
-                {', '}
-                {HERO_HEADLINE_TAIL}
-              </h1>
-            </Parallax>
-          </div>
-
-          <div className="hero-arrival hero-arrival--subtitle mx-auto mt-6 max-w-xl">
-            <p className="text-lg text-neutral-500 sm:text-xl">{HERO_SUBTITLE}</p>
-          </div>
-
-          {/* Bloque de credibilidad — SEGUNDA PASADA (sept. 2026): antes
-              este renglón mezclaba 4 números (Vehículos, Noticias, Guías,
-              "Entradas totales") con dos categorías que hoy tienen
-              prácticamente contenido cero (3 noticias, 10 guías sobre 250
-              vehículos — ver conteo real en `src/content/`). Mostrarle a
-              un usuario nuevo "3 Noticias" en su primer segundo en el
-              sitio no genera confianza, la rompe: grita "esto recién
-              arranca" en la única franja pensada para decir lo contrario.
-              Ahora son 3 números, los 3 genuinamente fuertes y
-              verificables con un clic (`/vehiculos`, `/fabricantes`):
-              catálogo real, cobertura de marcas real, y el sello de
-              evidencia (antes relegado a una línea aparte, más chica,
-              debajo del bloque — ahora con el mismo peso visual que el
-              resto, porque es el diferencial más fuerte que tiene el
-              sitio, no una nota al pie). */}
-          <div className="hero-arrival hero-arrival--counts mx-auto mt-10 flex max-w-lg flex-wrap items-center justify-center gap-x-10 gap-y-4">
-            <div className="flex flex-col items-center gap-0.5">
-              <span className="font-display text-5xl font-bold text-neutral-900">
-                <CountUp end={countsByType[EntityType.VEHICLE] ?? 0} />
-              </span>
-              <span className="text-xs uppercase tracking-[0.15em] text-neutral-500">
-                {ENTITY_TYPE_LABELS[EntityType.VEHICLE]}
-              </span>
-            </div>
-            <div className="flex flex-col items-center gap-0.5">
-              <span className="font-display text-5xl font-bold text-neutral-900">
-                <CountUp end={countsByType[EntityType.MANUFACTURER] ?? 0} />
-              </span>
-              <span className="text-xs uppercase tracking-[0.15em] text-neutral-500">Fabricantes</span>
-            </div>
-            {evidenceCoveragePct !== null && evidenceCoveragePct > 0 && (
-              <>
-                <div className="hidden h-10 w-px bg-neutral-200 sm:block" aria-hidden="true" />
-                <div className="flex flex-col items-center gap-0.5">
-                  <span className="font-display text-5xl font-bold text-gradient-vice">
-                    <CountUp end={evidenceCoveragePct} suffix="%" />
-                  </span>
-                  <span className="text-xs uppercase tracking-[0.15em] text-neutral-500">Con fuente citada</span>
-                </div>
-              </>
-            )}
-          </div>
-
-          {/* CTA — SEGUNDA PASADA (sept. 2026): antes había TRES acciones
-              compitiendo al mismo nivel visual (dos botones grandes +
-              buscador chico debajo) — "CTA war" sin ganador real, y la
-              acción de mayor intención real (buscar el vehículo puntual
-              que el usuario ya tiene en mente) quedaba, en los hechos, en
-              tercer lugar visual. Ahora hay UNA acción primaria (buscar,
-              agrandada) y las otras dos bajan a links de texto — siguen
-              existiendo (nadie pierde la posibilidad de explorar todo el
-              catálogo o ir directo al comparador), pero ya no compiten en
-              peso visual contra la acción de mayor intención. */}
-          <div className="hero-arrival hero-arrival--search">
-            <div className="mx-auto mt-10 max-w-xl">
-              <QuickSearchForm examples={searchExamples} />
-            </div>
-          </div>
-
-          {/* Constelación de accesos directos — SEGUNDA PASADA (sept.
-              2026): reemplaza los 2 links de texto chico que había acá
-              (catálogo + comparador) por 10 chips al mismo nivel visual
-              que el buscador de arriba — pedido explícito del usuario
-              ("todo al mismo nivel, aunque compitan con el buscador").
-              Ver `HeroQuickLinks.tsx`/`config/hero-quick-links.tsx`.
-              Entra con su PROPIO IntersectionObserver (`.hero-chip
-              is-visible`), no con la cascada del track: queda fuera de lo
-              que el boot del panel comprime. */}
-          <div className="mt-8">
-            <HeroQuickLinks items={HERO_QUICK_LINKS} />
-          </div>
-
-          {/* Franja "showroom" del hero: fila 100% horizontal con
-              scroll-snap real — anuncio propio (`HeroPromoBanner`) +
-              carrusel de vehículos `featured` (`HeroVehicleShowcaseV2`).
-              Arquitectura sin cambios en esta pasada (ver
-              `HeroVehicleShowcaseV2.tsx`/`FeaturedCarousel.tsx` para el
-              historial de fixes de accesibilidad/click ya validados).
-              Encabezado RECORTADO (sept. 2026, segunda pasada): antes
-              eran 2 líneas de texto propio (eyebrow "Selección" + h2 "Lo
-              que vale la pena mirar primero") repitiendo, en los hechos,
-              la misma promesa que ya hace el headline de arriba ("con
-              fuente citada") y que cada card ya demuestra sola con su
-              propio sello de evidencia — dos anuncios de la misma cosa
-              antes de que el usuario llegue a verla. Ahora es una sola
-              línea corta que cumple el único trabajo real que le
-              quedaba: nombrar la región para quien no vea el `aria-label`
-              interno del carrusel. */}
-          <Reveal index={0} total={1} options={{ flavor: 'swell' }} className="mx-auto mt-14 w-full text-left">
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
-              Fichas destacadas — evidencia verificada
-            </p>
-            <HeroVehicleShowcaseV2 vehicles={heroShowcaseVehicles} promoBannerItem={heroPromoBannerItem} />
-          </Reveal>
-        </div>
+        <HeroShowroom
+          vehicles={heroShowcaseVehicles}
+          siteName={SITE_NAME}
+          lastUpdateLabel={lastUpdateLabel}
+          totalVehicles={countsByType[EntityType.VEHICLE] ?? 0}
+          totalManufacturers={countsByType[EntityType.MANUFACTURER] ?? 0}
+          evidenceCoveragePct={evidenceCoveragePct}
+          headlineBrands={HERO_HEADLINE_BRANDS}
+          headlineLead={HERO_HEADLINE_LEAD}
+          headlineTail={HERO_HEADLINE_TAIL}
+          subtitle={HERO_SUBTITLE}
+          catalogHref={`/${EntityType.VEHICLE}`}
+          searchHref="/buscar"
+        />
       ),
     },
     // 2. Categorías — cada card entra con su propio delay en la cascada.
