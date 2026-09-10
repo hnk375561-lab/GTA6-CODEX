@@ -23,6 +23,11 @@ interface CloudflareRateLimiter {
   limit(options: { key: string }): Promise<{ success: boolean }>
 }
 
+interface CloudflareRateLimiterEnv {
+  RATE_LIMITER?: CloudflareRateLimiter
+  NAV_RATE_LIMITER?: CloudflareRateLimiter
+}
+
 // IMPORTANTE: estos valores deben coincidir con [ratelimits.simple] en
 // wrangler.toml (limit / period). El binding nativo RATE_LIMITER lee su
 // propia config desde wrangler.toml directamente, pero el fallback en
@@ -32,7 +37,34 @@ interface CloudflareRateLimiter {
 const RATE_LIMIT_MAX_REQUESTS = 300 // debe coincidir con wrangler.toml -> limit
 const RATE_LIMIT_WINDOW_MS = 60000 // debe coincidir con wrangler.toml -> period (en segundos * 1000)
 
-// Bots/crawlers conocidos que querés bloquear
+// Límite separado para navegación GET normal (antes sin ningún límite).
+// Mucho más generoso que el de /api y /dashboard a propósito: un humano
+// real, incluso navegando rápido o compartiendo IP por CGNAT, no se
+// acerca a esto. Lo que sí frena es exactamente el patrón que causó el
+// incidente: un mismo cliente pegando ~9 req/s sostenidas por horas.
+// No reduce el conteo de invocaciones del Worker (ver nota arriba de
+// BLOCKED_USER_AGENTS) — lo que sí hace es cortar el flood ANTES de que
+// cada request dispare el trabajo pesado de renderizar/leer contenido,
+// y evita que un solo cliente agote el cupo diario del plan él solo.
+const NAV_RATE_LIMIT_MAX_REQUESTS = 400
+const NAV_RATE_LIMIT_WINDOW_MS = 60000
+
+// Bots/crawlers conocidos que querés bloquear.
+//
+// IMPORTANTE — esto NO baja el conteo de invocaciones del Worker: para
+// que este chequeo corra, Cloudflare ya tuvo que invocar el Worker (así
+// se cuenta la request contra el límite del plan, pase lo que pase
+// después dentro del código). Bloquear acá evita que el bot siga
+// consumiendo CPU/subrequests/DB una vez adentro, pero el request en sí
+// ya "costó". El bloqueo real de invocaciones se hace en el dashboard de
+// Cloudflare (WAF / Bot Fight Mode), antes de que la request llegue al
+// Worker — ver nota en el chat.
+//
+// robots.txt (src/app/robots.ts) ya declara GPTBot/CCBot/anthropic-ai
+// como disallow, pero robots.txt es una sugerencia que el bot debe
+// respetar voluntariamente. Estos mismos (y otros crawlers de
+// entrenamiento de IA / scraping agresivo que no suelen respetarlo) se
+// agregan acá para que el bloqueo sea real, no solo declarativo.
 const BLOCKED_USER_AGENTS = [
   'AhrefsBot',
   'SemrushBot',
@@ -48,6 +80,31 @@ const BLOCKED_USER_AGENTS = [
   'Java',
   'Apache-HttpClient',
   'okhttp',
+  // Crawlers de entrenamiento de IA (mismos de robots.txt + otros que
+  // no suelen respetarlo)
+  'GPTBot',
+  'ChatGPT-User',
+  'CCBot',
+  'ClaudeBot',
+  'Claude-Web',
+  'anthropic-ai',
+  'Bytespider',
+  'Amazonbot',
+  'PetalBot',
+  'Meta-ExternalAgent',
+  'meta-externalagent',
+  'FacebookBot',
+  'Diffbot',
+  'omgili',
+  'YouBot',
+  // Scraping/SEO agresivo adicional (mismo patrón que Ahrefs/Semrush)
+  'BLEXBot',
+  'DataForSeoBot',
+  'SerpstatBot',
+  'MauiBot',
+  'proxycrawl',
+  'magpie-crawler',
+  'FriendlyCrawler',
 ]
 
 // Rate limiting en memoria — SOLO fallback para contextos sin el binding
@@ -59,6 +116,10 @@ const BLOCKED_USER_AGENTS = [
 // camino primario usa `env.RATE_LIMITER` (Workers Rate Limiting API,
 // contador compartido a nivel de cuenta/ubicación, ver wrangler.toml).
 const requestCounts = new Map<string, { count: number; resetTime: number }>()
+// Mapa separado para el límite de navegación GET (distinto umbral/ventana
+// que el de /api y /dashboard — no pueden compartir el mismo Map porque
+// una misma IP tendría dos contadores en conflicto).
+const navRequestCounts = new Map<string, { count: number; resetTime: number }>()
 
 // Antes esto se limpiaba con un `setInterval` a nivel de módulo (scope
 // global). Cloudflare Workers prohíbe explícitamente I/O asíncrono
@@ -84,6 +145,11 @@ function sweepExpiredEntries() {
       requestCounts.delete(ip)
     }
   }
+  for (const [ip, data] of navRequestCounts.entries()) {
+    if (now > data.resetTime) {
+      navRequestCounts.delete(ip)
+    }
+  }
 }
 
 function getClientIP(request: NextRequest): string {
@@ -99,34 +165,45 @@ function isBlockedBot(userAgent: string | null): boolean {
   return BLOCKED_USER_AGENTS.some((bot) => userAgent.toLowerCase().includes(bot.toLowerCase()))
 }
 
-function isRateLimitedInMemory(ip: string): boolean {
+function isRateLimitedInMemory(
+  ip: string,
+  map: Map<string, { count: number; resetTime: number }>,
+  maxRequests: number,
+  windowMs: number
+): boolean {
   const now = Date.now()
-  const existing = requestCounts.get(ip)
+  const existing = map.get(ip)
 
   if (!existing) {
-    requestCounts.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS })
+    map.set(ip, { count: 1, resetTime: now + windowMs })
     return false
   }
 
   if (now > existing.resetTime) {
-    requestCounts.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS })
+    map.set(ip, { count: 1, resetTime: now + windowMs })
     return false
   }
 
   existing.count++
-  return existing.count > RATE_LIMIT_MAX_REQUESTS
+  return existing.count > maxRequests
 }
 
-// Intenta usar el binding nativo `RATE_LIMITER` (contador compartido a
-// nivel de cuenta, no por isolate — ver wrangler.toml [[ratelimits]]).
-// Si el binding no existe (dev local, tests, build sin Workers) o falla
-// por cualquier motivo, cae fail-open al Map en memoria en vez de
-// romper el request — mismo criterio "no romper nada" del resto del
-// middleware (bots/dashboard).
-async function isRateLimited(ip: string): Promise<boolean> {
+// Intenta usar el binding nativo indicado (contador compartido a nivel
+// de cuenta, no por isolate — ver wrangler.toml [[ratelimits]]). Si el
+// binding no existe (dev local, tests, build sin Workers) o falla por
+// cualquier motivo, cae fail-open al Map en memoria correspondiente en
+// vez de romper el request — mismo criterio "no romper nada" del resto
+// del middleware (bots/dashboard).
+async function isRateLimited(
+  ip: string,
+  bindingName: 'RATE_LIMITER' | 'NAV_RATE_LIMITER',
+  fallbackMap: Map<string, { count: number; resetTime: number }>,
+  maxRequests: number,
+  windowMs: number
+): Promise<boolean> {
   try {
     const { env } = getCloudflareContext()
-    const limiter = (env as { RATE_LIMITER?: CloudflareRateLimiter }).RATE_LIMITER
+    const limiter = (env as CloudflareRateLimiterEnv)[bindingName]
     if (limiter) {
       const { success } = await limiter.limit({ key: ip })
       return !success
@@ -137,7 +214,7 @@ async function isRateLimited(ip: string): Promise<boolean> {
     // al fallback de abajo.
   }
 
-  return isRateLimitedInMemory(ip)
+  return isRateLimitedInMemory(ip, fallbackMap, maxRequests, windowMs)
 }
 
 export async function middleware(request: NextRequest) {
@@ -155,23 +232,44 @@ export async function middleware(request: NextRequest) {
 
   const pathname = request.nextUrl.pathname
 
-  // Rate limiting — SOLO para rutas sensibles (API, dashboard) o métodos
-  // que modifican estado (POST/PUT/etc, típicamente formularios). La
-  // navegación normal (GET a páginas de contenido) queda afuera a
-  // propósito: en un sitio de contenido, cada visita real hace varias
-  // requests (documento + RSC payloads + posibles redirects de
-  // canonicalización de la capa de assets), y aplicar un límite por IP
-  // ahí termina bloqueando visitantes legítimos — sobre todo detrás de
-  // CGNAT, común en ISPs móviles — sin aportar protección real contra
-  // abuso. Lo que sí vale la pena limitar es scraping agresivo de la
-  // API y fuerza bruta contra /dashboard.
+  // Rate limiting estricto (300/min) — rutas sensibles (API, dashboard)
+  // o métodos que modifican estado (POST/PUT/etc, típicamente
+  // formularios). Acá sí tiene sentido un umbral bajo: es scraping
+  // agresivo de la API o fuerza bruta contra /dashboard.
   const isSensitiveRoute = pathname.startsWith('/api') || pathname.startsWith('/dashboard')
   const isMutatingRequest = request.method !== 'GET' && request.method !== 'HEAD'
-  const shouldRateLimit = isSensitiveRoute || isMutatingRequest
+  const shouldRateLimitStrict = isSensitiveRoute || isMutatingRequest
 
-  if (shouldRateLimit) {
-    const clientIP = getClientIP(request)
-    if (await isRateLimited(clientIP)) {
+  const clientIP = getClientIP(request)
+
+  if (shouldRateLimitStrict) {
+    if (
+      await isRateLimited(
+        clientIP,
+        'RATE_LIMITER',
+        requestCounts,
+        RATE_LIMIT_MAX_REQUESTS,
+        RATE_LIMIT_WINDOW_MS
+      )
+    ) {
+      return new NextResponse('Demasiadas solicitudes', { status: 429 })
+    }
+  } else {
+    // Rate limiting laxo (400/min) para navegación GET normal — antes
+    // sin ningún límite (ver incidente: un mismo cliente sostuvo ~9
+    // req/s por 24hs sin que nada lo frenara). El umbral es
+    // deliberadamente alto para no afectar navegación real, incluso
+    // detrás de CGNAT: un humano, o varios compartiendo IP, no se
+    // acercan a 400 requests/min contra este catálogo.
+    if (
+      await isRateLimited(
+        clientIP,
+        'NAV_RATE_LIMITER',
+        navRequestCounts,
+        NAV_RATE_LIMIT_MAX_REQUESTS,
+        NAV_RATE_LIMIT_WINDOW_MS
+      )
+    ) {
       return new NextResponse('Demasiadas solicitudes', { status: 429 })
     }
   }

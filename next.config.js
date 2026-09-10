@@ -56,7 +56,33 @@ const nextConfig = {
             value: 'camera=(), microphone=(), geolocation=()'
           }
         ]
-      }
+      },
+      // CRÍTICO PARA INVOCACIONES: todo el catálogo (vehículos, fabricantes,
+      // rankings, comparador, categorías, galería, home) se genera 100%
+      // estático en build (ninguna page.tsx fuera de /dashboard declara
+      // `export const dynamic`), y open-next.config.ts usa
+      // staticAssetsIncrementalCache — o sea, el contenido NO cambia hasta
+      // el próximo deploy. Sin Cache-Control, Cloudflare trata cada
+      // request como no-cacheable y reenvía el 100% del tráfico al Worker
+      // (de ahí Invocations ≈ Asset requests 1:1 en las métricas). Con
+      // s-maxage, un HIT en el CDN de Cloudflare se sirve DIRECTO desde el
+      // edge sin invocar el Worker — esto es lo único en el código que
+      // realmente baja el conteo de invocaciones, a diferencia del bloqueo
+      // de bots en middleware (que igual consume 1 invocación por request,
+      // solo corta el trabajo posterior).
+      // stale-while-revalidate cubre el minuto exacto del deploy: sirve la
+      // versión vieja cacheada mientras Cloudflare revalida en background,
+      // en vez de golpear el Worker con tráfico en caliente post-deploy.
+      {
+        source:
+          '/((?!api/|dashboard|_next/|favicon.ico).*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, s-maxage=3600, stale-while-revalidate=86400',
+          },
+        ],
+      },
     ]
   },
   redirects: async () => {
