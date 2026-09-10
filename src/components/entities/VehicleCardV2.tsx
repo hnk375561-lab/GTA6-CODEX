@@ -115,9 +115,20 @@ export function VehicleCardV2({ entity, image, className, priority }: VehicleCar
           )}
           style={{ aspectRatio: '0.75 / 1' } as CSSProperties}
         >
-          {/* FOTOGRAFÍA — ~100% del área. Único elemento con scale en hover. */}
+          {/* FOTOGRAFÍA — ~100% del área. Único elemento con scale en hover.
+              `h-full w-full` es necesario: EntityImage fija su propio
+              aspect-[16/9] interno (pensado para su card genérica); con
+              ambas dimensiones explícitas ese aspect-ratio queda anulado
+              (spec CSS: aspect-ratio solo aplica si una dimensión es auto)
+              y la foto pasa a llenar realmente el contenedor 3/4 de esta
+              card en vez de dejar una franja negra vacía debajo. */}
           <div className="absolute inset-0 scale-100 transition-transform duration-300 ease-out group-hover/v2card:scale-[1.03]">
-            <EntityImage entity={entity} image={image} priority={priority} className="!rounded-none !border-0" />
+            <EntityImage
+              entity={entity}
+              image={image}
+              priority={priority}
+              className="h-full w-full !rounded-none !border-0"
+            />
           </div>
 
           {/* Velo inferior — máx. ~28% de alto, muy gradual. El auto se

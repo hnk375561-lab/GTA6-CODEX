@@ -3,11 +3,12 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { EntityType } from '@/types'
 import { getEntitiesByType } from '@/lib/entities'
-import { getEntityImageMap } from '@/lib/media'
 import { getBidirectionalRelationCount } from '@/lib/relations'
 import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
-import { EntityCard } from '@/components/entities/EntityCard'
+// TEMPORAL — evaluación de ManufacturerCardV2, mismo criterio que
+// VehicleCardV2: se monta en paralelo hasta aprobación explícita.
+import { ManufacturerCardV2 } from '@/components/entities/ManufacturerCardV2'
 import { SITE_NAME, SITE_URL } from '@/config/site'
 import { AdUnit } from '@/components/monetization/AdUnit'
 
@@ -48,7 +49,6 @@ export default async function ManufacturersHubPage() {
     manufacturers.map(async (m) => [m.slug, await getBidirectionalRelationCount(m)] as const)
   )
   const relationCountBySlug = Object.fromEntries(relationCountEntries)
-  const imageBySlug = getEntityImageMap(manufacturers)
 
   return (
     <section className="relative overflow-hidden border-b border-edge py-12 sm:py-16">
@@ -81,13 +81,11 @@ export default async function ManufacturersHubPage() {
           <AdUnit slotId="2894897236" format="horizontal" dataTrackingLabel="ad-fabricantes" />
         </Reveal>
 
-        <Reveal className="stagger grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
+        <Reveal className="stagger grid grid-cols-2 gap-6 sm:grid-cols-3 xl:grid-cols-4">
           {manufacturers.map((manufacturer) => (
-            <EntityCard
+            <ManufacturerCardV2
               key={manufacturer.slug}
               entity={manufacturer}
-              image={imageBySlug[`${manufacturer.type}/${manufacturer.slug}`]}
-              typeLabel="Fabricante"
               relationCount={relationCountBySlug[manufacturer.slug]}
             />
           ))}

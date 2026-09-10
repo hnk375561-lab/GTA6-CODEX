@@ -48,7 +48,7 @@ function EntityListExplorerFallback({
         // (salto de layout al hidratar). Se detecta por el tipo de la
         // primera entidad, misma rama que usa `EntityListExplorer`.
         entities[0]?.type === EntityType.VEHICLE
-          ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5'
+          ? 'grid-cols-2 sm:grid-cols-3 xl:grid-cols-4'
           : 'sm:grid-cols-2 lg:grid-cols-3'
       )}
     >

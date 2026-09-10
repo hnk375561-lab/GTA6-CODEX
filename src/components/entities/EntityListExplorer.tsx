@@ -830,7 +830,7 @@ export function EntityListExplorer({
             // denso tipo "showroom"). El resto de categorías mantiene el
             // grid original de 3 columnas — sus cards tienen más texto
             // (descripción, facts) y a 5 columnas quedarían ilegibles.
-            isVehicleList ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5' : 'sm:grid-cols-2 lg:grid-cols-3',
+            isVehicleList ? 'grid-cols-2 sm:grid-cols-3 xl:grid-cols-4' : 'sm:grid-cols-2 lg:grid-cols-3',
             compareSlugs.length > 0 && 'pb-24',
           )}
         >
