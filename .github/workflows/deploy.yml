@@ -1,15 +1,18 @@
 name: CI (type-check, lint, test, build)
 
-# El deploy real a producción lo hace Cloudflare Workers Builds (git
-# integration nativa, configurada del lado de Cloudflare, que lee
-# wrangler.toml directo). Este workflow quedó de la época en que el
-# proyecto todavía era Cloudflare Pages (antes de la migración a Workers
-# del 07/09/2026) y hasta ahora seguía intentando un segundo deploy con
-# `cloudflare/pages-action@v1` contra un proyecto Pages que ya no es el
-# que sirve el sitio — dos pipelines de deploy corriendo en paralelo
-# contra el mismo nombre, candidato fuerte a builds fallidos fantasma en
-# el dashboard de Cloudflare. Se deja este workflow solo como gate de CI
-# (falla el check de GitHub si algo rompe), sin ningún paso de deploy.
+# 10/09/2026 — Migración a GitHub Pages: el deploy real a producción ahora
+# lo hace el workflow `deploy-pages.yml` (output: 'export' + GitHub
+# Actions), no Cloudflare. Este workflow queda solo como gate de CI
+# (type-check, lint, test, verificaciones de contenido y build de
+# verificación) — sin ningún paso de deploy propio.
+#
+# Pendiente del lado de Cloudflare (no se puede resolver desde el repo):
+# el Worker `sinfrenos` puede seguir teniendo activa su integración git
+# nativa (Cloudflare Workers Builds), que intentaría un deploy en cada
+# push a `main` de forma independiente a este workflow. Si el dashboard
+# de Cloudflare sigue mostrando builds (fallidos o no) en cada push,
+# desactivar esa integración en Workers & Pages → sinfrenos → Settings →
+# Builds, ya que el sitio en producción ahora es GitHub Pages.
 
 on:
   push:
@@ -92,7 +95,8 @@ jobs:
           retention-days: 14
           if-no-files-found: ignore
 
-      - name: Build (verificación — el deploy real lo hace Cloudflare Workers Builds)
-        run: npm run build:cf
+      - name: Build (verificación — el deploy real lo hace el workflow deploy-pages.yml)
+        run: npm run build
         env:
-          NEXT_PUBLIC_SITE_URL: https://sinfreno.com
+          GITHUB_PAGES_BASE_PATH: '/GTA6-CODEX'
+          NEXT_PUBLIC_SITE_URL: https://hnk375561-lab.github.io/GTA6-CODEX
