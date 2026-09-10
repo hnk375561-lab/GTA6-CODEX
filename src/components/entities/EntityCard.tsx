@@ -370,43 +370,47 @@ export function EntityCard({
   const evidenceStamp = entity.evidence ? EVIDENCE_STAMP_META[entity.evidence.level] : undefined
 
   /**
-   * CARD "SHOWROOM" — tercera generación (Fase 11, rediseño desde cero).
-   * Las dos versiones anteriores seguían siendo, en el fondo, la misma
-   * arquitectura: imagen arriba + contenedor de contenido abajo, con
-   * bordes y divisores separando secciones. Esta versión abandona esa
-   * composición por completo:
+   * CARD "SHOWROOM" — cuarta generación (Fase 12, reset de arquitectura).
+   * Las tres versiones anteriores, aun retrato/full-bleed, seguían siendo
+   * en el fondo una única columna vertical de texto apilada sobre la
+   * foto (marca → modelo → categoría → specs → precio/CTA en fila). Esta
+   * versión rompe esa lógica de columna única:
    *
-   * - La fotografía deja de ser "una sección" y pasa a ser el CANVAS
-   *   completo de la card (`aspect-[3/4]`, retrato — proporción de
-   *   póster/editorial, no de dashboard). Ya no hay una superficie de
-   *   contenido separada debajo de la imagen: todo el texto vive
-   *   superpuesto sobre la foto, dentro de un único degradado
-   *   cinematográfico que crece desde abajo.
-   * - Cero borders internos. La jerarquía se construye con tipografía,
-   *   peso, tracking y espaciado — no con líneas. La card entera tiene
-   *   un solo radius (`rounded-[22px]`) y un anillo de 1px casi
-   *   imperceptible (`ring-white/[0.06]`) en vez de un border sólido.
-   * - Marca chica / modelo grande: el modelo es el elemento tipográfico
-   *   dominante de toda la card (editorial, no un <h3> de dashboard).
-   * - Estado y evidencia/ranking pasan de "badges" a micro-labels con
-   *   glifo (`● VERIFICADO`, `◆ RESPALDADO`) — texto con drop-shadow,
-   *   sin pill, sin fondo sólido.
-   * - "Comparar" dejó de ser un checkbox con label fijo: es un cuadrado
-   *   mínimo que solo revela la palabra "Comparar" en hover/selección.
-   * - Specs sin tabla ni labels grandes: lectura horizontal compacta
-   *   "165 HP · 1.368 CC · AUTO", con el label real casi invisible
-   *   debajo, en vez de una ficha técnica.
-   * - Índice de colección opcional ("01") en la esquina superior — solo
-   *   si el caller lo pasa (`collectionIndex`); si no, no ocupa espacio.
-   * - Hover coherente con lo pedido: zoom de foto sutil (1.035), el
-   *   degradado se intensifica un poco, el modelo se desplaza 3px, el
-   *   CTA refuerza su flecha y la card se eleva mínimamente. 400ms
-   *   ease-out, nada de glow/neon/rotaciones.
+   * - La foto pasa a ocupar prácticamente el 100% del área (el degradado
+   *   ahora solo oscurece ~34% inferior, y muy gradualmente, en vez del
+   *   ~55-60% de las versiones previas) — el vehículo se ve casi
+   *   completo y a color en vez de "apagado" por overlay.
+   * - El bloque inferior deja de ser una columna: es una composición de
+   *   DOS EJES independientes — marca/modelo/specs ancladas
+   *   abajo-izquierda (creciendo hacia arriba, el modelo como elemento
+   *   dominante) y precio/CTA ancladas abajo-derecha con un offset
+   *   vertical propio (ligeramente más alto), no una fila de tabla
+   *   "precio ... CTA" al mismo nivel.
+   * - Categoría/año (antes siempre visible como línea secundaria) ahora
+   *   es metadata oculta: aparece solo en hover, como una línea que se
+   *   desliza sobre la marca. Reduce el ruido permanente de la card sin
+   *   perder el dato para quien interactúa.
+   * - Specs sin labels ni bloques separados: una sola línea editorial
+   *   "280 HP · 1.995 CC · AUTO" bajo el modelo.
+   * - Cero caja: se elimina el `ring` que tenían las versiones
+   *   anteriores. Nada delimita la card salvo su propio contenido — el
+   *   `rounded` + el lift/shadow en hover son la única "estructura".
+   * - Favorito: ya no es un botón circular con fondo — se le pasa
+   *   `className` a `WishlistButton` para despojarlo de su chip
+   *   (border/bg propios de la variante "card", usados en el resto del
+   *   sitio) y queda como ícono suelto, semi-invisible hasta hover.
+   * - Comparar: pasa de checkbox con label fijo a un signo "+" mínimo
+   *   que solo revela "Comparar" en hover (o siempre, si ya está
+   *   seleccionado — el estado activo nunca debe quedar oculto).
+   * - Estado: único badge siempre visible, como glifo+texto sin pill.
+   *   Evidencia/ranking (el "resto" que pedía el brief) queda oculto
+   *   hasta hover, ya no compite por atención por defecto.
    *
-   * Test de la "regla de oro": si se quitan specs, estado y badges, y
-   * solo queda FOTO + MARCA + MODELO + PRECIO, la card debe seguir
-   * viéndose bien — por eso esos cuatro elementos son los únicos que no
-   * dependen de datos opcionales para tener presencia visual fuerte.
+   * Test de la "regla de oro" (se repite en cada iteración a propósito):
+   * con solo FOTO + MARCA + MODELO + PRECIO la card tiene que sostenerse
+   * sola — por eso esos cuatro elementos son los únicos con tamaño y
+   * contraste fuertes por defecto; todo lo demás es deliberadamente más
+   * chico, más tenue, o directamente oculto hasta hover.
    *
    * Solo para vehículos en layout de grilla/compact; `layout="row"`
    * sigue con el markup genérico de abajo (los otros 8 tipos de entidad
@@ -416,6 +420,7 @@ export function EntityCard({
     const vehicle = entity as Vehicle
     const { brand, model } = splitVehicleName(vehicle)
     const specs = vehicleShowcaseSpecs(vehicle)
+    const specsLine = specs.map((spec) => spec.value).join('  ·  ')
     const year = vehicleYearLabel(vehicle)
     const price = priceHeadline(vehicle)
     const secondaryLine = [vehicle.class, year].filter(Boolean).join(' · ')
@@ -428,10 +433,9 @@ export function EntityCard({
           : String(collectionIndex).padStart(2, '0')
         : null
 
-    // Máximo UN indicador secundario además del estado — el ranking
-    // (contexto de página de rankings) pesa más que el sello de
-    // evidencia cuando ambos existen a la vez, así nunca se apilan 3+
-    // micro-labels sobre la misma esquina.
+    // Único indicador secundario posible, y ahora vive oculto hasta
+    // hover (ver comentario arriba) — el ranking pesa más que el sello
+    // de evidencia cuando ambos existen.
     const secondaryBadge = rankBadge
       ? { icon: `#${rankBadge.position}`, label: rankBadge.metricLabel, title: rankBadge.metricLabel }
       : evidenceStamp
@@ -447,29 +451,30 @@ export function EntityCard({
         <Link href={`/${entity.type}/${entity.slug}`} prefetch={false} className="block h-full">
           <article
             className={cn(
-              'group/card relative flex h-full w-full overflow-hidden rounded-[22px] bg-neutral-950 ring-1 ring-white/[0.06] transition-all duration-[400ms] ease-out',
-              'hover:-translate-y-1 hover:ring-auto-accent/30 hover:shadow-[0_24px_48px_-20px_rgba(0,0,0,0.7)]'
+              'group/card relative flex h-full w-full overflow-hidden rounded-[20px] bg-neutral-950 transition-all duration-[420ms] ease-out',
+              'hover:-translate-y-1 hover:shadow-[0_28px_54px_-22px_rgba(0,0,0,0.75)]'
             )}
           >
-            {/* CANVAS — la fotografía ES la card. Todo lo demás vive
-                superpuesto sobre ella, no debajo. Retrato editorial en
-                vez de paisaje de ficha: refuerza la sensación de póster
-                de colección más que de miniatura de inventario. */}
+            {/* CANVAS — la fotografía es prácticamente toda la card.
+                Retrato para que el auto se sienta grande en 5 columnas
+                sin que la card se vuelva excesivamente alta. */}
             <div
               className={cn('relative w-full', isCompact ? 'aspect-[4/5]' : 'aspect-[3/4]')}
               onMouseEnter={() => setHovering(true)}
               onMouseLeave={() => setHovering(false)}
               style={flipSlug ? ({ viewTransitionName: FLIP_VIEW_TRANSITION_NAME } as CSSProperties) : undefined}
             >
-              <div className="absolute inset-0 scale-100 transition-transform duration-[400ms] ease-out group-hover/card:scale-[1.035]">
+              <div className="absolute inset-0 scale-100 transition-transform duration-[420ms] ease-out group-hover/card:scale-[1.03]">
                 <EntityImage entity={entity} image={image} priority={priority} />
               </div>
 
-              {/* Degradado cinematográfico único — crece desde abajo,
-                  se intensifica levemente en hover. Es el único overlay
-                  de color de toda la card; todo lo demás es tipografía. */}
-              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(3,3,4,0.95)_0%,rgba(3,3,4,0.72)_22%,rgba(3,3,4,0.28)_42%,rgba(3,3,4,0)_62%)] transition-opacity duration-[400ms] ease-out group-hover/card:opacity-[1.08]" />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-transparent opacity-70" />
+              {/* Degradado mínimo — solo el ~34% inferior, y muy
+                  gradual, para que el auto se vea casi a pleno color.
+                  Un segundo velo apenas perceptible arriba, solo para
+                  que estado/comparar/favorito tengan contraste sin
+                  necesitar chip propio. */}
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(3,3,4,0.88)_0%,rgba(3,3,4,0.5)_14%,rgba(3,3,4,0.14)_26%,rgba(3,3,4,0)_36%)]" />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/30 to-transparent" />
 
               {/* Clip de video ambient (sin cambios funcionales) */}
               {clipUrl && (
@@ -495,36 +500,52 @@ export function EntityCard({
                 </>
               )}
 
-              {/* ESQUINA SUPERIOR IZQUIERDA — índice de colección (si hay)
-                  + comparar, apilados muy sutiles, sin competir con el
-                  auto. */}
-              <div className="absolute left-3.5 top-3 z-10 flex flex-col items-start gap-1.5">
+              {/* ESQUINA SUPERIOR IZQUIERDA — índice de colección (si
+                  hay) + estado (único badge siempre visible) + a lo
+                  sumo un indicador secundario, oculto hasta hover +
+                  comparar, oculto hasta hover o si ya está tildado. */}
+              <div className="absolute left-3.5 top-3 z-10 flex flex-col items-start gap-1">
                 {collectionLabel && (
-                  <span className="font-mono text-[10px] font-medium tracking-[0.15em] text-white/45 [text-shadow:0_1px_2px_rgba(0,0,0,0.9)]">
+                  <span className="font-mono text-[9.5px] font-medium tracking-[0.15em] text-white/40 [text-shadow:0_1px_2px_rgba(0,0,0,0.9)]">
                     {collectionLabel}
                   </span>
                 )}
+                <div className="flex items-center gap-2">
+                  <span
+                    className={cn(
+                      'inline-flex items-center gap-1 text-[9px] font-semibold uppercase tracking-[0.14em] [text-shadow:0_1px_2px_rgba(0,0,0,0.9)]',
+                      STATUS_TEXT_CLASS[entity.status]
+                    )}
+                  >
+                    <span aria-hidden="true">{STATUS_SYMBOL[entity.status]}</span>
+                    {statusText}
+                  </span>
+                  {secondaryBadge && (
+                    <span
+                      className="inline-flex items-center gap-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-white/0 opacity-0 [text-shadow:0_1px_2px_rgba(0,0,0,0.9)] transition-opacity duration-300 group-hover/card:text-white/55 group-hover/card:opacity-100"
+                      title={secondaryBadge.title}
+                    >
+                      <span aria-hidden="true">{secondaryBadge.icon}</span>
+                      {secondaryBadge.label}
+                    </span>
+                  )}
+                </div>
                 {compareEnabled && (
                   <label
                     className={cn(
-                      'group/compare inline-flex cursor-pointer items-center gap-1.5 rounded-full py-0.5 pl-0.5 pr-0.5 backdrop-blur-[2px] transition-all duration-200',
-                      compareChecked ? 'bg-black/55 pr-2' : 'hover:bg-black/45 hover:pr-2',
+                      'group/compare mt-0.5 inline-flex cursor-pointer items-center gap-1 [text-shadow:0_1px_2px_rgba(0,0,0,0.9)]',
                       compareDisabled && 'cursor-not-allowed opacity-40'
                     )}
                     onClick={(event) => event.stopPropagation()}
                   >
                     <span
                       className={cn(
-                        'flex h-4 w-4 shrink-0 items-center justify-center rounded-[4px] border transition-colors duration-200',
-                        compareChecked
-                          ? 'border-auto-accent bg-auto-accent text-neutral-950'
-                          : 'border-white/50 bg-transparent text-transparent'
+                        'text-[11px] font-bold leading-none transition-colors duration-200',
+                        compareChecked ? 'text-auto-accent' : 'text-white/55 group-hover/compare:text-white/85'
                       )}
                       aria-hidden="true"
                     >
-                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M20 6 9 17l-5-5" />
-                      </svg>
+                      {compareChecked ? '✓' : '+'}
                     </span>
                     <input
                       type="checkbox"
@@ -537,8 +558,10 @@ export function EntityCard({
                     />
                     <span
                       className={cn(
-                        'overflow-hidden whitespace-nowrap text-[9px] font-semibold uppercase tracking-wide text-white/85 transition-[max-width,opacity] duration-200',
-                        compareChecked ? 'max-w-[4.5rem] opacity-100' : 'max-w-0 opacity-0 group-hover/compare:max-w-[4.5rem] group-hover/compare:opacity-100'
+                        'overflow-hidden whitespace-nowrap text-[9px] font-semibold uppercase tracking-wide transition-[max-width,opacity] duration-200',
+                        compareChecked
+                          ? 'max-w-[5rem] text-auto-accent opacity-100'
+                          : 'max-w-0 text-white/70 opacity-0 group-hover/compare:max-w-[5rem] group-hover/compare:opacity-100'
                       )}
                     >
                       Comparar
@@ -547,88 +570,79 @@ export function EntityCard({
                 )}
               </div>
 
-              {/* ESQUINA SUPERIOR DERECHA — favorito, casi invisible
-                  hasta que hace falta. */}
-              <div className="absolute right-3 top-3 z-10 opacity-80 transition-opacity duration-200 group-hover/card:opacity-100">
-                <WishlistButton type={entity.type} slug={entity.slug} title={entity.title} />
+              {/* ESQUINA SUPERIOR DERECHA — favorito, sin chip propio
+                  (se despoja el border/bg de la variante "card" vía
+                  className), casi invisible hasta hover. */}
+              <div className="absolute right-3 top-3 z-10 opacity-55 transition-opacity duration-200 group-hover/card:opacity-100 [&_svg]:drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+                <WishlistButton
+                  type={entity.type}
+                  slug={entity.slug}
+                  title={entity.title}
+                  className="h-6 w-6 border-transparent bg-transparent p-0 text-white backdrop-blur-none hover:border-transparent hover:bg-transparent"
+                />
               </div>
 
-              {/* BLOQUE INFERIOR — única zona de texto de la card,
-                  integrada al degradado. No hay panel, no hay borde:
-                  es la continuación visual de la fotografía. */}
-              <div className={cn('absolute inset-x-0 bottom-0 z-10', isCompact ? 'px-3.5 pb-3' : 'px-4 pb-4 sm:px-5 sm:pb-5')}>
-                {/* Micro-labels editoriales: estado + a lo sumo uno más */}
-                <div className="mb-1.5 flex items-center gap-2.5">
-                  <span
+              {/* BLOQUE INFERIOR — dos ejes independientes, no una
+                  columna: marca/modelo/specs ancla abajo-izquierda,
+                  precio/CTA ancla abajo-derecha con offset propio. */}
+              <div
+                className={cn(
+                  'absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-3',
+                  isCompact ? 'px-3.5 pb-3' : 'px-4 pb-4 sm:px-5 sm:pb-5'
+                )}
+              >
+                {/* EJE IZQUIERDO — marca / modelo / specs */}
+                <div className="min-w-0 flex-1">
+                  {secondaryLine && (
+                    <p className="mb-1 max-h-0 overflow-hidden whitespace-nowrap text-[10px] font-medium uppercase tracking-wide text-white/0 opacity-0 transition-all duration-300 ease-out group-hover/card:max-h-4 group-hover/card:text-white/45 group-hover/card:opacity-100">
+                      {secondaryLine}
+                    </p>
+                  )}
+                  {brand && (
+                    <p className="truncate text-[9.5px] font-semibold uppercase tracking-[0.26em] text-white/50">
+                      {brand}
+                    </p>
+                  )}
+                  <h2
                     className={cn(
-                      'inline-flex items-center gap-1 text-[9px] font-semibold uppercase tracking-[0.14em] [text-shadow:0_1px_2px_rgba(0,0,0,0.9)]',
-                      STATUS_TEXT_CLASS[entity.status]
+                      'truncate font-extrabold leading-[0.95] tracking-tight text-white transition-transform duration-[420ms] ease-out group-hover/card:-translate-y-0.5',
+                      isCompact ? 'text-lg' : 'text-[1.75rem] sm:text-4xl'
                     )}
                   >
-                    <span aria-hidden="true">{STATUS_SYMBOL[entity.status]}</span>
-                    {statusText}
-                  </span>
-                  {secondaryBadge && (
-                    <span
-                      className="inline-flex items-center gap-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-white/55 [text-shadow:0_1px_2px_rgba(0,0,0,0.9)]"
-                      title={secondaryBadge.title}
-                    >
-                      <span aria-hidden="true">{secondaryBadge.icon}</span>
-                      {secondaryBadge.label}
-                    </span>
+                    {model}
+                  </h2>
+                  {specsLine && !isCompact && (
+                    <p className="mt-1.5 truncate text-[11px] font-semibold tracking-wide text-white/55">
+                      {specsLine}
+                    </p>
                   )}
                 </div>
 
-                {/* Marca + modelo — el elemento tipográfico dominante */}
-                {brand && (
-                  <p className="truncate text-[10px] font-semibold uppercase tracking-[0.24em] text-white/55">
-                    {brand}
-                  </p>
-                )}
-                <h2
-                  className={cn(
-                    'truncate font-extrabold leading-[1.02] tracking-tight text-white transition-transform duration-[400ms] ease-out group-hover/card:-translate-y-0.5',
-                    isCompact ? 'text-lg' : 'text-[1.65rem] sm:text-3xl'
-                  )}
-                >
-                  {model}
-                </h2>
-
-                {secondaryLine && (
-                  <p className="mt-1 truncate text-[11px] font-medium uppercase tracking-wide text-white/40">
-                    {secondaryLine}
-                  </p>
-                )}
-
-                {/* Specs — lectura horizontal compacta, sin tabla */}
-                {specs.length > 0 && !isCompact && (
-                  <div className="mt-3.5 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                    {specs.map((spec) => (
-                      <div key={spec.label} className="flex items-baseline gap-1.5">
-                        <span className="text-sm font-bold tabular-nums text-white/90">{spec.value}</span>
-                        <span className="text-[9px] font-medium uppercase tracking-wide text-white/35">
-                          {spec.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* Precio + CTA — los dos elementos más importantes
-                    después del vehículo. Sin línea divisoria: el salto
-                    de escala tipográfica y el espaciado alcanzan. */}
-                <div className={cn('flex items-center justify-between gap-3', isCompact ? 'mt-2' : 'mt-3.5')}>
+                {/* EJE DERECHO — precio / CTA, anclado más arriba que
+                    el eje izquierdo (offset propio) para romper la
+                    lectura en fila única. */}
+                <div className={cn('flex shrink-0 flex-col items-end text-right', isCompact ? '' : '-translate-y-1 sm:-translate-y-1.5')}>
                   <span
                     className={cn(
-                      'min-w-0 flex-1 truncate font-extrabold tracking-tight text-auto-accent',
-                      isCompact ? 'text-base' : 'text-xl'
+                      'whitespace-nowrap font-extrabold tracking-tight text-auto-accent',
+                      isCompact ? 'text-sm' : 'text-lg sm:text-xl'
                     )}
                   >
                     {price ?? '\u00A0'}
                   </span>
-                  <span className="inline-flex shrink-0 items-center gap-1 text-[10.5px] font-semibold uppercase tracking-wide text-white/70 transition-colors duration-200 group-hover/card:text-auto-accent">
-                    Ver detalles
-                    <span aria-hidden="true" className="transition-transform duration-200 group-hover/card:translate-x-1">
+                  <span className="mt-1 inline-flex items-center text-white/65 transition-colors duration-200 group-hover/card:text-auto-accent">
+                    <span
+                      className={cn(
+                        'overflow-hidden whitespace-nowrap text-[10px] font-semibold uppercase tracking-wide opacity-0 transition-[max-width,opacity] duration-300 group-hover/card:opacity-100',
+                        isCompact ? 'max-w-0' : 'max-w-0 group-hover/card:max-w-[5.5rem]'
+                      )}
+                    >
+                      Ver detalles&nbsp;
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="text-base font-bold leading-none transition-transform duration-300 group-hover/card:translate-x-0.5"
+                    >
                       →
                     </span>
                   </span>
