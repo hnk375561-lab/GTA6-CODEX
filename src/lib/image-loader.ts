@@ -68,9 +68,17 @@ const WIDTHS = [256, 320, 384, 512, 640, 750, 828, 1024, 1440, 1920, 2560, 3840]
  * configurado (env var GITHUB_PAGES_BASE_PATH), Next.js lo inyecta
  * automáticamente en URLs de <Image> component, pero NO en loaders
  * customizados. Este loader debe construir URLs completas con basePath.
+ *
+ * `BLOB_BASE_URL` y `ASSET_PREFIX` se leen DENTRO de `imageLoader()` (no
+ * como `const` a nivel de módulo) a propósito: Next.js reemplaza
+ * `process.env.NEXT_PUBLIC_*` por su valor literal en build time sin
+ * importar en qué scope aparezca la referencia (server o browser bundle),
+ * así que en producción el comportamiento es idéntico. Leerlas a nivel de
+ * módulo sí rompía los tests (`image-loader.test.ts`): `import` solo
+ * evalúa el módulo una vez, así que un `const` de arriba queda congelado
+ * con el valor que tenía `process.env` en ESE momento — los tests que
+ * cambian `process.env` dentro de cada `it()` nunca lo veían reflejado.
  */
-const BLOB_BASE_URL = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '/images/_optimized'
-const ASSET_PREFIX = process.env.NEXT_PUBLIC_ASSET_PREFIX || ''
 
 /**
  * Único prefijo con variantes pregeneradas. El resto de public/images/
@@ -88,6 +96,9 @@ function pickWidth(requested: number): number {
 }
 
 export default function imageLoader({ src, width }: ImageLoaderProps): string {
+  const BLOB_BASE_URL = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '/images/_optimized'
+  const ASSET_PREFIX = process.env.NEXT_PUBLIC_ASSET_PREFIX || ''
+
   // Imágenes remotas (miniaturas de YouTube — ver next.config.js
   // `images.remotePatterns`, usadas por YouTubeEmbed.tsx vía <Image>):
   // no tienen variante pregenerada y ya vienen del tamaño fijo correcto,
