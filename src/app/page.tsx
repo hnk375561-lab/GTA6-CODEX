@@ -8,14 +8,13 @@ import {
   getEntityCount,
   getEntityCountsByType,
   getEntitiesByType,
-  getMostRecentUpdate,
 } from '@/lib/entities'
 import { resolveEntityDisplayImage } from '@/lib/media'
 import { getBidirectionalRelationCount } from '@/lib/relations'
 import { generateHomepageMetadata, generateBreadcrumbJsonLd, generateWebsiteJsonLd, generateFaqJsonLd, serializeJsonLd } from '@/lib/seo'
 import { parsePowerHp } from '@/lib/vehicle-power'
 import { parsePriceUsd } from '@/lib/vehicle-price'
-import { computeCategoryQuickFilterOptions, categoryPageHref } from '@/lib/vehicle-category'
+import { computeCategoryQuickFilterOptions } from '@/lib/vehicle-category'
 import { getAvailableRankings } from '@/lib/rankings'
 import { getManufacturerMarqueeItems } from '@/lib/vehicle-manufacturers'
 import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
@@ -32,8 +31,6 @@ import { ManufacturersMarquee } from '@/components/home/ManufacturersMarquee'
 import { PinnedScrollStages, type Stage } from '@/components/home/PinnedScrollStages'
 import { Reveal } from '@/components/home/StageProgress'
 import { TiltCard } from '@/components/home/Parallax'
-import { HeroShowroom } from '@/components/home/HeroShowroom'
-import { type HeroVehicleShowcaseItem } from '@/components/home/HeroVehicleShowcaseV2'
 import { AdUnit } from '@/components/monetization/AdUnit'
 import { CompareShowcase, type CompareShowcaseVehicle } from '@/components/home/CompareShowcase'
 import { EvidenceSpotlight, type EvidenceHighlight } from '@/components/home/EvidenceSpotlight'
@@ -58,19 +55,32 @@ export async function generateMetadata(): Promise<Metadata> {
  * sobre el fondo blanco, en vez del hero oscuro con glow que tenía antes
  * la home. El resto del sitio (fichas, listados, comparador) no cambia.
  *
- * Fase 1–3 (informe de auditoría, §5): se agregan 4 paneles nuevos al
- * mismo sistema de crossfade — Comparador en vivo, Un dato-una fuente,
- * Rankings destacados y Financiamiento — en el orden narrativo propuesto:
- * Hero → Categorías → Comparador → Destacados → Evidencia → Rankings →
- * Noticias → Financiamiento → CTA final. Cada uno reusa datos y lógica ya
- * validada en otras páginas del sitio (rankings.ts, evidence.ts,
+ * REDISEÑO DE HERO (sept. 2026, "cambio más drástico posible" pedido tras
+ * 4 iteraciones del hero anterior que el usuario consideró todas variaciones
+ * del mismo esqueleto — eyebrow + headline + CTA a la izquierda, foto a la
+ * derecha): el hero deja de ser una pieza de marketing (headline rotativo +
+ * CTA + showroom fotográfico, `HeroShowroom.tsx`, que sigue en el repo sin
+ * uso) y pasa a ser directamente el comparador en vivo (`CompareShowcase`,
+ * el mismo componente que antes vivía como panel 3 más abajo) a pantalla
+ * completa, sin headline ni CTA compitiendo por atención. La idea: en vez
+ * de PROMETER "evidencia citada" en un titular, la primera pantalla ya es
+ * una demo funcional del diferencial real del sitio — el usuario arrastra/
+ * toca "Cambiar" antes de haber leído una sola palabra de marketing. Orden
+ * narrativo resultante: Hero (=Comparador) → Categorías → Destacados →
+ * Evidencia → Rankings → Noticias → Financiamiento → CTA final — un panel
+ * menos que antes, porque el comparador ya no se repite dos veces.
+ *
+ * Fase 1–3 (informe de auditoría, §5): se habían agregado en su momento 4
+ * paneles nuevos al sistema de crossfade — Comparador en vivo, Un dato-una
+ * fuente, Rankings destacados y Financiamiento. Cada uno reusa datos y
+ * lógica ya validada en otras páginas del sitio (rankings.ts, evidence.ts,
  * FinancingCalculator) — ningún panel nuevo inventa un cálculo o un dato
  * que no exista ya en otro lugar del sitio. El panel Comparador (1.3) es
  * la excepción a "otra página": no resume la lógica de `/comparar`, la
  * envuelve — reusa el mismo pool de vehículos `featured` que ya trae el
  * panel Destacados (`CompareShowcase`, ver comentario en su fetch más
  * abajo) en vez de los pares fijos de `fixed-comparisons.ts` que usaba la
- * versión anterior de este panel (`LiveCompareTeaser`).
+ * versión original de ese panel (`LiveCompareTeaser`).
  *
  * Riesgo a monitorear (mismo informe): con 9 paneles en vez de 5, cada
  * panel nuevo cuesta scroll físico completo antes de dar contenido, y el
@@ -82,28 +92,6 @@ export async function generateMetadata(): Promise<Metadata> {
  * post-release.
  */
 
-/**
- * COPY DEL HERO — SEGUNDA PASADA, más agresiva (sept. 2026): la primera
- * iteración cambió el CIERRE del headline ("a un clic" → "con fuente
- * citada") pero dejó la palabra que rota siendo un SUSTANTIVO ABSTRACTO
- * de categoría (auto/moto/ficha técnica/comparativa) — el mismo patrón
- * "headline + palabra que rota" que usa cualquier landing de SaaS
- * genérica, sin decir nada que un usuario nuevo pueda verificar por su
- * cuenta en 2 segundos. Ahora rota ENTRE MARCAS REALES del catálogo
- * (`HERO_HEADLINE_BRANDS` — las 6 elegidas existen hoy como fabricantes
- * reales en `src/content/fabricantes/`, no son un placeholder): un
- * headline que dice "Cada Toyota, con fuente citada" / "Cada BYD, con
- * fuente citada" es una afirmación concreta y chequeable (¿de verdad
- * tienen Toyota? ¿de verdad tienen BYD?), no una promesa vaga de
- * "contenido variado". De paso, la selección de marcas (Japón, Alemania,
- * EEUU, China, Corea, motos) comunica sin decirlo la cobertura global
- * real del catálogo (ver README, "estrategia global primero") — otro
- * diferencial real que antes vivía solo en la letra chica del repo, no
- * en la primera pantalla del producto.
- */
-const HERO_HEADLINE_BRANDS = ['Toyota', 'BMW', 'Ford', 'BYD', 'Hyundai', 'Yamaha']
-const HERO_HEADLINE_LEAD = 'Cada'
-const HERO_HEADLINE_TAIL = 'con fuente citada'
 const CATEGORY_ORDER: EntityType[] = [EntityType.VEHICLE, EntityType.NEWS, EntityType.GUIDE]
 const CATEGORY_ACCENT: Record<EntityType, string> = {
   [EntityType.VEHICLE]: '#c9a35f',
@@ -150,14 +138,6 @@ function FinancingCalculatorFallback() {
   return <FinancingCalculatorSkeleton />
 }
 
-/** Mismo criterio de formato que `formatUsd` (privado en `rankings.ts`,
- *  no exportado) — se reimplementa acá en vez de tocar el barrel de ese
- *  archivo por un one-liner. Usado solo por los badges de spec del hero
- *  (`heroShowcaseVehicles` más abajo). */
-function formatUsdShort(value: number): string {
-  return `USD ${Math.round(value).toLocaleString('en-US')}`
-}
-
 export default async function HomePage() {
   // Solo vehículos: son los únicos tipos con foto real hoy (96.8% de
   // cobertura) — guías/noticias no tienen imagen propia, así que mezclarlas
@@ -180,7 +160,7 @@ export default async function HomePage() {
   // trae las entidades `MANUFACTURER` reales (75 en el dataset) con su logo
   // ya resuelto — mismo motivo que el resto de este `Promise.all`, no puede
   // resolverse en el componente cliente porque depende de `fs`.
-  const [featured, totalCount, countsByType, allNews, allVehicles, availableRankings, manufacturerMarqueeItems, lastUpdate] =
+  const [featured, totalCount, countsByType, allNews, allVehicles, availableRankings, manufacturerMarqueeItems] =
     await Promise.all([
       getFeaturedEntities(12, EntityType.VEHICLE),
       getEntityCount(),
@@ -189,37 +169,18 @@ export default async function HomePage() {
       getEntitiesByType(EntityType.VEHICLE),
       getAvailableRankings(),
       getManufacturerMarqueeItems(),
-      getMostRecentUpdate(),
     ])
-  // 5.B (Fase 5, prioridad B): dato en vivo en el eyebrow del hero — la
-  // fecha de actualización más reciente de todo el catálogo (mismo dato
-  // que ya usa `/rankings`, ahí como fecha absoluta; acá como relativa,
-  // más legible en un eyebrow de una sola línea), vía `formatRelativeTime`
-  // (`lib/utils.ts`, ya usado en otras partes del sitio — cae a fecha
-  // absoluta corta sola después de ~30 días). `getMostRecentUpdate()`
-  // devuelve `null` solo si no hay ninguna entidad cargada (caso borde,
-  // no pasa en producción); el eyebrow se degrada a mostrar solo
-  // `SITE_NAME` en ese caso, sin un segundo tramo de texto colgando.
-  const lastUpdateLabel = lastUpdate ? formatRelativeTime(lastUpdate) : null
   const vehicles = allVehicles as Vehicle[]
 
-  // Sello de confianza del hero (pase de posicionamiento, sept. 2026): en
-  // vez de afirmar en texto fijo "cada dato cita su fuente" (una promesa
-  // de marketing que se desactualiza sola en cuanto entra un vehículo sin
-  // evidencia todavía cargada), se calcula el % real sobre `vehicles`
-  // —mismo array ya en memoria para "Un dato, una fuente" más abajo, sin
-  // fetch nuevo— contando cuántos declaran `evidence.level`. Redondeado
-  // hacia abajo (`Math.floor`) a propósito: para un sello de confianza,
-  // subestimar levemente es más seguro que un redondeo que sobreestime la
-  // cobertura real por 0.x puntos.
-  const evidenceCoveragePct =
-    vehicles.length > 0 ? Math.floor((vehicles.filter((v) => Boolean(v.evidence?.level)).length / vehicles.length) * 100) : null
-
-  // NOTA (rediseño de hero, sept. 2026): el buscador rápido con ejemplos
-  // rotativos (antes acá, `QuickSearchForm` dentro del hero) se sacó del
-  // hero por completo — ver `HeroShowroom.tsx`. Sigue disponible entero
-  // en `/buscar` (el CTA secundario del hero linkea ahí); no se perdió
-  // funcionalidad, solo cambió dónde vive.
+  // NOTA (rediseño de hero, sept. 2026): tanto el buscador rápido con
+  // ejemplos rotativos como el eyebrow de confianza (fecha de última
+  // actualización + % de cobertura de evidencia) que vivían en el hero
+  // anterior se sacaron por completo — el hero ahora es directamente el
+  // comparador en vivo (ver los `Stage`s más abajo), sin ningún texto ni
+  // dato compitiendo por atención antes de la interacción. El buscador
+  // sigue disponible entero en `/buscar`; la cobertura de evidencia real
+  // se sigue viendo, con la misma cifra sin re-inventar, en el panel "Un
+  // dato, una fuente" más abajo (`evidenceHighlights`).
 
   // 5.B (Fase 5, prioridad B): datos del filtro rápido de carrocería del
   // panel Categorías — ver `computeCategoryQuickFilterOptions` en
@@ -241,55 +202,6 @@ export default async function HomePage() {
   const latestNewsDates = Object.fromEntries(
     latestNews.map((entity) => [entity.slug, formatRelativeTime(entity.createdAt)])
   )
-
-  // Vehículos flotantes del hero (1.2): subset de `featured` con foto real
-  // ya resuelta en servidor — `resolveEntityDisplayImage` depende de `fs`
-  // y no puede llamarse desde `HeroVehicleShowcase` (client component), así
-  // que se resuelve acá mismo y se pasa serializado. Límite en 4: la spec
-  // pide rotar entre "3-4 vehículos featured", y con `featured` ya
-  // ordenado por `updatedAt` (más reciente primero, ver `getFeaturedEntities`)
-  // tomar los primeros N con imagen real prioriza fichas frescas sin
-  // agregar un criterio de orden nuevo.
-  const HERO_SHOWCASE_LIMIT = 4
-  const heroShowcaseVehicles: HeroVehicleShowcaseItem[] = featured
-    .map((vehicle): HeroVehicleShowcaseItem | null => {
-      const image = resolveEntityDisplayImage(vehicle)
-      if (!image) return null
-      const v = vehicle as Vehicle
-      // Auditoría "vida del hero" (sept. 2026): dato real para los dos
-      // badges de spec que ahora se muestran sobre la foto (desktop) —
-      // mismos parsers ya validados que usa el comparador/rankings, no
-      // se inventa ni se re-parsea texto libre acá. Prioridad del
-      // segundo badge: precio en USD (dato más comparable) y, si el
-      // vehículo no tiene `priceStructured` en esa moneda, la velocidad
-      // máxima (texto ya humano, ej. "241 km/h") como respaldo — nunca
-      // ambos vacíos si al menos uno de los dos existe en la ficha.
-      const powerHp = parsePowerHp(v)
-      const priceUsd = parsePriceUsd(v)
-      return {
-        slug: vehicle.slug,
-        title: vehicle.title,
-        manufacturer: v.manufacturer,
-        src: image.src,
-        alt: image.alt,
-        // FLIP experimental hero → card de Categorías (ver
-        // `lib/view-transitions.ts`): reusa `categoryPageHref` (única
-        // fuente de verdad, ya usada en la ficha de vehículo) en vez de
-        // resolver la categoría de nuevo acá. `null` cuando el vehículo
-        // no tiene categoría con página SEO propia — el componente cae
-        // a su comportamiento decorativo previo en ese caso.
-        categoryHref: categoryPageHref(v.class),
-        // Segundo punto de click real (chip "Ver ficha →", ver
-        // `HeroVehicleShowcase`): ficha específica de este vehículo, no
-        // la categoría agrupada de arriba.
-        detailHref: `/${EntityType.VEHICLE}/${vehicle.slug}`,
-        powerLabel: powerHp !== null ? `${powerHp} hp` : null,
-        secondaryStatLabel: priceUsd !== null ? formatUsdShort(priceUsd) : (v.performance?.speed ?? null),
-        evidenceLevel: v.evidence?.level,
-      }
-    })
-    .filter((item): item is HeroVehicleShowcaseItem => item !== null)
-    .slice(0, HERO_SHOWCASE_LIMIT)
 
   // NOTA (rediseño de hero, sept. 2026): el banner promocional propio
   // del hero (antes acá, `HeroPromoBanner`/`heroPromoBannerItem`) se
@@ -450,35 +362,80 @@ export default async function HomePage() {
   }))
 
   const stages: Stage[] = [
-    // 1. Hero — REDISEÑO RADICAL (sept. 2026, ver conversación de rediseño
-    // del hero): reemplaza por completo el hero anterior (centrado,
-    // tipografía Apple/Vercel, stats + buscador + 10 chips + carrusel
-    // horizontal apilados) por una composición asimétrica, oscura y
-    // cinematográfica tipo "showroom digital" — ver `HeroShowroom.tsx`
-    // para el detalle completo de qué se sacó y por qué (nada se pierde
-    // sin reemplazo: el buscador sigue en `/buscar`, los vehículos
-    // destacados se ven en el panel "Destacados" más abajo, la
-    // navegación completa vive en `<Header />`).
+    // 1. Hero — CAMBIO DE PARADIGMA (sept. 2026, "cambio más drástico
+    // posible" pedido explícitamente tras 4 rediseños previos que seguían
+    // siendo la misma estructura eyebrow+headline+CTA+foto con otro
+    // vestuario): el hero deja de ser una pieza de marketing y pasa a ser
+    // directamente el widget del comparador en vivo (`CompareShowcase`,
+    // el mismo que antes vivía como panel aparte más abajo) a la vista
+    // completa, sin headline rotativo, sin CTA grande, sin foto estática
+    // de fondo — lo primero que el usuario hace en el sitio es una acción
+    // real (tocar "Cambiar", arrastrar en mobile), no leer una promesa.
+    // El único texto es un eyebrow mínimo de una línea para orientar qué
+    // es esto; nada compite con el widget por atención. `HeroShowroom.tsx`
+    // (el hero anterior) queda sin uso en el repo, no se borró por si se
+    // quiere retomar algo puntual de ahí (buscador rotativo, etc.).
     //
-    // `scrollVh` baja a 130 (antes 160): con un solo componente
-    // autocontenido en vez de 7 bloques en cascada, el hero pide bastante
-    // menos recorrido físico de scroll para sentirse "completo".
+    // `scrollVh` sube a 210 (antes 130, cuando el hero era solo lectura):
+    // ahora es un panel interactivo — mismo peso que le daba antes el
+    // panel "Comparador" cuando vivía aparte más abajo (230), ligeramente
+    // menos porque acá no hay heading+link de cierre alrededor pidiendo
+    // su propio tiempo de lectura.
+    //
+    // Fallback (`compareShowcasePool.length < MIN_COMPARE_SHOWCASE_POOL`):
+    // el hero nunca puede quedar vacío, así que si el catálogo todavía no
+    // tiene suficientes vehículos `featured` con specs contrastantes cae a
+    // un CTA mínimo de una línea — mismo criterio de "nunca un panel roto"
+    // que ya usaba el panel Comparador cuando decidía si se agregaba o no
+    // al track.
     {
       id: 'hero',
       label: 'Inicio',
-      scrollVh: 130,
-      content: (
-        <HeroShowroom
-          vehicles={heroShowcaseVehicles}
-          siteName={SITE_NAME}
-          lastUpdateLabel={lastUpdateLabel}
-          evidenceCoveragePct={evidenceCoveragePct}
-          headlineBrands={HERO_HEADLINE_BRANDS}
-          headlineLead={HERO_HEADLINE_LEAD}
-          headlineTail={HERO_HEADLINE_TAIL}
-          catalogHref={`/${EntityType.VEHICLE}`}
-        />
-      ),
+      scrollVh: 210,
+      content:
+        compareShowcasePool.length >= MIN_COMPARE_SHOWCASE_POOL ? (
+          <div className="mx-auto w-full max-w-4xl text-center">
+            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
+              Comparador en vivo · elegí, cambiá, decidí
+            </p>
+            <CompareShowcase
+              pool={compareShowcasePool}
+              initialIndexA={compareInitialIndexA}
+              initialIndexB={compareInitialIndexB}
+            />
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/comparar"
+                className="cta-shine tap-scale group inline-flex items-center justify-center gap-2 rounded-full bg-inverse px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+              >
+                Abrir el comparador completo{' '}
+                <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                  →
+                </span>
+              </Link>
+              <Link
+                href={`/${EntityType.VEHICLE}`}
+                className="tap-scale text-sm font-semibold text-neutral-500 underline underline-offset-4 hover:text-neutral-900"
+              >
+                Ver todo el catálogo
+              </Link>
+            </div>
+          </div>
+        ) : (
+          <div className="mx-auto w-full max-w-2xl text-center">
+            <h1 className="font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
+              {SITE_NAME}
+            </h1>
+            <div className="mt-8 flex justify-center">
+              <Link
+                href={`/${EntityType.VEHICLE}`}
+                className="cta-shine tap-scale inline-flex items-center justify-center rounded-full bg-inverse px-8 py-4 font-semibold text-white transition-transform hover:-translate-y-0.5"
+              >
+                Ver el catálogo
+              </Link>
+            </div>
+          </div>
+        ),
     },
     // 2. Categorías — cada card entra con su propio delay en la cascada.
     // `scrollVh` default (sin especificar): grid de lectura/navegación,
@@ -560,60 +517,7 @@ export default async function HomePage() {
         </div>
       ),
     },
-    // 3. Comparador en vivo — panel nuevo (Fase 1), reimplementado en la
-    // 1.3 sobre `CompareShowcase` (foto + `StatBar` + `EvidenceBlock` de
-    // dos vehículos `featured`, con botón "Cambiar" por lado que reelige
-    // al azar dentro del pool, sin salir de home). Interactivo, así que
-    // pide más recorrido físico que uno de solo lectura: `scrollVh` 230,
-    // por encima del default, para que el usuario tenga tiempo de notar
-    // que puede tocar "Cambiar" antes de que el scroll lo empuje al
-    // siguiente panel. Solo se agrega si el pool alcanza el mínimo para
-    // tener lado A y lado B (evita un panel vacío si el catálogo todavía
-    // no tiene suficientes vehículos `featured`).
-    ...(compareShowcasePool.length >= MIN_COMPARE_SHOWCASE_POOL
-      ? [
-          {
-            id: 'comparador',
-            label: 'Comparador',
-            scrollVh: 230,
-            content: (
-              <div className="mx-auto w-full max-w-[80rem] text-center">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
-                  Comparador
-                </p>
-                <h2 className="mb-10 font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
-                  Comparador en vivo
-                </h2>
-                <CompareShowcase
-                  pool={compareShowcasePool}
-                  initialIndexA={compareInitialIndexA}
-                  initialIndexB={compareInitialIndexB}
-                />
-                {/* Fin de la unidad de contenido del comparador: después de
-                    re-elegir pares con "Cambiar", la continuación natural
-                    es la tabla completa de `/comparar` (todos los criterios,
-                    elegís vos los vehículos). Un solo link quieto, sin
-                    competir con los botones "Cambiar" de adentro. */}
-                <div className="mt-10 flex justify-center">
-                  <Link
-                    href="/comparar"
-                    className="group text-sm font-semibold text-neutral-500 underline underline-offset-4 transition-colors hover:text-neutral-900"
-                  >
-                    Abrir el comparador completo{' '}
-                    <span
-                      aria-hidden="true"
-                      className="transition-transform duration-200 group-hover:translate-x-0.5"
-                    >
-                      →
-                    </span>
-                  </Link>
-                </div>
-              </div>
-            ),
-          } satisfies Stage,
-        ]
-      : []),
-    // 4. Destacados
+    // 3. Destacados
     ...(featured.length > 0
       ? [
           {
@@ -667,7 +571,7 @@ export default async function HomePage() {
           } satisfies Stage,
         ]
       : []),
-    // 5. Un dato, una fuente — panel nuevo (Fase 2). De solo lectura (una
+    // 4. Un dato, una fuente — panel nuevo (Fase 2). De solo lectura (una
     // cita por card, nada para tocar), así que pide el recorrido más
     // corto de los paneles nuevos: `scrollVh` 160, por debajo del
     // default — es justo el panel de lectura que el informe usa como
@@ -682,7 +586,7 @@ export default async function HomePage() {
           } satisfies Stage,
         ]
       : []),
-    // 6. Rankings destacados — panel nuevo (Fase 3). Interactivo (tabs
+    // 5. Rankings destacados — panel nuevo (Fase 3). Interactivo (tabs
     // entre 4 rankings), `scrollVh` 210 — mismo peso que el hero, menos
     // que el comparador (acá solo se cambia de tab, no hay tanto para
     // explorar por ranking como pares distintos en el comparador).
@@ -696,7 +600,7 @@ export default async function HomePage() {
           } satisfies Stage,
         ]
       : []),
-    // 7. Noticias
+    // 6. Noticias
     ...(latestNews.length > 0
       ? [
           {
@@ -763,7 +667,7 @@ export default async function HomePage() {
           } satisfies Stage,
         ]
       : []),
-    // 8. Financiamiento — panel nuevo (Fase 1). Reusa `FinancingCalculator`
+    // 7. Financiamiento — panel nuevo (Fase 1). Reusa `FinancingCalculator`
     // tal cual (mismo componente que `/financiamiento`, con su propio
     // `useSearchParams` — de ahí el `Suspense`). Interactivo y con varios
     // campos para completar, así que pide el recorrido más largo de los
@@ -795,7 +699,7 @@ export default async function HomePage() {
         </div>
       ),
     },
-    // 9. CTA final — panel de salida, liviano (nada nuevo para leer,
+    // 8. CTA final — panel de salida, liviano (nada nuevo para leer,
     // solo dos links), `scrollVh` 150 por debajo del default.
     //
     // 3.3: el CTA del hero (panel 1) tiene foco "explorar" — "Ver fichas
