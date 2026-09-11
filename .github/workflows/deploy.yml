@@ -21,7 +21,16 @@ on:
     branches: [main]
 
 env:
-  NODE_VERSION: '20.x'
+  # jsdom@30 (usado por los tests, ver vitest.setup.ts) declara
+  # `"engines": { "node": "^22.22.2 || ^24.15.0 || >=26.0.0" }` — con
+  # Node 20.x el worker de vitest para archivos que usan entorno jsdom
+  # (componentes, hooks) ni arranca: revienta al importar `undici` con
+  # `TypeError: webidl.util.markAsUncloneable is not a function` antes de
+  # correr un solo test. Confirmado como causa raíz el 10/09/2026 (ver
+  # log de CI: "Add files via upload" → CI (type-check, lint, test,
+  # build) #154). `enrich-vehicles.yml` ya usa Node 22 por este mismo
+  # motivo.
+  NODE_VERSION: '22.x'
 
 jobs:
   build-and-test:
