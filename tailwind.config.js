@@ -7,44 +7,41 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Paleta "Placa Técnica" (sin cambios: mantiene identidad de fase anterior)
-        'auto-dark': '#0b0d10',
-        'auto-darker': '#050607',
-        'auto-surface': '#12151a',
-        'auto-border': '#242a32',
-        'auto-text': '#eef1f4',
-        'auto-text-secondary': '#9fa8b5',
-        'auto-accent': '#ff6a1a',
-        'auto-accent-strong': '#ff9152',
-        'auto-accent-orange': '#3d84ff',
-        'auto-accent-warning': '#ffb703',
-        'auto-gold': '#c9a35f',
-
+        // Paleta "Archivo Automotor Verificado"
+        'paper': '#F4F1EA',
+        'ink': '#14110C',
+        'border': '#E4DFD3',
+        'oxide-red': '#B23A24',
+        'archive-green': '#2B4436',
+        
+        // Colores neutrales derivados
         neutral: {
-          50: 'rgb(var(--color-neutral-50) / <alpha-value>)',
-          100: 'rgb(var(--color-neutral-100) / <alpha-value>)',
-          200: 'rgb(var(--color-neutral-200) / <alpha-value>)',
-          300: 'rgb(var(--color-neutral-300) / <alpha-value>)',
-          400: 'rgb(var(--color-neutral-400) / <alpha-value>)',
-          500: 'rgb(var(--color-neutral-500) / <alpha-value>)',
-          600: 'rgb(var(--color-neutral-600) / <alpha-value>)',
-          700: 'rgb(var(--color-neutral-700) / <alpha-value>)',
-          800: 'rgb(var(--color-neutral-800) / <alpha-value>)',
-          900: 'rgb(var(--color-neutral-900) / <alpha-value>)',
-          950: 'rgb(var(--color-neutral-950) / <alpha-value>)',
+          50: '#FAFAF8',
+          100: '#F5F3EF',
+          200: '#EBE8E0',
+          300: '#D9D4C8',
+          400: '#C4BDB0',
+          500: '#A89E8E',
+          600: '#8A8172',
+          700: '#6B6356',
+          800: '#4F4940',
+          900: '#36332E',
+          950: '#1A1917',
         },
-        'surface-page': 'rgb(var(--color-surface-page) / <alpha-value>)',
-        'surface-alt': 'rgb(var(--color-surface-alt) / <alpha-value>)',
-        'surface-card': 'rgb(var(--color-surface-card) / <alpha-value>)',
-        'surface-card-hover': 'rgb(var(--color-surface-card-hover) / <alpha-value>)',
-        'surface-elevated': 'rgb(var(--color-surface-elevated) / <alpha-value>)',
-        'surface-input': 'rgb(var(--color-surface-input) / <alpha-value>)',
-        'surface-header': 'rgb(var(--color-surface-header))',
-        'surface-drawer': 'rgb(var(--color-surface-drawer))',
-        'surface-chip': 'rgb(var(--color-surface-chip))',
-        'inverse': 'rgb(var(--color-inverse) / <alpha-value>)',
-        'edge': 'rgb(var(--color-edge) / <alpha-value>)',
-        'edge-strong': 'rgb(var(--color-edge-strong) / <alpha-value>)',
+        
+        // Colores de superficie
+        'surface-page': '#F4F1EA',
+        'surface-alt': '#EBE8E0',
+        'surface-card': '#FFFFFF',
+        'surface-card-hover': '#F5F3EF',
+        'surface-elevated': '#FFFFFF',
+        'surface-input': '#FFFFFF',
+        'surface-header': '#F4F1EA',
+        'surface-drawer': '#FFFFFF',
+        'surface-chip': '#FFFFFF',
+        'inverse': '#14110C',
+        'edge': '#E4DFD3',
+        'edge-strong': '#C4BDB0',
       },
       fontFamily: {
         sans: [
@@ -54,11 +51,17 @@ module.exports = {
           '"Segoe UI"',
           'sans-serif',
         ],
+        serif: [
+          'var(--font-serif)',
+          'Georgia',
+          'Times New Roman',
+          'serif',
+        ],
         display: [
           'var(--font-display)',
-          'var(--font-sans)',
-          '-apple-system',
-          'sans-serif',
+          'var(--font-serif)',
+          'Georgia',
+          'serif',
         ],
         mono: [
           'var(--font-mono)',
@@ -67,33 +70,32 @@ module.exports = {
           'monospace',
         ],
       },
-      // Rediseño "Placa Técnica" con escala aún más radical
-      // (radios prácticamente rectos, para sensación brutalista/industrial)
       borderRadius: {
-        sm: '0.05rem',
-        DEFAULT: '0.05rem',
-        md: '0.1rem',
-        lg: '0.125rem',
-        xl: '0.2rem',
-        '2xl': '0.35rem',
+        sm: '0.125rem',
+        DEFAULT: '0.25rem',
+        md: '0.375rem',
+        lg: '0.5rem',
+        xl: '0.75rem',
+        '2xl': '1rem',
       },
-      // Sombras duras, offsset, sin blur — como planos técnicos remachados
       boxShadow: {
-        'auto-sm': '2px 2px 0 0 rgba(0, 0, 0, 0.9)',
-        'auto-md': '4px 4px 0 0 rgba(0, 0, 0, 0.9)',
-        'auto-lg': '8px 8px 0 0 rgba(0, 0, 0, 0.85)',
-        'auto-xl': '12px 12px 0 0 rgba(0, 0, 0, 0.8)',
-        'glow-pink': '0 0 0 1px rgba(255, 106, 26, 0.55)',
-        'glow-cyan': '0 0 0 1px rgba(61, 132, 255, 0.5)',
-        'glow-gold': '0 0 0 1px rgba(201, 163, 95, 0.45)',
+        'sm': '0 1px 2px 0 rgba(20, 17, 12, 0.05)',
+        'DEFAULT': '0 1px 3px 0 rgba(20, 17, 12, 0.1)',
+        'md': '0 4px 6px -1px rgba(20, 17, 12, 0.1)',
+        'lg': '0 10px 15px -3px rgba(20, 17, 12, 0.1)',
+        'xl': '0 20px 25px -5px rgba(20, 17, 12, 0.1)',
       },
       letterSpacing: {
-        tightest: '-0.04em',
-        widest: '0.28em',
+        'tightest': '-0.04em',
+        'tighter': '-0.02em',
+        'tight': '-0.01em',
+        'normal': '0em',
+        'wide': '0.02em',
+        'wider': '0.05em',
+        'widest': '0.1em',
       },
       backgroundImage: {
-        'auto-sunset': 'linear-gradient(90deg, #ff6a1a 0%, #ff9152 35%, #3d84ff 70%, #1c4fd6 100%)',
-        'vice-radial': 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,106,26,0.13), transparent 60%)',
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       aspectRatio: {
         'square': '1 / 1',
@@ -102,48 +104,6 @@ module.exports = {
         '5/4': '5 / 4',
         '3/2': '3 / 2',
         '2/3': '2 / 3',
-      },
-
-      // === NUEVAS UTILIDADES PARA REDISEÑO RADICAL ===
-      
-      // Escala tipográfica extrema (títulos monumentales)
-      fontSize: {
-        '9xl': '8rem',
-        '10xl': '10rem',
-      },
-
-      // Anchos extremos para composición asimétrica
-      width: {
-        'screen-lg': '120vw',
-        'screen-xl': '150vw',
-      },
-
-      // Max-widths para contenedores editoriales
-      maxWidth: {
-        'editorial': '85rem',
-        'prose-plus': '65ch',
-      },
-
-      // Espaciado brutalista (grandes saltos, no progresión lineal)
-      spacing: {
-        '18': '4.5rem',
-        '22': '5.5rem',
-        '26': '6.5rem',
-        '30': '7.5rem',
-      },
-
-      // Transiciones más lentas para scroll storytelling
-      transitionDuration: {
-        '2000': '2000ms',
-        '3000': '3000ms',
-      },
-
-      // Opacidad extrema para overlays brutales
-      opacity: {
-        '2': '0.02',
-        '3': '0.03',
-        '5': '0.05',
-        '8': '0.08',
       },
     },
   },
