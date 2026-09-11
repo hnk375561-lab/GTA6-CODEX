@@ -1,0 +1,430 @@
+/* ============================================================
+   NUEVO REDISEÑO RADICAL — HOME EDITORIAL (sept 2026)
+   Agregar estas reglas al final de globals.css
+   ============================================================ */
+
+/* Contenedor máximo para Home Editorial */
+.home-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Números de fondo gigantes (decorativos) */
+.home-giant-number {
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 20vw, 20rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  opacity: 0.05;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Títulos monumentales (ruptura tipográfica) */
+.title-monument {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 8rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+/* Composición asimétrica: número en columna izquierda (sticky en desktop) */
+.dossier-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .dossier-grid {
+    grid-template-columns: 7rem 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .dossier-grid {
+    grid-template-columns: 9rem 1fr;
+  }
+}
+
+/* Número sticky (referencia de sección) */
+.dossier-index {
+  font-family: var(--font-mono);
+  font-size: clamp(3rem, 12vw, 7rem);
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgb(var(--color-edge) / 0.3);
+  
+  /* Sticky en desktop, normal en mobile */
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .dossier-index {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+  }
+}
+
+/* Tag de sección (eyebrow minimalista) */
+.dossier-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgb(var(--color-auto-accent));
+  line-height: 1.4;
+  display: inline-block;
+}
+
+/* Marcas de registro (esquinas técnicas, decorativo) */
+.dossier-corner {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid rgb(var(--color-edge));
+  pointer-events: none;
+}
+
+.dossier-corner--top-left {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.dossier-corner--top-right {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+}
+
+.dossier-corner--bottom-left {
+  bottom: 0;
+  left: 0;
+  border-right: none;
+  border-top: none;
+}
+
+.dossier-corner--bottom-right {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+/* CTA Shine: efecto breve en botones principales */
+.cta-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 600ms ease-out;
+  pointer-events: none;
+}
+
+.cta-shine:hover::before {
+  left: 100%;
+}
+
+/* Tap Scale: feedback táctil */
+.tap-scale {
+  transition: transform 200ms var(--ease-out-back);
+}
+
+.tap-scale:active {
+  transform: scale(0.95);
+}
+
+/* Container máximo con padding editorial */
+.container-max {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding-left: var(--gutter-width);
+  padding-right: var(--gutter-width);
+}
+
+/* Composición Radar: grid asimétrico para vehículos */
+.radar-grid {
+  position: relative;
+  display: grid;
+  grid-auto-flow: dense;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.radar-grid > *:nth-child(1),
+.radar-grid > *:nth-child(5),
+.radar-grid > *:nth-child(9) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Animación de entrada para secciones */
+@keyframes sectionSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-animate {
+  animation: sectionSlideIn 0.8s var(--ease-cine) both;
+}
+
+/* Línea decorativa de transición */
+.transition-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(var(--color-edge) / 0.5),
+    transparent
+  );
+  margin: 4rem 0;
+}
+
+/* Overlay para hover brutal */
+.hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  opacity: 0;
+  transition: opacity 200ms var(--ease-standard);
+}
+
+.group:hover .hover-overlay {
+  opacity: 1;
+}
+
+/* Grid editorial (1 columna en mobile, 2 en tablet, asimétrica en desktop) */
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .editorial-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+  }
+  
+  .editorial-grid > *:nth-child(2) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* Tipografía editorial para copy largo */
+.editorial-copy {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+  color: rgb(var(--color-neutral-700));
+}
+
+/* Etiqueta numérica grande (coordenadas, índices) */
+.numeric-label {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(var(--color-neutral-500));
+}
+
+/* Contenedor de radar con aspecto video */
+.radar-container {
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgb(var(--color-edge));
+  border-radius: 0.25rem;
+  background: rgb(var(--color-surface-page));
+}
+
+/* Punto de referencia (coordenada) en radar */
+.radar-point {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.7;
+  transition: opacity 200ms ease-out;
+}
+
+.radar-point:hover {
+  opacity: 1;
+}
+
+/* Leyenda de colores minimalista */
+.color-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgb(var(--color-edge));
+}
+
+.color-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: rgb(var(--color-neutral-600));
+}
+
+.color-legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Encabezado de manufactura */
+.manufacturer-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.manufacturer-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.manufacturer-count {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(var(--color-neutral-500));
+  white-space: nowrap;
+}
+
+/* Galería orgánica de manufactura */
+.manufacturer-gallery {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgb(var(--color-edge));
+  aspect-ratio: 1;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 200ms var(--ease-standard);
+}
+
+.gallery-item:hover {
+  border-color: var(--auto-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.85);
+}
+
+.gallery-item.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Badge de validación (✓) en items */
+.validity-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.125rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+
+.gallery-item:hover .validity-badge {
+  opacity: 1;
+}
+
+/* Estilos para artículos de FAQ */
+.faq-item {
+  border-bottom: 1px solid rgb(var(--color-edge));
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 200ms var(--ease-standard);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: rgb(var(--color-neutral-900));
+  cursor: pointer;
+  user-select: none;
+  transition: color 200ms ease-out;
+}
+
+.faq-question:hover {
+  color: var(--auto-accent);
+}
+
+.faq-answer {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgb(var(--color-neutral-700));
+  margin-top: 0.75rem;
+}
