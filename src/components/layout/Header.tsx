@@ -13,16 +13,6 @@ import { ThemeToggle } from '@/components/ui/ThemeToggle'
  * Enlaces siempre visibles en la barra: la categoría núcleo del sitio
  * (Vehículos) más las secciones transversales que no son un tipo de
  * entidad (Comparar, Galería, Mapa).
- *
- * Guías (EntityType.GUIDE) se reincorpora al nav (monetización, sept
- * 2026): la nota anterior decía "0 contenido real" pero
- * src/content/guias/ ya tiene 10 guías publicadas, 9 de ellas con tags
- * que disparan el CTA de afiliado de seguro/financiación
- * (MonetizationCtaGroup, ver page.tsx de [entityType]/[slug]). Tenerlas
- * fuera del nav significaba contenido con monetización ya cableada sin
- * ningún link interno que lo lleve tráfico — el peor tipo de desperdicio
- * (trabajo hecho, cero exposición). Noticias queda afuera todavía: solo
- * 3 artículos, umbral más bajo para justificar su propio ítem de nav.
  */
 const NAV_LINKS = [
   { href: `/${EntityType.VEHICLE}`, label: 'Vehículos' },
@@ -34,47 +24,16 @@ const NAV_LINKS = [
 ]
 
 // Nombre de marca partido en dos para poder colorear la segunda palabra
-// en el logo (ver Footer.tsx, mismo criterio: nada de "AutoFicha"/"Sin
-// Frenos" hardcodeado suelto — todo deriva de SITE_NAME en config/site.ts
-// para que un rebrand futuro sea un cambio en un solo lugar, no un grep
-// por el código como pasó con este mismo componente en el pivote
-// AutoFicha -> Sin Frenos).
 const [SITE_NAME_FIRST_WORD, ...SITE_NAME_REST_WORDS] = SITE_NAME.split(' ')
 const SITE_NAME_REST = SITE_NAME_REST_WORDS.join(' ')
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
-  // Última ruta vista por el render anterior — permite cerrar el menú
-  // "durante el render" (patrón oficial de React para resetear estado
-  // cuando cambia un valor) en vez de en un `useEffect` con `setState`
-  // síncrono, ver el `if` más abajo.
   const [prevPathname, setPrevPathname] = useState(pathname)
-  // Contador de favoritos en vivo (sincronización visual, ver
-  // `useWishlist`): antes el corazón del header era un link ciego a
-  // `/favoritos` sin ningún indicio de cuántos había guardados — el
-  // hook ya se sincroniza solo entre toda instancia montada (evento
-  // custom local + `storage` entre pestañas), así que este contador
-  // queda al día apenas se toca un corazón en cualquier card del sitio,
-  // sin recargar la página ni pasar el estado por props.
   const { count: wishlistCount, hydrated: wishlistHydrated } = useWishlist()
-  // REDISEÑO 180° (sept 2026): la home dejó de ser un viewport pineado a
-  // 100dvh con panel-por-panel en crossfade (`PinnedScrollStages`, ver el
-  // comentario largo en `app/page.tsx`) y pasó a un documento de scroll
-  // normal, presentado como un expediente/plano técnico con lienzo
-  // oscuro permanente. Ya no hace falta un header propio "claro y
-  // flotante" para la home (esa variante existía únicamente para no
-  // robarle alto al panel pineado y para no chocar con el fondo blanco
-  // que tenía antes) — el header vuelve a ser SIEMPRE la misma barra
-  // `sticky`/glass oscura del resto del sitio, en todas las rutas
-  // incluida `/`. Se mantiene la variable `isHome` (siempre `false` en
-  // los hechos hoy) por si en el futuro se necesita volver a diferenciar
-  // la home del resto del nav, para no tener que reintroducir el patrón
-  // desde cero.
   const isHome = false
 
-  // Cierra el menú móvil al navegar (y al presionar Escape, ver el
-  // efecto de abajo).
   if (pathname !== prevPathname) {
     setPrevPathname(pathname)
     setMenuOpen(false)
@@ -91,57 +50,26 @@ export function Header() {
     return () => document.removeEventListener('keydown', onKeyDown)
   }, [menuOpen])
 
-  const iconBtnClass = isHome
-    ? 'tap-scale relative flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-300 text-neutral-600 transition hover:border-neutral-900 hover:text-neutral-900 focus-visible:border-neutral-900 focus-visible:text-neutral-900 before:absolute before:-inset-1 before:rounded-lg before:content-[\'\']'
-    : 'tap-scale relative flex h-9 w-9 items-center justify-center rounded-lg border border-edge text-auto-text-secondary transition hover:border-auto-accent hover:text-auto-accent-strong focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1 before:rounded-lg before:content-[\'\']'
+  const iconBtnClass = 'tap-scale relative flex h-9 w-9 items-center justify-center rounded border border-ink/20 text-ink/60 transition hover:border-ink hover:text-ink focus-visible:border-ink focus-visible:text-ink before:absolute before:-inset-1 before:rounded-lg before:content-[\'\']'
 
-  // Enlace activo: exacto o sub-ruta (ej. `/vehiculos` queda activo en
-  // `/vehiculos/toyota-corolla`) — el único link sin sub-rutas propias es
-  // la home, y esta barra nunca lista `/` como item, así que no hace
-  // falta excluirla a mano.
   const isLinkActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`)
 
   return (
     <header
-      className={
-        isHome
-          ? // `fixed` (no `sticky`): fuera del flujo del documento, no le
-            // resta alto al panel pineado de 100dvh de abajo. `env(safe-area-inset-top)`
-            // lo empuja debajo del notch/isla dinámica en vez de quedar tapado.
-            'fixed inset-x-0 top-0 z-50 w-full border-b border-neutral-200/70 bg-surface-header backdrop-blur-md'
-          : 'glass-surface sticky top-0 z-50 w-full border-b border-edge/80 shadow-[0_1px_0_0_rgba(255,255,255,0.03)]'
-      }
-      // Safe-area superior en AMBAS variantes: en home el `fixed` necesita
-      // que el contenido baje del notch/isla dinámica, y en el resto del
-      // sitio el header `sticky` también arranca pegado al borde superior
-      // del viewport (si el env() no aplica — navegador sin notch — vale 0
-      // y el alto queda igual que antes).
+      className="sticky top-0 z-50 w-full border-b border-border bg-paper/95 backdrop-blur-sm"
       style={{ paddingTop: 'env(safe-area-inset-top)' }}
     >
-      {!isHome && <div className="section-divider absolute inset-x-0 bottom-0" aria-hidden="true" />}
       <div className="mx-auto flex max-w-[96rem] items-center justify-between px-4 py-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-3">
-          <div
-            className={
-              isHome
-                ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-auto-dark'
-                : 'logo-mark flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-auto-accent to-auto-accent-orange'
-            }
-          >
-            <span className={`font-display text-xs font-bold tracking-tight ${isHome ? 'text-white' : 'text-auto-darker'}`}>
+          <div className="flex h-9 w-9 items-center justify-center rounded border border-oxide-red bg-oxide-red/5">
+            <span className="font-serif text-xs font-bold tracking-tight text-oxide-red">
               {SITE_NAME.charAt(0)}
             </span>
           </div>
-          {isHome ? (
-            <span className="hidden font-display text-base font-semibold tracking-tight text-neutral-900 transition-colors duration-300 group-hover:text-neutral-600 sm:inline">
-              {SITE_NAME_FIRST_WORD} <span className="text-orange-600 dark:text-auto-accent">{SITE_NAME_REST}</span>
-            </span>
-          ) : (
-            <span className="hidden font-display text-base font-semibold tracking-tight text-auto-text transition-colors duration-300 group-hover:text-auto-accent-strong sm:inline">
-              {SITE_NAME_FIRST_WORD} <span className="text-gradient-vice">{SITE_NAME_REST}</span>
-            </span>
-          )}
+          <span className="hidden font-serif text-base font-semibold tracking-tight text-ink transition-colors duration-300 group-hover:text-oxide-red sm:inline">
+            {SITE_NAME_FIRST_WORD} <span className="text-oxide-red">{SITE_NAME_REST}</span>
+          </span>
         </Link>
 
         {/* Navegación principal (desktop) */}
@@ -155,15 +83,10 @@ export function Header() {
                 prefetch={false}
                 aria-current={active ? 'page' : undefined}
                 className={cn(
-                  'link-underline text-sm font-medium transition-colors',
-                  active && 'link-underline--active',
-                  isHome
-                    ? active
-                      ? 'text-neutral-900'
-                      : 'text-neutral-600 hover:text-neutral-900 focus-visible:text-neutral-900'
-                    : active
-                      ? 'text-auto-accent-strong'
-                      : 'text-auto-text-secondary hover:text-auto-accent-strong focus-visible:text-auto-accent-strong'
+                  'font-mono text-xs uppercase tracking-[0.15em] transition-colors',
+                  active
+                    ? 'text-oxide-red'
+                    : 'text-ink/60 hover:text-ink'
                 )}
               >
                 {link.label}
@@ -209,7 +132,7 @@ export function Header() {
               <span
                 key={wishlistCount}
                 aria-hidden="true"
-                className="header-badge-pop absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-auto-accent px-1 font-mono text-[10px] font-semibold leading-none text-white"
+                className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-oxide-red px-1 font-mono text-[10px] font-semibold leading-none text-white"
               >
                 {wishlistCount > 99 ? '99+' : wishlistCount}
               </span>
@@ -247,26 +170,17 @@ export function Header() {
         </div>
       </div>
 
-      {/* Navegación móvil — transición de altura (grid-rows 0fr→1fr) en vez
-          del toggle abrupto por atributo `hidden` que tenía antes; el
-          contenido sigue montado siempre (mejor para el timing de la
-          transición) pero `inert` lo saca del tab order y de lectores de
-          pantalla mientras está cerrado, sin depender de JS extra para
-          eso. */}
+      {/* Navegación móvil */}
       <nav
         id="mobile-nav"
         aria-label="Navegación móvil"
         aria-hidden={!menuOpen}
-        inert={!menuOpen}
         className={cn(
-          'grid transition-[grid-template-rows] duration-300 ease-[var(--ease-standard)] md:hidden',
-          menuOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
-          isHome
-            ? 'border-t border-neutral-200/70 bg-surface-drawer backdrop-blur-md'
-            : 'glass-surface border-t border-edge'
+          'border-t border-border bg-paper transition-all duration-300 md:hidden',
+          menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
         )}
       >
-        <ul className="flex flex-col overflow-hidden px-4 py-3">
+        <ul className="flex flex-col px-4 py-3">
           {NAV_LINKS.map((link) => {
             const active = isLinkActive(link.href)
             return (
@@ -276,14 +190,10 @@ export function Header() {
                   prefetch={false}
                   aria-current={active ? 'page' : undefined}
                   className={cn(
-                    'block rounded-md px-2 py-3 text-base font-medium transition-colors',
-                    isHome
-                      ? active
-                        ? 'bg-neutral-100 text-neutral-900'
-                        : 'text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 focus-visible:bg-neutral-100 focus-visible:text-neutral-900'
-                      : active
-                        ? 'bg-surface-alt text-auto-accent-strong'
-                        : 'text-auto-text-secondary hover:bg-surface-alt hover:text-auto-accent-strong focus-visible:bg-surface-alt focus-visible:text-auto-accent'
+                    'block rounded-md px-2 py-3 font-mono text-xs uppercase tracking-[0.15em] transition-colors',
+                    active
+                      ? 'text-oxide-red'
+                      : 'text-ink/60 hover:text-ink'
                   )}
                 >
                   {link.label}
