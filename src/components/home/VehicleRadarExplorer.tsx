@@ -3,8 +3,6 @@
 import Link from 'next/link'
 import { type Vehicle } from '@/types'
 import { resolveEntityDisplayImage } from '@/lib/media'
-import { parsePowerHp } from '@/lib/vehicle-power'
-import { parsePriceUsd } from '@/lib/vehicle-price'
 import Image from 'next/image'
 
 interface VehicleRadarExplorerProps {
@@ -25,7 +23,7 @@ export function VehicleRadarExplorer({ vehicles }: VehicleRadarExplorerProps) {
   // Calcular rango de potencia para escala
   const powers = vehicles
     .map((v) => {
-      const powerStr = v.motor?.potencia || '0'
+      const powerStr = v.power || '0'
       const match = powerStr.match(/\d+/)
       return match ? parseInt(match[0], 10) : 0
     })
@@ -54,22 +52,30 @@ export function VehicleRadarExplorer({ vehicles }: VehicleRadarExplorerProps) {
   }
 
   // Crear disposición asimétrica (no grilla)
-  // Idea: algunos vehículos grandes, otros pequeños, overlapping
+  // Idea: algunos vehículos grandes, otros pequeños, overlapping.
+  // El offset vertical usa una función determinista basada en el índice
+  // (no Math.random) para que el render sea puro y estable entre renders.
+  const getDeterministicOffset = (idx: number): number => {
+    // Pseudo-aleatorio determinista: función seno con el índice como semilla,
+    // normalizado a un rango de 0-8 (mismo rango que tenía Math.random() * 8).
+    return Math.abs(Math.sin(idx * 12.9898) * 43758.5453) % 1 * 8
+  }
+
   const positions = vehicles.map((v, idx) => {
-    const scale = getScaleFromPower(v.motor?.potencia || '0')
+    const scale = getScaleFromPower(v.power || '0')
     // Posición pseudo-aleatoria pero determinista
     const row = Math.floor(idx / 4)
     const col = idx % 4
     
     // Offset asimétrico
     const baseX = col * 28 + (row % 2) * 14
-    const baseY = row * 32 + Math.random() * 8
+    const baseY = row * 32 + getDeterministicOffset(idx)
 
     return {
       x: baseX,
       y: baseY,
       scale,
-      color: getColorFromSegment(v.category),
+      color: getColorFromSegment(v.class),
     }
   })
 
@@ -119,7 +125,7 @@ export function VehicleRadarExplorer({ vehicles }: VehicleRadarExplorerProps) {
                   {/* Imagen del vehículo */}
                   {image && (
                     <Image
-                      src={image}
+                      src={image.src}
                       alt={vehicle.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -129,8 +135,8 @@ export function VehicleRadarExplorer({ vehicles }: VehicleRadarExplorerProps) {
                   {/* Overlay: datos en hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col justify-end p-2">
                     <p className="text-white font-bold text-xs leading-tight line-clamp-1">{vehicle.title}</p>
-                    {vehicle.motor?.potencia && (
-                      <p className="text-auto-accent text-xs font-mono">{vehicle.motor.potencia}</p>
+                    {vehicle.power && (
+                      <p className="text-auto-accent text-xs font-mono">{vehicle.power}</p>
                     )}
                   </div>
 

@@ -198,7 +198,7 @@ export function Footer() {
             type="button"
             onClick={() => smoothScrollTo(0)}
             aria-label="Volver arriba"
-            className="tap-scale inline-flex items-center gap-2 rounded-full border border-auto-border/60 px-4 py-2.5 text-xs font-medium text-neutral-400 transition-colors hover:border-auto-accent/60 hover:text-auto-accent-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+            className="tap-scale inline-flex items-center gap-2 rounded-full border border-auto-border/60 bg-auto-surface/40 px-4 py-2.5 text-xs font-medium text-neutral-400 transition-colors hover:border-auto-accent/60 hover:bg-auto-surface hover:text-auto-accent-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
           >
             <svg
               width="14"

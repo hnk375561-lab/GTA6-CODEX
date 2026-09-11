@@ -24,7 +24,7 @@ export function ManufacturerVisualization({ vehicles }: ManufacturerVisualizatio
     const grouped: Record<string, Vehicle[]> = {}
     
     vehicles.forEach((v) => {
-      const manufacturer = v.manufacturer?.nombre || 'Sin marca'
+      const manufacturer = v.manufacturer || 'Sin marca'
       if (!grouped[manufacturer]) {
         grouped[manufacturer] = []
       }
@@ -41,7 +41,7 @@ export function ManufacturerVisualization({ vehicles }: ManufacturerVisualizatio
 
   return (
     <div className="space-y-8">
-      {Object.entries(vehiclesByManufacturer).map(([manufacturer, manufacturerVehicles], idx) => {
+      {vehiclesByManufacturer.map(([manufacturer, manufacturerVehicles], idx) => {
         // Escala del bloque según cantidad de vehículos
         const scale = Math.min(manufacturerVehicles.length / 10, 2.5)
         const columns = Math.max(2, Math.ceil(Math.sqrt(manufacturerVehicles.length)))
@@ -87,7 +87,7 @@ export function ManufacturerVisualization({ vehicles }: ManufacturerVisualizatio
                     {/* Imagen */}
                     {image && (
                       <Image
-                        src={image}
+                        src={image.src}
                         alt={vehicle.title}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-300"
@@ -99,9 +99,9 @@ export function ManufacturerVisualization({ vehicles }: ManufacturerVisualizatio
                       <p className="text-white font-bold text-sm leading-tight line-clamp-2">
                         {vehicle.title}
                       </p>
-                      {vehicle.motor?.potencia && (
+                      {vehicle.power && (
                         <p className="text-auto-accent text-xs font-mono mt-1">
-                          {vehicle.motor.potencia}
+                          {vehicle.power}
                         </p>
                       )}
                     </div>

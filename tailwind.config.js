@@ -13,6 +13,25 @@ module.exports = {
         'border': '#E4DFD3',
         'oxide-red': '#B23A24',
         'archive-green': '#2B4436',
+
+        // Paleta "auto-*" (Placa Técnica / dark mode) — convive con la
+        // paleta "Archivo" (paper/ink/oxide-red) de arriba. Se restauran
+        // estos tokens porque siguen en uso activo en ~90 archivos de
+        // src/* (Footer, WishlistButton, Badge, SearchClient, chips/badges
+        // sobre foto, overlays oscuros, etc.) aunque no formen parte del
+        // rediseño "Archivo Automotor" de la home. Ver commit 7d0afcb7
+        // para el detalle histórico de esta paleta.
+        'auto-dark': '#0b0d10',
+        'auto-darker': '#050607',
+        'auto-surface': '#12151a',
+        'auto-border': '#242a32',
+        'auto-text': '#eef1f4',
+        'auto-text-secondary': '#9fa8b5',
+        'auto-accent': '#ff6a1a',
+        'auto-accent-strong': '#ff9152',
+        'auto-accent-orange': '#3d84ff',
+        'auto-accent-warning': '#ffb703',
+        'auto-gold': '#c9a35f',
         
         // Colores neutrales derivados
         neutral: {
@@ -84,6 +103,10 @@ module.exports = {
         'md': '0 4px 6px -1px rgba(20, 17, 12, 0.1)',
         'lg': '0 10px 15px -3px rgba(20, 17, 12, 0.1)',
         'xl': '0 20px 25px -5px rgba(20, 17, 12, 0.1)',
+        'auto-sm': '0 1px 2px rgba(0, 0, 0, 0.5)',
+        'auto-md': '0 4px 6px rgba(0, 0, 0, 0.6)',
+        'auto-lg': '0 10px 15px rgba(0, 0, 0, 0.7)',
+        'auto-xl': '0 20px 25px rgba(0, 0, 0, 0.8)',
       },
       letterSpacing: {
         'tightest': '-0.04em',
