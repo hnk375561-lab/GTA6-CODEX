@@ -38,6 +38,21 @@ import { usePathname, useRouter } from 'next/navigation'
 const EXIT_DURATION_MS = 220
 const ENTER_DURATION_MS = 220
 
+// Mismo basePath que usa `image-loader.ts` para las imágenes (viene de
+// GITHUB_PAGES_BASE_PATH vía next.config.js, ver ese archivo). `anchor.href`
+// más abajo es la propiedad DOM ya RESUELTA por el navegador (URL absoluta),
+// así que su `pathname` YA incluye este prefijo (ej. "/Sin-Frenos/fabricantes/").
+// `router.push()` de Next vuelve a anteponer el basePath automáticamente a
+// lo que se le pase — pasarle `url.pathname` tal cual duplicaba el prefijo
+// ("/Sin-Frenos/Sin-Frenos/fabricantes/", 404). Hay que sacarlo acá antes.
+const BASE_PATH = process.env.NEXT_PUBLIC_ASSET_PREFIX || ''
+
+function stripBasePath(pathname: string): string {
+  if (!BASE_PATH || !pathname.startsWith(BASE_PATH)) return pathname
+  const stripped = pathname.slice(BASE_PATH.length)
+  return stripped.startsWith('/') ? stripped : `/${stripped}`
+}
+
 type TransitionPhase = 'idle' | 'exiting' | 'entering'
 
 function isInternalNavigationClick(event: MouseEvent): HTMLAnchorElement | null {
@@ -113,7 +128,7 @@ export function PageTransitionBridge() {
       if (!anchor) return
 
       const url = new URL(anchor.href, window.location.href)
-      const targetHref = `${url.pathname}${url.search}${url.hash}`
+      const targetHref = `${stripBasePath(url.pathname)}${url.search}${url.hash}`
 
       event.preventDefault()
       transitionInProgressRef.current = true
