@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { type Vehicle } from '@/types'
 import { resolveEntityDisplayImage } from '@/lib/media'
-import { parsePowerHp } from '@/lib/vehicle-power'
+
 import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
@@ -49,7 +49,7 @@ export function FeaturedDossiers({ vehicles }: FeaturedDossiersProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featured.map((vehicle, index) => {
             const image = resolveEntityDisplayImage(vehicle)
-            const priceLabel = parsePowerHp(vehicle)
+            const priceLabel = vehicle.price
             const evidenceLevel = vehicle.evidence?.level
 
             return (
@@ -66,7 +66,7 @@ export function FeaturedDossiers({ vehicles }: FeaturedDossiersProps) {
                 <div className="relative aspect-[4/5] overflow-hidden bg-paper">
                   {image && (
                     <Image
-                      src={image}
+                      src={image.src}
                       alt=""
                       fill
                       className="object-cover group-hover/dossier:scale-105 transition-transform duration-500"

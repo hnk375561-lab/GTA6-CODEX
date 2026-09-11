@@ -76,7 +76,34 @@ function vehicleShowcaseSpecs(vehicle: Vehicle): Array<{ label: string; value: s
   return specs
 }
 
-function MiniIcon({ name }: { name: 'clock' | 'calendar' | 'link' | 'play' | 'scenes' | 'engine' | 'power' | 'fuel' | 'transmission' }) {
+type MiniIconName =
+  | 'clock'
+  | 'calendar'
+  | 'link'
+  | 'play'
+  | 'scenes'
+  | 'engine'
+  | 'power'
+  | 'fuel'
+  | 'transmission'
+
+const MINI_ICON_NAMES: MiniIconName[] = [
+  'clock',
+  'calendar',
+  'link',
+  'play',
+  'scenes',
+  'engine',
+  'power',
+  'fuel',
+  'transmission',
+]
+
+function isMiniIconName(value: string): value is MiniIconName {
+  return (MINI_ICON_NAMES as string[]).includes(value)
+}
+
+function MiniIcon({ name, className }: { name: MiniIconName; className?: string }) {
   const common = {
     width: 12,
     height: 12,
@@ -87,6 +114,7 @@ function MiniIcon({ name }: { name: 'clock' | 'calendar' | 'link' | 'play' | 'sc
     strokeLinecap: 'round' as const,
     strokeLinejoin: 'round' as const,
     'aria-hidden': true,
+    className,
   }
   switch (name) {
     case 'clock':
@@ -431,10 +459,10 @@ export function EntityCard({
                     {/* Favorito */}
                     <div className="relative">
                       <WishlistButton
-                        entitySlug={entity.slug}
-                        entityType={entity.type}
+                        type={entity.type}
+                        slug={entity.slug}
+                        title={entity.title}
                         className="text-white/70 hover:text-oxide-red transition-colors"
-                        iconClassName="w-4 h-4"
                       />
                     </div>
 
@@ -499,7 +527,9 @@ export function EntityCard({
                 <div className="space-y-2">
                   {quickFacts.map((fact, i) => (
                     <div key={i} className="flex items-center gap-2 text-sm">
-                      {fact.icon && <MiniIcon name={fact.icon as any} className="text-ink/50 shrink-0" />}
+                      {fact.icon && isMiniIconName(fact.icon) && (
+                        <MiniIcon name={fact.icon} className="text-ink/50 shrink-0" />
+                      )}
                       <span className="text-ink/60">{fact.label}:</span>
                       <span className="font-mono text-ink font-medium">{fact.value}</span>
                     </div>

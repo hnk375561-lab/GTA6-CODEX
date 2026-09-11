@@ -149,7 +149,7 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
                         {image && (
                           <div className="relative w-20 h-16 flex-shrink-0 overflow-hidden bg-paper border border-border/50">
                             <Image
-                              src={image}
+                              src={image.src}
                               alt=""
                               fill
                               className="object-cover"
@@ -202,7 +202,7 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
                     {/* Pie del documento */}
                     <div className="mt-4 pt-3 border-t border-border/50 flex items-center justify-between">
                       <p className="font-mono text-[9px] text-ink/40">
-                        {vehicle.date ? new Date(vehicle.date).toLocaleDateString('es-ES', {
+                        {(vehicle.updatedAt || vehicle.createdAt) ? new Date(vehicle.updatedAt || vehicle.createdAt).toLocaleDateString('es-ES', {
                           day: '2-digit',
                           month: 'short',
                           year: 'numeric'

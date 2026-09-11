@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import { Suspense } from 'react'
 import type { Metadata } from 'next'
-import { EntityType, type Vehicle } from '@/types'
+import { EntityType, type Entity, type Vehicle } from '@/types'
 import { SITE_NAME } from '@/config/site'
 import {
   getFeaturedEntities,
-  getEntityCount,
   getEntitiesByType,
 } from '@/lib/entities'
 import { resolveEntityDisplayImage } from '@/lib/media'
@@ -86,44 +85,43 @@ export default async function Home() {
     latestNews,
     availableRankings,
   ] = await Promise.all([
-    getEntityCount(EntityType.VEHICLE),
+    (async () => (await getEntitiesByType(EntityType.VEHICLE)).length)(),
     getEntityCountsByType(),
     getFeaturedEntities(100),
-    getEntitiesByType(EntityType.NEWS, { limit: 10 }),
+    (async () => (await getEntitiesByType(EntityType.NEWS)).slice(0, 10))(),
     getAvailableRankings(),
   ])
 
   const featuredRelationCounts: Record<string, number> = {}
   for (const entity of featured) {
-    featuredRelationCounts[entity.slug] = await getBidirectionalRelationCount(
-      entity.slug,
-      entity.type,
-    )
+    featuredRelationCounts[entity.slug] = await getBidirectionalRelationCount(entity)
   }
 
   const latestNewsImages: Record<string, string | null> = {}
   const latestNewsDates: Record<string, string> = {}
   for (const entity of latestNews) {
-    latestNewsImages[entity.slug] = resolveEntityDisplayImage(entity)
-    latestNewsDates[entity.slug] = entity.date ? formatRelativeTime(entity.date) : ''
+    const image = resolveEntityDisplayImage(entity)
+    latestNewsImages[entity.slug] = image ? image.src : null
+    const dateSource = entity.createdAt || entity.updatedAt
+    latestNewsDates[entity.slug] = dateSource ? formatRelativeTime(dateSource) : ''
   }
 
   // Convertir rankings al formato nuevo
   const classificationsData: Classification[] = availableRankings
     .slice(0, 4)
     .map((ranking) => ({
-      slug: ranking.slug,
-      shortTitle: ranking.name,
-      title: ranking.name,
-      direction: (ranking.direction === 'asc' ? 'min' : 'max') as 'min' | 'max',
-      topEntries: ranking.vehicles.slice(0, HOME_RANKING_TOP_ENTRIES).map((v, i) => ({
-        position: i + 1,
-        vehicleSlug: v.slug,
-        vehicleTitle: v.title,
-        metricValue: v.metricValue,
-        metricLabel: v.metricLabel,
+      slug: ranking.def.slug,
+      shortTitle: ranking.def.shortTitle,
+      title: ranking.def.title,
+      direction: (ranking.def.direction === 'asc' ? 'min' : 'max') as 'min' | 'max',
+      topEntries: ranking.entries.slice(0, HOME_RANKING_TOP_ENTRIES).map((entry) => ({
+        position: entry.position,
+        vehicleSlug: entry.vehicle.slug,
+        vehicleTitle: entry.vehicle.title,
+        metricValue: entry.metricValue,
+        metricLabel: entry.metricLabel,
       })),
-      eligibleCount: ranking.vehicles.length,
+      eligibleCount: ranking.eligibleCount,
     }))
 
   const consultationItems: ConsultationItem[] = [
@@ -259,13 +257,13 @@ async function getEntityCountsByType() {
   }
 
   for (const type of Object.values(EntityType)) {
-    counts[type] = await getEntityCount(type)
+    counts[type] = (await getEntitiesByType(type)).length
   }
 
   return counts
 }
 
-function calculateEvidenceCoverage(entities: any[]): number | null {
+function calculateEvidenceCoverage(entities: Entity[]): number | null {
   if (!entities.length) return null
   const withEvidence = entities.filter(e => e.evidence && e.evidence.level).length
   return Math.round((withEvidence / entities.length) * 100)

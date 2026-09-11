@@ -102,7 +102,7 @@ export function VehicleArchiveIndex({ vehicles }: VehicleArchiveIndexProps) {
                       {image && (
                         <div className="relative aspect-[4/3] mb-3 overflow-hidden bg-paper border border-border/30">
                           <Image
-                            src={image}
+                            src={image.src}
                             alt=""
                             fill
                             className="object-cover group-hover/vehicle:scale-105 transition-transform duration-300"

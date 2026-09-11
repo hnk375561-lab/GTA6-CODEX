@@ -22,7 +22,7 @@ export function ManufacturerArchive({ vehicles }: ManufacturerArchiveProps) {
 
   // Agrupar por fabricante
   const groupedByManufacturer = vehicles.reduce((acc, vehicle) => {
-    const manufacturer = vehicle.manufacturer?.nombre || 'Sin marca'
+    const manufacturer = vehicle.manufacturer || 'Sin marca'
     if (!acc[manufacturer]) {
       acc[manufacturer] = []
     }
@@ -97,7 +97,7 @@ export function ManufacturerArchive({ vehicles }: ManufacturerArchiveProps) {
                 {sampleImage && (
                   <div className="relative aspect-[16/10] mb-4 overflow-hidden bg-paper border border-border/30">
                     <Image
-                      src={sampleImage}
+                      src={sampleImage.src}
                       alt=""
                       fill
                       className="object-cover group-hover/manufacturer:scale-105 transition-transform duration-300"
