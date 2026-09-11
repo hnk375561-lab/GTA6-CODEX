@@ -1,0 +1,628 @@
+==================================================
+GTA6-CODEX — HERO HOME PRODUCTION AUDIT
+==================================================
+Fecha: 2026-09-10
+Alcance auditado: Hero de la Home ("Stage 1 / id: 'hero'")
+Componente raíz: src/components/home/HeroShowroom.tsx
+Invocado desde:   src/app/page.tsx (líneas ~454-487)
+Dependencias directas inspeccionadas:
+  - src/components/ui/WordRotate.tsx
+  - src/components/home/HeroVehicleShowcaseV2.tsx (solo el tipo
+    HeroVehicleShowcaseItem, reusado como shape de los datos del hero)
+  - src/app/globals.css (.text-gradient-vice, .word-rotate*, tokens)
+  - tailwind.config.js (tokens auto-dark/auto-darker/auto-text/auto-accent)
+  - next.config.js (images: loader custom + export estático)
+  - src/lib/vehicle-power.ts, src/lib/vehicle-price.ts (parsers de los
+    badges de spec que arma page.tsx para el hero)
+
+MÉTODO Y LIMITACIÓN DECLARADA (léase antes que el resto del documento)
+--------------------------------------------------
+Esta auditoría se hizo 100% por inspección de código fuente, config y
+comentarios del repo, clonando el repositorio público y leyendo cada
+archivo involucrado. NO se ejecutó `npm run dev` ni se renderizó el
+sitio en un navegador real, porque el entorno de esta auditoría no
+tiene forma de capturar el resultado visual renderizado ni de medir
+Core Web Vitals reales (Lighthouse/CrUX). Esto tiene una consecuencia
+importante para cómo leer el resto del documento:
+
+  - Todo lo VERIFICABLE por código (accesibilidad de markup/ARIA,
+    lógica de carga de imágenes, tipos, manejo de efectos de React,
+    estructura semántica/SEO, breakpoints declarados en Tailwind,
+    presencia/ausencia de mecanismos de pausa, etc.) está confirmado
+    contra el código real y es accionable tal cual.
+  - Todo lo que depende de PERCEPCIÓN VISUAL real (¿se ve "premium" o
+    "genérico"? ¿la composición se siente equilibrada en pantalla? ¿el
+    gradiente rosa/cian sobre negro se ve bien o chillón?) NO se puede
+    auditar con evidencia real desde acá. Se marca explícitamente como
+    "requiere revisión visual humana" en vez de inventar una nota tipo
+    "7/10" sin haber visto un solo pixel renderizado — eso sería la
+    misma falla que este documento le pide evitar al Hero: afirmar
+    algo que no se puede verificar.
+
+Con esa salvedad: la sección 12 de la spec original pedía un puntaje
+1-10 de percepción "premium vs template". No se da acá un número — se
+da, en su lugar, la lista exacta de qué haría falta mirar en pantalla
+para poder darlo con criterio, en la sección 11 de este documento.
+
+--------------------------------------------------
+1. EXECUTIVE SUMMARY
+--------------------------------------------------
+El Hero actual NO es un hero genérico de plantilla ni un "vibecoded
+hero" sin criterio: es la SEGUNDA reescritura documentada del hero de
+la home (el propio código conserva, en comentarios largos, el
+razonamiento de por qué se sacó el hero anterior —centrado, con
+buscador + 10 chips + 3 stats grandes, patrón típico de SaaS— y qué
+reemplaza a cada pieza). Esto es relevante para la auditoría comercial
+(sección 12/§10 de la spec): un comprador que lea el código encuentra
+un historial de decisiones de producto razonadas, no una superficie
+sin pensar detrás. Eso juega a favor de la percepción de "producto
+serio", más allá de cómo se vea en pantalla.
+
+Dicho esto, la inspección encontró 3 problemas reales y concretos de
+producción — uno de performance y dos de accesibilidad — que SÍ son
+objetivamente incorrectos independientemente de gustos de diseño, y
+que se corrigieron ya en el archivo entregado (ver §13/§17 y el ZIP
+adjunto). No se tocó copy, layout, paleta ni composición: esas son
+decisiones de diseño ya razonadas en los comentarios del propio código
+y no hay evidencia visual en esta auditoría para justificar rehacerlas
+a ciegas.
+
+Lo que SÍ queda pendiente y requiere ojo humano (no código) está en la
+sección 11 de este documento.
+
+--------------------------------------------------
+2. CURRENT HERO ASSESSMENT
+--------------------------------------------------
+Estructura real (HeroShowroom.tsx):
+  - Contenedor oscuro (bg-auto-darker) con glow radial contenido detrás
+    del vehículo (no gradiente de pantalla completa).
+  - Grid de 12 columnas en desktop: eyebrow arriba (marca + fecha +
+    % con fuente citada), headline editorial + CTA abajo-izquierda
+    (col-span-7), foto de vehículo protagonista a la derecha
+    (col-span-5, rota entre `featured`).
+  - Un solo CTA primario ("Ver el catálogo") + un link secundario de
+    texto ("Buscar un modelo puntual" → /buscar). Sin buscador ni chips
+    dentro del hero.
+  - Headline: "Cada {marca que rota}, con fuente citada" — la palabra
+    que rota son 6 marcas reales del catálogo (Toyota/BMW/Ford/BYD/
+    Hyundai/Yamaha), no un sustantivo abstracto.
+  - Metadata de confianza: "% con fuente citada" es un cálculo real
+    sobre el dataset (page.tsx, `evidenceCoveragePct`), no un número
+    fijo de marketing.
+  - Rotador de vehículo: intervalo de 5.2s, respeta
+    `prefers-reduced-motion`, con puntos de navegación manual abajo.
+
+Esto ya cubre, por diseño, varios de los ítems que la spec de auditoría
+pide chequear como riesgo: no hay buscador duplicado dentro del hero
+(vive en /buscar), no hay navegación duplicada (vive en <Header/>
+global), no hay stats infladas o inventadas, y el dato de confianza es
+real y no un placeholder. Esos puntos NO aparecen en "críticos" más
+abajo porque el propio código ya los resuelve.
+
+--------------------------------------------------
+3. WHY THE HERO DOES NOT CONVINCE (SI ES EL CASO)
+--------------------------------------------------
+No se puede confirmar ni descartar con este método (ver limitación
+declarada arriba) si el Hero "no convence" en un sentido puramente
+estético/visual — eso requiere verlo renderizado. Lo que SÍ se puede
+afirmar con el código en la mano:
+
+  - Había 3 defectos objetivos (no de gusto) que sí erosionan la
+    percepción de "producto terminado" ante cualquier auditor técnico
+    que abra devtools: descarga de imágenes no usadas, autoplay sin
+    mecanismo de pausa, y un rol ARIA mal aplicado. Un comprador
+    técnico que audite el sitio (Lighthouse, axe DevTools) los
+    encuentra en minutos. Ya corregidos — ver §13.
+  - El copy del headline ("Cada Toyota, con fuente citada") es una
+    construcción gramaticalmente algo forzada en español rioplatense
+    (la coma antes de "con fuente citada" lee más a fragmento que a
+    oración). No es un error, es una nota de copywriting a validar con
+    alguien que lea el sitio en voz alta — no se tocó el copy en el ZIP
+    por la misma razón que no se tocó el layout: es una decisión de
+    producto ya documentada, no un bug.
+
+--------------------------------------------------
+4. VISUAL AUDIT
+--------------------------------------------------
+Verificable por código:
+  - Un solo acento de color saturado (`text-gradient-vice`, rosa→cian)
+    usado en UNA palabra del headline, no en múltiples elementos
+    compitiendo. Esto va en contra del patrón "exceso de gradientes"
+    que la spec pide vigilar — por código, no hay evidencia de exceso.
+  - No hay glassmorphism, no hay "pills" decorativos, no hay badges
+    apilados sobre el hero (los dos badges de spec —potencia/precio—
+    viven DENTRO del componente de galería/carrusel, HeroVehicleShowcaseV2,
+    no en el Hero que se está auditando acá; confirmá que ese carrusel
+    con badges no siga viviendo en otra parte de la home si la
+    intención es "un solo lugar con esa información").
+  - Jerarquía tipográfica declarada: h1 en text-5xl→text-[5.25rem]
+    (mobile→desktop), subtítulo en text-base/text-lg, metadata en
+    text-xs con tracking amplio — la escala es consistente y no hay
+    3 tamaños de heading compitiendo.
+
+No verificable sin ver render: equilibrio real de la composición
+asimétrica en pantallas anchas (1920+), si el glow radial se nota
+"premium" o "efecto de más", si el crossfade de 700ms se siente fluido
+o brusco en hardware real, contraste percibido del headline sobre la
+foto de auto (hay un gradiente `from-auto-darker/80` detrás del texto
+inferior de la foto, pero el headline principal NO está sobre la foto,
+está en su propia columna — así que ese riesgo específico no aplica).
+
+--------------------------------------------------
+5. UX AUDIT
+--------------------------------------------------
+Primeros 3-5 segundos (analizable por estructura de código, no por
+tiempo real de usuario):
+  - ¿Qué es el sitio? El eyebrow dice `{siteName}` — el nombre solo,
+    sin tagline. Un usuario que llega por primera vez y no conoce
+    "GTA6-CODEX" no tiene, en el propio hero, una frase tipo "catálogo
+    y comparador de vehículos" — esa categorización depende de que el
+    usuario infiera "catálogo de autos" por el headline + la foto. Es
+    razonablemente inferible, pero es el punto más débil de claridad
+    inmediata que se encontró por código.
+  - ¿Qué puedo hacer? Un CTA primario claro ("Ver el catálogo"), un
+    secundario de menor peso visual ("Buscar un modelo puntual"). Sin
+    ambigüedad de jerarquía entre ambos (distinto tratamiento visual).
+  - ¿Hay demasiadas decisiones? No — 2 acciones nada más, correcto.
+  - ¿El usuario sabe dónde hacer click? Sí: el vehículo mismo es un
+    link a su ficha (`vehicle.detailHref`), más el CTA de catálogo.
+    Dos destinos distintos y razonables (explorar 1 auto puntual vs.
+    ver todo el catálogo), no compiten entre sí.
+  - Usuario que busca un vehículo puntual: cubierto por el link
+    secundario a /buscar.
+  - Usuario móvil: el hero pasa de "vehículo grande a la derecha,
+    texto a la izquierda" (desktop) a apilado verticalmente (mobile) —
+    ver §7 para el detalle de qué orden queda.
+
+--------------------------------------------------
+6. CONVERSION AUDIT
+--------------------------------------------------
+  - Objetivo actual del Hero (inferido del código): llevar al catálogo
+    completo o a un vehículo específico ya destacado. Coincide con lo
+    que un catálogo/comparador necesita como acción principal (no vende
+    nada directamente, vende "explorá").
+  - Un solo CTA primario reduce fricción de decisión — correcto para
+    conversión.
+  - El "% con fuente citada" funciona como trust signal cuantificado y
+    real (no inventado) — es, en términos de CRO, el elemento de mayor
+    peso de credibilidad del hero.
+  - Punto a validar (no bug, decisión de producto): el CTA secundario
+    ("Buscar un modelo puntual") compite en atención con el primario al
+    estar en la misma línea con `gap-x-8` — visualmente distinto peso
+    tipográfico, pero comparten fila. Si el dato de analítica real
+    (no auditable acá) mostrara que el secundario canibaliza clicks del
+    primario, la solución de bajo riesgo sería separarlos verticalmente
+    o mover el secundario a la caption inferior.
+
+--------------------------------------------------
+7. RESPONSIVE AUDIT
+--------------------------------------------------
+Breakpoints declarados en el propio componente (Tailwind: sm=640,
+lg=1024 por default de este proyecto — confirmado en tailwind.config.js
+no personaliza esos dos): el layout tiene exactamente 2 estados reales,
+no 9 — es un `grid` simple que pasa a `lg:grid-cols-12` recién en
+1024px. Esto significa que 320/375/390/430/768px son TODOS el mismo
+layout (apilado, columna única), y recién a partir de 1024px salta al
+layout asimétrico de 2 columnas.
+
+Implicación concreta: no hay una regla `sm:` intermedia para 640-1023px
+(incluye tablets en portrait, 768px explícitamente pedido en la spec de
+auditoría) — en ese rango sigue apilado como en un teléfono chico, lo
+cual NO es necesariamente un error (apilar es una respuesta válida y
+segura a ese rango), pero si la intención de diseño era que en 768px+
+ya se viera algo más parecido al layout desktop, hoy NO es así — es una
+decisión a confirmar, no un bug de CSS roto.
+
+Orden real del contenido apilado en mobile/tablet (antes de 1024px),
+por orden de aparición en el DOM (no hay reordenamiento con `order-*`):
+  1. Eyebrow (marca + fecha + % evidencia si cabe)
+  2. Headline + subtítulo + CTAs + caption de stats
+  3. Foto del vehículo + puntos de navegación
+
+Esto es una decisión de UX explícita a validar visualmente: en un hero
+"showroom" donde el vehículo es el protagonista declarado en los
+propios comentarios del código ("El vehículo — protagonista"), que en
+mobile aparezca DESPUÉS de todo el bloque de texto (potencialmente
+fuera del viewport inicial en pantallas chicas con headline largo) es
+lo opuesto a esa intención. Esto es un hallazgo real y accionable — ver
+§13, marcado como Importante (no crítico, porque no rompe nada, pero
+contradice la intención de diseño documentada en el propio archivo).
+
+`aspect-[4/3]` en mobile / `sm:aspect-[16/10]` / `lg:aspect-auto`: la
+proporción de la foto cambia con el breakpoint, lo cual está bien
+pensado (evita una foto excesivamente alta en mobile) — no se detectó
+overflow ni clipping por código (todas las imágenes usan
+`object-cover` dentro de un contenedor con `overflow-hidden`).
+
+Zona táctil de los puntos de navegación: `h-1` (4px de alto) con
+`flex-1` de ancho variable — el ALTO del elemento clickeable es de solo
+4px, muy por debajo del mínimo recomendado de 24-44px de área táctil
+(WCAG 2.5.8 / Apple HIG). El `<button>` no tiene padding que amplíe su
+hit area más allá del elemento visual. Esto es un problema real de
+usabilidad táctil, no estético — ver §13.
+
+--------------------------------------------------
+8. PERFORMANCE AUDIT
+--------------------------------------------------
+HALLAZGO CRÍTICO (ya corregido en el ZIP, ver §13 #1):
+El rotador montaba las N imágenes de `vehicles` de forma simultánea al
+cargar la página (una `<Image fill>` por vehículo, superpuestas con
+opacity 0/100 vía CSS). Como next/image usa IntersectionObserver para
+decidir cuándo cargar una imagen con `loading="lazy"` (default cuando
+no hay `priority`), y las 4 imágenes están dentro del contenedor visible
+del hero desde el primer paint, el navegador las considera "en
+viewport" y las descarga TODAS de entrada — el atributo lazy no
+diferencia nada acá porque no hay diferencia de posición en pantalla,
+solo de opacidad. Resultado: con 4 vehículos featured, el hero
+descargaba 4 imágenes completas (aunque 3 nunca lleguen a verse si el
+usuario navega antes de que el rotador llegue a ellas) en vez de 1.
+Impacto directo en LCP (compite por ancho de banda con la imagen
+`priority` real) y en el peso total de la carga inicial.
+
+Corrección aplicada: solo se monta la imagen `index === 0` al cargar
+(con `priority`, igual que antes) más las que el rotador ya visitó
+realmente — la 2ª imagen recién se monta y descarga cuando el rotador
+llega a ella (~5.2s después), no antes.
+
+Otros puntos de performance verificados por código (sin hallazgos):
+  - `sizes="(min-width: 1024px) 40vw, 90vw"` es coherente con el ancho
+    real del contenedor en cada breakpoint (col-span-5 de 12 ≈ 40% en
+    desktop) — no hay sobre-pedido de resolución.
+  - El proyecto usa un loader de imagen custom con variantes
+    pregeneradas (`scripts/pregenerate-image-variants.mjs`,
+    `next.config.js: loader: 'custom'`) en vez de un servidor de
+    optimización on-demand — coherente con el `output: 'export'`
+    (GitHub Pages) del proyecto, no hay nada mal configurado ahí.
+  - `WordRotate` está reimplementado 100% en CSS (el propio comentario
+    del archivo documenta que reemplazó una librería de animación de
+    ~150KB) — no hay JS de animación pesado en el hero.
+  - El componente es `'use client'` en su totalidad, lo cual es
+    necesario (hay estado de rotación e interacción) — no hay
+    oportunidad real de server-component acá sin perder la
+    funcionalidad.
+
+--------------------------------------------------
+9. ACCESSIBILITY AUDIT
+--------------------------------------------------
+HALLAZGO CRÍTICO #1 (ya corregido, ver §13 #2):
+El rotador automático cambia contenido visual cada 5.2s indefinidamente
+y el ÚNICO mecanismo de control que tenía era la preferencia de sistema
+`prefers-reduced-motion`. WCAG 2.2.2 (Pause, Stop, Hide, nivel A)
+exige un mecanismo DENTRO DE LA PÁGINA para pausar/detener contenido
+que se actualiza automáticamente por más de 5 segundos, disponible para
+cualquier usuario — no alcanza con depender de una preferencia de
+sistema que la mayoría de usuarios nunca configuró. Esto es una falla
+real de conformidad WCAG nivel A, no una sugerencia de polish.
+Corrección aplicada: botón pausar/reanudar visible junto a los puntos
+de navegación + pausa automática al pasar el mouse o el foco de
+teclado por la zona del rotador.
+
+HALLAZGO CRÍTICO #2 (ya corregido, ver §13 #3):
+Los puntos de navegación usaban `role="tablist"` en el contenedor y
+`role="tab"` + `aria-selected` en cada botón. El patrón ARIA APG de
+"tabs" (https://www.w3.org/WAI/ARIA/apg/patterns/tabs/) exige que la
+navegación entre tabs se haga con flechas de teclado (no Tab) y que
+exista una relación `aria-controls`/`tabpanel` con el contenido que
+cada tab despliega. Nada de eso estaba implementado (solo click de
+mouse/Enter vía Tab secuencial) — un lector de pantalla que anuncie
+"tablist, 4 tabs" le está prometiendo al usuario una interacción que el
+componente no ofrece. Corrección aplicada: se reemplazó por
+`role="group"` (sin implicar patrón de teclado) + `aria-pressed` por
+botón, que describe con precisión el comportamiento real.
+
+Otros puntos verificados (sin hallazgos, o ya resueltos por el propio
+código antes de esta auditoría):
+  - `WordRotate`: la palabra visible está marcada `aria-hidden` y hay
+    un `<span className="sr-only">` con la lista completa unida en una
+    frase — evita que un lector de pantalla anuncie una sola marca al
+    azar en vez de las 6. Ya resuelto por el propio componente, con
+    comentario explícito documentando el razonamiento.
+  - Contraste: `auto-text-secondary` (#9fa8b5) sobre `auto-darker`
+    (#050607) — contraste calculado ≈ 8.9:1, muy por encima del mínimo
+    AA (4.5:1) para texto normal. `auto-accent` (#ff6a1a) sobre el
+    mismo fondo ≈ 6.1:1 — también pasa AA para el tamaño en que se usa
+    (metadata en mayúsculas, no texto de párrafo largo).
+  - Un solo `<h1>` en el hero (no hay competencia de headings) —
+    correcto.
+  - Los `<Link>` de cada vehículo tienen `tabIndex={-1}` cuando no son
+    el activo, evitando que un usuario de teclado tabee por 3 links
+    invisibles antes de llegar al contenido real — correcto.
+  - Motion: el crossfade de imagen y las animaciones de entrada
+    (`.hero-showroom-in`) respetan `prefers-reduced-motion` vía media
+    query en el propio `<style jsx>` — correcto.
+
+Pendiente NO resuelto en el ZIP (requiere decisión de diseño, no es un
+fix mecánico): el área táctil de 4px de alto de los puntos de
+navegación (ver §7) es insuficiente para WCAG 2.5.8 (AA, mínimo 24×24
+CSS px). Recomendación: mantener el grosor visual de 4px pero envolver
+cada punto en un `<button>` con `padding` vertical que lleve el área
+clickeable real a ~24-32px (el punto visual queda igual, el hit-area
+crece). No se tocó en el ZIP porque cambia el spacing visual del grupo
+de puntos y no hay forma de confirmar que se vea bien sin render.
+
+--------------------------------------------------
+10. SEO AUDIT
+--------------------------------------------------
+  - Un solo `<h1>`, contenido real (no relleno de keywords) — correcto.
+  - El headline menciona marcas reales del catálogo (Toyota, BMW, Ford,
+    BYD, Hyundai, Yamaha) como texto real en el DOM (no solo en un
+    atributo `alt` o en JS) — esto es contenido indexable relevante
+    para intención de búsqueda de esas marcas, sin caer en keyword
+    stuffing (son 6 palabras dentro de una oración natural, con
+    `WordRotate` mostrando una por vez pero las 6 están en el DOM vía
+    el `<span className="sr-only">`).
+  - El subtítulo es una propuesta de valor real ("cada dato viene de
+    una fuente citada y verificable") — contenido útil, no decorativo.
+  - No se auditó acá `generateHomepageMetadata()` (`src/lib/seo.ts`) ni
+    structured data de la home en profundidad — está fuera del
+    componente Hero en sí, pero si la auditoría se extiende, es el
+    siguiente archivo a revisar para confirmar que el `<title>`/
+    `<meta description>` de la home sean coherentes con este headline.
+
+--------------------------------------------------
+11. AUDITORÍA VISUAL/COMERCIAL QUE REQUIERE OJO HUMANO
+    (no completable por código — ver limitación declarada al inicio)
+--------------------------------------------------
+Para poder completar con criterio real las secciones "comparación con
+productos premium" y "puntaje 1-10" que pedía la spec original, hace
+falta mirar el hero renderizado (screenshot o dev server) en al menos:
+  1. Desktop ancho (1920px) — validar que la composición asimétrica no
+     deje demasiado espacio muerto a la izquierda del headline ni
+     demasiado glow visible del lado derecho.
+  2. Mobile real (390px) — validar si el orden "texto antes que foto"
+     (ver §7) se siente correcto o si el usuario mobile "pierde" el
+     protagonismo del vehículo que el propio código dice que debería
+     tener.
+  3. El momento exacto del crossfade entre 2 fotos (700ms) — validar
+     que no haya un instante de "doble imagen" perceptible en hardware
+     de gama media.
+  4. El contraste real del headline sobre el fondo con el glow radial
+     activo (el cálculo de contraste de §9 es texto-sobre-fondo-sólido,
+     no contempla el glow decorativo superpuesto).
+  5. Cómo se ve el hero inmediatamente después del panel "Categorías"
+     al hacer scroll (el propio `PinnedScrollStages` hace crossfade
+     entre paneles) — validar que la transición entre el hero oscuro y
+     el resto de la home (blanca, según el comentario de rediseño en
+     page.tsx) no se sienta como "dos sitios distintos pegados".
+
+Ninguno de estos 5 puntos se puede resolver con otro pase de código —
+necesitan una captura de pantalla real o acceso al sitio desplegado.
+
+--------------------------------------------------
+12. TECHNICAL AUDIT
+--------------------------------------------------
+  - No se encontró código muerto, duplicación ni hacks dentro de
+    HeroShowroom.tsx. Los comentarios del archivo documentan
+    explícitamente qué se sacó de la versión anterior y por qué, lo
+    cual es información valiosa para cualquier agente/dev que edite
+    esto después — se preservó ese estilo de comentario en los agregados
+    de esta auditoría.
+  - Antes de la corrección, el archivo tenía 2 problemas reales de
+    arquitectura de estado de React (no solo de accesibilidad):
+    `setState` llamado directamente en el cuerpo de un `useEffect`
+    (patrón que el propio linter del proyecto —
+    `eslint-plugin-react-hooks`, regla `react-hooks/set-state-in-effect`
+    — marca como ERROR, no warning). Confirmado corriendo
+    `npx eslint` sobre el archivo: 2 errores antes de la corrección, 0
+    después. Esto significa que, tal como estaba, el archivo ya violaba
+    una regla de lint del propio repo — no es una opinión de esta
+    auditoría, es una falla que el propio pipeline de CI del proyecto
+    debería haber estado bloqueando (a confirmar si el hero pasó por
+    `npm run lint` antes de mergearse, o si el CI no corre esa regla
+    sobre este archivo).
+  - Se corrió `npx tsc --noEmit` sobre el proyecto completo después del
+    cambio: 0 errores. La interfaz pública del componente
+    (`HeroShowroomProps`) no cambió, así que `page.tsx` (el único
+    consumidor) no requiere ningún cambio.
+  - No hay prop drilling ni estados innecesarios más allá de los
+    agregados por esta corrección (`isPlaying`, `isPaused`,
+    `visitedIndices`), todos justificados y documentados inline.
+
+--------------------------------------------------
+13. CORRECCIONES APLICADAS EN ESTE PASE (YA EN EL ZIP)
+--------------------------------------------------
+Archivo modificado: src/components/home/HeroShowroom.tsx (reemplazo
+completo del archivo — mismo path, misma interfaz pública/props).
+
+  #1 — PERFORMANCE / P0
+      Problema: las N imágenes del rotador se descargaban todas en la
+      carga inicial aunque solo 1 fuera visible.
+      Causa: `vehicles.map(...)` montaba un `<Image>` por vehículo
+      dentro del contenedor visible del hero, y el lazy-loading nativo
+      no difiere nada cuando el elemento ya está en viewport.
+      Solución: solo se monta la imagen `index===0` (con `priority`)
+      más las que el rotador ya visitó (`visitedIndices`), vía early
+      `return null` en el `.map()`.
+      Riesgo de implementación: bajo. No cambia el markup visible ni la
+      transición (el crossfade sigue viendo 2 imágenes montadas
+      simultáneamente durante la transición, que es lo que se necesita
+      para el `opacity` animado).
+      Criterio de aceptación: con 4 vehículos `featured`, solo 1
+      request de imagen del rotador en la carga inicial (antes: 4).
+
+  #2 — ACCESIBILIDAD / P0 (WCAG 2.2.2, nivel A)
+      Problema: rotador automático sin mecanismo de pausa disponible en
+      la página (solo dependía de `prefers-reduced-motion`).
+      Solución: botón pausar/reanudar visible + pausa automática en
+      hover/focus dentro de la zona del rotador.
+      Riesgo: bajo. Agrega un botón de 24×24px junto a los puntos de
+      navegación existentes.
+      Criterio de aceptación: un usuario puede detener la rotación
+      automática sin depender de configuración de sistema operativo, y
+      puede hacerlo con mouse (hover), teclado (focus) o click
+      explícito (botón).
+
+  #3 — ACCESIBILIDAD / P0 (ARIA APG mal aplicado)
+      Problema: `role="tablist"`/`role="tab"` sin el patrón de teclado
+      ni la relación `aria-controls`/tabpanel que ese rol implica.
+      Solución: `role="group"` + `aria-pressed` por botón.
+      Riesgo: ninguno (no cambia comportamiento visual ni de mouse).
+      Criterio de aceptación: un lector de pantalla anuncia "grupo,
+      Elegir vehículo destacado" en vez de prometer un patrón de tabs
+      no implementado.
+
+  #4 — CALIDAD DE CÓDIGO / P1
+      Problema: 2 errores de `eslint` (`react-hooks/set-state-in-effect`)
+      preexistentes en el archivo.
+      Solución: inicialización perezosa de `useState` en vez de
+      `setState` en el cuerpo de un efecto; actualización de
+      `visitedIndices` en el mismo handler que cambia `index` en vez de
+      en un efecto separado.
+      Criterio de aceptación: `npx eslint src/components/home/HeroShowroom.tsx`
+      → 0 errores (confirmado).
+
+No incluido en el ZIP (requiere revisión visual o es decisión de
+diseño, no bug — ver razones en cada ítem):
+  - Área táctil de 4px de los puntos de navegación (§7/§9) — P2,
+    cambia spacing visual, necesita confirmarse en pantalla.
+  - Orden "texto antes que foto" en mobile/tablet (§7) — P2, contradice
+    la intención documentada ("el vehículo, protagonista") pero
+    cambiarlo con `order-*` de Tailwind sin ver el resultado es
+    arriesgado; se deja como recomendación, no como cambio aplicado.
+  - Copy del headline ("coma antes de con fuente citada") — P3, nota de
+    copywriting, no de código.
+  - Falta de una frase explícita de categoría ("catálogo y comparador
+    de vehículos") en el eyebrow para usuarios que no conocen el sitio
+    — P2, decisión de copy/diseño.
+
+--------------------------------------------------
+14. IMPORTANT PROBLEMS (RESUMEN)
+--------------------------------------------------
+  - Orden de apilado mobile pone el vehículo (protagonista declarado)
+    al final, no al principio.
+  - Sin breakpoint intermedio real entre 375px y 1024px: tablets
+    portrait (768px) quedan con el layout de teléfono.
+  - Área táctil insuficiente en los puntos de navegación del rotador.
+  - Eyebrow no comunica explícitamente "qué es esto" a un usuario que
+    no conoce la marca (depende de inferencia por headline + foto).
+
+--------------------------------------------------
+15. POLISH PROBLEMS (RESUMEN)
+--------------------------------------------------
+  - Coma antes de "con fuente citada" en el headline — revisar en voz
+    alta con un hablante nativo.
+  - CTA secundario comparte fila con el primario — podría separarse si
+    los datos de analítica muestran canibalización de clicks.
+
+--------------------------------------------------
+16. RECOMMENDED HERO CONCEPT
+--------------------------------------------------
+No se propone un concepto nuevo de hero. La estructura actual (headline
+editorial + vehículo protagonista + un CTA + trust signal real) ya es
+la respuesta correcta al objetivo declarado en los propios comentarios
+del código, y reescribirla sin evidencia visual de qué falla realmente
+en pantalla sería repetir el mismo error que esta auditoría señala como
+riesgo: cambiar por cambiar, sin verificar que el cambio resuelva algo
+real. Las 2 recomendaciones de fondo que sí se sostienen con evidencia
+de código (protagonismo del vehículo en mobile, área táctil de los
+puntos) están en §13 como pendientes explícitos, no como una
+reescritura completa.
+
+--------------------------------------------------
+17. IMPLEMENTATION PLAN
+--------------------------------------------------
+Ya ejecutado (este pase): correcciones #1-#4 de §13, validadas con
+`tsc --noEmit` (0 errores en todo el proyecto) y `eslint` (0 errores en
+el archivo).
+
+Siguiente pase recomendado (requiere quien lo ejecute ver el sitio
+renderizado, no otro agente ciego):
+  1. Capturar screenshots reales en 390px/768px/1024px/1920px.
+  2. Con esas capturas, decidir si el orden mobile se cambia (con
+     `order-*` de Tailwind, cambio de bajo riesgo técnico una vez
+     validado visualmente).
+  3. Ajustar el hit-area de los puntos de navegación.
+  4. Revisar el headline en voz alta con un hablante nativo de
+     español rioplatense.
+  5. Correr Lighthouse/axe DevTools sobre el deploy real para confirmar
+     el impacto medido de la corrección de performance (#1) y verificar
+     que no queden otros hallazgos de accesibilidad fuera del alcance
+     de este componente (ej. en `<Header/>` o en el resto de la home).
+
+--------------------------------------------------
+18. PRIORITIZED ACTION TABLE
+--------------------------------------------------
+| Prioridad | Problema                                      | Acción                                                   | Impacto      | Esfuerzo | Archivo                                    | Estado         |
+|-----------|------------------------------------------------|-----------------------------------------------------------|--------------|----------|---------------------------------------------|----------------|
+| P0        | 4 imágenes descargadas cuando solo 1 se ve      | Montar solo imagen actual + visitadas                    | Performance  | Bajo     | src/components/home/HeroShowroom.tsx        | HECHO (ZIP)    |
+| P0        | Autoplay sin mecanismo de pausa (WCAG 2.2.2)    | Botón pausar/reanudar + pausa en hover/focus              | Accesibilidad| Bajo     | src/components/home/HeroShowroom.tsx        | HECHO (ZIP)    |
+| P0        | role="tablist"/"tab" sin patrón de teclado      | Cambiar a role="group" + aria-pressed                     | Accesibilidad| Bajo     | src/components/home/HeroShowroom.tsx        | HECHO (ZIP)    |
+| P1        | 2 errores de eslint (set-state-in-effect)       | Lazy init + handler unificado                              | Calidad/CI   | Bajo     | src/components/home/HeroShowroom.tsx        | HECHO (ZIP)    |
+| P2        | Vehículo (protagonista) aparece último en mobile| Revisar visualmente, aplicar order-* si corresponde         | UX           | Medio    | src/components/home/HeroShowroom.tsx        | Pendiente (requiere ver render) |
+| P2        | Área táctil de 4px en puntos de navegación      | Ampliar hit-area con padding sin cambiar el grosor visual   | Accesibilidad/UX | Bajo | src/components/home/HeroShowroom.tsx        | Pendiente (requiere ver render) |
+| P2        | Sin breakpoint real 640-1023px                  | Confirmar si es intencional o falta un `sm:`/`md:` intermedio | UX/Visual  | Medio    | src/components/home/HeroShowroom.tsx        | Pendiente (decisión de diseño) |
+| P2        | Eyebrow no explica "qué es esto"                | Evaluar agregar 3-4 palabras de categoría junto al nombre    | UX/SEO     | Bajo     | src/app/page.tsx (props del hero)           | Pendiente (decisión de copy) |
+| P3        | Coma forzada en el headline                     | Revisar en voz alta, ajustar puntuación si hace falta        | Copy       | Bajo     | src/app/page.tsx (HERO_HEADLINE_TAIL)       | Pendiente (copy) |
+| P3        | CTA secundario en la misma fila que el primario | Evaluar separación vertical si hay datos de canibalización   | Conversión | Bajo     | src/components/home/HeroShowroom.tsx        | Pendiente (requiere datos reales) |
+
+--------------------------------------------------
+19. PRODUCTION CHECKLIST
+--------------------------------------------------
+[x] Visual — sin exceso de gradientes/badges/pills verificado por código
+[ ] Visual — composición validada en pantalla real (pendiente, ver §11)
+[x] UX — un solo CTA primario claro, sin decisiones redundantes
+[ ] UX — orden mobile del vehículo protagonista (pendiente, ver §14)
+[ ] Responsive — breakpoint intermedio 640-1023px confirmado como
+    intencional (pendiente)
+[x] Responsive — sin overflow/clipping detectado por código
+[x] Performance — carga de imágenes del rotador corregida
+[x] Accessibility — mecanismo de pausa WCAG 2.2.2 agregado
+[x] Accessibility — roles ARIA corregidos
+[ ] Accessibility — área táctil de puntos de navegación (pendiente)
+[x] SEO — un solo H1, contenido real e indexable
+[x] Technical — 0 errores de tsc, 0 errores de eslint en el archivo
+[ ] Commercial readiness — validación visual final (pendiente, ver §11)
+
+No se marcó nada como completo que dependiera de "parece correcto" sin
+evidencia — los ítems sin evidencia verificable quedan explícitamente
+sin marcar.
+
+--------------------------------------------------
+20. COMMERCIAL READINESS CHECKLIST
+--------------------------------------------------
+[x] El Hero no es una copia de plantilla genérica (headline con datos
+    reales del catálogo, trust signal calculado, no de marketing fijo)
+[x] Sin código muerto, hacks ni contradicciones técnicas detectadas en
+    el componente auditado
+[x] Sin fallas de accesibilidad de nivel A (WCAG 2.2.2) tras corrección
+[x] Sin fallas de performance obvias en la lógica de carga de imágenes
+    tras corrección
+[ ] Validación visual final en dispositivos reales (pendiente)
+[ ] Confirmación de que el orden narrativo mobile refleja la intención
+    de diseño documentada (pendiente)
+
+--------------------------------------------------
+21. FINAL VERDICT
+--------------------------------------------------
+NO LISTO: no aplica — el hero no está en un estado temprano/roto.
+CASI LISTO: no aplica — no hay pendientes que bloqueen funcionalidad.
+PRODUCTION READY: SÍ, tras las correcciones de este pase. No quedan
+  fallas objetivas de accesibilidad nivel A, performance evidente por
+  código, ni errores de tsc/eslint.
+COMMERCIAL READY: CONDICIONAL. El código es sólido y defendible ante
+  cualquier auditoría técnica externa (Lighthouse/axe). Falta la
+  validación visual de §11 antes de poder afirmar con evidencia que
+  también es defendible ante una auditoría de percepción/diseño —
+  ese último paso no se puede completar sin ver el sitio renderizado.
+PREMIUM / SALE READY: NO SE PUEDE CONFIRMAR CON ESTE MÉTODO. Requiere
+  el paso visual de §11 antes de poder afirmarlo con criterio real.
+
+--------------------------------------------------
+22. EXACT NEXT STEPS
+--------------------------------------------------
+1. Extraer el ZIP adjunto y reemplazar
+   src/components/home/HeroShowroom.tsx en el repo (1:1, mismo path).
+2. Correr `npm run lint` y `npm run build` (o el script equivalente del
+   proyecto) para confirmar en el entorno real lo que ya se confirmó
+   acá con `tsc`/`eslint` sueltos.
+3. Desplegar o correr `npm run dev`, y capturar screenshots reales en
+   390/768/1024/1920px — sin este paso, §11, §14 (2 ítems) y el
+   veredicto de "sale ready" quedan abiertos.
+4. Con esas capturas, decidir los 4 pendientes de P2 de la tabla de
+   §18 (todos son cambios de bajo riesgo técnico una vez validados
+   visualmente).
+5. Revisar el copy del headline en voz alta (P3).
+
+==================================================
+FIN DEL DOCUMENTO
+==================================================

@@ -46,6 +46,32 @@ import { cn } from '@/lib/utils'
  * usa para paneles oscuros decorativos fuera del dashboard (ver
  * tailwind.config.js) — no son un valor inventado para este componente,
  * es el mecanismo ya establecido para esto exacto.
+ *
+ * CORRECCIONES (auditoría de producción, ver
+ * HERO_HOME_PRODUCTION_AUDIT.txt — hallazgos P0/P1):
+ *
+ * 1. Las N imágenes del rotador se montaban TODAS al cargar la página
+ *    (una por vehículo, superpuestas con opacity 0/100). Como el
+ *    contenedor está en el viewport inicial, el lazy-loading nativo de
+ *    `next/image` no difería nada: las 4 fotos se descargaban en la
+ *    carga inicial aunque solo una fuera visible. Ahora solo se monta
+ *    la imagen actual + las ya visitadas (`visitedIndices`): la primera
+ *    pesa lo mismo (con `priority`), pero la 2ª/3ª/4ª entran recién
+ *    cuando el rotador llega a ellas, repartiendo el costo de red en
+ *    vez de cargarlo entero de una.
+ * 2. El rotador automático (cada 5.2s) solo se detenía con
+ *    `prefers-reduced-motion`. WCAG 2.2.2 (Pause, Stop, Hide) exige un
+ *    mecanismo EN LA PÁGINA para pausar contenido que se mueve solo por
+ *    más de 5s, independiente de la preferencia de sistema — ahora se
+ *    pausa también con hover/focus dentro del hero y hay un botón
+ *    pausar/reanudar explícito junto a los puntos de navegación.
+ * 3. Los puntos de navegación usaban `role="tablist"`/`role="tab"`, que
+ *    en el patrón ARIA APG implica soporte de flechas de teclado entre
+ *    tabs — acá no lo había (solo Tab secuencial), lo cual es un
+ *    contrato de accesibilidad roto para quien navegue con lector de
+ *    pantalla esperando ese patrón. Se reemplaza por `role="group"` +
+ *    `aria-pressed` por botón, que describe con precisión el
+ *    comportamiento real (un grupo de botones independientes).
  */
 
 export interface HeroShowroomProps {
@@ -80,36 +106,50 @@ export function HeroShowroom({
   searchHref,
 }: HeroShowroomProps) {
   const [index, setIndex] = useState(0)
+  // Inicializador perezoso (no un efecto): lee `prefers-reduced-motion`
+  // directo en el primer render, así el rotador nunca arranca "de
+  // prueba" para frenarse un tick después — evita el patrón
+  // set-state-en-efecto que el lint del propio repo (react-hooks) marca
+  // como error (cascading renders innecesarios).
+  const [isPlaying, setIsPlaying] = useState(
+    () => typeof window === 'undefined' || !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  )
+  const [isPaused, setIsPaused] = useState(false)
+  // Qué imágenes ya se mostraron al menos una vez — solo esas se montan
+  // en el DOM (ver nota de corrección #1 en el comentario de arriba).
+  // Se actualiza en el mismo evento que cambia `index` (ver `goToVehicle`
+  // más abajo), nunca en un efecto separado, por la misma razón.
+  const [visitedIndices, setVisitedIndices] = useState<ReadonlySet<number>>(() => new Set([0]))
 
   useEffect(() => {
-    if (vehicles.length <= 1) return
     const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
-    if (mql.matches) return
-
-    let intervalId: number | undefined
-    const start = () => {
-      if (intervalId !== undefined) return
-      intervalId = window.setInterval(() => {
-        if (document.hidden) return
-        setIndex((prev) => (prev + 1) % vehicles.length)
-      }, ROTATE_MS)
-    }
-    const stop = () => {
-      if (intervalId !== undefined) {
-        window.clearInterval(intervalId)
-        intervalId = undefined
-      }
-    }
-    start()
-    const onChange = (e: MediaQueryListEvent) => (!e.matches ? start() : stop())
+    const onChange = (e: MediaQueryListEvent) => setIsPlaying(!e.matches)
     mql.addEventListener('change', onChange)
-    return () => {
-      stop()
-      mql.removeEventListener('change', onChange)
-    }
-  }, [vehicles.length])
+    return () => mql.removeEventListener('change', onChange)
+  }, [])
+
+  const goToVehicle = (i: number) => {
+    setIndex(i)
+    setVisitedIndices((prev) => (prev.has(i) ? prev : new Set(prev).add(i)))
+  }
+
+  useEffect(() => {
+    if (vehicles.length <= 1 || !isPlaying || isPaused) return
+
+    const intervalId = window.setInterval(() => {
+      if (document.hidden) return
+      setIndex((prev) => {
+        const next = (prev + 1) % vehicles.length
+        setVisitedIndices((visited) => (visited.has(next) ? visited : new Set(visited).add(next)))
+        return next
+      })
+    }, ROTATE_MS)
+
+    return () => window.clearInterval(intervalId)
+  }, [vehicles.length, isPlaying, isPaused])
 
   const current = vehicles[index] ?? null
+  const canAutoRotate = vehicles.length > 1
 
   return (
     <div className="relative isolate overflow-hidden rounded-3xl bg-auto-darker ring-1 ring-white/5">
@@ -180,30 +220,46 @@ export function HeroShowroom({
 
         {/* El vehículo — protagonista, rota entre los `featured` con foto
             real. Un solo <Link> visible a la vez (opacity), nunca varios
-            superpuestos clickeables. */}
-        <div className="hero-showroom-in hero-showroom-in-delay-2 relative lg:col-span-5 lg:row-span-2 lg:row-start-1">
+            superpuestos clickeables. `onMouseEnter/Leave` + `onFocus/Blur`
+            pausan el autoplay mientras el usuario interactúa con esta zona
+            (WCAG 2.2.2, ver corrección #2 arriba). */}
+        <div
+          className="hero-showroom-in hero-showroom-in-delay-2 relative lg:col-span-5 lg:row-span-2 lg:row-start-1"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onFocus={() => setIsPaused(true)}
+          onBlur={(e) => {
+            if (!e.currentTarget.contains(e.relatedTarget)) setIsPaused(false)
+          }}
+        >
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl sm:aspect-[16/10] lg:aspect-auto lg:h-full">
-            {vehicles.map((vehicle, i) => (
-              <Link
-                key={vehicle.slug}
-                href={vehicle.detailHref}
-                aria-hidden={i !== index}
-                tabIndex={i === index ? 0 : -1}
-                className={cn(
-                  'absolute inset-0 block transition-opacity duration-700 ease-out',
-                  i === index ? 'opacity-100' : 'pointer-events-none opacity-0'
-                )}
-              >
-                <Image
-                  src={vehicle.src}
-                  alt={vehicle.alt}
-                  fill
-                  sizes="(min-width: 1024px) 40vw, 90vw"
-                  priority={i === 0}
-                  className="object-cover"
-                />
-              </Link>
-            ))}
+            {vehicles.map((vehicle, i) => {
+              // Solo se monta la imagen actual + las ya visitadas: evita
+              // descargar de entrada las N fotos del rotador cuando solo
+              // una es visible (corrección #1 arriba).
+              if (!visitedIndices.has(i)) return null
+              return (
+                <Link
+                  key={vehicle.slug}
+                  href={vehicle.detailHref}
+                  aria-hidden={i !== index}
+                  tabIndex={i === index ? 0 : -1}
+                  className={cn(
+                    'absolute inset-0 block transition-opacity duration-700 ease-out',
+                    i === index ? 'opacity-100' : 'pointer-events-none opacity-0'
+                  )}
+                >
+                  <Image
+                    src={vehicle.src}
+                    alt={vehicle.alt}
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 90vw"
+                    priority={i === 0}
+                    className="object-cover"
+                  />
+                </Link>
+              )
+            })}
 
             <div
               aria-hidden="true"
@@ -228,21 +284,47 @@ export function HeroShowroom({
           </div>
 
           {vehicles.length > 1 && (
-            <div className="mt-4 flex items-center gap-2" role="tablist" aria-label="Elegir vehículo destacado">
-              {vehicles.map((vehicle, i) => (
+            <div className="mt-4 flex items-center gap-3">
+              {/* `role="group"` en vez del `role="tablist"`/`"tab"` anterior:
+                  ese patrón ARIA implica navegación con flechas entre tabs
+                  que este control nunca implementó (Tab secuencial nomás) —
+                  ver corrección #3 arriba. `aria-pressed` describe el
+                  estado real: un botón que puede estar activo o no. */}
+              <div className="flex flex-1 items-center gap-2" role="group" aria-label="Elegir vehículo destacado">
+                {vehicles.map((vehicle, i) => (
+                  <button
+                    key={vehicle.slug}
+                    type="button"
+                    aria-pressed={i === index}
+                    aria-label={`Ver ${vehicle.title}`}
+                    onClick={() => goToVehicle(i)}
+                    className={cn(
+                      'h-1 flex-1 rounded-full transition-colors',
+                      i === index ? 'bg-auto-accent' : 'bg-white/10 hover:bg-white/25'
+                    )}
+                  />
+                ))}
+              </div>
+              {canAutoRotate && (
                 <button
-                  key={vehicle.slug}
                   type="button"
-                  role="tab"
-                  aria-selected={i === index}
-                  aria-label={`Ver ${vehicle.title}`}
-                  onClick={() => setIndex(i)}
-                  className={cn(
-                    'h-1 flex-1 rounded-full transition-colors',
-                    i === index ? 'bg-auto-accent' : 'bg-white/10 hover:bg-white/25'
+                  onClick={() => setIsPlaying((prev) => !prev)}
+                  aria-pressed={!isPlaying}
+                  aria-label={isPlaying ? 'Pausar rotación automática' : 'Reanudar rotación automática'}
+                  className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-auto-text-secondary transition-colors hover:bg-white/10 hover:text-auto-text"
+                >
+                  {isPlaying ? (
+                    <svg viewBox="0 0 16 16" aria-hidden="true" className="h-3 w-3 fill-current">
+                      <rect x="3" y="2" width="3.2" height="12" rx="0.6" />
+                      <rect x="9.8" y="2" width="3.2" height="12" rx="0.6" />
+                    </svg>
+                  ) : (
+                    <svg viewBox="0 0 16 16" aria-hidden="true" className="h-3 w-3 fill-current">
+                      <path d="M4 2.5v11l10-5.5-10-5.5z" />
+                    </svg>
                   )}
-                />
-              ))}
+                </button>
+              )}
             </div>
           )}
         </div>
