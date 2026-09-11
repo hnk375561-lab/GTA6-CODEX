@@ -2802,3 +2802,92 @@ video,
 .dark .media-reveal--loading {
   background: linear-gradient(110deg, #1a2029 30%, #232b38 45%, #141920 60%, #1a2029 75%);
 }
+
+/* ============================================================
+   Home: dossier técnico (rediseño 180°, sept 2026)
+   ------------------------------------------------------------
+   Reemplaza por completo el lenguaje "Apple/Vercel" (blanco, viewport
+   pineado con crossfade, eyebrow+headline+CTA centrado) que tenía la
+   home hasta ahora — ver el comentario largo en `app/page.tsx` para el
+   detalle de la decisión. La home pasa a ser scroll de documento normal
+   (nada de `PinnedScrollStages`) presentado como un EXPEDIENTE/plano
+   técnico: lienzo oscuro permanente (fuerza `.dark` sobre un contenedor
+   propio, independiente del toggle claro/oscuro del resto del sitio —
+   mismo patrón ya usado por `dashboard/page.tsx`, ver tailwind.config.js),
+   números de sección en mono grande en vez de tarjetas repetidas, y
+   marcas de registro (crop marks) en las esquinas de las piezas
+   principales en vez de bordes redondeados con sombra difusa.
+   Estas clases son ADITIVAS y viven solo bajo `.dossier` — no tocan
+   ninguna regla existente ni ningún componente fuera de la home. */
+.dossier {
+  --dossier-line: color-mix(in srgb, var(--c-pink) 22%, transparent);
+  position: relative;
+}
+
+/* Fondo de grilla de plano técnico: dos rejillas superpuestas (fina +
+   gruesa cada 4ta línea), muy tenues, para dar textura de "papel
+   cuadriculado" sin competir con el contenido. `background-attachment`
+   normal (no `fixed`, evita jank de scroll en mobile/Safari). */
+.dossier-grid {
+  background-image:
+    linear-gradient(var(--dossier-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--dossier-line) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 88px 88px, 88px 88px, 22px 22px, 22px 22px;
+  background-position: -1px -1px;
+}
+
+/* Marca de registro (crop mark) de esquina — decorativa, sustituye el
+   lenguaje "card con sombra redondeada" por el de una hoja de plano con
+   sus propias marcas de corte/registro. `data-corner` decide qué borde
+   dibuja cada instancia (se colocan 4 divs, uno por esquina). */
+.dossier-corner {
+  position: absolute;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-color: color-mix(in srgb, var(--c-pink) 70%, transparent);
+  pointer-events: none;
+}
+.dossier-corner[data-corner='tl'] { top: -1px; left: -1px; border-top: 2px solid; border-left: 2px solid; }
+.dossier-corner[data-corner='tr'] { top: -1px; right: -1px; border-top: 2px solid; border-right: 2px solid; }
+.dossier-corner[data-corner='bl'] { bottom: -1px; left: -1px; border-bottom: 2px solid; border-left: 2px solid; }
+.dossier-corner[data-corner='br'] { bottom: -1px; right: -1px; border-bottom: 2px solid; border-right: 2px solid; }
+
+/* Número de índice de sección ("01", "02"…): tipografía mono enorme,
+   trazo hueco (solo contorno) para que ocupe espacio sin pesar más que
+   el título real de la sección — el mismo truco que un plano de
+   ingeniería usa para numerar piezas sin que el número compita con el
+   dibujo. */
+.dossier-index {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(var(--color-neutral-700));
+  font-size: clamp(3.5rem, 9vw, 7rem);
+}
+
+/* Regla horizontal punteada estilo "línea de corte" — separador de
+   sección alternativo al `.section-divider` degradado (ese sigue en uso
+   en el resto del sitio); acá se prefiere una línea técnica, no un
+   gradiente editorial. */
+.dossier-hr {
+  border: none;
+  border-top: 1px dashed rgb(var(--color-edge-strong));
+}
+
+/* Etiqueta de coordenada/anotación (ej. "§ 04 · RANKINGS"), como una
+   nota al margen de un plano. */
+.dossier-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dossier-grid {
+    background-attachment: scroll;
+  }
+}

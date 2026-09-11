@@ -132,15 +132,20 @@ export default async function RootLayout({
         <PageTransitionBridge />
         <div id="page-content" className="relative z-10 flex min-h-dvh flex-1 flex-col">
           <Header />
-          <HideOnHome>
-            <TrendingBar />
-          </HideOnHome>
+          {/* REDISEÑO 180° (sept 2026): la home dejó de ser un viewport
+              pineado de 0-scroll-de-página (`HideOnHome` existía para
+              que `TrendingBar`/`Footer` no le robaran alto real a ese
+              panel — ver `HideOnHome.tsx`) y pasó a un documento de
+              scroll normal como el resto del sitio, así que ambos
+              vuelven a renderizarse en `/` igual que en cualquier otra
+              ruta. `HideOnHome` no se borra (queda sin uso) por si
+              alguna futura sección de la home vuelve a necesitar un
+              layout de viewport fijo. */}
+          <TrendingBar />
           <main id="main-content" className="flex-1">
             {children}
           </main>
-          <HideOnHome>
-            <Footer />
-          </HideOnHome>
+          <Footer />
         </div>
         <HideOnHome>
           <StickyAdUnit />

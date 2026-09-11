@@ -118,26 +118,39 @@ module.exports = {
           'monospace',
         ],
       },
+      // Rediseño "Placa Técnica" → dossier de ingeniería (ver globals.css,
+      // sección "Home: dossier técnico"): la escala de radios pasa de
+      // "software premium redondeado" (0.5–1.75rem, lenguaje Apple/Vercel)
+      // a esquinas casi rectas, como una placa remachada o un plano
+      // impreso — ningún componente cambia de clase (siguen pidiendo
+      // `rounded-lg`, `rounded-xl`, etc.), solo cambia lo que esas claves
+      // producen, así el giro de lenguaje visual se propaga solo a TODO
+      // el sitio (cards, botones, chips, inputs) sin tocar cada uso.
+      // `rounded-full` (píldoras, avatares) es una clase núcleo de
+      // Tailwind, no de esta escala — no se ve afectada a propósito.
       borderRadius: {
-        sm: '0.3rem',
-        DEFAULT: '0.5rem',
-        md: '0.65rem',
-        lg: '0.9rem',
-        xl: '1.25rem',
-        '2xl': '1.75rem',
+        sm: '0.05rem',
+        DEFAULT: '0.05rem',
+        md: '0.1rem',
+        lg: '0.125rem',
+        xl: '0.2rem',
+        '2xl': '0.35rem',
       },
       boxShadow: {
-        'auto-sm': '0 1px 2px rgba(0, 0, 0, 0.5)',
-        'auto-md': '0 4px 6px rgba(0, 0, 0, 0.6)',
-        'auto-lg': '0 10px 15px rgba(0, 0, 0, 0.7)',
-        'auto-xl': '0 20px 25px rgba(0, 0, 0, 0.8)',
+        // Sombra "de plano": sin blur, con offset duro y un filo de 1px
+        // más oscuro debajo — el mismo principio que una pieza técnica
+        // impresa sobre papel, no el glow difuso de una UI de software.
+        'auto-sm': '2px 2px 0 0 rgba(0, 0, 0, 0.9)',
+        'auto-md': '4px 4px 0 0 rgba(0, 0, 0, 0.9)',
+        'auto-lg': '8px 8px 0 0 rgba(0, 0, 0, 0.85)',
+        'auto-xl': '12px 12px 0 0 rgba(0, 0, 0, 0.8)',
         // Nombres de key sin tocar (evita renombrar clases en ~15
-        // componentes); los valores pasan de glow neón a un resplandor
-        // corto y contenido, más "indicador LED de panel" que "cartel de
-        // neón nocturno".
-        'glow-pink': '0 0 24px -6px rgba(255, 106, 26, 0.5)',
-        'glow-cyan': '0 0 24px -6px rgba(61, 132, 255, 0.45)',
-        'glow-gold': '0 0 20px -8px rgba(201, 163, 95, 0.4)',
+        // componentes); los valores pasan de resplandor difuso a un
+        // trazo de "borde señalizador" — el mismo acento pero como línea,
+        // no como aura.
+        'glow-pink': '0 0 0 1px rgba(255, 106, 26, 0.55)',
+        'glow-cyan': '0 0 0 1px rgba(61, 132, 255, 0.5)',
+        'glow-gold': '0 0 0 1px rgba(201, 163, 95, 0.45)',
       },
       letterSpacing: {
         tightest: '-0.04em',

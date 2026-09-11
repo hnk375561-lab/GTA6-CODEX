@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Suspense, type CSSProperties } from 'react'
+import { Suspense, type ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { EntityType, type Vehicle } from '@/types'
 import { SITE_NAME } from '@/config/site'
@@ -23,13 +23,12 @@ import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { CategoryCardMedia } from '@/components/ui/CategoryCardMedia'
 import { FinancingCalculator } from '@/components/ui/FinancingCalculator'
 import { FinancingCalculatorSkeleton } from '@/components/ui/loading'
+import { Reveal } from '@/components/ui/Reveal'
 import { EntityCard } from '@/components/entities/EntityCard'
 import { getCategoryPreviewImages } from '@/lib/images'
 import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
 import { CategoryQuickFilter } from '@/components/home/CategoryQuickFilter'
 import { ManufacturersMarquee } from '@/components/home/ManufacturersMarquee'
-import { PinnedScrollStages, type Stage } from '@/components/home/PinnedScrollStages'
-import { Reveal } from '@/components/home/StageProgress'
 import { TiltCard } from '@/components/home/Parallax'
 import { AdUnit } from '@/components/monetization/AdUnit'
 import { CompareShowcase, type CompareShowcaseVehicle } from '@/components/home/CompareShowcase'
@@ -37,9 +36,6 @@ import { EvidenceSpotlight, type EvidenceHighlight } from '@/components/home/Evi
 import { RankingsSpotlight, type RankingSpotlight } from '@/components/home/RankingsSpotlight'
 import { FeaturedCarousel } from '@/components/home/FeaturedCarousel'
 import { HomeFaqPanel, type FaqItem } from '@/components/home/HomeFaqPanel'
-import { RecoveryCta } from '@/components/home/RecoveryCta'
-import { FaqClosure } from '@/components/home/FaqClosure'
-import { SectionBridge } from '@/components/ui/SectionBridge'
 import { formatRelativeTime } from '@/lib/utils'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -47,49 +43,69 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Home rediseñada (agosto 2026, ver conversación de rediseño): en vez de
- * una página larga que se scrollea sección por sección, el viewport queda
- * fijo y el scroll pasa de un panel al siguiente por crossfade — ver
- * `PinnedScrollStages`. Estética: blanco/tipografía grande (referencia
- * explícita: Apple / Vercel), cards oscuras como único acento de color
- * sobre el fondo blanco, en vez del hero oscuro con glow que tenía antes
- * la home. El resto del sitio (fichas, listados, comparador) no cambia.
+ * ============================================================================
+ * HOME — REDISEÑO RADICAL (sept. 2026, "cambio de 180°, no una iteración")
+ * ============================================================================
  *
- * REDISEÑO DE HERO (sept. 2026, "cambio más drástico posible" pedido tras
- * 4 iteraciones del hero anterior que el usuario consideró todas variaciones
- * del mismo esqueleto — eyebrow + headline + CTA a la izquierda, foto a la
- * derecha): el hero deja de ser una pieza de marketing (headline rotativo +
- * CTA + showroom fotográfico, `HeroShowroom.tsx`, que sigue en el repo sin
- * uso) y pasa a ser directamente el comparador en vivo (`CompareShowcase`,
- * el mismo componente que antes vivía como panel 3 más abajo) a pantalla
- * completa, sin headline ni CTA compitiendo por atención. La idea: en vez
- * de PROMETER "evidencia citada" en un titular, la primera pantalla ya es
- * una demo funcional del diferencial real del sitio — el usuario arrastra/
- * toca "Cambiar" antes de haber leído una sola palabra de marketing. Orden
- * narrativo resultante: Hero (=Comparador) → Categorías → Destacados →
- * Evidencia → Rankings → Noticias → Financiamiento → CTA final — un panel
- * menos que antes, porque el comparador ya no se repite dos veces.
+ * QUÉ HABÍA ANTES (ver CHANGELOG / git history de este archivo si hace
+ * falta el detalle completo): un viewport pineado a 100dvh donde el
+ * scroll pasaba de un panel al siguiente por crossfade (`PinnedScrollStages`),
+ * sobre lienzo blanco, tipografía grande estilo Apple/Vercel, con el hero
+ * ya convertido en el comparador en vivo (`CompareShowcase`) en vez de un
+ * eyebrow+headline+CTA — un salto real en su momento, pero encerrado en
+ * una envoltura visual (blanco, cards redondeadas, crossfade de panel
+ * completo) que, tras 4-5 iteraciones previas, seguía leyéndose como
+ * "otra landing SaaS prolija".
  *
- * Fase 1–3 (informe de auditoría, §5): se habían agregado en su momento 4
- * paneles nuevos al sistema de crossfade — Comparador en vivo, Un dato-una
- * fuente, Rankings destacados y Financiamiento. Cada uno reusa datos y
- * lógica ya validada en otras páginas del sitio (rankings.ts, evidence.ts,
- * FinancingCalculator) — ningún panel nuevo inventa un cálculo o un dato
- * que no exista ya en otro lugar del sitio. El panel Comparador (1.3) es
- * la excepción a "otra página": no resume la lógica de `/comparar`, la
- * envuelve — reusa el mismo pool de vehículos `featured` que ya trae el
- * panel Destacados (`CompareShowcase`, ver comentario en su fetch más
- * abajo) en vez de los pares fijos de `fixed-comparisons.ts` que usaba la
- * versión original de ese panel (`LiveCompareTeaser`).
+ * QUÉ CAMBIA ACÁ (ruptura de composición + de sistema visual, no solo de
+ * paleta):
  *
- * Riesgo a monitorear (mismo informe): con 9 paneles en vez de 5, cada
- * panel nuevo cuesta scroll físico completo antes de dar contenido, y el
- * usuario puede perder la sensación de progreso real. Mitigado en parte
- * por `scrollVh` por panel (paneles de lectura piden menos recorrido que
- * los de interacción — ver comentarios en cada `Stage` de abajo) y por el
- * agrupado de los dots de progreso (`PinnedScrollStages`), pero sigue
- * siendo una decisión a revisar con analytics de scroll-depth/abandono
- * post-release.
+ * 1. Se elimina el viewport pineado. La home vuelve a ser un documento de
+ *    scroll normal — como el resto del sitio — así que `TrendingBar` y
+ *    `Footer` (antes ocultos en `/` vía `HideOnHome`, ver `layout.tsx`)
+ *    vuelven a aparecer acá también. Esto también mata la necesidad del
+ *    header "claro y flotante" exclusivo de home (`Header.tsx` ya no
+ *    diferencia `/` del resto de las rutas).
+ *
+ * 2. Lienzo permanentemente oscuro ("dossier técnico"), independiente del
+ *    toggle claro/oscuro del resto del sitio: se fuerza `.dark` sobre un
+ *    contenedor propio (mismo patrón que ya usa `dashboard/page.tsx`),
+ *    así que esta página reutiliza la escala de color oscura ya
+ *    diseñada y auditada (`AUDITORIA-FONDO-OSCURO-COMPLETA.md`) sin
+ *    inventar una paleta nueva ni tocar ningún token global — el resto
+ *    del sitio sigue exactamente igual, con su propio toggle intacto.
+ *
+ * 3. Composición: nada de tarjetas centradas apiladas con el mismo
+ *    patrón "eyebrow + H2 centrado + grid" repetido panel tras panel.
+ *    Cada sección numerada (01, 02, 03…) como una hoja de un expediente,
+ *    con el número como pieza tipográfica enorme (mono, solo contorno) en
+ *    vez de un ícono o una card — asimetría real: número a la izquierda,
+ *    contenido a la derecha en desktop (`.dossier-index`, ver
+ *    globals.css), grillas de categorías/noticias con una pieza
+ *    dominante en vez de todas del mismo tamaño.
+ *
+ * 4. El hero deja el centrado clásico: título editorial enorme,
+ *    desalineado a la izquierda, con el comparador en vivo presentado
+ *    como una "hoja de diagnóstico" con marcas de registro en las
+ *    esquinas (`.dossier-corner`) en vez de una card blanca con sombra.
+ *    Se conserva el PRINCIPIO del hero anterior (la primera acción es
+ *    interactuar con datos reales, no leer una promesa) porque es un
+ *    diferencial genuino del sitio — lo que cambia es la envoltura
+ *    visual completa, no el concepto de producto.
+ *
+ * 5. Radios y sombras: `tailwind.config.js` cambia la escala completa de
+ *    `borderRadius`/`boxShadow` (mismas claves, valores nuevos — casi sin
+ *    curva, sombra dura con offset en vez de blur), así que TODA card del
+ *    sitio (no solo home) hereda el giro "placa técnica" sin que haga
+ *    falta tocar cada componente uno por uno.
+ *
+ * Los componentes de datos/interacción (CompareShowcase, RankingsSpotlight,
+ * EvidenceSpotlight, FeaturedCarousel, CategoryQuickFilter,
+ * ManufacturersMarquee, HomeFaqPanel, FinancingCalculator) NO cambian su
+ * lógica ni sus props — solo cambia la envoltura/composición alrededor,
+ * que es lo que se reescribe acá. `PinnedScrollStages.tsx`,
+ * `HeroShowroom.tsx` y el resto de heroes legacy quedan sin uso en el
+ * repo, sin borrar, por si se quiere retomar algo puntual más adelante.
  */
 
 const CATEGORY_ORDER: EntityType[] = [EntityType.VEHICLE, EntityType.NEWS, EntityType.GUIDE]
@@ -100,28 +116,23 @@ const CATEGORY_ACCENT: Record<EntityType, string> = {
   [EntityType.MANUFACTURER]: '#8a8f98',
 }
 
-/** Mínimo de vehículos `featured` con imagen resuelta que necesita el panel
- *  "Comparador en vivo" para tener sentido: `CompareShowcase` ya se
- *  autoprotege devolviendo `null` con menos de 2 (no puede haber lado A y
- *  lado B), este umbral es el que usa `page.tsx` para decidir si el
- *  `Stage` completo se agrega o no al track (evita un panel vacío en vez
- *  de dejar que el componente cliente lo resuelva a destiempo). */
+/** Mínimo de vehículos `featured` con imagen resuelta que necesita el
+ *  panel "Comparador en vivo" del hero para tener sentido (necesita un
+ *  lado A y un lado B) — por debajo de este umbral, el hero cae a un CTA
+ *  mínimo en vez de montar `CompareShowcase` con un pool insuficiente. */
 const MIN_COMPARE_SHOWCASE_POOL = 2
 
-/** Cuántas fichas con fuente citada entran en el panel "Un dato, una
- *  fuente" — un grid de 3 columnas en desktop, así que un múltiplo de 3
- *  se ve prolijo tanto en el corte de 1 fila (mobile) como de 2 (desktop). */
+/** Cuántas fichas con fuente citada entran en "Un dato, una fuente" —
+ *  grid de 3 columnas en desktop, múltiplo de 3 para que corte prolijo
+ *  tanto en 1 fila (mobile) como en 2 (desktop). */
 const HOME_EVIDENCE_HIGHLIGHTS_LIMIT = 6
 
-/** Cuántas posiciones de cada ranking se muestran en el panel "Rankings
- *  destacados" (2.3, mini-leaderboard: top 3, no el ranking completo) —
- *  el ranking completo (hasta `RANKING_TOP_N`) vive en `/rankings/[slug]`. */
+/** Posiciones de cada ranking que entran en el mini-leaderboard del
+ *  panel "Rankings" (el ranking completo vive en `/rankings/[slug]`). */
 const HOME_RANKING_TOP_ENTRIES = 3
 
-/** Orden de prioridad de nivel de evidencia para elegir qué fichas
- *  destacar en "Un dato, una fuente": primero las de mayor certeza
- *  editorial (mismo orden que ya usa `EvidenceBlock`/`EVIDENCE_STAMP_META`,
- *  acá solo como criterio de selección, no de presentación). */
+/** Prioridad de nivel de evidencia para elegir qué fichas destacar en
+ *  "Un dato, una fuente" (mismo orden que `EVIDENCE_STAMP_META`). */
 const EVIDENCE_LEVEL_PRIORITY: Record<EvidenceLevel, number> = {
   'oficial-nombrado': 0,
   'oficial-visual-multifuente': 1,
@@ -130,36 +141,74 @@ const EVIDENCE_LEVEL_PRIORITY: Record<EvidenceLevel, number> = {
   especulativo: 4,
 }
 
-/** Fallback del Suspense que envuelve `FinancingCalculator` dentro del
- *  panel de la home — mismo componente que ya usa `/financiamiento`
- *  (lee `useSearchParams` para el prefill opcional de precio), mismo
- *  placeholder mientras React hidrata. */
 function FinancingCalculatorFallback() {
   return <FinancingCalculatorSkeleton />
 }
 
+/**
+ * Cabecera de sección numerada ("hoja de expediente"): número mono
+ * hueco a la izquierda (sticky en desktop), etiqueta + título a la
+ * derecha. Reemplaza el patrón repetido "eyebrow centrado + H2 centrado"
+ * que tenía cada panel del track anterior — acá cada sección arranca
+ * con la misma anatomía pero NUNCA centrada, para que el scroll normal
+ * se sienta como avanzar páginas de un mismo documento, no como pasar
+ * de una landing-block a la siguiente.
+ */
+function DossierSectionHeading({
+  index,
+  tag,
+  title,
+  lede,
+  action,
+}: {
+  index: string
+  tag: string
+  title: string
+  lede?: ReactNode
+  action?: { href: string; label: string }
+}) {
+  return (
+    <div className="mb-10 grid gap-4 lg:grid-cols-[7rem_1fr] lg:gap-10 xl:grid-cols-[9rem_1fr]">
+      <Reveal direction="left">
+        <span aria-hidden="true" className="dossier-index block">
+          {index}
+        </span>
+      </Reveal>
+      <Reveal className="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p className="dossier-tag mb-3 text-neutral-500">{tag}</p>
+          <h2 className="max-w-2xl font-display text-3xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
+            {title}
+          </h2>
+          {lede && <p className="mt-4 max-w-xl text-sm leading-relaxed text-neutral-500 sm:text-base">{lede}</p>}
+        </div>
+        {action && (
+          <Link
+            href={action.href}
+            className="link-underline hidden shrink-0 text-sm font-semibold text-neutral-500 hover:text-neutral-900 sm:inline-block"
+          >
+            {action.label} →
+          </Link>
+        )}
+      </Reveal>
+    </div>
+  )
+}
+
+/** Las 4 marcas de registro/crop-mark de una esquina — ver `.dossier-corner`
+ *  en globals.css. El contenedor que las use debe ser `relative`. */
+function DossierCorners() {
+  return (
+    <>
+      <span aria-hidden="true" className="dossier-corner" data-corner="tl" />
+      <span aria-hidden="true" className="dossier-corner" data-corner="tr" />
+      <span aria-hidden="true" className="dossier-corner" data-corner="bl" />
+      <span aria-hidden="true" className="dossier-corner" data-corner="br" />
+    </>
+  )
+}
+
 export default async function HomePage() {
-  // Solo vehículos: son los únicos tipos con foto real hoy (96.8% de
-  // cobertura) — guías/noticias no tienen imagen propia, así que mezclarlas
-  // acá dejaba cards sin foto (fallback CSS) en la sección "Destacados".
-  // Límite en 12 (no 6): hoy hay 8 vehículos marcados `featured`, así que
-  // esto ya trae "todos" los que existen — el 12 solo da margen para
-  // cuando se marquen más sin tener que volver a tocar este número.
-  //
-  // `allVehicles`: catálogo completo de vehículos, necesario para "Un
-  // dato, una fuente" (recorre todos los vehículos + noticias buscando
-  // `evidence.primarySource`, ver más abajo). El panel Comparador en vivo
-  // (1.3) NO lo necesita — su pool sale de `featured`, que ya viaja en
-  // este mismo `Promise.all` — así que no se agrega ningún fetch nuevo acá
-  // para ese panel. Rankings destacados tampoco: reusa
-  // `getAvailableRankings()`, que hace su propio fetch equivalente puertas
-  // adentro — mismo patrón que ya usan `/comparar` y `/rankings`, no una
-  // fuente de datos nueva.
-  //
-  // Marquee de fabricantes (2.2, panel 2.5): `getManufacturerMarqueeItems()`
-  // trae las entidades `MANUFACTURER` reales (75 en el dataset) con su logo
-  // ya resuelto — mismo motivo que el resto de este `Promise.all`, no puede
-  // resolverse en el componente cliente porque depende de `fs`.
   const [featured, totalCount, countsByType, allNews, allVehicles, availableRankings, manufacturerMarqueeItems] =
     await Promise.all([
       getFeaturedEntities(12, EntityType.VEHICLE),
@@ -172,20 +221,6 @@ export default async function HomePage() {
     ])
   const vehicles = allVehicles as Vehicle[]
 
-  // NOTA (rediseño de hero, sept. 2026): tanto el buscador rápido con
-  // ejemplos rotativos como el eyebrow de confianza (fecha de última
-  // actualización + % de cobertura de evidencia) que vivían en el hero
-  // anterior se sacaron por completo — el hero ahora es directamente el
-  // comparador en vivo (ver los `Stage`s más abajo), sin ningún texto ni
-  // dato compitiendo por atención antes de la interacción. El buscador
-  // sigue disponible entero en `/buscar`; la cobertura de evidencia real
-  // se sigue viendo, con la misma cifra sin re-inventar, en el panel "Un
-  // dato, una fuente" más abajo (`evidenceHighlights`).
-
-  // 5.B (Fase 5, prioridad B): datos del filtro rápido de carrocería del
-  // panel Categorías — ver `computeCategoryQuickFilterOptions` en
-  // `vehicle-category.ts` para el criterio completo (solo categorías con
-  // página SEO real, con una muestra de títulos reales cada una).
   const categoryQuickFilterOptions = computeCategoryQuickFilterOptions(vehicles)
 
   const latestNews = [...allNews]
@@ -194,32 +229,13 @@ export default async function HomePage() {
   const latestNewsImages = Object.fromEntries(
     latestNews.map((entity) => [entity.slug, resolveEntityDisplayImage(entity)])
   )
-  // 5.B (Fase 5, prioridad B): fecha relativa por noticia, para
-  // `EntityCard`'s `dateLabel` — mismo criterio que `latestNewsImages`
-  // arriba (se resuelve acá, server component, y viaja ya formateada al
-  // cliente para evitar cualquier desincronización de `new Date()` entre
-  // build y visita — ver el comentario largo en `EntityCard.tsx`).
   const latestNewsDates = Object.fromEntries(
     latestNews.map((entity) => [entity.slug, formatRelativeTime(entity.createdAt)])
   )
 
-  // NOTA (rediseño de hero, sept. 2026): el banner promocional propio
-  // del hero (antes acá, `HeroPromoBanner`/`heroPromoBannerItem`) se
-  // saca del hero — era la típica "card de más" que compite contra el
-  // vehículo rotador y el CTA. El panel "Destacados" más abajo en esta
-  // misma página ya muestra los `featured` en su propio carrusel
-  // (`FeaturedCarousel`), así que la exposición de esos vehículos no se
-  // pierde, solo deja de duplicarse en el hero.
-
   const breadcrumbLd = generateBreadcrumbJsonLd([{ label: 'Inicio', url: '/' }])
   const websiteLd = generateWebsiteJsonLd()
 
-  // FAQ corta antes del footer (Prioridad C, ver comentario largo en
-  // `HomeFaqPanel`). Preguntas elegidas para resolver la duda real más
-  // probable de quien llega al final del recorrido (evidencia/rankings/
-  // financiamiento ya vistos) — incluye el pivote GTA6→AutoFicha porque
-  // es, en los hechos, la pregunta que más contexto rompe si alguien
-  // llega al dominio esperando el juego (ver README, sección del pivote).
   const faqItems: FaqItem[] = [
     {
       question: '¿De dónde salen los datos de cada ficha?',
@@ -259,16 +275,6 @@ export default async function HomePage() {
     categories.map((type) => [type, getCategoryPreviewImages(type, 3)])
   ) as Record<EntityType, ReturnType<typeof getCategoryPreviewImages>>
 
-  // Comparador en vivo (1.3): pool de vehículos `featured` con imagen ya
-  // resuelta en servidor — mismo criterio que `heroShowcaseVehicles`
-  // arriba (`resolveEntityDisplayImage` depende de `fs`, no puede llamarse
-  // desde `CompareShowcase`, client component). A diferencia del hero, acá
-  // no se descartan los vehículos sin imagen: `CompareShowcase` ya maneja
-  // "Sin imagen" por vehículo (ver `VehiclePane`), y descartarlos acá
-  // reduciría el pool disponible para "Cambiar A/B" sin necesidad. Viaja
-  // completo al cliente porque esa es la gracia del panel: reelige al azar
-  // DENTRO de este pool sin volver a pedir nada al servidor (criterio de
-  // aceptación de la 1.3, "sin salir de home").
   const featuredVehicles = featured as Vehicle[]
   const compareShowcasePool: CompareShowcaseVehicle[] = featuredVehicles.map((vehicle) => ({
     slug: vehicle.slug,
@@ -282,17 +288,6 @@ export default async function HomePage() {
     image: resolveEntityDisplayImage(vehicle),
   }))
 
-  // Par inicial (A/B) elegido por contraste real, no al azar: recorre
-  // `featuredVehicles` (mismos índices que `compareShowcasePool`, viene
-  // del mismo `.map` de arriba) y se queda con el par de mayor diferencia
-  // de potencia — mismo parser ya validado que usa `rankings.ts`,
-  // `parsePowerHp`, que espera un `Vehicle` completo (por eso se calcula
-  // acá y no sobre `compareShowcasePool`, que es un recorte de campos) —
-  // para que el primer render ya muestre dos vehículos claramente
-  // distintos en vez de depender de que el usuario toque "Cambiar" para
-  // notarlo. Si ningún par tiene potencia parseable en ambos lados, cae a
-  // los dos primeros del pool (`[0, 1]`) — nunca deja el panel sin par
-  // inicial.
   let compareInitialIndexA = 0
   let compareInitialIndexB = 1
   let compareBestPowerDiff = -1
@@ -310,10 +305,6 @@ export default async function HomePage() {
     }
   }
 
-  // Un dato, una fuente: fichas reales con `evidence.primarySource`
-  // cargado, priorizadas por nivel de evidencia (más certeras primero) —
-  // el texto de la fuente se muestra tal cual está en el contenido, nunca
-  // reescrito ni resumido para este panel.
   const evidenceHighlights: EvidenceHighlight[] = [...vehicles, ...allNews]
     .filter((entity): entity is typeof entity & { evidence: NonNullable<typeof entity.evidence> } =>
       Boolean(entity.evidence?.primarySource)
@@ -337,19 +328,10 @@ export default async function HomePage() {
       }
     })
 
-  // Rankings destacados: los mismos 4 rankings reales de `/rankings`, ya
-  // filtrados por `getAvailableRankings()` con el mismo umbral de
-  // contenido (`RANKING_MIN_ELIGIBLE`) — acá solo se recorta el top N que
-  // entra en el panel compacto.
   const rankingsSpotlightData: RankingSpotlight[] = availableRankings.map((ranking) => ({
     slug: ranking.def.slug,
     shortTitle: ranking.def.shortTitle,
     title: ranking.def.title,
-    // 2.3: se manda cruda (no solo `metricLabel`, ya formateado) para que
-    // `RankingsSpotlight` pueda pasarla por `getBestValueIndices`
-    // (`vehicle-compare-best.ts`) y marcar empates en el mejor valor del
-    // top 3 — mismo criterio 'asc'/'desc' que ya ordena `computeRanking`,
-    // solo se traduce acá a 'min'/'max' (el vocabulario de esa utilidad).
     direction: ranking.def.direction === 'asc' ? 'min' : 'max',
     eligibleCount: ranking.eligibleCount,
     topEntries: ranking.entries.slice(0, HOME_RANKING_TOP_ENTRIES).map((entry) => ({
@@ -361,419 +343,311 @@ export default async function HomePage() {
     })),
   }))
 
-  const stages: Stage[] = [
-    // 1. Hero — CAMBIO DE PARADIGMA (sept. 2026, "cambio más drástico
-    // posible" pedido explícitamente tras 4 rediseños previos que seguían
-    // siendo la misma estructura eyebrow+headline+CTA+foto con otro
-    // vestuario): el hero deja de ser una pieza de marketing y pasa a ser
-    // directamente el widget del comparador en vivo (`CompareShowcase`,
-    // el mismo que antes vivía como panel aparte más abajo) a la vista
-    // completa, sin headline rotativo, sin CTA grande, sin foto estática
-    // de fondo — lo primero que el usuario hace en el sitio es una acción
-    // real (tocar "Cambiar", arrastrar en mobile), no leer una promesa.
-    // El único texto es un eyebrow mínimo de una línea para orientar qué
-    // es esto; nada compite con el widget por atención. `HeroShowroom.tsx`
-    // (el hero anterior) queda sin uso en el repo, no se borró por si se
-    // quiere retomar algo puntual de ahí (buscador rotativo, etc.).
-    //
-    // `scrollVh` sube a 210 (antes 130, cuando el hero era solo lectura):
-    // ahora es un panel interactivo — mismo peso que le daba antes el
-    // panel "Comparador" cuando vivía aparte más abajo (230), ligeramente
-    // menos porque acá no hay heading+link de cierre alrededor pidiendo
-    // su propio tiempo de lectura.
-    //
-    // Fallback (`compareShowcasePool.length < MIN_COMPARE_SHOWCASE_POOL`):
-    // el hero nunca puede quedar vacío, así que si el catálogo todavía no
-    // tiene suficientes vehículos `featured` con specs contrastantes cae a
-    // un CTA mínimo de una línea — mismo criterio de "nunca un panel roto"
-    // que ya usaba el panel Comparador cuando decidía si se agregaba o no
-    // al track.
-    {
-      id: 'hero',
-      label: 'Inicio',
-      scrollVh: 210,
-      content:
-        compareShowcasePool.length >= MIN_COMPARE_SHOWCASE_POOL ? (
-          <div className="mx-auto w-full max-w-4xl text-center">
-            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
-              Comparador en vivo · elegí, cambiá, decidí
-            </p>
-            <CompareShowcase
-              pool={compareShowcasePool}
-              initialIndexA={compareInitialIndexA}
-              initialIndexB={compareInitialIndexB}
-            />
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/comparar"
-                className="cta-shine tap-scale group inline-flex items-center justify-center gap-2 rounded-full bg-inverse px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
-              >
-                Abrir el comparador completo{' '}
-                <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
-                  →
-                </span>
-              </Link>
-              <Link
-                href={`/${EntityType.VEHICLE}`}
-                className="tap-scale text-sm font-semibold text-neutral-500 underline underline-offset-4 hover:text-neutral-900"
-              >
-                Ver todo el catálogo
-              </Link>
-            </div>
-          </div>
-        ) : (
-          <div className="mx-auto w-full max-w-2xl text-center">
-            <h1 className="font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
-              {SITE_NAME}
-            </h1>
-            <div className="mt-8 flex justify-center">
-              <Link
-                href={`/${EntityType.VEHICLE}`}
-                className="cta-shine tap-scale inline-flex items-center justify-center rounded-full bg-inverse px-8 py-4 font-semibold text-white transition-transform hover:-translate-y-0.5"
-              >
-                Ver el catálogo
-              </Link>
-            </div>
-          </div>
-        ),
-    },
-    // 2. Categorías — cada card entra con su propio delay en la cascada.
-    // `scrollVh` default (sin especificar): grid de lectura/navegación,
-    // ni tan liviano como "Evidencia" ni tan pesado como un panel
-    // interactivo — el valor por defecto (210) le queda bien.
-    {
-      id: 'categorias',
-      label: 'Categorías',
-      content: (
-        <div className="mx-auto w-full max-w-[96rem]">
-          <p className="mb-2 text-center text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
-            Categorías
-          </p>
-          <h2 className="mb-10 text-center font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
-            Explorá por sección
-          </h2>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {categories.map((type, i) => {
-              const density = Math.max(6, Math.round((countsByType[type] / maxCategoryCount) * 100))
-              const accent = CATEGORY_ACCENT[type]
-              return (
-                <Reveal key={type} index={i} total={categories.length} className="h-full">
-                  <Link
-                    href={`/${type}`}
-                    className="group block h-full"
-                    style={{ '--auto-corner-color': accent } as CSSProperties}
-                  >
-                    <TiltCard className="h-full">
-                      <Card hoverable className="relative flex h-full flex-col overflow-hidden !p-0 text-center">
-                        <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden">
-                          <CategoryCardMedia previews={categoryPreviews[type]} />
-                          <div className="absolute left-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-lg bg-black/40 text-white backdrop-blur">
-                            <CategoryIcon type={type} className="h-5 w-5" />
-                          </div>
-                        </div>
-                        <div className="relative z-10 flex flex-1 flex-col gap-2 px-5 py-4">
-                          <p className="font-semibold text-neutral-900">{ENTITY_TYPE_LABELS[type]}</p>
-                          <p className="text-sm text-neutral-500">
-                            {countsByType[type]} {countsByType[type] === 1 ? 'entrada' : 'entradas'}
-                          </p>
-                          <div className="h-1 w-full overflow-hidden rounded-full bg-edge" aria-hidden="true">
-                            <div className="h-full rounded-full" style={{ width: `${density}%`, background: accent }} />
-                          </div>
-                        </div>
-                      </Card>
-                    </TiltCard>
-                  </Link>
-                </Reveal>
-              )
-            })}
-          </div>
-
-          {/* Filtro rápido de carrocería (5.B): panel inline propio, no
-              parte de la grilla de categorías de arriba (esa es a nivel
-              EntityType — Vehículos/Noticias/Guías — mientras que esto
-              filtra por carrocería DENTRO de Vehículos, un nivel más
-              específico, ver `vehicle-category.ts`). Va antes del
-              marquee de fabricantes para mantener la lectura "primero
-              explorás por sección, después por carrocería, después por
-              marca". */}
-          <Reveal index={categories.length} total={categories.length + 3}>
-            <CategoryQuickFilter options={categoryQuickFilterOptions} />
-          </Reveal>
-
-          {/* 2.5 — Marquee de fabricantes: mismo panel que Categorías (no
-              un `Stage` propio, ver spec 2.2) para no sumar otro tramo
-              completo de scroll físico solo por un listado de logos. */}
-          {manufacturerMarqueeItems.length > 0 && (
-            <Reveal index={categories.length + 1} total={categories.length + 3} className="mt-12">
-              <ManufacturersMarquee manufacturers={manufacturerMarqueeItems} />
-            </Reveal>
-          )}
-
-          <Reveal index={categories.length + 2} total={categories.length + 3} className="mt-8 text-center">
-            <Link href="/buscar" className="text-sm font-semibold text-neutral-500 underline underline-offset-4 hover:text-neutral-900">
-              Ver las {totalCount} entradas del expediente →
-            </Link>
-          </Reveal>
-        </div>
-      ),
-    },
-    // 3. Destacados
-    ...(featured.length > 0
-      ? [
-          {
-            id: 'destacados',
-            label: 'Destacados',
-            content: (
-              <div className="mx-auto w-full max-w-[96rem]">
-                <div className="mb-10 flex items-end justify-between gap-4">
-                  <div>
-                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
-                      Destacados
-                    </p>
-                    <h2 className="font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
-                      Lo más relevante
-                    </h2>
-                  </div>
-                  <Link href="/galeria" className="hidden shrink-0 text-sm font-semibold text-neutral-500 underline underline-offset-4 hover:text-neutral-900 sm:inline-block">
-                    Ver galería completa
-                  </Link>
-                </div>
-                {/* 3.2: carrusel horizontal (un solo eje de scroll) en vez
-                    del grid con `max-h-[46vh] overflow-y-auto` anterior —
-                    ese patrón anidaba un scroll vertical propio dentro del
-                    panel del track pineado, que ya scrollea en vertical
-                    (doble-scroll marcado como riesgoso en §16 de la
-                    auditoría). Cada ítem lleva ancho fijo + `snap-start`;
-                    `FeaturedCarousel` aporta el `snap-x` y el drag con
-                    mouse (ver ese componente para el detalle). */}
-                <FeaturedCarousel>
-                  {featured.map((entity, i) => (
-                    <div
-                      key={`${entity.type}-${entity.slug}`}
-                      className="w-[44%] shrink-0 snap-start snap-stop-always sm:w-[30%] lg:w-[22%]"
-                    >
-                      <Reveal index={i} total={featured.length}>
-                        <TiltCard>
-                          <EntityCard
-                            entity={entity}
-                            image={resolveEntityDisplayImage(entity)}
-                            clipUrl={undefined}
-                            relationCount={featuredRelationCounts[entity.slug]}
-                            size="compact"
-                          />
-                        </TiltCard>
-                      </Reveal>
-                    </div>
-                  ))}
-                </FeaturedCarousel>
-              </div>
-            ),
-          } satisfies Stage,
-        ]
-      : []),
-    // 4. Un dato, una fuente — panel nuevo (Fase 2). De solo lectura (una
-    // cita por card, nada para tocar), así que pide el recorrido más
-    // corto de los paneles nuevos: `scrollVh` 160, por debajo del
-    // default — es justo el panel de lectura que el informe usa como
-    // ejemplo de "puede pedir menos que uno de interacción".
-    ...(evidenceHighlights.length > 0
-      ? [
-          {
-            id: 'evidencia',
-            label: 'Evidencia',
-            scrollVh: 160,
-            content: <EvidenceSpotlight highlights={evidenceHighlights} />,
-          } satisfies Stage,
-        ]
-      : []),
-    // 5. Rankings destacados — panel nuevo (Fase 3). Interactivo (tabs
-    // entre 4 rankings), `scrollVh` 210 — mismo peso que el hero, menos
-    // que el comparador (acá solo se cambia de tab, no hay tanto para
-    // explorar por ranking como pares distintos en el comparador).
-    ...(rankingsSpotlightData.length > 0
-      ? [
-          {
-            id: 'rankings',
-            label: 'Rankings',
-            scrollVh: 210,
-            content: <RankingsSpotlight rankings={rankingsSpotlightData} />,
-          } satisfies Stage,
-        ]
-      : []),
-    // 6. Noticias
-    ...(latestNews.length > 0
-      ? [
-          {
-            id: 'noticias',
-            label: 'Noticias',
-            content: (
-              <div className="mx-auto w-full max-w-[96rem]">
-                <div className="mb-10 flex items-end justify-between gap-4">
-                  <div>
-                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
-                      Últimas noticias
-                    </p>
-                    <h2 className="font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
-                      Novedades del sector
-                    </h2>
-                  </div>
-                  <Link href="/noticias" className="hidden shrink-0 text-sm font-semibold text-neutral-500 underline underline-offset-4 hover:text-neutral-900 sm:inline-block">
-                    Ver todas
-                  </Link>
-                </div>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  {latestNews.map((entity, i) => (
-                    <Reveal key={`${entity.type}-${entity.slug}`} index={i} total={latestNews.length}>
-                      <TiltCard>
-                        <EntityCard
-                          entity={entity}
-                          image={latestNewsImages[entity.slug]}
-                          dateLabel={latestNewsDates[entity.slug]}
-                        />
-                      </TiltCard>
-                    </Reveal>
-                  ))}
-                </div>
-
-                {/* AdUnit reubicado acá (5.B, Fase 5 — "revisar posición
-                    del AdUnit del hero"): antes vivía en la cascada del
-                    hero (`Reveal index={3.5}`, panel 1), compitiendo por
-                    atención con el H1/CTA/buscador — justo el contenido
-                    con más peso de conversión de todo el sitio, y
-                    encima el primer panel que ve cualquier visitante
-                    nuevo. Se mueve al panel de Noticias por dos motivos:
-                    (1) es un panel de solo lectura al que se llega tras
-                    haber recorrido Categorías/Comparador/Destacados/
-                    Evidencia — protagonismo mucho menor que el hero, sin
-                    competir con ningún CTA de conversión; (2) "debajo de
-                    un listado de contenido editorial" es el patrón de
-                    ubicación estándar de un in-feed/after-content ad
-                    unit, coherente con cómo se presenta en el resto del
-                    sitio (ficha de vehículo, comparador, fabricantes —
-                    ver esos `AdUnit` en `[entityType]/[slug]/page.tsx`,
-                    `comparar/page.tsx` y `fabricantes/page.tsx`, todos
-                    después del contenido principal, nunca antes). Mismo
-                    slot real de AdSense (`3119092668`, ver CHANGELOG —
-                    no se crea un slot nuevo), solo cambia el tracking
-                    label para reflejar la nueva ubicación en GA4. */}
-                <AdUnit
-                  slotId="3119092668"
-                  format="responsive"
-                  className="mt-10"
-                  dataTrackingLabel="ad-home-noticias"
-                />
-              </div>
-            ),
-          } satisfies Stage,
-        ]
-      : []),
-    // 7. Financiamiento — panel nuevo (Fase 1). Reusa `FinancingCalculator`
-    // tal cual (mismo componente que `/financiamiento`, con su propio
-    // `useSearchParams` — de ahí el `Suspense`). Interactivo y con varios
-    // campos para completar, así que pide el recorrido más largo de los
-    // paneles nuevos: `scrollVh` 240.
-    {
-      id: 'financiamiento',
-      label: 'Financiamiento',
-      scrollVh: 240,
-      content: (
-        <div className="mx-auto w-full max-w-2xl text-center">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
-            Financiamiento
-          </p>
-          <h2 className="mb-4 font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
-            Simulá tu cuota
-          </h2>
-          <p className="mx-auto mb-8 max-w-md text-neutral-500">
-            Precio, entrega, tasa y plazo — la misma calculadora de{' '}
-            <Link href="/financiamiento" className="underline underline-offset-4 hover:text-neutral-900">
-              /financiamiento
-            </Link>
-            , acá mismo.
-          </p>
-          <div className="mx-auto max-w-xl text-left">
-            <Suspense fallback={<FinancingCalculatorFallback />}>
-              <FinancingCalculator />
-            </Suspense>
-          </div>
-        </div>
-      ),
-    },
-    // 8. CTA final — panel de salida, liviano (nada nuevo para leer,
-    // solo dos links), `scrollVh` 150 por debajo del default.
-    //
-    // 3.3: el CTA del hero (panel 1) tiene foco "explorar" — "Ver fichas
-    // de autos" / "Comparar vehículos" más el buscador rápido, para
-    // alguien que recién llega y todavía no vio nada. Este panel es lo
-    // último del recorrido: para cuando se llega acá ya se pasó por
-    // evidencia citada (panel 5), rankings reales (panel 6) y la cuota
-    // simulada (panel 8), así que repetir el mismo mensaje de "explorar/
-    // buscar" (como el heading y botón viejos, que literalmente decían
-    // "¿Buscás algo puntual?" / "Buscar en el expediente" — casi el mismo
-    // verbo que ya se usó en el hero) desaprovecha ese recorrido. El
-    // mensaje acá pasa a "ya tenés con qué decidir": no es información
-    // nueva, es el cierre que confirma que ya se vio lo necesario para
-    // elegir con confianza. El link a `/buscar` se mantiene como opción
-    // secundaria (sigue siendo útil si alguien busca un modelo puntual),
-    // pero deja de ser el mensaje principal del panel.
-    {
-      id: 'decidir',
-      label: 'Decidí',
-      scrollVh: 150,
-      content: (
-        <div className="mx-auto w-full max-w-2xl text-center">
-          <Reveal index={0} total={3} options={{ distance: 22 }}>
-            <h2 className="font-display text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
-              Ya tenés con qué decidir
-            </h2>
-          </Reveal>
-          <Reveal index={1} total={3} className="mx-auto mt-4 max-w-md">
-            <p className="text-neutral-500">
-              Evidencia citada, rankings reales y tu cuota simulada — lo que ya viste alcanza
-              para elegir sin dudar, no hace falta buscar en otro lado.
-            </p>
-          </Reveal>
-          <Reveal index={2} total={3} className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/vehiculos" className="cta-shine tap-scale group inline-flex items-center justify-center gap-2 rounded-full bg-inverse px-8 py-4 font-semibold text-white transition-transform hover:-translate-y-0.5">
-              Elegí tu vehículo{' '}
-              <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
-                →
-              </span>
-            </Link>
-            <Link href="/buscar" className="tap-scale inline-flex items-center justify-center rounded-full border border-neutral-300 px-8 py-4 font-semibold text-neutral-900 transition-transform hover:-translate-y-0.5">
-              Buscar un modelo puntual
-            </Link>
-          </Reveal>
-        </div>
-      ),
-    },
-  ]
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }} />
-      <PinnedScrollStages stages={stages} />
-      {/* CTA de recuperación del recorrido: pill flotante que aparece en
-          los paneles de solo lectura del medio del track (Evidencia,
-          Rankings) para no dejar la home sin ruta hacia la acción
-          principal. Vive fuera del track (posición fixed) y se gobierna
-          con IntersectionObserver + dirección de scroll — ver
-          `RecoveryCta.tsx`. */}
-      <RecoveryCta />
-      {/* Prioridad C: fuera del track de crossfade a propósito — acá el
-          documento ya volvió a scroll normal (ver comentario en
-          `HomeFaqPanel`), entre el final del track y `<Footer />`
-          (renderizado por `layout.tsx`, no por esta página). */}
-      <SectionBridge className="mt-2" />
-      <HomeFaqPanel items={faqItems} />
-      {/* Cierre del recorrido: la home termina donde termina el documento
-          (el footer está oculto en home) — después del FAQ no queda
-          ninguna ruta posible. `FaqClosure` responde el "¿y ahora qué?"
-          final con un regreso al expediente (rebobina el track) y un
-          salto directo a la comparación. */}
-      <FaqClosure />
+
+      {/* `dossier dark`: lienzo oscuro forzado, independiente del toggle
+          claro/oscuro global — ver comentario largo arriba y
+          globals.css §"Home: dossier técnico". */}
+      <div className="dossier dark bg-surface-page text-neutral-900">
+        {/* ================= HERO ================= */}
+        <section className="dossier-grid relative overflow-hidden border-b border-edge pb-16 pt-14 sm:pb-24 sm:pt-20">
+          <div className="container-max">
+            <Reveal direction="chapter">
+              <p className="dossier-tag text-auto-accent">
+                Expediente {SITE_NAME} · {totalCount} entradas verificadas
+              </p>
+            </Reveal>
+
+            {/* Título editorial desalineado — nada de headline centrado
+                sobre foto: dos líneas de escala muy distinta, la segunda
+                corrida a la derecha y en el acento naranja de "señal de
+                taller" del sistema de color existente. */}
+            <Reveal direction="chapter" className="mt-6">
+              <h1 className="font-display font-bold leading-[0.88] tracking-tight text-neutral-900">
+                <span className="block text-[15vw] sm:text-[9vw] lg:text-[6.5rem]">Comparar</span>
+                <span className="block pl-[8vw] text-[15vw] text-auto-accent sm:pl-[10vw] sm:text-[9vw] lg:pl-40 lg:text-[6.5rem]">
+                  antes de creer.
+                </span>
+              </h1>
+            </Reveal>
+
+            <Reveal delay={80} className="mt-8 max-w-lg lg:ml-auto lg:mr-16">
+              <p className="text-base leading-relaxed text-neutral-500 sm:text-lg">
+                Elegí dos vehículos y mirá la diferencia real — potencia, precio, evidencia citada. Nada de
+                titulares de marketing antes de los datos: la primera pantalla ya es el comparador.
+              </p>
+            </Reveal>
+
+            {/* Panel "hoja de diagnóstico": el comparador en vivo con
+                marcas de registro en las esquinas en vez de una card
+                blanca centrada. */}
+            <Reveal delay={140} className="relative mt-12">
+              <div className="relative border border-edge bg-surface-card/60 p-5 sm:p-8 lg:p-12">
+                <DossierCorners />
+                {compareShowcasePool.length >= MIN_COMPARE_SHOWCASE_POOL ? (
+                  <>
+                    <p className="dossier-tag mb-6 text-center text-neutral-500 sm:text-left">
+                      Hoja 00 · Comparador en vivo · elegí, cambiá, decidí
+                    </p>
+                    <CompareShowcase
+                      pool={compareShowcasePool}
+                      initialIndexA={compareInitialIndexA}
+                      initialIndexB={compareInitialIndexB}
+                    />
+                    <div className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:justify-start">
+                      <Link
+                        href="/comparar"
+                        className="cta-shine tap-scale group inline-flex items-center justify-center gap-2 rounded-full bg-inverse px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+                      >
+                        Abrir el comparador completo{' '}
+                        <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                          →
+                        </span>
+                      </Link>
+                      <Link
+                        href={`/${EntityType.VEHICLE}`}
+                        className="tap-scale text-sm font-semibold text-neutral-500 underline underline-offset-4 hover:text-neutral-900"
+                      >
+                        Ver todo el catálogo
+                      </Link>
+                    </div>
+                  </>
+                ) : (
+                  <div className="mx-auto w-full max-w-2xl py-6 text-center">
+                    <p className="mb-6 font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
+                      {SITE_NAME}
+                    </p>
+                    <Link
+                      href={`/${EntityType.VEHICLE}`}
+                      className="cta-shine tap-scale inline-flex items-center justify-center rounded-full bg-inverse px-8 py-4 font-semibold text-white transition-transform hover:-translate-y-0.5"
+                    >
+                      Ver el catálogo
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* ================= 01 — CATEGORÍAS ================= */}
+        <section id="categorias" className="border-b border-edge py-20 sm:py-28">
+          <div className="container-max">
+            <DossierSectionHeading
+              index="01"
+              tag="Categorías"
+              title="Explorá por sección"
+              action={{ href: '/buscar', label: `Ver las ${totalCount} entradas` }}
+            />
+
+            {/* Grid asimétrico: la primera categoría ocupa el doble de
+                columnas en desktop (pieza dominante) en vez de una
+                grilla uniforme de tarjetas idénticas. */}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {categories.map((type, i) => {
+                const density = Math.max(6, Math.round((countsByType[type] / maxCategoryCount) * 100))
+                const accent = CATEGORY_ACCENT[type]
+                return (
+                  <Reveal key={type} delay={i * 70} className={i === 0 ? 'lg:col-span-2' : undefined}>
+                    <Link href={`/${type}`} className="group block h-full">
+                      <TiltCard className="h-full">
+                        <Card hoverable className="relative flex h-full flex-col overflow-hidden !p-0 text-left">
+                          <div className={`relative w-full shrink-0 overflow-hidden ${i === 0 ? 'aspect-[16/9]' : 'aspect-[4/3]'}`}>
+                            <CategoryCardMedia previews={categoryPreviews[type]} />
+                            <div className="absolute left-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-lg bg-black/40 text-white backdrop-blur">
+                              <CategoryIcon type={type} className="h-5 w-5" />
+                            </div>
+                          </div>
+                          <div className="relative z-10 flex flex-1 flex-col gap-2 px-5 py-4">
+                            <p className="font-display text-lg font-semibold text-neutral-900">{ENTITY_TYPE_LABELS[type]}</p>
+                            <p className="dossier-tag text-neutral-500">
+                              {countsByType[type]} {countsByType[type] === 1 ? 'entrada' : 'entradas'}
+                            </p>
+                            <div className="h-1 w-full overflow-hidden rounded-full bg-edge" aria-hidden="true">
+                              <div className="h-full rounded-full" style={{ width: `${density}%`, background: accent }} />
+                            </div>
+                          </div>
+                        </Card>
+                      </TiltCard>
+                    </Link>
+                  </Reveal>
+                )
+              })}
+            </div>
+
+            <Reveal delay={220}>
+              <CategoryQuickFilter options={categoryQuickFilterOptions} />
+            </Reveal>
+
+            {manufacturerMarqueeItems.length > 0 && (
+              <Reveal delay={280} className="mt-14">
+                <hr className="dossier-hr mb-10" />
+                <ManufacturersMarquee manufacturers={manufacturerMarqueeItems} />
+              </Reveal>
+            )}
+          </div>
+        </section>
+
+        {/* ================= 02 — DESTACADOS ================= */}
+        {featured.length > 0 && (
+          <section id="destacados" className="border-b border-edge py-20 sm:py-28">
+            <div className="container-max">
+              <DossierSectionHeading
+                index="02"
+                tag="Destacados"
+                title="Lo más relevante del catálogo"
+                action={{ href: '/galeria', label: 'Ver galería completa' }}
+              />
+              <FeaturedCarousel ariaLabel="Vehículos destacados">
+                {featured.map((entity, i) => (
+                  <div
+                    key={`${entity.type}-${entity.slug}`}
+                    className="w-[44%] shrink-0 snap-start snap-stop-always sm:w-[30%] lg:w-[22%]"
+                  >
+                    <Reveal delay={i * 50}>
+                      <TiltCard>
+                        <EntityCard
+                          entity={entity}
+                          image={resolveEntityDisplayImage(entity)}
+                          clipUrl={undefined}
+                          relationCount={featuredRelationCounts[entity.slug]}
+                          size="compact"
+                        />
+                      </TiltCard>
+                    </Reveal>
+                  </div>
+                ))}
+              </FeaturedCarousel>
+            </div>
+          </section>
+        )}
+
+        {/* ================= 03 — EVIDENCIA ================= */}
+        {evidenceHighlights.length > 0 && (
+          <section id="evidencia" className="border-b border-edge py-20 sm:py-28">
+            <div className="container-max grid gap-4 lg:grid-cols-[7rem_1fr] lg:gap-10 xl:grid-cols-[9rem_1fr]">
+              <Reveal direction="left">
+                <span aria-hidden="true" className="dossier-index block">
+                  03
+                </span>
+              </Reveal>
+              <EvidenceSpotlight highlights={evidenceHighlights} />
+            </div>
+          </section>
+        )}
+
+        {/* ================= 04 — RANKINGS ================= */}
+        {rankingsSpotlightData.length > 0 && (
+          <section id="rankings" className="border-b border-edge py-20 sm:py-28">
+            <div className="container-max grid gap-4 lg:grid-cols-[7rem_1fr] lg:gap-10 xl:grid-cols-[9rem_1fr]">
+              <Reveal direction="left">
+                <span aria-hidden="true" className="dossier-index block">
+                  04
+                </span>
+              </Reveal>
+              <RankingsSpotlight rankings={rankingsSpotlightData} />
+            </div>
+          </section>
+        )}
+
+        {/* ================= 05 — NOTICIAS ================= */}
+        {latestNews.length > 0 && (
+          <section id="noticias" className="border-b border-edge py-20 sm:py-28">
+            <div className="container-max">
+              <DossierSectionHeading
+                index="05"
+                tag="Últimas noticias"
+                title="Novedades del sector"
+                action={{ href: '/noticias', label: 'Ver todas' }}
+              />
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                {latestNews.map((entity, i) => (
+                  <Reveal key={`${entity.type}-${entity.slug}`} delay={i * 70}>
+                    <TiltCard>
+                      <EntityCard
+                        entity={entity}
+                        image={latestNewsImages[entity.slug]}
+                        dateLabel={latestNewsDates[entity.slug]}
+                      />
+                    </TiltCard>
+                  </Reveal>
+                ))}
+              </div>
+
+              <AdUnit
+                slotId="3119092668"
+                format="responsive"
+                className="mt-10"
+                dataTrackingLabel="ad-home-noticias"
+              />
+            </div>
+          </section>
+        )}
+
+        {/* ================= 06 — FINANCIAMIENTO ================= */}
+        <section id="financiamiento" className="border-b border-edge py-20 sm:py-28">
+          <div className="container-max">
+            <DossierSectionHeading
+              index="06"
+              tag="Financiamiento"
+              title="Simulá tu cuota"
+              lede={
+                <>
+                  Precio, entrega, tasa y plazo — la misma calculadora de <code className="font-mono text-neutral-400">/financiamiento</code>,
+                  acá mismo.
+                </>
+              }
+            />
+            <Reveal className="max-w-xl">
+              <Suspense fallback={<FinancingCalculatorFallback />}>
+                <FinancingCalculator />
+              </Suspense>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* ================= FAQ ================= */}
+        <HomeFaqPanel items={faqItems} />
+
+        {/* ================= CIERRE ================= */}
+        <section className="dossier-grid border-b border-edge py-20 sm:py-28">
+          <div className="container-max">
+            <div className="relative mx-auto max-w-3xl border border-edge bg-surface-card/40 px-6 py-12 text-center sm:px-12">
+              <DossierCorners />
+              <Reveal>
+                <p className="dossier-tag mb-3 text-auto-accent">Fin del expediente</p>
+                <h2 className="font-display text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
+                  Ya tenés con qué decidir
+                </h2>
+                <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-neutral-500 sm:text-base">
+                  Evidencia citada, rankings reales y tu cuota simulada — no hace falta buscar en otro lado.
+                </p>
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                  <Link
+                    href="/vehiculos"
+                    className="cta-shine tap-scale group inline-flex items-center justify-center gap-2 rounded-full bg-inverse px-8 py-4 font-semibold text-white transition-transform hover:-translate-y-0.5"
+                  >
+                    Elegí tu vehículo{' '}
+                    <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                      →
+                    </span>
+                  </Link>
+                  <Link
+                    href="/buscar"
+                    className="tap-scale inline-flex items-center justify-center rounded-full border border-neutral-300 px-8 py-4 font-semibold text-neutral-900 transition-transform hover:-translate-y-0.5"
+                  >
+                    Buscar un modelo puntual
+                  </Link>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   )
 }

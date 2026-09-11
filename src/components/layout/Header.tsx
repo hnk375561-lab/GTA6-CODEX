@@ -58,12 +58,20 @@ export function Header() {
   // queda al día apenas se toca un corazón en cualquier card del sitio,
   // sin recargar la página ni pasar el estado por props.
   const { count: wishlistCount, hydrated: wishlistHydrated } = useWishlist()
-  // La home es un viewport pineado a 100dvh: si el header queda `sticky`
-  // (como en el resto del sitio) le resta esos ~64-72px al panel, y el
-  // panel deja de ocupar la pantalla completa. Acá pasa a `fixed`
-  // (fuera del flujo, no reserva alto) y flota traslúcido/claro sobre el
-  // fondo blanco de la home en vez del glass oscuro del resto del sitio.
-  const isHome = pathname === '/'
+  // REDISEÑO 180° (sept 2026): la home dejó de ser un viewport pineado a
+  // 100dvh con panel-por-panel en crossfade (`PinnedScrollStages`, ver el
+  // comentario largo en `app/page.tsx`) y pasó a un documento de scroll
+  // normal, presentado como un expediente/plano técnico con lienzo
+  // oscuro permanente. Ya no hace falta un header propio "claro y
+  // flotante" para la home (esa variante existía únicamente para no
+  // robarle alto al panel pineado y para no chocar con el fondo blanco
+  // que tenía antes) — el header vuelve a ser SIEMPRE la misma barra
+  // `sticky`/glass oscura del resto del sitio, en todas las rutas
+  // incluida `/`. Se mantiene la variable `isHome` (siempre `false` en
+  // los hechos hoy) por si en el futuro se necesita volver a diferenciar
+  // la home del resto del nav, para no tener que reintroducir el patrón
+  // desde cero.
+  const isHome = false
 
   // Cierra el menú móvil al navegar (y al presionar Escape, ver el
   // efecto de abajo).
