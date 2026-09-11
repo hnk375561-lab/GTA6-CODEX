@@ -8,85 +8,76 @@ import { type HeroVehicleShowcaseItem } from '@/components/home/HeroVehicleShowc
 import { cn } from '@/lib/utils'
 
 /**
- * HERO SHOWROOM — rediseño radical del hero (sept. 2026).
+ * HERO SHOWROOM — rediseño claro/editorial (auditoría de producción,
+ * segunda pasada, sept. 2026).
  *
- * Reemplaza el hero centrado/tipográfico anterior (headline + subtítulo +
- * contador de stats + buscador + 10 chips + carrusel horizontal, todo
- * apilado y centrado) por una composición asimétrica, oscura y
- * cinematográfica en la línea de un showroom automotriz digital:
- * vehículo grande a la derecha, headline editorial enorme abajo a la
- * izquierda, un solo CTA primario, y nada de relleno.
+ * REEMPLAZA el hero oscuro "showroom digital" (panel bg-auto-darker a
+ * pantalla completa, auto grande a la derecha) por una composición
+ * clara consistente con el resto de la home: fondo blanco liso (mismo
+ * `body { @apply bg-white }` que ya usan todos los demás paneles de
+ * `page.tsx`, ver `Categorías`/`Destacados`/etc.), con UN SOLO panel
+ * oscuro chico y redondeado para el auto — el mismo lenguaje visual
+ * "fondo blanco + acento oscuro" que ya usa `<Card>` en el resto del
+ * sitio, aplicado acá por primera vez también al hero.
  *
- * Decisiones clave (por qué NO es una copia 1:1 de la spec original):
+ * Por qué este cambio (feedback real sobre el hero anterior, con
+ * capturas del deploy):
  *
- * - Este sitio es un catálogo/comparador de +250 vehículos de decenas de
- *   marcas, no la web de un concesionario de un solo auto — así que "el
- *   vehículo" del hero es un rotador entre los `featured` con foto real
- *   (mismo dato que ya resolvía el hero viejo, `heroShowcaseVehicles`),
- *   con una franja de puntos abajo para saltar manualmente entre ellos.
- * - La navegación completa (Vehículos/Fabricantes/Guías/Comparar/
- *   Galería/Mapa) ya vive en `<Header />` (global, fuera de este
- *   componente) — así que el hero NO duplica un nav propio, solo un
- *   eyebrow de marca/fecha. Menos elementos, cero redundancia.
- * - El buscador (`QuickSearchForm`) y los 10 chips (`HeroQuickLinks`) se
- *   sacan del hero (competían visualmente con el CTA y son exactamente
- *   el tipo de "panel de dashboard" que la spec pide evitar). El
- *   buscador completo sigue disponible en `/buscar` — el CTA secundario
- *   linkea ahí, no se pierde funcionalidad, solo cambia dónde vive.
- * - El bloque de 3 stats grandes (Vehículos/Fabricantes/% evidencia) se
- *   reemplaza por una sola línea chica de metadata — el dato de mayor
- *   valor real (% con fuente citada) queda como acento arriba a la
- *   derecha, el resto baja a una caption chica bajo el CTA.
- * - `text-gradient-vice` y `WordRotate` se reutilizan tal cual (mismo
- *   copy, "Cada {marca}, con fuente citada") — la marca/mensaje no
- *   cambia, solo la presentación, tal como pide la spec de rediseño.
+ * 1. El hero oscuro a pantalla completa quedaba visualmente
+ *    desconectado del resto de la home (blanca) — el propio
+ *    comentario de rediseño de `page.tsx` ya advertía este riesgo
+ *    ("que no se sienta como dos sitios distintos pegados"). Acá deja
+ *    de aplicar: el hero vive en la misma superficie blanca que todo
+ *    lo demás, sin salto de fondo al hacer scroll al siguiente panel.
+ * 2. Composición: el layout anterior (headline a la izquierda, auto
+ *    grande a la derecha, gap grande en el medio) dejaba un hueco
+ *    muerto en el centro sin función. Acá el auto pasa a ser un
+ *    elemento chico y secundario (no protagonista) — el foco pasa a
+ *    ser 100% headline + CTA, sin nada compitiendo por atención.
+ * 3. Contenido: se saca el subtítulo, el CTA secundario ("Buscar un
+ *    modelo puntual") y la línea de stats (vehículos/marcas) — pedido
+ *    explícito de simplificación al mínimo (headline + un solo CTA).
+ *    El buscador completo sigue en `/buscar` (accesible desde
+ *    `<Header/>`, nunca dependió solo de este link); las stats totales
+ *    siguen visibles en el panel "Categorías" inmediatamente debajo.
+ * 4. `text-gradient-vice` (gradiente rosa→cian, pensado para fondo
+ *    oscuro) se reemplaza por `auto-accent` (el mismo naranja que ya
+ *    usa el sitio como color de link/CTA sobre fondo blanco en TODAS
+ *    las demás páginas — ver `a:not(.no-style)` en globals.css) — un
+ *    gradiente "vice" de un thriller de neón no tiene un motivo
+ *    tipográfico real para vivir sobre blanco, y generaba menos
+ *    contraste/legibilidad que el naranja de marca ya validado.
  *
- * Tokens de color: `auto-dark`/`auto-darker`/`auto-text`/`auto-accent`
- * son los tokens ESTÁTICOS (no theme-aware) que el propio proyecto ya
- * usa para paneles oscuros decorativos fuera del dashboard (ver
- * tailwind.config.js) — no son un valor inventado para este componente,
- * es el mecanismo ya establecido para esto exacto.
+ * Se conservan sin cambios (ya funcionaban bien, confirmado por
+ * auditoría de código — ver HERO_HOME_PRODUCTION_AUDIT.txt):
  *
- * CORRECCIONES (auditoría de producción, ver
- * HERO_HOME_PRODUCTION_AUDIT.txt — hallazgos P0/P1):
+ * - El rotador de vehículos `featured` con foto real, sus puntos de
+ *   navegación y el botón pausar/reanudar (WCAG 2.2.2).
+ * - El montaje diferido de imágenes (`visitedIndices`): solo se pide
+ *   la foto activa + las ya visitadas, nunca las N de entrada.
+ * - `role="group"` + `aria-pressed` en los puntos (no `tablist`/`tab`,
+ *   ese patrón exige navegación por flechas que este control no
+ *   implementa).
+ * - Pausa en hover/focus sobre la zona del auto, además del botón.
+ * - `prefers-reduced-motion` respetado en el autoplay y en las
+ *   animaciones de entrada.
  *
- * 1. Las N imágenes del rotador se montaban TODAS al cargar la página
- *    (una por vehículo, superpuestas con opacity 0/100). Como el
- *    contenedor está en el viewport inicial, el lazy-loading nativo de
- *    `next/image` no difería nada: las 4 fotos se descargaban en la
- *    carga inicial aunque solo una fuera visible. Ahora solo se monta
- *    la imagen actual + las ya visitadas (`visitedIndices`): la primera
- *    pesa lo mismo (con `priority`), pero la 2ª/3ª/4ª entran recién
- *    cuando el rotador llega a ellas, repartiendo el costo de red en
- *    vez de cargarlo entero de una.
- * 2. El rotador automático (cada 5.2s) solo se detenía con
- *    `prefers-reduced-motion`. WCAG 2.2.2 (Pause, Stop, Hide) exige un
- *    mecanismo EN LA PÁGINA para pausar contenido que se mueve solo por
- *    más de 5s, independiente de la preferencia de sistema — ahora se
- *    pausa también con hover/focus dentro del hero y hay un botón
- *    pausar/reanudar explícito junto a los puntos de navegación.
- * 3. Los puntos de navegación usaban `role="tablist"`/`role="tab"`, que
- *    en el patrón ARIA APG implica soporte de flechas de teclado entre
- *    tabs — acá no lo había (solo Tab secuencial), lo cual es un
- *    contrato de accesibilidad roto para quien navegue con lector de
- *    pantalla esperando ese patrón. Se reemplaza por `role="group"` +
- *    `aria-pressed` por botón, que describe con precisión el
- *    comportamiento real (un grupo de botones independientes).
+ * Tokens: `auto-dark`/`auto-darker`/`auto-text`/`auto-accent` (ver
+ * tailwind.config.js) — el panel del auto es el único lugar de este
+ * componente que los usa; todo lo demás vive en los tokens claros que
+ * ya usa el resto de la home (`neutral-900`/`neutral-500`, Tailwind
+ * estándar, sin token custom nuevo).
  */
 
 export interface HeroShowroomProps {
   vehicles: HeroVehicleShowcaseItem[]
   siteName: string
   lastUpdateLabel: string | null
-  totalVehicles: number
-  totalManufacturers: number
   evidenceCoveragePct: number | null
   headlineBrands: string[]
   headlineLead: string
   headlineTail: string
-  subtitle: string
   catalogHref: string
-  searchHref: string
 }
 
 const ROTATE_MS = 5200
@@ -95,30 +86,26 @@ export function HeroShowroom({
   vehicles,
   siteName,
   lastUpdateLabel,
-  totalVehicles,
-  totalManufacturers,
   evidenceCoveragePct,
   headlineBrands,
   headlineLead,
   headlineTail,
-  subtitle,
   catalogHref,
-  searchHref,
 }: HeroShowroomProps) {
   const [index, setIndex] = useState(0)
   // Inicializador perezoso (no un efecto): lee `prefers-reduced-motion`
-  // directo en el primer render, así el rotador nunca arranca "de
-  // prueba" para frenarse un tick después — evita el patrón
-  // set-state-en-efecto que el lint del propio repo (react-hooks) marca
-  // como error (cascading renders innecesarios).
+  // directo en el primer render — evita el patrón "setState en el
+  // cuerpo de un efecto" que el lint del propio repo
+  // (`react-hooks/set-state-in-effect`) marca como error.
   const [isPlaying, setIsPlaying] = useState(
     () => typeof window === 'undefined' || !window.matchMedia('(prefers-reduced-motion: reduce)').matches
   )
   const [isPaused, setIsPaused] = useState(false)
-  // Qué imágenes ya se mostraron al menos una vez — solo esas se montan
-  // en el DOM (ver nota de corrección #1 en el comentario de arriba).
-  // Se actualiza en el mismo evento que cambia `index` (ver `goToVehicle`
-  // más abajo), nunca en un efecto separado, por la misma razón.
+  // Qué imágenes ya se mostraron al menos una vez — solo esas se
+  // montan en el DOM, para no descargar las N fotos del rotador de
+  // entrada cuando solo una es visible. Se actualiza en el mismo
+  // evento que cambia `index` (`goToVehicle` / el intervalo de abajo),
+  // nunca en un efecto separado, por la misma razón que `isPlaying`.
   const [visitedIndices, setVisitedIndices] = useState<ReadonlySet<number>>(() => new Set([0]))
 
   useEffect(() => {
@@ -150,168 +137,136 @@ export function HeroShowroom({
 
   const current = vehicles[index] ?? null
   const canAutoRotate = vehicles.length > 1
+  const hasVehicle = vehicles.length > 0
 
   return (
-    <div className="relative isolate overflow-hidden rounded-3xl bg-auto-darker ring-1 ring-white/5">
-      {/* Glow ambiental contenido — reemplaza <HeroAura /> (pensado para
-          el hero claro anterior); acá es solo un radial sutil detrás del
-          vehículo, nunca un gradiente que tape media pantalla (ver spec
-          §19). */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-1/3 h-[34rem] w-[34rem] rounded-full bg-auto-accent/10 blur-[110px]"
-      />
-
-      <div className="relative z-10 grid min-h-[72vh] gap-10 p-6 sm:p-10 lg:min-h-[78vh] lg:grid-cols-12 lg:gap-6 lg:p-14">
-        {/* Eyebrow: marca + fecha, y el acento de confianza a la derecha.
-            No es un navbar — la navegación completa vive en <Header />. */}
-        <div className="hero-showroom-in flex items-center justify-between lg:col-span-12">
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-auto-text-secondary">
-            {siteName}
-            {lastUpdateLabel && (
-              <>
-                {' '}
-                <span aria-hidden="true" className="text-auto-text-secondary/50">·</span>{' '}
-                <span className="normal-case tracking-normal">Actualizado {lastUpdateLabel}</span>
-              </>
-            )}
-          </p>
-          {evidenceCoveragePct !== null && evidenceCoveragePct > 0 && (
-            <p className="hidden text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-auto-accent sm:block">
-              {evidenceCoveragePct}% con fuente citada
-            </p>
+    <div className="relative isolate">
+      {/* Eyebrow: marca + fecha, y el acento de confianza a la derecha.
+          No es un navbar — la navegación completa vive en <Header />. */}
+      <div className="hero-showroom-in flex items-center justify-between">
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
+          {siteName}
+          {lastUpdateLabel && (
+            <>
+              {' '}
+              <span aria-hidden="true" className="text-neutral-400">·</span>{' '}
+              <span className="normal-case tracking-normal">Actualizado {lastUpdateLabel}</span>
+            </>
           )}
-        </div>
+        </p>
+        {evidenceCoveragePct !== null && evidenceCoveragePct > 0 && (
+          <p className="hidden text-xs font-semibold uppercase tracking-[0.25em] text-auto-accent sm:block">
+            {evidenceCoveragePct}% con fuente citada
+          </p>
+        )}
+      </div>
 
-        {/* Headline editorial + CTA, alineados abajo a la izquierda. */}
-        <div className="hero-showroom-in hero-showroom-in-delay-1 flex flex-col justify-end lg:col-span-7 lg:row-start-2">
-          <h1 className="font-display text-5xl font-bold leading-[1.03] tracking-tight text-auto-text sm:text-6xl lg:text-[5.25rem]">
-            {headlineLead} <WordRotate words={headlineBrands} className="text-gradient-vice" />
+      <div className="mt-10 grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-10">
+        {/* Headline + CTA — el foco real del hero, sin nada más
+            compitiendo por atención (sin subtítulo, sin segundo CTA,
+            sin stats): eso vive ahora en el panel "Categorías" de
+            abajo, no acá. */}
+        <div className="hero-showroom-in hero-showroom-in-delay-1 lg:col-span-8">
+          <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-6xl lg:text-[5rem]">
+            {headlineLead} <WordRotate words={headlineBrands} className="text-auto-accent" />
             {', '}
             <span className="block">{headlineTail}</span>
           </h1>
 
-          <p className="mt-6 max-w-md text-base text-auto-text-secondary sm:text-lg">{subtitle}</p>
-
-          <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <div className="mt-9">
             <Link
               href={catalogHref}
-              className="group inline-flex items-center gap-2 border-b-2 border-auto-accent pb-1 text-base font-semibold text-auto-text transition-colors hover:text-auto-accent"
+              className="tap-scale inline-flex items-center gap-2 rounded-lg bg-auto-accent px-7 py-3.5 font-display text-base font-semibold text-auto-darker transition-transform hover:scale-[1.03]"
             >
               Ver el catálogo
-              <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
-            <Link
-              href={searchHref}
-              className="text-sm font-semibold text-auto-text-secondary underline decoration-auto-text-secondary/40 underline-offset-4 transition-colors hover:text-auto-text"
-            >
-              Buscar un modelo puntual
+              <span aria-hidden="true">→</span>
             </Link>
           </div>
-
-          {totalVehicles > 0 && (
-            <p className="mt-8 text-xs uppercase tracking-[0.2em] text-auto-text-secondary/70">
-              {totalVehicles} vehículos · {totalManufacturers} marcas
-            </p>
-          )}
         </div>
 
-        {/* El vehículo — protagonista, rota entre los `featured` con foto
-            real. Un solo <Link> visible a la vez (opacity), nunca varios
-            superpuestos clickeables. `onMouseEnter/Leave` + `onFocus/Blur`
-            pausan el autoplay mientras el usuario interactúa con esta zona
-            (WCAG 2.2.2, ver corrección #2 arriba). */}
-        <div
-          className="hero-showroom-in hero-showroom-in-delay-2 relative lg:col-span-5 lg:row-span-2 lg:row-start-1"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onFocus={() => setIsPaused(true)}
-          onBlur={(e) => {
-            if (!e.currentTarget.contains(e.relatedTarget)) setIsPaused(false)
-          }}
-        >
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl sm:aspect-[16/10] lg:aspect-auto lg:h-full">
-            {vehicles.map((vehicle, i) => {
-              // Solo se monta la imagen actual + las ya visitadas: evita
-              // descargar de entrada las N fotos del rotador cuando solo
-              // una es visible (corrección #1 arriba).
-              if (!visitedIndices.has(i)) return null
-              return (
-                <Link
-                  key={vehicle.slug}
-                  href={vehicle.detailHref}
-                  aria-hidden={i !== index}
-                  tabIndex={i === index ? 0 : -1}
-                  className={cn(
-                    'absolute inset-0 block transition-opacity duration-700 ease-out',
-                    i === index ? 'opacity-100' : 'pointer-events-none opacity-0'
-                  )}
-                >
-                  <Image
-                    src={vehicle.src}
-                    alt={vehicle.alt}
-                    fill
-                    sizes="(min-width: 1024px) 40vw, 90vw"
-                    priority={i === 0}
-                    className="object-cover"
-                  />
-                </Link>
-              )
-            })}
-
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-auto-darker/80 via-transparent to-transparent"
-            />
-
-            {current && (
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 p-5">
-                {current.manufacturer && (
-                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-auto-text-secondary">
-                    {current.manufacturer}
-                  </p>
-                )}
-                <p className="font-display text-xl font-bold text-auto-text">{current.title}</p>
-                {(current.powerLabel || current.secondaryStatLabel) && (
-                  <p className="mt-1 text-xs text-auto-text-secondary">
-                    {[current.powerLabel, current.secondaryStatLabel].filter(Boolean).join(' · ')}
-                  </p>
-                )}
-              </div>
-            )}
-          </div>
-
-          {vehicles.length > 1 && (
-            <div className="mt-4 flex items-center gap-3">
-              {/* `role="group"` en vez del `role="tablist"`/`"tab"` anterior:
-                  ese patrón ARIA implica navegación con flechas entre tabs
-                  que este control nunca implementó (Tab secuencial nomás) —
-                  ver corrección #3 arriba. `aria-pressed` describe el
-                  estado real: un botón que puede estar activo o no. */}
-              <div className="flex flex-1 items-center gap-2" role="group" aria-label="Elegir vehículo destacado">
-                {vehicles.map((vehicle, i) => (
-                  <button
+        {/* El auto — acompañamiento, no protagonista: panel chico y
+            oscuro (único acento oscuro del hero), mismo lenguaje que
+            usan las cards del resto del sitio (fondo claro + acento
+            oscuro), acá aplicado al hero por primera vez. */}
+        {hasVehicle && (
+          <div
+            className="hero-showroom-in hero-showroom-in-delay-2 mx-auto w-full max-w-xs lg:col-span-4 lg:mx-0 lg:max-w-none"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onFocus={() => setIsPaused(true)}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget)) setIsPaused(false)
+            }}
+          >
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-auto-darker ring-1 ring-black/5">
+              {vehicles.map((vehicle, i) => {
+                // Solo se monta la imagen actual + las ya visitadas:
+                // evita descargar de entrada las N fotos del rotador
+                // cuando solo una es visible.
+                if (!visitedIndices.has(i)) return null
+                return (
+                  <Link
                     key={vehicle.slug}
-                    type="button"
-                    aria-pressed={i === index}
-                    aria-label={`Ver ${vehicle.title}`}
-                    onClick={() => goToVehicle(i)}
+                    href={vehicle.detailHref}
+                    aria-hidden={i !== index}
+                    tabIndex={i === index ? 0 : -1}
                     className={cn(
-                      'h-1 flex-1 rounded-full transition-colors',
-                      i === index ? 'bg-auto-accent' : 'bg-white/10 hover:bg-white/25'
+                      'absolute inset-0 block transition-opacity duration-700 ease-out',
+                      i === index ? 'opacity-100' : 'pointer-events-none opacity-0'
                     )}
-                  />
-                ))}
-              </div>
-              {canAutoRotate && (
+                  >
+                    <Image
+                      src={vehicle.src}
+                      alt={vehicle.alt}
+                      fill
+                      sizes="(min-width: 1024px) 22vw, 60vw"
+                      priority={i === 0}
+                      className="object-cover"
+                    />
+                  </Link>
+                )
+              })}
+
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-auto-darker/85 via-transparent to-transparent"
+              />
+
+              {current && (
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 p-4">
+                  {current.manufacturer && (
+                    <p className="text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-auto-text-secondary">
+                      {current.manufacturer}
+                    </p>
+                  )}
+                  <p className="font-display text-base font-bold text-auto-text">{current.title}</p>
+                </div>
+              )}
+            </div>
+
+            {canAutoRotate && (
+              <div className="mt-3 flex items-center gap-3">
+                <div className="flex flex-1 items-center gap-1.5" role="group" aria-label="Elegir vehículo destacado">
+                  {vehicles.map((vehicle, i) => (
+                    <button
+                      key={vehicle.slug}
+                      type="button"
+                      aria-pressed={i === index}
+                      aria-label={`Ver ${vehicle.title}`}
+                      onClick={() => goToVehicle(i)}
+                      className={cn(
+                        'h-1 flex-1 rounded-full transition-colors',
+                        i === index ? 'bg-auto-accent' : 'bg-neutral-200 hover:bg-neutral-300'
+                      )}
+                    />
+                  ))}
+                </div>
                 <button
                   type="button"
                   onClick={() => setIsPlaying((prev) => !prev)}
                   aria-pressed={!isPlaying}
                   aria-label={isPlaying ? 'Pausar rotación automática' : 'Reanudar rotación automática'}
-                  className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-auto-text-secondary transition-colors hover:bg-white/10 hover:text-auto-text"
+                  className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
                 >
                   {isPlaying ? (
                     <svg viewBox="0 0 16 16" aria-hidden="true" className="h-3 w-3 fill-current">
@@ -324,14 +279,14 @@ export function HeroShowroom({
                     </svg>
                   )}
                 </button>
-              )}
-            </div>
-          )}
-        </div>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
-      <div className="hero-showroom-in hero-showroom-in-delay-3 pointer-events-none absolute inset-x-0 bottom-4 hidden justify-center sm:flex">
-        <span className="hero-scroll-cue text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-auto-text-secondary/60">
+      <div className="hero-showroom-in hero-showroom-in-delay-3 pointer-events-none mt-14 hidden justify-center sm:flex">
+        <span className="hero-scroll-cue text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-neutral-400">
           Scroll para explorar
         </span>
       </div>

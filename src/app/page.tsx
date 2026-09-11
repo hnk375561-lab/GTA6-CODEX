@@ -104,8 +104,6 @@ export async function generateMetadata(): Promise<Metadata> {
 const HERO_HEADLINE_BRANDS = ['Toyota', 'BMW', 'Ford', 'BYD', 'Hyundai', 'Yamaha']
 const HERO_HEADLINE_LEAD = 'Cada'
 const HERO_HEADLINE_TAIL = 'con fuente citada'
-const HERO_SUBTITLE =
-  'No es un resumen de IA sin origen ni una ficha de foro: cada dato viene de una fuente citada y verificable, para que compares antes de decidir.'
 const CATEGORY_ORDER: EntityType[] = [EntityType.VEHICLE, EntityType.NEWS, EntityType.GUIDE]
 const CATEGORY_ACCENT: Record<EntityType, string> = {
   [EntityType.VEHICLE]: '#c9a35f',
@@ -474,15 +472,11 @@ export default async function HomePage() {
           vehicles={heroShowcaseVehicles}
           siteName={SITE_NAME}
           lastUpdateLabel={lastUpdateLabel}
-          totalVehicles={countsByType[EntityType.VEHICLE] ?? 0}
-          totalManufacturers={countsByType[EntityType.MANUFACTURER] ?? 0}
           evidenceCoveragePct={evidenceCoveragePct}
           headlineBrands={HERO_HEADLINE_BRANDS}
           headlineLead={HERO_HEADLINE_LEAD}
           headlineTail={HERO_HEADLINE_TAIL}
-          subtitle={HERO_SUBTITLE}
           catalogHref={`/${EntityType.VEHICLE}`}
-          searchHref="/buscar"
         />
       ),
     },
