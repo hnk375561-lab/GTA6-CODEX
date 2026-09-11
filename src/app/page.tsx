@@ -28,10 +28,10 @@ import { EntityCard } from '@/components/entities/EntityCard'
 import { getCategoryPreviewImages } from '@/lib/images'
 import { ENTITY_TYPE_LABELS } from '@/lib/entity-labels'
 import { CategoryQuickFilter } from '@/components/home/CategoryQuickFilter'
-import { ManufacturersMarquee } from '@/components/home/ManufacturersMarquee'
 import { TiltCard } from '@/components/home/Parallax'
 import { AdUnit } from '@/components/monetization/AdUnit'
 import { CompareShowcase, type CompareShowcaseVehicle } from '@/components/home/CompareShowcase'
+import { HeroCatalogIndex } from '@/components/home/HeroCatalogIndex'
 import { EvidenceSpotlight, type EvidenceHighlight } from '@/components/home/EvidenceSpotlight'
 import { RankingsSpotlight, type RankingSpotlight } from '@/components/home/RankingsSpotlight'
 import { FeaturedCarousel } from '@/components/home/FeaturedCarousel'
@@ -328,6 +328,39 @@ export default async function HomePage() {
       }
     })
 
+  // % con fuente citada sobre TODO el catálogo indexable (vehículos +
+  // noticias) — no solo sobre los destacados. Usado por el hero como
+  // trust signal real (ver `evidenceHighlights` arriba para el mismo
+  // criterio de "tiene primarySource").
+  const evidenceEligibleEntities = [...vehicles, ...allNews]
+  const evidenceCoveredCount = evidenceEligibleEntities.filter((entity) =>
+    Boolean(entity.evidence?.primarySource)
+  ).length
+  const evidenceCoveragePct =
+    evidenceEligibleEntities.length > 0
+      ? Math.round((evidenceCoveredCount / evidenceEligibleEntities.length) * 100)
+      : null
+
+  // Cifras reales por categoría para el anticipo compacto del hero (una
+  // línea de números, no la grilla completa — esa vive en "01. Categorías").
+  const heroCategoryCounts = categories.map((type) => ({ type, count: countsByType[type] }))
+
+  // Muestra real de títulos del catálogo para el placeholder rotativo de
+  // la búsqueda del hero — nunca marcas inventadas. Si el catálogo es muy
+  // chico, se deja sin pasar la prop y `QuickSearchForm` usa su propio
+  // fallback fijo.
+  const HERO_SEARCH_EXAMPLES_COUNT = 6
+  const heroSearchExamplesCount = Math.min(HERO_SEARCH_EXAMPLES_COUNT, vehicles.length)
+  const heroSearchExamples =
+    heroSearchExamplesCount > 1
+      ? Array.from(new Set(
+          Array.from({ length: heroSearchExamplesCount }, (_, i) => {
+            const vehicle = vehicles[Math.floor((i * vehicles.length) / heroSearchExamplesCount)]
+            return vehicle?.title
+          }).filter((title): title is string => Boolean(title))
+        ))
+      : undefined
+
   const rankingsSpotlightData: RankingSpotlight[] = availableRankings.map((ranking) => ({
     slug: ranking.def.slug,
     shortTitle: ranking.def.shortTitle,
@@ -353,84 +386,73 @@ export default async function HomePage() {
           claro/oscuro global — ver comentario largo arriba y
           globals.css §"Home: dossier técnico". */}
       <div className="dossier dark bg-surface-page text-neutral-900">
-        {/* ================= HERO ================= */}
-        <section className="dossier-grid relative overflow-hidden border-b border-edge pb-16 pt-14 sm:pb-24 sm:pt-20">
+        {/* ================= HERO — GIRO DE 180° (ver HERO_HOME_180_REDESIGN_REPORT.txt) =================
+            Antes: hero = headline abstracto + comparador de 2 autos como
+            primera interacción. Ahora: hero = búsqueda real como acción
+            principal + prueba concreta de la profundidad del catálogo
+            (cifras reales + marcas reales). El comparador en vivo no se
+            eliminó — pasa a la sección "00" inmediatamente debajo, deja de
+            SER el hero pero sigue siendo de lo primero que se ve. */}
+        <HeroCatalogIndex
+          siteName={SITE_NAME}
+          totalCount={totalCount}
+          evidenceCoveragePct={evidenceCoveragePct}
+          categories={heroCategoryCounts}
+          manufacturers={manufacturerMarqueeItems}
+          searchExamples={heroSearchExamples}
+          catalogHref={`/${EntityType.VEHICLE}`}
+        />
+
+        {/* ================= 00 — COMPARADOR EN VIVO ================= */}
+        <section id="comparador" className="border-b border-edge py-16 sm:py-20">
           <div className="container-max">
-            <Reveal direction="chapter">
-              <p className="dossier-tag text-auto-accent">
-                Expediente {SITE_NAME} · {totalCount} entradas verificadas
-              </p>
-            </Reveal>
-
-            {/* Título editorial desalineado — nada de headline centrado
-                sobre foto: dos líneas de escala muy distinta, la segunda
-                corrida a la derecha y en el acento naranja de "señal de
-                taller" del sistema de color existente. */}
-            <Reveal direction="chapter" className="mt-6">
-              <h1 className="font-display font-bold leading-[0.88] tracking-tight text-neutral-900">
-                <span className="block text-[15vw] sm:text-[9vw] lg:text-[6.5rem]">Comparar</span>
-                <span className="block pl-[8vw] text-[15vw] text-auto-accent sm:pl-[10vw] sm:text-[9vw] lg:pl-40 lg:text-[6.5rem]">
-                  antes de creer.
-                </span>
-              </h1>
-            </Reveal>
-
-            <Reveal delay={80} className="mt-8 max-w-lg lg:ml-auto lg:mr-16">
-              <p className="text-base leading-relaxed text-neutral-500 sm:text-lg">
-                Elegí dos vehículos y mirá la diferencia real — potencia, precio, evidencia citada. Nada de
-                titulares de marketing antes de los datos: la primera pantalla ya es el comparador.
-              </p>
-            </Reveal>
-
-            {/* Panel "hoja de diagnóstico": el comparador en vivo con
-                marcas de registro en las esquinas en vez de una card
-                blanca centrada. */}
-            <Reveal delay={140} className="relative mt-12">
-              <div className="relative border border-edge bg-surface-card/60 p-5 sm:p-8 lg:p-12">
-                <DossierCorners />
-                {compareShowcasePool.length >= MIN_COMPARE_SHOWCASE_POOL ? (
-                  <>
-                    <p className="dossier-tag mb-6 text-center text-neutral-500 sm:text-left">
-                      Hoja 00 · Comparador en vivo · elegí, cambiá, decidí
-                    </p>
-                    <CompareShowcase
-                      pool={compareShowcasePool}
-                      initialIndexA={compareInitialIndexA}
-                      initialIndexB={compareInitialIndexB}
-                    />
-                    <div className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:justify-start">
-                      <Link
-                        href="/comparar"
-                        className="cta-shine tap-scale group inline-flex items-center justify-center gap-2 rounded-full bg-inverse px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
-                      >
-                        Abrir el comparador completo{' '}
-                        <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
-                          →
-                        </span>
-                      </Link>
-                      <Link
-                        href={`/${EntityType.VEHICLE}`}
-                        className="tap-scale text-sm font-semibold text-neutral-500 underline underline-offset-4 hover:text-neutral-900"
-                      >
-                        Ver todo el catálogo
-                      </Link>
-                    </div>
-                  </>
-                ) : (
-                  <div className="mx-auto w-full max-w-2xl py-6 text-center">
-                    <p className="mb-6 font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
-                      {SITE_NAME}
-                    </p>
+            <DossierSectionHeading
+              index="00"
+              tag="Comparador"
+              title="Elegí dos, mirá la diferencia"
+              lede="Potencia, precio y evidencia citada lado a lado — sin abrir dos pestañas."
+            />
+            <div className="relative border border-edge bg-surface-card/60 p-5 sm:p-8 lg:p-12">
+              <DossierCorners />
+              {compareShowcasePool.length >= MIN_COMPARE_SHOWCASE_POOL ? (
+                <>
+                  <CompareShowcase
+                    pool={compareShowcasePool}
+                    initialIndexA={compareInitialIndexA}
+                    initialIndexB={compareInitialIndexB}
+                  />
+                  <div className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:justify-start">
+                    <Link
+                      href="/comparar"
+                      className="cta-shine tap-scale group inline-flex items-center justify-center gap-2 rounded-full bg-inverse px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+                    >
+                      Abrir el comparador completo{' '}
+                      <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                        →
+                      </span>
+                    </Link>
                     <Link
                       href={`/${EntityType.VEHICLE}`}
-                      className="cta-shine tap-scale inline-flex items-center justify-center rounded-full bg-inverse px-8 py-4 font-semibold text-white transition-transform hover:-translate-y-0.5"
+                      className="tap-scale text-sm font-semibold text-neutral-500 underline underline-offset-4 hover:text-neutral-900"
                     >
-                      Ver el catálogo
+                      Ver todo el catálogo
                     </Link>
                   </div>
-                )}
-              </div>
-            </Reveal>
+                </>
+              ) : (
+                <div className="mx-auto w-full max-w-2xl py-6 text-center">
+                  <p className="mb-6 font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
+                    {SITE_NAME}
+                  </p>
+                  <Link
+                    href={`/${EntityType.VEHICLE}`}
+                    className="cta-shine tap-scale inline-flex items-center justify-center rounded-full bg-inverse px-8 py-4 font-semibold text-white transition-transform hover:-translate-y-0.5"
+                  >
+                    Ver el catálogo
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         </section>
 
@@ -482,13 +504,6 @@ export default async function HomePage() {
             <Reveal delay={220}>
               <CategoryQuickFilter options={categoryQuickFilterOptions} />
             </Reveal>
-
-            {manufacturerMarqueeItems.length > 0 && (
-              <Reveal delay={280} className="mt-14">
-                <hr className="dossier-hr mb-10" />
-                <ManufacturersMarquee manufacturers={manufacturerMarqueeItems} />
-              </Reveal>
-            )}
           </div>
         </section>
 

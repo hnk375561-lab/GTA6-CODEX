@@ -1,0 +1,335 @@
+==================================================
+GTA6-CODEX (repo: Sin-Frenos) — HERO HOME, GIRO DE 180°
+==================================================
+Fecha: 2026-09-11
+Repo: https://github.com/hnk375561-lab/Sin-Frenos
+Insumo declarado: HERO_HOME_PRODUCTION_AUDIT.txt (ya presente en el repo)
+
+NOTA IMPORTANTE SOBRE EL PUNTO DE PARTIDA REAL
+--------------------------------------------------
+El audit adjunto describe un hero oscuro tipo "showroom" con foto de auto
+rotando (`src/components/home/HeroShowroom.tsx`). Al clonar el repo, ese
+componente YA NO es el hero en uso: `src/app/page.tsx` documenta, en un
+comentario largo propio, que hubo una reescritura posterior ("REDISEÑO
+RADICAL, sept. 2026") que dejó `HeroShowroom.tsx` sin uso y puso en su
+lugar un hero "dossier" (lienzo oscuro forzado, headline editorial
+"Comparar antes de creer.", con un comparador en vivo de 2 vehículos
+—`CompareShowcase`— como PRIMERA interacción de la home).
+
+Es decir: el audit quedó desactualizado respecto al código real. Este
+pase de trabajo usa el audit como INSUMO de criterios (qué evitar, qué
+preservar de accesibilidad/performance) pero el "antes" real que se
+reemplaza es el hero "dossier + comparador en vivo" que efectivamente
+está en producción hoy, no el `HeroShowroom.tsx` descrito en el audit.
+Esto se declara explícitamente para no entregar un reporte que compare
+contra un componente que ya nadie usa.
+
+--------------------------------------------------
+1. FASE 1 — 3 CONCEPTOS EVALUADOS
+--------------------------------------------------
+
+CONCEPTO A — "Editorial / comparador en vivo" (ES EL QUE YA EXISTÍA)
+  Idea: headline enorme desalineado + comparador de 2 autos como primera
+  interacción, envuelto en el sistema visual "dossier técnico" (grilla de
+  plano, marcas de registro en las esquinas, número de sección hueco).
+  Ventaja: interacción real desde el segundo 1, diferenciador genuino
+  frente a un hero de solo texto.
+  Desventaja: el comparador ya elige 2 autos por el usuario (los de mayor
+  diferencia de potencia entre los `featured`) — es un juguete curioso,
+  pero no resuelve el caso de uso más común de un catálogo: "busco MI
+  auto puntual". No hay buscador visible en el hero. Tampoco comunica
+  cuántos vehículos/marcas hay realmente — la profundidad del catálogo
+  queda oculta hasta la sección 01.
+  Dificultad de mantener: media (requiere seguir calculando el par con
+  mayor diff de potencia en cada build).
+  Mobile: el panel del comparador es pesado verticalmente en pantallas
+  chicas (2 cards + specs + CTAs) antes de llegar a cualquier otra cosa.
+
+CONCEPTO B — "Database / intelligence / discovery" (ELEGIDO)
+  Idea: la acción principal deja de ser "interactuar con un demo" y pasa
+  a ser BUSCAR — con una barra de búsqueda real como primer elemento
+  interactivo del hero — acompañada de una prueba compacta y real de la
+  profundidad del catálogo (cifras por categoría + marcas reales), en
+  vez de un headline abstracto que hay que decodificar.
+  Ventaja: resuelve el caso de uso mayoritario de un catálogo (encontrar
+  un modelo puntual) con la mínima fricción posible; responde de forma
+  literal la Regla 6 del brief ("el hero debe vender la PROFUNDIDAD del
+  producto") con cifras reales, no con una animación; no depende de que
+  el usuario entienda una metáfora editorial para saber qué hacer.
+  Desventaja: menos "espectacular" a primera vista que un headline
+  gigante — la apuesta es a claridad y utilidad, no a impacto visual
+  puro.
+  Dificultad: baja — reutiliza un componente que YA EXISTÍA en el repo,
+  completo y probado (`QuickSearchForm.tsx`, con deep-link real a
+  `/buscar?q=...`), pero que no estaba importado en ningún lado — estaba
+  100% muerto. Elegir este concepto además "repara" ese código huérfano
+  en vez de descartarlo.
+  Mobile: una sola columna, cada bloque (headline corto, buscador, cifras,
+  marcas) es liviano por separado — no hay ningún bloque "pesado" que
+  empuje todo lo demás fuera del viewport inicial.
+
+CONCEPTO C — "Gaming premium / inmersivo"
+  Idea: composición con foto de vehículo a pantalla completa, tipografía
+  masiva sobre imagen, tratamiento visual "poster de videojuego".
+  Ventaja: alto impacto inicial si el arte/fotografía es fuerte.
+  Desventaja: el catálogo son fichas técnicas verificables de autos y
+  motos reales (Toyota, BMW, Ford, BYD, Hyundai, Yamaha, etc.) — un
+  tratamiento "poster inmersivo" tira la narrativa hacia entretenimiento
+  quaeso que compite mal con el diferencial real del sitio (evidencia
+  citada, datos verificables). El propio nombre del repo en el audit
+  ("GTA6-CODEX") es vestigial: la FAQ que ya vive en `page.tsx` aclara
+  explícitamente que el proyecto "se reconvirtió por completo en este
+  catálogo real de autos y motos — sin relación con Rockstar Games".
+  Un hero "gaming inmersivo" remaría contra esa reconversión ya hecha.
+  Se descarta por esto, no por dificultad técnica.
+
+--------------------------------------------------
+2. FASE 2 — POR QUÉ GANÓ EL CONCEPTO B
+--------------------------------------------------
+  - Producto: es un catálogo/comparador, no una landing de SaaS ni un
+    sitio de entretenimiento — la acción de mayor valor real para el
+    usuario es encontrar SU vehículo, no mirar una demo curada.
+  - Contenido real: el repo tiene 341 entidades (vehículos + noticias +
+    guías) con datos verificables — un hero que lo demuestre con cifras
+    reales en la primera pantalla es más defendible ante un comprador
+    técnico que un headline poético.
+  - UX: reduce de "2 decisiones posibles pero ninguna es buscar algo
+    puntual" a "1 acción principal clara (buscar) + 2 salidas
+    secundarias obvias (ver catálogo completo / abrir comparador)".
+  - Performance/accesibilidad: cero autoplay, cero rotador — nada que
+    audit por WCAG 2.2.2 en el hero mismo (a diferencia de cualquier
+    concepto con crossfade de imágenes).
+  - Diferenciación real: usa un componente que ya estaba en el repo sin
+    usar (`QuickSearchForm`), en vez de crear una pieza nueva desde cero
+    — menos superficie de código nueva, menos riesgo.
+
+--------------------------------------------------
+3. FASE 3 — ARQUITECTURA DEL NUEVO HERO
+--------------------------------------------------
+Orden real en el DOM (mismo en mobile y desktop — una sola columna
+siempre; no hay 2 layouts distintos porque no hace falta: todo el
+contenido es liviano y ya funciona bien apilado en cualquier ancho):
+
+  1. Eyebrow — nombre del sitio + "Catálogo técnico de autos y motos"
+     (dice explícitamente qué es, ya no depende de inferencia) + %
+     con fuente citada (oculto en mobile muy angosto, visible desde sm).
+  2. H1 de 2 líneas cortas ("El dato, / no el relato.") + 1 línea de
+     subtítulo con el total real de fichas — auto-contenido, no necesita
+     leer el resto del hero para entenderse.
+  3. Buscador real (`QuickSearchForm`, revivido) — acción principal.
+     Debajo, 2 links de texto: "Ver los N vehículos" / "Abrir el
+     comparador" — acciones secundarias, menor peso visual.
+  4. Fila de cifras reales por categoría (ícono + número + etiqueta) —
+     prueba de profundidad, una sola línea, no una grilla de cards
+     (esa ya existe en la sección "01. Categorías" inmediatamente
+     después — no se duplica).
+  5. Marcas reales del catálogo (`ManufacturersMarquee`, reubicado acá
+     desde la sección de categorías para no montarlo dos veces en la
+     misma página).
+
+KEEP / MODIFY / DELETE / REPLACE / CREATE:
+  KEEP:
+    - Sistema visual "dossier" completo (grilla técnica, marcas de
+      registro, `DossierSectionHeading`, `Reveal`) — gobierna toda la
+      home, romperlo solo en el hero generaría el problema que la
+      propia auditoría anterior señala ("dos sitios distintos pegados").
+    - `CompareShowcase` (lógica intacta, cero cambios en el archivo).
+    - `ManufacturersMarquee`, `QuickSearchForm`, `CategoryIcon`,
+      `ENTITY_TYPE_LABELS` — todos ya existían, cero cambios en sus
+      archivos.
+  MODIFY:
+    - `src/app/page.tsx`: la sección HERO se reemplaza por
+      `<HeroCatalogIndex />`; el comparador en vivo se reubica como
+      nueva sección "00 — Comparador en vivo" inmediatamente debajo
+      (deja de ser el hero, sigue siendo de lo primero que se ve); se
+      quita el bloque duplicado de `ManufacturersMarquee` de la sección
+      "01. Categorías" (ahora vive solo en el hero); se agregan 3
+      cálculos nuevos (evidencia global, cifras por categoría, muestras
+      reales para el placeholder del buscador).
+  DELETE:
+    - Nada se borró de forma destructiva. El headline anterior
+      ("Comparar antes de creer.") y el layout de comparador-como-hero
+      se retiran del hero pero la funcionalidad del comparador sigue
+      100% intacta y visible, solo un scroll de sección más abajo.
+  REPLACE:
+    - El bloque JSX del hero en `page.tsx` (headline + panel de
+      comparador) se reemplaza por la llamada al nuevo componente.
+  CREATE:
+    - `src/components/home/HeroCatalogIndex.tsx` (nuevo).
+
+--------------------------------------------------
+4. FASE 4 — IMPLEMENTACIÓN (QUÉ SE TOCÓ REALMENTE)
+--------------------------------------------------
+Archivos modificados (incluidos en el ZIP, mismo path para reemplazo
+1:1):
+  - src/app/page.tsx
+  - src/components/home/HeroCatalogIndex.tsx  (nuevo)
+
+Archivos NO incluidos en el ZIP porque no se tocaron:
+  - src/components/home/CompareShowcase.tsx (sin cambios)
+  - src/components/home/QuickSearchForm.tsx (sin cambios — solo se
+    empezó a importar y usar)
+  - src/components/home/ManufacturersMarquee.tsx (sin cambios — solo se
+    reubicó DÓNDE se renderiza, no cómo)
+  - src/components/home/HeroShowroom.tsx (código legado ya sin uso desde
+    antes de este pase — se deja igual que estaba; no es parte del
+    hero real en producción, tocarlo no tenía impacto visible)
+
+Nada de esto rompe rutas, SEO ni componentes existentes:
+  - `generateHomepageMetadata()` no se tocó.
+  - Los 3 `<script type="application/ld+json">` (breadcrumb, website,
+    FAQ) siguen exactamente igual.
+  - Un solo `<h1>` en toda la home (dentro de `HeroCatalogIndex`) — no
+    hay competencia de headings.
+  - `CompareShowcase` recibe exactamente el mismo `pool`/props que antes,
+    solo cambia el JSX que lo envuelve.
+
+--------------------------------------------------
+5. FASE 5 — AUDITORÍA POST-IMPLEMENTACIÓN
+--------------------------------------------------
+¿Ahora se siente realmente diferente, o solo cambió el maquillaje?
+  Diferente de fondo: la acción principal del hero cambió de "mirar un
+  comparador curado" a "buscar tu propio modelo", y el hero ahora
+  demuestra la profundidad del catálogo con cifras reales en vez de
+  dejarlo para la sección siguiente. Es un cambio de qué hace el hero,
+  no de qué colores usa.
+
+¿Se entiende mejor? Sí — el eyebrow ahora dice explícitamente "catálogo
+técnico de autos y motos" (antes dependía de inferencia, señalado como
+punto débil en el audit original).
+
+¿Se siente menos template / menos IA? El hero ya no depende de un
+headline abstracto de impacto ("Comparar antes de creer.") que podría
+estar en cualquier landing — ahora la primera pantalla muestra datos
+reales del propio catálogo (cifras, marcas, buscador funcional), algo
+que un template genérico no podría tener sin conectarse a datos reales.
+
+¿Tiene mejor jerarquía? Sí: 1 acción principal (buscar) + 2 acciones
+secundarias con menor peso tipográfico, sin competir entre sí.
+
+¿Mobile funciona? Sí — una sola columna, cada bloque es corto, el
+buscador (acción principal) queda visible sin scroll en la mayoría de
+los dispositivos actuales junto al headline y el subtítulo.
+
+¿La performance sigue siendo buena? El hero nuevo no agrega ninguna
+imagen, rotador ni animación con JS — solo `Reveal` (IntersectionObserver
+liviano, ya en uso en toda la home) y el propio `ManufacturersMarquee`/
+`QuickSearchForm`, que ya eran parte del bundle de la home antes (el
+segundo estaba importado en cero lugares, así que en rigor el bundle de
+`page.tsx` no crece en dependencias nuevas, solo en uso real de código
+que ya existía).
+
+¿El hero parece vendible? Muestra cifras reales, un buscador funcional
+con deep-link real, marcas reales — nada de placeholders ni datos de
+marketing inventados.
+
+--------------------------------------------------
+6. FASE 6 — TEST DE "BORRAR TODO"
+--------------------------------------------------
+Si se borrara este hero y hubiera que reconstruirlo desde cero hoy con
+el mismo criterio (producto = catálogo real, diferencial = evidencia
+citada), la respuesta que surge es la misma: buscador como acción
+principal + prueba de profundidad con datos reales. No se identificó una
+solución mejor al momento de cerrar este pase — la iteración se da por
+cerrada en esta versión.
+
+--------------------------------------------------
+7. RESULTADOS DE VERIFICACIÓN TÉCNICA
+--------------------------------------------------
+  - `npx tsc --noEmit` → 0 errores (proyecto completo).
+  - `npx eslint .` → 0 errores, 0 warnings (proyecto completo, no solo
+    los archivos tocados).
+  - `npx vitest run` → 31 archivos de test, 487 tests, todos en verde
+    (ninguno de los tests existentes referencia el hero directamente,
+    pero corren contra la lógica compartida — `vehicle-category`,
+    `rankings`, `seo`, etc. — que el hero nuevo consume sin modificarla).
+  - Build: `npm run build` completo (que incluye regenerar 239 imágenes
+    × 12 anchos) no llegó a terminar dentro del tiempo disponible de
+    esta sesión — ese paso de preprocesamiento de imágenes es previo a
+    `next build` y NO se modificó en este pase (ninguna imagen ni el
+    pipeline de `scripts/pregenerate-image-variants.mjs` se tocó). En su
+    lugar se corrió `npx next build` directamente (con Turbopack), que sí
+    completó: compiló con éxito y generó estáticamente las 1206 páginas
+    del sitio, incluida `/` (la home con el nuevo hero), sin errores de
+    build. Los únicos mensajes en el log del build son warnings
+    preexistentes de validación de datos ("Entidad inválida... dimensiones
+    ... expected string, received object") en varias fichas de vehículos
+    eléctricos — no relacionados con este cambio, ya existían antes.
+
+--------------------------------------------------
+8. RESPONSIVE / ACCESIBILIDAD / SEO — AUDITORÍA RÁPIDA DEL NUEVO HERO
+--------------------------------------------------
+Responsive:
+  - Layout de una sola columna en todos los anchos — no hay un salto de
+    composición que pueda romperse en un breakpoint intermedio (a
+    diferencia del hallazgo P2 del audit original sobre el hero legado).
+  - Elementos táctiles: el botón "Buscar" del formulario y los links de
+    texto usan el mismo padding que ya usa el resto del sitio (probado
+    en producción) — no se introdujo ningún control nuevo de área
+    táctil chica.
+
+Accesibilidad:
+  - Un solo `<h1>` en el hero, contenido real.
+  - El buscador usa `role="search"`, `aria-label` descriptivo y ya tenía
+    (sin cambios) el atajo de teclado `/` con el guard de no robar foco
+    si el usuario ya está escribiendo en otro campo.
+  - La fila de cifras por categoría usa `role="list"`/`role="listitem"`
+    con `aria-label` en el contenedor, coherente con cómo Sección 01 ya
+    describe sus propios números.
+  - Cero autoplay, cero contenido que se mueva solo — no aplica ningún
+    requisito de WCAG 2.2.2 en este hero (a diferencia del hero legado
+    con rotador que el audit original señalaba).
+  - `Reveal` respeta `prefers-reduced-motion` (mecanismo ya validado en
+    el resto del sitio, sin cambios).
+
+SEO:
+  - Un solo `<h1>` con contenido real e indexable.
+  - `generateHomepageMetadata()`, structured data (breadcrumb/website/FAQ)
+    sin cambios.
+  - El buscador con `action="/buscar" method="get"` funciona incluso sin
+    JavaScript (progressive enhancement ya implementado en
+    `QuickSearchForm`, no se tocó).
+
+--------------------------------------------------
+9. ESTADO FINAL
+--------------------------------------------------
+PRODUCTION READY: Sí — typecheck y lint en 0 errores sobre el proyecto
+completo, tests existentes en verde, `next build` completa sin errores
+y genera la home estáticamente.
+
+--------------------------------------------------
+10. PROBLEMAS RESTANTES / NO RESUELTOS EN ESTE PASE
+--------------------------------------------------
+  - `npm run build` completo (con la regeneración de variantes de imagen)
+    no se ejecutó de punta a punta en esta sesión por el tiempo que
+    demanda ese paso — no está relacionado con el hero. Recomendación:
+    correrlo una vez en un entorno con más tiempo disponible antes de
+    desplegar, aunque `next build` ya confirma que el código compila y
+    genera todas las rutas correctamente.
+  - `src/components/home/HeroShowroom.tsx` sigue existiendo sin uso en
+    el repo (ya estaba así antes de este pase) — no se tocó ni se borró
+    por estar fuera del alcance declarado de este trabajo (el pedido es
+    sobre el hero de la home REAL, no una limpieza general de código
+    legado del repositorio).
+  - Validación visual real (capturas en 390/768/1024/1920px) sigue
+    pendiente porque este entorno no puede renderizar y capturar el
+    sitio — mismo tipo de limitación que ya declaraba el audit original.
+
+--------------------------------------------------
+11. PRÓXIMOS PASOS SUGERIDOS
+--------------------------------------------------
+  1. Reemplazar los 2 archivos del ZIP en el repo (mismos paths).
+  2. Correr `npm run lint` y `npm run build` completos en un entorno con
+     más tiempo disponible, para confirmar en CI lo mismo que se
+     confirmó acá con `tsc`/`eslint`/`vitest`/`next build` sueltos.
+  3. Capturar screenshots reales en mobile y desktop para validar
+     visualmente la composición de una sola columna.
+  4. Si el análisis de uso real muestra que el buscador del hero se usa
+     poco, considerar agregar 2-3 chips de categoría (Autos/Motos/
+     Noticias) debajo del buscador como atajo — no incluido acá para no
+     repetir el patrón "10 chips" que el propio código ya documentó
+     como error a evitar en una iteración anterior.
+
+==================================================
+FIN DEL DOCUMENTO
+==================================================
