@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { type Vehicle } from '@/types'
 import { resolveEntityDisplayImage } from '@/lib/media'
-import { parsePowerHp } from '@/lib/vehicle-price'
+import { parsePowerHp } from '@/lib/vehicle-power'
 import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
