@@ -69,7 +69,7 @@ function main() {
     // es un string fijo — así que no hay riesgo de seguridad real, pero se
     // pasa como string único igual para seguir la recomendación de Node y
     // no imprimir el warning en cada corrida.
-    const result = spawnSync('npx next build', {
+    const result = spawnSync('node scripts/generate-content-bundle.mjs && npx next build', {
       encoding: 'utf-8',
       env: { ...process.env },
       // En Windows, `npx` es `npx.cmd`, no un ejecutable nativo: spawnSync
