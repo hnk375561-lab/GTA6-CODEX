@@ -15,19 +15,18 @@ import { parsePowerHp } from '@/lib/vehicle-power'
 import { parsePriceUsd } from '@/lib/vehicle-price'
 import { getAvailableRankings } from '@/lib/rankings'
 import { getManufacturerMarqueeItems } from '@/lib/vehicle-manufacturers'
-import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
 import { Reveal } from '@/components/ui/Reveal'
 import { EntityCard } from '@/components/entities/EntityCard'
 import { AdUnit } from '@/components/monetization/AdUnit'
-import { RankingsSpotlight, type RankingSpotlight } from '@/components/home/RankingsSpotlight'
-import { FeaturedCarousel } from '@/components/home/FeaturedCarousel'
-import { HomeFaqPanel, type FaqItem } from '@/components/home/HomeFaqPanel'
+import { ArchiveHero } from '@/components/home/ArchiveHero'
+import { VehicleArchiveIndex } from '@/components/home/VehicleArchiveIndex'
+import { ManufacturerArchive } from '@/components/home/ManufacturerArchive'
+import { ArchiveClassifications, type ClassificationEntry, type Classification } from '@/components/home/ArchiveClassifications'
+import { FeaturedDossiers } from '@/components/home/FeaturedDossiers'
+import { ArchiveConsultations, type ConsultationItem } from '@/components/home/ArchiveConsultations'
 import { FinancingCalculator } from '@/components/ui/FinancingCalculator'
 import { FinancingCalculatorSkeleton } from '@/components/ui/loading'
 import { formatRelativeTime } from '@/lib/utils'
-import { VehicleRadarExplorer } from '@/components/home/VehicleRadarExplorer'
-import { HomeIntroduction } from '@/components/home/HomeIntroduction'
-import { ManufacturerVisualization } from '@/components/home/ManufacturerVisualization'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateHomepageMetadata()
@@ -35,47 +34,44 @@ export async function generateMetadata(): Promise<Metadata> {
 
 /**
  * ============================================================================
- * HOME — REDISEÑO RADICAL 180° (septiembre 2026)
+ * HOME — ARCHIVO AUTOMOTOR VERIFICADO (septiembre 2026)
  * ============================================================================
  *
- * RUPTURA VISUAL COMPLETA: se elimina todo patrón anterior
- * (dossier, hero showcase, secciones centradas). 
+ * IDENTIDAD NUEVA: "Archivo técnico físico de vehículos"
+ * - Expdiente automotor
+ * - Dossier documental
+ * - Biblioteca especializada
+ * - Fichas técnicas con fuentes citadas
+ * - Sellos de evidencia y verificación
+ * - Papel, tinta, anotaciones
  *
- * NUEVA METÁFORA: "Catálogo Vivo — Un Radar Global de Máquinas"
- * - Entrada editorial (NO hero): portada brutalista sin CTA explícita
- * - Explorador visual: vehículos como puntos en coordenadas (marca × segmento)
- * - Datos como lenguaje: escala, densidad, color comunican información
- * - Navegación integrada: filtros/búsqueda como parte de la composición
- * - Scroll como descubrimiento: cada sección revela dimensión diferente
+ * METÁFORA VISUAL:
+ * - Entrada a un archivo físico especializado
+ * - Documentos, fichas, carpetas
+ * - Organización sistemática
+ * - Profundidad editorial
+ * - Rigor técnico
  *
- * SECCIONES (totalmente reorganizadas):
- * 1. INTRO editorial — título desordenado, sin CTA, solo invitación
- * 2. RADAR explorador — vehículos por marca/segmento, escala visual
- * 3. FABRICANTES — visualización de marca como "colecciones visuales"
- * 4. RANKINGS — lista viva, no cards (ruptura de grilla)
- * 5. CATÁLOGO VIVO — carrusel de destacados (sin cambio lógico, solo composición)
- * 6. FINANCIAMIENTO — calculadora integrada (mismo componente, otra envolvura)
- * 7. FAQ — panel conversacional
- * 8. CIERRE — CTA final, no intro
+ * SECCIONES (reconstruidas completamente):
+ * 1. HERO ARCHIVO — identificador, título, buscador, fichas técnicas reales
+ * 2. ÍNDICE DE VEHÍCULOS — organización por categorías tipo estantería
+ * 3. ESTANTERÍA DE FABRICANTES — carpetas por marca
+ * 4. CLASIFICACIONES DEL ARCHIVO — índices técnicos (rankings)
+ * 5. DOSSIERS DESTACADOS — fichas seleccionadas
+ * 6. CONSULTAS DEL ARCHIVO — FAQ formato documento
+ * 7. FINANCIAMIENTO — calculadora integrada
+ * 8. CIERRE — CTA final
  *
  * CAMBIOS TÉCNICOS:
- * - Componentes visuales nuevos: VehicleRadarExplorer, HomeIntroduction, ManufacturerVisualization
- * - Tailwind: nuevas clases para composición asimétrica/brutalista
- * - Globales.css: nuevas variables para "escala visual radical"
- * - No se toca la lógica de datos (getFeaturedEntities, etc.), solo presentación
+ * - Componentes nuevos: ArchiveHero, VehicleArchiveIndex, ManufacturerArchive, etc.
+ * - Paleta: Paper (#F4F1EA), Ink (#14110C), Oxide Red (#B23A24), Archive Green (#2B4436)
+ * - Tipografía: serif editorial (títulos), mono/semi-mono (datos), sans neutral (texto)
+ * - Eliminación de: radar, gradients, glow, glass, animaciones constantes, brutalismo digital
  */
 
 const MIN_COMPARE_SHOWCASE_POOL = 2
 const HOME_EVIDENCE_HIGHLIGHTS_LIMIT = 6
 const HOME_RANKING_TOP_ENTRIES = 3
-
-const EVIDENCE_LEVEL_PRIORITY: Record<EvidenceLevel, number> = {
-  'oficial-nombrado': 0,
-  'oficial-visual-multifuente': 1,
-  'oficial-visual': 2,
-  respaldado: 3,
-  especulativo: 4,
-}
 
 function FinancingCalculatorFallback() {
   return <FinancingCalculatorSkeleton />
@@ -92,7 +88,7 @@ export default async function Home() {
   ] = await Promise.all([
     getEntityCount(EntityType.VEHICLE),
     getEntityCountsByType(),
-    getFeaturedEntities(100), // traer más para poder variar la presentación visual
+    getFeaturedEntities(100),
     getEntitiesByType(EntityType.NEWS, { limit: 10 }),
     getAvailableRankings(),
   ])
@@ -112,15 +108,25 @@ export default async function Home() {
     latestNewsDates[entity.slug] = entity.date ? formatRelativeTime(entity.date) : ''
   }
 
-  const rankingsSpotlightData: RankingSpotlight[] = availableRankings
-    .slice(0, 3)
+  // Convertir rankings al formato nuevo
+  const classificationsData: Classification[] = availableRankings
+    .slice(0, 4)
     .map((ranking) => ({
       slug: ranking.slug,
-      name: ranking.name,
-      topEntries: ranking.vehicles.slice(0, HOME_RANKING_TOP_ENTRIES),
+      shortTitle: ranking.name,
+      title: ranking.name,
+      direction: (ranking.direction === 'asc' ? 'min' : 'max') as 'min' | 'max',
+      topEntries: ranking.vehicles.slice(0, HOME_RANKING_TOP_ENTRIES).map((v, i) => ({
+        position: i + 1,
+        vehicleSlug: v.slug,
+        vehicleTitle: v.title,
+        metricValue: v.metricValue,
+        metricLabel: v.metricLabel,
+      })),
+      eligibleCount: ranking.vehicles.length,
     }))
 
-  const faqItems: FaqItem[] = [
+  const consultationItems: ConsultationItem[] = [
     {
       question: '¿Qué datos verificaste de cada vehículo?',
       answer:
@@ -129,7 +135,7 @@ export default async function Home() {
     {
       question: '¿Por qué algunos vehículos tienen más datos que otros?',
       answer:
-        'Los fabricantes grandes publican más especificaciones. Los datos nuevos llegan con cada actualización; el catálogo crece conforme aparecen más fiches verificadas.',
+        'Los fabricantes grandes publican más especificaciones. Los datos nuevos llegan con cada actualización; el catálogo crece conforme aparecen más fichas verificadas.',
     },
     {
       question: '¿Puedo usar estos datos para comparar modelos?',
@@ -143,147 +149,56 @@ export default async function Home() {
     },
   ]
 
+  // Ejemplos de búsqueda (títulos reales del catálogo)
+  const searchExamples = featured.slice(0, 5).map(v => v.title)
+
   // ========== RENDER (nueva composición completamente diferente) ==========
   return (
     <>
-      <div className="min-h-screen bg-surface-page selection:bg-auto-accent selection:text-white">
-        {/* ============= INTRO EDITORIAL (SIN HERO) ============= */}
-        <section className="relative overflow-hidden border-b border-edge py-24 sm:py-32 lg:py-40">
-          <div className="container-max">
-            <HomeIntroduction vehicleCount={totalVehicleCount} />
-          </div>
-        </section>
+      <div className="min-h-screen bg-paper">
+        {/* ============= HERO DEL ARCHIVO ============= */}
+        <ArchiveHero
+          vehicleCount={totalVehicleCount}
+          evidenceCoveragePct={calculateEvidenceCoverage(featured)}
+          featuredVehicles={featured.slice(0, 10) as Vehicle[]}
+          searchExamples={searchExamples}
+        />
 
-        {/* ============= RADAR EXPLORADOR (NUEVO COMPONENTE) ============= */}
-        <section className="relative border-b border-edge py-24 sm:py-32 lg:py-40 bg-surface-alt">
-          <div className="container-max">
-            <Reveal className="mb-8 lg:mb-12">
-              <div className="grid gap-4 lg:grid-cols-[7rem_1fr] lg:gap-10">
-                <span className="font-mono text-7xl font-light text-edge tracking-tighter">1</span>
-                <div>
-                  <p className="font-mono text-xs tracking-widest text-neutral-500 uppercase">Coordenadas Visuales</p>
-                  <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mt-2">
-                    El espacio de las máquinas
-                  </h2>
-                  <p className="text-neutral-600 mt-4 max-w-xl leading-relaxed">
-                    Cada vehículo como punto en el mapa. Tamaño = potencia. Posición = marca × segmento.
-                    Descubrí patrones visuales en los datos.
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-            <Suspense fallback={<div className="h-96 bg-surface-card rounded animate-pulse" />}>
-              <VehicleRadarExplorer vehicles={featured.slice(0, 50)} />
-            </Suspense>
-          </div>
-        </section>
+        {/* ============= ÍNDICE DE VEHÍCULOS ============= */}
+        <VehicleArchiveIndex vehicles={featured.slice(0, 24) as Vehicle[]} />
 
-        {/* ============= FABRICANTES (NUEVA PRESENTACIÓN) ============= */}
-        <section className="relative border-b border-edge py-24 sm:py-32 lg:py-40">
-          <div className="container-max">
-            <Reveal className="mb-8 lg:mb-12">
-              <div className="grid gap-4 lg:grid-cols-[7rem_1fr] lg:gap-10">
-                <span className="font-mono text-7xl font-light text-edge tracking-tighter">2</span>
-                <div>
-                  <p className="font-mono text-xs tracking-widest text-neutral-500 uppercase">Colecciones por Marca</p>
-                  <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mt-2">
-                    Cada fabricante, un universo
-                  </h2>
-                  <p className="text-neutral-600 mt-4 max-w-xl leading-relaxed">
-                    Desde el lujo hasta el acceso: visualizá cómo cada marca completa su catálogo.
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-            <Suspense fallback={<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 h-64" />}>
-              <ManufacturerVisualization vehicles={featured.slice(0, 100)} />
-            </Suspense>
-          </div>
-        </section>
+        {/* ============= ESTANTERÍA DE FABRICANTES ============= */}
+        <ManufacturerArchive vehicles={featured.slice(0, 50) as Vehicle[]} />
 
-        {/* ============= RANKINGS (LISTA VIVA, NO CARDS) ============= */}
-        {rankingsSpotlightData.length > 0 && (
-          <section className="relative border-b border-edge py-24 sm:py-32 lg:py-40 bg-surface-alt">
-            <div className="container-max">
-              <Reveal className="mb-8 lg:mb-12">
-                <div className="grid gap-4 lg:grid-cols-[7rem_1fr] lg:gap-10">
-                  <span className="font-mono text-7xl font-light text-edge tracking-tighter">3</span>
-                  <div>
-                    <p className="font-mono text-xs tracking-widest text-neutral-500 uppercase">Listas Vivas</p>
-                    <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mt-2">
-                      Los mejores, por criterio
-                    </h2>
-                    <p className="text-neutral-600 mt-4 max-w-xl leading-relaxed">
-                      Potencia, precio, seguridad, consumo: ver el ranking completo en cada categoría.
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-              <Reveal>
-                <RankingsSpotlight rankings={rankingsSpotlightData} />
-              </Reveal>
-            </div>
-          </section>
+        {/* ============= CLASIFICACIONES DEL ARCHIVO ============= */}
+        {classificationsData.length > 0 && (
+          <ArchiveClassifications classifications={classificationsData} />
         )}
 
-        {/* ============= DESTACADOS (CARRUSEL VISUAL) ============= */}
+        {/* ============= DOSSIERS DESTACADOS ============= */}
         {featured.length > 0 && (
-          <section className="relative border-b border-edge py-24 sm:py-32 lg:py-40">
-            <div className="container-max">
-              <Reveal className="mb-8 lg:mb-12">
-                <div className="grid gap-4 lg:grid-cols-[7rem_1fr] lg:gap-10">
-                  <span className="font-mono text-7xl font-light text-edge tracking-tighter">4</span>
-                  <div>
-                    <p className="font-mono text-xs tracking-widest text-neutral-500 uppercase">Catálogo Vivo</p>
-                    <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mt-2">
-                      Lo más relevante ahora
-                    </h2>
-                    <p className="text-neutral-600 mt-4 max-w-xl leading-relaxed">
-                      Vehículos con mayor investigación, más datos verificados, recién agregados.
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-              <FeaturedCarousel ariaLabel="Vehículos destacados">
-                {featured.slice(0, 20).map((entity, i) => (
-                  <div
-                    key={`${entity.type}-${entity.slug}`}
-                    className="w-[44%] shrink-0 snap-start snap-stop-always sm:w-[30%] lg:w-[22%]"
-                  >
-                    <Reveal delay={i * 30}>
-                      <EntityCard
-                        entity={entity}
-                        image={resolveEntityDisplayImage(entity)}
-                        clipUrl={undefined}
-                        relationCount={featuredRelationCounts[entity.slug]}
-                        size="compact"
-                      />
-                    </Reveal>
-                  </div>
-                ))}
-              </FeaturedCarousel>
-            </div>
-          </section>
+          <FeaturedDossiers vehicles={featured.slice(0, 8) as Vehicle[]} />
         )}
 
         {/* ============= FINANCIAMIENTO ============= */}
-        <section className="relative border-b border-edge py-24 sm:py-32 lg:py-40 bg-surface-alt">
+        <section className="py-16 sm:py-24 lg:py-32 bg-paper border-t border-border">
           <div className="container-max">
-            <Reveal className="mb-8 lg:mb-12">
-              <div className="grid gap-4 lg:grid-cols-[7rem_1fr] lg:gap-10">
-                <span className="font-mono text-7xl font-light text-edge tracking-tighter">5</span>
-                <div>
-                  <p className="font-mono text-xs tracking-widest text-neutral-500 uppercase">Simulador</p>
-                  <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mt-2">
-                    Calculá tu cuota
-                  </h2>
-                  <p className="text-neutral-600 mt-4 max-w-xl leading-relaxed">
-                    Precio, entrega, tasa y plazo en una misma calculadora. Sin dejar la página.
-                  </p>
+            <Reveal className="max-w-2xl mx-auto">
+              <div className="text-center mb-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-px flex-1 bg-ink/10" />
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-ink/50">
+                    HERRAMIENTAS DEL ARCHIVO
+                  </span>
+                  <div className="h-px flex-1 bg-ink/10" />
                 </div>
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-ink">
+                  Calculadora de financiamiento
+                </h2>
+                <p className="font-sans text-ink/60 mt-4">
+                  Simulá tu cuota con datos reales del mercado. Precio, entrega, tasa y plazo.
+                </p>
               </div>
-            </Reveal>
-            <Reveal className="max-w-xl">
               <Suspense fallback={<FinancingCalculatorFallback />}>
                 <FinancingCalculator />
               </Suspense>
@@ -291,53 +206,41 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* ============= FAQ ============= */}
-        <section className="relative border-b border-edge py-24 sm:py-32 lg:py-40">
+        {/* ============= CONSULTAS DEL ARCHIVO ============= */}
+        <ArchiveConsultations items={consultationItems} />
+
+        {/* ============= CIERRE DEL ARCHIVO ============= */}
+        <section className="py-16 sm:py-24 lg:py-32 bg-paper border-t border-border">
           <div className="container-max">
-            <Reveal className="mb-8 lg:mb-12">
-              <div className="grid gap-4 lg:grid-cols-[7rem_1fr] lg:gap-10">
-                <span className="font-mono text-7xl font-light text-edge tracking-tighter">6</span>
+            <Reveal className="max-w-2xl mx-auto text-center">
+              <div className="space-y-8">
                 <div>
-                  <p className="font-mono text-xs tracking-widest text-neutral-500 uppercase">Preguntas</p>
-                  <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mt-2">
-                    Lo que preguntás
+                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink/50 mb-4">
+                    ARCHIVO AUTOMOTOR VERIFICADO
+                  </p>
+                  <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-tight">
+                    Sin Frenos:<br />
+                    <span className="text-oxide-red">el archivo vivo</span>
                   </h2>
                 </div>
-              </div>
-            </Reveal>
-            <HomeFaqPanel items={faqItems} />
-          </div>
-        </section>
-
-        {/* ============= CIERRE ROBUSTO ============= */}
-        <section className="relative border-b border-edge py-24 sm:py-32 lg:py-40 bg-surface-alt">
-          <div className="container-max">
-            <Reveal className="max-w-2xl mx-auto">
-              <p className="font-mono text-xs tracking-widest text-neutral-500 uppercase mb-8">Acción Final</p>
-              <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 leading-none">
-                Sin Frenos:<br />
-                <span className="text-auto-accent">el archivo vivo</span>
-              </h2>
-              <p className="text-lg text-neutral-600 mb-12 max-w-xl leading-relaxed">
-                250+ vehículos. Datos verificados. Comparación en vivo. Tu cuota simulada. Todo en un lugar. 
-                No hace falta buscar en otro lado.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/vehiculos"
-                  className="cta-shine tap-scale group inline-flex items-center justify-center gap-2 rounded-full bg-inverse px-10 py-5 font-semibold text-white transition-transform hover:-translate-y-1 text-lg"
-                >
-                  Explorar catálogo
-                  <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">
-                    →
-                  </span>
-                </Link>
-                <Link
-                  href="/comparar"
-                  className="tap-scale inline-flex items-center justify-center rounded-full border-2 border-neutral-300 px-10 py-5 font-semibold text-neutral-900 transition-transform hover:-translate-y-1 text-lg"
-                >
-                  Comparar dos vehículos
-                </Link>
+                <p className="font-sans text-lg text-ink/70 leading-relaxed">
+                  {totalVehicleCount}+ vehículos. Datos verificados. Comparación en vivo. Tu cuota simulada. 
+                  Todo en un lugar. No hace falta buscar en otro lado.
+                </p>
+                <div className="flex flex-wrap gap-4 justify-center">
+                  <Link
+                    href="/vehiculos"
+                    className="font-mono text-xs uppercase tracking-[0.15em] bg-oxide-red text-white px-8 py-4 hover:bg-ink transition-colors duration-200"
+                  >
+                    Explorar archivo
+                  </Link>
+                  <Link
+                    href="/comparar"
+                    className="font-mono text-xs uppercase tracking-[0.15em] border border-ink/30 text-ink px-8 py-4 hover:border-ink hover:bg-paper transition-colors duration-200"
+                  >
+                    Comparar fichas
+                  </Link>
+                </div>
               </div>
             </Reveal>
           </div>
@@ -360,4 +263,10 @@ async function getEntityCountsByType() {
   }
 
   return counts
+}
+
+function calculateEvidenceCoverage(entities: any[]): number | null {
+  if (!entities.length) return null
+  const withEvidence = entities.filter(e => e.evidence && e.evidence.level).length
+  return Math.round((withEvidence / entities.length) * 100)
 }
