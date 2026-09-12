@@ -10,7 +10,7 @@
 ![License](https://img.shields.io/badge/license-ver%20LICENSE-lightgrey)
 ![Node](https://img.shields.io/badge/node-18%2B-green)
 
-[🌐 Sitio en vivo](https://gta-6-codex.vercel.app) · [📖 Documentación](#-documentación) · [🚀 Quick Start](#-quick-start) · [🤝 Contribuir](#-contribuir)
+[🌐 Sitio en vivo](https://hnk375561-lab.github.io/Sin-Frenos) · [📖 Documentación](#-documentación) · [🚀 Quick Start](#-quick-start) · [🤝 Contribuir](#-contribuir)
 
 </div>
 
@@ -103,7 +103,7 @@ para ese quiebre futuro entre "cobertura global" y "detalle por país".
 | Búsqueda | Fuse.js 7 (fuzzy search) |
 | Mapa | Stub "en construcción" (`/mapa`) — sin librería de mapas hoy; Leaflet fue eliminado del repo junto con el componente original |
 | Tests | Vitest |
-| Deploy | Vercel |
+| Deploy | GitHub Pages |
 
 ### Estructura de directorios
 
@@ -346,8 +346,9 @@ próxima persona buscando algo que no está:
   todavía comparaba contra los tokens viejos y por eso fallaba
   siempre, se actualizó para chequear los tokens reales.
 - No quedan archivos `.json.rej` en `src/content/vehiculos/`.
-- `vercel.json` ya apunta a `https://gta-6-codex.vercel.app`, no al
-  dominio viejo.
+- No quedan referencias al despliegue viejo en Vercel (`gta-6-codex.vercel.app`);
+  el deploy es GitHub Pages y `.github/workflows/deploy-pages.yml` ya fija
+  `NEXT_PUBLIC_SITE_URL` al dominio correcto.
 
 Además, un bug real que **no** estaba en esta lista se encontró y
 corrigió en la auditoría: los 250 JSON de `src/content/vehiculos/`
