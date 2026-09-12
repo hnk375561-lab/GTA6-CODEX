@@ -91,7 +91,7 @@ function FinancingLandingClient({ vehicle }: { vehicle: Vehicle }) {
               </p>
               <Link
                 href={`/financiamiento?vehiculo=${encodeURIComponent(vehicle.title)}&precio=${encodeURIComponent(String(parsePriceUsd(vehicle) || 0))}`}
-                className="inline-flex items-center gap-2 rounded-lg bg-auto-accent px-6 py-3 font-display text-sm font-semibold text-auto-darker transition-transform hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-2 rounded-lg bg-auto-accent px-6 py-3 font-display text-sm font-semibold text-white transition-transform hover:scale-105 active:scale-95"
               >
                 Ir a la calculadora completa
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -159,7 +159,7 @@ function FinancingLandingClient({ vehicle }: { vehicle: Vehicle }) {
           </Link>
           <Link
             href="/financiamiento"
-            className="inline-flex items-center gap-2 rounded-lg bg-auto-accent px-4 py-2 text-sm font-semibold text-auto-darker transition-transform hover:scale-105 active:scale-95"
+            className="inline-flex items-center gap-2 rounded-lg bg-auto-accent px-4 py-2 text-sm font-semibold text-white transition-transform hover:scale-105 active:scale-95"
           >
             Ver calculadora completa
           </Link>

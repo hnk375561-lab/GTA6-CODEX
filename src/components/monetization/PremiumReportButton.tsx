@@ -60,7 +60,7 @@ export function PremiumReportButton({ slugs, className = '', trackingLabel }: Pr
         type="button"
         onClick={handleClick}
         disabled={disabled || status === 'loading'}
-        className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-auto-accent bg-transparent px-4 py-2 text-sm font-semibold text-auto-accent-strong transition-colors hover:bg-auto-accent hover:text-auto-darker disabled:cursor-not-allowed disabled:opacity-50"
+        className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-auto-accent bg-transparent px-4 py-2 text-sm font-semibold text-auto-accent-strong transition-colors hover:bg-auto-accent hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M12 15V3m0 12-4-4m4 4 4-4" />

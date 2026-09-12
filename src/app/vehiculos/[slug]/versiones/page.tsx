@@ -170,7 +170,7 @@ function VehicleVersionsClient({ vehicle, variants }: VehicleVersionsProps) {
             )}
             <Link
               href={`/financiar/${vehicle.slug}`}
-              className="inline-flex items-center gap-2 rounded-lg bg-auto-accent px-4 py-2 text-sm font-semibold text-auto-darker transition-transform hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-lg bg-auto-accent px-4 py-2 text-sm font-semibold text-white transition-transform hover:scale-105 active:scale-95"
             >
               Financiar este modelo
             </Link>

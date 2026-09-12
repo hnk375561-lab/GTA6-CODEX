@@ -125,7 +125,7 @@ export default function LicenciaDatosPage() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="tap-scale mt-2 inline-flex items-center gap-2 rounded-lg bg-auto-accent px-6 py-3 font-display text-sm font-semibold text-auto-darker transition-transform hover:scale-105"
+            className="tap-scale mt-2 inline-flex items-center gap-2 rounded-lg bg-auto-accent px-6 py-3 font-display text-sm font-semibold text-white transition-transform hover:scale-105"
           >
             Escribinos por WhatsApp
           </a>
