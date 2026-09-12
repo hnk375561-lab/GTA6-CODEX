@@ -41,10 +41,11 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
 
   return (
     <section className="relative min-h-screen bg-paper overflow-hidden">
-      {/* Fondo con textura sutil de papel */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2314110C' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-      }} aria-hidden="true" />
+      {/* Fondo con textura sutil de papel + luz cenital suave, para que
+          el "documento" tenga algo de profundidad sin caer en gradients
+          evidentes (fuera del vocabulario visual del archivo). */}
+      <div className="paper-texture absolute inset-0 opacity-[0.035]" aria-hidden="true" />
+      <div className="paper-vignette pointer-events-none absolute inset-0" aria-hidden="true" />
 
       <div className="container-max relative z-10 py-16 sm:py-24 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
@@ -155,7 +156,7 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
                       className="absolute inset-0 rounded-sm border border-border/70 bg-surface-alt/90 [transform:rotate(-3deg)_translate(-4px,5px)]"
                     />
                     <div
-                      className="group relative z-10 bg-surface-card border border-border p-6 shadow-sm transition-transform duration-300 ease-out [transform:rotate(var(--card-rotate))] hover:[transform:rotate(0deg)_translateY(-4px)] motion-reduce:transition-none motion-reduce:hover:[transform:none]"
+                      className="group relative z-10 bg-surface-card border border-border p-6 shadow-md transition-[transform,box-shadow] duration-300 ease-out [transform:rotate(var(--card-rotate))] hover:shadow-xl hover:[transform:rotate(0deg)_translateY(-4px)] motion-reduce:transition-none motion-reduce:hover:[transform:none]"
                       style={{ '--card-rotate': index === 0 ? '-1deg' : '1deg' } as React.CSSProperties}
                     >
                     {/* Cabecera del documento */}
@@ -267,6 +268,28 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
             })}
           </div>
         </div>
+      </div>
+
+      {/* Cue de scroll: invita a seguir bajando al índice del archivo.
+          Puramente decorativo — no cambia foco ni orden de tabulación. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 lg:flex lg:flex-col lg:items-center lg:gap-2"
+      >
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/30">
+          Seguir explorando
+        </span>
+        <svg
+          className="scroll-cue-arrow h-4 w-4 text-ink/30"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
       </div>
 
       {/* Línea decorativa inferior */}

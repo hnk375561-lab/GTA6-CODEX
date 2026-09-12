@@ -29,6 +29,7 @@ const SITE_NAME_REST = SITE_NAME_REST_WORDS.join(' ')
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
   const [prevPathname, setPrevPathname] = useState(pathname)
   const { count: wishlistCount, hydrated: wishlistHydrated } = useWishlist()
@@ -50,13 +51,26 @@ export function Header() {
     return () => document.removeEventListener('keydown', onKeyDown)
   }, [menuOpen])
 
+  // Puramente visual: separa el header del contenido con una sombra
+  // sutil apenas hay scroll, para que no "flote" indistinguible sobre
+  // el papel cuando ambos comparten el mismo tono de fondo.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   const iconBtnClass = 'tap-scale relative flex h-9 w-9 items-center justify-center rounded border border-ink/20 text-ink/60 transition hover:border-ink hover:text-ink focus-visible:border-ink focus-visible:text-ink before:absolute before:-inset-1 before:rounded-lg before:content-[\'\']'
 
   const isLinkActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`)
 
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b border-border bg-paper/95 backdrop-blur-sm"
+      className={cn(
+        'sticky top-0 z-50 w-full border-b bg-paper/95 backdrop-blur-sm transition-shadow duration-300',
+        scrolled ? 'border-border shadow-sm' : 'border-border/0'
+      )}
       style={{ paddingTop: 'env(safe-area-inset-top)' }}
     >
       <div className="mx-auto flex max-w-[96rem] items-center justify-between px-4 py-4 sm:px-6 lg:px-8 xl:px-12">
@@ -83,13 +97,19 @@ export function Header() {
                 prefetch={false}
                 aria-current={active ? 'page' : undefined}
                 className={cn(
-                  'font-mono text-xs uppercase tracking-[0.15em] transition-colors',
+                  'relative font-mono text-xs uppercase tracking-[0.15em] transition-colors',
                   active
                     ? 'text-oxide-red'
                     : 'text-ink/60 hover:text-ink'
                 )}
               >
                 {link.label}
+                {active && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute -bottom-2 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-oxide-red"
+                  />
+                )}
               </Link>
             )
           })}

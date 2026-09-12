@@ -12,7 +12,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative border-t border-edge bg-auto-darker pt-14 pb-[8.25rem] md:pb-14">
+    <footer className="relative border-t border-edge bg-ink pt-14 pb-[8.25rem] md:pb-14">
       {/* pb móvil extra: el anuncio ancla sticky (solo ≤md) flota sobre el
           pie del viewport y sin este colchón el último bloque del footer
           quedaba tapado al llegar al final del scroll. En md+ el ancla no
@@ -26,7 +26,7 @@ export function Footer() {
               <div className="flex h-7 w-7 items-center justify-center rounded-md bg-oxide-red">
                 <span className="font-display text-[10px] font-bold text-white">{SITE_NAME.charAt(0)}</span>
               </div>
-              <h3 className="font-display text-lg font-semibold text-auto-text">{SITE_NAME}</h3>
+              <h3 className="font-display text-lg font-semibold text-paper">{SITE_NAME}</h3>
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-neutral-500">
               Fichas técnicas de autos y motos con specs reales, comparador lado a lado y fuente por cada dato.
@@ -198,7 +198,7 @@ export function Footer() {
             type="button"
             onClick={() => smoothScrollTo(0)}
             aria-label="Volver arriba"
-            className="tap-scale inline-flex items-center gap-2 rounded-full border border-auto-border/60 bg-auto-surface/40 px-4 py-2.5 text-xs font-medium text-neutral-400 transition-colors hover:border-oxide-red/60 hover:bg-auto-surface hover:text-oxide-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oxide-red"
+            className="tap-scale inline-flex items-center gap-2 rounded-full border border-paper/15 bg-paper/5 px-4 py-2.5 text-xs font-medium text-neutral-400 transition-colors hover:border-oxide-red/60 hover:bg-paper/10 hover:text-oxide-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oxide-red"
           >
             <svg
               width="14"
