@@ -1,9 +1,16 @@
 /**
  * scripts/lib/image-usage-manifest.mjs
  * ============================================================
- * Manifiesto de USO REAL de <Image>/<ZoomableImage> en los 15 archivos
+ * Manifiesto de USO REAL de <Image>/<ZoomableImage> en los 7 archivos
  * que sirven fotos de public/images/entities/** (ver auditoría 3 sep
- * 2026 — che, antes de tocar nada). Reemplaza la calidad plana
+ * 2026 — che, antes de tocar nada; recontado 12/09/2026, auditoría Fase
+ * 2, tras borrar 6 componentes que ya no existen en el código pero
+ * seguían con entrada acá: CompareShowcase, HeroPromoBanner,
+ * HeroSelfPromoCard, HeroVehicleShowcase, HeroVehicleShowcaseV2,
+ * ManufacturersMarquee, CategoryCardMedia — verificado que su remoción
+ * no cambia ningún valor de `buildQualityByWidth()`, porque otros
+ * componentes vivos ya empujaban esos mismos anchos a la misma calidad
+ * o más). Reemplaza la calidad plana
  * (quality:100 para los 12 anchos, sin importar qué pide cada
  * componente) por una calidad calculada POR ANCHO: el máximo `quality`
  * que algún componente realmente pide para ESE ancho puntual.
@@ -48,9 +55,11 @@
  *   a la que declaró en su prop `quality` — el build no rompe (sigue
  *   sirviendo un archivo válido, solo que a la calidad de OTRO
  *   componente para ese mismo ancho) pero conviene mantenerlo
- *   sincronizado. `verifyManifestCoverage()` ayuda a pescar componentes
- *   con `quality`/`sizes` explícito que ya no coincide con lo declarado
- *   acá (ver scripts/verify-image-usage-manifest.mjs).
+ *   sincronizado. No existe hoy un script `verify-image-usage-manifest.mjs`
+ *   que automatice esta comprobación (el comentario anterior lo daba
+ *   por existente — corregido 12/09/2026, auditoría Fase 2: nunca se
+ *   creó ni está enganchado a `verify:all`); por ahora la sincronización
+ *   es manual.
  * ============================================================
  */
 
@@ -186,49 +195,9 @@ export const IMAGE_USAGES = [
     quality: 100,
   },
   {
-    component: 'CompareShowcase.tsx (CrossfadeImage)',
-    sizes: '(min-width: 640px) 24rem, 100vw',
-    quality: 90,
-  },
-  {
-    component: 'HeroPromoBanner.tsx',
-    sizes: '(min-width: 1024px) 360px, 100vw',
-    quality: null,
-  },
-  {
-    component: 'HeroSelfPromoCard.tsx',
-    sizes: '(min-width: 640px) 7rem, 6rem',
-    quality: null,
-  },
-  {
-    component: 'HeroVehicleShowcase.tsx',
-    sizes: '(min-width: 1024px) 30rem, (min-width: 640px) 26rem, 78vw',
-    quality: null,
-  },
-  {
-    component: 'HeroVehicleShowcaseV2.tsx',
-    sizes: '(min-width: 1024px) 33vw, 43vw',
-    quality: 95,
-  },
-  {
-    component: 'ManufacturersMarquee.tsx (logo 112x40, ancho fijo)',
-    width: 112,
-    quality: null,
-  },
-  {
     component: 'MediaCarousel.tsx',
     sizes: '(min-width: 1024px) 500px, 90vw',
     quality: 92,
-  },
-  {
-    component: 'CategoryCardMedia.tsx (pieza principal)',
-    sizes: '(min-width: 1024px) 320px, (min-width: 640px) 45vw, 50vw',
-    quality: 95,
-  },
-  {
-    component: 'CategoryCardMedia.tsx:65 (preview 36px)',
-    sizes: '36px',
-    quality: null,
   },
   {
     component: 'SimpleLightbox.tsx -> ZoomableImage.tsx',

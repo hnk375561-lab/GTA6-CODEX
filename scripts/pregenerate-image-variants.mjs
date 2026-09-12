@@ -135,7 +135,7 @@ const SOURCE_EXTENSIONS = new Set(['.webp', '.avif', '.jpg', '.jpeg', '.png'])
 /**
  * Map<ancho, calidad> — ver bloque "CALIDAD (por ancho, no plana)" en el
  * comment-header de arriba. Calculado una sola vez a partir del uso real
- * de los 15 componentes (scripts/lib/image-usage-manifest.mjs).
+ * de los 7 componentes vivos (scripts/lib/image-usage-manifest.mjs).
  */
 const QUALITY_BY_WIDTH = buildQualityByWidth()
 
@@ -196,7 +196,7 @@ async function processImage(relPath, stats) {
 
   for (const width of WIDTHS) {
     // Ancho que en la práctica ningún componente pide hoy (no debería
-    // pasar con los 15 componentes auditados, pero si el manifiesto
+    // pasar con los 7 componentes vivos auditados, pero si el manifiesto
     // queda desactualizado es más seguro generarlo igual a máxima
     // calidad que dejar un ancho del srcSet sin archivo.
     const quality = QUALITY_BY_WIDTH.get(width) ?? 100
