@@ -108,17 +108,8 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
               return (
                 <Reveal key={vehicle.slug} delay={300 + index * 150}>
                   <div
-                    className="group relative bg-surface-card border border-border p-6 shadow-sm"
-                    style={{
-                      transform: `rotate(${index === 0 ? -1 : 1}deg)`,
-                      transition: 'transform 300ms ease-out',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'rotate(0deg) translateY(-4px)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = `rotate(${index === 0 ? -1 : 1}deg)`
-                    }}
+                    className="group relative bg-surface-card border border-border p-6 shadow-sm transition-transform duration-300 ease-out [transform:rotate(var(--card-rotate))] hover:[transform:rotate(0deg)_translateY(-4px)] motion-reduce:transition-none motion-reduce:hover:[transform:none]"
+                    style={{ '--card-rotate': index === 0 ? '-1deg' : '1deg' } as React.CSSProperties}
                   >
                     {/* Cabecera del documento */}
                     <div className="flex items-start justify-between mb-4 pb-3 border-b border-border/50">
@@ -154,6 +145,7 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
                               fill
                               className="object-cover"
                               sizes="80px"
+                              priority={index === 0}
                             />
                           </div>
                         )}
