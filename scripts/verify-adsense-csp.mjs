@@ -32,6 +32,21 @@
  * NEXT_PUBLIC_ADSENSE_CLIENT_ID sin haber sumado el dominio de
  * AdSense a la CSP, el pipeline falla en vez de dejar pasar un build
  * verde con AdSense roto en silencio.
+ *
+ * FIX (auditoría FASE 2, 12/09/2026 — hallazgo #4 de esa ronda): este
+ * script buscaba la CSP en `headers()` de next.config.js. Esa función
+ * se sacó en la migración a `output: 'export'` del 10/09 (Next.js la
+ * ignora en export estático — GitHub Pages no ejecuta ningún runtime
+ * que la evalúe por request). Hasta ahora el check pasaba en verde
+ * SOLO porque NEXT_PUBLIC_ADSENSE_CLIENT_ID nunca llegaba seteada
+ * desde CI (hallazgo #1 de la misma auditoría) — ni siquiera llegaba a
+ * intentar leer el archivo. El día que se resolviera ese hallazgo y la
+ * variable empezara a llegar, este script iba a FALLAR el build
+ * siempre, no porque la CSP estuviera mal, sino porque seguía
+ * buscándola en un archivo que ya no la tiene. La CSP real hoy vive
+ * como un <meta http-equiv="Content-Security-Policy"> armado con un
+ * array `[...].join('; ')` dentro de `content={...}` en
+ * `src/app/layout.tsx` — se actualiza el script para leer de ahí.
  * ============================================================
  */
 import fs from 'node:fs'
@@ -56,18 +71,26 @@ const ok = (msg) => console.log(`✓ ${msg}`)
 // que el script ni siquiera arranca.
 const REQUIRED_SCRIPT_SRC_HOST = 'pagead2.googlesyndication.com'
 
-function extractCsp(configSrc) {
-  const match = configSrc.match(/const csp = \[([\s\S]*?)\]\.join/)
+function extractCsp(layoutSrc) {
+  // La CSP real vive como <meta http-equiv="Content-Security-Policy"
+  // content={[...].join('; ')} /> en src/app/layout.tsx (ver comentario
+  // arriba del componente RootLayout) — ya no hay `const csp = [...]`
+  // en next.config.js porque `headers()` no se ejecuta en
+  // `output: 'export'`.
+  const match = layoutSrc.match(/httpEquiv="Content-Security-Policy"[\s\S]*?content=\{\[([\s\S]*?)\]\.join/)
   if (!match) return null
   const directives = [...match[1].matchAll(/"([^"]*)"/g)].map((m) => m[1])
   return directives.join('; ')
 }
 
-function checkCspAllowsAdsense(configPath) {
-  const configSrc = fs.readFileSync(configPath, 'utf8')
-  const csp = extractCsp(configSrc)
+function checkCspAllowsAdsense(layoutPath) {
+  const layoutSrc = fs.readFileSync(layoutPath, 'utf8')
+  const csp = extractCsp(layoutSrc)
   if (csp === null) {
-    fail(`No se pudo extraer el array \`csp\` de ${path.relative(root, configPath)} — el script espera \`const csp = [...].join(...)\``)
+    fail(
+      `No se pudo extraer la CSP de ${path.relative(root, layoutPath)} — el script espera un ` +
+        `<meta http-equiv="Content-Security-Policy" content={[...].join(...)} /> dentro de RootLayout`
+    )
     return
   }
 
@@ -79,7 +102,7 @@ function checkCspAllowsAdsense(configPath) {
   } else {
     fail(
       `NEXT_PUBLIC_ADSENSE_CLIENT_ID está seteado pero script-src de la CSP en ` +
-        `${path.relative(root, configPath)} NO incluye '${REQUIRED_SCRIPT_SRC_HOST}'. ` +
+        `${path.relative(root, layoutPath)} NO incluye '${REQUIRED_SCRIPT_SRC_HOST}'. ` +
         `El navegador bloqueará adsbygoogle.js aunque el consentimiento esté dado ` +
         `(hallazgo E-2). Antes de activar AdSense: pasar la CSP a modo ` +
         `Content-Security-Policy-Report-Only con una cuenta real en staging, ` +
@@ -96,14 +119,14 @@ function selfTest() {
 
   try {
     // Caso 1: CSP sin el dominio de AdSense -> debe fallar.
-    const badConfig = path.join(tmpDir, 'next.config.bad.js')
+    const badLayout = path.join(tmpDir, 'layout.bad.tsx')
     fs.writeFileSync(
-      badConfig,
-      `const nextConfig = { headers: async () => { const csp = [\n  "default-src 'self'",\n  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",\n].join('; ') } }\nmodule.exports = nextConfig\n`
+      badLayout,
+      `<meta\n  httpEquiv="Content-Security-Policy"\n  content={[\n    "default-src 'self'",\n    "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",\n  ].join('; ')}\n/>\n`
     )
     const before1 = failed
     failed = false
-    checkCspAllowsAdsense(badConfig)
+    checkCspAllowsAdsense(badLayout)
     if (!failed) {
       console.error('✗ self-test: se esperaba que el caso SIN el dominio de AdSense fallara, pero pasó')
       selfTestFailed = true
@@ -113,14 +136,14 @@ function selfTest() {
     failed = before1
 
     // Caso 2: CSP con el dominio de AdSense -> debe pasar.
-    const goodConfig = path.join(tmpDir, 'next.config.good.js')
+    const goodLayout = path.join(tmpDir, 'layout.good.tsx')
     fs.writeFileSync(
-      goodConfig,
-      `const nextConfig = { headers: async () => { const csp = [\n  "default-src 'self'",\n  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com",\n].join('; ') } }\nmodule.exports = nextConfig\n`
+      goodLayout,
+      `<meta\n  httpEquiv="Content-Security-Policy"\n  content={[\n    "default-src 'self'",\n    "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com",\n  ].join('; ')}\n/>\n`
     )
     const before2 = failed
     failed = false
-    checkCspAllowsAdsense(goodConfig)
+    checkCspAllowsAdsense(goodLayout)
     if (failed) {
       console.error('✗ self-test: se esperaba que el caso CON el dominio de AdSense pasara, pero falló')
       selfTestFailed = true
@@ -150,7 +173,7 @@ if (process.argv.includes('--self-test')) {
     ok('NEXT_PUBLIC_ADSENSE_CLIENT_ID no está seteado — nada que validar (AdSense sigue inactivo)')
   } else {
     ok(`NEXT_PUBLIC_ADSENSE_CLIENT_ID está seteado (${adsenseClientId}) — validando CSP`)
-    checkCspAllowsAdsense(path.join(root, 'next.config.js'))
+    checkCspAllowsAdsense(path.join(root, 'src/app/layout.tsx'))
   }
 
   if (failed) {
