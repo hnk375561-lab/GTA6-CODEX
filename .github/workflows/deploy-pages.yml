@@ -41,7 +41,21 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # Node 22, no 20: jsdom@30 (usado por los tests, ver
+          # vitest.setup.ts) declara
+          # "engines": { "node": "^22.22.2 || ^24.15.0 || >=26.0.0" } —
+          # con Node 20.x el test runner revienta al importar `undici`
+          # ("TypeError: webidl.util.markAsUncloneable is not a
+          # function") antes de correr un solo test. Este es el MISMO
+          # motivo ya documentado en deploy.yml (NODE_VERSION: '22.x') —
+          # se copió el Node 20 del job `build` de más abajo (que sí
+          # puede quedarse en 20, porque no corre tests) sin adaptarlo a
+          # este job nuevo. Confirmado como causa raíz real corriendo
+          # este workflow en GitHub Actions el 12/09/2026: el job
+          # `quality-gate` falló en el step "Test" con Node 20 mientras
+          # que type-check y lint sí pasaban — exactamente el síntoma
+          # que predice el comentario de deploy.yml.
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
