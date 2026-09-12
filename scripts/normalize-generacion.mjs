@@ -21,6 +21,7 @@
 
 import fs from 'node:fs'
 import path from 'node:path'
+import { pathToFileURL } from 'node:url'
 
 const CONTENT_DIR = path.join(process.cwd(), 'src/content/vehiculos')
 const DRY_RUN = process.argv.includes('--dry-run')
@@ -292,6 +293,13 @@ function main() {
 // scripts/normalize-generacion.mjs`), no cuando el test lo importa para
 // probar `parseGeneracion` de forma aislada — de lo contrario cada corrida
 // de `vitest` reescribiría (u ofrecería reescribir) las 250 fichas.
-if (import.meta.url === `file://${process.argv[1]}`) {
+//
+// Nota: `import.meta.url === 'file://' + process.argv[1]` no es confiable en
+// Windows (el prefijo de disco `file:///C:/...` no coincide con
+// `'file://C:\...'`), por lo que el script quedaba en no-op silencioso al
+// invocarlo con ruta relativa. La comparación canónica y cross-platform
+// pasa process.argv[1] por pathToFileURL(path.resolve(...)).
+const isMain = process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href
+if (isMain) {
   main()
 }
