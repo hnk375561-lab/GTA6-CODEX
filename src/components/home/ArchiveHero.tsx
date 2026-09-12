@@ -11,11 +11,18 @@ import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
+interface ArchiveHeroCategoryChip {
+  label: string
+  count: number
+  href: string
+}
+
 interface ArchiveHeroProps {
   vehicleCount: number
   evidenceCoveragePct: number | null
   featuredVehicles: Vehicle[]
   searchExamples?: string[]
+  categoryChips?: ArchiveHeroCategoryChip[]
 }
 
 /**
@@ -28,7 +35,7 @@ interface ArchiveHeroProps {
  * 
  * Metáfora visual: expediente, dossier, papel, tinta, sellos documentales
  */
-export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicles, searchExamples }: ArchiveHeroProps) {
+export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicles, searchExamples, categoryChips }: ArchiveHeroProps) {
   // Tomar 2 vehículos destacados para las fichas técnicas
   const sampleVehicles = featuredVehicles.slice(0, 2)
 
@@ -77,8 +84,36 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
 
             {/* Buscador */}
             <Reveal delay={200}>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 <QuickSearchForm examples={searchExamples} />
+
+                {/* Pestañas de carpeta: acceso directo por categoría,
+                    con volumen real del catálogo. Metáfora: separadores
+                    de un archivador físico, cada uno con su etiqueta. */}
+                {categoryChips && categoryChips.length > 0 && (
+                  <div
+                    className="flex gap-1.5 overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                    role="list"
+                    aria-label="Categorías principales del archivo"
+                  >
+                    {categoryChips.map((chip) => (
+                      <Link
+                        key={chip.href}
+                        href={chip.href}
+                        role="listitem"
+                        className="group/tab flex flex-shrink-0 items-baseline gap-1.5 rounded-t-md border border-b-0 border-border bg-surface-alt px-3 py-2 transition-colors hover:bg-oxide-red hover:border-oxide-red"
+                      >
+                        <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-ink group-hover/tab:text-white">
+                          {chip.label}
+                        </span>
+                        <span className="font-mono text-[10px] text-ink/50 group-hover/tab:text-white/80">
+                          {chip.count}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="/vehiculos"
@@ -107,10 +142,22 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
 
               return (
                 <Reveal key={vehicle.slug} delay={300 + index * 150}>
-                  <div
-                    className="group relative bg-surface-card border border-border p-6 shadow-sm transition-transform duration-300 ease-out [transform:rotate(var(--card-rotate))] hover:[transform:rotate(0deg)_translateY(-4px)] motion-reduce:transition-none motion-reduce:hover:[transform:none]"
-                    style={{ '--card-rotate': index === 0 ? '-1deg' : '1deg' } as React.CSSProperties}
-                  >
+                  <div className="relative">
+                    {/* Hojas fantasma: sugieren que hay más fichas apiladas
+                        debajo de la que se ve, sin cargar contenido real de
+                        más (serían datos inventados) — es puro decorado. */}
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0 rounded-sm border border-border/50 bg-surface-alt/70 [transform:rotate(4deg)_translate(6px,8px)]"
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0 rounded-sm border border-border/70 bg-surface-alt/90 [transform:rotate(-3deg)_translate(-4px,5px)]"
+                    />
+                    <div
+                      className="group relative z-10 bg-surface-card border border-border p-6 shadow-sm transition-transform duration-300 ease-out [transform:rotate(var(--card-rotate))] hover:[transform:rotate(0deg)_translateY(-4px)] motion-reduce:transition-none motion-reduce:hover:[transform:none]"
+                      style={{ '--card-rotate': index === 0 ? '-1deg' : '1deg' } as React.CSSProperties}
+                    >
                     {/* Cabecera del documento */}
                     <div className="flex items-start justify-between mb-4 pb-3 border-b border-border/50">
                       <div className="space-y-1">
@@ -212,6 +259,7 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
                     {/* Sello de verificación (animación al cargar) */}
                     <div className="absolute -bottom-2 -right-2 w-12 h-12 border-2 border-archive-green/30 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                       <span className="font-serif text-archive-green text-lg">✓</span>
+                    </div>
                     </div>
                   </div>
                 </Reveal>

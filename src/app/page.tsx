@@ -14,6 +14,7 @@ import { parsePowerHp } from '@/lib/vehicle-power'
 import { parsePriceUsd } from '@/lib/vehicle-price'
 import { getAvailableRankings } from '@/lib/rankings'
 import { getManufacturerMarqueeItems } from '@/lib/vehicle-manufacturers'
+import { computeSeoCategoryOptions, categoryToSlug } from '@/lib/vehicle-category'
 import { Reveal } from '@/components/ui/Reveal'
 import { EntityCard } from '@/components/entities/EntityCard'
 import { AdUnit } from '@/components/monetization/AdUnit'
@@ -79,18 +80,19 @@ function FinancingCalculatorFallback() {
 export default async function Home() {
   // ========== DATA FETCHING (sin cambios lógicos) ==========
   const [
-    totalVehicleCount,
+    allVehicles,
     entityCounts,
     featured,
     latestNews,
     availableRankings,
   ] = await Promise.all([
-    (async () => (await getEntitiesByType(EntityType.VEHICLE)).length)(),
+    (async () => (await getEntitiesByType(EntityType.VEHICLE)) as Vehicle[])(),
     getEntityCountsByType(),
     getFeaturedEntities(100),
     (async () => (await getEntitiesByType(EntityType.NEWS)).slice(0, 10))(),
     getAvailableRankings(),
   ])
+  const totalVehicleCount = allVehicles.length
 
   const featuredRelationCounts: Record<string, number> = {}
   for (const entity of featured) {
@@ -150,6 +152,18 @@ export default async function Home() {
   // Ejemplos de búsqueda (títulos reales del catálogo)
   const searchExamples = featured.slice(0, 5).map(v => v.title)
 
+  // Categorías principales con más volumen real (sobre el catálogo
+  // completo, no solo los destacados) — para los chips de acceso rápido
+  // del hero. `computeCategoryOptions` ya excluye categorías con menos
+  // de 2 apariciones y ordena por frecuencia descendente.
+  const heroCategoryChips = computeSeoCategoryOptions(allVehicles)
+    .slice(0, 6)
+    .map((option) => ({
+      label: option.group,
+      count: option.count,
+      href: `/categorias/${categoryToSlug(option.group)}`,
+    }))
+
   // ========== RENDER (nueva composición completamente diferente) ==========
   return (
     <>
@@ -160,6 +174,7 @@ export default async function Home() {
           evidenceCoveragePct={calculateEvidenceCoverage(featured)}
           featuredVehicles={featured.slice(0, 10) as Vehicle[]}
           searchExamples={searchExamples}
+          categoryChips={heroCategoryChips}
         />
 
         {/* ============= ÍNDICE DE VEHÍCULOS ============= */}
