@@ -33,7 +33,6 @@ export function Header() {
   const pathname = usePathname()
   const [prevPathname, setPrevPathname] = useState(pathname)
   const { count: wishlistCount, hydrated: wishlistHydrated } = useWishlist()
-  const isHome = false
 
   if (pathname !== prevPathname) {
     setPrevPathname(pathname)

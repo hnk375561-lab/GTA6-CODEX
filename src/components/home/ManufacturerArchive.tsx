@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { type Vehicle } from '@/types'
 import { resolveEntityDisplayImage } from '@/lib/media'
-import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
 interface ManufacturerArchiveProps {

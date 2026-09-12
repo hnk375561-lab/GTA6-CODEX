@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { QuickSearchForm } from '@/components/home/QuickSearchForm'
 import { Reveal } from '@/components/ui/Reveal'
@@ -7,7 +5,7 @@ import { type Vehicle } from '@/types'
 import { resolveEntityDisplayImage } from '@/lib/media'
 import { parsePowerHp } from '@/lib/vehicle-power'
 import { parsePriceUsd } from '@/lib/vehicle-price'
-import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
+import { EVIDENCE_STAMP_META } from '@/lib/evidence'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
@@ -50,87 +48,93 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
       <div className="container-max relative z-10 py-16 sm:py-24 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
           
-          {/* LADO IZQUIERDO: Identificador + Título + Buscador */}
+          {/* LADO IZQUIERDO: Identificador + Título + Buscador.
+              NOTA (auditoría 11/09/2026): este bloque es el contenido
+              crítico above-the-fold — el <h1> es el candidato natural a
+              LCP. Antes estaba envuelto en <Reveal>, un client component
+              que arranca en opacity:0 y solo se hace visible cuando un
+              IntersectionObserver dispara (o, como red de seguridad,
+              recién a los 1.5s). Eso significaba que el título/buscador
+              del hero podía tardar hasta 1.5s en pintarse en conexiones
+              lentas, y que Reveal forzaba a todo ArchiveHero a ser
+              'use client'. Se saca el gate acá: este bloque ahora se
+              pinta directo desde el servidor, sin esperar hidratación.
+              El fade-in decorativo se mantiene solo para las fichas de
+              vehículo del lado derecho (contenido secundario, no LCP). */}
           <div className="space-y-8 lg:sticky lg:top-8">
             {/* Identificador de archivo */}
-            <Reveal>
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-oxide-red/30 pb-4">
-                <div className="h-2 w-2 flex-shrink-0 bg-oxide-red" />
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-ink/70">
-                  ARCHIVO AUTOMOTOR VERIFICADO
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-oxide-red/30 pb-4">
+              <div className="h-2 w-2 flex-shrink-0 bg-oxide-red" />
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-ink/70">
+                ARCHIVO AUTOMOTOR VERIFICADO
+              </span>
+              {evidenceCoveragePct !== null && evidenceCoveragePct > 0 && (
+                <span className="font-mono text-xs uppercase tracking-[0.2em] text-archive-green sm:ml-auto">
+                  {evidenceCoveragePct}% CON FUENTE CITADA
                 </span>
-                {evidenceCoveragePct !== null && evidenceCoveragePct > 0 && (
-                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-archive-green sm:ml-auto">
-                    {evidenceCoveragePct}% CON FUENTE CITADA
-                  </span>
-                )}
-              </div>
-            </Reveal>
+              )}
+            </div>
 
             {/* Título principal */}
-            <Reveal delay={100}>
-              <div className="space-y-4">
-                <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] text-ink">
-                  Cada dato
-                  <br />
-                  <span className="text-oxide-red">tiene un origen.</span>
-                </h1>
-                <p className="font-sans text-lg sm:text-xl text-ink/70 max-w-xl leading-relaxed">
-                  {vehicleCount} fichas técnicas con fuentes verificadas. 
-                  Especificaciones de fabricante, documentación de ingeniería, 
-                  sellos de evidencia. No es un catálogo, es un archivo.
-                </p>
-              </div>
-            </Reveal>
+            <div className="space-y-4">
+              <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] text-ink">
+                Cada dato
+                <br />
+                <span className="text-oxide-red">tiene un origen.</span>
+              </h1>
+              <p className="font-sans text-lg sm:text-xl text-ink/70 max-w-xl leading-relaxed">
+                {vehicleCount} fichas técnicas con fuentes verificadas. 
+                Especificaciones de fabricante, documentación de ingeniería, 
+                sellos de evidencia. No es un catálogo, es un archivo.
+              </p>
+            </div>
 
             {/* Buscador */}
-            <Reveal delay={200}>
-              <div className="space-y-5">
-                <QuickSearchForm examples={searchExamples} />
+            <div className="space-y-5">
+              <QuickSearchForm examples={searchExamples} />
 
-                {/* Pestañas de carpeta: acceso directo por categoría,
-                    con volumen real del catálogo. Metáfora: separadores
-                    de un archivador físico, cada uno con su etiqueta. */}
-                {categoryChips && categoryChips.length > 0 && (
-                  <div
-                    className="flex gap-1.5 overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-                    role="list"
-                    aria-label="Categorías principales del archivo"
-                  >
-                    {categoryChips.map((chip) => (
-                      <Link
-                        key={chip.href}
-                        href={chip.href}
-                        role="listitem"
-                        className="group/tab flex flex-shrink-0 items-baseline gap-1.5 rounded-t-md border border-b-0 border-border bg-surface-alt px-3 py-2 transition-colors hover:bg-oxide-red hover:border-oxide-red"
-                      >
-                        <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-ink group-hover/tab:text-white">
-                          {chip.label}
-                        </span>
-                        <span className="font-mono text-[10px] text-ink/50 group-hover/tab:text-white/80">
-                          {chip.count}
-                        </span>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-
-                <div className="flex flex-wrap gap-4">
-                  <Link
-                    href="/vehiculos"
-                    className="font-mono text-xs uppercase tracking-[0.15em] text-ink/60 hover:text-ink transition-colors border-b border-transparent hover:border-ink/30"
-                  >
-                    Explorar archivo completo →
-                  </Link>
-                  <Link
-                    href="/comparar"
-                    className="font-mono text-xs uppercase tracking-[0.15em] text-ink/60 hover:text-ink transition-colors border-b border-transparent hover:border-ink/30"
-                  >
-                    Comparar fichas →
-                  </Link>
+              {/* Pestañas de carpeta: acceso directo por categoría,
+                  con volumen real del catálogo. Metáfora: separadores
+                  de un archivador físico, cada uno con su etiqueta. */}
+              {categoryChips && categoryChips.length > 0 && (
+                <div
+                  className="flex gap-1.5 overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                  role="list"
+                  aria-label="Categorías principales del archivo"
+                >
+                  {categoryChips.map((chip) => (
+                    <Link
+                      key={chip.href}
+                      href={chip.href}
+                      role="listitem"
+                      className="group/tab flex flex-shrink-0 items-baseline gap-1.5 rounded-t-md border border-b-0 border-border bg-surface-alt px-3 py-2 transition-colors hover:bg-oxide-red hover:border-oxide-red"
+                    >
+                      <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-ink group-hover/tab:text-white">
+                        {chip.label}
+                      </span>
+                      <span className="font-mono text-[10px] text-ink/50 group-hover/tab:text-white/80">
+                        {chip.count}
+                      </span>
+                    </Link>
+                  ))}
                 </div>
+              )}
+
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/vehiculos"
+                  className="font-mono text-xs uppercase tracking-[0.15em] text-ink/60 hover:text-ink transition-colors border-b border-transparent hover:border-ink/30"
+                >
+                  Explorar archivo completo →
+                </Link>
+                <Link
+                  href="/comparar"
+                  className="font-mono text-xs uppercase tracking-[0.15em] text-ink/60 hover:text-ink transition-colors border-b border-transparent hover:border-ink/30"
+                >
+                  Comparar fichas →
+                </Link>
               </div>
-            </Reveal>
+            </div>
           </div>
 
           {/* LADO DERECHO: Fichas técnicas como documentos físicos */}
@@ -189,7 +193,7 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
                           <div className="relative w-20 h-16 flex-shrink-0 overflow-hidden bg-paper border border-border/50">
                             <Image
                               src={image.src}
-                              alt=""
+                              alt={vehicle.title}
                               fill
                               className="object-cover"
                               sizes="80px"

@@ -4,7 +4,6 @@ import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import Link from 'next/link'
 import { Entity, EntityType, InformationStatus, Vehicle } from '@/types'
 import { Card, CardBody } from '@/components/ui/Card'
-import { Badge } from '@/components/ui/Badge'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { EntityImage } from '@/components/entities/EntityImage'
 import { WishlistButton } from '@/components/ui/WishlistButton'
@@ -306,7 +305,6 @@ export function EntityCard({
   const resolvedRelationCount = relationCount ?? entity.relations?.length ?? 0
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [hovering, setHovering] = useState(false)
-  const [ambientVisible] = useState(true)
   const flipSlug = consumeFlipSlug(entity.slug)
 
   useEffect(() => {
@@ -400,9 +398,19 @@ export function EntityCard({
                 </>
               )}
 
-              {/* REFERENCIA DE ARCHIVO */}
-              <div className="absolute top-3 left-3 font-mono text-[9px] uppercase tracking-wider text-ink/40 bg-white/90 backdrop-blur-sm px-2 py-1 border border-border/50">
-                REF: {vehicle.slug.slice(0, 8).toUpperCase()}
+              {/* REFERENCIA DE ARCHIVO (+ número de colección si la card
+                  viene de una tira numerada, ej. FeaturedDossiers — antes
+                  se calculaba collectionLabel y no se mostraba en ningún
+                  lado) */}
+              <div className="absolute top-3 left-3 flex items-center gap-1.5">
+                <div className="font-mono text-[9px] uppercase tracking-wider text-ink/40 bg-white/90 backdrop-blur-sm px-2 py-1 border border-border/50">
+                  REF: {vehicle.slug.slice(0, 8).toUpperCase()}
+                </div>
+                {collectionLabel && (
+                  <div className="font-mono text-[9px] uppercase tracking-wider text-ink/40 bg-white/90 backdrop-blur-sm px-2 py-1 border border-border/50">
+                    {collectionLabel}
+                  </div>
+                )}
               </div>
 
               {/* SELLO DE EVIDENCIA */}
@@ -428,14 +436,24 @@ export function EntityCard({
                   <h3 className="font-serif text-base sm:text-lg font-semibold text-white leading-tight line-clamp-2">
                     {model}
                   </h3>
+                  {secondaryLine && (
+                    <p className="font-mono text-[10px] text-white/70">
+                      {secondaryLine}
+                    </p>
+                  )}
                 </div>
 
                 {/* Specs line */}
                 {specsLine && (
-                  <p className="font-mono text-[10px] text-ink/70 mb-3">
+                  <p className="font-mono text-[10px] text-ink/70 mb-1">
                     {specsLine}
                   </p>
                 )}
+
+                {/* Estado de verificación (confirmado/rumor/nuestro) */}
+                <p className={cn('font-mono text-[9px] uppercase tracking-[0.15em] mb-3', STATUS_TEXT_CLASS[entity.status as InformationStatus])}>
+                  <span aria-hidden="true">{STATUS_SYMBOL[entity.status as InformationStatus]}</span> {statusText}
+                </p>
 
                 {/* Pie de card */}
                 <div className="flex items-center justify-between">
@@ -451,6 +469,14 @@ export function EntityCard({
                         title={secondaryBadge.title}
                       >
                         {secondaryBadge.icon} {secondaryBadge.label}
+                      </span>
+                    )}
+                    {resolvedRelationCount > 0 && (
+                      <span
+                        className="font-mono text-[9px] uppercase tracking-wider px-1.5 py-0.5 border border-white/30 bg-white/10 text-white"
+                        title="Cantidad de fichas relacionadas"
+                      >
+                        {resolvedRelationCount} relacionado{resolvedRelationCount === 1 ? '' : 's'}
                       </span>
                     )}
                   </div>

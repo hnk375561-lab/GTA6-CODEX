@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { type Vehicle } from '@/types'
 import { resolveEntityDisplayImage } from '@/lib/media'
 
-import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
+import { EVIDENCE_STAMP_META } from '@/lib/evidence'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 

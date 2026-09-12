@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { type Vehicle } from '@/types'
 import { resolveEntityDisplayImage } from '@/lib/media'
 import { parsePowerHp } from '@/lib/vehicle-power'
-import { EVIDENCE_STAMP_META, type EvidenceLevel } from '@/lib/evidence'
+import { EVIDENCE_STAMP_META } from '@/lib/evidence'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
@@ -57,7 +57,7 @@ export function VehicleArchiveIndex({ vehicles }: VehicleArchiveIndexProps) {
 
         {/* Grid de categorías tipo estantería */}
         <div className="space-y-12">
-          {categories.map(([category, categoryVehicles], categoryIndex) => (
+          {categories.map(([category, categoryVehicles]) => (
             <div key={category} className="group">
               {/* Cabecera de categoría */}
               <div className="flex items-baseline justify-between mb-6 pb-3 border-b border-border">
@@ -71,7 +71,7 @@ export function VehicleArchiveIndex({ vehicles }: VehicleArchiveIndexProps) {
 
               {/* Grid de fichas */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                {categoryVehicles.slice(0, 8).map((vehicle, index) => {
+                {categoryVehicles.slice(0, 8).map((vehicle) => {
                   const image = resolveEntityDisplayImage(vehicle)
                   const powerLabel = parsePowerHp(vehicle)
                   const evidenceLevel = vehicle.evidence?.level

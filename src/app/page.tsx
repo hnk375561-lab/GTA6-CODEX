@@ -2,31 +2,22 @@ import Link from 'next/link'
 import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { EntityType, type Entity, type Vehicle } from '@/types'
-import { SITE_NAME } from '@/config/site'
 import {
   getFeaturedEntities,
   getEntitiesByType,
 } from '@/lib/entities'
-import { resolveEntityDisplayImage } from '@/lib/media'
-import { getBidirectionalRelationCount } from '@/lib/relations'
-import { generateHomepageMetadata, generateBreadcrumbJsonLd, generateWebsiteJsonLd, serializeJsonLd } from '@/lib/seo'
-import { parsePowerHp } from '@/lib/vehicle-power'
-import { parsePriceUsd } from '@/lib/vehicle-price'
+import { generateHomepageMetadata, generateWebsiteJsonLd, serializeJsonLd } from '@/lib/seo'
 import { getAvailableRankings } from '@/lib/rankings'
-import { getManufacturerMarqueeItems } from '@/lib/vehicle-manufacturers'
 import { computeSeoCategoryOptions, categoryToSlug } from '@/lib/vehicle-category'
 import { Reveal } from '@/components/ui/Reveal'
-import { EntityCard } from '@/components/entities/EntityCard'
-import { AdUnit } from '@/components/monetization/AdUnit'
 import { ArchiveHero } from '@/components/home/ArchiveHero'
 import { VehicleArchiveIndex } from '@/components/home/VehicleArchiveIndex'
 import { ManufacturerArchive } from '@/components/home/ManufacturerArchive'
-import { ArchiveClassifications, type ClassificationEntry, type Classification } from '@/components/home/ArchiveClassifications'
+import { ArchiveClassifications, type Classification } from '@/components/home/ArchiveClassifications'
 import { FeaturedDossiers } from '@/components/home/FeaturedDossiers'
 import { ArchiveConsultations, type ConsultationItem } from '@/components/home/ArchiveConsultations'
 import { FinancingCalculator } from '@/components/ui/FinancingCalculator'
 import { FinancingCalculatorSkeleton } from '@/components/ui/loading'
-import { formatRelativeTime } from '@/lib/utils'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateHomepageMetadata()
@@ -69,8 +60,6 @@ export async function generateMetadata(): Promise<Metadata> {
  * - Eliminación de: radar, gradients, glow, glass, animaciones constantes, brutalismo digital
  */
 
-const MIN_COMPARE_SHOWCASE_POOL = 2
-const HOME_EVIDENCE_HIGHLIGHTS_LIMIT = 6
 const HOME_RANKING_TOP_ENTRIES = 3
 
 function FinancingCalculatorFallback() {
@@ -78,35 +67,27 @@ function FinancingCalculatorFallback() {
 }
 
 export default async function Home() {
-  // ========== DATA FETCHING (sin cambios lógicos) ==========
+  // ========== DATA FETCHING ==========
+  // NOTA (auditoría 11/09/2026): esta sección tenía tres bloques que
+  // calculaban datos y los tiraban sin usar en ningún lado del render:
+  // `entityCounts` (via `getEntityCountsByType()`, recorría los 4
+  // EntityType), `featuredRelationCounts` (hasta 100 `await` SECUENCIALES
+  // a `getBidirectionalRelationCount`) y `latestNewsImages`/
+  // `latestNewsDates` (resolvía imagen y fecha relativa de hasta 10
+  // noticias). Ninguno de los tres se leía después — quedaron de una
+  // versión anterior del Home. Se sacan enteros; si en el futuro el Home
+  // necesita mostrar conteo de relaciones o últimas noticias, hay que
+  // volver a agregar el fetch correspondiente Y su uso real en el JSX.
   const [
     allVehicles,
-    entityCounts,
     featured,
-    latestNews,
     availableRankings,
   ] = await Promise.all([
     (async () => (await getEntitiesByType(EntityType.VEHICLE)) as Vehicle[])(),
-    getEntityCountsByType(),
     getFeaturedEntities(100),
-    (async () => (await getEntitiesByType(EntityType.NEWS)).slice(0, 10))(),
     getAvailableRankings(),
   ])
   const totalVehicleCount = allVehicles.length
-
-  const featuredRelationCounts: Record<string, number> = {}
-  for (const entity of featured) {
-    featuredRelationCounts[entity.slug] = await getBidirectionalRelationCount(entity)
-  }
-
-  const latestNewsImages: Record<string, string | null> = {}
-  const latestNewsDates: Record<string, string> = {}
-  for (const entity of latestNews) {
-    const image = resolveEntityDisplayImage(entity)
-    latestNewsImages[entity.slug] = image ? image.src : null
-    const dateSource = entity.createdAt || entity.updatedAt
-    latestNewsDates[entity.slug] = dateSource ? formatRelativeTime(dateSource) : ''
-  }
 
   // Convertir rankings al formato nuevo
   const classificationsData: Classification[] = availableRankings
@@ -167,6 +148,13 @@ export default async function Home() {
   // ========== RENDER (nueva composición completamente diferente) ==========
   return (
     <>
+      {/* JSON-LD WebSite + SearchAction: habilita el "sitelinks search box"
+          de Google para el buscador del hero. Estaba importado pero nunca
+          se emitía (regresión de la reescritura "Archivo") — se restaura acá. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(generateWebsiteJsonLd()) }}
+      />
       <div className="min-h-screen bg-paper">
         {/* ============= HERO DEL ARCHIVO ============= */}
         <ArchiveHero
@@ -262,21 +250,6 @@ export default async function Home() {
       </div>
     </>
   )
-}
-
-async function getEntityCountsByType() {
-  const counts: Record<EntityType, number> = {
-    [EntityType.VEHICLE]: 0,
-    [EntityType.NEWS]: 0,
-    [EntityType.GUIDE]: 0,
-    [EntityType.MANUFACTURER]: 0,
-  }
-
-  for (const type of Object.values(EntityType)) {
-    counts[type] = (await getEntitiesByType(type)).length
-  }
-
-  return counts
 }
 
 function calculateEvidenceCoverage(entities: Entity[]): number | null {
