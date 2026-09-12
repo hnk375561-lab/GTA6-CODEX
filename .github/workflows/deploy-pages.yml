@@ -192,6 +192,23 @@ jobs:
           # NEXT_PUBLIC_WHATSAPP_NUMBER: ${{ secrets.NEXT_PUBLIC_WHATSAPP_NUMBER }}
           # NEXT_PUBLIC_BLOB_BASE_URL: ${{ vars.NEXT_PUBLIC_BLOB_BASE_URL }}
 
+      - name: Recalcular hashes CSP por página (fix real 12/9/2026)
+        # El <meta> de CSP en src/app/layout.tsx traía un ÚNICO hash
+        # sha256 hardcodeado (el del snippet anti-FOUC de dark mode). Pero
+        # cada página estática lleva además varios <script> inline propios
+        # de Next.js (self.__next_f.push([...]), el payload de hidratación
+        # de React Server Components), con contenido — y por lo tanto hash
+        # — distinto en cada página. Ese único hash fijo nunca los cubría:
+        # el navegador los bloqueaba por CSP, React fallaba al hidratar
+        # ("Minified React error #412") y las páginas con más
+        # interactividad cliente (sobre todo /vehiculos/, con hasta 36
+        # scripts inline por página) se quedaban con las tarjetas vacías.
+        # Este script recorre cada .html generado, calcula el hash real de
+        # TODOS sus scripts inline, y reescribe el script-src de ESE
+        # archivo con exactamente esos hashes — ver
+        # scripts/inject-csp-hashes.mjs para el detalle completo.
+        run: node scripts/inject-csp-hashes.mjs
+
       - name: Evitar procesamiento Jekyll (rompe /_next/*, ver public/.nojekyll)
         # public/.nojekyll ya se copia solo a out/ en el export estático de
         # Next.js, pero este paso es un seguro extra explícito: sin este
