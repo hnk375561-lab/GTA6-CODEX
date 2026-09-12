@@ -97,6 +97,35 @@ export default async function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <head>
+        {/* CSP vía <meta> (12/09/2026) — mitigación parcial, no headers()
+            reales. GitHub Pages es un servidor de archivos puro: no hay
+            proceso que evalúe `headers()` de next.config.js en cada
+            request (Next.js directamente lo ignora y avisa en build con
+            `output: 'export'`), así que no hay forma de emitir un header
+            `Content-Security-Policy` real sin poner un CDN/proxy propio
+            delante (ej. Cloudflare en modo proxy, sin Workers) que agregue
+            Response Headers — esa sigue siendo la única vía para
+            `frame-ancestors`, `report-uri` y cualquier directiva que el
+            <meta> HTML no soporta (los navegadores las ignoran ahí).
+            Esta política cubre los orígenes externos reales que el sitio
+            carga hoy: Google Analytics/AdSense (ConsentBanner, AdUnit),
+            Cloudflare Web Analytics (beacon de abajo) y miniaturas de
+            YouTube (GalleryExplorer/media.ts). Actualizar esta lista si
+            se agrega un origen externo nuevo. */}
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content={[
+            "default-src 'self'",
+            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://static.cloudflareinsights.com https://*.google.com https://*.doubleclick.net",
+            "style-src 'self' 'unsafe-inline'",
+            "img-src 'self' data: https://img.youtube.com https://i.ytimg.com https://*.googlesyndication.com https://*.google.com https://*.gstatic.com https://*.google-analytics.com",
+            "font-src 'self' data:",
+            "frame-src https://googleads.g.doubleclick.net https://*.google.com",
+            "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://static.cloudflareinsights.com https://pagead2.googlesyndication.com",
+            "object-src 'none'",
+            "base-uri 'self'",
+          ].join('; ')}
+        />
         {/* Cloudflare Web Analytics — lightweight, privacy-first, no cookies */}
         {CF_ANALYTICS_TOKEN && (
           <script

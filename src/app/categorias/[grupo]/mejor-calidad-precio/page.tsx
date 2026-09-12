@@ -16,6 +16,7 @@ import { Reveal } from '@/components/ui/Reveal'
 import { CategoryIcon } from '@/components/ui/CategoryIcon'
 import { AdUnit } from '@/components/monetization/AdUnit'
 import { SITE_NAME, SITE_URL } from '@/config/site'
+import { serializeJsonLd } from '@/lib/seo'
 
 const MIN_VEHICLES_PER_GROUP = MIN_VEHICLES_PER_SEO_CATEGORY
 
@@ -160,11 +161,11 @@ export default async function CategoryBestValuePage({ params }: PageProps) {
     <section className="relative overflow-hidden border-b border-edge py-12 sm:py-16">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionLd).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(collectionLd) }}
       />
       <div className="list-header-glow" aria-hidden="true" />
       <div className="container-max relative">

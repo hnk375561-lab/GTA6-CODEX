@@ -20,21 +20,37 @@ export const dynamic = 'force-static'
  */
 export default function robots(): MetadataRoute.Robots {
   return {
-    // 10/09/2026 — BLOQUEO TOTAL TEMPORAL: el sitio corre 100% sobre
-    // `*.workers.dev` (sin dominio propio conectado), lo que significa
-    // que NINGÚN request se cachea en el borde de Cloudflare — cada
-    // página que un crawler visita reinvoca el Worker completo y arrastra
-    // decenas de assets (JS/CSS/imágenes) con él. Con el sitio recién
-    // publicado y sin necesidad de indexación real todavía (uso actual:
-    // solo el propio dueño), dejar pasar crawlers normales (Googlebot,
-    // Bingbot, etc., antes permitidos) es la fuente más probable del
-    // consumo de cuota diaria sin que haya visitas humanas de terceros.
-    // Sacar este bloqueo total en cuanto: (a) se conecte un dominio propio
-    // (Cache-Control ya está listo para eso en next.config.js) y/o (b) el
-    // sitio esté listo para indexarse de verdad.
+    // 12/09/2026 — SE LEVANTA EL BLOQUEO TOTAL (decisión consciente, no
+    // un olvido). El bloqueo del 10/09 se justificaba por el costo de
+    // invocación por-request de Cloudflare Workers (`*.workers.dev`) sin
+    // dominio propio ni cache de borde real. Esa infraestructura ya no
+    // existe: el proyecto migró a `output: 'export'` sobre GitHub Pages
+    // (ver next.config.js), que sirve archivos estáticos desde un CDN
+    // sin invocación ni cuota por request — el motivo original del
+    // bloqueo no aplica más. Todo el trabajo de SEO (JSON-LD, sitemap,
+    // metadata, Open Graph, verificación de Search Console) ya está
+    // listo y hasta ahora inerte; con este cambio pasa a ser efectivo.
+    //
+    // Se mantiene (cumpliendo la intención ya declarada pero nunca
+    // implementada) un bloqueo explícito a los crawlers de entrenamiento
+    // de IA más conocidos — no afecta la indexación en buscadores.
     rules: [
       {
         userAgent: '*',
+        allow: '/',
+      },
+      {
+        userAgent: [
+          'GPTBot',
+          'ChatGPT-User',
+          'CCBot',
+          'Google-Extended',
+          'anthropic-ai',
+          'ClaudeBot',
+          'Claude-Web',
+          'Bytespider',
+          'PerplexityBot',
+        ],
         disallow: '/',
       },
     ],

@@ -61,10 +61,14 @@ const nextConfig = {
   //
   // - CSP / security headers: no tienen reemplazo estático equivalente
   //   sin un CDN propio delante (Cloudflare gratis como proxy, por
-  //   ejemplo). Se pierden en esta migración; si hace falta recuperarlos
-  //   más adelante, la opción más simple sigue siendo poner Cloudflare
-  //   (modo proxy, sin Workers) delante del dominio propio y agregar las
-  //   reglas ahí como Response Headers, no acá.
+  //   ejemplo) — esa sigue siendo la única vía para headers HTTP reales
+  //   (`frame-ancestors`, `report-uri`, etc.). Mitigación parcial ya
+  //   implementada (12/09/2026): CSP vía `<meta http-equiv>` en
+  //   `src/app/layout.tsx`, que cubre script/style/img/connect-src para
+  //   los orígenes externos reales del sitio (Analytics, AdSense,
+  //   Cloudflare Web Analytics, YouTube). Si hace falta el resto de las
+  //   directivas, poner Cloudflare (modo proxy, sin Workers) delante del
+  //   dominio propio y agregarlas ahí como Response Headers.
   // - Cache-Control: GitHub Pages ya sirve todo con cache agresivo del
   //   lado del CDN por defecto; no hace falta configurarlo a mano.
   // - El redirect `/vehiculos/fabricante/:manufacturer` →
